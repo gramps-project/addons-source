@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2010-03-07 17:48+0100\n"
 "Last-Translator: Joan Creus <joan.creus at gmail dot com>\n"
 "Language-Team: Català <en@li.org>\n"
@@ -20,15 +20,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-msgid "Calculate Estimated Dates"
-msgstr "Calcular Dates Estimades"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
-msgid "Calculates estimated dates for birth and death."
-msgstr "Calcula les dates estimades de naixement i defunció."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
@@ -155,6 +146,11 @@ msgstr ""
 "\n"
 "Pot haver d'executar l'eina de forma repetida (sense treure els "
 "esdeveniments anteriors) per afegir tots els esdeveniments possibles."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculate Estimated Dates"
+msgstr "Calcular Dates Estimades"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
@@ -301,3 +297,7 @@ msgstr "Afegits %d esdeveniments."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Data estimada"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Calcula les dates estimades de naixement i defunció."

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -48,10 +48,6 @@ msgstr "Nombre de descendants"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
 msgid "Generation"
 msgstr "Génération"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
-msgid "Shows the number of descendants of the current person"
-msgstr "Affiche le nombre de descendants de l'individu actif"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
@@ -83,3 +79,7 @@ msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr ""
 "En vie = nombre de descendants dont le décès de %s a eu lieu lorsqu'il était "
 "en vie"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
+msgid "Shows the number of descendants of the current person"
+msgstr "Affiche le nombre de descendants de l'individu actif"

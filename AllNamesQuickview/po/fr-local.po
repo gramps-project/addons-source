@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -42,13 +42,9 @@ msgstr ""
 msgid "Primary Name"
 msgstr "Nom principal"
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+#: AllNamesQuickview/AllNames.py:51 AllNamesQuickview/AllNames.gpr.py:4
 msgid "All Names of All People"
 msgstr "Tous les noms pour tous les individus"
-
-#: AllNamesQuickview/AllNames.gpr.py:5
-msgid "Display all names of all people"
-msgstr "Affiche tous les noms de tous les individus"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -58,3 +54,7 @@ msgstr "Type de nom"
 #, python-format
 msgid "Total names %d"
 msgstr "Total des noms %d"
+
+#: AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr "Affiche tous les noms de tous les individus"

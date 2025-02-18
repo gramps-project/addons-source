@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -33,8 +33,7 @@ msgstr "Udført"
 msgid "Differences"
 msgstr "Forskelle"
 
-#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:328
-#: ImportMerge/importmerge.py:707 ImportMerge/importmerge.py:329
+#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
 msgid "Import and Merge tool"
 msgstr "Import and Merge tool"
@@ -47,49 +46,47 @@ msgstr ""
 "Sammenligner en Gramps XML database med den nuværende, og giver mulighed for "
 "at sammenflette forskellene."
 
-#: ImportMerge/importmerge.py:80 ImportMerge/importmerge.py:81
+#: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
 msgstr "Importer og sammenflet en Gramps XML"
 
-#: ImportMerge/importmerge.py:89 ImportMerge/importmerge.py:90
+#: ImportMerge/importmerge.py:90
 msgid "Missing"
 msgstr "Mangler"
 
-#: ImportMerge/importmerge.py:93 ImportMerge/importmerge.py:94
+#: ImportMerge/importmerge.py:94
 msgid "Different"
 msgstr "Forskelle"
 
-#: ImportMerge/importmerge.py:108 ImportMerge/importmerge.py:109
+#: ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr "Slet originalen"
 
-#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
-#: ImportMerge/importmerge.py:110
+#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.glade:334
 msgid "Ignore"
 msgstr "Ignorer"
 
-#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.py:111
+#: ImportMerge/importmerge.py:111
 msgid "Add Import"
 msgstr "Tilføj import"
 
-#: ImportMerge/importmerge.py:111 ImportMerge/importmerge.py:112
+#: ImportMerge/importmerge.py:112
 msgid "Merge into original"
 msgstr "Sammenflet ind i originalen"
 
-#: ImportMerge/importmerge.py:112 ImportMerge/importmerge.py:113
+#: ImportMerge/importmerge.py:113
 msgid "Merge into import"
 msgstr "Sammenflet ind i importen"
 
-#: ImportMerge/importmerge.py:113 ImportMerge/importmerge.py:114
+#: ImportMerge/importmerge.py:114
 msgid "Replace with import"
 msgstr "Erstat med importen"
 
-#: ImportMerge/importmerge.py:114 ImportMerge/importmerge.py:115
+#: ImportMerge/importmerge.py:115
 msgid "Keep original"
 msgstr "Behold originalen"
 
-#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
-#: ImportMerge/importmerge.py:116
+#: ImportMerge/importmerge.py:116 ImportMerge/importmerge.glade:293
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
@@ -98,7 +95,7 @@ msgstr ""
 "ændringer vil blive dannet i din slægtsbog før end du trykker 'Udført' og "
 "bekræfter."
 
-#: ImportMerge/importmerge.py:118 ImportMerge/importmerge.py:119
+#: ImportMerge/importmerge.py:119
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
@@ -106,7 +103,7 @@ msgstr ""
 "Dette element vil blive slettet fra din slægtsbog.  Enhver henvist element "
 "blev også angivet til at slettes."
 
-#: ImportMerge/importmerge.py:120 ImportMerge/importmerge.py:121
+#: ImportMerge/importmerge.py:121
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
@@ -114,7 +111,7 @@ msgstr ""
 "Dette element vil ikke blive ændret i din slægtsbog.  Alle henviste "
 "elementer blev også angivet til Ignorer."
 
-#: ImportMerge/importmerge.py:122 ImportMerge/importmerge.py:123
+#: ImportMerge/importmerge.py:123
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
@@ -122,7 +119,7 @@ msgstr ""
 "Dette element vil blive tilføjet til din slægtsbog.  Alle henviste elementer "
 "blev også angivet til tilføjelse."
 
-#: ImportMerge/importmerge.py:124 ImportMerge/importmerge.py:125
+#: ImportMerge/importmerge.py:125
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
@@ -131,7 +128,7 @@ msgstr ""
 "Alle henviste elementer blev også angivet til sammenfletning eller "
 "tilføjelse."
 
-#: ImportMerge/importmerge.py:126 ImportMerge/importmerge.py:127
+#: ImportMerge/importmerge.py:127
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
@@ -139,7 +136,7 @@ msgstr ""
 "Dette element vil blive sammenflettet, idet det benytter data fra importen.  "
 "Alle henviste elementer blev også angivet til sammenflet eller tilføj."
 
-#: ImportMerge/importmerge.py:128 ImportMerge/importmerge.py:129
+#: ImportMerge/importmerge.py:129
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
@@ -147,7 +144,7 @@ msgstr ""
 "De importerede vil helt erstatte dataene i din slægtsbog.  Alle henviste "
 "elementer blev også angivet til erstat eller fjern."
 
-#: ImportMerge/importmerge.py:130 ImportMerge/importmerge.py:131
+#: ImportMerge/importmerge.py:131
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
@@ -155,46 +152,40 @@ msgstr ""
 "Dette element vil ikke blive ændret i din slægtsbog.  Alle henviste "
 "elementer blev også angivet til behold."
 
-#: ImportMerge/importmerge.py:338 ImportMerge/importmerge.py:339
+#: ImportMerge/importmerge.py:339
 msgid "Import Failure"
 msgstr "Fejl ved import"
 
-#: ImportMerge/importmerge.py:406 ImportMerge/importmerge.py:407
+#: ImportMerge/importmerge.py:407
 msgid "Your Tree and import are the same."
 msgstr "Din slægtsbog og importen er ens."
 
-#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
-#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
 #: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
 #: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
 msgid "your tree "
 msgstr "din slægtsbog "
 
-#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
-#: ImportMerge/importmerge.py:474 ImportMerge/importmerge.py:459
-#: ImportMerge/importmerge.py:467 ImportMerge/importmerge.py:475
+#: ImportMerge/importmerge.py:459 ImportMerge/importmerge.py:467
+#: ImportMerge/importmerge.py:475
 msgid "imported "
 msgstr "importeret "
 
-#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
-#: ImportMerge/importmerge.py:981 ImportMerge/importmerge.py:482
-#: ImportMerge/importmerge.py:961 ImportMerge/importmerge.py:982
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
+#: ImportMerge/importmerge.py:982
 msgid "Original"
 msgstr "Original"
 
-#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
-#: ImportMerge/importmerge.py:982 ImportMerge/importmerge.py:483
-#: ImportMerge/importmerge.py:962 ImportMerge/importmerge.py:983
+#: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
+#: ImportMerge/importmerge.py:983
 msgid "Imported"
 msgstr "Importeret"
 
-#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
-#: ImportMerge/importmerge.py:984 ImportMerge/importmerge.py:485
-#: ImportMerge/importmerge.py:964 ImportMerge/importmerge.py:985
+#: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
+#: ImportMerge/importmerge.py:985
 msgid "Result  "
 msgstr "Resultat "
 
-#: ImportMerge/importmerge.py:710 ImportMerge/importmerge.py:711
+#: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
 msgstr "Importer og sammenflet"
 

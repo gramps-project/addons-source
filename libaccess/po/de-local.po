@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,12 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
-
-#: libaccess/libaccess.gpr.py:34
-msgid "Provides a library for generic access to the database and gen.lib."
-msgstr ""
-"Liefert eine Bibliothek zum generischen Zugriff auf die Datenbank und gen.lib"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
@@ -45,3 +40,8 @@ msgstr "libaccess Name bearbeiten"
 #: libaccess/libaccess.py:260
 msgid "libaccess edit person"
 msgstr "libaccess Person bearbeiten"
+
+#: libaccess/libaccess.gpr.py:34
+msgid "Provides a library for generic access to the database and gen.lib."
+msgstr ""
+"Liefert eine Bibliothek zum generischen Zugriff auf die Datenbank und gen.lib"

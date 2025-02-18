@@ -65,7 +65,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -81,17 +81,6 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:178
 #: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 msgid "in"
-msgstr ""
-
-#: DenominoViso/DenominoViso.gpr.py:9
-msgid "DenominoViso"
-msgstr ""
-
-#: DenominoViso/DenominoViso.gpr.py:19
-msgid ""
-"Generates a web (HTML) page with a graphical representation of ancestors/"
-"descendants (SVG) where details about individuals become visible upon mouse-"
-"events."
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:179
@@ -605,4 +594,15 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
+msgstr ""
+
+#: DenominoViso/DenominoViso.gpr.py:9
+msgid "DenominoViso"
+msgstr ""
+
+#: DenominoViso/DenominoViso.gpr.py:19
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
 msgstr ""

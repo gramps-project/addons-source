@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,14 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: TypeCleanup/type_cleanup.gpr.py:30
-msgid "Type Cleanup"
-msgstr "Typerensning"
-
-#: TypeCleanup/type_cleanup.gpr.py:31
-msgid "Clean up (remove) custom types"
-msgstr "Rens (fjern) tilpassede typer"
 
 #: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
@@ -131,3 +123,11 @@ msgstr ""
 "\n"
 "Men den vil ikke fjerne den fra henviste elementer i databasen.\n"
 "Hvis du vil skifte den i henviste elementer, så benyt 'Omdøb'."
+
+#: TypeCleanup/type_cleanup.gpr.py:30
+msgid "Type Cleanup"
+msgstr "Typerensning"
+
+#: TypeCleanup/type_cleanup.gpr.py:31
+msgid "Clean up (remove) custom types"
+msgstr "Rens (fjern) tilpassede typer"

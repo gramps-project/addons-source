@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 10:31+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -20,14 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: DownloadMedia/DownloadMedia.gpr.py:36
-msgid "Download media files from the internet"
-msgstr "הורדת קבצי מדיה מהמרשתת"
-
-#: DownloadMedia/DownloadMedia.gpr.py:37
-msgid "This tool downloads media files from the internet"
-msgstr "כלי זה נועד להורדת קבצי מדיה מהמרשתת"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
@@ -57,3 +49,11 @@ msgstr "מתבצעת הורדת קבצים"
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
 msgstr "זוהו שגיאות הורדת מדיה"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "Download media files from the internet"
+msgstr "הורדת קבצי מדיה מהמרשתת"
+
+#: DownloadMedia/DownloadMedia.gpr.py:37
+msgid "This tool downloads media files from the internet"
+msgstr "כלי זה נועד להורדת קבצי מדיה מהמרשתת"

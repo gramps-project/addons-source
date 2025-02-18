@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -30,15 +30,6 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-
-#: ExtractCity/extractcity.gpr.py:34
-msgid "Extract Place Data from a Place Title"
-msgstr "Извлечение данных о месте из названия"
-
-#: ExtractCity/extractcity.gpr.py:35
-msgid "Attempts to extract city and state/province from a place title"
-msgstr ""
-"Пробует извлечь названия города, штата, области и т.д. из названия места"
 
 #: ExtractCity/extractcity.py:402
 msgid "Place title"
@@ -68,6 +59,15 @@ msgstr ""
 "Ниже приведён список мест и возможные данные, которые могут быть извлечены "
 "из названия места. Отметьте места для которых Gramps должен выполнить "
 "конвертацию."
+
+#: ExtractCity/extractcity.gpr.py:34
+msgid "Extract Place Data from a Place Title"
+msgstr "Извлечение данных о месте из названия"
+
+#: ExtractCity/extractcity.gpr.py:35
+msgid "Attempts to extract city and state/province from a place title"
+msgstr ""
+"Пробует извлечь названия города, штата, области и т.д. из названия места"
 
 #: ExtractCity/changenames.glade:94
 #, fuzzy

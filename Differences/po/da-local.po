@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,13 +20,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: Differences/differences.gpr.py:4 Differences/differences.py:95
+#: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
 msgstr "Rapport over forskelle i databaser"
-
-#: Differences/differences.gpr.py:5
-msgid "Compares an external database with the current one."
-msgstr "Sammenligner en ekstern database med den aktuelle."
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
@@ -93,3 +89,7 @@ msgstr "Hvis tilføjede elementer i filen"
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr "Medtag elementer i filen men ikke i databasen"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Sammenligner en ekstern database med den aktuelle."

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -30,14 +30,6 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-
-#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
-msgid "PlaceUpdate"
-msgstr "Обновление мест"
-
-#: PlaceUpdate/PlaceUpdate.gpr.py:5
-msgid "Gramplet to manipulate multiple places"
-msgstr "Грамплет для группового управления местами"
 
 #: PlaceUpdate/PlaceUpdate.py:56
 msgid "Set properties for multiple places"
@@ -114,3 +106,11 @@ msgstr "Установка параметров мест"
 #: PlaceUpdate/PlaceUpdate.py:304
 msgid "Regex operation failed: {}"
 msgstr "Ошибка при выполнении регулярного выражения: {}"
+
+#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
+msgid "PlaceUpdate"
+msgstr "Обновление мест"
+
+#: PlaceUpdate/PlaceUpdate.gpr.py:5
+msgid "Gramplet to manipulate multiple places"
+msgstr "Грамплет для группового управления местами"

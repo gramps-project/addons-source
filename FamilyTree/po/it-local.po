@@ -65,7 +65,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -115,10 +115,6 @@ msgstr "Sostituisci il nome con lo pseudonimo"
 #: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Sottolinea lo pseudonimo nel nome / aggiungi lo pseudonimo al nome"
-
-#: FamilyTree/FamilyTree.gpr.py:5
-msgid "Produces a graphical family tree."
-msgstr "Genera un albero genealogico grafico."
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
@@ -304,3 +300,7 @@ msgstr "Lo stile usato per i nomi."
 #: FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr "Lo stile usato per i dati (nascita, morte, matrimonio, divorzio)."
+
+#: FamilyTree/FamilyTree.gpr.py:5
+msgid "Produces a graphical family tree."
+msgstr "Genera un albero genealogico grafico."

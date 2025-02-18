@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -30,10 +30,6 @@ msgstr "Antal efterkommere"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
 msgid "Generation"
 msgstr "Generation"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
-msgid "Shows the number of descendants of the current person"
-msgstr "Viser antal efterkommere for hovedpersonen"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
@@ -62,3 +58,7 @@ msgstr "Set = antal af efterkommere hvis fødsel er sket mens %s levede"
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr "Overlevede = antal af efterkommere der døde mens %s stadig levede"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
+msgid "Shows the number of descendants of the current person"
+msgstr "Viser antal efterkommere for hovedpersonen"

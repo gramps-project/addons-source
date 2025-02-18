@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -24,11 +24,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
-#: libaccess/libaccess.gpr.py:34
-msgid "Provides a library for generic access to the database and gen.lib."
-msgstr ""
-"Biedt een bibliotheek voor algemene toegang tot de database en gen.lib."
-
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
 msgstr "libaccess naam bewerken"
@@ -36,3 +31,8 @@ msgstr "libaccess naam bewerken"
 #: libaccess/libaccess.py:260
 msgid "libaccess edit person"
 msgstr "libaccess bewerk persoon"
+
+#: libaccess/libaccess.gpr.py:34
+msgid "Provides a library for generic access to the database and gen.lib."
+msgstr ""
+"Biedt een bibliotheek voor algemene toegang tot de database en gen.lib."

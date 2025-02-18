@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #: GraphView/graphview.py:3168 GraphView/graphview.py:3169
@@ -78,36 +78,10 @@ msgstr "Zooma till originalet"
 msgid "Zoom to best fit"
 msgstr "Zooma för att passa bäst"
 
-#: GraphView/avatars.py:60
-#, fuzzy
-#| msgid "- default -"
-msgid "Dark (default)"
-msgstr "- standard -"
-
-#: GraphView/avatars.py:61
-#, fuzzy
-#| msgid "Height:"
-msgid "Light"
-msgstr "Höjd:"
-
-#: GraphView/avatars.py:62
-#, fuzzy
-#| msgid "CartoDB Positron"
-msgid "Cartoon"
-msgstr "CartoDB Positron"
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Diagramvy"
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr ""
 
 #: GraphView/graphview.py:754
 #, fuzzy
@@ -560,6 +534,32 @@ msgstr ""
 #: GraphView/graphview.py:4710
 #, python-format
 msgid "Delete Family [%s]"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr ""
+
+#: GraphView/avatars.py:60
+#, fuzzy
+#| msgid "- default -"
+msgid "Dark (default)"
+msgstr "- standard -"
+
+#: GraphView/avatars.py:61
+#, fuzzy
+#| msgid "Height:"
+msgid "Light"
+msgstr "Höjd:"
+
+#: GraphView/avatars.py:62
+#, fuzzy
+#| msgid "CartoDB Positron"
+msgid "Cartoon"
+msgstr "CartoDB Positron"
+
+#: GraphView/avatars.py:63
+msgid "Modern"
 msgstr ""
 
 #: GraphView/search_widget.py:82

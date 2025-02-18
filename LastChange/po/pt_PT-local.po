@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -22,26 +23,10 @@ msgstr ""
 msgid "The style used for the title of the page."
 msgstr "O estilo usado para o título da página."
 
-#: LastChange/LastChange.gpr.py:26
-msgid "List the last ten person records that have been changed"
-msgstr "Lista os últimos dez registos individuais que foram alterados"
-
-#: LastChange/LastChange.gpr.py:35
-msgid "Latest Changes"
-msgstr "Últimas alterações"
-
-#: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
-#: LastChange/LastChangeReport.py:113
+#: LastChange/LastChangeReport.py:74 LastChange/LastChangeReport.py:113
+#: LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
 msgstr "Relatório Últimas alterações"
-
-#: LastChange/LastChange.gpr.py:43
-msgid "Report of the last records that have been changed"
-msgstr "Relatório dos últimos registos que foram alterados"
-
-#: LastChange/LastChangeGramplet.py:82
-msgid "changed on"
-msgstr "alterado a"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
@@ -56,7 +41,7 @@ msgstr "Indivíduos alterados"
 #: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
 #: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
 msgid "Changed On"
-msgstr "Alterado a"
+msgstr "Alteração a"
 
 #: LastChange/LastChangeReport.py:197
 msgid "Families Changed"
@@ -64,7 +49,7 @@ msgstr "Famílias alteradas"
 
 #: LastChange/LastChangeReport.py:198
 msgid "Family Surname"
-msgstr "Apelido da família"
+msgstr "Apelido de família"
 
 #: LastChange/LastChangeReport.py:215
 #, python-format
@@ -102,3 +87,19 @@ msgstr "Seleccionar de"
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
 msgstr "O estilo usado para texto normal"
+
+#: LastChange/LastChangeGramplet.py:82
+msgid "changed on"
+msgstr "alteração a"
+
+#: LastChange/LastChange.gpr.py:26
+msgid "List the last ten person records that have been changed"
+msgstr "Lista os últimos dez registos individuais que foram alterados"
+
+#: LastChange/LastChange.gpr.py:35
+msgid "Latest Changes"
+msgstr "Últimas alterações"
+
+#: LastChange/LastChange.gpr.py:43
+msgid "Report of the last records that have been changed"
+msgstr "Relatório dos últimos registos que foram alterados"

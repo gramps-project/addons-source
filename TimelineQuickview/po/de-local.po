@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,15 +31,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
 msgstr "Heute"
-
-#: TimelineQuickview/TimelineQuickview.gpr.py:11
-msgid "Display a person's events on a timeline"
-msgstr "Zeigt Ereignisse einer Person auf einer Zeitleiste"
 
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
@@ -91,3 +87,7 @@ msgstr "Zeitleiste für %s"
 #: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Beteiligte Personen"
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:11
+msgid "Display a person's events on a timeline"
+msgstr "Zeigt Ereignisse einer Person auf einer Zeitleiste"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,15 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: WordleGramplet/WordleGramplet.gpr.py:4
-#: WordleGramplet/WordleGramplet.gpr.py:10
-msgid "Wordle"
-msgstr "Wordle"
-
-#: WordleGramplet/WordleGramplet.gpr.py:13
-msgid "Gramplet used to make word clouds with wordle.net"
-msgstr "Gramplet der benyttes til at danne ordskyer fra wordle.net"
 
 #: WordleGramplet/WordleGramplet.py:126
 msgid "[Missing]"
@@ -40,3 +31,12 @@ msgstr "Antal af fontstørrelser"
 #: WordleGramplet/WordleGramplet.py:144
 msgid "Select filter to restrict list"
 msgstr "Vælg filter til afgrænse listen"
+
+#: WordleGramplet/WordleGramplet.gpr.py:4
+#: WordleGramplet/WordleGramplet.gpr.py:10
+msgid "Wordle"
+msgstr "Wordle"
+
+#: WordleGramplet/WordleGramplet.gpr.py:13
+msgid "Gramplet used to make word clouds with wordle.net"
+msgstr "Gramplet der benyttes til at danne ordskyer fra wordle.net"

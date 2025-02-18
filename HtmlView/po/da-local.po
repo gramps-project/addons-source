@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,18 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: HtmlView/htmlview.gpr.py:31
-msgid "Html View"
-msgstr "Html View"
-
-#: HtmlView/htmlview.gpr.py:32
-msgid "A view showing html pages embedded in Gramps"
-msgstr "En visning i HTML sider indlejret i Gramps"
-
-#: HtmlView/htmlview.gpr.py:40
-msgid "Web"
-msgstr "Web"
 
 #: HtmlView/htmlview.py:328
 msgid "HtmlView"
@@ -67,3 +55,15 @@ msgstr ""
 "hente en webside på denne side\n"
 "<br>\n"
 "For eksempel: "
+
+#: HtmlView/htmlview.gpr.py:31
+msgid "Html View"
+msgstr "Html View"
+
+#: HtmlView/htmlview.gpr.py:32
+msgid "A view showing html pages embedded in Gramps"
+msgstr "En visning i HTML sider indlejret i Gramps"
+
+#: HtmlView/htmlview.gpr.py:40
+msgid "Web"
+msgstr "Web"

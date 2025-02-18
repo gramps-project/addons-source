@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,14 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: DetId/DetId.gpr.py:31
-msgid "Deterministic ID"
-msgstr "Deterministisk ID"
-
-#: DetId/DetId.gpr.py:32
-msgid "Set/reset Gramps to use a Deterministic ID"
-msgstr "Indstil/nulstil Gramps for at bruge et deterministisk ID"
-
 #: DetId/DetId.py:74
 msgid "Deterministic ID Tool"
 msgstr "Deterministisk ID værktøj"
@@ -37,3 +29,11 @@ msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
 msgstr ""
 "ID'et og håndtagene starter nu ved 0x00000000 og stiger med 0x100000001"
+
+#: DetId/DetId.gpr.py:31
+msgid "Deterministic ID"
+msgstr "Deterministisk ID"
+
+#: DetId/DetId.gpr.py:32
+msgid "Set/reset Gramps to use a Deterministic ID"
+msgstr "Indstil/nulstil Gramps for at bruge et deterministisk ID"

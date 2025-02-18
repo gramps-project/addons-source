@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -30,14 +30,6 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-
-#: MediaVerify/MediaVerify.gpr.py:31
-msgid "Media Verify"
-msgstr "Проверка документов"
-
-#: MediaVerify/MediaVerify.gpr.py:32
-msgid "Verify that media is present in the correct path"
-msgstr "Проверяет, что документы присутствуют по указанному пути"
 
 #: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
@@ -153,3 +145,11 @@ msgstr "Исправление путей к файлам"
 #: MediaVerify/MediaVerify.py:390
 msgid "Fix media paths"
 msgstr "Исправить пути к документам"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Media Verify"
+msgstr "Проверка документов"
+
+#: MediaVerify/MediaVerify.gpr.py:32
+msgid "Verify that media is present in the correct path"
+msgstr "Проверяет, что документы присутствуют по указанному пути"

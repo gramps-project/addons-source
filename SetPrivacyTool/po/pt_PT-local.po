@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -27,16 +28,12 @@ msgstr "Seleccione um filtro para limitar os indivíduos"
 msgid "Persons"
 msgstr "Indivíduos"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
-#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
-#: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
-#: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
+#: SetPrivacyTool/SetPrivacyTool.py:51 SetPrivacyTool/SetPrivacyTool.py:93
+#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:146
+#: SetPrivacyTool/SetPrivacyTool.py:186 SetPrivacyTool/SetPrivacyTool.py:226
+#: SetPrivacyTool/SetPrivacyTool.py:255 SetPrivacyTool/SetPrivacyTool.gpr.py:24
 msgid "Set Privacy Tool"
 msgstr "Ferramenta Definir privacidade"
-
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
-msgid "Set all objects of the last <number> of years private."
-msgstr "Define todos os objectos dos últimos <número> anos como privados."
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
@@ -61,16 +58,12 @@ msgid "Set media private.."
 msgstr "Definir multimédia privada..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set adresses private.."
-msgstr "Definir eventos privados..."
+msgstr "Definir endereços privados..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set internet objects private.."
-msgstr "Definir eventos privados..."
+msgstr "Definir objectos Internet privados..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
@@ -91,23 +84,21 @@ msgstr ""
 "Se marcada, todos os objectos sem uma data serão marcados como privados."
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "Seleccione um filtro para limitar os indivíduos"
+msgstr "Seleccione um filtro para limitar os eventos"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
-#, fuzzy
-#| msgid "Select filter to restrict list"
 msgid "Select filter to restrict medias"
-msgstr "Seleccione um filtro para limitar a lista"
+msgstr "Seleccione um filtro para limitar multimédia"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
-#, fuzzy
-#| msgid "Can't determine type of import"
 msgid "Internet type filter"
-msgstr "Impossível determinar o tipo de importação"
+msgstr "Tipo de filtro Internet"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
 msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
+msgid "Set all objects of the last <number> of years private."
+msgstr "Define todos os objectos dos últimos <número> anos como privados."

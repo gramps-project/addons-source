@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -58,10 +58,6 @@ msgstr "Erstat fornavne med tilnavn"
 #: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Understreg tilnavnet i fornavnet / og føj tilnavn til fornavn"
-
-#: FamilyTree/FamilyTree.gpr.py:5
-msgid "Produces a graphical family tree."
-msgstr "Danner en grafisk familietræ."
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
@@ -248,3 +244,7 @@ msgstr "Stilen der benyttes til navne."
 #: FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr "Stilen der benyttes for data (fødsel, død, ægteskab, skilsmisse)."
+
+#: FamilyTree/FamilyTree.gpr.py:5
+msgid "Produces a graphical family tree."
+msgstr "Danner en grafisk familietræ."

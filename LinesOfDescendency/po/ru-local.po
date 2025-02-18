@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -40,17 +40,6 @@ msgstr "Стиль заголовка страницы."
 #: LinesOfDescendency/lines-of-descendency.py:55
 msgid "Ancestor"
 msgstr "Предок"
-
-#: LinesOfDescendency/lines-of-descendency.gpr.py:31
-msgid "Lines of Descendency Report"
-msgstr "Линии родства"
-
-#: LinesOfDescendency/lines-of-descendency.gpr.py:33
-msgid ""
-"Prints out all descendency lines from a given ancestor to a given descendent "
-"in text."
-msgstr ""
-"Создаёт линии родства между указанными предком и потомком в виде текста."
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
@@ -77,3 +66,14 @@ msgstr ""
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
 msgstr "Линия родства между %(ancestor)s и %(descendent)s"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:31
+msgid "Lines of Descendency Report"
+msgstr "Линии родства"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:33
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+"Создаёт линии родства между указанными предком и потомком в виде текста."

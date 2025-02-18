@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -18,14 +19,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
-#: ListeEclair/ListeEclair.gpr.py:4 ListeEclair/ListeEclair.py:97
-#: ListeEclair/ListeEclair.py:104
+#: ListeEclair/ListeEclair.py:97 ListeEclair/ListeEclair.py:104
+#: ListeEclair/ListeEclair.gpr.py:4
 msgid "Liste Eclair"
 msgstr "Lista rápida"
-
-#: ListeEclair/ListeEclair.gpr.py:5
-msgid "Produit une liste eclair"
-msgstr "Produzir uma lista rápida de correspondências"
 
 #: ListeEclair/ListeEclair.py:277
 msgid "Type de Liste"
@@ -54,3 +51,7 @@ msgstr "O estilo usado para a lista rápida."
 #: ListeEclair/ListeEclair.py:314
 msgid "The style used for place title."
 msgstr "O estilo usado para o título do local."
+
+#: ListeEclair/ListeEclair.gpr.py:5
+msgid "Produit une liste eclair"
+msgstr "Produzir uma lista rápida de correspondências"

@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,21 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
-
-#: TMGimporter/importtmg.gpr.py:49
-msgid "TMG Project Backup"
-msgstr "TMG-Projektsicherung"
-
-#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
-#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
-msgid "Import TMG project files"
-msgstr "TMG-Projektdateien importieren"
-
-#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
-#: TMGimporter/importtmg.gpr.py:95
-msgid "TMG Unsupported"
-msgstr "TMG nicht unterstützt"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: TMGimporter/importtmg.py:89
 #, python-format
@@ -107,6 +93,20 @@ msgstr ""
 "verwenden. Stelle sicher, dass dein TMG-Projekt erstellt wurde von: TMG "
 "Version 5.x oder höher. Deine Datei: *. VER - Versionskontrolldatei für TMG "
 "1.2 und früher Bitte beachte:%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmg.gpr.py:49
+msgid "TMG Project Backup"
+msgstr "TMG-Projektsicherung"
+
+#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
+#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
+msgid "Import TMG project files"
+msgstr "TMG-Projektdateien importieren"
+
+#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
+#: TMGimporter/importtmg.gpr.py:95
+msgid "TMG Unsupported"
+msgstr "TMG nicht unterstützt"
 
 #: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"

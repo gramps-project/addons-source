@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -28,13 +28,9 @@ msgstr ""
 msgid "Primary Name"
 msgstr "Primaire naam"
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+#: AllNamesQuickview/AllNames.py:51 AllNamesQuickview/AllNames.gpr.py:4
 msgid "All Names of All People"
 msgstr "Alle namen van alle personen"
-
-#: AllNamesQuickview/AllNames.gpr.py:5
-msgid "Display all names of all people"
-msgstr "Toon alle namen van alle personen"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -44,3 +40,7 @@ msgstr "Naamtype"
 #, python-format
 msgid "Total names %d"
 msgstr "Totaal aantal namen %d"
+
+#: AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr "Toon alle namen van alle personen"

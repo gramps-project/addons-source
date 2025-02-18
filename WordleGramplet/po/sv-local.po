@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,16 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
-
-#: WordleGramplet/WordleGramplet.gpr.py:4
-#: WordleGramplet/WordleGramplet.gpr.py:10
-msgid "Wordle"
-msgstr "Wordle"
-
-#: WordleGramplet/WordleGramplet.gpr.py:13
-msgid "Gramplet used to make word clouds with wordle.net"
-msgstr "Gramplet för att skapa ordmoln med wordle.net"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: WordleGramplet/WordleGramplet.py:126
 msgid "[Missing]"
@@ -47,3 +38,12 @@ msgstr "Antal typsnittsstorlekar"
 #: WordleGramplet/WordleGramplet.py:144
 msgid "Select filter to restrict list"
 msgstr "Välj ett filter för att begränsa lista"
+
+#: WordleGramplet/WordleGramplet.gpr.py:4
+#: WordleGramplet/WordleGramplet.gpr.py:10
+msgid "Wordle"
+msgstr "Wordle"
+
+#: WordleGramplet/WordleGramplet.gpr.py:13
+msgid "Gramplet used to make word clouds with wordle.net"
+msgstr "Gramplet för att skapa ordmoln med wordle.net"

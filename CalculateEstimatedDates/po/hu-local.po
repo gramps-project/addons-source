@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Lajos Nemeséri <nemeseril@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
@@ -23,15 +23,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.10-dev\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-msgid "Calculate Estimated Dates"
-msgstr "Becsült Dátumok Számítása"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
-msgid "Calculates estimated dates for birth and death."
-msgstr "Becsült dátumok számítása születéshez és halálozáshoz."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
@@ -146,6 +137,11 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculate Estimated Dates"
+msgstr "Becsült Dátumok Számítása"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 #, fuzzy
@@ -301,3 +297,7 @@ msgstr "%d esemény hozzáadva."
 #, fuzzy
 msgid "Estimated date"
 msgstr "Körülbelül"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Becsült dátumok számítása születéshez és halálozáshoz."

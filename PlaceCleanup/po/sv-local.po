@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
@@ -136,19 +136,19 @@ msgstr ""
 "Platsen du valde är innesluten på den plats du jobbar med!\n"
 "Vänligen avsluta och välj en annan plats."
 
-#: PlaceCleanup/placecleanup.py:945 PlaceCleanup/placecleanup.py:946
+#: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
 msgstr "GenNames-webbsidan"
 
-#: PlaceCleanup/placecleanup.py:950 PlaceCleanup/placecleanup.py:951
+#: PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
 msgstr "GeoNames-författare"
 
-#: PlaceCleanup/placecleanup.py:955 PlaceCleanup/placecleanup.py:956
+#: PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr "GeoNames skapades av Marc Wick. Du kan nå honom på "
 
-#: PlaceCleanup/placecleanup.py:958 PlaceCleanup/placecleanup.py:959
+#: PlaceCleanup/placecleanup.py:959
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
@@ -158,20 +158,20 @@ msgstr ""
 "Schweiz.\n"
 "Detta arbete är licensierat med en "
 
-#: PlaceCleanup/placecleanup.py:961 PlaceCleanup/placecleanup.py:962
+#: PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
 msgstr "Creative Commons Attribution 3.0-licens"
 
-#: PlaceCleanup/placecleanup.py:973 PlaceCleanup/placecleanup.py:974
+#: PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "Lägg till källa/arkivplats/notis (%s)"
 
-#: PlaceCleanup/placecleanup.py:1074 PlaceCleanup/placecleanup.py:1075
+#: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
 msgstr "Denna plats är inte använd!"
 
-#: PlaceCleanup/placecleanup.py:1075 PlaceCleanup/placecleanup.py:1076
+#: PlaceCleanup/placecleanup.py:1076
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."

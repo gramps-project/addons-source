@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,15 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-msgid "Calculate Estimated Dates"
-msgstr "Beregn anslåede datoer"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
-msgid "Calculates estimated dates for birth and death."
-msgstr "Beregner anslåede datoer for fødsel og død."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
@@ -151,6 +142,11 @@ msgstr ""
 "\n"
 "Du kan blive nødt til at udføre værktøjet flere gange (uden at fjerne "
 "tidligere hændelser) for at tilføje alle mulige hændelser."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculate Estimated Dates"
+msgstr "Beregn anslåede datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
@@ -294,3 +290,7 @@ msgstr "Tilføjet %d hændelser."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Anslået dato"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Beregner anslåede datoer for fødsel og død."

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -24,21 +24,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
-#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
-#: D3Charts/DescendantIndentedTree.py:1831
+#: D3Charts/AncestralCollapsibleTree.py:872
+#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
 msgstr "De bestemmingsbestandsnaam voor html-inhoud."
-
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
-msgid "Timeline Pedigree Report"
-msgstr "Stamboomverslag met tijdlijn"
-
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
-msgid ""
-"Creates an HTML webpage that uses JavaScript to show a pedigree block "
-"diagram arranged vertically by birth date"
-msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
 msgid "Failed writing "
@@ -165,3 +155,13 @@ msgstr ""
 #: TimePedigreeHTML/TimePedigreeHtml.py:945
 msgid "Number of pixel between left border and scale"
 msgstr "Aantal pixels tussen linkerrand en schaal"
+
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
+msgid "Timeline Pedigree Report"
+msgstr "Stamboomverslag met tijdlijn"
+
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""

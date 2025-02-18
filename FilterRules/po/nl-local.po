@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -24,44 +24,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
-#: FilterRules/activepersonrule.gpr.py:27
-#: FilterRules/activepersonrule.gpr.py:28
-msgid "The active Person"
-msgstr "De actieve persoon"
+#: FilterRules/isrelatedwithfiltermatch.py:53
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
+msgid "People related to <filter>"
+msgstr "Personen die gerelateerd zijn aan <filter>"
 
-#: FilterRules/activepersonrule.py:45
-msgid "Active person"
-msgstr "Actief persoon"
-
-#: FilterRules/activepersonrule.py:47
-msgid "Matches the active person"
-msgstr "Komt overeen met de actieve persoon"
-
-#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
-#: FilterRules/ageatdeath.py:74
-msgid "Filter people by their age at death"
-msgstr "Filter personen op hun leeftijd bij overlijden"
-
-#: FilterRules/ageatdeath.gpr.py:26
-msgid "Filter rule that matches people by their age at death"
+#: FilterRules/isrelatedwithfiltermatch.py:55
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
+msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
-"Filterregel die overeenkomt met mensen op basis van hun leeftijd bij "
-"overlijden"
-
-#: FilterRules/ageatdeath.py:47
-msgid "Age in years at person's death."
-msgstr "Leeftijd in jaren bij overlijden van een persoon."
-
-#: FilterRules/ageatdeath.py:71
-msgid "Age:"
-msgstr "Leeftijd:"
-
-#: FilterRules/associationsofpersonmatch.gpr.py:25
-#: FilterRules/associationsofpersonmatch.gpr.py:26
-#: FilterRules/associationsofpersonmatch.py:46
-#: FilterRules/associationsofpersonmatch.py:47
-msgid "Match associations of <person filter>"
-msgstr "Match associaties van <person filter>"
+"Komt overeen met personen die gerelateerd zijn aan iemand die overeenkomt "
+"met een persoonsfilter"
 
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
@@ -75,46 +48,29 @@ msgstr ""
 "Filterregel die overeenkomende familieleden vindt op basis van mate van hun "
 "onderlinge afstand"
 
-#: FilterRules/degreesofseparation.py:47
-msgid "Number of degrees of separation from person."
-msgstr "Aantal graden van afstand tot persoon."
+#: FilterRules/hassourcefilter.gpr.py:28
+msgid "Source matching parameters"
+msgstr "Met bron overeenkomende parameters"
 
-#: FilterRules/degreesofseparation.py:59
-msgid "Degrees:"
-msgstr "Graden:"
-
-#: FilterRules/familieswitheventfiltermatch.gpr.py:25
-#: FilterRules/familieswitheventfiltermatch.py:45
-msgid "Families matching <event filter>"
-msgstr "Gezinnen die overeenkomen met <gebeurtenisfilter>"
-
-#: FilterRules/familieswitheventfiltermatch.gpr.py:26
-msgid "Matches families that are matched by an event filter"
-msgstr "Komt overeen met gezinnen die gevonden zijn door een gebeurtenisfilter"
-
-#: FilterRules/familieswitheventfiltermatch.py:47
-msgid "Matches families matched by an event filter"
-msgstr "Komt overeen met gezinnen gevonden door een gebeurtenisfilter"
-
-#: FilterRules/hasrolerule.gpr.py:27
-msgid "People with events with a selected role"
-msgstr "Personen met gebeurtenissen met een geselecteerde rol"
-
-#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
-msgid "Matches people with an event with a selected role"
+#: FilterRules/hassourcefilter.gpr.py:29
+msgid "Matches Sources with values containing the chosen parameters"
 msgstr ""
-"Komt overeen met personen die een gebeurtenis met een geselecteerde rol "
-"hebben"
+"Komt overeen met bronnen met waarden die de gekozen parameters bevatten"
 
-#: FilterRules/hasrolerule.gpr.py:43
-msgid "Families with events with a selected role"
-msgstr "Gezinnen met gebeurtenissen met een geselecteerde rol"
+#: FilterRules/multipleparents.py:42
+msgid "People with multiple parent records"
+msgstr "Gegevens van mensen met meerdere ouders"
 
-#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:93
-msgid "Matches families with an event with a selected role"
-msgstr ""
-"Komt overeen met gezinnen die een gebeurtenis met een geselecteerde rol "
-"hebben"
+#: FilterRules/multipleparents.py:43
+msgid "Matches people who have more than one set of parents"
+msgstr "Matcht met mensen die meer dan één set ouders hebben"
+
+#: FilterRules/associationsofpersonmatch.py:46
+#: FilterRules/associationsofpersonmatch.py:47
+#: FilterRules/associationsofpersonmatch.gpr.py:25
+#: FilterRules/associationsofpersonmatch.gpr.py:26
+msgid "Match associations of <person filter>"
+msgstr "Match associaties van <person filter>"
 
 #: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
@@ -133,27 +89,59 @@ msgstr "Omgekeerd"
 msgid "People with events with the <role>"
 msgstr "Personen met gebeurtenissen met de <rol>"
 
+#: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
+msgid "Matches people with an event with a selected role"
+msgstr ""
+"Komt overeen met personen die een gebeurtenis met een geselecteerde rol "
+"hebben"
+
 #: FilterRules/hasrolerule.py:92
 msgid "Families with events with the <role>"
 msgstr "Gezinnen met gebeurtenissen met de <rol>"
 
-#: FilterRules/hassourcefilter.gpr.py:28
-msgid "Source matching parameters"
-msgstr "Met bron overeenkomende parameters"
-
-#: FilterRules/hassourcefilter.gpr.py:29
-msgid "Matches Sources with values containing the chosen parameters"
+#: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
+msgid "Matches families with an event with a selected role"
 msgstr ""
-"Komt overeen met bronnen met waarden die de gekozen parameters bevatten"
+"Komt overeen met gezinnen die een gebeurtenis met een geselecteerde rol "
+"hebben"
 
-#: FilterRules/hassourcefilter.py:58
-msgid "Matches sources with a particular value"
-msgstr "Komt overeen met bronnen met een bepaalde waarde"
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
+#: FilterRules/isfamilyfiltermatchevent.py:63
+#: FilterRules/isfamilyfiltermatchevent.py:64
+msgid "Events of families matching a <family filter>"
+msgstr "Gebeurtenissen van gezinnen die overeenkomen met een <familiefilter>"
 
-#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
-#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
-msgid "People who are part of families matching <filter>"
-msgstr "Personen die deel uitmaken van gezinnen die overeenkomen met <filter>"
+#: FilterRules/familieswitheventfiltermatch.gpr.py:25
+#: FilterRules/familieswitheventfiltermatch.py:45
+msgid "Families matching <event filter>"
+msgstr "Gezinnen die overeenkomen met <gebeurtenisfilter>"
+
+#: FilterRules/familieswitheventfiltermatch.gpr.py:26
+msgid "Matches families that are matched by an event filter"
+msgstr "Komt overeen met gezinnen die gevonden zijn door een gebeurtenisfilter"
+
+#: FilterRules/familieswitheventfiltermatch.py:47
+msgid "Matches families matched by an event filter"
+msgstr "Komt overeen met gezinnen gevonden door een gebeurtenisfilter"
+
+#: FilterRules/degreesofseparation.py:47
+msgid "Number of degrees of separation from person."
+msgstr "Aantal graden van afstand tot persoon."
+
+#: FilterRules/degreesofseparation.py:59
+msgid "Degrees:"
+msgstr "Graden:"
+
+#: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
+msgid "People with <count> of <event>"
+msgstr "Mensen met <count> van <event>"
+
+#: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
+msgid "Matches persons which have events of given type and number."
+msgstr ""
+"Komt overeen met personen met gebeurtenissen van het opgegeven type en "
+"aantal."
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
@@ -175,43 +163,55 @@ msgstr "Voeg de ouders toe in de gefilterde gezinnen."
 msgid "Family Filter name:"
 msgstr "Gezinsfilter naam:"
 
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
-#: FilterRules/isfamilyfiltermatchevent.py:63
-#: FilterRules/isfamilyfiltermatchevent.py:64
-msgid "Events of families matching a <family filter>"
-msgstr "Gebeurtenissen van gezinnen die overeenkomen met een <familiefilter>"
+#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
+#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
+msgid "People who are part of families matching <filter>"
+msgstr "Personen die deel uitmaken van gezinnen die overeenkomen met <filter>"
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
-#: FilterRules/isrelatedwithfiltermatch.py:53
-msgid "People related to <filter>"
-msgstr "Personen die gerelateerd zijn aan <filter>"
+#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
+#: FilterRules/ageatdeath.py:74
+msgid "Filter people by their age at death"
+msgstr "Filter personen op hun leeftijd bij overlijden"
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
-#: FilterRules/isrelatedwithfiltermatch.py:55
-msgid "Matches people who are related to anybody matched by a person filter"
+#: FilterRules/ageatdeath.gpr.py:26
+msgid "Filter rule that matches people by their age at death"
 msgstr ""
-"Komt overeen met personen die gerelateerd zijn aan iemand die overeenkomt "
-"met een persoonsfilter"
+"Filterregel die overeenkomt met mensen op basis van hun leeftijd bij "
+"overlijden"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
 msgstr "Filter op meerdere ouders"
 
-#: FilterRules/multipleparents.py:42
-msgid "People with multiple parent records"
-msgstr "Gegevens van mensen met meerdere ouders"
+#: FilterRules/hasrolerule.gpr.py:27
+msgid "People with events with a selected role"
+msgstr "Personen met gebeurtenissen met een geselecteerde rol"
 
-#: FilterRules/multipleparents.py:43
-msgid "Matches people who have more than one set of parents"
-msgstr "Matcht met mensen die meer dan één set ouders hebben"
+#: FilterRules/hasrolerule.gpr.py:43
+msgid "Families with events with a selected role"
+msgstr "Gezinnen met gebeurtenissen met een geselecteerde rol"
 
-#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
-msgid "People with <count> of <event>"
-msgstr "Mensen met <count> van <event>"
+#: FilterRules/activepersonrule.gpr.py:27
+#: FilterRules/activepersonrule.gpr.py:28
+msgid "The active Person"
+msgstr "De actieve persoon"
 
-#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
-msgid "Matches persons which have events of given type and number."
-msgstr ""
-"Komt overeen met personen met gebeurtenissen van het opgegeven type en "
-"aantal."
+#: FilterRules/hassourcefilter.py:58
+msgid "Matches sources with a particular value"
+msgstr "Komt overeen met bronnen met een bepaalde waarde"
+
+#: FilterRules/activepersonrule.py:45
+msgid "Active person"
+msgstr "Actief persoon"
+
+#: FilterRules/activepersonrule.py:47
+msgid "Matches the active person"
+msgstr "Komt overeen met de actieve persoon"
+
+#: FilterRules/ageatdeath.py:47
+msgid "Age in years at person's death."
+msgstr "Leeftijd in jaren bij overlijden van een persoon."
+
+#: FilterRules/ageatdeath.py:71
+msgid "Age:"
+msgstr "Leeftijd:"

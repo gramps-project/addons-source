@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2009-10-05 21:15+0100\n"
 "Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
 "Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
@@ -24,15 +24,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-msgid "Calculate Estimated Dates"
-msgstr "Obliczanie dat szacunkowych"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
-msgid "Calculates estimated dates for birth and death."
-msgstr "Wylicza szacunkowe daty urodzenia i zgonu."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
@@ -147,6 +138,11 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculate Estimated Dates"
+msgstr "Obliczanie dat szacunkowych"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 #, fuzzy
@@ -303,3 +299,7 @@ msgstr "Dodaj nowe zdarzenie"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Szacowana data"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Wylicza szacunkowe daty urodzenia i zgonu."

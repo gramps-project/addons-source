@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -18,30 +19,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
-#: NLWebConnectPack/NLWebPack.gpr.py:13
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
-msgstr "Colecção de páginas web para UK (requer libwebconnect)"
-
 #: NLWebConnectPack/NLWebPack.py:34
-#, fuzzy
-#| msgid "Google Archives"
 msgid "Open Archives"
-msgstr "Google Archives"
+msgstr "Arquivos abertos"
 
 #: NLWebConnectPack/NLWebPack.py:35
-#, fuzzy
-#| msgid "Genealogical bank"
 msgid "Genealogy Online"
-msgstr "Banco genealógico"
+msgstr "Genealogia em linha"
 
 #: NLWebConnectPack/NLWebPack.py:36
-#, fuzzy
-#| msgid "National Archives"
 msgid "National Archive"
 msgstr "Arquivos nacionais"
 
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
 msgstr ""
+
+#: NLWebConnectPack/NLWebPack.gpr.py:13
+msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
+msgstr "Colecção de páginas web para a Holanda (requer libwebconnect)"

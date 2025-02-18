@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: AncestorFill/AncestorFill.py:361 PersonEverything/PersonEverything.py:1028
 msgid "The style used for the title of the page."
@@ -44,14 +44,6 @@ msgstr "Beziehung zum Vater"
 #: DynamicWeb/dynamicweb.py:3061 PersonEverything/PersonEverything.py:225
 msgid "Relationship to Mother"
 msgstr "Beziehung zur Mutter"
-
-#: PersonEverything/PersonEverything.gpr.py:32
-msgid "PersonEverything Report"
-msgstr "PersonAlles Bericht"
-
-#: PersonEverything/PersonEverything.gpr.py:33
-msgid "Produces a report containing everything about the active person"
-msgstr "Erstellt einen Bericht der alles über die aktive Person enthält"
 
 #: PersonEverything/PersonEverything.py:133
 #, python-format
@@ -96,7 +88,7 @@ msgstr "HLT-Ritus Familie"
 
 #: PersonEverything/PersonEverything.py:418
 msgid "LDS "
-msgstr "HLT"
+msgstr "HLT "
 
 #: PersonEverything/PersonEverything.py:434
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
@@ -181,3 +173,11 @@ msgstr "Markierungsfarbe und Priorität"
 #: PersonEverything/PersonEverything.py:960
 msgid "No source information found"
 msgstr "Keine Quelleninformation gefunden"
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "PersonEverything Report"
+msgstr "PersonAlles Bericht"
+
+#: PersonEverything/PersonEverything.gpr.py:33
+msgid "Produces a report containing everything about the active person"
+msgstr "Erstellt einen Bericht der alles über die aktive Person enthält"

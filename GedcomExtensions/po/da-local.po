@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -24,22 +24,6 @@ msgstr ""
 #: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr "Medtag medier"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:32
-msgid "Export GEDCOM Extensions (GED2)"
-msgstr "Eksporter GEDCOM udvidelser (GED2)"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:33
-msgid "GEDCOM Extensions (GED2)"
-msgstr "GEDCOM udvidelser (GED2)"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:34
-msgid "Extensions to the common GEDCOM format."
-msgstr "Udvidelser til det almidenlige GEDCOM format."
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:42
-msgid "GEDCOM Extensions options"
-msgstr "GEDCOM Udvidelsers tilvalg"
 
 #: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
@@ -69,3 +53,19 @@ msgstr "Type af efternavn:"
 #: GedcomExtensions/GedcomExtensions.py:261
 msgid "Export failed"
 msgstr "Eksporten mislykkedes"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:32
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "Eksporter GEDCOM udvidelser (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:33
+msgid "GEDCOM Extensions (GED2)"
+msgstr "GEDCOM udvidelser (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:34
+msgid "Extensions to the common GEDCOM format."
+msgstr "Udvidelser til det almidenlige GEDCOM format."
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:42
+msgid "GEDCOM Extensions options"
+msgstr "GEDCOM Udvidelsers tilvalg"

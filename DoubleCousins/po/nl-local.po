@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -23,14 +23,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: DoubleCousins/double_cousins.gpr.py:25
-msgid "Double Cousins"
-msgstr "Dubbele neven en nichten"
-
-#: DoubleCousins/double_cousins.gpr.py:26
-msgid "A text report listing double cousins."
-msgstr "Een tekstrapport met dubbele neven en nichten."
 
 #: DoubleCousins/double_cousins.py:112
 msgid "Double Cousins Report"
@@ -60,3 +52,11 @@ msgstr "Er zijn geen dubbele neven en nichten gevonden in uw database."
 #: DoubleCousins/double_cousins.py:170
 msgid "Show info text"
 msgstr "Informatietekst tonen"
+
+#: DoubleCousins/double_cousins.gpr.py:25
+msgid "Double Cousins"
+msgstr "Dubbele neven en nichten"
+
+#: DoubleCousins/double_cousins.gpr.py:26
+msgid "A text report listing double cousins."
+msgstr "Een tekstrapport met dubbele neven en nichten."

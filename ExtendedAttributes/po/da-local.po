@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,6 +19,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
+
+#: ExtendedAttributes/ExtendedAttributes.py:54
+msgid ""
+"Double-click on a row to edit the object containing the selected attribute."
+msgstr ""
+"Dobbeltklik på en række for at redigere objektet der indeholder det valgte "
+"attribut."
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Extended Person Attributes"
@@ -32,10 +39,3 @@ msgstr "Udvidet attributter"
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:48
 msgid "Extended Family Attributes"
 msgstr "Udvidet familieattributter"
-
-#: ExtendedAttributes/ExtendedAttributes.py:54
-msgid ""
-"Double-click on a row to edit the object containing the selected attribute."
-msgstr ""
-"Dobbeltklik på en række for at redigere objektet der indeholder det valgte "
-"attribut."

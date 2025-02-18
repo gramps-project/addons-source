@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -23,18 +23,6 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
 msgstr "Tema"
-
-#: Themes/themes.gpr.py:29
-msgid "Theme preferences"
-msgstr "Temaindstillinger"
-
-#: Themes/themes.gpr.py:31
-msgid ""
-"An addition to Preferences for simple Theme and Font adjustment.  Especially "
-"useful for Windows users."
-msgstr ""
-"En tilføjelse til indstillinger for simpel tema og skrifttypejustering. Især "
-"nyttigt til Windows-brugere."
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
@@ -51,3 +39,15 @@ msgstr "Skrifttype"
 #: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Klassisk rullepanel (kræver genstart)"
+
+#: Themes/themes.gpr.py:29
+msgid "Theme preferences"
+msgstr "Temaindstillinger"
+
+#: Themes/themes.gpr.py:31
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"En tilføjelse til indstillinger for simpel tema og skrifttypejustering. Især "
+"nyttigt til Windows-brugere."

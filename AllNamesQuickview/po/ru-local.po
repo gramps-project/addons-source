@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -35,13 +35,9 @@ msgstr ""
 msgid "Primary Name"
 msgstr "Основное название"
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+#: AllNamesQuickview/AllNames.py:51 AllNamesQuickview/AllNames.gpr.py:4
 msgid "All Names of All People"
 msgstr "Все имена всех людей"
-
-#: AllNamesQuickview/AllNames.gpr.py:5
-msgid "Display all names of all people"
-msgstr "Показывает все имена всех людей"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -51,3 +47,7 @@ msgstr "Тип имени"
 #, python-format
 msgid "Total names %d"
 msgstr "Всего имён %d"
+
+#: AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr "Показывает все имена всех людей"

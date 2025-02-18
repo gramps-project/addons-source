@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -24,10 +24,6 @@ msgstr ""
 #: Heatmap/heatmap.py:226
 msgid "INFO"
 msgstr "INFO"
-
-#: Heatmap/heatmap.gpr.py:26
-msgid "Create a heatmap web report."
-msgstr "Dan et heatmap web rapport."
 
 #: Heatmap/heatmap.py:85
 msgid "Map tiles"
@@ -113,6 +109,10 @@ msgstr "Filsti findes ikke."
 #: Heatmap/heatmap.py:210
 msgid "Invalid filename."
 msgstr "Ugyldigt filnavn."
+
+#: Heatmap/heatmap.gpr.py:26
+msgid "Create a heatmap web report."
+msgstr "Dan et heatmap web rapport."
 
 #: Heatmap/utils.py:55
 msgid "Stamen Terrain"

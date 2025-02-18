@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -52,15 +52,10 @@ msgid "Produces a textual repositories report"
 msgstr "Lager en tekstbasert rapport over oppbevaringssteder"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:45
-#: RepositoriesReport/RepositoriesReport.py:80
 #: RepositoriesReport/RepositoriesReportAlt.py:139
+#: RepositoriesReport/RepositoriesReport.py:80
 msgid "Repositories Report"
 msgstr "Oppbevaringsstedsrapport"
-
-#: RepositoriesReport/RepositoriesReport.py:189
-#: RepositoriesReport/RepositoriesReportAlt.py:518
-msgid "The style used for repository title."
-msgstr "Stil som brukes på tittel på oppbevaringssted."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:273
 msgid "Publication information:"
@@ -170,6 +165,11 @@ msgstr "Visningstype"
 #| msgid "Whether to include keys and values."
 msgid "Whether to include key records with empty values."
 msgstr "Om nøkler og verdier skal tas med."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:518
+#: RepositoriesReport/RepositoriesReport.py:189
+msgid "The style used for repository title."
+msgstr "Stil som brukes på tittel på oppbevaringssted."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."

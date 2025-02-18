@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -27,10 +27,6 @@ msgstr ""
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
 msgstr "Vandaag"
-
-#: TimelineQuickview/TimelineQuickview.gpr.py:11
-msgid "Display a person's events on a timeline"
-msgstr "Geef de gebeurtenissen van een persoon weer op een tijdlijn"
 
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
@@ -82,3 +78,7 @@ msgstr "Tijdlijn voor %s"
 #: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Betrokken personen"
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:11
+msgid "Display a person's events on a timeline"
+msgstr "Geef de gebeurtenissen van een persoon weer op een tijdlijn"

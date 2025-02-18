@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: SVWebconnectPack/SVWebPack.py:33 USWebConnectPack/USWebPack.py:33
 msgid "Find A Grave"
@@ -50,6 +50,10 @@ msgstr "Hathi Trust Digitale Bibliothek"
 msgid "Open Library"
 msgstr "Die freie Bibliothek"
 
+#: USWebConnectPack/USWebPack.py:35
+msgid "US Google"
+msgstr "US Google"
+
 #: USWebConnectPack/USWebPack.gpr.py:11
 msgid "US Web Connect Pack"
 msgstr "US Web Verknüpfungspaket"
@@ -57,7 +61,3 @@ msgstr "US Web Verknüpfungspaket"
 #: USWebConnectPack/USWebPack.gpr.py:12
 msgid "Collection of Web sites for the US (requires libwebconnect)"
 msgstr "Sammlung von Webseiten für US (benötigt libwebconnect)"
-
-#: USWebConnectPack/USWebPack.py:35
-msgid "US Google"
-msgstr "US Google"

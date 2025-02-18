@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -24,13 +24,9 @@ msgstr ""
 msgid "Primary Name"
 msgstr "Primære navn"
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+#: AllNamesQuickview/AllNames.py:51 AllNamesQuickview/AllNames.gpr.py:4
 msgid "All Names of All People"
 msgstr "Alle navne på alle personer"
-
-#: AllNamesQuickview/AllNames.gpr.py:5
-msgid "Display all names of all people"
-msgstr "Vis alle navne for alle personer"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -40,3 +36,7 @@ msgstr "Navn type"
 #, python-format
 msgid "Total names %d"
 msgstr "Antal navne i alt %d"
+
+#: AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr "Vis alle navne for alle personer"

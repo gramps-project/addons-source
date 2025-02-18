@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -27,6 +27,15 @@ msgstr ""
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
 msgstr "Voer Python-expressies in"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-format
+msgid "%d rows processed in %s seconds.\n"
+msgstr "%d rijen verwerkt in %s seconden.\n"
+
+#: Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "Vandaag"
 
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
@@ -51,12 +60,3 @@ msgstr "Snelle weergave voor SQL-achtige query's in uitvoering"
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
 msgstr "Voer SQL-zoekopdracht in"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d rijen verwerkt in %s seconden.\n"
-
-#: Query/QueryQuickview.py:426
-msgid "Today"
-msgstr "Vandaag"

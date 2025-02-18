@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,15 +25,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: Differences/differences.gpr.py:4 Differences/differences.py:95
+#: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
 msgstr "Rapport för databasskillnader"
-
-#: Differences/differences.gpr.py:5
-msgid "Compares an external database with the current one."
-msgstr "Jämför en extern databas med den aktuella."
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
@@ -100,3 +96,7 @@ msgstr "Visa poster som lagts till i fil"
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr "Lägg till poster i filen men inte i databasen"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Jämför en extern databas med den aktuella."

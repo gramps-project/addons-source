@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: D3Charts/DescendantIndentedTree.py:1848
 #: DescendantBooks/DescendantBookReport.py:552
@@ -36,42 +36,6 @@ msgstr "Huruvida ta med dubblerade familjeträd i rapporten."
 #: DescendantBooks/DetailedDescendantBookReport.py:1540
 msgid "The style used for the title of the page."
 msgstr "Mall för rapporttitel."
-
-#: DescendantBooks/CollectAscendants.py:178
-#, python-format
-msgid "Deep pruning ascendants from %s people..."
-msgstr "Djupbeskär förfäder från %s personer..."
-
-#: DescendantBooks/CollectAscendants.py:182
-#, python-format
-msgid "Pruning ascendants from %s people..."
-msgstr "Beskär förfäder från %s personer..."
-
-#: DescendantBooks/CollectAscendants.py:320
-#: DescendantBooks/CollectAscendants.py:413
-#, python-format
-msgid "Getting ascendants from %s people..."
-msgstr "Tar förfäder från %s personer..."
-
-#: DescendantBooks/CollectAscendants.py:331
-#, python-format
-msgid "Verifying descendants from %s people..."
-msgstr "Verifiera ättlingar från %s personer..."
-
-#: DescendantBooks/CollectAscendants.py:348
-#, python-format
-msgid "Getting missing descendants from %s people..."
-msgstr "Tar saknade ättlingar från %s personer..."
-
-#: DescendantBooks/CollectAscendants.py:367
-#, python-format
-msgid "Verifying descendants from %s people after pruning..."
-msgstr "Verifierar ättlingar från %s personer efter beskärning..."
-
-#: DescendantBooks/CollectAscendants.py:383
-#, python-format
-msgid "Getting missing descendants from %s people ..."
-msgstr "Tar saknade ättlingar från %s personer..."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
@@ -116,27 +80,6 @@ msgstr "Mall som används för innehållsförteckningsrubriken."
 #: DescendantBooks/DescendantBookReport.py:595
 msgid "The style used for the table of contents detail."
 msgstr "Mall som används för innehållsförtecknings-innehållet."
-
-#: DescendantBooks/DescendantBooks.gpr.py:22
-msgid "Descendant Book"
-msgstr "Bok för ättlingar"
-
-#: DescendantBooks/DescendantBooks.gpr.py:23
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Producerar en eller flera rapporter för ättlingar baserade på en angiven "
-"fråga."
-
-#: DescendantBooks/DescendantBooks.gpr.py:41
-msgid "Detailed Descendant Book"
-msgstr "Detaljerad bok för ättlingar"
-
-#: DescendantBooks/DescendantBooks.gpr.py:43
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Producerar en eller flera detaljerade rapporter för ättlingar baserade på en "
-"angiven fråga."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
@@ -343,3 +286,60 @@ msgstr "Mall som används för rubriken i platsindexet."
 #: DescendantBooks/DetailedDescendantBookReport.py:1699
 msgid "The style used for the references in the Index of Places."
 msgstr "Mall som används för referenserna i platsindexet."
+
+#: DescendantBooks/DescendantBooks.gpr.py:22
+msgid "Descendant Book"
+msgstr "Bok för ättlingar"
+
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Producerar en eller flera rapporter för ättlingar baserade på en angiven "
+"fråga."
+
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr "Detaljerad bok för ättlingar"
+
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Producerar en eller flera detaljerade rapporter för ättlingar baserade på en "
+"angiven fråga."
+
+#: DescendantBooks/CollectAscendants.py:178
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Djupbeskär förfäder från %s personer..."
+
+#: DescendantBooks/CollectAscendants.py:182
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Beskär förfäder från %s personer..."
+
+#: DescendantBooks/CollectAscendants.py:320
+#: DescendantBooks/CollectAscendants.py:413
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Tar förfäder från %s personer..."
+
+#: DescendantBooks/CollectAscendants.py:331
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Verifiera ättlingar från %s personer..."
+
+#: DescendantBooks/CollectAscendants.py:348
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Tar saknade ättlingar från %s personer..."
+
+#: DescendantBooks/CollectAscendants.py:367
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Verifierar ättlingar från %s personer efter beskärning..."
+
+#: DescendantBooks/CollectAscendants.py:383
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Tar saknade ättlingar från %s personer..."

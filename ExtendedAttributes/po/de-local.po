@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
+
+#: ExtendedAttributes/ExtendedAttributes.py:54
+msgid ""
+"Double-click on a row to edit the object containing the selected attribute."
+msgstr ""
+"Doppelklick auf eine Zeile um das Objekt, das das gewählte Attribut enthält, "
+"zu bearbeiten."
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Extended Person Attributes"
@@ -45,10 +52,3 @@ msgstr "Erweiterte Attribute"
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:48
 msgid "Extended Family Attributes"
 msgstr "Erweiterte Familienattribute"
-
-#: ExtendedAttributes/ExtendedAttributes.py:54
-msgid ""
-"Double-click on a row to edit the object containing the selected attribute."
-msgstr ""
-"Doppelklick auf eine Zeile um das Objekt, das das gewählte Attribut enthält, "
-"zu bearbeiten."

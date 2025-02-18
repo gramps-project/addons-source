@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -27,42 +28,6 @@ msgstr "Se deve mostrar árvores de famílias duplicadas no relatório."
 #: DescendantBooks/DetailedDescendantBookReport.py:1540
 msgid "The style used for the title of the page."
 msgstr "O estilo usado para o título da página."
-
-#: DescendantBooks/CollectAscendants.py:178
-#, python-format
-msgid "Deep pruning ascendants from %s people..."
-msgstr "Poda profunda de ascendentes para %s indivíduos..."
-
-#: DescendantBooks/CollectAscendants.py:182
-#, python-format
-msgid "Pruning ascendants from %s people..."
-msgstr "A podar ascendentes para %s indivíduos..."
-
-#: DescendantBooks/CollectAscendants.py:320
-#: DescendantBooks/CollectAscendants.py:413
-#, python-format
-msgid "Getting ascendants from %s people..."
-msgstr "A obter ascendentes de %s indivíduos..."
-
-#: DescendantBooks/CollectAscendants.py:331
-#, python-format
-msgid "Verifying descendants from %s people..."
-msgstr "A verificar descendentes de %s indivíduos..."
-
-#: DescendantBooks/CollectAscendants.py:348
-#, python-format
-msgid "Getting missing descendants from %s people..."
-msgstr "A obter descendentes em falta de %s indivíduos..."
-
-#: DescendantBooks/CollectAscendants.py:367
-#, python-format
-msgid "Verifying descendants from %s people after pruning..."
-msgstr "A verificar descendentes de %s indivíduos após podar..."
-
-#: DescendantBooks/CollectAscendants.py:383
-#, python-format
-msgid "Getting missing descendants from %s people ..."
-msgstr "A obter descendentes em falta de %s indivíduos..."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
@@ -110,27 +75,6 @@ msgstr "O estilo usado para o cabeçalho do índice."
 msgid "The style used for the table of contents detail."
 msgstr "O estilo usado para o detalhe do índice."
 
-#: DescendantBooks/DescendantBooks.gpr.py:22
-msgid "Descendant Book"
-msgstr "Livro Descendentes"
-
-#: DescendantBooks/DescendantBooks.gpr.py:23
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Produz um ou mais relatórios de descendência baseados numa consulta "
-"fornecida."
-
-#: DescendantBooks/DescendantBooks.gpr.py:41
-msgid "Detailed Descendant Book"
-msgstr "Livro Descendência detalhada"
-
-#: DescendantBooks/DescendantBooks.gpr.py:43
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Produz um ou mais relatórios de descendência detalhada baseados numa "
-"consulta fornecida."
-
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
 msgstr "Relatório Descendência detalhada"
@@ -146,28 +90,20 @@ msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr "%(report_count)s. Relatório Descendentes de %(person_name)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:519
-#, fuzzy
-#| msgid "Include index of Places"
 msgid "Index of Places"
-msgstr "Incluir índice de locais"
+msgstr "Índice de locais"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:542
-#, fuzzy
-#| msgid "Include index of Dates"
 msgid "Index of Dates"
-msgstr "Incluir índice de datas"
+msgstr "Índice de datas"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:565
-#, fuzzy
-#| msgid "Include Index of Names"
 msgid "Index of Names"
-msgstr "Incluir índice de nomes"
+msgstr "Índice de nomes"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:571
-#, fuzzy
-#| msgid "See Report : %s, Generation : %s, Person : %s"
 msgid "Report, Generation, Person, Name"
-msgstr "Veja o relatório: %s, geração %s, indivíduo %s"
+msgstr "Relatório, Geração, Indivíduo, Nome"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
 #, python-format
@@ -181,16 +117,14 @@ msgid "Report appearances for %s"
 msgstr "Relatar aparições de %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:771
-#, fuzzy, python-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-format
 msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
-msgstr "Veja o relatório: %s, geração %s, indivíduo %s"
+msgstr "Cônjuge de: relatório %s, geração %s, indivíduo %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:784
-#, fuzzy, python-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-format
 msgid "Report: %s, Generation: %s, Person: %s"
-msgstr "Veja o relatório: %s, geração %s, indivíduo %s"
+msgstr "Relatório: %s, geração %s, indivíduo %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:809
 #, python-format
@@ -346,3 +280,60 @@ msgstr "O estilo usado para o cabeçalho no índice de locais."
 #: DescendantBooks/DetailedDescendantBookReport.py:1699
 msgid "The style used for the references in the Index of Places."
 msgstr "O estilo usado para as referências no índice de locais."
+
+#: DescendantBooks/DescendantBooks.gpr.py:22
+msgid "Descendant Book"
+msgstr "Livro Descendentes"
+
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Produz um ou mais relatórios de descendência baseados numa consulta "
+"fornecida."
+
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr "Livro Descendência detalhada"
+
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Produz um ou mais relatórios de descendência detalhada baseados numa "
+"consulta fornecida."
+
+#: DescendantBooks/CollectAscendants.py:178
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Poda profunda de ascendentes para %s indivíduos..."
+
+#: DescendantBooks/CollectAscendants.py:182
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "A podar ascendentes para %s indivíduos..."
+
+#: DescendantBooks/CollectAscendants.py:320
+#: DescendantBooks/CollectAscendants.py:413
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "A obter ascendentes de %s indivíduos..."
+
+#: DescendantBooks/CollectAscendants.py:331
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "A verificar descendentes de %s indivíduos..."
+
+#: DescendantBooks/CollectAscendants.py:348
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "A obter descendentes em falta de %s indivíduos..."
+
+#: DescendantBooks/CollectAscendants.py:367
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "A verificar descendentes de %s indivíduos após podar..."
+
+#: DescendantBooks/CollectAscendants.py:383
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "A obter descendentes em falta de %s indivíduos..."

@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: CombinedView/basepage.py:493
 #, python-format
@@ -42,42 +42,6 @@ msgstr "%(abbrev)s %(date)s in %(place)s"
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
-
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
-msgid "Combined"
-msgstr "Kombiniert"
-
-#: CombinedView/combinedview.gpr.py:25
-msgid "A view showing relationships and events for a person"
-msgstr "Eine Ansicht, die Beziehungen und Ereignisse für eine Person zeigt"
-
-#: CombinedView/combinedview.py:528
-#, fuzzy
-#| msgid "Add death event"
-msgid "Edit the active event"
-msgstr "Todesereignis hinzufügen"
-
-#: CombinedView/combinedview.py:630
-msgid "Show Tags"
-msgstr "Markierungen zeigen"
-
-#: CombinedView/combinedview.py:656
-msgid "Vertical Details"
-msgstr "Vertikale Details"
-
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
-msgid "Order"
-msgstr "Reihenfolge"
-
-#: CombinedView/navigationview.py:346
-msgid ""
-"You need to set a 'default person' to go to. Select the People View, select "
-"the person you want as 'Home Person', then confirm your choice via the menu "
-"Edit -> Set Home Person."
-msgstr ""
-"Du musst eine 'Hauptperson' setzen, um dorthin zu springen. Gehe zur "
-"Personenansicht, wähle die Person, die du als 'Hauptperson' setzen willst "
-"und bestätige deine Wahl über Menü Bearbeiten -> Hauptperson setzen."
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -105,3 +69,39 @@ msgstr "Klicke, um diesen Link zu besuchen"
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "
+
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
+msgid "Combined"
+msgstr "Kombiniert"
+
+#: CombinedView/combinedview.gpr.py:25
+msgid "A view showing relationships and events for a person"
+msgstr "Eine Ansicht, die Beziehungen und Ereignisse für eine Person zeigt"
+
+#: CombinedView/navigationview.py:346
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Du musst eine 'Hauptperson' setzen, um dorthin zu springen. Gehe zur "
+"Personenansicht, wähle die Person, die du als 'Hauptperson' setzen willst "
+"und bestätige deine Wahl über Menü Bearbeiten -> Hauptperson setzen."
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr "Reihenfolge"
+
+#: CombinedView/combinedview.py:528
+#, fuzzy
+#| msgid "Add death event"
+msgid "Edit the active event"
+msgstr "Todesereignis hinzufügen"
+
+#: CombinedView/combinedview.py:630
+msgid "Show Tags"
+msgstr "Markierungen zeigen"
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr "Vertikale Details"

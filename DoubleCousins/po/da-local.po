@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,14 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: DoubleCousins/double_cousins.gpr.py:25
-msgid "Double Cousins"
-msgstr "Dobbelt kusiner/fætre"
-
-#: DoubleCousins/double_cousins.gpr.py:26
-msgid "A text report listing double cousins."
-msgstr "En tekstrapport, der visér dobbelt kusiner/fætre."
 
 #: DoubleCousins/double_cousins.py:112
 msgid "Double Cousins Report"
@@ -56,3 +48,11 @@ msgstr "Ingen dobbelt kusiner/fætre blev fundet i din database."
 #: DoubleCousins/double_cousins.py:170
 msgid "Show info text"
 msgstr "Vis informatiostekst"
+
+#: DoubleCousins/double_cousins.gpr.py:25
+msgid "Double Cousins"
+msgstr "Dobbelt kusiner/fætre"
+
+#: DoubleCousins/double_cousins.gpr.py:26
+msgid "A text report listing double cousins."
+msgstr "En tekstrapport, der visér dobbelt kusiner/fætre."

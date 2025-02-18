@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -22,26 +22,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-msgid "Calculate Estimated Dates"
-msgstr "Vypočítať odhadované dátumy"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
-msgid "Calculates estimated dates for birth and death."
-msgstr "Vypočíta približné dátumy narodenia a úmrtia."
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
-msgstr "Zvoliť filter pre zúženie výberu osôb"
+msgstr "Vyberte filter na obmedzenie osôb"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
-msgstr "Vypočítané odhady dátumu"
+msgstr "Vypočítané odhady dátumov"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
-msgstr "Zdroj ktorý sa má odobrať alebo pridať"
+msgstr "Zdroj na odstránenie a/alebo pridanie"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
@@ -92,7 +83,7 @@ msgstr "Najvyšší vek"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
-msgstr "Najvyšší vek dožitia"
+msgstr "Najvyšší vek, ktorého sa môže človek dožiť"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
@@ -116,7 +107,7 @@ msgstr "Extrémy (po a pred)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr "Dátumy udalostí sú buď okolo, alebo po/pred"
+msgstr "Dátumy udalostí sú buď približné, alebo po/pred"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -159,13 +150,18 @@ msgstr ""
 "Možno budete musieť nástroj spustiť opakovane (bez odstránenia "
 "predchádzajúcich udalostí), aby ste pridali všetky možné udalosti."
 
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculate Estimated Dates"
+msgstr "Vypočítať odhadované dátumy"
+
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
 msgstr "Vybrať všetko"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
-msgstr "Vybrať žiadne"
+msgstr "Zrušiť výber"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
@@ -222,7 +218,7 @@ msgstr "Odstraňovanie starých odhadov... "
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
-msgstr "Odstraňujem '%s'..."
+msgstr "Odstraňuje sa '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
@@ -233,7 +229,7 @@ msgid ""
 "Selecting... \n"
 "\n"
 msgstr ""
-"Výber... \n"
+"Vyberá sa... \n"
 "\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
@@ -254,7 +250,7 @@ msgstr "Žiadne udalosti na pridanie."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
-msgstr "Výber... "
+msgstr "Vyberá sa... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
@@ -273,7 +269,7 @@ msgstr "Pridaná udalosť narodenia na základe %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
-msgstr "Odhadnuté dátumy narodenia"
+msgstr "Odhadovaný dátum narodenia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
@@ -287,11 +283,11 @@ msgstr "Pridaná udalosť úmrtia na základe %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
-msgstr "Odhadnuté dátumy úmrtia"
+msgstr "Odhadovaný dátum úmrtia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
-msgstr " Hotovo! Odovzdávanie..."
+msgstr " Hotovo! Ukladá sa..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
@@ -300,4 +296,8 @@ msgstr "Počet pridaných udalostí: %d."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
-msgstr "odhadovaný dátum"
+msgstr "Odhadovaný dátum"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Vypočíta približné dátumy narodenia a úmrtia."

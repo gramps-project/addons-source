@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -30,20 +30,6 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-
-#: TMGimporter/importtmg.gpr.py:49
-msgid "TMG Project Backup"
-msgstr "Резервная копия проекта TMG"
-
-#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
-#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
-msgid "Import TMG project files"
-msgstr "Импорт файлов проекта TMG"
-
-#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
-#: TMGimporter/importtmg.gpr.py:95
-msgid "TMG Unsupported"
-msgstr "TMG не поддерживается"
 
 #: TMGimporter/importtmg.py:89
 #, python-format
@@ -105,6 +91,20 @@ msgstr ""
 "Ваш TMG проект создан с помощью TMG версии 5.x или старше. Ваш файл *.TMG - "
 "файл контроля версий для TMG 1.2 и более ранних. Дополнительная информация: "
 "%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmg.gpr.py:49
+msgid "TMG Project Backup"
+msgstr "Резервная копия проекта TMG"
+
+#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
+#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
+msgid "Import TMG project files"
+msgstr "Импорт файлов проекта TMG"
+
+#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
+#: TMGimporter/importtmg.gpr.py:95
+msgid "TMG Unsupported"
+msgstr "TMG не поддерживается"
 
 #: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -34,6 +34,15 @@ msgstr ""
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
 msgstr "Введите выражение Python"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-format
+msgid "%d rows processed in %s seconds.\n"
+msgstr "%d строк обработано за %s сек.\n"
+
+#: Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "Сегодня"
 
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
@@ -58,12 +67,3 @@ msgstr "Быстрый вид для SQL запросов"
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
 msgstr "Введите SQL запрос"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d строк обработано за %s сек.\n"
-
-#: Query/QueryQuickview.py:426
-msgid "Today"
-msgstr "Сегодня"

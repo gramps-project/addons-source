@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,53 +25,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: FilterRules2/matrilinealprogenitrix.gpr.py:25
-#: FilterRules2/matrilinealprogenitrix.py:45
-msgid "Matrilineal progenitrix of <person>"
-msgstr "Matrilinjär stammoder för <person>"
+#: FilterRules2/yinheritanceoffiltermatch.py:46
+#: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
+msgid "Y-chromosomal inheritance of <filter>"
+msgstr "Y-kromosomalt arv för <filter>"
 
-#: FilterRules2/matrilinealprogenitrix.gpr.py:26
-#: FilterRules2/matrilinealprogenitrix.py:47
-msgid "Matches the earliest recorded matrilineal ancestor mother."
-msgstr "Matchar den tidigast registrerade matrilinjära förfaderns mor."
-
-#: FilterRules2/mtinheritance.gpr.py:25 FilterRules2/mtinheritance.py:45
-msgid "Mitochondrial inheritance of <person>"
-msgstr "Mitokondriellt arv för <person>"
-
-#: FilterRules2/mtinheritance.gpr.py:27 FilterRules2/mtinheritance.py:46
+#: FilterRules2/yinheritanceoffiltermatch.py:47
+#: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
 msgid ""
-"Matches recorded descendants of person following mitochondrial inheritance "
-"patterns."
-msgstr ""
-"Matchar registrerade ättlingar till personer som följer mitokondriella "
-"arvsmönster."
-
-#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
-#: FilterRules2/mtinheritanceoffiltermatch.py:46
-msgid "Mitochondrial inheritance of <filter>"
-msgstr "Mitokondriellt arv för <filter>"
-
-#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
-#: FilterRules2/mtinheritanceoffiltermatch.py:47
-msgid ""
-"Matches recorded descendants of a filter result following mitochondrial "
+"Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
 msgstr ""
-"Matchar registrerade ättlingar till ett filterresultat efter mitokondriella "
+"Matchar registrerade ättlingar till ett filterresultat enligt Y-kromosomala "
 "arvsmönster."
-
-#: FilterRules2/patrilinealprogenitor.gpr.py:25
-#: FilterRules2/patrilinealprogenitor.py:45
-msgid "Patrilineal progenitor of <person>"
-msgstr "Patrilinjär stamfader för <person>"
-
-#: FilterRules2/patrilinealprogenitor.gpr.py:26
-#: FilterRules2/patrilinealprogenitor.py:47
-msgid "Matches the earliest recorded patrilineal ancestor father."
-msgstr "Matchar den tidigast registrerade patrilinjära förfadern."
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
@@ -94,12 +62,58 @@ msgid ""
 "pattern."
 msgstr "Matchar ättlingar för <person> efter ett X-kromosomalt arvsmönster."
 
+#: FilterRules2/patrilinealprogenitor.py:45
+#: FilterRules2/patrilinealprogenitor.gpr.py:25
+msgid "Patrilineal progenitor of <person>"
+msgstr "Patrilinjär stamfader för <person>"
+
+#: FilterRules2/patrilinealprogenitor.py:47
+#: FilterRules2/patrilinealprogenitor.gpr.py:26
+msgid "Matches the earliest recorded patrilineal ancestor father."
+msgstr "Matchar den tidigast registrerade patrilinjära förfadern."
+
+#: FilterRules2/mtinheritanceoffiltermatch.py:46
+#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
+msgid "Mitochondrial inheritance of <filter>"
+msgstr "Mitokondriellt arv för <filter>"
+
+#: FilterRules2/mtinheritanceoffiltermatch.py:47
+#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
+msgid ""
+"Matches recorded descendants of a filter result following mitochondrial "
+"inheritance patterns."
+msgstr ""
+"Matchar registrerade ättlingar till ett filterresultat efter mitokondriella "
+"arvsmönster."
+
+#: FilterRules2/matrilinealprogenitrix.gpr.py:25
+#: FilterRules2/matrilinealprogenitrix.py:45
+msgid "Matrilineal progenitrix of <person>"
+msgstr "Matrilinjär stammoder för <person>"
+
+#: FilterRules2/matrilinealprogenitrix.gpr.py:26
+#: FilterRules2/matrilinealprogenitrix.py:47
+msgid "Matches the earliest recorded matrilineal ancestor mother."
+msgstr "Matchar den tidigast registrerade matrilinjära förfaderns mor."
+
 #: FilterRules2/xchromdescendants.py:50
 msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
 "Matchar alla ättlingar för <person> efter ett X-kromosomalt arvsmönster."
+
+#: FilterRules2/mtinheritance.py:45 FilterRules2/mtinheritance.gpr.py:25
+msgid "Mitochondrial inheritance of <person>"
+msgstr "Mitokondriellt arv för <person>"
+
+#: FilterRules2/mtinheritance.py:46 FilterRules2/mtinheritance.gpr.py:27
+msgid ""
+"Matches recorded descendants of person following mitochondrial inheritance "
+"patterns."
+msgstr ""
+"Matchar registrerade ättlingar till personer som följer mitokondriella "
+"arvsmönster."
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
 msgid "Y-chromosomal inheritance of <person>"
@@ -111,18 +125,4 @@ msgid ""
 "patterns."
 msgstr ""
 "Matchar registrerade ättlingar till personer som följer Y-kromosomala "
-"arvsmönster."
-
-#: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
-#: FilterRules2/yinheritanceoffiltermatch.py:46
-msgid "Y-chromosomal inheritance of <filter>"
-msgstr "Y-kromosomalt arv för <filter>"
-
-#: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
-#: FilterRules2/yinheritanceoffiltermatch.py:47
-msgid ""
-"Matches recorded descendants of a filter result following Y-chromosomal "
-"inheritance patterns."
-msgstr ""
-"Matchar registrerade ättlingar till ett filterresultat enligt Y-kromosomala "
 "arvsmönster."

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -38,19 +38,6 @@ msgstr "Vooroudergeneraties"
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Afstammelingsgeneraties"
-
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
-msgid "Timeline Pedigree"
-msgstr "Tijdlijn-kwartierstaat"
-
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
-msgid ""
-"The view shows a timeline pedigree with ancestors and descendants of the "
-"selected person"
-msgstr ""
-"De weergave toont een tijdlijn-kwartierstaat met voorouders en "
-"afstammelingen van de geselecteerde persoon"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
@@ -99,3 +86,16 @@ msgstr[1] "%d generaties"
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
 msgid "About Timeline Pedigree View"
 msgstr "Over tijdlijn-kwartierstaatweergave"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
+msgid "Timeline Pedigree"
+msgstr "Tijdlijn-kwartierstaat"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"De weergave toont een tijdlijn-kwartierstaat met voorouders en "
+"afstammelingen van de geselecteerde persoon"

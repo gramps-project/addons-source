@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,28 +31,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:459
 #: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr "Medien aufnehmen"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:32
-msgid "Export GEDCOM Extensions (GED2)"
-msgstr "GEDCOM Export Erweiterungen (GED2)"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:33
-msgid "GEDCOM Extensions (GED2)"
-msgstr "GEDCOM Erweiterungen (GED2)"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:34
-msgid "Extensions to the common GEDCOM format."
-msgstr "Erweiterungen für das bekannte GEDCOM Format"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:42
-msgid "GEDCOM Extensions options"
-msgstr "GEDCOM Erweiterungen Optionen"
 
 #: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
@@ -82,3 +66,19 @@ msgstr "Art des Nachnamens:"
 #: GedcomExtensions/GedcomExtensions.py:261
 msgid "Export failed"
 msgstr "Export fehlgeschlagen"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:32
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "GEDCOM Export Erweiterungen (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:33
+msgid "GEDCOM Extensions (GED2)"
+msgstr "GEDCOM Erweiterungen (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:34
+msgid "Extensions to the common GEDCOM format."
+msgstr "Erweiterungen für das bekannte GEDCOM Format"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:42
+msgid "GEDCOM Extensions options"
+msgstr "GEDCOM Erweiterungen Optionen"

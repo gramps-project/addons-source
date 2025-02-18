@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2010-03-07 17:48+0100\n"
 "Last-Translator: Joan Creus <joan.creus at gmail dot com>\n"
 "Language-Team: Català <en@li.org>\n"
@@ -21,6 +21,10 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
+msgid "Read Gramps headline news"
+msgstr "Llegir titulars de GRAMPS"
+
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
 msgid "Headline News"
@@ -29,7 +33,3 @@ msgstr "Capçaleres de Notícies"
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
 msgid "Gramplet that shows the latest Gramps news"
 msgstr ""
-
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
-msgid "Read Gramps headline news"
-msgstr "Llegir titulars de GRAMPS"

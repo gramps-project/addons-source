@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
@@ -130,19 +131,19 @@ msgstr ""
 "Odabrano mjesto je obuhvaćeno mjestom koje trenutačno obrađuješ!\n"
 "Prekini i odaberi jedno drugo mjesto."
 
-#: PlaceCleanup/placecleanup.py:945 PlaceCleanup/placecleanup.py:946
+#: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
 msgstr "GeoNames web-stranica"
 
-#: PlaceCleanup/placecleanup.py:950 PlaceCleanup/placecleanup.py:951
+#: PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
 msgstr "GeoNames autor"
 
-#: PlaceCleanup/placecleanup.py:955 PlaceCleanup/placecleanup.py:956
+#: PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr "GeoNames je osnovao Marc Wick. Možeš ga kontaktirati na "
 
-#: PlaceCleanup/placecleanup.py:958 PlaceCleanup/placecleanup.py:959
+#: PlaceCleanup/placecleanup.py:959
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
@@ -152,20 +153,20 @@ msgstr ""
 "Švicarska.\n"
 "Licenziran je pod "
 
-#: PlaceCleanup/placecleanup.py:961 PlaceCleanup/placecleanup.py:962
+#: PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
 msgstr "Creative Commons – Imenovanje, 3.0"
 
-#: PlaceCleanup/placecleanup.py:973 PlaceCleanup/placecleanup.py:974
+#: PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "Dodaj Izvor/Spremište/Zabilješku (%s)"
 
-#: PlaceCleanup/placecleanup.py:1074 PlaceCleanup/placecleanup.py:1075
+#: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
 msgstr "Ovo se mjesto ne koristi!"
 
-#: PlaceCleanup/placecleanup.py:1075 PlaceCleanup/placecleanup.py:1076
+#: PlaceCleanup/placecleanup.py:1076
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."

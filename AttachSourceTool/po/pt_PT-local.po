@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -27,16 +28,6 @@ msgstr "Seleccione um filtro para limitar os indivíduos"
 #: AttachSourceTool/AttachSourceTool.py:157
 msgid "Processing...\n"
 msgstr "A processar...\n"
-
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
-#: AttachSourceTool/AttachSourceTool.py:137
-#: AttachSourceTool/AttachSourceTool.py:155
-msgid "Attach Source"
-msgstr "Anexar fonte"
-
-#: AttachSourceTool/AttachSourceTool.gpr.py:27
-msgid "Attaches a shared source to multiple objects."
-msgstr "Anexa uma fonte partilhada a múltiplos objectos."
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -70,6 +61,12 @@ msgstr "ID de fonte existente"
 msgid "ID of source to attach"
 msgstr "ID de fonte a anexar"
 
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+msgid "Attach Source"
+msgstr "Anexar fonte"
+
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
 msgstr "A anexar fontes...\n"
@@ -81,3 +78,7 @@ msgstr "A anexar fontes..."
 #: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Feito!\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
+msgid "Attaches a shared source to multiple objects."
+msgstr "Anexa uma fonte partilhada a múltiplos objectos."

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -47,18 +47,6 @@ msgstr "Le style utilisé pour les titres de page."
 #: LinesOfDescendency/lines-of-descendency.py:55
 msgid "Ancestor"
 msgstr "Ascendant"
-
-#: LinesOfDescendency/lines-of-descendency.gpr.py:31
-msgid "Lines of Descendency Report"
-msgstr "Rapport sur les lignes de descendance"
-
-#: LinesOfDescendency/lines-of-descendency.gpr.py:33
-msgid ""
-"Prints out all descendency lines from a given ancestor to a given descendent "
-"in text."
-msgstr ""
-"Affiche toutes les lignes de descendants d'un ancêtre donné à un descendant "
-"choisi dans un format textuel."
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
@@ -85,3 +73,15 @@ msgstr "%(line)s. ligne :"
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
 msgstr "Lignées de descendants de %(ancestor)s à %(descendent)s"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:31
+msgid "Lines of Descendency Report"
+msgstr "Rapport sur les lignes de descendance"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:33
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+"Affiche toutes les lignes de descendants d'un ancêtre donné à un descendant "
+"choisi dans un format textuel."

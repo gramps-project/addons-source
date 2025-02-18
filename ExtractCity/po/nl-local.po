@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -23,14 +23,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: ExtractCity/extractcity.gpr.py:34
-msgid "Extract Place Data from a Place Title"
-msgstr "Locatiegegevens extraheren uit een plaatstitel"
-
-#: ExtractCity/extractcity.gpr.py:35
-msgid "Attempts to extract city and state/province from a place title"
-msgstr "Poogt stad en staat / provincie uit een plaatstitel te halen"
 
 #: ExtractCity/extractcity.py:402
 msgid "Place title"
@@ -60,6 +52,14 @@ msgstr ""
 "Hieronder vindt u een lijst met plaatsen met de mogelijke gegevens die uit "
 "de titel van de plaats kunnen worden gehaald. Selecteer de plaatsen die u "
 "door Gramps wilt laten converteren."
+
+#: ExtractCity/extractcity.gpr.py:34
+msgid "Extract Place Data from a Place Title"
+msgstr "Locatiegegevens extraheren uit een plaatstitel"
+
+#: ExtractCity/extractcity.gpr.py:35
+msgid "Attempts to extract city and state/province from a place title"
+msgstr "Poogt stad en staat / provincie uit een plaatstitel te halen"
 
 #: ExtractCity/changenames.glade:94
 msgid "_Toggle Selected"

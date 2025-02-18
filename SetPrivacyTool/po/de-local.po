@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: SetPrivacyTool/SetPrivacyTool.py:312
@@ -42,16 +42,12 @@ msgstr "Filter zum eingrenzen der Personen wählen"
 msgid "Persons"
 msgstr "Personen"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
-#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
-#: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
-#: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
+#: SetPrivacyTool/SetPrivacyTool.py:51 SetPrivacyTool/SetPrivacyTool.py:93
+#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:146
+#: SetPrivacyTool/SetPrivacyTool.py:186 SetPrivacyTool/SetPrivacyTool.py:226
+#: SetPrivacyTool/SetPrivacyTool.py:255 SetPrivacyTool/SetPrivacyTool.gpr.py:24
 msgid "Set Privacy Tool"
 msgstr "Datenschutz einstellen Werkzeug"
-
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
-msgid "Set all objects of the last <number> of years private."
-msgstr "All Objekte der letzten <number> Jahre als vertraulich markieren."
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
@@ -127,3 +123,7 @@ msgstr "Kann Importart nicht bestimmen"
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
 msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
+msgid "Set all objects of the last <number> of years private."
+msgstr "All Objekte der letzten <number> Jahre als vertraulich markieren."

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -41,18 +41,6 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
 msgstr "Thème"
-
-#: Themes/themes.gpr.py:29
-msgid "Theme preferences"
-msgstr "Préférences de thème"
-
-#: Themes/themes.gpr.py:31
-msgid ""
-"An addition to Preferences for simple Theme and Font adjustment.  Especially "
-"useful for Windows users."
-msgstr ""
-"Un ajout aux préférences pour un simple ajustement de thème et de police. "
-"Particulièrement utile pour les utilisateurs Windows."
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
@@ -69,3 +57,15 @@ msgstr "Police"
 #: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Barre de défilement fixe (redémarrage requis)"
+
+#: Themes/themes.gpr.py:29
+msgid "Theme preferences"
+msgstr "Préférences de thème"
+
+#: Themes/themes.gpr.py:31
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Un ajout aux préférences pour un simple ajustement de thème et de police. "
+"Particulièrement utile pour les utilisateurs Windows."

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -35,15 +35,6 @@ msgstr ""
 #: DateCalculator/DateCalculator.py:107
 msgid "Copy"
 msgstr "Копировать"
-
-#: DateCalculator/DateCalculator.gpr.py:22
-#: DateCalculator/DateCalculator.gpr.py:32
-msgid "Date Calculator"
-msgstr "Калькулятор дат"
-
-#: DateCalculator/DateCalculator.gpr.py:23
-msgid "Perform date math calculations"
-msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
@@ -89,4 +80,13 @@ msgstr "Ошибка: хотябы одно выражение должно бы
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
+msgstr ""
+
+#: DateCalculator/DateCalculator.gpr.py:22
+#: DateCalculator/DateCalculator.gpr.py:32
+msgid "Date Calculator"
+msgstr "Калькулятор дат"
+
+#: DateCalculator/DateCalculator.gpr.py:23
+msgid "Perform date math calculations"
 msgstr ""

@@ -65,7 +65,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -87,42 +87,6 @@ msgstr ""
 #: DescendantBooks/DetailedDescendantBookReport.py:1540
 msgid "The style used for the title of the page."
 msgstr "Lo stile usato per il titolo della pagina."
-
-#: DescendantBooks/CollectAscendants.py:178
-#, python-format
-msgid "Deep pruning ascendants from %s people..."
-msgstr "Rimozione approfondita degli ascendenti in eccesso da %s persone..."
-
-#: DescendantBooks/CollectAscendants.py:182
-#, python-format
-msgid "Pruning ascendants from %s people..."
-msgstr "Rimozione degli ascendenti in eccesso da %s persone..."
-
-#: DescendantBooks/CollectAscendants.py:320
-#: DescendantBooks/CollectAscendants.py:413
-#, python-format
-msgid "Getting ascendants from %s people..."
-msgstr "Lettura degli ascendenti da %s persone..."
-
-#: DescendantBooks/CollectAscendants.py:331
-#, python-format
-msgid "Verifying descendants from %s people..."
-msgstr "Verifica dei discendenti da %s persone..."
-
-#: DescendantBooks/CollectAscendants.py:348
-#, python-format
-msgid "Getting missing descendants from %s people..."
-msgstr "Recupero dei discendenti mancanti da %s persone..."
-
-#: DescendantBooks/CollectAscendants.py:367
-#, python-format
-msgid "Verifying descendants from %s people after pruning..."
-msgstr "Verifica dei discendenti da %s persone dopo la rimozione..."
-
-#: DescendantBooks/CollectAscendants.py:383
-#, python-format
-msgid "Getting missing descendants from %s people ..."
-msgstr "Recupero dei discendenti mancanti da %s persone..."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
@@ -169,26 +133,6 @@ msgstr "Lo stile usato per l'intestazione del sommario."
 #: DescendantBooks/DescendantBookReport.py:595
 msgid "The style used for the table of contents detail."
 msgstr "Lo stile usato per i dettagli del sommario."
-
-#: DescendantBooks/DescendantBooks.gpr.py:22
-msgid "Descendant Book"
-msgstr "Libro discendenza"
-
-#: DescendantBooks/DescendantBooks.gpr.py:23
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Fornisce uno o più resoconti dei discendenti basati sulla richiesta indicata."
-
-#: DescendantBooks/DescendantBooks.gpr.py:41
-msgid "Detailed Descendant Book"
-msgstr "Libro discendenza dettagliato"
-
-#: DescendantBooks/DescendantBooks.gpr.py:43
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Produce uno o più resoconti dettagliati dei discendenti basati sulla "
-"richiesta indicata."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
@@ -408,3 +352,59 @@ msgstr "Lo stile usato per le intestazioni nell'indice dei luoghi."
 #: DescendantBooks/DetailedDescendantBookReport.py:1699
 msgid "The style used for the references in the Index of Places."
 msgstr "Lo stile usato per i riferimenti nell'indice dei luoghi."
+
+#: DescendantBooks/DescendantBooks.gpr.py:22
+msgid "Descendant Book"
+msgstr "Libro discendenza"
+
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Fornisce uno o più resoconti dei discendenti basati sulla richiesta indicata."
+
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr "Libro discendenza dettagliato"
+
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Produce uno o più resoconti dettagliati dei discendenti basati sulla "
+"richiesta indicata."
+
+#: DescendantBooks/CollectAscendants.py:178
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Rimozione approfondita degli ascendenti in eccesso da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:182
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Rimozione degli ascendenti in eccesso da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:320
+#: DescendantBooks/CollectAscendants.py:413
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Lettura degli ascendenti da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:331
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Verifica dei discendenti da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:348
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Recupero dei discendenti mancanti da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:367
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Verifica dei discendenti da %s persone dopo la rimozione..."
+
+#: DescendantBooks/CollectAscendants.py:383
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Recupero dei discendenti mancanti da %s persone..."

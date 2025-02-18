@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -29,42 +29,6 @@ msgstr "Hvorvidt dublerede træer skal vises i rapporten."
 #: DescendantBooks/DetailedDescendantBookReport.py:1540
 msgid "The style used for the title of the page."
 msgstr "Fontformat for sidens titel"
-
-#: DescendantBooks/CollectAscendants.py:178
-#, python-format
-msgid "Deep pruning ascendants from %s people..."
-msgstr "Dyb fjernelse af aner fra %s personer ..."
-
-#: DescendantBooks/CollectAscendants.py:182
-#, python-format
-msgid "Pruning ascendants from %s people..."
-msgstr "Fjernelse af aner fra %s personer..."
-
-#: DescendantBooks/CollectAscendants.py:320
-#: DescendantBooks/CollectAscendants.py:413
-#, python-format
-msgid "Getting ascendants from %s people..."
-msgstr "Henter aner fra %s personer..."
-
-#: DescendantBooks/CollectAscendants.py:331
-#, python-format
-msgid "Verifying descendants from %s people..."
-msgstr "Bekræfter efterkommere fra %s personer..."
-
-#: DescendantBooks/CollectAscendants.py:348
-#, python-format
-msgid "Getting missing descendants from %s people..."
-msgstr "Henter manglende efterkommere fra %s personer..."
-
-#: DescendantBooks/CollectAscendants.py:367
-#, python-format
-msgid "Verifying descendants from %s people after pruning..."
-msgstr "Bekræfter efterkommere fra %s peroner efter fjernelse..."
-
-#: DescendantBooks/CollectAscendants.py:383
-#, python-format
-msgid "Getting missing descendants from %s people ..."
-msgstr "Henter manglende efterkommere fra %s personer..."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
@@ -109,27 +73,6 @@ msgstr "Stilen der bruges til indholdsfortegnelsens overskrift."
 #: DescendantBooks/DescendantBookReport.py:595
 msgid "The style used for the table of contents detail."
 msgstr "Stilen der bruges til indholdsfortegnelsens detaljer."
-
-#: DescendantBooks/DescendantBooks.gpr.py:22
-msgid "Descendant Book"
-msgstr "Efterkommerbog"
-
-#: DescendantBooks/DescendantBooks.gpr.py:23
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Danner en eller flere efterkommerrapporter baseret på en angivet "
-"forespørgsel."
-
-#: DescendantBooks/DescendantBooks.gpr.py:41
-msgid "Detailed Descendant Book"
-msgstr "Detaljeret efterkommerbog"
-
-#: DescendantBooks/DescendantBooks.gpr.py:43
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Danner en eller flere detaljerede efterkommerbøger baseret på en angivet "
-"forespørgsel."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
@@ -338,3 +281,60 @@ msgstr "Stilen der benyttes til oveskiften i Indeks over Steder."
 #: DescendantBooks/DetailedDescendantBookReport.py:1699
 msgid "The style used for the references in the Index of Places."
 msgstr "Stilen der benyttes til henvisninger i Indeks over Steder."
+
+#: DescendantBooks/DescendantBooks.gpr.py:22
+msgid "Descendant Book"
+msgstr "Efterkommerbog"
+
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Danner en eller flere efterkommerrapporter baseret på en angivet "
+"forespørgsel."
+
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr "Detaljeret efterkommerbog"
+
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Danner en eller flere detaljerede efterkommerbøger baseret på en angivet "
+"forespørgsel."
+
+#: DescendantBooks/CollectAscendants.py:178
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Dyb fjernelse af aner fra %s personer ..."
+
+#: DescendantBooks/CollectAscendants.py:182
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Fjernelse af aner fra %s personer..."
+
+#: DescendantBooks/CollectAscendants.py:320
+#: DescendantBooks/CollectAscendants.py:413
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Henter aner fra %s personer..."
+
+#: DescendantBooks/CollectAscendants.py:331
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Bekræfter efterkommere fra %s personer..."
+
+#: DescendantBooks/CollectAscendants.py:348
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Henter manglende efterkommere fra %s personer..."
+
+#: DescendantBooks/CollectAscendants.py:367
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Bekræfter efterkommere fra %s peroner efter fjernelse..."
+
+#: DescendantBooks/CollectAscendants.py:383
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Henter manglende efterkommere fra %s personer..."

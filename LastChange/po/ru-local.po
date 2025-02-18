@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -35,26 +35,10 @@ msgstr ""
 msgid "The style used for the title of the page."
 msgstr "Стиль заголовка страницы."
 
-#: LastChange/LastChange.gpr.py:26
-msgid "List the last ten person records that have been changed"
-msgstr "Показывает последние десять лиц в которые вносились изменения"
-
-#: LastChange/LastChange.gpr.py:35
-msgid "Latest Changes"
-msgstr "Последние изменения"
-
-#: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
-#: LastChange/LastChangeReport.py:113
+#: LastChange/LastChangeReport.py:74 LastChange/LastChangeReport.py:113
+#: LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
 msgstr "Последние изменения"
-
-#: LastChange/LastChange.gpr.py:43
-msgid "Report of the last records that have been changed"
-msgstr "Создаёт отчёт о последних изменениях в записях"
-
-#: LastChange/LastChangeGramplet.py:82
-msgid "changed on"
-msgstr "изменено в"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
@@ -115,3 +99,19 @@ msgstr "Выбрать из"
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
 msgstr "Стиль простого текста"
+
+#: LastChange/LastChangeGramplet.py:82
+msgid "changed on"
+msgstr "изменено в"
+
+#: LastChange/LastChange.gpr.py:26
+msgid "List the last ten person records that have been changed"
+msgstr "Показывает последние десять лиц в которые вносились изменения"
+
+#: LastChange/LastChange.gpr.py:35
+msgid "Latest Changes"
+msgstr "Последние изменения"
+
+#: LastChange/LastChange.gpr.py:43
+msgid "Report of the last records that have been changed"
+msgstr "Создаёт отчёт о последних изменениях в записях"

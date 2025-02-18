@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -37,14 +37,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: MediaVerify/MediaVerify.gpr.py:31
-msgid "Media Verify"
-msgstr "Vérification des media"
-
-#: MediaVerify/MediaVerify.gpr.py:32
-msgid "Verify that media is present in the correct path"
-msgstr "Vérifier si l'objet medium est présent avec le bon chemin "
 
 #: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
@@ -164,3 +156,11 @@ msgstr "Correction des chemins de fichier"
 #: MediaVerify/MediaVerify.py:390
 msgid "Fix media paths"
 msgstr "Correction des chemins media"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Media Verify"
+msgstr "Vérification des media"
+
+#: MediaVerify/MediaVerify.gpr.py:32
+msgid "Verify that media is present in the correct path"
+msgstr "Vérifier si l'objet medium est présent avec le bon chemin "

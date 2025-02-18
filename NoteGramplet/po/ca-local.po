@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2010-03-07 17:48+0100\n"
 "Last-Translator: Joan Creus <joan.creus at gmail dot com>\n"
 "Language-Team: Català <en@li.org>\n"
@@ -33,6 +33,12 @@ msgstr "Desar"
 msgid "Abandon"
 msgstr "Abandonar"
 
+#: NoteGramplet/NoteGramplet.py:255
+#, fuzzy
+#| msgid "Save"
+msgid "Save Note"
+msgstr "Desar"
+
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "Gramplet de Notes"
@@ -40,9 +46,3 @@ msgstr "Gramplet de Notes"
 #: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
 msgstr ""
-
-#: NoteGramplet/NoteGramplet.py:255
-#, fuzzy
-#| msgid "Save"
-msgid "Save Note"
-msgstr "Desar"

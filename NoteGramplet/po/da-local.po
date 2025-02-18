@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -32,6 +32,10 @@ msgstr "Gem"
 msgid "Abandon"
 msgstr "Forlad"
 
+#: NoteGramplet/NoteGramplet.py:255
+msgid "Save Note"
+msgstr "Gem note"
+
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "NoteGramplet"
@@ -39,7 +43,3 @@ msgstr "NoteGramplet"
 #: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
 msgstr "Gramplet til at redigere noter for den aktive person"
-
-#: NoteGramplet/NoteGramplet.py:255
-msgid "Save Note"
-msgstr "Gem note"

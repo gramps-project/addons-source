@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -28,15 +28,6 @@ msgstr ""
 #: DateCalculator/DateCalculator.py:107
 msgid "Copy"
 msgstr "Kopieer"
-
-#: DateCalculator/DateCalculator.gpr.py:22
-#: DateCalculator/DateCalculator.gpr.py:32
-msgid "Date Calculator"
-msgstr "Datum rekenmachine"
-
-#: DateCalculator/DateCalculator.gpr.py:23
-msgid "Perform date math calculations"
-msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
@@ -82,4 +73,13 @@ msgstr "Fout: ten minste één expressie moet een datum zijn"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
+msgstr ""
+
+#: DateCalculator/DateCalculator.gpr.py:22
+#: DateCalculator/DateCalculator.gpr.py:32
+msgid "Date Calculator"
+msgstr "Datum rekenmachine"
+
+#: DateCalculator/DateCalculator.gpr.py:23
+msgid "Perform date math calculations"
 msgstr ""

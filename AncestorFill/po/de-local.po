@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
@@ -52,37 +52,31 @@ msgstr "Generation "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr "Anzahl der gefundener Vorfahren"
+msgstr "Anzahl der gefundenen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:207
-#, fuzzy
-#| msgid "Number of Ancestors found "
 msgid "Percent of Ancestors found "
-msgstr "Anzahl der gefundener Vorfahren"
+msgstr "Prozentsatz der gefundenen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:208
-#, fuzzy
-#| msgid "Number of Ancestors found "
 msgid "Number of unique Ancestors found "
-msgstr "Anzahl der gefundener Vorfahren"
+msgstr "Anzahl der gefundenen einmaligen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
-msgstr "Anzahl theoretischer Vorfahren"
+msgstr "Anzahl der theoretischen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
-msgstr "Stammbaum einklappen"
+msgstr "Stammbaum zusammenklappen "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
-msgstr "Gesamtzahl gefundener Vorfahren"
+msgstr "Gesamtzahl der gefundenen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:255
-#, fuzzy
-#| msgid "Total Number of Ancestors found "
 msgid "Total Number of unique Ancestors found "
-msgstr "Gesamtzahl gefundener Vorfahren"
+msgstr "Gesamtzahl der gefundenen einzelnen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""

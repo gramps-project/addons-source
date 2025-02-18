@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -29,18 +29,6 @@ msgstr ""
 msgid "Theme"
 msgstr "Tema"
 
-#: Themes/themes.gpr.py:29
-msgid "Theme preferences"
-msgstr "Temainnstillinger"
-
-#: Themes/themes.gpr.py:31
-msgid ""
-"An addition to Preferences for simple Theme and Font adjustment.  Especially "
-"useful for Windows users."
-msgstr ""
-"Et tillegg til Innstillinger for enkel justering av tema og skrift. Spesielt "
-"nyttig for Windows-brukere."
-
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Tema er hardkodet av GTK_THEME"
@@ -56,3 +44,15 @@ msgstr "Skrifttype"
 #: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Klassisk rullegardin (krever omstart)"
+
+#: Themes/themes.gpr.py:29
+msgid "Theme preferences"
+msgstr "Temainnstillinger"
+
+#: Themes/themes.gpr.py:31
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Et tillegg til Innstillinger for enkel justering av tema og skrift. Spesielt "
+"nyttig for Windows-brukere."

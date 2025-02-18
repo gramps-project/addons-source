@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -26,25 +26,25 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
-#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
+#: D3Charts/AncestralCollapsibleTree.py:785
 #: D3Charts/DescendantIndentedTree.py:1500
 #: D3Charts/DescendantIndentedTree.py:1563
 #: D3Charts/DescendantIndentedTree.py:1570
 #: D3Charts/DescendantIndentedTree.py:1677
-#: D3Charts/DescendantIndentedTree.py:1697
+#: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
+#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
 #, python-format
 msgid "Failed writing %s: %s"
 msgstr "Kan %s: %s niet schrijven"
 
-#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
-#: D3Charts/DescendantIndentedTree.py:1519
+#: D3Charts/AncestralCollapsibleTree.py:345
+#: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr "Kan directorystructuur %s niet maken"
 
-#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
-#: D3Charts/DescendantIndentedTree.py:1555
+#: D3Charts/AncestralCollapsibleTree.py:368
+#: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "Kan webbestand %s niet kopiëren"
@@ -53,8 +53,8 @@ msgstr "Kan webbestand %s niet kopiëren"
 msgid "Ancestral Collapsible Tree Options"
 msgstr "Inklapbare voorouderboom opties"
 
-#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
-#: D3Charts/DescendantIndentedTree.py:1804
+#: D3Charts/AncestralCollapsibleTree.py:840
+#: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
 msgid "Include Generations"
 msgstr "Generaties opnemen"
 
@@ -90,63 +90,15 @@ msgstr "Vrouwelijke uitbreidbare achtergrond"
 msgid "RGB-color for female expandable box background."
 msgstr "RGB-kleur voor vrouwelijke uitbreidbare kaderachtergrond."
 
-#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
-#: D3Charts/DescendantIndentedTree.py:1826
+#: D3Charts/AncestralCollapsibleTree.py:867
+#: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
 msgid "The destination path for generated files."
 msgstr "Het bestemmingspad voor gegenereerde bestanden."
 
-#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
-#: D3Charts/DescendantIndentedTree.py:1831
+#: D3Charts/AncestralCollapsibleTree.py:872
+#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
 msgid "The destination file name for html content."
 msgstr "De bestemmingsbestandsnaam voor html-inhoud."
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr "Inklapbare voorouderboom"
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Genereert een webpagina met een grafische weergave van voorouders (SVG) "
-"weergegeven als een inklapbare boomlay-out uit de D3.js JavaScript-"
-"bibliotheek."
-
-#: D3Charts/DescendantIndentedTree.gpr.py:23
-#: D3Charts/DescendantIndentedTree.py:909
-msgid "Descendant Indented Tree"
-msgstr "Afstammelingsboom ingesprongen"
-
-#: D3Charts/DescendantIndentedTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Genereert een webpagina met een grafische weergave van afstammelingen (SVG) "
-"die wordt weergegeven als een inklapbare ingesprongen boomlay-out uit de "
-"D3.js JavaScript-bibliotheek."
-
-#: D3Charts/AncestralFanChart.py:707
-msgid "Ancestral Fan Chart Options"
-msgstr "Opties cirkeldiagram voorouders"
-
-#: D3Charts/AncestralFanChart.py:729
-msgid "Paternal Background Color"
-msgstr "Vaderlijke achtergrondkleur"
-
-#: D3Charts/AncestralFanChart.py:730
-msgid "RGB-color for paternal box background."
-msgstr "RGB-kleur voor vaderlijke kaderachtergrond."
-
-#: D3Charts/AncestralFanChart.py:733
-msgid "Maternal Background"
-msgstr "Moederlijke achtergrond"
-
-#: D3Charts/AncestralFanChart.py:734
-msgid "RGB-color for maternal box background."
-msgstr "RGB-kleur voor moederlijke kaderachtergrond."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
@@ -168,6 +120,11 @@ msgstr "Zie %(reference)s : %(spouse)s"
 #: D3Charts/DescendantIndentedTree.py:764
 msgid "Generating report..."
 msgstr "Verslag genereren..."
+
+#: D3Charts/DescendantIndentedTree.py:909
+#: D3Charts/DescendantIndentedTree.gpr.py:23
+msgid "Descendant Indented Tree"
+msgstr "Afstammelingsboom ingesprongen"
 
 #: D3Charts/DescendantIndentedTree.py:1364
 msgid "Invalid Destination Directory"
@@ -447,3 +404,46 @@ msgstr "Hoofdlettergrootte"
 #: D3Charts/DescendantIndentedTree.py:2046
 msgid "The font size in pixels for biography body text."
 msgstr "De lettergrootte in pixels voor de hoofdtekst van de biografie."
+
+#: D3Charts/DescendantIndentedTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Genereert een webpagina met een grafische weergave van afstammelingen (SVG) "
+"die wordt weergegeven als een inklapbare ingesprongen boomlay-out uit de "
+"D3.js JavaScript-bibliotheek."
+
+#: D3Charts/AncestralFanChart.py:707
+msgid "Ancestral Fan Chart Options"
+msgstr "Opties cirkeldiagram voorouders"
+
+#: D3Charts/AncestralFanChart.py:729
+msgid "Paternal Background Color"
+msgstr "Vaderlijke achtergrondkleur"
+
+#: D3Charts/AncestralFanChart.py:730
+msgid "RGB-color for paternal box background."
+msgstr "RGB-kleur voor vaderlijke kaderachtergrond."
+
+#: D3Charts/AncestralFanChart.py:733
+msgid "Maternal Background"
+msgstr "Moederlijke achtergrond"
+
+#: D3Charts/AncestralFanChart.py:734
+msgid "RGB-color for maternal box background."
+msgstr "RGB-kleur voor moederlijke kaderachtergrond."
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
+msgstr "Inklapbare voorouderboom"
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Genereert een webpagina met een grafische weergave van voorouders (SVG) "
+"weergegeven als een inklapbare boomlay-out uit de D3.js JavaScript-"
+"bibliotheek."

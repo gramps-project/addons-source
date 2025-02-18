@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -37,17 +37,6 @@ msgstr "Personen"
 #: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
 msgid "General options"
 msgstr "Algemene opties"
-
-#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
-#: RemoveTagTool/RemoveTagTool.py:246
-msgid "Add/Remove Tag Tool"
-msgstr "Labels toevoegen/verwijderen"
-
-#: RemoveTagTool/RemoveTagTool.gpr.py:26
-msgid "Add or remove a tag from groups of people, events, etc."
-msgstr ""
-"Voeg een label toe of verwijder deze uit groepen personen, gebeurtenissen, "
-"enz."
 
 #: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
@@ -94,6 +83,11 @@ msgstr "Filteropties"
 msgid "All %s"
 msgstr "Alle %s"
 
+#: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
+#: RemoveTagTool/RemoveTagTool.gpr.py:25
+msgid "Add/Remove Tag Tool"
+msgstr "Labels toevoegen/verwijderen"
+
 #: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
@@ -126,3 +120,9 @@ msgstr "verwijderd"
 #: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Label '{}' was {} naar {} {} objecten.\n"
+
+#: RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr ""
+"Voeg een label toe of verwijder deze uit groepen personen, gebeurtenissen, "
+"enz."

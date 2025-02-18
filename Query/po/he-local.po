@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 10:31+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -24,6 +24,15 @@ msgstr ""
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
 msgstr "הזנת ביטוי פייתון"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-format
+msgid "%d rows processed in %s seconds.\n"
+msgstr "%d שורות עובדו ב %s שניות.\n"
+
+#: Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "היום"
 
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
@@ -48,12 +57,3 @@ msgstr "מבט מהיר עסור גרמפלט להרצת שאילתות דמוי
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
 msgstr "הזנת שאילתת SQL"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d שורות עובדו ב %s שניות.\n"
-
-#: Query/QueryQuickview.py:426
-msgid "Today"
-msgstr "היום"

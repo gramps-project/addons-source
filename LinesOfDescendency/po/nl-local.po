@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -33,18 +33,6 @@ msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
 #: LinesOfDescendency/lines-of-descendency.py:55
 msgid "Ancestor"
 msgstr "Voorouder"
-
-#: LinesOfDescendency/lines-of-descendency.gpr.py:31
-msgid "Lines of Descendency Report"
-msgstr "Afstammelingslijnenverslag"
-
-#: LinesOfDescendency/lines-of-descendency.gpr.py:33
-msgid ""
-"Prints out all descendency lines from a given ancestor to a given descendent "
-"in text."
-msgstr ""
-"Print alle afstammingslijnen van een bepaalde voorouder naar een bepaalde "
-"afstammeling in tekst uit."
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
@@ -71,3 +59,15 @@ msgstr "%(line)s. lijn:"
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
 msgstr "Afstammingslijnen van %(ancestor)s naar %(descendent)s"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:31
+msgid "Lines of Descendency Report"
+msgstr "Afstammelingslijnenverslag"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:33
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+"Print alle afstammingslijnen van een bepaalde voorouder naar een bepaalde "
+"afstammeling in tekst uit."

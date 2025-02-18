@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,13 +31,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: Differences/differences.gpr.py:4 Differences/differences.py:95
+#: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
 msgstr "Отчёт об отличиях в базе данных"
-
-#: Differences/differences.gpr.py:5
-msgid "Compares an external database with the current one."
-msgstr "Сравнивает внешнюю базу данных с текущей."
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
@@ -117,3 +113,7 @@ msgstr "Показывать новые объекты в файле"
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr "Включать новые объекты из файла, отсутствующие в базе данных"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Сравнивает внешнюю базу данных с текущей."

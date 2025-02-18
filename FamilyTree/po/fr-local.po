@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -78,10 +78,6 @@ msgstr "Remplacer le prénom par le prénom usuel"
 #: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Souligner ou ajouter le prénom usuel dans le prénom"
-
-#: FamilyTree/FamilyTree.gpr.py:5
-msgid "Produces a graphical family tree."
-msgstr "Produit un arbre familial sous forme graphique."
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
@@ -275,3 +271,7 @@ msgstr "Le style utilisé pour les noms."
 msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr ""
 "Le style utilisé pour les données (naissance, décès, mariage, divorce)."
+
+#: FamilyTree/FamilyTree.gpr.py:5
+msgid "Produces a graphical family tree."
+msgstr "Produit un arbre familial sous forme graphique."

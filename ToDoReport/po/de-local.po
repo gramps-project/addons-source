@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,24 +31,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Der Stil, der für den Seitentitel verwendet wird."
-
-#: ToDoReport/TodoReport.gpr.py:25
-msgid "Todo Report"
-msgstr "Zu erledigen Bericht"
-
-#: ToDoReport/TodoReport.gpr.py:27
-msgid ""
-"Produces a list of all the notes with a given tag along with the records "
-"that it references, the Person, Family, Event, etc."
-msgstr ""
-"Erstellt eine Liste aller Notizen mit einer bestimmten Markierung zusammen "
-"mit den Datensätzen auf die sie referenziert, die Person, Familie, Ereignis, "
-"usw."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -168,3 +155,16 @@ msgstr ""
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "Der grundlegende Stil für die Tabellenanzeige."
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
+msgstr "Zu erledigen Bericht"
+
+#: ToDoReport/TodoReport.gpr.py:27
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Erstellt eine Liste aller Notizen mit einer bestimmten Markierung zusammen "
+"mit den Datensätzen auf die sie referenziert, die Person, Familie, Ereignis, "
+"usw."

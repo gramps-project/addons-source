@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
+
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
+msgid "Read Gramps headline news"
+msgstr "Lese Gramps Schlagzeilen"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
@@ -41,7 +45,3 @@ msgstr "Schlagzeilen"
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
 msgid "Gramplet that shows the latest Gramps news"
 msgstr "Gramplet das die neuesten Gramps Nachrichten zeigt"
-
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
-msgid "Read Gramps headline news"
-msgstr "Lese Gramps Schlagzeilen"

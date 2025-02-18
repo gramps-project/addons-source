@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
@@ -45,14 +45,6 @@ msgstr "Hintergrund weiblich"
 #: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Gerade"
-
-#: NetworkChart/NetworkChart.gpr.py:24
-msgid "Network Chart"
-msgstr "Netzwerkgrafik"
-
-#: NetworkChart/NetworkChart.gpr.py:35
-msgid "Generates a family network chart."
-msgstr "Erstellt eine Familiennetzwerkgrafik."
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
@@ -586,3 +578,11 @@ msgstr "Datei überschreiben bestätigen."
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
 msgstr "Aktivieren/deaktivieren der Bestätigung der Dateiüberschreibung."
+
+#: NetworkChart/NetworkChart.gpr.py:24
+msgid "Network Chart"
+msgstr "Netzwerkgrafik"
+
+#: NetworkChart/NetworkChart.gpr.py:35
+msgid "Generates a family network chart."
+msgstr "Erstellt eine Familiennetzwerkgrafik."

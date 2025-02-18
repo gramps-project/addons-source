@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -23,20 +23,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: TMGimporter/importtmg.gpr.py:49
-msgid "TMG Project Backup"
-msgstr "TMG-projectback-up"
-
-#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
-#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
-msgid "Import TMG project files"
-msgstr "Importeer TMG-projectbestanden"
-
-#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
-#: TMGimporter/importtmg.gpr.py:95
-msgid "TMG Unsupported"
-msgstr "TMG wordt niet ondersteund"
 
 #: TMGimporter/importtmg.py:89
 #, python-format
@@ -98,6 +84,20 @@ msgstr ""
 "Zorg ervoor dat uw TMG-project is gemaakt door: TMG versie 5.x of hoger. Uw "
 "bestand: *. VER - Versiecontrolebestand voor TMG 1.2 en eerder Raadpleeg: "
 "%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmg.gpr.py:49
+msgid "TMG Project Backup"
+msgstr "TMG-projectback-up"
+
+#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
+#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
+msgid "Import TMG project files"
+msgstr "Importeer TMG-projectbestanden"
+
+#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
+#: TMGimporter/importtmg.gpr.py:95
+msgid "TMG Unsupported"
+msgstr "TMG wordt niet ondersteund"
 
 #: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"

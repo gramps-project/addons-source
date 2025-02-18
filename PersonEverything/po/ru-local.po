@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -42,14 +42,6 @@ msgstr "Отношение к отцу"
 #: DynamicWeb/dynamicweb.py:3061 PersonEverything/PersonEverything.py:225
 msgid "Relationship to Mother"
 msgstr "Отношение к матери"
-
-#: PersonEverything/PersonEverything.gpr.py:32
-msgid "PersonEverything Report"
-msgstr "Всё о человеке"
-
-#: PersonEverything/PersonEverything.gpr.py:33
-msgid "Produces a report containing everything about the active person"
-msgstr "Предоставляет отчёт содержащий все данные об активном лице"
 
 #: PersonEverything/PersonEverything.py:133
 #, python-format
@@ -178,3 +170,11 @@ msgstr "Цвет метки и приоритет"
 #: PersonEverything/PersonEverything.py:960
 msgid "No source information found"
 msgstr "Не найдено информации об источнике"
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "PersonEverything Report"
+msgstr "Всё о человеке"
+
+#: PersonEverything/PersonEverything.gpr.py:33
+msgid "Produces a report containing everything about the active person"
+msgstr "Предоставляет отчёт содержащий все данные об активном лице"

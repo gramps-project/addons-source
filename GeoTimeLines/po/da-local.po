@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,20 +20,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:25 GeoTimeLines/GeoTimeLines.py:233
-#: GeoTimeLines/GeoTimeLines.py:339
+#: GeoTimeLines/GeoTimeLines.py:233 GeoTimeLines/GeoTimeLines.py:339
+#: GeoTimeLines/GeoTimeLines.gpr.py:25
 msgid "TimeLines Map"
-msgstr "Tidsliniekort"
-
-#: GeoTimeLines/GeoTimeLines.gpr.py:27
-msgid ""
-"A view showing all the places visited by a person or persons on various date."
-msgstr ""
-"Et billede der viser alle steder som en person har besøgt på forskellige "
-"datoer."
-
-#: GeoTimeLines/GeoTimeLines.gpr.py:39
-msgid "TimeLines map"
 msgstr "Tidsliniekort"
 
 #: GeoTimeLines/GeoTimeLines.py:755
@@ -139,4 +128,15 @@ msgstr "Vis tidsmærker i navigationsfeltet ved opstart"
 #, fuzzy
 #| msgid "TimeLines Map"
 msgid "TimeLines Map options"
+msgstr "Tidsliniekort"
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:27
+msgid ""
+"A view showing all the places visited by a person or persons on various date."
+msgstr ""
+"Et billede der viser alle steder som en person har besøgt på forskellige "
+"datoer."
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:39
+msgid "TimeLines map"
 msgstr "Tidsliniekort"

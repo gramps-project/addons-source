@@ -4,22 +4,23 @@
 # Illia Maier <illia@maier.page>, 2024.
 # Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 # Oleh Petriv, 2013.
-#
+# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2024-10-10 22:54+0300\n"
-"Last-Translator: Illia Maier <illia@maier.page>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 08:49+0000\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
-"gramps/uk/>\n"
+"addons/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: ImportMerge/importmerge.py:911 ImportMerge/importmerge.glade:407
@@ -34,8 +35,7 @@ msgstr "Завершено"
 msgid "Differences"
 msgstr "Відмінності"
 
-#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:328
-#: ImportMerge/importmerge.py:707 ImportMerge/importmerge.py:329
+#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
 msgid "Import and Merge tool"
 msgstr "Інструмент імпорту та злиття"
@@ -47,49 +47,47 @@ msgid ""
 msgstr ""
 "Порівнює базу даних Gramps XML із поточною та дозволяє обʼєднати відмінності."
 
-#: ImportMerge/importmerge.py:80 ImportMerge/importmerge.py:81
+#: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
 msgstr "Імпортувати та обʼєднати Gramps XML"
 
-#: ImportMerge/importmerge.py:89 ImportMerge/importmerge.py:90
+#: ImportMerge/importmerge.py:90
 msgid "Missing"
 msgstr "Відсутнє"
 
-#: ImportMerge/importmerge.py:93 ImportMerge/importmerge.py:94
+#: ImportMerge/importmerge.py:94
 msgid "Different"
 msgstr "Відрізняється"
 
-#: ImportMerge/importmerge.py:108 ImportMerge/importmerge.py:109
+#: ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr "Видалити оригінал"
 
-#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
-#: ImportMerge/importmerge.py:110
+#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.glade:334
 msgid "Ignore"
 msgstr "Ігнорувати"
 
-#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.py:111
+#: ImportMerge/importmerge.py:111
 msgid "Add Import"
 msgstr "Додати з імпорту"
 
-#: ImportMerge/importmerge.py:111 ImportMerge/importmerge.py:112
+#: ImportMerge/importmerge.py:112
 msgid "Merge into original"
 msgstr "Об'єднати з оригіналом"
 
-#: ImportMerge/importmerge.py:112 ImportMerge/importmerge.py:113
+#: ImportMerge/importmerge.py:113
 msgid "Merge into import"
 msgstr "Об'єднати з імпортом"
 
-#: ImportMerge/importmerge.py:113 ImportMerge/importmerge.py:114
+#: ImportMerge/importmerge.py:114
 msgid "Replace with import"
 msgstr "Замінити з імпорту"
 
-#: ImportMerge/importmerge.py:114 ImportMerge/importmerge.py:115
+#: ImportMerge/importmerge.py:115
 msgid "Keep original"
 msgstr "Залишити оригінал"
 
-#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
-#: ImportMerge/importmerge.py:116
+#: ImportMerge/importmerge.py:116 ImportMerge/importmerge.glade:293
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
@@ -98,7 +96,7 @@ msgstr ""
 "Зміни не будуть внесені до вашого дерева, доки ви не натиснете 'Завершити' і "
 "не підтвердите."
 
-#: ImportMerge/importmerge.py:118 ImportMerge/importmerge.py:119
+#: ImportMerge/importmerge.py:119
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
@@ -106,7 +104,7 @@ msgstr ""
 "Цей елемент буде видалено з вашого дерева. Усі посилання також позначені для "
 "видалення."
 
-#: ImportMerge/importmerge.py:120 ImportMerge/importmerge.py:121
+#: ImportMerge/importmerge.py:121
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
@@ -114,7 +112,7 @@ msgstr ""
 "Цей елемент не буде змінено у вашому дереві. Усі посилання також позначені "
 "для ігнорування."
 
-#: ImportMerge/importmerge.py:122 ImportMerge/importmerge.py:123
+#: ImportMerge/importmerge.py:123
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
@@ -122,7 +120,7 @@ msgstr ""
 "Цей елемент буде додано до вашого дерева. Усі посилання також позначені для "
 "додавання."
 
-#: ImportMerge/importmerge.py:124 ImportMerge/importmerge.py:125
+#: ImportMerge/importmerge.py:125
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
@@ -130,7 +128,7 @@ msgstr ""
 "Цей елемент буде об'єднано, зберігаючи дані з вашого дерева. Усі посилання "
 "також позначені для об'єднання або додавання."
 
-#: ImportMerge/importmerge.py:126 ImportMerge/importmerge.py:127
+#: ImportMerge/importmerge.py:127
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
@@ -138,7 +136,7 @@ msgstr ""
 "Цей елемент буде об'єднано, використовуючи дані з імпорту. Усі посилання "
 "також позначені для об'єднання або додавання."
 
-#: ImportMerge/importmerge.py:128 ImportMerge/importmerge.py:129
+#: ImportMerge/importmerge.py:129
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
@@ -146,7 +144,7 @@ msgstr ""
 "Імпортовані дані повністю замінять дані у вашому дереві. Усі посилання також "
 "будуть позначені для заміни або видалення."
 
-#: ImportMerge/importmerge.py:130 ImportMerge/importmerge.py:131
+#: ImportMerge/importmerge.py:131
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
@@ -154,46 +152,40 @@ msgstr ""
 "Цей елемент не буде змінено у вашому дереві. Усі посилання також залишаться "
 "без змін."
 
-#: ImportMerge/importmerge.py:338 ImportMerge/importmerge.py:339
+#: ImportMerge/importmerge.py:339
 msgid "Import Failure"
 msgstr "Помилка імпорту"
 
-#: ImportMerge/importmerge.py:406 ImportMerge/importmerge.py:407
+#: ImportMerge/importmerge.py:407
 msgid "Your Tree and import are the same."
 msgstr "Ваше дерево і імпортовані дані однакові."
 
-#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
-#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
 #: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
 #: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
 msgid "your tree "
 msgstr "ваше дерево "
 
-#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
-#: ImportMerge/importmerge.py:474 ImportMerge/importmerge.py:459
-#: ImportMerge/importmerge.py:467 ImportMerge/importmerge.py:475
+#: ImportMerge/importmerge.py:459 ImportMerge/importmerge.py:467
+#: ImportMerge/importmerge.py:475
 msgid "imported "
 msgstr "імпортовано "
 
-#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
-#: ImportMerge/importmerge.py:981 ImportMerge/importmerge.py:482
-#: ImportMerge/importmerge.py:961 ImportMerge/importmerge.py:982
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
+#: ImportMerge/importmerge.py:982
 msgid "Original"
 msgstr "Оригінал"
 
-#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
-#: ImportMerge/importmerge.py:982 ImportMerge/importmerge.py:483
-#: ImportMerge/importmerge.py:962 ImportMerge/importmerge.py:983
+#: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
+#: ImportMerge/importmerge.py:983
 msgid "Imported"
 msgstr "Імпортовано"
 
-#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
-#: ImportMerge/importmerge.py:984 ImportMerge/importmerge.py:485
-#: ImportMerge/importmerge.py:964 ImportMerge/importmerge.py:985
+#: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
+#: ImportMerge/importmerge.py:985
 msgid "Result  "
 msgstr "Результат  "
 
-#: ImportMerge/importmerge.py:710 ImportMerge/importmerge.py:711
+#: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
 msgstr "Імпорт і злиття"
 

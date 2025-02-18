@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 10:31+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -20,15 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
-msgid "Related Relatives"
-msgstr "קרובי משפחה"
-
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
-msgid "Gramplet showing relatives in a relation"
-msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
 msgid "Relations of related people in your database:"
@@ -49,3 +40,12 @@ msgstr "לא נמצאו קרובי משפחה בקשרי הקירבה"
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:254
 msgid "END"
 msgstr "סיום"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
+msgid "Related Relatives"
+msgstr "קרובי משפחה"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
+msgid "Gramplet showing relatives in a relation"
+msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"

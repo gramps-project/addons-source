@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -24,23 +25,6 @@ msgstr ""
 msgid "in"
 msgstr "em"
 
-#: DenominoViso/DenominoViso.gpr.py:9
-msgid "DenominoViso"
-msgstr "DenominoViso"
-
-#: DenominoViso/DenominoViso.gpr.py:19
-#, fuzzy
-#| msgid ""
-#| "Generates a web page with a graphical representation of ancestors (SVG) "
-#| "represented as a Fan Chart from the D3.js JavaScript library."
-msgid ""
-"Generates a web (HTML) page with a graphical representation of ancestors/"
-"descendants (SVG) where details about individuals become visible upon mouse-"
-"events."
-msgstr ""
-"Gera uma página “web” com uma representação gráfica de ascendentes (SVG) "
-"representada como leque, da biblioteca JavaScript D3 js."
-
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
 msgstr "Sem fonte"
@@ -50,10 +34,8 @@ msgid "onclick"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
-#, fuzzy
-#| msgid "Anonymous"
 msgid "onmouseover"
-msgstr "Anónimo"
+msgstr "ratosobre"
 
 #: DenominoViso/DenominoViso.py:208
 msgid "Ancestor"
@@ -159,10 +141,8 @@ msgid "DenominoViso Options"
 msgstr "Opções do DenominoViso"
 
 #: DenominoViso/DenominoViso.py:2556
-#, fuzzy
-#| msgid "The destination file for the content."
 msgid "The destination file for the html-content."
-msgstr "O ficheiro destino do conteúdo."
+msgstr "O ficheiro destino do conteúdo html."
 
 #: DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
@@ -241,20 +221,16 @@ msgid "Include private records"
 msgstr "Incluir registos privados"
 
 #: DenominoViso/DenominoViso.py:2608
-#, fuzzy
-#| msgid "Whether to include private objects."
 msgid "Whether to leave out private data."
-msgstr "Se deve incluir objectos marcados como privados."
+msgstr "Se deve omitir dados privados."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
 msgstr "Incluir eventos"
 
 #: DenominoViso/DenominoViso.py:2613
-#, fuzzy
-#| msgid "Whether to include a person's note."
 msgid "Whether to include a person's events."
-msgstr "Se deve incluir a nota do indivíduo."
+msgstr "Se deve incluir eventos do indivíduo."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
@@ -479,16 +455,12 @@ msgid "Source confidence color"
 msgstr "Cor da confiança na fonte"
 
 #: DenominoViso/DenominoViso.py:2746
-#, fuzzy
-#| msgid ""
-#| "List of lists where each sublist is a list with information about the "
-#| "dash pattern of lines connecting children to parents."
 msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
-"Lista de listas onde cada sub-lista é uma lista com informação sobre o "
-"padrão tracejado das linhas que ligam filhos a pais."
+"Lista de listas onde cada sub-lista é uma lista com informação sobre a cor a "
+"usar para um dado nível de confiança."
 
 #: DenominoViso/DenominoViso.py:2749
 msgid "Event format"
@@ -538,16 +510,12 @@ msgid "should be"
 msgstr "deve ser"
 
 #: DenominoViso/DenominoViso.py:2913
-#, fuzzy
-#| msgid "Include media"
 msgid "Included"
-msgstr "Incluir multimédia"
+msgstr "Incluído"
 
 #: DenominoViso/DenominoViso.py:2914
-#, fuzzy
-#| msgid "Exclude Spouses"
 msgid "Excluded"
-msgstr "Excluir cônjuges"
+msgstr "Excluídos"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
@@ -576,3 +544,17 @@ msgstr "Largura do traço"
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
 msgstr "Espaço entre traços"
+
+#: DenominoViso/DenominoViso.gpr.py:9
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+#: DenominoViso/DenominoViso.gpr.py:19
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Gera uma página “web” com uma representação gráfica de ascendentes/"
+"descendentes (SVG) onde detalhes individuais se tornam visíveis com eventos "
+"do rato."

@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -18,29 +19,21 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
-#: Differences/differences.gpr.py:4 Differences/differences.py:95
+#: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
 msgstr "Relatório Diferenças entre bases de dados"
-
-#: Differences/differences.gpr.py:5
-msgid "Compares an external database with the current one."
-msgstr "Compara uma base de dados externa com a actual."
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
 msgstr ""
 
 #: Differences/differences.py:161
-#, fuzzy
-#| msgid "Differences"
 msgid "No differences"
-msgstr "Diferenças"
+msgstr "Sem diferenças"
 
 #: Differences/differences.py:168
-#, fuzzy
-#| msgid "Include items in file but not in database"
 msgid "Missing items in File that are added in Database"
-msgstr "Incluir itens no ficheiro, mas não na base de dados"
+msgstr "Itens em falta no ficheiro, mas adicionados à base de dados"
 
 #: Differences/differences.py:174
 #, python-format
@@ -48,16 +41,12 @@ msgid "Missing %s: %s"
 msgstr "%s em falta: %s"
 
 #: Differences/differences.py:178
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "Nothing missing"
-msgstr "Nada seleccionado"
+msgstr "Nada em falta"
 
 #: Differences/differences.py:185
-#, fuzzy
-#| msgid "Include items in file but not in database"
 msgid "Added items in File that are missing in Database"
-msgstr "Incluir itens no ficheiro, mas não na base de dados"
+msgstr "Adicionados itens no ficheiro, mas em falta na base de dados"
 
 #: Differences/differences.py:191
 #, python-format
@@ -65,10 +54,8 @@ msgid "Added %s: %s "
 msgstr "Adicionados %s: %s "
 
 #: Differences/differences.py:195
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "Nothing added"
-msgstr "Nada seleccionado"
+msgstr "Nada adicionado"
 
 #: Differences/differences.py:308
 msgid "Family Tree file"
@@ -101,3 +88,7 @@ msgstr "Mostrar itens adicionados ao ficheiro"
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr "Incluir itens no ficheiro, mas não na base de dados"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Compara uma base de dados externa com a actual."

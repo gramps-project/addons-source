@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,44 +25,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: FilterRules/activepersonrule.gpr.py:27
-#: FilterRules/activepersonrule.gpr.py:28
-msgid "The active Person"
-msgstr "Den aktiva personen"
+#: FilterRules/isrelatedwithfiltermatch.py:53
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
+msgid "People related to <filter>"
+msgstr "Personer relaterade till <filter>"
 
-#: FilterRules/activepersonrule.py:45
-msgid "Active person"
-msgstr "Aktiv person"
-
-#: FilterRules/activepersonrule.py:47
-msgid "Matches the active person"
-msgstr "Matchar den aktiva personen"
-
-#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
-#: FilterRules/ageatdeath.py:74
-msgid "Filter people by their age at death"
-msgstr "Filtrera personer efter deras ålder vid döden"
-
-#: FilterRules/ageatdeath.gpr.py:26
-msgid "Filter rule that matches people by their age at death"
-msgstr "Filterregel som matchar personer efter deras ålder vid döden"
-
-#: FilterRules/ageatdeath.py:47
-msgid "Age in years at person's death."
-msgstr "Ålder i år vid personens död."
-
-#: FilterRules/ageatdeath.py:71
-msgid "Age:"
-msgstr "Ålder:"
-
-#: FilterRules/associationsofpersonmatch.gpr.py:25
-#: FilterRules/associationsofpersonmatch.gpr.py:26
-#: FilterRules/associationsofpersonmatch.py:46
-#: FilterRules/associationsofpersonmatch.py:47
-msgid "Match associations of <person filter>"
-msgstr "Matcha föreningar av <personfilter>"
+#: FilterRules/isrelatedwithfiltermatch.py:55
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
+msgid "Matches people who are related to anybody matched by a person filter"
+msgstr ""
+"Matchar personer som är relaterade till någon som matchas av ett personfilter"
 
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
@@ -74,42 +48,28 @@ msgstr "Personer separerade mindre än <N> grader från <person>"
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "Filterregel som matchar släktingar efter separationsgrad"
 
-#: FilterRules/degreesofseparation.py:47
-msgid "Number of degrees of separation from person."
-msgstr "Antal grader av separation från person."
+#: FilterRules/hassourcefilter.gpr.py:28
+msgid "Source matching parameters"
+msgstr "Parametrar för källmatchning"
 
-#: FilterRules/degreesofseparation.py:59
-msgid "Degrees:"
-msgstr "Grader:"
+#: FilterRules/hassourcefilter.gpr.py:29
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr "Matchar källor med värden som innehåller de valda parametrarna"
 
-#: FilterRules/familieswitheventfiltermatch.gpr.py:25
-#: FilterRules/familieswitheventfiltermatch.py:45
-msgid "Families matching <event filter>"
-msgstr "Familjer som matchar <händelsefilter>"
+#: FilterRules/multipleparents.py:42
+msgid "People with multiple parent records"
+msgstr "Personer med flera föräldraregister"
 
-#: FilterRules/familieswitheventfiltermatch.gpr.py:26
-msgid "Matches families that are matched by an event filter"
-msgstr "Matchar familjer som matchas av ett händelsefilter"
+#: FilterRules/multipleparents.py:43
+msgid "Matches people who have more than one set of parents"
+msgstr "Matchar personer som har mer än en uppsättning föräldrar"
 
-#: FilterRules/familieswitheventfiltermatch.py:47
-msgid "Matches families matched by an event filter"
-msgstr "Matchar familjer som matchas av ett händelsefilter"
-
-#: FilterRules/hasrolerule.gpr.py:27
-msgid "People with events with a selected role"
-msgstr "Personer med händelser med en vald roll"
-
-#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
-msgid "Matches people with an event with a selected role"
-msgstr "Matchar personer med en händelse med en vald roll"
-
-#: FilterRules/hasrolerule.gpr.py:43
-msgid "Families with events with a selected role"
-msgstr "Familjer med händelser med en vald roll"
-
-#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:93
-msgid "Matches families with an event with a selected role"
-msgstr "Matchar familjer med en händelse med en vald roll"
+#: FilterRules/associationsofpersonmatch.py:46
+#: FilterRules/associationsofpersonmatch.py:47
+#: FilterRules/associationsofpersonmatch.gpr.py:25
+#: FilterRules/associationsofpersonmatch.gpr.py:26
+msgid "Match associations of <person filter>"
+msgstr "Matcha föreningar av <personfilter>"
 
 #: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
@@ -127,26 +87,53 @@ msgstr "Omvänd"
 msgid "People with events with the <role>"
 msgstr "Personer med händelser med <rollen>"
 
+#: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
+msgid "Matches people with an event with a selected role"
+msgstr "Matchar personer med en händelse med en vald roll"
+
 #: FilterRules/hasrolerule.py:92
 msgid "Families with events with the <role>"
 msgstr "Familjer med händelser med <rollen>"
 
-#: FilterRules/hassourcefilter.gpr.py:28
-msgid "Source matching parameters"
-msgstr "Parametrar för källmatchning"
+#: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
+msgid "Matches families with an event with a selected role"
+msgstr "Matchar familjer med en händelse med en vald roll"
 
-#: FilterRules/hassourcefilter.gpr.py:29
-msgid "Matches Sources with values containing the chosen parameters"
-msgstr "Matchar källor med värden som innehåller de valda parametrarna"
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
+#: FilterRules/isfamilyfiltermatchevent.py:63
+#: FilterRules/isfamilyfiltermatchevent.py:64
+msgid "Events of families matching a <family filter>"
+msgstr "Händelser för familjer som matchar ett <familjefilter>"
 
-#: FilterRules/hassourcefilter.py:58
-msgid "Matches sources with a particular value"
-msgstr "Matchar källor med ett visst värde"
+#: FilterRules/familieswitheventfiltermatch.gpr.py:25
+#: FilterRules/familieswitheventfiltermatch.py:45
+msgid "Families matching <event filter>"
+msgstr "Familjer som matchar <händelsefilter>"
 
-#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
-#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
-msgid "People who are part of families matching <filter>"
-msgstr "Personer som ingår i familjer matchande <filter>"
+#: FilterRules/familieswitheventfiltermatch.gpr.py:26
+msgid "Matches families that are matched by an event filter"
+msgstr "Matchar familjer som matchas av ett händelsefilter"
+
+#: FilterRules/familieswitheventfiltermatch.py:47
+msgid "Matches families matched by an event filter"
+msgstr "Matchar familjer som matchas av ett händelsefilter"
+
+#: FilterRules/degreesofseparation.py:47
+msgid "Number of degrees of separation from person."
+msgstr "Antal grader av separation från person."
+
+#: FilterRules/degreesofseparation.py:59
+msgid "Degrees:"
+msgstr "Grader:"
+
+#: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
+msgid "People with <count> of <event>"
+msgstr ""
+
+#: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
+msgid "Matches persons which have events of given type and number."
+msgstr ""
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
@@ -168,40 +155,53 @@ msgstr "Inkludera föräldrarna i matchande familjer."
 msgid "Family Filter name:"
 msgstr "Familjefilter namn:"
 
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
-#: FilterRules/isfamilyfiltermatchevent.py:63
-#: FilterRules/isfamilyfiltermatchevent.py:64
-msgid "Events of families matching a <family filter>"
-msgstr "Händelser för familjer som matchar ett <familjefilter>"
+#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
+#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
+msgid "People who are part of families matching <filter>"
+msgstr "Personer som ingår i familjer matchande <filter>"
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
-#: FilterRules/isrelatedwithfiltermatch.py:53
-msgid "People related to <filter>"
-msgstr "Personer relaterade till <filter>"
+#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
+#: FilterRules/ageatdeath.py:74
+msgid "Filter people by their age at death"
+msgstr "Filtrera personer efter deras ålder vid döden"
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
-#: FilterRules/isrelatedwithfiltermatch.py:55
-msgid "Matches people who are related to anybody matched by a person filter"
-msgstr ""
-"Matchar personer som är relaterade till någon som matchas av ett personfilter"
+#: FilterRules/ageatdeath.gpr.py:26
+msgid "Filter rule that matches people by their age at death"
+msgstr "Filterregel som matchar personer efter deras ålder vid döden"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
 msgstr "Filter för flera föräldrar"
 
-#: FilterRules/multipleparents.py:42
-msgid "People with multiple parent records"
-msgstr "Personer med flera föräldraregister"
+#: FilterRules/hasrolerule.gpr.py:27
+msgid "People with events with a selected role"
+msgstr "Personer med händelser med en vald roll"
 
-#: FilterRules/multipleparents.py:43
-msgid "Matches people who have more than one set of parents"
-msgstr "Matchar personer som har mer än en uppsättning föräldrar"
+#: FilterRules/hasrolerule.gpr.py:43
+msgid "Families with events with a selected role"
+msgstr "Familjer med händelser med en vald roll"
 
-#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
-msgid "People with <count> of <event>"
-msgstr ""
+#: FilterRules/activepersonrule.gpr.py:27
+#: FilterRules/activepersonrule.gpr.py:28
+msgid "The active Person"
+msgstr "Den aktiva personen"
 
-#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
-msgid "Matches persons which have events of given type and number."
-msgstr ""
+#: FilterRules/hassourcefilter.py:58
+msgid "Matches sources with a particular value"
+msgstr "Matchar källor med ett visst värde"
+
+#: FilterRules/activepersonrule.py:45
+msgid "Active person"
+msgstr "Aktiv person"
+
+#: FilterRules/activepersonrule.py:47
+msgid "Matches the active person"
+msgstr "Matchar den aktiva personen"
+
+#: FilterRules/ageatdeath.py:47
+msgid "Age in years at person's death."
+msgstr "Ålder i år vid personens död."
+
+#: FilterRules/ageatdeath.py:71
+msgid "Age:"
+msgstr "Ålder:"

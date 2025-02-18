@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -29,15 +29,6 @@ msgstr ""
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
 msgid "INFO"
 msgstr "INFO"
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr "Media Rapport"
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr ""
-"Genereert rapport inclusief afbeeldingen, afbeeldingsgegevens en notities."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
@@ -120,3 +111,12 @@ msgstr "Media hoogte"
 #, python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Maximale mediahoogte in % van de beschikbare paginahoogte."
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr "Media Rapport"
+
+#: MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr ""
+"Genereert rapport inclusief afbeeldingen, afbeeldingsgegevens en notities."

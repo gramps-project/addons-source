@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -42,22 +42,6 @@ msgstr ""
 #: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr "Inclure les media"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:32
-msgid "Export GEDCOM Extensions (GED2)"
-msgstr "Exportation des extensions Gedcom (GED2)"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:33
-msgid "GEDCOM Extensions (GED2)"
-msgstr "Extensions Gedcom (GED2)"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:34
-msgid "Extensions to the common GEDCOM format."
-msgstr "Extensions du format courant Gedcom."
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:42
-msgid "GEDCOM Extensions options"
-msgstr "Options des extensions Gedcom (GED2)"
 
 #: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
@@ -87,3 +71,19 @@ msgstr "Type de nom de famille:"
 #: GedcomExtensions/GedcomExtensions.py:261
 msgid "Export failed"
 msgstr "L'exportation a échoué"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:32
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "Exportation des extensions Gedcom (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:33
+msgid "GEDCOM Extensions (GED2)"
+msgstr "Extensions Gedcom (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:34
+msgid "Extensions to the common GEDCOM format."
+msgstr "Extensions du format courant Gedcom."
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:42
+msgid "GEDCOM Extensions options"
+msgstr "Options des extensions Gedcom (GED2)"

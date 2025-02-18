@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,29 +20,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
-#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
+#: D3Charts/AncestralCollapsibleTree.py:785
 #: D3Charts/DescendantIndentedTree.py:1500
 #: D3Charts/DescendantIndentedTree.py:1563
 #: D3Charts/DescendantIndentedTree.py:1570
 #: D3Charts/DescendantIndentedTree.py:1677
-#: D3Charts/DescendantIndentedTree.py:1697
+#: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
+#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
 #, python-format
 msgid "Failed writing %s: %s"
 msgstr "Greška u pisanju %s: %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
-#: D3Charts/DescendantIndentedTree.py:1519
+#: D3Charts/AncestralCollapsibleTree.py:345
+#: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr "Greška u stvaranju strukture mapa: %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
-#: D3Charts/DescendantIndentedTree.py:1555
+#: D3Charts/AncestralCollapsibleTree.py:368
+#: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "Greška u kopiranju web datoteka: %s"
@@ -50,8 +51,8 @@ msgstr "Greška u kopiranju web datoteka: %s"
 msgid "Ancestral Collapsible Tree Options"
 msgstr "Opcije za sklopivo stablo predaka"
 
-#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
-#: D3Charts/DescendantIndentedTree.py:1804
+#: D3Charts/AncestralCollapsibleTree.py:840
+#: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
 msgid "Include Generations"
 msgstr "Uključi generacije"
 
@@ -87,61 +88,15 @@ msgstr "Ženska boja pozadine, rasklopljeno"
 msgid "RGB-color for female expandable box background."
 msgstr "RGB-boja za žensku boju pozadine u rasklopljenom stanju."
 
-#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
-#: D3Charts/DescendantIndentedTree.py:1826
+#: D3Charts/AncestralCollapsibleTree.py:867
+#: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
 msgid "The destination path for generated files."
 msgstr "Odredište za stvorene datoteke."
 
-#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
-#: D3Charts/DescendantIndentedTree.py:1831
+#: D3Charts/AncestralCollapsibleTree.py:872
+#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
 msgid "The destination file name for html content."
 msgstr "Ime datoteke za html sadržaj."
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr "Sklopivo stablo predaka"
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Stvara web-stranicu s grafičkim prikazom predaka (SVG) u sklopivom "
-"stablastom obliku pomoću D3.js JavaScript biblioteke."
-
-#: D3Charts/DescendantIndentedTree.gpr.py:23
-#: D3Charts/DescendantIndentedTree.py:909
-msgid "Descendant Indented Tree"
-msgstr "Stablo potomaka s uvlakama"
-
-#: D3Charts/DescendantIndentedTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Stvara web-stranicu s grafičkim prikazom potomaka (SVG) u sklopivom "
-"stablastom obliku s uvlakama pomoću D3.js JavaScript biblioteke."
-
-#: D3Charts/AncestralFanChart.py:707
-msgid "Ancestral Fan Chart Options"
-msgstr "Opcije za lepezasti dijagram predaka"
-
-#: D3Charts/AncestralFanChart.py:729
-msgid "Paternal Background Color"
-msgstr "Očeva boja pozadine"
-
-#: D3Charts/AncestralFanChart.py:730
-msgid "RGB-color for paternal box background."
-msgstr "RGB-boje za očevu boju pozadine."
-
-#: D3Charts/AncestralFanChart.py:733
-msgid "Maternal Background"
-msgstr "Majčina boja pozadine"
-
-#: D3Charts/AncestralFanChart.py:734
-msgid "RGB-color for maternal box background."
-msgstr "RGB-boje za majčinu boju pozadine."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
@@ -163,6 +118,11 @@ msgstr "Pogledaj %(reference)s : %(spouse)s"
 #: D3Charts/DescendantIndentedTree.py:764
 msgid "Generating report..."
 msgstr "Izrada izvještaja …"
+
+#: D3Charts/DescendantIndentedTree.py:909
+#: D3Charts/DescendantIndentedTree.gpr.py:23
+msgid "Descendant Indented Tree"
+msgstr "Stablo potomaka s uvlakama"
 
 #: D3Charts/DescendantIndentedTree.py:1364
 msgid "Invalid Destination Directory"
@@ -439,3 +399,44 @@ msgstr "Veličina fonta osnovnog teksta"
 #: D3Charts/DescendantIndentedTree.py:2046
 msgid "The font size in pixels for biography body text."
 msgstr "Veličina fonta u pikslima za osnovni tekst biografije."
+
+#: D3Charts/DescendantIndentedTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Stvara web-stranicu s grafičkim prikazom potomaka (SVG) u sklopivom "
+"stablastom obliku s uvlakama pomoću D3.js JavaScript biblioteke."
+
+#: D3Charts/AncestralFanChart.py:707
+msgid "Ancestral Fan Chart Options"
+msgstr "Opcije za lepezasti dijagram predaka"
+
+#: D3Charts/AncestralFanChart.py:729
+msgid "Paternal Background Color"
+msgstr "Očeva boja pozadine"
+
+#: D3Charts/AncestralFanChart.py:730
+msgid "RGB-color for paternal box background."
+msgstr "RGB-boje za očevu boju pozadine."
+
+#: D3Charts/AncestralFanChart.py:733
+msgid "Maternal Background"
+msgstr "Majčina boja pozadine"
+
+#: D3Charts/AncestralFanChart.py:734
+msgid "RGB-color for maternal box background."
+msgstr "RGB-boje za majčinu boju pozadine."
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
+msgstr "Sklopivo stablo predaka"
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Stvara web-stranicu s grafičkim prikazom predaka (SVG) u sklopivom "
+"stablastom obliku pomoću D3.js JavaScript biblioteke."

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2009-10-05 21:15+0100\n"
 "Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
 "Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
@@ -29,13 +29,9 @@ msgstr ""
 msgid "Primary Name"
 msgstr "Podstawowe imię"
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+#: AllNamesQuickview/AllNames.py:51 AllNamesQuickview/AllNames.gpr.py:4
 msgid "All Names of All People"
 msgstr "Wszystkie imiona wszystkich osób"
-
-#: AllNamesQuickview/AllNames.gpr.py:5
-msgid "Display all names of all people"
-msgstr ""
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -45,3 +41,7 @@ msgstr "Typ nazwiska"
 #, python-format
 msgid "Total names %d"
 msgstr "Liczba imion %d"
+
+#: AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr ""

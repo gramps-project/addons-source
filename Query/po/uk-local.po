@@ -4,26 +4,36 @@
 # Illia Maier <illia@maier.page>, 2024.
 # Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 # Oleh Petriv, 2013.
-#
+# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2024-10-10 22:54+0300\n"
-"Last-Translator: Illia Maier <illia@maier.page>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 08:49+0000\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
-"gramps/uk/>\n"
+"addons/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
 msgstr "Введіть вирази на Python"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-format
+msgid "%d rows processed in %s seconds.\n"
+msgstr "%d рядків оброблено за %s секунд.\n"
+
+#: Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "Сьогодні"
 
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
@@ -48,12 +58,3 @@ msgstr "Швидкий перегляд виконання SQL-подібних 
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
 msgstr "Введіть SQL-запит"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d рядків оброблено за %s секунд.\n"
-
-#: Query/QueryQuickview.py:426
-msgid "Today"
-msgstr "Сьогодні"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -29,13 +29,9 @@ msgstr ""
 msgid "Primary Name"
 msgstr "Primærnavn"
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+#: AllNamesQuickview/AllNames.py:51 AllNamesQuickview/AllNames.gpr.py:4
 msgid "All Names of All People"
 msgstr "Alle navn på alle personer"
-
-#: AllNamesQuickview/AllNames.gpr.py:5
-msgid "Display all names of all people"
-msgstr ""
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -45,3 +41,7 @@ msgstr "Navnetype"
 #, python-format
 msgid "Total names %d"
 msgstr "Antall navn %d"
+
+#: AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr ""

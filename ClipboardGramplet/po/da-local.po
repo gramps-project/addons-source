@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,6 +20,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#: ClipboardGramplet/ClipboardGramplet.py:83
+#, python-format
+msgid "Clipboard Gramplet: %s"
+msgstr "Clipboard Gramplet: %s"
+
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:18
 msgid "Collections Clipboard"
@@ -29,8 +34,3 @@ msgstr "Samlings Udklipsholder"
 msgid "Gramplet for grouping collections of items to aid in data entry."
 msgstr ""
 "Gramplet til at gruppere samlinger af elementer for hjælp i datafangst."
-
-#: ClipboardGramplet/ClipboardGramplet.py:83
-#, python-format
-msgid "Clipboard Gramplet: %s"
-msgstr "Clipboard Gramplet: %s"

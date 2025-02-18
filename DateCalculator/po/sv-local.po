@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,21 +25,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: EditExifMetadata/editexifmetadata.py:215
 #: DateCalculator/DateCalculator.py:107
 msgid "Copy"
 msgstr "Kopiera"
-
-#: DateCalculator/DateCalculator.gpr.py:22
-#: DateCalculator/DateCalculator.gpr.py:32
-msgid "Date Calculator"
-msgstr "Datumkalkylator"
-
-#: DateCalculator/DateCalculator.gpr.py:23
-msgid "Perform date math calculations"
-msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
@@ -85,4 +76,13 @@ msgstr "Fel: åtminstone ett uttryck måste vara ett datum"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
+msgstr ""
+
+#: DateCalculator/DateCalculator.gpr.py:22
+#: DateCalculator/DateCalculator.gpr.py:32
+msgid "Date Calculator"
+msgstr "Datumkalkylator"
+
+#: DateCalculator/DateCalculator.gpr.py:23
+msgid "Perform date math calculations"
 msgstr ""

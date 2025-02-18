@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -32,14 +32,6 @@ msgstr[0] "Import dokončený: %d sekunda"
 msgstr[1] "Import dokončený: %d sekundy"
 msgstr[2] "Import dokončený: %d sekúnd"
 
-#: Sqlite/ImportSql.py:893
-#, python-format
-msgid "Import Complete: %d second"
-msgid_plural "Import Complete: %d seconds"
-msgstr[0] "Import dokončený: %d sekunda"
-msgstr[1] "Import dokončený: %d sekundy"
-msgstr[2] "Import dokončený: %d sekúnd"
-
 #: Sqlite/Sqlite.gpr.py:4
 msgid "SQLite Import"
 msgstr "Import SQLite"
@@ -53,3 +45,11 @@ msgstr "SQLite je bežný formát lokálnej databázy"
 #| msgid "SQLite Import"
 msgid "SQLite Export"
 msgstr "Import SQLite"
+
+#: Sqlite/ImportSql.py:893
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Import dokončený: %d sekunda"
+msgstr[1] "Import dokončený: %d sekundy"
+msgstr[2] "Import dokončený: %d sekúnd"

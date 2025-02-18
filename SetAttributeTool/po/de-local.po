@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: SetAttributeTool/SetAttributeTool.py:71
@@ -49,16 +49,6 @@ msgstr "Verarbeitung...\n"
 msgid "Done!\n"
 msgstr "Fertig!\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
-#: SetAttributeTool/SetAttributeTool.py:122
-#: SetAttributeTool/SetAttributeTool.py:150
-msgid "Set Attribute"
-msgstr "Attribut setzen"
-
-#: SetAttributeTool/SetAttributeTool.gpr.py:27
-msgid "Set an attribute to a given value."
-msgstr "Setzt ein Attribut auf einen gegebenen Wert."
-
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Attributart zum Hinzufügen oder Bearbeiten"
@@ -70,6 +60,12 @@ msgstr "Attributwert zum Hinzufügen oder Bearbeiten"
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
 msgstr "Attributart und Wertepaar entfernen"
+
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set Attribute"
+msgstr "Attribut setzen"
 
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
@@ -109,3 +105,7 @@ msgid ""
 msgstr ""
 "\n"
 "Entfernen von %d '%s'-Attributen zu '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:27
+msgid "Set an attribute to a given value."
+msgstr "Setzt ein Attribut auf einen gegebenen Wert."

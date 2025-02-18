@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 10:31+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -20,42 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-msgid "Place Coordinate Gramplet"
-msgstr "גרמפלט נקודות־ציון מקום"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
-msgid "Map Menu"
-msgstr "תפריט מפה"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
-msgid "Add city as place"
-msgstr "הוספת עיר כ'מקום'"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
-msgid "Add addess as place"
-msgstr "הוספת כתובת כ'מקום'"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
-msgid "Place Coordinate Gramplet view"
-msgstr "מצג גרמפלט נקודות־ציון מקום"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
-msgid "View for the place coordinate gramplet."
-msgstr "מצג גרמפלט נקודות־ציון מקום."
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
-msgid "Place and Coordinates"
-msgstr "מקום ונקודות־ציון"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
-msgid "Gramplet that simplifies setting the coordinates of a place"
-msgstr "גרמפלט לפישוט קביעת נקודות־הציון של מקום"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
-msgid "Place Coordinates"
-msgstr "נקודות־ציון מקום"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
@@ -97,6 +61,42 @@ msgstr "טרם בוצע חיפוש"
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr "אין מקום פעיל"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
+msgid "Place Coordinate Gramplet view"
+msgstr "מצג גרמפלט נקודות־ציון מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
+msgid "View for the place coordinate gramplet."
+msgstr "מצג גרמפלט נקודות־ציון מקום."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
+msgid "Place and Coordinates"
+msgstr "מקום ונקודות־ציון"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "גרמפלט לפישוט קביעת נקודות־הציון של מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
+msgid "Place Coordinates"
+msgstr "נקודות־ציון מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+msgid "Place Coordinate Gramplet"
+msgstr "גרמפלט נקודות־ציון מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
+msgid "Map Menu"
+msgstr "תפריט מפה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
+msgid "Add city as place"
+msgstr "הוספת עיר כ'מקום'"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+msgid "Add addess as place"
+msgstr "הוספת כתובת כ'מקום'"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"

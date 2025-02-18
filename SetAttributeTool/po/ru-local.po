@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -47,16 +47,6 @@ msgstr "Обработка...\n"
 msgid "Done!\n"
 msgstr "Завершено!\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
-#: SetAttributeTool/SetAttributeTool.py:122
-#: SetAttributeTool/SetAttributeTool.py:150
-msgid "Set Attribute"
-msgstr "Установка атрибутов"
-
-#: SetAttributeTool/SetAttributeTool.gpr.py:27
-msgid "Set an attribute to a given value."
-msgstr "Установливает значения атрибутов."
-
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Тип атрибута для добавления или изменения"
@@ -68,6 +58,12 @@ msgstr "Значение атрибута для добавления или и�
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
 msgstr "Удалить установленный тип атрибута и значение"
+
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set Attribute"
+msgstr "Установка атрибутов"
 
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
@@ -107,3 +103,7 @@ msgid ""
 msgstr ""
 "\n"
 "Удаление %d '%s' атрибутов для '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:27
+msgid "Set an attribute to a given value."
+msgstr "Установливает значения атрибутов."

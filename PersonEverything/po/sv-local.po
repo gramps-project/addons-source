@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: AncestorFill/AncestorFill.py:361 PersonEverything/PersonEverything.py:1028
 msgid "The style used for the title of the page."
@@ -38,14 +38,6 @@ msgstr "Släktskap med far"
 #: DynamicWeb/dynamicweb.py:3061 PersonEverything/PersonEverything.py:225
 msgid "Relationship to Mother"
 msgstr "Släktskap med mor"
-
-#: PersonEverything/PersonEverything.gpr.py:32
-msgid "PersonEverything Report"
-msgstr "Allting för person rapport"
-
-#: PersonEverything/PersonEverything.gpr.py:33
-msgid "Produces a report containing everything about the active person"
-msgstr "Producerar en rapport som innehåller allt om den aktiva personen"
 
 #: PersonEverything/PersonEverything.py:133
 #, python-format
@@ -175,3 +167,11 @@ msgstr "Taggfärg och prioritet"
 #: PersonEverything/PersonEverything.py:960
 msgid "No source information found"
 msgstr "Ingen källinformation funnen"
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "PersonEverything Report"
+msgstr "Allting för person rapport"
+
+#: PersonEverything/PersonEverything.gpr.py:33
+msgid "Produces a report containing everything about the active person"
+msgstr "Producerar en rapport som innehåller allt om den aktiva personen"

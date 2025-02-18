@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -36,16 +36,6 @@ msgstr ""
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
 msgid "INFO"
 msgstr "ИНФОРМАЦИЯ"
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr "Медиа отчёт"
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr ""
-"Создаёт отчёт включающий изображения, информацию об изображении и его "
-"заметках."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
@@ -128,3 +118,13 @@ msgstr "Высота изображения"
 #, python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Максимальная высота в % от доступной высоты страницы."
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr "Медиа отчёт"
+
+#: MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr ""
+"Создаёт отчёт включающий изображения, информацию об изображении и его "
+"заметках."

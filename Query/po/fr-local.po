@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -41,6 +41,15 @@ msgstr ""
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
 msgstr "Entrez des expressions python"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-format
+msgid "%d rows processed in %s seconds.\n"
+msgstr ""
+
+#: Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "Aujourd'hui"
 
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
@@ -65,12 +74,3 @@ msgstr "Rapport express pour du SQL-like fonctionnant avec requêtes"
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
 msgstr "Entrez un requête SQL"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr ""
-
-#: Query/QueryQuickview.py:426
-msgid "Today"
-msgstr "Aujourd'hui"

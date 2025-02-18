@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,11 +31,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
 msgstr "Pythonausdruck eingeben"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-format
+msgid "%d rows processed in %s seconds.\n"
+msgstr "%d Zeilen in %s Sekunden verarbeitet.\n"
+
+#: Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "Heute"
 
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
@@ -60,12 +69,3 @@ msgstr "Schnellansicht für SQL-ähnlich laufende Abfragen"
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
 msgstr "SQL Abfrage eingeben"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d Zeilen in %s Sekunden verarbeitet.\n"
-
-#: Query/QueryQuickview.py:426
-msgid "Today"
-msgstr "Heute"

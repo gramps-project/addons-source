@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -34,15 +34,6 @@ msgstr ""
 #: RelID/relation_tab.py:97 PhotoTaggingGramplet/PhotoTaggingGramplet.py:498
 msgid "_Select"
 msgstr "_Выбрать"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
-msgid "Photo Tagging"
-msgstr "Разметка фотографий"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
-msgid "Gramplet for tagging people in photos"
-msgstr "Грамплет предназначен для выделения людей на фотографиях"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
@@ -152,3 +143,12 @@ msgstr "Умерла в %s"
 #, python-format
 msgid "Unknown gender person|Dead at %s"
 msgstr "Смерть в %s"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
+msgid "Photo Tagging"
+msgstr "Разметка фотографий"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
+msgid "Gramplet for tagging people in photos"
+msgstr "Грамплет предназначен для выделения людей на фотографиях"

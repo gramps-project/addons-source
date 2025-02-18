@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -34,16 +34,6 @@ msgstr "Velg filter for å begrense antall personer"
 #: AttachSourceTool/AttachSourceTool.py:157
 msgid "Processing...\n"
 msgstr "Prosesserer...\n"
-
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
-#: AttachSourceTool/AttachSourceTool.py:137
-#: AttachSourceTool/AttachSourceTool.py:155
-msgid "Attach Source"
-msgstr ""
-
-#: AttachSourceTool/AttachSourceTool.gpr.py:27
-msgid "Attaches a shared source to multiple objects."
-msgstr ""
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -77,6 +67,12 @@ msgstr ""
 msgid "ID of source to attach"
 msgstr ""
 
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+msgid "Attach Source"
+msgstr ""
+
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
 msgstr ""
@@ -88,3 +84,7 @@ msgstr ""
 #: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Gjort!\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
+msgid "Attaches a shared source to multiple objects."
+msgstr ""

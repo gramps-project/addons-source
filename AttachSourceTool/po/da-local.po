@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -29,16 +29,6 @@ msgstr "Vælg filter til personafgrænsning"
 #: AttachSourceTool/AttachSourceTool.py:157
 msgid "Processing...\n"
 msgstr "Behandler ...\n"
-
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
-#: AttachSourceTool/AttachSourceTool.py:137
-#: AttachSourceTool/AttachSourceTool.py:155
-msgid "Attach Source"
-msgstr "Vedæft Kilde"
-
-#: AttachSourceTool/AttachSourceTool.gpr.py:27
-msgid "Attaches a shared source to multiple objects."
-msgstr "Vedhæfter en delt kilde til flere objekter."
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -72,6 +62,12 @@ msgstr "Eksisterende KildeID"
 msgid "ID of source to attach"
 msgstr "ID for kilden, der skal vedhæftes"
 
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+msgid "Attach Source"
+msgstr "Vedæft Kilde"
+
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
 msgstr "Vedhæfter Kilder\n"
@@ -83,3 +79,7 @@ msgstr "Vedhæfter Kilder...."
 #: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Færdig!\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
+msgid "Attaches a shared source to multiple objects."
+msgstr "Vedhæfter en delt kilde til flere objekter."

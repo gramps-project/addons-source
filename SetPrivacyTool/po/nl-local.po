@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -33,16 +33,12 @@ msgstr "Selecteer filter om aantal mensen te beperken"
 msgid "Persons"
 msgstr "Personen"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
-#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
-#: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
-#: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
+#: SetPrivacyTool/SetPrivacyTool.py:51 SetPrivacyTool/SetPrivacyTool.py:93
+#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:146
+#: SetPrivacyTool/SetPrivacyTool.py:186 SetPrivacyTool/SetPrivacyTool.py:226
+#: SetPrivacyTool/SetPrivacyTool.py:255 SetPrivacyTool/SetPrivacyTool.gpr.py:24
 msgid "Set Privacy Tool"
 msgstr "Markeer privé hulpmiddel"
-
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
-msgid "Set all objects of the last <number> of years private."
-msgstr "Markeer alle objecten van de afgelopen <aantal> jaren op privé."
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
@@ -108,3 +104,7 @@ msgstr "Internettype filter"
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
 msgstr "E-mail"
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
+msgid "Set all objects of the last <number> of years private."
+msgstr "Markeer alle objecten van de afgelopen <aantal> jaren op privé."

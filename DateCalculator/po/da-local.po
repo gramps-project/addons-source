@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -24,15 +24,6 @@ msgstr ""
 #: DateCalculator/DateCalculator.py:107
 msgid "Copy"
 msgstr "Kopier"
-
-#: DateCalculator/DateCalculator.gpr.py:22
-#: DateCalculator/DateCalculator.gpr.py:32
-msgid "Date Calculator"
-msgstr "Datoberegner"
-
-#: DateCalculator/DateCalculator.gpr.py:23
-msgid "Perform date math calculations"
-msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
@@ -78,4 +69,13 @@ msgstr "Fejl: Mindst et udtryk skal være en dato"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
+msgstr ""
+
+#: DateCalculator/DateCalculator.gpr.py:22
+#: DateCalculator/DateCalculator.gpr.py:32
+msgid "Date Calculator"
+msgstr "Datoberegner"
+
+#: DateCalculator/DateCalculator.gpr.py:23
+msgid "Perform date math calculations"
 msgstr ""

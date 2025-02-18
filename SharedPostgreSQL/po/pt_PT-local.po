@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -19,19 +20,13 @@ msgstr ""
 "X-Generator: Weblate 5.10.1-dev\n"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
-#, fuzzy
-#| msgid "PostgreSQL"
 msgid "SharedPostgreSQL"
-msgstr "PostgreSQL"
+msgstr "SharedPostgreSQL"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:25
-#, fuzzy
-#| msgid "_PostgreSQL Database"
 msgid "Shared _PostgreSQL Database"
-msgstr "Base de dados _PostgreSQL"
+msgstr "Base de dados partilhada _PostgreSQL"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:26
-#, fuzzy
-#| msgid "PostgreSQL Database"
 msgid "Shared PostgreSQL Database"
-msgstr "Base de dados PostgreSQL"
+msgstr "Base de dados partilhada PostgreSQL"

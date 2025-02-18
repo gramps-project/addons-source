@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -34,18 +34,6 @@ msgstr ""
 #: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Стиль заголовка страницы."
-
-#: ToDoReport/TodoReport.gpr.py:25
-msgid "Todo Report"
-msgstr "Отчёт по задачам"
-
-#: ToDoReport/TodoReport.gpr.py:27
-msgid ""
-"Produces a list of all the notes with a given tag along with the records "
-"that it references, the Person, Family, Event, etc."
-msgstr ""
-"Предоставляет список всех заметок с указанныой меткой по всем записям на "
-"которые они ссылаются (лицо, семья, событие, др.)"
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -163,3 +151,15 @@ msgstr "Основной стиль, используемый для отобр�
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "Основной стиль, используемый для отображения таблицы."
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
+msgstr "Отчёт по задачам"
+
+#: ToDoReport/TodoReport.gpr.py:27
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Предоставляет список всех заметок с указанныой меткой по всем записям на "
+"которые они ссылаются (лицо, семья, событие, др.)"

@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -21,7 +22,7 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:16
 msgid "This Day in Family History"
-msgstr "Um dia na história familiar"
+msgstr "Este dia na história familiar"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:9
 msgid ""
@@ -34,7 +35,7 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:105
 msgid "Database is not open, can't check history right now."
 msgstr ""
-"A base de dados não está aberta, impossível verificar a história agora."
+"A base de dados não está aberta, impossível verificar o histórico agora."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:106
 #, python-format
@@ -43,7 +44,7 @@ msgstr "A %(date)s na história familiar...\n"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:107
 msgid "... nothing happened!  Check again tomorrow!"
-msgstr "... nada aconteceu! Procure amanhão outra vez!"
+msgstr "... nada aconteceu! Procure amanhã outra vez!"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:111
 msgid "Report only living tree members"
@@ -192,7 +193,7 @@ msgstr "%(male_name)s foi baptizado no ano de %(year)s em %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:504
 #, python-format
 msgid "%(female_name)s was baptized in %(year)s at %(place)s."
-msgstr "%(female_name)s foi baptizado no ano de %(year)s em %(place)s."
+msgstr "%(female_name)s foi baptizada no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:507
 #, python-format
@@ -202,12 +203,12 @@ msgstr "%(male_name)s tornou-se bar mitzvah no ano de %(year)s em %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:509
 #, python-format
 msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
-msgstr "%(female_name)s tornou-se bat mitzvah no ano de %(year)s em %(place)s."
+msgstr "%(female_name)s tornou-se bar mitzvah no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:512
 #, python-format
 msgid "%(male_name)s became a bat mitzvah in %(year)s at %(place)s."
-msgstr "%(male_name)s tornou-se bar mitzvah no ano de %(year)s em %(place)s."
+msgstr "%(male_name)s tornou-se bat mitzvah no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:514
 #, python-format
@@ -237,12 +238,12 @@ msgstr "%(female_name)s foi abençoada no ano de %(year)s em %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:527
 #, python-format
 msgid "%(male_name)s was buried in %(year)s at %(place)s."
-msgstr "%(male_name)s foi sepultado no ano de %(year)s em %(place)s."
+msgstr "%(male_name)s foi inumado no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:529
 #, python-format
 msgid "%(female_name)s was buried in %(year)s at %(place)s."
-msgstr "%(female_name)s foi sepultada no ano de %(year)s em %(place)s."
+msgstr "%(female_name)s foi inumada no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:532
 #, python-format
@@ -287,14 +288,12 @@ msgstr "%(female_name)s faleceu no ano de %(year)s em %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:559
 #, python-format
 msgid "%(male_name)s was awarded a degree in %(year)s at %(place)s."
-msgstr ""
-"%(male_name)s recebeu uma licenciatura no ano de %(year)s em %(place)s."
+msgstr "%(male_name)s recebeu uma graduação no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:561
 #, python-format
 msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
-msgstr ""
-"%(female_name)s recebeu uma licenciatura no ano de %(year)s em %(place)s."
+msgstr "%(female_name)s recebeu uma graduação no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:564
 #, python-format
@@ -516,7 +515,7 @@ msgstr "%(male_name)s foi ordenado no ano de %(year)s em %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:685
 #, python-format
 msgid "%(female_name)s was ordained in %(year)s at %(place)s."
-msgstr "%(female_name)s foi ordenado no ano de %(year)s em %(place)s."
+msgstr "%(female_name)s foi ordenada no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:688
 #, python-format

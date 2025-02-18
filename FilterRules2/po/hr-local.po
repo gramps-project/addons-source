@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,52 +20,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: FilterRules2/matrilinealprogenitrix.gpr.py:25
-#: FilterRules2/matrilinealprogenitrix.py:45
-msgid "Matrilineal progenitrix of <person>"
-msgstr "Matrilinearna pretkinja od <osoba>"
+#: FilterRules2/yinheritanceoffiltermatch.py:46
+#: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
+msgid "Y-chromosomal inheritance of <filter>"
+msgstr "Nasljeđivanje Y-kromosa od <filtar>"
 
-#: FilterRules2/matrilinealprogenitrix.gpr.py:26
-#: FilterRules2/matrilinealprogenitrix.py:47
-msgid "Matches the earliest recorded matrilineal ancestor mother."
-msgstr "Pronalazi najraniju zapisanu majku matrilinearnih pretkinja."
-
-#: FilterRules2/mtinheritance.gpr.py:25 FilterRules2/mtinheritance.py:45
-msgid "Mitochondrial inheritance of <person>"
-msgstr "Nasljeđivanje mitohondrija od <osoba>"
-
-#: FilterRules2/mtinheritance.gpr.py:27 FilterRules2/mtinheritance.py:46
+#: FilterRules2/yinheritanceoffiltermatch.py:47
+#: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
 msgid ""
-"Matches recorded descendants of person following mitochondrial inheritance "
-"patterns."
-msgstr ""
-"Pronalazi zapisane potomke osobe, prateći mustre nasljeđivanja mitohondrija."
-
-#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
-#: FilterRules2/mtinheritanceoffiltermatch.py:46
-msgid "Mitochondrial inheritance of <filter>"
-msgstr "Nasljeđivanje mitohondrija od <filtar>"
-
-#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
-#: FilterRules2/mtinheritanceoffiltermatch.py:47
-msgid ""
-"Matches recorded descendants of a filter result following mitochondrial "
+"Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
 msgstr ""
-"Pronalazi zapisane potomke rezultata filtra, prateći mustre nasljeđivanja "
-"mitohondrija."
-
-#: FilterRules2/patrilinealprogenitor.gpr.py:25
-#: FilterRules2/patrilinealprogenitor.py:45
-msgid "Patrilineal progenitor of <person>"
-msgstr "Patrilinearni predak od <osoba>"
-
-#: FilterRules2/patrilinealprogenitor.gpr.py:26
-#: FilterRules2/patrilinealprogenitor.py:47
-msgid "Matches the earliest recorded patrilineal ancestor father."
-msgstr "Pronalazi najranijeg zapisanog oca patrilinearnih predaka."
+"Pronalazi zapisane potomke rezultata filtra, prateći mustre nasljeđivanja Y-"
+"kromosoma."
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
@@ -87,12 +57,57 @@ msgid ""
 msgstr ""
 "Pronalazi potomke od <osoba>, prateći mustru nasljeđivanja X-kromosoma."
 
+#: FilterRules2/patrilinealprogenitor.py:45
+#: FilterRules2/patrilinealprogenitor.gpr.py:25
+msgid "Patrilineal progenitor of <person>"
+msgstr "Patrilinearni predak od <osoba>"
+
+#: FilterRules2/patrilinealprogenitor.py:47
+#: FilterRules2/patrilinealprogenitor.gpr.py:26
+msgid "Matches the earliest recorded patrilineal ancestor father."
+msgstr "Pronalazi najranijeg zapisanog oca patrilinearnih predaka."
+
+#: FilterRules2/mtinheritanceoffiltermatch.py:46
+#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
+msgid "Mitochondrial inheritance of <filter>"
+msgstr "Nasljeđivanje mitohondrija od <filtar>"
+
+#: FilterRules2/mtinheritanceoffiltermatch.py:47
+#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
+msgid ""
+"Matches recorded descendants of a filter result following mitochondrial "
+"inheritance patterns."
+msgstr ""
+"Pronalazi zapisane potomke rezultata filtra, prateći mustre nasljeđivanja "
+"mitohondrija."
+
+#: FilterRules2/matrilinealprogenitrix.gpr.py:25
+#: FilterRules2/matrilinealprogenitrix.py:45
+msgid "Matrilineal progenitrix of <person>"
+msgstr "Matrilinearna pretkinja od <osoba>"
+
+#: FilterRules2/matrilinealprogenitrix.gpr.py:26
+#: FilterRules2/matrilinealprogenitrix.py:47
+msgid "Matches the earliest recorded matrilineal ancestor mother."
+msgstr "Pronalazi najraniju zapisanu majku matrilinearnih pretkinja."
+
 #: FilterRules2/xchromdescendants.py:50
 msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
 "Pronalazi sve potomke od <osoba>, prateći mustru nasljeđivanja X-kromosoma."
+
+#: FilterRules2/mtinheritance.py:45 FilterRules2/mtinheritance.gpr.py:25
+msgid "Mitochondrial inheritance of <person>"
+msgstr "Nasljeđivanje mitohondrija od <osoba>"
+
+#: FilterRules2/mtinheritance.py:46 FilterRules2/mtinheritance.gpr.py:27
+msgid ""
+"Matches recorded descendants of person following mitochondrial inheritance "
+"patterns."
+msgstr ""
+"Pronalazi zapisane potomke osobe, prateći mustre nasljeđivanja mitohondrija."
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
 msgid "Y-chromosomal inheritance of <person>"
@@ -104,17 +119,3 @@ msgid ""
 "patterns."
 msgstr ""
 "Pronalazi zapisane potomke osobe, prateći mustre nasljeđivanja Y-kromosoma."
-
-#: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
-#: FilterRules2/yinheritanceoffiltermatch.py:46
-msgid "Y-chromosomal inheritance of <filter>"
-msgstr "Nasljeđivanje Y-kromosa od <filtar>"
-
-#: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
-#: FilterRules2/yinheritanceoffiltermatch.py:47
-msgid ""
-"Matches recorded descendants of a filter result following Y-chromosomal "
-"inheritance patterns."
-msgstr ""
-"Pronalazi zapisane potomke rezultata filtra, prateći mustre nasljeđivanja Y-"
-"kromosoma."

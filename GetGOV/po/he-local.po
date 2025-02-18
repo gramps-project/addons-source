@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 10:31+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -21,35 +21,48 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
-#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42 GetGOV/getgov.gpr.py:32
-#: GetGOV/getgov.gpr.py:44
-msgid "GetGOV"
-msgstr "גטגוב"
+#: GetGOV/getgov.py:315
+msgid "Place ID to import from GOV (Historical Gazetteer):"
+msgstr ""
 
-#: GetGOV/getgov.gpr.py:31 GetGOV/getgov.gpr.py:33
-msgid "Gramplet to get places from the GOV database"
-msgstr "גראמפלט לאחזור מקומות ממסד נתונים GOV"
-
-#: GetGOV/getgov.py:311 GetGOV/getgov.py:323
+#: GetGOV/getgov.py:323
 msgid "Get Place"
 msgstr "אחזור מקום"
 
-#: GetGOV/getgov.py:343 GetGOV/getgov.py:356
+#: GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "הוספת מקום מזהה GOV ‏%s"
 
-#: GetGOV/getgov.py:521 GetGOV/getgov.py:555
+#: GetGOV/getgov.py:388
+#, python-format
+msgid "GetGOV error: %s"
+msgstr ""
+
+#: GetGOV/getgov.py:421
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr ""
+
+#: GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
 msgstr "מ %s ל %s"
 
-#: GetGOV/getgov.py:523 GetGOV/getgov.py:557
+#: GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
 msgstr "אחרי %s"
 
-#: GetGOV/getgov.py:525 GetGOV/getgov.py:559
+#: GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
 msgstr "לפני %s"
+
+#: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
+msgid "GetGOV"
+msgstr "גטגוב"
+
+#: GetGOV/getgov.gpr.py:33
+msgid "Gramplet to get places from the GOV database"
+msgstr "גראמפלט לאחזור מקומות ממסד נתונים GOV"

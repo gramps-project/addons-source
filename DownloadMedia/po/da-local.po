@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,14 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: DownloadMedia/DownloadMedia.gpr.py:36
-msgid "Download media files from the internet"
-msgstr "Hent mediafiler fra internettet"
-
-#: DownloadMedia/DownloadMedia.gpr.py:37
-msgid "This tool downloads media files from the internet"
-msgstr "Dette værktøj henter mediafiler fra internettet"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
@@ -57,3 +49,11 @@ msgstr "Henter filer"
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
 msgstr "Fejl ved hentning af filer"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "Download media files from the internet"
+msgstr "Hent mediafiler fra internettet"
+
+#: DownloadMedia/DownloadMedia.gpr.py:37
+msgid "This tool downloads media files from the internet"
+msgstr "Dette værktøj henter mediafiler fra internettet"

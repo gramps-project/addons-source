@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -27,18 +27,6 @@ msgstr ""
 #: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
-
-#: ToDoReport/TodoReport.gpr.py:25
-msgid "Todo Report"
-msgstr "Takenverslag"
-
-#: ToDoReport/TodoReport.gpr.py:27
-msgid ""
-"Produces a list of all the notes with a given tag along with the records "
-"that it references, the Person, Family, Event, etc."
-msgstr ""
-"Produceert een lijst van alle notities met een bepaald label, samen met de "
-"gegevens waarnaar het verwijst, de persoon, familie, gebeurtenis, enz."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -156,3 +144,15 @@ msgstr ""
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "De basisstijl die wordt gebruikt voor de weergave van de tabel."
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
+msgstr "Takenverslag"
+
+#: ToDoReport/TodoReport.gpr.py:27
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Produceert een lijst van alle notities met een bepaald label, samen met de "
+"gegevens waarnaar het verwijst, de persoon, familie, gebeurtenis, enz."

@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -21,18 +22,6 @@ msgstr ""
 #: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "O estilo usado para o título da página."
-
-#: ToDoReport/TodoReport.gpr.py:25
-msgid "Todo Report"
-msgstr "Relatório A fazer"
-
-#: ToDoReport/TodoReport.gpr.py:27
-msgid ""
-"Produces a list of all the notes with a given tag along with the records "
-"that it references, the Person, Family, Event, etc."
-msgstr ""
-"Produz uma lista de todas as notas com uma dada etiqueta, com os registos "
-"referenciados, indivíduo, família, evento, etc."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -126,10 +115,8 @@ msgid "place: "
 msgstr "local: "
 
 #: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Note Types"
 msgid "Note Type"
-msgstr "Tipos de notas"
+msgstr "Tipo de nota"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
@@ -150,3 +137,15 @@ msgstr "O estilo básico usado para a exibição da célula da borda da tabela."
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "O estilo básico usado para mostrar a tabela."
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
+msgstr "Relatório A fazer"
+
+#: ToDoReport/TodoReport.gpr.py:27
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Produz uma lista de todas as notas com uma dada etiqueta, com os registos "
+"referenciados, indivíduo, família, evento, etc."

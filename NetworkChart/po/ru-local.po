@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -43,14 +43,6 @@ msgstr "Цвет для женщин"
 #: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Напрямую"
-
-#: NetworkChart/NetworkChart.gpr.py:24
-msgid "Network Chart"
-msgstr "Сетевой график"
-
-#: NetworkChart/NetworkChart.gpr.py:35
-msgid "Generates a family network chart."
-msgstr "Создаёт семейный график в виде сети."
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
@@ -582,3 +574,11 @@ msgstr "Подтверждение замены файла."
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
 msgstr "Включение/отключение подтверждения замены файла."
+
+#: NetworkChart/NetworkChart.gpr.py:24
+msgid "Network Chart"
+msgstr "Сетевой график"
+
+#: NetworkChart/NetworkChart.gpr.py:35
+msgid "Generates a family network chart."
+msgstr "Создаёт семейный график в виде сети."

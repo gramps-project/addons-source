@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -92,10 +92,6 @@ msgstr "Referentie:"
 msgid "Headings"
 msgstr "Rubrieken"
 
-#: Form/form.py:65
-msgid "Form"
-msgstr "Formulier"
-
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
 msgstr "Formulier Gramplet"
@@ -107,6 +103,10 @@ msgstr "Gramplet-interface voor formulieren"
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
 msgstr "Formulieren"
+
+#: Form/form.py:65
+msgid "Form"
+msgstr "Formulier"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"

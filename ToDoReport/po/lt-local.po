@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2010-03-07 23:17+0300\n"
 "Last-Translator: Artursa Sleinius <asleinius@users.sourceforge.net>\n"
 "Language-Team:  <en@li.org>\n"
@@ -25,18 +25,6 @@ msgstr ""
 #: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Stilius, naudojamas puslapio antraštei."
-
-#: ToDoReport/TodoReport.gpr.py:25
-msgid "Todo Report"
-msgstr "Norėdami atlikti ataskaitą"
-
-#: ToDoReport/TodoReport.gpr.py:27
-msgid ""
-"Produces a list of all the notes with a given tag along with the records "
-"that it references, the Person, Family, Event, etc."
-msgstr ""
-"Sudaro visų užrašų su duota etikete sąrašą kartu su įrašais, kuriais jis "
-"remiasi, asmeniu, šeima, įvykiu ir kt."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -154,3 +142,15 @@ msgstr "Pagrindinis staliuko langelių rodymo stilius."
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "Pagrindinis stalo rodymo stilius."
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
+msgstr "Norėdami atlikti ataskaitą"
+
+#: ToDoReport/TodoReport.gpr.py:27
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Sudaro visų užrašų su duota etikete sąrašą kartu su įrašais, kuriais jis "
+"remiasi, asmeniu, šeima, įvykiu ir kt."

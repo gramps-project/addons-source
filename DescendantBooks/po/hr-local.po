@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: D3Charts/DescendantIndentedTree.py:1848
 #: DescendantBooks/DescendantBookReport.py:552
@@ -30,42 +31,6 @@ msgstr "Da li prikazati duple rodoslove u izvještaju."
 #: DescendantBooks/DetailedDescendantBookReport.py:1540
 msgid "The style used for the title of the page."
 msgstr "Stil za naslov stranice."
-
-#: DescendantBooks/CollectAscendants.py:178
-#, python-format
-msgid "Deep pruning ascendants from %s people..."
-msgstr "Snažno reduciranje predaka od %s osoba …"
-
-#: DescendantBooks/CollectAscendants.py:182
-#, python-format
-msgid "Pruning ascendants from %s people..."
-msgstr "Reduciranje predaka od %s osoba …"
-
-#: DescendantBooks/CollectAscendants.py:320
-#: DescendantBooks/CollectAscendants.py:413
-#, python-format
-msgid "Getting ascendants from %s people..."
-msgstr "Dohvaćanje predaka od %s osoba …"
-
-#: DescendantBooks/CollectAscendants.py:331
-#, python-format
-msgid "Verifying descendants from %s people..."
-msgstr "Provjeravanje potomaka od %s osoba …"
-
-#: DescendantBooks/CollectAscendants.py:348
-#, python-format
-msgid "Getting missing descendants from %s people..."
-msgstr "Dohvaćanje nedostajućih potomaka od %s osoba …"
-
-#: DescendantBooks/CollectAscendants.py:367
-#, python-format
-msgid "Verifying descendants from %s people after pruning..."
-msgstr "Provjeravanje potomaka od %s osoba nakon reduciranja …"
-
-#: DescendantBooks/CollectAscendants.py:383
-#, python-format
-msgid "Getting missing descendants from %s people ..."
-msgstr "Dohvaćanje nedostajućih potomaka od %s osoba …"
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
@@ -112,26 +77,6 @@ msgstr "Stil za naslov tablice sadržaja."
 #: DescendantBooks/DescendantBookReport.py:595
 msgid "The style used for the table of contents detail."
 msgstr "Stil za detalje tablice sadržaja."
-
-#: DescendantBooks/DescendantBooks.gpr.py:22
-msgid "Descendant Book"
-msgstr "Knjiga o potomcima"
-
-#: DescendantBooks/DescendantBooks.gpr.py:23
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Stvara jedan ili više izvještaja o potomcima, na osnovi dostavljenog upita."
-
-#: DescendantBooks/DescendantBooks.gpr.py:41
-msgid "Detailed Descendant Book"
-msgstr "Detaljna knjiga o potomcima"
-
-#: DescendantBooks/DescendantBooks.gpr.py:43
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Stvara jedan ili više detaljnih izvještaja o potomcima, na osnovi "
-"dostavljenog upita."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
@@ -339,3 +284,59 @@ msgstr "Stil za zaglavlje u indeksu mjesta."
 #: DescendantBooks/DetailedDescendantBookReport.py:1699
 msgid "The style used for the references in the Index of Places."
 msgstr "Stil za reference u indeksu mjesta."
+
+#: DescendantBooks/DescendantBooks.gpr.py:22
+msgid "Descendant Book"
+msgstr "Knjiga o potomcima"
+
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Stvara jedan ili više izvještaja o potomcima, na osnovi dostavljenog upita."
+
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr "Detaljna knjiga o potomcima"
+
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Stvara jedan ili više detaljnih izvještaja o potomcima, na osnovi "
+"dostavljenog upita."
+
+#: DescendantBooks/CollectAscendants.py:178
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Snažno reduciranje predaka od %s osoba …"
+
+#: DescendantBooks/CollectAscendants.py:182
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Reduciranje predaka od %s osoba …"
+
+#: DescendantBooks/CollectAscendants.py:320
+#: DescendantBooks/CollectAscendants.py:413
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Dohvaćanje predaka od %s osoba …"
+
+#: DescendantBooks/CollectAscendants.py:331
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Provjeravanje potomaka od %s osoba …"
+
+#: DescendantBooks/CollectAscendants.py:348
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Dohvaćanje nedostajućih potomaka od %s osoba …"
+
+#: DescendantBooks/CollectAscendants.py:367
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Provjeravanje potomaka od %s osoba nakon reduciranja …"
+
+#: DescendantBooks/CollectAscendants.py:383
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Dohvaćanje nedostajućih potomaka od %s osoba …"

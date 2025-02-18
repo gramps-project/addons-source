@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -41,10 +41,6 @@ msgstr ""
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
 msgstr "Aujourd'hui"
-
-#: TimelineQuickview/TimelineQuickview.gpr.py:11
-msgid "Display a person's events on a timeline"
-msgstr "Affiche les événements d'une personne tout au long de sa vie"
 
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
@@ -96,3 +92,7 @@ msgstr "Fil du temps pour %s"
 #: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Personnes impliquées"
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:11
+msgid "Display a person's events on a timeline"
+msgstr "Affiche les événements d'une personne tout au long de sa vie"

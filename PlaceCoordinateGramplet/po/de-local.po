@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,43 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-msgid "Place Coordinate Gramplet"
-msgstr "Ortskoordinaten Gramplet"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
-msgid "Map Menu"
-msgstr "Kartenmenü"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
-msgid "Add city as place"
-msgstr "Stadt als Ort hinzufügen"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
-msgid "Add addess as place"
-msgstr "Adresse als Ort hinzufügen"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
-msgid "Place Coordinate Gramplet view"
-msgstr "Ortskoordinaten Gramplet Ansicht"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
-msgid "View for the place coordinate gramplet."
-msgstr "Ansicht für Ortskoordinaten Gramplet."
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
-msgid "Place and Coordinates"
-msgstr "Ort und Koordinaten"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
-msgid "Gramplet that simplifies setting the coordinates of a place"
-msgstr "Gramplet, das das Einstellen der Koordinaten eines Ortes vereinfacht"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
-msgid "Place Coordinates"
-msgstr "Ortskoordinaten"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
@@ -111,6 +75,42 @@ msgstr "Es wurde noch nichts gesucht"
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr "Kein Ort ist ausgewählt"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
+msgid "Place Coordinate Gramplet view"
+msgstr "Ortskoordinaten Gramplet Ansicht"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
+msgid "View for the place coordinate gramplet."
+msgstr "Ansicht für Ortskoordinaten Gramplet."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
+msgid "Place and Coordinates"
+msgstr "Ort und Koordinaten"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Gramplet, das das Einstellen der Koordinaten eines Ortes vereinfacht"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
+msgid "Place Coordinates"
+msgstr "Ortskoordinaten"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+msgid "Place Coordinate Gramplet"
+msgstr "Ortskoordinaten Gramplet"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
+msgid "Map Menu"
+msgstr "Kartenmenü"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
+msgid "Add city as place"
+msgstr "Stadt als Ort hinzufügen"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+msgid "Add addess as place"
+msgstr "Adresse als Ort hinzufügen"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"

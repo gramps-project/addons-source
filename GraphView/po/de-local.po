@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #: GraphView/graphview.py:3168 GraphView/graphview.py:3169
@@ -84,32 +84,10 @@ msgstr "Auf original Größe zoomen"
 msgid "Zoom to best fit"
 msgstr "Zoom auf die beste Größte"
 
-#: GraphView/avatars.py:60
-#, fuzzy
-#| msgid "- default -"
-msgid "Dark (default)"
-msgstr "- Standardwert -"
-
-#: GraphView/avatars.py:61
-msgid "Light"
-msgstr "Licht"
-
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr ""
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Graphenansicht"
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr "Dynamisches und interaktives Diagramm von Beziehungen"
 
 #: GraphView/graphview.py:754
 #, fuzzy
@@ -506,6 +484,28 @@ msgstr "Durch Löschen der Familie wird sie aus der Datenbank entfernt."
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Lösche Familie [%s]"
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr "Dynamisches und interaktives Diagramm von Beziehungen"
+
+#: GraphView/avatars.py:60
+#, fuzzy
+#| msgid "- default -"
+msgid "Dark (default)"
+msgstr "- Standardwert -"
+
+#: GraphView/avatars.py:61
+msgid "Light"
+msgstr "Licht"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr ""
+
+#: GraphView/avatars.py:63
+msgid "Modern"
+msgstr ""
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -29,18 +29,6 @@ msgstr "Fontformat for sidens titel"
 #: LinesOfDescendency/lines-of-descendency.py:55
 msgid "Ancestor"
 msgstr "Ane"
-
-#: LinesOfDescendency/lines-of-descendency.gpr.py:31
-msgid "Lines of Descendency Report"
-msgstr "Lines of Descendency Report"
-
-#: LinesOfDescendency/lines-of-descendency.gpr.py:33
-msgid ""
-"Prints out all descendency lines from a given ancestor to a given descendent "
-"in text."
-msgstr ""
-"Udskriver alle efterkommerlinjer fra en specifik ane til en specifik "
-"efterkommer i tekstform."
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
@@ -67,3 +55,15 @@ msgstr "%(line)s. linje:"
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
 msgstr "Linjer af efterkommer fra %(ancestor)s til %(descendent)s"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:31
+msgid "Lines of Descendency Report"
+msgstr "Lines of Descendency Report"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:33
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+"Udskriver alle efterkommerlinjer fra en specifik ane til en specifik "
+"efterkommer i tekstform."

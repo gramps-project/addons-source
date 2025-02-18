@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -28,18 +28,6 @@ msgstr ""
 #: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Stilen som brukes på sidens tittel."
-
-#: ToDoReport/TodoReport.gpr.py:25
-msgid "Todo Report"
-msgstr "Å gjøre Rapporter"
-
-#: ToDoReport/TodoReport.gpr.py:27
-msgid ""
-"Produces a list of all the notes with a given tag along with the records "
-"that it references, the Person, Family, Event, etc."
-msgstr ""
-"Produserer en liste over alle notatene med en gitt kode sammen med postene "
-"som den refererer til, personen, familien, hendelsen, etc."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -157,3 +145,15 @@ msgstr "Den grunnleggende stilen som brukes for tabellkanten cellevisning."
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "Den grunnleggende stilen som brukes for bordvisningen."
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
+msgstr "Å gjøre Rapporter"
+
+#: ToDoReport/TodoReport.gpr.py:27
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Produserer en liste over alle notatene med en gitt kode sammen med postene "
+"som den refererer til, personen, familien, hendelsen, etc."

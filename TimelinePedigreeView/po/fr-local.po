@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -53,19 +53,6 @@ msgstr "Générations de ascendants"
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Générations de descendants"
-
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
-msgid "Timeline Pedigree"
-msgstr "Arbre au fil du temps"
-
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
-msgid ""
-"The view shows a timeline pedigree with ancestors and descendants of the "
-"selected person"
-msgstr ""
-"Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et "
-"descendants de l'individu sélectionné"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
@@ -118,3 +105,16 @@ msgstr[1] "%d générations"
 #| msgid "Timeline Pedigree"
 msgid "About Timeline Pedigree View"
 msgstr "Arbre au fil du temps"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
+msgid "Timeline Pedigree"
+msgstr "Arbre au fil du temps"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et "
+"descendants de l'individu sélectionné"

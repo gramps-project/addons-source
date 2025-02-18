@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #: GraphView/graphview.py:3168 GraphView/graphview.py:3169
@@ -72,34 +73,10 @@ msgstr "Zumiraj na originalnu veličinu"
 msgid "Zoom to best fit"
 msgstr "Zumiraj za najbolji prikaz"
 
-#: GraphView/avatars.py:60
-#, fuzzy
-#| msgid "- default -"
-msgid "Dark (default)"
-msgstr "– zadano –"
-
-#: GraphView/avatars.py:61
-#, fuzzy
-#| msgid "Height:"
-msgid "Light"
-msgstr "Visina:"
-
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr ""
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Dijagram srodstva"
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr "Dinamičan i interaktivan dijagram srodstva"
 
 #: GraphView/graphview.py:754
 #, fuzzy
@@ -500,6 +477,30 @@ msgstr "Brisanje će ukloniti obitelj iz baze podataka."
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Izbriši obitelj [%s]"
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr "Dinamičan i interaktivan dijagram srodstva"
+
+#: GraphView/avatars.py:60
+#, fuzzy
+#| msgid "- default -"
+msgid "Dark (default)"
+msgstr "– zadano –"
+
+#: GraphView/avatars.py:61
+#, fuzzy
+#| msgid "Height:"
+msgid "Light"
+msgstr "Visina:"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr ""
+
+#: GraphView/avatars.py:63
+msgid "Modern"
+msgstr ""
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"

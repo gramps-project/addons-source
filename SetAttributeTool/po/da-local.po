@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -36,16 +36,6 @@ msgstr "Behandler ...\n"
 msgid "Done!\n"
 msgstr "Færdig!\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
-#: SetAttributeTool/SetAttributeTool.py:122
-#: SetAttributeTool/SetAttributeTool.py:150
-msgid "Set Attribute"
-msgstr "Sæt attribut"
-
-#: SetAttributeTool/SetAttributeTool.gpr.py:27
-msgid "Set an attribute to a given value."
-msgstr "Sæt en attribut til en specifik værdi."
-
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Attributtype der skal filføjes eller redigeres"
@@ -57,6 +47,12 @@ msgstr "Attributværdi der skal filføjes eller redigeres"
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
 msgstr "Fjern attributtype og værdi"
+
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set Attribute"
+msgstr "Sæt attribut"
 
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
@@ -96,3 +92,7 @@ msgid ""
 msgstr ""
 "\n"
 "Fjerner %d '%s' attributter til '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:27
+msgid "Set an attribute to a given value."
+msgstr "Sæt en attribut til en specifik værdi."

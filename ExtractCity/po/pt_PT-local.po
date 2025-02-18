@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -17,14 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: ExtractCity/extractcity.gpr.py:34
-msgid "Extract Place Data from a Place Title"
-msgstr "Extrair dados do local a partir do título"
-
-#: ExtractCity/extractcity.gpr.py:35
-msgid "Attempts to extract city and state/province from a place title"
-msgstr "Tenta extrair a cidade e o distrito de um título de local"
 
 #: ExtractCity/extractcity.py:402
 msgid "Place title"
@@ -54,11 +47,17 @@ msgstr ""
 "Abaixo está uma lista de locais com os dados passíveis de extracção deste "
 "título de local. Seleccione os locais que deseja que o Gramps converta."
 
+#: ExtractCity/extractcity.gpr.py:34
+msgid "Extract Place Data from a Place Title"
+msgstr "Extrair dados do local a partir do título"
+
+#: ExtractCity/extractcity.gpr.py:35
+msgid "Attempts to extract city and state/province from a place title"
+msgstr "Tenta extrair a cidade e o distrito de um título de local"
+
 #: ExtractCity/changenames.glade:94
-#, fuzzy
-#| msgid "Toggle Selection"
 msgid "_Toggle Selected"
-msgstr "Alternar selecção"
+msgstr "Al_ternar selecção"
 
 #: ExtractCity/changenames.glade:98
 msgid ""

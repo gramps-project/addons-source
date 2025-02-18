@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -55,6 +55,10 @@ msgstr "Bibliothèque Hathi Trust Digital"
 msgid "Open Library"
 msgstr ""
 
+#: USWebConnectPack/USWebPack.py:35
+msgid "US Google"
+msgstr "Google US"
+
 # trunk
 #: USWebConnectPack/USWebPack.gpr.py:11
 msgid "US Web Connect Pack"
@@ -64,7 +68,3 @@ msgstr "Ensemble de liens internet US"
 msgid "Collection of Web sites for the US (requires libwebconnect)"
 msgstr ""
 "Collection de sites internet pour les États-Unis (nécessite libwebconnect)"
-
-#: USWebConnectPack/USWebPack.py:35
-msgid "US Google"
-msgstr "Google US"

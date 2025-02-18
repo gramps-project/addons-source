@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -28,26 +28,10 @@ msgstr ""
 msgid "The style used for the title of the page."
 msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
 
-#: LastChange/LastChange.gpr.py:26
-msgid "List the last ten person records that have been changed"
-msgstr "Maak een lijst van de laatste tien persoonsgegevens die gewijzigd zijn"
-
-#: LastChange/LastChange.gpr.py:35
-msgid "Latest Changes"
-msgstr "Laatste wijzigingen"
-
-#: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
-#: LastChange/LastChangeReport.py:113
+#: LastChange/LastChangeReport.py:74 LastChange/LastChangeReport.py:113
+#: LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
 msgstr "Laatste wijzigingsverslag"
-
-#: LastChange/LastChange.gpr.py:43
-msgid "Report of the last records that have been changed"
-msgstr "Verslag van de laatste gegevens die gewijzigd zijn"
-
-#: LastChange/LastChangeGramplet.py:82
-msgid "changed on"
-msgstr "gewijzigd op"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
@@ -108,3 +92,19 @@ msgstr "Selecteer uit"
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
 msgstr "De stijl die wordt gebruikt voor normale tekst"
+
+#: LastChange/LastChangeGramplet.py:82
+msgid "changed on"
+msgstr "gewijzigd op"
+
+#: LastChange/LastChange.gpr.py:26
+msgid "List the last ten person records that have been changed"
+msgstr "Maak een lijst van de laatste tien persoonsgegevens die gewijzigd zijn"
+
+#: LastChange/LastChange.gpr.py:35
+msgid "Latest Changes"
+msgstr "Laatste wijzigingen"
+
+#: LastChange/LastChange.gpr.py:43
+msgid "Report of the last records that have been changed"
+msgstr "Verslag van de laatste gegevens die gewijzigd zijn"

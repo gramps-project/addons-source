@@ -4,7 +4,7 @@
 #
 # Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
 # Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
-# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018.
+# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2025.
 # Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
 # Niemelä <niememat@gmail.com>, 2017, 2018.
 # Bo Rosén <bo.rosen@home.se>, 2001.
@@ -21,17 +21,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2019-12-10 13:09+0200\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
-"Language-Team: niememat@gmail.com\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
@@ -45,14 +46,6 @@ msgstr "Naisen taustaväri"
 #: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Suora"
-
-#: NetworkChart/NetworkChart.gpr.py:24
-msgid "Network Chart"
-msgstr "Nettikaavio"
-
-#: NetworkChart/NetworkChart.gpr.py:35
-msgid "Generates a family network chart."
-msgstr "Tuota perheiden nettikaavio."
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
@@ -583,3 +576,11 @@ msgstr "Vahvista ylikirjoitustiedosto."
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
 msgstr "Ota tiedoston päällekirjoitus käyttöön/poista se käytöstä."
+
+#: NetworkChart/NetworkChart.gpr.py:24
+msgid "Network Chart"
+msgstr "Nettikaavio"
+
+#: NetworkChart/NetworkChart.gpr.py:35
+msgid "Generates a family network chart."
+msgstr "Tuota perheiden nettikaavio."

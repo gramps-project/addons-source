@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -33,15 +33,6 @@ msgstr "Personer"
 #: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
 msgid "General options"
 msgstr "Standard tilvalg"
-
-#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
-#: RemoveTagTool/RemoveTagTool.py:246
-msgid "Add/Remove Tag Tool"
-msgstr "Tilføj/Fjern mærkat værktøj"
-
-#: RemoveTagTool/RemoveTagTool.gpr.py:26
-msgid "Add or remove a tag from groups of people, events, etc."
-msgstr "Tilføj eller fjern mærkat fra grupper af personer, hændelser o.s.v."
 
 #: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
@@ -88,6 +79,11 @@ msgstr "Filter tilvalg"
 msgid "All %s"
 msgstr "Alle %s"
 
+#: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
+#: RemoveTagTool/RemoveTagTool.gpr.py:25
+msgid "Add/Remove Tag Tool"
+msgstr "Tilføj/Fjern mærkat værktøj"
+
 #: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
@@ -120,3 +116,7 @@ msgstr "fjernet"
 #: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Mærkat '{}' blev {} til {} {} objekter.\n"
+
+#: RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "Tilføj eller fjern mærkat fra grupper af personer, hændelser o.s.v."

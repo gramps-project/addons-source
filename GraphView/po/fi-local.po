@@ -4,7 +4,7 @@
 #
 # Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
 # Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
-# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018.
+# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2025.
 # Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
 # Niemelä <niememat@gmail.com>, 2017, 2018.
 # Bo Rosén <bo.rosen@home.se>, 2001.
@@ -21,17 +21,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2019-12-10 13:09+0200\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
-"Language-Team: niememat@gmail.com\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #: GraphView/graphview.py:3168 GraphView/graphview.py:3169
@@ -84,30 +85,10 @@ msgstr "Alkuperäinen koko"
 msgid "Zoom to best fit"
 msgstr "Ikkunaan sopivaksi"
 
-#: GraphView/avatars.py:60
-msgid "Dark (default)"
-msgstr "Tumma (oletus)"
-
-#: GraphView/avatars.py:61
-msgid "Light"
-msgstr "Vaalea"
-
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr "Väripiirros"
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Kaavionäkymä"
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr "Dynaaminen ja vuorovaikutteinen suhteiden kuvaaja"
 
 #: GraphView/graphview.py:754
 #, fuzzy
@@ -490,6 +471,26 @@ msgstr "Perheen poistaminen poistaa sen tietokannasta."
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Poista perhe [%s]"
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr "Dynaaminen ja vuorovaikutteinen suhteiden kuvaaja"
+
+#: GraphView/avatars.py:60
+msgid "Dark (default)"
+msgstr "Tumma (oletus)"
+
+#: GraphView/avatars.py:61
+msgid "Light"
+msgstr "Vaalea"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr "Väripiirros"
+
+#: GraphView/avatars.py:63
+msgid "Modern"
+msgstr ""
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"

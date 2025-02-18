@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -23,10 +23,6 @@ msgstr ""
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
 msgstr "I dag"
-
-#: TimelineQuickview/TimelineQuickview.gpr.py:11
-msgid "Display a person's events on a timeline"
-msgstr "Vis en persons hændelser på en tidslinje"
 
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
@@ -78,3 +74,7 @@ msgstr "Tidslinje for %s"
 #: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Involverede personer"
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:11
+msgid "Display a person's events on a timeline"
+msgstr "Vis en persons hændelser på en tidslinje"

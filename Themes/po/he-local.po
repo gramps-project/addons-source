@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 10:31+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -24,18 +24,6 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
 msgstr "ערכת נושא"
-
-#: Themes/themes.gpr.py:29
-msgid "Theme preferences"
-msgstr "העדפות ערכת נושא"
-
-#: Themes/themes.gpr.py:31
-msgid ""
-"An addition to Preferences for simple Theme and Font adjustment.  Especially "
-"useful for Windows users."
-msgstr ""
-"תוספת למועדפים להתאמת ערכת נושא וגופן פשוטים. שימושי במיוחד עבור משתמשי "
-"ווינדווז."
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
@@ -52,3 +40,15 @@ msgstr "גופן"
 #: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "פסי גלילה מקובעים (נדרשת הפעלה מחדש)"
+
+#: Themes/themes.gpr.py:29
+msgid "Theme preferences"
+msgstr "העדפות ערכת נושא"
+
+#: Themes/themes.gpr.py:31
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"תוספת למועדפים להתאמת ערכת נושא וגופן פשוטים. שימושי במיוחד עבור משתמשי "
+"ווינדווז."

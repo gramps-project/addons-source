@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -24,13 +24,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
-#: Differences/differences.gpr.py:4 Differences/differences.py:95
+#: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
 msgstr "Databaseverschillenverslag"
-
-#: Differences/differences.gpr.py:5
-msgid "Compares an external database with the current one."
-msgstr "Vergelijkt een externe database met de huidige."
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
@@ -97,3 +93,7 @@ msgstr "Toon items die in het bestand zijn toegevoegd"
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr "Neem items op in het bestand maar niet in de database"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Vergelijkt een externe database met de huidige."

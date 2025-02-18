@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,14 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
-msgid "GoogleEarth"
-msgstr "GoogleEarth"
-
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
-msgid "Creates data file for GoogleEarth and opens it"
-msgstr "Danner data til GoogleEarth og åbner deen"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
 msgid "No place description"
@@ -66,3 +58,11 @@ msgid ""
 msgstr ""
 "Overskirv kmz/kml fil ''%s''\n"
 "i brugerens hjemmefolder ''%s''?"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
+msgid "GoogleEarth"
+msgstr "GoogleEarth"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
+msgid "Creates data file for GoogleEarth and opens it"
+msgstr "Danner data til GoogleEarth og åbner deen"

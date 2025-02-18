@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -23,14 +23,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
-msgid "DNA Segment Map"
-msgstr "DNA-segmentkaart"
-
-#: DNA/dnasegmentmap.gpr.py:29
-msgid "Gramplet showing a matching DNA segment map"
-msgstr "Gramplet dat een overeenkomende DNA-segmentkaart toont"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
@@ -109,3 +101,11 @@ msgid ""
 msgstr ""
 "Klik om deze persoon actief te maken\n"
 "Klik met de rechtermuisknop om deze persoon te bewerken"
+
+#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
+msgid "DNA Segment Map"
+msgstr "DNA-segmentkaart"
+
+#: DNA/dnasegmentmap.gpr.py:29
+msgid "Gramplet showing a matching DNA segment map"
+msgstr "Gramplet dat een overeenkomende DNA-segmentkaart toont"

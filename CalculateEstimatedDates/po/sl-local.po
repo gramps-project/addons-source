@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2008-02-22 23:19+0100\n"
 "Last-Translator: Bernard Banko <bernard.banko (afna) siol.net>\n"
 "Language-Team: lugos slovenizacija <lugos-slo at lugos.si>\n"
@@ -21,15 +21,6 @@ msgstr ""
 "X-Poedit-Country: SLOVENIA\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0)\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-msgid "Calculate Estimated Dates"
-msgstr "Izračunaj okvirne datume"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
-msgid "Calculates estimated dates for birth and death."
-msgstr "Izračuna okvirne datume rojstev in smrti."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
@@ -144,6 +135,11 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculate Estimated Dates"
+msgstr "Izračunaj okvirne datume"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 #, fuzzy
@@ -304,3 +300,7 @@ msgstr "Dodaj nov dogodek"
 #, fuzzy
 msgid "Estimated date"
 msgstr "Ocenjeno"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Izračuna okvirne datume rojstev in smrti."

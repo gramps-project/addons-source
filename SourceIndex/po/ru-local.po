@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -79,395 +79,6 @@ msgstr "*** Ошибка: необходимо установить ElementTree 
 #: SourceIndex/index.py:409
 msgid "must install either ElementTree or lxml"
 msgstr "необходимо установить ElementTree или lxml"
-
-#: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
-msgid "birth"
-msgstr "рождение"
-
-#: SourceIndex/birth.glade:65 SourceIndex/census.glade:728
-#: SourceIndex/death.glade:97 SourceIndex/marriage.glade:64
-msgid "Info:"
-msgstr "Информация:"
-
-#: SourceIndex/birth.glade:99
-msgid "Birth act:"
-msgstr "Рождение (сертификат):"
-
-#: SourceIndex/birth.glade:129
-msgid ""
-"Volume\n"
-"    Page:"
-msgstr ""
-"Том\n"
-"    Страница:"
-
-#: SourceIndex/birth.glade:149
-msgid "The source title"
-msgstr "Название источника"
-
-#: SourceIndex/birth.glade:164
-msgid "The volume or page of this source"
-msgstr "Том или страница этого источника"
-
-#: SourceIndex/birth.glade:195 SourceIndex/birth.glade:297
-#: SourceIndex/birth.glade:644 SourceIndex/witness.glade:73
-msgid "Names:"
-msgstr "Имена:"
-
-#: SourceIndex/birth.glade:214
-msgid "select the gender/sex"
-msgstr "выберите пол"
-
-#: SourceIndex/birth.glade:247
-msgid "The names of the main person written into the source"
-msgstr "Имена основного лица записанного в источник"
-
-#: SourceIndex/birth.glade:262
-msgid "The first names of the main person written into the source"
-msgstr "Имена основного лица записанного в источник"
-
-#: SourceIndex/birth.glade:278 SourceIndex/birth.glade:511
-#: SourceIndex/birth.glade:729 SourceIndex/witness.glade:90
-msgid "First names:"
-msgstr "Имена:"
-
-#: SourceIndex/birth.glade:334 SourceIndex/birth.glade:493
-msgid "Other:"
-msgstr "Другое:"
-
-#: SourceIndex/birth.glade:351
-msgid "Repository title"
-msgstr "Название хранилища"
-
-#: SourceIndex/birth.glade:388 SourceIndex/census.glade:973
-#: SourceIndex/death.glade:589 SourceIndex/marriage.glade:234
-msgid "<b>Image</b>"
-msgstr "<b>Изображение</b>"
-
-#: SourceIndex/birth.glade:406
-msgid "<b><i>Repository</i></b>"
-msgstr "<b><i>Хранилище</i></b>"
-
-#: SourceIndex/birth.glade:421
-msgid ""
-"Spouse\n"
-"names:"
-msgstr ""
-"Имена\n"
-"супругов:"
-
-#: SourceIndex/birth.glade:441
-msgid ""
-"Marriage\n"
-"date:"
-msgstr ""
-"Дата\n"
-"брака:"
-
-#: SourceIndex/birth.glade:460
-msgid ""
-"Death\n"
-"date:"
-msgstr ""
-"Дата\n"
-"смерти:"
-
-#: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
-#: SourceIndex/census.glade:543 SourceIndex/death.glade:722
-#: SourceIndex/death.glade:821 SourceIndex/marriage.glade:529
-#: SourceIndex/marriage.glade:903 SourceIndex/marriage.glade:922
-#: SourceIndex/marriage.glade:941 SourceIndex/marriage.glade:1361
-#: SourceIndex/marriage.glade:1474 SourceIndex/witness.glade:141
-msgid "Occupation:"
-msgstr "Место жительства:"
-
-#: SourceIndex/birth.glade:597 SourceIndex/birth.glade:710
-#: SourceIndex/death.glade:741 SourceIndex/death.glade:854
-#: SourceIndex/marriage.glade:560 SourceIndex/marriage.glade:960
-#: SourceIndex/marriage.glade:979 SourceIndex/marriage.glade:998
-#: SourceIndex/marriage.glade:1408 SourceIndex/marriage.glade:1455
-#: SourceIndex/witness.glade:158
-msgid "Live:"
-msgstr "Живой:"
-
-#: SourceIndex/birth.glade:833
-msgid ""
-"<b>Witness\n"
-"Godfather\n"
-"Godmother:</b>"
-msgstr ""
-"<b>Свидетель\n"
-"Крёстный отец\n"
-"Крёстная мать:</b>"
-
-#: SourceIndex/birth.glade:870
-msgid "Call number:"
-msgstr "Номер телефона:"
-
-#: SourceIndex/birth.glade:887
-msgid "The call number into the repository"
-msgstr "Номер телефона в хранилище"
-
-#: SourceIndex/birth.glade:925
-msgid "<b><i>Data person</i></b>"
-msgstr "<b><i>Данные лица</i></b>"
-
-#: SourceIndex/birth.glade:949
-msgid "<b><i>Data margin</i></b>"
-msgstr "<b><i>Данные брака</i></b>"
-
-#: SourceIndex/birth.glade:973
-msgid "<b><i>Data father</i></b>"
-msgstr "<b><i>Данные отца</i></b>"
-
-#: SourceIndex/birth.glade:985
-msgid "<b><i>Data mother</i></b>"
-msgstr "<b><i>Данные матери</i></b>"
-
-#: SourceIndex/birth.glade:1021
-msgid ""
-"witness1, name, given, age, occupation;\n"
-"witness2, name, given, age, occupation;\n"
-"godfather, name, given, age, occupation;\n"
-"etc ..."
-msgstr ""
-"свидетель1, имя, возраст, проживание;\n"
-"свидетель2, имя, возраст, проживание;\n"
-"крёстный отец, имя, возраст, проживание;\n"
-"и др..."
-
-#: SourceIndex/birth.glade:1549
-msgid ""
-"Marriage\n"
-"place:"
-msgstr ""
-"Место\n"
-"брака:"
-
-#: SourceIndex/birth.glade:1568
-msgid ""
-"Death\n"
-"place:"
-msgstr ""
-"Место\n"
-"смерти:"
-
-#: SourceIndex/birth.glade:1588
-msgid ""
-"Birth\n"
-"place:"
-msgstr ""
-"Место\n"
-"рождения:"
-
-#: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
-msgid "Origine:"
-msgstr ""
-
-#: SourceIndex/birth.glade:2272
-msgid "<b><i>Citation</i></b>"
-msgstr "<b><i>Цитата</i></b>"
-
-#: SourceIndex/birth.glade:2287
-msgid "<b><i>Source</i></b>"
-msgstr "<b><i>Источник</i></b>"
-
-#: SourceIndex/census.glade:7 SourceIndex/index.glade:768
-msgid "census"
-msgstr "перепись"
-
-#: SourceIndex/census.glade:160
-#, fuzzy
-#| msgid "<b>%s:</b>"
-msgid "<b>Census</b>"
-msgstr "<b>%s:</b>"
-
-#: SourceIndex/census.glade:176 SourceIndex/death.glade:607
-#: SourceIndex/marriage.glade:185
-#, fuzzy
-#| msgid "<b><i>Repository</i></b>"
-msgid "<b>Repository</b>"
-msgstr "<b><i>Хранилище</i></b>"
-
-#: SourceIndex/census.glade:221 SourceIndex/death.glade:432
-#: SourceIndex/death.glade:636 SourceIndex/death.glade:873
-#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
-#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
-#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-#, fuzzy
-#| msgid "First names:"
-msgid "First name:"
-msgstr "Имена:"
-
-#: SourceIndex/census.glade:319 SourceIndex/death.glade:1003
-#, fuzzy
-#| msgid "Birth act:"
-msgid "Birth date:"
-msgstr "Рождение (сертификат):"
-
-#: SourceIndex/census.glade:364
-#, fuzzy
-#| msgid ""
-#| "Death\n"
-#| "date:"
-msgid "Death date:"
-msgstr ""
-"Дата\n"
-"смерти:"
-
-#: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
-#, fuzzy
-#| msgid ""
-#| "Birth\n"
-#| "place:"
-msgid "Birth place:"
-msgstr ""
-"Место\n"
-"рождения:"
-
-#: SourceIndex/census.glade:414
-#, fuzzy
-#| msgid ""
-#| "Death\n"
-#| "place:"
-msgid "Death place:"
-msgstr ""
-"Место\n"
-"смерти:"
-
-#: SourceIndex/census.glade:447
-#, fuzzy
-#| msgid "Family:"
-msgid "Family status:"
-msgstr "Семья:"
-
-#: SourceIndex/census.glade:466 SourceIndex/death.glade:1099
-#, fuzzy
-#| msgid ""
-#| "Spouse\n"
-#| "names:"
-msgid "Spouse name:"
-msgstr ""
-"Имена\n"
-"супругов:"
-
-#: SourceIndex/census.glade:510 SourceIndex/death.glade:703
-#: SourceIndex/death.glade:892 SourceIndex/marriage.glade:498
-#: SourceIndex/marriage.glade:846 SourceIndex/marriage.glade:865
-#: SourceIndex/marriage.glade:884 SourceIndex/marriage.glade:1526
-#: SourceIndex/marriage.glade:1654 SourceIndex/witness.glade:124
-#, fuzzy
-#| msgid "Original: "
-msgid "Origin:"
-msgstr "Оригинал: "
-
-#: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
-#, fuzzy
-#| msgid "Notes:"
-msgid "Note:"
-msgstr "Заметки:"
-
-#: SourceIndex/census.glade:712 SourceIndex/death.glade:621
-#, fuzzy
-#| msgid "<b><i>Data person</i></b>"
-msgid "<b>Data person</b>"
-msgstr "<b><i>Данные лица</i></b>"
-
-#: SourceIndex/census.glade:904 SourceIndex/death.glade:217
-#: SourceIndex/marriage.glade:1296
-#, fuzzy
-#| msgid "Volume"
-msgid "Volume:"
-msgstr "Том"
-
-#: SourceIndex/census.glade:1046
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr ""
-
-#: SourceIndex/death.glade:165
-#, fuzzy
-#| msgid ""
-#| "Death\n"
-#| "date:"
-msgid "Death act:"
-msgstr ""
-"Дата\n"
-"смерти:"
-
-#: SourceIndex/death.glade:282
-#, fuzzy
-#| msgid "<b><i>Data father</i></b>"
-msgid "<b>Death act</b>"
-msgstr "<b><i>Данные отца</i></b>"
-
-#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
-#, fuzzy
-#| msgid "<b>%s:</b>"
-msgid "<b>Witness:</b>"
-msgstr "<b>%s:</b>"
-
-#: SourceIndex/death.glade:1131
-#, fuzzy
-#| msgid ""
-#| "Marriage\n"
-#| "date:"
-msgid "Marriage date:"
-msgstr ""
-"Дата\n"
-"брака:"
-
-#: SourceIndex/death.glade:1163
-#, fuzzy
-#| msgid ""
-#| "Marriage\n"
-#| "place:"
-msgid "Marriage place:"
-msgstr ""
-"Место\n"
-"брака:"
-
-#: SourceIndex/death.glade:1195
-#, fuzzy
-#| msgid "<b><i>Data mother</i></b>"
-msgid "<b>Data mother</b>"
-msgstr "<b><i>Данные матери</i></b>"
-
-#: SourceIndex/death.glade:1210
-#, fuzzy
-#| msgid "<b><i>Data father</i></b>"
-msgid "<b>Data father</b>"
-msgstr "<b><i>Данные отца</i></b>"
-
-#: SourceIndex/death.glade:1225
-#, fuzzy
-#| msgid "<b>%s:</b>"
-msgid "<b>Spouse</b> "
-msgstr "<b>%s:</b>"
-
-#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
-#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
-#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
-#: SourceIndex/marriage.glade:1874
-#, fuzzy
-#| msgid "Now alive"
-msgid "alive"
-msgstr "Живые сейчас"
-
-#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
-#, fuzzy
-#| msgid ""
-#| "witness1, name, given, age, occupation;\n"
-#| "witness2, name, given, age, occupation;\n"
-#| "godfather, name, given, age, occupation;\n"
-#| "etc ..."
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"свидетель1, имя, возраст, проживание;\n"
-"свидетель2, имя, возраст, проживание;\n"
-"крёстный отец, имя, возраст, проживание;\n"
-"и др..."
 
 #: SourceIndex/index.glade:7
 #, fuzzy
@@ -603,6 +214,10 @@ msgstr "перепись"
 msgid "Select a birth source"
 msgstr "Выбрать метки для лица"
 
+#: SourceIndex/index.glade:585 SourceIndex/birth.glade:7
+msgid "birth"
+msgstr "рождение"
+
 #: SourceIndex/index.glade:617
 #, fuzzy
 #| msgid "Select an image to begin..."
@@ -618,6 +233,10 @@ msgstr "Выбор dot файла"
 #: SourceIndex/index.glade:739
 msgid "Select a census source"
 msgstr ""
+
+#: SourceIndex/index.glade:768 SourceIndex/census.glade:7
+msgid "census"
+msgstr "перепись"
 
 #: SourceIndex/index.glade:800
 msgid "Select a repository storing a source"
@@ -639,6 +258,399 @@ msgstr "Выбор файла"
 msgid ""
 "Records transcriptions ... births/deaths/marriages/censuses with common "
 "fields: id, repository, person name, birth date and place, parents."
+msgstr ""
+
+#: SourceIndex/witness.glade:7
+#, fuzzy
+#| msgid "witnesses"
+msgid "witness"
+msgstr "свидетели"
+
+#: SourceIndex/witness.glade:60
+#, fuzzy
+#| msgid "<b>%s:</b>"
+msgid "<b>Witness</b>"
+msgstr "<b>%s:</b>"
+
+#: SourceIndex/witness.glade:73 SourceIndex/birth.glade:195
+#: SourceIndex/birth.glade:297 SourceIndex/birth.glade:644
+msgid "Names:"
+msgstr "Имена:"
+
+#: SourceIndex/witness.glade:90 SourceIndex/birth.glade:278
+#: SourceIndex/birth.glade:511 SourceIndex/birth.glade:729
+msgid "First names:"
+msgstr "Имена:"
+
+#: SourceIndex/witness.glade:124 SourceIndex/death.glade:703
+#: SourceIndex/death.glade:892 SourceIndex/census.glade:510
+#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
+#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
+#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
+#, fuzzy
+#| msgid "Original: "
+msgid "Origin:"
+msgstr "Оригинал: "
+
+#: SourceIndex/witness.glade:141 SourceIndex/birth.glade:578
+#: SourceIndex/birth.glade:677 SourceIndex/death.glade:722
+#: SourceIndex/death.glade:821 SourceIndex/census.glade:543
+#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
+#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
+#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
+msgid "Occupation:"
+msgstr "Место жительства:"
+
+#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
+#: SourceIndex/birth.glade:710 SourceIndex/death.glade:741
+#: SourceIndex/death.glade:854 SourceIndex/marriage.glade:560
+#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
+#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
+#: SourceIndex/marriage.glade:1455
+msgid "Live:"
+msgstr "Живой:"
+
+#: SourceIndex/birth.glade:65 SourceIndex/death.glade:97
+#: SourceIndex/census.glade:728 SourceIndex/marriage.glade:64
+msgid "Info:"
+msgstr "Информация:"
+
+#: SourceIndex/birth.glade:99
+msgid "Birth act:"
+msgstr "Рождение (сертификат):"
+
+#: SourceIndex/birth.glade:129
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+"Том\n"
+"    Страница:"
+
+#: SourceIndex/birth.glade:149
+msgid "The source title"
+msgstr "Название источника"
+
+#: SourceIndex/birth.glade:164
+msgid "The volume or page of this source"
+msgstr "Том или страница этого источника"
+
+#: SourceIndex/birth.glade:214
+msgid "select the gender/sex"
+msgstr "выберите пол"
+
+#: SourceIndex/birth.glade:247
+msgid "The names of the main person written into the source"
+msgstr "Имена основного лица записанного в источник"
+
+#: SourceIndex/birth.glade:262
+msgid "The first names of the main person written into the source"
+msgstr "Имена основного лица записанного в источник"
+
+#: SourceIndex/birth.glade:334 SourceIndex/birth.glade:493
+msgid "Other:"
+msgstr "Другое:"
+
+#: SourceIndex/birth.glade:351
+msgid "Repository title"
+msgstr "Название хранилища"
+
+#: SourceIndex/birth.glade:388 SourceIndex/death.glade:589
+#: SourceIndex/census.glade:973 SourceIndex/marriage.glade:234
+msgid "<b>Image</b>"
+msgstr "<b>Изображение</b>"
+
+#: SourceIndex/birth.glade:406
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>Хранилище</i></b>"
+
+#: SourceIndex/birth.glade:421
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"Имена\n"
+"супругов:"
+
+#: SourceIndex/birth.glade:441
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"Дата\n"
+"брака:"
+
+#: SourceIndex/birth.glade:460
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"Дата\n"
+"смерти:"
+
+#: SourceIndex/birth.glade:833
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+"<b>Свидетель\n"
+"Крёстный отец\n"
+"Крёстная мать:</b>"
+
+#: SourceIndex/birth.glade:870
+msgid "Call number:"
+msgstr "Номер телефона:"
+
+#: SourceIndex/birth.glade:887
+msgid "The call number into the repository"
+msgstr "Номер телефона в хранилище"
+
+#: SourceIndex/birth.glade:925
+msgid "<b><i>Data person</i></b>"
+msgstr "<b><i>Данные лица</i></b>"
+
+#: SourceIndex/birth.glade:949
+msgid "<b><i>Data margin</i></b>"
+msgstr "<b><i>Данные брака</i></b>"
+
+#: SourceIndex/birth.glade:973
+msgid "<b><i>Data father</i></b>"
+msgstr "<b><i>Данные отца</i></b>"
+
+#: SourceIndex/birth.glade:985
+msgid "<b><i>Data mother</i></b>"
+msgstr "<b><i>Данные матери</i></b>"
+
+#: SourceIndex/birth.glade:1021
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+"свидетель1, имя, возраст, проживание;\n"
+"свидетель2, имя, возраст, проживание;\n"
+"крёстный отец, имя, возраст, проживание;\n"
+"и др..."
+
+#: SourceIndex/birth.glade:1549
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"Место\n"
+"брака:"
+
+#: SourceIndex/birth.glade:1568
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Место\n"
+"смерти:"
+
+#: SourceIndex/birth.glade:1588
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Место\n"
+"рождения:"
+
+#: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
+msgid "Origine:"
+msgstr ""
+
+#: SourceIndex/birth.glade:2272
+msgid "<b><i>Citation</i></b>"
+msgstr "<b><i>Цитата</i></b>"
+
+#: SourceIndex/birth.glade:2287
+msgid "<b><i>Source</i></b>"
+msgstr "<b><i>Источник</i></b>"
+
+#: SourceIndex/death.glade:165
+#, fuzzy
+#| msgid ""
+#| "Death\n"
+#| "date:"
+msgid "Death act:"
+msgstr ""
+"Дата\n"
+"смерти:"
+
+#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
+#: SourceIndex/marriage.glade:1296
+#, fuzzy
+#| msgid "Volume"
+msgid "Volume:"
+msgstr "Том"
+
+#: SourceIndex/death.glade:282
+#, fuzzy
+#| msgid "<b><i>Data father</i></b>"
+msgid "<b>Death act</b>"
+msgstr "<b><i>Данные отца</i></b>"
+
+#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
+#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
+#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
+#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
+#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
+#, fuzzy
+#| msgid "First names:"
+msgid "First name:"
+msgstr "Имена:"
+
+#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
+#: SourceIndex/marriage.glade:185
+#, fuzzy
+#| msgid "<b><i>Repository</i></b>"
+msgid "<b>Repository</b>"
+msgstr "<b><i>Хранилище</i></b>"
+
+#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
+#, fuzzy
+#| msgid "<b><i>Data person</i></b>"
+msgid "<b>Data person</b>"
+msgstr "<b><i>Данные лица</i></b>"
+
+#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
+#, fuzzy
+#| msgid "<b>%s:</b>"
+msgid "<b>Witness:</b>"
+msgstr "<b>%s:</b>"
+
+#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
+#, fuzzy
+#| msgid "Birth act:"
+msgid "Birth date:"
+msgstr "Рождение (сертификат):"
+
+#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
+#, fuzzy
+#| msgid ""
+#| "Birth\n"
+#| "place:"
+msgid "Birth place:"
+msgstr ""
+"Место\n"
+"рождения:"
+
+#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
+#, fuzzy
+#| msgid "Notes:"
+msgid "Note:"
+msgstr "Заметки:"
+
+#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
+#, fuzzy
+#| msgid ""
+#| "Spouse\n"
+#| "names:"
+msgid "Spouse name:"
+msgstr ""
+"Имена\n"
+"супругов:"
+
+#: SourceIndex/death.glade:1131
+#, fuzzy
+#| msgid ""
+#| "Marriage\n"
+#| "date:"
+msgid "Marriage date:"
+msgstr ""
+"Дата\n"
+"брака:"
+
+#: SourceIndex/death.glade:1163
+#, fuzzy
+#| msgid ""
+#| "Marriage\n"
+#| "place:"
+msgid "Marriage place:"
+msgstr ""
+"Место\n"
+"брака:"
+
+#: SourceIndex/death.glade:1195
+#, fuzzy
+#| msgid "<b><i>Data mother</i></b>"
+msgid "<b>Data mother</b>"
+msgstr "<b><i>Данные матери</i></b>"
+
+#: SourceIndex/death.glade:1210
+#, fuzzy
+#| msgid "<b><i>Data father</i></b>"
+msgid "<b>Data father</b>"
+msgstr "<b><i>Данные отца</i></b>"
+
+#: SourceIndex/death.glade:1225
+#, fuzzy
+#| msgid "<b>%s:</b>"
+msgid "<b>Spouse</b> "
+msgstr "<b>%s:</b>"
+
+#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
+#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
+#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
+#: SourceIndex/marriage.glade:1874
+#, fuzzy
+#| msgid "Now alive"
+msgid "alive"
+msgstr "Живые сейчас"
+
+#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
+#, fuzzy
+#| msgid ""
+#| "witness1, name, given, age, occupation;\n"
+#| "witness2, name, given, age, occupation;\n"
+#| "godfather, name, given, age, occupation;\n"
+#| "etc ..."
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"свидетель1, имя, возраст, проживание;\n"
+"свидетель2, имя, возраст, проживание;\n"
+"крёстный отец, имя, возраст, проживание;\n"
+"и др..."
+
+#: SourceIndex/census.glade:160
+#, fuzzy
+#| msgid "<b>%s:</b>"
+msgid "<b>Census</b>"
+msgstr "<b>%s:</b>"
+
+#: SourceIndex/census.glade:364
+#, fuzzy
+#| msgid ""
+#| "Death\n"
+#| "date:"
+msgid "Death date:"
+msgstr ""
+"Дата\n"
+"смерти:"
+
+#: SourceIndex/census.glade:414
+#, fuzzy
+#| msgid ""
+#| "Death\n"
+#| "place:"
+msgid "Death place:"
+msgstr ""
+"Место\n"
+"смерти:"
+
+#: SourceIndex/census.glade:447
+#, fuzzy
+#| msgid "Family:"
+msgid "Family status:"
+msgstr "Семья:"
+
+#: SourceIndex/census.glade:1046
+msgid "order, person, surname, given, age, status, occupation, etc ..."
 msgstr ""
 
 #: SourceIndex/marriage.glade:49
@@ -738,15 +750,3 @@ msgstr "<b><i>Данные лица</i></b>"
 #| msgid "<b><i>Data person</i></b>"
 msgid "<b>Data spouse2</b>"
 msgstr "<b><i>Данные лица</i></b>"
-
-#: SourceIndex/witness.glade:7
-#, fuzzy
-#| msgid "witnesses"
-msgid "witness"
-msgstr "свидетели"
-
-#: SourceIndex/witness.glade:60
-#, fuzzy
-#| msgid "<b>%s:</b>"
-msgid "<b>Witness</b>"
-msgstr "<b>%s:</b>"

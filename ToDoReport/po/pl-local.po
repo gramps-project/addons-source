@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2009-10-05 21:15+0100\n"
 "Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
 "Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
@@ -28,18 +28,6 @@ msgstr ""
 #: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Styl używany do tytułu strony."
-
-#: ToDoReport/TodoReport.gpr.py:25
-msgid "Todo Report"
-msgstr "Raport do zrobienia"
-
-#: ToDoReport/TodoReport.gpr.py:27
-msgid ""
-"Produces a list of all the notes with a given tag along with the records "
-"that it references, the Person, Family, Event, etc."
-msgstr ""
-"Tworzy listę wszystkich notatek z danym tagiem wraz z rekordami, do których "
-"się on odnosi, osobą, rodziną, zdarzeniem itp."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -157,3 +145,15 @@ msgstr "Podstawowy styl używany do wyświetlania komórek obramowania tabeli."
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "Podstawowy styl używany do wyświetlania tabeli."
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
+msgstr "Raport do zrobienia"
+
+#: ToDoReport/TodoReport.gpr.py:27
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Tworzy listę wszystkich notatek z danym tagiem wraz z rekordami, do których "
+"się on odnosi, osobą, rodziną, zdarzeniem itp."

@@ -65,7 +65,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -90,14 +90,14 @@ msgstr ""
 msgid "Abandon"
 msgstr ""
 
+#: NoteGramplet/NoteGramplet.py:255
+msgid "Save Note"
+msgstr ""
+
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr ""
 
 #: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
-msgstr ""
-
-#: NoteGramplet/NoteGramplet.py:255
-msgid "Save Note"
 msgstr ""

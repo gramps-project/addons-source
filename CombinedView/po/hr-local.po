@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: CombinedView/basepage.py:493
 #, python-format
@@ -30,42 +31,6 @@ msgstr "%(abbrev)s %(date)s u mjestu %(place)s"
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
-
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
-msgid "Combined"
-msgstr "Zajedno"
-
-#: CombinedView/combinedview.gpr.py:25
-msgid "A view showing relationships and events for a person"
-msgstr "Prikaz srodstva i događaja za jednu osobu"
-
-#: CombinedView/combinedview.py:528
-#, fuzzy
-#| msgid "Add death event"
-msgid "Edit the active event"
-msgstr "Uključi smrti"
-
-#: CombinedView/combinedview.py:630
-msgid "Show Tags"
-msgstr "Prikaži etikete"
-
-#: CombinedView/combinedview.py:656
-msgid "Vertical Details"
-msgstr "Detalji okomito"
-
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
-msgid "Order"
-msgstr "Narudžba"
-
-#: CombinedView/navigationview.py:346
-msgid ""
-"You need to set a 'default person' to go to. Select the People View, select "
-"the person you want as 'Home Person', then confirm your choice via the menu "
-"Edit -> Set Home Person."
-msgstr ""
-"Moraš postaviti jednu „standardnu osobu” do koje želiš ići. Odaberi pogled "
-"„Osobe”, odaberi osobu koju želiš imati kao „početnu osobu”, zatim potvrdi "
-"tvoj izbor putem izbornika „Uredi > Postavi početnu osobu”."
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -93,3 +58,39 @@ msgstr "Pritisni za praćenje poveznice"
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "
+
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
+msgid "Combined"
+msgstr "Zajedno"
+
+#: CombinedView/combinedview.gpr.py:25
+msgid "A view showing relationships and events for a person"
+msgstr "Prikaz srodstva i događaja za jednu osobu"
+
+#: CombinedView/navigationview.py:346
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Moraš postaviti jednu „standardnu osobu” do koje želiš ići. Odaberi pogled "
+"„Osobe”, odaberi osobu koju želiš imati kao „početnu osobu”, zatim potvrdi "
+"tvoj izbor putem izbornika „Uredi > Postavi početnu osobu”."
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr "Narudžba"
+
+#: CombinedView/combinedview.py:528
+#, fuzzy
+#| msgid "Add death event"
+msgid "Edit the active event"
+msgstr "Uključi smrti"
+
+#: CombinedView/combinedview.py:630
+msgid "Show Tags"
+msgstr "Prikaži etikete"
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr "Detalji okomito"

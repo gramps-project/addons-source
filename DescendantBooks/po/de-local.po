@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: D3Charts/DescendantIndentedTree.py:1848
 #: DescendantBooks/DescendantBookReport.py:552
@@ -42,42 +42,6 @@ msgstr "Ob doppelte Familienbäume im Bericht angezeigt werden."
 #: DescendantBooks/DetailedDescendantBookReport.py:1540
 msgid "The style used for the title of the page."
 msgstr "Der Stil, der für den Seitentitel verwendet wird."
-
-#: DescendantBooks/CollectAscendants.py:178
-#, python-format
-msgid "Deep pruning ascendants from %s people..."
-msgstr "Tiefgreifende Beschneidung der Aszendenten von %s Personen..."
-
-#: DescendantBooks/CollectAscendants.py:182
-#, python-format
-msgid "Pruning ascendants from %s people..."
-msgstr "Reduziere Aszendenten von %s Personen..."
-
-#: DescendantBooks/CollectAscendants.py:320
-#: DescendantBooks/CollectAscendants.py:413
-#, python-format
-msgid "Getting ascendants from %s people..."
-msgstr "Hole Aszendenten von %s Personen..."
-
-#: DescendantBooks/CollectAscendants.py:331
-#, python-format
-msgid "Verifying descendants from %s people..."
-msgstr "Vergleiche Nachkommen von %s Personen..."
-
-#: DescendantBooks/CollectAscendants.py:348
-#, python-format
-msgid "Getting missing descendants from %s people..."
-msgstr "Hole fehlende Nachkommen von %s Personen..."
-
-#: DescendantBooks/CollectAscendants.py:367
-#, python-format
-msgid "Verifying descendants from %s people after pruning..."
-msgstr "Vergleiche Nachkommen von %s Personen nach Reduzierung..."
-
-#: DescendantBooks/CollectAscendants.py:383
-#, python-format
-msgid "Getting missing descendants from %s people ..."
-msgstr "Hole fehlende Nachkommen von %s Personen ..."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
@@ -125,27 +89,6 @@ msgstr ""
 #: DescendantBooks/DescendantBookReport.py:595
 msgid "The style used for the table of contents detail."
 msgstr "Der Stil, der für die Angaben im Inhaltsverzeichnisses verwendet wird."
-
-#: DescendantBooks/DescendantBooks.gpr.py:22
-msgid "Descendant Book"
-msgstr "Nachkommenbuch"
-
-#: DescendantBooks/DescendantBooks.gpr.py:23
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Erstellt basierend auf einer angegebenen Abfrage einen oder mehrere "
-"Nachkommenberichte."
-
-#: DescendantBooks/DescendantBooks.gpr.py:41
-msgid "Detailed Descendant Book"
-msgstr "Ausführliches Nachkommenbuch"
-
-#: DescendantBooks/DescendantBooks.gpr.py:43
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Erstellt basierend auf einer angegebenen Abfrage einen oder mehrere "
-"ausführliche Nachkommenberichte."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
@@ -206,7 +149,7 @@ msgstr "%(event_name)s von %(name)s "
 #: DescendantBooks/DetailedDescendantBookReport.py:813
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
-msgstr "%(event_name)s von %(name)s und %(mate)s"
+msgstr "%(event_name)s von %(name)s und %(mate)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
@@ -355,3 +298,60 @@ msgstr "Der Stil der für die Überschrift im Ortsindex verwendet wird."
 #: DescendantBooks/DetailedDescendantBookReport.py:1699
 msgid "The style used for the references in the Index of Places."
 msgstr "Der Stil der für die Referenzen im Ortsindex verwendet wird."
+
+#: DescendantBooks/DescendantBooks.gpr.py:22
+msgid "Descendant Book"
+msgstr "Nachkommenbuch"
+
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Erstellt basierend auf einer angegebenen Abfrage einen oder mehrere "
+"Nachkommenberichte."
+
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr "Ausführliches Nachkommenbuch"
+
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Erstellt basierend auf einer angegebenen Abfrage einen oder mehrere "
+"ausführliche Nachkommenberichte."
+
+#: DescendantBooks/CollectAscendants.py:178
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Tiefgreifende Beschneidung der Aszendenten von %s Personen..."
+
+#: DescendantBooks/CollectAscendants.py:182
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Reduziere Aszendenten von %s Personen..."
+
+#: DescendantBooks/CollectAscendants.py:320
+#: DescendantBooks/CollectAscendants.py:413
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Hole Aszendenten von %s Personen..."
+
+#: DescendantBooks/CollectAscendants.py:331
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Vergleiche Nachkommen von %s Personen..."
+
+#: DescendantBooks/CollectAscendants.py:348
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Hole fehlende Nachkommen von %s Personen..."
+
+#: DescendantBooks/CollectAscendants.py:367
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Vergleiche Nachkommen von %s Personen nach Reduzierung..."
+
+#: DescendantBooks/CollectAscendants.py:383
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Hole fehlende Nachkommen von %s Personen ..."

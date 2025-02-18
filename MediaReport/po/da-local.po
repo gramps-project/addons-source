@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -25,14 +25,6 @@ msgstr ""
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
 msgid "INFO"
 msgstr "INFO"
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr "Medierapport"
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr "Danner en rapport som medtager billeder, billeddata og noter."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
@@ -115,3 +107,11 @@ msgstr "Mediehøjde"
 #, python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Maksimum mediehøjde i % af aktuel sidehøjde."
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr "Medierapport"
+
+#: MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr "Danner en rapport som medtager billeder, billeddata og noter."

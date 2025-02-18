@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,15 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
-
-#: DownloadMedia/DownloadMedia.gpr.py:36
-msgid "Download media files from the internet"
-msgstr "Mediendateien aus dem Internet herunterladen"
-
-#: DownloadMedia/DownloadMedia.gpr.py:37
-msgid "This tool downloads media files from the internet"
-msgstr "Dieses Werkzeug lädt Mediendateien aus dem Internet herunter"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
@@ -71,3 +63,11 @@ msgstr "Dateien herunterladen"
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
 msgstr "Fehler beim Herunterladen von Medien festgestellt"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "Download media files from the internet"
+msgstr "Mediendateien aus dem Internet herunterladen"
+
+#: DownloadMedia/DownloadMedia.gpr.py:37
+msgid "This tool downloads media files from the internet"
+msgstr "Dieses Werkzeug lädt Mediendateien aus dem Internet herunter"

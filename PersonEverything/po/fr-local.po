@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -49,14 +49,6 @@ msgstr "Relation au père"
 #: DynamicWeb/dynamicweb.py:3061 PersonEverything/PersonEverything.py:225
 msgid "Relationship to Mother"
 msgstr "Relation à la mère"
-
-#: PersonEverything/PersonEverything.gpr.py:32
-msgid "PersonEverything Report"
-msgstr "Rapport Tout sur la personne"
-
-#: PersonEverything/PersonEverything.gpr.py:33
-msgid "Produces a report containing everything about the active person"
-msgstr "Produit un rapport contenant tout sur la personne active"
 
 #: PersonEverything/PersonEverything.py:133
 #, python-format
@@ -185,3 +177,11 @@ msgstr "Couleur de l'étiquette et priorité"
 #: PersonEverything/PersonEverything.py:960
 msgid "No source information found"
 msgstr "Pas d'information de la source trouvée"
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "PersonEverything Report"
+msgstr "Rapport Tout sur la personne"
+
+#: PersonEverything/PersonEverything.gpr.py:33
+msgid "Produces a report containing everything about the active person"
+msgstr "Produit un rapport contenant tout sur la personne active"

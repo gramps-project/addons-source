@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -29,16 +29,12 @@ msgstr "Vælg filter til personafgrænsning"
 msgid "Persons"
 msgstr "Personer"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
-#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
-#: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
-#: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
+#: SetPrivacyTool/SetPrivacyTool.py:51 SetPrivacyTool/SetPrivacyTool.py:93
+#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:146
+#: SetPrivacyTool/SetPrivacyTool.py:186 SetPrivacyTool/SetPrivacyTool.py:226
+#: SetPrivacyTool/SetPrivacyTool.py:255 SetPrivacyTool/SetPrivacyTool.gpr.py:24
 msgid "Set Privacy Tool"
 msgstr "Sæt Personbeskyttelse Værktøj"
-
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
-msgid "Set all objects of the last <number> of years private."
-msgstr "Sæt alle objekter for de seneste <number> år til privat."
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
@@ -101,3 +97,7 @@ msgstr "Internet type filter"
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
 msgstr "E-post"
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
+msgid "Set all objects of the last <number> of years private."
+msgstr "Sæt alle objekter for de seneste <number> år til privat."

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -69,10 +69,6 @@ msgstr "Заменить имя на прозвище"
 #: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Подчеркнуть прозвище в имени / добавить прозвище в имя"
-
-#: FamilyTree/FamilyTree.gpr.py:5
-msgid "Produces a graphical family tree."
-msgstr "Создаёт графическое представление семейного древа."
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
@@ -262,3 +258,7 @@ msgstr "Стиль для имён."
 #: FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr "Стиль для данных (рождение, смерть, брак, развод)."
+
+#: FamilyTree/FamilyTree.gpr.py:5
+msgid "Produces a graphical family tree."
+msgstr "Создаёт графическое представление семейного древа."

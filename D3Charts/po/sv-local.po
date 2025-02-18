@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,29 +25,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
-#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
+#: D3Charts/AncestralCollapsibleTree.py:785
 #: D3Charts/DescendantIndentedTree.py:1500
 #: D3Charts/DescendantIndentedTree.py:1563
 #: D3Charts/DescendantIndentedTree.py:1570
 #: D3Charts/DescendantIndentedTree.py:1677
-#: D3Charts/DescendantIndentedTree.py:1697
+#: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
+#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
 #, python-format
 msgid "Failed writing %s: %s"
 msgstr "Fel vid skrivning av %s: %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
-#: D3Charts/DescendantIndentedTree.py:1519
+#: D3Charts/AncestralCollapsibleTree.py:345
+#: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr "Fel vid skapandet av katalogstrukturen : %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
-#: D3Charts/DescendantIndentedTree.py:1555
+#: D3Charts/AncestralCollapsibleTree.py:368
+#: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "Fel vid kopieringen av webbfiler : %s"
@@ -56,8 +56,8 @@ msgstr "Fel vid kopieringen av webbfiler : %s"
 msgid "Ancestral Collapsible Tree Options"
 msgstr "Alternativ för Hopfällbart släktträd"
 
-#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
-#: D3Charts/DescendantIndentedTree.py:1804
+#: D3Charts/AncestralCollapsibleTree.py:840
+#: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
 msgid "Include Generations"
 msgstr "Ta med generationer"
 
@@ -93,61 +93,15 @@ msgstr "Bakgrundsfärgen för den expanderbara rutan för kvinnor"
 msgid "RGB-color for female expandable box background."
 msgstr "RGB-färg på bakgrunden för den expanderbara rutan för kvinnor."
 
-#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
-#: D3Charts/DescendantIndentedTree.py:1826
+#: D3Charts/AncestralCollapsibleTree.py:867
+#: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
 msgid "The destination path for generated files."
 msgstr "Målmappen för genererade filer."
 
-#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
-#: D3Charts/DescendantIndentedTree.py:1831
+#: D3Charts/AncestralCollapsibleTree.py:872
+#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
 msgid "The destination file name for html content."
 msgstr "Målfilnamn för html-innehåll."
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr "Hopfällbart släktträd"
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Skapar en webbsida med en grafiskt antavla (SVG) som ett hopfällbart träd "
-"med hjälp av D3,js javaskript-bibliotek."
-
-#: D3Charts/DescendantIndentedTree.gpr.py:23
-#: D3Charts/DescendantIndentedTree.py:909
-msgid "Descendant Indented Tree"
-msgstr "Indraget träd för ättlingar"
-
-#: D3Charts/DescendantIndentedTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Skapar en webbsida med en grafiskt ättlingatavla (SVG) som ett hopfällbart "
-"indraget träd med hjälp av D3,js javaskript-bibliotek."
-
-#: D3Charts/AncestralFanChart.py:707
-msgid "Ancestral Fan Chart Options"
-msgstr "Alternativ för Cirkeldiagram för förfäder"
-
-#: D3Charts/AncestralFanChart.py:729
-msgid "Paternal Background Color"
-msgstr "Bakgrundsfärg för fadersidan"
-
-#: D3Charts/AncestralFanChart.py:730
-msgid "RGB-color for paternal box background."
-msgstr "RGB-färg på bakgrunden för rutan för fadersidan."
-
-#: D3Charts/AncestralFanChart.py:733
-msgid "Maternal Background"
-msgstr "Bakgrundsfärg för modersidan"
-
-#: D3Charts/AncestralFanChart.py:734
-msgid "RGB-color for maternal box background."
-msgstr "RGB-färg på bakgrunden för rutan för modersidan."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
@@ -169,6 +123,11 @@ msgstr "Se %(reference)s : %(spouse)s"
 #: D3Charts/DescendantIndentedTree.py:764
 msgid "Generating report..."
 msgstr "Skapar rapport..."
+
+#: D3Charts/DescendantIndentedTree.py:909
+#: D3Charts/DescendantIndentedTree.gpr.py:23
+msgid "Descendant Indented Tree"
+msgstr "Indraget träd för ättlingar"
 
 #: D3Charts/DescendantIndentedTree.py:1364
 msgid "Invalid Destination Directory"
@@ -436,3 +395,44 @@ msgstr "Typsnittsstorleken för sidans body"
 #: D3Charts/DescendantIndentedTree.py:2046
 msgid "The font size in pixels for biography body text."
 msgstr "Typsnittsstorleken i pixel för biografisidans body-text."
+
+#: D3Charts/DescendantIndentedTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Skapar en webbsida med en grafiskt ättlingatavla (SVG) som ett hopfällbart "
+"indraget träd med hjälp av D3,js javaskript-bibliotek."
+
+#: D3Charts/AncestralFanChart.py:707
+msgid "Ancestral Fan Chart Options"
+msgstr "Alternativ för Cirkeldiagram för förfäder"
+
+#: D3Charts/AncestralFanChart.py:729
+msgid "Paternal Background Color"
+msgstr "Bakgrundsfärg för fadersidan"
+
+#: D3Charts/AncestralFanChart.py:730
+msgid "RGB-color for paternal box background."
+msgstr "RGB-färg på bakgrunden för rutan för fadersidan."
+
+#: D3Charts/AncestralFanChart.py:733
+msgid "Maternal Background"
+msgstr "Bakgrundsfärg för modersidan"
+
+#: D3Charts/AncestralFanChart.py:734
+msgid "RGB-color for maternal box background."
+msgstr "RGB-färg på bakgrunden för rutan för modersidan."
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
+msgstr "Hopfällbart släktträd"
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Skapar en webbsida med en grafiskt antavla (SVG) som ett hopfällbart träd "
+"med hjälp av D3,js javaskript-bibliotek."

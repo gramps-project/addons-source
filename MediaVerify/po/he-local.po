@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 10:31+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -20,14 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: MediaVerify/MediaVerify.gpr.py:31
-msgid "Media Verify"
-msgstr "אימות מדיה"
-
-#: MediaVerify/MediaVerify.gpr.py:32
-msgid "Verify that media is present in the correct path"
-msgstr "נא לודא שקיימת מדיה בנתיב הנוכחי"
 
 #: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
@@ -140,3 +132,11 @@ msgstr "תיקון נתיבי קובץ"
 #: MediaVerify/MediaVerify.py:390
 msgid "Fix media paths"
 msgstr "תיקון נתיבי מדיה"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Media Verify"
+msgstr "אימות מדיה"
+
+#: MediaVerify/MediaVerify.gpr.py:32
+msgid "Verify that media is present in the correct path"
+msgstr "נא לודא שקיימת מדיה בנתיב הנוכחי"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -35,18 +35,6 @@ msgstr ""
 msgid "Theme"
 msgstr "Тема"
 
-#: Themes/themes.gpr.py:29
-msgid "Theme preferences"
-msgstr "Тематические предпочтения"
-
-#: Themes/themes.gpr.py:31
-msgid ""
-"An addition to Preferences for simple Theme and Font adjustment.  Especially "
-"useful for Windows users."
-msgstr ""
-"Дополнение к настройкам для простой настройки темы и шрифта. Особенно "
-"полезно для пользователей Windows."
-
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Тема жёстко задана с помощью GTK_THEME"
@@ -62,3 +50,15 @@ msgstr "Шрифт"
 #: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Классическая полоса прокрутки (требуется перезагрузка)"
+
+#: Themes/themes.gpr.py:29
+msgid "Theme preferences"
+msgstr "Тематические предпочтения"
+
+#: Themes/themes.gpr.py:31
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Дополнение к настройкам для простой настройки темы и шрифта. Особенно "
+"полезно для пользователей Windows."

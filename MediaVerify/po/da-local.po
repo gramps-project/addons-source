@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,14 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: MediaVerify/MediaVerify.gpr.py:31
-msgid "Media Verify"
-msgstr "Verificér medier"
-
-#: MediaVerify/MediaVerify.gpr.py:32
-msgid "Verify that media is present in the correct path"
-msgstr "Verificér at medier er tilstede på den korrekte filsti"
 
 #: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
@@ -141,3 +133,11 @@ msgstr "Retter filstier"
 #: MediaVerify/MediaVerify.py:390
 msgid "Fix media paths"
 msgstr "Retter mediefilstier"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Media Verify"
+msgstr "Verificér medier"
+
+#: MediaVerify/MediaVerify.gpr.py:32
+msgid "Verify that media is present in the correct path"
+msgstr "Verificér at medier er tilstede på den korrekte filsti"

@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -29,14 +30,6 @@ msgstr "Relação com o pai"
 #: DynamicWeb/dynamicweb.py:3061 PersonEverything/PersonEverything.py:225
 msgid "Relationship to Mother"
 msgstr "Relação com a mãe"
-
-#: PersonEverything/PersonEverything.gpr.py:32
-msgid "PersonEverything Report"
-msgstr "Relatório Tudo do indivíduo"
-
-#: PersonEverything/PersonEverything.gpr.py:33
-msgid "Produces a report containing everything about the active person"
-msgstr "Produz um relatório contendo todos os dados sobre o indivíduo activo"
 
 #: PersonEverything/PersonEverything.py:133
 #, python-format
@@ -165,3 +158,11 @@ msgstr "Cor e prioridade da etiqueta"
 #: PersonEverything/PersonEverything.py:960
 msgid "No source information found"
 msgstr "Sem informações de fontes"
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "PersonEverything Report"
+msgstr "Relatório Tudo do indivíduo"
+
+#: PersonEverything/PersonEverything.gpr.py:33
+msgid "Produces a report containing everything about the active person"
+msgstr "Produz um relatório contendo todos os dados sobre o indivíduo activo"

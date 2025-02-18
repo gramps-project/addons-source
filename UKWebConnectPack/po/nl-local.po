@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -27,14 +27,6 @@ msgstr ""
 #: SVWebconnectPack/SVWebPack.py:34 UKWebConnectPack/UKWebPack.py:35
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
-
-#: UKWebConnectPack/UKWebPack.gpr.py:11
-msgid "UK Web Connect Pack"
-msgstr "UK Web Connect Pack"
-
-#: UKWebConnectPack/UKWebPack.gpr.py:12
-msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgstr "Verzameling van websites voor het VK (vereist libwebconnect)"
 
 #: UKWebConnectPack/UKWebPack.py:33
 msgid "UK Google"
@@ -55,3 +47,11 @@ msgstr "Hathi Trust Digital Library"
 #: UKWebConnectPack/UKWebPack.py:39
 msgid "Open Library"
 msgstr "Open Library"
+
+#: UKWebConnectPack/UKWebPack.gpr.py:11
+msgid "UK Web Connect Pack"
+msgstr "UK Web Connect Pack"
+
+#: UKWebConnectPack/UKWebPack.gpr.py:12
+msgid "Collection of Web sites for the UK (requires libwebconnect)"
+msgstr "Verzameling van websites voor het VK (vereist libwebconnect)"

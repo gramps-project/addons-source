@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -23,43 +23,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-msgid "Place Coordinate Gramplet"
-msgstr "Plaatscoördinaten gramplet"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
-msgid "Map Menu"
-msgstr "Kaartmenu"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
-msgid "Add city as place"
-msgstr "Voeg stad toe als plaats"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
-msgid "Add addess as place"
-msgstr "Voeg adres toe als plaats"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
-msgid "Place Coordinate Gramplet view"
-msgstr "Plaatscoördinaten grampletweergave"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
-msgid "View for the place coordinate gramplet."
-msgstr "Weergave van de plaatscoördinatengramplet."
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
-msgid "Place and Coordinates"
-msgstr "Plaats en coördinaten"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
-msgid "Gramplet that simplifies setting the coordinates of a place"
-msgstr ""
-"Gramplet die het instellen van de coördinaten van een plaats vereenvoudigt"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
-msgid "Place Coordinates"
-msgstr "Plaatscoördinaten"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
@@ -102,6 +65,43 @@ msgstr "Er is nog niets gezocht"
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr "Geen plaats is actief"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
+msgid "Place Coordinate Gramplet view"
+msgstr "Plaatscoördinaten grampletweergave"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
+msgid "View for the place coordinate gramplet."
+msgstr "Weergave van de plaatscoördinatengramplet."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
+msgid "Place and Coordinates"
+msgstr "Plaats en coördinaten"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr ""
+"Gramplet die het instellen van de coördinaten van een plaats vereenvoudigt"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
+msgid "Place Coordinates"
+msgstr "Plaatscoördinaten"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+msgid "Place Coordinate Gramplet"
+msgstr "Plaatscoördinaten gramplet"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
+msgid "Map Menu"
+msgstr "Kaartmenu"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
+msgid "Add city as place"
+msgstr "Voeg stad toe als plaats"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+msgid "Add addess as place"
+msgstr "Voeg adres toe als plaats"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"

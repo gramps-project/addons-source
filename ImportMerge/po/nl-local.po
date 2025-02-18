@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -37,8 +37,7 @@ msgstr "Voltooid"
 msgid "Differences"
 msgstr "Verschillen"
 
-#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:328
-#: ImportMerge/importmerge.py:707 ImportMerge/importmerge.py:329
+#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
 msgid "Import and Merge tool"
 msgstr "Importeren en samenvoegen"
@@ -51,49 +50,47 @@ msgstr ""
 "Vergelijkt een Gramps XML-database met de huidige en maakt het samenvoegen "
 "van de verschillen mogelijk."
 
-#: ImportMerge/importmerge.py:80 ImportMerge/importmerge.py:81
+#: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
 msgstr "Importeer en voeg een Gramps XML samen"
 
-#: ImportMerge/importmerge.py:89 ImportMerge/importmerge.py:90
+#: ImportMerge/importmerge.py:90
 msgid "Missing"
 msgstr "Ontbrekend"
 
-#: ImportMerge/importmerge.py:93 ImportMerge/importmerge.py:94
+#: ImportMerge/importmerge.py:94
 msgid "Different"
 msgstr "Verschillend"
 
-#: ImportMerge/importmerge.py:108 ImportMerge/importmerge.py:109
+#: ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr "Verwijder origineel"
 
-#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
-#: ImportMerge/importmerge.py:110
+#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.glade:334
 msgid "Ignore"
 msgstr "Negeer"
 
-#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.py:111
+#: ImportMerge/importmerge.py:111
 msgid "Add Import"
 msgstr "Import toevoegen"
 
-#: ImportMerge/importmerge.py:111 ImportMerge/importmerge.py:112
+#: ImportMerge/importmerge.py:112
 msgid "Merge into original"
 msgstr "Samenvoegen met origineel"
 
-#: ImportMerge/importmerge.py:112 ImportMerge/importmerge.py:113
+#: ImportMerge/importmerge.py:113
 msgid "Merge into import"
 msgstr "Samenvoegen met import"
 
-#: ImportMerge/importmerge.py:113 ImportMerge/importmerge.py:114
+#: ImportMerge/importmerge.py:114
 msgid "Replace with import"
 msgstr "Vervang door import"
 
-#: ImportMerge/importmerge.py:114 ImportMerge/importmerge.py:115
+#: ImportMerge/importmerge.py:115
 msgid "Keep original"
 msgstr "Bewaar origineel"
 
-#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
-#: ImportMerge/importmerge.py:116
+#: ImportMerge/importmerge.py:116 ImportMerge/importmerge.glade:293
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
@@ -102,7 +99,7 @@ msgstr ""
 "Er worden geen wijzigingen in uw stamboom aangebracht totdat u op 'Gereed' "
 "drukt en bevestigt."
 
-#: ImportMerge/importmerge.py:118 ImportMerge/importmerge.py:119
+#: ImportMerge/importmerge.py:119
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
@@ -110,7 +107,7 @@ msgstr ""
 "Dit item wordt uit uw stamboom verwijderd. Alle items waarnaar wordt "
 "verwezen zijn tevens gemarkeerd om te worden verwijderd."
 
-#: ImportMerge/importmerge.py:120 ImportMerge/importmerge.py:121
+#: ImportMerge/importmerge.py:121
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
@@ -118,7 +115,7 @@ msgstr ""
 "Dit item wordt niet gewijzigd in uw stamboom. Alle items waarnaar wordt "
 "verwezen zijn tevens gemarkeerd als Negeren."
 
-#: ImportMerge/importmerge.py:122 ImportMerge/importmerge.py:123
+#: ImportMerge/importmerge.py:123
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
@@ -126,7 +123,7 @@ msgstr ""
 "Dit item wordt aan uw stamboom toegevoegd. Alle items waarnaar wordt "
 "verwezen, zijn tevens gemarkeerd als toe te voegen."
 
-#: ImportMerge/importmerge.py:124 ImportMerge/importmerge.py:125
+#: ImportMerge/importmerge.py:125
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
@@ -135,7 +132,7 @@ msgstr ""
 "stamboom. Alle items waarnaar wordt verwezen zijn tevens gemarkeerd als "
 "samenvoegen of toevoegen."
 
-#: ImportMerge/importmerge.py:126 ImportMerge/importmerge.py:127
+#: ImportMerge/importmerge.py:127
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
@@ -143,7 +140,7 @@ msgstr ""
 "Dit item wordt samengevoegd met gegevens uit de import. Alle items waarnaar "
 "wordt verwezen, zijn tevens gemarkeerd als samenvoegen of toevoegen."
 
-#: ImportMerge/importmerge.py:128 ImportMerge/importmerge.py:129
+#: ImportMerge/importmerge.py:129
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
@@ -152,7 +149,7 @@ msgstr ""
 "items waarnaar wordt verwezen zijn tevens gemarkeerd als vervanging of "
 "verwijdering."
 
-#: ImportMerge/importmerge.py:130 ImportMerge/importmerge.py:131
+#: ImportMerge/importmerge.py:131
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
@@ -160,46 +157,40 @@ msgstr ""
 "Dit item wordt niet gewijzigd in uw stamboom. Alle items waarnaar wordt "
 "verwezen zijn tevens gemarkeerd als 'bewaren'."
 
-#: ImportMerge/importmerge.py:338 ImportMerge/importmerge.py:339
+#: ImportMerge/importmerge.py:339
 msgid "Import Failure"
 msgstr "Importeren mislukt"
 
-#: ImportMerge/importmerge.py:406 ImportMerge/importmerge.py:407
+#: ImportMerge/importmerge.py:407
 msgid "Your Tree and import are the same."
 msgstr "Uw stamboom en de import zijn hetzelfde."
 
-#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
-#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
 #: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
 #: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
 msgid "your tree "
 msgstr "uw boom "
 
-#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
-#: ImportMerge/importmerge.py:474 ImportMerge/importmerge.py:459
-#: ImportMerge/importmerge.py:467 ImportMerge/importmerge.py:475
+#: ImportMerge/importmerge.py:459 ImportMerge/importmerge.py:467
+#: ImportMerge/importmerge.py:475
 msgid "imported "
 msgstr "geïmporteerd "
 
-#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
-#: ImportMerge/importmerge.py:981 ImportMerge/importmerge.py:482
-#: ImportMerge/importmerge.py:961 ImportMerge/importmerge.py:982
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
+#: ImportMerge/importmerge.py:982
 msgid "Original"
 msgstr "Origineel"
 
-#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
-#: ImportMerge/importmerge.py:982 ImportMerge/importmerge.py:483
-#: ImportMerge/importmerge.py:962 ImportMerge/importmerge.py:983
+#: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
+#: ImportMerge/importmerge.py:983
 msgid "Imported"
 msgstr "Geïmporteerd"
 
-#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
-#: ImportMerge/importmerge.py:984 ImportMerge/importmerge.py:485
-#: ImportMerge/importmerge.py:964 ImportMerge/importmerge.py:985
+#: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
+#: ImportMerge/importmerge.py:985
 msgid "Result  "
 msgstr "Resultaat  "
 
-#: ImportMerge/importmerge.py:710 ImportMerge/importmerge.py:711
+#: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
 msgstr "Importeren en samenvoegen"
 

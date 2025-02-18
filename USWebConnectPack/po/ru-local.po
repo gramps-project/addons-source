@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -48,6 +48,10 @@ msgstr "Hathi Trust цифровая библиотека"
 msgid "Open Library"
 msgstr "Открытая библиотека"
 
+#: USWebConnectPack/USWebPack.py:35
+msgid "US Google"
+msgstr "US Google"
+
 #: USWebConnectPack/USWebPack.gpr.py:11
 msgid "US Web Connect Pack"
 msgstr "Набор US Web Connect"
@@ -55,7 +59,3 @@ msgstr "Набор US Web Connect"
 #: USWebConnectPack/USWebPack.gpr.py:12
 msgid "Collection of Web sites for the US (requires libwebconnect)"
 msgstr "Набор веб-сайтов для US (требуется libwebconnect)"
-
-#: USWebConnectPack/USWebPack.py:35
-msgid "US Google"
-msgstr "US Google"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2010-03-03 01:10+0200\n"
 "Last-Translator: Boril Gourinov <boril.gourinov@gmail.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -22,15 +22,6 @@ msgstr ""
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-msgid "Calculate Estimated Dates"
-msgstr "Изчисляване на приблизителните дати"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
-msgid "Calculates estimated dates for birth and death."
-msgstr "Изчисляване на приблизителните дати за раждане и смърт."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
@@ -155,6 +146,11 @@ msgstr ""
 "\n"
 "Може да се наложи да пускате инструмента няколкократно, без да премахвате "
 "предните събития, за да добавите всички възможни събития."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculate Estimated Dates"
+msgstr "Изчисляване на приблизителните дати"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
@@ -298,3 +294,7 @@ msgstr "Добавени %d събития."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Приблизителна дата"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Изчисляване на приблизителните дати за раждане и смърт."

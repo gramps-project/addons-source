@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:105
 #: RemoveTagTool/RemoveTagTool.py:271
@@ -46,17 +46,6 @@ msgstr "Personen"
 #: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
 msgid "General options"
 msgstr "Allgemeine Optionen"
-
-#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
-#: RemoveTagTool/RemoveTagTool.py:246
-msgid "Add/Remove Tag Tool"
-msgstr "Markierungen Hinzufügen/Entfernen Werkzeug"
-
-#: RemoveTagTool/RemoveTagTool.gpr.py:26
-msgid "Add or remove a tag from groups of people, events, etc."
-msgstr ""
-"Hinzufügen oder Entfernen einer Markierung zu Gruppen von Personen, "
-"Ereignissen usw."
 
 #: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
@@ -104,6 +93,11 @@ msgstr "Filteroptionen"
 msgid "All %s"
 msgstr "Alle %s"
 
+#: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
+#: RemoveTagTool/RemoveTagTool.gpr.py:25
+msgid "Add/Remove Tag Tool"
+msgstr "Markierungen Hinzufügen/Entfernen Werkzeug"
+
 #: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
@@ -136,3 +130,9 @@ msgstr "entfernt"
 #: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Markierung '{}' wurde {} zu {} {} Objekten.\n"
+
+#: RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr ""
+"Hinzufügen oder Entfernen einer Markierung zu Gruppen von Personen, "
+"Ereignissen usw."

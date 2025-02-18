@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -30,14 +30,6 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
-msgid "GoogleEarth"
-msgstr "GoogleEarth"
-
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
-msgid "Creates data file for GoogleEarth and opens it"
-msgstr "Создаёт данные для GoogleEarth и открывает их"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
 msgid "No place description"
@@ -77,3 +69,11 @@ msgid ""
 msgstr ""
 "Перезаписать файл kmz/kml ''%s''\n"
 "в пользовательском каталоге ''%s''?"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
+msgid "GoogleEarth"
+msgstr "GoogleEarth"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
+msgid "Creates data file for GoogleEarth and opens it"
+msgstr "Создаёт данные для GoogleEarth и открывает их"

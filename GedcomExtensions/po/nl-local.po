@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -28,22 +28,6 @@ msgstr ""
 #: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr "Voeg media toe"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:32
-msgid "Export GEDCOM Extensions (GED2)"
-msgstr "GEDCOM-extensies exporteren (GED2)"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:33
-msgid "GEDCOM Extensions (GED2)"
-msgstr "GEDCOM-uitbreidingen (GED2)"
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:34
-msgid "Extensions to the common GEDCOM format."
-msgstr "Uitbreidingen naar het algemene GEDCOM-formaat."
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:42
-msgid "GEDCOM Extensions options"
-msgstr "Opties voor GEDCOM-extensies"
 
 #: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
@@ -73,3 +57,19 @@ msgstr "Type achternaam:"
 #: GedcomExtensions/GedcomExtensions.py:261
 msgid "Export failed"
 msgstr "Export is mislukt"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:32
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "GEDCOM-extensies exporteren (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:33
+msgid "GEDCOM Extensions (GED2)"
+msgstr "GEDCOM-uitbreidingen (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:34
+msgid "Extensions to the common GEDCOM format."
+msgstr "Uitbreidingen naar het algemene GEDCOM-formaat."
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:42
+msgid "GEDCOM Extensions options"
+msgstr "Opties voor GEDCOM-extensies"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,42 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-msgid "Place Coordinate Gramplet"
-msgstr "Sted koordinat Gramplet"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
-msgid "Map Menu"
-msgstr "Kort menu"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
-msgid "Add city as place"
-msgstr "Tilføj by som sted"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
-msgid "Add addess as place"
-msgstr "Tilføj adresse som sted"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
-msgid "Place Coordinate Gramplet view"
-msgstr "Sted koordinat Gramplet visning"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
-msgid "View for the place coordinate gramplet."
-msgstr "Visning for sted koordinat gramplet."
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
-msgid "Place and Coordinates"
-msgstr "Sted og koorsinater"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
-msgid "Gramplet that simplifies setting the coordinates of a place"
-msgstr "Gramplet der gør det enklere at sætte et steds koordinater"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
-msgid "Place Coordinates"
-msgstr "Stedkoordinater"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
@@ -96,6 +60,42 @@ msgstr "Intet er søgt efter endnu"
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr "Intet sted er aktivt"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
+msgid "Place Coordinate Gramplet view"
+msgstr "Sted koordinat Gramplet visning"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
+msgid "View for the place coordinate gramplet."
+msgstr "Visning for sted koordinat gramplet."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
+msgid "Place and Coordinates"
+msgstr "Sted og koorsinater"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Gramplet der gør det enklere at sætte et steds koordinater"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
+msgid "Place Coordinates"
+msgstr "Stedkoordinater"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+msgid "Place Coordinate Gramplet"
+msgstr "Sted koordinat Gramplet"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
+msgid "Map Menu"
+msgstr "Kort menu"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
+msgid "Add city as place"
+msgstr "Tilføj by som sted"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+msgid "Add addess as place"
+msgstr "Tilføj adresse som sted"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"

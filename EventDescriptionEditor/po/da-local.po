@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -25,18 +25,11 @@ msgstr ""
 msgid "Find"
 msgstr "Find"
 
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 msgid "Event Description Editor"
 msgstr "Hændelsesbeskrivelsesredigering"
-
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
-msgid ""
-"A tool to find and replace a string in event description of multiple events."
-msgstr ""
-"Et værktøj til at finde og erstatte strenge i hændelsesbeskrivelsen for "
-"flere hændelser."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
@@ -74,3 +67,10 @@ msgstr "Tillad regex"
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
 msgstr "Tillad regular expressions."
+
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr ""
+"Et værktøj til at finde og erstatte strenge i hændelsesbeskrivelsen for "
+"flere hændelser."

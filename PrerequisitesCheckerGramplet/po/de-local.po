@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
@@ -365,10 +365,8 @@ msgid " (Requires version 0.5.x)"
 msgstr " (Benötigt Version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
-#, fuzzy
-#| msgid " (lxml: not found. Requires version "
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr " (lxml: nicht gefunden. Benötigt Version "
+msgstr " • python-fontconfig nicht gefunden, (Benötigt Version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"

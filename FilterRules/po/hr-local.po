@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,50 +20,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: FilterRules/activepersonrule.gpr.py:27
-#: FilterRules/activepersonrule.gpr.py:28
-#, fuzzy
-#| msgid "Change active person?"
-msgid "The active Person"
-msgstr "Želiš li zamijeniti aktivnu osobu?"
+#: FilterRules/isrelatedwithfiltermatch.py:53
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
+msgid "People related to <filter>"
+msgstr "Osobe u srodstvu s <filtrom>"
 
-#: FilterRules/activepersonrule.py:45
-msgid "Active person"
-msgstr "Aktivna osoba"
-
-#: FilterRules/activepersonrule.py:47
-#, fuzzy
-#| msgid "Go to active person"
-msgid "Matches the active person"
-msgstr "Idi na aktivnu osobu"
-
-#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
-#: FilterRules/ageatdeath.py:74
-msgid "Filter people by their age at death"
+#: FilterRules/isrelatedwithfiltermatch.py:55
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
+msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
-
-#: FilterRules/ageatdeath.gpr.py:26
-#, fuzzy
-#| msgid "Filter rule that matches relatives by degrees of separation"
-msgid "Filter rule that matches people by their age at death"
-msgstr "Pravilo filtra pronalazi srodnike po stupnjevima razdvajanja"
-
-#: FilterRules/ageatdeath.py:47
-msgid "Age in years at person's death."
-msgstr ""
-
-#: FilterRules/ageatdeath.py:71
-msgid "Age:"
-msgstr "Starost:"
-
-#: FilterRules/associationsofpersonmatch.gpr.py:25
-#: FilterRules/associationsofpersonmatch.gpr.py:26
-#: FilterRules/associationsofpersonmatch.py:46
-#: FilterRules/associationsofpersonmatch.py:47
-msgid "Match associations of <person filter>"
-msgstr ""
+"Pronalazi osobe koje su u srodstvu s bilo kojom osobom koja je pronađena "
+"pomoću filtra za osobe"
 
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
@@ -74,42 +44,30 @@ msgstr "Osobe razdvojene manje od <N> stupnjeva od <osobe>"
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "Pravilo filtra pronalazi srodnike po stupnjevima razdvajanja"
 
-#: FilterRules/degreesofseparation.py:47
-msgid "Number of degrees of separation from person."
-msgstr "Broj stupnjeva razdvajanja od osobe."
+#: FilterRules/hassourcefilter.gpr.py:28
+msgid "Source matching parameters"
+msgstr "Izvor odgovara parametrima"
 
-#: FilterRules/degreesofseparation.py:59
-msgid "Degrees:"
-msgstr "Stupnjevi:"
+#: FilterRules/hassourcefilter.gpr.py:29
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr "Pronalazi izvore s vrijednostima koje sadrže odabrane parametre"
 
-#: FilterRules/familieswitheventfiltermatch.gpr.py:25
-#: FilterRules/familieswitheventfiltermatch.py:45
-msgid "Families matching <event filter>"
-msgstr "Obitelji koje odgavaraju <filtru za događaje>"
+#: FilterRules/multipleparents.py:42
+msgid "People with multiple parent records"
+msgstr ""
 
-#: FilterRules/familieswitheventfiltermatch.gpr.py:26
-msgid "Matches families that are matched by an event filter"
-msgstr "Pronalazi obitelji koje odgovaraju filtru za događaje"
-
-#: FilterRules/familieswitheventfiltermatch.py:47
-msgid "Matches families matched by an event filter"
-msgstr "Pronalazi obitelji koje odgovaraju filtru za događaje"
-
-#: FilterRules/hasrolerule.gpr.py:27
-msgid "People with events with a selected role"
-msgstr "Osobe s događajima s odabranom ulogom"
-
-#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
-msgid "Matches people with an event with a selected role"
+#: FilterRules/multipleparents.py:43
+#, fuzzy
+#| msgid "Matches people with an event with a selected role"
+msgid "Matches people who have more than one set of parents"
 msgstr "Pronalazi osobe s događajima s odabranom ulogom"
 
-#: FilterRules/hasrolerule.gpr.py:43
-msgid "Families with events with a selected role"
-msgstr "Obitelji s događajima s odabranom ulogom"
-
-#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:93
-msgid "Matches families with an event with a selected role"
-msgstr "Pronalazi obitelji s događajima s odabranom ulogom"
+#: FilterRules/associationsofpersonmatch.py:46
+#: FilterRules/associationsofpersonmatch.py:47
+#: FilterRules/associationsofpersonmatch.gpr.py:25
+#: FilterRules/associationsofpersonmatch.gpr.py:26
+msgid "Match associations of <person filter>"
+msgstr ""
 
 #: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
@@ -127,26 +85,53 @@ msgstr "Inverzno"
 msgid "People with events with the <role>"
 msgstr "Osobe s događajima s <ulogom>"
 
+#: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
+msgid "Matches people with an event with a selected role"
+msgstr "Pronalazi osobe s događajima s odabranom ulogom"
+
 #: FilterRules/hasrolerule.py:92
 msgid "Families with events with the <role>"
 msgstr "Obitelji s događajima s <ulogom>"
 
-#: FilterRules/hassourcefilter.gpr.py:28
-msgid "Source matching parameters"
-msgstr "Izvor odgovara parametrima"
+#: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
+msgid "Matches families with an event with a selected role"
+msgstr "Pronalazi obitelji s događajima s odabranom ulogom"
 
-#: FilterRules/hassourcefilter.gpr.py:29
-msgid "Matches Sources with values containing the chosen parameters"
-msgstr "Pronalazi izvore s vrijednostima koje sadrže odabrane parametre"
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
+#: FilterRules/isfamilyfiltermatchevent.py:63
+#: FilterRules/isfamilyfiltermatchevent.py:64
+msgid "Events of families matching a <family filter>"
+msgstr "Događaji obitelji koje odgovaraju <filtru za obitelji>"
 
-#: FilterRules/hassourcefilter.py:58
-msgid "Matches sources with a particular value"
-msgstr "Pronalazi izvore s određenom vrijednosti"
+#: FilterRules/familieswitheventfiltermatch.gpr.py:25
+#: FilterRules/familieswitheventfiltermatch.py:45
+msgid "Families matching <event filter>"
+msgstr "Obitelji koje odgavaraju <filtru za događaje>"
 
-#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
-#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
-msgid "People who are part of families matching <filter>"
-msgstr "Osobe koje su dio obitelji koje odgovaraju <filtru>"
+#: FilterRules/familieswitheventfiltermatch.gpr.py:26
+msgid "Matches families that are matched by an event filter"
+msgstr "Pronalazi obitelji koje odgovaraju filtru za događaje"
+
+#: FilterRules/familieswitheventfiltermatch.py:47
+msgid "Matches families matched by an event filter"
+msgstr "Pronalazi obitelji koje odgovaraju filtru za događaje"
+
+#: FilterRules/degreesofseparation.py:47
+msgid "Number of degrees of separation from person."
+msgstr "Broj stupnjeva razdvajanja od osobe."
+
+#: FilterRules/degreesofseparation.py:59
+msgid "Degrees:"
+msgstr "Stupnjevi:"
+
+#: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
+msgid "People with <count> of <event>"
+msgstr ""
+
+#: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
+msgid "Matches persons which have events of given type and number."
+msgstr ""
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
@@ -168,43 +153,59 @@ msgstr "Uključi roditelje u pronađenim obiteljima."
 msgid "Family Filter name:"
 msgstr "Ime filtra za obitelji:"
 
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
-#: FilterRules/isfamilyfiltermatchevent.py:63
-#: FilterRules/isfamilyfiltermatchevent.py:64
-msgid "Events of families matching a <family filter>"
-msgstr "Događaji obitelji koje odgovaraju <filtru za obitelji>"
+#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
+#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
+msgid "People who are part of families matching <filter>"
+msgstr "Osobe koje su dio obitelji koje odgovaraju <filtru>"
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
-#: FilterRules/isrelatedwithfiltermatch.py:53
-msgid "People related to <filter>"
-msgstr "Osobe u srodstvu s <filtrom>"
-
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
-#: FilterRules/isrelatedwithfiltermatch.py:55
-msgid "Matches people who are related to anybody matched by a person filter"
+#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
+#: FilterRules/ageatdeath.py:74
+msgid "Filter people by their age at death"
 msgstr ""
-"Pronalazi osobe koje su u srodstvu s bilo kojom osobom koja je pronađena "
-"pomoću filtra za osobe"
+
+#: FilterRules/ageatdeath.gpr.py:26
+#, fuzzy
+#| msgid "Filter rule that matches relatives by degrees of separation"
+msgid "Filter rule that matches people by their age at death"
+msgstr "Pravilo filtra pronalazi srodnike po stupnjevima razdvajanja"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
 msgstr ""
 
-#: FilterRules/multipleparents.py:42
-msgid "People with multiple parent records"
-msgstr ""
+#: FilterRules/hasrolerule.gpr.py:27
+msgid "People with events with a selected role"
+msgstr "Osobe s događajima s odabranom ulogom"
 
-#: FilterRules/multipleparents.py:43
+#: FilterRules/hasrolerule.gpr.py:43
+msgid "Families with events with a selected role"
+msgstr "Obitelji s događajima s odabranom ulogom"
+
+#: FilterRules/activepersonrule.gpr.py:27
+#: FilterRules/activepersonrule.gpr.py:28
 #, fuzzy
-#| msgid "Matches people with an event with a selected role"
-msgid "Matches people who have more than one set of parents"
-msgstr "Pronalazi osobe s događajima s odabranom ulogom"
+#| msgid "Change active person?"
+msgid "The active Person"
+msgstr "Želiš li zamijeniti aktivnu osobu?"
 
-#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
-msgid "People with <count> of <event>"
+#: FilterRules/hassourcefilter.py:58
+msgid "Matches sources with a particular value"
+msgstr "Pronalazi izvore s određenom vrijednosti"
+
+#: FilterRules/activepersonrule.py:45
+msgid "Active person"
+msgstr "Aktivna osoba"
+
+#: FilterRules/activepersonrule.py:47
+#, fuzzy
+#| msgid "Go to active person"
+msgid "Matches the active person"
+msgstr "Idi na aktivnu osobu"
+
+#: FilterRules/ageatdeath.py:47
+msgid "Age in years at person's death."
 msgstr ""
 
-#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
-msgid "Matches persons which have events of given type and number."
-msgstr ""
+#: FilterRules/ageatdeath.py:71
+msgid "Age:"
+msgstr "Starost:"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -23,15 +23,6 @@ msgstr ""
 #: RelID/relation_tab.py:97 PhotoTaggingGramplet/PhotoTaggingGramplet.py:498
 msgid "_Select"
 msgstr "_Vælg"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
-msgid "Photo Tagging"
-msgstr "FotoMærkning"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
-msgid "Gramplet for tagging people in photos"
-msgstr "Gramplet til at mærke personer i fotos"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
@@ -141,3 +132,12 @@ msgstr "Kvindelig person|Død %s"
 #, python-format
 msgid "Unknown gender person|Dead at %s"
 msgstr "Person af ukendt køn|Død %s"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
+msgid "Photo Tagging"
+msgstr "FotoMærkning"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
+msgid "Gramplet for tagging people in photos"
+msgstr "Gramplet til at mærke personer i fotos"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -25,19 +25,6 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 msgid "in"
 msgstr "i"
-
-#: DenominoViso/DenominoViso.gpr.py:9
-msgid "DenominoViso"
-msgstr "DenominoViso"
-
-#: DenominoViso/DenominoViso.gpr.py:19
-msgid ""
-"Generates a web (HTML) page with a graphical representation of ancestors/"
-"descendants (SVG) where details about individuals become visible upon mouse-"
-"events."
-msgstr ""
-"Dan en web (HTML) side med en grafisk repræsentation af aner/efterkommere "
-"(SVG) hvor detaljer om personer bliver synlige ved mus-hændelser."
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -556,3 +543,16 @@ msgstr "Stregen længde"
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
 msgstr "Afstand mellem stregerne"
+
+#: DenominoViso/DenominoViso.gpr.py:9
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+#: DenominoViso/DenominoViso.gpr.py:19
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Dan en web (HTML) side med en grafisk repræsentation af aner/efterkommere "
+"(SVG) hvor detaljer om personer bliver synlige ved mus-hændelser."

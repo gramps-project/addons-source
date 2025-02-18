@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,14 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
-msgid "DNA Segment Map"
-msgstr "DNA Segment  Kort"
-
-#: DNA/dnasegmentmap.gpr.py:29
-msgid "Gramplet showing a matching DNA segment map"
-msgstr "Gramplet der viser et  matchene DNA segment kort"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
@@ -104,3 +96,11 @@ msgid ""
 msgstr ""
 "Klik for at gøre denne person aktiv\n"
 "Højreklik for at redigere denne person"
+
+#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
+msgid "DNA Segment Map"
+msgstr "DNA Segment  Kort"
+
+#: DNA/dnasegmentmap.gpr.py:29
+msgid "Gramplet showing a matching DNA segment map"
+msgstr "Gramplet der viser et  matchene DNA segment kort"

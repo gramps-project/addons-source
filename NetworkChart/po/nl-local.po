@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -36,14 +36,6 @@ msgstr "Vrouwelijke achtergrond"
 #: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Rechtstreeks"
-
-#: NetworkChart/NetworkChart.gpr.py:24
-msgid "Network Chart"
-msgstr "Netwerk Grafiek"
-
-#: NetworkChart/NetworkChart.gpr.py:35
-msgid "Generates a family network chart."
-msgstr "Genereert een familienetwerkgrafiek."
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
@@ -580,3 +572,11 @@ msgstr "Bevestig overschrijven van bestand."
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
 msgstr "Schakel de bevestiging van het overschrijven van bestanden in / uit."
+
+#: NetworkChart/NetworkChart.gpr.py:24
+msgid "Network Chart"
+msgstr "Netwerk Grafiek"
+
+#: NetworkChart/NetworkChart.gpr.py:35
+msgid "Generates a family network chart."
+msgstr "Genereert een familienetwerkgrafiek."

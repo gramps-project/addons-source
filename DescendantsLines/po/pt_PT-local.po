@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -237,10 +238,8 @@ msgstr ""
 "intensa)"
 
 #: DescendantsLines/DescendantsLines.py:1645
-#, fuzzy
-#| msgid "Name Display Format"
 msgid "Display Formats"
-msgstr "Formato de exibiçlão do nome"
+msgstr "Formatos de exibição"
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
@@ -307,10 +306,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1715
-#, fuzzy
-#| msgid "Horizontal spacing between generations"
 msgid "Horizontal space descendant to spouse"
-msgstr "Espaço horizontal entre gerações"
+msgstr "Espaço horizontal de descendente a cônjuge"
 
 #: DescendantsLines/DescendantsLines.py:1716
 msgid "The space to add between the descendant and the spouse."
@@ -395,10 +392,8 @@ msgid "The space to add between a line and the next in a person text block."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1773
-#, fuzzy
-#| msgid "Header Font size"
 msgid "Header and Footer"
-msgstr "Tamanho da letra do cabeçalho"
+msgstr "Cabeçalho e rodapé"
 
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"

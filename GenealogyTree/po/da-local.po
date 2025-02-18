@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,61 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
-#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
-msgid "Include images"
-msgstr "Medtag billeder"
-
-#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
-#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
-msgid "Include images of people in the nodes."
-msgstr "Medtag billeder af personer i noderne."
-
-#: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
-msgid "First spouse left"
-msgstr "højre til vnstre"
-
-#: GenealogyTree/gt_descendant.py:192
-msgid ""
-"Always put first of multiple spouses on the left. This can help reduce line-"
-"crossings with multiple marriages."
-msgstr ""
-
-#: GenealogyTree/gt_grandparent.py:119
-#, python-format
-msgid "Person %s does not have both a paternal and a maternal grandparent"
-msgstr "Person %s har ikke både en bedsteforældre på fars og mors side"
-
-#: GenealogyTree/gt_grandparent.py:227
-msgid "Grandparent family spacing"
-msgstr "Bedsteforældre familie afstand"
-
-#: GenealogyTree/gt_grandparent.py:228
-msgid "Extra spacing of grandparent families (mm)"
-msgstr "Ekstra afstand mellem bedsteforældres familie (mm)"
-
-#: GenealogyTree/gt_sandclock.py:235
-msgid "The center family for the report"
-msgstr "Fokusfamilie for rapporten"
-
-#: GenealogyTree/gt_sandclock.py:238
-msgid "Generations up"
-msgstr "Generationer op"
-
-#: GenealogyTree/gt_sandclock.py:242
-msgid "Generations down"
-msgstr "Generationer ned"
-
-#: GenealogyTree/gt_sandclock.py:246
-msgid "Include siblings"
-msgstr "Medtag søskende"
-
-#: GenealogyTree/gt_sandclock.py:247
-msgid "Include siblings of ancestors."
-msgstr "Medtag søskende til aner."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -106,3 +51,58 @@ msgstr "Timeglastræ for en familie"
 #: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Timeglas træ for en familie der benytter LaTeX genealogytree"
+
+#: GenealogyTree/gt_sandclock.py:235
+msgid "The center family for the report"
+msgstr "Fokusfamilie for rapporten"
+
+#: GenealogyTree/gt_sandclock.py:238
+msgid "Generations up"
+msgstr "Generationer op"
+
+#: GenealogyTree/gt_sandclock.py:242
+msgid "Generations down"
+msgstr "Generationer ned"
+
+#: GenealogyTree/gt_sandclock.py:246
+msgid "Include siblings"
+msgstr "Medtag søskende"
+
+#: GenealogyTree/gt_sandclock.py:247
+msgid "Include siblings of ancestors."
+msgstr "Medtag søskende til aner."
+
+#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
+#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
+msgid "Include images"
+msgstr "Medtag billeder"
+
+#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
+#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
+msgid "Include images of people in the nodes."
+msgstr "Medtag billeder af personer i noderne."
+
+#: GenealogyTree/gt_grandparent.py:119
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "Person %s har ikke både en bedsteforældre på fars og mors side"
+
+#: GenealogyTree/gt_grandparent.py:227
+msgid "Grandparent family spacing"
+msgstr "Bedsteforældre familie afstand"
+
+#: GenealogyTree/gt_grandparent.py:228
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Ekstra afstand mellem bedsteforældres familie (mm)"
+
+#: GenealogyTree/gt_descendant.py:191
+#, fuzzy
+#| msgid "right to left"
+msgid "First spouse left"
+msgstr "højre til vnstre"
+
+#: GenealogyTree/gt_descendant.py:192
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""

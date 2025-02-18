@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -50,6 +50,10 @@ msgstr "Enregistrer"
 msgid "Abandon"
 msgstr "Abandonner"
 
+#: NoteGramplet/NoteGramplet.py:255
+msgid "Save Note"
+msgstr "Enregistrer la note"
+
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "Gramplet Note"
@@ -57,7 +61,3 @@ msgstr "Gramplet Note"
 #: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
 msgstr "Gramplet pour l'édition des notes de l'individu actif"
-
-#: NoteGramplet/NoteGramplet.py:255
-msgid "Save Note"
-msgstr "Enregistrer la note"

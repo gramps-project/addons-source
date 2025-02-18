@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: DynamicWeb/dynamicweb.py:3170 LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
@@ -33,6 +34,118 @@ msgstr "Umanji"
 #: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
 msgstr "Najveći broj generacija"
+
+#: LifeLineChartView/lifelinechart.py:75
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1183
+#, python-brace-format
+msgid "cursor position at {date}"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:2591
+msgid "Hide person"
+msgstr "Sakrij osobu"
+
+#: LifeLineChartView/lifelinechart.py:2597
+msgid "Show person"
+msgstr "Prikaži osobu"
+
+#: LifeLineChartView/lifelinechart.py:2622
+msgid "Show siblings"
+msgstr "Prikaži braću/sestre"
+
+#: LifeLineChartView/lifelinechart.py:2627
+msgid "Hide siblings"
+msgstr "Sakrij braću/sestre"
+
+#: LifeLineChartView/lifelinechart.py:2652
+msgid "Show ancestors above "
+msgstr "Prikaži pretke iznad "
+
+#: LifeLineChartView/lifelinechartview.py:386
+#: LifeLineChartView/lifelinechartview.py:883
+msgid "General Layout"
+msgstr "Opći raspored"
+
+#: LifeLineChartView/lifelinechartview.py:399
+#: LifeLineChartView/lifelinechartview.gpr.py:34
+#: LifeLineChartView/lifelinechartview.gpr.py:52
+msgid "Life Line Chart"
+msgstr "Linijski dijagram života"
+
+#: LifeLineChartView/lifelinechartview.py:509
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:519
+#: LifeLineChartView/lifelinechartview.py:520
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:520
+msgid "Mouse wheel"
+msgstr "Kotačić miša"
+
+#: LifeLineChartView/lifelinechartview.py:527
+msgid "Zoom to original"
+msgstr "Zumiraj na originalnu veličinu"
+
+#: LifeLineChartView/lifelinechartview.py:534
+msgid "Zoom to best fit"
+msgstr "Zumiraj za najbolji prikaz"
+
+#: LifeLineChartView/lifelinechartview.py:541
+msgid "Rebuild data cache"
+msgstr "Ponovo izgradi predmemoriju"
+
+#: LifeLineChartView/lifelinechartview.py:548
+msgid "Revert the placement and person selection"
+msgstr "Preokreni odabir smještaja i osobe"
+
+#: LifeLineChartView/lifelinechartview.py:564
+msgid "Open Life Line Chart help"
+msgstr "Otvori pomoć za linijski dijagram života"
+
+#: LifeLineChartView/lifelinechartview.py:831
+msgid "Export View as SVG"
+msgstr "Izvezi prikaz kao SVG"
+
+#: LifeLineChartView/lifelinechartview.py:884
+#: LifeLineChartView/_dummy_translation_string_po.py:29
+#: LifeLineChartView/_dummy_translation_string_po.py:32
+#: LifeLineChartView/_dummy_translation_string_po.py:35
+#: LifeLineChartView/_dummy_translation_string_po.py:38
+#: LifeLineChartView/_dummy_translation_string_po.py:41
+#: LifeLineChartView/_dummy_translation_string_po.py:47
+#: LifeLineChartView/_dummy_translation_string_po.py:52
+#: LifeLineChartView/_dummy_translation_string_po.py:55
+#: LifeLineChartView/_dummy_translation_string_po.py:58
+#: LifeLineChartView/_dummy_translation_string_po.py:61
+#: LifeLineChartView/_dummy_translation_string_po.py:67
+#: LifeLineChartView/_dummy_translation_string_po.py:74
+#: LifeLineChartView/_dummy_translation_string_po.py:77
+msgid "Label Configuration"
+msgstr "Konfiguracija etiketa"
+
+#: LifeLineChartView/lifelinechartview.py:946
+msgid "Reset all settings"
+msgstr "Resetiraj sve postavke"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:24
+msgid "Life Line Ancestor Chart"
+msgstr "Linijski dijagram života predaka"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:26
+#: LifeLineChartView/lifelinechartview.gpr.py:44
+msgid "Persons and their relation in a time based chart"
+msgstr "Osobe i njihova veza u vremenskom dijagramu"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:42
+msgid "Life Line Descendant Chart"
+msgstr "Linijski dijagram života potomaka"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
@@ -129,23 +242,6 @@ msgstr "Mjesto rođenja oca"
 #: LifeLineChartView/_dummy_translation_string_po.py:28
 msgid "The birth label is aligned to the individual line."
 msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:29
-#: LifeLineChartView/_dummy_translation_string_po.py:32
-#: LifeLineChartView/_dummy_translation_string_po.py:35
-#: LifeLineChartView/_dummy_translation_string_po.py:38
-#: LifeLineChartView/_dummy_translation_string_po.py:41
-#: LifeLineChartView/_dummy_translation_string_po.py:47
-#: LifeLineChartView/_dummy_translation_string_po.py:52
-#: LifeLineChartView/_dummy_translation_string_po.py:55
-#: LifeLineChartView/_dummy_translation_string_po.py:58
-#: LifeLineChartView/_dummy_translation_string_po.py:61
-#: LifeLineChartView/_dummy_translation_string_po.py:67
-#: LifeLineChartView/_dummy_translation_string_po.py:74
-#: LifeLineChartView/_dummy_translation_string_po.py:77
-#: LifeLineChartView/lifelinechartview.py:884
-msgid "Label Configuration"
-msgstr "Konfiguracija etiketa"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 #, fuzzy
@@ -510,98 +606,3 @@ msgstr "Uključi djecu"
 #: LifeLineChartView/_dummy_translation_string_po.py:120
 msgid "Cactus"
 msgstr ""
-
-#: LifeLineChartView/lifelinechart.py:75
-msgid ""
-"LifeLineChartView dependencies are missing. It is not possible to use this "
-"plugin without them."
-msgstr ""
-
-#: LifeLineChartView/lifelinechart.py:1183
-#, python-brace-format
-msgid "cursor position at {date}"
-msgstr ""
-
-#: LifeLineChartView/lifelinechart.py:2591
-msgid "Hide person"
-msgstr "Sakrij osobu"
-
-#: LifeLineChartView/lifelinechart.py:2597
-msgid "Show person"
-msgstr "Prikaži osobu"
-
-#: LifeLineChartView/lifelinechart.py:2622
-msgid "Show siblings"
-msgstr "Prikaži braću/sestre"
-
-#: LifeLineChartView/lifelinechart.py:2627
-msgid "Hide siblings"
-msgstr "Sakrij braću/sestre"
-
-#: LifeLineChartView/lifelinechart.py:2652
-msgid "Show ancestors above "
-msgstr "Prikaži pretke iznad "
-
-#: LifeLineChartView/lifelinechartview.gpr.py:24
-msgid "Life Line Ancestor Chart"
-msgstr "Linijski dijagram života predaka"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:26
-#: LifeLineChartView/lifelinechartview.gpr.py:44
-msgid "Persons and their relation in a time based chart"
-msgstr "Osobe i njihova veza u vremenskom dijagramu"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:34
-#: LifeLineChartView/lifelinechartview.gpr.py:52
-#: LifeLineChartView/lifelinechartview.py:399
-msgid "Life Line Chart"
-msgstr "Linijski dijagram života"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:42
-msgid "Life Line Descendant Chart"
-msgstr "Linijski dijagram života potomaka"
-
-#: LifeLineChartView/lifelinechartview.py:386
-#: LifeLineChartView/lifelinechartview.py:883
-msgid "General Layout"
-msgstr "Opći raspored"
-
-#: LifeLineChartView/lifelinechartview.py:509
-#: LifeLineChartView/lifelinechartview.py:510
-#: LifeLineChartView/lifelinechartview.py:519
-#: LifeLineChartView/lifelinechartview.py:520
-msgid "Ctrl"
-msgstr "Ctrl"
-
-#: LifeLineChartView/lifelinechartview.py:510
-#: LifeLineChartView/lifelinechartview.py:520
-msgid "Mouse wheel"
-msgstr "Kotačić miša"
-
-#: LifeLineChartView/lifelinechartview.py:527
-msgid "Zoom to original"
-msgstr "Zumiraj na originalnu veličinu"
-
-#: LifeLineChartView/lifelinechartview.py:534
-msgid "Zoom to best fit"
-msgstr "Zumiraj za najbolji prikaz"
-
-#: LifeLineChartView/lifelinechartview.py:541
-msgid "Rebuild data cache"
-msgstr "Ponovo izgradi predmemoriju"
-
-#: LifeLineChartView/lifelinechartview.py:548
-msgid "Revert the placement and person selection"
-msgstr "Preokreni odabir smještaja i osobe"
-
-#: LifeLineChartView/lifelinechartview.py:564
-msgid "Open Life Line Chart help"
-msgstr "Otvori pomoć za linijski dijagram života"
-
-#: LifeLineChartView/lifelinechartview.py:831
-msgid "Export View as SVG"
-msgstr "Izvezi prikaz kao SVG"
-
-#: LifeLineChartView/lifelinechartview.py:946
-msgid "Reset all settings"
-msgstr "Resetiraj sve postavke"

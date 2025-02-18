@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -29,18 +29,11 @@ msgstr ""
 msgid "Find"
 msgstr "Vind"
 
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 msgid "Event Description Editor"
 msgstr "Editor voor Gebeurtenisbeschrijvingen"
-
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
-msgid ""
-"A tool to find and replace a string in event description of multiple events."
-msgstr ""
-"Een hulpmiddel om een string te vinden en te vervangen in de "
-"gebeurtenisbeschrijving van meerdere gebeurtenissen."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
@@ -78,3 +71,10 @@ msgstr "Regex toestaan"
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
 msgstr "Sta reguliere expressies toe."
+
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr ""
+"Een hulpmiddel om een string te vinden en te vervangen in de "
+"gebeurtenisbeschrijving van meerdere gebeurtenissen."

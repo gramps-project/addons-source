@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -34,18 +34,6 @@ msgstr "Ane generationer"
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Anegenerationer"
-
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
-msgid "Timeline Pedigree"
-msgstr "Tidslinje anetræ"
-
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
-msgid ""
-"The view shows a timeline pedigree with ancestors and descendants of the "
-"selected person"
-msgstr ""
-"Visningen viser en tidslinje med aner og efterkommere af den valgte person"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
@@ -94,3 +82,15 @@ msgstr[1] "%d generationer"
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
 msgid "About Timeline Pedigree View"
 msgstr "Om tidslinjeanetræ"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
+msgid "Timeline Pedigree"
+msgstr "Tidslinje anetræ"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"Visningen viser en tidslinje med aner og efterkommere af den valgte person"

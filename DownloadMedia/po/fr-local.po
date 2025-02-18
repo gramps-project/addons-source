@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -37,14 +37,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: DownloadMedia/DownloadMedia.gpr.py:36
-msgid "Download media files from the internet"
-msgstr "Télécharge des objets media depuis internet"
-
-#: DownloadMedia/DownloadMedia.gpr.py:37
-msgid "This tool downloads media files from the internet"
-msgstr "Cet outil télécharge des fichiers depuis internet"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
@@ -77,3 +69,11 @@ msgstr "Téléchargement des fichiers"
 #| msgid "Media downloaded"
 msgid "Media download errors detected"
 msgstr "Objet téléchargé"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "Download media files from the internet"
+msgstr "Télécharge des objets media depuis internet"
+
+#: DownloadMedia/DownloadMedia.gpr.py:37
+msgid "This tool downloads media files from the internet"
+msgstr "Cet outil télécharge des fichiers depuis internet"

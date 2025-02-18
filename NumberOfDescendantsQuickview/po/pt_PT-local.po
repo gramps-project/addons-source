@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -28,10 +29,6 @@ msgstr "Número de descendentes"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
 msgid "Generation"
 msgstr "Geração"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
-msgid "Shows the number of descendants of the current person"
-msgstr "Mostra o número de descendentes do indivíduo actual"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
@@ -61,3 +58,7 @@ msgstr "Conhecidos é o número de descendentes que %s conheceu em vida"
 msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr ""
 "Sobrevividos é o número de descendentes que faleceram enquanto %s esteve vivo"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
+msgid "Shows the number of descendants of the current person"
+msgstr "Mostra o número de descendentes do indivíduo actual"

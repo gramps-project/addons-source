@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2008-11-13 21:00+0100\n"
 "Last-Translator: Vlora Jakupi <vlorajak@hotmail.com>\n"
 "Language-Team: \n"
@@ -31,15 +31,6 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Bookmarks: 3498,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SearchPath-0: /home/jole/SVN/gramps/gramps30\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-msgid "Calculate Estimated Dates"
-msgstr "Logarit datat e vlersuara"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
-msgid "Calculates estimated dates for birth and death."
-msgstr "Logaitje të datave të vlersuara për lindje dhe vdekje."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
@@ -154,6 +145,11 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculate Estimated Dates"
+msgstr "Logarit datat e vlersuara"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 #, fuzzy
@@ -314,3 +310,7 @@ msgstr "Shto nje ngjarje të re"
 #, fuzzy
 msgid "Estimated date"
 msgstr "E vlerësuar"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Logaitje të datave të vlersuara për lindje dhe vdekje."

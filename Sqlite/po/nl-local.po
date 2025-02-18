@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -31,13 +31,6 @@ msgid_plural "Export Complete: %d seconds"
 msgstr[0] "Export voltooid: %d seconde"
 msgstr[1] "Export voltooid: %d seconden"
 
-#: Sqlite/ImportSql.py:893
-#, python-format
-msgid "Import Complete: %d second"
-msgid_plural "Import Complete: %d seconds"
-msgstr[0] "Import voltooid: %d seconde"
-msgstr[1] "Import voltooid: %d seconden"
-
 #: Sqlite/Sqlite.gpr.py:4
 msgid "SQLite Import"
 msgstr "SQLite import"
@@ -49,3 +42,10 @@ msgstr "SQLite is een algemeen lokaal databaseformaat"
 #: Sqlite/Sqlite.gpr.py:19
 msgid "SQLite Export"
 msgstr "SQLite export"
+
+#: Sqlite/ImportSql.py:893
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Import voltooid: %d seconde"
+msgstr[1] "Import voltooid: %d seconden"

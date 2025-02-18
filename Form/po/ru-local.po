@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -99,10 +99,6 @@ msgstr "Ссылка:"
 msgid "Headings"
 msgstr "Заголовки"
 
-#: Form/form.py:65
-msgid "Form"
-msgstr "Форма"
-
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
 msgstr "Формы"
@@ -114,6 +110,10 @@ msgstr "Интерфейс для форм"
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
 msgstr "Формы"
+
+#: Form/form.py:65
+msgid "Form"
+msgstr "Форма"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"

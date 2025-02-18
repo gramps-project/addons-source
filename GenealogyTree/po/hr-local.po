@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,62 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
-
-#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
-#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
-msgid "Include images"
-msgstr "Uključi slike"
-
-#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
-#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
-msgid "Include images of people in the nodes."
-msgstr "Uključi slike osoba u čvorišta."
-
-#: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
-msgid "First spouse left"
-msgstr "desno–lijevo"
-
-#: GenealogyTree/gt_descendant.py:192
-msgid ""
-"Always put first of multiple spouses on the left. This can help reduce line-"
-"crossings with multiple marriages."
-msgstr ""
-
-#: GenealogyTree/gt_grandparent.py:119
-#, python-format
-msgid "Person %s does not have both a paternal and a maternal grandparent"
-msgstr "Osoba „%s” nema djedove i bake obiju loza, očeve i majčine"
-
-#: GenealogyTree/gt_grandparent.py:227
-msgid "Grandparent family spacing"
-msgstr "Razmak obitelji djedova i baka"
-
-#: GenealogyTree/gt_grandparent.py:228
-msgid "Extra spacing of grandparent families (mm)"
-msgstr "Dodatni razmak za obitelji djedova i baka (mm)"
-
-#: GenealogyTree/gt_sandclock.py:235
-msgid "The center family for the report"
-msgstr "Središnja obitelj u izvještaju"
-
-#: GenealogyTree/gt_sandclock.py:238
-msgid "Generations up"
-msgstr "Generacija prema gore"
-
-#: GenealogyTree/gt_sandclock.py:242
-msgid "Generations down"
-msgstr "Generacija prema dolje"
-
-#: GenealogyTree/gt_sandclock.py:246
-msgid "Include siblings"
-msgstr "Uključi braću/sestre"
-
-#: GenealogyTree/gt_sandclock.py:247
-msgid "Include siblings of ancestors."
-msgstr "Uključi braću/sestre predaka."
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -108,3 +54,58 @@ msgstr "Stablo u obliku pješčanog sata za obitelj"
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr ""
 "Stablo u obliku pješčanog sata za obitelj, koristeći LaTeX genealogytree"
+
+#: GenealogyTree/gt_sandclock.py:235
+msgid "The center family for the report"
+msgstr "Središnja obitelj u izvještaju"
+
+#: GenealogyTree/gt_sandclock.py:238
+msgid "Generations up"
+msgstr "Generacija prema gore"
+
+#: GenealogyTree/gt_sandclock.py:242
+msgid "Generations down"
+msgstr "Generacija prema dolje"
+
+#: GenealogyTree/gt_sandclock.py:246
+msgid "Include siblings"
+msgstr "Uključi braću/sestre"
+
+#: GenealogyTree/gt_sandclock.py:247
+msgid "Include siblings of ancestors."
+msgstr "Uključi braću/sestre predaka."
+
+#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
+#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
+msgid "Include images"
+msgstr "Uključi slike"
+
+#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
+#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
+msgid "Include images of people in the nodes."
+msgstr "Uključi slike osoba u čvorišta."
+
+#: GenealogyTree/gt_grandparent.py:119
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "Osoba „%s” nema djedove i bake obiju loza, očeve i majčine"
+
+#: GenealogyTree/gt_grandparent.py:227
+msgid "Grandparent family spacing"
+msgstr "Razmak obitelji djedova i baka"
+
+#: GenealogyTree/gt_grandparent.py:228
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Dodatni razmak za obitelji djedova i baka (mm)"
+
+#: GenealogyTree/gt_descendant.py:191
+#, fuzzy
+#| msgid "right to left"
+msgid "First spouse left"
+msgstr "desno–lijevo"
+
+#: GenealogyTree/gt_descendant.py:192
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""

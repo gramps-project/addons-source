@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,30 +25,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
 #: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 msgid "in"
 msgstr "i"
-
-#: DenominoViso/DenominoViso.gpr.py:9
-msgid "DenominoViso"
-msgstr "DenominoViso"
-
-#: DenominoViso/DenominoViso.gpr.py:19
-#, fuzzy
-#| msgid ""
-#| "Generates a web page with a graphical representation of ancestors (SVG) "
-#| "represented as a Fan Chart from the D3.js JavaScript library."
-msgid ""
-"Generates a web (HTML) page with a graphical representation of ancestors/"
-"descendants (SVG) where details about individuals become visible upon mouse-"
-"events."
-msgstr ""
-"Skapar en webbsida med en grafiskt antavla (SVG) som ett cirkeldiagram med "
-"hjälp av D3,js javaskript-bibliotek."
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -580,3 +563,20 @@ msgstr "Strecklängd"
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
 msgstr "Längd mellan streck"
+
+#: DenominoViso/DenominoViso.gpr.py:9
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+#: DenominoViso/DenominoViso.gpr.py:19
+#, fuzzy
+#| msgid ""
+#| "Generates a web page with a graphical representation of ancestors (SVG) "
+#| "represented as a Fan Chart from the D3.js JavaScript library."
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Skapar en webbsida med en grafiskt antavla (SVG) som ett cirkeldiagram med "
+"hjälp av D3,js javaskript-bibliotek."

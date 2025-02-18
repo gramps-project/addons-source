@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -42,41 +42,6 @@ msgstr "%(event_type)s: %(date)s в %(place)s"
 #| msgid "%(event_type)s: %(date)s in %(place)s"
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(event_type)s: %(date)s в %(place)s"
-
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
-msgid "Combined"
-msgstr ""
-
-#: CombinedView/combinedview.gpr.py:25
-msgid "A view showing relationships and events for a person"
-msgstr "Вид отображающий отношения и события для лица"
-
-#: CombinedView/combinedview.py:528
-#, fuzzy
-#| msgid "Add death event"
-msgid "Edit the active event"
-msgstr "Добавить событие о смерти"
-
-#: CombinedView/combinedview.py:630
-#, fuzzy
-#| msgid "Show places"
-msgid "Show Tags"
-msgstr "Показывать места"
-
-#: CombinedView/combinedview.py:656
-msgid "Vertical Details"
-msgstr ""
-
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
-msgid "Order"
-msgstr "Порядок"
-
-#: CombinedView/navigationview.py:346
-msgid ""
-"You need to set a 'default person' to go to. Select the People View, select "
-"the person you want as 'Home Person', then confirm your choice via the menu "
-"Edit -> Set Home Person."
-msgstr ""
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -103,4 +68,39 @@ msgstr ""
 
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
+msgstr ""
+
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
+msgid "Combined"
+msgstr ""
+
+#: CombinedView/combinedview.gpr.py:25
+msgid "A view showing relationships and events for a person"
+msgstr "Вид отображающий отношения и события для лица"
+
+#: CombinedView/navigationview.py:346
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr "Порядок"
+
+#: CombinedView/combinedview.py:528
+#, fuzzy
+#| msgid "Add death event"
+msgid "Edit the active event"
+msgstr "Добавить событие о смерти"
+
+#: CombinedView/combinedview.py:630
+#, fuzzy
+#| msgid "Show places"
+msgid "Show Tags"
+msgstr "Показывать места"
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
 msgstr ""

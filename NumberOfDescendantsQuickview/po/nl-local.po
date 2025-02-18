@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -34,10 +34,6 @@ msgstr "Aantal afstammelingen"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
 msgid "Generation"
 msgstr "Generatie"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
-msgid "Shows the number of descendants of the current person"
-msgstr "Toont het aantal nakomelingen van de huidige persoon"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
@@ -68,3 +64,7 @@ msgstr ""
 msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr ""
 "Overleefd = aantal afstammelingen die overleden zijn terwijl %s nog leefde"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
+msgid "Shows the number of descendants of the current person"
+msgstr "Toont het aantal nakomelingen van de huidige persoon"

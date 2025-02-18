@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,35 +38,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42 GetGOV/getgov.gpr.py:32
-#: GetGOV/getgov.gpr.py:44
-msgid "GetGOV"
+#: GetGOV/getgov.py:315
+msgid "Place ID to import from GOV (Historical Gazetteer):"
 msgstr ""
 
-#: GetGOV/getgov.gpr.py:31 GetGOV/getgov.gpr.py:33
-msgid "Gramplet to get places from the GOV database"
-msgstr "Gramplet pour trouver des lieux depuis la base de données GOV"
-
-#: GetGOV/getgov.py:311 GetGOV/getgov.py:323
+#: GetGOV/getgov.py:323
 msgid "Get Place"
 msgstr "Trouver le lieu"
 
-#: GetGOV/getgov.py:343 GetGOV/getgov.py:356
+#: GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "Ajouter l'id-GOV du lieu %s"
 
-#: GetGOV/getgov.py:521 GetGOV/getgov.py:555
+#: GetGOV/getgov.py:388
+#, python-format
+msgid "GetGOV error: %s"
+msgstr ""
+
+#: GetGOV/getgov.py:421
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr ""
+
+#: GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
 msgstr "de %s à %s"
 
-#: GetGOV/getgov.py:523 GetGOV/getgov.py:557
+#: GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
 msgstr "après %s"
 
-#: GetGOV/getgov.py:525 GetGOV/getgov.py:559
+#: GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
 msgstr "avant %s"
+
+#: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
+msgid "GetGOV"
+msgstr ""
+
+#: GetGOV/getgov.gpr.py:33
+msgid "Gramplet to get places from the GOV database"
+msgstr "Gramplet pour trouver des lieux depuis la base de données GOV"

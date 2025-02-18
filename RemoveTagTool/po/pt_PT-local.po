@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -31,15 +32,6 @@ msgstr "Indivíduos"
 #: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
 msgid "General options"
 msgstr "Opções gerais"
-
-#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
-#: RemoveTagTool/RemoveTagTool.py:246
-msgid "Add/Remove Tag Tool"
-msgstr "Ferramenta Adicionar/Remover etiqueta"
-
-#: RemoveTagTool/RemoveTagTool.gpr.py:26
-msgid "Add or remove a tag from groups of people, events, etc."
-msgstr "Adicione ou remova uma etiqueta de grupos de indivíduos, eventos, etc."
 
 #: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
@@ -86,6 +78,11 @@ msgstr "Opções de filtro"
 msgid "All %s"
 msgstr "Todos %s"
 
+#: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
+#: RemoveTagTool/RemoveTagTool.gpr.py:25
+msgid "Add/Remove Tag Tool"
+msgstr "Ferramenta Adicionar/Remover etiqueta"
+
 #: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
@@ -118,3 +115,7 @@ msgstr "removida"
 #: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "A etiqueta \"{}\" era {} para {} {} objectos.\n"
+
+#: RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "Adicione ou remova uma etiqueta de grupos de indivíduos, eventos, etc."

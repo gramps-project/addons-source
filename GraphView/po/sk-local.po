@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -77,32 +77,10 @@ msgstr "Pôvodné priblíženie"
 msgid "Zoom to best fit"
 msgstr "Prispôsobiť priblíženie obsahu"
 
-#: GraphView/avatars.py:60
-msgid "Dark (default)"
-msgstr ""
-
-#: GraphView/avatars.py:61
-#, fuzzy
-#| msgid "Height:"
-msgid "Light"
-msgstr "Výška:"
-
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr ""
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Grafický pohľad"
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr ""
 
 #: GraphView/graphview.py:754
 #, fuzzy
@@ -520,6 +498,28 @@ msgstr ""
 #: GraphView/graphview.py:4710
 #, python-format
 msgid "Delete Family [%s]"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr ""
+
+#: GraphView/avatars.py:60
+msgid "Dark (default)"
+msgstr ""
+
+#: GraphView/avatars.py:61
+#, fuzzy
+#| msgid "Height:"
+msgid "Light"
+msgstr "Výška:"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr ""
+
+#: GraphView/avatars.py:63
+msgid "Modern"
 msgstr ""
 
 #: GraphView/search_widget.py:82

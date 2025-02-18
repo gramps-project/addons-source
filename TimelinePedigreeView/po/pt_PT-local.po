@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -33,19 +34,6 @@ msgstr "Gerações ascendentes"
 msgid "Descendant Generations"
 msgstr "Gerações descendentes"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
-msgid "Timeline Pedigree"
-msgstr "Cronologia de costados"
-
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
-msgid ""
-"The view shows a timeline pedigree with ancestors and descendants of the "
-"selected person"
-msgstr ""
-"Mostra uma cronologia de costados com ascendentes e descendentes do "
-"indivíduo seleccionado"
-
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
 msgstr "n."
@@ -64,7 +52,7 @@ msgstr "bap."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
-msgstr "fun."
+msgstr "in."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
 msgid "short for cremated|crem."
@@ -92,4 +80,17 @@ msgstr[1] "%d gerações"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
 msgid "About Timeline Pedigree View"
-msgstr "Acerca dos costados da cronologia"
+msgstr "Acerca da cronologia de costados"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
+msgid "Timeline Pedigree"
+msgstr "Cronologia de costados"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"Mostra uma cronologia de costados com ascendentes e descendentes do "
+"indivíduo seleccionado"

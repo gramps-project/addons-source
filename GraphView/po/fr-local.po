@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -89,30 +89,10 @@ msgstr "Zoom original"
 msgid "Zoom to best fit"
 msgstr "Zoom à l’affichage adapté"
 
-#: GraphView/avatars.py:60
-msgid "Dark (default)"
-msgstr "Sombre (par défaut)"
-
-#: GraphView/avatars.py:61
-msgid "Light"
-msgstr "Clair"
-
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr "Esquisse"
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Vue Graphique"
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr "Graphique dynamique et interactif des relations"
 
 #: GraphView/graphview.py:754
 #, fuzzy
@@ -517,6 +497,26 @@ msgstr "Supprimer la famille va l’enlever de la base de données."
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Supprimer la famille [%s]"
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr "Graphique dynamique et interactif des relations"
+
+#: GraphView/avatars.py:60
+msgid "Dark (default)"
+msgstr "Sombre (par défaut)"
+
+#: GraphView/avatars.py:61
+msgid "Light"
+msgstr "Clair"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr "Esquisse"
+
+#: GraphView/avatars.py:63
+msgid "Modern"
+msgstr ""
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"

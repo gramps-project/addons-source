@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2010-03-07 17:48+0100\n"
 "Last-Translator: Joan Creus <joan.creus at gmail dot com>\n"
 "Language-Team: Català <en@li.org>\n"
@@ -24,19 +24,6 @@ msgstr ""
 #: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "L'estil utilitzat per al títol de la pàgina."
-
-#: ToDoReport/TodoReport.gpr.py:25
-msgid "Todo Report"
-msgstr "Fer informe"
-
-#: ToDoReport/TodoReport.gpr.py:27
-msgid ""
-"Produces a list of all the notes with a given tag along with the records "
-"that it references, the Person, Family, Event, etc."
-msgstr ""
-"Elabora una llista de totes les notes amb una etiqueta determinada juntament "
-"amb els registres a què fa referència, la persona, la família, "
-"l’esdeveniment, etc."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -156,3 +143,16 @@ msgstr ""
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "L’estil bàsic utilitzat per a la visualització de la taula."
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
+msgstr "Fer informe"
+
+#: ToDoReport/TodoReport.gpr.py:27
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Elabora una llista de totes les notes amb una etiqueta determinada juntament "
+"amb els registres a què fa referència, la persona, la família, "
+"l’esdeveniment, etc."

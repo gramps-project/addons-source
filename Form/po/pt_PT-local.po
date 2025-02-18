@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -86,10 +87,6 @@ msgstr "Referência:"
 msgid "Headings"
 msgstr "Títulos"
 
-#: Form/form.py:65
-msgid "Form"
-msgstr "Formulário"
-
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
 msgstr "Gramplet Formulário"
@@ -101,6 +98,10 @@ msgstr "Ambiente do Gramplet para formulários"
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
 msgstr "Formulários"
+
+#: Form/form.py:65
+msgid "Form"
+msgstr "Formulário"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"
@@ -4436,10 +4437,8 @@ msgid "How many hours did he work last week?"
 msgstr ""
 
 #: Form/form_us.xml.h:923
-#, fuzzy
-#| msgid "Type of link"
 msgid "Type of work"
-msgstr "Tipo de ligação"
+msgstr "Tipo de trabalho"
 
 #: Form/form_us.xml.h:924
 msgid "What kind of work was he doing?"
@@ -7808,10 +7807,8 @@ msgid "Maiden surname of woman who was married"
 msgstr ""
 
 #: Form/form_gb.xml.h:53
-#, fuzzy
-#| msgid "Include Addresses"
 msgid "Usual Address"
-msgstr "Incluir endereços"
+msgstr "Endereço habitual"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
@@ -7914,10 +7911,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:114 Form/form_gb.xml.h:135 Form/form_gb.xml.h:157
 #: Form/form_gb.xml.h:182 Form/form_gb.xml.h:286 Form/form_gb.xml.h:313
-#, fuzzy
-#| msgid "Note on Family"
 msgid "RELATION to Head of Family"
-msgstr "Nota da família"
+msgstr "RELAÇÃO com o chefe de família"
 
 #: Form/form_gb.xml.h:116
 msgid "CONDITION"
@@ -8084,10 +8079,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:199 Form/form_gb.xml.h:233 Form/form_gb.xml.h:332
 #: Form/form_gb.xml.h:368
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Rooms"
-msgstr "Número de páginas"
+msgstr "Número de quartos"
 
 #: Form/form_gb.xml.h:201 Form/form_gb.xml.h:334
 msgid "NAME AND SURNAME"
@@ -8136,10 +8129,8 @@ msgid "Children who have Died."
 msgstr ""
 
 #: Form/form_gb.xml.h:217 Form/form_gb.xml.h:350
-#, fuzzy
-#| msgid "Include Occupation"
 msgid "Personal Occupation"
-msgstr "Incluir profissão"
+msgstr "Profissão pessoal"
 
 #: Form/form_gb.xml.h:219 Form/form_gb.xml.h:352
 msgid "Industry or Service with which worker is connected."
@@ -8205,10 +8196,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_gb.xml.h:254 Form/form_gb.xml.h:389
-#, fuzzy
-#| msgid "Number of editions back"
 msgid "Number of living children"
-msgstr "Número de edições atrás"
+msgstr "Número de filhos vivos"
 
 #: Form/form_gb.xml.h:255 Form/form_gb.xml.h:390
 msgid "Total number under sixteen years of age. If none write \"None.\""

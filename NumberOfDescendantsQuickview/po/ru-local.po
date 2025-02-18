@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -41,10 +41,6 @@ msgstr "Количество потомков"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
 msgid "Generation"
 msgstr "Поколение"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
-msgid "Shows the number of descendants of the current person"
-msgstr "Показывает количество потомков для выбранного лица"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
@@ -73,3 +69,7 @@ msgstr "Увиденные - количество потомков которы�
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr "Пережитые - количество потомков которые умерли за время жизни %s"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
+msgid "Shows the number of descendants of the current person"
+msgstr "Показывает количество потомков для выбранного лица"

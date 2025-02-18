@@ -4,22 +4,23 @@
 # Illia Maier <illia@maier.page>, 2024.
 # Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 # Oleh Petriv, 2013.
-#
+# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2024-10-10 22:54+0300\n"
-"Last-Translator: Illia Maier <illia@maier.page>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 08:49+0000\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
-"gramps/uk/>\n"
+"addons/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: CombinedView/basepage.py:493
 #, python-format
@@ -30,40 +31,6 @@ msgstr "%(abbrev)s %(date)s у %(place)s"
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
-
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
-msgid "Combined"
-msgstr "Комбінований"
-
-#: CombinedView/combinedview.gpr.py:25
-msgid "A view showing relationships and events for a person"
-msgstr "Перегляд, що показує стосунки та події для особи"
-
-#: CombinedView/combinedview.py:528
-msgid "Edit the active event"
-msgstr "Редагувати активну подію"
-
-#: CombinedView/combinedview.py:630
-msgid "Show Tags"
-msgstr "Показати теги"
-
-#: CombinedView/combinedview.py:656
-msgid "Vertical Details"
-msgstr "Вертикальні деталі"
-
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
-msgid "Order"
-msgstr "Порядок"
-
-#: CombinedView/navigationview.py:346
-msgid ""
-"You need to set a 'default person' to go to. Select the People View, select "
-"the person you want as 'Home Person', then confirm your choice via the menu "
-"Edit -> Set Home Person."
-msgstr ""
-"Вам потрібно встановити \"особу за замовчуванням\". Виберіть Перегляд осіб, "
-"виберіть особу, яку ви хочете як \"Головну особу\", потім підтвердіть свій "
-"вибір через меню Редагування -> Встановити Головну особу."
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -91,3 +58,37 @@ msgstr "Натисніть, щоб відвідати це посилання"
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "
+
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
+msgid "Combined"
+msgstr "Комбінований"
+
+#: CombinedView/combinedview.gpr.py:25
+msgid "A view showing relationships and events for a person"
+msgstr "Перегляд, що показує стосунки та події для особи"
+
+#: CombinedView/navigationview.py:346
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Вам потрібно встановити \"особу за замовчуванням\". Виберіть Перегляд осіб, "
+"виберіть особу, яку ви хочете як \"Головну особу\", потім підтвердіть свій "
+"вибір через меню Редагування -> Встановити Головну особу."
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr "Порядок"
+
+#: CombinedView/combinedview.py:528
+msgid "Edit the active event"
+msgstr "Редагувати активну подію"
+
+#: CombinedView/combinedview.py:630
+msgid "Show Tags"
+msgstr "Показати теги"
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr "Вертикальні деталі"

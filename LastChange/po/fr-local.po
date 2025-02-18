@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -42,26 +42,10 @@ msgstr ""
 msgid "The style used for the title of the page."
 msgstr "Le style utilisé pour les titres de page."
 
-#: LastChange/LastChange.gpr.py:26
-msgid "List the last ten person records that have been changed"
-msgstr "Liste les dix derniers individus modifiés"
-
-#: LastChange/LastChange.gpr.py:35
-msgid "Latest Changes"
-msgstr "Dernières modifications"
-
-#: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
-#: LastChange/LastChangeReport.py:113
+#: LastChange/LastChangeReport.py:74 LastChange/LastChangeReport.py:113
+#: LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
 msgstr "Rapport Dernières modifications"
-
-#: LastChange/LastChange.gpr.py:43
-msgid "Report of the last records that have been changed"
-msgstr "Rapport pour les derniers enregistrements modifiés"
-
-#: LastChange/LastChangeGramplet.py:82
-msgid "changed on"
-msgstr "changé le"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
@@ -123,3 +107,19 @@ msgstr "Sélectionner depuis"
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
 msgstr "Le style de base pour afficher du texte normal."
+
+#: LastChange/LastChangeGramplet.py:82
+msgid "changed on"
+msgstr "changé le"
+
+#: LastChange/LastChange.gpr.py:26
+msgid "List the last ten person records that have been changed"
+msgstr "Liste les dix derniers individus modifiés"
+
+#: LastChange/LastChange.gpr.py:35
+msgid "Latest Changes"
+msgstr "Dernières modifications"
+
+#: LastChange/LastChange.gpr.py:43
+msgid "Report of the last records that have been changed"
+msgstr "Rapport pour les derniers enregistrements modifiés"

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -24,54 +24,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
-#: FilterRules2/matrilinealprogenitrix.gpr.py:25
-#: FilterRules2/matrilinealprogenitrix.py:45
-msgid "Matrilineal progenitrix of <person>"
-msgstr "Matrilineaire stammoeder van <person>"
+#: FilterRules2/yinheritanceoffiltermatch.py:46
+#: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
+msgid "Y-chromosomal inheritance of <filter>"
+msgstr "Y-chromosomale overerving van <filter>"
 
-#: FilterRules2/matrilinealprogenitrix.gpr.py:26
-#: FilterRules2/matrilinealprogenitrix.py:47
-msgid "Matches the earliest recorded matrilineal ancestor mother."
-msgstr ""
-"Komt overeen met de vroegst geregistreerde moeder van de matrilineaire "
-"voorouder."
-
-#: FilterRules2/mtinheritance.gpr.py:25 FilterRules2/mtinheritance.py:45
-msgid "Mitochondrial inheritance of <person>"
-msgstr "Mitochondriale overerving van <persoon>"
-
-#: FilterRules2/mtinheritance.gpr.py:27 FilterRules2/mtinheritance.py:46
+#: FilterRules2/yinheritanceoffiltermatch.py:47
+#: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
 msgid ""
-"Matches recorded descendants of person following mitochondrial inheritance "
-"patterns."
-msgstr ""
-"Komt overeen met geregistreerde nakomelingen van een persoon volgens "
-"mitochondriale overervingspatronen."
-
-#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
-#: FilterRules2/mtinheritanceoffiltermatch.py:46
-msgid "Mitochondrial inheritance of <filter>"
-msgstr "Mitochondriale overerving van <filter>"
-
-#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
-#: FilterRules2/mtinheritanceoffiltermatch.py:47
-msgid ""
-"Matches recorded descendants of a filter result following mitochondrial "
+"Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
 msgstr ""
 "Komt overeen met geregistreerde afstammelingen van een filterresultaat "
-"volgens mitochondriale overervingspatronen."
-
-#: FilterRules2/patrilinealprogenitor.gpr.py:25
-#: FilterRules2/patrilinealprogenitor.py:45
-msgid "Patrilineal progenitor of <person>"
-msgstr "Patrilineaire stamvader van <persoon>"
-
-#: FilterRules2/patrilinealprogenitor.gpr.py:26
-#: FilterRules2/patrilinealprogenitor.py:47
-msgid "Matches the earliest recorded patrilineal ancestor father."
-msgstr ""
-"Komt overeen met de vroegst geregistreerde patrilineaire vooroudervader."
+"volgens Y-chromosomale overervingspatronen."
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
@@ -97,6 +62,43 @@ msgstr ""
 "Komt overeen met nakomelingen van <persoon> volgens een X-chromosomaal "
 "overervingspatroon."
 
+#: FilterRules2/patrilinealprogenitor.py:45
+#: FilterRules2/patrilinealprogenitor.gpr.py:25
+msgid "Patrilineal progenitor of <person>"
+msgstr "Patrilineaire stamvader van <persoon>"
+
+#: FilterRules2/patrilinealprogenitor.py:47
+#: FilterRules2/patrilinealprogenitor.gpr.py:26
+msgid "Matches the earliest recorded patrilineal ancestor father."
+msgstr ""
+"Komt overeen met de vroegst geregistreerde patrilineaire vooroudervader."
+
+#: FilterRules2/mtinheritanceoffiltermatch.py:46
+#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
+msgid "Mitochondrial inheritance of <filter>"
+msgstr "Mitochondriale overerving van <filter>"
+
+#: FilterRules2/mtinheritanceoffiltermatch.py:47
+#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
+msgid ""
+"Matches recorded descendants of a filter result following mitochondrial "
+"inheritance patterns."
+msgstr ""
+"Komt overeen met geregistreerde afstammelingen van een filterresultaat "
+"volgens mitochondriale overervingspatronen."
+
+#: FilterRules2/matrilinealprogenitrix.gpr.py:25
+#: FilterRules2/matrilinealprogenitrix.py:45
+msgid "Matrilineal progenitrix of <person>"
+msgstr "Matrilineaire stammoeder van <person>"
+
+#: FilterRules2/matrilinealprogenitrix.gpr.py:26
+#: FilterRules2/matrilinealprogenitrix.py:47
+msgid "Matches the earliest recorded matrilineal ancestor mother."
+msgstr ""
+"Komt overeen met de vroegst geregistreerde moeder van de matrilineaire "
+"voorouder."
+
 #: FilterRules2/xchromdescendants.py:50
 msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
@@ -104,6 +106,18 @@ msgid ""
 msgstr ""
 "Komt overeen met alle nakomelingen van <persoon> volgens een X-chromosomaal "
 "overervingspatroon."
+
+#: FilterRules2/mtinheritance.py:45 FilterRules2/mtinheritance.gpr.py:25
+msgid "Mitochondrial inheritance of <person>"
+msgstr "Mitochondriale overerving van <persoon>"
+
+#: FilterRules2/mtinheritance.py:46 FilterRules2/mtinheritance.gpr.py:27
+msgid ""
+"Matches recorded descendants of person following mitochondrial inheritance "
+"patterns."
+msgstr ""
+"Komt overeen met geregistreerde nakomelingen van een persoon volgens "
+"mitochondriale overervingspatronen."
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
 msgid "Y-chromosomal inheritance of <person>"
@@ -116,17 +130,3 @@ msgid ""
 msgstr ""
 "Komt overeen met geregistreerde nakomelingen van een persoon volgens Y-"
 "chromosomale overervingspatronen."
-
-#: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
-#: FilterRules2/yinheritanceoffiltermatch.py:46
-msgid "Y-chromosomal inheritance of <filter>"
-msgstr "Y-chromosomale overerving van <filter>"
-
-#: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
-#: FilterRules2/yinheritanceoffiltermatch.py:47
-msgid ""
-"Matches recorded descendants of a filter result following Y-chromosomal "
-"inheritance patterns."
-msgstr ""
-"Komt overeen met geregistreerde afstammelingen van een filterresultaat "
-"volgens Y-chromosomale overervingspatronen."

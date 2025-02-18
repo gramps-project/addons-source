@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -34,16 +35,6 @@ msgstr "A processar...\n"
 msgid "Done!\n"
 msgstr "Feito!\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
-#: SetAttributeTool/SetAttributeTool.py:122
-#: SetAttributeTool/SetAttributeTool.py:150
-msgid "Set Attribute"
-msgstr "Definir atributo"
-
-#: SetAttributeTool/SetAttributeTool.gpr.py:27
-msgid "Set an attribute to a given value."
-msgstr "Definir um atributo num dado valor."
-
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Tipo de atributo a adicionar/editar"
@@ -55,6 +46,12 @@ msgstr "Valor do atributo a adicionar/editar"
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
 msgstr "Remover tipo e valor do atributo"
+
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set Attribute"
+msgstr "Definir atributo"
 
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
@@ -94,3 +91,7 @@ msgid ""
 msgstr ""
 "\n"
 "A remover %d atributos \"%s\" para \"%s\"\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:27
+msgid "Set an attribute to a given value."
+msgstr "Definir um atributo num dado valor."

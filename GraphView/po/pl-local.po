@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2009-10-05 21:15+0100\n"
 "Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
 "Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
@@ -77,30 +77,10 @@ msgstr "Powiększ do oryginału"
 msgid "Zoom to best fit"
 msgstr "Powiększ do najlepszego dopasowania"
 
-#: GraphView/avatars.py:60
-msgid "Dark (default)"
-msgstr "Ciemny (domyślny)"
-
-#: GraphView/avatars.py:61
-msgid "Light"
-msgstr "Jasny"
-
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr "Rysunek"
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Graph View"
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr "Dynamiczny i interaktywny graf relacji"
 
 #: GraphView/graphview.py:754
 #, fuzzy
@@ -495,6 +475,26 @@ msgstr "Usunięcie rodziny spowoduje usunięcie jej z bazy."
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Usuń Rodzinę [%s]"
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr "Dynamiczny i interaktywny graf relacji"
+
+#: GraphView/avatars.py:60
+msgid "Dark (default)"
+msgstr "Ciemny (domyślny)"
+
+#: GraphView/avatars.py:61
+msgid "Light"
+msgstr "Jasny"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr "Rysunek"
+
+#: GraphView/avatars.py:63
+msgid "Modern"
+msgstr ""
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"

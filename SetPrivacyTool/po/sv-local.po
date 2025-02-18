@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: SetPrivacyTool/SetPrivacyTool.py:312
@@ -36,16 +36,12 @@ msgstr "Välj ett filter, som begränsar personurvalet"
 msgid "Persons"
 msgstr "Personer"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
-#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
-#: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
-#: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
+#: SetPrivacyTool/SetPrivacyTool.py:51 SetPrivacyTool/SetPrivacyTool.py:93
+#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:146
+#: SetPrivacyTool/SetPrivacyTool.py:186 SetPrivacyTool/SetPrivacyTool.py:226
+#: SetPrivacyTool/SetPrivacyTool.py:255 SetPrivacyTool/SetPrivacyTool.gpr.py:24
 msgid "Set Privacy Tool"
 msgstr "Ställ in Sekretessverktyg"
-
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
-msgid "Set all objects of the last <number> of years private."
-msgstr "Ange alla objekt för de senaste <number> åren som privata."
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
@@ -115,3 +111,7 @@ msgstr "Kan inte bestämma importtypen"
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
 msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
+msgid "Set all objects of the last <number> of years private."
+msgstr "Ange alla objekt för de senaste <number> åren som privata."

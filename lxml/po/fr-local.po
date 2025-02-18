@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -37,6 +37,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
+msgid "lxml"
+msgstr "lxml"
+
+#: lxml/lxmlGramplet.gpr.py:11
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "Gramplet pour tester lxml et XSLT"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
@@ -219,14 +227,6 @@ msgid ""
 msgstr ""
 "* Arbre familial chargé :\n"
 " \"%s\"\n"
-
-#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
-msgid "lxml"
-msgstr "lxml"
-
-#: lxml/lxmlGramplet.gpr.py:11
-msgid "Gramplet for testing lxml and XSLT"
-msgstr "Gramplet pour tester lxml et XSLT"
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"

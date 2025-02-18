@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -37,6 +37,12 @@ msgstr "Lagre"
 msgid "Abandon"
 msgstr "Utelate"
 
+#: NoteGramplet/NoteGramplet.py:255
+#, fuzzy
+#| msgid "Save"
+msgid "Save Note"
+msgstr "Lagre"
+
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "Notat Smågramps"
@@ -44,9 +50,3 @@ msgstr "Notat Smågramps"
 #: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
 msgstr ""
-
-#: NoteGramplet/NoteGramplet.py:255
-#, fuzzy
-#| msgid "Save"
-msgid "Save Note"
-msgstr "Lagre"

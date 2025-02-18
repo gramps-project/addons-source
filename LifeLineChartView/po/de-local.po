@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: DynamicWeb/dynamicweb.py:3170 LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
@@ -45,6 +45,120 @@ msgstr "Herauszoomen"
 #: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
 msgstr "Maximale Anzahl der Generationen"
+
+#: LifeLineChartView/lifelinechart.py:75
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+"LifeLineChartView Abhängigkeiten fehlen. Ohne diese ist es nicht möglich das "
+"Plugin zu nutzen."
+
+#: LifeLineChartView/lifelinechart.py:1183
+#, python-brace-format
+msgid "cursor position at {date}"
+msgstr "Cursorposition bei {date}"
+
+#: LifeLineChartView/lifelinechart.py:2591
+msgid "Hide person"
+msgstr "Person verbergen"
+
+#: LifeLineChartView/lifelinechart.py:2597
+msgid "Show person"
+msgstr "Person zeigen"
+
+#: LifeLineChartView/lifelinechart.py:2622
+msgid "Show siblings"
+msgstr "Geschwister zeigen"
+
+#: LifeLineChartView/lifelinechart.py:2627
+msgid "Hide siblings"
+msgstr "Geschwister veerbergen"
+
+#: LifeLineChartView/lifelinechart.py:2652
+msgid "Show ancestors above "
+msgstr "Platziere Vorfahren über "
+
+#: LifeLineChartView/lifelinechartview.py:386
+#: LifeLineChartView/lifelinechartview.py:883
+msgid "General Layout"
+msgstr "Allgemeines Layout"
+
+#: LifeLineChartView/lifelinechartview.py:399
+#: LifeLineChartView/lifelinechartview.gpr.py:34
+#: LifeLineChartView/lifelinechartview.gpr.py:52
+msgid "Life Line Chart"
+msgstr "Lebenslinien Diagramm"
+
+#: LifeLineChartView/lifelinechartview.py:509
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:519
+#: LifeLineChartView/lifelinechartview.py:520
+msgid "Ctrl"
+msgstr "Strg"
+
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:520
+msgid "Mouse wheel"
+msgstr "Mausrad"
+
+#: LifeLineChartView/lifelinechartview.py:527
+msgid "Zoom to original"
+msgstr "Auf original Größe zoomen"
+
+#: LifeLineChartView/lifelinechartview.py:534
+msgid "Zoom to best fit"
+msgstr "Zoom auf die beste Größte"
+
+#: LifeLineChartView/lifelinechartview.py:541
+msgid "Rebuild data cache"
+msgstr "Datencache neu erstellen"
+
+#: LifeLineChartView/lifelinechartview.py:548
+msgid "Revert the placement and person selection"
+msgstr "Platzierung und Personenauswahl zurücksetzen"
+
+#: LifeLineChartView/lifelinechartview.py:564
+msgid "Open Life Line Chart help"
+msgstr "Lebenslinien Diagramm Hilfe öffnen"
+
+#: LifeLineChartView/lifelinechartview.py:831
+msgid "Export View as SVG"
+msgstr "Ansicht als SVG exportieren"
+
+#: LifeLineChartView/lifelinechartview.py:884
+#: LifeLineChartView/_dummy_translation_string_po.py:29
+#: LifeLineChartView/_dummy_translation_string_po.py:32
+#: LifeLineChartView/_dummy_translation_string_po.py:35
+#: LifeLineChartView/_dummy_translation_string_po.py:38
+#: LifeLineChartView/_dummy_translation_string_po.py:41
+#: LifeLineChartView/_dummy_translation_string_po.py:47
+#: LifeLineChartView/_dummy_translation_string_po.py:52
+#: LifeLineChartView/_dummy_translation_string_po.py:55
+#: LifeLineChartView/_dummy_translation_string_po.py:58
+#: LifeLineChartView/_dummy_translation_string_po.py:61
+#: LifeLineChartView/_dummy_translation_string_po.py:67
+#: LifeLineChartView/_dummy_translation_string_po.py:74
+#: LifeLineChartView/_dummy_translation_string_po.py:77
+msgid "Label Configuration"
+msgstr "Textfeld Konfiguration"
+
+#: LifeLineChartView/lifelinechartview.py:946
+msgid "Reset all settings"
+msgstr "Alle Einstellungen zurücksetzen"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:24
+msgid "Life Line Ancestor Chart"
+msgstr "Lebenslinien Vorfahren Diagramm"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:26
+#: LifeLineChartView/lifelinechartview.gpr.py:44
+msgid "Persons and their relation in a time based chart"
+msgstr "Personen und ihre Beziehung in einem Zeit basierten Diagramm"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:42
+msgid "Life Line Descendant Chart"
+msgstr "Lebenslinien Nachfahren Diagramm"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
@@ -133,23 +247,6 @@ msgstr "Geburts-Textfeld auf der Linie"
 #: LifeLineChartView/_dummy_translation_string_po.py:28
 msgid "The birth label is aligned to the individual line."
 msgstr "Das Geburts-Textfeld wird entlang der Linie dargestellt."
-
-#: LifeLineChartView/_dummy_translation_string_po.py:29
-#: LifeLineChartView/_dummy_translation_string_po.py:32
-#: LifeLineChartView/_dummy_translation_string_po.py:35
-#: LifeLineChartView/_dummy_translation_string_po.py:38
-#: LifeLineChartView/_dummy_translation_string_po.py:41
-#: LifeLineChartView/_dummy_translation_string_po.py:47
-#: LifeLineChartView/_dummy_translation_string_po.py:52
-#: LifeLineChartView/_dummy_translation_string_po.py:55
-#: LifeLineChartView/_dummy_translation_string_po.py:58
-#: LifeLineChartView/_dummy_translation_string_po.py:61
-#: LifeLineChartView/_dummy_translation_string_po.py:67
-#: LifeLineChartView/_dummy_translation_string_po.py:74
-#: LifeLineChartView/_dummy_translation_string_po.py:77
-#: LifeLineChartView/lifelinechartview.py:884
-msgid "Label Configuration"
-msgstr "Textfeld Konfiguration"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 msgid "Birth label rotation"
@@ -502,100 +599,3 @@ msgstr "Eltern umschließen Kinder"
 #: LifeLineChartView/_dummy_translation_string_po.py:120
 msgid "Cactus"
 msgstr "Kaktus"
-
-#: LifeLineChartView/lifelinechart.py:75
-msgid ""
-"LifeLineChartView dependencies are missing. It is not possible to use this "
-"plugin without them."
-msgstr ""
-"LifeLineChartView Abhängigkeiten fehlen. Ohne diese ist es nicht möglich das "
-"Plugin zu nutzen."
-
-#: LifeLineChartView/lifelinechart.py:1183
-#, python-brace-format
-msgid "cursor position at {date}"
-msgstr "Cursorposition bei {date}"
-
-#: LifeLineChartView/lifelinechart.py:2591
-msgid "Hide person"
-msgstr "Person verbergen"
-
-#: LifeLineChartView/lifelinechart.py:2597
-msgid "Show person"
-msgstr "Person zeigen"
-
-#: LifeLineChartView/lifelinechart.py:2622
-msgid "Show siblings"
-msgstr "Geschwister zeigen"
-
-#: LifeLineChartView/lifelinechart.py:2627
-msgid "Hide siblings"
-msgstr "Geschwister veerbergen"
-
-#: LifeLineChartView/lifelinechart.py:2652
-msgid "Show ancestors above "
-msgstr "Platziere Vorfahren über "
-
-#: LifeLineChartView/lifelinechartview.gpr.py:24
-msgid "Life Line Ancestor Chart"
-msgstr "Lebenslinien Vorfahren Diagramm"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:26
-#: LifeLineChartView/lifelinechartview.gpr.py:44
-msgid "Persons and their relation in a time based chart"
-msgstr "Personen und ihre Beziehung in einem Zeit basierten Diagramm"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:34
-#: LifeLineChartView/lifelinechartview.gpr.py:52
-#: LifeLineChartView/lifelinechartview.py:399
-msgid "Life Line Chart"
-msgstr "Lebenslinien Diagramm"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:42
-msgid "Life Line Descendant Chart"
-msgstr "Lebenslinien Nachfahren Diagramm"
-
-#: LifeLineChartView/lifelinechartview.py:386
-#: LifeLineChartView/lifelinechartview.py:883
-msgid "General Layout"
-msgstr "Allgemeines Layout"
-
-#: LifeLineChartView/lifelinechartview.py:509
-#: LifeLineChartView/lifelinechartview.py:510
-#: LifeLineChartView/lifelinechartview.py:519
-#: LifeLineChartView/lifelinechartview.py:520
-msgid "Ctrl"
-msgstr "Strg"
-
-#: LifeLineChartView/lifelinechartview.py:510
-#: LifeLineChartView/lifelinechartview.py:520
-msgid "Mouse wheel"
-msgstr "Mausrad"
-
-#: LifeLineChartView/lifelinechartview.py:527
-msgid "Zoom to original"
-msgstr "Auf original Größe zoomen"
-
-#: LifeLineChartView/lifelinechartview.py:534
-msgid "Zoom to best fit"
-msgstr "Zoom auf die beste Größte"
-
-#: LifeLineChartView/lifelinechartview.py:541
-msgid "Rebuild data cache"
-msgstr "Datencache neu erstellen"
-
-#: LifeLineChartView/lifelinechartview.py:548
-msgid "Revert the placement and person selection"
-msgstr "Platzierung und Personenauswahl zurücksetzen"
-
-#: LifeLineChartView/lifelinechartview.py:564
-msgid "Open Life Line Chart help"
-msgstr "Lebenslinien Diagramm Hilfe öffnen"
-
-#: LifeLineChartView/lifelinechartview.py:831
-msgid "Export View as SVG"
-msgstr "Ansicht als SVG exportieren"
-
-#: LifeLineChartView/lifelinechartview.py:946
-msgid "Reset all settings"
-msgstr "Alle Einstellungen zurücksetzen"

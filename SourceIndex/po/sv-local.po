@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
 #: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
@@ -75,315 +75,6 @@ msgstr "*** Fel: Måste installera antingen ElementTree eller lxml."
 #: SourceIndex/index.py:409
 msgid "must install either ElementTree or lxml"
 msgstr "måste installera antingen ElementTree eller lxml"
-
-#: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
-msgid "birth"
-msgstr "födelse"
-
-#: SourceIndex/birth.glade:65 SourceIndex/census.glade:728
-#: SourceIndex/death.glade:97 SourceIndex/marriage.glade:64
-msgid "Info:"
-msgstr "Info:"
-
-#: SourceIndex/birth.glade:99
-msgid "Birth act:"
-msgstr "Födelsehandling:"
-
-#: SourceIndex/birth.glade:129
-msgid ""
-"Volume\n"
-"    Page:"
-msgstr ""
-"Volym\n"
-"    Sida:"
-
-#: SourceIndex/birth.glade:149
-msgid "The source title"
-msgstr "Källtiteln"
-
-#: SourceIndex/birth.glade:164
-msgid "The volume or page of this source"
-msgstr "Volymen eller sidan för den här källan"
-
-#: SourceIndex/birth.glade:195 SourceIndex/birth.glade:297
-#: SourceIndex/birth.glade:644 SourceIndex/witness.glade:73
-msgid "Names:"
-msgstr "Namn:"
-
-#: SourceIndex/birth.glade:214
-msgid "select the gender/sex"
-msgstr "välj kön"
-
-#: SourceIndex/birth.glade:247
-msgid "The names of the main person written into the source"
-msgstr "Namnen på huvudpersonen skriven i källan"
-
-#: SourceIndex/birth.glade:262
-msgid "The first names of the main person written into the source"
-msgstr "Förnamnen på huvudpersonen skriven i källan"
-
-#: SourceIndex/birth.glade:278 SourceIndex/birth.glade:511
-#: SourceIndex/birth.glade:729 SourceIndex/witness.glade:90
-msgid "First names:"
-msgstr "Förnamn:"
-
-#: SourceIndex/birth.glade:334 SourceIndex/birth.glade:493
-msgid "Other:"
-msgstr "Andra:"
-
-#: SourceIndex/birth.glade:351
-msgid "Repository title"
-msgstr "Arkivplatstitel"
-
-#: SourceIndex/birth.glade:388 SourceIndex/census.glade:973
-#: SourceIndex/death.glade:589 SourceIndex/marriage.glade:234
-msgid "<b>Image</b>"
-msgstr "<b>Bild</b>"
-
-#: SourceIndex/birth.glade:406
-msgid "<b><i>Repository</i></b>"
-msgstr "<b><i>Arkivplats</i></b>"
-
-#: SourceIndex/birth.glade:421
-msgid ""
-"Spouse\n"
-"names:"
-msgstr ""
-"Make\n"
-"namn:"
-
-#: SourceIndex/birth.glade:441
-msgid ""
-"Marriage\n"
-"date:"
-msgstr ""
-"Vigsel\n"
-"datum:"
-
-#: SourceIndex/birth.glade:460
-msgid ""
-"Death\n"
-"date:"
-msgstr ""
-"Död\n"
-"datum:"
-
-#: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
-#: SourceIndex/census.glade:543 SourceIndex/death.glade:722
-#: SourceIndex/death.glade:821 SourceIndex/marriage.glade:529
-#: SourceIndex/marriage.glade:903 SourceIndex/marriage.glade:922
-#: SourceIndex/marriage.glade:941 SourceIndex/marriage.glade:1361
-#: SourceIndex/marriage.glade:1474 SourceIndex/witness.glade:141
-msgid "Occupation:"
-msgstr "Yrke:"
-
-#: SourceIndex/birth.glade:597 SourceIndex/birth.glade:710
-#: SourceIndex/death.glade:741 SourceIndex/death.glade:854
-#: SourceIndex/marriage.glade:560 SourceIndex/marriage.glade:960
-#: SourceIndex/marriage.glade:979 SourceIndex/marriage.glade:998
-#: SourceIndex/marriage.glade:1408 SourceIndex/marriage.glade:1455
-#: SourceIndex/witness.glade:158
-msgid "Live:"
-msgstr "Levande:"
-
-#: SourceIndex/birth.glade:833
-msgid ""
-"<b>Witness\n"
-"Godfather\n"
-"Godmother:</b>"
-msgstr ""
-"<b>Vittne\n"
-"Gudfader\n"
-"Gudmoder:</b>"
-
-#: SourceIndex/birth.glade:870
-msgid "Call number:"
-msgstr "Arkiv(plats)nummer:"
-
-#: SourceIndex/birth.glade:887
-msgid "The call number into the repository"
-msgstr "Arkivnumret på arkivplatsen"
-
-#: SourceIndex/birth.glade:925
-msgid "<b><i>Data person</i></b>"
-msgstr "<b><i>Personuppgifter</i></b>"
-
-#: SourceIndex/birth.glade:949
-msgid "<b><i>Data margin</i></b>"
-msgstr "<b><i>Marginaldata</i></b>"
-
-#: SourceIndex/birth.glade:973
-msgid "<b><i>Data father</i></b>"
-msgstr "<b><i>Faderuppgifter</i></b>"
-
-#: SourceIndex/birth.glade:985
-msgid "<b><i>Data mother</i></b>"
-msgstr "<b><i>Moderuppgifter</i></b>"
-
-#: SourceIndex/birth.glade:1021
-msgid ""
-"witness1, name, given, age, occupation;\n"
-"witness2, name, given, age, occupation;\n"
-"godfather, name, given, age, occupation;\n"
-"etc ..."
-msgstr ""
-"vittne1, namn, förnamn, ålder, yrke;\n"
-"vittne2, namn, förnamn, ålder, yrke;\n"
-"gudfader, namn, förnamn, ålder, yrke;\n"
-"etc ..."
-
-#: SourceIndex/birth.glade:1549
-msgid ""
-"Marriage\n"
-"place:"
-msgstr ""
-"Vigsel\n"
-"plats:"
-
-#: SourceIndex/birth.glade:1568
-msgid ""
-"Death\n"
-"place:"
-msgstr ""
-"Död\n"
-"plats:"
-
-#: SourceIndex/birth.glade:1588
-msgid ""
-"Birth\n"
-"place:"
-msgstr ""
-"Födelse\n"
-"plats:"
-
-#: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
-msgid "Origine:"
-msgstr "Ursprung:"
-
-#: SourceIndex/birth.glade:2272
-msgid "<b><i>Citation</i></b>"
-msgstr "<b><i>Citering</i></b>"
-
-#: SourceIndex/birth.glade:2287
-msgid "<b><i>Source</i></b>"
-msgstr "<b><i>Källa</i></b>"
-
-#: SourceIndex/census.glade:7 SourceIndex/index.glade:768
-msgid "census"
-msgstr "folkräkning"
-
-#: SourceIndex/census.glade:160
-msgid "<b>Census</b>"
-msgstr "<b>Folkräkning</b>"
-
-#: SourceIndex/census.glade:176 SourceIndex/death.glade:607
-#: SourceIndex/marriage.glade:185
-msgid "<b>Repository</b>"
-msgstr "<b>Arkivplats</b>"
-
-#: SourceIndex/census.glade:221 SourceIndex/death.glade:432
-#: SourceIndex/death.glade:636 SourceIndex/death.glade:873
-#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
-#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
-#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-msgid "First name:"
-msgstr "Förnamn:"
-
-#: SourceIndex/census.glade:319 SourceIndex/death.glade:1003
-msgid "Birth date:"
-msgstr "Födelsedatum:"
-
-#: SourceIndex/census.glade:364
-msgid "Death date:"
-msgstr "Dödsdatum:"
-
-#: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
-msgid "Birth place:"
-msgstr "Födelseplats:"
-
-#: SourceIndex/census.glade:414
-msgid "Death place:"
-msgstr "Dödsplats:"
-
-#: SourceIndex/census.glade:447
-msgid "Family status:"
-msgstr "Familjestatus:"
-
-#: SourceIndex/census.glade:466 SourceIndex/death.glade:1099
-msgid "Spouse name:"
-msgstr "Namn på make/maka:"
-
-#: SourceIndex/census.glade:510 SourceIndex/death.glade:703
-#: SourceIndex/death.glade:892 SourceIndex/marriage.glade:498
-#: SourceIndex/marriage.glade:846 SourceIndex/marriage.glade:865
-#: SourceIndex/marriage.glade:884 SourceIndex/marriage.glade:1526
-#: SourceIndex/marriage.glade:1654 SourceIndex/witness.glade:124
-msgid "Origin:"
-msgstr "Ursprung:"
-
-#: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
-msgid "Note:"
-msgstr "Notis:"
-
-#: SourceIndex/census.glade:712 SourceIndex/death.glade:621
-msgid "<b>Data person</b>"
-msgstr "<b>Personuppgifter</b>"
-
-#: SourceIndex/census.glade:904 SourceIndex/death.glade:217
-#: SourceIndex/marriage.glade:1296
-msgid "Volume:"
-msgstr "Volym:"
-
-#: SourceIndex/census.glade:1046
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr "ordning, person, efternamn, förnamn, ålder, status, yrke, etc ..."
-
-#: SourceIndex/death.glade:165
-msgid "Death act:"
-msgstr "Dödsfallshandling:"
-
-#: SourceIndex/death.glade:282
-msgid "<b>Death act</b>"
-msgstr "<b>Dödsfallshandling</b>"
-
-#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
-msgid "<b>Witness:</b>"
-msgstr "<b>Vittne:</b>"
-
-#: SourceIndex/death.glade:1131
-msgid "Marriage date:"
-msgstr "Vigseldatum:"
-
-#: SourceIndex/death.glade:1163
-msgid "Marriage place:"
-msgstr "Vigselplats:"
-
-#: SourceIndex/death.glade:1195
-msgid "<b>Data mother</b>"
-msgstr "<b>Moderuppgifter</b>"
-
-#: SourceIndex/death.glade:1210
-msgid "<b>Data father</b>"
-msgstr "<b>Faderuppgifter</b>"
-
-#: SourceIndex/death.glade:1225
-msgid "<b>Spouse</b> "
-msgstr "<b>Make</b> "
-
-#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
-#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
-#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
-#: SourceIndex/marriage.glade:1874
-msgid "alive"
-msgstr "levande"
-
-#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"vittne1, namn, förnamn, ålder, yrke; vittne2, namn, förnamn, ålder, yrke, "
-"etc ..."
 
 #: SourceIndex/index.glade:7
 msgid "index"
@@ -477,6 +168,10 @@ msgstr "lägg till folkräkning"
 msgid "Select a birth source"
 msgstr "Välj en födelsekälla"
 
+#: SourceIndex/index.glade:585 SourceIndex/birth.glade:7
+msgid "birth"
+msgstr "födelse"
+
 #: SourceIndex/index.glade:617
 msgid "Select a marriage source"
 msgstr "Välj en vigselkälla"
@@ -488,6 +183,10 @@ msgstr "Välj en dödsfallskälla"
 #: SourceIndex/index.glade:739
 msgid "Select a census source"
 msgstr "Välj en folkräkningskälla"
+
+#: SourceIndex/index.glade:768 SourceIndex/census.glade:7
+msgid "census"
+msgstr "folkräkning"
 
 #: SourceIndex/index.glade:800
 msgid "Select a repository storing a source"
@@ -509,6 +208,315 @@ msgstr ""
 "Registrerar transkriptioner ... födelser/dödsfall/vigslar/folkräkningar med "
 "gemensamma fält: id, arkivplats, personnamn, födelsedatum och plats, "
 "föräldrar."
+
+#: SourceIndex/witness.glade:7
+msgid "witness"
+msgstr "vittne"
+
+#: SourceIndex/witness.glade:60
+msgid "<b>Witness</b>"
+msgstr "<b>Vittne</b>"
+
+#: SourceIndex/witness.glade:73 SourceIndex/birth.glade:195
+#: SourceIndex/birth.glade:297 SourceIndex/birth.glade:644
+msgid "Names:"
+msgstr "Namn:"
+
+#: SourceIndex/witness.glade:90 SourceIndex/birth.glade:278
+#: SourceIndex/birth.glade:511 SourceIndex/birth.glade:729
+msgid "First names:"
+msgstr "Förnamn:"
+
+#: SourceIndex/witness.glade:124 SourceIndex/death.glade:703
+#: SourceIndex/death.glade:892 SourceIndex/census.glade:510
+#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
+#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
+#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
+msgid "Origin:"
+msgstr "Ursprung:"
+
+#: SourceIndex/witness.glade:141 SourceIndex/birth.glade:578
+#: SourceIndex/birth.glade:677 SourceIndex/death.glade:722
+#: SourceIndex/death.glade:821 SourceIndex/census.glade:543
+#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
+#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
+#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
+msgid "Occupation:"
+msgstr "Yrke:"
+
+#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
+#: SourceIndex/birth.glade:710 SourceIndex/death.glade:741
+#: SourceIndex/death.glade:854 SourceIndex/marriage.glade:560
+#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
+#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
+#: SourceIndex/marriage.glade:1455
+msgid "Live:"
+msgstr "Levande:"
+
+#: SourceIndex/birth.glade:65 SourceIndex/death.glade:97
+#: SourceIndex/census.glade:728 SourceIndex/marriage.glade:64
+msgid "Info:"
+msgstr "Info:"
+
+#: SourceIndex/birth.glade:99
+msgid "Birth act:"
+msgstr "Födelsehandling:"
+
+#: SourceIndex/birth.glade:129
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+"Volym\n"
+"    Sida:"
+
+#: SourceIndex/birth.glade:149
+msgid "The source title"
+msgstr "Källtiteln"
+
+#: SourceIndex/birth.glade:164
+msgid "The volume or page of this source"
+msgstr "Volymen eller sidan för den här källan"
+
+#: SourceIndex/birth.glade:214
+msgid "select the gender/sex"
+msgstr "välj kön"
+
+#: SourceIndex/birth.glade:247
+msgid "The names of the main person written into the source"
+msgstr "Namnen på huvudpersonen skriven i källan"
+
+#: SourceIndex/birth.glade:262
+msgid "The first names of the main person written into the source"
+msgstr "Förnamnen på huvudpersonen skriven i källan"
+
+#: SourceIndex/birth.glade:334 SourceIndex/birth.glade:493
+msgid "Other:"
+msgstr "Andra:"
+
+#: SourceIndex/birth.glade:351
+msgid "Repository title"
+msgstr "Arkivplatstitel"
+
+#: SourceIndex/birth.glade:388 SourceIndex/death.glade:589
+#: SourceIndex/census.glade:973 SourceIndex/marriage.glade:234
+msgid "<b>Image</b>"
+msgstr "<b>Bild</b>"
+
+#: SourceIndex/birth.glade:406
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>Arkivplats</i></b>"
+
+#: SourceIndex/birth.glade:421
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"Make\n"
+"namn:"
+
+#: SourceIndex/birth.glade:441
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"Vigsel\n"
+"datum:"
+
+#: SourceIndex/birth.glade:460
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"Död\n"
+"datum:"
+
+#: SourceIndex/birth.glade:833
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+"<b>Vittne\n"
+"Gudfader\n"
+"Gudmoder:</b>"
+
+#: SourceIndex/birth.glade:870
+msgid "Call number:"
+msgstr "Arkiv(plats)nummer:"
+
+#: SourceIndex/birth.glade:887
+msgid "The call number into the repository"
+msgstr "Arkivnumret på arkivplatsen"
+
+#: SourceIndex/birth.glade:925
+msgid "<b><i>Data person</i></b>"
+msgstr "<b><i>Personuppgifter</i></b>"
+
+#: SourceIndex/birth.glade:949
+msgid "<b><i>Data margin</i></b>"
+msgstr "<b><i>Marginaldata</i></b>"
+
+#: SourceIndex/birth.glade:973
+msgid "<b><i>Data father</i></b>"
+msgstr "<b><i>Faderuppgifter</i></b>"
+
+#: SourceIndex/birth.glade:985
+msgid "<b><i>Data mother</i></b>"
+msgstr "<b><i>Moderuppgifter</i></b>"
+
+#: SourceIndex/birth.glade:1021
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+"vittne1, namn, förnamn, ålder, yrke;\n"
+"vittne2, namn, förnamn, ålder, yrke;\n"
+"gudfader, namn, förnamn, ålder, yrke;\n"
+"etc ..."
+
+#: SourceIndex/birth.glade:1549
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"Vigsel\n"
+"plats:"
+
+#: SourceIndex/birth.glade:1568
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Död\n"
+"plats:"
+
+#: SourceIndex/birth.glade:1588
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Födelse\n"
+"plats:"
+
+#: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
+msgid "Origine:"
+msgstr "Ursprung:"
+
+#: SourceIndex/birth.glade:2272
+msgid "<b><i>Citation</i></b>"
+msgstr "<b><i>Citering</i></b>"
+
+#: SourceIndex/birth.glade:2287
+msgid "<b><i>Source</i></b>"
+msgstr "<b><i>Källa</i></b>"
+
+#: SourceIndex/death.glade:165
+msgid "Death act:"
+msgstr "Dödsfallshandling:"
+
+#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
+#: SourceIndex/marriage.glade:1296
+msgid "Volume:"
+msgstr "Volym:"
+
+#: SourceIndex/death.glade:282
+msgid "<b>Death act</b>"
+msgstr "<b>Dödsfallshandling</b>"
+
+#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
+#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
+#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
+#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
+#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
+msgid "First name:"
+msgstr "Förnamn:"
+
+#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
+#: SourceIndex/marriage.glade:185
+msgid "<b>Repository</b>"
+msgstr "<b>Arkivplats</b>"
+
+#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
+msgid "<b>Data person</b>"
+msgstr "<b>Personuppgifter</b>"
+
+#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
+msgid "<b>Witness:</b>"
+msgstr "<b>Vittne:</b>"
+
+#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
+msgid "Birth date:"
+msgstr "Födelsedatum:"
+
+#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
+msgid "Birth place:"
+msgstr "Födelseplats:"
+
+#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
+msgid "Note:"
+msgstr "Notis:"
+
+#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
+msgid "Spouse name:"
+msgstr "Namn på make/maka:"
+
+#: SourceIndex/death.glade:1131
+msgid "Marriage date:"
+msgstr "Vigseldatum:"
+
+#: SourceIndex/death.glade:1163
+msgid "Marriage place:"
+msgstr "Vigselplats:"
+
+#: SourceIndex/death.glade:1195
+msgid "<b>Data mother</b>"
+msgstr "<b>Moderuppgifter</b>"
+
+#: SourceIndex/death.glade:1210
+msgid "<b>Data father</b>"
+msgstr "<b>Faderuppgifter</b>"
+
+#: SourceIndex/death.glade:1225
+msgid "<b>Spouse</b> "
+msgstr "<b>Make</b> "
+
+#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
+#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
+#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
+#: SourceIndex/marriage.glade:1874
+msgid "alive"
+msgstr "levande"
+
+#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"vittne1, namn, förnamn, ålder, yrke; vittne2, namn, förnamn, ålder, yrke, "
+"etc ..."
+
+#: SourceIndex/census.glade:160
+msgid "<b>Census</b>"
+msgstr "<b>Folkräkning</b>"
+
+#: SourceIndex/census.glade:364
+msgid "Death date:"
+msgstr "Dödsdatum:"
+
+#: SourceIndex/census.glade:414
+msgid "Death place:"
+msgstr "Dödsplats:"
+
+#: SourceIndex/census.glade:447
+msgid "Family status:"
+msgstr "Familjestatus:"
+
+#: SourceIndex/census.glade:1046
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "ordning, person, efternamn, förnamn, ålder, status, yrke, etc ..."
 
 #: SourceIndex/marriage.glade:49
 msgid "Marriage act:"
@@ -585,11 +593,3 @@ msgstr "<b>Uppgifter för make1</b>"
 #: SourceIndex/marriage.glade:1202
 msgid "<b>Data spouse2</b>"
 msgstr "<b>Uppgifter för make2</b>"
-
-#: SourceIndex/witness.glade:7
-msgid "witness"
-msgstr "vittne"
-
-#: SourceIndex/witness.glade:60
-msgid "<b>Witness</b>"
-msgstr "<b>Vittne</b>"

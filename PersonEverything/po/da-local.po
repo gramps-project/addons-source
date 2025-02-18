@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -31,14 +31,6 @@ msgstr "Slægtskab med fader"
 #: DynamicWeb/dynamicweb.py:3061 PersonEverything/PersonEverything.py:225
 msgid "Relationship to Mother"
 msgstr "Slægtskab med moder"
-
-#: PersonEverything/PersonEverything.gpr.py:32
-msgid "PersonEverything Report"
-msgstr " Dette er den primære fødselshændelse"
-
-#: PersonEverything/PersonEverything.gpr.py:33
-msgid "Produces a report containing everything about the active person"
-msgstr "Danner en rapport, der indeholder alt om den aktive person"
 
 #: PersonEverything/PersonEverything.py:133
 #, python-format
@@ -169,3 +161,11 @@ msgstr "Mærkat farve og prioritet"
 #: PersonEverything/PersonEverything.py:960
 msgid "No source information found"
 msgstr "Ingen kildeinformation fundet"
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "PersonEverything Report"
+msgstr " Dette er den primære fødselshændelse"
+
+#: PersonEverything/PersonEverything.gpr.py:33
+msgid "Produces a report containing everything about the active person"
+msgstr "Danner en rapport, der indeholder alt om den aktive person"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -71,30 +71,10 @@ msgstr "Zoom til original"
 msgid "Zoom to best fit"
 msgstr "Zoom så den passer bedst"
 
-#: GraphView/avatars.py:60
-msgid "Dark (default)"
-msgstr "Mørk (standard)"
-
-#: GraphView/avatars.py:61
-msgid "Light"
-msgstr "Lyst"
-
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr "Tegneserie"
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Graf visning"
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr "Dynamisk og interaktiv graf over slægtsskab"
 
 #: GraphView/graphview.py:754
 #, fuzzy
@@ -476,6 +456,26 @@ msgstr "Sletning af familien vil fjerne denne fra databasen."
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Slet familie [%s]?"
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr "Dynamisk og interaktiv graf over slægtsskab"
+
+#: GraphView/avatars.py:60
+msgid "Dark (default)"
+msgstr "Mørk (standard)"
+
+#: GraphView/avatars.py:61
+msgid "Light"
+msgstr "Lyst"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr "Tegneserie"
+
+#: GraphView/avatars.py:63
+msgid "Modern"
+msgstr ""
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"

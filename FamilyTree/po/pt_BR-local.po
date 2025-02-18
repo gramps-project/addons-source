@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -64,10 +64,6 @@ msgid "Underline call name in first name / add call name to first name"
 msgstr ""
 "Sublinhar o nome vocativo no primeiro nome / adicionar nome vocativo ao "
 "primeiro nome"
-
-#: FamilyTree/FamilyTree.gpr.py:5
-msgid "Produces a graphical family tree."
-msgstr "Gera uma árvore genealógica gráfica"
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
@@ -255,3 +251,7 @@ msgstr "O estilo usado para nomes."
 msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr ""
 "O estilo usado para dados (nascimento, falecimento, casamento, divórcio."
+
+#: FamilyTree/FamilyTree.gpr.py:5
+msgid "Produces a graphical family tree."
+msgstr "Gera uma árvore genealógica gráfica"

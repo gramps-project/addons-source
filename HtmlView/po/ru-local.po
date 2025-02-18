@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -30,18 +30,6 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-
-#: HtmlView/htmlview.gpr.py:31
-msgid "Html View"
-msgstr "Вид HTML"
-
-#: HtmlView/htmlview.gpr.py:32
-msgid "A view showing html pages embedded in Gramps"
-msgstr "Вид, позволяющий видеть страницы html внутри программы Gramps"
-
-#: HtmlView/htmlview.gpr.py:40
-msgid "Web"
-msgstr "Web"
 
 #: HtmlView/htmlview.py:328
 msgid "HtmlView"
@@ -77,3 +65,15 @@ msgstr ""
 "Введите веб-адрес сверху и нажмите кнопку запустить для загрузки страницы\n"
 "<br>\n"
 "Например: "
+
+#: HtmlView/htmlview.gpr.py:31
+msgid "Html View"
+msgstr "Вид HTML"
+
+#: HtmlView/htmlview.gpr.py:32
+msgid "A view showing html pages embedded in Gramps"
+msgstr "Вид, позволяющий видеть страницы html внутри программы Gramps"
+
+#: HtmlView/htmlview.gpr.py:40
+msgid "Web"
+msgstr "Web"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -36,23 +36,6 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 msgid "in"
 msgstr "в"
-
-#: DenominoViso/DenominoViso.gpr.py:9
-msgid "DenominoViso"
-msgstr "DenominoViso"
-
-#: DenominoViso/DenominoViso.gpr.py:19
-#, fuzzy
-#| msgid ""
-#| "Generates a web page with a graphical representation of ancestors (SVG) "
-#| "represented as a Fan Chart from the D3.js JavaScript library."
-msgid ""
-"Generates a web (HTML) page with a graphical representation of ancestors/"
-"descendants (SVG) where details about individuals become visible upon mouse-"
-"events."
-msgstr ""
-"Создаёт веб-станицу с графическим отображением предков (SVG) представленном "
-"в виде круговой диаграммы при помощи D3.js JavaScript библиотеки."
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -585,3 +568,20 @@ msgstr "Длина пунктира"
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
 msgstr "Промежутки в линии"
+
+#: DenominoViso/DenominoViso.gpr.py:9
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+#: DenominoViso/DenominoViso.gpr.py:19
+#, fuzzy
+#| msgid ""
+#| "Generates a web page with a graphical representation of ancestors (SVG) "
+#| "represented as a Fan Chart from the D3.js JavaScript library."
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Создаёт веб-станицу с графическим отображением предков (SVG) представленном "
+"в виде круговой диаграммы при помощи D3.js JavaScript библиотеки."

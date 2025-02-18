@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -106,10 +106,6 @@ msgstr "Référence :"
 msgid "Headings"
 msgstr "En-têtes"
 
-#: Form/form.py:65
-msgid "Form"
-msgstr "Formulaire"
-
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
 msgstr "Gramplet formulaires"
@@ -121,6 +117,10 @@ msgstr "Interface gramplet pour les formulaires"
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
 msgstr "Formulaires"
+
+#: Form/form.py:65
+msgid "Form"
+msgstr "Formulaire"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"

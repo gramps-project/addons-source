@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,64 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
-
-#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
-#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
-msgid "Include images"
-msgstr "Bilder aufnehmen"
-
-#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
-#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
-msgid "Include images of people in the nodes."
-msgstr "Bilder der Personen in den Knoten aufnehmen."
-
-#: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
-msgid "First spouse left"
-msgstr "Rechts nach Links"
-
-#: GenealogyTree/gt_descendant.py:192
-msgid ""
-"Always put first of multiple spouses on the left. This can help reduce line-"
-"crossings with multiple marriages."
-msgstr ""
-
-#: GenealogyTree/gt_grandparent.py:119
-#, python-format
-msgid "Person %s does not have both a paternal and a maternal grandparent"
-msgstr ""
-"Person %s hat nicht sowohl einen väterlichen als auch einen mütterlichen "
-"Großelternteil"
-
-#: GenealogyTree/gt_grandparent.py:227
-msgid "Grandparent family spacing"
-msgstr "Großeltern Familie Abstand"
-
-#: GenealogyTree/gt_grandparent.py:228
-msgid "Extra spacing of grandparent families (mm)"
-msgstr "Extra Abstand Großelternfamilien (mm)"
-
-#: GenealogyTree/gt_sandclock.py:235
-msgid "The center family for the report"
-msgstr "Die zentrale Familie für den Bericht"
-
-#: GenealogyTree/gt_sandclock.py:238
-msgid "Generations up"
-msgstr "Generationen hoch"
-
-#: GenealogyTree/gt_sandclock.py:242
-msgid "Generations down"
-msgstr "Generationen runter"
-
-#: GenealogyTree/gt_sandclock.py:246
-msgid "Include siblings"
-msgstr "Geschwister einschließen"
-
-#: GenealogyTree/gt_sandclock.py:247
-msgid "Include siblings of ancestors."
-msgstr "Geschwister von Vorfahren aufnehmen."
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -121,3 +64,60 @@ msgstr "Sanduhrbaum für eine Familie"
 #: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Sanduhrbaum für eine Familie verwende LaTex genealogytree"
+
+#: GenealogyTree/gt_sandclock.py:235
+msgid "The center family for the report"
+msgstr "Die zentrale Familie für den Bericht"
+
+#: GenealogyTree/gt_sandclock.py:238
+msgid "Generations up"
+msgstr "Generationen hoch"
+
+#: GenealogyTree/gt_sandclock.py:242
+msgid "Generations down"
+msgstr "Generationen runter"
+
+#: GenealogyTree/gt_sandclock.py:246
+msgid "Include siblings"
+msgstr "Geschwister einschließen"
+
+#: GenealogyTree/gt_sandclock.py:247
+msgid "Include siblings of ancestors."
+msgstr "Geschwister von Vorfahren aufnehmen."
+
+#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
+#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
+msgid "Include images"
+msgstr "Bilder aufnehmen"
+
+#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
+#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
+msgid "Include images of people in the nodes."
+msgstr "Bilder der Personen in den Knoten aufnehmen."
+
+#: GenealogyTree/gt_grandparent.py:119
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr ""
+"Person %s hat nicht sowohl einen väterlichen als auch einen mütterlichen "
+"Großelternteil"
+
+#: GenealogyTree/gt_grandparent.py:227
+msgid "Grandparent family spacing"
+msgstr "Großeltern Familie Abstand"
+
+#: GenealogyTree/gt_grandparent.py:228
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Extra Abstand Großelternfamilien (mm)"
+
+#: GenealogyTree/gt_descendant.py:191
+#, fuzzy
+#| msgid "right to left"
+msgid "First spouse left"
+msgstr "Rechts nach Links"
+
+#: GenealogyTree/gt_descendant.py:192
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""

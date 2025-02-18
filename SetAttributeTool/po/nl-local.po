@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -40,16 +40,6 @@ msgstr "Wordt verwerkt...\n"
 msgid "Done!\n"
 msgstr "Uitgevoerd!\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
-#: SetAttributeTool/SetAttributeTool.py:122
-#: SetAttributeTool/SetAttributeTool.py:150
-msgid "Set Attribute"
-msgstr "Kenmerk instellen"
-
-#: SetAttributeTool/SetAttributeTool.gpr.py:27
-msgid "Set an attribute to a given value."
-msgstr "Stel een kenmerk in op een bepaalde waarde."
-
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Kenmerktype om toe te voegen of te bewerken"
@@ -61,6 +51,12 @@ msgstr "Kenmerkwaarde om toe te voegen of te bewerken"
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
 msgstr "Verwijder kenmerktype en waardenset"
+
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set Attribute"
+msgstr "Kenmerk instellen"
 
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
@@ -100,3 +96,7 @@ msgid ""
 msgstr ""
 "\n"
 "%d '%s' kenmerken verwijderen naar '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:27
+msgid "Set an attribute to a given value."
+msgstr "Stel een kenmerk in op een bepaalde waarde."

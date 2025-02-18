@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,13 +24,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: Differences/differences.gpr.py:4 Differences/differences.py:95
+#: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
 msgstr "Relatório de diferenças do banco de dados"
-
-#: Differences/differences.gpr.py:5
-msgid "Compares an external database with the current one."
-msgstr "Compara um banco de dados externo com o atual."
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
@@ -104,3 +100,7 @@ msgstr "Mostrar os itens com diferenças"
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr "Incluir os itens no arquivo, mas não no banco de dados"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Compara um banco de dados externo com o atual."

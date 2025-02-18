@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -23,6 +23,15 @@ msgstr ""
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
 msgstr "Enter Python expressions"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-format
+msgid "%d rows processed in %s seconds.\n"
+msgstr "%d rækker behandlet i %s sekunder.\n"
+
+#: Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "I dag"
 
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
@@ -47,12 +56,3 @@ msgstr "Kvikoversigt for at udføre SQL-lignende forespørgsler"
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
 msgstr "Angiv SQL forespørgsel"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d rækker behandlet i %s sekunder.\n"
-
-#: Query/QueryQuickview.py:426
-msgid "Today"
-msgstr "I dag"

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -41,16 +41,6 @@ msgstr ""
 #: SVWebconnectPack/SVWebPack.py:34 UKWebConnectPack/UKWebPack.py:35
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
-
-# trunk
-#: UKWebConnectPack/UKWebPack.gpr.py:11
-msgid "UK Web Connect Pack"
-msgstr "Ensemble de liens internet anglo-saxons"
-
-#: UKWebConnectPack/UKWebPack.gpr.py:12
-msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgstr ""
-"Collection de sites internet pour le Royaume-uni (nécessite libwebconnect)"
 
 #: UKWebConnectPack/UKWebPack.py:33
 msgid "UK Google"
@@ -71,3 +61,13 @@ msgstr "Bibliothèque Hathi Trust Digital"
 #: UKWebConnectPack/UKWebPack.py:39
 msgid "Open Library"
 msgstr ""
+
+# trunk
+#: UKWebConnectPack/UKWebPack.gpr.py:11
+msgid "UK Web Connect Pack"
+msgstr "Ensemble de liens internet anglo-saxons"
+
+#: UKWebConnectPack/UKWebPack.gpr.py:12
+msgid "Collection of Web sites for the UK (requires libwebconnect)"
+msgstr ""
+"Collection de sites internet pour le Royaume-uni (nécessite libwebconnect)"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 10:31+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -25,15 +25,6 @@ msgstr ""
 #: DateCalculator/DateCalculator.py:107
 msgid "Copy"
 msgstr "העתקה"
-
-#: DateCalculator/DateCalculator.gpr.py:22
-#: DateCalculator/DateCalculator.gpr.py:32
-msgid "Date Calculator"
-msgstr "מחשבון תאריכים"
-
-#: DateCalculator/DateCalculator.gpr.py:23
-msgid "Perform date math calculations"
-msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
@@ -77,4 +68,13 @@ msgstr "שגיאה: לפחות אחד מהביטוים חייב להיות תא�
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
+msgstr ""
+
+#: DateCalculator/DateCalculator.gpr.py:22
+#: DateCalculator/DateCalculator.gpr.py:32
+msgid "Date Calculator"
+msgstr "מחשבון תאריכים"
+
+#: DateCalculator/DateCalculator.gpr.py:23
+msgid "Perform date math calculations"
 msgstr ""

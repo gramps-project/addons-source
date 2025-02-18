@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,43 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-msgid "Place Coordinate Gramplet"
-msgstr "Platskoordinatgramplet"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
-msgid "Map Menu"
-msgstr "Kartmeny"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
-msgid "Add city as place"
-msgstr "Lägg till ort som plats"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
-msgid "Add addess as place"
-msgstr "Lägg till adress som plats"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
-msgid "Place Coordinate Gramplet view"
-msgstr "Platskoordinatgramplet-vy"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
-msgid "View for the place coordinate gramplet."
-msgstr "Visning för platskoordinatgrampleten."
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
-msgid "Place and Coordinates"
-msgstr "Plats och koordinater"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
-msgid "Gramplet that simplifies setting the coordinates of a place"
-msgstr "Gramplet som förenklar inställningen av koordinaterna för en plats"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
-msgid "Place Coordinates"
-msgstr "Platskoordinater"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
@@ -104,6 +68,42 @@ msgstr "Inget har sökts ännu"
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr "Ingen plats är aktiv"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
+msgid "Place Coordinate Gramplet view"
+msgstr "Platskoordinatgramplet-vy"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
+msgid "View for the place coordinate gramplet."
+msgstr "Visning för platskoordinatgrampleten."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
+msgid "Place and Coordinates"
+msgstr "Plats och koordinater"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Gramplet som förenklar inställningen av koordinaterna för en plats"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
+msgid "Place Coordinates"
+msgstr "Platskoordinater"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+msgid "Place Coordinate Gramplet"
+msgstr "Platskoordinatgramplet"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
+msgid "Map Menu"
+msgstr "Kartmeny"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
+msgid "Add city as place"
+msgstr "Lägg till ort som plats"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+msgid "Add addess as place"
+msgstr "Lägg till adress som plats"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"

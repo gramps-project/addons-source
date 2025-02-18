@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,21 +20,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:105
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:112
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
 msgid "INFO"
 msgstr "INFORMACIJE"
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr "Izvještaj o medijima"
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr "Izrađuje izvještaj koji uključuje slike, podatke slika i zabilješke."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
@@ -116,3 +109,11 @@ msgstr "Visina medija"
 #, python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Maksimalna visina medija u postocima dostupne visine stranice."
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr "Izvještaj o medijima"
+
+#: MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr "Izrađuje izvještaj koji uključuje slike, podatke slika i zabilješke."

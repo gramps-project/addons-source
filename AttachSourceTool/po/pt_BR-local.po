@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -33,16 +33,6 @@ msgstr "Selecione o filtro para restringir as pessoas"
 #: AttachSourceTool/AttachSourceTool.py:157
 msgid "Processing...\n"
 msgstr "Processando...\n"
-
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
-#: AttachSourceTool/AttachSourceTool.py:137
-#: AttachSourceTool/AttachSourceTool.py:155
-msgid "Attach Source"
-msgstr "Anexar fonte"
-
-#: AttachSourceTool/AttachSourceTool.gpr.py:27
-msgid "Attaches a shared source to multiple objects."
-msgstr "Anexa uma fonte comum a vários objetos"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -76,6 +66,12 @@ msgstr "ID da fonte existente"
 msgid "ID of source to attach"
 msgstr "ID da fonte a anexar"
 
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+msgid "Attach Source"
+msgstr "Anexar fonte"
+
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
 msgstr "Anexando fontes...\n"
@@ -87,3 +83,7 @@ msgstr "Anexando fontes..."
 #: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Concluído!\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
+msgid "Attaches a shared source to multiple objects."
+msgstr "Anexa uma fonte comum a vários objetos"

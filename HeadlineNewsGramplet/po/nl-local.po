@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -24,6 +24,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
 
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
+msgid "Read Gramps headline news"
+msgstr "Lees het Gramps nieuwsoverzicht"
+
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
 msgid "Headline News"
@@ -32,7 +36,3 @@ msgstr "Nieuwsoverzicht"
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
 msgid "Gramplet that shows the latest Gramps news"
 msgstr "Gramplet met het laatste Gramps-nieuws"
-
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
-msgid "Read Gramps headline news"
-msgstr "Lees het Gramps nieuwsoverzicht"

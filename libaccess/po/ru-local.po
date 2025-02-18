@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,10 +31,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: libaccess/libaccess.gpr.py:34
-msgid "Provides a library for generic access to the database and gen.lib."
-msgstr "Предоставляет библиотеку для доступа к базе данных и gen.lib."
-
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
 msgstr "libaccess редактировать имя"
@@ -42,3 +38,7 @@ msgstr "libaccess редактировать имя"
 #: libaccess/libaccess.py:260
 msgid "libaccess edit person"
 msgstr "libaccess редактировать лицо"
+
+#: libaccess/libaccess.gpr.py:34
+msgid "Provides a library for generic access to the database and gen.lib."
+msgstr "Предоставляет библиотеку для доступа к базе данных и gen.lib."

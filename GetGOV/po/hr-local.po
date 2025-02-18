@@ -4,13 +4,14 @@
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -19,37 +20,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42 GetGOV/getgov.gpr.py:32
-#: GetGOV/getgov.gpr.py:44
-msgid "GetGOV"
-msgstr "Dohvati GOV-podatke"
+#: GetGOV/getgov.py:315
+msgid "Place ID to import from GOV (Historical Gazetteer):"
+msgstr ""
 
-#: GetGOV/getgov.gpr.py:31 GetGOV/getgov.gpr.py:33
-msgid "Gramplet to get places from the GOV database"
-msgstr "Gramplet za dohvaćanje mjesta iz GOV baze podataka"
-
-#: GetGOV/getgov.py:311 GetGOV/getgov.py:323
+#: GetGOV/getgov.py:323
 msgid "Get Place"
 msgstr "Dohvati mjesto"
 
-#: GetGOV/getgov.py:343 GetGOV/getgov.py:356
+#: GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "Dodaj GOV-ID mjesto %s"
 
-#: GetGOV/getgov.py:521 GetGOV/getgov.py:555
+#: GetGOV/getgov.py:388
+#, python-format
+msgid "GetGOV error: %s"
+msgstr ""
+
+#: GetGOV/getgov.py:421
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr ""
+
+#: GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
 msgstr "od%s do %s"
 
-#: GetGOV/getgov.py:523 GetGOV/getgov.py:557
+#: GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
 msgstr "nakon %s"
 
-#: GetGOV/getgov.py:525 GetGOV/getgov.py:559
+#: GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
 msgstr "prije %s"
+
+#: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
+msgid "GetGOV"
+msgstr "Dohvati GOV-podatke"
+
+#: GetGOV/getgov.gpr.py:33
+msgid "Gramplet to get places from the GOV database"
+msgstr "Gramplet za dohvaćanje mjesta iz GOV baze podataka"

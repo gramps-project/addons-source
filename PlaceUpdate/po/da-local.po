@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,14 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
-msgid "PlaceUpdate"
-msgstr "Stedopdatering"
-
-#: PlaceUpdate/PlaceUpdate.gpr.py:5
-msgid "Gramplet to manipulate multiple places"
-msgstr "Gramplet til at behandle flere steder"
 
 #: PlaceUpdate/PlaceUpdate.py:56
 msgid "Set properties for multiple places"
@@ -102,3 +94,11 @@ msgstr "Angiver egenskaber for sted"
 #: PlaceUpdate/PlaceUpdate.py:304
 msgid "Regex operation failed: {}"
 msgstr "Regex handlingen mislykkedes: {}"
+
+#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
+msgid "PlaceUpdate"
+msgstr "Stedopdatering"
+
+#: PlaceUpdate/PlaceUpdate.gpr.py:5
+msgid "Gramplet to manipulate multiple places"
+msgstr "Gramplet til at behandle flere steder"

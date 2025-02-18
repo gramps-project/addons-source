@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -23,14 +23,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: TypeCleanup/type_cleanup.gpr.py:30
-msgid "Type Cleanup"
-msgstr "Type opschonen"
-
-#: TypeCleanup/type_cleanup.gpr.py:31
-msgid "Clean up (remove) custom types"
-msgstr "Aangepaste soorten opschonen (verwijderen)"
 
 #: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
@@ -138,3 +130,11 @@ msgstr ""
 "Het zal het echter niet verwijderen uit de items waarnaar wordt verwezen in "
 "de database.\n"
 "Gebruik 'Hernoemen' als u het wilt wijzigen in items waarnaar wordt verwezen."
+
+#: TypeCleanup/type_cleanup.gpr.py:30
+msgid "Type Cleanup"
+msgstr "Type opschonen"
+
+#: TypeCleanup/type_cleanup.gpr.py:31
+msgid "Clean up (remove) custom types"
+msgstr "Aangepaste soorten opschonen (verwijderen)"

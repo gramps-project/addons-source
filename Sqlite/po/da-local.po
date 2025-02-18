@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -27,13 +27,6 @@ msgid_plural "Export Complete: %d seconds"
 msgstr[0] "Rapporten fuldført: %d sekund"
 msgstr[1] "Rapporten fuldført: %d sekunder"
 
-#: Sqlite/ImportSql.py:893
-#, python-format
-msgid "Import Complete: %d second"
-msgid_plural "Import Complete: %d seconds"
-msgstr[0] "Importen fuldført: %d sekund"
-msgstr[1] "Importen fuldført: %d sekund"
-
 #: Sqlite/Sqlite.gpr.py:4
 msgid "SQLite Import"
 msgstr "SQLite Import"
@@ -45,3 +38,10 @@ msgstr "SQLite er et almindeligt lokalt databaseformat"
 #: Sqlite/Sqlite.gpr.py:19
 msgid "SQLite Export"
 msgstr "SQLite Eksport"
+
+#: Sqlite/ImportSql.py:893
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Importen fuldført: %d sekund"
+msgstr[1] "Importen fuldført: %d sekund"

@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -31,21 +32,13 @@ msgstr "Cor de fundo feminina"
 msgid "Direct"
 msgstr "Directa"
 
-#: NetworkChart/NetworkChart.gpr.py:24
-msgid "Network Chart"
-msgstr "Gráfico de rede"
-
-#: NetworkChart/NetworkChart.gpr.py:35
-msgid "Generates a family network chart."
-msgstr "Gera um gráfico familiar de rede."
-
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
 msgstr "n."
 
 #: NetworkChart/NetworkChart.py:134
 msgid "death abbreviation|d."
-msgstr "ó."
+msgstr "f."
 
 #: NetworkChart/NetworkChart.py:135
 msgid "marriage abbreviation|m."
@@ -149,9 +142,9 @@ msgid ""
 "for dynamically generated URLs.\n"
 "URL = Prefix + GrampsID + Suffix."
 msgstr ""
-"Insira o prefixo,sufixo (use vírgula)\n"
+"Insira o prefixo, sufixo (use vírgula)\n"
 "para URLs gerados dinamicamente.\n"
-"URL = Prefixo + IDGramps + Sufixo."
+"URL = Prefixo + ID Gramps + Sufixo."
 
 #: NetworkChart/NetworkChart.py:957
 msgid "Enter Font Name"
@@ -213,11 +206,11 @@ msgstr "O nome do ficheiro svg de gráfico de rede gerado."
 
 #: NetworkChart/NetworkChart.py:1002
 msgid "Different node shapes/edges for gender."
-msgstr "Formas/Contornos diferentes para homens/mulheres."
+msgstr "Formas/Contornos de nó diferentes por sexo."
 
 #: NetworkChart/NetworkChart.py:1003
 msgid "Node differences for gender."
-msgstr "Diferenças do nó para homens/mulheres."
+msgstr "Diferenças do nó por sexo."
 
 #: NetworkChart/NetworkChart.py:1008
 msgid "Male Background"
@@ -246,10 +239,8 @@ msgstr "Cor RGB para o fundo da caixa das mulheres."
 
 # added:
 #: NetworkChart/NetworkChart.py:1026
-#, fuzzy
-#| msgid "Male Background Alpha"
 msgid "Female Background Alpha"
-msgstr "Transparência do fundo masculino"
+msgstr "Transparência do fundo feminino"
 
 #: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
@@ -262,10 +253,8 @@ msgid "Female Box Edge"
 msgstr "Contorno da caixa das mulheres"
 
 #: NetworkChart/NetworkChart.py:1034
-#, fuzzy
-#| msgid "RGB-color for Male box edge."
 msgid "RGB-color for Female box edge."
-msgstr "Cor RGB para o contorno da caixa dos homens."
+msgstr "Cor RGB para o contorno da caixa das mulheres."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
@@ -318,7 +307,7 @@ msgstr "Aparar o contorno da caixa"
 
 #: NetworkChart/NetworkChart.py:1062
 msgid "RGB-color for box edge that has been trimmed."
-msgstr "Cor RGB para o contorno que foi aparado."
+msgstr "Cor RGB para o contorno aparado."
 
 #: NetworkChart/NetworkChart.py:1066
 msgid "Remove color background on all nodes."
@@ -334,7 +323,7 @@ msgid ""
 "rounding birthday\n"
 "to year only"
 msgstr ""
-"Insira o ano para começar\n"
+"Insira o ano para começar,\n"
 "arredondando o nascimento\n"
 "só ao ano"
 
@@ -360,7 +349,7 @@ msgid ""
 "rounding marriage\n"
 "date to year only"
 msgstr ""
-"Insira o ano para começar\n"
+"Insira o ano para começar,\n"
 "arredondando o casamento\n"
 "só ao ano"
 
@@ -501,7 +490,7 @@ msgid ""
 "Any - Highlight any path(s) including direct or indirect."
 msgstr ""
 "Nenhum - não realçar caminhos.\n"
-"Directo - realçar os caminhos directos entre ascendentes/descedentes.\n"
+"Directo - realçar os caminhos directos entre ascendentes/descendentes.\n"
 "Qualquer - realçar quaisquer caminhos, incluindo directos e indirectos."
 
 #: NetworkChart/NetworkChart.py:1186
@@ -560,20 +549,28 @@ msgstr "Adicionar um fundo amarelo ao indivíduo central."
 
 #: NetworkChart/NetworkChart.py:1234
 msgid "Use database handle instead of GrampID id in URLs."
-msgstr "Usar o gestor da base de dados em vez da IDGramps nos URLs."
+msgstr "Usar o gestor da base de dados em vez da ID Gramps nos URLs."
 
 #: NetworkChart/NetworkChart.py:1236
 msgid ""
 "Use database handle instead of the gramps id for URLs.\n"
 "The handle should never change whereas gramps ids can."
 msgstr ""
-"Usar o gestor da base de dados em vez da IDGramps nos URLs.\n"
+"Usar o gestor da base de dados em vez da ID Gramps nos URLs.\n"
 "O gestor nunca muda, ao passo que a ID Gramps sim."
 
 #: NetworkChart/NetworkChart.py:1240
 msgid "Confirm overwrite file."
-msgstr "Confirme a sobrescrição do ficheiro."
+msgstr "Confirme a substituição do ficheiro."
 
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
-msgstr "Activar/Desactivar a confirmação de sobrescrição do ficheiro."
+msgstr "Activar/Desactivar a confirmação de substituição do ficheiro."
+
+#: NetworkChart/NetworkChart.gpr.py:24
+msgid "Network Chart"
+msgstr "Gráfico de rede"
+
+#: NetworkChart/NetworkChart.gpr.py:35
+msgid "Generates a family network chart."
+msgstr "Gera um gráfico familiar de rede."

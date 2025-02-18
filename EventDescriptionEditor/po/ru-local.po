@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -36,16 +36,11 @@ msgstr ""
 msgid "Find"
 msgstr "Найти"
 
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 msgid "Event Description Editor"
 msgstr "Редактор описания событий"
-
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
-msgid ""
-"A tool to find and replace a string in event description of multiple events."
-msgstr "Иструмент для поиска и замены строк в описании нескольких событий."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
@@ -85,3 +80,8 @@ msgstr "Использовать регулярное выражение"
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
 msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr "Иструмент для поиска и замены строк в описании нескольких событий."

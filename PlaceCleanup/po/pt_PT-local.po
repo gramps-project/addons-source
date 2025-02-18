@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -127,19 +128,19 @@ msgstr ""
 "O local escolhido está contido no local em que está a trabalhar!\n"
 "Por favor, cancele e escolha outro local."
 
-#: PlaceCleanup/placecleanup.py:945 PlaceCleanup/placecleanup.py:946
+#: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
 msgstr "Página web do GeoNames"
 
-#: PlaceCleanup/placecleanup.py:950 PlaceCleanup/placecleanup.py:951
+#: PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
 msgstr "Autor do GeoNames"
 
-#: PlaceCleanup/placecleanup.py:955 PlaceCleanup/placecleanup.py:956
+#: PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr "O GeoNames foi fundado pelo Marc Wick. Pode contactá-lo em "
 
-#: PlaceCleanup/placecleanup.py:958 PlaceCleanup/placecleanup.py:959
+#: PlaceCleanup/placecleanup.py:959
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
@@ -149,20 +150,20 @@ msgstr ""
 "Switzerland.\n"
 "Este trabalho está licenciado sob "
 
-#: PlaceCleanup/placecleanup.py:961 PlaceCleanup/placecleanup.py:962
+#: PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
 msgstr "Creative Commons Attribution 3.0 License"
 
-#: PlaceCleanup/placecleanup.py:973 PlaceCleanup/placecleanup.py:974
+#: PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "Adicionar fonte/repositório/nota (%s)"
 
-#: PlaceCleanup/placecleanup.py:1074 PlaceCleanup/placecleanup.py:1075
+#: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
 msgstr "Este local não é utilizado!"
 
-#: PlaceCleanup/placecleanup.py:1075 PlaceCleanup/placecleanup.py:1076
+#: PlaceCleanup/placecleanup.py:1076
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."

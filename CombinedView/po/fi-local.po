@@ -4,7 +4,7 @@
 #
 # Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
 # Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
-# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018.
+# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2025.
 # Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
 # Niemelä <niememat@gmail.com>, 2017, 2018.
 # Bo Rosén <bo.rosen@home.se>, 2001.
@@ -21,17 +21,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2019-12-10 13:09+0200\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
-"Language-Team: niememat@gmail.com\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #: CombinedView/basepage.py:493
 #, python-format
@@ -42,40 +43,6 @@ msgstr "%(abbrev)s %(date)s - %(place)s"
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
-
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
-msgid "Combined"
-msgstr "Yhdistetty"
-
-#: CombinedView/combinedview.gpr.py:25
-msgid "A view showing relationships and events for a person"
-msgstr "Yhdistetty näkymä henkilön suhteista ja tapahtumista"
-
-#: CombinedView/combinedview.py:528
-msgid "Edit the active event"
-msgstr "Muokkaa aktiivista tapahtumaa"
-
-#: CombinedView/combinedview.py:630
-msgid "Show Tags"
-msgstr "Näytä tagit"
-
-#: CombinedView/combinedview.py:656
-msgid "Vertical Details"
-msgstr "Alekkaiset tiedot"
-
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
-msgid "Order"
-msgstr "Järjestys"
-
-#: CombinedView/navigationview.py:346
-msgid ""
-"You need to set a 'default person' to go to. Select the People View, select "
-"the person you want as 'Home Person', then confirm your choice via the menu "
-"Edit -> Set Home Person."
-msgstr ""
-"Sinun on määritettävä 'oletushenkilö' jatkaaksesi. Avaa Henkilöt näkymä, "
-"valitse haluamasi henkilö kotihenkilöksi ja vahvista valintasi valikossa "
-"Muokkaa -> Aseta kotihenkilö."
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -103,3 +70,37 @@ msgstr "Napsauta käydäksesi tässä linkkissä"
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "
+
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
+msgid "Combined"
+msgstr "Yhdistetty"
+
+#: CombinedView/combinedview.gpr.py:25
+msgid "A view showing relationships and events for a person"
+msgstr "Yhdistetty näkymä henkilön suhteista ja tapahtumista"
+
+#: CombinedView/navigationview.py:346
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Sinun on määritettävä 'oletushenkilö' jatkaaksesi. Avaa Henkilöt näkymä, "
+"valitse haluamasi henkilö kotihenkilöksi ja vahvista valintasi valikossa "
+"Muokkaa -> Aseta kotihenkilö."
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr "Järjestys"
+
+#: CombinedView/combinedview.py:528
+msgid "Edit the active event"
+msgstr "Muokkaa aktiivista tapahtumaa"
+
+#: CombinedView/combinedview.py:630
+msgid "Show Tags"
+msgstr "Näytä tagit"
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr "Alekkaiset tiedot"

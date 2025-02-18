@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -75,30 +75,10 @@ msgstr "Zoom naar origineel"
 msgid "Zoom to best fit"
 msgstr "Zoom naar best passend"
 
-#: GraphView/avatars.py:60
-msgid "Dark (default)"
-msgstr "Donker (standaard)"
-
-#: GraphView/avatars.py:61
-msgid "Light"
-msgstr "Licht"
-
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr "Cartoon"
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Grafiekweergave"
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr "Dynamische en interactieve grafiek van relaties"
 
 #: GraphView/graphview.py:754
 #, fuzzy
@@ -481,6 +461,26 @@ msgstr "Als u het gezin verwijdert, wordt deze uit de database verwijderd."
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Verwijder gezin [%s]"
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr "Dynamische en interactieve grafiek van relaties"
+
+#: GraphView/avatars.py:60
+msgid "Dark (default)"
+msgstr "Donker (standaard)"
+
+#: GraphView/avatars.py:61
+msgid "Light"
+msgstr "Licht"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr "Cartoon"
+
+#: GraphView/avatars.py:63
+msgid "Modern"
+msgstr ""
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"

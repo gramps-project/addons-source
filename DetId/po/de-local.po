@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,15 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
-
-#: DetId/DetId.gpr.py:31
-msgid "Deterministic ID"
-msgstr "Deterministische ID"
-
-#: DetId/DetId.gpr.py:32
-msgid "Set/reset Gramps to use a Deterministic ID"
-msgstr "Setzen/Zurücksetzen Gramps, um eine Deterministische ID zu verwenden"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: DetId/DetId.py:74
 msgid "Deterministic ID Tool"
@@ -51,3 +43,11 @@ msgid ""
 msgstr ""
 "Die ID und die Handles beginnen jetzt bei 0x00000000 und erhöhen sich um "
 "0x100000001"
+
+#: DetId/DetId.gpr.py:31
+msgid "Deterministic ID"
+msgstr "Deterministische ID"
+
+#: DetId/DetId.gpr.py:32
+msgid "Set/reset Gramps to use a Deterministic ID"
+msgstr "Setzen/Zurücksetzen Gramps, um eine Deterministische ID zu verwenden"

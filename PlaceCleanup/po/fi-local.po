@@ -4,7 +4,7 @@
 #
 # Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
 # Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
-# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018.
+# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2025.
 # Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
 # Niemelä <niememat@gmail.com>, 2017, 2018.
 # Bo Rosén <bo.rosen@home.se>, 2001.
@@ -21,17 +21,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2019-12-10 13:09+0200\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
-"Language-Team: niememat@gmail.com\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
@@ -142,19 +143,19 @@ msgstr ""
 "Paikka, jonka valitsit ympäröi työstämääsi paikkaa!\n"
 "Peruuta ja valitse toinen paikka."
 
-#: PlaceCleanup/placecleanup.py:945 PlaceCleanup/placecleanup.py:946
+#: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
 msgstr "GeoNames nettisivu"
 
-#: PlaceCleanup/placecleanup.py:950 PlaceCleanup/placecleanup.py:951
+#: PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
 msgstr "GeoNames tekijä"
 
-#: PlaceCleanup/placecleanup.py:955 PlaceCleanup/placecleanup.py:956
+#: PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr "GeoNames on perustanut Marc Wick. Voit tavoittaa hänet osoitteesta "
 
-#: PlaceCleanup/placecleanup.py:958 PlaceCleanup/placecleanup.py:959
+#: PlaceCleanup/placecleanup.py:959
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
@@ -164,20 +165,20 @@ msgstr ""
 "Männedorf, Sveitsi.\n"
 "Tämän teoksen lisenssi on "
 
-#: PlaceCleanup/placecleanup.py:961 PlaceCleanup/placecleanup.py:962
+#: PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
 msgstr "Creative Commons Attribution 3.0 License"
 
-#: PlaceCleanup/placecleanup.py:973 PlaceCleanup/placecleanup.py:974
+#: PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "Lisää lähde/selvitys/muistio  (%s)"
 
-#: PlaceCleanup/placecleanup.py:1074 PlaceCleanup/placecleanup.py:1075
+#: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
 msgstr "Paikka ei ole käytössä!"
 
-#: PlaceCleanup/placecleanup.py:1075 PlaceCleanup/placecleanup.py:1076
+#: PlaceCleanup/placecleanup.py:1076
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."

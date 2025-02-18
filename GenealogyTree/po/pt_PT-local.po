@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -17,61 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
-#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
-msgid "Include images"
-msgstr "Incluir imagens"
-
-#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
-#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
-msgid "Include images of people in the nodes."
-msgstr "Incluir imagens dos indivíduos nos nós."
-
-#: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
-msgid "First spouse left"
-msgstr "direita->esquerda"
-
-#: GenealogyTree/gt_descendant.py:192
-msgid ""
-"Always put first of multiple spouses on the left. This can help reduce line-"
-"crossings with multiple marriages."
-msgstr ""
-
-#: GenealogyTree/gt_grandparent.py:119
-#, python-format
-msgid "Person %s does not have both a paternal and a maternal grandparent"
-msgstr "O indivíduo %s não tem um avô paterno nem um materno"
-
-#: GenealogyTree/gt_grandparent.py:227
-msgid "Grandparent family spacing"
-msgstr "Espaço dos avós"
-
-#: GenealogyTree/gt_grandparent.py:228
-msgid "Extra spacing of grandparent families (mm)"
-msgstr "Espaço extra para as famílias dos avós (mm)"
-
-#: GenealogyTree/gt_sandclock.py:235
-msgid "The center family for the report"
-msgstr "Família central para o relatório"
-
-#: GenealogyTree/gt_sandclock.py:238
-msgid "Generations up"
-msgstr "Gerações acima"
-
-#: GenealogyTree/gt_sandclock.py:242
-msgid "Generations down"
-msgstr "Gerações abaixo"
-
-#: GenealogyTree/gt_sandclock.py:246
-msgid "Include siblings"
-msgstr "Incluir irmãos"
-
-#: GenealogyTree/gt_sandclock.py:247
-msgid "Include siblings of ancestors."
-msgstr "Incluir irmãos de ascendentes."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -104,3 +50,56 @@ msgstr "Ampulheta familiar"
 #: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Ampulheta familiar usando LaTeX genealogytree"
+
+#: GenealogyTree/gt_sandclock.py:235
+msgid "The center family for the report"
+msgstr "Família central para o relatório"
+
+#: GenealogyTree/gt_sandclock.py:238
+msgid "Generations up"
+msgstr "Gerações acima"
+
+#: GenealogyTree/gt_sandclock.py:242
+msgid "Generations down"
+msgstr "Gerações abaixo"
+
+#: GenealogyTree/gt_sandclock.py:246
+msgid "Include siblings"
+msgstr "Incluir irmãos"
+
+#: GenealogyTree/gt_sandclock.py:247
+msgid "Include siblings of ancestors."
+msgstr "Incluir irmãos de ascendentes."
+
+#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
+#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
+msgid "Include images"
+msgstr "Incluir imagens"
+
+#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
+#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
+msgid "Include images of people in the nodes."
+msgstr "Incluir imagens dos indivíduos nos nós."
+
+#: GenealogyTree/gt_grandparent.py:119
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "O indivíduo %s não tem um avô paterno nem um materno"
+
+#: GenealogyTree/gt_grandparent.py:227
+msgid "Grandparent family spacing"
+msgstr "Espaço dos avós"
+
+#: GenealogyTree/gt_grandparent.py:228
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Espaço extra para as famílias dos avós (mm)"
+
+#: GenealogyTree/gt_descendant.py:191
+msgid "First spouse left"
+msgstr "1ª esposa esquerda"
+
+#: GenealogyTree/gt_descendant.py:192
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""

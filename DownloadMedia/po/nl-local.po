@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -23,14 +23,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: DownloadMedia/DownloadMedia.gpr.py:36
-msgid "Download media files from the internet"
-msgstr "Download mediabestanden van internet"
-
-#: DownloadMedia/DownloadMedia.gpr.py:37
-msgid "This tool downloads media files from the internet"
-msgstr "Deze tool downloadt mediabestanden van internet"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
@@ -61,3 +53,11 @@ msgstr "Bestanden downloaden"
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
 msgstr "Fouten bij het downloaden van media gedetecteerd"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "Download media files from the internet"
+msgstr "Download mediabestanden van internet"
+
+#: DownloadMedia/DownloadMedia.gpr.py:37
+msgid "This tool downloads media files from the internet"
+msgstr "Deze tool downloadt mediabestanden van internet"

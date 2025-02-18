@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2009-10-05 21:15+0100\n"
 "Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
 "Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
@@ -30,17 +30,6 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 msgid "in"
 msgstr "w"
-
-#: DenominoViso/DenominoViso.gpr.py:9
-msgid "DenominoViso"
-msgstr "DenominoViso"
-
-#: DenominoViso/DenominoViso.gpr.py:19
-msgid ""
-"Generates a web (HTML) page with a graphical representation of ancestors/"
-"descendants (SVG) where details about individuals become visible upon mouse-"
-"events."
-msgstr ""
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -568,3 +557,14 @@ msgstr "Długość kreski"
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
 msgstr "Długość odstępu międzykreskowego"
+
+#: DenominoViso/DenominoViso.gpr.py:9
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+#: DenominoViso/DenominoViso.gpr.py:19
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""

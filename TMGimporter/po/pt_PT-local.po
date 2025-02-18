@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -17,20 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.1-dev\n"
-
-#: TMGimporter/importtmg.gpr.py:49
-msgid "TMG Project Backup"
-msgstr "Salvaguarda de projecto TMG"
-
-#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
-#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
-msgid "Import TMG project files"
-msgstr "Importar ficheiros de projecto TMG"
-
-#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
-#: TMGimporter/importtmg.gpr.py:95
-msgid "TMG Unsupported"
-msgstr "TMG não suportado"
 
 #: TMGimporter/importtmg.py:89
 #, python-format
@@ -92,6 +79,20 @@ msgstr ""
 "projecto TMG foi criado pelo TMG versão 5.x ou posterior. O seu ficheiro: "
 "*.VER - ficheiro de controlo de versão para TMG 1.2 e anteriores. Por favor, "
 "consulte: %(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmg.gpr.py:49
+msgid "TMG Project Backup"
+msgstr "Salvaguarda de projecto TMG"
+
+#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
+#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
+msgid "Import TMG project files"
+msgstr "Importar ficheiros de projecto TMG"
+
+#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
+#: TMGimporter/importtmg.gpr.py:95
+msgid "TMG Unsupported"
+msgstr "TMG não suportado"
 
 #: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"

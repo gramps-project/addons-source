@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -28,13 +28,9 @@ msgstr ""
 msgid "Primary Name"
 msgstr "Nome principal"
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+#: AllNamesQuickview/AllNames.py:51 AllNamesQuickview/AllNames.gpr.py:4
 msgid "All Names of All People"
 msgstr "Todos os nomes de todas as pessoas"
-
-#: AllNamesQuickview/AllNames.gpr.py:5
-msgid "Display all names of all people"
-msgstr "Exibe todos os nomes de todas as pessoas"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -44,3 +40,7 @@ msgstr "Tipo de nome"
 #, python-format
 msgid "Total names %d"
 msgstr "Total de nomes %d"
+
+#: AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr "Exibe todos os nomes de todas as pessoas"

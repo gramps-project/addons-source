@@ -2,13 +2,14 @@
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
-"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -23,14 +24,6 @@ msgstr ""
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
 msgid "INFO"
 msgstr "INFORMAÇÃO"
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr "Relatório multimédia"
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr "Gera um relatório incluindo imagens, dados das imagens e notas."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
@@ -113,3 +106,11 @@ msgstr "Altura da imagem"
 #, python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Altura máxima da imagem em % da altura da página."
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr "Relatório multimédia"
+
+#: MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr "Gera um relatório incluindo imagens, dados das imagens e notas."

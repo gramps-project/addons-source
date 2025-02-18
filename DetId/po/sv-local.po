@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,15 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
-
-#: DetId/DetId.gpr.py:31
-msgid "Deterministic ID"
-msgstr "Deterministiskt ID"
-
-#: DetId/DetId.gpr.py:32
-msgid "Set/reset Gramps to use a Deterministic ID"
-msgstr "Ange/återställ Gramps att använda ett deterministiskt ID"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: DetId/DetId.py:74
 msgid "Deterministic ID Tool"
@@ -43,3 +35,11 @@ msgstr "Verktyg för deterministiskt ID"
 msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
 msgstr "ID och ingångar börjar nu på 0x00000000, och ökar med 0x100000001"
+
+#: DetId/DetId.gpr.py:31
+msgid "Deterministic ID"
+msgstr "Deterministiskt ID"
+
+#: DetId/DetId.gpr.py:32
+msgid "Set/reset Gramps to use a Deterministic ID"
+msgstr "Ange/återställ Gramps att använda ett deterministiskt ID"
