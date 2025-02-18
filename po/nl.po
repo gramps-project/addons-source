@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -2448,8 +2448,6 @@ msgstr ""
 "Gebruik het menu \"Beeld - Configureren\" om de Gramplet opties te wijzigen."
 
 #: Betawhatsnext/Betawhatsnext.py:86
-#, fuzzy
-#| msgid "Seach Quota "
 msgid "Search Quota "
 msgstr "Zoek-quota "
 
@@ -3764,7 +3762,7 @@ msgstr "Inhoud van de pagina"
 
 #: GetGOV/getgov.py:315
 msgid "Place ID to import from GOV (Historical Gazetteer):"
-msgstr ""
+msgstr "Plaats-ID om te importeren uit GOV (Historical Gazetteer):"
 
 #: GetGOV/getgov.py:323
 msgid "Get Place"
@@ -3778,12 +3776,12 @@ msgstr "GOV-id plaats %s toevoegen"
 #: GetGOV/getgov.py:388
 #, python-format
 msgid "GetGOV error: %s"
-msgstr ""
+msgstr "GetGOV-fout: %s"
 
 #: GetGOV/getgov.py:421
 #, python-format
 msgid "GOV error on id %s with code: "
-msgstr ""
+msgstr "GOV-fout op id %s met code: "
 
 #: GetGOV/getgov.py:555
 #, python-format
@@ -18953,36 +18951,36 @@ msgid ""
 "If there is no death event for a person, they will\n"
 "be assumed dead at this age"
 msgstr ""
+"Als er geen overlijden is voor een persoon, wordt deze geacht\n"
+"te zijn overleden op deze leeftijd"
 
 #: GeoTimeLines/GeoTimeLines.py:1875
-#, fuzzy
-#| msgid "Number of students"
 msgid "Number of steps"
-msgstr "Aantal studenten"
+msgstr "Aantal stappen"
 
 #: GeoTimeLines/GeoTimeLines.py:1883
-#, fuzzy
-#| msgid "Type de Liste"
 msgid "Type of steps"
-msgstr "Lijsttype"
+msgstr "Type van stappen"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
-msgstr ""
+msgstr "Stappen per milliseconde"
 
 #: GeoTimeLines/GeoTimeLines.py:1915
 msgid "Initial map view on Gramps startup"
-msgstr ""
+msgstr "Eerste kaartweergave bij het opstarten van Gramps"
 
 #: GeoTimeLines/GeoTimeLines.py:1927
 msgid ""
 "Initial map view after startup and\n"
 "after changing the active person"
 msgstr ""
+"Eerste kaartweergave bij het opstarten en\n"
+"na het wijzigen van de actieve persoon"
 
 #: GeoTimeLines/GeoTimeLines.py:1936
 msgid "Show map travel lines on startup"
-msgstr ""
+msgstr "Reislijnen op kaart weergeven bij opstarten"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
