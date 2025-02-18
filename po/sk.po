@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"PO-Revision-Date: 2025-02-18 15:33+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -23,44 +23,43 @@ msgstr ""
 "X-Generator: Weblate 5.10.1-dev\n"
 
 #: MediaMerge/mediamerge.py:104
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media Merge"
-msgstr "Typ média"
+msgstr "Zlúčenie médií"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{number_of} médium zlúčené"
+msgstr[1] "{number_of} médiá zlúčené"
+msgstr[2] "{number_of} médií zlúčených"
 
 #: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
-msgstr ""
+msgstr "Žiadne položky médií neboli zlúčené."
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
-msgstr ""
+msgstr "Zlúčiť médiá"
 
 #: MediaMerge/mediamerge.gpr.py:33
 msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
 msgstr ""
+"Prehľadáva celú databázu a hľadá médiá, ktoré majú rovnakú cestu a zlúči ich."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
-msgstr "Zvoliť filter pre zúženie výberu osôb"
+msgstr "Vyberte filter na obmedzenie osôb"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
-msgstr "Vypočítané odhady dátumu"
+msgstr "Vypočítané odhady dátumov"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
-msgstr "Zdroj ktorý sa má odobrať alebo pridať"
+msgstr "Zdroj na odstránenie a/alebo pridanie"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
@@ -111,7 +110,7 @@ msgstr "Najvyšší vek"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
-msgstr "Najvyšší vek dožitia"
+msgstr "Najvyšší vek, ktorého sa môže človek dožiť"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
@@ -135,7 +134,7 @@ msgstr "Extrémy (po a pred)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr "Dátumy udalostí sú buď okolo, alebo po/pred"
+msgstr "Dátumy udalostí sú buď približné, alebo po/pred"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -189,7 +188,7 @@ msgstr "Vybrať všetko"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
-msgstr "Vybrať žiadne"
+msgstr "Zrušiť výber"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
@@ -246,7 +245,7 @@ msgstr "Odstraňovanie starých odhadov... "
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
-msgstr "Odstraňujem '%s'..."
+msgstr "Odstraňuje sa '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
@@ -257,7 +256,7 @@ msgid ""
 "Selecting... \n"
 "\n"
 msgstr ""
-"Výber... \n"
+"Vyberá sa... \n"
 "\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
@@ -278,7 +277,7 @@ msgstr "Žiadne udalosti na pridanie."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
-msgstr "Výber... "
+msgstr "Vyberá sa... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
@@ -297,7 +296,7 @@ msgstr "Pridaná udalosť narodenia na základe %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
-msgstr "Odhadnuté dátumy narodenia"
+msgstr "Odhadovaný dátum narodenia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
@@ -311,11 +310,11 @@ msgstr "Pridaná udalosť úmrtia na základe %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
-msgstr "Odhadnuté dátumy úmrtia"
+msgstr "Odhadovaný dátum úmrtia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
-msgstr " Hotovo! Odovzdávanie..."
+msgstr " Hotovo! Ukladá sa..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
@@ -324,71 +323,69 @@ msgstr "Počet pridaných udalostí: %d."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
-msgstr "odhadovaný dátum"
+msgstr "Odhadovaný dátum"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Vypočíta približné dátumy narodenia a úmrtia."
 
 #: MediaBrowser/MediaBrowser.gpr.py:31
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media Browser"
-msgstr "Typ média"
+msgstr "Prehliadač médií"
 
 #: MediaBrowser/MediaBrowser.gpr.py:39
 msgid "Browser"
-msgstr ""
+msgstr "Prehliadač"
 
 #: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
-msgstr ""
+msgstr "lxml"
 
 #: lxml/lxmlGramplet.gpr.py:11
 msgid "Gramplet for testing lxml and XSLT"
-msgstr ""
+msgstr "Gramplet na testovanie lxml a XSLT"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
-msgstr ""
+msgstr "etree"
 
 #: lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
-msgstr ""
+msgstr "Gramplet na testovanie etree s Gramps XML"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
-msgstr ""
+msgstr "Neplatná časová známka"
 
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
-msgstr ""
+msgstr "Nebol analyzovaný žiadny súbor..."
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Number of editions back"
-msgstr "Počet vydaní v minulosti"
+msgstr "Počet predchádzajúcich vydaní"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 msgid "Space character on filename"
-msgstr "Znak medzery v názve súboru"
+msgstr "Medzera v názve súboru"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr ""
+msgstr "Opravte medzeru v názve \"%s\""
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
-msgstr ""
+msgstr "Prepáčte, váš OS zatiaľ nie je podporovaný!"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr ""
+msgstr "Je to komprimovaný .gramps?"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr ""
+msgstr "Nemožno dekomprimovať \"%s\""
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -399,16 +396,20 @@ msgid ""
 " to:\n"
 " \"%(file2)s\".\n"
 msgstr ""
+"Zo:\n"
+" \"%(file1)s\"\n"
+" do:\n"
+" \"%(file2)s\".\n"
 
 #: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
 msgid "Cannot copy \"%s\""
-msgstr ""
+msgstr "Nemožno kopírovať \"%s\""
 
 #: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr ""
+msgstr "XML: Posledné %s vydania od %s, boli v/na: :\n"
 
 #: lxml/etreeGramplet.py:471
 #, python-format
@@ -417,6 +418,9 @@ msgid ""
 "XML: Number of records and relations : \t%s\n"
 "\n"
 msgstr ""
+"\n"
+"XML: Počet záznamov a vzťahov : \t%s\n"
+"\n"
 
 #: lxml/etreeGramplet.py:474
 #, python-format
@@ -424,14 +428,17 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Počet značiek : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
-msgstr "Počet stránok"
+msgstr ""
+"Počet značiek : \n"
+"\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
 #, python-format
@@ -439,6 +446,8 @@ msgid ""
 "Number of  events : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Počet  udalostí : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:481
 #, python-format
@@ -446,6 +455,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgstr ""
+"Počet osôb : \n"
+"\t\t\t%s\t|\t(%s) a (%s)* priezvisk\n"
 
 #: lxml/etreeGramplet.py:483
 #, python-format
@@ -453,6 +464,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Počet osôb : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:484
 #, python-format
@@ -460,6 +473,8 @@ msgid ""
 "Number of families : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Počet rodín : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:485
 #, python-format
@@ -467,6 +482,8 @@ msgid ""
 "Number of sources : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Počet zdrojov : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:487
 #, python-format
@@ -474,6 +491,8 @@ msgid ""
 "Number of citations : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Počet citácií : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:490
 #, python-format
@@ -481,6 +500,8 @@ msgid ""
 "Number of places : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Počet miest : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:491
 #, python-format
@@ -488,6 +509,8 @@ msgid ""
 "Number of media objects : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Počet mediálnych objektov : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:492
 #, python-format
@@ -495,6 +518,8 @@ msgid ""
 "Number of repositories : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Počet archívov : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:493
 #, python-format
@@ -502,6 +527,8 @@ msgid ""
 "Number of notes : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Počet poznámok : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:498
 #, python-format
@@ -509,6 +536,8 @@ msgid ""
 "\n"
 "XML: Number of additional records and relations: \t%s\n"
 msgstr ""
+"\n"
+"XML: Počet dodatočných záznamov a vzťahov: \t%s\n"
 
 #: lxml/etreeGramplet.py:502
 #, python-format
@@ -516,14 +545,16 @@ msgid ""
 "* loaded Family Tree base:\n"
 " \"%s\"\n"
 msgstr ""
+"* načítaná databáza Rodinného stromu:\n"
+" \"%s\"\n"
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
-msgstr ""
+msgstr "Kde je gzip?"
 
 #: lxml/lxmlGramplet.py:67
 msgid "\"gzip\" is missing"
-msgstr "chýba \"gzip\""
+msgstr "\"gzip\" chýba"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Missing python3 lxml"
@@ -535,7 +566,7 @@ msgstr "Skúste nainštalovať balík \"python3 lxml\"."
 
 #: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
-msgstr "Žiadny súbor sa nenačítal..."
+msgstr "Žiadny súbor nebol načítaný..."
 
 #: lxml/lxmlGramplet.py:298
 msgid "XSD validation (lxml)"
@@ -544,17 +575,17 @@ msgstr "Overovanie XSD (lxml)"
 #: lxml/lxmlGramplet.py:298
 #, python-format
 msgid "Cannot validate \"%(file)s\" !"
-msgstr "Nedá sa overiť \"%(file)s\" !"
+msgstr "Nemožno overiť \"%(file)s\" !"
 
 #: lxml/lxmlGramplet.py:306
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
-msgstr "xmllint: preskočiť overenie DTD pre \"%(file)s\""
+msgstr "xmllint: preskočiť overovanie DTD pre \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:318
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
-msgstr "xmllint: preskočiť overenie RelaxNG pre \"%(file)s\""
+msgstr "xmllint: preskočiť overovanie RelaxNG pre \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:329
 msgid "Parsing issue"
@@ -563,7 +594,7 @@ msgstr "Problém s analýzou"
 #: lxml/lxmlGramplet.py:329
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
-msgstr "Nedá sa analyzovať obsah \"%(file)s\""
+msgstr "Nemožno analyzovať obsah \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:333
 msgid "Gramps version"
@@ -575,6 +606,8 @@ msgid ""
 "Wrong namespace\n"
 "Need: %s"
 msgstr ""
+"Nesprávny priestor mien\n"
+"Potrebné: %s"
 
 #: lxml/lxmlGramplet.py:337
 msgid "RelaxNG validation"
@@ -583,28 +616,24 @@ msgstr "Overovanie RelaxNG"
 #: lxml/lxmlGramplet.py:337
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
-msgstr "Nedá sa overiť \"%(file)s\" prostredníctvom schémy RelaxNG"
+msgstr "Nemožno overiť \"%(file)s\" prostredníctvom schémy RelaxNG"
 
 #: lxml/lxmlGramplet.py:341
-#, fuzzy
-#| msgid "File ready"
 msgid "File issue"
-msgstr "Súbor pripravený"
+msgstr "Problém so súborom"
 
 #: lxml/lxmlGramplet.py:341
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
-msgstr "Nedá sa analyzovať \"%(file)s\" cez etree"
+msgstr "Nemožno analyzovať \"%(file)s\" pomocou etree"
 
 #: lxml/lxmlGramplet.py:359
-#, fuzzy
-#| msgid "Preparing file ..."
 msgid "Parsing file..."
-msgstr "Súbor sa pripravuje ..."
+msgstr "Analyzovanie súboru..."
 
 #: lxml/lxmlGramplet.py:456
 msgid "Missing header"
-msgstr "Chýbajúce záhlavie"
+msgstr "Chýba záhlavie"
 
 #: lxml/lxmlGramplet.py:456
 msgid ""
@@ -624,10 +653,8 @@ msgid "0"
 msgstr "0"
 
 #: lxml/lxmlGramplet.py:495
-#, fuzzy
-#| msgid "File ready"
 msgid "File parsed with"
-msgstr "Súbor pripravený"
+msgstr "Súbor analyzovaný s"
 
 #: lxml/lxmlGramplet.py:498
 msgid "File was generated on "
@@ -643,86 +670,78 @@ msgstr "Obdobie: "
 
 #: lxml/lxmlGramplet.py:502
 msgid " entries for surname(s); no frequency yet"
-msgstr ""
+msgstr " záznamy pre priezvisko(a); zatiaľ žiadna frekvencia"
 
 #: lxml/lxmlGramplet.py:503
-#, fuzzy
-#| msgid "Used for place"
 msgid " entries for place(s)"
-msgstr "Použité pre miesto"
+msgstr " záznamy pre miesto(a)"
 
 #: lxml/lxmlGramplet.py:504
-#, fuzzy
-#| msgid "Export notes"
 msgid " note(s)"
-msgstr "Exportovať poznámky"
+msgstr " poznámka(y)"
 
 #: lxml/lxmlGramplet.py:505
-#, fuzzy
-#| msgid "Source(s)"
 msgid " source(s)"
-msgstr "Zdroj(e)"
+msgstr " zdroj(e)"
 
 #: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
 msgid "Gallery.html"
-msgstr ""
+msgstr "Gallery.html"
 
 #: lxml/lxmlGramplet.py:522
 #, python-format
 msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr ""
+msgstr "2. Vygeneroval register médií v \"%(file)s\".\n"
 
 #: lxml/lxmlGramplet.py:525
 #, python-format
 msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr ""
+msgstr "3. Zapísal záznamy do \"%(file)s\".\n"
 
 #: lxml/lxmlGramplet.py:544
 msgid "Matches XSD schema."
-msgstr ""
+msgstr "Zodpovedá XSD schéme."
 
 #: lxml/lxmlGramplet.py:565
 msgid "xmllint: skip DTD validation"
-msgstr ""
+msgstr "xmllint: preskočiť overovanie DTD"
 
 #: lxml/lxmlGramplet.py:589
 msgid "I am looking at ..."
-msgstr ""
+msgstr "Pozerám sa na ..."
 
 #: lxml/lxmlGramplet.py:590
 msgid "Content generated by Gramps"
-msgstr ""
+msgstr "Obsah generovaný pomocou Gramps"
 
 #: lxml/lxmlGramplet.py:593
-#, fuzzy
-#| msgid "Used for source"
 msgid "List of sources"
-msgstr "Použité pre zdroj"
+msgstr "Zoznam zdrojov"
 
 #: lxml/lxmlGramplet.py:611
 msgid "Australia"
-msgstr ""
+msgstr "Austrália"
 
 #: lxml/lxmlGramplet.py:612
 msgid "Brazil"
-msgstr ""
+msgstr "Brazília"
 
 #: lxml/lxmlGramplet.py:623
 msgid "India"
-msgstr ""
+msgstr "India"
 
 #: lxml/lxmlGramplet.py:625
 msgid "Norway"
-msgstr ""
+msgstr "Nórsko"
 
 #: lxml/lxmlGramplet.py:626
 msgid "Portugal"
-msgstr ""
+msgstr "Portugalsko"
 
 #: lxml/lxmlGramplet.py:695
 #, python-format
 msgid "1. Has generated \"%s\".\n"
-msgstr ""
+msgstr "1. Vygeneroval \"%s\"\n"
 
 #: lxml/lxmlGramplet.py:696
 #, python-format
@@ -731,28 +750,33 @@ msgid ""
 " \"%s\"\n"
 " into your prefered web navigator ..."
 msgstr ""
+"Skúste otvoriť \n"
+" \"%s\" \n"
+" do svojho preferovaného webového prehliadača ..."
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
-msgstr ""
+msgstr "Údržba miest"
 
 #: PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
 msgstr ""
+"Gramplet Údržba miest pomáha pri zlúčení miest a tiež pri dopĺňaní miest z "
+"webovej databázy GeoNames"
 
 #: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1088
-#, fuzzy
-#| msgid "DNA Matches"
 msgid ""
 "No\n"
 "Matches"
-msgstr "DNA zhody"
+msgstr ""
+"Žiadne\n"
+"Zhody"
 
 #: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
 msgid "Find"
-msgstr ""
+msgstr "Nájsť"
 
 #: PlaceCleanup/placecleanup.py:293
 #, python-format
@@ -761,10 +785,13 @@ msgid ""
 "Local\n"
 "Matches"
 msgstr ""
+"%s\n"
+"Miestne \n"
+"Zhody"
 
 #: PlaceCleanup/placecleanup.py:295
 msgid "Find GeoNames"
-msgstr ""
+msgstr "Nájsť GeoNames"
 
 #: PlaceCleanup/placecleanup.py:303
 #, fuzzy
@@ -1027,6 +1054,9 @@ msgid ""
 "You can edit this to help find other places, particularly to reduce the "
 "number of results."
 msgstr ""
+"Aktuálny názov miesta.\n"
+"Môžete ho upraviť, aby ste pomohli nájsť ďalšie miesta, najmä aby ste "
+"znížili počet výsledkov."
 
 #: PlaceCleanup/placecleanup.glade:899
 msgid "Search your local places and GeoNames for a match."
@@ -2471,26 +2501,24 @@ msgid "Pause search expansion"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:105
-#, fuzzy
-#| msgid "Center person"
 msgid "Completed Person"
-msgstr "Ústredná osoba"
+msgstr "Hotová osoba"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
-msgstr ""
+msgstr " Hotové potomstvo Rodiny"
 
 #: Betawhatsnext/Betawhatsnext.py:118
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Ignore Person or Family"
-msgstr "Poznámka pre rodinu"
+msgstr "Ignorovať osobu alebo rodinu"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
 "\n"
 " ⛔ The current Tree database contains no people.\n"
 msgstr ""
+"\n"
+" ⛔ Aktuálna databáza stromu neobsahuje žiadne osoby.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:226
 msgid ""
@@ -2505,12 +2533,25 @@ msgid ""
 "  • An external file may be used to populate the tree via \"Import...\" in "
 "the \"Family Trees\" menu."
 msgstr ""
+"\n"
+" 👣 Ďalšie kroky:\n"
+" Pridajte rodinu a osobu v tejto rodine:\n"
+" • Rodinu je možné pridať cez menu \"Pridať\".\n"
+" • Osobu je možné pridať stlačením tlačidla \"+\" (plus) na paneloch "
+"manželského partnera (\"Otec/partner1\" alebo \"Matka/partner2\") alebo na "
+"karte \"Deti\".\n"
+"\n"
+"Alebo importujte ľudí z externého súboru:\n"
+" • Externý súbor je možné použiť na doplnenie stromu cez \"Importovať...\" v "
+"menu \"Rodinné stromy\"."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
 "\n"
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
+"\n"
+" ⛔ Žiadna osoba nebola vybraná ako ústredná \"Domovská osoba\".\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -7751,7 +7792,8 @@ msgid ""
 "Place Completion by parsing, file lookup and batch setting of place "
 "attributes"
 msgstr ""
-"Doplnenie miesta, hľadanie súborov a dávkové nastavenie atribútov miesta"
+"Doplnenie miesta triedením, hľadanie súborov a dávkové nastavenie atribútov "
+"miesta"
 
 #: PlaceCompletion/PlaceCompletion.py:258
 msgid "Error in PlaceCompletion.py"
