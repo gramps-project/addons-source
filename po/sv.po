@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -2395,10 +2395,8 @@ msgid ""
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:86
-#, fuzzy
-#| msgid "Search results"
 msgid "Search Quota "
-msgstr "Sökresultat"
+msgstr "Sökkvot "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
@@ -3883,20 +3881,16 @@ msgid "Data Entry Gramplet"
 msgstr "Gramplet för datainmatning"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:10
-#, fuzzy
-#| msgid "Gramplet for importing text"
 msgid "Gramplet for quick data entry"
-msgstr "Gramplet för att importera text"
+msgstr "Gramplet för snabb datainmatning"
 
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
 msgstr "Familj:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
-#, fuzzy
-#| msgid "No Source"
 msgid "Sources?"
-msgstr "Ny källa"
+msgstr "Källor?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
@@ -3928,32 +3922,24 @@ msgid "Add as a Parent"
 msgstr "Lägg till som föräldrar"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
-#, fuzzy
-#| msgid "Add as a Spouse"
 msgid "Add as a Mother"
-msgstr "Lägg till som maka/make"
+msgstr "Lägg till som mor"
 
 #: DataEntryGramplet/DataEntryGramplet.py:102
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Father"
-msgstr "Lägg till som föräldrar"
+msgstr "Lägg till som far"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
 msgstr "Lägg till som maka/make"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
-#, fuzzy
-#| msgid "Add as a Child"
 msgid "Add as a Wife"
-msgstr "Lägg till som barn"
+msgstr "Lägg till som hustru"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Husband"
-msgstr "Lägg till som föräldrar"
+msgstr "Lägg till som make"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
@@ -4009,16 +3995,12 @@ msgid "Please set the new person's gender."
 msgstr "Ange den nya personens kön."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a mother."
-msgstr "kan ej lägga till ny person som make/maka."
+msgstr "Kan ej lägga till ny person som mor."
 
 #: DataEntryGramplet/DataEntryGramplet.py:536
-#, fuzzy
-#| msgid "Can't add new person as a parent."
 msgid "Can't add new person as a father."
-msgstr "Kan ej lägga till en ny person som förälder."
+msgstr "Kan ej lägga till ny person som far."
 
 #: DataEntryGramplet/DataEntryGramplet.py:541
 #: DataEntryGramplet/DataEntryGramplet.py:545
@@ -4029,16 +4011,12 @@ msgid "Can't add new person as a spouse."
 msgstr "kan ej lägga till ny person som make/maka."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
-#, fuzzy
-#| msgid "Can't add new person as a child."
 msgid "Can't add new person as a wife."
-msgstr "kan ej lägga till ny person som barn."
+msgstr "Kan ej lägga till ny person som hustru."
 
 #: DataEntryGramplet/DataEntryGramplet.py:555
-#, fuzzy
-#| msgid "Can't add new person as a sibling."
 msgid "Can't add new person as a husband."
-msgstr "Kan ej lägga till ny person som syskon."
+msgstr "Kan ej lägga till ny person som make."
 
 #: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
@@ -4050,16 +4028,12 @@ msgid "Can't add new person as a child."
 msgstr "kan ej lägga till ny person som barn."
 
 #: DataEntryGramplet/DataEntryGramplet.py:763
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Please set Active person."
-msgstr "Ange en person."
+msgstr "Ange aktiv person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a spouse to no one."
-msgstr "kan ej lägga till ny person som make/maka."
+msgstr "Kan ej lägga till ny person som make/maka till ingen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
@@ -4075,62 +4049,48 @@ msgid "Please set gender on Active person."
 msgstr "Ange kön för aktiv person."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "FamilyTree DNA"
-msgstr "Familjeträdsfil"
+msgstr "FamilyTree DNA"
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:5
 msgid "Tool to import FamilyFinder DNA data from Family Tree"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:75
-#, fuzzy
-#| msgid "Family Relationship Tool"
 msgid "Family Finder Tool"
 msgstr "Verktyg för familjesläktskap"
 
 #: FamilyTreeDNA/ftdna_import.py:104
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Enter FTDNA Family Finder Filename:"
-msgstr "Familjefilter namn:"
+msgstr "Ange filnamn för FTDNA Family Finder:"
 
 #: FamilyTreeDNA/ftdna_import.py:109
 msgid "Enter FTDNA Chromosome Segment Filename:"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:112
-#, fuzzy
-#| msgid "Import Failure"
 msgid "Import Haplogroups"
-msgstr "Importfel"
+msgstr "Importera Haplogrupper"
 
 #: FamilyTreeDNA/ftdna_import.py:128
 msgid "FTDNA Note string :"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:137
-#, fuzzy
-#| msgid "Citations:"
 msgid "Shared Citation ID :"
-msgstr "Citeringar:"
+msgstr "Delat citerings-ID :"
 
 #: FamilyTreeDNA/ftdna_import.py:151
-#, fuzzy
-#| msgid "Active person"
 msgid "Active Person : "
-msgstr "Aktiv person"
+msgstr "Aktiv person : "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:169
-#, fuzzy
-#| msgid "Close the Media Verify Tool"
 msgid "Close the Family Finder Tool"
-msgstr "Stäng verktyget för mediaverifiering"
+msgstr "Stäng verktyget för familjesläktskap"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
