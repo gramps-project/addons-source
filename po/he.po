@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"PO-Revision-Date: 2025-02-18 10:31+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -6372,10 +6372,8 @@ msgid "Surname Mapping"
 msgstr "שם משפחה, שם פרטי"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:4
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for editing the grouping of surnames"
-msgstr "גראמפלט לתיוג אנשים בתמונות"
+msgstr "גראמפלט לעריכת קבוצת שמות משפחה"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:67
 #, fuzzy
