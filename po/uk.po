@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -20,16 +20,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-
-#: MediaMerge/mediamerge.gpr.py:31
-msgid "Merge Media"
-msgstr "Обʼєднати медіа"
-
-#: MediaMerge/mediamerge.gpr.py:33
-msgid ""
-"Searches the entire database, looking for media that have the same path and "
-"merges them."
-msgstr "Шукає по всій базі даних медіа з однаковим шляхом і обʼєднує їх."
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -46,14 +36,15 @@ msgstr[1] "{number_of} медіа обʼєднано"
 msgid "No media items merged."
 msgstr "Жоден медіа-елемент не був обʼєднаний."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-msgid "Calculate Estimated Dates"
-msgstr "Розрахувати орієнтовні дати"
+#: MediaMerge/mediamerge.gpr.py:31
+msgid "Merge Media"
+msgstr "Обʼєднати медіа"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
-msgid "Calculates estimated dates for birth and death."
-msgstr "Розраховує орієнтовні дати народження та смерті."
+#: MediaMerge/mediamerge.gpr.py:33
+msgid ""
+"Searches the entire database, looking for media that have the same path and "
+"merges them."
+msgstr "Шукає по всій базі даних медіа з однаковим шляхом і обʼєднує їх."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
@@ -179,6 +170,11 @@ msgstr ""
 "\n"
 "Можливо, вам доведеться запускати інструмент кілька разів (без видалення "
 "попередніх подій), щоб додати всі можливі події."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculate Estimated Dates"
+msgstr "Розрахувати орієнтовні дати"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
@@ -323,6 +319,10 @@ msgstr "Додано %d подій."
 msgid "Estimated date"
 msgstr "Орієнтовна дата"
 
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Розраховує орієнтовні дати народження та смерті."
+
 #: MediaBrowser/MediaBrowser.gpr.py:31
 #, fuzzy
 #| msgid "Media Merge"
@@ -332,6 +332,16 @@ msgstr "Обʼєднання медіа"
 #: MediaBrowser/MediaBrowser.gpr.py:39
 msgid "Browser"
 msgstr ""
+
+#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
+msgid "lxml"
+msgstr ""
+
+#: lxml/lxmlGramplet.gpr.py:11
+#, fuzzy
+#| msgid "Gramplet for detecting and assigning faces"
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "Грамплет для розпізнавання та призначення облич"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
@@ -510,16 +520,6 @@ msgid ""
 "* loaded Family Tree base:\n"
 " \"%s\"\n"
 msgstr ""
-
-#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
-msgid "lxml"
-msgstr ""
-
-#: lxml/lxmlGramplet.gpr.py:11
-#, fuzzy
-#| msgid "Gramplet for detecting and assigning faces"
-msgid "Gramplet for testing lxml and XSLT"
-msgstr "Грамплет для розпізнавання та призначення облич"
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
@@ -861,19 +861,19 @@ msgstr ""
 "Вибране місце включено в місце, над яким ви працюєте!\n"
 "Скасуйте та виберіть інше місце."
 
-#: PlaceCleanup/placecleanup.py:945
+#: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
 msgstr "Веб-сайт GeoNames"
 
-#: PlaceCleanup/placecleanup.py:950
+#: PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
 msgstr "Автор GeoNames"
 
-#: PlaceCleanup/placecleanup.py:955
+#: PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr "GeoNames заснований Марком Віком. Його можна знайти на "
 
-#: PlaceCleanup/placecleanup.py:958
+#: PlaceCleanup/placecleanup.py:959
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
@@ -883,20 +883,20 @@ msgstr ""
 "Швейцарія.\n"
 "Ця робота ліцензована за умовами "
 
-#: PlaceCleanup/placecleanup.py:961
+#: PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:973
+#: PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "Додати Джерело/Сховище/Примітку (%s)"
 
-#: PlaceCleanup/placecleanup.py:1074
+#: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
 msgstr "Це Місце не використовується!"
 
-#: PlaceCleanup/placecleanup.py:1075
+#: PlaceCleanup/placecleanup.py:1076
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
@@ -1159,45 +1159,14 @@ msgstr "Адміністративні"
 msgid "Spot"
 msgstr "Різні"
 
-#: FilterRules/activepersonrule.gpr.py:27
-#: FilterRules/activepersonrule.gpr.py:28
-#, fuzzy
-#| msgid "Change active person?"
-msgid "The active Person"
-msgstr "Змінити активну особу?"
-
-#: FilterRules/activepersonrule.py:45
-msgid "Active person"
-msgstr "Активна особа"
-
-#: FilterRules/activepersonrule.py:47
-#, fuzzy
-#| msgid "Go to active person"
-msgid "Matches the active person"
-msgstr "Перейти до активної особи"
-
-#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
-#: FilterRules/ageatdeath.py:74
-msgid "Filter people by their age at death"
+#: FilterRules/isrelatedwithfiltermatch.py:53
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
+msgid "People related to <filter>"
 msgstr ""
 
-#: FilterRules/ageatdeath.gpr.py:26
-msgid "Filter rule that matches people by their age at death"
-msgstr ""
-
-#: FilterRules/ageatdeath.py:47
-msgid "Age in years at person's death."
-msgstr ""
-
-#: FilterRules/ageatdeath.py:71
-msgid "Age:"
-msgstr ""
-
-#: FilterRules/associationsofpersonmatch.gpr.py:25
-#: FilterRules/associationsofpersonmatch.gpr.py:26
-#: FilterRules/associationsofpersonmatch.py:46
-#: FilterRules/associationsofpersonmatch.py:47
-msgid "Match associations of <person filter>"
+#: FilterRules/isrelatedwithfiltermatch.py:55
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
+msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 
 #: FilterRules/degreesofseparation.gpr.py:25
@@ -1210,43 +1179,29 @@ msgstr ""
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr ""
 
-#: FilterRules/degreesofseparation.py:47
-msgid "Number of degrees of separation from person."
-msgstr ""
-
-#: FilterRules/degreesofseparation.py:59
-msgid "Degrees:"
-msgstr ""
-
-#: FilterRules/familieswitheventfiltermatch.gpr.py:25
-#: FilterRules/familieswitheventfiltermatch.py:45
-msgid "Families matching <event filter>"
-msgstr ""
-
-#: FilterRules/familieswitheventfiltermatch.gpr.py:26
-msgid "Matches families that are matched by an event filter"
-msgstr ""
-
-#: FilterRules/familieswitheventfiltermatch.py:47
-msgid "Matches families matched by an event filter"
-msgstr ""
-
-#: FilterRules/hasrolerule.gpr.py:27
+#: FilterRules/hassourcefilter.gpr.py:28
 #, fuzzy
-#| msgid "Add birth events with dates"
-msgid "People with events with a selected role"
-msgstr "Додати події народження з датами"
+#| msgid "No matching surname."
+msgid "Source matching parameters"
+msgstr "Прізвище не знайдено."
 
-#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
-msgid "Matches people with an event with a selected role"
+#: FilterRules/hassourcefilter.gpr.py:29
+msgid "Matches Sources with values containing the chosen parameters"
 msgstr ""
 
-#: FilterRules/hasrolerule.gpr.py:43
-msgid "Families with events with a selected role"
+#: FilterRules/multipleparents.py:42
+msgid "People with multiple parent records"
 msgstr ""
 
-#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:93
-msgid "Matches families with an event with a selected role"
+#: FilterRules/multipleparents.py:43
+msgid "Matches people who have more than one set of parents"
+msgstr ""
+
+#: FilterRules/associationsofpersonmatch.py:46
+#: FilterRules/associationsofpersonmatch.py:47
+#: FilterRules/associationsofpersonmatch.gpr.py:25
+#: FilterRules/associationsofpersonmatch.gpr.py:26
+msgid "Match associations of <person filter>"
 msgstr ""
 
 #: FilterRules/hasrolerule.py:55
@@ -1267,29 +1222,54 @@ msgstr ""
 msgid "People with events with the <role>"
 msgstr "Додати події народження з датами"
 
+#: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
+msgid "Matches people with an event with a selected role"
+msgstr ""
+
 #: FilterRules/hasrolerule.py:92
 #, fuzzy
 #| msgid "Add birth events with dates"
 msgid "Families with events with the <role>"
 msgstr "Додати події народження з датами"
 
-#: FilterRules/hassourcefilter.gpr.py:28
-#, fuzzy
-#| msgid "No matching surname."
-msgid "Source matching parameters"
-msgstr "Прізвище не знайдено."
-
-#: FilterRules/hassourcefilter.gpr.py:29
-msgid "Matches Sources with values containing the chosen parameters"
+#: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
+msgid "Matches families with an event with a selected role"
 msgstr ""
 
-#: FilterRules/hassourcefilter.py:58
-msgid "Matches sources with a particular value"
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
+#: FilterRules/isfamilyfiltermatchevent.py:63
+#: FilterRules/isfamilyfiltermatchevent.py:64
+msgid "Events of families matching a <family filter>"
 msgstr ""
 
-#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
-#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
-msgid "People who are part of families matching <filter>"
+#: FilterRules/familieswitheventfiltermatch.gpr.py:25
+#: FilterRules/familieswitheventfiltermatch.py:45
+msgid "Families matching <event filter>"
+msgstr ""
+
+#: FilterRules/familieswitheventfiltermatch.gpr.py:26
+msgid "Matches families that are matched by an event filter"
+msgstr ""
+
+#: FilterRules/familieswitheventfiltermatch.py:47
+msgid "Matches families matched by an event filter"
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:47
+msgid "Number of degrees of separation from person."
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:59
+msgid "Degrees:"
+msgstr ""
+
+#: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
+msgid "People with <count> of <event>"
+msgstr ""
+
+#: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
+msgid "Matches persons which have events of given type and number."
 msgstr ""
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
@@ -1322,41 +1302,61 @@ msgstr "Включити колонки з датами на сторінки і
 msgid "Family Filter name:"
 msgstr "Прізвисько сім'ї"
 
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
-#: FilterRules/isfamilyfiltermatchevent.py:63
-#: FilterRules/isfamilyfiltermatchevent.py:64
-msgid "Events of families matching a <family filter>"
+#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
+#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
+msgid "People who are part of families matching <filter>"
 msgstr ""
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
-#: FilterRules/isrelatedwithfiltermatch.py:53
-msgid "People related to <filter>"
+#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
+#: FilterRules/ageatdeath.py:74
+msgid "Filter people by their age at death"
 msgstr ""
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
-#: FilterRules/isrelatedwithfiltermatch.py:55
-msgid "Matches people who are related to anybody matched by a person filter"
+#: FilterRules/ageatdeath.gpr.py:26
+msgid "Filter rule that matches people by their age at death"
 msgstr ""
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
 msgstr ""
 
-#: FilterRules/multipleparents.py:42
-msgid "People with multiple parent records"
+#: FilterRules/hasrolerule.gpr.py:27
+#, fuzzy
+#| msgid "Add birth events with dates"
+msgid "People with events with a selected role"
+msgstr "Додати події народження з датами"
+
+#: FilterRules/hasrolerule.gpr.py:43
+msgid "Families with events with a selected role"
 msgstr ""
 
-#: FilterRules/multipleparents.py:43
-msgid "Matches people who have more than one set of parents"
+#: FilterRules/activepersonrule.gpr.py:27
+#: FilterRules/activepersonrule.gpr.py:28
+#, fuzzy
+#| msgid "Change active person?"
+msgid "The active Person"
+msgstr "Змінити активну особу?"
+
+#: FilterRules/hassourcefilter.py:58
+msgid "Matches sources with a particular value"
 msgstr ""
 
-#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
-msgid "People with <count> of <event>"
+#: FilterRules/activepersonrule.py:45
+msgid "Active person"
+msgstr "Активна особа"
+
+#: FilterRules/activepersonrule.py:47
+#, fuzzy
+#| msgid "Go to active person"
+msgid "Matches the active person"
+msgstr "Перейти до активної особи"
+
+#: FilterRules/ageatdeath.py:47
+msgid "Age in years at person's death."
 msgstr ""
 
-#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
-msgid "Matches persons which have events of given type and number."
+#: FilterRules/ageatdeath.py:71
+msgid "Age:"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
@@ -1567,60 +1567,6 @@ msgstr "Стиль, що використовується для імен."
 msgid "The style used for event and person details."
 msgstr "Стиль, що використовується для імен."
 
-#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
-#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
-msgid "Include images"
-msgstr "Включити зображення"
-
-#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
-#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
-msgid "Include images of people in the nodes."
-msgstr "Включити зображення людей у вузлах."
-
-#: GenealogyTree/gt_descendant.py:191
-msgid "First spouse left"
-msgstr ""
-
-#: GenealogyTree/gt_descendant.py:192
-msgid ""
-"Always put first of multiple spouses on the left. This can help reduce line-"
-"crossings with multiple marriages."
-msgstr ""
-
-#: GenealogyTree/gt_grandparent.py:119
-#, python-format
-msgid "Person %s does not have both a paternal and a maternal grandparent"
-msgstr ""
-"Особа %s не має обох — бабусі та дідуся по материнській і батьківській лінії"
-
-#: GenealogyTree/gt_grandparent.py:227
-msgid "Grandparent family spacing"
-msgstr "Відстань між сім'ями дідусів і бабусь"
-
-#: GenealogyTree/gt_grandparent.py:228
-msgid "Extra spacing of grandparent families (mm)"
-msgstr "Додаткова відстань між сім'ями дідусів і бабусь (мм)"
-
-#: GenealogyTree/gt_sandclock.py:235
-msgid "The center family for the report"
-msgstr "Центральна сім'я для звіту"
-
-#: GenealogyTree/gt_sandclock.py:238
-msgid "Generations up"
-msgstr "Покоління вгору"
-
-#: GenealogyTree/gt_sandclock.py:242
-msgid "Generations down"
-msgstr "Покоління вниз"
-
-#: GenealogyTree/gt_sandclock.py:246
-msgid "Include siblings"
-msgstr "Включити братів і сестер"
-
-#: GenealogyTree/gt_sandclock.py:247
-msgid "Include siblings of ancestors."
-msgstr "Включити братів і сестер предків."
-
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr "Дерево предків за допомогою LaTeX genealogytree"
@@ -1653,6 +1599,60 @@ msgstr "Пісочний годинник для сім'ї"
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Пісочний годинник для сім'ї за допомогою LaTeX genealogytree"
 
+#: GenealogyTree/gt_sandclock.py:235
+msgid "The center family for the report"
+msgstr "Центральна сім'я для звіту"
+
+#: GenealogyTree/gt_sandclock.py:238
+msgid "Generations up"
+msgstr "Покоління вгору"
+
+#: GenealogyTree/gt_sandclock.py:242
+msgid "Generations down"
+msgstr "Покоління вниз"
+
+#: GenealogyTree/gt_sandclock.py:246
+msgid "Include siblings"
+msgstr "Включити братів і сестер"
+
+#: GenealogyTree/gt_sandclock.py:247
+msgid "Include siblings of ancestors."
+msgstr "Включити братів і сестер предків."
+
+#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
+#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
+msgid "Include images"
+msgstr "Включити зображення"
+
+#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
+#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
+msgid "Include images of people in the nodes."
+msgstr "Включити зображення людей у вузлах."
+
+#: GenealogyTree/gt_grandparent.py:119
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr ""
+"Особа %s не має обох — бабусі та дідуся по материнській і батьківській лінії"
+
+#: GenealogyTree/gt_grandparent.py:227
+msgid "Grandparent family spacing"
+msgstr "Відстань між сім'ями дідусів і бабусь"
+
+#: GenealogyTree/gt_grandparent.py:228
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Додаткова відстань між сім'ями дідусів і бабусь (мм)"
+
+#: GenealogyTree/gt_descendant.py:191
+msgid "First spouse left"
+msgstr ""
+
+#: GenealogyTree/gt_descendant.py:192
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 #, fuzzy
 #| msgid "Persons"
@@ -1677,27 +1677,27 @@ msgstr "Загальні параметри"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
-#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
+#: D3Charts/AncestralCollapsibleTree.py:785
 #: D3Charts/DescendantIndentedTree.py:1500
 #: D3Charts/DescendantIndentedTree.py:1563
 #: D3Charts/DescendantIndentedTree.py:1570
 #: D3Charts/DescendantIndentedTree.py:1677
-#: D3Charts/DescendantIndentedTree.py:1697
+#: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
+#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
 #, fuzzy, python-format
 #| msgid "Failed writing "
 msgid "Failed writing %s: %s"
 msgstr "Не вдалося записати"
 
-#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
-#: D3Charts/DescendantIndentedTree.py:1519
+#: D3Charts/AncestralCollapsibleTree.py:345
+#: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
 #, fuzzy, python-format
 #| msgid "Could not create the directory: %(path)s"
 msgid "Failed to create directory structure : %s"
 msgstr "Не вдалося створити каталог: %(path)s"
 
-#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
-#: D3Charts/DescendantIndentedTree.py:1555
+#: D3Charts/AncestralCollapsibleTree.py:368
+#: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
 #, fuzzy, python-format
 #| msgid "Unable to copy web site template files from \"%(path)s\""
 msgid "Failed to copy web files : %s"
@@ -1707,8 +1707,8 @@ msgstr "Не вдалося скопіювати файли шаблону ве�
 msgid "Ancestral Collapsible Tree Options"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
-#: D3Charts/DescendantIndentedTree.py:1804
+#: D3Charts/AncestralCollapsibleTree.py:840
+#: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
 #, fuzzy
 #| msgid "Ancestor Generations"
 msgid "Include Generations"
@@ -1748,65 +1748,17 @@ msgstr ""
 msgid "RGB-color for female expandable box background."
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
-#: D3Charts/DescendantIndentedTree.py:1826
+#: D3Charts/AncestralCollapsibleTree.py:867
+#: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
 #, fuzzy
 #| msgid "Path for generated files"
 msgid "The destination path for generated files."
 msgstr "Шлях для згенерованих файлів"
 
-#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
-#: D3Charts/DescendantIndentedTree.py:1831
+#: D3Charts/AncestralCollapsibleTree.py:872
+#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
 msgid "The destination file name for html content."
 msgstr "Імʼя файлу для HTML вмісту."
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr ""
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-
-#: D3Charts/DescendantIndentedTree.gpr.py:23
-#: D3Charts/DescendantIndentedTree.py:909
-#, fuzzy
-#| msgid "Descending tree"
-msgid "Descendant Indented Tree"
-msgstr "Нисхідне дерево"
-
-#: D3Charts/DescendantIndentedTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-
-#: D3Charts/AncestralFanChart.py:707
-#, fuzzy
-#| msgid "Ancestor Generations"
-msgid "Ancestral Fan Chart Options"
-msgstr "Покоління предків"
-
-#: D3Charts/AncestralFanChart.py:729
-#, fuzzy
-#| msgid "Stamen Terrain (Background only)"
-msgid "Paternal Background Color"
-msgstr "Stamen Terrain (лише фон)"
-
-#: D3Charts/AncestralFanChart.py:730
-msgid "RGB-color for paternal box background."
-msgstr ""
-
-#: D3Charts/AncestralFanChart.py:733
-msgid "Maternal Background"
-msgstr ""
-
-#: D3Charts/AncestralFanChart.py:734
-msgid "RGB-color for maternal box background."
-msgstr ""
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
@@ -1828,6 +1780,13 @@ msgstr ""
 #| msgid "Generating relation map..."
 msgid "Generating report..."
 msgstr "Генерується карта зв’язків..."
+
+#: D3Charts/DescendantIndentedTree.py:909
+#: D3Charts/DescendantIndentedTree.gpr.py:23
+#, fuzzy
+#| msgid "Descending tree"
+msgid "Descendant Indented Tree"
+msgstr "Нисхідне дерево"
 
 #: D3Charts/DescendantIndentedTree.py:1364
 #, fuzzy
@@ -2120,6 +2079,47 @@ msgstr ""
 msgid "The font size in pixels for biography body text."
 msgstr ""
 
+#: D3Charts/DescendantIndentedTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+
+#: D3Charts/AncestralFanChart.py:707
+#, fuzzy
+#| msgid "Ancestor Generations"
+msgid "Ancestral Fan Chart Options"
+msgstr "Покоління предків"
+
+#: D3Charts/AncestralFanChart.py:729
+#, fuzzy
+#| msgid "Stamen Terrain (Background only)"
+msgid "Paternal Background Color"
+msgstr "Stamen Terrain (лише фон)"
+
+#: D3Charts/AncestralFanChart.py:730
+msgid "RGB-color for paternal box background."
+msgstr ""
+
+#: D3Charts/AncestralFanChart.py:733
+msgid "Maternal Background"
+msgstr ""
+
+#: D3Charts/AncestralFanChart.py:734
+msgid "RGB-color for maternal box background."
+msgstr ""
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
+msgstr ""
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+
 #: SVWebconnectPack/SVWebPack.gpr.py:11
 #, fuzzy
 #| msgid "US Web Connect Pack"
@@ -2286,16 +2286,11 @@ msgstr "не встановлено"
 msgid "Update Available"
 msgstr ""
 
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 msgid "Event Description Editor"
 msgstr "Редактор опису подій"
-
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
-msgid ""
-"A tool to find and replace a string in event description of multiple events."
-msgstr "Інструмент для пошуку та заміни рядка в описах подій у кількох подіях."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
@@ -2334,13 +2329,10 @@ msgstr "Дозволити регулярні вирази"
 msgid "Allow regular expressions."
 msgstr "Дозволити використання регулярних виразів."
 
-#: MediaVerify/MediaVerify.gpr.py:31
-msgid "Media Verify"
-msgstr "Перевірка медіа"
-
-#: MediaVerify/MediaVerify.gpr.py:32
-msgid "Verify that media is present in the correct path"
-msgstr "Перевіряє наявність медіа за правильним шляхом"
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr "Інструмент для пошуку та заміни рядка в описах подій у кількох подіях."
 
 #: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
@@ -2456,6 +2448,14 @@ msgstr "Виправлення шляхів до файлів"
 msgid "Fix media paths"
 msgstr "Виправити шляхи до медіа"
 
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Media Verify"
+msgstr "Перевірка медіа"
+
+#: MediaVerify/MediaVerify.gpr.py:32
+msgid "Verify that media is present in the correct path"
+msgstr "Перевіряє наявність медіа за правильним шляхом"
+
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
 msgstr ""
@@ -2517,8 +2517,10 @@ msgid ""
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:86
-msgid "Seach Quota "
-msgstr ""
+#, fuzzy
+#| msgid "Search results"
+msgid "Search Quota "
+msgstr "Результати пошуку"
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
@@ -2594,10 +2596,6 @@ msgstr ""
 msgid "Add via the Events tab of the Edit Person dialog."
 msgstr ""
 
-#: Betawhatsnext/Betawhatsnext.py:533
-msgid "{inspect.currentframe().f_lineno} person not complete"
-msgstr ""
-
 #: Betawhatsnext/Betawhatsnext.py:582
 #, fuzzy
 #| msgid "Relationship Type"
@@ -2642,18 +2640,9 @@ msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
 msgstr ""
 
-#: Differences/differences.gpr.py:4 Differences/differences.py:95
+#: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
 msgstr ""
-
-#: Differences/differences.gpr.py:5
-#, fuzzy
-#| msgid ""
-#| "Compares a Gramps XML database with the current one, and allows merging "
-#| "of the differences."
-msgid "Compares an external database with the current one."
-msgstr ""
-"Порівнює базу даних Gramps XML із поточною та дозволяє обʼєднати відмінності."
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
@@ -2734,6 +2723,15 @@ msgstr ""
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr ""
+
+#: Differences/differences.gpr.py:5
+#, fuzzy
+#| msgid ""
+#| "Compares a Gramps XML database with the current one, and allows merging "
+#| "of the differences."
+msgid "Compares an external database with the current one."
+msgstr ""
+"Порівнює базу даних Gramps XML із поточною та дозволяє обʼєднати відмінності."
 
 #: AncestorFill/AncestorFill.gpr.py:9
 #, fuzzy
@@ -2849,18 +2847,6 @@ msgstr ""
 msgid "Shared PostgreSQL Database"
 msgstr ""
 
-#: HtmlView/htmlview.gpr.py:31
-msgid "Html View"
-msgstr "Html View"
-
-#: HtmlView/htmlview.gpr.py:32
-msgid "A view showing html pages embedded in Gramps"
-msgstr "Перегляд html-сторінок, вбудованих у Gramps"
-
-#: HtmlView/htmlview.gpr.py:40
-msgid "Web"
-msgstr "Веб"
-
 #: HtmlView/htmlview.py:328
 msgid "HtmlView"
 msgstr "Перегляд Html"
@@ -2896,6 +2882,18 @@ msgstr ""
 "завантажити веб-сторінку на цю сторінку\n"
 "<br>\n"
 "Наприклад: "
+
+#: HtmlView/htmlview.gpr.py:31
+msgid "Html View"
+msgstr "Html View"
+
+#: HtmlView/htmlview.gpr.py:32
+msgid "A view showing html pages embedded in Gramps"
+msgstr "Перегляд html-сторінок, вбудованих у Gramps"
+
+#: HtmlView/htmlview.gpr.py:40
+msgid "Web"
+msgstr "Веб"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 #, fuzzy
@@ -3816,42 +3814,52 @@ msgstr "Вміст сторінки %(index)i"
 msgid "Contents of the page"
 msgstr "Вміст сторінки"
 
-#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42
-msgid "GetGOV"
+#: GetGOV/getgov.py:315
+msgid "Place ID to import from GOV (Historical Gazetteer):"
 msgstr ""
 
-#: GetGOV/getgov.gpr.py:31
-msgid "Gramplet to get places from the GOV database"
-msgstr ""
-
-#: GetGOV/getgov.py:303
-msgid "Enter GOV-id:"
-msgstr ""
-
-#: GetGOV/getgov.py:311
+#: GetGOV/getgov.py:323
 #, fuzzy
 #| msgid "Next Place"
 msgid "Get Place"
 msgstr "Наступне місце"
 
-#: GetGOV/getgov.py:343
+#: GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr ""
 
-#: GetGOV/getgov.py:521
+#: GetGOV/getgov.py:388
+#, python-format
+msgid "GetGOV error: %s"
+msgstr ""
+
+#: GetGOV/getgov.py:421
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr ""
+
+#: GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
 msgstr ""
 
-#: GetGOV/getgov.py:523
+#: GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
 msgstr ""
 
-#: GetGOV/getgov.py:525
+#: GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
+msgstr ""
+
+#: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
+msgid "GetGOV"
+msgstr ""
+
+#: GetGOV/getgov.gpr.py:33
+msgid "Gramplet to get places from the GOV database"
 msgstr ""
 
 #: RestoreHist/restorehist.gpr.py:30
@@ -3895,13 +3903,9 @@ msgstr "Інтерактивне родинне дерево"
 msgid "Opens an interactive tree in the browser"
 msgstr "Відкриває інтерактивне дерево у браузері"
 
-#: ListeEclair/ListeEclair.gpr.py:4 ListeEclair/ListeEclair.py:97
-#: ListeEclair/ListeEclair.py:104
+#: ListeEclair/ListeEclair.py:97 ListeEclair/ListeEclair.py:104
+#: ListeEclair/ListeEclair.gpr.py:4
 msgid "Liste Eclair"
-msgstr ""
-
-#: ListeEclair/ListeEclair.gpr.py:5
-msgid "Produit une liste eclair"
 msgstr ""
 
 #: ListeEclair/ListeEclair.py:277
@@ -3942,18 +3946,14 @@ msgstr "Основний стиль, що використовується дл�
 msgid "The style used for place title."
 msgstr "Стиль, що використовується для імен."
 
+#: ListeEclair/ListeEclair.gpr.py:5
+msgid "Produit une liste eclair"
+msgstr ""
+
 #: Sqlite/ExportSql.py:1346
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
-#: Sqlite/ImportSql.py:893
-#, python-format
-msgid "Import Complete: %d second"
-msgid_plural "Import Complete: %d seconds"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
@@ -3974,6 +3974,14 @@ msgstr ""
 msgid "SQLite Export"
 msgstr "Експорт JSON"
 
+#: Sqlite/ImportSql.py:893
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
 #: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
@@ -3983,40 +3991,6 @@ msgstr "%(abbrev)s %(date)s у %(place)s"
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
-
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
-msgid "Combined"
-msgstr "Комбінований"
-
-#: CombinedView/combinedview.gpr.py:25
-msgid "A view showing relationships and events for a person"
-msgstr "Перегляд, що показує стосунки та події для особи"
-
-#: CombinedView/combinedview.py:528
-msgid "Edit the active event"
-msgstr "Редагувати активну подію"
-
-#: CombinedView/combinedview.py:630
-msgid "Show Tags"
-msgstr "Показати теги"
-
-#: CombinedView/combinedview.py:656
-msgid "Vertical Details"
-msgstr "Вертикальні деталі"
-
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
-msgid "Order"
-msgstr "Порядок"
-
-#: CombinedView/navigationview.py:346
-msgid ""
-"You need to set a 'default person' to go to. Select the People View, select "
-"the person you want as 'Home Person', then confirm your choice via the menu "
-"Edit -> Set Home Person."
-msgstr ""
-"Вам потрібно встановити \"особу за замовчуванням\". Виберіть Перегляд осіб, "
-"виберіть особу, яку ви хочете як \"Головну особу\", потім підтвердіть свій "
-"вибір через меню Редагування -> Встановити Головну особу."
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -4044,6 +4018,40 @@ msgstr "Натисніть, щоб відвідати це посилання"
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "
+
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
+msgid "Combined"
+msgstr "Комбінований"
+
+#: CombinedView/combinedview.gpr.py:25
+msgid "A view showing relationships and events for a person"
+msgstr "Перегляд, що показує стосунки та події для особи"
+
+#: CombinedView/navigationview.py:346
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Вам потрібно встановити \"особу за замовчуванням\". Виберіть Перегляд осіб, "
+"виберіть особу, яку ви хочете як \"Головну особу\", потім підтвердіть свій "
+"вибір через меню Редагування -> Встановити Головну особу."
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr "Порядок"
+
+#: CombinedView/combinedview.py:528
+msgid "Edit the active event"
+msgstr "Редагувати активну подію"
+
+#: CombinedView/combinedview.py:630
+msgid "Show Tags"
+msgstr "Показати теги"
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr "Вертикальні деталі"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
@@ -4335,18 +4343,6 @@ msgstr ""
 msgid "Add Citation to %s DNA Association"
 msgstr ""
 
-#: Themes/themes.gpr.py:29
-msgid "Theme preferences"
-msgstr "Тематичні уподобання"
-
-#: Themes/themes.gpr.py:31
-msgid ""
-"An addition to Preferences for simple Theme and Font adjustment.  Especially "
-"useful for Windows users."
-msgstr ""
-"На додаток до налаштувань для простої настройки теми та шрифту. Особливо "
-"корисно для користувачів Windows."
-
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Тему пришито через GTK_THEME"
@@ -4363,15 +4359,17 @@ msgstr "Шрифт"
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Класична смуга прокрутки (потрібно перезавантажити)"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
-#: AttachSourceTool/AttachSourceTool.py:137
-#: AttachSourceTool/AttachSourceTool.py:155
-msgid "Attach Source"
-msgstr ""
+#: Themes/themes.gpr.py:29
+msgid "Theme preferences"
+msgstr "Тематичні уподобання"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:27
-msgid "Attaches a shared source to multiple objects."
+#: Themes/themes.gpr.py:31
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
 msgstr ""
+"На додаток до налаштувань для простої настройки теми та шрифту. Особливо "
+"корисно для користувачів Windows."
 
 #: AttachSourceTool/AttachSourceTool.py:81
 #, fuzzy
@@ -4413,6 +4411,12 @@ msgstr ""
 msgid "ID of source to attach"
 msgstr ""
 
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+msgid "Attach Source"
+msgstr ""
+
 #: AttachSourceTool/AttachSourceTool.py:174
 #, fuzzy
 #| msgid "Detecting faces..."
@@ -4431,6 +4435,10 @@ msgstr "Розпізнавання облич..."
 msgid "Done!\n"
 msgstr "готово!\n"
 
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
+msgid "Attaches a shared source to multiple objects."
+msgstr ""
+
 #: PythonGramplet/PythonGramplet.gpr.py:4
 #: PythonGramplet/PythonGramplet.gpr.py:11
 msgid "Python Shell"
@@ -4445,17 +4453,6 @@ msgstr "Інтерактивне родинне дерево"
 #: PythonGramplet/PythonGramplet.py:55
 msgid "Enter Python expressions"
 msgstr "Введіть вирази на Python"
-
-#: DenominoViso/DenominoViso.gpr.py:9
-msgid "DenominoViso"
-msgstr ""
-
-#: DenominoViso/DenominoViso.gpr.py:19
-msgid ""
-"Generates a web (HTML) page with a graphical representation of ancestors/"
-"descendants (SVG) where details about individuals become visible upon mouse-"
-"events."
-msgstr ""
 
 #: DenominoViso/DenominoViso.py:179
 #, fuzzy
@@ -5077,6 +5074,17 @@ msgstr ""
 msgid "Inter-dash length"
 msgstr ""
 
+#: DenominoViso/DenominoViso.gpr.py:9
+msgid "DenominoViso"
+msgstr ""
+
+#: DenominoViso/DenominoViso.gpr.py:19
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
 msgstr "Показати зв’язки та відстані з головною особою"
@@ -5254,16 +5262,6 @@ msgstr "Прозорість шляху"
 msgid "General options"
 msgstr "Загальні параметри"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
-#, fuzzy
-#| msgid "US Google"
-msgid "GoogleEarth"
-msgstr "Google США"
-
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
-msgid "Creates data file for GoogleEarth and opens it"
-msgstr ""
-
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
 #, fuzzy
 #| msgid "Face detection"
@@ -5304,6 +5302,16 @@ msgstr ""
 msgid ""
 "Overwrite kmz/kml file ''%s''\n"
 "in user home directory ''%s''?"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
+#, fuzzy
+#| msgid "US Google"
+msgid "GoogleEarth"
+msgstr "Google США"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
+msgid "Creates data file for GoogleEarth and opens it"
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
@@ -6018,14 +6026,6 @@ msgstr ""
 msgid "Password:"
 msgstr ""
 
-#: ExtractCity/extractcity.gpr.py:34
-msgid "Extract Place Data from a Place Title"
-msgstr ""
-
-#: ExtractCity/extractcity.gpr.py:35
-msgid "Attempts to extract city and state/province from a place title"
-msgstr ""
-
 #: ExtractCity/extractcity.py:402
 #, fuzzy
 #| msgid "Place Cleanup"
@@ -6054,6 +6054,14 @@ msgid ""
 "the place title. Select the places you wish Gramps to convert."
 msgstr ""
 
+#: ExtractCity/extractcity.gpr.py:34
+msgid "Extract Place Data from a Place Title"
+msgstr ""
+
+#: ExtractCity/extractcity.gpr.py:35
+msgid "Attempts to extract city and state/province from a place title"
+msgstr ""
+
 #: ExtractCity/changenames.glade:94
 #, fuzzy
 #| msgid "Toggle Selection"
@@ -6065,42 +6073,6 @@ msgid ""
 "Toggles the checkmarks on selected rows,  Rows can be selected with <ctrl> "
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
-msgstr ""
-
-#: DescendantBooks/CollectAscendants.py:178
-#, python-format
-msgid "Deep pruning ascendants from %s people..."
-msgstr ""
-
-#: DescendantBooks/CollectAscendants.py:182
-#, python-format
-msgid "Pruning ascendants from %s people..."
-msgstr ""
-
-#: DescendantBooks/CollectAscendants.py:320
-#: DescendantBooks/CollectAscendants.py:413
-#, python-format
-msgid "Getting ascendants from %s people..."
-msgstr ""
-
-#: DescendantBooks/CollectAscendants.py:331
-#, python-format
-msgid "Verifying descendants from %s people..."
-msgstr ""
-
-#: DescendantBooks/CollectAscendants.py:348
-#, python-format
-msgid "Getting missing descendants from %s people..."
-msgstr ""
-
-#: DescendantBooks/CollectAscendants.py:367
-#, python-format
-msgid "Verifying descendants from %s people after pruning..."
-msgstr ""
-
-#: DescendantBooks/CollectAscendants.py:383
-#, python-format
-msgid "Getting missing descendants from %s people ..."
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:238
@@ -6156,25 +6128,6 @@ msgstr "Основний стиль, що використовується дл�
 #| msgid "The basic style used for the title display."
 msgid "The style used for the table of contents detail."
 msgstr "Основний стиль, що використовується для відображення заголовків."
-
-#: DescendantBooks/DescendantBooks.gpr.py:22
-#, fuzzy
-#| msgid "Descendant Generations"
-msgid "Descendant Book"
-msgstr "Покоління нащадків"
-
-#: DescendantBooks/DescendantBooks.gpr.py:23
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-
-#: DescendantBooks/DescendantBooks.gpr.py:41
-msgid "Detailed Descendant Book"
-msgstr ""
-
-#: DescendantBooks/DescendantBooks.gpr.py:43
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
@@ -6431,13 +6384,59 @@ msgstr "Основний стиль, що використовується дл�
 msgid "The style used for the references in the Index of Places."
 msgstr "Основний стиль, що використовується для відображення заголовків."
 
-#: WordleGramplet/WordleGramplet.gpr.py:4
-#: WordleGramplet/WordleGramplet.gpr.py:10
-msgid "Wordle"
+#: DescendantBooks/DescendantBooks.gpr.py:22
+#, fuzzy
+#| msgid "Descendant Generations"
+msgid "Descendant Book"
+msgstr "Покоління нащадків"
+
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
 
-#: WordleGramplet/WordleGramplet.gpr.py:13
-msgid "Gramplet used to make word clouds with wordle.net"
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr ""
+
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+
+#: DescendantBooks/CollectAscendants.py:178
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr ""
+
+#: DescendantBooks/CollectAscendants.py:182
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr ""
+
+#: DescendantBooks/CollectAscendants.py:320
+#: DescendantBooks/CollectAscendants.py:413
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr ""
+
+#: DescendantBooks/CollectAscendants.py:331
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr ""
+
+#: DescendantBooks/CollectAscendants.py:348
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr ""
+
+#: DescendantBooks/CollectAscendants.py:367
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr ""
+
+#: DescendantBooks/CollectAscendants.py:383
+#, python-format
+msgid "Getting missing descendants from %s people ..."
 msgstr ""
 
 #: WordleGramplet/WordleGramplet.py:126
@@ -6458,12 +6457,13 @@ msgstr "Кількість кроків"
 msgid "Select filter to restrict list"
 msgstr "Виберіть фільтр для обмеження людей"
 
-#: PersonEverything/PersonEverything.gpr.py:32
-msgid "PersonEverything Report"
+#: WordleGramplet/WordleGramplet.gpr.py:4
+#: WordleGramplet/WordleGramplet.gpr.py:10
+msgid "Wordle"
 msgstr ""
 
-#: PersonEverything/PersonEverything.gpr.py:33
-msgid "Produces a report containing everything about the active person"
+#: WordleGramplet/WordleGramplet.gpr.py:13
+msgid "Gramplet used to make word clouds with wordle.net"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:133
@@ -6632,6 +6632,14 @@ msgstr ""
 msgid "No source information found"
 msgstr "Не знайдено родичів у зв’язку"
 
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "PersonEverything Report"
+msgstr ""
+
+#: PersonEverything/PersonEverything.gpr.py:33
+msgid "Produces a report containing everything about the active person"
+msgstr ""
+
 #: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
 msgid "Ancestors map"
 msgstr "Мапа предків"
@@ -6661,6 +6669,12 @@ msgstr "Підрахунок усіх місць"
 msgid "Showing all places"
 msgstr "Показ усіх місць"
 
+#: NoteGramplet/NoteGramplet.py:255
+#, fuzzy
+#| msgid "Save"
+msgid "Save Note"
+msgstr "Зберегти"
+
 #: NoteGramplet/NoteGramplet.gpr.py:4
 #, fuzzy
 #| msgid "Form Gramplet"
@@ -6672,12 +6686,6 @@ msgstr "Грамплет форми"
 #| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for editing active person's notes"
 msgstr "Грамплет для позначення людей на фотографіях"
-
-#: NoteGramplet/NoteGramplet.py:255
-#, fuzzy
-#| msgid "Save"
-msgid "Save Note"
-msgstr "Зберегти"
 
 #: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 #, fuzzy
@@ -6792,13 +6800,9 @@ msgstr ""
 msgid "Scanning Notes"
 msgstr ""
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+#: AllNamesQuickview/AllNames.py:51 AllNamesQuickview/AllNames.gpr.py:4
 msgid "All Names of All People"
 msgstr "Всі імена всіх людей"
-
-#: AllNamesQuickview/AllNames.gpr.py:5
-msgid "Display all names of all people"
-msgstr "Відображає всі імена всіх людей"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -6808,6 +6812,10 @@ msgstr "Тип імені"
 #, python-format
 msgid "Total names %d"
 msgstr "Усього імен %d"
+
+#: AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr "Відображає всі імена всіх людей"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:11
@@ -7280,16 +7288,6 @@ msgstr "Всі Exif метадані було витерто з цього зо�
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr "Сталася помилка при витиранні Exif метаданих з цього зображення..."
 
-#: ToDoReport/TodoReport.gpr.py:25
-msgid "Todo Report"
-msgstr ""
-
-#: ToDoReport/TodoReport.gpr.py:27
-msgid ""
-"Produces a list of all the notes with a given tag along with the records "
-"that it references, the Person, Family, Event, etc."
-msgstr ""
-
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
 msgstr ""
@@ -7421,46 +7419,26 @@ msgstr "Основний стиль, що використовується дл�
 msgid "The basic style used for the table display."
 msgstr "Основний стиль, що використовується для відображення заголовків."
 
-#: FilterRules2/matrilinealprogenitrix.gpr.py:25
-#: FilterRules2/matrilinealprogenitrix.py:45
-msgid "Matrilineal progenitrix of <person>"
+#: ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
 msgstr ""
 
-#: FilterRules2/matrilinealprogenitrix.gpr.py:26
-#: FilterRules2/matrilinealprogenitrix.py:47
-msgid "Matches the earliest recorded matrilineal ancestor mother."
-msgstr ""
-
-#: FilterRules2/mtinheritance.gpr.py:25 FilterRules2/mtinheritance.py:45
-msgid "Mitochondrial inheritance of <person>"
-msgstr ""
-
-#: FilterRules2/mtinheritance.gpr.py:27 FilterRules2/mtinheritance.py:46
+#: ToDoReport/TodoReport.gpr.py:27
 msgid ""
-"Matches recorded descendants of person following mitochondrial inheritance "
-"patterns."
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
 msgstr ""
 
-#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
-#: FilterRules2/mtinheritanceoffiltermatch.py:46
-msgid "Mitochondrial inheritance of <filter>"
+#: FilterRules2/yinheritanceoffiltermatch.py:46
+#: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
+msgid "Y-chromosomal inheritance of <filter>"
 msgstr ""
 
-#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
-#: FilterRules2/mtinheritanceoffiltermatch.py:47
+#: FilterRules2/yinheritanceoffiltermatch.py:47
+#: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
 msgid ""
-"Matches recorded descendants of a filter result following mitochondrial "
+"Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
-msgstr ""
-
-#: FilterRules2/patrilinealprogenitor.gpr.py:25
-#: FilterRules2/patrilinealprogenitor.py:45
-msgid "Patrilineal progenitor of <person>"
-msgstr ""
-
-#: FilterRules2/patrilinealprogenitor.gpr.py:26
-#: FilterRules2/patrilinealprogenitor.py:47
-msgid "Matches the earliest recorded patrilineal ancestor father."
 msgstr ""
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
@@ -7483,10 +7461,52 @@ msgid ""
 "pattern."
 msgstr ""
 
+#: FilterRules2/patrilinealprogenitor.py:45
+#: FilterRules2/patrilinealprogenitor.gpr.py:25
+msgid "Patrilineal progenitor of <person>"
+msgstr ""
+
+#: FilterRules2/patrilinealprogenitor.py:47
+#: FilterRules2/patrilinealprogenitor.gpr.py:26
+msgid "Matches the earliest recorded patrilineal ancestor father."
+msgstr ""
+
+#: FilterRules2/mtinheritanceoffiltermatch.py:46
+#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
+msgid "Mitochondrial inheritance of <filter>"
+msgstr ""
+
+#: FilterRules2/mtinheritanceoffiltermatch.py:47
+#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
+msgid ""
+"Matches recorded descendants of a filter result following mitochondrial "
+"inheritance patterns."
+msgstr ""
+
+#: FilterRules2/matrilinealprogenitrix.gpr.py:25
+#: FilterRules2/matrilinealprogenitrix.py:45
+msgid "Matrilineal progenitrix of <person>"
+msgstr ""
+
+#: FilterRules2/matrilinealprogenitrix.gpr.py:26
+#: FilterRules2/matrilinealprogenitrix.py:47
+msgid "Matches the earliest recorded matrilineal ancestor mother."
+msgstr ""
+
 #: FilterRules2/xchromdescendants.py:50
 msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
+msgstr ""
+
+#: FilterRules2/mtinheritance.py:45 FilterRules2/mtinheritance.gpr.py:25
+msgid "Mitochondrial inheritance of <person>"
+msgstr ""
+
+#: FilterRules2/mtinheritance.py:46 FilterRules2/mtinheritance.gpr.py:27
+msgid ""
+"Matches recorded descendants of person following mitochondrial inheritance "
+"patterns."
 msgstr ""
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
@@ -7497,18 +7517,6 @@ msgstr ""
 msgid ""
 "Matches recorded descendants of person following Y-chromosomal inheritance "
 "patterns."
-msgstr ""
-
-#: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
-#: FilterRules2/yinheritanceoffiltermatch.py:46
-msgid "Y-chromosomal inheritance of <filter>"
-msgstr ""
-
-#: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
-#: FilterRules2/yinheritanceoffiltermatch.py:47
-msgid ""
-"Matches recorded descendants of a filter result following Y-chromosomal "
-"inheritance patterns."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
@@ -8480,22 +8488,6 @@ msgstr ""
 "Завантаження медіафайлів до сховища S3 (або сумісного) на основі обʼєктів "
 "через командний рядок."
 
-#: TMGimporter/importtmg.gpr.py:49
-msgid "TMG Project Backup"
-msgstr ""
-
-#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
-#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
-#, fuzzy
-#| msgid "Import file"
-msgid "Import TMG project files"
-msgstr "Імпортувати файл"
-
-#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
-#: TMGimporter/importtmg.gpr.py:95
-msgid "TMG Unsupported"
-msgstr ""
-
 #: TMGimporter/importtmg.py:89
 #, python-format
 msgid ""
@@ -8532,6 +8524,22 @@ msgid ""
 "project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
 "Control File for TMG 1.2 and earlierPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+
+#: TMGimporter/importtmg.gpr.py:49
+msgid "TMG Project Backup"
+msgstr ""
+
+#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
+#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
+#, fuzzy
+#| msgid "Import file"
+msgid "Import TMG project files"
+msgstr "Імпортувати файл"
+
+#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
+#: TMGimporter/importtmg.gpr.py:95
+msgid "TMG Unsupported"
 msgstr ""
 
 #: TMGimporter/libtmg.glade:15
@@ -8581,14 +8589,6 @@ msgstr "OpenCV-Python не встановлено"
 msgid "Detect New Faces"
 msgstr "Знайти нові обличчя"
 
-#: DownloadMedia/DownloadMedia.gpr.py:36
-msgid "Download media files from the internet"
-msgstr "Завантаження медіафайлів з інтернету"
-
-#: DownloadMedia/DownloadMedia.gpr.py:37
-msgid "This tool downloads media files from the internet"
-msgstr "Цей інструмент завантажує медіафайли з інтернету"
-
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
 msgstr "Завантажити медіа"
@@ -8619,6 +8619,14 @@ msgstr "Завантаження файлів"
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
 msgstr "Виявлено помилки під час завантаження медіа"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "Download media files from the internet"
+msgstr "Завантаження медіафайлів з інтернету"
+
+#: DownloadMedia/DownloadMedia.gpr.py:37
+msgid "This tool downloads media files from the internet"
+msgstr "Цей інструмент завантажує медіафайли з інтернету"
 
 #: RebuildTypes/RebuildTypes.gpr.py:26
 msgid "Rebuild Gramps Types"
@@ -8660,16 +8668,6 @@ msgstr "Це імпорт JSON"
 #: JSON/JSONImport.py:56
 msgid "JSON import"
 msgstr "Імпорт JSON"
-
-#: TypeCleanup/type_cleanup.gpr.py:30
-#, fuzzy
-#| msgid "Place Cleanup"
-msgid "Type Cleanup"
-msgstr "Очищення місць (Place Cleanup)"
-
-#: TypeCleanup/type_cleanup.gpr.py:31
-msgid "Clean up (remove) custom types"
-msgstr ""
 
 #: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
@@ -8790,6 +8788,16 @@ msgid ""
 "If you want to change it in referenced items, use 'Rename'."
 msgstr ""
 
+#: TypeCleanup/type_cleanup.gpr.py:30
+#, fuzzy
+#| msgid "Place Cleanup"
+msgid "Type Cleanup"
+msgstr "Очищення місць (Place Cleanup)"
+
+#: TypeCleanup/type_cleanup.gpr.py:31
+msgid "Clean up (remove) custom types"
+msgstr ""
+
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:103
@@ -8828,16 +8836,6 @@ msgstr ""
 msgid "Process relationships..."
 msgstr "Обробка відносин..."
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
-#: SetAttributeTool/SetAttributeTool.py:122
-#: SetAttributeTool/SetAttributeTool.py:150
-msgid "Set Attribute"
-msgstr ""
-
-#: SetAttributeTool/SetAttributeTool.gpr.py:27
-msgid "Set an attribute to a given value."
-msgstr ""
-
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr ""
@@ -8848,6 +8846,12 @@ msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set Attribute"
 msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.py:152
@@ -8885,6 +8889,140 @@ msgstr "Видалення '%s'..."
 msgid ""
 "\n"
 "Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:27
+msgid "Set an attribute to a given value."
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:75
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1183
+#, python-brace-format
+msgid "cursor position at {date}"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:2591
+#, fuzzy
+#| msgid "New person"
+msgid "Hide person"
+msgstr "Нова особа"
+
+#: LifeLineChartView/lifelinechart.py:2597
+#, fuzzy
+#| msgid "New person"
+msgid "Show person"
+msgstr "Нова особа"
+
+#: LifeLineChartView/lifelinechart.py:2622
+#, fuzzy
+#| msgid "sibling"
+msgid "Show siblings"
+msgstr "брат/сестра"
+
+#: LifeLineChartView/lifelinechart.py:2627
+#, fuzzy
+#| msgid "Include siblings"
+msgid "Hide siblings"
+msgstr "Включити братів і сестер"
+
+#: LifeLineChartView/lifelinechart.py:2652
+msgid "Show ancestors above "
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:386
+#: LifeLineChartView/lifelinechartview.py:883
+#, fuzzy
+#| msgid "General Data"
+msgid "General Layout"
+msgstr "Загальне"
+
+#: LifeLineChartView/lifelinechartview.py:399
+#: LifeLineChartView/lifelinechartview.gpr.py:34
+#: LifeLineChartView/lifelinechartview.gpr.py:52
+#, fuzzy
+#| msgid "Pedigree Chart"
+msgid "Life Line Chart"
+msgstr "Родовідна діаграма"
+
+#: LifeLineChartView/lifelinechartview.py:509
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:519
+#: LifeLineChartView/lifelinechartview.py:520
+msgid "Ctrl"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:520
+msgid "Mouse wheel"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:527
+msgid "Zoom to original"
+msgstr "Масштаб за замовчуванням"
+
+#: LifeLineChartView/lifelinechartview.py:534
+msgid "Zoom to best fit"
+msgstr "Масштаб за розміром"
+
+#: LifeLineChartView/lifelinechartview.py:541
+msgid "Rebuild data cache"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:548
+msgid "Revert the placement and person selection"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:564
+msgid "Open Life Line Chart help"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:831
+#, fuzzy
+#| msgid "Export notes"
+msgid "Export View as SVG"
+msgstr "Експортувати примітки"
+
+#: LifeLineChartView/lifelinechartview.py:884
+#: LifeLineChartView/_dummy_translation_string_po.py:29
+#: LifeLineChartView/_dummy_translation_string_po.py:32
+#: LifeLineChartView/_dummy_translation_string_po.py:35
+#: LifeLineChartView/_dummy_translation_string_po.py:38
+#: LifeLineChartView/_dummy_translation_string_po.py:41
+#: LifeLineChartView/_dummy_translation_string_po.py:47
+#: LifeLineChartView/_dummy_translation_string_po.py:52
+#: LifeLineChartView/_dummy_translation_string_po.py:55
+#: LifeLineChartView/_dummy_translation_string_po.py:58
+#: LifeLineChartView/_dummy_translation_string_po.py:61
+#: LifeLineChartView/_dummy_translation_string_po.py:67
+#: LifeLineChartView/_dummy_translation_string_po.py:74
+#: LifeLineChartView/_dummy_translation_string_po.py:77
+#, fuzzy
+#| msgid "Enable page configuration"
+msgid "Label Configuration"
+msgstr "Увімкнути налаштування сторінок"
+
+#: LifeLineChartView/lifelinechartview.py:946
+#, fuzzy
+#| msgid "Restore default settings"
+msgid "Reset all settings"
+msgstr "Відновити налаштування за замовчуванням"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:24
+msgid "Life Line Ancestor Chart"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.gpr.py:26
+#: LifeLineChartView/lifelinechartview.gpr.py:44
+msgid "Persons and their relation in a time based chart"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.gpr.py:42
+msgid "Life Line Descendant Chart"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
@@ -8978,25 +9116,6 @@ msgstr ""
 #: LifeLineChartView/_dummy_translation_string_po.py:28
 msgid "The birth label is aligned to the individual line."
 msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:29
-#: LifeLineChartView/_dummy_translation_string_po.py:32
-#: LifeLineChartView/_dummy_translation_string_po.py:35
-#: LifeLineChartView/_dummy_translation_string_po.py:38
-#: LifeLineChartView/_dummy_translation_string_po.py:41
-#: LifeLineChartView/_dummy_translation_string_po.py:47
-#: LifeLineChartView/_dummy_translation_string_po.py:52
-#: LifeLineChartView/_dummy_translation_string_po.py:55
-#: LifeLineChartView/_dummy_translation_string_po.py:58
-#: LifeLineChartView/_dummy_translation_string_po.py:61
-#: LifeLineChartView/_dummy_translation_string_po.py:67
-#: LifeLineChartView/_dummy_translation_string_po.py:74
-#: LifeLineChartView/_dummy_translation_string_po.py:77
-#: LifeLineChartView/lifelinechartview.py:884
-#, fuzzy
-#| msgid "Enable page configuration"
-msgid "Label Configuration"
-msgstr "Увімкнути налаштування сторінок"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 #, fuzzy
@@ -9354,117 +9473,6 @@ msgstr ""
 msgid "Cactus"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:75
-msgid ""
-"LifeLineChartView dependencies are missing. It is not possible to use this "
-"plugin without them."
-msgstr ""
-
-#: LifeLineChartView/lifelinechart.py:1183
-#, python-brace-format
-msgid "cursor position at {date}"
-msgstr ""
-
-#: LifeLineChartView/lifelinechart.py:2591
-#, fuzzy
-#| msgid "New person"
-msgid "Hide person"
-msgstr "Нова особа"
-
-#: LifeLineChartView/lifelinechart.py:2597
-#, fuzzy
-#| msgid "New person"
-msgid "Show person"
-msgstr "Нова особа"
-
-#: LifeLineChartView/lifelinechart.py:2622
-#, fuzzy
-#| msgid "sibling"
-msgid "Show siblings"
-msgstr "брат/сестра"
-
-#: LifeLineChartView/lifelinechart.py:2627
-#, fuzzy
-#| msgid "Include siblings"
-msgid "Hide siblings"
-msgstr "Включити братів і сестер"
-
-#: LifeLineChartView/lifelinechart.py:2652
-msgid "Show ancestors above "
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:24
-msgid "Life Line Ancestor Chart"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:26
-#: LifeLineChartView/lifelinechartview.gpr.py:44
-msgid "Persons and their relation in a time based chart"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:34
-#: LifeLineChartView/lifelinechartview.gpr.py:52
-#: LifeLineChartView/lifelinechartview.py:399
-#, fuzzy
-#| msgid "Pedigree Chart"
-msgid "Life Line Chart"
-msgstr "Родовідна діаграма"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:42
-msgid "Life Line Descendant Chart"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.py:386
-#: LifeLineChartView/lifelinechartview.py:883
-#, fuzzy
-#| msgid "General Data"
-msgid "General Layout"
-msgstr "Загальне"
-
-#: LifeLineChartView/lifelinechartview.py:509
-#: LifeLineChartView/lifelinechartview.py:510
-#: LifeLineChartView/lifelinechartview.py:519
-#: LifeLineChartView/lifelinechartview.py:520
-msgid "Ctrl"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.py:510
-#: LifeLineChartView/lifelinechartview.py:520
-msgid "Mouse wheel"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.py:527
-msgid "Zoom to original"
-msgstr "Масштаб за замовчуванням"
-
-#: LifeLineChartView/lifelinechartview.py:534
-msgid "Zoom to best fit"
-msgstr "Масштаб за розміром"
-
-#: LifeLineChartView/lifelinechartview.py:541
-msgid "Rebuild data cache"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.py:548
-msgid "Revert the placement and person selection"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.py:564
-msgid "Open Life Line Chart help"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.py:831
-#, fuzzy
-#| msgid "Export notes"
-msgid "Export View as SVG"
-msgstr "Експортувати примітки"
-
-#: LifeLineChartView/lifelinechartview.py:946
-#, fuzzy
-#| msgid "Restore default settings"
-msgid "Reset all settings"
-msgstr "Відновити налаштування за замовчуванням"
-
 #: Participants/Participants.gpr.py:32
 #, fuzzy
 #| msgid "Gramplet showing relatives in a relation"
@@ -9475,18 +9483,14 @@ msgstr "Грамплет, що показує родичів у зв’язку"
 msgid "Double-click on a row to edit the selected participant."
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
-#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
-#: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
-#: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
+#: SetPrivacyTool/SetPrivacyTool.py:51 SetPrivacyTool/SetPrivacyTool.py:93
+#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:146
+#: SetPrivacyTool/SetPrivacyTool.py:186 SetPrivacyTool/SetPrivacyTool.py:226
+#: SetPrivacyTool/SetPrivacyTool.py:255 SetPrivacyTool/SetPrivacyTool.gpr.py:24
 #, fuzzy
 #| msgid "Media Verify Tool"
 msgid "Set Privacy Tool"
 msgstr "Інструмент перевірки медіа"
-
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
-msgid "Set all objects of the last <number> of years private."
-msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, fuzzy, python-format
@@ -9560,6 +9564,10 @@ msgstr "Не вдалося визначити тип імпорту"
 msgid "E-Mail"
 msgstr ""
 
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
+msgid "Set all objects of the last <number> of years private."
+msgstr ""
+
 #: SyncAssociations/syncAssociations.gpr.py:4
 #: SyncAssociations/syncAssociations.py:130
 #: SyncAssociations/syncAssociations.py:134
@@ -9614,10 +9622,6 @@ msgstr "Посилання:"
 msgid "Headings"
 msgstr "Заголовки"
 
-#: Form/form.py:65
-msgid "Form"
-msgstr "Форма"
-
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
 msgstr "Грамплет форми"
@@ -9629,6 +9633,10 @@ msgstr "Інтерфейс грамплету для форм"
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
 msgstr "Форми"
+
+#: Form/form.py:65
+msgid "Form"
+msgstr "Форма"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"
@@ -18034,344 +18042,6 @@ msgstr ""
 msgid "must install either ElementTree or lxml"
 msgstr ""
 
-#: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
-msgid "birth"
-msgstr ""
-
-#: SourceIndex/birth.glade:65 SourceIndex/census.glade:728
-#: SourceIndex/death.glade:97 SourceIndex/marriage.glade:64
-msgid "Info:"
-msgstr ""
-
-#: SourceIndex/birth.glade:99
-#, fuzzy
-#| msgid "BirthPlace"
-msgid "Birth act:"
-msgstr "Місце народження"
-
-#: SourceIndex/birth.glade:129
-msgid ""
-"Volume\n"
-"    Page:"
-msgstr ""
-
-#: SourceIndex/birth.glade:149
-#, fuzzy
-#| msgid "Web site title"
-msgid "The source title"
-msgstr "Назва веб-сайту"
-
-#: SourceIndex/birth.glade:164
-msgid "The volume or page of this source"
-msgstr ""
-
-#: SourceIndex/birth.glade:195 SourceIndex/birth.glade:297
-#: SourceIndex/birth.glade:644 SourceIndex/witness.glade:73
-msgid "Names:"
-msgstr ""
-
-#: SourceIndex/birth.glade:214
-msgid "select the gender/sex"
-msgstr ""
-
-#: SourceIndex/birth.glade:247
-msgid "The names of the main person written into the source"
-msgstr ""
-
-#: SourceIndex/birth.glade:262
-msgid "The first names of the main person written into the source"
-msgstr ""
-
-#: SourceIndex/birth.glade:278 SourceIndex/birth.glade:511
-#: SourceIndex/birth.glade:729 SourceIndex/witness.glade:90
-#, fuzzy
-#| msgid "File name"
-msgid "First names:"
-msgstr "Імʼя файлу"
-
-#: SourceIndex/birth.glade:334 SourceIndex/birth.glade:493
-#, fuzzy
-#| msgid "Other avatar:"
-msgid "Other:"
-msgstr "Інший аватар:"
-
-#: SourceIndex/birth.glade:351
-#, fuzzy
-#| msgid "Web site title"
-msgid "Repository title"
-msgstr "Назва веб-сайту"
-
-#: SourceIndex/birth.glade:388 SourceIndex/census.glade:973
-#: SourceIndex/death.glade:589 SourceIndex/marriage.glade:234
-#, fuzzy
-#| msgid "<b>Tags:</b>"
-msgid "<b>Image</b>"
-msgstr "<b>Теги:</b>"
-
-#: SourceIndex/birth.glade:406
-msgid "<b><i>Repository</i></b>"
-msgstr ""
-
-#: SourceIndex/birth.glade:421
-msgid ""
-"Spouse\n"
-"names:"
-msgstr ""
-
-#: SourceIndex/birth.glade:441
-msgid ""
-"Marriage\n"
-"date:"
-msgstr ""
-
-#: SourceIndex/birth.glade:460
-msgid ""
-"Death\n"
-"date:"
-msgstr ""
-
-#: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
-#: SourceIndex/census.glade:543 SourceIndex/death.glade:722
-#: SourceIndex/death.glade:821 SourceIndex/marriage.glade:529
-#: SourceIndex/marriage.glade:903 SourceIndex/marriage.glade:922
-#: SourceIndex/marriage.glade:941 SourceIndex/marriage.glade:1361
-#: SourceIndex/marriage.glade:1474 SourceIndex/witness.glade:141
-#, fuzzy
-#| msgid "Include Occupation"
-msgid "Occupation:"
-msgstr "Включити професію"
-
-#: SourceIndex/birth.glade:597 SourceIndex/birth.glade:710
-#: SourceIndex/death.glade:741 SourceIndex/death.glade:854
-#: SourceIndex/marriage.glade:560 SourceIndex/marriage.glade:960
-#: SourceIndex/marriage.glade:979 SourceIndex/marriage.glade:998
-#: SourceIndex/marriage.glade:1408 SourceIndex/marriage.glade:1455
-#: SourceIndex/witness.glade:158
-msgid "Live:"
-msgstr ""
-
-#: SourceIndex/birth.glade:833
-msgid ""
-"<b>Witness\n"
-"Godfather\n"
-"Godmother:</b>"
-msgstr ""
-
-#: SourceIndex/birth.glade:870
-#, fuzzy
-#| msgid "Serial Number"
-msgid "Call number:"
-msgstr "Серійний номер"
-
-#: SourceIndex/birth.glade:887
-#, fuzzy
-#| msgid "The center family for the report"
-msgid "The call number into the repository"
-msgstr "Центральна сім'я для звіту"
-
-#: SourceIndex/birth.glade:925
-msgid "<b><i>Data person</i></b>"
-msgstr ""
-
-#: SourceIndex/birth.glade:949
-msgid "<b><i>Data margin</i></b>"
-msgstr ""
-
-#: SourceIndex/birth.glade:973
-msgid "<b><i>Data father</i></b>"
-msgstr ""
-
-#: SourceIndex/birth.glade:985
-msgid "<b><i>Data mother</i></b>"
-msgstr ""
-
-#: SourceIndex/birth.glade:1021
-msgid ""
-"witness1, name, given, age, occupation;\n"
-"witness2, name, given, age, occupation;\n"
-"godfather, name, given, age, occupation;\n"
-"etc ..."
-msgstr ""
-
-#: SourceIndex/birth.glade:1549
-msgid ""
-"Marriage\n"
-"place:"
-msgstr ""
-
-#: SourceIndex/birth.glade:1568
-#, fuzzy
-#| msgid "Replace"
-msgid ""
-"Death\n"
-"place:"
-msgstr "Замінити"
-
-#: SourceIndex/birth.glade:1588
-#, fuzzy
-#| msgid "BirthPlace"
-msgid ""
-"Birth\n"
-"place:"
-msgstr "Місце народження"
-
-#: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
-#, fuzzy
-#| msgid "Original: "
-msgid "Origine:"
-msgstr "Оригінал:"
-
-#: SourceIndex/birth.glade:2272
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
-msgid "<b><i>Citation</i></b>"
-msgstr ""
-"\n"
-"<u><b>Необов'язкові</b></u>\n"
-
-#: SourceIndex/birth.glade:2287
-msgid "<b><i>Source</i></b>"
-msgstr ""
-
-#: SourceIndex/census.glade:7 SourceIndex/index.glade:768
-msgid "census"
-msgstr ""
-
-#: SourceIndex/census.glade:160
-#, fuzzy
-#| msgid "<b>%s:</b>"
-msgid "<b>Census</b>"
-msgstr "<b>%s:</b>"
-
-#: SourceIndex/census.glade:176 SourceIndex/death.glade:607
-#: SourceIndex/marriage.glade:185
-msgid "<b>Repository</b>"
-msgstr ""
-
-#: SourceIndex/census.glade:221 SourceIndex/death.glade:432
-#: SourceIndex/death.glade:636 SourceIndex/death.glade:873
-#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
-#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
-#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-#, fuzzy
-#| msgid "File name"
-msgid "First name:"
-msgstr "Імʼя файлу"
-
-#: SourceIndex/census.glade:319 SourceIndex/death.glade:1003
-#, fuzzy
-#| msgid "BirthPlace"
-msgid "Birth date:"
-msgstr "Місце народження"
-
-#: SourceIndex/census.glade:364
-#, fuzzy
-#| msgid "Media Path Update"
-msgid "Death date:"
-msgstr "Оновлення шляху до медіа"
-
-#: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
-#, fuzzy
-#| msgid "BirthPlace"
-msgid "Birth place:"
-msgstr "Місце народження"
-
-#: SourceIndex/census.glade:414
-#, fuzzy
-#| msgid "Next Place"
-msgid "Death place:"
-msgstr "Наступне місце"
-
-#: SourceIndex/census.glade:447
-#, fuzzy
-#| msgid "Family:"
-msgid "Family status:"
-msgstr "Сім'я:"
-
-#: SourceIndex/census.glade:466 SourceIndex/death.glade:1099
-msgid "Spouse name:"
-msgstr ""
-
-#: SourceIndex/census.glade:510 SourceIndex/death.glade:703
-#: SourceIndex/death.glade:892 SourceIndex/marriage.glade:498
-#: SourceIndex/marriage.glade:846 SourceIndex/marriage.glade:865
-#: SourceIndex/marriage.glade:884 SourceIndex/marriage.glade:1526
-#: SourceIndex/marriage.glade:1654 SourceIndex/witness.glade:124
-#, fuzzy
-#| msgid "Original: "
-msgid "Origin:"
-msgstr "Оригінал:"
-
-#: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
-msgid "Note:"
-msgstr ""
-
-#: SourceIndex/census.glade:712 SourceIndex/death.glade:621
-#, fuzzy
-#| msgid "<b>Tags:</b>"
-msgid "<b>Data person</b>"
-msgstr "<b>Теги:</b>"
-
-#: SourceIndex/census.glade:904 SourceIndex/death.glade:217
-#: SourceIndex/marriage.glade:1296
-msgid "Volume:"
-msgstr ""
-
-#: SourceIndex/census.glade:1046
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr ""
-
-#: SourceIndex/death.glade:165
-msgid "Death act:"
-msgstr ""
-
-#: SourceIndex/death.glade:282
-msgid "<b>Death act</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
-#, fuzzy
-#| msgid "<b>%s:</b>"
-msgid "<b>Witness:</b>"
-msgstr "<b>%s:</b>"
-
-#: SourceIndex/death.glade:1131
-msgid "Marriage date:"
-msgstr ""
-
-#: SourceIndex/death.glade:1163
-msgid "Marriage place:"
-msgstr ""
-
-#: SourceIndex/death.glade:1195
-msgid "<b>Data mother</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:1210
-msgid "<b>Data father</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:1225
-#, fuzzy
-#| msgid "<b>%s:</b>"
-msgid "<b>Spouse</b> "
-msgstr "<b>%s:</b>"
-
-#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
-#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
-#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
-#: SourceIndex/marriage.glade:1874
-msgid "alive"
-msgstr ""
-
-#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-
 #: SourceIndex/index.glade:7
 #, fuzzy
 #| msgid "Indexes"
@@ -18486,6 +18156,10 @@ msgstr ""
 msgid "Select a birth source"
 msgstr "Вибрати теги для особи"
 
+#: SourceIndex/index.glade:585 SourceIndex/birth.glade:7
+msgid "birth"
+msgstr ""
+
 #: SourceIndex/index.glade:617
 #, fuzzy
 #| msgid "Select an image to begin..."
@@ -18500,6 +18174,10 @@ msgstr "Виберіть ім'я файлу dot"
 
 #: SourceIndex/index.glade:739
 msgid "Select a census source"
+msgstr ""
+
+#: SourceIndex/index.glade:768 SourceIndex/census.glade:7
+msgid "census"
 msgstr ""
 
 #: SourceIndex/index.glade:800
@@ -18522,6 +18200,346 @@ msgstr "Додати вибрані події"
 msgid ""
 "Records transcriptions ... births/deaths/marriages/censuses with common "
 "fields: id, repository, person name, birth date and place, parents."
+msgstr ""
+
+#: SourceIndex/witness.glade:7
+msgid "witness"
+msgstr ""
+
+#: SourceIndex/witness.glade:60
+#, fuzzy
+#| msgid "<b>%s:</b>"
+msgid "<b>Witness</b>"
+msgstr "<b>%s:</b>"
+
+#: SourceIndex/witness.glade:73 SourceIndex/birth.glade:195
+#: SourceIndex/birth.glade:297 SourceIndex/birth.glade:644
+msgid "Names:"
+msgstr ""
+
+#: SourceIndex/witness.glade:90 SourceIndex/birth.glade:278
+#: SourceIndex/birth.glade:511 SourceIndex/birth.glade:729
+#, fuzzy
+#| msgid "File name"
+msgid "First names:"
+msgstr "Імʼя файлу"
+
+#: SourceIndex/witness.glade:124 SourceIndex/death.glade:703
+#: SourceIndex/death.glade:892 SourceIndex/census.glade:510
+#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
+#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
+#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
+#, fuzzy
+#| msgid "Original: "
+msgid "Origin:"
+msgstr "Оригінал:"
+
+#: SourceIndex/witness.glade:141 SourceIndex/birth.glade:578
+#: SourceIndex/birth.glade:677 SourceIndex/death.glade:722
+#: SourceIndex/death.glade:821 SourceIndex/census.glade:543
+#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
+#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
+#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
+#, fuzzy
+#| msgid "Include Occupation"
+msgid "Occupation:"
+msgstr "Включити професію"
+
+#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
+#: SourceIndex/birth.glade:710 SourceIndex/death.glade:741
+#: SourceIndex/death.glade:854 SourceIndex/marriage.glade:560
+#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
+#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
+#: SourceIndex/marriage.glade:1455
+msgid "Live:"
+msgstr ""
+
+#: SourceIndex/birth.glade:65 SourceIndex/death.glade:97
+#: SourceIndex/census.glade:728 SourceIndex/marriage.glade:64
+msgid "Info:"
+msgstr ""
+
+#: SourceIndex/birth.glade:99
+#, fuzzy
+#| msgid "BirthPlace"
+msgid "Birth act:"
+msgstr "Місце народження"
+
+#: SourceIndex/birth.glade:129
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+
+#: SourceIndex/birth.glade:149
+#, fuzzy
+#| msgid "Web site title"
+msgid "The source title"
+msgstr "Назва веб-сайту"
+
+#: SourceIndex/birth.glade:164
+msgid "The volume or page of this source"
+msgstr ""
+
+#: SourceIndex/birth.glade:214
+msgid "select the gender/sex"
+msgstr ""
+
+#: SourceIndex/birth.glade:247
+msgid "The names of the main person written into the source"
+msgstr ""
+
+#: SourceIndex/birth.glade:262
+msgid "The first names of the main person written into the source"
+msgstr ""
+
+#: SourceIndex/birth.glade:334 SourceIndex/birth.glade:493
+#, fuzzy
+#| msgid "Other avatar:"
+msgid "Other:"
+msgstr "Інший аватар:"
+
+#: SourceIndex/birth.glade:351
+#, fuzzy
+#| msgid "Web site title"
+msgid "Repository title"
+msgstr "Назва веб-сайту"
+
+#: SourceIndex/birth.glade:388 SourceIndex/death.glade:589
+#: SourceIndex/census.glade:973 SourceIndex/marriage.glade:234
+#, fuzzy
+#| msgid "<b>Tags:</b>"
+msgid "<b>Image</b>"
+msgstr "<b>Теги:</b>"
+
+#: SourceIndex/birth.glade:406
+msgid "<b><i>Repository</i></b>"
+msgstr ""
+
+#: SourceIndex/birth.glade:421
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+
+#: SourceIndex/birth.glade:441
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+
+#: SourceIndex/birth.glade:460
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+
+#: SourceIndex/birth.glade:833
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+
+#: SourceIndex/birth.glade:870
+#, fuzzy
+#| msgid "Serial Number"
+msgid "Call number:"
+msgstr "Серійний номер"
+
+#: SourceIndex/birth.glade:887
+#, fuzzy
+#| msgid "The center family for the report"
+msgid "The call number into the repository"
+msgstr "Центральна сім'я для звіту"
+
+#: SourceIndex/birth.glade:925
+msgid "<b><i>Data person</i></b>"
+msgstr ""
+
+#: SourceIndex/birth.glade:949
+msgid "<b><i>Data margin</i></b>"
+msgstr ""
+
+#: SourceIndex/birth.glade:973
+msgid "<b><i>Data father</i></b>"
+msgstr ""
+
+#: SourceIndex/birth.glade:985
+msgid "<b><i>Data mother</i></b>"
+msgstr ""
+
+#: SourceIndex/birth.glade:1021
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+
+#: SourceIndex/birth.glade:1549
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+
+#: SourceIndex/birth.glade:1568
+#, fuzzy
+#| msgid "Replace"
+msgid ""
+"Death\n"
+"place:"
+msgstr "Замінити"
+
+#: SourceIndex/birth.glade:1588
+#, fuzzy
+#| msgid "BirthPlace"
+msgid ""
+"Birth\n"
+"place:"
+msgstr "Місце народження"
+
+#: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
+#, fuzzy
+#| msgid "Original: "
+msgid "Origine:"
+msgstr "Оригінал:"
+
+#: SourceIndex/birth.glade:2272
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "<u><b>Optional</b></u>\n"
+msgid "<b><i>Citation</i></b>"
+msgstr ""
+"\n"
+"<u><b>Необов'язкові</b></u>\n"
+
+#: SourceIndex/birth.glade:2287
+msgid "<b><i>Source</i></b>"
+msgstr ""
+
+#: SourceIndex/death.glade:165
+msgid "Death act:"
+msgstr ""
+
+#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
+#: SourceIndex/marriage.glade:1296
+msgid "Volume:"
+msgstr ""
+
+#: SourceIndex/death.glade:282
+msgid "<b>Death act</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
+#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
+#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
+#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
+#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
+#, fuzzy
+#| msgid "File name"
+msgid "First name:"
+msgstr "Імʼя файлу"
+
+#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
+#: SourceIndex/marriage.glade:185
+msgid "<b>Repository</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
+#, fuzzy
+#| msgid "<b>Tags:</b>"
+msgid "<b>Data person</b>"
+msgstr "<b>Теги:</b>"
+
+#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
+#, fuzzy
+#| msgid "<b>%s:</b>"
+msgid "<b>Witness:</b>"
+msgstr "<b>%s:</b>"
+
+#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
+#, fuzzy
+#| msgid "BirthPlace"
+msgid "Birth date:"
+msgstr "Місце народження"
+
+#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
+#, fuzzy
+#| msgid "BirthPlace"
+msgid "Birth place:"
+msgstr "Місце народження"
+
+#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
+msgid "Note:"
+msgstr ""
+
+#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
+msgid "Spouse name:"
+msgstr ""
+
+#: SourceIndex/death.glade:1131
+msgid "Marriage date:"
+msgstr ""
+
+#: SourceIndex/death.glade:1163
+msgid "Marriage place:"
+msgstr ""
+
+#: SourceIndex/death.glade:1195
+msgid "<b>Data mother</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:1210
+msgid "<b>Data father</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:1225
+#, fuzzy
+#| msgid "<b>%s:</b>"
+msgid "<b>Spouse</b> "
+msgstr "<b>%s:</b>"
+
+#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
+#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
+#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
+#: SourceIndex/marriage.glade:1874
+msgid "alive"
+msgstr ""
+
+#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+
+#: SourceIndex/census.glade:160
+#, fuzzy
+#| msgid "<b>%s:</b>"
+msgid "<b>Census</b>"
+msgstr "<b>%s:</b>"
+
+#: SourceIndex/census.glade:364
+#, fuzzy
+#| msgid "Media Path Update"
+msgid "Death date:"
+msgstr "Оновлення шляху до медіа"
+
+#: SourceIndex/census.glade:414
+#, fuzzy
+#| msgid "Next Place"
+msgid "Death place:"
+msgstr "Наступне місце"
+
+#: SourceIndex/census.glade:447
+#, fuzzy
+#| msgid "Family:"
+msgid "Family status:"
+msgstr "Сім'я:"
+
+#: SourceIndex/census.glade:1046
+msgid "order, person, surname, given, age, status, occupation, etc ..."
 msgstr ""
 
 #: SourceIndex/marriage.glade:49
@@ -18596,16 +18614,6 @@ msgstr ""
 msgid "<b>Data spouse2</b>"
 msgstr ""
 
-#: SourceIndex/witness.glade:7
-msgid "witness"
-msgstr ""
-
-#: SourceIndex/witness.glade:60
-#, fuzzy
-#| msgid "<b>%s:</b>"
-msgid "<b>Witness</b>"
-msgstr "<b>%s:</b>"
-
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
 msgstr ""
@@ -18613,18 +18621,6 @@ msgstr ""
 #: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
 msgstr ""
-
-#: UKWebConnectPack/UKWebPack.gpr.py:11
-#, fuzzy
-#| msgid "US Web Connect Pack"
-msgid "UK Web Connect Pack"
-msgstr "Пакет підключення до вебсайтів США"
-
-#: UKWebConnectPack/UKWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the US (requires libwebconnect)"
-msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgstr "Збірка вебсайтів для США (потрібен libwebconnect)"
 
 #: UKWebConnectPack/UKWebPack.py:33
 #, fuzzy
@@ -18648,9 +18644,17 @@ msgstr "Цифрова бібліотека Hathi Trust"
 msgid "Open Library"
 msgstr "Відкрита бібліотека"
 
-#: Heatmap/heatmap.gpr.py:26
-msgid "Create a heatmap web report."
-msgstr "Створити веб-звіт теплової мапи (Heatmap)."
+#: UKWebConnectPack/UKWebPack.gpr.py:11
+#, fuzzy
+#| msgid "US Web Connect Pack"
+msgid "UK Web Connect Pack"
+msgstr "Пакет підключення до вебсайтів США"
+
+#: UKWebConnectPack/UKWebPack.gpr.py:12
+#, fuzzy
+#| msgid "Collection of Web sites for the US (requires libwebconnect)"
+msgid "Collection of Web sites for the UK (requires libwebconnect)"
+msgstr "Збірка вебсайтів для США (потрібен libwebconnect)"
 
 #: Heatmap/heatmap.py:85
 msgid "Map tiles"
@@ -18739,6 +18743,10 @@ msgstr "Шлях не існує."
 msgid "Invalid filename."
 msgstr "Недійсне імʼя файлу."
 
+#: Heatmap/heatmap.gpr.py:26
+msgid "Create a heatmap web report."
+msgstr "Створити веб-звіт теплової мапи (Heatmap)."
+
 #: Heatmap/utils.py:55
 msgid "Stamen Terrain"
 msgstr "Stamen Terrain"
@@ -18808,6 +18816,11 @@ msgid ""
 "collapse were ignored."
 msgstr ""
 
+#: ClipboardGramplet/ClipboardGramplet.py:83
+#, python-format
+msgid "Clipboard Gramplet: %s"
+msgstr "Gramplet Буфер обміну: %s"
+
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:18
 msgid "Collections Clipboard"
@@ -18817,11 +18830,6 @@ msgstr "Буфер обміну колекцій"
 msgid "Gramplet for grouping collections of items to aid in data entry."
 msgstr ""
 "Gramplet для групування колекцій елементів для полегшення введення даних."
-
-#: ClipboardGramplet/ClipboardGramplet.py:83
-#, python-format
-msgid "Clipboard Gramplet: %s"
-msgstr "Gramplet Буфер обміну: %s"
 
 #: ExportProlog/ExportProlog.gpr.py:4
 #, fuzzy
@@ -19117,16 +19125,16 @@ msgstr "Останній мешканець"
 msgid "Total Known Residents"
 msgstr "Загальна кількість відомих мешканців"
 
-#: libaccess/libaccess.gpr.py:34
-msgid "Provides a library for generic access to the database and gen.lib."
-msgstr ""
-
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
 msgstr ""
 
 #: libaccess/libaccess.py:260
 msgid "libaccess edit person"
+msgstr ""
+
+#: libaccess/libaccess.gpr.py:34
+msgid "Provides a library for generic access to the database and gen.lib."
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
@@ -19223,19 +19231,9 @@ msgstr ""
 "\n"
 "Пошук завершено. Знайдено %d звʼязків."
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:25 GeoTimeLines/GeoTimeLines.py:233
-#: GeoTimeLines/GeoTimeLines.py:339
+#: GeoTimeLines/GeoTimeLines.py:233 GeoTimeLines/GeoTimeLines.py:339
+#: GeoTimeLines/GeoTimeLines.gpr.py:25
 msgid "TimeLines Map"
-msgstr "Мапа хронології"
-
-#: GeoTimeLines/GeoTimeLines.gpr.py:27
-msgid ""
-"A view showing all the places visited by a person or persons on various date."
-msgstr ""
-"Вигляд, що показує всі місця, відвідані особою або особами в різні дати."
-
-#: GeoTimeLines/GeoTimeLines.gpr.py:39
-msgid "TimeLines map"
 msgstr "Мапа хронології"
 
 #: GeoTimeLines/GeoTimeLines.py:755
@@ -19339,8 +19337,18 @@ msgstr "Показувати позначки часу на панелі нав�
 msgid "TimeLines Map options"
 msgstr "Мапа хронології"
 
-#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:328
-#: ImportMerge/importmerge.py:707
+#: GeoTimeLines/GeoTimeLines.gpr.py:27
+msgid ""
+"A view showing all the places visited by a person or persons on various date."
+msgstr ""
+"Вигляд, що показує всі місця, відвідані особою або особами в різні дати."
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:39
+msgid "TimeLines map"
+msgstr "Мапа хронології"
+
+#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
+#: ImportMerge/importmerge.py:708
 msgid "Import and Merge tool"
 msgstr "Інструмент імпорту та злиття"
 
@@ -19351,47 +19359,47 @@ msgid ""
 msgstr ""
 "Порівнює базу даних Gramps XML із поточною та дозволяє обʼєднати відмінності."
 
-#: ImportMerge/importmerge.py:80
+#: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
 msgstr "Імпортувати та обʼєднати Gramps XML"
 
-#: ImportMerge/importmerge.py:89
+#: ImportMerge/importmerge.py:90
 msgid "Missing"
 msgstr "Відсутнє"
 
-#: ImportMerge/importmerge.py:93
+#: ImportMerge/importmerge.py:94
 msgid "Different"
 msgstr "Відрізняється"
 
-#: ImportMerge/importmerge.py:108
+#: ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr "Видалити оригінал"
 
-#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
+#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.glade:334
 msgid "Ignore"
 msgstr "Ігнорувати"
 
-#: ImportMerge/importmerge.py:110
+#: ImportMerge/importmerge.py:111
 msgid "Add Import"
 msgstr "Додати з імпорту"
 
-#: ImportMerge/importmerge.py:111
+#: ImportMerge/importmerge.py:112
 msgid "Merge into original"
 msgstr "Об'єднати з оригіналом"
 
-#: ImportMerge/importmerge.py:112
+#: ImportMerge/importmerge.py:113
 msgid "Merge into import"
 msgstr "Об'єднати з імпортом"
 
-#: ImportMerge/importmerge.py:113
+#: ImportMerge/importmerge.py:114
 msgid "Replace with import"
 msgstr "Замінити з імпорту"
 
-#: ImportMerge/importmerge.py:114
+#: ImportMerge/importmerge.py:115
 msgid "Keep original"
 msgstr "Залишити оригінал"
 
-#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
+#: ImportMerge/importmerge.py:116 ImportMerge/importmerge.glade:293
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
@@ -19400,7 +19408,7 @@ msgstr ""
 "Зміни не будуть внесені до вашого дерева, доки ви не натиснете 'Завершити' і "
 "не підтвердите."
 
-#: ImportMerge/importmerge.py:118
+#: ImportMerge/importmerge.py:119
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
@@ -19408,7 +19416,7 @@ msgstr ""
 "Цей елемент буде видалено з вашого дерева. Усі посилання також позначені для "
 "видалення."
 
-#: ImportMerge/importmerge.py:120
+#: ImportMerge/importmerge.py:121
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
@@ -19416,7 +19424,7 @@ msgstr ""
 "Цей елемент не буде змінено у вашому дереві. Усі посилання також позначені "
 "для ігнорування."
 
-#: ImportMerge/importmerge.py:122
+#: ImportMerge/importmerge.py:123
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
@@ -19424,7 +19432,7 @@ msgstr ""
 "Цей елемент буде додано до вашого дерева. Усі посилання також позначені для "
 "додавання."
 
-#: ImportMerge/importmerge.py:124
+#: ImportMerge/importmerge.py:125
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
@@ -19432,7 +19440,7 @@ msgstr ""
 "Цей елемент буде об'єднано, зберігаючи дані з вашого дерева. Усі посилання "
 "також позначені для об'єднання або додавання."
 
-#: ImportMerge/importmerge.py:126
+#: ImportMerge/importmerge.py:127
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
@@ -19440,7 +19448,7 @@ msgstr ""
 "Цей елемент буде об'єднано, використовуючи дані з імпорту. Усі посилання "
 "також позначені для об'єднання або додавання."
 
-#: ImportMerge/importmerge.py:128
+#: ImportMerge/importmerge.py:129
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
@@ -19448,7 +19456,7 @@ msgstr ""
 "Імпортовані дані повністю замінять дані у вашому дереві. Усі посилання також "
 "будуть позначені для заміни або видалення."
 
-#: ImportMerge/importmerge.py:130
+#: ImportMerge/importmerge.py:131
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
@@ -19456,40 +19464,40 @@ msgstr ""
 "Цей елемент не буде змінено у вашому дереві. Усі посилання також залишаться "
 "без змін."
 
-#: ImportMerge/importmerge.py:338
+#: ImportMerge/importmerge.py:339
 msgid "Import Failure"
 msgstr "Помилка імпорту"
 
-#: ImportMerge/importmerge.py:406
+#: ImportMerge/importmerge.py:407
 msgid "Your Tree and import are the same."
 msgstr "Ваше дерево і імпортовані дані однакові."
 
-#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
-#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
+#: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
+#: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
 msgid "your tree "
 msgstr "ваше дерево "
 
-#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
-#: ImportMerge/importmerge.py:474
+#: ImportMerge/importmerge.py:459 ImportMerge/importmerge.py:467
+#: ImportMerge/importmerge.py:475
 msgid "imported "
 msgstr "імпортовано "
 
-#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
-#: ImportMerge/importmerge.py:981
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
+#: ImportMerge/importmerge.py:982
 msgid "Original"
 msgstr "Оригінал"
 
-#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
-#: ImportMerge/importmerge.py:982
+#: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
+#: ImportMerge/importmerge.py:983
 msgid "Imported"
 msgstr "Імпортовано"
 
-#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
-#: ImportMerge/importmerge.py:984
+#: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
+#: ImportMerge/importmerge.py:985
 msgid "Result  "
 msgstr "Результат  "
 
-#: ImportMerge/importmerge.py:710
+#: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
 msgstr "Імпорт і злиття"
 
@@ -19596,6 +19604,11 @@ msgstr "Автоматично позначати сім'ї"
 msgid "Automark Parent Families"
 msgstr "Автоматично позначати сім'ї батьків"
 
+#: ExtendedAttributes/ExtendedAttributes.py:54
+msgid ""
+"Double-click on a row to edit the object containing the selected attribute."
+msgstr ""
+
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Extended Person Attributes"
 msgstr ""
@@ -19608,20 +19621,6 @@ msgstr ""
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:48
 msgid "Extended Family Attributes"
 msgstr ""
-
-#: ExtendedAttributes/ExtendedAttributes.py:54
-msgid ""
-"Double-click on a row to edit the object containing the selected attribute."
-msgstr ""
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
-msgid "Photo Tagging"
-msgstr "Позначення на фото"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
-msgid "Gramplet for tagging people in photos"
-msgstr "Грамплет для позначення людей на фотографіях"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
@@ -19730,6 +19729,15 @@ msgstr "Жінка|Померла у %s"
 msgid "Unknown gender person|Dead at %s"
 msgstr "Невідомої статі|Помер(ла) у %s"
 
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
+msgid "Photo Tagging"
+msgstr "Позначення на фото"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
+msgid "Gramplet for tagging people in photos"
+msgstr "Грамплет для позначення людей на фотографіях"
+
 #: ImportGramplet/ImportGramplet.gpr.py:11
 msgid "Gramplet for importing text"
 msgstr "Gramplet для імпорту тексту"
@@ -19775,6 +19783,15 @@ msgstr "Імпорт тексту..."
 msgid "Can't determine type of import"
 msgstr "Не вдалося визначити тип імпорту"
 
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-format
+msgid "%d rows processed in %s seconds.\n"
+msgstr "%d рядків оброблено за %s секунд.\n"
+
+#: Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "Сьогодні"
+
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Грамплет запитів"
@@ -19798,15 +19815,6 @@ msgstr "Швидкий перегляд виконання SQL-подібних 
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
 msgstr "Введіть SQL-запит"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d рядків оброблено за %s секунд.\n"
-
-#: Query/QueryQuickview.py:426
-msgid "Today"
-msgstr "Сьогодні"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:11
 #, fuzzy
@@ -19866,14 +19874,6 @@ msgstr ""
 msgid "FamilySpace"
 msgstr "FamilySearch.org"
 
-#: DoubleCousins/double_cousins.gpr.py:25
-msgid "Double Cousins"
-msgstr ""
-
-#: DoubleCousins/double_cousins.gpr.py:26
-msgid "A text report listing double cousins."
-msgstr ""
-
 #: DoubleCousins/double_cousins.py:112
 msgid "Double Cousins Report"
 msgstr ""
@@ -19899,6 +19899,18 @@ msgstr ""
 msgid "Show info text"
 msgstr "Показати повні дати"
 
+#: DoubleCousins/double_cousins.gpr.py:25
+msgid "Double Cousins"
+msgstr ""
+
+#: DoubleCousins/double_cousins.gpr.py:26
+msgid "A text report listing double cousins."
+msgstr ""
+
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
+msgid "Read Gramps headline news"
+msgstr "Читати головні новини Gramps"
+
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
 msgid "Headline News"
@@ -19907,19 +19919,6 @@ msgstr "Головні новини"
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
 msgid "Gramplet that shows the latest Gramps news"
 msgstr "Gramplet, що показує останні новини Gramps"
-
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
-msgid "Read Gramps headline news"
-msgstr "Читати головні новини Gramps"
-
-#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
-#: RemoveTagTool/RemoveTagTool.py:246
-msgid "Add/Remove Tag Tool"
-msgstr ""
-
-#: RemoveTagTool/RemoveTagTool.gpr.py:26
-msgid "Add or remove a tag from groups of people, events, etc."
-msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
@@ -19976,6 +19975,11 @@ msgstr "Загальні параметри"
 msgid "All %s"
 msgstr ""
 
+#: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
+#: RemoveTagTool/RemoveTagTool.gpr.py:25
+msgid "Add/Remove Tag Tool"
+msgstr ""
+
 #: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
@@ -20009,13 +20013,9 @@ msgstr ""
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr ""
 
-#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
-msgid "DNA Segment Map"
-msgstr "Карта сегментів ДНК"
-
-#: DNA/dnasegmentmap.gpr.py:29
-msgid "Gramplet showing a matching DNA segment map"
-msgstr "Грамплет, що показує карту відповідних сегментів ДНК"
+#: RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr ""
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
@@ -20094,6 +20094,14 @@ msgstr ""
 "Натисніть, щоб зробити цю особу активною\n"
 "Клацніть правою кнопкою миші, щоб редагувати цю особу"
 
+#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
+msgid "DNA Segment Map"
+msgstr "Карта сегментів ДНК"
+
+#: DNA/dnasegmentmap.gpr.py:29
+msgid "Gramplet showing a matching DNA segment map"
+msgstr "Грамплет, що показує карту відповідних сегментів ДНК"
+
 #: MongoDB/mongodb.gpr.py:23
 msgid "MongoDB"
 msgstr ""
@@ -20105,15 +20113,6 @@ msgstr ""
 #: MongoDB/mongodb.gpr.py:25
 msgid "MongoDB Database"
 msgstr ""
-
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
-msgid "Related Relatives"
-msgstr "Пов’язані родичі"
-
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
-msgid "Gramplet showing relatives in a relation"
-msgstr "Грамплет, що показує родичів у зв’язку"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
 msgid "Relations of related people in your database:"
@@ -20135,11 +20134,14 @@ msgstr "Не знайдено родичів у зв’язку"
 msgid "END"
 msgstr "КІНЕЦЬ"
 
-#: TimelineQuickview/TimelineQuickview.gpr.py:11
-#, fuzzy
-#| msgid "Display all names of all people"
-msgid "Display a person's events on a timeline"
-msgstr "Відображає всі імена всіх людей"
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
+msgid "Related Relatives"
+msgstr "Пов’язані родичі"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
+msgid "Gramplet showing relatives in a relation"
+msgstr "Грамплет, що показує родичів у зв’язку"
 
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
@@ -20203,15 +20205,11 @@ msgstr "Сімейне дерево для %s"
 msgid "People involved"
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:31
-msgid "Lines of Descendency Report"
-msgstr ""
-
-#: LinesOfDescendency/lines-of-descendency.gpr.py:33
-msgid ""
-"Prints out all descendency lines from a given ancestor to a given descendent "
-"in text."
-msgstr ""
+#: TimelineQuickview/TimelineQuickview.gpr.py:11
+#, fuzzy
+#| msgid "Display all names of all people"
+msgid "Display a person's events on a timeline"
+msgstr "Відображає всі імена всіх людей"
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
@@ -20242,6 +20240,16 @@ msgstr " у рядку: "
 #: LinesOfDescendency/lines-of-descendency.py:176
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
+msgstr ""
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:31
+msgid "Lines of Descendency Report"
+msgstr ""
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:33
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
 msgstr ""
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:24
@@ -20331,16 +20339,6 @@ msgstr ""
 
 #: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
-msgstr ""
-
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
-msgid "Timeline Pedigree Report"
-msgstr "Звіт хронологічного родоводу"
-
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
-msgid ""
-"Creates an HTML webpage that uses JavaScript to show a pedigree block "
-"diagram arranged vertically by birth date"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
@@ -20468,6 +20466,20 @@ msgstr ""
 msgid "Number of pixel between left border and scale"
 msgstr "Кількість пікселів між лівою межею та шкалою"
 
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
+msgid "Timeline Pedigree Report"
+msgstr "Звіт хронологічного родоводу"
+
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+
+#: USWebConnectPack/USWebPack.py:35
+msgid "US Google"
+msgstr "Google США"
+
 #: USWebConnectPack/USWebPack.gpr.py:11
 msgid "US Web Connect Pack"
 msgstr "Пакет підключення до вебсайтів США"
@@ -20475,16 +20487,6 @@ msgstr "Пакет підключення до вебсайтів США"
 #: USWebConnectPack/USWebPack.gpr.py:12
 msgid "Collection of Web sites for the US (requires libwebconnect)"
 msgstr "Збірка вебсайтів для США (потрібен libwebconnect)"
-
-#: USWebConnectPack/USWebPack.py:35
-msgid "US Google"
-msgstr "Google США"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
-#, fuzzy
-#| msgid "Select the number of descending generations"
-msgid "Shows the number of descendants of the current person"
-msgstr "Виберіть кількість наступних поколінь"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, fuzzy, python-format
@@ -20516,15 +20518,11 @@ msgstr "Кількість поколінь нащадків, що включа�
 msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr ""
 
-#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 #, fuzzy
-#| msgid "Places Index"
-msgid "PlaceUpdate"
-msgstr "Індекс місць"
-
-#: PlaceUpdate/PlaceUpdate.gpr.py:5
-msgid "Gramplet to manipulate multiple places"
-msgstr ""
+#| msgid "Select the number of descending generations"
+msgid "Shows the number of descendants of the current person"
+msgstr "Виберіть кількість наступних поколінь"
 
 #: PlaceUpdate/PlaceUpdate.py:56
 #, fuzzy
@@ -20613,14 +20611,14 @@ msgstr ""
 msgid "Regex operation failed: {}"
 msgstr ""
 
-#: MediaReport/media_report.gpr.py:24
+#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
 #, fuzzy
-#| msgid "Media Merge"
-msgid "Media Report"
-msgstr "Обʼєднання медіа"
+#| msgid "Places Index"
+msgid "PlaceUpdate"
+msgstr "Індекс місць"
 
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
+#: PlaceUpdate/PlaceUpdate.gpr.py:5
+msgid "Gramplet to manipulate multiple places"
 msgstr ""
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
@@ -20725,13 +20723,14 @@ msgstr "Обʼєднання медіа"
 msgid "Maximum media height in % of available page height."
 msgstr ""
 
-#: DateCalculator/DateCalculator.gpr.py:22
-#: DateCalculator/DateCalculator.gpr.py:32
-msgid "Date Calculator"
-msgstr "Калькулятор дат"
+#: MediaReport/media_report.gpr.py:24
+#, fuzzy
+#| msgid "Media Merge"
+msgid "Media Report"
+msgstr "Обʼєднання медіа"
 
-#: DateCalculator/DateCalculator.gpr.py:23
-msgid "Perform date math calculations"
+#: MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
 msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
@@ -20780,6 +20779,15 @@ msgstr "Помилка: принаймні один вираз має бути �
 msgid "Enter an expression in the entries above and click Calculate."
 msgstr ""
 
+#: DateCalculator/DateCalculator.gpr.py:22
+#: DateCalculator/DateCalculator.gpr.py:32
+msgid "Date Calculator"
+msgstr "Калькулятор дат"
+
+#: DateCalculator/DateCalculator.gpr.py:23
+msgid "Perform date math calculations"
+msgstr ""
+
 #: FixCoords/fixcoords.gpr.py:31
 #, fuzzy
 #| msgid "Offset X Coordinate"
@@ -20818,18 +20826,6 @@ msgstr "Покоління нащадків"
 msgid "Gramplet for showing people and descendant counts"
 msgstr "Грамплет для позначення людей на фотографіях"
 
-#: FRWebConnectPack/FRWebPack.gpr.py:11
-#, fuzzy
-#| msgid "US Web Connect Pack"
-msgid "FR Web Connect Pack"
-msgstr "Пакет підключення до вебсайтів США"
-
-#: FRWebConnectPack/FRWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the US (requires libwebconnect)"
-msgid "Collection of Web sites for the FR (requires libwebconnect)"
-msgstr "Збірка вебсайтів для США (потрібен libwebconnect)"
-
 #: FRWebConnectPack/FRWebPack.py:41
 msgid "Cultural ministry (France)"
 msgstr ""
@@ -20866,9 +20862,17 @@ msgstr "Відкрита бібліотека"
 msgid "Belgium's Archives"
 msgstr ""
 
-#: FamilyTree/FamilyTree.gpr.py:5
-msgid "Produces a graphical family tree."
-msgstr "Створює графічне сімейне дерево."
+#: FRWebConnectPack/FRWebPack.gpr.py:11
+#, fuzzy
+#| msgid "US Web Connect Pack"
+msgid "FR Web Connect Pack"
+msgstr "Пакет підключення до вебсайтів США"
+
+#: FRWebConnectPack/FRWebPack.gpr.py:12
+#, fuzzy
+#| msgid "Collection of Web sites for the US (requires libwebconnect)"
+msgid "Collection of Web sites for the FR (requires libwebconnect)"
+msgstr "Збірка вебсайтів для США (потрібен libwebconnect)"
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
@@ -21058,6 +21062,10 @@ msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr ""
 "Стиль, що використовується для даних (народження, смерть, шлюб, розлучення)."
 
+#: FamilyTree/FamilyTree.gpr.py:5
+msgid "Produces a graphical family tree."
+msgstr "Створює графічне сімейне дерево."
+
 #: PostgreSQL/postgresql.gpr.py:23
 msgid "PostgreSQL"
 msgstr ""
@@ -21096,19 +21104,12 @@ msgid "Produces a textual repositories report"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:45
-#: RepositoriesReport/RepositoriesReport.py:80
 #: RepositoriesReport/RepositoriesReportAlt.py:139
+#: RepositoriesReport/RepositoriesReport.py:80
 #, fuzzy
 #| msgid "Repositories Index"
 msgid "Repositories Report"
 msgstr "Індекс сховищ"
-
-#: RepositoriesReport/RepositoriesReport.py:189
-#: RepositoriesReport/RepositoriesReportAlt.py:518
-#, fuzzy
-#| msgid "The style used for names."
-msgid "The style used for repository title."
-msgstr "Стиль, що використовується для імен."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:273
 msgid "Publication information:"
@@ -21242,27 +21243,18 @@ msgstr ""
 msgid "Whether to include key records with empty values."
 msgstr "Чи включати сторінки сховищ."
 
+#: RepositoriesReport/RepositoriesReportAlt.py:518
+#: RepositoriesReport/RepositoriesReport.py:189
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The style used for repository title."
+msgstr "Стиль, що використовується для імен."
+
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 #, fuzzy
 #| msgid "The style used for names."
 msgid "The style used for child section."
 msgstr "Стиль, що використовується для імен."
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:32
-msgid "Export GEDCOM Extensions (GED2)"
-msgstr ""
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:33
-msgid "GEDCOM Extensions (GED2)"
-msgstr ""
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:34
-msgid "Extensions to the common GEDCOM format."
-msgstr ""
-
-#: GedcomExtensions/GedcomExtensions.gpr.py:42
-msgid "GEDCOM Extensions options"
-msgstr ""
 
 #: GedcomExtensions/GedcomExtensions.py:197
 #, fuzzy
@@ -21301,12 +21293,20 @@ msgstr "Тип кроків"
 msgid "Export failed"
 msgstr "Імпортувати файл"
 
-#: DetId/DetId.gpr.py:31
-msgid "Deterministic ID"
+#: GedcomExtensions/GedcomExtensions.gpr.py:32
+msgid "Export GEDCOM Extensions (GED2)"
 msgstr ""
 
-#: DetId/DetId.gpr.py:32
-msgid "Set/reset Gramps to use a Deterministic ID"
+#: GedcomExtensions/GedcomExtensions.gpr.py:33
+msgid "GEDCOM Extensions (GED2)"
+msgstr ""
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:34
+msgid "Extensions to the common GEDCOM format."
+msgstr ""
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:42
+msgid "GEDCOM Extensions options"
 msgstr ""
 
 #: DetId/DetId.py:74
@@ -21318,24 +21318,13 @@ msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
-#, fuzzy
-#| msgid "Timeline Pedigree Report"
-msgid "Timeline Pedigree"
-msgstr "Звіт хронологічного родоводу"
-
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
-#, fuzzy
-#| msgid ""
-#| "The view shows a space-efficient pedigree with ancestors of the selected "
-#| "person"
-msgid ""
-"The view shows a timeline pedigree with ancestors and descendants of the "
-"selected person"
+#: DetId/DetId.gpr.py:31
+msgid "Deterministic ID"
 msgstr ""
-"Цей вигляд показує просторово ефективне родовідне дерево з предками обраної "
-"особи"
+
+#: DetId/DetId.gpr.py:32
+msgid "Set/reset Gramps to use a Deterministic ID"
+msgstr ""
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
@@ -21393,30 +21382,29 @@ msgstr[2] "Третє покоління"
 msgid "About Timeline Pedigree View"
 msgstr "Звіт хронологічного родоводу"
 
-#: GraphView/avatars.py:60
-msgid "Dark (default)"
-msgstr "Темний (за замовчуванням)"
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
+#, fuzzy
+#| msgid "Timeline Pedigree Report"
+msgid "Timeline Pedigree"
+msgstr "Звіт хронологічного родоводу"
 
-#: GraphView/avatars.py:61
-msgid "Light"
-msgstr "Світлий"
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
+#, fuzzy
+#| msgid ""
+#| "The view shows a space-efficient pedigree with ancestors of the selected "
+#| "person"
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"Цей вигляд показує просторово ефективне родовідне дерево з предками обраної "
+"особи"
 
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr "Мультфільм"
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr "Сучасний"
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Вигляд графа"
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr "Динамічний та інтерактивний граф відносин"
 
 #: GraphView/graphview.py:754
 msgid "Show IDs"
@@ -21784,6 +21772,26 @@ msgstr "Видалення родини вилучить її з бази дан
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Видалити родину [%s]"
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr "Динамічний та інтерактивний граф відносин"
+
+#: GraphView/avatars.py:60
+msgid "Dark (default)"
+msgstr "Темний (за замовчуванням)"
+
+#: GraphView/avatars.py:61
+msgid "Light"
+msgstr "Світлий"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr "Мультфільм"
+
+#: GraphView/avatars.py:63
+msgid "Modern"
+msgstr "Сучасний"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
@@ -22160,12 +22168,6 @@ msgstr "Основний стиль, що використовується дл�
 msgid "Style used for labels and captions"
 msgstr "Стиль, що використовується для етикеток та підписів"
 
-#: NLWebConnectPack/NLWebPack.gpr.py:13
-#, fuzzy
-#| msgid "Collection of Web sites for the US (requires libwebconnect)"
-msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
-msgstr "Збірка вебсайтів для США (потрібен libwebconnect)"
-
 #: NLWebConnectPack/NLWebPack.py:34
 msgid "Open Archives"
 msgstr ""
@@ -22181,6 +22183,12 @@ msgstr ""
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
 msgstr ""
+
+#: NLWebConnectPack/NLWebPack.gpr.py:13
+#, fuzzy
+#| msgid "Collection of Web sites for the US (requires libwebconnect)"
+msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
+msgstr "Збірка вебсайтів для США (потрібен libwebconnect)"
 
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:34
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:47
@@ -22213,27 +22221,9 @@ msgstr ""
 msgid "Gramplet for demonstrating Cairo graphics"
 msgstr "Грамплет для розпізнавання та призначення облич"
 
-#: LastChange/LastChange.gpr.py:26
-msgid "List the last ten person records that have been changed"
-msgstr ""
-
-#: LastChange/LastChange.gpr.py:35
-#, fuzzy
-#| msgid "Local changes"
-msgid "Latest Changes"
-msgstr "Локальні зміни"
-
-#: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
-#: LastChange/LastChangeReport.py:113
+#: LastChange/LastChangeReport.py:74 LastChange/LastChangeReport.py:113
+#: LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
-msgstr ""
-
-#: LastChange/LastChange.gpr.py:43
-msgid "Report of the last records that have been changed"
-msgstr ""
-
-#: LastChange/LastChangeGramplet.py:82
-msgid "changed on"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:75
@@ -22313,6 +22303,24 @@ msgstr "Вибрати форму"
 #| msgid "The style used for names."
 msgid "The style used for normal text"
 msgstr "Стиль, що використовується для імен."
+
+#: LastChange/LastChangeGramplet.py:82
+msgid "changed on"
+msgstr ""
+
+#: LastChange/LastChange.gpr.py:26
+msgid "List the last ten person records that have been changed"
+msgstr ""
+
+#: LastChange/LastChange.gpr.py:35
+#, fuzzy
+#| msgid "Local changes"
+msgid "Latest Changes"
+msgstr "Локальні зміни"
+
+#: LastChange/LastChange.gpr.py:43
+msgid "Report of the last records that have been changed"
+msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:16
@@ -22827,16 +22835,6 @@ msgstr ""
 #, python-format
 msgid "%(female_name)s retired in %(year)s at %(place)s."
 msgstr ""
-
-#: NetworkChart/NetworkChart.gpr.py:24
-msgid "Network Chart"
-msgstr ""
-
-#: NetworkChart/NetworkChart.gpr.py:35
-#, fuzzy
-#| msgid "Generate a families index page"
-msgid "Generates a family network chart."
-msgstr "Генерувати індексну сторінку родин"
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
@@ -23374,51 +23372,15 @@ msgstr ""
 msgid "Enable/disable confirmation of file overwrite."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-#, fuzzy
-#| msgid "Deep Connections Gramplet"
-msgid "Place Coordinate Gramplet"
-msgstr "Грамплет Глибоких Звʼязків"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
-msgid "Map Menu"
+#: NetworkChart/NetworkChart.gpr.py:24
+msgid "Network Chart"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
+#: NetworkChart/NetworkChart.gpr.py:35
 #, fuzzy
-#| msgid "Add citation and source to Place"
-msgid "Add city as place"
-msgstr "Додати цитату та джерело до місця"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
-#, fuzzy
-#| msgid "Add as a Parent"
-msgid "Add addess as place"
-msgstr "Додати як батька"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
-msgid "Place Coordinate Gramplet view"
-msgstr ""
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
-msgid "View for the place coordinate gramplet."
-msgstr ""
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
-#, fuzzy
-#| msgid "Offset X Coordinate"
-msgid "Place and Coordinates"
-msgstr "Зсув по X"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
-msgid "Gramplet that simplifies setting the coordinates of a place"
-msgstr ""
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
-#, fuzzy
-#| msgid "Offset X Coordinate"
-msgid "Place Coordinates"
-msgstr "Зсув по X"
+#| msgid "Generate a families index page"
+msgid "Generates a family network chart."
+msgstr "Генерувати індексну сторінку родин"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
@@ -23468,6 +23430,52 @@ msgstr "Нічого не вибрано"
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr ""
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
+msgid "Place Coordinate Gramplet view"
+msgstr ""
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
+msgid "View for the place coordinate gramplet."
+msgstr ""
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
+#, fuzzy
+#| msgid "Offset X Coordinate"
+msgid "Place and Coordinates"
+msgstr "Зсув по X"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr ""
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
+#, fuzzy
+#| msgid "Offset X Coordinate"
+msgid "Place Coordinates"
+msgstr "Зсув по X"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+#, fuzzy
+#| msgid "Deep Connections Gramplet"
+msgid "Place Coordinate Gramplet"
+msgstr "Грамплет Глибоких Звʼязків"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
+msgid "Map Menu"
+msgstr ""
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
+#, fuzzy
+#| msgid "Add citation and source to Place"
+msgid "Add city as place"
+msgstr "Додати цитату та джерело до місця"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+#, fuzzy
+#| msgid "Add as a Parent"
+msgid "Add addess as place"
+msgstr "Додати як батька"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
 #, fuzzy
