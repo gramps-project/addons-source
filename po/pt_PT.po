@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 11:46+0000\n"
+"PO-Revision-Date: 2025-02-18 11:32+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -1185,10 +1185,8 @@ msgid "People with multiple parent records"
 msgstr ""
 
 #: FilterRules/multipleparents.py:43
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches people who have more than one set of parents"
-msgstr "Compara indivíduos com eventos com um papel seleccionado"
+msgstr "Compara indivíduos com mais de um conjunto de pais"
 
 #: FilterRules/associationsofpersonmatch.py:46
 #: FilterRules/associationsofpersonmatch.py:47
@@ -1234,22 +1232,16 @@ msgstr ""
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:25
 #: FilterRules/familieswitheventfiltermatch.py:45
-#, fuzzy
-#| msgid "Families with events with the <role>"
 msgid "Families matching <event filter>"
-msgstr "Famílias com eventos com o <papel>"
+msgstr "Famílias com <filtro de evento>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
-#, fuzzy
-#| msgid "Matches families with an event with a selected role"
 msgid "Matches families that are matched by an event filter"
-msgstr "Compara famílias com eventos com um papel seleccionado"
+msgstr "Compara famílias que cumprem um filtro de eventos"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
-#, fuzzy
-#| msgid "Matches families with an event with a selected role"
 msgid "Matches families matched by an event filter"
-msgstr "Compara famílias com eventos com um papel seleccionado"
+msgstr "Compara famílias que cumprem um filtro de evento"
 
 #: FilterRules/degreesofseparation.py:47
 msgid "Number of degrees of separation from person."
@@ -1268,20 +1260,16 @@ msgid "Matches persons which have events of given type and number."
 msgstr ""
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
-#, fuzzy
-#| msgid "Include birth children"
 msgid "Include Children"
-msgstr "Incluir aniversários dos filhos"
+msgstr "Incluir filhos"
 
 #: FilterRules/infamilyrule.py:49
 msgid "Include the children in the matching families."
 msgstr "Incluir filhos nas famílias correspondentes."
 
 #: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include Parents"
-msgstr "Incluir eventos"
+msgstr "Incluir progenitores"
 
 #: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
@@ -1293,10 +1281,8 @@ msgstr "Nome do filtro de família:"
 
 #: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
 #: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
-#, fuzzy
-#| msgid "People related to <filter>"
 msgid "People who are part of families matching <filter>"
-msgstr "Indivíduos aparentados com <filtro>"
+msgstr "Indivíduos que são parte de famílias com <filtro>"
 
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
 #: FilterRules/ageatdeath.py:74
@@ -1333,10 +1319,8 @@ msgid "Active person"
 msgstr "Indivíduo activo"
 
 #: FilterRules/activepersonrule.py:47
-#, fuzzy
-#| msgid "Go to active person"
 msgid "Matches the active person"
-msgstr "Ir para o indivíduo activo"
+msgstr "Compara o indivíduo activo"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
@@ -1575,10 +1559,8 @@ msgid "Extra spacing of grandparent families (mm)"
 msgstr "Espaço extra para as famílias dos avós (mm)"
 
 #: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
 msgid "First spouse left"
-msgstr "direita->esquerda"
+msgstr "1ª esposa esquerda"
 
 #: GenealogyTree/gt_descendant.py:192
 msgid ""
@@ -1587,26 +1569,20 @@ msgid ""
 msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
-#, fuzzy
-#| msgid "Persons"
 msgid "Person GEXF"
-msgstr "Indivíduos"
+msgstr "Indivíduo GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:31
-#, fuzzy
-#| msgid "Persons"
 msgid "_Person GEXF"
-msgstr "Indivíduos"
+msgstr "Indivíduo GE_XF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
 msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
-#, fuzzy
-#| msgid "Filter options"
 msgid "GEXF export options"
-msgstr "Opções de filtro"
+msgstr "Opções de exportação GEXF"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -1715,10 +1691,7 @@ msgid "Invalid Destination Directory"
 msgstr "Pasta destino inválida"
 
 #: D3Charts/DescendantIndentedTree.py:1365
-#, fuzzy, python-format
-#| msgid ""
-#| "Destinaton diretory %s does not exist\n"
-#| "Do you want to attempt to create it."
+#, python-format
 msgid ""
 "Destinaton diretory %s does not exist\n"
 "Do you want to attempt to create it?"
@@ -1732,10 +1705,7 @@ msgid "Failed to create %s: %s"
 msgstr "Falha ao criar %s: %s"
 
 #: D3Charts/DescendantIndentedTree.py:1391
-#, fuzzy, python-format
-#| msgid ""
-#| "Destination file %s already exists.\n"
-#| "Do you want to overwrite."
+#, python-format
 msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite it?"
@@ -2027,16 +1997,12 @@ msgstr ""
 "representada como árvore colapsável da biblioteca JavaScript D3 js."
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
-#, fuzzy
-#| msgid "US Web Connect Pack"
 msgid "SV Web Connect Pack"
-msgstr "US Web Connect Pack"
+msgstr "Pacote Internet para SV"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
-msgstr "Colecção de páginas web para UK (requer libwebconnect)"
+msgstr "Colecção de páginas web para a Suécia (requer libwebconnect)"
 
 #: SVWebconnectPack/SVWebPack.py:33
 msgid "Find A Grave"
@@ -2047,14 +2013,10 @@ msgid "FamilySearch.org"
 msgstr "Family Search"
 
 #: SVWebconnectPack/SVWebPack.py:35
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "Google SV"
-msgstr "_Google Maps"
+msgstr "Google SV"
 
 #: SVWebconnectPack/SVWebPack.py:38
-#, fuzzy
-#| msgid "FamilySearch.org"
 msgid "FamilySearch.org Tree"
 msgstr "FamilySearch.org"
 
@@ -2071,10 +2033,8 @@ msgid "Arkiv Digital estate records for Skåne"
 msgstr ""
 
 #: SVWebconnectPack/SVWebPack.py:43
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Search"
-msgstr "Ascendência"
+msgstr "Ancestry"
 
 #: SVWebconnectPack/SVWebPack.py:44
 msgid "Find swedish portraits - Rötter.se"
@@ -2198,10 +2158,8 @@ msgid "Event Description Editor"
 msgstr "Editor de descrições de eventos"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
-#, fuzzy
-#| msgid "Search..."
 msgid "Search substring..."
-msgstr "Procurar..."
+msgstr "Subcadeia de procura..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:105
 msgid "INFO"
@@ -2423,10 +2381,8 @@ msgid ""
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:86
-#, fuzzy
-#| msgid "Search results"
 msgid "Search Quota "
-msgstr "Resultados da procura"
+msgstr "Resultados da procura "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
@@ -2437,20 +2393,16 @@ msgid "Pause search expansion"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:105
-#, fuzzy
-#| msgid "Center person"
 msgid "Completed Person"
-msgstr "Indivíduo central"
+msgstr "Indivíduo concluído"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:118
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Ignore Person or Family"
-msgstr "Nota da família"
+msgstr "Ignorar indivíduo ou família"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
@@ -2503,10 +2455,8 @@ msgid "Add via the Events tab of the Edit Person dialog."
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:582
-#, fuzzy
-#| msgid "Relationship to Mother"
 msgid "relationship type unknown"
-msgstr "Relação com a mãe"
+msgstr "tipo de relação desconhecido"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
@@ -2534,10 +2484,8 @@ msgid "Father missing from the parent family"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:664
-#, fuzzy
-#| msgid "Show items missing from file"
 msgid "Mother missing from the parent family"
-msgstr "Mostrar itens em falta no ficheiro"
+msgstr "Mãe em falta na família"
 
 #: Betawhatsnext/Betawhatsnext.py:668
 msgid "Parent family is unknown."
@@ -2557,16 +2505,12 @@ msgid "Differences between Database and File"
 msgstr ""
 
 #: Differences/differences.py:161
-#, fuzzy
-#| msgid "Differences"
 msgid "No differences"
-msgstr "Diferenças"
+msgstr "Sem diferenças"
 
 #: Differences/differences.py:168
-#, fuzzy
-#| msgid "Include items in file but not in database"
 msgid "Missing items in File that are added in Database"
-msgstr "Incluir itens no ficheiro, mas não na base de dados"
+msgstr "Itens em falta no ficheiro, mas adicionados à base de dados"
 
 #: Differences/differences.py:174
 #, python-format
@@ -2574,16 +2518,12 @@ msgid "Missing %s: %s"
 msgstr "%s em falta: %s"
 
 #: Differences/differences.py:178
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "Nothing missing"
-msgstr "Nada seleccionado"
+msgstr "Nada em falta"
 
 #: Differences/differences.py:185
-#, fuzzy
-#| msgid "Include items in file but not in database"
 msgid "Added items in File that are missing in Database"
-msgstr "Incluir itens no ficheiro, mas não na base de dados"
+msgstr "Adicionados itens no ficheiro, mas em falta na base de dados"
 
 #: Differences/differences.py:191
 #, python-format
@@ -2591,10 +2531,8 @@ msgid "Added %s: %s "
 msgstr "Adicionados %s: %s "
 
 #: Differences/differences.py:195
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "Nothing added"
-msgstr "Nada seleccionado"
+msgstr "Nada adicionado"
 
 #: Differences/differences.py:308
 msgid "Family Tree file"
@@ -2706,10 +2644,8 @@ msgid ""
 msgstr "O número de algarismos após a vírgula no relatório Dobrar costados"
 
 #: AncestorFill/AncestorFill.py:317
-#, fuzzy
-#| msgid "Display all"
 msgid "Display theoretical"
-msgstr "Mostrar tudo"
+msgstr "Mostrar teóricos"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
@@ -2720,22 +2656,16 @@ msgid "The style used for the title of the page."
 msgstr "O estilo usado para o título da página."
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
-#, fuzzy
-#| msgid "PostgreSQL"
 msgid "SharedPostgreSQL"
-msgstr "PostgreSQL"
+msgstr "SharedPostgreSQL"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:25
-#, fuzzy
-#| msgid "_PostgreSQL Database"
 msgid "Shared _PostgreSQL Database"
-msgstr "Base de dados _PostgreSQL"
+msgstr "Base de dados partilhada _PostgreSQL"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:26
-#, fuzzy
-#| msgid "PostgreSQL Database"
 msgid "Shared PostgreSQL Database"
-msgstr "Base de dados PostgreSQL"
+msgstr "Base de dados partilhada PostgreSQL"
 
 #: HtmlView/htmlview.py:328
 msgid "HtmlView"
@@ -3906,10 +3836,8 @@ msgid "Combined"
 msgstr ""
 
 #: CombinedView/combinedview.gpr.py:25
-#, fuzzy
-#| msgid "Gramplet showing an overview of events for a person"
 msgid "A view showing relationships and events for a person"
-msgstr "Gramplet que mostra uma visão geral dos eventos de um dado indivíduo"
+msgstr "Uma vista que mostra parentescos e eventos de um dado indivíduo"
 
 #: CombinedView/navigationview.py:346
 msgid ""
@@ -3923,16 +3851,12 @@ msgid "Order"
 msgstr "Ordem"
 
 #: CombinedView/combinedview.py:528
-#, fuzzy
-#| msgid "Add death event"
 msgid "Edit the active event"
-msgstr "Adicionar óbito"
+msgstr "Editar o evento activo"
 
 #: CombinedView/combinedview.py:630
-#, fuzzy
-#| msgid "Show places"
 msgid "Show Tags"
-msgstr "Mostrar locais"
+msgstr "Mostrar etiquetas"
 
 #: CombinedView/combinedview.py:656
 msgid "Vertical Details"
@@ -4111,10 +4035,8 @@ msgid "Please set gender on Active person."
 msgstr "Por favor, defina o sexo no indivíduo activo."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "FamilyTree DNA"
-msgstr "Ficheiro de família"
+msgstr "ADN FamilyTree"
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:5
 msgid "Tool to import FamilyFinder DNA data from Family Tree"
@@ -4133,20 +4055,16 @@ msgid "Enter FTDNA Chromosome Segment Filename:"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:112
-#, fuzzy
-#| msgid "Import Failure"
 msgid "Import Haplogroups"
-msgstr "Falha ao importar"
+msgstr "Importar haplogrupos"
 
 #: FamilyTreeDNA/ftdna_import.py:128
 msgid "FTDNA Note string :"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:137
-#, fuzzy
-#| msgid "Citations:"
 msgid "Shared Citation ID :"
-msgstr "Citações:"
+msgstr "ID de citação partilhada:"
 
 #: FamilyTreeDNA/ftdna_import.py:151
 msgid "Active Person : "
@@ -4157,10 +4075,8 @@ msgid "Import data from Family Finder files"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:169
-#, fuzzy
-#| msgid "Close the Media Verify Tool"
 msgid "Close the Family Finder Tool"
-msgstr "Fechar a ferramenta de verificação de multimédia"
+msgstr "Fechar ferramenta de procura de famílias"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
@@ -4168,10 +4084,8 @@ msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "FamilyTree DNA Import"
-msgstr "Árvore de família de %s"
+msgstr "Importação ADN FamilyTree"
 
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
@@ -4196,10 +4110,9 @@ msgid "Add %s haplogroup attribute"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:350
-#, fuzzy, python-format
-#| msgid "%s (association)"
+#, python-format
 msgid "Add %s DNA Association"
-msgstr "%s (associação)"
+msgstr "Adicionar associação ADN a %s"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
@@ -4330,10 +4243,8 @@ msgid "onclick"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
-#, fuzzy
-#| msgid "Anonymous"
 msgid "onmouseover"
-msgstr "Anónimo"
+msgstr "ratosobre"
 
 #: DenominoViso/DenominoViso.py:208
 msgid "Ancestor"
@@ -4439,10 +4350,8 @@ msgid "DenominoViso Options"
 msgstr "Opções do DenominoViso"
 
 #: DenominoViso/DenominoViso.py:2556
-#, fuzzy
-#| msgid "The destination file for the content."
 msgid "The destination file for the html-content."
-msgstr "O ficheiro destino do conteúdo."
+msgstr "O ficheiro destino do conteúdo html."
 
 #: DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
@@ -4521,20 +4430,16 @@ msgid "Include private records"
 msgstr "Incluir registos privados"
 
 #: DenominoViso/DenominoViso.py:2608
-#, fuzzy
-#| msgid "Whether to include private objects."
 msgid "Whether to leave out private data."
-msgstr "Se deve incluir objectos marcados como privados."
+msgstr "Se deve omitir dados privados."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
 msgstr "Incluir eventos"
 
 #: DenominoViso/DenominoViso.py:2613
-#, fuzzy
-#| msgid "Whether to include a person's note."
 msgid "Whether to include a person's events."
-msgstr "Se deve incluir a nota do indivíduo."
+msgstr "Se deve incluir eventos do indivíduo."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
@@ -4759,16 +4664,12 @@ msgid "Source confidence color"
 msgstr "Cor da confiança na fonte"
 
 #: DenominoViso/DenominoViso.py:2746
-#, fuzzy
-#| msgid ""
-#| "List of lists where each sublist is a list with information about the "
-#| "dash pattern of lines connecting children to parents."
 msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
-"Lista de listas onde cada sub-lista é uma lista com informação sobre o "
-"padrão tracejado das linhas que ligam filhos a pais."
+"Lista de listas onde cada sub-lista é uma lista com informação sobre a cor a "
+"usar para um dado nível de confiança."
 
 #: DenominoViso/DenominoViso.py:2749
 msgid "Event format"
@@ -4818,16 +4719,12 @@ msgid "should be"
 msgstr "deve ser"
 
 #: DenominoViso/DenominoViso.py:2913
-#, fuzzy
-#| msgid "Include media"
 msgid "Included"
-msgstr "Incluir multimédia"
+msgstr "Incluído"
 
 #: DenominoViso/DenominoViso.py:2914
-#, fuzzy
-#| msgid "Exclude Spouses"
 msgid "Excluded"
-msgstr "Excluir cônjuges"
+msgstr "Excluídos"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
@@ -4862,17 +4759,14 @@ msgid "DenominoViso"
 msgstr "DenominoViso"
 
 #: DenominoViso/DenominoViso.gpr.py:19
-#, fuzzy
-#| msgid ""
-#| "Generates a web page with a graphical representation of ancestors (SVG) "
-#| "represented as a Fan Chart from the D3.js JavaScript library."
 msgid ""
 "Generates a web (HTML) page with a graphical representation of ancestors/"
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Gera uma página “web” com uma representação gráfica de ascendentes (SVG) "
-"representada como leque, da biblioteca JavaScript D3 js."
+"Gera uma página “web” com uma representação gráfica de ascendentes/"
+"descendentes (SVG) onde detalhes individuais se tornam visíveis com eventos "
+"do rato."
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
@@ -5126,16 +5020,12 @@ msgstr ""
 "instalados."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Opcional</b></u>\n"
+"<u><b>REQUERIDO</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
 msgid ""
@@ -5144,16 +5034,12 @@ msgid ""
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Opcional</b></u>\n"
+"<u><b>RECOMENDADO</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
 msgid ""
@@ -5676,16 +5562,12 @@ msgid "Source(s)"
 msgstr "Fonte(s)"
 
 #: DNAMatches/dnamatches.py:194
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to navigate to the matched person."
-msgstr "Faça duplo clique numa linha para editar o participante seleccionado."
+msgstr "Faça duplo clique numa linha para ir para o indivíduo encontrado."
 
 #: DNAMatches/dnamatches.py:195
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Right click to edit selected association."
-msgstr "Faça duplo clique numa linha para editar o participante seleccionado."
+msgstr "Faça duplo clique para editar a associação seleccionada."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
@@ -5701,10 +5583,8 @@ msgid "Not specified"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
-#, fuzzy
-#| msgid "M"
 msgid "cM"
-msgstr "M"
+msgstr "cM"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
@@ -5820,10 +5700,8 @@ msgid "Attempts to extract city and state/province from a place title"
 msgstr "Tenta extrair a cidade e o distrito de um título de local"
 
 #: ExtractCity/changenames.glade:94
-#, fuzzy
-#| msgid "Toggle Selection"
 msgid "_Toggle Selected"
-msgstr "Alternar selecção"
+msgstr "Al_ternar selecção"
 
 #: ExtractCity/changenames.glade:98
 msgid ""
@@ -5893,28 +5771,20 @@ msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr "%(report_count)s. Relatório Descendentes de %(person_name)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:519
-#, fuzzy
-#| msgid "Include index of Places"
 msgid "Index of Places"
-msgstr "Incluir índice de locais"
+msgstr "Índice de locais"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:542
-#, fuzzy
-#| msgid "Include index of Dates"
 msgid "Index of Dates"
-msgstr "Incluir índice de datas"
+msgstr "Índice de datas"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:565
-#, fuzzy
-#| msgid "Include Index of Names"
 msgid "Index of Names"
-msgstr "Incluir índice de nomes"
+msgstr "Índice de nomes"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:571
-#, fuzzy
-#| msgid "See Report : %s, Generation : %s, Person : %s"
 msgid "Report, Generation, Person, Name"
-msgstr "Veja o relatório: %s, geração %s, indivíduo %s"
+msgstr "Relatório, Geração, Indivíduo, Nome"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
 #, python-format
@@ -5928,16 +5798,14 @@ msgid "Report appearances for %s"
 msgstr "Relatar aparições de %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:771
-#, fuzzy, python-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-format
 msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
-msgstr "Veja o relatório: %s, geração %s, indivíduo %s"
+msgstr "Cônjuge de: relatório %s, geração %s, indivíduo %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:784
-#, fuzzy, python-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-format
 msgid "Report: %s, Generation: %s, Person: %s"
-msgstr "Veja o relatório: %s, geração %s, indivíduo %s"
+msgstr "Relatório: %s, geração %s, indivíduo %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:809
 #, python-format
@@ -6309,10 +6177,8 @@ msgid "Produces a report containing everything about the active person"
 msgstr "Produz um relatório contendo todos os dados sobre o indivíduo activo"
 
 #: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Ancestors map"
-msgstr "Ascendente"
+msgstr "Mapa de ascendentes"
 
 #: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
@@ -6323,28 +6189,21 @@ msgid "Ancestors places on the map"
 msgstr ""
 
 #: GeoAncestor/GeoAncestor.py:235
-#, fuzzy
-#| msgid "Ancestor"
 msgid "GeoAncestor"
-msgstr "Ascendente"
+msgstr "GeoAscendentes"
 
 #: GeoAncestor/GeoAncestor.py:304
-#, fuzzy, python-format
-#| msgid "AncestorFill for %s"
+#, python-format
 msgid "Ancestors places for %s"
-msgstr "Preenchimento dos ascendentes de %s"
+msgstr "Locais dos ascendentes de %s"
 
 #: GeoAncestor/GeoAncestor.py:311
-#, fuzzy
-#| msgid "Examining places"
 msgid "Counting all places"
-msgstr "A examinar locais"
+msgstr "A contar todos os locais"
 
 #: GeoAncestor/GeoAncestor.py:314
-#, fuzzy
-#| msgid "Show places"
 msgid "Showing all places"
-msgstr "Mostrar locais"
+msgstr "A mostrar todos os locais"
 
 #: NoteGramplet/NoteGramplet.py:255
 msgid "Save Note"
@@ -6565,10 +6424,8 @@ msgstr ""
 "Seleccione os nomes que deseja converter. "
 
 #: ChangeGivenNames/changenames.glade:107
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Edit selection"
-msgstr "Selecção de páginas"
+msgstr "Editar selecção"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
@@ -6824,10 +6681,8 @@ msgid "This button will clear all of the data fields shown here."
 msgstr "Este botão limpa todos os campos de dados mostrados aqui."
 
 #: EditExifMetadata/editexifmetadata.py:936
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
 msgid "This button will clear all of the GPS fields shown here."
-msgstr "Este botão limpa todos os campos de dados mostrados aqui."
+msgstr "Este botão limpa todos os campos de GPS mostrados aqui."
 
 #: EditExifMetadata/editexifmetadata.py:940
 msgid ""
@@ -7036,10 +6891,8 @@ msgid "place: "
 msgstr "local: "
 
 #: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Note Types"
 msgid "Note Type"
-msgstr "Tipos de notas"
+msgstr "Tipo de nota"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
@@ -7096,10 +6949,8 @@ msgstr ""
 
 #: FilterRules2/xchromdescendants.gpr.py:25
 #: FilterRules2/xchromdescendants.py:48
-#, fuzzy
-#| msgid "Produces descendants lines of a person"
 msgid "X-chromosomal descendants of <person>"
-msgstr "Produz linhas de descendentes de um indivíduo"
+msgstr "Descendentes cromossoma-X de <indivíduo>"
 
 #: FilterRules2/xchromdescendants.gpr.py:27
 msgid ""
@@ -7379,10 +7230,8 @@ msgstr ""
 "intensa)"
 
 #: DescendantsLines/DescendantsLines.py:1645
-#, fuzzy
-#| msgid "Name Display Format"
 msgid "Display Formats"
-msgstr "Formato de exibiçlão do nome"
+msgstr "Formatos de exibição"
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
@@ -7449,10 +7298,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1715
-#, fuzzy
-#| msgid "Horizontal spacing between generations"
 msgid "Horizontal space descendant to spouse"
-msgstr "Espaço horizontal entre gerações"
+msgstr "Espaço horizontal de descendente a cônjuge"
 
 #: DescendantsLines/DescendantsLines.py:1716
 msgid "The space to add between the descendant and the spouse."
@@ -7537,10 +7384,8 @@ msgid "The space to add between a line and the next in a person text block."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1773
-#, fuzzy
-#| msgid "Header Font size"
 msgid "Header and Footer"
-msgstr "Tamanho da letra do cabeçalho"
+msgstr "Cabeçalho e rodapé"
 
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"
@@ -8087,10 +7932,8 @@ msgid "Generating thumbnails for source references"
 msgstr "A gerar miniaturas de referências de fontes"
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:28
-#, fuzzy
-#| msgid "Media downloaded"
 msgid "S3 Media Uploader"
-msgstr "Multimédia transferida"
+msgstr "Envio de multimédia S3"
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:38
 msgid ""
@@ -8414,20 +8257,16 @@ msgstr "Limpar (remover) tipos personalizados"
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:103
-#, fuzzy
-#| msgid "Family Relation Types"
 msgid "Family Relationship Tool"
-msgstr "Tipos de relações familiares"
+msgstr "Ferramenta de relações familiares"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
-#, fuzzy
-#| msgid "Edit Families"
 msgid "All Families"
-msgstr "Editar famílias"
+msgstr "Todas as famílias"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:64
 msgid ""
@@ -8436,10 +8275,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:70
-#, fuzzy
-#| msgid "Relation type"
 msgid "Relationship Type"
-msgstr "Tipo de relação"
+msgstr "Tipo de parentesco"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:71
 msgid ""
@@ -8524,28 +8361,20 @@ msgid "cursor position at {date}"
 msgstr ""
 
 #: LifeLineChartView/lifelinechart.py:2591
-#, fuzzy
-#| msgid "New person"
 msgid "Hide person"
-msgstr "Novo indivíduo"
+msgstr "Ocultar indivíduo"
 
 #: LifeLineChartView/lifelinechart.py:2597
-#, fuzzy
-#| msgid "Show persons"
 msgid "Show person"
-msgstr "Mostrar indivíduos"
+msgstr "Mostrar indivíduo"
 
 #: LifeLineChartView/lifelinechart.py:2622
-#, fuzzy
-#| msgid "sibling"
 msgid "Show siblings"
-msgstr "irmão"
+msgstr "Mostrar irmãos"
 
 #: LifeLineChartView/lifelinechart.py:2627
-#, fuzzy
-#| msgid "Include siblings"
 msgid "Hide siblings"
-msgstr "Incluir irmãos"
+msgstr "Ocultar irmãos"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
@@ -8553,18 +8382,14 @@ msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:386
 #: LifeLineChartView/lifelinechartview.py:883
-#, fuzzy
-#| msgid "General Data"
 msgid "General Layout"
-msgstr "Dados gerais"
+msgstr "Disposição geral"
 
 #: LifeLineChartView/lifelinechartview.py:399
 #: LifeLineChartView/lifelinechartview.gpr.py:34
 #: LifeLineChartView/lifelinechartview.gpr.py:52
-#, fuzzy
-#| msgid "Pedigree Chart"
 msgid "Life Line Chart"
-msgstr "Árvore de costados"
+msgstr "Cronologia em gráfico"
 
 #: LifeLineChartView/lifelinechartview.py:509
 #: LifeLineChartView/lifelinechartview.py:510
@@ -8575,10 +8400,8 @@ msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:510
 #: LifeLineChartView/lifelinechartview.py:520
-#, fuzzy
-#| msgid "Mouse event handler"
 msgid "Mouse wheel"
-msgstr "Gestor de eventos do rato"
+msgstr "Roda do rato"
 
 #: LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
@@ -8601,10 +8424,8 @@ msgid "Open Life Line Chart help"
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:831
-#, fuzzy
-#| msgid "Export notes"
 msgid "Export View as SVG"
-msgstr "Exportar notas"
+msgstr "Exportar vista como SVG"
 
 #: LifeLineChartView/lifelinechartview.py:884
 #: LifeLineChartView/_dummy_translation_string_po.py:29
@@ -8620,22 +8441,16 @@ msgstr "Exportar notas"
 #: LifeLineChartView/_dummy_translation_string_po.py:67
 #: LifeLineChartView/_dummy_translation_string_po.py:74
 #: LifeLineChartView/_dummy_translation_string_po.py:77
-#, fuzzy
-#| msgid "Enable page configuration"
 msgid "Label Configuration"
-msgstr "Activar configuração da página"
+msgstr "Configuração do rótulo"
 
 #: LifeLineChartView/lifelinechartview.py:946
-#, fuzzy
-#| msgid "Restore default settings"
 msgid "Reset all settings"
-msgstr "Restaurar pré-definições"
+msgstr "Repor todas as definições"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:24
-#, fuzzy
-#| msgid "Ancestral Fan Chart"
 msgid "Life Line Ancestor Chart"
-msgstr "Leque de ascendentes"
+msgstr "Mapa de ascendentes da cronologia"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:26
 #: LifeLineChartView/lifelinechartview.gpr.py:44
@@ -8643,10 +8458,8 @@ msgid "Persons and their relation in a time based chart"
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.gpr.py:42
-#, fuzzy
-#| msgid "Detailed Descendants Report"
 msgid "Life Line Descendant Chart"
-msgstr "Relatório Descendência detalhada"
+msgstr "Mapa de descendentes da cronologia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
@@ -8669,20 +8482,16 @@ msgid "Triangular shape"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:15
-#, fuzzy
-#| msgid "Show persons"
 msgid "Show photos"
-msgstr "Mostrar indivíduos"
+msgstr "Mostrar fotografias"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:16
 msgid "Photos of the individual are shown."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:17
-#, fuzzy
-#| msgid "Photo Tagging"
 msgid "Photo size"
-msgstr "Identificar fotografias"
+msgstr "Tamanho da fotografia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:18
 msgid ""
@@ -8691,22 +8500,16 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
-#, fuzzy
-#| msgid "Media height"
 msgid "Total height"
-msgstr "Altura da imagem"
+msgstr "Altura total"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:20
-#, fuzzy
-#| msgid "Set the title of the chart."
 msgid "Total height of the whole chart."
-msgstr "Definir o título do gráfico."
+msgstr "Altura total de todo o gráfico."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:21
-#, fuzzy
-#| msgid "Related Relatives"
 msgid "Relative line thickness"
-msgstr "Parentes relacionados"
+msgstr "Espessura relativa da linha"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:22
 msgid ""
@@ -8786,16 +8589,12 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:45
 #: LifeLineChartView/_dummy_translation_string_po.py:65
-#, fuzzy
-#| msgid "Center person"
 msgid "Center"
-msgstr "Indivíduo central"
+msgstr "Centro"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:48
-#, fuzzy
-#| msgid "Show more details"
 msgid "Show death label"
-msgstr "Mostrar mais detalhes"
+msgstr "Mostrar rótulo de óbito"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
 msgid "Activate the death label."
@@ -8854,10 +8653,8 @@ msgid "Activate the marriage label."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:70
-#, fuzzy
-#| msgid "Loading individuals"
 msgid "Fade individual color"
-msgstr "A carregar indivíduos"
+msgstr "Esbater cor individual"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:71
 msgid "The color of the individuals is faded to black with increasing age."
@@ -8872,20 +8669,16 @@ msgid "Name of the font family used for labels."
 msgstr "Nome da família de letra usada para rótulos."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:75
-#, fuzzy
-#| msgid "Header Font size"
 msgid "Relative font size"
-msgstr "Tamanho da letra do cabeçalho"
+msgstr "Tamanho relativo da letra"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:76
 msgid "The font size is given relatively to the line thickness."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
-#, fuzzy
-#| msgid "Family Sheet"
 msgid "Family shape"
-msgstr "Folha familiar"
+msgstr "Forma da família"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:79
 msgid "The shape of the families can be varied."
@@ -8918,10 +8711,8 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:86
-#, fuzzy
-#| msgid "Deep Connections"
 msgid "Visualize connections"
-msgstr "Ligações profundas"
+msgstr "Ver ligações"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:87
 msgid ""
@@ -8938,10 +8729,8 @@ msgid "Visualize automatically detected errors in the placement algorithm."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:90
-#, fuzzy
-#| msgid "Loading individuals"
 msgid "Coloring of individuals"
-msgstr "A carregar indivíduos"
+msgstr "Cor de indivíduos"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:91
 msgid "There are different ways to determine the color of an individual."
@@ -9003,20 +8792,16 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
-#, fuzzy
-#| msgid "Maximum number of generations"
 msgid "Maximum number of compression steps"
-msgstr "Número máximo de gerações"
+msgstr "Número máximo de passos de compressão"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:106
 msgid "Debugging of the compression algorithm. Abort after x steps."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:107
-#, fuzzy
-#| msgid "Maximum number of generations"
 msgid "Maximum number of flipping steps"
-msgstr "Número máximo de gerações"
+msgstr "Número máximo de passos de inversão"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:108
 msgid "Debugging of the flipping algorithm. Abort after x steps."
@@ -9045,10 +8830,8 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
-#, fuzzy
-#| msgid "Highlight path(s)"
 msgid "Highlight descandants"
-msgstr "Realçar caminhos"
+msgstr "Realçar descendentes"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:114
 msgid "Highlight the persons which are descendants."
@@ -9063,10 +8846,8 @@ msgid "Very soft"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:117
-#, fuzzy
-#| msgid "General Data"
 msgid "General chart layout"
-msgstr "Dados gerais"
+msgstr "Disposição geral do gráfico"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:118
 msgid "There are different layouts for descendant charts."
@@ -9118,16 +8899,12 @@ msgid "Set media private.."
 msgstr "Definir multimédia privada..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set adresses private.."
-msgstr "Definir eventos privados..."
+msgstr "Definir endereços privados..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set internet objects private.."
-msgstr "Definir eventos privados..."
+msgstr "Definir objectos Internet privados..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
@@ -9148,22 +8925,16 @@ msgstr ""
 "Se marcada, todos os objectos sem uma data serão marcados como privados."
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "Seleccione um filtro para limitar os indivíduos"
+msgstr "Seleccione um filtro para limitar os eventos"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
-#, fuzzy
-#| msgid "Select filter to restrict list"
 msgid "Select filter to restrict medias"
-msgstr "Seleccione um filtro para limitar a lista"
+msgstr "Seleccione um filtro para limitar multimédia"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
-#, fuzzy
-#| msgid "Can't determine type of import"
 msgid "Internet type filter"
-msgstr "Impossível determinar o tipo de importação"
+msgstr "Tipo de filtro Internet"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
@@ -9177,10 +8948,8 @@ msgstr "Define todos os objectos dos últimos <número> anos como privados."
 #: SyncAssociations/syncAssociations.py:130
 #: SyncAssociations/syncAssociations.py:134
 #: SyncAssociations/syncAssociations.py:138
-#, fuzzy
-#| msgid "Check Associations data"
 msgid "Sync Associations"
-msgstr "Verificar dados de associação"
+msgstr "Sincronizar associações"
 
 #: SyncAssociations/syncAssociations.gpr.py:6
 msgid ""
@@ -9189,10 +8958,9 @@ msgid ""
 msgstr ""
 
 #: SyncAssociations/syncAssociations.py:124
-#, fuzzy, python-format
-#| msgid "%s (association)"
+#, python-format
 msgid "Add %s reciprocal association"
-msgstr "%s (associação)"
+msgstr "Adicionar associação recíproca a %s"
 
 #: SyncAssociations/syncAssociations.py:131
 msgid "{} Reciprocal associations created"
@@ -13577,10 +13345,8 @@ msgid "How many hours did he work last week?"
 msgstr ""
 
 #: Form/form_us.xml.h:923
-#, fuzzy
-#| msgid "Type of link"
 msgid "Type of work"
-msgstr "Tipo de ligação"
+msgstr "Tipo de trabalho"
 
 #: Form/form_us.xml.h:924
 msgid "What kind of work was he doing?"
@@ -16949,10 +16715,8 @@ msgid "Maiden surname of woman who was married"
 msgstr ""
 
 #: Form/form_gb.xml.h:53
-#, fuzzy
-#| msgid "Include Addresses"
 msgid "Usual Address"
-msgstr "Incluir endereços"
+msgstr "Endereço habitual"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
@@ -17055,10 +16819,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:114 Form/form_gb.xml.h:135 Form/form_gb.xml.h:157
 #: Form/form_gb.xml.h:182 Form/form_gb.xml.h:286 Form/form_gb.xml.h:313
-#, fuzzy
-#| msgid "Note on Family"
 msgid "RELATION to Head of Family"
-msgstr "Nota da família"
+msgstr "RELAÇÃO com o chefe de família"
 
 #: Form/form_gb.xml.h:116
 msgid "CONDITION"
@@ -17225,10 +16987,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:199 Form/form_gb.xml.h:233 Form/form_gb.xml.h:332
 #: Form/form_gb.xml.h:368
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Rooms"
-msgstr "Número de páginas"
+msgstr "Número de quartos"
 
 #: Form/form_gb.xml.h:201 Form/form_gb.xml.h:334
 msgid "NAME AND SURNAME"
@@ -17277,10 +17037,8 @@ msgid "Children who have Died."
 msgstr ""
 
 #: Form/form_gb.xml.h:217 Form/form_gb.xml.h:350
-#, fuzzy
-#| msgid "Include Occupation"
 msgid "Personal Occupation"
-msgstr "Incluir profissão"
+msgstr "Profissão pessoal"
 
 #: Form/form_gb.xml.h:219 Form/form_gb.xml.h:352
 msgid "Industry or Service with which worker is connected."
@@ -17346,10 +17104,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_gb.xml.h:254 Form/form_gb.xml.h:389
-#, fuzzy
-#| msgid "Number of editions back"
 msgid "Number of living children"
-msgstr "Número de edições atrás"
+msgstr "Número de filhos vivos"
 
 #: Form/form_gb.xml.h:255 Form/form_gb.xml.h:390
 msgid "Total number under sixteen years of age. If none write \"None.\""
@@ -18195,10 +17951,8 @@ msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgstr "Colecção de páginas “web” para o Reino Unido (requer libwebconnect)"
 
 #: Heatmap/heatmap.py:85
-#, fuzzy
-#| msgid "Extra Files"
 msgid "Map tiles"
-msgstr "Ficheiros extra"
+msgstr "Mosaicos"
 
 #: Heatmap/heatmap.py:90
 msgid ""
@@ -18207,10 +17961,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:93
-#, fuzzy
-#| msgid "File parsed with"
 msgid "File path"
-msgstr "Ficheiro analisado com"
+msgstr "Caminho do ficheiro"
 
 #: Heatmap/heatmap.py:98
 msgid ""
@@ -18264,10 +18016,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:209
-#, fuzzy
-#| msgid "The file does not exist."
 msgid "Path does not exist."
-msgstr "O ficheiro não existe."
+msgstr "O caminho não existe."
 
 #: Heatmap/heatmap.py:210
 msgid "Invalid filename."
@@ -18282,10 +18032,8 @@ msgid "Stamen Terrain"
 msgstr ""
 
 #: Heatmap/utils.py:58
-#, fuzzy
-#| msgid "Paternal Background Color"
 msgid "Stamen Terrain (Background only)"
-msgstr "Cor de fundo paterna"
+msgstr "Terreno de estames (só o fundo)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
@@ -18304,22 +18052,17 @@ msgid "CartoDB DarkMatter"
 msgstr ""
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of ancestors"
-msgstr "Número de páginas"
+msgstr "Número de ascendentes"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:5
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid "Shows the number of ancestors of the current person"
-msgstr "Mostra o número de descendentes do indivíduo activo"
+msgstr "Mostra o número de ascendentes do indivíduo actual"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
-#, fuzzy, python-format
-#| msgid "Number of %s's descendants"
+#, python-format
 msgid "Number of %s's ancestors"
-msgstr "Número de descendentes de %s"
+msgstr "Número de ascendentes de %s"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
 msgid "Generation"
@@ -18721,26 +18464,20 @@ msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:233 GeoTimeLines/GeoTimeLines.py:339
 #: GeoTimeLines/GeoTimeLines.gpr.py:25
-#, fuzzy
-#| msgid "Lines type"
 msgid "TimeLines Map"
-msgstr "Tipo de linhas"
+msgstr "Mapa de cronologias"
 
 #: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:800
-#, fuzzy
-#| msgid "Import done"
 msgid "Almost done"
-msgstr "Importação concluída"
+msgstr "Quase concluída"
 
 #: GeoTimeLines/GeoTimeLines.py:916
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Gathering data"
-msgstr "A carregar os dados"
+msgstr "A recolher os dados"
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
 #, python-format
@@ -18790,16 +18527,12 @@ msgid ""
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1875
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of steps"
-msgstr "Número de páginas"
+msgstr "Número de passos"
 
 #: GeoTimeLines/GeoTimeLines.py:1883
-#, fuzzy
-#| msgid "Type de Liste"
 msgid "Type of steps"
-msgstr "Tipo de lista"
+msgstr "Tipo de passos"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
@@ -18824,10 +18557,8 @@ msgid "Show time ticks on navigation bar on startup"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1974
-#, fuzzy
-#| msgid "General options"
 msgid "TimeLines Map options"
-msgstr "Opções gerais"
+msgstr "Opções do mapa de cronologias"
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
@@ -18835,10 +18566,8 @@ msgid ""
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:39
-#, fuzzy
-#| msgid "Lines type"
 msgid "TimeLines map"
-msgstr "Tipo de linhas"
+msgstr "Mapa de cronologias"
 
 #: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
@@ -19179,10 +18908,8 @@ msgid "Detect faces (OpenCV module required)"
 msgstr "Detectar faces (módulo OpenCV requerido)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
-#, fuzzy
-#| msgid "Person Name"
 msgid "XMP Region Name"
-msgstr "Nome do indivíduo"
+msgstr "Nome da região XMP"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
@@ -19316,16 +19043,12 @@ msgid "Enter SQL query"
 msgstr "Insira uma consulta SQL"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:11
-#, fuzzy
-#| msgid "UK Web Connect Pack"
 msgid "RU Web Connect Pack"
-msgstr "UK Web Connect Pack"
+msgstr "Pacote Internet para RU"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the RU (requires libwebconnect)"
-msgstr "Colecção de páginas web para UK (requer libwebconnect)"
+msgstr "Colecção de páginas web para a Rússia (requer libwebconnect)"
 
 #: RUWebConnectPack/RUWebPack.py:40
 msgid "OBD \"Memorial\""
@@ -19344,20 +19067,16 @@ msgid "Lived"
 msgstr "Viveu"
 
 #: RUWebConnectPack/RUWebPack.py:44
-#, fuzzy
-#| msgid "Type de liste"
 msgid "Open list"
-msgstr "Tipo de lista"
+msgstr "Abrir lista"
 
 #: RUWebConnectPack/RUWebPack.py:45
 msgid "Wait for me"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:46
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "All Russia Family Tree (forum)"
-msgstr "Árvore de família de %s"
+msgstr "Árvore de família de toda a Rússia (fórum)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
@@ -19368,16 +19087,12 @@ msgid "RIA Officers"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:50
-#, fuzzy
-#| msgid "Family Surname"
 msgid "FamilySpace"
-msgstr "Apelido da família"
+msgstr "FamilySpace"
 
 #: DoubleCousins/double_cousins.py:112
-#, fuzzy
-#| msgid "Descendants Report"
 msgid "Double Cousins Report"
-msgstr "Relatório Descendentes"
+msgstr "Relatório Primos duplos"
 
 #: DoubleCousins/double_cousins.py:120
 #, no-python-format
@@ -19391,16 +19106,12 @@ msgid ""
 msgstr ""
 
 #: DoubleCousins/double_cousins.py:136
-#, fuzzy
-#| msgid "No %s objects were found in database."
 msgid "No double cousins were found in your database."
-msgstr "Nenhum objeto %s foi encontrado no banco de dados."
+msgstr "Nenhum primo duplo encontrado na base de dados."
 
 #: DoubleCousins/double_cousins.py:170
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show info text"
-msgstr "Mostrar itens ocultos"
+msgstr "Mostrar texto informativo"
 
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
@@ -19527,10 +19238,8 @@ msgid "Legend"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:761
-#, fuzzy
-#| msgid "Grandparents"
 msgid ": Grandparent"
-msgstr "Avós"
+msgstr ": avô"
 
 #: DNA/dnasegmentmap.py:1056
 #, python-brace-format
@@ -19587,10 +19296,8 @@ msgid "DNA Segment Map"
 msgstr ""
 
 #: DNA/dnasegmentmap.gpr.py:29
-#, fuzzy
-#| msgid "Gramplet showing the participants in an event"
 msgid "Gramplet showing a matching DNA segment map"
-msgstr "Gramplet que mostra os participantes num evento"
+msgstr "Gramplet que mostra um mapa de segmentos ADN correspondentes"
 
 #: MongoDB/mongodb.gpr.py:23
 msgid "MongoDB"
@@ -19818,20 +19525,16 @@ msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Destination directory"
-msgstr "Pasta destino inválida"
+msgstr "Pasta destino"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Path for generated files"
 msgstr "Caminho para ficheiros gerados"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:868
-#, fuzzy
-#| msgid "Default View"
 msgid "Default Age"
-msgstr "Vista pré-definida"
+msgstr "Idade pré-definida"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
@@ -19850,30 +19553,22 @@ msgid "Show GrampsID on top right of the box"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
-#, fuzzy
-#| msgid "Maximize"
 msgid "Optimize"
-msgstr "Maximizar"
+msgstr "Optimizar"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
-#, fuzzy
-#| msgid "Male Background Color"
 msgid "Male Box Color"
-msgstr "Cor de fundo masculina"
+msgstr "Cor de caixa masculina"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:894
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Box background color for male person"
-msgstr "Cor de caminho para o indivíduo inicial"
+msgstr "Cor de fundo da caixa de homens"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:897
-#, fuzzy
-#| msgid "Female Box Edge"
 msgid "Female Box Color"
 msgstr "Contorno da caixa das mulheres"
 
@@ -19882,10 +19577,8 @@ msgid "Box background color for female person"
 msgstr "Cor de fundo das caixas femininas"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:904
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of pixel per year"
-msgstr "Número de páginas"
+msgstr "Número de pixels por ano"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
@@ -19916,10 +19609,8 @@ msgid "Width of the box of a person in pixel"
 msgstr "Largura da caixa individual em pixels"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:925
-#, fuzzy
-#| msgid "Horizontal spacing between generations"
 msgid "Horizontal space between boxes in pixel"
-msgstr "Espaço horizontal entre gerações"
+msgstr "Espaço horizontal entre caixas (px)"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
@@ -19941,10 +19632,8 @@ msgid "Number of pixel between left border and scale"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
-#, fuzzy
-#| msgid "Timeline Pedigree"
 msgid "Timeline Pedigree Report"
-msgstr "Cronologia de costados"
+msgstr "Relatório Cronologia de costados"
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
 msgid ""
@@ -20019,22 +19708,16 @@ msgid "Set timespan for enclosing places"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:159
-#, fuzzy
-#| msgid "Currently Enclosed Places"
 msgid "Clear original enclosing places"
-msgstr "Locais actualmente contidos"
+msgstr "Limpar locais contentores originais"
 
 #: PlaceUpdate/PlaceUpdate.py:162
-#, fuzzy
-#| msgid "Cleaned Notes"
 msgid "Clear tags"
-msgstr "Notas limpas"
+msgstr "Limpar etiquetas"
 
 #: PlaceUpdate/PlaceUpdate.py:165
-#, fuzzy
-#| msgid "Generate"
 msgid "Generate hierarchy"
-msgstr "Gerar"
+msgstr "Gerar hierarquia"
 
 #: PlaceUpdate/PlaceUpdate.py:171
 msgid "use spaces as separator"
@@ -20045,10 +19728,8 @@ msgid "reverse hierarchy"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:181
-#, fuzzy
-#| msgid "Replace"
 msgid "Replace text"
-msgstr "Substituir"
+msgstr "Substituir texto"
 
 #: PlaceUpdate/PlaceUpdate.py:184
 msgid "Use regex"
@@ -20079,10 +19760,8 @@ msgid "Regex operation failed: {}"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
-#, fuzzy
-#| msgid "Place title"
 msgid "PlaceUpdate"
-msgstr "Título do local"
+msgstr "Actualizar local"
 
 #: PlaceUpdate/PlaceUpdate.gpr.py:5
 msgid "Gramplet to manipulate multiple places"
@@ -20232,10 +19911,8 @@ msgid "Perform date math calculations"
 msgstr ""
 
 #: FixCoords/fixcoords.gpr.py:31
-#, fuzzy
-#| msgid "Place titles"
 msgid "Fix Place Coordinates"
-msgstr "Títulos de locais"
+msgstr "Reparar coordenadas de locais"
 
 #: FixCoords/fixcoords.gpr.py:33
 msgid ""
@@ -20243,10 +19920,8 @@ msgid ""
 msgstr ""
 
 #: FixCoords/fixcoords.py:53
-#, fuzzy
-#| msgid "Fix media paths"
 msgid "Fix Coordinates"
-msgstr "Reparar caminhos"
+msgstr "Reparar coordenadas"
 
 #: FixCoords/fixcoords.py:58
 msgid "Looking for possible coords with \",\" characters"
@@ -20630,7 +20305,7 @@ msgstr "Mostrar valores vazios"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:472
 msgid "Whether to include key records with empty values."
-msgstr "Se deve incluir registos com valores vazios."
+msgstr "Se deve incluir registos-chave com valores vazios."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:518
 #: RepositoriesReport/RepositoriesReport.py:189
@@ -20647,7 +20322,7 @@ msgstr "Incluir testemunhas"
 
 #: GedcomExtensions/GedcomExtensions.py:201
 msgid "Patronymic names:"
-msgstr "Nomes Patronímicos:"
+msgstr "Nomes patronímicos:"
 
 #: GedcomExtensions/GedcomExtensions.py:203
 #: GedcomExtensions/GedcomExtensions.py:210
@@ -20656,11 +20331,11 @@ msgstr "Não alterar"
 
 #: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
-msgstr "Adicionar Nome Patronímico após o Primeiro Nome"
+msgstr "Adicionar patronímico após nomes próprios"
 
 #: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
-msgstr "Ignorar Nome Patronímico"
+msgstr "Ignorar nome patronímico"
 
 #: GedcomExtensions/GedcomExtensions.py:208
 msgid "Type of surname:"
@@ -20694,7 +20369,7 @@ msgstr "Ferramenta ID determinística"
 msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
 msgstr ""
-"A ID e gestores agora começam em 0x00000000e incrementam por 0x100000001"
+"A ID e gestores agora começam em 0x00000000 e incrementam por 0x100000001"
 
 #: DetId/DetId.gpr.py:31
 msgid "Deterministic ID"
@@ -20722,7 +20397,7 @@ msgstr "bap."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
-msgstr "fun."
+msgstr "in."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
 msgid "short for cremated|crem."
@@ -20750,7 +20425,7 @@ msgstr[1] "%d gerações"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
 msgid "About Timeline Pedigree View"
-msgstr "Acerca dos costados da cronologia"
+msgstr "Acerca da cronologia de costados"
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
@@ -20771,10 +20446,8 @@ msgid "Graph View"
 msgstr "Vista gráfica"
 
 #: GraphView/graphview.py:754
-#, fuzzy
-#| msgid "Show places"
 msgid "Show IDs"
-msgstr "Mostrar locais"
+msgstr "Mostrar IDs"
 
 #: GraphView/graphview.py:757
 msgid "Show avatars"
@@ -20793,34 +20466,24 @@ msgid "Show places"
 msgstr "Mostrar locais"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Default (Top to Bottom)"
 msgid "Vertical: Top to Bottom"
-msgstr "Pré-definição (de cima para baixo)"
+msgstr "Vertical: de cima para baixo"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Bottom to Top"
 msgid "Vertical: Bottom to Top"
-msgstr "De baixo para cima"
+msgstr "Vertical: de baixo para cima"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Left to Right"
 msgid "Horizontal: Left to Right"
-msgstr "Da esquerda para a direita"
+msgstr "Horizontal: da esquerda para a direita"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Right to Left"
 msgid "Horizontal: Right to Left"
-msgstr "Da direita para a esquerda"
+msgstr "Horizontal: da direita para a esquerda"
 
 #: GraphView/graphview.py:786
-#, fuzzy
-#| msgid "Unknown time direction"
 msgid "Time Direction"
-msgstr "Direcção temporal desconhecida"
+msgstr "Direcção temporal"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
@@ -20828,7 +20491,7 @@ msgstr ""
 
 #: GraphView/graphview.py:812
 msgid "Person theme"
-msgstr "Tema pessoal"
+msgstr "Tema do indivíduo"
 
 #: GraphView/graphview.py:817
 msgid "Path color to home person"
@@ -20839,10 +20502,8 @@ msgid "Font:"
 msgstr "Letra:"
 
 #: GraphView/graphview.py:835
-#, fuzzy
-#| msgid "Text style"
 msgid "Avatars style"
-msgstr "Estilo do texto"
+msgstr "Estilo dos avatares"
 
 #: GraphView/graphview.py:841
 msgid "PNG files"
@@ -20869,10 +20530,8 @@ msgid "Unknown avatar:"
 msgstr "Avatar desconhecido:"
 
 #: GraphView/graphview.py:873
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Choose Unknown avatar"
-msgstr "Mostrar avatares"
+msgstr "Escolha o avatar para desconhecidos"
 
 #: GraphView/graphview.py:885
 msgid "Other avatar:"
@@ -20883,16 +20542,12 @@ msgid "Choose Other avatar"
 msgstr ""
 
 #: GraphView/graphview.py:900
-#, fuzzy
-#| msgid "Active person"
 msgid "Active person border size"
-msgstr "Indivíduo activo"
+msgstr "Tamanho do contorno do indivíduo activo"
 
 #: GraphView/graphview.py:905
-#, fuzzy
-#| msgid "Person Overview"
 msgid "Person border size"
-msgstr "Visão geral do indivíduo"
+msgstr "Tamanho do contorno do indivíduo"
 
 #: GraphView/graphview.py:908
 msgid "Themes"
@@ -20904,11 +20559,11 @@ msgstr "Mostrar animação"
 
 #: GraphView/graphview.py:925
 msgid "Animation speed (1..5 and 5 is the slower)"
-msgstr "Velocidade da animação (1..5 e 5 é o mais lento)"
+msgstr "Velocidade da animação (1 a 5, 5 é o mais lento)"
 
 #: GraphView/graphview.py:929
 msgid "Animation count (0..8 use 0 to turn off)"
-msgstr "Contagem da animação (0..8 use 0 para desligar)"
+msgstr "Contagem da animação (0 a 8, 0 para desligar)"
 
 #: GraphView/graphview.py:938
 msgid "Animation"
@@ -20920,7 +20575,7 @@ msgstr "Procurar em toda a base de dados"
 
 #: GraphView/graphview.py:954
 msgid "Also apply search by all database."
-msgstr "Aplicar também a procura por toda a base de dados."
+msgstr "Aplicar a procura a toda a base de dados."
 
 #: GraphView/graphview.py:957
 msgid "Show person images"
@@ -20928,7 +20583,7 @@ msgstr "Mostrar imagens do indivíduo"
 
 #: GraphView/graphview.py:960
 msgid "Show persons thumbnails in search result list."
-msgstr "Mostrar miniaturas do indivíduo na lista de resultados."
+msgstr "Mostrar miniaturas na lista de resultados."
 
 #: GraphView/graphview.py:963
 msgid "Show bookmarked first"
@@ -21067,7 +20722,7 @@ msgstr "Imagem à esquerda"
 
 #: GraphView/graphview.py:3399
 msgid "<b>Tags:</b>"
-msgstr "<b>Etiquetas</b>"
+msgstr "<b>Etiquetas:</b>"
 
 #: GraphView/graphview.py:3779
 msgid "Lines type"
@@ -21086,10 +20741,8 @@ msgid "Ortho"
 msgstr "Ortogonal"
 
 #: GraphView/graphview.py:3875
-#, fuzzy
-#| msgid "No relation to active person"
 msgid "No Events for this person"
-msgstr "Sem parentesco com o indivíduo activo"
+msgstr "Nenhum evento para este indivíduo"
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
@@ -21104,10 +20757,8 @@ msgid "Add parents"
 msgstr "Adicionar progenitores"
 
 #: GraphView/graphview.py:4051
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Show path to home person"
-msgstr "Cor de caminho para o indivíduo inicial"
+msgstr "Mostrar caminho para o indivíduo inicial"
 
 #: GraphView/graphview.py:4057 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364
@@ -21120,10 +20771,8 @@ msgid "Add to bookmarks"
 msgstr "Adicionar aos favoritos"
 
 #: GraphView/graphview.py:4161
-#, fuzzy
-#| msgid "Used for family"
 msgid "No Events for this family"
-msgstr "Usado para família"
+msgstr "Nenhum evento para esta família"
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
@@ -21165,10 +20814,8 @@ msgid "Dynamic and interactive graph of relations"
 msgstr "Gráfico de relações dinâmico e interactivo"
 
 #: GraphView/avatars.py:60
-#, fuzzy
-#| msgid "- default -"
 msgid "Dark (default)"
-msgstr "- pré-definição -"
+msgstr "Escuro (pré-definição)"
 
 #: GraphView/avatars.py:61
 msgid "Light"
@@ -21208,10 +20855,8 @@ msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
-#, fuzzy
-#| msgid "Partner's spouse"
 msgid "Partners"
-msgstr "Cônjuge do companheiro"
+msgstr "Companheiros"
 
 #: Overview/Overview.gpr.py:29
 msgid "Person Overview"
@@ -21234,10 +20879,8 @@ msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet que mostra uma visão geral dos eventos de uma dada família"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
-#, fuzzy
-#| msgid "Biography Content"
 msgid "Historical Context"
-msgstr "Conteúdo biográfico"
+msgstr "Conteúdo histórico"
 
 #: HistContext/HistContext.gpr.py:5
 msgid "Lists relevant historical events during the lifetime of a Person"
@@ -21256,10 +20899,8 @@ msgid "Show outside life span "
 msgstr "Mostrar fora da duração de vida "
 
 #: HistContext/HistContext.py:132
-#, fuzzy
-#| msgid "Show full dates"
 msgid "Use full dates"
-msgstr "Mostrar datas completas"
+msgstr "Usar datas completas"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
@@ -21278,10 +20919,8 @@ msgid "Background color items outside lifespan"
 msgstr ""
 
 #: HistContext/HistContext.py:149
-#, fuzzy
-#| msgid "Select A File"
 msgid "Select from files"
-msgstr "Seleccione um ficheiro"
+msgstr "Seleccionar de ficheiros"
 
 #: HistContext/HistContext.py:287
 msgid "Invalid date "
@@ -21310,10 +20949,8 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Web Sync"
-msgstr "Versão Gramps"
+msgstr "Sincronização \"web\" do Gramps"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
@@ -21324,10 +20961,8 @@ msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:268
-#, fuzzy
-#| msgid "Fetching records..."
 msgid "Fetching remote data..."
-msgstr "A obter registos..."
+msgstr "A obter dados remotos..."
 
 #: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
@@ -21366,10 +21001,8 @@ msgid "Failed importing downloaded XML file."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:457
-#, fuzzy
-#| msgid "Exporting family tree data ..."
 msgid "Comparing local and remote data..."
-msgstr "A exportar dados da árvore de família..."
+msgstr "A comparar dados locais e remotos..."
 
 #: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
@@ -21380,10 +21013,8 @@ msgid "Server authorization error: insufficient permissions."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:495
-#, fuzzy
-#| msgid "not found."
 msgid "Error: URL not found."
-msgstr "não encontrado."
+msgstr "Erro: URL não encontrado."
 
 #: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
@@ -21453,16 +21084,12 @@ msgid "Reset local to remote"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:799
-#, fuzzy
-#| msgid "Merge Media"
 msgid "Merge"
-msgstr "Unir multimédia"
+msgstr "Unir"
 
 #: GrampsWebSync/grampswebsync.py:824
-#, fuzzy
-#| msgid "No changes"
 msgid "Local changes"
-msgstr "Sem alterações"
+msgstr "Alterações locais"
 
 #: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
 #: GrampsWebSync/grampswebsync.py:834
@@ -21470,38 +21097,28 @@ msgid "Modified"
 msgstr "Modificado"
 
 #: GrampsWebSync/grampswebsync.py:829
-#, fuzzy
-#| msgid "No changes"
 msgid "Remote changes"
-msgstr "Sem alterações"
+msgstr "Alterações remotas"
 
 #: GrampsWebSync/grampswebsync.py:834
-#, fuzzy
-#| msgid "Doing Place changes"
 msgid "Simultaneous changes"
-msgstr "A fazer alterações"
+msgstr "Alterações simultâneas"
 
 #: GrampsWebSync/grampswebsync.py:891
 msgid "Fetching information about media files..."
 msgstr "A obter informação sobre multimédia..."
 
 #: GrampsWebSync/grampswebsync.py:912
-#, fuzzy
-#| msgid "Your Tree and import are the same."
 msgid "Both trees are the same."
-msgstr "A árvore e a importação são idênticas."
+msgstr "As árvores são idênticas."
 
 #: GrampsWebSync/grampswebsync.py:918
-#, fuzzy
-#| msgid "Also apply search by all database."
 msgid "Applying changes to local database ..."
-msgstr "Aplicar também a procura por toda a base de dados."
+msgstr "Aplicar alterações à base de dados local."
 
 #: GrampsWebSync/grampswebsync.py:920
-#, fuzzy
-#| msgid "Also apply search by all database."
 msgid "No changes to apply to local database."
-msgstr "Aplicar também a procura por toda a base de dados."
+msgstr "Não aplicar alterações à base de dados local."
 
 #: GrampsWebSync/grampswebsync.py:923
 msgid "Applying changes to remote database ..."
@@ -21516,16 +21133,12 @@ msgid "Successfully applied changes to local database."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:962
-#, fuzzy
-#| msgid "Missing Files"
 msgid "Missing locally"
-msgstr "Ficheiros em falta"
+msgstr "Locais em falta"
 
 #: GrampsWebSync/grampswebsync.py:965
-#, fuzzy
-#| msgid "Missing header"
 msgid "Missing remotely"
-msgstr "Cabeçalho em falta"
+msgstr "Remotos em falta"
 
 #: GrampsWebSync/grampswebsync.py:1003
 #, python-format
@@ -21572,20 +21185,14 @@ msgid "Style used for labels and captions"
 msgstr "O estilo usado para rótulos e legendas"
 
 #: NLWebConnectPack/NLWebPack.py:34
-#, fuzzy
-#| msgid "Google Archives"
 msgid "Open Archives"
-msgstr "Google Archives"
+msgstr "Arquivos abertos"
 
 #: NLWebConnectPack/NLWebPack.py:35
-#, fuzzy
-#| msgid "Genealogical bank"
 msgid "Genealogy Online"
-msgstr "Banco genealógico"
+msgstr "Genealogia em linha"
 
 #: NLWebConnectPack/NLWebPack.py:36
-#, fuzzy
-#| msgid "National Archives"
 msgid "National Archive"
 msgstr "Arquivos nacionais"
 
@@ -21594,10 +21201,8 @@ msgid "Who (re)searches who?"
 msgstr ""
 
 #: NLWebConnectPack/NLWebPack.gpr.py:13
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
-msgstr "Colecção de páginas web para UK (requer libwebconnect)"
+msgstr "Colecção de páginas web para a Holanda (requer libwebconnect)"
 
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:34
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:47
@@ -21614,7 +21219,7 @@ msgstr ""
 
 #: HtreePedigreeView/HtreePedigreeView.py:543
 msgid "H-tree Pedigree View"
-msgstr "Vista Costados H-Tree"
+msgstr "Costados H-Tree"
 
 #: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
@@ -21646,7 +21251,7 @@ msgstr "Indivíduos alterados"
 #: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
 #: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
 msgid "Changed On"
-msgstr "Alterado a"
+msgstr "Alteração a"
 
 #: LastChange/LastChangeReport.py:197
 msgid "Families Changed"
@@ -21654,7 +21259,7 @@ msgstr "Famílias alteradas"
 
 #: LastChange/LastChangeReport.py:198
 msgid "Family Surname"
-msgstr "Apelido da família"
+msgstr "Apelido de família"
 
 #: LastChange/LastChangeReport.py:215
 #, python-format
@@ -21695,7 +21300,7 @@ msgstr "O estilo usado para texto normal"
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
-msgstr "alterado a"
+msgstr "alteração a"
 
 #: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
@@ -21712,7 +21317,7 @@ msgstr "Relatório dos últimos registos que foram alterados"
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:16
 msgid "This Day in Family History"
-msgstr "Um dia na história familiar"
+msgstr "Este dia na história familiar"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:9
 msgid ""
@@ -21725,7 +21330,7 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:105
 msgid "Database is not open, can't check history right now."
 msgstr ""
-"A base de dados não está aberta, impossível verificar a história agora."
+"A base de dados não está aberta, impossível verificar o histórico agora."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:106
 #, python-format
@@ -21734,7 +21339,7 @@ msgstr "A %(date)s na história familiar...\n"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:107
 msgid "... nothing happened!  Check again tomorrow!"
-msgstr "... nada aconteceu! Procure amanhão outra vez!"
+msgstr "... nada aconteceu! Procure amanhã outra vez!"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:111
 msgid "Report only living tree members"
@@ -21883,7 +21488,7 @@ msgstr "%(male_name)s foi baptizado no ano de %(year)s em %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:504
 #, python-format
 msgid "%(female_name)s was baptized in %(year)s at %(place)s."
-msgstr "%(female_name)s foi baptizado no ano de %(year)s em %(place)s."
+msgstr "%(female_name)s foi baptizada no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:507
 #, python-format
@@ -21893,12 +21498,12 @@ msgstr "%(male_name)s tornou-se bar mitzvah no ano de %(year)s em %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:509
 #, python-format
 msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
-msgstr "%(female_name)s tornou-se bat mitzvah no ano de %(year)s em %(place)s."
+msgstr "%(female_name)s tornou-se bar mitzvah no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:512
 #, python-format
 msgid "%(male_name)s became a bat mitzvah in %(year)s at %(place)s."
-msgstr "%(male_name)s tornou-se bar mitzvah no ano de %(year)s em %(place)s."
+msgstr "%(male_name)s tornou-se bat mitzvah no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:514
 #, python-format
@@ -21928,12 +21533,12 @@ msgstr "%(female_name)s foi abençoada no ano de %(year)s em %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:527
 #, python-format
 msgid "%(male_name)s was buried in %(year)s at %(place)s."
-msgstr "%(male_name)s foi sepultado no ano de %(year)s em %(place)s."
+msgstr "%(male_name)s foi inumado no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:529
 #, python-format
 msgid "%(female_name)s was buried in %(year)s at %(place)s."
-msgstr "%(female_name)s foi sepultada no ano de %(year)s em %(place)s."
+msgstr "%(female_name)s foi inumada no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:532
 #, python-format
@@ -21978,14 +21583,12 @@ msgstr "%(female_name)s faleceu no ano de %(year)s em %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:559
 #, python-format
 msgid "%(male_name)s was awarded a degree in %(year)s at %(place)s."
-msgstr ""
-"%(male_name)s recebeu uma licenciatura no ano de %(year)s em %(place)s."
+msgstr "%(male_name)s recebeu uma graduação no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:561
 #, python-format
 msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
-msgstr ""
-"%(female_name)s recebeu uma licenciatura no ano de %(year)s em %(place)s."
+msgstr "%(female_name)s recebeu uma graduação no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:564
 #, python-format
@@ -22207,7 +21810,7 @@ msgstr "%(male_name)s foi ordenado no ano de %(year)s em %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:685
 #, python-format
 msgid "%(female_name)s was ordained in %(year)s at %(place)s."
-msgstr "%(female_name)s foi ordenado no ano de %(year)s em %(place)s."
+msgstr "%(female_name)s foi ordenada no ano de %(year)s em %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:688
 #, python-format
@@ -22235,7 +21838,7 @@ msgstr "n."
 
 #: NetworkChart/NetworkChart.py:134
 msgid "death abbreviation|d."
-msgstr "ó."
+msgstr "f."
 
 #: NetworkChart/NetworkChart.py:135
 msgid "marriage abbreviation|m."
@@ -22339,9 +21942,9 @@ msgid ""
 "for dynamically generated URLs.\n"
 "URL = Prefix + GrampsID + Suffix."
 msgstr ""
-"Insira o prefixo,sufixo (use vírgula)\n"
+"Insira o prefixo, sufixo (use vírgula)\n"
 "para URLs gerados dinamicamente.\n"
-"URL = Prefixo + IDGramps + Sufixo."
+"URL = Prefixo + ID Gramps + Sufixo."
 
 #: NetworkChart/NetworkChart.py:957
 msgid "Enter Font Name"
@@ -22403,11 +22006,11 @@ msgstr "O nome do ficheiro svg de gráfico de rede gerado."
 
 #: NetworkChart/NetworkChart.py:1002
 msgid "Different node shapes/edges for gender."
-msgstr "Formas/Contornos diferentes para homens/mulheres."
+msgstr "Formas/Contornos de nó diferentes por sexo."
 
 #: NetworkChart/NetworkChart.py:1003
 msgid "Node differences for gender."
-msgstr "Diferenças do nó para homens/mulheres."
+msgstr "Diferenças do nó por sexo."
 
 #: NetworkChart/NetworkChart.py:1008
 msgid "Male Background"
@@ -22435,10 +22038,8 @@ msgid "RGB-color for Female box background."
 msgstr "Cor RGB para o fundo da caixa das mulheres."
 
 #: NetworkChart/NetworkChart.py:1026
-#, fuzzy
-#| msgid "Male Background Alpha"
 msgid "Female Background Alpha"
-msgstr "Transparência do fundo masculino"
+msgstr "Transparência do fundo feminino"
 
 #: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
@@ -22451,10 +22052,8 @@ msgid "Female Box Edge"
 msgstr "Contorno da caixa das mulheres"
 
 #: NetworkChart/NetworkChart.py:1034
-#, fuzzy
-#| msgid "RGB-color for Male box edge."
 msgid "RGB-color for Female box edge."
-msgstr "Cor RGB para o contorno da caixa dos homens."
+msgstr "Cor RGB para o contorno da caixa das mulheres."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
@@ -22507,7 +22106,7 @@ msgstr "Aparar o contorno da caixa"
 
 #: NetworkChart/NetworkChart.py:1062
 msgid "RGB-color for box edge that has been trimmed."
-msgstr "Cor RGB para o contorno que foi aparado."
+msgstr "Cor RGB para o contorno aparado."
 
 #: NetworkChart/NetworkChart.py:1066
 msgid "Remove color background on all nodes."
@@ -22523,7 +22122,7 @@ msgid ""
 "rounding birthday\n"
 "to year only"
 msgstr ""
-"Insira o ano para começar\n"
+"Insira o ano para começar,\n"
 "arredondando o nascimento\n"
 "só ao ano"
 
@@ -22549,7 +22148,7 @@ msgid ""
 "rounding marriage\n"
 "date to year only"
 msgstr ""
-"Insira o ano para começar\n"
+"Insira o ano para começar,\n"
 "arredondando o casamento\n"
 "só ao ano"
 
@@ -22690,7 +22289,7 @@ msgid ""
 "Any - Highlight any path(s) including direct or indirect."
 msgstr ""
 "Nenhum - não realçar caminhos.\n"
-"Directo - realçar os caminhos directos entre ascendentes/descedentes.\n"
+"Directo - realçar os caminhos directos entre ascendentes/descendentes.\n"
 "Qualquer - realçar quaisquer caminhos, incluindo directos e indirectos."
 
 #: NetworkChart/NetworkChart.py:1186
@@ -22749,23 +22348,23 @@ msgstr "Adicionar um fundo amarelo ao indivíduo central."
 
 #: NetworkChart/NetworkChart.py:1234
 msgid "Use database handle instead of GrampID id in URLs."
-msgstr "Usar o gestor da base de dados em vez da IDGramps nos URLs."
+msgstr "Usar o gestor da base de dados em vez da ID Gramps nos URLs."
 
 #: NetworkChart/NetworkChart.py:1236
 msgid ""
 "Use database handle instead of the gramps id for URLs.\n"
 "The handle should never change whereas gramps ids can."
 msgstr ""
-"Usar o gestor da base de dados em vez da IDGramps nos URLs.\n"
+"Usar o gestor da base de dados em vez da ID Gramps nos URLs.\n"
 "O gestor nunca muda, ao passo que a ID Gramps sim."
 
 #: NetworkChart/NetworkChart.py:1240
 msgid "Confirm overwrite file."
-msgstr "Confirme a sobrescrição do ficheiro."
+msgstr "Confirme a substituição do ficheiro."
 
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
-msgstr "Activar/Desactivar a confirmação de sobrescrição do ficheiro."
+msgstr "Activar/Desactivar a confirmação de substituição do ficheiro."
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
@@ -22790,10 +22389,8 @@ msgstr "O local não foi encontrado."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
-#, fuzzy
-#| msgid "1 place record was modified."
 msgid "The place was not identified."
-msgstr "Foi alterado um registo."
+msgstr "O local não foi identificado."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
@@ -22811,16 +22408,12 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "Nothing has been searched yet"
-msgstr "Nada seleccionado"
+msgstr "Ainda nada foi procurado"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
-#, fuzzy
-#| msgid "No place description"
 msgid "No place is active"
-msgstr "Sem descrição de local"
+msgstr "Nenhum local activo"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
@@ -22831,60 +22424,44 @@ msgid "View for the place coordinate gramplet."
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place and Coordinates"
-msgstr "Títulos de locais"
+msgstr "Locais e coordenadas"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place Coordinates"
-msgstr "Títulos de locais"
+msgstr "Coordenadas de locais"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-#, fuzzy
-#| msgid "Note Gramplet"
 msgid "Place Coordinate Gramplet"
-msgstr "Gramplet Nota"
+msgstr "Gramplet Coordenadas de locais"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
-#, fuzzy
-#| msgid "Add citation and source to Place"
 msgid "Add city as place"
-msgstr "Adicionar citação e fonte ao seu local"
+msgstr "Adicionar cidade como local"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add addess as place"
-msgstr "Adicionar como progenitor"
+msgstr "Adicionar endereço como local"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
-#, fuzzy
-#| msgid "Search:"
 msgid "Search for:"
-msgstr "Procurar:"
+msgstr "Procurar por:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:26
-#, fuzzy
-#| msgid "m. place:"
 msgid "Found place:"
-msgstr "local c.:"
+msgstr "Local encontrado:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:53
-#, fuzzy
-#| msgid "No central person selected"
 msgid "No DB entry is selected"
-msgstr "Sem indivíduo central seleccionado"
+msgstr "Nenhuma entrada de BD seleccionada"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
@@ -22913,10 +22490,8 @@ msgid "Go"
 msgstr ""
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
-#, fuzzy
-#| msgid "Show lifespan"
 msgid "Show help"
-msgstr "Mostrar duração de vida"
+msgstr "Mostrar ajuda"
 
 #~ msgid "Enter GOV-id:"
 #~ msgstr "Insira a GOV-id:"
