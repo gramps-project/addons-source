@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"PO-Revision-Date: 2025-02-18 00:56+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -2457,10 +2457,8 @@ msgid ""
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:86
-#, fuzzy
-#| msgid "Search results"
 msgid "Search Quota "
-msgstr "Suchergebnisse"
+msgstr "Suchkontingent "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
@@ -2681,37 +2679,31 @@ msgstr "Generation "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr "Anzahl der gefundener Vorfahren"
+msgstr "Anzahl der gefundenen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:207
-#, fuzzy
-#| msgid "Number of Ancestors found "
 msgid "Percent of Ancestors found "
-msgstr "Anzahl der gefundener Vorfahren"
+msgstr "Prozentsatz der gefundenen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:208
-#, fuzzy
-#| msgid "Number of Ancestors found "
 msgid "Number of unique Ancestors found "
-msgstr "Anzahl der gefundener Vorfahren"
+msgstr "Anzahl der gefundenen einmaligen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
-msgstr "Anzahl theoretischer Vorfahren"
+msgstr "Anzahl der theoretischen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
-msgstr "Stammbaum einklappen"
+msgstr "Stammbaum zusammenklappen "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
-msgstr "Gesamtzahl gefundener Vorfahren"
+msgstr "Gesamtzahl der gefundenen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:255
-#, fuzzy
-#| msgid "Total Number of Ancestors found "
 msgid "Total Number of unique Ancestors found "
-msgstr "Gesamtzahl gefundener Vorfahren"
+msgstr "Gesamtzahl der gefundenen einzelnen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -4081,7 +4073,7 @@ msgstr "in"
 #: DataEntryGramplet/DataEntryGramplet.py:569
 #, python-format
 msgid "Gramplet Data Edit: %s"
-msgstr "Gramplet Daten bearbeiten: %s "
+msgstr "Gramplet Daten bearbeiten: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
@@ -4209,10 +4201,8 @@ msgid "Shared Citation ID :"
 msgstr "Fundstellen:"
 
 #: FamilyTreeDNA/ftdna_import.py:151
-#, fuzzy
-#| msgid "Active person"
 msgid "Active Person : "
-msgstr "Aktive Person"
+msgstr "Aktive Person: "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
@@ -5477,10 +5467,8 @@ msgid " (Requires version 0.5.x)"
 msgstr " (Benötigt Version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
-#, fuzzy
-#| msgid " (lxml: not found. Requires version "
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr " (lxml: nicht gefunden. Benötigt Version "
+msgstr " • python-fontconfig nicht gefunden, (Benötigt Version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
@@ -5999,7 +5987,7 @@ msgstr "%(event_name)s von %(name)s "
 #: DescendantBooks/DetailedDescendantBookReport.py:813
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
-msgstr "%(event_name)s von %(name)s und %(mate)s"
+msgstr "%(event_name)s von %(name)s und %(mate)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
@@ -6270,7 +6258,7 @@ msgstr "HLT-Ritus Familie"
 
 #: PersonEverything/PersonEverything.py:418
 msgid "LDS "
-msgstr "HLT"
+msgstr "HLT "
 
 #: PersonEverything/PersonEverything.py:434
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
@@ -6612,9 +6600,9 @@ msgid ""
 "Gramps can convert to correct capitalization. \n"
 "Select the names you wish Gramps to convert. "
 msgstr ""
-"Es folgt eine Liste von Vornamen, die Gramps \n"
-"in korrekte Großschreibung ändern kann. \n"
-"Wähle die Namen aus, die Gramps ändern soll."
+"Im Folgenden findest du eine Liste der Vornamen, die \n"
+"Gramps in die richtige Großschreibung umwandeln kann. \n"
+"Wähle die Namen aus, die Gramps umwandeln soll. "
 
 #: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
@@ -7402,9 +7390,9 @@ msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
 msgstr ""
-"Maximale Länge des Notizfeldes eines Ereignisses in einem Textblock, "
-"'$e(n)'\n"
-" 0=keine Begrenzung"
+"Maximale Länge des Notizfeldes eines Ereignisses in einem Textblock, '$e(n)'."
+"\n"
+" 0=keine Begrenzung "
 
 #: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
