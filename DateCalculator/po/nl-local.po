@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-19 07:21+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -31,17 +31,15 @@ msgstr "Kopieer"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "Referentiedatum of -periode"
 
 #: DateCalculator/DateCalculator.py:86
-#, fuzzy
-#| msgid " by Gramps "
 msgid "a valid Gramps date"
-msgstr " door Gramps "
+msgstr "een geldige Gramps-datum"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "Datum of verschuiving ±y of ±y, m, d"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -49,6 +47,10 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. een datum\n"
+"2. een positief of negatief getal, dat jaren vertegenwoordigt\n"
+"3. een positieve of negatieve lijst van waarden, die jaren, maanden, dagen "
+"vertegenwoordigen"
 
 #: DateCalculator/DateCalculator.py:96
 msgid "Result"
@@ -60,11 +62,11 @@ msgstr "Berekenen"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "Fout: ongeldige datum voor eerste expressie"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "Fout: ongeldige offset voor tweede expressie"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
@@ -73,7 +75,7 @@ msgstr "Fout: ten minste één expressie moet een datum zijn"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
+msgstr "Typ een expressie in de bovenstaande items en klik op Berekenen."
 
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
@@ -82,4 +84,4 @@ msgstr "Datum rekenmachine"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
-msgstr ""
+msgstr "Datumberekeningen uitvoeren"

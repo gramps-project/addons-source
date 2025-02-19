@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-19 21:10+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -173,7 +173,7 @@ msgstr "Kann neue Person nicht als Partner hinzufügen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
 msgid "Can't add new person as a wife."
-msgstr "Kann neue Person nicht als Vater hinzufügen"
+msgstr "Kann keine neue Person als Ehefrau hinzufügen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:555
 msgid "Can't add new person as a husband."

@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-19 21:10+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -786,7 +786,7 @@ msgstr "AhornzuckerLbs"
 
 #: Form/form_ca.xml.h:177
 msgid "40. Maple Sugar Lbs."
-msgstr "40. Ahornzucker Lbs-"
+msgstr "40. Ahornzucker Lbs."
 
 #: Form/form_ca.xml.h:178
 msgid "CiderGalls"
@@ -794,7 +794,7 @@ msgstr "ApfelsaftGallon"
 
 #: Form/form_ca.xml.h:179
 msgid "41. Cider Galls."
-msgstr "41. Apfelsaft Gallon"
+msgstr "41. Apfelsaft Galls."
 
 #: Form/form_ca.xml.h:180
 msgid "ClothYards"
@@ -810,7 +810,7 @@ msgstr "LeinenYards"
 
 #: Form/form_ca.xml.h:183
 msgid "43. Linnen - Yds."
-msgstr "43. Leinen Yards"
+msgstr "43. Leinen Yds."
 
 #: Form/form_ca.xml.h:184
 msgid "FlannelYds"
@@ -818,7 +818,7 @@ msgstr "FlanelYards"
 
 #: Form/form_ca.xml.h:185
 msgid "44. Flannel - Yds."
-msgstr "44. Flanel - Yards"
+msgstr "44. Flanel - Yds."
 
 #: Form/form_ca.xml.h:186
 msgid "Bulls"
@@ -1136,7 +1136,7 @@ msgstr "HäuserWerdenGebaut"
 
 #: Form/form_ca.xml.h:287
 msgid "36. Houses: Being built"
-msgstr "36. Häuser: werden gebaut "
+msgstr "36. Häuser: Im Bau"
 
 #: Form/form_ca.xml.h:291 Form/form_ca.xml.h:345 Form/form_ca.xml.h:393
 #: Form/form_ca.xml.h:453 Form/form_ca.xml.h:532 Form/form_ca.xml.h:618
@@ -1243,7 +1243,7 @@ msgstr "13. Herkunft"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
-msgstr "14. Beruf, Beruf oder Gewerbe "
+msgstr "14. Beruf, Beschäftigung oder Gewerbe"
 
 #: Form/form_ca.xml.h:325 Form/form_ca.xml.h:379
 msgid "15. Married or Widowed"
@@ -1395,7 +1395,7 @@ msgstr "15. Religion"
 
 #: Form/form_ca.xml.h:430
 msgid "16. Profession, Occupation or Trade"
-msgstr "16. Beruf, Beruf oder Gewerbe "
+msgstr "16. Beruf, Beschäftigung oder Gewerbe"
 
 #: Form/form_ca.xml.h:431 Form/form_ca.xml.h:496 Form/form_ca.xml.h:707
 #: Form/form_gb.xml.h:164 Form/form_gb.xml.h:293 Form/form_gb.xml.h:525
@@ -3000,7 +3000,7 @@ msgstr "Staat von"
 #: Form/form_us.xml.h:1847 Form/form_us.xml.h:2372 Form/form_us.xml.h:2394
 #: Form/form_us.xml.h:2486 Form/form_us.xml.h:2507
 msgid "Line No."
-msgstr "ZeilenNr. "
+msgstr "Zeile Nr."
 
 #: Form/form_us.xml.h:260 Form/form_us.xml.h:336 Form/form_us.xml.h:435
 #: Form/form_us.xml.h:465 Form/form_us.xml.h:615 Form/form_us.xml.h:1105
@@ -6776,7 +6776,7 @@ msgstr "WM 21-60"
 
 #: Form/form_us.xml.h:2018
 msgid "WM under 21 above 60 "
-msgstr "WM unter 21 über 60"
+msgstr "WM unter 21 über 60 "
 
 #: Form/form_us.xml.h:2019
 msgid "WF all ages"
@@ -6869,7 +6869,7 @@ msgstr "Nr."
 
 #: Form/form_us.xml.h:2048
 msgid "St./Ave "
-msgstr "Straße/Allee"
+msgstr "Str./Allee "
 
 #: Form/form_us.xml.h:2049
 msgid "Hotel or Institution"
@@ -7379,7 +7379,7 @@ msgstr "Beantragen Sie eine Befreiung vom Einberufung (Gründe angeben)"
 
 #: Form/form_us.xml.h:2540
 msgid "Race "
-msgstr "Rasse"
+msgstr "Ethnie "
 
 #: Form/form_us.xml.h:2542
 msgid "Build / Weight"

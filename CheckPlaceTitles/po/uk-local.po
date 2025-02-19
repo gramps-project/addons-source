@@ -5,13 +5,14 @@
 # Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 # Oleh Petriv, 2013.
 # Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
+# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 08:49+0000\n"
-"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
+"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -32,15 +33,15 @@ msgstr "Пошук полів місця"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
-msgstr ""
+msgstr "Перевірити назви місць"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
-msgstr ""
+msgstr "Перевірити назви місць"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "Перевірити назву місця"
 
 #: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
@@ -48,19 +49,20 @@ msgstr "Відмінності"
 
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
-msgstr ""
+msgstr "Модифікації не потрібні"
 
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
-msgstr ""
+msgstr "Змін не потрібно."
 
 #: CheckPlaceTitles/checkplacetitles.py:187
+#, fuzzy
 msgid "Legacy place"
-msgstr ""
+msgstr "Спадкове місце"
 
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
-msgstr ""
+msgstr "Модифікувати назви місць"
 
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
@@ -68,7 +70,7 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "Видалити вміст поля назви місця, якщо він не відповідає"
 
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."

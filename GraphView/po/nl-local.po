@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-19 07:21+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -81,10 +81,8 @@ msgid "Graph View"
 msgstr "Grafiekweergave"
 
 #: GraphView/graphview.py:754
-#, fuzzy
-#| msgid "Show Tags"
 msgid "Show IDs"
-msgstr "Toon labels"
+msgstr "IDs weergeven"
 
 #: GraphView/graphview.py:757
 msgid "Show avatars"
@@ -124,7 +122,7 @@ msgstr "Tijdsrichting"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr ""
+msgstr "Beperk het aantal weergegeven personen (gebruik 0 voor onbeperkt)"
 
 #: GraphView/graphview.py:812
 msgid "Person theme"
@@ -163,28 +161,20 @@ msgid "Choose female avatar"
 msgstr "Kies een vrouwelijke avatar"
 
 #: GraphView/graphview.py:872
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Unknown avatar:"
-msgstr "Toon avatars"
+msgstr "Onbekende avatar:"
 
 #: GraphView/graphview.py:873
-#, fuzzy
-#| msgid "Choose male avatar"
 msgid "Choose Unknown avatar"
-msgstr "Kies een mannelijke avatar"
+msgstr "Kies een onbekende avatar"
 
 #: GraphView/graphview.py:885
-#, fuzzy
-#| msgid "Male avatar:"
 msgid "Other avatar:"
-msgstr "Mannelijke avatar:"
+msgstr "Andere avatar:"
 
 #: GraphView/graphview.py:886
-#, fuzzy
-#| msgid "Choose male avatar"
 msgid "Choose Other avatar"
-msgstr "Kies een mannelijke avatar"
+msgstr "Kies een andere avatar"
 
 #: GraphView/graphview.py:900
 msgid "Active person border size"
@@ -356,6 +346,10 @@ msgid ""
 "{people_missing} people won't be shown. You can change this limit in the "
 "view configuration."
 msgstr ""
+"Deze grafiek zou ten minste {people_count} personen bevatten, wat de limiet "
+"van {people_limit} personen overschrijdt. Om redenen van prestaties worden "
+"ten minste {people_missing} personen niet weergegeven. U kunt deze limiet "
+"wijzigen in Weergave - Configuratie."
 
 #: GraphView/graphview.py:2678
 msgid "Incomplete graph"
@@ -390,10 +384,8 @@ msgid "Ortho"
 msgstr "Orthogonaal"
 
 #: GraphView/graphview.py:3875
-#, fuzzy
-#| msgid "No relation to active person"
 msgid "No Events for this person"
-msgstr "Geen relatie met actieve persoon"
+msgstr "Geen gebeurtenissen voor deze persoon"
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
@@ -422,10 +414,8 @@ msgid "Add to bookmarks"
 msgstr "Voeg toe aan bladwijzers"
 
 #: GraphView/graphview.py:4161
-#, fuzzy
-#| msgid "Used for family"
 msgid "No Events for this family"
-msgstr "Gebruikt voor gezin"
+msgstr "Geen gebeurtenissen voor dit gezin"
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
@@ -480,7 +470,7 @@ msgstr "Cartoon"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
-msgstr ""
+msgstr "Modern"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
@@ -508,7 +498,5 @@ msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
-#, fuzzy
-#| msgid "Partner's spouse"
 msgid "Partners"
-msgstr "Echtgenote van de partner"
+msgstr "Partners"

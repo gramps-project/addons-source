@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
-"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
+"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -25,7 +25,7 @@ msgstr "Relatório Diferenças entre bases de dados"
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
-msgstr ""
+msgstr "Diferenças entre a base de dados e o ficheiro"
 
 #: Differences/differences.py:161
 msgid "No differences"

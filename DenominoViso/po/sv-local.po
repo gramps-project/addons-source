@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-19 19:18+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -42,10 +42,8 @@ msgid "onclick"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
-#, fuzzy
-#| msgid "Anonymous"
 msgid "onmouseover"
-msgstr "Anonym"
+msgstr "över muspekaren"
 
 #: DenominoViso/DenominoViso.py:208
 msgid "Ancestor"
@@ -106,16 +104,13 @@ msgstr "vittnen"
 
 #: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
 #: DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-format
-#| msgid "Failed writing %s: %s"
+#, python-format
 msgid "Failure writing %s: %s"
 msgstr "Fel vid skrivning av %s: %s"
 
 #: DenominoViso/DenominoViso.py:395
-#, fuzzy
-#| msgid "No DB entry is selected"
 msgid "No central person selected"
-msgstr "Ingen DB-post är vald"
+msgstr "Ingen centralperson är vald"
 
 #: DenominoViso/DenominoViso.py:769
 msgid "Unknown time direction"
@@ -154,10 +149,8 @@ msgid "DenominoViso Options"
 msgstr "DenominoViso-alternativ"
 
 #: DenominoViso/DenominoViso.py:2556
-#, fuzzy
-#| msgid "The destination file for the content."
 msgid "The destination file for the html-content."
-msgstr "Målfilen för innehållet."
+msgstr "Målfilen för html-innehållet."
 
 #: DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
@@ -176,10 +169,8 @@ msgid "Any string you wish."
 msgstr "Godtyckling mening."
 
 #: DenominoViso/DenominoViso.py:2567
-#, fuzzy
-#| msgid "Display type"
 msgid "Display mode"
-msgstr "Visningstyp"
+msgstr "Visningsläge"
 
 #: DenominoViso/DenominoViso.py:2568
 msgid "Either plot ancestor or descendants graph."
@@ -236,20 +227,16 @@ msgid "Include private records"
 msgstr "Ta med privata poster"
 
 #: DenominoViso/DenominoViso.py:2608
-#, fuzzy
-#| msgid "Whether to include private objects."
 msgid "Whether to leave out private data."
-msgstr "Huruvida ta med privata objekt."
+msgstr "Huruvida privata uppgifter ska utelämnas."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
 msgstr "Ta med händelser"
 
 #: DenominoViso/DenominoViso.py:2613
-#, fuzzy
-#| msgid "Whether to include a person's note."
 msgid "Whether to include a person's events."
-msgstr "Huruvida ta med anteckningar."
+msgstr "Huruvida ta med en persons händelser."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
@@ -467,16 +454,12 @@ msgid "Source confidence color"
 msgstr "Källtillförlitlighetsfärg"
 
 #: DenominoViso/DenominoViso.py:2746
-#, fuzzy
-#| msgid ""
-#| "List of lists where each sublist is a list with information about the "
-#| "dash pattern of lines connecting children to parents."
 msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
-"Lista på lista där varje dellista är en lista med information om linjers "
-"utseende för förbindelser mellan barn och föräldrar."
+"Lista på lista där varje dellista är en lista med information på färgen som "
+"ska användas för en viss konfidensnivå."
 
 #: DenominoViso/DenominoViso.py:2749
 msgid "Event format"
@@ -525,16 +508,12 @@ msgid "should be"
 msgstr "borde vara"
 
 #: DenominoViso/DenominoViso.py:2913
-#, fuzzy
-#| msgid "Include media"
 msgid "Included"
-msgstr "Tag med media"
+msgstr "Ingår"
 
 #: DenominoViso/DenominoViso.py:2914
-#, fuzzy
-#| msgid "Exclude Spouses"
 msgid "Excluded"
-msgstr "Uteslut makar"
+msgstr "Utesluten"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
@@ -569,14 +548,10 @@ msgid "DenominoViso"
 msgstr "DenominoViso"
 
 #: DenominoViso/DenominoViso.gpr.py:19
-#, fuzzy
-#| msgid ""
-#| "Generates a web page with a graphical representation of ancestors (SVG) "
-#| "represented as a Fan Chart from the D3.js JavaScript library."
 msgid ""
 "Generates a web (HTML) page with a graphical representation of ancestors/"
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Skapar en webbsida med en grafiskt antavla (SVG) som ett cirkeldiagram med "
-"hjälp av D3,js javaskript-bibliotek."
+"Skapar en webbsida (HTML) med en grafisk representation av förfäder/"
+"ättlingar (SVG) där detaljer om individer blir synliga vid mushändelser."

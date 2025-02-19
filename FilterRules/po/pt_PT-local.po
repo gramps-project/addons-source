@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
-"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
+"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -33,12 +33,12 @@ msgstr ""
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
 msgid "People separated less than <N> degrees of <person>"
-msgstr ""
+msgstr "Parentes afastados menos de <N> graus do <indivíduo>"
 
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
 msgid "Filter rule that matches relatives by degrees of separation"
-msgstr ""
+msgstr "Regra de filtragem que procura parentes por graus de separação"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
@@ -50,7 +50,7 @@ msgstr "Compara fontes com valores contendo os parâmetros escolhidos"
 
 #: FilterRules/multipleparents.py:42
 msgid "People with multiple parent records"
-msgstr ""
+msgstr "Indivíduos com múltiplos pais"
 
 #: FilterRules/multipleparents.py:43
 msgid "Matches people who have more than one set of parents"
@@ -61,7 +61,7 @@ msgstr "Compara indivíduos com mais de um conjunto de pais"
 #: FilterRules/associationsofpersonmatch.gpr.py:25
 #: FilterRules/associationsofpersonmatch.gpr.py:26
 msgid "Match associations of <person filter>"
-msgstr ""
+msgstr "Comparar associações de <indivíduo filtrado>"
 
 #: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
@@ -96,7 +96,7 @@ msgstr "Compara famílias com eventos com um papel seleccionado"
 #: FilterRules/isfamilyfiltermatchevent.py:63
 #: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
-msgstr ""
+msgstr "Eventos de famílias que cumpram o <filtro familiar>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:25
 #: FilterRules/familieswitheventfiltermatch.py:45
@@ -113,19 +113,19 @@ msgstr "Compara famílias que cumprem um filtro de evento"
 
 #: FilterRules/degreesofseparation.py:47
 msgid "Number of degrees of separation from person."
-msgstr ""
+msgstr "Número de graus de separação do indivíduo."
 
 #: FilterRules/degreesofseparation.py:59
 msgid "Degrees:"
-msgstr ""
+msgstr "Graus:"
 
 #: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
 msgid "People with <count> of <event>"
-msgstr ""
+msgstr "Indivíduos com <total> de <eventos>"
 
 #: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
 msgid "Matches persons which have events of given type and number."
-msgstr ""
+msgstr "Procura indivíduos com eventos de determinado tipo e número."
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
@@ -155,15 +155,15 @@ msgstr "Indivíduos que são parte de famílias com <filtro>"
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
 #: FilterRules/ageatdeath.py:74
 msgid "Filter people by their age at death"
-msgstr ""
+msgstr "Filtrar indivíduos pela idade ao óbito"
 
 #: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
-msgstr ""
+msgstr "Regra de filtragem para procurar indivíduos pela sua idade ao óbito"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
-msgstr ""
+msgstr "Filtro de múltiplos pais"
 
 #: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
@@ -192,7 +192,7 @@ msgstr "Compara o indivíduo activo"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
-msgstr ""
+msgstr "Idade em anos ao óbito do indivíduo."
 
 #: FilterRules/ageatdeath.py:71
 msgid "Age:"

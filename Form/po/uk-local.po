@@ -5,13 +5,14 @@
 # Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 # Oleh Petriv, 2013.
 # Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
+# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 08:49+0000\n"
-"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
+"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -372,7 +373,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:70 Form/form_ca.xml.h:278
 msgid "Houses"
-msgstr ""
+msgstr "Будинки"
 
 #: Form/form_ca.xml.h:71
 msgid ""
@@ -414,7 +415,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:80
 msgid "Shops"
-msgstr ""
+msgstr "Крамниці"
 
 #: Form/form_ca.xml.h:81
 msgid "36. Shops, Stores, Inns, Taverns etc."
@@ -4528,6 +4529,8 @@ msgid ""
 "Last year, in how many weeks did this person do any work at all, not "
 "counting work around the house?"
 msgstr ""
+"Минулого року, протягом скількох тижнів ця особа виконувала яку-небудь "
+"роботу, не рахуючи роботи по дому?"
 
 #: Form/form_us.xml.h:949
 msgid "Amount of wages/salary in 1949"
@@ -4588,6 +4591,9 @@ msgid ""
 "Last year, how much money did his relatives in this household receive from "
 "interest, dividends, veteran’s allowances, pensions, rents, or other income?"
 msgstr ""
+"Минулого року, яку суму грошей отримали його родичі в цьому домогосподарстві "
+"від відсотків, дивідендів, допомог для ветеранів, пенсій, орендної плати чи "
+"інших доходів?"
 
 #: Form/form_us.xml.h:961
 msgid "WWII Veteran?"

@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
-"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
+"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -283,7 +283,7 @@ msgstr "Nije moguće analizirati sadržaj od „%(file)s”"
 
 #: lxml/lxmlGramplet.py:333
 msgid "Gramps version"
-msgstr "Gramps inačica"
+msgstr "Gramps verzija"
 
 #: lxml/lxmlGramplet.py:333
 #, python-format

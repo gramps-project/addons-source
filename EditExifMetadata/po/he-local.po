@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 10:31+0000\n"
+"PO-Revision-Date: 2025-02-18 18:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -49,9 +49,8 @@ msgstr ""
 "Exiv2."
 
 #: EditExifMetadata/editexifmetadata.py:161
-#, fuzzy
 msgid "Provide a short description for this image."
-msgstr "קבעי תיאור עבור קובץ זה."
+msgstr "לספק תיאור קצר לתמונה זו."
 
 #: EditExifMetadata/editexifmetadata.py:163
 msgid ""
@@ -61,9 +60,8 @@ msgstr ""
 "הזנת האמן / היוצר של תמונה זו. שמו של האדם או החברה האחראים ליצירת התמונה."
 
 #: EditExifMetadata/editexifmetadata.py:167
-#, fuzzy
 msgid "Enter the copyright information for this image. \n"
-msgstr "האם לכלול מידע נישואים עבור הילדים."
+msgstr "הזנת מידע זכויות יוצרים לתמונה זו \n"
 
 #: EditExifMetadata/editexifmetadata.py:169
 msgid ""
@@ -139,15 +137,12 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:213
-#, fuzzy
-#| msgid "Clear tags"
 msgid "Clear GPS"
-msgstr "ניקוי תגים"
+msgstr "ניקוי GPS"
 
 #: EditExifMetadata/editexifmetadata.py:214
-#, fuzzy
 msgid "Thumbnail"
-msgstr "מיקום צלמית"
+msgstr "דוגמית"
 
 #: EditExifMetadata/editexifmetadata.py:215
 msgid "Copy"
@@ -156,7 +151,7 @@ msgstr "העתקה"
 #: EditExifMetadata/editexifmetadata.py:402
 #, fuzzy
 msgid "Select an image to begin..."
-msgstr "בחרי אובייקט מדיה"
+msgstr "לבחור תמונה כדי להתחיל..."
 
 #: EditExifMetadata/editexifmetadata.py:421
 msgid ""
@@ -221,9 +216,8 @@ msgid "There was an error in converting your image file."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:844
-#, fuzzy
 msgid "Media Path Update"
-msgstr "תאריך פטירה"
+msgstr "עדכון נתיב מדיה"
 
 #: EditExifMetadata/editexifmetadata.py:853
 msgid "There has been an error in updating the image file's path!"
@@ -259,85 +253,72 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:969
-#, fuzzy
 msgid "Media Object Title"
-msgstr "מסנני אוביקטי מדיה"
+msgstr "כותרת עצם מדיה"
 
 #: EditExifMetadata/editexifmetadata.py:978
-#, fuzzy
 msgid "media Title: "
-msgstr "כותרת לוח שנה"
+msgstr "כותרת עצם: "
 
 #: EditExifMetadata/editexifmetadata.py:993
-#, fuzzy
 msgid "General Data"
-msgstr "כללי"
+msgstr "נתונים כלליים"
 
 #: EditExifMetadata/editexifmetadata.py:1003
-#, fuzzy
 msgid "Description: "
-msgstr "תיאור:"
+msgstr "תיאור: "
 
 #: EditExifMetadata/editexifmetadata.py:1004
 msgid "Artist: "
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1005
-#, fuzzy
 msgid "Copyright: "
-msgstr "זכויות יוצרים"
+msgstr "זכויות יוצרים: "
 
 #: EditExifMetadata/editexifmetadata.py:1019
 msgid "Date/ Time"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1034
-#, fuzzy
 msgid "Original: "
-msgstr "זמן מקורי"
+msgstr "מקור: "
 
 #: EditExifMetadata/editexifmetadata.py:1035
-#, fuzzy
 msgid "Modified: "
-msgstr "שונה לאחרונה"
+msgstr "שונה: "
 
 #: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1069
-#, fuzzy
 msgid "Latitude :"
 msgstr "קו רוחב:"
 
 #: EditExifMetadata/editexifmetadata.py:1070
-#, fuzzy
 msgid "Longitude :"
 msgstr "קו אורך:"
 
 #: EditExifMetadata/editexifmetadata.py:1071
-#, fuzzy
 msgid "Altitude :"
-msgstr "קו רוחב:"
+msgstr "רום:"
 
 #: EditExifMetadata/editexifmetadata.py:1114
-#, fuzzy
 msgid "Bad Date/Time"
-msgstr "תאריך שגוי"
+msgstr "תאריך/זמן שגוי"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
 msgid "Invalid latitude (syntax: 18\\u00b09'"
-msgstr "קו רוחב לא תקין (תחביר: 18°9'"
+msgstr "קו רוחב לא תקין (תחביר: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 או -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
 msgid "Invalid longitude (syntax: 18\\u00b09'"
-msgstr "קו אורך לא תקין (תחביר: 18°9'"
+msgstr "קו אורך לא תקין (תחביר: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
@@ -356,14 +337,12 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1333
-#, fuzzy
 msgid "Media Title Update"
-msgstr "קבצי מדיה"
+msgstr "עדכון כותרת מדיה"
 
 #: EditExifMetadata/editexifmetadata.py:1357
-#, fuzzy
 msgid "Media Object Date Created"
-msgstr "מסנני אוביקטי מדיה"
+msgstr "תאריך יצירת עצם מדיה"
 
 #: EditExifMetadata/editexifmetadata.py:1422
 msgid "Saving Exif metadata to this image..."

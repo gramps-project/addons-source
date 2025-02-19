@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-19 07:21+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -90,10 +90,8 @@ msgid "Detect faces (OpenCV module required)"
 msgstr "Herken gezichten (OpenCV-module vereist)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
-#, fuzzy
-#| msgid "Person Name"
 msgid "XMP Region Name"
-msgstr "Naam persoon"
+msgstr "XMP Regionaam"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"

@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-19 21:10+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -100,7 +100,7 @@ msgstr "Auf Alter basierender Farbverlauf"
 
 #: DynamicWeb/dynamicweb.py:431
 msgid "Gradient"
-msgstr "Gradient"
+msgstr "Farbverlauf"
 
 #: DynamicWeb/dynamicweb.py:780 DynamicWeb/dynamicweb.py:786
 #, python-format
@@ -651,8 +651,8 @@ msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
 msgstr ""
-"Dies erlaubt dir, die Daten von Personen einzugrenzen, die noch nicht lange "
-"tot sind."
+"So kannst du Informationen über Personen einschränken, die noch nicht sehr "
+"lange tot sind"
 
 #: DynamicWeb/dynamicweb.py:4839
 msgid "Export notes"
@@ -690,7 +690,7 @@ msgstr "Bilder und Medien aufnehmen"
 
 #: DynamicWeb/dynamicweb.py:4862
 msgid "Whether to include images and media in the web pages"
-msgstr "Ob Bilder und Medien in den Webseiten aufgenommen werden."
+msgstr "Ob Bilder und Medien in die Webseiten aufgenommen werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
@@ -749,7 +749,7 @@ msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
 msgstr ""
 "Ob Halb- und/oder Stiefgeschwister mit den Eltern und Geschwistern "
-"aufgenommen werden."
+"einbezogen werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
@@ -874,8 +874,8 @@ msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
 msgstr ""
-"Die maximale Anzahl von Generationen, welche in den Vorfahren- und "
-"Nachkommenbäumen enthalten sein sollen."
+"Die maximale Anzahl der Generationen, die in den Ahnen- und "
+"Nachkommenschaftsbäumen und -graphen enthalten sein sollen"
 
 #: DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
@@ -912,7 +912,7 @@ msgstr "Seiten"
 
 #: DynamicWeb/dynamicweb.py:5194
 msgid "A note to be used as the page header"
-msgstr "Eine Notiz, die als Kopfzeile benutzt wird."
+msgstr "Eine Notiz, die als Seitenüberschrift verwendet werden soll"
 
 #: DynamicWeb/dynamicweb.py:5197
 msgid "HTML user brand name / icon"

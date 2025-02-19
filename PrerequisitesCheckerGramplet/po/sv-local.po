@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-19 19:18+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -56,16 +56,12 @@ msgstr ""
 "grundförutsättningar installerade."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Valfri</b></u>\n"
+"<u><b>NÖDVÄNDIG</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
 msgid ""
@@ -74,16 +70,12 @@ msgid ""
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Valfri</b></u>\n"
+"<u><b>REKOMMENDERAD</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
 msgid ""
@@ -358,10 +350,8 @@ msgid " (Requires version 0.5.x)"
 msgstr " (Kräver version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
-#, fuzzy
-#| msgid " (lxml: not found. Requires version "
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr " (lxml: inte hittad. Kräver version "
+msgstr " • python-fontconfig inte hittad, (Kräver version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
