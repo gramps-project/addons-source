@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-19 21:10+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -1850,7 +1850,7 @@ msgstr "Einklapp/Ausklappmechanismus"
 
 #: D3Charts/DescendantIndentedTree.py:1901
 msgid "Entire node."
-msgstr "Gesamter Knoten"
+msgstr "Gesamter Knoten."
 
 #: D3Charts/DescendantIndentedTree.py:1902
 msgid "Arrow images at start of node."
@@ -1887,7 +1887,7 @@ msgstr "URL Dateierweiterung"
 
 #: D3Charts/DescendantIndentedTree.py:1926
 msgid "No file extension."
-msgstr "Keine Dateierweiterung"
+msgstr "Keine Dateierweiterung."
 
 #: D3Charts/DescendantIndentedTree.py:1927
 msgid ".html"
@@ -2527,10 +2527,8 @@ msgid "Double-click color text to edit details"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:504
-#, fuzzy
-#| msgid "Nothing missing"
 msgid "Birth event missing."
-msgstr "Es fehlt nichts"
+msgstr "Geburtsereignis fehlt."
 
 #: Betawhatsnext/Betawhatsnext.py:505
 msgid "Add via the Events tab of the Edit Person dialog."
@@ -2574,10 +2572,8 @@ msgid "Mother missing from the parent family"
 msgstr "Zeige Elemente, die in der Datei fehlen"
 
 #: Betawhatsnext/Betawhatsnext.py:668
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Parent family is unknown."
-msgstr "Eltern Familie"
+msgstr "Die elterliche Familie ist unbekannt."
 
 #: Betawhatsnext/Betawhatsnext.py:670
 msgid ""
@@ -2885,7 +2881,7 @@ msgstr "Auf Alter basierender Farbverlauf"
 
 #: DynamicWeb/dynamicweb.py:431
 msgid "Gradient"
-msgstr "Gradient"
+msgstr "Farbverlauf"
 
 #: DynamicWeb/dynamicweb.py:780 DynamicWeb/dynamicweb.py:786
 #, python-format
@@ -3436,8 +3432,8 @@ msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
 msgstr ""
-"Dies erlaubt dir, die Daten von Personen einzugrenzen, die noch nicht lange "
-"tot sind."
+"So kannst du Informationen über Personen einschränken, die noch nicht sehr "
+"lange tot sind"
 
 #: DynamicWeb/dynamicweb.py:4839
 msgid "Export notes"
@@ -3475,7 +3471,7 @@ msgstr "Bilder und Medien aufnehmen"
 
 #: DynamicWeb/dynamicweb.py:4862
 msgid "Whether to include images and media in the web pages"
-msgstr "Ob Bilder und Medien in den Webseiten aufgenommen werden."
+msgstr "Ob Bilder und Medien in die Webseiten aufgenommen werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
@@ -3534,7 +3530,7 @@ msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
 msgstr ""
 "Ob Halb- und/oder Stiefgeschwister mit den Eltern und Geschwistern "
-"aufgenommen werden."
+"einbezogen werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
@@ -3659,8 +3655,8 @@ msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
 msgstr ""
-"Die maximale Anzahl von Generationen, welche in den Vorfahren- und "
-"Nachkommenbäumen enthalten sein sollen."
+"Die maximale Anzahl der Generationen, die in den Ahnen- und "
+"Nachkommenschaftsbäumen und -graphen enthalten sein sollen"
 
 #: DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
@@ -3697,7 +3693,7 @@ msgstr "Seiten"
 
 #: DynamicWeb/dynamicweb.py:5194
 msgid "A note to be used as the page header"
-msgstr "Eine Notiz, die als Kopfzeile benutzt wird."
+msgstr "Eine Notiz, die als Seitenüberschrift verwendet werden soll"
 
 #: DynamicWeb/dynamicweb.py:5197
 msgid "HTML user brand name / icon"
@@ -4122,7 +4118,7 @@ msgstr "Kann neue Person nicht als Partner hinzufügen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
 msgid "Can't add new person as a wife."
-msgstr "Kann neue Person nicht als Vater hinzufügen"
+msgstr "Kann keine neue Person als Ehefrau hinzufügen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:555
 msgid "Can't add new person as a husband."
@@ -5677,10 +5673,8 @@ msgid "Gramplet to display a list of DNA matches"
 msgstr "Gramplet zum Ändern mehrerer Orte"
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "Persons"
 msgid "Pers."
-msgstr "Personen"
+msgstr "Pers."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
@@ -6302,7 +6296,7 @@ msgstr "Alternativer Ort"
 
 #: PersonEverything/PersonEverything.py:607
 msgid "Alternative Name"
-msgstr "Alternative Name"
+msgstr "Alternativer Name"
 
 #: PersonEverything/PersonEverything.py:618
 msgid "Latitude, Longitude"
@@ -7362,8 +7356,8 @@ msgstr "Sortiere Ereignisse nach Datum"
 #: DescendantsLines/DescendantsLines.py:1593
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
-"Sortiere Ereignis nach Datum (sonst verwende die Sortierung des "
-"'Anzeigeformat' oberhalb)"
+"Ereignisse nach Datum sortieren (ansonsten die Reihenfolge des obigen "
+"'Anzeigeformats' verwenden)."
 
 #: DescendantsLines/DescendantsLines.py:1597
 msgid "Text style"
@@ -8117,7 +8111,7 @@ msgstr "Keiner benötigt Änderungen"
 
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
-msgstr "Keine Änderungen notwendig"
+msgstr "Keine Änderungen notwendig."
 
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
@@ -9069,8 +9063,8 @@ msgid ""
 "if this number of generations has been reached, the algorithm doesn't go any "
 "deeper"
 msgstr ""
-"Wenn diese Anzahl von Generationen erreicht worden ist, wird der Algorithmus "
-"nicht tiefer gehen."
+"wenn diese Anzahl von Generationen erreicht ist, geht der Algorithmus nicht "
+"weiter"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:103
 msgid "Fathers have the same color"
@@ -9998,7 +9992,7 @@ msgstr "AhornzuckerLbs"
 
 #: Form/form_ca.xml.h:177
 msgid "40. Maple Sugar Lbs."
-msgstr "40. Ahornzucker Lbs-"
+msgstr "40. Ahornzucker Lbs."
 
 #: Form/form_ca.xml.h:178
 msgid "CiderGalls"
@@ -10006,7 +10000,7 @@ msgstr "ApfelsaftGallon"
 
 #: Form/form_ca.xml.h:179
 msgid "41. Cider Galls."
-msgstr "41. Apfelsaft Gallon"
+msgstr "41. Apfelsaft Galls."
 
 #: Form/form_ca.xml.h:180
 msgid "ClothYards"
@@ -10022,7 +10016,7 @@ msgstr "LeinenYards"
 
 #: Form/form_ca.xml.h:183
 msgid "43. Linnen - Yds."
-msgstr "43. Leinen Yards"
+msgstr "43. Leinen Yds."
 
 #: Form/form_ca.xml.h:184
 msgid "FlannelYds"
@@ -10030,7 +10024,7 @@ msgstr "FlanelYards"
 
 #: Form/form_ca.xml.h:185
 msgid "44. Flannel - Yds."
-msgstr "44. Flanel - Yards"
+msgstr "44. Flanel - Yds."
 
 #: Form/form_ca.xml.h:186
 msgid "Bulls"
@@ -10348,7 +10342,7 @@ msgstr "HäuserWerdenGebaut"
 
 #: Form/form_ca.xml.h:287
 msgid "36. Houses: Being built"
-msgstr "36. Häuser: werden gebaut "
+msgstr "36. Häuser: Im Bau"
 
 #: Form/form_ca.xml.h:291 Form/form_ca.xml.h:345 Form/form_ca.xml.h:393
 #: Form/form_ca.xml.h:453 Form/form_ca.xml.h:532 Form/form_ca.xml.h:618
@@ -10455,7 +10449,7 @@ msgstr "13. Herkunft"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
-msgstr "14. Beruf, Beruf oder Gewerbe "
+msgstr "14. Beruf, Beschäftigung oder Gewerbe"
 
 #: Form/form_ca.xml.h:325 Form/form_ca.xml.h:379
 msgid "15. Married or Widowed"
@@ -10607,7 +10601,7 @@ msgstr "15. Religion"
 
 #: Form/form_ca.xml.h:430
 msgid "16. Profession, Occupation or Trade"
-msgstr "16. Beruf, Beruf oder Gewerbe "
+msgstr "16. Beruf, Beschäftigung oder Gewerbe"
 
 #: Form/form_ca.xml.h:431 Form/form_ca.xml.h:496 Form/form_ca.xml.h:707
 #: Form/form_gb.xml.h:164 Form/form_gb.xml.h:293 Form/form_gb.xml.h:525
@@ -12212,7 +12206,7 @@ msgstr "Staat von"
 #: Form/form_us.xml.h:1847 Form/form_us.xml.h:2372 Form/form_us.xml.h:2394
 #: Form/form_us.xml.h:2486 Form/form_us.xml.h:2507
 msgid "Line No."
-msgstr "ZeilenNr. "
+msgstr "Zeile Nr."
 
 #: Form/form_us.xml.h:260 Form/form_us.xml.h:336 Form/form_us.xml.h:435
 #: Form/form_us.xml.h:465 Form/form_us.xml.h:615 Form/form_us.xml.h:1105
@@ -15988,7 +15982,7 @@ msgstr "WM 21-60"
 
 #: Form/form_us.xml.h:2018
 msgid "WM under 21 above 60 "
-msgstr "WM unter 21 über 60"
+msgstr "WM unter 21 über 60 "
 
 #: Form/form_us.xml.h:2019
 msgid "WF all ages"
@@ -16081,7 +16075,7 @@ msgstr "Nr."
 
 #: Form/form_us.xml.h:2048
 msgid "St./Ave "
-msgstr "Straße/Allee"
+msgstr "Str./Allee "
 
 #: Form/form_us.xml.h:2049
 msgid "Hotel or Institution"
@@ -16591,7 +16585,7 @@ msgstr "Beantragen Sie eine Befreiung vom Einberufung (Gründe angeben)"
 
 #: Form/form_us.xml.h:2540
 msgid "Race "
-msgstr "Rasse"
+msgstr "Ethnie "
 
 #: Form/form_us.xml.h:2542
 msgid "Build / Weight"
@@ -18250,7 +18244,7 @@ msgstr "<b>Daten Vater</b>"
 
 #: SourceIndex/death.glade:1225
 msgid "<b>Spouse</b> "
-msgstr "<b>Partner(in)</b>"
+msgstr "<b>Partner(in)</b> "
 
 #: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
 #: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
@@ -18909,8 +18903,8 @@ msgid ""
 "Found relation #%d: \n"
 "   "
 msgstr ""
-"Beziehung #%d gefunden:\n"
-"  "
+"Beziehung #%d gefunden: \n"
+"   "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
@@ -19181,12 +19175,12 @@ msgstr "Dein Baum und der Import sind identisch."
 #: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
 #: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
 msgid "your tree "
-msgstr "dein Baum"
+msgstr "dein Baum "
 
 #: ImportMerge/importmerge.py:459 ImportMerge/importmerge.py:467
 #: ImportMerge/importmerge.py:475
 msgid "imported "
-msgstr "importiert"
+msgstr "importiert "
 
 #: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
 #: ImportMerge/importmerge.py:982
@@ -19867,12 +19861,12 @@ msgstr "Schwiegerurgroßeltern"
 
 #: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
-msgstr "Ur,"
+msgstr "Ur, "
 
 #: TimelineQuickview/TimelineQuickview.py:61
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "great, "
-msgstr "Ur,"
+msgstr "Ur, "
 
 #: TimelineQuickview/TimelineQuickview.py:61
 #: TimelineQuickview/TimelineQuickview.py:63
@@ -19881,7 +19875,7 @@ msgstr "Urgroßeltern"
 
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
-msgstr "SchwiegerUr,"
+msgstr "SchwiegerUr, "
 
 #: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
@@ -20018,10 +20012,8 @@ msgid "All persons already had one."
 msgstr "Alle Personen hatten schon eins."
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
-#, fuzzy
-#| msgid "Failed writing %s: %s"
 msgid "Failed writing "
-msgstr "Fehler beim Schreiben %s: %s"
+msgstr "Fehlgeschlagenes Schreiben "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 #, fuzzy
@@ -21496,10 +21488,8 @@ msgid "Use filter "
 msgstr "Filter anwenden "
 
 #: HistContext/HistContext.py:129
-#, fuzzy
-#| msgid "Show lifespan"
 msgid "Show outside life span "
-msgstr "Zeige Lebensdauer"
+msgstr "Zeige außerhalb der Lebensspanne "
 
 #: HistContext/HistContext.py:132
 #, fuzzy
@@ -21530,10 +21520,8 @@ msgid "Select from files"
 msgstr "Wähle eine Datei"
 
 #: HistContext/HistContext.py:287
-#, fuzzy
-#| msgid "Invalid timestamp"
 msgid "Invalid date "
-msgstr "Ungültiger Zeitstempel"
+msgstr "Ungültiges Datum "
 
 #: HistContext/HistContext.py:288
 msgid " in line: "
@@ -21549,10 +21537,8 @@ msgid ": line does not contain four sections separated by semicolons in : \""
 msgstr ""
 
 #: HistContext/HistContext.py:419
-#, fuzzy
-#| msgid "Cannot copy \"%s\""
 msgid "Cannot open URL: "
-msgstr "Kann „%s” nicht kopieren"
+msgstr "Kann URL nicht öffnen: "
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
@@ -21983,7 +21969,7 @@ msgstr "Diese Ereignisse zeigen"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:113
 msgid "Sort by "
-msgstr "Sortieren nach"
+msgstr "Sortieren nach "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:114
 msgid "Sort in ascending order?"
