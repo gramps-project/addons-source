@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 10:31+0000\n"
+"PO-Revision-Date: 2025-02-18 18:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -6387,10 +6387,8 @@ msgid "Edit Mapping"
 msgstr ""
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:69
-#, fuzzy
-#| msgid "Remove Selection"
 msgid "Remove Mapping"
-msgstr "הסרת פריטים שנבחרו"
+msgstr "הסרת מיפוי"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:78
 msgid "Group Name"
@@ -6419,10 +6417,8 @@ msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
-#, fuzzy
-#| msgid "Checking paths"
 msgid "Checking Given Names"
-msgstr "בדיקת נתיבים"
+msgstr "בדיקת שמות פרטיים"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
@@ -6440,10 +6436,8 @@ msgid ""
 msgstr ""
 
 #: ChangeGivenNames/changenames.glade:107
-#, fuzzy
-#| msgid "Clear selections"
 msgid "Edit selection"
-msgstr "ניקוי בחירה"
+msgstr "עריכת בחירה"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
@@ -6486,9 +6480,8 @@ msgstr ""
 "Exiv2."
 
 #: EditExifMetadata/editexifmetadata.py:161
-#, fuzzy
 msgid "Provide a short description for this image."
-msgstr "קבעי תיאור עבור קובץ זה."
+msgstr "לספק תיאור קצר לתמונה זו."
 
 #: EditExifMetadata/editexifmetadata.py:163
 msgid ""
@@ -6498,9 +6491,8 @@ msgstr ""
 "הזנת האמן / היוצר של תמונה זו. שמו של האדם או החברה האחראים ליצירת התמונה."
 
 #: EditExifMetadata/editexifmetadata.py:167
-#, fuzzy
 msgid "Enter the copyright information for this image. \n"
-msgstr "האם לכלול מידע נישואים עבור הילדים."
+msgstr "הזנת מידע זכויות יוצרים לתמונה זו \n"
 
 #: EditExifMetadata/editexifmetadata.py:169
 msgid ""
@@ -6576,15 +6568,12 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:213
-#, fuzzy
-#| msgid "Clear tags"
 msgid "Clear GPS"
-msgstr "ניקוי תגים"
+msgstr "ניקוי GPS"
 
 #: EditExifMetadata/editexifmetadata.py:214
-#, fuzzy
 msgid "Thumbnail"
-msgstr "מיקום צלמית"
+msgstr "דוגמית"
 
 #: EditExifMetadata/editexifmetadata.py:215
 msgid "Copy"
@@ -6593,7 +6582,7 @@ msgstr "העתקה"
 #: EditExifMetadata/editexifmetadata.py:402
 #, fuzzy
 msgid "Select an image to begin..."
-msgstr "בחרי אובייקט מדיה"
+msgstr "לבחור תמונה כדי להתחיל..."
 
 #: EditExifMetadata/editexifmetadata.py:421
 msgid ""
@@ -6658,9 +6647,8 @@ msgid "There was an error in converting your image file."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:844
-#, fuzzy
 msgid "Media Path Update"
-msgstr "תאריך פטירה"
+msgstr "עדכון נתיב מדיה"
 
 #: EditExifMetadata/editexifmetadata.py:853
 msgid "There has been an error in updating the image file's path!"
@@ -6696,85 +6684,72 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:969
-#, fuzzy
 msgid "Media Object Title"
-msgstr "מסנני אוביקטי מדיה"
+msgstr "כותרת עצם מדיה"
 
 #: EditExifMetadata/editexifmetadata.py:978
-#, fuzzy
 msgid "media Title: "
-msgstr "כותרת לוח שנה"
+msgstr "כותרת עצם: "
 
 #: EditExifMetadata/editexifmetadata.py:993
-#, fuzzy
 msgid "General Data"
-msgstr "כללי"
+msgstr "נתונים כלליים"
 
 #: EditExifMetadata/editexifmetadata.py:1003
-#, fuzzy
 msgid "Description: "
-msgstr "תיאור:"
+msgstr "תיאור: "
 
 #: EditExifMetadata/editexifmetadata.py:1004
 msgid "Artist: "
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1005
-#, fuzzy
 msgid "Copyright: "
-msgstr "זכויות יוצרים"
+msgstr "זכויות יוצרים: "
 
 #: EditExifMetadata/editexifmetadata.py:1019
 msgid "Date/ Time"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1034
-#, fuzzy
 msgid "Original: "
-msgstr "זמן מקורי"
+msgstr "מקור: "
 
 #: EditExifMetadata/editexifmetadata.py:1035
-#, fuzzy
 msgid "Modified: "
-msgstr "שונה לאחרונה"
+msgstr "שונה: "
 
 #: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1069
-#, fuzzy
 msgid "Latitude :"
 msgstr "קו רוחב:"
 
 #: EditExifMetadata/editexifmetadata.py:1070
-#, fuzzy
 msgid "Longitude :"
 msgstr "קו אורך:"
 
 #: EditExifMetadata/editexifmetadata.py:1071
-#, fuzzy
 msgid "Altitude :"
-msgstr "קו רוחב:"
+msgstr "רום:"
 
 #: EditExifMetadata/editexifmetadata.py:1114
-#, fuzzy
 msgid "Bad Date/Time"
-msgstr "תאריך שגוי"
+msgstr "תאריך/זמן שגוי"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
 msgid "Invalid latitude (syntax: 18\\u00b09'"
-msgstr "קו רוחב לא תקין (תחביר: 18°9'"
+msgstr "קו רוחב לא תקין (תחביר: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 או -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
 msgid "Invalid longitude (syntax: 18\\u00b09'"
-msgstr "קו אורך לא תקין (תחביר: 18°9'"
+msgstr "קו אורך לא תקין (תחביר: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
@@ -6793,14 +6768,12 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1333
-#, fuzzy
 msgid "Media Title Update"
-msgstr "קבצי מדיה"
+msgstr "עדכון כותרת מדיה"
 
 #: EditExifMetadata/editexifmetadata.py:1357
-#, fuzzy
 msgid "Media Object Date Created"
-msgstr "מסנני אוביקטי מדיה"
+msgstr "תאריך יצירת עצם מדיה"
 
 #: EditExifMetadata/editexifmetadata.py:1422
 msgid "Saving Exif metadata to this image..."
@@ -6824,10 +6797,8 @@ msgid "Report on Notes Tagged '%s'"
 msgstr ""
 
 #: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
-#, fuzzy
-#| msgid "Heading"
 msgid "TR-Heading"
-msgstr "כותרת"
+msgstr "כותרת TR"
 
 #: ToDoReport/TodoReport.py:243
 msgid "NoteTable"
@@ -6904,10 +6875,8 @@ msgid "date: "
 msgstr ""
 
 #: ToDoReport/TodoReport.py:417
-#, fuzzy
-#| msgid "Found place:"
 msgid "place: "
-msgstr "נמצא מקום:"
+msgstr "מקום: "
 
 #: ToDoReport/TodoReport.py:877
 msgid "Note Type"
@@ -6922,26 +6891,20 @@ msgid "Group notes by Family, Person, Place, etc."
 msgstr ""
 
 #: ToDoReport/TodoReport.py:946
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The basic style used for the table cell display."
-msgstr "המיקוד של המקום, אם קיים."
+msgstr "הסגנון הבסיסי שמשמש את מצג התא בטבלה."
 
 #: ToDoReport/TodoReport.py:951
 msgid "The basic style used for the table border cell display."
 msgstr ""
 
 #: ToDoReport/TodoReport.py:961
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The basic style used for the table display."
-msgstr "המיקוד של המקום, אם קיים."
+msgstr "הסגנון הבסיסי שמשמש את מצג הטבלה."
 
 #: ToDoReport/TodoReport.gpr.py:25
-#, fuzzy
-#| msgid "Media Report"
 msgid "Todo Report"
-msgstr "דוח מדיה"
+msgstr "דוח משימות לביצוע"
 
 #: ToDoReport/TodoReport.gpr.py:27
 msgid ""
@@ -7092,48 +7055,36 @@ msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1555
-#, fuzzy
-#| msgid "Include media data"
 msgid "Include an image"
-msgstr "הכללת נתונים על מדיה"
+msgstr "הכללת תמונה"
 
 #: DescendantsLines/DescendantsLines.py:1556
 msgid "Whether to include an image if one is available."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1560
-#, fuzzy
-#| msgid "Media height"
 msgid "Max Image height"
-msgstr "גובה מדיה"
+msgstr "גובה תמונ מירבי"
 
 #: DescendantsLines/DescendantsLines.py:1561
-#, fuzzy
-#| msgid "Maximum media height in % of available page height."
 msgid "Maximum image height in pixels, 0=don't scale for height."
-msgstr "גובה מדיה מרבי באחוזים (%) מגובה זמין בעמוד."
+msgstr "גובה תמונה מרבי בפיקסלים 0 =לא לבחור עבור גובה."
 
 #: DescendantsLines/DescendantsLines.py:1565
-#, fuzzy
-#| msgid "Media width"
 msgid "Max Image width"
-msgstr "רוחב מדיה"
+msgstr "רוחב תמונה מירבי"
 
 #: DescendantsLines/DescendantsLines.py:1566
-#, fuzzy
-#| msgid "Maximum media width in % of available page width."
 msgid "Maximum image width in pixels, 0=don't scale for width."
-msgstr "רוחב מדיה מרבי באחוזים (%) מרוחב זמין בעמוד."
+msgstr "רוחב מדיה מרבי בפיקסלים 0=לא לבחור עבור רוחב."
 
 #: DescendantsLines/DescendantsLines.py:1570
 msgid "Image Location"
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1571
-#, fuzzy
-#| msgid "New text:"
 msgid "Above text"
-msgstr "מלל חדש:"
+msgstr "מלל מעל"
 
 #: DescendantsLines/DescendantsLines.py:1572
 msgid "Left of text"
@@ -7172,10 +7123,8 @@ msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1597
-#, fuzzy
-#| msgid "Next Place"
 msgid "Text style"
-msgstr "המקום הבא"
+msgstr "סגנון מלל"
 
 #: DescendantsLines/DescendantsLines.py:1598
 msgid "Center-aligned text"
@@ -7284,10 +7233,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1697
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Spouse and Family"
-msgstr "הערת"
+msgstr "זוגאי ומשפחה"
 
 #: DescendantsLines/DescendantsLines.py:1699
 msgid "Vertical edge descendant to spouse-bar"
@@ -7385,10 +7332,8 @@ msgid "The number of ??? min width"
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1762
-#, fuzzy
-#| msgid "Replace text"
 msgid "Space around text"
-msgstr "החלפת מלל"
+msgstr "רווח מסביב למלל"
 
 #: DescendantsLines/DescendantsLines.py:1763
 msgid "The space to add around the text block of a person."
@@ -7477,10 +7422,8 @@ msgid "Select the family you wish to examine."
 msgstr ""
 
 #: BirthOrder/birthorder.glade:155
-#, fuzzy
-#| msgid "Select All"
 msgid "Accept All"
-msgstr "בחירת הכול"
+msgstr "קבלת הכול"
 
 #: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
@@ -7903,21 +7846,16 @@ msgstr ""
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:31
 #: ThumbnailGenerator/ThumbnailGenerator.py:53
-#, fuzzy
 msgid "Thumbnail Generator"
-msgstr "מיקום צלמית"
+msgstr "מחולל דוגמיות"
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:32
-#, fuzzy
-#| msgid "Generate md5 hashes for media objects"
 msgid "Generates thumbnails for media files"
-msgstr "חילול האש md5 לאוביקטי מדיה"
+msgstr "חילול דוגמיות לקובצי מדיה"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:56
-#, fuzzy
-#| msgid "Generating media hashes"
 msgid "Generating media thumbnails"
-msgstr "חילול האש למדיה"
+msgstr "חילול דוגמיות למדיה"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:67
 msgid "Generating thumbnails for person references"
@@ -7940,10 +7878,8 @@ msgid "Generating thumbnails for source references"
 msgstr ""
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:28
-#, fuzzy
-#| msgid "Media downloaded"
 msgid "S3 Media Uploader"
-msgstr "מדיה ירדה"
+msgstr "מעלה מדיה S3"
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:38
 msgid ""
@@ -8019,18 +7955,14 @@ msgid ""
 msgstr ""
 
 #: TMGimporter/libtmg.glade:88
-#, fuzzy
-#| msgid "Data Entry Gramplet"
 msgid "Data Set Name"
-msgstr "גראמפלט הזנת נתונים"
+msgstr "שם ערכת נתונים"
 
 #: TMGimporter/libtmg.glade:148
 msgid "_Import TMG Data Set"
 msgstr ""
 
 #: FaceDetection/FaceDetection.gpr.py:4
-#, fuzzy
-#| msgid "Face detection"
 msgid "Face Detection"
 msgstr "זיהוי פנים"
 
@@ -8043,16 +7975,12 @@ msgid "Faces"
 msgstr ""
 
 #: FaceDetection/FaceDetection.py:63
-#, fuzzy
-#| msgid "not installed"
 msgid "OpenCV-Python is not installed"
-msgstr "לא מותקן"
+msgstr "OpenCV-Python לא מותקן"
 
 #: FaceDetection/FaceDetection.py:72
-#, fuzzy
-#| msgid "Detect faces"
 msgid "Detect New Faces"
-msgstr "זיהוי פנים"
+msgstr "לזהות פנים חדשות"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
@@ -8109,10 +8037,8 @@ msgid "Found %d custom event types"
 msgstr ""
 
 #: JSON/JSON.gpr.py:4
-#, fuzzy
-#| msgid "Export"
 msgid "JSON Export"
-msgstr "ייצוא"
+msgstr "ייצוא JSON"
 
 #: JSON/JSON.gpr.py:5
 msgid "This is a JSON export"
@@ -8147,10 +8073,8 @@ msgid "Family Relation Types"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:104
-#, fuzzy
-#| msgid "Include referenced people"
 msgid "Child reference Types"
-msgstr "הכללת אנשים שאליהם קיימת הפניה"
+msgstr "סוגי אזכור ילדים"
 
 #: TypeCleanup/type_cleanup.py:105
 msgid "Name Origin Types"
@@ -8165,10 +8089,8 @@ msgid "Note Types"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:108
-#, fuzzy
-#| msgid "PlaceUpdate"
 msgid "Place Types"
-msgstr "כלי-מקום"
+msgstr "סוגי מקום"
 
 #: TypeCleanup/type_cleanup.py:109
 msgid "Repository Types"
@@ -8207,20 +8129,16 @@ msgid "Rename the selected type in all referenced objects."
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:189
-#, fuzzy
-#| msgid "Close the Media Verify Tool"
 msgid "Close the Type Cleanup Tool"
-msgstr "סגירת הכלי לאימות נתונים"
+msgstr "סגירת הכלי לניקוי סוגים"
 
 #: TypeCleanup/type_cleanup.py:195
 msgid "Types"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:242
-#, fuzzy
-#| msgid "Place Cleanup"
 msgid "Type Cleanup Tool"
-msgstr "ארגון מקומות"
+msgstr "כלי לניקוי סוגים"
 
 #: TypeCleanup/type_cleanup.py:387
 #, python-format
@@ -8238,10 +8156,8 @@ msgid ""
 msgstr ""
 
 #: TypeCleanup/type_cleanup.gpr.py:30
-#, fuzzy
-#| msgid "Place Cleanup"
 msgid "Type Cleanup"
-msgstr "ארגון מקומות"
+msgstr "ניקוי מקומות"
 
 #: TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
@@ -8258,10 +8174,8 @@ msgid "Mass-edit the family relationship type for a group of families."
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
-#, fuzzy
-#| msgid "All Places"
 msgid "All Families"
-msgstr "כל המקומות"
+msgstr "כל המשפחות"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:64
 msgid ""
@@ -8280,10 +8194,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process relationships..."
-msgstr "עיבוד מתבצע...\n"
+msgstr "מתבצע עיבוד קשרי־קירבה..."
 
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
@@ -8304,10 +8216,8 @@ msgid "Set Attribute"
 msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.py:152
-#, fuzzy
-#| msgid "Detecting faces..."
 msgid "Setting attributes..."
-msgstr "זיהוי פנים..."
+msgstr "ביצוע הגדרת תכונות..."
 
 #: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
@@ -8328,10 +8238,8 @@ msgid "Remove Attribute"
 msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.py:194
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Removing attributes..."
-msgstr "מתבצעת הסרת '%s'..."
+msgstr "מתבצעת הסרת תכונות..."
 
 #: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
@@ -8356,28 +8264,20 @@ msgid "cursor position at {date}"
 msgstr ""
 
 #: LifeLineChartView/lifelinechart.py:2591
-#, fuzzy
-#| msgid "New person"
 msgid "Hide person"
-msgstr "אדם חדש"
+msgstr "להסתיר אדם"
 
 #: LifeLineChartView/lifelinechart.py:2597
-#, fuzzy
-#| msgid "New person"
 msgid "Show person"
-msgstr "אדם חדש"
+msgstr "הצגת אדם"
 
 #: LifeLineChartView/lifelinechart.py:2622
-#, fuzzy
-#| msgid "sibling"
 msgid "Show siblings"
-msgstr "אחאי"
+msgstr "הצגת אחאים"
 
 #: LifeLineChartView/lifelinechart.py:2627
-#, fuzzy
-#| msgid "sibling"
 msgid "Hide siblings"
-msgstr "אחאי"
+msgstr "הסתרת אחאים"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
@@ -8385,9 +8285,8 @@ msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:386
 #: LifeLineChartView/lifelinechartview.py:883
-#, fuzzy
 msgid "General Layout"
-msgstr "כללי"
+msgstr "עימוד כללי"
 
 #: LifeLineChartView/lifelinechartview.py:399
 #: LifeLineChartView/lifelinechartview.gpr.py:34
@@ -8486,20 +8385,16 @@ msgid "Triangular shape"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:15
-#, fuzzy
-#| msgid "Show help"
 msgid "Show photos"
-msgstr "הצגת עזרה"
+msgstr "הצגת תמונות"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:16
 msgid "Photos of the individual are shown."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:17
-#, fuzzy
-#| msgid "Photo Tagging"
 msgid "Photo size"
-msgstr "תיוג תמונה"
+msgstr "גודל תמונה"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:18
 msgid ""
@@ -8508,20 +8403,16 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
-#, fuzzy
-#| msgid "Media height"
 msgid "Total height"
-msgstr "גובה מדיה"
+msgstr "גובה כללי"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:20
 msgid "Total height of the whole chart."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:21
-#, fuzzy
-#| msgid "Related Relatives"
 msgid "Relative line thickness"
-msgstr "קרובי משפחה"
+msgstr "עובי קו יחסי"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:22
 msgid ""
@@ -8540,16 +8431,12 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
-#, fuzzy
-#| msgid "Show help"
 msgid "Show birth label"
-msgstr "הצגת עזרה"
+msgstr "הצגת תווית לידה"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
-#, fuzzy
-#| msgid "Estimated birth date"
 msgid "Activate the birth label."
-msgstr "תאריך פטירה משוער"
+msgstr "שפעול תווית הלידה."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 msgid "Birth label along path"
@@ -8609,16 +8496,12 @@ msgid "Center"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:48
-#, fuzzy
-#| msgid "Show help"
 msgid "Show death label"
-msgstr "הצגת עזרה"
+msgstr "הצגת תווית פטירה"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
-#, fuzzy
-#| msgid "Estimated death date"
 msgid "Activate the death label."
-msgstr "תאריך פטירה משוער"
+msgstr "שפעול תווית הפטירה"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:50
 msgid "Death label rotation"
@@ -8681,30 +8564,24 @@ msgid "The color of the individuals is faded to black with increasing age."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
-#, fuzzy
-#| msgid "Font"
 msgid "Font name"
-msgstr "גופן"
+msgstr "שם גופן"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:73
 msgid "Name of the font family used for labels."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:75
-#, fuzzy
-#| msgid "Relative"
 msgid "Relative font size"
-msgstr "יחסי"
+msgstr "גודל גופן יחסי"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:76
 msgid "The font size is given relatively to the line thickness."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
-#, fuzzy
-#| msgid "Family:"
 msgid "Family shape"
-msgstr "משפחה:"
+msgstr "צורת משפחה"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:79
 msgid "The shape of the families can be varied."
@@ -8737,10 +8614,8 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:86
-#, fuzzy
-#| msgid "Deep Connections"
 msgid "Visualize connections"
-msgstr "קשרי משפחה עמוקים"
+msgstr "החזיית קשרים"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:87
 msgid ""
@@ -8874,9 +8749,8 @@ msgid "Very soft"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:117
-#, fuzzy
 msgid "General chart layout"
-msgstr "כללי"
+msgstr "עימוד תרשים כללי"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:118
 msgid "There are different layouts for descendant charts."
@@ -8891,10 +8765,8 @@ msgid "Cactus"
 msgstr ""
 
 #: Participants/Participants.gpr.py:32
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing the participants in an event"
-msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"
+msgstr "גרמפלט להצגת משתתפים באירוע"
 
 #: Participants/Participants.py:75
 msgid "Double-click on a row to edit the selected participant."
@@ -8904,10 +8776,8 @@ msgstr ""
 #: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:146
 #: SetPrivacyTool/SetPrivacyTool.py:186 SetPrivacyTool/SetPrivacyTool.py:226
 #: SetPrivacyTool/SetPrivacyTool.py:255 SetPrivacyTool/SetPrivacyTool.gpr.py:24
-#, fuzzy
-#| msgid "Media Verify Tool"
 msgid "Set Privacy Tool"
-msgstr "כלי לאימות אוביקטי מדיה"
+msgstr "הגדרת כלי פרטיות"
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
@@ -8928,10 +8798,8 @@ msgid "Set events private.."
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:197
-#, fuzzy
-#| msgid "Set media hashes"
 msgid "Set media private.."
-msgstr "הגדרת האש לאוביקטי מדיה"
+msgstr "הגדרת מדיה כפרטית..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
 msgid "Set adresses private.."
@@ -8956,16 +8824,12 @@ msgid "If checked, all objects without a date will also be set private."
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "בחירת מסנן להגבלת האנשים"
+msgstr "בחירת מסנן להגבלת אירועים"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict medias"
-msgstr "בחירת מסנן להגבלת האנשים"
+msgstr "בחירת מסנן להגבלת מדיה"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
 msgid "Internet type filter"
@@ -8983,10 +8847,8 @@ msgstr ""
 #: SyncAssociations/syncAssociations.py:130
 #: SyncAssociations/syncAssociations.py:134
 #: SyncAssociations/syncAssociations.py:138
-#, fuzzy
-#| msgid "Check Associations data"
 msgid "Sync Associations"
-msgstr "בדיקת נתוני שיוכים"
+msgstr "סינכרון תסמיכים"
 
 #: SyncAssociations/syncAssociations.gpr.py:6
 msgid ""
@@ -8995,10 +8857,9 @@ msgid ""
 msgstr ""
 
 #: SyncAssociations/syncAssociations.py:124
-#, fuzzy, python-format
-#| msgid "%s (association)"
+#, python-format
 msgid "Add %s reciprocal association"
-msgstr "%s (סימוך)"
+msgstr "הוספת %s תסמיך הדדי"
 
 #: SyncAssociations/syncAssociations.py:131
 msgid "{} Reciprocal associations created"
@@ -9026,22 +8887,16 @@ msgid "Edit Form"
 msgstr ""
 
 #: Form/editform.py:225
-#, fuzzy
-#| msgid "Clear Reference"
 msgid "Reference:"
-msgstr "ניקוי הפניה"
+msgstr "אזכור:"
 
 #: Form/editform.py:421
-#, fuzzy
-#| msgid "Heading"
 msgid "Headings"
-msgstr "כותרת"
+msgstr "כותרות"
 
 #: Form/formgramplet.gpr.py:31
-#, fuzzy
-#| msgid "Query Gramplet"
 msgid "Form Gramplet"
-msgstr "גרמפלט שאילתה"
+msgstr "גרמפלט טפסים"
 
 #: Form/formgramplet.gpr.py:32
 msgid "Gramplet interface for Forms"
@@ -9056,10 +8911,8 @@ msgid "Form"
 msgstr ""
 
 #: Form/selectform.py:74 Form/selectform.py:81
-#, fuzzy
-#| msgid "Select None"
 msgid "Select Form"
-msgstr "לא לבחור דבר"
+msgstr "בחירת טופס"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -9107,10 +8960,8 @@ msgstr ""
 #: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
 #: Form/form_ca.xml.h:636 Form/form_ca.xml.h:691 Form/form_ca.xml.h:777
 #: Form/form_ca.xml.h:828
-#, fuzzy
-#| msgid "Get Place"
 msgid "BirthPlace"
-msgstr "אחזור מקום"
+msgstr "מקום לידה"
 
 #: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
 msgid "3. Place of Birth"
@@ -9439,10 +9290,8 @@ msgid "4. Number of Acres of Land: Held by each person or family"
 msgstr ""
 
 #: Form/form_ca.xml.h:106
-#, fuzzy
-#| msgid "Add relation"
 msgid "AcresCultivation"
-msgstr "הוספת קשר-גומלין"
+msgstr "AcresCultivation"
 
 #: Form/form_ca.xml.h:107
 msgid "5. Number of Acres of Land: Under Cultivation"
@@ -10178,9 +10027,8 @@ msgid "12. Religion"
 msgstr ""
 
 #: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
-#, fuzzy
 msgid "13. Origin"
-msgstr "זמן מקורי"
+msgstr "13. מוצא"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
@@ -10694,10 +10542,8 @@ msgid "7. Institution: Special or legal name"
 msgstr ""
 
 #: Form/form_ca.xml.h:555
-#, fuzzy
-#| msgid "Built-in"
 msgid "Buildings"
-msgstr "מובנה"
+msgstr "מבנים"
 
 #: Form/form_ca.xml.h:556
 msgid "8. Institution: Number of buildings"
@@ -10852,10 +10698,8 @@ msgid "27. Church or place of worship: Number of communicants"
 msgstr ""
 
 #: Form/form_ca.xml.h:595
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Seating"
-msgstr "בחירה... "
+msgstr "תושבת"
 
 #: Form/form_ca.xml.h:596
 msgid "28. Church or place of worship: Seating capacity"
@@ -10970,10 +10814,8 @@ msgid "9. Post office address"
 msgstr ""
 
 #: Form/form_ca.xml.h:642 Form/form_us.xml.h:1252
-#, fuzzy
-#| msgid "Toggle Selection"
 msgid "Section"
-msgstr "החלפת בחירה"
+msgstr "מקטע"
 
 #: Form/form_ca.xml.h:643
 msgid "10. Location: Section"
@@ -11176,10 +11018,8 @@ msgid "Dwelling house"
 msgstr ""
 
 #: Form/form_ca.xml.h:763
-#, fuzzy
-#| msgid "Family:"
 msgid "2. Family"
-msgstr "משפחה:"
+msgstr "2. משפחה"
 
 #: Form/form_ca.xml.h:764
 msgid "Family or household"
@@ -11406,10 +11246,8 @@ msgstr ""
 #: Form/form_us.xml.h:665 Form/form_us.xml.h:707 Form/form_us.xml.h:793
 #: Form/form_us.xml.h:836 Form/form_us.xml.h:894 Form/form_us.xml.h:1095
 #: Form/form_us.xml.h:1678
-#, fuzzy
-#| msgid "Select None"
 msgid "Sheet No."
-msgstr "לא לבחור דבר"
+msgstr "מספר גליון"
 
 #: Form/form_us.xml.h:5 Form/form_us.xml.h:18 Form/form_us.xml.h:39
 #: Form/form_us.xml.h:60 Form/form_us.xml.h:100 Form/form_us.xml.h:169
@@ -11431,10 +11269,8 @@ msgstr ""
 #: Form/form_us.xml.h:1650 Form/form_us.xml.h:1667 Form/form_us.xml.h:1845
 #: Form/form_us.xml.h:1877 Form/form_us.xml.h:1898 Form/form_us.xml.h:1927
 #: Form/form_us.xml.h:1981 Form/form_us.xml.h:2289 Form/form_us.xml.h:2318
-#, fuzzy
-#| msgid "Count_ry:"
 msgid "County of"
-msgstr "מ_דינה:"
+msgstr "מחוז של"
 
 #: Form/form_us.xml.h:7 Form/form_us.xml.h:20 Form/form_us.xml.h:41
 #: Form/form_us.xml.h:62 Form/form_us.xml.h:102 Form/form_us.xml.h:171
@@ -11941,10 +11777,8 @@ msgstr ""
 #: Form/form_us.xml.h:260 Form/form_us.xml.h:336 Form/form_us.xml.h:435
 #: Form/form_us.xml.h:465 Form/form_us.xml.h:615 Form/form_us.xml.h:1105
 #: Form/form_us.xml.h:1848
-#, fuzzy
-#| msgid "Family:"
 msgid "Family No."
-msgstr "משפחה:"
+msgstr "מספר משפחה"
 
 #: Form/form_us.xml.h:266 Form/form_us.xml.h:342 Form/form_us.xml.h:441
 msgid "Value of real estate"
@@ -11960,10 +11794,8 @@ msgstr ""
 #: Form/form_us.xml.h:1585 Form/form_us.xml.h:1611 Form/form_us.xml.h:1657
 #: Form/form_us.xml.h:1870 Form/form_us.xml.h:2336 Form/form_us.xml.h:2353
 #: Form/form_us.xml.h:2528 Form/form_us.xml.h:2577
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of birth"
-msgstr "מסנן _מקומות:"
+msgstr "מקום הלידה"
 
 #: Form/form_us.xml.h:268 Form/form_us.xml.h:345
 msgid "Married within the year"
@@ -12940,10 +12772,8 @@ msgid "Date Enlisted"
 msgstr ""
 
 #: Form/form_us.xml.h:653
-#, fuzzy
-#| msgid "Discard"
 msgid "Date Discharged"
-msgstr "להסיר"
+msgstr "תאריך שחרור"
 
 #: Form/form_us.xml.h:654
 msgid "Length of Service"
@@ -13126,20 +12956,16 @@ msgid "Incorporated place"
 msgstr ""
 
 #: Form/form_us.xml.h:788 Form/form_us.xml.h:831
-#, fuzzy
-#| msgid "Find an incomplete place."
 msgid "Unincorporated place"
-msgstr "מציאת מקום חלקי."
+msgstr "מקום לא מאוגד"
 
 #: Form/form_us.xml.h:799
 msgid "Value of home or monthly rental"
 msgstr ""
 
 #: Form/form_us.xml.h:800
-#, fuzzy
-#| msgid "not set"
 msgid "Radio set"
-msgstr "לא מוגדר"
+msgstr "מערכת רדיו"
 
 #: Form/form_us.xml.h:801 Form/form_us.xml.h:842 Form/form_us.xml.h:898
 msgid "Farm?"
@@ -13418,10 +13244,8 @@ msgid "How many hours did he work last week?"
 msgstr ""
 
 #: Form/form_us.xml.h:923
-#, fuzzy
-#| msgid "Type of link"
 msgid "Type of work"
-msgstr "סוג קישור"
+msgstr "סוג עבודה"
 
 #: Form/form_us.xml.h:924
 msgid "What kind of work was he doing?"
@@ -13636,10 +13460,8 @@ msgid "Spouses Age"
 msgstr ""
 
 #: Form/form_us.xml.h:982
-#, fuzzy
-#| msgid "Files"
 msgid "File No."
-msgstr "קבצים"
+msgstr "מספר קובץ"
 
 #: Form/form_us.xml.h:984 Form/form_us.xml.h:1003 Form/form_us.xml.h:1058
 msgid "Post Office Address"
@@ -13657,10 +13479,8 @@ msgstr ""
 #: Form/form_us.xml.h:1155 Form/form_us.xml.h:1452 Form/form_us.xml.h:2375
 #: Form/form_us.xml.h:2488 Form/form_us.xml.h:2513 Form/form_us.xml.h:2557
 #: Form/form_gb.xml.h:51
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Birth"
-msgstr "מסנן _מקומות:"
+msgstr "מקום הלידה"
 
 #: Form/form_us.xml.h:987
 msgid "Entered service as (rank)"
@@ -13671,10 +13491,8 @@ msgid "Date Entered"
 msgstr ""
 
 #: Form/form_us.xml.h:989 Form/form_us.xml.h:1010
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Enlistment"
-msgstr "מסנן _מקומות:"
+msgstr "מקום הגיוס"
 
 #: Form/form_us.xml.h:990
 msgid "Name, Letter of Co., Number of Regiment"
@@ -13705,10 +13523,8 @@ msgid "Enlisted on"
 msgstr ""
 
 #: Form/form_us.xml.h:998
-#, fuzzy
-#| msgid "Get Place"
 msgid "Enlistment Place"
-msgstr "אחזור מקום"
+msgstr "מקום גיוס"
 
 #: Form/form_us.xml.h:999
 msgid "in the command of"
@@ -13719,10 +13535,8 @@ msgid "Other service, if any"
 msgstr ""
 
 #: Form/form_us.xml.h:1004
-#, fuzzy
-#| msgid "Note on Person"
 msgid "No. on pension roll"
-msgstr "הערת אדם"
+msgstr "מספר ברשימת הפנסיה"
 
 #: Form/form_us.xml.h:1005
 msgid "County lived in when first placed on roll"
@@ -13857,10 +13671,8 @@ msgid "Date married"
 msgstr ""
 
 #: Form/form_us.xml.h:1043
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Place married"
-msgstr "נקודות־ציון מקום"
+msgstr "מקום נישואין"
 
 #: Form/form_us.xml.h:1044
 msgid "When, where and circumstances you quit the service"
@@ -13980,10 +13792,8 @@ msgid "Age Female"
 msgstr ""
 
 #: Form/form_us.xml.h:1140
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Relation to Family"
-msgstr "הערת"
+msgstr "קשר למשפחה"
 
 #: Form/form_us.xml.h:1142 Form/form_us.xml.h:1156
 msgid "Degree of Education"
@@ -14140,10 +13950,8 @@ msgid "Years resident in the state"
 msgstr ""
 
 #: Form/form_us.xml.h:1209
-#, fuzzy
-#| msgid "Active person"
 msgid "Native voters"
-msgstr "אדם פעיל"
+msgstr "מצביעים ילידים"
 
 #: Form/form_us.xml.h:1210
 msgid "Naturalized voters"
