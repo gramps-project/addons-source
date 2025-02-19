@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-19 07:21+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -18984,13 +18984,11 @@ msgstr "Reislijnen op kaart weergeven bij opstarten"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
-msgstr ""
+msgstr "Toon tijdtikken op de navigatiebalk bij het opstarten"
 
 #: GeoTimeLines/GeoTimeLines.py:1974
-#, fuzzy
-#| msgid "General options"
 msgid "TimeLines Map options"
-msgstr "Algemene opties"
+msgstr "TimeLines Map opties"
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
@@ -19348,10 +19346,8 @@ msgid "Detect faces (OpenCV module required)"
 msgstr "Herken gezichten (OpenCV-module vereist)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
-#, fuzzy
-#| msgid "Person Name"
 msgid "XMP Region Name"
-msgstr "Naam persoon"
+msgstr "XMP Regionaam"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
@@ -19676,13 +19672,11 @@ msgstr ""
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
-msgstr ""
+msgstr "Chromosoom "
 
 #: DNA/dnasegmentmap.py:552
-#, fuzzy
-#| msgid "Wait for me"
 msgid " Map for "
-msgstr "Wait for me"
+msgstr " Kaart voor "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
@@ -19690,13 +19684,11 @@ msgstr "Chr"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 #: DNA/dnasegmentmap.py:761
-#, fuzzy
-#| msgid "Grandparents"
 msgid ": Grandparent"
-msgstr "Grootouders"
+msgstr ": Grootouder"
 
 #: DNA/dnasegmentmap.py:1056
 #, python-brace-format
@@ -19705,44 +19697,45 @@ msgid ""
 "{0}\n"
 "{1} cMs"
 msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
-msgstr ""
+msgstr " SNPs"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : Begint bij "
 
 #: DNA/dnasegmentmap.py:1063
-#, fuzzy
-#| msgid "and %s "
 msgid " and ends at "
-msgstr "en %s "
+msgstr " en eindigt bij "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s en %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship Type"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Soort relatie"
+msgstr ""
+"\n"
+"Verwantschap: {0} "
 
 #: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestor"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Voorouder"
+msgstr " Voorouder: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -20108,6 +20101,8 @@ msgid ""
 "Creates an HTML webpage that uses JavaScript to show a pedigree block "
 "diagram arranged vertically by birth date"
 msgstr ""
+"Maakt een HTML-webpagina die JavaScript gebruikt om een blokdiagram van een "
+"stamboom weer te geven dat verticaal is gerangschikt op geboortedatum"
 
 #: USWebConnectPack/USWebPack.py:35
 msgid "US Google"
@@ -20331,17 +20326,15 @@ msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "Referentiedatum of -periode"
 
 #: DateCalculator/DateCalculator.py:86
-#, fuzzy
-#| msgid " by Gramps "
 msgid "a valid Gramps date"
-msgstr " door Gramps "
+msgstr "een geldige Gramps-datum"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "Datum of verschuiving ±y of ±y, m, d"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -20349,6 +20342,10 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. een datum\n"
+"2. een positief of negatief getal, dat jaren vertegenwoordigt\n"
+"3. een positieve of negatieve lijst van waarden, die jaren, maanden, dagen "
+"vertegenwoordigen"
 
 #: DateCalculator/DateCalculator.py:96
 msgid "Result"
@@ -20360,11 +20357,11 @@ msgstr "Berekenen"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "Fout: ongeldige datum voor eerste expressie"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "Fout: ongeldige offset voor tweede expressie"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
@@ -20373,7 +20370,7 @@ msgstr "Fout: ten minste één expressie moet een datum zijn"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
+msgstr "Typ een expressie in de bovenstaande items en klik op Berekenen."
 
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
@@ -20382,7 +20379,7 @@ msgstr "Datum rekenmachine"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
-msgstr ""
+msgstr "Datumberekeningen uitvoeren"
 
 #: FixCoords/fixcoords.gpr.py:31
 msgid "Fix Place Coordinates"
@@ -20667,13 +20664,15 @@ msgstr "PostgreSQL-database"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Verbeterd"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"Een verbeterde citatenopmaak die een bibliotheek en een aanroepnummer "
+"toevoegt aan de standaardfunctionaliteit."
 
 #: libwebconnect/libwebconnect.gpr.py:11
 msgid "Library for web site collections"
@@ -20932,10 +20931,8 @@ msgid "Graph View"
 msgstr "Grafiekweergave"
 
 #: GraphView/graphview.py:754
-#, fuzzy
-#| msgid "Show Tags"
 msgid "Show IDs"
-msgstr "Toon labels"
+msgstr "IDs weergeven"
 
 #: GraphView/graphview.py:757
 msgid "Show avatars"
@@ -20975,7 +20972,7 @@ msgstr "Tijdsrichting"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr ""
+msgstr "Beperk het aantal weergegeven personen (gebruik 0 voor onbeperkt)"
 
 #: GraphView/graphview.py:812
 msgid "Person theme"
@@ -21014,28 +21011,20 @@ msgid "Choose female avatar"
 msgstr "Kies een vrouwelijke avatar"
 
 #: GraphView/graphview.py:872
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Unknown avatar:"
-msgstr "Toon avatars"
+msgstr "Onbekende avatar:"
 
 #: GraphView/graphview.py:873
-#, fuzzy
-#| msgid "Choose male avatar"
 msgid "Choose Unknown avatar"
-msgstr "Kies een mannelijke avatar"
+msgstr "Kies een onbekende avatar"
 
 #: GraphView/graphview.py:885
-#, fuzzy
-#| msgid "Male avatar:"
 msgid "Other avatar:"
-msgstr "Mannelijke avatar:"
+msgstr "Andere avatar:"
 
 #: GraphView/graphview.py:886
-#, fuzzy
-#| msgid "Choose male avatar"
 msgid "Choose Other avatar"
-msgstr "Kies een mannelijke avatar"
+msgstr "Kies een andere avatar"
 
 #: GraphView/graphview.py:900
 msgid "Active person border size"
@@ -21207,6 +21196,10 @@ msgid ""
 "{people_missing} people won't be shown. You can change this limit in the "
 "view configuration."
 msgstr ""
+"Deze grafiek zou ten minste {people_count} personen bevatten, wat de limiet "
+"van {people_limit} personen overschrijdt. Om redenen van prestaties worden "
+"ten minste {people_missing} personen niet weergegeven. U kunt deze limiet "
+"wijzigen in Weergave - Configuratie."
 
 #: GraphView/graphview.py:2678
 msgid "Incomplete graph"
@@ -21241,10 +21234,8 @@ msgid "Ortho"
 msgstr "Orthogonaal"
 
 #: GraphView/graphview.py:3875
-#, fuzzy
-#| msgid "No relation to active person"
 msgid "No Events for this person"
-msgstr "Geen relatie met actieve persoon"
+msgstr "Geen gebeurtenissen voor deze persoon"
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
@@ -21273,10 +21264,8 @@ msgid "Add to bookmarks"
 msgstr "Voeg toe aan bladwijzers"
 
 #: GraphView/graphview.py:4161
-#, fuzzy
-#| msgid "Used for family"
 msgid "No Events for this family"
-msgstr "Gebruikt voor gezin"
+msgstr "Geen gebeurtenissen voor dit gezin"
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
@@ -21331,7 +21320,7 @@ msgstr "Cartoon"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
-msgstr ""
+msgstr "Modern"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
@@ -21359,10 +21348,8 @@ msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
-#, fuzzy
-#| msgid "Partner's spouse"
 msgid "Partners"
-msgstr "Echtgenote van de partner"
+msgstr "Partners"
 
 #: Overview/Overview.gpr.py:29
 msgid "Person Overview"
@@ -21385,216 +21372,185 @@ msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet met een overzicht van gebeurtenissen voor een gezin"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
-#, fuzzy
-#| msgid "Biography Content"
 msgid "Historical Context"
-msgstr "Biografie-inhoud"
+msgstr "Historische context"
 
 #: HistContext/HistContext.gpr.py:5
-#, fuzzy
-#| msgid ""
-#| "Whether to include the death of relatives during the lifetime of person."
 msgid "Lists relevant historical events during the lifetime of a Person"
 msgstr ""
-"Of het overlijden van familieleden moet worden toegevoegd tijdens het leven "
-"van een persoon."
+"Geeft een overzicht van relevante historische gebeurtenissen gedurende het "
+"leven van een persoon"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
-msgstr ""
+msgstr "Rijen die hiermee beginnen in de tekstkolom worden verborgen "
 
 #: HistContext/HistContext.py:126
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Use filter "
-msgstr "Locatie_filter:"
+msgstr "Gebruik filter: "
 
 #: HistContext/HistContext.py:129
-#, fuzzy
-#| msgid "Show lifespan"
 msgid "Show outside life span "
-msgstr "Toon levensperiode"
+msgstr "Toon buiten levensduur "
 
 #: HistContext/HistContext.py:132
-#, fuzzy
-#| msgid "Show full dates"
 msgid "Use full dates"
-msgstr "Toon volledige datums"
+msgstr "Volledige datums"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
-msgstr ""
+msgstr "Voorgrondkleur van items in levensduur"
 
 #: HistContext/HistContext.py:138
-#, fuzzy
-#| msgid "Box background color for female person"
 msgid "Background color items in lifespan"
-msgstr "Achtergrondkleur kader voor vrouwelijke persoon"
+msgstr "Achtergrondkleur van items in levensduur"
 
 #: HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
-msgstr ""
+msgstr "Voorgrondkleur van items buiten levensduur"
 
 #: HistContext/HistContext.py:144
-#, fuzzy
-#| msgid "Box background color for female person"
 msgid "Background color items outside lifespan"
-msgstr "Achtergrondkleur kader voor vrouwelijke persoon"
+msgstr "Achtergrondkleur van items buiten levensduur"
 
 #: HistContext/HistContext.py:149
-#, fuzzy
-#| msgid "Select A File"
 msgid "Select from files"
-msgstr "Selecteer een bestand"
+msgstr "Selecteer uit bestanden"
 
 #: HistContext/HistContext.py:287
-#, fuzzy
-#| msgid "Invalid timestamp"
 msgid "Invalid date "
-msgstr "Ongeldig tijdstempel"
+msgstr "Ongeldige datum "
 
 #: HistContext/HistContext.py:288
-#, fuzzy
-#| msgid "%(line)s. line:"
 msgid " in line: "
-msgstr "%(line)s. lijn:"
+msgstr " in regel: "
 
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
-#, fuzzy
-#| msgid "Errors"
 msgid "Error:"
-msgstr "Fouten"
+msgstr "Fout:"
 
 #: HistContext/HistContext.py:327
 msgid ": line does not contain four sections separated by semicolons in : \""
-msgstr ""
+msgstr ": regel bevat geen vier secties gescheiden door puntkomma's in : \""
 
 #: HistContext/HistContext.py:419
-#, fuzzy
-#| msgid "Cannot copy \"%s\""
 msgid "Cannot open URL: "
-msgstr "Kan \"%s\" niet kopiëren"
+msgstr "Kan URL niet openen: "
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
-msgstr ""
+msgstr "Dubbelklik op regel om de link te volgen"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Web Sync"
-msgstr "Gramps-versie"
+msgstr "Gramps Web-synchronisatie"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
-msgstr ""
+msgstr "Synchroniseert een lokaal gegevensbestand met een Gramps Web-instantie."
 
 #: GrampsWebSync/grampswebsync.py:264
 msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
+"Uw gebruiker heeft niet voldoende servermachtigingen om synchronisatie te "
+"gebruiken."
 
 #: GrampsWebSync/grampswebsync.py:268
-#, fuzzy
-#| msgid "Fetching records..."
 msgid "Fetching remote data..."
-msgstr "Gegevens ophalen..."
+msgstr "Gegevens van server ophalen..."
 
 #: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
-msgstr ""
+msgstr "Onverwachte fout bij het verwerken van wijzigingen."
 
 #: GrampsWebSync/grampswebsync.py:322
-#, fuzzy
-#| msgid "Media Reference"
 msgid "Media files are in sync."
-msgstr "Mediareferentie"
+msgstr "Mediabestanden zijn gesynchroniseerd."
 
 #: GrampsWebSync/grampswebsync.py:331
 #, python-format
 msgid "Successfully downloaded %s media files."
-msgstr ""
+msgstr "%s mediabestanden succesvol gedownload."
 
 #: GrampsWebSync/grampswebsync.py:334
 #, python-format
 msgid "Encountered %s errors during download."
-msgstr ""
+msgstr "%s fouten opgetreden tijdens het downloaden."
 
 #: GrampsWebSync/grampswebsync.py:340
 #, python-format
 msgid "Successfully uploaded %s media files."
-msgstr ""
+msgstr "%s mediabestanden met success geüploadet"
 
 #: GrampsWebSync/grampswebsync.py:343
 #, python-format
 msgid "Encountered %s errors during upload."
-msgstr ""
+msgstr "%s fouten opgetreden tijdens het uploaden."
 
 #: GrampsWebSync/grampswebsync.py:389 GrampsWebSync/grampswebsync.py:410
 msgid "Error accessing media object."
-msgstr ""
+msgstr "Fout bij het openen van het media-object."
 
 #: GrampsWebSync/grampswebsync.py:451
 msgid "Failed importing downloaded XML file."
-msgstr ""
+msgstr "Het importeren van het gedownloade XML-bestand is mislukt."
 
 #: GrampsWebSync/grampswebsync.py:457
-#, fuzzy
-#| msgid "Exporting family tree data ..."
 msgid "Comparing local and remote data..."
-msgstr "Stamboomgegevens exporteren ..."
+msgstr "Lokale en externe gegevens vergelijken…"
 
 #: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
-msgstr ""
+msgstr "Fout bij serverautorisatie."
 
 #: GrampsWebSync/grampswebsync.py:492
 msgid "Server authorization error: insufficient permissions."
-msgstr ""
+msgstr "Serverautorisatiefout: onvoldoende machtigingen."
 
 #: GrampsWebSync/grampswebsync.py:495
-#, fuzzy
-#| msgid "not found."
 msgid "Error: URL not found."
-msgstr "niet gevonden."
+msgstr "Fout: URL niet gevonden."
 
 #: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
+"Kan wijzigingen naar de server niet synchroniseren: objecten zijn gewijzigd."
 
 #: GrampsWebSync/grampswebsync.py:503
 #, python-format
 msgid "Error %s while connecting to server."
-msgstr ""
+msgstr "Fout %s tijdens het verbinden met de server."
 
 #: GrampsWebSync/grampswebsync.py:506
 msgid "URL error while connecting to server."
-msgstr ""
+msgstr "URL-fout tijdens het verbinden met de server."
 
 #: GrampsWebSync/grampswebsync.py:509
 msgid "Error while parsing response from server."
-msgstr ""
+msgstr "Fout tijdens het verwerken van de reactie van de server."
 
 #: GrampsWebSync/grampswebsync.py:537
 msgid "Continue without transport encryption?"
-msgstr ""
+msgstr "Doorgaan zonder transportversleuteling?"
 
 #: GrampsWebSync/grampswebsync.py:539
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
+"U hebt een URL met http-schema opgegeven. Als u doorgaat, wordt uw "
+"wachtwoord in leesbare tekst via het netwerk verzonden. Gebruik dit alleen "
+"voor lokale tests!"
 
 #: GrampsWebSync/grampswebsync.py:544
-#, fuzzy
-#| msgid "Continued until"
 msgid "Continue with HTTP"
-msgstr "Voortgezet totdat"
+msgstr "Doorgaan met HTTP"
 
 #: GrampsWebSync/grampswebsync.py:545
 msgid "Use HTTPS"
-msgstr ""
+msgstr "HTTPS gebruiken"
 
 #: GrampsWebSync/grampswebsync.py:663
 msgid ""
@@ -21629,112 +21585,86 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:690
 msgid "Server URL: "
-msgstr ""
+msgstr "URL van de server: "
 
 #: GrampsWebSync/grampswebsync.py:774
 msgid "Bidirectional Synchronization"
-msgstr ""
+msgstr "Synchronisatie in twee richtingen"
 
 #: GrampsWebSync/grampswebsync.py:783
 msgid "Reset remote to local"
-msgstr ""
+msgstr "Server opnieuw instellen vanuit lokaal"
 
 #: GrampsWebSync/grampswebsync.py:791
 msgid "Reset local to remote"
-msgstr ""
+msgstr "Lokaal opnieuw instellen vanuit server"
 
 #: GrampsWebSync/grampswebsync.py:799
-#, fuzzy
-#| msgid "Merge Media"
 msgid "Merge"
-msgstr "Media samenvoegen"
+msgstr "Samenvoegen"
 
 #: GrampsWebSync/grampswebsync.py:824
-#, fuzzy
-#| msgid "No changes"
 msgid "Local changes"
-msgstr "Geen wijzigingen"
+msgstr "Lokale wijzigingen"
 
 #: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
 #: GrampsWebSync/grampswebsync.py:834
-#, fuzzy
-#| msgid "Modified: "
 msgid "Modified"
-msgstr "Aangepast: "
+msgstr "Aangepast"
 
 #: GrampsWebSync/grampswebsync.py:829
-#, fuzzy
-#| msgid "No changes"
 msgid "Remote changes"
-msgstr "Geen wijzigingen"
+msgstr "Externe wijzigingen"
 
 #: GrampsWebSync/grampswebsync.py:834
-#, fuzzy
-#| msgid "Doing Place changes"
 msgid "Simultaneous changes"
-msgstr "Locatiewijzigingen doen"
+msgstr "Gelijktijdige wijzigingen"
 
 #: GrampsWebSync/grampswebsync.py:891
-#, fuzzy
-#| msgid "All information about %s"
 msgid "Fetching information about media files..."
-msgstr "Alle informatie over %s"
+msgstr "Informatie over mediabestanden ophalen…"
 
 #: GrampsWebSync/grampswebsync.py:912
-#, fuzzy
-#| msgid "Your Tree and import are the same."
 msgid "Both trees are the same."
-msgstr "Uw stamboom en de import zijn hetzelfde."
+msgstr "Beide stambomen zijn hetzelfde."
 
 #: GrampsWebSync/grampswebsync.py:918
-#, fuzzy
-#| msgid "Apply geo location to Database"
 msgid "Applying changes to local database ..."
-msgstr "Pas de geolocatie toe op de database"
+msgstr "Wijzigingen toepassen op de lokale database…"
 
 #: GrampsWebSync/grampswebsync.py:920
-#, fuzzy
-#| msgid "Also apply search by all database."
 msgid "No changes to apply to local database."
-msgstr "Pas ook zoeken door de gehele database toe."
+msgstr "Geen wijzigingen toe te passen op lokale database."
 
 #: GrampsWebSync/grampswebsync.py:923
-#, fuzzy
-#| msgid "Apply geo location to Database"
 msgid "Applying changes to remote database ..."
-msgstr "Pas de geolocatie toe op de database"
+msgstr "Wijzigingen toepassen op externe database…"
 
 #: GrampsWebSync/grampswebsync.py:926
 msgid "No changes to apply to remote database."
-msgstr ""
+msgstr "Geen wijzigingen toe te passen op externe database…"
 
 #: GrampsWebSync/grampswebsync.py:933
 msgid "Successfully applied changes to local database."
-msgstr ""
+msgstr "Wijzigingen zijn toegepast op lokale database."
 
 #: GrampsWebSync/grampswebsync.py:962
-#, fuzzy
-#| msgid "Missing Files"
 msgid "Missing locally"
-msgstr "Ontbrekende bestanden"
+msgstr "Lokaal vermist"
 
 #: GrampsWebSync/grampswebsync.py:965
-#, fuzzy
-#| msgid "Missing header"
 msgid "Missing remotely"
-msgstr "Ontbrekende koptekst"
+msgstr "Extern vermist"
 
 #: GrampsWebSync/grampswebsync.py:1003
-#, fuzzy, python-format
-#| msgid "Downloading files"
+#, python-format
 msgid "Downloading %s media file(s)"
-msgstr "Bestanden downloaden"
+msgstr "%s media-bestand(en) downloaden"
 
 #: GrampsWebSync/grampswebsync.py:1011
-#, fuzzy, python-format
-#| msgid "Downloading files"
+#, python-format
 msgid "Uploading %s media file(s)"
-msgstr "Bestanden downloaden"
+msgstr "%s media-bestand(en) uploaden"
 
 #: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
@@ -22634,10 +22564,8 @@ msgid "Female Box Edge"
 msgstr "Rand vak vrouwen"
 
 #: NetworkChart/NetworkChart.py:1034
-#, fuzzy
-#| msgid "RGB-color for Male box edge."
 msgid "RGB-color for Female box edge."
-msgstr "RGB-kleur voor vakrand bij mannen."
+msgstr "RGB-kleur voor vakrand bij vrouwen."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
