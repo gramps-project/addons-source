@@ -5,13 +5,14 @@
 # Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 # Oleh Petriv, 2013.
 # Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
+# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 08:49+0000\n"
-"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
+"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -334,7 +335,7 @@ msgstr "Браузер"
 
 #: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
-msgstr ""
+msgstr "lxml"
 
 #: lxml/lxmlGramplet.gpr.py:11
 #, fuzzy
@@ -344,7 +345,7 @@ msgstr "Грамплет для розпізнавання та призначе
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
-msgstr ""
+msgstr "etree"
 
 #: lxml/etreeGramplet.gpr.py:11
 #, fuzzy
@@ -360,7 +361,7 @@ msgstr "Недійсне імʼя файлу."
 
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
-msgstr ""
+msgstr "Файл не розібрано…"
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 #, fuzzy
@@ -377,20 +378,20 @@ msgstr "Виберіть ім'я файлу dot"
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr ""
+msgstr "Будь ласка, виправте пробіл у \"%s\""
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
-msgstr ""
+msgstr "Вибачте, але наразі ваша операційна система не підтримується!"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr ""
+msgstr "Це стиснутий файл .gramps?"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr ""
+msgstr "Не вдалося розпакувати \"%s\""
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -4927,6 +4928,8 @@ msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
+"Ширина прямокутника, що представляє особу у звичайній діаграмі, виражена як "
+"частка від горизонтальної відстані між прямокутниками."
 
 #: DenominoViso/DenominoViso.py:2711
 msgid "Height of rectangle (hrd):"
@@ -4937,6 +4940,8 @@ msgid ""
 "The height of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
+"Висота прямокутника, що представляє особу у звичайній діаграмі, виражена як "
+"частка від горизонтальної відстані між прямокутниками."
 
 #: DenominoViso/DenominoViso.py:2715
 msgid "Vertical distance of rectangles (hrd):"
@@ -4985,6 +4990,8 @@ msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
+"Список списків, де кожен підсписок містить інформацію про колір, який слід "
+"використовувати для певного рівня впевненості."
 
 #: DenominoViso/DenominoViso.py:2749
 msgid "Event format"
@@ -5083,6 +5090,8 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
+"Генерує веб-сторінку (HTML) з графічним представленням предків/нащадків (SVG)"
+", де деталі про осіб відображаються за подіями миші."
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
@@ -5471,6 +5480,9 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
+"Якщо у вас є підстави перевіряти Вимоги, саме час зробити резервну копію "
+"ваших генеалогічних файлів, а потім перевірити її!\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
 msgid ""
@@ -6052,6 +6064,8 @@ msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
 msgstr ""
+"Нижче наведено список місць із можливими даними, які можна витягти з їхніх "
+"назв. Виберіть ті місця, які ви хочете, щоб Gramps конвертував."
 
 #: ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
@@ -6746,6 +6760,9 @@ msgid ""
 "These are added to your database, so you may want to work with a test "
 "database or delete them later."
 msgstr ""
+"Згенерувати тестові нотатки в діапазоні N99996-N99999.\n"
+"Вони додаються до вашої бази даних, тому, можливо, вам варто використовувати "
+"тестову базу даних або видалити їх пізніше."
 
 #: NoteCleanup/NoteCleanup.py:181
 msgid ""
@@ -7427,6 +7444,8 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
+"Виводить список усіх нотаток із заданим тегом разом із записами, на які вони "
+"посилаються (наприклад, особа, родина, подія тощо)."
 
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
@@ -7815,6 +7834,9 @@ msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
 msgstr ""
+"Проміжок, який додається між найбільш зовнішнім нащадком (або подружнім "
+"партнером) однієї родини та найбільш зовнішнім нащадком (або подружнім "
+"партнером) наступної родини."
 
 #: DescendantsLines/DescendantsLines.py:1727
 msgid "Horizontal distance spouse to family edge"
@@ -7826,6 +7848,9 @@ msgid ""
 "bigger the value, more the center is moved to the left towards the "
 "descendant."
 msgstr ""
+"Якщо це значення дорівнює 0, смуга для дітей розміщується по центру під "
+"подружнім партнером. Чим більше значення, тим більше центр зміщується вліво "
+"до нащадка."
 
 #: DescendantsLines/DescendantsLines.py:1735
 msgid "OL_PAD"
@@ -8386,15 +8411,15 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
-msgstr ""
+msgstr "Перевірити назви місць"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
-msgstr ""
+msgstr "Перевірити назви місць"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "Перевірити назву місця"
 
 #: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
@@ -8402,19 +8427,20 @@ msgstr "Відмінності"
 
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
-msgstr ""
+msgstr "Модифікації не потрібні"
 
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
-msgstr ""
+msgstr "Змін не потрібно."
 
 #: CheckPlaceTitles/checkplacetitles.py:187
+#, fuzzy
 msgid "Legacy place"
-msgstr ""
+msgstr "Спадкове місце"
 
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
-msgstr ""
+msgstr "Модифікувати назви місць"
 
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
@@ -8422,7 +8448,7 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "Видалити вміст поля назви місця, якщо він не відповідає"
 
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
@@ -9065,6 +9091,8 @@ msgid ""
 "Photos which are shown are fitted into a square of this extent. The size is "
 "given relative to the line thickness."
 msgstr ""
+"Фотографії, які відображаються, вписуються у квадрат з цією величиною. "
+"Розмір вказано відносно товщини лінії."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
 msgid "Total height"
@@ -9375,6 +9403,9 @@ msgid ""
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
+"Через спадкове стиснення одна особа може з’являтися кілька разів на простій "
+"діаграмі предків. Якщо ця опція активована, то кожна особа з’являється лише "
+"один раз."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
@@ -9581,6 +9612,8 @@ msgid ""
 "Traverses the Person list for all Associations that are bi-directional and "
 "adds any which are missing to the Associated Person."
 msgstr ""
+"Перебирає список осіб для всіх асоціацій, що є двосторонніми, і додає до пов’"
+"язаної особи всі відсутні зв’язки."
 
 #: SyncAssociations/syncAssociations.py:124
 #, fuzzy, python-format
@@ -9903,7 +9936,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:70 Form/form_ca.xml.h:278
 msgid "Houses"
-msgstr ""
+msgstr "Будинки"
 
 #: Form/form_ca.xml.h:71
 msgid ""
@@ -9945,7 +9978,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:80
 msgid "Shops"
-msgstr ""
+msgstr "Крамниці"
 
 #: Form/form_ca.xml.h:81
 msgid "36. Shops, Stores, Inns, Taverns etc."
@@ -14059,6 +14092,8 @@ msgid ""
 "Last year, in how many weeks did this person do any work at all, not "
 "counting work around the house?"
 msgstr ""
+"Минулого року, протягом скількох тижнів ця особа виконувала яку-небудь "
+"роботу, не рахуючи роботи по дому?"
 
 #: Form/form_us.xml.h:949
 msgid "Amount of wages/salary in 1949"
@@ -14119,6 +14154,9 @@ msgid ""
 "Last year, how much money did his relatives in this household receive from "
 "interest, dividends, veteran’s allowances, pensions, rents, or other income?"
 msgstr ""
+"Минулого року, яку суму грошей отримали його родичі в цьому домогосподарстві "
+"від відсотків, дивідендів, допомог для ветеранів, пенсій, орендної плати чи "
+"інших доходів?"
 
 #: Form/form_us.xml.h:961
 msgid "WWII Veteran?"
@@ -19293,6 +19331,8 @@ msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
 msgstr ""
+"Якщо для особи немає події народження, її вік на момент\n"
+"першої події вважається рівним цьому значенню"
 
 #: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
