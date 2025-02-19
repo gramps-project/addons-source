@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 10:07+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2025-02-19 19:18+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -4098,10 +4098,8 @@ msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "FamilyTree DNA Import"
-msgstr "Släktträd för %s"
+msgstr "FamilyTree DNA import"
 
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
@@ -4126,10 +4124,9 @@ msgid "Add %s haplogroup attribute"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:350
-#, fuzzy, python-format
-#| msgid "Add %s reciprocal association"
+#, python-format
 msgid "Add %s DNA Association"
-msgstr "Lägg till %s ömsesidiga föreningar"
+msgstr "Lägg till %s DNA-förening"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
@@ -4137,10 +4134,9 @@ msgid "Create Note for %s DNA Association"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:369
-#, fuzzy, python-format
-#| msgid "Add %s reciprocal association"
+#, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "Lägg till %s ömsesidiga föreningar"
+msgstr "Lägg till anteckning till %s DNA-förening"
 
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
@@ -4245,10 +4241,8 @@ msgid "Python Shell"
 msgstr "Python-skal"
 
 #: PythonGramplet/PythonGramplet.gpr.py:5
-#, fuzzy
-#| msgid "Interactive Family Tree"
 msgid "Interactive Python interpreter"
-msgstr "Interaktivt släktträd"
+msgstr "Interaktiv Python-tolk"
 
 #: PythonGramplet/PythonGramplet.py:55
 msgid "Enter Python expressions"
@@ -4263,10 +4257,8 @@ msgid "onclick"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
-#, fuzzy
-#| msgid "Anonymous"
 msgid "onmouseover"
-msgstr "Anonym"
+msgstr "över muspekaren"
 
 #: DenominoViso/DenominoViso.py:208
 msgid "Ancestor"
@@ -4327,16 +4319,13 @@ msgstr "vittnen"
 
 #: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
 #: DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-format
-#| msgid "Failed writing %s: %s"
+#, python-format
 msgid "Failure writing %s: %s"
 msgstr "Fel vid skrivning av %s: %s"
 
 #: DenominoViso/DenominoViso.py:395
-#, fuzzy
-#| msgid "No DB entry is selected"
 msgid "No central person selected"
-msgstr "Ingen DB-post är vald"
+msgstr "Ingen centralperson är vald"
 
 #: DenominoViso/DenominoViso.py:769
 msgid "Unknown time direction"
@@ -4375,10 +4364,8 @@ msgid "DenominoViso Options"
 msgstr "DenominoViso-alternativ"
 
 #: DenominoViso/DenominoViso.py:2556
-#, fuzzy
-#| msgid "The destination file for the content."
 msgid "The destination file for the html-content."
-msgstr "Målfilen för innehållet."
+msgstr "Målfilen för html-innehållet."
 
 #: DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
@@ -4397,10 +4384,8 @@ msgid "Any string you wish."
 msgstr "Godtyckling mening."
 
 #: DenominoViso/DenominoViso.py:2567
-#, fuzzy
-#| msgid "Display type"
 msgid "Display mode"
-msgstr "Visningstyp"
+msgstr "Visningsläge"
 
 #: DenominoViso/DenominoViso.py:2568
 msgid "Either plot ancestor or descendants graph."
@@ -4457,20 +4442,16 @@ msgid "Include private records"
 msgstr "Ta med privata poster"
 
 #: DenominoViso/DenominoViso.py:2608
-#, fuzzy
-#| msgid "Whether to include private objects."
 msgid "Whether to leave out private data."
-msgstr "Huruvida ta med privata objekt."
+msgstr "Huruvida privata uppgifter ska utelämnas."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
 msgstr "Ta med händelser"
 
 #: DenominoViso/DenominoViso.py:2613
-#, fuzzy
-#| msgid "Whether to include a person's note."
 msgid "Whether to include a person's events."
-msgstr "Huruvida ta med anteckningar."
+msgstr "Huruvida ta med en persons händelser."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
@@ -4688,16 +4669,12 @@ msgid "Source confidence color"
 msgstr "Källtillförlitlighetsfärg"
 
 #: DenominoViso/DenominoViso.py:2746
-#, fuzzy
-#| msgid ""
-#| "List of lists where each sublist is a list with information about the "
-#| "dash pattern of lines connecting children to parents."
 msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
-"Lista på lista där varje dellista är en lista med information om linjers "
-"utseende för förbindelser mellan barn och föräldrar."
+"Lista på lista där varje dellista är en lista med information på färgen som "
+"ska användas för en viss konfidensnivå."
 
 #: DenominoViso/DenominoViso.py:2749
 msgid "Event format"
@@ -4746,16 +4723,12 @@ msgid "should be"
 msgstr "borde vara"
 
 #: DenominoViso/DenominoViso.py:2913
-#, fuzzy
-#| msgid "Include media"
 msgid "Included"
-msgstr "Tag med media"
+msgstr "Ingår"
 
 #: DenominoViso/DenominoViso.py:2914
-#, fuzzy
-#| msgid "Exclude Spouses"
 msgid "Excluded"
-msgstr "Uteslut makar"
+msgstr "Utesluten"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
@@ -4790,17 +4763,13 @@ msgid "DenominoViso"
 msgstr "DenominoViso"
 
 #: DenominoViso/DenominoViso.gpr.py:19
-#, fuzzy
-#| msgid ""
-#| "Generates a web page with a graphical representation of ancestors (SVG) "
-#| "represented as a Fan Chart from the D3.js JavaScript library."
 msgid ""
 "Generates a web (HTML) page with a graphical representation of ancestors/"
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Skapar en webbsida med en grafiskt antavla (SVG) som ett cirkeldiagram med "
-"hjälp av D3,js javaskript-bibliotek."
+"Skapar en webbsida (HTML) med en grafisk representation av förfäder/"
+"ättlingar (SVG) där detaljer om individer blir synliga vid mushändelser."
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
@@ -5055,16 +5024,12 @@ msgstr ""
 "grundförutsättningar installerade."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Valfri</b></u>\n"
+"<u><b>NÖDVÄNDIG</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
 msgid ""
@@ -5073,16 +5038,12 @@ msgid ""
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Valfri</b></u>\n"
+"<u><b>REKOMMENDERAD</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
 msgid ""
@@ -5357,10 +5318,8 @@ msgid " (Requires version 0.5.x)"
 msgstr " (Kräver version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
-#, fuzzy
-#| msgid " (lxml: not found. Requires version "
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr " (lxml: inte hittad. Kräver version "
+msgstr " • python-fontconfig inte hittad, (Kräver version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
@@ -5558,20 +5517,12 @@ msgid "Gramplet showing the references for a source"
 msgstr "Gramplet som visar referenserna för en källa"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "DNA Matches"
-msgstr ""
-"Inga\n"
-"Matchningar"
+msgstr "DNA-matchningar"
 
 #: DNAMatches/dnamatches.gpr.py:30
-#, fuzzy
-#| msgid "Gramplet to manipulate multiple places"
 msgid "Gramplet to display a list of DNA matches"
-msgstr "Gramplet för att manipulera flera platser"
+msgstr "Gramplet för att visa en lista med DNA-matchningar"
 
 #: DNAMatches/dnamatches.py:153
 #, fuzzy
