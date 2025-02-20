@@ -1,0 +1,17 @@
+register(
+    GRAMPLET,
+    id="GrampsChat",
+    name=_("GrampsChat"),
+    description=_("AI Chatbot Gramplet"),
+    height=100,
+    expand=False,
+    gramplet="GrampsChat",
+    gramplet_title=_("GrampsChat"),
+    status=STABLE,
+    audience=DEVELOPER,
+    version="0.0.1",
+    gramps_target_version="6.0",
+    fname="GrampsChat.py",
+    help_url="Gramplets#GUI_Interface",
+    requires_mod=["litellm"],
+)
