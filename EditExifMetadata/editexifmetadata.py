@@ -1134,8 +1134,8 @@ class EditExifMetadata(Gramplet):
         parent = self.gui.get_container_widget().get_toplevel()
         QuestionDialog(_("Edit Image Exif Metadata"),
                        _("WARNING!  You are about to completely "
-                         "delete the Exif metadata from this image?"),
-                       _("Delete"), self.strip_metadata,
+                         "delete the Exif metadata from this image."),
+                       _("Delete?"), self.strip_metadata,
                        parent=parent)
         self.update()
 
@@ -1146,8 +1146,8 @@ class EditExifMetadata(Gramplet):
         parent = self.gui.get_container_widget().get_toplevel()
         QuestionDialog(_("Edit Image Exif Metadata"),
                        _("WARNING!  You are about to completely "
-                         "delete the GPS metadata from this image?"),
-                       _("Delete"), self.strip_gps,
+                         "delete the GPS metadata from this image."),
+                       _("Delete?"), self.strip_gps,
                        parent=parent)
         self.update()
 

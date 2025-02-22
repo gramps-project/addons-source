@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-22 23:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -303,7 +303,7 @@ msgid "Bad Date/Time"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1122
-msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgid "Invalid latitude (syntax: 18°9'"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1123
@@ -311,7 +311,7 @@ msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1127
-msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgid "Invalid longitude (syntax: 18°9'"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1128
@@ -321,18 +321,18 @@ msgstr ""
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
+"image."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
-msgid "Delete"
+msgid "Delete?"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
-"image?"
+"image."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1333
