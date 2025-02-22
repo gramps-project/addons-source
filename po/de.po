@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 21:10+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -2075,10 +2075,8 @@ msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
 #: SVWebconnectPack/SVWebPack.py:35
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "Google SV"
-msgstr "_Google Maps"
+msgstr "Google SV"
 
 #: SVWebconnectPack/SVWebPack.py:38
 #, fuzzy
@@ -3383,8 +3381,8 @@ msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
 msgstr ""
-"Legt fest, ob eine Archivdatei (im ZIP oder TGZ Format) erstellt werden "
-"soll, die die Webseite enthält"
+"Ob eine Archivdatei (im ZIP- oder TGZ-Format) erstellt werden soll, die die "
+"Website enthält"
 
 #: DynamicWeb/dynamicweb.py:4722
 msgid "Archive file"
@@ -3633,9 +3631,9 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"Legt fest, ob Referenzen zu den Punkten auf den Indexseiten aufgenommen "
-"werden. Das sind zum Beispiel auf der Medienindexseite die Namen der "
-"Personen, Familien, Orte und Quellen, die die Medien referenzieren."
+"Ob die Verweise auf die Elemente in die Indexseiten aufgenommen werden "
+"sollen. Zum Beispiel auf der Medienindexseite die Namen der Personen, "
+"Familien, Orte und Quellen, die auf die Medien verweisen."
 
 #: DynamicWeb/dynamicweb.py:5085
 msgid "Default number of entries in the indexes"
@@ -4527,7 +4525,7 @@ msgstr "Richtung der Zeit"
 
 #: DenominoViso/DenominoViso.py:2583
 msgid "Direction in which time increases."
-msgstr "Richtung in die die Zeit ansteigt."
+msgstr "Richtung, in der die Zeit fortschreitet."
 
 #: DenominoViso/DenominoViso.py:2592
 msgid "Max chart width (%)"
@@ -5159,16 +5157,12 @@ msgstr ""
 "installiert sind."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Optional</b></u>\n"
+"<u><b>ERFORDERLICH</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
 msgid ""
@@ -5177,16 +5171,12 @@ msgid ""
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Optional</b></u>\n"
+"<u><b>EMPFOHLEN</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
 msgid ""
@@ -6220,7 +6210,7 @@ msgstr "Primärer Name"
 
 #: PersonEverything/PersonEverything.py:180
 msgid "Alternate name"
-msgstr "Alternative Name"
+msgstr "Alternativer Name"
 
 #: PersonEverything/PersonEverything.py:196
 msgid " This is the primary birth event."
@@ -6352,7 +6342,7 @@ msgstr "Ahnenkarte"
 
 #: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
-msgstr "Eine Ansicht, die die Orte der Vorfahren auf der Karte zeigt."
+msgstr "Eine Ansicht mit den Orten der Vorfahren auf der Karte."
 
 #: GeoAncestor/GeoAncestor.py:207
 msgid "Ancestors places on the map"
@@ -7636,7 +7626,7 @@ msgid ""
 "footer"
 msgstr ""
 "Eine Zahl, die die Basisgröße des Textes im Titel und in der Fußzeile "
-"multipliziert"
+"vervielfacht"
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"
@@ -10652,7 +10642,7 @@ msgstr "KannSchreiben"
 
 #: Form/form_ca.xml.h:442
 msgid "22. Instruction: Write"
-msgstr "22. Instruction: Write"
+msgstr "22. Anweisung: Schreib"
 
 #: Form/form_ca.xml.h:444
 msgid "23. Deaf and Dumb"
@@ -10777,7 +10767,7 @@ msgstr "16. Religion"
 
 #: Form/form_ca.xml.h:493
 msgid "17. Profession, occupation, trade or means of living of each person"
-msgstr "17. Beruf, Beruf, Gewerbe oder Lebensgrundlage jeder Person"
+msgstr "17. Beruf, Beschäftigung, Gewerbe oder Lebensunterhalt jeder Person"
 
 #: Form/form_ca.xml.h:494
 msgid "OwnMeans"
@@ -11669,7 +11659,7 @@ msgstr "RollenNr."
 #: Form/form_us.xml.h:2268 Form/form_us.xml.h:2286 Form/form_us.xml.h:2296
 #: Form/form_us.xml.h:2315 Form/form_us.xml.h:2325 Form/form_us.xml.h:2502
 msgid "Page No."
-msgstr "Seitennummer"
+msgstr "Seite Nr."
 
 #: Form/form_us.xml.h:4 Form/form_us.xml.h:17 Form/form_us.xml.h:38
 #: Form/form_us.xml.h:59 Form/form_us.xml.h:99 Form/form_us.xml.h:168
@@ -12470,7 +12460,7 @@ msgstr "Tabak, pounds von"
 
 #: Form/form_us.xml.h:379
 msgid "Ginned Cotton, bales of 400 lbs."
-msgstr "Entkörnte Baumwolle, Ballen von 400 Pfund"
+msgstr "Entkörnte Baumwolle, Ballen von 400 lbs."
 
 #: Form/form_us.xml.h:380
 msgid "Wool, pounds of"
@@ -13860,20 +13850,16 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:961
-#, fuzzy
-#| msgid "Veteran?"
 msgid "WWII Veteran?"
-msgstr "Veteran?"
+msgstr "WWII Veteran?"
 
 #: Form/form_us.xml.h:962
 msgid "Did he ever serve in the U. S. Armed Forces during World War II?"
 msgstr ""
 
 #: Form/form_us.xml.h:963
-#, fuzzy
-#| msgid "Veteran?"
 msgid "WWI Veteran?"
-msgstr "Veteran?"
+msgstr "WWI Veteran?"
 
 #: Form/form_us.xml.h:964
 msgid "World War I?"
@@ -13939,7 +13925,7 @@ msgstr "Alter des Ehepartners"
 
 #: Form/form_us.xml.h:982
 msgid "File No."
-msgstr "Aktenzeichen"
+msgstr "Akte Nr."
 
 #: Form/form_us.xml.h:984 Form/form_us.xml.h:1003 Form/form_us.xml.h:1058
 msgid "Post Office Address"
@@ -14256,7 +14242,7 @@ msgstr "Hausnr."
 
 #: Form/form_us.xml.h:1130 Form/form_us.xml.h:1145
 msgid "Precinct No."
-msgstr "Bezirksnummer"
+msgstr "Revier Nr."
 
 #: Form/form_us.xml.h:1136
 msgid "Inside or Outside City Limits"
@@ -14792,7 +14778,7 @@ msgstr "Wenn Sie im Ausland geboren sind, sind Sie eingebürgert?"
 #: Form/form_us.xml.h:2110 Form/form_us.xml.h:2148 Form/form_us.xml.h:2186
 #: Form/form_us.xml.h:2224
 msgid "Years in U.S."
-msgstr "Jahre in USA"
+msgstr "Jahre in den U.S.A."
 
 #: Form/form_us.xml.h:1344 Form/form_us.xml.h:1422 Form/form_us.xml.h:1440
 msgid "Years in Iowa"
@@ -15962,7 +15948,7 @@ msgstr "Wahlbezirk Nr."
 
 #: Form/form_us.xml.h:1977 Form/form_us.xml.h:1998
 msgid "Ward No."
-msgstr "Bezirksnummer"
+msgstr "Bezirk Nr."
 
 #: Form/form_us.xml.h:1978 Form/form_us.xml.h:1999
 msgid "City or Village"
@@ -16183,7 +16169,7 @@ msgstr "Wenn Sie im Ausland geboren sind, sind Sie eingebürgert"
 #: Form/form_us.xml.h:2111 Form/form_us.xml.h:2149 Form/form_us.xml.h:2187
 #: Form/form_us.xml.h:2225
 msgid "Years in S.D."
-msgstr "Jahre in South Dakota"
+msgstr "Jahre in S.D."
 
 #: Form/form_us.xml.h:2131 Form/form_us.xml.h:2169 Form/form_us.xml.h:2207
 msgid "Division"
@@ -16291,7 +16277,7 @@ msgstr "Kompanie"
 
 #: Form/form_us.xml.h:2293 Form/form_us.xml.h:2322
 msgid "Reg't."
-msgstr "Regiment"
+msgstr "Reg't."
 
 #: Form/form_us.xml.h:2294 Form/form_us.xml.h:2323
 msgid "State or Vessel"
@@ -16333,7 +16319,7 @@ msgstr "Registrierungsdatum"
 #: Form/form_us.xml.h:2346 Form/form_us.xml.h:2430 Form/form_us.xml.h:2462
 #: Form/form_gb.xml.h:7 Form/form_gb.xml.h:44
 msgid "Registrar"
-msgstr "Registrar"
+msgstr "Registrierstelle"
 
 #: Form/form_us.xml.h:2349
 msgid "Twin, triplet or other"
@@ -16392,7 +16378,7 @@ msgstr "Aufnahmedatum"
 
 #: Form/form_us.xml.h:2393
 msgid "License No."
-msgstr "Lizenznummer"
+msgstr "Lizenz-Nr."
 
 #: Form/form_us.xml.h:2395
 msgid "Date of Marriage"
@@ -16457,7 +16443,7 @@ msgstr "Bildungsstand"
 
 #: Form/form_us.xml.h:2453
 msgid "Social Security No."
-msgstr "Sozialversicherungsnummer"
+msgstr "Sozialversicherungs-Nr."
 
 #: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
 msgid "Date of Death"
@@ -16521,11 +16507,11 @@ msgstr "Karte (A, B oder C)"
 
 #: Form/form_us.xml.h:2521
 msgid "Serial No."
-msgstr "Seriennummer"
+msgstr "Laufende Nr."
 
 #: Form/form_us.xml.h:2522
 msgid "Registration No."
-msgstr "Registrierungsnummer"
+msgstr "Registrierung Nr."
 
 #: Form/form_us.xml.h:2523
 msgid "Order No."
@@ -17101,10 +17087,8 @@ msgid "Deceased"
 msgstr "Verstorben"
 
 #: Form/form_gb.xml.h:48
-#, fuzzy
-#| msgid "Maiden name of wife"
 msgid "Maiden surname of woman who was married"
-msgstr "Mädchenname der Frau"
+msgstr "Mädchenname der Frau, die verheiratet war"
 
 #: Form/form_gb.xml.h:53
 #, fuzzy
@@ -17643,7 +17627,7 @@ msgstr "Stadt oder Dorf"
 
 #: Form/form_gb.xml.h:410
 msgid "House Schedule No"
-msgstr "Haus Verzeichnis Nr."
+msgstr "Haus Zeitplan Nr"
 
 #: Form/form_gb.xml.h:412
 msgid "Relation to Head"
@@ -17685,7 +17669,7 @@ msgstr "Ob Blind oder Taub und Stumm"
 #: Form/form_gb.xml.h:442 Form/form_gb.xml.h:469 Form/form_gb.xml.h:497
 #: Form/form_gb.xml.h:534 Form/form_gb.xml.h:571
 msgid "No. of Children from 5 to 13 attending School"
-msgstr "Anzahl der Kinder zwischen 5 und 13 die die Schule besuchen"
+msgstr "Anzahl der Kinder von 5 bis 13 Jahren, die eine Schule besuchen"
 
 #: Form/form_gb.xml.h:443 Form/form_gb.xml.h:470 Form/form_gb.xml.h:498
 #: Form/form_gb.xml.h:535 Form/form_gb.xml.h:572
@@ -18469,10 +18453,8 @@ msgid "Path does not exist."
 msgstr "Die Datei existiert nicht."
 
 #: Heatmap/heatmap.py:210
-#, fuzzy
-#| msgid "Invalid timestamp"
 msgid "Invalid filename."
-msgstr "Ungültiger Zeitstempel"
+msgstr "Ungültiger Dateiname."
 
 #: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
@@ -18759,7 +18741,7 @@ msgstr "Der Grundstil, der für Text verwendet wird"
 
 #: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
-msgstr "Der Stil, der für den Seitenschlüssel oben verwendet wird."
+msgstr "Der Stil für die Seitentaste im oberen Bereich"
 
 #: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
@@ -18826,7 +18808,8 @@ msgstr "libaccess Person bearbeiten"
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
 msgstr ""
-"Liefert eine Bibliothek zum generischen Zugriff auf die Datenbank und gen.lib"
+"Bietet eine Bibliothek für den generischen Zugriff auf die Datenbank und "
+"gen.lib."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -18864,7 +18847,7 @@ msgstr "Notiz zu Eltern Familie"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
 msgid "%s (association)"
-msgstr "%s (association)"
+msgstr "%s (Assoziation)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 msgid "Note on Person"
@@ -19313,8 +19296,8 @@ msgstr "Elternfamilien automatisch markieren"
 msgid ""
 "Double-click on a row to edit the object containing the selected attribute."
 msgstr ""
-"Doppelklick auf eine Zeile um das Objekt, das das gewählte Attribut enthält, "
-"zu bearbeiten."
+"Doppelklicke auf eine Zeile, um das Objekt zu bearbeiten, das das "
+"ausgewählte Attribut enthält."
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Extended Person Attributes"
@@ -19538,19 +19521,19 @@ msgstr "Sammlung von Websites für RU (erfordert libwebconnect)"
 
 #: RUWebConnectPack/RUWebPack.py:40
 msgid "OBD \"Memorial\""
-msgstr "OBD \"Memorial\""
+msgstr "OBD \"Gedenkstätte\""
 
 #: RUWebConnectPack/RUWebPack.py:41
 msgid "People memory"
-msgstr "People memory"
+msgstr "Gedächtnis der Menschen"
 
 #: RUWebConnectPack/RUWebPack.py:42
 msgid "Winners"
-msgstr "Winners"
+msgstr "Gewinner"
 
 #: RUWebConnectPack/RUWebPack.py:43
 msgid "Lived"
-msgstr "Lived"
+msgstr "Lebte"
 
 #: RUWebConnectPack/RUWebPack.py:44
 msgid "Open list"
@@ -19558,11 +19541,11 @@ msgstr "Open list"
 
 #: RUWebConnectPack/RUWebPack.py:45
 msgid "Wait for me"
-msgstr "Wait for me"
+msgstr "Wartet auf mich"
 
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
-msgstr "All Russia Family Tree (forum)"
+msgstr "Ganz Russland Stammbaum (Forum)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
@@ -19570,7 +19553,7 @@ msgstr "Yandex people"
 
 #: RUWebConnectPack/RUWebPack.py:49
 msgid "RIA Officers"
-msgstr "RIA Officers"
+msgstr "RIA-Beamte"
 
 #: RUWebConnectPack/RUWebPack.py:50
 msgid "FamilySpace"
@@ -19972,7 +19955,7 @@ msgstr "Ausgewählte Bilder entfernen."
 #: AvatarGenerator/AvatarGenerator.py:183
 #: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
-msgstr "Avatar Generator"
+msgstr "Avatargenerator"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
@@ -20032,10 +20015,8 @@ msgid "Destination directory"
 msgstr "Ungültiges Zielverzeichnis"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
-#, fuzzy
-#| msgid "The destination path for generated files."
 msgid "Path for generated files"
-msgstr "Der Zielpfad für erstellte Dateien."
+msgstr "Pfad für generierte Dateien"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:868
 #, fuzzy
@@ -20054,10 +20035,8 @@ msgid "What to show"
 msgstr "Welcher Krieg"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
-#, fuzzy
-#| msgid "The Gramps ID.."
 msgid "Show GrampsID"
-msgstr "Die Gramps ID.."
+msgstr "Zeige GrampsID"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
@@ -20086,10 +20065,8 @@ msgid "Box background color for male person"
 msgstr "Pfadfarbe zur Hauptperson"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:897
-#, fuzzy
-#| msgid "Female Box Edge"
 msgid "Female Box Color"
-msgstr "Umrandung weibliche Box."
+msgstr "Weibliche Box Farbe"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:898
 msgid "Box background color for female person"
@@ -20126,16 +20103,12 @@ msgid "How many pixel are unused above first box?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
-#, fuzzy
-#| msgid "Height of the tree in pixels."
 msgid "Width of a box in pixel"
-msgstr "Höhe des Baums in Pixeln."
+msgstr "Breite einer Box in Pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:922
-#, fuzzy
-#| msgid "Height of the tree in pixels."
 msgid "Width of the box of a person in pixel"
-msgstr "Höhe des Baums in Pixeln."
+msgstr "Breite der Box einer Person in Pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:925
 #, fuzzy
@@ -20503,11 +20476,11 @@ msgstr "RetroNews (Bnf)"
 
 #: FRWebConnectPack/FRWebPack.py:58
 msgid "Hathi Trust Digital Library (fr)"
-msgstr "Hathi Trust Digital Library (fr)"
+msgstr "Hathi Trust Digitale Bibliothek (fr)"
 
 #: FRWebConnectPack/FRWebPack.py:59
 msgid "Open Library (fr)"
-msgstr "Open Library (fr)"
+msgstr "Offene Bibliothek (fr)"
 
 #: FRWebConnectPack/FRWebPack.py:60
 msgid "Belgium's Archives"
@@ -20707,11 +20680,11 @@ msgstr "Textoptionen"
 
 #: FamilyTree/FamilyTree.py:1162
 msgid "The style used for names."
-msgstr "Stil für Namen"
+msgstr "Der für Namen verwendete Stil."
 
 #: FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "Stil für Daten (Geburt, Tod, Ehe, Scheidung)"
+msgstr "Der für die Daten verwendete Stil (Geburt, Tod, Heirat, Scheidung)."
 
 #: FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
@@ -20904,7 +20877,7 @@ msgstr "GEDCOM Erweiterungen (GED2)"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:34
 msgid "Extensions to the common GEDCOM format."
-msgstr "Erweiterungen für das bekannte GEDCOM Format"
+msgstr "Erweiterungen für das gängige GEDCOM-Format."
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:42
 msgid "GEDCOM Extensions options"
@@ -20931,27 +20904,27 @@ msgstr "Setzen/Zurücksetzen Gramps, um eine Deterministische ID zu verwenden"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
-msgstr "*"
+msgstr "geb."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for died|d."
-msgstr "†"
+msgstr "gest."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for baptized|bap."
-msgstr "〰"
+msgstr "get."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:85
 msgid "short for christened|chr."
-msgstr "〰"
+msgstr "get."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
-msgstr "▭"
+msgstr "begr."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
 msgid "short for cremated|crem."
-msgstr "⚱"
+msgstr "krem."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"
@@ -21078,10 +21051,8 @@ msgid "Male avatar:"
 msgstr ""
 
 #: GraphView/graphview.py:847
-#, fuzzy
-#| msgid "Choose a category."
 msgid "Choose male avatar"
-msgstr "Wähle eine Kategorie."
+msgstr "Männlichen Avatar wählen"
 
 #: GraphView/graphview.py:859
 msgid "Female avatar:"
@@ -21314,7 +21285,7 @@ msgstr "Kurven"
 
 #: GraphView/graphview.py:3799
 msgid "Ortho"
-msgstr "Ortho"
+msgstr "Orthogonal"
 
 #: GraphView/graphview.py:3875
 #, fuzzy
@@ -21471,13 +21442,10 @@ msgid "Historical Context"
 msgstr "Biographie Inhalt"
 
 #: HistContext/HistContext.gpr.py:5
-#, fuzzy
-#| msgid ""
-#| "Whether to include the death of relatives during the lifetime of person."
 msgid "Lists relevant historical events during the lifetime of a Person"
 msgstr ""
-"Ob der Tod von Verwandten während der Lebenszeit der Person aufgenommen "
-"werden."
+"Listet relevante historische Ereignisse während der Lebenszeit einer Person "
+"auf"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
@@ -21572,7 +21540,7 @@ msgstr "Mediendateien sind schon synchron."
 #: GrampsWebSync/grampswebsync.py:331
 #, python-format
 msgid "Successfully downloaded %s media files."
-msgstr "%s Mediendateien erfolgreich heruntergeladen"
+msgstr "Erfolgreich heruntergeladen %s Mediendateien."
 
 #: GrampsWebSync/grampswebsync.py:334
 #, python-format
@@ -21803,7 +21771,7 @@ msgstr "Der Stil der für Etiketten und Überschriften verwendet wird"
 
 #: NLWebConnectPack/NLWebPack.py:34
 msgid "Open Archives"
-msgstr "Open Archives"
+msgstr "Offene Archive"
 
 #: NLWebConnectPack/NLWebPack.py:35
 msgid "Genealogy Online"
@@ -21815,7 +21783,7 @@ msgstr "Nationales Archiv"
 
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
-msgstr "Who (re)searches who?"
+msgstr "Wer erforscht/sucht wen?"
 
 #: NLWebConnectPack/NLWebPack.gpr.py:13
 msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
@@ -22081,32 +22049,32 @@ msgstr "%(female_name)s wurde getauft in %(year)s in %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:491
 #, python-format
 msgid "%(male_name)s was married in %(year)s at %(place)s."
-msgstr "%(male_name)s heiratete in %(year)s in %(place)s."
+msgstr "%(male_name)s war in %(year)s in %(place)s verheiratet."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:493
 #, python-format
 msgid "%(female_name)s was married in %(year)s at %(place)s."
-msgstr "%(female_name)s heiratete in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s verheiratet."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:496
 #, python-format
 msgid "%(male_name)s received an annulment in %(year)s at %(place)s."
-msgstr "%(male_name)s erhielt eine Annulierung in %(year)s in %(place)s."
+msgstr "%(male_name)s erhielt in %(year)s in %(place)s eine Annulierung."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:498
 #, python-format
 msgid "%(female_name)s received an annulment in %(year)s at %(place)s."
-msgstr "%(female_name)s erhielt eine Annulierung in %(year)s in %(place)s."
+msgstr "%(female_name)s erhielt in %(year)s in %(place)s eine Annulierung."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:502
 #, python-format
 msgid "%(male_name)s was baptized in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde getauft in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s getauft."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:504
 #, python-format
 msgid "%(female_name)s was baptized in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde getauft in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s getauft."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:507
 #, python-format
@@ -22131,32 +22099,32 @@ msgstr "%(female_name)s empfing eine bat mitzvah in %(year)s in %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:517
 #, python-format
 msgid "%(male_name)s was born in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde geboren in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s geboren."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:519
 #, python-format
 msgid "%(female_name)s was born in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde geboren in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s geboren."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:522
 #, python-format
 msgid "%(male_name)s was blessed in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde gesegnet in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s gesegnet."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:524
 #, python-format
 msgid "%(female_name)s was blessed in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde gesegnet in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s gesegnet."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:527
 #, python-format
 msgid "%(male_name)s was buried in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde beigesetzt in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s beigesetzt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:529
 #, python-format
 msgid "%(female_name)s was buried in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde beigesetzt in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s beigesetzt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:532
 #, python-format
@@ -22173,22 +22141,22 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:544
 #, python-format
 msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde konfirmiert in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s. konfirmiert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:546
 #, python-format
 msgid "%(female_name)s was confirmed in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde konfirmiert in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)skonfirmiert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:549
 #, python-format
 msgid "%(male_name)s was cremated in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde eingeäschert in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s eingeäschert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:551
 #, python-format
 msgid "%(female_name)s was cremated in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde eingeäschert in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s eingeäschert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:554
 #, python-format
@@ -22203,13 +22171,12 @@ msgstr "%(female_name)s starb in %(year)s in %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:559
 #, python-format
 msgid "%(male_name)s was awarded a degree in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde ein Abschluss verliehen in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s ein Abschluss verliehen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:561
 #, python-format
 msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
-msgstr ""
-"%(female_name)s wurde ein Abschluss verliehen in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s ein Abschluss verliehen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:564
 #, python-format
@@ -22294,12 +22261,12 @@ msgstr "%(female_name)s ist eingewandert in %(year)s in %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:611
 #, python-format
 msgid "%(male_name)s got married in %(year)s at %(place)s."
-msgstr "%(male_name)s hat geheiratet in %(year)s in %(place)s."
+msgstr "%(male_name)s hat in %(year)s in %(place)s geheirate."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:613
 #, python-format
 msgid "%(female_name)s got married in %(year)s at %(place)s."
-msgstr "%(female_name)s heiratete in %(year)s in %(place)s."
+msgstr "%(female_name)s hat in %(year)s in %(place)s geheiratet."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:616
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:627
@@ -22442,15 +22409,15 @@ msgstr "%(female_name)s ging in Ruhestand in %(year)s in %(place)s."
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
-msgstr "*"
+msgstr "geb."
 
 #: NetworkChart/NetworkChart.py:134
 msgid "death abbreviation|d."
-msgstr "†"
+msgstr "gest."
 
 #: NetworkChart/NetworkChart.py:135
 msgid "marriage abbreviation|m."
-msgstr "⚭"
+msgstr "verh."
 
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
@@ -22635,15 +22602,15 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
-msgstr "Umrandung männliche Box."
+msgstr "Männliche Boxkante"
 
 #: NetworkChart/NetworkChart.py:1019
 msgid "RGB-color for Male box edge."
-msgstr "RGB-Farbe für Umrandung männliche Box"
+msgstr "RGB-Farbe für den Rand der männlichen Box."
 
 #: NetworkChart/NetworkChart.py:1023
 msgid "RGB-color for Female box background."
-msgstr "RGB-Farbe für Hintergrund weibliche Box"
+msgstr "RGB-Farbe für den Hintergrund der weiblichen Box."
 
 # added:
 #: NetworkChart/NetworkChart.py:1026
@@ -22657,13 +22624,11 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
-msgstr "Umrandung weibliche Box."
+msgstr "Weibliche Boxkante"
 
 #: NetworkChart/NetworkChart.py:1034
-#, fuzzy
-#| msgid "RGB-color for Male box edge."
 msgid "RGB-color for Female box edge."
-msgstr "RGB-Farbe für Umrandung männliche Box"
+msgstr "RGB-Farbe für den Rand der weiblichen Box."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
@@ -22671,7 +22636,7 @@ msgstr "Anderer Hintergrund"
 
 #: NetworkChart/NetworkChart.py:1038
 msgid "RGB-color for other box background."
-msgstr "RGB-Farbe für Hintergrund andere Box"
+msgstr "RGB-Farbe für den Hintergrund anderer Boxen."
 
 #: NetworkChart/NetworkChart.py:1041
 msgid "Other Background Alpha"
@@ -22687,7 +22652,7 @@ msgstr "Familieverbindungslinie"
 
 #: NetworkChart/NetworkChart.py:1048
 msgid "RGB-color for family connector line."
-msgstr "RGB-Farbe für Familieverbindungslinie"
+msgstr "RGB-Farbe für die Verbindungslinie der Familie."
 
 #: NetworkChart/NetworkChart.py:1051
 msgid "Marriage Connector Line"
@@ -22695,7 +22660,7 @@ msgstr "Eheverbindungslinie"
 
 #: NetworkChart/NetworkChart.py:1052
 msgid "RGB-color for marriage connector line."
-msgstr "RGB-Farbe für Eheverbindungslinie"
+msgstr "RGB-Farbe für die Ehe-Verbindungslinie."
 
 #: NetworkChart/NetworkChart.py:1055
 msgid "Highlight Connector Line"
