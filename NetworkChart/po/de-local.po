@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -48,15 +48,15 @@ msgstr "Gerade"
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
-msgstr "*"
+msgstr "geb."
 
 #: NetworkChart/NetworkChart.py:134
 msgid "death abbreviation|d."
-msgstr "†"
+msgstr "gest."
 
 #: NetworkChart/NetworkChart.py:135
 msgid "marriage abbreviation|m."
-msgstr "⚭"
+msgstr "verh."
 
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
@@ -241,15 +241,15 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
-msgstr "Umrandung männliche Box."
+msgstr "Männliche Boxkante"
 
 #: NetworkChart/NetworkChart.py:1019
 msgid "RGB-color for Male box edge."
-msgstr "RGB-Farbe für Umrandung männliche Box"
+msgstr "RGB-Farbe für den Rand der männlichen Box."
 
 #: NetworkChart/NetworkChart.py:1023
 msgid "RGB-color for Female box background."
-msgstr "RGB-Farbe für Hintergrund weibliche Box"
+msgstr "RGB-Farbe für den Hintergrund der weiblichen Box."
 
 # added:
 #: NetworkChart/NetworkChart.py:1026
@@ -263,13 +263,11 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
-msgstr "Umrandung weibliche Box."
+msgstr "Weibliche Boxkante"
 
 #: NetworkChart/NetworkChart.py:1034
-#, fuzzy
-#| msgid "RGB-color for Male box edge."
 msgid "RGB-color for Female box edge."
-msgstr "RGB-Farbe für Umrandung männliche Box"
+msgstr "RGB-Farbe für den Rand der weiblichen Box."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
@@ -277,7 +275,7 @@ msgstr "Anderer Hintergrund"
 
 #: NetworkChart/NetworkChart.py:1038
 msgid "RGB-color for other box background."
-msgstr "RGB-Farbe für Hintergrund andere Box"
+msgstr "RGB-Farbe für den Hintergrund anderer Boxen."
 
 #: NetworkChart/NetworkChart.py:1041
 msgid "Other Background Alpha"
@@ -293,7 +291,7 @@ msgstr "Familieverbindungslinie"
 
 #: NetworkChart/NetworkChart.py:1048
 msgid "RGB-color for family connector line."
-msgstr "RGB-Farbe für Familieverbindungslinie"
+msgstr "RGB-Farbe für die Verbindungslinie der Familie."
 
 #: NetworkChart/NetworkChart.py:1051
 msgid "Marriage Connector Line"
@@ -301,7 +299,7 @@ msgstr "Eheverbindungslinie"
 
 #: NetworkChart/NetworkChart.py:1052
 msgid "RGB-color for marriage connector line."
-msgstr "RGB-Farbe für Eheverbindungslinie"
+msgstr "RGB-Farbe für die Ehe-Verbindungslinie."
 
 #: NetworkChart/NetworkChart.py:1055
 msgid "Highlight Connector Line"

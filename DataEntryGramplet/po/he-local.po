@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 10:31+0000\n"
+"PO-Revision-Date: 2025-02-21 17:44+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -60,7 +60,7 @@ msgstr "אדם חדש"
 
 #: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
-msgstr "הוספת קשר-גומלין"
+msgstr "הוספת יוחסה"
 
 #: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "No relation to active person"

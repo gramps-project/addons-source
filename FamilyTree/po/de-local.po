@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -258,11 +258,11 @@ msgstr "Textoptionen"
 
 #: FamilyTree/FamilyTree.py:1162
 msgid "The style used for names."
-msgstr "Stil für Namen"
+msgstr "Der für Namen verwendete Stil."
 
 #: FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "Stil für Daten (Geburt, Tod, Ehe, Scheidung)"
+msgstr "Der für die Daten verwendete Stil (Geburt, Tod, Heirat, Scheidung)."
 
 #: FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."

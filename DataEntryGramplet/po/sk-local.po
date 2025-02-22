@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -28,21 +28,19 @@ msgstr "Aktívna osoba"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
-msgstr "Gramplet Zápis dát"
+msgstr "Gramplet Zadávanie údajov"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
-msgstr ""
+msgstr "Gramplet pre rýchle zadávanie údajov"
 
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
 msgstr "Rodina:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
-#, fuzzy
-#| msgid "Source(s)"
 msgid "Sources?"
-msgstr "Zdroj(e)"
+msgstr "Zdroje?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
@@ -55,7 +53,7 @@ msgstr "Uložiť"
 
 #: DataEntryGramplet/DataEntryGramplet.py:92
 msgid "Abandon"
-msgstr "Zrušiť"
+msgstr "Opustiť"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
@@ -74,32 +72,24 @@ msgid "Add as a Parent"
 msgstr "Pridať ako rodiča"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
-#, fuzzy
-#| msgid "Add as a Spouse"
 msgid "Add as a Mother"
-msgstr "Pridať ako manžela/-ku"
+msgstr "Pridať ako matku"
 
 #: DataEntryGramplet/DataEntryGramplet.py:102
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Father"
-msgstr "Pridať ako rodiča"
+msgstr "Pridať ako otca"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
-msgstr "Pridať ako manžela/-ku"
+msgstr "Pridať ako manžela/manželku"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
-#, fuzzy
-#| msgid "Add as a Child"
 msgid "Add as a Wife"
-msgstr "Pridať ako dieťa"
+msgstr "Pridať ako manželku"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Husband"
-msgstr "Pridať ako rodiča"
+msgstr "Pridať ako manžela"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
@@ -111,13 +101,13 @@ msgstr "Pridať ako dieťa"
 
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
-msgstr "Kopírovať aktuálne údaje"
+msgstr "Kopírovať aktívne údaje"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
 #: DataEntryGramplet/DataEntryGramplet.py:315
 msgid "in"
-msgstr "in"
+msgstr "na"
 
 #: DataEntryGramplet/DataEntryGramplet.py:441
 #: DataEntryGramplet/DataEntryGramplet.py:569
@@ -127,11 +117,11 @@ msgstr "Gramplet Editovanie údajov: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
-msgstr "Zapíšte meno."
+msgstr "Prosím, zadajte meno."
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
-msgstr "Údaje novej osoby sa nedajú uložiť."
+msgstr "Nemožno pridať novú osobu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:531
@@ -142,29 +132,25 @@ msgstr "Údaje novej osoby sa nedajú uložiť."
 #: DataEntryGramplet/DataEntryGramplet.py:560
 #: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
-msgstr "Nastaviť aktívnu osobu."
+msgstr "Prosím, zadajte aktívnu osobu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:526
 msgid "Can't add new person as a parent."
-msgstr "Nepodarilo sa pridať novú osobu ako rodiča."
+msgstr "Nemožno pridať novú osobu ako rodiča."
 
 #: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
-msgstr "Zadajte pohlavie novej osoby."
+msgstr "Prosím, zadajte pohlavie novej osoby."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a mother."
-msgstr "Nepodarilo sa pridať novú osobu ako manželku/-a."
+msgstr "Nemožno pridať novú osobu ako matku."
 
 #: DataEntryGramplet/DataEntryGramplet.py:536
-#, fuzzy
-#| msgid "Can't add new person as a parent."
 msgid "Can't add new person as a father."
-msgstr "Nepodarilo sa pridať novú osobu ako rodiča."
+msgstr "Nemožno pridať novú osobu ako otca."
 
 #: DataEntryGramplet/DataEntryGramplet.py:541
 #: DataEntryGramplet/DataEntryGramplet.py:545
@@ -172,50 +158,42 @@ msgstr "Nepodarilo sa pridať novú osobu ako rodiča."
 #: DataEntryGramplet/DataEntryGramplet.py:805
 #: DataEntryGramplet/DataEntryGramplet.py:838
 msgid "Can't add new person as a spouse."
-msgstr "Nepodarilo sa pridať novú osobu ako manželku/-a."
+msgstr "Nemožno pridať novú osobu ako manžela/manželku."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
-#, fuzzy
-#| msgid "Can't add new person as a child."
 msgid "Can't add new person as a wife."
-msgstr "Nepodarilo sa pridať novú osobu ako dieťa."
+msgstr "Nemožno pridať novú osobu ako manželku."
 
 #: DataEntryGramplet/DataEntryGramplet.py:555
-#, fuzzy
-#| msgid "Can't add new person as a sibling."
 msgid "Can't add new person as a husband."
-msgstr "Nepodarilo sa pridať novú osobu ako súrodenca."
+msgstr "Nemožno pridať novú osobu ako manžela."
 
 #: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
-msgstr "Nepodarilo sa pridať novú osobu ako súrodenca."
+msgstr "Nemožno pridať novú osobu ako súrodenca."
 
 #: DataEntryGramplet/DataEntryGramplet.py:565
 #: DataEntryGramplet/DataEntryGramplet.py:938
 msgid "Can't add new person as a child."
-msgstr "Nepodarilo sa pridať novú osobu ako dieťa."
+msgstr "Nemožno pridať novú osobu ako dieťa."
 
 #: DataEntryGramplet/DataEntryGramplet.py:763
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Please set Active person."
-msgstr "Nastaviť aktívnu osobu."
+msgstr "Prosím, nastavte aktívnu osobu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a spouse to no one."
-msgstr "Nepodarilo sa pridať novú osobu ako manželku/-a."
+msgstr "Nemožno pridať novú osobu ako manžela/mamželku k žiadnej osobe."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr "Zadajte pohlavie novej alebo aktívnej osoby."
+msgstr "Prosím, nastavte pohlavie na aktívnej alebo novej osobe."
 
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
-msgstr "Nová osoba a aktívna osoba rovnakého pohlavia."
+msgstr "Aktívna a nová osoba majú rovnaké pohlavie."
 
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
-msgstr "Zadajte pohlavie aktívnej osoby."
+msgstr "Prosím, zadajte pohlavie aktívnej osoby."

@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -50,27 +50,27 @@ msgstr "Nachkommengenerationen"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
-msgstr "*"
+msgstr "geb."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for died|d."
-msgstr "†"
+msgstr "gest."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for baptized|bap."
-msgstr "〰"
+msgstr "get."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:85
 msgid "short for christened|chr."
-msgstr "〰"
+msgstr "get."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
-msgstr "▭"
+msgstr "begr."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
 msgid "short for cremated|crem."
-msgstr "⚱"
+msgstr "krem."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"

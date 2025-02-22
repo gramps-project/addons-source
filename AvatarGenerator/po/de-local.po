@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -86,7 +86,7 @@ msgstr "Ausgewählte Bilder entfernen."
 #: AvatarGenerator/AvatarGenerator.py:183
 #: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
-msgstr "Avatar Generator"
+msgstr "Avatargenerator"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-02-21 08:14+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -59,6 +59,8 @@ msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
 msgstr ""
+"<i>A instalação dos seguintes pacotes é <b>ABSOLUTAMENTE REQUERIDA</b>\n"
+" (requer a versão mínima ou superior)</i>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
 msgid ""
@@ -73,6 +75,8 @@ msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
 msgstr ""
+"<i>A instalação dos seguintes pacotes é <b>MUITO RECOMENDADA</b>, por ser "
+"necessária para geografia e mapas</i>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
 msgid ""
@@ -84,7 +88,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr ""
+msgstr "<i>A instalação dos seguintes pacotes é <b>OPCIONAL</b></i>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
@@ -110,6 +114,8 @@ msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
+"<i>A instalação dos seguintes pacotes é <b>RECOMENDADA</b>, se pretende "
+"traduzir ou desenvolver (extensões, etc.)</i>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
@@ -125,6 +131,9 @@ msgid ""
 "project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
 "to work</i>:\n"
 msgstr ""
+"<i>Pré-requistos para que as seguintes <a href=\"https://gramps-project.org/"
+"wiki/index.php?title=Third-party_Addons\">extensões de terceiros</a> "
+"funcionem</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
@@ -170,6 +179,9 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
+"Se tem um motivo para verificar pré-requisitos, é o momento certo para "
+"salvaguardar os seus ficheiros e testar as salvaguardas.\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
 msgid ""
@@ -180,24 +192,36 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Salvaguarda em Gramps XML</a> Encontra a opção "
+"\"Salvaguarda...\" no menu Árvores genealógicas, das versões recentes do "
+"Gramps, senão, use \"Exportar...\" no mesmo menu, mas desmarque as opções de "
+"privacidade no assistente de exportação, para incluir todos os dados.</i>\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
 msgid ""
 " • Backups can be made at any time and, at a minimum, on the first day of "
 "every month. But preferrably more often.\n"
 msgstr ""
+" • As salvaguardas podem-se fazer a qualquer momento, tendo como mínimo, o "
+"primeiro dia de cada mês. Preferencialmente, mais amiúde.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
 msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
 msgstr ""
+" • Recomendamos vivamente que faça salvaguardas dos seus ficheiros antes de "
+"qualquer actualização.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
 msgstr ""
+" • Teste as salvaguardas criando um novo ficheiro de família e importando a "
+"salvaguarda."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ", is the most current version.\n"
@@ -291,25 +315,27 @@ msgstr " (Requer "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
 msgid " • Berkeley Database library (bsddb3: "
-msgstr ""
+msgstr " • Biblioteca Berkeley Database (bsddb3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:675
 msgid " • SQLite Database library (sqlite3: "
-msgstr ""
+msgstr " • Biblioteca SQLite Database (sqlite3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:689
 msgid " • xdg-utils (Manual check see instructions link)"
-msgstr ""
+msgstr " • xdg-utils (verificação manual, veja a ligação às instruções)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:702
 msgid " • librsvg2 (Manual check see instructions link)"
-msgstr ""
+msgstr " • librsvg2 (verificação manual, veja a ligação às instruções)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:713
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
+" • language-pack-gnome-xx (verificação manual, veja a ligação às instruções) "
+"para o seu idioma <mostrar aqui TBD>"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
@@ -346,7 +372,7 @@ msgstr " • python-fontconfig em falta, requer versão 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
-msgstr ""
+msgstr " • python-fontconfig instalado, versão indisponível"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
@@ -359,6 +385,8 @@ msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (passou: versão %s ou superior instalada. Se não for Microsoft "
+"Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1015
 #, python-format
@@ -366,10 +394,12 @@ msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (requer a versão %s ou superior instalada. Se não for "
+"Microsoft Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1129
 msgid "can't found it because exiv2 not installed"
-msgstr ""
+msgstr "impossível encontrar, exiv2 não instalado"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 #, python-format
@@ -402,7 +432,7 @@ msgstr "não instalado"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
 msgid "     and one of either: (pydotplus: "
-msgstr ""
+msgstr "     e um de: (pydotplus: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
 msgid ") or (pygraphviz: "
@@ -460,12 +490,12 @@ msgstr " (lxml: não encontrado. Requer versão "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1776
 msgid " • Requires: MongoDB TBD / pymongo TBD"
-msgstr ""
+msgstr " • Requer: MongoDB TBD / pymongo TBD"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1790
 #, python-format
 msgid " • Operating System: %s"
-msgstr ""
+msgstr " • Sistema operativo: %s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
 msgid ""

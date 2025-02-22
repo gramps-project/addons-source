@@ -66,7 +66,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"PO-Revision-Date: 2025-02-20 23:04+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -118,11 +118,8 @@ msgstr ""
 "dell'azienda responsabile per la creazione di questa immagine."
 
 #: EditExifMetadata/editexifmetadata.py:167
-#, fuzzy
 msgid "Enter the copyright information for this image. \n"
-msgstr ""
-"Inserire le informazioni di copyright per questa immagine. \n"
-"Ad esempio: (C) 2010 Smith and Wesson"
+msgstr "Inserire le informazioni di copyright per questa immagine. \n"
 
 #: EditExifMetadata/editexifmetadata.py:169
 msgid ""

@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -43,19 +43,19 @@ msgstr "Sammlung von Websites für RU (erfordert libwebconnect)"
 
 #: RUWebConnectPack/RUWebPack.py:40
 msgid "OBD \"Memorial\""
-msgstr "OBD \"Memorial\""
+msgstr "OBD \"Gedenkstätte\""
 
 #: RUWebConnectPack/RUWebPack.py:41
 msgid "People memory"
-msgstr "People memory"
+msgstr "Gedächtnis der Menschen"
 
 #: RUWebConnectPack/RUWebPack.py:42
 msgid "Winners"
-msgstr "Winners"
+msgstr "Gewinner"
 
 #: RUWebConnectPack/RUWebPack.py:43
 msgid "Lived"
-msgstr "Lived"
+msgstr "Lebte"
 
 #: RUWebConnectPack/RUWebPack.py:44
 msgid "Open list"
@@ -63,11 +63,11 @@ msgstr "Open list"
 
 #: RUWebConnectPack/RUWebPack.py:45
 msgid "Wait for me"
-msgstr "Wait for me"
+msgstr "Wartet auf mich"
 
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
-msgstr "All Russia Family Tree (forum)"
+msgstr "Ganz Russland Stammbaum (Forum)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
@@ -75,7 +75,7 @@ msgstr "Yandex people"
 
 #: RUWebConnectPack/RUWebPack.py:49
 msgid "RIA Officers"
-msgstr "RIA Officers"
+msgstr "RIA-Beamte"
 
 #: RUWebConnectPack/RUWebPack.py:50
 msgid "FamilySpace"

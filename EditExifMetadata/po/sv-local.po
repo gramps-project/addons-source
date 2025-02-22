@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -152,10 +152,8 @@ msgstr ""
 "du säker på att du vill göra det?"
 
 #: EditExifMetadata/editexifmetadata.py:213
-#, fuzzy
-#| msgid "Clear tags"
 msgid "Clear GPS"
-msgstr "Rensa taggar"
+msgstr "Rensa GPS"
 
 #: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"
@@ -269,10 +267,8 @@ msgid "This button will clear all of the data fields shown here."
 msgstr "Denna knapp kommer att rensa visade datafält."
 
 #: EditExifMetadata/editexifmetadata.py:936
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
 msgid "This button will clear all of the GPS fields shown here."
-msgstr "Denna knapp kommer att rensa visade datafält."
+msgstr "Denna knapp kommer att rensa alla GPS-fält som visas här."
 
 #: EditExifMetadata/editexifmetadata.py:940
 msgid ""
@@ -363,14 +359,11 @@ msgid ""
 msgstr "Varning: Du är på väg att helt ta bort Exif-metadata från denna bild?"
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image?"
-msgstr "Varning: Du är på väg att helt ta bort Exif-metadata från denna bild?"
+msgstr ""
+"VARNING!   Du är på väg att helt radera GPS-metadata från den här bilden?"
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"

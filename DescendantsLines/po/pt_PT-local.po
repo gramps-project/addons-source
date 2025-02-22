@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-02-21 08:14+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -35,6 +35,7 @@ msgstr "Produz linhas de descendentes de um indivíduo"
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr ""
+"A utilização do tipo SVG para um documento suplementar não é suportada!"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
@@ -188,23 +189,27 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1617
 msgid "All Person's blocks have the same height"
-msgstr ""
+msgstr "Todos os blocos de indivíduos têm a mesma altura"
 
 #: DescendantsLines/DescendantsLines.py:1618
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
 msgstr ""
+"Todos os blocos de todos os indivíduos têm a mesma altura, que é a altura do "
+"bloco mais alto."
 
 #: DescendantsLines/DescendantsLines.py:1623
 msgid "All Person's blocks have the same width"
-msgstr ""
+msgstr "Todos os blocos de indivíduos têm a mesma largura"
 
 #: DescendantsLines/DescendantsLines.py:1624
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
 msgstr ""
+"Todos os blocos de todos os indivíduos têm a mesma largura, que é a largura "
+"do bloco mais largo."
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Colour blocks by Generation"
@@ -304,6 +309,8 @@ msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
 msgstr ""
+"O espaço a acrescentar entre uma barra de cônjuge e outro cônjuge no caso de "
+"famílias múltiplas com o mesmo descendente."
 
 #: DescendantsLines/DescendantsLines.py:1715
 msgid "Horizontal space descendant to spouse"
@@ -311,21 +318,23 @@ msgstr "Espaço horizontal de descendente a cônjuge"
 
 #: DescendantsLines/DescendantsLines.py:1716
 msgid "The space to add between the descendant and the spouse."
-msgstr ""
+msgstr "O espaço a acrescentar entre o descendente e o cônjuge."
 
 #: DescendantsLines/DescendantsLines.py:1721
 msgid "Horizonal space family to family"
-msgstr ""
+msgstr "Espaço horizontal família a família"
 
 #: DescendantsLines/DescendantsLines.py:1722
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
 msgstr ""
+"O espaço a acrescentar entre o descendente (ou cônjuge) mais externo de uma "
+"família e o descendente (ou cônjuge) mais externo da família seguinte."
 
 #: DescendantsLines/DescendantsLines.py:1727
 msgid "Horizontal distance spouse to family edge"
-msgstr ""
+msgstr "Distância horizontal do cônjuge ao contorno da família"
 
 #: DescendantsLines/DescendantsLines.py:1728
 msgid ""
@@ -333,6 +342,9 @@ msgid ""
 "bigger the value, more the center is moved to the left towards the "
 "descendant."
 msgstr ""
+"Se este valor for 0, a barra de filhos é centrada por baixo do cônjuge. "
+"Quanto maior o valor, mais o centro é deslocado à esquerda em direcção ao "
+"descendente."
 
 #: DescendantsLines/DescendantsLines.py:1735
 msgid "OL_PAD"
@@ -353,11 +365,11 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1746
 msgid "Children distance"
-msgstr ""
+msgstr "Distância dos filhos"
 
 #: DescendantsLines/DescendantsLines.py:1747
 msgid "The horizontal distance between two children of the same family."
-msgstr ""
+msgstr "A distância horizontal entre duas crianças da mesma família."
 
 #: DescendantsLines/DescendantsLines.py:1751
 msgid "Vertical edge child to child-bar"
@@ -377,15 +389,15 @@ msgstr "O número da largura mínima do filho"
 
 #: DescendantsLines/DescendantsLines.py:1762
 msgid "Space around text"
-msgstr ""
+msgstr "Espaço à volta do texto"
 
 #: DescendantsLines/DescendantsLines.py:1763
 msgid "The space to add around the text block of a person."
-msgstr ""
+msgstr "O espaço a acrescentar à volta do bloco de texto de um indivíduo."
 
 #: DescendantsLines/DescendantsLines.py:1767
 msgid "Space between lines of text"
-msgstr ""
+msgstr "Espaço entre linhas de texto"
 
 #: DescendantsLines/DescendantsLines.py:1768
 msgid "The space to add between a line and the next in a person text block."

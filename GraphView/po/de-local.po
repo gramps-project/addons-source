@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -172,10 +172,8 @@ msgid "Male avatar:"
 msgstr ""
 
 #: GraphView/graphview.py:847
-#, fuzzy
-#| msgid "Choose a category."
 msgid "Choose male avatar"
-msgstr "Wähle eine Kategorie."
+msgstr "Männlichen Avatar wählen"
 
 #: GraphView/graphview.py:859
 msgid "Female avatar:"
@@ -408,7 +406,7 @@ msgstr "Kurven"
 
 #: GraphView/graphview.py:3799
 msgid "Ortho"
-msgstr "Ortho"
+msgstr "Orthogonal"
 
 #: GraphView/graphview.py:3875
 #, fuzzy

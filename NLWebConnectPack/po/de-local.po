@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: NLWebConnectPack/NLWebPack.py:34
 msgid "Open Archives"
-msgstr "Open Archives"
+msgstr "Offene Archive"
 
 #: NLWebConnectPack/NLWebPack.py:35
 msgid "Genealogy Online"
@@ -47,7 +47,7 @@ msgstr "Nationales Archiv"
 
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
-msgstr "Who (re)searches who?"
+msgstr "Wer erforscht/sucht wen?"
 
 #: NLWebConnectPack/NLWebPack.gpr.py:13
 msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"

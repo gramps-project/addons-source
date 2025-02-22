@@ -66,7 +66,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"PO-Revision-Date: 2025-02-20 23:04+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -115,10 +115,9 @@ msgid "Note on Parent Family"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
-#, fuzzy, python-format
-#| msgid "(%(description)s)"
+#, python-format
 msgid "%s (association)"
-msgstr "(%(description)s)"
+msgstr "%s (associazione)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 #, fuzzy

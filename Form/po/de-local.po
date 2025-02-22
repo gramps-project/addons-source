@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 21:10+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -1446,7 +1446,7 @@ msgstr "KannSchreiben"
 
 #: Form/form_ca.xml.h:442
 msgid "22. Instruction: Write"
-msgstr "22. Instruction: Write"
+msgstr "22. Anweisung: Schreib"
 
 #: Form/form_ca.xml.h:444
 msgid "23. Deaf and Dumb"
@@ -1571,7 +1571,7 @@ msgstr "16. Religion"
 
 #: Form/form_ca.xml.h:493
 msgid "17. Profession, occupation, trade or means of living of each person"
-msgstr "17. Beruf, Beruf, Gewerbe oder Lebensgrundlage jeder Person"
+msgstr "17. Beruf, Beschäftigung, Gewerbe oder Lebensunterhalt jeder Person"
 
 #: Form/form_ca.xml.h:494
 msgid "OwnMeans"
@@ -2463,7 +2463,7 @@ msgstr "RollenNr."
 #: Form/form_us.xml.h:2268 Form/form_us.xml.h:2286 Form/form_us.xml.h:2296
 #: Form/form_us.xml.h:2315 Form/form_us.xml.h:2325 Form/form_us.xml.h:2502
 msgid "Page No."
-msgstr "Seitennummer"
+msgstr "Seite Nr."
 
 #: Form/form_us.xml.h:4 Form/form_us.xml.h:17 Form/form_us.xml.h:38
 #: Form/form_us.xml.h:59 Form/form_us.xml.h:99 Form/form_us.xml.h:168
@@ -3264,7 +3264,7 @@ msgstr "Tabak, pounds von"
 
 #: Form/form_us.xml.h:379
 msgid "Ginned Cotton, bales of 400 lbs."
-msgstr "Entkörnte Baumwolle, Ballen von 400 Pfund"
+msgstr "Entkörnte Baumwolle, Ballen von 400 lbs."
 
 #: Form/form_us.xml.h:380
 msgid "Wool, pounds of"
@@ -4654,20 +4654,16 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:961
-#, fuzzy
-#| msgid "Veteran?"
 msgid "WWII Veteran?"
-msgstr "Veteran?"
+msgstr "WWII Veteran?"
 
 #: Form/form_us.xml.h:962
 msgid "Did he ever serve in the U. S. Armed Forces during World War II?"
 msgstr ""
 
 #: Form/form_us.xml.h:963
-#, fuzzy
-#| msgid "Veteran?"
 msgid "WWI Veteran?"
-msgstr "Veteran?"
+msgstr "WWI Veteran?"
 
 #: Form/form_us.xml.h:964
 msgid "World War I?"
@@ -4733,7 +4729,7 @@ msgstr "Alter des Ehepartners"
 
 #: Form/form_us.xml.h:982
 msgid "File No."
-msgstr "Aktenzeichen"
+msgstr "Akte Nr."
 
 #: Form/form_us.xml.h:984 Form/form_us.xml.h:1003 Form/form_us.xml.h:1058
 msgid "Post Office Address"
@@ -5050,7 +5046,7 @@ msgstr "Hausnr."
 
 #: Form/form_us.xml.h:1130 Form/form_us.xml.h:1145
 msgid "Precinct No."
-msgstr "Bezirksnummer"
+msgstr "Revier Nr."
 
 #: Form/form_us.xml.h:1136
 msgid "Inside or Outside City Limits"
@@ -5586,7 +5582,7 @@ msgstr "Wenn Sie im Ausland geboren sind, sind Sie eingebürgert?"
 #: Form/form_us.xml.h:2110 Form/form_us.xml.h:2148 Form/form_us.xml.h:2186
 #: Form/form_us.xml.h:2224
 msgid "Years in U.S."
-msgstr "Jahre in USA"
+msgstr "Jahre in den U.S.A."
 
 #: Form/form_us.xml.h:1344 Form/form_us.xml.h:1422 Form/form_us.xml.h:1440
 msgid "Years in Iowa"
@@ -6756,7 +6752,7 @@ msgstr "Wahlbezirk Nr."
 
 #: Form/form_us.xml.h:1977 Form/form_us.xml.h:1998
 msgid "Ward No."
-msgstr "Bezirksnummer"
+msgstr "Bezirk Nr."
 
 #: Form/form_us.xml.h:1978 Form/form_us.xml.h:1999
 msgid "City or Village"
@@ -6977,7 +6973,7 @@ msgstr "Wenn Sie im Ausland geboren sind, sind Sie eingebürgert"
 #: Form/form_us.xml.h:2111 Form/form_us.xml.h:2149 Form/form_us.xml.h:2187
 #: Form/form_us.xml.h:2225
 msgid "Years in S.D."
-msgstr "Jahre in South Dakota"
+msgstr "Jahre in S.D."
 
 #: Form/form_us.xml.h:2131 Form/form_us.xml.h:2169 Form/form_us.xml.h:2207
 msgid "Division"
@@ -7085,7 +7081,7 @@ msgstr "Kompanie"
 
 #: Form/form_us.xml.h:2293 Form/form_us.xml.h:2322
 msgid "Reg't."
-msgstr "Regiment"
+msgstr "Reg't."
 
 #: Form/form_us.xml.h:2294 Form/form_us.xml.h:2323
 msgid "State or Vessel"
@@ -7127,7 +7123,7 @@ msgstr "Registrierungsdatum"
 #: Form/form_us.xml.h:2346 Form/form_us.xml.h:2430 Form/form_us.xml.h:2462
 #: Form/form_gb.xml.h:7 Form/form_gb.xml.h:44
 msgid "Registrar"
-msgstr "Registrar"
+msgstr "Registrierstelle"
 
 #: Form/form_us.xml.h:2349
 msgid "Twin, triplet or other"
@@ -7186,7 +7182,7 @@ msgstr "Aufnahmedatum"
 
 #: Form/form_us.xml.h:2393
 msgid "License No."
-msgstr "Lizenznummer"
+msgstr "Lizenz-Nr."
 
 #: Form/form_us.xml.h:2395
 msgid "Date of Marriage"
@@ -7251,7 +7247,7 @@ msgstr "Bildungsstand"
 
 #: Form/form_us.xml.h:2453
 msgid "Social Security No."
-msgstr "Sozialversicherungsnummer"
+msgstr "Sozialversicherungs-Nr."
 
 #: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
 msgid "Date of Death"
@@ -7315,11 +7311,11 @@ msgstr "Karte (A, B oder C)"
 
 #: Form/form_us.xml.h:2521
 msgid "Serial No."
-msgstr "Seriennummer"
+msgstr "Laufende Nr."
 
 #: Form/form_us.xml.h:2522
 msgid "Registration No."
-msgstr "Registrierungsnummer"
+msgstr "Registrierung Nr."
 
 #: Form/form_us.xml.h:2523
 msgid "Order No."
@@ -7895,10 +7891,8 @@ msgid "Deceased"
 msgstr "Verstorben"
 
 #: Form/form_gb.xml.h:48
-#, fuzzy
-#| msgid "Maiden name of wife"
 msgid "Maiden surname of woman who was married"
-msgstr "Mädchenname der Frau"
+msgstr "Mädchenname der Frau, die verheiratet war"
 
 #: Form/form_gb.xml.h:53
 #, fuzzy
@@ -8437,7 +8431,7 @@ msgstr "Stadt oder Dorf"
 
 #: Form/form_gb.xml.h:410
 msgid "House Schedule No"
-msgstr "Haus Verzeichnis Nr."
+msgstr "Haus Zeitplan Nr"
 
 #: Form/form_gb.xml.h:412
 msgid "Relation to Head"
@@ -8479,7 +8473,7 @@ msgstr "Ob Blind oder Taub und Stumm"
 #: Form/form_gb.xml.h:442 Form/form_gb.xml.h:469 Form/form_gb.xml.h:497
 #: Form/form_gb.xml.h:534 Form/form_gb.xml.h:571
 msgid "No. of Children from 5 to 13 attending School"
-msgstr "Anzahl der Kinder zwischen 5 und 13 die die Schule besuchen"
+msgstr "Anzahl der Kinder von 5 bis 13 Jahren, die eine Schule besuchen"
 
 #: Form/form_gb.xml.h:443 Form/form_gb.xml.h:470 Form/form_gb.xml.h:498
 #: Form/form_gb.xml.h:535 Form/form_gb.xml.h:572

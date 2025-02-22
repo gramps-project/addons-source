@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-02-21 08:14+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -223,13 +223,15 @@ msgstr "Se deve incluir um índice de locais no final do relatório."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1501
 msgid "Include the 'Report appearances' section with each person"
-msgstr ""
+msgstr "Incluir a secção \"Relatar aparições\" em cada indivíduo"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1503
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
 msgstr ""
+"A secção \"Relatar aparições\" mostra outros locais do relatório onde o "
+"indivíduo é mencionado."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1570
 msgid "The style used for the children list."

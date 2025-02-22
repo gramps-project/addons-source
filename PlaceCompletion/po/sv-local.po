@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -56,10 +56,9 @@ msgid "Non existing group used in get"
 msgstr "Ej befintlig grupp använd i get"
 
 #: PlaceCompletion/PlaceCompletion.py:282
-#, fuzzy, python-format
-#| msgid "Failed to create %s: %s"
+#, python-format
 msgid "PlaceCompletion is unable to create %s %s"
-msgstr "Fel vid skapandet av %s: %s"
+msgstr "PlaceCompletion kan inte skapa %s %s"
 
 #: PlaceCompletion/PlaceCompletion.py:340
 msgid "Places tool"
@@ -102,10 +101,8 @@ msgid "Examining places"
 msgstr "Undersöker platser"
 
 #: PlaceCompletion/PlaceCompletion.py:685
-#, fuzzy
-#| msgid "Show Tags"
 msgid "Set Tag"
-msgstr "Visa taggar"
+msgstr "Ställ in Tagg"
 
 #: PlaceCompletion/PlaceCompletion.py:687
 msgid "Doing Place changes"
@@ -175,10 +172,8 @@ msgid "City[, State]"
 msgstr "Stad[, Stat]"
 
 #: PlaceCompletion/PlaceCompletion.py:1145
-#, fuzzy
-#| msgid "City, County, State, Country"
 msgid "City,PostalCode,Country"
-msgstr "Stad, Län, Delstat, Land"
+msgstr "Stad,Postnummer,Land"
 
 #: PlaceCompletion/PlaceCompletion.py:1147
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
@@ -189,16 +184,12 @@ msgid "TitleStart [, City] [, State]"
 msgstr "Starttitel [, Stad] [, Stat]"
 
 #: PlaceCompletion/PlaceCompletion.py:1151
-#, fuzzy
-#| msgid "TitleStart [, City] [, State]"
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
-msgstr "Starttitel [, Stad] [, Stat]"
+msgstr "Starttitel [, Stad] [, Län] [, Stat] [, Land]"
 
 #: PlaceCompletion/PlaceCompletion.py:1153
-#, fuzzy
-#| msgid "TitleStart [, City] [, State]"
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
-msgstr "Starttitel [, Stad] [, Stat]"
+msgstr "Starttitel [, Stad] [, Zip] [, Län] [, Stat] [, Land]"
 
 #: PlaceCompletion/PlaceCompletion.py:1177
 msgid "Don't search"
@@ -213,10 +204,8 @@ msgid "GeoNames country file, city localized variants search"
 msgstr "GeoNames landfil, stad lokaliserad-variantssökning"
 
 #: PlaceCompletion/PlaceCompletion.py:1190
-#, fuzzy
-#| msgid "GeoNames country file, city search"
 msgid "GeoNames country file, county/city search"
-msgstr "GeoNames-landfil, stadssökning"
+msgstr "GeoNames-landfil, län/stadssökning"
 
 #: PlaceCompletion/PlaceCompletion.py:1202
 msgid "GeoNames country file, title begin, general search"
@@ -231,10 +220,8 @@ msgid "GNS Geonet country file, city search"
 msgstr "GNS Geonet landfil, stadssökning"
 
 #: PlaceCompletion/PlaceCompletion.py:1228
-#, fuzzy
-#| msgid "GNS Geonet country file, city search"
 msgid "GNS Geonet country file, county/city search"
-msgstr "GNS Geonet landfil, stadssökning"
+msgstr "GNS Geonet landfil, län/stadssökning"
 
 #: PlaceCompletion/PlaceCompletion.py:1236
 msgid "GNS Geonet country file, title begin, general search"
@@ -261,10 +248,8 @@ msgid "Apply all suggested changes"
 msgstr "Tillämpa alla föreslagna ändringar"
 
 #: PlaceCompletion/placecompletion.glade:148
-#, fuzzy
-#| msgid "Select the name for which you want to see."
 msgid "Selection of the Places you want to complete:"
-msgstr "Välj det namn som du vill se."
+msgstr "Välj de platser du vill slutföra:"
 
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
@@ -295,10 +280,8 @@ msgid "Height:"
 msgstr "Höjd:"
 
 #: PlaceCompletion/placecompletion.glade:527
-#, fuzzy
-#| msgid "Latitude, Longitude"
 msgid "1. Look up latitude and longitude:"
-msgstr "Latitud, Longitud"
+msgstr "1. Slå upp latitud och longitud:"
 
 #: PlaceCompletion/placecompletion.glade:554
 msgid "Search in:"

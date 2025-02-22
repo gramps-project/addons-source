@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -40,7 +40,7 @@ msgstr "Vzťh."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr "DNA"
+msgstr "Zd. DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Leg."

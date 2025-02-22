@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 10:31+0000\n"
+"PO-Revision-Date: 2025-02-21 17:44+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -48,16 +48,12 @@ msgstr ""
 "גרמפלט אבחון שנועד להעריך אם כל דרישות הקדם הנחוצות להפעלה תקינה, מותקנות."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>חלופי</b></u>\n"
+"<u><b>חבילות נדרשות</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
 msgid ""
@@ -66,16 +62,12 @@ msgid ""
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>חלופי</b></u>\n"
+"<u><b>חבילות מומלצות</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
 msgid ""
@@ -346,10 +338,8 @@ msgid " (Requires version 0.5.x)"
 msgstr " (נדרשת גרסה 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
-#, fuzzy
-#| msgid " (lxml: not found. Requires version "
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr " (lxml: לא נמצאו. נדרשת גרסה "
+msgstr " python-fontconfig לא נמצא, (נדרשת גרסה 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"

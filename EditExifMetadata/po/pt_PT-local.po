@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-02-21 08:14+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -84,18 +84,24 @@ msgid ""
 "Enter the Latitude GPS coordinates for this image,\n"
 "Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
 msgstr ""
+"Insira as coordenadas GPS de latitude desta imagem,\n"
+"Exemplo: -43.722965, -43:43:22, 38° 38′ 03″ N"
 
 #: EditExifMetadata/editexifmetadata.py:179
 msgid ""
 "Enter the Longitude GPS coordinates for this image,\n"
 "Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
 msgstr ""
+"Insira as coordenadas GPS de longitude desta imagem,\n"
+"Exemplo: -10.396378, -10:23:46, 105° 6′ 6″ W"
 
 #: EditExifMetadata/editexifmetadata.py:182
 msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
+"Esta é a medida acima ou abaixo do nível do mar. É medida em metros. Por "
+"exemplo: 200,558, -200,558"
 
 #: EditExifMetadata/editexifmetadata.py:191
 msgid ""
@@ -145,7 +151,7 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:213
 msgid "Clear GPS"
-msgstr ""
+msgstr "Limpar GPS"
 
 #: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"
@@ -174,7 +180,7 @@ msgstr "Por favor, converta a imagem para um tipo compatível com Exiv2..."
 #: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr ""
+msgstr "Tamanho da image: {width} x {height} pixels"
 
 #: EditExifMetadata/editexifmetadata.py:481
 #: EditExifMetadata/editexifmetadata.py:1440

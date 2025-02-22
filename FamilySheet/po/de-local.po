@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -158,7 +158,7 @@ msgstr "Der Grundstil, der für Text verwendet wird"
 
 #: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
-msgstr "Der Stil, der für den Seitenschlüssel oben verwendet wird."
+msgstr "Der Stil für die Seitentaste im oberen Bereich"
 
 #: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"

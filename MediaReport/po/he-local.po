@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 10:31+0000\n"
+"PO-Revision-Date: 2025-02-21 17:44+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -77,11 +77,11 @@ msgstr "הערה תותאמת אישית תכלל בדוח"
 
 #: MediaReport/media_report.py:442
 msgid "Include referenced people"
-msgstr "הכללת אנשים שאליהם קיימת הפניה"
+msgstr "הכללת אנשים מאוזכרים"
 
 #: MediaReport/media_report.py:443
 msgid "Referenced people will be included"
-msgstr "אנשים שאליהם קיימת הפניה יכללו בדוח"
+msgstr "אנשים מאוזכרים יכללו"
 
 #: MediaReport/media_report.py:446
 msgid "Include media data"
