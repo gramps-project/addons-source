@@ -66,7 +66,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"PO-Revision-Date: 2025-02-20 23:04+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -651,10 +651,8 @@ msgid "Cannot parse \"%(file)s\" via etree"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:359
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Parsing file..."
-msgstr "Elaborazione in corso...\n"
+msgstr "Elaborazione del file..."
 
 #: lxml/lxmlGramplet.py:456
 msgid "Missing header"
@@ -678,10 +676,8 @@ msgid "File parsed with"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:498
-#, fuzzy
-#| msgid "First generation"
 msgid "File was generated on "
-msgstr "Prima generazione"
+msgstr "Il file è stato generato il "
 
 #: lxml/lxmlGramplet.py:498
 msgid " by Gramps "
@@ -1432,11 +1428,8 @@ msgid "Show persons"
 msgstr "Nuova persona"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
-#, fuzzy
-#| msgid "Whether to show duplicate family trees in the report."
 msgid "Whether to show events and persons mentioned in the note"
-msgstr ""
-"Indica se visualizzare o meno gli alberi familiari duplicati nel resoconto."
+msgstr "Indica se visualizzare o meno gli eventi e le persone citate nella nota"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
 msgid "The style used for the title of the report."
@@ -1551,10 +1544,8 @@ msgid "Include siblings"
 msgstr "Includere gli eventi"
 
 #: GenealogyTree/gt_sandclock.py:247
-#, fuzzy
-#| msgid "Include index of Places"
 msgid "Include siblings of ancestors."
-msgstr "Includi l'indice dei luoghi"
+msgstr "Includi fratelli e sorelle degli ascendenti."
 
 #: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
 #: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
@@ -1618,10 +1609,9 @@ msgstr "Opzioni di testo"
 #: D3Charts/DescendantIndentedTree.py:1677
 #: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
 #: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
-#, fuzzy, python-format
-#| msgid "Failure writing %s"
+#, python-format
 msgid "Failed writing %s: %s"
-msgstr "Errore durante la scrittura di %s"
+msgstr "Scrittura di %s non riuscita: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:345
 #: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
@@ -1680,17 +1670,13 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:867
 #: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
-#, fuzzy
-#| msgid "The destination file for the content."
 msgid "The destination path for generated files."
-msgstr "Il file di destinazione per il contenuto"
+msgstr "Il percorso di destinazione per i file generati."
 
 #: D3Charts/AncestralCollapsibleTree.py:872
 #: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
-#, fuzzy
-#| msgid "The destination file for the content."
 msgid "The destination file name for html content."
-msgstr "Il file di destinazione per il contenuto"
+msgstr "Il nome di file di destinazione per il contenuto HTML."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
@@ -2862,10 +2848,9 @@ msgid "Exporting family tree data ..."
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:1737
-#, fuzzy, python-format
-#| msgid "%(type)s:"
+#, python-format
 msgid "%(type)s: %(value)s"
-msgstr "%(type)s:"
+msgstr "%(type)s: %(value)s"
 
 #: DynamicWeb/dynamicweb.py:2011
 #, python-format
@@ -2900,10 +2885,9 @@ msgid "(filtered from _MAX_ total entries)"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2920
-#, fuzzy, python-format
-#| msgid "%d. %s"
+#, python-format
 msgid "(m. %s)"
-msgstr "%d. %s"
+msgstr "(spos. %s)"
 
 #: DynamicWeb/dynamicweb.py:2921
 msgid "(sort by name)"
@@ -3704,10 +3688,8 @@ msgid "Note for custom page %(index)i"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5225
-#, fuzzy
-#| msgid "The style used for the first personal entry."
 msgid "A note to be used for the custom page content.\n"
-msgstr "Lo stile usato la prima registrazione personale."
+msgstr "Una nota da usare per il contenuto personalizzato della pagina.\n"
 
 #: DynamicWeb/dynamicweb.py:5230
 #, python-format
@@ -3899,16 +3881,14 @@ msgstr[0] "Importazione completata: %d secondo"
 msgstr[1] "Importazione completata: %d secondi"
 
 #: CombinedView/basepage.py:493
-#, fuzzy, python-format
-#| msgid "%(date)s, %(place)s"
+#, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
-msgstr "%(date)s, %(place)s"
+msgstr "%(abbrev)s %(date)s presso %(place)s"
 
 #: CombinedView/basepage.py:495
-#, fuzzy, python-format
-#| msgid "%(date)s, %(place)s"
+#, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
-msgstr "%(date)s, %(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -3921,10 +3901,9 @@ msgid "%(event_type)s: %(date)s"
 msgstr "%(event_type)s: %(date)s"
 
 #: CombinedView/personpage.py:604
-#, fuzzy, python-format
-#| msgid "%(date)s, %(place)s"
+#, python-format
 msgid "%(event_type)s: %(place)s"
-msgstr "%(date)s, %(place)s"
+msgstr "%(event_type)s: %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
@@ -4425,10 +4404,9 @@ msgstr "testimoni"
 
 #: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
 #: DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-format
-#| msgid "Failure writing %s"
+#, python-format
 msgid "Failure writing %s: %s"
-msgstr "Errore durante la scrittura di %s"
+msgstr "Errore durante la scrittura di %s: %s"
 
 #: DenominoViso/DenominoViso.py:395
 #, fuzzy
@@ -5690,10 +5668,8 @@ msgid "Error: login failed"
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
-#, fuzzy
-#| msgid "done!\n"
 msgid "done."
-msgstr "fatto!\n"
+msgstr "fatto."
 
 #: PhpGedView/phpgedviewconnector.py:347
 msgid "Connecting..."
@@ -6569,11 +6545,8 @@ msgstr ""
 "dell'azienda responsabile per la creazione di questa immagine."
 
 #: EditExifMetadata/editexifmetadata.py:167
-#, fuzzy
 msgid "Enter the copyright information for this image. \n"
-msgstr ""
-"Inserire le informazioni di copyright per questa immagine. \n"
-"Ad esempio: (C) 2010 Smith and Wesson"
+msgstr "Inserire le informazioni di copyright per questa immagine. \n"
 
 #: EditExifMetadata/editexifmetadata.py:169
 msgid ""
@@ -7594,10 +7567,8 @@ msgid ""
 msgstr ""
 
 #: BirthOrder/birthorder.glade:232
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done"
-msgstr "Fatto!\n"
+msgstr "Fatto"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
@@ -8357,10 +8328,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process relationships..."
-msgstr "Elaborazione in corso...\n"
+msgstr "Elaborazione delle relazioni..."
 
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
@@ -8967,16 +8936,14 @@ msgid "Set Privacy Tool"
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
-#, fuzzy, python-format
-#| msgid "Protect private items"
+#, python-format
 msgid "Set private: %d %s\n"
-msgstr "Proteggi gli elementi privati"
+msgstr "Rendi privato: %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:92
-#, fuzzy, python-format
-#| msgid "Protect private items"
+#, python-format
 msgid "Not private: %d %s\n"
-msgstr "Proteggi gli elementi privati"
+msgstr "Non privato: %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:107
 msgid "Set persons private.."
@@ -18452,10 +18419,9 @@ msgid "Address: %(location)s"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:469
-#, fuzzy, python-format
-#| msgid "%(type)s:"
+#, python-format
 msgid "; %(type)s: %(value)s"
-msgstr "%(type)s:"
+msgstr "; %(type)s: %(value)s"
 
 #: FamilySheet/FamilySheet.py:557
 #, fuzzy
@@ -18673,10 +18639,9 @@ msgid "Note on Parent Family"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
-#, fuzzy, python-format
-#| msgid "(%(description)s)"
+#, python-format
 msgid "%s (association)"
-msgstr "(%(description)s)"
+msgstr "%s (associazione)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 #, fuzzy
@@ -19428,10 +19393,9 @@ msgid "Filter options"
 msgstr "Opzioni di testo"
 
 #: RemoveTagTool/RemoveTagTool.py:151
-#, fuzzy, python-format
-#| msgid "All Places"
+#, python-format
 msgid "All %s"
-msgstr "Tutti i luoghi"
+msgstr "Tutti i %s"
 
 #: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
 #: RemoveTagTool/RemoveTagTool.gpr.py:25
@@ -19454,10 +19418,8 @@ msgid "No %s objects were found in database."
 msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:249
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process tags..."
-msgstr "Elaborazione in corso...\n"
+msgstr "Elaborazione etichette..."
 
 #: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
@@ -19930,10 +19892,11 @@ msgid "Now alive"
 msgstr ""
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
-#, fuzzy, python-format
-#| msgid "The number of descendant generations to include in the tree"
+#, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr "Il numero di generazioni di discendenti da includere nell'albero"
+msgstr ""
+"Visti = numero di discendenti di cui %s ha visto la nascita durante la sua "
+"vita"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
@@ -21874,16 +21837,14 @@ msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:544
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s and %(mate)s "
+#, python-format
 msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
-msgstr "%(event_name)s di %(name)s e %(mate)s "
+msgstr "%(male_name)s riceva la confermazione nel %(year)s presso %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:546
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s and %(mate)s "
+#, python-format
 msgid "%(female_name)s was confirmed in %(year)s at %(place)s."
-msgstr "%(event_name)s di %(name)s e %(mate)s "
+msgstr "%(female_name)s riceva la confermazione nel %(year)s presso %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:549
 #, python-format
@@ -22001,10 +21962,9 @@ msgid "%(male_name)s got married in %(year)s at %(place)s."
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:613
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s and %(mate)s "
+#, python-format
 msgid "%(female_name)s got married in %(year)s at %(place)s."
-msgstr "%(event_name)s di %(name)s e %(mate)s "
+msgstr "%(female_name)s si sposa nel %(year)s presso %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:616
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:627
@@ -22135,10 +22095,9 @@ msgid "%(male_name)s retired in %(year)s at %(place)s."
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:695
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s and %(mate)s "
+#, python-format
 msgid "%(female_name)s retired in %(year)s at %(place)s."
-msgstr "%(event_name)s di %(name)s e %(mate)s "
+msgstr "%(female_name)s va in pensione nel %(year)s presso %(place)s."
 
 #: NetworkChart/NetworkChart.py:133
 #, fuzzy
