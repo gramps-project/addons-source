@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-02-20 11:39+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -48,8 +48,7 @@ msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
 msgstr ""
-"Doorzoekt de hele database, zoekend naar media met hetzelfde pad en voegt "
-"deze samen."
+"Doorzoekt de hele database naar media met hetzelfde pad en voegt deze samen."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
@@ -65,13 +64,13 @@ msgstr "Bron om te verwijderen en/of toe te voegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
-msgstr "Verwijder eerder toegevoegde gebeurtenissen, notities en bronnen"
+msgstr "Eerder toegevoegde gebeurtenissen, notities en bronnen verwijderen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
-"Verwijder berekende gebeurtenissen, notities en bronnen; dit wordt "
+"Berekende gebeurtenissen, notities en bronnen verwijderen; dit wordt "
 "onmiddellijk uitgevoerd"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
@@ -84,7 +83,7 @@ msgstr "Geboortegebeurtenissen zonder datum toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
-msgstr "Geboortegebeurtenissen met datums toevoegen"
+msgstr "Geboortegebeurtenissen met datum toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
@@ -96,23 +95,23 @@ msgstr "Geen overlijdensgebeurtenissen toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
-msgstr "Overlijdensgebeurtenissen zonder datums toevoegen"
+msgstr "Overlijdensgebeurtenissen zonder datum toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
-msgstr "Overlijdensgebeurtenissen met datums toevoegen"
+msgstr "Overlijdensgebeurtenissen met datum toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
-msgstr "Overlijdensgebeurtenissen met of zonder geschatte datums toevoegen"
+msgstr "Overlijdensgebeurtenissen met of zonder geschatte datum toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
-msgstr "Maximale leeftijd"
+msgstr "Maximum leeftijd"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
-msgstr "Maximale leeftijd die iemand kan bereiken"
+msgstr "Maximum leeftijd die iemand kan bereiken"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
@@ -128,7 +127,7 @@ msgstr "Geschatte datums"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
-msgstr "Benaderend (ongeveer)"
+msgstr "Circa (ongeveer)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
@@ -136,7 +135,7 @@ msgstr "Uitersten (voor en na)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr "Gebeurtenissendatums zijn ofwel ongeveer of voor/na"
+msgstr "Datums van gebeurtenissen zijn ofwel ongeveer of voor/na"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -216,11 +215,11 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
-msgstr "Verwijderen en opnieuw start kiezen"
+msgstr "Verwijderen en selectie opnieuw uitvoeren"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
-msgstr "Selecteer gegevens opnieuw"
+msgstr "Gegevens opnieuw selecteren"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
@@ -228,7 +227,7 @@ msgstr "Weet u zeker dat u gegevens opnieuw wilt selecteren?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:216
 msgid "Run Select Again"
-msgstr "Opnieuw starten"
+msgstr "Selectie opnieuw uitvoeren"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
@@ -249,11 +248,11 @@ msgstr "Oude schattingen verwijderen... "
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
-msgstr "'%s'verwijderen..."
+msgstr "'%s' verwijderen…"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
-msgstr "ok!\n"
+msgstr "Klaar!\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 msgid ""
@@ -277,7 +276,7 @@ msgstr "Overlijdensgebeurtenis toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
-msgstr "Er hoeven geen gebeurtenissen toegevoegd te worden."
+msgstr "Geen gebeurtenissen om toe te voegen."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
