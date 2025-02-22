@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 20:40+0000\n"
+"PO-Revision-Date: 2025-02-22 17:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -249,7 +249,7 @@ msgstr "Odstraňuje sa '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
-msgstr "Hotovo!\n"
+msgstr "hotovo!\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 msgid ""
@@ -2768,11 +2768,11 @@ msgstr "Zobrazenie Html"
 
 #: HtmlView/htmlview.gpr.py:32
 msgid "A view showing html pages embedded in Gramps"
-msgstr ""
+msgstr "Pohľad zobrazujúci html stránky vložené do Gramps"
 
 #: HtmlView/htmlview.gpr.py:40
 msgid "Web"
-msgstr ""
+msgstr "Web"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 #, fuzzy
@@ -2789,11 +2789,11 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
-msgstr "Dynamické WWW stránky"
+msgstr "Dynamická webová správa"
 
 #: DynamicWeb/dynamicweb.gpr.py:17
 msgid "Produces dynamic web pages for the database"
-msgstr "Vytvára dynamické WWW stránky z databáze"
+msgstr "Produkuje dynamické webové stránky pre databázu"
 
 #: DynamicWeb/dynamicweb.py:334
 msgid "SVG graphical tree"
@@ -2810,23 +2810,23 @@ msgstr "Vlastná stránka %(index)i"
 
 #: DynamicWeb/dynamicweb.py:358
 msgid "Ascending tree"
-msgstr "Strom predkov"
+msgstr "Stúpajúci strom"
 
 #: DynamicWeb/dynamicweb.py:359
 msgid "Descending tree"
-msgstr "Strom potomkov"
+msgstr "Klesajúci strom"
 
 #: DynamicWeb/dynamicweb.py:360
 msgid "Descending tree with spouses"
-msgstr "Strom potomkov s partnermi"
+msgstr "Klesajúci strom s manželskými partnermi"
 
 #: DynamicWeb/dynamicweb.py:361
 msgid "Ascending and descending tree"
-msgstr "Strom predkov a potomkov"
+msgstr "Stúpajúci a klesajúci strom"
 
 #: DynamicWeb/dynamicweb.py:362
 msgid "Ascending and descending tree with spouses"
-msgstr "Strom predkov a potomkov s partnermi"
+msgstr "Stúpajúci a klesajúci strom s manželskými partnermi"
 
 #: DynamicWeb/dynamicweb.py:394
 msgid "Size proportional to number of ancestors"
@@ -2838,11 +2838,11 @@ msgstr "Homogénne rozdelenie rodičov"
 
 #: DynamicWeb/dynamicweb.py:409
 msgid "Age based gradient"
-msgstr "Prechod založený na veku"
+msgstr "Gradient založený na veku"
 
 #: DynamicWeb/dynamicweb.py:431
 msgid "Gradient"
-msgstr "Prechod"
+msgstr "Gradient"
 
 #: DynamicWeb/dynamicweb.py:780 DynamicWeb/dynamicweb.py:786
 #, python-format
@@ -2851,11 +2851,11 @@ msgstr "Nepodarilo sa vytvoriť adresár: %(path)s"
 
 #: DynamicWeb/dynamicweb.py:816 DynamicWeb/dynamicweb.py:4102
 msgid "Dynamic Web Site Report"
-msgstr "Dynamický WWW výkaz"
+msgstr "Správa dynamickej webovej stránky"
 
 #: DynamicWeb/dynamicweb.py:816
 msgid "Exporting family tree data ..."
-msgstr "Exportujú sa data rodokmeňu ..."
+msgstr "Exportovanie údajov rodinného stromu ..."
 
 #: DynamicWeb/dynamicweb.py:1737
 #, python-format
@@ -2871,11 +2871,11 @@ msgstr "Nepodarilo sa konvertovať \"%(path)s\" na relatívnu cestu."
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr ""
-"Táto konfigurácia stránok je nesprávna: obsah niekoľkých stránok je zhodný"
+"Táto konfigurácia stránok nie je platná: niekoľko stránok má rovnaký obsah"
 
 #: DynamicWeb/dynamicweb.py:2368
 msgid "DynWeb|Home"
-msgstr "Domov"
+msgstr "DynWeb|Domov"
 
 #: DynamicWeb/dynamicweb.py:2375 DynamicWeb/dynamicweb.py:2442
 #: DynamicWeb/dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2456
@@ -2893,12 +2893,12 @@ msgstr "Indexy"
 
 #: DynamicWeb/dynamicweb.py:2918
 msgid "(filtered from _MAX_ total entries)"
-msgstr "(filtrované z _MAX_ položiek celkovo)"
+msgstr "(filterované z _MAX_ celkových záznamov)"
 
 #: DynamicWeb/dynamicweb.py:2920
 #, python-format
 msgid "(m. %s)"
-msgstr "(vyd./žen. %s)"
+msgstr "(⚭ %s)"
 
 #: DynamicWeb/dynamicweb.py:2921
 msgid "(sort by name)"
@@ -2910,11 +2910,11 @@ msgstr "(zoradiť podľa počtu)"
 
 #: DynamicWeb/dynamicweb.py:2925
 msgid ": activate to sort column ascending"
-msgstr ": aktivujte pre zoradenie stĺpca vzostupne"
+msgstr ": aktivovať na zoradenie stĺpca vzostupne"
 
 #: DynamicWeb/dynamicweb.py:2929
 msgid ": activate to sort column descending"
-msgstr ": aktivujte pre zoradenie stĺpca zostupne"
+msgstr ": aktivovať na zoradenie stĺpca zostupne"
 
 #: DynamicWeb/dynamicweb.py:2934
 msgid ""
@@ -2922,13 +2922,13 @@ msgid ""
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
 "is UTF-8.</p>"
 msgstr ""
-"<p>Na tejto stránke nádjete SVG kód.<br>Skopírujte obsah do textového "
-"editoru a uložte ho ako súbor SVG.<br>Uistite sa, že kódovanie znakov je "
-"UTF-8.</p>"
+"<p>Táto stránka poskytuje surový kód SVG.<br>Kopírujte obsah do textového "
+"editora a uložte ako súbor SVG.<br>Uistite sa, že kódovanie textového "
+"editora je UTF-8.</p>"
 
 #: DynamicWeb/dynamicweb.py:2942
 msgid "Alternate Name"
-msgstr "Alternatívne meno"
+msgstr "Alternatívny názov"
 
 #: DynamicWeb/dynamicweb.py:2961
 msgid "Click on the map to show it full-screen"
@@ -2936,7 +2936,7 @@ msgstr "Kliknite na mapu pre zobrazenie na celú obrazovku"
 
 #: DynamicWeb/dynamicweb.py:2965
 msgid "Configure"
-msgstr "Nastaviť"
+msgstr "Konfigurovať"
 
 #: DynamicWeb/dynamicweb.py:2972
 msgid "DynamicWeb_report#Help"
@@ -2956,7 +2956,7 @@ msgstr "Index rodín"
 
 #: DynamicWeb/dynamicweb.py:2981
 msgid "Family Nick Name"
-msgstr "Domáce meno"
+msgstr "Prezývka rodiny"
 
 #: DynamicWeb/dynamicweb.py:2984
 msgid "File ready"
@@ -2964,7 +2964,7 @@ msgstr "Súbor pripravený"
 
 #: DynamicWeb/dynamicweb.py:2991 DynamicWeb/dynamicweb.py:5042
 msgid "Include dates columns on the index pages"
-msgstr "Zahrnúť stĺpec s dátumami na indexových stránkach"
+msgstr "Zahrnúť stĺpce s dátumami na indexových stránkach"
 
 #: DynamicWeb/dynamicweb.py:2999 DynamicWeb/dynamicweb.py:5071
 msgid "Include a column for media path on the index pages"
@@ -2976,7 +2976,8 @@ msgstr "Zahrnúť mapu na osobných a rodinných stránkach"
 
 #: DynamicWeb/dynamicweb.py:3011 DynamicWeb/dynamicweb.py:4955
 msgid "Include half and/ or step-siblings on the individual pages"
-msgstr "Zahrnúť nevlastných súrodencov na osobných stránkach"
+msgstr ""
+"Zahrnúť polorodných a/alebo nevlastných súrodencov na osobných stránkach"
 
 #: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:5076
 msgid "Include references in indexes"
@@ -2984,7 +2985,7 @@ msgstr "Zahrnúť referencie v indexoch"
 
 #: DynamicWeb/dynamicweb.py:3018 DynamicWeb/dynamicweb.py:4985
 msgid "Insert sources author in the sources title"
-msgstr "Uviesť autora zdrojov v názve zdrojov"
+msgstr "Vložiť autora zdrojov v názve zdrojov"
 
 #: DynamicWeb/dynamicweb.py:3026
 msgid "M"
@@ -2992,7 +2993,7 @@ msgstr "M"
 
 #: DynamicWeb/dynamicweb.py:3030
 msgid "Maximize"
-msgstr "Zväčšiť"
+msgstr "Maximalizovať"
 
 #: DynamicWeb/dynamicweb.py:3031
 msgid "Media Index"
@@ -3000,23 +3001,23 @@ msgstr "Index médií"
 
 #: DynamicWeb/dynamicweb.py:3032
 msgid "Media Type"
-msgstr "Typ média"
+msgstr "Typ médií"
 
 #: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
-msgstr "Pre tabuľku nie sú dostupné žiadne dáta"
+msgstr "Žiadne údaje k dispozícii v tabuľke"
 
 #: DynamicWeb/dynamicweb.py:3039
 msgid "No matching records found"
-msgstr "Nenašli sa žiadne odpovedajúce záznamy"
+msgstr "Nenašli sa žiadne zodpovedajúce záznamy"
 
 #: DynamicWeb/dynamicweb.py:3040
 msgid "No matching surname."
-msgstr "Žiadne odpovedajúce priezvisko."
+msgstr "Žiadne zodpovedajúce priezvisko."
 
 #: DynamicWeb/dynamicweb.py:3045
 msgid "Other participants"
-msgstr "Ďalší účastníci"
+msgstr "Iní účastníci"
 
 #: DynamicWeb/dynamicweb.py:3048
 msgid "Person page"
@@ -3024,7 +3025,7 @@ msgstr "Stránka osoby"
 
 #: DynamicWeb/dynamicweb.py:3049
 msgid "Person to search for"
-msgstr "Vyhľadať osobu"
+msgstr "Osoba, ktorú hľadáte"
 
 #: DynamicWeb/dynamicweb.py:3051
 msgid "Persons Index"
@@ -3052,7 +3053,7 @@ msgstr "Vzťah k matke"
 
 #: DynamicWeb/dynamicweb.py:3063
 msgid "Repositories Index"
-msgstr "Index prameňov"
+msgstr "Index repozitárov"
 
 #: DynamicWeb/dynamicweb.py:3066
 msgid "Restore"
@@ -3060,7 +3061,7 @@ msgstr "Obnoviť"
 
 #: DynamicWeb/dynamicweb.py:3067
 msgid "Restore default settings"
-msgstr "Obnoviť základené nastavenia"
+msgstr "Obnoviť predvolené nastavenia"
 
 #: DynamicWeb/dynamicweb.py:3068 DynamicWeb/dynamicweb.py:4978
 msgid "Show last modification time"
@@ -3068,23 +3069,23 @@ msgstr "Zobraziť čas poslednej úpravy"
 
 #: DynamicWeb/dynamicweb.py:3069 DynamicWeb/dynamicweb.py:5133
 msgid "SVG tree children distribution"
-msgstr "Rozdelenie SVG stromu detí"
+msgstr "Distribúcia detí v SVG strome"
 
 #: DynamicWeb/dynamicweb.py:3070
 msgid "SVG tree configuration"
-msgstr "Nastavenie SVG stromu"
+msgstr "Konfigurácia SVG stromu"
 
 #: DynamicWeb/dynamicweb.py:3071 DynamicWeb/dynamicweb.py:5115
 msgid "SVG tree graph shape"
-msgstr "Tvar SVG stromu"
+msgstr "Tvar grafu SVG stromu"
 
 #: DynamicWeb/dynamicweb.py:3072 DynamicWeb/dynamicweb.py:5107
 msgid "SVG tree graph type"
-msgstr "Typ SVG stromu"
+msgstr "Typ grafu SVG stromu"
 
 #: DynamicWeb/dynamicweb.py:3073 DynamicWeb/dynamicweb.py:5123
 msgid "SVG tree parents distribution"
-msgstr "Rozdelenie SVG stromu rodičov"
+msgstr "Distribúcia rodičov v SVG strome"
 
 #: DynamicWeb/dynamicweb.py:3074
 msgid "Save tree as file"
@@ -3096,36 +3097,37 @@ msgstr "Hľadať:"
 
 #: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
-msgstr "Zvoľte farebnú schému pozadia"
+msgstr "Vyberte farebnú schému pozadia"
 
 #: DynamicWeb/dynamicweb.py:3082
 msgid "Select the children distribution (fan charts only)"
-msgstr "Zvoľte rozdelenie detí (iba vejárový graf)"
+msgstr "Vyberte distribúciu detí (iba vejárové grafy)"
 
 #: DynamicWeb/dynamicweb.py:3086
 msgid "Select the number of ascending generations"
-msgstr "Zvoľte počet generácií predkov"
+msgstr "Vyberte počet vzostupných generácií"
 
 #: DynamicWeb/dynamicweb.py:3090
 msgid "Select the number of descending generations"
-msgstr "Zvoľte počet generácií potomkov"
+msgstr "Vyberte počet zostupných generácií"
 
 #: DynamicWeb/dynamicweb.py:3094
 msgid "Select the parents distribution (fan charts only)"
-msgstr "Zvoľte rozdelenie rodičov (iba vejárový graf)"
+msgstr "Vyberte distribúciu rodičov (iba vejárové grafy)"
 
 #: DynamicWeb/dynamicweb.py:3096
 msgid "Select the shape of graph"
-msgstr "Zvoľte tvar grafu"
+msgstr "Vyberte tvar grafu"
 
 #: DynamicWeb/dynamicweb.py:3097
 msgid "Select the type of graph"
-msgstr "Zvoľte typ grafu"
+msgstr "Vyberte typ grafu"
 
 #: DynamicWeb/dynamicweb.py:3101
 msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr ""
-"Viacero zhod.<br>Upresnite vyhľadávanie alebo vyberte zo zoznamu nižšie."
+"Niekoľko zhôd.<br>Upresnite svoje hľadanie alebo vyberte z nižšie uvedených "
+"zoznamov."
 
 #: DynamicWeb/dynamicweb.py:3104
 msgid "Show _MENU_ entries"
@@ -3145,11 +3147,11 @@ msgstr "Zobrazených _START_ až _END_ z _TOTAL_ záznamov"
 
 #: DynamicWeb/dynamicweb.py:3112
 msgid "Sort by:"
-msgstr "Zoradiť podľa:"
+msgstr "Triediť podľa:"
 
 #: DynamicWeb/dynamicweb.py:3114
 msgid "Sources Index"
-msgstr "Register zdrojov"
+msgstr "Index zdrojov"
 
 #: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
 msgid "Suppress Gramps ID"
@@ -3169,58 +3171,59 @@ msgstr "Použiť panely s tabmi namiesto sekcií"
 
 #: DynamicWeb/dynamicweb.py:3131
 msgid "Use the search box above in order to find a person."
-msgstr "Použite vyhľadávanie vyššie k vyhľadaniu osoby."
+msgstr "Použite vyhľadávacie pole vyššie na nájdenie osoby."
 
 #: DynamicWeb/dynamicweb.py:3135
 msgid "Use a table format for the surnames index"
-msgstr "Použiť tabuľkový formát v indexe priezvisk"
+msgstr "Použiť formát tabuľky pre index priezvisk"
 
 #: DynamicWeb/dynamicweb.py:3139
 msgid "Use a table format for the persons index"
-msgstr "Použiť tabuľkový formát v indexe osôb"
+msgstr "Použiť formát tabuľky pre index osôb"
 
 #: DynamicWeb/dynamicweb.py:3143
 msgid "Use a table format for the families index"
-msgstr "Použiť tabuľkový formát v indexe rodín"
+msgstr "Použiť formát tabuľky pre index rodín"
 
 #: DynamicWeb/dynamicweb.py:3147
 msgid "Use a table format for the sources index"
-msgstr "Použiť tabuľkový formát v indexe zdrojov"
+msgstr "Použiť formát tabuľky pre index zdrojov"
 
 #: DynamicWeb/dynamicweb.py:3151
 msgid "Use a table format for the places index"
-msgstr "Použiť tabuľkový formát v indexe miest"
+msgstr "Použiť formát tabuľky pre index miest"
 
 #: DynamicWeb/dynamicweb.py:3153
 msgid "Used for family"
-msgstr "Použité pre rodinu"
+msgstr "Používa sa pre rodinu"
 
 #: DynamicWeb/dynamicweb.py:3154
 msgid "Used for media"
-msgstr "Použité pre média"
+msgstr "Používa sa pre médiá"
 
 #: DynamicWeb/dynamicweb.py:3155
 msgid "Used for person"
-msgstr "Použité pre osobu"
+msgstr "Používa sa pre osobu"
 
 #: DynamicWeb/dynamicweb.py:3156
 msgid "Used for place"
-msgstr "Použité pre miesto"
+msgstr "Používa sa pre miesto"
 
 #: DynamicWeb/dynamicweb.py:3157
 msgid "Used for source"
-msgstr "Použité pre zdroj"
+msgstr "Používa sa pre zdroj"
 
 #: DynamicWeb/dynamicweb.py:3159
 msgid "Web Link"
-msgstr "Webový odkaz"
+msgstr "Odkaz na web"
 
 #: DynamicWeb/dynamicweb.py:3164 DynamicWeb/dynamicweb.py:5173
 msgid ""
 "Whether to use a special color for the persons that appear several times in "
 "the SVG tree"
 msgstr ""
-"Či použiť špeciálnu farbu pre osoby ktoré sa v SVG strome vyskytujú viac krát"
+"Či použiť špeciálnu farbu pre osoby, ktoré sa vyskytujú niekoľkokrát v SVG "
+"strome"
 
 #: DynamicWeb/dynamicweb.py:3167
 msgid "Without name"
@@ -3244,7 +3247,7 @@ msgstr "Oddialiť"
 
 #: DynamicWeb/dynamicweb.py:3172
 msgid "all"
-msgstr "všetky"
+msgstr "všetko"
 
 #: DynamicWeb/dynamicweb.py:3585
 #, python-format
@@ -3254,17 +3257,17 @@ msgstr "Chyba pri kopírování: %(error)s"
 #: DynamicWeb/dynamicweb.py:3588
 #, python-format
 msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
-msgstr "Nie je možné kopírovať \"%(src)s\" do \"%(dst)s\""
+msgstr "Nie je možné skopírovať \"%(src)s\" do \"%(dst)s\""
 
 #: DynamicWeb/dynamicweb.py:3632
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
-msgstr "Nie je možné kopírovať súbory šablóny WWW stránok z \"%(path)s\""
+msgstr "Nie je možné skopírovať súbory šablóny webovej stránky z \"%(path)s\""
 
 #: DynamicWeb/dynamicweb.py:3681
 #, python-format
 msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
-msgstr "Ponecháva sa \"%(dst)s\" (novší ako \"%(src)s\")"
+msgstr "Zachováva sa \"%(dst)s\" (novší ako \"%(src)s\")"
 
 #: DynamicWeb/dynamicweb.py:3687
 #, python-format
@@ -3274,12 +3277,12 @@ msgstr "Kopíruje sa \"%(src)s\" do \"%(dst)s\""
 #: DynamicWeb/dynamicweb.py:3718 DynamicWeb/dynamicweb.py:3742
 #, python-format
 msgid "Unable to overwrite archive file \"%(path)s\""
-msgstr "Nepodarilo sa prepísať súbor archívu \"%(path)s\""
+msgstr "Nie je možné prepísať archívny súbor \"%(path)s\""
 
 #: DynamicWeb/dynamicweb.py:3731 DynamicWeb/dynamicweb.py:3752
 #, python-format
 msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
-msgstr "Nepodarilo sa pridať súbor \"%(file)s\" do archívu \"%(archive)s\""
+msgstr "Nie je možné pridať súbor \"%(file)s\" do archívu \"%(archive)s\""
 
 #: DynamicWeb/dynamicweb.py:3831
 #, python-format
@@ -3289,12 +3292,12 @@ msgstr "DynamicWebReport ignoruje odkaz typu '%(class)s'"
 #: DynamicWeb/dynamicweb.py:4262
 #, python-format
 msgid "Family of %(father)s"
-msgstr "Rodina patriaca %(father)s"
+msgstr "Rodina otca %(father)s"
 
 #: DynamicWeb/dynamicweb.py:4266
 #, python-format
 msgid "Family of %(mother)s"
-msgstr "Rodina patriaca %(mother)s"
+msgstr "Rodina matky %(mother)s"
 
 #: DynamicWeb/dynamicweb.py:4660
 msgid ""
@@ -3316,7 +3319,7 @@ msgid ""
 "relative URL \"<link>\".\n"
 msgstr ""
 "V tejto poznámke sú spracované nasledujúce špeciálne slová:\n"
-"__SEARCH_FORM__ is nahradené vyhľadávacím formulárom.\n"
+"__SEARCH_FORM__ je nahradené vyhľadávacím formulárom.\n"
 "__NB_INDIVIDUALS__ je nahradené počtom osôb.\n"
 "__NB_FAMILIES__ je nahradené počtom rodín.\n"
 "__NB_MEDIA__ je nahradené počtom médií.\n"
@@ -3333,49 +3336,51 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4712
 msgid "Store web pages in archive"
-msgstr "Uložiť webové súbory do archívu"
+msgstr "Uložiť webové stránky do archívu"
 
 #: DynamicWeb/dynamicweb.py:4715
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
-msgstr "Či vytvoriť archív (v ZIP alebo TGZ formáte) obsahujúci web stránku"
+msgstr ""
+"Či vytvoriť archívny súbor (v ZIP alebo TGZ formáte) obsahujúci webovú "
+"stránku"
 
 #: DynamicWeb/dynamicweb.py:4722
 msgid "Archive file"
-msgstr "Súbor archívu"
+msgstr "Archívny súbor"
 
 #: DynamicWeb/dynamicweb.py:4728
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
-msgstr "Názov súboru archívu (s \".zip\" alebo \".tgz\" príponou)"
+msgstr "Názov archívneho súboru (s príponou \".zip\" alebo \".tgz\")"
 
 #: DynamicWeb/dynamicweb.py:4735
 msgid "Web site title"
-msgstr "Nadpis web stránky"
+msgstr "Titul webového sídla"
 
 #: DynamicWeb/dynamicweb.py:4736
 msgid "The title of the web site"
-msgstr "Nadpis web stránky"
+msgstr "Názov webového sídla"
 
 #: DynamicWeb/dynamicweb.py:4741
 msgid "Select filter to restrict people that appear on web site"
-msgstr "Zvoľte filter pre vymedzenie osôb zobrazených na web stránke"
+msgstr "Vyberte filter na obmedzenie ľudí, ktorí sa zobrazujú na webovom sídle"
 
 #: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
 msgid "Name format (short)"
-msgstr "Formát mien (krátky)"
+msgstr "Formát mena (krátky)"
 
 #: DynamicWeb/dynamicweb.py:4757 DynamicWeb/dynamicweb.py:4783
 msgid "Select the format to display a shorter version of the names"
-msgstr "Zvoľte formát zobrazenia krátkych verzií mien"
+msgstr "Vyberte formát na zobrazenie skrátenej verzie mien"
 
 #: DynamicWeb/dynamicweb.py:4787
 msgid "Web site template"
-msgstr "Šablóna web stránky"
+msgstr "Šablóna webového sídla"
 
 #: DynamicWeb/dynamicweb.py:4790
 msgid "Select the template of the web site"
-msgstr "Zvoľte šablónu web stránky"
+msgstr "Vyberte šablónu webového sídla"
 
 #: DynamicWeb/dynamicweb.py:4812
 msgid "Whether to include private objects"
@@ -3385,7 +3390,7 @@ msgstr "Či zahrnúť súkromné objekty"
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
-msgstr "Toto umožňuje obmedziť informácie o nedávno zosnulých osobách"
+msgstr "Toto umožňuje obmedziť informácie o nedávno zomrelých osobách"
 
 #: DynamicWeb/dynamicweb.py:4839
 msgid "Export notes"
@@ -3393,7 +3398,7 @@ msgstr "Exportovať poznámky"
 
 #: DynamicWeb/dynamicweb.py:4840
 msgid "Whether to export notes in the web pages"
-msgstr "Či exportovať poznámky do web stránok"
+msgstr "Či exportovať poznámky na webových stránkach"
 
 #: DynamicWeb/dynamicweb.py:4843
 msgid "Export sources"
@@ -3401,7 +3406,7 @@ msgstr "Exportovať zdroje"
 
 #: DynamicWeb/dynamicweb.py:4845
 msgid "Whether to export sources and citations in the web pages"
-msgstr "Či exportovať zdroje a citácie do web stránok"
+msgstr "Či exportovať zdroje a citácie na webových stránkach"
 
 #: DynamicWeb/dynamicweb.py:4849
 msgid "Export addresses"
@@ -3409,11 +3414,11 @@ msgstr "Exportovať adresy"
 
 #: DynamicWeb/dynamicweb.py:4850
 msgid "Whether to export addresses in the web pages"
-msgstr "Či exportovať adresy do web stránok"
+msgstr "Či exportovať adresy na webových stránkach"
 
 #: DynamicWeb/dynamicweb.py:4858
 msgid "Whether or not to include the Repository Pages."
-msgstr "Či zahrnúť stránky archívov alebo nie."
+msgstr "Či zahrnúť alebo nezahrnúť stránky repozitára."
 
 #: DynamicWeb/dynamicweb.py:4861
 msgid "Include images and media"
@@ -3421,11 +3426,11 @@ msgstr "Zahrnúť obrázky a médiá"
 
 #: DynamicWeb/dynamicweb.py:4862
 msgid "Whether to include images and media in the web pages"
-msgstr "Či zahrnúť obrázky a médiá vo web stránkách"
+msgstr "Či zahrnúť obrázky a médiá na webových stránkách"
 
 #: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
-msgstr "Kopírovať, premenovať súbory s interným Gramps identifikátorom"
+msgstr "Kopírovať, premenovať súbory s interným identifikátorom Gramps"
 
 #: DynamicWeb/dynamicweb.py:4870
 msgid "Copy, keep file names unchanged"
@@ -3433,7 +3438,7 @@ msgstr "Kopírovať, ponechať názvy súborov nezmenené"
 
 #: DynamicWeb/dynamicweb.py:4871
 msgid "Do not copy, reference existing files"
-msgstr "Nekopírovať, odkázať na existujúce súbory"
+msgstr "Nekopírovať, odkazovať na existujúce súbory"
 
 #: DynamicWeb/dynamicweb.py:4873
 msgid "Images and media"
@@ -3445,60 +3450,61 @@ msgstr "Či vytvoriť kópiu médií"
 
 #: DynamicWeb/dynamicweb.py:4879
 msgid "Print the notes type"
-msgstr "Zahrnúť typ poznámok"
+msgstr "Tlačiť typ poznámok"
 
 #: DynamicWeb/dynamicweb.py:4881
 msgid "Whether to print the notes type in the notes text"
-msgstr "Či zahrnúť v poznámkach aj ich typ"
+msgstr "Či tlačiť typ poznámok v texte poznámok"
 
 #: DynamicWeb/dynamicweb.py:4885
 msgid "Print place pages"
-msgstr "Zahrnúť stránky s miestami"
+msgstr "Tlačiť stránky miest"
 
 #: DynamicWeb/dynamicweb.py:4886
 msgid "Whether to show pages for the places"
-msgstr "Či zobraziť stránky s miestami"
+msgstr "Či zobraziť stránky pre miesta"
 
 #: DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
-msgstr "Vyberte si poskytovateľa máp pre vyvtvorenie stránky s miestami"
+msgstr "Vyberte si poskytovateľa máp pre vytvorenie stránok mapy miest"
 
 #: DynamicWeb/dynamicweb.py:4926
 msgid "Google map API key"
-msgstr "Google map API kľúč"
+msgstr "API kľúč Google máp"
 
 #: DynamicWeb/dynamicweb.py:4927
 msgid "The API key used for the Google map"
-msgstr "API kľúč používaný pre Google mapu"
+msgstr "API kľúč používaný pre Google mapy"
 
 #: DynamicWeb/dynamicweb.py:4945
 msgid "Whether or not to include family pages"
-msgstr "Či zahrnúť stránky rodín alebo nie"
+msgstr "Či zahrnúť alebo nezahrnúť rodinné stránky"
 
 #: DynamicWeb/dynamicweb.py:4959
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
-msgstr "Či zahrnúť nevlastných súrodencov s rodičmi a súrodencami"
+msgstr ""
+"Či zahrnúť polorodných a/alebo nevlastných súrodencov s rodičmi a súrodencami"
 
 #: DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
-msgstr "Povoliť prispôsobenie stránky"
+msgstr "Povoliť konfiguráciu stránky"
 
 #: DynamicWeb/dynamicweb.py:4969
 msgid "Whether to enable page configuration"
-msgstr "Či povoliť prispôsobenie stránky"
+msgstr "Či povoliť konfiguráciu stránky"
 
 #: DynamicWeb/dynamicweb.py:4974
 msgid "Whether to use tabbed panels for the different sections of the pages."
-msgstr "Či sa majú používať panely s kartami pre rôzne časti stránok."
+msgstr "Či použiť záložkové panely pre rôzne sekcie stránok."
 
 #: DynamicWeb/dynamicweb.py:4980
 msgid "Whether to show the last modification time in the pages footer"
-msgstr "Či zobraziť čas poslednej úpravy v pätičke súboru"
+msgstr "Či zobraziť čas poslednej úpravy v päte stránok"
 
 #: DynamicWeb/dynamicweb.py:4988
 msgid "Whether to insert sources author in the sources title"
-msgstr "Či uviesť autora zdrojov v nadpise zdrojov"
+msgstr "Či vložiť autora zdrojov do názvu zdrojov"
 
 #: DynamicWeb/dynamicweb.py:4993
 msgid "Whether to hide the Gramps ID"
@@ -3514,62 +3520,61 @@ msgstr "Tabuľka"
 
 #: DynamicWeb/dynamicweb.py:5008
 msgid "Default format for the surnames index"
-msgstr "Základný formát pre index priezvisk"
+msgstr "Východzí formát pre index priezvisk"
 
 #: DynamicWeb/dynamicweb.py:5009
 msgid "The default format for the surnames index"
-msgstr "Základný formát pre index priezvisk"
+msgstr "Predvolený formát pre index priezvisk"
 
 #: DynamicWeb/dynamicweb.py:5014
 msgid "Default format for the persons index"
-msgstr "Základný formát pre index osôb"
+msgstr "Východzí formát pre index osôb"
 
 #: DynamicWeb/dynamicweb.py:5015
 msgid "The default format for the persons index"
-msgstr "Základný formát pre index osôb"
+msgstr "Predvolený formát pre index osôb"
 
 #: DynamicWeb/dynamicweb.py:5020
 msgid "Default format for the families index"
-msgstr "Základný formát pre index rodín"
+msgstr "Východzí formát pre index rodín"
 
 #: DynamicWeb/dynamicweb.py:5021
 msgid "The default format for the families index"
-msgstr "Základný formát pre index rodín"
+msgstr "Predvolený formát pre index rodín"
 
 #: DynamicWeb/dynamicweb.py:5026
 msgid "Default format for the sources index"
-msgstr "Základný formát pre index zdrojov"
+msgstr "Východzí formát pre index zdrojov"
 
 #: DynamicWeb/dynamicweb.py:5027
 msgid "The default format for the sources index"
-msgstr "Základný formát pre index zdrojov"
+msgstr "Predvolený formát pre index zdrojov"
 
 #: DynamicWeb/dynamicweb.py:5032
 msgid "Default format for the places index"
-msgstr "Základný formát pre index miest"
+msgstr "Východzí formát pre index miest"
 
 #: DynamicWeb/dynamicweb.py:5033
 msgid "The default format for the places index"
-msgstr "Základný formát pre index miest"
+msgstr "Predvolený formát pre index miest"
 
 #: DynamicWeb/dynamicweb.py:5045
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
-"Či zahrnúť stĺpec s dátumami (narodenie, smrť, manželstvo) na indexových "
-"stránkach"
+"Či zahrnúť stĺpce s dátumami (narodenie, smrť, sobáš) na indexových stránkach"
 
 #: DynamicWeb/dynamicweb.py:5063
 msgid "Generate a families index page"
-msgstr "Generovať indexovú stránku rodín"
+msgstr "Generovať stránku s indexom rodín"
 
 #: DynamicWeb/dynamicweb.py:5066
 msgid "Whether to generate an index page for families"
-msgstr "Či generovať indexovú stránku rodín"
+msgstr "Či generovať indexovú stránku pre rodiny"
 
 #: DynamicWeb/dynamicweb.py:5073
 msgid "Whether to include a column showing the media path"
-msgstr "Či zahrnúť stĺpec s cestou k médiu"
+msgstr "Či zahrnúť stĺpec zobrazujúci cestu k médiám"
 
 #: DynamicWeb/dynamicweb.py:5079
 msgid ""
@@ -3577,17 +3582,17 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"Či zahrnúť odkazy na položky na indexových stránkach. Na príklad: na "
-"indexovej stránke medií mená osôb, rodín, miest, zdrojov ktoré odkazujú na "
-"médiá."
+"Či zahrnúť referencie na položky na stránkach s indexom. Napríklad na "
+"stránke s indexom médií mená jednotlivcov, rodín, miest a zdrojov "
+"odkazujúcich na médiá."
 
 #: DynamicWeb/dynamicweb.py:5085
 msgid "Default number of entries in the indexes"
-msgstr "Základný počet záznamov v indexoch"
+msgstr "Východzí počet položiek v indexoch"
 
 #: DynamicWeb/dynamicweb.py:5090
 msgid "The default number of entries shown in one index page"
-msgstr "Základný počet záznamov zobrazených na jednej indexovej stránke"
+msgstr "Predvolený počet položiek zobrazených na jednej indexovej stránke"
 
 #: DynamicWeb/dynamicweb.py:5098
 msgid "Maximum number of generations"
@@ -3602,29 +3607,29 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
-msgstr "Zvoľte základný typ grafu pre SVG strom"
+msgstr "Vyberte východzí typ SVG stromového grafu"
 
 #: DynamicWeb/dynamicweb.py:5119
 msgid "Choose the default SVG tree graph shape"
-msgstr "Zvoľte základný tvar grafu pre SVG strom"
+msgstr "Vyberte východzí tvar SVG stromového grafu"
 
 #: DynamicWeb/dynamicweb.py:5128
 msgid "Choose the default SVG tree parents distribution (for fan charts only)"
 msgstr ""
-"Zvoľte základné rozdelenie rodičov v SVG strome (len pre vejárové grafy)"
+"Vyberte východzie rozloženie rodičov v SVG strome (iba pre vejárové grafy)"
 
 #: DynamicWeb/dynamicweb.py:5138
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
-msgstr "Zvoľte základné rozdelenie detí v SVG strome (len pre vejárové grafy)"
+msgstr "Vyberte východzie rozloženie detí v SVG strome (iba pre vejárové grafy)"
 
 #: DynamicWeb/dynamicweb.py:5149
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
-msgstr "Zvoľte schému farby pozadia pre osoby v grafe SVG stromu"
+msgstr "Vyberte farebnú schému pozadia pre osoby v SVG stromovom grafe"
 
 #: DynamicWeb/dynamicweb.py:5157
 msgid "Theme"
-msgstr ""
+msgstr "Téma"
 
 #: DynamicWeb/dynamicweb.py:5190
 msgid "Pages"
@@ -3632,15 +3637,15 @@ msgstr "Stránky"
 
 #: DynamicWeb/dynamicweb.py:5194
 msgid "A note to be used as the page header"
-msgstr "Poznámka ktorá sa zobrazí v hlavičke stránky"
+msgstr "Poznámka použitá ako záhlavie stránky"
 
 #: DynamicWeb/dynamicweb.py:5197
 msgid "HTML user brand name / icon"
-msgstr "HTML užívateľský značka / ikona"
+msgstr "HTML názov značky používateľa / ikona"
 
 #: DynamicWeb/dynamicweb.py:5199
 msgid "A note to be used as the brand name or image in the menu"
-msgstr "Poznámka ktorá bude použitá ako značka alebo obrázok v menu"
+msgstr "Poznámka použitá ako názov značky alebo obrázok v menu"
 
 #: DynamicWeb/dynamicweb.py:5208
 msgid "Custom pages"
@@ -3663,7 +3668,7 @@ msgstr "Poznámka pre vlastnú stránku %(index)i"
 
 #: DynamicWeb/dynamicweb.py:5225
 msgid "A note to be used for the custom page content.\n"
-msgstr "Poznámka ktorá sa použije v obsahu vlastnej stránky.\n"
+msgstr "Poznámka použitá pre obsah vlastnej stránky.\n"
 
 #: DynamicWeb/dynamicweb.py:5230
 #, python-format
@@ -3672,19 +3677,19 @@ msgstr "Menu pre vlastnú stránku %(index)i"
 
 #: DynamicWeb/dynamicweb.py:5232
 msgid "Whether to print a menu for the custom page"
-msgstr "Či zahrnúť menu pre vlastnú stránku"
+msgstr "Či vytlačiť menu pre vlastnú stránku"
 
 #: DynamicWeb/dynamicweb.py:5236
 msgid "Pages selection"
-msgstr "Výber stránky"
+msgstr "Výber stránok"
 
 #: DynamicWeb/dynamicweb.py:5240
 msgid "Number of pages"
-msgstr "Počet stránok"
+msgstr "Číslo stránok"
 
 #: DynamicWeb/dynamicweb.py:5242
 msgid "Number pages in the web site menu."
-msgstr "Číslovať stránky v menu webovej stránky."
+msgstr "Čísluje stránky v menu webovej sídla."
 
 #: DynamicWeb/dynamicweb.py:5262
 #, python-format
@@ -3697,55 +3702,53 @@ msgstr "Obsah stránky"
 
 #: GetGOV/getgov.py:315
 msgid "Place ID to import from GOV (Historical Gazetteer):"
-msgstr ""
+msgstr "ID miesta na import z GOV (Historical Gazetteer):"
 
 #: GetGOV/getgov.py:323
-#, fuzzy
-#| msgid "All Places"
 msgid "Get Place"
-msgstr "Všetky lokality"
+msgstr "Získať miesto"
 
 #: GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
-msgstr ""
+msgstr "Pridať miesto s ID GOV %s"
 
 #: GetGOV/getgov.py:388
 #, python-format
 msgid "GetGOV error: %s"
-msgstr ""
+msgstr "Chyba GetGOV: %s"
 
 #: GetGOV/getgov.py:421
 #, python-format
 msgid "GOV error on id %s with code: "
-msgstr ""
+msgstr "Chyba GOV na ID %s s kódom: "
 
 #: GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
-msgstr ""
+msgstr "od %s do %s"
 
 #: GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
-msgstr ""
+msgstr "po %s"
 
 #: GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
-msgstr ""
+msgstr "pred %s"
 
 #: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
-msgstr ""
+msgstr "GetGOV"
 
 #: GetGOV/getgov.gpr.py:33
 msgid "Gramplet to get places from the GOV database"
-msgstr ""
+msgstr "Gramplet na získanie miest z databázy GOV"
 
 #: RestoreHist/restorehist.gpr.py:30
 msgid "Restart where you were last working"
-msgstr ""
+msgstr "Reštartujte tam, kde ste naposledy pracovali"
 
 #: RestoreHist/restorehist.gpr.py:32
 msgid ""
@@ -3753,87 +3756,83 @@ msgid ""
 "was previously closed.  It adds no new menus or Gramplets, but allows the "
 "last six objects visited to be found via the 'Go' menu."
 msgstr ""
+"Tento doplnok spôsobuje, že sa Gramps reštartuje na rovnakom pohľade a "
+"objekte, kde bol Gramps predtým zatvorený.\n"
+"Nepridáva žiadne nové menu ani gramplety, ale umožňuje nájsť posledných šesť "
+"navštívených objektov prostredníctvom menu 'Prejsť'."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr ""
+msgstr "Skontrolovať údaje o asociáciách"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
-msgstr ""
+msgstr "Skontroluje údaje o asociácii pre osoby."
 
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
-msgstr ""
+msgstr "Nástroj stavu asociácií"
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
-msgstr ""
+msgstr "Typ odkazu"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
-msgstr ""
+msgstr "Z"
 
 #: Topola/Topola.gpr.py:4
 msgid "Interactive Family Tree"
-msgstr ""
+msgstr "Interaktívny rodinný strom"
 
 #: Topola/Topola.gpr.py:5
 msgid "Opens an interactive tree in the browser"
-msgstr ""
+msgstr "Otvára interaktívny strom v prehliadači"
 
 #: ListeEclair/ListeEclair.py:97 ListeEclair/ListeEclair.py:104
 #: ListeEclair/ListeEclair.gpr.py:4
 msgid "Liste Eclair"
-msgstr ""
+msgstr "Liste Éclair"
 
 #: ListeEclair/ListeEclair.py:277
 msgid "Type de Liste"
-msgstr ""
+msgstr "Type de Liste"
 
 #: ListeEclair/ListeEclair.py:279
 msgid "Tiny Tafel"
-msgstr ""
+msgstr "Tiny Tafel"
 
 #: ListeEclair/ListeEclair.py:280
 msgid "cousingenweb"
-msgstr ""
+msgstr "cousingenweb"
 
 #: ListeEclair/ListeEclair.py:281
 msgid "Type de liste"
-msgstr ""
+msgstr "Type de liste"
 
 #: ListeEclair/ListeEclair.py:284
-#, fuzzy
-#| msgid "Include private records"
 msgid "Include private data"
-msgstr "Vložiť súkromné záznamy"
+msgstr "Zahrnúť súkromné údaje"
 
 #: ListeEclair/ListeEclair.py:301
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the liste eclair."
-msgstr "Štýl použitý pre titul strany."
+msgstr "Štýl použitý pre liste éclair."
 
 #: ListeEclair/ListeEclair.py:314
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for place title."
-msgstr "Štýl použitý pre nadpis archívu."
+msgstr "Štýl použitý pre názov miesta."
 
 #: ListeEclair/ListeEclair.gpr.py:5
 msgid "Produit une liste eclair"
-msgstr ""
+msgstr "Produit une liste eclair"
 
 #: Sqlite/ExportSql.py:1346
-#, fuzzy, python-format
-#| msgid "Import Complete: %d second"
-#| msgid_plural "Import Complete: %d seconds"
+#, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
-msgstr[0] "Import dokončený: %d sekunda"
-msgstr[1] "Import dokončený: %d sekundy"
-msgstr[2] "Import dokončený: %d sekúnd"
+msgstr[0] "Export dokončený: %d sekunda"
+msgstr[1] "Export dokončený: %d sekundy"
+msgstr[2] "Export dokončený: %d sekúnd"
 
 #: Sqlite/Sqlite.gpr.py:4
 msgid "SQLite Import"
@@ -3844,10 +3843,8 @@ msgid "SQLite is a common local database format"
 msgstr "SQLite je bežný formát lokálnej databázy"
 
 #: Sqlite/Sqlite.gpr.py:19
-#, fuzzy
-#| msgid "SQLite Import"
 msgid "SQLite Export"
-msgstr "Import SQLite"
+msgstr "Export SQLite"
 
 #: Sqlite/ImportSql.py:893
 #, python-format
@@ -3860,51 +3857,47 @@ msgstr[2] "Import dokončený: %d sekúnd"
 #: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
-msgstr ""
+msgstr "%(abbrev)s %(date)s in %(place)s"
 
 #: CombinedView/basepage.py:495
-#, fuzzy, python-format
-#| msgid "Address (%(date)s): %(location)s"
+#, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
-msgstr "Adresa (%(date)s): %(location)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
 
 #: CombinedView/personpage.py:597
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(event_type)s: %(date)s in %(place)s"
 
 #: CombinedView/personpage.py:601
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(date)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(event_type)s: %(date)s"
 
 #: CombinedView/personpage.py:604
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(place)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(event_type)s: %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
-msgstr ""
+msgstr "Kliknite, aby ste aktivovali túto udalosť"
 
 #: CombinedView/personpage.py:743
 msgid "Click to visit this link"
-msgstr ""
+msgstr "Kliknite, aby ste navštívili tento odkaz"
 
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
-msgstr ""
+msgstr ": "
 
 #: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
-msgstr ""
+msgstr "Kombinovaný"
 
 #: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
-msgstr ""
+msgstr "Pohľad zobrazujúci vzťahy a udalosti pre osobu"
 
 #: CombinedView/navigationview.py:346
 msgid ""
@@ -3912,44 +3905,41 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
+"Musíte nastaviť 'východziu osobu', ku ktorej chcete prejsť. Vyberte pohľad "
+"Ľudia, vyberte osobu, ktorú chcete ako 'Domovskú osobu', a potom potvrďte "
+"svoj výber cez menu Upraviť -> Nastaviť domovskú osobu."
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
 msgid "Order"
-msgstr ""
+msgstr "Poradie"
 
 #: CombinedView/combinedview.py:528
-#, fuzzy
-#| msgid "Add death event"
 msgid "Edit the active event"
-msgstr "Pridať udalosť úmrtia"
+msgstr "Upraviť aktívnu udalosť"
 
 #: CombinedView/combinedview.py:630
-#, fuzzy
-#| msgid "Show places"
 msgid "Show Tags"
-msgstr "Zobraziť miesta"
+msgstr "Zobrazenie značiek"
 
 #: CombinedView/combinedview.py:656
 msgid "Vertical Details"
-msgstr ""
+msgstr "Vertikálne detaily"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
-msgstr "Gramplet Zápis dát"
+msgstr "Gramplet Zadávanie údajov"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
-msgstr ""
+msgstr "Gramplet pre rýchle zadávanie údajov"
 
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
 msgstr "Rodina:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
-#, fuzzy
-#| msgid "Source(s)"
 msgid "Sources?"
-msgstr "Zdroj(e)"
+msgstr "Zdroje?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
@@ -3962,7 +3952,7 @@ msgstr "Uložiť"
 
 #: DataEntryGramplet/DataEntryGramplet.py:92
 msgid "Abandon"
-msgstr "Zrušiť"
+msgstr "Opustiť"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
@@ -3981,32 +3971,24 @@ msgid "Add as a Parent"
 msgstr "Pridať ako rodiča"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
-#, fuzzy
-#| msgid "Add as a Spouse"
 msgid "Add as a Mother"
-msgstr "Pridať ako manžela/-ku"
+msgstr "Pridať ako matku"
 
 #: DataEntryGramplet/DataEntryGramplet.py:102
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Father"
-msgstr "Pridať ako rodiča"
+msgstr "Pridať ako otca"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
-msgstr "Pridať ako manžela/-ku"
+msgstr "Pridať ako manžela/manželku"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
-#, fuzzy
-#| msgid "Add as a Child"
 msgid "Add as a Wife"
-msgstr "Pridať ako dieťa"
+msgstr "Pridať ako manželku"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Husband"
-msgstr "Pridať ako rodiča"
+msgstr "Pridať ako manžela"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
@@ -4018,13 +4000,13 @@ msgstr "Pridať ako dieťa"
 
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
-msgstr "Kopírovať aktuálne údaje"
+msgstr "Kopírovať aktívne údaje"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
 #: DataEntryGramplet/DataEntryGramplet.py:315
 msgid "in"
-msgstr "in"
+msgstr "na"
 
 #: DataEntryGramplet/DataEntryGramplet.py:441
 #: DataEntryGramplet/DataEntryGramplet.py:569
@@ -4034,11 +4016,11 @@ msgstr "Gramplet Editovanie údajov: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
-msgstr "Zapíšte meno."
+msgstr "Prosím, zadajte meno."
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
-msgstr "Údaje novej osoby sa nedajú uložiť."
+msgstr "Nemožno pridať novú osobu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:531
@@ -4049,29 +4031,25 @@ msgstr "Údaje novej osoby sa nedajú uložiť."
 #: DataEntryGramplet/DataEntryGramplet.py:560
 #: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
-msgstr "Nastaviť aktívnu osobu."
+msgstr "Prosím, zadajte aktívnu osobu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:526
 msgid "Can't add new person as a parent."
-msgstr "Nepodarilo sa pridať novú osobu ako rodiča."
+msgstr "Nemožno pridať novú osobu ako rodiča."
 
 #: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
-msgstr "Zadajte pohlavie novej osoby."
+msgstr "Prosím, zadajte pohlavie novej osoby."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a mother."
-msgstr "Nepodarilo sa pridať novú osobu ako manželku/-a."
+msgstr "Nemožno pridať novú osobu ako matku."
 
 #: DataEntryGramplet/DataEntryGramplet.py:536
-#, fuzzy
-#| msgid "Can't add new person as a parent."
 msgid "Can't add new person as a father."
-msgstr "Nepodarilo sa pridať novú osobu ako rodiča."
+msgstr "Nemožno pridať novú osobu ako otca."
 
 #: DataEntryGramplet/DataEntryGramplet.py:541
 #: DataEntryGramplet/DataEntryGramplet.py:545
@@ -4079,99 +4057,89 @@ msgstr "Nepodarilo sa pridať novú osobu ako rodiča."
 #: DataEntryGramplet/DataEntryGramplet.py:805
 #: DataEntryGramplet/DataEntryGramplet.py:838
 msgid "Can't add new person as a spouse."
-msgstr "Nepodarilo sa pridať novú osobu ako manželku/-a."
+msgstr "Nemožno pridať novú osobu ako manžela/manželku."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
-#, fuzzy
-#| msgid "Can't add new person as a child."
 msgid "Can't add new person as a wife."
-msgstr "Nepodarilo sa pridať novú osobu ako dieťa."
+msgstr "Nemožno pridať novú osobu ako manželku."
 
 #: DataEntryGramplet/DataEntryGramplet.py:555
-#, fuzzy
-#| msgid "Can't add new person as a sibling."
 msgid "Can't add new person as a husband."
-msgstr "Nepodarilo sa pridať novú osobu ako súrodenca."
+msgstr "Nemožno pridať novú osobu ako manžela."
 
 #: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
-msgstr "Nepodarilo sa pridať novú osobu ako súrodenca."
+msgstr "Nemožno pridať novú osobu ako súrodenca."
 
 #: DataEntryGramplet/DataEntryGramplet.py:565
 #: DataEntryGramplet/DataEntryGramplet.py:938
 msgid "Can't add new person as a child."
-msgstr "Nepodarilo sa pridať novú osobu ako dieťa."
+msgstr "Nemožno pridať novú osobu ako dieťa."
 
 #: DataEntryGramplet/DataEntryGramplet.py:763
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Please set Active person."
-msgstr "Nastaviť aktívnu osobu."
+msgstr "Prosím, nastavte aktívnu osobu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a spouse to no one."
-msgstr "Nepodarilo sa pridať novú osobu ako manželku/-a."
+msgstr "Nemožno pridať novú osobu ako manžela/mamželku k žiadnej osobe."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr "Zadajte pohlavie novej alebo aktívnej osoby."
+msgstr "Prosím, nastavte pohlavie na aktívnej alebo novej osobe."
 
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
-msgstr "Nová osoba a aktívna osoba rovnakého pohlavia."
+msgstr "Aktívna a nová osoba majú rovnaké pohlavie."
 
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
-msgstr "Zadajte pohlavie aktívnej osoby."
+msgstr "Prosím, zadajte pohlavie aktívnej osoby."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
 msgid "FamilyTree DNA"
-msgstr ""
+msgstr "FamilyTree DNA"
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:5
 msgid "Tool to import FamilyFinder DNA data from Family Tree"
-msgstr ""
+msgstr "Nástroj na importovanie údajov FamilyFinder DNA z Family Tree"
 
 #: FamilyTreeDNA/ftdna_import.py:75
 msgid "Family Finder Tool"
-msgstr ""
+msgstr "Nástroj Family Finder"
 
 #: FamilyTreeDNA/ftdna_import.py:104
 msgid "Enter FTDNA Family Finder Filename:"
-msgstr ""
+msgstr "Zadajte názov súboru FTDNA Family Finder:"
 
 #: FamilyTreeDNA/ftdna_import.py:109
 msgid "Enter FTDNA Chromosome Segment Filename:"
-msgstr ""
+msgstr "Zadajte názov súboru FTDNA Chromosome Segment:"
 
 #: FamilyTreeDNA/ftdna_import.py:112
 msgid "Import Haplogroups"
-msgstr ""
+msgstr "Importovať haploskupiny"
 
 #: FamilyTreeDNA/ftdna_import.py:128
 msgid "FTDNA Note string :"
-msgstr ""
+msgstr "Reťazec poznámky FTDNA :"
 
 #: FamilyTreeDNA/ftdna_import.py:137
 msgid "Shared Citation ID :"
-msgstr ""
+msgstr "ID zdieľanej citácie :"
 
 #: FamilyTreeDNA/ftdna_import.py:151
-#, fuzzy
-#| msgid "Active person"
 msgid "Active Person : "
-msgstr "Aktívna osoba"
+msgstr "Aktívna osoba : "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
-msgstr ""
+msgstr "Importovať údaje zo súborov Family Finder"
 
 #: FamilyTreeDNA/ftdna_import.py:169
 msgid "Close the Family Finder Tool"
-msgstr ""
+msgstr "Zavrieť nástroj Family Finder"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
@@ -4180,89 +4148,91 @@ msgstr ""
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
 msgid "FamilyTree DNA Import"
-msgstr ""
+msgstr "Import FamilyTree DNA"
 
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
+"Vytvorených {} asociácií s údajmi DNA. Vytvorených {} atribútov haploskupín "
+"\n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
-msgstr ""
+msgstr "Nebol špecifikovaný žiadny súbor Family Finder"
 
 #: FamilyTreeDNA/ftdna_import.py:232
-#, fuzzy
-#| msgid "Not specified"
 msgid "No Segment File specified"
-msgstr "Neuvedené"
+msgstr "Nebol zadaný žiadny súbor Segment"
 
 #: FamilyTreeDNA/ftdna_import.py:236
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
 msgstr ""
+"V poznámkach FTDNA sa nenašli žiadne asociácie. Neboli vytvorené žiadne "
+"atribúty haploskupín."
 
 #: FamilyTreeDNA/ftdna_import.py:307
 #, python-format
 msgid "Add %s haplogroup attribute"
-msgstr ""
+msgstr "Pridať atribút haploskupiny %s"
 
 #: FamilyTreeDNA/ftdna_import.py:350
 #, python-format
 msgid "Add %s DNA Association"
-msgstr ""
+msgstr "Pridať asociáciu DNA %s"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr ""
+msgstr "Vytvoriť poznámku pre asociáciu DNA %s"
 
 #: FamilyTreeDNA/ftdna_import.py:369
 #, python-format
 msgid "Add Note to %s DNA Association"
-msgstr ""
+msgstr "Pridať poznámku k asociácii DNA %s"
 
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr ""
+msgstr "Vytvoriť citáciu zdroja pre asociáciu DNA %s"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr ""
+msgstr "Vytvoriť citáciu pre asociáciu DNA %s"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr ""
+msgstr "Pridať citáciu k asociácii DNA %s"
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
-msgstr ""
+msgstr "Téma je napevno zadaná cez GTK_THEME"
 
 #: Themes/themes.py:180
 msgid "Dark Variant"
-msgstr ""
+msgstr "Tmavý variant"
 
 #: Themes/themes.py:198
 msgid "Font"
-msgstr ""
+msgstr "Písmo"
 
 #: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
-msgstr ""
+msgstr "Pevný posuvník (vyžaduje reštart)"
 
 #: Themes/themes.gpr.py:29
-#, fuzzy
-#| msgid "Source references:"
 msgid "Theme preferences"
-msgstr "Odkazy na zdroje:"
+msgstr "Predvoľby témy"
 
 #: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
 msgstr ""
+"Prídavok k predvoľbám pre jednoduché úpravy témy a písma.   Obzvlášť "
+"užitočné pre používateľov systému Windows."
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -4278,7 +4248,7 @@ msgstr "Existujúci zdroj"
 
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
-msgstr "Vyberte typ zdroja na pripojenie"
+msgstr "Vyberte typ zdroja, ktorý chcete pripojiť"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
@@ -4286,15 +4256,15 @@ msgstr "Názov nového zdroja"
 
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
-msgstr "Text zdroja na pripojenie"
+msgstr "Text zdroja, ktorý chcete pripojiť"
 
 #: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
-msgstr "Existujúci ID zdroja"
+msgstr "ID existujúceho zdroja"
 
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr "ID zdroja na pripojenie"
+msgstr "ID zdroja, ktorý chcete pripojiť"
 
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
@@ -4312,7 +4282,7 @@ msgstr "Pripájanie zdrojov..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
-msgstr "Ukončené!\n"
+msgstr "Hotovo!\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
@@ -4321,27 +4291,29 @@ msgstr "Pripojí zdieľaný zdroj k viacerým objektom."
 #: PythonGramplet/PythonGramplet.gpr.py:4
 #: PythonGramplet/PythonGramplet.gpr.py:11
 msgid "Python Shell"
-msgstr "Shell Python"
+msgstr "Príkazový riadok jazyka Python"
 
 #: PythonGramplet/PythonGramplet.gpr.py:5
 msgid "Interactive Python interpreter"
-msgstr ""
+msgstr "Interaktívny interpret jazyka Python"
 
 #: PythonGramplet/PythonGramplet.py:55
 msgid "Enter Python expressions"
-msgstr "Zapíšte výrazy Pyhtonu"
+msgstr "Zadajte výrazy jazyka Python"
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
 msgstr "Žiadny zdroj"
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
+#, fuzzy
 msgid "onclick"
-msgstr ""
+msgstr "onclick"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
+#, fuzzy
 msgid "onmouseover"
-msgstr ""
+msgstr "onmouseover"
 
 #: DenominoViso/DenominoViso.py:208
 msgid "Ancestor"
@@ -4361,11 +4333,11 @@ msgstr "Rastová špirála"
 
 #: DenominoViso/DenominoViso.py:216
 msgid "Mandelbrot Tree"
-msgstr "Mandelbrot Tree"
+msgstr "Mandelbrotov strom"
 
 #: DenominoViso/DenominoViso.py:217
 msgid "Pythagoras Tree"
-msgstr "Pythagoras Tree"
+msgstr "Pytagorov strom"
 
 #: DenominoViso/DenominoViso.py:221
 msgid "right to left"
@@ -4381,13 +4353,13 @@ msgstr "zhora nadol"
 
 #: DenominoViso/DenominoViso.py:224
 msgid "bottom to top"
-msgstr "Zdola nahor"
+msgstr "zdola nahor"
 
 #: DenominoViso/DenominoViso.py:306 DenominoViso/DenominoViso.py:974
 #: DenominoViso/DenominoViso.py:1034 DenominoViso/DenominoViso.py:1259
 #: DenominoViso/DenominoViso.py:2750
 msgid "role"
-msgstr "úloha"
+msgstr "rola"
 
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
@@ -4402,16 +4374,13 @@ msgstr "svedkovia"
 
 #: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
 #: DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-format
-#| msgid "Failure writing %s"
+#, python-format
 msgid "Failure writing %s: %s"
-msgstr "Chyba pri zápise %s"
+msgstr "Chyba pri zápise %s: %s"
 
 #: DenominoViso/DenominoViso.py:395
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "No central person selected"
-msgstr "Hlavná osoba pre strom"
+msgstr "Nebola vybratá hlavná osoba"
 
 #: DenominoViso/DenominoViso.py:769
 msgid "Unknown time direction"
@@ -4435,11 +4404,11 @@ msgstr "zväzok"
 
 #: DenominoViso/DenominoViso.py:1754
 msgid "of"
-msgstr ""
+msgstr "z"
 
 #: DenominoViso/DenominoViso.py:1959
 msgid "the chart type runs out of bounds"
-msgstr "typ grafu vybočuje z hraníc"
+msgstr "typ grafu prekračuje hranice"
 
 #: DenominoViso/DenominoViso.py:2001
 msgid "Search"
@@ -4451,11 +4420,11 @@ msgstr "Možnosti DenominoViso"
 
 #: DenominoViso/DenominoViso.py:2556
 msgid "The destination file for the html-content."
-msgstr ""
+msgstr "Cieľový súbor pre obsah html."
 
 #: DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
-msgstr "Centrálna osoba"
+msgstr "Hlavná osoba"
 
 #: DenominoViso/DenominoViso.py:2560
 msgid "The central person for the tree"
@@ -4467,17 +4436,15 @@ msgstr "Názov webovej stránky"
 
 #: DenominoViso/DenominoViso.py:2564
 msgid "Any string you wish."
-msgstr "Ľubovoľný reťazec."
+msgstr "Akýkoľvek reťazec, ktorý si želáte."
 
 #: DenominoViso/DenominoViso.py:2567
-#, fuzzy
-#| msgid "Display type"
 msgid "Display mode"
-msgstr "Typ zobrazenia"
+msgstr "Režim zobrazenia"
 
 #: DenominoViso/DenominoViso.py:2568
 msgid "Either plot ancestor or descendants graph."
-msgstr "Či vykresliť graf predkov, alebo graf potomkov."
+msgstr "Buď vykresliť graf predkov alebo potomkov."
 
 #: DenominoViso/DenominoViso.py:2573
 msgid "Display type"
@@ -4485,15 +4452,15 @@ msgstr "Typ zobrazenia"
 
 #: DenominoViso/DenominoViso.py:2574
 msgid "The type of graph to create."
-msgstr "Typ grafu na vytvorenie."
+msgstr "Typ grafu, ktorý sa má vytvoriť."
 
 #: DenominoViso/DenominoViso.py:2582
 msgid "Direction of time"
-msgstr "Časová orientácia"
+msgstr "Smer času"
 
 #: DenominoViso/DenominoViso.py:2583
 msgid "Direction in which time increases."
-msgstr "Smer, ktorým sa čas predlžuje."
+msgstr "Smer, v ktorom čas narastá."
 
 #: DenominoViso/DenominoViso.py:2592
 msgid "Max chart width (%)"
@@ -4521,43 +4488,39 @@ msgid ""
 "notice."
 msgstr ""
 "Zoznam reťazcov, voľný text pridaný v spodnej časti, napríklad pre "
-"upozornenie na autorské práva."
+"upozornenie o autorských právach."
 
 #: DenominoViso/DenominoViso.py:2604
 msgid "Include Options"
-msgstr "Zahrnúť možnosti"
+msgstr "Možnosti zahrnutia"
 
 #: DenominoViso/DenominoViso.py:2607
 msgid "Include private records"
-msgstr "Vložiť súkromné záznamy"
+msgstr "Zahrnúť súkromné záznamy"
 
 #: DenominoViso/DenominoViso.py:2608
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to leave out private data."
-msgstr "Či zahrnúť súkromné objekty"
+msgstr "Či vynechať súkromné údaje."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
 msgstr "Zahrnúť udalosti"
 
 #: DenominoViso/DenominoViso.py:2613
-#, fuzzy
-#| msgid "Whether to include a person's note."
 msgid "Whether to include a person's events."
-msgstr "Či zahrnúť poznámku osoby."
+msgstr "Či zahrnúť udalosti osoby."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
-msgstr "Zahrnúť narodené deti"
+msgstr "Zahrnúť narodenie deti"
 
 #: DenominoViso/DenominoViso.py:2622
 msgid "Whether to include the birth of children in the list of events."
-msgstr "Či zahrnúť do zoznamu udalostí narodenie detí."
+msgstr "Či zahrnúť narodenie detí do zoznamu udalostí."
 
 #: DenominoViso/DenominoViso.py:2625
 msgid "Include death relatives"
-msgstr "Zahrnúť príbuzných po smrti"
+msgstr "Zahrnúť úmrtie príbuzných"
 
 #: DenominoViso/DenominoViso.py:2626
 msgid ""
@@ -4569,7 +4532,6 @@ msgid "Include witness note"
 msgstr "Zahrnúť poznámku svedka"
 
 #: DenominoViso/DenominoViso.py:2630
-#, fuzzy
 msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
 "contains <witnesses>)"
@@ -4646,23 +4608,23 @@ msgstr "Obrázky s atribútom"
 
 #: DenominoViso/DenominoViso.py:2675
 msgid "Determine images with which attributes to in/exclude"
-msgstr "Určiť obrázky s ktorými atribútmi sa majú zahrnúť/vylúčiť"
+msgstr "Určite obrázky s atribútmi, ktoré chcete zahrnúť/vylúčiť"
 
 #: DenominoViso/DenominoViso.py:2678
 msgid "Include Image source references"
-msgstr "Zahrnúť odkazy na zdroj obrázkov"
+msgstr "Zahrnúť zdrojové referencie obrázkov"
 
 #: DenominoViso/DenominoViso.py:2679
 msgid "Whether to include references for images"
-msgstr "Či zahrnúť odkazy na obrázky"
+msgstr "Či zahrnúť referencie k obrázkom"
 
 #: DenominoViso/DenominoViso.py:2682
 msgid "Source reference attribute"
-msgstr "Atribút odkazu zdroja"
+msgstr "Atribút zdrojovej referencie"
 
 #: DenominoViso/DenominoViso.py:2683
 msgid "Image attribute that should be used as source reference"
-msgstr "Atribút obrázka, ktorý sa má použiť ako odkaz na zdroj"
+msgstr "Atribút obrázka, ktorý by mal byť použitý ako zdrojová referencia"
 
 #: DenominoViso/DenominoViso.py:2689
 msgid "Style Options"
@@ -4702,59 +4664,67 @@ msgstr "RGB-farba geometrického tvaru ženských osôb."
 
 #: DenominoViso/DenominoViso.py:2707
 msgid "Width of rectangle (hrd):"
-msgstr ""
+msgstr "Šírka obdĺžnika (hrd):"
 
 #: DenominoViso/DenominoViso.py:2708
 msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
+"Šírka obdĺžnika osoby v bežnom type grafu vyjadrená ako zlomok horizontálnej "
+"vzdialenosti medzi obdĺžnikmi."
 
 #: DenominoViso/DenominoViso.py:2711
 msgid "Height of rectangle (hrd):"
-msgstr ""
+msgstr "Výška obdĺžnika (hrd):"
 
 #: DenominoViso/DenominoViso.py:2712
 msgid ""
 "The height of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
+"Výška obdĺžnika osoby v bežnom type grafu vyjadrená ako zlomok horizontálnej "
+"vzdialenosti medzi obdĺžnikmi."
 
 #: DenominoViso/DenominoViso.py:2715
 msgid "Vertical distance of rectangles (hrd):"
-msgstr ""
+msgstr "Vertikálna vzdialenosť medzi obdĺžnikmi (hrd):"
 
 #: DenominoViso/DenominoViso.py:2716
 msgid ""
 "The vertical distance of person rectangles of the regular chart type "
 "expressed as fraction of the horizontal rectangle distance."
 msgstr ""
+"Vertikálna vzdialenosť medzi obdĺžnikmi osôb v bežnom type grafu vyjadrená "
+"ako zlomok horizontálnej vzdialenosti medzi obdĺžnikmi."
 
 #: DenominoViso/DenominoViso.py:2719
 msgid "Extra style settings:"
-msgstr "Ďalšie nastavenia štýlu:"
+msgstr "Dodatočné nastavenia štýlu:"
 
 #: DenominoViso/DenominoViso.py:2720
 msgid "Whatever css style settings are needed."
-msgstr ""
+msgstr "Akékoľvek potrebné nastavenia štýlu CSS."
 
 #: DenominoViso/DenominoViso.py:2730
 msgid "Mouse event handler"
-msgstr "Ovládać myši pre udalosti"
+msgstr "Obsluha udalostí myši"
 
 #: DenominoViso/DenominoViso.py:2732
 msgid "Mouse handler used to interact with visitor of webpage."
-msgstr "Ovládač myši používaný na interakciu s návštevníkom webovej stránky."
+msgstr "Obsluha myši používaná na interakciu s návštevníkom webovej stránky."
 
 #: DenominoViso/DenominoViso.py:2736
 msgid "Birth relationship linestyle"
-msgstr ""
+msgstr "Štýl čiar vzťahu narodenia"
 
 #: DenominoViso/DenominoViso.py:2738
 msgid ""
 "List of lists where each sublist is a list with information about the dash "
 "pattern of lines connecting children to parents."
 msgstr ""
+"Zoznam zoznamov, kde každý podzoznam obsahuje informácie o vzore "
+"prerušovaných čiar spájajúcich deti s rodičmi."
 
 #: DenominoViso/DenominoViso.py:2744
 msgid "Source confidence color"
@@ -4765,6 +4735,8 @@ msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
+"Zoznam zoznamov, kde každý podzoznam obsahuje informácie o farbe používanej "
+"pre určitú úroveň dôveryhodnosti."
 
 #: DenominoViso/DenominoViso.py:2749
 msgid "Event format"
@@ -4772,7 +4744,7 @@ msgstr "Formát udalostí"
 
 #: DenominoViso/DenominoViso.py:2750
 msgid "at"
-msgstr ""
+msgstr "v"
 
 #: DenominoViso/DenominoViso.py:2754
 msgid ""
@@ -4810,45 +4782,43 @@ msgstr "Uložiť obrázky do ..."
 
 #: DenominoViso/DenominoViso.py:2911
 msgid "should be"
-msgstr ""
+msgstr "by malo byť"
 
 #: DenominoViso/DenominoViso.py:2913
-#, fuzzy
-#| msgid "Include URL"
 msgid "Included"
-msgstr "Zahrnúť adresu URL"
+msgstr "Zahrnuté"
 
 #: DenominoViso/DenominoViso.py:2914
 msgid "Excluded"
-msgstr ""
+msgstr "Vylúčené"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
-msgstr ""
+msgstr "Názov súboru HTML-wrappera"
 
 #: DenominoViso/DenominoViso.py:2955
 msgid "Save HTML-wrapper file as ..."
-msgstr ""
+msgstr "Uložiť súbor HTML-wrappera ako ..."
 
 #: DenominoViso/DenominoViso.py:2980
 msgid "Give a filename ..."
-msgstr "Zadať názov súboru ..."
+msgstr "Zadajte názov súboru ..."
 
 #: DenominoViso/DenominoViso.py:3114
 msgid "Relation type"
-msgstr "Druh vzťahu"
+msgstr "Typ vzťahu"
 
 #: DenominoViso/DenominoViso.py:3119
 msgid "Use dashed linestyle"
-msgstr ""
+msgstr "Použiť prerušovaný štýl čiary"
 
 #: DenominoViso/DenominoViso.py:3124
 msgid "Dash length"
-msgstr ""
+msgstr "Dĺžka prerušovania"
 
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
-msgstr ""
+msgstr "Dĺžka medzery medzi prerušeniami"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -4860,74 +4830,73 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
+"Generuje webovú (HTML) stránku s grafickým znázornením predkov/potomkov (SVG)"
+", kde sa detaily o jednotlivcoch zobrazia pri udalostiach myši."
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
-msgstr ""
+msgstr "Zobraziť vzťahy a vzdialenosti s domácou osobou"
 
 #: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
-msgstr ""
+msgstr "Zobrazí informácie o vzťahoch s domácou osobou"
 
 #: RelID/relation_tab.py:75
 msgid "Relation and distances with root"
-msgstr ""
+msgstr "Vzťah a vzdialenosti s koreňom"
 
 #: RelID/relation_tab.py:92
 msgid "Folder Chooser"
-msgstr ""
+msgstr "Výber priečinka"
 
 #: RelID/relation_tab.py:97
-#, fuzzy
-#| msgid "Select All"
 msgid "_Select"
-msgstr "Vybrať všetko"
+msgstr "_Vybrať"
 
 #: RelID/relation_tab.py:99
 msgid "Please, select a folder"
-msgstr ""
+msgstr "Prosím, vyberte priečinok"
 
 #: RelID/relation_tab.py:110
+#, fuzzy
 msgid "Rel_id"
-msgstr ""
+msgstr "Rel_id"
 
 #: RelID/relation_tab.py:111
-#, fuzzy
-#| msgid "Relation type"
 msgid "Relation"
-msgstr "Druh vzťahu"
+msgstr "Vzťah"
 
 #: RelID/relation_tab.py:113
 msgid "up"
-msgstr ""
+msgstr "hore"
 
 #: RelID/relation_tab.py:114
 msgid "down"
-msgstr ""
+msgstr "dole"
 
 #: RelID/relation_tab.py:115
 msgid "Common MRA"
-msgstr ""
+msgstr "Spoločný MRA"
 
 #: RelID/relation_tab.py:116
 msgid "Rank"
-msgstr ""
+msgstr "Úroveň"
 
 #: RelID/relation_tab.py:117
 msgid "Period"
-msgstr ""
+msgstr "Obdobie"
 
 #: RelID/relation_tab.py:164
 msgid "Please wait, filtering..."
-msgstr ""
+msgstr "Prosím, počkajte, filtrujem..."
 
 #: RelID/relation_tab.py:169
 msgid "No default_person"
-msgstr ""
+msgstr "Žiadna východzia_osoba"
 
 #: RelID/relation_tab.py:174
 msgid "Generating relation map..."
-msgstr ""
+msgstr "Generovanie mapy vzťahov..."
 
 #: RelID/relation_tab.py:190
 #, python-format
@@ -4937,34 +4906,39 @@ msgid ""
 " %d/%d \n"
 "%f|\t%f"
 msgstr ""
+"%d/%d \n"
+" %d/%d sekúnd \n"
+" %d/%d \n"
+"%f|\t%f"
 
 #: RelID/relation_tab.py:308
 msgid "You do not have write rights on this folder"
-msgstr ""
+msgstr "Nemáte práva na zápis v tomto priečinku"
 
 #: QuiltView/QuiltView.gpr.py:23 QuiltView/QuiltView.gpr.py:34
 msgid "Quilt Chart"
-msgstr ""
+msgstr "Quilt Chart"
 
 #: QuiltView/QuiltView.gpr.py:25
 msgid "The view shows a quilt chart visualisation of a family tree"
 msgstr ""
 
 #: QuiltView/QuiltView.py:223
+#, fuzzy
 msgid "Quilt chart"
-msgstr ""
+msgstr "Quilt chart"
 
 #: QuiltView/QuiltView.py:307
 msgid "Select the name for which you want to see."
-msgstr ""
+msgstr "Vyberte meno, ktoré chcete vidieť."
 
 #: QuiltView/QuiltView.py:314
 msgid "Clear the entry field in the name selection box."
-msgstr ""
+msgstr "Vymažte vstupné pole v kolónke pre výber mena."
 
 #: QuiltView/QuiltView.py:319
 msgid "Nothing is selected"
-msgstr ""
+msgstr "Nič nie je vybrané"
 
 #: QuiltView/QuiltView.py:572
 #, python-format
@@ -4972,87 +4946,79 @@ msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
 "%(total)d people in your database."
 msgstr ""
+"Máte %(filter)d filtrovaných osôb, %(count)d osôb zobrazených na strome a "
+"%(total)d osôb vo vašej databáze."
 
 #: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
-msgstr ""
+msgstr "Načítavanie jednotlivcov"
 
 #: QuiltView/QuiltView.py:663
 msgid "Loading the data"
-msgstr ""
+msgstr "Načítavanie údajov"
 
 #: QuiltView/QuiltView.py:1053
 msgid "About Quilt View"
-msgstr ""
+msgstr "O pohľade Quilt"
 
 #: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
-#, fuzzy
-#| msgid "Edit Note"
 msgid "Edit tags"
-msgstr "Editovať poznámku"
+msgstr "Upraviť značky"
 
 #: QuiltView/QuiltView.py:1500
-#, fuzzy
-#| msgid "Highlight the home person"
 msgid "Set as home person"
-msgstr "Zvýrazniť východziu osobu"
+msgstr "Nastaviť ako domácu osobu"
 
 #: QuiltView/QuiltView.py:1656
 #, python-format
 msgid "Adding Tags to person (%s)"
-msgstr ""
+msgstr "Pridávanie značiek k osobe (%s)"
 
 #: QuiltView/QuiltView.py:1661
 #, python-format
 msgid "Adding Tags to family (%s)"
-msgstr ""
+msgstr "Pridávanie značiek k rodine (%s)"
 
 #: QuiltView/QuiltView.py:1865
-#, fuzzy
-#| msgid "Print the notes type"
 msgid "Printing the tree"
-msgstr "Zahrnúť typ poznámok"
+msgstr "Tlačím strom"
 
 #: QuiltView/QuiltView.py:1869
 #, python-format
 msgid "Need to print %(pages)s pages (%(format)s format)"
-msgstr ""
+msgstr "Potrebujem vytlačiť %(pages)s strán (%(format)s formát)"
 
 #: QuiltView/QuiltView.py:1921
 msgid ""
 "Center on the selected person.\n"
 "The new position of the person will be near the top left corner."
 msgstr ""
+"Zamerajte sa na vybranú osobu. \n"
+"Nová pozícia osoby bude blízko ľavého horného rohu."
 
 #: QuiltView/QuiltView.py:1926
 msgid "The path color"
-msgstr ""
+msgstr "Farba cesty"
 
 #: QuiltView/QuiltView.py:1931
-#, fuzzy
-#| msgid "Center person only"
 msgid "The selected person color"
-msgstr "Iba ústredná osoba"
+msgstr "Farba vybranej osoby"
 
 #: QuiltView/QuiltView.py:1936
 msgid "The path transparency"
-msgstr ""
+msgstr "Priehľadnosť cesty"
 
 #: QuiltView/QuiltView.py:1939
-#, fuzzy
-#| msgid "General Data"
 msgid "General options"
-msgstr "Všeobecné údaje"
+msgstr "Všeobecné možnosti"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
-#, fuzzy
-#| msgid "description"
 msgid "No place description"
-msgstr "popis"
+msgstr "Žiadny popis miesta"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
 msgid "GoogleEarth not installed!"
-msgstr ""
+msgstr "GoogleEarth nie je nainštalovaný!"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:153
 #, python-format
@@ -5060,22 +5026,21 @@ msgid ""
 "Create kmz/kml file ''%s''\n"
 "in user directory ''%s''?"
 msgstr ""
+"Vytvoriť kmz/kml súbor ''%s'' \n"
+"v užívateľskom adresári ''%s''?"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
-#, fuzzy, python-format
-#| msgid "Failure writing %s"
+#, python-format
 msgid "Failure writing to %s"
-msgstr "Chyba pri zápise %s"
+msgstr "Chyba pri zápise do %s"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
-#, fuzzy
-#| msgid "The file does not exist."
 msgid "Directory does not exist"
-msgstr "Súbor neexistuje."
+msgstr "Adresár neexistuje"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:173
 msgid "GoogleEarth file exists!"
-msgstr ""
+msgstr "Súbor GoogleEarth existuje!"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:174
 #, python-format
@@ -5083,25 +5048,25 @@ msgid ""
 "Overwrite kmz/kml file ''%s''\n"
 "in user home directory ''%s''?"
 msgstr ""
+"Prepísať kmz/kml súbor ''%s''\n"
+"v domovskom adresári užívateľa ''%s''?"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "GoogleEarth"
-msgstr "Mapy Google"
+msgstr "GoogleEarth"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
 msgid "Creates data file for GoogleEarth and opens it"
-msgstr ""
+msgstr "Tvorí dátový súbor pre GoogleEarth a otvára ho"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
 msgid "Prerequisites Checker"
-msgstr ""
+msgstr "Kontrola náležitostí"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:30
 msgid "Prerequisites Checker Gramplet"
-msgstr ""
+msgstr "Gramplet Kontrola náležitostí"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:143
 msgid ""
@@ -5109,96 +5074,128 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
+"Diagnostický Gramplet na pomoc pri hodnotení, či <a href="
+"\"https://gramps-project.org/\">Gramps</a> má všetky <a href="
+"\"https://github.com/gramps-project/gramps/blob/master/README.md\""
+">náležitosti</a> nainštalované.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
 "Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
 "installed."
 msgstr ""
+"Diagnostický gramplet na pomoc pri hodnotení, či Gramps má všetky "
+"náležitosti nainštalované."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>POŽADOVANÉ</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
 msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
 msgstr ""
+"<i>Inštalácie nasledujúcich balíkov sú <b>ABSOLÚTNE POŽADOVANÉ</b>\n"
+" (Vyžaduje minimálne verziu alebo vyššiu.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>ODPORÚČANÉ</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
 msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
 msgstr ""
+"<i>Inštalácie nasledujúcich balíkov sú <b>VEĽMI ODPORÚČANÉ</b> ako "
+"nevyhnutné pre geografiu a grafy</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
 msgid ""
 "\n"
 "<u><b>Optional</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Voliteľné</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr ""
+msgstr "<i>Inštalácie nasledujúcich balíkov sú <b>voliteľné</b></i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
-msgstr ""
+msgstr "Gtkspell umožňuje kontrolu pravopisu v poznámkach.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
 msgstr ""
+"Knižnica Python Image Library (PIL) je potrebná na orezávanie obrázkov a "
+"výstup LaTeX."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
 msgid ""
 "\n"
 "<u><b>Development & Translation Requirements</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Požiadavky na vývoj a preklad</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:241
 msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
+"<i>Inštalácie nasledujúcich balíkov sú <b>ODPORÚČANÉ</b>, ak plánujete "
+"prekladať alebo vykonávať akýkoľvek vývoj (doplnky atď.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
 "\n"
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Voliteľné balíčky požadované doplnkami tretích strán</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
+#, fuzzy
 msgid ""
 "<i>Prerequistes required for the following <a href=\"https://gramps-project."
 "org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
 "work</i>:\n"
 msgstr ""
+"<i>Náležitosti potrebné pre nasledujúce <a href="
+"\"https://gramps-project.org/wiki/index.php?title=Third-party_Addons\">Third-"
+"party Addons</a>, aby fungovali</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
 "\n"
 "<u><b>Diagnostic checks</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Diagnostické kontroly</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
 msgid "Check for potential issues.\n"
-msgstr ""
+msgstr "Skontrolujte potenciálne problémy.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
 msgid ""
 "\n"
 "Environment settings:\n"
 msgstr ""
+"\n"
+"Nastavenia prostredia:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
 msgid ""
@@ -5206,12 +5203,17 @@ msgid ""
 "\n"
 "<u><b>Locales available:</b></u>\n"
 msgstr ""
+"\n"
+"\n"
+"<u><b>Dostupné lokácie:</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
 msgid ""
 "\n"
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Zálohujte svoje genealogické súbory.</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:288
 msgid ""
@@ -5219,6 +5221,9 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
+"Pokiaľ máte dôvod kontrolovať náležitosti, je to správny čas na zálohovanie "
+"vašich genealogických súborov a potom otestovanie vašich záloh!\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
 msgid ""
@@ -5235,22 +5240,28 @@ msgid ""
 " • Backups can be made at any time and, at a minimum, on the first day of "
 "every month. But preferrably more often.\n"
 msgstr ""
+" Zálohy môžu byť vykonané kedykoľvek a minimálne prvý deň každého mesiaca. "
+"Ale radšej častejšie.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
 msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
 msgstr ""
+" Je veľmi odporúčané zálohovať každý z vašich rodinných stromov pred "
+"akoukoľvek aktualizáciou.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
 msgstr ""
+" Otestujte svoje zálohy vytvorením nového rodinného stromu a potom "
+"importovaním zálohy."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ", is the most current version.\n"
-msgstr ""
+msgstr ", je najnovšia verzia.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:339
 #, python-format
@@ -5258,6 +5269,8 @@ msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
 "%s"
 msgstr ""
+"Máte Gramps %s. Prosím, urobte si zálohu a potom aktualizujte.\n"
+"%s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
 #, python-format
@@ -5266,11 +5279,14 @@ msgid ""
 "for contributing and testing; please report any issues. Backups are your "
 "friend.\n"
 msgstr ""
+"Máte nainštalovaný Gramps %s; nevydanú vývojovú verziu. Ďakujeme za váš "
+"príspevok a testovanie; prosím, nahláste akékoľvek problémy. Zálohy sú váš "
+"priateľ.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:351
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
-msgstr ""
+msgstr "Máte Gramps %s. Gratulujeme, máte aktuálnu verziu.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:378
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:452
@@ -5281,7 +5297,7 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1160
 msgid " (Requires version "
-msgstr ""
+msgstr " (Vyžaduje verziu "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:379
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
@@ -5291,7 +5307,7 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:566
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:602
 msgid " or greater installed.)\n"
-msgstr ""
+msgstr " alebo vyššiu nainštalovanú.)\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:386
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:456
@@ -5303,7 +5319,7 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:948
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1156
 msgid " (Passed: version "
-msgstr ""
+msgstr " (Prešlo: verzia "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:414
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:479
@@ -5314,14 +5330,12 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:797
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:798
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1107
-#, fuzzy
-#| msgid "Unknown time direction"
 msgid "unknown version"
-msgstr "Neznámy časový smer"
+msgstr "neznáma verzia"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:422
 msgid "DISPLAY not set"
-msgstr ""
+msgstr "ZOBRAZENIE nie je nastavené"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:453
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:505
@@ -5329,33 +5343,35 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:561
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:598
 msgid " or greater.)\n"
-msgstr ""
+msgstr " alebo vyššiu.)\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:560
 msgid " (Requires "
-msgstr ""
+msgstr " (Vyžaduje "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
 msgid " • Berkeley Database library (bsddb3: "
-msgstr ""
+msgstr " • knižnicu Berkeley Database (bsddb3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:675
 msgid " • SQLite Database library (sqlite3: "
-msgstr ""
+msgstr " • knižnicu SQLite Database (sqlite3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:689
 msgid " • xdg-utils (Manual check see instructions link)"
-msgstr ""
+msgstr " • xdg-utils (Manuálna kontrola, pozri odkaz na pokyny)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:702
 msgid " • librsvg2 (Manual check see instructions link)"
-msgstr ""
+msgstr " • librsvg2 (Manuálna kontrola, pozri odkaz na pokyny)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:713
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
+" • language-pack-gnome-xx (Manuálna kontrola, pozri odkaz na pokyny) pre váš "
+"jazyk <zobraziť lokalitu tu TBD>"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
@@ -5364,11 +5380,11 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1759
 msgid " or greater installed.)"
-msgstr ""
+msgstr " alebo vyššiu nainštalovanú verziu.)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:749
 msgid " or greater)"
-msgstr ""
+msgstr " alebo vyššiu)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:780
 msgid "Graphviz not in system PATH"
@@ -5380,24 +5396,24 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:863
 msgid " (Passed: version 0.5.x is installed.)"
-msgstr ""
+msgstr " (Prešlo: verzia 0.5.x je nainštalovaná.)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:866
 msgid " (Requires version 0.5.x)"
-msgstr ""
+msgstr " (Vyžaduje verziu 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr ""
+msgstr " • python-fontconfig nenájdený, (Vyžaduje verziu 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
-msgstr ""
+msgstr " • python-fontconfig nainštalovaný, verzia nedostupná"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
 msgid " or greater installed.) (enchant module: "
-msgstr ""
+msgstr " alebo vyššia verzia je nainštalovaná.) (enchant modul: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1011
 #, python-format
@@ -5405,6 +5421,8 @@ msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (Prešlo: verzia %s alebo vyššia je nainštalovaná. Ak nie na "
+"Microsoft Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1015
 #, python-format
@@ -5412,56 +5430,61 @@ msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (Vyžaduje verziu %s alebo vyššiu nainštalovanú. Ak nie na "
+"Microsoft Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1129
 msgid "can't found it because exiv2 not installed"
-msgstr ""
+msgstr "nedá sa nájsť, pretože exiv2 nie je nainštalovaný"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
-msgstr ""
+msgstr "GExiv2 : %s (knižnica Exiv2 : %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1197
 msgid "found another font"
-msgstr ""
+msgstr "nájdený iný font"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1205
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
+"Pre doplnok Networkchart, písmo <a href="
+"\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> "
+"poskytuje mimoriadne čitateľný výsledok.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
-msgstr ""
+msgstr "Prečo, keď rovnaký kód funguje v Graphview"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1246
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1308
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1318
 msgid "not installed"
-msgstr ""
+msgstr "nenainštalovaný"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
 msgid "     and one of either: (pydotplus: "
-msgstr ""
+msgstr "     a jeden z buď:(pydotplus: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
 msgid ") or (pygraphviz: "
-msgstr ""
+msgstr ") alebo (pygraphviz: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
 msgid "Installed(MS-Windows)"
-msgstr ""
+msgstr "Nainštalovaný (MS-Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
 msgid "Installed(Linux/Mac)"
-msgstr ""
+msgstr "Nainštalovaný (Linux/Mac)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
 msgid "not installed "
-msgstr ""
+msgstr "nenainštalovaný "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1444
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1614
@@ -5470,53 +5493,57 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1702
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1708
 msgid "not found."
-msgstr ""
+msgstr "nenájdený."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1466
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
-msgstr ""
+msgstr "Štandard. Prešlo: program nainštalovaný - 32bit na 64bit Win OS."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
-msgstr ""
+msgstr ") (Vyžaduje doplnok gramps uvedený pod 'Plugin lib')"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
 msgid "DBF installed"
-msgstr ""
+msgstr "DBF nainštalovaný"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1559
 msgid ".)(Requires version "
-msgstr ""
+msgstr ".)(Vyžaduje verziu "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1564
 msgid " installed.)(Passed: version "
-msgstr ""
+msgstr " nainštalovaný.)(Prešlo verzia "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
-#, python-format
+#, fuzzy, python-format
 msgid "(OpenCV facedetection: %s)"
-msgstr ""
+msgstr "(OpenCV facedetection:%s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
 msgid " (lxml: not found. Requires version "
-msgstr ""
+msgstr " (lxml:nenájdený. Vyžaduje verziu "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1776
 msgid " • Requires: MongoDB TBD / pymongo TBD"
-msgstr ""
+msgstr " • Vyžaduje: MongoDB TBD / pymongo TBD"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1790
 #, python-format
 msgid " • Operating System: %s"
-msgstr ""
+msgstr " • Operačný systém: %s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
+#, fuzzy
 msgid ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=Gramps_5.0_Wiki_Manual_-"
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=Gramps_5.0_Wiki_Manual_-_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE."
+"2C_LC_TIME\">Locale Settings:</a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
@@ -5527,7 +5554,7 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1872
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1874
 msgid "not set"
-msgstr ""
+msgstr "nenastavený"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1822
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1823
@@ -5538,7 +5565,7 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1878
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1879
 msgid "not tested"
-msgstr ""
+msgstr "netestovaný"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1845
 msgid ""
@@ -5588,7 +5615,7 @@ msgstr "Vzťh."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr "DNA"
+msgstr "Zd. DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Leg."
@@ -5645,7 +5672,7 @@ msgstr "cM"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
-msgstr ""
+msgstr "PhpGedView"
 
 #: PhpGedView/phpgedview.gpr.py:25
 msgid "Download a GEDCOM file from a phpGedView server."
@@ -5678,10 +5705,8 @@ msgid "Error: login failed"
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
-#, fuzzy
-#| msgid "done!\n"
 msgid "done."
-msgstr "Hotovo!\n"
+msgstr "hotovo."
 
 #: PhpGedView/phpgedviewconnector.py:347
 #, fuzzy
@@ -5800,17 +5825,15 @@ msgid "Writing %s reports..."
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-format
-#| msgid "Descendant"
+#, python-format
 msgid "%s. Descendants of %s"
-msgstr "Potomok"
+msgstr "%s. Potomkovia osoby %s"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
-#, fuzzy, python-format
-#| msgid "(m. %s)"
+#, python-format
 msgid "%d. %s"
-msgstr "(vyd./žen. %s)"
+msgstr "%d. %s"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1345
@@ -5900,17 +5923,15 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
-#, fuzzy, python-format
-#| msgid "in %(place)s"
+#, python-format
 msgid "%(date)s, %(place)s"
-msgstr "v/vo %(place)s"
+msgstr "%(date)s, %(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:820
 #: DescendantBooks/DetailedDescendantBookReport.py:864
-#, fuzzy, python-format
-#| msgid "in %(y_date)s"
+#, python-format
 msgid "%(date)s"
-msgstr "v/vo %(y_date)s"
+msgstr "%(date)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:822
 #: DescendantBooks/DetailedDescendantBookReport.py:866
@@ -5945,10 +5966,9 @@ msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1298
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(type)s:"
-msgstr "%(type)s: %(value)s"
+msgstr "%(type)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1303
 #, python-format
@@ -7655,10 +7675,8 @@ msgid ""
 msgstr ""
 
 #: BirthOrder/birthorder.glade:232
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done"
-msgstr "Ukončené!\n"
+msgstr "Ukončené"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
@@ -19000,10 +19018,9 @@ msgid "Gathering data"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr "Počet stránok"
+msgstr "Počet osôb: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -19719,10 +19736,9 @@ msgid "Filter options"
 msgstr "Prebieha filtrovanie"
 
 #: RemoveTagTool/RemoveTagTool.py:151
-#, fuzzy, python-format
-#| msgid "All Places"
+#, python-format
 msgid "All %s"
-msgstr "Všetky lokality"
+msgstr "Všetky %s"
 
 #: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
 #: RemoveTagTool/RemoveTagTool.gpr.py:25
@@ -19817,18 +19833,18 @@ msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship to Father"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Vzťah k otcovi"
+msgstr ""
+"\n"
+"Vzťah: {0} "
 
 #: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestor"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Predok"
+msgstr " Predok: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -20640,10 +20656,9 @@ msgid "resident"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:971
-#, fuzzy, python-format
-#| msgid "description"
+#, python-format
 msgid "(%(description)s)"
-msgstr "popis"
+msgstr "(%(description)s)"
 
 #: FamilyTree/FamilyTree.py:1044
 #, fuzzy
@@ -20968,7 +20983,7 @@ msgstr "Či zahrnúť odkazy na obrázky"
 #: RepositoriesReport/RepositoriesReportAlt.py:518
 #: RepositoriesReport/RepositoriesReport.py:189
 msgid "The style used for repository title."
-msgstr "Štýl použitý pre nadpis archívu."
+msgstr "Štýl použitý pre názov archívu."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
@@ -21082,13 +21097,12 @@ msgstr "Zobraziť miesta"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
-#, fuzzy, python-format
-#| msgid "Descendant generations"
+#, python-format
 msgid "%d generation"
 msgid_plural "%d generations"
-msgstr[0] "Generácie potomkov"
-msgstr[1] "Generácie potomkov"
-msgstr[2] "Generácie potomkov"
+msgstr[0] "%d generácia"
+msgstr[1] "%d generácie"
+msgstr[2] "%d generácií"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
 msgid "About Timeline Pedigree View"
@@ -21387,10 +21401,8 @@ msgid ""
 msgstr ""
 
 #: GraphView/graphview.py:1519
-#, fuzzy
-#| msgid "Active person"
 msgid "Change active person?"
-msgstr "Aktívna osoba"
+msgstr "Zmeniť aktívnu osobu?"
 
 #: GraphView/graphview.py:2668
 #, python-brace-format
@@ -21569,10 +21581,9 @@ msgid ""
 msgstr ""
 
 #: GraphView/search_widget.py:592
-#, fuzzy, python-format
-#| msgid "<b>Tags:</b>"
+#, python-format
 msgid "<b>%s:</b>"
-msgstr "<b>Značky:</b>"
+msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
 msgid "Partners"
@@ -21905,10 +21916,9 @@ msgid "Pedigree Chart for %s"
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:528
-#, fuzzy, python-format
-#| msgid "Pages"
+#, python-format
 msgid "Page %d"
-msgstr "Stránky"
+msgstr "Stránka %d"
 
 #: PedigreeChart/PedigreeChart.py:640
 msgid "Show Mother/Father captions"
