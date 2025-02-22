@@ -8,21 +8,22 @@
 # Nils Kristian Tomren <project@nilsk.net>, 2006.
 # Espen Berg <espenbe@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016.
 # Harald H. <haarektrans@gmail.com>, 2017.
+# Harald Herreros <h.herreros@proton.me>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-15 10:09+0000\n"
+"PO-Revision-Date: 2025-02-22 06:16+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
-"project/addons/nb_NO/>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
+"gramps-project/addons/nb_NO/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: MediaMerge/mediamerge.py:104
@@ -83,7 +84,7 @@ msgstr "Legg til fødselshendelse uten datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
-msgstr "Legg til fødselshendelse uten ingen dato"
+msgstr "Legg til fødselshendelser med datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
@@ -243,7 +244,7 @@ msgstr "Fjerner gamle estimater... "
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
-msgstr "Fjerner '%s'..."
+msgstr "Fjerner «%s»..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
@@ -280,7 +281,7 @@ msgstr "Velger... "
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
 msgid "Adding events '%s'..."
-msgstr "Legger til hendelser '%s'..."
+msgstr "Legger til hendelser «%s»..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
@@ -374,16 +375,16 @@ msgstr ""
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
-msgstr ""
+msgstr "Beklager, ingen støtte for ditt operativsystem ennå!"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr ""
+msgstr "Er det en komprimert .gramps?"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr ""
+msgstr "Kan ikke pakke ut «%s»"
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -394,16 +395,20 @@ msgid ""
 " to:\n"
 " \"%(file2)s\".\n"
 msgstr ""
+"Fra:\n"
+" «%(file1)s»\n"
+" til:\n"
+" «%(file2)s».\n"
 
 #: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
 msgid "Cannot copy \"%s\""
-msgstr ""
+msgstr "Kan ikke kopiere «%s»"
 
 #: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr ""
+msgstr "XML: Seneste %s utgaver siden %s, var den:\n"
 
 #: lxml/etreeGramplet.py:471
 #, python-format
@@ -412,6 +417,9 @@ msgid ""
 "XML: Number of records and relations : \t%s\n"
 "\n"
 msgstr ""
+"\n"
+"XML: Antall oppføringer og slektskap : \t%s\n"
+"\n"
 
 #: lxml/etreeGramplet.py:474
 #, python-format
@@ -419,6 +427,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Antall etiketter : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
 #, python-format
@@ -426,6 +436,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
+"Antall etiketter : \n"
+"\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
 #, python-format
@@ -433,6 +445,8 @@ msgid ""
 "Number of  events : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Antall  hendelser : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:481
 #, python-format
@@ -440,6 +454,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgstr ""
+"Antall personer : \n"
+"\t\t\t%s\t|\t(%s) og (%s)* etternavn\n"
 
 #: lxml/etreeGramplet.py:483
 #, python-format
@@ -447,6 +463,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Antall personer : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:484
 #, python-format
@@ -454,6 +472,8 @@ msgid ""
 "Number of families : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Antall familier : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:485
 #, python-format
@@ -461,6 +481,8 @@ msgid ""
 "Number of sources : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Antall kilder : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:487
 #, python-format
@@ -468,6 +490,8 @@ msgid ""
 "Number of citations : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Antall siteringer : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:490
 #, python-format
@@ -475,6 +499,8 @@ msgid ""
 "Number of places : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Antall steder : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:491
 #, python-format
@@ -482,6 +508,8 @@ msgid ""
 "Number of media objects : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Antall medieobjekter : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:492
 #, python-format
@@ -489,6 +517,8 @@ msgid ""
 "Number of repositories : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Antall arkiver : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:493
 #, python-format
@@ -496,6 +526,8 @@ msgid ""
 "Number of notes : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Antall notater : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:498
 #, python-format
@@ -503,6 +535,8 @@ msgid ""
 "\n"
 "XML: Number of additional records and relations: \t%s\n"
 msgstr ""
+"\n"
+"XML: Antall ytterligere oppføringer og slektskap: \t%s\n"
 
 #: lxml/etreeGramplet.py:502
 #, python-format
@@ -510,18 +544,20 @@ msgid ""
 "* loaded Family Tree base:\n"
 " \"%s\"\n"
 msgstr ""
+"* åpnet slektsdatabase:\n"
+" «%s»\n"
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
-msgstr ""
+msgstr "Hvor er gzip?"
 
 #: lxml/lxmlGramplet.py:67
 msgid "\"gzip\" is missing"
-msgstr ""
+msgstr "«gzip» mangler"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Missing python3 lxml"
-msgstr ""
+msgstr "Mangler python3 lxml"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
@@ -538,17 +574,17 @@ msgstr ""
 #: lxml/lxmlGramplet.py:298
 #, python-format
 msgid "Cannot validate \"%(file)s\" !"
-msgstr ""
+msgstr "Kan ikke validere «%(file)s» !"
 
 #: lxml/lxmlGramplet.py:306
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
-msgstr ""
+msgstr "xmllint: hopp over DTD-validering for «%(file)s»"
 
 #: lxml/lxmlGramplet.py:318
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
-msgstr ""
+msgstr "xmllint: hopp over RelaxNG-validering for «%(file)s»"
 
 #: lxml/lxmlGramplet.py:329
 msgid "Parsing issue"
@@ -557,11 +593,11 @@ msgstr ""
 #: lxml/lxmlGramplet.py:329
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
-msgstr ""
+msgstr "Kan ikke analysere innholdet i «%(file)s»"
 
 #: lxml/lxmlGramplet.py:333
 msgid "Gramps version"
-msgstr ""
+msgstr "Gramps versjon"
 
 #: lxml/lxmlGramplet.py:333
 #, python-format
@@ -569,10 +605,12 @@ msgid ""
 "Wrong namespace\n"
 "Need: %s"
 msgstr ""
+"Feil navneområde\n"
+"Behøver: %s"
 
 #: lxml/lxmlGramplet.py:337
 msgid "RelaxNG validation"
-msgstr ""
+msgstr "RelaxNG validering"
 
 #: lxml/lxmlGramplet.py:337
 #, python-format
@@ -640,10 +678,8 @@ msgid " note(s)"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:505
-#, fuzzy
-#| msgid "New source"
 msgid " source(s)"
-msgstr "Ny kilde"
+msgstr " kilde(r)"
 
 #: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
 msgid "Gallery.html"
@@ -864,7 +900,7 @@ msgstr "Stilen som brukes på sidens tittel."
 
 #: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
-msgstr ""
+msgstr "Hvilken type sted dette er, for eksempel «Land», «By» osv."
 
 #: PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
@@ -897,6 +933,9 @@ msgid ""
 "Select one or more rows and press 'Keep' button to toggle the 'include into "
 "place' status ."
 msgstr ""
+"Alternative navn\n"
+"Velg en eller flere rader og trykk på knappen «Behold» for å veksle statusen "
+"for «inkluder i sted»."
 
 #: PlaceCleanup/placecleanup.glade:406
 msgid "Inc"
@@ -983,14 +1022,21 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
+"Når du rydder opp i et sted som allerede er omsluttet, påvirker dette hva "
+"som blir gjort.\n"
+"Hvis «<b>Behold gjeldende omslutning</b>» er valgt, blir det ikke gjort "
+"endringer i det omsluttende stedet.\n"
+"Hvis «<b>Erstatt med GeoNames-omslutning</b>» er valgt, endres det "
+"omsluttende stedet til neste nivå i GeoNames.  Dette kan føre til at noen "
+"ubrukte steder forblir i databasen din."
 
 #: PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
-msgstr ""
+msgstr "Behold gjeldende omslutning"
 
 #: PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
-msgstr ""
+msgstr "Erstatt med GeoNames-omslutning"
 
 #: PlaceCleanup/placecleanup.glade:851
 msgid ""
@@ -1044,16 +1090,20 @@ msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
 msgstr ""
+"Å merke av i avkrysningsboksen «Befolket» gjør at GeoNames-søket inkluderer «"
+"Befolkede steder», altså steder der folk bor og arbeider."
 
 #: PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
-msgstr ""
+msgstr "Befolket"
 
 #: PlaceCleanup/placecleanup.glade:1131
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
 msgstr ""
+"Å merke av i avkrysningsboksen «Admin» gjør at GeoNames-søket inkluderer "
+"administrative inndelinger i søket (land, stater, fylker osv.)."
 
 #: PlaceCleanup/placecleanup.glade:1148
 msgid ""
@@ -1061,14 +1111,16 @@ msgid ""
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
 msgstr ""
+"Å merke av i avkrysningsboksen «Punkt» gjør at GeoNames-søket inkluderer en "
+"rekke andre steder i søket (kirker, gravplasser, bygninger osv.)."
 
 #: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
-msgstr ""
+msgstr "Admin"
 
 #: PlaceCleanup/placecleanup.glade:1174
 msgid "Spot"
-msgstr ""
+msgstr "Punkt"
 
 #: FilterRules/isrelatedwithfiltermatch.py:53
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
@@ -1119,51 +1171,47 @@ msgstr ""
 
 #: FilterRules/hasrolerule.py:56
 msgid "Finds the items that don't have event Roles of the selected type."
-msgstr ""
+msgstr "Finner elementene som ikke har hendelsesroller av den valgte typen."
 
 #: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
 msgid "Inverse"
 msgstr ""
 
 #: FilterRules/hasrolerule.py:68
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "People with events with the <role>"
-msgstr "Legg til fødselshendelse uten ingen dato"
+msgstr "Personer med hendelser med <role>"
 
 #: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
 msgid "Matches people with an event with a selected role"
-msgstr ""
+msgstr "Matcher personer med en hendelse med en valgt rolle"
 
 #: FilterRules/hasrolerule.py:92
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "Families with events with the <role>"
-msgstr "Legg til fødselshendelse uten ingen dato"
+msgstr "Familier med hendelser med <role>"
 
 #: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
 msgid "Matches families with an event with a selected role"
-msgstr ""
+msgstr "Matcher familier med en hendelse med den valgte rollen"
 
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:26
 #: FilterRules/isfamilyfiltermatchevent.py:63
 #: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
-msgstr ""
+msgstr "Hendelser i familier som matcher et <family filter>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:25
 #: FilterRules/familieswitheventfiltermatch.py:45
 msgid "Families matching <event filter>"
-msgstr ""
+msgstr "Familier som matcher <event filter>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
-msgstr ""
+msgstr "Matcher familier som matcher et hendelsesfilter"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
-msgstr ""
+msgstr "Matcher familier som er matchet av et hendelsesfilter"
 
 #: FilterRules/degreesofseparation.py:47
 msgid "Number of degrees of separation from person."
@@ -1175,11 +1223,11 @@ msgstr ""
 
 #: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
 msgid "People with <count> of <event>"
-msgstr ""
+msgstr "Personer med <count> <event>"
 
 #: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
 msgid "Matches persons which have events of given type and number."
-msgstr ""
+msgstr "Matcher personer som har hendelser av en bestemt type og antall."
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 #, fuzzy
@@ -1226,14 +1274,12 @@ msgid "Multiple Parents Filter"
 msgstr ""
 
 #: FilterRules/hasrolerule.gpr.py:27
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "People with events with a selected role"
-msgstr "Legg til fødselshendelse uten ingen dato"
+msgstr "Personer med hendelser med en valgt rolle"
 
 #: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
-msgstr ""
+msgstr "Familier med hendelser med en valgt rolle"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
@@ -1258,7 +1304,7 @@ msgstr "Ingen slektskap til aktiv person"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
-msgstr ""
+msgstr "Alder i år ved personens død."
 
 #: FilterRules/ageatdeath.py:71
 msgid "Age:"
@@ -1328,10 +1374,8 @@ msgid "   ( %s )"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:333
-#, fuzzy
-#| msgid "Add as a Spouse"
 msgid "   Spouses: "
-msgstr "Legg til som ektefelle"
+msgstr "   Ektefeller: "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
@@ -1386,7 +1430,7 @@ msgstr "Ny person"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
-msgstr ""
+msgstr "Om hendelser og personer nevnt i notatet skal vises"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
 msgid "The style used for the title of the report."
@@ -1405,16 +1449,12 @@ msgid "The style used for the footer of the report."
 msgstr "Stilen som brukes på rapportens tittel."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:524
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for source title."
-msgstr "Stil som brukes på tittel på oppbevaringssted."
+msgstr "Stilen som brukes for kildetittel."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:536
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for source subtitle."
-msgstr "Stil som brukes på tittel på oppbevaringssted."
+msgstr "Stilen som brukes for kildens undertittel."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:548
 #, fuzzy
@@ -1423,26 +1463,20 @@ msgid "The style used for Source details."
 msgstr "Stilen som brukes til kapitteloverskriften."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:563
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for citation title."
-msgstr "Stil som brukes på tittel på oppbevaringssted."
+msgstr "Stilen som brukes for sitattittel."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:575
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for a column title."
-msgstr "Stil som brukes på tittel på oppbevaringssted."
+msgstr "Stilen som brukes for kolonnetittel."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
 msgid "The style used for each section."
 msgstr "Stilen som brukes til kapitteloverskriften."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:622
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for event and person details."
-msgstr "Stilen som brukes til kapitteloverskriften."
+msgstr "Stilen som brukes for detaljer om hendelser og personer."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -1481,10 +1515,8 @@ msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr ""
 
 #: GenealogyTree/gt_sandclock.py:235
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "The center family for the report"
-msgstr "Senterpersonen for treet"
+msgstr "Fokusfamilien for rapporten"
 
 #: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
@@ -1570,10 +1602,9 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1677
 #: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
 #: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
-#, fuzzy, python-format
-#| msgid "Failure writing %s"
+#, python-format
 msgid "Failed writing %s: %s"
-msgstr "Det oppsto en feil under skrivingen av %s"
+msgstr "Feil ved skriving av %s: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:345
 #: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
@@ -1710,10 +1741,8 @@ msgid "The font size in pixels for each node."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1848
-#, fuzzy
-#| msgid "Whether to include addresses on repository."
 msgid "Whether to show duplicate family trees in the report."
-msgstr "Om adresser til oppbevaringssteder skal tas med."
+msgstr "Om dupliserte slektstrær skal vises i rapporten."
 
 #: D3Charts/DescendantIndentedTree.py:1852
 msgid "Expanded Row Background Color"
@@ -1740,10 +1769,8 @@ msgid "RGB-color for non-expandable row background."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1867
-#, fuzzy
-#| msgid "Include repository's address"
 msgid "Include records marked private"
-msgstr "Ta med adresse til oppbevaringssted"
+msgstr "Inkluder oppføringer som er merket privat"
 
 #: D3Charts/DescendantIndentedTree.py:1869
 #, fuzzy
@@ -1993,10 +2020,8 @@ msgid "FamilySearch.org"
 msgstr ""
 
 #: SVWebconnectPack/SVWebPack.py:35
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "Google SV"
-msgstr "_Google Kart"
+msgstr "Google SV"
 
 #: SVWebconnectPack/SVWebPack.py:38
 msgid "FamilySearch.org Tree"
@@ -2078,13 +2103,15 @@ msgstr ""
 #: PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
-msgstr ""
+msgstr "Feil ved fjerning av mappen «%s». Avinstalleringen kan ha mislyktes"
 
 #: PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
 msgstr ""
+"«*» elementer leveres av tredjepartsforfattere,\n"
+"<s>gjennomstrekte</s> elementer er skjult"
 
 #: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
 msgid "Hide"
@@ -2151,7 +2178,7 @@ msgstr ""
 #: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
 msgid "%s event descriptions of %s events were changed."
-msgstr ""
+msgstr "%s hendelsesbeskrivelser for %s hendelser ble endret."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #, fuzzy
@@ -2181,6 +2208,8 @@ msgstr ""
 msgid ""
 "A tool to find and replace a string in event description of multiple events."
 msgstr ""
+"Et verktøy for å finne og erstatte en streng i hendelsesbeskrivelsen for "
+"flere hendelser."
 
 #: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
@@ -2234,11 +2263,11 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:110
 msgid "Export"
-msgstr ""
+msgstr "Eksporter"
 
 #: MediaVerify/MediaVerify.py:111
 msgid "Export the results to a text file"
-msgstr ""
+msgstr "Eksporter resultatene til en tekstfil"
 
 #: MediaVerify/MediaVerify.py:113
 msgid "Fix"
@@ -2258,7 +2287,7 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:195
 msgid "Export results to a text file"
-msgstr ""
+msgstr "Eksporter resultatene til en tekstfil"
 
 #: MediaVerify/MediaVerify.py:218
 #, python-format
@@ -2305,19 +2334,19 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.gpr.py:32
 msgid "Verify that media is present in the correct path"
-msgstr ""
+msgstr "Bekreft at mediefiler er til stede i riktig sti"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
-msgstr ""
+msgstr "Beta Hva nå"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:49
 msgid "Beta Gramplet suggesting items to research"
-msgstr ""
+msgstr "Beta Gramplet som foreslår elementer for videre forskning"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:60
 msgid "Beta What's Next?"
-msgstr ""
+msgstr "Beta Hva nå?"
 
 #: Betawhatsnext/Betawhatsnext.py:46
 msgid ""
@@ -2325,81 +2354,87 @@ msgid ""
 " ⛔ A local Genealogical Tree database has not yet been loaded.\n"
 "\n"
 msgstr ""
+"\n"
+" ⛔ En lokal slektsdatabase har ikke blitt åpnet enda.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
-msgstr ""
+msgstr " 👣 Neste steg:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
 msgid "  •  From the \"Family Trees\" menu,"
-msgstr ""
+msgstr "  •  Fra menyen «slektstrær»,"
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
-msgstr ""
+msgstr " bruk valget «administrer slektstrær...» for å"
 
 #: Betawhatsnext/Betawhatsnext.py:52
 msgid " create a New (or to select an existing) Tree database.\n"
-msgstr ""
+msgstr " opprette en ny (eller velge en eksisterende) slektsdatabase.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr ""
+msgstr "  •  Klikk på knappen «åpne slektstre» for å begynne"
 
 #: Betawhatsnext/Betawhatsnext.py:54
 msgid ""
 " working with the selected genealogical tree.\n"
 "\n"
 msgstr ""
+" arbeide med det valgte slektstreet.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:55
 msgid "Create and load an empty new tree to import a backup (or"
 msgstr ""
+"Opprett og åpne et tomt nytt tre for å importere en sikkerhetskopi (eller"
 
 #: Betawhatsnext/Betawhatsnext.py:56
 msgid ""
 " GEDCOM file) from another genealogical tool.\n"
 "\n"
 msgstr ""
+" GEDCOM-fil) fra et annet slektsforskningsverktøy.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:70
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
-msgstr ""
+msgstr "Bruk «Konfigurer» i menyen «Vis» for å endre Gramplet-valgene."
 
 #: Betawhatsnext/Betawhatsnext.py:86
-#, fuzzy
-#| msgid "Search"
 msgid "Search Quota "
-msgstr "Søk"
+msgstr "Søkegrense "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
-msgstr ""
+msgstr "Dybde per loop"
 
 #: Betawhatsnext/Betawhatsnext.py:98
 msgid "Pause search expansion"
-msgstr ""
+msgstr "Pause utvidelse av søk"
 
 #: Betawhatsnext/Betawhatsnext.py:105
-#, fuzzy
-#| msgid "Central Person"
 msgid "Completed Person"
-msgstr "Senterperson"
+msgstr "Fullført person"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
-msgstr ""
+msgstr " Fullførte etterkommerfamilier"
 
 #: Betawhatsnext/Betawhatsnext.py:118
 msgid "Ignore Person or Family"
-msgstr ""
+msgstr "Ignorer person eller familie"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
 "\n"
 " ⛔ The current Tree database contains no people.\n"
 msgstr ""
+"\n"
+" ⛔ Den nåværende slektsdatabasen inneholder ingen personer.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:226
 msgid ""
@@ -2414,12 +2449,24 @@ msgid ""
 "  • An external file may be used to populate the tree via \"Import...\" in "
 "the \"Family Trees\" menu."
 msgstr ""
+"\n"
+" 👣 Neste steg:\n"
+" Legg til en familie og en person i den familien:\n"
+"  • En familie kan legges til via menyen «Opprett»\n"
+"  • En person kan legges til ved å trykke på «+» (pluss) i ektefellepanelene "
+"(«Far/partner1» eller «Mor/partner2») eller i fanen «Barn».\n"
+"\n"
+"Eller importer personer fra en ekstern fil:\n"
+"  • En ekstern fil kan brukes til å fylle treet via «Importer…» i menyen "
+"«Slektstrær»."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
 "\n"
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
+"\n"
+" ⛔ Ingen person har blitt valgt som «startperson».\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -2432,62 +2479,70 @@ msgid ""
 "\n"
 " This sets them as the focal \"Home Person\"."
 msgstr ""
+"\n"
+" 👣 Neste steg:\n"
+"  •  Velg ikonet for «Personer»-visningen i navigasjonspanelet.\n"
+"  •  Velg en person for å gjøre den til «Aktiv person».\n"
+"  •  Velg «Gjør til startperson» fra menyen «Rediger» eller fra "
+"kontekstmenyen (høyreklikk).\n"
+"\n"
+" Dette setter personen som «startperson»."
 
 #: Betawhatsnext/Betawhatsnext.py:268
 msgid "Double-click color text to edit details"
-msgstr ""
+msgstr "Dobbeltklikk på farget tekst for å redigere detaljer"
 
 #: Betawhatsnext/Betawhatsnext.py:504
 msgid "Birth event missing."
-msgstr ""
+msgstr "Fødselshendelse mangler."
 
 #: Betawhatsnext/Betawhatsnext.py:505
 msgid "Add via the Events tab of the Edit Person dialog."
-msgstr ""
+msgstr "Legg til via fanen hendelser i vinduet for personredigering."
 
 #: Betawhatsnext/Betawhatsnext.py:582
-#, fuzzy
-#| msgid "Relation type"
 msgid "relationship type unknown"
-msgstr "Relasjonstype"
+msgstr "ukjent slektsskapstype"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
-msgstr ""
+msgstr "Legg til via fanen hendelser i vinduet for familieredigering."
 
 #: Betawhatsnext/Betawhatsnext.py:621
 msgid "591 family not complete"
-msgstr ""
+msgstr "591 familie ikke fullført"
 
 #: Betawhatsnext/Betawhatsnext.py:642
 msgid "place unknown for the Event"
-msgstr ""
+msgstr "ukjent sted for hendelsen"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
-msgstr ""
+msgstr "En partnerrelasjon eksisterer, men ektefellen mangler"
 
 #: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
 #: Betawhatsnext/Betawhatsnext.py:665
 msgid "Add missing partner using the Edit Family dialog."
-msgstr ""
+msgstr "Legg til manglende partner ved å bruke dialogen rediger familie."
 
 #: Betawhatsnext/Betawhatsnext.py:660
 msgid "Father missing from the parent family"
-msgstr ""
+msgstr "Far mangler i foreldreparet"
 
 #: Betawhatsnext/Betawhatsnext.py:664
 msgid "Mother missing from the parent family"
-msgstr ""
+msgstr "Mor mangler i foreldreparet"
 
 #: Betawhatsnext/Betawhatsnext.py:668
 msgid "Parent family is unknown."
-msgstr ""
+msgstr "Ukjent foreldrepar."
 
 #: Betawhatsnext/Betawhatsnext.py:670
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
 msgstr ""
+"Opprett nye eller velg eksisterende foreldre fra menyen «rediger» i "
+"visningen «slektskap»."
 
 #: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
@@ -2521,10 +2576,9 @@ msgid "Added items in File that are missing in Database"
 msgstr ""
 
 #: Differences/differences.py:191
-#, fuzzy, python-format
-#| msgid "Added %d events."
+#, python-format
 msgid "Added %s: %s "
-msgstr "La til %d hendelser."
+msgstr "La til %s: %s "
 
 #: Differences/differences.py:195
 msgid "Nothing added"
@@ -2677,11 +2731,11 @@ msgstr ""
 
 #: HtmlView/htmlview.py:495
 msgid "Go to the previous page in the history"
-msgstr ""
+msgstr "Gå til forrige side i historikken"
 
 #: HtmlView/htmlview.py:503
 msgid "Go to the next page in the history"
-msgstr ""
+msgstr "Gå til neste side i historikken"
 
 #: HtmlView/htmlview.py:508
 msgid "_Refresh"
@@ -3009,10 +3063,8 @@ msgid "Relationship to Mother"
 msgstr "Relasjonstype"
 
 #: DynamicWeb/dynamicweb.py:3063
-#, fuzzy
-#| msgid "Repositories Report"
 msgid "Repositories Index"
-msgstr "Oppbevaringsstedsrapport"
+msgstr "Arkivindeks"
 
 #: DynamicWeb/dynamicweb.py:3066
 #, fuzzy
@@ -3254,7 +3306,7 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:3831
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
-msgstr ""
+msgstr "DynamicWebReport ignorerer lenketypen «%(class)s»"
 
 #: DynamicWeb/dynamicweb.py:4262
 #, python-format
@@ -3357,10 +3409,8 @@ msgid "Whether to export notes in the web pages"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4843
-#, fuzzy
-#| msgid "No Source"
 msgid "Export sources"
-msgstr "Ingen kilde"
+msgstr "Eksporter kilder"
 
 #: DynamicWeb/dynamicweb.py:4845
 msgid "Whether to export sources and citations in the web pages"
@@ -3368,19 +3418,15 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4849
 msgid "Export addresses"
-msgstr ""
+msgstr "Eksporter adresser"
 
 #: DynamicWeb/dynamicweb.py:4850
-#, fuzzy
-#| msgid "Whether to include addresses on repository."
 msgid "Whether to export addresses in the web pages"
-msgstr "Om adresser til oppbevaringssteder skal tas med."
+msgstr "Om adresser skal eksporteres på nettsidene"
 
 #: DynamicWeb/dynamicweb.py:4858
-#, fuzzy
-#| msgid "Whether to include urls on repository."
 msgid "Whether or not to include the Repository Pages."
-msgstr "Om lenke til oppbevaringssteder skal tas med."
+msgstr "Om arkivsidene skal inkluderes."
 
 #: DynamicWeb/dynamicweb.py:4861
 #, fuzzy
@@ -3441,16 +3487,12 @@ msgid "Choose your choice of map service for creating the Place Map Pages"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4926
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "Google map API key"
-msgstr "_Google Kart"
+msgstr "Google Maps API-nøkkel"
 
 #: DynamicWeb/dynamicweb.py:4927
-#, fuzzy
-#| msgid "The basic style used for the table display."
 msgid "The API key used for the Google map"
-msgstr "Den grunnleggende stilen som brukes for bordvisningen."
+msgstr "API-nøkkelen som brukes for Google Maps"
 
 #: DynamicWeb/dynamicweb.py:4945
 #, fuzzy
@@ -3486,10 +3528,8 @@ msgid "Whether to show the last modification time in the pages footer"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4988
-#, fuzzy
-#| msgid "Whether to include notes on repositories and sources."
 msgid "Whether to insert sources author in the sources title"
-msgstr "Om notat for oppbevaringssteder og kilder skal tas med."
+msgstr "Om kildens forfatter skal inkluderes i kildetittelen"
 
 #: DynamicWeb/dynamicweb.py:4993
 #, fuzzy
@@ -3751,6 +3791,10 @@ msgid ""
 "was previously closed.  It adds no new menus or Gramplets, but allows the "
 "last six objects visited to be found via the 'Go' menu."
 msgstr ""
+"Denne utvidelsen gjør at Gramps starter opp igjen med samme visning og "
+"objekt som da programmet ble avsluttet.  Den legger ikke til nye menyer "
+"eller Gramplets, men gjør det mulig å finne de siste seks besøkte objektene "
+"via «Gå»-menyen."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -3814,21 +3858,19 @@ msgid "The style used for the liste eclair."
 msgstr "Stilen som brukes på sidens tittel."
 
 #: ListeEclair/ListeEclair.py:314
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for place title."
-msgstr "Stil som brukes på tittel på oppbevaringssted."
+msgstr "Stilen som brukes for stedsnavn."
 
 #: ListeEclair/ListeEclair.gpr.py:5
 msgid "Produit une liste eclair"
 msgstr ""
 
 #: Sqlite/ExportSql.py:1346
-#, fuzzy, python-format
+#, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
-msgstr[0] "Importen er fullført: %d sekund"
-msgstr[1] ""
+msgstr[0] "Eksport fullført: %d sekund"
+msgstr[1] "Eksport fullført: %d sekunder"
 
 #: Sqlite/Sqlite.gpr.py:4
 msgid "SQLite Import"
@@ -3839,10 +3881,8 @@ msgid "SQLite is a common local database format"
 msgstr ""
 
 #: Sqlite/Sqlite.gpr.py:19
-#, fuzzy
-#| msgid "SQLite Import"
 msgid "SQLite Export"
-msgstr "SQLite Import"
+msgstr "SQLite Eksport"
 
 #: Sqlite/ImportSql.py:893
 #, fuzzy, python-format
@@ -3864,21 +3904,21 @@ msgstr ""
 #: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr ""
+msgstr "%(event_type)s: %(date)s i %(place)s"
 
 #: CombinedView/personpage.py:601
 #, python-format
 msgid "%(event_type)s: %(date)s"
-msgstr ""
+msgstr "%(event_type)s: %(date)s"
 
 #: CombinedView/personpage.py:604
 #, python-format
 msgid "%(event_type)s: %(place)s"
-msgstr ""
+msgstr "%(event_type)s: %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
-msgstr ""
+msgstr "Klikk for å gjøre denne hendelsen aktiv"
 
 #: CombinedView/personpage.py:743
 msgid "Click to visit this link"
@@ -3894,7 +3934,7 @@ msgstr ""
 
 #: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
-msgstr ""
+msgstr "En visning som viser slektskap og hendelser for en person"
 
 #: CombinedView/navigationview.py:346
 msgid ""
@@ -3902,20 +3942,21 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
+"Du må angi en «startperson» å gå til. Velg personvisningen, velg personen du "
+"vil ha som «startperson», og bekreft valget via menyen Rediger -> Gjør til "
+"startperson."
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
 msgid "Order"
 msgstr ""
 
 #: CombinedView/combinedview.py:528
-#, fuzzy
-#| msgid "Add death event"
 msgid "Edit the active event"
-msgstr "Legg til dødshendelse"
+msgstr "Rediger den aktive hendelsen"
 
 #: CombinedView/combinedview.py:630
 msgid "Show Tags"
-msgstr ""
+msgstr "Vis etiketter"
 
 #: CombinedView/combinedview.py:656
 msgid "Vertical Details"
@@ -4050,8 +4091,6 @@ msgid "Please set the new person's gender."
 msgstr "Velg kjønn på den nye personen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a mother."
 msgstr "Kan ikke legge til ny person som mor."
 
@@ -4388,16 +4427,13 @@ msgstr "vitner"
 
 #: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
 #: DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-format
-#| msgid "Failure writing %s"
+#, python-format
 msgid "Failure writing %s: %s"
-msgstr "Det oppsto en feil under skrivingen av %s"
+msgstr "Feil ved skriving av %s: %s"
 
 #: DenominoViso/DenominoViso.py:395
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "No central person selected"
-msgstr "Senterpersonen for treet"
+msgstr "Ingen fokusperson valgt"
 
 #: DenominoViso/DenominoViso.py:769
 msgid "Unknown time direction"
@@ -4441,11 +4477,11 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
-msgstr "Senterperson"
+msgstr "Fokusperson"
 
 #: DenominoViso/DenominoViso.py:2560
 msgid "The central person for the tree"
-msgstr "Senterpersonen for treet"
+msgstr "Fokusperson for treet"
 
 #: DenominoViso/DenominoViso.py:2563
 msgid "Title of the webpage"
@@ -4525,13 +4561,11 @@ msgstr "Om forfatter skal tas med."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
-msgstr "Ta med hendelser"
+msgstr "Inkluder hendelser"
 
 #: DenominoViso/DenominoViso.py:2613
-#, fuzzy
-#| msgid "Whether to include a person's note."
 msgid "Whether to include a person's events."
-msgstr "Om en persons notat skal tas med."
+msgstr "Om en persons hendelser skal inkluderes."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
@@ -4539,7 +4573,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2622
 msgid "Whether to include the birth of children in the list of events."
-msgstr "Om barnas fødselsdato skal tas med i lista over hendelser."
+msgstr "Om barnefødsler skal inkluderes i listen over hendelser."
 
 #: DenominoViso/DenominoViso.py:2625
 msgid "Include death relatives"
@@ -4559,6 +4593,8 @@ msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
 "contains <witnesses>)"
 msgstr ""
+"Om notatet tilhørende et vitne skal inkluderes (hvis event_format inneholder "
+"<witnesses>)"
 
 #: DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
@@ -4764,6 +4800,9 @@ msgid ""
 "<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
 "<attribute-value>."
 msgstr ""
+"Liste over strenger med plassholdere for hendelser. Kjente plassholdere: "
+"<type>, <role>, <date>, <place>, <description>, <witnesses>, <source> og "
+"enhver <attribute-value>."
 
 #: DenominoViso/DenominoViso.py:2757
 msgid "Source format"
@@ -4792,14 +4831,12 @@ msgid "should be"
 msgstr "skulle være"
 
 #: DenominoViso/DenominoViso.py:2913
-#, fuzzy
-#| msgid "Include media"
 msgid "Included"
-msgstr "Ta med media"
+msgstr "Inkludert"
 
 #: DenominoViso/DenominoViso.py:2914
 msgid "Excluded"
-msgstr ""
+msgstr "Ekskludert"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
@@ -4839,6 +4876,9 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
+"Genererer en nettside (HTML) med en grafisk representasjon av aner/"
+"etterkommere (SVG), der detaljer om individer blir synlige ved muspekerens "
+"handlinger."
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
@@ -5084,12 +5124,18 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
+"Diagnostisk Gramplet for å hjelpe med å vurdere om <a href="
+"\"https://gramps-project.org/\">Gramps</a> har alle nødvendige <a href="
+"\"https://github.com/gramps-project/gramps/blob/master/README.md\""
+">forutsetninger</a> installert.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
 "Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
 "installed."
 msgstr ""
+"Diagnostisk Gramplet for å hjelpe med å vurdere om Gramps har alle "
+"nødvendige forutsetninger installert."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
 msgid ""
@@ -5289,10 +5335,8 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:797
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:798
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1107
-#, fuzzy
-#| msgid "Unknown time direction"
 msgid "unknown version"
-msgstr "Ukjent tidsretning"
+msgstr "ukjent versjon"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:422
 msgid "DISPLAY not set"
@@ -5653,10 +5697,8 @@ msgid "Error: login failed"
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
-#, fuzzy
-#| msgid "done!\n"
 msgid "done."
-msgstr "gjort!\n"
+msgstr "utført."
 
 #: PhpGedView/phpgedviewconnector.py:347
 #, fuzzy
@@ -5691,7 +5733,7 @@ msgstr ""
 
 #: PhpGedView/phpgedview.glade:103
 msgid "http://"
-msgstr ""
+msgstr "http://"
 
 #: PhpGedView/phpgedview.glade:170
 msgid "Username:"
@@ -5773,10 +5815,9 @@ msgid "Writing %s reports..."
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-format
-#| msgid "Descendant"
+#, python-format
 msgid "%s. Descendants of %s"
-msgstr "Etterkommer"
+msgstr "%s. Etterkommere av %s"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
@@ -5857,12 +5898,12 @@ msgstr ""
 #: DescendantBooks/DetailedDescendantBookReport.py:809
 #, python-format
 msgid "%(event_name)s of %(name)s "
-msgstr ""
+msgstr "%(event_name)s for %(name)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:813
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
-msgstr ""
+msgstr "%(event_name)s for %(name)s og %(mate)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
@@ -5891,12 +5932,12 @@ msgstr ""
 #: DescendantBooks/DetailedDescendantBookReport.py:853
 #, python-format
 msgid "%(event_name)s:"
-msgstr ""
+msgstr "%(event_name)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:878
 #, python-format
 msgid " %(event_text)s"
-msgstr ""
+msgstr " %(event_text)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:996
 #, python-format
@@ -6019,10 +6060,8 @@ msgid "The style used for the date in the Index of Dates."
 msgstr "Stilen som brukes på rapportens tittel."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1658
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the events in the Index of Dates."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for hendelser i indeksen over datoer."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1668
 #, fuzzy
@@ -6143,13 +6182,11 @@ msgstr ""
 
 #: PersonEverything/PersonEverything.py:196
 msgid " This is the primary birth event."
-msgstr ""
+msgstr " Dette er den primære fødselshendelsen."
 
 #: PersonEverything/PersonEverything.py:199
-#, fuzzy
-#| msgid "Add birth and death events"
 msgid " This is the primary death event."
-msgstr "Legg til fødsels- og dødshendelser"
+msgstr " Dette er den primære dødshendelsen."
 
 #: PersonEverything/PersonEverything.py:238
 #, fuzzy
@@ -6162,6 +6199,8 @@ msgid ""
 "Details of any children and events etc. would be in a similar report for the "
 "father or mother."
 msgstr ""
+"Detaljer om eventuelle barn og hendelser vil være i en lignende rapport for "
+"faren eller moren."
 
 #: PersonEverything/PersonEverything.py:403
 msgid "Temple and status"
@@ -6206,10 +6245,8 @@ msgid ""
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:542
-#, fuzzy
-#| msgid "Note Gramplet"
 msgid "Note type"
-msgstr "Notat Smågramps"
+msgstr "Notattype"
 
 #: PersonEverything/PersonEverything.py:553
 msgid "Parent Place"
@@ -6224,25 +6261,19 @@ msgstr "Alle med gradernotasjon"
 
 #: PersonEverything/PersonEverything.py:607
 msgid "Alternative Name"
-msgstr ""
+msgstr "Alternative navn"
 
 #: PersonEverything/PersonEverything.py:618
-#, fuzzy
-#| msgid "No Latitude/Longitude given"
 msgid "Latitude, Longitude"
-msgstr "Ikke angitt lengde- eller breddegrad"
+msgstr "Breddegrad, Lengdegrad"
 
 #: PersonEverything/PersonEverything.py:648
-#, fuzzy
-#| msgid "Repositories Report"
 msgid "Repository type"
-msgstr "Oppbevaringsstedsrapport"
+msgstr "Arkivtype"
 
 #: PersonEverything/PersonEverything.py:670
-#, fuzzy
-#| msgid "Repositories Report"
 msgid "Repository reference"
-msgstr "Oppbevaringsstedsrapport"
+msgstr "Arkivreferanse"
 
 #: PersonEverything/PersonEverything.py:671
 #, fuzzy
@@ -6333,7 +6364,7 @@ msgstr "Lagre"
 
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
-msgstr "Notat Smågramps"
+msgstr "Notat Gramplet"
 
 #: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
@@ -6562,7 +6593,7 @@ msgstr "Redigere Metadata for bilde"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
-msgstr "Smågramps for å vise, redigere og lagre Exif-metadata for bilder"
+msgstr "Gramplet for å vise, redigere og lagre Exif-metadata for bilder"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
@@ -6647,9 +6678,9 @@ msgid ""
 "Exif metadata.\n"
 "  It will also allow you to be able to Save the modified metadata."
 msgstr ""
-"Dette vil åpne et et nytt vindu for å kunne redigere Exif-data for dette "
-"bildet.\n"
-" Det vil også gi deg mulighet for å lagre de endrede metadata."
+"Dette vil åpne et nytt vindu der du kan redigere/endre Exif-metadata for "
+"dette bildet.\n"
+"  Det gir deg også mulighet til å lagre de endrede metadataene."
 
 #: EditExifMetadata/editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
@@ -6744,8 +6775,8 @@ msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
 msgstr ""
-"Bildet ditt er blitt konvertert og originalbildet er slettet, og den "
-"fullstendige stien er oppdatert"
+"Bildet ditt er konvertert, originalfilen er slettet, og den fullstendige "
+"filstien har blitt oppdatert!"
 
 #: EditExifMetadata/editexifmetadata.py:812
 msgid ""
@@ -7045,8 +7076,8 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"Produserer en liste over alle notatene med en gitt kode sammen med postene "
-"som den refererer til, personen, familien, hendelsen, etc."
+"Lager en liste over alle notater med en bestemt etikett, sammen med "
+"oppføringene de refererer til, for eksempel person, familie, hendelse osv."
 
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
@@ -7264,7 +7295,7 @@ msgstr "Om en persons Internettadresse skal tas med."
 
 #: DescendantsLines/DescendantsLines.py:1585
 msgid "Use alternate events, if Primary event is not found"
-msgstr ""
+msgstr "Bruk alternative hendelser hvis primærhendelsen ikke finnes"
 
 #: DescendantsLines/DescendantsLines.py:1586
 msgid ""
@@ -7276,11 +7307,13 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1592
 msgid "Sort Events by Date"
-msgstr ""
+msgstr "Sorter hendelser etter dato"
 
 #: DescendantsLines/DescendantsLines.py:1593
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
+"Sorter hendelser etter dato (eller bruk rekkefølgen fra «visningsformat» "
+"ovenfor)."
 
 #: DescendantsLines/DescendantsLines.py:1597
 msgid "Text style"
@@ -7307,6 +7340,8 @@ msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
 msgstr ""
+"Maksimal lengde på en hendelses notatfelt i en tekstblokk, «$e(n)»\n"
+" 0=ubegrenset "
 
 #: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
@@ -7364,10 +7399,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1645
-#, fuzzy
-#| msgid "Display type"
 msgid "Display Formats"
-msgstr "Visningstype"
+msgstr "Visningsformat"
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
@@ -7533,7 +7566,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"
-msgstr ""
+msgstr "Beskytt personer, bilder eller hendelser som er merket som privat"
 
 #: DescendantsLines/DescendantsLines.py:1795
 msgid "The Privacy setting of only these types of Gramps objects are checked"
@@ -7618,10 +7651,8 @@ msgid ""
 msgstr ""
 
 #: BirthOrder/birthorder.glade:232
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done"
-msgstr "Gjort!\n"
+msgstr "Utført"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
@@ -7645,7 +7676,7 @@ msgstr ""
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
-msgstr ""
+msgstr "Bursdager"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
@@ -7653,11 +7684,11 @@ msgstr "en gramplet som viser bursdager for levende personer"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
-msgstr ""
+msgstr "Ignorer bursdager med etikett"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
-msgstr ""
+msgstr "Vis kun bursdager med etikett"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
@@ -8030,7 +8061,7 @@ msgstr ""
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:85
 msgid "Generating thumbnails for event references"
-msgstr ""
+msgstr "Genererer miniatyrbilder for hendelsesreferanser"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:94
 msgid "Generating thumbnails for place references"
@@ -8205,15 +8236,15 @@ msgstr ""
 #: RebuildTypes/RebuildTypes.py:76
 #, python-format
 msgid "Found %d custom event types"
-msgstr ""
+msgstr "Fant %d tilpassede hendelsestyper"
 
 #: JSON/JSON.gpr.py:4
 msgid "JSON Export"
-msgstr ""
+msgstr "JSON Eksport"
 
 #: JSON/JSON.gpr.py:5
 msgid "This is a JSON export"
-msgstr ""
+msgstr "Dette er en JSON-eksport"
 
 #: JSON/JSON.gpr.py:12
 #, fuzzy
@@ -8236,16 +8267,12 @@ msgid "JSON import"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:101
-#, fuzzy
-#| msgid "Event format"
 msgid "Event Roles"
-msgstr "Hendelsesformat"
+msgstr "Hendelsesroller"
 
 #: TypeCleanup/type_cleanup.py:102
-#, fuzzy
-#| msgid "Name Type"
 msgid "Event Types"
-msgstr "Navnetype"
+msgstr "Hendelsestyper"
 
 #: TypeCleanup/type_cleanup.py:103
 #, fuzzy
@@ -8284,10 +8311,8 @@ msgid "Place Types"
 msgstr "Navnetype"
 
 #: TypeCleanup/type_cleanup.py:109
-#, fuzzy
-#| msgid "Repositories Report"
 msgid "Repository Types"
-msgstr "Oppbevaringsstedsrapport"
+msgstr "Arkivtyper"
 
 #: TypeCleanup/type_cleanup.py:111
 msgid "Source Media Types"
@@ -8543,7 +8568,7 @@ msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
-msgstr ""
+msgstr "Eksporter visning som SVG"
 
 #: LifeLineChartView/lifelinechartview.py:884
 #: LifeLineChartView/_dummy_translation_string_po.py:29
@@ -8711,10 +8736,8 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:45
 #: LifeLineChartView/_dummy_translation_string_po.py:65
-#, fuzzy
-#| msgid "Central Person"
 msgid "Center"
-msgstr "Senterperson"
+msgstr "Midten"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:48
 msgid "Show death label"
@@ -8997,7 +9020,7 @@ msgstr ""
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
-msgstr ""
+msgstr "Gramplet som viser deltakerne i en hendelse"
 
 #: Participants/Participants.py:75
 msgid "Double-click on a row to edit the selected participant."
@@ -9026,7 +9049,7 @@ msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set events private.."
-msgstr ""
+msgstr "Sett hendelser som privat.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:197
 msgid "Set media private.."
@@ -9055,10 +9078,8 @@ msgid "If checked, all objects without a date will also be set private."
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "Velg filter for å begrense antall personer"
+msgstr "Velg filter for å begrense hendelser"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
 #, fuzzy
@@ -9138,10 +9159,8 @@ msgid "Headings"
 msgstr "TR-Overskrift"
 
 #: Form/formgramplet.gpr.py:31
-#, fuzzy
-#| msgid "Note Gramplet"
 msgid "Form Gramplet"
-msgstr "Notat Smågramps"
+msgstr "Skjema Gramplet"
 
 #: Form/formgramplet.gpr.py:32
 msgid "Gramplet interface for Forms"
@@ -9224,7 +9243,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:21
 msgid "6. Age at Next Birthday"
-msgstr ""
+msgstr "6. Alder ved neste bursdag"
 
 #: Form/form_ca.xml.h:22 Form/form_ca.xml.h:230
 msgid "SexMale"
@@ -9976,7 +9995,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:229
 msgid "7. Age next Birthday"
-msgstr ""
+msgstr "7. Alder neste bursdag"
 
 #: Form/form_ca.xml.h:231
 msgid "8. Sex: Male"
@@ -10571,7 +10590,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:479 Form/form_ca.xml.h:690
 msgid "10. Age at last birthday"
-msgstr ""
+msgstr "10. Alder ved forrige bursdag"
 
 #: Form/form_ca.xml.h:481 Form/form_ca.xml.h:692
 msgid "11. Country or place of birth"
@@ -11316,7 +11335,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:776
 msgid "8. Age at last birthday"
-msgstr ""
+msgstr "8. Alder ved forrige bursdag"
 
 #: Form/form_ca.xml.h:778
 msgid "9. Country or place of birth"
@@ -11402,7 +11421,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:827
 msgid "12. Age at last birthday"
-msgstr ""
+msgstr "12. Alder ved forrige bursdag"
 
 #: Form/form_ca.xml.h:829
 msgid "13. Country or place of birth"
@@ -13331,7 +13350,7 @@ msgstr "Farger"
 
 #: Form/form_us.xml.h:846
 msgid "Age at Last Birthday"
-msgstr ""
+msgstr "Alder ved forrige bursdag"
 
 #: Form/form_us.xml.h:847 Form/form_us.xml.h:1257 Form/form_us.xml.h:1346
 #: Form/form_us.xml.h:1409 Form/form_us.xml.h:1431 Form/form_us.xml.h:1494
@@ -13482,7 +13501,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:906
 msgid "Age at last birthday"
-msgstr ""
+msgstr "Alder ved forrige bursdag"
 
 #: Form/form_us.xml.h:907
 msgid "How old was he on his last birthday?"
@@ -16907,7 +16926,7 @@ msgstr ""
 
 #: Form/form_pl.xml.h:5
 msgid "Event Place (Original)"
-msgstr ""
+msgstr "Hendelsessted (Original)"
 
 #: Form/form_pl.xml.h:8 Form/form_pl.xml.h:36
 msgid "Birth Year (Estimated)"
@@ -16978,11 +16997,11 @@ msgstr ""
 
 #: Form/form_gb.xml.h:4 Form/form_gb.xml.h:21 Form/form_gb.xml.h:41
 msgid "Administrative Area"
-msgstr ""
+msgstr "Administrativt område"
 
 #: Form/form_gb.xml.h:5 Form/form_gb.xml.h:22 Form/form_gb.xml.h:42
 msgid "County/Administrative Area"
-msgstr ""
+msgstr "Fylke/Administrativt område"
 
 #: Form/form_gb.xml.h:13 Form/form_gb.xml.h:47
 msgid "Maiden Surname"
@@ -17167,7 +17186,7 @@ msgstr ""
 #: Form/form_gb.xml.h:145 Form/form_gb.xml.h:171 Form/form_gb.xml.h:274
 #: Form/form_gb.xml.h:302
 msgid "Administrative County"
-msgstr ""
+msgstr "Administrativt fylke"
 
 #: Form/form_gb.xml.h:146 Form/form_gb.xml.h:172 Form/form_gb.xml.h:275
 #: Form/form_gb.xml.h:303 Form/form_gb.xml.h:445 Form/form_gb.xml.h:472
@@ -17823,13 +17842,11 @@ msgstr ""
 
 #: SourceIndex/index.glade:800
 msgid "Select a repository storing a source"
-msgstr ""
+msgstr "Velg et arkiv som lagrer en kilde"
 
 #: SourceIndex/index.glade:829
-#, fuzzy
-#| msgid "Repositories Report"
 msgid "repositories"
-msgstr "Oppbevaringsstedsrapport"
+msgstr "arkiver"
 
 #: SourceIndex/index.glade:869
 #, fuzzy
@@ -17842,6 +17859,8 @@ msgid ""
 "Records transcriptions ... births/deaths/marriages/censuses with common "
 "fields: id, repository, person name, birth date and place, parents."
 msgstr ""
+"Registrerer transkripsjoner … fødsler/dødsfall/ekteskap/folketellinger med "
+"vanlige felter: ID, arkiv, personnavn, fødselsdato og -sted, foreldre."
 
 #: SourceIndex/witness.glade:7
 #, fuzzy
@@ -17933,10 +17952,8 @@ msgid "Other:"
 msgstr ""
 
 #: SourceIndex/birth.glade:351
-#, fuzzy
-#| msgid "Repositories Report"
 msgid "Repository title"
-msgstr "Oppbevaringsstedsrapport"
+msgstr "Arkivtittel"
 
 #: SourceIndex/birth.glade:388 SourceIndex/death.glade:589
 #: SourceIndex/census.glade:973 SourceIndex/marriage.glade:234
@@ -17945,7 +17962,7 @@ msgstr ""
 
 #: SourceIndex/birth.glade:406
 msgid "<b><i>Repository</i></b>"
-msgstr ""
+msgstr "<b><i>Arkiv</i></b>"
 
 #: SourceIndex/birth.glade:421
 msgid ""
@@ -17978,7 +17995,7 @@ msgstr ""
 
 #: SourceIndex/birth.glade:887
 msgid "The call number into the repository"
-msgstr ""
+msgstr "Arkivsignatur i arkivet"
 
 #: SourceIndex/birth.glade:925
 msgid "<b><i>Data person</i></b>"
@@ -18066,7 +18083,7 @@ msgstr ""
 #: SourceIndex/death.glade:607 SourceIndex/census.glade:176
 #: SourceIndex/marriage.glade:185
 msgid "<b>Repository</b>"
-msgstr ""
+msgstr "<b>Arkiv</b>"
 
 #: SourceIndex/death.glade:621 SourceIndex/census.glade:712
 msgid "<b>Data person</b>"
@@ -18446,7 +18463,7 @@ msgstr ""
 #: DetDescendantReport-images/detdescendantreporti.py:471
 #, python-format
 msgid "%(event_name)s: %(event_text)s"
-msgstr ""
+msgstr "%(event_name)s: %(event_text)s"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1177
 #, fuzzy
@@ -18527,10 +18544,9 @@ msgid "Address (%(date)s): %(location)s"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:401
-#, fuzzy, python-format
-#| msgid "Add relation"
+#, python-format
 msgid "Address: %(location)s"
-msgstr "Legg til relasjon"
+msgstr "Addresse: %(location)s"
 
 #: FamilySheet/FamilySheet.py:469
 #, python-format
@@ -18580,16 +18596,13 @@ msgid "on %(placeholder)s (%(partial)s)"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
-#, fuzzy, python-format
-#| msgid "Examining places"
+#, python-format
 msgid "in %(place)s"
-msgstr "Undersøker steder"
+msgstr "i %(place)s"
 
 #: FamilySheet/FamilySheet.py:864
-#, fuzzy
-#| msgid "Central Person"
 msgid "Center person"
-msgstr "Senterperson"
+msgstr "Fokusperson"
 
 #: FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
@@ -18600,10 +18613,8 @@ msgid "Print sheets for"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:871
-#, fuzzy
-#| msgid "Central Person"
 msgid "Center person only"
-msgstr "Senterperson"
+msgstr "Kun fokusperson"
 
 #: FamilySheet/FamilySheet.py:872
 msgid "Center person and descendants in side branches"
@@ -18787,7 +18798,7 @@ msgstr ""
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "Aktiv person: <b>%s</b>\n"
+msgstr "  <b>%s</b> (Aktiv person)...\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
@@ -18796,7 +18807,7 @@ msgid ""
 "   "
 msgstr ""
 "Fant slektskap #%d: \n"
-"  "
+"   "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
@@ -18862,6 +18873,8 @@ msgid ""
 "Days to keep lines on the map after\n"
 "an event"
 msgstr ""
+"Antall dager linjer skal vises på kartet etter\n"
+"en hendelse"
 
 #: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
@@ -18872,12 +18885,16 @@ msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
 msgstr ""
+"Hvis det ikke finnes en fødselshendelse for en person, antas alderen\n"
+"å være dette ved deres første hendelse"
 
 #: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
 "If there is no death event for a person, they will\n"
 "be assumed dead at this age"
 msgstr ""
+"Hvis det ikke finnes en dødshendelse for en person, antas de\n"
+"å være død ved denne alderen"
 
 #: GeoTimeLines/GeoTimeLines.py:1875
 msgid "Number of steps"
@@ -19192,7 +19209,7 @@ msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
-msgstr ""
+msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Replace existing references to the person being assigned without asking"
@@ -19373,10 +19390,8 @@ msgid "Today"
 msgstr ""
 
 #: Query/Query.gpr.py:10
-#, fuzzy
-#| msgid "Note Gramplet"
 msgid "Query Gramplet"
-msgstr "Notat Smågramps"
+msgstr "Query Gramplet"
 
 #: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
@@ -19537,10 +19552,9 @@ msgid "Filter options"
 msgstr "Filterer"
 
 #: RemoveTagTool/RemoveTagTool.py:151
-#, fuzzy, python-format
-#| msgid "All Places"
+#, python-format
 msgid "All %s"
-msgstr "Alle steder"
+msgstr "Alle %s"
 
 #: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
 #: RemoveTagTool/RemoveTagTool.gpr.py:25
@@ -19582,7 +19596,7 @@ msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.gpr.py:26
 msgid "Add or remove a tag from groups of people, events, etc."
-msgstr ""
+msgstr "Legg til eller fjern en etikett fra grupper av personer, hendelser osv."
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
@@ -19642,10 +19656,9 @@ msgid ""
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestor"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Ane"
+msgstr " Ane: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -19761,7 +19774,7 @@ msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:11
 msgid "Display a person's events on a timeline"
-msgstr ""
+msgstr "Vis en persons hendelser på en tidslinje"
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
@@ -20443,16 +20456,13 @@ msgid "resident"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:971
-#, fuzzy, python-format
-#| msgid "description"
+#, python-format
 msgid "(%(description)s)"
-msgstr "beskrivelse"
+msgstr "(%(description)s)"
 
 #: FamilyTree/FamilyTree.py:1044
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "The center family for the tree"
-msgstr "Senterpersonen for treet"
+msgstr "Fokusfamilien for treet"
 
 #: FamilyTree/FamilyTree.py:1047
 msgid "Ancestor Generations"
@@ -20481,6 +20491,8 @@ msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
 msgstr ""
+"Kekulé-nummeret til ektemannen (fokusfamilie). Sett til 0 for å ikke vise "
+"Kekulé-numre"
 
 #: FamilyTree/FamilyTree.py:1059
 msgid "Scale to fit on a single page"
@@ -20540,7 +20552,7 @@ msgstr "Ta med media"
 
 #: FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
-msgstr ""
+msgstr "Skriv ut hendelsesdata (død person)"
 
 #: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
 msgid "Year only"
@@ -20556,25 +20568,23 @@ msgstr ""
 
 #: FamilyTree/FamilyTree.py:1108
 msgid "Print event data (living person)"
-msgstr ""
+msgstr "Skriv ut hendelsesdata (levende person)"
 
 #: FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
-msgstr ""
+msgstr "Bruk dåp som reserve hvis fødselshendelse mangler"
 
 #: FamilyTree/FamilyTree.py:1119
 msgid "Fall back to burial or cremation if death event missing"
-msgstr ""
+msgstr "Bruk begravelse eller kremering som reserve hvis dødshendelse mangler"
 
 #: FamilyTree/FamilyTree.py:1122
 msgid "Protect private items"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:1131
-#, fuzzy
-#| msgid "Include URL description"
 msgid "Include event description"
-msgstr "Ta med URL-beskrivelse"
+msgstr "Inkluder hendelsesbeskrivelse"
 
 #: FamilyTree/FamilyTree.py:1134
 #, fuzzy
@@ -20619,6 +20629,8 @@ msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"Et forbedret siteringverktøy som utvider standard funksjonalitet med arkiv "
+"og arkivsignatur."
 
 #: libwebconnect/libwebconnect.gpr.py:11
 msgid "Library for web site collections"
@@ -20631,13 +20643,13 @@ msgstr ""
 #: RepositoriesReport/RepositoriesReport.gpr.py:27
 #: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
-msgstr "Lager en tekstbasert rapport over oppbevaringssteder"
+msgstr "Lager en tekstbasert arkivrapport"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:45
 #: RepositoriesReport/RepositoriesReportAlt.py:139
 #: RepositoriesReport/RepositoriesReport.py:80
 msgid "Repositories Report"
-msgstr "Oppbevaringsstedsrapport"
+msgstr "Arkivrapport"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:273
 msgid "Publication information:"
@@ -20659,19 +20671,19 @@ msgstr "Velg en fil"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
-msgstr "Ta med lenke til oppbevaringssteder"
+msgstr "Inkluder arkivenes URL"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
-msgstr "Om lenke til oppbevaringssteder skal tas med."
+msgstr "Om lenker til arkiv skal inkluderes."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
-msgstr "Ta med adresse til oppbevaringssted"
+msgstr "Inkluder adresse til arkivet"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
-msgstr "Om adresser til oppbevaringssteder skal tas med."
+msgstr "Om adresser til arkiv skal inkluderes."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
@@ -20707,7 +20719,7 @@ msgstr "Om nøkler og verdier skal tas med."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
-msgstr "Om notat for oppbevaringssteder og kilder skal tas med."
+msgstr "Om notater for arkiver og kilder skal inkluderes."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:459
 msgid "Include media"
@@ -20733,8 +20745,7 @@ msgstr "Om en persons kilder skal tas med."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Whether to include repositories and sources marked as private."
-msgstr ""
-"Om oppbevaringssteder og kilder som er markert som private skal tas med."
+msgstr "Om arkiver og kilder merket som private skal inkluderes."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:471
 #, fuzzy
@@ -20751,7 +20762,7 @@ msgstr "Om nøkler og verdier skal tas med."
 #: RepositoriesReport/RepositoriesReportAlt.py:518
 #: RepositoriesReport/RepositoriesReport.py:189
 msgid "The style used for repository title."
-msgstr "Stil som brukes på tittel på oppbevaringssted."
+msgstr "Stilen som brukes for tittelen på arkivet."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
@@ -20788,11 +20799,11 @@ msgstr ""
 
 #: GedcomExtensions/GedcomExtensions.py:261
 msgid "Export failed"
-msgstr ""
+msgstr "Eksporten mislyktes"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
-msgstr ""
+msgstr "Eksporter GEDCOM utvidelser (GED2)"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:33
 msgid "GEDCOM Extensions (GED2)"
@@ -20861,12 +20872,11 @@ msgstr ""
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
-#, fuzzy, python-format
-#| msgid "Add relation"
+#, python-format
 msgid "%d generation"
 msgid_plural "%d generations"
-msgstr[0] "Legg til relasjon"
-msgstr[1] "Legg til relasjon"
+msgstr[0] "%d generasjon"
+msgstr[1] "%d generasjoner"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
 msgid "About Timeline Pedigree View"
@@ -21216,10 +21226,8 @@ msgid "Ortho"
 msgstr ""
 
 #: GraphView/graphview.py:3875
-#, fuzzy
-#| msgid "No relation to active person"
 msgid "No Events for this person"
-msgstr "Ingen slektskap til aktiv person"
+msgstr "Ingen hendelser for denne personen"
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
@@ -21253,7 +21261,7 @@ msgstr ""
 
 #: GraphView/graphview.py:4161
 msgid "No Events for this family"
-msgstr ""
+msgstr "Ingen hendelser for denne familien"
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
@@ -21349,7 +21357,7 @@ msgstr ""
 
 #: Overview/Overview.gpr.py:30
 msgid "Gramplet showing an overview of events for a person"
-msgstr ""
+msgstr "Gramplet som viser en oversikt over hendelser for en person"
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
 msgid "Overview"
@@ -21361,18 +21369,15 @@ msgstr ""
 
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
-msgstr ""
+msgstr "Gramplet som viser en oversikt over hendelser for en familie"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
 msgstr ""
 
 #: HistContext/HistContext.gpr.py:5
-#, fuzzy
-#| msgid ""
-#| "Whether to include the death of relatives during the lifetime of person."
 msgid "Lists relevant historical events during the lifetime of a Person"
-msgstr "Om dødsdata om slektninger skal tas med i tidslinjen for en person."
+msgstr "Lister relevante historiske hendelser i løpet av en persons levetid"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
@@ -21772,7 +21777,7 @@ msgstr ""
 
 #: LastChange/LastChangeReport.py:228
 msgid "Events Changed"
-msgstr ""
+msgstr "Hendelser endret"
 
 #: LastChange/LastChangeReport.py:251
 #, fuzzy
@@ -21840,6 +21845,8 @@ msgid ""
 "A configurable program that shows you the connected events from your family "
 "tree that match today's day and month."
 msgstr ""
+"Et konfigurerbart program som viser tilknyttede hendelser fra slektstreet "
+"ditt som matcher dagens dag og måned."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:105
 msgid "Database is not open, can't check history right now."
@@ -21860,7 +21867,7 @@ msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:112
 msgid "Show these events"
-msgstr ""
+msgstr "Vis disse hendelsene"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:113
 msgid "Sort by "
@@ -21927,10 +21934,8 @@ msgid "Person Name"
 msgstr "Primærnavn"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:249
-#, fuzzy
-#| msgid "Event format"
 msgid "Event Year"
-msgstr "Hendelsesformat"
+msgstr "Hendelsesår"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:328
 msgid "gregorian"
@@ -21938,11 +21943,11 @@ msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:383
 msgid "Unknown father/partner"
-msgstr ""
+msgstr "Ukjent far/partner"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:398
 msgid "Unknown mother/partner"
-msgstr ""
+msgstr "Ukjent mor/partner"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:427
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:429
@@ -21951,7 +21956,7 @@ msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:431
 msgid "unknown participant"
-msgstr ""
+msgstr "ukjent deltaker"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:438
 #, fuzzy
@@ -22636,6 +22641,9 @@ msgid ""
 "rounding birthday\n"
 "to year only"
 msgstr ""
+"Skriv inn år for å begynne\n"
+"å avrunde bursdag\n"
+"til kun år"
 
 #: NetworkChart/NetworkChart.py:1076
 msgid ""
@@ -22645,7 +22653,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1080
 msgid "Round birthday to year after year entered (above)."
-msgstr ""
+msgstr "Avrund bursdager til år etter angitt år (ovenfor)."
 
 #: NetworkChart/NetworkChart.py:1082
 msgid "Represent birthday by year only."
@@ -22820,15 +22828,15 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1213
 msgid "Display up to max connections from central person."
-msgstr ""
+msgstr "Vis opptil maks forbindelser fra fokusperson."
 
 #: NetworkChart/NetworkChart.py:1217
 msgid "Highlight central person in graph."
-msgstr ""
+msgstr "Fremhev fokuspersonen i grafen."
 
 #: NetworkChart/NetworkChart.py:1219
 msgid "Add yellow color background to central person."
-msgstr ""
+msgstr "Legg til gul bakgrunnsfarge for fokuspersonen."
 
 #: NetworkChart/NetworkChart.py:1234
 msgid "Use database handle instead of GrampID id in URLs."
@@ -22924,10 +22932,8 @@ msgid "Place Coordinates"
 msgstr "Stedstitler"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-#, fuzzy
-#| msgid "Note Gramplet"
 msgid "Place Coordinate Gramplet"
-msgstr "Notat Smågramps"
+msgstr "Stedskoordinat Gramplet"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
@@ -22989,7 +22995,7 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
-msgstr ""
+msgstr "Vis hjelp"
 
 #~ msgid "Beta"
 #~ msgstr "Beta"
