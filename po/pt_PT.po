@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-02-21 08:14+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -4176,17 +4176,17 @@ msgstr "Adicionar nota para associação ADN %s"
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr ""
+msgstr "Criar citação de fonte para associação ADN %s"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr ""
+msgstr "Criar citação para associação ADN %s"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr ""
+msgstr "Adicionar citação a associação ADN %s"
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
@@ -4289,7 +4289,7 @@ msgstr "Sem fonte"
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
 msgid "onclick"
-msgstr ""
+msgstr "ao clicar"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onmouseover"
@@ -5082,6 +5082,8 @@ msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
 msgstr ""
+"<i>A instalação dos seguintes pacotes é <b>ABSOLUTAMENTE REQUERIDA</b>\n"
+" (requer a versão mínima ou superior)</i>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
 msgid ""
@@ -5096,6 +5098,8 @@ msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
 msgstr ""
+"<i>A instalação dos seguintes pacotes é <b>MUITO RECOMENDADA</b>, por ser "
+"necessária para geografia e mapas</i>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
 msgid ""
@@ -5107,7 +5111,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr ""
+msgstr "<i>A instalação dos seguintes pacotes é <b>OPCIONAL</b></i>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
@@ -5133,6 +5137,8 @@ msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
+"<i>A instalação dos seguintes pacotes é <b>RECOMENDADA</b>, se pretende "
+"traduzir ou desenvolver (extensões, etc.)</i>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
@@ -5148,6 +5154,9 @@ msgid ""
 "org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
 "work</i>:\n"
 msgstr ""
+"<i>Pré-requistos para que as seguintes <a href="
+"\"https://gramps-project.org/wiki/index.php?title=Third-party_Addons\""
+">extensões de terceiros</a> funcionem</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
@@ -5193,6 +5202,9 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
+"Se tem um motivo para verificar pré-requisitos, é o momento certo para "
+"salvaguardar os seus ficheiros e testar as salvaguardas.\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
 msgid ""
@@ -5203,24 +5215,37 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
+"<i><a href="
+"\"https://gramps-project.org/wiki/index.php?title=How_to_make_a_backup\""
+">Salvaguarda em Gramps XML</a> Encontra a opção \"Salvaguarda...\" no menu "
+"Árvores genealógicas, das versões recentes do Gramps, senão, use "
+"\"Exportar...\" no mesmo menu, mas desmarque as opções de privacidade no "
+"assistente de exportação, para incluir todos os dados.</i>\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
 msgid ""
 " • Backups can be made at any time and, at a minimum, on the first day of "
 "every month. But preferrably more often.\n"
 msgstr ""
+" • As salvaguardas podem-se fazer a qualquer momento, tendo como mínimo, o "
+"primeiro dia de cada mês. Preferencialmente, mais amiúde.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
 msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
 msgstr ""
+" • Recomendamos vivamente que faça salvaguardas dos seus ficheiros antes de "
+"qualquer actualização.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
 msgstr ""
+" • Teste as salvaguardas criando um novo ficheiro de família e importando a "
+"salvaguarda."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ", is the most current version.\n"
@@ -5314,25 +5339,27 @@ msgstr " (Requer "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
 msgid " • Berkeley Database library (bsddb3: "
-msgstr ""
+msgstr " • Biblioteca Berkeley Database (bsddb3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:675
 msgid " • SQLite Database library (sqlite3: "
-msgstr ""
+msgstr " • Biblioteca SQLite Database (sqlite3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:689
 msgid " • xdg-utils (Manual check see instructions link)"
-msgstr ""
+msgstr " • xdg-utils (verificação manual, veja a ligação às instruções)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:702
 msgid " • librsvg2 (Manual check see instructions link)"
-msgstr ""
+msgstr " • librsvg2 (verificação manual, veja a ligação às instruções)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:713
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
+" • language-pack-gnome-xx (verificação manual, veja a ligação às instruções) "
+"para o seu idioma <mostrar aqui TBD>"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
@@ -5369,7 +5396,7 @@ msgstr " • python-fontconfig em falta, requer versão 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
-msgstr ""
+msgstr " • python-fontconfig instalado, versão indisponível"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
@@ -5382,6 +5409,8 @@ msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (passou: versão %s ou superior instalada. Se não for Microsoft "
+"Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1015
 #, python-format
@@ -5389,10 +5418,12 @@ msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (requer a versão %s ou superior instalada. Se não for "
+"Microsoft Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1129
 msgid "can't found it because exiv2 not installed"
-msgstr ""
+msgstr "impossível encontrar, exiv2 não instalado"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 #, python-format
@@ -5425,7 +5456,7 @@ msgstr "não instalado"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
 msgid "     and one of either: (pydotplus: "
-msgstr ""
+msgstr "     e um de: (pydotplus: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
 msgid ") or (pygraphviz: "
@@ -5483,12 +5514,12 @@ msgstr " (lxml: não encontrado. Requer versão "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1776
 msgid " • Requires: MongoDB TBD / pymongo TBD"
-msgstr ""
+msgstr " • Requer: MongoDB TBD / pymongo TBD"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1790
 #, python-format
 msgid " • Operating System: %s"
-msgstr ""
+msgstr " • Sistema operativo: %s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
 msgid ""
@@ -5569,7 +5600,7 @@ msgstr "Resultados ADN"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
-msgstr ""
+msgstr "Gramplet para mostrar uma lista de resultados de ADN"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
@@ -5577,35 +5608,35 @@ msgstr "Ind."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
-msgstr ""
+msgstr "Rel."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "ADN P."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Leg."
-msgstr ""
+msgstr "Leg. P."
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr ""
+msgstr "Seg. L."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Fnt(s)"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "ADN partilhado"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "Segmentos partilhados"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "Maior segmento"
 
 #: DNAMatches/dnamatches.py:159
 msgid "Source(s)"
@@ -5621,16 +5652,16 @@ msgstr "Faça duplo clique para editar a associação seleccionada."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
-msgstr ""
+msgstr "LEGENDA"
 
 #: DNAMatches/dnamatches.py:228
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "Não especificado"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
 msgid "cM"
@@ -5759,6 +5790,9 @@ msgid ""
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
+"Alterna as marcas nas linhas seleccionadas. Pode seleccioná-las com Ctrl+"
+"clique (adicionar a grupo), Shift+clique (estender grupo), ou Ctrl/Shift + "
+"setas e espaço. Ou Ctrl + A para seleccionar tudo."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
@@ -5954,13 +5988,15 @@ msgstr "Se deve incluir um índice de locais no final do relatório."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1501
 msgid "Include the 'Report appearances' section with each person"
-msgstr ""
+msgstr "Incluir a secção \"Relatar aparições\" em cada indivíduo"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1503
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
 msgstr ""
+"A secção \"Relatar aparições\" mostra outros locais do relatório onde o "
+"indivíduo é mencionado."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1570
 msgid "The style used for the children list."
@@ -6232,11 +6268,11 @@ msgstr "Mapa de ascendentes"
 
 #: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
-msgstr ""
+msgstr "Uma vista que mostra os locais dos ascendentes no mapa."
 
 #: GeoAncestor/GeoAncestor.py:207
 msgid "Ancestors places on the map"
-msgstr ""
+msgstr "Locais dos ascendentes no mapa"
 
 #: GeoAncestor/GeoAncestor.py:235
 msgid "GeoAncestor"
@@ -6555,18 +6591,24 @@ msgid ""
 "Enter the Latitude GPS coordinates for this image,\n"
 "Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
 msgstr ""
+"Insira as coordenadas GPS de latitude desta imagem,\n"
+"Exemplo: -43.722965, -43:43:22, 38° 38′ 03″ N"
 
 #: EditExifMetadata/editexifmetadata.py:179
 msgid ""
 "Enter the Longitude GPS coordinates for this image,\n"
 "Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
 msgstr ""
+"Insira as coordenadas GPS de longitude desta imagem,\n"
+"Exemplo: -10.396378, -10:23:46, 105° 6′ 6″ W"
 
 #: EditExifMetadata/editexifmetadata.py:182
 msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
+"Esta é a medida acima ou abaixo do nível do mar. É medida em metros. Por "
+"exemplo: 200,558, -200,558"
 
 #: EditExifMetadata/editexifmetadata.py:191
 msgid ""
@@ -6616,7 +6658,7 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:213
 msgid "Clear GPS"
-msgstr ""
+msgstr "Limpar GPS"
 
 #: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"
@@ -6645,7 +6687,7 @@ msgstr "Por favor, converta a imagem para um tipo compatível com Exiv2..."
 #: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr ""
+msgstr "Tamanho da image: {width} x {height} pixels"
 
 #: EditExifMetadata/editexifmetadata.py:481
 #: EditExifMetadata/editexifmetadata.py:1440
@@ -6979,7 +7021,7 @@ msgstr ""
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
 msgid "Y-chromosomal inheritance of <filter>"
-msgstr ""
+msgstr "Herança cromossómica Y de <filtro>"
 
 #: FilterRules2/yinheritanceoffiltermatch.py:47
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
@@ -6987,15 +7029,19 @@ msgid ""
 "Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
 msgstr ""
+"Encontra descendentes de <filtro> que seguem padrões de herança cromossómica "
+"Y."
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
-msgstr ""
+msgstr "Ascendentes cromossómicos X de <indivíduo>"
 
 #: FilterRules2/xchromancestors.gpr.py:27 FilterRules2/xchromancestors.py:50
 msgid ""
 "Matches ancestors of <person> following a X-chromosomal inheritance pattern."
 msgstr ""
+"Encontra ascendentes de <indivíduo> que seguem um padrão de hereditariedade "
+"do cromossoma X."
 
 #: FilterRules2/xchromdescendants.gpr.py:25
 #: FilterRules2/xchromdescendants.py:48
@@ -7007,21 +7053,23 @@ msgid ""
 "Matches descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
+"Encontra descendentes de <indivíduo> que seguem um padrão de herança do "
+"cromossoma X."
 
 #: FilterRules2/patrilinealprogenitor.py:45
 #: FilterRules2/patrilinealprogenitor.gpr.py:25
 msgid "Patrilineal progenitor of <person>"
-msgstr ""
+msgstr "Progenitor patrilinear de <indivíduo>"
 
 #: FilterRules2/patrilinealprogenitor.py:47
 #: FilterRules2/patrilinealprogenitor.gpr.py:26
 msgid "Matches the earliest recorded patrilineal ancestor father."
-msgstr ""
+msgstr "Encontra o ascendente paterno patrilinear mais antigo registado."
 
 #: FilterRules2/mtinheritanceoffiltermatch.py:46
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
 msgid "Mitochondrial inheritance of <filter>"
-msgstr ""
+msgstr "Herança mitocondrial de <filtro>"
 
 #: FilterRules2/mtinheritanceoffiltermatch.py:47
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
@@ -7029,42 +7077,50 @@ msgid ""
 "Matches recorded descendants of a filter result following mitochondrial "
 "inheritance patterns."
 msgstr ""
+"Encontra descendentesde <filtro> de acordo com os padrões de herança "
+"mitocondrial."
 
 #: FilterRules2/matrilinealprogenitrix.gpr.py:25
 #: FilterRules2/matrilinealprogenitrix.py:45
 msgid "Matrilineal progenitrix of <person>"
-msgstr ""
+msgstr "Progenitora matrilinear de <indivíduo>"
 
 #: FilterRules2/matrilinealprogenitrix.gpr.py:26
 #: FilterRules2/matrilinealprogenitrix.py:47
 msgid "Matches the earliest recorded matrilineal ancestor mother."
-msgstr ""
+msgstr "Encontra o ascendente materno matrilinear mais antigo registado."
 
 #: FilterRules2/xchromdescendants.py:50
 msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
+"Encontra todos os descendentes de <indivíduo> que seguem um padrão de "
+"herança do cromossoma X."
 
 #: FilterRules2/mtinheritance.py:45 FilterRules2/mtinheritance.gpr.py:25
 msgid "Mitochondrial inheritance of <person>"
-msgstr ""
+msgstr "Herança mitocondrial de <indivíduo>"
 
 #: FilterRules2/mtinheritance.py:46 FilterRules2/mtinheritance.gpr.py:27
 msgid ""
 "Matches recorded descendants of person following mitochondrial inheritance "
 "patterns."
 msgstr ""
+"Encontra descendentes registados de <indivíduo> que seguem os padrões de "
+"herança mitocondrial."
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
 msgid "Y-chromosomal inheritance of <person>"
-msgstr ""
+msgstr "Herança cromossómica Y de <indivíduo>"
 
 #: FilterRules2/yinheritance.gpr.py:27 FilterRules2/yinheritance.py:46
 msgid ""
 "Matches recorded descendants of person following Y-chromosomal inheritance "
 "patterns."
 msgstr ""
+"Encontra descendentes registados de <indivíduo> que seguem os padrões de "
+"herança do cromossoma Y."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -7076,7 +7132,7 @@ msgstr "Produz linhas de descendentes de um indivíduo"
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
-msgstr ""
+msgstr "A utilização do tipo SVG para um documento suplementar não é suportada!"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
@@ -7230,23 +7286,27 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1617
 msgid "All Person's blocks have the same height"
-msgstr ""
+msgstr "Todos os blocos de indivíduos têm a mesma altura"
 
 #: DescendantsLines/DescendantsLines.py:1618
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
 msgstr ""
+"Todos os blocos de todos os indivíduos têm a mesma altura, que é a altura do "
+"bloco mais alto."
 
 #: DescendantsLines/DescendantsLines.py:1623
 msgid "All Person's blocks have the same width"
-msgstr ""
+msgstr "Todos os blocos de indivíduos têm a mesma largura"
 
 #: DescendantsLines/DescendantsLines.py:1624
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
 msgstr ""
+"Todos os blocos de todos os indivíduos têm a mesma largura, que é a largura "
+"do bloco mais largo."
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Colour blocks by Generation"
@@ -7346,6 +7406,8 @@ msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
 msgstr ""
+"O espaço a acrescentar entre uma barra de cônjuge e outro cônjuge no caso de "
+"famílias múltiplas com o mesmo descendente."
 
 #: DescendantsLines/DescendantsLines.py:1715
 msgid "Horizontal space descendant to spouse"
@@ -7353,21 +7415,23 @@ msgstr "Espaço horizontal de descendente a cônjuge"
 
 #: DescendantsLines/DescendantsLines.py:1716
 msgid "The space to add between the descendant and the spouse."
-msgstr ""
+msgstr "O espaço a acrescentar entre o descendente e o cônjuge."
 
 #: DescendantsLines/DescendantsLines.py:1721
 msgid "Horizonal space family to family"
-msgstr ""
+msgstr "Espaço horizontal família a família"
 
 #: DescendantsLines/DescendantsLines.py:1722
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
 msgstr ""
+"O espaço a acrescentar entre o descendente (ou cônjuge) mais externo de uma "
+"família e o descendente (ou cônjuge) mais externo da família seguinte."
 
 #: DescendantsLines/DescendantsLines.py:1727
 msgid "Horizontal distance spouse to family edge"
-msgstr ""
+msgstr "Distância horizontal do cônjuge ao contorno da família"
 
 #: DescendantsLines/DescendantsLines.py:1728
 msgid ""
@@ -7375,6 +7439,9 @@ msgid ""
 "bigger the value, more the center is moved to the left towards the "
 "descendant."
 msgstr ""
+"Se este valor for 0, a barra de filhos é centrada por baixo do cônjuge. "
+"Quanto maior o valor, mais o centro é deslocado à esquerda em direcção ao "
+"descendente."
 
 #: DescendantsLines/DescendantsLines.py:1735
 msgid "OL_PAD"
@@ -7395,11 +7462,11 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1746
 msgid "Children distance"
-msgstr ""
+msgstr "Distância dos filhos"
 
 #: DescendantsLines/DescendantsLines.py:1747
 msgid "The horizontal distance between two children of the same family."
-msgstr ""
+msgstr "A distância horizontal entre duas crianças da mesma família."
 
 #: DescendantsLines/DescendantsLines.py:1751
 msgid "Vertical edge child to child-bar"
@@ -7419,15 +7486,15 @@ msgstr "O número da largura mínima do filho"
 
 #: DescendantsLines/DescendantsLines.py:1762
 msgid "Space around text"
-msgstr ""
+msgstr "Espaço à volta do texto"
 
 #: DescendantsLines/DescendantsLines.py:1763
 msgid "The space to add around the text block of a person."
-msgstr ""
+msgstr "O espaço a acrescentar à volta do bloco de texto de um indivíduo."
 
 #: DescendantsLines/DescendantsLines.py:1767
 msgid "Space between lines of text"
-msgstr ""
+msgstr "Espaço entre linhas de texto"
 
 #: DescendantsLines/DescendantsLines.py:1768
 msgid "The space to add between a line and the next in a person text block."
