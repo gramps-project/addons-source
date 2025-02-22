@@ -1019,7 +1019,6 @@ You can edit this to help find other places, particularly to reduce the number o
                 <property name="visible">False</property>
                 <child>
                   <object class="GtkCellRendererText" id="index_cr">
-                    <property name="height">20</property>
                     <property name="wrap-mode">word</property>
                     <property name="wrap-width">400</property>
                   </object>
@@ -1039,7 +1038,6 @@ You can edit this to help find other places, particularly to reduce the number o
                 <property name="sort-column-id">0</property>
                 <child>
                   <object class="GtkCellRendererText" id="name_cr">
-                    <property name="height">20</property>
                     <property name="wrap-mode">word</property>
                     <property name="wrap-width">400</property>
                   </object>
@@ -1059,7 +1057,6 @@ You can edit this to help find other places, particularly to reduce the number o
                 <property name="sort-column-id">0</property>
                 <child>
                   <object class="GtkCellRendererText" id="type_cr">
-                    <property name="height">20</property>
                     <property name="wrap-mode">word</property>
                     <property name="wrap-width">400</property>
                   </object>
