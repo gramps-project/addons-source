@@ -343,7 +343,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         """ This implements the gui portion of the Plugins panel """
         vbox_reg = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         scrolled_window_reg = Gtk.ScrolledWindow()
-        self._list_reg = Gtk.TreeView()
+        self._list_reg = PersistentTreeView(self.uistate, __name__.lower())
         self._list_reg.set_grid_lines(Gtk.TreeViewGridLines.HORIZONTAL)
 
         # model: plugintype, hidden, pluginname, plugindescr, pluginid
@@ -396,6 +396,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         col.set_resizable(True)
         self._list_reg.append_column(col)
         self._list_reg.set_search_column(2)
+        self._list_reg.restore_column_size()
 
         scrolled_window_reg.add(self._list_reg)
         vbox_reg.pack_start(scrolled_window_reg, True, True, 0)
