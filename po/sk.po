@@ -1097,8 +1097,8 @@ msgid ""
 "For use when the initial component of the Title is too detailed to be found "
 "in the gazetteer."
 msgstr ""
-"Rozdeľte názov, upravte ho manuálne a uzavrite s ďalšou úrovňou hierarchie.  "
-"\n"
+"Rozdeľte názov, upravte ho manuálne a uzavrite s ďalšou úrovňou "
+"hierarchie.  \n"
 "Použite ho, keď je počiatočná zložka názvu príliš podrobná na to, aby bola "
 "nájdená v geografickom lexikóne."
 
@@ -2312,8 +2312,8 @@ msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
 msgstr ""
-"Cesta k médiám nie je nastavená.   Musíte nastaviť "
-"\"Základnú cestu pre relatívne cesty k médiám\" v Nastaveniach."
+"Cesta k médiám nie je nastavená.   Musíte nastaviť \"Základnú cestu pre "
+"relatívne cesty k médiám\" v Nastaveniach."
 
 #: MediaVerify/MediaVerify.py:307
 msgid "Finding files"
@@ -2404,7 +2404,8 @@ msgstr ""
 #: Betawhatsnext/Betawhatsnext.py:70
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
-msgstr "Použite \"Konfigurovať\" v menu \"Pohľad\" na zmenu možností Grampletu."
+msgstr ""
+"Použite \"Konfigurovať\" v menu \"Pohľad\" na zmenu možností Grampletu."
 
 #: Betawhatsnext/Betawhatsnext.py:86
 msgid "Search Quota "
@@ -2543,7 +2544,8 @@ msgstr "Rodina rodičov je neznáma."
 #: Betawhatsnext/Betawhatsnext.py:670
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
-msgstr "\"Pridať nových/existujúcich rodičov\" z menu Upraviť v pohľade Vzťahy."
+msgstr ""
+"\"Pridať nových/existujúcich rodičov\" z menu Upraviť v pohľade Vzťahy."
 
 #: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
@@ -3620,7 +3622,8 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5138
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
-msgstr "Vyberte východzie rozloženie detí v SVG strome (iba pre vejárové grafy)"
+msgstr ""
+"Vyberte východzie rozloženie detí v SVG strome (iba pre vejárové grafy)"
 
 #: DynamicWeb/dynamicweb.py:5149
 msgid ""
@@ -4154,8 +4157,8 @@ msgstr "Import FamilyTree DNA"
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
-"Vytvorených {} asociácií s údajmi DNA. Vytvorených {} atribútov haploskupín "
-"\n"
+"Vytvorených {} asociácií s údajmi DNA. Vytvorených {} atribútov "
+"haploskupín \n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
@@ -4830,8 +4833,8 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Generuje webovú (HTML) stránku s grafickým znázornením predkov/potomkov (SVG)"
-", kde sa detaily o jednotlivcoch zobrazia pri udalostiach myši."
+"Generuje webovú (HTML) stránku s grafickým znázornením predkov/potomkov "
+"(SVG), kde sa detaily o jednotlivcoch zobrazia pri udalostiach myši."
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
@@ -5074,10 +5077,9 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
-"Diagnostický Gramplet na pomoc pri hodnotení, či <a href="
-"\"https://gramps-project.org/\">Gramps</a> má všetky <a href="
-"\"https://github.com/gramps-project/gramps/blob/master/README.md\""
-">náležitosti</a> nainštalované.\n"
+"Diagnostický Gramplet na pomoc pri hodnotení, či <a href=\"https://gramps-"
+"project.org/\">Gramps</a> má všetky <a href=\"https://github.com/gramps-"
+"project/gramps/blob/master/README.md\">náležitosti</a> nainštalované.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
@@ -5173,9 +5175,9 @@ msgid ""
 "org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
 "work</i>:\n"
 msgstr ""
-"<i>Náležitosti potrebné pre nasledujúce <a href="
-"\"https://gramps-project.org/wiki/index.php?title=Third-party_Addons\">Third-"
-"party Addons</a>, aby fungovali</i>:\n"
+"<i>Náležitosti potrebné pre nasledujúce <a href=\"https://gramps-project.org/"
+"wiki/index.php?title=Third-party_Addons\">Third-party Addons</a>, aby "
+"fungovali</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
@@ -5451,9 +5453,8 @@ msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
-"Pre doplnok Networkchart, písmo <a href="
-"\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> "
-"poskytuje mimoriadne čitateľný výsledok.\n"
+"Pre doplnok Networkchart, písmo <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> poskytuje mimoriadne čitateľný výsledok.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
@@ -5541,9 +5542,10 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=Gramps_5.0_Wiki_Manual_-_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE."
-"2C_LC_TIME\">Locale Settings:</a></b></u>\n"
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
+"a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
@@ -6912,7 +6914,9 @@ msgid "Bad Date/Time"
 msgstr "Nesprávny dátum/čas"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-msgid "Invalid latitude (syntax: 18\\u00b09'"
+#, fuzzy
+#| msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgid "Invalid latitude (syntax: 18°9'"
 msgstr "Neplatná zemepisná šírka (syntax: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
@@ -6920,7 +6924,9 @@ msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 alebo -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-msgid "Invalid longitude (syntax: 18\\u00b09'"
+#, fuzzy
+#| msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgid "Invalid longitude (syntax: 18°9'"
 msgstr "Neplatná zemepisná dĺžka (syntax: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
@@ -6928,11 +6934,20 @@ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 alebo -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
+#, fuzzy
+#| msgid ""
+#| "WARNING!  You are about to completely delete the Exif metadata from this "
+#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
+"image."
 msgstr ""
 "UPOZORNENIE!  Chystáte sa úplne odstrániť metadáta Exif z tohto obrázka?"
+
+#: EditExifMetadata/editexifmetadata.py:1138
+#: EditExifMetadata/editexifmetadata.py:1150
+msgid "Delete?"
+msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
 #, fuzzy
@@ -6941,7 +6956,7 @@ msgstr ""
 #| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
-"image?"
+"image."
 msgstr ""
 "UPOZORNENIE!  Chystáte sa úplne odstrániť metadáta Exif z tohto obrázka?"
 

@@ -6814,7 +6814,7 @@ msgstr "Hibás dátum/idő"
 
 #: EditExifMetadata/editexifmetadata.py:1122
 #, fuzzy
-msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgid "Invalid latitude (syntax: 18°9'"
 msgstr "érvénytelen szélességi fok (szintaktika: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
@@ -6823,7 +6823,7 @@ msgstr "48.21\"D, -18.2412 vagy -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
 #, fuzzy
-msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgid "Invalid longitude (syntax: 18°9'"
 msgstr "érvénytelen hosszúsági fok (szintaktika: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
@@ -6831,11 +6831,20 @@ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"K, -18.2412 vagy -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
+#, fuzzy
+#| msgid ""
+#| "WARNING!  You are about to completely delete the Exif metadata from this "
+#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
+"image."
 msgstr ""
 "FIGYELEM!  Biztosan le akarja törölni ennek a képnek az Exif metaadatait?"
+
+#: EditExifMetadata/editexifmetadata.py:1138
+#: EditExifMetadata/editexifmetadata.py:1150
+msgid "Delete?"
+msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
 #, fuzzy
@@ -6844,7 +6853,7 @@ msgstr ""
 #| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
-"image?"
+"image."
 msgstr ""
 "FIGYELEM!  Biztosan le akarja törölni ennek a képnek az Exif metaadatait?"
 

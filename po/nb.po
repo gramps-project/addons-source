@@ -16,8 +16,8 @@ msgstr ""
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-02-22 06:16+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
-"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
-"gramps-project/addons/nb_NO/>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1090,8 +1090,8 @@ msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
 msgstr ""
-"Å merke av i avkrysningsboksen «Befolket» gjør at GeoNames-søket inkluderer «"
-"Befolkede steder», altså steder der folk bor og arbeider."
+"Å merke av i avkrysningsboksen «Befolket» gjør at GeoNames-søket inkluderer "
+"«Befolkede steder», altså steder der folk bor og arbeider."
 
 #: PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
@@ -5124,10 +5124,10 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
-"Diagnostisk Gramplet for å hjelpe med å vurdere om <a href="
-"\"https://gramps-project.org/\">Gramps</a> har alle nødvendige <a href="
-"\"https://github.com/gramps-project/gramps/blob/master/README.md\""
-">forutsetninger</a> installert.\n"
+"Diagnostisk Gramplet for å hjelpe med å vurdere om <a href=\"https://gramps-"
+"project.org/\">Gramps</a> har alle nødvendige <a href=\"https://github.com/"
+"gramps-project/gramps/blob/master/README.md\">forutsetninger</a> "
+"installert.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
@@ -6894,7 +6894,7 @@ msgstr "Ugyldig Dato/Tid"
 
 #: EditExifMetadata/editexifmetadata.py:1122
 #, fuzzy
-msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgid "Invalid latitude (syntax: 18°9'"
 msgstr "Ugyldig breddegrad (syntaks: 18°9')"
 
 #: EditExifMetadata/editexifmetadata.py:1123
@@ -6903,7 +6903,7 @@ msgstr "48.21\"S, -18.2412 eller -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
 #, fuzzy
-msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgid "Invalid longitude (syntax: 18°9'"
 msgstr "Ugyldig lengdegrad (syntaks: 18°9')"
 
 #: EditExifMetadata/editexifmetadata.py:1128
@@ -6911,12 +6911,21 @@ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 eller -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
+#, fuzzy
+#| msgid ""
+#| "WARNING!  You are about to completely delete the Exif metadata from this "
+#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
+"image."
 msgstr ""
 "ADVARSEL!  Du er i ferd med å fullstendig slette Exif-metadata fra dette "
 "bildet?"
+
+#: EditExifMetadata/editexifmetadata.py:1138
+#: EditExifMetadata/editexifmetadata.py:1150
+msgid "Delete?"
+msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
 #, fuzzy
@@ -6925,7 +6934,7 @@ msgstr ""
 #| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
-"image?"
+"image."
 msgstr ""
 "ADVARSEL!  Du er i ferd med å fullstendig slette Exif-metadata fra dette "
 "bildet?"
@@ -19596,7 +19605,8 @@ msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.gpr.py:26
 msgid "Add or remove a tag from groups of people, events, etc."
-msgstr "Legg til eller fjern en etikett fra grupper av personer, hendelser osv."
+msgstr ""
+"Legg til eller fjern en etikett fra grupper av personer, hendelser osv."
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "

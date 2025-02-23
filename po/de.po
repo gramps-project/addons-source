@@ -6925,7 +6925,9 @@ msgid "Bad Date/Time"
 msgstr "Falsches Datum/Zeit"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-msgid "Invalid latitude (syntax: 18\\u00b09'"
+#, fuzzy
+#| msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgid "Invalid latitude (syntax: 18°9'"
 msgstr "Ungültiger Breitengrad (Syntax: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
@@ -6933,7 +6935,9 @@ msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 oder -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-msgid "Invalid longitude (syntax: 18\\u00b09'"
+#, fuzzy
+#| msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgid "Invalid longitude (syntax: 18°9'"
 msgstr "Ungültiger Längengrad (Syntax: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
@@ -6941,15 +6945,28 @@ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"O, -18.2412 oder -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
+#, fuzzy
+#| msgid ""
+#| "WARNING!  You are about to completely delete the Exif metadata from this "
+#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
+"image."
 msgstr "ACHTUNG! Du bist dabei alle Exif Metadaten von diesem Bild zu löschen?"
 
+#: EditExifMetadata/editexifmetadata.py:1138
+#: EditExifMetadata/editexifmetadata.py:1150
+msgid "Delete?"
+msgstr ""
+
 #: EditExifMetadata/editexifmetadata.py:1148
+#, fuzzy
+#| msgid ""
+#| "WARNING!  You are about to completely delete the GPS metadata from this "
+#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
-"image?"
+"image."
 msgstr ""
 "WARNUNG! Du bist dabei, die GPS-Metadaten vollständig aus diesem Bild zu "
 "löschen?"
@@ -7374,8 +7391,8 @@ msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
 msgstr ""
-"Maximale Länge des Notizfeldes eines Ereignisses in einem Textblock, '$e(n)'."
-"\n"
+"Maximale Länge des Notizfeldes eines Ereignisses in einem Textblock, "
+"'$e(n)'.\n"
 " 0=keine Begrenzung "
 
 #: DescendantsLines/DescendantsLines.py:1612
@@ -18808,8 +18825,8 @@ msgstr "libaccess Person bearbeiten"
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
 msgstr ""
-"Bietet eine Bibliothek für den generischen Zugriff auf die Datenbank und "
-"gen.lib."
+"Bietet eine Bibliothek für den generischen Zugriff auf die Datenbank und gen."
+"lib."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -22176,7 +22193,8 @@ msgstr "%(male_name)s wurde in %(year)s in %(place)s ein Abschluss verliehen."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:561
 #, python-format
 msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde in %(year)s in %(place)s ein Abschluss verliehen."
+msgstr ""
+"%(female_name)s wurde in %(year)s in %(place)s ein Abschluss verliehen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:564
 #, python-format
@@ -22231,7 +22249,8 @@ msgstr "%(female_name)s hat sich in %(year)s in %(place)s verlobt."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:591
 #, python-format
 msgid "%(male_name)s received first communion in %(year)s at %(place)s."
-msgstr "%(male_name)s hat in %(year)s in %(place)s die Erstkommunion empfangen."
+msgstr ""
+"%(male_name)s hat in %(year)s in %(place)s die Erstkommunion empfangen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:594
 #, python-format

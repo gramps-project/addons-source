@@ -2445,12 +2445,13 @@ msgstr ""
 " 👣 Passos seguintes:\n"
 " Adicionar uma família, e um indivíduo a essa família:\n"
 "  • a família tem de ser adicionada via menu \"Adicionar\";\n"
-"  • o indivíduo pode ser adicionado clicando em \"+\" (mais) nos painéis ("
-"\"Pai/Companheiro 1\" ou \"Mãe/Companheiro 2\") ou no separador \"Filhos\".\n"
+"  • o indivíduo pode ser adicionado clicando em \"+\" (mais) nos painéis "
+"(\"Pai/Companheiro 1\" ou \"Mãe/Companheiro 2\") ou no separador "
+"\"Filhos\".\n"
 "\n"
 "Ou importar indivíduos de um ficheiro externo:\n"
-"  • pode utilizar um ficheiro externo para povoar a árvore via "
-"\"Importar...\" no menu \"Árvores genealógicas\"."
+"  • pode utilizar um ficheiro externo para povoar a árvore via \"Importar..."
+"\" no menu \"Árvores genealógicas\"."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
@@ -5056,10 +5057,9 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
-"Gramplet de diagnóstico para avaliar se o <a href="
-"\"https://gramps-project.org/\">Gramps</a> tem todos os <a href="
-"\"https://github.com/gramps-project/gramps/blob/master/README.md\""
-">pré-requisitos</a> instalados.\n"
+"Gramplet de diagnóstico para avaliar se o <a href=\"https://gramps-project."
+"org/\">Gramps</a> tem todos os <a href=\"https://github.com/gramps-project/"
+"gramps/blob/master/README.md\">pré-requisitos</a> instalados.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
@@ -5154,9 +5154,9 @@ msgid ""
 "org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
 "work</i>:\n"
 msgstr ""
-"<i>Pré-requistos para que as seguintes <a href="
-"\"https://gramps-project.org/wiki/index.php?title=Third-party_Addons\""
-">extensões de terceiros</a> funcionem</i>:\n"
+"<i>Pré-requistos para que as seguintes <a href=\"https://gramps-project.org/"
+"wiki/index.php?title=Third-party_Addons\">extensões de terceiros</a> "
+"funcionem</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
@@ -5215,12 +5215,11 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href="
-"\"https://gramps-project.org/wiki/index.php?title=How_to_make_a_backup\""
-">Salvaguarda em Gramps XML</a> Encontra a opção \"Salvaguarda...\" no menu "
-"Árvores genealógicas, das versões recentes do Gramps, senão, use "
-"\"Exportar...\" no mesmo menu, mas desmarque as opções de privacidade no "
-"assistente de exportação, para incluir todos os dados.</i>\n"
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Salvaguarda em Gramps XML</a> Encontra a opção "
+"\"Salvaguarda...\" no menu Árvores genealógicas, das versões recentes do "
+"Gramps, senão, use \"Exportar...\" no mesmo menu, mas desmarque as opções de "
+"privacidade no assistente de exportação, para incluir todos os dados.</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
@@ -5790,9 +5789,9 @@ msgid ""
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
-"Alterna as marcas nas linhas seleccionadas. Pode seleccioná-las com Ctrl+"
-"clique (adicionar a grupo), Shift+clique (estender grupo), ou Ctrl/Shift + "
-"setas e espaço. Ou Ctrl + A para seleccionar tudo."
+"Alterna as marcas nas linhas seleccionadas. Pode seleccioná-las com "
+"Ctrl+clique (adicionar a grupo), Shift+clique (estender grupo), ou Ctrl/"
+"Shift + setas e espaço. Ou Ctrl + A para seleccionar tudo."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
@@ -6842,7 +6841,9 @@ msgid "Bad Date/Time"
 msgstr "Data/Hora incorrectas"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-msgid "Invalid latitude (syntax: 18\\u00b09'"
+#, fuzzy
+#| msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgid "Invalid latitude (syntax: 18°9'"
 msgstr "Latitude inválida (sintaxe: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
@@ -6850,7 +6851,9 @@ msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 ou -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-msgid "Invalid longitude (syntax: 18\\u00b09'"
+#, fuzzy
+#| msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgid "Invalid longitude (syntax: 18°9'"
 msgstr "Longitude inválida (sintaxe: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
@@ -6858,16 +6861,29 @@ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 ou -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
+#, fuzzy
+#| msgid ""
+#| "WARNING!  You are about to completely delete the Exif metadata from this "
+#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
+"image."
 msgstr ""
 "AVISO: está prestes a eliminar completamente os meta-dados Exif desta imagem!"
 
+#: EditExifMetadata/editexifmetadata.py:1138
+#: EditExifMetadata/editexifmetadata.py:1150
+msgid "Delete?"
+msgstr ""
+
 #: EditExifMetadata/editexifmetadata.py:1148
+#, fuzzy
+#| msgid ""
+#| "WARNING!  You are about to completely delete the GPS metadata from this "
+#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
-"image?"
+"image."
 msgstr ""
 "AVISO: está prestes a eliminar completamente os meta-dados GPS desta imagem!"
 
@@ -7132,7 +7148,8 @@ msgstr "Produz linhas de descendentes de um indivíduo"
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
-msgstr "A utilização do tipo SVG para um documento suplementar não é suportada!"
+msgstr ""
+"A utilização do tipo SVG para um documento suplementar não é suportada!"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
