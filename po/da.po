@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 17:44+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -4116,47 +4116,37 @@ msgid "Enter FTDNA Chromosome Segment Filename:"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:112
-#, fuzzy
-#| msgid "Import Failure"
 msgid "Import Haplogroups"
-msgstr "Fejl ved import"
+msgstr "Importer Haplogrupper"
 
 #: FamilyTreeDNA/ftdna_import.py:128
 msgid "FTDNA Note string :"
-msgstr ""
+msgstr "FTDNA note streng:"
 
 #: FamilyTreeDNA/ftdna_import.py:137
-#, fuzzy
-#| msgid "Citations:"
 msgid "Shared Citation ID :"
-msgstr "Kildehenvisninger:"
+msgstr "Delt Kildehenvisnings ID:"
 
 #: FamilyTreeDNA/ftdna_import.py:151
-#, fuzzy
-#| msgid "Active person"
 msgid "Active Person : "
-msgstr "Fokuspersin"
+msgstr "Fokusperson: "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
-msgstr ""
+msgstr "Importer data fra Family Finder filer"
 
 #: FamilyTreeDNA/ftdna_import.py:169
-#, fuzzy
-#| msgid "Close the Media Verify Tool"
 msgid "Close the Family Finder Tool"
-msgstr "Luk værktøj til medieverficéring"
+msgstr "Luk værktøj for Family Finder"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
-msgstr ""
+msgstr "Læst hjælp manualen"
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "FamilyTree DNA Import"
-msgstr "Familietræ for %s"
+msgstr "FamilyTree DNA import"
 
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
