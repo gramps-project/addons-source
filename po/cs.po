@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 23:04+0000\n"
+"PO-Revision-Date: 2025-02-23 12:29+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -6794,7 +6794,6 @@ msgid "Bad Date/Time"
 msgstr "Nesprávné Datum/čas"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
 msgid "Invalid latitude (syntax: 18°9'"
 msgstr "Neplatná zeměpisná šířka (syntax: 18°9'"
 
@@ -6803,9 +6802,8 @@ msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 nebo -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
 msgid "Invalid longitude (syntax: 18°9'"
-msgstr "Neplatná zeměpisná výška (syntax: 18°9'"
+msgstr "Neplatná zeměpisná délka (syntax: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
