@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-22 17:04+0000\n"
+"PO-Revision-Date: 2025-02-23 12:29+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -6755,34 +6755,26 @@ msgid "Bad Date/Time"
 msgstr "Felaktig datum/tid"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "Invalid latitude (syntax: 18\\u00b09'"
 msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Ogiltig latitud (syntax: 18\\u00b09'"
+msgstr "Ogiltig latitud (syntax: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 eller -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
-#| msgid "Invalid longitude (syntax: 18\\u00b09'"
 msgid "Invalid longitude (syntax: 18°9'"
-msgstr "Ogiltig longitud (syntax: 18\\u00b09'"
+msgstr "Ogiltig longitud (syntax: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 eller -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr "Varning: Du är på väg att helt ta bort Exif-metadata från denna bild?"
+msgstr "VARNING!   Du är på väg att helt ta bort Exif-metadata från denna bild."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
@@ -6790,15 +6782,11 @@ msgid "Delete?"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the GPS metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
 msgstr ""
-"VARNING!   Du är på väg att helt radera GPS-metadata från den här bilden?"
+"VARNING!   Du är på väg att helt radera GPS-metadata från den här bilden."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
@@ -8178,70 +8166,48 @@ msgid "Event Roles"
 msgstr "Händelseroller"
 
 #: TypeCleanup/type_cleanup.py:102
-#, fuzzy
-#| msgid "Name Type"
 msgid "Event Types"
-msgstr "Namntyp"
+msgstr "Händelsetyper"
 
 #: TypeCleanup/type_cleanup.py:103
-#, fuzzy
-#| msgid "Family Relationship Tool"
 msgid "Family Relation Types"
-msgstr "Verktyg för familjesläktskap"
+msgstr "Typer av familjerelationer"
 
 #: TypeCleanup/type_cleanup.py:104
-#, fuzzy
-#| msgid "Include referenced people"
 msgid "Child reference Types"
-msgstr "Ta med refererade personer"
+msgstr "Underordnade referenstyper"
 
 #: TypeCleanup/type_cleanup.py:105
-#, fuzzy
-#| msgid "Origin type"
 msgid "Name Origin Types"
-msgstr "Ursprungstyp"
+msgstr "Namnursprungstyper"
 
 #: TypeCleanup/type_cleanup.py:106
-#, fuzzy
-#| msgid "Name Type"
 msgid "Name Types"
-msgstr "Namntyp"
+msgstr "Namntyper"
 
 #: TypeCleanup/type_cleanup.py:107
-#, fuzzy
-#| msgid "Note type"
 msgid "Note Types"
-msgstr "Notistyp"
+msgstr "Notistyper"
 
 #: TypeCleanup/type_cleanup.py:108
-#, fuzzy
-#| msgid "Name Type"
 msgid "Place Types"
-msgstr "Namntyp"
+msgstr "Platstyper"
 
 #: TypeCleanup/type_cleanup.py:109
-#, fuzzy
-#| msgid "Repository type"
 msgid "Repository Types"
-msgstr "Arkivplatstyp"
+msgstr "Arkivplatstyper"
 
 #: TypeCleanup/type_cleanup.py:111
-#, fuzzy
-#| msgid "Media Type"
 msgid "Source Media Types"
-msgstr "Mediatyp"
+msgstr "Källmediatyper"
 
 #: TypeCleanup/type_cleanup.py:112
-#, fuzzy
-#| msgid "URL Style"
 msgid "URL Types"
-msgstr "URL-stil"
+msgstr "URL-typer"
 
 #: TypeCleanup/type_cleanup.py:124
-#, fuzzy
-#| msgid "Note Cleanup Tool"
 msgid "Types Cleanup Tool"
-msgstr "Verktyg för notisrensning"
+msgstr "Verktyg för typrensning"
 
 #: TypeCleanup/type_cleanup.py:166
 msgid ""
@@ -8256,32 +8222,24 @@ msgid ""
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:182
-#, fuzzy
-#| msgid "Username:"
 msgid "Rename"
-msgstr "Användarnamn:"
+msgstr "Namnändra"
 
 #: TypeCleanup/type_cleanup.py:185
 msgid "Rename the selected type in all referenced objects."
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:189
-#, fuzzy
-#| msgid "Close the Note Cleanup Tool"
 msgid "Close the Type Cleanup Tool"
-msgstr "Stäng verktyget för notsrensning"
+msgstr "Stäng verktyget för typrensning"
 
 #: TypeCleanup/type_cleanup.py:195
-#, fuzzy
-#| msgid "   Type: %s"
 msgid "Types"
-msgstr "   Typ: %s"
+msgstr "Typer"
 
 #: TypeCleanup/type_cleanup.py:242
-#, fuzzy
-#| msgid "Note Cleanup Tool"
 msgid "Type Cleanup Tool"
-msgstr "Verktyg för notisrensning"
+msgstr "Verktyg för typrensning"
 
 #: TypeCleanup/type_cleanup.py:387
 #, python-format
@@ -8299,16 +8257,12 @@ msgid ""
 msgstr ""
 
 #: TypeCleanup/type_cleanup.gpr.py:30
-#, fuzzy
-#| msgid "Note Cleanup"
 msgid "Type Cleanup"
-msgstr "Notisrensning"
+msgstr "Typrensning"
 
 #: TypeCleanup/type_cleanup.gpr.py:31
-#, fuzzy
-#| msgid "Cleanup Test Notes"
 msgid "Clean up (remove) custom types"
-msgstr "Rensa testnotiserna"
+msgstr "Rensa upp (ta bort) anpassade typer"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
@@ -8357,10 +8311,8 @@ msgid "Attribute value to add or edit"
 msgstr "Attributvärde add lägga till eller redigera"
 
 #: SetAttributeTool/SetAttributeTool.py:92
-#, fuzzy
-#| msgid "Set an attribute to a given value."
 msgid "Remove attribute type and value set"
-msgstr "Sätt ett attribut till ett givet värde."
+msgstr "Ta bort attributtyp och värdeuppsättning"
 
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
@@ -8391,28 +8343,21 @@ msgstr ""
 "Satte %d '%s' attribut till '%s'\n"
 
 #: SetAttributeTool/SetAttributeTool.py:191
-#, fuzzy
-#| msgid "Set Attribute"
 msgid "Remove Attribute"
-msgstr "Sätt attribut"
+msgstr "Ta bort attribut"
 
 #: SetAttributeTool/SetAttributeTool.py:194
-#, fuzzy
-#| msgid "Setting attributes..."
 msgid "Removing attributes..."
-msgstr "Sätter attribut..."
+msgstr "Tar bort attribut..."
 
 #: SetAttributeTool/SetAttributeTool.py:221
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Set %d '%s' attributes to '%s'\n"
+#, python-format
 msgid ""
 "\n"
 "Removing %d '%s' attributes to '%s'\n"
 msgstr ""
 "\n"
-"Satte %d '%s' attribut till '%s'\n"
+"Tar bort %d '%s' attribut till '%s'\n"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
@@ -8995,16 +8940,12 @@ msgid "Set media private.."
 msgstr "Ange media privata.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set adresses private.."
-msgstr "Ange händelser privata.."
+msgstr "Ange adresser privata.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set internet objects private.."
-msgstr "Ange händelser privata.."
+msgstr "Ange internetobjekt privata.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
@@ -9032,10 +8973,8 @@ msgid "Select filter to restrict medias"
 msgstr "Välj filter för att begränsa media"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
-#, fuzzy
-#| msgid "Can't determine type of import"
 msgid "Internet type filter"
-msgstr "Kan inte bestämma importtypen"
+msgstr "Internettypsfilter"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
@@ -9083,38 +9022,28 @@ msgid "Form: %s"
 msgstr ""
 
 #: Form/editform.py:183
-#, fuzzy
-#| msgid "New source"
 msgid "New Form"
-msgstr "Ny källa"
+msgstr "Nytt formulär"
 
 #: Form/editform.py:190
-#, fuzzy
-#| msgid "Edit Import"
 msgid "Edit Form"
-msgstr "Redigera import"
+msgstr "Redigera formulär"
 
 #: Form/editform.py:225
 msgid "Reference:"
 msgstr "Referens:"
 
 #: Form/editform.py:421
-#, fuzzy
-#| msgid "Heading"
 msgid "Headings"
-msgstr "Rubrik"
+msgstr "Rubriker"
 
 #: Form/formgramplet.gpr.py:31
-#, fuzzy
-#| msgid "Note Gramplet"
 msgid "Form Gramplet"
-msgstr "Gramplet för notis"
+msgstr "Gramplet för formulär"
 
 #: Form/formgramplet.gpr.py:32
-#, fuzzy
-#| msgid "Gramplet showing the references for a source"
 msgid "Gramplet interface for Forms"
-msgstr "Gramplet som visar referenserna för en källa"
+msgstr "Gramplet-gränssnitt för formulär"
 
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
@@ -9125,10 +9054,8 @@ msgid "Form"
 msgstr ""
 
 #: Form/selectform.py:74 Form/selectform.py:81
-#, fuzzy
-#| msgid "Select From"
 msgid "Select Form"
-msgstr "Välj från"
+msgstr "Välj formulär"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -9161,10 +9088,8 @@ msgstr ""
 #: Form/form_ca.xml.h:396 Form/form_ca.xml.h:457 Form/form_ca.xml.h:536
 #: Form/form_ca.xml.h:621 Form/form_ca.xml.h:668 Form/form_ca.xml.h:758
 #: Form/form_ca.xml.h:801
-#, fuzzy
-#| msgid "Generation"
 msgid "Enumerator"
-msgstr "Generation"
+msgstr "Uppräknare"
 
 #: Form/form_ca.xml.h:11 Form/form_ca.xml.h:217
 msgid "1. Names of Inmates"
@@ -9178,14 +9103,8 @@ msgstr ""
 #: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
 #: Form/form_ca.xml.h:636 Form/form_ca.xml.h:691 Form/form_ca.xml.h:777
 #: Form/form_ca.xml.h:828
-#, fuzzy
-#| msgid ""
-#| "Birth\n"
-#| "place:"
 msgid "BirthPlace"
-msgstr ""
-"Födelse\n"
-"plats:"
+msgstr "Födelseplats"
 
 #: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
 msgid "3. Place of Birth"
@@ -9212,10 +9131,8 @@ msgid "7. Sex: Male"
 msgstr ""
 
 #: Form/form_ca.xml.h:24
-#, fuzzy
-#| msgid "Female line"
 msgid "SexFemale"
-msgstr "Kvinnlig linje"
+msgstr "KönKvinna"
 
 #: Form/form_ca.xml.h:25
 msgid "8. Sex: Female"
@@ -9229,36 +9146,28 @@ msgid "MaritalStatus"
 msgstr ""
 
 #: Form/form_ca.xml.h:27
-#, fuzzy
-#| msgid "Marriage Connector Line"
 msgid "9. Married or Single"
-msgstr "Förbindelselinje för giftermål"
+msgstr "9. Gift eller ensamstående"
 
 #: Form/form_ca.xml.h:28 Form/form_ca.xml.h:240
-#, fuzzy
-#| msgid "Colors"
 msgid "Coloured"
-msgstr "Färger"
+msgstr "Färgade"
 
 #: Form/form_ca.xml.h:29
 msgid "10. Coloured Persons - Negroes"
 msgstr ""
 
 #: Form/form_ca.xml.h:30
-#, fuzzy
-#| msgid "India"
 msgid "Indians"
-msgstr "Indien"
+msgstr "Indianer"
 
 #: Form/form_ca.xml.h:31
 msgid "11. Indians, if any"
 msgstr ""
 
 #: Form/form_ca.xml.h:32
-#, fuzzy
-#| msgid "resident"
 msgid "ResidentsMale"
-msgstr "boende"
+msgstr "InvånareMän"
 
 #: Form/form_ca.xml.h:33
 msgid "12. Residents: Members, Male"
