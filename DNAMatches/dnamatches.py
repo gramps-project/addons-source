@@ -150,7 +150,7 @@ class DNAMatches(Gramplet):
         """
         Build the GUI interface.
         """
-        short_names = [_('Pers.'), _('Rel.'), _('S. DNA'), _('S. Leg.'), _('L. Seg'), _('Src(s)')]
+        short_names = [_('Pers.'), _('Rel.'), _('S. DNA'), _('S. Seg.'), _('L. Seg'), _('Src(s)')]
         full_names = [_('Person'),
                       _('Relationship'),
                       _('Shared DNA'),
