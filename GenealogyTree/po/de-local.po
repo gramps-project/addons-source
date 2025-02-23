@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -111,10 +111,8 @@ msgid "Extra spacing of grandparent families (mm)"
 msgstr "Extra Abstand Großelternfamilien (mm)"
 
 #: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
 msgid "First spouse left"
-msgstr "Rechts nach Links"
+msgstr "Erster Ehepartner links"
 
 #: GenealogyTree/gt_descendant.py:192
 msgid ""

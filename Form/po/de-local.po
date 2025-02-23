@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-22 17:04+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -4380,16 +4380,12 @@ msgid "Number of children ever born"
 msgstr "Anzahl der jemals geborenen Kinder"
 
 #: Form/form_us.xml.h:889
-#, fuzzy
-#| msgid "Incorporated place"
 msgid "Incorporated place or township"
-msgstr "Eingemeindeter Ort"
+msgstr "Eingemeindeter Ort oder Gemeinde"
 
 #: Form/form_us.xml.h:890
-#, fuzzy
-#| msgid "Entry Number"
 msgid "E. D. Number"
-msgstr "Buchungsnummer"
+msgstr "E. D. Nummer"
 
 #: Form/form_us.xml.h:892
 msgid "Hotel, large rooming house, institution, military installation, etc."
@@ -4412,10 +4408,8 @@ msgid "Agricultural Questionnaire Number"
 msgstr ""
 
 #: Form/form_us.xml.h:906
-#, fuzzy
-#| msgid "8. Age at last birthday"
 msgid "Age at last birthday"
-msgstr "8. Alter am letzten Geburtstag"
+msgstr "Alter am letzten Geburtstag"
 
 #: Form/form_us.xml.h:907
 msgid "How old was he on his last birthday?"
@@ -4440,10 +4434,8 @@ msgid "Is he naturalized?"
 msgstr "Ist er eingebürgert?"
 
 #: Form/form_us.xml.h:913
-#, fuzzy
-#| msgid "housework (H), school (S), unable to work (U) or other (Ot)"
 msgid "housework (H), work (W), unable to work (U) or other (Ot)"
-msgstr "Hausarbeit (H), Schule (S), arbeitsunfähig (U) oder andere (Ot)"
+msgstr "Hausarbeit (H), Arbeit (W), arbeitsunfähig (U) oder sonstiges (Ot)"
 
 #: Form/form_us.xml.h:914
 msgid ""
@@ -4462,10 +4454,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:917
-#, fuzzy
-#| msgid "Seeking work?"
 msgid "Looking for work?"
-msgstr "Arbeitssuchend?"
+msgstr "Auf der Suche nach Arbeit?"
 
 #: Form/form_us.xml.h:918
 msgid "Was this person looking for work?"
@@ -4488,20 +4478,16 @@ msgid "How many hours did he work last week?"
 msgstr ""
 
 #: Form/form_us.xml.h:923
-#, fuzzy
-#| msgid "Type of link"
 msgid "Type of work"
-msgstr "Art der Verknüpfung"
+msgstr "Art der Arbeit"
 
 #: Form/form_us.xml.h:924
 msgid "What kind of work was he doing?"
 msgstr ""
 
 #: Form/form_us.xml.h:925
-#, fuzzy
-#| msgid "Nature of industry"
 msgid "Business or industry"
-msgstr "Art der Branche"
+msgstr "Gewerbe oder Industrie"
 
 #: Form/form_us.xml.h:926
 msgid "What kind of business or industry was he working in?"
@@ -4532,10 +4518,8 @@ msgid "Was he living in this same county a year ago?"
 msgstr ""
 
 #: Form/form_us.xml.h:935
-#, fuzzy
-#| msgid "Father of foreign birth"
 msgid "State or foreign country"
-msgstr "Vater ausländischer Geburt"
+msgstr "Bundesland oder anderes Land"
 
 #: Form/form_us.xml.h:937
 msgid "What country was his father born in?"
@@ -4546,10 +4530,8 @@ msgid "What country was his mother born in?"
 msgstr ""
 
 #: Form/form_us.xml.h:940
-#, fuzzy
-#| msgid "Highest grade completed"
 msgid "Highest grade attended"
-msgstr "Höchster Abschluss"
+msgstr "Höchste besuchte Schulstufe"
 
 #: Form/form_us.xml.h:941
 msgid "What is the highest grade of school that he has attended?"
@@ -4576,10 +4558,8 @@ msgid "How many weeks has he been looking for work?"
 msgstr ""
 
 #: Form/form_us.xml.h:947
-#, fuzzy
-#| msgid "# weeks worked in 1939"
 msgid "# weeks worked in 1949"
-msgstr "# Wochen im Jahr 1939 gearbeitet"
+msgstr "# 1949 gearbeitete Wochen"
 
 #: Form/form_us.xml.h:948
 msgid ""
@@ -4588,10 +4568,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:949
-#, fuzzy
-#| msgid "Amount of money, wages, salary in 1939"
 msgid "Amount of wages/salary in 1949"
-msgstr "Geldbetrag, Löhne, Gehalt im Jahr 1939"
+msgstr "Höhe des Lohns/Gehalts im Jahr 1949"
 
 #: Form/form_us.xml.h:950
 msgid ""
@@ -4600,10 +4578,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:951
-#, fuzzy
-#| msgid "Amount of money, wages, salary in 1939"
 msgid "Amount of money from own business in 1949"
-msgstr "Geldbetrag, Löhne, Gehalt im Jahr 1939"
+msgstr "Geldbetrag aus eigenem Gewerbe im Jahr 1949"
 
 #: Form/form_us.xml.h:952
 msgid ""
@@ -4612,10 +4588,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:953
-#, fuzzy
-#| msgid "Amount of money, wages, salary in 1939"
 msgid "Amount of other income in 1949"
-msgstr "Geldbetrag, Löhne, Gehalt im Jahr 1939"
+msgstr "Höhe der sonstigen Einkünfte im Jahr 1949"
 
 #: Form/form_us.xml.h:954
 msgid ""
@@ -4682,22 +4656,16 @@ msgid "What kind of business or industry did he work in?"
 msgstr ""
 
 #: Form/form_us.xml.h:968
-#, fuzzy
-#| msgid "Class of worker"
 msgid "Class of worker [last job]"
-msgstr "Arbeiterklasse"
+msgstr "Klasse des Arbeitnehmers [letzte Tätigkeit]"
 
 #: Form/form_us.xml.h:969
-#, fuzzy
-#| msgid "If woman, married more than once?"
 msgid "Has this person been married more than once?"
-msgstr "Wenn Frau, mehr als einmal verheiratet?"
+msgstr "War diese Person schon mehr als einmal verheiratet?"
 
 #: Form/form_us.xml.h:970
-#, fuzzy
-#| msgid "Years of present marriage"
 msgid "# years since marriage ended"
-msgstr "Jahre der gegenwärtigen Ehe"
+msgstr "# Jahre seit dem Ende der Ehe"
 
 #: Form/form_us.xml.h:971
 msgid ""
@@ -7867,16 +7835,12 @@ msgid "Registration District"
 msgstr "Zählbezirk"
 
 #: Form/form_gb.xml.h:4 Form/form_gb.xml.h:21 Form/form_gb.xml.h:41
-#, fuzzy
-#| msgid "Administrative County"
 msgid "Administrative Area"
-msgstr "Verwaltungsbezirk"
+msgstr "Verwaltungsgebiet"
 
 #: Form/form_gb.xml.h:5 Form/form_gb.xml.h:22 Form/form_gb.xml.h:42
-#, fuzzy
-#| msgid "Administrative County"
 msgid "County/Administrative Area"
-msgstr "Verwaltungsbezirk"
+msgstr "Landkreis/Verwaltungsgebiet"
 
 #: Form/form_gb.xml.h:13 Form/form_gb.xml.h:47
 msgid "Maiden Surname"
@@ -8153,7 +8117,7 @@ msgstr "Beruf oder Beschäftigung"
 #: Form/form_gb.xml.h:189 Form/form_gb.xml.h:220 Form/form_gb.xml.h:320
 #: Form/form_gb.xml.h:353
 msgid "Work Type"
-msgstr "Art der Arbeit"
+msgstr "Arbeitsart"
 
 #: Form/form_gb.xml.h:190 Form/form_gb.xml.h:321
 msgid "Employer, Worker or Own Account"

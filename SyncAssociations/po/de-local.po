@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -54,16 +54,12 @@ msgid "Add %s reciprocal association"
 msgstr "%s wechselseitige Zuordnung hinzufügen"
 
 #: SyncAssociations/syncAssociations.py:131
-#, fuzzy
-#| msgid "Add %s reciprocal association"
 msgid "{} Reciprocal associations created"
-msgstr "%s wechselseitige Zuordnung hinzufügen"
+msgstr "{} Gegenseitige Verknüpfungen erstellt"
 
 #: SyncAssociations/syncAssociations.py:135
-#, fuzzy
-#| msgid "Add %s reciprocal association"
 msgid "All reciprocal associations exist, none created"
-msgstr "%s wechselseitige Zuordnung hinzufügen"
+msgstr "Alle wechselseitigen Verknüpfungen bestehen, keine wurde erstellt"
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"

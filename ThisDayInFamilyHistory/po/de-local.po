@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-22 17:04+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -316,82 +316,85 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:564
 #, python-format
 msgid "%(male_name)s was granted a divorce in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde geschieden in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s geschieden."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:567
 #, python-format
 msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde geschieden in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s geschieden."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:571
 #, python-format
 msgid "%(male_name)s filed for divorce in %(year)s at %(place)s."
-msgstr "%(male_name)s reichte die Scheidung ein in %(year)s in %(place)s."
+msgstr "%(male_name)s reichte in %(year)s in %(place)s die Scheidung ein."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:573
 #, python-format
 msgid "%(female_name)s filed for divorce in %(year)s at %(place)s."
-msgstr "%(female_name)s reichte die Scheidung ein in %(year)s in %(place)s."
+msgstr "%(female_name)s reichte in %(year)s in %(place)s die Scheidung ein."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:576
 #, python-format
 msgid "%(male_name)s was elected in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde gewählt in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s gewählt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:578
 #, python-format
 msgid "%(female_name)s was elected in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde gewählt in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s gewählt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:581
 #, python-format
 msgid "%(male_name)s emigrated in %(year)s at %(place)s."
-msgstr "%(male_name)s ist ausgewandert in %(year)s in %(place)s."
+msgstr "%(male_name)s ist in %(year)s in %(place)s ausgewandert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:583
 #, python-format
 msgid "%(female_name)s emigrated in %(year)s at %(place)s."
-msgstr "%(female_name)s ist ausgewandert in %(year)s in %(place)s."
+msgstr "%(female_name)s ist in %(year)s in %(place)s ausgewandert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:586
 #, python-format
 msgid "%(male_name)s became engaged in %(year)s at %(place)s."
-msgstr "%(male_name)s verlobte sich in %(year)s in %(place)s."
+msgstr "%(male_name)s hat sich in %(year)s in %(place)s verlobt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:588
 #, python-format
 msgid "%(female_name)s became engaged in %(year)s at %(place)s."
-msgstr "%(female_name)s verlobte sich in %(year)s in %(place)s."
+msgstr "%(female_name)s hat sich in %(year)s in %(place)s verlobt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:591
 #, python-format
 msgid "%(male_name)s received first communion in %(year)s at %(place)s."
-msgstr "%(male_name)s erhielt die Erstkommunion in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s hat in %(year)s in %(place)s die Erstkommunion empfangen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:594
 #, python-format
 msgid "%(female_name)s received first communion in %(year)s at %(place)s."
-msgstr "%(female_name)s erhielt die Erstkommunion in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s hat in %(year)s in %(place)s die Erstkommunion empfangen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:598
 #, python-format
 msgid "%(male_name)s graduated in %(year)s at %(place)s."
-msgstr "%(male_name)s promovierte in %(year)s in %(place)s."
+msgstr "%(male_name)s hat sein Studium in %(year)s in %(place)s abgeschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:600
 #, python-format
 msgid "%(female_name)s graduated in %(year)s at %(place)s."
-msgstr "%(female_name)s promovierte in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s hat ihr Studium in %(year)s in %(place)s abgeschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:603
 #, python-format
 msgid "%(male_name)s immigrated in %(year)s at %(place)s."
-msgstr "%(male_name)s ist eingewandert in %(year)s in %(place)s."
+msgstr "%(male_name)s ist in %(year)s in %(place)s eingewandert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:605
 #, python-format
 msgid "%(female_name)s immigrated in %(year)s at %(place)s."
-msgstr "%(female_name)s ist eingewandert in %(year)s in %(place)s."
+msgstr "%(female_name)s ist in %(year)s in %(place)s eingewandert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:611
 #, python-format
@@ -407,13 +410,17 @@ msgstr "%(female_name)s hat in %(year)s in %(place)s geheiratet."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:627
 #, python-format
 msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
-msgstr "%(male_name)s als Familie beigetreten in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s schloss sich in %(year)s in %(place)s zu einer Familie "
+"zusammen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:618
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:629
 #, python-format
 msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
-msgstr "%(female_name)s als Familie beigetreten in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s schloss sich in %(year)s in %(place)s zu einer Familie "
+"zusammen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:621
 #, python-format
@@ -432,112 +439,128 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:632
 #, python-format
 msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr "%(male_name)s hat eine Gewohnheitsrecht Ehe in %(year)s in %(place)s."
+msgstr "%(male_name)s hatte eine Brauchtumsheirat in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:634
 #, python-format
 msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr ""
-"%(female_name)s hat eine Gewohnheitsrecht Ehe in %(year)s in %(place)s."
+msgstr "%(female_name)s hatte eine Brauchtumsheirat in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:638
 #, python-format
 msgid "%(male_name)s announced a marriage banns in %(year)s at %(place)s."
-msgstr "%(male_name)s kündigte ein Eheverbot an in %(year)s in %(place)s."
+msgstr "%(male_name)s gab in %(year)s in %(place)s eine Heiratsanzeige auf."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:641
 #, python-format
 msgid "%(female_name)s announced a marriage banns in %(year)s at %(place)s."
-msgstr "%(female_name)s kündigte ein Eheverbot an in %(year)s in %(place)s."
+msgstr "%(female_name)s gab in %(year)s in %(place)s eine Heiratsanzeige auf."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:645
 #, python-format
 msgid "%(male_name)s entered a marriage contract in %(year)s at %(place)s."
-msgstr "%(male_name)s schloss einen Ehevertrag in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s hat in %(year)s in %(place)s einen Ehevertrag geschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:648
 #, python-format
 msgid "%(female_name)s entered a marriage contract in %(year)s at %(place)s."
-msgstr "%(female_name)s schloss einen Ehevertrag in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s hat in %(year)s in %(place)s einen Ehevertrag geschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:652
 #, python-format
 msgid "%(male_name)s obtained a marriage license in %(year)s at %(place)s."
-msgstr "%(male_name)s erhielt eine Heiratsurkunde in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s hat in %(year)s in %(place)seine Heiratserlaubnis erhalten."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:655
 #, python-format
 msgid "%(female_name)s obtained a marriage license in %(year)s at %(place)s."
-msgstr "%(female_name)s erhielt eine Heiratsurkunde in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s hat in %(year)s in %(place)s eine Heiratserlaubnis erhalten."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:659
 #, python-format
 msgid "%(male_name)s obtained a marriage settlement in %(year)s at %(place)s."
-msgstr "%(male_name)s erhielt eine Ehevereinbarung in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s hat in %(year)s in %(place)s einen Heiratsvertrag "
+"abgeschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:662
 #, python-format
 msgid ""
 "%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
-msgstr "%(female_name)s erhielt eine Ehevereinbarung in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s hat in %(year)s in %(place)s einen Heiratsvertrag "
+"abgeschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:666
 #, python-format
 msgid "%(male_name)s entered military service in %(year)s at %(place)s."
-msgstr "%(male_name)s trat in den Militärdienst ein in %(year)s in %(place)s."
+msgstr "%(male_name)s trat in %(year)s in %(place)s zum Militärdienst an."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:669
 #, python-format
 msgid "%(female_name)s entered military service in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s trat in den Militärdienst ein in %(year)s in %(place)s."
+"%(female_name)s trat ein in %(year)s in %(place)s zum Militärdienst an."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:673
 #, python-format
 msgid "%(male_name)s became naturalized in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde eingebürgert in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s eingebürgert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:675
 #, python-format
 msgid "%(female_name)s became naturalized in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde eingebürgert in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s eingebürgert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:678
 #, python-format
 msgid "%(male_name)s had a title bestowed in %(year)s at %(place)s."
-msgstr "%(male_name)s hat einen Titel verliehen in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s hatte einen Titel, der in %(year)s in %(place)s verliehen "
+"wurde."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:680
 #, python-format
 msgid "%(female_name)s had a title bestowed in %(year)s at %(place)s."
-msgstr "%(female_name)s hat einen Titel verliehen in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s hatte einen Titel, der in %(year)s in %(place)s verliehen "
+"wurde."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:683
 #, python-format
 msgid "%(male_name)s was ordained in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde ordiniert in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s ordiniert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:685
 #, python-format
 msgid "%(female_name)s was ordained in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde ordiniert in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s ordiniert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:688
 #, python-format
 msgid "%(male_name)s was granted probate in %(year)s at %(place)s."
-msgstr "%(male_name)s erbte in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s wurde in %(year)s in %(place)s als Nachlassverwalter "
+"eingesetzt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:690
 #, python-format
 msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
-msgstr "%(female_name)s erbte in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s wurde in %(year)s in %(place)s als Nachlassverwalter "
+"eingesetzt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:693
 #, python-format
 msgid "%(male_name)s retired in %(year)s at %(place)s."
-msgstr "%(male_name)s ging in Ruhestand in %(year)s in %(place)s."
+msgstr "%(male_name)s ist in %(year)s in %(place)s in den Ruhestand getreten."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:695
 #, python-format
 msgid "%(female_name)s retired in %(year)s at %(place)s."
-msgstr "%(female_name)s ging in Ruhestand in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s ist in %(year)s in %(place)s in den Ruhestand getreten."

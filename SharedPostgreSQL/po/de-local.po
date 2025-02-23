@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -34,19 +34,13 @@ msgstr ""
 "X-Generator: Weblate 5.10.1-dev\n"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
-#, fuzzy
-#| msgid "PostgreSQL"
 msgid "SharedPostgreSQL"
-msgstr "PostgreSQL"
+msgstr "GemeinsamePostgreSQL"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:25
-#, fuzzy
-#| msgid "_PostgreSQL Database"
 msgid "Shared _PostgreSQL Database"
-msgstr "_PostgreSQL Datenbank"
+msgstr "Gemeinsame _PostgreSQL-Datenbank"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:26
-#, fuzzy
-#| msgid "PostgreSQL Database"
 msgid "Shared PostgreSQL Database"
-msgstr "PostgreSQL Datenbank"
+msgstr "Gemeinsame PostgreSQL-Datenbank"

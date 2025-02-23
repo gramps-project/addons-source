@@ -11,12 +11,13 @@
 # Peter Landgren <peter@test>, 2010.
 # Pär Ekholm <github1@m.pekholm.org>, 2025.
 # Milan <mobrcian@hotmail.com>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-23 17:44+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -111,3 +112,5 @@ msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
+"Sätt alltid de första av flera makar till vänster. Detta kan bidra till att "
+"minska linjekorsningar med flera äktenskap."

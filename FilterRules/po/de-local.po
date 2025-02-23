@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -68,10 +68,8 @@ msgid "People with multiple parent records"
 msgstr ""
 
 #: FilterRules/multipleparents.py:43
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches people who have more than one set of parents"
-msgstr "Entspricht Personen mit einem Ereignis mit einer ausgewählten Rolle"
+msgstr "Passt zu Personen, die mehr als ein Elternpaar haben"
 
 #: FilterRules/associationsofpersonmatch.py:46
 #: FilterRules/associationsofpersonmatch.py:47
@@ -176,10 +174,8 @@ msgid "Filter people by their age at death"
 msgstr ""
 
 #: FilterRules/ageatdeath.gpr.py:26
-#, fuzzy
-#| msgid "Filter rule that matches relatives by degrees of separation"
 msgid "Filter rule that matches people by their age at death"
-msgstr "Filterregel, die Verwandten nach Trennungsgraden entspricht"
+msgstr "Filterregel, die Personen nach ihrem Alter beim Tod abgleicht"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -207,10 +203,8 @@ msgid "Active person"
 msgstr "Aktive Person"
 
 #: FilterRules/activepersonrule.py:47
-#, fuzzy
-#| msgid "Go to active person"
 msgid "Matches the active person"
-msgstr "Gehe zur aktiven Person"
+msgstr "Entspricht der aktiven Person"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."

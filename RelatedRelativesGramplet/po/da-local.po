@@ -4,21 +4,22 @@
 # Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
 # Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
 # FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-#
+# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2024-10-10 10:45+0200\n"
-"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
-"Language-Team: \n"
-"Language: da_DK\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/da/>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
 msgid "Relations of related people in your database:"

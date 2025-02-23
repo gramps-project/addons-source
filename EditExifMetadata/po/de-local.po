@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -353,16 +353,16 @@ msgid "Bad Date/Time"
 msgstr "Falsches Datum/Zeit"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-msgid "Invalid latitude (syntax: 18\\u00b09'"
-msgstr "Ungültiger Breitengrad (Syntax: 18\\u00b09'"
+msgid "Invalid latitude (syntax: 18°9'"
+msgstr "Ungültiger Breitengrad (Syntax: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 oder -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-msgid "Invalid longitude (syntax: 18\\u00b09'"
-msgstr "Ungültiger Längengrad (Syntax: 18\\u00b09'"
+msgid "Invalid longitude (syntax: 18°9'"
+msgstr "Ungültiger Längengrad (Syntax: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
@@ -371,16 +371,23 @@ msgstr "48.21\"O, -18.2412 oder -18:9:48.21)"
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
-msgstr "ACHTUNG! Du bist dabei alle Exif Metadaten von diesem Bild zu löschen?"
+"image."
+msgstr ""
+"WARNUNG!  Du bist dabei, die Exif-Metadaten von diesem Bild vollständig zu "
+"löschen."
+
+#: EditExifMetadata/editexifmetadata.py:1138
+#: EditExifMetadata/editexifmetadata.py:1150
+msgid "Delete?"
+msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
-"image?"
+"image."
 msgstr ""
-"WARNUNG! Du bist dabei, die GPS-Metadaten vollständig aus diesem Bild zu "
-"löschen?"
+"WARNUNG!  Du bist dabei, die GPS-Metadaten von diesem Bild vollständig zu "
+"löschen."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"

@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -74,10 +74,8 @@ msgstr ""
 "gesamte Beschreibung gelöscht und durch die neue ersetzt."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:151
-#, fuzzy
-#| msgid "Use regex"
 msgid "Allow regex"
-msgstr "Reguläre Ausdrücke verwenden"
+msgstr "Reguläre Ausdrücke zulassen"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."

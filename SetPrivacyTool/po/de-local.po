@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -72,16 +72,12 @@ msgid "Set media private.."
 msgstr "Medium als vertraulich markieren.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set adresses private.."
-msgstr "Ereignisse als vertraulich markieren.."
+msgstr "Adressen auf vertraulich setzen.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set internet objects private.."
-msgstr "Ereignisse als vertraulich markieren.."
+msgstr "Internetobjekte auf vertraulich setzen.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
@@ -103,22 +99,16 @@ msgstr ""
 "markiert."
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "Filter zum eingrenzen der Personen wählen"
+msgstr "Filter auswählen, um Ereignisse einzugrenzen"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
-#, fuzzy
-#| msgid "Select filter to restrict list"
 msgid "Select filter to restrict medias"
-msgstr "Wählen den Filter, um die Liste zu beschränken"
+msgstr "Filter auswählen, um Medien einzugrenzen"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
-#, fuzzy
-#| msgid "Can't determine type of import"
 msgid "Internet type filter"
-msgstr "Kann Importart nicht bestimmen"
+msgstr "Internet-Typ-Filter"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"

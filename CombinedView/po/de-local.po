@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -93,10 +93,8 @@ msgid "Order"
 msgstr "Reihenfolge"
 
 #: CombinedView/combinedview.py:528
-#, fuzzy
-#| msgid "Add death event"
 msgid "Edit the active event"
-msgstr "Todesereignis hinzufügen"
+msgstr "Das aktive Ereignis bearbeiten"
 
 #: CombinedView/combinedview.py:630
 msgid "Show Tags"

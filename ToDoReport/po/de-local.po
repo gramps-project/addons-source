@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -129,10 +129,8 @@ msgid "place: "
 msgstr "Ort: "
 
 #: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Note Types"
 msgid "Note Type"
-msgstr "Notizarten"
+msgstr "Notizart"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"

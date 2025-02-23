@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-23 12:29+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -355,16 +355,16 @@ msgid "Bad Date/Time"
 msgstr "Slechte datum / tijd"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-msgid "Invalid latitude (syntax: 18\\u00b09'"
-msgstr "Ongeldige breedtegraad (syntaxis: 18\\u00b09'"
+msgid "Invalid latitude (syntax: 18°9'"
+msgstr "Ongeldige breedtegraad (syntaxis: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 of -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-msgid "Invalid longitude (syntax: 18\\u00b09'"
-msgstr "Ongeldige lengtegraad (syntaxis: 18\\u00b09'"
+msgid "Invalid longitude (syntax: 18°9'"
+msgstr "Ongeldige lengtegraad (syntaxis: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
@@ -373,18 +373,23 @@ msgstr "48.21\"E, -18.2412 of -18:9:48.21)"
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
+"image."
 msgstr ""
 "WAARSCHUWING! U staat op het punt de Exif-metagegevens van deze afbeelding "
-"volledig te verwijderen?"
+"volledig te verwijderen."
+
+#: EditExifMetadata/editexifmetadata.py:1138
+#: EditExifMetadata/editexifmetadata.py:1150
+msgid "Delete?"
+msgstr "Verwijderen?"
 
 #: EditExifMetadata/editexifmetadata.py:1148
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
-"image?"
+"image."
 msgstr ""
 "WAARSCHUWING! U staat op het punt de GPS-metagegevens volledig uit deze "
-"afbeelding te verwijderen?"
+"afbeelding te verwijderen."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"

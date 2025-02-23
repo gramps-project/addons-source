@@ -4,21 +4,22 @@
 # Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
 # Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
 # FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-#
+# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2024-10-10 10:45+0200\n"
-"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
-"Language-Team: \n"
-"Language: da_DK\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/da/>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
 #: EditExifMetadata/editexifmetadata.py:723
@@ -337,7 +338,7 @@ msgstr "Ugyldig Dato/Tid"
 
 #: EditExifMetadata/editexifmetadata.py:1122
 #, fuzzy
-msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgid "Invalid latitude (syntax: 18°9'"
 msgstr "Ugyldig breddegrad (syntaks: 18°9)"
 
 #: EditExifMetadata/editexifmetadata.py:1123
@@ -346,7 +347,7 @@ msgstr "48.21\"S, -18.2412 eller -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
 #, fuzzy
-msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgid "Invalid longitude (syntax: 18°9'"
 msgstr "Ugyldig længdegrad (syntaks: 18°9)"
 
 #: EditExifMetadata/editexifmetadata.py:1128
@@ -354,10 +355,19 @@ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 eller -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
+#, fuzzy
+#| msgid ""
+#| "WARNING!  You are about to completely delete the Exif metadata from this "
+#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
+"image."
 msgstr "ADVARSEL! Du er ved at slette alle Exif-metadata fra dette billede?"
+
+#: EditExifMetadata/editexifmetadata.py:1138
+#: EditExifMetadata/editexifmetadata.py:1150
+msgid "Delete?"
+msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
 #, fuzzy
@@ -366,7 +376,7 @@ msgstr "ADVARSEL! Du er ved at slette alle Exif-metadata fra dette billede?"
 #| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
-"image?"
+"image."
 msgstr "ADVARSEL! Du er ved at slette alle Exif-metadata fra dette billede?"
 
 #: EditExifMetadata/editexifmetadata.py:1333

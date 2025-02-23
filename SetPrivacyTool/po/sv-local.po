@@ -11,12 +11,13 @@
 # Peter Landgren <peter@test>, 2010.
 # Pär Ekholm <github1@m.pekholm.org>, 2025.
 # Milan <mobrcian@hotmail.com>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-23 17:44+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -66,16 +67,12 @@ msgid "Set media private.."
 msgstr "Ange media privata.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set adresses private.."
-msgstr "Ange händelser privata.."
+msgstr "Ange adresser privata.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set internet objects private.."
-msgstr "Ange händelser privata.."
+msgstr "Ange internetobjekt privata.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
@@ -103,10 +100,8 @@ msgid "Select filter to restrict medias"
 msgstr "Välj filter för att begränsa media"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
-#, fuzzy
-#| msgid "Can't determine type of import"
 msgid "Internet type filter"
-msgstr "Kan inte bestämma importtypen"
+msgstr "Internettypsfilter"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"

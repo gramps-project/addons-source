@@ -11,12 +11,13 @@
 # Peter Landgren <peter@test>, 2010.
 # Pär Ekholm <github1@m.pekholm.org>, 2025.
 # Milan <mobrcian@hotmail.com>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-02-23 17:44+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -52,10 +53,8 @@ msgid "Attribute value to add or edit"
 msgstr "Attributvärde add lägga till eller redigera"
 
 #: SetAttributeTool/SetAttributeTool.py:92
-#, fuzzy
-#| msgid "Set an attribute to a given value."
 msgid "Remove attribute type and value set"
-msgstr "Sätt ett attribut till ett givet värde."
+msgstr "Ta bort attributtyp och värdeuppsättning"
 
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
@@ -86,28 +85,21 @@ msgstr ""
 "Satte %d '%s' attribut till '%s'\n"
 
 #: SetAttributeTool/SetAttributeTool.py:191
-#, fuzzy
-#| msgid "Set Attribute"
 msgid "Remove Attribute"
-msgstr "Sätt attribut"
+msgstr "Ta bort attribut"
 
 #: SetAttributeTool/SetAttributeTool.py:194
-#, fuzzy
-#| msgid "Setting attributes..."
 msgid "Removing attributes..."
-msgstr "Sätter attribut..."
+msgstr "Tar bort attribut..."
 
 #: SetAttributeTool/SetAttributeTool.py:221
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Set %d '%s' attributes to '%s'\n"
+#, python-format
 msgid ""
 "\n"
 "Removing %d '%s' attributes to '%s'\n"
 msgstr ""
 "\n"
-"Satte %d '%s' attribut till '%s'\n"
+"Tar bort %d '%s' attribut till '%s'\n"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."

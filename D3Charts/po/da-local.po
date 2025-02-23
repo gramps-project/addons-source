@@ -4,21 +4,22 @@
 # Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
 # Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
 # FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-#
+# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2024-10-10 10:45+0200\n"
-"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
-"Language-Team: \n"
-"Language: da_DK\n"
+"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/da/>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -120,23 +121,20 @@ msgstr "Danner rapporten..."
 #: D3Charts/DescendantIndentedTree.py:909
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 msgid "Descendant Indented Tree"
-msgstr ""
+msgstr "Indrykket træ for efterkommere"
 
 #: D3Charts/DescendantIndentedTree.py:1364
 msgid "Invalid Destination Directory"
 msgstr "Ugyldig målfolder"
 
 #: D3Charts/DescendantIndentedTree.py:1365
-#, fuzzy, python-format
-#| msgid ""
-#| "Destinaton diretory %s does not exist\n"
-#| "Do you want to attempt to create it."
+#, python-format
 msgid ""
 "Destinaton diretory %s does not exist\n"
 "Do you want to attempt to create it?"
 msgstr ""
 "Målfolder %s findes ikke\n"
-"Vild du forsøge at danne det."
+"Vil du forsøge at danne den?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
@@ -144,16 +142,13 @@ msgid "Failed to create %s: %s"
 msgstr "Kunne ikke danne%s: %s"
 
 #: D3Charts/DescendantIndentedTree.py:1391
-#, fuzzy, python-format
-#| msgid ""
-#| "Destination file %s already exists.\n"
-#| "Do you want to overwrite."
+#, python-format
 msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
 "Målfil %s findes allerede.\n"
-"Vil du  overskrive den."
+"Vil du overskrive den?"
 
 #: D3Charts/DescendantIndentedTree.py:1446
 msgid "Default View"
