@@ -4,21 +4,22 @@
 # Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
 # Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
 # FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-#
+# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2024-10-10 10:45+0200\n"
-"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
-"Language-Team: \n"
-"Language: da_DK\n"
+"PO-Revision-Date: 2025-02-23 17:44+0000\n"
+"Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/da/>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -872,6 +873,9 @@ msgid ""
 "Switzerland.\n"
 "This work is licensed under a "
 msgstr ""
+"GeoNames er et projekt fra Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Switzerland.\n"
+"Dette arbejde er licenseret med en "
 
 #: PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
@@ -1563,38 +1567,32 @@ msgid "Extra spacing of grandparent families (mm)"
 msgstr "Ekstra afstand mellem bedsteforældres familie (mm)"
 
 #: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
 msgid "First spouse left"
-msgstr "højre til vnstre"
+msgstr "Første ægtefælle til venstre"
 
 #: GenealogyTree/gt_descendant.py:192
 msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
+"Sæt altid den første af flere ægtefæller til venstre. Dette kan afhjælpe "
+"kryds-linjer ved flere ægteskaber."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
-#, fuzzy
-#| msgid "Persons"
 msgid "Person GEXF"
-msgstr "Personer"
+msgstr "GEXF for person"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:31
-#, fuzzy
-#| msgid "Persons"
 msgid "_Person GEXF"
-msgstr "Personer"
+msgstr "_GEXF for person"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
-msgstr ""
+msgstr "GEXF er benyttet i mange netværks-graf applikationer."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
-#, fuzzy
-#| msgid "Filter options"
 msgid "GEXF export options"
-msgstr "Filter tilvalg"
+msgstr "GEXF eksport muligheder"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -1696,23 +1694,20 @@ msgstr "Danner rapporten..."
 #: D3Charts/DescendantIndentedTree.py:909
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 msgid "Descendant Indented Tree"
-msgstr ""
+msgstr "Indrykket træ for efterkommere"
 
 #: D3Charts/DescendantIndentedTree.py:1364
 msgid "Invalid Destination Directory"
 msgstr "Ugyldig målfolder"
 
 #: D3Charts/DescendantIndentedTree.py:1365
-#, fuzzy, python-format
-#| msgid ""
-#| "Destinaton diretory %s does not exist\n"
-#| "Do you want to attempt to create it."
+#, python-format
 msgid ""
 "Destinaton diretory %s does not exist\n"
 "Do you want to attempt to create it?"
 msgstr ""
 "Målfolder %s findes ikke\n"
-"Vild du forsøge at danne det."
+"Vil du forsøge at danne den?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
@@ -1720,16 +1715,13 @@ msgid "Failed to create %s: %s"
 msgstr "Kunne ikke danne%s: %s"
 
 #: D3Charts/DescendantIndentedTree.py:1391
-#, fuzzy, python-format
-#| msgid ""
-#| "Destination file %s already exists.\n"
-#| "Do you want to overwrite."
+#, python-format
 msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
 "Målfil %s findes allerede.\n"
-"Vil du  overskrive den."
+"Vil du overskrive den?"
 
 #: D3Charts/DescendantIndentedTree.py:1446
 msgid "Default View"
@@ -2019,72 +2011,73 @@ msgstr ""
 "bibliotek."
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
+#, fuzzy
 msgid "SV Web Connect Pack"
-msgstr ""
+msgstr "SV Web Connect Pack"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:12
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
-msgstr ""
+msgstr "Samling af websteder for Sverige (kræver libwebconnect)"
 
 #: SVWebconnectPack/SVWebPack.py:33
-#, fuzzy
-#| msgid "Find GeoNames"
 msgid "Find A Grave"
-msgstr "Find GeoNames"
+msgstr "Find en grav"
 
 #: SVWebconnectPack/SVWebPack.py:34
+#, fuzzy
 msgid "FamilySearch.org"
-msgstr ""
+msgstr "FamilySearch.org"
 
 #: SVWebconnectPack/SVWebPack.py:35
 #, fuzzy
 #| msgid "_Google Maps"
 msgid "Google SV"
-msgstr "_Google Maps"
+msgstr "Google SV"
 
 #: SVWebconnectPack/SVWebPack.py:38
 #, fuzzy
 #| msgid "Family Sheet"
 msgid "FamilySearch.org Tree"
-msgstr "Familieark"
+msgstr "FamilySearch.org Tree"
 
 #: SVWebconnectPack/SVWebPack.py:40
 msgid "National archives of Sweden personsearch"
-msgstr ""
+msgstr "Riksarkivets personsøg"
 
 #: SVWebconnectPack/SVWebPack.py:41
 msgid "National archives of Sweden free search"
-msgstr ""
+msgstr "Riksarkivets fri søgning"
 
 #: SVWebconnectPack/SVWebPack.py:42
 msgid "Arkiv Digital estate records for Skåne"
-msgstr ""
+msgstr "ARkiv Digitals skifteprotokoller for Skåne"
 
 #: SVWebconnectPack/SVWebPack.py:43
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Search"
-msgstr "Aner"
+msgstr "Ancestry søgning"
 
 #: SVWebconnectPack/SVWebPack.py:44
+#, fuzzy
 msgid "Find swedish portraits - Rötter.se"
-msgstr ""
+msgstr "Porträttfynd - Rötter.se"
 
 #: SVWebconnectPack/SVWebPack.py:45
+#, fuzzy
 msgid "Gravar.se - find swedish graves"
-msgstr ""
+msgstr "Gravar.se"
 
 #: SVWebconnectPack/SVWebPack.py:46
 msgid "National archives of Sweden search censuses"
-msgstr ""
+msgstr "Riksarkivets folketælling"
 
 #: SVWebconnectPack/SVWebPack.py:47
 msgid "Arkiv Digital released prisoners"
-msgstr ""
+msgstr "Arkiv Digital frigivne fanger"
 
 #: SVWebconnectPack/SVWebPack.py:48
+#, fuzzy
 msgid "Gravestone inventory - rötter.se"
-msgstr ""
+msgstr "Gravstensinventeringen - rötter.se"
 
 #: PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
@@ -2356,15 +2349,15 @@ msgstr "Verificér at medier er tilstede på den korrekte filsti"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
-msgstr ""
+msgstr "Beta Hvad er det næste"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:49
 msgid "Beta Gramplet suggesting items to research"
-msgstr ""
+msgstr "Beta Gramplet, der foreslår emner til udforskning"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:60
 msgid "Beta What's Next?"
-msgstr ""
+msgstr "Beta Hvad er det næste?"
 
 #: Betawhatsnext/Betawhatsnext.py:46
 msgid ""
@@ -2372,83 +2365,86 @@ msgid ""
 " ⛔ A local Genealogical Tree database has not yet been loaded.\n"
 "\n"
 msgstr ""
+"\n"
+" ⛔ En lokal genealogisk slægtsbog er ikke indlæst.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
-msgstr ""
+msgstr " 👣 Næste trin:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
 msgid "  •  From the \"Family Trees\" menu,"
-msgstr ""
+msgstr "  •  Fra \"Slægtsbog\" menuen,"
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
-msgstr ""
+msgstr " benyt \"Arbejd med slægtsbøger\" muligheden for"
 
 #: Betawhatsnext/Betawhatsnext.py:52
 msgid " create a New (or to select an existing) Tree database.\n"
-msgstr ""
+msgstr " Dan en ny (eller vælg en eksisterende) slægtsbog\n"
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr ""
+msgstr "  •  Klik på \"Indlæs slægtsbog\" knappen for at begynde"
 
 #: Betawhatsnext/Betawhatsnext.py:54
 msgid ""
 " working with the selected genealogical tree.\n"
 "\n"
 msgstr ""
+" arbejder med den valgte slægtsbog\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:55
 msgid "Create and load an empty new tree to import a backup (or"
-msgstr ""
+msgstr "Dan og indlæs en tom slægtsbog for at importere en backup (eller"
 
 #: Betawhatsnext/Betawhatsnext.py:56
 msgid ""
 " GEDCOM file) from another genealogical tool.\n"
 "\n"
 msgstr ""
+" GEDCOM fil) fra et andet slægtsforsknings værktøj\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:70
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
-msgstr ""
+msgstr "Benyt \"Konfigurer\" i \"Vis\" menuen for at ændre Gramplet tilvalgene."
 
 #: Betawhatsnext/Betawhatsnext.py:86
-#, fuzzy
-#| msgid "Search results"
 msgid "Search Quota "
-msgstr "Søgeresultater"
+msgstr "Søgekvote "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
-msgstr ""
+msgstr "Dybde per gennemløb"
 
 #: Betawhatsnext/Betawhatsnext.py:98
 msgid "Pause search expansion"
-msgstr ""
+msgstr "Sæt søgeudvidelse på pause"
 
 #: Betawhatsnext/Betawhatsnext.py:105
-#, fuzzy
-#| msgid "Center person"
 msgid "Completed Person"
-msgstr "Fokusperson"
+msgstr "Komplet person"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
-msgstr ""
+msgstr " Afsluttet efterkommer-familier"
 
 #: Betawhatsnext/Betawhatsnext.py:118
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Ignore Person or Family"
-msgstr "Note om Familie"
+msgstr "Ignorer person eller familie"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
 "\n"
 " ⛔ The current Tree database contains no people.\n"
 msgstr ""
+"\n"
+" ⛔ Den nuværende slægtsbog indeholder ingen personer.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:226
 msgid ""
