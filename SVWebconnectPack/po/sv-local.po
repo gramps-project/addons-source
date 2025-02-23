@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "Last-Translator: Pär Ekholm <pehlm@pekholm.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
+"Language: sv\n"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:10
 msgid "SV Web Connect Pack"
