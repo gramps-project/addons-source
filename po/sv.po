@@ -17,8 +17,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 14:21+0000\n"
-"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
+"PO-Revision-Date: 2025-02-23 17:44+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -1267,11 +1267,11 @@ msgstr "Grader:"
 
 #: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
 msgid "People with <count> of <event>"
-msgstr ""
+msgstr "Personer med <count> av <event>"
 
 #: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
 msgid "Matches persons which have events of given type and number."
-msgstr ""
+msgstr "Matchar personer som har händelser av given typ och antal."
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
@@ -1581,6 +1581,8 @@ msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
+"Sätt alltid de första av flera makar till vänster. Detta kan bidra till att "
+"minska linjekorsningar med flera äktenskap."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -1592,7 +1594,7 @@ msgstr "_GEXF för person"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
-msgstr ""
+msgstr "GEXF används i många nätverksgrafapplikationer."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
 msgid "GEXF export options"
@@ -2010,7 +2012,7 @@ msgstr ""
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
 msgid "SV Web Connect Pack"
-msgstr ""
+msgstr "SV Web Connect Pack"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:12
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
@@ -2022,7 +2024,7 @@ msgstr "Finn en grav"
 
 #: SVWebconnectPack/SVWebPack.py:34
 msgid "FamilySearch.org"
-msgstr ""
+msgstr "FamilySearch.org"
 
 #: SVWebconnectPack/SVWebPack.py:35
 msgid "Google SV"
@@ -2337,15 +2339,15 @@ msgstr "Verifiera att media finns i rätt sökväg"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
-msgstr ""
+msgstr "Beta Vad händer härnäst"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:49
 msgid "Beta Gramplet suggesting items to research"
-msgstr ""
+msgstr "Beta Gramplet föreslår objekt att undersöka"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:60
 msgid "Beta What's Next?"
-msgstr ""
+msgstr "Beta Vad händer härnäst?"
 
 #: Betawhatsnext/Betawhatsnext.py:46
 msgid ""
@@ -2353,6 +2355,9 @@ msgid ""
 " ⛔ A local Genealogical Tree database has not yet been loaded.\n"
 "\n"
 msgstr ""
+"\n"
+" ⛔ En lokal släktforskningsdatabas har ännu inte laddats.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
