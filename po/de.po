@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-22 23:30+0000\n"
+"PO-Revision-Date: 2025-02-23 17:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -1221,10 +1221,8 @@ msgid "People with multiple parent records"
 msgstr ""
 
 #: FilterRules/multipleparents.py:43
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches people who have more than one set of parents"
-msgstr "Entspricht Personen mit einem Ereignis mit einer ausgewählten Rolle"
+msgstr "Passt zu Personen, die mehr als ein Elternpaar haben"
 
 #: FilterRules/associationsofpersonmatch.py:46
 #: FilterRules/associationsofpersonmatch.py:47
@@ -1329,10 +1327,8 @@ msgid "Filter people by their age at death"
 msgstr ""
 
 #: FilterRules/ageatdeath.gpr.py:26
-#, fuzzy
-#| msgid "Filter rule that matches relatives by degrees of separation"
 msgid "Filter rule that matches people by their age at death"
-msgstr "Filterregel, die Verwandten nach Trennungsgraden entspricht"
+msgstr "Filterregel, die Personen nach ihrem Alter beim Tod abgleicht"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -1360,10 +1356,8 @@ msgid "Active person"
 msgstr "Aktive Person"
 
 #: FilterRules/activepersonrule.py:47
-#, fuzzy
-#| msgid "Go to active person"
 msgid "Matches the active person"
-msgstr "Gehe zur aktiven Person"
+msgstr "Entspricht der aktiven Person"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
@@ -1604,10 +1598,8 @@ msgid "Extra spacing of grandparent families (mm)"
 msgstr "Extra Abstand Großelternfamilien (mm)"
 
 #: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
 msgid "First spouse left"
-msgstr "Rechts nach Links"
+msgstr "Erster Ehepartner links"
 
 #: GenealogyTree/gt_descendant.py:192
 msgid ""
@@ -1616,26 +1608,20 @@ msgid ""
 msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
-#, fuzzy
-#| msgid "Persons"
 msgid "Person GEXF"
-msgstr "Personen"
+msgstr "Person GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:31
-#, fuzzy
-#| msgid "Persons"
 msgid "_Person GEXF"
-msgstr "Personen"
+msgstr "_Person GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
 msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
-#, fuzzy
-#| msgid "Filter options"
 msgid "GEXF export options"
-msgstr "Filteroptionen"
+msgstr "GEXF-Exportoptionen"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -2055,16 +2041,12 @@ msgstr ""
 "Bibliothek."
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
-#, fuzzy
-#| msgid "US Web Connect Pack"
 msgid "SV Web Connect Pack"
-msgstr "US Web Verknüpfungspaket"
+msgstr "SV Web Verknüpfungspaket"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
-msgstr "Sammlung von Webseiten für UK (benötigt libwebconnect)"
+msgstr "Sammlung von Websites für Schweden (erfordert libwebconnect)"
 
 #: SVWebconnectPack/SVWebPack.py:33
 msgid "Find A Grave"
@@ -2079,10 +2061,8 @@ msgid "Google SV"
 msgstr "Google SV"
 
 #: SVWebconnectPack/SVWebPack.py:38
-#, fuzzy
-#| msgid "FamilySearch.org"
 msgid "FamilySearch.org Tree"
-msgstr "FamilySearch.org"
+msgstr "FamilySearch.org Baum"
 
 #: SVWebconnectPack/SVWebPack.py:40
 msgid "National archives of Sweden personsearch"
@@ -2097,10 +2077,8 @@ msgid "Arkiv Digital estate records for Skåne"
 msgstr ""
 
 #: SVWebconnectPack/SVWebPack.py:43
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Search"
-msgstr "Vorfahren"
+msgstr "Ancestry Suche"
 
 #: SVWebconnectPack/SVWebPack.py:44
 msgid "Find swedish portraits - Rötter.se"
@@ -2256,10 +2234,8 @@ msgstr ""
 "gesamte Beschreibung gelöscht und durch die neue ersetzt."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:151
-#, fuzzy
-#| msgid "Use regex"
 msgid "Allow regex"
-msgstr "Reguläre Ausdrücke verwenden"
+msgstr "Reguläre Ausdrücke zulassen"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
@@ -2467,20 +2443,16 @@ msgid "Pause search expansion"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:105
-#, fuzzy
-#| msgid "Center person"
 msgid "Completed Person"
-msgstr "Zentrale Person"
+msgstr "Vervollständigte Person"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
 msgstr " Abgeschlossene Nachkommenschaft Familien"
 
 #: Betawhatsnext/Betawhatsnext.py:118
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Ignore Person or Family"
-msgstr "Notiz zur Familie"
+msgstr "Person oder Familie ignorieren"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
@@ -2533,10 +2505,8 @@ msgid "Add via the Events tab of the Edit Person dialog."
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:582
-#, fuzzy
-#| msgid "Relationship Type"
 msgid "relationship type unknown"
-msgstr "Beziehungstyp"
+msgstr "Beziehungstyp unbekannt"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
@@ -2564,10 +2534,8 @@ msgid "Father missing from the parent family"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:664
-#, fuzzy
-#| msgid "Show items missing from file"
 msgid "Mother missing from the parent family"
-msgstr "Zeige Elemente, die in der Datei fehlen"
+msgstr "Fehlende Mutter in der elterlichen Familie"
 
 #: Betawhatsnext/Betawhatsnext.py:668
 msgid "Parent family is unknown."
@@ -2747,22 +2715,16 @@ msgid "The style used for the title of the page."
 msgstr "Der Stil, der für den Seitentitel verwendet wird."
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
-#, fuzzy
-#| msgid "PostgreSQL"
 msgid "SharedPostgreSQL"
-msgstr "PostgreSQL"
+msgstr "GemeinsamePostgreSQL"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:25
-#, fuzzy
-#| msgid "_PostgreSQL Database"
 msgid "Shared _PostgreSQL Database"
-msgstr "_PostgreSQL Datenbank"
+msgstr "Gemeinsame _PostgreSQL-Datenbank"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:26
-#, fuzzy
-#| msgid "PostgreSQL Database"
 msgid "Shared PostgreSQL Database"
-msgstr "PostgreSQL Datenbank"
+msgstr "Gemeinsame PostgreSQL-Datenbank"
 
 #: HtmlView/htmlview.py:328
 msgid "HtmlView"
@@ -3967,10 +3929,8 @@ msgid "Order"
 msgstr "Reihenfolge"
 
 #: CombinedView/combinedview.py:528
-#, fuzzy
-#| msgid "Add death event"
 msgid "Edit the active event"
-msgstr "Todesereignis hinzufügen"
+msgstr "Das aktive Ereignis bearbeiten"
 
 #: CombinedView/combinedview.py:630
 msgid "Show Tags"
@@ -4153,46 +4113,36 @@ msgid "Please set gender on Active person."
 msgstr "Bitte das Geschlecht der aktiven Person angeben."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "FamilyTree DNA"
-msgstr "Stammbaumdatei"
+msgstr "Stammbaum DNA"
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:5
 msgid "Tool to import FamilyFinder DNA data from Family Tree"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:75
-#, fuzzy
-#| msgid "Family Relationship Tool"
 msgid "Family Finder Tool"
-msgstr "Werkzeug für Familienbeziehungen"
+msgstr "Werkzeug zur Familiensuche"
 
 #: FamilyTreeDNA/ftdna_import.py:104
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Enter FTDNA Family Finder Filename:"
-msgstr "Name des Familienfilters:"
+msgstr "Gib den FTDNA Family Finder Dateinamen ein:"
 
 #: FamilyTreeDNA/ftdna_import.py:109
 msgid "Enter FTDNA Chromosome Segment Filename:"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:112
-#, fuzzy
-#| msgid "Import Failure"
 msgid "Import Haplogroups"
-msgstr "Importfehler"
+msgstr "Haplogruppen importieren"
 
 #: FamilyTreeDNA/ftdna_import.py:128
 msgid "FTDNA Note string :"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:137
-#, fuzzy
-#| msgid "Citations:"
 msgid "Shared Citation ID :"
-msgstr "Fundstellen:"
+msgstr "Gemeinsame Fundstellen-ID :"
 
 #: FamilyTreeDNA/ftdna_import.py:151
 msgid "Active Person : "
@@ -4203,10 +4153,8 @@ msgid "Import data from Family Finder files"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:169
-#, fuzzy
-#| msgid "Close the Media Verify Tool"
 msgid "Close the Family Finder Tool"
-msgstr "Medienüberprüfungswerkzeug schließen"
+msgstr "Das Werkzeug Familiensuche schließen"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
@@ -4214,10 +4162,8 @@ msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "FamilyTree DNA Import"
-msgstr "Stammbaum für %s"
+msgstr "Stammbaum-DNA-Import"
 
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
@@ -4242,10 +4188,9 @@ msgid "Add %s haplogroup attribute"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:350
-#, fuzzy, python-format
-#| msgid "Add %s reciprocal association"
+#, python-format
 msgid "Add %s DNA Association"
-msgstr "%s wechselseitige Zuordnung hinzufügen"
+msgstr "DNA-Assoziation %s hinzufügen"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
@@ -4253,10 +4198,9 @@ msgid "Create Note for %s DNA Association"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:369
-#, fuzzy, python-format
-#| msgid "Add %s reciprocal association"
+#, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "%s wechselseitige Zuordnung hinzufügen"
+msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
 
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
@@ -5657,10 +5601,8 @@ msgid "DNA Matches"
 msgstr "DNA-Übereinstimmungen"
 
 #: DNAMatches/dnamatches.gpr.py:30
-#, fuzzy
-#| msgid "Gramplet to manipulate multiple places"
 msgid "Gramplet to display a list of DNA matches"
-msgstr "Gramplet zum Ändern mehrerer Orte"
+msgstr "Gramplet zur Anzeige einer Liste von DNA-Übereinstimmungen"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
@@ -5679,10 +5621,8 @@ msgid "S. Leg."
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "8. Sex"
 msgid "L. Seg"
-msgstr "8. Geschlecht"
+msgstr "G. Seg"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
@@ -5705,16 +5645,15 @@ msgid "Source(s)"
 msgstr "Quelle(n)"
 
 #: DNAMatches/dnamatches.py:194
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to navigate to the matched person."
-msgstr "Doppelklick auf eine Zeile um den gewählten Beteiligten zu bearbeiten."
+msgstr ""
+"Doppelklick auf eine Zeile, um zu der entsprechenden Person zu navigieren."
 
 #: DNAMatches/dnamatches.py:195
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Right click to edit selected association."
-msgstr "Doppelklick auf eine Zeile um den gewählten Beteiligten zu bearbeiten."
+msgstr ""
+"Klicke mit der rechten Maustaste, um die ausgewählte Assoziation zu "
+"bearbeiten."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
@@ -5730,10 +5669,8 @@ msgid "Not specified"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
-#, fuzzy
-#| msgid "M"
 msgid "cM"
-msgstr "M"
+msgstr "cM"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
@@ -6925,34 +6862,28 @@ msgid "Bad Date/Time"
 msgstr "Falsches Datum/Zeit"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "Invalid latitude (syntax: 18\\u00b09'"
 msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Ungültiger Breitengrad (Syntax: 18\\u00b09'"
+msgstr "Ungültiger Breitengrad (Syntax: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 oder -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
-#| msgid "Invalid longitude (syntax: 18\\u00b09'"
 msgid "Invalid longitude (syntax: 18°9'"
-msgstr "Ungültiger Längengrad (Syntax: 18\\u00b09'"
+msgstr "Ungültiger Längengrad (Syntax: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"O, -18.2412 oder -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr "ACHTUNG! Du bist dabei alle Exif Metadaten von diesem Bild zu löschen?"
+msgstr ""
+"WARNUNG!  Du bist dabei, die Exif-Metadaten von diesem Bild vollständig zu "
+"löschen."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
@@ -6960,16 +6891,12 @@ msgid "Delete?"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the GPS metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
 msgstr ""
-"WARNUNG! Du bist dabei, die GPS-Metadaten vollständig aus diesem Bild zu "
-"löschen?"
+"WARNUNG!  Du bist dabei, die GPS-Metadaten von diesem Bild vollständig zu "
+"löschen."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
@@ -7085,10 +7012,8 @@ msgid "place: "
 msgstr "Ort: "
 
 #: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Note Types"
 msgid "Note Type"
-msgstr "Notizarten"
+msgstr "Notizart"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
@@ -8182,10 +8107,8 @@ msgid "Generating thumbnails for source references"
 msgstr "Erstelle Miniaturbilder für Quellenreferenzen"
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:28
-#, fuzzy
-#| msgid "Media downloaded"
 msgid "S3 Media Uploader"
-msgstr "Medien heruntergeladen"
+msgstr "S3-Medien- Hochlader"
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:38
 msgid ""
@@ -9201,16 +9124,12 @@ msgid "Set media private.."
 msgstr "Medium als vertraulich markieren.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set adresses private.."
-msgstr "Ereignisse als vertraulich markieren.."
+msgstr "Adressen auf vertraulich setzen.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set internet objects private.."
-msgstr "Ereignisse als vertraulich markieren.."
+msgstr "Internetobjekte auf vertraulich setzen.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
@@ -9232,22 +9151,16 @@ msgstr ""
 "markiert."
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "Filter zum eingrenzen der Personen wählen"
+msgstr "Filter auswählen, um Ereignisse einzugrenzen"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
-#, fuzzy
-#| msgid "Select filter to restrict list"
 msgid "Select filter to restrict medias"
-msgstr "Wählen den Filter, um die Liste zu beschränken"
+msgstr "Filter auswählen, um Medien einzugrenzen"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
-#, fuzzy
-#| msgid "Can't determine type of import"
 msgid "Internet type filter"
-msgstr "Kann Importart nicht bestimmen"
+msgstr "Internet-Typ-Filter"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
@@ -9278,16 +9191,12 @@ msgid "Add %s reciprocal association"
 msgstr "%s wechselseitige Zuordnung hinzufügen"
 
 #: SyncAssociations/syncAssociations.py:131
-#, fuzzy
-#| msgid "Add %s reciprocal association"
 msgid "{} Reciprocal associations created"
-msgstr "%s wechselseitige Zuordnung hinzufügen"
+msgstr "{} Gegenseitige Verknüpfungen erstellt"
 
 #: SyncAssociations/syncAssociations.py:135
-#, fuzzy
-#| msgid "Add %s reciprocal association"
 msgid "All reciprocal associations exist, none created"
-msgstr "%s wechselseitige Zuordnung hinzufügen"
+msgstr "Alle wechselseitigen Verknüpfungen bestehen, keine wurde erstellt"
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
@@ -13593,10 +13502,8 @@ msgid "Number of children ever born"
 msgstr "Anzahl der jemals geborenen Kinder"
 
 #: Form/form_us.xml.h:889
-#, fuzzy
-#| msgid "Incorporated place"
 msgid "Incorporated place or township"
-msgstr "Eingemeindeter Ort"
+msgstr "Eingemeindeter Ort oder Gemeinde"
 
 #: Form/form_us.xml.h:890
 #, fuzzy
@@ -22261,22 +22168,22 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:598
 #, python-format
 msgid "%(male_name)s graduated in %(year)s at %(place)s."
-msgstr "%(male_name)s promovierte in %(year)s in %(place)s."
+msgstr "%(male_name)s hat sein Studium in %(year)s in %(place)s abgeschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:600
 #, python-format
 msgid "%(female_name)s graduated in %(year)s at %(place)s."
-msgstr "%(female_name)s promovierte in %(year)s in %(place)s."
+msgstr "%(female_name)s hat ihr Studium in %(year)s in %(place)s abgeschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:603
 #, python-format
 msgid "%(male_name)s immigrated in %(year)s at %(place)s."
-msgstr "%(male_name)s ist eingewandert in %(year)s in %(place)s."
+msgstr "%(male_name)s ist in %(year)s in %(place)s eingewandert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:605
 #, python-format
 msgid "%(female_name)s immigrated in %(year)s at %(place)s."
-msgstr "%(female_name)s ist eingewandert in %(year)s in %(place)s."
+msgstr "%(female_name)s ist in %(year)s in %(place)s eingewandert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:611
 #, python-format
@@ -22292,13 +22199,17 @@ msgstr "%(female_name)s hat in %(year)s in %(place)s geheiratet."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:627
 #, python-format
 msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
-msgstr "%(male_name)s als Familie beigetreten in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s schloss sich in %(year)s in %(place)s zu einer Familie "
+"zusammen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:618
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:629
 #, python-format
 msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
-msgstr "%(female_name)s als Familie beigetreten in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s schloss sich in %(year)s in %(place)s zu einer Familie "
+"zusammen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:621
 #, python-format
@@ -22317,115 +22228,129 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:632
 #, python-format
 msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr "%(male_name)s hat eine Gewohnheitsrecht Ehe in %(year)s in %(place)s."
+msgstr "%(male_name)s hatte eine Brauchtumsheirat in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:634
 #, python-format
 msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr ""
-"%(female_name)s hat eine Gewohnheitsrecht Ehe in %(year)s in %(place)s."
+msgstr "%(female_name)s hatte eine Brauchtumsheirat in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:638
 #, python-format
 msgid "%(male_name)s announced a marriage banns in %(year)s at %(place)s."
-msgstr "%(male_name)s kündigte ein Eheverbot an in %(year)s in %(place)s."
+msgstr "%(male_name)s gab in %(year)s in %(place)s eine Heiratsanzeige auf."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:641
 #, python-format
 msgid "%(female_name)s announced a marriage banns in %(year)s at %(place)s."
-msgstr "%(female_name)s kündigte ein Eheverbot an in %(year)s in %(place)s."
+msgstr "%(female_name)s gab in %(year)s in %(place)s eine Heiratsanzeige auf."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:645
 #, python-format
 msgid "%(male_name)s entered a marriage contract in %(year)s at %(place)s."
-msgstr "%(male_name)s schloss einen Ehevertrag in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s hat in %(year)s in %(place)s einen Ehevertrag geschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:648
 #, python-format
 msgid "%(female_name)s entered a marriage contract in %(year)s at %(place)s."
-msgstr "%(female_name)s schloss einen Ehevertrag in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s hat in %(year)s in %(place)s einen Ehevertrag geschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:652
 #, python-format
 msgid "%(male_name)s obtained a marriage license in %(year)s at %(place)s."
-msgstr "%(male_name)s erhielt eine Heiratsurkunde in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s hat in %(year)s in %(place)seine Heiratserlaubnis erhalten."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:655
 #, python-format
 msgid "%(female_name)s obtained a marriage license in %(year)s at %(place)s."
-msgstr "%(female_name)s erhielt eine Heiratsurkunde in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s hat in %(year)s in %(place)s eine Heiratserlaubnis erhalten."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:659
 #, python-format
 msgid "%(male_name)s obtained a marriage settlement in %(year)s at %(place)s."
-msgstr "%(male_name)s erhielt eine Ehevereinbarung in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s hat in %(year)s in %(place)s einen Heiratsvertrag "
+"abgeschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:662
 #, python-format
 msgid ""
 "%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
-msgstr "%(female_name)s erhielt eine Ehevereinbarung in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s hat in %(year)s in %(place)s einen Heiratsvertrag "
+"abgeschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:666
 #, python-format
 msgid "%(male_name)s entered military service in %(year)s at %(place)s."
-msgstr "%(male_name)s trat in den Militärdienst ein in %(year)s in %(place)s."
+msgstr "%(male_name)s trat in %(year)s in %(place)s zum Militärdienst an."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:669
 #, python-format
 msgid "%(female_name)s entered military service in %(year)s at %(place)s."
-msgstr ""
-"%(female_name)s trat in den Militärdienst ein in %(year)s in %(place)s."
+msgstr "%(female_name)s trat ein in %(year)s in %(place)s zum Militärdienst an."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:673
 #, python-format
 msgid "%(male_name)s became naturalized in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde eingebürgert in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s eingebürgert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:675
 #, python-format
 msgid "%(female_name)s became naturalized in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde eingebürgert in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s eingebürgert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:678
 #, python-format
 msgid "%(male_name)s had a title bestowed in %(year)s at %(place)s."
-msgstr "%(male_name)s hat einen Titel verliehen in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s hatte einen Titel, der in %(year)s in %(place)s verliehen "
+"wurde."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:680
 #, python-format
 msgid "%(female_name)s had a title bestowed in %(year)s at %(place)s."
-msgstr "%(female_name)s hat einen Titel verliehen in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s hatte einen Titel, der in %(year)s in %(place)s verliehen "
+"wurde."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:683
 #, python-format
 msgid "%(male_name)s was ordained in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde ordiniert in %(year)s in %(place)s."
+msgstr "%(male_name)s wurde in %(year)s in %(place)s ordiniert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:685
 #, python-format
 msgid "%(female_name)s was ordained in %(year)s at %(place)s."
-msgstr "%(female_name)s wurde ordiniert in %(year)s in %(place)s."
+msgstr "%(female_name)s wurde in %(year)s in %(place)s ordiniert."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:688
 #, python-format
 msgid "%(male_name)s was granted probate in %(year)s at %(place)s."
-msgstr "%(male_name)s erbte in %(year)s in %(place)s."
+msgstr ""
+"%(male_name)s wurde in %(year)s in %(place)s als Nachlassverwalter "
+"eingesetzt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:690
 #, python-format
 msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
-msgstr "%(female_name)s erbte in %(year)s in %(place)s."
+msgstr ""
+"%(female_name)s wurde in %(year)s in %(place)s als Nachlassverwalter "
+"eingesetzt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:693
 #, python-format
 msgid "%(male_name)s retired in %(year)s at %(place)s."
-msgstr "%(male_name)s ging in Ruhestand in %(year)s in %(place)s."
+msgstr "%(male_name)s ist in %(year)s in %(place)s in den Ruhestand getreten."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:695
 #, python-format
 msgid "%(female_name)s retired in %(year)s at %(place)s."
-msgstr "%(female_name)s ging in Ruhestand in %(year)s in %(place)s."
+msgstr "%(female_name)s ist in %(year)s in %(place)s in den Ruhestand getreten."
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
@@ -23023,7 +22948,7 @@ msgstr "Ort und Koordinaten"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
-msgstr "Gramplet, das das Einstellen der Koordinaten eines Ortes vereinfacht"
+msgstr "Gramplet, das die Bestimmung der Koordinaten eines Ortes vereinfacht"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
 msgid "Place Coordinates"
