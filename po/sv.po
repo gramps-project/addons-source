@@ -11,13 +11,14 @@
 # Peter Landgren <peter@test>, 2010.
 # Pär Ekholm <github1@m.pekholm.org>, 2025.
 # Milan <mobrcian@hotmail.com>, 2025.
+# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 12:29+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"PO-Revision-Date: 2025-02-23 14:21+0000\n"
+"Last-Translator: Nick Hall <nick-h@gramps-project.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -2013,7 +2014,7 @@ msgstr ""
 
 #: SVWebconnectPack/SVWebPack.gpr.py:12
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
-msgstr ""
+msgstr "Samling av webbplatser för Sverige (kräver libwebconnect)"
 
 #: SVWebconnectPack/SVWebPack.py:33
 msgid "Find A Grave"
@@ -2033,15 +2034,15 @@ msgstr "FamilySearch.org Släktträd"
 
 #: SVWebconnectPack/SVWebPack.py:40
 msgid "National archives of Sweden personsearch"
-msgstr ""
+msgstr "Riksarkivet personsök"
 
 #: SVWebconnectPack/SVWebPack.py:41
 msgid "National archives of Sweden free search"
-msgstr ""
+msgstr "Riksarkivet frisök"
 
 #: SVWebconnectPack/SVWebPack.py:42
 msgid "Arkiv Digital estate records for Skåne"
-msgstr "Pozemkové záznamy Arkiv Digital pre Skåne"
+msgstr "Arkiv Digital bouppteckningar över Skåne"
 
 #: SVWebconnectPack/SVWebPack.py:43
 msgid "Ancestry Search"
@@ -2049,23 +2050,23 @@ msgstr "Ancestry Sök"
 
 #: SVWebconnectPack/SVWebPack.py:44
 msgid "Find swedish portraits - Rötter.se"
-msgstr ""
+msgstr "Porträttfynd - Rötter.se"
 
 #: SVWebconnectPack/SVWebPack.py:45
 msgid "Gravar.se - find swedish graves"
-msgstr ""
+msgstr "Gravar.se"
 
 #: SVWebconnectPack/SVWebPack.py:46
 msgid "National archives of Sweden search censuses"
-msgstr ""
+msgstr "Riksarkivet sök folkräkning"
 
 #: SVWebconnectPack/SVWebPack.py:47
 msgid "Arkiv Digital released prisoners"
-msgstr ""
+msgstr "Arkiv Digital frigivna fångar"
 
 #: SVWebconnectPack/SVWebPack.py:48
 msgid "Gravestone inventory - rötter.se"
-msgstr ""
+msgstr "Gravstensinventeringen - rötter.se"
 
 #: PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
