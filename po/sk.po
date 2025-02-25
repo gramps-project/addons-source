@@ -5620,8 +5620,10 @@ msgid "S. DNA"
 msgstr "Zd. DNA"
 
 #: DNAMatches/dnamatches.py:153
-msgid "S. Leg."
-msgstr "Seg."
+#, fuzzy
+#| msgid "L. Seg"
+msgid "S. Seg."
+msgstr "Naj. seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
@@ -21658,6 +21660,79 @@ msgstr ""
 msgid "Double click row to follow link"
 msgstr ""
 
+#: SearchGramplet/SearchGramplet.gpr.py:10
+#, fuzzy
+#| msgid "Gramplet to get places from the GOV database"
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet na získanie miest z databázy GOV"
+
+#: SearchGramplet/SearchGramplet.py:104
+#, fuzzy
+#| msgid "Source type"
+msgid "Sort by object type"
+msgstr "Typ zdroja"
+
+#: SearchGramplet/SearchGramplet.py:138
+#, fuzzy
+#| msgid "Person to search for"
+msgid "Menu to set search objects"
+msgstr "Osoba, ktorú hľadáte"
+
+#: SearchGramplet/SearchGramplet.py:140
+#, fuzzy
+#| msgid "Used for person"
+msgid "Select objects to search"
+msgstr "Použité pre osobu"
+
+#: SearchGramplet/SearchGramplet.py:154
+#, fuzzy
+#| msgid "SVG tree configuration"
+msgid "SearchGramplet configuration menu"
+msgstr "Konfigurácia SVG stromu"
+
+#: SearchGramplet/SearchGramplet.py:261
+#, fuzzy
+#| msgid ""
+#| "No\n"
+#| "Matches"
+msgid "No matches..."
+msgstr ""
+"Žiadne\n"
+"Zhody"
+
+#: SearchGramplet/SearchGramplet.py:353
+msgid "Start type to search"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, python-format
+msgid "Birth: %s"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:747
+#, fuzzy, python-format
+#| msgid "Key: %s"
+msgid "Death: %s"
+msgstr "Kľúč: %s"
+
+#: SearchGramplet/SearchGramplet.py:918
+#, fuzzy
+#| msgid "Go to active person"
+msgid "Set as Active person"
+msgstr "Prejsť na aktívnu osobu"
+
+#: SearchGramplet/SearchGramplet.py:920
+#, fuzzy
+#| msgid "Set as home person"
+msgid "Set as Home person"
+msgstr "Nastaviť ako domácu osobu"
+
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
 msgid "Gramps Web Sync"
@@ -23237,6 +23312,9 @@ msgstr ""
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
 msgstr "Zobraziť pomoc"
+
+#~ msgid "S. Leg."
+#~ msgstr "Seg."
 
 #~ msgid "Beta"
 #~ msgstr "Beta"

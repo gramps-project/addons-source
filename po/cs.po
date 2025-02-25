@@ -5528,7 +5528,7 @@ msgid "S. DNA"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-msgid "S. Leg."
+msgid "S. Seg."
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
@@ -21215,6 +21215,72 @@ msgstr ""
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
 msgstr ""
+
+#: SearchGramplet/SearchGramplet.gpr.py:10
+msgid "Gramplet for search objects in database."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:104
+#, fuzzy
+#| msgid "Sources Index"
+msgid "Sort by object type"
+msgstr "Rejtřík pramenů"
+
+#: SearchGramplet/SearchGramplet.py:138
+#, fuzzy
+#| msgid "Person to search for"
+msgid "Menu to set search objects"
+msgstr "Vyhledat osobu"
+
+#: SearchGramplet/SearchGramplet.py:140
+#, fuzzy
+#| msgid "Used for person"
+msgid "Select objects to search"
+msgstr "Použito pro osobu"
+
+#: SearchGramplet/SearchGramplet.py:154
+#, fuzzy
+msgid "SearchGramplet configuration menu"
+msgstr "Nastavení"
+
+#: SearchGramplet/SearchGramplet.py:261
+#, fuzzy
+#| msgid "No matching surname."
+msgid "No matches..."
+msgstr "Žádné odpovídající příjmení"
+
+#: SearchGramplet/SearchGramplet.py:353
+msgid "Start type to search"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, python-format
+msgid "Birth: %s"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:747
+#, fuzzy, python-format
+#| msgid "Media Path Update"
+msgid "Death: %s"
+msgstr "Aktualizace cest k médiím"
+
+#: SearchGramplet/SearchGramplet.py:918
+#, fuzzy
+#| msgid "Used for person"
+msgid "Set as Active person"
+msgstr "Použito pro osobu"
+
+#: SearchGramplet/SearchGramplet.py:920
+#, fuzzy
+#| msgid "Used for person"
+msgid "Set as Home person"
+msgstr "Použito pro osobu"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210

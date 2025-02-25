@@ -5557,7 +5557,7 @@ msgid "S. DNA"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-msgid "S. Leg."
+msgid "S. Seg."
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
@@ -21309,6 +21309,69 @@ msgstr ""
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
 msgstr ""
+
+#: SearchGramplet/SearchGramplet.gpr.py:10
+msgid "Gramplet for search objects in database."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:104
+#, fuzzy
+#| msgid "Source type"
+msgid "Sort by object type"
+msgstr "Tipo de fonte"
+
+#: SearchGramplet/SearchGramplet.py:138
+msgid "Menu to set search objects"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:140
+msgid "Select objects to search"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:154
+#, fuzzy
+#| msgid "Second generation"
+msgid "SearchGramplet configuration menu"
+msgstr "Segunda geração"
+
+#: SearchGramplet/SearchGramplet.py:261
+#, fuzzy
+#| msgid "Attaching sources..."
+msgid "No matches..."
+msgstr "Anexando fontes..."
+
+#: SearchGramplet/SearchGramplet.py:353
+msgid "Start type to search"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, python-format
+msgid "Birth: %s"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:747
+#, fuzzy, python-format
+#| msgid "Media Path Update"
+msgid "Death: %s"
+msgstr "Atualização do caminho da mídia"
+
+#: SearchGramplet/SearchGramplet.py:918
+#, fuzzy
+#| msgid "Please set an active person."
+msgid "Set as Active person"
+msgstr "Defina uma pessoa como ativa."
+
+#: SearchGramplet/SearchGramplet.py:920
+#, fuzzy
+#| msgid "Can't add new person."
+msgid "Set as Home person"
+msgstr "Adicionar uma nova pessoa."
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210

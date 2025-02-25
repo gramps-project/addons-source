@@ -5617,8 +5617,10 @@ msgid "S. DNA"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-msgid "S. Leg."
-msgstr ""
+#, fuzzy
+#| msgid "L. Seg"
+msgid "S. Seg."
+msgstr "G. Seg"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
@@ -21402,6 +21404,82 @@ msgstr "Kann URL nicht öffnen: "
 msgid "Double click row to follow link"
 msgstr ""
 
+#: SearchGramplet/SearchGramplet.gpr.py:10
+#, fuzzy
+#| msgid "Gramplet to get places from the GOV database"
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet um Orte aus der GOV Datenbank zu holen"
+
+#: SearchGramplet/SearchGramplet.py:104
+#, fuzzy
+#| msgid "Source type"
+msgid "Sort by object type"
+msgstr "Quellenart"
+
+#: SearchGramplet/SearchGramplet.py:138
+#, fuzzy
+#| msgid "Person to search for"
+msgid "Menu to set search objects"
+msgstr "Zu suchende Person"
+
+#: SearchGramplet/SearchGramplet.py:140
+#, fuzzy
+#| msgid "Select tags for person"
+msgid "Select objects to search"
+msgstr "Markierungen für Person wählen"
+
+#: SearchGramplet/SearchGramplet.py:154
+#, fuzzy
+#| msgid "SVG tree configuration"
+msgid "SearchGramplet configuration menu"
+msgstr "SVG Baumkonfiguration"
+
+#: SearchGramplet/SearchGramplet.py:261
+#, fuzzy
+#| msgid ""
+#| "No\n"
+#| "Matches"
+msgid "No matches..."
+msgstr ""
+"Keine\n"
+"Übereinstimmungen"
+
+#: SearchGramplet/SearchGramplet.py:353
+#, fuzzy
+#| msgid "Internet type filter"
+msgid "Start type to search"
+msgstr "Internet-Typ-Filter"
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, fuzzy, python-format
+#| msgid "Birthdays"
+msgid "Birth: %s"
+msgstr "Geburtstage"
+
+#: SearchGramplet/SearchGramplet.py:747
+#, fuzzy, python-format
+#| msgid "Death act:"
+msgid "Death: %s"
+msgstr "Sterbeurkunde:"
+
+#: SearchGramplet/SearchGramplet.py:918
+#, fuzzy
+#| msgid "Set as active person"
+msgid "Set as Active person"
+msgstr "Als aktive Person wählen"
+
+#: SearchGramplet/SearchGramplet.py:920
+#, fuzzy
+#| msgid "Set as home person"
+msgid "Set as Home person"
+msgstr "Als Hauptperson setzen"
+
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
 msgid "Gramps Web Sync"
@@ -22139,7 +22217,8 @@ msgstr "%(male_name)s hat sein Studium in %(year)s in %(place)s abgeschlossen."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:600
 #, python-format
 msgid "%(female_name)s graduated in %(year)s at %(place)s."
-msgstr "%(female_name)s hat ihr Studium in %(year)s in %(place)s abgeschlossen."
+msgstr ""
+"%(female_name)s hat ihr Studium in %(year)s in %(place)s abgeschlossen."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:603
 #, python-format
@@ -22258,7 +22337,8 @@ msgstr "%(male_name)s trat in %(year)s in %(place)s zum Militärdienst an."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:669
 #, python-format
 msgid "%(female_name)s entered military service in %(year)s at %(place)s."
-msgstr "%(female_name)s trat ein in %(year)s in %(place)s zum Militärdienst an."
+msgstr ""
+"%(female_name)s trat ein in %(year)s in %(place)s zum Militärdienst an."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:673
 #, python-format
@@ -22316,7 +22396,8 @@ msgstr "%(male_name)s ist in %(year)s in %(place)s in den Ruhestand getreten."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:695
 #, python-format
 msgid "%(female_name)s retired in %(year)s at %(place)s."
-msgstr "%(female_name)s ist in %(year)s in %(place)s in den Ruhestand getreten."
+msgstr ""
+"%(female_name)s ist in %(year)s in %(place)s in den Ruhestand getreten."
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
