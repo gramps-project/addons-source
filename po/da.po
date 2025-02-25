@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -2011,7 +2011,6 @@ msgstr ""
 "bibliotek."
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
-#, fuzzy
 msgid "SV Web Connect Pack"
 msgstr "SV Web Connect Pack"
 
@@ -2024,19 +2023,14 @@ msgid "Find A Grave"
 msgstr "Find en grav"
 
 #: SVWebconnectPack/SVWebPack.py:34
-#, fuzzy
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
 #: SVWebconnectPack/SVWebPack.py:35
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "Google SV"
 msgstr "Google SV"
 
 #: SVWebconnectPack/SVWebPack.py:38
-#, fuzzy
-#| msgid "Family Sheet"
 msgid "FamilySearch.org Tree"
 msgstr "FamilySearch.org Tree"
 
@@ -2057,12 +2051,10 @@ msgid "Ancestry Search"
 msgstr "Ancestry søgning"
 
 #: SVWebconnectPack/SVWebPack.py:44
-#, fuzzy
 msgid "Find swedish portraits - Rötter.se"
 msgstr "Porträttfynd - Rötter.se"
 
 #: SVWebconnectPack/SVWebPack.py:45
-#, fuzzy
 msgid "Gravar.se - find swedish graves"
 msgstr "Gravar.se"
 
@@ -2075,7 +2067,6 @@ msgid "Arkiv Digital released prisoners"
 msgstr "Arkiv Digital frigivne fanger"
 
 #: SVWebconnectPack/SVWebPack.py:48
-#, fuzzy
 msgid "Gravestone inventory - rötter.se"
 msgstr "Gravstensinventeringen - rötter.se"
 
@@ -2460,12 +2451,24 @@ msgid ""
 "  • An external file may be used to populate the tree via \"Import...\" in "
 "the \"Family Trees\" menu."
 msgstr ""
+"\n"
+" 👣 Næste skridt:\n"
+" Tilføj en familie og en person i den familie:\n"
+"  • En familie kan tilføjes med \"Tilføj\" menuen\n"
+"  • En person kan tilføjes med \"+\" (plus) i ægtefælle (\"Fader/partner1\" "
+"eller \"Moder/partner2\") fliserne eller \"Børn\" fanebladet.\n"
+"\n"
+"Eller importer personer fra en ekstern fil:\n"
+"  • En ekstern fil kan benyttes for at befolke træet med \"Import...\" i "
+"\"Slægtsbog\" menuen."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
 "\n"
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
+"\n"
+" ⛔ Ingen person er blevet valgt som den centrale \"Proband\".\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -2478,68 +2481,70 @@ msgid ""
 "\n"
 " This sets them as the focal \"Home Person\"."
 msgstr ""
+"\n"
+" 👣 Næste skridt:\n"
+"  •  Vælg Personer ikonen i navigerings sidebjælken.\n"
+"  •  Vælg nogen for at gøre dem til \"Proband\".\n"
+"  •  Choose \"Gør til proband\" med Reduger menu eller med højre-klik) "
+"indholds menuen.\n"
+"\n"
+" Dette gør dem til \"Proband\"."
 
 #: Betawhatsnext/Betawhatsnext.py:268
 msgid "Double-click color text to edit details"
-msgstr ""
+msgstr "Dobbeltklik farve tekst for at redigere detaljer"
 
 #: Betawhatsnext/Betawhatsnext.py:504
-#, fuzzy
-#| msgid "Nothing missing"
 msgid "Birth event missing."
-msgstr "Intet mangler"
+msgstr "Fødselshændelse mangler"
 
 #: Betawhatsnext/Betawhatsnext.py:505
 msgid "Add via the Events tab of the Edit Person dialog."
-msgstr ""
+msgstr "Tilføj med hændelses fanebladet i rediger person dialogen."
 
 #: Betawhatsnext/Betawhatsnext.py:582
-#, fuzzy
-#| msgid "Relationship Type"
 msgid "relationship type unknown"
-msgstr "Slægtskabstype:"
+msgstr "Slægtskabstype ukendt"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
-msgstr ""
+msgstr "Tilføj via hændelses fanebladet i Rediger Familie dialogen."
 
 #: Betawhatsnext/Betawhatsnext.py:621
 msgid "591 family not complete"
-msgstr ""
+msgstr "591 familier er ikke færdiggjorte"
 
 #: Betawhatsnext/Betawhatsnext.py:642
 msgid "place unknown for the Event"
-msgstr ""
+msgstr "Ukendt sted for hændelsen"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
-msgstr ""
+msgstr "Et partner slægtsskab findes, men ægtefællen mangler"
 
 #: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
 #: Betawhatsnext/Betawhatsnext.py:665
 msgid "Add missing partner using the Edit Family dialog."
-msgstr ""
+msgstr "Tilføj manglende partner med Rediger familie dialogen."
 
 #: Betawhatsnext/Betawhatsnext.py:660
 msgid "Father missing from the parent family"
-msgstr ""
+msgstr "Fader mangler i forældre familien"
 
 #: Betawhatsnext/Betawhatsnext.py:664
-#, fuzzy
-#| msgid "Show items missing from file"
 msgid "Mother missing from the parent family"
-msgstr "Hvis elementer der mangler i filen"
+msgstr "Moder mangler i forældre familien"
 
 #: Betawhatsnext/Betawhatsnext.py:668
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Parent family is unknown."
-msgstr "Forældrefamilie"
+msgstr "Forældrefamilien er ukendt."
 
 #: Betawhatsnext/Betawhatsnext.py:670
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
 msgstr ""
+"\"Tilføj ny/eksisterende forældre\" fra rediger menuen i slægtsforholds "
+"visningen."
 
 #: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
@@ -3307,12 +3312,12 @@ msgid ""
 "URL starting with \"relative://relative.<link>\" are replaced by the "
 "relative URL \"<link>\".\n"
 msgstr ""
-"Idenne note bliver følgende specialord behandlet:\n"
+"I denne note bliver følgende specialord behandlet:\n"
 "__SEARCH_FORM__ bliver erstattet med en søgefunktion.\n"
 "__NB_INDIVIDUALS__ bliver erstattet med antal personer.\n"
 "__NB_FAMILIES__ bliver erstattet med antal familier.\n"
 "__NB_MEDIA__ bliver erstattet med antal medier.\n"
-"__NB_SOURCES__ bliver erstattet med antal kilders.\n"
+"__NB_SOURCES__ bliver erstattet med antal kilder.\n"
 "__NB_REPOSITORIES__ bliver erstattet med antal arkiver.\n"
 "__NB_PLACES__ bliver erstattet med antal steder.\n"
 "__MEDIA_<gid>__ bliver erstattet med medier med Gramps ID <gid>.\n"
@@ -3320,9 +3325,9 @@ msgstr ""
 "<gid>.\n"
 "__EXPORT_DATE__ bliver erstattet med nuværende dato.\n"
 "__GRAMPS_VERSION__ bliver erstattet med Gramps versionen.\n"
-"__GRAMPS_HOMEPAGE__ bliver erstattet medGramps hjemmside link.\n"
-"URL der begynder medd \"relative://relative.<link>\" bliver erstattet med "
-"den relative URL \"<link>\".\n"
+"__GRAMPS_HOMEPAGE__ bliver erstattet med Gramps hjemmeside link.\n"
+"URL der begynder med \"relative://relative.<link>\" bliver erstattet med den "
+"relative URL \"<link>\".\n"
 
 #: DynamicWeb/dynamicweb.py:4712
 msgid "Store web pages in archive"
@@ -3697,7 +3702,7 @@ msgstr "Indhold af siden"
 
 #: GetGOV/getgov.py:315
 msgid "Place ID to import from GOV (Historical Gazetteer):"
-msgstr ""
+msgstr "Sted ID til import fra GOV (Historical Gazetteer):"
 
 #: GetGOV/getgov.py:323
 msgid "Get Place"
@@ -3711,12 +3716,12 @@ msgstr "Tilføj GOV-id sted %s"
 #: GetGOV/getgov.py:388
 #, python-format
 msgid "GetGOV error: %s"
-msgstr ""
+msgstr "GetGOV fejl: %s"
 
 #: GetGOV/getgov.py:421
 #, python-format
 msgid "GOV error on id %s with code: "
-msgstr ""
+msgstr "GOV fejl ved id %s med kode: "
 
 #: GetGOV/getgov.py:555
 #, python-format
@@ -3878,11 +3883,11 @@ msgstr "Klik for at gøre denne hændelse aktiv"
 
 #: CombinedView/personpage.py:743
 msgid "Click to visit this link"
-msgstr ""
+msgstr "Klik for at besøge dette link"
 
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
-msgstr ""
+msgstr ": "
 
 #: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
@@ -3898,9 +3903,9 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
-"Du skal vælge en \"standard person\" for at fortsætte. Vælg PersonVisning, "
-"vælg den person du vil benytte som 'Hovedperson' via menuen Rediger -> vælg "
-"Hovedperson."
+"Du skal vælge en \"standard person\" for at fortsætte. Vælg Person oversigt, "
+"vælg den person du vil benytte som 'Proband' via menuen Rediger -> vælg "
+"Proband."
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
 msgid "Order"
@@ -4091,30 +4096,24 @@ msgid "Please set gender on Active person."
 msgstr "Angive venligst køn for den aktive persons ."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "FamilyTree DNA"
-msgstr "Slægtsbog"
+msgstr "FamilyTree DNA"
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:5
 msgid "Tool to import FamilyFinder DNA data from Family Tree"
-msgstr ""
+msgstr "Værktøj til at importere FamilyFinder DNA data fra Family Tree"
 
 #: FamilyTreeDNA/ftdna_import.py:75
-#, fuzzy
-#| msgid "Family Relationship Tool"
 msgid "Family Finder Tool"
-msgstr "Familie slægtskabs værktøj"
+msgstr "Family Finder Tool"
 
 #: FamilyTreeDNA/ftdna_import.py:104
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Enter FTDNA Family Finder Filename:"
-msgstr "Familiefilternavn:"
+msgstr "Indtast FTDNA Family Finder Filnavn:"
 
 #: FamilyTreeDNA/ftdna_import.py:109
 msgid "Enter FTDNA Chromosome Segment Filename:"
-msgstr ""
+msgstr "Indtast FTDNA Kromosom Segment Filnavn:"
 
 #: FamilyTreeDNA/ftdna_import.py:112
 msgid "Import Haplogroups"
@@ -4152,56 +4151,55 @@ msgstr "FamilyTree DNA import"
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
-msgstr ""
+msgstr "{} Sammenhæng med DNA data skabt. {} haplogruppe Attributter skabt \n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
-msgstr ""
+msgstr "Ingen Family Finder fil angivet"
 
 #: FamilyTreeDNA/ftdna_import.py:232
 msgid "No Segment File specified"
-msgstr ""
+msgstr "Ingen Segment fil angivet"
 
 #: FamilyTreeDNA/ftdna_import.py:236
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
 msgstr ""
+"Ingen forbindelser fundet i FTdna Notes. Ingen haplogruppe attribut dannet."
 
 #: FamilyTreeDNA/ftdna_import.py:307
 #, python-format
 msgid "Add %s haplogroup attribute"
-msgstr ""
+msgstr "Tilføj %s haplogruppe attribut"
 
 #: FamilyTreeDNA/ftdna_import.py:350
-#, fuzzy, python-format
-#| msgid "Add %s reciprocal association"
+#, python-format
 msgid "Add %s DNA Association"
-msgstr "Tilføj %s gensidige forbindelser"
+msgstr "Tilføj %s DNA forbindelse"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr ""
+msgstr "Dan note for %s DNA forbindelse"
 
 #: FamilyTreeDNA/ftdna_import.py:369
-#, fuzzy, python-format
-#| msgid "Add %s reciprocal association"
+#, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "Tilføj %s gensidige forbindelser"
+msgstr "Tilføj note til %s DNA forbindelse"
 
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr ""
+msgstr "Dan kildehenvisning for %s DNA forbindelse"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr ""
+msgstr "Dan kildehenvisning for %s DNA forbindelse"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr ""
+msgstr "Tilføj kildehenvisning til %s DNA forbindelse"
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
@@ -4831,11 +4829,11 @@ msgstr ""
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
-msgstr "Vis slægtskab og afstand til fokuspersonen"
+msgstr "Vis slægtskab og afstand til probanden"
 
 #: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
-msgstr "Vil vise slægtskabsinformation til hovedpersonen"
+msgstr "Vil vise slægtskabsinformation til probanden"
 
 #: RelID/relation_tab.py:75
 msgid "Relation and distances with root"
@@ -4961,7 +4959,7 @@ msgstr "Rediger mærkater"
 
 #: QuiltView/QuiltView.py:1500
 msgid "Set as home person"
-msgstr "Sæt som fokusperson"
+msgstr "Vælg som proband"
 
 #: QuiltView/QuiltView.py:1656
 #, python-format
@@ -5604,74 +5602,60 @@ msgid "Gramplet showing the references for a source"
 msgstr "Gramplet der viser henvisninger for en kilde"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "DNA Matches"
-msgstr "Ingen passer"
+msgstr "DNA matches"
 
 #: DNAMatches/dnamatches.gpr.py:30
-#, fuzzy
-#| msgid "Gramplet to manipulate multiple places"
 msgid "Gramplet to display a list of DNA matches"
-msgstr "Gramplet til at behandle flere steder"
+msgstr "Gramplet til at vise en liste af DNA matches"
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "Persons"
 msgid "Pers."
-msgstr "Personer"
+msgstr "Pers."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
-msgstr ""
+msgstr "Slægtsk."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "D. DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
-msgstr ""
+msgstr "D. Seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr ""
+msgstr "St. Seg"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Kilde(r)"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "Delt DNA"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "Delte segmenter"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "Største Segment"
 
 #: DNAMatches/dnamatches.py:159
-#, fuzzy
-#| msgid " source(s)"
 msgid "Source(s)"
-msgstr " kilde(r)"
+msgstr "Kilde(r)"
 
 #: DNAMatches/dnamatches.py:194
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to navigate to the matched person."
-msgstr "Dobbeltklik på en række for at redigere den valgte deltager."
+msgstr "Dobbeltklik på en række for at navigere til den matchende person."
 
 #: DNAMatches/dnamatches.py:195
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Right click to edit selected association."
-msgstr "Dobbeltklik på en række for at redigere den valgte deltager."
+msgstr "Højreklik for at redigere den valgte forbindelse."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
@@ -5679,18 +5663,16 @@ msgstr "Tegnforklaring"
 
 #: DNAMatches/dnamatches.py:228
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "Ikke angivet"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
-#, fuzzy
-#| msgid "M"
 msgid "cM"
-msgstr "M"
+msgstr "cM"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
@@ -6579,7 +6561,6 @@ msgstr ""
 "ikke Exiv2 metadata."
 
 #: EditExifMetadata/editexifmetadata.py:161
-#, fuzzy
 msgid "Provide a short description for this image."
 msgstr "Giv en kort beskrivelse af dette billede."
 
@@ -6617,18 +6598,24 @@ msgid ""
 "Enter the Latitude GPS coordinates for this image,\n"
 "Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
 msgstr ""
+"Indtast breddegrads GPS koordinater for dette billede,\n"
+"Eksempel: -43.722965, -43:43:22, 38° 38′ 03″ N"
 
 #: EditExifMetadata/editexifmetadata.py:179
 msgid ""
 "Enter the Longitude GPS coordinates for this image,\n"
 "Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
 msgstr ""
+"Indtast længdegrads GPS koordinater for dette billede,\n"
+"Eksempel: -10.396378, -10:23:46, 105° 6′ 6″ W"
 
 #: EditExifMetadata/editexifmetadata.py:182
 msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
+"Dette er antal meter over eller under havet.  Det måles i meter.  Eksempel:  "
+"200.558, -200.558"
 
 #: EditExifMetadata/editexifmetadata.py:191
 msgid ""
@@ -6676,10 +6663,8 @@ msgstr ""
 "Er du sikker på at du vil gøre dette?"
 
 #: EditExifMetadata/editexifmetadata.py:213
-#, fuzzy
-#| msgid "Clear tags"
 msgid "Clear GPS"
-msgstr "Ryd mærkater"
+msgstr "Ryd GPS"
 
 #: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"
@@ -6708,7 +6693,7 @@ msgstr "Konverter venligst dette billede til en Exiv2-kompatibel billedtype..."
 #: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr ""
+msgstr "Billedstørrelse : {width} x {height} pixels"
 
 #: EditExifMetadata/editexifmetadata.py:481
 #: EditExifMetadata/editexifmetadata.py:1440
@@ -6795,10 +6780,8 @@ msgid "This button will clear all of the data fields shown here."
 msgstr "Denne knap renser alle de her viste data-felter."
 
 #: EditExifMetadata/editexifmetadata.py:936
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
 msgid "This button will clear all of the GPS fields shown here."
-msgstr "Denne knap renser alle de her viste data-felter."
+msgstr "Denne knap renser alle de viste GPS felter."
 
 #: EditExifMetadata/editexifmetadata.py:940
 msgid ""
@@ -6867,47 +6850,37 @@ msgid "Bad Date/Time"
 msgstr "Ugyldig Dato/Tid"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
 msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Ugyldig breddegrad (syntaks: 18°9)"
+msgstr "Ugyldig breddegrad (syntaks: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 eller -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
 msgid "Invalid longitude (syntax: 18°9'"
-msgstr "Ugyldig længdegrad (syntaks: 18°9)"
+msgstr "Ugyldig længdegrad (syntaks: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 eller -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr "ADVARSEL! Du er ved at slette alle Exif-metadata fra dette billede?"
+msgstr "ADVARSEL!  Du er ved at slette alle Exif-metadata fra dette billede."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
 msgid "Delete?"
-msgstr ""
+msgstr "Slet?"
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
-msgstr "ADVARSEL! Du er ved at slette alle Exif-metadata fra dette billede?"
+msgstr "ADVARSEL!  Du er ved at slette alle GPS-metadata fra dette billede."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
@@ -7021,10 +6994,8 @@ msgid "place: "
 msgstr "sted: "
 
 #: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Note Types"
 msgid "Note Type"
-msgstr "Note typer"
+msgstr "Note type"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
@@ -7399,6 +7370,9 @@ msgid ""
 "See Wiki Manual > Reports > part 2\n"
 "formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
 msgstr ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formatering: dato=d(ymdMo) steder=D(elcuspnoitxy) noter=n abbreviated_type=t"
 
 #: DescendantsLines/DescendantsLines.py:1693
 msgid ""
@@ -9046,7 +9020,7 @@ msgstr "Kaktus"
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
-msgstr ""
+msgstr "Gramplet der viser deltagerne i en hændelse"
 
 #: Participants/Participants.py:75
 msgid "Double-click on a row to edit the selected participant."
@@ -9160,15 +9134,15 @@ msgstr "Ingen eksisterende forbindelser, så ingen gensidige behøves"
 #: Form/editform.py:181
 #, python-format
 msgid "Form: %s"
-msgstr ""
+msgstr "Formular: %s"
 
 #: Form/editform.py:183
 msgid "New Form"
-msgstr ""
+msgstr "Ny formular"
 
 #: Form/editform.py:190
 msgid "Edit Form"
-msgstr ""
+msgstr "Rediger formular"
 
 #: Form/editform.py:225
 msgid "Reference:"
@@ -9176,27 +9150,27 @@ msgstr "Henvisning:"
 
 #: Form/editform.py:421
 msgid "Headings"
-msgstr ""
+msgstr "Overskrifter"
 
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
-msgstr ""
+msgstr "Form Gramplet"
 
 #: Form/formgramplet.gpr.py:32
 msgid "Gramplet interface for Forms"
-msgstr ""
+msgstr "Gramplet interface til formular"
 
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
-msgstr ""
+msgstr "Formularer"
 
 #: Form/form.py:65
 msgid "Form"
-msgstr ""
+msgstr "Formular"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"
-msgstr ""
+msgstr "Vælg formular"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -9204,905 +9178,907 @@ msgstr ""
 #: Form/form_ca.xml.h:661 Form/form_ca.xml.h:754 Form/form_ca.xml.h:794
 #: Form/form_us.xml.h:1633 Form/form_us.xml.h:1648
 msgid "Schedule"
-msgstr ""
+msgstr "Skedulering"
 
 #: Form/form_ca.xml.h:2 Form/form_ca.xml.h:93 Form/form_ca.xml.h:211
 #: Form/form_ca.xml.h:798
 msgid "EnumDistrict"
-msgstr ""
+msgstr "Optællingsområde"
 
 #: Form/form_ca.xml.h:3 Form/form_ca.xml.h:94 Form/form_ca.xml.h:212
 #: Form/form_ca.xml.h:644 Form/form_ca.xml.h:812 Form/form_us.xml.h:1250
 #: Form/form_us.xml.h:1311 Form/form_us.xml.h:2041
 msgid "Township"
-msgstr ""
+msgstr "Byområde"
 
 #: Form/form_ca.xml.h:5
 msgid "Comprising"
-msgstr ""
+msgstr "Indeholder"
 
 #: Form/form_ca.xml.h:6
 msgid "OfTheSaid"
-msgstr ""
+msgstr "AfDenNævnte"
 
 #: Form/form_ca.xml.h:7 Form/form_ca.xml.h:293 Form/form_ca.xml.h:347
 #: Form/form_ca.xml.h:396 Form/form_ca.xml.h:457 Form/form_ca.xml.h:536
 #: Form/form_ca.xml.h:621 Form/form_ca.xml.h:668 Form/form_ca.xml.h:758
 #: Form/form_ca.xml.h:801
 msgid "Enumerator"
-msgstr ""
+msgstr "Optæller"
 
 #: Form/form_ca.xml.h:11 Form/form_ca.xml.h:217
 msgid "1. Names of Inmates"
-msgstr ""
+msgstr "1. Navne på beboere"
 
 #: Form/form_ca.xml.h:13
 msgid "2. Profession, Trade or Occupation"
-msgstr ""
+msgstr "2. Profession, eller beskæftigelse"
 
 #: Form/form_ca.xml.h:14 Form/form_ca.xml.h:220 Form/form_ca.xml.h:316
 #: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
 #: Form/form_ca.xml.h:636 Form/form_ca.xml.h:691 Form/form_ca.xml.h:777
 #: Form/form_ca.xml.h:828
 msgid "BirthPlace"
-msgstr ""
+msgstr "Fødested"
 
 #: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
 msgid "3. Place of Birth"
-msgstr ""
+msgstr "3. Fødested"
 
 #: Form/form_ca.xml.h:17
 msgid "4. Religion"
-msgstr ""
+msgstr "4. Trosretning"
 
 #: Form/form_ca.xml.h:19
 msgid "5. Residence if Outside of Limits"
-msgstr ""
+msgstr "6. Hjemsted hvis udenfor grænserne"
 
 #: Form/form_ca.xml.h:21
 msgid "6. Age at Next Birthday"
-msgstr ""
+msgstr "6. Alder ved næste fødselsdag"
 
 #: Form/form_ca.xml.h:22 Form/form_ca.xml.h:230
 msgid "SexMale"
-msgstr ""
+msgstr "Hankøn"
 
 #: Form/form_ca.xml.h:23
 msgid "7. Sex: Male"
-msgstr ""
+msgstr "7. Køn: Mand"
 
 #: Form/form_ca.xml.h:24
 msgid "SexFemale"
-msgstr ""
+msgstr "Hunkøn"
 
 #: Form/form_ca.xml.h:25
 msgid "8. Sex: Female"
-msgstr ""
+msgstr "8. Køn: Kvinde"
 
 #: Form/form_ca.xml.h:26 Form/form_ca.xml.h:234 Form/form_ca.xml.h:324
 #: Form/form_ca.xml.h:378 Form/form_ca.xml.h:415 Form/form_ca.xml.h:472
 #: Form/form_ca.xml.h:632 Form/form_ca.xml.h:683 Form/form_ca.xml.h:771
 #: Form/form_ca.xml.h:824
 msgid "MaritalStatus"
-msgstr ""
+msgstr "ÆgteskabsStilling"
 
 #: Form/form_ca.xml.h:27
 msgid "9. Married or Single"
-msgstr ""
+msgstr "10. Gift eller ugift"
 
 #: Form/form_ca.xml.h:28 Form/form_ca.xml.h:240
 msgid "Coloured"
-msgstr ""
+msgstr "Farvet"
 
 #: Form/form_ca.xml.h:29
 msgid "10. Coloured Persons - Negroes"
-msgstr ""
+msgstr "10. Farvede personer - negre"
 
 #: Form/form_ca.xml.h:30
 msgid "Indians"
-msgstr ""
+msgstr "Indianer"
 
 #: Form/form_ca.xml.h:31
 msgid "11. Indians, if any"
-msgstr ""
+msgstr "11. Indianere, hvis nogen"
 
 #: Form/form_ca.xml.h:32
 msgid "ResidentsMale"
-msgstr ""
+msgstr "BeboereMænd"
 
 #: Form/form_ca.xml.h:33
 msgid "12. Residents: Members, Male"
-msgstr ""
+msgstr "12. Beboere: Medlemmer, Mænd"
 
 #: Form/form_ca.xml.h:34
 msgid "ResidentsFemale"
-msgstr ""
+msgstr "BeboereKvinder"
 
 #: Form/form_ca.xml.h:35
 msgid "13. Residents: Members, Female"
-msgstr ""
+msgstr "13. Beboere: Medlemmer, Kvinder"
 
 #: Form/form_ca.xml.h:36
 msgid "NonMembersMale"
-msgstr ""
+msgstr "IkkeMedlemMand"
 
 #: Form/form_ca.xml.h:37
 msgid "14. Residents: Not Members: Male"
-msgstr ""
+msgstr "14. Beboere: Ikke Medlem: Mand"
 
 #: Form/form_ca.xml.h:38
 msgid "NonMembersFemale"
-msgstr ""
+msgstr "IkkeMedlemKvinde"
 
 #: Form/form_ca.xml.h:39
 msgid "15. Residents: Not Members: Female"
-msgstr ""
+msgstr "15. Beboere: Ikke Medlem: Kvinde"
 
 #: Form/form_ca.xml.h:40
 msgid "AbsentMembersMale"
-msgstr ""
+msgstr "FraværendeMedlemMand"
 
 #: Form/form_ca.xml.h:41
 msgid "16. Members Absent: Male"
-msgstr ""
+msgstr "16. Medlemmer fraværende: Mand"
 
 #: Form/form_ca.xml.h:42
 msgid "AbsentMembersFemale"
-msgstr ""
+msgstr "FraværendeMedlemKvinde"
 
 #: Form/form_ca.xml.h:43
 msgid "17. Members Absent: Female"
-msgstr ""
+msgstr "17. Fraværende Medlemmer: Kvinde"
 
 #: Form/form_ca.xml.h:44
 msgid "DeafDumbMale"
-msgstr ""
+msgstr "DøvStumMand"
 
 #: Form/form_ca.xml.h:45
 msgid "18. Deaf and Dumb: Male"
-msgstr ""
+msgstr "18. Døv og Stum: Mand"
 
 #: Form/form_ca.xml.h:46
 msgid "DeafDumbFemale"
-msgstr ""
+msgstr "DøvStumKvinde"
 
 #: Form/form_ca.xml.h:47
 msgid "19. Deaf and Dumb: Female"
-msgstr ""
+msgstr "19. Døv og Stum: Kvinde"
 
 #: Form/form_ca.xml.h:48
 msgid "BlindMale"
-msgstr ""
+msgstr "BlindMand"
 
 #: Form/form_ca.xml.h:49
 msgid "20. Blind: Male"
-msgstr ""
+msgstr "20. Blind: Mand"
 
 #: Form/form_ca.xml.h:50
 msgid "BlindFemale"
-msgstr ""
+msgstr "BlindKvinde"
 
 #: Form/form_ca.xml.h:51
 msgid "21. Blind: Female"
-msgstr ""
+msgstr "21: Blind: Kvinde"
 
 #: Form/form_ca.xml.h:52
 msgid "LunaticMale"
-msgstr ""
+msgstr "SindsygMand"
 
 #: Form/form_ca.xml.h:53
 msgid "22. Lunatics: Male"
-msgstr ""
+msgstr "22. Sindsyg: Mand"
 
 #: Form/form_ca.xml.h:54
 msgid "LunaticFemale"
-msgstr ""
+msgstr "SindsygKvinde"
 
 #: Form/form_ca.xml.h:55
 msgid "23. Lunatics: Female"
-msgstr ""
+msgstr "23. Sindsyg: Kvinde"
 
 #: Form/form_ca.xml.h:56 Form/form_ca.xml.h:260
 msgid "ScholarMale"
-msgstr ""
+msgstr "ElevMand"
 
 #: Form/form_ca.xml.h:57
 msgid "24. Attending School: Male"
-msgstr ""
+msgstr "24. Skoleelev: Mand"
 
 #: Form/form_ca.xml.h:58 Form/form_ca.xml.h:262
 msgid "ScholarFemale"
-msgstr ""
+msgstr "ElevKvinde"
 
 #: Form/form_ca.xml.h:59
 msgid "25. Attending School: Female"
-msgstr ""
+msgstr "25. Skoleelev: Kvinde"
 
 #: Form/form_ca.xml.h:60
 msgid "Birth1851Male"
-msgstr ""
+msgstr "Født1851Mænd"
 
 #: Form/form_ca.xml.h:61
 msgid "26. Births During the Year 1851: Male"
-msgstr ""
+msgstr "26. Fødte i året 1851: Mænd"
 
 #: Form/form_ca.xml.h:62
 msgid "Birth1851Female"
-msgstr ""
+msgstr "Født1851Kvinde"
 
 #: Form/form_ca.xml.h:63
 msgid "27. Births During the Year 1851: Female"
-msgstr ""
+msgstr "27. Fødte i 1851: Kvinder"
 
 #: Form/form_ca.xml.h:64
 msgid "Death1851Male"
-msgstr ""
+msgstr "Døde1851Mænd"
 
 #: Form/form_ca.xml.h:65
 msgid "28. Deaths During the Year 1851: Male"
-msgstr ""
+msgstr "19. Døde i 1851: Mænd"
 
 #: Form/form_ca.xml.h:66
 msgid "Death1851Female"
-msgstr ""
+msgstr "Døde1851Kvinder"
 
 #: Form/form_ca.xml.h:67
 msgid "29. Deaths During the Year 1851: Female"
-msgstr ""
+msgstr "29. Døde i 1851: Kvinder"
 
 #: Form/form_ca.xml.h:68 Form/form_ca.xml.h:276
 msgid "DeathAgeCause"
-msgstr ""
+msgstr "DødAlderÅrsag"
 
 #: Form/form_ca.xml.h:69
 msgid "30. Age and Cause of Deaths"
-msgstr ""
+msgstr "30. Alder og årsag til død"
 
 #: Form/form_ca.xml.h:70 Form/form_ca.xml.h:278
 msgid "Houses"
-msgstr ""
+msgstr "Huse"
 
 #: Form/form_ca.xml.h:71
 msgid ""
 "31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
-msgstr ""
+msgstr "31, Huse: Mursten, Sten, Bindingsværk, Træ eller anden form for bolig"
 
 #: Form/form_ca.xml.h:72 Form/form_ca.xml.h:280
 msgid "HousesStories"
-msgstr ""
+msgstr "HusEtager"
 
 #: Form/form_ca.xml.h:73
 msgid "32. Houses: No. of Stories"
-msgstr ""
+msgstr "32. Huse: Antal etager"
 
 #: Form/form_ca.xml.h:74 Form/form_ca.xml.h:282
 msgid "HousesFamilies"
-msgstr ""
+msgstr "HuseFamilier"
 
 #: Form/form_ca.xml.h:75
 msgid "33. No. of Families Occupying"
-msgstr ""
+msgstr "33. Antal af familier der bebor"
 
 #: Form/form_ca.xml.h:76 Form/form_ca.xml.h:284 Form/form_ca.xml.h:302
 #: Form/form_ca.xml.h:356 Form/form_ca.xml.h:403 Form/form_ca.xml.h:549
 msgid "HousesVacant"
-msgstr ""
+msgstr "LedigeHuse"
 
 #: Form/form_ca.xml.h:77
 msgid "34. Houses: Vacant"
-msgstr ""
+msgstr "34. Huse: Ledige"
 
 #: Form/form_ca.xml.h:78
 msgid "HousesBuilding"
-msgstr ""
+msgstr "HusBygninger"
 
 #: Form/form_ca.xml.h:79
 msgid "35. Houses: Building"
-msgstr ""
+msgstr "36: Huse: Bygninger"
 
 #: Form/form_ca.xml.h:80
 msgid "Shops"
-msgstr ""
+msgstr "Butikker"
 
 #: Form/form_ca.xml.h:81
 msgid "36. Shops, Stores, Inns, Taverns etc."
-msgstr ""
+msgstr "36. Butikker, Forretninger, Kroer, Restauranter o.s.v."
 
 #: Form/form_ca.xml.h:82
 msgid "PublicBuildings"
-msgstr ""
+msgstr "OffentligeBygninger"
 
 #: Form/form_ca.xml.h:83
 msgid "37. Public Buildings"
-msgstr ""
+msgstr "37. Offentlige Bygninger"
 
 #: Form/form_ca.xml.h:84
 msgid "WorshipPlaces"
-msgstr ""
+msgstr "ReligiøseSteder"
 
 #: Form/form_ca.xml.h:85
 msgid "38. Places of Worship"
-msgstr ""
+msgstr "39. Religiøse bygninger"
 
 #: Form/form_ca.xml.h:86
 msgid "BuisnessInfo"
-msgstr ""
+msgstr "Erhvervsinformation"
 
 #: Form/form_ca.xml.h:87
 msgid ""
 "39. Information on Mills, Factories etc., their cost, power, produce, etc."
 msgstr ""
+"39. Information om møller, fabrikker o.s.v. deres værdi, strøm, produkter "
+"o.s.v."
 
 #: Form/form_ca.xml.h:88
 msgid "NumEmployees"
-msgstr ""
+msgstr "AntalAnsatte"
 
 #: Form/form_ca.xml.h:89
 msgid "40. Number of Persons Usually Employed Therein"
-msgstr ""
+msgstr "40. Normalt antal ansatte"
 
 #: Form/form_ca.xml.h:91
 msgid "41. General Remarks of the Enumerator"
-msgstr ""
+msgstr "41. Generelle bemærkninger af optælleren"
 
 #: Form/form_ca.xml.h:99
 msgid "1. Name of Occupier"
-msgstr ""
+msgstr "1. Navn af beboeren"
 
 #: Form/form_ca.xml.h:100
 msgid "Concession"
-msgstr ""
+msgstr "Konsession"
 
 #: Form/form_ca.xml.h:101
 msgid "2. Concession or Range"
-msgstr ""
+msgstr "2. Konsession eller areal"
 
 #: Form/form_ca.xml.h:102
 msgid "Lot"
-msgstr ""
+msgstr "Matrikel"
 
 #: Form/form_ca.xml.h:103
 msgid "3. Lot or part of Lot"
-msgstr ""
+msgstr "3. Matrikel eller del af matrikel"
 
 #: Form/form_ca.xml.h:104
 msgid "AcresHeld"
-msgstr ""
+msgstr "ArealEjet"
 
 #: Form/form_ca.xml.h:105
 msgid "4. Number of Acres of Land: Held by each person or family"
-msgstr ""
+msgstr "4. Antal af Acres land: Ejet af hver person i familien"
 
 #: Form/form_ca.xml.h:106
 msgid "AcresCultivation"
-msgstr ""
+msgstr "AcresOpdyrket"
 
 #: Form/form_ca.xml.h:107
 msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr ""
+msgstr "5. Antal Acres af land: Opdyrket"
 
 #: Form/form_ca.xml.h:108
 msgid "AcresCrops"
-msgstr ""
+msgstr "AcresHøst"
 
 #: Form/form_ca.xml.h:109
 msgid "6. Number of Acres of Land: Under Crops in 1851"
-msgstr ""
+msgstr "6. Antal Acres af land: Høstes i 1851"
 
 #: Form/form_ca.xml.h:110
 msgid "AcresPasture"
-msgstr ""
+msgstr "AcresEng"
 
 #: Form/form_ca.xml.h:111
 msgid "7. Number of Acres of Land: Under Pasture in 1851"
-msgstr ""
+msgstr "7. Antal Acres af land: Som eng i 1851"
 
 #: Form/form_ca.xml.h:112
 msgid "AcresGardens"
-msgstr ""
+msgstr "AcresHave"
 
 #: Form/form_ca.xml.h:113
 msgid "8. Number of Acres of Land: Gardens or Orchards"
-msgstr ""
+msgstr "8. Antal Acres af land: Pryd- eller nyttehave"
 
 #: Form/form_ca.xml.h:114
 msgid "AcresWood"
-msgstr ""
+msgstr "AcresSkov"
 
 #: Form/form_ca.xml.h:115
 msgid "9. Number of Acres of Land: Under Wood or Wild"
-msgstr ""
+msgstr "9. Antal Acres af land: Skovbrug eller urørt"
 
 #: Form/form_ca.xml.h:116
 msgid "WheatAcres"
-msgstr ""
+msgstr "HvedeAcre"
 
 #: Form/form_ca.xml.h:117
 msgid "10. Wheat: Acres"
-msgstr ""
+msgstr "10: Hvede: Acres"
 
 #: Form/form_ca.xml.h:118
 msgid "WheatBsh"
-msgstr ""
+msgstr "HvedeBsh"
 
 #: Form/form_ca.xml.h:119
 msgid "11. Wheat: Produce Bsh."
-msgstr ""
+msgstr "11 Hvede: Producerede Bsh."
 
 #: Form/form_ca.xml.h:120
 msgid "BarleyAcres"
-msgstr ""
+msgstr "BygAcres"
 
 #: Form/form_ca.xml.h:121
 msgid "12. Barley: Acres"
-msgstr ""
+msgstr "12. Byg: Acres"
 
 #: Form/form_ca.xml.h:122
 msgid "BarleyBsh"
-msgstr ""
+msgstr "BygBsh"
 
 #: Form/form_ca.xml.h:123
 msgid "13. Barley: Produce Bsh."
-msgstr ""
+msgstr "13. Byg: Producerede Bsh."
 
 #: Form/form_ca.xml.h:124
 msgid "RyeAcres"
-msgstr ""
+msgstr "RugAcres"
 
 #: Form/form_ca.xml.h:125
 msgid "14. Rye: Acres"
-msgstr ""
+msgstr "14. Rug: Acres"
 
 #: Form/form_ca.xml.h:126
 msgid "RyeBsh"
-msgstr ""
+msgstr "RugBsh"
 
 #: Form/form_ca.xml.h:127
 msgid "15. Rye: Produce Bsh."
-msgstr ""
+msgstr "15. Rug; Producerede Bsh."
 
 #: Form/form_ca.xml.h:128
 msgid "PeasAcres"
-msgstr ""
+msgstr "ÆrterAcres"
 
 #: Form/form_ca.xml.h:129
 msgid "16. Peas: Acres"
-msgstr ""
+msgstr "16. Ærter: Acres"
 
 #: Form/form_ca.xml.h:130
 msgid "PeasBush"
-msgstr ""
+msgstr "ÆrterBsh"
 
 #: Form/form_ca.xml.h:131
 msgid "17. Peas: Produce Bsh."
-msgstr ""
+msgstr "17. Ærter Bsh."
 
 #: Form/form_ca.xml.h:132
 msgid "OatsAcres"
-msgstr ""
+msgstr "HavreAcres"
 
 #: Form/form_ca.xml.h:133
 msgid "18. Oats: Acres"
-msgstr ""
+msgstr "18. Havre: Acres"
 
 #: Form/form_ca.xml.h:134
 msgid "OatsBush"
-msgstr ""
+msgstr "HavreBsh"
 
 #: Form/form_ca.xml.h:135
 msgid "19. Oats: Produce Bsh."
-msgstr ""
+msgstr "19. Havre: Producerede Bsh."
 
 #: Form/form_ca.xml.h:136
 msgid "BWheatAcres"
-msgstr ""
+msgstr "BHvedeAcres"
 
 #: Form/form_ca.xml.h:137
 msgid "20. B.Wheat: Acres"
-msgstr ""
+msgstr "20. B.Hvede: Acres"
 
 #: Form/form_ca.xml.h:138
 msgid "BWheatBush"
-msgstr ""
+msgstr "BHvedeBsh"
 
 #: Form/form_ca.xml.h:139
 msgid "21. B.Wheat: Produce Bsh."
-msgstr ""
+msgstr "21. B.Hvede: Producerede Bsh."
 
 #: Form/form_ca.xml.h:140
 msgid "CornAcres"
-msgstr ""
+msgstr "MajsAcres"
 
 #: Form/form_ca.xml.h:141
 msgid "22. Corn: Acres"
-msgstr ""
+msgstr "22. Majs: Acres"
 
 #: Form/form_ca.xml.h:142
 msgid "CornBush"
-msgstr ""
+msgstr "MajsBsh"
 
 #: Form/form_ca.xml.h:143
 msgid "23. Corn: Produce Bsh."
-msgstr ""
+msgstr "23. Majs: Producerede Bsh."
 
 #: Form/form_ca.xml.h:144
 msgid "PotatoesAcres"
-msgstr ""
+msgstr "KartoffelAcres"
 
 #: Form/form_ca.xml.h:145
 msgid "24. Potatoes: Acres"
-msgstr ""
+msgstr "24. Kartofler: Acres"
 
 #: Form/form_ca.xml.h:146
 msgid "PotatoesBush"
-msgstr ""
+msgstr "KartoflerBsh"
 
 #: Form/form_ca.xml.h:147
 msgid "25. Potatoes: Produce Bsh."
-msgstr ""
+msgstr "25. Kartofler: Producerede Bsh."
 
 #: Form/form_ca.xml.h:148
 msgid "TurnipsAcres"
-msgstr ""
+msgstr "RoerAcres"
 
 #: Form/form_ca.xml.h:149
 msgid "26. Turnips: Acres"
-msgstr ""
+msgstr "26. Roer: Acres"
 
 #: Form/form_ca.xml.h:150
 msgid "TurnipsBush"
-msgstr ""
+msgstr "RoerBsh"
 
 #: Form/form_ca.xml.h:151
 msgid "27. Turnips: Produce Bsh."
-msgstr ""
+msgstr "27. Roer: Producerede Bsh."
 
 #: Form/form_ca.xml.h:152
 msgid "CloverBush"
-msgstr ""
+msgstr "KløverBsh"
 
 #: Form/form_ca.xml.h:153
 msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr ""
+msgstr "28. Kløver, timotej eller andre græsfrø - Bsh."
 
 #: Form/form_ca.xml.h:154
 msgid "CarrotsBush"
-msgstr ""
+msgstr "GulerodsBsh"
 
 #: Form/form_ca.xml.h:155
 msgid "29. Carrots - Bsh."
-msgstr ""
+msgstr "29. Gulerod - Bsh."
 
 #: Form/form_ca.xml.h:156
 msgid "MangleWurtzel"
-msgstr ""
+msgstr "FoderRoer"
 
 #: Form/form_ca.xml.h:157
 msgid "30. Mangle Wurtzel"
-msgstr ""
+msgstr "30. Foder roer"
 
 #: Form/form_ca.xml.h:158
 msgid "BeansBush"
-msgstr ""
+msgstr "BønneBsh"
 
 #: Form/form_ca.xml.h:159
 msgid "31. Beans Bush"
-msgstr ""
+msgstr "31. Bønne Bush"
 
 #: Form/form_ca.xml.h:160
 msgid "HopsLbs"
-msgstr ""
+msgstr "HumleLbs"
 
 #: Form/form_ca.xml.h:161
 msgid "32. Hops Lbs."
-msgstr ""
+msgstr "32, Humle Lbs."
 
 #: Form/form_ca.xml.h:162
 msgid "HayQty"
-msgstr ""
+msgstr "HøQty"
 
 #: Form/form_ca.xml.h:163
 msgid "33. Hay, Bundles or Tons"
-msgstr ""
+msgstr "33. Hø, Baller eller tons"
 
 #: Form/form_ca.xml.h:164
 msgid "FlaxLbs"
-msgstr ""
+msgstr "HørLbs"
 
 #: Form/form_ca.xml.h:165
 msgid "34. Flax or Hemp, Lbs."
-msgstr ""
+msgstr "34. Hør eller Hamp, Lbs."
 
 #: Form/form_ca.xml.h:166
 msgid "TobaccoLbs"
-msgstr ""
+msgstr "TobakLbs"
 
 #: Form/form_ca.xml.h:167
 msgid "35. Tobacco Lbs."
-msgstr ""
+msgstr "35. Tobak Lbs."
 
 #: Form/form_ca.xml.h:168
 msgid "WoolLbs."
-msgstr ""
+msgstr "UldLbs."
 
 #: Form/form_ca.xml.h:169
 msgid "36. Wool Lbs."
-msgstr ""
+msgstr "36. Uld Lbs."
 
 #: Form/form_ca.xml.h:170
 msgid "Column37"
-msgstr ""
+msgstr "Kolonne37"
 
 #: Form/form_ca.xml.h:171
 msgid "37."
-msgstr ""
+msgstr "37."
 
 #: Form/form_ca.xml.h:172
 msgid "Column38"
-msgstr ""
+msgstr "Kolonne38"
 
 #: Form/form_ca.xml.h:173
 msgid "38."
-msgstr ""
+msgstr "38."
 
 #: Form/form_ca.xml.h:174
 msgid "Column39"
-msgstr ""
+msgstr "Kolonne39"
 
 #: Form/form_ca.xml.h:175
 msgid "39."
-msgstr ""
+msgstr "39."
 
 #: Form/form_ca.xml.h:176
 msgid "MapleSugarLbs"
-msgstr ""
+msgstr "AhornSukkerLbs"
 
 #: Form/form_ca.xml.h:177
 msgid "40. Maple Sugar Lbs."
-msgstr ""
+msgstr "40. Ahornsukker Lbs."
 
 #: Form/form_ca.xml.h:178
 msgid "CiderGalls"
-msgstr ""
+msgstr "MostGalls"
 
 #: Form/form_ca.xml.h:179
 msgid "41. Cider Galls."
-msgstr ""
+msgstr "41. Most Galls."
 
 #: Form/form_ca.xml.h:180
 msgid "ClothYards"
-msgstr ""
+msgstr "TøjYards"
 
 #: Form/form_ca.xml.h:181
 msgid "42. Fulled Cloth Yards"
-msgstr ""
+msgstr "42. Fyldt Tøj Yards"
 
 #: Form/form_ca.xml.h:182
 msgid "LinnenYards"
-msgstr ""
+msgstr "LinnedYards"
 
 #: Form/form_ca.xml.h:183
 msgid "43. Linnen - Yds."
-msgstr ""
+msgstr "43. Linned - Yds."
 
 #: Form/form_ca.xml.h:184
 msgid "FlannelYds"
-msgstr ""
+msgstr "FlannelYds"
 
 #: Form/form_ca.xml.h:185
 msgid "44. Flannel - Yds."
-msgstr ""
+msgstr "44. Flannel - Yds."
 
 #: Form/form_ca.xml.h:186
 msgid "Bulls"
-msgstr ""
+msgstr "Tyre"
 
 #: Form/form_ca.xml.h:187
 msgid "45. Bulls, Oxen or Steers"
-msgstr ""
+msgstr "45. Tyre, Okser eller Steers"
 
 #: Form/form_ca.xml.h:188 Form/form_us.xml.h:288 Form/form_us.xml.h:366
 msgid "Milch Cows"
-msgstr ""
+msgstr "MalkeKvæg"
 
 #: Form/form_ca.xml.h:189
 msgid "46. Milch Cows"
-msgstr ""
+msgstr "46. Malkekvæg"
 
 #: Form/form_ca.xml.h:190
 msgid "Calves"
-msgstr ""
+msgstr "Kalve"
 
 #: Form/form_ca.xml.h:191
 msgid "47. Calves or Heifers"
-msgstr ""
+msgstr "47. Kalve eller Kvier"
 
 #: Form/form_ca.xml.h:192 Form/form_ca.xml.h:650 Form/form_us.xml.h:286
 #: Form/form_us.xml.h:364
 msgid "Horses"
-msgstr ""
+msgstr "Heste"
 
 #: Form/form_ca.xml.h:193
 msgid "48. Horses of all ages"
-msgstr ""
+msgstr "48. Heste i alle aldre"
 
 #: Form/form_ca.xml.h:194 Form/form_ca.xml.h:656 Form/form_us.xml.h:291
 #: Form/form_us.xml.h:369
 msgid "Sheep"
-msgstr ""
+msgstr "Får"
 
 #: Form/form_ca.xml.h:195
 msgid "49. Sheep"
-msgstr ""
+msgstr "49. Får"
 
 #: Form/form_ca.xml.h:196 Form/form_ca.xml.h:658
 msgid "Pigs"
-msgstr ""
+msgstr "Grise"
 
 #: Form/form_ca.xml.h:197
 msgid "50. Pigs"
-msgstr ""
+msgstr "50. Grise"
 
 #: Form/form_ca.xml.h:198
 msgid "ButterLbs"
-msgstr ""
+msgstr "SmørLbs"
 
 #: Form/form_ca.xml.h:199
 msgid "51. Butter - Lbs."
-msgstr ""
+msgstr "51. Smør - Lbs."
 
 #: Form/form_ca.xml.h:200
 msgid "CheeseLbs"
-msgstr ""
+msgstr "OstLbs"
 
 #: Form/form_ca.xml.h:201
 msgid "52. Cheese - Lbs."
-msgstr ""
+msgstr "52. Ost - Lbs."
 
 #: Form/form_ca.xml.h:202
 msgid "Beef"
-msgstr ""
+msgstr "Oksekød"
 
 #: Form/form_ca.xml.h:203
 msgid "53. Beef - Barrels or Cwts."
-msgstr ""
+msgstr "53. Oksekød - Tønder eller Cwts."
 
 #: Form/form_ca.xml.h:204
 msgid "Pork"
-msgstr ""
+msgstr "Svinekød"
 
 #: Form/form_ca.xml.h:205
 msgid "54. Pork - Barrels or Cwts."
-msgstr ""
+msgstr "54. Svinekød - Tønder eller Cwts."
 
 #: Form/form_ca.xml.h:206
 msgid "Fish"
-msgstr ""
+msgstr "Fisk"
 
 #: Form/form_ca.xml.h:207
 msgid "55. Quantity of Fish Cured"
-msgstr ""
+msgstr "55. Antal røgede fisk"
 
 #: Form/form_ca.xml.h:209
 msgid "56. Remarks"
-msgstr ""
+msgstr "56. Bemærkninger"
 
 #: Form/form_ca.xml.h:219
 msgid "2. Profession, trade or occupation"
-msgstr ""
+msgstr "2. Profession, eller beskæftigelse"
 
 #: Form/form_ca.xml.h:222
 msgid "Married1851"
-msgstr ""
+msgstr "Gifte1851"
 
 #: Form/form_ca.xml.h:223
 msgid "4. Married during the year"
-msgstr ""
+msgstr "4. Gift i året"
 
 #: Form/form_ca.xml.h:225
 msgid "5. Religion"
-msgstr ""
+msgstr "5. Trosretning"
 
 #: Form/form_ca.xml.h:227
 msgid "6. Residence, if out of limits"
-msgstr ""
+msgstr "6. Bopæl, hvis udenfor grænsen"
 
 #: Form/form_ca.xml.h:229
 msgid "7. Age next Birthday"
-msgstr ""
+msgstr "7. Alder næste fødselsdag"
 
 #: Form/form_ca.xml.h:231
 msgid "8. Sex: Male"
-msgstr ""
+msgstr "8. Køn: Mand"
 
 #: Form/form_ca.xml.h:232
 msgid "SexFemail"
-msgstr ""
+msgstr "KønKvinde"
 
 #: Form/form_ca.xml.h:233
 msgid "9. Sex:Female"
-msgstr ""
+msgstr "9. Køn: Kvinde"
 
 #: Form/form_ca.xml.h:235
 msgid "10. Married or Single"
-msgstr ""
+msgstr "10. Gift eller ugift"
 
 #: Form/form_ca.xml.h:236
 msgid "Widowers"
-msgstr ""
+msgstr "Enkemænd"
 
 #: Form/form_ca.xml.h:237
 msgid "11. Widowers"
-msgstr ""
+msgstr "11. Enkemænd"
 
 #: Form/form_ca.xml.h:238
 msgid "Widows"
-msgstr ""
+msgstr "Enker"
 
 #: Form/form_ca.xml.h:239
 msgid "12. Widows"
-msgstr ""
+msgstr "12. Enker"
 
 #: Form/form_ca.xml.h:241
 msgid "13. Coloured Persons, Mulato or Indians"
-msgstr ""
+msgstr "13. Farvede personer, mulatter eller indianere"
 
 #: Form/form_ca.xml.h:242
 msgid "MemberMale"
-msgstr ""
+msgstr "MedlemMand"
 
 #: Form/form_ca.xml.h:243
 msgid "14. Members: Male"
-msgstr ""
+msgstr "14. Medlemmer: Mænd"
 
 #: Form/form_ca.xml.h:244
 msgid "MemberFemale"
-msgstr ""
+msgstr "MedlemKvinder"
 
 #: Form/form_ca.xml.h:245
 msgid "15. Members: Female"
-msgstr ""
+msgstr "15. Medlemmer: Kvinder"
 
 #: Form/form_ca.xml.h:246
 msgid "NotMemberMale"
-msgstr ""
+msgstr "IkkeMedlemMænd"
 
 #: Form/form_ca.xml.h:247
 msgid "16. Not Members: Male"
-msgstr ""
+msgstr "16. Ikke Medlem: Mænd"
 
 #: Form/form_ca.xml.h:248
 msgid "NotMemberFemale"
-msgstr ""
+msgstr "IkkeMedlemKvinder"
 
 #: Form/form_ca.xml.h:249
 msgid "17. Not Members: Female"
-msgstr ""
+msgstr "17. Ikke Medlemmer: Kvinder"
 
 #: Form/form_ca.xml.h:250
 msgid "MemberAbsentMale"
-msgstr ""
+msgstr "FraværendeMedlemmerMænd"
 
 #: Form/form_ca.xml.h:251
 msgid "18. Members Absent: Male"
-msgstr ""
+msgstr "18. Fraværende Medlemmer: Mænd"
 
 #: Form/form_ca.xml.h:252
 msgid "MemberAbsentFemale"
-msgstr ""
+msgstr "FraværendeMedlemmerKvinder"
 
 #: Form/form_ca.xml.h:253
 msgid "19. Members Absent: Female"
-msgstr ""
+msgstr "19. Fraværende Medlemmer: Kvinder"
 
 #: Form/form_ca.xml.h:254 Form/form_ca.xml.h:334 Form/form_ca.xml.h:382
 #: Form/form_ca.xml.h:443 Form/form_ca.xml.h:747
 msgid "DeafDumb"
-msgstr ""
+msgstr "DøvStum"
 
 #: Form/form_ca.xml.h:255 Form/form_ca.xml.h:335
 msgid "20. Deaf and Dumb"
-msgstr ""
+msgstr "20. Døv og Stum"
 
 #: Form/form_ca.xml.h:256 Form/form_ca.xml.h:336 Form/form_ca.xml.h:384
 #: Form/form_ca.xml.h:445 Form/form_ca.xml.h:745 Form/form_us.xml.h:479
@@ -10112,155 +10088,155 @@ msgstr ""
 #: Form/form_us.xml.h:2181 Form/form_us.xml.h:2219 Form/form_us.xml.h:2242
 #: Form/form_us.xml.h:2254 Form/form_us.xml.h:2266
 msgid "Blind"
-msgstr ""
+msgstr "Blind"
 
 #: Form/form_ca.xml.h:257 Form/form_ca.xml.h:337
 msgid "21. Blind"
-msgstr ""
+msgstr "21. Blind"
 
 #: Form/form_ca.xml.h:258 Form/form_ca.xml.h:338 Form/form_ca.xml.h:386
 #: Form/form_ca.xml.h:447 Form/form_ca.xml.h:749
 msgid "Lunatic"
-msgstr ""
+msgstr "Sindsyge"
 
 #: Form/form_ca.xml.h:259
 msgid "22. Lunatics or Idiots"
-msgstr ""
+msgstr "22. Sindsyge eller idioter"
 
 #: Form/form_ca.xml.h:261
 msgid "23. Attending School within the year: Male"
-msgstr ""
+msgstr "23. Gået i skole i dette år: Mænd"
 
 #: Form/form_ca.xml.h:263
 msgid "24. Attending School within the year: Female"
-msgstr ""
+msgstr "24. Gået i skole dette år: Kvinder"
 
 #: Form/form_ca.xml.h:264
 msgid "CantReadMale"
-msgstr ""
+msgstr "AnalfabetMænd"
 
 #: Form/form_ca.xml.h:265
 msgid "25. Persons over 20, who cannot read or write: Male"
-msgstr ""
+msgstr "25. Personer over 20, der ikke kan læse eller skrive; Mænd"
 
 #: Form/form_ca.xml.h:266
 msgid "CantReadFemale"
-msgstr ""
+msgstr "AnalfabeterKvinder"
 
 #: Form/form_ca.xml.h:267
 msgid "26. Persons over 20, who cannot read or write: Female"
-msgstr ""
+msgstr "26. Personer over 20, der ikke kan læse eller skrive: Kvinder"
 
 #: Form/form_ca.xml.h:268
 msgid "Birth1860Male"
-msgstr ""
+msgstr "Født1860Mænd"
 
 #: Form/form_ca.xml.h:269
 msgid "27. Births in 1860: Male"
-msgstr ""
+msgstr "27. Fødte i 1860: Mænd"
 
 #: Form/form_ca.xml.h:270
 msgid "Birth1860Female"
-msgstr ""
+msgstr "Fødte1860Kvinder"
 
 #: Form/form_ca.xml.h:271
 msgid "28. Births in 1860: Female"
-msgstr ""
+msgstr "28. Fødte i 1860: Kvinder"
 
 #: Form/form_ca.xml.h:272
 msgid "Death1860Male"
-msgstr ""
+msgstr "Døde1860Mænd"
 
 #: Form/form_ca.xml.h:273
 msgid "29. Deaths in 1860: Male"
-msgstr ""
+msgstr "29. Døde i 1860: Mænd"
 
 #: Form/form_ca.xml.h:274
 msgid "Death1860Female"
-msgstr ""
+msgstr "Døde1860Kvinder"
 
 #: Form/form_ca.xml.h:275
 msgid "30. Deaths in 1860: Female"
-msgstr ""
+msgstr "30. Døde i 1860: Kvinder"
 
 #: Form/form_ca.xml.h:277
 msgid "31. Age and cause of death"
-msgstr ""
+msgstr "31. Alder og dødsårsag"
 
 #: Form/form_ca.xml.h:279
 msgid "32. Houses: Brick, Stone, Frame, Log, etc."
-msgstr ""
+msgstr "32. Huse: Mursten, Sten, Træ, o.s.v."
 
 #: Form/form_ca.xml.h:281
 msgid "33. Houses: No. of Stories"
-msgstr ""
+msgstr "33. Huse: Antal etager"
 
 #: Form/form_ca.xml.h:283
 msgid "34. Houses: No. of families living in the house"
-msgstr ""
+msgstr "34. Huse: Antal af familier der bor i huset"
 
 #: Form/form_ca.xml.h:285
 msgid "35. Houses: Vacant"
-msgstr ""
+msgstr "35. Huse: Tomme"
 
 #: Form/form_ca.xml.h:286
 msgid "HouseBeingBuilt"
-msgstr ""
+msgstr "HuseDerBliverBygget"
 
 #: Form/form_ca.xml.h:287
 msgid "36. Houses: Being built"
-msgstr ""
+msgstr "36. Huse: Der bliver bygget"
 
 #: Form/form_ca.xml.h:291 Form/form_ca.xml.h:345 Form/form_ca.xml.h:393
 #: Form/form_ca.xml.h:453 Form/form_ca.xml.h:532 Form/form_ca.xml.h:618
 #: Form/form_ca.xml.h:664 Form/form_ca.xml.h:797
 msgid "SubDistrict"
-msgstr ""
+msgstr "UnderOmråde"
 
 #: Form/form_ca.xml.h:296 Form/form_ca.xml.h:350 Form/form_ca.xml.h:399
 msgid "Vessels"
-msgstr ""
+msgstr "Både"
 
 #: Form/form_ca.xml.h:297 Form/form_ca.xml.h:351
 msgid "1. Vessels"
-msgstr ""
+msgstr "1. Både"
 
 #: Form/form_ca.xml.h:298 Form/form_ca.xml.h:352
 msgid "Shanties"
-msgstr ""
+msgstr "Barakker"
 
 #: Form/form_ca.xml.h:299 Form/form_ca.xml.h:353
 msgid "2. Shanties"
-msgstr ""
+msgstr "2. Barakker"
 
 #: Form/form_ca.xml.h:300 Form/form_ca.xml.h:354 Form/form_ca.xml.h:401
 msgid "HousesBeingBuilt"
-msgstr ""
+msgstr "HuseDerBliverBygget"
 
 #: Form/form_ca.xml.h:301
 msgid "3. Dwelling houses in construction"
-msgstr ""
+msgstr "3. Huse der bliver bygget"
 
 #: Form/form_ca.xml.h:303
 msgid "4. Dwelling houses unoccupied"
-msgstr ""
+msgstr "4. Ubeboede huse"
 
 #: Form/form_ca.xml.h:304 Form/form_ca.xml.h:358 Form/form_ca.xml.h:405
 #: Form/form_ca.xml.h:551
 msgid "HousesInhabited"
-msgstr ""
+msgstr "BeboedeHuse"
 
 #: Form/form_ca.xml.h:305
 msgid "5. Dwelling houses inhabited"
-msgstr ""
+msgstr "5. Beboede huse"
 
 #: Form/form_ca.xml.h:307
 msgid "6.Families"
-msgstr ""
+msgstr "6. Familier"
 
 #: Form/form_ca.xml.h:309 Form/form_ca.xml.h:363
 msgid "7. Names"
-msgstr ""
+msgstr "7. Navne"
 
 #: Form/form_ca.xml.h:310 Form/form_ca.xml.h:364 Form/form_ca.xml.h:411
 #: Form/form_ca.xml.h:466 Form/form_ca.xml.h:630 Form/form_ca.xml.h:679
@@ -10284,329 +10260,329 @@ msgstr ""
 #: Form/form_gb.xml.h:9 Form/form_gb.xml.h:46 Form/form_gb.xml.h:242
 #: Form/form_gb.xml.h:265 Form/form_gb.xml.h:377 Form/form_gb.xml.h:586
 msgid "Sex"
-msgstr ""
+msgstr "Køn"
 
 #: Form/form_ca.xml.h:311 Form/form_ca.xml.h:365
 msgid "8. Sex"
-msgstr ""
+msgstr "8. Køn"
 
 #: Form/form_ca.xml.h:313 Form/form_ca.xml.h:367
 msgid "9. Age"
-msgstr ""
+msgstr "9. Alder"
 
 #: Form/form_ca.xml.h:314
 msgid "Birth1871"
-msgstr ""
+msgstr "Født1871"
 
 #: Form/form_ca.xml.h:315 Form/form_ca.xml.h:369
 msgid "10. Born within last twelve months"
-msgstr ""
+msgstr "10. Født indenfor de sidste 12 måneder"
 
 #: Form/form_ca.xml.h:317 Form/form_ca.xml.h:371 Form/form_ca.xml.h:420
 msgid "11. Country or Province of Birth"
-msgstr ""
+msgstr "11.Født i land eller provins"
 
 #: Form/form_ca.xml.h:319 Form/form_ca.xml.h:373
 msgid "12. Religion"
-msgstr ""
+msgstr "12. Trosretning"
 
 #: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
 msgid "13. Origin"
-msgstr ""
+msgstr "13. Oprindelse"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
-msgstr ""
+msgstr "14. Profession eller beskæftigelse"
 
 #: Form/form_ca.xml.h:325 Form/form_ca.xml.h:379
 msgid "15. Married or Widowed"
-msgstr ""
+msgstr "15. Gift eller enke"
 
 #: Form/form_ca.xml.h:326
 msgid "Maried1871"
-msgstr ""
+msgstr "Gift1871"
 
 #: Form/form_ca.xml.h:327
 msgid "16. Married within last twelve months"
-msgstr ""
+msgstr "16. Gift indenfor de sidste tolv måneder"
 
 #: Form/form_ca.xml.h:328 Form/form_ca.xml.h:380
 msgid "Scholar"
-msgstr ""
+msgstr "Elev"
 
 #: Form/form_ca.xml.h:329
 msgid "17. Going to school"
-msgstr ""
+msgstr "17. Går i skole"
 
 #: Form/form_ca.xml.h:330
 msgid "CantRead"
-msgstr ""
+msgstr "KanIkkeLæse"
 
 #: Form/form_ca.xml.h:331
 msgid "18. Over 20 unable to read"
-msgstr ""
+msgstr "18. Over 20 kan ikke læse"
 
 #: Form/form_ca.xml.h:332
 msgid "CantWrite"
-msgstr ""
+msgstr "KanIkkeSkrive"
 
 #: Form/form_ca.xml.h:333
 msgid "19. Over 20 unable to write"
-msgstr ""
+msgstr "19. Over 20 kan ikke skrive"
 
 #: Form/form_ca.xml.h:339
 msgid "22. Unsound mind"
-msgstr ""
+msgstr "22. Svagt sind"
 
 #: Form/form_ca.xml.h:341
 msgid "23. Date of Operations and Remarks"
-msgstr ""
+msgstr "23. Dato for operation og bemærkninger"
 
 #: Form/form_ca.xml.h:355
 msgid "3. Houses in construction"
-msgstr ""
+msgstr "3. Huse der bygges"
 
 #: Form/form_ca.xml.h:357
 msgid "4. Houses unoccupied"
-msgstr ""
+msgstr "4. Ubeboede huse"
 
 #: Form/form_ca.xml.h:359
 msgid "5. Houses inhabited"
-msgstr ""
+msgstr "5. Beboede huse"
 
 #: Form/form_ca.xml.h:361
 msgid "6. Families"
-msgstr ""
+msgstr "6. Familier"
 
 #: Form/form_ca.xml.h:368
 msgid "Birth1881"
-msgstr ""
+msgstr "Født1881"
 
 #: Form/form_ca.xml.h:381
 msgid "16. Going to school"
-msgstr ""
+msgstr "16. Går i skole"
 
 #: Form/form_ca.xml.h:383
 msgid "17. Deaf and Dumb"
-msgstr ""
+msgstr "17. Døv og stum"
 
 #: Form/form_ca.xml.h:385
 msgid "18. Blind"
-msgstr ""
+msgstr "18. Blind"
 
 #: Form/form_ca.xml.h:387
 msgid "19/ Unsound mind"
-msgstr ""
+msgstr "19/ svagt sind"
 
 #: Form/form_ca.xml.h:389
 msgid "20. Date of Operations and Remarks"
-msgstr ""
+msgstr "20. Dato for operationer og bemærkninger"
 
 #: Form/form_ca.xml.h:400
 msgid "1. Vessels and Shanties"
-msgstr ""
+msgstr "1. Både og barakker"
 
 #: Form/form_ca.xml.h:402
 msgid "2. Houses in construction"
-msgstr ""
+msgstr "2. Huse der bygges"
 
 #: Form/form_ca.xml.h:404
 msgid "3. Houses unoccupied"
-msgstr ""
+msgstr "3. Ubeboede huse"
 
 #: Form/form_ca.xml.h:406
 msgid "4. Houses inhabited"
-msgstr ""
+msgstr "4. Beboede huse"
 
 #: Form/form_ca.xml.h:408
 msgid "5. Families"
-msgstr ""
+msgstr "5. Familier"
 
 #: Form/form_ca.xml.h:410
 msgid "6. Names"
-msgstr ""
+msgstr "6. Navne"
 
 #: Form/form_ca.xml.h:412
 msgid "7. Sex"
-msgstr ""
+msgstr "7. Køn"
 
 #: Form/form_ca.xml.h:414
 msgid "8. Age"
-msgstr ""
+msgstr "8. Alder"
 
 #: Form/form_ca.xml.h:416
 msgid "9. Married or Widowed"
-msgstr ""
+msgstr "9. Gift eller enke"
 
 #: Form/form_ca.xml.h:418
 msgid "10. Relationship to Head of Family"
-msgstr ""
+msgstr "10. Slægtskab med familieoverhovedet"
 
 #: Form/form_ca.xml.h:422
 msgid "12. FrenchCanadian"
-msgstr ""
+msgstr "12. FranskCanadier"
 
 #: Form/form_ca.xml.h:423
 msgid "BirthPlaceFather"
-msgstr ""
+msgstr "FødeStedFader"
 
 #: Form/form_ca.xml.h:424
 msgid "13. Birth Place of Father"
-msgstr ""
+msgstr "13. Fødested for fader"
 
 #: Form/form_ca.xml.h:425
 msgid "BirthPlaceMother"
-msgstr ""
+msgstr "FødeStedModer"
 
 #: Form/form_ca.xml.h:426
 msgid "14. Birth Place of Mother"
-msgstr ""
+msgstr "14. Fødested for moder"
 
 #: Form/form_ca.xml.h:428
 msgid "15. Religion"
-msgstr ""
+msgstr "15. Trosretning"
 
 #: Form/form_ca.xml.h:430
 msgid "16. Profession, Occupation or Trade"
-msgstr ""
+msgstr "16. Profession eller beskæftigelse"
 
 #: Form/form_ca.xml.h:431 Form/form_ca.xml.h:496 Form/form_ca.xml.h:707
 #: Form/form_gb.xml.h:164 Form/form_gb.xml.h:293 Form/form_gb.xml.h:525
 msgid "Employer"
-msgstr ""
+msgstr "Arbejdsgiver"
 
 #: Form/form_ca.xml.h:432
 msgid "17. Employers"
-msgstr ""
+msgstr "17. Ansatte"
 
 #: Form/form_ca.xml.h:433 Form/form_ca.xml.h:498 Form/form_ca.xml.h:709
 msgid "Employee"
-msgstr ""
+msgstr "Ansat"
 
 #: Form/form_ca.xml.h:434
 msgid "18. Wage Earner"
-msgstr ""
+msgstr "18. Lønmodtager"
 
 #: Form/form_ca.xml.h:435
 msgid "Unemployed"
-msgstr ""
+msgstr "Arbejdsløs"
 
 #: Form/form_ca.xml.h:436
 msgid "19. Unemployed during week preceding Census"
-msgstr ""
+msgstr "19 Arbejdsløs i ugen inden folketælling"
 
 #: Form/form_ca.xml.h:437
 msgid "Employees"
-msgstr ""
+msgstr "Ansatte"
 
 #: Form/form_ca.xml.h:438
 msgid "20. Employer to state average number of hands employed during year"
-msgstr ""
+msgstr "10 Arbejdsgiveren skal angive gennemsnitlig antal ansatte i året"
 
 #: Form/form_ca.xml.h:439 Form/form_ca.xml.h:846
 msgid "CanRead"
-msgstr ""
+msgstr "KanLæse"
 
 #: Form/form_ca.xml.h:440
 msgid "21. Instruction: Read"
-msgstr ""
+msgstr "21. Instruktion: Læs"
 
 #: Form/form_ca.xml.h:441 Form/form_ca.xml.h:848
 msgid "CanWrite"
-msgstr ""
+msgstr "KanSkrive"
 
 #: Form/form_ca.xml.h:442
 msgid "22. Instruction: Write"
-msgstr ""
+msgstr "22. Instruktion: Skriv"
 
 #: Form/form_ca.xml.h:444
 msgid "23. Deaf and Dumb"
-msgstr ""
+msgstr "23. Døv og stum"
 
 #: Form/form_ca.xml.h:446
 msgid "24. Blind"
-msgstr ""
+msgstr "24. Blind"
 
 #: Form/form_ca.xml.h:448
 msgid "25. Unsound mind"
-msgstr ""
+msgstr "25. Svagt sind"
 
 #: Form/form_ca.xml.h:449 Form/form_ca.xml.h:528 Form/form_ca.xml.h:660
 #: Form/form_ca.xml.h:753 Form/form_ca.xml.h:793
 msgid "SubTitle"
-msgstr ""
+msgstr "Undertitel"
 
 #: Form/form_ca.xml.h:454 Form/form_ca.xml.h:533 Form/form_ca.xml.h:665
 msgid "PollSub"
-msgstr ""
+msgstr "PollSub"
 
 #: Form/form_ca.xml.h:460 Form/form_ca.xml.h:671 Form/form_ca.xml.h:804
 msgid "House"
-msgstr ""
+msgstr "Hus"
 
 #: Form/form_ca.xml.h:461 Form/form_ca.xml.h:672
 msgid "1. Dwelling house"
-msgstr ""
+msgstr "1. Boliger"
 
 #: Form/form_ca.xml.h:463 Form/form_ca.xml.h:674
 msgid "2. Family or household"
-msgstr ""
+msgstr "2. Familier eller husholdning"
 
 #: Form/form_ca.xml.h:465 Form/form_ca.xml.h:676
 msgid "3. Name of each person in family"
-msgstr ""
+msgstr "3. Navn på hver person i familien"
 
 #: Form/form_ca.xml.h:467 Form/form_ca.xml.h:631 Form/form_ca.xml.h:768
 msgid "4. Sex"
-msgstr ""
+msgstr "4. Køn"
 
 #: Form/form_ca.xml.h:468
 msgid "Colour"
-msgstr ""
+msgstr "Farve"
 
 #: Form/form_ca.xml.h:469
 msgid "5. Colour"
-msgstr ""
+msgstr "5. Farve"
 
 #: Form/form_ca.xml.h:471 Form/form_ca.xml.h:682
 msgid "6. Relation to head of family"
-msgstr ""
+msgstr "6. Slægtskab med familieoverhovedet"
 
 #: Form/form_ca.xml.h:473 Form/form_ca.xml.h:684
 msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr ""
+msgstr "7. Ugift, gift, enke, skilt eller lovligt separerede"
 
 #: Form/form_ca.xml.h:474 Form/form_ca.xml.h:685 Form/form_ca.xml.h:773
 msgid "BirthMonth"
-msgstr ""
+msgstr "Fødselsmåned"
 
 #: Form/form_ca.xml.h:475
 msgid "8. Month and Date of Birth"
-msgstr ""
+msgstr "8. Måned og dato for fødsel"
 
 #: Form/form_ca.xml.h:476 Form/form_ca.xml.h:687
 msgid "BirthYear"
-msgstr ""
+msgstr "Fødselsår"
 
 #: Form/form_ca.xml.h:477 Form/form_ca.xml.h:688
 msgid "9. Year of birth"
-msgstr ""
+msgstr "9. År for fødsel"
 
 #: Form/form_ca.xml.h:479 Form/form_ca.xml.h:690
 msgid "10. Age at last birthday"
-msgstr ""
+msgstr "10. Alder ved sidste fødselsdag"
 
 #: Form/form_ca.xml.h:481 Form/form_ca.xml.h:692
 msgid "11. Country or place of birth"
-msgstr ""
+msgstr "11. Land eller sted for fødsel"
 
 #: Form/form_ca.xml.h:483 Form/form_ca.xml.h:694
 msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr ""
+msgstr "12. År for emigrering til Canada, hvis immigrant"
 
 #: Form/form_ca.xml.h:485 Form/form_ca.xml.h:696
 msgid "13. Year of naturalization, if formerly an alien"
-msgstr ""
+msgstr "14. År for statsborger, hvis tidligere udlænding"
 
 #: Form/form_ca.xml.h:486 Form/form_ca.xml.h:697 Form/form_ca.xml.h:779
 #: Form/form_ca.xml.h:838 Form/form_us.xml.h:904 Form/form_us.xml.h:979
@@ -10614,11 +10590,11 @@ msgstr ""
 #: Form/form_us.xml.h:2364 Form/form_us.xml.h:2437 Form/form_us.xml.h:2467
 #: Form/form_us.xml.h:2561
 msgid "Race"
-msgstr ""
+msgstr "Race"
 
 #: Form/form_ca.xml.h:487 Form/form_ca.xml.h:698
 msgid "14. Racial or tribal origin"
-msgstr ""
+msgstr "14. Race eller stammeoprindelse"
 
 #: Form/form_ca.xml.h:488 Form/form_ca.xml.h:699 Form/form_ca.xml.h:836
 #: Form/form_fr.xml.h:7 Form/form_fr.xml.h:15 Form/form_fr.xml.h:23
@@ -10630,688 +10606,691 @@ msgstr ""
 #: Form/form_gb.xml.h:226 Form/form_gb.xml.h:247 Form/form_gb.xml.h:359
 #: Form/form_gb.xml.h:382
 msgid "Nationality"
-msgstr ""
+msgstr "Nationalitet"
 
 #: Form/form_ca.xml.h:489 Form/form_ca.xml.h:700
 msgid "15. Nationality"
-msgstr ""
+msgstr "15. Nationalitet"
 
 #: Form/form_ca.xml.h:491 Form/form_ca.xml.h:702
 msgid "16. Religion"
-msgstr ""
+msgstr "16. Trosretning"
 
 #: Form/form_ca.xml.h:493
 msgid "17. Profession, occupation, trade or means of living of each person"
-msgstr ""
+msgstr "17. Profession eller beskæftigelse for hver person"
 
 #: Form/form_ca.xml.h:494
 msgid "OwnMeans"
-msgstr ""
+msgstr "EgneMidler"
 
 #: Form/form_ca.xml.h:495
 msgid "18. Living on own means"
-msgstr ""
+msgstr "18. Lever af opsparing"
 
 #: Form/form_ca.xml.h:497 Form/form_ca.xml.h:708
 msgid "19. Employer"
-msgstr ""
+msgstr "19. Arbejdsgiver"
 
 #: Form/form_ca.xml.h:499 Form/form_ca.xml.h:710
 msgid "20. Employee"
-msgstr ""
+msgstr "20. Ansat"
 
 #: Form/form_ca.xml.h:500 Form/form_ca.xml.h:711
 msgid "SelfEmployed"
-msgstr ""
+msgstr "Selvstændig"
 
 #: Form/form_ca.xml.h:501 Form/form_ca.xml.h:712
 msgid "21. Working on own account"
-msgstr ""
+msgstr "21. Selvstændig"
 
 #: Form/form_ca.xml.h:502 Form/form_ca.xml.h:713
 msgid "WhereEmployed"
-msgstr ""
+msgstr "HvorAnsat"
 
 #: Form/form_ca.xml.h:503
 msgid "22. Working at trade in factory or in home"
-msgstr ""
+msgstr "22. Arbejder i handel i fabrik eller hjemme"
 
 #: Form/form_ca.xml.h:504
 msgid "MonthsFactory"
-msgstr ""
+msgstr "MånedsFabrik"
 
 #: Form/form_ca.xml.h:505
 msgid "23. Months employed at trade in factory"
-msgstr ""
+msgstr "23. Måneder ansat i handel i fabrik"
 
 #: Form/form_ca.xml.h:506
 msgid "MonthsHome"
-msgstr ""
+msgstr "MånederHjemme"
 
 #: Form/form_ca.xml.h:507
 msgid "24. Months employed at trade in home"
-msgstr ""
+msgstr "24. Måneder beskæftiget i handel hjemme"
 
 #: Form/form_ca.xml.h:508
 msgid "MonthsOther"
-msgstr ""
+msgstr "MånederAndet"
 
 #: Form/form_ca.xml.h:509
 msgid "25. Months employed in other occupation than trace in factory or home"
 msgstr ""
+"25. Måneder ansat i anden beskæftigelse end handel i fabrik eller hjemme"
 
 #: Form/form_ca.xml.h:510 Form/form_ca.xml.h:723
 msgid "EarningsOccupation"
-msgstr ""
+msgstr "LønnetBeskæftigelse"
 
 #: Form/form_ca.xml.h:511
 msgid "26. Earnings from occupation or trade"
-msgstr ""
+msgstr "26. Løn fra beskæftigelse eller handel"
 
 #: Form/form_ca.xml.h:512 Form/form_ca.xml.h:725
 msgid "EarningsOther"
-msgstr ""
+msgstr "LønAndet"
 
 #: Form/form_ca.xml.h:513
 msgid "27. Extra earning (From other than chief occupation or trade)"
-msgstr ""
+msgstr "27. Ekstra fortjeneste (Fra andet end hovedbeskæftigelse)"
 
 #: Form/form_ca.xml.h:514 Form/form_ca.xml.h:735 Form/form_ca.xml.h:783
 msgid "SchoolMonths"
-msgstr ""
+msgstr "SkoleMåneder"
 
 #: Form/form_ca.xml.h:515
 msgid "28. Months at school in 1910"
-msgstr ""
+msgstr "28. Måneder i skole i 1910"
 
 #: Form/form_ca.xml.h:516 Form/form_ca.xml.h:737 Form/form_ca.xml.h:785
 #: Form/form_us.xml.h:1414 Form/form_us.xml.h:2103 Form/form_us.xml.h:2141
 #: Form/form_us.xml.h:2179 Form/form_us.xml.h:2217
 msgid "Read"
-msgstr ""
+msgstr "Læs"
 
 #: Form/form_ca.xml.h:517
 msgid "29. Can read"
-msgstr ""
+msgstr "29. Kan læse"
 
 #: Form/form_ca.xml.h:518 Form/form_ca.xml.h:739 Form/form_ca.xml.h:787
 #: Form/form_us.xml.h:1415 Form/form_us.xml.h:2104 Form/form_us.xml.h:2142
 #: Form/form_us.xml.h:2180 Form/form_us.xml.h:2218
 msgid "Write"
-msgstr ""
+msgstr "Skrive"
 
 #: Form/form_ca.xml.h:519
 msgid "30. Can write"
-msgstr ""
+msgstr "30. Kan skrive"
 
 #: Form/form_ca.xml.h:520 Form/form_ca.xml.h:840
 msgid "SpeakEnglish"
-msgstr ""
+msgstr "TalerEngelsk"
 
 #: Form/form_ca.xml.h:521
 msgid "31. Can speak English"
-msgstr ""
+msgstr "31. Kan tale engelsk"
 
 #: Form/form_ca.xml.h:522 Form/form_ca.xml.h:842
 msgid "SpeakFrench"
-msgstr ""
+msgstr "TalerFransk"
 
 #: Form/form_ca.xml.h:523
 msgid "32. Can speak French"
-msgstr ""
+msgstr "32. Kan tale fransk"
 
 #: Form/form_ca.xml.h:525
 msgid "33. Mother tongue (If spoken)"
-msgstr ""
+msgstr "33. Modersmål (hvis talt)"
 
 #: Form/form_ca.xml.h:526 Form/form_ca.xml.h:791
 msgid "Infirmities"
-msgstr ""
+msgstr "Handikap"
 
 #: Form/form_ca.xml.h:527
 msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr ""
+msgstr "34. Handikap: a. Døv og stum; b. Blind; c. Svagt sind"
 
 #: Form/form_ca.xml.h:538
 msgid "Name from Schedule 1"
-msgstr ""
+msgstr "Navn fra skema 1"
 
 #: Form/form_ca.xml.h:540
 msgid "Line on Schedule 2"
-msgstr ""
+msgstr "Linje i skema 2"
 
 #: Form/form_ca.xml.h:541
 msgid "PageRef"
-msgstr ""
+msgstr "SideRef"
 
 #: Form/form_ca.xml.h:542
 msgid "2. Page from Schedule 1"
-msgstr ""
+msgstr "2. Side fra skema 1"
 
 #: Form/form_ca.xml.h:543
 msgid "LineRef"
-msgstr ""
+msgstr "LinjeRef"
 
 #: Form/form_ca.xml.h:544
 msgid "3. Line from Schedule 1"
-msgstr ""
+msgstr "3. Linje fra skema 1"
 
 #: Form/form_ca.xml.h:546
 msgid "3. Place of Habitation"
-msgstr ""
+msgstr "4. Hjemsted"
 
 #: Form/form_ca.xml.h:547
 msgid "HousesConst"
-msgstr ""
+msgstr "HusByg"
 
 #: Form/form_ca.xml.h:548
 msgid "4. Houses: In construction"
-msgstr ""
+msgstr "4. Huse: Bliver bygget"
 
 #: Form/form_ca.xml.h:550
 msgid "5. Houses: Vacant"
-msgstr ""
+msgstr "6. Huse: Ledige"
 
 #: Form/form_ca.xml.h:552
 msgid "6. Houses: Inhabited"
-msgstr ""
+msgstr "6. Huse: Ubeboede"
 
 #: Form/form_ca.xml.h:553 Form/form_us.xml.h:789 Form/form_us.xml.h:832
 #: Form/form_us.xml.h:891
 msgid "Institution"
-msgstr ""
+msgstr "Institution"
 
 #: Form/form_ca.xml.h:554
 msgid "7. Institution: Special or legal name"
-msgstr ""
+msgstr "7. Institution: Særligt eller lovligt navn"
 
 #: Form/form_ca.xml.h:555
 msgid "Buildings"
-msgstr ""
+msgstr "Bygninger"
 
 #: Form/form_ca.xml.h:556
 msgid "8. Institution: Number of buildings"
-msgstr ""
+msgstr "8. Institution: Antal bygninger"
 
 #: Form/form_ca.xml.h:558
 msgid "9. Number of families in house or institution"
-msgstr ""
+msgstr "10. Antal familier i hus eller institution"
 
 #: Form/form_ca.xml.h:559
 msgid "Rooms"
-msgstr ""
+msgstr "Værelser"
 
 #: Form/form_ca.xml.h:560
 msgid "10. Number of rooms in house or institution for each famiy"
-msgstr ""
+msgstr "10. Antal værelser i hus eller institution for hver familie"
 
 #: Form/form_ca.xml.h:561
 msgid "Inmates"
-msgstr ""
+msgstr "Beboere"
 
 #: Form/form_ca.xml.h:562
 msgid "11. Number of inmates in institution"
-msgstr ""
+msgstr "11. Antal beboere i institution"
 
 #: Form/form_ca.xml.h:563
 msgid "OwnedAcres"
-msgstr ""
+msgstr "EjedeAcres"
 
 #: Form/form_ca.xml.h:564
 msgid "12. Real Estate Owned: Grand total of acres"
-msgstr ""
+msgstr "12. Fast ejendom ejet: Total antal acres"
 
 #: Form/form_ca.xml.h:565
 msgid "OwnedLots"
-msgstr ""
+msgstr "EjedeMatrikler"
 
 #: Form/form_ca.xml.h:566
 msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr ""
+msgstr "13. Fast ejendom ejet: Antal by eller landsby matrikler"
 
 #: Form/form_ca.xml.h:567
 msgid "OwnedHouses"
-msgstr ""
+msgstr "EjedeHuse"
 
 #: Form/form_ca.xml.h:568
 msgid "14. Real Estate Owned: Number of dwelling houses"
-msgstr ""
+msgstr "14. Fast ejendom ejet: Antal beboelseshuse"
 
 #: Form/form_ca.xml.h:569
 msgid "OwnedStores"
-msgstr ""
+msgstr "EjedeButiker"
 
 #: Form/form_ca.xml.h:570
 msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr ""
+msgstr "15. Fast ejendom ejet: Antal butikker, lagre o.s.v."
 
 #: Form/form_ca.xml.h:571
 msgid "OwnedBars"
-msgstr ""
+msgstr "EjedeLader"
 
 #: Form/form_ca.xml.h:572
 msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
-msgstr ""
+msgstr "16. Fast ejendom ejet: Antal lader, stalde og andre udbygninger"
 
 #: Form/form_ca.xml.h:573
 msgid "OwnedSilos"
-msgstr ""
+msgstr "EjedeSiloer"
 
 #: Form/form_ca.xml.h:574
 msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr ""
+msgstr "17. Fast ejendom ejet: Antal siloer og kapacitet i rumfod"
 
 #: Form/form_ca.xml.h:575
 msgid "OwnedFactories"
-msgstr ""
+msgstr "EjedeFabrIkker"
 
 #: Form/form_ca.xml.h:576
 msgid "18. Real Estate Owned: Number of manufacturing establishments"
-msgstr ""
+msgstr "18. Fast ejendom ejet: Antal fabrikker"
 
 #: Form/form_ca.xml.h:577
 msgid "LeasedAcres"
-msgstr ""
+msgstr "LejedeAcres"
 
 #: Form/form_ca.xml.h:578
 msgid "19. Real Estate Leased: Grand total of acres"
-msgstr ""
+msgstr "19. Fast ejendom lejet: Total antal acres"
 
 #: Form/form_ca.xml.h:579
 msgid "LeasedLots"
-msgstr ""
+msgstr "LejedeMatrikler"
 
 #: Form/form_ca.xml.h:580
 msgid "20. Real Estate Leased: Number of town or village lots"
-msgstr ""
+msgstr "20. Fast ejendom lejet: Antal by eller landsby matrikler"
 
 #: Form/form_ca.xml.h:581
 msgid "LeasedHouses"
-msgstr ""
+msgstr "LejedeHuse"
 
 #: Form/form_ca.xml.h:582
 msgid "21. Real Estate Leased: Number of dwelling houses"
-msgstr ""
+msgstr "21. Fast ejendom lejet: Antal beoelseshuse"
 
 #: Form/form_ca.xml.h:583
 msgid "LeasedStores"
-msgstr ""
+msgstr "LejedForetninger"
 
 #: Form/form_ca.xml.h:584
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr ""
+msgstr "22. Fast ejendom lejet: Antal forretninger, lagre o.s.v."
 
 #: Form/form_ca.xml.h:585
 msgid "LeasedBarns"
-msgstr ""
+msgstr "LejedeLader"
 
 #: Form/form_ca.xml.h:586
 msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
-msgstr ""
+msgstr "23. Fast Ejendom lejet: Antal lader, stalde og andre udbygninger"
 
 #: Form/form_ca.xml.h:587
 msgid "LeasedSilos"
-msgstr ""
+msgstr "LejedeSiloer"
 
 #: Form/form_ca.xml.h:588
 msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
-msgstr ""
+msgstr "24. Fast ejendom lejet: Antal af siloer og deres kapacitet i kubikfod"
 
 #: Form/form_ca.xml.h:589
 msgid "LeasedFactories"
-msgstr ""
+msgstr "LejedeFabrikker"
 
 #: Form/form_ca.xml.h:590
 msgid "25. Real Estate Leased: Number of manufacturing establishments"
-msgstr ""
+msgstr "25. Fast ejendom lejet: Antal af fabrikker"
 
 #: Form/form_ca.xml.h:591
 msgid "Denomination"
-msgstr ""
+msgstr "Trossamfund"
 
 #: Form/form_ca.xml.h:592
 msgid "26. Church or place of worship: Religious denomination"
-msgstr ""
+msgstr "26. Kirke eller bedested: Religiøst trossamfund"
 
 #: Form/form_ca.xml.h:593
 msgid "Communicants"
-msgstr ""
+msgstr "Tilhængere"
 
 #: Form/form_ca.xml.h:594
 msgid "27. Church or place of worship: Number of communicants"
-msgstr ""
+msgstr "27. Kirke eller bedested: Antal tilhængere"
 
 #: Form/form_ca.xml.h:595
 msgid "Seating"
-msgstr ""
+msgstr "Pladser"
 
 #: Form/form_ca.xml.h:596
 msgid "28. Church or place of worship: Seating capacity"
-msgstr ""
+msgstr "28: Kirke eller bedested: Antal pladser"
 
 #: Form/form_ca.xml.h:597
 msgid "SSDenomination"
-msgstr ""
+msgstr "SønSkoleelev"
 
 #: Form/form_ca.xml.h:598
 msgid "29. Sunday School: Religious Denomination"
-msgstr ""
+msgstr "29. Søndagsskole: Religiøs trossretning"
 
 #: Form/form_ca.xml.h:599
 msgid "SSTeachers"
-msgstr ""
+msgstr "SønSKolLær"
 
 #: Form/form_ca.xml.h:600
 msgid "30. Sunday School: Number of officers and teachers"
-msgstr ""
+msgstr "30. Søndagsskole: Antal chefer og lærere"
 
 #: Form/form_ca.xml.h:601
 msgid "SSScholars"
-msgstr ""
+msgstr "SønSkolElev"
 
 #: Form/form_ca.xml.h:602
 msgid "31. Sunday School: Number of Scholars"
-msgstr ""
+msgstr "31. Søndagsskole: Antal elever"
 
 #: Form/form_ca.xml.h:603
 msgid "SchoolRooms"
-msgstr ""
+msgstr "KlasseVærelser"
 
 #: Form/form_ca.xml.h:604
 msgid "32. School: Number of rooms"
-msgstr ""
+msgstr "32. Skoler: Antal klasseværelser"
 
 #: Form/form_ca.xml.h:605
 msgid "SchoolTeachers"
-msgstr ""
+msgstr "SkoleLærere"
 
 #: Form/form_ca.xml.h:606
 msgid "33. School: Number of teachers"
-msgstr ""
+msgstr "33. Skole: Antal lærere"
 
 #: Form/form_ca.xml.h:607
 msgid "SchoolStudents"
-msgstr ""
+msgstr "SkoleElever"
 
 #: Form/form_ca.xml.h:608
 msgid "34. School: Number of Scholars"
-msgstr ""
+msgstr "34. Skole: Antal elever"
 
 #: Form/form_ca.xml.h:609
 msgid "DateVisit"
-msgstr ""
+msgstr "DatoBesøgt"
 
 #: Form/form_ca.xml.h:610
 msgid "35. Date of visit"
-msgstr ""
+msgstr "35. Dato for besøget"
 
 #: Form/form_ca.xml.h:611
 msgid "Reason"
-msgstr ""
+msgstr "Grund"
 
 #: Form/form_ca.xml.h:612
 msgid "36. The reason, if not enumerated on first visit"
-msgstr ""
+msgstr "36. Grund, hvis ikke talt ved første besøg"
 
 #: Form/form_ca.xml.h:613
 msgid "DateEnum"
-msgstr ""
+msgstr "DatoTalt"
 
 #: Form/form_ca.xml.h:614
 msgid "37. Date when enumerated"
-msgstr ""
+msgstr "37. Dato hvor optalt"
 
 #: Form/form_ca.xml.h:625
 msgid "1. No. of family in order of visitation"
-msgstr ""
+msgstr "1. Antal af familier i rækkefølge efter besøg"
 
 #: Form/form_ca.xml.h:627
 msgid "2. Name of each person in the family"
-msgstr ""
+msgstr "2. Navn på hver person i familien"
 
 #: Form/form_ca.xml.h:629
 msgid "3.Relation to head of family"
-msgstr ""
+msgstr "3. Slægtskab med overhovedet i familien"
 
 #: Form/form_ca.xml.h:633
 msgid "5. Married, single, widowed or divorced"
-msgstr ""
+msgstr "5. Gift, ugift, enke eller skilt"
 
 #: Form/form_ca.xml.h:635
 msgid "6. Age"
-msgstr ""
+msgstr "6. Alder"
 
 #: Form/form_ca.xml.h:637
 msgid "7. Country or place of birth"
-msgstr ""
+msgstr "7. Land eller sted ved fødselen"
 
 #: Form/form_ca.xml.h:639
 msgid "8. Year of immigration to Canada"
-msgstr ""
+msgstr "8. År for immigration til Canada"
 
 #: Form/form_ca.xml.h:640
 msgid "PostOffice"
-msgstr ""
+msgstr "PostKontor"
 
 #: Form/form_ca.xml.h:641
 msgid "9. Post office address"
-msgstr ""
+msgstr "9. Postkontor adresse"
 
 #: Form/form_ca.xml.h:642 Form/form_us.xml.h:1252
 msgid "Section"
-msgstr ""
+msgstr "Sektion"
 
 #: Form/form_ca.xml.h:643
 msgid "10. Location: Section"
-msgstr ""
+msgstr "10. Lokation: Sektion"
 
 #: Form/form_ca.xml.h:645
 msgid "11. Location: Township"
-msgstr ""
+msgstr "11. Lokation: Byområde"
 
 #: Form/form_ca.xml.h:647
 msgid "12. Location: Range"
-msgstr ""
+msgstr "12. Lokation: Område"
 
 #: Form/form_ca.xml.h:648 Form/form_ca.xml.h:816
 msgid "Meridian"
-msgstr ""
+msgstr "Meridian"
 
 #: Form/form_ca.xml.h:649
 msgid "13. Location: Meridian"
-msgstr ""
+msgstr "13. Område: Meridian"
 
 #: Form/form_ca.xml.h:651
 msgid "14. Livestock: Horses, all ages"
-msgstr ""
+msgstr "14. Husdyr: Heste, alle aldre"
 
 #: Form/form_ca.xml.h:652
 msgid "Cows"
-msgstr ""
+msgstr "Køer"
 
 #: Form/form_ca.xml.h:653
 msgid "15. Livestock: Milch cows"
-msgstr ""
+msgstr "15. Husdyr: Malkekvæg"
 
 #: Form/form_ca.xml.h:655
 msgid "16. Other horned or meat cattle, all ages"
-msgstr ""
+msgstr "16. Andre behordnede eller kødkvæg, alle aldre"
 
 #: Form/form_ca.xml.h:657
 msgid "17. Sheep and lambs, all ages"
-msgstr ""
+msgstr "17. Får og lam, alle aldre"
 
 #: Form/form_ca.xml.h:659
 msgid "18. Hogs and pigs, all ages"
-msgstr ""
+msgstr "19. Svin, alle aldre"
 
 #: Form/form_ca.xml.h:678
 msgid "4. Place of habitation"
-msgstr ""
+msgstr "4. Hjemsted"
 
 #: Form/form_ca.xml.h:680
 msgid "5. Sex"
-msgstr ""
+msgstr "5. Køn"
 
 #: Form/form_ca.xml.h:686
 msgid "8. Month of birth"
-msgstr ""
+msgstr "8. Måned for fødsel"
 
 #: Form/form_ca.xml.h:704
 msgid "16. Chief occupation or trade"
-msgstr ""
+msgstr "16. Hovedbeskæftigelse"
 
 #: Form/form_ca.xml.h:705
 msgid "OtherEmployment"
-msgstr ""
+msgstr "AndenBeskæftigelse"
 
 #: Form/form_ca.xml.h:706
 msgid "18. Employment other than at chief trade or occupation, if any"
-msgstr ""
+msgstr "18. Beskæftigelse anden end hovedbeskæftigelse, hvis nogen"
 
 #: Form/form_ca.xml.h:714
 msgid "22. State where person employed"
-msgstr ""
+msgstr "22. Stat hvor person beskæftiget"
 
 #: Form/form_ca.xml.h:715
 msgid "WeeksOccupation"
-msgstr ""
+msgstr "UgesBeskæftigelse"
 
 #: Form/form_ca.xml.h:716
 msgid "23. Weeks employed in 1910 at chief occupation or trade"
-msgstr ""
+msgstr "23. Uger beskæftiget i 1910 ved hovedbeskæftigelse"
 
 #: Form/form_ca.xml.h:717
 msgid "WeeksOther"
-msgstr ""
+msgstr "UgerAndet"
 
 #: Form/form_ca.xml.h:718
 msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
-msgstr ""
+msgstr "24. Uger beskæftiget i 1910 med andet end hovedbeskæftigelse"
 
 #: Form/form_ca.xml.h:719
 msgid "HoursOccupation"
-msgstr ""
+msgstr "TimeeBeskæftiget"
 
 #: Form/form_ca.xml.h:720
 msgid "25. Hours of working time per week at chief occupation"
-msgstr ""
+msgstr "25. Arbejdstimer pr uge med hovedbeskæftigelsen"
 
 #: Form/form_ca.xml.h:721
 msgid "HoursOther"
-msgstr ""
+msgstr "TimerAndet"
 
 #: Form/form_ca.xml.h:722
 msgid "26. Hours of working time per week at other occupation, if any"
-msgstr ""
+msgstr "26. Arbejdstimer pr uge ved anden beskæftigelse, hvis nogen"
 
 #: Form/form_ca.xml.h:724
 msgid "27. Total earnings in 1910 from chief occupation or trade"
-msgstr ""
+msgstr "27. Total indkomst i 1910 fra hovedbeskæftigelsen"
 
 #: Form/form_ca.xml.h:726
 msgid "28. Total earnings in 1910 from other than chief occupation or trade"
-msgstr ""
+msgstr "28. Total indkomst i 1910 fra andet end hovedbeskæftigelsen"
 
 #: Form/form_ca.xml.h:727
 msgid "Wages"
-msgstr ""
+msgstr "Løn"
 
 #: Form/form_ca.xml.h:728
 msgid "29. Rate of earnings per hour when employed by the hour-Cents"
-msgstr ""
+msgstr "29. Fortjeneste pr time ved timeansættelse-Cents"
 
 #: Form/form_ca.xml.h:729
 msgid "InsuranceLife"
-msgstr ""
+msgstr "Livsforsikring"
 
 #: Form/form_ca.xml.h:730
 msgid "30. Insurance: Upon life"
-msgstr ""
+msgstr "30. Forsikring: Livsforsikring"
 
 #: Form/form_ca.xml.h:731
 msgid "InsuranceAccident"
-msgstr ""
+msgstr "ForsikringsHændelse"
 
 #: Form/form_ca.xml.h:732
 msgid "31. Insurance: Against accident or illness"
-msgstr ""
+msgstr "31. Forsikring: Mod ulykke eller sygdom"
 
 #: Form/form_ca.xml.h:733
 msgid "InsuranceCost"
-msgstr ""
+msgstr "ForsikringsPris"
 
 #: Form/form_ca.xml.h:734
 msgid "32. Insurance: Cost of insurance in census year"
-msgstr ""
+msgstr "32. Forsikring: Pris for forsikring i folketællingsår"
 
 #: Form/form_ca.xml.h:736
 msgid "33. Months at school in 1910"
-msgstr ""
+msgstr "33. Måneder i skole i 1910"
 
 #: Form/form_ca.xml.h:738
 msgid "34. Can Read"
-msgstr ""
+msgstr "34. Kan læse"
 
 #: Form/form_ca.xml.h:740
 msgid "35. Can Write"
-msgstr ""
+msgstr "35. Kan skrive"
 
 #: Form/form_ca.xml.h:742
 msgid "36. Language commonly spoken"
-msgstr ""
+msgstr "36. Det almindelige talesprog"
 
 #: Form/form_ca.xml.h:743
 msgid "SchoolCost"
-msgstr ""
+msgstr "SkolePris"
 
 #: Form/form_ca.xml.h:744
 msgid ""
 "37. Cost of education in 1910 for persons over 16 years of age at College, "
 "Convent or University"
 msgstr ""
+"37. Pris for uddannelse i 1910 for personer over 16 år ved college, kloster "
+"eller universitet"
 
 #: Form/form_ca.xml.h:746
 msgid "38. Blind"
-msgstr ""
+msgstr "38. Blind"
 
 #: Form/form_ca.xml.h:748
 msgid "39. Deaf and dumb"
-msgstr ""
+msgstr "39. Døv og stum"
 
 #: Form/form_ca.xml.h:750
 msgid "40. Crazy or lunatic"
-msgstr ""
+msgstr "40. Tosset eller sindsyg"
 
 #: Form/form_ca.xml.h:751 Form/form_us.xml.h:481 Form/form_us.xml.h:1083
 #: Form/form_us.xml.h:1121 Form/form_us.xml.h:1216 Form/form_us.xml.h:1864
 #: Form/form_us.xml.h:2073
 msgid "Idiotic"
-msgstr ""
+msgstr "Idiotisk"
 
 #: Form/form_ca.xml.h:752
 msgid "41. Idiotic or silly"
-msgstr ""
+msgstr "41. Idiot eller dum"
 
 #: Form/form_ca.xml.h:761
 msgid "1. House"
-msgstr ""
+msgstr "1. Hus"
 
 #: Form/form_ca.xml.h:762
 msgid "Dwelling house"
-msgstr ""
+msgstr "Beboelseshus"
 
 #: Form/form_ca.xml.h:763
 msgid "2. Family"
-msgstr ""
+msgstr "2. Familie"
 
 #: Form/form_ca.xml.h:764
 msgid "Family or household"
-msgstr ""
+msgstr "Familie eller hushold"
 
 #: Form/form_ca.xml.h:765
 msgid "3. Name"
-msgstr ""
+msgstr "3. Navn"
 
 #: Form/form_ca.xml.h:766
 msgid "Name of each person in family"
@@ -18635,7 +18614,7 @@ msgstr "Leder for slægtsskab mellem\n"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (Probanden) og\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
@@ -20743,7 +20722,7 @@ msgstr "Vis avatarer"
 
 #: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
-msgstr "Fremhæv fokuspersonsn"
+msgstr "Fremhæv Probanden"
 
 #: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
@@ -20783,7 +20762,7 @@ msgstr "Person tema"
 
 #: GraphView/graphview.py:817
 msgid "Path color to home person"
-msgstr "Stifarve til fokusperson"
+msgstr "Stifarve til probanden"
 
 #: GraphView/graphview.py:821
 msgid "Font:"
@@ -21059,7 +21038,7 @@ msgstr "Tilføj nye forældre"
 
 #: GraphView/graphview.py:4051
 msgid "Show path to home person"
-msgstr "Hvis stien til fokusperon"
+msgstr "Vis stien til probanden"
 
 #: GraphView/graphview.py:4057 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364
@@ -21321,10 +21300,8 @@ msgid "Set as Active person"
 msgstr "Vælg som aktive person"
 
 #: SearchGramplet/SearchGramplet.py:920
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Set as Home person"
-msgstr "Sæt som fokusperson"
+msgstr "Vælg som Proband"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
