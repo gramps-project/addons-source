@@ -9,7 +9,7 @@ register(
     gramplet_title=_("GrampsChat"),
     status=STABLE,
     audience=DEVELOPER,
-    version="0.0.1",
+    version = '0.0.2',
     gramps_target_version="6.0",
     fname="GrampsChat.py",
     help_url="Gramplets#GUI_Interface",
