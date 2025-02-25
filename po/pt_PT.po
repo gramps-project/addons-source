@@ -5614,8 +5614,10 @@ msgid "S. DNA"
 msgstr "ADN p."
 
 #: DNAMatches/dnamatches.py:153
-msgid "S. Leg."
-msgstr "Seg. p."
+#, fuzzy
+#| msgid "L. Seg"
+msgid "S. Seg."
+msgstr "Seg. m."
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
@@ -21069,6 +21071,82 @@ msgstr "Impossível abrir URL: "
 msgid "Double click row to follow link"
 msgstr ""
 
+#: SearchGramplet/SearchGramplet.gpr.py:10
+#, fuzzy
+#| msgid "Gramplet to get places from the GOV database"
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet para obter locais da base de dados GOV"
+
+#: SearchGramplet/SearchGramplet.py:104
+#, fuzzy
+#| msgid "Source type"
+msgid "Sort by object type"
+msgstr "Tipo de fonte"
+
+#: SearchGramplet/SearchGramplet.py:138
+#, fuzzy
+#| msgid "Person to search for"
+msgid "Menu to set search objects"
+msgstr "Indivíduo a procurar"
+
+#: SearchGramplet/SearchGramplet.py:140
+#, fuzzy
+#| msgid "Select tags for person"
+msgid "Select objects to search"
+msgstr "Seleccionar etiquetas para o indivíduo"
+
+#: SearchGramplet/SearchGramplet.py:154
+#, fuzzy
+#| msgid "SVG tree configuration"
+msgid "SearchGramplet configuration menu"
+msgstr "Configuração da árvore SVG"
+
+#: SearchGramplet/SearchGramplet.py:261
+#, fuzzy
+#| msgid ""
+#| "No\n"
+#| "Matches"
+msgid "No matches..."
+msgstr ""
+"Sem\n"
+"resultados"
+
+#: SearchGramplet/SearchGramplet.py:353
+#, fuzzy
+#| msgid "Internet type filter"
+msgid "Start type to search"
+msgstr "Tipo de filtro Internet"
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, fuzzy, python-format
+#| msgid "Birthdays"
+msgid "Birth: %s"
+msgstr "Aniversários"
+
+#: SearchGramplet/SearchGramplet.py:747
+#, fuzzy, python-format
+#| msgid "Death act:"
+msgid "Death: %s"
+msgstr "Acto de nascimento:"
+
+#: SearchGramplet/SearchGramplet.py:918
+#, fuzzy
+#| msgid "Set as active person"
+msgid "Set as Active person"
+msgstr "Definir como indivíduo activo"
+
+#: SearchGramplet/SearchGramplet.py:920
+#, fuzzy
+#| msgid "Set as home person"
+msgid "Set as Home person"
+msgstr "Definir como indivíduo inicial"
+
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
 msgid "Gramps Web Sync"
@@ -22614,6 +22692,9 @@ msgstr ""
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
 msgstr "Mostrar ajuda"
+
+#~ msgid "S. Leg."
+#~ msgstr "Seg. p."
 
 #~ msgid "Enter GOV-id:"
 #~ msgstr "Insira a GOV-id:"

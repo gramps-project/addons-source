@@ -5542,7 +5542,7 @@ msgid "S. DNA"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-msgid "S. Leg."
+msgid "S. Seg."
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
@@ -21292,6 +21292,73 @@ msgstr ""
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
 msgstr ""
+
+#: SearchGramplet/SearchGramplet.gpr.py:10
+msgid "Gramplet for search objects in database."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:104
+#, fuzzy
+#| msgid "Sources Index"
+msgid "Sort by object type"
+msgstr "Források jegyzéke"
+
+#: SearchGramplet/SearchGramplet.py:138
+#, fuzzy
+#| msgid "Person to search for"
+msgid "Menu to set search objects"
+msgstr "Keresendő személy"
+
+#: SearchGramplet/SearchGramplet.py:140
+#, fuzzy
+#| msgid "Used for person"
+msgid "Select objects to search"
+msgstr "Személynél használt"
+
+#: SearchGramplet/SearchGramplet.py:154
+#, fuzzy
+#| msgid "SVG tree configuration"
+msgid "SearchGramplet configuration menu"
+msgstr "SVG fa beállítás"
+
+#: SearchGramplet/SearchGramplet.py:261
+#, fuzzy
+#| msgid "No matching surname."
+msgid "No matches..."
+msgstr "Nem található megfelelő vezetéknév."
+
+#: SearchGramplet/SearchGramplet.py:353
+msgid "Start type to search"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, python-format
+msgid "Birth: %s"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:747
+#, fuzzy, python-format
+#| msgid "Media Path Update"
+msgid "Death: %s"
+msgstr "Média útvonal frissítés"
+
+#: SearchGramplet/SearchGramplet.py:918
+#, fuzzy
+#| msgid "Used for person"
+msgid "Set as Active person"
+msgstr "Személynél használt"
+
+#: SearchGramplet/SearchGramplet.py:920
+#, fuzzy
+#| msgid "Used for person"
+msgid "Set as Home person"
+msgstr "Személynél használt"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210

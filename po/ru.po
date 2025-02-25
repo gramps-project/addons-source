@@ -5693,8 +5693,10 @@ msgid "S. DNA"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-msgid "S. Leg."
-msgstr ""
+#, fuzzy
+#| msgid "8. Sex"
+msgid "S. Seg."
+msgstr "8. Пол"
 
 #: DNAMatches/dnamatches.py:153
 #, fuzzy
@@ -21593,6 +21595,86 @@ msgstr "Не удалось скопировать \"%s\""
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
 msgstr ""
+
+#: SearchGramplet/SearchGramplet.gpr.py:10
+#, fuzzy
+#| msgid "Gramplet to get places from the GOV database"
+msgid "Gramplet for search objects in database."
+msgstr "Грамлет для получения местоположений из базы данных GOV"
+
+#: SearchGramplet/SearchGramplet.py:104
+#, fuzzy
+#| msgid "Source type"
+msgid "Sort by object type"
+msgstr "Тип источника"
+
+#: SearchGramplet/SearchGramplet.py:138
+#, fuzzy
+#| msgid "Person to search for"
+msgid "Menu to set search objects"
+msgstr "Поиск лица"
+
+#: SearchGramplet/SearchGramplet.py:140
+#, fuzzy
+#| msgid "Select tags for person"
+msgid "Select objects to search"
+msgstr "Выбрать метки для лица"
+
+#: SearchGramplet/SearchGramplet.py:154
+#, fuzzy
+#| msgid "SVG tree configuration"
+msgid "SearchGramplet configuration menu"
+msgstr "SVG - натройка древа"
+
+#: SearchGramplet/SearchGramplet.py:261
+#, fuzzy
+#| msgid ""
+#| "No\n"
+#| "Matches"
+msgid "No matches..."
+msgstr ""
+"Нет\n"
+"Совпадений"
+
+#: SearchGramplet/SearchGramplet.py:353
+#, fuzzy
+#| msgid "Can't determine type of import"
+msgid "Start type to search"
+msgstr "Не удалось определить тип импорта"
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, fuzzy, python-format
+#| msgid "BirthPlace"
+msgid "Birth: %s"
+msgstr "Место рождения"
+
+#: SearchGramplet/SearchGramplet.py:747
+#, fuzzy, python-format
+#| msgid ""
+#| "Death\n"
+#| "date:"
+msgid "Death: %s"
+msgstr ""
+"Дата\n"
+"смерти:"
+
+#: SearchGramplet/SearchGramplet.py:918
+#, fuzzy
+#| msgid "Set as active person"
+msgid "Set as Active person"
+msgstr "Установить активное лицо"
+
+#: SearchGramplet/SearchGramplet.py:920
+#, fuzzy
+#| msgid "Set as home person"
+msgid "Set as Home person"
+msgstr "Сделать базовым лицом"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210

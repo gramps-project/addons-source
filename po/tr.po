@@ -5272,7 +5272,7 @@ msgid "S. DNA"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-msgid "S. Leg."
+msgid "S. Seg."
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
@@ -20460,6 +20460,58 @@ msgstr ""
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.gpr.py:10
+msgid "Gramplet for search objects in database."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:104
+msgid "Sort by object type"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:138
+msgid "Menu to set search objects"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:140
+msgid "Select objects to search"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:154
+msgid "SearchGramplet configuration menu"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:261
+msgid "No matches..."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:353
+msgid "Start type to search"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, python-format
+msgid "Birth: %s"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:747
+#, python-format
+msgid "Death: %s"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:918
+msgid "Set as Active person"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:920
+msgid "Set as Home person"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117

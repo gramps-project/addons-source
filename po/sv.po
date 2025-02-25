@@ -5543,7 +5543,7 @@ msgid "S. DNA"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-msgid "S. Leg."
+msgid "S. Seg."
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
@@ -6780,7 +6780,8 @@ msgstr "48.21\"E, -18.2412 eller -18:9:48.21)"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr "VARNING!   Du är på väg att helt ta bort Exif-metadata från denna bild."
+msgstr ""
+"VARNING!   Du är på väg att helt ta bort Exif-metadata från denna bild."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
@@ -21788,6 +21789,82 @@ msgstr "Kan inte kopiera \"%s\""
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
 msgstr ""
+
+#: SearchGramplet/SearchGramplet.gpr.py:10
+#, fuzzy
+#| msgid "Gramplet to get places from the GOV database"
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet för att hämta platser från GOV-databasen"
+
+#: SearchGramplet/SearchGramplet.py:104
+#, fuzzy
+#| msgid "Source type"
+msgid "Sort by object type"
+msgstr "Typ av källa"
+
+#: SearchGramplet/SearchGramplet.py:138
+#, fuzzy
+#| msgid "Person to search for"
+msgid "Menu to set search objects"
+msgstr "Person att söka efter"
+
+#: SearchGramplet/SearchGramplet.py:140
+#, fuzzy
+#| msgid "Set as home person"
+msgid "Select objects to search"
+msgstr "Ställ in som huvudperson"
+
+#: SearchGramplet/SearchGramplet.py:154
+#, fuzzy
+#| msgid "SVG tree configuration"
+msgid "SearchGramplet configuration menu"
+msgstr "SVG-trädkonfiguration"
+
+#: SearchGramplet/SearchGramplet.py:261
+#, fuzzy
+#| msgid ""
+#| "No\n"
+#| "Matches"
+msgid "No matches..."
+msgstr ""
+"Inga\n"
+"Matchningar"
+
+#: SearchGramplet/SearchGramplet.py:353
+#, fuzzy
+#| msgid "Internet type filter"
+msgid "Start type to search"
+msgstr "Internettypsfilter"
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, fuzzy, python-format
+#| msgid "Birthdays"
+msgid "Birth: %s"
+msgstr "Födelsedagar"
+
+#: SearchGramplet/SearchGramplet.py:747
+#, fuzzy, python-format
+#| msgid "Death act:"
+msgid "Death: %s"
+msgstr "Dödsfallshandling:"
+
+#: SearchGramplet/SearchGramplet.py:918
+#, fuzzy
+#| msgid "Set as active person"
+msgid "Set as Active person"
+msgstr "Ställ in som aktiv person"
+
+#: SearchGramplet/SearchGramplet.py:920
+#, fuzzy
+#| msgid "Set as home person"
+msgid "Set as Home person"
+msgstr "Ställ in som huvudperson"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210

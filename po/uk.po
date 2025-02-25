@@ -5888,7 +5888,7 @@ msgid "S. DNA"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-msgid "S. Leg."
+msgid "S. Seg."
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
@@ -21972,6 +21972,82 @@ msgstr "Не вдається відкрити URL: "
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
 msgstr "Двічі клацніть на рядок, щоб перейти за посиланням"
+
+#: SearchGramplet/SearchGramplet.gpr.py:10
+#, fuzzy
+#| msgid "Also apply search by all database."
+msgid "Gramplet for search objects in database."
+msgstr "Також застосувати пошук по всій базі даних."
+
+#: SearchGramplet/SearchGramplet.py:104
+#, fuzzy
+#| msgid "Sources Index"
+msgid "Sort by object type"
+msgstr "Індекс джерел"
+
+#: SearchGramplet/SearchGramplet.py:138
+#, fuzzy
+#| msgid "Person to search for"
+msgid "Menu to set search objects"
+msgstr "Шукати особу"
+
+#: SearchGramplet/SearchGramplet.py:140
+#, fuzzy
+#| msgid "Select tags for person"
+msgid "Select objects to search"
+msgstr "Вибрати теги для особи"
+
+#: SearchGramplet/SearchGramplet.py:154
+#, fuzzy
+#| msgid "SVG tree configuration"
+msgid "SearchGramplet configuration menu"
+msgstr "Конфігурація дерева SVG"
+
+#: SearchGramplet/SearchGramplet.py:261
+#, fuzzy
+#| msgid ""
+#| "No\n"
+#| "Matches"
+msgid "No matches..."
+msgstr ""
+"Немає\n"
+"Співпадінь"
+
+#: SearchGramplet/SearchGramplet.py:353
+#, fuzzy
+#| msgid "Can't determine type of import"
+msgid "Start type to search"
+msgstr "Не вдалося визначити тип імпорту"
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, fuzzy, python-format
+#| msgid "BirthPlace"
+msgid "Birth: %s"
+msgstr "Місце народження"
+
+#: SearchGramplet/SearchGramplet.py:747
+#, fuzzy, python-format
+#| msgid "Media Path Update"
+msgid "Death: %s"
+msgstr "Оновлення шляху до медіа"
+
+#: SearchGramplet/SearchGramplet.py:918
+#, fuzzy
+#| msgid "Set as active person"
+msgid "Set as Active person"
+msgstr "Встановити як активну особу"
+
+#: SearchGramplet/SearchGramplet.py:920
+#, fuzzy
+#| msgid "Set as home person"
+msgid "Set as Home person"
+msgstr "Встановити як домашню особу"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
