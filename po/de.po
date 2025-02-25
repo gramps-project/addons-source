@@ -17,13 +17,14 @@
 # nautilusx <translate@disroot.org>, 2021.
 # Andreas Abraham <andreas.abraham@gmx.de>, 2021.
 # RiseT <twilite505-4bf24909@yahoo.com>, 2022.
+# Christoph Eder <christoph.eder@phsalzburg.at>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 04:52+0000\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"PO-Revision-Date: 2025-02-25 18:31+0000\n"
+"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -1218,7 +1219,7 @@ msgstr "Entspricht Quellen mit Werten, die die gewählten Parameter enthalten"
 
 #: FilterRules/multipleparents.py:42
 msgid "People with multiple parent records"
-msgstr ""
+msgstr "Personen mit mehrfachen Elterneinträgen"
 
 #: FilterRules/multipleparents.py:43
 msgid "Matches people who have more than one set of parents"
@@ -1369,11 +1370,11 @@ msgstr "Alter:"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
-msgstr "Quellen und Fundstellenbericht"
+msgstr "Quellen- und Fundstellenbericht"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
-msgstr "Bietet einen Quelle und einen Fundstellenbericht mit Notizen"
+msgstr "Bietet einen Quellen- und Fundstellenbericht mit Notizen an"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
@@ -2295,7 +2296,7 @@ msgstr "Überprüfen"
 #: MediaVerify/MediaVerify.py:107
 msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
-"Überprüfe Medienpfade und berichte fehlende, doppelte und zusätzliche Dateien"
+"Überprüfe Medienpfade und melde fehlende, doppelte und zusätzliche Dateien"
 
 #: MediaVerify/MediaVerify.py:110
 msgid "Export"
@@ -2328,7 +2329,7 @@ msgstr "Ergebnisse in eine Textdatei exportieren"
 #: MediaVerify/MediaVerify.py:218
 #, python-format
 msgid "Error when writing the report: %s"
-msgstr "Fehler beim schreiben des Bericht: %s"
+msgstr "Fehler beim Schreiben des Berichts: %s"
 
 #: MediaVerify/MediaVerify.py:259
 msgid "Generating media hashes"
@@ -2548,7 +2549,7 @@ msgstr ""
 
 #: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
-msgstr "Datenbankunterschiede Bericht"
+msgstr "Datenbankunterschiede-Bericht"
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
@@ -2628,7 +2629,7 @@ msgstr "VorfahrenFüllung"
 
 #: AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
-msgstr "Bericht zum Füllstand des Baumes"
+msgstr "Bericht über die Befüllung des Baumes"
 
 #: AncestorFill/AncestorFill.py:189
 #, python-format
@@ -5837,8 +5838,7 @@ msgstr "%d. %s"
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1345
 msgid "Select filter to restrict people that appear in the report"
-msgstr ""
-"Wählen den Filter aus, um Personen einzuschränken, die im Bericht vorkommen"
+msgstr "Wählen Filter aus, um Personen einzuschränken, die im Bericht vorkommen"
 
 #: DescendantBooks/DescendantBookReport.py:585
 msgid "The style used for the table of contents header."
@@ -5977,7 +5977,7 @@ msgstr "Namensindex aufnehmen"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1487
 msgid "Whether to include the index of Names at the end of the report."
-msgstr "Ob ein Namensindex am Ende des Berichts aufgenommen wird."
+msgstr "Ob ein Namensregister am Ende des Berichts aufgenommen wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1491
 msgid "Include index of Dates"
@@ -5985,7 +5985,7 @@ msgstr "Datenindex aufnehmen"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1492
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr "Ob ein Datenindex am Ende des Berichts aufgenommen wird."
+msgstr "Ob ein Datumsregister am Ende des Berichts aufgenommen wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1496
 msgid "Include index of Places"
@@ -5993,7 +5993,7 @@ msgstr "Ortsindex aufnehmen"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Whether to include the index of Places at the end of the report."
-msgstr "Ob ein Ortsindex am Ende des Berichts aufgenommen wird."
+msgstr "Ob ein Ortsregister am Ende des Berichts aufgenommen wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1501
 msgid "Include the 'Report appearances' section with each person"
@@ -6065,8 +6065,8 @@ msgstr "Nachkommenbuch"
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
-"Erstellt basierend auf einer angegebenen Abfrage einen oder mehrere "
-"Nachkommenberichte."
+"Erstellt einen oder mehrere Nachkommenberichte basierend auf einer "
+"mitgelieferten Abfrage."
 
 #: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
@@ -19835,40 +19835,32 @@ msgid "Failed writing "
 msgstr "Fehlgeschlagenes Schreiben "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
-#, fuzzy
-#| msgid "Year of immigration to the United States"
 msgid "Year of Birth of Center Person"
-msgstr "Jahr der Einwanderung in die Vereinigten Staaten"
+msgstr "Geburtsjahr der Hauptperson"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Destination directory"
-msgstr "Ungültiges Zielverzeichnis"
+msgstr "Zielverzeichnis"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Path for generated files"
 msgstr "Pfad für generierte Dateien"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:868
-#, fuzzy
-#| msgid "Default View"
 msgid "Default Age"
-msgstr "Standardansicht"
+msgstr "Standardalter"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:878
-#, fuzzy
-#| msgid "What war"
 msgid "What to show"
-msgstr "Welcher Krieg"
+msgstr "Was gezeigt werden soll"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Show GrampsID"
@@ -19879,26 +19871,20 @@ msgid "Show GrampsID on top right of the box"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
-#, fuzzy
-#| msgid "Maximize"
 msgid "Optimize"
-msgstr "Maximieren"
+msgstr "Optimieren"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
-#, fuzzy
-#| msgid "Male Background Color"
 msgid "Male Box Color"
-msgstr "Hintergrundfarbe männlich"
+msgstr "Männliche Feldfarbe"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:894
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Box background color for male person"
-msgstr "Pfadfarbe zur Hauptperson"
+msgstr "Hintergrundfarbe für männliches Personenfeld"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:897
 msgid "Female Box Color"
@@ -19909,30 +19895,24 @@ msgid "Box background color for female person"
 msgstr "Box-Hintergrundfarbe für weibliche Person"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:904
-#, fuzzy
-#| msgid "Number of children"
 msgid "Number of pixel per year"
-msgstr "Kinderzahl"
+msgstr "Anzahl der Pixel pro Jahr"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:910
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Offset X Coordinate"
-msgstr "Ortskoordinaten"
+msgstr "Abweichung X-Koordinate"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:917
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Offset Y Coordinate"
-msgstr "Ortskoordinaten"
+msgstr "Abweichung Y-Koordinate"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
@@ -19947,10 +19927,8 @@ msgid "Width of the box of a person in pixel"
 msgstr "Breite der Box einer Person in Pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:925
-#, fuzzy
-#| msgid "Horizontal spacing between generations"
 msgid "Horizontal space between boxes in pixel"
-msgstr "Horizontaler Abstand zwischen den Generationen"
+msgstr "Horizontaler Abstand zwischen Feldern in Pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
@@ -19982,6 +19960,8 @@ msgid ""
 "Creates an HTML webpage that uses JavaScript to show a pedigree block "
 "diagram arranged vertically by birth date"
 msgstr ""
+"Erstellt eine HTML-Webseite, die mithilfe von JavaScript ein vertikal nach "
+"Geburtsdatum angeordnetes Ahnentafel-Blockdiagramm anzeigt"
 
 #: USWebConnectPack/USWebPack.py:35
 msgid "US Google"
@@ -20205,7 +20185,7 @@ msgstr "Erstellt einen Bericht mit Bildern, Bilddaten und Notizen."
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "Referenzdatum oder -datumsbereich"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "a valid Gramps date"
@@ -20213,7 +20193,7 @@ msgstr "ein gültiges Gramps-Datum"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "Datum oder Abweichung ±J oder ±J, M, T"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -20221,6 +20201,10 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. ein Datum\n"
+"2. eine positive oder negative Zahl, die Jahre repräsentiert\n"
+"3. eine positive oder negative Liste von Werten, die Jahre, Monate und Tage "
+"repräsentiert"
 
 #: DateCalculator/DateCalculator.py:96
 msgid "Result"
@@ -20232,11 +20216,11 @@ msgstr "Berechnen"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "Fehler: ungültiges Datum im ersten Ausdruck"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "Fehler: ungültige Abweichung im zweiten Ausdruck"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
@@ -20246,15 +20230,16 @@ msgstr "Fehler: Mindestens ein Ausdruck muss ein Datum sein"
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
 msgstr ""
+"Gib einen Ausdruck in den Eintragsfeldern oben ein und klicke auf Berechnen."
 
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
-msgstr "Datums Rechner"
+msgstr "Datumsrechner"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
-msgstr ""
+msgstr "Datumsberechnungen durchführen"
 
 #: FixCoords/fixcoords.gpr.py:31
 #, fuzzy
@@ -20266,6 +20251,8 @@ msgstr "Ortskoordinaten"
 msgid ""
 "Tool to correct the place coordinates for extra spaces or comma characters."
 msgstr ""
+"Werkzeug zur Korrektur der Ortskoordinaten um zusätzliche Leer- oder "
+"Kommazeichen."
 
 #: FixCoords/fixcoords.py:53
 #, fuzzy
@@ -20275,11 +20262,11 @@ msgstr "Ortskoordinaten"
 
 #: FixCoords/fixcoords.py:58
 msgid "Looking for possible coords with \",\" characters"
-msgstr ""
+msgstr "Suchen nach möglichen Koordinaten mit \",\"-Zeichen"
 
 #: FixCoords/fixcoords.py:60
 msgid "Fix coords"
-msgstr ""
+msgstr "Koordinaten reparieren"
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
@@ -20540,13 +20527,15 @@ msgstr "PostgreSQL Datenbank"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Erweitert"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"Ein erweiterter Fundestellenformatierer, der einen Aufbewahrungsort und eine "
+"Signatur zu den Standardfunktionen hinzufügt."
 
 #: libwebconnect/libwebconnect.gpr.py:11
 msgid "Library for web site collections"
@@ -20858,7 +20847,7 @@ msgstr "Unbekannte Zeitrichtung"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr ""
+msgstr "Begrenze Anzahl der angezeigten Personen (verwende 0 für unbegrenzt)"
 
 #: GraphView/graphview.py:812
 msgid "Person theme"
@@ -20880,11 +20869,11 @@ msgstr "Textstil"
 
 #: GraphView/graphview.py:841
 msgid "PNG files"
-msgstr ""
+msgstr "PNG-Dateien"
 
 #: GraphView/graphview.py:846
 msgid "Male avatar:"
-msgstr ""
+msgstr "Männlicher Avatar:"
 
 #: GraphView/graphview.py:847
 msgid "Choose male avatar"
@@ -20916,7 +20905,7 @@ msgstr "Anderer Avatar:"
 
 #: GraphView/graphview.py:886
 msgid "Choose Other avatar"
-msgstr ""
+msgstr "Wähle Avatar für Andere aus"
 
 #: GraphView/graphview.py:900
 #, fuzzy
@@ -21021,13 +21010,16 @@ msgstr "Abstände"
 
 #: GraphView/graphview.py:1193
 msgid "All connected"
-msgstr ""
+msgstr "Alle verbundene"
 
 #: GraphView/graphview.py:1195
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
 msgstr ""
+"Zeigt alle verbundene Personen an, begrenzt durch Generationsbeschränkungen."
+"\n"
+"Arbeitet langsam, daher solltest du keine hohen Generationswerte einstellen."
 
 #: GraphView/graphview.py:1337
 msgid "Add active person"
@@ -21346,7 +21338,7 @@ msgstr "Kann URL nicht öffnen: "
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
-msgstr ""
+msgstr "Auf Zeile doppelklicken um Link zu folgen"
 
 #: SearchGramplet/SearchGramplet.gpr.py:10
 msgid "Gramplet for search objects in database."
@@ -22733,8 +22725,8 @@ msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
 msgstr ""
-"Entfernt automatisch Gruppen, die kleiner als Min. Gruppengröße\n"
-"sind für Datenbanken mit mehr als 1500 Personen."
+"Entfernt Gruppen, die kleiner als Min. Gruppengröße sind.\n"
+"Automatisch für Datenbanken mit mehr als 1500 Personen."
 
 #: NetworkChart/NetworkChart.py:1154
 msgid "Min Group Size"
@@ -22846,7 +22838,7 @@ msgstr "Gelben Hintergrund zu Hauptperson hinzufügen."
 
 #: NetworkChart/NetworkChart.py:1234
 msgid "Use database handle instead of GrampID id in URLs."
-msgstr "Verwende Datenbankhandle anstelle von Gramps ID in URLs."
+msgstr "Verwende Datenbankhandle anstelle von Gramps-ID in URLs."
 
 #: NetworkChart/NetworkChart.py:1236
 msgid ""
@@ -22854,11 +22846,11 @@ msgid ""
 "The handle should never change whereas gramps ids can."
 msgstr ""
 "Verwendet Datenbankhandle anstelle der Gramps-ID für URLs. \n"
-"Der Handle sollte sich niemals ändern, während Gramps IDs es können."
+"Der Handle sollte sich niemals ändern, während Gramps-IDs es können."
 
 #: NetworkChart/NetworkChart.py:1240
 msgid "Confirm overwrite file."
-msgstr "Datei überschreiben bestätigen."
+msgstr "Überschreiben der Datei bestätigen."
 
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
