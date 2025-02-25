@@ -215,6 +215,21 @@ def do_tar(inc_files):
     tar.close()
 
 
+def strip_header(po_file):
+    """
+    Strip the header off a `po` file and return its contents.
+    """
+    header = True
+    out_file = ""
+    with open(po_file, "r") as in_file:
+        for line in in_file:
+            if not header:
+                out_file += line
+            if line == "\n":
+                header = False
+    return out_file
+
+
 if command == "clean":
     if len(sys.argv) == 3:
         for addon in [
@@ -985,22 +1000,15 @@ elif command == "extract-po":
             po = os.path.join(po_dir, f"{lang}-local.po")
             pot = os.path.join(po_dir, "template.pot")
             if os.path.exists(po) and os.path.exists(f"po/{lang}.po"):
-                args = ["msgcomm", f"po/{lang}.po", pot]
-                args.extend(["--more-than", "1"])
+                old_file = strip_header(po)
+                args = ["msgmerge", f"po/{lang}.po", pot]
+                args.extend(["--for-msgfmt"])
                 args.extend(["-o", po])
                 call(args)
+                new_file = strip_header(po)
 
-                args = ["git", "diff", "-U0", po]
-                empty_diff = True
-                with Popen(args, stdout=PIPE, text=True) as proc:
-                    for line in proc.stdout.readlines():
-                        if (line.startswith(("-", "+")) and
-                            not line.startswith(("---", "+++"))):
-                            if (not line.startswith(("+#", "-#")) and
-                                "PO-Revision-Date" not in line):
-                                empty_diff = False
-
-                if empty_diff:
+                # Restore files that only have changes to the header.
+                if old_file == new_file:
                     args = ["git", "restore", po]
                     call(args)
 
