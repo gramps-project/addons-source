@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 12:29+0000\n"
+"PO-Revision-Date: 2025-02-25 10:15+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -1750,7 +1750,6 @@ msgid ""
 "Do you want to overwrite it?"
 msgstr ""
 "Bestemmingsbestand %s bestaat al.\n"
-"\n"
 "Wilt u dit overschrijven?"
 
 #: D3Charts/DescendantIndentedTree.py:1446
@@ -2509,7 +2508,7 @@ msgid ""
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
 "\n"
-" ⛔ Geen enkele persoon is gekozen als de centrale \"Thuispersoon\".\n"
+" ⛔ Geen enkele persoon is gekozen als de centrale \"Centrale persoon\".\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -2526,10 +2525,10 @@ msgstr ""
 " 👣 Vervolgstappen:\n"
 "  •  Selecteer in de zijbalk Navigatie het pictogram Personen weergeven.\n"
 "  •  Selecteer iemand om deze de \"Actieve Persoon\" te maken.\n"
-"  •  Kies \"Instellen als Thuispersoon\" vanuit het menu Bewerken of vanuit "
-"het (rechter muisklik) contextmenu.\n"
+"  •  Kies \"Instellen als Centrele persoon\" vanuit het menu Bewerken of "
+"vanuit het (rechter muisklik) contextmenu.\n"
 "\n"
-" Dit stelt de persoon in als de belangrijkste \"Thuispersoon\"."
+" Dit stelt de persoon in als de belangrijkste \"Centrale persoon\"."
 
 #: Betawhatsnext/Betawhatsnext.py:268
 msgid "Double-click color text to edit details"
@@ -3962,9 +3961,9 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
-"U moet een 'beginpersoon' instellen om naar toe te gaan. Selecteer de "
-"weergave Personen, selecteer de gewenste persoon als 'Beginpersoon' en "
-"bevestig uw keuze via het menu Bewerken -> Beginpersoon instellen."
+"U moet een 'Centrale persoon' instellen om naar toe te gaan. Selecteer de "
+"weergave Personen, selecteer de gewenste persoon als 'Centrale persoon' en "
+"bevestig uw keuze via het menu Bewerken -> Centrale persoon instellen."
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
 msgid "Order"
@@ -4896,11 +4895,11 @@ msgstr ""
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
-msgstr "Toon relaties en afstanden met de thuispersoon"
+msgstr "Toon relaties en afstanden met de centrale persoon"
 
 #: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
-msgstr "Geeft relationele informatie weer met de thuispersoon"
+msgstr "Geeft relationele informatie weer met de centrale persoon"
 
 #: RelID/relation_tab.py:75
 msgid "Relation and distances with root"
@@ -5026,7 +5025,7 @@ msgstr "Bewerk labels"
 
 #: QuiltView/QuiltView.py:1500
 msgid "Set as home person"
-msgstr "Instellen als beginpersoon"
+msgstr "Instellen als centrale persoon"
 
 #: QuiltView/QuiltView.py:1656
 #, python-format
@@ -5693,10 +5692,8 @@ msgid "S. DNA"
 msgstr "S. DNA"
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "L. Seg"
 msgid "S. Seg."
-msgstr "L. Seg"
+msgstr "S. Seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
@@ -18848,7 +18845,7 @@ msgstr "Gezocht naar de relatie tussen\n"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr "  <b>%s</b> (beginpersoon) en\n"
+msgstr "  <b>%s</b> (centrale persoon) en\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
@@ -20946,7 +20943,7 @@ msgstr "Toon avatars"
 
 #: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
-msgstr "Markeer de beginpersoon"
+msgstr "Markeer de centrale persoon"
 
 #: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
@@ -20986,7 +20983,7 @@ msgstr "Persoonsthema"
 
 #: GraphView/graphview.py:817
 msgid "Path color to home person"
-msgstr "Padkleur naar beginpersoon"
+msgstr "Padkleur naar centrale persoon"
 
 #: GraphView/graphview.py:821
 msgid "Font:"
@@ -21257,7 +21254,7 @@ msgstr "Voeg ouders toe"
 
 #: GraphView/graphview.py:4051
 msgid "Show path to home person"
-msgstr "Toon pad naar beginpersoon"
+msgstr "Toon pad naar centrale persoon"
 
 #: GraphView/graphview.py:4057 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364
@@ -21449,80 +21446,58 @@ msgid "Double click row to follow link"
 msgstr "Dubbelklik op regel om de link te volgen"
 
 #: SearchGramplet/SearchGramplet.gpr.py:10
-#, fuzzy
-#| msgid "Gramplet to get places from the GOV database"
 msgid "Gramplet for search objects in database."
-msgstr "Gramplet om locaties uit de GOV-database te halen"
+msgstr "Gramplet voor zoekobjecten in database."
 
 #: SearchGramplet/SearchGramplet.py:104
-#, fuzzy
-#| msgid "Source type"
 msgid "Sort by object type"
-msgstr "Brontype"
+msgstr "Sorteren op objecttype"
 
 #: SearchGramplet/SearchGramplet.py:138
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Menu to set search objects"
-msgstr "Persoon om naar te zoeken"
+msgstr "Menu om zoekobjecten in te stellen"
 
 #: SearchGramplet/SearchGramplet.py:140
-#, fuzzy
-#| msgid "Select tags for person"
 msgid "Select objects to search"
-msgstr "Selecteer labels voor persoon"
+msgstr "Selecteer objecten om te zoeken"
 
 #: SearchGramplet/SearchGramplet.py:154
-#, fuzzy
-#| msgid "SVG tree configuration"
 msgid "SearchGramplet configuration menu"
-msgstr "SVG-boomconfiguratie"
+msgstr "SearchGramplet configuratiemenu"
 
 #: SearchGramplet/SearchGramplet.py:261
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "No matches..."
-msgstr ""
-"Geen\n"
-"overeenkomsten"
+msgstr "Geen overeenkomsten…"
 
 #: SearchGramplet/SearchGramplet.py:353
-#, fuzzy
-#| msgid "Internet type filter"
 msgid "Start type to search"
-msgstr "Internettype filter"
+msgstr "Begin met typen om te zoeken"
 
 #: SearchGramplet/SearchGramplet.py:389
 msgid ""
 "Start type to search objects.\n"
 "To show all objects enter only «*» symbol."
 msgstr ""
+"Begin met typen om objecten te zoeken.\n"
+"Om alle objecten weer te geven, voer alleen het symbool «*» in."
 
 #: SearchGramplet/SearchGramplet.py:743
-#, fuzzy, python-format
-#| msgid "Birthdays"
+#, python-format
 msgid "Birth: %s"
-msgstr "Verjaardagen"
+msgstr "Geboorte: %s"
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
-#| msgid "Death act:"
+#, python-format
 msgid "Death: %s"
-msgstr "Overlijdensmoment:"
+msgstr "Overlijden: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
-#, fuzzy
-#| msgid "Set as active person"
 msgid "Set as Active person"
-msgstr "Stel in als actieve persoon"
+msgstr "Instellen als actieve persoon"
 
 #: SearchGramplet/SearchGramplet.py:920
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Set as Home person"
-msgstr "Instellen als beginpersoon"
+msgstr "Instellen als centrale persoon"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
@@ -21565,7 +21540,7 @@ msgstr "%s fouten opgetreden tijdens het downloaden."
 #: GrampsWebSync/grampswebsync.py:340
 #, python-format
 msgid "Successfully uploaded %s media files."
-msgstr "%s mediabestanden met success geüploadet"
+msgstr "%s mediabestanden met succes geüploadet."
 
 #: GrampsWebSync/grampswebsync.py:343
 #, python-format
@@ -21725,7 +21700,7 @@ msgstr "Wijzigingen toepassen op externe database…"
 
 #: GrampsWebSync/grampswebsync.py:926
 msgid "No changes to apply to remote database."
-msgstr "Geen wijzigingen toe te passen op externe database…"
+msgstr "Geen wijzigingen nodig op externe database."
 
 #: GrampsWebSync/grampswebsync.py:933
 msgid "Successfully applied changes to local database."
