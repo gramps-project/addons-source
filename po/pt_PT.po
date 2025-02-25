@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 12:29+0000\n"
+"PO-Revision-Date: 2025-02-25 07:39+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -5614,10 +5614,8 @@ msgid "S. DNA"
 msgstr "ADN p."
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "L. Seg"
 msgid "S. Seg."
-msgstr "Seg. m."
+msgstr "Seg. p."
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
@@ -7506,6 +7504,7 @@ msgstr "Espaço entre linhas de texto"
 #: DescendantsLines/DescendantsLines.py:1768
 msgid "The space to add between a line and the next in a person text block."
 msgstr ""
+"O espaço a adicionar entre uma linha e a seguinte num bloco de texto pessoal."
 
 #: DescendantsLines/DescendantsLines.py:1773
 msgid "Header and Footer"
@@ -7513,7 +7512,7 @@ msgstr "Cabeçalho e rodapé"
 
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"
-msgstr ""
+msgstr "O texto que será escrito no cabeçalho do documento"
 
 #: DescendantsLines/DescendantsLines.py:1781
 msgid "The text that will be written in the footer of the document"
@@ -7521,13 +7520,13 @@ msgstr "O texto a escrever no rodapé do documento"
 
 #: DescendantsLines/DescendantsLines.py:1785
 msgid "Title and footer coefficient"
-msgstr ""
+msgstr "Coeficiente de título e rodapé"
 
 #: DescendantsLines/DescendantsLines.py:1786
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
-msgstr ""
+msgstr "Um número que multiplica o tamanho base do texto no título e no rodapé"
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"
@@ -8064,6 +8063,8 @@ msgid ""
 "Upload media files to S3 (or compatible) object-based storage via the "
 "command line."
 msgstr ""
+"Enviar ficheiros multimédia para o armazenamento baseado em objectos S3 (ou "
+"compatível) através da linha de comandos."
 
 #: TMGimporter/importtmg.py:89
 #, python-format
@@ -8386,7 +8387,7 @@ msgstr "Ferramenta de relações familiares"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
-msgstr ""
+msgstr "Editar em massa o tipo de relação familiar para um grupo de famílias."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
 msgid "All Families"
@@ -8397,6 +8398,8 @@ msgid ""
 "Choose the set of families to process.\n"
 "Create custom filters if empty."
 msgstr ""
+"Escolha o conjunto de famílias a processar.\n"
+"Crie filtros personalizados, se estiverem vazios."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:70
 msgid "Relationship Type"
@@ -8407,6 +8410,8 @@ msgid ""
 "Choose the new family relationship type.\n"
 "Custom relationship types aren't supported."
 msgstr ""
+"Escolha o novo tipo de relação familiar.\n"
+"Não são suportados tipos de relação personalizados."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
 msgid "Process relationships..."
@@ -8478,11 +8483,13 @@ msgid ""
 "LifeLineChartView dependencies are missing. It is not possible to use this "
 "plugin without them."
 msgstr ""
+"As dependências do gráfico de cronologia estão em falta. Não é possível "
+"utilizar esta extensão sem elas."
 
 #: LifeLineChartView/lifelinechart.py:1183
 #, python-brace-format
 msgid "cursor position at {date}"
-msgstr ""
+msgstr "posição do cursor em {date}"
 
 #: LifeLineChartView/lifelinechart.py:2591
 msgid "Hide person"
@@ -8502,7 +8509,7 @@ msgstr "Ocultar irmãos"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
-msgstr ""
+msgstr "Mostrar ascendentes acima de "
 
 #: LifeLineChartView/lifelinechartview.py:386
 #: LifeLineChartView/lifelinechartview.py:883
@@ -8520,7 +8527,7 @@ msgstr "Cronologia em gráfico"
 #: LifeLineChartView/lifelinechartview.py:519
 #: LifeLineChartView/lifelinechartview.py:520
 msgid "Ctrl"
-msgstr ""
+msgstr "Ctrl"
 
 #: LifeLineChartView/lifelinechartview.py:510
 #: LifeLineChartView/lifelinechartview.py:520
@@ -8537,15 +8544,15 @@ msgstr "Melhor ajuste"
 
 #: LifeLineChartView/lifelinechartview.py:541
 msgid "Rebuild data cache"
-msgstr ""
+msgstr "Reconstruir memória de dados"
 
 #: LifeLineChartView/lifelinechartview.py:548
 msgid "Revert the placement and person selection"
-msgstr ""
+msgstr "Reverter a posição e selecção de indivíduo"
 
 #: LifeLineChartView/lifelinechartview.py:564
 msgid "Open Life Line Chart help"
-msgstr ""
+msgstr "Abrir a ajuda do gráfico de cronologia"
 
 #: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
@@ -8579,7 +8586,7 @@ msgstr "Mapa de ascendentes da cronologia"
 #: LifeLineChartView/lifelinechartview.gpr.py:26
 #: LifeLineChartView/lifelinechartview.gpr.py:44
 msgid "Persons and their relation in a time based chart"
-msgstr ""
+msgstr "Indivíduos e suas relações num gráfico baseado no tempo"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:42
 msgid "Life Line Descendant Chart"
@@ -8587,23 +8594,23 @@ msgstr "Mapa de descendentes da cronologia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
-msgstr ""
+msgstr "Distorcer a forma do gráfico"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:11
 msgid "The overall shape of the chart can be warped."
-msgstr ""
+msgstr "A forma geral do gráfico pode ser distorcida."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:12
 msgid "Normal grid shape"
-msgstr ""
+msgstr "Forma normal da grelha"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:13
 msgid "Sine shape"
-msgstr ""
+msgstr "Forma sinusoidal"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:14
 msgid "Triangular shape"
-msgstr ""
+msgstr "Forma triangular"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:15
 msgid "Show photos"
@@ -8611,7 +8618,7 @@ msgstr "Mostrar fotografias"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:16
 msgid "Photos of the individual are shown."
-msgstr ""
+msgstr "Imagens do indivíduo são mostradas."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:17
 msgid "Photo size"
@@ -8622,6 +8629,8 @@ msgid ""
 "Photos which are shown are fitted into a square of this extent. The size is "
 "given relative to the line thickness."
 msgstr ""
+"As imagens mostradas são ajustadas a um quadrado deste tamanho. O tamanho é "
+"dado em relação à espessura da linha."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
 msgid "Total height"
@@ -8640,20 +8649,24 @@ msgid ""
 "The line thickness of an individual is given relatively to the horizontal "
 "step size."
 msgstr ""
+"A espessura da linha de um indivíduo é dada em relação ao tamanho horizontal "
+"do passo."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:23
 msgid "Horizontal step size"
-msgstr ""
+msgstr "Tamanho horizontal do passo"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:24
 msgid ""
 "This is the distance from one line to another. This value is also used for "
 "scaling of other items."
 msgstr ""
+"Esta é a distância de uma linha a outra. Este valor também é utilizado para "
+"o escalonamento de outros itens."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
 msgid "Show birth label"
-msgstr ""
+msgstr "Mostrar rótulo de nascimento"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
 msgid "Activate the birth label."
@@ -8661,11 +8674,11 @@ msgstr "Activar rótulo de nascimento."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 msgid "Birth label along path"
-msgstr ""
+msgstr "Rótulo de nascimento ao longo do caminho"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:28
 msgid "The birth label is aligned to the individual line."
-msgstr ""
+msgstr "O rótulo de nascimento é alinhado à linha individual."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 msgid "Birth label rotation"
@@ -8674,34 +8687,39 @@ msgstr "Rotação do rótulo de nascimento"
 #: LifeLineChartView/_dummy_translation_string_po.py:31
 msgid "The birth label is written in a text frame rotated by this value."
 msgstr ""
+"O rótulo de nascimento é escrito numa caixa de texto rodada neste valor."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:33
 msgid "Horizontal offset of birth label"
-msgstr ""
+msgstr "Desvio horizontal do rótulo de nascimento"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:34
 msgid ""
 "The birth label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
+"O rótulo de nascimento é deslocado horizontalmente por este valor, que é "
+"dado relativamente ao tamanho da letra."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:36
 msgid "Vertical offset of birth label"
-msgstr ""
+msgstr "Desvio vertical do rótulo de nascimento"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:37
 msgid ""
 "The birth label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
+"O rótulo de nascimento é deslocado verticalmente por este valor, que é dado "
+"relativamente ao tamanho da letra."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:39
 msgid "Wrap words in birth label"
-msgstr ""
+msgstr "Ajustar palavras no rótulo de nascimento"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:40
 msgid "The birth label content is wrapped where possible."
-msgstr ""
+msgstr "O conteúdo do rótulo de nascimento é ajustado sempre que possível."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:42
 msgid "Birth label anchor"
@@ -8709,7 +8727,7 @@ msgstr "Âncora do rótulo de nascimento"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:43
 msgid "Text alignment of the birth label."
-msgstr ""
+msgstr "Alinhamento do texto do rótulo de nascimento."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:45
 #: LifeLineChartView/_dummy_translation_string_po.py:65
@@ -8730,35 +8748,39 @@ msgstr "Rotação do rótulo de óbito"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
-msgstr ""
+msgstr "O rótulo de óbito é escrito numa caixa de texto rodada por este valor."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
-msgstr ""
+msgstr "Desvio horizontal do rótulo de óbito"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:54
 msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
+"O rótulo de óbito é deslocado horizontalmente por este valor, que é dado "
+"relativamente ao tamanho da letra."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:56
 msgid "Vertical offset of death label"
-msgstr ""
+msgstr "Desvio vertical do rótulo de óbito"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:57
 msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
+"O rótulo de óbito é deslocado verticalmente por este valor, que é dado "
+"relativamente ao tamanho da letra."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:59
 msgid "Wrap words in death label"
-msgstr ""
+msgstr "Ajustar palavras no rótulo de óbito"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:60
 msgid "The death label content is wrapped where possible."
-msgstr ""
+msgstr "O conteúdo do rótulo de óbito é ajustado sempre que possível."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:62
 msgid "Death label anchor"
@@ -8766,7 +8788,7 @@ msgstr "Âncora do rótulo de óbito"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:63
 msgid "Text alignment of the death label."
-msgstr ""
+msgstr "Alinhamento do texto do rótulo de óbito."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:68
 msgid "Show marriage label"
@@ -8774,7 +8796,7 @@ msgstr "Mostrar rótulo de casamento"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:69
 msgid "Activate the marriage label."
-msgstr ""
+msgstr "Activar o rótulo de casamento."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:70
 msgid "Fade individual color"
@@ -8782,7 +8804,7 @@ msgstr "Esbater cor individual"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:71
 msgid "The color of the individuals is faded to black with increasing age."
-msgstr ""
+msgstr "A cor dos indivíduos tende para preto com o aumento da idade."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
 msgid "Font name"
@@ -8798,7 +8820,7 @@ msgstr "Tamanho relativo da letra"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:76
 msgid "The font size is given relatively to the line thickness."
-msgstr ""
+msgstr "O tamanho da letra é dado em relação à espessura da linha."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
 msgid "Family shape"
@@ -8806,33 +8828,35 @@ msgstr "Forma da família"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:79
 msgid "The shape of the families can be varied."
-msgstr ""
+msgstr "A forma das famílias pode ser mudada."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:80
 msgid "Rectangular"
-msgstr ""
+msgstr "Rectangular"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:81
 msgid "Softer"
-msgstr ""
+msgstr "Mais suave"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:82
 msgid "Upper year minimum margin"
-msgstr ""
+msgstr "Margem mínima do ano superior"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:83
 msgid ""
 "The upper bound of the chart is extended by at least this number of years."
 msgstr ""
+"O limite superior do gráfico é estendido por pelo menos este número de anos."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:84
 msgid "Lower year minimum margin"
-msgstr ""
+msgstr "Margem mínima do ano inferior"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:85
 msgid ""
 "The lower bound of the chart is extended by at least this number of years."
 msgstr ""
+"O limite inferior do gráfico é estendido por pelo menos este número de anos."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:86
 msgid "Visualize connections"
@@ -8843,14 +8867,17 @@ msgid ""
 "Visualize the connections between families and individuals. This is for "
 "debugging purposes."
 msgstr ""
+"Visualize as ligações entre famílias e indivíduos. Isto é para efeitos de "
+"depuração."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:88
 msgid "Visualize ambiguous placement"
-msgstr ""
+msgstr "Ver posicionamento ambíguo"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:89
 msgid "Visualize automatically detected errors in the placement algorithm."
 msgstr ""
+"Visualize os erros detectados automaticamente no algoritmo de posicionamento."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:90
 msgid "Coloring of individuals"
@@ -8858,11 +8885,11 @@ msgstr "Cor de indivíduos"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:91
 msgid "There are different ways to determine the color of an individual."
-msgstr ""
+msgstr "Há diferentes formas de determinar a cor de um indivíduo."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:92
 msgid "Unique"
-msgstr ""
+msgstr "Única"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:93
 msgid "Based on surname"
@@ -8870,27 +8897,27 @@ msgstr "Baseado em apelido"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:94
 msgid "Flip vertically"
-msgstr ""
+msgstr "Inverter na vertical"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:95
 msgid "If active, the chart is flipped vertically."
-msgstr ""
+msgstr "Se activa, o gráfico é invertido verticalmente."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:96
 msgid "Line weighting"
-msgstr ""
+msgstr "Peso da linha"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
-msgstr ""
+msgstr "A espessura da linha pode ser configurada."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:98
 msgid "none"
-msgstr ""
+msgstr "nada"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
-msgstr ""
+msgstr "Mostrar colapso dos costados"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:100
 msgid ""
@@ -8898,22 +8925,27 @@ msgid ""
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
+"Devido ao colapso dos costados, um indivíduo pode aparecer várias vezes num "
+"gráfico de ascendentes simples. Se esta opção estiver activa, cada indivíduo "
+"só aparece uma vez."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
 "if this number of generations has been reached, the algorithm doesn't go any "
 "deeper"
-msgstr ""
+msgstr "se este número de gerações for atingido, o algoritmo não avança mais"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:103
 msgid "Fathers have the same color"
-msgstr ""
+msgstr "Pais têm a mesma cor"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:104
 msgid ""
 "Starting from the root person, each father of an added individual has the "
 "same color as that individual."
 msgstr ""
+"A partir do indivíduo raiz, cada pai de um indivíduo adicionado tem a mesma "
+"cor que esse indivíduo."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
 msgid "Maximum number of compression steps"
@@ -8921,7 +8953,7 @@ msgstr "Número máximo de passos de compressão"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:106
 msgid "Debugging of the compression algorithm. Abort after x steps."
-msgstr ""
+msgstr "Depuração do algoritmo de compressão. Abortar após x passos."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:107
 msgid "Maximum number of flipping steps"
@@ -8929,11 +8961,11 @@ msgstr "Número máximo de passos de inversão"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:108
 msgid "Debugging of the flipping algorithm. Abort after x steps."
-msgstr ""
+msgstr "Depuração do algoritmo de inversão. Abortar após x passos."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:109
 msgid "Compress the chart horizontally"
-msgstr ""
+msgstr "Comprimir gráfico na horizontal"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:110
 msgid ""
@@ -8941,10 +8973,13 @@ msgid ""
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
 msgstr ""
+"Por defeito, cada indivíduo tem uma ranhura horizontal única. Isto pode ser "
+"ineficiente com muitas gerações. Este algoritmo permite que várias pessoas "
+"partilhem uma ranhura horizontal, se não se sobrepuserem."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
-msgstr ""
+msgstr "Inverter as famílias para reduzir ligações horizontais"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:112
 msgid ""
@@ -8952,6 +8987,10 @@ msgid ""
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
 msgstr ""
+"Troca a posição da mãe e do pai numa família, para reduzir o número total de "
+"ligações cruzadas horizontais em gráficos maiores. Isto acontece quando um "
+"indivíduo é mostrado em mais do que uma família ou é causado pelo colapso "
+"dos costados."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -8967,7 +9006,7 @@ msgstr "Número de descendentes"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:116
 msgid "Very soft"
-msgstr ""
+msgstr "Muito suave"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:117
 msgid "General chart layout"
@@ -8975,15 +9014,15 @@ msgstr "Disposição geral do gráfico"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:118
 msgid "There are different layouts for descendant charts."
-msgstr ""
+msgstr "Há várias disposições para gráficos de descendentes."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:119
 msgid "Parents enclose children"
-msgstr ""
+msgstr "Pais envolvem filhos"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:120
 msgid "Cactus"
-msgstr ""
+msgstr "Cacto"
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
@@ -9062,7 +9101,7 @@ msgstr "Tipo de filtro Internet"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
-msgstr ""
+msgstr "Correio electrónico"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
@@ -9080,6 +9119,8 @@ msgid ""
 "Traverses the Person list for all Associations that are bi-directional and "
 "adds any which are missing to the Associated Person."
 msgstr ""
+"Percorre a lista de indivíduos para todas as associações bidireccionais e "
+"adiciona todas as que estão em falta ao indivíduo associado."
 
 #: SyncAssociations/syncAssociations.py:124
 #, python-format
@@ -9088,15 +9129,16 @@ msgstr "Adicionar associação recíproca a %s"
 
 #: SyncAssociations/syncAssociations.py:131
 msgid "{} Reciprocal associations created"
-msgstr ""
+msgstr "{} associações recíprocas criadas"
 
 #: SyncAssociations/syncAssociations.py:135
 msgid "All reciprocal associations exist, none created"
-msgstr ""
+msgstr "Todas as associações recíprocas existem, não se criou nenhuma"
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
 msgstr ""
+"Não há associações existentes, não são necessárias associações recíprocas"
 
 #: Form/editform.py:181
 #, python-format
@@ -9150,900 +9192,904 @@ msgstr "Horário"
 #: Form/form_ca.xml.h:2 Form/form_ca.xml.h:93 Form/form_ca.xml.h:211
 #: Form/form_ca.xml.h:798
 msgid "EnumDistrict"
-msgstr ""
+msgstr "EnumDistrict"
 
 #: Form/form_ca.xml.h:3 Form/form_ca.xml.h:94 Form/form_ca.xml.h:212
 #: Form/form_ca.xml.h:644 Form/form_ca.xml.h:812 Form/form_us.xml.h:1250
 #: Form/form_us.xml.h:1311 Form/form_us.xml.h:2041
 msgid "Township"
-msgstr ""
+msgstr "Município"
 
 #: Form/form_ca.xml.h:5
 msgid "Comprising"
-msgstr ""
+msgstr "Compreendendo"
 
 #: Form/form_ca.xml.h:6
 msgid "OfTheSaid"
-msgstr ""
+msgstr "OfTheSaid"
 
 #: Form/form_ca.xml.h:7 Form/form_ca.xml.h:293 Form/form_ca.xml.h:347
 #: Form/form_ca.xml.h:396 Form/form_ca.xml.h:457 Form/form_ca.xml.h:536
 #: Form/form_ca.xml.h:621 Form/form_ca.xml.h:668 Form/form_ca.xml.h:758
 #: Form/form_ca.xml.h:801
 msgid "Enumerator"
-msgstr ""
+msgstr "Recenseador"
 
 #: Form/form_ca.xml.h:11 Form/form_ca.xml.h:217
 msgid "1. Names of Inmates"
-msgstr ""
+msgstr "1. Nomes de prisioneiros"
 
 #: Form/form_ca.xml.h:13
 msgid "2. Profession, Trade or Occupation"
-msgstr ""
+msgstr "2. Profissão ou negócio"
 
 #: Form/form_ca.xml.h:14 Form/form_ca.xml.h:220 Form/form_ca.xml.h:316
 #: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
 #: Form/form_ca.xml.h:636 Form/form_ca.xml.h:691 Form/form_ca.xml.h:777
 #: Form/form_ca.xml.h:828
 msgid "BirthPlace"
-msgstr ""
+msgstr "Local de nascimento"
 
 #: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
 msgid "3. Place of Birth"
-msgstr ""
+msgstr "3. Local de nascimento"
 
 #: Form/form_ca.xml.h:17
 msgid "4. Religion"
-msgstr ""
+msgstr "4. Religião"
 
 #: Form/form_ca.xml.h:19
 msgid "5. Residence if Outside of Limits"
-msgstr ""
+msgstr "5. Residência, se fora dos limites"
 
 #: Form/form_ca.xml.h:21
 msgid "6. Age at Next Birthday"
-msgstr ""
+msgstr "6. Idade no próximo aniversário"
 
 #: Form/form_ca.xml.h:22 Form/form_ca.xml.h:230
 msgid "SexMale"
-msgstr ""
+msgstr "SexoMasculino"
 
 #: Form/form_ca.xml.h:23
 msgid "7. Sex: Male"
-msgstr ""
+msgstr "7. Sexo: masculino"
 
 #: Form/form_ca.xml.h:24
 msgid "SexFemale"
-msgstr ""
+msgstr "SexoFeminino"
 
 #: Form/form_ca.xml.h:25
 msgid "8. Sex: Female"
-msgstr ""
+msgstr "8. Sexo: feminino"
 
 #: Form/form_ca.xml.h:26 Form/form_ca.xml.h:234 Form/form_ca.xml.h:324
 #: Form/form_ca.xml.h:378 Form/form_ca.xml.h:415 Form/form_ca.xml.h:472
 #: Form/form_ca.xml.h:632 Form/form_ca.xml.h:683 Form/form_ca.xml.h:771
 #: Form/form_ca.xml.h:824
 msgid "MaritalStatus"
-msgstr ""
+msgstr "SituaçãoConjugal"
 
 #: Form/form_ca.xml.h:27
 msgid "9. Married or Single"
-msgstr ""
+msgstr "Casado ou solteiro"
 
 #: Form/form_ca.xml.h:28 Form/form_ca.xml.h:240
 msgid "Coloured"
-msgstr ""
+msgstr "Colorido"
 
 #: Form/form_ca.xml.h:29
 msgid "10. Coloured Persons - Negroes"
-msgstr ""
+msgstr "10. Indivíduos de cor - origem africana"
 
 #: Form/form_ca.xml.h:30
 msgid "Indians"
-msgstr ""
+msgstr "Indianos"
 
 #: Form/form_ca.xml.h:31
 msgid "11. Indians, if any"
-msgstr ""
+msgstr "11. Indianos, se existirem"
 
 #: Form/form_ca.xml.h:32
 msgid "ResidentsMale"
-msgstr ""
+msgstr "ResidentesHomens"
 
 #: Form/form_ca.xml.h:33
 msgid "12. Residents: Members, Male"
-msgstr ""
+msgstr "12. Residentes: membros, masculino"
 
 #: Form/form_ca.xml.h:34
 msgid "ResidentsFemale"
-msgstr ""
+msgstr "ResidentesMulheres"
 
 #: Form/form_ca.xml.h:35
 msgid "13. Residents: Members, Female"
-msgstr ""
+msgstr "13. Residentes: membros, feminino"
 
 #: Form/form_ca.xml.h:36
 msgid "NonMembersMale"
-msgstr ""
+msgstr "NãoMembrosMasculino"
 
 #: Form/form_ca.xml.h:37
 msgid "14. Residents: Not Members: Male"
-msgstr ""
+msgstr "14. Residentes: não membros, homem"
 
 #: Form/form_ca.xml.h:38
 msgid "NonMembersFemale"
-msgstr ""
+msgstr "NãoMembrosFeminino"
 
 #: Form/form_ca.xml.h:39
 msgid "15. Residents: Not Members: Female"
-msgstr ""
+msgstr "15. Residentes: não membros, mulher"
 
 #: Form/form_ca.xml.h:40
 msgid "AbsentMembersMale"
-msgstr ""
+msgstr "MembrosAusentesMasculino"
 
 #: Form/form_ca.xml.h:41
 msgid "16. Members Absent: Male"
-msgstr ""
+msgstr "16. Membros ausentes: masculino"
 
 #: Form/form_ca.xml.h:42
 msgid "AbsentMembersFemale"
-msgstr ""
+msgstr "MembrosAusentesFeminino"
 
 #: Form/form_ca.xml.h:43
 msgid "17. Members Absent: Female"
-msgstr ""
+msgstr "17. Membros ausentes, feminino"
 
 #: Form/form_ca.xml.h:44
 msgid "DeafDumbMale"
-msgstr ""
+msgstr "SurdoAtrasadoMasculino"
 
 #: Form/form_ca.xml.h:45
 msgid "18. Deaf and Dumb: Male"
-msgstr ""
+msgstr "18. Surdos e atrasados: masculino"
 
 #: Form/form_ca.xml.h:46
 msgid "DeafDumbFemale"
-msgstr ""
+msgstr "SurdoAtrasadoFeminino"
 
 #: Form/form_ca.xml.h:47
 msgid "19. Deaf and Dumb: Female"
-msgstr ""
+msgstr "19. Surdos e atrasados: feminino"
 
 #: Form/form_ca.xml.h:48
 msgid "BlindMale"
-msgstr ""
+msgstr "CegoMasculino"
 
 #: Form/form_ca.xml.h:49
 msgid "20. Blind: Male"
-msgstr ""
+msgstr "20. Cegos: masculino"
 
 #: Form/form_ca.xml.h:50
 msgid "BlindFemale"
-msgstr ""
+msgstr "CegoFeminino"
 
 #: Form/form_ca.xml.h:51
 msgid "21. Blind: Female"
-msgstr ""
+msgstr "21. Cegos: feminino"
 
 #: Form/form_ca.xml.h:52
 msgid "LunaticMale"
-msgstr ""
+msgstr "MalucoMasculino"
 
 #: Form/form_ca.xml.h:53
 msgid "22. Lunatics: Male"
-msgstr ""
+msgstr "22. Lunáticos: masculino"
 
 #: Form/form_ca.xml.h:54
 msgid "LunaticFemale"
-msgstr ""
+msgstr "MalucoFeminino"
 
 #: Form/form_ca.xml.h:55
 msgid "23. Lunatics: Female"
-msgstr ""
+msgstr "23. Lunáticos: feminino"
 
 #: Form/form_ca.xml.h:56 Form/form_ca.xml.h:260
 msgid "ScholarMale"
-msgstr ""
+msgstr "EstudiosoMasculino"
 
 #: Form/form_ca.xml.h:57
 msgid "24. Attending School: Male"
-msgstr ""
+msgstr "24. A estudar: masculino"
 
 #: Form/form_ca.xml.h:58 Form/form_ca.xml.h:262
 msgid "ScholarFemale"
-msgstr ""
+msgstr "EstudiosoFeminino"
 
 #: Form/form_ca.xml.h:59
 msgid "25. Attending School: Female"
-msgstr ""
+msgstr "25. A estudar: feminino"
 
 #: Form/form_ca.xml.h:60
 msgid "Birth1851Male"
-msgstr ""
+msgstr "Nascimento1851Masculino"
 
 #: Form/form_ca.xml.h:61
 msgid "26. Births During the Year 1851: Male"
-msgstr ""
+msgstr "26. Nascidos em 1851: masculino"
 
 #: Form/form_ca.xml.h:62
 msgid "Birth1851Female"
-msgstr ""
+msgstr "Nascimento1851Feminino"
 
 #: Form/form_ca.xml.h:63
 msgid "27. Births During the Year 1851: Female"
-msgstr ""
+msgstr "27. Nascidos em 1851: feminino"
 
 #: Form/form_ca.xml.h:64
 msgid "Death1851Male"
-msgstr ""
+msgstr "Óbito1851Masculino"
 
 #: Form/form_ca.xml.h:65
 msgid "28. Deaths During the Year 1851: Male"
-msgstr ""
+msgstr "28. Falecidos em 1851: masculino"
 
 #: Form/form_ca.xml.h:66
 msgid "Death1851Female"
-msgstr ""
+msgstr "Óbito1851Feminino"
 
 #: Form/form_ca.xml.h:67
 msgid "29. Deaths During the Year 1851: Female"
-msgstr ""
+msgstr "29. Falecidos em 1851: feminino"
 
 #: Form/form_ca.xml.h:68 Form/form_ca.xml.h:276
 msgid "DeathAgeCause"
-msgstr ""
+msgstr "IdadeCausaÓbito"
 
 #: Form/form_ca.xml.h:69
 msgid "30. Age and Cause of Deaths"
-msgstr ""
+msgstr "30. Idade e causa de óbito"
 
 #: Form/form_ca.xml.h:70 Form/form_ca.xml.h:278
 msgid "Houses"
-msgstr ""
+msgstr "Casas"
 
 #: Form/form_ca.xml.h:71
 msgid ""
 "31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
 msgstr ""
+"31. Casas: tijolo, pedra, estrutura, madeira, lata ou outros tipos de "
+"residência"
 
 #: Form/form_ca.xml.h:72 Form/form_ca.xml.h:280
 msgid "HousesStories"
-msgstr ""
+msgstr "HistóriasCasas"
 
 #: Form/form_ca.xml.h:73
 msgid "32. Houses: No. of Stories"
-msgstr ""
+msgstr "32. Casas: n.º de histórias"
 
 #: Form/form_ca.xml.h:74 Form/form_ca.xml.h:282
 msgid "HousesFamilies"
-msgstr ""
+msgstr "CasasFamílias"
 
 #: Form/form_ca.xml.h:75
 msgid "33. No. of Families Occupying"
-msgstr ""
+msgstr "33. N.º de famílias ocupantes"
 
 #: Form/form_ca.xml.h:76 Form/form_ca.xml.h:284 Form/form_ca.xml.h:302
 #: Form/form_ca.xml.h:356 Form/form_ca.xml.h:403 Form/form_ca.xml.h:549
 msgid "HousesVacant"
-msgstr ""
+msgstr "CasasVazias"
 
 #: Form/form_ca.xml.h:77
 msgid "34. Houses: Vacant"
-msgstr ""
+msgstr "34. Casas: vazias"
 
 #: Form/form_ca.xml.h:78
 msgid "HousesBuilding"
-msgstr ""
+msgstr "CasasEdifício"
 
 #: Form/form_ca.xml.h:79
 msgid "35. Houses: Building"
-msgstr ""
+msgstr "35. Casas: edifício"
 
 #: Form/form_ca.xml.h:80
 msgid "Shops"
-msgstr ""
+msgstr "Lojas"
 
 #: Form/form_ca.xml.h:81
 msgid "36. Shops, Stores, Inns, Taverns etc."
-msgstr ""
+msgstr "36. Lojas, armazéns, pousadas, tabernas, etc."
 
 #: Form/form_ca.xml.h:82
 msgid "PublicBuildings"
-msgstr ""
+msgstr "EdifíciosPúblicos"
 
 #: Form/form_ca.xml.h:83
 msgid "37. Public Buildings"
-msgstr ""
+msgstr "37. Edifícios públicos"
 
 #: Form/form_ca.xml.h:84
 msgid "WorshipPlaces"
-msgstr ""
+msgstr "TemplosAdoração"
 
 #: Form/form_ca.xml.h:85
 msgid "38. Places of Worship"
-msgstr ""
+msgstr "38. Locais de culto"
 
 #: Form/form_ca.xml.h:86
 msgid "BuisnessInfo"
-msgstr ""
+msgstr "InformaçãoNegócio"
 
 #: Form/form_ca.xml.h:87
 msgid ""
 "39. Information on Mills, Factories etc., their cost, power, produce, etc."
 msgstr ""
+"39. Informação sobre moagens, fábricas, etc., seus custos, energia, "
+"produtos, etc."
 
 #: Form/form_ca.xml.h:88
 msgid "NumEmployees"
-msgstr ""
+msgstr "NúmEmpregados"
 
 #: Form/form_ca.xml.h:89
 msgid "40. Number of Persons Usually Employed Therein"
-msgstr ""
+msgstr "40. Número de empregados habituais"
 
 #: Form/form_ca.xml.h:91
 msgid "41. General Remarks of the Enumerator"
-msgstr ""
+msgstr "41. Observações gerais do recenseador"
 
 #: Form/form_ca.xml.h:99
 msgid "1. Name of Occupier"
-msgstr ""
+msgstr "1. Nome do ocupante"
 
 #: Form/form_ca.xml.h:100
 msgid "Concession"
-msgstr ""
+msgstr "Concessão"
 
 #: Form/form_ca.xml.h:101
 msgid "2. Concession or Range"
-msgstr ""
+msgstr "2. Concessão ou sector"
 
 #: Form/form_ca.xml.h:102
 msgid "Lot"
-msgstr ""
+msgstr "Lote"
 
 #: Form/form_ca.xml.h:103
 msgid "3. Lot or part of Lot"
-msgstr ""
+msgstr "3. Lote ou parte do lote"
 
 #: Form/form_ca.xml.h:104
 msgid "AcresHeld"
-msgstr ""
+msgstr "HectaresMetros2"
 
 #: Form/form_ca.xml.h:105
 msgid "4. Number of Acres of Land: Held by each person or family"
-msgstr ""
+msgstr "4. N.º de hectares de terra: detidos por cada membro da família"
 
 #: Form/form_ca.xml.h:106
 msgid "AcresCultivation"
-msgstr ""
+msgstr "HectaresCultivo"
 
 #: Form/form_ca.xml.h:107
 msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr ""
+msgstr "5. N.º de hectares de terra: cultivados"
 
 #: Form/form_ca.xml.h:108
 msgid "AcresCrops"
-msgstr ""
+msgstr "HectaresCulturas"
 
 #: Form/form_ca.xml.h:109
 msgid "6. Number of Acres of Land: Under Crops in 1851"
-msgstr ""
+msgstr "6. N.º de hectares de terra: sob cultivo em 1851"
 
 #: Form/form_ca.xml.h:110
 msgid "AcresPasture"
-msgstr ""
+msgstr "HectaresPastagem"
 
 #: Form/form_ca.xml.h:111
 msgid "7. Number of Acres of Land: Under Pasture in 1851"
-msgstr ""
+msgstr "7. N.º de hectares de terra: pastagens em 1851"
 
 #: Form/form_ca.xml.h:112
 msgid "AcresGardens"
-msgstr ""
+msgstr "HectaresJardins"
 
 #: Form/form_ca.xml.h:113
 msgid "8. Number of Acres of Land: Gardens or Orchards"
-msgstr ""
+msgstr "8. N.º de hectares de terra: jardins e pomares"
 
 #: Form/form_ca.xml.h:114
 msgid "AcresWood"
-msgstr ""
+msgstr "HectaresMadeira"
 
 #: Form/form_ca.xml.h:115
 msgid "9. Number of Acres of Land: Under Wood or Wild"
-msgstr ""
+msgstr "9. N.º de hectares de terra: para madeira ou bravios"
 
 #: Form/form_ca.xml.h:116
 msgid "WheatAcres"
-msgstr ""
+msgstr "HectaresTrigo"
 
 #: Form/form_ca.xml.h:117
 msgid "10. Wheat: Acres"
-msgstr ""
+msgstr "10. N.º de hectares de terra: trigo"
 
 #: Form/form_ca.xml.h:118
 msgid "WheatBsh"
-msgstr ""
+msgstr "Trigo"
 
 #: Form/form_ca.xml.h:119
 msgid "11. Wheat: Produce Bsh."
-msgstr ""
+msgstr "11. Trigo: produção"
 
 #: Form/form_ca.xml.h:120
 msgid "BarleyAcres"
-msgstr ""
+msgstr "HectaresCevada"
 
 #: Form/form_ca.xml.h:121
 msgid "12. Barley: Acres"
-msgstr ""
+msgstr "12. N.º de hectares de terra: cevada"
 
 #: Form/form_ca.xml.h:122
 msgid "BarleyBsh"
-msgstr ""
+msgstr "Cevada"
 
 #: Form/form_ca.xml.h:123
 msgid "13. Barley: Produce Bsh."
-msgstr ""
+msgstr "13. Cevada: produção"
 
 #: Form/form_ca.xml.h:124
 msgid "RyeAcres"
-msgstr ""
+msgstr "HectaresCenteio"
 
 #: Form/form_ca.xml.h:125
 msgid "14. Rye: Acres"
-msgstr ""
+msgstr "14. N.º de hectares de terra: centeio"
 
 #: Form/form_ca.xml.h:126
 msgid "RyeBsh"
-msgstr ""
+msgstr "Centeio"
 
 #: Form/form_ca.xml.h:127
 msgid "15. Rye: Produce Bsh."
-msgstr ""
+msgstr "15. Centeio: produção"
 
 #: Form/form_ca.xml.h:128
 msgid "PeasAcres"
-msgstr ""
+msgstr "HectaresErvilha"
 
 #: Form/form_ca.xml.h:129
 msgid "16. Peas: Acres"
-msgstr ""
+msgstr "16. N.º de hectares de terra: ervilha"
 
 #: Form/form_ca.xml.h:130
 msgid "PeasBush"
-msgstr ""
+msgstr "Ervilha"
 
 #: Form/form_ca.xml.h:131
 msgid "17. Peas: Produce Bsh."
-msgstr ""
+msgstr "17. Ervilha: produção"
 
 #: Form/form_ca.xml.h:132
 msgid "OatsAcres"
-msgstr ""
+msgstr "HectaresAveia"
 
 #: Form/form_ca.xml.h:133
 msgid "18. Oats: Acres"
-msgstr ""
+msgstr "18. N.º de hectares de terra: aveia"
 
 #: Form/form_ca.xml.h:134
 msgid "OatsBush"
-msgstr ""
+msgstr "Aveia"
 
 #: Form/form_ca.xml.h:135
 msgid "19. Oats: Produce Bsh."
-msgstr ""
+msgstr "19. Aveia: produção"
 
 #: Form/form_ca.xml.h:136
 msgid "BWheatAcres"
-msgstr ""
+msgstr "HectaresTrigoMourisco"
 
 #: Form/form_ca.xml.h:137
 msgid "20. B.Wheat: Acres"
-msgstr ""
+msgstr "20. N.º de hectares de terra: trigo mourisco"
 
 #: Form/form_ca.xml.h:138
 msgid "BWheatBush"
-msgstr ""
+msgstr "Trigo Mourisco"
 
 #: Form/form_ca.xml.h:139
 msgid "21. B.Wheat: Produce Bsh."
-msgstr ""
+msgstr "21. Trigo mourisco: produção"
 
 #: Form/form_ca.xml.h:140
 msgid "CornAcres"
-msgstr ""
+msgstr "HectaresMilho"
 
 #: Form/form_ca.xml.h:141
 msgid "22. Corn: Acres"
-msgstr ""
+msgstr "22. N.º de hectares de terra: milho"
 
 #: Form/form_ca.xml.h:142
 msgid "CornBush"
-msgstr ""
+msgstr "Milho"
 
 #: Form/form_ca.xml.h:143
 msgid "23. Corn: Produce Bsh."
-msgstr ""
+msgstr "23. Milho: produção"
 
 #: Form/form_ca.xml.h:144
 msgid "PotatoesAcres"
-msgstr ""
+msgstr "HectaresBatata"
 
 #: Form/form_ca.xml.h:145
 msgid "24. Potatoes: Acres"
-msgstr ""
+msgstr "24. N.º de hectares de terra: batata"
 
 #: Form/form_ca.xml.h:146
 msgid "PotatoesBush"
-msgstr ""
+msgstr "Batata"
 
 #: Form/form_ca.xml.h:147
 msgid "25. Potatoes: Produce Bsh."
-msgstr ""
+msgstr "25. Batata: produção"
 
 #: Form/form_ca.xml.h:148
 msgid "TurnipsAcres"
-msgstr ""
+msgstr "HectaresNabo"
 
 #: Form/form_ca.xml.h:149
 msgid "26. Turnips: Acres"
-msgstr ""
+msgstr "26. N.º de hectares de terra: nabo"
 
 #: Form/form_ca.xml.h:150
 msgid "TurnipsBush"
-msgstr ""
+msgstr "Nabo"
 
 #: Form/form_ca.xml.h:151
 msgid "27. Turnips: Produce Bsh."
-msgstr ""
+msgstr "27. Nabo: produção"
 
 #: Form/form_ca.xml.h:152
 msgid "CloverBush"
-msgstr ""
+msgstr "Trevo"
 
 #: Form/form_ca.xml.h:153
 msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr ""
+msgstr "28. Trevo, timóteo ou outra semente de ervas"
 
 #: Form/form_ca.xml.h:154
 msgid "CarrotsBush"
-msgstr ""
+msgstr "Cenoura"
 
 #: Form/form_ca.xml.h:155
 msgid "29. Carrots - Bsh."
-msgstr ""
+msgstr "29. Cenoura: produção"
 
 #: Form/form_ca.xml.h:156
 msgid "MangleWurtzel"
-msgstr ""
+msgstr "Beterraba"
 
 #: Form/form_ca.xml.h:157
 msgid "30. Mangle Wurtzel"
-msgstr ""
+msgstr "30. Beterraba"
 
 #: Form/form_ca.xml.h:158
 msgid "BeansBush"
-msgstr ""
+msgstr "Feijão"
 
 #: Form/form_ca.xml.h:159
 msgid "31. Beans Bush"
-msgstr ""
+msgstr "31. Feijão: produção"
 
 #: Form/form_ca.xml.h:160
 msgid "HopsLbs"
-msgstr ""
+msgstr "Lúpulo"
 
 #: Form/form_ca.xml.h:161
 msgid "32. Hops Lbs."
-msgstr ""
+msgstr "32. Lúpulo: produção"
 
 #: Form/form_ca.xml.h:162
 msgid "HayQty"
-msgstr ""
+msgstr "FenoQuantidade"
 
 #: Form/form_ca.xml.h:163
 msgid "33. Hay, Bundles or Tons"
-msgstr ""
+msgstr "33. Feno: fardos, ou toneladas"
 
 #: Form/form_ca.xml.h:164
 msgid "FlaxLbs"
-msgstr ""
+msgstr "Linho"
 
 #: Form/form_ca.xml.h:165
 msgid "34. Flax or Hemp, Lbs."
-msgstr ""
+msgstr "34. Linho ou cânhamo: produção"
 
 #: Form/form_ca.xml.h:166
 msgid "TobaccoLbs"
-msgstr ""
+msgstr "Tabaco"
 
 #: Form/form_ca.xml.h:167
 msgid "35. Tobacco Lbs."
-msgstr ""
+msgstr "35. Tabaco: produção"
 
 #: Form/form_ca.xml.h:168
 msgid "WoolLbs."
-msgstr ""
+msgstr "Lã"
 
 #: Form/form_ca.xml.h:169
 msgid "36. Wool Lbs."
-msgstr ""
+msgstr "36. Lã: produção"
 
 #: Form/form_ca.xml.h:170
 msgid "Column37"
-msgstr ""
+msgstr "Coluna37"
 
 #: Form/form_ca.xml.h:171
 msgid "37."
-msgstr ""
+msgstr "37."
 
 #: Form/form_ca.xml.h:172
 msgid "Column38"
-msgstr ""
+msgstr "Coluna38"
 
 #: Form/form_ca.xml.h:173
 msgid "38."
-msgstr ""
+msgstr "38."
 
 #: Form/form_ca.xml.h:174
 msgid "Column39"
-msgstr ""
+msgstr "Coluna39"
 
 #: Form/form_ca.xml.h:175
 msgid "39."
-msgstr ""
+msgstr "39."
 
 #: Form/form_ca.xml.h:176
 msgid "MapleSugarLbs"
-msgstr ""
+msgstr "AçucarÁcer"
 
 #: Form/form_ca.xml.h:177
 msgid "40. Maple Sugar Lbs."
-msgstr ""
+msgstr "40. Açucar de ácer: produção"
 
 #: Form/form_ca.xml.h:178
 msgid "CiderGalls"
-msgstr ""
+msgstr "Cidra"
 
 #: Form/form_ca.xml.h:179
 msgid "41. Cider Galls."
-msgstr ""
+msgstr "41. Cidra: produção"
 
 #: Form/form_ca.xml.h:180
 msgid "ClothYards"
-msgstr ""
+msgstr "Tecido"
 
 #: Form/form_ca.xml.h:181
 msgid "42. Fulled Cloth Yards"
-msgstr ""
+msgstr "42. Tecido integral: produção"
 
 #: Form/form_ca.xml.h:182
 msgid "LinnenYards"
-msgstr ""
+msgstr "Linho (tecido)"
 
 #: Form/form_ca.xml.h:183
 msgid "43. Linnen - Yds."
-msgstr ""
+msgstr "43. Linho (tecido): produção"
 
 #: Form/form_ca.xml.h:184
 msgid "FlannelYds"
-msgstr ""
+msgstr "Flanela"
 
 #: Form/form_ca.xml.h:185
 msgid "44. Flannel - Yds."
-msgstr ""
+msgstr "44. Flanela: produção"
 
 #: Form/form_ca.xml.h:186
 msgid "Bulls"
-msgstr ""
+msgstr "Touros"
 
 #: Form/form_ca.xml.h:187
 msgid "45. Bulls, Oxen or Steers"
-msgstr ""
+msgstr "45. Touros, bois ou novilhos"
 
 #: Form/form_ca.xml.h:188 Form/form_us.xml.h:288 Form/form_us.xml.h:366
 msgid "Milch Cows"
-msgstr ""
+msgstr "Vacas leiteiras"
 
 #: Form/form_ca.xml.h:189
 msgid "46. Milch Cows"
-msgstr ""
+msgstr "46. Vacas leiteiras"
 
 #: Form/form_ca.xml.h:190
 msgid "Calves"
-msgstr ""
+msgstr "Vitelos"
 
 #: Form/form_ca.xml.h:191
 msgid "47. Calves or Heifers"
-msgstr ""
+msgstr "47. Vitelos ou novilhas"
 
 #: Form/form_ca.xml.h:192 Form/form_ca.xml.h:650 Form/form_us.xml.h:286
 #: Form/form_us.xml.h:364
 msgid "Horses"
-msgstr ""
+msgstr "Cavalos"
 
 #: Form/form_ca.xml.h:193
 msgid "48. Horses of all ages"
-msgstr ""
+msgstr "48. Cavalos de qualquer idade"
 
 #: Form/form_ca.xml.h:194 Form/form_ca.xml.h:656 Form/form_us.xml.h:291
 #: Form/form_us.xml.h:369
 msgid "Sheep"
-msgstr ""
+msgstr "Ovelhas"
 
 #: Form/form_ca.xml.h:195
 msgid "49. Sheep"
-msgstr ""
+msgstr "49. Ovelhas"
 
 #: Form/form_ca.xml.h:196 Form/form_ca.xml.h:658
 msgid "Pigs"
-msgstr ""
+msgstr "Porcos"
 
 #: Form/form_ca.xml.h:197
 msgid "50. Pigs"
-msgstr ""
+msgstr "50. Porcos"
 
 #: Form/form_ca.xml.h:198
 msgid "ButterLbs"
-msgstr ""
+msgstr "Manteiga"
 
 #: Form/form_ca.xml.h:199
 msgid "51. Butter - Lbs."
-msgstr ""
+msgstr "51. Manteiga: produção"
 
 #: Form/form_ca.xml.h:200
 msgid "CheeseLbs"
-msgstr ""
+msgstr "Queijo"
 
 #: Form/form_ca.xml.h:201
 msgid "52. Cheese - Lbs."
-msgstr ""
+msgstr "52. Queijo: produção"
 
 #: Form/form_ca.xml.h:202
 msgid "Beef"
-msgstr ""
+msgstr "Carne de vaca"
 
 #: Form/form_ca.xml.h:203
 msgid "53. Beef - Barrels or Cwts."
-msgstr ""
+msgstr "53. Carne de vaca: produção"
 
 #: Form/form_ca.xml.h:204
 msgid "Pork"
-msgstr ""
+msgstr "Carne de porco"
 
 #: Form/form_ca.xml.h:205
 msgid "54. Pork - Barrels or Cwts."
-msgstr ""
+msgstr "54. Carne de porco: produção"
 
 #: Form/form_ca.xml.h:206
 msgid "Fish"
-msgstr ""
+msgstr "Peixe"
 
 #: Form/form_ca.xml.h:207
 msgid "55. Quantity of Fish Cured"
-msgstr ""
+msgstr "55. Peixe curado: produção"
 
 #: Form/form_ca.xml.h:209
 msgid "56. Remarks"
-msgstr ""
+msgstr "56. Comentários"
 
 #: Form/form_ca.xml.h:219
 msgid "2. Profession, trade or occupation"
-msgstr ""
+msgstr "2. Profissão ou negócio"
 
 #: Form/form_ca.xml.h:222
 msgid "Married1851"
-msgstr ""
+msgstr "Casados1851"
 
 #: Form/form_ca.xml.h:223
 msgid "4. Married during the year"
-msgstr ""
+msgstr "4. Casados em 1851"
 
 #: Form/form_ca.xml.h:225
 msgid "5. Religion"
-msgstr ""
+msgstr "5. Religião"
 
 #: Form/form_ca.xml.h:227
 msgid "6. Residence, if out of limits"
-msgstr ""
+msgstr "6. Residência, se fora dos limites"
 
 #: Form/form_ca.xml.h:229
 msgid "7. Age next Birthday"
-msgstr ""
+msgstr "7. Idade no próximo aniversário"
 
 #: Form/form_ca.xml.h:231
 msgid "8. Sex: Male"
-msgstr ""
+msgstr "8. Sexo: masculino"
 
 #: Form/form_ca.xml.h:232
 msgid "SexFemail"
-msgstr ""
+msgstr "SexoFeminino"
 
 #: Form/form_ca.xml.h:233
 msgid "9. Sex:Female"
-msgstr ""
+msgstr "9. Sexo: feminino"
 
 #: Form/form_ca.xml.h:235
 msgid "10. Married or Single"
-msgstr ""
+msgstr "10. Casado ou solteiro"
 
 #: Form/form_ca.xml.h:236
 msgid "Widowers"
-msgstr ""
+msgstr "Viúvos"
 
 #: Form/form_ca.xml.h:237
 msgid "11. Widowers"
-msgstr ""
+msgstr "11. Viúvos"
 
 #: Form/form_ca.xml.h:238
 msgid "Widows"
-msgstr ""
+msgstr "Viúvas"
 
 #: Form/form_ca.xml.h:239
 msgid "12. Widows"
-msgstr ""
+msgstr "12. Viúvas"
 
 #: Form/form_ca.xml.h:241
 msgid "13. Coloured Persons, Mulato or Indians"
-msgstr ""
+msgstr "13. Indivíduos de cor: mulatos ou indianos"
 
 #: Form/form_ca.xml.h:242
 msgid "MemberMale"
-msgstr ""
+msgstr "MembroMasculino"
 
 #: Form/form_ca.xml.h:243
 msgid "14. Members: Male"
-msgstr ""
+msgstr "14. Membros: masculino"
 
 #: Form/form_ca.xml.h:244
 msgid "MemberFemale"
-msgstr ""
+msgstr "MembroFeminino"
 
 #: Form/form_ca.xml.h:245
 msgid "15. Members: Female"
-msgstr ""
+msgstr "15. Membros:feminino"
 
 #: Form/form_ca.xml.h:246
 msgid "NotMemberMale"
-msgstr ""
+msgstr "NãoMembroMasculino"
 
 #: Form/form_ca.xml.h:247
 msgid "16. Not Members: Male"
-msgstr ""
+msgstr "16. Não membros: masculino"
 
 #: Form/form_ca.xml.h:248
 msgid "NotMemberFemale"
-msgstr ""
+msgstr "NãoMembroFeminino"
 
 #: Form/form_ca.xml.h:249
 msgid "17. Not Members: Female"
-msgstr ""
+msgstr "17. Não membro: feminino"
 
 #: Form/form_ca.xml.h:250
 msgid "MemberAbsentMale"
-msgstr ""
+msgstr "MembroAusenteMasculino"
 
 #: Form/form_ca.xml.h:251
 msgid "18. Members Absent: Male"
-msgstr ""
+msgstr "18. Membros ausentes: masculino"
 
 #: Form/form_ca.xml.h:252
 msgid "MemberAbsentFemale"
-msgstr ""
+msgstr "MembroAusenteFeminino"
 
 #: Form/form_ca.xml.h:253
 msgid "19. Members Absent: Female"
-msgstr ""
+msgstr "19. Membros ausentes: feminino"
 
 #: Form/form_ca.xml.h:254 Form/form_ca.xml.h:334 Form/form_ca.xml.h:382
 #: Form/form_ca.xml.h:443 Form/form_ca.xml.h:747
 msgid "DeafDumb"
-msgstr ""
+msgstr "SurdoAtrasado"
 
 #: Form/form_ca.xml.h:255 Form/form_ca.xml.h:335
 msgid "20. Deaf and Dumb"
-msgstr ""
+msgstr "20. Surdos e atrasados"
 
 #: Form/form_ca.xml.h:256 Form/form_ca.xml.h:336 Form/form_ca.xml.h:384
 #: Form/form_ca.xml.h:445 Form/form_ca.xml.h:745 Form/form_us.xml.h:479
@@ -10053,155 +10099,155 @@ msgstr ""
 #: Form/form_us.xml.h:2181 Form/form_us.xml.h:2219 Form/form_us.xml.h:2242
 #: Form/form_us.xml.h:2254 Form/form_us.xml.h:2266
 msgid "Blind"
-msgstr ""
+msgstr "Cego"
 
 #: Form/form_ca.xml.h:257 Form/form_ca.xml.h:337
 msgid "21. Blind"
-msgstr ""
+msgstr "21. Cegos"
 
 #: Form/form_ca.xml.h:258 Form/form_ca.xml.h:338 Form/form_ca.xml.h:386
 #: Form/form_ca.xml.h:447 Form/form_ca.xml.h:749
 msgid "Lunatic"
-msgstr ""
+msgstr "Lunáticos"
 
 #: Form/form_ca.xml.h:259
 msgid "22. Lunatics or Idiots"
-msgstr ""
+msgstr "22. Lunáticos"
 
 #: Form/form_ca.xml.h:261
 msgid "23. Attending School within the year: Male"
-msgstr ""
+msgstr "23. A estudar no ano: masculino"
 
 #: Form/form_ca.xml.h:263
 msgid "24. Attending School within the year: Female"
-msgstr ""
+msgstr "24. A estudar no ano: feminino"
 
 #: Form/form_ca.xml.h:264
 msgid "CantReadMale"
-msgstr ""
+msgstr "AnalfabetoMasculino"
 
 #: Form/form_ca.xml.h:265
 msgid "25. Persons over 20, who cannot read or write: Male"
-msgstr ""
+msgstr "25. Mais de 20 anos, analfabetos: masculino"
 
 #: Form/form_ca.xml.h:266
 msgid "CantReadFemale"
-msgstr ""
+msgstr "AnalfabetoFeminino"
 
 #: Form/form_ca.xml.h:267
 msgid "26. Persons over 20, who cannot read or write: Female"
-msgstr ""
+msgstr "26. Mais de 20 anos, analfabetos: feminino"
 
 #: Form/form_ca.xml.h:268
 msgid "Birth1860Male"
-msgstr ""
+msgstr "Nascidos1860Masculino"
 
 #: Form/form_ca.xml.h:269
 msgid "27. Births in 1860: Male"
-msgstr ""
+msgstr "27. Nascidos em 1860: masculino"
 
 #: Form/form_ca.xml.h:270
 msgid "Birth1860Female"
-msgstr ""
+msgstr "Nascidos 1860Feminino"
 
 #: Form/form_ca.xml.h:271
 msgid "28. Births in 1860: Female"
-msgstr ""
+msgstr "28. Nascidos em 1860: feminino"
 
 #: Form/form_ca.xml.h:272
 msgid "Death1860Male"
-msgstr ""
+msgstr "Falecidos1860Masculino"
 
 #: Form/form_ca.xml.h:273
 msgid "29. Deaths in 1860: Male"
-msgstr ""
+msgstr "29. Falecidos em 1860: masculino"
 
 #: Form/form_ca.xml.h:274
 msgid "Death1860Female"
-msgstr ""
+msgstr "Falecidos1860Feminino"
 
 #: Form/form_ca.xml.h:275
 msgid "30. Deaths in 1860: Female"
-msgstr ""
+msgstr "30. Falecidos em 1860: feminino"
 
 #: Form/form_ca.xml.h:277
 msgid "31. Age and cause of death"
-msgstr ""
+msgstr "31. Idade e causa de óbito"
 
 #: Form/form_ca.xml.h:279
 msgid "32. Houses: Brick, Stone, Frame, Log, etc."
-msgstr ""
+msgstr "32. Casas: tijolo, pedra, estrutura, madeira, etc."
 
 #: Form/form_ca.xml.h:281
 msgid "33. Houses: No. of Stories"
-msgstr ""
+msgstr "33. Casas: n.º de histórias"
 
 #: Form/form_ca.xml.h:283
 msgid "34. Houses: No. of families living in the house"
-msgstr ""
+msgstr "34. Casas: n.º de famílias ocupantes"
 
 #: Form/form_ca.xml.h:285
 msgid "35. Houses: Vacant"
-msgstr ""
+msgstr "35. Casas: vazias"
 
 #: Form/form_ca.xml.h:286
 msgid "HouseBeingBuilt"
-msgstr ""
+msgstr "CasaEmConstrução"
 
 #: Form/form_ca.xml.h:287
 msgid "36. Houses: Being built"
-msgstr ""
+msgstr "36. Casas: em construção"
 
 #: Form/form_ca.xml.h:291 Form/form_ca.xml.h:345 Form/form_ca.xml.h:393
 #: Form/form_ca.xml.h:453 Form/form_ca.xml.h:532 Form/form_ca.xml.h:618
 #: Form/form_ca.xml.h:664 Form/form_ca.xml.h:797
 msgid "SubDistrict"
-msgstr ""
+msgstr "SubDistrito"
 
 #: Form/form_ca.xml.h:296 Form/form_ca.xml.h:350 Form/form_ca.xml.h:399
 msgid "Vessels"
-msgstr ""
+msgstr "Vasos"
 
 #: Form/form_ca.xml.h:297 Form/form_ca.xml.h:351
 msgid "1. Vessels"
-msgstr ""
+msgstr "1. Vasos"
 
 #: Form/form_ca.xml.h:298 Form/form_ca.xml.h:352
 msgid "Shanties"
-msgstr ""
+msgstr "Choupanas"
 
 #: Form/form_ca.xml.h:299 Form/form_ca.xml.h:353
 msgid "2. Shanties"
-msgstr ""
+msgstr "2. Choupanas"
 
 #: Form/form_ca.xml.h:300 Form/form_ca.xml.h:354 Form/form_ca.xml.h:401
 msgid "HousesBeingBuilt"
-msgstr ""
+msgstr "CasasEmConstrução"
 
 #: Form/form_ca.xml.h:301
 msgid "3. Dwelling houses in construction"
-msgstr ""
+msgstr "3. Casas de habitação em construção"
 
 #: Form/form_ca.xml.h:303
 msgid "4. Dwelling houses unoccupied"
-msgstr ""
+msgstr "4. Casas de habitação vazias"
 
 #: Form/form_ca.xml.h:304 Form/form_ca.xml.h:358 Form/form_ca.xml.h:405
 #: Form/form_ca.xml.h:551
 msgid "HousesInhabited"
-msgstr ""
+msgstr "CasasVazias"
 
 #: Form/form_ca.xml.h:305
 msgid "5. Dwelling houses inhabited"
-msgstr ""
+msgstr "5. Casas de habitação desabitadas"
 
 #: Form/form_ca.xml.h:307
 msgid "6.Families"
-msgstr ""
+msgstr "6. Famílias"
 
 #: Form/form_ca.xml.h:309 Form/form_ca.xml.h:363
 msgid "7. Names"
-msgstr ""
+msgstr "7. Nomes"
 
 #: Form/form_ca.xml.h:310 Form/form_ca.xml.h:364 Form/form_ca.xml.h:411
 #: Form/form_ca.xml.h:466 Form/form_ca.xml.h:630 Form/form_ca.xml.h:679
@@ -10225,329 +10271,331 @@ msgstr ""
 #: Form/form_gb.xml.h:9 Form/form_gb.xml.h:46 Form/form_gb.xml.h:242
 #: Form/form_gb.xml.h:265 Form/form_gb.xml.h:377 Form/form_gb.xml.h:586
 msgid "Sex"
-msgstr ""
+msgstr "Sexo"
 
 #: Form/form_ca.xml.h:311 Form/form_ca.xml.h:365
 msgid "8. Sex"
-msgstr ""
+msgstr "8. Sexo"
 
 #: Form/form_ca.xml.h:313 Form/form_ca.xml.h:367
 msgid "9. Age"
-msgstr ""
+msgstr "9. Idade"
 
 #: Form/form_ca.xml.h:314
 msgid "Birth1871"
-msgstr ""
+msgstr "Nascidos1871"
 
 #: Form/form_ca.xml.h:315 Form/form_ca.xml.h:369
 msgid "10. Born within last twelve months"
-msgstr ""
+msgstr "10. Nascidos nos últimos 12 meses"
 
 #: Form/form_ca.xml.h:317 Form/form_ca.xml.h:371 Form/form_ca.xml.h:420
 msgid "11. Country or Province of Birth"
-msgstr ""
+msgstr "11. País ou província de nascimento"
 
 #: Form/form_ca.xml.h:319 Form/form_ca.xml.h:373
 msgid "12. Religion"
-msgstr ""
+msgstr "12. Religião"
 
 #: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
 msgid "13. Origin"
-msgstr ""
+msgstr "13. Origem"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
-msgstr ""
+msgstr "143. Profissão ou negócio"
 
 #: Form/form_ca.xml.h:325 Form/form_ca.xml.h:379
 msgid "15. Married or Widowed"
-msgstr ""
+msgstr "15. Casados ou viǘvos"
 
 #: Form/form_ca.xml.h:326
 msgid "Maried1871"
-msgstr ""
+msgstr "Casados1871"
 
 #: Form/form_ca.xml.h:327
 msgid "16. Married within last twelve months"
-msgstr ""
+msgstr "16. Casados nos últimos 12 meses"
 
 #: Form/form_ca.xml.h:328 Form/form_ca.xml.h:380
 msgid "Scholar"
-msgstr ""
+msgstr "Estudioso"
 
 #: Form/form_ca.xml.h:329
 msgid "17. Going to school"
-msgstr ""
+msgstr "17. Na escola"
 
 #: Form/form_ca.xml.h:330
 msgid "CantRead"
-msgstr ""
+msgstr "SemLer"
 
 #: Form/form_ca.xml.h:331
 msgid "18. Over 20 unable to read"
-msgstr ""
+msgstr "18. Mais de 20 anos e sem saber ler"
 
 #: Form/form_ca.xml.h:332
 msgid "CantWrite"
-msgstr ""
+msgstr "NãoEscreve"
 
 #: Form/form_ca.xml.h:333
 msgid "19. Over 20 unable to write"
-msgstr ""
+msgstr "19. Mais de 20 anos sem saber escrever"
 
 #: Form/form_ca.xml.h:339
 msgid "22. Unsound mind"
-msgstr ""
+msgstr "22. Mente perturbada"
 
 #: Form/form_ca.xml.h:341
 msgid "23. Date of Operations and Remarks"
-msgstr ""
+msgstr "23. Data das operações e observações"
 
 #: Form/form_ca.xml.h:355
 msgid "3. Houses in construction"
-msgstr ""
+msgstr "3. Casas em construção"
 
 #: Form/form_ca.xml.h:357
 msgid "4. Houses unoccupied"
-msgstr ""
+msgstr "4. Casas desocupadas"
 
 #: Form/form_ca.xml.h:359
 msgid "5. Houses inhabited"
-msgstr ""
+msgstr "5. Casas desabitadas"
 
 #: Form/form_ca.xml.h:361
 msgid "6. Families"
-msgstr ""
+msgstr "6. Famílias"
 
 #: Form/form_ca.xml.h:368
 msgid "Birth1881"
-msgstr ""
+msgstr "Nascidos1881"
 
 #: Form/form_ca.xml.h:381
 msgid "16. Going to school"
-msgstr ""
+msgstr "16. Na escola"
 
 #: Form/form_ca.xml.h:383
 msgid "17. Deaf and Dumb"
-msgstr ""
+msgstr "17. Surdos e atrasados"
 
 #: Form/form_ca.xml.h:385
 msgid "18. Blind"
-msgstr ""
+msgstr "18. Cegos"
 
 #: Form/form_ca.xml.h:387
 msgid "19/ Unsound mind"
-msgstr ""
+msgstr "19. Mentes perturbadas"
 
 #: Form/form_ca.xml.h:389
 msgid "20. Date of Operations and Remarks"
-msgstr ""
+msgstr "20. Datas de operações e observações"
 
 #: Form/form_ca.xml.h:400
 msgid "1. Vessels and Shanties"
-msgstr ""
+msgstr "1. Vasos e choupanas"
 
 #: Form/form_ca.xml.h:402
 msgid "2. Houses in construction"
-msgstr ""
+msgstr "2. Casas em construção"
 
 #: Form/form_ca.xml.h:404
 msgid "3. Houses unoccupied"
-msgstr ""
+msgstr "3. Casas desocupadas"
 
 #: Form/form_ca.xml.h:406
 msgid "4. Houses inhabited"
-msgstr ""
+msgstr "4. Casas desabitadas"
 
 #: Form/form_ca.xml.h:408
 msgid "5. Families"
-msgstr ""
+msgstr "5. Famílias"
 
 #: Form/form_ca.xml.h:410
 msgid "6. Names"
-msgstr ""
+msgstr "6. Nomes"
 
 #: Form/form_ca.xml.h:412
 msgid "7. Sex"
-msgstr ""
+msgstr "7. Sexo"
 
 #: Form/form_ca.xml.h:414
 msgid "8. Age"
-msgstr ""
+msgstr "8. Idade"
 
 #: Form/form_ca.xml.h:416
 msgid "9. Married or Widowed"
-msgstr ""
+msgstr "9. Casados ou viúvos"
 
 #: Form/form_ca.xml.h:418
 msgid "10. Relationship to Head of Family"
-msgstr ""
+msgstr "10. Parentesco com o chefe de família"
 
 #: Form/form_ca.xml.h:422
 msgid "12. FrenchCanadian"
-msgstr ""
+msgstr "12. Canadiano-francês"
 
 #: Form/form_ca.xml.h:423
 msgid "BirthPlaceFather"
-msgstr ""
+msgstr "LocalNascimentoPai"
 
 #: Form/form_ca.xml.h:424
 msgid "13. Birth Place of Father"
-msgstr ""
+msgstr "13. Local de nascimento do pai"
 
 #: Form/form_ca.xml.h:425
 msgid "BirthPlaceMother"
-msgstr ""
+msgstr "LocalNascimentoMãe"
 
 #: Form/form_ca.xml.h:426
 msgid "14. Birth Place of Mother"
-msgstr ""
+msgstr "14. Local de nascimento da mãe"
 
 #: Form/form_ca.xml.h:428
 msgid "15. Religion"
-msgstr ""
+msgstr "15. Religião"
 
 #: Form/form_ca.xml.h:430
 msgid "16. Profession, Occupation or Trade"
-msgstr ""
+msgstr "16. Profissão ou negócio"
 
 #: Form/form_ca.xml.h:431 Form/form_ca.xml.h:496 Form/form_ca.xml.h:707
 #: Form/form_gb.xml.h:164 Form/form_gb.xml.h:293 Form/form_gb.xml.h:525
 msgid "Employer"
-msgstr ""
+msgstr "Empregador"
 
 #: Form/form_ca.xml.h:432
 msgid "17. Employers"
-msgstr ""
+msgstr "17. Empregadores"
 
 #: Form/form_ca.xml.h:433 Form/form_ca.xml.h:498 Form/form_ca.xml.h:709
 msgid "Employee"
-msgstr ""
+msgstr "Empregado"
 
 #: Form/form_ca.xml.h:434
 msgid "18. Wage Earner"
-msgstr ""
+msgstr "18. Empregado"
 
 #: Form/form_ca.xml.h:435
 msgid "Unemployed"
-msgstr ""
+msgstr "Desempregado"
 
 #: Form/form_ca.xml.h:436
 msgid "19. Unemployed during week preceding Census"
-msgstr ""
+msgstr "19. Desempregados na semana anterior ao censo"
 
 #: Form/form_ca.xml.h:437
 msgid "Employees"
-msgstr ""
+msgstr "Empregados"
 
 #: Form/form_ca.xml.h:438
 msgid "20. Employer to state average number of hands employed during year"
 msgstr ""
+"20. Empregador para declarar o número médio de trabalhadores empregados "
+"durante o ano"
 
 #: Form/form_ca.xml.h:439 Form/form_ca.xml.h:846
 msgid "CanRead"
-msgstr ""
+msgstr "SabeLer"
 
 #: Form/form_ca.xml.h:440
 msgid "21. Instruction: Read"
-msgstr ""
+msgstr "21. Instrução: lê"
 
 #: Form/form_ca.xml.h:441 Form/form_ca.xml.h:848
 msgid "CanWrite"
-msgstr ""
+msgstr "SabeEscrever"
 
 #: Form/form_ca.xml.h:442
 msgid "22. Instruction: Write"
-msgstr ""
+msgstr "22. Instrução: escreve"
 
 #: Form/form_ca.xml.h:444
 msgid "23. Deaf and Dumb"
-msgstr ""
+msgstr "23. Surdos e atrasados"
 
 #: Form/form_ca.xml.h:446
 msgid "24. Blind"
-msgstr ""
+msgstr "24. Cegos"
 
 #: Form/form_ca.xml.h:448
 msgid "25. Unsound mind"
-msgstr ""
+msgstr "25. Mentes perturbadas"
 
 #: Form/form_ca.xml.h:449 Form/form_ca.xml.h:528 Form/form_ca.xml.h:660
 #: Form/form_ca.xml.h:753 Form/form_ca.xml.h:793
 msgid "SubTitle"
-msgstr ""
+msgstr "Subtítulo"
 
 #: Form/form_ca.xml.h:454 Form/form_ca.xml.h:533 Form/form_ca.xml.h:665
 msgid "PollSub"
-msgstr ""
+msgstr "SubSond"
 
 #: Form/form_ca.xml.h:460 Form/form_ca.xml.h:671 Form/form_ca.xml.h:804
 msgid "House"
-msgstr ""
+msgstr "Casa"
 
 #: Form/form_ca.xml.h:461 Form/form_ca.xml.h:672
 msgid "1. Dwelling house"
-msgstr ""
+msgstr "1. Casa de habitação"
 
 #: Form/form_ca.xml.h:463 Form/form_ca.xml.h:674
 msgid "2. Family or household"
-msgstr ""
+msgstr "2. Família ou agregado"
 
 #: Form/form_ca.xml.h:465 Form/form_ca.xml.h:676
 msgid "3. Name of each person in family"
-msgstr ""
+msgstr "3. Nome de cada indivíduo na família"
 
 #: Form/form_ca.xml.h:467 Form/form_ca.xml.h:631 Form/form_ca.xml.h:768
 msgid "4. Sex"
-msgstr ""
+msgstr "4. Sexo"
 
 #: Form/form_ca.xml.h:468
 msgid "Colour"
-msgstr ""
+msgstr "Cor"
 
 #: Form/form_ca.xml.h:469
 msgid "5. Colour"
-msgstr ""
+msgstr "5. Cor"
 
 #: Form/form_ca.xml.h:471 Form/form_ca.xml.h:682
 msgid "6. Relation to head of family"
-msgstr ""
+msgstr "6. Parentesco com o chefe de família"
 
 #: Form/form_ca.xml.h:473 Form/form_ca.xml.h:684
 msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr ""
+msgstr "7. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
 
 #: Form/form_ca.xml.h:474 Form/form_ca.xml.h:685 Form/form_ca.xml.h:773
 msgid "BirthMonth"
-msgstr ""
+msgstr "MêsNascimento"
 
 #: Form/form_ca.xml.h:475
 msgid "8. Month and Date of Birth"
-msgstr ""
+msgstr "8. Mês e data de nascimento"
 
 #: Form/form_ca.xml.h:476 Form/form_ca.xml.h:687
 msgid "BirthYear"
-msgstr ""
+msgstr "AnoNascimento"
 
 #: Form/form_ca.xml.h:477 Form/form_ca.xml.h:688
 msgid "9. Year of birth"
-msgstr ""
+msgstr "9. Ano de nascimento"
 
 #: Form/form_ca.xml.h:479 Form/form_ca.xml.h:690
 msgid "10. Age at last birthday"
-msgstr ""
+msgstr "10. Idade ao último aniversário"
 
 #: Form/form_ca.xml.h:481 Form/form_ca.xml.h:692
 msgid "11. Country or place of birth"
-msgstr ""
+msgstr "11. País ou local de nascimento"
 
 #: Form/form_ca.xml.h:483 Form/form_ca.xml.h:694
 msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr ""
+msgstr "12. Ano de imigração para o Canadá, se imigrou"
 
 #: Form/form_ca.xml.h:485 Form/form_ca.xml.h:696
 msgid "13. Year of naturalization, if formerly an alien"
-msgstr ""
+msgstr "13. Ano de naturalização, se era estrangeiro"
 
 #: Form/form_ca.xml.h:486 Form/form_ca.xml.h:697 Form/form_ca.xml.h:779
 #: Form/form_ca.xml.h:838 Form/form_us.xml.h:904 Form/form_us.xml.h:979
@@ -10555,11 +10603,11 @@ msgstr ""
 #: Form/form_us.xml.h:2364 Form/form_us.xml.h:2437 Form/form_us.xml.h:2467
 #: Form/form_us.xml.h:2561
 msgid "Race"
-msgstr ""
+msgstr "Raça"
 
 #: Form/form_ca.xml.h:487 Form/form_ca.xml.h:698
 msgid "14. Racial or tribal origin"
-msgstr ""
+msgstr "14. Origem racial ou tribal"
 
 #: Form/form_ca.xml.h:488 Form/form_ca.xml.h:699 Form/form_ca.xml.h:836
 #: Form/form_fr.xml.h:7 Form/form_fr.xml.h:15 Form/form_fr.xml.h:23
@@ -10571,312 +10619,312 @@ msgstr ""
 #: Form/form_gb.xml.h:226 Form/form_gb.xml.h:247 Form/form_gb.xml.h:359
 #: Form/form_gb.xml.h:382
 msgid "Nationality"
-msgstr ""
+msgstr "Nacionalidade"
 
 #: Form/form_ca.xml.h:489 Form/form_ca.xml.h:700
 msgid "15. Nationality"
-msgstr ""
+msgstr "15. Nacionalidade"
 
 #: Form/form_ca.xml.h:491 Form/form_ca.xml.h:702
 msgid "16. Religion"
-msgstr ""
+msgstr "16. Religião"
 
 #: Form/form_ca.xml.h:493
 msgid "17. Profession, occupation, trade or means of living of each person"
-msgstr ""
+msgstr "17. Profissão, negócio ou meios de subsistência"
 
 #: Form/form_ca.xml.h:494
 msgid "OwnMeans"
-msgstr ""
+msgstr "MeiosPróprios"
 
 #: Form/form_ca.xml.h:495
 msgid "18. Living on own means"
-msgstr ""
+msgstr "18. Vivem por conta própria"
 
 #: Form/form_ca.xml.h:497 Form/form_ca.xml.h:708
 msgid "19. Employer"
-msgstr ""
+msgstr "19. Empregador"
 
 #: Form/form_ca.xml.h:499 Form/form_ca.xml.h:710
 msgid "20. Employee"
-msgstr ""
+msgstr "20. Empregado"
 
 #: Form/form_ca.xml.h:500 Form/form_ca.xml.h:711
 msgid "SelfEmployed"
-msgstr ""
+msgstr "Empresário"
 
 #: Form/form_ca.xml.h:501 Form/form_ca.xml.h:712
 msgid "21. Working on own account"
-msgstr ""
+msgstr "21. Trabalha por conta pŕopria"
 
 #: Form/form_ca.xml.h:502 Form/form_ca.xml.h:713
 msgid "WhereEmployed"
-msgstr ""
+msgstr "OndeTrabalha"
 
 #: Form/form_ca.xml.h:503
 msgid "22. Working at trade in factory or in home"
-msgstr ""
+msgstr "22. Trabalha na empresa, fábrica, ou em casa"
 
 #: Form/form_ca.xml.h:504
 msgid "MonthsFactory"
-msgstr ""
+msgstr "MesesFábrica"
 
 #: Form/form_ca.xml.h:505
 msgid "23. Months employed at trade in factory"
-msgstr ""
+msgstr "23. Meses de trabalho na empresa ou fábrica"
 
 #: Form/form_ca.xml.h:506
 msgid "MonthsHome"
-msgstr ""
+msgstr "Meses casa"
 
 #: Form/form_ca.xml.h:507
 msgid "24. Months employed at trade in home"
-msgstr ""
+msgstr "24. Meses de trabalho em casa"
 
 #: Form/form_ca.xml.h:508
 msgid "MonthsOther"
-msgstr ""
+msgstr "MesesOutros"
 
 #: Form/form_ca.xml.h:509
 msgid "25. Months employed in other occupation than trace in factory or home"
-msgstr ""
+msgstr "25. Meses de trabalho noutra profissão"
 
 #: Form/form_ca.xml.h:510 Form/form_ca.xml.h:723
 msgid "EarningsOccupation"
-msgstr ""
+msgstr "GanhosProfissionais"
 
 #: Form/form_ca.xml.h:511
 msgid "26. Earnings from occupation or trade"
-msgstr ""
+msgstr "26. Ganhos profissionais ou empresariais"
 
 #: Form/form_ca.xml.h:512 Form/form_ca.xml.h:725
 msgid "EarningsOther"
-msgstr ""
+msgstr "GanhosOutros"
 
 #: Form/form_ca.xml.h:513
 msgid "27. Extra earning (From other than chief occupation or trade)"
-msgstr ""
+msgstr "27. Ganhos extra (outras fontes de rendimento)"
 
 #: Form/form_ca.xml.h:514 Form/form_ca.xml.h:735 Form/form_ca.xml.h:783
 msgid "SchoolMonths"
-msgstr ""
+msgstr "MesesEscola"
 
 #: Form/form_ca.xml.h:515
 msgid "28. Months at school in 1910"
-msgstr ""
+msgstr "28. Meses na escola em 1910"
 
 #: Form/form_ca.xml.h:516 Form/form_ca.xml.h:737 Form/form_ca.xml.h:785
 #: Form/form_us.xml.h:1414 Form/form_us.xml.h:2103 Form/form_us.xml.h:2141
 #: Form/form_us.xml.h:2179 Form/form_us.xml.h:2217
 msgid "Read"
-msgstr ""
+msgstr "Ler"
 
 #: Form/form_ca.xml.h:517
 msgid "29. Can read"
-msgstr ""
+msgstr "29. Sabe ler"
 
 #: Form/form_ca.xml.h:518 Form/form_ca.xml.h:739 Form/form_ca.xml.h:787
 #: Form/form_us.xml.h:1415 Form/form_us.xml.h:2104 Form/form_us.xml.h:2142
 #: Form/form_us.xml.h:2180 Form/form_us.xml.h:2218
 msgid "Write"
-msgstr ""
+msgstr "Escrever"
 
 #: Form/form_ca.xml.h:519
 msgid "30. Can write"
-msgstr ""
+msgstr "30. Sabe escrever"
 
 #: Form/form_ca.xml.h:520 Form/form_ca.xml.h:840
 msgid "SpeakEnglish"
-msgstr ""
+msgstr "FalaInglês"
 
 #: Form/form_ca.xml.h:521
 msgid "31. Can speak English"
-msgstr ""
+msgstr "31. Sabe falar inglês"
 
 #: Form/form_ca.xml.h:522 Form/form_ca.xml.h:842
 msgid "SpeakFrench"
-msgstr ""
+msgstr "FalaFrancês"
 
 #: Form/form_ca.xml.h:523
 msgid "32. Can speak French"
-msgstr ""
+msgstr "32. Sabe falar francês"
 
 #: Form/form_ca.xml.h:525
 msgid "33. Mother tongue (If spoken)"
-msgstr ""
+msgstr "33. Língua-mãe (se falada)"
 
 #: Form/form_ca.xml.h:526 Form/form_ca.xml.h:791
 msgid "Infirmities"
-msgstr ""
+msgstr "Doenças"
 
 #: Form/form_ca.xml.h:527
 msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr ""
+msgstr "34. Doenças: a. surdo ou atrasado; b. cego; c. mente perturbada"
 
 #: Form/form_ca.xml.h:538
 msgid "Name from Schedule 1"
-msgstr ""
+msgstr "Nome da agenda 1"
 
 #: Form/form_ca.xml.h:540
 msgid "Line on Schedule 2"
-msgstr ""
+msgstr "Linha na agenda 2"
 
 #: Form/form_ca.xml.h:541
 msgid "PageRef"
-msgstr ""
+msgstr "RefPágina"
 
 #: Form/form_ca.xml.h:542
 msgid "2. Page from Schedule 1"
-msgstr ""
+msgstr "2. Página da agenda 1"
 
 #: Form/form_ca.xml.h:543
 msgid "LineRef"
-msgstr ""
+msgstr "RefLinha"
 
 #: Form/form_ca.xml.h:544
 msgid "3. Line from Schedule 1"
-msgstr ""
+msgstr "3. Linha da agenda 1"
 
 #: Form/form_ca.xml.h:546
 msgid "3. Place of Habitation"
-msgstr ""
+msgstr "3. Local de habitação"
 
 #: Form/form_ca.xml.h:547
 msgid "HousesConst"
-msgstr ""
+msgstr "CasasEmConstrução"
 
 #: Form/form_ca.xml.h:548
 msgid "4. Houses: In construction"
-msgstr ""
+msgstr "4. Casas: em construção"
 
 #: Form/form_ca.xml.h:550
 msgid "5. Houses: Vacant"
-msgstr ""
+msgstr "5. Casas: vazias"
 
 #: Form/form_ca.xml.h:552
 msgid "6. Houses: Inhabited"
-msgstr ""
+msgstr "6. Casas: desabitadas"
 
 #: Form/form_ca.xml.h:553 Form/form_us.xml.h:789 Form/form_us.xml.h:832
 #: Form/form_us.xml.h:891
 msgid "Institution"
-msgstr ""
+msgstr "Instituição"
 
 #: Form/form_ca.xml.h:554
 msgid "7. Institution: Special or legal name"
-msgstr ""
+msgstr "7. Instituição: nome especial ou legal"
 
 #: Form/form_ca.xml.h:555
 msgid "Buildings"
-msgstr ""
+msgstr "Imóveis"
 
 #: Form/form_ca.xml.h:556
 msgid "8. Institution: Number of buildings"
-msgstr ""
+msgstr "8. Instituição: número de imóveis"
 
 #: Form/form_ca.xml.h:558
 msgid "9. Number of families in house or institution"
-msgstr ""
+msgstr "9. N.º de famílias na casa ou instituição"
 
 #: Form/form_ca.xml.h:559
 msgid "Rooms"
-msgstr ""
+msgstr "Divisões"
 
 #: Form/form_ca.xml.h:560
 msgid "10. Number of rooms in house or institution for each famiy"
-msgstr ""
+msgstr "10. N.º de divisões para cada família na casa ou instituição"
 
 #: Form/form_ca.xml.h:561
 msgid "Inmates"
-msgstr ""
+msgstr "Prisioneiros"
 
 #: Form/form_ca.xml.h:562
 msgid "11. Number of inmates in institution"
-msgstr ""
+msgstr "11. N.º de prisioneiros na instituição"
 
 #: Form/form_ca.xml.h:563
 msgid "OwnedAcres"
-msgstr ""
+msgstr "HectaresPossuídos"
 
 #: Form/form_ca.xml.h:564
 msgid "12. Real Estate Owned: Grand total of acres"
-msgstr ""
+msgstr "12. Imobiliário próprio: total de hectares"
 
 #: Form/form_ca.xml.h:565
 msgid "OwnedLots"
-msgstr ""
+msgstr "LotesPróprios"
 
 #: Form/form_ca.xml.h:566
 msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr ""
+msgstr "13. Imobiliário próprio: n.º de lotes na localidade"
 
 #: Form/form_ca.xml.h:567
 msgid "OwnedHouses"
-msgstr ""
+msgstr "CasasPróprias"
 
 #: Form/form_ca.xml.h:568
 msgid "14. Real Estate Owned: Number of dwelling houses"
-msgstr ""
+msgstr "14. Imobiliário próprio: n.º de casas de habitação"
 
 #: Form/form_ca.xml.h:569
 msgid "OwnedStores"
-msgstr ""
+msgstr "LojasPróprias"
 
 #: Form/form_ca.xml.h:570
 msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr ""
+msgstr "15. Imobiliário próprio: n.º de lojas, armazéns, etc."
 
 #: Form/form_ca.xml.h:571
 msgid "OwnedBars"
-msgstr ""
+msgstr "CeleirosPróprios"
 
 #: Form/form_ca.xml.h:572
 msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
-msgstr ""
+msgstr "16. Imobiliário próprio: n.º de celeiros, estábulos, etc."
 
 #: Form/form_ca.xml.h:573
 msgid "OwnedSilos"
-msgstr ""
+msgstr "SilosPróprios"
 
 #: Form/form_ca.xml.h:574
 msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr ""
+msgstr "17. Imobiliário próprio: n.º de silos e capacidade em pés cúbicos"
 
 #: Form/form_ca.xml.h:575
 msgid "OwnedFactories"
-msgstr ""
+msgstr "FábricasPróprias"
 
 #: Form/form_ca.xml.h:576
 msgid "18. Real Estate Owned: Number of manufacturing establishments"
-msgstr ""
+msgstr "18. Imobiliário próprio: n.º de fábricas"
 
 #: Form/form_ca.xml.h:577
 msgid "LeasedAcres"
-msgstr ""
+msgstr "HectaresArrendados"
 
 #: Form/form_ca.xml.h:578
 msgid "19. Real Estate Leased: Grand total of acres"
-msgstr ""
+msgstr "19. Imobiliário próprio: total de hectares"
 
 #: Form/form_ca.xml.h:579
 msgid "LeasedLots"
-msgstr ""
+msgstr "LotesArrendados"
 
 #: Form/form_ca.xml.h:580
 msgid "20. Real Estate Leased: Number of town or village lots"
-msgstr ""
+msgstr "20. Imobiliário arrendado: n.º de lotes na localidade"
 
 #: Form/form_ca.xml.h:581
 msgid "LeasedHouses"
-msgstr ""
+msgstr "CasasArrendadas"
 
 #: Form/form_ca.xml.h:582
 msgid "21. Real Estate Leased: Number of dwelling houses"
-msgstr ""
+msgstr "21. Imobiliário arrendado: n.º de casas de habitação"
 
 #: Form/form_ca.xml.h:583
 msgid "LeasedStores"
-msgstr ""
+msgstr "LojasArrendadas"
 
 #: Form/form_ca.xml.h:584
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
@@ -21072,50 +21120,32 @@ msgid "Double click row to follow link"
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.gpr.py:10
-#, fuzzy
-#| msgid "Gramplet to get places from the GOV database"
 msgid "Gramplet for search objects in database."
-msgstr "Gramplet para obter locais da base de dados GOV"
+msgstr "Gramplet para procurar objectos na base de dados."
 
 #: SearchGramplet/SearchGramplet.py:104
-#, fuzzy
-#| msgid "Source type"
 msgid "Sort by object type"
-msgstr "Tipo de fonte"
+msgstr "Ordenar por tipo de objecto"
 
 #: SearchGramplet/SearchGramplet.py:138
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Menu to set search objects"
-msgstr "Indivíduo a procurar"
+msgstr "Menu para definir objectos de procura"
 
 #: SearchGramplet/SearchGramplet.py:140
-#, fuzzy
-#| msgid "Select tags for person"
 msgid "Select objects to search"
-msgstr "Seleccionar etiquetas para o indivíduo"
+msgstr "Seleccionar objectos a procurar"
 
 #: SearchGramplet/SearchGramplet.py:154
-#, fuzzy
-#| msgid "SVG tree configuration"
 msgid "SearchGramplet configuration menu"
-msgstr "Configuração da árvore SVG"
+msgstr "Configuração do gramplet de procura"
 
 #: SearchGramplet/SearchGramplet.py:261
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "No matches..."
-msgstr ""
-"Sem\n"
-"resultados"
+msgstr "Sem resultados..."
 
 #: SearchGramplet/SearchGramplet.py:353
-#, fuzzy
-#| msgid "Internet type filter"
 msgid "Start type to search"
-msgstr "Tipo de filtro Internet"
+msgstr "Escreva para procurar"
 
 #: SearchGramplet/SearchGramplet.py:389
 msgid ""
@@ -21124,26 +21154,20 @@ msgid ""
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:743
-#, fuzzy, python-format
-#| msgid "Birthdays"
+#, python-format
 msgid "Birth: %s"
-msgstr "Aniversários"
+msgstr "Nascimento: %s"
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
-#| msgid "Death act:"
+#, python-format
 msgid "Death: %s"
-msgstr "Acto de nascimento:"
+msgstr "Óbito: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
-#, fuzzy
-#| msgid "Set as active person"
 msgid "Set as Active person"
 msgstr "Definir como indivíduo activo"
 
 #: SearchGramplet/SearchGramplet.py:920
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Set as Home person"
 msgstr "Definir como indivíduo inicial"
 
