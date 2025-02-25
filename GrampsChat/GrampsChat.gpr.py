@@ -2,7 +2,7 @@ register(
     GRAMPLET,
     id="GrampsChat",
     name=_("GrampsChat"),
-    description=_("AI Chatbot Gramplet"),
+    description=_("AI Chatbot Gramplet (requires connecting to an LLM service)"),
     height=100,
     expand=False,
     gramplet="GrampsChat",
@@ -12,6 +12,6 @@ register(
     version = '0.0.2',
     gramps_target_version="6.0",
     fname="GrampsChat.py",
-    help_url="Gramplets#GUI_Interface",
+    help_url="https://github.com/gramps-project/addons-source/tree/maintenance/gramps60/GrampsChat",
     requires_mod=["litellm"],
 )
