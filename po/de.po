@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 04:52+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -5617,14 +5617,12 @@ msgid "S. DNA"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "L. Seg"
 msgid "S. Seg."
-msgstr "G. Seg"
+msgstr "Freig. Seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr "G. Seg"
+msgstr "Gr. Seg"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
@@ -16983,10 +16981,8 @@ msgid "Maiden surname of woman who was married"
 msgstr "Mädchenname der Frau, die verheiratet war"
 
 #: Form/form_gb.xml.h:53
-#, fuzzy
-#| msgid "Mailing Address"
 msgid "Usual Address"
-msgstr "Postanschrift"
+msgstr "Übliche Adresse"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
@@ -17342,10 +17338,8 @@ msgid "Industry or Service with which worker is connected."
 msgstr ""
 
 #: Form/form_gb.xml.h:221 Form/form_gb.xml.h:354
-#, fuzzy
-#| msgid "Employer, worker or working on own account"
 msgid "Whether Employer, Worker or Working on Own Account"
-msgstr "Arbeitgeber, Arbeitnehmer oder auf eigene Rechnung arbeiten"
+msgstr "Arbeitgeber, Arbeitnehmer oder auf eigene Rechnung arbeitend"
 
 #: Form/form_gb.xml.h:223 Form/form_gb.xml.h:356
 msgid "Whether Working at Home"
@@ -17364,34 +17358,24 @@ msgid "INFIRMITY"
 msgstr "GEBRECHEN"
 
 #: Form/form_gb.xml.h:235 Form/form_gb.xml.h:370
-#, fuzzy
-#| msgid "NAME AND SURNAME"
 msgid "NAME and SURNAME"
-msgstr "NAME UND NACHNAME"
+msgstr "NAME und NACHNAME"
 
 #: Form/form_gb.xml.h:237 Form/form_gb.xml.h:372
-#, fuzzy
-#| msgid "RELATIONSHIP to Head of Family"
 msgid "RELATIONSHIP to Head of Household"
-msgstr "BEZIEHUNG zum Familienoberhaupt"
+msgstr "BEZIEHUNG zum Haushaltsvorstand"
 
 #: Form/form_gb.xml.h:239 Form/form_gb.xml.h:374
-#, fuzzy
-#| msgid "Age in years"
 msgid "AGE years"
-msgstr "Alter in Jahren"
+msgstr "ALTER Jahre"
 
 #: Form/form_gb.xml.h:240 Form/form_gb.xml.h:375
-#, fuzzy
-#| msgid "MonthsHome"
 msgid "Age Months"
-msgstr "MonateZuHause"
+msgstr "Alter Monate"
 
 #: Form/form_gb.xml.h:241 Form/form_gb.xml.h:376
-#, fuzzy
-#| msgid "AGE of"
 msgid "AGE months"
-msgstr "Alter von"
+msgstr "ALTER Monate"
 
 #: Form/form_gb.xml.h:243 Form/form_gb.xml.h:378
 msgid "SEX"
@@ -17413,20 +17397,16 @@ msgid ""
 msgstr ""
 
 #: Form/form_gb.xml.h:254 Form/form_gb.xml.h:389
-#, fuzzy
-#| msgid "Number of children"
 msgid "Number of living children"
-msgstr "Kinderzahl"
+msgstr "Zahl der lebenden Kinder"
 
 #: Form/form_gb.xml.h:255 Form/form_gb.xml.h:390
 msgid "Total number under sixteen years of age. If none write \"None.\""
 msgstr ""
 
 #: Form/form_gb.xml.h:256 Form/form_gb.xml.h:391
-#, fuzzy
-#| msgid "Number of children"
 msgid "Ages of living children"
-msgstr "Kinderzahl"
+msgstr "Alter der lebenden Kinder"
 
 #: Form/form_gb.xml.h:257 Form/form_gb.xml.h:392
 msgid "For each child place a X in the column corresponding to its age."
@@ -18270,10 +18250,8 @@ msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgstr "Sammlung von Webseiten für UK (benötigt libwebconnect)"
 
 #: Heatmap/heatmap.py:85
-#, fuzzy
-#| msgid "Extra Files"
 msgid "Map tiles"
-msgstr "Zusätzliche Dateien"
+msgstr "Kartenfliesen"
 
 #: Heatmap/heatmap.py:90
 msgid ""
@@ -18282,10 +18260,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:93
-#, fuzzy
-#| msgid "File parsed with"
 msgid "File path"
-msgstr "Datei analysiert mit"
+msgstr "Dateipfad"
 
 #: Heatmap/heatmap.py:98
 msgid ""
@@ -18339,10 +18315,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:209
-#, fuzzy
-#| msgid "The file does not exist."
 msgid "Path does not exist."
-msgstr "Die Datei existiert nicht."
+msgstr "Pfad existiert nicht."
 
 #: Heatmap/heatmap.py:210
 msgid "Invalid filename."
@@ -18357,10 +18331,8 @@ msgid "Stamen Terrain"
 msgstr ""
 
 #: Heatmap/utils.py:58
-#, fuzzy
-#| msgid "Paternal Background Color"
 msgid "Stamen Terrain (Background only)"
-msgstr "Väterliche Hintergrundfarbe"
+msgstr "Stamen Terrain (nur Hintergrund)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
@@ -18503,10 +18475,8 @@ msgid "GenWiki"
 msgstr ""
 
 #: DEWebConnectPack/DEWebPack.py:47
-#, fuzzy
-#| msgid "Hathi Trust Digital Library"
 msgid "German digital library"
-msgstr "Hathi Trust Digitale Bibliothek"
+msgstr "Deutsche Digitale Bibliothek"
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
@@ -18800,26 +18770,20 @@ msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:233 GeoTimeLines/GeoTimeLines.py:339
 #: GeoTimeLines/GeoTimeLines.gpr.py:25
-#, fuzzy
-#| msgid "Lines type"
 msgid "TimeLines Map"
-msgstr "Linienart"
+msgstr "ZeitLinien Karte"
 
 #: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:800
-#, fuzzy
-#| msgid "Import done"
 msgid "Almost done"
-msgstr "Import abgeschlossen"
+msgstr "Fast fertig"
 
 #: GeoTimeLines/GeoTimeLines.py:916
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Gathering data"
-msgstr "Lade die Daten"
+msgstr "Erfassen von Daten"
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
 #, python-format
@@ -18869,16 +18833,12 @@ msgid ""
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1875
-#, fuzzy
-#| msgid "Number of students"
 msgid "Number of steps"
-msgstr "Anzahl der Studenten"
+msgstr "Zahl der Schritte"
 
 #: GeoTimeLines/GeoTimeLines.py:1883
-#, fuzzy
-#| msgid "Type de Liste"
 msgid "Type of steps"
-msgstr "Art der Liste"
+msgstr "Art der Schritte"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
@@ -18903,10 +18863,8 @@ msgid "Show time ticks on navigation bar on startup"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1974
-#, fuzzy
-#| msgid "General options"
 msgid "TimeLines Map options"
-msgstr "Allgemeine Optionen"
+msgstr "ZeitLinien Kartenoptionen"
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
@@ -18914,10 +18872,8 @@ msgid ""
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:39
-#, fuzzy
-#| msgid "Lines type"
 msgid "TimeLines map"
-msgstr "Linienart"
+msgstr "ZeitLinien-Karte"
 
 #: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
@@ -19267,10 +19223,8 @@ msgid "Detect faces (OpenCV module required)"
 msgstr "Entdeckt Gesichter (OpenCV Modul benötigt)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
-#, fuzzy
-#| msgid "Person Name"
 msgid "XMP Region Name"
-msgstr "Name der Person"
+msgstr "XMP-Region Name"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
@@ -19452,10 +19406,8 @@ msgid "FamilySpace"
 msgstr "FamilySpace"
 
 #: DoubleCousins/double_cousins.py:112
-#, fuzzy
-#| msgid "Descendants Report"
 msgid "Double Cousins Report"
-msgstr "Nachkommenbericht"
+msgstr "Doppelte Cousins Bericht"
 
 #: DoubleCousins/double_cousins.py:120
 #, no-python-format
@@ -19469,16 +19421,12 @@ msgid ""
 msgstr ""
 
 #: DoubleCousins/double_cousins.py:136
-#, fuzzy
-#| msgid "No %s objects were found in database."
 msgid "No double cousins were found in your database."
-msgstr "In der Datenbank wurden keine %s Objekte gefunden."
+msgstr "Es wurden keine doppelten Cousins in deiner Datenbank gefunden."
 
 #: DoubleCousins/double_cousins.py:170
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show info text"
-msgstr "Zeige versteckte Elemente"
+msgstr "Infotext anzeigen"
 
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
@@ -19608,10 +19556,8 @@ msgid "Legend"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:761
-#, fuzzy
-#| msgid "Grandparents"
 msgid ": Grandparent"
-msgstr "Großeltern"
+msgstr ": Großeltern"
 
 #: DNA/dnasegmentmap.py:1056
 #, python-brace-format
@@ -19668,10 +19614,8 @@ msgid "DNA Segment Map"
 msgstr "DNA-Segmentkarte"
 
 #: DNA/dnasegmentmap.gpr.py:29
-#, fuzzy
-#| msgid "Gramplet showing the participants in an event"
 msgid "Gramplet showing a matching DNA segment map"
-msgstr "Gramplet zeigt die Beteiligten eines Ereignis"
+msgstr "Gramplet zeigt eine passende DNA-Segmentkarte"
 
 #: MongoDB/mongodb.gpr.py:23
 msgid "MongoDB"
@@ -21405,10 +21349,8 @@ msgid "Double click row to follow link"
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.gpr.py:10
-#, fuzzy
-#| msgid "Gramplet to get places from the GOV database"
 msgid "Gramplet for search objects in database."
-msgstr "Gramplet um Orte aus der GOV Datenbank zu holen"
+msgstr "Gramplet für Suche nach Objekten in der Datenbank."
 
 #: SearchGramplet/SearchGramplet.py:104
 #, fuzzy
@@ -21435,14 +21377,8 @@ msgid "SearchGramplet configuration menu"
 msgstr "SVG Baumkonfiguration"
 
 #: SearchGramplet/SearchGramplet.py:261
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "No matches..."
-msgstr ""
-"Keine\n"
-"Übereinstimmungen"
+msgstr "Keine Übereinstimmungen..."
 
 #: SearchGramplet/SearchGramplet.py:353
 #, fuzzy
@@ -21457,16 +21393,14 @@ msgid ""
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:743
-#, fuzzy, python-format
-#| msgid "Birthdays"
+#, python-format
 msgid "Birth: %s"
-msgstr "Geburtstage"
+msgstr "Geburt: %s"
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
-#| msgid "Death act:"
+#, python-format
 msgid "Death: %s"
-msgstr "Sterbeurkunde:"
+msgstr "Tod: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
 #, fuzzy
