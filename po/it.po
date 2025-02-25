@@ -66,8 +66,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 23:04+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -75,7 +75,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -2435,23 +2435,24 @@ msgid "Pause search expansion"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:105
-#, fuzzy
 msgid "Completed Person"
-msgstr "Importazione completata: %d secondo"
+msgstr "Persona completata"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
-msgstr ""
+msgstr " Famiglie con discendenza completata"
 
 #: Betawhatsnext/Betawhatsnext.py:118
 msgid "Ignore Person or Family"
-msgstr ""
+msgstr "Ignora persona o famiglia"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
 "\n"
 " ⛔ The current Tree database contains no people.\n"
 msgstr ""
+"\n"
+" ⛔ L'attuale albero genealogico non contiene persone.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:226
 msgid ""
@@ -2466,12 +2467,24 @@ msgid ""
 "  • An external file may be used to populate the tree via \"Import...\" in "
 "the \"Family Trees\" menu."
 msgstr ""
+"\n"
+" 👣 Prossimi passi:\n"
+" Aggiungi una famiglia e poi aggiungi una persona a quella famiglia:\n"
+"  • Una famiglia può essere aggiunta usando il menu \"Aggiungi\"\n"
+"  • Una persona può essere aggiunta premendo \"+\" (più) nel pannello "
+"coniuge (\"padre/partner1\" o \"madre/partner2\") o nella scheda \"figli\".\n"
+"\n"
+"Oppure importa persone da un file esterno:\n"
+"  • Un file esterno può essere utilizzato per popolare l'albero usando "
+"\"Importa...\" nel menu \"Alberi genealogici\"."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
 "\n"
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
+"\n"
+" ⛔ Nessuna persona è stata scelta come \"Home Person\".\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -2491,27 +2504,27 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:504
 msgid "Birth event missing."
-msgstr ""
+msgstr "Evento Nascita assente."
 
 #: Betawhatsnext/Betawhatsnext.py:505
 msgid "Add via the Events tab of the Edit Person dialog."
-msgstr ""
+msgstr "Aggiungilo usando la scheda Eventi della tabella Modifica persona."
 
 #: Betawhatsnext/Betawhatsnext.py:582
 msgid "relationship type unknown"
-msgstr ""
+msgstr "tipo di relazione sconosciuto"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
-msgstr ""
+msgstr "Aggiungilo usando la scheda Eventi della tabella Modifica persona."
 
 #: Betawhatsnext/Betawhatsnext.py:621
 msgid "591 family not complete"
-msgstr ""
+msgstr "591 famiglia non completa"
 
 #: Betawhatsnext/Betawhatsnext.py:642
 msgid "place unknown for the Event"
-msgstr ""
+msgstr "luogo sconosciuto per l'evento"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
