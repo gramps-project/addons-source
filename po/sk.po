@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 17:44+0000\n"
+"PO-Revision-Date: 2025-02-25 18:32+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -2930,7 +2930,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2942
 msgid "Alternate Name"
-msgstr "Alternatívny názov"
+msgstr "Alternatívne meno"
 
 #: DynamicWeb/dynamicweb.py:2961
 msgid "Click on the map to show it full-screen"
@@ -6017,180 +6017,155 @@ msgid "The style used for the first personal entry."
 msgstr "Štýl použitý pre prvý osobný záznam."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1607
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the More About header and for headers of mates."
-msgstr "Štýl použitý pre nadpis zostavy."
+msgstr "Štýl použitý pre záhlavie Viac informácií a pre záhlavie partnerov."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1618
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for additional detail data."
-msgstr "Štýl použitý pre nadpis archívu."
+msgstr "Štýl použitý pre doplňujúce detailné údaje."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1628
 #: DescendantBooks/DetailedDescendantBookReport.py:1638
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for note detail data."
-msgstr "Štýl použitý pre titul strany."
+msgstr "Štýl použitý pre detailné údaje poznámky."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1648
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the date in the Index of Dates."
-msgstr "Štýl použitý pre nadpis zostavy."
+msgstr "Štýl použitý pre dátum v indexe dátumov."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1658
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the events in the Index of Dates."
-msgstr "Štýl použitý pre titul strany."
+msgstr "Štýl použitý pre udalosti v indexe dátumov."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1668
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the header in the Index of Names."
-msgstr "Štýl použitý pre titul strany."
+msgstr "Štýl použitý pre záhlavie v indexe mien."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1678
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the references in the Index of Names."
-msgstr "Štýl použitý pre titul strany."
+msgstr "Štýl použitý pre referencie v indexe mien."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1688
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the header in the Index of Places."
-msgstr "Štýl použitý pre titul strany."
+msgstr "Štýl použitý pre záhlavie v indexe miest."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1699
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the references in the Index of Places."
-msgstr "Štýl použitý pre titul strany."
+msgstr "Štýl použitý pre referencie v indexe miest."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendant Book"
-msgstr "Potomok"
+msgstr "Kniha potomkov"
 
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
+"Vytvára jednu alebo viac správ o potomkoch na základe dodanej požiadavky."
 
 #: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
-msgstr ""
+msgstr "Podrobná kniha potomkov"
 
 #: DescendantBooks/DescendantBooks.gpr.py:43
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
 msgstr ""
+"Vytvára jednu alebo viac podrobných správ o potomkoch na základe dodanej "
+"požiadavky."
 
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
 msgid "Deep pruning ascendants from %s people..."
-msgstr ""
+msgstr "Hlboké prerezávanie predkov z %s ľudí..."
 
 #: DescendantBooks/CollectAscendants.py:182
 #, python-format
 msgid "Pruning ascendants from %s people..."
-msgstr ""
+msgstr "Prerezávanie predkov z %s ľudí..."
 
 #: DescendantBooks/CollectAscendants.py:320
 #: DescendantBooks/CollectAscendants.py:413
 #, python-format
 msgid "Getting ascendants from %s people..."
-msgstr ""
+msgstr "Získavanie predkov z %s ľudí..."
 
 #: DescendantBooks/CollectAscendants.py:331
 #, python-format
 msgid "Verifying descendants from %s people..."
-msgstr ""
+msgstr "Overovanie potomkov z %s ľudí..."
 
 #: DescendantBooks/CollectAscendants.py:348
 #, python-format
 msgid "Getting missing descendants from %s people..."
-msgstr ""
+msgstr "Získavanie chýbajúcich potomkov z %s ľudí..."
 
 #: DescendantBooks/CollectAscendants.py:367
 #, python-format
 msgid "Verifying descendants from %s people after pruning..."
-msgstr ""
+msgstr "Overovanie potomkov z %s ľudí po prerezaní..."
 
 #: DescendantBooks/CollectAscendants.py:383
 #, python-format
 msgid "Getting missing descendants from %s people ..."
-msgstr ""
+msgstr "Získavanie chýbajúcich potomkov z %s ľudí ..."
 
 #: WordleGramplet/WordleGramplet.py:126
 msgid "[Missing]"
-msgstr ""
+msgstr "Chýbajúci]"
 
 #: WordleGramplet/WordleGramplet.py:140
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of font sizes"
-msgstr "Počet stránok"
+msgstr "Počet veľkostí písma"
 
 #: WordleGramplet/WordleGramplet.py:144
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict list"
-msgstr "Zvoliť filter pre zúženie výberu osôb"
+msgstr "Vyberte filter na vymedzenie zoznamu"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
 msgid "Wordle"
-msgstr ""
+msgstr "Wordle"
 
 #: WordleGramplet/WordleGramplet.gpr.py:13
 msgid "Gramplet used to make word clouds with wordle.net"
-msgstr ""
+msgstr "Gramplet používaný na vytváranie oblakov slov s wordle.net"
 
 #: PersonEverything/PersonEverything.py:133
 #, python-format
 msgid "All information about %s"
-msgstr ""
+msgstr "Všetky informácie o %s"
 
 #: PersonEverything/PersonEverything.py:173
 msgid "Primary name"
-msgstr ""
+msgstr "Primárne meno"
 
 #: PersonEverything/PersonEverything.py:180
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Alternate name"
 msgstr "Alternatívne meno"
 
 #: PersonEverything/PersonEverything.py:196
 msgid " This is the primary birth event."
-msgstr ""
+msgstr " Toto je primárna udalosť narodenia."
 
 #: PersonEverything/PersonEverything.py:199
-#, fuzzy
-#| msgid "Add birth and death events"
 msgid " This is the primary death event."
-msgstr "Pridať udalosti narodenia a úmrtia"
+msgstr " Toto je primárna udalosť úmrtia."
 
 #: PersonEverything/PersonEverything.py:238
-#, fuzzy
-#| msgid "Note on Parent Family"
 msgid "Parent Family"
-msgstr "Poznámka pre rodinu rodiča"
+msgstr "Rodina rodičov"
 
 #: PersonEverything/PersonEverything.py:240
 msgid ""
 "Details of any children and events etc. would be in a similar report for the "
 "father or mother."
 msgstr ""
+"Podrobnosti o akýchkoľvek deťoch a udalostiach atď. by boli v podobnej "
+"správe pre otca alebo matku."
 
 #: PersonEverything/PersonEverything.py:403
 msgid "Temple and status"
-msgstr ""
+msgstr "Chrám a status"
 
 #: PersonEverything/PersonEverything.py:414
 msgid "LDS Ordinance family"
@@ -6198,70 +6173,58 @@ msgstr ""
 
 #: PersonEverything/PersonEverything.py:418
 msgid "LDS "
-msgstr ""
+msgstr "SND "
 
 #: PersonEverything/PersonEverything.py:434
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
 msgstr ""
+"Ulica, Mesto, Okres, Štát, Poštové smerovacie číslo, Krajina, Telefónne číslo"
 
 #: PersonEverything/PersonEverything.py:448
-#, fuzzy
-#| msgid "Media Index"
 msgid "Media Reference"
-msgstr "Index médií"
+msgstr "Odkaz na médium"
 
 #: PersonEverything/PersonEverything.py:455
 #: PersonEverything/PersonEverything.py:732
-#, fuzzy
-#| msgid "Description: "
 msgid "Description and Path"
-msgstr "Popis: "
+msgstr "Popis a cesta"
 
 #: PersonEverything/PersonEverything.py:484
 msgid "Referenced Region"
-msgstr ""
+msgstr "Odkazovaná oblasť"
 
 #: PersonEverything/PersonEverything.py:505
-#, fuzzy
-#| msgid "Source type"
 msgid "Mime type"
-msgstr "Typ zdroja"
+msgstr "Typ MIME"
 
 #: PersonEverything/PersonEverything.py:516
+#, fuzzy
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
 msgstr ""
+"Dané meno (-á): Titul, Dané, Prípona, Volacie meno, Prezývka, Rodinná "
+"prezývka"
 
 #: PersonEverything/PersonEverything.py:542
-#, fuzzy
-#| msgid "Source type"
 msgid "Note type"
-msgstr "Typ zdroja"
+msgstr "Typ poznámky"
 
 #: PersonEverything/PersonEverything.py:553
-#, fuzzy
-#| msgid "Print place pages"
 msgid "Parent Place"
-msgstr "Zahrnúť stránky s miestami"
+msgstr "Miesto rodičov"
 
 #: PersonEverything/PersonEverything.py:568
 #: PersonEverything/PersonEverything.py:572
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Alternate Location"
-msgstr "Alternatívne meno"
+msgstr "Alternatívna lokalita"
 
 #: PersonEverything/PersonEverything.py:607
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Alternative Name"
-msgstr "Alternatívne meno"
+msgstr "Alternatívny názov"
 
 #: PersonEverything/PersonEverything.py:618
-#, fuzzy
-#| msgid "No Latitude/Longitude given"
 msgid "Latitude, Longitude"
-msgstr "Nie je udaná zem.šírka alebo dĺžka"
+msgstr "Zemepisná šírka, zemepisná dĺžka"
 
 #: PersonEverything/PersonEverything.py:648
 #, fuzzy
