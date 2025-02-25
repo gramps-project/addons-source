@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 17:44+0000\n"
+"PO-Revision-Date: 2025-02-25 04:52+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -9181,10 +9181,8 @@ msgid "12. Residents: Members, Male"
 msgstr ""
 
 #: Form/form_ca.xml.h:34
-#, fuzzy
-#| msgid "resident"
 msgid "ResidentsFemale"
-msgstr "boende"
+msgstr "InvånareKvinna"
 
 #: Form/form_ca.xml.h:35
 msgid "13. Residents: Members, Female"
@@ -9336,20 +9334,16 @@ msgid ""
 msgstr ""
 
 #: Form/form_ca.xml.h:72 Form/form_ca.xml.h:280
-#, fuzzy
-#| msgid "repositories"
 msgid "HousesStories"
-msgstr "arkivplatser"
+msgstr "HusBerättelser"
 
 #: Form/form_ca.xml.h:73
 msgid "32. Houses: No. of Stories"
 msgstr ""
 
 #: Form/form_ca.xml.h:74 Form/form_ca.xml.h:282
-#, fuzzy
-#| msgid "House Timeline"
 msgid "HousesFamilies"
-msgstr "Hustidslinje"
+msgstr "HusFamiljer"
 
 #: Form/form_ca.xml.h:75
 msgid "33. No. of Families Occupying"
@@ -9365,10 +9359,8 @@ msgid "34. Houses: Vacant"
 msgstr ""
 
 #: Form/form_ca.xml.h:78
-#, fuzzy
-#| msgid "House Timeline"
 msgid "HousesBuilding"
-msgstr "Hustidslinje"
+msgstr "HusByggnad"
 
 #: Form/form_ca.xml.h:79
 msgid "35. Houses: Building"
@@ -9448,10 +9440,8 @@ msgid "4. Number of Acres of Land: Held by each person or family"
 msgstr ""
 
 #: Form/form_ca.xml.h:106
-#, fuzzy
-#| msgid "Add relation"
 msgid "AcresCultivation"
-msgstr "Lägg till släktskap"
+msgstr "ÅkerOdling"
 
 #: Form/form_ca.xml.h:107
 msgid "5. Number of Acres of Land: Under Cultivation"
@@ -9706,30 +9696,24 @@ msgid "36. Wool Lbs."
 msgstr ""
 
 #: Form/form_ca.xml.h:170
-#, fuzzy
-#| msgid "column"
 msgid "Column37"
-msgstr "kolumn"
+msgstr "Kolumn37"
 
 #: Form/form_ca.xml.h:171
 msgid "37."
 msgstr ""
 
 #: Form/form_ca.xml.h:172
-#, fuzzy
-#| msgid "column"
 msgid "Column38"
-msgstr "kolumn"
+msgstr "Kolumn38"
 
 #: Form/form_ca.xml.h:173
 msgid "38."
 msgstr ""
 
 #: Form/form_ca.xml.h:174
-#, fuzzy
-#| msgid "column"
 msgid "Column39"
-msgstr "kolumn"
+msgstr "Kolumn39"
 
 #: Form/form_ca.xml.h:175
 msgid "39."
@@ -9874,10 +9858,8 @@ msgid "2. Profession, trade or occupation"
 msgstr ""
 
 #: Form/form_ca.xml.h:222
-#, fuzzy
-#| msgid "married"
 msgid "Married1851"
-msgstr "gift"
+msgstr "Gifta1851"
 
 #: Form/form_ca.xml.h:223
 msgid "4. Married during the year"
@@ -10102,10 +10084,8 @@ msgid "SubDistrict"
 msgstr ""
 
 #: Form/form_ca.xml.h:296 Form/form_ca.xml.h:350 Form/form_ca.xml.h:399
-#, fuzzy
-#| msgid "witnesses"
 msgid "Vessels"
-msgstr "vittnen"
+msgstr "Fartyg"
 
 #: Form/form_ca.xml.h:297 Form/form_ca.xml.h:351
 msgid "1. Vessels"
@@ -10141,16 +10121,12 @@ msgid "5. Dwelling houses inhabited"
 msgstr ""
 
 #: Form/form_ca.xml.h:307
-#, fuzzy
-#| msgid "All Families"
 msgid "6.Families"
-msgstr "Alla familjer"
+msgstr "6.Familjer"
 
 #: Form/form_ca.xml.h:309 Form/form_ca.xml.h:363
-#, fuzzy
-#| msgid "Names:"
 msgid "7. Names"
-msgstr "Namn:"
+msgstr "7. Namn"
 
 #: Form/form_ca.xml.h:310 Form/form_ca.xml.h:364 Form/form_ca.xml.h:411
 #: Form/form_ca.xml.h:466 Form/form_ca.xml.h:630 Form/form_ca.xml.h:679
@@ -10201,10 +10177,8 @@ msgid "12. Religion"
 msgstr ""
 
 #: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
-#, fuzzy
-#| msgid "Origin:"
 msgid "13. Origin"
-msgstr "Ursprung:"
+msgstr "13. Ursprung"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
@@ -10267,10 +10241,8 @@ msgid "5. Houses inhabited"
 msgstr ""
 
 #: Form/form_ca.xml.h:361
-#, fuzzy
-#| msgid "All Families"
 msgid "6. Families"
-msgstr "Alla familjer"
+msgstr "6. Familjer"
 
 #: Form/form_ca.xml.h:368
 msgid "Birth1881"
@@ -10313,16 +10285,12 @@ msgid "4. Houses inhabited"
 msgstr ""
 
 #: Form/form_ca.xml.h:408
-#, fuzzy
-#| msgid "All Families"
 msgid "5. Families"
-msgstr "Alla familjer"
+msgstr "5. Familjer"
 
 #: Form/form_ca.xml.h:410
-#, fuzzy
-#| msgid "Names:"
 msgid "6. Names"
-msgstr "Namn:"
+msgstr "6. Namn"
 
 #: Form/form_ca.xml.h:412
 msgid "7. Sex"
@@ -10337,36 +10305,24 @@ msgid "9. Married or Widowed"
 msgstr ""
 
 #: Form/form_ca.xml.h:418
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "10. Relationship to Head of Family"
-msgstr "Släktskap med far"
+msgstr "10. Släktskap med familjeöverhuvud"
 
 #: Form/form_ca.xml.h:422
 msgid "12. FrenchCanadian"
 msgstr ""
 
 #: Form/form_ca.xml.h:423
-#, fuzzy
-#| msgid "Birth label anchor"
 msgid "BirthPlaceFather"
-msgstr "Födelsetextfältsankare"
+msgstr "FödelseplatsFar"
 
 #: Form/form_ca.xml.h:424
-#, fuzzy
-#| msgid "Birth label along path"
 msgid "13. Birth Place of Father"
-msgstr "Födelsetextfält längs vägen"
+msgstr "13. Födelseplats för far"
 
 #: Form/form_ca.xml.h:425
-#, fuzzy
-#| msgid ""
-#| "Birth\n"
-#| "place:"
 msgid "BirthPlaceMother"
-msgstr ""
-"Födelse\n"
-"plats:"
+msgstr "FödelseplatsMor"
 
 #: Form/form_ca.xml.h:426
 msgid "14. Birth Place of Mother"
@@ -10443,10 +10399,8 @@ msgstr ""
 
 #: Form/form_ca.xml.h:449 Form/form_ca.xml.h:528 Form/form_ca.xml.h:660
 #: Form/form_ca.xml.h:753 Form/form_ca.xml.h:793
-#, fuzzy
-#| msgid "TR-Title"
 msgid "SubTitle"
-msgstr "TR-Titel"
+msgstr "Undertitel"
 
 #: Form/form_ca.xml.h:454 Form/form_ca.xml.h:533 Form/form_ca.xml.h:665
 msgid "PollSub"
@@ -10473,16 +10427,12 @@ msgid "4. Sex"
 msgstr ""
 
 #: Form/form_ca.xml.h:468
-#, fuzzy
-#| msgid "Colors"
 msgid "Colour"
-msgstr "Färger"
+msgstr "Färg"
 
 #: Form/form_ca.xml.h:469
-#, fuzzy
-#| msgid "Colors"
 msgid "5. Colour"
-msgstr "Färger"
+msgstr "5. Färg"
 
 #: Form/form_ca.xml.h:471 Form/form_ca.xml.h:682
 msgid "6. Relation to head of family"
@@ -10493,20 +10443,16 @@ msgid "7. Single, married, widowed, divorced or legally separated"
 msgstr ""
 
 #: Form/form_ca.xml.h:474 Form/form_ca.xml.h:685 Form/form_ca.xml.h:773
-#, fuzzy
-#| msgid "BirthIndex"
 msgid "BirthMonth"
-msgstr "FödelseIndex"
+msgstr "Födelsemånad"
 
 #: Form/form_ca.xml.h:475
 msgid "8. Month and Date of Birth"
 msgstr ""
 
 #: Form/form_ca.xml.h:476 Form/form_ca.xml.h:687
-#, fuzzy
-#| msgid "BirthIndex"
 msgid "BirthYear"
-msgstr "FödelseIndex"
+msgstr "Födelseår"
 
 #: Form/form_ca.xml.h:477 Form/form_ca.xml.h:688
 msgid "9. Year of birth"
@@ -10621,10 +10567,8 @@ msgid "25. Months employed in other occupation than trace in factory or home"
 msgstr ""
 
 #: Form/form_ca.xml.h:510 Form/form_ca.xml.h:723
-#, fuzzy
-#| msgid "Occupation:"
 msgid "EarningsOccupation"
-msgstr "Yrke:"
+msgstr "FörtjänstYrke"
 
 #: Form/form_ca.xml.h:511
 msgid "26. Earnings from occupation or trade"
@@ -10667,10 +10611,8 @@ msgid "30. Can write"
 msgstr ""
 
 #: Form/form_ca.xml.h:520 Form/form_ca.xml.h:840
-#, fuzzy
-#| msgid "English"
 msgid "SpeakEnglish"
-msgstr "Engelska"
+msgstr "TalarEngelska"
 
 #: Form/form_ca.xml.h:521
 msgid "31. Can speak English"
@@ -10705,10 +10647,8 @@ msgid "Line on Schedule 2"
 msgstr ""
 
 #: Form/form_ca.xml.h:541
-#, fuzzy
-#| msgid "Pages"
 msgid "PageRef"
-msgstr "Sidor"
+msgstr "SidoRef"
 
 #: Form/form_ca.xml.h:542
 msgid "2. Page from Schedule 1"
@@ -10744,20 +10684,16 @@ msgstr ""
 
 #: Form/form_ca.xml.h:553 Form/form_us.xml.h:789 Form/form_us.xml.h:832
 #: Form/form_us.xml.h:891
-#, fuzzy
-#| msgid "Condition"
 msgid "Institution"
-msgstr "Kondition"
+msgstr "Institution"
 
 #: Form/form_ca.xml.h:554
 msgid "7. Institution: Special or legal name"
 msgstr ""
 
 #: Form/form_ca.xml.h:555
-#, fuzzy
-#| msgid "Built-in"
 msgid "Buildings"
-msgstr "Inbyggd"
+msgstr "Byggnader"
 
 #: Form/form_ca.xml.h:556
 msgid "8. Institution: Number of buildings"
