@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 02:35+0000\n"
+"PO-Revision-Date: 2025-02-28 21:42+0000\n"
 "Last-Translator: Bora Atıcı <boratici.acc@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -684,10 +684,8 @@ msgid ""
 msgstr ""
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place Cleanup"
-msgstr "Yer başlıkları"
+msgstr "Yeri temizle"
 
 #: PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
@@ -991,10 +989,8 @@ msgid "Find an incomplete place."
 msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:985
-#, fuzzy
-#| msgid "Differences"
 msgid "Set preferences"
-msgstr "Farklılıklar"
+msgstr "Tercihleri ayarla"
 
 #: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
@@ -2033,10 +2029,8 @@ msgid "%s event descriptions of %s events were changed."
 msgstr ""
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
-#, fuzzy
-#| msgid "Legacy place"
 msgid "Replace"
-msgstr "Tarihi yer"
+msgstr "Yer değiştir"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
@@ -2367,10 +2361,8 @@ msgid "Differences between Database and File"
 msgstr ""
 
 #: Differences/differences.py:161
-#, fuzzy
-#| msgid "Differences"
 msgid "No differences"
-msgstr "Farklılıklar"
+msgstr "Farklılık yok"
 
 #: Differences/differences.py:168
 msgid "Missing items in File that are added in Database"
@@ -2859,10 +2851,8 @@ msgid "Restore default settings"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3068 DynamicWeb/dynamicweb.py:4978
-#, fuzzy
-#| msgid "No need modifications"
 msgid "Show last modification time"
-msgstr "Değişikliğe gerek yok"
+msgstr "Son değişiklik süresini göster"
 
 #: DynamicWeb/dynamicweb.py:3069 DynamicWeb/dynamicweb.py:5133
 msgid "SVG tree children distribution"
@@ -4149,10 +4139,8 @@ msgid "abbreviation"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:1562
-#, fuzzy
-#| msgid "column"
 msgid "volume"
-msgstr "sütun"
+msgstr "cilt"
 
 #: DenominoViso/DenominoViso.py:1754
 msgid "of"
@@ -5402,10 +5390,8 @@ msgid "Password:"
 msgstr ""
 
 #: ExtractCity/extractcity.py:402
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place title"
-msgstr "Yer başlıkları"
+msgstr "Yer başlığı"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
@@ -5819,10 +5805,8 @@ msgid "Street, City, County, State, Postal Code, Country, Phone number"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:448
-#, fuzzy
-#| msgid "Differences"
 msgid "Media Reference"
-msgstr "Farklılıklar"
+msgstr "Ortam referansı"
 
 #: PersonEverything/PersonEverything.py:455
 #: PersonEverything/PersonEverything.py:732
@@ -6115,10 +6099,8 @@ msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking Given Names"
-msgstr "Yer Başlığı Denetlemek"
+msgstr "Adlar kontrol ediliyor"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
@@ -8582,10 +8564,8 @@ msgid "Edit Form"
 msgstr ""
 
 #: Form/editform.py:225
-#, fuzzy
-#| msgid "Differences"
 msgid "Reference:"
-msgstr "Farklılıklar"
+msgstr "Referans:"
 
 #: Form/editform.py:421
 msgid "Headings"
@@ -17330,10 +17310,8 @@ msgstr ""
 
 #: SourceIndex/death.glade:217 SourceIndex/census.glade:904
 #: SourceIndex/marriage.glade:1296
-#, fuzzy
-#| msgid "column"
 msgid "Volume:"
-msgstr "sütun"
+msgstr "Cilt:"
 
 #: SourceIndex/death.glade:282
 msgid "<b>Death act</b>"
@@ -17418,10 +17396,8 @@ msgid "Death date:"
 msgstr ""
 
 #: SourceIndex/census.glade:414
-#, fuzzy
-#| msgid "Legacy place"
 msgid "Death place:"
-msgstr "Tarihi yer"
+msgstr "Ölüm yeri:"
 
 #: SourceIndex/census.glade:447
 msgid "Family status:"
@@ -19273,10 +19249,8 @@ msgid "Clear selections"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:213
-#, fuzzy
-#| msgid "Attach a tag on selected places."
 msgid "Apply to selected places"
-msgstr "Seçilen yerlere bir etiket ekleyin."
+msgstr "Seçilen yerlere uygula"
 
 #: PlaceUpdate/PlaceUpdate.py:266
 msgid "Setting place properties"
@@ -20655,10 +20629,8 @@ msgid "Merge"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:824
-#, fuzzy
-#| msgid "No changes need."
 msgid "Local changes"
-msgstr "Değiştirmeye gerek yok."
+msgstr "Yerel değişiklikler"
 
 #: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
 #: GrampsWebSync/grampswebsync.py:834
@@ -20666,10 +20638,8 @@ msgid "Modified"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:829
-#, fuzzy
-#| msgid "No changes need."
 msgid "Remote changes"
-msgstr "Değiştirmeye gerek yok."
+msgstr "Uzak değişiklikler"
 
 #: GrampsWebSync/grampswebsync.py:834
 msgid "Simultaneous changes"
@@ -20852,10 +20822,8 @@ msgid "Sources Changed"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:304
-#, fuzzy
-#| msgid "No changes need."
 msgid "Notes Changed"
-msgstr "Değiştirmeye gerek yok."
+msgstr "Notlar değişti"
 
 #: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
@@ -20870,10 +20838,8 @@ msgid "The style used for normal text"
 msgstr ""
 
 #: LastChange/LastChangeGramplet.py:82
-#, fuzzy
-#| msgid "No changes need."
 msgid "changed on"
-msgstr "Değiştirmeye gerek yok."
+msgstr "değişti"
 
 #: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
