@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -340,7 +340,7 @@ msgstr "lxml"
 
 #: lxml/lxmlGramplet.gpr.py:11
 msgid "Gramplet for testing lxml and XSLT"
-msgstr "Gramplet za testiranje lxml i XSLT"
+msgstr "Gramplet za testiranje lxml-a i XSLT-a"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
@@ -348,7 +348,7 @@ msgstr "etree"
 
 #: lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
-msgstr "Gramplet za testiranje etree s Gramps XML-om"
+msgstr "Gramplet za testiranje etree modula s Gramps XML-om"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
@@ -830,7 +830,7 @@ msgid ""
 msgstr ""
 "Prikazuje se samo deset podudaranja.\n"
 "Za prikaz više rezultata, ponovo pritisni gumb za traženje.\n"
-"Ili pokušaj promijeniti naslov, koristeći više detalja, npr. državu."
+"Ili pokušaj promijeniti naslov, koristeći više detalja, npr. zenlju."
 
 #: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
@@ -905,7 +905,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
-msgstr "Grad/Okrug/Pokrajina/Država"
+msgstr "Grad, okrug, država, zemlja"
 
 #: PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
@@ -921,7 +921,7 @@ msgstr "Poštanski broj mjesta, ako postoji."
 
 #: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
-msgstr "Vrsta mjesta, npr. 'Država', 'Grad', … ."
+msgstr "Vrsta mjesta, npr. „Zemlja”, „Grad”, … ."
 
 #: PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
@@ -1141,7 +1141,7 @@ msgid ""
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
 msgstr ""
 "Aktiviranjem polja „Administracija”, GeoNames u pretragu uključuje "
-"administrativne podskupine (države, pokrajine, okruge itd.)"
+"administrativne podskupine (zeljme, države, okruge itd.)."
 
 #: PlaceCleanup/placecleanup.glade:1148
 msgid ""
@@ -1321,10 +1321,8 @@ msgstr "Obitelji s događajima s odabranom ulogom"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
-#, fuzzy
-#| msgid "Change active person?"
 msgid "The active Person"
-msgstr "Želiš li zamijeniti aktivnu osobu?"
+msgstr "Aktivna osoba"
 
 #: FilterRules/hassourcefilter.py:58
 msgid "Matches sources with a particular value"
@@ -1718,16 +1716,13 @@ msgid "Invalid Destination Directory"
 msgstr "Nevažeća odredišna mapa"
 
 #: D3Charts/DescendantIndentedTree.py:1365
-#, fuzzy, python-format
-#| msgid ""
-#| "Destinaton diretory %s does not exist\n"
-#| "Do you want to attempt to create it."
+#, python-format
 msgid ""
 "Destinaton diretory %s does not exist\n"
 "Do you want to attempt to create it?"
 msgstr ""
 "Odredišna mapa %s ne postoji\n"
-"Želiš li je pokušati stvoriti."
+"Želiš li je pokušati stvoriti?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
@@ -2220,7 +2215,7 @@ msgstr "%s opisa događaja od %s događaja su promijenjeni."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 msgid "Replace"
-msgstr "Zamjena"
+msgstr "Zamijeni"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
@@ -2431,10 +2426,8 @@ msgid ""
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:86
-#, fuzzy
-#| msgid "Search results"
 msgid "Search Quota "
-msgstr "Rezultati traženja"
+msgstr "Kvota traženja "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
@@ -2457,10 +2450,8 @@ msgid " Completed offspring Families"
 msgstr "Glave obitelji"
 
 #: Betawhatsnext/Betawhatsnext.py:118
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Ignore Person or Family"
-msgstr "Zabilješka o obitelji"
+msgstr "Zanemari osobu ili obitelj"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
@@ -2487,6 +2478,8 @@ msgid ""
 "\n"
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
+"\n"
+" ⛔ Nijedna osoba nije odabrana kao „Početna osoba”.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -2505,10 +2498,8 @@ msgid "Double-click color text to edit details"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:504
-#, fuzzy
-#| msgid "Nothing missing"
 msgid "Birth event missing."
-msgstr "Ništa ne nedostaje"
+msgstr "Nedostaje događaj rođenja."
 
 #: Betawhatsnext/Betawhatsnext.py:505
 msgid "Add via the Events tab of the Edit Person dialog."
@@ -2941,7 +2932,7 @@ msgid ""
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
 "is UTF-8.</p>"
 msgstr ""
-"<p>Ova stranica sadržava neobrađeni SVG kȏd.<br>Kopiraj sadržaj u neki "
+"<p>Ova stranica sadržava neobrađeni SVG kod.<br>Kopiraj sadržaj u neki "
 "uređivač teksta i spremi ga kao SVG datoteku.<br>Provjeri, da je kodiranje "
 "uređivača postavljeno na UTF-8.</p>"
 
@@ -3617,7 +3608,7 @@ msgstr "Standardni broj unosa, prikazanih na jednoj stranici indeksa"
 
 #: DynamicWeb/dynamicweb.py:5098
 msgid "Maximum number of generations"
-msgstr "Najveći broj generacija"
+msgstr "Maksimalni broj generacija"
 
 #: DynamicWeb/dynamicweb.py:5101
 msgid ""
@@ -3781,8 +3772,8 @@ msgid ""
 "was previously closed.  It adds no new menus or Gramplets, but allows the "
 "last six objects visited to be found via the 'Go' menu."
 msgstr ""
-"S ovim dodatkom se Gramps pokreće u istom pogledu i na istom objektu, koji "
-"su bili aktivni prilikom zadnjeg izlaska iz programa. Ne dodaje nove "
+"S ovim dodatkom se Gramps pokreće u istom prikazu i na istom objektu, koji "
+"su bili aktivni prilikom zadnjeg zatvaranja Grampsa. Ne dodaje nove "
 "izbornike niti Gramplete, ali omogućuje prikaz zadnjih šest korištenih "
 "objekata u izborniku „Idi”."
 
@@ -3796,7 +3787,7 @@ msgstr "Provjerava podatke veza za osobe."
 
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
-msgstr "Alat za provjeru veza"
+msgstr "Alat za stanja veza"
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
@@ -4167,10 +4158,8 @@ msgid "Shared Citation ID :"
 msgstr "Citati:"
 
 #: FamilyTreeDNA/ftdna_import.py:151
-#, fuzzy
-#| msgid "Active person"
 msgid "Active Person : "
-msgstr "Aktivna osoba"
+msgstr "Aktivna osoba: "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
@@ -5428,10 +5417,8 @@ msgid " (Requires version 0.5.x)"
 msgstr " (Zahtijeva verziju 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
-#, fuzzy
-#| msgid " (lxml: not found. Requires version "
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr " (lxml: nije pronađen. Zahtijeva verziju "
+msgstr " • python-fontconfig nije pronađen, (zahtijeva verziju 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
@@ -5630,71 +5617,59 @@ msgstr "Gramplet prikazuje reference izvora"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
-msgstr "DNA podudaranja"
+msgstr "DNA poklapanja"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
-msgstr ""
+msgstr "Gramplet za prikaz popisa DNK poklapanja"
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "Persons"
 msgid "Pers."
-msgstr "Osobe"
+msgstr "Osoba"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
-msgstr ""
+msgstr "Srod."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "Z. DNK"
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "8. Sex"
 msgid "S. Seg."
-msgstr "8. Spol"
+msgstr "Z. seg."
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "8. Sex"
 msgid "L. Seg"
-msgstr "8. Spol"
+msgstr "N. seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Izvori"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "Zajednički DNK"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "Zajednički segment"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "Najveći segment"
 
 #: DNAMatches/dnamatches.py:159
-#, fuzzy
-#| msgid " source(s)"
 msgid "Source(s)"
-msgstr " izvori"
+msgstr "Izvori"
 
 #: DNAMatches/dnamatches.py:194
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to navigate to the matched person."
-msgstr "Dvoklik na redak za uređivanje odabranog sudionika."
+msgstr "Dvoklik na redak za navigaciju do odgovarajuće osobe."
 
 #: DNAMatches/dnamatches.py:195
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Right click to edit selected association."
-msgstr "Dvoklik na redak za uređivanje odabranog sudionika."
+msgstr "Desni klik za uređivanje odabrane veze."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
@@ -5702,18 +5677,16 @@ msgstr "LEGENDA"
 
 #: DNAMatches/dnamatches.py:228
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "Nije određeno"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
-#, fuzzy
-#| msgid "M"
 msgid "cM"
-msgstr "M"
+msgstr "cM"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
@@ -5826,7 +5799,7 @@ msgstr "Izdvajanje podataka mjesta iz naslova mjesta"
 
 #: ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
-msgstr "Pokušava izdvojiti grad i pokrajinu/provinciju iz naslova mjesta"
+msgstr "Pokušava izdvojiti grad i državu/pokrajinu iz naslova mjesta"
 
 #: ExtractCity/changenames.glade:94
 msgid "_Toggle Selected"
@@ -6186,16 +6159,12 @@ msgid "Alternate name"
 msgstr "Alternativno ime"
 
 #: PersonEverything/PersonEverything.py:196
-#, fuzzy
-#| msgid "{This is the primary surname}"
 msgid " This is the primary birth event."
-msgstr "{Ovo je primarno prezime}"
+msgstr " Ovo je primarni događaj rođenja."
 
 #: PersonEverything/PersonEverything.py:199
-#, fuzzy
-#| msgid "{This is the primary surname}"
 msgid " This is the primary death event."
-msgstr "{Ovo je primarno prezime}"
+msgstr " Ovo je primarni događaj smrti."
 
 #: PersonEverything/PersonEverything.py:238
 msgid "Parent Family"
@@ -6221,7 +6190,7 @@ msgstr "CIK "
 
 #: PersonEverything/PersonEverything.py:434
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
-msgstr "Ulica, grad, okrug, pokrajina, poštanski broj, država, telefonski broj"
+msgstr "Ulica, grad, okrug, država, poštanski broj, zemlja, telefonski broj"
 
 #: PersonEverything/PersonEverything.py:448
 msgid "Media Reference"
@@ -7854,29 +7823,28 @@ msgstr "Bez promjena"
 
 #: PlaceCompletion/PlaceCompletion.py:1143
 msgid "City[, State]"
-msgstr "Grad[, Pokrajina]"
+msgstr "Grad[, država]"
 
 #: PlaceCompletion/PlaceCompletion.py:1145
 msgid "City,PostalCode,Country"
-msgstr "Grad,Poštanski broj,Država"
+msgstr "Grad, poštanski broj, zemlja"
 
 #: PlaceCompletion/PlaceCompletion.py:1147
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
-msgstr "Grad[(Ulica;Lokalitet;Župa)],Poštanski broj,Država"
+msgstr "Grad[(ulica;lokalitet;župa)], poštanski broj, zemlja"
 
 #: PlaceCompletion/PlaceCompletion.py:1149
 msgid "TitleStart [, City] [, State]"
-msgstr "Početak naslova [, Grad] [, Pokrajina]"
+msgstr "Početak naslova [, grad] [, država]"
 
 #: PlaceCompletion/PlaceCompletion.py:1151
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
-msgstr "Početak naslova [, Grad] [, Pokrajina] [, Država]"
+msgstr "Početak naslova [, grad] [, okrug] [, država] [, zemlja]"
 
 #: PlaceCompletion/PlaceCompletion.py:1153
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
 msgstr ""
-"Početak naslova [, Grad] [, Poštanski broj] [, Okrug] [, Pokrajina] [, "
-"Država]"
+"Početak naslova [, grad] [, poštanski broj] [, okrug] [, država] [, zemlja]"
 
 #: PlaceCompletion/PlaceCompletion.py:1177
 msgid "Don't search"
@@ -7884,35 +7852,35 @@ msgstr "Bez pretrage"
 
 #: PlaceCompletion/PlaceCompletion.py:1180
 msgid "GeoNames country file, city search"
-msgstr "GeoNames datoteka država, traženje grada"
+msgstr "GeoNames datoteka zemalja, traženje grada"
 
 #: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city localized variants search"
-msgstr "GeoNames datoteka država, traženje lokaliziranih varijanti imena grada"
+msgstr "GeoNames datoteka zemalja, traženje lokaliziranih varijanti imena grada"
 
 #: PlaceCompletion/PlaceCompletion.py:1190
 msgid "GeoNames country file, county/city search"
-msgstr "GeoNames datoteka država, traženje pokrajine/grada"
+msgstr "GeoNames datoteka zemalja, traženje pokrajine/grada"
 
 #: PlaceCompletion/PlaceCompletion.py:1202
 msgid "GeoNames country file, title begin, general search"
-msgstr "GeoNames datoteka država, početak naslova, opća pretraga"
+msgstr "GeoNames datoteka zemalja, početak naslova, opća pretraga"
 
 #: PlaceCompletion/PlaceCompletion.py:1207
 msgid "GeoNames USA state file, city search"
-msgstr "GeoNames datoteka SAD-država, traženje grada"
+msgstr "GeoNames datoteka država SAD-a, traženje grada"
 
 #: PlaceCompletion/PlaceCompletion.py:1221
 msgid "GNS Geonet country file, city search"
-msgstr "GNS Geonet datoteka država, traženje grada"
+msgstr "GNS Geonet datoteka zemalja, traženje grada"
 
 #: PlaceCompletion/PlaceCompletion.py:1228
 msgid "GNS Geonet country file, county/city search"
-msgstr "GNS Geonet datoteka država, traženje pokrajine/grada"
+msgstr "GNS Geonet datoteka zemalja, traženje pokrajine/grada"
 
 #: PlaceCompletion/PlaceCompletion.py:1236
 msgid "GNS Geonet country file, title begin, general search"
-msgstr "GNS Geonet datoteka država, početak naslova, opća pretraga"
+msgstr "GNS Geonet datoteka zemalja, početak naslova, opća pretraga"
 
 #: PlaceCompletion/PlaceCompletion.py:1244
 msgid "Wikipedia CSV Dump"
@@ -8007,7 +7975,7 @@ msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
 msgstr ""
-"Moguće varijable: grad, ulica, lokalitet, župa, okrug, pokrajina, država, "
+"Moguće varijable: grad, ulica, lokalitet, župa, okrug, država, zemlja, "
 "poštanski broj"
 
 #: PlaceCompletion/placecompletion.glade:820
@@ -8415,7 +8383,7 @@ msgstr "Počisti (ukloni) prilagođene vrste"
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:103
 msgid "Family Relationship Tool"
-msgstr "Obiteljska veza"
+msgstr "Alat za obiteljske veze"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
@@ -8824,24 +8792,20 @@ msgid "The death label content is wrapped where possible."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:62
-#, fuzzy
-#| msgid "Death place:"
 msgid "Death label anchor"
-msgstr "Mjesto smrti:"
+msgstr "Poravnanje etikete smrti"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:63
 msgid "Text alignment of the death label."
-msgstr ""
+msgstr "Poravnanje teksta etikete smrti."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:68
-#, fuzzy
-#| msgid "Marriage place:"
 msgid "Show marriage label"
-msgstr "Mjesto sklapanja braka:"
+msgstr "Prikaži etiketu braka"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:69
 msgid "Activate the marriage label."
-msgstr ""
+msgstr "Aktiviraj etiketu braka."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:70
 #, fuzzy
@@ -8854,10 +8818,8 @@ msgid "The color of the individuals is faded to black with increasing age."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
-#, fuzzy
-#| msgid "First name:"
 msgid "Font name"
-msgstr "Ime:"
+msgstr "Ime fonta"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:73
 #, fuzzy
@@ -8929,7 +8891,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:89
 msgid "Visualize automatically detected errors in the placement algorithm."
-msgstr ""
+msgstr "Automatski vizualiziraj otkrivene greške u algoritmu za postavljanje."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:90
 #, fuzzy
@@ -8946,30 +8908,28 @@ msgid "Unique"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:93
-#, fuzzy
-#| msgid "Type of surname:"
 msgid "Based on surname"
-msgstr "Vrsta prezimena:"
+msgstr "Na osnovi prezimena"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:94
 msgid "Flip vertically"
-msgstr ""
+msgstr "Preokreni okomito"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:95
 msgid "If active, the chart is flipped vertically."
-msgstr ""
+msgstr "Ako je aktivno, dijagram će se preokrenuti okomito."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:96
 msgid "Line weighting"
-msgstr ""
+msgstr "Debljina linija"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
-msgstr ""
+msgstr "Debljina linija se može konfigurirati."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:98
 msgid "none"
-msgstr ""
+msgstr "bez"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 #, fuzzy
@@ -8988,41 +8948,38 @@ msgstr ""
 msgid ""
 "if this number of generations has been reached, the algorithm doesn't go any "
 "deeper"
-msgstr ""
+msgstr "ako je postignut ovaj broj generacija, algoritam ne ide dublje"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:103
 msgid "Fathers have the same color"
-msgstr ""
+msgstr "Očevi imaju istu boju"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:104
 msgid ""
 "Starting from the root person, each father of an added individual has the "
 "same color as that individual."
 msgstr ""
+"Polazeći od glavne osobe, svaki otac dodane osobe ima istu boju kao ta osoba."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
-#, fuzzy
-#| msgid "Maximum number of generations"
 msgid "Maximum number of compression steps"
-msgstr "Najveći broj generacija"
+msgstr "Maksimalni broj koraka sužavanja"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:106
 msgid "Debugging of the compression algorithm. Abort after x steps."
-msgstr ""
+msgstr "Uklanjanje grešaka algoritma za sužavanje. Prekini nakon x koraka."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:107
-#, fuzzy
-#| msgid "Maximum number of generations"
 msgid "Maximum number of flipping steps"
-msgstr "Najveći broj generacija"
+msgstr "Maksimalni broj koraka preokretanja"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:108
 msgid "Debugging of the flipping algorithm. Abort after x steps."
-msgstr ""
+msgstr "Uklanjanje grešaka algoritma za preokretanje. Prekini nakon x koraka."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:109
 msgid "Compress the chart horizontally"
-msgstr ""
+msgstr "Suzi dijagram vodoravno"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:110
 msgid ""
@@ -9030,10 +8987,13 @@ msgid ""
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
 msgstr ""
+"Svaka osoba standardno ima jedinstveno vodoravno mjesto. To može biti "
+"nedostatno pri velikom broju generacija. Ovaj algoritam omogućuje da "
+"nekoliko ljudi dijele vodoravno mjesto, ako se ne preklapaju."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
-msgstr ""
+msgstr "Preokreni obitelji za smanjivanje broja vodoravnih veza"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:112
 msgid ""
@@ -9043,16 +9003,12 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
-#, fuzzy
-#| msgid "Highlight path(s)"
 msgid "Highlight descandants"
-msgstr "Istakni linije"
+msgstr "Istakni potomke"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:114
-#, fuzzy
-#| msgid "Center person and all descendants"
 msgid "Highlight the persons which are descendants."
-msgstr "Središnju osobu i sve potomke"
+msgstr "Istakni osobe koje su potomci."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:115
 msgid "Number of descendants"
@@ -9060,27 +9016,23 @@ msgstr "Broj potomaka"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:116
 msgid "Very soft"
-msgstr ""
+msgstr "Vrlo blago"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:117
-#, fuzzy
-#| msgid "General Layout"
 msgid "General chart layout"
-msgstr "Opći raspored"
+msgstr "Opći raspored dijagrama"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:118
 msgid "There are different layouts for descendant charts."
-msgstr ""
+msgstr "Postoje različiti rasporedi za dijagrame potomaka."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:119
-#, fuzzy
-#| msgid "Include Children"
 msgid "Parents enclose children"
-msgstr "Uključi djecu"
+msgstr "Roditelji obuhvaćaju djecu"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:120
 msgid "Cactus"
-msgstr ""
+msgstr "Kaktus"
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
@@ -9254,7 +9206,7 @@ msgstr "Raspored"
 #: Form/form_ca.xml.h:2 Form/form_ca.xml.h:93 Form/form_ca.xml.h:211
 #: Form/form_ca.xml.h:798
 msgid "EnumDistrict"
-msgstr "Broj distrikta"
+msgstr "Popisni kotar"
 
 #: Form/form_ca.xml.h:3 Form/form_ca.xml.h:94 Form/form_ca.xml.h:212
 #: Form/form_ca.xml.h:644 Form/form_ca.xml.h:812 Form/form_us.xml.h:1250
@@ -10261,7 +10213,7 @@ msgstr ""
 #: Form/form_ca.xml.h:453 Form/form_ca.xml.h:532 Form/form_ca.xml.h:618
 #: Form/form_ca.xml.h:664 Form/form_ca.xml.h:797
 msgid "SubDistrict"
-msgstr "Pod-distrikt"
+msgstr "Pod-kotar"
 
 #: Form/form_ca.xml.h:296 Form/form_ca.xml.h:350 Form/form_ca.xml.h:399
 msgid "Vessels"
@@ -10350,7 +10302,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:317 Form/form_ca.xml.h:371 Form/form_ca.xml.h:420
 msgid "11. Country or Province of Birth"
-msgstr ""
+msgstr "11. Zemlja ili pokrajina rođenja"
 
 #: Form/form_ca.xml.h:319 Form/form_ca.xml.h:373
 msgid "12. Religion"
@@ -10362,7 +10314,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
-msgstr ""
+msgstr "14. Profesija, zanimanje ili obrt"
 
 #: Form/form_ca.xml.h:325 Form/form_ca.xml.h:379
 msgid "15. Married or Widowed"
@@ -10688,7 +10640,7 @@ msgstr "16. Vjera"
 
 #: Form/form_ca.xml.h:493
 msgid "17. Profession, occupation, trade or means of living of each person"
-msgstr ""
+msgstr "17. Profesija, zanimanje, obrt ili izvor prihoda svake osobe"
 
 #: Form/form_ca.xml.h:494
 msgid "OwnMeans"
@@ -11217,7 +11169,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:714
 msgid "22. State where person employed"
-msgstr ""
+msgstr "22. Država u kojoj je osoba zaposlena"
 
 #: Form/form_ca.xml.h:715
 msgid "WeeksOccupation"
@@ -11528,7 +11480,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:855
 msgid "26. State where person is employed"
-msgstr ""
+msgstr "26. Država u kojoj je osoba zaposlena"
 
 #: Form/form_us.xml.h:1 Form/form_us.xml.h:14 Form/form_us.xml.h:35
 #: Form/form_us.xml.h:56 Form/form_us.xml.h:96 Form/form_us.xml.h:165
@@ -11601,12 +11553,12 @@ msgstr ""
 #: Form/form_us.xml.h:1877 Form/form_us.xml.h:1898 Form/form_us.xml.h:1927
 #: Form/form_us.xml.h:1981 Form/form_us.xml.h:2289 Form/form_us.xml.h:2318
 msgid "County of"
-msgstr "Pokrajina od"
+msgstr "Okrug od"
 
 #: Form/form_us.xml.h:7 Form/form_us.xml.h:20 Form/form_us.xml.h:41
 #: Form/form_us.xml.h:62 Form/form_us.xml.h:102 Form/form_us.xml.h:171
 msgid "District (or Territory) of"
-msgstr "Distrikt (ili teritorij) od"
+msgstr "Kotar (ili teritorij) od"
 
 #: Form/form_us.xml.h:9
 msgid "Free white males 16 & up"
@@ -12094,7 +12046,7 @@ msgstr ""
 #: Form/form_us.xml.h:647 Form/form_us.xml.h:783 Form/form_us.xml.h:826
 #: Form/form_us.xml.h:1067 Form/form_us.xml.h:1100 Form/form_us.xml.h:2505
 msgid "State of"
-msgstr ""
+msgstr "Država od"
 
 #: Form/form_us.xml.h:259 Form/form_us.xml.h:280 Form/form_us.xml.h:335
 #: Form/form_us.xml.h:356 Form/form_us.xml.h:413 Form/form_us.xml.h:434
@@ -12499,11 +12451,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:444 Form/form_us.xml.h:1643
 msgid "Father of foreign birth"
-msgstr ""
+msgstr "Otac rođen u inozemstvu"
 
 #: Form/form_us.xml.h:445 Form/form_us.xml.h:1644
 msgid "Mother of foreign birth"
-msgstr ""
+msgstr "Majka rođena u inozemstvu"
 
 #: Form/form_us.xml.h:446
 msgid "Month, if born within the year"
@@ -13116,7 +13068,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:660 Form/form_us.xml.h:702 Form/form_us.xml.h:745
 msgid "State (or Territory) of"
-msgstr ""
+msgstr "Država (ili teritorij) od"
 
 #: Form/form_us.xml.h:666 Form/form_us.xml.h:708 Form/form_us.xml.h:750
 #: Form/form_us.xml.h:785 Form/form_us.xml.h:828
@@ -13376,7 +13328,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:851
 msgid "Citizenship if foreign born"
-msgstr ""
+msgstr "Državljanstvo ako je osoba rođena u inozemstvu"
 
 #: Form/form_us.xml.h:852
 msgid "City (April 1, 1935)"
@@ -13384,7 +13336,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:854
 msgid "State (Territory/Country)"
-msgstr ""
+msgstr "Država (teritorij/zemlja)"
 
 #: Form/form_us.xml.h:855
 msgid "On a Farm (Y/N)"
@@ -13523,14 +13475,13 @@ msgid "Marital status"
 msgstr ""
 
 #: Form/form_us.xml.h:909
-#, fuzzy
-#| msgid "7. Single, married, widowed, divorced or legally separated"
 msgid "Is he now married, widowed, divorced, separated, or never married?"
-msgstr "7. Singl, vjenčani, obudovljeni, razvedeni ili zakonski rastavljeni"
+msgstr ""
+"Je li sada oženjen, obudovljen, razveden, rastavljen ili nikada oženjen?"
 
 #: Form/form_us.xml.h:911
 msgid "What State (or foreign country) was he born in?"
-msgstr ""
+msgstr "U kojoj je državi (ili stranoj zemlji) rođen?"
 
 #: Form/form_us.xml.h:912
 msgid "Is he naturalized?"
@@ -13626,15 +13577,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:935
 msgid "State or foreign country"
-msgstr ""
+msgstr "Država ili strana zemlja"
 
 #: Form/form_us.xml.h:937
 msgid "What country was his father born in?"
-msgstr ""
+msgstr "U kojoj je zemlji rođen njegov otac?"
 
 #: Form/form_us.xml.h:939
 msgid "What country was his mother born in?"
-msgstr ""
+msgstr "U kojoj je zemlji rođena njegova majka?"
 
 #: Form/form_us.xml.h:940
 msgid "Highest grade attended"
@@ -13653,10 +13604,8 @@ msgid "Did he finish this grade?"
 msgstr ""
 
 #: Form/form_us.xml.h:944
-#, fuzzy
-#| msgid "Attended school within the year"
 msgid "Attended school since Feb 1, 1950?"
-msgstr "Pohađali školu unutar godine"
+msgstr "Pohađao školu od 1. veljače 1950.?"
 
 #: Form/form_us.xml.h:945
 msgid "Has he attended school at any time since February 1st?"
@@ -13777,12 +13726,12 @@ msgid "# years since marriage ended"
 msgstr ""
 
 #: Form/form_us.xml.h:971
-#, fuzzy
-#| msgid "7. Single, married, widowed, divorced or legally separated"
 msgid ""
 "How many years since this person was married, widowed, divorced, or "
 "separated?"
-msgstr "7. Singl, vjenčani, obudovljeni, razvedeni ili zakonski rastavljeni"
+msgstr ""
+"Koliko je godina prošlo od kada je osoba bila vjenčana, obudovljena, "
+"razvedena ili rastavljena?"
 
 #: Form/form_us.xml.h:972
 msgid "How many children has she ever borne, not counting stillbirths?"
@@ -13794,7 +13743,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:974
 msgid "District of"
-msgstr "Distrikt od"
+msgstr "Kotar od"
 
 #: Form/form_us.xml.h:977
 msgid "Married Y/N"
@@ -13889,7 +13838,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1006
 msgid "Other states lived in and when"
-msgstr ""
+msgstr "Druge države u kojima je osoba živjela i kada"
 
 #: Form/form_us.xml.h:1007
 msgid "Moved to Alabama"
@@ -13913,7 +13862,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1017
 msgid "If not, give name of state"
-msgstr ""
+msgstr "Ako ne, navedi ime države"
 
 #: Form/form_us.xml.h:1018
 msgid "Name of your Captain"
@@ -14292,7 +14241,7 @@ msgstr "Obudovljeni"
 
 #: Form/form_us.xml.h:1206
 msgid "Years resident in the state"
-msgstr ""
+msgstr "Godine prebivališta u državi"
 
 #: Form/form_us.xml.h:1209
 msgid "Native voters"
@@ -14430,11 +14379,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:1260
 msgid "Place of birth, state or territory"
-msgstr ""
+msgstr "Mjesto rođenja, država ili teritorij"
 
 #: Form/form_us.xml.h:1261
 msgid "Place of birth, country"
-msgstr ""
+msgstr "Mjesto rođenja, zemlja"
 
 #: Form/form_us.xml.h:1262
 msgid "Father (N, Native; F, Foreign)"
@@ -14648,11 +14597,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:1340
 msgid "If foreign born, are you naturalized"
-msgstr ""
+msgstr "Ako si rođen/a u inozemstvu, jesi li naturaliziran/a"
 
 #: Form/form_us.xml.h:1341
 msgid "If you are foreign born, are you naturalized?"
-msgstr ""
+msgstr "Ako si rođen/a u inozemstvu, jesi li naturaliziran/a?"
 
 #: Form/form_us.xml.h:1342 Form/form_us.xml.h:1343 Form/form_us.xml.h:1421
 #: Form/form_us.xml.h:2110 Form/form_us.xml.h:2148 Form/form_us.xml.h:2186
@@ -14894,7 +14843,7 @@ msgstr ""
 #: Form/form_us.xml.h:1417 Form/form_us.xml.h:2072 Form/form_us.xml.h:2106
 #: Form/form_us.xml.h:2144 Form/form_us.xml.h:2182 Form/form_us.xml.h:2220
 msgid "Deaf"
-msgstr ""
+msgstr "Gluh"
 
 #: Form/form_us.xml.h:1419 Form/form_us.xml.h:2108 Form/form_us.xml.h:2146
 #: Form/form_us.xml.h:2184 Form/form_us.xml.h:2222
@@ -14903,11 +14852,11 @@ msgstr "Idiot"
 
 #: Form/form_us.xml.h:1420
 msgid "Naturalized if foreign born?"
-msgstr ""
+msgstr "Naturaliziran/a ako je rođen/a u inozemstvu?"
 
 #: Form/form_us.xml.h:1426 Form/form_pl.xml.h:24
 msgid "House Number"
-msgstr "Kužni broj"
+msgstr "Kućni broj"
 
 #: Form/form_us.xml.h:1429 Form/form_us.xml.h:2332
 msgid "Color or Race"
@@ -15317,11 +15266,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:1658 Form/form_us.xml.h:1689
 msgid "Residence in State - Years"
-msgstr ""
+msgstr "Prebivalište u državi – godine"
 
 #: Form/form_us.xml.h:1659 Form/form_us.xml.h:1690
 msgid "Residence in State - Months"
-msgstr ""
+msgstr "Prebivalište u državi – mjeseci"
 
 #: Form/form_us.xml.h:1660
 msgid "Residence in District - Years"
@@ -15791,7 +15740,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1956
 msgid "Birth Country"
-msgstr ""
+msgstr "Zemlja rođenja"
 
 #: Form/form_us.xml.h:1957 Form/form_us.xml.h:1971 Form/form_us.xml.h:1990
 #: Form/form_us.xml.h:2010
@@ -15953,7 +15902,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2054
 msgid "Years in United States"
-msgstr ""
+msgstr "Godine u SAD-u"
 
 #: Form/form_us.xml.h:2055
 msgid "Birthplace of Father"
@@ -16044,7 +15993,7 @@ msgstr ""
 #: Form/form_us.xml.h:2109 Form/form_us.xml.h:2147 Form/form_us.xml.h:2185
 #: Form/form_us.xml.h:2223
 msgid "If Foreign Born, are you Naturalized"
-msgstr ""
+msgstr "Ako si rođen/a u inozemstvu, jesi li naturaliziran/a"
 
 #: Form/form_us.xml.h:2111 Form/form_us.xml.h:2149 Form/form_us.xml.h:2187
 #: Form/form_us.xml.h:2225
@@ -16161,7 +16110,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2294 Form/form_us.xml.h:2323
 msgid "State or Vessel"
-msgstr ""
+msgstr "Država ili plovilo"
 
 #: Form/form_us.xml.h:2337
 msgid "Parents place of birth"
@@ -16827,7 +16776,7 @@ msgstr ""
 
 #: Form/form_dk.xml.h:358
 msgid "State Tax"
-msgstr ""
+msgstr "Državni porez"
 
 #: Form/form_dk.xml.h:359
 msgid "Statsskat"
@@ -16932,7 +16881,7 @@ msgstr ""
 #: Form/form_gb.xml.h:3 Form/form_gb.xml.h:40 Form/form_gb.xml.h:196
 #: Form/form_gb.xml.h:230 Form/form_gb.xml.h:329 Form/form_gb.xml.h:365
 msgid "Registration District"
-msgstr "Distrikt prijave"
+msgstr "Kotar registracije"
 
 #: Form/form_gb.xml.h:4 Form/form_gb.xml.h:21 Form/form_gb.xml.h:41
 msgid "Administrative Area"
@@ -17146,7 +17095,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:163 Form/form_gb.xml.h:292
 msgid "PROFESSION or OCCUPATION"
-msgstr ""
+msgstr "PROFESIJA ili ZANIMANJE"
 
 #: Form/form_gb.xml.h:166 Form/form_gb.xml.h:295 Form/form_gb.xml.h:527
 msgid "Neither"
@@ -17178,7 +17127,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:176 Form/form_gb.xml.h:307
 msgid "Rural District"
-msgstr ""
+msgstr "Rularni kotar"
 
 #: Form/form_gb.xml.h:178 Form/form_gb.xml.h:309
 msgid "Town or Village or Hamlet"
@@ -17194,7 +17143,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:188 Form/form_gb.xml.h:319
 msgid "PROFESSION OR OCCUPATION"
-msgstr ""
+msgstr "PROFESIJA ILI ZANIMANJE"
 
 #: Form/form_gb.xml.h:189 Form/form_gb.xml.h:220 Form/form_gb.xml.h:320
 #: Form/form_gb.xml.h:353
@@ -17208,11 +17157,11 @@ msgstr "Zaposlenik, radnik ili samostalan"
 #: Form/form_gb.xml.h:191 Form/form_gb.xml.h:222 Form/form_gb.xml.h:322
 #: Form/form_gb.xml.h:355
 msgid "At Home"
-msgstr ""
+msgstr "Doma"
 
 #: Form/form_gb.xml.h:192 Form/form_gb.xml.h:323
 msgid "If Working at Home"
-msgstr ""
+msgstr "Ako radi od doma"
 
 #: Form/form_gb.xml.h:195 Form/form_gb.xml.h:326
 msgid ""
@@ -17231,16 +17180,16 @@ msgstr ""
 #: Form/form_gb.xml.h:198 Form/form_gb.xml.h:232 Form/form_gb.xml.h:331
 #: Form/form_gb.xml.h:367 Form/form_gb.xml.h:424
 msgid "Enumeration District"
-msgstr "Broj distrikta"
+msgstr "Broj kotara"
 
 #: Form/form_gb.xml.h:199 Form/form_gb.xml.h:233 Form/form_gb.xml.h:332
 #: Form/form_gb.xml.h:368
 msgid "Number of Rooms"
-msgstr ""
+msgstr "Broj soba"
 
 #: Form/form_gb.xml.h:201 Form/form_gb.xml.h:334
 msgid "NAME AND SURNAME"
-msgstr ""
+msgstr "IME I PREZIME"
 
 #: Form/form_gb.xml.h:203 Form/form_gb.xml.h:336
 msgid "RELATIONSHIP to Head of Family"
@@ -17318,7 +17267,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:235 Form/form_gb.xml.h:370
 msgid "NAME and SURNAME"
-msgstr ""
+msgstr "IME i PREZIME"
 
 #: Form/form_gb.xml.h:237 Form/form_gb.xml.h:372
 msgid "RELATIONSHIP to Head of Household"
@@ -17338,7 +17287,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:243 Form/form_gb.xml.h:378
 msgid "SEX"
-msgstr ""
+msgstr "SPOL"
 
 #: Form/form_gb.xml.h:245 Form/form_gb.xml.h:380
 msgid "MARRIAGE or ORPHANHOOD"
@@ -17367,7 +17316,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:256 Form/form_gb.xml.h:391
 msgid "Ages of living children"
-msgstr ""
+msgstr "Dob žive djece"
 
 #: Form/form_gb.xml.h:257 Form/form_gb.xml.h:392
 msgid "For each child place a X in the column corresponding to its age."
@@ -17383,7 +17332,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:260
 msgid "Registration District and Sub-district"
-msgstr "Distrikt i pod-distrikt prijave"
+msgstr "Kotar i pod-kotar registracije"
 
 #: Form/form_gb.xml.h:262
 msgid "SURNAMES and OTHER NAMES."
@@ -17437,7 +17386,7 @@ msgstr "Rođen/a u pokrajini"
 
 #: Form/form_gb.xml.h:402
 msgid "Foreigner, Born England or Ireland"
-msgstr ""
+msgstr "Inozemac, rođen u Engleskoj ili Irskoj"
 
 #: Form/form_gb.xml.h:404 Form/form_gb.xml.h:419 Form/form_gb.xml.h:446
 #: Form/form_gb.xml.h:473 Form/form_gb.xml.h:501 Form/form_gb.xml.h:540
@@ -17528,11 +17477,11 @@ msgstr ""
 
 #: Form/form_gb.xml.h:474
 msgid "School Board District"
-msgstr ""
+msgstr "Kotar školskog odbora"
 
 #: Form/form_gb.xml.h:502 Form/form_gb.xml.h:541
 msgid "School board District"
-msgstr "Školski okrug"
+msgstr "Kotar školskog odbora"
 
 #: Form/form_gb.xml.h:504 Form/form_gb.xml.h:543 Form/form_gb.xml.h:602
 msgid "Parliamentary Division"
@@ -17611,7 +17560,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:603
 msgid "Urban District"
-msgstr "Urbani distrikt"
+msgstr "Urbani kotar"
 
 #: Form/form_gb.xml.h:606
 msgid "Head of Family"
@@ -18233,14 +18182,12 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:103
-#, fuzzy
-#| msgid "First name:"
 msgid "File name"
-msgstr "Ime:"
+msgstr "Ime datoteke"
 
 #: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
-msgstr ""
+msgstr "Aktiviraj prilagođenu početnu poziciju"
 
 #: Heatmap/heatmap.py:119
 msgid ""
@@ -18248,50 +18195,48 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:124
-#, fuzzy
-#| msgid "C_enter latitude:"
 msgid "Start latitude"
-msgstr "C_entriraj zemljopisnu širinu:"
+msgstr "Početna zemljopisna širina"
 
 #: Heatmap/heatmap.py:126
 msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
 msgstr ""
+"Postavi početnu zemljopisnu širinu\n"
+"Zadano: 50,0"
 
 #: Heatmap/heatmap.py:129
-#, fuzzy
-#| msgid "Center longitude:"
 msgid "Start longitude"
-msgstr "Centriraj zemljopisnu dužinu:"
+msgstr "Početna zemljopisna dužina"
 
 #: Heatmap/heatmap.py:131
 msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
 msgstr ""
+"Postavi početnu zemljopisnu dužinu\n"
+"Zadano: 10,0"
 
 #: Heatmap/heatmap.py:134
 msgid "Start zoom"
-msgstr ""
+msgstr "Početno zumiranje"
 
 #: Heatmap/heatmap.py:136
 msgid ""
 "Set the value for the starting zoom\n"
 "Default: 5"
 msgstr ""
+"Postavi vrijednost za početno zumiranje\n"
+"Zadano: 5"
 
 #: Heatmap/heatmap.py:209
-#, fuzzy
-#| msgid "The file does not exist."
 msgid "Path does not exist."
-msgstr "Datoteka ne postoji."
+msgstr "Staza ne postoji."
 
 #: Heatmap/heatmap.py:210
-#, fuzzy
-#| msgid "Invalid timestamp"
 msgid "Invalid filename."
-msgstr "Nevažeća vremenska oznaka"
+msgstr "Neispravno ime datoteke."
 
 #: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
@@ -19002,7 +18947,7 @@ msgstr "Uvezeno"
 #: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
 #: ImportMerge/importmerge.py:985
 msgid "Result  "
-msgstr "Rezultat "
+msgstr "Rezultat  "
 
 #: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
@@ -19808,10 +19753,8 @@ msgid "All persons already had one."
 msgstr "Sve osobe su već imale jedan."
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
-#, fuzzy
-#| msgid "Failed writing %s: %s"
 msgid "Failed writing "
-msgstr "Greška u pisanju %s: %s"
+msgstr "Neuspjelo pisanje "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
@@ -19852,48 +19795,36 @@ msgid "Show GrampsID on top right of the box"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
-#, fuzzy
-#| msgid "Maximize"
 msgid "Optimize"
-msgstr "Otvori maksimalno"
+msgstr "Optimiziraj"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
-msgstr ""
+msgstr "Koristi što manje prostora u vodoravnom smjeru"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
-#, fuzzy
-#| msgid "Male Background Color"
 msgid "Male Box Color"
-msgstr "Muška boja pozadine"
+msgstr "Boja okvira za muške osobe"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:894
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Box background color for male person"
-msgstr "Boja linije prema početnoj osobi"
+msgstr "Boja pozadine okvira za muške osobe"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:897
-#, fuzzy
-#| msgid "Female Box Edge"
 msgid "Female Box Color"
-msgstr "Rubovi okvira ženskih osoba"
+msgstr "Boja okvira za ženske osobe"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:898
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Box background color for female person"
-msgstr "Boja ženskih osoba:"
+msgstr "Boja pozadine okvira za ženske osobe"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:904
-#, fuzzy
-#| msgid "Number of Pupils"
 msgid "Number of pixel per year"
-msgstr "Broj učenika"
+msgstr "Broj piksela po godini"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
-msgstr ""
+msgstr "Kolika visina piksela predstavlja jednu godinu?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:910
 #, fuzzy
@@ -20010,10 +19941,8 @@ msgid "Shows the number of descendants of the current person"
 msgstr "Prikazuje broj potomaka trenutačno odabrane osobe"
 
 #: PlaceUpdate/PlaceUpdate.py:56
-#, fuzzy
-#| msgid " entries for place(s)"
 msgid "Set properties for multiple places"
-msgstr " unosi za mjesta"
+msgstr "Postavi svojstva za višestruka mjesta"
 
 #: PlaceUpdate/PlaceUpdate.py:96
 msgid ""
@@ -20054,43 +19983,35 @@ msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:175
 msgid "reverse hierarchy"
-msgstr ""
+msgstr "preokreni hijerarhiju"
 
 #: PlaceUpdate/PlaceUpdate.py:181
-#, fuzzy
-#| msgid "Replace"
 msgid "Replace text"
-msgstr "Zamjena"
+msgstr "Zamijeni tekst"
 
 #: PlaceUpdate/PlaceUpdate.py:184
 msgid "Use regex"
-msgstr ""
+msgstr "Koristi regularne izraze"
 
 #: PlaceUpdate/PlaceUpdate.py:193
 msgid "Old text:"
-msgstr ""
+msgstr "Stari tekst:"
 
 #: PlaceUpdate/PlaceUpdate.py:197
-#, fuzzy
-#| msgid "Above text"
 msgid "New text:"
-msgstr "Iznad teksta"
+msgstr "Novi tekst:"
 
 #: PlaceUpdate/PlaceUpdate.py:209
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Clear selections"
-msgstr "Odabir stranica"
+msgstr "Poništi odabir"
 
 #: PlaceUpdate/PlaceUpdate.py:213
-#, fuzzy
-#| msgid "Attach a tag on selected places."
 msgid "Apply to selected places"
-msgstr "Dodaj etiketu odabranim mjestima."
+msgstr "Primijeni na odabrana mjesta"
 
 #: PlaceUpdate/PlaceUpdate.py:266
 msgid "Setting place properties"
-msgstr ""
+msgstr "Postavljanje svojstva mjesta"
 
 #: PlaceUpdate/PlaceUpdate.py:304
 msgid "Regex operation failed: {}"
@@ -20201,10 +20122,8 @@ msgid "Reference Date or Date Range"
 msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
-#, fuzzy
-#| msgid " by Gramps "
 msgid "a valid Gramps date"
-msgstr " pomoću Gramps-a "
+msgstr "valjani Gramps datum"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
@@ -20858,70 +20777,52 @@ msgid "Font:"
 msgstr "Font:"
 
 #: GraphView/graphview.py:835
-#, fuzzy
-#| msgid "Text style"
 msgid "Avatars style"
-msgstr "Stil teksta"
+msgstr "Stil avatara"
 
 #: GraphView/graphview.py:841
 msgid "PNG files"
-msgstr ""
+msgstr "PNG datoteke"
 
 #: GraphView/graphview.py:846
 msgid "Male avatar:"
-msgstr ""
+msgstr "Avatar za muške osobe:"
 
 #: GraphView/graphview.py:847
-#, fuzzy
-#| msgid "Choose a category."
 msgid "Choose male avatar"
-msgstr "Odaberi kategoriju."
+msgstr "Odaberi avatar za mušku osobu"
 
 #: GraphView/graphview.py:859
-#, fuzzy
-#| msgid "Female over 21"
 msgid "Female avatar:"
-msgstr "Ženska osoba starija od 21 godine"
+msgstr "Avatar za ženske osobe:"
 
 #: GraphView/graphview.py:860
-#, fuzzy
-#| msgid "Choose a category."
 msgid "Choose female avatar"
-msgstr "Odaberi kategoriju."
+msgstr "Odaberi avatar za žensku osobu"
 
 #: GraphView/graphview.py:872
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Unknown avatar:"
-msgstr "Prikaži avatare"
+msgstr "Avatar za osobe nepoznatog spola:"
 
 #: GraphView/graphview.py:873
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Choose Unknown avatar"
-msgstr "Prikaži avatare"
+msgstr "Odaberi avatar za osobe nepoznatog spola"
 
 #: GraphView/graphview.py:885
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Other avatar:"
-msgstr "Prikaži avatare"
+msgstr "Drugi avatari:"
 
 #: GraphView/graphview.py:886
 msgid "Choose Other avatar"
-msgstr ""
+msgstr "Odaberi avatar za druge osobe"
 
 #: GraphView/graphview.py:900
-#, fuzzy
-#| msgid "Active person"
 msgid "Active person border size"
-msgstr "Aktivna osoba"
+msgstr "Veličina ruba aktivne osobe"
 
 #: GraphView/graphview.py:905
-#, fuzzy
-#| msgid "Person Overview"
 msgid "Person border size"
-msgstr "Pregled osobe"
+msgstr "Veličina ruba za osobe"
 
 #: GraphView/graphview.py:908
 msgid "Themes"
@@ -21071,7 +20972,7 @@ msgstr ""
 
 #: GraphView/graphview.py:1519
 msgid "Change active person?"
-msgstr "Želiš li zamijeniti aktivnu osobu?"
+msgstr "Zamijeniti aktivnu osobu?"
 
 #: GraphView/graphview.py:2668
 #, python-brace-format
@@ -21084,7 +20985,7 @@ msgstr ""
 
 #: GraphView/graphview.py:2678
 msgid "Incomplete graph"
-msgstr ""
+msgstr "Nepotpun dijagram"
 
 #: GraphView/graphview.py:3047
 msgid "Image on right side"
@@ -21194,24 +21095,20 @@ msgid "Dynamic and interactive graph of relations"
 msgstr "Dinamičan i interaktivan dijagram srodstva"
 
 #: GraphView/avatars.py:60
-#, fuzzy
-#| msgid "- default -"
 msgid "Dark (default)"
-msgstr "– zadano –"
+msgstr "Tamno (zadano)"
 
 #: GraphView/avatars.py:61
-#, fuzzy
-#| msgid "Height:"
 msgid "Light"
-msgstr "Visina:"
+msgstr "Svjetlo"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
-msgstr ""
+msgstr "Strip"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
-msgstr ""
+msgstr "Moderno"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
@@ -21239,10 +21136,8 @@ msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
-#, fuzzy
-#| msgid "Partner's spouse"
 msgid "Partners"
-msgstr "Supružnik partnera"
+msgstr "Partneri"
 
 #: Overview/Overview.gpr.py:29
 msgid "Person Overview"
@@ -21282,10 +21177,8 @@ msgid "Rows starting with this in the text column will be hidden "
 msgstr ""
 
 #: HistContext/HistContext.py:126
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Use filter "
-msgstr "Filtar mjesta:"
+msgstr "Koristi filtar "
 
 #: HistContext/HistContext.py:129
 #, fuzzy
@@ -21294,10 +21187,8 @@ msgid "Show outside life span "
 msgstr "Prikaži starosti"
 
 #: HistContext/HistContext.py:132
-#, fuzzy
-#| msgid "Show full dates"
 msgid "Use full dates"
-msgstr "Prikaži potpune datume"
+msgstr "Koristi potpune datume"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
@@ -21316,67 +21207,49 @@ msgid "Background color items outside lifespan"
 msgstr ""
 
 #: HistContext/HistContext.py:149
-#, fuzzy
-#| msgid "Select A File"
 msgid "Select from files"
-msgstr "Odaberi datoteku"
+msgstr "Odaberi iz datoteka"
 
 #: HistContext/HistContext.py:287
-#, fuzzy
-#| msgid "Invalid timestamp"
 msgid "Invalid date "
-msgstr "Nevažeća vremenska oznaka"
+msgstr "Neispravan datum "
 
 #: HistContext/HistContext.py:288
-#, fuzzy
-#| msgid "%(line)s. line:"
 msgid " in line: "
-msgstr "%(line)s. linija:"
+msgstr " u retku: "
 
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
-#, fuzzy
-#| msgid "Errors"
 msgid "Error:"
-msgstr "Greške"
+msgstr "Greška:"
 
 #: HistContext/HistContext.py:327
 msgid ": line does not contain four sections separated by semicolons in : \""
 msgstr ""
 
 #: HistContext/HistContext.py:419
-#, fuzzy
-#| msgid "Cannot copy \"%s\""
 msgid "Cannot open URL: "
-msgstr "Nije moguće kopirati „%s”"
+msgstr "Nije moguće otvoriti URL: "
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
-msgstr ""
+msgstr "Za otvaranje poveznice klikni redak dvaput"
 
 #: SearchGramplet/SearchGramplet.gpr.py:10
-#, fuzzy
-#| msgid "Gramplet to get places from the GOV database"
 msgid "Gramplet for search objects in database."
-msgstr "Gramplet za dohvaćanje mjesta iz GOV baze podataka"
+msgstr "Gramplet za traženje objekata u bazi podataka."
 
 #: SearchGramplet/SearchGramplet.py:104
-#, fuzzy
-#| msgid "Source type"
 msgid "Sort by object type"
-msgstr "Vrsta izvora"
+msgstr "Razvrstaj prema vrsti objekta"
 
 #: SearchGramplet/SearchGramplet.py:138
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Menu to set search objects"
-msgstr "Tražena osoba"
+msgstr "Izbornik za traženje objekata"
 
 #: SearchGramplet/SearchGramplet.py:140
-#, fuzzy
-#| msgid "Select tags for person"
 msgid "Select objects to search"
-msgstr "Odaberi oznake za osobu"
+msgstr "Odaberi objekte za pretragu"
 
 #: SearchGramplet/SearchGramplet.py:154
 #, fuzzy
@@ -21385,14 +21258,8 @@ msgid "SearchGramplet configuration menu"
 msgstr "Konfiguracija SVG stabla"
 
 #: SearchGramplet/SearchGramplet.py:261
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "No matches..."
-msgstr ""
-"Nema\n"
-"podudaranja"
+msgstr "Nema podudaranja …"
 
 #: SearchGramplet/SearchGramplet.py:353
 #, fuzzy
@@ -21407,35 +21274,27 @@ msgid ""
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:743
-#, fuzzy, python-format
-#| msgid "Birthdays"
+#, python-format
 msgid "Birth: %s"
-msgstr "Rođendani"
+msgstr "Rođenje: %s"
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
-#| msgid "Death act:"
+#, python-format
 msgid "Death: %s"
-msgstr "Potvrda o smrti:"
+msgstr "Smrt: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
-#, fuzzy
-#| msgid "Set as active person"
 msgid "Set as Active person"
 msgstr "Postavi kao aktivnu osobu"
 
 #: SearchGramplet/SearchGramplet.py:920
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Set as Home person"
 msgstr "Postavi kao početnu osobu"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Web Sync"
-msgstr "Gramps inačica"
+msgstr "Gramps web sinkronizacija"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
@@ -21456,10 +21315,8 @@ msgid "Unexpected error while applying changes."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:322
-#, fuzzy
-#| msgid "Media Reference"
 msgid "Media files are in sync."
-msgstr "Referenca medija"
+msgstr "Medijske datoteke su sinkronizirane."
 
 #: GrampsWebSync/grampswebsync.py:331
 #, python-format
@@ -21516,11 +21373,11 @@ msgstr ""
 #: GrampsWebSync/grampswebsync.py:503
 #, python-format
 msgid "Error %s while connecting to server."
-msgstr ""
+msgstr "Greška %s tijekom povezivanja na server."
 
 #: GrampsWebSync/grampswebsync.py:506
 msgid "URL error while connecting to server."
-msgstr ""
+msgstr "URL greška tijekom povezivanja na server."
 
 #: GrampsWebSync/grampswebsync.py:509
 msgid "Error while parsing response from server."
@@ -21566,7 +21423,7 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:774
 msgid "Bidirectional Synchronization"
-msgstr ""
+msgstr "Dvosmjerna sinkronizacija"
 
 #: GrampsWebSync/grampswebsync.py:783
 msgid "Reset remote to local"
@@ -21577,23 +21434,17 @@ msgid "Reset local to remote"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:799
-#, fuzzy
-#| msgid "Merge Media"
 msgid "Merge"
-msgstr "Sjedinjavanje medija"
+msgstr "Sjedini"
 
 #: GrampsWebSync/grampswebsync.py:824
-#, fuzzy
-#| msgid "No changes"
 msgid "Local changes"
-msgstr "Bez promjena"
+msgstr "Lokalne promjene"
 
 #: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
 #: GrampsWebSync/grampswebsync.py:834
-#, fuzzy
-#| msgid "Modified: "
 msgid "Modified"
-msgstr "Promijenjeno: "
+msgstr "Promijenjeno"
 
 #: GrampsWebSync/grampswebsync.py:829
 #, fuzzy
@@ -21602,72 +21453,54 @@ msgid "Remote changes"
 msgstr "Bez promjena"
 
 #: GrampsWebSync/grampswebsync.py:834
-#, fuzzy
-#| msgid "Doing Place changes"
 msgid "Simultaneous changes"
-msgstr "Mijenjanje mjesta"
+msgstr "Istovremene promjene"
 
 #: GrampsWebSync/grampswebsync.py:891
-#, fuzzy
-#| msgid "All information about %s"
 msgid "Fetching information about media files..."
-msgstr "Svi podaci o %s"
+msgstr "Dohvaćanje podataka o medijskim datotekama …"
 
 #: GrampsWebSync/grampswebsync.py:912
-#, fuzzy
-#| msgid "Your Tree and import are the same."
 msgid "Both trees are the same."
-msgstr "Tvoj rodoslov i uvoz su jednaki."
+msgstr "Oba rodoslova su jednaka."
 
 #: GrampsWebSync/grampswebsync.py:918
-#, fuzzy
-#| msgid "Apply geo location to Database"
 msgid "Applying changes to local database ..."
-msgstr "Primijeni geopodatke lokacije na bazu podataka"
+msgstr "Primjena promjena na lokalnu bazu podataka …"
 
 #: GrampsWebSync/grampswebsync.py:920
-#, fuzzy
-#| msgid "Also apply search by all database."
 msgid "No changes to apply to local database."
-msgstr "Također primjeni pretragu po svim bazama podataka."
+msgstr "Nema promjena za lokalnu bazu podataka."
 
 #: GrampsWebSync/grampswebsync.py:923
-#, fuzzy
-#| msgid "Apply geo location to Database"
 msgid "Applying changes to remote database ..."
-msgstr "Primijeni geopodatke lokacije na bazu podataka"
+msgstr "Primjena promjena na eksternu bazu podataka …"
 
 #: GrampsWebSync/grampswebsync.py:926
 msgid "No changes to apply to remote database."
-msgstr ""
+msgstr "Nema promjena za eksternu bazu podataka."
 
 #: GrampsWebSync/grampswebsync.py:933
 msgid "Successfully applied changes to local database."
-msgstr ""
+msgstr "Promjene na lokalnoj bazi podataka su uspješno primijenjene."
 
 #: GrampsWebSync/grampswebsync.py:962
-#, fuzzy
-#| msgid "Missing Files"
 msgid "Missing locally"
-msgstr "Nedostajuće datoteke"
+msgstr "Nedostaje lokalno"
 
 #: GrampsWebSync/grampswebsync.py:965
-#, fuzzy
-#| msgid "Missing header"
 msgid "Missing remotely"
-msgstr "Nedostaje zaglavlje"
+msgstr "Nedostaje eksterno"
 
 #: GrampsWebSync/grampswebsync.py:1003
-#, fuzzy, python-format
-#| msgid "Downloading files"
+#, python-format
 msgid "Downloading %s media file(s)"
-msgstr "Preuzimanje datoteka"
+msgstr "Preuzimanje medijskih datoteka (%s)"
 
 #: GrampsWebSync/grampswebsync.py:1011
-#, fuzzy, python-format
-#| msgid "Downloading files"
+#, python-format
 msgid "Uploading %s media file(s)"
-msgstr "Preuzimanje datoteka"
+msgstr "Prijenos medijskih datoteka (%s)"
 
 #: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
@@ -22396,7 +22229,7 @@ msgstr "Standardno (okomito)"
 
 #: NetworkChart/NetworkChart.py:925
 msgid "Select the graph line connector format."
-msgstr "Odaberi format za poveznih linija u dijagramu."
+msgstr "Odaberi format za linije povezivanja u dijagramu."
 
 #: NetworkChart/NetworkChart.py:930
 msgid "Top to Bottom"
