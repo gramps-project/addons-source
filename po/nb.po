@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 18:32+0000\n"
+"PO-Revision-Date: 2025-02-26 20:54+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "gramps-project/addons/nb_NO/>\n"
@@ -7606,18 +7606,21 @@ msgid ""
 "manually, accept all those families that have all children with proper birth "
 "dates, or accept all."
 msgstr ""
+"Søker gjennom familier for å finne barn som ikke er i fødselsrekkefølge.  Du "
+"kan godta individuelle forslag for å korrigere, justere rekkefølgen manuelt, "
+"godta alle familier der barna har gyldige fødselsdatoer, eller godta alt."
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
-msgstr ""
+msgstr "Ingen familier behøver sortering"
 
 #: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
-msgstr ""
+msgstr "Alle barn var i fødselsrekkefølge."
 
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
-msgstr ""
+msgstr "Rediger familier"
 
 #: BirthOrder/birthorder.py:275
 #, fuzzy
@@ -7627,23 +7630,19 @@ msgstr "Ser etter stedsfelt"
 
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
-msgstr ""
+msgstr "Velg familien du vil undersøke."
 
 #: BirthOrder/birthorder.glade:155
-#, fuzzy
-#| msgid "Select All"
 msgid "Accept All"
-msgstr "Velg alle"
+msgstr "Godkjenn alle"
 
 #: BirthOrder/birthorder.glade:159
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
 msgid "This button will sort all of the families listed."
-msgstr "Denne knappen vil fjerne alle datafeltene som vises her."
+msgstr "Denne knappen vil sortere alle listede familier."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
-msgstr ""
+msgstr "Godkjenn alt *"
 
 #: BirthOrder/birthorder.glade:174
 msgid ""
