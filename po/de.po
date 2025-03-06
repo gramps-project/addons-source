@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-05 20:02+0000\n"
-"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
+"PO-Revision-Date: 2025-03-05 21:57+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -244,7 +244,7 @@ msgstr "Beleg"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Relative"
-msgstr "Angehörige"
+msgstr "Verwandte(r)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
@@ -252,7 +252,7 @@ msgstr "Verarbeitung...\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
-msgstr "Entferne alte Schätzungen... "
+msgstr "Alte Schätzungen entfernen... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
@@ -261,19 +261,19 @@ msgstr "Entferne '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
-msgstr "Fertig!\n"
+msgstr "fertig!\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 msgid ""
 "Selecting... \n"
 "\n"
 msgstr ""
-"Auswählen...\n"
+"Auswählen... \n"
 "\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
-msgstr "Geburts- und Sterbeereignisse hinzufügen"
+msgstr "Geburts- und Todesereignisse hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
@@ -285,7 +285,7 @@ msgstr "Sterbeereignis hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
-msgstr "Keine Ereignisse zum Hinzufügen."
+msgstr "Es sind keine Ereignisse hinzuzufügen."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
@@ -294,7 +294,7 @@ msgstr "Auswählen... "
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
 msgid "Adding events '%s'..."
-msgstr "Füge Ereignisse hinzu '%s'..."
+msgstr "Hinzufügen der Ereignisse '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
