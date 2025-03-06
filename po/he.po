@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-21 17:44+0000\n"
+"PO-Revision-Date: 2025-03-03 16:48+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -278,26 +278,26 @@ msgstr "מתבצעת הוספת '%s' אירועים..."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr "נוספו אירועי לידה בהתבסס על %(evidence)s, מתוך %(name)s"
+msgstr "אירוע לידה התווסף בהתבסס על %(evidence)s, מתוך %(name)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #, python-format
 msgid "Added birth event based on %s"
-msgstr "נוספו אירועי לידה בהתבסס על %s"
+msgstr "אירועי לידה התוסף בהתבסס על %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
-msgstr "תאריך פטירה משוער"
+msgstr "תאריך לידה משוער"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr "נוספו אירועי פטירה בהתבסס על %(evidence)s, של %(person)s"
+msgstr "אירוע פטירה התווסף בהתבסס על %(evidence)s, מתוך %(person)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
 msgid "Added death event based on %s"
-msgstr "נוספו אירועי פטירה בהתבסס על %s"
+msgstr "אירוע  פטירה התווסף בהתבסס על %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
@@ -305,7 +305,7 @@ msgstr "תאריך פטירה משוער"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
-msgstr " מתבצע הידוד..."
+msgstr " בוצע! מתבצע קיבוע..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
@@ -322,7 +322,7 @@ msgstr "חישוב תאריכים משוערים ללידה ופטירה."
 
 #: MediaBrowser/MediaBrowser.gpr.py:31
 msgid "Media Browser"
-msgstr "דפדפן קבצי מדיה"
+msgstr "דפדפן מדיה"
 
 #: MediaBrowser/MediaBrowser.gpr.py:39
 msgid "Browser"
@@ -338,7 +338,7 @@ msgstr "גראמפלט לבדיקת lxml ו־XSLT"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
-msgstr ""
+msgstr "etree"
 
 #: lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
@@ -346,7 +346,7 @@ msgstr "גראמפלט לבדיקת etree באמצעות גרמפס XML"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
-msgstr "חותמת זמן שגויה"
+msgstr "חתימת זמן שגויה"
 
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
@@ -354,20 +354,20 @@ msgstr "לא נותח קובץ..."
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Number of editions back"
-msgstr "מספר המהדורות אחורה"
+msgstr "מספר מהדורות אחורה"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 msgid "Space character on filename"
-msgstr "תו רווח בשם הקובץ"
+msgstr "תו רווח בשם קובץ"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr "נא לתקן את הרווח ב־„%s”"
+msgstr "נא לתקן את הרווח ב־\"%s\""
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
-msgstr "אין תמיכה במערכת ההפעלה שלך עדיין, סליחה!"
+msgstr "אין עדיין תמיכה במערכת ההפעלה זו , סליחה!"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
@@ -376,7 +376,7 @@ msgstr "האם זה ‎.gramps דחוס?"
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr "לא ניתן לפרוס את „%s”"
+msgstr "לא ניתן לפרוס את \"%s\""
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -395,7 +395,7 @@ msgstr ""
 #: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
 msgid "Cannot copy \"%s\""
-msgstr "לא ניתן להעתיק את „%s”"
+msgstr "לא ניתן להעתיק את \"%s\""
 
 #: lxml/etreeGramplet.py:418
 #, python-format
@@ -437,6 +437,8 @@ msgid ""
 "Number of  events : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"מספר  אירועים :\n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:481
 #, python-format
@@ -444,6 +446,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgstr ""
+"מספר אנשים : \n"
+"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 
 #: lxml/etreeGramplet.py:483
 #, python-format
@@ -451,6 +455,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"מספר אנשים : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:484
 #, python-format
@@ -458,6 +464,8 @@ msgid ""
 "Number of families : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"מספר משפחות : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:485
 #, python-format
@@ -465,6 +473,8 @@ msgid ""
 "Number of sources : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"מספר מקורות : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:487
 #, python-format
@@ -472,6 +482,8 @@ msgid ""
 "Number of citations : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"מספר מובאות : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:490
 #, python-format
@@ -479,6 +491,8 @@ msgid ""
 "Number of places : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"מקומות : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:491
 #, python-format
@@ -486,6 +500,8 @@ msgid ""
 "Number of media objects : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"מספר עצמי מדיה : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:492
 #, python-format
@@ -493,6 +509,8 @@ msgid ""
 "Number of repositories : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"מספר מאגרים : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:493
 #, python-format
@@ -500,6 +518,8 @@ msgid ""
 "Number of notes : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"מספר הערות : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:498
 #, python-format
@@ -537,12 +557,12 @@ msgstr "לא נטען קובץ..."
 
 #: lxml/lxmlGramplet.py:298
 msgid "XSD validation (lxml)"
-msgstr ""
+msgstr "אימות XSD (lxml)"
 
 #: lxml/lxmlGramplet.py:298
 #, python-format
 msgid "Cannot validate \"%(file)s\" !"
-msgstr ""
+msgstr "לא ניתן לאמת \"%(file)s\" !"
 
 #: lxml/lxmlGramplet.py:306
 #, python-format
@@ -714,15 +734,15 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
-msgstr "ארגון מקומות"
+msgstr "ניקוי מקומות"
 
 #: PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
 msgstr ""
-"ארגון־מקומות מסייע במיזוג מקומות והשלמת תכונות מקומות מתוך מסד־נתוני המרשתת "
-"של GeoNames"
+"גרמפלט לשיקום מקומות מסייע במיזוג מקומות והשלמת תכונות מקומות מתוך מסד־נתוני "
+"המרשתת של GeoNames"
 
 #: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1088
 msgid ""
@@ -757,15 +777,15 @@ msgstr "נדרש להגדיר מזהה GeoNames"
 
 #: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
-msgstr "הקשה על לחצן העזרה למידע נוסף"
+msgstr "נא להשתמש בלחצן העזרה למידע נוסף"
 
 #: PlaceCleanup/placecleanup.py:337
 msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
 "the place manually."
 msgstr ""
-"נא לנסות לשנות את הכותרת, או להשתמש בלחצן 'עריכה' כדי לסיים רמה זו של המקום "
-"באופן ידני."
+"נא לנסות לשנות את הכותרת, או להשתמש בלחצן 'עריכה' כדי לסיים באופן ידני רמה "
+"זו של המקום."
 
 #: PlaceCleanup/placecleanup.py:347
 #, python-format
@@ -1304,12 +1324,12 @@ msgstr ""
 #: SourcesCitationsReport/SourcesCitationsReport.py:286
 #, python-format
 msgid "%d"
-msgstr ""
+msgstr "%d"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:288
 #, python-format
 msgid "  %s"
-msgstr ""
+msgstr "  %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:294
 #, python-format
@@ -1319,12 +1339,12 @@ msgstr " - %s "
 #: SourcesCitationsReport/SourcesCitationsReport.py:300
 #, python-format
 msgid "   Type: %s"
-msgstr ""
+msgstr "   סוג: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:302
 #, python-format
 msgid "   N-ID: %s"
-msgstr ""
+msgstr "   N-ID: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:310
 #, python-format
@@ -1338,7 +1358,7 @@ msgstr "   %s"
 #: SourcesCitationsReport/SourcesCitationsReport.py:384
 #, python-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:326
 #: SourcesCitationsReport/SourcesCitationsReport.py:347
@@ -1353,7 +1373,7 @@ msgstr "   זוגאים: "
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
 msgid "%s "
-msgstr ""
+msgstr "%s "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:338
 #, python-format
@@ -1363,11 +1383,11 @@ msgstr ""
 #: SourcesCitationsReport/SourcesCitationsReport.py:349
 #, python-format
 msgid " %s"
-msgstr ""
+msgstr " %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:413
 msgid "Title of the Report"
-msgstr ""
+msgstr "כותרת הדוח"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:414
 msgid "Title string for the report."
@@ -1375,7 +1395,7 @@ msgstr "מחרוזת כותרת לדוח זה."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
-msgstr ""
+msgstr "כותרת משנה של הדוח"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
