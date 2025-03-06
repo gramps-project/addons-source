@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 19:38+0000\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"PO-Revision-Date: 2025-02-26 06:04+0000\n"
+"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -20857,7 +20857,7 @@ msgstr "Männlicher Avatar:"
 
 #: GraphView/graphview.py:847
 msgid "Choose male avatar"
-msgstr "Männlichen Avatar wählen"
+msgstr "Männlichen Avatar auswählen"
 
 #: GraphView/graphview.py:859
 msgid "Female avatar:"
