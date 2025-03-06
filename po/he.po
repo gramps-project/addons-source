@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-03 16:48+0000\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"PO-Revision-Date: 2025-03-06 12:57+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
 "Language: he\n"
@@ -17552,14 +17552,8 @@ msgid "Origine:"
 msgstr "זמן מקורי"
 
 #: SourceIndex/birth.glade:2272
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid "<b><i>Citation</i></b>"
-msgstr ""
-"\n"
-"<u><b>חלופי</b></u>\n"
+msgstr "<b><i>ציטוט</i></b>"
 
 #: SourceIndex/birth.glade:2287
 msgid "<b><i>Source</i></b>"
@@ -18045,10 +18039,9 @@ msgid "Address (%(date)s): %(location)s"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:401
-#, fuzzy, python-format
-#| msgid "Add relation"
+#, python-format
 msgid "Address: %(location)s"
-msgstr "הוספת קשר-גומלין"
+msgstr "כתובת: %(location)s"
 
 #: FamilySheet/FamilySheet.py:469
 #, python-format
@@ -18335,10 +18328,9 @@ msgid "Gathering data"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid "Note on Person"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr "הערת אדם"
+msgstr "מספר האנשים: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -19121,12 +19113,13 @@ msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Replace to {0}"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "החלפה ל {0}"
+msgstr ""
+"\n"
+"קשר־קרבה: {0} "
 
 #: DNA/dnasegmentmap.py:1091
 #, python-brace-format
@@ -22272,7 +22265,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
-msgstr ""
+msgstr "מייצר תרשים קשרי משפחה."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
