@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 18:32+0000\n"
+"PO-Revision-Date: 2025-03-04 07:44+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -6227,101 +6227,81 @@ msgid "Latitude, Longitude"
 msgstr "Zemepisná šírka, zemepisná dĺžka"
 
 #: PersonEverything/PersonEverything.py:648
-#, fuzzy
-#| msgid "Repositories Index"
 msgid "Repository type"
-msgstr "Index prameňov"
+msgstr "Typ archívu"
 
 #: PersonEverything/PersonEverything.py:670
-#, fuzzy
-#| msgid "Source references:"
 msgid "Repository reference"
-msgstr "Odkazy na zdroje:"
+msgstr "Odkaz na archív"
 
 #: PersonEverything/PersonEverything.py:671
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media type"
 msgstr "Typ média"
 
 #: PersonEverything/PersonEverything.py:679
-#, fuzzy
-#| msgid "Original: "
 msgid "Origin type"
-msgstr "Originál: "
+msgstr "Typ pôvodu"
 
 #: PersonEverything/PersonEverything.py:686
 msgid "Prefix, surname, connector"
-msgstr ""
+msgstr "Predpona, priezvisko, spojka"
 
 #: PersonEverything/PersonEverything.py:691
 msgid "{This is the primary surname}"
-msgstr ""
+msgstr "{Toto je primárne priezvisko}"
 
 #: PersonEverything/PersonEverything.py:704
 msgid "Tag name"
-msgstr ""
+msgstr "Názov značky"
 
 #: PersonEverything/PersonEverything.py:715
 msgid "Tag colour and priority"
-msgstr ""
+msgstr "Farba značky a priorita"
 
 #: PersonEverything/PersonEverything.py:960
-#, fuzzy
-#| msgid "Source format"
 msgid "No source information found"
-msgstr "Formát zdrojov"
+msgstr "Neboli nájdené žiadne informácie o zdroji"
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
-msgstr ""
+msgstr "Správa: Všetko o osobe"
 
 #: PersonEverything/PersonEverything.gpr.py:33
 msgid "Produces a report containing everything about the active person"
-msgstr ""
+msgstr "Vytvorí správu obsahujúcu všetko o aktívnej osobe"
 
 #: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Ancestors map"
-msgstr "Predok"
+msgstr "Mapa predkov"
 
 #: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
-msgstr ""
+msgstr "Pohľad zobrazujúci miesta predkov na mape."
 
 #: GeoAncestor/GeoAncestor.py:207
 msgid "Ancestors places on the map"
-msgstr ""
+msgstr "Miesta predkov na mape"
 
 #: GeoAncestor/GeoAncestor.py:235
-#, fuzzy
-#| msgid "Ancestor"
 msgid "GeoAncestor"
-msgstr "Predok"
+msgstr "GeoAncestor"
 
 #: GeoAncestor/GeoAncestor.py:304
 #, python-format
 msgid "Ancestors places for %s"
-msgstr ""
+msgstr "Miesta predkov pre %s"
 
 #: GeoAncestor/GeoAncestor.py:311
-#, fuzzy
-#| msgid "Examining places"
 msgid "Counting all places"
-msgstr "Overovanie miest"
+msgstr "Počítanie všetkých miest"
 
 #: GeoAncestor/GeoAncestor.py:314
-#, fuzzy
-#| msgid "Show places"
 msgid "Showing all places"
-msgstr "Zobraziť miesta"
+msgstr "Zobrazovanie všetkých miest"
 
 #: NoteGramplet/NoteGramplet.py:255
-#, fuzzy
-#| msgid "Save"
 msgid "Save Note"
-msgstr "Uložiť"
+msgstr "Uložiť poznámku"
 
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
@@ -6329,53 +6309,51 @@ msgstr "Gramplet Poznámka"
 
 #: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
-msgstr ""
+msgstr "Gramplet pre úpravu poznámok aktívnej osoby"
 
 #: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
-msgstr ""
+msgstr "Čistenie poznámok"
 
 #: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
-msgstr ""
+msgstr "Vyčistiť poznámky, ktoré obsahujú HTML značky"
 
 #: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
-msgstr ""
+msgstr "Nástroj Čistenie poznámok"
 
 #: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
-msgstr ""
+msgstr "Vyčistené poznámky"
 
 #: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
-msgstr ""
+msgstr "Len odkazy"
 
 #: NoteCleanup/NoteCleanup.py:99
 msgid "Issues"
-msgstr ""
+msgstr "Problémy"
 
 #: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
-msgstr ""
+msgstr "Zatvoriť nástroj Čistenie poznámok"
 
 #: NoteCleanup/NoteCleanup.py:123
-#, fuzzy
-#| msgid "Select All"
 msgid "Save All"
-msgstr "Vybrať všetko"
+msgstr "Uložiť všetko"
 
 #: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
-msgstr ""
+msgstr "Uložiť všetky zmeny"
 
 #: NoteCleanup/NoteCleanup.py:127
 msgid "Search for Untidy Notes"
-msgstr ""
+msgstr "Hľadať neusporiadané poznámky"
 
 #: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
-msgstr ""
+msgstr "Vygenerovať testovacie poznámky"
 
 #: NoteCleanup/NoteCleanup.py:131
 msgid ""
@@ -6383,6 +6361,9 @@ msgid ""
 "These are added to your database, so you may want to work with a test "
 "database or delete them later."
 msgstr ""
+"Vygeneruje testovacie poznámky v rozmedzí N99996-N99999.\n"
+"Tieto sú pridané do vašej databázy, takže môžete pracovať s testovacou "
+"databázou alebo ich neskôr vymazať."
 
 #: NoteCleanup/NoteCleanup.py:181
 msgid ""
@@ -6393,27 +6374,37 @@ msgid ""
 "You may export a summary list of the notes that were found using the "
 "'Export' button."
 msgstr ""
+"Pred spustením tohto nástroja si prosím zálohujte databázu.\n"
+"\n"
+"Nástroj spustíte stlačením tlačidla 'Hľadať', potom si prehliadnite výsledky."
+"\n"
+"Keď budete spokojný, stlačte tlačidlo 'Uložiť všetko', aby ste si uložili "
+"svoju prácu.\n"
+"Môžete tiež vyexportovať súhrnný zoznam nájdených poznámok pomocou tlačidla "
+"'Exportovať'."
 
 #: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
-msgstr ""
+msgstr "Vyčistiť poznámky"
 
 #: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
-msgstr ""
+msgstr "Vyčistiť testovacie poznámky"
 
 #: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
-#, fuzzy
-#| msgid "Add Note"
 msgid "Add Test Note"
-msgstr "Pridať poznámku"
+msgstr "Pridať testovaciu poznámku"
 
 #: NoteCleanup/NoteCleanup.py:383
+#, fuzzy
 msgid ""
 "\n"
 "\n"
 "Notes selected on the left pane are shown Before cleanup in this box."
 msgstr ""
+"\n"
+"\n"
+"Poznámky vybrané v ľavom paneli sú zobrazené v okne Pred vyčistením."
 
 #: NoteCleanup/NoteCleanup.py:386
 msgid ""
@@ -6426,15 +6417,15 @@ msgstr ""
 
 #: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
-msgstr ""
+msgstr "Ukladanie poznámok"
 
 #: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
-msgstr ""
+msgstr "Ukladanie vyčistených poznámok"
 
 #: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
-msgstr ""
+msgstr "Skenovanie poznámok"
 
 #: AllNamesQuickview/AllNames.py:51 AllNamesQuickview/AllNames.gpr.py:4
 msgid "All Names of All People"
@@ -6447,7 +6438,7 @@ msgstr "Typ mena"
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "Celkom mien %d"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
@@ -6455,71 +6446,66 @@ msgstr "Zobrazí všetky mená všetkých osôb"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:11
-#, fuzzy
-#| msgid "Surname, Given"
 msgid "Surname Mapping"
-msgstr "Priezvisko, Meno"
+msgstr "Mapovanie priezvisk"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:4
 msgid "Gramplet for editing the grouping of surnames"
-msgstr ""
+msgstr "Gramplet pre úpravu skupinovania priezvisk"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:67
-#, fuzzy
-#| msgid "Add relation"
 msgid "Add Mapping"
-msgstr "Pridať vzťah"
+msgstr "Pridať mapovanie"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:68
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:158
 msgid "Edit Mapping"
-msgstr ""
+msgstr "Upraviť mapovanie"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:69
 msgid "Remove Mapping"
-msgstr ""
+msgstr "Odstrániť mapovanie"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:78
 msgid "Group Name"
-msgstr ""
+msgstr "Názov skupiny"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:112
 msgid "Group"
-msgstr ""
+msgstr "Skupina"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:140
 msgid "Create Mapping"
-msgstr ""
+msgstr "Vytvoriť mapovanie"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
-msgstr ""
+msgstr "Opraviť kapitálky v daných (krstných) menách"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
 msgstr ""
+"Hľadá v celej databáze a snaží sa opraviť veľké písmená v daných (krstných) "
+"menách."
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
+#, fuzzy
 msgid "manual|Fix_Capitalization_of_Given_Names..."
-msgstr ""
+msgstr "manual|Fix_Capitalization_of_Given_Names..."
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking Given Names"
-msgstr "Kontrola názvov miesta"
+msgstr "Kontrola daných mien"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
-msgstr ""
+msgstr "Hľadanie daných mien"
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Affected Names"
-msgstr "Alternatívne meno"
+msgstr "Dotknuté mená"
 
 #: ChangeGivenNames/changenames.glade:32
 msgid ""
@@ -6527,25 +6513,26 @@ msgid ""
 "Gramps can convert to correct capitalization. \n"
 "Select the names you wish Gramps to convert. "
 msgstr ""
+"Nižšie je zoznam krstných mien, ktoré\n"
+"môže Gramps konvertovať na správne veľké písmená.\n"
+"Vyberte mená, ktoré chcete, aby ich Gramps konvertoval. "
 
 #: ChangeGivenNames/changenames.glade:107
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Edit selection"
-msgstr "Výber stránky"
+msgstr "Upraviť výber"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
-msgstr ""
+msgstr "Biografia"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
-msgstr ""
+msgstr "Zobrazí textový životopis"
 
 #: BiographyQuickview/BiographyQuickview.py:48
 #, python-format
 msgid "Biography for %s"
-msgstr ""
+msgstr "Biografia pre %s"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
 #: EditExifMetadata/editexifmetadata.py:723
@@ -6556,7 +6543,7 @@ msgstr "Upraviť Exif metadáta obrázku"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
-msgstr "Gramplet na zobrazenie, úpravu a uloženie metadát Exif obrázka"
+msgstr "Gramplet na zobrazenie, úpravu a uloženie Exif metadát obrázka"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
@@ -6564,25 +6551,27 @@ msgstr "Upraviť Exif metadáta"
 
 #: EditExifMetadata/editexifmetadata.py:135
 msgid "<-- Image Types -->"
-msgstr ""
+msgstr "<-- Typy obrázkov -->"
 
 #: EditExifMetadata/editexifmetadata.py:158
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
 msgstr ""
+"Upozornenie:   Zmena tejto položky aktualizuje pole názvu objektu média v "
+"Gramps, nie Exiv2 metadáta."
 
 #: EditExifMetadata/editexifmetadata.py:161
 msgid "Provide a short description for this image."
-msgstr "Poskytnite krátky popis tohto obrázka."
+msgstr "Poskytnite krátky popis pre tento obrázok."
 
 #: EditExifMetadata/editexifmetadata.py:163
 msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
 msgstr ""
-"Zapíšte meno autora obrázku, resp. spoločnosti zodpovednej za jeho "
-"vytvorenie."
+"Zadajte umelca/autora tohto obrázku.   Meno osoby alebo spoločnosti, ktorá "
+"je zodpovedná za jeho vytvorenie."
 
 #: EditExifMetadata/editexifmetadata.py:167
 msgid "Enter the copyright information for this image. \n"
@@ -6594,38 +6583,49 @@ msgid ""
 "photograph.\n"
 "Example: 1830-01-1 09:30:59"
 msgstr ""
+"Pôvodný dátum/ čas, keď bol obrázok prvýkrát vytvorený/ vyfotený ako "
+"fotografia.\n"
+"Príklad: 1830-01-1 09:30:59"
 
 #: EditExifMetadata/editexifmetadata.py:173
 msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
 msgstr ""
+"Toto je dátum/ čas, keď bol obrázok naposledy zmenený/ upravený.\n"
+"Príklad: 2011-05-24 14:30:00"
 
 #: EditExifMetadata/editexifmetadata.py:176
 msgid ""
 "Enter the Latitude GPS coordinates for this image,\n"
 "Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
 msgstr ""
+"Zadajte zemepisnú šírku GPS súradníc pre tento obrázok,\n"
+"Príklad: -43.722965, -43:43:22, 38° 38′ 03″ S"
 
 #: EditExifMetadata/editexifmetadata.py:179
 msgid ""
 "Enter the Longitude GPS coordinates for this image,\n"
 "Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
 msgstr ""
+"Zadajte zemepisnú dĺžku GPS súradníc pre tento obrázok,\n"
+"Príklad: -10.396378, -10:23:46, 105° 6′ 6″ Z"
 
 #: EditExifMetadata/editexifmetadata.py:182
 msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
+"Toto je meranie nad alebo pod hladinou mora.   Meria sa v metroch.   Príklad:"
+" 200.558, -200.558"
 
 #: EditExifMetadata/editexifmetadata.py:191
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
-"Vo vašom web prehliadači sa zobrazí stránka pomocníka Gramps Wiki s témou: "
-"úprava exif metadát obrázku."
+"Vo vašom webovom prehliadači zobrazí stránku pomocníka Gramps Wiki s témou "
+"'Upraviť Exif metadáta obrázku'."
 
 #: EditExifMetadata/editexifmetadata.py:194
 msgid ""
@@ -6633,34 +6633,41 @@ msgid ""
 "Exif metadata.\n"
 "  It will also allow you to be able to Save the modified metadata."
 msgstr ""
+"Otvorí nové okno, ktoré vám umožní upraviť/ modifikovať Exif metadáta tohto "
+"obrázku.\n"
+"Tiež vám umožní uložiť upravené metadáta."
 
 #: EditExifMetadata/editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
-msgstr ""
+msgstr "Vytvorí sa vyskakovacie okno zobrazujúce oblasť prezerania miniatúr"
 
 #: EditExifMetadata/editexifmetadata.py:201
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
 msgstr ""
+"Vyberte z rozbaľovacieho menu typ súboru obrázku, na ktorý chcete "
+"konvertovať váš mediálny objekt nekompatibilný s Exiv2."
 
 #: EditExifMetadata/editexifmetadata.py:205
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
+"Ak váš obrázok nie je typu, ktorý môže mať Exif metadáta čítané/ zapisované, "
+"konvertovať ho na typ, ktorý môže?"
 
 #: EditExifMetadata/editexifmetadata.py:209
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
 msgstr ""
-"UPOZORNENIE: všetky Exif metadáta z obrázka budú vymazané. Ste si istí že to "
-"chcete?"
+"UPOZORNENIE:   Toto úplne vymaže všetky Exif metadáta z tohto obrázku! Ste "
+"si istí, že to chcete urobiť?"
 
 #: EditExifMetadata/editexifmetadata.py:213
 msgid "Clear GPS"
-msgstr ""
+msgstr "Vymazať GPS"
 
 #: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"
@@ -6672,7 +6679,7 @@ msgstr "Kopírovať"
 
 #: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
-msgstr "Zvoliť obrázok kde začať ..."
+msgstr "Vyberte obrázok na začatie..."
 
 #: EditExifMetadata/editexifmetadata.py:421
 msgid ""
@@ -6684,13 +6691,12 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:441
 msgid "Please convert this image to an Exiv2- compatible image type..."
-msgstr ""
-"Zkonvertujte prosím tento obrázok na typ obrázka kompatibilný s Exiv2..."
+msgstr "Prosím, prekonvertujte tento obrázok na typ kompatibilný s Exiv2..."
 
 #: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr ""
+msgstr "Veľkosť obrázka : {width} x {height} pixelov"
 
 #: EditExifMetadata/editexifmetadata.py:481
 #: EditExifMetadata/editexifmetadata.py:1440
@@ -6698,16 +6704,17 @@ msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
 msgstr ""
-"Do obrázka sa nedá zapisovať,\n"
-"Exif metadáta nebude možné uložiť...."
+"Obrázok NIE je zapisovateľný,\n"
+"Nebudete môcť uložiť Exif metadáta...."
 
 #: EditExifMetadata/editexifmetadata.py:648
 msgid "Click Close to close this Thumbnail View Area."
 msgstr ""
+"Kliknite na Zatvoriť, aby ste zatvorili túto oblasť prezerania miniatúr."
 
 #: EditExifMetadata/editexifmetadata.py:654
 msgid "Thumbnail View Area"
-msgstr ""
+msgstr "Oblasť prezerania miniatúr"
 
 #: EditExifMetadata/editexifmetadata.py:724
 msgid ""
@@ -6719,27 +6726,29 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:726
 msgid "Convert and Delete"
-msgstr "Konvertovať a zmazať"
+msgstr "Konvertovať a vymazať"
 
 #: EditExifMetadata/editexifmetadata.py:807
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
 msgstr ""
-"Váš obrázok bol skonvertovaný, pôvodný súbor bol odstránený a celá cesta k "
+"Váš obrázok bol prekonvertovaný, pôvodný súbor bol vymazaný a celá cesta k "
 "obrázku bola aktualizovaná!"
 
 #: EditExifMetadata/editexifmetadata.py:812
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
-msgstr ""
+msgstr "Vyskytla sa chyba, skontrolujte cesty zdrojového a cieľového súboru..."
 
 #: EditExifMetadata/editexifmetadata.py:816
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
 msgstr ""
+"Vyskytla sa chyba pri mazaní pôvodného súboru.   Budete ho musieť vymazať "
+"sami!"
 
 #: EditExifMetadata/editexifmetadata.py:834
 msgid "There was an error in converting your image file."
@@ -6758,22 +6767,24 @@ msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
 msgstr ""
+"Kliknite na tlačidlo Zatvoriť, keď budete hotoví s úpravou Exif metadát "
+"tohto obrázka."
 
 #: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
-msgstr ""
+msgstr "Uloží kópiu dátových polí do Exif metadát obrázka."
 
 #: EditExifMetadata/editexifmetadata.py:928
 msgid "Re -display the data fields that were cleared from the Edit Area."
-msgstr ""
+msgstr "Znovu zobraziť dátové polia, ktoré boli vymazané v oblasti úprav."
 
 #: EditExifMetadata/editexifmetadata.py:932
 msgid "This button will clear all of the data fields shown here."
-msgstr ""
+msgstr "Toto tlačidlo vymaže všetky dátové polia tu zobrazené."
 
 #: EditExifMetadata/editexifmetadata.py:936
 msgid "This button will clear all of the GPS fields shown here."
-msgstr ""
+msgstr "Toto tlačidlo vymaže všetky GPS polia tu zobrazené."
 
 #: EditExifMetadata/editexifmetadata.py:940
 msgid ""
@@ -6781,6 +6792,9 @@ msgid ""
 "WARNING: This action will NOT Save any changes/ modification made to this "
 "image's Exif metadata."
 msgstr ""
+"Zatvorí toto vyskakovacie okno úprav.\n"
+"UPOZORNENIE: Táto akcia NEULOŽÍ žiadne zmeny/úpravy, ktoré boli urobené na "
+"Exif metadátach tohto obrázka."
 
 #: EditExifMetadata/editexifmetadata.py:969
 msgid "Media Object Title"
@@ -6812,15 +6826,15 @@ msgstr "Dátum/ Čas"
 
 #: EditExifMetadata/editexifmetadata.py:1034
 msgid "Original: "
-msgstr "Originál: "
+msgstr "Pôvodný: "
 
 #: EditExifMetadata/editexifmetadata.py:1035
 msgid "Modified: "
-msgstr "Posledná zmena: "
+msgstr "Upravený: "
 
 #: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
-msgstr ""
+msgstr "Zemepisná šírka/ Zemepisná dĺžka/ Nadmorská výška GPS súradnice"
 
 #: EditExifMetadata/editexifmetadata.py:1069
 msgid "Latitude :"
@@ -6832,7 +6846,7 @@ msgstr "Zemepisná dĺžka :"
 
 #: EditExifMetadata/editexifmetadata.py:1071
 msgid "Altitude :"
-msgstr "Výška :"
+msgstr "Nadmorská výška :"
 
 #: EditExifMetadata/editexifmetadata.py:1114
 msgid "Bad Date/Time"
@@ -6844,7 +6858,7 @@ msgstr "Neplatná zemepisná šírka (syntax: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 alebo -18:9:48.21)"
+msgstr "48.21\"J, -18.2412 alebo -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
 msgid "Invalid longitude (syntax: 18°9'"
@@ -6852,34 +6866,25 @@ msgstr "Neplatná zemepisná dĺžka (syntax: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 alebo -18:9:48.21)"
+msgstr "48.21\"V, -18.2412 alebo -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
 msgstr ""
-"UPOZORNENIE!  Chystáte sa úplne odstrániť metadáta Exif z tohto obrázka?"
+"UPOZORNENIE!    Chystáte sa úplne vymazať Exif metadáta z tohto obrázka."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
 msgid "Delete?"
-msgstr ""
+msgstr "Vymazať?"
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
-msgstr ""
-"UPOZORNENIE!  Chystáte sa úplne odstrániť metadáta Exif z tohto obrázka?"
+msgstr "UPOZORNENIE!    Chystáte sa úplne vymazať GPS metadáta z tohto obrázka."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
@@ -6891,36 +6896,36 @@ msgstr "Dátum objektu média vytvorený"
 
 #: EditExifMetadata/editexifmetadata.py:1422
 msgid "Saving Exif metadata to this image..."
-msgstr "Ukladanie metadát Exif do tohto obrázka..."
+msgstr "Ukladanie Exif metadát do tohto obrázka..."
 
 #: EditExifMetadata/editexifmetadata.py:1465
 msgid "All Exif metadata has been deleted from this image..."
-msgstr "Všetky metadáta boli z tohoto obrázka odstránené..."
+msgstr "Všetky Exif metadáta boli z tohoto obrázka vymazané..."
 
 #: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
-msgstr "Pri separovaní Exif metadát sa vyskytla chyba..."
+msgstr "Vyskytla sa chyba pri odstraňovaní Exif metadát z tohto obrázka..."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
-msgstr "TR-nadpis"
+msgstr "TR-Názov"
 
 #: ToDoReport/TodoReport.py:111
 #, python-format
 msgid "Report on Notes Tagged '%s'"
-msgstr "Správa k poznámkam označená '%s'"
+msgstr "Správa o poznámkach označených '%s'"
 
 #: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
 msgid "TR-Heading"
-msgstr "TR-nadpis"
+msgstr "TR-Nadpis"
 
 #: ToDoReport/TodoReport.py:243
 msgid "NoteTable"
-msgstr "PoznámokTabuľka"
+msgstr "Tabuľka poznámok"
 
 #: ToDoReport/TodoReport.py:243 ToDoReport/TodoReport.py:962
 msgid "TR-Table"
-msgstr "TR-Stôl"
+msgstr "TR-Tabuľka"
 
 #: ToDoReport/TodoReport.py:247 ToDoReport/TodoReport.py:253
 #: ToDoReport/TodoReport.py:267 ToDoReport/TodoReport.py:273
@@ -6945,7 +6950,7 @@ msgstr "TR-Stôl"
 #: ToDoReport/TodoReport.py:678 ToDoReport/TodoReport.py:683
 #: ToDoReport/TodoReport.py:689 ToDoReport/TodoReport.py:947
 msgid "TR-TableCell"
-msgstr "TR-TabuľkováBunka"
+msgstr "TR-Bunka tabuľky"
 
 #: ToDoReport/TodoReport.py:248 ToDoReport/TodoReport.py:254
 #: ToDoReport/TodoReport.py:935
@@ -6982,7 +6987,7 @@ msgstr "TR-Poznámka"
 
 #: ToDoReport/TodoReport.py:284 ToDoReport/TodoReport.py:952
 msgid "TR-BorderCell"
-msgstr "TR-HraničnáBunka"
+msgstr "TR-Hraničná bunka"
 
 #: ToDoReport/TodoReport.py:405
 msgid "date: "
@@ -6993,10 +6998,8 @@ msgid "place: "
 msgstr "lokalita: "
 
 #: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Name Type"
 msgid "Note Type"
-msgstr "Typ mena"
+msgstr "Typ poznámky"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
@@ -7004,23 +7007,23 @@ msgstr "Zoskupiť podľa typu odkazu"
 
 #: ToDoReport/TodoReport.py:886
 msgid "Group notes by Family, Person, Place, etc."
-msgstr "Skupinové poznámky podľa rodiny, osoby, miesta atď."
+msgstr "Zoskupiť poznámky podľa rodiny, osoby, miesta atď."
 
 #: ToDoReport/TodoReport.py:946
 msgid "The basic style used for the table cell display."
-msgstr "Základný štýl používaný na zobrazenie bunky tabuľky."
+msgstr "Základný štýl použitý pre zobrazenie bunky tabuľky."
 
 #: ToDoReport/TodoReport.py:951
 msgid "The basic style used for the table border cell display."
-msgstr "Základný štýl používaný na zobrazenie bunky ohraničenia tabuľky."
+msgstr "Základný štýl použitý pre zobrazenie bunky rámu tabuľky."
 
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
-msgstr "Základný štýl používaný pre zobrazenie tabuľky."
+msgstr "Základný štýl použitý pre zobrazenie tabuľky."
 
 #: ToDoReport/TodoReport.gpr.py:25
 msgid "Todo Report"
-msgstr "Ak chcete správu"
+msgstr "Správa o úlohách"
 
 #: ToDoReport/TodoReport.gpr.py:27
 msgid ""
@@ -7033,7 +7036,7 @@ msgstr ""
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
 msgid "Y-chromosomal inheritance of <filter>"
-msgstr ""
+msgstr "Y-chromozomálna dedičnosť od <filter>"
 
 #: FilterRules2/yinheritanceoffiltermatch.py:47
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
@@ -7041,41 +7044,45 @@ msgid ""
 "Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
 msgstr ""
+"Zodpovedá zaznamenaným potomkom výsledku filtra podľa vzorcov Y-"
+"chromozomálnej dedičnosti."
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
-msgstr ""
+msgstr "X-chromozomálni predkovia osoby <person>"
 
 #: FilterRules2/xchromancestors.gpr.py:27 FilterRules2/xchromancestors.py:50
 msgid ""
 "Matches ancestors of <person> following a X-chromosomal inheritance pattern."
 msgstr ""
+"Zodpovedá predkom osoby <person> podľa vzorca X-chromozomálnej dedičnosti."
 
 #: FilterRules2/xchromdescendants.gpr.py:25
 #: FilterRules2/xchromdescendants.py:48
 msgid "X-chromosomal descendants of <person>"
-msgstr ""
+msgstr "X-chromozomálni potomkovia osoby <person>"
 
 #: FilterRules2/xchromdescendants.gpr.py:27
 msgid ""
 "Matches descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
+"Zodpovedá potomkom osoby <person> podľa vzorca X-chromozomálnej dedičnosti."
 
 #: FilterRules2/patrilinealprogenitor.py:45
 #: FilterRules2/patrilinealprogenitor.gpr.py:25
 msgid "Patrilineal progenitor of <person>"
-msgstr ""
+msgstr "Patrilineárny predok osoby <person>"
 
 #: FilterRules2/patrilinealprogenitor.py:47
 #: FilterRules2/patrilinealprogenitor.gpr.py:26
 msgid "Matches the earliest recorded patrilineal ancestor father."
-msgstr ""
+msgstr "Zodpovedá najstaršiemu zaznamenanému otcovi predka v otcovskej línii."
 
 #: FilterRules2/mtinheritanceoffiltermatch.py:46
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
 msgid "Mitochondrial inheritance of <filter>"
-msgstr ""
+msgstr "Mitochondriálna dedičnosť od <filter>"
 
 #: FilterRules2/mtinheritanceoffiltermatch.py:47
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
@@ -7083,6 +7090,8 @@ msgid ""
 "Matches recorded descendants of a filter result following mitochondrial "
 "inheritance patterns."
 msgstr ""
+"Zodpovedá zaznamenaným potomkom výsledku filtra podľa vzorcov "
+"mitochondriálnej dedičnosti."
 
 #: FilterRules2/matrilinealprogenitrix.gpr.py:25
 #: FilterRules2/matrilinealprogenitrix.py:45
@@ -7099,161 +7108,136 @@ msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
+"Zhoduje sa so všetkými potomkami osoby <person> podľa vzorca X-"
+"chromozomálnej dedičnosti."
 
 #: FilterRules2/mtinheritance.py:45 FilterRules2/mtinheritance.gpr.py:25
 msgid "Mitochondrial inheritance of <person>"
-msgstr ""
+msgstr "Mitochondriálne dedičstvo osoby <person>"
 
 #: FilterRules2/mtinheritance.py:46 FilterRules2/mtinheritance.gpr.py:27
 msgid ""
 "Matches recorded descendants of person following mitochondrial inheritance "
 "patterns."
 msgstr ""
+"Zhoduje sa so zaznamenanými potomkami osoby podľa vzorcov mitochondriálnej "
+"dedičnosti."
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
 msgid "Y-chromosomal inheritance of <person>"
-msgstr ""
+msgstr "Y-chromozomálne dedičstvo osoby <person>"
 
 #: FilterRules2/yinheritance.gpr.py:27 FilterRules2/yinheritance.py:46
 msgid ""
 "Matches recorded descendants of person following Y-chromosomal inheritance "
 "patterns."
 msgstr ""
+"Zhoduje sa so zaznamenanými potomkami osoby podľa vzorcov Y-chromozomálnej "
+"dedičnosti."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendants Lines"
-msgstr "Potomok"
+msgstr "Línie potomkov"
 
 #: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
-msgstr ""
+msgstr "Vytvára línie potomkov osoby"
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
-msgstr ""
+msgstr "Používanie typu SVG pre doplnkový dokument nie je podporované!"
 
 #: DescendantsLines/DescendantsLines.py:1531
-#, fuzzy
-#| msgid "Event format"
 msgid "Output format"
-msgstr "Formát udalostí"
+msgstr "Formát výstupu"
 
 #: DescendantsLines/DescendantsLines.py:1532
-#, fuzzy
-#| msgid "Event format"
 msgid "PNG format"
-msgstr "Formát udalostí"
+msgstr "Formát PNG"
 
 #: DescendantsLines/DescendantsLines.py:1533
-#, fuzzy
-#| msgid "Source format"
 msgid "SVG format"
-msgstr "Formát zdrojov"
+msgstr "Formát SVG"
 
 #: DescendantsLines/DescendantsLines.py:1534
-#, fuzzy
-#| msgid "Event format"
 msgid "PDF format"
-msgstr "Formát udalostí"
+msgstr "Formát PDF"
 
 #: DescendantsLines/DescendantsLines.py:1535
-#, fuzzy
-#| msgid "Source format"
 msgid "PS format"
-msgstr "Formát zdrojov"
+msgstr "Formát PS"
 
 #: DescendantsLines/DescendantsLines.py:1536
-#, fuzzy
-#| msgid "The default format for the sources index"
 msgid "The output format to be used"
-msgstr "Základný formát pre index zdrojov"
+msgstr "Formát výstupu, ktorý sa má použiť"
 
 #: DescendantsLines/DescendantsLines.py:1541
 msgid "The destination file for the content."
-msgstr ""
+msgstr "Cieľový súbor pre obsah."
 
 #: DescendantsLines/DescendantsLines.py:1545
-#, fuzzy
-#| msgid ""
-#| "The maximum number of generations to include in the ancestor and "
-#| "descendant trees and graphs"
 msgid "The number of generations to include in the chart. (0 for unlimited)"
-msgstr ""
-"Maximálny počet generácií zahrnutých v stromoch a grafoch predkov a potomkov"
+msgstr "Počet generácií, ktoré sa majú zahrnúť do grafu. (0 pre neobmedzený)"
 
 #: DescendantsLines/DescendantsLines.py:1550
 msgid "Use d'Aboville descendant numbering system"
-msgstr ""
+msgstr "Použiť systém číslovania potomkov d'Aboville"
 
 #: DescendantsLines/DescendantsLines.py:1552
 msgid "Prepend name with d'Aboville descendant number in the chart."
-msgstr ""
+msgstr "Pridať meno s číslom potomka d'Aboville v grafe."
 
 #: DescendantsLines/DescendantsLines.py:1555
-#, fuzzy
-#| msgid "Include images and media"
 msgid "Include an image"
-msgstr "Zahrnúť obrázky a médiá"
+msgstr "Zahrnúť obrázok"
 
 #: DescendantsLines/DescendantsLines.py:1556
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include an image if one is available."
-msgstr "Či zahrnúť obrázky"
+msgstr "Či zahrnúť obrázok, ak je k dispozícii."
 
 #: DescendantsLines/DescendantsLines.py:1560
-#, fuzzy
-#| msgid "Max chart height (px)"
 msgid "Max Image height"
-msgstr "Maximálna výška grafu (px)"
+msgstr "Maximálna výška obrázku"
 
 #: DescendantsLines/DescendantsLines.py:1561
 msgid "Maximum image height in pixels, 0=don't scale for height."
-msgstr ""
+msgstr "Maximálna výška obrázka v pixeloch, 0=nemeniť mierku na výšku."
 
 #: DescendantsLines/DescendantsLines.py:1565
-#, fuzzy
-#| msgid "Max chart width (%)"
 msgid "Max Image width"
-msgstr "Maximálna šírka grafu (%)"
+msgstr "Maximálna šírka obrázku"
 
 #: DescendantsLines/DescendantsLines.py:1566
 msgid "Maximum image width in pixels, 0=don't scale for width."
-msgstr ""
+msgstr "Maximálna šírka obrázka v pixeloch, 0=nemeniť mierku na šírku."
 
 #: DescendantsLines/DescendantsLines.py:1570
-#, fuzzy
-#| msgid "Image Options"
 msgid "Image Location"
-msgstr "Možnosti obrázka"
+msgstr "Umiestnenie obrázka"
 
 #: DescendantsLines/DescendantsLines.py:1571
 msgid "Above text"
-msgstr ""
+msgstr "Nad textom"
 
 #: DescendantsLines/DescendantsLines.py:1572
 msgid "Left of text"
-msgstr ""
+msgstr "Vľavo od textu"
 
 #: DescendantsLines/DescendantsLines.py:1573
 msgid "Position of image relative to text"
-msgstr ""
+msgstr "Poloha obrázka vzhľadom na text"
 
 #: DescendantsLines/DescendantsLines.py:1579
 msgid "Colour Name by Gender"
-msgstr ""
+msgstr "Farbiť meno podľa pohlavia"
 
 #: DescendantsLines/DescendantsLines.py:1581
-#, fuzzy
-#| msgid "Whether to include a person's internet address."
 msgid "Color the name to indicate a person's gender in the chart."
-msgstr "Či zahrnúť internetovú adresu osoby."
+msgstr "Zafarbí meno, aby sa označilo pohlavie osoby v grafe."
 
 #: DescendantsLines/DescendantsLines.py:1585
 msgid "Use alternate events, if Primary event is not found"
-msgstr ""
+msgstr "Použiť alternatívne udalosti, ak sa nenájde primárna udalosť"
 
 #: DescendantsLines/DescendantsLines.py:1586
 msgid ""
@@ -7265,102 +7249,106 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1592
 msgid "Sort Events by Date"
-msgstr ""
+msgstr "Zoradiť udalosti podľa dátumu"
 
 #: DescendantsLines/DescendantsLines.py:1593
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
+"Zoradí udalosti podľa dátumu (inak sa použije poradie 'formátu zobrazenia' "
+"vyššie)."
 
 #: DescendantsLines/DescendantsLines.py:1597
 msgid "Text style"
-msgstr ""
+msgstr "Štýl textu"
 
 #: DescendantsLines/DescendantsLines.py:1598
 msgid "Center-aligned text"
-msgstr ""
+msgstr "Text zarovnaný na stred"
 
 #: DescendantsLines/DescendantsLines.py:1599
 msgid "Left-aligned text"
-msgstr ""
+msgstr "Text zarovnaný vľavo"
 
 #: DescendantsLines/DescendantsLines.py:1600
 msgid "Alignment of the text in the block for each person on the chart"
-msgstr ""
+msgstr "Zarovnanie textu v bloku pre každú osobu v grafe"
 
 #: DescendantsLines/DescendantsLines.py:1604
 msgid "Max Note Length"
-msgstr ""
+msgstr "Max. dĺžka poznámky"
 
 #: DescendantsLines/DescendantsLines.py:1605
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
 msgstr ""
+"Maximálna dĺžka poľa poznámky k udalosti v textovom bloku, '$e(n)'\n"
+" 0=bez obmedzenia "
 
 #: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
-msgstr ""
+msgstr "Rámček okolo bloku osoby"
 
 #: DescendantsLines/DescendantsLines.py:1613
 msgid "Draw a thin black box around each person' text block."
-msgstr ""
+msgstr "Nakreslí tenký čierny rámček okolo textového bloku každej osoby."
 
 #: DescendantsLines/DescendantsLines.py:1617
 msgid "All Person's blocks have the same height"
-msgstr ""
+msgstr "Všetky bloky osôb majú rovnakú výšku"
 
 #: DescendantsLines/DescendantsLines.py:1618
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
 msgstr ""
+"Všetky bloky všetkých osôb majú rovnakú výšku, čo je výška najvyššieho bloku."
 
 #: DescendantsLines/DescendantsLines.py:1623
 msgid "All Person's blocks have the same width"
-msgstr ""
+msgstr "Všetky bloky osôb majú rovnakú šírku"
 
 #: DescendantsLines/DescendantsLines.py:1624
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
 msgstr ""
+"Všetky bloky všetkých osôb majú rovnakú šírku, čo je šírka najširšieho bloku."
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Colour blocks by Generation"
-msgstr ""
+msgstr "Farbiť bloky podľa generácie"
 
 #: DescendantsLines/DescendantsLines.py:1630
 msgid "Colour the background of text blocks by generation."
-msgstr ""
+msgstr "Zafarbí pozadie textových blokov podľa generácie."
 
 #: DescendantsLines/DescendantsLines.py:1634
 msgid "Descend block colour intensity"
-msgstr ""
+msgstr "Intenzita farby zostupného bloku"
 
 #: DescendantsLines/DescendantsLines.py:1635
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
 "colour"
-msgstr ""
+msgstr "Intenzita farby pozadia v bloku potomkov, 0=slabá, 255=intenzívna farba"
 
 #: DescendantsLines/DescendantsLines.py:1639
 msgid "Spouse block colour intensity"
-msgstr ""
+msgstr "Intenzita farby bloku manželov"
 
 #: DescendantsLines/DescendantsLines.py:1640
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
-msgstr ""
+msgstr "Intenzita farby pozadia v bloku manželov, 0=slabá 255=intenzívna farba"
 
 #: DescendantsLines/DescendantsLines.py:1645
-#, fuzzy
-#| msgid "Display type"
 msgid "Display Formats"
-msgstr "Typ zobrazenia"
+msgstr "Formáty zobrazenia"
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
-msgstr ""
+msgstr "Formát zobrazenia mena"
 
 #: DescendantsLines/DescendantsLines.py:1650
 msgid ""
@@ -7384,10 +7372,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1697
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Spouse and Family"
-msgstr "Poznámka pre rodinu"
+msgstr "Manžel/ka a rodina"
 
 #: DescendantsLines/DescendantsLines.py:1699
 msgid "Vertical edge descendant to spouse-bar"
@@ -7464,11 +7450,11 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1746
 msgid "Children distance"
-msgstr ""
+msgstr "Vzdialenosť medzi deťmi"
 
 #: DescendantsLines/DescendantsLines.py:1747
 msgid "The horizontal distance between two children of the same family."
-msgstr ""
+msgstr "Horizontálna vzdialenosť medzi dvoma deťmi tej istej rodiny."
 
 #: DescendantsLines/DescendantsLines.py:1751
 msgid "Vertical edge child to child-bar"
@@ -7488,49 +7474,49 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1762
 msgid "Space around text"
-msgstr ""
+msgstr "Medzera okolo textu"
 
 #: DescendantsLines/DescendantsLines.py:1763
 msgid "The space to add around the text block of a person."
-msgstr ""
+msgstr "Medzera, ktorá sa pridá okolo textového bloku osoby."
 
 #: DescendantsLines/DescendantsLines.py:1767
 msgid "Space between lines of text"
-msgstr ""
+msgstr "Medzera medzi riadkami textu"
 
 #: DescendantsLines/DescendantsLines.py:1768
 msgid "The space to add between a line and the next in a person text block."
-msgstr ""
+msgstr "Medzera, ktorá sa pridá medzi riadkami v textovom bloku osoby."
 
 #: DescendantsLines/DescendantsLines.py:1773
 msgid "Header and Footer"
-msgstr ""
+msgstr "Záhlavie a päta"
 
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"
-msgstr ""
+msgstr "Text, ktorý bude napísaný v záhlaví dokumentu"
 
 #: DescendantsLines/DescendantsLines.py:1781
 msgid "The text that will be written in the footer of the document"
-msgstr ""
+msgstr "Text, ktorý bude napísaný v päte dokumentu"
 
 #: DescendantsLines/DescendantsLines.py:1785
 msgid "Title and footer coefficient"
-msgstr ""
+msgstr "Koeficient názvu a päty"
 
 #: DescendantsLines/DescendantsLines.py:1786
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
-msgstr ""
+msgstr "Číslo, ktoré násobí základnú veľkosť textu v názve a päte"
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"
-msgstr ""
+msgstr "Chrániť osoby, obrázky alebo udalosti označené ako súkromné"
 
 #: DescendantsLines/DescendantsLines.py:1795
 msgid "The Privacy setting of only these types of Gramps objects are checked"
-msgstr ""
+msgstr "Nastavenie súkromia sa kontroluje iba pri týchto typoch objektov Gramps"
 
 #: DescendantsLines/DescendantsLines.py:1799
 msgid "Privacy text"
@@ -7538,15 +7524,15 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1800
 msgid "Text to display in block, when a Person is marked private"
-msgstr ""
+msgstr "Text, ktorý sa zobrazí v bloku, keď je osoba označená ako súkromná"
 
 #: DescendantsLines/DescendantsLines.py:1815
 msgid "The default style."
-msgstr ""
+msgstr "Predvolený štýl."
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
-msgstr ""
+msgstr "Zoradiť deti podľa poradia narodenia"
 
 #: BirthOrder/birthorder.gpr.py:12
 msgid ""
@@ -7555,76 +7541,78 @@ msgid ""
 "manually, accept all those families that have all children with proper birth "
 "dates, or accept all."
 msgstr ""
+"Prehľadáva rodiny a hľadá deti, ktoré nie sú v poradí narodenia.  Používateľ "
+"môže prijať individuálne návrhy na opravu, manuálne upraviť poradie "
+"narodenia, akceptovať všetky rodiny, ktoré majú všetky deti s vhodnými "
+"dátumami narodenia, alebo akceptovať všetko."
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
-msgstr ""
+msgstr "Žiadne rodiny nepotrebujú zoradenie"
 
 #: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
-msgstr ""
+msgstr "Žiadne deti neboli mimo poradia narodenia."
 
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
-msgstr ""
+msgstr "Upraviť rodiny"
 
 #: BirthOrder/birthorder.py:275
-#, fuzzy
-#| msgid "Looking for place fields"
 msgid "Looking for children birth order"
-msgstr "Hľadanie políčok s údajmi o mieste"
+msgstr "Hľadanie poradia narodenia detí"
 
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
-msgstr ""
+msgstr "Vyberte rodinu, ktorú chcete preskúmať."
 
 #: BirthOrder/birthorder.glade:155
-#, fuzzy
-#| msgid "Select All"
 msgid "Accept All"
-msgstr "Vybrať všetko"
+msgstr "Prijať všetko"
 
 #: BirthOrder/birthorder.glade:159
-#, fuzzy
-#| msgid "The default format for the families index"
 msgid "This button will sort all of the families listed."
-msgstr "Základný formát pre index rodín"
+msgstr "Toto tlačidlo zoradí všetky rodiny v zozname."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
-msgstr ""
+msgstr "Prijať všetko *"
 
 #: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
 msgstr ""
+"Týmto tlačidlom zoradíte všetky rodiny s '*'.    V týchto rodinách majú "
+"všetky deti platné dátumy, takže zoradenie je jednoznačné."
 
 #: BirthOrder/birthorder.glade:185
 msgid "Accept"
-msgstr ""
+msgstr "Prijať"
 
 #: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
 msgstr ""
+"Týmto tlačidlom akceptujete iba vybranú rodinu a uloží ju tak, ako je "
+"zobrazené v pravom dolnom paneli."
 
 #: BirthOrder/birthorder.glade:232
 msgid "Done"
-msgstr "Ukončené"
+msgstr "Hotovo"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
-msgstr ""
+msgstr "Týmto tlačidlom ukončíte, zostávajúce rodiny budú nezmenené."
 
 #: BirthOrder/birthorder.glade:256
 msgid "Current sort"
-msgstr ""
+msgstr "Aktuálne zoradenie"
 
 #: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
-msgstr ""
+msgstr "Navrhované zoradenie"
 
 #: BirthOrder/birthorder.glade:333
 msgid ""
@@ -7632,27 +7620,30 @@ msgid ""
 "changes.  If you wish to adjust the order, select the child you wish to "
 "move, and use 'Up' or 'Down' buttons below to move them."
 msgstr ""
+"Keď budete spokojní so zoradením, použite tlačidlo 'Prijať', aby ste prijali "
+"zmeny. Ak chcete upraviť poradie, vyberte dieťa, ktoré chcete presunúť, a "
+"použite tlačidlá 'Hore' alebo 'Dole', aby ste ich presunuli."
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
-msgstr ""
+msgstr "Narodeniny"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
-msgstr ""
+msgstr "Gramplet, ktorý zobrazuje narodeniny žijúcich ľudí"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
-msgstr ""
+msgstr "Ignorovať narodeniny so značkou"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
-msgstr ""
+msgstr "Zobraziť iba narodeniny so značkou"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
-msgstr ""
+msgstr "Doplnenie miesta"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
@@ -7676,12 +7667,12 @@ msgstr "Chyba v PlaceCompletion.py"
 
 #: PlaceCompletion/PlaceCompletion.py:259
 msgid "Non existing group used in get"
-msgstr "Neexistujúce skupina v metóde get"
+msgstr "Použitá neexistujúca skupina v get"
 
 #: PlaceCompletion/PlaceCompletion.py:282
 #, python-format
 msgid "PlaceCompletion is unable to create %s %s"
-msgstr ""
+msgstr "Doplnenie miesta nedokáže vytvoriť %s %s"
 
 #: PlaceCompletion/PlaceCompletion.py:340
 msgid "Places tool"
