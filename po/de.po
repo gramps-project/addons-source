@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-26 06:04+0000\n"
-"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
+"PO-Revision-Date: 2025-03-04 20:02+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -47,7 +47,7 @@ msgstr[1] "{number_of} Medien zusammengeführt"
 
 #: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
-msgstr "Es wurden keine Medienelemente zusammengeführt."
+msgstr "Keine Medienelemente zusammengeführt."
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
@@ -58,12 +58,12 @@ msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
 msgstr ""
-"Durchsucht die gesamte Datenbank nach Medien mit demselben Pfad und führt "
-"sie zusammen."
+"Durchsucht die gesamte Datenbank nach Medien, die denselben Pfad haben, und "
+"führt sie zusammen."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
-msgstr "Filter zum eingrenzen der Personen wählen"
+msgstr "Filter wählen, um Personen einzugrenzen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
@@ -71,7 +71,7 @@ msgstr "Berechnete Datumsschätzungen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
-msgstr "Quelle zum entfernen und/oder hinzufügen"
+msgstr "Quelle zum Entfernen und/oder Hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
@@ -81,12 +81,12 @@ msgstr "Zuvor hinzugefügte Ereignisse, Notizen und Quellen entfernen"
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
-"Berechnete Ereignisse, Notizen und Quellen entfernen: Wird sofort nach Start "
-"ausgeführt"
+"Entfernen von berechneten Ereignissen, Notizen und Quellen; erfolgt sofort "
+"bei Ausführen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
-msgstr "Geburtsereignisse nicht hinzufügen"
+msgstr "Keine Geburtsereignisse hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 msgid "Add birth events without dates"
@@ -98,15 +98,15 @@ msgstr "Geburtsereignisse mit Datum hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
-msgstr "Fügt Geburtsereignisse mit oder ohne berechnete Daten hinzu"
+msgstr "Geburtsereignisse mit oder ohne geschätzte Daten hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
-msgstr "Todesereignisse nicht hinzufügen"
+msgstr "Keine Todesereignisse hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
-msgstr "Todesdatum ohne Datum hinzufügen"
+msgstr "Todesereignisse ohne Datum hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
@@ -114,7 +114,7 @@ msgstr "Todesereignisse mit Datum hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
-msgstr "Fügt Todesereignisse mit oder ohne berechnete Daten hinzu"
+msgstr "Hinzufügen von Todesereignissen mit oder ohne geschätztes Datum"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
@@ -122,7 +122,7 @@ msgstr "Maximales Alter"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
-msgstr "Maximales Alter das eine Person erreichen kann"
+msgstr "Höchstalter, das eine Person erreichen kann"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
@@ -130,7 +130,7 @@ msgstr "Maximaler Altersabstand zwischen Geschwistern"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
-msgstr "Durchschnittlicher Abstand zwischen zwei Generationen in Jahren"
+msgstr "Durchschnittlicher Jahresabstand zwischen zwei Generationen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:136
 msgid "Estimated Dates"
@@ -138,7 +138,7 @@ msgstr "Geschätzte Daten"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
-msgstr "Circa (um)"
+msgstr "Annähernd (um)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
@@ -146,7 +146,7 @@ msgstr "Extreme (nach und vor)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr "Daten von Ereignissen sind entweder um oder nach/vor"
+msgstr "Die Daten der Ereignisse sind entweder um oder nach/vor"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -168,27 +168,26 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
-"Das geschätzte Daten berechnen Werkzeug wird verwendet um Geburts- und "
-"Sterbeereignisse zu Personen hinzuzufügen und zu entfernen, dehnen diese "
-"fehlen.\n"
+"Mit dem Werkzeug „Geschätzte Daten berechnen“ kannst du Geburts- und "
+"Todesereignisse für Personen hinzufügen und entfernen, bei denen diese "
+"Ereignisse fehlen.\n"
 "\n"
-"Verwendung:\n"
-"1. Gehe zu dem Optionenreiter\n"
-"2. Hake die [] Entfernen Option an um die vorherigen Schätzungen zu "
-"entfernen\n"
-"3. Select the Add date options to date events with or without dates\n"
+"So verwendest du es:\n"
+"1. Gehe auf die Registerkarte Optionen\n"
+"2. Aktiviere die Option [ ] Entfernen, um frühere Schätzungen zu entfernen.\n"
+"3. Wähle die Optionen Datum hinzufügen, um Ereignisse mit oder ohne Datum zu "
+"datieren\n"
 "4. Klicke auf Ausführen\n"
-"5. Wähle die Personen mit denen Ereignisse hinzugefügt werden\n"
-"6. Klicke auf die 'Gewähltes Ereignis hinzufügen' Schaltfläche zum "
-"erstellen\n"
+"5. Wähle die Personen, mit denen du Ereignisse hinzufügen möchtest\n"
+"6. Klicke zum Erstellen auf die Schaltfläche „Ausgewählte Ereignisse "
+"hinzufügen“.\n"
 "\n"
-"ACHTUNG: wenn du beschließt, ein Ereignis permanent zu machen, entferne es "
-"von der Quelle. Sonst wird es entfernt, wenn du das nächste Mal diese "
-"Ereignisse automatisch entfernst.\n"
+"HINWEISE: Wenn du dich entscheidest, ein Ereignis dauerhaft zu machen, "
+"entferne es aus der Quelle. Andernfalls wird es entfernt, wenn du diese "
+"Ereignisse das nächste Mal automatisch entfernst.\n"
 "\n"
-"Es kann sein, das du das Werkzeug mehrmals hintereinander (ohne die "
-"vorherigen Ereignisse zu löschen) laufen lassen musst um alle möglichen "
-"Ereignisse hinzuzufügen."
+"Möglicherweise musst du das Werkzeug wiederholt ausführen (ohne vorherige "
+"Ereignisse zu entfernen), um alle möglichen Ereignisse hinzuzufügen."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
@@ -197,47 +196,47 @@ msgstr "Geschätzte Daten berechnen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
-msgstr "Alle wählen"
+msgstr "Alle auswählen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
-msgstr "Nichts wählen"
+msgstr "Keine wählen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
-msgstr "Auswahl umschalten"
+msgstr "Auswahl umkehren"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
-msgstr "Gewählte Ereignisse hinzufügen"
+msgstr "Ausgewählte Ereignisse hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr "Ereignisse, Notizen , Quellen und erneut gewählte Daten entfernen"
+msgstr "Ereignisse, Notizen und Quelle entfernen und Daten neu auswählen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
-"Bist du sicher, das du Ereignisse, Notizen , Quellen und erneut gewählte "
-"Daten entfernen willst?"
+"Bist du sicher, dass du frühere Ereignisse, Notizen und die Quelle entfernen "
+"und die Daten erneut auswählen möchtest?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
-msgstr "Entfernen und Auswahl erneut starten"
+msgstr "Entfernen und Auswahl erneut ausführen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
-msgstr "Daten neu wählen"
+msgstr "Daten neu auswählen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
-msgstr "Bist du sich sicher, das du die Daten neu wählen willst?"
+msgstr "Bist du sicher, dass du die Daten erneut auswählen willst?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:216
 msgid "Run Select Again"
-msgstr "Auswahl erneut ausführen"
+msgstr "Auswählen erneut ausführen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
@@ -1230,7 +1229,7 @@ msgstr "Passt zu Personen, die mehr als ein Elternpaar haben"
 #: FilterRules/associationsofpersonmatch.gpr.py:25
 #: FilterRules/associationsofpersonmatch.gpr.py:26
 msgid "Match associations of <person filter>"
-msgstr ""
+msgstr "Entspricht den Zuordnungen von <Personenfilter>"
 
 #: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
@@ -1291,11 +1290,12 @@ msgstr "Grad:"
 
 #: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
 msgid "People with <count> of <event>"
-msgstr ""
+msgstr "Personen mit <Anzahl> von <Ereignis>"
 
 #: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
 msgid "Matches persons which have events of given type and number."
 msgstr ""
+"Entspricht Personen, die Ereignisse der angegebenen Art und Anzahl haben."
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
@@ -1325,7 +1325,7 @@ msgstr "Personen, die Teil von Familien sind, die mit <filter> übereinstimmen"
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
 #: FilterRules/ageatdeath.py:74
 msgid "Filter people by their age at death"
-msgstr ""
+msgstr "Personen nach ihrem Sterbealter filtern"
 
 #: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
@@ -1333,7 +1333,7 @@ msgstr "Filterregel, die Personen nach ihrem Alter beim Tod abgleicht"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
-msgstr ""
+msgstr "Mehrere Eltern Filter"
 
 #: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
@@ -1362,7 +1362,7 @@ msgstr "Entspricht der aktiven Person"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
-msgstr ""
+msgstr "Alter in Jahren beim Tod der Person."
 
 #: FilterRules/ageatdeath.py:71
 msgid "Age:"
@@ -1607,6 +1607,9 @@ msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
+"Setze den ersten von mehreren Ehepartnern immer auf die linke Seite. Dies "
+"kann dazu beitragen, dass es bei mehreren Ehen weniger "
+"Zeilenüberschneidungen gibt."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -1618,7 +1621,7 @@ msgstr "_Person GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
-msgstr ""
+msgstr "GEXF wird in vielen Netzwerkgraphenanwendungen eingesetzt."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
 msgid "GEXF export options"
@@ -2067,15 +2070,15 @@ msgstr "FamilySearch.org Baum"
 
 #: SVWebconnectPack/SVWebPack.py:40
 msgid "National archives of Sweden personsearch"
-msgstr ""
+msgstr "Nationale Archive von Schweden Personensuche"
 
 #: SVWebconnectPack/SVWebPack.py:41
 msgid "National archives of Sweden free search"
-msgstr ""
+msgstr "Nationale Archive von Schweden freie Suche"
 
 #: SVWebconnectPack/SVWebPack.py:42
 msgid "Arkiv Digital estate records for Skåne"
-msgstr ""
+msgstr "Arkiv Digital Nachlassregister für Skåne"
 
 #: SVWebconnectPack/SVWebPack.py:43
 msgid "Ancestry Search"
@@ -2083,23 +2086,23 @@ msgstr "Ancestry Suche"
 
 #: SVWebconnectPack/SVWebPack.py:44
 msgid "Find swedish portraits - Rötter.se"
-msgstr ""
+msgstr "Schwedische Porträts finden - Rötter.se"
 
 #: SVWebconnectPack/SVWebPack.py:45
 msgid "Gravar.se - find swedish graves"
-msgstr ""
+msgstr "Gravar.se - schwedische Gräber finden"
 
 #: SVWebconnectPack/SVWebPack.py:46
 msgid "National archives of Sweden search censuses"
-msgstr ""
+msgstr "Nationale Archive von Schweden Suche Volkszählungen"
 
 #: SVWebconnectPack/SVWebPack.py:47
 msgid "Arkiv Digital released prisoners"
-msgstr ""
+msgstr "Arkiv Digital entlässt Gefangene"
 
 #: SVWebconnectPack/SVWebPack.py:48
 msgid "Gravestone inventory - rötter.se"
-msgstr ""
+msgstr "Grabsteininventar - rötter.se"
 
 #: PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
@@ -2240,7 +2243,7 @@ msgstr "Reguläre Ausdrücke zulassen"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
-msgstr ""
+msgstr "Reguläre Ausdrücke zulassen."
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
@@ -2373,15 +2376,15 @@ msgstr "Überprüft, das die Medien im korrekten Pfad vorhanden sind"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
-msgstr ""
+msgstr "Beta Was kommt als Nächstes"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:49
 msgid "Beta Gramplet suggesting items to research"
-msgstr ""
+msgstr "Beta Gramplet schlägt Elemente für die Forschung vor"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:60
 msgid "Beta What's Next?"
-msgstr ""
+msgstr "Beta Was kommt als Nächstes?"
 
 #: Betawhatsnext/Betawhatsnext.py:46
 msgid ""
@@ -2389,47 +2392,58 @@ msgid ""
 " ⛔ A local Genealogical Tree database has not yet been loaded.\n"
 "\n"
 msgstr ""
+"\n"
+" ⛔ Eine lokale Genealogie-Baum-Datenbank wurde noch nicht geladen.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
-msgstr ""
+msgstr " 👣 Nächste Schritte:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
 msgid "  •  From the \"Family Trees\" menu,"
-msgstr ""
+msgstr "  •  Über das Menü \"Stammbäume \","
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
-msgstr ""
+msgstr " verwende die Option \"Stammbäume verwalten...\", um"
 
 #: Betawhatsnext/Betawhatsnext.py:52
 msgid " create a New (or to select an existing) Tree database.\n"
-msgstr ""
+msgstr " eine neue Baumdatenbank erstellen (oder eine bestehende auswählen).\n"
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr ""
+msgstr "  •  Klicke auf die Schaltfläche \"Stammbaum laden\", um zu beginnen"
 
 #: Betawhatsnext/Betawhatsnext.py:54
 msgid ""
 " working with the selected genealogical tree.\n"
 "\n"
 msgstr ""
+" arbeiten mit dem ausgewählten Stammbaum.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:55
 msgid "Create and load an empty new tree to import a backup (or"
 msgstr ""
+"Erstelle und lade einen leeren neuen Baum, um eine Sicherung zu importieren "
+"(oder"
 
 #: Betawhatsnext/Betawhatsnext.py:56
 msgid ""
 " GEDCOM file) from another genealogical tool.\n"
 "\n"
 msgstr ""
+" GEDCOM-Datei) aus einem anderen genealogischen Werkzeug.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:70
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
 msgstr ""
+"Verwende die Option \"Konfigurieren\" im Menü \"Ansicht\", um die Gramplet-"
+"Optionen zu ändern."
 
 #: Betawhatsnext/Betawhatsnext.py:86
 msgid "Search Quota "
@@ -2437,11 +2451,11 @@ msgstr "Suchkontingent "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
-msgstr ""
+msgstr "Tiefe pro Schleife"
 
 #: Betawhatsnext/Betawhatsnext.py:98
 msgid "Pause search expansion"
-msgstr ""
+msgstr "Sucherweiterung pausieren"
 
 #: Betawhatsnext/Betawhatsnext.py:105
 msgid "Completed Person"
@@ -2460,6 +2474,8 @@ msgid ""
 "\n"
 " ⛔ The current Tree database contains no people.\n"
 msgstr ""
+"\n"
+" ⛔ Die aktuelle Baumdatenbank enthält keine Personen.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:226
 msgid ""
@@ -2474,12 +2490,25 @@ msgid ""
 "  • An external file may be used to populate the tree via \"Import...\" in "
 "the \"Family Trees\" menu."
 msgstr ""
+"\n"
+" 👣 Nächste Schritte:\n"
+" Füge eine Familie und eine Person in dieser Familie hinzu:\n"
+"  - Eine Familie kann über das Menü „Hinzufügen“ hinzugefügt werden.\n"
+"  - Eine Person kann durch Drücken des \"+\" (Plus) in den Feldern für den "
+"Ehepartner (\"Vater/Partner1\" oder \"Mutter/Partner2\") oder im Register "
+"\"Kinder\" hinzugefügt werden.\n"
+"\n"
+"Oder du importierst Personen aus einer externen Datei:\n"
+"  - Eine externe Datei kann verwendet werden, um den Baum über "
+"\"Importieren...\" im Menü „Familienstammbäume“ aufzufüllen."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
 "\n"
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
+"\n"
+" ⛔ Es wurde keine Person als zentrale \"Hauptperson\" ausgewählt.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -2492,10 +2521,19 @@ msgid ""
 "\n"
 " This sets them as the focal \"Home Person\"."
 msgstr ""
+"\n"
+" 👣 Nächste Schritte:\n"
+"  •  Wähle das Symbol für die Personenansicht in der Seitenleiste des "
+"Navigators.\n"
+"  •  Wähle eine Person aus, um sie zur „Aktiven Person“ zu machen.\n"
+"  •  Wähle im Menü Bearbeiten oder im Kontextmenü (Rechtsklick) die Option „"
+"Hauptperson festlegen“.\n"
+"\n"
+" Dadurch wird die Person als „Hauptperson“ festgelegt."
 
 #: Betawhatsnext/Betawhatsnext.py:268
 msgid "Double-click color text to edit details"
-msgstr ""
+msgstr "Doppelklicke auf Farbtext, um Details zu bearbeiten"
 
 #: Betawhatsnext/Betawhatsnext.py:504
 msgid "Birth event missing."
@@ -2504,6 +2542,7 @@ msgstr "Geburtsereignis fehlt."
 #: Betawhatsnext/Betawhatsnext.py:505
 msgid "Add via the Events tab of the Edit Person dialog."
 msgstr ""
+"Hinzufügen über die Registerkarte Ereignisse im Dialogfeld Person bearbeiten."
 
 #: Betawhatsnext/Betawhatsnext.py:582
 msgid "relationship type unknown"
@@ -2512,27 +2551,29 @@ msgstr "Beziehungstyp unbekannt"
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
 msgstr ""
+"Hinzufügen über die Registerkarte Ereignisse im Dialogfeld Familie "
+"bearbeiten."
 
 #: Betawhatsnext/Betawhatsnext.py:621
 msgid "591 family not complete"
-msgstr ""
+msgstr "591 Familie nicht vollständig"
 
 #: Betawhatsnext/Betawhatsnext.py:642
 msgid "place unknown for the Event"
-msgstr ""
+msgstr "Ort für das Ereignis unbekannt"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
-msgstr ""
+msgstr "Es besteht eine Partnerbeziehung, aber es fehlt der Ehepartner"
 
 #: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
 #: Betawhatsnext/Betawhatsnext.py:665
 msgid "Add missing partner using the Edit Family dialog."
-msgstr ""
+msgstr "Füge fehlende Partner über den Dialog Familie bearbeiten hinzu."
 
 #: Betawhatsnext/Betawhatsnext.py:660
 msgid "Father missing from the parent family"
-msgstr ""
+msgstr "Vater fehlt in der elterlichen Familie"
 
 #: Betawhatsnext/Betawhatsnext.py:664
 msgid "Mother missing from the parent family"
@@ -2546,6 +2587,8 @@ msgstr "Die elterliche Familie ist unbekannt."
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
 msgstr ""
+"„Neue/Existierende Eltern hinzufügen“ aus dem Bearbeiten-Menü der "
+"Beziehungsansicht."
 
 #: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
@@ -2675,6 +2718,10 @@ msgid ""
 "Note: This report only counts ancestors with a parent-child relationship of "
 "birth."
 msgstr ""
+"\n"
+"\n"
+"Hinweis: In diesem Bericht werden nur Vorfahren mit einer Eltern-Kind-"
+"Beziehung der Geburt gezählt."
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
@@ -3605,7 +3652,7 @@ msgstr "Standardanzahl der Einträge in den Indizes"
 #: DynamicWeb/dynamicweb.py:5090
 msgid "The default number of entries shown in one index page"
 msgstr ""
-"Die Standardanzahl der Einträge die auf einer Indexseite gezeigt werden"
+"Die Standardanzahl von Einträgen, die auf einer Indexseite angezeigt werden"
 
 #: DynamicWeb/dynamicweb.py:5098
 msgid "Maximum number of generations"
@@ -3621,23 +3668,21 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
-msgstr "Wähle den Standard für den Grafiktyps des SVG-Baums"
+msgstr "Wähle den Standard SVG-Baumdiagrammtyp"
 
 #: DynamicWeb/dynamicweb.py:5119
 msgid "Choose the default SVG tree graph shape"
-msgstr "Wähle den Standard für die Grafikform des SVG-Baums"
+msgstr "Wähle die Standardform des SVG-Baumdiagramms"
 
 #: DynamicWeb/dynamicweb.py:5128
 msgid "Choose the default SVG tree parents distribution (for fan charts only)"
 msgstr ""
-"Wähle den Standard für die Elternverteilung des SVG-Baums (nur für "
-"Fächergrafiken)"
+"Wähle die Standardverteilung der SVG-Baumeltern (nur für Fächerdiagramme)"
 
 #: DynamicWeb/dynamicweb.py:5138
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
 msgstr ""
-"Wähle den Standard für die Kinderverteilung des SVG-Baums (nur für "
-"Fächergrafiken)"
+"Wähle die Standardverteilung der SVG-Baumkinder (nur für Fächerdiagramme)"
 
 #: DynamicWeb/dynamicweb.py:5149
 msgid ""
@@ -3720,7 +3765,7 @@ msgstr "Inhalt der Seite"
 
 #: GetGOV/getgov.py:315
 msgid "Place ID to import from GOV (Historical Gazetteer):"
-msgstr ""
+msgstr "Orts-ID für den Import aus GOV (Historisches Ortsverzeichnis):"
 
 #: GetGOV/getgov.py:323
 msgid "Get Place"
@@ -3734,12 +3779,12 @@ msgstr "GOV-ID hinzufügen Ort %s"
 #: GetGOV/getgov.py:388
 #, python-format
 msgid "GetGOV error: %s"
-msgstr ""
+msgstr "GetGOV Fehler: %s"
 
 #: GetGOV/getgov.py:421
 #, python-format
 msgid "GOV error on id %s with code: "
-msgstr ""
+msgstr "GOV-Fehler bei ID %s mit Code: "
 
 #: GetGOV/getgov.py:555
 #, python-format
@@ -3921,9 +3966,10 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
-"Du musst eine 'Hauptperson' setzen, um dorthin zu springen. Gehe zur "
-"Personenansicht, wähle die Person, die du als 'Hauptperson' setzen willst "
-"und bestätige deine Wahl über Menü Bearbeiten -> Hauptperson setzen."
+"Du musst eine „Standardperson“ festlegen, zu der du gehen kannst. Wähle die "
+"Personenansicht, wähle die Person, die du als „Hauptperson“ haben möchtest, "
+"und bestätige dann deine Wahl über das Menü Bearbeiten -> Hauptperson "
+"festlegen."
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
 msgid "Order"
@@ -4119,7 +4165,7 @@ msgstr "Stammbaum DNA"
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:5
 msgid "Tool to import FamilyFinder DNA data from Family Tree"
-msgstr ""
+msgstr "Werkzeug zum Importieren von FamilyFinder-DNA-Daten aus Family Tree"
 
 #: FamilyTreeDNA/ftdna_import.py:75
 msgid "Family Finder Tool"
@@ -4131,7 +4177,7 @@ msgstr "Gib den FTDNA Family Finder Dateinamen ein:"
 
 #: FamilyTreeDNA/ftdna_import.py:109
 msgid "Enter FTDNA Chromosome Segment Filename:"
-msgstr ""
+msgstr "Gib den Dateinamen des FTDNA-Chromosomensegments ein:"
 
 #: FamilyTreeDNA/ftdna_import.py:112
 msgid "Import Haplogroups"
@@ -4139,7 +4185,7 @@ msgstr "Haplogruppen importieren"
 
 #: FamilyTreeDNA/ftdna_import.py:128
 msgid "FTDNA Note string :"
-msgstr ""
+msgstr "FTDNA Notizen Zeichenfolge :"
 
 #: FamilyTreeDNA/ftdna_import.py:137
 msgid "Shared Citation ID :"
@@ -4151,7 +4197,7 @@ msgstr "Aktive Person: "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
-msgstr ""
+msgstr "Daten aus Family Finder-Dateien importieren"
 
 #: FamilyTreeDNA/ftdna_import.py:169
 msgid "Close the Family Finder Tool"
@@ -4159,7 +4205,7 @@ msgstr "Das Werkzeug Familiensuche schließen"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
-msgstr ""
+msgstr "Hilfe-Handbuch lesen"
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
@@ -4170,23 +4216,27 @@ msgstr "Stammbaum-DNA-Import"
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
+"{} Verknüpfungen mit DNA-Daten erstellt. {} Haplogruppen-Attribute erstellt "
+"\n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
-msgstr ""
+msgstr "Keine Family Finder Datei angegeben"
 
 #: FamilyTreeDNA/ftdna_import.py:232
 msgid "No Segment File specified"
-msgstr ""
+msgstr "Keine Segmentdatei angegeben"
 
 #: FamilyTreeDNA/ftdna_import.py:236
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
 msgstr ""
+"Keine Verbindungen in FTdna Notizen gefunden. Keine Haplogruppen-Attribute "
+"erstellt."
 
 #: FamilyTreeDNA/ftdna_import.py:307
 #, python-format
 msgid "Add %s haplogroup attribute"
-msgstr ""
+msgstr "%s Haplogruppen-Attribut hinzufügen"
 
 #: FamilyTreeDNA/ftdna_import.py:350
 #, python-format
@@ -4196,7 +4246,7 @@ msgstr "DNA-Assoziation %s hinzufügen"
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr ""
+msgstr "Notiz für %s DNA- Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:369
 #, python-format
@@ -4206,17 +4256,17 @@ msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr ""
+msgstr "Quellenfundstelle für %s DNA Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr ""
+msgstr "Fundstelle für %s DNA Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr ""
+msgstr "Fundstelle zu %s DNA Verbindung hinzufügen"
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
@@ -4907,7 +4957,7 @@ msgstr "Bitte warten, filtere..."
 
 #: RelID/relation_tab.py:169
 msgid "No default_person"
-msgstr "Keine Standardperson"
+msgstr "Keine Standard_person"
 
 #: RelID/relation_tab.py:174
 msgid "Generating relation map..."
@@ -5114,6 +5164,8 @@ msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
 msgstr ""
+"<i>Installationen der folgenden Pakete sind <b>UNBEDINGT ERFORDERLICH</b>\n"
+" (Benötigt die Mindestversion oder höher.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
 msgid ""
@@ -5128,6 +5180,8 @@ msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
 msgstr ""
+"<i>Die Installation der folgenden Pakete wird <b>DRINGEND EMPFOHLEN</b>, da "
+"sie für Geographie und Diagramme notwendig sind</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
 msgid ""
@@ -5139,7 +5193,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr ""
+msgstr "<i>Die Installation der folgenden Pakete ist <b>optional</b></i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
@@ -5165,6 +5219,8 @@ msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
+"<i>Die Installation der folgenden Pakete wird <b>Empfohlen</b>, wenn du "
+"beabsichtigst, zu übersetzen oder zu entwickeln („Erweiterungen“ usw.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
@@ -5181,6 +5237,10 @@ msgid ""
 "org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
 "work</i>:\n"
 msgstr ""
+"<i>Für die folgenden <a href="
+"\"https://gramps-project.org/wiki/index.php?title=Third-party_Addons\""
+">Drittanbieter- Erweiterungen</a> sind Voraussetzungen erforderlich, damit "
+"sie funktionieren</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
@@ -5226,6 +5286,10 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
+"Wenn du einen Grund hast, die Voraussetzungen zu prüfen, ist es der richtige "
+"Zeitpunkt, deine Genealogie-Dateien zu sichern und dann deine Sicherungen zu "
+"testen!\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
 msgid ""
@@ -5236,24 +5300,37 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php/De:"
+"Wie_erstelle_ich_eine_Sicherung\">Sicherung in Gramps XML</a> Du findest „ "
+"Sicherung erstellen...“ im Stammbaum-Menü neuerer Gramps-Versionen, "
+"andernfalls verwende „Exportieren...“ im selben Menü, aber deaktiviere die "
+"Datenschutzoptionen im Export-Assistenten, um alle Daten zu exportieren.</i>"
+"\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
 msgid ""
 " • Backups can be made at any time and, at a minimum, on the first day of "
 "every month. But preferrably more often.\n"
 msgstr ""
+" • Sicherungen können jederzeit, mindestens aber am ersten Tag eines jeden "
+"Monats, durchgeführt werden. Vorzugsweise aber öfter.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
 msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
 msgstr ""
+" • Es wird dringend empfohlen, vor jedem Upgrade eine Sicherungskopie deiner "
+"Stammbäume zu erstellen.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
 msgstr ""
+" • Teste deine Sicherungen, indem du einen neuen Stammbaum erstellst und "
+"dann die Sicherung importierst."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ", is the most current version.\n"
@@ -5348,25 +5425,27 @@ msgstr " (Erfordert "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
 msgid " • Berkeley Database library (bsddb3: "
-msgstr ""
+msgstr " • Berkeley-Datenbank-Bibliothek (bsddb3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:675
 msgid " • SQLite Database library (sqlite3: "
-msgstr ""
+msgstr " • SQLite-Datenbankbibliothek (sqlite3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:689
 msgid " • xdg-utils (Manual check see instructions link)"
-msgstr ""
+msgstr " • xdg-utils (Manuelle Prüfung siehe Anleitungslink)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:702
 msgid " • librsvg2 (Manual check see instructions link)"
-msgstr ""
+msgstr " • librsvg2 (Manuelle Prüfung siehe Anleitungslink)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:713
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
+" • language-pack-gnome-xx (manuelle Prüfung siehe Anleitungslink) für deine "
+"Sprache <hier Gebietsschema anzeigen TBD>"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
@@ -5403,7 +5482,7 @@ msgstr " • python-fontconfig nicht gefunden, (Benötigt Version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
-msgstr ""
+msgstr " • python-fontconfig installiert, Version nicht verfügbar"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
@@ -5416,6 +5495,8 @@ msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (Bestanden: Version %s oder höher installiert. Wenn nicht "
+"unter Microsoft Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1015
 #, python-format
@@ -5423,10 +5504,12 @@ msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (Erfordert die Installation von Version %s oder höher. Wenn "
+"nicht unter Microsoft Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1129
 msgid "can't found it because exiv2 not installed"
-msgstr ""
+msgstr "kann es nicht finden, weil exiv2 nicht installiert ist"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 #, python-format
@@ -5459,7 +5542,7 @@ msgstr "nicht installiert"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
 msgid "     and one of either: (pydotplus: "
-msgstr ""
+msgstr "     und einer der folgenden Optionen: (pydotplus: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
 msgid ") or (pygraphviz: "
@@ -5517,12 +5600,12 @@ msgstr " (lxml: nicht gefunden. Benötigt Version "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1776
 msgid " • Requires: MongoDB TBD / pymongo TBD"
-msgstr ""
+msgstr " • Benötigt: MongoDB TBD / pymongo TBD"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1790
 #, python-format
 msgid " • Operating System: %s"
-msgstr ""
+msgstr " • Betriebssystem: %s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
 msgid ""
@@ -5611,11 +5694,11 @@ msgstr "Pers."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
-msgstr ""
+msgstr "Bez."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "Gem. DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
@@ -5627,7 +5710,7 @@ msgstr "Gr. Seg"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Qu"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
@@ -5658,16 +5741,16 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
-msgstr ""
+msgstr "LEGENDE"
 
 #: DNAMatches/dnamatches.py:228
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "Nicht angegeben"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
 msgid "cM"
@@ -5732,7 +5815,7 @@ msgstr "Fehler: Ungültige URL"
 
 #: PhpGedView/phpgedview.glade:12
 msgid "- default -"
-msgstr "- Standardwert -"
+msgstr "- Standard -"
 
 #: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
 msgid "phpGedView import"
@@ -6888,7 +6971,7 @@ msgstr ""
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
 msgid "Delete?"
-msgstr ""
+msgstr "Löschen?"
 
 #: EditExifMetadata/editexifmetadata.py:1148
 msgid ""
@@ -7594,7 +7677,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1815
 msgid "The default style."
-msgstr "Standardstil."
+msgstr "Der Standardstil."
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
@@ -8115,6 +8198,8 @@ msgid ""
 "Upload media files to S3 (or compatible) object-based storage via the "
 "command line."
 msgstr ""
+"Lade Mediendateien über die Befehlszeile in den objektbasierten Speicher S3 ("
+"oder einen kompatiblen Speicher) hoch."
 
 #: TMGimporter/importtmg.py:89
 #, python-format
@@ -9034,10 +9119,10 @@ msgid ""
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
 msgstr ""
-"Standardmäßig hat jede Person einen eindeutigen horizontalen Schlitz. Dies "
+"Standardmäßig hat jedes Individuum einen eigenen horizontalen Slot. Dies "
 "kann bei vielen Generationen ineffizient sein. Mit diesem Algorithmus können "
-"mehrere Personen einen horizontalen Steckplatz gemeinsam nutzen, wenn sie "
-"sich nicht überlappen."
+"sich mehrere Personen einen horizontalen Slot teilen, wenn sie sich nicht "
+"überschneiden."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
@@ -9164,7 +9249,7 @@ msgstr "Internet-Typ-Filter"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
-msgstr ""
+msgstr "E-Mail"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
@@ -9201,6 +9286,8 @@ msgstr "Alle wechselseitigen Verknüpfungen bestehen, keine wurde erstellt"
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
 msgstr ""
+"Keine bestehenden Verbindungen, daher keine gegenseitigen Verbindungen "
+"erforderlich"
 
 #: Form/editform.py:181
 #, python-format
@@ -13511,11 +13598,11 @@ msgstr "E. D. Nummer"
 
 #: Form/form_us.xml.h:892
 msgid "Hotel, large rooming house, institution, military installation, etc."
-msgstr ""
+msgstr "Hotel, großes Wohnheim, Institution, Militäreinrichtung usw."
 
 #: Form/form_us.xml.h:899
 msgid "Is this house on a farm (or ranch)?"
-msgstr ""
+msgstr "Befindet sich dieses Haus auf einem Bauernhof (oder einer Ranch)?"
 
 #: Form/form_us.xml.h:900
 msgid "On 3+ acres of land?"
@@ -13523,11 +13610,11 @@ msgstr "Auf mehr als 3 Hektar Land?"
 
 #: Form/form_us.xml.h:901
 msgid "Is this house on a place of three or more acres?"
-msgstr ""
+msgstr "Steht dieses Haus auf einem Grundstück von drei oder mehr Hektar?"
 
 #: Form/form_us.xml.h:902
 msgid "Agricultural Questionnaire Number"
-msgstr ""
+msgstr "Landwirtschaftlicher Fragebogen Nummer"
 
 #: Form/form_us.xml.h:906
 msgid "Age at last birthday"
@@ -13535,7 +13622,7 @@ msgstr "Alter am letzten Geburtstag"
 
 #: Form/form_us.xml.h:907
 msgid "How old was he on his last birthday?"
-msgstr ""
+msgstr "Wie alt war er an seinem letzten Geburtstag?"
 
 #: Form/form_us.xml.h:908 Form/form_us.xml.h:2537
 msgid "Marital status"
@@ -13549,7 +13636,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:911
 msgid "What State (or foreign country) was he born in?"
-msgstr ""
+msgstr "In welchem Staat (oder in einem anderen Land) wurde er geboren?"
 
 #: Form/form_us.xml.h:912
 msgid "Is he naturalized?"
@@ -13564,16 +13651,20 @@ msgid ""
 "What was this person doing most of last week—working, keeping house, or "
 "something else?"
 msgstr ""
+"Was hat diese Person die meiste Zeit der letzten Woche gemacht - gearbeitet, "
+"den Haushalt geführt oder etwas anderes?"
 
 #: Form/form_us.xml.h:915
 msgid "Worked last week? (Y/N)"
-msgstr ""
+msgstr "Letzte Woche gearbeitet? (J/N)"
 
 #: Form/form_us.xml.h:916
 msgid ""
 "Did this person do any work at all last week, not counting work around the "
 "house?"
 msgstr ""
+"Hat diese Person in der vergangenen Woche überhaupt gearbeitet, abgesehen "
+"von der Arbeit im Haushalt?"
 
 #: Form/form_us.xml.h:917
 msgid "Looking for work?"
@@ -13581,7 +13672,7 @@ msgstr "Auf der Suche nach Arbeit?"
 
 #: Form/form_us.xml.h:918
 msgid "Was this person looking for work?"
-msgstr ""
+msgstr "War diese Person auf der Suche nach Arbeit?"
 
 #: Form/form_us.xml.h:919
 msgid "Has a job or business?"
@@ -13590,14 +13681,16 @@ msgstr "Hat er einen Job oder eine Firma?"
 #: Form/form_us.xml.h:920
 msgid "Even though he didn’t work last week, does he have a job or business?"
 msgstr ""
+"Auch wenn er letzte Woche nicht gearbeitet hat, hat er einen Job oder ein "
+"Gewerbe?"
 
 #: Form/form_us.xml.h:921
 msgid "# hours worked last week"
-msgstr ""
+msgstr "# Letzte Woche geleistete Arbeitsstunden"
 
 #: Form/form_us.xml.h:922
 msgid "How many hours did he work last week?"
-msgstr ""
+msgstr "Wie viele Stunden hat er letzte Woche gearbeitet?"
 
 #: Form/form_us.xml.h:923
 msgid "Type of work"
@@ -13605,7 +13698,7 @@ msgstr "Art der Arbeit"
 
 #: Form/form_us.xml.h:924
 msgid "What kind of work was he doing?"
-msgstr ""
+msgstr "Welcher Art von Arbeit ging er nach?"
 
 #: Form/form_us.xml.h:925
 msgid "Business or industry"
@@ -13613,31 +13706,31 @@ msgstr "Gewerbe oder Industrie"
 
 #: Form/form_us.xml.h:926
 msgid "What kind of business or industry was he working in?"
-msgstr ""
+msgstr "In welcher Art von Gewerbe oder Industrie war er tätig?"
 
 #: Form/form_us.xml.h:928
 msgid "Same house in Apr 1949?"
-msgstr ""
+msgstr "Dasselbe Haus im Apr 1949?"
 
 #: Form/form_us.xml.h:929
 msgid "Was he living in this same house a year ago?"
-msgstr ""
+msgstr "Hat er vor einem Jahr in demselben Haus gewohnt?"
 
 #: Form/form_us.xml.h:930
 msgid "Farm in Apr 1949?"
-msgstr ""
+msgstr "Bauernhof im Apr 1949?"
 
 #: Form/form_us.xml.h:931
 msgid "Was he living on a farm a year ago?"
-msgstr ""
+msgstr "Hat er vor einem Jahr auf einem Bauernhof gelebt?"
 
 #: Form/form_us.xml.h:932
 msgid "Same county in Apr 1949?"
-msgstr ""
+msgstr "Derselbe Landkreis im Apr 1949?"
 
 #: Form/form_us.xml.h:933
 msgid "Was he living in this same county a year ago?"
-msgstr ""
+msgstr "Hat er vor einem Jahr in diesem Landkreis gelebt?"
 
 #: Form/form_us.xml.h:935
 msgid "State or foreign country"
@@ -13645,11 +13738,11 @@ msgstr "Bundesland oder anderes Land"
 
 #: Form/form_us.xml.h:937
 msgid "What country was his father born in?"
-msgstr ""
+msgstr "In welchem Land wurde sein Vater geboren?"
 
 #: Form/form_us.xml.h:939
 msgid "What country was his mother born in?"
-msgstr ""
+msgstr "In welchem Land wurde seine Mutter geboren?"
 
 #: Form/form_us.xml.h:940
 msgid "Highest grade attended"
@@ -13657,7 +13750,7 @@ msgstr "Höchste besuchte Schulstufe"
 
 #: Form/form_us.xml.h:941
 msgid "What is the highest grade of school that he has attended?"
-msgstr ""
+msgstr "Welches ist die höchste Schulform, die er besucht hat?"
 
 #: Form/form_us.xml.h:942
 msgid "Completed?"
@@ -13665,7 +13758,7 @@ msgstr "Abgeschlossen?"
 
 #: Form/form_us.xml.h:943
 msgid "Did he finish this grade?"
-msgstr ""
+msgstr "Hat er diese Schule abgeschlossen?"
 
 #: Form/form_us.xml.h:944
 msgid "Attended school since Feb 1, 1950?"
@@ -13673,11 +13766,11 @@ msgstr "Seit dem 1. Februar 1950 zur Schule gegangen?"
 
 #: Form/form_us.xml.h:945
 msgid "Has he attended school at any time since February 1st?"
-msgstr ""
+msgstr "Hat er seit dem 1. Februar überhaupt eine Schule besucht?"
 
 #: Form/form_us.xml.h:946
 msgid "How many weeks has he been looking for work?"
-msgstr ""
+msgstr "Seit wie vielen Wochen ist er auf Arbeitssuche?"
 
 #: Form/form_us.xml.h:947
 msgid "# weeks worked in 1949"
@@ -13688,6 +13781,8 @@ msgid ""
 "Last year, in how many weeks did this person do any work at all, not "
 "counting work around the house?"
 msgstr ""
+"In wie vielen Wochen des vergangenen Jahres hat diese Person überhaupt "
+"gearbeitet, abgesehen von der Arbeit im Haushalt?"
 
 #: Form/form_us.xml.h:949
 msgid "Amount of wages/salary in 1949"
@@ -13698,6 +13793,8 @@ msgid ""
 "Last year, how much money did he earn working as an employee for wages or "
 "salary?"
 msgstr ""
+"Wie viel Geld hat er im letzten Jahr als Angestellter als Lohn oder Gehalt "
+"verdient?"
 
 #: Form/form_us.xml.h:951
 msgid "Amount of money from own business in 1949"
@@ -13708,6 +13805,8 @@ msgid ""
 "Last year, how much money did he earn working in his own business, "
 "professional practice, or farm?"
 msgstr ""
+"Wie viel Geld hat er im letzten Jahr in seinem eigenen Gewerbe, seiner "
+"freiberuflichen Tätigkeit oder seinem landwirtschaftlichen Betrieb verdient?"
 
 #: Form/form_us.xml.h:953
 msgid "Amount of other income in 1949"
@@ -13718,36 +13817,47 @@ msgid ""
 "Last year, how much money did he receive from interest, dividends, veteran’s "
 "allowances, pensions, rents, or other income?"
 msgstr ""
+"Wie viel Geld hat er im letzten Jahr aus Zinsen, Dividenden, "
+"Veteranenbeihilfen, Renten, Mieten oder sonstigen Einkünften erhalten?"
 
 #: Form/form_us.xml.h:955
 msgid "Relatives in household wages/salary in 1949"
-msgstr ""
+msgstr "Verwandte im Haushalt Löhne/Gehälter 1949"
 
 #: Form/form_us.xml.h:956
 msgid ""
 "Last year, how much money did his relatives in this household earn working "
 "for wages or salary?"
 msgstr ""
+"Wie viel Geld haben seine Verwandten in diesem Haushalt im letzten Jahr mit "
+"Lohn- oder Gehaltsarbeit verdient?"
 
 #: Form/form_us.xml.h:957
 msgid "Relatives in household earnings from own business in 1949"
 msgstr ""
+"Verwandte im Haushalt Einkünfte aus eigener Erwerbstätigkeit im Jahr 1949"
 
 #: Form/form_us.xml.h:958
 msgid ""
 "Last year, how much money did his relatives in this household earn in own "
 "business, professional practice, or farm?"
 msgstr ""
+"Wie viel Geld haben seine Verwandten in diesem Haushalt im letzten Jahr mit "
+"einem eigenen Gewerbe, einer freiberuflichen Tätigkeit oder einer "
+"Landwirtschaft verdient?"
 
 #: Form/form_us.xml.h:959
 msgid "Relatives in household other income in 1949"
-msgstr ""
+msgstr "Verwandte im Haushalt anderes Einkommen im Jahr 1949"
 
 #: Form/form_us.xml.h:960
 msgid ""
 "Last year, how much money did his relatives in this household receive from "
 "interest, dividends, veteran’s allowances, pensions, rents, or other income?"
 msgstr ""
+"Wie viel Geld haben seine Verwandten in diesem Haushalt im letzten Jahr aus "
+"Zinsen, Dividenden, Veteranenbeihilfen, Renten, Mieten oder sonstigen "
+"Einkünften erhalten?"
 
 #: Form/form_us.xml.h:961
 msgid "WWII Veteran?"
@@ -13755,7 +13865,7 @@ msgstr "WWII Veteran?"
 
 #: Form/form_us.xml.h:962
 msgid "Did he ever serve in the U. S. Armed Forces during World War II?"
-msgstr ""
+msgstr "Hat er während des Zweiten Weltkriegs in den US-Streitkräften gedient?"
 
 #: Form/form_us.xml.h:963
 msgid "WWI Veteran?"
@@ -13768,14 +13878,17 @@ msgstr "Erster Weltkrieg?"
 #: Form/form_us.xml.h:965
 msgid "Any other time, including present service?"
 msgstr ""
+"Zu irgendeinem anderen Zeitpunkt, einschließlich des derzeitigen Dienstes?"
 
 #: Form/form_us.xml.h:966
 msgid "What kind of work did this person do in his last job?"
 msgstr ""
+"Welche Art von Arbeit hat diese Person in ihrem letzten Tätigkeitsfeld "
+"verrichtet?"
 
 #: Form/form_us.xml.h:967
 msgid "What kind of business or industry did he work in?"
-msgstr ""
+msgstr "In welcher Art von Gewerbe oder Industrie hat er gearbeitet?"
 
 #: Form/form_us.xml.h:968
 msgid "Class of worker [last job]"
@@ -13800,6 +13913,7 @@ msgstr ""
 #: Form/form_us.xml.h:972
 msgid "How many children has she ever borne, not counting stillbirths?"
 msgstr ""
+"Wie viele Kinder hat sie jemals geboren, Totgeburten nicht mitgerechnet?"
 
 #: Form/form_us.xml.h:973
 msgid "Census Date"
@@ -17335,7 +17449,7 @@ msgstr "Persönlicher Beruf"
 
 #: Form/form_gb.xml.h:219 Form/form_gb.xml.h:352
 msgid "Industry or Service with which worker is connected."
-msgstr ""
+msgstr "Industrie oder Dienstleistung, mit der der Arbeitnehmer verbunden ist."
 
 #: Form/form_gb.xml.h:221 Form/form_gb.xml.h:354
 msgid "Whether Employer, Worker or Working on Own Account"
@@ -17379,22 +17493,26 @@ msgstr "ALTER Monate"
 
 #: Form/form_gb.xml.h:243 Form/form_gb.xml.h:378
 msgid "SEX"
-msgstr ""
+msgstr "GESCHLECHT"
 
 #: Form/form_gb.xml.h:245 Form/form_gb.xml.h:380
 msgid "MARRIAGE or ORPHANHOOD"
-msgstr ""
+msgstr "HEIRAT oder WAISENHAUS"
 
 #: Form/form_gb.xml.h:249 Form/form_gb.xml.h:384
 msgid ""
 "If attending a School or any kind of Educational Institution for the purpose "
 "of receiving Instruction"
 msgstr ""
+"Wenn eine Schule oder eine andere Bildungseinrichtung besucht wird, um "
+"Unterricht zu erhalten"
 
 #: Form/form_gb.xml.h:251 Form/form_gb.xml.h:386
 msgid ""
 "State here the precise branch of Profession, Trade, Manufacture, Service, &c."
 msgstr ""
+"Gib hier den genauen Zweig des Berufs, des Handels, der Verarbeitung, der "
+"Dienstleistung usw. an."
 
 #: Form/form_gb.xml.h:254 Form/form_gb.xml.h:389
 msgid "Number of living children"
@@ -17402,7 +17520,7 @@ msgstr "Zahl der lebenden Kinder"
 
 #: Form/form_gb.xml.h:255 Form/form_gb.xml.h:390
 msgid "Total number under sixteen years of age. If none write \"None.\""
-msgstr ""
+msgstr "Gesamtzahl der unter Sechzehnjährigen. Falls keine, schreibe „Keine.“"
 
 #: Form/form_gb.xml.h:256 Form/form_gb.xml.h:391
 msgid "Ages of living children"
@@ -17411,6 +17529,7 @@ msgstr "Alter der lebenden Kinder"
 #: Form/form_gb.xml.h:257 Form/form_gb.xml.h:392
 msgid "For each child place a X in the column corresponding to its age."
 msgstr ""
+"Kreuze für jedes Kind ein X in der Spalte an, die seinem Alter entspricht."
 
 #: Form/form_gb.xml.h:258
 msgid "E.D. Letter Code"
@@ -17462,7 +17581,7 @@ msgstr "Gesprochene Sprache"
 
 #: Form/form_gb.xml.h:394
 msgid "LANGUAGE SPOKEN."
-msgstr ""
+msgstr "GESPROCHENE SPRACHE."
 
 #: Form/form_gb.xml.h:397 Form/form_gb.xml.h:408 Form/form_gb.xml.h:425
 #: Form/form_gb.xml.h:452 Form/form_gb.xml.h:480 Form/form_gb.xml.h:512
@@ -18258,6 +18377,8 @@ msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
 msgstr ""
+"Legt die Größe der Heatmap-Punkte fest.\n"
+"Standard: 15"
 
 #: Heatmap/heatmap.py:93
 msgid "File path"
@@ -18270,6 +18391,11 @@ msgid ""
 "has to start and end with an alphanumeric character.The file extention '."
 "html' is added by the report."
 msgstr ""
+"Für den Dateinamen sind nur die englischen Buchstaben A-Z, a-z und die "
+"Zahlen 0-9 sowie die Zeichen Leerzeichen, Unterstrich und Bindestrich "
+"erlaubt. Der Dateiname muss außerdem mit einem alphanumerischen Zeichen "
+"beginnen und enden, die Dateierweiterung „.html“ wird vom Bericht "
+"hinzugefügt."
 
 #: Heatmap/heatmap.py:103
 msgid "File name"
@@ -18277,12 +18403,14 @@ msgstr "Dateiname"
 
 #: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
-msgstr ""
+msgstr "Benutzerdefinierte Startposition aktivieren"
 
 #: Heatmap/heatmap.py:119
 msgid ""
 "Enabling will force the map open at your custom start position and zoom."
 msgstr ""
+"Bei Aktivierung dieser Option wird die Karte an der von dir eingestellten "
+"Startposition und Zoomstufe geöffnet."
 
 #: Heatmap/heatmap.py:124
 msgid "Start latitude"
@@ -18293,6 +18421,8 @@ msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
 msgstr ""
+"Benutzerdefinierte Startposition Breitengrad festlegen\n"
+"Standard: 50.0"
 
 #: Heatmap/heatmap.py:129
 msgid "Start longitude"
@@ -18303,16 +18433,20 @@ msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
 msgstr ""
+"Benutzerdefinierte Startposition festlegen (Längengrad)\n"
+"Standard: 10.0"
 
 #: Heatmap/heatmap.py:134
 msgid "Start zoom"
-msgstr ""
+msgstr "Anfangszoom"
 
 #: Heatmap/heatmap.py:136
 msgid ""
 "Set the value for the starting zoom\n"
 "Default: 5"
 msgstr ""
+"Legt den Wert für den Startzoom fest\n"
+"Standard: 5"
 
 #: Heatmap/heatmap.py:209
 msgid "Path does not exist."
@@ -18324,11 +18458,11 @@ msgstr "Ungültiger Dateiname."
 
 #: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
-msgstr ""
+msgstr "Erstellt einen Heatmap-Webbericht."
 
 #: Heatmap/utils.py:55
 msgid "Stamen Terrain"
-msgstr ""
+msgstr "Stamen Terrain"
 
 #: Heatmap/utils.py:58
 msgid "Stamen Terrain (Background only)"
@@ -18336,19 +18470,19 @@ msgstr "Stamen Terrain (nur Hintergrund)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
-msgstr ""
+msgstr "Stamen Toner"
 
 #: Heatmap/utils.py:64
 msgid "Stamen Watercolor"
-msgstr ""
+msgstr "Stamen Aquarell"
 
 #: Heatmap/utils.py:67
 msgid "CartoDB Positron"
-msgstr ""
+msgstr "CartoDB Positron"
 
 #: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
-msgstr ""
+msgstr "CartoDB-Dunkelmaterie"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
 msgid "Number of ancestors"
@@ -18468,11 +18602,11 @@ msgstr "DE Google"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
-msgstr ""
+msgstr "Nachnamenskarte (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
-msgstr ""
+msgstr "GenWiki"
 
 #: DEWebConnectPack/DEWebPack.py:47
 msgid "German digital library"
@@ -18775,7 +18909,7 @@ msgstr "ZeitLinien Karte"
 
 #: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
-msgstr ""
+msgstr "Ansichtsformat wählen"
 
 #: GeoTimeLines/GeoTimeLines.py:800
 msgid "Almost done"
@@ -18796,6 +18930,9 @@ msgid ""
 "to differentiate different\n"
 "markers at the same location"
 msgstr ""
+"Versetze die Kartenmarkierungen\n"
+"zur Unterscheidung verschiedener\n"
+"Markierungen an der gleichen Stelle"
 
 #: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
@@ -18803,34 +18940,45 @@ msgid ""
 "as measured along the equator\n"
 "(includes latitude distortion)"
 msgstr ""
+"Staffelungsradius (in Hektometern)\n"
+"gemessen entlang des Äquators\n"
+"(einschließlich Breitengradverzerrung)"
 
 #: GeoTimeLines/GeoTimeLines.py:1794
 msgid ""
 "Display markers for unknown ancestors\n"
 "based on earliest descendant location"
 msgstr ""
+"Markierungen für unbekannte Vorfahren anzeigen\n"
+"basierend auf dem Ort des frühesten Nachkommens"
 
 #: GeoTimeLines/GeoTimeLines.py:1803
 msgid ""
 "Days to keep lines on the map after\n"
 "an event"
 msgstr ""
+"Tage, um die Linien auf der Karte nach \n"
+"einem Ereignis"
 
 #: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
-msgstr ""
+msgstr "Benutzerdefinierte Kartensymbole verwenden"
 
 #: GeoTimeLines/GeoTimeLines.py:1829
 msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
 msgstr ""
+"Wenn es kein Geburtsereignis für eine Person gibt, wird ihr Alter\n"
+"als das Alter zum Zeitpunkt des ersten Ereignisses angenommen"
 
 #: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
 "If there is no death event for a person, they will\n"
 "be assumed dead at this age"
 msgstr ""
+"Wenn es kein Todesereignis für eine Person gibt, wird sie\n"
+"in diesem Alter als tot angenommen"
 
 #: GeoTimeLines/GeoTimeLines.py:1875
 msgid "Number of steps"
@@ -18842,25 +18990,27 @@ msgstr "Art der Schritte"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
-msgstr ""
+msgstr "Schritte pro Millisekunde"
 
 #: GeoTimeLines/GeoTimeLines.py:1915
 msgid "Initial map view on Gramps startup"
-msgstr ""
+msgstr "Erste Kartenansicht beim Start von Gramps"
 
 #: GeoTimeLines/GeoTimeLines.py:1927
 msgid ""
 "Initial map view after startup and\n"
 "after changing the active person"
 msgstr ""
+"Erste Kartenansicht nach dem Start und\n"
+"nach dem Wechsel der aktiven Person"
 
 #: GeoTimeLines/GeoTimeLines.py:1936
 msgid "Show map travel lines on startup"
-msgstr ""
+msgstr "Beim Start der Karte Reiserouten anzeigen"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
-msgstr ""
+msgstr "Zeitticks in der Navigationsleiste beim Starten anzeigen"
 
 #: GeoTimeLines/GeoTimeLines.py:1974
 msgid "TimeLines Map options"
@@ -18870,6 +19020,8 @@ msgstr "ZeitLinien Kartenoptionen"
 msgid ""
 "A view showing all the places visited by a person or persons on various date."
 msgstr ""
+"Eine Ansicht, die alle Orte anzeigt, die von einer oder mehreren Personen an "
+"einem bestimmten Datum besucht wurden."
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:39
 msgid "TimeLines map"
@@ -19419,6 +19571,12 @@ msgid ""
 "25% of their DNA similar to half-siblings instead of 12.5% like normal first "
 "cousins.\n"
 msgstr ""
+"Doppelte (erste) Cousins und Cousinen entstehen, wenn zwei Geschwister der "
+"Familie A zwei Geschwister der Familie B heiraten. Ihre Kinder sind doppelte "
+"Cousins und Cousinen und haben dieselben vier Großeltern, anstatt sechs wie "
+"normale erste Cousins. Daher sind sie sich genetisch näher als normale "
+"Cousins ersten Grades und teilen 25 % ihrer DNA, ähnlich wie "
+"Halbgeschwister, anstatt 12,5 % wie normale Cousins ersten Grades.\n"
 
 #: DoubleCousins/double_cousins.py:136
 msgid "No double cousins were found in your database."
@@ -19430,11 +19588,11 @@ msgstr "Infotext anzeigen"
 
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
-msgstr ""
+msgstr "Doppelte Cousins und Cousinen"
 
 #: DoubleCousins/double_cousins.gpr.py:26
 msgid "A text report listing double cousins."
-msgstr ""
+msgstr "Ein Textbericht mit einer Liste von Doppelcousins."
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
 msgid "Read Gramps headline news"
@@ -19541,7 +19699,7 @@ msgstr ""
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
-msgstr ""
+msgstr "Chromosom "
 
 #: DNA/dnasegmentmap.py:552
 msgid " Map for "
@@ -19553,7 +19711,7 @@ msgstr "Chr"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "Legende"
 
 #: DNA/dnasegmentmap.py:761
 msgid ": Grandparent"
@@ -19566,14 +19724,17 @@ msgid ""
 "{0}\n"
 "{1} cMs"
 msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
-msgstr ""
+msgstr " SNPs"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : Beginnt bei "
 
 #: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
@@ -19582,12 +19743,12 @@ msgstr " und endet mit "
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s und %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
 #, python-brace-format
@@ -19608,6 +19769,8 @@ msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
 msgstr ""
+"Klicke, um diese Person zu aktivieren\n"
+"Klicke mit der rechten Maustaste, um diese Person zu bearbeiten"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
@@ -19840,7 +20003,7 @@ msgstr "Geburtsjahr der Hauptperson"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
-msgstr ""
+msgstr "Das Geburtsjahr der zentralen Person. Schätze ein Jahr, falls unbekannt"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
 msgid "Destination directory"
@@ -19857,6 +20020,7 @@ msgstr "Standardalter"
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
 msgstr ""
+"Standardalter der Eltern bei Geburt eines Kindes mit unbekanntem Geburtsjahr"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
@@ -19868,7 +20032,7 @@ msgstr "Zeige GrampsID"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
-msgstr ""
+msgstr "GrampsID oben rechts im Feld anzeigen"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
@@ -19876,7 +20040,7 @@ msgstr "Optimieren"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
-msgstr ""
+msgstr "Möglichst wenig Platz in horizontaler Richtung verwenden"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
 msgid "Male Box Color"
@@ -19900,7 +20064,7 @@ msgstr "Anzahl der Pixel pro Jahr"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
-msgstr ""
+msgstr "Wie viele Pixel hoch ist ein Jahr?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:910
 msgid "Offset X Coordinate"
@@ -19909,6 +20073,7 @@ msgstr "Abweichung X-Koordinate"
 #: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
+"Wie viele Pixel sind neben den Feldern ganz links und ganz rechts ungenutzt?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:917
 msgid "Offset Y Coordinate"
@@ -19916,7 +20081,7 @@ msgstr "Abweichung Y-Koordinate"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
-msgstr ""
+msgstr "Wie viele Pixel sind über dem ersten Feld ungenutzt?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
 msgid "Width of a box in pixel"
@@ -19932,22 +20097,24 @@ msgstr "Horizontaler Abstand zwischen Feldern in Pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
-msgstr ""
+msgstr "Horizontaler Mindestabstand zwischen 2 Feldern in Pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:934
 msgid "Length of vertical part of a line in pixel"
-msgstr ""
+msgstr "Länge des vertikalen Teils einer Zeile in Pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:936
 msgid ""
 "Parent and child boxes are connected with lines. This is the length of the "
 "vertical part of the lines in pixel"
 msgstr ""
+"Übergeordnete und untergeordnete Felder sind durch Linien verbunden. Dies "
+"ist die Länge des vertikalen Teils der Linien in Pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:943
 #: TimePedigreeHTML/TimePedigreeHtml.py:945
 msgid "Number of pixel between left border and scale"
-msgstr ""
+msgstr "Anzahl der Pixel zwischen linkem Rand und Maßstab"
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
 msgid "Timeline Pedigree Report"
@@ -21054,10 +21221,14 @@ msgid ""
 "{people_missing} people won't be shown. You can change this limit in the "
 "view configuration."
 msgstr ""
+"Dieses Diagramm würde mindestens {people_count} Personen enthalten, was die "
+"Grenze von {people_limit} Personen überschreitet. Aus Leistungsgründen "
+"werden mindestens {people_missing} Personen nicht angezeigt. Du kannst diese "
+"Grenze in der Ansichtskonfiguration ändern."
 
 #: GraphView/graphview.py:2678
 msgid "Incomplete graph"
-msgstr ""
+msgstr "Unvollständiges Diagramm"
 
 #: GraphView/graphview.py:3047
 msgid "Image on right side"
@@ -21170,11 +21341,11 @@ msgstr "Licht"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
-msgstr ""
+msgstr "Cartoon"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
-msgstr ""
+msgstr "Modern"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
@@ -21238,6 +21409,8 @@ msgstr ""
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
 msgstr ""
+"Zeilen, die in der Textspalte mit diesem Zeichen beginnen, werden "
+"ausgeblendet. "
 
 #: HistContext/HistContext.py:126
 msgid "Use filter "
@@ -21253,19 +21426,19 @@ msgstr "Vollständiges Datum verwenden"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
-msgstr ""
+msgstr "Vordergrundfarbe Elemente in Lebensspanne"
 
 #: HistContext/HistContext.py:138
 msgid "Background color items in lifespan"
-msgstr ""
+msgstr "Hintergrundfarbe Elemente in Lebensspanne"
 
 #: HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
-msgstr ""
+msgstr "Vordergrundfarbe Elemente außerhalb der Lebensspanne"
 
 #: HistContext/HistContext.py:144
 msgid "Background color items outside lifespan"
-msgstr ""
+msgstr "Hintergrundfarbe Elemente außerhalb der Lebensspanne"
 
 #: HistContext/HistContext.py:149
 msgid "Select from files"
@@ -21286,7 +21459,7 @@ msgstr "Fehler:"
 
 #: HistContext/HistContext.py:327
 msgid ": line does not contain four sections separated by semicolons in : \""
-msgstr ""
+msgstr ": Zeile enthält nicht vier durch Semikolon getrennte Abschnitte in : \""
 
 #: HistContext/HistContext.py:419
 msgid "Cannot open URL: "
@@ -21329,6 +21502,8 @@ msgid ""
 "Start type to search objects.\n"
 "To show all objects enter only «*» symbol."
 msgstr ""
+"Starttyp, um Objekte zu suchen.\n"
+"Um alle Objekte anzuzeigen, geben Sie nur das Symbol „*“ ein."
 
 #: SearchGramplet/SearchGramplet.py:743
 #, python-format
@@ -22333,7 +22508,7 @@ msgstr "Von rechts nach links"
 
 #: NetworkChart/NetworkChart.py:933
 msgid "Default (Top to Bottom)"
-msgstr "Standard (Oben nach Unten)"
+msgstr "Standard (von oben nach unten)"
 
 #: NetworkChart/NetworkChart.py:936
 msgid "Select the graph direction."
@@ -22361,7 +22536,7 @@ msgstr "Keine URLs aufnehmen"
 
 #: NetworkChart/NetworkChart.py:945
 msgid "Default (include)"
-msgstr "Standard (aufnehmen)"
+msgstr "Standard (einschließen)"
 
 #: NetworkChart/NetworkChart.py:948
 msgid "Select URL style."
@@ -22416,7 +22591,7 @@ msgstr "Legt den Titel des Diagramms fest."
 
 #: NetworkChart/NetworkChart.py:976
 msgid "Default (svg)"
-msgstr "Vorgabe (svg)"
+msgstr "Standard (svg)"
 
 #: NetworkChart/NetworkChart.py:979
 msgid ""
@@ -22712,7 +22887,7 @@ msgstr "Beliebige"
 
 #: NetworkChart/NetworkChart.py:1176
 msgid "Default (None)"
-msgstr "Vorgabe (Keine)"
+msgstr "Standard (Keine)"
 
 #: NetworkChart/NetworkChart.py:1181
 msgid ""
@@ -22730,7 +22905,7 @@ msgstr "Zeige nur Pfad(e)"
 
 #: NetworkChart/NetworkChart.py:1189
 msgid "Default (none)"
-msgstr "Vorgabe (keine)"
+msgstr "Standard (keine)"
 
 #: NetworkChart/NetworkChart.py:1193
 msgid ""
