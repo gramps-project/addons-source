@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 18:31+0000\n"
+"PO-Revision-Date: 2025-02-25 19:38+0000\n"
 "Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -19950,10 +19950,8 @@ msgid "Number of pixel between left border and scale"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
-#, fuzzy
-#| msgid "Timeline Pedigree"
 msgid "Timeline Pedigree Report"
-msgstr "Zeitleistestammbaum"
+msgstr "Zeitleisten-Stammbaum-Bericht"
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
 msgid ""
@@ -20242,10 +20240,8 @@ msgid "Perform date math calculations"
 msgstr "Datumsberechnungen durchführen"
 
 #: FixCoords/fixcoords.gpr.py:31
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Fix Place Coordinates"
-msgstr "Ortskoordinaten"
+msgstr "Ortskoordinaten reparieren"
 
 #: FixCoords/fixcoords.gpr.py:33
 msgid ""
@@ -20255,10 +20251,8 @@ msgstr ""
 "Kommazeichen."
 
 #: FixCoords/fixcoords.py:53
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Fix Coordinates"
-msgstr "Ortskoordinaten"
+msgstr "Koordinaten reparieren"
 
 #: FixCoords/fixcoords.py:58
 msgid "Looking for possible coords with \",\" characters"
@@ -20794,10 +20788,8 @@ msgid "Graph View"
 msgstr "Graphenansicht"
 
 #: GraphView/graphview.py:754
-#, fuzzy
-#| msgid "Show Tags"
 msgid "Show IDs"
-msgstr "Markierungen zeigen"
+msgstr "IDs anzeigen"
 
 #: GraphView/graphview.py:757
 msgid "Show avatars"
@@ -20816,34 +20808,24 @@ msgid "Show places"
 msgstr "Orte zeigen"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Default (Top to Bottom)"
 msgid "Vertical: Top to Bottom"
-msgstr "Standard (Oben nach Unten)"
+msgstr "Vertikal: Von oben nach unten"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Bottom to Top"
 msgid "Vertical: Bottom to Top"
-msgstr "Unten nach Oben"
+msgstr "Vertikal: Von unten nach oben"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Left to Right"
 msgid "Horizontal: Left to Right"
-msgstr "Links nach Rechts"
+msgstr "Horizontal: Von links nach rechts"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Right to Left"
 msgid "Horizontal: Right to Left"
-msgstr "Rechts nach Links"
+msgstr "Horizontal: Von rechts nach links"
 
 #: GraphView/graphview.py:786
-#, fuzzy
-#| msgid "Unknown time direction"
 msgid "Time Direction"
-msgstr "Unbekannte Zeitrichtung"
+msgstr "Zeitrichtung"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
@@ -20862,10 +20844,8 @@ msgid "Font:"
 msgstr "Schrift:"
 
 #: GraphView/graphview.py:835
-#, fuzzy
-#| msgid "Text style"
 msgid "Avatars style"
-msgstr "Textstil"
+msgstr "Avatarstil"
 
 #: GraphView/graphview.py:841
 msgid "PNG files"
@@ -20884,20 +20864,16 @@ msgid "Female avatar:"
 msgstr "Weiblicher Avatar:"
 
 #: GraphView/graphview.py:860
-#, fuzzy
-#| msgid "Colored females 45 and over"
 msgid "Choose female avatar"
-msgstr "Farbig weiblich 45 und älter"
+msgstr "Weiblichen Avatar auswählen"
 
 #: GraphView/graphview.py:872
 msgid "Unknown avatar:"
 msgstr "Unbekannter Avatar:"
 
 #: GraphView/graphview.py:873
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Choose Unknown avatar"
-msgstr "Avatare anzeigen"
+msgstr "Avatar für Unbekannt auswählen"
 
 #: GraphView/graphview.py:885
 msgid "Other avatar:"
@@ -20905,19 +20881,15 @@ msgstr "Anderer Avatar:"
 
 #: GraphView/graphview.py:886
 msgid "Choose Other avatar"
-msgstr "Wähle Avatar für Andere aus"
+msgstr "Avatar für Andere auswählen"
 
 #: GraphView/graphview.py:900
-#, fuzzy
-#| msgid "Active person"
 msgid "Active person border size"
-msgstr "Aktive Person"
+msgstr "Randgröße für aktive Person"
 
 #: GraphView/graphview.py:905
-#, fuzzy
-#| msgid "Person Overview"
 msgid "Person border size"
-msgstr "Personenübersicht"
+msgstr "Randgröße für Person"
 
 #: GraphView/graphview.py:908
 msgid "Themes"
@@ -21116,10 +21088,8 @@ msgid "Ortho"
 msgstr "Orthogonal"
 
 #: GraphView/graphview.py:3875
-#, fuzzy
-#| msgid "No relation to active person"
 msgid "No Events for this person"
-msgstr "Keine Beziehung zur aktiven Person"
+msgstr "Keine Ereignisse für diese Person"
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
@@ -21134,10 +21104,8 @@ msgid "Add parents"
 msgstr "Eltern hinzufügen"
 
 #: GraphView/graphview.py:4051
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Show path to home person"
-msgstr "Pfadfarbe zur Hauptperson"
+msgstr "Zeige Pfad zur Hauptperson"
 
 #: GraphView/graphview.py:4057 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364
@@ -21150,10 +21118,8 @@ msgid "Add to bookmarks"
 msgstr "Zu Lesezeichen hinzufügen"
 
 #: GraphView/graphview.py:4161
-#, fuzzy
-#| msgid "Used for family"
 msgid "No Events for this family"
-msgstr "Verwendet für Familie"
+msgstr "Keine Ereignisse für diese Familie"
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
@@ -21195,10 +21161,8 @@ msgid "Dynamic and interactive graph of relations"
 msgstr "Dynamisches und interaktives Diagramm von Beziehungen"
 
 #: GraphView/avatars.py:60
-#, fuzzy
-#| msgid "- default -"
 msgid "Dark (default)"
-msgstr "- Standardwert -"
+msgstr "Dunkel (Standard)"
 
 #: GraphView/avatars.py:61
 msgid "Light"
@@ -21238,10 +21202,8 @@ msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
-#, fuzzy
-#| msgid "Partner's spouse"
 msgid "Partners"
-msgstr "Partner(in) de(r/s) Partner(in)"
+msgstr "Partner/-in/-nen"
 
 #: Overview/Overview.gpr.py:29
 msgid "Person Overview"
@@ -21264,10 +21226,8 @@ msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet zeigt eine Übersicht über Ereignisse für eine Familie"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
-#, fuzzy
-#| msgid "Biography Content"
 msgid "Historical Context"
-msgstr "Biographie Inhalt"
+msgstr "Historischer Kontext"
 
 #: HistContext/HistContext.gpr.py:5
 msgid "Lists relevant historical events during the lifetime of a Person"
@@ -21288,10 +21248,8 @@ msgid "Show outside life span "
 msgstr "Zeige außerhalb der Lebensspanne "
 
 #: HistContext/HistContext.py:132
-#, fuzzy
-#| msgid "Show full dates"
 msgid "Use full dates"
-msgstr "Volles Datum anzeigen"
+msgstr "Vollständiges Datum verwenden"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
@@ -21310,10 +21268,8 @@ msgid "Background color items outside lifespan"
 msgstr ""
 
 #: HistContext/HistContext.py:149
-#, fuzzy
-#| msgid "Select A File"
 msgid "Select from files"
-msgstr "Wähle eine Datei"
+msgstr "Aus Dateien auswählen"
 
 #: HistContext/HistContext.py:287
 msgid "Invalid date "
@@ -21345,38 +21301,28 @@ msgid "Gramplet for search objects in database."
 msgstr "Gramplet für Suche nach Objekten in der Datenbank."
 
 #: SearchGramplet/SearchGramplet.py:104
-#, fuzzy
-#| msgid "Source type"
 msgid "Sort by object type"
-msgstr "Quellenart"
+msgstr "Sortiere nach Objektart"
 
 #: SearchGramplet/SearchGramplet.py:138
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Menu to set search objects"
-msgstr "Zu suchende Person"
+msgstr "Menü um Suchobjekte festzulegen"
 
 #: SearchGramplet/SearchGramplet.py:140
-#, fuzzy
-#| msgid "Select tags for person"
 msgid "Select objects to search"
-msgstr "Markierungen für Person wählen"
+msgstr "Suchobjekte auswählen"
 
 #: SearchGramplet/SearchGramplet.py:154
-#, fuzzy
-#| msgid "SVG tree configuration"
 msgid "SearchGramplet configuration menu"
-msgstr "SVG Baumkonfiguration"
+msgstr "SearchGramplet-Konfigurationsmenü"
 
 #: SearchGramplet/SearchGramplet.py:261
 msgid "No matches..."
 msgstr "Keine Übereinstimmungen..."
 
 #: SearchGramplet/SearchGramplet.py:353
-#, fuzzy
-#| msgid "Internet type filter"
 msgid "Start type to search"
-msgstr "Internet-Typ-Filter"
+msgstr "Anfangsart für die Suche"
 
 #: SearchGramplet/SearchGramplet.py:389
 msgid ""
@@ -21395,16 +21341,12 @@ msgid "Death: %s"
 msgstr "Tod: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
-#, fuzzy
-#| msgid "Set as active person"
 msgid "Set as Active person"
-msgstr "Als aktive Person wählen"
+msgstr "Als aktive Person festlegen"
 
 #: SearchGramplet/SearchGramplet.py:920
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Set as Home person"
-msgstr "Als Hauptperson setzen"
+msgstr "Als Hauptperson festlegen"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
