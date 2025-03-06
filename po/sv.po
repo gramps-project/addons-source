@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 04:52+0000\n"
+"PO-Revision-Date: 2025-03-03 12:24+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -10792,20 +10792,16 @@ msgid "20. Real Estate Leased: Number of town or village lots"
 msgstr ""
 
 #: Form/form_ca.xml.h:581
-#, fuzzy
-#| msgid "Censuses"
 msgid "LeasedHouses"
-msgstr "Folkräkningar"
+msgstr "Hyreshus"
 
 #: Form/form_ca.xml.h:582
 msgid "21. Real Estate Leased: Number of dwelling houses"
 msgstr ""
 
 #: Form/form_ca.xml.h:583
-#, fuzzy
-#| msgid "Restore"
 msgid "LeasedStores"
-msgstr "Återställ"
+msgstr "HyrdaButiker"
 
 #: Form/form_ca.xml.h:584
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
@@ -10836,10 +10832,8 @@ msgid "25. Real Estate Leased: Number of manufacturing establishments"
 msgstr ""
 
 #: Form/form_ca.xml.h:591
-#, fuzzy
-#| msgid "DenominoViso"
 msgid "Denomination"
-msgstr "DenominoViso"
+msgstr "Benämning"
 
 #: Form/form_ca.xml.h:592
 msgid "26. Church or place of worship: Religious denomination"
@@ -10854,20 +10848,16 @@ msgid "27. Church or place of worship: Number of communicants"
 msgstr ""
 
 #: Form/form_ca.xml.h:595
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Seating"
-msgstr "Väljer... "
+msgstr "Sittplatser"
 
 #: Form/form_ca.xml.h:596
 msgid "28. Church or place of worship: Seating capacity"
 msgstr ""
 
 #: Form/form_ca.xml.h:597
-#, fuzzy
-#| msgid "DenominoViso"
 msgid "SSDenomination"
-msgstr "DenominoViso"
+msgstr "SSBenämning"
 
 #: Form/form_ca.xml.h:598
 msgid "29. Sunday School: Religious Denomination"
@@ -10902,10 +10892,8 @@ msgid "SchoolTeachers"
 msgstr ""
 
 #: Form/form_ca.xml.h:606
-#, fuzzy
-#| msgid "Number of ancestors"
 msgid "33. School: Number of teachers"
-msgstr "Antal förfäder"
+msgstr "33. Skola: Antal lärare"
 
 #: Form/form_ca.xml.h:607
 msgid "SchoolStudents"
@@ -10976,10 +10964,8 @@ msgid "9. Post office address"
 msgstr ""
 
 #: Form/form_ca.xml.h:642 Form/form_us.xml.h:1252
-#, fuzzy
-#| msgid "description"
 msgid "Section"
-msgstr "beskrivning"
+msgstr "Sektion"
 
 #: Form/form_ca.xml.h:643
 msgid "10. Location: Section"
@@ -11054,40 +11040,32 @@ msgid "22. State where person employed"
 msgstr ""
 
 #: Form/form_ca.xml.h:715
-#, fuzzy
-#| msgid "Occupation:"
 msgid "WeeksOccupation"
-msgstr "Yrke:"
+msgstr "VeckorBefattning"
 
 #: Form/form_ca.xml.h:716
 msgid "23. Weeks employed in 1910 at chief occupation or trade"
 msgstr ""
 
 #: Form/form_ca.xml.h:717
-#, fuzzy
-#| msgid "Other:"
 msgid "WeeksOther"
-msgstr "Andra:"
+msgstr "VeckorÖvrigt"
 
 #: Form/form_ca.xml.h:718
 msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
 msgstr ""
 
 #: Form/form_ca.xml.h:719
-#, fuzzy
-#| msgid "Occupation:"
 msgid "HoursOccupation"
-msgstr "Yrke:"
+msgstr "TimmarBefattning"
 
 #: Form/form_ca.xml.h:720
 msgid "25. Hours of working time per week at chief occupation"
 msgstr ""
 
 #: Form/form_ca.xml.h:721
-#, fuzzy
-#| msgid "Other:"
 msgid "HoursOther"
-msgstr "Andra:"
+msgstr "TimmarÖvrigt"
 
 #: Form/form_ca.xml.h:722
 msgid "26. Hours of working time per week at other occupation, if any"
@@ -11102,10 +11080,8 @@ msgid "28. Total earnings in 1910 from other than chief occupation or trade"
 msgstr ""
 
 #: Form/form_ca.xml.h:727
-#, fuzzy
-#| msgid "Pages"
 msgid "Wages"
-msgstr "Sidor"
+msgstr "Löner"
 
 #: Form/form_ca.xml.h:728
 msgid "29. Rate of earnings per hour when employed by the hour-Cents"
@@ -11192,20 +11168,16 @@ msgid "Dwelling house"
 msgstr ""
 
 #: Form/form_ca.xml.h:763
-#, fuzzy
-#| msgid "Family:"
 msgid "2. Family"
-msgstr "Familj:"
+msgstr "2. Familj"
 
 #: Form/form_ca.xml.h:764
 msgid "Family or household"
 msgstr ""
 
 #: Form/form_ca.xml.h:765
-#, fuzzy
-#| msgid "Names:"
 msgid "3. Name"
-msgstr "Namn:"
+msgstr "3. Namn"
 
 #: Form/form_ca.xml.h:766
 msgid "Name of each person in family"
@@ -11385,10 +11357,8 @@ msgstr ""
 #: Form/form_us.xml.h:640 Form/form_us.xml.h:658 Form/form_us.xml.h:700
 #: Form/form_us.xml.h:743 Form/form_us.xml.h:781 Form/form_us.xml.h:824
 #: Form/form_us.xml.h:885 Form/form_us.xml.h:1092
-#, fuzzy
-#| msgid "publication_info"
 msgid "NARA publication"
-msgstr "publikationsinformation"
+msgstr "NARA-publikation"
 
 #: Form/form_us.xml.h:2 Form/form_us.xml.h:15 Form/form_us.xml.h:36
 #: Form/form_us.xml.h:57 Form/form_us.xml.h:97 Form/form_us.xml.h:166
@@ -11416,10 +11386,8 @@ msgstr ""
 #: Form/form_us.xml.h:2233 Form/form_us.xml.h:2245 Form/form_us.xml.h:2257
 #: Form/form_us.xml.h:2268 Form/form_us.xml.h:2286 Form/form_us.xml.h:2296
 #: Form/form_us.xml.h:2315 Form/form_us.xml.h:2325 Form/form_us.xml.h:2502
-#, fuzzy
-#| msgid "Page %d"
 msgid "Page No."
-msgstr "Sida %d"
+msgstr "Sida nr."
 
 #: Form/form_us.xml.h:4 Form/form_us.xml.h:17 Form/form_us.xml.h:38
 #: Form/form_us.xml.h:59 Form/form_us.xml.h:99 Form/form_us.xml.h:168
@@ -11428,10 +11396,8 @@ msgstr "Sida %d"
 #: Form/form_us.xml.h:665 Form/form_us.xml.h:707 Form/form_us.xml.h:793
 #: Form/form_us.xml.h:836 Form/form_us.xml.h:894 Form/form_us.xml.h:1095
 #: Form/form_us.xml.h:1678
-#, fuzzy
-#| msgid "Select None"
 msgid "Sheet No."
-msgstr "Välj inget"
+msgstr "Blad nr."
 
 #: Form/form_us.xml.h:5 Form/form_us.xml.h:18 Form/form_us.xml.h:39
 #: Form/form_us.xml.h:60 Form/form_us.xml.h:100 Form/form_us.xml.h:169
@@ -11453,10 +11419,8 @@ msgstr ""
 #: Form/form_us.xml.h:1650 Form/form_us.xml.h:1667 Form/form_us.xml.h:1845
 #: Form/form_us.xml.h:1877 Form/form_us.xml.h:1898 Form/form_us.xml.h:1927
 #: Form/form_us.xml.h:1981 Form/form_us.xml.h:2289 Form/form_us.xml.h:2318
-#, fuzzy
-#| msgid "Country:"
 msgid "County of"
-msgstr "Land:"
+msgstr "Län"
 
 #: Form/form_us.xml.h:7 Form/form_us.xml.h:20 Form/form_us.xml.h:41
 #: Form/form_us.xml.h:62 Form/form_us.xml.h:102 Form/form_us.xml.h:171
@@ -11476,10 +11440,8 @@ msgid "Free white females"
 msgstr ""
 
 #: Form/form_us.xml.h:12 Form/form_us.xml.h:33 Form/form_us.xml.h:54
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "All other free persons"
-msgstr "Färg på kvinnopersoner:"
+msgstr "Alla andra fria personer"
 
 #: Form/form_us.xml.h:13 Form/form_us.xml.h:34 Form/form_us.xml.h:55
 msgid "Slaves"
@@ -11494,10 +11456,8 @@ msgstr ""
 #: Form/form_us.xml.h:896 Form/form_us.xml.h:1101 Form/form_us.xml.h:1481
 #: Form/form_us.xml.h:1636 Form/form_us.xml.h:1651 Form/form_us.xml.h:1846
 #: Form/form_us.xml.h:1899 Form/form_us.xml.h:1928 Form/form_us.xml.h:2329
-#, fuzzy
-#| msgid "Generation "
 msgid "Enumeration Date"
-msgstr "Generation "
+msgstr "Uppräkning datum"
 
 #: Form/form_us.xml.h:23 Form/form_us.xml.h:44 Form/form_us.xml.h:65
 msgid "Free white males under 10"
@@ -11560,10 +11520,8 @@ msgid "Persons engaged in Manufactures"
 msgstr ""
 
 #: Form/form_us.xml.h:80
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave males under 14"
-msgstr "Spara bilder i ..."
+msgstr "Slavmän under 14 år"
 
 #: Form/form_us.xml.h:81
 msgid "Slave males 14-25"
@@ -11578,10 +11536,8 @@ msgid "Slave males 45 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:84
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave females under 14"
-msgstr "Spara bilder i ..."
+msgstr "Slavkvinnor under 14 år"
 
 #: Form/form_us.xml.h:85
 msgid "Slave females 14-25"
@@ -11732,10 +11688,8 @@ msgid "Free white females 100 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:131 Form/form_us.xml.h:212
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave males under 10"
-msgstr "Spara bilder i ..."
+msgstr "Slavmän under 10 år"
 
 #: Form/form_us.xml.h:132 Form/form_us.xml.h:213
 msgid "Slave males 10-23"
@@ -11758,10 +11712,8 @@ msgid "Slave males 100 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:137 Form/form_us.xml.h:218
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave females under 10"
-msgstr "Spara bilder i ..."
+msgstr "Slavkvinnor under 10 år"
 
 #: Form/form_us.xml.h:138 Form/form_us.xml.h:219
 msgid "Slave females 10-23"
@@ -11844,10 +11796,8 @@ msgid "White persons deaf/dumb 25 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:159 Form/form_us.xml.h:237
-#, fuzzy
-#| msgid "Hide person"
 msgid "White persons blind"
-msgstr "Dölj person"
+msgstr "Vita personer blinda"
 
 #: Form/form_us.xml.h:160 Form/form_us.xml.h:1211
 msgid "Aliens"
@@ -11918,10 +11868,8 @@ msgid "Colored persons deaf/dumb"
 msgstr ""
 
 #: Form/form_us.xml.h:241
-#, fuzzy
-#| msgid "Color of male persons:"
 msgid "Colored persons blind"
-msgstr "Färg på manspersoner:"
+msgstr "Färgade personer blinda"
 
 #: Form/form_us.xml.h:242
 msgid "Colored persons insane and idiots at private charge"
@@ -11936,10 +11884,8 @@ msgid "Universities or college"
 msgstr ""
 
 #: Form/form_us.xml.h:245
-#, fuzzy
-#| msgid "Number of descendants"
 msgid "Number of students"
-msgstr "Antal ättlingar"
+msgstr "Antal elever"
 
 #: Form/form_us.xml.h:246
 msgid "Academies and Grammar Schools"
@@ -11981,10 +11927,8 @@ msgstr ""
 #: Form/form_us.xml.h:260 Form/form_us.xml.h:336 Form/form_us.xml.h:435
 #: Form/form_us.xml.h:465 Form/form_us.xml.h:615 Form/form_us.xml.h:1105
 #: Form/form_us.xml.h:1848
-#, fuzzy
-#| msgid "Family:"
 msgid "Family No."
-msgstr "Familj:"
+msgstr "Familj nr."
 
 #: Form/form_us.xml.h:266 Form/form_us.xml.h:342 Form/form_us.xml.h:441
 msgid "Value of real estate"
@@ -12000,10 +11944,8 @@ msgstr ""
 #: Form/form_us.xml.h:1585 Form/form_us.xml.h:1611 Form/form_us.xml.h:1657
 #: Form/form_us.xml.h:1870 Form/form_us.xml.h:2336 Form/form_us.xml.h:2353
 #: Form/form_us.xml.h:2528 Form/form_us.xml.h:2577
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of birth"
-msgstr "Plata_filter:"
+msgstr "Födelseort"
 
 #: Form/form_us.xml.h:268 Form/form_us.xml.h:345
 msgid "Married within the year"
@@ -12035,16 +11977,12 @@ msgid "Owner, Agent, or Manager"
 msgstr ""
 
 #: Form/form_us.xml.h:282 Form/form_us.xml.h:359
-#, fuzzy
-#| msgid "removed"
 msgid "Acres Improved"
-msgstr "borttagna"
+msgstr "Åkrar förbättrade"
 
 #: Form/form_us.xml.h:283 Form/form_us.xml.h:360
-#, fuzzy
-#| msgid "removed"
 msgid "Acres Unimproved"
-msgstr "borttagna"
+msgstr "Åkrar oförbättrade"
 
 #: Form/form_us.xml.h:284 Form/form_us.xml.h:361
 msgid "Cash Value of Farm"
@@ -12063,10 +12001,8 @@ msgid "Working Oxen"
 msgstr ""
 
 #: Form/form_us.xml.h:290 Form/form_us.xml.h:368
-#, fuzzy
-#| msgid "Enter Chart Title"
 msgid "Other Cattle"
-msgstr "Ange diagramtitel"
+msgstr "Andra nötkreatur"
 
 #: Form/form_us.xml.h:292 Form/form_us.xml.h:370
 msgid "Swine"
@@ -12082,10 +12018,8 @@ msgid "Wheat"
 msgstr ""
 
 #: Form/form_us.xml.h:295
-#, fuzzy
-#| msgid "India"
 msgid "Indian Corn"
-msgstr "Indien"
+msgstr "Indianska majs"
 
 #: Form/form_us.xml.h:296
 msgid "Oats"
@@ -12108,10 +12042,8 @@ msgid "Wool"
 msgstr ""
 
 #: Form/form_us.xml.h:301
-#, fuzzy
-#| msgid "%s and %s"
 msgid "Peas and Beans"
-msgstr "%s och %s"
+msgstr "Ärtor och bönor"
 
 #: Form/form_us.xml.h:302
 msgid "Irish Potatoes"
@@ -12217,10 +12149,8 @@ msgid "Post Office"
 msgstr ""
 
 #: Form/form_us.xml.h:343 Form/form_us.xml.h:442
-#, fuzzy
-#| msgid "Male person|Dead at %s"
 msgid "Value of personal estate"
-msgstr "Mansperson|Död %s"
+msgstr "Värdet av personlig egendom"
 
 #: Form/form_us.xml.h:363
 msgid "Live Stock June 1, 1860"
@@ -12339,10 +12269,8 @@ msgid "Silk Cocoons, pounds of"
 msgstr ""
 
 #: Form/form_us.xml.h:400
-#, fuzzy
-#| msgid "Male Background Color"
 msgid "Maple Sugar, pounds of"
-msgstr "Bakgrundsfärg för män"
+msgstr "Lönnsocker, pounds av"
 
 #: Form/form_us.xml.h:401
 msgid "Cane sugar, hogshead of 1,000 pounds"
@@ -12385,10 +12313,8 @@ msgid "Cause of death"
 msgstr ""
 
 #: Form/form_us.xml.h:424
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of days ill"
-msgstr "Antal sidor"
+msgstr "Antal sjukdagar"
 
 #: Form/form_us.xml.h:444 Form/form_us.xml.h:1643
 msgid "Father of foreign birth"
@@ -12451,10 +12377,8 @@ msgstr ""
 #: Form/form_us.xml.h:757 Form/form_us.xml.h:797 Form/form_us.xml.h:1075
 #: Form/form_us.xml.h:1111 Form/form_us.xml.h:1854 Form/form_us.xml.h:1884
 #: Form/form_us.xml.h:1906 Form/form_us.xml.h:1935 Form/form_us.xml.h:2331
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship to head"
-msgstr "Släktskap med far"
+msgstr "Släktskap till huvud"
 
 #: Form/form_us.xml.h:472 Form/form_us.xml.h:1112 Form/form_us.xml.h:1522
 #: Form/form_us.xml.h:1855 Form/form_us.xml.h:1912 Form/form_us.xml.h:1939
@@ -12464,10 +12388,8 @@ msgid "Single"
 msgstr ""
 
 #: Form/form_us.xml.h:474 Form/form_us.xml.h:1114 Form/form_us.xml.h:1857
-#, fuzzy
-#| msgid "divorced"
 msgid "Widowed, divorced"
-msgstr "skild"
+msgstr "Änka/änkling, frånskild"
 
 #: Form/form_us.xml.h:475 Form/form_us.xml.h:623 Form/form_us.xml.h:1115
 #: Form/form_us.xml.h:1858
@@ -12480,10 +12402,8 @@ msgid "Number of months unemployed during the census year"
 msgstr ""
 
 #: Form/form_us.xml.h:478 Form/form_us.xml.h:1118 Form/form_us.xml.h:1861
-#, fuzzy
-#| msgid "Second generation"
 msgid "Illness on day of enumeration"
-msgstr "Andra generation"
+msgstr "Sjukdom på uppräkningsdagen"
 
 #: Form/form_us.xml.h:480 Form/form_us.xml.h:742 Form/form_us.xml.h:1120
 #: Form/form_us.xml.h:1863
