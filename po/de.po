@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-03-05 23:19+0000\n"
-"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -22060,12 +22060,12 @@ msgstr "%(female_name)s wurde %(year)s in %(place)s getauft."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:491
 #, python-format
 msgid "%(male_name)s was married in %(year)s at %(place)s."
-msgstr "%(male_name)s hat %(year)s in %(place)s geheiratet."
+msgstr "%(male_name)s war %(year)s in %(place)s verheiratet."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:493
 #, python-format
 msgid "%(female_name)s was married in %(year)s at %(place)s."
-msgstr "%(female_name)s hat %(year)s in %(place)s geheiratet."
+msgstr "%(female_name)s war %(year)s in %(place)s verheiratet."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:496
 #, python-format
@@ -22140,7 +22140,7 @@ msgstr "%(female_name)s wurde %(year)s in %(place)s beigesetzt."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:532
 #, python-format
 msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
-msgstr "%(male_name)s nahm in %(year)s in %(place)s an einer Volkszählung teil."
+msgstr "%(male_name)s nahm %(year)s in %(place)s an einer Volkszählung teil."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:535
 #, python-format
