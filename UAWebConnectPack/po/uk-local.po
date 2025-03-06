@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: uk\n"
+
+# --- Forums ---
+msgid "Forum: ukrgenealogy.com.ua"
+msgstr "Форум: ukrgenealogy.com.ua"
+
+msgid "Forum: genoua.name"
+msgstr "Форум: genoua.name"
+
+# --- Encyclopedias ---
+msgid "Encyclopedia: esu.com.ua"
+msgstr "Енциклопедія: esu.com.ua"
+
+msgid "Wikipedia: uk.wikipedia.org"
+msgstr "Вікіпедія: uk.wikipedia.org"
+
+# --- Repressions ---
+msgid "Repressed DB: reabit.org.ua"
+msgstr "База репресованих: reabit.org.ua"
+
+# --- Genealogy ---
+msgid "Genealogy DB: familysearch.org"
+msgstr "Генеалогічна база: familysearch.org"
+
+msgid "Genealogy DB: myheritage.com.ua"
+msgstr "Генеалогічна база: myheritage.com.ua"
+
+msgid "Genealogy DB: pra.in.ua"
+msgstr "Генеалогічна база: pra.in.ua"
+
+# --- Maps ---
+msgid "Map: Ridni.org"
+msgstr "Карта прізвищ: Ridni.org"
+
+# --- Search ---
+msgid "Search: google.com.ua"
+msgstr "Пошук: google.com.ua"
+
+msgid "Search: roots.in.ua"
+msgstr "Пошук: roots.in.ua"
+
+msgid "UA Web Connect Pack"
+msgstr "UA Web Connect Pack"
+
+msgid "Collection of Web sites for the UA (requires libwebconnect)"
+msgstr "Колекція вебсайтів для України (потрібен libwebconnect)"
