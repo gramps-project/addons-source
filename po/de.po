@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-04 20:02+0000\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"PO-Revision-Date: 2025-03-05 20:02+0000\n"
+"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -138,11 +138,11 @@ msgstr "Geschätzte Daten"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
-msgstr "Annähernd (um)"
+msgstr "Ungefähr (um)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
-msgstr "Extreme (nach und vor)"
+msgstr "Extremwerte (nach und vor)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
@@ -273,7 +273,7 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
-msgstr "Geburts und Todesereignisse hinzufügen"
+msgstr "Geburts- und Sterbeereignisse hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
@@ -281,11 +281,11 @@ msgstr "Geburtsereignis hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:363
 msgid "Add death event"
-msgstr "Todesereignis hinzufügen"
+msgstr "Sterbeereignis hinzufügen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
-msgstr "Keine Ereignisse zum hinzufügen."
+msgstr "Keine Ereignisse zum Hinzufügen."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
@@ -313,12 +313,12 @@ msgstr "Geschätztes Geburtsdatum"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr "Todesereignis basierend auf %(evidence)s, von %(person)s hinzugefügt"
+msgstr "Sterbeereignis basierend auf %(evidence)s, von %(person)s hinzugefügt"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
 msgid "Added death event based on %s"
-msgstr "Todesereignis basierend auf %s hinzugefügt"
+msgstr "Sterbeereignis basierend auf %s hinzugefügt"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
@@ -355,7 +355,7 @@ msgstr "lxml"
 
 #: lxml/lxmlGramplet.gpr.py:11
 msgid "Gramplet for testing lxml and XSLT"
-msgstr "Gramplet zum testen von lxml und XSLT"
+msgstr "Gramplet zum Testen von lxml und XSLT"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
@@ -363,7 +363,7 @@ msgstr "etree"
 
 #: lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
-msgstr "Gramplet zum testen von etree mit Gramps XML"
+msgstr "Gramplet zum Testen von etree mit Gramps-XML"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
@@ -5525,9 +5525,9 @@ msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
-"Für die Erweiterung Networkchart liefert die Schriftart <a href=\"https://"
-"www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> ein äußerst "
-"lesbares Ergebnis.\n"
+"Für die Erweiterung Netzwerkgrafik liefert die Schriftart <a href="
+"\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> ein "
+"äußerst lesbares Ergebnis.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
@@ -22612,7 +22612,7 @@ msgstr "Netzwerk"
 
 #: NetworkChart/NetworkChart.py:995
 msgid "The filename for the generated svg network chart."
-msgstr "Der Dateiname für das generierte svg Netzwerkdiagramm."
+msgstr "Der Dateiname für die generierte SVG-Netzwerkgrafik."
 
 #: NetworkChart/NetworkChart.py:1002
 msgid "Different node shapes/edges for gender."
