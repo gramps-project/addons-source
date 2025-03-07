@@ -11,7 +11,7 @@ register(
     name=_("UA Web Connect Pack"),
     description=_("Collection of Web sites for the UA (requires libwebconnect)"),
     status=STABLE,
-    version = '1.0.0',
+    version = '1.0.1',
     gramps_target_version="6.0",
     fname="UAWebPack.py",
     load_on_reg=True,
