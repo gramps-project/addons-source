@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-03-06 21:56+0000\n"
-"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -12473,7 +12473,7 @@ msgstr "Tabak, pounds von"
 
 #: Form/form_us.xml.h:379
 msgid "Ginned Cotton, bales of 400 lbs."
-msgstr "Entkörnte Baumwolle, Ballen zu 400 Pfund"
+msgstr "Entkörnte Baumwolle, Ballen zu 400 englische Pfund"
 
 #: Form/form_us.xml.h:380
 msgid "Wool, pounds of"
