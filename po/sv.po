@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-03 12:24+0000\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12517,10 +12517,8 @@ msgid "Bushels Grass Seed Harvested in 1879"
 msgstr ""
 
 #: Form/form_us.xml.h:522
-#, fuzzy
-#| msgid "Mouse event handler"
 msgid "Horses on hand"
-msgstr "Mushändlsehanterare"
+msgstr "Hästar till hands"
 
 #: Form/form_us.xml.h:523
 msgid "Mules and Asses on hand"
@@ -12611,10 +12609,8 @@ msgid "Pounds Wool, Spring 1880"
 msgstr ""
 
 #: Form/form_us.xml.h:545
-#, fuzzy
-#| msgid "Sine shape"
 msgid "Swine on hand"
-msgstr "Sinusform"
+msgstr "Svin till hands"
 
 #: Form/form_us.xml.h:546 Form/form_us.xml.h:549
 msgid "Barnyard Poultry on hand"
@@ -12862,10 +12858,8 @@ msgid "Mother of how many children and number of children living"
 msgstr ""
 
 #: Form/form_us.xml.h:628 Form/form_us.xml.h:687
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of years in US"
-msgstr "Antal sidor"
+msgstr "Antal år i USA"
 
 #: Form/form_us.xml.h:629 Form/form_us.xml.h:1438
 msgid "Naturalized"
@@ -12877,17 +12871,13 @@ msgstr ""
 
 #: Form/form_us.xml.h:633 Form/form_us.xml.h:733 Form/form_us.xml.h:768
 #: Form/form_us.xml.h:1619
-#, fuzzy
-#| msgid "File ready"
 msgid "Able to read"
-msgstr "Fil redo"
+msgstr "Läskunnig"
 
 #: Form/form_us.xml.h:634 Form/form_us.xml.h:734 Form/form_us.xml.h:769
 #: Form/form_us.xml.h:1620
-#, fuzzy
-#| msgid "left to right"
 msgid "Able to write"
-msgstr "vänster till höger"
+msgstr "Skrivkunnig"
 
 #: Form/form_us.xml.h:635
 msgid "Able to speak English; if not, the language spoken"
@@ -12928,16 +12918,12 @@ msgid "Regiment/Vessel"
 msgstr ""
 
 #: Form/form_us.xml.h:652 Form/form_us.xml.h:1011
-#, fuzzy
-#| msgid "Date/ Time"
 msgid "Date Enlisted"
-msgstr "Datum/tid"
+msgstr "Datum för värvning"
 
 #: Form/form_us.xml.h:653
-#, fuzzy
-#| msgid "Discard"
 msgid "Date Discharged"
-msgstr "Förkasta"
+msgstr "Datum urladdat"
 
 #: Form/form_us.xml.h:654
 msgid "Length of Service"
@@ -12972,16 +12958,12 @@ msgstr ""
 
 #: Form/form_us.xml.h:670 Form/form_us.xml.h:755 Form/form_us.xml.h:795
 #: Form/form_us.xml.h:838 Form/form_us.xml.h:1069 Form/form_us.xml.h:2594
-#, fuzzy
-#| msgid "Export addresses"
 msgid "Street Address"
-msgstr "Exportera adresser"
+msgstr "Gatuadress"
 
 #: Form/form_us.xml.h:673 Form/form_us.xml.h:1604
-#, fuzzy
-#| msgid "Relation type"
 msgid "Relation to head"
-msgstr "Typ av släktskap"
+msgstr "Släktskap till huvud"
 
 #: Form/form_us.xml.h:676
 msgid "Month of birth"
@@ -13002,17 +12984,13 @@ msgid "Mother of how many children"
 msgstr ""
 
 #: Form/form_us.xml.h:682 Form/form_us.xml.h:721
-#, fuzzy
-#| msgid "Number of descendants"
 msgid "Number of children living"
-msgstr "Antal ättlingar"
+msgstr "Antal barn som lever"
 
 #: Form/form_us.xml.h:686 Form/form_us.xml.h:725 Form/form_us.xml.h:764
 #: Form/form_us.xml.h:813
-#, fuzzy
-#| msgid "Label Configuration"
 msgid "Year of immigration"
-msgstr "Textfältskonfiguration"
+msgstr "År för immigration"
 
 #: Form/form_us.xml.h:691
 msgid "Months not employed"
@@ -13051,10 +13029,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:699 Form/form_us.xml.h:739 Form/form_us.xml.h:780
 #: Form/form_us.xml.h:823
-#, fuzzy
-#| msgid "Number of font sizes"
 msgid "Number of farm schedule"
-msgstr "Antal typsnittsstorlekar"
+msgstr "Antal gårdsschema"
 
 #: Form/form_us.xml.h:726 Form/form_us.xml.h:765 Form/form_us.xml.h:814
 msgid "Naturalized or alien"
@@ -13118,52 +13094,40 @@ msgstr ""
 
 #: Form/form_us.xml.h:778 Form/form_us.xml.h:817 Form/form_us.xml.h:864
 #: Form/form_us.xml.h:1617 Form/form_gb.xml.h:218 Form/form_gb.xml.h:351
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Industry"
-msgstr "Anor"
+msgstr "Industri"
 
 #: Form/form_us.xml.h:779
 msgid "Employer, worker or working on own account"
 msgstr ""
 
 #: Form/form_us.xml.h:786 Form/form_us.xml.h:829
-#, fuzzy
-#| msgid "Marriage place:"
 msgid "Incorporated place"
-msgstr "Vigselplats:"
+msgstr "Inbyggd plats"
 
 #: Form/form_us.xml.h:788 Form/form_us.xml.h:831
-#, fuzzy
-#| msgid "Find an incomplete place."
 msgid "Unincorporated place"
-msgstr "Hitta en ofullständig plats."
+msgstr "Ej införlivad plats"
 
 #: Form/form_us.xml.h:799
 msgid "Value of home or monthly rental"
 msgstr ""
 
 #: Form/form_us.xml.h:800
-#, fuzzy
-#| msgid "not set"
 msgid "Radio set"
-msgstr "inte inställd"
+msgstr "Radioapparat"
 
 #: Form/form_us.xml.h:801 Form/form_us.xml.h:842 Form/form_us.xml.h:898
 msgid "Farm?"
 msgstr ""
 
 #: Form/form_us.xml.h:805
-#, fuzzy
-#| msgid "Condition"
 msgid "Marital condition"
-msgstr "Kondition"
+msgstr "Äktenskapligt tillstånd"
 
 #: Form/form_us.xml.h:806 Form/form_us.xml.h:883
-#, fuzzy
-#| msgid "New marriage"
 msgid "Age at first marriage"
-msgstr "Ny vigsel"
+msgstr "Ålder vid första äktenskapet"
 
 #: Form/form_us.xml.h:807
 msgid "Attended school since Sept. 1, 1929"
@@ -13207,10 +13171,8 @@ msgid "Home value/monthly rental"
 msgstr ""
 
 #: Form/form_us.xml.h:845
-#, fuzzy
-#| msgid "Colors"
 msgid "Color/Race"
-msgstr "Färger"
+msgstr "Färg/ras"
 
 #: Form/form_us.xml.h:846
 msgid "Age at Last Birthday"
@@ -13220,10 +13182,8 @@ msgstr ""
 #: Form/form_us.xml.h:1409 Form/form_us.xml.h:1431 Form/form_us.xml.h:1494
 #: Form/form_us.xml.h:2335 Form/form_us.xml.h:2438 Form/form_us.xml.h:2471
 #: Form/form_us.xml.h:2492
-#, fuzzy
-#| msgid "Family status:"
 msgid "Marital Status"
-msgstr "Familjestatus:"
+msgstr "Civilstånd"
 
 #: Form/form_us.xml.h:848
 msgid "Attended school/college since March 1, 1940"
