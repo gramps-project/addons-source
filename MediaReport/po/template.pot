@@ -8,14 +8,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-08 16:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr ""
+
+#: MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr ""
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:112
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
@@ -68,7 +76,7 @@ msgstr ""
 #: MediaReport/media_report.py:427 MediaReport/media_report.py:431
 #: MediaReport/media_report.py:435 MediaReport/media_report.py:439
 #: MediaReport/media_report.py:444 MediaReport/media_report.py:448
-#: MediaReport/media_report.py:453 MediaReport/media_report.py:458
+#: MediaReport/media_report.py:454 MediaReport/media_report.py:459
 msgid "Report Options"
 msgstr ""
 
@@ -116,24 +124,16 @@ msgstr ""
 msgid "Media width"
 msgstr ""
 
-#: MediaReport/media_report.py:451
-#, python-format
+#: MediaReport/media_report.py:452
+#, no-python-format
 msgid "Maximum media width in % of available page width."
 msgstr ""
 
-#: MediaReport/media_report.py:455
+#: MediaReport/media_report.py:456
 msgid "Media height"
 msgstr ""
 
-#: MediaReport/media_report.py:456
+#: MediaReport/media_report.py:457
 #, python-format
 msgid "Maximum media height in % of available page height."
-msgstr ""
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr ""
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
 msgstr ""

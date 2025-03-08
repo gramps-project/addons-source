@@ -448,7 +448,8 @@ class ReportOptions(MenuReportOptions):
         menu.add_option(_("Report Options"), "incl_data", incl_data)
 
         media_w = NumberOption(_("Media width"), 100, 10, 100, 10)
-        media_w.set_help(_("Maximum media width in % of available "
+        media_w.set_help(_(  # xgettext: no-python-format
+                           "Maximum media width in % of available "
                            "page width."))
         menu.add_option(_("Report Options"), "media_w", media_w)
 
