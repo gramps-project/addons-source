@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-28 07:39+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-rc\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -14062,7 +14062,7 @@ msgstr "Wanneer gevangen"
 
 #: Form/form_us.xml.h:1028
 msgid "Where captured"
-msgstr "Waar gevangen"
+msgstr "Waar gevangen genomen"
 
 #: Form/form_us.xml.h:1029
 msgid "Were you imprisoned"
@@ -16799,7 +16799,7 @@ msgstr "Functie, kantoor of beroep"
 #: Form/form_gb.xml.h:529 Form/form_gb.xml.h:566 Form/form_gb.xml.h:589
 #: Form/form_gb.xml.h:621
 msgid "Where Born"
-msgstr "WaarGeboren"
+msgstr "Waar geboren"
 
 #: Form/form_dk.xml.h:64 Form/form_dk.xml.h:81 Form/form_dk.xml.h:98
 #: Form/form_dk.xml.h:117 Form/form_dk.xml.h:136 Form/form_dk.xml.h:153
