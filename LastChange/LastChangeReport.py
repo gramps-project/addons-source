@@ -78,36 +78,36 @@ class LastChangeReport(Report):
             )
 
     def _get_timestamp(self, person_handle):
-        timestamp = self.database.get_raw_person_data(person_handle)[17]
-        return timestamp
+        data = self.database.get_raw_person_data(person_handle)
+        return data.change
 
     def _get_family_timestamp(self, family_handle):
-        timestamp = self.database.get_raw_family_data(family_handle)[12]
-        return timestamp
+        data = self.database.get_raw_family_data(family_handle)
+        return data.change
 
     def _get_event_timestamp(self, event_handle):
-        timestamp = self.database.get_raw_event_data(event_handle)[10]
-        return timestamp
+        data = self.database.get_raw_event_data(event_handle)
+        return data.change
 
     def _get_place_timestamp(self, place_handle):
-        timestamp = self.database.get_raw_place_data(place_handle)[15]
-        return timestamp
+        data = self.database.get_raw_place_data(place_handle)
+        return data.change
 
     def _get_media_timestamp(self, media_handle):
-        timestamp = self.database.get_raw_media_data(media_handle)[9]
-        return timestamp
+        data = self.database.get_raw_media_data(media_handle)
+        return data.change
 
     def _get_source_timestamp(self, source_handle):
-        timestamp = self.database.get_raw_source_data(source_handle)[8]
-        return timestamp
+        data = self.database.get_raw_source_data(source_handle)
+        return data.change
 
     def _get_note_timestamp(self, note_handle):
-        timestamp = self.database.get_raw_note_data(note_handle)[5]
-        return timestamp
+        data = self.database.get_raw_note_data(note_handle)
+        return data.change
 
     def _get_citation_timestamp(self, citation_handle):
-        timestamp = self.database.get_raw_citation_data(citation_handle)[9]
-        return timestamp
+        data = self.database.get_raw_citation_data(citation_handle)
+        return data.change
 
     def write_report(self):
         """Write the report"""

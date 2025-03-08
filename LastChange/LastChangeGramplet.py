@@ -62,7 +62,8 @@ class LastChangeGramplet(Gramplet):
         counter = 0
         the_list = []  # sorted list of people with change times, newest first
         for handle in self.dbstate.db.iter_person_handles():
-            change = -self.dbstate.db.get_raw_person_data(handle)[17]
+            data = self.dbstate.db.get_raw_person_data(handle)
+            change = -data.change
             bsindex = bisect(KeyWrapper(the_list, key=lambda c: c[1]), change)
             the_list.insert(bsindex, (handle, change))
             if len(the_list) > 10:  # only need 10 entries, so remove oldest
