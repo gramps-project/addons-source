@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-08 18:38+0000\n"
 "PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
@@ -47,6 +47,9 @@ msgstr ""
 "une-a."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: AttachSourceTool/AttachSourceTool.py:70
+#: SetAttributeTool/SetAttributeTool.py:71 SetPrivacyTool/SetPrivacyTool.py:312
+#: AvatarGenerator/AvatarGenerator.py:86
 msgid "Select filter to restrict people"
 msgstr "Seleccione um filtro para limitar os indivíduos"
 
@@ -227,6 +230,9 @@ msgid "Relative"
 msgstr "Relativa"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+#: AttachSourceTool/AttachSourceTool.py:157
+#: SetAttributeTool/SetAttributeTool.py:151
+#: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
 msgstr "A processar...\n"
 
@@ -767,6 +773,7 @@ msgstr ""
 "resultados"
 
 #: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
+#: EventDescriptionEditor/EventDescriptionEditor.py:139
 msgid "Find"
 msgstr "Localizar"
 
@@ -902,7 +909,7 @@ msgstr ""
 msgid "City, County, State, Country"
 msgstr "Cidade, Concelho, Distrito, País"
 
-#: PlaceCleanup/placecleanup.glade:52
+#: PlaceCleanup/placecleanup.glade:52 AllNamesQuickview/AllNames.py:54
 msgid "Primary Name"
 msgstr "Nome principal"
 
@@ -1315,7 +1322,8 @@ msgstr "O indivíduo activo"
 msgid "Matches sources with a particular value"
 msgstr "Compara fontes com um valor em particular"
 
-#: FilterRules/activepersonrule.py:45
+#: FilterRules/activepersonrule.py:45 DataEntryGramplet/DataEntryGramplet.py:71
+#: NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Indivíduo activo"
 
@@ -1327,7 +1335,13 @@ msgstr "Compara o indivíduo activo"
 msgid "Age in years at person's death."
 msgstr "Idade em anos ao óbito do indivíduo."
 
-#: FilterRules/ageatdeath.py:71
+#: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
+#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
+#: SourceIndex/death.glade:521 SourceIndex/death.glade:669
+#: SourceIndex/death.glade:939 SourceIndex/census.glade:286
+#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
+#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
+#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
 msgid "Age:"
 msgstr "Idade:"
 
@@ -1398,6 +1412,8 @@ msgid "   Spouses: "
 msgstr "   Cônjuges: "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
+#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
+#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
 #, python-format
 msgid "%s "
 msgstr "%s "
@@ -1445,6 +1461,8 @@ msgid "Whether to show events and persons mentioned in the note"
 msgstr "Se deve mostrar eventos e indivíduos mencionados na nota"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
+#: RepositoriesReport/RepositoriesReportAlt.py:504
+#: RepositoriesReport/RepositoriesReport.py:175
 msgid "The style used for the title of the report."
 msgstr "O estilo usado para o título do relatório."
 
@@ -1477,6 +1495,8 @@ msgid "The style used for a column title."
 msgstr "O estilo usado para um título de coluna."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
+#: RepositoriesReport/RepositoriesReportAlt.py:533
+#: RepositoriesReport/RepositoriesReport.py:203
 msgid "The style used for each section."
 msgstr "O estilo usado para cada secção."
 
@@ -1625,7 +1645,7 @@ msgstr "Gerações a incluir"
 msgid "Male Background Color"
 msgstr "Cor de fundo masculina"
 
-#: D3Charts/AncestralCollapsibleTree.py:847
+#: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
 msgstr "Cor RGB para o fundo da caixa de homens."
 
@@ -1637,7 +1657,7 @@ msgstr "Cor de fundo expansível masculina"
 msgid "RGB-color for male expandable box background."
 msgstr "Cor RGB para o fundo da caixa expansível de homens."
 
-#: D3Charts/AncestralCollapsibleTree.py:855
+#: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
 msgstr "Cor de fundo feminina"
 
@@ -1660,6 +1680,7 @@ msgstr "O caminho destino para os ficheiros gerados."
 
 #: D3Charts/AncestralCollapsibleTree.py:872
 #: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
+#: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
 msgstr "O nome de ficheiro destino para conteúdo html."
 
@@ -1737,6 +1758,7 @@ msgid "The font size in pixels for each node."
 msgstr "O tamanho em pixels da letra de cada nó."
 
 #: D3Charts/DescendantIndentedTree.py:1848
+#: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Se deve mostrar árvores de famílias duplicadas no relatório."
 
@@ -1764,7 +1786,7 @@ msgstr "Cor de fundo não expansível"
 msgid "RGB-color for non-expandable row background."
 msgstr "Cor RGB para o fundo da linha não expansível."
 
-#: D3Charts/DescendantIndentedTree.py:1867
+#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Incluir registos marcados privados"
 
@@ -1772,11 +1794,11 @@ msgstr "Incluir registos marcados privados"
 msgid "Whether to include private objects."
 msgstr "Se deve incluir objectos marcados como privados."
 
-#: D3Charts/DescendantIndentedTree.py:1877
+#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Incluir só apelido"
 
-#: D3Charts/DescendantIndentedTree.py:1879
+#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Incluir só nome completo"
 
@@ -2007,11 +2029,13 @@ msgstr "Pacote Internet para SV"
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
 msgstr "Colecção de páginas web para a Suécia (requer libwebconnect)"
 
-#: SVWebconnectPack/SVWebPack.py:33
+#: SVWebconnectPack/SVWebPack.py:33 USWebConnectPack/USWebPack.py:33
 msgid "Find A Grave"
 msgstr "Find A Grave"
 
-#: SVWebconnectPack/SVWebPack.py:34
+#: SVWebconnectPack/SVWebPack.py:34 UKWebConnectPack/UKWebPack.py:35
+#: DEWebConnectPack/DEWebPack.py:39 USWebConnectPack/USWebPack.py:34
+#: USWebConnectPack/USWebPack.py:46
 msgid "FamilySearch.org"
 msgstr "Family Search"
 
@@ -2059,19 +2083,19 @@ msgstr "Prisioneiros libertados no Arkiv Digital"
 msgid "Gravestone inventory - rötter.se"
 msgstr "Inventário Gravestone - rötter.se"
 
-#: PluginManager/PluginManager.gpr.py:30
+#: PluginManager\PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "Gestor de extensões melhorado"
 
-#: PluginManager/PluginManager.gpr.py:31
+#: PluginManager\PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr "Um gestor de extensões com várias capacidades melhoradas"
 
-#: PluginManager/PluginManager.py:84
+#: PluginManager\PluginManager.py:91
 msgid "Plugin Manager - Enhanced"
 msgstr "Gestor de extensões - melhorado"
 
-#: PluginManager/PluginManager.py:154
+#: PluginManager\PluginManager.py:163
 msgid ""
 "Enter search words to filter the addons.\n"
 "All the words must be present somewhere in the row or\n"
@@ -2083,26 +2107,27 @@ msgstr ""
 "na linha ou no nome da extensão.\n"
 "As maiúsculas e a ordem são ignoradas."
 
-#: PluginManager/PluginManager.py:158
+#: PluginManager\PluginManager.py:169 GraphView/search_widget.py:400
+#: SearchGramplet/SearchGramplet.py:391
 msgid "Search..."
 msgstr "Procurar..."
 
-#: PluginManager/PluginManager.py:216
+#: PluginManager\PluginManager.py:229
 msgid "Restart..."
 msgstr "Reiniciar..."
 
-#: PluginManager/PluginManager.py:217
+#: PluginManager\PluginManager.py:231
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
 "Por favor, reinicie o Gramps para que as alterações se concluam em segurança."
 
-#: PluginManager/PluginManager.py:336
+#: PluginManager\PluginManager.py:353
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr "Erro ao remover a pasta \"%s\", a desinstalação pode ter falhado"
 
-#: PluginManager/PluginManager.py:376
+#: PluginManager\PluginManager.py:402
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -2110,47 +2135,47 @@ msgstr ""
 "Itens \"*\" são fornecidos por terceiros,\n"
 "itens <s>rasurados</s> estão ocultos"
 
-#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
+#: PluginManager\PluginManager.py:441 PluginManager\PluginManager.py:558
 msgid "Hide"
 msgstr "Ocultar"
 
-#: PluginManager/PluginManager.py:430
+#: PluginManager\PluginManager.py:460
 msgid "Show hidden items"
 msgstr "Mostrar itens ocultos"
 
-#: PluginManager/PluginManager.py:438
+#: PluginManager\PluginManager.py:467
 msgid "Show Built-in items"
 msgstr "Mostrar itens internos"
 
-#: PluginManager/PluginManager.py:445
+#: PluginManager\PluginManager.py:474
 msgid "* indicates 3rd party addon"
 msgstr "* indica extensão de terceiros"
 
-#: PluginManager/PluginManager.py:450
+#: PluginManager\PluginManager.py:479
 msgid "Plugins"
 msgstr "Extensões"
 
-#: PluginManager/PluginManager.py:528
+#: PluginManager\PluginManager.py:556
 msgid "Unhide"
 msgstr "Mostrar"
 
-#: PluginManager/PluginManager.py:547
+#: PluginManager\PluginManager.py:575
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: PluginManager/PluginManager.py:721
+#: PluginManager\PluginManager.py:753
 msgid "*Available"
 msgstr "*Disponível"
 
-#: PluginManager/PluginManager.py:737
+#: PluginManager\PluginManager.py:773
 msgid "Built-in"
 msgstr "Interna"
 
-#: PluginManager/PluginManager.py:742
+#: PluginManager\PluginManager.py:778
 msgid "*Installed"
 msgstr "*Instalada"
 
-#: PluginManager/PluginManager.py:751
+#: PluginManager\PluginManager.py:786
 msgid "Update Available"
 msgstr "Actualização disponível"
 
@@ -2164,7 +2189,14 @@ msgstr "Editor de descrições de eventos"
 msgid "Search substring..."
 msgstr "Subcadeia de procura..."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
+#: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
+#: Heatmap/heatmap.py:226 RemoveTagTool/RemoveTagTool.py:271
+#: AvatarGenerator/AvatarGenerator.py:211
+#: AvatarGenerator/AvatarGenerator.py:219
+#: AvatarGenerator/AvatarGenerator.py:316
+#: AvatarGenerator/AvatarGenerator.py:320 MediaReport/media_report.py:106
+#: MediaReport/media_report.py:112 MediaReport/media_report.py:119
+#: MediaReport/media_report.py:125
 msgid "INFO"
 msgstr "INFORMAÇÃO"
 
@@ -2174,6 +2206,8 @@ msgid "%s event descriptions of %s events were changed."
 msgstr "Foram alteradas %s descrições de eventos entre %s eventos."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
+#: DescendantsLines/DescendantsLines.py:1688 ImportMerge/importmerge.py:911
+#: ImportMerge/importmerge.glade:407
 msgid "Replace"
 msgstr "Substituir"
 
@@ -2254,11 +2288,11 @@ msgstr ""
 "Verificar caminhos multimédia e relatar ficheiros em falta, duplicados e "
 "adicionados"
 
-#: MediaVerify/MediaVerify.py:110
+#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
 msgid "Export"
 msgstr "Exportar"
 
-#: MediaVerify/MediaVerify.py:111
+#: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
 msgstr "Exportar os resultados para um ficheiro de texto"
 
@@ -2278,11 +2312,11 @@ msgstr "Verificar multimédia usando assinaturas md5"
 msgid "Files"
 msgstr "Ficheiros"
 
-#: MediaVerify/MediaVerify.py:195
+#: MediaVerify/MediaVerify.py:195 NoteCleanup/NoteCleanup.py:323
 msgid "Export results to a text file"
 msgstr "Exportar resultados para um ficheiro de texto"
 
-#: MediaVerify/MediaVerify.py:218
+#: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
 #, python-format
 msgid "Error when writing the report: %s"
 msgstr "Erro ao escrever o relatório: %s"
@@ -2697,7 +2731,12 @@ msgstr "Mostrar teóricos"
 msgid "Whether to display the theoretical number of ancestor by generation"
 msgstr "Se deve mostrar o número teórico de ascendentes por geração"
 
-#: AncestorFill/AncestorFill.py:361
+#: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
+#: DescendantBooks/DetailedDescendantBookReport.py:1540
+#: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
+#: DetDescendantReport-images/detdescendantreporti.py:1252
+#: LinesOfDescendency/lines-of-descendency.py:72
+#: LastChange/LastChangeReport.py:378
 msgid "The style used for the title of the page."
 msgstr "O estilo usado para o título da página."
 
@@ -2844,6 +2883,7 @@ msgid "Exporting family tree data ..."
 msgstr "A exportar dados da árvore de família..."
 
 #: DynamicWeb/dynamicweb.py:1737
+#: DetDescendantReport-images/detdescendantreporti.py:940
 #, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
@@ -3016,7 +3056,8 @@ msgstr "Indivíduo a procurar"
 msgid "Persons Index"
 msgstr "Índice de indivíduos"
 
-#: DynamicWeb/dynamicweb.py:3052
+#: DynamicWeb/dynamicweb.py:3052 SetPrivacyTool/SetPrivacyTool.py:320
+#: RemoveTagTool/RemoveTagTool.py:124 SearchGramplet/SearchGramplet.py:109
 msgid "Persons"
 msgstr "Indivíduos"
 
@@ -3028,11 +3069,11 @@ msgstr "Índice de locais"
 msgid "Preparing file ..."
 msgstr "A preparar ficheiro..."
 
-#: DynamicWeb/dynamicweb.py:3060
+#: DynamicWeb/dynamicweb.py:3060 PersonEverything/PersonEverything.py:220
 msgid "Relationship to Father"
 msgstr "Relação com o pai"
 
-#: DynamicWeb/dynamicweb.py:3061
+#: DynamicWeb/dynamicweb.py:3061 PersonEverything/PersonEverything.py:225
 msgid "Relationship to Mother"
 msgstr "Relação com a mãe"
 
@@ -3132,7 +3173,9 @@ msgstr "A mostrar _START_ a _END_ de _TOTAL_ entradas"
 msgid "Sort by:"
 msgstr "Ordenar por:"
 
-#: DynamicWeb/dynamicweb.py:3114
+#: DynamicWeb/dynamicweb.py:3114 SourceIndex/marriage.py:87
+#: SourceIndex/census.py:82 SourceIndex/index.py:92 SourceIndex/death.py:87
+#: SourceIndex/witness.py:64 SourceIndex/birth.py:126
 msgid "Sources Index"
 msgstr "Índice de fontes"
 
@@ -3220,11 +3263,13 @@ msgstr "Sem apelido"
 msgid "Without title"
 msgstr "Sem título"
 
-#: DynamicWeb/dynamicweb.py:3170
+#: DynamicWeb/dynamicweb.py:3170 LifeLineChartView/lifelinechartview.py:508
+#: GraphView/graphview.py:1095
 msgid "Zoom in"
 msgstr "Ampliar"
 
-#: DynamicWeb/dynamicweb.py:3171
+#: DynamicWeb/dynamicweb.py:3171 LifeLineChartView/lifelinechartview.py:518
+#: GraphView/graphview.py:1102
 msgid "Zoom out"
 msgstr "Reduzir"
 
@@ -3582,6 +3627,7 @@ msgid "The default number of entries shown in one index page"
 msgstr "O número pré-definido de entradas mostradas numa página de índice"
 
 #: DynamicWeb/dynamicweb.py:5098
+#: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
 msgstr "Número máximo de gerações"
 
@@ -3616,7 +3662,7 @@ msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
 msgstr "Escolha o esquema de cor do fundo para indivíduos na árvore SVG"
 
-#: DynamicWeb/dynamicweb.py:5157
+#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
 msgstr "Tema"
 
@@ -3895,7 +3941,7 @@ msgstr ""
 "vista Indivíduos, escolha o indivíduo desejado e confirme a escolha no menu "
 "Editar -> Definir indivíduo inicial."
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
 msgid "Order"
 msgstr "Ordem"
 
@@ -3932,11 +3978,12 @@ msgstr "Fontes?"
 msgid "Surname, Given"
 msgstr "Apelido, nome"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89
+#: DataEntryGramplet/DataEntryGramplet.py:89 RelID/relation_tab.py:126
+#: NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Gravar"
 
-#: DataEntryGramplet/DataEntryGramplet.py:92
+#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Abandonar"
 
@@ -3990,7 +4037,8 @@ msgstr "Copiar dados activos"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
-#: DataEntryGramplet/DataEntryGramplet.py:315
+#: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
+#: Form/form_us.xml.h:2259
 msgid "in"
 msgstr "em"
 
@@ -4264,6 +4312,7 @@ msgid "Attaching sources..."
 msgstr "A anexar fontes..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
+#: SetAttributeTool/SetAttributeTool.py:226
 msgid "Done!\n"
 msgstr "Feito!\n"
 
@@ -4280,7 +4329,7 @@ msgstr "Consola Python"
 msgid "Interactive Python interpreter"
 msgstr "Interpretador Python interactivo"
 
-#: PythonGramplet/PythonGramplet.py:55
+#: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
 msgstr "Insira expressões Python"
 
@@ -4297,6 +4346,7 @@ msgid "onmouseover"
 msgstr "ratosobre"
 
 #: DenominoViso/DenominoViso.py:208
+#: LinesOfDescendency/lines-of-descendency.py:55
 msgid "Ancestor"
 msgstr "Ascendente"
 
@@ -4383,7 +4433,9 @@ msgstr "abreviatura"
 msgid "volume"
 msgstr "volume"
 
-#: DenominoViso/DenominoViso.py:1754
+#: DenominoViso/DenominoViso.py:1754 Form/form_us.xml.h:2270
+#: Form/form_us.xml.h:2288 Form/form_us.xml.h:2299 Form/form_us.xml.h:2317
+#: Form/form_us.xml.h:2327
 msgid "of"
 msgstr "de"
 
@@ -4391,7 +4443,9 @@ msgstr "de"
 msgid "the chart type runs out of bounds"
 msgstr "o tipo de gráfico sai dos limites"
 
-#: DenominoViso/DenominoViso.py:2001
+#: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
+#: GraphView/graphview.py:968 SearchGramplet/SearchGramplet.gpr.py:9
+#: SearchGramplet/SearchGramplet.gpr.py:19
 msgid "Search"
 msgstr "Procurar"
 
@@ -4476,6 +4530,7 @@ msgid "Include Options"
 msgstr "Opções de inclusão"
 
 #: DenominoViso/DenominoViso.py:2607
+#: RepositoriesReport/RepositoriesReportAlt.py:467
 msgid "Include private records"
 msgstr "Incluir registos privados"
 
@@ -4834,7 +4889,7 @@ msgstr "Relação e distância com a raiz"
 msgid "Folder Chooser"
 msgstr "Selector de pasta"
 
-#: RelID/relation_tab.py:97
+#: RelID/relation_tab.py:97 PhotoTaggingGramplet/PhotoTaggingGramplet.py:498
 msgid "_Select"
 msgstr "_Seleccionar"
 
@@ -4846,7 +4901,29 @@ msgstr "Por favor, seleccione uma pasta"
 msgid "Rel_id"
 msgstr "Id_Rel"
 
-#: RelID/relation_tab.py:111
+#: RelID/relation_tab.py:111 Form/form_us.xml.h:1427 Form/form_us.xml.h:1965
+#: Form/form_us.xml.h:1984 Form/form_us.xml.h:2004 Form/form_dk.xml.h:14
+#: Form/form_dk.xml.h:31 Form/form_dk.xml.h:48 Form/form_dk.xml.h:65
+#: Form/form_dk.xml.h:82 Form/form_dk.xml.h:99 Form/form_dk.xml.h:118
+#: Form/form_dk.xml.h:137 Form/form_dk.xml.h:156 Form/form_dk.xml.h:177
+#: Form/form_dk.xml.h:200 Form/form_dk.xml.h:221 Form/form_dk.xml.h:242
+#: Form/form_dk.xml.h:270 Form/form_dk.xml.h:305 Form/form_dk.xml.h:331
+#: Form/form_dk.xml.h:347 Form/form_dk.xml.h:379 Form/form_dk.xml.h:399
+#: Form/form_dk.xml.h:421 Form/form_dk.xml.h:441 Form/form_gb.xml.h:76
+#: Form/form_gb.xml.h:94 Form/form_gb.xml.h:113 Form/form_gb.xml.h:134
+#: Form/form_gb.xml.h:156 Form/form_gb.xml.h:181 Form/form_gb.xml.h:202
+#: Form/form_gb.xml.h:236 Form/form_gb.xml.h:285 Form/form_gb.xml.h:312
+#: Form/form_gb.xml.h:335 Form/form_gb.xml.h:371 Form/form_gb.xml.h:432
+#: Form/form_gb.xml.h:459 Form/form_gb.xml.h:487 Form/form_gb.xml.h:519
+#: Form/form_gb.xml.h:558 Form/form_gb.xml.h:580 Form/form_gb.xml.h:609
+#: Form/form_ca.xml.h:417 Form/form_ca.xml.h:470 Form/form_ca.xml.h:628
+#: Form/form_ca.xml.h:681 Form/form_ca.xml.h:769 Form/form_ca.xml.h:820
+#: Form/form_fr.xml.h:5 Form/form_fr.xml.h:13 Form/form_fr.xml.h:21
+#: Form/form_fr.xml.h:29 Form/form_fr.xml.h:36 Form/form_fr.xml.h:121
+#: Form/form_fr.xml.h:128 Form/form_fr.xml.h:135 Form/form_fr.xml.h:142
+#: Form/form_fr.xml.h:152 Form/form_fr.xml.h:161 Form/form_fr.xml.h:169
+#: Form/form_fr.xml.h:178 Form/form_fr.xml.h:187 Form/form_fr.xml.h:196
+#: Form/form_fr.xml.h:205 Form/form_fr.xml.h:216
 msgid "Relation"
 msgstr "Relação"
 
@@ -4862,7 +4939,8 @@ msgstr "abaixo"
 msgid "Common MRA"
 msgstr "Asc. comum"
 
-#: RelID/relation_tab.py:116
+#: RelID/relation_tab.py:116 Form/form_us.xml.h:649 Form/form_us.xml.h:1013
+#: Form/form_us.xml.h:2291 Form/form_us.xml.h:2320
 msgid "Rank"
 msgstr "Posição"
 
@@ -4948,16 +5026,18 @@ msgstr "Acerca do gráfico de retalhos"
 msgid "Edit tags"
 msgstr "Editar etiquetas"
 
-#: QuiltView/QuiltView.py:1500
+#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:4048
 msgid "Set as home person"
 msgstr "Definir como indivíduo inicial"
 
-#: QuiltView/QuiltView.py:1656
+#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4538
+#: GraphView/graphview.py:4584
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Adicionar etiquetas ao indivíduo (%s)"
 
-#: QuiltView/QuiltView.py:1661
+#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4543
+#: GraphView/graphview.py:4595
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Adicionar etiquetas à família (%s)"
@@ -4991,7 +5071,8 @@ msgstr "A cor do indivíduo seleccionado"
 msgid "The path transparency"
 msgstr "A transparência do caminho"
 
-#: QuiltView/QuiltView.py:1939
+#: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:89
+#: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
 msgid "General options"
 msgstr "Opções gerais"
 
@@ -5751,11 +5832,11 @@ msgstr "Título do local"
 msgid "Extract Place data"
 msgstr "Extrair dados do local"
 
-#: ExtractCity/extractcity.py:454
+#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
 msgstr "A verificar títulos de locais"
 
-#: ExtractCity/extractcity.py:456
+#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
 msgstr "A procurar campos de local"
 
@@ -5902,18 +5983,21 @@ msgstr "%(event_name)s de %(name)s e %(mate)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
+#: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:820
 #: DescendantBooks/DetailedDescendantBookReport.py:864
+#: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
 msgstr "%(date)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:822
 #: DescendantBooks/DetailedDescendantBookReport.py:866
+#: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
@@ -5939,6 +6023,7 @@ msgid "Ref: %s. %s"
 msgstr "Ref: %s. %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1237
+#: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
@@ -5954,10 +6039,12 @@ msgid " %(value)s%(endnotes)s"
 msgstr " %(value)s%(endnotes)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1405
+#: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
 msgstr "Listar filhos"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1422
+#: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
 msgstr "Adicionar referência a descendentes na lista de filhos"
 
@@ -5998,6 +6085,7 @@ msgstr ""
 "indivíduo é mencionado."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1570
+#: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
 msgstr "O estilo usado para a lista de filhos."
 
@@ -6006,15 +6094,18 @@ msgid "The basic style used for Note header."
 msgstr "O estilo básico usado para o cabeçalho da nota."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1597
+#: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
 msgstr "O estilo usado para a primeira entrada pessoal."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1607
+#: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
 "O estilo usado para o cabeçalho Mais sobre e para cabeçalhos de companheiros."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1618
+#: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
 msgstr "O estilo usado para detalhes adicionais."
 
@@ -6664,6 +6755,8 @@ msgid "Thumbnail"
 msgstr "Miniatura"
 
 #: EditExifMetadata/editexifmetadata.py:215
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: DateCalculator/DateCalculator.py:107 GraphView/graphview.py:3863
 msgid "Copy"
 msgstr "Copiar"
 
@@ -7617,7 +7710,7 @@ msgstr ""
 "Este botão vai aceitar só a família seleccionada e gravá-la como mostrado no "
 "painel inferior direito."
 
-#: BirthOrder/birthorder.glade:232
+#: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
 msgid "Done"
 msgstr "Feito"
 
@@ -7981,7 +8074,7 @@ msgstr "Verificar títulos de locais"
 msgid "Check Place title"
 msgstr "Verificar título de local"
 
-#: CheckPlaceTitles/checkplacetitles.py:107
+#: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade:264
 msgid "Differences"
 msgstr "Diferenças"
 
@@ -8534,11 +8627,11 @@ msgstr "Ctrl"
 msgid "Mouse wheel"
 msgstr "Roda do rato"
 
-#: LifeLineChartView/lifelinechartview.py:527
+#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1109
 msgid "Zoom to original"
 msgstr "Tamanho original"
 
-#: LifeLineChartView/lifelinechartview.py:534
+#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1116
 msgid "Zoom to best fit"
 msgstr "Melhor ajuste"
 
@@ -9001,6 +9094,7 @@ msgid "Highlight the persons which are descendants."
 msgstr "Realçar os indivíduos que são descendentes."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:115
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
 msgid "Number of descendants"
 msgstr "Número de descendentes"
 
@@ -9140,26 +9234,9 @@ msgid "No existing associations, so no reciprocal ones needed"
 msgstr ""
 "Não há associações existentes, não são necessárias associações recíprocas"
 
-#: Form/editform.py:181
-#, python-format
-msgid "Form: %s"
-msgstr "Formulário: %s"
-
-#: Form/editform.py:183
-msgid "New Form"
-msgstr "Novo formulário"
-
-#: Form/editform.py:190
-msgid "Edit Form"
-msgstr "Editar formulário"
-
-#: Form/editform.py:225
-msgid "Reference:"
-msgstr "Referência:"
-
-#: Form/editform.py:421
-msgid "Headings"
-msgstr "Títulos"
+#: Form/selectform.py:74 Form/selectform.py:81
+msgid "Select Form"
+msgstr "Seleccionar formulário"
 
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
@@ -9177,2304 +9254,27 @@ msgstr "Formulários"
 msgid "Form"
 msgstr "Formulário"
 
-#: Form/selectform.py:74 Form/selectform.py:81
-msgid "Select Form"
-msgstr "Seleccionar formulário"
-
-#: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
-#: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
-#: Form/form_ca.xml.h:450 Form/form_ca.xml.h:529 Form/form_ca.xml.h:615
-#: Form/form_ca.xml.h:661 Form/form_ca.xml.h:754 Form/form_ca.xml.h:794
-#: Form/form_us.xml.h:1633 Form/form_us.xml.h:1648
-msgid "Schedule"
-msgstr "Horário"
-
-#: Form/form_ca.xml.h:2 Form/form_ca.xml.h:93 Form/form_ca.xml.h:211
-#: Form/form_ca.xml.h:798
-msgid "EnumDistrict"
-msgstr "EnumDistrict"
-
-#: Form/form_ca.xml.h:3 Form/form_ca.xml.h:94 Form/form_ca.xml.h:212
-#: Form/form_ca.xml.h:644 Form/form_ca.xml.h:812 Form/form_us.xml.h:1250
-#: Form/form_us.xml.h:1311 Form/form_us.xml.h:2041
-msgid "Township"
-msgstr "Município"
-
-#: Form/form_ca.xml.h:5
-msgid "Comprising"
-msgstr "Compreendendo"
-
-#: Form/form_ca.xml.h:6
-msgid "OfTheSaid"
-msgstr "OfTheSaid"
-
-#: Form/form_ca.xml.h:7 Form/form_ca.xml.h:293 Form/form_ca.xml.h:347
-#: Form/form_ca.xml.h:396 Form/form_ca.xml.h:457 Form/form_ca.xml.h:536
-#: Form/form_ca.xml.h:621 Form/form_ca.xml.h:668 Form/form_ca.xml.h:758
-#: Form/form_ca.xml.h:801
-msgid "Enumerator"
-msgstr "Recenseador"
-
-#: Form/form_ca.xml.h:11 Form/form_ca.xml.h:217
-msgid "1. Names of Inmates"
-msgstr "1. Nomes de prisioneiros"
-
-#: Form/form_ca.xml.h:13
-msgid "2. Profession, Trade or Occupation"
-msgstr "2. Profissão ou negócio"
-
-#: Form/form_ca.xml.h:14 Form/form_ca.xml.h:220 Form/form_ca.xml.h:316
-#: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
-#: Form/form_ca.xml.h:636 Form/form_ca.xml.h:691 Form/form_ca.xml.h:777
-#: Form/form_ca.xml.h:828
-msgid "BirthPlace"
-msgstr "Local de nascimento"
-
-#: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
-msgid "3. Place of Birth"
-msgstr "3. Local de nascimento"
-
-#: Form/form_ca.xml.h:17
-msgid "4. Religion"
-msgstr "4. Religião"
-
-#: Form/form_ca.xml.h:19
-msgid "5. Residence if Outside of Limits"
-msgstr "5. Residência, se fora dos limites"
-
-#: Form/form_ca.xml.h:21
-msgid "6. Age at Next Birthday"
-msgstr "6. Idade no próximo aniversário"
-
-#: Form/form_ca.xml.h:22 Form/form_ca.xml.h:230
-msgid "SexMale"
-msgstr "SexoMasculino"
-
-#: Form/form_ca.xml.h:23
-msgid "7. Sex: Male"
-msgstr "7. Sexo: masculino"
-
-#: Form/form_ca.xml.h:24
-msgid "SexFemale"
-msgstr "SexoFeminino"
-
-#: Form/form_ca.xml.h:25
-msgid "8. Sex: Female"
-msgstr "8. Sexo: feminino"
-
-#: Form/form_ca.xml.h:26 Form/form_ca.xml.h:234 Form/form_ca.xml.h:324
-#: Form/form_ca.xml.h:378 Form/form_ca.xml.h:415 Form/form_ca.xml.h:472
-#: Form/form_ca.xml.h:632 Form/form_ca.xml.h:683 Form/form_ca.xml.h:771
-#: Form/form_ca.xml.h:824
-msgid "MaritalStatus"
-msgstr "SituaçãoConjugal"
-
-#: Form/form_ca.xml.h:27
-msgid "9. Married or Single"
-msgstr "Casado ou solteiro"
-
-#: Form/form_ca.xml.h:28 Form/form_ca.xml.h:240
-msgid "Coloured"
-msgstr "Colorido"
-
-#: Form/form_ca.xml.h:29
-msgid "10. Coloured Persons - Negroes"
-msgstr "10. Indivíduos de cor - origem africana"
-
-#: Form/form_ca.xml.h:30
-msgid "Indians"
-msgstr "Indianos"
-
-#: Form/form_ca.xml.h:31
-msgid "11. Indians, if any"
-msgstr "11. Indianos, se existirem"
-
-#: Form/form_ca.xml.h:32
-msgid "ResidentsMale"
-msgstr "ResidentesHomens"
-
-#: Form/form_ca.xml.h:33
-msgid "12. Residents: Members, Male"
-msgstr "12. Residentes: membros, masculino"
-
-#: Form/form_ca.xml.h:34
-msgid "ResidentsFemale"
-msgstr "ResidentesMulheres"
-
-#: Form/form_ca.xml.h:35
-msgid "13. Residents: Members, Female"
-msgstr "13. Residentes: membros, feminino"
-
-#: Form/form_ca.xml.h:36
-msgid "NonMembersMale"
-msgstr "NãoMembrosMasculino"
-
-#: Form/form_ca.xml.h:37
-msgid "14. Residents: Not Members: Male"
-msgstr "14. Residentes: não membros, homem"
-
-#: Form/form_ca.xml.h:38
-msgid "NonMembersFemale"
-msgstr "NãoMembrosFeminino"
-
-#: Form/form_ca.xml.h:39
-msgid "15. Residents: Not Members: Female"
-msgstr "15. Residentes: não membros, mulher"
-
-#: Form/form_ca.xml.h:40
-msgid "AbsentMembersMale"
-msgstr "MembrosAusentesMasculino"
-
-#: Form/form_ca.xml.h:41
-msgid "16. Members Absent: Male"
-msgstr "16. Membros ausentes: masculino"
-
-#: Form/form_ca.xml.h:42
-msgid "AbsentMembersFemale"
-msgstr "MembrosAusentesFeminino"
-
-#: Form/form_ca.xml.h:43
-msgid "17. Members Absent: Female"
-msgstr "17. Membros ausentes, feminino"
-
-#: Form/form_ca.xml.h:44
-msgid "DeafDumbMale"
-msgstr "SurdoMudoMasculino"
-
-#: Form/form_ca.xml.h:45
-msgid "18. Deaf and Dumb: Male"
-msgstr "18. Surdos/mudos: masculino"
-
-#: Form/form_ca.xml.h:46
-msgid "DeafDumbFemale"
-msgstr "SurdoMudoFeminino"
-
-#: Form/form_ca.xml.h:47
-msgid "19. Deaf and Dumb: Female"
-msgstr "19. Surdos e mudos: feminino"
-
-#: Form/form_ca.xml.h:48
-msgid "BlindMale"
-msgstr "CegoMasculino"
-
-#: Form/form_ca.xml.h:49
-msgid "20. Blind: Male"
-msgstr "20. Cegos: masculino"
-
-#: Form/form_ca.xml.h:50
-msgid "BlindFemale"
-msgstr "CegoFeminino"
-
-#: Form/form_ca.xml.h:51
-msgid "21. Blind: Female"
-msgstr "21. Cegos: feminino"
-
-#: Form/form_ca.xml.h:52
-msgid "LunaticMale"
-msgstr "MalucoMasculino"
-
-#: Form/form_ca.xml.h:53
-msgid "22. Lunatics: Male"
-msgstr "22. Lunáticos: masculino"
-
-#: Form/form_ca.xml.h:54
-msgid "LunaticFemale"
-msgstr "MalucoFeminino"
-
-#: Form/form_ca.xml.h:55
-msgid "23. Lunatics: Female"
-msgstr "23. Lunáticos: feminino"
-
-#: Form/form_ca.xml.h:56 Form/form_ca.xml.h:260
-msgid "ScholarMale"
-msgstr "EstudiosoMasculino"
-
-#: Form/form_ca.xml.h:57
-msgid "24. Attending School: Male"
-msgstr "24. A estudar: masculino"
-
-#: Form/form_ca.xml.h:58 Form/form_ca.xml.h:262
-msgid "ScholarFemale"
-msgstr "EstudiosoFeminino"
-
-#: Form/form_ca.xml.h:59
-msgid "25. Attending School: Female"
-msgstr "25. A estudar: feminino"
-
-#: Form/form_ca.xml.h:60
-msgid "Birth1851Male"
-msgstr "Nascimento1851Masculino"
-
-#: Form/form_ca.xml.h:61
-msgid "26. Births During the Year 1851: Male"
-msgstr "26. Nascidos em 1851: masculino"
-
-#: Form/form_ca.xml.h:62
-msgid "Birth1851Female"
-msgstr "Nascimento1851Feminino"
-
-#: Form/form_ca.xml.h:63
-msgid "27. Births During the Year 1851: Female"
-msgstr "27. Nascidos em 1851: feminino"
-
-#: Form/form_ca.xml.h:64
-msgid "Death1851Male"
-msgstr "Óbito1851Masculino"
-
-#: Form/form_ca.xml.h:65
-msgid "28. Deaths During the Year 1851: Male"
-msgstr "28. Falecidos em 1851: masculino"
-
-#: Form/form_ca.xml.h:66
-msgid "Death1851Female"
-msgstr "Óbito1851Feminino"
-
-#: Form/form_ca.xml.h:67
-msgid "29. Deaths During the Year 1851: Female"
-msgstr "29. Falecidos em 1851: feminino"
-
-#: Form/form_ca.xml.h:68 Form/form_ca.xml.h:276
-msgid "DeathAgeCause"
-msgstr "IdadeCausaÓbito"
-
-#: Form/form_ca.xml.h:69
-msgid "30. Age and Cause of Deaths"
-msgstr "30. Idade e causa de óbito"
-
-#: Form/form_ca.xml.h:70 Form/form_ca.xml.h:278
-msgid "Houses"
-msgstr "Casas"
-
-#: Form/form_ca.xml.h:71
-msgid ""
-"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
-msgstr ""
-"31. Casas: tijolo, pedra, estrutura, madeira, lata ou outros tipos de "
-"residência"
-
-#: Form/form_ca.xml.h:72 Form/form_ca.xml.h:280
-msgid "HousesStories"
-msgstr "HistóriasCasas"
-
-#: Form/form_ca.xml.h:73
-msgid "32. Houses: No. of Stories"
-msgstr "32. Casas: n.º de histórias"
-
-#: Form/form_ca.xml.h:74 Form/form_ca.xml.h:282
-msgid "HousesFamilies"
-msgstr "CasasFamílias"
-
-#: Form/form_ca.xml.h:75
-msgid "33. No. of Families Occupying"
-msgstr "33. N.º de famílias ocupantes"
-
-#: Form/form_ca.xml.h:76 Form/form_ca.xml.h:284 Form/form_ca.xml.h:302
-#: Form/form_ca.xml.h:356 Form/form_ca.xml.h:403 Form/form_ca.xml.h:549
-msgid "HousesVacant"
-msgstr "CasasVazias"
-
-#: Form/form_ca.xml.h:77
-msgid "34. Houses: Vacant"
-msgstr "34. Casas: vazias"
-
-#: Form/form_ca.xml.h:78
-msgid "HousesBuilding"
-msgstr "CasasEdifício"
-
-#: Form/form_ca.xml.h:79
-msgid "35. Houses: Building"
-msgstr "35. Casas: edifício"
-
-#: Form/form_ca.xml.h:80
-msgid "Shops"
-msgstr "Lojas"
-
-#: Form/form_ca.xml.h:81
-msgid "36. Shops, Stores, Inns, Taverns etc."
-msgstr "36. Lojas, armazéns, pousadas, tabernas, etc."
-
-#: Form/form_ca.xml.h:82
-msgid "PublicBuildings"
-msgstr "EdifíciosPúblicos"
-
-#: Form/form_ca.xml.h:83
-msgid "37. Public Buildings"
-msgstr "37. Edifícios públicos"
-
-#: Form/form_ca.xml.h:84
-msgid "WorshipPlaces"
-msgstr "TemplosAdoração"
-
-#: Form/form_ca.xml.h:85
-msgid "38. Places of Worship"
-msgstr "38. Locais de culto"
-
-#: Form/form_ca.xml.h:86
-msgid "BuisnessInfo"
-msgstr "InformaçãoNegócio"
-
-#: Form/form_ca.xml.h:87
-msgid ""
-"39. Information on Mills, Factories etc., their cost, power, produce, etc."
-msgstr ""
-"39. Informação sobre moagens, fábricas, etc., seus custos, energia, "
-"produtos, etc."
-
-#: Form/form_ca.xml.h:88
-msgid "NumEmployees"
-msgstr "NúmEmpregados"
-
-#: Form/form_ca.xml.h:89
-msgid "40. Number of Persons Usually Employed Therein"
-msgstr "40. Número de empregados habituais"
-
-#: Form/form_ca.xml.h:91
-msgid "41. General Remarks of the Enumerator"
-msgstr "41. Observações gerais do recenseador"
-
-#: Form/form_ca.xml.h:99
-msgid "1. Name of Occupier"
-msgstr "1. Nome do ocupante"
-
-#: Form/form_ca.xml.h:100
-msgid "Concession"
-msgstr "Concessão"
-
-#: Form/form_ca.xml.h:101
-msgid "2. Concession or Range"
-msgstr "2. Concessão ou sector"
-
-#: Form/form_ca.xml.h:102
-msgid "Lot"
-msgstr "Lote"
-
-#: Form/form_ca.xml.h:103
-msgid "3. Lot or part of Lot"
-msgstr "3. Lote ou parte do lote"
-
-#: Form/form_ca.xml.h:104
-msgid "AcresHeld"
-msgstr "HectaresMetros2"
-
-#: Form/form_ca.xml.h:105
-msgid "4. Number of Acres of Land: Held by each person or family"
-msgstr "4. N.º de hectares de terra: detidos por cada membro da família"
-
-#: Form/form_ca.xml.h:106
-msgid "AcresCultivation"
-msgstr "HectaresCultivo"
-
-#: Form/form_ca.xml.h:107
-msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr "5. N.º de hectares de terra: cultivados"
-
-#: Form/form_ca.xml.h:108
-msgid "AcresCrops"
-msgstr "HectaresCulturas"
-
-#: Form/form_ca.xml.h:109
-msgid "6. Number of Acres of Land: Under Crops in 1851"
-msgstr "6. N.º de hectares de terra: sob cultivo em 1851"
-
-#: Form/form_ca.xml.h:110
-msgid "AcresPasture"
-msgstr "HectaresPastagem"
-
-#: Form/form_ca.xml.h:111
-msgid "7. Number of Acres of Land: Under Pasture in 1851"
-msgstr "7. N.º de hectares de terra: pastagens em 1851"
-
-#: Form/form_ca.xml.h:112
-msgid "AcresGardens"
-msgstr "HectaresJardins"
-
-#: Form/form_ca.xml.h:113
-msgid "8. Number of Acres of Land: Gardens or Orchards"
-msgstr "8. N.º de hectares de terra: jardins e pomares"
-
-#: Form/form_ca.xml.h:114
-msgid "AcresWood"
-msgstr "HectaresMadeira"
-
-#: Form/form_ca.xml.h:115
-msgid "9. Number of Acres of Land: Under Wood or Wild"
-msgstr "9. N.º de hectares de terra: para madeira ou bravios"
-
-#: Form/form_ca.xml.h:116
-msgid "WheatAcres"
-msgstr "HectaresTrigo"
-
-#: Form/form_ca.xml.h:117
-msgid "10. Wheat: Acres"
-msgstr "10. N.º de hectares de terra: trigo"
-
-#: Form/form_ca.xml.h:118
-msgid "WheatBsh"
-msgstr "TrigoAlq"
-
-#: Form/form_ca.xml.h:119
-msgid "11. Wheat: Produce Bsh."
-msgstr "11. Trigo: produção"
-
-#: Form/form_ca.xml.h:120
-msgid "BarleyAcres"
-msgstr "HectaresCevada"
-
-#: Form/form_ca.xml.h:121
-msgid "12. Barley: Acres"
-msgstr "12. N.º de hectares de terra: cevada"
-
-#: Form/form_ca.xml.h:122
-msgid "BarleyBsh"
-msgstr "CevadaAlq"
-
-#: Form/form_ca.xml.h:123
-msgid "13. Barley: Produce Bsh."
-msgstr "13. Cevada: produção"
-
-#: Form/form_ca.xml.h:124
-msgid "RyeAcres"
-msgstr "HectaresCenteio"
-
-#: Form/form_ca.xml.h:125
-msgid "14. Rye: Acres"
-msgstr "14. N.º de hectares de terra: centeio"
-
-#: Form/form_ca.xml.h:126
-msgid "RyeBsh"
-msgstr "Centeio"
-
-#: Form/form_ca.xml.h:127
-msgid "15. Rye: Produce Bsh."
-msgstr "15. Centeio: produção"
-
-#: Form/form_ca.xml.h:128
-msgid "PeasAcres"
-msgstr "HectaresErvilha"
-
-#: Form/form_ca.xml.h:129
-msgid "16. Peas: Acres"
-msgstr "16. N.º de hectares de terra: ervilha"
-
-#: Form/form_ca.xml.h:130
-msgid "PeasBush"
-msgstr "Ervilha"
-
-#: Form/form_ca.xml.h:131
-msgid "17. Peas: Produce Bsh."
-msgstr "17. Ervilha: produção"
-
-#: Form/form_ca.xml.h:132
-msgid "OatsAcres"
-msgstr "HectaresAveia"
-
-#: Form/form_ca.xml.h:133
-msgid "18. Oats: Acres"
-msgstr "18. N.º de hectares de terra: aveia"
-
-#: Form/form_ca.xml.h:134
-msgid "OatsBush"
-msgstr "AveiaAlq"
-
-#: Form/form_ca.xml.h:135
-msgid "19. Oats: Produce Bsh."
-msgstr "19. Aveia: produção"
-
-#: Form/form_ca.xml.h:136
-msgid "BWheatAcres"
-msgstr "HectaresTrigoMourisco"
-
-#: Form/form_ca.xml.h:137
-msgid "20. B.Wheat: Acres"
-msgstr "20. N.º de hectares de terra: trigo mourisco"
-
-#: Form/form_ca.xml.h:138
-msgid "BWheatBush"
-msgstr "Trigo Mourisco"
-
-#: Form/form_ca.xml.h:139
-msgid "21. B.Wheat: Produce Bsh."
-msgstr "21. Trigo mourisco: produção"
-
-#: Form/form_ca.xml.h:140
-msgid "CornAcres"
-msgstr "HectaresMilho"
-
-#: Form/form_ca.xml.h:141
-msgid "22. Corn: Acres"
-msgstr "22. N.º de hectares de terra: milho"
-
-#: Form/form_ca.xml.h:142
-msgid "CornBush"
-msgstr "Milho"
-
-#: Form/form_ca.xml.h:143
-msgid "23. Corn: Produce Bsh."
-msgstr "23. Milho: produção"
-
-#: Form/form_ca.xml.h:144
-msgid "PotatoesAcres"
-msgstr "HectaresBatata"
-
-#: Form/form_ca.xml.h:145
-msgid "24. Potatoes: Acres"
-msgstr "24. N.º de hectares de terra: batata"
-
-#: Form/form_ca.xml.h:146
-msgid "PotatoesBush"
-msgstr "Batata"
-
-#: Form/form_ca.xml.h:147
-msgid "25. Potatoes: Produce Bsh."
-msgstr "25. Batata: produção"
-
-#: Form/form_ca.xml.h:148
-msgid "TurnipsAcres"
-msgstr "HectaresNabo"
-
-#: Form/form_ca.xml.h:149
-msgid "26. Turnips: Acres"
-msgstr "26. N.º de hectares de terra: nabo"
-
-#: Form/form_ca.xml.h:150
-msgid "TurnipsBush"
-msgstr "Nabo"
-
-#: Form/form_ca.xml.h:151
-msgid "27. Turnips: Produce Bsh."
-msgstr "27. Nabo: produção"
-
-#: Form/form_ca.xml.h:152
-msgid "CloverBush"
-msgstr "Trevo"
-
-#: Form/form_ca.xml.h:153
-msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr "28. Trevo, timóteo ou outra semente de ervas"
-
-#: Form/form_ca.xml.h:154
-msgid "CarrotsBush"
-msgstr "Cenoura"
-
-#: Form/form_ca.xml.h:155
-msgid "29. Carrots - Bsh."
-msgstr "29. Cenoura: produção"
-
-#: Form/form_ca.xml.h:156
-msgid "MangleWurtzel"
-msgstr "Beterraba"
-
-#: Form/form_ca.xml.h:157
-msgid "30. Mangle Wurtzel"
-msgstr "30. Beterraba"
-
-#: Form/form_ca.xml.h:158
-msgid "BeansBush"
-msgstr "Feijão"
-
-#: Form/form_ca.xml.h:159
-msgid "31. Beans Bush"
-msgstr "31. Feijão: produção"
-
-#: Form/form_ca.xml.h:160
-msgid "HopsLbs"
-msgstr "LúpuloLbs"
-
-#: Form/form_ca.xml.h:161
-msgid "32. Hops Lbs."
-msgstr "32. Lúpulo: produção"
-
-#: Form/form_ca.xml.h:162
-msgid "HayQty"
-msgstr "FenoQuantidade"
-
-#: Form/form_ca.xml.h:163
-msgid "33. Hay, Bundles or Tons"
-msgstr "33. Feno: fardos, ou toneladas"
-
-#: Form/form_ca.xml.h:164
-msgid "FlaxLbs"
-msgstr "LinhoLbs"
-
-#: Form/form_ca.xml.h:165
-msgid "34. Flax or Hemp, Lbs."
-msgstr "34. Linho ou cânhamo: produção"
-
-#: Form/form_ca.xml.h:166
-msgid "TobaccoLbs"
-msgstr "TabacoLbs"
-
-#: Form/form_ca.xml.h:167
-msgid "35. Tobacco Lbs."
-msgstr "35. Tabaco: produção"
-
-#: Form/form_ca.xml.h:168
-msgid "WoolLbs."
-msgstr "LãLbs"
-
-#: Form/form_ca.xml.h:169
-msgid "36. Wool Lbs."
-msgstr "36. Lã: produção"
-
-#: Form/form_ca.xml.h:170
-msgid "Column37"
-msgstr "Coluna37"
-
-#: Form/form_ca.xml.h:171
-msgid "37."
-msgstr "37."
-
-#: Form/form_ca.xml.h:172
-msgid "Column38"
-msgstr "Coluna38"
-
-#: Form/form_ca.xml.h:173
-msgid "38."
-msgstr "38."
-
-#: Form/form_ca.xml.h:174
-msgid "Column39"
-msgstr "Coluna39"
-
-#: Form/form_ca.xml.h:175
-msgid "39."
-msgstr "39."
-
-#: Form/form_ca.xml.h:176
-msgid "MapleSugarLbs"
-msgstr "AçucarÁcer"
-
-#: Form/form_ca.xml.h:177
-msgid "40. Maple Sugar Lbs."
-msgstr "40. Açucar de ácer: produção"
-
-#: Form/form_ca.xml.h:178
-msgid "CiderGalls"
-msgstr "Cidra"
-
-#: Form/form_ca.xml.h:179
-msgid "41. Cider Galls."
-msgstr "41. Cidra: produção"
-
-#: Form/form_ca.xml.h:180
-msgid "ClothYards"
-msgstr "Tecido"
-
-#: Form/form_ca.xml.h:181
-msgid "42. Fulled Cloth Yards"
-msgstr "42. Tecido integral: produção"
-
-#: Form/form_ca.xml.h:182
-msgid "LinnenYards"
-msgstr "Linho (tecido)"
-
-#: Form/form_ca.xml.h:183
-msgid "43. Linnen - Yds."
-msgstr "43. Linho (tecido): produção"
-
-#: Form/form_ca.xml.h:184
-msgid "FlannelYds"
-msgstr "Flanela"
-
-#: Form/form_ca.xml.h:185
-msgid "44. Flannel - Yds."
-msgstr "44. Flanela: produção"
-
-#: Form/form_ca.xml.h:186
-msgid "Bulls"
-msgstr "Touros"
-
-#: Form/form_ca.xml.h:187
-msgid "45. Bulls, Oxen or Steers"
-msgstr "45. Touros, bois ou novilhos"
-
-#: Form/form_ca.xml.h:188 Form/form_us.xml.h:288 Form/form_us.xml.h:366
-msgid "Milch Cows"
-msgstr "Vacas leiteiras"
-
-#: Form/form_ca.xml.h:189
-msgid "46. Milch Cows"
-msgstr "46. Vacas leiteiras"
-
-#: Form/form_ca.xml.h:190
-msgid "Calves"
-msgstr "Vitelos"
-
-#: Form/form_ca.xml.h:191
-msgid "47. Calves or Heifers"
-msgstr "47. Vitelos ou novilhas"
-
-#: Form/form_ca.xml.h:192 Form/form_ca.xml.h:650 Form/form_us.xml.h:286
-#: Form/form_us.xml.h:364
-msgid "Horses"
-msgstr "Cavalos"
-
-#: Form/form_ca.xml.h:193
-msgid "48. Horses of all ages"
-msgstr "48. Cavalos de qualquer idade"
-
-#: Form/form_ca.xml.h:194 Form/form_ca.xml.h:656 Form/form_us.xml.h:291
-#: Form/form_us.xml.h:369
-msgid "Sheep"
-msgstr "Ovelhas"
-
-#: Form/form_ca.xml.h:195
-msgid "49. Sheep"
-msgstr "49. Ovelhas"
-
-#: Form/form_ca.xml.h:196 Form/form_ca.xml.h:658
-msgid "Pigs"
-msgstr "Porcos"
-
-#: Form/form_ca.xml.h:197
-msgid "50. Pigs"
-msgstr "50. Porcos"
-
-#: Form/form_ca.xml.h:198
-msgid "ButterLbs"
-msgstr "ManteigaLbs"
-
-#: Form/form_ca.xml.h:199
-msgid "51. Butter - Lbs."
-msgstr "51. Manteiga: produção"
-
-#: Form/form_ca.xml.h:200
-msgid "CheeseLbs"
-msgstr "QueijoLbs"
-
-#: Form/form_ca.xml.h:201
-msgid "52. Cheese - Lbs."
-msgstr "52. Queijo: produção"
-
-#: Form/form_ca.xml.h:202
-msgid "Beef"
-msgstr "Carne de vaca"
-
-#: Form/form_ca.xml.h:203
-msgid "53. Beef - Barrels or Cwts."
-msgstr "53. Carne de vaca: produção"
-
-#: Form/form_ca.xml.h:204
-msgid "Pork"
-msgstr "Carne de porco"
-
-#: Form/form_ca.xml.h:205
-msgid "54. Pork - Barrels or Cwts."
-msgstr "54. Carne de porco: produção"
-
-#: Form/form_ca.xml.h:206
-msgid "Fish"
-msgstr "Peixe"
-
-#: Form/form_ca.xml.h:207
-msgid "55. Quantity of Fish Cured"
-msgstr "55. Peixe curado: produção"
-
-#: Form/form_ca.xml.h:209
-msgid "56. Remarks"
-msgstr "56. Comentários"
-
-#: Form/form_ca.xml.h:219
-msgid "2. Profession, trade or occupation"
-msgstr "2. Profissão ou negócio"
-
-#: Form/form_ca.xml.h:222
-msgid "Married1851"
-msgstr "Casados1851"
-
-#: Form/form_ca.xml.h:223
-msgid "4. Married during the year"
-msgstr "4. Casados em 1851"
-
-#: Form/form_ca.xml.h:225
-msgid "5. Religion"
-msgstr "5. Religião"
-
-#: Form/form_ca.xml.h:227
-msgid "6. Residence, if out of limits"
-msgstr "6. Residência, se fora dos limites"
-
-#: Form/form_ca.xml.h:229
-msgid "7. Age next Birthday"
-msgstr "7. Idade no próximo aniversário"
-
-#: Form/form_ca.xml.h:231
-msgid "8. Sex: Male"
-msgstr "8. Sexo: masculino"
-
-#: Form/form_ca.xml.h:232
-msgid "SexFemail"
-msgstr "SexoFeminino"
-
-#: Form/form_ca.xml.h:233
-msgid "9. Sex:Female"
-msgstr "9. Sexo: feminino"
-
-#: Form/form_ca.xml.h:235
-msgid "10. Married or Single"
-msgstr "10. Casado ou solteiro"
-
-#: Form/form_ca.xml.h:236
-msgid "Widowers"
-msgstr "Viúvos"
-
-#: Form/form_ca.xml.h:237
-msgid "11. Widowers"
-msgstr "11. Viúvos"
-
-#: Form/form_ca.xml.h:238
-msgid "Widows"
-msgstr "Viúvas"
-
-#: Form/form_ca.xml.h:239
-msgid "12. Widows"
-msgstr "12. Viúvas"
-
-#: Form/form_ca.xml.h:241
-msgid "13. Coloured Persons, Mulato or Indians"
-msgstr "13. Indivíduos de cor: mulatos ou indianos"
-
-#: Form/form_ca.xml.h:242
-msgid "MemberMale"
-msgstr "MembroMasculino"
-
-#: Form/form_ca.xml.h:243
-msgid "14. Members: Male"
-msgstr "14. Membros: masculino"
-
-#: Form/form_ca.xml.h:244
-msgid "MemberFemale"
-msgstr "MembroFeminino"
-
-#: Form/form_ca.xml.h:245
-msgid "15. Members: Female"
-msgstr "15. Membros:feminino"
-
-#: Form/form_ca.xml.h:246
-msgid "NotMemberMale"
-msgstr "NãoMembroMasculino"
-
-#: Form/form_ca.xml.h:247
-msgid "16. Not Members: Male"
-msgstr "16. Não membros: masculino"
-
-#: Form/form_ca.xml.h:248
-msgid "NotMemberFemale"
-msgstr "NãoMembroFeminino"
-
-#: Form/form_ca.xml.h:249
-msgid "17. Not Members: Female"
-msgstr "17. Não membro: feminino"
-
-#: Form/form_ca.xml.h:250
-msgid "MemberAbsentMale"
-msgstr "MembroAusenteMasculino"
-
-#: Form/form_ca.xml.h:251
-msgid "18. Members Absent: Male"
-msgstr "18. Membros ausentes: masculino"
-
-#: Form/form_ca.xml.h:252
-msgid "MemberAbsentFemale"
-msgstr "MembroAusenteFeminino"
-
-#: Form/form_ca.xml.h:253
-msgid "19. Members Absent: Female"
-msgstr "19. Membros ausentes: feminino"
-
-#: Form/form_ca.xml.h:254 Form/form_ca.xml.h:334 Form/form_ca.xml.h:382
-#: Form/form_ca.xml.h:443 Form/form_ca.xml.h:747
-msgid "DeafDumb"
-msgstr "SurdoMudo"
-
-#: Form/form_ca.xml.h:255 Form/form_ca.xml.h:335
-msgid "20. Deaf and Dumb"
-msgstr "20. Surdos e mudos"
-
-#: Form/form_ca.xml.h:256 Form/form_ca.xml.h:336 Form/form_ca.xml.h:384
-#: Form/form_ca.xml.h:445 Form/form_ca.xml.h:745 Form/form_us.xml.h:479
-#: Form/form_us.xml.h:741 Form/form_us.xml.h:1081 Form/form_us.xml.h:1119
-#: Form/form_us.xml.h:1214 Form/form_us.xml.h:1416 Form/form_us.xml.h:1862
-#: Form/form_us.xml.h:2071 Form/form_us.xml.h:2105 Form/form_us.xml.h:2143
-#: Form/form_us.xml.h:2181 Form/form_us.xml.h:2219 Form/form_us.xml.h:2242
-#: Form/form_us.xml.h:2254 Form/form_us.xml.h:2266
-msgid "Blind"
-msgstr "Cego"
-
-#: Form/form_ca.xml.h:257 Form/form_ca.xml.h:337
-msgid "21. Blind"
-msgstr "21. Cegos"
-
-#: Form/form_ca.xml.h:258 Form/form_ca.xml.h:338 Form/form_ca.xml.h:386
-#: Form/form_ca.xml.h:447 Form/form_ca.xml.h:749
-msgid "Lunatic"
-msgstr "Lunáticos"
-
-#: Form/form_ca.xml.h:259
-msgid "22. Lunatics or Idiots"
-msgstr "22. Lunáticos"
-
-#: Form/form_ca.xml.h:261
-msgid "23. Attending School within the year: Male"
-msgstr "23. A estudar no ano: masculino"
-
-#: Form/form_ca.xml.h:263
-msgid "24. Attending School within the year: Female"
-msgstr "24. A estudar no ano: feminino"
-
-#: Form/form_ca.xml.h:264
-msgid "CantReadMale"
-msgstr "AnalfabetoMasculino"
-
-#: Form/form_ca.xml.h:265
-msgid "25. Persons over 20, who cannot read or write: Male"
-msgstr "25. Mais de 20 anos, analfabetos: masculino"
-
-#: Form/form_ca.xml.h:266
-msgid "CantReadFemale"
-msgstr "AnalfabetoFeminino"
-
-#: Form/form_ca.xml.h:267
-msgid "26. Persons over 20, who cannot read or write: Female"
-msgstr "26. Mais de 20 anos, analfabetos: feminino"
-
-#: Form/form_ca.xml.h:268
-msgid "Birth1860Male"
-msgstr "Nascidos1860Masculino"
-
-#: Form/form_ca.xml.h:269
-msgid "27. Births in 1860: Male"
-msgstr "27. Nascidos em 1860: masculino"
-
-#: Form/form_ca.xml.h:270
-msgid "Birth1860Female"
-msgstr "Nascidos 1860Feminino"
-
-#: Form/form_ca.xml.h:271
-msgid "28. Births in 1860: Female"
-msgstr "28. Nascidos em 1860: feminino"
-
-#: Form/form_ca.xml.h:272
-msgid "Death1860Male"
-msgstr "Falecidos1860Masculino"
-
-#: Form/form_ca.xml.h:273
-msgid "29. Deaths in 1860: Male"
-msgstr "29. Falecidos em 1860: masculino"
-
-#: Form/form_ca.xml.h:274
-msgid "Death1860Female"
-msgstr "Falecidos1860Feminino"
-
-#: Form/form_ca.xml.h:275
-msgid "30. Deaths in 1860: Female"
-msgstr "30. Falecidos em 1860: feminino"
-
-#: Form/form_ca.xml.h:277
-msgid "31. Age and cause of death"
-msgstr "31. Idade e causa de óbito"
-
-#: Form/form_ca.xml.h:279
-msgid "32. Houses: Brick, Stone, Frame, Log, etc."
-msgstr "32. Casas: tijolo, pedra, estrutura, madeira, etc."
-
-#: Form/form_ca.xml.h:281
-msgid "33. Houses: No. of Stories"
-msgstr "33. Casas: n.º de histórias"
-
-#: Form/form_ca.xml.h:283
-msgid "34. Houses: No. of families living in the house"
-msgstr "34. Casas: n.º de famílias ocupantes"
-
-#: Form/form_ca.xml.h:285
-msgid "35. Houses: Vacant"
-msgstr "35. Casas: vazias"
-
-#: Form/form_ca.xml.h:286
-msgid "HouseBeingBuilt"
-msgstr "CasaEmConstrução"
-
-#: Form/form_ca.xml.h:287
-msgid "36. Houses: Being built"
-msgstr "36. Casas: em construção"
-
-#: Form/form_ca.xml.h:291 Form/form_ca.xml.h:345 Form/form_ca.xml.h:393
-#: Form/form_ca.xml.h:453 Form/form_ca.xml.h:532 Form/form_ca.xml.h:618
-#: Form/form_ca.xml.h:664 Form/form_ca.xml.h:797
-msgid "SubDistrict"
-msgstr "SubDistrito"
-
-#: Form/form_ca.xml.h:296 Form/form_ca.xml.h:350 Form/form_ca.xml.h:399
-msgid "Vessels"
-msgstr "Vasos"
-
-#: Form/form_ca.xml.h:297 Form/form_ca.xml.h:351
-msgid "1. Vessels"
-msgstr "1. Vasos"
-
-#: Form/form_ca.xml.h:298 Form/form_ca.xml.h:352
-msgid "Shanties"
-msgstr "Choupanas"
-
-#: Form/form_ca.xml.h:299 Form/form_ca.xml.h:353
-msgid "2. Shanties"
-msgstr "2. Choupanas"
-
-#: Form/form_ca.xml.h:300 Form/form_ca.xml.h:354 Form/form_ca.xml.h:401
-msgid "HousesBeingBuilt"
-msgstr "CasasEmConstrução"
-
-#: Form/form_ca.xml.h:301
-msgid "3. Dwelling houses in construction"
-msgstr "3. Casas de habitação em construção"
-
-#: Form/form_ca.xml.h:303
-msgid "4. Dwelling houses unoccupied"
-msgstr "4. Casas de habitação vazias"
-
-#: Form/form_ca.xml.h:304 Form/form_ca.xml.h:358 Form/form_ca.xml.h:405
-#: Form/form_ca.xml.h:551
-msgid "HousesInhabited"
-msgstr "CasasVazias"
-
-#: Form/form_ca.xml.h:305
-msgid "5. Dwelling houses inhabited"
-msgstr "5. Casas de habitação desabitadas"
-
-#: Form/form_ca.xml.h:307
-msgid "6.Families"
-msgstr "6. Famílias"
-
-#: Form/form_ca.xml.h:309 Form/form_ca.xml.h:363
-msgid "7. Names"
-msgstr "7. Nomes"
-
-#: Form/form_ca.xml.h:310 Form/form_ca.xml.h:364 Form/form_ca.xml.h:411
-#: Form/form_ca.xml.h:466 Form/form_ca.xml.h:630 Form/form_ca.xml.h:679
-#: Form/form_ca.xml.h:767 Form/form_ca.xml.h:822 Form/form_us.xml.h:263
-#: Form/form_us.xml.h:339 Form/form_us.xml.h:416 Form/form_us.xml.h:438
-#: Form/form_us.xml.h:468 Form/form_us.xml.h:620 Form/form_us.xml.h:675
-#: Form/form_us.xml.h:715 Form/form_us.xml.h:760 Form/form_us.xml.h:802
-#: Form/form_us.xml.h:844 Form/form_us.xml.h:905 Form/form_us.xml.h:1072
-#: Form/form_us.xml.h:1108 Form/form_us.xml.h:1202 Form/form_us.xml.h:1255
-#: Form/form_us.xml.h:1318 Form/form_us.xml.h:1319 Form/form_us.xml.h:1407
-#: Form/form_us.xml.h:1428 Form/form_us.xml.h:1486 Form/form_us.xml.h:1500
-#: Form/form_us.xml.h:1519 Form/form_us.xml.h:1540 Form/form_us.xml.h:1561
-#: Form/form_us.xml.h:1583 Form/form_us.xml.h:1607 Form/form_us.xml.h:1626
-#: Form/form_us.xml.h:1640 Form/form_us.xml.h:1655 Form/form_us.xml.h:1683
-#: Form/form_us.xml.h:1851 Form/form_us.xml.h:1882 Form/form_us.xml.h:1904
-#: Form/form_us.xml.h:1933 Form/form_us.xml.h:1953 Form/form_us.xml.h:1967
-#: Form/form_us.xml.h:1986 Form/form_us.xml.h:2006 Form/form_us.xml.h:2097
-#: Form/form_us.xml.h:2135 Form/form_us.xml.h:2173 Form/form_us.xml.h:2211
-#: Form/form_us.xml.h:2333 Form/form_us.xml.h:2348 Form/form_us.xml.h:2376
-#: Form/form_us.xml.h:2436 Form/form_us.xml.h:2466 Form/form_us.xml.h:2490
-#: Form/form_gb.xml.h:9 Form/form_gb.xml.h:46 Form/form_gb.xml.h:242
-#: Form/form_gb.xml.h:265 Form/form_gb.xml.h:377 Form/form_gb.xml.h:586
-msgid "Sex"
-msgstr "Sexo"
-
-#: Form/form_ca.xml.h:311 Form/form_ca.xml.h:365
-msgid "8. Sex"
-msgstr "8. Sexo"
-
-#: Form/form_ca.xml.h:313 Form/form_ca.xml.h:367
-msgid "9. Age"
-msgstr "9. Idade"
-
-#: Form/form_ca.xml.h:314
-msgid "Birth1871"
-msgstr "Nascidos1871"
-
-#: Form/form_ca.xml.h:315 Form/form_ca.xml.h:369
-msgid "10. Born within last twelve months"
-msgstr "10. Nascidos nos últimos 12 meses"
-
-#: Form/form_ca.xml.h:317 Form/form_ca.xml.h:371 Form/form_ca.xml.h:420
-msgid "11. Country or Province of Birth"
-msgstr "11. País ou província de nascimento"
-
-#: Form/form_ca.xml.h:319 Form/form_ca.xml.h:373
-msgid "12. Religion"
-msgstr "12. Religião"
-
-#: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
-msgid "13. Origin"
-msgstr "13. Origem"
-
-#: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
-msgid "14. Profession, Occupation or Trade"
-msgstr "143. Profissão ou negócio"
-
-#: Form/form_ca.xml.h:325 Form/form_ca.xml.h:379
-msgid "15. Married or Widowed"
-msgstr "15. Casados ou viǘvos"
-
-#: Form/form_ca.xml.h:326
-msgid "Maried1871"
-msgstr "Casados1871"
-
-#: Form/form_ca.xml.h:327
-msgid "16. Married within last twelve months"
-msgstr "16. Casados nos últimos 12 meses"
-
-#: Form/form_ca.xml.h:328 Form/form_ca.xml.h:380
-msgid "Scholar"
-msgstr "Estudioso"
-
-#: Form/form_ca.xml.h:329
-msgid "17. Going to school"
-msgstr "17. Na escola"
-
-#: Form/form_ca.xml.h:330
-msgid "CantRead"
-msgstr "SemLer"
-
-#: Form/form_ca.xml.h:331
-msgid "18. Over 20 unable to read"
-msgstr "18. Mais de 20 anos e sem saber ler"
-
-#: Form/form_ca.xml.h:332
-msgid "CantWrite"
-msgstr "NãoEscreve"
-
-#: Form/form_ca.xml.h:333
-msgid "19. Over 20 unable to write"
-msgstr "19. Mais de 20 anos sem saber escrever"
-
-#: Form/form_ca.xml.h:339
-msgid "22. Unsound mind"
-msgstr "22. Mente perturbada"
-
-#: Form/form_ca.xml.h:341
-msgid "23. Date of Operations and Remarks"
-msgstr "23. Data das operações e observações"
-
-#: Form/form_ca.xml.h:355
-msgid "3. Houses in construction"
-msgstr "3. Casas em construção"
-
-#: Form/form_ca.xml.h:357
-msgid "4. Houses unoccupied"
-msgstr "4. Casas desocupadas"
-
-#: Form/form_ca.xml.h:359
-msgid "5. Houses inhabited"
-msgstr "5. Casas desabitadas"
-
-#: Form/form_ca.xml.h:361
-msgid "6. Families"
-msgstr "6. Famílias"
-
-#: Form/form_ca.xml.h:368
-msgid "Birth1881"
-msgstr "Nascidos1881"
-
-#: Form/form_ca.xml.h:381
-msgid "16. Going to school"
-msgstr "16. Na escola"
-
-#: Form/form_ca.xml.h:383
-msgid "17. Deaf and Dumb"
-msgstr "17. Surdos e mudos"
-
-#: Form/form_ca.xml.h:385
-msgid "18. Blind"
-msgstr "18. Cegos"
-
-#: Form/form_ca.xml.h:387
-msgid "19/ Unsound mind"
-msgstr "19. Mentes perturbadas"
-
-#: Form/form_ca.xml.h:389
-msgid "20. Date of Operations and Remarks"
-msgstr "20. Datas de operações e observações"
-
-#: Form/form_ca.xml.h:400
-msgid "1. Vessels and Shanties"
-msgstr "1. Vasos e choupanas"
-
-#: Form/form_ca.xml.h:402
-msgid "2. Houses in construction"
-msgstr "2. Casas em construção"
-
-#: Form/form_ca.xml.h:404
-msgid "3. Houses unoccupied"
-msgstr "3. Casas desocupadas"
-
-#: Form/form_ca.xml.h:406
-msgid "4. Houses inhabited"
-msgstr "4. Casas desabitadas"
-
-#: Form/form_ca.xml.h:408
-msgid "5. Families"
-msgstr "5. Famílias"
-
-#: Form/form_ca.xml.h:410
-msgid "6. Names"
-msgstr "6. Nomes"
-
-#: Form/form_ca.xml.h:412
-msgid "7. Sex"
-msgstr "7. Sexo"
-
-#: Form/form_ca.xml.h:414
-msgid "8. Age"
-msgstr "8. Idade"
-
-#: Form/form_ca.xml.h:416
-msgid "9. Married or Widowed"
-msgstr "9. Casados ou viúvos"
-
-#: Form/form_ca.xml.h:418
-msgid "10. Relationship to Head of Family"
-msgstr "10. Parentesco com o chefe de família"
-
-#: Form/form_ca.xml.h:422
-msgid "12. FrenchCanadian"
-msgstr "12. Canadiano-francês"
-
-#: Form/form_ca.xml.h:423
-msgid "BirthPlaceFather"
-msgstr "LocalNascimentoPai"
-
-#: Form/form_ca.xml.h:424
-msgid "13. Birth Place of Father"
-msgstr "13. Local de nascimento do pai"
-
-#: Form/form_ca.xml.h:425
-msgid "BirthPlaceMother"
-msgstr "LocalNascimentoMãe"
-
-#: Form/form_ca.xml.h:426
-msgid "14. Birth Place of Mother"
-msgstr "14. Local de nascimento da mãe"
-
-#: Form/form_ca.xml.h:428
-msgid "15. Religion"
-msgstr "15. Religião"
-
-#: Form/form_ca.xml.h:430
-msgid "16. Profession, Occupation or Trade"
-msgstr "16. Profissão ou negócio"
-
-#: Form/form_ca.xml.h:431 Form/form_ca.xml.h:496 Form/form_ca.xml.h:707
-#: Form/form_gb.xml.h:164 Form/form_gb.xml.h:293 Form/form_gb.xml.h:525
-msgid "Employer"
-msgstr "Empregador"
-
-#: Form/form_ca.xml.h:432
-msgid "17. Employers"
-msgstr "17. Empregadores"
-
-#: Form/form_ca.xml.h:433 Form/form_ca.xml.h:498 Form/form_ca.xml.h:709
-msgid "Employee"
-msgstr "Empregado"
-
-#: Form/form_ca.xml.h:434
-msgid "18. Wage Earner"
-msgstr "18. Empregado"
-
-#: Form/form_ca.xml.h:435
-msgid "Unemployed"
-msgstr "Desempregado"
-
-#: Form/form_ca.xml.h:436
-msgid "19. Unemployed during week preceding Census"
-msgstr "19. Desempregados na semana anterior ao censo"
-
-#: Form/form_ca.xml.h:437
-msgid "Employees"
-msgstr "Empregados"
-
-#: Form/form_ca.xml.h:438
-msgid "20. Employer to state average number of hands employed during year"
-msgstr ""
-"20. Empregador para declarar o número médio de trabalhadores empregados "
-"durante o ano"
-
-#: Form/form_ca.xml.h:439 Form/form_ca.xml.h:846
-msgid "CanRead"
-msgstr "SabeLer"
-
-#: Form/form_ca.xml.h:440
-msgid "21. Instruction: Read"
-msgstr "21. Instrução: lê"
-
-#: Form/form_ca.xml.h:441 Form/form_ca.xml.h:848
-msgid "CanWrite"
-msgstr "SabeEscrever"
-
-#: Form/form_ca.xml.h:442
-msgid "22. Instruction: Write"
-msgstr "22. Instrução: escreve"
-
-#: Form/form_ca.xml.h:444
-msgid "23. Deaf and Dumb"
-msgstr "23. Surdos e mudos"
-
-#: Form/form_ca.xml.h:446
-msgid "24. Blind"
-msgstr "24. Cegos"
-
-#: Form/form_ca.xml.h:448
-msgid "25. Unsound mind"
-msgstr "25. Mentes perturbadas"
-
-#: Form/form_ca.xml.h:449 Form/form_ca.xml.h:528 Form/form_ca.xml.h:660
-#: Form/form_ca.xml.h:753 Form/form_ca.xml.h:793
-msgid "SubTitle"
-msgstr "Subtítulo"
-
-#: Form/form_ca.xml.h:454 Form/form_ca.xml.h:533 Form/form_ca.xml.h:665
-msgid "PollSub"
-msgstr "SubSond"
-
-#: Form/form_ca.xml.h:460 Form/form_ca.xml.h:671 Form/form_ca.xml.h:804
-msgid "House"
-msgstr "Casa"
-
-#: Form/form_ca.xml.h:461 Form/form_ca.xml.h:672
-msgid "1. Dwelling house"
-msgstr "1. Casa de habitação"
-
-#: Form/form_ca.xml.h:463 Form/form_ca.xml.h:674
-msgid "2. Family or household"
-msgstr "2. Família ou agregado"
-
-#: Form/form_ca.xml.h:465 Form/form_ca.xml.h:676
-msgid "3. Name of each person in family"
-msgstr "3. Nome de cada indivíduo na família"
-
-#: Form/form_ca.xml.h:467 Form/form_ca.xml.h:631 Form/form_ca.xml.h:768
-msgid "4. Sex"
-msgstr "4. Sexo"
-
-#: Form/form_ca.xml.h:468
-msgid "Colour"
-msgstr "Cor"
-
-#: Form/form_ca.xml.h:469
-msgid "5. Colour"
-msgstr "5. Cor"
-
-#: Form/form_ca.xml.h:471 Form/form_ca.xml.h:682
-msgid "6. Relation to head of family"
-msgstr "6. Parentesco com o chefe de família"
-
-#: Form/form_ca.xml.h:473 Form/form_ca.xml.h:684
-msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr "7. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
-
-#: Form/form_ca.xml.h:474 Form/form_ca.xml.h:685 Form/form_ca.xml.h:773
-msgid "BirthMonth"
-msgstr "MêsNascimento"
-
-#: Form/form_ca.xml.h:475
-msgid "8. Month and Date of Birth"
-msgstr "8. Mês e data de nascimento"
-
-#: Form/form_ca.xml.h:476 Form/form_ca.xml.h:687
-msgid "BirthYear"
-msgstr "AnoNascimento"
-
-#: Form/form_ca.xml.h:477 Form/form_ca.xml.h:688
-msgid "9. Year of birth"
-msgstr "9. Ano de nascimento"
-
-#: Form/form_ca.xml.h:479 Form/form_ca.xml.h:690
-msgid "10. Age at last birthday"
-msgstr "10. Idade ao último aniversário"
-
-#: Form/form_ca.xml.h:481 Form/form_ca.xml.h:692
-msgid "11. Country or place of birth"
-msgstr "11. País ou local de nascimento"
-
-#: Form/form_ca.xml.h:483 Form/form_ca.xml.h:694
-msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr "12. Ano de imigração para o Canadá, se imigrou"
-
-#: Form/form_ca.xml.h:485 Form/form_ca.xml.h:696
-msgid "13. Year of naturalization, if formerly an alien"
-msgstr "13. Ano de naturalização, se era estrangeiro"
-
-#: Form/form_ca.xml.h:486 Form/form_ca.xml.h:697 Form/form_ca.xml.h:779
-#: Form/form_ca.xml.h:838 Form/form_us.xml.h:904 Form/form_us.xml.h:979
-#: Form/form_us.xml.h:1139 Form/form_us.xml.h:1147 Form/form_us.xml.h:2358
-#: Form/form_us.xml.h:2364 Form/form_us.xml.h:2437 Form/form_us.xml.h:2467
-#: Form/form_us.xml.h:2561
-msgid "Race"
-msgstr "Raça"
-
-#: Form/form_ca.xml.h:487 Form/form_ca.xml.h:698
-msgid "14. Racial or tribal origin"
-msgstr "14. Origem racial ou tribal"
-
-#: Form/form_ca.xml.h:488 Form/form_ca.xml.h:699 Form/form_ca.xml.h:836
-#: Form/form_fr.xml.h:7 Form/form_fr.xml.h:15 Form/form_fr.xml.h:23
-#: Form/form_fr.xml.h:31 Form/form_fr.xml.h:79 Form/form_fr.xml.h:107
-#: Form/form_fr.xml.h:115 Form/form_fr.xml.h:127 Form/form_fr.xml.h:134
-#: Form/form_fr.xml.h:145 Form/form_fr.xml.h:151 Form/form_fr.xml.h:160
-#: Form/form_fr.xml.h:168 Form/form_fr.xml.h:177 Form/form_fr.xml.h:186
-#: Form/form_fr.xml.h:195 Form/form_fr.xml.h:204 Form/form_fr.xml.h:215
-#: Form/form_gb.xml.h:226 Form/form_gb.xml.h:247 Form/form_gb.xml.h:359
-#: Form/form_gb.xml.h:382
-msgid "Nationality"
-msgstr "Nacionalidade"
-
-#: Form/form_ca.xml.h:489 Form/form_ca.xml.h:700
-msgid "15. Nationality"
-msgstr "15. Nacionalidade"
-
-#: Form/form_ca.xml.h:491 Form/form_ca.xml.h:702
-msgid "16. Religion"
-msgstr "16. Religião"
-
-#: Form/form_ca.xml.h:493
-msgid "17. Profession, occupation, trade or means of living of each person"
-msgstr "17. Profissão, negócio ou meios de subsistência"
-
-#: Form/form_ca.xml.h:494
-msgid "OwnMeans"
-msgstr "MeiosPróprios"
-
-#: Form/form_ca.xml.h:495
-msgid "18. Living on own means"
-msgstr "18. Vivem por conta própria"
-
-#: Form/form_ca.xml.h:497 Form/form_ca.xml.h:708
-msgid "19. Employer"
-msgstr "19. Empregador"
-
-#: Form/form_ca.xml.h:499 Form/form_ca.xml.h:710
-msgid "20. Employee"
-msgstr "20. Empregado"
-
-#: Form/form_ca.xml.h:500 Form/form_ca.xml.h:711
-msgid "SelfEmployed"
-msgstr "Empresário"
-
-#: Form/form_ca.xml.h:501 Form/form_ca.xml.h:712
-msgid "21. Working on own account"
-msgstr "21. Trabalha por conta pŕopria"
-
-#: Form/form_ca.xml.h:502 Form/form_ca.xml.h:713
-msgid "WhereEmployed"
-msgstr "OndeTrabalha"
-
-#: Form/form_ca.xml.h:503
-msgid "22. Working at trade in factory or in home"
-msgstr "22. Trabalha na empresa, fábrica, ou em casa"
-
-#: Form/form_ca.xml.h:504
-msgid "MonthsFactory"
-msgstr "MesesFábrica"
-
-#: Form/form_ca.xml.h:505
-msgid "23. Months employed at trade in factory"
-msgstr "23. Meses de trabalho na empresa ou fábrica"
-
-#: Form/form_ca.xml.h:506
-msgid "MonthsHome"
-msgstr "Meses casa"
-
-#: Form/form_ca.xml.h:507
-msgid "24. Months employed at trade in home"
-msgstr "24. Meses de trabalho em casa"
-
-#: Form/form_ca.xml.h:508
-msgid "MonthsOther"
-msgstr "MesesOutros"
-
-#: Form/form_ca.xml.h:509
-msgid "25. Months employed in other occupation than trace in factory or home"
-msgstr "25. Meses de trabalho noutra profissão"
-
-#: Form/form_ca.xml.h:510 Form/form_ca.xml.h:723
-msgid "EarningsOccupation"
-msgstr "GanhosProfissionais"
-
-#: Form/form_ca.xml.h:511
-msgid "26. Earnings from occupation or trade"
-msgstr "26. Ganhos profissionais ou empresariais"
-
-#: Form/form_ca.xml.h:512 Form/form_ca.xml.h:725
-msgid "EarningsOther"
-msgstr "GanhosOutros"
-
-#: Form/form_ca.xml.h:513
-msgid "27. Extra earning (From other than chief occupation or trade)"
-msgstr "27. Ganhos extra (outras fontes de rendimento)"
-
-#: Form/form_ca.xml.h:514 Form/form_ca.xml.h:735 Form/form_ca.xml.h:783
-msgid "SchoolMonths"
-msgstr "MesesEscola"
-
-#: Form/form_ca.xml.h:515
-msgid "28. Months at school in 1910"
-msgstr "28. Meses na escola em 1910"
-
-#: Form/form_ca.xml.h:516 Form/form_ca.xml.h:737 Form/form_ca.xml.h:785
-#: Form/form_us.xml.h:1414 Form/form_us.xml.h:2103 Form/form_us.xml.h:2141
-#: Form/form_us.xml.h:2179 Form/form_us.xml.h:2217
-msgid "Read"
-msgstr "Ler"
-
-#: Form/form_ca.xml.h:517
-msgid "29. Can read"
-msgstr "29. Sabe ler"
-
-#: Form/form_ca.xml.h:518 Form/form_ca.xml.h:739 Form/form_ca.xml.h:787
-#: Form/form_us.xml.h:1415 Form/form_us.xml.h:2104 Form/form_us.xml.h:2142
-#: Form/form_us.xml.h:2180 Form/form_us.xml.h:2218
-msgid "Write"
-msgstr "Escrever"
-
-#: Form/form_ca.xml.h:519
-msgid "30. Can write"
-msgstr "30. Sabe escrever"
-
-#: Form/form_ca.xml.h:520 Form/form_ca.xml.h:840
-msgid "SpeakEnglish"
-msgstr "FalaInglês"
-
-#: Form/form_ca.xml.h:521
-msgid "31. Can speak English"
-msgstr "31. Sabe falar inglês"
-
-#: Form/form_ca.xml.h:522 Form/form_ca.xml.h:842
-msgid "SpeakFrench"
-msgstr "FalaFrancês"
-
-#: Form/form_ca.xml.h:523
-msgid "32. Can speak French"
-msgstr "32. Sabe falar francês"
-
-#: Form/form_ca.xml.h:525
-msgid "33. Mother tongue (If spoken)"
-msgstr "33. Língua-mãe (se falada)"
-
-#: Form/form_ca.xml.h:526 Form/form_ca.xml.h:791
-msgid "Infirmities"
-msgstr "Doenças"
-
-#: Form/form_ca.xml.h:527
-msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr "34. Doenças: a. surdo e mudo; b. cego; c. mente perturbada"
-
-#: Form/form_ca.xml.h:538
-msgid "Name from Schedule 1"
-msgstr "Nome da agenda 1"
-
-#: Form/form_ca.xml.h:540
-msgid "Line on Schedule 2"
-msgstr "Linha na agenda 2"
-
-#: Form/form_ca.xml.h:541
-msgid "PageRef"
-msgstr "RefPágina"
-
-#: Form/form_ca.xml.h:542
-msgid "2. Page from Schedule 1"
-msgstr "2. Página da agenda 1"
-
-#: Form/form_ca.xml.h:543
-msgid "LineRef"
-msgstr "RefLinha"
-
-#: Form/form_ca.xml.h:544
-msgid "3. Line from Schedule 1"
-msgstr "3. Linha da agenda 1"
-
-#: Form/form_ca.xml.h:546
-msgid "3. Place of Habitation"
-msgstr "3. Local de habitação"
-
-#: Form/form_ca.xml.h:547
-msgid "HousesConst"
-msgstr "CasasEmConstrução"
-
-#: Form/form_ca.xml.h:548
-msgid "4. Houses: In construction"
-msgstr "4. Casas: em construção"
-
-#: Form/form_ca.xml.h:550
-msgid "5. Houses: Vacant"
-msgstr "5. Casas: vazias"
-
-#: Form/form_ca.xml.h:552
-msgid "6. Houses: Inhabited"
-msgstr "6. Casas: desabitadas"
-
-#: Form/form_ca.xml.h:553 Form/form_us.xml.h:789 Form/form_us.xml.h:832
-#: Form/form_us.xml.h:891
-msgid "Institution"
-msgstr "Instituição"
-
-#: Form/form_ca.xml.h:554
-msgid "7. Institution: Special or legal name"
-msgstr "7. Instituição: nome especial ou legal"
-
-#: Form/form_ca.xml.h:555
-msgid "Buildings"
-msgstr "Imóveis"
-
-#: Form/form_ca.xml.h:556
-msgid "8. Institution: Number of buildings"
-msgstr "8. Instituição: número de imóveis"
-
-#: Form/form_ca.xml.h:558
-msgid "9. Number of families in house or institution"
-msgstr "9. N.º de famílias na casa ou instituição"
-
-#: Form/form_ca.xml.h:559
-msgid "Rooms"
-msgstr "Divisões"
-
-#: Form/form_ca.xml.h:560
-msgid "10. Number of rooms in house or institution for each famiy"
-msgstr "10. N.º de divisões para cada família na casa ou instituição"
-
-#: Form/form_ca.xml.h:561
-msgid "Inmates"
-msgstr "Prisioneiros"
-
-#: Form/form_ca.xml.h:562
-msgid "11. Number of inmates in institution"
-msgstr "11. N.º de prisioneiros na instituição"
-
-#: Form/form_ca.xml.h:563
-msgid "OwnedAcres"
-msgstr "HectaresPossuídos"
-
-#: Form/form_ca.xml.h:564
-msgid "12. Real Estate Owned: Grand total of acres"
-msgstr "12. Imobiliário próprio: total de hectares"
-
-#: Form/form_ca.xml.h:565
-msgid "OwnedLots"
-msgstr "LotesPróprios"
-
-#: Form/form_ca.xml.h:566
-msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr "13. Imobiliário próprio: n.º de lotes na localidade"
-
-#: Form/form_ca.xml.h:567
-msgid "OwnedHouses"
-msgstr "CasasPróprias"
-
-#: Form/form_ca.xml.h:568
-msgid "14. Real Estate Owned: Number of dwelling houses"
-msgstr "14. Imobiliário próprio: n.º de casas de habitação"
-
-#: Form/form_ca.xml.h:569
-msgid "OwnedStores"
-msgstr "LojasPróprias"
-
-#: Form/form_ca.xml.h:570
-msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr "15. Imobiliário próprio: n.º de lojas, armazéns, etc."
-
-#: Form/form_ca.xml.h:571
-msgid "OwnedBars"
-msgstr "CeleirosPróprios"
-
-#: Form/form_ca.xml.h:572
-msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
-msgstr "16. Imobiliário próprio: n.º de celeiros, estábulos, etc."
-
-#: Form/form_ca.xml.h:573
-msgid "OwnedSilos"
-msgstr "SilosPróprios"
-
-#: Form/form_ca.xml.h:574
-msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr "17. Imobiliário próprio: n.º de silos e capacidade em pés cúbicos"
-
-#: Form/form_ca.xml.h:575
-msgid "OwnedFactories"
-msgstr "FábricasPróprias"
-
-#: Form/form_ca.xml.h:576
-msgid "18. Real Estate Owned: Number of manufacturing establishments"
-msgstr "18. Imobiliário próprio: n.º de fábricas"
-
-#: Form/form_ca.xml.h:577
-msgid "LeasedAcres"
-msgstr "HectaresArrendados"
-
-#: Form/form_ca.xml.h:578
-msgid "19. Real Estate Leased: Grand total of acres"
-msgstr "19. Imobiliário próprio: total de hectares"
-
-#: Form/form_ca.xml.h:579
-msgid "LeasedLots"
-msgstr "LotesArrendados"
-
-#: Form/form_ca.xml.h:580
-msgid "20. Real Estate Leased: Number of town or village lots"
-msgstr "20. Imobiliário arrendado: n.º de lotes na localidade"
-
-#: Form/form_ca.xml.h:581
-msgid "LeasedHouses"
-msgstr "CasasArrendadas"
-
-#: Form/form_ca.xml.h:582
-msgid "21. Real Estate Leased: Number of dwelling houses"
-msgstr "21. Imobiliário arrendado: n.º de casas de habitação"
-
-#: Form/form_ca.xml.h:583
-msgid "LeasedStores"
-msgstr "LojasArrendadas"
-
-#: Form/form_ca.xml.h:584
-msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr "22. Imobiliário arrendado: n.º de lojas, armazéns, etc."
-
-#: Form/form_ca.xml.h:585
-msgid "LeasedBarns"
-msgstr "CeleirosArrendados"
-
-#: Form/form_ca.xml.h:586
-msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
-msgstr "23. Imobiliário arrendado: n.º de celeiros, estábulos, e outros anexos"
-
-#: Form/form_ca.xml.h:587
-msgid "LeasedSilos"
-msgstr "SilosArrendados"
-
-#: Form/form_ca.xml.h:588
-msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
-msgstr "24. Imobiliário arrencado: n.º de silos e capacidade em pés cúbicos"
-
-#: Form/form_ca.xml.h:589
-msgid "LeasedFactories"
-msgstr "Fábricas arrendadas"
-
-#: Form/form_ca.xml.h:590
-msgid "25. Real Estate Leased: Number of manufacturing establishments"
-msgstr "25.Imobiliário arrendado: n.º de fábricas"
-
-#: Form/form_ca.xml.h:591
-msgid "Denomination"
-msgstr "Denominação"
-
-#: Form/form_ca.xml.h:592
-msgid "26. Church or place of worship: Religious denomination"
-msgstr "26. Igreja ou local de culto: denominação religiosa"
-
-#: Form/form_ca.xml.h:593
-msgid "Communicants"
-msgstr "Comunicantes"
-
-#: Form/form_ca.xml.h:594
-msgid "27. Church or place of worship: Number of communicants"
-msgstr "27. Igreja ou local de culto: n.º de comunicantes"
-
-#: Form/form_ca.xml.h:595
-msgid "Seating"
-msgstr "Sentados"
-
-#: Form/form_ca.xml.h:596
-msgid "28. Church or place of worship: Seating capacity"
-msgstr "28. Igreja ou local de culto: lugares sentados"
-
-#: Form/form_ca.xml.h:597
-msgid "SSDenomination"
-msgstr "DenominaçãoCatequese"
-
-#: Form/form_ca.xml.h:598
-msgid "29. Sunday School: Religious Denomination"
-msgstr "29. Catequese: denominação religiosa"
-
-#: Form/form_ca.xml.h:599
-msgid "SSTeachers"
-msgstr "CatequeseProfessores"
-
-#: Form/form_ca.xml.h:600
-msgid "30. Sunday School: Number of officers and teachers"
-msgstr "30. Catequese: n.º de oficiantes e professores"
-
-#: Form/form_ca.xml.h:601
-msgid "SSScholars"
-msgstr "CatequeseEstudiosos"
-
-#: Form/form_ca.xml.h:602
-msgid "31. Sunday School: Number of Scholars"
-msgstr "31. Catequese: n.º de estudiosos"
-
-#: Form/form_ca.xml.h:603
-msgid "SchoolRooms"
-msgstr "SalasAula"
-
-#: Form/form_ca.xml.h:604
-msgid "32. School: Number of rooms"
-msgstr "32. Escola: n.º de salas"
-
-#: Form/form_ca.xml.h:605
-msgid "SchoolTeachers"
-msgstr "Professores"
-
-#: Form/form_ca.xml.h:606
-msgid "33. School: Number of teachers"
-msgstr "33. Escola: n.º de professores"
-
-#: Form/form_ca.xml.h:607
-msgid "SchoolStudents"
-msgstr "Alunos"
-
-#: Form/form_ca.xml.h:608
-msgid "34. School: Number of Scholars"
-msgstr "34. Escola: n.º de alunos"
-
-#: Form/form_ca.xml.h:609
-msgid "DateVisit"
-msgstr "DataVisita"
-
-#: Form/form_ca.xml.h:610
-msgid "35. Date of visit"
-msgstr "35. Data da visita"
-
-#: Form/form_ca.xml.h:611
-msgid "Reason"
-msgstr "Motivo"
-
-#: Form/form_ca.xml.h:612
-msgid "36. The reason, if not enumerated on first visit"
-msgstr "36. O motivo, se não descrito na 1ª visita"
-
-#: Form/form_ca.xml.h:613
-msgid "DateEnum"
-msgstr "DataDesc"
-
-#: Form/form_ca.xml.h:614
-msgid "37. Date when enumerated"
-msgstr "37. Data de descrição"
-
-#: Form/form_ca.xml.h:625
-msgid "1. No. of family in order of visitation"
-msgstr "1. N.º da família por ordem de visita"
-
-#: Form/form_ca.xml.h:627
-msgid "2. Name of each person in the family"
-msgstr "2. Nome de cada indivíduo na família"
-
-#: Form/form_ca.xml.h:629
-msgid "3.Relation to head of family"
-msgstr "3. Parentesco com o chefe de família"
-
-#: Form/form_ca.xml.h:633
-msgid "5. Married, single, widowed or divorced"
-msgstr "5. Casado, solteiro, viúvo, ou divorciado"
-
-#: Form/form_ca.xml.h:635
-msgid "6. Age"
-msgstr "6. Idade"
-
-#: Form/form_ca.xml.h:637
-msgid "7. Country or place of birth"
-msgstr "7. País ou local de nascimento"
-
-#: Form/form_ca.xml.h:639
-msgid "8. Year of immigration to Canada"
-msgstr "8. Ano de imigração para o Canadá"
-
-#: Form/form_ca.xml.h:640
-msgid "PostOffice"
-msgstr "PostoCorreios"
-
-#: Form/form_ca.xml.h:641
-msgid "9. Post office address"
-msgstr "9. Endereço do posto de correios"
-
-#: Form/form_ca.xml.h:642 Form/form_us.xml.h:1252
-msgid "Section"
-msgstr "Secção"
-
-#: Form/form_ca.xml.h:643
-msgid "10. Location: Section"
-msgstr "10. Local: secção"
-
-#: Form/form_ca.xml.h:645
-msgid "11. Location: Township"
-msgstr "11. Local: localidade"
-
-#: Form/form_ca.xml.h:647
-msgid "12. Location: Range"
-msgstr "12. Local: sector"
-
-#: Form/form_ca.xml.h:648 Form/form_ca.xml.h:816
-msgid "Meridian"
-msgstr "Meridiano"
-
-#: Form/form_ca.xml.h:649
-msgid "13. Location: Meridian"
-msgstr "13. Local: meridiano"
-
-#: Form/form_ca.xml.h:651
-msgid "14. Livestock: Horses, all ages"
-msgstr "14. Gado: cavalos, todas as idades"
-
-#: Form/form_ca.xml.h:652
-msgid "Cows"
-msgstr "Vacas"
-
-#: Form/form_ca.xml.h:653
-msgid "15. Livestock: Milch cows"
-msgstr "15. Gado: vacas leiteiras"
-
-#: Form/form_ca.xml.h:655
-msgid "16. Other horned or meat cattle, all ages"
-msgstr "16. Outro gado bovino, todas as idades"
-
-#: Form/form_ca.xml.h:657
-msgid "17. Sheep and lambs, all ages"
-msgstr "17. Ovelhas e borregos, todas as idades"
-
-#: Form/form_ca.xml.h:659
-msgid "18. Hogs and pigs, all ages"
-msgstr "18. Porcos, todas as idades"
-
-#: Form/form_ca.xml.h:678
-msgid "4. Place of habitation"
-msgstr "4. Local de habitação"
-
-#: Form/form_ca.xml.h:680
-msgid "5. Sex"
-msgstr "5. Sexo"
-
-#: Form/form_ca.xml.h:686
-msgid "8. Month of birth"
-msgstr "8. Mês de nascimento"
-
-#: Form/form_ca.xml.h:704
-msgid "16. Chief occupation or trade"
-msgstr "16. Profissão ou negócio principais"
-
-#: Form/form_ca.xml.h:705
-msgid "OtherEmployment"
-msgstr "OutroEmprego"
-
-#: Form/form_ca.xml.h:706
-msgid "18. Employment other than at chief trade or occupation, if any"
-msgstr "18. Outro emprego além do principal, se existir"
-
-#: Form/form_ca.xml.h:714
-msgid "22. State where person employed"
-msgstr "22. estado onde está empregado"
-
-#: Form/form_ca.xml.h:715
-msgid "WeeksOccupation"
-msgstr "SemanasProfissão"
-
-#: Form/form_ca.xml.h:716
-msgid "23. Weeks employed in 1910 at chief occupation or trade"
-msgstr "23. Semanas no emprego principal em 1910"
-
-#: Form/form_ca.xml.h:717
-msgid "WeeksOther"
-msgstr "SemanasOutro"
-
-#: Form/form_ca.xml.h:718
-msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
-msgstr "24. Semanas noutro emprego em 1910"
-
-#: Form/form_ca.xml.h:719
-msgid "HoursOccupation"
-msgstr "HorasProfissão"
-
-#: Form/form_ca.xml.h:720
-msgid "25. Hours of working time per week at chief occupation"
-msgstr "25. Horas semanais de trabalho no emprego principal"
-
-#: Form/form_ca.xml.h:721
-msgid "HoursOther"
-msgstr "HorasOutro"
-
-#: Form/form_ca.xml.h:722
-msgid "26. Hours of working time per week at other occupation, if any"
-msgstr "26. Horas semanais de trabalho noutro emprego, se existir"
-
-#: Form/form_ca.xml.h:724
-msgid "27. Total earnings in 1910 from chief occupation or trade"
-msgstr "27. Ganhos totais do emprego principal em 1910"
-
-#: Form/form_ca.xml.h:726
-msgid "28. Total earnings in 1910 from other than chief occupation or trade"
-msgstr "28. Ganhos totais com outros empregos em 1910"
-
-#: Form/form_ca.xml.h:727
-msgid "Wages"
-msgstr "Salários"
-
-#: Form/form_ca.xml.h:728
-msgid "29. Rate of earnings per hour when employed by the hour-Cents"
-msgstr "29. Taxa de ganhos por hora quando empregado por hour-Cents"
-
-#: Form/form_ca.xml.h:729
-msgid "InsuranceLife"
-msgstr "SeguroVida"
-
-#: Form/form_ca.xml.h:730
-msgid "30. Insurance: Upon life"
-msgstr "30. Seguro: vida"
-
-#: Form/form_ca.xml.h:731
-msgid "InsuranceAccident"
-msgstr "SeguroAcidente"
-
-#: Form/form_ca.xml.h:732
-msgid "31. Insurance: Against accident or illness"
-msgstr "31. Seguro: acidentes ou doença"
-
-#: Form/form_ca.xml.h:733
-msgid "InsuranceCost"
-msgstr "SeguroCusto"
-
-#: Form/form_ca.xml.h:734
-msgid "32. Insurance: Cost of insurance in census year"
-msgstr "32. Seguro: custo dos seguros no ano do censo"
-
-#: Form/form_ca.xml.h:736
-msgid "33. Months at school in 1910"
-msgstr "33. Meses na escola em 1910"
-
-#: Form/form_ca.xml.h:738
-msgid "34. Can Read"
-msgstr "34. Sabe ler"
-
-#: Form/form_ca.xml.h:740
-msgid "35. Can Write"
-msgstr "35. Sabe escrever"
-
-#: Form/form_ca.xml.h:742
-msgid "36. Language commonly spoken"
-msgstr "36. Linguagem falada habitual"
-
-#: Form/form_ca.xml.h:743
-msgid "SchoolCost"
-msgstr "CustoEscola"
-
-#: Form/form_ca.xml.h:744
-msgid ""
-"37. Cost of education in 1910 for persons over 16 years of age at College, "
-"Convent or University"
-msgstr ""
-"37. Custo da educação em 1910 para indivíduos acima de 16 anos em "
-"Faculdades, Conventos ou Universidades"
-
-#: Form/form_ca.xml.h:746
-msgid "38. Blind"
-msgstr "39. Cegos"
-
-#: Form/form_ca.xml.h:748
-msgid "39. Deaf and dumb"
-msgstr "39. Surdos e mudos"
-
-#: Form/form_ca.xml.h:750
-msgid "40. Crazy or lunatic"
-msgstr "40. Lunáticos"
-
-#: Form/form_ca.xml.h:751 Form/form_us.xml.h:481 Form/form_us.xml.h:1083
-#: Form/form_us.xml.h:1121 Form/form_us.xml.h:1216 Form/form_us.xml.h:1864
-#: Form/form_us.xml.h:2073
-msgid "Idiotic"
-msgstr "Idiota"
-
-#: Form/form_ca.xml.h:752
-msgid "41. Idiotic or silly"
-msgstr "40. Idiotas ou patetas"
-
-#: Form/form_ca.xml.h:761
-msgid "1. House"
-msgstr "1. Casa"
-
-#: Form/form_ca.xml.h:762
-msgid "Dwelling house"
-msgstr "Casa de habitação"
-
-#: Form/form_ca.xml.h:763
-msgid "2. Family"
-msgstr "2. Família"
-
-#: Form/form_ca.xml.h:764
-msgid "Family or household"
-msgstr "Família ou agregado familiar"
-
-#: Form/form_ca.xml.h:765
-msgid "3. Name"
-msgstr "3. Nome"
-
-#: Form/form_ca.xml.h:766
-msgid "Name of each person in family"
-msgstr "Nome de cada indivíduo na família"
-
-#: Form/form_ca.xml.h:770
-msgid "5. Relation to head of family"
-msgstr "5. Parentesco com o chefe de família"
-
-#: Form/form_ca.xml.h:772
-msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr "6. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
-
-#: Form/form_ca.xml.h:774
-msgid "7. Month of birth"
-msgstr "7. Mês de nascimento"
-
-#: Form/form_ca.xml.h:776
-msgid "8. Age at last birthday"
-msgstr "8. Idade ao último aniversário"
-
-#: Form/form_ca.xml.h:778
-msgid "9. Country or place of birth"
-msgstr "9. País ou local de nascimento"
-
-#: Form/form_ca.xml.h:780
-msgid "10. Racial or tribal origin"
-msgstr "10. Origem racial ou tribal"
-
-#: Form/form_ca.xml.h:782
-msgid "11. Religion"
-msgstr "11. Religião"
-
-#: Form/form_ca.xml.h:784
-msgid "12. Months at school in 1910"
-msgstr "12. Meses na escola em 1910"
-
-#: Form/form_ca.xml.h:786
-msgid "13. Can Read"
-msgstr "13. Sabe ler"
-
-#: Form/form_ca.xml.h:788
-msgid "14. Can Write"
-msgstr "14. Sabe escrever"
-
-#: Form/form_ca.xml.h:790
-msgid "15. Language commonly spoken"
-msgstr "15. Linguagem falada habitual"
-
-#: Form/form_ca.xml.h:792
-msgid ""
-"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
-"lunatic"
-msgstr ""
-"16. Enfermidades: a. cegos; b. surdos e mudos; c. idiotas ou patetas; d. "
-"lunáticos"
-
-#: Form/form_ca.xml.h:805
-msgid "1. Dwelling House"
-msgstr "1. Casa de habitação"
-
-#: Form/form_ca.xml.h:807
-msgid "2. Family, Household or Institution"
-msgstr "2. Família, agregado ou instituição"
-
-#: Form/form_ca.xml.h:809
-msgid "3. Name of each person in family, household or institution"
-msgstr "3. Nome de cada indivíduo na família, agregado ou instituição"
-
-#: Form/form_ca.xml.h:810
-msgid "MilitaryService"
-msgstr "ServiçoMilitar"
-
-#: Form/form_ca.xml.h:811
-msgid "4. Military Service"
-msgstr "4. Serviço militar"
-
-#: Form/form_ca.xml.h:813
-msgid "5. Place of Habitation: Township"
-msgstr "5. Local de habitação: localidade"
-
-#: Form/form_ca.xml.h:815
-msgid "6. Place of Habitation: Range"
-msgstr "6. Local de habitação: sector"
-
-#: Form/form_ca.xml.h:817
-msgid "7. Place of Habitation: Meridian"
-msgstr "7. Local de habitação: meridiano"
-
-#: Form/form_ca.xml.h:819
-msgid "8. Place of Habitation: Municipality"
-msgstr "8. Local de habitação: município"
-
-#: Form/form_ca.xml.h:821
-msgid "9. Relationship to head of family or household"
-msgstr "9. Parentesco com o chefe de família ou agregado"
-
-#: Form/form_ca.xml.h:823
-msgid "10. Sex"
-msgstr "10. Sexo"
-
-#: Form/form_ca.xml.h:825
-msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr "11. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
-
-#: Form/form_ca.xml.h:827
-msgid "12. Age at last birthday"
-msgstr "12. Idade ao último nascimento"
-
-#: Form/form_ca.xml.h:829
-msgid "13. Country or place of birth"
-msgstr "13. País ou local de nascimento"
-
-#: Form/form_ca.xml.h:831
-msgid "14. Religion"
-msgstr "14. Religião"
-
-#: Form/form_ca.xml.h:833
-msgid "15. Year of immigration to Canada"
-msgstr "15. Ano de imigração para o Canadá"
-
-#: Form/form_ca.xml.h:835
-msgid "16. Year of naturalization"
-msgstr "16. Ano de naturalização"
-
-#: Form/form_ca.xml.h:837
-msgid "17. Nationality"
-msgstr "17. Nacionalidade"
-
-#: Form/form_ca.xml.h:839
-msgid "18. Race or tribal origin"
-msgstr "18. Origem racial ou tribal"
-
-#: Form/form_ca.xml.h:841
-msgid "19. Can speak English"
-msgstr "19. Sabe falar inglês"
-
-#: Form/form_ca.xml.h:843
-msgid "20. Can speak French"
-msgstr "20. Sabe falar francês"
-
-#: Form/form_ca.xml.h:844
-msgid "OtherLanguage"
-msgstr "OutroIdioma"
-
-#: Form/form_ca.xml.h:845
-msgid "21. Other language spoken as mother tongue"
-msgstr "21. Outro idioma falado como língua-mãe"
-
-#: Form/form_ca.xml.h:847
-msgid "22. Can Read"
-msgstr "22. Sabe ler"
-
-#: Form/form_ca.xml.h:849
-msgid "23. Can Write"
-msgstr "23. Sabe escrever"
-
-#: Form/form_ca.xml.h:851
-msgid "24. Chief occupation or trade"
-msgstr "24. Emprego ou negócio principal"
-
-#: Form/form_ca.xml.h:853
-msgid "25. Employer, \"E\", Employee, \"W\""
-msgstr "25. Empregador, \"E\", Empregado, \"G\""
-
-#: Form/form_ca.xml.h:854
-msgid "EmploymentPlace"
-msgstr "LocalEmprego"
-
-#: Form/form_ca.xml.h:855
-msgid "26. State where person is employed"
-msgstr "26. Estado onde está empregado"
+#: Form/editform.py:181
+#, python-format
+msgid "Form: %s"
+msgstr "Formulário: %s"
+
+#: Form/editform.py:183
+msgid "New Form"
+msgstr "Novo formulário"
+
+#: Form/editform.py:190
+msgid "Edit Form"
+msgstr "Editar formulário"
+
+#: Form/editform.py:225 SourceIndex/birth.glade:113 SourceIndex/death.glade:182
+#: SourceIndex/census.glade:873 SourceIndex/marriage.glade:1263
+msgid "Reference:"
+msgstr "Referência:"
+
+#: Form/editform.py:421
+msgid "Headings"
+msgstr "Títulos"
 
 #: Form/form_us.xml.h:1 Form/form_us.xml.h:14 Form/form_us.xml.h:35
 #: Form/form_us.xml.h:56 Form/form_us.xml.h:96 Form/form_us.xml.h:165
@@ -12057,6 +9857,30 @@ msgstr "N.º de linha"
 msgid "Family No."
 msgstr "N.º de família"
 
+#: Form/form_us.xml.h:263 Form/form_us.xml.h:339 Form/form_us.xml.h:416
+#: Form/form_us.xml.h:438 Form/form_us.xml.h:468 Form/form_us.xml.h:620
+#: Form/form_us.xml.h:675 Form/form_us.xml.h:715 Form/form_us.xml.h:760
+#: Form/form_us.xml.h:802 Form/form_us.xml.h:844 Form/form_us.xml.h:905
+#: Form/form_us.xml.h:1072 Form/form_us.xml.h:1108 Form/form_us.xml.h:1202
+#: Form/form_us.xml.h:1255 Form/form_us.xml.h:1318 Form/form_us.xml.h:1319
+#: Form/form_us.xml.h:1407 Form/form_us.xml.h:1428 Form/form_us.xml.h:1486
+#: Form/form_us.xml.h:1500 Form/form_us.xml.h:1519 Form/form_us.xml.h:1540
+#: Form/form_us.xml.h:1561 Form/form_us.xml.h:1583 Form/form_us.xml.h:1607
+#: Form/form_us.xml.h:1626 Form/form_us.xml.h:1640 Form/form_us.xml.h:1655
+#: Form/form_us.xml.h:1683 Form/form_us.xml.h:1851 Form/form_us.xml.h:1882
+#: Form/form_us.xml.h:1904 Form/form_us.xml.h:1933 Form/form_us.xml.h:1953
+#: Form/form_us.xml.h:1967 Form/form_us.xml.h:1986 Form/form_us.xml.h:2006
+#: Form/form_us.xml.h:2097 Form/form_us.xml.h:2135 Form/form_us.xml.h:2173
+#: Form/form_us.xml.h:2211 Form/form_us.xml.h:2333 Form/form_us.xml.h:2348
+#: Form/form_us.xml.h:2376 Form/form_us.xml.h:2436 Form/form_us.xml.h:2466
+#: Form/form_us.xml.h:2490 Form/form_gb.xml.h:9 Form/form_gb.xml.h:46
+#: Form/form_gb.xml.h:242 Form/form_gb.xml.h:265 Form/form_gb.xml.h:377
+#: Form/form_gb.xml.h:586 Form/form_ca.xml.h:310 Form/form_ca.xml.h:364
+#: Form/form_ca.xml.h:411 Form/form_ca.xml.h:466 Form/form_ca.xml.h:630
+#: Form/form_ca.xml.h:679 Form/form_ca.xml.h:767 Form/form_ca.xml.h:822
+msgid "Sex"
+msgstr "Sexo"
+
 #: Form/form_us.xml.h:266 Form/form_us.xml.h:342 Form/form_us.xml.h:441
 msgid "Value of real estate"
 msgstr "Valor dos imóveis"
@@ -12119,9 +9943,18 @@ msgstr "Valor monetário da quinta"
 msgid "Value of Farming Implements and Machinery"
 msgstr "Valor de máquinas e alfaias"
 
+#: Form/form_us.xml.h:286 Form/form_us.xml.h:364 Form/form_ca.xml.h:192
+#: Form/form_ca.xml.h:650
+msgid "Horses"
+msgstr "Cavalos"
+
 #: Form/form_us.xml.h:287 Form/form_us.xml.h:365
 msgid "Asses and Mules"
 msgstr "Burros e mulas"
+
+#: Form/form_us.xml.h:288 Form/form_us.xml.h:366 Form/form_ca.xml.h:188
+msgid "Milch Cows"
+msgstr "Vacas leiteiras"
 
 #: Form/form_us.xml.h:289 Form/form_us.xml.h:367
 msgid "Working Oxen"
@@ -12130,6 +9963,11 @@ msgstr "Bois de trabalho"
 #: Form/form_us.xml.h:290 Form/form_us.xml.h:368
 msgid "Other Cattle"
 msgstr "Outro gado"
+
+#: Form/form_us.xml.h:291 Form/form_us.xml.h:369 Form/form_ca.xml.h:194
+#: Form/form_ca.xml.h:656
+msgid "Sheep"
+msgstr "Ovelhas"
 
 #: Form/form_us.xml.h:292 Form/form_us.xml.h:370
 msgid "Swine"
@@ -12534,10 +10372,26 @@ msgstr "Número de meses de desemprego no ano do censo"
 msgid "Illness on day of enumeration"
 msgstr "Doença no dia da contagem"
 
+#: Form/form_us.xml.h:479 Form/form_us.xml.h:741 Form/form_us.xml.h:1081
+#: Form/form_us.xml.h:1119 Form/form_us.xml.h:1214 Form/form_us.xml.h:1416
+#: Form/form_us.xml.h:1862 Form/form_us.xml.h:2071 Form/form_us.xml.h:2105
+#: Form/form_us.xml.h:2143 Form/form_us.xml.h:2181 Form/form_us.xml.h:2219
+#: Form/form_us.xml.h:2242 Form/form_us.xml.h:2254 Form/form_us.xml.h:2266
+#: Form/form_ca.xml.h:256 Form/form_ca.xml.h:336 Form/form_ca.xml.h:384
+#: Form/form_ca.xml.h:445 Form/form_ca.xml.h:745
+msgid "Blind"
+msgstr "Cego"
+
 #: Form/form_us.xml.h:480 Form/form_us.xml.h:742 Form/form_us.xml.h:1120
 #: Form/form_us.xml.h:1863
 msgid "Deaf and dumb"
 msgstr "Surdos e mudos"
+
+#: Form/form_us.xml.h:481 Form/form_us.xml.h:1083 Form/form_us.xml.h:1121
+#: Form/form_us.xml.h:1216 Form/form_us.xml.h:1864 Form/form_us.xml.h:2073
+#: Form/form_ca.xml.h:751
+msgid "Idiotic"
+msgstr "Idiota"
 
 #: Form/form_us.xml.h:482 Form/form_us.xml.h:1084 Form/form_us.xml.h:1122
 #: Form/form_us.xml.h:1215 Form/form_us.xml.h:1418 Form/form_us.xml.h:1865
@@ -13240,6 +11094,11 @@ msgstr "Local incorporado"
 msgid "Unincorporated place"
 msgstr "Local não incorporado"
 
+#: Form/form_us.xml.h:789 Form/form_us.xml.h:832 Form/form_us.xml.h:891
+#: Form/form_ca.xml.h:553
+msgid "Institution"
+msgstr "Instituição"
+
 #: Form/form_us.xml.h:799
 msgid "Value of home or monthly rental"
 msgstr "Valor da casa ou da renda mensal"
@@ -13457,6 +11316,14 @@ msgstr "Esta casa está situada num terreno com três ou mais hectares?"
 #: Form/form_us.xml.h:902
 msgid "Agricultural Questionnaire Number"
 msgstr "Número do questionário agrícola"
+
+#: Form/form_us.xml.h:904 Form/form_us.xml.h:979 Form/form_us.xml.h:1139
+#: Form/form_us.xml.h:1147 Form/form_us.xml.h:2358 Form/form_us.xml.h:2364
+#: Form/form_us.xml.h:2437 Form/form_us.xml.h:2467 Form/form_us.xml.h:2561
+#: Form/form_ca.xml.h:486 Form/form_ca.xml.h:697 Form/form_ca.xml.h:779
+#: Form/form_ca.xml.h:838
+msgid "Race"
+msgstr "Raça"
 
 #: Form/form_us.xml.h:906
 msgid "Age at last birthday"
@@ -13927,7 +11794,9 @@ msgid "When imprisoned"
 msgstr "Quando esteve preso"
 
 #: Form/form_us.xml.h:1031
-msgid "Were imprisoned"
+#, fuzzy
+#| msgid "Were imprisoned"
+msgid "Where imprisoned"
 msgstr "Onde esteve preso"
 
 #: Form/form_us.xml.h:1032
@@ -14378,6 +12247,16 @@ msgstr "Cidade de"
 #: Form/form_us.xml.h:1247 Form/form_us.xml.h:1275 Form/form_us.xml.h:1876
 msgid "Township of"
 msgstr "Município de"
+
+#: Form/form_us.xml.h:1250 Form/form_us.xml.h:1311 Form/form_us.xml.h:2041
+#: Form/form_ca.xml.h:3 Form/form_ca.xml.h:94 Form/form_ca.xml.h:212
+#: Form/form_ca.xml.h:644 Form/form_ca.xml.h:812
+msgid "Township"
+msgstr "Município"
+
+#: Form/form_us.xml.h:1252 Form/form_ca.xml.h:642
+msgid "Section"
+msgstr "Secção"
 
 #: Form/form_us.xml.h:1253
 msgid "Street and Number"
@@ -14851,6 +12730,18 @@ msgstr "Meses na escola em 1914 - Privada"
 msgid "Months in School 1914: College"
 msgstr "Meses na escola em 1914 - Superior"
 
+#: Form/form_us.xml.h:1414 Form/form_us.xml.h:2103 Form/form_us.xml.h:2141
+#: Form/form_us.xml.h:2179 Form/form_us.xml.h:2217 Form/form_ca.xml.h:516
+#: Form/form_ca.xml.h:737 Form/form_ca.xml.h:785
+msgid "Read"
+msgstr "Ler"
+
+#: Form/form_us.xml.h:1415 Form/form_us.xml.h:2104 Form/form_us.xml.h:2142
+#: Form/form_us.xml.h:2180 Form/form_us.xml.h:2218 Form/form_ca.xml.h:518
+#: Form/form_ca.xml.h:739 Form/form_ca.xml.h:787
+msgid "Write"
+msgstr "Escrever"
+
 #: Form/form_us.xml.h:1417 Form/form_us.xml.h:2072 Form/form_us.xml.h:2106
 #: Form/form_us.xml.h:2144 Form/form_us.xml.h:2182 Form/form_us.xml.h:2220
 msgid "Deaf"
@@ -15254,18 +13145,27 @@ msgstr "Natividade da mãe"
 #: Form/form_dk.xml.h:110 Form/form_dk.xml.h:129 Form/form_dk.xml.h:148
 #: Form/form_dk.xml.h:169 Form/form_dk.xml.h:192 Form/form_dk.xml.h:213
 #: Form/form_dk.xml.h:234 Form/form_dk.xml.h:258 Form/form_dk.xml.h:293
-#: Form/form_fr.xml.h:153 Form/form_fr.xml.h:162 Form/form_fr.xml.h:170
-#: Form/form_fr.xml.h:179 Form/form_fr.xml.h:188 Form/form_fr.xml.h:197
-#: Form/form_fr.xml.h:206 Form/form_fr.xml.h:217 Form/form_gb.xml.h:27
-#: Form/form_gb.xml.h:78 Form/form_gb.xml.h:96 Form/form_gb.xml.h:115
-#: Form/form_gb.xml.h:136 Form/form_gb.xml.h:158 Form/form_gb.xml.h:183
-#: Form/form_gb.xml.h:206 Form/form_gb.xml.h:244 Form/form_gb.xml.h:268
-#: Form/form_gb.xml.h:287 Form/form_gb.xml.h:314 Form/form_gb.xml.h:339
-#: Form/form_gb.xml.h:379 Form/form_gb.xml.h:413 Form/form_gb.xml.h:434
-#: Form/form_gb.xml.h:461 Form/form_gb.xml.h:489 Form/form_gb.xml.h:521
-#: Form/form_gb.xml.h:560 Form/form_gb.xml.h:588 Form/form_gb.xml.h:616
+#: Form/form_gb.xml.h:27 Form/form_gb.xml.h:78 Form/form_gb.xml.h:96
+#: Form/form_gb.xml.h:115 Form/form_gb.xml.h:136 Form/form_gb.xml.h:158
+#: Form/form_gb.xml.h:183 Form/form_gb.xml.h:206 Form/form_gb.xml.h:244
+#: Form/form_gb.xml.h:268 Form/form_gb.xml.h:287 Form/form_gb.xml.h:314
+#: Form/form_gb.xml.h:339 Form/form_gb.xml.h:379 Form/form_gb.xml.h:413
+#: Form/form_gb.xml.h:434 Form/form_gb.xml.h:461 Form/form_gb.xml.h:489
+#: Form/form_gb.xml.h:521 Form/form_gb.xml.h:560 Form/form_gb.xml.h:588
+#: Form/form_gb.xml.h:616 Form/form_fr.xml.h:153 Form/form_fr.xml.h:162
+#: Form/form_fr.xml.h:170 Form/form_fr.xml.h:179 Form/form_fr.xml.h:188
+#: Form/form_fr.xml.h:197 Form/form_fr.xml.h:206 Form/form_fr.xml.h:217
+#: Overview/Overview.py:79 Overview/Overview.py:114
 msgid "Condition"
 msgstr "Condição"
+
+#: Form/form_us.xml.h:1633 Form/form_us.xml.h:1648 Form/form_ca.xml.h:1
+#: Form/form_ca.xml.h:92 Form/form_ca.xml.h:210 Form/form_ca.xml.h:288
+#: Form/form_ca.xml.h:342 Form/form_ca.xml.h:390 Form/form_ca.xml.h:450
+#: Form/form_ca.xml.h:529 Form/form_ca.xml.h:615 Form/form_ca.xml.h:661
+#: Form/form_ca.xml.h:754 Form/form_ca.xml.h:794
+msgid "Schedule"
+msgstr "Horário"
 
 #: Form/form_us.xml.h:1634 Form/form_us.xml.h:1649
 msgid "Inhabitants in"
@@ -15962,7 +13862,7 @@ msgid "Do you own your home or farm"
 msgstr ""
 
 #: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
-#: Form/form_us.xml.h:2198
+#: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
 msgstr "Ascendência"
 
@@ -16417,11 +14317,11 @@ msgstr ""
 msgid "Bald"
 msgstr ""
 
-#: Form/form_us.xml.h:2546 Form/form_fr.xml.h:81 Form/form_fr.xml.h:219
-#: Form/form_gb.xml.h:83 Form/form_gb.xml.h:101 Form/form_gb.xml.h:122
-#: Form/form_gb.xml.h:143 Form/form_gb.xml.h:169 Form/form_gb.xml.h:194
-#: Form/form_gb.xml.h:228 Form/form_gb.xml.h:298 Form/form_gb.xml.h:325
-#: Form/form_gb.xml.h:361 Form/form_gb.xml.h:592 Form/form_gb.xml.h:624
+#: Form/form_us.xml.h:2546 Form/form_gb.xml.h:83 Form/form_gb.xml.h:101
+#: Form/form_gb.xml.h:122 Form/form_gb.xml.h:143 Form/form_gb.xml.h:169
+#: Form/form_gb.xml.h:194 Form/form_gb.xml.h:228 Form/form_gb.xml.h:298
+#: Form/form_gb.xml.h:325 Form/form_gb.xml.h:361 Form/form_gb.xml.h:592
+#: Form/form_gb.xml.h:624 Form/form_fr.xml.h:81 Form/form_fr.xml.h:219
 msgid "Disability"
 msgstr ""
 
@@ -16541,6 +14441,50 @@ msgstr ""
 msgid "Residents Status"
 msgstr ""
 
+#: Form/form_pl.xml.h:5
+msgid "Event Place (Original)"
+msgstr ""
+
+#: Form/form_pl.xml.h:8 Form/form_pl.xml.h:36
+msgid "Birth Year (Estimated)"
+msgstr ""
+
+#: Form/form_pl.xml.h:12 Form/form_pl.xml.h:40
+msgid "Spouse's Gender"
+msgstr ""
+
+#: Form/form_pl.xml.h:13 Form/form_pl.xml.h:41
+msgid "Spouse's Age"
+msgstr ""
+
+#: Form/form_pl.xml.h:14 Form/form_pl.xml.h:42
+msgid "Spouse's Birth Year (Estimated)"
+msgstr ""
+
+#: Form/form_pl.xml.h:15 Form/form_pl.xml.h:43
+msgid "Spouse's Father's Name"
+msgstr ""
+
+#: Form/form_pl.xml.h:16 Form/form_pl.xml.h:44
+msgid "Spouse's Mother's Name"
+msgstr ""
+
+#: Form/form_pl.xml.h:18
+msgid "Record Number"
+msgstr ""
+
+#: Form/form_pl.xml.h:19
+msgid "Volume"
+msgstr ""
+
+#: Form/form_pl.xml.h:28
+msgid "Volume Beginning Year"
+msgstr ""
+
+#: Form/form_pl.xml.h:29
+msgid "Volume Ending Year"
+msgstr ""
+
 #: Form/form_dk.xml.h:2 Form/form_dk.xml.h:19 Form/form_dk.xml.h:36
 #: Form/form_dk.xml.h:51 Form/form_dk.xml.h:68 Form/form_dk.xml.h:85
 #: Form/form_dk.xml.h:102 Form/form_dk.xml.h:121 Form/form_dk.xml.h:140
@@ -16630,18 +14574,18 @@ msgstr ""
 #: Form/form_dk.xml.h:173 Form/form_dk.xml.h:196 Form/form_dk.xml.h:217
 #: Form/form_dk.xml.h:238 Form/form_dk.xml.h:262 Form/form_dk.xml.h:297
 #: Form/form_dk.xml.h:323 Form/form_dk.xml.h:373 Form/form_dk.xml.h:397
-#: Form/form_dk.xml.h:419 Form/form_dk.xml.h:437 Form/form_fr.xml.h:3
-#: Form/form_fr.xml.h:11 Form/form_fr.xml.h:19 Form/form_fr.xml.h:27
-#: Form/form_fr.xml.h:103 Form/form_fr.xml.h:111 Form/form_fr.xml.h:139
-#: Form/form_fr.xml.h:157 Form/form_fr.xml.h:174 Form/form_fr.xml.h:183
-#: Form/form_fr.xml.h:192 Form/form_fr.xml.h:201 Form/form_fr.xml.h:211
-#: Form/form_gb.xml.h:67 Form/form_gb.xml.h:82 Form/form_gb.xml.h:100
-#: Form/form_gb.xml.h:121 Form/form_gb.xml.h:142 Form/form_gb.xml.h:168
-#: Form/form_gb.xml.h:193 Form/form_gb.xml.h:224 Form/form_gb.xml.h:297
-#: Form/form_gb.xml.h:324 Form/form_gb.xml.h:357 Form/form_gb.xml.h:416
-#: Form/form_gb.xml.h:438 Form/form_gb.xml.h:465 Form/form_gb.xml.h:493
-#: Form/form_gb.xml.h:529 Form/form_gb.xml.h:566 Form/form_gb.xml.h:589
-#: Form/form_gb.xml.h:621
+#: Form/form_dk.xml.h:419 Form/form_dk.xml.h:437 Form/form_gb.xml.h:67
+#: Form/form_gb.xml.h:82 Form/form_gb.xml.h:100 Form/form_gb.xml.h:121
+#: Form/form_gb.xml.h:142 Form/form_gb.xml.h:168 Form/form_gb.xml.h:193
+#: Form/form_gb.xml.h:224 Form/form_gb.xml.h:297 Form/form_gb.xml.h:324
+#: Form/form_gb.xml.h:357 Form/form_gb.xml.h:416 Form/form_gb.xml.h:438
+#: Form/form_gb.xml.h:465 Form/form_gb.xml.h:493 Form/form_gb.xml.h:529
+#: Form/form_gb.xml.h:566 Form/form_gb.xml.h:589 Form/form_gb.xml.h:621
+#: Form/form_fr.xml.h:3 Form/form_fr.xml.h:11 Form/form_fr.xml.h:19
+#: Form/form_fr.xml.h:27 Form/form_fr.xml.h:103 Form/form_fr.xml.h:111
+#: Form/form_fr.xml.h:139 Form/form_fr.xml.h:157 Form/form_fr.xml.h:174
+#: Form/form_fr.xml.h:183 Form/form_fr.xml.h:192 Form/form_fr.xml.h:201
+#: Form/form_fr.xml.h:211 Overview/Overview.py:78 Overview/Overview.py:112
 msgid "Where Born"
 msgstr "Onde nasceu"
 
@@ -16823,70 +14767,6 @@ msgstr ""
 
 #: Form/form_dk.xml.h:440
 msgid "Dato gift"
-msgstr ""
-
-#: Form/form_pl.xml.h:5
-msgid "Event Place (Original)"
-msgstr ""
-
-#: Form/form_pl.xml.h:8 Form/form_pl.xml.h:36
-msgid "Birth Year (Estimated)"
-msgstr ""
-
-#: Form/form_pl.xml.h:12 Form/form_pl.xml.h:40
-msgid "Spouse's Gender"
-msgstr ""
-
-#: Form/form_pl.xml.h:13 Form/form_pl.xml.h:41
-msgid "Spouse's Age"
-msgstr ""
-
-#: Form/form_pl.xml.h:14 Form/form_pl.xml.h:42
-msgid "Spouse's Birth Year (Estimated)"
-msgstr ""
-
-#: Form/form_pl.xml.h:15 Form/form_pl.xml.h:43
-msgid "Spouse's Father's Name"
-msgstr ""
-
-#: Form/form_pl.xml.h:16 Form/form_pl.xml.h:44
-msgid "Spouse's Mother's Name"
-msgstr ""
-
-#: Form/form_pl.xml.h:18
-msgid "Record Number"
-msgstr ""
-
-#: Form/form_pl.xml.h:19
-msgid "Volume"
-msgstr ""
-
-#: Form/form_pl.xml.h:28
-msgid "Volume Beginning Year"
-msgstr ""
-
-#: Form/form_pl.xml.h:29
-msgid "Volume Ending Year"
-msgstr ""
-
-#: Form/form_fr.xml.h:38 Form/form_fr.xml.h:55 Form/form_fr.xml.h:220
-msgid "Can read and write"
-msgstr ""
-
-#: Form/form_fr.xml.h:42 Form/form_fr.xml.h:47
-msgid "Military"
-msgstr ""
-
-#: Form/form_fr.xml.h:56 Form/form_fr.xml.h:221
-msgid "Taxes"
-msgstr ""
-
-#: Form/form_fr.xml.h:57 Form/form_fr.xml.h:67 Form/form_fr.xml.h:222
-msgid "Type of roof"
-msgstr ""
-
-#: Form/form_fr.xml.h:144
-msgid "Arrived since"
 msgstr ""
 
 #: Form/form_gb.xml.h:3 Form/form_gb.xml.h:40 Form/form_gb.xml.h:196
@@ -17114,6 +14994,11 @@ msgstr ""
 msgid "PROFESSION or OCCUPATION"
 msgstr ""
 
+#: Form/form_gb.xml.h:164 Form/form_gb.xml.h:293 Form/form_gb.xml.h:525
+#: Form/form_ca.xml.h:431 Form/form_ca.xml.h:496 Form/form_ca.xml.h:707
+msgid "Employer"
+msgstr "Empregador"
+
 #: Form/form_gb.xml.h:166 Form/form_gb.xml.h:295 Form/form_gb.xml.h:527
 msgid "Neither"
 msgstr ""
@@ -17278,6 +15163,18 @@ msgstr "Se deve trabalha em casa"
 #: Form/form_gb.xml.h:225 Form/form_gb.xml.h:358
 msgid "BIRTHPLACE of every Person."
 msgstr ""
+
+#: Form/form_gb.xml.h:226 Form/form_gb.xml.h:247 Form/form_gb.xml.h:359
+#: Form/form_gb.xml.h:382 Form/form_ca.xml.h:488 Form/form_ca.xml.h:699
+#: Form/form_ca.xml.h:836 Form/form_fr.xml.h:7 Form/form_fr.xml.h:15
+#: Form/form_fr.xml.h:23 Form/form_fr.xml.h:31 Form/form_fr.xml.h:79
+#: Form/form_fr.xml.h:107 Form/form_fr.xml.h:115 Form/form_fr.xml.h:127
+#: Form/form_fr.xml.h:134 Form/form_fr.xml.h:145 Form/form_fr.xml.h:151
+#: Form/form_fr.xml.h:160 Form/form_fr.xml.h:168 Form/form_fr.xml.h:177
+#: Form/form_fr.xml.h:186 Form/form_fr.xml.h:195 Form/form_fr.xml.h:204
+#: Form/form_fr.xml.h:215
+msgid "Nationality"
+msgstr "Nacionalidade"
 
 #: Form/form_gb.xml.h:227 Form/form_gb.xml.h:360
 msgid "NATIONALITY of every Person born in a Foreign Country."
@@ -17592,6 +15489,2209 @@ msgstr ""
 
 #: Form/form_gb.xml.h:619
 msgid "Children born alive to present Marriage"
+msgstr ""
+
+#: Form/form_ca.xml.h:2 Form/form_ca.xml.h:93 Form/form_ca.xml.h:211
+#: Form/form_ca.xml.h:798
+msgid "EnumDistrict"
+msgstr "EnumDistrict"
+
+#: Form/form_ca.xml.h:5
+msgid "Comprising"
+msgstr "Compreendendo"
+
+#: Form/form_ca.xml.h:6
+msgid "OfTheSaid"
+msgstr "OfTheSaid"
+
+#: Form/form_ca.xml.h:7 Form/form_ca.xml.h:293 Form/form_ca.xml.h:347
+#: Form/form_ca.xml.h:396 Form/form_ca.xml.h:457 Form/form_ca.xml.h:536
+#: Form/form_ca.xml.h:621 Form/form_ca.xml.h:668 Form/form_ca.xml.h:758
+#: Form/form_ca.xml.h:801
+msgid "Enumerator"
+msgstr "Recenseador"
+
+#: Form/form_ca.xml.h:11 Form/form_ca.xml.h:217
+msgid "1. Names of Inmates"
+msgstr "1. Nomes de prisioneiros"
+
+#: Form/form_ca.xml.h:13
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Profissão ou negócio"
+
+#: Form/form_ca.xml.h:14 Form/form_ca.xml.h:220 Form/form_ca.xml.h:316
+#: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
+#: Form/form_ca.xml.h:636 Form/form_ca.xml.h:691 Form/form_ca.xml.h:777
+#: Form/form_ca.xml.h:828
+msgid "BirthPlace"
+msgstr "Local de nascimento"
+
+#: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
+msgid "3. Place of Birth"
+msgstr "3. Local de nascimento"
+
+#: Form/form_ca.xml.h:17
+msgid "4. Religion"
+msgstr "4. Religião"
+
+#: Form/form_ca.xml.h:19
+msgid "5. Residence if Outside of Limits"
+msgstr "5. Residência, se fora dos limites"
+
+#: Form/form_ca.xml.h:21
+msgid "6. Age at Next Birthday"
+msgstr "6. Idade no próximo aniversário"
+
+#: Form/form_ca.xml.h:22 Form/form_ca.xml.h:230
+msgid "SexMale"
+msgstr "SexoMasculino"
+
+#: Form/form_ca.xml.h:23
+msgid "7. Sex: Male"
+msgstr "7. Sexo: masculino"
+
+#: Form/form_ca.xml.h:24
+msgid "SexFemale"
+msgstr "SexoFeminino"
+
+#: Form/form_ca.xml.h:25
+msgid "8. Sex: Female"
+msgstr "8. Sexo: feminino"
+
+#: Form/form_ca.xml.h:26 Form/form_ca.xml.h:234 Form/form_ca.xml.h:324
+#: Form/form_ca.xml.h:378 Form/form_ca.xml.h:415 Form/form_ca.xml.h:472
+#: Form/form_ca.xml.h:632 Form/form_ca.xml.h:683 Form/form_ca.xml.h:771
+#: Form/form_ca.xml.h:824
+msgid "MaritalStatus"
+msgstr "SituaçãoConjugal"
+
+#: Form/form_ca.xml.h:27
+msgid "9. Married or Single"
+msgstr "Casado ou solteiro"
+
+#: Form/form_ca.xml.h:28 Form/form_ca.xml.h:240
+msgid "Coloured"
+msgstr "Colorido"
+
+#: Form/form_ca.xml.h:29
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Indivíduos de cor - origem africana"
+
+#: Form/form_ca.xml.h:30
+msgid "Indians"
+msgstr "Indianos"
+
+#: Form/form_ca.xml.h:31
+msgid "11. Indians, if any"
+msgstr "11. Indianos, se existirem"
+
+#: Form/form_ca.xml.h:32
+msgid "ResidentsMale"
+msgstr "ResidentesHomens"
+
+#: Form/form_ca.xml.h:33
+msgid "12. Residents: Members, Male"
+msgstr "12. Residentes: membros, masculino"
+
+#: Form/form_ca.xml.h:34
+msgid "ResidentsFemale"
+msgstr "ResidentesMulheres"
+
+#: Form/form_ca.xml.h:35
+msgid "13. Residents: Members, Female"
+msgstr "13. Residentes: membros, feminino"
+
+#: Form/form_ca.xml.h:36
+msgid "NonMembersMale"
+msgstr "NãoMembrosMasculino"
+
+#: Form/form_ca.xml.h:37
+msgid "14. Residents: Not Members: Male"
+msgstr "14. Residentes: não membros, homem"
+
+#: Form/form_ca.xml.h:38
+msgid "NonMembersFemale"
+msgstr "NãoMembrosFeminino"
+
+#: Form/form_ca.xml.h:39
+msgid "15. Residents: Not Members: Female"
+msgstr "15. Residentes: não membros, mulher"
+
+#: Form/form_ca.xml.h:40
+msgid "AbsentMembersMale"
+msgstr "MembrosAusentesMasculino"
+
+#: Form/form_ca.xml.h:41
+msgid "16. Members Absent: Male"
+msgstr "16. Membros ausentes: masculino"
+
+#: Form/form_ca.xml.h:42
+msgid "AbsentMembersFemale"
+msgstr "MembrosAusentesFeminino"
+
+#: Form/form_ca.xml.h:43
+msgid "17. Members Absent: Female"
+msgstr "17. Membros ausentes, feminino"
+
+#: Form/form_ca.xml.h:44
+msgid "DeafDumbMale"
+msgstr "SurdoMudoMasculino"
+
+#: Form/form_ca.xml.h:45
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. Surdos/mudos: masculino"
+
+#: Form/form_ca.xml.h:46
+msgid "DeafDumbFemale"
+msgstr "SurdoMudoFeminino"
+
+#: Form/form_ca.xml.h:47
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. Surdos e mudos: feminino"
+
+#: Form/form_ca.xml.h:48
+msgid "BlindMale"
+msgstr "CegoMasculino"
+
+#: Form/form_ca.xml.h:49
+msgid "20. Blind: Male"
+msgstr "20. Cegos: masculino"
+
+#: Form/form_ca.xml.h:50
+msgid "BlindFemale"
+msgstr "CegoFeminino"
+
+#: Form/form_ca.xml.h:51
+msgid "21. Blind: Female"
+msgstr "21. Cegos: feminino"
+
+#: Form/form_ca.xml.h:52
+msgid "LunaticMale"
+msgstr "MalucoMasculino"
+
+#: Form/form_ca.xml.h:53
+msgid "22. Lunatics: Male"
+msgstr "22. Lunáticos: masculino"
+
+#: Form/form_ca.xml.h:54
+msgid "LunaticFemale"
+msgstr "MalucoFeminino"
+
+#: Form/form_ca.xml.h:55
+msgid "23. Lunatics: Female"
+msgstr "23. Lunáticos: feminino"
+
+#: Form/form_ca.xml.h:56 Form/form_ca.xml.h:260
+msgid "ScholarMale"
+msgstr "EstudiosoMasculino"
+
+#: Form/form_ca.xml.h:57
+msgid "24. Attending School: Male"
+msgstr "24. A estudar: masculino"
+
+#: Form/form_ca.xml.h:58 Form/form_ca.xml.h:262
+msgid "ScholarFemale"
+msgstr "EstudiosoFeminino"
+
+#: Form/form_ca.xml.h:59
+msgid "25. Attending School: Female"
+msgstr "25. A estudar: feminino"
+
+#: Form/form_ca.xml.h:60
+msgid "Birth1851Male"
+msgstr "Nascimento1851Masculino"
+
+#: Form/form_ca.xml.h:61
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. Nascidos em 1851: masculino"
+
+#: Form/form_ca.xml.h:62
+msgid "Birth1851Female"
+msgstr "Nascimento1851Feminino"
+
+#: Form/form_ca.xml.h:63
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. Nascidos em 1851: feminino"
+
+#: Form/form_ca.xml.h:64
+msgid "Death1851Male"
+msgstr "Óbito1851Masculino"
+
+#: Form/form_ca.xml.h:65
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. Falecidos em 1851: masculino"
+
+#: Form/form_ca.xml.h:66
+msgid "Death1851Female"
+msgstr "Óbito1851Feminino"
+
+#: Form/form_ca.xml.h:67
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. Falecidos em 1851: feminino"
+
+#: Form/form_ca.xml.h:68 Form/form_ca.xml.h:276
+msgid "DeathAgeCause"
+msgstr "IdadeCausaÓbito"
+
+#: Form/form_ca.xml.h:69
+msgid "30. Age and Cause of Deaths"
+msgstr "30. Idade e causa de óbito"
+
+#: Form/form_ca.xml.h:70 Form/form_ca.xml.h:278
+msgid "Houses"
+msgstr "Casas"
+
+#: Form/form_ca.xml.h:71
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr ""
+"31. Casas: tijolo, pedra, estrutura, madeira, lata ou outros tipos de "
+"residência"
+
+#: Form/form_ca.xml.h:72 Form/form_ca.xml.h:280
+msgid "HousesStories"
+msgstr "HistóriasCasas"
+
+#: Form/form_ca.xml.h:73
+msgid "32. Houses: No. of Stories"
+msgstr "32. Casas: n.º de histórias"
+
+#: Form/form_ca.xml.h:74 Form/form_ca.xml.h:282
+msgid "HousesFamilies"
+msgstr "CasasFamílias"
+
+#: Form/form_ca.xml.h:75
+msgid "33. No. of Families Occupying"
+msgstr "33. N.º de famílias ocupantes"
+
+#: Form/form_ca.xml.h:76 Form/form_ca.xml.h:284 Form/form_ca.xml.h:302
+#: Form/form_ca.xml.h:356 Form/form_ca.xml.h:403 Form/form_ca.xml.h:549
+msgid "HousesVacant"
+msgstr "CasasVazias"
+
+#: Form/form_ca.xml.h:77
+msgid "34. Houses: Vacant"
+msgstr "34. Casas: vazias"
+
+#: Form/form_ca.xml.h:78
+msgid "HousesBuilding"
+msgstr "CasasEdifício"
+
+#: Form/form_ca.xml.h:79
+msgid "35. Houses: Building"
+msgstr "35. Casas: edifício"
+
+#: Form/form_ca.xml.h:80
+msgid "Shops"
+msgstr "Lojas"
+
+#: Form/form_ca.xml.h:81
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. Lojas, armazéns, pousadas, tabernas, etc."
+
+#: Form/form_ca.xml.h:82
+msgid "PublicBuildings"
+msgstr "EdifíciosPúblicos"
+
+#: Form/form_ca.xml.h:83
+msgid "37. Public Buildings"
+msgstr "37. Edifícios públicos"
+
+#: Form/form_ca.xml.h:84
+msgid "WorshipPlaces"
+msgstr "TemplosAdoração"
+
+#: Form/form_ca.xml.h:85
+msgid "38. Places of Worship"
+msgstr "38. Locais de culto"
+
+#: Form/form_ca.xml.h:86
+msgid "BuisnessInfo"
+msgstr "InformaçãoNegócio"
+
+#: Form/form_ca.xml.h:87
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr ""
+"39. Informação sobre moagens, fábricas, etc., seus custos, energia, "
+"produtos, etc."
+
+#: Form/form_ca.xml.h:88
+msgid "NumEmployees"
+msgstr "NúmEmpregados"
+
+#: Form/form_ca.xml.h:89
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr "40. Número de empregados habituais"
+
+#: Form/form_ca.xml.h:91
+msgid "41. General Remarks of the Enumerator"
+msgstr "41. Observações gerais do recenseador"
+
+#: Form/form_ca.xml.h:99
+msgid "1. Name of Occupier"
+msgstr "1. Nome do ocupante"
+
+#: Form/form_ca.xml.h:100
+msgid "Concession"
+msgstr "Concessão"
+
+#: Form/form_ca.xml.h:101
+msgid "2. Concession or Range"
+msgstr "2. Concessão ou sector"
+
+#: Form/form_ca.xml.h:102
+msgid "Lot"
+msgstr "Lote"
+
+#: Form/form_ca.xml.h:103
+msgid "3. Lot or part of Lot"
+msgstr "3. Lote ou parte do lote"
+
+#: Form/form_ca.xml.h:104
+msgid "AcresHeld"
+msgstr "HectaresMetros2"
+
+#: Form/form_ca.xml.h:105
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr "4. N.º de hectares de terra: detidos por cada membro da família"
+
+#: Form/form_ca.xml.h:106
+msgid "AcresCultivation"
+msgstr "HectaresCultivo"
+
+#: Form/form_ca.xml.h:107
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr "5. N.º de hectares de terra: cultivados"
+
+#: Form/form_ca.xml.h:108
+msgid "AcresCrops"
+msgstr "HectaresCulturas"
+
+#: Form/form_ca.xml.h:109
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr "6. N.º de hectares de terra: sob cultivo em 1851"
+
+#: Form/form_ca.xml.h:110
+msgid "AcresPasture"
+msgstr "HectaresPastagem"
+
+#: Form/form_ca.xml.h:111
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr "7. N.º de hectares de terra: pastagens em 1851"
+
+#: Form/form_ca.xml.h:112
+msgid "AcresGardens"
+msgstr "HectaresJardins"
+
+#: Form/form_ca.xml.h:113
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "8. N.º de hectares de terra: jardins e pomares"
+
+#: Form/form_ca.xml.h:114
+msgid "AcresWood"
+msgstr "HectaresMadeira"
+
+#: Form/form_ca.xml.h:115
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr "9. N.º de hectares de terra: para madeira ou bravios"
+
+#: Form/form_ca.xml.h:116
+msgid "WheatAcres"
+msgstr "HectaresTrigo"
+
+#: Form/form_ca.xml.h:117
+msgid "10. Wheat: Acres"
+msgstr "10. N.º de hectares de terra: trigo"
+
+#: Form/form_ca.xml.h:118
+msgid "WheatBsh"
+msgstr "TrigoAlq"
+
+#: Form/form_ca.xml.h:119
+msgid "11. Wheat: Produce Bsh."
+msgstr "11. Trigo: produção"
+
+#: Form/form_ca.xml.h:120
+msgid "BarleyAcres"
+msgstr "HectaresCevada"
+
+#: Form/form_ca.xml.h:121
+msgid "12. Barley: Acres"
+msgstr "12. N.º de hectares de terra: cevada"
+
+#: Form/form_ca.xml.h:122
+msgid "BarleyBsh"
+msgstr "CevadaAlq"
+
+#: Form/form_ca.xml.h:123
+msgid "13. Barley: Produce Bsh."
+msgstr "13. Cevada: produção"
+
+#: Form/form_ca.xml.h:124
+msgid "RyeAcres"
+msgstr "HectaresCenteio"
+
+#: Form/form_ca.xml.h:125
+msgid "14. Rye: Acres"
+msgstr "14. N.º de hectares de terra: centeio"
+
+#: Form/form_ca.xml.h:126
+msgid "RyeBsh"
+msgstr "Centeio"
+
+#: Form/form_ca.xml.h:127
+msgid "15. Rye: Produce Bsh."
+msgstr "15. Centeio: produção"
+
+#: Form/form_ca.xml.h:128
+msgid "PeasAcres"
+msgstr "HectaresErvilha"
+
+#: Form/form_ca.xml.h:129
+msgid "16. Peas: Acres"
+msgstr "16. N.º de hectares de terra: ervilha"
+
+#: Form/form_ca.xml.h:130
+msgid "PeasBush"
+msgstr "Ervilha"
+
+#: Form/form_ca.xml.h:131
+msgid "17. Peas: Produce Bsh."
+msgstr "17. Ervilha: produção"
+
+#: Form/form_ca.xml.h:132
+msgid "OatsAcres"
+msgstr "HectaresAveia"
+
+#: Form/form_ca.xml.h:133
+msgid "18. Oats: Acres"
+msgstr "18. N.º de hectares de terra: aveia"
+
+#: Form/form_ca.xml.h:134
+msgid "OatsBush"
+msgstr "AveiaAlq"
+
+#: Form/form_ca.xml.h:135
+msgid "19. Oats: Produce Bsh."
+msgstr "19. Aveia: produção"
+
+#: Form/form_ca.xml.h:136
+msgid "BWheatAcres"
+msgstr "HectaresTrigoMourisco"
+
+#: Form/form_ca.xml.h:137
+msgid "20. B.Wheat: Acres"
+msgstr "20. N.º de hectares de terra: trigo mourisco"
+
+#: Form/form_ca.xml.h:138
+msgid "BWheatBush"
+msgstr "Trigo Mourisco"
+
+#: Form/form_ca.xml.h:139
+msgid "21. B.Wheat: Produce Bsh."
+msgstr "21. Trigo mourisco: produção"
+
+#: Form/form_ca.xml.h:140
+msgid "CornAcres"
+msgstr "HectaresMilho"
+
+#: Form/form_ca.xml.h:141
+msgid "22. Corn: Acres"
+msgstr "22. N.º de hectares de terra: milho"
+
+#: Form/form_ca.xml.h:142
+msgid "CornBush"
+msgstr "Milho"
+
+#: Form/form_ca.xml.h:143
+msgid "23. Corn: Produce Bsh."
+msgstr "23. Milho: produção"
+
+#: Form/form_ca.xml.h:144
+msgid "PotatoesAcres"
+msgstr "HectaresBatata"
+
+#: Form/form_ca.xml.h:145
+msgid "24. Potatoes: Acres"
+msgstr "24. N.º de hectares de terra: batata"
+
+#: Form/form_ca.xml.h:146
+msgid "PotatoesBush"
+msgstr "Batata"
+
+#: Form/form_ca.xml.h:147
+msgid "25. Potatoes: Produce Bsh."
+msgstr "25. Batata: produção"
+
+#: Form/form_ca.xml.h:148
+msgid "TurnipsAcres"
+msgstr "HectaresNabo"
+
+#: Form/form_ca.xml.h:149
+msgid "26. Turnips: Acres"
+msgstr "26. N.º de hectares de terra: nabo"
+
+#: Form/form_ca.xml.h:150
+msgid "TurnipsBush"
+msgstr "Nabo"
+
+#: Form/form_ca.xml.h:151
+msgid "27. Turnips: Produce Bsh."
+msgstr "27. Nabo: produção"
+
+#: Form/form_ca.xml.h:152
+msgid "CloverBush"
+msgstr "Trevo"
+
+#: Form/form_ca.xml.h:153
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr "28. Trevo, timóteo ou outra semente de ervas"
+
+#: Form/form_ca.xml.h:154
+msgid "CarrotsBush"
+msgstr "Cenoura"
+
+#: Form/form_ca.xml.h:155
+msgid "29. Carrots - Bsh."
+msgstr "29. Cenoura: produção"
+
+#: Form/form_ca.xml.h:156
+msgid "MangleWurtzel"
+msgstr "Beterraba"
+
+#: Form/form_ca.xml.h:157
+msgid "30. Mangle Wurtzel"
+msgstr "30. Beterraba"
+
+#: Form/form_ca.xml.h:158
+msgid "BeansBush"
+msgstr "Feijão"
+
+#: Form/form_ca.xml.h:159
+msgid "31. Beans Bush"
+msgstr "31. Feijão: produção"
+
+#: Form/form_ca.xml.h:160
+msgid "HopsLbs"
+msgstr "LúpuloLbs"
+
+#: Form/form_ca.xml.h:161
+msgid "32. Hops Lbs."
+msgstr "32. Lúpulo: produção"
+
+#: Form/form_ca.xml.h:162
+msgid "HayQty"
+msgstr "FenoQuantidade"
+
+#: Form/form_ca.xml.h:163
+msgid "33. Hay, Bundles or Tons"
+msgstr "33. Feno: fardos, ou toneladas"
+
+#: Form/form_ca.xml.h:164
+msgid "FlaxLbs"
+msgstr "LinhoLbs"
+
+#: Form/form_ca.xml.h:165
+msgid "34. Flax or Hemp, Lbs."
+msgstr "34. Linho ou cânhamo: produção"
+
+#: Form/form_ca.xml.h:166
+msgid "TobaccoLbs"
+msgstr "TabacoLbs"
+
+#: Form/form_ca.xml.h:167
+msgid "35. Tobacco Lbs."
+msgstr "35. Tabaco: produção"
+
+#: Form/form_ca.xml.h:168
+msgid "WoolLbs."
+msgstr "LãLbs"
+
+#: Form/form_ca.xml.h:169
+msgid "36. Wool Lbs."
+msgstr "36. Lã: produção"
+
+#: Form/form_ca.xml.h:170
+msgid "Column37"
+msgstr "Coluna37"
+
+#: Form/form_ca.xml.h:171
+msgid "37."
+msgstr "37."
+
+#: Form/form_ca.xml.h:172
+msgid "Column38"
+msgstr "Coluna38"
+
+#: Form/form_ca.xml.h:173
+msgid "38."
+msgstr "38."
+
+#: Form/form_ca.xml.h:174
+msgid "Column39"
+msgstr "Coluna39"
+
+#: Form/form_ca.xml.h:175
+msgid "39."
+msgstr "39."
+
+#: Form/form_ca.xml.h:176
+msgid "MapleSugarLbs"
+msgstr "AçucarÁcer"
+
+#: Form/form_ca.xml.h:177
+msgid "40. Maple Sugar Lbs."
+msgstr "40. Açucar de ácer: produção"
+
+#: Form/form_ca.xml.h:178
+msgid "CiderGalls"
+msgstr "Cidra"
+
+#: Form/form_ca.xml.h:179
+msgid "41. Cider Galls."
+msgstr "41. Cidra: produção"
+
+#: Form/form_ca.xml.h:180
+msgid "ClothYards"
+msgstr "Tecido"
+
+#: Form/form_ca.xml.h:181
+msgid "42. Fulled Cloth Yards"
+msgstr "42. Tecido integral: produção"
+
+#: Form/form_ca.xml.h:182
+msgid "LinnenYards"
+msgstr "Linho (tecido)"
+
+#: Form/form_ca.xml.h:183
+msgid "43. Linnen - Yds."
+msgstr "43. Linho (tecido): produção"
+
+#: Form/form_ca.xml.h:184
+msgid "FlannelYds"
+msgstr "Flanela"
+
+#: Form/form_ca.xml.h:185
+msgid "44. Flannel - Yds."
+msgstr "44. Flanela: produção"
+
+#: Form/form_ca.xml.h:186
+msgid "Bulls"
+msgstr "Touros"
+
+#: Form/form_ca.xml.h:187
+msgid "45. Bulls, Oxen or Steers"
+msgstr "45. Touros, bois ou novilhos"
+
+#: Form/form_ca.xml.h:189
+msgid "46. Milch Cows"
+msgstr "46. Vacas leiteiras"
+
+#: Form/form_ca.xml.h:190
+msgid "Calves"
+msgstr "Vitelos"
+
+#: Form/form_ca.xml.h:191
+msgid "47. Calves or Heifers"
+msgstr "47. Vitelos ou novilhas"
+
+#: Form/form_ca.xml.h:193
+msgid "48. Horses of all ages"
+msgstr "48. Cavalos de qualquer idade"
+
+#: Form/form_ca.xml.h:195
+msgid "49. Sheep"
+msgstr "49. Ovelhas"
+
+#: Form/form_ca.xml.h:196 Form/form_ca.xml.h:658
+msgid "Pigs"
+msgstr "Porcos"
+
+#: Form/form_ca.xml.h:197
+msgid "50. Pigs"
+msgstr "50. Porcos"
+
+#: Form/form_ca.xml.h:198
+msgid "ButterLbs"
+msgstr "ManteigaLbs"
+
+#: Form/form_ca.xml.h:199
+msgid "51. Butter - Lbs."
+msgstr "51. Manteiga: produção"
+
+#: Form/form_ca.xml.h:200
+msgid "CheeseLbs"
+msgstr "QueijoLbs"
+
+#: Form/form_ca.xml.h:201
+msgid "52. Cheese - Lbs."
+msgstr "52. Queijo: produção"
+
+#: Form/form_ca.xml.h:202
+msgid "Beef"
+msgstr "Carne de vaca"
+
+#: Form/form_ca.xml.h:203
+msgid "53. Beef - Barrels or Cwts."
+msgstr "53. Carne de vaca: produção"
+
+#: Form/form_ca.xml.h:204
+msgid "Pork"
+msgstr "Carne de porco"
+
+#: Form/form_ca.xml.h:205
+msgid "54. Pork - Barrels or Cwts."
+msgstr "54. Carne de porco: produção"
+
+#: Form/form_ca.xml.h:206
+msgid "Fish"
+msgstr "Peixe"
+
+#: Form/form_ca.xml.h:207
+msgid "55. Quantity of Fish Cured"
+msgstr "55. Peixe curado: produção"
+
+#: Form/form_ca.xml.h:209
+msgid "56. Remarks"
+msgstr "56. Comentários"
+
+#: Form/form_ca.xml.h:219
+msgid "2. Profession, trade or occupation"
+msgstr "2. Profissão ou negócio"
+
+#: Form/form_ca.xml.h:222
+msgid "Married1851"
+msgstr "Casados1851"
+
+#: Form/form_ca.xml.h:223
+msgid "4. Married during the year"
+msgstr "4. Casados em 1851"
+
+#: Form/form_ca.xml.h:225
+msgid "5. Religion"
+msgstr "5. Religião"
+
+#: Form/form_ca.xml.h:227
+msgid "6. Residence, if out of limits"
+msgstr "6. Residência, se fora dos limites"
+
+#: Form/form_ca.xml.h:229
+msgid "7. Age next Birthday"
+msgstr "7. Idade no próximo aniversário"
+
+#: Form/form_ca.xml.h:231
+msgid "8. Sex: Male"
+msgstr "8. Sexo: masculino"
+
+#: Form/form_ca.xml.h:232
+msgid "SexFemail"
+msgstr "SexoFeminino"
+
+#: Form/form_ca.xml.h:233
+msgid "9. Sex:Female"
+msgstr "9. Sexo: feminino"
+
+#: Form/form_ca.xml.h:235
+msgid "10. Married or Single"
+msgstr "10. Casado ou solteiro"
+
+#: Form/form_ca.xml.h:236
+msgid "Widowers"
+msgstr "Viúvos"
+
+#: Form/form_ca.xml.h:237
+msgid "11. Widowers"
+msgstr "11. Viúvos"
+
+#: Form/form_ca.xml.h:238
+msgid "Widows"
+msgstr "Viúvas"
+
+#: Form/form_ca.xml.h:239
+msgid "12. Widows"
+msgstr "12. Viúvas"
+
+#: Form/form_ca.xml.h:241
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. Indivíduos de cor: mulatos ou indianos"
+
+#: Form/form_ca.xml.h:242
+msgid "MemberMale"
+msgstr "MembroMasculino"
+
+#: Form/form_ca.xml.h:243
+msgid "14. Members: Male"
+msgstr "14. Membros: masculino"
+
+#: Form/form_ca.xml.h:244
+msgid "MemberFemale"
+msgstr "MembroFeminino"
+
+#: Form/form_ca.xml.h:245
+msgid "15. Members: Female"
+msgstr "15. Membros:feminino"
+
+#: Form/form_ca.xml.h:246
+msgid "NotMemberMale"
+msgstr "NãoMembroMasculino"
+
+#: Form/form_ca.xml.h:247
+msgid "16. Not Members: Male"
+msgstr "16. Não membros: masculino"
+
+#: Form/form_ca.xml.h:248
+msgid "NotMemberFemale"
+msgstr "NãoMembroFeminino"
+
+#: Form/form_ca.xml.h:249
+msgid "17. Not Members: Female"
+msgstr "17. Não membro: feminino"
+
+#: Form/form_ca.xml.h:250
+msgid "MemberAbsentMale"
+msgstr "MembroAusenteMasculino"
+
+#: Form/form_ca.xml.h:251
+msgid "18. Members Absent: Male"
+msgstr "18. Membros ausentes: masculino"
+
+#: Form/form_ca.xml.h:252
+msgid "MemberAbsentFemale"
+msgstr "MembroAusenteFeminino"
+
+#: Form/form_ca.xml.h:253
+msgid "19. Members Absent: Female"
+msgstr "19. Membros ausentes: feminino"
+
+#: Form/form_ca.xml.h:254 Form/form_ca.xml.h:334 Form/form_ca.xml.h:382
+#: Form/form_ca.xml.h:443 Form/form_ca.xml.h:747
+msgid "DeafDumb"
+msgstr "SurdoMudo"
+
+#: Form/form_ca.xml.h:255 Form/form_ca.xml.h:335
+msgid "20. Deaf and Dumb"
+msgstr "20. Surdos e mudos"
+
+#: Form/form_ca.xml.h:257 Form/form_ca.xml.h:337
+msgid "21. Blind"
+msgstr "21. Cegos"
+
+#: Form/form_ca.xml.h:258 Form/form_ca.xml.h:338 Form/form_ca.xml.h:386
+#: Form/form_ca.xml.h:447 Form/form_ca.xml.h:749
+msgid "Lunatic"
+msgstr "Lunáticos"
+
+#: Form/form_ca.xml.h:259
+msgid "22. Lunatics or Idiots"
+msgstr "22. Lunáticos"
+
+#: Form/form_ca.xml.h:261
+msgid "23. Attending School within the year: Male"
+msgstr "23. A estudar no ano: masculino"
+
+#: Form/form_ca.xml.h:263
+msgid "24. Attending School within the year: Female"
+msgstr "24. A estudar no ano: feminino"
+
+#: Form/form_ca.xml.h:264
+msgid "CantReadMale"
+msgstr "AnalfabetoMasculino"
+
+#: Form/form_ca.xml.h:265
+msgid "25. Persons over 20, who cannot read or write: Male"
+msgstr "25. Mais de 20 anos, analfabetos: masculino"
+
+#: Form/form_ca.xml.h:266
+msgid "CantReadFemale"
+msgstr "AnalfabetoFeminino"
+
+#: Form/form_ca.xml.h:267
+msgid "26. Persons over 20, who cannot read or write: Female"
+msgstr "26. Mais de 20 anos, analfabetos: feminino"
+
+#: Form/form_ca.xml.h:268
+msgid "Birth1860Male"
+msgstr "Nascidos1860Masculino"
+
+#: Form/form_ca.xml.h:269
+msgid "27. Births in 1860: Male"
+msgstr "27. Nascidos em 1860: masculino"
+
+#: Form/form_ca.xml.h:270
+msgid "Birth1860Female"
+msgstr "Nascidos 1860Feminino"
+
+#: Form/form_ca.xml.h:271
+msgid "28. Births in 1860: Female"
+msgstr "28. Nascidos em 1860: feminino"
+
+#: Form/form_ca.xml.h:272
+msgid "Death1860Male"
+msgstr "Falecidos1860Masculino"
+
+#: Form/form_ca.xml.h:273
+msgid "29. Deaths in 1860: Male"
+msgstr "29. Falecidos em 1860: masculino"
+
+#: Form/form_ca.xml.h:274
+msgid "Death1860Female"
+msgstr "Falecidos1860Feminino"
+
+#: Form/form_ca.xml.h:275
+msgid "30. Deaths in 1860: Female"
+msgstr "30. Falecidos em 1860: feminino"
+
+#: Form/form_ca.xml.h:277
+msgid "31. Age and cause of death"
+msgstr "31. Idade e causa de óbito"
+
+#: Form/form_ca.xml.h:279
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr "32. Casas: tijolo, pedra, estrutura, madeira, etc."
+
+#: Form/form_ca.xml.h:281
+msgid "33. Houses: No. of Stories"
+msgstr "33. Casas: n.º de histórias"
+
+#: Form/form_ca.xml.h:283
+msgid "34. Houses: No. of families living in the house"
+msgstr "34. Casas: n.º de famílias ocupantes"
+
+#: Form/form_ca.xml.h:285
+msgid "35. Houses: Vacant"
+msgstr "35. Casas: vazias"
+
+#: Form/form_ca.xml.h:286
+msgid "HouseBeingBuilt"
+msgstr "CasaEmConstrução"
+
+#: Form/form_ca.xml.h:287
+msgid "36. Houses: Being built"
+msgstr "36. Casas: em construção"
+
+#: Form/form_ca.xml.h:291 Form/form_ca.xml.h:345 Form/form_ca.xml.h:393
+#: Form/form_ca.xml.h:453 Form/form_ca.xml.h:532 Form/form_ca.xml.h:618
+#: Form/form_ca.xml.h:664 Form/form_ca.xml.h:797
+msgid "SubDistrict"
+msgstr "SubDistrito"
+
+#: Form/form_ca.xml.h:296 Form/form_ca.xml.h:350 Form/form_ca.xml.h:399
+msgid "Vessels"
+msgstr "Vasos"
+
+#: Form/form_ca.xml.h:297 Form/form_ca.xml.h:351
+msgid "1. Vessels"
+msgstr "1. Vasos"
+
+#: Form/form_ca.xml.h:298 Form/form_ca.xml.h:352
+msgid "Shanties"
+msgstr "Choupanas"
+
+#: Form/form_ca.xml.h:299 Form/form_ca.xml.h:353
+msgid "2. Shanties"
+msgstr "2. Choupanas"
+
+#: Form/form_ca.xml.h:300 Form/form_ca.xml.h:354 Form/form_ca.xml.h:401
+msgid "HousesBeingBuilt"
+msgstr "CasasEmConstrução"
+
+#: Form/form_ca.xml.h:301
+msgid "3. Dwelling houses in construction"
+msgstr "3. Casas de habitação em construção"
+
+#: Form/form_ca.xml.h:303
+msgid "4. Dwelling houses unoccupied"
+msgstr "4. Casas de habitação vazias"
+
+#: Form/form_ca.xml.h:304 Form/form_ca.xml.h:358 Form/form_ca.xml.h:405
+#: Form/form_ca.xml.h:551
+msgid "HousesInhabited"
+msgstr "CasasVazias"
+
+#: Form/form_ca.xml.h:305
+msgid "5. Dwelling houses inhabited"
+msgstr "5. Casas de habitação desabitadas"
+
+#: Form/form_ca.xml.h:307
+msgid "6.Families"
+msgstr "6. Famílias"
+
+#: Form/form_ca.xml.h:309 Form/form_ca.xml.h:363
+msgid "7. Names"
+msgstr "7. Nomes"
+
+#: Form/form_ca.xml.h:311 Form/form_ca.xml.h:365
+msgid "8. Sex"
+msgstr "8. Sexo"
+
+#: Form/form_ca.xml.h:313 Form/form_ca.xml.h:367
+msgid "9. Age"
+msgstr "9. Idade"
+
+#: Form/form_ca.xml.h:314
+msgid "Birth1871"
+msgstr "Nascidos1871"
+
+#: Form/form_ca.xml.h:315 Form/form_ca.xml.h:369
+msgid "10. Born within last twelve months"
+msgstr "10. Nascidos nos últimos 12 meses"
+
+#: Form/form_ca.xml.h:317 Form/form_ca.xml.h:371 Form/form_ca.xml.h:420
+msgid "11. Country or Province of Birth"
+msgstr "11. País ou província de nascimento"
+
+#: Form/form_ca.xml.h:319 Form/form_ca.xml.h:373
+msgid "12. Religion"
+msgstr "12. Religião"
+
+#: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
+msgid "13. Origin"
+msgstr "13. Origem"
+
+#: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
+msgid "14. Profession, Occupation or Trade"
+msgstr "143. Profissão ou negócio"
+
+#: Form/form_ca.xml.h:325 Form/form_ca.xml.h:379
+msgid "15. Married or Widowed"
+msgstr "15. Casados ou viǘvos"
+
+#: Form/form_ca.xml.h:326
+msgid "Maried1871"
+msgstr "Casados1871"
+
+#: Form/form_ca.xml.h:327
+msgid "16. Married within last twelve months"
+msgstr "16. Casados nos últimos 12 meses"
+
+#: Form/form_ca.xml.h:328 Form/form_ca.xml.h:380
+msgid "Scholar"
+msgstr "Estudioso"
+
+#: Form/form_ca.xml.h:329
+msgid "17. Going to school"
+msgstr "17. Na escola"
+
+#: Form/form_ca.xml.h:330
+msgid "CantRead"
+msgstr "SemLer"
+
+#: Form/form_ca.xml.h:331
+msgid "18. Over 20 unable to read"
+msgstr "18. Mais de 20 anos e sem saber ler"
+
+#: Form/form_ca.xml.h:332
+msgid "CantWrite"
+msgstr "NãoEscreve"
+
+#: Form/form_ca.xml.h:333
+msgid "19. Over 20 unable to write"
+msgstr "19. Mais de 20 anos sem saber escrever"
+
+#: Form/form_ca.xml.h:339
+msgid "22. Unsound mind"
+msgstr "22. Mente perturbada"
+
+#: Form/form_ca.xml.h:341
+msgid "23. Date of Operations and Remarks"
+msgstr "23. Data das operações e observações"
+
+#: Form/form_ca.xml.h:355
+msgid "3. Houses in construction"
+msgstr "3. Casas em construção"
+
+#: Form/form_ca.xml.h:357
+msgid "4. Houses unoccupied"
+msgstr "4. Casas desocupadas"
+
+#: Form/form_ca.xml.h:359
+msgid "5. Houses inhabited"
+msgstr "5. Casas desabitadas"
+
+#: Form/form_ca.xml.h:361
+msgid "6. Families"
+msgstr "6. Famílias"
+
+#: Form/form_ca.xml.h:368
+msgid "Birth1881"
+msgstr "Nascidos1881"
+
+#: Form/form_ca.xml.h:381
+msgid "16. Going to school"
+msgstr "16. Na escola"
+
+#: Form/form_ca.xml.h:383
+msgid "17. Deaf and Dumb"
+msgstr "17. Surdos e mudos"
+
+#: Form/form_ca.xml.h:385
+msgid "18. Blind"
+msgstr "18. Cegos"
+
+#: Form/form_ca.xml.h:387
+#, fuzzy
+#| msgid "19/ Unsound mind"
+msgid "19. Unsound mind"
+msgstr "19. Mentes perturbadas"
+
+#: Form/form_ca.xml.h:389
+msgid "20. Date of Operations and Remarks"
+msgstr "20. Datas de operações e observações"
+
+#: Form/form_ca.xml.h:400
+msgid "1. Vessels and Shanties"
+msgstr "1. Vasos e choupanas"
+
+#: Form/form_ca.xml.h:402
+msgid "2. Houses in construction"
+msgstr "2. Casas em construção"
+
+#: Form/form_ca.xml.h:404
+msgid "3. Houses unoccupied"
+msgstr "3. Casas desocupadas"
+
+#: Form/form_ca.xml.h:406
+msgid "4. Houses inhabited"
+msgstr "4. Casas desabitadas"
+
+#: Form/form_ca.xml.h:408
+msgid "5. Families"
+msgstr "5. Famílias"
+
+#: Form/form_ca.xml.h:410
+msgid "6. Names"
+msgstr "6. Nomes"
+
+#: Form/form_ca.xml.h:412
+msgid "7. Sex"
+msgstr "7. Sexo"
+
+#: Form/form_ca.xml.h:414
+msgid "8. Age"
+msgstr "8. Idade"
+
+#: Form/form_ca.xml.h:416
+msgid "9. Married or Widowed"
+msgstr "9. Casados ou viúvos"
+
+#: Form/form_ca.xml.h:418
+msgid "10. Relationship to Head of Family"
+msgstr "10. Parentesco com o chefe de família"
+
+#: Form/form_ca.xml.h:422
+msgid "12. FrenchCanadian"
+msgstr "12. Canadiano-francês"
+
+#: Form/form_ca.xml.h:423
+msgid "BirthPlaceFather"
+msgstr "LocalNascimentoPai"
+
+#: Form/form_ca.xml.h:424
+msgid "13. Birth Place of Father"
+msgstr "13. Local de nascimento do pai"
+
+#: Form/form_ca.xml.h:425
+msgid "BirthPlaceMother"
+msgstr "LocalNascimentoMãe"
+
+#: Form/form_ca.xml.h:426
+msgid "14. Birth Place of Mother"
+msgstr "14. Local de nascimento da mãe"
+
+#: Form/form_ca.xml.h:428
+msgid "15. Religion"
+msgstr "15. Religião"
+
+#: Form/form_ca.xml.h:430
+msgid "16. Profession, Occupation or Trade"
+msgstr "16. Profissão ou negócio"
+
+#: Form/form_ca.xml.h:432
+msgid "17. Employers"
+msgstr "17. Empregadores"
+
+#: Form/form_ca.xml.h:433 Form/form_ca.xml.h:498 Form/form_ca.xml.h:709
+msgid "Employee"
+msgstr "Empregado"
+
+#: Form/form_ca.xml.h:434
+msgid "18. Wage Earner"
+msgstr "18. Empregado"
+
+#: Form/form_ca.xml.h:435
+msgid "Unemployed"
+msgstr "Desempregado"
+
+#: Form/form_ca.xml.h:436
+msgid "19. Unemployed during week preceding Census"
+msgstr "19. Desempregados na semana anterior ao censo"
+
+#: Form/form_ca.xml.h:437
+msgid "Employees"
+msgstr "Empregados"
+
+#: Form/form_ca.xml.h:438
+msgid "20. Employer to state average number of hands employed during year"
+msgstr ""
+"20. Empregador para declarar o número médio de trabalhadores empregados "
+"durante o ano"
+
+#: Form/form_ca.xml.h:439 Form/form_ca.xml.h:846
+msgid "CanRead"
+msgstr "SabeLer"
+
+#: Form/form_ca.xml.h:440
+msgid "21. Instruction: Read"
+msgstr "21. Instrução: lê"
+
+#: Form/form_ca.xml.h:441 Form/form_ca.xml.h:848
+msgid "CanWrite"
+msgstr "SabeEscrever"
+
+#: Form/form_ca.xml.h:442
+msgid "22. Instruction: Write"
+msgstr "22. Instrução: escreve"
+
+#: Form/form_ca.xml.h:444
+msgid "23. Deaf and Dumb"
+msgstr "23. Surdos e mudos"
+
+#: Form/form_ca.xml.h:446
+msgid "24. Blind"
+msgstr "24. Cegos"
+
+#: Form/form_ca.xml.h:448
+msgid "25. Unsound mind"
+msgstr "25. Mentes perturbadas"
+
+#: Form/form_ca.xml.h:449 Form/form_ca.xml.h:528 Form/form_ca.xml.h:660
+#: Form/form_ca.xml.h:753 Form/form_ca.xml.h:793
+msgid "SubTitle"
+msgstr "Subtítulo"
+
+#: Form/form_ca.xml.h:454 Form/form_ca.xml.h:533 Form/form_ca.xml.h:665
+msgid "PollSub"
+msgstr "SubSond"
+
+#: Form/form_ca.xml.h:460 Form/form_ca.xml.h:671 Form/form_ca.xml.h:804
+msgid "House"
+msgstr "Casa"
+
+#: Form/form_ca.xml.h:461 Form/form_ca.xml.h:672
+msgid "1. Dwelling house"
+msgstr "1. Casa de habitação"
+
+#: Form/form_ca.xml.h:463 Form/form_ca.xml.h:674
+msgid "2. Family or household"
+msgstr "2. Família ou agregado"
+
+#: Form/form_ca.xml.h:465 Form/form_ca.xml.h:676
+msgid "3. Name of each person in family"
+msgstr "3. Nome de cada indivíduo na família"
+
+#: Form/form_ca.xml.h:467 Form/form_ca.xml.h:631 Form/form_ca.xml.h:768
+msgid "4. Sex"
+msgstr "4. Sexo"
+
+#: Form/form_ca.xml.h:468
+msgid "Colour"
+msgstr "Cor"
+
+#: Form/form_ca.xml.h:469
+msgid "5. Colour"
+msgstr "5. Cor"
+
+#: Form/form_ca.xml.h:471 Form/form_ca.xml.h:682
+msgid "6. Relation to head of family"
+msgstr "6. Parentesco com o chefe de família"
+
+#: Form/form_ca.xml.h:473 Form/form_ca.xml.h:684
+msgid "7. Single, married, widowed, divorced or legally separated"
+msgstr "7. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
+
+#: Form/form_ca.xml.h:474 Form/form_ca.xml.h:685 Form/form_ca.xml.h:773
+msgid "BirthMonth"
+msgstr "MêsNascimento"
+
+#: Form/form_ca.xml.h:475
+msgid "8. Month and Date of Birth"
+msgstr "8. Mês e data de nascimento"
+
+#: Form/form_ca.xml.h:476 Form/form_ca.xml.h:687
+msgid "BirthYear"
+msgstr "AnoNascimento"
+
+#: Form/form_ca.xml.h:477 Form/form_ca.xml.h:688
+msgid "9. Year of birth"
+msgstr "9. Ano de nascimento"
+
+#: Form/form_ca.xml.h:479 Form/form_ca.xml.h:690
+msgid "10. Age at last birthday"
+msgstr "10. Idade ao último aniversário"
+
+#: Form/form_ca.xml.h:481 Form/form_ca.xml.h:692
+msgid "11. Country or place of birth"
+msgstr "11. País ou local de nascimento"
+
+#: Form/form_ca.xml.h:483 Form/form_ca.xml.h:694
+msgid "12. Year of immigration to Canada, if an immigrant"
+msgstr "12. Ano de imigração para o Canadá, se imigrou"
+
+#: Form/form_ca.xml.h:485 Form/form_ca.xml.h:696
+msgid "13. Year of naturalization, if formerly an alien"
+msgstr "13. Ano de naturalização, se era estrangeiro"
+
+#: Form/form_ca.xml.h:487 Form/form_ca.xml.h:698
+msgid "14. Racial or tribal origin"
+msgstr "14. Origem racial ou tribal"
+
+#: Form/form_ca.xml.h:489 Form/form_ca.xml.h:700
+msgid "15. Nationality"
+msgstr "15. Nacionalidade"
+
+#: Form/form_ca.xml.h:491 Form/form_ca.xml.h:702
+msgid "16. Religion"
+msgstr "16. Religião"
+
+#: Form/form_ca.xml.h:493
+msgid "17. Profession, occupation, trade or means of living of each person"
+msgstr "17. Profissão, negócio ou meios de subsistência"
+
+#: Form/form_ca.xml.h:494
+msgid "OwnMeans"
+msgstr "MeiosPróprios"
+
+#: Form/form_ca.xml.h:495
+msgid "18. Living on own means"
+msgstr "18. Vivem por conta própria"
+
+#: Form/form_ca.xml.h:497 Form/form_ca.xml.h:708
+msgid "19. Employer"
+msgstr "19. Empregador"
+
+#: Form/form_ca.xml.h:499 Form/form_ca.xml.h:710
+msgid "20. Employee"
+msgstr "20. Empregado"
+
+#: Form/form_ca.xml.h:500 Form/form_ca.xml.h:711
+msgid "SelfEmployed"
+msgstr "Empresário"
+
+#: Form/form_ca.xml.h:501 Form/form_ca.xml.h:712
+msgid "21. Working on own account"
+msgstr "21. Trabalha por conta pŕopria"
+
+#: Form/form_ca.xml.h:502 Form/form_ca.xml.h:713
+msgid "WhereEmployed"
+msgstr "OndeTrabalha"
+
+#: Form/form_ca.xml.h:503
+msgid "22. Working at trade in factory or in home"
+msgstr "22. Trabalha na empresa, fábrica, ou em casa"
+
+#: Form/form_ca.xml.h:504
+msgid "MonthsFactory"
+msgstr "MesesFábrica"
+
+#: Form/form_ca.xml.h:505
+msgid "23. Months employed at trade in factory"
+msgstr "23. Meses de trabalho na empresa ou fábrica"
+
+#: Form/form_ca.xml.h:506
+msgid "MonthsHome"
+msgstr "Meses casa"
+
+#: Form/form_ca.xml.h:507
+msgid "24. Months employed at trade in home"
+msgstr "24. Meses de trabalho em casa"
+
+#: Form/form_ca.xml.h:508
+msgid "MonthsOther"
+msgstr "MesesOutros"
+
+#: Form/form_ca.xml.h:509
+msgid "25. Months employed in other occupation than trace in factory or home"
+msgstr "25. Meses de trabalho noutra profissão"
+
+#: Form/form_ca.xml.h:510 Form/form_ca.xml.h:723
+msgid "EarningsOccupation"
+msgstr "GanhosProfissionais"
+
+#: Form/form_ca.xml.h:511
+msgid "26. Earnings from occupation or trade"
+msgstr "26. Ganhos profissionais ou empresariais"
+
+#: Form/form_ca.xml.h:512 Form/form_ca.xml.h:725
+msgid "EarningsOther"
+msgstr "GanhosOutros"
+
+#: Form/form_ca.xml.h:513
+msgid "27. Extra earning (From other than chief occupation or trade)"
+msgstr "27. Ganhos extra (outras fontes de rendimento)"
+
+#: Form/form_ca.xml.h:514 Form/form_ca.xml.h:735 Form/form_ca.xml.h:783
+msgid "SchoolMonths"
+msgstr "MesesEscola"
+
+#: Form/form_ca.xml.h:515
+msgid "28. Months at school in 1910"
+msgstr "28. Meses na escola em 1910"
+
+#: Form/form_ca.xml.h:517
+msgid "29. Can read"
+msgstr "29. Sabe ler"
+
+#: Form/form_ca.xml.h:519
+msgid "30. Can write"
+msgstr "30. Sabe escrever"
+
+#: Form/form_ca.xml.h:520 Form/form_ca.xml.h:840
+msgid "SpeakEnglish"
+msgstr "FalaInglês"
+
+#: Form/form_ca.xml.h:521
+msgid "31. Can speak English"
+msgstr "31. Sabe falar inglês"
+
+#: Form/form_ca.xml.h:522 Form/form_ca.xml.h:842
+msgid "SpeakFrench"
+msgstr "FalaFrancês"
+
+#: Form/form_ca.xml.h:523
+msgid "32. Can speak French"
+msgstr "32. Sabe falar francês"
+
+#: Form/form_ca.xml.h:525
+msgid "33. Mother tongue (If spoken)"
+msgstr "33. Língua-mãe (se falada)"
+
+#: Form/form_ca.xml.h:526 Form/form_ca.xml.h:791
+msgid "Infirmities"
+msgstr "Doenças"
+
+#: Form/form_ca.xml.h:527
+msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
+msgstr "34. Doenças: a. surdo e mudo; b. cego; c. mente perturbada"
+
+#: Form/form_ca.xml.h:538
+msgid "Name from Schedule 1"
+msgstr "Nome da agenda 1"
+
+#: Form/form_ca.xml.h:540
+msgid "Line on Schedule 2"
+msgstr "Linha na agenda 2"
+
+#: Form/form_ca.xml.h:541
+msgid "PageRef"
+msgstr "RefPágina"
+
+#: Form/form_ca.xml.h:542
+msgid "2. Page from Schedule 1"
+msgstr "2. Página da agenda 1"
+
+#: Form/form_ca.xml.h:543
+msgid "LineRef"
+msgstr "RefLinha"
+
+#: Form/form_ca.xml.h:544
+msgid "3. Line from Schedule 1"
+msgstr "3. Linha da agenda 1"
+
+#: Form/form_ca.xml.h:546
+msgid "3. Place of Habitation"
+msgstr "3. Local de habitação"
+
+#: Form/form_ca.xml.h:547
+msgid "HousesConst"
+msgstr "CasasEmConstrução"
+
+#: Form/form_ca.xml.h:548
+msgid "4. Houses: In construction"
+msgstr "4. Casas: em construção"
+
+#: Form/form_ca.xml.h:550
+msgid "5. Houses: Vacant"
+msgstr "5. Casas: vazias"
+
+#: Form/form_ca.xml.h:552
+msgid "6. Houses: Inhabited"
+msgstr "6. Casas: desabitadas"
+
+#: Form/form_ca.xml.h:554
+msgid "7. Institution: Special or legal name"
+msgstr "7. Instituição: nome especial ou legal"
+
+#: Form/form_ca.xml.h:555
+msgid "Buildings"
+msgstr "Imóveis"
+
+#: Form/form_ca.xml.h:556
+msgid "8. Institution: Number of buildings"
+msgstr "8. Instituição: número de imóveis"
+
+#: Form/form_ca.xml.h:558
+msgid "9. Number of families in house or institution"
+msgstr "9. N.º de famílias na casa ou instituição"
+
+#: Form/form_ca.xml.h:559
+msgid "Rooms"
+msgstr "Divisões"
+
+#: Form/form_ca.xml.h:560
+msgid "10. Number of rooms in house or institution for each famiy"
+msgstr "10. N.º de divisões para cada família na casa ou instituição"
+
+#: Form/form_ca.xml.h:561
+msgid "Inmates"
+msgstr "Prisioneiros"
+
+#: Form/form_ca.xml.h:562
+msgid "11. Number of inmates in institution"
+msgstr "11. N.º de prisioneiros na instituição"
+
+#: Form/form_ca.xml.h:563
+msgid "OwnedAcres"
+msgstr "HectaresPossuídos"
+
+#: Form/form_ca.xml.h:564
+msgid "12. Real Estate Owned: Grand total of acres"
+msgstr "12. Imobiliário próprio: total de hectares"
+
+#: Form/form_ca.xml.h:565
+msgid "OwnedLots"
+msgstr "LotesPróprios"
+
+#: Form/form_ca.xml.h:566
+msgid "13. Real Estate Owned: Number of town or village lots"
+msgstr "13. Imobiliário próprio: n.º de lotes na localidade"
+
+#: Form/form_ca.xml.h:567
+msgid "OwnedHouses"
+msgstr "CasasPróprias"
+
+#: Form/form_ca.xml.h:568
+msgid "14. Real Estate Owned: Number of dwelling houses"
+msgstr "14. Imobiliário próprio: n.º de casas de habitação"
+
+#: Form/form_ca.xml.h:569
+msgid "OwnedStores"
+msgstr "LojasPróprias"
+
+#: Form/form_ca.xml.h:570
+msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
+msgstr "15. Imobiliário próprio: n.º de lojas, armazéns, etc."
+
+#: Form/form_ca.xml.h:571
+msgid "OwnedBars"
+msgstr "CeleirosPróprios"
+
+#: Form/form_ca.xml.h:572
+msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
+msgstr "16. Imobiliário próprio: n.º de celeiros, estábulos, etc."
+
+#: Form/form_ca.xml.h:573
+msgid "OwnedSilos"
+msgstr "SilosPróprios"
+
+#: Form/form_ca.xml.h:574
+msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
+msgstr "17. Imobiliário próprio: n.º de silos e capacidade em pés cúbicos"
+
+#: Form/form_ca.xml.h:575
+msgid "OwnedFactories"
+msgstr "FábricasPróprias"
+
+#: Form/form_ca.xml.h:576
+msgid "18. Real Estate Owned: Number of manufacturing establishments"
+msgstr "18. Imobiliário próprio: n.º de fábricas"
+
+#: Form/form_ca.xml.h:577
+msgid "LeasedAcres"
+msgstr "HectaresArrendados"
+
+#: Form/form_ca.xml.h:578
+msgid "19. Real Estate Leased: Grand total of acres"
+msgstr "19. Imobiliário próprio: total de hectares"
+
+#: Form/form_ca.xml.h:579
+msgid "LeasedLots"
+msgstr "LotesArrendados"
+
+#: Form/form_ca.xml.h:580
+msgid "20. Real Estate Leased: Number of town or village lots"
+msgstr "20. Imobiliário arrendado: n.º de lotes na localidade"
+
+#: Form/form_ca.xml.h:581
+msgid "LeasedHouses"
+msgstr "CasasArrendadas"
+
+#: Form/form_ca.xml.h:582
+msgid "21. Real Estate Leased: Number of dwelling houses"
+msgstr "21. Imobiliário arrendado: n.º de casas de habitação"
+
+#: Form/form_ca.xml.h:583
+msgid "LeasedStores"
+msgstr "LojasArrendadas"
+
+#: Form/form_ca.xml.h:584
+msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
+msgstr "22. Imobiliário arrendado: n.º de lojas, armazéns, etc."
+
+#: Form/form_ca.xml.h:585
+msgid "LeasedBarns"
+msgstr "CeleirosArrendados"
+
+#: Form/form_ca.xml.h:586
+msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
+msgstr "23. Imobiliário arrendado: n.º de celeiros, estábulos, e outros anexos"
+
+#: Form/form_ca.xml.h:587
+msgid "LeasedSilos"
+msgstr "SilosArrendados"
+
+#: Form/form_ca.xml.h:588
+msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
+msgstr "24. Imobiliário arrencado: n.º de silos e capacidade em pés cúbicos"
+
+#: Form/form_ca.xml.h:589
+msgid "LeasedFactories"
+msgstr "Fábricas arrendadas"
+
+#: Form/form_ca.xml.h:590
+msgid "25. Real Estate Leased: Number of manufacturing establishments"
+msgstr "25.Imobiliário arrendado: n.º de fábricas"
+
+#: Form/form_ca.xml.h:591
+msgid "Denomination"
+msgstr "Denominação"
+
+#: Form/form_ca.xml.h:592
+msgid "26. Church or place of worship: Religious denomination"
+msgstr "26. Igreja ou local de culto: denominação religiosa"
+
+#: Form/form_ca.xml.h:593
+msgid "Communicants"
+msgstr "Comunicantes"
+
+#: Form/form_ca.xml.h:594
+msgid "27. Church or place of worship: Number of communicants"
+msgstr "27. Igreja ou local de culto: n.º de comunicantes"
+
+#: Form/form_ca.xml.h:595
+msgid "Seating"
+msgstr "Sentados"
+
+#: Form/form_ca.xml.h:596
+msgid "28. Church or place of worship: Seating capacity"
+msgstr "28. Igreja ou local de culto: lugares sentados"
+
+#: Form/form_ca.xml.h:597
+msgid "SSDenomination"
+msgstr "DenominaçãoCatequese"
+
+#: Form/form_ca.xml.h:598
+msgid "29. Sunday School: Religious Denomination"
+msgstr "29. Catequese: denominação religiosa"
+
+#: Form/form_ca.xml.h:599
+msgid "SSTeachers"
+msgstr "CatequeseProfessores"
+
+#: Form/form_ca.xml.h:600
+msgid "30. Sunday School: Number of officers and teachers"
+msgstr "30. Catequese: n.º de oficiantes e professores"
+
+#: Form/form_ca.xml.h:601
+msgid "SSScholars"
+msgstr "CatequeseEstudiosos"
+
+#: Form/form_ca.xml.h:602
+msgid "31. Sunday School: Number of Scholars"
+msgstr "31. Catequese: n.º de estudiosos"
+
+#: Form/form_ca.xml.h:603
+msgid "SchoolRooms"
+msgstr "SalasAula"
+
+#: Form/form_ca.xml.h:604
+msgid "32. School: Number of rooms"
+msgstr "32. Escola: n.º de salas"
+
+#: Form/form_ca.xml.h:605
+msgid "SchoolTeachers"
+msgstr "Professores"
+
+#: Form/form_ca.xml.h:606
+msgid "33. School: Number of teachers"
+msgstr "33. Escola: n.º de professores"
+
+#: Form/form_ca.xml.h:607
+msgid "SchoolStudents"
+msgstr "Alunos"
+
+#: Form/form_ca.xml.h:608
+msgid "34. School: Number of Scholars"
+msgstr "34. Escola: n.º de alunos"
+
+#: Form/form_ca.xml.h:609
+msgid "DateVisit"
+msgstr "DataVisita"
+
+#: Form/form_ca.xml.h:610
+msgid "35. Date of visit"
+msgstr "35. Data da visita"
+
+#: Form/form_ca.xml.h:611
+msgid "Reason"
+msgstr "Motivo"
+
+#: Form/form_ca.xml.h:612
+msgid "36. The reason, if not enumerated on first visit"
+msgstr "36. O motivo, se não descrito na 1ª visita"
+
+#: Form/form_ca.xml.h:613
+msgid "DateEnum"
+msgstr "DataDesc"
+
+#: Form/form_ca.xml.h:614
+msgid "37. Date when enumerated"
+msgstr "37. Data de descrição"
+
+#: Form/form_ca.xml.h:625
+msgid "1. No. of family in order of visitation"
+msgstr "1. N.º da família por ordem de visita"
+
+#: Form/form_ca.xml.h:627
+msgid "2. Name of each person in the family"
+msgstr "2. Nome de cada indivíduo na família"
+
+#: Form/form_ca.xml.h:629
+msgid "3.Relation to head of family"
+msgstr "3. Parentesco com o chefe de família"
+
+#: Form/form_ca.xml.h:633
+msgid "5. Married, single, widowed or divorced"
+msgstr "5. Casado, solteiro, viúvo, ou divorciado"
+
+#: Form/form_ca.xml.h:635
+msgid "6. Age"
+msgstr "6. Idade"
+
+#: Form/form_ca.xml.h:637
+msgid "7. Country or place of birth"
+msgstr "7. País ou local de nascimento"
+
+#: Form/form_ca.xml.h:639
+msgid "8. Year of immigration to Canada"
+msgstr "8. Ano de imigração para o Canadá"
+
+#: Form/form_ca.xml.h:640
+msgid "PostOffice"
+msgstr "PostoCorreios"
+
+#: Form/form_ca.xml.h:641
+msgid "9. Post office address"
+msgstr "9. Endereço do posto de correios"
+
+#: Form/form_ca.xml.h:643
+msgid "10. Location: Section"
+msgstr "10. Local: secção"
+
+#: Form/form_ca.xml.h:645
+msgid "11. Location: Township"
+msgstr "11. Local: localidade"
+
+#: Form/form_ca.xml.h:647
+msgid "12. Location: Range"
+msgstr "12. Local: sector"
+
+#: Form/form_ca.xml.h:648 Form/form_ca.xml.h:816
+msgid "Meridian"
+msgstr "Meridiano"
+
+#: Form/form_ca.xml.h:649
+msgid "13. Location: Meridian"
+msgstr "13. Local: meridiano"
+
+#: Form/form_ca.xml.h:651
+msgid "14. Livestock: Horses, all ages"
+msgstr "14. Gado: cavalos, todas as idades"
+
+#: Form/form_ca.xml.h:652
+msgid "Cows"
+msgstr "Vacas"
+
+#: Form/form_ca.xml.h:653
+msgid "15. Livestock: Milch cows"
+msgstr "15. Gado: vacas leiteiras"
+
+#: Form/form_ca.xml.h:655
+msgid "16. Other horned or meat cattle, all ages"
+msgstr "16. Outro gado bovino, todas as idades"
+
+#: Form/form_ca.xml.h:657
+msgid "17. Sheep and lambs, all ages"
+msgstr "17. Ovelhas e borregos, todas as idades"
+
+#: Form/form_ca.xml.h:659
+msgid "18. Hogs and pigs, all ages"
+msgstr "18. Porcos, todas as idades"
+
+#: Form/form_ca.xml.h:678
+msgid "4. Place of habitation"
+msgstr "4. Local de habitação"
+
+#: Form/form_ca.xml.h:680
+msgid "5. Sex"
+msgstr "5. Sexo"
+
+#: Form/form_ca.xml.h:686
+msgid "8. Month of birth"
+msgstr "8. Mês de nascimento"
+
+#: Form/form_ca.xml.h:704
+msgid "16. Chief occupation or trade"
+msgstr "16. Profissão ou negócio principais"
+
+#: Form/form_ca.xml.h:705
+msgid "OtherEmployment"
+msgstr "OutroEmprego"
+
+#: Form/form_ca.xml.h:706
+msgid "18. Employment other than at chief trade or occupation, if any"
+msgstr "18. Outro emprego além do principal, se existir"
+
+#: Form/form_ca.xml.h:714
+msgid "22. State where person employed"
+msgstr "22. estado onde está empregado"
+
+#: Form/form_ca.xml.h:715
+msgid "WeeksOccupation"
+msgstr "SemanasProfissão"
+
+#: Form/form_ca.xml.h:716
+msgid "23. Weeks employed in 1910 at chief occupation or trade"
+msgstr "23. Semanas no emprego principal em 1910"
+
+#: Form/form_ca.xml.h:717
+msgid "WeeksOther"
+msgstr "SemanasOutro"
+
+#: Form/form_ca.xml.h:718
+msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
+msgstr "24. Semanas noutro emprego em 1910"
+
+#: Form/form_ca.xml.h:719
+msgid "HoursOccupation"
+msgstr "HorasProfissão"
+
+#: Form/form_ca.xml.h:720
+msgid "25. Hours of working time per week at chief occupation"
+msgstr "25. Horas semanais de trabalho no emprego principal"
+
+#: Form/form_ca.xml.h:721
+msgid "HoursOther"
+msgstr "HorasOutro"
+
+#: Form/form_ca.xml.h:722
+msgid "26. Hours of working time per week at other occupation, if any"
+msgstr "26. Horas semanais de trabalho noutro emprego, se existir"
+
+#: Form/form_ca.xml.h:724
+msgid "27. Total earnings in 1910 from chief occupation or trade"
+msgstr "27. Ganhos totais do emprego principal em 1910"
+
+#: Form/form_ca.xml.h:726
+msgid "28. Total earnings in 1910 from other than chief occupation or trade"
+msgstr "28. Ganhos totais com outros empregos em 1910"
+
+#: Form/form_ca.xml.h:727
+msgid "Wages"
+msgstr "Salários"
+
+#: Form/form_ca.xml.h:728
+msgid "29. Rate of earnings per hour when employed by the hour-Cents"
+msgstr "29. Taxa de ganhos por hora quando empregado por hour-Cents"
+
+#: Form/form_ca.xml.h:729
+msgid "InsuranceLife"
+msgstr "SeguroVida"
+
+#: Form/form_ca.xml.h:730
+msgid "30. Insurance: Upon life"
+msgstr "30. Seguro: vida"
+
+#: Form/form_ca.xml.h:731
+msgid "InsuranceAccident"
+msgstr "SeguroAcidente"
+
+#: Form/form_ca.xml.h:732
+msgid "31. Insurance: Against accident or illness"
+msgstr "31. Seguro: acidentes ou doença"
+
+#: Form/form_ca.xml.h:733
+msgid "InsuranceCost"
+msgstr "SeguroCusto"
+
+#: Form/form_ca.xml.h:734
+msgid "32. Insurance: Cost of insurance in census year"
+msgstr "32. Seguro: custo dos seguros no ano do censo"
+
+#: Form/form_ca.xml.h:736
+msgid "33. Months at school in 1910"
+msgstr "33. Meses na escola em 1910"
+
+#: Form/form_ca.xml.h:738
+msgid "34. Can Read"
+msgstr "34. Sabe ler"
+
+#: Form/form_ca.xml.h:740
+msgid "35. Can Write"
+msgstr "35. Sabe escrever"
+
+#: Form/form_ca.xml.h:742
+msgid "36. Language commonly spoken"
+msgstr "36. Linguagem falada habitual"
+
+#: Form/form_ca.xml.h:743
+msgid "SchoolCost"
+msgstr "CustoEscola"
+
+#: Form/form_ca.xml.h:744
+msgid ""
+"37. Cost of education in 1910 for persons over 16 years of age at College, "
+"Convent or University"
+msgstr ""
+"37. Custo da educação em 1910 para indivíduos acima de 16 anos em "
+"Faculdades, Conventos ou Universidades"
+
+#: Form/form_ca.xml.h:746
+msgid "38. Blind"
+msgstr "39. Cegos"
+
+#: Form/form_ca.xml.h:748
+msgid "39. Deaf and dumb"
+msgstr "39. Surdos e mudos"
+
+#: Form/form_ca.xml.h:750
+msgid "40. Crazy or lunatic"
+msgstr "40. Lunáticos"
+
+#: Form/form_ca.xml.h:752
+msgid "41. Idiotic or silly"
+msgstr "40. Idiotas ou patetas"
+
+#: Form/form_ca.xml.h:761
+msgid "1. House"
+msgstr "1. Casa"
+
+#: Form/form_ca.xml.h:762
+msgid "Dwelling house"
+msgstr "Casa de habitação"
+
+#: Form/form_ca.xml.h:763
+msgid "2. Family"
+msgstr "2. Família"
+
+#: Form/form_ca.xml.h:764
+msgid "Family or household"
+msgstr "Família ou agregado familiar"
+
+#: Form/form_ca.xml.h:765
+msgid "3. Name"
+msgstr "3. Nome"
+
+#: Form/form_ca.xml.h:766
+msgid "Name of each person in family"
+msgstr "Nome de cada indivíduo na família"
+
+#: Form/form_ca.xml.h:770
+msgid "5. Relation to head of family"
+msgstr "5. Parentesco com o chefe de família"
+
+#: Form/form_ca.xml.h:772
+msgid "6. Single, married, widowed, divorced or legally separated"
+msgstr "6. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
+
+#: Form/form_ca.xml.h:774
+msgid "7. Month of birth"
+msgstr "7. Mês de nascimento"
+
+#: Form/form_ca.xml.h:776
+msgid "8. Age at last birthday"
+msgstr "8. Idade ao último aniversário"
+
+#: Form/form_ca.xml.h:778
+msgid "9. Country or place of birth"
+msgstr "9. País ou local de nascimento"
+
+#: Form/form_ca.xml.h:780
+msgid "10. Racial or tribal origin"
+msgstr "10. Origem racial ou tribal"
+
+#: Form/form_ca.xml.h:782
+msgid "11. Religion"
+msgstr "11. Religião"
+
+#: Form/form_ca.xml.h:784
+msgid "12. Months at school in 1910"
+msgstr "12. Meses na escola em 1910"
+
+#: Form/form_ca.xml.h:786
+msgid "13. Can Read"
+msgstr "13. Sabe ler"
+
+#: Form/form_ca.xml.h:788
+msgid "14. Can Write"
+msgstr "14. Sabe escrever"
+
+#: Form/form_ca.xml.h:790
+msgid "15. Language commonly spoken"
+msgstr "15. Linguagem falada habitual"
+
+#: Form/form_ca.xml.h:792
+msgid ""
+"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
+"lunatic"
+msgstr ""
+"16. Enfermidades: a. cegos; b. surdos e mudos; c. idiotas ou patetas; d. "
+"lunáticos"
+
+#: Form/form_ca.xml.h:805
+msgid "1. Dwelling House"
+msgstr "1. Casa de habitação"
+
+#: Form/form_ca.xml.h:807
+msgid "2. Family, Household or Institution"
+msgstr "2. Família, agregado ou instituição"
+
+#: Form/form_ca.xml.h:809
+msgid "3. Name of each person in family, household or institution"
+msgstr "3. Nome de cada indivíduo na família, agregado ou instituição"
+
+#: Form/form_ca.xml.h:810
+msgid "MilitaryService"
+msgstr "ServiçoMilitar"
+
+#: Form/form_ca.xml.h:811
+msgid "4. Military Service"
+msgstr "4. Serviço militar"
+
+#: Form/form_ca.xml.h:813
+msgid "5. Place of Habitation: Township"
+msgstr "5. Local de habitação: localidade"
+
+#: Form/form_ca.xml.h:815
+msgid "6. Place of Habitation: Range"
+msgstr "6. Local de habitação: sector"
+
+#: Form/form_ca.xml.h:817
+msgid "7. Place of Habitation: Meridian"
+msgstr "7. Local de habitação: meridiano"
+
+#: Form/form_ca.xml.h:819
+msgid "8. Place of Habitation: Municipality"
+msgstr "8. Local de habitação: município"
+
+#: Form/form_ca.xml.h:821
+msgid "9. Relationship to head of family or household"
+msgstr "9. Parentesco com o chefe de família ou agregado"
+
+#: Form/form_ca.xml.h:823
+msgid "10. Sex"
+msgstr "10. Sexo"
+
+#: Form/form_ca.xml.h:825
+msgid "11. Single, married, widowed, divorced or legally separated"
+msgstr "11. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
+
+#: Form/form_ca.xml.h:827
+msgid "12. Age at last birthday"
+msgstr "12. Idade ao último nascimento"
+
+#: Form/form_ca.xml.h:829
+msgid "13. Country or place of birth"
+msgstr "13. País ou local de nascimento"
+
+#: Form/form_ca.xml.h:831
+msgid "14. Religion"
+msgstr "14. Religião"
+
+#: Form/form_ca.xml.h:833
+msgid "15. Year of immigration to Canada"
+msgstr "15. Ano de imigração para o Canadá"
+
+#: Form/form_ca.xml.h:835
+msgid "16. Year of naturalization"
+msgstr "16. Ano de naturalização"
+
+#: Form/form_ca.xml.h:837
+msgid "17. Nationality"
+msgstr "17. Nacionalidade"
+
+#: Form/form_ca.xml.h:839
+msgid "18. Race or tribal origin"
+msgstr "18. Origem racial ou tribal"
+
+#: Form/form_ca.xml.h:841
+msgid "19. Can speak English"
+msgstr "19. Sabe falar inglês"
+
+#: Form/form_ca.xml.h:843
+msgid "20. Can speak French"
+msgstr "20. Sabe falar francês"
+
+#: Form/form_ca.xml.h:844
+msgid "OtherLanguage"
+msgstr "OutroIdioma"
+
+#: Form/form_ca.xml.h:845
+msgid "21. Other language spoken as mother tongue"
+msgstr "21. Outro idioma falado como língua-mãe"
+
+#: Form/form_ca.xml.h:847
+msgid "22. Can Read"
+msgstr "22. Sabe ler"
+
+#: Form/form_ca.xml.h:849
+msgid "23. Can Write"
+msgstr "23. Sabe escrever"
+
+#: Form/form_ca.xml.h:851
+msgid "24. Chief occupation or trade"
+msgstr "24. Emprego ou negócio principal"
+
+#: Form/form_ca.xml.h:853
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr "25. Empregador, \"E\", Empregado, \"G\""
+
+#: Form/form_ca.xml.h:854
+msgid "EmploymentPlace"
+msgstr "LocalEmprego"
+
+#: Form/form_ca.xml.h:855
+msgid "26. State where person is employed"
+msgstr "26. Estado onde está empregado"
+
+#: Form/form_fr.xml.h:38 Form/form_fr.xml.h:55 Form/form_fr.xml.h:220
+msgid "Can read and write"
+msgstr ""
+
+#: Form/form_fr.xml.h:42 Form/form_fr.xml.h:47
+msgid "Military"
+msgstr ""
+
+#: Form/form_fr.xml.h:56 Form/form_fr.xml.h:221
+msgid "Taxes"
+msgstr ""
+
+#: Form/form_fr.xml.h:57 Form/form_fr.xml.h:67 Form/form_fr.xml.h:222
+msgid "Type of roof"
+msgstr ""
+
+#: Form/form_fr.xml.h:144
+msgid "Arrived since"
 msgstr ""
 
 #: SourceIndex/SourceIndex.gpr.py:24
@@ -18159,11 +18259,12 @@ msgstr "Inglaterra, RU e Irlanda"
 msgid "National Archives"
 msgstr "Arquivos nacionais"
 
-#: UKWebConnectPack/UKWebPack.py:38
+#: UKWebConnectPack/UKWebPack.py:38 USWebConnectPack/USWebPack.py:41
 msgid "Hathi Trust Digital Library"
 msgstr "Hathi Trust Digital Library"
 
-#: UKWebConnectPack/UKWebPack.py:39
+#: UKWebConnectPack/UKWebPack.py:39 DEWebConnectPack/DEWebPack.py:44
+#: USWebConnectPack/USWebPack.py:42
 msgid "Open Library"
 msgstr "Biblioteca Open Library"
 
@@ -18290,6 +18391,8 @@ msgid "Number of %s's ancestors"
 msgstr "Número de ascendentes de %s"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
 msgid "Generation"
 msgstr "Geração"
 
@@ -18443,32 +18546,33 @@ msgstr ", página %s"
 msgid "Notes:"
 msgstr "Notas:"
 
-#: FamilySheet/FamilySheet.py:769
+#: FamilySheet/FamilySheet.py:769 FamilyTree/FamilyTree.py:932
 #, python-format
 msgid "on %(ymd_date)s"
 msgstr "a %(ymd_date)s"
 
-#: FamilySheet/FamilySheet.py:771
+#: FamilySheet/FamilySheet.py:771 FamilyTree/FamilyTree.py:934
 #, python-format
 msgid "in %(ym_date)s"
 msgstr "em %(ym_date)s"
 
-#: FamilySheet/FamilySheet.py:773
+#: FamilySheet/FamilySheet.py:773 FamilyTree/FamilyTree.py:936
 #, python-format
 msgid "in %(y_date)s"
 msgstr "em %(y_date)s"
 
-#: FamilySheet/FamilySheet.py:777
+#: FamilySheet/FamilySheet.py:777 FamilyTree/FamilyTree.py:940
 #, python-format
 msgid "on %(placeholder)s"
 msgstr "em %(placeholder)s"
 
-#: FamilySheet/FamilySheet.py:779
+#: FamilySheet/FamilySheet.py:779 FamilyTree/FamilyTree.py:943
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr "em %(placeholder)s (%(partial)s)"
 
 #: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
+#: FamilyTree/FamilyTree.py:960
 #, python-format
 msgid "in %(place)s"
 msgstr "em %(place)s"
@@ -18501,11 +18605,11 @@ msgstr "Indivíduo central e todos os descendentes"
 msgid "Whether to include descendants, and which ones."
 msgstr "Se deve incluir descendentes e quais."
 
-#: FamilySheet/FamilySheet.py:880
+#: FamilySheet/FamilySheet.py:880 FamilyTree/FamilyTree.py:1084
 msgid "Replace first name with call name"
 msgstr "Substituir nome pelo nome usual"
 
-#: FamilySheet/FamilySheet.py:881
+#: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Sublinhar/Adicionar nome usual ao nome próprio"
 
@@ -19239,7 +19343,7 @@ msgstr "Impossível determinar o tipo de importação"
 msgid "%d rows processed in %s seconds.\n"
 msgstr "%d linhas processadas em %s segundos.\n"
 
-#: Query/QueryQuickview.py:426
+#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
 msgstr "Hoje"
 
@@ -19992,6 +20096,14 @@ msgstr "Actualizar local"
 msgid "Gramplet to manipulate multiple places"
 msgstr ""
 
+#: MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr "Relatório multimédia"
+
+#: MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr "Gera um relatório incluindo imagens, dados das imagens e notas."
+
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
 msgstr "Tem de seleccionar uma imagem para gerar este relatório."
@@ -20060,27 +20172,19 @@ msgstr "Etiquetas, notas e atributos serão incluídos"
 msgid "Media width"
 msgstr "Largura da imagem"
 
-#: MediaReport/media_report.py:451
-#, python-format
+#: MediaReport/media_report.py:452
+#, no-python-format
 msgid "Maximum media width in % of available page width."
 msgstr "Largura máxima da imagem em % da largura da página."
 
-#: MediaReport/media_report.py:455
+#: MediaReport/media_report.py:456
 msgid "Media height"
 msgstr "Altura da imagem"
 
-#: MediaReport/media_report.py:456
+#: MediaReport/media_report.py:457
 #, python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Altura máxima da imagem em % da altura da página."
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr "Relatório multimédia"
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr "Gera um relatório incluindo imagens, dados das imagens e notas."
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
@@ -20264,6 +20368,7 @@ msgid "The center family for the tree"
 msgstr "A família central da árvore"
 
 #: FamilyTree/FamilyTree.py:1047
+#: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
 msgstr "Gerações ascendentes"
 
@@ -20272,6 +20377,7 @@ msgid "The number of ancestor generations to include in the tree"
 msgstr "O número de gerações ascendentes a incluir na árvore"
 
 #: FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Gerações descendentes"
 
@@ -20505,6 +20611,7 @@ msgid "Whether to include notes on repositories and sources."
 msgstr "Se deve incluir notas em repositórios e fontes."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:459
+#: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr "Incluir multimédia"
 
@@ -20605,26 +20712,32 @@ msgid "Set/reset Gramps to use a Deterministic ID"
 msgstr "Configurar o Gramps para usar uma ID determinística"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
+#: HtreePedigreeView/HtreePedigreeView.py:93
 msgid "short for born|b."
 msgstr "n."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
+#: HtreePedigreeView/HtreePedigreeView.py:94
 msgid "short for died|d."
 msgstr "f."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
+#: HtreePedigreeView/HtreePedigreeView.py:95
 msgid "short for baptized|bap."
 msgstr "bap."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:85
+#: HtreePedigreeView/HtreePedigreeView.py:96
 msgid "short for christened|chr."
 msgstr "bap."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
+#: HtreePedigreeView/HtreePedigreeView.py:97
 msgid "short for buried|bur."
 msgstr "in."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
+#: HtreePedigreeView/HtreePedigreeView.py:98
 msgid "short for cremated|crem."
 msgstr "crem."
 
@@ -20810,7 +20923,7 @@ msgstr "Mostrar imagens do indivíduo"
 msgid "Show persons thumbnails in search result list."
 msgstr "Mostrar miniaturas na lista de resultados."
 
-#: GraphView/graphview.py:963
+#: GraphView/graphview.py:963 SearchGramplet/SearchGramplet.py:102
 msgid "Show bookmarked first"
 msgstr "Mostrar favoritos primeiro"
 
@@ -20898,6 +21011,7 @@ msgstr "Mais nenhum favorito..."
 
 #: GraphView/graphview.py:1417 GraphView/graphview.py:1419
 #: GraphView/search_widget.py:233 GraphView/search_widget.py:252
+#: SearchGramplet/SearchGramplet.py:259 SearchGramplet/SearchGramplet.py:281
 #, python-format
 msgid "found: %s"
 msgstr "encontrado:%s"
@@ -20953,7 +21067,8 @@ msgstr "<b>Etiquetas:</b>"
 msgid "Lines type"
 msgstr "Tipo de linhas"
 
-#: GraphView/graphview.py:3783
+#: GraphView/graphview.py:3783 NetworkChart/NetworkChart.py:1174
+#: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Directa"
 
@@ -20986,12 +21101,14 @@ msgid "Show path to home person"
 msgstr "Mostrar caminho para o indivíduo inicial"
 
 #: GraphView/graphview.py:4057 GraphView/search_widget.py:286
-#: GraphView/search_widget.py:364
+#: GraphView/search_widget.py:364 SearchGramplet/SearchGramplet.py:637
+#: SearchGramplet/SearchGramplet.py:769
 msgid "Remove from bookmarks"
 msgstr "Remover dos favoritos"
 
 #: GraphView/graphview.py:4060 GraphView/search_widget.py:294
-#: GraphView/search_widget.py:377
+#: GraphView/search_widget.py:377 SearchGramplet/SearchGramplet.py:645
+#: SearchGramplet/SearchGramplet.py:782
 msgid "Add to bookmarks"
 msgstr "Adicionar aos favoritos"
 
@@ -21102,6 +21219,68 @@ msgstr "Visão geral da família"
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet que mostra uma visão geral dos eventos de uma dada família"
+
+#: UAWebConnectPack/UAWebPack.gpr.py:11
+#, fuzzy
+#| msgid "UK Web Connect Pack"
+msgid "UA Web Connect Pack"
+msgstr "Pacote Internet do RU"
+
+#: UAWebConnectPack/UAWebPack.gpr.py:12
+#, fuzzy
+#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
+msgid "Collection of Web sites for the UA (requires libwebconnect)"
+msgstr "Colecção de páginas “web” para o Reino Unido (requer libwebconnect)"
+
+#: UAWebConnectPack/UAWebPack.py:39
+msgid "Forum: ukrgenealogy.com.ua"
+msgstr ""
+
+#: UAWebConnectPack/UAWebPack.py:40
+msgid "Forum: genoua.name"
+msgstr ""
+
+#: UAWebConnectPack/UAWebPack.py:43
+msgid "Encyclopedia: esu.com.ua"
+msgstr ""
+
+#: UAWebConnectPack/UAWebPack.py:44
+msgid "Wikipedia: uk.wikipedia.org"
+msgstr ""
+
+#: UAWebConnectPack/UAWebPack.py:47
+msgid "Repressed DB: reabit.org.ua"
+msgstr ""
+
+#: UAWebConnectPack/UAWebPack.py:50
+#, fuzzy
+#| msgid "FamilySearch.org"
+msgid "Genealogy DB: familysearch.org"
+msgstr "Family Search"
+
+#: UAWebConnectPack/UAWebPack.py:51
+msgid "Genealogy DB: myheritage.com.ua"
+msgstr ""
+
+#: UAWebConnectPack/UAWebPack.py:53
+#, fuzzy
+#| msgid "Genealogy Online"
+msgid "Genealogy DB: pra.in.ua"
+msgstr "Genealogia em linha"
+
+#: UAWebConnectPack/UAWebPack.py:56
+msgid "Map: Ridni.org"
+msgstr ""
+
+#: UAWebConnectPack/UAWebPack.py:59
+msgid "Search: google.com.ua"
+msgstr ""
+
+#: UAWebConnectPack/UAWebPack.py:60
+#, fuzzy
+#| msgid "Search Quota "
+msgid "Search: roots.in.ua"
+msgstr "Resultados da procura "
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
