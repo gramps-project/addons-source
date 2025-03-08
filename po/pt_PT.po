@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 07:23+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -14701,64 +14701,65 @@ msgstr "Serviço militar; estado"
 
 #: Form/form_us.xml.h:1368
 msgid "Military-Class of service"
-msgstr ""
+msgstr "Classe de serviço militar"
 
 #: Form/form_us.xml.h:1369
 msgid "Military Service; Class of service; Cavalry-Infantry-Artillery-Navy"
 msgstr ""
+"Serviço militar; Classe de serviço; Cavalaria-Infantaria-Artilharia-Marinha"
 
 #: Form/form_us.xml.h:1370
 msgid "Military-Date of enlistment"
-msgstr ""
+msgstr "Data do alistamento militar"
 
 #: Form/form_us.xml.h:1371
 msgid "Military Service; Date of enlistment"
-msgstr ""
+msgstr "Serviço militar; data de alistamento"
 
 #: Form/form_us.xml.h:1372
 msgid "Military-Date of discharge"
-msgstr ""
+msgstr "Data de dispensa militar"
 
 #: Form/form_us.xml.h:1373
 msgid "Military Service; Date of discharge"
-msgstr ""
+msgstr "Serviço militar; data de dispensa"
 
 #: Form/form_us.xml.h:1374
 msgid "Military-Remarks"
-msgstr ""
+msgstr "Comentários militares"
 
 #: Form/form_us.xml.h:1375
 msgid "Military Service; Remarks"
-msgstr ""
+msgstr "Serviço militar; comentários"
 
 #: Form/form_us.xml.h:1381 Form/form_us.xml.h:2080 Form/form_us.xml.h:2117
 #: Form/form_us.xml.h:2155 Form/form_us.xml.h:2193
 msgid "Town or Township"
-msgstr ""
+msgstr "Cidade ou município"
 
 #: Form/form_us.xml.h:1384
 msgid "Months in 1914 Unemployed"
-msgstr ""
+msgstr "Meses de desemprego em 1914"
 
 #: Form/form_us.xml.h:1385
 msgid "Earnings for 1914 from occupation"
-msgstr ""
+msgstr "Rendimentos da profissão em 1914"
 
 #: Form/form_us.xml.h:1386
 msgid "Extent of Education Common"
-msgstr ""
+msgstr "Grau de instrução comum"
 
 #: Form/form_us.xml.h:1387
 msgid "Extent of Education Grammar"
-msgstr ""
+msgstr "Grau de instrução gramatical"
 
 #: Form/form_us.xml.h:1388
 msgid "Extent of Education High School"
-msgstr ""
+msgstr "Grau de instrução liceal"
 
 #: Form/form_us.xml.h:1389
 msgid "Extent of Education College"
-msgstr ""
+msgstr "Grau de instrução superior"
 
 #: Form/form_us.xml.h:1390 Form/form_us.xml.h:1642 Form/form_us.xml.h:1686
 #: Form/form_us.xml.h:2052 Form/form_us.xml.h:2084 Form/form_us.xml.h:2121
@@ -14768,87 +14769,87 @@ msgstr ""
 #: Form/form_us.xml.h:2448 Form/form_us.xml.h:2470 Form/form_gb.xml.h:246
 #: Form/form_gb.xml.h:381
 msgid "Birthplace"
-msgstr ""
+msgstr "Local de nascimento"
 
 #: Form/form_us.xml.h:1391
 msgid "Own house or farm"
-msgstr ""
+msgstr "Casa ou quinta próprias"
 
 #: Form/form_us.xml.h:1392
 msgid "Incumbrance on farm or home"
-msgstr ""
+msgstr "Ónus em casa ou quinta"
 
 #: Form/form_us.xml.h:1393
 msgid "Value of farm or home"
-msgstr ""
+msgstr "Valor da casa ou quinta"
 
 #: Form/form_us.xml.h:1394
 msgid "Military Service: Civil War"
-msgstr ""
+msgstr "Serviço militar: Guerra Civil"
 
 #: Form/form_us.xml.h:1395
 msgid "Military Service: Mexican"
-msgstr ""
+msgstr "Serviço militar: Mexicana"
 
 #: Form/form_us.xml.h:1396
 msgid "Military Service: Spanish"
-msgstr ""
+msgstr "Serviço militar: Espanhola"
 
 #: Form/form_us.xml.h:1397
 msgid "Military Service: Infantry"
-msgstr ""
+msgstr "Serviço militar: Infantaria"
 
 #: Form/form_us.xml.h:1398
 msgid "Military Service: Cavalry"
-msgstr ""
+msgstr "Serviço militar: Cavalaria"
 
 #: Form/form_us.xml.h:1399
 msgid "Military Service: Artillery"
-msgstr ""
+msgstr "Serviço militar: Artilharia"
 
 #: Form/form_us.xml.h:1400
 msgid "Military Service: Navy"
-msgstr ""
+msgstr "Serviço militar: Marinha"
 
 #: Form/form_us.xml.h:1401
 msgid "Military Service: State"
-msgstr ""
+msgstr "Serviço militar: Estado"
 
 #: Form/form_us.xml.h:1402
 msgid "Military Service: Regiment"
-msgstr ""
+msgstr "Serviço militar: Regimento"
 
 #: Form/form_us.xml.h:1403
 msgid "Military Service: Company"
-msgstr ""
+msgstr "Serviço militar: Companhia"
 
 #: Form/form_us.xml.h:1404
 msgid "Church Affiliation"
-msgstr ""
+msgstr "Filiação à igreja"
 
 #: Form/form_us.xml.h:1405 Form/form_us.xml.h:2450 Form/form_us.xml.h:2473
 msgid "Father's Birthplace"
-msgstr ""
+msgstr "Local de nascimento do pai"
 
 #: Form/form_us.xml.h:1406 Form/form_us.xml.h:2452 Form/form_us.xml.h:2475
 msgid "Mother's Birthplace"
-msgstr ""
+msgstr "Local de nascimento da mãe"
 
 #: Form/form_us.xml.h:1410
 msgid "Months in School 1914: Public"
-msgstr ""
+msgstr "Meses na escola em 1914 - Pública"
 
 #: Form/form_us.xml.h:1411
 msgid "Months in School 1914: High"
-msgstr ""
+msgstr "Meses na escola em 1914 - Liceu"
 
 #: Form/form_us.xml.h:1412
 msgid "Months in School 1914: Private"
-msgstr ""
+msgstr "Meses na escola em 1914 - Privada"
 
 #: Form/form_us.xml.h:1413
 msgid "Months in School 1914: College"
-msgstr ""
+msgstr "Meses na escola em 1914 - Superior"
 
 #: Form/form_us.xml.h:1417 Form/form_us.xml.h:2072 Form/form_us.xml.h:2106
 #: Form/form_us.xml.h:2144 Form/form_us.xml.h:2182 Form/form_us.xml.h:2220
@@ -14858,394 +14859,394 @@ msgstr "Surdos"
 #: Form/form_us.xml.h:1419 Form/form_us.xml.h:2108 Form/form_us.xml.h:2146
 #: Form/form_us.xml.h:2184 Form/form_us.xml.h:2222
 msgid "Idiot"
-msgstr ""
+msgstr "Idiota"
 
 #: Form/form_us.xml.h:1420
 msgid "Naturalized if foreign born?"
-msgstr ""
+msgstr "Naturalizado se nasceu estrangeiro?"
 
 #: Form/form_us.xml.h:1426 Form/form_pl.xml.h:24
 msgid "House Number"
-msgstr ""
+msgstr "Número da casa"
 
 #: Form/form_us.xml.h:1429 Form/form_us.xml.h:2332
 msgid "Color or Race"
-msgstr ""
+msgstr "Cor ou raça"
 
 #: Form/form_us.xml.h:1432
 msgid "Home Owned or Rented"
-msgstr ""
+msgstr "Casa própria ou alugada"
 
 #: Form/form_us.xml.h:1433
 msgid "Home Owned Free or Mortgaged"
-msgstr ""
+msgstr "Casa própria livre ou hipotecada"
 
 #: Form/form_us.xml.h:1434
 msgid "Home Value"
-msgstr ""
+msgstr "Valor da casa"
 
 #: Form/form_us.xml.h:1435
 msgid "Mortgage Debt"
-msgstr ""
+msgstr "Dívida da hipoteca"
 
 #: Form/form_us.xml.h:1436
 msgid "Monthly Rent"
-msgstr ""
+msgstr "Renda mensal"
 
 #: Form/form_us.xml.h:1437
 msgid "Insurance on Home"
-msgstr ""
+msgstr "Seguro de habitação"
 
 #: Form/form_us.xml.h:1439
 msgid "Years in US"
-msgstr ""
+msgstr "Anos nos EUA"
 
 #: Form/form_us.xml.h:1441
 msgid "Attended Rural School"
-msgstr ""
+msgstr "Escola rural frequentada"
 
 #: Form/form_us.xml.h:1442
 msgid "Attended Grade School"
-msgstr ""
+msgstr "Escola primária frequentada"
 
 #: Form/form_us.xml.h:1443
 msgid "Attended High School"
-msgstr ""
+msgstr "Liceu frequentado"
 
 #: Form/form_us.xml.h:1444
 msgid "Attended College"
-msgstr ""
+msgstr "Universidade frequentada"
 
 #: Form/form_us.xml.h:1445
 msgid "Highest Grade Rural School"
-msgstr ""
+msgstr "Grau mais alto da escola rural"
 
 #: Form/form_us.xml.h:1446
 msgid "Highest Grade Grammar School"
-msgstr ""
+msgstr "Grau mais alto da escola gramatical"
 
 #: Form/form_us.xml.h:1447
 msgid "Highest Grade High School"
-msgstr ""
+msgstr "Grau mais alto da escola liceal"
 
 #: Form/form_us.xml.h:1448
 msgid "No. Years College"
-msgstr ""
+msgstr "N.º de anos na universidade"
 
 #: Form/form_us.xml.h:1449
 msgid "Months in School 1924"
-msgstr ""
+msgstr "Meses na escola em 1924"
 
 #: Form/form_us.xml.h:1450
 msgid "Able to Read"
-msgstr ""
+msgstr "Sabe ler"
 
 #: Form/form_us.xml.h:1451
 msgid "Able to Write"
-msgstr ""
+msgstr "Sabe escrever"
 
 #: Form/form_us.xml.h:1453 Form/form_us.xml.h:2449 Form/form_us.xml.h:2472
 #: Form/form_us.xml.h:2498 Form/form_pl.xml.h:9 Form/form_pl.xml.h:26
 #: Form/form_pl.xml.h:37
 msgid "Father's Name"
-msgstr ""
+msgstr "Nome do pai"
 
 #: Form/form_us.xml.h:1454
 msgid "Father's Place of Birth"
-msgstr ""
+msgstr "Local de nascimento do pai"
 
 #: Form/form_us.xml.h:1456 Form/form_us.xml.h:2451 Form/form_us.xml.h:2474
 #: Form/form_us.xml.h:2499 Form/form_pl.xml.h:10 Form/form_pl.xml.h:27
 #: Form/form_pl.xml.h:38
 msgid "Mother's Name"
-msgstr ""
+msgstr "Nome da Mãe"
 
 #: Form/form_us.xml.h:1457
 msgid "Mother's Place of Birth"
-msgstr ""
+msgstr "Local de nascimento da mãe"
 
 #: Form/form_us.xml.h:1459
 msgid "Parents Place of Marriage"
-msgstr ""
+msgstr "Local de casamento dos pais"
 
 #: Form/form_us.xml.h:1460
 msgid "Civil War Veteran"
-msgstr ""
+msgstr "Veterano da Guerra Civil"
 
 #: Form/form_us.xml.h:1461
 msgid "Civil War Service Branch"
-msgstr ""
+msgstr "Ramo de serviço na Guerra Civil"
 
 #: Form/form_us.xml.h:1462
 msgid "Civil War State"
-msgstr ""
+msgstr "Estado da Guerra Civil"
 
 #: Form/form_us.xml.h:1463
 msgid "Spanish-American War Veteran"
-msgstr ""
+msgstr "Veterano da Guerra Hispano-Americana"
 
 #: Form/form_us.xml.h:1464
 msgid "Spanish-American War Service Branch"
-msgstr ""
+msgstr "Ramo de serviço na Guerra Hispano-Americana"
 
 #: Form/form_us.xml.h:1465
 msgid "Spanish-American War State"
-msgstr ""
+msgstr "Estado da Guerra Hispano-Americana"
 
 #: Form/form_us.xml.h:1466
 msgid "World War Veteran"
-msgstr ""
+msgstr "Veterano da Guerra Mundial"
 
 #: Form/form_us.xml.h:1467
 msgid "World War Service Branch"
-msgstr ""
+msgstr "Ramo de serviço na Guerra Mundial"
 
 #: Form/form_us.xml.h:1468
 msgid "World War State"
-msgstr ""
+msgstr "Estado da Guerra Mundial"
 
 #: Form/form_us.xml.h:1469
 msgid "Agricultural Pursuits"
-msgstr ""
+msgstr "Actividades agrícolas"
 
 #: Form/form_us.xml.h:1470
 msgid "Professional Services"
-msgstr ""
+msgstr "Serviços profissionais"
 
 #: Form/form_us.xml.h:1471
 msgid "Domestic/Personal Services"
-msgstr ""
+msgstr "Serviços domésticos/pessoais"
 
 #: Form/form_us.xml.h:1472
 msgid "Trade and Transportation"
-msgstr ""
+msgstr "Comércio e transportes"
 
 #: Form/form_us.xml.h:1473
 msgid "Manufacturing and Mechanical"
-msgstr ""
+msgstr "Fabrico e mecânica"
 
 #: Form/form_us.xml.h:1474
 msgid "Unclassified Laborer"
-msgstr ""
+msgstr "Trabalhador indiferenciado"
 
 #: Form/form_us.xml.h:1475
 msgid "Months unemployed due to illness"
-msgstr ""
+msgstr "Meses de desemprego devido a doença"
 
 #: Form/form_us.xml.h:1476
 msgid "Income lost due to illness"
-msgstr ""
+msgstr "Perda de rendimento devido a doença"
 
 #: Form/form_us.xml.h:1477
 msgid "Months unemployed"
-msgstr ""
+msgstr "Meses de desemprego"
 
 #: Form/form_us.xml.h:1479
 msgid "Free Inhabitants in"
-msgstr ""
+msgstr "Habitantes livres em"
 
 #: Form/form_us.xml.h:1488 Form/form_us.xml.h:1535 Form/form_us.xml.h:2092
 #: Form/form_us.xml.h:2130 Form/form_us.xml.h:2168 Form/form_us.xml.h:2206
 msgid "Regiment"
-msgstr ""
+msgstr "Regimento"
 
 #: Form/form_us.xml.h:1491 Form/form_us.xml.h:1503
 msgid "Real Estate"
-msgstr ""
+msgstr "Imobiliário"
 
 #: Form/form_us.xml.h:1492
 msgid "Personal Estate"
-msgstr ""
+msgstr "Bens pessoais"
 
 #: Form/form_us.xml.h:1495
 msgid "Attended School"
-msgstr ""
+msgstr "Escola frequentada"
 
 #: Form/form_us.xml.h:1496
 msgid "Illiterate"
-msgstr ""
+msgstr "Iletrado"
 
 #: Form/form_us.xml.h:1497 Form/form_gb.xml.h:439 Form/form_gb.xml.h:466
 #: Form/form_gb.xml.h:494 Form/form_gb.xml.h:531 Form/form_gb.xml.h:568
 msgid "Disabled"
-msgstr ""
+msgstr "Deficiente"
 
 #: Form/form_us.xml.h:1504
 msgid "Personal Property"
-msgstr ""
+msgstr "Propriedade pessoal"
 
 #: Form/form_us.xml.h:1506 Form/form_us.xml.h:1526
 msgid "Where From"
-msgstr ""
+msgstr "De onde"
 
 #: Form/form_us.xml.h:1507 Form/form_us.xml.h:1528
 msgid "School"
-msgstr ""
+msgstr "Escola"
 
 #: Form/form_us.xml.h:1508
 msgid "Cannot Read 10-15"
-msgstr ""
+msgstr "Não sabe ler 10-15"
 
 #: Form/form_us.xml.h:1509
 msgid "Cannot Read 15-21"
-msgstr ""
+msgstr "Não sabe ler 15-21"
 
 #: Form/form_us.xml.h:1510
 msgid "Cannot Read 21+"
-msgstr ""
+msgstr "Não sabe ler +21"
 
 #: Form/form_us.xml.h:1511
 msgid "Cannot Write 10-15"
-msgstr ""
+msgstr "Não sabe escrever 10-15"
 
 #: Form/form_us.xml.h:1512
 msgid "Cannot Write 15-21"
-msgstr ""
+msgstr "Não sabe escrever 15-21"
 
 #: Form/form_us.xml.h:1513
 msgid "Cannot Write 21+"
-msgstr ""
+msgstr "Não sabe escrever +21"
 
 #: Form/form_us.xml.h:1514
 msgid "Cannot Read/Write 10-15"
-msgstr ""
+msgstr "Não sabe ler/escrever 10-15"
 
 #: Form/form_us.xml.h:1515
 msgid "Cannot Read/Write 15-21"
-msgstr ""
+msgstr "Não sabe ler/escrever 15-21"
 
 #: Form/form_us.xml.h:1516
 msgid "Cannot Read/Write 21+"
-msgstr ""
+msgstr "Não sabe ler/escrever +21"
 
 #: Form/form_us.xml.h:1523
 msgid "Widow(er)"
-msgstr ""
+msgstr "Viúvo(a)"
 
 #: Form/form_us.xml.h:1527
 msgid "Learning"
-msgstr ""
+msgstr "Aprendizagem"
 
 #: Form/form_us.xml.h:1529
 msgid "Illiteracy 10-15"
-msgstr ""
+msgstr "Analfabetismo 10-15"
 
 #: Form/form_us.xml.h:1530
 msgid "Illiteracy 15-21"
-msgstr ""
+msgstr "Analfabetismo 15-21"
 
 #: Form/form_us.xml.h:1531
 msgid "Illiteracy 21+"
-msgstr ""
+msgstr "Analfabetismo +21"
 
 #: Form/form_us.xml.h:1532
 msgid "Honorably discharged"
-msgstr ""
+msgstr "Dispensa honrosa"
 
 #: Form/form_us.xml.h:1533
 msgid "State Enlisted"
-msgstr ""
+msgstr "Estado de alistamento"
 
 #: Form/form_us.xml.h:1536
 msgid "Arm of Service"
-msgstr ""
+msgstr "Arma do serviço"
 
 #: Form/form_us.xml.h:1537
 msgid "Prison"
-msgstr ""
+msgstr "Prisão"
 
 #: Form/form_us.xml.h:1543
 msgid "Where from Kansas"
-msgstr ""
+msgstr "De onde no Kansas"
 
 #: Form/form_us.xml.h:1545 Form/form_us.xml.h:1567 Form/form_us.xml.h:1589
 msgid "Trade or profession being learned"
-msgstr ""
+msgstr "Profissão ou ofício a aprender"
 
 #: Form/form_us.xml.h:1547 Form/form_us.xml.h:1569 Form/form_us.xml.h:1591
 msgid "Illiterate and 10 to 15 years old"
-msgstr ""
+msgstr "Analfabetos 10-15"
 
 #: Form/form_us.xml.h:1548
 msgid "Illiterate and 16 to 21 years old"
-msgstr ""
+msgstr "Analfabetos 16-21"
 
 #: Form/form_us.xml.h:1549 Form/form_us.xml.h:1571 Form/form_us.xml.h:1593
 msgid "Illiterate and over 21"
-msgstr ""
+msgstr "Analfabetos +21"
 
 #: Form/form_us.xml.h:1550 Form/form_us.xml.h:1572 Form/form_us.xml.h:1595
 msgid "Honorably discharged from military service"
-msgstr ""
+msgstr "Dispensa honrosa do serviço militar"
 
 #: Form/form_us.xml.h:1551 Form/form_us.xml.h:1573 Form/form_us.xml.h:1596
 msgid "State in which enlisted"
-msgstr ""
+msgstr "Estado de alistamento"
 
 #: Form/form_us.xml.h:1552 Form/form_us.xml.h:1574 Form/form_us.xml.h:1597
 msgid "Company or command"
-msgstr ""
+msgstr "Companhia ou comando"
 
 #: Form/form_us.xml.h:1553 Form/form_us.xml.h:1575 Form/form_us.xml.h:1598
 msgid "Regiment or other organization"
-msgstr ""
+msgstr "Regimento ou outra organização"
 
 #: Form/form_us.xml.h:1554 Form/form_us.xml.h:1576 Form/form_us.xml.h:1599
 msgid "Arm of service"
-msgstr ""
+msgstr "Arma do serviço"
 
 #: Form/form_us.xml.h:1555 Form/form_us.xml.h:1577 Form/form_us.xml.h:1600
 msgid "Prison in which confined as a prisoner of war"
-msgstr ""
+msgstr "Prisão em que foi confinado como prisioneiro de guerra"
 
 #: Form/form_us.xml.h:1558 Form/form_us.xml.h:1580 Form/form_us.xml.h:1606
 msgid "Home owned free or mortgaged"
-msgstr ""
+msgstr "Casa própria livre ou hipotecada"
 
 #: Form/form_us.xml.h:1564 Form/form_us.xml.h:1586 Form/form_us.xml.h:1612
 msgid "Where from to Kansas"
-msgstr ""
+msgstr "De onde para o Kansas"
 
 #: Form/form_us.xml.h:1566 Form/form_us.xml.h:1588
 msgid "Number of months unemployed"
-msgstr ""
+msgstr "Número de meses desempregado"
 
 #: Form/form_us.xml.h:1570 Form/form_us.xml.h:1592
 msgid "Illiterate and 15 to 21 years old"
-msgstr ""
+msgstr "Analfabetos 15-21"
 
 #: Form/form_us.xml.h:1594
 msgid "Number of volumes in home library"
-msgstr ""
+msgstr "Número de volumes em biblioteca caseira"
 
 #: Form/form_us.xml.h:1603
 msgid "Number of house"
-msgstr ""
+msgstr "Número de casa"
 
 #: Form/form_us.xml.h:1613
 msgid "Year of immigration to the United States"
-msgstr ""
+msgstr "Ano de imigração para os EUA"
 
 #: Form/form_us.xml.h:1614
 msgid "Naturalized, alien or first papers"
-msgstr ""
+msgstr "Naturalizados, estrangeiros ou primeiros documentos"
 
 #: Form/form_us.xml.h:1618
 msgid "Attended school within year"
-msgstr ""
+msgstr "Escola frequentada no ano"
 
 #: Form/form_us.xml.h:1628 Form/form_us.xml.h:1969 Form/form_us.xml.h:1988
 #: Form/form_us.xml.h:2008
 msgid "Nativity"
-msgstr ""
+msgstr "Natividade"
 
 #: Form/form_us.xml.h:1629
 msgid "Father's Nativity"
-msgstr ""
+msgstr "Natividade do pai"
 
 #: Form/form_us.xml.h:1630
 msgid "Mother's Nativity"
-msgstr ""
+msgstr "Natividade da mãe"
 
 #: Form/form_us.xml.h:1631 Form/form_us.xml.h:1645 Form/form_us.xml.h:2406
 #: Form/form_dk.xml.h:10 Form/form_dk.xml.h:27 Form/form_dk.xml.h:44
@@ -15268,223 +15269,223 @@ msgstr "Condição"
 
 #: Form/form_us.xml.h:1634 Form/form_us.xml.h:1649
 msgid "Inhabitants in"
-msgstr ""
+msgstr "Habitantes em"
 
 #: Form/form_us.xml.h:1646
 msgid "Served in Federal army during rebellion"
-msgstr ""
+msgstr "Serviu no exército federal durante a rebelião"
 
 #: Form/form_us.xml.h:1658 Form/form_us.xml.h:1689
 msgid "Residence in State - Years"
-msgstr ""
+msgstr "Residência no estado - Anos"
 
 #: Form/form_us.xml.h:1659 Form/form_us.xml.h:1690
 msgid "Residence in State - Months"
-msgstr ""
+msgstr "Residência no estado - Meses"
 
 #: Form/form_us.xml.h:1660
 msgid "Residence in District - Years"
-msgstr ""
+msgstr "Residência no distrito - Anos"
 
 #: Form/form_us.xml.h:1661
 msgid "Residence in District - Months"
-msgstr ""
+msgstr "Residência no distrito - Meses"
 
 #: Form/form_us.xml.h:1663 Form/form_us.xml.h:2339
 msgid "Months Employed"
-msgstr ""
+msgstr "Meses empregado"
 
 #: Form/form_us.xml.h:1664
 msgid "Solder/Sailor"
-msgstr ""
+msgstr "Soldador/Marinheiro"
 
 #: Form/form_us.xml.h:1665
 msgid "Foreign father"
-msgstr ""
+msgstr "Pai estrangeiro"
 
 #: Form/form_us.xml.h:1666
 msgid "Foreign mother"
-msgstr ""
+msgstr "Mãe estrangeira"
 
 #: Form/form_us.xml.h:1669
 msgid "Organized Township"
-msgstr ""
+msgstr "Cidade organizada"
 
 #: Form/form_us.xml.h:1670
 msgid "Unorganized Township"
-msgstr ""
+msgstr "Cidade desorganizada"
 
 #: Form/form_us.xml.h:1671
 msgid "Name of Village"
-msgstr ""
+msgstr "Nome da vila"
 
 #: Form/form_us.xml.h:1672
 msgid "Name of City"
-msgstr ""
+msgstr "Nome da cidade"
 
 #: Form/form_us.xml.h:1674
 msgid "Sub-division"
-msgstr ""
+msgstr "Sub-divisão"
 
 #: Form/form_us.xml.h:1675
 msgid "Precincts"
-msgstr ""
+msgstr "Esquadras"
 
 #: Form/form_us.xml.h:1676
 msgid "Enumerated date from"
-msgstr ""
+msgstr "Data de recenseamento de"
 
 #: Form/form_us.xml.h:1677
 msgid "Enumerated date to"
-msgstr ""
+msgstr "Data de recenseamento até"
 
 #: Form/form_us.xml.h:1680
 msgid "Enumeration number"
-msgstr ""
+msgstr "N.º de recenseamento"
 
 #: Form/form_us.xml.h:1687
 msgid "Fathers birthplace"
-msgstr ""
+msgstr "Local de nascimento do pai"
 
 #: Form/form_us.xml.h:1688
 msgid "Mothers birthplace"
-msgstr ""
+msgstr "Local de nascimento da mãe"
 
 #: Form/form_us.xml.h:1691
 msgid "Residence in District - years"
-msgstr ""
+msgstr "Residência no distrito - Anos"
 
 #: Form/form_us.xml.h:1692
 msgid "Residence in District - months"
-msgstr ""
+msgstr "Residência no distrito - Meses"
 
 #: Form/form_us.xml.h:1694
 msgid "Army service"
-msgstr ""
+msgstr "Serviço militar"
 
 #: Form/form_us.xml.h:1695
 msgid "Wars"
-msgstr ""
+msgstr "Guerras"
 
 #: Form/form_us.xml.h:1697 Form/form_us.xml.h:1770
 msgid "White males under 10"
-msgstr ""
+msgstr "Brancos masculinos -10"
 
 #: Form/form_us.xml.h:1698 Form/form_us.xml.h:1771
 msgid "White males 10-17"
-msgstr ""
+msgstr "Brancos masculinos 10-17"
 
 #: Form/form_us.xml.h:1699 Form/form_us.xml.h:1772
 msgid "White males 18-20"
-msgstr ""
+msgstr "Brancos masculinos 18-20"
 
 #: Form/form_us.xml.h:1700 Form/form_us.xml.h:1773
 msgid "White males 21-44"
-msgstr ""
+msgstr "Brancos masculinos 21-44"
 
 #: Form/form_us.xml.h:1701 Form/form_us.xml.h:1774
 msgid "White males 45 and over"
-msgstr ""
+msgstr "Brancos masculinos +45"
 
 #: Form/form_us.xml.h:1702 Form/form_us.xml.h:1775
 msgid "Total White Males"
-msgstr ""
+msgstr "Total de brancos masculinos"
 
 #: Form/form_us.xml.h:1703 Form/form_us.xml.h:1776
 msgid "White females under 10"
-msgstr ""
+msgstr "Brancos femininos -10"
 
 #: Form/form_us.xml.h:1704 Form/form_us.xml.h:1777
 msgid "White females 10-17"
-msgstr ""
+msgstr "Brancos femininos 10-17"
 
 #: Form/form_us.xml.h:1705 Form/form_us.xml.h:1778
 msgid "White females 18-20"
-msgstr ""
+msgstr "Brancos femininos 18-20"
 
 #: Form/form_us.xml.h:1706 Form/form_us.xml.h:1779
 msgid "White females 21-44"
-msgstr ""
+msgstr "Brancos femininos 21-44"
 
 #: Form/form_us.xml.h:1707 Form/form_us.xml.h:1780
 msgid "White females 45 and over"
-msgstr ""
+msgstr "Brancos femininos +45"
 
 #: Form/form_us.xml.h:1708 Form/form_us.xml.h:1781
 msgid "Total White Females"
-msgstr ""
+msgstr "Total de brancos femininos"
 
 #: Form/form_us.xml.h:1709 Form/form_us.xml.h:1782
 msgid "Total White Population"
-msgstr ""
+msgstr "Total de brancos"
 
 #: Form/form_us.xml.h:1710 Form/form_us.xml.h:1783
 msgid "White persons between 6 and 18"
-msgstr ""
+msgstr "Brancos 6-18"
 
 #: Form/form_us.xml.h:1711 Form/form_us.xml.h:1784
 msgid "No. White persons who can read and write"
-msgstr ""
+msgstr "N.º de brancos que sabem ler e escrever"
 
 #: Form/form_us.xml.h:1712 Form/form_us.xml.h:1785
 msgid "Colored males under 10"
-msgstr ""
+msgstr "De cor masculinos -10"
 
 #: Form/form_us.xml.h:1713 Form/form_us.xml.h:1786
 msgid "Colored males 10-17"
-msgstr ""
+msgstr "De cor masculinos 10-17"
 
 #: Form/form_us.xml.h:1714 Form/form_us.xml.h:1787
 msgid "Colored males 18-20"
-msgstr ""
+msgstr "De cor masculinos 18-20"
 
 #: Form/form_us.xml.h:1715 Form/form_us.xml.h:1788
 msgid "Colored males 21-44"
-msgstr ""
+msgstr "De cor masculinos 21-44"
 
 #: Form/form_us.xml.h:1716 Form/form_us.xml.h:1789
 msgid "Colored males 45 and over"
-msgstr ""
+msgstr "De cor masculinos +45"
 
 #: Form/form_us.xml.h:1717 Form/form_us.xml.h:1790
 msgid "Total Colored Males"
-msgstr ""
+msgstr "Total de cor masculinos"
 
 #: Form/form_us.xml.h:1718 Form/form_us.xml.h:1791
 msgid "Colored females under 10"
-msgstr ""
+msgstr "De cor femininos -10"
 
 #: Form/form_us.xml.h:1719 Form/form_us.xml.h:1792
 msgid "Colored females 10-17"
-msgstr ""
+msgstr "De cor femininos 10-17"
 
 #: Form/form_us.xml.h:1720 Form/form_us.xml.h:1793
 msgid "Colored females 18-20"
-msgstr ""
+msgstr "De cor femininos 18-20"
 
 #: Form/form_us.xml.h:1721 Form/form_us.xml.h:1794
 msgid "Colored females 21-44"
-msgstr ""
+msgstr "De cor femininos 21-44"
 
 #: Form/form_us.xml.h:1722 Form/form_us.xml.h:1795
 msgid "Colored females 45 and over"
-msgstr ""
+msgstr "De cor femininos +45"
 
 #: Form/form_us.xml.h:1723 Form/form_us.xml.h:1796
 msgid "Total Colored Females"
-msgstr ""
+msgstr "Total de cor femininos"
 
 #: Form/form_us.xml.h:1724 Form/form_us.xml.h:1797
 msgid "Total Colored Population"
-msgstr ""
+msgstr "Total de cor"
 
 #: Form/form_us.xml.h:1725 Form/form_us.xml.h:1798
 msgid "Colored persons between 6 and 18"
-msgstr ""
+msgstr "De cor 6-18"
 
 #: Form/form_us.xml.h:1726 Form/form_us.xml.h:1799
 msgid "No. Colored persons who can read and write"
-msgstr ""
+msgstr "N.º de cor que sabem ler e escrever"
 
 #: Form/form_us.xml.h:1727 Form/form_us.xml.h:1800
 msgid "Deaf and Dumb Males"
@@ -15516,183 +15517,183 @@ msgstr "N.º de surdos e mudos que aprenderam a ler e escrever"
 
 #: Form/form_us.xml.h:1734 Form/form_us.xml.h:1807
 msgid "Blind Males"
-msgstr ""
+msgstr "Cegos masculinos"
 
 #: Form/form_us.xml.h:1735 Form/form_us.xml.h:1808
 msgid "Blind Males Age"
-msgstr ""
+msgstr "Idade de cegos masculinos"
 
 #: Form/form_us.xml.h:1736 Form/form_us.xml.h:1809
 msgid "Blind Females"
-msgstr ""
+msgstr "Cegos femininos"
 
 #: Form/form_us.xml.h:1737 Form/form_us.xml.h:1810
 msgid "Blind Females Age"
-msgstr ""
+msgstr "Idade de cegos femininos"
 
 #: Form/form_us.xml.h:1738 Form/form_us.xml.h:1811
 msgid "Blind White"
-msgstr ""
+msgstr "Brancos cegos"
 
 #: Form/form_us.xml.h:1739 Form/form_us.xml.h:1812
 msgid "Blind Colored"
-msgstr ""
+msgstr "De cor cegos"
 
 #: Form/form_us.xml.h:1740 Form/form_us.xml.h:1813
 msgid "No. Blind taught to read and write"
-msgstr ""
+msgstr "N.º de cegos ensinados a ler e escrever"
 
 #: Form/form_us.xml.h:1741 Form/form_us.xml.h:1814
 msgid "Insane Males"
-msgstr ""
+msgstr "Homens loucos"
 
 #: Form/form_us.xml.h:1742 Form/form_us.xml.h:1815
 msgid "Insane Males Age"
-msgstr ""
+msgstr "Idade de homens loucos"
 
 #: Form/form_us.xml.h:1743 Form/form_us.xml.h:1816
 msgid "Insane Females"
-msgstr ""
+msgstr "Mulheres loucas"
 
 #: Form/form_us.xml.h:1744 Form/form_us.xml.h:1817
 msgid "Insane Females Age"
-msgstr ""
+msgstr "Idade de mulheres loucas"
 
 #: Form/form_us.xml.h:1745 Form/form_us.xml.h:1818
 msgid "Insane White"
-msgstr ""
+msgstr "Brancos loucos"
 
 #: Form/form_us.xml.h:1746 Form/form_us.xml.h:1819
 msgid "Insane Colored"
-msgstr ""
+msgstr "De cor loucos"
 
 #: Form/form_us.xml.h:1747 Form/form_us.xml.h:1820
 msgid "No. Insane taught to read and write"
-msgstr ""
+msgstr "N.º de loucos ensinados a ler e escrever"
 
 #: Form/form_us.xml.h:1748 Form/form_us.xml.h:1821
 msgid "Live Stock Horses"
-msgstr ""
+msgstr "Cavalos vivos"
 
 #: Form/form_us.xml.h:1749 Form/form_us.xml.h:1822
 msgid "Live Stock Mules"
-msgstr ""
+msgstr "Mulas vivas"
 
 #: Form/form_us.xml.h:1750 Form/form_us.xml.h:1823
 msgid "Live Stock Jacks"
-msgstr ""
+msgstr "Burros vivos"
 
 #: Form/form_us.xml.h:1751 Form/form_us.xml.h:1824
 msgid "Live Stock Jennies"
-msgstr ""
+msgstr "Burras vivas"
 
 #: Form/form_us.xml.h:1752 Form/form_us.xml.h:1825
 msgid "Live Stock Cattle"
-msgstr ""
+msgstr "Bovinos vivos"
 
 #: Form/form_us.xml.h:1753 Form/form_us.xml.h:1826
 msgid "Live Stock Sheep"
-msgstr ""
+msgstr "Ovinos vivos"
 
 #: Form/form_us.xml.h:1754 Form/form_us.xml.h:1827
 msgid "Live Stock Hogs"
-msgstr ""
+msgstr "Suínos vivos"
 
 #: Form/form_us.xml.h:1755 Form/form_us.xml.h:1828
 msgid "Products Bushels Wheat"
-msgstr ""
+msgstr "Produtos Alqueires de trigo"
 
 #: Form/form_us.xml.h:1756 Form/form_us.xml.h:1829
 msgid "Products Bushels Corn"
-msgstr ""
+msgstr "Produtos Alqueires de milho"
 
 #: Form/form_us.xml.h:1757 Form/form_us.xml.h:1830
 msgid "Products Bushels Oats"
-msgstr ""
+msgstr "Produtos Alqueires de aveia"
 
 #: Form/form_us.xml.h:1758 Form/form_us.xml.h:1831
 msgid "Products Bushels Barley"
-msgstr ""
+msgstr "Produtos Alqueires de cevada"
 
 #: Form/form_us.xml.h:1759 Form/form_us.xml.h:1832
 msgid "Products Bushels Rye"
-msgstr ""
+msgstr "Produtos Alqueires de centeio"
 
 #: Form/form_us.xml.h:1760 Form/form_us.xml.h:1833
 msgid "Products Lbs. Tobacco"
-msgstr ""
+msgstr "Produtos Libras de tabaco"
 
 #: Form/form_us.xml.h:1761 Form/form_us.xml.h:1834
 msgid "Products Lbs. Wool"
-msgstr ""
+msgstr "Produtos Libras de lã"
 
 #: Form/form_us.xml.h:1762 Form/form_us.xml.h:1835
 msgid "Products Lbs. Sugar"
-msgstr ""
+msgstr "Produtos Libras de açucar"
 
 #: Form/form_us.xml.h:1763 Form/form_us.xml.h:1836
 msgid "Products Tons Hay"
-msgstr ""
+msgstr "Produtos Toneladas de feno"
 
 #: Form/form_us.xml.h:1764 Form/form_us.xml.h:1837
 msgid "Products Tons Hemp"
-msgstr ""
+msgstr "Produtos Toneladas de cânhamo"
 
 #: Form/form_us.xml.h:1765 Form/form_us.xml.h:1838
 msgid "Products Galls. Whiskey"
-msgstr ""
+msgstr "Produtos Galões de Whiskey"
 
 #: Form/form_us.xml.h:1766 Form/form_us.xml.h:1839
 msgid "Products Galls. Wine"
-msgstr ""
+msgstr "Produtos Galões de vinho"
 
 #: Form/form_us.xml.h:1767 Form/form_us.xml.h:1840
 msgid "Products Galls. Molasses"
-msgstr ""
+msgstr "Produtos Galões de melaço"
 
 #: Form/form_us.xml.h:1768 Form/form_us.xml.h:1841
 msgid "Total Population"
-msgstr ""
+msgstr "População total"
 
 #: Form/form_us.xml.h:1879 Form/form_us.xml.h:1901 Form/form_us.xml.h:1930
 msgid "Building Material"
-msgstr ""
+msgstr "Material de construção"
 
 #: Form/form_us.xml.h:1880 Form/form_us.xml.h:1902 Form/form_us.xml.h:1931
 msgid "Dwelling Value"
-msgstr ""
+msgstr "Valor da habitação"
 
 #: Form/form_us.xml.h:1885 Form/form_us.xml.h:1907 Form/form_us.xml.h:1936
 msgid "Birthplace (NY County or other)"
-msgstr ""
+msgstr "Local de nascimento (condado de NY ou outro)"
 
 #: Form/form_us.xml.h:1888
 msgid "Years resident in this city or town"
-msgstr ""
+msgstr "Anos de residência nesta cidade ou vila"
 
 #: Form/form_us.xml.h:1890 Form/form_us.xml.h:1915 Form/form_us.xml.h:1942
 msgid "Native Voter"
-msgstr ""
+msgstr "Eleitor nativo"
 
 #: Form/form_us.xml.h:1891 Form/form_us.xml.h:1916 Form/form_us.xml.h:1943
 msgid "Naturalized Voter"
-msgstr ""
+msgstr "Eleitor naturalizado"
 
 #: Form/form_us.xml.h:1892 Form/form_us.xml.h:1917 Form/form_us.xml.h:1944
 msgid "Alien"
-msgstr ""
+msgstr "Estrangeiro"
 
 #: Form/form_us.xml.h:1893 Form/form_us.xml.h:1918
 msgid "Persons of color not taxed"
-msgstr ""
+msgstr "De cor sem impostos"
 
 #: Form/form_us.xml.h:1894 Form/form_us.xml.h:1920 Form/form_us.xml.h:1946
 msgid "Over 21/Illiterate"
-msgstr ""
+msgstr "Analfabetos +21"
 
 #: Form/form_us.xml.h:1895 Form/form_us.xml.h:1945
 msgid "Landowner"
-msgstr ""
+msgstr "Proprietário de terras"
 
 #: Form/form_us.xml.h:1896 Form/form_us.xml.h:1921 Form/form_us.xml.h:1947
 msgid "Deaf, Dumb, Blind, Insane, Idiotic"
@@ -15701,238 +15702,238 @@ msgstr "Surdos, mudos, cegos, dementes, idiotas"
 #: Form/form_us.xml.h:1897 Form/form_us.xml.h:1926 Form/form_us.xml.h:1948
 #: Form/form_us.xml.h:2269 Form/form_us.xml.h:2298 Form/form_us.xml.h:2326
 msgid "Inhabitants in the"
-msgstr ""
+msgstr "Habitantes em"
 
 #: Form/form_us.xml.h:1908
 msgid "Parent of how many children"
-msgstr ""
+msgstr "Pai de quantos filhos"
 
 #: Form/form_us.xml.h:1909
 msgid "Number of times married"
-msgstr ""
+msgstr "N.º de vezes casado"
 
 #: Form/form_us.xml.h:1914
 msgid "Place of Occupation"
-msgstr ""
+msgstr "Local de trabalho"
 
 #: Form/form_us.xml.h:1919
 msgid "Land owner"
-msgstr ""
+msgstr "Proprietário de terras"
 
 #: Form/form_us.xml.h:1922
 msgid "Now in army"
-msgstr ""
+msgstr "Agora no exército"
 
 #: Form/form_us.xml.h:1923
 msgid "Now in navy"
-msgstr ""
+msgstr "Agora na marinha"
 
 #: Form/form_us.xml.h:1924
 msgid "Formerly in army"
-msgstr ""
+msgstr "Antes no exército"
 
 #: Form/form_us.xml.h:1925
 msgid "Formerly in navy"
-msgstr ""
+msgstr "Antes na marinha"
 
 #: Form/form_us.xml.h:1941
 msgid "Usual place of employment (if not same city/town)"
-msgstr ""
+msgstr "Local de trabalho habitual (cidade ou localidade diferentes)"
 
 #: Form/form_us.xml.h:1949
 msgid "Election District of the Town of"
-msgstr ""
+msgstr "Circunscrição eleitoral da cidade de"
 
 #: Form/form_us.xml.h:1950 Form/form_us.xml.h:1962 Form/form_us.xml.h:2271
 #: Form/form_us.xml.h:2300 Form/form_us.xml.h:2328
 msgid "the County of"
-msgstr ""
+msgstr "o condado de"
 
 #: Form/form_us.xml.h:1956
 msgid "Birth Country"
-msgstr ""
+msgstr "País de nascimento"
 
 #: Form/form_us.xml.h:1957 Form/form_us.xml.h:1971 Form/form_us.xml.h:1990
 #: Form/form_us.xml.h:2010
 msgid "Citizen or Alien"
-msgstr ""
+msgstr "Cidadão ou estrangeiro"
 
 #: Form/form_us.xml.h:1959
 msgid "Inhabitants living in"
-msgstr ""
+msgstr "Habitantes a viver em"
 
 #: Form/form_us.xml.h:1960
 msgid "Election District, Ward"
-msgstr ""
+msgstr "Circunscrição eleitoral, bairro"
 
 #: Form/form_us.xml.h:1970 Form/form_us.xml.h:1989 Form/form_us.xml.h:2009
 msgid "Number of years in the US"
-msgstr ""
+msgstr "N.º de anos nos EUA"
 
 #: Form/form_us.xml.h:1973 Form/form_us.xml.h:1992 Form/form_us.xml.h:2013
 msgid "Class"
-msgstr ""
+msgstr "Classe"
 
 #: Form/form_us.xml.h:1974 Form/form_us.xml.h:1993 Form/form_us.xml.h:2014
 msgid "Inmate: Residence given when admitted"
-msgstr ""
+msgstr "Recluso: residência indicada aquando da admissão"
 
 #: Form/form_us.xml.h:1975 Form/form_us.xml.h:1996
 msgid "Inhabitants of Block No."
-msgstr ""
+msgstr "Habitantes do bloco n.º."
 
 #: Form/form_us.xml.h:1976 Form/form_us.xml.h:1997
 msgid "Election District No."
-msgstr ""
+msgstr "Distrito eleitoral n.º."
 
 #: Form/form_us.xml.h:1977 Form/form_us.xml.h:1998
 msgid "Ward No."
-msgstr ""
+msgstr "Bairro n.º"
 
 #: Form/form_us.xml.h:1978 Form/form_us.xml.h:1999
 msgid "City or Village"
-msgstr ""
+msgstr "Cidade ou vila"
 
 #: Form/form_us.xml.h:1980 Form/form_us.xml.h:2001
 msgid "Assembly District No."
-msgstr ""
+msgstr "Distrito da Assembleia nº."
 
 #: Form/form_us.xml.h:2011
 msgid "Where and When Naturalized"
-msgstr ""
+msgstr "Onde e quando foi naturalizado"
 
 #: Form/form_us.xml.h:2017
 msgid "WM 21-60"
-msgstr ""
+msgstr "HB 21-60"
 
 #: Form/form_us.xml.h:2018
 msgid "WM under 21 above 60 "
-msgstr ""
+msgstr "HB -21 +60 "
 
 #: Form/form_us.xml.h:2019
 msgid "WF all ages"
-msgstr ""
+msgstr "MB todas as idades"
 
 #: Form/form_us.xml.h:2020
 msgid "Blacks 12-50"
-msgstr ""
+msgstr "De cor 12-50"
 
 #: Form/form_us.xml.h:2021
 msgid "Blacks under 12 above 50"
-msgstr ""
+msgstr "De cor -12 +50"
 
 #: Form/form_us.xml.h:2023
 msgid "Native White Males"
-msgstr ""
+msgstr "Homens brancos nativos"
 
 #: Form/form_us.xml.h:2024
 msgid "Native White Females"
-msgstr ""
+msgstr "Mulheres brancas nativas"
 
 #: Form/form_us.xml.h:2025
 msgid "Native Colored Males"
-msgstr ""
+msgstr "Homens de cor nativos"
 
 #: Form/form_us.xml.h:2026
 msgid "Native Colored Females"
-msgstr ""
+msgstr "Mulheres de cor nativas"
 
 #: Form/form_us.xml.h:2027
 msgid "Foreign Males"
-msgstr ""
+msgstr "Homens estrangeiros"
 
 #: Form/form_us.xml.h:2028
 msgid "Foreign Females"
-msgstr ""
+msgstr "Mulheres estrangeiras"
 
 #: Form/form_us.xml.h:2029
 msgid "Male Children 5 and Under"
-msgstr ""
+msgstr "Rapazes -6"
 
 #: Form/form_us.xml.h:2030
 msgid "Female Children 5 and Under"
-msgstr ""
+msgstr "Raparigas -6"
 
 #: Form/form_us.xml.h:2031
 msgid "Males 5 to 20 Years of Age"
-msgstr ""
+msgstr "Homens 5-20"
 
 #: Form/form_us.xml.h:2032
 msgid "Females 5 to 20 Years of Age"
-msgstr ""
+msgstr "Mulheres 5-20"
 
 #: Form/form_us.xml.h:2033
 msgid "Males 20 to 60 Years of Age"
-msgstr ""
+msgstr "Homens 20-60"
 
 #: Form/form_us.xml.h:2034
 msgid "Females 20 to 60 Years of Age"
-msgstr ""
+msgstr "Mulheres 20-60"
 
 #: Form/form_us.xml.h:2035
 msgid "Males Over 60 Years of Age"
-msgstr ""
+msgstr "Homens +60"
 
 #: Form/form_us.xml.h:2036
 msgid "Females Over 60 Years of Age"
-msgstr ""
+msgstr "Mulheres +60"
 
 #: Form/form_us.xml.h:2040 Form/form_us.xml.h:2079 Form/form_us.xml.h:2116
 #: Form/form_us.xml.h:2154 Form/form_us.xml.h:2192
 msgid "P.O."
-msgstr ""
+msgstr "P.O."
 
 #: Form/form_us.xml.h:2042
 msgid "Sec."
-msgstr ""
+msgstr "Sec."
 
 #: Form/form_us.xml.h:2043
 msgid "T."
-msgstr ""
+msgstr "T."
 
 #: Form/form_us.xml.h:2044
 msgid "R."
-msgstr ""
+msgstr "R."
 
 #: Form/form_us.xml.h:2047 Form/form_us.xml.h:2520
 msgid "No."
-msgstr ""
+msgstr "N.º"
 
 #: Form/form_us.xml.h:2048
 msgid "St./Ave "
-msgstr ""
+msgstr "R/Av. "
 
 #: Form/form_us.xml.h:2049
 msgid "Hotel or Institution"
-msgstr ""
+msgstr "Hotel ou instituição"
 
 #: Form/form_us.xml.h:2053
 msgid "Years in South Dakota"
-msgstr ""
+msgstr "Anos em South Dakota"
 
 #: Form/form_us.xml.h:2054
 msgid "Years in United States"
-msgstr ""
+msgstr "Anos nos EUA"
 
 #: Form/form_us.xml.h:2055
 msgid "Birthplace of Father"
-msgstr ""
+msgstr "Local de nascimento do pai"
 
 #: Form/form_us.xml.h:2056
 msgid "Birthplace of Mother"
-msgstr ""
+msgstr "Local de nascimento da mãe"
 
 #: Form/form_us.xml.h:2060
 msgid "Black"
-msgstr ""
+msgstr "Preto"
 
 #: Form/form_us.xml.h:2061
 msgid "Red"
-msgstr ""
+msgstr "Vermelho"
 
 #: Form/form_us.xml.h:2062
 msgid "Yellow"
-msgstr ""
+msgstr "Amarelo"
 
 #: Form/form_us.xml.h:2066 Form/form_us.xml.h:2102 Form/form_us.xml.h:2140
 #: Form/form_us.xml.h:2178 Form/form_us.xml.h:2216
