@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-05 23:19+0000\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"PO-Revision-Date: 2025-03-06 21:47+0000\n"
+"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -1667,7 +1667,7 @@ msgstr "Hintergrundfarbe männlich"
 
 #: D3Charts/AncestralCollapsibleTree.py:847
 msgid "RGB-color for male box background."
-msgstr "RGB-Farbe für den Hintergrund der männlichen Box."
+msgstr "RGB-Hintergrundfarbe für männliche Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
 msgid "Male Expandable Background Color"
@@ -1675,7 +1675,7 @@ msgstr "Männliche erweiterbare Hintergrundfarbe"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
 msgid "RGB-color for male expandable box background."
-msgstr "RGB-Farbe für den Hintergrund der männlichen erweiterbaren Box."
+msgstr "RGB-Hintergrundfarbe für männliche erweiterbare Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:855
 msgid "Female Background"
@@ -1683,7 +1683,7 @@ msgstr "Hintergrund weiblich"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr "RGB-Farbe für den Hintergrund der weiblichen Box."
+msgstr "RGB-Hintergrundfarbe für weibliche Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
@@ -1691,7 +1691,7 @@ msgstr "Erweiterbarer weiblicher Hintergrund"
 
 #: D3Charts/AncestralCollapsibleTree.py:861
 msgid "RGB-color for female expandable box background."
-msgstr "RGB-Farbe für den Hintergrund der weiblichen erweiterbaren Box."
+msgstr "RGB-Hintergrundfarbe für weibliche erweiterbare Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:867
 #: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
@@ -2021,7 +2021,7 @@ msgstr "Väterliche Hintergrundfarbe"
 
 #: D3Charts/AncestralFanChart.py:730
 msgid "RGB-color for paternal box background."
-msgstr "RGB-Farbe für den Hintergrund der väterlichen Box."
+msgstr "RGB-Hintergrundfarbe für väterliche Box."
 
 #: D3Charts/AncestralFanChart.py:733
 msgid "Maternal Background"
@@ -2029,7 +2029,7 @@ msgstr "Hintergrund väterlich"
 
 #: D3Charts/AncestralFanChart.py:734
 msgid "RGB-color for maternal box background."
-msgstr "RGB-Farbe für den Hintergrund der mütterlichen Box."
+msgstr "RGB-Hintergrundfarbe für mütterliche Box."
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -4209,7 +4209,7 @@ msgstr "Hilfe-Handbuch lesen"
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
 msgid "FamilyTree DNA Import"
-msgstr "Stammbaum-DNA-Import"
+msgstr "FamilyTree-DNA-Import"
 
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
@@ -4220,7 +4220,7 @@ msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
-msgstr "Keine Family Finder Datei angegeben"
+msgstr "Keine Family Finder-Datei angegeben"
 
 #: FamilyTreeDNA/ftdna_import.py:232
 msgid "No Segment File specified"
@@ -4255,17 +4255,17 @@ msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Quellenfundstelle für %s DNA Verbindung erstellen"
+msgstr "Quellenfundstelle für %s DNA-Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Fundstelle für %s DNA Verbindung erstellen"
+msgstr "Fundstelle für %s DNA-Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Fundstelle zu %s DNA Verbindung hinzufügen"
+msgstr "Fundstelle zu %s DNA-Verbindung hinzufügen"
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
@@ -4519,7 +4519,7 @@ msgstr "Richtung der Zeit"
 
 #: DenominoViso/DenominoViso.py:2583
 msgid "Direction in which time increases."
-msgstr "Richtung, in der die Zeit fortschreitet."
+msgstr "Richtung, in die die Zeit fortschreitet."
 
 #: DenominoViso/DenominoViso.py:2592
 msgid "Max chart width (%)"
@@ -5164,7 +5164,7 @@ msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
 msgstr ""
-"<i>Installationen der folgenden Pakete sind <b>UNBEDINGT ERFORDERLICH</b>\n"
+"<i>Installation der folgenden Pakete ist <b>UNBEDINGT ERFORDERLICH</b>\n"
 " (Benötigt die Mindestversion oder höher.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
@@ -5219,8 +5219,8 @@ msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
-"<i>Die Installation der folgenden Pakete wird <b>Empfohlen</b>, wenn du "
-"beabsichtigst, zu übersetzen oder zu entwickeln („Erweiterungen“ usw.)</i>:\n"
+"<i>Die Installation der folgenden Pakete wird <b>EMPFOHLEN</b>, wenn du "
+"beabsichtigst, zu übersetzen oder zu entwickeln (Erweiterungen usw.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
@@ -5301,7 +5301,7 @@ msgid ""
 "\n"
 msgstr ""
 "<i><a href=\"https://gramps-project.org/wiki/index.php/De:"
-"Wie_erstelle_ich_eine_Sicherung\">Sicherung in Gramps XML</a> Du findest „ "
+"Wie_erstelle_ich_eine_Sicherung\">Sicherung in Gramps-XML</a> Du findest „"
 "Sicherung erstellen...“ im Stammbaum-Menü neuerer Gramps-Versionen, "
 "andernfalls verwende „Exportieren...“ im selben Menü, aber deaktiviere die "
 "Datenschutzoptionen im Export-Assistenten, um alle Daten zu exportieren.</i>"
@@ -8191,7 +8191,7 @@ msgstr "Erstelle Miniaturbilder für Quellenreferenzen"
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:28
 msgid "S3 Media Uploader"
-msgstr "S3-Medien- Hochlader"
+msgstr "S3-Medien-Hochlader"
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:38
 msgid ""
@@ -8380,7 +8380,7 @@ msgstr "%d Anwender definierte Ereignisarten gefunden"
 
 #: JSON/JSON.gpr.py:4
 msgid "JSON Export"
-msgstr "JSON Export"
+msgstr "JSON-Export"
 
 #: JSON/JSON.gpr.py:5
 msgid "This is a JSON export"
@@ -8392,7 +8392,7 @@ msgstr "JSON Optionen"
 
 #: JSON/JSON.gpr.py:20
 msgid "JSON Import"
-msgstr "JSON Import"
+msgstr "JSON-Import"
 
 #: JSON/JSON.gpr.py:21
 msgid "This is a JSON import"
@@ -8400,7 +8400,7 @@ msgstr "Dies ist ein JSON Import"
 
 #: JSON/JSONImport.py:56
 msgid "JSON import"
-msgstr "JSON Import"
+msgstr "JSON-Import"
 
 #: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
@@ -8946,7 +8946,7 @@ msgstr "Individueller Farbgradient"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:71
 msgid "The color of the individuals is faded to black with increasing age."
-msgstr "Die Farbe der Individuen verblasst mit zunehmendem Alter zu Schwarz."
+msgstr "Die Farbe der Individuen geht mit zunehmendem Alter in Schwarz über."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
 msgid "Font name"
@@ -9779,7 +9779,7 @@ msgstr "GersteBushl"
 
 #: Form/form_ca.xml.h:123
 msgid "13. Barley: Produce Bsh."
-msgstr "13. Gerste: Ertrag Bushl"
+msgstr "13. Gerste: Ertrag Bushel"
 
 #: Form/form_ca.xml.h:124
 msgid "RyeAcres"
@@ -9899,7 +9899,7 @@ msgstr "KleeBushel"
 
 #: Form/form_ca.xml.h:153
 msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr "28. Klee, Wiesen-Lieschgras oder anderer Grassamen - Bushel"
+msgstr "28. Klee-, Lieschgras- oder andere Grassamen - Bushel"
 
 #: Form/form_ca.xml.h:154
 msgid "CarrotsBush"
@@ -9995,7 +9995,7 @@ msgstr "AhornzuckerLbs"
 
 #: Form/form_ca.xml.h:177
 msgid "40. Maple Sugar Lbs."
-msgstr "40. Ahornzucker Lbs."
+msgstr "40. Ahornzucker Pfund"
 
 #: Form/form_ca.xml.h:178
 msgid "CiderGalls"
@@ -10003,7 +10003,7 @@ msgstr "ApfelsaftGallon"
 
 #: Form/form_ca.xml.h:179
 msgid "41. Cider Galls."
-msgstr "41. Apfelsaft Galls."
+msgstr "41. Apfelsaft Gallonen"
 
 #: Form/form_ca.xml.h:180
 msgid "ClothYards"
@@ -10019,7 +10019,7 @@ msgstr "LeinenYards"
 
 #: Form/form_ca.xml.h:183
 msgid "43. Linnen - Yds."
-msgstr "43. Leinen Yds."
+msgstr "43. Leinen - Yards"
 
 #: Form/form_ca.xml.h:184
 msgid "FlannelYds"
@@ -10027,7 +10027,7 @@ msgstr "FlanelYards"
 
 #: Form/form_ca.xml.h:185
 msgid "44. Flannel - Yds."
-msgstr "44. Flanel - Yds."
+msgstr "44. Flanell - Yards"
 
 #: Form/form_ca.xml.h:186
 msgid "Bulls"
@@ -10081,7 +10081,7 @@ msgstr "50. Schweine"
 
 #: Form/form_ca.xml.h:198
 msgid "ButterLbs"
-msgstr "ButterLbs"
+msgstr "Butter Pfund"
 
 #: Form/form_ca.xml.h:199
 msgid "51. Butter - Lbs."
