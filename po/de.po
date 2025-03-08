@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: 2025-03-06 21:48+0000\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -10085,7 +10085,7 @@ msgstr "Butter englische Pfund"
 
 #: Form/form_ca.xml.h:199
 msgid "51. Butter - Lbs."
-msgstr "51. Butter - Lbs."
+msgstr "51. Butter - Pfund"
 
 #: Form/form_ca.xml.h:200
 msgid "CheeseLbs"
@@ -10655,7 +10655,7 @@ msgstr "KannSchreiben"
 
 #: Form/form_ca.xml.h:442
 msgid "22. Instruction: Write"
-msgstr "22. Anweisung: Schreib"
+msgstr "22. Anweisung: Schreiben"
 
 #: Form/form_ca.xml.h:444
 msgid "23. Deaf and Dumb"
@@ -11672,7 +11672,7 @@ msgstr "RollenNr."
 #: Form/form_us.xml.h:2268 Form/form_us.xml.h:2286 Form/form_us.xml.h:2296
 #: Form/form_us.xml.h:2315 Form/form_us.xml.h:2325 Form/form_us.xml.h:2502
 msgid "Page No."
-msgstr "Seite Nr."
+msgstr "Seitennr."
 
 #: Form/form_us.xml.h:4 Form/form_us.xml.h:17 Form/form_us.xml.h:38
 #: Form/form_us.xml.h:59 Form/form_us.xml.h:99 Form/form_us.xml.h:168
@@ -12209,7 +12209,7 @@ msgstr "Staat von"
 #: Form/form_us.xml.h:1847 Form/form_us.xml.h:2372 Form/form_us.xml.h:2394
 #: Form/form_us.xml.h:2486 Form/form_us.xml.h:2507
 msgid "Line No."
-msgstr "Zeile Nr."
+msgstr "Zeilennr."
 
 #: Form/form_us.xml.h:260 Form/form_us.xml.h:336 Form/form_us.xml.h:435
 #: Form/form_us.xml.h:465 Form/form_us.xml.h:615 Form/form_us.xml.h:1105
@@ -12473,7 +12473,7 @@ msgstr "Tabak, pounds von"
 
 #: Form/form_us.xml.h:379
 msgid "Ginned Cotton, bales of 400 lbs."
-msgstr "Entkörnte Baumwolle, Ballen von 400 lbs."
+msgstr "Entkörnte Baumwolle, Ballen zu 400 Pfund"
 
 #: Form/form_us.xml.h:380
 msgid "Wool, pounds of"
