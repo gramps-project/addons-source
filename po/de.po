@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 22:00+0000\n"
-"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
+"PO-Revision-Date: 2025-03-06 22:27+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -9759,11 +9759,11 @@ msgstr "10. Weizen: Acre"
 
 #: Form/form_ca.xml.h:118
 msgid "WheatBsh"
-msgstr "WeizenBushel"
+msgstr "WeizenScheffel"
 
 #: Form/form_ca.xml.h:119
 msgid "11. Wheat: Produce Bsh."
-msgstr "11. Weizen: Ertrag Bushel"
+msgstr "11. Weizen: Ertrag Scheffel"
 
 #: Form/form_ca.xml.h:120
 msgid "BarleyAcres"
@@ -9775,11 +9775,11 @@ msgstr "12. Gerste: Acre"
 
 #: Form/form_ca.xml.h:122
 msgid "BarleyBsh"
-msgstr "GersteBushl"
+msgstr "GersteScheffel"
 
 #: Form/form_ca.xml.h:123
 msgid "13. Barley: Produce Bsh."
-msgstr "13. Gerste: Ertrag Bushel"
+msgstr "13. Gerste: Ertrag Scheffel"
 
 #: Form/form_ca.xml.h:124
 msgid "RyeAcres"
@@ -9791,11 +9791,11 @@ msgstr "14. Roggen: Acre"
 
 #: Form/form_ca.xml.h:126
 msgid "RyeBsh"
-msgstr "RoggenBushel"
+msgstr "RoggenScheffel"
 
 #: Form/form_ca.xml.h:127
 msgid "15. Rye: Produce Bsh."
-msgstr "15. Roggen: Ertrag Bushel"
+msgstr "15. Roggen: Ertrag Scheffel"
 
 #: Form/form_ca.xml.h:128
 msgid "PeasAcres"
@@ -9811,7 +9811,7 @@ msgstr "ErbsenBushel"
 
 #: Form/form_ca.xml.h:131
 msgid "17. Peas: Produce Bsh."
-msgstr "17. Erbsen: Ertrag Bushel"
+msgstr "17. Erbsen: Ertrag Scheffel"
 
 #: Form/form_ca.xml.h:132
 msgid "OatsAcres"
@@ -9827,7 +9827,7 @@ msgstr "HaferBushel"
 
 #: Form/form_ca.xml.h:135
 msgid "19. Oats: Produce Bsh."
-msgstr "19. Hafer: Ertrag Bushel"
+msgstr "19. Hafer: Ertrag Scheffel"
 
 #: Form/form_ca.xml.h:136
 msgid "BWheatAcres"
@@ -9843,7 +9843,7 @@ msgstr "BWeizenBushel"
 
 #: Form/form_ca.xml.h:139
 msgid "21. B.Wheat: Produce Bsh."
-msgstr "21. B.Weizen: Ertrag Bushel"
+msgstr "21. B.Weizen: Ertrag Scheffel"
 
 #: Form/form_ca.xml.h:140
 msgid "CornAcres"
@@ -9859,7 +9859,7 @@ msgstr "MaisBushel"
 
 #: Form/form_ca.xml.h:143
 msgid "23. Corn: Produce Bsh."
-msgstr "23. Mais: Ertrag Bushel"
+msgstr "23. Mais: Ertrag Scheffel"
 
 #: Form/form_ca.xml.h:144
 msgid "PotatoesAcres"
@@ -9875,7 +9875,7 @@ msgstr "KartoffelnBushel"
 
 #: Form/form_ca.xml.h:147
 msgid "25. Potatoes: Produce Bsh."
-msgstr "25. Kartoffeln: Ertrag Bushel"
+msgstr "25. Kartoffeln: Ertrag Scheffel"
 
 #: Form/form_ca.xml.h:148
 msgid "TurnipsAcres"
@@ -9891,7 +9891,7 @@ msgstr "RübenBushel"
 
 #: Form/form_ca.xml.h:151
 msgid "27. Turnips: Produce Bsh."
-msgstr "27. Rüben: Ertrag Bushel"
+msgstr "27. Rüben: Ertrag Scheffel"
 
 #: Form/form_ca.xml.h:152
 msgid "CloverBush"
@@ -9899,7 +9899,8 @@ msgstr "KleeBushel"
 
 #: Form/form_ca.xml.h:153
 msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr "28. Klee-, Lieschgras- oder andere Grassamen - Bushel"
+msgstr ""
+"28. Klee-, Wiesen-Lieschgras/Timotheegras- oder andere Grassamen - Scheffel"
 
 #: Form/form_ca.xml.h:154
 msgid "CarrotsBush"
@@ -9907,7 +9908,7 @@ msgstr "MöhreBushel"
 
 #: Form/form_ca.xml.h:155
 msgid "29. Carrots - Bsh."
-msgstr "29. Möhren - Bushel"
+msgstr "29. Möhren - Scheffel"
 
 #: Form/form_ca.xml.h:156
 msgid "MangleWurtzel"
@@ -10999,7 +11000,7 @@ msgstr "EigentumAcres"
 
 #: Form/form_ca.xml.h:564
 msgid "12. Real Estate Owned: Grand total of acres"
-msgstr "12. Immobilienbesitz: Gesamtsumme acres"
+msgstr "12. Eigene Grundbesitz: Gesamtzahl der Acre"
 
 #: Form/form_ca.xml.h:565
 msgid "OwnedLots"
@@ -11056,7 +11057,7 @@ msgstr "GepachtetAcres"
 
 #: Form/form_ca.xml.h:578
 msgid "19. Real Estate Leased: Grand total of acres"
-msgstr "19. Immobilien Gepachtete: Gesamtsumme Acres"
+msgstr "19. Gepachteter Grundbesitz: Gesamtzahl der Acre"
 
 #: Form/form_ca.xml.h:579
 msgid "LeasedLots"
@@ -13606,11 +13607,11 @@ msgstr "Befindet sich dieses Haus auf einem Bauernhof (oder einer Ranch)?"
 
 #: Form/form_us.xml.h:900
 msgid "On 3+ acres of land?"
-msgstr "Auf mehr als 3 Hektar Land?"
+msgstr "Auf mehr als 3 Acre Land?"
 
 #: Form/form_us.xml.h:901
 msgid "Is this house on a place of three or more acres?"
-msgstr "Steht dieses Haus auf einem Grundstück von drei oder mehr Hektar?"
+msgstr "Steht dieses Haus auf einem Grundstück von drei oder mehr Acre?"
 
 #: Form/form_us.xml.h:902
 msgid "Agricultural Questionnaire Number"
@@ -18426,7 +18427,7 @@ msgstr ""
 
 #: Heatmap/heatmap.py:129
 msgid "Start longitude"
-msgstr "Start-Längengrad"
+msgstr "Startlängengrad"
 
 #: Heatmap/heatmap.py:131
 msgid ""
