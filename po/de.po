@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 02:46+0000\n"
-"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -326,7 +326,7 @@ msgstr "Geschätztes Sterbedatum"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
-msgstr " Fertig! Übernehmen..."
+msgstr " Fertig! Festlegen..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
@@ -375,7 +375,7 @@ msgstr "Keine Datei analysiert..."
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Number of editions back"
-msgstr "Anzahl der Änderungen zurück"
+msgstr "Anzahl der zurückliegenden Ausgaben"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 msgid "Space character on filename"
@@ -384,7 +384,7 @@ msgstr "Leerzeichen im Dateinamen"
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr "Bitte korrigiere Leerzeichen in „%s”"
+msgstr "Bitte korrigiere das Leerzeichen in „%s“"
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
@@ -397,7 +397,7 @@ msgstr "Ist es eine komprimierte .gramps?"
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr "Kann „%s” nicht entpacken"
+msgstr "Dekomprimierung von „%s“ nicht möglich"
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -421,7 +421,7 @@ msgstr "Kann „%s” nicht kopieren"
 #: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr "XML: Letzte %s Änderungen seit %s, waren an/in:\n"
+msgstr "XML: Die letzten %s Ausgaben seit %s, waren am/am :\n"
 
 #: lxml/etreeGramplet.py:471
 #, python-format
@@ -440,7 +440,7 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
-"Anzahl der Markierungen: \n"
+"Anzahl der Etiketten: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
@@ -449,7 +449,7 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
-"Anzahl der Markierungen: \n"
+"Anzahl der Etiketten: \n"
 "\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
