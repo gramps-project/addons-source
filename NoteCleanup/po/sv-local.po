@@ -1,22 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,74 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
-msgid "Export"
-msgstr "Exportera"
-
-#: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
-msgid "Export the results to a text file"
-msgstr "Exportera resultatet till en textfil"
-
-#: MediaVerify/MediaVerify.py:195 NoteCleanup/NoteCleanup.py:323
-msgid "Export results to a text file"
-msgstr "Exportera resultaten till en textfil"
-
-#: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
-#, python-format
-msgid "Error when writing the report: %s"
-msgstr "Fel vid skrivning av rapporten: %s"
-
-#: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
-msgid "Search"
-msgstr "Sök"
-
-#: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
 msgstr "Notisrensning"
 
-#: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
 msgstr "Rensa notiser som innehåller HTML-markup"
 
-#: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
 msgstr "Verktyg för notisrensning"
 
-#: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
 msgstr "Rensade notiser"
 
-#: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
 msgstr "Endast länkar"
 
-#: NoteCleanup/NoteCleanup.py:99
 msgid "Issues"
 msgstr "Problem"
 
-#: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
 msgstr "Stäng verktyget för notsrensning"
 
-#: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
 msgstr "Spara alla"
 
-#: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
 msgstr "Spara alla ändringar"
 
-#: NoteCleanup/NoteCleanup.py:127
+msgid "Search"
+msgstr "Sök"
+
 msgid "Search for Untidy Notes"
 msgstr "Sök efter orensade notiser"
 
-#: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
 msgstr "Skapa testnotiser"
 
-#: NoteCleanup/NoteCleanup.py:131
 msgid ""
 "Generate Test notes in range N99996-N99999.\n"
 "These are added to your database, so you may want to work with a test "
@@ -102,7 +59,12 @@ msgstr ""
 "Dessa läggs till din databas, så du kanske vill arbeta med en testdatabas "
 "eller radera dem senare."
 
-#: NoteCleanup/NoteCleanup.py:181
+msgid "Export"
+msgstr "Exportera"
+
+msgid "Export the results to a text file"
+msgstr "Exportera resultatet till en textfil"
+
 msgid ""
 "Please back up your database before running this tool.\n"
 "\n"
@@ -119,19 +81,22 @@ msgstr ""
 "Du kan exportera en sammanfattningslista över notiserna som hittades med "
 "knappen 'Exportera'."
 
-#: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
 msgstr "Rensa notiserna"
 
-#: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
 msgstr "Rensa testnotiserna"
 
-#: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
 msgstr "Lägg till testnotis"
 
-#: NoteCleanup/NoteCleanup.py:383
+msgid "Export results to a text file"
+msgstr "Exportera resultaten till en textfil"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Fel vid skrivning av rapporten: %s"
+
 msgid ""
 "\n"
 "\n"
@@ -141,7 +106,6 @@ msgstr ""
 "\n"
 "Notiser valda på den vänstra sidan visas Före rensning i denna ruta."
 
-#: NoteCleanup/NoteCleanup.py:386
 msgid ""
 "\n"
 "\n"
@@ -155,14 +119,11 @@ msgstr ""
 "Om du vill göra ändringar, kan du göra dem här och använda mallkontrollerna "
 "i verktygsfältet ovan."
 
-#: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
 msgstr "Sparar notiser"
 
-#: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
 msgstr "Sparar rensade notiser"
 
-#: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
 msgstr "Skannar notiser"

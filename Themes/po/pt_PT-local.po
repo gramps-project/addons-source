@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,33 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
-msgid "Theme"
-msgstr "Tema"
-
-#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "O tema é interno do GTK_THEME"
 
-#: Themes/themes.py:180
+msgid "Theme"
+msgstr "Tema"
+
 msgid "Dark Variant"
 msgstr "Variante escura"
 
-#: Themes/themes.py:198
 msgid "Font"
 msgstr "Letra"
 
-#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Barra de rolamento fixa (requer reinício)"
 
-#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Preferências do tema"
 
-#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."

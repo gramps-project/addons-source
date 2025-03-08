@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"POT-Creation-Date: 2025-03-08 16:41+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,19 +13,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: MediaReport/media_report.py:106 MediaReport/media_report.py:112
-#: MediaReport/media_report.py:119 MediaReport/media_report.py:125
+msgid "Media Report"
+msgstr "Izvještaj o medijima"
+
+msgid "Generates report including images, image data and notes."
+msgstr "Izrađuje izvještaj koji uključuje slike, podatke slika i zabilješke."
+
 msgid "INFO"
 msgstr "INFORMACIJE"
 
-#: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
 msgstr "Za stvaranje ovog izvještaja moraš odabrati jednu sliku."
 
-#: MediaReport/media_report.py:112
 msgid ""
 "You have to select a custom note or uncheck the option 'include custom note' "
 "to generate this report."
@@ -40,80 +34,55 @@ msgstr ""
 "Za stvaranje ovog izvještaja moraš odabrati jednu prilagođenu zabilješku ili "
 "odznači opciju „Uključi prilagođenu zabilješku”."
 
-#: MediaReport/media_report.py:125
 msgid "This report only supports PDF as output file format."
 msgstr "Ovaj izvještaj podržava samo PDF kao izlazni format."
 
-#: MediaReport/media_report.py:229
 msgid "General:"
 msgstr "Opće:"
 
-#: MediaReport/media_report.py:250
 msgid "Image type:"
 msgstr "Vrsta slike:"
 
-#: MediaReport/media_report.py:426
 msgid "Heading"
 msgstr "Naslov"
 
-#: MediaReport/media_report.py:430
 msgid "Select a media file for this report"
 msgstr "Odaberi datoteku medija za ovaj izvještaj"
 
-#: MediaReport/media_report.py:433
 msgid "Custom note"
 msgstr "Prilagođena zabilješka"
 
-#: MediaReport/media_report.py:434
 msgid "Select a note for this report"
 msgstr "Uključi zabilješku za ovaj izvještaj"
 
-#: MediaReport/media_report.py:437
 msgid "Include custom note"
 msgstr "Uključi prilagođenu zabilješku"
 
-#: MediaReport/media_report.py:438
 msgid "The custom note will be included"
 msgstr "Prilagođena zabilješka će se uključiti u izvještaj"
 
-#: MediaReport/media_report.py:442
 msgid "Include referenced people"
 msgstr "Uključi osobe povezane s medijem"
 
-#: MediaReport/media_report.py:443
 msgid "Referenced people will be included"
 msgstr "Osobe povezane s medijem će se uključiti u izvještaj"
 
-#: MediaReport/media_report.py:446
 msgid "Include media data"
 msgstr "Uključi podatke medija"
 
-#: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
 msgstr "Etikete, zabilješke i svojstva će se uključiti u izvještaj"
 
-#: MediaReport/media_report.py:450
 msgid "Media width"
 msgstr "Širina medija"
 
-#: MediaReport/media_report.py:451
-#, python-format
+#, no-python-format
 msgid "Maximum media width in % of available page width."
 msgstr "Maksimalna širina medija u postocima dostupne širine stranice."
 
-#: MediaReport/media_report.py:455
 msgid "Media height"
 msgstr "Visina medija"
 
-#: MediaReport/media_report.py:456
 #, python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Maksimalna visina medija u postocima dostupne visine stranice."
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr "Izvještaj o medijima"
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr "Izrađuje izvještaj koji uključuje slike, podatke slika i zabilješke."

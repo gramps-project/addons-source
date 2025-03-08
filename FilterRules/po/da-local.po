@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,183 +12,128 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: FilterRules/isrelatedwithfiltermatch.py:53
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 msgid "People related to <filter>"
 msgstr "Personer relateret til <filter>"
 
-#: FilterRules/isrelatedwithfiltermatch.py:55
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 "Matchende personer, der er relateret til alle der matcher et personfilter"
 
-#: FilterRules/degreesofseparation.gpr.py:25
-#: FilterRules/degreesofseparation.py:60
 msgid "People separated less than <N> degrees of <person>"
 msgstr "Personer delt af mindre end <N> grader af <person>"
 
-#: FilterRules/degreesofseparation.gpr.py:26
-#: FilterRules/degreesofseparation.py:62
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "Filterregel der matcher slægtninge efter grader af deling"
 
-#: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
 msgstr "Kilde der matcher parametre"
 
-#: FilterRules/hassourcefilter.gpr.py:29
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr "Matchende kilder med værdier der indeholder de valgte parametre"
 
-#: FilterRules/multipleparents.py:42
 msgid "People with multiple parent records"
 msgstr "Personer med flere forældreposter"
 
-#: FilterRules/multipleparents.py:43
 msgid "Matches people who have more than one set of parents"
 msgstr "Matcher personer, der har mere end et sæt forældre"
 
-#: FilterRules/associationsofpersonmatch.py:46
-#: FilterRules/associationsofpersonmatch.py:47
-#: FilterRules/associationsofpersonmatch.gpr.py:25
-#: FilterRules/associationsofpersonmatch.gpr.py:26
 msgid "Match associations of <person filter>"
 msgstr "Match medlemmer af <person filter>"
 
-#: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
 msgstr "Matcher IKKE med valgt rolle"
 
-#: FilterRules/hasrolerule.py:56
 msgid "Finds the items that don't have event Roles of the selected type."
 msgstr "Finder elementerne som ikke har en hændelsesrolle af den valgte type."
 
-#: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
 msgid "Inverse"
 msgstr "Omvendt"
 
-#: FilterRules/hasrolerule.py:68
 msgid "People with events with the <role>"
 msgstr "Personer med hændelser med <role>"
 
-#: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
 msgid "Matches people with an event with a selected role"
 msgstr "Matcher personer med en hændelse med en valgt rolle"
 
-#: FilterRules/hasrolerule.py:92
 msgid "Families with events with the <role>"
 msgstr "Familier med hændelser med <role>"
 
-#: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
 msgid "Matches families with an event with a selected role"
 msgstr "Matcher familier med en hændelse med en valgt rolle"
 
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
-#: FilterRules/isfamilyfiltermatchevent.py:63
-#: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
 msgstr "Hændelser i familier der matcher et <family filter>"
 
-#: FilterRules/familieswitheventfiltermatch.gpr.py:25
-#: FilterRules/familieswitheventfiltermatch.py:45
 msgid "Families matching <event filter>"
 msgstr "Familier der matcher <event filter>"
 
-#: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
 msgstr "Matcher familier som er matchet med et hændelsesfilter"
 
-#: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
 msgstr "Matcher familier som er matchet med et hændelsesfilter"
 
-#: FilterRules/degreesofseparation.py:47
 msgid "Number of degrees of separation from person."
 msgstr "Alder i år ved en persons død."
 
-#: FilterRules/degreesofseparation.py:59
 msgid "Degrees:"
 msgstr "Grader:"
 
-#: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
 msgid "People with <count> of <event>"
 msgstr "Personer med <count> <events>"
 
-#: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
 msgid "Matches persons which have events of given type and number."
 msgstr "Matcher personer som har hændelser af en vis type og antal."
 
-#: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
 msgstr "Medtag børn"
 
-#: FilterRules/infamilyrule.py:49
 msgid "Include the children in the matching families."
 msgstr "Medtag børn i de matchende familier."
 
-#: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
 msgid "Include Parents"
 msgstr "Medtag forældre"
 
-#: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
 msgstr "Medtag forældre i de matchende familier."
 
-#: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
 msgid "Family Filter name:"
 msgstr "Familiefilternavn:"
 
-#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
-#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
 msgid "People who are part of families matching <filter>"
 msgstr "Personer der er en del af familier der matcher <filter>"
 
-#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
-#: FilterRules/ageatdeath.py:74
 msgid "Filter people by their age at death"
 msgstr "Filtrer person efter alder ved død"
 
-#: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
 msgstr "Filterregel der matcher personer efter  deres alder ved død"
 
-#: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
 msgstr "Flere forældrefiltre"
 
-#: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
 msgstr "Personer med hændelser med en valgt rolle"
 
-#: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
 msgstr "Familier med hændelser med en valgt rolle"
 
-#: FilterRules/activepersonrule.gpr.py:27
-#: FilterRules/activepersonrule.gpr.py:28
 msgid "The active Person"
 msgstr "Fokuspersonen"
 
-#: FilterRules/hassourcefilter.py:58
 msgid "Matches sources with a particular value"
 msgstr "Matcher kilder medf en bestemt værdi"
 
-#: FilterRules/activepersonrule.py:45
 msgid "Active person"
 msgstr "Fokuspersin"
 
-#: FilterRules/activepersonrule.py:47
 msgid "Matches the active person"
 msgstr "Matcher hovedpersonen"
 
-#: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
 msgstr "Alder i år ved en persons død."
 
-#: FilterRules/ageatdeath.py:71
 msgid "Age:"
 msgstr "Alder:"

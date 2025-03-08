@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,87 +12,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PlaceUpdate/PlaceUpdate.py:56
 msgid "Set properties for multiple places"
 msgstr "Stel eigenschappen in voor meerdere plaatsen"
 
-#: PlaceUpdate/PlaceUpdate.py:96
 msgid ""
 "This gramplet allows setting properties for multiple places at the same time"
 msgstr ""
 "Met deze gramplet kunnen eigenschappen voor meerdere plaatsen tegelijk "
 "worden ingesteld"
 
-#: PlaceUpdate/PlaceUpdate.py:111
 msgid "New enclosing place"
 msgstr "Nieuwe omsluitende plaats"
 
-#: PlaceUpdate/PlaceUpdate.py:119
 msgid "Timespan:"
 msgstr "Tijdspanne:"
 
-#: PlaceUpdate/PlaceUpdate.py:123
 msgid "Set timespan for enclosing places"
 msgstr "Stel een tijdspanne in voor het insluiten van plaatsen"
 
-#: PlaceUpdate/PlaceUpdate.py:159
 msgid "Clear original enclosing places"
 msgstr "Wis originele omsluitende plaatsen"
 
-#: PlaceUpdate/PlaceUpdate.py:162
 msgid "Clear tags"
 msgstr "Wis labels"
 
-#: PlaceUpdate/PlaceUpdate.py:165
 msgid "Generate hierarchy"
 msgstr "Genereer hiërarchie"
 
-#: PlaceUpdate/PlaceUpdate.py:171
 msgid "use spaces as separator"
 msgstr "gebruik spaties als scheidingsteken"
 
-#: PlaceUpdate/PlaceUpdate.py:175
 msgid "reverse hierarchy"
 msgstr "keer hiërarchie om"
 
-#: PlaceUpdate/PlaceUpdate.py:181
 msgid "Replace text"
 msgstr "Vervang tekst"
 
-#: PlaceUpdate/PlaceUpdate.py:184
 msgid "Use regex"
 msgstr "Gebruik regex"
 
-#: PlaceUpdate/PlaceUpdate.py:193
 msgid "Old text:"
 msgstr "Oude tekst:"
 
-#: PlaceUpdate/PlaceUpdate.py:197
 msgid "New text:"
 msgstr "Nieuwe tekst:"
 
-#: PlaceUpdate/PlaceUpdate.py:209
 msgid "Clear selections"
 msgstr "Wis selecties"
 
-#: PlaceUpdate/PlaceUpdate.py:213
 msgid "Apply to selected places"
 msgstr "Toepassen op geselecteerde plaatsen"
 
-#: PlaceUpdate/PlaceUpdate.py:266
 msgid "Setting place properties"
 msgstr "Plaatseigenschappen instellen"
 
-#: PlaceUpdate/PlaceUpdate.py:304
 msgid "Regex operation failed: {}"
 msgstr "Regex-bewerking mislukt: {}"
 
-#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
 msgid "PlaceUpdate"
 msgstr "Plaatsupdate"
 
-#: PlaceUpdate/PlaceUpdate.gpr.py:5
 msgid "Gramplet to manipulate multiple places"
 msgstr "Gramplet om meerdere plaatsen te manipuleren"

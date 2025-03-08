@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,13 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
 msgstr "Ordenar filhos por data de nascimento"
 
-#: BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -35,39 +28,30 @@ msgstr ""
 "de nascimento manualmente, aceitar as famílias que têm os filhos bem "
 "ordenados ou aceitar tudo."
 
-#: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
 msgstr "Nenhuma família precisa de ser ordenada"
 
-#: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
 msgstr "Nenhum filho fora de ordem."
 
-#: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Editar famílias"
 
-#: BirthOrder/birthorder.py:275
 msgid "Looking for children birth order"
 msgstr "A procurar ordem de nascimento dos filhos"
 
-#: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Seleccione a família que deseja examinar."
 
-#: BirthOrder/birthorder.glade:155
 msgid "Accept All"
 msgstr "Aceitar tudo"
 
-#: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
 msgstr "Este botão vai ordenar todas as famílias listadas."
 
-#: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
 msgstr "Aceitar tudo"
 
-#: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
@@ -75,11 +59,9 @@ msgstr ""
 "Este botão vai ordenar todas as famílias com \"*\". Nestas famílias, todos "
 "os filhos têm datas válidas, a ordem é ambígua."
 
-#: BirthOrder/birthorder.glade:185
 msgid "Accept"
 msgstr "Aceitar"
 
-#: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
@@ -87,23 +69,18 @@ msgstr ""
 "Este botão vai aceitar só a família seleccionada e gravá-la como mostrado no "
 "painel inferior direito."
 
-#: BirthOrder/birthorder.glade:232
 msgid "Done"
 msgstr "Feito"
 
-#: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
 msgstr "Este botão sai, com as restantes famílias inalteradas."
 
-#: BirthOrder/birthorder.glade:256
 msgid "Current sort"
 msgstr "Ordem actual"
 
-#: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
 msgstr "Ordem proposta"
 
-#: BirthOrder/birthorder.glade:333
 msgid ""
 "When satisfied with the sort, use 'Accept' button below to accept the "
 "changes.  If you wish to adjust the order, select the child you wish to "

@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,17 +12,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: ImportGramplet/ImportGramplet.gpr.py:11
 msgid "Gramplet for importing text"
 msgstr "Gramplet til at importere tekst"
 
-#: ImportGramplet/ImportGramplet.py:94
 msgid "VCard import"
 msgstr "VCard-import"
 
-#: ImportGramplet/ImportGramplet.py:144
 #, python-format
 msgid ""
 "The opened file has media path %s, which conflicts with the media path of "
@@ -43,7 +33,6 @@ msgstr ""
 "korrekt mappe, eller ret søgestien til mediefiler under menupunktet "
 "\"Indstillinger\"."
 
-#: ImportGramplet/ImportGramplet.py:172
 msgid ""
 "Enter text to import and then click\n"
 "the Import button at bottom"
@@ -51,18 +40,14 @@ msgstr ""
 "Indtast tekst der skal importeres og klik\n"
 "på importknappen i bunden"
 
-#: ImportGramplet/ImportGramplet.py:198
 msgid "_Import"
 msgstr "_Importér"
 
-#: ImportGramplet/ImportGramplet.py:218
 msgid "Import done"
 msgstr "Importen udført"
 
-#: ImportGramplet/ImportGramplet.py:228
 msgid "Importing Text..."
 msgstr "Importerer Tekst..."
 
-#: ImportGramplet/ImportGramplet.py:259
 msgid "Can't determine type of import"
 msgstr "Kan ikke afgøre importtypen"

@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,9 +12,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: TMGimporter/importtmg.py:89
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
@@ -55,7 +44,6 @@ msgstr ""
 "Raadpleeg:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.py:110
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supportedby the TMG Importer "
@@ -70,7 +58,6 @@ msgstr ""
 "bestand: *. TMG - Versiecontrolebestand voor TMG 2.0 tot TMG 4.0d Raadpleeg: "
 "%(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.py:131
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supportedby the TMG Importer "
@@ -85,29 +72,21 @@ msgstr ""
 "bestand: *. VER - Versiecontrolebestand voor TMG 1.2 en eerder Raadpleeg: "
 "%(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.gpr.py:49
 msgid "TMG Project Backup"
 msgstr "TMG-projectback-up"
 
-#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
-#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
 msgid "Import TMG project files"
 msgstr "Importeer TMG-projectbestanden"
 
-#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
-#: TMGimporter/importtmg.gpr.py:95
 msgid "TMG Unsupported"
 msgstr "TMG wordt niet ondersteund"
 
-#: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"
 msgstr "TMG-importeur"
 
-#: TMGimporter/libtmg.glade:31
 msgid "Unreleased Addon - Work In Progress"
 msgstr "Onuitgegeven add-on - Werk in uitvoering"
 
-#: TMGimporter/libtmg.glade:51
 msgid ""
 "Wholly Genes - The Master Genealogist (TMG) Importer\n"
 "\n"
@@ -117,10 +96,8 @@ msgstr ""
 "\n"
 "Selecteer de TMG-dataset die u wilt importeren."
 
-#: TMGimporter/libtmg.glade:88
 msgid "Data Set Name"
 msgstr "Naam gegevensset"
 
-#: TMGimporter/libtmg.glade:148
 msgid "_Import TMG Data Set"
 msgstr "_Importeer TMG-gegevensset"

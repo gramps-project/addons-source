@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,13 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DoubleCousins/double_cousins.py:112
 msgid "Double Cousins Report"
 msgstr "Dubbele neven en nichten verslag"
 
-#: DoubleCousins/double_cousins.py:120
 #, no-python-format
 msgid ""
 "Double (first) cousins occur when two siblings of family A marry two "
@@ -45,18 +33,14 @@ msgstr ""
 "normale neven en nichten en delen ze 25% van hun DNA zoals bij halfbroers en "
 "halfzussen in plaats van 12,5% zoals bij normale neven en nichten.\n"
 
-#: DoubleCousins/double_cousins.py:136
 msgid "No double cousins were found in your database."
 msgstr "Er zijn geen dubbele neven en nichten gevonden in uw database."
 
-#: DoubleCousins/double_cousins.py:170
 msgid "Show info text"
 msgstr "Informatietekst tonen"
 
-#: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
 msgstr "Dubbele neven en nichten"
 
-#: DoubleCousins/double_cousins.gpr.py:26
 msgid "A text report listing double cousins."
 msgstr "Een tekstrapport met dubbele neven en nichten."

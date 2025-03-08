@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,18 +13,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
-#: Heatmap/heatmap.py:226
-msgid "INFO"
-msgstr "ІНФОРМАЦІЯ"
-
-#: Heatmap/heatmap.py:85
 msgid "Map tiles"
 msgstr "Шари мапи"
 
-#: Heatmap/heatmap.py:90
 msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
@@ -40,11 +25,9 @@ msgstr ""
 "Встановіть розмір точок теплової карти.\n"
 "За замовчуванням: 15"
 
-#: Heatmap/heatmap.py:93
 msgid "File path"
 msgstr "Шлях до файлу"
 
-#: Heatmap/heatmap.py:98
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
@@ -56,26 +39,21 @@ msgstr ""
 "закінчуватися алфавітно-цифровим символом. Розширення файлу '.html' "
 "додається звітом."
 
-#: Heatmap/heatmap.py:103
 msgid "File name"
 msgstr "Імʼя файлу"
 
-#: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
 msgstr "Увімкнути користувацьку початкову позицію"
 
-#: Heatmap/heatmap.py:119
 msgid ""
 "Enabling will force the map open at your custom start position and zoom."
 msgstr ""
 "Увімкнення змусить мапу відкриватися з користувацької початкової позиції та "
 "масштабу."
 
-#: Heatmap/heatmap.py:124
 msgid "Start latitude"
 msgstr "Початкова широта"
 
-#: Heatmap/heatmap.py:126
 msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
@@ -83,11 +61,9 @@ msgstr ""
 "Встановіть користувацьку початкову широту\n"
 "За замовчуванням: 50.0"
 
-#: Heatmap/heatmap.py:129
 msgid "Start longitude"
 msgstr "Початкова довгота"
 
-#: Heatmap/heatmap.py:131
 msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
@@ -95,11 +71,9 @@ msgstr ""
 "Встановіть користувацьку початкову довготу\n"
 "За замовчуванням: 10.0"
 
-#: Heatmap/heatmap.py:134
 msgid "Start zoom"
 msgstr "Початковий масштаб"
 
-#: Heatmap/heatmap.py:136
 msgid ""
 "Set the value for the starting zoom\n"
 "Default: 5"
@@ -107,38 +81,32 @@ msgstr ""
 "Встановіть значення початкового масштабу\n"
 "За замовчуванням: 5"
 
-#: Heatmap/heatmap.py:209
 msgid "Path does not exist."
 msgstr "Шлях не існує."
 
-#: Heatmap/heatmap.py:210
 msgid "Invalid filename."
 msgstr "Недійсне імʼя файлу."
 
-#: Heatmap/heatmap.gpr.py:26
+msgid "INFO"
+msgstr "ІНФОРМАЦІЯ"
+
 msgid "Create a heatmap web report."
 msgstr "Створити веб-звіт теплової мапи (Heatmap)."
 
-#: Heatmap/utils.py:55
 msgid "Stamen Terrain"
 msgstr "Stamen Terrain"
 
-#: Heatmap/utils.py:58
 msgid "Stamen Terrain (Background only)"
 msgstr "Stamen Terrain (лише фон)"
 
-#: Heatmap/utils.py:61
 msgid "Stamen Toner"
 msgstr "Stamen Toner"
 
-#: Heatmap/utils.py:64
 msgid "Stamen Watercolor"
 msgstr "Stamen Watercolor"
 
-#: Heatmap/utils.py:67
 msgid "CartoDB Positron"
 msgstr "CartoDB Positron"
 
-#: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
 msgstr "CartoDB DarkMatter"

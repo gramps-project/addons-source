@@ -1,22 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,20 +12,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format
 msgid "Clipboard Gramplet: %s"
 msgstr "Urklippsgramplet: %s"
-
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:10
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:18
-#, fuzzy
-#| msgid "Clipboard"
-msgid "Collections Clipboard"
-msgstr "Urklipp"
-
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:11
-msgid "Gramplet for grouping collections of items to aid in data entry."
-msgstr ""

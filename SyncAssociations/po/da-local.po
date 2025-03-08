@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,16 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: SyncAssociations/syncAssociations.gpr.py:4
-#: SyncAssociations/syncAssociations.py:130
-#: SyncAssociations/syncAssociations.py:134
-#: SyncAssociations/syncAssociations.py:138
 msgid "Sync Associations"
 msgstr "Sync forbindelser"
 
-#: SyncAssociations/syncAssociations.gpr.py:6
 msgid ""
 "Traverses the Person list for all Associations that are bi-directional and "
 "adds any which are missing to the Associated Person."
@@ -36,19 +24,15 @@ msgstr ""
 "Går gennem personlisten for alle forbindelser, som er to-vejs og tilføjer "
 "enhver der mangler på den associerede person."
 
-#: SyncAssociations/syncAssociations.py:124
 #, python-format
 msgid "Add %s reciprocal association"
 msgstr "Tilføj %s gensidige forbindelser"
 
-#: SyncAssociations/syncAssociations.py:131
 msgid "{} Reciprocal associations created"
 msgstr "{} Gensidige forbindelser dannet"
 
-#: SyncAssociations/syncAssociations.py:135
 msgid "All reciprocal associations exist, none created"
 msgstr "Alle gensidige forbindelser findes, ingen dannet"
 
-#: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
 msgstr "Ingen eksisterende forbindelser, så ingen gensidige behøves"

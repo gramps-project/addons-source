@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,54 +13,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
 msgstr "%(abbrev)s %(date)s у %(place)s"
 
-#: CombinedView/basepage.py:495
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
 
-#: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
 msgstr "%(event_type)s: %(date)s у %(place)s"
 
-#: CombinedView/personpage.py:601
 #, python-format
 msgid "%(event_type)s: %(date)s"
 msgstr "%(event_type)s: %(date)s"
 
-#: CombinedView/personpage.py:604
 #, python-format
 msgid "%(event_type)s: %(place)s"
 msgstr "%(event_type)s: %(place)s"
 
-#: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
 msgstr "Натисніть, щоб зробити цю подію активною"
 
-#: CombinedView/personpage.py:743
 msgid "Click to visit this link"
 msgstr "Натисніть, щоб відвідати це посилання"
 
-#: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "
 
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
 msgstr "Комбінований"
 
-#: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
 msgstr "Перегляд, що показує стосунки та події для особи"
 
-#: CombinedView/navigationview.py:346
 msgid ""
 "You need to set a 'default person' to go to. Select the People View, select "
 "the person you want as 'Home Person', then confirm your choice via the menu "
@@ -78,18 +59,14 @@ msgstr ""
 "виберіть особу, яку ви хочете як \"Головну особу\", потім підтвердіть свій "
 "вибір через меню Редагування -> Встановити Головну особу."
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
 msgid "Order"
 msgstr "Порядок"
 
-#: CombinedView/combinedview.py:528
 msgid "Edit the active event"
 msgstr "Редагувати активну подію"
 
-#: CombinedView/combinedview.py:630
 msgid "Show Tags"
 msgstr "Показати теги"
 
-#: CombinedView/combinedview.py:656
 msgid "Vertical Details"
 msgstr "Вертикальні деталі"

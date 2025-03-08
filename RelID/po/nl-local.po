@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,77 +12,59 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 RelID/relation_tab.py:126
-msgid "Save"
-msgstr "Opslaan"
-
-#: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
-msgstr "Toon relaties en afstanden met de thuispersoon"
+msgstr "Toon relaties en afstanden met de centrale persoon"
 
-#: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
-msgstr "Geeft relationele informatie weer met de thuispersoon"
+msgstr "Geeft relationele informatie weer met de centrale persoon"
 
-#: RelID/relation_tab.py:75
 msgid "Relation and distances with root"
 msgstr "Relatie en afstanden met begin"
 
-#: RelID/relation_tab.py:92
 msgid "Folder Chooser"
 msgstr "Mapkiezer"
 
-#: RelID/relation_tab.py:97
 msgid "_Select"
 msgstr "_Selecteer"
 
-#: RelID/relation_tab.py:99
 msgid "Please, select a folder"
 msgstr "Selecteer een map"
 
-#: RelID/relation_tab.py:110
 msgid "Rel_id"
 msgstr "Rel_id"
 
-#: RelID/relation_tab.py:111
 msgid "Relation"
 msgstr "Relatie"
 
-#: RelID/relation_tab.py:113
 msgid "up"
 msgstr "omhoog"
 
-#: RelID/relation_tab.py:114
 msgid "down"
 msgstr "omlaag"
 
-#: RelID/relation_tab.py:115
 msgid "Common MRA"
 msgstr "Gemeenschappelijke MRA"
 
-#: RelID/relation_tab.py:116
 msgid "Rank"
 msgstr "Rang"
 
-#: RelID/relation_tab.py:117
 msgid "Period"
 msgstr "Periode"
 
-#: RelID/relation_tab.py:164
+msgid "Save"
+msgstr "Opslaan"
+
 msgid "Please wait, filtering..."
 msgstr "Een ogenblik geduld, filteren..."
 
-#: RelID/relation_tab.py:169
 msgid "No default_person"
 msgstr "Geen begin_persoon"
 
-#: RelID/relation_tab.py:174
 msgid "Generating relation map..."
 msgstr "Relatiekaart genereren..."
 
-#: RelID/relation_tab.py:190
 #, python-format
 msgid ""
 "%d/%d \n"
@@ -105,6 +77,5 @@ msgstr ""
 " %d/%d \n"
 "%f|\t%f"
 
-#: RelID/relation_tab.py:308
 msgid "You do not have write rights on this folder"
 msgstr "U heeft geen schrijfrechten op deze map"

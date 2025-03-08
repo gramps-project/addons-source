@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,11 +16,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
 msgstr "Объединение документов"
 
-#: MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
@@ -43,15 +26,12 @@ msgstr[0] "{number_of} документ объединён"
 msgstr[1] "{number_of} документа объединено"
 msgstr[2] "{number_of} документов объединено"
 
-#: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
 msgstr "Ни одного документа на объединено."
 
-#: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
 msgstr "Объединение документов"
 
-#: MediaMerge/mediamerge.gpr.py:33
 msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."

@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,53 +12,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:82
-#: HtreePedigreeView/HtreePedigreeView.py:93
-msgid "short for born|b."
-msgstr "f."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:83
-#: HtreePedigreeView/HtreePedigreeView.py:94
-msgid "short for died|d."
-msgstr "d."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:84
-#: HtreePedigreeView/HtreePedigreeView.py:95
-msgid "short for baptized|bap."
-msgstr "døbt"
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:85
-#: HtreePedigreeView/HtreePedigreeView.py:96
-msgid "short for christened|chr."
-msgstr "døbt"
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:86
-#: HtreePedigreeView/HtreePedigreeView.py:97
-msgid "short for buried|bur."
-msgstr "begr."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:87
-#: HtreePedigreeView/HtreePedigreeView.py:98
-msgid "short for cremated|crem."
-msgstr "krem."
-
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:34
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:47
 msgid "H-Tree Pedigree"
 msgstr "H-Tree Pedigree"
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:37
 msgid ""
 "The view shows a space-efficient pedigree with ancestors of the selected "
 "person"
 msgstr "Visningen er en pladseffektiiv anetavle med aner til den valgte person"
 
-#: HtreePedigreeView/HtreePedigreeView.py:543
+msgid "short for born|b."
+msgstr "f."
+
+msgid "short for died|d."
+msgstr "d."
+
+msgid "short for baptized|bap."
+msgstr "døbt"
+
+msgid "short for christened|chr."
+msgstr "døbt"
+
+msgid "short for buried|bur."
+msgstr "begr."
+
+msgid "short for cremated|crem."
+msgstr "krem."
+
 msgid "H-tree Pedigree View"
 msgstr "H-tree Pedigree View"
 
-#: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
 msgstr "Om H-Tree"

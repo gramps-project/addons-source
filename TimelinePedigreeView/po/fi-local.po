@@ -1,28 +1,9 @@
-# translation of fi.po to Finnish
-# GRAMPS
-# Copyright (C) YEAR ORGANIZATION.
-#
-# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
-# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
-# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2025.
-# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
-# Niemelä <niememat@gmail.com>, 2017, 2018.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"PO-Revision-Date: 2025-02-20 13:28+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -34,75 +15,54 @@ msgstr ""
 "X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
-#: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
-msgid "Ancestry"
-msgstr "Esivanhemmat"
-
-#: FamilyTree/FamilyTree.py:1047
-#: TimelinePedigreeView/TimelinePedigreeView.py:1481
-msgid "Ancestor Generations"
-msgstr "Esivanhempien sukupolvet"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "Jälkeläisten sukupolvet"
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
 msgstr "s."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for died|d."
 msgstr "k."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for baptized|bap."
 msgstr "kast."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:85
 msgid "short for christened|chr."
 msgstr "rist."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
 msgstr "haud."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:87
 msgid "short for cremated|crem."
 msgstr "tuhk."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"
 msgstr "Aikajana sukupuu"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
 msgstr "Järjestys aikajanalla"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
 msgstr "Näytä elinkaari"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1470
-#: TimelinePedigreeView/TimelinePedigreeView.py:1486
+msgid "Descendant Generations"
+msgstr "Jälkeläisten sukupolvet"
+
 #, python-format
 msgid "%d generation"
 msgid_plural "%d generations"
 msgstr[0] "%d sukupolvi"
 msgstr[1] "%d sukupolvea"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1505
+msgid "Ancestor Generations"
+msgstr "Esivanhempien sukupolvet"
+
 msgid "About Timeline Pedigree View"
 msgstr "Tietoja Aikajana sukupuu näkymästä"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
 msgid "Timeline Pedigree"
 msgstr "Aikajana sukupuu"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
+msgid "Ancestry"
+msgstr "Esivanhemmat"
+
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
 "selected person"

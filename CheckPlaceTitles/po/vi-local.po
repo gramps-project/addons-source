@@ -1,13 +1,8 @@
-# Vietnamese translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# FIRST AUTHOR <trande@gmail.com>, 2012.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VIETNAMESE 4.2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
 "PO-Revision-Date: 2018-07-13 14:34+0800\n"
 "Last-Translator: detran <trande@gmail.com>\n"
 "Language-Team: VIETNAMESE <trande@gmail.com>\n"
@@ -21,62 +16,8 @@ msgstr ""
 "OF GRAMPS, V. 3\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
 msgstr "Kiểm tra tiêu đề địa điểm "
 
-#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
 msgstr "Tìm kiếm trường địa điểm "
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
-msgid "Check Place Titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:30
-msgid "Check place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:71
-msgid "Check Place title"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:107
-msgid "Differences"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:112
-msgid "No need modifications"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:113
-msgid "No changes need."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:187
-msgid "Legacy place"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:201
-msgid "Modify Place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:224
-msgid "Place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:56
-msgid "Remove content of place title field if it does not match"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:74
-msgid "Copy content of place title field to a new note."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:91
-msgid "Attach a tag on selected places."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:177
-msgid "column"
-msgstr ""

@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,31 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
 msgstr "Kromosom "
 
-#: DNA/dnasegmentmap.py:552
 msgid " Map for "
 msgstr " Kort for"
 
-#: DNA/dnasegmentmap.py:634
 msgid "Chr"
 msgstr "Kr"
 
-#: DNA/dnasegmentmap.py:759
-msgid "Legend"
-msgstr ""
-
-#: DNA/dnasegmentmap.py:761
-#, fuzzy
-#| msgid "Grandparents"
-msgid ": Grandparent"
-msgstr "Bedsteforældre"
-
-#: DNA/dnasegmentmap.py:1056
 #, python-brace-format
 msgid ""
 "\n"
@@ -54,43 +33,16 @@ msgstr ""
 "{0}\n"
 "{1} cMs"
 
-#: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
 msgstr " SNPs"
 
-#: DNA/dnasegmentmap.py:1061
-msgid " : Starts at "
-msgstr ""
-
-#: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
 msgstr " og slutter ved "
 
-#: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
-#, python-brace-format
-msgid "{0}"
-msgstr ""
-
-#: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr "%(ancestor1)s og %(ancestor2)s"
 
-#: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship Type"
-msgid ""
-"\n"
-"Relationship: {0} "
-msgstr "Slægtskabstype:"
-
-#: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestor"
-msgid " Ancestor: {0}"
-msgstr "Ane"
-
-#: DNA/dnasegmentmap.py:1115
 msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
@@ -98,10 +50,8 @@ msgstr ""
 "Klik for at gøre denne person aktiv\n"
 "Højreklik for at redigere denne person"
 
-#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
 msgstr "DNA Segment  Kort"
 
-#: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
 msgstr "Gramplet der viser et  matchene DNA segment kort"

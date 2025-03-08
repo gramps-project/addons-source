@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,49 +12,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: AncestorFill/AncestorFill.py:361
-#: LinesOfDescendency/lines-of-descendency.py:72
-msgid "The style used for the title of the page."
-msgstr "Fontformat for sidens titel"
-
-#: DenominoViso/DenominoViso.py:208
-#: LinesOfDescendency/lines-of-descendency.py:55
 msgid "Ancestor"
 msgstr "Ane"
 
-#: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
 msgstr "Anen der skal begyndes linjen"
 
-#: LinesOfDescendency/lines-of-descendency.py:59
 msgid "Descendent"
 msgstr "Efterkommer"
 
-#: LinesOfDescendency/lines-of-descendency.py:60
 msgid "The descendent to which to build the line"
 msgstr "Efterkommer som linjen skal bygges til"
 
-#: LinesOfDescendency/lines-of-descendency.py:82
+msgid "The style used for the title of the page."
+msgstr "Fontformat for sidens titel"
+
 msgid "The style used for the title of a line."
 msgstr "Stilen der benyttes til titlen på en linje."
 
-#: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format
 msgid "%(line)s. line:"
 msgstr "%(line)s. linje:"
 
-#: LinesOfDescendency/lines-of-descendency.py:176
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
 msgstr "Linjer af efterkommer fra %(ancestor)s til %(descendent)s"
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
 msgstr "Lines of Descendency Report"
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:33
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."

@@ -1,23 +1,8 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,72 +16,42 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
-msgid "Export"
-msgstr "Экспорт"
-
-#: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
-msgid "Export the results to a text file"
-msgstr "Экспортировать результат в текстовы файл"
-
-#: MediaVerify/MediaVerify.py:195 NoteCleanup/NoteCleanup.py:323
-msgid "Export results to a text file"
-msgstr "Экспортировать результат в текстовы файл"
-
-#: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
-#, python-format
-msgid "Error when writing the report: %s"
-msgstr "Ошибка при записи отчёта: %s"
-
-#: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
-msgid "Search"
-msgstr "Поиск"
-
-#: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
 msgstr "Чистка заметок"
 
-#: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
 msgstr "Производит очистку заметок содержащих HTML разметку"
 
-#: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
 msgstr "Инструмент очистки заметок"
 
-#: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
 msgstr "Очищенные заметки"
 
-#: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
 msgstr "Только ссылки"
 
-#: NoteCleanup/NoteCleanup.py:99
 msgid "Issues"
 msgstr "Замечания"
 
-#: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
 msgstr "Закрыть инструмент очистки заметок"
 
-#: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
 msgstr "Сохранить все"
 
-#: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
 msgstr "Сохранить все изменения"
 
-#: NoteCleanup/NoteCleanup.py:127
+msgid "Search"
+msgstr "Поиск"
+
 msgid "Search for Untidy Notes"
 msgstr "Поиск неочищенных заметок"
 
-#: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
 msgstr "Создать тестовые заметки"
 
-#: NoteCleanup/NoteCleanup.py:131
 msgid ""
 "Generate Test notes in range N99996-N99999.\n"
 "These are added to your database, so you may want to work with a test "
@@ -106,7 +61,12 @@ msgstr ""
 "Котоыре будут добавлены в Вашу базу данных, поэтому можно использовать "
 "тестовую базу данных или удалить их после тестов."
 
-#: NoteCleanup/NoteCleanup.py:181
+msgid "Export"
+msgstr "Экспорт"
+
+msgid "Export the results to a text file"
+msgstr "Экспортировать результат в текстовы файл"
+
 msgid ""
 "Please back up your database before running this tool.\n"
 "\n"
@@ -122,19 +82,22 @@ msgstr ""
 "Возможно экспортировать список заметок, которые были найдены с помощью "
 "кнопки 'Экспорт'."
 
-#: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
 msgstr "Очистка заметок"
 
-#: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
 msgstr "Очистка тестовых заметок"
 
-#: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
 msgstr "Добавить тестовые заметки"
 
-#: NoteCleanup/NoteCleanup.py:383
+msgid "Export results to a text file"
+msgstr "Экспортировать результат в текстовы файл"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Ошибка при записи отчёта: %s"
+
 msgid ""
 "\n"
 "\n"
@@ -144,7 +107,6 @@ msgstr ""
 "\n"
 "Выбранные заметки на панеле слева, показыны здесь ДО очистки."
 
-#: NoteCleanup/NoteCleanup.py:386
 msgid ""
 "\n"
 "\n"
@@ -158,14 +120,11 @@ msgstr ""
 "Если хотите внести изменения, можете сделать это здесь. Используйте "
 "управление стулем из панели сверху при необходимости."
 
-#: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
 msgstr "Сохранение заметок"
 
-#: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
 msgstr "Сохранение очищенных заметок"
 
-#: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
 msgstr "Сканирование заметок"

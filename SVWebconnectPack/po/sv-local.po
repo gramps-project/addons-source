@@ -1,23 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 17:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -26,64 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: SVWebconnectPack/SVWebPack.gpr.py:11
 msgid "SV Web Connect Pack"
 msgstr "SV Web Connect Pack"
 
-#: SVWebconnectPack/SVWebPack.gpr.py:12
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
 msgstr "Samling av webbplatser för Sverige (kräver libwebconnect)"
 
-#: SVWebconnectPack/SVWebPack.py:33
 msgid "Find A Grave"
 msgstr "Finn en grav"
 
-#: SVWebconnectPack/SVWebPack.py:34
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
-#: SVWebconnectPack/SVWebPack.py:35
 msgid "Google SV"
 msgstr "Google SV"
 
-#: SVWebconnectPack/SVWebPack.py:38
 msgid "FamilySearch.org Tree"
 msgstr "FamilySearch.org Släktträd"
 
-#: SVWebconnectPack/SVWebPack.py:40
 msgid "National archives of Sweden personsearch"
 msgstr "Riksarkivet personsök"
 
-#: SVWebconnectPack/SVWebPack.py:41
 msgid "National archives of Sweden free search"
 msgstr "Riksarkivet frisök"
 
-#: SVWebconnectPack/SVWebPack.py:42
 msgid "Arkiv Digital estate records for Skåne"
 msgstr "Arkiv Digital bouppteckningar över Skåne"
 
-#: SVWebconnectPack/SVWebPack.py:43
 msgid "Ancestry Search"
 msgstr "Ancestry Sök"
 
-#: SVWebconnectPack/SVWebPack.py:44
 msgid "Find swedish portraits - Rötter.se"
 msgstr "Porträttfynd - Rötter.se"
 
-#: SVWebconnectPack/SVWebPack.py:45
 msgid "Gravar.se - find swedish graves"
 msgstr "Gravar.se"
 
-#: SVWebconnectPack/SVWebPack.py:46
 msgid "National archives of Sweden search censuses"
 msgstr "Riksarkivet sök folkräkning"
 
-#: SVWebconnectPack/SVWebPack.py:47
 msgid "Arkiv Digital released prisoners"
 msgstr "Arkiv Digital frigivna fångar"
 
-#: SVWebconnectPack/SVWebPack.py:48
 msgid "Gravestone inventory - rötter.se"
 msgstr "Gravstensinventeringen - rötter.se"

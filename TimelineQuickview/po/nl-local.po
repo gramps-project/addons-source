@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,63 +12,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
-msgid "Today"
-msgstr "Vandaag"
-
-#: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
 msgstr "Schoonouders"
 
-#: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
 msgstr "Grootouders"
 
-#: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
 msgstr "Schoongrootouders"
 
-#: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
 msgstr "Overgrootouders"
 
-#: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
 msgstr "Schoonovergrootouders"
 
-#: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
 msgstr "Groot, "
 
-#: TimelineQuickview/TimelineQuickview.py:61
-#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great, "
 msgstr "groot, "
 
-#: TimelineQuickview/TimelineQuickview.py:61
-#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great grandparents"
 msgstr "overgrootouders"
 
-#: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
 msgstr "Schoongroot, "
 
-#: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
 msgstr "Echtgenote van de partner"
 
-#: TimelineQuickview/TimelineQuickview.py:156
 #, python-format
 msgid "Timeline for %s"
 msgstr "Tijdlijn voor %s"
 
-#: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Betrokken personen"
 
-#: TimelineQuickview/TimelineQuickview.gpr.py:11
+msgid "Today"
+msgstr "Vandaag"
+
 msgid "Display a person's events on a timeline"
 msgstr "Geef de gebeurtenissen van een persoon weer op een tijdlijn"

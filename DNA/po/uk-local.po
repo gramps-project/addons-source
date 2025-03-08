@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,31 +13,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
 msgstr "Хромосома "
 
-#: DNA/dnasegmentmap.py:552
 msgid " Map for "
 msgstr " Карта для "
 
-#: DNA/dnasegmentmap.py:634
 msgid "Chr"
 msgstr "Хр"
 
-#: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "Легенда"
 
-#: DNA/dnasegmentmap.py:761
-#, fuzzy
-#| msgid "Grandparent Tree"
 msgid ": Grandparent"
-msgstr "Дерево дідусів і бабусь"
+msgstr ": Дідусь/Бабуся"
 
-#: DNA/dnasegmentmap.py:1056
 #, python-brace-format
 msgid ""
 "\n"
@@ -56,43 +40,35 @@ msgstr ""
 "{0}\n"
 "{1} сМ"
 
-#: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
 msgstr " SNPs"
 
-#: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : Починається з "
 
-#: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
 msgstr " і закінчується на "
 
-#: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
-#: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr "%(ancestor1)s та %(ancestor2)s"
 
-#: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship Type"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Тип відносин"
+msgstr ""
+"\n"
+"Ступінь спорідненості: {0} "
 
-#: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestors map"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Мапа предків"
+msgstr " Предок: {0}"
 
-#: DNA/dnasegmentmap.py:1115
 msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
@@ -100,10 +76,8 @@ msgstr ""
 "Натисніть, щоб зробити цю особу активною\n"
 "Клацніть правою кнопкою миші, щоб редагувати цю особу"
 
-#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
 msgstr "Карта сегментів ДНК"
 
-#: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
 msgstr "Грамплет, що показує карту відповідних сегментів ДНК"

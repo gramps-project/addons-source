@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,55 +12,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetPrivacyTool/SetPrivacyTool.py:312
-msgid "Select filter to restrict people"
-msgstr "Filter zum eingrenzen der Personen wählen"
-
-#: DynamicWeb/dynamicweb.py:3052 SetPrivacyTool/SetPrivacyTool.py:320
-msgid "Persons"
-msgstr "Personen"
-
-#: SetPrivacyTool/SetPrivacyTool.py:51 SetPrivacyTool/SetPrivacyTool.py:93
-#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:146
-#: SetPrivacyTool/SetPrivacyTool.py:186 SetPrivacyTool/SetPrivacyTool.py:226
-#: SetPrivacyTool/SetPrivacyTool.py:255 SetPrivacyTool/SetPrivacyTool.gpr.py:24
 msgid "Set Privacy Tool"
 msgstr "Datenschutz einstellen Werkzeug"
 
-#: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
 msgid "Set private: %d %s\n"
 msgstr "Vertraulich einstellen: %d %s\n"
 
-#: SetPrivacyTool/SetPrivacyTool.py:92
 #, python-format
 msgid "Not private: %d %s\n"
 msgstr "Nicht vertraulich: %d %s\n"
 
-#: SetPrivacyTool/SetPrivacyTool.py:107
 msgid "Set persons private.."
 msgstr "Personen als vertraulich markieren.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set events private.."
 msgstr "Ereignisse als vertraulich markieren.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:197
 msgid "Set media private.."
 msgstr "Medium als vertraulich markieren.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:230
 msgid "Set adresses private.."
 msgstr "Adressen auf vertraulich setzen.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:259
 msgid "Set internet objects private.."
 msgstr "Internetobjekte auf vertraulich setzen.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
 "The time range in years from today you want to set objects private.\n"
 "'0 years' = remove privacy from all objects."
@@ -88,32 +48,31 @@ msgstr ""
 "werden.\n"
 "\"0 Jahre\" = entferne die Vertraulichkeit von allen Objekten."
 
-#: SetPrivacyTool/SetPrivacyTool.py:306
 msgid "Always private if no date."
 msgstr "Immer vertraulich, wenn keine Datumsangabe."
 
-#: SetPrivacyTool/SetPrivacyTool.py:307
 msgid "If checked, all objects without a date will also be set private."
 msgstr ""
 "Wenn aktiviert, werden alle Objekte ohne Datum ebenfalls als vertraulich "
 "markiert."
 
-#: SetPrivacyTool/SetPrivacyTool.py:324
+msgid "Select filter to restrict people"
+msgstr "Filter wählen, um Personen einzugrenzen"
+
+msgid "Persons"
+msgstr "Personen"
+
 msgid "Select filter to restrict events"
 msgstr "Filter auswählen, um Ereignisse einzugrenzen"
 
-#: SetPrivacyTool/SetPrivacyTool.py:336
 msgid "Select filter to restrict medias"
 msgstr "Filter auswählen, um Medien einzugrenzen"
 
-#: SetPrivacyTool/SetPrivacyTool.py:347
 msgid "Internet type filter"
 msgstr "Internet-Typ-Filter"
 
-#: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
-msgstr ""
+msgstr "E-Mail"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
 msgstr "All Objekte der letzten <number> Jahre als vertraulich markieren."

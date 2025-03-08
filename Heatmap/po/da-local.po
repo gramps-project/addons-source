@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,18 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
-#: Heatmap/heatmap.py:226
-msgid "INFO"
-msgstr "INFO"
-
-#: Heatmap/heatmap.py:85
 msgid "Map tiles"
 msgstr "Kort titler"
 
-#: Heatmap/heatmap.py:90
 msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
@@ -38,11 +24,9 @@ msgstr ""
 "Sæt størrelsen på heatmap punkter.\n"
 "Standard er 15"
 
-#: Heatmap/heatmap.py:93
 msgid "File path"
 msgstr "Sti til filen"
 
-#: Heatmap/heatmap.py:98
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
@@ -53,25 +37,20 @@ msgstr ""
 "undersstregning og bindestreg til filnavn. Filnavnet skal også begynde med "
 "alfanumerisk tegn. Filtilnavnet '-html' tilføjes automatisk af rapporten."
 
-#: Heatmap/heatmap.py:103
 msgid "File name"
 msgstr "Filnavn"
 
-#: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
 msgstr "Aktiver brugervalgt startposition"
 
-#: Heatmap/heatmap.py:119
 msgid ""
 "Enabling will force the map open at your custom start position and zoom."
 msgstr ""
 "Aktivering vil få kortet til at begynde ved din valgte position og zoom."
 
-#: Heatmap/heatmap.py:124
 msgid "Start latitude"
 msgstr "Start breddegrad"
 
-#: Heatmap/heatmap.py:126
 msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
@@ -79,11 +58,9 @@ msgstr ""
 "Sæt din valgte startpositions breddegrad\n"
 "Standard 50.0"
 
-#: Heatmap/heatmap.py:129
 msgid "Start longitude"
 msgstr "Start længdegrad"
 
-#: Heatmap/heatmap.py:131
 msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
@@ -91,11 +68,9 @@ msgstr ""
 "Sæt din valgte startpositions længdegrad\n"
 "Standard 10.0"
 
-#: Heatmap/heatmap.py:134
 msgid "Start zoom"
 msgstr "Start zoom"
 
-#: Heatmap/heatmap.py:136
 msgid ""
 "Set the value for the starting zoom\n"
 "Default: 5"
@@ -103,38 +78,32 @@ msgstr ""
 "Sæt værdien for stratzoom\n"
 "Standard 5"
 
-#: Heatmap/heatmap.py:209
 msgid "Path does not exist."
 msgstr "Filsti findes ikke."
 
-#: Heatmap/heatmap.py:210
 msgid "Invalid filename."
 msgstr "Ugyldigt filnavn."
 
-#: Heatmap/heatmap.gpr.py:26
+msgid "INFO"
+msgstr "INFO"
+
 msgid "Create a heatmap web report."
 msgstr "Dan et heatmap web rapport."
 
-#: Heatmap/utils.py:55
 msgid "Stamen Terrain"
 msgstr "Stamen Terrain"
 
-#: Heatmap/utils.py:58
 msgid "Stamen Terrain (Background only)"
 msgstr "Stamen Terrain (Background only)"
 
-#: Heatmap/utils.py:61
 msgid "Stamen Toner"
 msgstr "Stamen Toner"
 
-#: Heatmap/utils.py:64
 msgid "Stamen Watercolor"
 msgstr "Stamen Watercolor"
 
-#: Heatmap/utils.py:67
 msgid "CartoDB Positron"
 msgstr "CartoDB Positron"
 
-#: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
 msgstr "CartoDB DarkMatter"

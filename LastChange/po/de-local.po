@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,89 +12,65 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: AncestorFill/AncestorFill.py:361 LastChange/LastChangeReport.py:378
-msgid "The style used for the title of the page."
-msgstr "Der Stil, der für den Seitentitel verwendet wird."
-
-#: LastChange/LastChangeReport.py:74 LastChange/LastChangeReport.py:113
-#: LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
-msgstr "Letzte Änderungen Bericht"
+msgstr "Letzte Änderungen-Bericht"
 
-#: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
 msgstr "Du musst mindestens eine Art von Datensatz wählen."
 
-#: LastChange/LastChangeReport.py:180
 msgid "People Changed"
 msgstr "Geänderte Personen"
 
-#: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
-#: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
-#: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
-#: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
 msgid "Changed On"
 msgstr "Geändert am"
 
-#: LastChange/LastChangeReport.py:197
 msgid "Families Changed"
 msgstr "Geänderte Familien"
 
-#: LastChange/LastChangeReport.py:198
 msgid "Family Surname"
-msgstr "Familie Nachname"
+msgstr "Familiennachname"
 
-#: LastChange/LastChangeReport.py:215
 #, python-format
 msgid "%s and %s"
 msgstr "%s und %s"
 
-#: LastChange/LastChangeReport.py:228
 msgid "Events Changed"
 msgstr "Geänderte Ereignisse"
 
-#: LastChange/LastChangeReport.py:251
 msgid "Places Changed"
 msgstr "Geänderte Orte"
 
-#: LastChange/LastChangeReport.py:269
 msgid "Media Changed"
 msgstr "Geänderte Medien"
 
-#: LastChange/LastChangeReport.py:287
 msgid "Sources Changed"
-msgstr "Quellen geändert"
+msgstr "Geänderte Quellen"
 
-#: LastChange/LastChangeReport.py:304
 msgid "Notes Changed"
-msgstr "Notizen geändert"
+msgstr "Geänderte Notizen"
 
-#: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
-msgstr "Fundstellen geändert"
+msgstr "Geänderte Fundstellen"
 
-#: LastChange/LastChangeReport.py:344
 msgid "Select From"
 msgstr "Ab wählen"
 
-#: LastChange/LastChangeReport.py:403
-msgid "The style used for normal text"
-msgstr "Der Stil der für normalen Text verwendet wird"
+msgid "The style used for the title of the page."
+msgstr "Der Stil, der für den Seitentitel verwendet wird."
 
-#: LastChange/LastChangeGramplet.py:82
+msgid "The style used for normal text"
+msgstr "Der Stil, der für normalen Text verwendet wird"
+
 msgid "changed on"
 msgstr "geändert am"
 
-#: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
-msgstr "Listet die letzten zehn geänderten Personendatensätze"
+msgstr "Listet die letzten zehn geänderten Personendatensätze auf"
 
-#: LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
 msgstr "Letzte Änderungen"
 
-#: LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
-msgstr "Bericht der letzten Datensätze die geändert wurden"
+msgstr "Bericht der letzten Datensätze, die geändert wurden"

@@ -1,17 +1,9 @@
-# GRAMPS SLOVAK language version
-# Lubo Vasko, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
-# Dominik Sivak <bubakovsky@gmail.com>, 2019.
-# MILAN KUROVSKY, 2023.
-# Lubo Vasko <pgval at inmail dot sk>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
-# Jozef Riha, 2017.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,148 +12,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
-#, fuzzy
-#| msgid "Family:"
-msgid "Family Sheet"
-msgstr "Rodina:"
-
-#: FamilySheet/FamilySheet.gpr.py:6
-msgid ""
-"Produces a family sheet showing full information about a person and his/her "
-"partners and children."
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
-#, python-format
-msgid "\\u2192 %s"
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:397
 #, python-format
 msgid "Address (%(date)s): %(location)s"
 msgstr "Adresa (%(date)s): %(location)s"
 
-#: FamilySheet/FamilySheet.py:401
 #, python-format
 msgid "Address: %(location)s"
 msgstr "Adresa: %(location)s"
 
-#: FamilySheet/FamilySheet.py:469
-#, python-format
-msgid "; %(type)s: %(value)s"
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:557
 msgid "Source references:"
 msgstr "Odkazy na zdroje:"
 
-#: FamilySheet/FamilySheet.py:575
 #, python-format
 msgid ", page %s"
 msgstr ", strana %s"
 
-#: FamilySheet/FamilySheet.py:588
 msgid "Notes:"
 msgstr "Poznámky:"
 
-#: FamilySheet/FamilySheet.py:769
 #, python-format
 msgid "on %(ymd_date)s"
 msgstr "%(ymd_date)s"
 
-#: FamilySheet/FamilySheet.py:771
 #, python-format
 msgid "in %(ym_date)s"
 msgstr "v/vo %(ym_date)s"
 
-#: FamilySheet/FamilySheet.py:773
 #, python-format
 msgid "in %(y_date)s"
 msgstr "v/vo %(y_date)s"
 
-#: FamilySheet/FamilySheet.py:777
 #, python-format
 msgid "on %(placeholder)s"
 msgstr "%(placeholder)s"
 
-#: FamilySheet/FamilySheet.py:779
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr "%(placeholder)s (%(partial)s)"
 
-#: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #, python-format
 msgid "in %(place)s"
 msgstr "v/vo %(place)s"
 
-#: FamilySheet/FamilySheet.py:864
 msgid "Center person"
 msgstr "Ústredná osoba"
 
-#: FamilySheet/FamilySheet.py:866
-msgid "The person whose partners and children are printed"
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:869
-msgid "Print sheets for"
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:871
 msgid "Center person only"
 msgstr "Iba ústredná osoba"
 
-#: FamilySheet/FamilySheet.py:872
 msgid "Center person and descendants in side branches"
 msgstr "Ústredná osoba a potomkovia v bočných vetvách"
 
-#: FamilySheet/FamilySheet.py:873
 msgid "Center person and all descendants"
 msgstr "Ústredná osoba so všetkými potomkami"
 
-#: FamilySheet/FamilySheet.py:874
-#, fuzzy
-#| msgid "Whether to include a person's note."
-msgid "Whether to include descendants, and which ones."
-msgstr "Či zahrnúť poznámku osoby."
-
-#: FamilySheet/FamilySheet.py:880
 msgid "Replace first name with call name"
 msgstr "Nahradiť krstné meno bežným menom"
 
-#: FamilySheet/FamilySheet.py:881
 msgid "Underline call name in first name / add call name to first name"
 msgstr ""
 "Podčiarknuť bežné meno v krstnom mene / pridať bežné meno ku krstnému menu"
 
-#: FamilySheet/FamilySheet.py:882
-#, fuzzy
-#| msgid "Whether to include a person's note."
-msgid "Whether to include call name, and how."
-msgstr "Či zahrnúť poznámku osoby."
-
-#: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
 msgstr "Zobraziť prázdne políčka pri chýbajúcich údajoch"
-
-#: FamilySheet/FamilySheet.py:909
-msgid "The basic style used for the text display"
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:919
-msgid "The style used for the page key on the top"
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:928
-msgid "The style used for names"
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:938
-msgid "The style used for numbers"
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:948
-msgid "The style used for footnotes (notes and source references)"
-msgstr ""

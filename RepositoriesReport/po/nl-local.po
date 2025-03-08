@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,143 +12,102 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:480
-#: RepositoriesReport/RepositoriesReportAlt.py:504
-#: RepositoriesReport/RepositoriesReport.py:175
-msgid "The style used for the title of the report."
-msgstr "De stijl die wordt gebruikt voor de titel van het verslag."
-
-#: SourcesCitationsReport/SourcesCitationsReport.py:591
-#: RepositoriesReport/RepositoriesReportAlt.py:533
-#: RepositoriesReport/RepositoriesReport.py:203
-msgid "The style used for each section."
-msgstr "De stijl die voor elke sectie wordt gebruikt."
-
-#: DenominoViso/DenominoViso.py:2607
-#: RepositoriesReport/RepositoriesReportAlt.py:467
-msgid "Include private records"
-msgstr "Voeg privégegevens toe"
-
-#: RepositoriesReport/RepositoriesReport.gpr.py:26
 msgid "Repositories Report Options"
 msgstr "Verslagopties voor bibliotheken"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:27
-#: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
 msgstr "Produceert een tekstueel bibliotheekverslag"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:45
-#: RepositoriesReport/RepositoriesReportAlt.py:139
-#: RepositoriesReport/RepositoriesReport.py:80
 msgid "Repositories Report"
 msgstr "Bibliotheekverslag"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:273
 msgid "Publication information:"
 msgstr "Publicatie-informatie:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:278
 msgid "Data:"
 msgstr "Gegevens:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:378
 msgid "Page:"
 msgstr "Bladzijde:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:419
 msgid "Selection with a filter"
 msgstr "Selectie met een filter"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
 msgstr "Voeg de urls van de bibliotheek toe"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
 msgstr "Of URL's in de bibliotheek moeten worden opgenomen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
 msgstr "Voeg het adres van de bibliotheek toe"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
 msgstr "Of adressen in de bibliotheek moeten worden opgenomen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
 msgstr "Voeg de auteur van de bron toe"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
 msgstr "Of de auteur moet worden opgenomen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
 msgstr "Neem de afkorting van de bron op"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
 msgstr "Of een afkorting moet worden opgenomen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
 msgstr "Neem de publicatie-informatie van de bron op"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
 msgstr "Of publicatie-informatie moet worden opgenomen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
 msgstr "Voeg brongegevens toe"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
 msgstr "Of sleutels en waarden moeten worden opgenomen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
 msgstr "Of opmerkingen over bibliotheken en bronnen moeten worden opgenomen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:459
 msgid "Include media"
 msgstr "Voeg media toe"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:460
 msgid "Whether to include media."
 msgstr "Of media moet worden opgenomen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:463
 msgid "Include citations"
 msgstr "Voeg citaten toe"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:464
 msgid "Whether to include citations on sources."
 msgstr "Of er broncitaten moeten worden opgenomen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:468
+msgid "Include private records"
+msgstr "Voeg privégegevens toe"
+
 msgid "Whether to include repositories and sources marked as private."
 msgstr ""
 "Of bibliotheken en bronnen moeten worden opgenomen die als privé zijn "
 "gemarkeerd."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:471
 msgid "Display empty values"
 msgstr "Toon lege waarden"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:472
 msgid "Whether to include key records with empty values."
 msgstr "Of sleutelrecords met lege waarden moeten worden opgenomen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:518
-#: RepositoriesReport/RepositoriesReport.py:189
+msgid "The style used for the title of the report."
+msgstr "De stijl die wordt gebruikt voor de titel van het verslag."
+
 msgid "The style used for repository title."
 msgstr "De stijl die wordt gebruikt voor de titel van de bibliotheek."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:548
+msgid "The style used for each section."
+msgstr "De stijl die voor elke sectie wordt gebruikt."
+
 msgid "The style used for child section."
 msgstr "De stijl die wordt gebruikt voor de onderliggende sectie."

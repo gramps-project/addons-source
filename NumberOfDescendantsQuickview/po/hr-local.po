@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,48 +13,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:115
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
-msgid "Number of descendants"
-msgstr "Broj potomaka"
-
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-msgid "Generation"
-msgstr "Generacija"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
 msgid "Number of %s's descendants"
 msgstr "Broj potomaka od %s"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
+msgid "Generation"
+msgstr "Generacija"
+
 msgid "Seen"
 msgstr "Doživjeni"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
 msgid "Outlived"
 msgstr "Nadživjeni"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
 msgid "Now alive"
 msgstr "Sada živi"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
 msgstr "Doživjeni = Broj potomaka, čije je rođenje doživjela osoba %s"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr ""
 "Nadživjeni = Broj potomaka, koji su umrli još za vrijeme života osobe %s"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
+msgid "Number of descendants"
+msgstr "Broj potomaka"
+
 msgid "Shows the number of descendants of the current person"
 msgstr "Prikazuje broj potomaka trenutačno odabrane osobe"

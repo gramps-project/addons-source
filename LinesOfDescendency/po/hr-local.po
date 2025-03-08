@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,49 +13,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: AncestorFill/AncestorFill.py:361
-#: LinesOfDescendency/lines-of-descendency.py:72
-msgid "The style used for the title of the page."
-msgstr "Stil za naslov stranice."
-
-#: DenominoViso/DenominoViso.py:208
-#: LinesOfDescendency/lines-of-descendency.py:55
 msgid "Ancestor"
 msgstr "Predak"
 
-#: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
 msgstr "Predak od kojeg počinje linija"
 
-#: LinesOfDescendency/lines-of-descendency.py:59
 msgid "Descendent"
 msgstr "Potomak"
 
-#: LinesOfDescendency/lines-of-descendency.py:60
 msgid "The descendent to which to build the line"
 msgstr "Potomak prema kojemu se gradi linija"
 
-#: LinesOfDescendency/lines-of-descendency.py:82
+msgid "The style used for the title of the page."
+msgstr "Stil za naslov stranice."
+
 msgid "The style used for the title of a line."
 msgstr "Stil za naslov linije."
 
-#: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format
 msgid "%(line)s. line:"
 msgstr "%(line)s. linija:"
 
-#: LinesOfDescendency/lines-of-descendency.py:176
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
 msgstr "Linija potomstva od „%(ancestor)s” do „%(descendent)s”"
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
 msgstr "Izvještaj o liniji potomstva"
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:33
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."

@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,76 +12,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: AvatarGenerator/AvatarGenerator.py:86
-msgid "Select filter to restrict people"
-msgstr "Vælg filter til personafgrænsning"
-
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: AvatarGenerator/AvatarGenerator.py:211
-#: AvatarGenerator/AvatarGenerator.py:219
-#: AvatarGenerator/AvatarGenerator.py:316
-#: AvatarGenerator/AvatarGenerator.py:320
-msgid "INFO"
-msgstr "INFO"
-
-#: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
 msgstr "Avatar danner Værktøj"
 
-#: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
 msgstr "Et værktøj til at lægge billeder til din slægtsbog"
 
-#: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
 msgstr "enkelt billede tilstand"
 
-#: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
 msgstr "Vælg hvor mange billeder du vil bruge."
 
-#: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
 msgstr "Billede for person med ukendt køn."
 
-#: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
 msgstr "Billede for mænd."
 
-#: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
 msgstr "Billede for kvinde"
 
-#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Select filter to restrict people"
+msgstr "Vælg filter til personafgrænsning"
+
 msgid "Remove images from people"
 msgstr "Fjern billeder fra personer"
 
-#: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
 msgstr "Fjern valgte billed(er)."
 
-#: AvatarGenerator/AvatarGenerator.py:134
-#: AvatarGenerator/AvatarGenerator.py:183
-#: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
 msgstr "Dan avatar"
 
-#: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
 msgstr "Fjern avatar billeder....."
 
-#: AvatarGenerator/AvatarGenerator.py:211
+msgid "INFO"
+msgstr "INFO"
+
 msgid "No media was removed."
 msgstr "Intet medie blev fjernet."
 
-#: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
 msgstr "{} mediehenvisninger blev fjernet fra {} personer."
 
-#: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -96,19 +66,14 @@ msgstr ""
 "\n"
 "{} Håndteringsfejl opstod, men blev bortset far."
 
-#: AvatarGenerator/AvatarGenerator.py:263
-#: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
 msgstr "Læg avatar billeder til...."
 
-#: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
 msgstr "{} avatar billeder blev succesfyldt lagt til."
 
-#: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
 msgstr "Der var ingen avatar billeder at lægge til. "
 
-#: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
 msgstr "Alle personer havde allerede en."

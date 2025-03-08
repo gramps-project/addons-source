@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,77 +12,59 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 RelID/relation_tab.py:126
-msgid "Save"
-msgstr "Gravar"
-
-#: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
 msgstr "Mostrar relações e distâncias com o indivíduo inicial"
 
-#: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
 msgstr "Mostrará informação relacional com o indivíduo inicial"
 
-#: RelID/relation_tab.py:75
 msgid "Relation and distances with root"
 msgstr "Relação e distância com a raiz"
 
-#: RelID/relation_tab.py:92
 msgid "Folder Chooser"
 msgstr "Selector de pasta"
 
-#: RelID/relation_tab.py:97
 msgid "_Select"
 msgstr "_Seleccionar"
 
-#: RelID/relation_tab.py:99
 msgid "Please, select a folder"
 msgstr "Por favor, seleccione uma pasta"
 
-#: RelID/relation_tab.py:110
 msgid "Rel_id"
 msgstr "Id_Rel"
 
-#: RelID/relation_tab.py:111
 msgid "Relation"
 msgstr "Relação"
 
-#: RelID/relation_tab.py:113
 msgid "up"
 msgstr "acima"
 
-#: RelID/relation_tab.py:114
 msgid "down"
 msgstr "abaixo"
 
-#: RelID/relation_tab.py:115
 msgid "Common MRA"
 msgstr "Asc. comum"
 
-#: RelID/relation_tab.py:116
 msgid "Rank"
 msgstr "Posição"
 
-#: RelID/relation_tab.py:117
 msgid "Period"
 msgstr "Período"
 
-#: RelID/relation_tab.py:164
+msgid "Save"
+msgstr "Gravar"
+
 msgid "Please wait, filtering..."
 msgstr "Por favor, aguarde, a filtrar..."
 
-#: RelID/relation_tab.py:169
 msgid "No default_person"
 msgstr "Sem indivíduo pré-definido"
 
-#: RelID/relation_tab.py:174
 msgid "Generating relation map..."
 msgstr "A gerar mapa de relações..."
 
-#: RelID/relation_tab.py:190
 #, python-format
 msgid ""
 "%d/%d \n"
@@ -100,6 +77,5 @@ msgstr ""
 " %d/%d \n"
 "%f|\t%f"
 
-#: RelID/relation_tab.py:308
 msgid "You do not have write rights on this folder"
 msgstr "Não tem permissões de escrita nesta pasta"

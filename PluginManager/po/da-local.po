@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-02-23 12:35-0600\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,21 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "Udvidet plugin kontrol"
 
-#: PluginManager/PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr "En tillægs/plugin kontrol med flere adskillige flere muligheder"
 
-#: PluginManager/PluginManager.py:84
 msgid "Plugin Manager - Enhanced"
 msgstr "Udvidet plugin kontrol"
 
-#: PluginManager/PluginManager.py:154
 msgid ""
 "Enter search words to filter the addons.\n"
 "All the words must be present somewhere in the row or\n"
@@ -45,27 +34,22 @@ msgstr ""
 "i tillægsfilnavnet for at komme med i søgningen.\n"
 "Små/store bogstaver eller rækkefølge bliver ignoreret."
 
-#: PluginManager/PluginManager.py:158
 msgid "Search..."
 msgstr "Søg...."
 
-#: PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Genstart..."
 
-#: PluginManager/PluginManager.py:217
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
 "Genstart venligst Gramps så dine ændringer til tillægget kan blive sikkert "
 "afsluttet."
 
-#: PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr "Fejl ved sletning af '%s' mappen. Afinstalleringen har måske fejlet"
 
-#: PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -73,46 +57,35 @@ msgstr ""
 "'*' elementer leveret fa 3 parts ophavsmand,\n"
 "<s>overstregede</s> er skjult"
 
-#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
 msgid "Hide"
 msgstr "Skjul"
 
-#: PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "Vis skjulte elementer"
 
-#: PluginManager/PluginManager.py:438
 msgid "Show Built-in items"
 msgstr "Vis indbyggede elementer"
 
-#: PluginManager/PluginManager.py:445
 msgid "* indicates 3rd party addon"
 msgstr "* indikerer 3 parts tillæg"
 
-#: PluginManager/PluginManager.py:450
 msgid "Plugins"
 msgstr "Udvidelsesmoduler"
 
-#: PluginManager/PluginManager.py:528
 msgid "Unhide"
 msgstr "Gør synlig"
 
-#: PluginManager/PluginManager.py:547
 msgid "Uninstall"
 msgstr "Afinstaller"
 
-#: PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Tilgængelige"
 
-#: PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr "Indbyggede"
 
-#: PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr "*Installerede"
 
-#: PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Opdatering tilgængelig"

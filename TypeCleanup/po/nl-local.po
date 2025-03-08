@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,57 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
 msgstr "Gebeurtenisrollen"
 
-#: TypeCleanup/type_cleanup.py:102
 msgid "Event Types"
 msgstr "Gebeurtenistypen"
 
-#: TypeCleanup/type_cleanup.py:103
 msgid "Family Relation Types"
 msgstr "Gezinsrelatietypen"
 
-#: TypeCleanup/type_cleanup.py:104
 msgid "Child reference Types"
 msgstr "Kindreferentietypen"
 
-#: TypeCleanup/type_cleanup.py:105
 msgid "Name Origin Types"
 msgstr "Naamoorsprongstypen"
 
-#: TypeCleanup/type_cleanup.py:106
 msgid "Name Types"
 msgstr "Naamtypen"
 
-#: TypeCleanup/type_cleanup.py:107
 msgid "Note Types"
 msgstr "Notitietypen"
 
-#: TypeCleanup/type_cleanup.py:108
 msgid "Place Types"
 msgstr "Locatietypen"
 
-#: TypeCleanup/type_cleanup.py:109
 msgid "Repository Types"
 msgstr "Bibliotheektypen"
 
-#: TypeCleanup/type_cleanup.py:111
 msgid "Source Media Types"
 msgstr "Bronmediatypen"
 
-#: TypeCleanup/type_cleanup.py:112
 msgid "URL Types"
 msgstr "URL-typen"
 
-#: TypeCleanup/type_cleanup.py:124
 msgid "Types Cleanup Tool"
 msgstr "Typen opschoonhulpmiddel"
 
-#: TypeCleanup/type_cleanup.py:166
 msgid ""
 "Remove the selected type from the db.\n"
 "This does not change any referenced objects."
@@ -80,7 +57,6 @@ msgstr ""
 "Verwijder het geselecteerde type uit de database.\n"
 "Dit verandert niets aan de objecten waarnaar wordt verwezen."
 
-#: TypeCleanup/type_cleanup.py:174
 msgid ""
 "Select a new name for the current type, prior to renaming the type in the "
 "referenced objects."
@@ -88,33 +64,26 @@ msgstr ""
 "Selecteer een nieuwe naam voor het huidige type, voordat u het type hernoemt "
 "in de objecten waarnaar wordt verwezen."
 
-#: TypeCleanup/type_cleanup.py:182
 msgid "Rename"
 msgstr "Hernoemen"
 
-#: TypeCleanup/type_cleanup.py:185
 msgid "Rename the selected type in all referenced objects."
 msgstr ""
 "Hernoem het geselecteerde type in alle objecten waarnaar wordt verwezen."
 
-#: TypeCleanup/type_cleanup.py:189
 msgid "Close the Type Cleanup Tool"
 msgstr "Sluit het type-opschoonhulpmiddel"
 
-#: TypeCleanup/type_cleanup.py:195
 msgid "Types"
 msgstr "Typen"
 
-#: TypeCleanup/type_cleanup.py:242
 msgid "Type Cleanup Tool"
 msgstr "Type-opschoonhulpmiddel"
 
-#: TypeCleanup/type_cleanup.py:387
 #, python-format
 msgid "Changing type from %(old_type)s to %(new_type)s."
 msgstr "Type wijzigen van%(old_type)s naar %(new_type)s."
 
-#: TypeCleanup/type_cleanup.py:432
 msgid ""
 "Removing this custom type will eliminate it from the type selection drop "
 "down lists\n"
@@ -131,10 +100,8 @@ msgstr ""
 "de database.\n"
 "Gebruik 'Hernoemen' als u het wilt wijzigen in items waarnaar wordt verwezen."
 
-#: TypeCleanup/type_cleanup.gpr.py:30
 msgid "Type Cleanup"
 msgstr "Type opschonen"
 
-#: TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
 msgstr "Aangepaste soorten opschonen (verwijderen)"

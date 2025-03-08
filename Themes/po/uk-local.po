@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,33 +13,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
-msgid "Theme"
-msgstr "Тема"
-
-#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Тему пришито через GTK_THEME"
 
-#: Themes/themes.py:180
+msgid "Theme"
+msgstr "Тема"
+
 msgid "Dark Variant"
 msgstr "Темний варіант"
 
-#: Themes/themes.py:198
 msgid "Font"
 msgstr "Шрифт"
 
-#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Класична смуга прокрутки (потрібно перезавантажити)"
 
-#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Тематичні уподобання"
 
-#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."

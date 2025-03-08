@@ -1,23 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 17:44+0000\n"
+"POT-Creation-Date: 2025-02-22 23:21+0000\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -26,28 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:30
-#: EditExifMetadata/editexifmetadata.py:723
-#: EditExifMetadata/editexifmetadata.py:1135
-#: EditExifMetadata/editexifmetadata.py:1147
 msgid "Edit Image Exif Metadata"
 msgstr "Redigera bilds Exif-metadata"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr "Gramplet för att se, redigera och spara bilds Exif-metadata"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
 msgstr "Redigera Exif-metadata"
 
-#: EditExifMetadata/editexifmetadata.py:135
 msgid "<-- Image Types -->"
 msgstr "<-- Bildtyper -->"
 
-#: EditExifMetadata/editexifmetadata.py:158
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
@@ -55,11 +33,9 @@ msgstr ""
 "Varning: Ändring av detta fält kommer att uppdatera mediaobjektets titelfält "
 "i Gramps ej i Exiv2 metadata."
 
-#: EditExifMetadata/editexifmetadata.py:161
 msgid "Provide a short description for this image."
 msgstr "Ge en kort beskrivning på denna bild."
 
-#: EditExifMetadata/editexifmetadata.py:163
 msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
@@ -67,11 +43,9 @@ msgstr ""
 "Skriv in bildens skapare. Personens namn eller det företag, som är ansvarig "
 "för skapande av denna bild."
 
-#: EditExifMetadata/editexifmetadata.py:167
 msgid "Enter the copyright information for this image. \n"
 msgstr "Skriv in upphovsrättsinformation för denna bild. \n"
 
-#: EditExifMetadata/editexifmetadata.py:169
 msgid ""
 "The original date/ time when the image was first created/ taken as in a "
 "photograph.\n"
@@ -81,7 +55,6 @@ msgstr ""
 "togs.\n"
 "Exempel: 1830-01-1 09:30:59"
 
-#: EditExifMetadata/editexifmetadata.py:173
 msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
@@ -89,32 +62,12 @@ msgstr ""
 "Detta är det datum/klockslag som bilden senast ändrades.\n"
 "Exemple: 2011-05-24 14:30:00"
 
-#: EditExifMetadata/editexifmetadata.py:176
-msgid ""
-"Enter the Latitude GPS coordinates for this image,\n"
-"Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:179
-msgid ""
-"Enter the Longitude GPS coordinates for this image,\n"
-"Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:182
-msgid ""
-"This is the measurement of Above or Below Sea Level.  It is measured in "
-"meters.  Example: 200.558, -200.558"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:191
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
 "Visar Gramps Wiki hjälpsida för 'Redigera Exif-metadata' i din webbläsare."
 
-#: EditExifMetadata/editexifmetadata.py:194
 msgid ""
 "This will open up a new window to allow you to edit/ modify this image's "
 "Exif metadata.\n"
@@ -124,11 +77,9 @@ msgstr ""
 "bilds Exif-metadat.\n"
 "  Den kommer också att ge dig möjlighet att spara de ändrade metadata."
 
-#: EditExifMetadata/editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
 msgstr "Kommer att skapa ett pop-upp-fönster visande en yta med miniatyrbilder"
 
-#: EditExifMetadata/editexifmetadata.py:201
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
@@ -136,7 +87,6 @@ msgstr ""
 "Välj från en rullgardinsmeny den filtyp du vill omvandla ditt ej- Exiv2 "
 "kompatibla mediaobjekt till."
 
-#: EditExifMetadata/editexifmetadata.py:205
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
@@ -144,7 +94,6 @@ msgstr ""
 "Om din bild är av sådan typ, som ej kan ha Exif metadata, läs/skriv till/"
 "från, omvandla till en bildtyp, som kan?"
 
-#: EditExifMetadata/editexifmetadata.py:209
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
@@ -152,23 +101,18 @@ msgstr ""
 "Varning: Detta kommer att helt radera alla Exif-metadata från denna bild! Är "
 "du säker på att du vill göra det?"
 
-#: EditExifMetadata/editexifmetadata.py:213
 msgid "Clear GPS"
 msgstr "Rensa GPS"
 
-#: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"
 msgstr "Minatyrbild"
 
-#: EditExifMetadata/editexifmetadata.py:215
 msgid "Copy"
 msgstr "Kopiera"
 
-#: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
 msgstr "Klicka på en bild för att börja..."
 
-#: EditExifMetadata/editexifmetadata.py:421
 msgid ""
 "Image is NOT readable,\n"
 "Please choose a different image..."
@@ -176,17 +120,9 @@ msgstr ""
 "Bilden omöjlig att läsa.\n"
 "Välj en annan bild..."
 
-#: EditExifMetadata/editexifmetadata.py:441
 msgid "Please convert this image to an Exiv2- compatible image type..."
 msgstr "Omvandla denna bild till en Exiv2-kompatibel bildtyp..."
 
-#: EditExifMetadata/editexifmetadata.py:465
-#, python-brace-format
-msgid "Image Size : {width} x {height} pixels"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:481
-#: EditExifMetadata/editexifmetadata.py:1440
 msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
@@ -194,15 +130,12 @@ msgstr ""
 "Bilden är ej skrivbar.\n"
 "Du kommer ej att kunna spara Exif-metadata..."
 
-#: EditExifMetadata/editexifmetadata.py:648
 msgid "Click Close to close this Thumbnail View Area."
 msgstr "Klicka på Stäng för att stänga denna miniatyrbildsplats."
 
-#: EditExifMetadata/editexifmetadata.py:654
 msgid "Thumbnail View Area"
 msgstr "Minatyrbildsplats"
 
-#: EditExifMetadata/editexifmetadata.py:724
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
@@ -210,11 +143,9 @@ msgstr ""
 "Varning: Du är på väg att omvandla denna bild till en .jpeg-bild! Är du "
 "säker på att du vill göra det?"
 
-#: EditExifMetadata/editexifmetadata.py:726
 msgid "Convert and Delete"
 msgstr "Konvertera och tag bort"
 
-#: EditExifMetadata/editexifmetadata.py:807
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
@@ -222,32 +153,26 @@ msgstr ""
 "Din bild har blivit omvandlad och orginalbilden har tagits bort samt "
 "komplett sökväg har uppdaterats!"
 
-#: EditExifMetadata/editexifmetadata.py:812
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
 msgstr "Det har inträffat et fel. Kontrollera din käll- och målsökvägar..."
 
-#: EditExifMetadata/editexifmetadata.py:816
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
 msgstr ""
 "Det blev fel vid borttagning av originalfilen.   Du måste ta bort den själv!"
 
-#: EditExifMetadata/editexifmetadata.py:834
 msgid "There was an error in converting your image file."
 msgstr "Det inträffade ett fel vid omvandling av din bildfil."
 
-#: EditExifMetadata/editexifmetadata.py:844
 msgid "Media Path Update"
 msgstr "Uppdatering av mediasökväg"
 
-#: EditExifMetadata/editexifmetadata.py:853
 msgid "There has been an error in updating the image file's path!"
 msgstr "Det har inträffat ett fel vid uppdatering av bildens sökväg!"
 
-#: EditExifMetadata/editexifmetadata.py:886
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
@@ -255,23 +180,18 @@ msgstr ""
 "Klicka på stängningsknappen när du är färdig med ändringar i denna bilds "
 "metadata."
 
-#: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
 msgstr "Sparar en kopia av datafälten i bilens Exiv metadata."
 
-#: EditExifMetadata/editexifmetadata.py:928
 msgid "Re -display the data fields that were cleared from the Edit Area."
 msgstr "Vosa igen de datafält, som rensades från redigeringsytan."
 
-#: EditExifMetadata/editexifmetadata.py:932
 msgid "This button will clear all of the data fields shown here."
 msgstr "Denna knapp kommer att rensa visade datafält."
 
-#: EditExifMetadata/editexifmetadata.py:936
 msgid "This button will clear all of the GPS fields shown here."
 msgstr "Denna knapp kommer att rensa alla GPS-fält som visas här."
 
-#: EditExifMetadata/editexifmetadata.py:940
 msgid ""
 "Closes this popup Edit window.\n"
 "WARNING: This action will NOT Save any changes/ modification made to this "
@@ -281,114 +201,84 @@ msgstr ""
 "VARNING: Denna åtgärd kommer EJ att spara några ändringar till bildens Exif "
 "metadata."
 
-#: EditExifMetadata/editexifmetadata.py:969
 msgid "Media Object Title"
 msgstr "Mediaobjekttitel"
 
-#: EditExifMetadata/editexifmetadata.py:978
 msgid "media Title: "
 msgstr "Mediatitel: "
 
-#: EditExifMetadata/editexifmetadata.py:993
 msgid "General Data"
 msgstr "Allmänt"
 
-#: EditExifMetadata/editexifmetadata.py:1003
 msgid "Description: "
 msgstr "Beskrivning: "
 
-#: EditExifMetadata/editexifmetadata.py:1004
 msgid "Artist: "
 msgstr "Artist: "
 
-#: EditExifMetadata/editexifmetadata.py:1005
 msgid "Copyright: "
 msgstr "Copyright: "
 
-#: EditExifMetadata/editexifmetadata.py:1019
 msgid "Date/ Time"
 msgstr "Datum/tid"
 
-#: EditExifMetadata/editexifmetadata.py:1034
 msgid "Original: "
 msgstr "Original: "
 
-#: EditExifMetadata/editexifmetadata.py:1035
 msgid "Modified: "
 msgstr "Ändrat: "
 
-#: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr "Latitud/ longitud/ höjd GPS koordinater"
 
-#: EditExifMetadata/editexifmetadata.py:1069
 msgid "Latitude :"
 msgstr "Latitud:"
 
-#: EditExifMetadata/editexifmetadata.py:1070
 msgid "Longitude :"
 msgstr "Longitud:"
 
-#: EditExifMetadata/editexifmetadata.py:1071
 msgid "Altitude :"
 msgstr "Höjd:"
 
-#: EditExifMetadata/editexifmetadata.py:1114
 msgid "Bad Date/Time"
 msgstr "Felaktig datum/tid"
 
-#: EditExifMetadata/editexifmetadata.py:1122
 msgid "Invalid latitude (syntax: 18°9'"
 msgstr "Ogiltig latitud (syntax: 18°9'"
 
-#: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 eller -18:9:48.21)"
 
-#: EditExifMetadata/editexifmetadata.py:1127
 msgid "Invalid longitude (syntax: 18°9'"
 msgstr "Ogiltig longitud (syntax: 18°9'"
 
-#: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 eller -18:9:48.21)"
 
-#: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
 msgstr ""
 "VARNING!   Du är på väg att helt ta bort Exif-metadata från denna bild."
 
-#: EditExifMetadata/editexifmetadata.py:1138
-#: EditExifMetadata/editexifmetadata.py:1150
-msgid "Delete?"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:1148
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
 msgstr ""
 "VARNING!   Du är på väg att helt radera GPS-metadata från den här bilden."
 
-#: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
 msgstr "Uppdatering av mediatitel"
 
-#: EditExifMetadata/editexifmetadata.py:1357
 msgid "Media Object Date Created"
 msgstr "Mediaobjektdatum skapat"
 
-#: EditExifMetadata/editexifmetadata.py:1422
 msgid "Saving Exif metadata to this image..."
 msgstr "Sparar Exif-metadata till bild..."
 
-#: EditExifMetadata/editexifmetadata.py:1465
 msgid "All Exif metadata has been deleted from this image..."
 msgstr "All Exif-metadata har raderats från denna bild..."
 
-#: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr ""
 "Det inträffade ett fel vid utplockning av Exif metadata från denna bild..."

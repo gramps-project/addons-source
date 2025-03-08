@@ -1,16 +1,8 @@
-# translation of pl.po to
-# Copyright (C) 2002-2003, 2006, 2007 Free Software Foundation, Inc.
-#
-# Piotr Czubaszek <pioterus(at)gmail(dot)com>, 2007.
-# Piotr Czubaszek <piotrek@gmail.com>, 2007.
-# Łukasz Rymarczyk <yenidai(at)poczta(dot)onet(dot)pl>, 2008, 2009.
-# Przemek Wiech <pwiech@gmail.com>, 2019.
-# Michał Stojek <stojex@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2009-10-05 21:15+0100\n"
 "Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
 "Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
@@ -25,17 +17,8 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
-#: PythonGramplet/PythonGramplet.gpr.py:4
-#: PythonGramplet/PythonGramplet.gpr.py:11
 msgid "Python Shell"
 msgstr "Konsola Pythona"
 
-#: PythonGramplet/PythonGramplet.gpr.py:5
-#, fuzzy
-#| msgid "Interactive Family Tree"
-msgid "Interactive Python interpreter"
-msgstr "Interaktywne drzewo genealogiczne"
-
-#: PythonGramplet/PythonGramplet.py:55
 msgid "Enter Python expressions"
 msgstr "Wprowadź wyrażenie Pythona"

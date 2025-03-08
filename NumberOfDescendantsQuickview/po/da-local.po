@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,47 +12,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:115
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
-msgid "Number of descendants"
-msgstr "Antal efterkommere"
-
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-msgid "Generation"
-msgstr "Generation"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
 msgid "Number of %s's descendants"
 msgstr "Antal af %s's efterkommere"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
+msgid "Generation"
+msgstr "Generation"
+
 msgid "Seen"
 msgstr "Set"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
 msgid "Outlived"
 msgstr "Overlevede"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
 msgid "Now alive"
 msgstr "Nulevende"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
 msgstr "Set = antal af efterkommere hvis fødsel er sket mens %s levede"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr "Overlevede = antal af efterkommere der døde mens %s stadig levede"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
+msgid "Number of descendants"
+msgstr "Antal efterkommere"
+
 msgid "Shows the number of descendants of the current person"
 msgstr "Viser antal efterkommere for hovedpersonen"

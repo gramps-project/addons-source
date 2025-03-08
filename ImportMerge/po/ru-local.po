@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,25 +16,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:142
-#: ImportMerge/importmerge.py:911 ImportMerge/importmerge.glade:407
-msgid "Replace"
-msgstr "Заменить"
-
-#: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
-msgid "Done"
-msgstr "Завершить"
-
-#: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade:264
-msgid "Differences"
-msgstr "Отличия"
-
-#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
-#: ImportMerge/importmerge.py:708
 msgid "Import and Merge tool"
 msgstr "Импорт и слияние"
 
-#: ImportMerge/importmerge.gpr.py:33
 msgid ""
 "Compares a Gramps XML database with the current one, and allows merging of "
 "the differences."
@@ -57,47 +26,36 @@ msgstr ""
 "Сравнивает базу данных (Gramps XML) с текущим древом и предоставляет "
 "возможность слияния изменений."
 
-#: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
 msgstr "Импортировать и объединить файл Gramps XML"
 
-#: ImportMerge/importmerge.py:90
 msgid "Missing"
 msgstr "Отсутствует"
 
-#: ImportMerge/importmerge.py:94
 msgid "Different"
 msgstr "Отличается"
 
-#: ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr "Удалить оригинал"
 
-#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.glade:334
 msgid "Ignore"
 msgstr "Игнорировать"
 
-#: ImportMerge/importmerge.py:111
 msgid "Add Import"
 msgstr "Добавить из импорта"
 
-#: ImportMerge/importmerge.py:112
 msgid "Merge into original"
 msgstr "Объединить с оригиналом"
 
-#: ImportMerge/importmerge.py:113
 msgid "Merge into import"
 msgstr "Объединить с импортом"
 
-#: ImportMerge/importmerge.py:114
 msgid "Replace with import"
 msgstr "Заменить из импорта"
 
-#: ImportMerge/importmerge.py:115
 msgid "Keep original"
 msgstr "Оставить оригинал"
 
-#: ImportMerge/importmerge.py:116 ImportMerge/importmerge.glade:293
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
@@ -106,7 +64,6 @@ msgstr ""
 "отличия.  Изменения не будут внесены в Ваше древо, пока не будет нажата "
 "кнопка \"Завершить\" с подтверждением действия."
 
-#: ImportMerge/importmerge.py:119
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
@@ -114,7 +71,6 @@ msgstr ""
 "Этот элемент будет удалён из Вашего древа.  Все ссылки на элемент также "
 "будут удалены."
 
-#: ImportMerge/importmerge.py:121
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
@@ -122,14 +78,12 @@ msgstr ""
 "Этот элемент не будет изменён в Вашем древе.  Все ссылки также будут "
 "проигнорированы."
 
-#: ImportMerge/importmerge.py:123
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
 msgstr ""
 "Этот элемент будут добавлен в Ваше древо.  Ссылки также будут добавлены."
 
-#: ImportMerge/importmerge.py:125
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
@@ -137,7 +91,6 @@ msgstr ""
 "Этот элемент будет объединён с сохранением данных в Вашем древе.  Ссылки "
 "также будут объединены или добавлены."
 
-#: ImportMerge/importmerge.py:127
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
@@ -145,7 +98,6 @@ msgstr ""
 "Этот элемент будет объединён с использованием импортированных данных.  "
 "Ссылки также будут объединены или добавлены."
 
-#: ImportMerge/importmerge.py:129
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
@@ -153,51 +105,39 @@ msgstr ""
 "Данные в Вашем древе будут полностью заменены импортированными данными.  "
 "Ссылки будут также заменены или удалены."
 
-#: ImportMerge/importmerge.py:131
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
 msgstr ""
 "Этот элемент не будет изменён в Вашем древе.  Ссылки также не изменятся."
 
-#: ImportMerge/importmerge.py:339
 msgid "Import Failure"
 msgstr "Ошибка импортирования"
 
-#: ImportMerge/importmerge.py:407
 msgid "Your Tree and import are the same."
 msgstr "Не найдено отличий в Вашем и импортируемом древе."
 
-#: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
-#: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
 msgid "your tree "
 msgstr "Ваше древо "
 
-#: ImportMerge/importmerge.py:459 ImportMerge/importmerge.py:467
-#: ImportMerge/importmerge.py:475
 msgid "imported "
 msgstr "импортировано "
 
-#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
-#: ImportMerge/importmerge.py:982
 msgid "Original"
 msgstr "Оригинал"
 
-#: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
-#: ImportMerge/importmerge.py:983
 msgid "Imported"
 msgstr "Импортировано"
 
-#: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
-#: ImportMerge/importmerge.py:985
 msgid "Result  "
 msgstr "Результат  "
 
-#: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
 msgstr "Импорт и слияние"
 
-#: ImportMerge/importmerge.glade:8
+msgid "Replace"
+msgstr "Заменить"
+
 msgid ""
 "A '*' indicates that the action was automarked, a '?' indicates a conflict "
 "between automarks."
@@ -205,19 +145,15 @@ msgstr ""
 "'*' - показывает, что действие было добавлено автоматически. '?' - означает "
 "конфликт между автоматическими отметками."
 
-#: ImportMerge/importmerge.glade:39
 msgid "Import file"
 msgstr "Импортировать файл"
 
-#: ImportMerge/importmerge.glade:124
 msgid "Select the difference you wish to examine."
 msgstr "Выберите отличие для исследования."
 
-#: ImportMerge/importmerge.glade:180
 msgid "Object Name/Description"
 msgstr "Имя объекта / Описание"
 
-#: ImportMerge/importmerge.glade:227
 msgid ""
 "Data item details, showing the current treeitem, imported tree item, and "
 "result (when chosen)."
@@ -225,33 +161,32 @@ msgstr ""
 "Информация о элемента, показывает текущий элемент, импортированный элемент и "
 "результат (если выбрано действие)."
 
-#: ImportMerge/importmerge.glade:248
 msgid "Object and item"
 msgstr "Объект и элемент"
 
-#: ImportMerge/importmerge.glade:338
+msgid "Differences"
+msgstr "Отличия"
+
 msgid "This button will ignore the difference, no changes to your tree."
 msgstr "Игнорировать изменения, не вносить изменения в древо."
 
-#: ImportMerge/importmerge.glade:349
 msgid "Unmark"
 msgstr "Снять"
 
-#: ImportMerge/importmerge.glade:353
 msgid "This button will add the imported data as a new object to your tree."
 msgstr "Добавить импортированные данные в древо как новый объект."
 
-#: ImportMerge/importmerge.glade:368
+msgid "Done"
+msgstr "Завершить"
+
 msgid ""
 "This button will bring up a dialog allowing you to finalize your changes, or "
 "abandon them."
 msgstr "Вызов диалога завершения для подтверждения изменений или их отмены."
 
-#: ImportMerge/importmerge.glade:392
 msgid "Merge Original"
 msgstr "Объединить с оригиналом"
 
-#: ImportMerge/importmerge.glade:396
 msgid ""
 "This button will merge the imported data into your tree with your tree data "
 "as a base."
@@ -259,15 +194,12 @@ msgstr ""
 "Объединить импортированные данные с древом, данные Вашего древа используются "
 "как базовые."
 
-#: ImportMerge/importmerge.glade:411
 msgid "This button will replace your tree data with the imported data."
 msgstr "Заменить данные в древе на импортированные данные."
 
-#: ImportMerge/importmerge.glade:422
 msgid "Merge Import"
 msgstr "Объединить с импортом"
 
-#: ImportMerge/importmerge.glade:426
 msgid ""
 "This button will merge the imported data into your tree with the imported "
 "data as a base."
@@ -275,11 +207,9 @@ msgstr ""
 "Объединить импортированные данные с древом, импортированные данные "
 "используются как базовые."
 
-#: ImportMerge/importmerge.glade:437
 msgid "Edit Import"
 msgstr "Редактировать"
 
-#: ImportMerge/importmerge.glade:441
 msgid ""
 "This button will edit the imported data.  The data will still need to be "
 "merged, added or replaced."
@@ -287,14 +217,11 @@ msgstr ""
 "Редактировать импортируемые данные.  Отличия всё ещё необходимо будет "
 "объединить, добавить или заменить."
 
-#: ImportMerge/importmerge.glade:464
 msgid "Show more details"
 msgstr "Показать дополнительные сведения"
 
-#: ImportMerge/importmerge.glade:481
 msgid "Automark Families"
 msgstr "Отмечать семьи автоматически"
 
-#: ImportMerge/importmerge.glade:498
 msgid "Automark Parent Families"
 msgstr "Отмечать семьи родителей автоматически"

@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,106 +12,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: AncestorFill/AncestorFill.py:361
-#: DetDescendantReport-images/detdescendantreporti.py:1252
-msgid "The style used for the title of the page."
-msgstr "Der Stil, der für den Seitentitel verwendet wird."
-
-#: DynamicWeb/dynamicweb.py:1737
-#: DetDescendantReport-images/detdescendantreporti.py:940
-#, python-format
-msgid "%(type)s: %(value)s"
-msgstr "%(type)s: %(value)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
-#: DetDescendantReport-images/detdescendantreporti.py:454
-#, python-format
-msgid "%(date)s, %(place)s"
-msgstr "%(date)s, %(place)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:820
-#: DescendantBooks/DetailedDescendantBookReport.py:864
-#: DetDescendantReport-images/detdescendantreporti.py:457
-#, python-format
-msgid "%(date)s"
-msgstr "%(date)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:822
-#: DescendantBooks/DetailedDescendantBookReport.py:866
-#: DetDescendantReport-images/detdescendantreporti.py:459
-#, python-format
-msgid "%(place)s"
-msgstr "%(place)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1237
-#: DetDescendantReport-images/detdescendantreporti.py:811
-#, python-format
-msgid "%(name_kind)s: %(name)s%(endnotes)s"
-msgstr "%(name_kind)s: %(name)s%(endnotes)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1405
-#: DetDescendantReport-images/detdescendantreporti.py:1147
-msgid "List children"
-msgstr "Kinder auflisten"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1422
-#: DetDescendantReport-images/detdescendantreporti.py:1164
-msgid "Add descendant reference in child list"
-msgstr "Nachkommenreferenzen zu Kinderliste hinzufügen"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1570
-#: DetDescendantReport-images/detdescendantreporti.py:1282
-msgid "The style used for the children list."
-msgstr "Der Stil, der für die Kinderliste verwendet wird."
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1597
-#: DetDescendantReport-images/detdescendantreporti.py:1305
-msgid "The style used for the first personal entry."
-msgstr "Der Stil, der für den ersten persönlichen Eintrag verwendet wird."
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1607
-#: DetDescendantReport-images/detdescendantreporti.py:1315
-msgid "The style used for the More About header and for headers of mates."
-msgstr ""
-"Der Stil, der für die \"Mehr über\" Kopfzeile und Kopfzeile von Partnern "
-"verwendet wird."
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1618
-#: DetDescendantReport-images/detdescendantreporti.py:1326
-msgid "The style used for additional detail data."
-msgstr "Der Stil, der für die sonstigen genauen Daten verwendet wird."
-
-#: DetDescendantReport-images/detdescendantreport.gpr.py:4
 msgid "Detailed Descendant Report With All Images"
 msgstr "Detaillierter Nachkommenbericht mit allen Bildern"
 
-#: DetDescendantReport-images/detdescendantreport.gpr.py:6
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
 msgstr ""
 "Erstellt einen detaillierten Nachkommenbericht mit allen Bildern und einer "
 "optionalen Aufgabenliste."
 
-#: DetDescendantReport-images/detdescendantreporti.py:471
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
 #, python-format
 msgid "%(event_name)s: %(event_text)s"
 msgstr "%(event_name)s: %(event_text)s"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1177
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+msgid "List children"
+msgstr "Kinder auflisten"
+
+msgid "Add descendant reference in child list"
+msgstr "Nachkommenreferenzen zu Kinderliste hinzufügen"
+
 msgid "Include TODO notes"
-msgstr "Aufgabenliste aufnehmen"
+msgstr "Aufgabennotizen aufnehmen"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1178
 msgid "Whether to include TODO notes."
-msgstr "Ob Aufgaben Notizen aufgenommen werden."
+msgstr "Ob Aufgabennotizen aufgenommen werden."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1351
+msgid "The style used for the title of the page."
+msgstr "Der Stil, der für den Seitentitel verwendet wird."
+
+msgid "The style used for the children list."
+msgstr "Der Stil, der für die Kinderliste verwendet wird."
+
+msgid "The style used for the first personal entry."
+msgstr "Der Stil, der für den ersten persönlichen Eintrag verwendet wird."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"Der Stil, der für die \"Mehr über\" Kopfzeile und Kopfzeile von Partnern "
+"verwendet wird."
+
+msgid "The style used for additional detail data."
+msgstr "Der Stil, der für die sonstigen genauen Daten verwendet wird."
+
 msgid "The style used for image labels."
 msgstr "Der für Bildbeschriftungen verwendete Stil."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1364
 msgid "A style used for image captions."
 msgstr "Ein Stil für Bildunterschriften."

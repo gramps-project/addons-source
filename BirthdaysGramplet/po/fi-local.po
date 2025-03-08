@@ -1,28 +1,9 @@
-# translation of fi.po to Finnish
-# GRAMPS
-# Copyright (C) YEAR ORGANIZATION.
-#
-# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
-# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
-# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2025.
-# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
-# Niemelä <niememat@gmail.com>, 2017, 2018.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-02-20 13:28+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -34,19 +15,14 @@ msgstr ""
 "X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
 msgstr "Syntymäpäivät"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "Gramplet, joka näyttää elävien ihmisten syntymä päivät ja iät"
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
 msgstr "Jätä pois syntymäpäivät, joissa on tagi"
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
 msgstr "Näytä vain syntymäpäivät, joissa on tagi"

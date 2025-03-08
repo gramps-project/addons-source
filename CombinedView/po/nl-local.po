@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,75 +12,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
 msgstr "%(abbrev)s %(date)s in %(place)s"
 
-#: CombinedView/basepage.py:495
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
 
-#: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
 msgstr "%(event_type)s: %(date)s in %(place)s"
 
-#: CombinedView/personpage.py:601
 #, python-format
 msgid "%(event_type)s: %(date)s"
 msgstr "%(event_type)s: %(date)s"
 
-#: CombinedView/personpage.py:604
 #, python-format
 msgid "%(event_type)s: %(place)s"
 msgstr "%(event_type)s: %(place)s"
 
-#: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
 msgstr "Klik om deze gebeurtenis actief te maken"
 
-#: CombinedView/personpage.py:743
 msgid "Click to visit this link"
 msgstr "Klik om deze link te bezoeken"
 
-#: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "
 
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
 msgstr "Gecombineerd"
 
-#: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
 msgstr "Een weergave van relaties en gebeurtenissen voor een persoon"
 
-#: CombinedView/navigationview.py:346
 msgid ""
 "You need to set a 'default person' to go to. Select the People View, select "
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
-"U moet een 'beginpersoon' instellen om naar toe te gaan. Selecteer de "
-"weergave Personen, selecteer de gewenste persoon als 'Beginpersoon' en "
-"bevestig uw keuze via het menu Bewerken -> Beginpersoon instellen."
+"U moet een 'Centrale persoon' instellen om naar toe te gaan. Selecteer de "
+"weergave Personen, selecteer de gewenste persoon als 'Centrale persoon' en "
+"bevestig uw keuze via het menu Bewerken -> Centrale persoon instellen."
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
 msgid "Order"
 msgstr "Volgorde"
 
-#: CombinedView/combinedview.py:528
 msgid "Edit the active event"
 msgstr "Bewerk de actieve gebeurtenis"
 
-#: CombinedView/combinedview.py:630
 msgid "Show Tags"
 msgstr "Toon labels"
 
-#: CombinedView/combinedview.py:656
 msgid "Vertical Details"
 msgstr "Verticale details"

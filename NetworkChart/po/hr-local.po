@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,126 +13,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
-msgid "RGB-color for male box background."
-msgstr "RGB-boja za mušku boju pozadine."
-
-#: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
-msgid "Female Background"
-msgstr "Ženska boja pozadine"
-
-#: GraphView/graphview.py:3783 NetworkChart/NetworkChart.py:1174
-#: NetworkChart/NetworkChart.py:1188
-msgid "Direct"
-msgstr "Ravne"
-
-#: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
 msgstr "r."
 
-#: NetworkChart/NetworkChart.py:134
 msgid "death abbreviation|d."
 msgstr "u."
 
-#: NetworkChart/NetworkChart.py:135
 msgid "marriage abbreviation|m."
 msgstr "vj."
 
-#: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr "Datoteka već postoji. Želiš li je prepisati?"
 
-#: NetworkChart/NetworkChart.py:898
 msgid "created"
 msgstr "stvoreno"
 
-#: NetworkChart/NetworkChart.py:899 NetworkChart/NetworkChart.py:902
 msgid "last_written"
 msgstr "zadnji_zapis"
 
-#: NetworkChart/NetworkChart.py:912
 msgid "Main"
 msgstr "Osnovno"
 
-#: NetworkChart/NetworkChart.py:916
 msgid "Orthogonal (right angles in connectors)"
 msgstr "Pravokutno (pravokutne poveznice)"
 
-#: NetworkChart/NetworkChart.py:917
 msgid "Straight (no right angles in connectors)"
 msgstr "Ravno (ravne poveznice)"
 
-#: NetworkChart/NetworkChart.py:918
 msgid "Curved (curved and straight connectors)"
 msgstr "Krivuljasto (krivuljaste i ravne poveznice)"
 
-#: NetworkChart/NetworkChart.py:920
 msgid "Default (Orthogonal)"
 msgstr "Standardno (okomito)"
 
-#: NetworkChart/NetworkChart.py:925
 msgid "Select the graph line connector format."
-msgstr "Odaberi format za poveznih linija u dijagramu."
+msgstr "Odaberi format za linije povezivanja u dijagramu."
 
-#: NetworkChart/NetworkChart.py:930
 msgid "Top to Bottom"
 msgstr "Gore-dolje"
 
-#: NetworkChart/NetworkChart.py:930
 msgid "Left to Right"
 msgstr "Lijevo-desno"
 
-#: NetworkChart/NetworkChart.py:931
 msgid "Bottom to Top"
 msgstr "Dolje-gore"
 
-#: NetworkChart/NetworkChart.py:931
 msgid "Right to Left"
 msgstr "Desno-lijevo"
 
-#: NetworkChart/NetworkChart.py:933
 msgid "Default (Top to Bottom)"
 msgstr "Standardno (gore-dolje)"
 
-#: NetworkChart/NetworkChart.py:936
 msgid "Select the graph direction."
 msgstr "Odaberi smjer dijagrama."
 
-#: NetworkChart/NetworkChart.py:939
 msgid "URL Style"
 msgstr "Vrsta URL-a"
 
-#: NetworkChart/NetworkChart.py:941
 msgid "Include URLs from database."
 msgstr "Uključi URL-ove iz baze podataka."
 
-#: NetworkChart/NetworkChart.py:942
 msgid "Dynamic URL = Prefix + GrampID + Suffix"
 msgstr "Dinamičan URL = prefiks + GrampID + sufiks"
 
-#: NetworkChart/NetworkChart.py:943
 msgid "Static URL = Prefix"
 msgstr "Statični URL = prefiks"
 
-#: NetworkChart/NetworkChart.py:944
 msgid "Don't include URLs"
 msgstr "Ne uključuj URL-ove"
 
-#: NetworkChart/NetworkChart.py:945
 msgid "Default (include)"
 msgstr "Standardno (uključi)"
 
-#: NetworkChart/NetworkChart.py:948
 msgid "Select URL style."
 msgstr "Odaberi vrstu URL-a."
 
-#: NetworkChart/NetworkChart.py:951
 msgid "URL Prefix,Suffix"
 msgstr "URL prefiks, sufiks"
 
-#: NetworkChart/NetworkChart.py:952
 msgid ""
 "Enter the Prefix,Suffix (use comma)\n"
 "for dynamically generated URLs.\n"
@@ -149,11 +102,9 @@ msgstr ""
 "za dinamično stvarane URL-ova.\n"
 "URL = prefiks + GrampsID + sufiks."
 
-#: NetworkChart/NetworkChart.py:957
 msgid "Enter Font Name"
 msgstr "Unesi ime fonta"
 
-#: NetworkChart/NetworkChart.py:959
 msgid ""
 "Enter the primary font style for the chart.\n"
 "Must already be installed.\n"
@@ -165,28 +116,22 @@ msgstr ""
 "„White Rabbit” je dostupan na\n"
 "https://www.fontsquirrel.com/fonts/white-rabbit"
 
-#: NetworkChart/NetworkChart.py:964
 msgid "Spacing (inch)"
 msgstr "Razmak (u inčima)"
 
-#: NetworkChart/NetworkChart.py:965
 msgid ""
 "Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
 msgstr "Dodaj daljinu razmaka između generecija u inčima (0.1 – 5.0)."
 
-#: NetworkChart/NetworkChart.py:969
 msgid "Enter Chart Title"
 msgstr "Upiši naslov dijagrama"
 
-#: NetworkChart/NetworkChart.py:971
 msgid "Set the title of the chart."
 msgstr "Postavi naslov dijagrama."
 
-#: NetworkChart/NetworkChart.py:976
 msgid "Default (svg)"
 msgstr "Standardno (svg)"
 
-#: NetworkChart/NetworkChart.py:979
 msgid ""
 "svg - Scalable Vector Graphics file.\n"
 "pdf - Adobe Portable Document Format.\n"
@@ -194,108 +139,82 @@ msgstr ""
 "svg - Scalable Vector Graphics datoteka.\n"
 "pdf - Adobe Portable Document Format.\n"
 
-#: NetworkChart/NetworkChart.py:986
 msgid "The destination folder for generated files."
 msgstr "Odredišna mapa za spremanje datoteka."
 
-#: NetworkChart/NetworkChart.py:990 NetworkChart/NetworkChart.py:1280
-#: NetworkChart/NetworkChart.py:1288
 msgid "network"
 msgstr "mreža"
 
-#: NetworkChart/NetworkChart.py:995
 msgid "The filename for the generated svg network chart."
 msgstr "Ime datoteke za stvoreni mrežni dijagram u svg formatu."
 
-#: NetworkChart/NetworkChart.py:1002
 msgid "Different node shapes/edges for gender."
 msgstr "Različiti oblici/rubovi čvorišta za spolove."
 
-#: NetworkChart/NetworkChart.py:1003
 msgid "Node differences for gender."
 msgstr "Različita čvorišta za spolove."
 
-#: NetworkChart/NetworkChart.py:1008
 msgid "Male Background"
 msgstr "Pozadina muških osoba"
 
-#: NetworkChart/NetworkChart.py:1012
+msgid "RGB-color for male box background."
+msgstr "RGB-boja za mušku boju pozadine."
+
 msgid "Male Background Alpha"
 msgstr "Prozirnost pozadine muških osoba"
 
-#: NetworkChart/NetworkChart.py:1014
 msgid "Alpha for Male box background (transparent=0, solid=255)."
 msgstr "Prozirnost pozadine okvira muških osoba (prozirno=0, neprozirno=255)."
 
-#: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
 msgstr "Rubovi okvira muških osoba"
 
-#: NetworkChart/NetworkChart.py:1019
 msgid "RGB-color for Male box edge."
 msgstr "RGB-boja za rubove okvira muških osoba."
 
-#: NetworkChart/NetworkChart.py:1023
+msgid "Female Background"
+msgstr "Ženska boja pozadine"
+
 msgid "RGB-color for Female box background."
 msgstr "RGB-boja pozadine okvira ženskih osoba."
 
-# added:
-#: NetworkChart/NetworkChart.py:1026
 msgid "Female Background Alpha"
 msgstr "Prozirnost pozadine ženskih osoba"
 
-#: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
 msgstr "Prozirnost pozadine okvira ženskih osoba (prozirno=0, neprozirno=255)."
 
-#: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
 msgstr "Rubovi okvira ženskih osoba"
 
-#: NetworkChart/NetworkChart.py:1034
-#, fuzzy
-#| msgid "RGB-color for Male box edge."
-msgid "RGB-color for Female box edge."
-msgstr "RGB-boja za rubove okvira muških osoba."
-
-#: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
 msgstr "Boja pozadine ostalih osoba"
 
-#: NetworkChart/NetworkChart.py:1038
 msgid "RGB-color for other box background."
 msgstr "RGB-boja pozadine okvira ostalih osoba."
 
-#: NetworkChart/NetworkChart.py:1041
 msgid "Other Background Alpha"
 msgstr "Prozirnost pozadine ostalih osoba"
 
-#: NetworkChart/NetworkChart.py:1043
 msgid "Alpha for Other box background (transparent=0, solid=255)."
 msgstr ""
 "Prozirnost boje pozadine okvira ostalih osoba (prozirno=0, neprozirno=255)."
 
-#: NetworkChart/NetworkChart.py:1047
 msgid "Family Connector Line"
 msgstr "Obiteljska poveznica"
 
-#: NetworkChart/NetworkChart.py:1048
 msgid "RGB-color for family connector line."
 msgstr "RGB-boja za obiteljske poveznice."
 
-#: NetworkChart/NetworkChart.py:1051
 msgid "Marriage Connector Line"
 msgstr "Bračna poveznica"
 
-#: NetworkChart/NetworkChart.py:1052
 msgid "RGB-color for marriage connector line."
 msgstr "RGB-boja za bračne poveznice."
 
-#: NetworkChart/NetworkChart.py:1055
 msgid "Highlight Connector Line"
 msgstr "Istakni poveznicu"
 
-#: NetworkChart/NetworkChart.py:1056
 msgid ""
 "RGB-color for the highlighted path between two individuals.  If the "
 "graph.inverts, reverse the order to change."
@@ -303,23 +222,18 @@ msgstr ""
 "RGB-boja za istaknutu liniju između dviju osoba. Ako se dijagram invertira, "
 "preokreni redoslijed da se promijeni."
 
-#: NetworkChart/NetworkChart.py:1061
 msgid "Trim Box Edge"
 msgstr "Rub odrezanih okvira"
 
-#: NetworkChart/NetworkChart.py:1062
 msgid "RGB-color for box edge that has been trimmed."
 msgstr "RGB-boja za rubove okvira koji su odrezani."
 
-#: NetworkChart/NetworkChart.py:1066
 msgid "Remove color background on all nodes."
 msgstr "Ukloni boju pozadine u svim čvorištima."
 
-#: NetworkChart/NetworkChart.py:1068
 msgid "Removes color background for individuals (nodes) on chart."
 msgstr "Uklanja boju pozadine svih pojedinaca (čvorišta) u dijagramu."
 
-#: NetworkChart/NetworkChart.py:1073
 msgid ""
 "Enter year to start\n"
 "rounding birthday\n"
@@ -329,7 +243,6 @@ msgstr ""
 "za prikaz samo godine\n"
 "rođendana"
 
-#: NetworkChart/NetworkChart.py:1076
 msgid ""
 "Birthdays after this year are represented by the year only.  Invalid entries "
 "will be ignored."
@@ -337,15 +250,12 @@ msgstr ""
 "Nakon ove godine, rođendani će se prikazati samo godinom. Nevaljani unosi će "
 "se zanemariti."
 
-#: NetworkChart/NetworkChart.py:1080
 msgid "Round birthday to year after year entered (above)."
 msgstr "Prikaži rođendan samo godinom, nakon upisivanja godine (iznad)."
 
-#: NetworkChart/NetworkChart.py:1082
 msgid "Represent birthday by year only."
 msgstr "Prikaži rođendan samo godinom."
 
-#: NetworkChart/NetworkChart.py:1086
 msgid ""
 "Enter year to start\n"
 "rounding marriage\n"
@@ -355,7 +265,6 @@ msgstr ""
 "za prikaz samo godine\n"
 "sklapanja braka"
 
-#: NetworkChart/NetworkChart.py:1087
 msgid ""
 "Marriages after this year are represented bythe year only. Invalid entries "
 "will be ignored."
@@ -363,15 +272,12 @@ msgstr ""
 "Nakon ove godine, brakovi će se prikazati samo godinom. Nevaljani unosi će "
 "se zanemariti."
 
-#: NetworkChart/NetworkChart.py:1092
 msgid "Round marriage to year after year entered (above)."
 msgstr "Prikaži brakove samo godinom nakon upisivanja godine (iznad)."
 
-#: NetworkChart/NetworkChart.py:1094
 msgid "Represent marriage by year only."
 msgstr "Prikaži brakove samo godinom."
 
-#: NetworkChart/NetworkChart.py:1099
 msgid ""
 "Attempts to remove middle names.  Only works for entries with birth year in "
 "the record."
@@ -379,31 +285,24 @@ msgstr ""
 "Pokušava ukloniti srednja imena. Funkcionira samo za unose s godinom rođenja "
 "u zapisu."
 
-#: NetworkChart/NetworkChart.py:1107
 msgid "Remove middle names."
 msgstr "Ukloni srednja imena."
 
-#: NetworkChart/NetworkChart.py:1112
 msgid "Allow inclusion of private records in chart."
 msgstr "Dozvoli uključivanje privatnih zapisa u dijagram."
 
-#: NetworkChart/NetworkChart.py:1117
 msgid "Trim"
 msgstr "Odreži"
 
-#: NetworkChart/NetworkChart.py:1119
 msgid "Trim descendants"
 msgstr "Odreži potomke"
 
-#: NetworkChart/NetworkChart.py:1121
 msgid "All descendants (children) of selected individuals will not be shown."
 msgstr "Svi potomci (djeca) odabranog pojedinca neće biti prikazani."
 
-#: NetworkChart/NetworkChart.py:1127
 msgid "Enable trimming of descendants."
 msgstr "Omogući odrezivanje potomaka."
 
-#: NetworkChart/NetworkChart.py:1129
 msgid ""
 "You must enter valid person(s) before \n"
 "enabling trimming of descendants from tree."
@@ -411,27 +310,21 @@ msgstr ""
 "Moraš upisati valjanu osobu/osobe\n"
 "prije odrezivanja potomaka iz stabla."
 
-#: NetworkChart/NetworkChart.py:1134
 msgid "Trim ancestors"
 msgstr "Odreži pretke"
 
-#: NetworkChart/NetworkChart.py:1135
 msgid "All ancestors (parents) of selected individuals will not be shown."
 msgstr "Svi preci (roditelji) odabranog pojedinca neće biti prikazani."
 
-#: NetworkChart/NetworkChart.py:1141
 msgid "Enable trimming of ancestors."
 msgstr "Omogući odrezivanje predaka."
 
-#: NetworkChart/NetworkChart.py:1143
 msgid "Enable trimming of ancestors from tree."
 msgstr "Omogući odrezivanje predaka iz stabla."
 
-#: NetworkChart/NetworkChart.py:1147
 msgid "Enable trim groups."
 msgstr "Omogući odrezane grupe."
 
-#: NetworkChart/NetworkChart.py:1149
 msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
@@ -439,11 +332,9 @@ msgstr ""
 "Ukloni grupe, koje su manje od min. veličine grupe.\n"
 "Automatski za baze podataka s više od 1500 pojedinaca."
 
-#: NetworkChart/NetworkChart.py:1154
 msgid "Min Group Size"
 msgstr "Min. veličina grupe"
 
-#: NetworkChart/NetworkChart.py:1156
 msgid ""
 "Enter the minimum size group to display.\n"
 "Value may be 2 or greater."
@@ -451,7 +342,6 @@ msgstr ""
 "Upiši minimalnu veličinu grupe.\n"
 "Vrijednost može biti 2 ili veća."
 
-#: NetworkChart/NetworkChart.py:1164
 msgid ""
 "Select Start and\n"
 "End Individuals in\n"
@@ -463,7 +353,6 @@ msgstr ""
 "prikazanim linijama.\n"
 "Odaberi dvije"
 
-#: NetworkChart/NetworkChart.py:1167
 msgid ""
 "Starting and ending person for displayed path(s).\n"
 "Select two people"
@@ -471,19 +360,18 @@ msgstr ""
 "Početna i krajnja osoba u prikazanim linijama.\n"
 "Odaberi dvije osobe"
 
-#: NetworkChart/NetworkChart.py:1171
 msgid "Highlight path(s)"
 msgstr "Istakni linije"
 
-#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
+msgid "Direct"
+msgstr "Ravne"
+
 msgid "Any"
 msgstr "Bilo koje"
 
-#: NetworkChart/NetworkChart.py:1176
 msgid "Default (None)"
 msgstr "Standardno (Bez)"
 
-#: NetworkChart/NetworkChart.py:1181
 msgid ""
 "None - Don't highlight paths.\n"
 "Direct - Highlight direct descendant/ancestor paths.\n"
@@ -493,15 +381,12 @@ msgstr ""
 "Izravne – Istakni linije izravnih potomaka/predaka.\n"
 "Bilo koje – Istakni sve linije, bile one izravne ili neizravne."
 
-#: NetworkChart/NetworkChart.py:1186
 msgid "Show only path(s)"
 msgstr "Prikaži samo linije"
 
-#: NetworkChart/NetworkChart.py:1189
 msgid "Default (none)"
 msgstr "Standardno (bez)"
 
-#: NetworkChart/NetworkChart.py:1193
 msgid ""
 "None - Don't show paths only.\n"
 "Direct - Show only direct descendant/ancestor paths.\n"
@@ -511,11 +396,9 @@ msgstr ""
 "Izravne – Prikaži samo linije izravnih potomaka/predaka.\n"
 "Bilo koje – Prikaži samo linije izravnih ili neizravnih."
 
-#: NetworkChart/NetworkChart.py:1200
 msgid "Select person at center of selection radius in graph."
 msgstr "Odaberi osobu u centru polumjera odabira u dijagramu."
 
-#: NetworkChart/NetworkChart.py:1203
 msgid ""
 "Max connections\n"
 "from center"
@@ -523,7 +406,6 @@ msgstr ""
 "Maks. broj veza\n"
 "iz centra"
 
-#: NetworkChart/NetworkChart.py:1206
 msgid ""
 "Enter the maximum number of connections allowed from\n"
 "the center person.  Value may be 1 or greater."
@@ -531,27 +413,21 @@ msgstr ""
 "Unesi maksimalan broj veza, dozvoljenih od\n"
 "središnje osobe. Vrijednost mora biti veća od 1."
 
-#: NetworkChart/NetworkChart.py:1211
 msgid "Limit graph to max connections from center."
 msgstr "Ograniči dijagram s maksimalnim brojem veza iz centra."
 
-#: NetworkChart/NetworkChart.py:1213
 msgid "Display up to max connections from central person."
 msgstr "Prikaži sve do maksimalnog broja veza središnje osobe."
 
-#: NetworkChart/NetworkChart.py:1217
 msgid "Highlight central person in graph."
 msgstr "Istakni središnju osobu u dijagramu."
 
-#: NetworkChart/NetworkChart.py:1219
 msgid "Add yellow color background to central person."
 msgstr "Dodaj žutu pozadinu središnjoj osobi."
 
-#: NetworkChart/NetworkChart.py:1234
 msgid "Use database handle instead of GrampID id in URLs."
 msgstr "Koristi upravljače baze podataka umjesto GrampID oznaka u URL-ovima."
 
-#: NetworkChart/NetworkChart.py:1236
 msgid ""
 "Use database handle instead of the gramps id for URLs.\n"
 "The handle should never change whereas gramps ids can."
@@ -559,18 +435,14 @@ msgstr ""
 "Koristi upravljače baze podataka umjesto GrampID oznaka u URL-ovima.\n"
 "Ovi upravljači se nikada ne mijenjaju, dok se GrampID-ovi mogu promijeniti."
 
-#: NetworkChart/NetworkChart.py:1240
 msgid "Confirm overwrite file."
 msgstr "Potvrdi prepisivanje datoteke."
 
-#: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
 msgstr "Aktiviraj/deaktiviraj potvrdu za prepisivanje datoteke."
 
-#: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
 msgstr "Mrežni dijagram"
 
-#: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
 msgstr "Stvara mrežni dijagram obitelji."

@@ -1,14 +1,3 @@
-# Brazilian-Portuguese translation for Gramps.
-# Tradução português-brasileiro para o Gramps.
-# Copyright (C) 2002 Free Software Foundation, Inc.
-#
-#
-# Marcos Bedinelli <bedinelli@sourceforge.net>, 2002, 2003, 2004, 2005, 2006.
-# Luiz Gonzaga dos Santos Filho <lfilho@gmail.com>, 2007.
-# lcc <lcc@6zap.com>, 2009.
-# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2011, 2012, 2013, 2014.
-# Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>, 2016, 2017, 2018.
-# Paulo Terezani de Paiva <terezani_ppaiva@yahoo.com.br>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
@@ -24,11 +13,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: DescendantCount/DescendantCount.gpr.py:23
-#: DescendantCount/DescendantCount.gpr.py:32
 msgid "Descendant Count"
 msgstr "Contagem de descendentes"
 
-#: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
 msgstr "Gramplet para mostrar a quantidade de pessoas e descendentes"

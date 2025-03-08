@@ -1,22 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,33 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: QuiltView/QuiltView.gpr.py:23 QuiltView/QuiltView.gpr.py:34
 msgid "Quilt Chart"
 msgstr "Quiltat diagram"
 
-#: QuiltView/QuiltView.gpr.py:25
 msgid "The view shows a quilt chart visualisation of a family tree"
 msgstr "Vyn visar en quiltdiagramsvisualisering av ett släktträd"
 
-#: QuiltView/QuiltView.py:223
 msgid "Quilt chart"
 msgstr "Quiltat diagram"
 
-#: QuiltView/QuiltView.py:307
 msgid "Select the name for which you want to see."
 msgstr "Välj det namn som du vill se."
 
-#: QuiltView/QuiltView.py:314
 msgid "Clear the entry field in the name selection box."
 msgstr "Rensa inmatningsfältet i namnvalsrutan."
 
-#: QuiltView/QuiltView.py:319
 msgid "Nothing is selected"
 msgstr "Inget är valt"
 
-#: QuiltView/QuiltView.py:572
 #, python-format
 msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
@@ -60,46 +40,36 @@ msgstr ""
 "Du har %(filter)d filtrerade personer, %(count)d personer som visas i trädet "
 "och %(total)d personer i din databas."
 
-#: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
 msgstr "Laddar individer"
 
-#: QuiltView/QuiltView.py:663
 msgid "Loading the data"
 msgstr "Laddar informationen"
 
-#: QuiltView/QuiltView.py:1053
 msgid "About Quilt View"
 msgstr "Om Quiltad visning"
 
-#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
 msgid "Edit tags"
 msgstr "Redigera taggar"
 
-#: QuiltView/QuiltView.py:1500
 msgid "Set as home person"
 msgstr "Ställ in som huvudperson"
 
-#: QuiltView/QuiltView.py:1656
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Lägger till taggar till person (%s)"
 
-#: QuiltView/QuiltView.py:1661
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Lägger till taggar till familjen (%s)"
 
-#: QuiltView/QuiltView.py:1865
 msgid "Printing the tree"
 msgstr "Skriver ut trädet"
 
-#: QuiltView/QuiltView.py:1869
 #, python-format
 msgid "Need to print %(pages)s pages (%(format)s format)"
 msgstr "Behöver skriva ut %(pages)s sidor (%(format)s-format)"
 
-#: QuiltView/QuiltView.py:1921
 msgid ""
 "Center on the selected person.\n"
 "The new position of the person will be near the top left corner."
@@ -107,18 +77,14 @@ msgstr ""
 "Centrera för den valda personen.\n"
 "Den nya positionen för personen kommer att bli nära det övre vänstra hörnet."
 
-#: QuiltView/QuiltView.py:1926
 msgid "The path color"
 msgstr "Linjens färg"
 
-#: QuiltView/QuiltView.py:1931
 msgid "The selected person color"
 msgstr "Färgen på den valda personen"
 
-#: QuiltView/QuiltView.py:1936
 msgid "The path transparency"
 msgstr "Linjegenomskinlighet"
 
-#: QuiltView/QuiltView.py:1939
 msgid "General options"
 msgstr "Allmänna alternativ"

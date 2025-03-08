@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,54 +13,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
 msgstr "%(abbrev)s %(date)s u mjestu %(place)s"
 
-#: CombinedView/basepage.py:495
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
 
-#: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
 msgstr "%(event_type)s: %(date)s u mjestu %(place)s"
 
-#: CombinedView/personpage.py:601
 #, python-format
 msgid "%(event_type)s: %(date)s"
 msgstr "%(event_type)s: %(date)s"
 
-#: CombinedView/personpage.py:604
 #, python-format
 msgid "%(event_type)s: %(place)s"
 msgstr "%(event_type)s: %(place)s"
 
-#: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
 msgstr "Pritisni za postavljanje ovog događaja aktivnim"
 
-#: CombinedView/personpage.py:743
 msgid "Click to visit this link"
 msgstr "Pritisni za praćenje poveznice"
 
-#: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "
 
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
 msgstr "Zajedno"
 
-#: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
 msgstr "Prikaz srodstva i događaja za jednu osobu"
 
-#: CombinedView/navigationview.py:346
 msgid ""
 "You need to set a 'default person' to go to. Select the People View, select "
 "the person you want as 'Home Person', then confirm your choice via the menu "
@@ -77,20 +59,11 @@ msgstr ""
 "„Osobe”, odaberi osobu koju želiš imati kao „početnu osobu”, zatim potvrdi "
 "tvoj izbor putem izbornika „Uredi > Postavi početnu osobu”."
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
 msgid "Order"
 msgstr "Narudžba"
 
-#: CombinedView/combinedview.py:528
-#, fuzzy
-#| msgid "Add death event"
-msgid "Edit the active event"
-msgstr "Uključi smrti"
-
-#: CombinedView/combinedview.py:630
 msgid "Show Tags"
 msgstr "Prikaži etikete"
 
-#: CombinedView/combinedview.py:656
 msgid "Vertical Details"
 msgstr "Detalji okomito"

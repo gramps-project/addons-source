@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,26 +16,20 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: FilterRules/activepersonrule.py:45 NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Активное лицо"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Сохранить"
 
-#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Отменить"
 
-#: NoteGramplet/NoteGramplet.py:255
 msgid "Save Note"
 msgstr "Сохранить заметку"
 
-#: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "Заметки"
 
-#: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
 msgstr "Предназначен для редактирования заметок о человеке"

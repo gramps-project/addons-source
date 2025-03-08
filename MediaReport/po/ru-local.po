@@ -1,23 +1,8 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-08 16:41+0000\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,17 +16,20 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: MediaReport/media_report.py:106 MediaReport/media_report.py:112
-#: MediaReport/media_report.py:119 MediaReport/media_report.py:125
+msgid "Media Report"
+msgstr "Медиа отчёт"
+
+msgid "Generates report including images, image data and notes."
+msgstr ""
+"Создаёт отчёт включающий изображения, информацию об изображении и его "
+"заметках."
+
 msgid "INFO"
 msgstr "ИНФОРМАЦИЯ"
 
-#: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
 msgstr "Необходимо выбрать изображение для создания отчёта."
 
-#: MediaReport/media_report.py:112
 msgid ""
 "You have to select a custom note or uncheck the option 'include custom note' "
 "to generate this report."
@@ -49,82 +37,55 @@ msgstr ""
 "Необходимо выбрать заметку или отключить параметр 'включает заметку' для "
 "создания отчёта."
 
-#: MediaReport/media_report.py:125
 msgid "This report only supports PDF as output file format."
 msgstr "Поддерживается только PDF формат для сохранения в файл."
 
-#: MediaReport/media_report.py:229
 msgid "General:"
 msgstr "Основное:"
 
-#: MediaReport/media_report.py:250
 msgid "Image type:"
 msgstr "Тип изображения:"
 
-#: MediaReport/media_report.py:426
 msgid "Heading"
 msgstr "Заголовок"
 
-#: MediaReport/media_report.py:430
 msgid "Select a media file for this report"
 msgstr "Выберите медиа-файл для отчёта"
 
-#: MediaReport/media_report.py:433
 msgid "Custom note"
 msgstr "Заметка"
 
-#: MediaReport/media_report.py:434
 msgid "Select a note for this report"
 msgstr "Выберите заметку для отчёта"
 
-#: MediaReport/media_report.py:437
 msgid "Include custom note"
 msgstr "Включает заметку"
 
-#: MediaReport/media_report.py:438
 msgid "The custom note will be included"
 msgstr "Выбранная заметка будет включена"
 
-#: MediaReport/media_report.py:442
 msgid "Include referenced people"
 msgstr "Включать людей по ссылкам"
 
-#: MediaReport/media_report.py:443
 msgid "Referenced people will be included"
 msgstr "Будут включены люди на которых имеются ссылки"
 
-#: MediaReport/media_report.py:446
 msgid "Include media data"
 msgstr "Включать медиа данные"
 
-#: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
 msgstr "Метки, заметки и атрибуты будут включены"
 
-#: MediaReport/media_report.py:450
 msgid "Media width"
 msgstr "Ширина изображения"
 
-#: MediaReport/media_report.py:451
-#, python-format
+#, no-python-format
 msgid "Maximum media width in % of available page width."
 msgstr "Максимальная ширина в % от доступной ширины страницы."
 
-#: MediaReport/media_report.py:455
 msgid "Media height"
 msgstr "Высота изображения"
 
-#: MediaReport/media_report.py:456
 #, python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Максимальная высота в % от доступной высоты страницы."
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr "Медиа отчёт"
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr ""
-"Создаёт отчёт включающий изображения, информацию об изображении и его "
-"заметках."

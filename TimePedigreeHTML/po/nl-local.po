@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,128 +12,97 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: D3Charts/AncestralCollapsibleTree.py:872
-#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
-#: TimePedigreeHTML/TimePedigreeHtml.py:865
-msgid "The destination file name for html content."
-msgstr "De bestemmingsbestandsnaam voor html-inhoud."
-
-#: TimePedigreeHTML/TimePedigreeHtml.py:168
 msgid "Failed writing "
 msgstr "Schrijven mislukt "
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
 msgstr "Geboortejaar van centrale persoon"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr ""
 "Het geboortejaar van de centrale persoon. Schat een jaar indien onbekend"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:857
 msgid "Destination directory"
 msgstr "Doelmap"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Path for generated files"
 msgstr "Pad voor gegenereerde bestanden"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:868
+msgid "The destination file name for html content."
+msgstr "De bestemmingsbestandsnaam voor html-inhoud."
+
 msgid "Default Age"
 msgstr "Standaardleeftijd"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
 msgstr ""
 "Standaardleeftijd van ouder wanneer het kind wordt geboren met een onbekend "
 "geboortejaar"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
 msgstr "Wat tonen"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Show GrampsID"
 msgstr "Toon GrampsID"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
 msgstr "Toon GrampsID rechtsboven in het vak"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
 msgstr "Optimaliseer"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
 msgstr "Gebruik zo min mogelijk ruimte in horizontale richting"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:893
 msgid "Male Box Color"
 msgstr "Kaderkleur man"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:894
 msgid "Box background color for male person"
 msgstr "Achtergrondkleur kader voor mannelijke persoon"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:897
 msgid "Female Box Color"
 msgstr "Kaderkleur vrouw"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:898
 msgid "Box background color for female person"
 msgstr "Achtergrondkleur kader voor vrouwelijke persoon"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:904
 msgid "Number of pixel per year"
 msgstr "Aantal pixels per jaar"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
 msgstr "Hoeveel pixelhoogte is een jaar?"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:910
 msgid "Offset X Coordinate"
 msgstr "Offset X-coördinaat"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
 "Hoeveel pixels zijn er ongebruikt behalve de meest linkse en meest rechtse "
 "kaders?"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:917
 msgid "Offset Y Coordinate"
 msgstr "Offset Y-coördinaat"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
 msgstr "Hoeveel pixels zijn er ongebruikt boven het eerste kader?"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:921
 msgid "Width of a box in pixel"
 msgstr "Breedte van een kader in pixels"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:922
 msgid "Width of the box of a person in pixel"
 msgstr "Breedte van het kader van een persoon in pixel"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:925
 msgid "Horizontal space between boxes in pixel"
 msgstr "Horizontale ruimte tussen kaders in pixels"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
 msgstr "Minimale horizontale ruimte tussen 2 kaders in pixels"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:934
 msgid "Length of vertical part of a line in pixel"
 msgstr "Lengte van verticaal deel van een lijn in pixels"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:936
 msgid ""
 "Parent and child boxes are connected with lines. This is the length of the "
 "vertical part of the lines in pixel"
@@ -151,16 +110,12 @@ msgstr ""
 "Ouder- en kindkaders zijn met lijnen verbonden. Dit is de lengte van het "
 "verticale deel van de lijnen in pixels"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:943
-#: TimePedigreeHTML/TimePedigreeHtml.py:945
 msgid "Number of pixel between left border and scale"
 msgstr "Aantal pixels tussen linkerrand en schaal"
 
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
 msgid "Timeline Pedigree Report"
 msgstr "Stamboomverslag met tijdlijn"
 
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
 msgid ""
 "Creates an HTML webpage that uses JavaScript to show a pedigree block "
 "diagram arranged vertically by birth date"

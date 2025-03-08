@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,134 +13,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
-msgid "The style used for the title of the page."
-msgstr "Stil za naslov stranice."
-
-#: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
 msgstr "TR-Titula"
 
-#: ToDoReport/TodoReport.py:111
-#, fuzzy, python-format
-msgid "Report on Notes Tagged '%s'"
-msgstr "Izvještaj o zabilješkama s etiketom: „%s”"
-
-#: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
 msgid "TR-Heading"
 msgstr "TR-Naslov"
 
-#: ToDoReport/TodoReport.py:243
 msgid "NoteTable"
 msgstr "NapomenaTabela"
 
-#: ToDoReport/TodoReport.py:243 ToDoReport/TodoReport.py:962
 msgid "TR-Table"
 msgstr "TR-Tabela"
 
-#: ToDoReport/TodoReport.py:247 ToDoReport/TodoReport.py:253
-#: ToDoReport/TodoReport.py:267 ToDoReport/TodoReport.py:273
-#: ToDoReport/TodoReport.py:302 ToDoReport/TodoReport.py:310
-#: ToDoReport/TodoReport.py:323 ToDoReport/TodoReport.py:329
-#: ToDoReport/TodoReport.py:347 ToDoReport/TodoReport.py:353
-#: ToDoReport/TodoReport.py:363 ToDoReport/TodoReport.py:373
-#: ToDoReport/TodoReport.py:392 ToDoReport/TodoReport.py:398
-#: ToDoReport/TodoReport.py:410 ToDoReport/TodoReport.py:421
-#: ToDoReport/TodoReport.py:437 ToDoReport/TodoReport.py:444
-#: ToDoReport/TodoReport.py:458 ToDoReport/TodoReport.py:469
-#: ToDoReport/TodoReport.py:474 ToDoReport/TodoReport.py:480
-#: ToDoReport/TodoReport.py:490 ToDoReport/TodoReport.py:512
-#: ToDoReport/TodoReport.py:518 ToDoReport/TodoReport.py:535
-#: ToDoReport/TodoReport.py:541 ToDoReport/TodoReport.py:547
-#: ToDoReport/TodoReport.py:564 ToDoReport/TodoReport.py:570
-#: ToDoReport/TodoReport.py:576 ToDoReport/TodoReport.py:582
-#: ToDoReport/TodoReport.py:599 ToDoReport/TodoReport.py:607
-#: ToDoReport/TodoReport.py:613 ToDoReport/TodoReport.py:619
-#: ToDoReport/TodoReport.py:636 ToDoReport/TodoReport.py:642
-#: ToDoReport/TodoReport.py:648 ToDoReport/TodoReport.py:654
-#: ToDoReport/TodoReport.py:678 ToDoReport/TodoReport.py:683
-#: ToDoReport/TodoReport.py:689 ToDoReport/TodoReport.py:947
 msgid "TR-TableCell"
 msgstr "TR-Stolaćeliju"
 
-#: ToDoReport/TodoReport.py:248 ToDoReport/TodoReport.py:254
-#: ToDoReport/TodoReport.py:935
 msgid "TR-Normal-Bold"
 msgstr "TR-Normalni-Odvažan"
 
-#: ToDoReport/TodoReport.py:268 ToDoReport/TodoReport.py:285
-#: ToDoReport/TodoReport.py:303 ToDoReport/TodoReport.py:311
-#: ToDoReport/TodoReport.py:324 ToDoReport/TodoReport.py:330
-#: ToDoReport/TodoReport.py:348 ToDoReport/TodoReport.py:354
-#: ToDoReport/TodoReport.py:364 ToDoReport/TodoReport.py:374
-#: ToDoReport/TodoReport.py:393 ToDoReport/TodoReport.py:399
-#: ToDoReport/TodoReport.py:411 ToDoReport/TodoReport.py:422
-#: ToDoReport/TodoReport.py:438 ToDoReport/TodoReport.py:445
-#: ToDoReport/TodoReport.py:459 ToDoReport/TodoReport.py:470
-#: ToDoReport/TodoReport.py:475 ToDoReport/TodoReport.py:481
-#: ToDoReport/TodoReport.py:491 ToDoReport/TodoReport.py:513
-#: ToDoReport/TodoReport.py:519 ToDoReport/TodoReport.py:536
-#: ToDoReport/TodoReport.py:542 ToDoReport/TodoReport.py:548
-#: ToDoReport/TodoReport.py:565 ToDoReport/TodoReport.py:571
-#: ToDoReport/TodoReport.py:577 ToDoReport/TodoReport.py:583
-#: ToDoReport/TodoReport.py:600 ToDoReport/TodoReport.py:608
-#: ToDoReport/TodoReport.py:614 ToDoReport/TodoReport.py:620
-#: ToDoReport/TodoReport.py:637 ToDoReport/TodoReport.py:643
-#: ToDoReport/TodoReport.py:649 ToDoReport/TodoReport.py:679
-#: ToDoReport/TodoReport.py:684 ToDoReport/TodoReport.py:690
-#: ToDoReport/TodoReport.py:924
 msgid "TR-Normal"
 msgstr "TR-Normalni"
 
-#: ToDoReport/TodoReport.py:275 ToDoReport/TodoReport.py:942
 msgid "TR-Note"
 msgstr "TR-Bilješka"
 
-#: ToDoReport/TodoReport.py:284 ToDoReport/TodoReport.py:952
 msgid "TR-BorderCell"
 msgstr "TR-Graničnaćelija"
 
-#: ToDoReport/TodoReport.py:405
 msgid "date: "
 msgstr "datum: "
 
-#: ToDoReport/TodoReport.py:417
 msgid "place: "
 msgstr "mjesto: "
 
-#: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Note Types"
-msgid "Note Type"
-msgstr "Vrste zabilježaka"
-
-#: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
 msgstr "Grupiraj po vrsti reference"
 
-#: ToDoReport/TodoReport.py:886
 msgid "Group notes by Family, Person, Place, etc."
 msgstr "Grupira zabilješke po obiteljima, osobama, mjestima, itd."
 
-#: ToDoReport/TodoReport.py:946
+msgid "The style used for the title of the page."
+msgstr "Stil za naslov stranice."
+
 msgid "The basic style used for the table cell display."
 msgstr "Osnovni stil koji se koristi za prikaz ćelija tablice."
 
-#: ToDoReport/TodoReport.py:951
 msgid "The basic style used for the table border cell display."
 msgstr "Osnovni stil koji se koristi za prikaz ćelija obruba tablice."
 
-#: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "Osnovni stil koji se koristi za prikaz tablice."
 
-#: ToDoReport/TodoReport.gpr.py:25
 msgid "Todo Report"
 msgstr "Izvještaj o zadacima"
 
-#: ToDoReport/TodoReport.gpr.py:27
 msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."

@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,33 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: HtmlView/htmlview.py:328
 msgid "HtmlView"
 msgstr "VistaHtml"
 
-#: HtmlView/htmlview.py:495
 msgid "Go to the previous page in the history"
 msgstr "Voltar à página anterior no histórico"
 
-#: HtmlView/htmlview.py:503
 msgid "Go to the next page in the history"
 msgstr "Avançar para a página seguinte no histórico"
 
-#: HtmlView/htmlview.py:508
 msgid "_Refresh"
 msgstr "A_ctualizar"
 
-#: HtmlView/htmlview.py:511
 msgid "Stop and reload the page."
 msgstr "Parar e recarregar a página."
 
-#: HtmlView/htmlview.py:555
 msgid "Start page for the Html View"
 msgstr "Página inicial da vista Html"
 
-#: HtmlView/htmlview.py:556
 msgid ""
 "Type a webpage address at the top, and hit the execute button to load a "
 "webpage in this page\n"
@@ -55,14 +43,11 @@ msgstr ""
 "<br>\n"
 "Por exemplo: "
 
-#: HtmlView/htmlview.gpr.py:31
 msgid "Html View"
 msgstr "Vista Html"
 
-#: HtmlView/htmlview.gpr.py:32
 msgid "A view showing html pages embedded in Gramps"
 msgstr "Mostra páginas html embebidas no Gramps"
 
-#: HtmlView/htmlview.gpr.py:40
 msgid "Web"
 msgstr "Web"

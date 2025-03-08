@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,36 +12,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
 msgstr "Reparer Versaler i fornavne"
 
-#: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
 msgstr ""
 "Gennemsøger hele databasen og forsøger at reparere versaler i fornavne."
 
-#: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr "manual|Fix_Capitalization_of_Given_Names..."
 
-#: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
 msgstr "Kontrollerer fornavne"
 
-#: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
 msgstr "Leder efter fornavne"
 
-#: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
 msgstr "Påvirkede Navne"
 
-#: ChangeGivenNames/changenames.glade:32
 msgid ""
 "Below is a list of the given names that \n"
 "Gramps can convert to correct capitalization. \n"
@@ -58,6 +44,5 @@ msgstr ""
 "Gramps kan ændre til korrek versalgbrug. \n"
 "Væld de navne du vil have at Gramps skal ændre. "
 
-#: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
 msgstr "Rediger valg"

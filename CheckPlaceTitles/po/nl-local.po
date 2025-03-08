@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,64 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
-msgid "Checking Place Titles"
-msgstr "Locatienamen controleren"
-
-#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
-msgid "Looking for place fields"
-msgstr "Naar locatievelden zoeken"
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
 msgstr "Controleer locatienamen"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
 msgstr "Controleer locatienamen"
 
-#: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
 msgstr "Controleer locatienaam"
 
-#: CheckPlaceTitles/checkplacetitles.py:107
+msgid "Checking Place Titles"
+msgstr "Locatienamen controleren"
+
+msgid "Looking for place fields"
+msgstr "Naar locatievelden zoeken"
+
 msgid "Differences"
 msgstr "Verschillen"
 
-#: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr "Geen aanpassingen nodig"
 
-#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr "Geen wijzigingen nodig."
 
-#: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr "Oude locatie"
 
-#: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr "Locatienamen aanpassen"
 
-#: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr "Locatienamen"
 
-#: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
 msgstr "Verwijder de inhoud van het locatienaamveld als deze niet overeenkomt"
 
-#: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
 msgstr "Kopieer de inhoud van het locatienaamveld naar een nieuwe notitie."
 
-#: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
 msgstr "Bevestig een tag op geselecteerde plaatsen."
 
-#: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
 msgstr "kolom"

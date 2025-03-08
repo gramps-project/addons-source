@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,73 +12,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: RemoveTagTool/RemoveTagTool.py:271
-msgid "INFO"
-msgstr "INFORMAÇÃO"
-
-#: DynamicWeb/dynamicweb.py:3052 RemoveTagTool/RemoveTagTool.py:124
-msgid "Persons"
-msgstr "Indivíduos"
-
-#: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:89
-#: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
-msgid "General options"
-msgstr "Opções gerais"
-
-#: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
 msgstr "A ferramenta requer pelo menos uma etiqueta para ser executada."
 
-#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
 msgstr "ERRO"
 
-#: RemoveTagTool/RemoveTagTool.py:86
 msgid "Add/Remove"
 msgstr "Adicionar/Remover"
 
-#: RemoveTagTool/RemoveTagTool.py:87
 msgid "Add or remove tags from objects."
 msgstr "Adicione ou remova etiqueta de objetos."
 
-#: RemoveTagTool/RemoveTagTool.py:88
 msgid "Add Tags"
 msgstr "Adicionar etiqueta"
 
-#: RemoveTagTool/RemoveTagTool.py:88
 msgid "Remove Tags"
 msgstr "Remover etiqueta"
 
-#: RemoveTagTool/RemoveTagTool.py:96
+msgid "General options"
+msgstr "Opções gerais"
+
 msgid "Choose a category."
 msgstr "Escolha uma categoria."
 
-#: RemoveTagTool/RemoveTagTool.py:103
 msgid "Choose Tag"
 msgstr "Escolha a etiqueta"
 
-#: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
 msgstr "Escolha uma etiqueta a remover."
 
-#: RemoveTagTool/RemoveTagTool.py:140
+msgid "Persons"
+msgstr "Indivíduos"
+
 msgid "Filter options"
 msgstr "Opções de filtro"
 
-#: RemoveTagTool/RemoveTagTool.py:151
 #, python-format
 msgid "All %s"
 msgstr "Todos %s"
 
-#: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
-#: RemoveTagTool/RemoveTagTool.gpr.py:25
 msgid "Add/Remove Tag Tool"
 msgstr "Ferramenta Adicionar/Remover etiqueta"
 
-#: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
 "and objects."
@@ -91,31 +64,27 @@ msgstr ""
 "Impossível executar a ferramenta. Verifique se a base de dados contém "
 "etiquetas, filtros e objectos."
 
-#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
 msgid "WARNING"
 msgstr "AVISO"
 
-#: RemoveTagTool/RemoveTagTool.py:234
 #, python-format
 msgid "No %s objects were found in database."
 msgstr "Nenhum objecto %s encontrado na base de dados."
 
-#: RemoveTagTool/RemoveTagTool.py:249
 msgid "Process tags..."
 msgstr "Processar etiquetas..."
 
-#: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
 msgstr "adicionada"
 
-#: RemoveTagTool/RemoveTagTool.py:268
 msgid "removed"
 msgstr "removida"
 
-#: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "A etiqueta \"{}\" era {} para {} {} objectos.\n"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "INFO"
+msgstr "INFORMAÇÃO"
+
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr "Adicione ou remova uma etiqueta de grupos de indivíduos, eventos, etc."

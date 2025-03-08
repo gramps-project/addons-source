@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,13 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
 msgstr "Reparar maiúsculas nos nomes próprios"
 
-#: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
@@ -31,23 +24,18 @@ msgstr ""
 "Procura na base de dados inteira e tenta reparar maiúsculas nos nomes "
 "próprios."
 
-#: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr "Reparar_maiúsculas_nos_nomes_próprios..."
 
-#: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
 msgstr "A verificar os nomes próprios"
 
-#: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
 msgstr "A procurar nomes próprios"
 
-#: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
 msgstr "Nomes afectados"
 
-#: ChangeGivenNames/changenames.glade:32
 msgid ""
 "Below is a list of the given names that \n"
 "Gramps can convert to correct capitalization. \n"
@@ -57,6 +45,5 @@ msgstr ""
 "o Gramps pode converter correctamente. \n"
 "Seleccione os nomes que deseja converter. "
 
-#: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
 msgstr "Editar selecção"

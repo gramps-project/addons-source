@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 21:10+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,27 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:142
-#: ImportMerge/importmerge.py:911 ImportMerge/importmerge.glade:407
-msgid "Replace"
-msgstr "Ersetzen"
-
-#: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
-msgid "Done"
-msgstr "Fertig"
-
-#: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade:264
-msgid "Differences"
-msgstr "Unterschiede"
-
-#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
-#: ImportMerge/importmerge.py:708
 msgid "Import and Merge tool"
 msgstr "Import und Zusammenführungswerkzeug"
 
-#: ImportMerge/importmerge.gpr.py:33
 msgid ""
 "Compares a Gramps XML database with the current one, and allows merging of "
 "the differences."
@@ -59,47 +24,36 @@ msgstr ""
 "Vergleicht eine Gramps XML Datenbank mit der aktuellen und ermöglicht das "
 "Zusammenführen der Unterschiede."
 
-#: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
 msgstr "Importiert und verschmilzt eine Gramps XML"
 
-#: ImportMerge/importmerge.py:90
 msgid "Missing"
 msgstr "Fehlt"
 
-#: ImportMerge/importmerge.py:94
 msgid "Different"
 msgstr "Unterschiedlich"
 
-#: ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr "Original löschen"
 
-#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.glade:334
 msgid "Ignore"
 msgstr "Ignorieren"
 
-#: ImportMerge/importmerge.py:111
 msgid "Add Import"
 msgstr "Import hinzufügen"
 
-#: ImportMerge/importmerge.py:112
 msgid "Merge into original"
 msgstr "In Original verschmelzen"
 
-#: ImportMerge/importmerge.py:113
 msgid "Merge into import"
 msgstr "In Import verschmelzen"
 
-#: ImportMerge/importmerge.py:114
 msgid "Replace with import"
 msgstr "Durch Import ersetzen"
 
-#: ImportMerge/importmerge.py:115
 msgid "Keep original"
 msgstr "Original behalten"
 
-#: ImportMerge/importmerge.py:116 ImportMerge/importmerge.glade:293
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
@@ -108,7 +62,6 @@ msgstr ""
 "festzulegen. Es werden keine Änderungen an deinem Baum durchgeführt, bis du "
 "\"Fertig\" drückst und bestätigst."
 
-#: ImportMerge/importmerge.py:119
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
@@ -116,7 +69,6 @@ msgstr ""
 "Dieses Element wird aus deinem Baum gelöscht. Alle referenzierten Elemente "
 "werden auch für die Löschung markiert."
 
-#: ImportMerge/importmerge.py:121
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
@@ -124,7 +76,6 @@ msgstr ""
 "Dieses Element wird in deinem Baum nicht geändert. Alle referenzierten "
 "Elemente werden auch als zu ignorieren markiert."
 
-#: ImportMerge/importmerge.py:123
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
@@ -132,7 +83,6 @@ msgstr ""
 "Dieses Element wird zu deinem Baum hinzugefügt. Alle referenzierten Elemente "
 "werden auch zum Hinzufügen markiert."
 
-#: ImportMerge/importmerge.py:125
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
@@ -141,7 +91,6 @@ msgstr ""
 "Baumstruktur. Alle referenzierten Elemente wurden auch zum Zusammenführen "
 "oder Hinzufügen markiert."
 
-#: ImportMerge/importmerge.py:127
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
@@ -150,7 +99,6 @@ msgstr ""
 "werden. Alle referenzierten Elemente wurden auch zum Zusammenführen oder "
 "Hinzufügen markiert."
 
-#: ImportMerge/importmerge.py:129
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
@@ -158,7 +106,6 @@ msgstr ""
 "Die Importdaten werden die Daten in deinem Baum vollständig ersetzen. Alle "
 "referenzierten Elemente wurden auch für Ersatz oder Entfernung markiert."
 
-#: ImportMerge/importmerge.py:131
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
@@ -166,44 +113,33 @@ msgstr ""
 "Dieses Element wird in deinem Baum nicht geändert. Alle referenzierten "
 "Elemente wurden auch markiert zu behalten."
 
-#: ImportMerge/importmerge.py:339
 msgid "Import Failure"
 msgstr "Importfehler"
 
-#: ImportMerge/importmerge.py:407
 msgid "Your Tree and import are the same."
 msgstr "Dein Baum und der Import sind identisch."
 
-#: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
-#: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
 msgid "your tree "
 msgstr "dein Baum "
 
-#: ImportMerge/importmerge.py:459 ImportMerge/importmerge.py:467
-#: ImportMerge/importmerge.py:475
 msgid "imported "
 msgstr "importiert "
 
-#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
-#: ImportMerge/importmerge.py:982
 msgid "Original"
 msgstr "Original"
 
-#: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
-#: ImportMerge/importmerge.py:983
 msgid "Imported"
 msgstr "Importiert"
 
-#: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
-#: ImportMerge/importmerge.py:985
 msgid "Result  "
 msgstr "Ergebnis  "
 
-#: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
 msgstr "Importieren und Verschmelzen"
 
-#: ImportMerge/importmerge.glade:8
+msgid "Replace"
+msgstr "Ersetzen"
+
 msgid ""
 "A '*' indicates that the action was automarked, a '?' indicates a conflict "
 "between automarks."
@@ -211,19 +147,15 @@ msgstr ""
 "Ein '*' zeigt das die Aktion automatisch markiert wurde, ein '?' zeigt einen "
 "Konflikt zwischen automatischen Markierungen."
 
-#: ImportMerge/importmerge.glade:39
 msgid "Import file"
 msgstr "Datei importieren"
 
-#: ImportMerge/importmerge.glade:124
 msgid "Select the difference you wish to examine."
 msgstr "Wähle die Unterschiede, die du untersuchen willst."
 
-#: ImportMerge/importmerge.glade:180
 msgid "Object Name/Description"
 msgstr "Objektname/Beschreibung"
 
-#: ImportMerge/importmerge.glade:227
 msgid ""
 "Data item details, showing the current treeitem, imported tree item, and "
 "result (when chosen)."
@@ -231,27 +163,28 @@ msgstr ""
 "Datenelementdetails, zeigen das aktuelle Baumelement, das importierte "
 "Baumelement und das Ergebnis (wenn gewählt)."
 
-#: ImportMerge/importmerge.glade:248
 msgid "Object and item"
 msgstr "Objekt und Element"
 
-#: ImportMerge/importmerge.glade:338
+msgid "Differences"
+msgstr "Unterschiede"
+
 msgid "This button will ignore the difference, no changes to your tree."
 msgstr ""
 "Diese Schaltfläche ignoriert den Unterschied, keine Änderungen an deinem "
 "Baum."
 
-#: ImportMerge/importmerge.glade:349
 msgid "Unmark"
 msgstr "Markierung löschen"
 
-#: ImportMerge/importmerge.glade:353
 msgid "This button will add the imported data as a new object to your tree."
 msgstr ""
 "Diese Schaltfläche fügt die importierten Daten als neue Objekte deinem "
 "Stammbaum hinzu."
 
-#: ImportMerge/importmerge.glade:368
+msgid "Done"
+msgstr "Fertig"
+
 msgid ""
 "This button will bring up a dialog allowing you to finalize your changes, or "
 "abandon them."
@@ -259,11 +192,9 @@ msgstr ""
 "Diese Schaltfläche öffnet einen Dialog, in dem du deine Änderungen "
 "abschließen, oder sie verwerfen kannst."
 
-#: ImportMerge/importmerge.glade:392
 msgid "Merge Original"
 msgstr "Original verschmelzen"
 
-#: ImportMerge/importmerge.glade:396
 msgid ""
 "This button will merge the imported data into your tree with your tree data "
 "as a base."
@@ -271,15 +202,12 @@ msgstr ""
 "Diese Schaltfläche verschmilzt die importierten Daten mit deinem Stammbaum "
 "mit deinen Baum Daten als Basis."
 
-#: ImportMerge/importmerge.glade:411
 msgid "This button will replace your tree data with the imported data."
 msgstr "Diese Schaltfläche ersetzt deine Baum Daten durch die importierten."
 
-#: ImportMerge/importmerge.glade:422
 msgid "Merge Import"
 msgstr "Import verschmelzen"
 
-#: ImportMerge/importmerge.glade:426
 msgid ""
 "This button will merge the imported data into your tree with the imported "
 "data as a base."
@@ -287,11 +215,9 @@ msgstr ""
 "Diese Schaltfläche verschmilzt die importierten Daten mit deinem Stammbaum "
 "mit den importierten Daten als Basis."
 
-#: ImportMerge/importmerge.glade:437
 msgid "Edit Import"
 msgstr "Import editieren"
 
-#: ImportMerge/importmerge.glade:441
 msgid ""
 "This button will edit the imported data.  The data will still need to be "
 "merged, added or replaced."
@@ -299,14 +225,11 @@ msgstr ""
 "Diese Schaltfläche editiert die importierten Daten. Die Daten bedürfen noch "
 "des Verschmelzen, Hinzufügen oder Ersetzen."
 
-#: ImportMerge/importmerge.glade:464
 msgid "Show more details"
 msgstr "Mehr Details zeigen"
 
-#: ImportMerge/importmerge.glade:481
 msgid "Automark Families"
 msgstr "Familien automatisch markieren"
 
-#: ImportMerge/importmerge.glade:498
 msgid "Automark Parent Families"
 msgstr "Elternfamilien automatisch markieren"

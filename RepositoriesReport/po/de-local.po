@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,143 +12,102 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:480
-#: RepositoriesReport/RepositoriesReportAlt.py:504
-#: RepositoriesReport/RepositoriesReport.py:175
-msgid "The style used for the title of the report."
-msgstr "Der Stil, der für den Titel des Berichts verwendet wird."
-
-#: SourcesCitationsReport/SourcesCitationsReport.py:591
-#: RepositoriesReport/RepositoriesReportAlt.py:533
-#: RepositoriesReport/RepositoriesReport.py:203
-msgid "The style used for each section."
-msgstr "Der Stil, der für jeden Absatz verwendet wird."
-
-#: DenominoViso/DenominoViso.py:2607
-#: RepositoriesReport/RepositoriesReportAlt.py:467
-msgid "Include private records"
-msgstr "Vertrauliche Daten aufnehmen"
-
-#: RepositoriesReport/RepositoriesReport.gpr.py:26
 msgid "Repositories Report Options"
-msgstr "Aufbewahrungsorte Berichtsoptionen"
+msgstr "Aufbewahrungsorte-Berichtsoptionen"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:27
-#: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
-msgstr "Erstellt einen schriftlichen Aufbewahrungsorte Bericht"
+msgstr "Erstellt einen schriftlichen Aufbewahrungsortebericht"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:45
-#: RepositoriesReport/RepositoriesReportAlt.py:139
-#: RepositoriesReport/RepositoriesReport.py:80
 msgid "Repositories Report"
-msgstr "Aufbewahrungsorte Bericht"
+msgstr "Aufbewahrungsortebericht"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:273
 msgid "Publication information:"
 msgstr "Veröffentlichungsinformationen:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:278
 msgid "Data:"
 msgstr "Daten:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:378
 msgid "Page:"
 msgstr "Seite:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:419
 msgid "Selection with a filter"
 msgstr "Auswahl mit einem Filter"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
-msgstr "Aufbewahrungsorte URLs aufnehmen"
+msgstr "Aufbewahrungsort-URLs aufnehmen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
 msgstr "Ob URLs im Aufbewahrungsort aufgenommen werden."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
-msgstr "Aufbewahrungsorteadressen aufnehmen"
+msgstr "Aufbewahrungsortadressen aufnehmen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
 msgstr "Ob Adressen im Aufbewahrungsort aufgenommen werden."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
 msgstr "Quellen einbeziehen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
 msgstr "Ob Autor aufgenommen wird."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
 msgstr "Quellinformationen aufnehmen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
 msgstr "Ob Abkürzungen aufgenommen werden."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
 msgstr "Quellen Veröffentlichungsinformationen aufnehmen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
 msgstr "Ob Veröffentlichungsinformationen enthalten sind."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
 msgstr "Quellendaten einbeziehen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
 msgstr "Ob Schlüssel und Werte aufgenommen werden."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
-msgstr "Ob Notizen in Aufbewahrungsorten und Quellen enthalten sind."
+msgstr "Ob Notizen über Aufbewahrungsorte und Quellen enthalten sind."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:459
 msgid "Include media"
 msgstr "Medien aufnehmen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:460
 msgid "Whether to include media."
 msgstr "Ob Medien aufgenommen werden."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:463
 msgid "Include citations"
 msgstr "Fundstellen aufnehmen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:464
 msgid "Whether to include citations on sources."
 msgstr "Ob Fundstellen bei Quellen aufgenommen werden."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:468
+msgid "Include private records"
+msgstr "Vertrauliche Daten aufnehmen"
+
 msgid "Whether to include repositories and sources marked as private."
 msgstr ""
-"Ob Aufbewahrungsorte und Quellen die als vertraulich markiert sind enthalten "
-"sind."
+"Ob Aufbewahrungsorte und Quellen, die als vertraulich markiert sind, "
+"enthalten sind."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:471
 msgid "Display empty values"
 msgstr "Leere Werte anzeigen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:472
 msgid "Whether to include key records with empty values."
 msgstr "Ob Schlüsseldatensätze mit leeren Werten enthalten sein sollen."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:518
-#: RepositoriesReport/RepositoriesReport.py:189
+msgid "The style used for the title of the report."
+msgstr "Der Stil, der für den Titel des Berichts verwendet wird."
+
 msgid "The style used for repository title."
 msgstr "Der Stil, der für Aufbewahrungsorttitel verwendet wird."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:548
+msgid "The style used for each section."
+msgstr "Der Stil, der für jeden Absatz verwendet wird."
+
 msgid "The style used for child section."
 msgstr "Der Stil, der für Kinder Absatz verwendet wird."

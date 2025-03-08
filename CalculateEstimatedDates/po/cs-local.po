@@ -1,16 +1,9 @@
-# Czech translation for GRAMPS
-# This file is distributed under the same license as the GRAMPS package.
-# Radek Malcic <malcic@atlas.cz>, 2004.
-# Jiří Pejchal <jiri.pejchal@gmail.com>, 2005.
-# Zdeněk Hataš <zdenek.hatas@gmail.com>, 2006, 2007, 2008, 2009, 2012, 2016.
-# Petr Hejl <hejl.petr@gmail.com>, 2016.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 23:04+0000\n"
+"PO-Revision-Date: 2025-02-23 12:29+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -25,281 +18,45 @@ msgstr ""
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
 msgstr "Vyberte filtr pro omezení osob"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
 msgstr "Vypočtená odhadovaná data"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
 msgstr "Pramen o odebrání a/nebo přidání"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
-#, fuzzy
-msgid "Remove previously added events, notes, and source"
-msgstr "Odstranit dříve přidané datumy"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
-msgid ""
-"Remove calculated events, notes, and source; occurs immediately on Execute"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
-#, fuzzy
-msgid "Do not add birth events"
-msgstr "přidáno narození %s"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
-#, fuzzy
-msgid "Add birth events without dates"
-msgstr "událost narození bez data"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
-#, fuzzy
-msgid "Add birth events with dates"
-msgstr "událost narození bez data"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
-msgid "Add a birth events with or without estimated dates"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
-#, fuzzy
-msgid "Do not add death events"
-msgstr "přidáno úmrtí %s"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
-#, fuzzy
-msgid "Add death events without dates"
-msgstr "Přidat odhadovaná data narození"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
-#, fuzzy
-msgid "Add death events with dates"
-msgstr "Přidat odhadovaná data narození"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
-msgid "Add death events with or without estimated dates"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
 msgstr "Maximální věk"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
 msgstr "Maximální věk, který může osoba žít"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Maximální věkový rozdíl mezi sourozenci"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
 msgstr "Průměrný počet let mezi dvěma generacemi"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
-#, fuzzy
-msgid "Estimated Dates"
-msgstr "Odhadovaná data"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
-msgid "Approximate (about)"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
-msgid "Extremes (after and before)"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
-msgid "Dates on events are either about or after/before"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
-msgid ""
-"The Calculate Estimated Dates Tool is used to add and remove birth and death "
-"events for people that are missing these events.\n"
-"\n"
-"To use:\n"
-"1. Go to the Options tab\n"
-"2. Check the [ ] Remove option to remove previous estimates\n"
-"3. Select the Add date options to date events with or without dates\n"
-"4. Click on Execute\n"
-"5. Select the people with which to add events\n"
-"6. Click on 'Add Selected Events' button to create\n"
-"\n"
-"NOTES: if you decide to make an event permanent, remove it from the Source. "
-"Otherwise, it will get removed the next time you automatically remove these "
-"events.\n"
-"\n"
-"You may have to run the tool repeatedly (without removing previous events) "
-"to add all of the events possible."
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 msgid "Calculate Estimated Dates"
 msgstr "Vypočítat odhadovaný datum"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
-#, fuzzy
-msgid "Select All"
-msgstr "Vybrat soubor"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
-#, fuzzy
-msgid "Select None"
-msgstr "Vybrat poznámku"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
-#, fuzzy
-msgid "Toggle Selection"
-msgstr "Výběr nástroje"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
-#, fuzzy
-msgid "Add Selected Events"
-msgstr "Vybrat událost"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
-msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
-msgid ""
-"Are you sure you want to remove previous events, notes, and source and "
-"reselect data?"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
-#, fuzzy
-msgid "Remove and Run Select Again"
-msgstr "Odstranit vybranou osobu"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
-#, fuzzy
-msgid "Reselect Data"
-msgstr "Vybrat otce"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
-#, fuzzy
-msgid "Are you sure you want to reselect data?"
-msgstr "Jste si jistí že chcete vyčistit historii operací?"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
-#, fuzzy
-msgid "Run Select Again"
-msgstr "Výpis výběru"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
-#, fuzzy
-msgid "Evidence"
-msgstr "Bydliště"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
-#, fuzzy
-msgid "Relative"
-msgstr "Příbuzní"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
 msgstr "Zpracovávání...\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
-msgid "Removing old estimations... "
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Odstraňuji '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
-#, fuzzy
-msgid "done!\n"
-msgstr "Hotovo!\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
-#, fuzzy
-msgid ""
-"Selecting... \n"
-"\n"
-msgstr "Vybrat..."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
-#, fuzzy
-msgid "Add birth and death events"
-msgstr "Přidat novou událost"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
-#, fuzzy
-msgid "Add birth event"
-msgstr "chybí událost narození"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
-#, fuzzy
-msgid "Add death event"
-msgstr "Přidat novou událost"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
-#, fuzzy
-msgid "No events to be added."
-msgstr "Nebyl přidán žádný popis události."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
-#, fuzzy
-msgid "Selecting... "
-msgstr "Vybrat..."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
-#, fuzzy, python-format
-msgid "Adding events '%s'..."
-msgstr "Vybrat existující rodiče..."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
-#, python-format
-msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
-#, fuzzy, python-format
-msgid "Added birth event based on %s"
-msgstr "přidáno narození %s"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
 msgstr "Odhadovaný datum narození"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
-#, python-format
-msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
-#, fuzzy, python-format
-msgid "Added death event based on %s"
-msgstr "přidáno úmrtí %s"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
 msgstr "Odhadovaný datum úmrtí"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
-msgid " Done! Committing..."
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
-#, fuzzy, python-format
-msgid "Added %d events."
-msgstr "Přidat novou událost"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Odhadovaná data"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Vypočítá odhadovaný datum narození a úmrtí."

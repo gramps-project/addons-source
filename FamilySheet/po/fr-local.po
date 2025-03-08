@@ -1,48 +1,22 @@
-# French translation for gramps
-# Copyright (C) 2001-2011 Free Software Foundation, Inc.
-#
-# Quelques variables pour la cohérence:
-#  ancestor : ascendant
-#  descendant : descendant
-#  person, individual, people : individu(s)
-#  remove (context) : enlever une référence ou supprimer de la base
-#  home : souche
-#  active person : individu actif
-#  media : media (pas de 's' ou accent) : un medium
-#  les médias : journaux, tv
-#  call name : prénom usuel
-#  unknown (context) : inconnu ou non-connu (individu)
-#
-# Laurent Protois <laurent.protois@free.fr>, 2001, 2002, 2003, 2004.
-# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
-# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
-# Frederic Chateaux, 2007, 2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Mathieu MD <mathieu.md@gmail.com>, 2012.
-# Paul Culley <prc@prc-virtualbox>, 2018.
-# Christophe <khrys63@gmail.com>, 2018.
-# Paul Culley <paulr2787@gmail.com>, 2016.
-# J-Paul Bérard <arverne@wanadoo.fr>, 2021.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2011-12-17 18:49+0100\n"
-"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
-"Language-Team:  <fr@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-02 13:48+0000\n"
+"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
 msgstr "Résumé familial"
 
-#: FamilySheet/FamilySheet.gpr.py:6
 msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
@@ -50,136 +24,87 @@ msgstr ""
 "Produit un résumé familial montrant les informations complètes sur "
 "l'individu, ses conjoints et enfants."
 
-#: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
-#, python-format
-msgid "\\u2192 %s"
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:397
 #, python-format
 msgid "Address (%(date)s): %(location)s"
 msgstr "Adresse (%(date)s): %(location)s"
 
-#: FamilySheet/FamilySheet.py:401
 #, python-format
 msgid "Address: %(location)s"
 msgstr "Adresse : %(location)s"
 
-#: FamilySheet/FamilySheet.py:469
 #, python-format
 msgid "; %(type)s: %(value)s"
 msgstr "; %(type)s : %(value)s"
 
-#: FamilySheet/FamilySheet.py:557
 msgid "Source references:"
 msgstr "Références de la source :"
 
-#: FamilySheet/FamilySheet.py:575
-#, python-format
-msgid ", page %s"
-msgstr ""
-
-#: FamilySheet/FamilySheet.py:588
 msgid "Notes:"
 msgstr "Notes :"
 
-#: FamilySheet/FamilySheet.py:769
 #, python-format
 msgid "on %(ymd_date)s"
 msgstr "le %(ymd_date)s"
 
-#: FamilySheet/FamilySheet.py:771
 #, python-format
 msgid "in %(ym_date)s"
 msgstr "en %(ym_date)s"
 
-#: FamilySheet/FamilySheet.py:773
 #, python-format
 msgid "in %(y_date)s"
 msgstr "en %(y_date)s"
 
-#: FamilySheet/FamilySheet.py:777
 #, python-format
 msgid "on %(placeholder)s"
 msgstr "à %(placeholder)s"
 
-#: FamilySheet/FamilySheet.py:779
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr "à %(placeholder)s (%(partial)s)"
 
-#: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #, python-format
 msgid "in %(place)s"
 msgstr "à %(place)s"
 
-#: FamilySheet/FamilySheet.py:864
 msgid "Center person"
 msgstr "Individu central"
 
-#: FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
 msgstr "L'individu dont les partenaires et enfants sont imprimés"
 
-#: FamilySheet/FamilySheet.py:869
 msgid "Print sheets for"
 msgstr "Impression des feuilles pour"
 
-#: FamilySheet/FamilySheet.py:871
 msgid "Center person only"
 msgstr "Individu central seulement"
 
-#: FamilySheet/FamilySheet.py:872
 msgid "Center person and descendants in side branches"
 msgstr "Individu central et ses descendants par branches"
 
-#: FamilySheet/FamilySheet.py:873
 msgid "Center person and all descendants"
 msgstr "Individu central et tous ses descendants"
 
-#: FamilySheet/FamilySheet.py:874
-#, fuzzy
-#| msgid "Whether to include keys and values."
-msgid "Whether to include descendants, and which ones."
-msgstr "Inclure ou non les clés et valeurs."
-
-# call name = prénom dans le context !
-#: FamilySheet/FamilySheet.py:880
 msgid "Replace first name with call name"
 msgstr "Remplacer le prénom par le prénom usuel"
 
-# call name = prénom dans le context !
-#: FamilySheet/FamilySheet.py:881
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Souligner ou ajouter le prénom usuel dans le prénom"
 
-#: FamilySheet/FamilySheet.py:882
-#, fuzzy
-#| msgid "Whether to include media."
-msgid "Whether to include call name, and how."
-msgstr "Inclure ou non les media."
-
-#: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
 msgstr "Imprime un espace pour l'information manquante"
 
-#: FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"
 msgstr "Le style de base pour afficher du texte."
 
-#: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
 msgstr "Le style utilisé pour le haut de la page de référence"
 
-#: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
 msgstr "Le style utilisé pour les noms."
 
-#: FamilySheet/FamilySheet.py:938
 msgid "The style used for numbers"
 msgstr "Le style utilisé pour les numéros."
 
-#: FamilySheet/FamilySheet.py:948
 msgid "The style used for footnotes (notes and source references)"
 msgstr ""
 "Le style utilisé pour les bas de page (notes et références de la source)"

@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,41 +12,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
-#: EventDescriptionEditor/EventDescriptionEditor.py:139
-msgid "Find"
-msgstr "Find"
-
-#: EventDescriptionEditor/EventDescriptionEditor.py:52
-#: EventDescriptionEditor/EventDescriptionEditor.py:64
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 msgid "Event Description Editor"
 msgstr "Hændelsesbeskrivelsesredigering"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
 msgstr "Søg delstreng..."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
 msgid "INFO"
 msgstr "INFO"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
 msgid "%s event descriptions of %s events were changed."
 msgstr "%s hændelsesbeskrivelse af %s hændelser blev ændret."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:142
+msgid "Find"
+msgstr "Find"
+
 msgid "Replace"
 msgstr "Erstat"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
 msgstr "Erstat kun delstreng"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:146
 msgid ""
 "If True only the substring will be replaced, otherwise the whole description "
 "will be deleted and replaced by the new one."
@@ -61,15 +43,12 @@ msgstr ""
 "Hvis Sandt vil kun delstrengen blive erstattes, ellers vil hele beskrivelsen "
 "blive slettet og erstattet med den nye."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:151
 msgid "Allow regex"
 msgstr "Tillad regex"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
 msgstr "Tillad regular expressions."
 
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
 "A tool to find and replace a string in event description of multiple events."
 msgstr ""

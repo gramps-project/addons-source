@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,91 +12,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr "Ahnenbaum verwende LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
 msgstr "Nachkommenbaum verwende LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
 msgstr "Großelternbaum"
 
-#: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
 msgstr "Großelternbaum verwende LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
 msgstr "Sanduhrbaum"
 
-#: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
 msgstr "Sanduhrbaum verwende LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
 msgstr "Sanduhrbaum für eine Familie"
 
-#: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Sanduhrbaum für eine Familie verwende LaTex genealogytree"
 
-#: GenealogyTree/gt_sandclock.py:235
 msgid "The center family for the report"
 msgstr "Die zentrale Familie für den Bericht"
 
-#: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
 msgstr "Generationen hoch"
 
-#: GenealogyTree/gt_sandclock.py:242
 msgid "Generations down"
 msgstr "Generationen runter"
 
-#: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
 msgstr "Geschwister einschließen"
 
-#: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
 msgstr "Geschwister von Vorfahren aufnehmen."
 
-#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
-#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
 msgid "Include images"
 msgstr "Bilder aufnehmen"
 
-#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
-#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
 msgid "Include images of people in the nodes."
 msgstr "Bilder der Personen in den Knoten aufnehmen."
 
-#: GenealogyTree/gt_grandparent.py:119
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
 msgstr ""
 "Person %s hat nicht sowohl einen väterlichen als auch einen mütterlichen "
 "Großelternteil"
 
-#: GenealogyTree/gt_grandparent.py:227
 msgid "Grandparent family spacing"
 msgstr "Großeltern Familie Abstand"
 
-#: GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
 msgstr "Extra Abstand Großelternfamilien (mm)"
 
-#: GenealogyTree/gt_descendant.py:191
 msgid "First spouse left"
 msgstr "Erster Ehepartner links"
 
-#: GenealogyTree/gt_descendant.py:192
 msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
+"Setze den ersten von mehreren Ehepartnern immer auf die linke Seite. Dies "
+"kann dazu beitragen, dass es bei mehreren Ehen weniger "
+"Zeilenüberschneidungen gibt."

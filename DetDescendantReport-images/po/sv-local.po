@@ -1,22 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,104 +12,70 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: AncestorFill/AncestorFill.py:361
-#: DetDescendantReport-images/detdescendantreporti.py:1252
-msgid "The style used for the title of the page."
-msgstr "Mall för rapporttitel."
-
-#: DynamicWeb/dynamicweb.py:1737
-#: DetDescendantReport-images/detdescendantreporti.py:940
-#, python-format
-msgid "%(type)s: %(value)s"
-msgstr "%(type)s: %(value)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
-#: DetDescendantReport-images/detdescendantreporti.py:454
-#, python-format
-msgid "%(date)s, %(place)s"
-msgstr "%(date)s, %(place)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:820
-#: DescendantBooks/DetailedDescendantBookReport.py:864
-#: DetDescendantReport-images/detdescendantreporti.py:457
-#, python-format
-msgid "%(date)s"
-msgstr "%(date)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:822
-#: DescendantBooks/DetailedDescendantBookReport.py:866
-#: DetDescendantReport-images/detdescendantreporti.py:459
-#, python-format
-msgid "%(place)s"
-msgstr "%(place)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1237
-#: DetDescendantReport-images/detdescendantreporti.py:811
-#, python-format
-msgid "%(name_kind)s: %(name)s%(endnotes)s"
-msgstr "%(name_kind)s: %(name)s%(endnotes)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1405
-#: DetDescendantReport-images/detdescendantreporti.py:1147
-msgid "List children"
-msgstr "Lista barn"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1422
-#: DetDescendantReport-images/detdescendantreporti.py:1164
-msgid "Add descendant reference in child list"
-msgstr "Lägg till ättlingareferens i barnlista"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1570
-#: DetDescendantReport-images/detdescendantreporti.py:1282
-msgid "The style used for the children list."
-msgstr "Mall som används för barnlistan."
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1597
-#: DetDescendantReport-images/detdescendantreporti.py:1305
-msgid "The style used for the first personal entry."
-msgstr "Mall som används för den första personinformationen."
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1607
-#: DetDescendantReport-images/detdescendantreporti.py:1315
-msgid "The style used for the More About header and for headers of mates."
-msgstr "Mall som används för Mer Om-rubriken samt för rubriker för makar."
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1618
-#: DetDescendantReport-images/detdescendantreporti.py:1326
-msgid "The style used for additional detail data."
-msgstr "Mall som används för allmänna data."
-
-#: DetDescendantReport-images/detdescendantreport.gpr.py:4
 msgid "Detailed Descendant Report With All Images"
 msgstr "Detaljerad ättlingarapport med alla bilder"
 
-#: DetDescendantReport-images/detdescendantreport.gpr.py:6
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
 msgstr ""
 "Producerar en detaljerad ättlingarapport med alla bilder och frivillig att-"
 "göra-lista."
 
-#: DetDescendantReport-images/detdescendantreporti.py:471
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
 #, python-format
 msgid "%(event_name)s: %(event_text)s"
 msgstr "%(event_name)s: %(event_text)s"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1177
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+msgid "List children"
+msgstr "Lista barn"
+
+msgid "Add descendant reference in child list"
+msgstr "Lägg till ättlingareferens i barnlista"
+
 msgid "Include TODO notes"
 msgstr "Ta med att-göra-notiser"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1178
 msgid "Whether to include TODO notes."
 msgstr "Huruvida ta med att-göra-notiser."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1351
+msgid "The style used for the title of the page."
+msgstr "Mall för rapporttitel."
+
+msgid "The style used for the children list."
+msgstr "Mall som används för barnlistan."
+
+msgid "The style used for the first personal entry."
+msgstr "Mall som används för den första personinformationen."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "Mall som används för Mer Om-rubriken samt för rubriker för makar."
+
+msgid "The style used for additional detail data."
+msgstr "Mall som används för allmänna data."
+
 msgid "The style used for image labels."
 msgstr "Mall som används för bildetiketter."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1364
 msgid "A style used for image captions."
 msgstr "Den mall som används för bildbeskrivning."

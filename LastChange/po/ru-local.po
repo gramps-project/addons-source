@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,87 +16,63 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: AncestorFill/AncestorFill.py:361 LastChange/LastChangeReport.py:378
-msgid "The style used for the title of the page."
-msgstr "Стиль заголовка страницы."
-
-#: LastChange/LastChangeReport.py:74 LastChange/LastChangeReport.py:113
-#: LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
 msgstr "Последние изменения"
 
-#: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
 msgstr "Необходимо выбрать хотя бы один тип записи."
 
-#: LastChange/LastChangeReport.py:180
 msgid "People Changed"
 msgstr "Изменённые лица"
 
-#: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
-#: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
-#: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
-#: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
 msgid "Changed On"
 msgstr "Изменено в"
 
-#: LastChange/LastChangeReport.py:197
 msgid "Families Changed"
 msgstr "Изменённые семьи"
 
-#: LastChange/LastChangeReport.py:198
 msgid "Family Surname"
 msgstr "Фамилия семьи"
 
-#: LastChange/LastChangeReport.py:215
 #, python-format
 msgid "%s and %s"
 msgstr "%s и %s"
 
-#: LastChange/LastChangeReport.py:228
 msgid "Events Changed"
 msgstr "Изменённые события"
 
-#: LastChange/LastChangeReport.py:251
 msgid "Places Changed"
 msgstr "Изменённые места"
 
-#: LastChange/LastChangeReport.py:269
 msgid "Media Changed"
 msgstr "Изменённые документы"
 
-#: LastChange/LastChangeReport.py:287
 msgid "Sources Changed"
 msgstr "Изменённые источники"
 
-#: LastChange/LastChangeReport.py:304
 msgid "Notes Changed"
 msgstr "Изменённые Заметки"
 
-#: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
 msgstr "Изменённые цитаты"
 
-#: LastChange/LastChangeReport.py:344
 msgid "Select From"
 msgstr "Выбрать из"
 
-#: LastChange/LastChangeReport.py:403
+msgid "The style used for the title of the page."
+msgstr "Стиль заголовка страницы."
+
 msgid "The style used for normal text"
 msgstr "Стиль простого текста"
 
-#: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
 msgstr "изменено в"
 
-#: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
 msgstr "Показывает последние десять лиц в которые вносились изменения"
 
-#: LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
 msgstr "Последние изменения"
 
-#: LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
 msgstr "Создаёт отчёт о последних изменениях в записях"

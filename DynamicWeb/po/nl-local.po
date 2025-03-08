@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,151 +12,106 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
-msgid "Include records marked private"
-msgstr "Neem records op die als privé zijn gemarkeerd"
-
-#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
-msgid "Include Last Name Only"
-msgstr "Alleen achternaam opnemen"
-
-#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
-msgid "Include Full Name Only"
-msgstr "Alleen volledige naam opnemen"
-
-#: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
 msgstr "Dynamisch webverslag"
 
-#: DynamicWeb/dynamicweb.gpr.py:17
 msgid "Produces dynamic web pages for the database"
 msgstr "Produceert dynamische webpagina's voor de database"
 
-#: DynamicWeb/dynamicweb.py:334
 msgid "SVG graphical tree"
 msgstr "SVG grafische boom"
 
-#: DynamicWeb/dynamicweb.py:337
 msgid "Indexes pages"
 msgstr "Indexeert pagina's"
 
-#: DynamicWeb/dynamicweb.py:341 DynamicWeb/dynamicweb.py:5214
 #, python-format
 msgid "Custom page %(index)i"
 msgstr "Aangepaste pagina %(index)i"
 
-#: DynamicWeb/dynamicweb.py:358
 msgid "Ascending tree"
 msgstr "Stijgende boom"
 
-#: DynamicWeb/dynamicweb.py:359
 msgid "Descending tree"
 msgstr "Dalende boom"
 
-#: DynamicWeb/dynamicweb.py:360
 msgid "Descending tree with spouses"
 msgstr "Dalende boom met echtgenoten"
 
-#: DynamicWeb/dynamicweb.py:361
 msgid "Ascending and descending tree"
 msgstr "Stijgende en dalende boom"
 
-#: DynamicWeb/dynamicweb.py:362
 msgid "Ascending and descending tree with spouses"
 msgstr "Stijgende en dalende boom met echtgenoten"
 
-#: DynamicWeb/dynamicweb.py:394
 msgid "Size proportional to number of ancestors"
 msgstr "Grootte evenredig met het aantal voorouders"
 
-#: DynamicWeb/dynamicweb.py:395
 msgid "Homogeneous parents distribution"
 msgstr "Homogene verdeling van ouders"
 
-#: DynamicWeb/dynamicweb.py:409
 msgid "Age based gradient"
 msgstr "Op leeftijd gebaseerd kleurverloop"
 
-#: DynamicWeb/dynamicweb.py:431
 msgid "Gradient"
 msgstr "Kleurverloop"
 
-#: DynamicWeb/dynamicweb.py:780 DynamicWeb/dynamicweb.py:786
 #, python-format
 msgid "Could not create the directory: %(path)s"
 msgstr "Kan de directory niet maken: %(path)s"
 
-#: DynamicWeb/dynamicweb.py:816 DynamicWeb/dynamicweb.py:4102
 msgid "Dynamic Web Site Report"
 msgstr "Dynamisch websiteverslag"
 
-#: DynamicWeb/dynamicweb.py:816
 msgid "Exporting family tree data ..."
 msgstr "Stamboomgegevens exporteren ..."
 
-#: DynamicWeb/dynamicweb.py:1737
 #, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
-#: DynamicWeb/dynamicweb.py:2011
 #, python-format
 msgid "Impossible to convert \"%(path)s\" to a relative path."
 msgstr "Onmogelijk om \"%(path)s\" naar een relatief pad te converteren."
 
-#: DynamicWeb/dynamicweb.py:2353
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr ""
 "De paginaconfiguratie is niet geldig: meerdere pagina's hebben dezelfde "
 "inhoud"
 
-#: DynamicWeb/dynamicweb.py:2368
 msgid "DynWeb|Home"
 msgstr "Start"
 
-#: DynamicWeb/dynamicweb.py:2375 DynamicWeb/dynamicweb.py:2442
-#: DynamicWeb/dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2456
 msgid "Tree"
 msgstr "Boom"
 
-#: DynamicWeb/dynamicweb.py:2435
 msgid "Search results"
 msgstr "Zoekresultaten"
 
-#: DynamicWeb/dynamicweb.py:2595 DynamicWeb/dynamicweb.py:3014
-#: DynamicWeb/dynamicweb.py:4997
 msgid "Indexes"
 msgstr "Indexen"
 
-#: DynamicWeb/dynamicweb.py:2918
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(gefilterd uit in totaal _MAX_ items)"
 
-#: DynamicWeb/dynamicweb.py:2920
 #, python-format
 msgid "(m. %s)"
 msgstr "(m. %s)"
 
-#: DynamicWeb/dynamicweb.py:2921
 msgid "(sort by name)"
 msgstr "(sorteren op naam)"
 
-#: DynamicWeb/dynamicweb.py:2922
 msgid "(sort by quantity)"
 msgstr "(sorteer op hoeveelheid)"
 
-#: DynamicWeb/dynamicweb.py:2925
 msgid ": activate to sort column ascending"
 msgstr ": activeer om de kolom oplopend te sorteren"
 
-#: DynamicWeb/dynamicweb.py:2929
 msgid ": activate to sort column descending"
 msgstr ": activeer om de kolom aflopend te sorteren"
 
-#: DynamicWeb/dynamicweb.py:2934
 msgid ""
 "<p>This page provides the SVG raw code.<br>Copy the contents into a text "
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
@@ -176,297 +121,224 @@ msgstr ""
 "een teksteditor en sla deze op als een SVG-bestand. <br> Zorg ervoor dat de "
 "codering van de teksteditor UTF-8 is. </p>"
 
-#: DynamicWeb/dynamicweb.py:2942
 msgid "Alternate Name"
-msgstr "Bijnaam"
+msgstr "Alternatieve naam"
 
-#: DynamicWeb/dynamicweb.py:2961
 msgid "Click on the map to show it full-screen"
 msgstr "Klik op de kaart om deze op volledig scherm weer te geven"
 
-#: DynamicWeb/dynamicweb.py:2965
 msgid "Configure"
 msgstr "Configureer"
 
-#: DynamicWeb/dynamicweb.py:2972
 msgid "DynamicWeb_report#Help"
 msgstr "DynamicWeb_report#Help"
 
-#: DynamicWeb/dynamicweb.py:2977
 msgid "Examples"
 msgstr "Voorbeelden"
 
-#: DynamicWeb/dynamicweb.py:2978
 msgid "F"
 msgstr "V"
 
-#: DynamicWeb/dynamicweb.py:2979
 msgid "Families Index"
 msgstr "Index van gezinnen"
 
-#: DynamicWeb/dynamicweb.py:2981
 msgid "Family Nick Name"
 msgstr "Familiebijnaam"
 
-#: DynamicWeb/dynamicweb.py:2984
 msgid "File ready"
 msgstr "Bestand klaar"
 
-#: DynamicWeb/dynamicweb.py:2991 DynamicWeb/dynamicweb.py:5042
 msgid "Include dates columns on the index pages"
 msgstr "Neem kolommen met datums op de indexpagina's op"
 
-#: DynamicWeb/dynamicweb.py:2999 DynamicWeb/dynamicweb.py:5071
 msgid "Include a column for media path on the index pages"
 msgstr "Voeg een kolom toe voor het mediapad op de indexpagina's"
 
-#: DynamicWeb/dynamicweb.py:3007 DynamicWeb/dynamicweb.py:4903
 msgid "Include a map in the individuals and family pages"
 msgstr "Voeg een kaart toe aan de individuele en gezinpagina's"
 
-#: DynamicWeb/dynamicweb.py:3011 DynamicWeb/dynamicweb.py:4955
 msgid "Include half and/ or step-siblings on the individual pages"
 msgstr "Neem half- en/of stiefbroers/-zussen op de afzonderlijke pagina's op"
 
-#: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:5076
 msgid "Include references in indexes"
 msgstr "Verwijzingen opnemen in indexen"
 
-#: DynamicWeb/dynamicweb.py:3018 DynamicWeb/dynamicweb.py:4985
 msgid "Insert sources author in the sources title"
 msgstr "Voeg bronnenauteur in de brontitel in"
 
-#: DynamicWeb/dynamicweb.py:3026
 msgid "M"
 msgstr "M"
 
-#: DynamicWeb/dynamicweb.py:3030
 msgid "Maximize"
 msgstr "Maximaliseren"
 
-#: DynamicWeb/dynamicweb.py:3031
 msgid "Media Index"
 msgstr "Media-index"
 
-#: DynamicWeb/dynamicweb.py:3032
 msgid "Media Type"
 msgstr "Mediatype"
 
-#: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
 msgstr "Geen data beschikbaar in de tabel"
 
-#: DynamicWeb/dynamicweb.py:3039
 msgid "No matching records found"
 msgstr "Geen overeenkomende gegevens gevonden"
 
-#: DynamicWeb/dynamicweb.py:3040
 msgid "No matching surname."
 msgstr "Geen overeenkomende achternaam."
 
-#: DynamicWeb/dynamicweb.py:3045
 msgid "Other participants"
 msgstr "Andere deelnemers"
 
-#: DynamicWeb/dynamicweb.py:3048
 msgid "Person page"
 msgstr "Persoonspagina"
 
-#: DynamicWeb/dynamicweb.py:3049
 msgid "Person to search for"
 msgstr "Persoon om naar te zoeken"
 
-#: DynamicWeb/dynamicweb.py:3051
 msgid "Persons Index"
 msgstr "Personenindex"
 
-#: DynamicWeb/dynamicweb.py:3052
 msgid "Persons"
 msgstr "Personen"
 
-#: DynamicWeb/dynamicweb.py:3054
 msgid "Places Index"
 msgstr "Plaatsenindex"
 
-#: DynamicWeb/dynamicweb.py:3056
 msgid "Preparing file ..."
 msgstr "Bestand voorbereiden ..."
 
-#: DynamicWeb/dynamicweb.py:3060
 msgid "Relationship to Father"
 msgstr "Verwantschap met vader"
 
-#: DynamicWeb/dynamicweb.py:3061
 msgid "Relationship to Mother"
 msgstr "Verwantschap met moeder"
 
-#: DynamicWeb/dynamicweb.py:3063
 msgid "Repositories Index"
 msgstr "Bibliothekenindex"
 
-#: DynamicWeb/dynamicweb.py:3066
 msgid "Restore"
 msgstr "Herstellen"
 
-#: DynamicWeb/dynamicweb.py:3067
 msgid "Restore default settings"
 msgstr "Standaard instellingen terugzetten"
 
-#: DynamicWeb/dynamicweb.py:3068 DynamicWeb/dynamicweb.py:4978
 msgid "Show last modification time"
 msgstr "Tijd van laatste wijziging weergeven"
 
-#: DynamicWeb/dynamicweb.py:3069 DynamicWeb/dynamicweb.py:5133
 msgid "SVG tree children distribution"
 msgstr "SVG-boom kinderenverdeling"
 
-#: DynamicWeb/dynamicweb.py:3070
 msgid "SVG tree configuration"
 msgstr "SVG-boomconfiguratie"
 
-#: DynamicWeb/dynamicweb.py:3071 DynamicWeb/dynamicweb.py:5115
 msgid "SVG tree graph shape"
 msgstr "SVG-boom grafiekvorm"
 
-#: DynamicWeb/dynamicweb.py:3072 DynamicWeb/dynamicweb.py:5107
 msgid "SVG tree graph type"
 msgstr "SVG-boom grafiektype"
 
-#: DynamicWeb/dynamicweb.py:3073 DynamicWeb/dynamicweb.py:5123
 msgid "SVG tree parents distribution"
 msgstr "SVG-boom oudersverdeling"
 
-#: DynamicWeb/dynamicweb.py:3074
 msgid "Save tree as file"
 msgstr "Boom opslaan als bestand"
 
-#: DynamicWeb/dynamicweb.py:3075
 msgid "Search:"
 msgstr "Zoek:"
 
-#: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
 msgstr "Selecteer het achtergrondkleurenschema"
 
-#: DynamicWeb/dynamicweb.py:3082
 msgid "Select the children distribution (fan charts only)"
 msgstr "Selecteer de kinderverdeling (alleen waaierdiagrammen)"
 
-#: DynamicWeb/dynamicweb.py:3086
 msgid "Select the number of ascending generations"
 msgstr "Selecteer het aantal oplopende generaties"
 
-#: DynamicWeb/dynamicweb.py:3090
 msgid "Select the number of descending generations"
 msgstr "Selecteer het aantal aflopende generaties"
 
-#: DynamicWeb/dynamicweb.py:3094
 msgid "Select the parents distribution (fan charts only)"
 msgstr "Selecteer de oudersverdeling (alleen waaierdiagrammen)"
 
-#: DynamicWeb/dynamicweb.py:3096
 msgid "Select the shape of graph"
 msgstr "Selecteer de vorm van de grafiek"
 
-#: DynamicWeb/dynamicweb.py:3097
 msgid "Select the type of graph"
 msgstr "Selecteer het type grafiek"
 
-#: DynamicWeb/dynamicweb.py:3101
 msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr ""
 "Meerdere overeenkomsten. <br> Preciseer uw zoekopdracht of kies in de "
 "onderstaande lijsten."
 
-#: DynamicWeb/dynamicweb.py:3104
 msgid "Show _MENU_ entries"
 msgstr "Toon _MENU_-vermeldingen"
 
-#: DynamicWeb/dynamicweb.py:3105 DynamicWeb/dynamicweb.py:5170
 msgid "Show duplicates"
 msgstr "Toon duplicaten"
 
-#: DynamicWeb/dynamicweb.py:3106
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Toont 0 tot 0 van 0 vermeldingen"
 
-#: DynamicWeb/dynamicweb.py:3109
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Toont _START_ tot _END_ van _TOTAL_ vermeldingen"
 
-#: DynamicWeb/dynamicweb.py:3112
 msgid "Sort by:"
 msgstr "Sorteer op:"
 
-#: DynamicWeb/dynamicweb.py:3114
 msgid "Sources Index"
 msgstr "Bronnenindex"
 
-#: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
 msgid "Suppress Gramps ID"
 msgstr "Onderdruk Gramps-ID"
 
-#: DynamicWeb/dynamicweb.py:3119
 msgid "Surnames Index"
 msgstr "Achternamenindex"
 
-#: DynamicWeb/dynamicweb.py:3123
 msgid "U"
 msgstr "U"
 
-#: DynamicWeb/dynamicweb.py:3127 DynamicWeb/dynamicweb.py:4972
 msgid "Use tabbed panels instead of sections"
 msgstr "Gebruik tabbladen in plaats van secties"
 
-#: DynamicWeb/dynamicweb.py:3131
 msgid "Use the search box above in order to find a person."
 msgstr "Gebruik het zoekvak hierboven om een persoon te vinden."
 
-#: DynamicWeb/dynamicweb.py:3135
 msgid "Use a table format for the surnames index"
 msgstr "Gebruik een tabelindeling voor de achternamenindex"
 
-#: DynamicWeb/dynamicweb.py:3139
 msgid "Use a table format for the persons index"
 msgstr "Gebruik een tabelindeling voor de personenindex"
 
-#: DynamicWeb/dynamicweb.py:3143
 msgid "Use a table format for the families index"
 msgstr "Gebruik een tabelindeling voor de gezinsindex"
 
-#: DynamicWeb/dynamicweb.py:3147
 msgid "Use a table format for the sources index"
 msgstr "Gebruik een tabelindeling voor de bronnenindex"
 
-#: DynamicWeb/dynamicweb.py:3151
 msgid "Use a table format for the places index"
 msgstr "Gebruik een tabelindeling voor de plaatsenindex"
 
-#: DynamicWeb/dynamicweb.py:3153
 msgid "Used for family"
 msgstr "Gebruikt voor gezin"
 
-#: DynamicWeb/dynamicweb.py:3154
 msgid "Used for media"
 msgstr "Gebruikt voor media"
 
-#: DynamicWeb/dynamicweb.py:3155
 msgid "Used for person"
 msgstr "Gebruikt voor persoon"
 
-#: DynamicWeb/dynamicweb.py:3156
 msgid "Used for place"
 msgstr "Gebruikt voor locatie"
 
-#: DynamicWeb/dynamicweb.py:3157
 msgid "Used for source"
 msgstr "Gebruikt voor bron"
 
-#: DynamicWeb/dynamicweb.py:3159
 msgid "Web Link"
 msgstr "Web link"
 
-#: DynamicWeb/dynamicweb.py:3164 DynamicWeb/dynamicweb.py:5173
 msgid ""
 "Whether to use a special color for the persons that appear several times in "
 "the SVG tree"
@@ -474,81 +346,64 @@ msgstr ""
 "Of een speciale kleur moet worden gebruikt voor de personen die meerdere "
 "keren in de SVG-structuur voorkomen"
 
-#: DynamicWeb/dynamicweb.py:3167
 msgid "Without name"
 msgstr "Zonder naam"
 
-#: DynamicWeb/dynamicweb.py:3168
 msgid "Without surname"
 msgstr "Zonder achternaam"
 
-#: DynamicWeb/dynamicweb.py:3169
 msgid "Without title"
 msgstr "Zonder titel"
 
-#: DynamicWeb/dynamicweb.py:3170
 msgid "Zoom in"
 msgstr "Inzoomen"
 
-#: DynamicWeb/dynamicweb.py:3171
 msgid "Zoom out"
 msgstr "Uitzoomen"
 
-#: DynamicWeb/dynamicweb.py:3172
 msgid "all"
 msgstr "allemaal"
 
-#: DynamicWeb/dynamicweb.py:3585
 #, python-format
 msgid "Copying error: %(error)s"
 msgstr "Kopieerfout: %(error)s"
 
-#: DynamicWeb/dynamicweb.py:3588
 #, python-format
 msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
 msgstr "Onmogelijk om \"%(src)s\" naar \"%(dst)s\" te kopiëren"
 
-#: DynamicWeb/dynamicweb.py:3632
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
 msgstr "Kan websitesjabloonbestanden niet kopiëren van \"%(path)s\""
 
-#: DynamicWeb/dynamicweb.py:3681
 #, python-format
 msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
 msgstr "\"%(dst)s\" behouden (nieuwer dan \"%(src)s\")"
 
-#: DynamicWeb/dynamicweb.py:3687
 #, python-format
 msgid "Copying \"%(src)s\" to \"%(dst)s\""
 msgstr "\"%(src)s\" naar \"%(dst)s\" kopiëren"
 
-#: DynamicWeb/dynamicweb.py:3718 DynamicWeb/dynamicweb.py:3742
 #, python-format
 msgid "Unable to overwrite archive file \"%(path)s\""
 msgstr "Kan archiefbestand \"%(path)s\" niet overschrijven"
 
-#: DynamicWeb/dynamicweb.py:3731 DynamicWeb/dynamicweb.py:3752
 #, python-format
 msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
 msgstr "Kan bestand \"%(file)s\" niet toevoegen aan archief \"%(archive)s\""
 
-#: DynamicWeb/dynamicweb.py:3831
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
 msgstr "DynamicWebReport negeert linktype '%(class)s'"
 
-#: DynamicWeb/dynamicweb.py:4262
 #, python-format
 msgid "Family of %(father)s"
 msgstr "Gezin van %(father)s"
 
-#: DynamicWeb/dynamicweb.py:4266
 #, python-format
 msgid "Family of %(mother)s"
 msgstr "Gezin van %(mother)s"
 
-#: DynamicWeb/dynamicweb.py:4660
 msgid ""
 "In this note, the following special words are processed:\n"
 "__SEARCH_FORM__ is replaced by a search form.\n"
@@ -584,11 +439,9 @@ msgstr ""
 "URL die begint met \"relatief: // relatief. <link>\" wordt vervangen door de "
 "relatieve URL \"<link>\".\n"
 
-#: DynamicWeb/dynamicweb.py:4712
 msgid "Store web pages in archive"
 msgstr "Bewaar webpagina's in het archief"
 
-#: DynamicWeb/dynamicweb.py:4715
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
@@ -596,49 +449,47 @@ msgstr ""
 "Of er een archiefbestand gemaakt moet worden (in ZIP- of TGZ-formaat) van de "
 "website"
 
-#: DynamicWeb/dynamicweb.py:4722
 msgid "Archive file"
 msgstr "Archiefbestand"
 
-#: DynamicWeb/dynamicweb.py:4728
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
 msgstr "De archiefbestandsnaam (met extensie \".zip\" of \".tgz\")"
 
-#: DynamicWeb/dynamicweb.py:4735
 msgid "Web site title"
 msgstr "Website titel"
 
-#: DynamicWeb/dynamicweb.py:4736
 msgid "The title of the web site"
 msgstr "De titel van de website"
 
-#: DynamicWeb/dynamicweb.py:4741
 msgid "Select filter to restrict people that appear on web site"
 msgstr ""
 "Selecteer filter om het aantal personen te beperken die op de website "
 "verschijnen"
 
-#: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
 msgid "Name format (short)"
 msgstr "Naamopmaak (kort)"
 
-#: DynamicWeb/dynamicweb.py:4757 DynamicWeb/dynamicweb.py:4783
 msgid "Select the format to display a shorter version of the names"
 msgstr "Selecteer de opmaak om een kortere versie van de namen weer te geven"
 
-#: DynamicWeb/dynamicweb.py:4787
 msgid "Web site template"
 msgstr "Website sjabloon"
 
-#: DynamicWeb/dynamicweb.py:4790
 msgid "Select the template of the web site"
 msgstr "Selecteer de sjabloon van de website"
 
-#: DynamicWeb/dynamicweb.py:4812
+msgid "Include records marked private"
+msgstr "Neem records op die als privé zijn gemarkeerd"
+
 msgid "Whether to include private objects"
 msgstr "Of privé-objecten moeten worden opgenomen"
 
-#: DynamicWeb/dynamicweb.py:4833
+msgid "Include Last Name Only"
+msgstr "Alleen achternaam opnemen"
+
+msgid "Include Full Name Only"
+msgstr "Alleen volledige naam opnemen"
+
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
@@ -646,197 +497,151 @@ msgstr ""
 "Hiermee kunt u informatie beperken over mensen die nog niet lang overleden "
 "zijn"
 
-#: DynamicWeb/dynamicweb.py:4839
 msgid "Export notes"
 msgstr "Exporteer notities"
 
-#: DynamicWeb/dynamicweb.py:4840
 msgid "Whether to export notes in the web pages"
 msgstr "Of notities naar de webpagina's moeten worden geëxporteerd"
 
-#: DynamicWeb/dynamicweb.py:4843
 msgid "Export sources"
 msgstr "Exporteer bronnen"
 
-#: DynamicWeb/dynamicweb.py:4845
 msgid "Whether to export sources and citations in the web pages"
 msgstr "Of bronnen en citaten naar de webpagina's moeten worden geëxporteerd"
 
-#: DynamicWeb/dynamicweb.py:4849
 msgid "Export addresses"
 msgstr "Adressen exporteren"
 
-#: DynamicWeb/dynamicweb.py:4850
 msgid "Whether to export addresses in the web pages"
 msgstr "Of adressen naar de webpagina's moeten worden geëxporteerd"
 
-#: DynamicWeb/dynamicweb.py:4858
 msgid "Whether or not to include the Repository Pages."
 msgstr "Of de bibliotheekpagina's moeten worden opgenomen."
 
-#: DynamicWeb/dynamicweb.py:4861
 msgid "Include images and media"
 msgstr "Voeg afbeeldingen en media toe"
 
-#: DynamicWeb/dynamicweb.py:4862
 msgid "Whether to include images and media in the web pages"
 msgstr "Of afbeeldingen en media in de webpagina's moeten worden opgenomen"
 
-#: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
 msgstr "Kopieer en hernoem bestanden met een interne Gramps-ID"
 
-#: DynamicWeb/dynamicweb.py:4870
 msgid "Copy, keep file names unchanged"
 msgstr "Kopieer, houd bestandsnamen ongewijzigd"
 
-#: DynamicWeb/dynamicweb.py:4871
 msgid "Do not copy, reference existing files"
 msgstr "Kopieer niet, verwijs naar bestaande bestanden"
 
-#: DynamicWeb/dynamicweb.py:4873
 msgid "Images and media"
 msgstr "Afbeeldingen en media"
 
-#: DynamicWeb/dynamicweb.py:4876
 msgid "Whether to make a copy of the media"
 msgstr "Of er een kopie van de media gemaakt moet worden"
 
-#: DynamicWeb/dynamicweb.py:4879
 msgid "Print the notes type"
 msgstr "Druk het notitietype af"
 
-#: DynamicWeb/dynamicweb.py:4881
 msgid "Whether to print the notes type in the notes text"
 msgstr "Of het notitietype afgedrukt moet worden in de notitietekst"
 
-#: DynamicWeb/dynamicweb.py:4885
 msgid "Print place pages"
 msgstr "Locatiepagina's afdrukken"
 
-#: DynamicWeb/dynamicweb.py:4886
 msgid "Whether to show pages for the places"
 msgstr "Of pagina's voor de locaties moeten worden weergegeven"
 
-#: DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
 msgstr "Kies uw kaartservice voor het maken van de locatiekaartpagina's"
 
-#: DynamicWeb/dynamicweb.py:4926
 msgid "Google map API key"
 msgstr "Google-kaart API-sleutel"
 
-#: DynamicWeb/dynamicweb.py:4927
 msgid "The API key used for the Google map"
 msgstr "De API-sleutel die wordt gebruikt voor de Google-kaart"
 
-#: DynamicWeb/dynamicweb.py:4945
 msgid "Whether or not to include family pages"
 msgstr "Al dan niet gezinspagina's opnemen"
 
-#: DynamicWeb/dynamicweb.py:4959
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
 msgstr ""
 "Of half- en/of stiefbroers en -zussen met de ouders en broers en zussen "
 "moeten worden ogepnomen"
 
-#: DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
 msgstr "Schakel paginaconfiguratie in"
 
-#: DynamicWeb/dynamicweb.py:4969
 msgid "Whether to enable page configuration"
 msgstr "Of pagina-configuratie moet worden ingeschakeld"
 
-#: DynamicWeb/dynamicweb.py:4974
 msgid "Whether to use tabbed panels for the different sections of the pages."
 msgstr ""
 "Of panelen met tabbladen moeten worden gebruikt voor de verschillende "
 "secties van de pagina's."
 
-#: DynamicWeb/dynamicweb.py:4980
 msgid "Whether to show the last modification time in the pages footer"
 msgstr ""
 "Of de laatste wijzigingstijd in de voettekst van de pagina moet worden "
 "weergegeven"
 
-#: DynamicWeb/dynamicweb.py:4988
 msgid "Whether to insert sources author in the sources title"
 msgstr "Of de bronauteur moet worden ingevoegd in de titel van de bron"
 
-#: DynamicWeb/dynamicweb.py:4993
 msgid "Whether to hide the Gramps ID"
 msgstr "Of het Gramps-ID verborgen moet worden"
 
-#: DynamicWeb/dynamicweb.py:5001
 msgid "List"
 msgstr "Lijst"
 
-#: DynamicWeb/dynamicweb.py:5002
 msgid "Table"
 msgstr "Tabel"
 
-#: DynamicWeb/dynamicweb.py:5008
 msgid "Default format for the surnames index"
 msgstr "Standaardopmaak voor de achternamenindex"
 
-#: DynamicWeb/dynamicweb.py:5009
 msgid "The default format for the surnames index"
 msgstr "De standaardindeling voor de achternamenindex"
 
-#: DynamicWeb/dynamicweb.py:5014
 msgid "Default format for the persons index"
 msgstr "Standaardopmaak voor de personenindex"
 
-#: DynamicWeb/dynamicweb.py:5015
 msgid "The default format for the persons index"
 msgstr "De standaardindeling voor de personenindex"
 
-#: DynamicWeb/dynamicweb.py:5020
 msgid "Default format for the families index"
 msgstr "Standaardopmaak voor de gezinsindex"
 
-#: DynamicWeb/dynamicweb.py:5021
 msgid "The default format for the families index"
 msgstr "De standaardindeling voor de gezinsindex"
 
-#: DynamicWeb/dynamicweb.py:5026
 msgid "Default format for the sources index"
 msgstr "Standaardopmaak voor de bronnenindex"
 
-#: DynamicWeb/dynamicweb.py:5027
 msgid "The default format for the sources index"
 msgstr "De standaardindeling voor de bronnenindex"
 
-#: DynamicWeb/dynamicweb.py:5032
 msgid "Default format for the places index"
 msgstr "Standaardopmaak voor de locatiesindex"
 
-#: DynamicWeb/dynamicweb.py:5033
 msgid "The default format for the places index"
 msgstr "De standaardindeling voor de locatiesindex"
 
-#: DynamicWeb/dynamicweb.py:5045
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
 "Of kolommen met datums (geboorte, overlijden, huwelijk) op de indexpagina's "
 "moeten worden opgenomen"
 
-#: DynamicWeb/dynamicweb.py:5063
 msgid "Generate a families index page"
 msgstr "Genereer een gezinsindexpagina"
 
-#: DynamicWeb/dynamicweb.py:5066
 msgid "Whether to generate an index page for families"
 msgstr "Of er een indexpagina voor gezinnen moet worden gegenereerd"
 
-#: DynamicWeb/dynamicweb.py:5073
 msgid "Whether to include a column showing the media path"
 msgstr "Of een kolom met het mediapad moet worden opgenomen"
 
-#: DynamicWeb/dynamicweb.py:5079
 msgid ""
 "Whether to include the references to the items in the index pages. For "
 "example, in the media index page, the names of the individuals, families, "
@@ -846,19 +651,15 @@ msgstr ""
 "opgenomen. Op de media-indexpagina bijvoorbeeld de namen van de individuen, "
 "families, plaatsen, bronnen die naar de media verwijzen."
 
-#: DynamicWeb/dynamicweb.py:5085
 msgid "Default number of entries in the indexes"
 msgstr "Standaardaantal vermeldingen in de indexen"
 
-#: DynamicWeb/dynamicweb.py:5090
 msgid "The default number of entries shown in one index page"
 msgstr "Het standaardaantal items dat op één indexpagina wordt weergegeven"
 
-#: DynamicWeb/dynamicweb.py:5098
 msgid "Maximum number of generations"
 msgstr "Maximaal aantal generaties"
 
-#: DynamicWeb/dynamicweb.py:5101
 msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
@@ -866,99 +667,77 @@ msgstr ""
 "Het maximale aantal generaties dat in de voorouder- en afstammelingsbomen en "
 "grafieken moet worden opgenomen"
 
-#: DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
 msgstr "Kies het standaard SVG-boom grafiektype"
 
-#: DynamicWeb/dynamicweb.py:5119
 msgid "Choose the default SVG tree graph shape"
 msgstr "Kies de standaard SVG-boom grafiekvorm"
 
-#: DynamicWeb/dynamicweb.py:5128
 msgid "Choose the default SVG tree parents distribution (for fan charts only)"
 msgstr ""
 "Kies de standaard SVG-boom oudersverdeling (alleen voor waaierdiagrammen)"
 
-#: DynamicWeb/dynamicweb.py:5138
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
 msgstr ""
 "Kies de standaard SVG-boom kinderenverdeling (alleen voor waaierdiagrammen)"
 
-#: DynamicWeb/dynamicweb.py:5149
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
 msgstr ""
 "Kies het achtergrondkleurenschema voor de personen in de SVG-boomgrafiek"
 
-#: DynamicWeb/dynamicweb.py:5157
 msgid "Theme"
 msgstr "Thema"
 
-#: DynamicWeb/dynamicweb.py:5190
 msgid "Pages"
 msgstr "Pagina's"
 
-#: DynamicWeb/dynamicweb.py:5194
 msgid "A note to be used as the page header"
 msgstr "Een notitie om te gebruiken als paginakoptekst"
 
-#: DynamicWeb/dynamicweb.py:5197
 msgid "HTML user brand name / icon"
 msgstr "Merknaam / pictogram van HTML-gebruiker"
 
-#: DynamicWeb/dynamicweb.py:5199
 msgid "A note to be used as the brand name or image in the menu"
 msgstr "Een notitie om te gebruiken als merknaam of afbeelding in het menu"
 
-#: DynamicWeb/dynamicweb.py:5208
 msgid "Custom pages"
 msgstr "Aangepaste pagina's"
 
-#: DynamicWeb/dynamicweb.py:5213
 #, python-format
 msgid "Title for the custom page %(index)i"
 msgstr "Titel voor de aangepaste pagina %(index)i"
 
-#: DynamicWeb/dynamicweb.py:5217
 #, python-format
 msgid "Name for the custom page %(index)i"
 msgstr "Naam voor de aangepaste pagina %(index)i"
 
-#: DynamicWeb/dynamicweb.py:5222
 #, python-format
 msgid "Note for custom page %(index)i"
 msgstr "Notitie voor aangepaste pagina %(index)i"
 
-#: DynamicWeb/dynamicweb.py:5225
 msgid "A note to be used for the custom page content.\n"
 msgstr "Een notitie voor de aangepaste pagina-inhoud.\n"
 
-#: DynamicWeb/dynamicweb.py:5230
 #, python-format
 msgid "Menu for the custom page %(index)i"
 msgstr "Menu voor de aangepaste pagina %(index)i"
 
-#: DynamicWeb/dynamicweb.py:5232
 msgid "Whether to print a menu for the custom page"
 msgstr "Of er een menu afgedrukt moet worden voor de aangepaste pagina"
 
-#: DynamicWeb/dynamicweb.py:5236
 msgid "Pages selection"
 msgstr "Selectie van pagina's"
 
-#: DynamicWeb/dynamicweb.py:5240
 msgid "Number of pages"
 msgstr "Aantal pagina's"
 
-#: DynamicWeb/dynamicweb.py:5242
 msgid "Number pages in the web site menu."
 msgstr "Aantal pagina's in het website menu."
 
-#: DynamicWeb/dynamicweb.py:5262
 #, python-format
 msgid "Contents of page %(index)i"
 msgstr "Inhoud van pagina %(index)i"
 
-#: DynamicWeb/dynamicweb.py:5266
 msgid "Contents of the page"
 msgstr "Inhoud van de pagina"

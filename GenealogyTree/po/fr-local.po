@@ -1,126 +1,70 @@
-# French translation for gramps
-# Copyright (C) 2001-2011 Free Software Foundation, Inc.
-#
-# Quelques variables pour la cohérence:
-#  ancestor : ascendant
-#  descendant : descendant
-#  person, individual, people : individu(s)
-#  remove (context) : enlever une référence ou supprimer de la base
-#  home : souche
-#  active person : individu actif
-#  media : media (pas de 's' ou accent) : un medium
-#  les médias : journaux, tv
-#  call name : prénom usuel
-#  unknown (context) : inconnu ou non-connu (individu)
-#
-# Laurent Protois <laurent.protois@free.fr>, 2001, 2002, 2003, 2004.
-# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
-# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
-# Frederic Chateaux, 2007, 2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Mathieu MD <mathieu.md@gmail.com>, 2012.
-# Paul Culley <prc@prc-virtualbox>, 2018.
-# Christophe <khrys63@gmail.com>, 2018.
-# Paul Culley <paulr2787@gmail.com>, 2016.
-# J-Paul Bérard <arverne@wanadoo.fr>, 2021.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2011-12-17 18:49+0100\n"
-"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
-"Language-Team:  <fr@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-03-02 13:48+0000\n"
+"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr "Arbre des ascendants utilisant LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
 msgstr "Arbre des descendants utilisant LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
 msgstr "Arbre des grands-parents"
 
-#: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
 msgstr "Arbre des grands-parents utilisant LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
 msgstr "Arbre sablier"
 
-#: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
 msgstr "Arbre sablier utilisant LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
 msgstr "Arbre sablier pour une famille"
 
-#: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Arbre sablier pour une famille utilisant LaTeX genealogytree"
 
-#: GenealogyTree/gt_sandclock.py:235
 msgid "The center family for the report"
 msgstr "La famille centrale pour ce rapport"
 
-#: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
 msgstr "Générations ascendantes"
 
-#: GenealogyTree/gt_sandclock.py:242
 msgid "Generations down"
 msgstr "Générations descendantes"
 
-#: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
 msgstr "Inclure les frères et sœurs"
 
-#: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
 msgstr "Inclure les frères et sœurs des ascendants."
 
-#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
-#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
 msgid "Include images"
 msgstr "Inclure les images"
 
-#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
-#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
 msgid "Include images of people in the nodes."
 msgstr "Inclure les images des individus dans les nœuds."
 
-#: GenealogyTree/gt_grandparent.py:119
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
 msgstr "L'individu %s n'a pas de grands-parents paternels et maternels"
 
-#: GenealogyTree/gt_grandparent.py:227
 msgid "Grandparent family spacing"
 msgstr "Espacement de la famille grands-parents"
 
-#: GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
 msgstr "Espacement supplémentaire pour la famille grands-parents (mm)"
-
-#: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
-msgid "First spouse left"
-msgstr "de droite à gauche"
-
-#: GenealogyTree/gt_descendant.py:192
-msgid ""
-"Always put first of multiple spouses on the left. This can help reduce line-"
-"crossings with multiple marriages."
-msgstr ""

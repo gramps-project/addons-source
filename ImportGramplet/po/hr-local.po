@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,17 +13,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: ImportGramplet/ImportGramplet.gpr.py:11
 msgid "Gramplet for importing text"
 msgstr "Gramplet za uvoz teksta"
 
-#: ImportGramplet/ImportGramplet.py:94
 msgid "VCard import"
 msgstr "VCard uvoz"
 
-#: ImportGramplet/ImportGramplet.py:144
 #, python-format
 msgid ""
 "The opened file has media path %s, which conflicts with the media path of "
@@ -42,7 +32,6 @@ msgstr ""
 "rodoslova u koji uvoziš. Zadržana je originalna staza medija. Kopiraj "
 "datoteke u ispravni direktorij ili promijeni stazu medija u postavkama."
 
-#: ImportGramplet/ImportGramplet.py:172
 msgid ""
 "Enter text to import and then click\n"
 "the Import button at bottom"
@@ -50,18 +39,14 @@ msgstr ""
 "Upiši tekst koji želiš uvesti, a zatim\n"
 "klikni na gumb „Uvezi”"
 
-#: ImportGramplet/ImportGramplet.py:198
 msgid "_Import"
 msgstr "_Uvezi"
 
-#: ImportGramplet/ImportGramplet.py:218
 msgid "Import done"
 msgstr "Uvoz je gotov"
 
-#: ImportGramplet/ImportGramplet.py:228
 msgid "Importing Text..."
 msgstr "Uvoz teksta …"
 
-#: ImportGramplet/ImportGramplet.py:259
 msgid "Can't determine type of import"
 msgstr "Nije moguće ustanoviti vrstu uvoza"

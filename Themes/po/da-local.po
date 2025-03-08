@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,33 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
-msgid "Theme"
-msgstr "Tema"
-
-#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Tema fast angivet ved GTK_THEME"
 
-#: Themes/themes.py:180
+msgid "Theme"
+msgstr "Tema"
+
 msgid "Dark Variant"
 msgstr "Mørk variant"
 
-#: Themes/themes.py:198
 msgid "Font"
 msgstr "Skrifttype"
 
-#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Klassisk rullepanel (kræver genstart)"
 
-#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Temaindstillinger"
 
-#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."

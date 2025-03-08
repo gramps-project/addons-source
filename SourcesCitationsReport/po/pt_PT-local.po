@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"POT-Creation-Date: 2020-08-26 15:11-0500\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,157 +12,118 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
 msgstr "Relatório de fontes e citações"
 
-#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
 msgstr "Fornece um relatório de fontes e citações com notas"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
 msgid "Key: %s"
 msgstr "Chave: %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:277
 msgid "Citations:"
 msgstr "Citações:"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:286
 #, python-format
 msgid "%d"
 msgstr "%d"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:288
 #, python-format
 msgid "  %s"
 msgstr "  %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:294
 #, python-format
 msgid " - %s "
 msgstr " - %s "
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:300
 #, python-format
 msgid "   Type: %s"
 msgstr "   Tipo: %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:302
 #, python-format
 msgid "   N-ID: %s"
 msgstr "   N-Id: %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:310
 #, python-format
 msgid "   %s"
 msgstr "   %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:324
-#: SourcesCitationsReport/SourcesCitationsReport.py:345
-#: SourcesCitationsReport/SourcesCitationsReport.py:372
-#: SourcesCitationsReport/SourcesCitationsReport.py:378
-#: SourcesCitationsReport/SourcesCitationsReport.py:384
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:326
-#: SourcesCitationsReport/SourcesCitationsReport.py:347
 #, python-format
 msgid "   ( %s )"
 msgstr "   ( %s )"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:333
 msgid "   Spouses: "
 msgstr "   Cônjuges: "
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
 msgid "%s "
 msgstr "%s "
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:338
 #, python-format
 msgid "and %s "
 msgstr "e %s "
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:349
 #, python-format
 msgid " %s"
 msgstr " %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:413
 msgid "Title of the Report"
 msgstr "Título do relatório"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:414
 msgid "Title string for the report."
 msgstr "Cadeia de título do relatório."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
 msgstr "Sub-título do relatório"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
 msgstr "Cadeia de sub-título do relatório."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
 msgstr "nome do investigador"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:436
 msgid "Select sources using a filter"
 msgstr "Seleccionar fontes usando um filtro"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:443
 msgid "Show persons"
 msgstr "Mostrar indivíduos"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
 msgstr "Se deve mostrar eventos e indivíduos mencionados na nota"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:480
 msgid "The style used for the title of the report."
 msgstr "O estilo usado para o título do relatório."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:495
 msgid "The style used for the subtitle of the report."
 msgstr "O estilo usado para o sub-título do relatório."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:509
 msgid "The style used for the footer of the report."
 msgstr "O estilo usado para o rodapé do relatório."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:524
 msgid "The style used for source title."
 msgstr "O estilo usado para o título da fonte."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:536
 msgid "The style used for source subtitle."
 msgstr "O estilo usado para o sub-título da fonte."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:548
 msgid "The style used for Source details."
 msgstr "O estilo usado para os detalhes da fonte."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:563
 msgid "The style used for citation title."
 msgstr "O estilo usado para o título da citação."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:575
 msgid "The style used for a column title."
 msgstr "O estilo usado para um título de coluna."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:591
 msgid "The style used for each section."
 msgstr "O estilo usado para cada secção."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:622
 msgid "The style used for event and person details."
 msgstr "O estilo usado para detalhes do evento e pessoais."

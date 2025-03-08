@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,124 +13,95 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: RelID/relation_tab.py:97 PhotoTaggingGramplet/PhotoTaggingGramplet.py:498
-msgid "_Select"
-msgstr "_Вибрати"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Replace existing references to the person being assigned without asking"
 msgstr "Замінити існуючі посилання на призначену особу без запиту"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:141
 msgid "Face detection"
 msgstr "Розпізнавання облич"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
 msgid "Minimum face width (px)"
 msgstr "Мінімальна ширина обличчя (пікс.)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:146
 msgid "Minimum face height (px)"
 msgstr "Мінімальна висота обличчя (пікс.)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:149
 msgid "Detect faces inside existing boxes"
 msgstr "Розпізнавати обличчя всередині існуючих рамок"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
 msgid "Sensitivity (1 min .. 20 max)"
 msgstr "Чутливість (1 min .. 20 max)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:291
 msgid "Add Person"
 msgstr "Додати Особу"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:292
 msgid "Clear Reference"
 msgstr "Очистити Посилання"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:293
 msgid "Remove Selection"
 msgstr "Видалити вибір"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:294
 msgid "Edit referenced Person"
 msgstr "Редагувати посилання на Особу"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:295
 msgid "Zoom In"
 msgstr "Збільшити"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:296
 msgid "Zoom Out"
 msgstr "Зменшити"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:299
 msgid "Detect faces"
 msgstr "Розпізнати обличчя"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:301
 msgid "Detect faces (OpenCV module required)"
 msgstr "Розпізнати обличчя (потрібен модуль OpenCV)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
 msgid "XMP Region Name"
 msgstr "Назва XMP регіону"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
 msgstr "Встановити як активну особу"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
+msgid "_Select"
+msgstr "_Вибрати"
+
 #, python-brace-format
 msgid "Replace to {0}"
 msgstr "Замінити на {0}"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
 msgid "Detecting faces..."
 msgstr "Розпізнавання облич..."
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
 msgid "Detection finished"
 msgstr "Розпізнавання завершено"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:955
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
 msgstr "Інший регіон цього зображення пов'язаний з {name}. Видалити його?"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:958
 #, python-brace-format
 msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr "{count} інші регіони цього зображення пов'язані з {name}. Видалити їх?"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1110
 #, python-format
 msgid "Male person|Dead at %s"
 msgstr "Чоловік|Помер у %s"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1112
 #, python-format
 msgid "Female person|Dead at %s"
 msgstr "Жінка|Померла у %s"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1114
 #, python-format
 msgid "Unknown gender person|Dead at %s"
 msgstr "Невідомої статі|Помер(ла) у %s"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
 msgid "Photo Tagging"
 msgstr "Позначення на фото"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
 msgid "Gramplet for tagging people in photos"
 msgstr "Грамплет для позначення людей на фотографіях"

@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,33 +13,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: HtmlView/htmlview.py:328
 msgid "HtmlView"
 msgstr "Перегляд Html"
 
-#: HtmlView/htmlview.py:495
 msgid "Go to the previous page in the history"
 msgstr "Перейти на попередню сторінку в історії"
 
-#: HtmlView/htmlview.py:503
 msgid "Go to the next page in the history"
 msgstr "Перейти на наступну сторінку в історії"
 
-#: HtmlView/htmlview.py:508
 msgid "_Refresh"
 msgstr "_Оновити"
 
-#: HtmlView/htmlview.py:511
 msgid "Stop and reload the page."
 msgstr "Зупинити та перезавантажити сторінку."
 
-#: HtmlView/htmlview.py:555
 msgid "Start page for the Html View"
 msgstr "Початкова сторінка для перегляду Html"
 
-#: HtmlView/htmlview.py:556
 msgid ""
 "Type a webpage address at the top, and hit the execute button to load a "
 "webpage in this page\n"
@@ -59,14 +44,11 @@ msgstr ""
 "<br>\n"
 "Наприклад: "
 
-#: HtmlView/htmlview.gpr.py:31
 msgid "Html View"
 msgstr "Html View"
 
-#: HtmlView/htmlview.gpr.py:32
 msgid "A view showing html pages embedded in Gramps"
 msgstr "Перегляд html-сторінок, вбудованих у Gramps"
 
-#: HtmlView/htmlview.gpr.py:40
 msgid "Web"
 msgstr "Веб"

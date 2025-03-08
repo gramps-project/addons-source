@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,93 +16,51 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr "Древо предков использующее LaTeX"
 
-#: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
 msgstr "Древо потомков использующее LaTeX"
 
-#: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
 msgstr "Древо бабушек и дедушек"
 
-#: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
 msgstr "Древо бабушек и дедушек использующее LaTeX"
 
-#: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
 msgstr "Древо песочные часы"
 
-#: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
 msgstr "Древо песочные часы использующее LaTeX"
 
-#: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
 msgstr "Древо для семьи в виде песочных часов"
 
-#: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Древо для семьи в виде песочных часов (использует LaTeX genealogytree)"
 
-#: GenealogyTree/gt_sandclock.py:235
 msgid "The center family for the report"
 msgstr "Главная семья для отчёта"
 
-#: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
 msgstr "Поколение вверх"
 
-#: GenealogyTree/gt_sandclock.py:242
 msgid "Generations down"
 msgstr "Поколение вниз"
 
-#: GenealogyTree/gt_sandclock.py:246
-#, fuzzy
-#| msgid "Include images"
-msgid "Include siblings"
-msgstr "Включать изображения"
-
-#: GenealogyTree/gt_sandclock.py:247
-#, fuzzy
-#| msgid "Enable trimming of ancestors."
-msgid "Include siblings of ancestors."
-msgstr "Включить скрытие предков."
-
-#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
-#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
 msgid "Include images"
 msgstr "Включать изображения"
 
-#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
-#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
 msgid "Include images of people in the nodes."
 msgstr "Включать изображения лиц."
 
-#: GenealogyTree/gt_grandparent.py:119
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
 msgstr "У %s нет бабушек и дедушек по обоим линиям, материнской и отцовской"
 
-#: GenealogyTree/gt_grandparent.py:227
 msgid "Grandparent family spacing"
 msgstr "Отступ от бабушек и дедушек"
 
-#: GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
 msgstr "Дополнительный отступ от бабушек и дедушек (мм)"
-
-#: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
-msgid "First spouse left"
-msgstr "справа на лево"
-
-#: GenealogyTree/gt_descendant.py:192
-msgid ""
-"Always put first of multiple spouses on the left. This can help reduce line-"
-"crossings with multiple marriages."
-msgstr ""

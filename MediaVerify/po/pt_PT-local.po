@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,100 +12,77 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
 msgstr "Ferramenta de verificação de multimédia"
 
-#: MediaVerify/MediaVerify.py:83
 msgid "Moved/Renamed Files"
 msgstr "Ficheiros movidos/renomeados"
 
-#: MediaVerify/MediaVerify.py:83
 msgid "Missing Files"
 msgstr "Ficheiros em falta"
 
-#: MediaVerify/MediaVerify.py:84
 msgid "Duplicate Files"
 msgstr "Ficheiros duplicados"
 
-#: MediaVerify/MediaVerify.py:84
 msgid "Extra Files"
 msgstr "Ficheiros extra"
 
-#: MediaVerify/MediaVerify.py:85
 msgid "No md5 Generated"
 msgstr "Sem md5 gerado"
 
-#: MediaVerify/MediaVerify.py:85
 msgid "Errors"
 msgstr "Erros"
 
-#: MediaVerify/MediaVerify.py:101
 msgid "Close the Media Verify Tool"
 msgstr "Fechar a ferramenta de verificação de multimédia"
 
-#: MediaVerify/MediaVerify.py:103
 msgid "Generate"
 msgstr "Gerar"
 
-#: MediaVerify/MediaVerify.py:104
 msgid "Generate md5 hashes for media objects"
 msgstr "Gerar assinaturas md5 para a multimédia"
 
-#: MediaVerify/MediaVerify.py:106
 msgid "Verify"
 msgstr "Verificar"
 
-#: MediaVerify/MediaVerify.py:107
 msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
 "Verificar caminhos multimédia e relatar ficheiros em falta, duplicados e "
 "adicionados"
 
-#: MediaVerify/MediaVerify.py:110
 msgid "Export"
 msgstr "Exportar"
 
-#: MediaVerify/MediaVerify.py:111
 msgid "Export the results to a text file"
 msgstr "Exportar os resultados para um ficheiro de texto"
 
-#: MediaVerify/MediaVerify.py:113
 msgid "Fix"
 msgstr "Reparar"
 
-#: MediaVerify/MediaVerify.py:114
 msgid "Fix media paths of moved and renamed files"
 msgstr "Reparar caminhos multimédia de ficheiros movidos/renomeados"
 
-#: MediaVerify/MediaVerify.py:132
 msgid "Verify Gramps media using md5 hashes"
 msgstr "Verificar multimédia usando assinaturas md5"
 
-#: MediaVerify/MediaVerify.py:143
 msgid "Files"
 msgstr "Ficheiros"
 
-#: MediaVerify/MediaVerify.py:195
 msgid "Export results to a text file"
 msgstr "Exportar resultados para um ficheiro de texto"
 
-#: MediaVerify/MediaVerify.py:218
 #, python-format
 msgid "Error when writing the report: %s"
 msgstr "Erro ao escrever o relatório: %s"
 
-#: MediaVerify/MediaVerify.py:259
 msgid "Generating media hashes"
 msgstr "A gerar assinaturas md5"
 
-#: MediaVerify/MediaVerify.py:261
 msgid "Set media hashes"
 msgstr "Definir assinaturas multimédia"
 
-#: MediaVerify/MediaVerify.py:296
 msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
@@ -118,26 +90,20 @@ msgstr ""
 "Caminho não definido. Tem de o definir nas preferências, \"Caminho base para "
 "caminhos multimédia relativos\"."
 
-#: MediaVerify/MediaVerify.py:307
 msgid "Finding files"
 msgstr "A procurar ficheiros"
 
-#: MediaVerify/MediaVerify.py:335
 msgid "Checking paths"
 msgstr "A verificar caminhos"
 
-#: MediaVerify/MediaVerify.py:388
 msgid "Fixing file paths"
 msgstr "A reparar caminhos"
 
-#: MediaVerify/MediaVerify.py:390
 msgid "Fix media paths"
 msgstr "Reparar caminhos"
 
-#: MediaVerify/MediaVerify.gpr.py:31
 msgid "Media Verify"
 msgstr "Verificar multimédia"
 
-#: MediaVerify/MediaVerify.gpr.py:32
 msgid "Verify that media is present in the correct path"
 msgstr "Verifica se a multimédia está presente no caminho correcto"

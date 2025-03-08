@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-22 17:04+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,117 +12,91 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
-#: GrampsWebSync/grampswebsync.py:210
 msgid "Gramps Web Sync"
 msgstr "Gramps-Web-Synchronisierung"
 
-#: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synchronisiert eine lokale Datenbank mit einer Gramps-Web-Instanz."
 
-#: GrampsWebSync/grampswebsync.py:264
 msgid "Your user does not have sufficient server permissions to use sync."
 msgstr "Dein Benutzer hat keine ausreichende Berechtigung, um Sync zu nutzen."
 
-#: GrampsWebSync/grampswebsync.py:268
 msgid "Fetching remote data..."
 msgstr "Lade Daten vom Server herunter..."
 
-#: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
 msgstr "Unerwarteter Fehler beim Anwenden der Änderungen."
 
-#: GrampsWebSync/grampswebsync.py:322
 msgid "Media files are in sync."
-msgstr "Mediendateien sind schon synchron."
+msgstr "Mediendateien sind bereits synchron."
 
-#: GrampsWebSync/grampswebsync.py:331
 #, python-format
 msgid "Successfully downloaded %s media files."
 msgstr "Erfolgreich heruntergeladen %s Mediendateien."
 
-#: GrampsWebSync/grampswebsync.py:334
 #, python-format
 msgid "Encountered %s errors during download."
 msgstr "Beim Herunterladen sind %s Fehler aufgetreten."
 
-#: GrampsWebSync/grampswebsync.py:340
 #, python-format
 msgid "Successfully uploaded %s media files."
 msgstr "%s Mediendateien erfolgreich hochgeladen."
 
-#: GrampsWebSync/grampswebsync.py:343
 #, python-format
 msgid "Encountered %s errors during upload."
 msgstr "Beim Hochladen sind %s Fehler aufgetreten."
 
-#: GrampsWebSync/grampswebsync.py:389 GrampsWebSync/grampswebsync.py:410
 msgid "Error accessing media object."
 msgstr "Fehler beim Zugriff auf das Medienobjekt."
 
-#: GrampsWebSync/grampswebsync.py:451
 msgid "Failed importing downloaded XML file."
 msgstr "Der Import der heruntergeladenen XML-Datei ist fehlgeschlagen."
 
-#: GrampsWebSync/grampswebsync.py:457
 msgid "Comparing local and remote data..."
 msgstr "Vergleiche lokale und entfernte Daten..."
 
-#: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
 msgstr "Server-Authorisierungsfehler."
 
-#: GrampsWebSync/grampswebsync.py:492
 msgid "Server authorization error: insufficient permissions."
 msgstr "Server-Authorisierungsfehler: unzureichende Berechtigungen."
 
-#: GrampsWebSync/grampswebsync.py:495
 msgid "Error: URL not found."
 msgstr "Fehler: URL nicht gefunden."
 
-#: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
 "Kann Änderungen nicht zum Server synchronisieren: Objekte wurden verändert."
 
-#: GrampsWebSync/grampswebsync.py:503
 #, python-format
 msgid "Error %s while connecting to server."
 msgstr "Fehler %s beim Zugriff auf den Server."
 
-#: GrampsWebSync/grampswebsync.py:506
 msgid "URL error while connecting to server."
 msgstr "URL-Fehler beim Verbinden zum Server."
 
-#: GrampsWebSync/grampswebsync.py:509
 msgid "Error while parsing response from server."
 msgstr "Fehler beim Verarbeiten der Serverantwort."
 
-#: GrampsWebSync/grampswebsync.py:537
 msgid "Continue without transport encryption?"
 msgstr "Mit unverschlüsselter Datenübertragung fortsetzen?"
 
-#: GrampsWebSync/grampswebsync.py:539
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
 "Du hast eine URL im http-Schema angegeben. Wenn du fortsetzt, wird dein "
-"Passwort unverschlüsselt übers Netzwerk übertragen. Nur für lokales Testen "
-"geeignet!"
+"Passwort unverschlüsselt über das Netzwerk übertragen. Nur für lokales "
+"Testen geeignet!"
 
-#: GrampsWebSync/grampswebsync.py:544
 msgid "Continue with HTTP"
 msgstr "Mit HTTP weitermachen"
 
-#: GrampsWebSync/grampswebsync.py:545
 msgid "Use HTTPS"
 msgstr "HTTPS verwenden"
 
-#: GrampsWebSync/grampswebsync.py:663
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -173,85 +128,64 @@ msgstr ""
 "Option, manuelle Änderungen vorzunehmen, zusammenführen möchtest, verwende "
 "stattdessen das Import-und-Zusammenführungs-Werkzeug."
 
-#: GrampsWebSync/grampswebsync.py:690
 msgid "Server URL: "
 msgstr "Server-URL: "
 
-#: GrampsWebSync/grampswebsync.py:774
 msgid "Bidirectional Synchronization"
 msgstr "Bidirektionale Synchronisation"
 
-#: GrampsWebSync/grampswebsync.py:783
 msgid "Reset remote to local"
-msgstr "Entfernt auf lokal zurücksetzen"
+msgstr "Remote auf lokal zurücksetzen"
 
-#: GrampsWebSync/grampswebsync.py:791
 msgid "Reset local to remote"
-msgstr "Lokal auf entfernt zurücksetzen"
+msgstr "Lokal auf remote zurücksetzen"
 
-#: GrampsWebSync/grampswebsync.py:799
 msgid "Merge"
 msgstr "Zusammenführen"
 
-#: GrampsWebSync/grampswebsync.py:824
 msgid "Local changes"
 msgstr "Lokale Änderungen"
 
-#: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
-#: GrampsWebSync/grampswebsync.py:834
 msgid "Modified"
 msgstr "Verändert"
 
-#: GrampsWebSync/grampswebsync.py:829
 msgid "Remote changes"
-msgstr "Entfernte Änderungen"
+msgstr "Remote-Änderungen"
 
-#: GrampsWebSync/grampswebsync.py:834
 msgid "Simultaneous changes"
 msgstr "Gleichzeitige Änderungen"
 
-#: GrampsWebSync/grampswebsync.py:891
 msgid "Fetching information about media files..."
 msgstr "Abrufen von Informationen über Mediendateien..."
 
-#: GrampsWebSync/grampswebsync.py:912
 msgid "Both trees are the same."
 msgstr "Beide Stammbäume sind identisch."
 
-#: GrampsWebSync/grampswebsync.py:918
 msgid "Applying changes to local database ..."
 msgstr "Wende Änderungen auf die lokale Datenbank an ..."
 
-#: GrampsWebSync/grampswebsync.py:920
 msgid "No changes to apply to local database."
 msgstr "Keine Änderungen an der lokalen Datenbank nötig."
 
-#: GrampsWebSync/grampswebsync.py:923
 msgid "Applying changes to remote database ..."
-msgstr "Wende Änderungen an der entfernten Datenbank an ..."
+msgstr "Wende Änderungen auf die Remote-Datenbank an ..."
 
-#: GrampsWebSync/grampswebsync.py:926
 msgid "No changes to apply to remote database."
-msgstr "Keine Änderungen an der entfernten Datenbank nötig."
+msgstr "Keine Änderungen an der Remote-Datenbank nötig."
 
-#: GrampsWebSync/grampswebsync.py:933
 msgid "Successfully applied changes to local database."
 msgstr "Änderungen an der lokalen Datenbank erfolgreich angewendet."
 
-#: GrampsWebSync/grampswebsync.py:962
 msgid "Missing locally"
 msgstr "Fehlt lokal"
 
-#: GrampsWebSync/grampswebsync.py:965
 msgid "Missing remotely"
 msgstr "Fehlt auf dem Server"
 
-#: GrampsWebSync/grampswebsync.py:1003
 #, python-format
 msgid "Downloading %s media file(s)"
 msgstr "Lade %s Mediendatei(en) herunter"
 
-#: GrampsWebSync/grampswebsync.py:1011
 #, python-format
 msgid "Uploading %s media file(s)"
 msgstr "Lade %s Mediendatei(en) hoch"

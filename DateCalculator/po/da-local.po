@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,64 +12,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: EditExifMetadata/editexifmetadata.py:215
-#: DateCalculator/DateCalculator.py:107
-msgid "Copy"
-msgstr "Kopier"
-
-#: DateCalculator/DateCalculator.py:86
-msgid "Reference Date or Date Range"
-msgstr ""
-
-#: DateCalculator/DateCalculator.py:86
-#, fuzzy
-#| msgid "Invalid date "
-msgid "a valid Gramps date"
-msgstr "Ugyldig dato "
-
-#: DateCalculator/DateCalculator.py:90
-msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
-
-#: DateCalculator/DateCalculator.py:92
-msgid ""
-"1. a Date\n"
-"2. a positive or negative number, representing years\n"
-"3. a positive or negative list of values, representing years, months, days"
-msgstr ""
-
-#: DateCalculator/DateCalculator.py:96
 msgid "Result"
 msgstr "Resultat"
 
-#: DateCalculator/DateCalculator.py:104
 msgid "Calculate"
 msgstr "Beregn"
 
-#: DateCalculator/DateCalculator.py:159
-msgid "Error: invalid date for first expression"
-msgstr ""
+msgid "Copy"
+msgstr "Kopier"
 
-#: DateCalculator/DateCalculator.py:169
-msgid "Error: invalid offset for second expression"
-msgstr ""
-
-#: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
-#: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
 msgid "Error: at least one expression must be a date"
 msgstr "Fejl: Mindst et udtryk skal være en dato"
 
-#: DateCalculator/DateCalculator.py:223
-msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
-
-#: DateCalculator/DateCalculator.gpr.py:22
-#: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
 msgstr "Datoberegner"
-
-#: DateCalculator/DateCalculator.gpr.py:23
-msgid "Perform date math calculations"
-msgstr ""

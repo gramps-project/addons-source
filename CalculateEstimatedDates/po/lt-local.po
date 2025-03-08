@@ -1,8 +1,3 @@
-# translation of lt.po to
-# GRAMPS
-# Copyright (C) YEAR ORGANIZATION, 2005.
-# Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
@@ -22,142 +17,92 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
 msgstr "Pasirinkite filtrą asmenų apribojimui"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
 msgstr "Apskaičiuotos  apytikrės datos"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
 msgstr "Šaltinis kurį išmesti ir/arba pridėti"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
 msgstr "Ištrinti anksčiau įkeltus įvykius, pastabas ir šaltinius"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
 "Pašalina apskaičiuotus įvykius, pastabas ir šaltinius; įvykdoma iškart  "
 "nuspaudus Vykdyti"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
 msgstr "Neįtraukti gimimo įvykių"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 msgid "Add birth events without dates"
 msgstr "Įtraukti gimimo įvykius be datos"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
 msgstr "Įdėti gimimo įvykius su data"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
 msgstr "Įdėti gimimo įvykius su ar be įvertinamos datos"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
 msgstr "Neįtraukti mirties įvykių"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
 msgstr "Įtraukti mirties įvykius be datų"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
 msgstr "Įtraukti mirties įvykius su data"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
 msgstr "Įdėti mirties įvykius su ar be įvertinamos datos"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
 msgstr "Vyriausias asmens amžius"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
 msgstr "Vyriausias amžius, kiek gali asmuo gyventi"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Didelis amžiaus skirtumas  tarp brolių/seserų"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
 msgstr "Metų vidurkis tarp dviejų kartų"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
 msgid "Estimated Dates"
 msgstr "Įvertintos Datos"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
 msgstr "Apytikslė (apie)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
 msgstr "Ekstremalumai (po ir prieš)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
 msgstr "Datos įvykiuose yra arba apie arba po/prieš"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
-msgid ""
-"The Calculate Estimated Dates Tool is used to add and remove birth and death "
-"events for people that are missing these events.\n"
-"\n"
-"To use:\n"
-"1. Go to the Options tab\n"
-"2. Check the [ ] Remove option to remove previous estimates\n"
-"3. Select the Add date options to date events with or without dates\n"
-"4. Click on Execute\n"
-"5. Select the people with which to add events\n"
-"6. Click on 'Add Selected Events' button to create\n"
-"\n"
-"NOTES: if you decide to make an event permanent, remove it from the Source. "
-"Otherwise, it will get removed the next time you automatically remove these "
-"events.\n"
-"\n"
-"You may have to run the tool repeatedly (without removing previous events) "
-"to add all of the events possible."
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 msgid "Calculate Estimated Dates"
 msgstr "Paskaičiuoti įvertinamas datas"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
 msgstr "Pasirinkite Viską"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
 msgstr "Pasirinkite Nieko"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
 msgstr "Pasirinkimo inversija"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
 msgstr "Pridėkite Pasirinktus Įvykius"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr ""
 "Pašalinti Įvykius, Pastabas ir Šaltinius, bei  pakartotinai  Pažymėti "
 "Duomenis"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
@@ -165,48 +110,34 @@ msgstr ""
 "Ar įsitikinę, kad norite pašalinti  prieš tai buvusius įvykius, pastabas ir "
 "šaltinius, bei pakartotinai pažymėti duomenis?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
 msgstr "Ištrinti ir Vėl Vykdyti Pažymėjimą"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
 msgstr "Iš Naujo Pasirinkite Datą"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
 msgstr "Ar tikrai norite iš naujo pažymėti datą?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
 msgid "Run Select Again"
 msgstr "Paleisti pasirinkimą dar kartą"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
 msgstr "Liudijimas"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
-msgid "Relative"
-msgstr ""
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
 msgstr "Apdorojimas...\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
 msgstr "Pašalinami seni įverčiai... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Išmetamas '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
 msgstr "padaryta!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 msgid ""
 "Selecting... \n"
 "\n"
@@ -214,72 +145,56 @@ msgstr ""
 "Pasirenkame...\n"
 "\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
 msgstr "Pridėti gimimo ir mirties įvykius"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
 msgstr "Pridėti gimimo įvykį"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
 msgid "Add death event"
 msgstr "Pridėti mirties įvykį"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
 msgstr "Nebuvo pridėta jokio  įvykio."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
 msgstr "Pasirenkame... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
 msgid "Adding events '%s'..."
 msgstr "Pridedami įvykiai '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr "Pridėtas gimimo įvykis remiantis %(evidence)s,  iš %(name)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #, python-format
 msgid "Added birth event based on %s"
 msgstr "pridėtas gimimo įvykis remiantis  %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
 msgstr "Įvertinta gimimo data"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr "Pridėtas mirties įvykis remiantis  %(evidence)s, iš %(person)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
 msgid "Added death event based on %s"
 msgstr "Pridėta mirties įvykis remiantis  %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
 msgstr "Įvertinta mirties data"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
 msgstr "Baigta! Siunčiama..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
 msgid "Added %d events."
 msgstr "Pridėta %d įvykių."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Įvertinta data"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Apskaičiuoja įvertintas  gimimo ir mirties datas."

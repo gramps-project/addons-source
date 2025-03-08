@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,71 +16,49 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: RemoveTagTool/RemoveTagTool.py:271
-msgid "INFO"
-msgstr "ИНФОРМАЦИЯ"
-
-#: DynamicWeb/dynamicweb.py:3052 RemoveTagTool/RemoveTagTool.py:124
-msgid "Persons"
-msgstr "Лица"
-
-#: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:89
-#: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
-msgid "General options"
-msgstr "Основные параметры"
-
-#: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
 msgstr "Для выполнения Инструменту требуется по крайней мере один тег."
 
-#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
 msgstr "ОШИБКА"
 
-#: RemoveTagTool/RemoveTagTool.py:86
 msgid "Add/Remove"
 msgstr "Добавить/Удалить"
 
-#: RemoveTagTool/RemoveTagTool.py:87
 msgid "Add or remove tags from objects."
 msgstr "Добавляйте или удаляйте теги с объектов."
 
-#: RemoveTagTool/RemoveTagTool.py:88
 msgid "Add Tags"
 msgstr "Добавить теги"
 
-#: RemoveTagTool/RemoveTagTool.py:88
 msgid "Remove Tags"
 msgstr "Удалить теги"
 
-#: RemoveTagTool/RemoveTagTool.py:96
+msgid "General options"
+msgstr "Основные параметры"
+
 msgid "Choose a category."
 msgstr "Выберите категорию."
 
-#: RemoveTagTool/RemoveTagTool.py:103
 msgid "Choose Tag"
 msgstr "Выберите тег"
 
-#: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
 msgstr "Выберите метку для удаления."
 
-#: RemoveTagTool/RemoveTagTool.py:140
+msgid "Persons"
+msgstr "Лица"
+
 msgid "Filter options"
 msgstr "Параметры фильтра"
 
-#: RemoveTagTool/RemoveTagTool.py:151
 #, python-format
 msgid "All %s"
 msgstr "Все %s"
 
-#: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
-#: RemoveTagTool/RemoveTagTool.gpr.py:25
 msgid "Add/Remove Tag Tool"
 msgstr "Инструмент добавления / удаления меток"
 
-#: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
 "and objects."
@@ -103,31 +66,27 @@ msgstr ""
 "Невозможно запустить инструмент. Пожалуйста, проверьте, есть ли в вашей базе "
 "теги, фильтры и объекты."
 
-#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
 msgid "WARNING"
 msgstr "ПРЕДУПРЕЖДЕНИЕ"
 
-#: RemoveTagTool/RemoveTagTool.py:234
 #, python-format
 msgid "No %s objects were found in database."
 msgstr "В базе данных не найдено %s объектов."
 
-#: RemoveTagTool/RemoveTagTool.py:249
 msgid "Process tags..."
 msgstr "Этикетки процесса..."
 
-#: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
 msgstr "добавленной"
 
-#: RemoveTagTool/RemoveTagTool.py:268
 msgid "removed"
 msgstr "удалено"
 
-#: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Тег '{}' был {} для {} {} объектов.\n"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "INFO"
+msgstr "ИНФОРМАЦИЯ"
+
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr "Добавить или удалить теги для групп людей, событий и т. Д."

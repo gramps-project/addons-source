@@ -1,28 +1,9 @@
-# translation of fi.po to Finnish
-# GRAMPS
-# Copyright (C) YEAR ORGANIZATION.
-#
-# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
-# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
-# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2025.
-# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
-# Niemelä <niememat@gmail.com>, 2017, 2018.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"POT-Creation-Date: 2025-02-23 12:35-0600\n"
+"PO-Revision-Date: 2025-02-20 13:28+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -34,49 +15,33 @@ msgstr ""
 "X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "Laajennusten parannettu hallinta"
 
-#: PluginManager/PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr "Lisäosien/Laajennusten hallinta, jolla on useita lisäominaisuuksia"
 
-#: PluginManager/PluginManager.py:84
 msgid "Plugin Manager - Enhanced"
 msgstr "Laajennusten hallinta - parannettu"
 
-#: PluginManager/PluginManager.py:154
-msgid ""
-"Enter search words to filter the addons.\n"
-"All the words must be present somewhere in the row or\n"
-"the addon filename to be included in the search.\n"
-"Word case and order is ignored."
-msgstr ""
-
-#: PluginManager/PluginManager.py:158
 msgid "Search..."
 msgstr "Hae..."
 
-#: PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Käynnistää uudelleen..."
 
-#: PluginManager/PluginManager.py:217
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
 "Käynnistä Gramps uudelleen, jotta laajennusten muutokset voidaan "
 "turvallisesti suorittaa."
 
-#: PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
 "Virhe poistettaessa '% s' -hakemistoa, asennuksen poisto voi olla "
 "epäonnistunut"
 
-#: PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -84,46 +49,35 @@ msgstr ""
 "'*' kohteita toimittavat 3. osapuolen kirjoittajat,\n"
 "<s>yliviivatut</s> kohteet on piilotettu"
 
-#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
 msgid "Hide"
 msgstr "Piilota"
 
-#: PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "Näytä piilotetut kohteet"
 
-#: PluginManager/PluginManager.py:438
 msgid "Show Built-in items"
 msgstr "Näytä sisäänrakennetut kohteet"
 
-#: PluginManager/PluginManager.py:445
 msgid "* indicates 3rd party addon"
 msgstr "* ilmaisee 3. osapuolen laajennukset"
 
-#: PluginManager/PluginManager.py:450
 msgid "Plugins"
 msgstr "Laajennukset"
 
-#: PluginManager/PluginManager.py:528
 msgid "Unhide"
 msgstr "Näytä"
 
-#: PluginManager/PluginManager.py:547
 msgid "Uninstall"
 msgstr "Poista asennus"
 
-#: PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Saatavissa"
 
-#: PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr "Sisäänrakennettu"
 
-#: PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr "*Asennettu"
 
-#: PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Päivitys saatavilla"

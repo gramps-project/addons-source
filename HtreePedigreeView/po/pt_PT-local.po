@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,44 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:82
-#: HtreePedigreeView/HtreePedigreeView.py:93
-msgid "short for born|b."
-msgstr "n."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:83
-#: HtreePedigreeView/HtreePedigreeView.py:94
-msgid "short for died|d."
-msgstr "f."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:84
-#: HtreePedigreeView/HtreePedigreeView.py:95
-msgid "short for baptized|bap."
-msgstr "bap."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:85
-#: HtreePedigreeView/HtreePedigreeView.py:96
-msgid "short for christened|chr."
-msgstr "bap."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:86
-#: HtreePedigreeView/HtreePedigreeView.py:97
-msgid "short for buried|bur."
-msgstr "in."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:87
-#: HtreePedigreeView/HtreePedigreeView.py:98
-msgid "short for cremated|crem."
-msgstr "crem."
-
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:34
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:47
 msgid "H-Tree Pedigree"
 msgstr "Costados H-Tree"
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:37
 msgid ""
 "The view shows a space-efficient pedigree with ancestors of the selected "
 "person"
@@ -62,10 +24,26 @@ msgstr ""
 "Mostra um espaço de costados eficiente com os antepassados do indivíduo "
 "seleccionado"
 
-#: HtreePedigreeView/HtreePedigreeView.py:543
+msgid "short for born|b."
+msgstr "n."
+
+msgid "short for died|d."
+msgstr "f."
+
+msgid "short for baptized|bap."
+msgstr "bap."
+
+msgid "short for christened|chr."
+msgstr "bap."
+
+msgid "short for buried|bur."
+msgstr "in."
+
+msgid "short for cremated|crem."
+msgstr "crem."
+
 msgid "H-tree Pedigree View"
 msgstr "Costados H-Tree"
 
-#: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
 msgstr "Acerca do H-Tree"

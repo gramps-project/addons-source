@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,7 +16,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: TMGimporter/importtmg.py:89
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
@@ -62,7 +46,6 @@ msgstr ""
 "Дополнительная информация:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.py:110
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supportedby the TMG Importer "
@@ -77,7 +60,6 @@ msgstr ""
 "файл контроля версий для TMG 2.0 - TMG 4.0. Дополнительная информация: "
 "%(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.py:131
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supportedby the TMG Importer "
@@ -92,29 +74,21 @@ msgstr ""
 "файл контроля версий для TMG 1.2 и более ранних. Дополнительная информация: "
 "%(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.gpr.py:49
 msgid "TMG Project Backup"
 msgstr "Резервная копия проекта TMG"
 
-#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
-#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
 msgid "Import TMG project files"
 msgstr "Импорт файлов проекта TMG"
 
-#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
-#: TMGimporter/importtmg.gpr.py:95
 msgid "TMG Unsupported"
 msgstr "TMG не поддерживается"
 
-#: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"
 msgstr "TMG импорт"
 
-#: TMGimporter/libtmg.glade:31
 msgid "Unreleased Addon - Work In Progress"
 msgstr "Нестабильное дополнение - Находится в разработке"
 
-#: TMGimporter/libtmg.glade:51
 msgid ""
 "Wholly Genes - The Master Genealogist (TMG) Importer\n"
 "\n"
@@ -124,10 +98,8 @@ msgstr ""
 "\n"
 "Выберите набор данных TMG для импорта."
 
-#: TMGimporter/libtmg.glade:88
 msgid "Data Set Name"
 msgstr "Название набора данных"
 
-#: TMGimporter/libtmg.glade:148
 msgid "_Import TMG Data Set"
 msgstr "_Импорт данных TMG"

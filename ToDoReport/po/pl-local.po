@@ -1,11 +1,3 @@
-# translation of pl.po to
-# Copyright (C) 2002-2003, 2006, 2007 Free Software Foundation, Inc.
-#
-# Piotr Czubaszek <pioterus(at)gmail(dot)com>, 2007.
-# Piotr Czubaszek <piotrek@gmail.com>, 2007.
-# Łukasz Rymarczyk <yenidai(at)poczta(dot)onet(dot)pl>, 2008, 2009.
-# Przemek Wiech <pwiech@gmail.com>, 2019.
-# Michał Stojek <stojex@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
@@ -25,132 +17,64 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
-#: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
-msgid "The style used for the title of the page."
-msgstr "Styl używany do tytułu strony."
-
-#: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
 msgstr "TR-Tytuł"
 
-#: ToDoReport/TodoReport.py:111
 #, python-format
 msgid "Report on Notes Tagged '%s'"
 msgstr "Nie udało się utworzyć raportu '%s'"
 
-#: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
 msgid "TR-Heading"
 msgstr "TR-Nagłówek"
 
-#: ToDoReport/TodoReport.py:243
 msgid "NoteTable"
 msgstr "UwagTabela"
 
-#: ToDoReport/TodoReport.py:243 ToDoReport/TodoReport.py:962
 msgid "TR-Table"
 msgstr "TR-Tabeli"
 
-#: ToDoReport/TodoReport.py:247 ToDoReport/TodoReport.py:253
-#: ToDoReport/TodoReport.py:267 ToDoReport/TodoReport.py:273
-#: ToDoReport/TodoReport.py:302 ToDoReport/TodoReport.py:310
-#: ToDoReport/TodoReport.py:323 ToDoReport/TodoReport.py:329
-#: ToDoReport/TodoReport.py:347 ToDoReport/TodoReport.py:353
-#: ToDoReport/TodoReport.py:363 ToDoReport/TodoReport.py:373
-#: ToDoReport/TodoReport.py:392 ToDoReport/TodoReport.py:398
-#: ToDoReport/TodoReport.py:410 ToDoReport/TodoReport.py:421
-#: ToDoReport/TodoReport.py:437 ToDoReport/TodoReport.py:444
-#: ToDoReport/TodoReport.py:458 ToDoReport/TodoReport.py:469
-#: ToDoReport/TodoReport.py:474 ToDoReport/TodoReport.py:480
-#: ToDoReport/TodoReport.py:490 ToDoReport/TodoReport.py:512
-#: ToDoReport/TodoReport.py:518 ToDoReport/TodoReport.py:535
-#: ToDoReport/TodoReport.py:541 ToDoReport/TodoReport.py:547
-#: ToDoReport/TodoReport.py:564 ToDoReport/TodoReport.py:570
-#: ToDoReport/TodoReport.py:576 ToDoReport/TodoReport.py:582
-#: ToDoReport/TodoReport.py:599 ToDoReport/TodoReport.py:607
-#: ToDoReport/TodoReport.py:613 ToDoReport/TodoReport.py:619
-#: ToDoReport/TodoReport.py:636 ToDoReport/TodoReport.py:642
-#: ToDoReport/TodoReport.py:648 ToDoReport/TodoReport.py:654
-#: ToDoReport/TodoReport.py:678 ToDoReport/TodoReport.py:683
-#: ToDoReport/TodoReport.py:689 ToDoReport/TodoReport.py:947
 msgid "TR-TableCell"
 msgstr "TR-KomórkaTabeli"
 
-#: ToDoReport/TodoReport.py:248 ToDoReport/TodoReport.py:254
-#: ToDoReport/TodoReport.py:935
 msgid "TR-Normal-Bold"
 msgstr "TR-Normalny-Pogrubiony"
 
-#: ToDoReport/TodoReport.py:268 ToDoReport/TodoReport.py:285
-#: ToDoReport/TodoReport.py:303 ToDoReport/TodoReport.py:311
-#: ToDoReport/TodoReport.py:324 ToDoReport/TodoReport.py:330
-#: ToDoReport/TodoReport.py:348 ToDoReport/TodoReport.py:354
-#: ToDoReport/TodoReport.py:364 ToDoReport/TodoReport.py:374
-#: ToDoReport/TodoReport.py:393 ToDoReport/TodoReport.py:399
-#: ToDoReport/TodoReport.py:411 ToDoReport/TodoReport.py:422
-#: ToDoReport/TodoReport.py:438 ToDoReport/TodoReport.py:445
-#: ToDoReport/TodoReport.py:459 ToDoReport/TodoReport.py:470
-#: ToDoReport/TodoReport.py:475 ToDoReport/TodoReport.py:481
-#: ToDoReport/TodoReport.py:491 ToDoReport/TodoReport.py:513
-#: ToDoReport/TodoReport.py:519 ToDoReport/TodoReport.py:536
-#: ToDoReport/TodoReport.py:542 ToDoReport/TodoReport.py:548
-#: ToDoReport/TodoReport.py:565 ToDoReport/TodoReport.py:571
-#: ToDoReport/TodoReport.py:577 ToDoReport/TodoReport.py:583
-#: ToDoReport/TodoReport.py:600 ToDoReport/TodoReport.py:608
-#: ToDoReport/TodoReport.py:614 ToDoReport/TodoReport.py:620
-#: ToDoReport/TodoReport.py:637 ToDoReport/TodoReport.py:643
-#: ToDoReport/TodoReport.py:649 ToDoReport/TodoReport.py:679
-#: ToDoReport/TodoReport.py:684 ToDoReport/TodoReport.py:690
-#: ToDoReport/TodoReport.py:924
 msgid "TR-Normal"
 msgstr "TR-Normalny"
 
-#: ToDoReport/TodoReport.py:275 ToDoReport/TodoReport.py:942
 msgid "TR-Note"
 msgstr "TR-Uwaga"
 
-#: ToDoReport/TodoReport.py:284 ToDoReport/TodoReport.py:952
 msgid "TR-BorderCell"
 msgstr "TR-KomórkaGraniczna"
 
-#: ToDoReport/TodoReport.py:405
 msgid "date: "
 msgstr "data: "
 
-#: ToDoReport/TodoReport.py:417
 msgid "place: "
 msgstr "miejsce: "
 
-#: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Name Type"
-msgid "Note Type"
-msgstr "Typ nazwiska"
-
-#: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
 msgstr "Grupuj według typu odwołania"
 
-#: ToDoReport/TodoReport.py:886
 msgid "Group notes by Family, Person, Place, etc."
 msgstr "Grupuj notatki według rodziny, osoby, miejsca itp."
 
-#: ToDoReport/TodoReport.py:946
+msgid "The style used for the title of the page."
+msgstr "Styl używany do tytułu strony."
+
 msgid "The basic style used for the table cell display."
 msgstr "Podstawowy styl używany do wyświetlania komórek tabeli."
 
-#: ToDoReport/TodoReport.py:951
 msgid "The basic style used for the table border cell display."
 msgstr "Podstawowy styl używany do wyświetlania komórek obramowania tabeli."
 
-#: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "Podstawowy styl używany do wyświetlania tabeli."
 
-#: ToDoReport/TodoReport.gpr.py:25
 msgid "Todo Report"
 msgstr "Raport do zrobienia"
 
-#: ToDoReport/TodoReport.gpr.py:27
 msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."

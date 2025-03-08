@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,73 +12,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: RemoveTagTool/RemoveTagTool.py:271
-msgid "INFO"
-msgstr "INFO"
-
-#: DynamicWeb/dynamicweb.py:3052 RemoveTagTool/RemoveTagTool.py:124
-msgid "Persons"
-msgstr "Personer"
-
-#: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:89
-#: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
-msgid "General options"
-msgstr "Standard tilvalg"
-
-#: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
 msgstr "Værktøjet skal have mindst en mærkat for at udføres."
 
-#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
 msgstr "FEJL"
 
-#: RemoveTagTool/RemoveTagTool.py:86
 msgid "Add/Remove"
 msgstr "Tilføj/Fjern"
 
-#: RemoveTagTool/RemoveTagTool.py:87
 msgid "Add or remove tags from objects."
 msgstr "Tilføj eller fjern mærkater fra objekter."
 
-#: RemoveTagTool/RemoveTagTool.py:88
 msgid "Add Tags"
 msgstr "Tilføj mærkater"
 
-#: RemoveTagTool/RemoveTagTool.py:88
 msgid "Remove Tags"
 msgstr "Fjern mærkater"
 
-#: RemoveTagTool/RemoveTagTool.py:96
+msgid "General options"
+msgstr "Standard tilvalg"
+
 msgid "Choose a category."
 msgstr "Vælg en kategori."
 
-#: RemoveTagTool/RemoveTagTool.py:103
 msgid "Choose Tag"
 msgstr "Vælg mærkat"
 
-#: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
 msgstr "Vælg en mærkat der skal fjernes."
 
-#: RemoveTagTool/RemoveTagTool.py:140
+msgid "Persons"
+msgstr "Personer"
+
 msgid "Filter options"
 msgstr "Filter tilvalg"
 
-#: RemoveTagTool/RemoveTagTool.py:151
 #, python-format
 msgid "All %s"
 msgstr "Alle %s"
 
-#: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
-#: RemoveTagTool/RemoveTagTool.gpr.py:25
 msgid "Add/Remove Tag Tool"
 msgstr "Tilføj/Fjern mærkat værktøj"
 
-#: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
 "and objects."
@@ -93,31 +64,27 @@ msgstr ""
 "Kan ikke udføre værktøjet. Kontroller venligst at databasen indeholder "
 "mærkater, filtre og objeter."
 
-#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
 msgid "WARNING"
 msgstr "ADVARSEL"
 
-#: RemoveTagTool/RemoveTagTool.py:234
 #, python-format
 msgid "No %s objects were found in database."
 msgstr "Ingen %s objekter blev fundet i databasen."
 
-#: RemoveTagTool/RemoveTagTool.py:249
 msgid "Process tags..."
 msgstr "Behandler mærkater..."
 
-#: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
 msgstr "tilføjet"
 
-#: RemoveTagTool/RemoveTagTool.py:268
 msgid "removed"
 msgstr "fjernet"
 
-#: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Mærkat '{}' blev {} til {} {} objekter.\n"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "INFO"
+msgstr "INFO"
+
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr "Tilføj eller fjern mærkat fra grupper af personer, hændelser o.s.v."

@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,74 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
-msgid "Export"
-msgstr "Exportar"
-
-#: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
-msgid "Export the results to a text file"
-msgstr "Exportar os resultados para um ficheiro de texto"
-
-#: MediaVerify/MediaVerify.py:195 NoteCleanup/NoteCleanup.py:323
-msgid "Export results to a text file"
-msgstr "Exportar resultados para um ficheiro de texto"
-
-#: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
-#, python-format
-msgid "Error when writing the report: %s"
-msgstr "Erro ao escrever o relatório: %s"
-
-#: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
-msgid "Search"
-msgstr "Procurar"
-
-#: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
 msgstr "Limpeza de notas"
 
-#: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
 msgstr "Limpa notas que contêm marcação HTML"
 
-#: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
 msgstr "Ferramenta de limpeza de notas"
 
-#: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
 msgstr "Notas limpas"
 
-#: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
 msgstr "Só ligações"
 
-#: NoteCleanup/NoteCleanup.py:99
 msgid "Issues"
 msgstr "Problemas"
 
-#: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
 msgstr "Fechar a ferramenta de limpeza"
 
-#: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
 msgstr "Gravar tudo"
 
-#: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
 msgstr "Gravar todas as alterações"
 
-#: NoteCleanup/NoteCleanup.py:127
+msgid "Search"
+msgstr "Procurar"
+
 msgid "Search for Untidy Notes"
 msgstr "Procurar notas não limpas"
 
-#: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
 msgstr "Gerar notas de teste"
 
-#: NoteCleanup/NoteCleanup.py:131
 msgid ""
 "Generate Test notes in range N99996-N99999.\n"
 "These are added to your database, so you may want to work with a test "
@@ -94,7 +59,12 @@ msgstr ""
 "Serão adicionadas à base de dados, portanto poderá querer usar uma base de "
 "dados de teste ou eliminá-las depois."
 
-#: NoteCleanup/NoteCleanup.py:181
+msgid "Export"
+msgstr "Exportar"
+
+msgid "Export the results to a text file"
+msgstr "Exportar os resultados para um ficheiro de texto"
+
 msgid ""
 "Please back up your database before running this tool.\n"
 "\n"
@@ -109,19 +79,22 @@ msgstr ""
 "Quando terminar, clique em Gravar tudo para gravar as alterações.\n"
 "Pode exportar uma lista das notas que foram encontradas."
 
-#: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
 msgstr "Limpar notas"
 
-#: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
 msgstr "Limpar notas de teste"
 
-#: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
 msgstr "Adicionar nota de teste"
 
-#: NoteCleanup/NoteCleanup.py:383
+msgid "Export results to a text file"
+msgstr "Exportar resultados para um ficheiro de texto"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Erro ao escrever o relatório: %s"
+
 msgid ""
 "\n"
 "\n"
@@ -131,7 +104,6 @@ msgstr ""
 "\n"
 "Notas seleccionadas à esquerda são mostradas ANTES da limpeza nesta caixa."
 
-#: NoteCleanup/NoteCleanup.py:386
 msgid ""
 "\n"
 "\n"
@@ -145,14 +117,11 @@ msgstr ""
 "Se quiser fazer alterações, pode fazê-las aqui e usar os controlos de estilo "
 "na barra de ferramentas acima."
 
-#: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
 msgstr "A gravar notas"
 
-#: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
 msgstr "A gravar notas limpas"
 
-#: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
 msgstr "A analisar notas"

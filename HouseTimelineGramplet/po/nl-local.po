@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,45 +12,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: HouseTimelineGramplet/housetimeline.gpr.py:4
-#: HouseTimelineGramplet/housetimeline.gpr.py:15
 msgid "House Timeline"
 msgstr "Huistijdlijn"
 
-#: HouseTimelineGramplet/housetimeline.gpr.py:5
 msgid "Lists the Residents of an Address by Timeline"
 msgstr "Geeft de bewoners van een adres per tijdlijn weer"
 
-#: HouseTimelineGramplet/housetimeline.py:51
-#: HouseTimelineGramplet/housetimeline.py:58
 msgid "House Icon Style"
 msgstr "Huis pictogramstijl"
 
-#: HouseTimelineGramplet/housetimeline.py:61
 msgid "Unicode"
 msgstr "Unicode"
 
-#: HouseTimelineGramplet/housetimeline.py:90
 msgid ""
 "There are no individuals with Address data. Please add Address data to "
 "people."
 msgstr ""
 "Er zijn geen personen met adresgegevens. Voeg adresgegevens toe aan personen."
 
-#: HouseTimelineGramplet/housetimeline.py:129
 msgid "Time In Family"
 msgstr "Tijd in gezin"
 
-#: HouseTimelineGramplet/housetimeline.py:130
 msgid "First Resident"
 msgstr "Eerste bewoner"
 
-#: HouseTimelineGramplet/housetimeline.py:131
 msgid "Last Resident"
 msgstr "Laatste bewoner"
 
-#: HouseTimelineGramplet/housetimeline.py:134
 msgid "Total Known Residents"
 msgstr "Totaal aantal bekende bewoners"

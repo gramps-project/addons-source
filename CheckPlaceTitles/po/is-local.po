@@ -1,14 +1,8 @@
-# translation of gramps-is.po to Icelandic
-# íslenskun Gramps ættfræðiforritsins
-# Copyright (C) Icelandic translators of Gramps
-# This file is distributed under the same license as the GRAMPS package.
-#
-# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
 "PO-Revision-Date: 2025-02-09 11:16+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <https://hosted.weblate.org/projects/gramps-project/"
@@ -20,62 +14,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
-msgid "Checking Place Titles"
-msgstr ""
-
-#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
 msgstr "Leita að sviðum staða"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
-msgid "Check Place Titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:30
-msgid "Check place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:71
-msgid "Check Place title"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
 msgstr "Mismunur"
 
-#: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr "Engin þörf á breytingum"
 
-#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr "Engin þörf á breytingum."
 
-#: CheckPlaceTitles/checkplacetitles.py:187
-msgid "Legacy place"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:201
-msgid "Modify Place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr "Staðaheiti"
 
-#: CheckPlaceTitles/checkplacetitles.glade:56
-msgid "Remove content of place title field if it does not match"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:74
-msgid "Copy content of place title field to a new note."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:91
-msgid "Attach a tag on selected places."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
 msgstr "dálkur"

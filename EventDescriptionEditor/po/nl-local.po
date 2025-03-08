@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,41 +12,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
-#: EventDescriptionEditor/EventDescriptionEditor.py:139
-msgid "Find"
-msgstr "Vind"
-
-#: EventDescriptionEditor/EventDescriptionEditor.py:52
-#: EventDescriptionEditor/EventDescriptionEditor.py:64
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 msgid "Event Description Editor"
 msgstr "Editor voor Gebeurtenisbeschrijvingen"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
 msgstr "Zoek deeltekenreeks..."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
 msgid "INFO"
 msgstr "INFO"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
 msgid "%s event descriptions of %s events were changed."
 msgstr "%s gebeurtenisbeschrijvingen van %s gebeurtenissen zijn gewijzigd."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:142
+msgid "Find"
+msgstr "Vind"
+
 msgid "Replace"
 msgstr "Vervangen"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
 msgstr "Vervang alleen het zinsdeel"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:146
 msgid ""
 "If True only the substring will be replaced, otherwise the whole description "
 "will be deleted and replaced by the new one."
@@ -64,15 +43,12 @@ msgstr ""
 "Indien True wordt alleen de deeltekenreeks vervangen, anders wordt de hele "
 "beschrijving verwijderd en vervangen door de nieuwe."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:151
 msgid "Allow regex"
 msgstr "Regex toestaan"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
 msgstr "Sta reguliere expressies toe."
 
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
 "A tool to find and replace a string in event description of multiple events."
 msgstr ""

@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,104 +13,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: AncestorFill/AncestorFill.py:361
-#: DetDescendantReport-images/detdescendantreporti.py:1252
-msgid "The style used for the title of the page."
-msgstr "Stil za naslov stranice."
-
-#: DynamicWeb/dynamicweb.py:1737
-#: DetDescendantReport-images/detdescendantreporti.py:940
-#, python-format
-msgid "%(type)s: %(value)s"
-msgstr "%(type)s: %(value)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
-#: DetDescendantReport-images/detdescendantreporti.py:454
-#, python-format
-msgid "%(date)s, %(place)s"
-msgstr "%(date)s, %(place)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:820
-#: DescendantBooks/DetailedDescendantBookReport.py:864
-#: DetDescendantReport-images/detdescendantreporti.py:457
-#, python-format
-msgid "%(date)s"
-msgstr "%(date)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:822
-#: DescendantBooks/DetailedDescendantBookReport.py:866
-#: DetDescendantReport-images/detdescendantreporti.py:459
-#, python-format
-msgid "%(place)s"
-msgstr "%(place)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1237
-#: DetDescendantReport-images/detdescendantreporti.py:811
-#, python-format
-msgid "%(name_kind)s: %(name)s%(endnotes)s"
-msgstr "%(name_kind)s: %(name)s%(endnotes)s"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1405
-#: DetDescendantReport-images/detdescendantreporti.py:1147
-msgid "List children"
-msgstr "Popiši djecu"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1422
-#: DetDescendantReport-images/detdescendantreporti.py:1164
-msgid "Add descendant reference in child list"
-msgstr "Dodaj reference potomaka u popisu djece"
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1570
-#: DetDescendantReport-images/detdescendantreporti.py:1282
-msgid "The style used for the children list."
-msgstr "Stil za popis djece."
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1597
-#: DetDescendantReport-images/detdescendantreporti.py:1305
-msgid "The style used for the first personal entry."
-msgstr "Stil za prvi osobni unos."
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1607
-#: DetDescendantReport-images/detdescendantreporti.py:1315
-msgid "The style used for the More About header and for headers of mates."
-msgstr "Stil za „Više o”-zaglavlje i zaglavlje partnera."
-
-#: DescendantBooks/DetailedDescendantBookReport.py:1618
-#: DetDescendantReport-images/detdescendantreporti.py:1326
-msgid "The style used for additional detail data."
-msgstr "Stil za dodatne detaljne podatke."
-
-#: DetDescendantReport-images/detdescendantreport.gpr.py:4
 msgid "Detailed Descendant Report With All Images"
 msgstr "Detaljni izvještaj o potomcima sa svim slikama"
 
-#: DetDescendantReport-images/detdescendantreport.gpr.py:6
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
 msgstr ""
 "Stvara detaljan izvještaj o potomcima sa svim slikama, te opcionalno s "
 "popisom zadataka."
 
-#: DetDescendantReport-images/detdescendantreporti.py:471
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
 #, python-format
 msgid "%(event_name)s: %(event_text)s"
 msgstr "%(event_name)s: %(event_text)s"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1177
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+msgid "List children"
+msgstr "Popiši djecu"
+
+msgid "Add descendant reference in child list"
+msgstr "Dodaj reference potomaka u popisu djece"
+
 msgid "Include TODO notes"
 msgstr "Uključi zadatke"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1178
 msgid "Whether to include TODO notes."
 msgstr "Da li uključiti zadatke."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1351
+msgid "The style used for the title of the page."
+msgstr "Stil za naslov stranice."
+
+msgid "The style used for the children list."
+msgstr "Stil za popis djece."
+
+msgid "The style used for the first personal entry."
+msgstr "Stil za prvi osobni unos."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "Stil za „Više o”-zaglavlje i zaglavlje partnera."
+
+msgid "The style used for additional detail data."
+msgstr "Stil za dodatne detaljne podatke."
+
 msgid "The style used for image labels."
 msgstr "Sitl korišten za oznake slika."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1364
 msgid "A style used for image captions."
 msgstr "Sitl korišten za podnaslove slika."

@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,76 +13,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: AvatarGenerator/AvatarGenerator.py:86
-msgid "Select filter to restrict people"
-msgstr "Odaberi filtar za ograničavanje osoba"
-
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: AvatarGenerator/AvatarGenerator.py:211
-#: AvatarGenerator/AvatarGenerator.py:219
-#: AvatarGenerator/AvatarGenerator.py:316
-#: AvatarGenerator/AvatarGenerator.py:320
-msgid "INFO"
-msgstr "INFORMACIJE"
-
-#: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
 msgstr "Generator avatara"
 
-#: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
 msgstr "Alat za dodavanje avatara u rodoslov"
 
-#: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
 msgstr "prikaz pojedinačnih slika"
 
-#: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
 msgstr "Odaberi broj slika koje želiš koristiti."
 
-#: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
 msgstr "Slika za osobe nepoznatog spola."
 
-#: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
 msgstr "Slika za muške osobe."
 
-#: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
 msgstr "Slika za ženske osobe"
 
-#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Select filter to restrict people"
+msgstr "Odaberi filtar za ograničavanje osoba"
+
 msgid "Remove images from people"
 msgstr "Ukloni slike osoba"
 
-#: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
 msgstr "Ukloni odabrane slike."
 
-#: AvatarGenerator/AvatarGenerator.py:134
-#: AvatarGenerator/AvatarGenerator.py:183
-#: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
 msgstr "Generator avatara"
 
-#: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
 msgstr "Ukloni avatare …"
 
-#: AvatarGenerator/AvatarGenerator.py:211
+msgid "INFO"
+msgstr "INFORMACIJE"
+
 msgid "No media was removed."
 msgstr "Nijedan medij nije uklonjen."
 
-#: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
 msgstr "Broj uklonjenih referenca na medije: {}, broj zahvaćenih osoba: {}."
 
-#: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -97,19 +67,14 @@ msgstr ""
 "\n"
 "Broj grešaka: {}, ali su zanemarene."
 
-#: AvatarGenerator/AvatarGenerator.py:263
-#: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
 msgstr "Dodaj avatare …"
 
-#: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
 msgstr "Broj uspješno dodanih avatara: {}."
 
-#: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
 msgstr "Nije bilo avatara za dodavanje. "
 
-#: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
 msgstr "Sve osobe su već imale jedan."

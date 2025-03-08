@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,33 +13,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: QuiltView/QuiltView.gpr.py:23 QuiltView/QuiltView.gpr.py:34
 msgid "Quilt Chart"
 msgstr "Poplunasti dijagram"
 
-#: QuiltView/QuiltView.gpr.py:25
 msgid "The view shows a quilt chart visualisation of a family tree"
 msgstr "Prikazuje dijagram rodoslova u obliku popluna"
 
-#: QuiltView/QuiltView.py:223
 msgid "Quilt chart"
 msgstr "Poplunasti dijagram"
 
-#: QuiltView/QuiltView.py:307
 msgid "Select the name for which you want to see."
 msgstr "Odaberi ime koje želiš vidjeti.."
 
-#: QuiltView/QuiltView.py:314
 msgid "Clear the entry field in the name selection box."
 msgstr "Ukloni unošeno polje u izborniku imena."
 
-#: QuiltView/QuiltView.py:319
 msgid "Nothing is selected"
 msgstr "Ništa nije odabrano"
 
-#: QuiltView/QuiltView.py:572
 #, python-format
 msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
@@ -55,46 +41,36 @@ msgstr ""
 "Imaš %(filter)d filtriranih osoba, %(count)d osoba prikazanih u stablu i "
 "%(total)d osoba u tvojoj bazi podataka."
 
-#: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
 msgstr "Učitavanje osoba"
 
-#: QuiltView/QuiltView.py:663
 msgid "Loading the data"
 msgstr "Učitavanje podataka"
 
-#: QuiltView/QuiltView.py:1053
 msgid "About Quilt View"
 msgstr "O poplunastom dijagramu"
 
-#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
 msgid "Edit tags"
 msgstr "Uredi oznake"
 
-#: QuiltView/QuiltView.py:1500
 msgid "Set as home person"
 msgstr "Postavi kao početnu osobu"
 
-#: QuiltView/QuiltView.py:1656
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Dodavanje etiketa osobi (%s)"
 
-#: QuiltView/QuiltView.py:1661
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Dodavanje etiketa obitelji (%s)"
 
-#: QuiltView/QuiltView.py:1865
 msgid "Printing the tree"
 msgstr "Ispis stabla"
 
-#: QuiltView/QuiltView.py:1869
 #, python-format
 msgid "Need to print %(pages)s pages (%(format)s format)"
 msgstr "Potrebno je ispisati %(pages)s stranica (%(format)s format)"
 
-#: QuiltView/QuiltView.py:1921
 msgid ""
 "Center on the selected person.\n"
 "The new position of the person will be near the top left corner."
@@ -102,18 +78,14 @@ msgstr ""
 "Centriraj na početnu osobu.\n"
 "Novi položaj osobe će biti u blizini gornjeg lijevog kuta."
 
-#: QuiltView/QuiltView.py:1926
 msgid "The path color"
 msgstr "Boja linije"
 
-#: QuiltView/QuiltView.py:1931
 msgid "The selected person color"
 msgstr "Boja odabrane osobe"
 
-#: QuiltView/QuiltView.py:1936
 msgid "The path transparency"
 msgstr "Prozirnost linije"
 
-#: QuiltView/QuiltView.py:1939
 msgid "General options"
 msgstr "Opći opcije"

@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,65 +13,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
-msgid "Checking Place Titles"
-msgstr "Перевірка назв місця"
-
-#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
-msgid "Looking for place fields"
-msgstr "Пошук полів місця"
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
 msgstr "Перевірити назви місць"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
 msgstr "Перевірити назви місць"
 
-#: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
 msgstr "Перевірити назву місця"
 
-#: CheckPlaceTitles/checkplacetitles.py:107
+msgid "Checking Place Titles"
+msgstr "Перевірка назв місця"
+
+msgid "Looking for place fields"
+msgstr "Пошук полів місця"
+
 msgid "Differences"
 msgstr "Відмінності"
 
-#: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr "Модифікації не потрібні"
 
-#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr "Змін не потрібно."
 
-#: CheckPlaceTitles/checkplacetitles.py:187
-#, fuzzy
 msgid "Legacy place"
-msgstr "Спадкове місце"
+msgstr "Застаріле місце"
 
-#: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr "Модифікувати назви місць"
 
-#: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
-msgstr ""
+msgstr "Назви місць"
 
-#: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
 msgstr "Видалити вміст поля назви місця, якщо він не відповідає"
 
-#: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr ""
+msgstr "Скопіювати вміст поля назви місця до нового запису."
 
-#: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "Прикріпити тег до вибраних місць."
 
-#: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
-msgstr ""
+msgstr "стовпець"

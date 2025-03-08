@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,39 +13,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: GeoTimeLines/GeoTimeLines.py:233 GeoTimeLines/GeoTimeLines.py:339
-#: GeoTimeLines/GeoTimeLines.gpr.py:25
 msgid "TimeLines Map"
 msgstr "Мапа хронології"
 
-#: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
 msgstr "Вибрати формат відображення"
 
-#: GeoTimeLines/GeoTimeLines.py:800
 msgid "Almost done"
 msgstr "Майже завершено"
 
-#: GeoTimeLines/GeoTimeLines.py:916
 msgid "Gathering data"
 msgstr "Збирання даних"
 
-#: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr "Кількість сторінок"
+msgstr "Кількість осіб: %s"
 
-#: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
 "Stagger the map markers\n"
 "to differentiate different\n"
 "markers at the same location"
 msgstr ""
+"Розподіляти маркери на мапі,\n"
+"щоб розрізняти різні\n"
+"об’єкти в одному місці"
 
-#: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
 "Stagger Radius (hectometers)\n"
 "as measured along the equator\n"
@@ -63,7 +49,6 @@ msgstr ""
 "виміряно вздовж екватора\n"
 "(включає спотворення широти)"
 
-#: GeoTimeLines/GeoTimeLines.py:1794
 msgid ""
 "Display markers for unknown ancestors\n"
 "based on earliest descendant location"
@@ -71,17 +56,16 @@ msgstr ""
 "Відображати маркери для невідомих предків\n"
 "на основі найранішого місця нащадків"
 
-#: GeoTimeLines/GeoTimeLines.py:1803
 msgid ""
 "Days to keep lines on the map after\n"
 "an event"
 msgstr ""
+"Кількість днів, протягом яких лінії\n"
+"залишатимуться на мапі після події"
 
-#: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
 msgstr "Використовувати користувацькі іконки мапи"
 
-#: GeoTimeLines/GeoTimeLines.py:1829
 msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
@@ -89,54 +73,45 @@ msgstr ""
 "Якщо для особи немає події народження, її вік на момент\n"
 "першої події вважається рівним цьому значенню"
 
-#: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
 "If there is no death event for a person, they will\n"
 "be assumed dead at this age"
 msgstr ""
+"Якщо для особи немає події смерті, припускається,\n"
+"що вона померла у цьому віці"
 
-#: GeoTimeLines/GeoTimeLines.py:1875
 msgid "Number of steps"
 msgstr "Кількість кроків"
 
-#: GeoTimeLines/GeoTimeLines.py:1883
 msgid "Type of steps"
 msgstr "Тип кроків"
 
-#: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
 msgstr "Кроків за мілісекунду"
 
-#: GeoTimeLines/GeoTimeLines.py:1915
 msgid "Initial map view on Gramps startup"
-msgstr ""
+msgstr "Початковий вигляд мапи при запуску Gramps"
 
-#: GeoTimeLines/GeoTimeLines.py:1927
 msgid ""
 "Initial map view after startup and\n"
 "after changing the active person"
 msgstr ""
+"Початковий вигляд мапи після запуску\n"
+"та після зміни активної особи"
 
-#: GeoTimeLines/GeoTimeLines.py:1936
 msgid "Show map travel lines on startup"
 msgstr "Показувати лінії подорожей на мапі при запуску"
 
-#: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
 msgstr "Показувати позначки часу на панелі навігації при запуску"
 
-#: GeoTimeLines/GeoTimeLines.py:1974
-#, fuzzy
-#| msgid "TimeLines Map"
 msgid "TimeLines Map options"
-msgstr "Мапа хронології"
+msgstr "Налаштування мапи хронології"
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
 "A view showing all the places visited by a person or persons on various date."
 msgstr ""
 "Вигляд, що показує всі місця, відвідані особою або особами в різні дати."
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:39
 msgid "TimeLines map"
 msgstr "Мапа хронології"

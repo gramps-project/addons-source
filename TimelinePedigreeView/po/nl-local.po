@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,77 +12,56 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
-#: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
-msgid "Ancestry"
-msgstr "Voorgeslacht"
-
-#: FamilyTree/FamilyTree.py:1047
-#: TimelinePedigreeView/TimelinePedigreeView.py:1481
-msgid "Ancestor Generations"
-msgstr "Vooroudergeneraties"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "Afstammelingsgeneraties"
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
 msgstr "g."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for died|d."
 msgstr "o."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for baptized|bap."
 msgstr "dp."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:85
 msgid "short for christened|chr."
 msgstr "chr."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
 msgstr "bgr."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:87
 msgid "short for cremated|crem."
 msgstr "crem."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"
 msgstr "Tijdlijn-kwartierstaat"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
 msgstr "Sorteer op tijdlijn"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
 msgstr "Toon levensperiode"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1470
-#: TimelinePedigreeView/TimelinePedigreeView.py:1486
+msgid "Descendant Generations"
+msgstr "Afstammelingsgeneraties"
+
 #, python-format
 msgid "%d generation"
 msgid_plural "%d generations"
 msgstr[0] "%d generatie"
 msgstr[1] "%d generaties"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1505
+msgid "Ancestor Generations"
+msgstr "Vooroudergeneraties"
+
 msgid "About Timeline Pedigree View"
 msgstr "Over tijdlijn-kwartierstaatweergave"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
 msgid "Timeline Pedigree"
 msgstr "Tijdlijn-kwartierstaat"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
+msgid "Ancestry"
+msgstr "Voorgeslacht"
+
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
 "selected person"

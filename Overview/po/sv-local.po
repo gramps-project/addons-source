@@ -1,22 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,64 +12,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: Form/form_us.xml.h:1631 Form/form_us.xml.h:1645 Form/form_us.xml.h:2406
-#: Form/form_dk.xml.h:10 Form/form_dk.xml.h:27 Form/form_dk.xml.h:44
-#: Form/form_dk.xml.h:59 Form/form_dk.xml.h:76 Form/form_dk.xml.h:93
-#: Form/form_dk.xml.h:110 Form/form_dk.xml.h:129 Form/form_dk.xml.h:148
-#: Form/form_dk.xml.h:169 Form/form_dk.xml.h:192 Form/form_dk.xml.h:213
-#: Form/form_dk.xml.h:234 Form/form_dk.xml.h:258 Form/form_dk.xml.h:293
-#: Form/form_fr.xml.h:153 Form/form_fr.xml.h:162 Form/form_fr.xml.h:170
-#: Form/form_fr.xml.h:179 Form/form_fr.xml.h:188 Form/form_fr.xml.h:197
-#: Form/form_fr.xml.h:206 Form/form_fr.xml.h:217 Form/form_gb.xml.h:27
-#: Form/form_gb.xml.h:78 Form/form_gb.xml.h:96 Form/form_gb.xml.h:115
-#: Form/form_gb.xml.h:136 Form/form_gb.xml.h:158 Form/form_gb.xml.h:183
-#: Form/form_gb.xml.h:206 Form/form_gb.xml.h:244 Form/form_gb.xml.h:268
-#: Form/form_gb.xml.h:287 Form/form_gb.xml.h:314 Form/form_gb.xml.h:339
-#: Form/form_gb.xml.h:379 Form/form_gb.xml.h:413 Form/form_gb.xml.h:434
-#: Form/form_gb.xml.h:461 Form/form_gb.xml.h:489 Form/form_gb.xml.h:521
-#: Form/form_gb.xml.h:560 Form/form_gb.xml.h:588 Form/form_gb.xml.h:616
-#: Overview/Overview.py:79 Overview/Overview.py:114
-msgid "Condition"
-msgstr "Kondition"
-
-#: Form/form_dk.xml.h:63 Form/form_dk.xml.h:80 Form/form_dk.xml.h:97
-#: Form/form_dk.xml.h:116 Form/form_dk.xml.h:135 Form/form_dk.xml.h:152
-#: Form/form_dk.xml.h:173 Form/form_dk.xml.h:196 Form/form_dk.xml.h:217
-#: Form/form_dk.xml.h:238 Form/form_dk.xml.h:262 Form/form_dk.xml.h:297
-#: Form/form_dk.xml.h:323 Form/form_dk.xml.h:373 Form/form_dk.xml.h:397
-#: Form/form_dk.xml.h:419 Form/form_dk.xml.h:437 Form/form_fr.xml.h:3
-#: Form/form_fr.xml.h:11 Form/form_fr.xml.h:19 Form/form_fr.xml.h:27
-#: Form/form_fr.xml.h:103 Form/form_fr.xml.h:111 Form/form_fr.xml.h:139
-#: Form/form_fr.xml.h:157 Form/form_fr.xml.h:174 Form/form_fr.xml.h:183
-#: Form/form_fr.xml.h:192 Form/form_fr.xml.h:201 Form/form_fr.xml.h:211
-#: Form/form_gb.xml.h:67 Form/form_gb.xml.h:82 Form/form_gb.xml.h:100
-#: Form/form_gb.xml.h:121 Form/form_gb.xml.h:142 Form/form_gb.xml.h:168
-#: Form/form_gb.xml.h:193 Form/form_gb.xml.h:224 Form/form_gb.xml.h:297
-#: Form/form_gb.xml.h:324 Form/form_gb.xml.h:357 Form/form_gb.xml.h:416
-#: Form/form_gb.xml.h:438 Form/form_gb.xml.h:465 Form/form_gb.xml.h:493
-#: Form/form_gb.xml.h:529 Form/form_gb.xml.h:566 Form/form_gb.xml.h:589
-#: Form/form_gb.xml.h:621 Overview/Overview.py:78 Overview/Overview.py:112
 msgid "Where Born"
 msgstr "Var född"
 
-#: Overview/Overview.gpr.py:29
+msgid "Condition"
+msgstr "Kondition"
+
 msgid "Person Overview"
 msgstr "Personöversikt"
 
-#: Overview/Overview.gpr.py:30
 msgid "Gramplet showing an overview of events for a person"
 msgstr "Gramplet som visar en översikt på händelser för en person"
 
-#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
 msgid "Overview"
 msgstr "Översikt"
 
-#: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr "Familjeöversikt"
 
-#: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet som visar en översikt på händelser för en familj"

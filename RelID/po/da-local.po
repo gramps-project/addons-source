@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,77 +12,59 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 RelID/relation_tab.py:126
-msgid "Save"
-msgstr "Gem"
-
-#: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
-msgstr "Vis slægtskab og afstand til fokuspersonen"
+msgstr "Vis slægtskab og afstand til probanden"
 
-#: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
-msgstr "Vil vise slægtskabsinformation til hovedpersonen"
+msgstr "Vil vise slægtskabsinformation til probanden"
 
-#: RelID/relation_tab.py:75
 msgid "Relation and distances with root"
 msgstr "Slægtskab og afstand til proband"
 
-#: RelID/relation_tab.py:92
 msgid "Folder Chooser"
 msgstr "Mappevælger"
 
-#: RelID/relation_tab.py:97
 msgid "_Select"
 msgstr "_Vælg"
 
-#: RelID/relation_tab.py:99
 msgid "Please, select a folder"
 msgstr "Vælg venligst en mappe"
 
-#: RelID/relation_tab.py:110
 msgid "Rel_id"
 msgstr "Rel_id"
 
-#: RelID/relation_tab.py:111
 msgid "Relation"
 msgstr "Slægtskab"
 
-#: RelID/relation_tab.py:113
 msgid "up"
 msgstr "op"
 
-#: RelID/relation_tab.py:114
 msgid "down"
 msgstr "ned"
 
-#: RelID/relation_tab.py:115
 msgid "Common MRA"
 msgstr "Fælles MRA"
 
-#: RelID/relation_tab.py:116
 msgid "Rank"
 msgstr "Rang"
 
-#: RelID/relation_tab.py:117
 msgid "Period"
 msgstr "Periode"
 
-#: RelID/relation_tab.py:164
+msgid "Save"
+msgstr "Gem"
+
 msgid "Please wait, filtering..."
 msgstr "Vent venligst, filrerer..."
 
-#: RelID/relation_tab.py:169
 msgid "No default_person"
 msgstr "Ingen fokusperson"
 
-#: RelID/relation_tab.py:174
 msgid "Generating relation map..."
 msgstr "Danner slægtskabsrapport..."
 
-#: RelID/relation_tab.py:190
 #, python-format
 msgid ""
 "%d/%d \n"
@@ -102,6 +77,5 @@ msgstr ""
 " %d/%d \n"
 "%f|\t%f"
 
-#: RelID/relation_tab.py:308
 msgid "You do not have write rights on this folder"
 msgstr "Du har ikke skriverettigheder til denne mappe"

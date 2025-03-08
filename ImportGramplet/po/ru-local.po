@@ -1,23 +1,8 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,15 +16,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: ImportGramplet/ImportGramplet.gpr.py:11
 msgid "Gramplet for importing text"
 msgstr "Грамплет для импорта текста"
 
-#: ImportGramplet/ImportGramplet.py:94
 msgid "VCard import"
 msgstr "Импорт VCard"
 
-#: ImportGramplet/ImportGramplet.py:144
 #, python-format
 msgid ""
 "The opened file has media path %s, which conflicts with the media path of "
@@ -52,7 +34,6 @@ msgstr ""
 "изменён.Скопируйте файлы в корректный каталог или измените путь к документам "
 "в настройках."
 
-#: ImportGramplet/ImportGramplet.py:172
 msgid ""
 "Enter text to import and then click\n"
 "the Import button at bottom"
@@ -60,18 +41,14 @@ msgstr ""
 "Введите текст для импорта и нажмите\n"
 "кнопку Импорт внизу"
 
-#: ImportGramplet/ImportGramplet.py:198
 msgid "_Import"
 msgstr "_Импорт"
 
-#: ImportGramplet/ImportGramplet.py:218
 msgid "Import done"
 msgstr "Импорт завершён"
 
-#: ImportGramplet/ImportGramplet.py:228
 msgid "Importing Text..."
 msgstr "Импорт текста..."
 
-#: ImportGramplet/ImportGramplet.py:259
 msgid "Can't determine type of import"
 msgstr "Не удалось определить тип импорта"

@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,41 +12,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
-msgid "Enter Python expressions"
-msgstr "Enter Python expressions"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
 #, python-format
 msgid "%d rows processed in %s seconds.\n"
 msgstr "%d rækker behandlet i %s sekunder.\n"
 
-#: Query/QueryQuickview.py:426
 msgid "Today"
 msgstr "I dag"
 
-#: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Query Gramplet"
 
-#: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
 msgstr "Gramplet for at køre SQL-lignende forespørgsler"
 
-#: Query/Query.gpr.py:19
 msgid "Query"
 msgstr "Forespørgsel"
 
-#: Query/Query.gpr.py:33
 msgid "Query Quickview"
 msgstr "Foresspørgsels kvikoversigt"
 
-#: Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
 msgstr "Kvikoversigt for at udføre SQL-lignende forespørgsler"
 
-#: Query/QueryGramplet.py:176
+msgid "Enter Python expressions"
+msgstr "Enter Python expressions"
+
 msgid "Enter SQL query"
 msgstr "Angiv SQL forespørgsel"

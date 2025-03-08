@@ -1,114 +1,85 @@
-# translation of ca.po to Català
-# TRADUCCIÓ AL CATALÀ DE GRAMPS
-# Copyright (C) 2008 PEL GRUP DE GRAMPS
-# Aquest fitxer es distribueix segons la mateixa llicència que Gramps
-#
-# Joan Creus <joan punt creus a gmail punt com>, 2008.
-# Joan Creus <joan.creus at gmail dot com>, 2008, 2009, 2010, 2011, 2012, 2013.
-# Arnau <arnaullv at gmail dot com>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2010-03-07 17:48+0100\n"
-"Last-Translator: Joan Creus <joan.creus at gmail dot com>\n"
-"Language-Team: Català <en@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
-msgstr "Seleccionar filtre per restringir persones"
+msgstr "Selecciona el filtre per restringir les persones"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
 msgstr "Estimacions de Data Calculades"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
 msgstr "Font a treure i/o afegir"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
 msgstr "Treure esdeveniments, notes i fonts afegits prèviament"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
 "Treure esdeveniments, notes i fonts afegits prèviament; es fa immediatament "
 "en Executar"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
 msgstr "No afegir esdeveniments de naixement"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 msgid "Add birth events without dates"
 msgstr "Afegir esdeveniments de naixement sense dates"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
 msgstr "Afegir esdeveniments de naixement amb dates"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
 msgstr "Afegir esdeveniments de naixement amb o sense dates estimades"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
 msgstr "No afegir esdeveniments de defunció"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
 msgstr "Afegir esdeveniments de defunció sense dates"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
 msgstr "Afegir esdeveniments de defunció amb dates"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
 msgstr "Afegir esdeveniments de defunció amb o sense dates estimades"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
 msgstr "Edat màxima"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
 msgstr "Edat màxima fins on es pot viure"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Màxima diferència d'edat entre germans"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
 msgstr "Els anys entre dues generacions, en mitjana"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
 msgid "Estimated Dates"
 msgstr "Dates Estimades"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
 msgstr "Aproximat (al voltant)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
 msgstr "Extrems (abans i després)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
 msgstr "Les dates dels esdeveniments són o bé al voltant o abans/després"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
 "events for people that are missing these events.\n"
@@ -147,32 +118,24 @@ msgstr ""
 "Pot haver d'executar l'eina de forma repetida (sense treure els "
 "esdeveniments anteriors) per afegir tots els esdeveniments possibles."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 msgid "Calculate Estimated Dates"
 msgstr "Calcular Dates Estimades"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
 msgstr "Seleccionar-ho Tot"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
 msgstr "No Seleccionar-ne cCap"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
 msgstr "Commutar Selecció"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
 msgstr "Afegir Esdeveniments Seleccionats"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr "Esborrar Esdeveniments, Notes, i Font i Tornar a Seleccionar Dades"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
@@ -180,49 +143,37 @@ msgstr ""
 "Està segur que vol esborrar els esdeveniments, notes i font anteriors, i "
 "tornar a seleccionar les dades?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
 msgstr "Esborrar i Executar la Selecció un Altre Cop"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
 msgstr "Tornar a Seleccionar Dades"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
 msgstr "Segur que vol tornar a seleccionar les dades?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
 msgid "Run Select Again"
 msgstr "Executar la Selecció un Altre Cop"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
 msgstr "Proves"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
-#, fuzzy
 msgid "Relative"
 msgstr "Parents"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
 msgstr "Processant...\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
 msgstr "Esborrant estimacions antigues... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Traient '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
 msgstr "fet!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 msgid ""
 "Selecting... \n"
 "\n"
@@ -230,74 +181,58 @@ msgstr ""
 "Seleccionant... \n"
 "\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
 msgstr "Afegir esdeveniments de naixement i defunció"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
 msgstr "Afegir esdeveniment de naixement"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
 msgid "Add death event"
 msgstr "Afegir esdeveniment de defunció"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
 msgstr "No hi ha esdeveniments per afegir."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
 msgstr "Seleccionant... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
 msgid "Adding events '%s'..."
 msgstr "Afegint esdeveniments '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr ""
 "Afegit esdeveniment de naixement basat en %(evidence)s, des de %(name)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #, python-format
 msgid "Added birth event based on %s"
 msgstr "Afegit esdeveniment de naixement basat en %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
 msgstr "Data de naixement estimada"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr ""
 "Afegit esdeveniment de defunció basat en %(evidence)s, des de %(person)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
 msgid "Added death event based on %s"
 msgstr "Afegit esdeveniment de defunció basat en %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
 msgstr "Data de defunció estimada"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
 msgstr " Acabat! Gravant..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
 msgid "Added %d events."
 msgstr "Afegits %d esdeveniments."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Data estimada"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Calcula les dates estimades de naixement i defunció."

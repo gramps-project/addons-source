@@ -1,11 +1,3 @@
-# translation of pl.po to
-# Copyright (C) 2002-2003, 2006, 2007 Free Software Foundation, Inc.
-#
-# Piotr Czubaszek <pioterus(at)gmail(dot)com>, 2007.
-# Piotr Czubaszek <piotrek@gmail.com>, 2007.
-# Łukasz Rymarczyk <yenidai(at)poczta(dot)onet(dot)pl>, 2008, 2009.
-# Przemek Wiech <pwiech@gmail.com>, 2019.
-# Michał Stojek <stojex@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
@@ -25,151 +17,74 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:480
-#: RepositoriesReport/RepositoriesReportAlt.py:504
-#: RepositoriesReport/RepositoriesReport.py:175
-msgid "The style used for the title of the report."
-msgstr "Styl używany do tytułu raportu."
-
-#: SourcesCitationsReport/SourcesCitationsReport.py:591
-#: RepositoriesReport/RepositoriesReportAlt.py:533
-#: RepositoriesReport/RepositoriesReport.py:203
-msgid "The style used for each section."
-msgstr "Styl używany do każdej sekcji."
-
-#: DenominoViso/DenominoViso.py:2607
-#: RepositoriesReport/RepositoriesReportAlt.py:467
-msgid "Include private records"
-msgstr "Dołącz rekordy prywatne"
-
-#: RepositoriesReport/RepositoriesReport.gpr.py:26
-msgid "Repositories Report Options"
-msgstr ""
-
-#: RepositoriesReport/RepositoriesReport.gpr.py:27
-#: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
 msgstr "Generuje tekstowy raport o repozytoriach"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:45
-#: RepositoriesReport/RepositoriesReportAlt.py:139
-#: RepositoriesReport/RepositoriesReport.py:80
 msgid "Repositories Report"
 msgstr "Raport repozytoriów"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:273
 msgid "Publication information:"
 msgstr "Informacje o publikacji:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:278
 msgid "Data:"
 msgstr "Data:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:378
-msgid "Page:"
-msgstr ""
-
-#: RepositoriesReport/RepositoriesReportAlt.py:419
-#, fuzzy
-#| msgid "Select A File"
-msgid "Selection with a filter"
-msgstr "Wybierz plik"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
 msgstr "Dołącz adresy URL magazynów"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
 msgstr "Określa, czy dołączać adresy URL w magazynach."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
 msgstr "Dołącz adresy magazynów"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
 msgstr "Określa, czy dołączać adresy w magazynach."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
 msgstr "Dołącz autora źródła"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
 msgstr "Określa, czy dołączać autora."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
 msgstr "Dołącz skróty źródła."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
 msgstr "Określa, czy skróty."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
 msgstr "Dołącz informacje o publikacji źródła"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
 msgstr "Określa, czy dołączać informacje o publikacji."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
 msgstr "Dołącz dane źródłowe"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
 msgstr "Określa, czy dołączać klucze i wartości."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
 msgstr "Określa, czy dołączać notatki z magazynów i źródeł."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:459
 msgid "Include media"
 msgstr "Dołącz obiekty medialne"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:460
-#, fuzzy
-#| msgid "Whether to include images"
-msgid "Whether to include media."
-msgstr "Określa, czy dołączać zdjęcia."
+msgid "Include private records"
+msgstr "Dołącz rekordy prywatne"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:463
-#, fuzzy
-#| msgid "Include Options"
-msgid "Include citations"
-msgstr "Dołączaj opcje"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:464
-#, fuzzy
-#| msgid "Whether to include a person's sources."
-msgid "Whether to include citations on sources."
-msgstr "Określa, czy dołączać źródła osoby."
-
-#: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Whether to include repositories and sources marked as private."
 msgstr "Określa, czy dołączać magazyny i źródła oznaczone jako prywatne."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:471
-#, fuzzy
-#| msgid "Display type"
-msgid "Display empty values"
-msgstr "Typ wyświetlania"
+msgid "The style used for the title of the report."
+msgstr "Styl używany do tytułu raportu."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:472
-#, fuzzy
-#| msgid "Whether to include keys and values."
-msgid "Whether to include key records with empty values."
-msgstr "Określa, czy dołączać klucze i wartości."
-
-#: RepositoriesReport/RepositoriesReportAlt.py:518
-#: RepositoriesReport/RepositoriesReport.py:189
 msgid "The style used for repository title."
 msgstr "Styl używany do tytułu repozytoriów."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:548
+msgid "The style used for each section."
+msgstr "Styl używany do każdej sekcji."
+
 msgid "The style used for child section."
 msgstr "Styl używany do sekcji potomnych."

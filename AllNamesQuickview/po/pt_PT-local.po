@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,25 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PlaceCleanup/placecleanup.glade:52 AllNamesQuickview/AllNames.py:54
-msgid "Primary Name"
-msgstr "Nome principal"
-
-#: AllNamesQuickview/AllNames.py:51 AllNamesQuickview/AllNames.gpr.py:4
 msgid "All Names of All People"
 msgstr "Todos os nomes de todos os indivíduos"
 
-#: AllNamesQuickview/AllNames.py:54
+msgid "Primary Name"
+msgstr "Nome principal"
+
 msgid "Name Type"
 msgstr "Tipo de nome"
 
-#: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
 msgstr "Total de nomes: %d"
 
-#: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
 msgstr "Mostrar todos os nomes de todos os indivíduos"

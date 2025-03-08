@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,41 +13,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
-#: EventDescriptionEditor/EventDescriptionEditor.py:139
-msgid "Find"
-msgstr "Pronađi"
-
-#: EventDescriptionEditor/EventDescriptionEditor.py:52
-#: EventDescriptionEditor/EventDescriptionEditor.py:64
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 msgid "Event Description Editor"
 msgstr "Uređivač opisa događaja"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
 msgstr "Traži podniz …"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
 msgid "INFO"
 msgstr "INFORMACIJE"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
 msgid "%s event descriptions of %s events were changed."
 msgstr "%s opisa događaja od %s događaja su promijenjeni."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:142
-msgid "Replace"
-msgstr "Zamjena"
+msgid "Find"
+msgstr "Pronađi"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:145
+msgid "Replace"
+msgstr "Zamijeni"
+
 msgid "Replace substring only"
 msgstr "Zamijeni samo podniz"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:146
 msgid ""
 "If True only the substring will be replaced, otherwise the whole description "
 "will be deleted and replaced by the new one."
@@ -62,15 +44,6 @@ msgstr ""
 "Ako je postavljeno, zamijenit će se samo podniz, u suprotnom će se cijeli "
 "opis izbrisati i zamijeniti novim."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:151
-msgid "Allow regex"
-msgstr ""
-
-#: EventDescriptionEditor/EventDescriptionEditor.py:152
-msgid "Allow regular expressions."
-msgstr ""
-
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
 "A tool to find and replace a string in event description of multiple events."
 msgstr "Alat za pronalaženje i zamjenu znakovnog niza u opisu događaja."

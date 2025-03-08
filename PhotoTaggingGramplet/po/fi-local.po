@@ -1,28 +1,9 @@
-# translation of fi.po to Finnish
-# GRAMPS
-# Copyright (C) YEAR ORGANIZATION.
-#
-# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
-# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
-# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2025.
-# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
-# Niemelä <niememat@gmail.com>, 2017, 2018.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"PO-Revision-Date: 2025-02-20 13:28+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -34,122 +15,75 @@ msgstr ""
 "X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: RelID/relation_tab.py:97 PhotoTaggingGramplet/PhotoTaggingGramplet.py:498
-msgid "_Select"
-msgstr "_Valitse"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
-msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
-msgstr ""
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Replace existing references to the person being assigned without asking"
 msgstr "Korvaa nykyiset viittaukset määrittämääsi henkilöön kysymättä"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:141
 msgid "Face detection"
 msgstr "Kasvojentunnistus"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
 msgid "Minimum face width (px)"
 msgstr "Kasvojen minimileveys (px)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:146
 msgid "Minimum face height (px)"
 msgstr "Kasvojen minimikorkeus (px)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:149
 msgid "Detect faces inside existing boxes"
 msgstr "Tunnista kasvot nykyisissä laatikoissa"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
 msgid "Sensitivity (1 min .. 20 max)"
 msgstr "Herkkyys (1 min .. 20 max)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:291
 msgid "Add Person"
 msgstr "Lisää henkilö"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:292
 msgid "Clear Reference"
 msgstr "Tyhjennä viittaus"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:293
 msgid "Remove Selection"
 msgstr "Poista valinta"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:294
 msgid "Edit referenced Person"
 msgstr "Muokkaa viitattua henkilöä"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:295
 msgid "Zoom In"
 msgstr "Lähennä"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:296
 msgid "Zoom Out"
 msgstr "Loitonna"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:299
 msgid "Detect faces"
 msgstr "Tunnista kasvot"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:301
 msgid "Detect faces (OpenCV module required)"
 msgstr "Tunnista kasvot (OpenCV-moduuli vaaditaan)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
-msgid "XMP Region Name"
-msgstr ""
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
 msgstr "Aseta aktiiviseksi henkilöksi"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
+msgid "_Select"
+msgstr "_Valitse"
+
 #, python-brace-format
 msgid "Replace to {0}"
 msgstr "Vaihda henkilöksi {0}"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
 msgid "Detecting faces..."
 msgstr "Kasvojentunnistus..."
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
 msgid "Detection finished"
 msgstr "Kasvojentunnistus valmis"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:955
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
 msgstr "Tämän kuvan alue liittyy kuvaan {name}. Poistetaanko se?"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:958
 #, python-brace-format
 msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr "{count} muun kuvan alueet liittyvät kuvaan {name}. Poistetaanko ne?"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1110
-#, python-format
-msgid "Male person|Dead at %s"
-msgstr ""
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1112
-#, python-format
-msgid "Female person|Dead at %s"
-msgstr ""
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1114
-#, python-format
-msgid "Unknown gender person|Dead at %s"
-msgstr ""
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
 msgid "Photo Tagging"
 msgstr "Valokuvien merkintä"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
 msgid "Gramplet for tagging people in photos"
 msgstr "Gramplet henkilöiden merkintään valokuvissa"

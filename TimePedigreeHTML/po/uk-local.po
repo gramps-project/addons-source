@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,127 +13,96 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: D3Charts/AncestralCollapsibleTree.py:872
-#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
-#: TimePedigreeHTML/TimePedigreeHtml.py:865
-msgid "The destination file name for html content."
-msgstr "Імʼя файлу для HTML вмісту."
-
-#: TimePedigreeHTML/TimePedigreeHtml.py:168
 msgid "Failed writing "
 msgstr "Не вдалося записати"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
 msgstr "Рік народження центральної особи"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr "Рік народження центральної особи. Оцініть рік, якщо невідомий"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:857
 msgid "Destination directory"
 msgstr "Каталог призначення"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Path for generated files"
 msgstr "Шлях для згенерованих файлів"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:868
+msgid "The destination file name for html content."
+msgstr "Імʼя файлу для HTML вмісту."
+
 msgid "Default Age"
 msgstr "Вік за замовчуванням"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
 msgstr ""
 "Вік батька за замовчуванням, коли дитина народилася з невідомим роком "
 "народження"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
 msgstr "Що показати"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Show GrampsID"
 msgstr "Показати GrampsID"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
 msgstr "Показати GrampsID у верхньому правому куті блоку"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
 msgstr "Оптимізувати"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
 msgstr "Використовувати якомога менше місця в горизонтальному напрямку"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:893
 msgid "Male Box Color"
 msgstr "Колір блоку чоловіка"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:894
 msgid "Box background color for male person"
 msgstr "Колір фону блоку для чоловічої особи"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:897
 msgid "Female Box Color"
 msgstr "Колір блоку жінки"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:898
 msgid "Box background color for female person"
 msgstr "Колір фону блоку для жіночої особи"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:904
 msgid "Number of pixel per year"
 msgstr "Кількість пікселів на рік"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
 msgstr "Скільки пікселів становить один рік?"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:910
 msgid "Offset X Coordinate"
 msgstr "Зсув по X"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
 "Скільки пікселів не використовується між найбільш лівим і найбільш правим "
 "блоками?"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:917
 msgid "Offset Y Coordinate"
 msgstr "Зсув по Y"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
 msgstr "Скільки пікселів не використовується над першим блоком?"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:921
 msgid "Width of a box in pixel"
 msgstr "Ширина блоку в пікселях"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:922
 msgid "Width of the box of a person in pixel"
 msgstr "Ширина блоку особи в пікселях"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:925
 msgid "Horizontal space between boxes in pixel"
 msgstr "Горизонтальний простір між блоками в пікселях"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
 msgstr "Мінімальний горизонтальний простір між двома блоками в пікселях"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:934
 msgid "Length of vertical part of a line in pixel"
 msgstr "Довжина вертикальної частини лінії в пікселях"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:936
 msgid ""
 "Parent and child boxes are connected with lines. This is the length of the "
 "vertical part of the lines in pixel"
@@ -149,17 +110,16 @@ msgstr ""
 "Блоки батьків і дітей зʼєднані лініями. Це довжина вертикальної частини "
 "ліній у пікселях"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:943
-#: TimePedigreeHTML/TimePedigreeHtml.py:945
 msgid "Number of pixel between left border and scale"
 msgstr "Кількість пікселів між лівою межею та шкалою"
 
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
 msgid "Timeline Pedigree Report"
 msgstr "Звіт хронологічного родоводу"
 
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
 msgid ""
 "Creates an HTML webpage that uses JavaScript to show a pedigree block "
 "diagram arranged vertically by birth date"
 msgstr ""
+"Створює веб-сторінку HTML, що використовує JavaScript для відображення "
+"родоводу у вигляді вертикального блочного діаграмного представлення за "
+"датами народження"

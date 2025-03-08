@@ -1,28 +1,9 @@
-# translation of fi.po to Finnish
-# GRAMPS
-# Copyright (C) YEAR ORGANIZATION.
-#
-# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
-# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
-# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2025.
-# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
-# Niemelä <niememat@gmail.com>, 2017, 2018.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"PO-Revision-Date: 2025-02-20 13:28+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -34,47 +15,34 @@ msgstr ""
 "X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:115
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
-msgid "Number of descendants"
-msgstr "Jälkeläisten määrä"
-
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-msgid "Generation"
-msgstr "Sukupolvi"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
 msgid "Number of %s's descendants"
 msgstr "Henkilön %s jälkeläisten lukumäärä"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
+msgid "Generation"
+msgstr "Sukupolvi"
+
 msgid "Seen"
 msgstr "Nähnyt"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
 msgid "Outlived"
 msgstr "Kuollut"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
 msgid "Now alive"
 msgstr "Elossa"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
 msgstr "Nähnyt = jälkeläisten määrä, joiden syntymän %s on eläessään nähnyt"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr ""
 "Kuollut = jälkeläisten lukumäärä, jotka kuolivat, kun %s on ollut vielä "
 "elossa"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
+msgid "Number of descendants"
+msgstr "Jälkeläisten määrä"
+
 msgid "Shows the number of descendants of the current person"
 msgstr "Näyttää nykyisen henkilön jälkeläisten lukumäärän"

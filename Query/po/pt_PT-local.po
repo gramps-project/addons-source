@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,41 +12,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
-msgid "Enter Python expressions"
-msgstr "Insira expressões Python"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
 #, python-format
 msgid "%d rows processed in %s seconds.\n"
 msgstr "%d linhas processadas em %s segundos.\n"
 
-#: Query/QueryQuickview.py:426
 msgid "Today"
 msgstr "Hoje"
 
-#: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Gramplet Consulta"
 
-#: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
 msgstr "Gramplet para executar consultas SQL-Lite"
 
-#: Query/Query.gpr.py:19
 msgid "Query"
 msgstr "Consulta"
 
-#: Query/Query.gpr.py:33
 msgid "Query Quickview"
 msgstr "Vista rápida da consulta"
 
-#: Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
 msgstr "Vista rápida de consultas SQL-Lite em execução"
 
-#: Query/QueryGramplet.py:176
+msgid "Enter Python expressions"
+msgstr "Insira expressões Python"
+
 msgid "Enter SQL query"
 msgstr "Insira uma consulta SQL"

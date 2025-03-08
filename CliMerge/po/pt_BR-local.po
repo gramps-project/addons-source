@@ -1,19 +1,8 @@
-# Brazilian-Portuguese translation for Gramps.
-# Tradução português-brasileiro para o Gramps.
-# Copyright (C) 2002 Free Software Foundation, Inc.
-#
-#
-# Marcos Bedinelli <bedinelli@sourceforge.net>, 2002, 2003, 2004, 2005, 2006.
-# Luiz Gonzaga dos Santos Filho <lfilho@gmail.com>, 2007.
-# lcc <lcc@6zap.com>, 2009.
-# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2011, 2012, 2013, 2014.
-# Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>, 2016, 2017, 2018.
-# Paulo Terezani de Paiva <terezani_ppaiva@yahoo.com.br>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,10 +13,5 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: CliMerge/CliMerge.gpr.py:9
-msgid "Command Line Merge"
-msgstr ""
-
-#: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
 msgstr "Mesclar os objetos primários através da linha de comando."

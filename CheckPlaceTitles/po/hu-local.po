@@ -1,18 +1,8 @@
-# translation of hu.po to magyar
-# Hungarian translation for GRAMPS
-# Copyright (C) 2003 the Gramps Project
-#
-#
-# Egyeki Gergely <egeri@elte.hu>, 2003, 2004.
-# Arpad Horvath <horvath.arpad@szgti.bmf.hu>, 2006.
-# Jancsi <gyj@centrum.sk>, 2020.
-# Kolesár András <translation@kolesar.hu>, 2009.
-# Nemeséri Lajos <nemeseril@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
 "PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Lajos Nemeséri <nemeseril@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
@@ -24,62 +14,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
 msgstr "Helynév ellenőrzése"
 
-#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
 msgstr "Hely mezők keresése"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
-msgid "Check Place Titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:30
-msgid "Check place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:71
-msgid "Check Place title"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:107
-msgid "Differences"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:112
-msgid "No need modifications"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:113
-msgid "No changes need."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:187
-msgid "Legacy place"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:201
-msgid "Modify Place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:224
-msgid "Place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:56
-msgid "Remove content of place title field if it does not match"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:74
-msgid "Copy content of place title field to a new note."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:91
-msgid "Attach a tag on selected places."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
 msgstr "oszlop"

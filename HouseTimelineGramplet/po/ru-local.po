@@ -1,23 +1,8 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,25 +16,18 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: HouseTimelineGramplet/housetimeline.gpr.py:4
-#: HouseTimelineGramplet/housetimeline.gpr.py:15
 msgid "House Timeline"
 msgstr "Жители дома"
 
-#: HouseTimelineGramplet/housetimeline.gpr.py:5
 msgid "Lists the Residents of an Address by Timeline"
 msgstr "Список жителей по адресу на линии времени"
 
-#: HouseTimelineGramplet/housetimeline.py:51
-#: HouseTimelineGramplet/housetimeline.py:58
 msgid "House Icon Style"
 msgstr "Стиль иконки дома"
 
-#: HouseTimelineGramplet/housetimeline.py:61
 msgid "Unicode"
 msgstr "Юникод"
 
-#: HouseTimelineGramplet/housetimeline.py:90
 msgid ""
 "There are no individuals with Address data. Please add Address data to "
 "people."
@@ -57,18 +35,14 @@ msgstr ""
 "Отсутствуют лица с информацией об адресе. Пожалуйста добавьте указанную "
 "информацию для людей."
 
-#: HouseTimelineGramplet/housetimeline.py:129
 msgid "Time In Family"
 msgstr "Время в семье"
 
-#: HouseTimelineGramplet/housetimeline.py:130
 msgid "First Resident"
 msgstr "Первое место жительства"
 
-#: HouseTimelineGramplet/housetimeline.py:131
 msgid "Last Resident"
 msgstr "Последнее место жительства"
 
-#: HouseTimelineGramplet/housetimeline.py:134
 msgid "Total Known Residents"
 msgstr "Количество известных мест проживания"

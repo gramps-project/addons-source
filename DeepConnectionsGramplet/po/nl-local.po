@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,56 +12,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EditExifMetadata/editexifmetadata.py:215
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
-msgid "Copy"
-msgstr "Kopieer"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr "Verre verwanten gramplet"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr ""
 "De gramplet toont de relatie tussen de actieve persoon en verre verwanten"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr "Verre relaties"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Pauze"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+msgid "Copy"
+msgstr "Kopieer"
+
 msgid "mentioned in note"
 msgstr "vermeld in opmerking"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
 msgid "Note on Family"
 msgstr "Opmerking over familie"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "broer of zus"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
 msgid "Note on Parent Family"
 msgstr "Opmerking over ouders"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
 msgid "%s (association)"
 msgstr "%s (verbinding)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 msgid "Note on Person"
 msgstr "Opmerking over persoon"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
 msgid ""
 "\n"
@@ -80,25 +57,20 @@ msgstr ""
 "\n"
 "   %s van "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "Geen actieve persoon ingesteld."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
 msgstr "Gezocht naar de relatie tussen\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr "  <b>%s</b> (beginpersoon) en\n"
+msgstr "  <b>%s</b> (centrale persoon) en\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (actieve persoon)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -107,7 +79,6 @@ msgstr ""
 "Vond relatie #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -115,7 +86,6 @@ msgstr ""
 "Gepauzeerd.\n"
 "Druk op Doorgaan om naar aanvullende relaties te zoeken.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
 msgid ""
 "\n"

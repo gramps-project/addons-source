@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,108 +12,80 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
 msgstr "De plaats is niet gevonden. U kunt de zoektermen verduidelijken."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
 msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr ""
 "Het zoeken naar de coördinaten is mislukt vanwege een onverwachte fout."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
 msgid "The place was not found."
 msgstr "De plaats is niet gevonden."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
 msgid "The place was not identified."
 msgstr "De plaats is niet geïdentificeerd."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
 msgid "Coordinates were not given."
 msgstr "Coördinaten zijn niet gegeven."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
 msgid "Failed to interpret the input format."
 msgstr "Kan het invoerformaat niet interpreteren."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
 msgstr "DB-invoer [{id}] {name}:"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
-#: PlaceCoordinateGramplet/placecoordinate.glade:132
 msgid "Nothing has been searched yet"
 msgstr "Er is nog niets gezocht"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr "Geen plaats is actief"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
 msgstr "Plaatscoördinaten grampletweergave"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
 msgid "View for the place coordinate gramplet."
 msgstr "Weergave van de plaatscoördinatengramplet."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
 msgid "Place and Coordinates"
 msgstr "Plaats en coördinaten"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr ""
 "Gramplet die het instellen van de coördinaten van een plaats vereenvoudigt"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
 msgid "Place Coordinates"
 msgstr "Plaatscoördinaten"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
 msgid "Place Coordinate Gramplet"
 msgstr "Plaatscoördinaten gramplet"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
 msgstr "Kaartmenu"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
 msgid "Add city as place"
 msgstr "Voeg stad toe als plaats"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
 msgid "Add addess as place"
 msgstr "Voeg adres toe als plaats"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"
 msgstr "Zoek naar:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:26
 msgid "Found place:"
 msgstr "Gevonden plaats:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:53
 msgid "No DB entry is selected"
 msgstr "Er is geen DB-invoer geselecteerd"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
 msgstr "Postcode:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:116
 msgid "Show found place externally in Google Maps"
 msgstr "Toon gevonden plaats extern in Google Maps"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:203
 msgid ""
 "Take last clicked position\n"
 "from Geography map"
@@ -131,18 +93,14 @@ msgstr ""
 "Neem de laatste aangeklikte positie\n"
 "van Geografische kaart"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:218
 msgid "Search location from DB"
 msgstr "Zoek locatie van DB"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:232
 msgid "Apply geo location to Database"
 msgstr "Pas de geolocatie toe op de database"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:269
 msgid "Go"
 msgstr "Ga"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
 msgstr "Toon help"

@@ -1,18 +1,8 @@
-# GRAMPS
-# Copyright (C) 2009, 2010, 2011, 2012, 2014, 2015.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-# grampscn <grampscn@gmail.com>, 2001, 2009, 2010.
-# 黄友诚 <grampscn@gmail.com>, 2009, 2010, 2011.
-# 陈欣(Celia), 2009.
-# 黄晓敏 (武汉工业职业技术学院管理工程系会计0801班), 2009.
-# 赖洁(Lexi), 2009.
-# Anthony Fok (霍东灵) <foka@debian.org>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VERSION 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
 "PO-Revision-Date: 2010-03-09 22:25+0800\n"
 "Last-Translator: 黄友诚\n"
 "Language-Team: zh <LL@li.org>\n"
@@ -26,62 +16,8 @@ msgstr ""
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
 msgstr "检查地点名称"
 
-#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
 msgstr "寻找地点域"
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
-msgid "Check Place Titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:30
-msgid "Check place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:71
-msgid "Check Place title"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:107
-msgid "Differences"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:112
-msgid "No need modifications"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:113
-msgid "No changes need."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:187
-msgid "Legacy place"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:201
-msgid "Modify Place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:224
-msgid "Place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:56
-msgid "Remove content of place title field if it does not match"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:74
-msgid "Copy content of place title field to a new note."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:91
-msgid "Attach a tag on selected places."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:177
-msgid "column"
-msgstr ""

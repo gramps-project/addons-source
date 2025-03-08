@@ -1,13 +1,3 @@
-# translation of hu.po to magyar
-# Hungarian translation for GRAMPS
-# Copyright (C) 2003 the Gramps Project
-#
-#
-# Egyeki Gergely <egeri@elte.hu>, 2003, 2004.
-# Arpad Horvath <horvath.arpad@szgti.bmf.hu>, 2006.
-# Jancsi <gyj@centrum.sk>, 2020.
-# Kolesár András <translation@kolesar.hu>, 2009.
-# Nemeséri Lajos <nemeseril@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
@@ -24,31 +14,24 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
-msgid "Theme"
-msgstr "Téma"
-
-#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "A téma bedrótozva a GTK_THEME-ben"
 
-#: Themes/themes.py:180
+msgid "Theme"
+msgstr "Téma"
+
 msgid "Dark Variant"
 msgstr "Sötét változat"
 
-#: Themes/themes.py:198
 msgid "Font"
 msgstr "Betű"
 
-#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Rögzített görgetősáv (újraindítás szükséges)"
 
-#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Téma beállítások"
 
-#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."

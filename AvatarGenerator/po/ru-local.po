@@ -1,23 +1,8 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,74 +16,51 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: AvatarGenerator/AvatarGenerator.py:86
-msgid "Select filter to restrict people"
-msgstr "Выбор фильтра для ограничения лиц"
-
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: AvatarGenerator/AvatarGenerator.py:211
-#: AvatarGenerator/AvatarGenerator.py:219
-#: AvatarGenerator/AvatarGenerator.py:316
-#: AvatarGenerator/AvatarGenerator.py:320
-msgid "INFO"
-msgstr "ИНФОРМАЦИЯ"
-
-#: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
 msgstr "Создание аватар"
 
-#: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
 msgstr "Иструмент для создания изображений (аватар) для семейного древа"
 
-#: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
 msgstr "режим одного изображения"
 
-#: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
 msgstr "Выберите сколько изображений использовать."
 
-#: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
 msgstr "Изображение для людей с неизвестным полом."
 
-#: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
 msgstr "Изображение для людей мужского пола."
 
-#: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
 msgstr "Изображение для людей женского пола."
 
-#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Select filter to restrict people"
+msgstr "Выбор фильтра для ограничения лиц"
+
 msgid "Remove images from people"
 msgstr "Удалить изображения людей"
 
-#: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
 msgstr "Удаляет выбранные изображения."
 
-#: AvatarGenerator/AvatarGenerator.py:134
-#: AvatarGenerator/AvatarGenerator.py:183
-#: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
 msgstr "Создание аватар"
 
-#: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
 msgstr "Удалить изображения аватар..."
 
-#: AvatarGenerator/AvatarGenerator.py:211
+msgid "INFO"
+msgstr "ИНФОРМАЦИЯ"
+
 msgid "No media was removed."
 msgstr "Изображения не были удалены."
 
-#: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
 msgstr "Было удалено {} ссылок на изображения у {} людей."
 
-#: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -106,19 +68,14 @@ msgstr ""
 "\n"
 "Было обнаружено {} ошибок HandleError и они были проигнорированы."
 
-#: AvatarGenerator/AvatarGenerator.py:263
-#: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
 msgstr "Добавить изображения аватар..."
 
-#: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
 msgstr "Было добавлено {} аватар."
 
-#: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
 msgstr "Нет необходимости добавлять аватары."
 
-#: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
 msgstr "Все лица уже имеют аватар."

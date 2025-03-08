@@ -1,16 +1,9 @@
-# Turkish translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) 2001-2014 the Gramps Project
-#
-# Mehmet Ugur Kecik <mukecik@yahoo.com>, 2006.
-# Ugur Cetin <ugur@ugurcetin.com.tr>, 2014.
-# Bora Atıcı <boratici.acc@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 02:35+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-02-28 21:42+0000\n"
 "Last-Translator: Bora Atıcı <boratici.acc@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -19,67 +12,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
-#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
-msgid "Checking Place Titles"
-msgstr "Yer Başlığı Denetlemek"
-
-#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
-msgid "Looking for place fields"
-msgstr "Yer alanları aranıyor"
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
 msgstr "Yer Başlığı Denetle"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
 msgstr "Yer başlığı denetle"
 
-#: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
 msgstr "Yer başlığı Denetle"
 
-#: CheckPlaceTitles/checkplacetitles.py:107
+msgid "Checking Place Titles"
+msgstr "Yer Başlığı Denetlemek"
+
+msgid "Looking for place fields"
+msgstr "Yer alanları aranıyor"
+
 msgid "Differences"
 msgstr "Farklılıklar"
 
-#: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr "Değişikliğe gerek yok"
 
-#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr "Değiştirmeye gerek yok."
 
-#: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr "Tarihi yer"
 
-#: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr "Yer başlıklarını değiştir"
 
-#: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr "Yer başlıkları"
 
-#: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
 msgstr "Eşleşmezse yer başlık alanının içeriğini kaldırın"
 
-#: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
 msgstr "Yer başlığı alanının içeriğini yeni bir nota kopyalayın."
 
-#: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
 msgstr "Seçilen yerlere bir etiket ekleyin."
 
-#: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
 msgstr "sütun"

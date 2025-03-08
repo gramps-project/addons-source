@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-03-08 16:41+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,19 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: MediaReport/media_report.py:106 MediaReport/media_report.py:112
-#: MediaReport/media_report.py:119 MediaReport/media_report.py:125
+msgid "Media Report"
+msgstr "Medierapport"
+
+msgid "Generates report including images, image data and notes."
+msgstr "Danner en rapport som medtager billeder, billeddata og noter."
+
 msgid "INFO"
 msgstr "INFO"
 
-#: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
 msgstr "Du skal vælge et billede for at danne denne rapport."
 
-#: MediaReport/media_report.py:112
 msgid ""
 "You have to select a custom note or uncheck the option 'include custom note' "
 "to generate this report."
@@ -39,80 +33,55 @@ msgstr ""
 "Du skal vælger en tilpasset note eller fjerne markeringen 2medtag tilpasset "
 "note' for at danne denne rapport."
 
-#: MediaReport/media_report.py:125
 msgid "This report only supports PDF as output file format."
 msgstr "Denne rapport understøtter kun PDF som format for uddata."
 
-#: MediaReport/media_report.py:229
 msgid "General:"
 msgstr "Generelt:"
 
-#: MediaReport/media_report.py:250
 msgid "Image type:"
 msgstr "Billedtype:"
 
-#: MediaReport/media_report.py:426
 msgid "Heading"
 msgstr "Overskrift"
 
-#: MediaReport/media_report.py:430
 msgid "Select a media file for this report"
 msgstr "Vælg en mediefil for denne rapport"
 
-#: MediaReport/media_report.py:433
 msgid "Custom note"
 msgstr "Tilpasset note"
 
-#: MediaReport/media_report.py:434
 msgid "Select a note for this report"
 msgstr "Vælg note til denne rapport"
 
-#: MediaReport/media_report.py:437
 msgid "Include custom note"
 msgstr "Medtag tilpasset note"
 
-#: MediaReport/media_report.py:438
 msgid "The custom note will be included"
 msgstr "Den tilpassede note vil blive medtaget"
 
-#: MediaReport/media_report.py:442
 msgid "Include referenced people"
 msgstr "Medtag refererede personer"
 
-#: MediaReport/media_report.py:443
 msgid "Referenced people will be included"
 msgstr "Refererede personer vil blive medtaget"
 
-#: MediaReport/media_report.py:446
 msgid "Include media data"
 msgstr "Medtag mediedata"
 
-#: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
 msgstr "Mærkater, noter og attributter vil blive medtaget"
 
-#: MediaReport/media_report.py:450
 msgid "Media width"
 msgstr "Medie bredde"
 
-#: MediaReport/media_report.py:451
-#, python-format
+#, no-python-format
 msgid "Maximum media width in % of available page width."
 msgstr "Maksimum mediebredde i % af aktuel sidebredde."
 
-#: MediaReport/media_report.py:455
 msgid "Media height"
 msgstr "Mediehøjde"
 
-#: MediaReport/media_report.py:456
 #, python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Maksimum mediehøjde i % af aktuel sidehøjde."
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr "Medierapport"
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr "Danner en rapport som medtager billeder, billeddata og noter."

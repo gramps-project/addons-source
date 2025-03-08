@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,185 +12,131 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: FilterRules/isrelatedwithfiltermatch.py:53
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 msgid "People related to <filter>"
 msgstr "Personen, die mit <Filter> verwandt sind"
 
-#: FilterRules/isrelatedwithfiltermatch.py:55
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 "Entspricht Personen, die mit Personen verwandt sind, die mit einem "
 "Personenfilter übereinstimmen"
 
-#: FilterRules/degreesofseparation.gpr.py:25
-#: FilterRules/degreesofseparation.py:60
 msgid "People separated less than <N> degrees of <person>"
 msgstr "Personen trennten sich weniger als <N> Grad von <person>"
 
-#: FilterRules/degreesofseparation.gpr.py:26
-#: FilterRules/degreesofseparation.py:62
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "Filterregel, die Verwandten nach Trennungsgraden entspricht"
 
-#: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
 msgstr "Quelle entsprechend Parameter"
 
-#: FilterRules/hassourcefilter.gpr.py:29
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr "Entspricht Quellen mit Werten, die die gewählten Parameter enthalten"
 
-#: FilterRules/multipleparents.py:42
 msgid "People with multiple parent records"
-msgstr ""
+msgstr "Personen mit mehrfachen Elterneinträgen"
 
-#: FilterRules/multipleparents.py:43
 msgid "Matches people who have more than one set of parents"
 msgstr "Passt zu Personen, die mehr als ein Elternpaar haben"
 
-#: FilterRules/associationsofpersonmatch.py:46
-#: FilterRules/associationsofpersonmatch.py:47
-#: FilterRules/associationsofpersonmatch.gpr.py:25
-#: FilterRules/associationsofpersonmatch.gpr.py:26
 msgid "Match associations of <person filter>"
-msgstr ""
+msgstr "Entspricht den Zuordnungen von <Personenfilter>"
 
-#: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
 msgstr "Stimmt NICHT mit der ausgewählten Rolle überein"
 
-#: FilterRules/hasrolerule.py:56
 msgid "Finds the items that don't have event Roles of the selected type."
 msgstr ""
 "Findet die Elemente, die keine Ereignisrollen des ausgewählten Typs haben."
 
-#: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
 msgid "Inverse"
 msgstr "Umgekehrt"
 
-#: FilterRules/hasrolerule.py:68
 msgid "People with events with the <role>"
 msgstr "Personen mit Ereignissen mit der <Rolle>"
 
-#: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
 msgid "Matches people with an event with a selected role"
 msgstr "Entspricht Personen mit einem Ereignis mit einer ausgewählten Rolle"
 
-#: FilterRules/hasrolerule.py:92
 msgid "Families with events with the <role>"
 msgstr "Familien mit Ereignissen mit der <Rolle>"
 
-#: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
 msgid "Matches families with an event with a selected role"
 msgstr "Entspricht Familien mit einem Ereignis mit einer ausgewählten Rolle"
 
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
-#: FilterRules/isfamilyfiltermatchevent.py:63
-#: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
 msgstr "Ereignisse von Familien, die einem <Familienfilter> entsprechen"
 
-#: FilterRules/familieswitheventfiltermatch.gpr.py:25
-#: FilterRules/familieswitheventfiltermatch.py:45
 msgid "Families matching <event filter>"
 msgstr "Familien, die mit <Ereignisfilter> übereinstimmen"
 
-#: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
 msgstr "Entspricht Familien, die von einem Ereignisfilter abgeglichen werden"
 
-#: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
 msgstr "Entspricht Familien, die mit einem Ereignisfilter übereinstimmen"
 
-#: FilterRules/degreesofseparation.py:47
 msgid "Number of degrees of separation from person."
 msgstr "Anzahl der Trennungsgrade von der Person."
 
-#: FilterRules/degreesofseparation.py:59
 msgid "Degrees:"
 msgstr "Grad:"
 
-#: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
 msgid "People with <count> of <event>"
-msgstr ""
+msgstr "Personen mit <Anzahl> von <Ereignis>"
 
-#: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
 msgid "Matches persons which have events of given type and number."
 msgstr ""
+"Entspricht Personen, die Ereignisse der angegebenen Art und Anzahl haben."
 
-#: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
 msgstr "Kinder einbeziehen"
 
-#: FilterRules/infamilyrule.py:49
 msgid "Include the children in the matching families."
 msgstr "Schließt die Kinder in die passenden Familien ein."
 
-#: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
 msgid "Include Parents"
 msgstr "Eltern einbeziehen"
 
-#: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
 msgstr "Schließt die Eltern in die passenden Familien ein."
 
-#: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
 msgid "Family Filter name:"
 msgstr "Name des Familienfilters:"
 
-#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
-#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
 msgid "People who are part of families matching <filter>"
 msgstr "Personen, die Teil von Familien sind, die mit <filter> übereinstimmen"
 
-#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
-#: FilterRules/ageatdeath.py:74
 msgid "Filter people by their age at death"
-msgstr ""
+msgstr "Personen nach ihrem Sterbealter filtern"
 
-#: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
 msgstr "Filterregel, die Personen nach ihrem Alter beim Tod abgleicht"
 
-#: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
-msgstr ""
+msgstr "Mehrere Eltern Filter"
 
-#: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
 msgstr "Personen mit Ereignissen mit einer ausgewählten Rolle"
 
-#: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
 msgstr "Familien mit Ereignissen mit einer ausgewählten Rolle"
 
-#: FilterRules/activepersonrule.gpr.py:27
-#: FilterRules/activepersonrule.gpr.py:28
 msgid "The active Person"
 msgstr "Die aktive Person"
 
-#: FilterRules/hassourcefilter.py:58
 msgid "Matches sources with a particular value"
 msgstr "Entspricht Quellen mit einem bestimmten Wert"
 
-#: FilterRules/activepersonrule.py:45
 msgid "Active person"
 msgstr "Aktive Person"
 
-#: FilterRules/activepersonrule.py:47
 msgid "Matches the active person"
 msgstr "Entspricht der aktiven Person"
 
-#: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
-msgstr ""
+msgstr "Alter in Jahren beim Tod der Person."
 
-#: FilterRules/ageatdeath.py:71
 msgid "Age:"
 msgstr "Alter:"

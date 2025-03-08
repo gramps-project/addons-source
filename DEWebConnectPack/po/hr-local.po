@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,44 +13,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: SVWebconnectPack/SVWebPack.py:34 DEWebConnectPack/DEWebPack.py:39
-msgid "FamilySearch.org"
-msgstr "FamilySearch.org"
-
-#: UKWebConnectPack/UKWebPack.py:39 DEWebConnectPack/DEWebPack.py:44
-msgid "Open Library"
-msgstr "Open Library"
-
-#: DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "DE Web Connect Pack"
 msgstr "DE Web Connect zbirka"
 
-#: DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
 msgstr "Zbirka web stranica za Njemačku (zahtijeva libwebconnect)"
 
-#: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
 msgstr "Bielefeld Academic tražilica"
 
-#: DEWebConnectPack/DEWebPack.py:42
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
 msgid "Google Archives"
 msgstr "Google arhive"
 
-#: DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
 msgstr "DE Google"
 
-#: DEWebConnectPack/DEWebPack.py:45
+msgid "Open Library"
+msgstr "Open Library"
+
 msgid "Surname map (1890-1996)"
 msgstr "Karta prezimena (1890. – 1996.)"
 
-#: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
 msgstr "GenWiki"
 
-#: DEWebConnectPack/DEWebPack.py:47
 msgid "German digital library"
 msgstr "Njemačka digitalna biblioteka"

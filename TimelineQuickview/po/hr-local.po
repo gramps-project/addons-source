@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,63 +13,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
-msgid "Today"
-msgstr "Danas"
-
-#: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
 msgstr "Roditelji supružnika"
 
-#: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
 msgstr "Djedovi i bake"
 
-#: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
 msgstr "Djedovi i bake supružnika"
 
-#: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
 msgstr "Pradjedovi i prabake"
 
-#: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
 msgstr "Pradjedovi i prabake supružnika"
 
-#: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
 msgstr "Pra, "
 
-#: TimelineQuickview/TimelineQuickview.py:61
-#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great, "
 msgstr "pra, "
 
-#: TimelineQuickview/TimelineQuickview.py:61
-#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great grandparents"
 msgstr "pradjedovi i prabake"
 
-#: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
 msgstr "Supružnikov pra, "
 
-#: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
 msgstr "Supružnik partnera"
 
-#: TimelineQuickview/TimelineQuickview.py:156
 #, python-format
 msgid "Timeline for %s"
 msgstr "Kronologija za %s"
 
-#: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Uključene osobe"
 
-#: TimelineQuickview/TimelineQuickview.gpr.py:11
+msgid "Today"
+msgstr "Danas"
+
 msgid "Display a person's events on a timeline"
 msgstr "Prikazuje događaje osobe kronološki"

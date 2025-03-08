@@ -1,17 +1,9 @@
-# GRAMPS SLOVAK language version
-# Lubo Vasko, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
-# Dominik Sivak <bubakovsky@gmail.com>, 2019.
-# MILAN KUROVSKY, 2023.
-# Lubo Vasko <pgval at inmail dot sk>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
-# Jozef Riha, 2017.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 17:44+0000\n"
+"POT-Creation-Date: 2025-02-23 14:28+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,73 +12,55 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
 msgstr "DNA zhody"
 
-#: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
 msgstr "Gramplet na zobrazenie zoznamu DNA zhôd"
 
-#: DNAMatches/dnamatches.py:153
 msgid "Pers."
 msgstr "Osob."
 
-#: DNAMatches/dnamatches.py:153
 msgid "Rel."
 msgstr "Vzťh."
 
-#: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
 msgstr "Zd. DNA"
 
-#: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
 msgstr "Naj. seg."
 
-#: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
 msgstr "Zdrj(e)"
 
-#: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
 msgstr "Zdieľaná DNA"
 
-#: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
 msgstr "Zdieľané segmenty"
 
-#: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
 msgstr "Najväčší segment"
 
-#: DNAMatches/dnamatches.py:159
 msgid "Source(s)"
 msgstr "Zdroj(e)"
 
-#: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
 msgstr "Dvojklikom myši na riadok sa môžete presunúť na zvolenú osobu."
 
-#: DNAMatches/dnamatches.py:195
 msgid "Right click to edit selected association."
 msgstr "Kliknutím pravého tlačítka myši môžete upraviť zvolenú asociáciu."
 
-#: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
 msgstr "VYSVETLIVKY"
 
-#: DNAMatches/dnamatches.py:228
 msgid "="
 msgstr "="
 
-#: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
-#: DNAMatches/dnamatches.py:420
 msgid "Not specified"
 msgstr "Neuvedené"
 
-#: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
 msgid "cM"
 msgstr "cM"

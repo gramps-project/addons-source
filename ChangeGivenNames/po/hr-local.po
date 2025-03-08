@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,13 +13,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
 msgstr "Ispravi velika/mala slova u imenima"
 
-#: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
@@ -34,23 +25,18 @@ msgstr ""
 "Pretražuje cijelu bazu podataka i pokušava ispraviti velika/mala slova u "
 "imenima."
 
-#: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr "Ispravi_velika/mala_slova_u_imenima …"
 
-#: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
 msgstr "Provjeravanje imena"
 
-#: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
 msgstr "Traženje imena"
 
-#: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
 msgstr "Broj promijenjenih imena"
 
-#: ChangeGivenNames/changenames.glade:32
 msgid ""
 "Below is a list of the given names that \n"
 "Gramps can convert to correct capitalization. \n"
@@ -60,6 +46,5 @@ msgstr ""
 "Gramps može ispraviti velika/mala slova.\n"
 "Odaberi imena koja želiš ispraviti. "
 
-#: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
 msgstr "Uredi odabir"

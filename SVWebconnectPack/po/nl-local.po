@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,64 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: SVWebconnectPack/SVWebPack.gpr.py:11
 msgid "SV Web Connect Pack"
 msgstr "SV Web Connect Pack"
 
-#: SVWebconnectPack/SVWebPack.gpr.py:12
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
 msgstr "Verzameling websites voor Zweden (vereist libwebconnect)"
 
-#: SVWebconnectPack/SVWebPack.py:33
 msgid "Find A Grave"
 msgstr "Zoek een graf"
 
-#: SVWebconnectPack/SVWebPack.py:34
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
-#: SVWebconnectPack/SVWebPack.py:35
 msgid "Google SV"
 msgstr "Google SV"
 
-#: SVWebconnectPack/SVWebPack.py:38
 msgid "FamilySearch.org Tree"
 msgstr "FamilySearch.org Stamboom"
 
-#: SVWebconnectPack/SVWebPack.py:40
 msgid "National archives of Sweden personsearch"
 msgstr "Nationaal archief van Zweden persoonsonderzoek"
 
-#: SVWebconnectPack/SVWebPack.py:41
 msgid "National archives of Sweden free search"
 msgstr "Nationaal archief van Zweden gratis zoeken"
 
-#: SVWebconnectPack/SVWebPack.py:42
 msgid "Arkiv Digital estate records for Skåne"
 msgstr "Arkiv Digitale boedelbeschrijvingen voor Skåne"
 
-#: SVWebconnectPack/SVWebPack.py:43
 msgid "Ancestry Search"
 msgstr "Ancestry Search"
 
-#: SVWebconnectPack/SVWebPack.py:44
 msgid "Find swedish portraits - Rötter.se"
 msgstr "Zweedse portretten zoeken - Rötter.se"
 
-#: SVWebconnectPack/SVWebPack.py:45
 msgid "Gravar.se - find swedish graves"
 msgstr "Gravar.se - Zweedse graven zoeken"
 
-#: SVWebconnectPack/SVWebPack.py:46
 msgid "National archives of Sweden search censuses"
 msgstr "Nationale archieven van Zweden zoek volkstellingen"
 
-#: SVWebconnectPack/SVWebPack.py:47
 msgid "Arkiv Digital released prisoners"
 msgstr "Arkiv Digital vrijgelaten gevangenen"
 
-#: SVWebconnectPack/SVWebPack.py:48
 msgid "Gravestone inventory - rötter.se"
 msgstr "Grafsteen inventaris - rötter.se"

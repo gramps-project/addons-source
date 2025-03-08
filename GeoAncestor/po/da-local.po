@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,33 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
 msgid "Ancestors map"
 msgstr "Anekort"
 
-#: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
 msgstr "En oversigt der viser aners steder på kortet."
 
-#: GeoAncestor/GeoAncestor.py:207
 msgid "Ancestors places on the map"
 msgstr "Aners steder på kortet"
 
-#: GeoAncestor/GeoAncestor.py:235
 msgid "GeoAncestor"
 msgstr "GeoAncestor"
 
-#: GeoAncestor/GeoAncestor.py:304
 #, python-format
 msgid "Ancestors places for %s"
 msgstr "Aners steder for %s"
 
-#: GeoAncestor/GeoAncestor.py:311
 msgid "Counting all places"
 msgstr "Tæller alle steder"
 
-#: GeoAncestor/GeoAncestor.py:314
 msgid "Showing all places"
 msgstr "Viser alle steder"

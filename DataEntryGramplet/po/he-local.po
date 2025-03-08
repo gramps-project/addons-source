@@ -1,15 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-21 17:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,180 +13,122 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: FilterRules/activepersonrule.py:45 DataEntryGramplet/DataEntryGramplet.py:71
-msgid "Active person"
-msgstr "אדם פעיל"
-
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
 msgstr "גראמפלט הזנת נתונים"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
 msgstr "גראמפלט להזנת נתונים מהירה"
 
-#: DataEntryGramplet/DataEntryGramplet.py:73
+msgid "Active person"
+msgstr "אדם פעיל"
+
 msgid "Family:"
 msgstr "משפחה:"
 
-#: DataEntryGramplet/DataEntryGramplet.py:74
 msgid "Sources?"
 msgstr "מקורות?"
 
-#: DataEntryGramplet/DataEntryGramplet.py:76
-#: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "Surname, Given"
 msgstr "שם משפחה, שם פרטי"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Save"
 msgstr "שמירה"
 
-#: DataEntryGramplet/DataEntryGramplet.py:92
 msgid "Abandon"
 msgstr "נטישה"
 
-#: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
 msgstr "אדם חדש"
 
-#: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
 msgstr "הוספת יוחסה"
 
-#: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "No relation to active person"
 msgstr "אין קשר לאדם הפעיל"
 
-#: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
 msgstr "הוספה כהורה"
 
-#: DataEntryGramplet/DataEntryGramplet.py:101
 msgid "Add as a Mother"
 msgstr "הוספה כאם"
 
-#: DataEntryGramplet/DataEntryGramplet.py:102
 msgid "Add as a Father"
 msgstr "הוספה כאב"
 
-#: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
 msgstr "הוספה כבן(ת) זוג"
 
-#: DataEntryGramplet/DataEntryGramplet.py:104
 msgid "Add as a Wife"
 msgstr "הוספה כרעיה"
 
-#: DataEntryGramplet/DataEntryGramplet.py:105
 msgid "Add as a Husband"
 msgstr "הוספה כבעל"
 
-#: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
 msgstr "הוספה כצאצא"
 
-#: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
 msgstr "הוספת צאצא"
 
-#: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
-msgstr "העתקת נתונים פעילים."
+msgstr "העתקת נתונים פעילים"
 
-#: DataEntryGramplet/DataEntryGramplet.py:167
-#: DataEntryGramplet/DataEntryGramplet.py:178
-#: DataEntryGramplet/DataEntryGramplet.py:315
 msgid "in"
 msgstr "ב"
 
-#: DataEntryGramplet/DataEntryGramplet.py:441
-#: DataEntryGramplet/DataEntryGramplet.py:569
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "גראמפלט הזנת נתונים: %s"
 
-#: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
 msgstr "נא להזין שם."
 
-#: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
 msgstr "לא ניתן להוסיף אדם חדש."
 
-#: DataEntryGramplet/DataEntryGramplet.py:523
-#: DataEntryGramplet/DataEntryGramplet.py:531
-#: DataEntryGramplet/DataEntryGramplet.py:536
-#: DataEntryGramplet/DataEntryGramplet.py:541
-#: DataEntryGramplet/DataEntryGramplet.py:550
-#: DataEntryGramplet/DataEntryGramplet.py:555
-#: DataEntryGramplet/DataEntryGramplet.py:560
-#: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
-msgstr "נא להגדיר אדם פעיל"
+msgstr "נא להגדיר אדם פעיל."
 
-#: DataEntryGramplet/DataEntryGramplet.py:523
-#: DataEntryGramplet/DataEntryGramplet.py:526
 msgid "Can't add new person as a parent."
 msgstr "לא ניתן להוסיף אדם חדש כהורה."
 
-#: DataEntryGramplet/DataEntryGramplet.py:526
-#: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
 msgstr "נא להגדיר מגדר לאדם החדש."
 
-#: DataEntryGramplet/DataEntryGramplet.py:531
 msgid "Can't add new person as a mother."
 msgstr "לא ניתן להוסיף אדם חדש כאם."
 
-#: DataEntryGramplet/DataEntryGramplet.py:536
 msgid "Can't add new person as a father."
 msgstr "לא ניתן להוסיף אדם חדש כאב."
 
-#: DataEntryGramplet/DataEntryGramplet.py:541
-#: DataEntryGramplet/DataEntryGramplet.py:545
-#: DataEntryGramplet/DataEntryGramplet.py:768
-#: DataEntryGramplet/DataEntryGramplet.py:805
-#: DataEntryGramplet/DataEntryGramplet.py:838
 msgid "Can't add new person as a spouse."
 msgstr "לא ניתן להוסיף אדם חדש כבן(ת) זוג."
 
-#: DataEntryGramplet/DataEntryGramplet.py:550
 msgid "Can't add new person as a wife."
 msgstr "לא ניתן להוסיף אדם חדש כרעיה."
 
-#: DataEntryGramplet/DataEntryGramplet.py:555
 msgid "Can't add new person as a husband."
 msgstr "לא ניתן להוסיף אדם חדש כבעל."
 
-#: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
 msgstr "לא ניתן להוסיף אדם חדש כאח או אחות."
 
-#: DataEntryGramplet/DataEntryGramplet.py:565
-#: DataEntryGramplet/DataEntryGramplet.py:938
 msgid "Can't add new person as a child."
 msgstr "לא ניתן להוסיף אדם חדש כצאצא."
 
-#: DataEntryGramplet/DataEntryGramplet.py:763
 msgid "Please set Active person."
-msgstr "נא להגדיר אדם פעיל"
+msgstr "נא להגדיר אדם פעיל."
 
-#: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
 msgstr "לא ניתן להוסיף אדם חדש כבן(ת) זוג לאף אחד."
 
-#: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
 msgstr "נא להגדיר מגדר לאדם פעיל או אדם חדש."
 
-#: DataEntryGramplet/DataEntryGramplet.py:804
-#: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
 msgstr "מגדר זהה לאדם הפעיל והאדם החדש."
 
-#: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
 msgstr "נא להגדיר מגדר לאדם פעיל."

@@ -1,21 +1,8 @@
-# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
-# translation of celestia-doc-index.0.3.6.po to Albanian
-# This file is distributed under the same license as the GRAMPS package.
-#
-# Maintainer: Armend Iseni <aiseni.as@gmail.com>, 2008
-# Maintainer: Vlado Pesov <vpesov@genrepsoft.com>, 2008
-# Maintainer: Bojan Seirovski <druid0101@gmail.com>, 2008
-# Maintainer: Senad Sejfic <sejficsenad@gmail.com>, 2008
-# Translator: Vlora Jakupi <vlorajak@hotmail.com>, 2008
-# Proof-reading: Fluturie Xhila <fluturie_xh@yahoo.com>, 2008
-# Proof-reading: Arlinda Kastrati<aarlindakastrati@hotmail.com>, 2008
-# Proof-reading: Vlora Jakupi <vlorajak@hotmail.com>, 2008
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
 "PO-Revision-Date: 2008-11-13 21:00+0100\n"
 "Last-Translator: Vlora Jakupi <vlorajak@hotmail.com>\n"
 "Language-Team: \n"
@@ -32,62 +19,8 @@ msgstr ""
 "X-Poedit-Bookmarks: 3498,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SearchPath-0: /home/jole/SVN/gramps/gramps30\n"
 
-#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
 msgstr "Kontrrollimi i titullit të vendit"
 
-#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
 msgstr "Kërkim i fushave të vendit"
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
-msgid "Check Place Titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.gpr.py:30
-msgid "Check place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:71
-msgid "Check Place title"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:107
-msgid "Differences"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:112
-msgid "No need modifications"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:113
-msgid "No changes need."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:187
-msgid "Legacy place"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:201
-msgid "Modify Place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:224
-msgid "Place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:56
-msgid "Remove content of place title field if it does not match"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:74
-msgid "Copy content of place title field to a new note."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:91
-msgid "Attach a tag on selected places."
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.glade:177
-msgid "column"
-msgstr ""

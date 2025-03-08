@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,47 +12,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetAttributeTool/SetAttributeTool.py:71
 msgid "Select filter to restrict people"
 msgstr "Vælg filter til personafgrænsning"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: SetAttributeTool/SetAttributeTool.py:151
-#: SetAttributeTool/SetAttributeTool.py:193
-msgid "Processing...\n"
-msgstr "Behandler ...\n"
-
-#: AttachSourceTool/AttachSourceTool.py:197
-#: SetAttributeTool/SetAttributeTool.py:226
-msgid "Done!\n"
-msgstr "Færdig!\n"
-
-#: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Attributtype der skal filføjes eller redigeres"
 
-#: SetAttributeTool/SetAttributeTool.py:84
 msgid "Attribute value to add or edit"
 msgstr "Attributværdi der skal filføjes eller redigeres"
 
-#: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
 msgstr "Fjern attributtype og værdi"
 
-#: SetAttributeTool/SetAttributeTool.py:122
-#: SetAttributeTool/SetAttributeTool.py:150
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
 msgid "Set Attribute"
 msgstr "Sæt attribut"
 
-#: SetAttributeTool/SetAttributeTool.py:152
+msgid "Processing...\n"
+msgstr "Behandler ...\n"
+
 msgid "Setting attributes..."
 msgstr "Sætter attributter..."
 
-#: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
 "Setting '%s' attributes to '%s'...\n"
@@ -68,7 +43,6 @@ msgstr ""
 "Sætter '%s' attributter to '%s'...\n"
 "\n"
 
-#: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
 "\n"
@@ -77,15 +51,12 @@ msgstr ""
 "\n"
 "Sæt %d '%s' attributter to '%s'\n"
 
-#: SetAttributeTool/SetAttributeTool.py:191
 msgid "Remove Attribute"
 msgstr "Fjern attibut"
 
-#: SetAttributeTool/SetAttributeTool.py:194
 msgid "Removing attributes..."
 msgstr "Fjerner attributter..."
 
-#: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
 msgid ""
 "\n"
@@ -94,6 +65,8 @@ msgstr ""
 "\n"
 "Fjerner %d '%s' attributter til '%s'\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:27
+msgid "Done!\n"
+msgstr "Færdig!\n"
+
 msgid "Set an attribute to a given value."
 msgstr "Sæt en attribut til en specifik værdi."

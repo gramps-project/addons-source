@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,75 +12,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
 msgstr "%(abbrev)s %(date)s i %(place)s"
 
-#: CombinedView/basepage.py:495
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
 
-#: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
 msgstr "%(event_type)s: %(date)s in %(place)s"
 
-#: CombinedView/personpage.py:601
 #, python-format
 msgid "%(event_type)s: %(date)s"
 msgstr "%(event_type)s: %(date)s"
 
-#: CombinedView/personpage.py:604
 #, python-format
 msgid "%(event_type)s: %(place)s"
 msgstr "%(event_type)s: %(place)s"
 
-#: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
 msgstr "Klik for at gøre denne hændelse aktiv"
 
-#: CombinedView/personpage.py:743
 msgid "Click to visit this link"
-msgstr ""
+msgstr "Klik for at besøge dette link"
 
-#: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
-msgstr ""
+msgstr ": "
 
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
 msgstr "Kombineret"
 
-#: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
 msgstr "En visning af slægtsforhold og hændelser for en person"
 
-#: CombinedView/navigationview.py:346
 msgid ""
 "You need to set a 'default person' to go to. Select the People View, select "
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
-"Du skal vælge en \"standard person\" for at fortsætte. Vælg PersonVisning, "
-"vælg den person du vil benytte som 'Hovedperson' via menuen Rediger -> vælg "
-"Hovedperson."
+"Du skal vælge en \"standard person\" for at fortsætte. Vælg Person oversigt, "
+"vælg den person du vil benytte som 'Proband' via menuen Rediger -> vælg "
+"Proband."
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
 msgid "Order"
 msgstr "Rækkefølge"
 
-#: CombinedView/combinedview.py:528
 msgid "Edit the active event"
 msgstr "ret den aktive hændelse"
 
-#: CombinedView/combinedview.py:630
 msgid "Show Tags"
 msgstr "Vis Ettiketter"
 
-#: CombinedView/combinedview.py:656
 msgid "Vertical Details"
 msgstr "Lodrette Detaljer"

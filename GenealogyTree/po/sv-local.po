@@ -1,23 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 17:44+0000\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -26,88 +12,66 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr "Antavla som använder LaTex genealogiträd"
 
-#: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
 msgstr "Stamtavla som använder LaTex genealogiträd"
 
-#: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
 msgstr "Träd för far- eller morförälder"
 
-#: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
 msgstr "Träd för far- eller morförälder som använder LaTex genealogiträd"
 
-#: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
 msgstr "Timglasträd"
 
-#: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
 msgstr "Timglasträd som använder LaTex genealogiträd"
 
-#: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
 msgstr "Timglasträd för en familj"
 
-#: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Timglasträd för en familj som använder LaTex genealogiträd"
 
-#: GenealogyTree/gt_sandclock.py:235
 msgid "The center family for the report"
 msgstr "Huvudfamiljen för rapporten"
 
-#: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
 msgstr "Generationer upp"
 
-#: GenealogyTree/gt_sandclock.py:242
 msgid "Generations down"
 msgstr "Generationer ner"
 
-#: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
 msgstr "Ta med syskon"
 
-#: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
 msgstr "Ta med syskon för anor."
 
-#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
-#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
 msgid "Include images"
 msgstr "Ta med bilder"
 
-#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
-#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
 msgid "Include images of people in the nodes."
 msgstr "Ta med bilder på personer i noderna."
 
-#: GenealogyTree/gt_grandparent.py:119
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
 msgstr "Personen %s har inte både en far- och morförälder"
 
-#: GenealogyTree/gt_grandparent.py:227
 msgid "Grandparent family spacing"
 msgstr "Mellanrum för far- och morföräldrars familjer"
 
-#: GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
 msgstr "Extra mellanrum för far- och morföräldrars familjer (mm)"
 
-#: GenealogyTree/gt_descendant.py:191
 msgid "First spouse left"
 msgstr "Första maken till vänster"
 
-#: GenealogyTree/gt_descendant.py:192
 msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."

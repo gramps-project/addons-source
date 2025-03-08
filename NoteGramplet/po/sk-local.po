@@ -1,17 +1,9 @@
-# GRAMPS SLOVAK language version
-# Lubo Vasko, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
-# Dominik Sivak <bubakovsky@gmail.com>, 2019.
-# MILAN KUROVSKY, 2023.
-# Lubo Vasko <pgval at inmail dot sk>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
-# Jozef Riha, 2017.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-22 17:04+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,30 +12,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: FilterRules/activepersonrule.py:45 NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Aktívna osoba"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Uložiť"
 
-#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Opustiť"
 
-#: NoteGramplet/NoteGramplet.py:255
-#, fuzzy
-#| msgid "Save"
 msgid "Save Note"
-msgstr "Uložiť"
+msgstr "Uložiť poznámku"
 
-#: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "Gramplet Poznámka"
 
-#: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
-msgstr ""
+msgstr "Gramplet pre úpravu poznámok aktívnej osoby"

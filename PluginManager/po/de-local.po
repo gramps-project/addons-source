@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"POT-Creation-Date: 2025-02-23 12:35-0600\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,21 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "Zusatzmodulverwaltung Verbessert"
 
-#: PluginManager/PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr "Zusatzmodulverwaltung mit mehreren zusätzlichen Funktionen"
 
-#: PluginManager/PluginManager.py:84
 msgid "Plugin Manager - Enhanced"
 msgstr "Zusatzmodulverwaltung Verbessert"
 
-#: PluginManager/PluginManager.py:154
 msgid ""
 "Enter search words to filter the addons.\n"
 "All the words must be present somewhere in the row or\n"
@@ -57,29 +34,24 @@ msgstr ""
 "des Zusatzmoduls vorhanden sein, um sie in die Suche mit einzubeziehen.\n"
 "Groß-/Kleinschreibung und Reihenfolge werden ignoriert."
 
-#: PluginManager/PluginManager.py:158
 msgid "Search..."
 msgstr "Suchen …"
 
-#: PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Neustart …"
 
-#: PluginManager/PluginManager.py:217
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
 "Bitte starte Gramps neu, um sicherzustellen, dass Ihre Änderungen an den "
 "Zusatzmodulen erkannt werden."
 
-#: PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
 "Fehler beim Entfernen des '%s' Verzeichnisses. Die Deinstallation ist "
 "möglicherweise fehlgeschlagen"
 
-#: PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -87,46 +59,35 @@ msgstr ""
 "'*' Artikel werden von Drittanbietern verschickt,\n"
 "<s>durchgestrichene</s> Artikel sind versteckt"
 
-#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
 msgid "Hide"
 msgstr "Verbergen"
 
-#: PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "Zeige versteckte Elemente"
 
-#: PluginManager/PluginManager.py:438
 msgid "Show Built-in items"
 msgstr "Show Eingebaute Elemente"
 
-#: PluginManager/PluginManager.py:445
 msgid "* indicates 3rd party addon"
 msgstr "* zeigt das Erweiterung eines Drittanbieters an"
 
-#: PluginManager/PluginManager.py:450
 msgid "Plugins"
 msgstr "Zusatzmodule"
 
-#: PluginManager/PluginManager.py:528
 msgid "Unhide"
 msgstr "Aufdecken"
 
-#: PluginManager/PluginManager.py:547
 msgid "Uninstall"
 msgstr "Deinstallieren"
 
-#: PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Verfügbar"
 
-#: PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr "Eingebaut"
 
-#: PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr "*Installiert"
 
-#: PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Aktualisierung Verfügbar"

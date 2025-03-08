@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,117 +13,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
 msgstr ""
 "Mjesto nije pronađeno. Možeš pojasniti ključne riječi za pretraživanje."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
-msgid "Failed to search for the coordinates due to some unexpected error."
-msgstr ""
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
-#, fuzzy
-#| msgid "The place was not identified."
-msgid "The place was not found."
-msgstr "Mjesto nije identificirano."
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
 msgid "The place was not identified."
 msgstr "Mjesto nije identificirano."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
-#, fuzzy
-#| msgid "Consent given by"
-msgid "Coordinates were not given."
-msgstr "Odobrenje od"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
-msgid "Failed to interpret the input format."
-msgstr ""
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
 msgstr "Zapis u bazi podataka [{id}] {name}:"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
-#: PlaceCoordinateGramplet/placecoordinate.glade:132
 msgid "Nothing has been searched yet"
 msgstr "Još se ništa nije tražilo"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr "Nijedno mjesto nije aktivno"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
 msgstr "Koordinate mjesta"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
 msgid "View for the place coordinate gramplet."
 msgstr "Prikaz grampleta za koordinate mjesta."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
-#, fuzzy
-#| msgid "Place Coordinates"
-msgid "Place and Coordinates"
-msgstr "Koordinate mjesta"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr "Gramplet za jednostavno postavljanje koordinata mjesta"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
 msgid "Place Coordinates"
 msgstr "Koordinate mjesta"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-#, fuzzy
-#| msgid "Place Coordinate Gramplet view"
-msgid "Place Coordinate Gramplet"
-msgstr "Koordinate mjesta"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
 msgstr "Izbornik za kartu"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
 msgid "Add city as place"
 msgstr "Dodaj grad kao mjesto"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
 msgid "Add addess as place"
 msgstr "Dodaj adresu kao mjesto"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"
 msgstr "Traži:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:26
 msgid "Found place:"
 msgstr "Pronađeno mjesto:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:53
-#, fuzzy
-#| msgid "No central person selected"
-msgid "No DB entry is selected"
-msgstr "Nije odabrana središnja osoba"
-
-#: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
 msgstr "Poštanski broj:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:116
 msgid "Show found place externally in Google Maps"
 msgstr "Pokaži pronađeno mjesto na Google kartama"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:203
 msgid ""
 "Take last clicked position\n"
 "from Geography map"
@@ -138,20 +72,11 @@ msgstr ""
 "Uzmi zadnji pritisnuti položaj\n"
 "na karti u prikazu „Kartografija”"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:218
 msgid "Search location from DB"
 msgstr "Traži lokaciju iz baze podataka"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:232
 msgid "Apply geo location to Database"
 msgstr "Primijeni geopodatke lokacije na bazu podataka"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:269
 msgid "Go"
 msgstr "Idi"
-
-#: PlaceCoordinateGramplet/placecoordinate.glade:290
-#, fuzzy
-#| msgid "Show lifespan"
-msgid "Show help"
-msgstr "Prikaži starosti"

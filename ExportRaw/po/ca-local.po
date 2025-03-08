@@ -1,34 +1,15 @@
-# translation of ca.po to Català
-# TRADUCCIÓ AL CATALÀ DE GRAMPS
-# Copyright (C) 2008 PEL GRUP DE GRAMPS
-# Aquest fitxer es distribueix segons la mateixa llicència que Gramps
-#
-# Joan Creus <joan punt creus a gmail punt com>, 2008.
-# Joan Creus <joan.creus at gmail dot com>, 2008, 2009, 2010, 2011, 2012, 2013.
-# Arnau <arnaullv at gmail dot com>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2010-03-07 17:48+0100\n"
-"Last-Translator: Joan Creus <joan.creus at gmail dot com>\n"
-"Language-Team: Català <en@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: ExportRaw/ExportRaw.gpr.py:4
-msgid "Raw Export"
-msgstr ""
-
-#: ExportRaw/ExportRaw.gpr.py:5
-msgid "This is a raw python object dump"
-msgstr ""
-
-#: ExportRaw/ExportRaw.gpr.py:13
-msgid "Raw options"
-msgstr ""
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"

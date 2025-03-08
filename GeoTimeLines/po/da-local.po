@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,43 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: GeoTimeLines/GeoTimeLines.py:233 GeoTimeLines/GeoTimeLines.py:339
-#: GeoTimeLines/GeoTimeLines.gpr.py:25
 msgid "TimeLines Map"
 msgstr "Tidsliniekort"
 
-#: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
 msgstr "Vælg format på visning"
 
-#: GeoTimeLines/GeoTimeLines.py:800
 msgid "Almost done"
 msgstr "Næsten udført"
 
-#: GeoTimeLines/GeoTimeLines.py:916
 msgid "Gathering data"
 msgstr "Samler data"
 
-#: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
-msgid "Number of Persons: %s"
-msgstr ""
-"Antal personer : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#: GeoTimeLines/GeoTimeLines.py:1776
-msgid ""
-"Stagger the map markers\n"
-"to differentiate different\n"
-"markers at the same location"
-msgstr ""
-
-#: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
 "Stagger Radius (hectometers)\n"
 "as measured along the equator\n"
@@ -65,7 +35,6 @@ msgstr ""
 "som målt ved ækvator\n"
 "(medtag breddegradsforvrængning)"
 
-#: GeoTimeLines/GeoTimeLines.py:1794
 msgid ""
 "Display markers for unknown ancestors\n"
 "based on earliest descendant location"
@@ -73,71 +42,29 @@ msgstr ""
 "Vis mærker for ukendte aner\n"
 "baseret på tidligste efterkommersted"
 
-#: GeoTimeLines/GeoTimeLines.py:1803
-msgid ""
-"Days to keep lines on the map after\n"
-"an event"
-msgstr ""
-
-#: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
 msgstr "Benyt brugerdefineredee kortikoner"
 
-#: GeoTimeLines/GeoTimeLines.py:1829
-msgid ""
-"If there is no birth event for a person, their age\n"
-"is assumed to be this at their first event"
-msgstr ""
-
-#: GeoTimeLines/GeoTimeLines.py:1836
-msgid ""
-"If there is no death event for a person, they will\n"
-"be assumed dead at this age"
-msgstr ""
-
-#: GeoTimeLines/GeoTimeLines.py:1875
 msgid "Number of steps"
 msgstr "Antal trin"
 
-#: GeoTimeLines/GeoTimeLines.py:1883
 msgid "Type of steps"
 msgstr "Typer trin"
 
-#: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
 msgstr "Trin per millisekund"
 
-#: GeoTimeLines/GeoTimeLines.py:1915
-msgid "Initial map view on Gramps startup"
-msgstr ""
-
-#: GeoTimeLines/GeoTimeLines.py:1927
-msgid ""
-"Initial map view after startup and\n"
-"after changing the active person"
-msgstr ""
-
-#: GeoTimeLines/GeoTimeLines.py:1936
 msgid "Show map travel lines on startup"
 msgstr "Viser kortrejselinier ved opstart"
 
-#: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
 msgstr "Vis tidsmærker i navigationsfeltet ved opstart"
 
-#: GeoTimeLines/GeoTimeLines.py:1974
-#, fuzzy
-#| msgid "TimeLines Map"
-msgid "TimeLines Map options"
-msgstr "Tidsliniekort"
-
-#: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
 "A view showing all the places visited by a person or persons on various date."
 msgstr ""
 "Et billede der viser alle steder som en person har besøgt på forskellige "
 "datoer."
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:39
 msgid "TimeLines map"
 msgstr "Tidsliniekort"

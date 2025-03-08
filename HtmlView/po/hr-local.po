@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,33 +13,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: HtmlView/htmlview.py:328
 msgid "HtmlView"
 msgstr "HTML prikaz"
 
-#: HtmlView/htmlview.py:495
 msgid "Go to the previous page in the history"
 msgstr "Idi na prethodnu stranicu u kronologiji"
 
-#: HtmlView/htmlview.py:503
 msgid "Go to the next page in the history"
 msgstr "Idi na sljedeću stranicu u kronologiji"
 
-#: HtmlView/htmlview.py:508
 msgid "_Refresh"
 msgstr "_Osvježi"
 
-#: HtmlView/htmlview.py:511
 msgid "Stop and reload the page."
 msgstr "Zaustavi i učitaj ponovo."
 
-#: HtmlView/htmlview.py:555
 msgid "Start page for the Html View"
 msgstr "Početna stranica HTML prikaza"
 
-#: HtmlView/htmlview.py:556
 msgid ""
 "Type a webpage address at the top, and hit the execute button to load a "
 "webpage in this page\n"
@@ -58,14 +44,11 @@ msgstr ""
 "<br>\n"
 "Na primjer: "
 
-#: HtmlView/htmlview.gpr.py:31
 msgid "Html View"
 msgstr "HTML prikaz"
 
-#: HtmlView/htmlview.gpr.py:32
 msgid "A view showing html pages embedded in Gramps"
 msgstr "Prikaz HTML stranica ugrađene u Gramps"
 
-#: HtmlView/htmlview.gpr.py:40
 msgid "Web"
 msgstr "Web"

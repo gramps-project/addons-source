@@ -1,22 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,18 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
-#: Heatmap/heatmap.py:226
-msgid "INFO"
-msgstr "INFO"
-
-#: Heatmap/heatmap.py:85
 msgid "Map tiles"
 msgstr "Kartplattor"
 
-#: Heatmap/heatmap.py:90
 msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
@@ -44,11 +24,9 @@ msgstr ""
 "Storleken på färgdiagrammets punkter.\n"
 "Standard: 15"
 
-#: Heatmap/heatmap.py:93
 msgid "File path"
 msgstr "Filmål"
 
-#: Heatmap/heatmap.py:98
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
@@ -60,26 +38,21 @@ msgstr ""
 "måste också börja och sluta med ett alfanumeriskt tecken. Filtillägget "
 "'.html' läggs till i rapporten."
 
-#: Heatmap/heatmap.py:103
 msgid "File name"
 msgstr "Filnamn"
 
-#: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
 msgstr "Aktivera anpassad startposition"
 
-#: Heatmap/heatmap.py:119
 msgid ""
 "Enabling will force the map open at your custom start position and zoom."
 msgstr ""
 "Aktivering tvingar kartan att öppnas vid din anpassade startposition och "
 "zooma."
 
-#: Heatmap/heatmap.py:124
 msgid "Start latitude"
 msgstr "Startlatitud"
 
-#: Heatmap/heatmap.py:126
 msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
@@ -87,11 +60,9 @@ msgstr ""
 "Ange anpassad startpositionslatitud\n"
 "Standard: 50.0"
 
-#: Heatmap/heatmap.py:129
 msgid "Start longitude"
 msgstr "Startlongitud"
 
-#: Heatmap/heatmap.py:131
 msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
@@ -99,11 +70,9 @@ msgstr ""
 "Ange anpassad startpositionslongitud\n"
 "Standard: 10.0"
 
-#: Heatmap/heatmap.py:134
 msgid "Start zoom"
 msgstr "Startzoom"
 
-#: Heatmap/heatmap.py:136
 msgid ""
 "Set the value for the starting zoom\n"
 "Default: 5"
@@ -111,40 +80,29 @@ msgstr ""
 "Ställ in värdet för startzoomen\n"
 "Standard: 5"
 
-#: Heatmap/heatmap.py:209
 msgid "Path does not exist."
 msgstr "Sökvägen finns inte."
 
-#: Heatmap/heatmap.py:210
 msgid "Invalid filename."
 msgstr "Ogiltigt filnamn."
 
-#: Heatmap/heatmap.gpr.py:26
+msgid "INFO"
+msgstr "INFO"
+
 msgid "Create a heatmap web report."
 msgstr "Skapa en webbrapport med färgdiagram."
 
-#: Heatmap/utils.py:55
 msgid "Stamen Terrain"
 msgstr "Stamen Terrain"
 
-#: Heatmap/utils.py:58
-#, fuzzy
-#| msgid "Paternal Background Color"
-msgid "Stamen Terrain (Background only)"
-msgstr "Bakgrundsfärg för fadersidan"
-
-#: Heatmap/utils.py:61
 msgid "Stamen Toner"
 msgstr "Stamen Toner"
 
-#: Heatmap/utils.py:64
 msgid "Stamen Watercolor"
 msgstr "Stamen Watercolor"
 
-#: Heatmap/utils.py:67
 msgid "CartoDB Positron"
 msgstr "CartoDB Positron"
 
-#: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
 msgstr "CartoDB DarkMatter"

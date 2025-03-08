@@ -1,17 +1,9 @@
-# GRAMPS SLOVAK language version
-# Lubo Vasko, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
-# Dominik Sivak <bubakovsky@gmail.com>, 2019.
-# MILAN KUROVSKY, 2023.
-# Lubo Vasko <pgval at inmail dot sk>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
-# Jozef Riha, 2017.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 17:44+0000\n"
+"POT-Creation-Date: 2025-02-22 23:21+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,136 +12,129 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:30
-#: EditExifMetadata/editexifmetadata.py:723
-#: EditExifMetadata/editexifmetadata.py:1135
-#: EditExifMetadata/editexifmetadata.py:1147
 msgid "Edit Image Exif Metadata"
 msgstr "Upraviť Exif metadáta obrázku"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
-msgstr "Gramplet na zobrazenie, úpravu a uloženie metadát Exif obrázka"
+msgstr "Gramplet na zobrazenie, úpravu a uloženie Exif metadát obrázka"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
 msgstr "Upraviť Exif metadáta"
 
-#: EditExifMetadata/editexifmetadata.py:135
 msgid "<-- Image Types -->"
-msgstr ""
+msgstr "<-- Typy obrázkov -->"
 
-#: EditExifMetadata/editexifmetadata.py:158
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
 msgstr ""
+"Upozornenie:   Zmena tejto položky aktualizuje pole názvu objektu média v "
+"Gramps, nie Exiv2 metadáta."
 
-#: EditExifMetadata/editexifmetadata.py:161
 msgid "Provide a short description for this image."
-msgstr "Poskytnite krátky popis tohto obrázka."
+msgstr "Poskytnite krátky popis pre tento obrázok."
 
-#: EditExifMetadata/editexifmetadata.py:163
 msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
 msgstr ""
-"Zapíšte meno autora obrázku, resp. spoločnosti zodpovednej za jeho "
-"vytvorenie."
+"Zadajte umelca/autora tohto obrázku.   Meno osoby alebo spoločnosti, ktorá "
+"je zodpovedná za jeho vytvorenie."
 
-#: EditExifMetadata/editexifmetadata.py:167
 msgid "Enter the copyright information for this image. \n"
 msgstr "Zadajte informácie o autorských právach k tomuto obrázku. \n"
 
-#: EditExifMetadata/editexifmetadata.py:169
 msgid ""
 "The original date/ time when the image was first created/ taken as in a "
 "photograph.\n"
 "Example: 1830-01-1 09:30:59"
 msgstr ""
+"Pôvodný dátum/ čas, keď bol obrázok prvýkrát vytvorený/ vyfotený ako "
+"fotografia.\n"
+"Príklad: 1830-01-1 09:30:59"
 
-#: EditExifMetadata/editexifmetadata.py:173
 msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
 msgstr ""
+"Toto je dátum/ čas, keď bol obrázok naposledy zmenený/ upravený.\n"
+"Príklad: 2011-05-24 14:30:00"
 
-#: EditExifMetadata/editexifmetadata.py:176
 msgid ""
 "Enter the Latitude GPS coordinates for this image,\n"
 "Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
 msgstr ""
+"Zadajte zemepisnú šírku GPS súradníc pre tento obrázok,\n"
+"Príklad: -43.722965, -43:43:22, 38° 38′ 03″ S"
 
-#: EditExifMetadata/editexifmetadata.py:179
 msgid ""
 "Enter the Longitude GPS coordinates for this image,\n"
 "Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
 msgstr ""
+"Zadajte zemepisnú dĺžku GPS súradníc pre tento obrázok,\n"
+"Príklad: -10.396378, -10:23:46, 105° 6′ 6″ Z"
 
-#: EditExifMetadata/editexifmetadata.py:182
 msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
+"Toto je meranie nad alebo pod hladinou mora.   Meria sa v metroch.   "
+"Príklad: 200.558, -200.558"
 
-#: EditExifMetadata/editexifmetadata.py:191
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
-"Vo vašom web prehliadači sa zobrazí stránka pomocníka Gramps Wiki s témou: "
-"úprava exif metadát obrázku."
+"Vo vašom webovom prehliadači zobrazí stránku pomocníka Gramps Wiki s témou "
+"'Upraviť Exif metadáta obrázku'."
 
-#: EditExifMetadata/editexifmetadata.py:194
 msgid ""
 "This will open up a new window to allow you to edit/ modify this image's "
 "Exif metadata.\n"
 "  It will also allow you to be able to Save the modified metadata."
 msgstr ""
+"Otvorí nové okno, ktoré vám umožní upraviť/ modifikovať Exif metadáta tohto "
+"obrázku.\n"
+"Tiež vám umožní uložiť upravené metadáta."
 
-#: EditExifMetadata/editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
-msgstr ""
+msgstr "Vytvorí sa vyskakovacie okno zobrazujúce oblasť prezerania miniatúr"
 
-#: EditExifMetadata/editexifmetadata.py:201
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
 msgstr ""
+"Vyberte z rozbaľovacieho menu typ súboru obrázku, na ktorý chcete "
+"konvertovať váš mediálny objekt nekompatibilný s Exiv2."
 
-#: EditExifMetadata/editexifmetadata.py:205
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
+"Ak váš obrázok nie je typu, ktorý môže mať Exif metadáta čítané/ zapisované, "
+"konvertovať ho na typ, ktorý môže?"
 
-#: EditExifMetadata/editexifmetadata.py:209
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
 msgstr ""
-"UPOZORNENIE: všetky Exif metadáta z obrázka budú vymazané. Ste si istí že to "
-"chcete?"
+"UPOZORNENIE:   Toto úplne vymaže všetky Exif metadáta z tohto obrázku! Ste "
+"si istí, že to chcete urobiť?"
 
-#: EditExifMetadata/editexifmetadata.py:213
 msgid "Clear GPS"
-msgstr ""
+msgstr "Vymazať GPS"
 
-#: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"
 msgstr "Miniatúra"
 
-#: EditExifMetadata/editexifmetadata.py:215
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
-msgstr "Zvoliť obrázok kde začať ..."
+msgstr "Vyberte obrázok na začatie..."
 
-#: EditExifMetadata/editexifmetadata.py:421
 msgid ""
 "Image is NOT readable,\n"
 "Please choose a different image..."
@@ -157,34 +142,27 @@ msgstr ""
 "Obrázok NIE JE čitateľný,\n"
 "Prosím, vyberte iný obrázok..."
 
-#: EditExifMetadata/editexifmetadata.py:441
 msgid "Please convert this image to an Exiv2- compatible image type..."
-msgstr ""
-"Zkonvertujte prosím tento obrázok na typ obrázka kompatibilný s Exiv2..."
+msgstr "Prosím, prekonvertujte tento obrázok na typ kompatibilný s Exiv2..."
 
-#: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr ""
+msgstr "Veľkosť obrázka : {width} x {height} pixelov"
 
-#: EditExifMetadata/editexifmetadata.py:481
-#: EditExifMetadata/editexifmetadata.py:1440
 msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
 msgstr ""
-"Do obrázka sa nedá zapisovať,\n"
-"Exif metadáta nebude možné uložiť...."
+"Obrázok NIE je zapisovateľný,\n"
+"Nebudete môcť uložiť Exif metadáta...."
 
-#: EditExifMetadata/editexifmetadata.py:648
 msgid "Click Close to close this Thumbnail View Area."
 msgstr ""
+"Kliknite na Zatvoriť, aby ste zatvorili túto oblasť prezerania miniatúr."
 
-#: EditExifMetadata/editexifmetadata.py:654
 msgid "Thumbnail View Area"
-msgstr ""
+msgstr "Oblasť prezerania miniatúr"
 
-#: EditExifMetadata/editexifmetadata.py:724
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
@@ -192,186 +170,145 @@ msgstr ""
 "UPOZORNENIE: Chystáte sa konvertovať tento obrázok na obrázok .jpeg.  Ste si "
 "istí, že to chcete urobiť?"
 
-#: EditExifMetadata/editexifmetadata.py:726
 msgid "Convert and Delete"
-msgstr "Konvertovať a zmazať"
+msgstr "Konvertovať a vymazať"
 
-#: EditExifMetadata/editexifmetadata.py:807
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
 msgstr ""
-"Váš obrázok bol skonvertovaný, pôvodný súbor bol odstránený a celá cesta k "
+"Váš obrázok bol prekonvertovaný, pôvodný súbor bol vymazaný a celá cesta k "
 "obrázku bola aktualizovaná!"
 
-#: EditExifMetadata/editexifmetadata.py:812
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
-msgstr ""
+msgstr "Vyskytla sa chyba, skontrolujte cesty zdrojového a cieľového súboru..."
 
-#: EditExifMetadata/editexifmetadata.py:816
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
 msgstr ""
+"Vyskytla sa chyba pri mazaní pôvodného súboru.   Budete ho musieť vymazať "
+"sami!"
 
-#: EditExifMetadata/editexifmetadata.py:834
 msgid "There was an error in converting your image file."
 msgstr "Pri konverzii vášho obrázkového súboru došlo k chybe."
 
-#: EditExifMetadata/editexifmetadata.py:844
 msgid "Media Path Update"
 msgstr "Aktualizácia cesty k médiám"
 
-#: EditExifMetadata/editexifmetadata.py:853
 msgid "There has been an error in updating the image file's path!"
 msgstr "Pri aktualizácii cesty k súboru obrázka došlo k chybe!"
 
-#: EditExifMetadata/editexifmetadata.py:886
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
 msgstr ""
+"Kliknite na tlačidlo Zatvoriť, keď budete hotoví s úpravou Exif metadát "
+"tohto obrázka."
 
-#: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
-msgstr ""
+msgstr "Uloží kópiu dátových polí do Exif metadát obrázka."
 
-#: EditExifMetadata/editexifmetadata.py:928
 msgid "Re -display the data fields that were cleared from the Edit Area."
-msgstr ""
+msgstr "Znovu zobraziť dátové polia, ktoré boli vymazané v oblasti úprav."
 
-#: EditExifMetadata/editexifmetadata.py:932
 msgid "This button will clear all of the data fields shown here."
-msgstr ""
+msgstr "Toto tlačidlo vymaže všetky dátové polia tu zobrazené."
 
-#: EditExifMetadata/editexifmetadata.py:936
 msgid "This button will clear all of the GPS fields shown here."
-msgstr ""
+msgstr "Toto tlačidlo vymaže všetky GPS polia tu zobrazené."
 
-#: EditExifMetadata/editexifmetadata.py:940
 msgid ""
 "Closes this popup Edit window.\n"
 "WARNING: This action will NOT Save any changes/ modification made to this "
 "image's Exif metadata."
 msgstr ""
+"Zatvorí toto vyskakovacie okno úprav.\n"
+"UPOZORNENIE: Táto akcia NEULOŽÍ žiadne zmeny/úpravy, ktoré boli urobené na "
+"Exif metadátach tohto obrázka."
 
-#: EditExifMetadata/editexifmetadata.py:969
 msgid "Media Object Title"
 msgstr "Názov objektu média"
 
-#: EditExifMetadata/editexifmetadata.py:978
 msgid "media Title: "
 msgstr "Názov média: "
 
-#: EditExifMetadata/editexifmetadata.py:993
 msgid "General Data"
 msgstr "Všeobecné údaje"
 
-#: EditExifMetadata/editexifmetadata.py:1003
 msgid "Description: "
 msgstr "Popis: "
 
-#: EditExifMetadata/editexifmetadata.py:1004
 msgid "Artist: "
 msgstr "Umelec: "
 
-#: EditExifMetadata/editexifmetadata.py:1005
 msgid "Copyright: "
 msgstr "Copyright: "
 
-#: EditExifMetadata/editexifmetadata.py:1019
 msgid "Date/ Time"
 msgstr "Dátum/ Čas"
 
-#: EditExifMetadata/editexifmetadata.py:1034
 msgid "Original: "
-msgstr "Originál: "
+msgstr "Pôvodný: "
 
-#: EditExifMetadata/editexifmetadata.py:1035
 msgid "Modified: "
-msgstr "Posledná zmena: "
+msgstr "Upravený: "
 
-#: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
-msgstr ""
+msgstr "Zemepisná šírka/ Zemepisná dĺžka/ Nadmorská výška GPS súradnice"
 
-#: EditExifMetadata/editexifmetadata.py:1069
 msgid "Latitude :"
 msgstr "Zemepisná šírka :"
 
-#: EditExifMetadata/editexifmetadata.py:1070
 msgid "Longitude :"
 msgstr "Zemepisná dĺžka :"
 
-#: EditExifMetadata/editexifmetadata.py:1071
 msgid "Altitude :"
-msgstr "Výška :"
+msgstr "Nadmorská výška :"
 
-#: EditExifMetadata/editexifmetadata.py:1114
 msgid "Bad Date/Time"
 msgstr "Nesprávny dátum/čas"
 
-#: EditExifMetadata/editexifmetadata.py:1122
 msgid "Invalid latitude (syntax: 18°9'"
 msgstr "Neplatná zemepisná šírka (syntax: 18°9'"
 
-#: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 alebo -18:9:48.21)"
+msgstr "48.21\"J, -18.2412 alebo -18:9:48.21)"
 
-#: EditExifMetadata/editexifmetadata.py:1127
 msgid "Invalid longitude (syntax: 18°9'"
 msgstr "Neplatná zemepisná dĺžka (syntax: 18°9'"
 
-#: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 alebo -18:9:48.21)"
+msgstr "48.21\"V, -18.2412 alebo -18:9:48.21)"
 
-#: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
 msgstr ""
-"UPOZORNENIE!  Chystáte sa úplne odstrániť metadáta Exif z tohto obrázka?"
+"UPOZORNENIE!    Chystáte sa úplne vymazať Exif metadáta z tohto obrázka."
 
-#: EditExifMetadata/editexifmetadata.py:1138
-#: EditExifMetadata/editexifmetadata.py:1150
 msgid "Delete?"
-msgstr ""
+msgstr "Vymazať?"
 
-#: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
 msgstr ""
-"UPOZORNENIE!  Chystáte sa úplne odstrániť metadáta Exif z tohto obrázka?"
+"UPOZORNENIE!    Chystáte sa úplne vymazať GPS metadáta z tohto obrázka."
 
-#: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
 msgstr "Aktualizácia názvu média"
 
-#: EditExifMetadata/editexifmetadata.py:1357
 msgid "Media Object Date Created"
 msgstr "Dátum objektu média vytvorený"
 
-#: EditExifMetadata/editexifmetadata.py:1422
 msgid "Saving Exif metadata to this image..."
-msgstr "Ukladanie metadát Exif do tohto obrázka..."
+msgstr "Ukladanie Exif metadát do tohto obrázka..."
 
-#: EditExifMetadata/editexifmetadata.py:1465
 msgid "All Exif metadata has been deleted from this image..."
-msgstr "Všetky metadáta boli z tohoto obrázka odstránené..."
+msgstr "Všetky Exif metadáta boli z tohoto obrázka vymazané..."
 
-#: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
-msgstr "Pri separovaní Exif metadát sa vyskytla chyba..."
+msgstr "Vyskytla sa chyba pri odstraňovaní Exif metadát z tohto obrázka..."

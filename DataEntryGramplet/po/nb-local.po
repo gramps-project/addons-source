@@ -1,20 +1,9 @@
-# translation of nb.po to
-# Gramps
-# Copyright (C) YEAR ORGANIZATION.
-#
-# Frode Jemtland <frode.jemtland@skolelinux.no>, 2003, 2004, 2005, 2006, 2008.
-# Axel Bojer <axelb@skolelinux.no>, 2003.
-# Jørgen Grønlund <jorgenhg@broadpark.no>, 2005.
-# Nils Kristian Tomren <project@nilsk.net>, 2006.
-# Espen Berg <espenbe@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016.
-# Harald H. <haarektrans@gmail.com>, 2017.
-# Harald Herreros <h.herreros@proton.me>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-22 06:16+0000\n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"PO-Revision-Date: 2025-02-26 20:54+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -23,201 +12,83 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: FilterRules/activepersonrule.py:45 DataEntryGramplet/DataEntryGramplet.py:71
 msgid "Active person"
 msgstr "Aktiv person"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
-msgid "Data Entry Gramplet"
-msgstr ""
-
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:10
-msgid "Gramplet for quick data entry"
-msgstr ""
-
-#: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
 msgstr "Familie:"
 
-#: DataEntryGramplet/DataEntryGramplet.py:74
-#, fuzzy
-#| msgid "No Source"
-msgid "Sources?"
-msgstr "Ingen kilde"
-
-#: DataEntryGramplet/DataEntryGramplet.py:76
-#: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "Surname, Given"
 msgstr "Etternavn, Fornavn"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Save"
 msgstr "Lagre"
 
-#: DataEntryGramplet/DataEntryGramplet.py:92
 msgid "Abandon"
 msgstr "Utelate"
 
-#: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
 msgstr "Ny person"
 
-#: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
 msgstr "Legg til relasjon"
 
-#: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "No relation to active person"
 msgstr "Ingen slektskap til aktiv person"
 
-#: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
 msgstr "Legg til som foreldre"
 
-#: DataEntryGramplet/DataEntryGramplet.py:101
-#, fuzzy
-#| msgid "Add as a Spouse"
-msgid "Add as a Mother"
-msgstr "Legg til som ektefelle"
-
-#: DataEntryGramplet/DataEntryGramplet.py:102
-#, fuzzy
-#| msgid "Add as a Parent"
-msgid "Add as a Father"
-msgstr "Legg til som foreldre"
-
-#: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
 msgstr "Legg til som ektefelle"
 
-#: DataEntryGramplet/DataEntryGramplet.py:104
-#, fuzzy
-#| msgid "Add as a Child"
-msgid "Add as a Wife"
-msgstr "Legg til som barn"
-
-#: DataEntryGramplet/DataEntryGramplet.py:105
-#, fuzzy
-#| msgid "Add as a Parent"
-msgid "Add as a Husband"
-msgstr "Legg til som foreldre"
-
-#: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
 msgstr "Legg til et søsken"
 
-#: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
 msgstr "Legg til som barn"
 
-#: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
 msgstr "Kopiere aktive data"
 
-#: DataEntryGramplet/DataEntryGramplet.py:167
-#: DataEntryGramplet/DataEntryGramplet.py:178
-#: DataEntryGramplet/DataEntryGramplet.py:315
 msgid "in"
 msgstr "i"
 
-#: DataEntryGramplet/DataEntryGramplet.py:441
-#: DataEntryGramplet/DataEntryGramplet.py:569
-#, python-format
-msgid "Gramplet Data Edit: %s"
-msgstr ""
-
-#: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
 msgstr "Angi et navn."
 
-#: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
 msgstr "Kan ikke legge til ny person."
 
-#: DataEntryGramplet/DataEntryGramplet.py:523
-#: DataEntryGramplet/DataEntryGramplet.py:531
-#: DataEntryGramplet/DataEntryGramplet.py:536
-#: DataEntryGramplet/DataEntryGramplet.py:541
-#: DataEntryGramplet/DataEntryGramplet.py:550
-#: DataEntryGramplet/DataEntryGramplet.py:555
-#: DataEntryGramplet/DataEntryGramplet.py:560
-#: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
 msgstr "Angi aktiv person."
 
-#: DataEntryGramplet/DataEntryGramplet.py:523
-#: DataEntryGramplet/DataEntryGramplet.py:526
 msgid "Can't add new person as a parent."
 msgstr "Kan ikke legge til ny person som foreldre."
 
-#: DataEntryGramplet/DataEntryGramplet.py:526
-#: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
 msgstr "Velg kjønn på den nye personen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:531
 msgid "Can't add new person as a mother."
 msgstr "Kan ikke legge til ny person som mor."
 
-#: DataEntryGramplet/DataEntryGramplet.py:536
-#, fuzzy
-#| msgid "Can't add new person as a parent."
-msgid "Can't add new person as a father."
-msgstr "Kan ikke legge til ny person som foreldre."
-
-#: DataEntryGramplet/DataEntryGramplet.py:541
-#: DataEntryGramplet/DataEntryGramplet.py:545
-#: DataEntryGramplet/DataEntryGramplet.py:768
-#: DataEntryGramplet/DataEntryGramplet.py:805
-#: DataEntryGramplet/DataEntryGramplet.py:838
 msgid "Can't add new person as a spouse."
 msgstr "Kan ikke legge til ny person som mor."
 
-#: DataEntryGramplet/DataEntryGramplet.py:550
-#, fuzzy
-#| msgid "Can't add new person as a child."
-msgid "Can't add new person as a wife."
-msgstr "Kan ikke legge til ny person som barn."
-
-#: DataEntryGramplet/DataEntryGramplet.py:555
-#, fuzzy
-#| msgid "Can't add new person as a sibling."
-msgid "Can't add new person as a husband."
-msgstr "Kan ikke legge til ny person som søsken."
-
-#: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
 msgstr "Kan ikke legge til ny person som søsken."
 
-#: DataEntryGramplet/DataEntryGramplet.py:565
-#: DataEntryGramplet/DataEntryGramplet.py:938
 msgid "Can't add new person as a child."
 msgstr "Kan ikke legge til ny person som barn."
 
-#: DataEntryGramplet/DataEntryGramplet.py:763
-#, fuzzy
-#| msgid "Please set an active person."
-msgid "Please set Active person."
-msgstr "Angi aktiv person."
-
-#: DataEntryGramplet/DataEntryGramplet.py:764
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
-msgid "Can't add new person as a spouse to no one."
-msgstr "Kan ikke legge til ny person som mor."
-
-#: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
 msgstr "Velg kjønn på aktiv eller ny person."
 
-#: DataEntryGramplet/DataEntryGramplet.py:804
-#: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
 msgstr "Samme kjønn på aktiv og ny person."
 
-#: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
 msgstr "Velg kjønn på aktiv person."

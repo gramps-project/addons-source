@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,9 +12,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: TMGimporter/importtmg.py:89
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
@@ -50,7 +44,6 @@ msgstr ""
 "Por favor, consulte:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.py:110
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supportedby the TMG Importer "
@@ -65,7 +58,6 @@ msgstr ""
 "*.TMG - ficheiro de controlo de versão para TMG 2.0 a TMG 4.0d. Por favor, "
 "consulte: %(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.py:131
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supportedby the TMG Importer "
@@ -80,29 +72,21 @@ msgstr ""
 "*.VER - ficheiro de controlo de versão para TMG 1.2 e anteriores. Por favor, "
 "consulte: %(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.gpr.py:49
 msgid "TMG Project Backup"
 msgstr "Salvaguarda de projecto TMG"
 
-#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
-#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
 msgid "Import TMG project files"
 msgstr "Importar ficheiros de projecto TMG"
 
-#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
-#: TMGimporter/importtmg.gpr.py:95
 msgid "TMG Unsupported"
 msgstr "TMG não suportado"
 
-#: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"
 msgstr "Importador TMG"
 
-#: TMGimporter/libtmg.glade:31
 msgid "Unreleased Addon - Work In Progress"
 msgstr "Extensão não lançada - Trabalho em curso"
 
-#: TMGimporter/libtmg.glade:51
 msgid ""
 "Wholly Genes - The Master Genealogist (TMG) Importer\n"
 "\n"
@@ -112,10 +96,8 @@ msgstr ""
 "\n"
 "Seleccione o conjunto de dados TMG que deseja importar."
 
-#: TMGimporter/libtmg.glade:88
 msgid "Data Set Name"
 msgstr "Nome do conjunto de dados"
 
-#: TMGimporter/libtmg.glade:148
 msgid "_Import TMG Data Set"
 msgstr "_Importar conjunto de dados TMG"

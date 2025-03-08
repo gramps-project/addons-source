@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,63 +12,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
-msgid "Today"
-msgstr "I dag"
-
-#: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
 msgstr "Svigerforældre"
 
-#: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
 msgstr "Bedsteforældre"
 
-#: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
 msgstr "Svigerbedsteforældre"
 
-#: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
 msgstr "Oldeforældre"
 
-#: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
 msgstr "Svigeroldeforældre"
 
-#: TimelineQuickview/TimelineQuickview.py:61
-msgid "Great, "
-msgstr ""
-
-#: TimelineQuickview/TimelineQuickview.py:61
-#: TimelineQuickview/TimelineQuickview.py:63
-msgid "great, "
-msgstr ""
-
-#: TimelineQuickview/TimelineQuickview.py:61
-#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great grandparents"
 msgstr "oldeforældre"
 
-#: TimelineQuickview/TimelineQuickview.py:63
-msgid "Inlaw Great, "
-msgstr ""
-
-#: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
 msgstr "Partners ægtefælle"
 
-#: TimelineQuickview/TimelineQuickview.py:156
 #, python-format
 msgid "Timeline for %s"
 msgstr "Tidslinje for %s"
 
-#: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Involverede personer"
 
-#: TimelineQuickview/TimelineQuickview.gpr.py:11
+msgid "Today"
+msgstr "I dag"
+
 msgid "Display a person's events on a timeline"
 msgstr "Vis en persons hændelser på en tidslinje"

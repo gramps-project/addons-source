@@ -1,28 +1,9 @@
-# translation of fi.po to Finnish
-# GRAMPS
-# Copyright (C) YEAR ORGANIZATION.
-#
-# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
-# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
-# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2025.
-# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
-# Niemelä <niememat@gmail.com>, 2017, 2018.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"PO-Revision-Date: 2025-02-20 13:28+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -34,11 +15,9 @@ msgstr ""
 "X-Generator: Weblate 5.10.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
 msgstr "Paikan puhdistus"
 
-#: PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
@@ -46,7 +25,6 @@ msgstr ""
 "Paikan puhdistus Gramplet auttaa yhdistämään paikkoja ja täyttämään "
 "paikkatietoja GeoNames tietokannasta"
 
-#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1088
 msgid ""
 "No\n"
 "Matches"
@@ -54,11 +32,9 @@ msgstr ""
 "Ei\n"
 "osumia"
 
-#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
 msgid "Find"
 msgstr "Etsi"
 
-#: PlaceCleanup/placecleanup.py:293
 #, python-format
 msgid ""
 "%s\n"
@@ -69,19 +45,15 @@ msgstr ""
 "paikallista\n"
 "osumaa"
 
-#: PlaceCleanup/placecleanup.py:295
 msgid "Find GeoNames"
 msgstr "GeoNames etsintä"
 
-#: PlaceCleanup/placecleanup.py:303
 msgid "Need to set GeoNames ID"
 msgstr "Tarvitset GeoNames käyttäjätunnuksen"
 
-#: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
 msgstr "Käytä ohjepainiketta saadaksesi lisätietoja"
 
-#: PlaceCleanup/placecleanup.py:337
 msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
 "the place manually."
@@ -89,7 +61,6 @@ msgstr ""
 "Yritä muuttaa nimikettä tai käytä \"Muokkaa\" painiketta, jos haluat "
 "viimeistellä tämän paikan manuaalisesti."
 
-#: PlaceCleanup/placecleanup.py:347
 #, python-format
 msgid ""
 "%s\n"
@@ -100,12 +71,10 @@ msgstr ""
 "GeoNames\n"
 "osumaa"
 
-#: PlaceCleanup/placecleanup.py:353
 #, python-format
 msgid "%s matches were found"
 msgstr "%s osumaa löytynyt"
 
-#: PlaceCleanup/placecleanup.py:354
 msgid ""
 "Only 10 matches are shown.\n"
 "To see additional results, press the search button again.\n"
@@ -115,19 +84,15 @@ msgstr ""
 "Jos haluat nähdä lisää tuloksia, paina \"etsi\" painiketta uudelleen.\n"
 "Tai yritä muuttaa nimikettä tarkemmaksi, esimerkiksi valtio."
 
-#: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
 msgstr "Ongelmia tietojen saannissa netistä"
 
-#: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
 msgstr "Nettikysely aikakatkaistu, voit yrittää uudelleen ..."
 
-#: PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
 msgstr "GeoNames tietojen saannissa ongelmia"
 
-#: PlaceCleanup/placecleanup.py:481
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
@@ -135,7 +100,6 @@ msgstr ""
 "Yksi paikoista, joita yhdistät, ympäröi muut!\n"
 "Valitse toinen paikka."
 
-#: PlaceCleanup/placecleanup.py:759
 msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
@@ -143,19 +107,15 @@ msgstr ""
 "Paikka, jonka valitsit ympäröi työstämääsi paikkaa!\n"
 "Peruuta ja valitse toinen paikka."
 
-#: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
 msgstr "GeoNames nettisivu"
 
-#: PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
 msgstr "GeoNames tekijä"
 
-#: PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr "GeoNames on perustanut Marc Wick. Voit tavoittaa hänet osoitteesta "
 
-#: PlaceCleanup/placecleanup.py:959
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
@@ -165,20 +125,16 @@ msgstr ""
 "Männedorf, Sveitsi.\n"
 "Tämän teoksen lisenssi on "
 
-#: PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
 msgstr "Creative Commons Attribution 3.0 License"
 
-#: PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "Lisää lähde/selvitys/muistio  (%s)"
 
-#: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
 msgstr "Paikka ei ole käytössä!"
 
-#: PlaceCleanup/placecleanup.py:1076
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
@@ -187,55 +143,42 @@ msgstr ""
 "muita tietoja, käytä Etsi-painiketta yhdistääksesi sen voimassa olevaan "
 "paikkaan."
 
-#: PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
 msgstr "Kaupunki, maakunta, osavaltio, valtio"
 
-#: PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
 msgstr "Ensisijainen nimi"
 
-#: PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
 msgstr "Nykyinen ensisijainen nimi."
 
-#: PlaceCleanup/placecleanup.glade:102
 msgid "The postal code for the place, if any."
 msgstr "Paikan postinumero, jos sellainen on."
 
-#: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
 msgstr ""
 "Minkä tyyppinen paikka tämä on. Esimerkiksi \"Valtio\", \"Paikkakunta\", ...."
 
-#: PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
 msgstr "Valitse tämä ruutu, jos haluat säilyttää alkuperäisen postinumeron."
 
-#: PlaceCleanup/placecleanup.glade:148
 msgid "Check this box if you want to keep the original Place Type."
 msgstr "Valitse tämä ruutu, jos haluat säilyttää alkuperäisen paikkatyypin."
 
-#: PlaceCleanup/placecleanup.glade:166 PlaceCleanup/placecleanup.glade:180
-#: PlaceCleanup/placecleanup.glade:339 PlaceCleanup/placecleanup.glade:353
 msgid "Orig"
 msgstr "Alkuperäinen"
 
-#: PlaceCleanup/placecleanup.glade:280
 msgid "Check this box if you want to keep the original Latitude and Longitude."
 msgstr ""
 "Valitse tämä ruutu, jos haluat säilyttää alkuperäisen leveys- ja "
 "pituusasteen."
 
-#: PlaceCleanup/placecleanup.glade:295
 msgid "The Gramps ID.."
 msgstr "Gramps ID.."
 
-#: PlaceCleanup/placecleanup.glade:322
 msgid "Check this box if you want to keep the original Gramps ID."
 msgstr "Valitse tämä ruutu, jos haluat säilyttää alkuperäisen Gramps ID."
 
-#: PlaceCleanup/placecleanup.glade:391
 msgid ""
 "Alterative Names\n"
 "Select one or more rows and press 'Keep' button to toggle the 'include into "
@@ -245,75 +188,59 @@ msgstr ""
 "Valitse yksi tai useampi rivi ja paina 'Pidä' painiketta, jos haluat vaihtaa "
 "\"sisällytä paikka\" tilaan."
 
-#: PlaceCleanup/placecleanup.glade:406
 msgid "Inc"
 msgstr "Valittu"
 
-#: PlaceCleanup/placecleanup.glade:446
 msgid "Lang"
 msgstr "Kieli"
 
-#: PlaceCleanup/placecleanup.glade:520
 msgid ""
 "Select one or more rows and use this button to keep the alternative names."
 msgstr ""
 "Valitse yksi tai useampi rivi ja käytä tätä painiketta pitämään "
 "vaihtoehtoiset nimet."
 
-#: PlaceCleanup/placecleanup.glade:536
 msgid "Select one row and use this button to make the row the primary name."
 msgstr ""
 "Valitse yksi rivi ja käytä tätä painiketta, jos haluat rivin ensisijaiseksi "
 "nimeksi."
 
-#: PlaceCleanup/placecleanup.glade:548
 msgid "Discard"
 msgstr "Hylkää"
 
-#: PlaceCleanup/placecleanup.glade:552
 msgid ""
 "Select one or more rows and use this button to discard the alternative names."
 msgstr ""
 "Valitse yksi tai useampi rivi ja käytä tätä painiketta hylkäämään "
 "vaihtoehtoiset nimet."
 
-#: PlaceCleanup/placecleanup.glade:580
 msgid "Cancel the operation, no changes are made to your Place."
 msgstr "Peruuta toiminta, paikkaa ei tehdä."
 
-#: PlaceCleanup/placecleanup.glade:595
 msgid "Store the values in your Place."
 msgstr "Tallenna arvot paikkaasi."
 
-#: PlaceCleanup/placecleanup.glade:677
 msgid "Keep Web Links"
 msgstr "Pidä nettilinkit"
 
-#: PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
 msgstr "Lisää nettilinkit (tyypillisesti Wikipedia) paikkaasi."
 
-#: PlaceCleanup/placecleanup.glade:693
 msgid "Add citation and source to Place"
 msgstr "Lisää paikkaan lainaus ja lähde"
 
-#: PlaceCleanup/placecleanup.glade:697
 msgid "This Adds a Citation to your place, citing GeoNames."
 msgstr "Tämä lisää viitetiedot GeoNames paikkaasi."
 
-#: PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
 msgstr "GeoNames käyttäjätunus"
 
-#: PlaceCleanup/placecleanup.glade:723
 msgid "Enter you Geonames user ID here."
 msgstr "Anna tässä Geonames käyttäjätunnus."
 
-#: PlaceCleanup/placecleanup.glade:735
 msgid "Alternative Names Languages to keep"
 msgstr "Vaihtoehtoiset maatunnukset, joita käytetään"
 
-#: PlaceCleanup/placecleanup.glade:747
 msgid ""
 "Enter the two or three letter codes for the languages you wish to keep, "
 "seperated by spaces.\n"
@@ -329,11 +256,9 @@ msgstr ""
 "Jos näet usein haluamasi kielen, joka ei ole tarkistettu, lisää kielikoodi "
 "tähän."
 
-#: PlaceCleanup/placecleanup.glade:763
 msgid "Currently Enclosed Places"
 msgstr "Nykyiset ympärillä olevat paikat"
 
-#: PlaceCleanup/placecleanup.glade:775
 msgid ""
 "When cleaning a place that is already enclosed, this affects what is done.\n"
 "If '<b>Keep current Enclosure</b>' is selected, no changes to the enclosing "
@@ -350,15 +275,12 @@ msgstr ""
 "seuraavalla tasolla muuttuvat GeoNames paikoiksi.  Tämä voi johtaa siihen, "
 "että osa tietokantasi paikoista jää käyttämättä."
 
-#: PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
 msgstr "Pidä nykyiset paikat ympärillä"
 
-#: PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
 msgstr "Vaihda GeoNames paikat ympärille"
 
-#: PlaceCleanup/placecleanup.glade:851
 msgid ""
 "Current Place title.\n"
 "You can edit this to help find other places, particularly to reduce the "
@@ -368,17 +290,14 @@ msgstr ""
 "Voit muokata tätä, jotta voit löytää muita paikkoja, erityisesti tulosten "
 "määrän vähentämiseksi."
 
-#: PlaceCleanup/placecleanup.glade:899
 msgid "Search your local places and GeoNames for a match."
 msgstr "Etsi paikallisten paikkojen ja GeoNames osumia."
 
-#: PlaceCleanup/placecleanup.glade:915
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
 msgstr ""
 "Jatka yhdistämistä (paikallisiin paikkoihin) tai täydennä (GeoNames) paikka."
 
-#: PlaceCleanup/placecleanup.glade:932
 msgid ""
 "Split up Title, Edit manually, and enclose with next level of hierarchy.  "
 "For use when the initial component of the Title is too detailed to be found "
@@ -388,27 +307,21 @@ msgstr ""
 "Käytetään, kun nimikkeen alkuosa on liian yksityiskohtainen, löytyäkseen "
 "hakemistosta."
 
-#: PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
 msgstr "Seuraava paikka"
 
-#: PlaceCleanup/placecleanup.glade:962
 msgid "Find an incomplete place."
 msgstr "Etsi epätäydellinen paikka."
 
-#: PlaceCleanup/placecleanup.glade:985
 msgid "Set preferences"
 msgstr "Määritä asetukset"
 
-#: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
 msgstr "Jatka puhdistusprosessia valitsemalla yksi näistä paikoista."
 
-#: PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
 msgstr "Paikkojen hakutulos"
 
-#: PlaceCleanup/placecleanup.glade:1102
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
@@ -416,11 +329,9 @@ msgstr ""
 "Valintaruudun \"Asutut\" valinta lisää GeoNames hakuun \"asutut paikat\", "
 "paikat joissa ihmiset elävät ja toimivat."
 
-#: PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
 msgstr "Asutut"
 
-#: PlaceCleanup/placecleanup.glade:1131
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
@@ -428,7 +339,6 @@ msgstr ""
 "Valintaruudun \"Hallinnolliset\" valinta lisää GeoNames hakuun "
 "hallinnolliset osa-alueet, kuten (maat, valtiot, maakunnat jne.)."
 
-#: PlaceCleanup/placecleanup.glade:1148
 msgid ""
 "Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
 "variety of other places in the search (churches, burial grounds, buildings "
@@ -437,10 +347,8 @@ msgstr ""
 "Valintaruudun \"Muu kohde\" valinta lisää GeoNames hakun monenlaisia muita "
 "paikkoja, kuten (kirkot, hautausmaat, rakennukset jne.)."
 
-#: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
 msgstr "Hallinnolliset"
 
-#: PlaceCleanup/placecleanup.glade:1174
 msgid "Spot"
 msgstr "Muu kohde"

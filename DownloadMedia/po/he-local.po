@@ -1,15 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 10:31+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,41 +13,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
 msgstr "הורדת מדיה"
 
-#: DownloadMedia/DownloadMedia.py:87
 msgid "Media downloaded"
 msgstr "מדיה ירדה"
 
-#: DownloadMedia/DownloadMedia.py:88
 #, python-format
 msgid "%d media files downloaded"
 msgstr "ירדו %d קבצים"
 
-#: DownloadMedia/DownloadMedia.py:100
 msgid "Download media tool"
 msgstr "כלי הורדת מדיה"
 
-#: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
 msgstr "נא לודא שניתן להתחבר למרשתת לפני אתחול כלי זה."
 
-#: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
 msgid "Downloading files"
 msgstr "מתבצעת הורדת קבצים"
 
-#: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
 msgstr "זוהו שגיאות הורדת מדיה"
 
-#: DownloadMedia/DownloadMedia.gpr.py:36
 msgid "Download media files from the internet"
 msgstr "הורדת קבצי מדיה מהמרשתת"
 
-#: DownloadMedia/DownloadMedia.gpr.py:37
 msgid "This tool downloads media files from the internet"
 msgstr "כלי זה נועד להורדת קבצי מדיה מהמרשתת"

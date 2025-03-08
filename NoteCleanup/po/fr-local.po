@@ -1,109 +1,55 @@
-# French translation for gramps
-# Copyright (C) 2001-2011 Free Software Foundation, Inc.
-#
-# Quelques variables pour la cohérence:
-#  ancestor : ascendant
-#  descendant : descendant
-#  person, individual, people : individu(s)
-#  remove (context) : enlever une référence ou supprimer de la base
-#  home : souche
-#  active person : individu actif
-#  media : media (pas de 's' ou accent) : un medium
-#  les médias : journaux, tv
-#  call name : prénom usuel
-#  unknown (context) : inconnu ou non-connu (individu)
-#
-# Laurent Protois <laurent.protois@free.fr>, 2001, 2002, 2003, 2004.
-# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
-# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
-# Frederic Chateaux, 2007, 2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Mathieu MD <mathieu.md@gmail.com>, 2012.
-# Paul Culley <prc@prc-virtualbox>, 2018.
-# Christophe <khrys63@gmail.com>, 2018.
-# Paul Culley <paulr2787@gmail.com>, 2016.
-# J-Paul Bérard <arverne@wanadoo.fr>, 2021.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2011-12-17 18:49+0100\n"
-"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
-"Language-Team:  <fr@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-02 13:48+0000\n"
+"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
-msgid "Export"
-msgstr "Exporter"
-
-#: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
-msgid "Export the results to a text file"
-msgstr "Exporter les résultats dans un fichier texte"
-
-#: MediaVerify/MediaVerify.py:195 NoteCleanup/NoteCleanup.py:323
-msgid "Export results to a text file"
-msgstr "Exporter les résultats vers un fichier texte"
-
-#: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
-#, python-format
-msgid "Error when writing the report: %s"
-msgstr "Erreur lors de la rédaction du rapport: %s"
-
-#: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
-msgid "Search"
-msgstr "Rechercher"
-
-#: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
 msgstr "Nettoyage de note"
 
-#: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
 msgstr "Nettoyer les notes qui contiennent des balises HTML"
 
-#: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
 msgstr "Outil de nettoyage de la note"
 
-#: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
 msgstr "Notes nettoyées"
 
-#: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
 msgstr "Liens Seulement"
 
-#: NoteCleanup/NoteCleanup.py:99
 msgid "Issues"
 msgstr "Problèmes"
 
-#: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
 msgstr "Fermez l'outil Nettoyage de note"
 
-#: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
 msgstr "Enregistrer tous"
 
-#: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
 msgstr "Enregistrer toutes les modifications"
 
-#: NoteCleanup/NoteCleanup.py:127
+msgid "Search"
+msgstr "Rechercher"
+
 msgid "Search for Untidy Notes"
 msgstr "Recherche de notes non-conformes"
 
-#: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
 msgstr "Générer des notes de test"
 
-#: NoteCleanup/NoteCleanup.py:131
 msgid ""
 "Generate Test notes in range N99996-N99999.\n"
 "These are added to your database, so you may want to work with a test "
@@ -113,7 +59,12 @@ msgstr ""
 "Celles-ci seront ajoutées à votre base de données, de sorte que vous devrez "
 "travailler avec une base de données de test ou les supprimer plus tard."
 
-#: NoteCleanup/NoteCleanup.py:181
+msgid "Export"
+msgstr "Exporter"
+
+msgid "Export the results to a text file"
+msgstr "Exporter les résultats dans un fichier texte"
+
 msgid ""
 "Please back up your database before running this tool.\n"
 "\n"
@@ -132,19 +83,22 @@ msgstr ""
 "Vous peut exporter un résumé liste des notes qui ont été trouvés en "
 "utilisant le bouton 'Exporter'."
 
-#: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
 msgstr "Nettoyer les notes"
 
-#: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
 msgstr "Nettoyage des notes test"
 
-#: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
 msgstr "Ajouter une note de test"
 
-#: NoteCleanup/NoteCleanup.py:383
+msgid "Export results to a text file"
+msgstr "Exporter les résultats vers un fichier texte"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Erreur lors de la rédaction du rapport: %s"
+
 msgid ""
 "\n"
 "\n"
@@ -155,7 +109,6 @@ msgstr ""
 "Les notes sélectionnées sur le volet de gauche sont représentées avant le "
 "nettoyage dans cette case."
 
-#: NoteCleanup/NoteCleanup.py:386
 msgid ""
 "\n"
 "\n"
@@ -170,14 +123,11 @@ msgstr ""
 "Si vous souhaitez apporter des modifications, vous pouvez les faire ici et "
 "utiliser les commandes dans la barre d'outils ci-dessus."
 
-#: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
 msgstr "Enregistrement des notes"
 
-#: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
 msgstr "Enregistrement des notes nettoyées"
 
-#: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
 msgstr "Analyse des notes"

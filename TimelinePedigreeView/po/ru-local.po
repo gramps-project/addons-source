@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,59 +16,36 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
-#: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
-msgid "Ancestry"
-msgstr "Родословная"
-
-#: FamilyTree/FamilyTree.py:1047
-#: TimelinePedigreeView/TimelinePedigreeView.py:1481
-msgid "Ancestor Generations"
-msgstr "Поколения предков"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "Поколения потомков"
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
 msgstr "р."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for died|d."
 msgstr "у."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for baptized|bap."
 msgstr "крещ."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:85
 msgid "short for christened|chr."
 msgstr "прин. хр."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
 msgstr "похор."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:87
 msgid "short for cremated|crem."
 msgstr "крем."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"
 msgstr "Временная диаграмма"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
 msgstr "Сортировать по времени"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
 msgstr "Показывать промежуток жизни"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1470
-#: TimelinePedigreeView/TimelinePedigreeView.py:1486
+msgid "Descendant Generations"
+msgstr "Поколения потомков"
+
 #, python-format
 msgid "%d generation"
 msgid_plural "%d generations"
@@ -91,16 +53,18 @@ msgstr[0] "%d поколение"
 msgstr[1] "%d поколения"
 msgstr[2] "%d поколений"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1505
+msgid "Ancestor Generations"
+msgstr "Поколения предков"
+
 msgid "About Timeline Pedigree View"
 msgstr "О дополнении"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
 msgid "Timeline Pedigree"
 msgstr "Временная диаграмма"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
+msgid "Ancestry"
+msgstr "Родословная"
+
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
 "selected person"

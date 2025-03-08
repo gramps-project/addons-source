@@ -1,22 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,78 +12,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
 msgstr "Rapport för databasskillnader"
 
-#: Differences/differences.py:134
 msgid "Differences between Database and File"
 msgstr "Skillnader mellan databas och fil"
 
-#: Differences/differences.py:161
 msgid "No differences"
 msgstr "Inga skillnader"
 
-#: Differences/differences.py:168
 msgid "Missing items in File that are added in Database"
 msgstr "Saknade poster i filen som läggs till i databasen"
 
-#: Differences/differences.py:174
 #, python-format
 msgid "Missing %s: %s"
 msgstr "Saknad %s: %s"
 
-#: Differences/differences.py:178
 msgid "Nothing missing"
 msgstr "Inget saknas"
 
-#: Differences/differences.py:185
 msgid "Added items in File that are missing in Database"
 msgstr "La till poster i fil som saknas i databasen"
 
-#: Differences/differences.py:191
 #, python-format
 msgid "Added %s: %s "
 msgstr "Tillagd %s: %s "
 
-#: Differences/differences.py:195
 msgid "Nothing added"
 msgstr "Ingenting lades till"
 
-#: Differences/differences.py:308
 msgid "Family Tree file"
 msgstr "Familjeträdsfil"
 
-#: Differences/differences.py:310
 msgid "Select a .gpkg or .gramps file"
 msgstr "Välj en .gpkg eller .gramps-fil"
 
-#: Differences/differences.py:313
 msgid "Show items that are different"
 msgstr "Visa poster som är olika"
 
-#: Differences/differences.py:314
 msgid "Include items that are different"
 msgstr "Lägg til poster som är olika"
 
-#: Differences/differences.py:317
 msgid "Show items missing from file"
 msgstr "Visa poster som saknas i fil"
 
-#: Differences/differences.py:318
 msgid "Include items not in file but in database"
 msgstr "Lägg till poster som inte finns i filen men i databasen"
 
-#: Differences/differences.py:321
 msgid "Show items added in file"
 msgstr "Visa poster som lagts till i fil"
 
-#: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr "Lägg till poster i filen men inte i databasen"
 
-#: Differences/differences.gpr.py:5
 msgid "Compares an external database with the current one."
 msgstr "Jämför en extern databas med den aktuella."

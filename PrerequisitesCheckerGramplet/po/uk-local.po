@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,18 +13,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
 msgid "Prerequisites Checker"
 msgstr "Перевірка передумов"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:30
 msgid "Prerequisites Checker Gramplet"
 msgstr "Грамплет перевірки передумов"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:143
 msgid ""
 "Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
@@ -41,7 +29,6 @@ msgstr ""
 "Діагностичний грамплет для допомоги у перевірці, чи встановлені всі "
 "передумови для Gramps.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
 "Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
 "installed."
@@ -49,43 +36,34 @@ msgstr ""
 "Діагностичний грамплет для перевірки, чи всі передумови для Gramps "
 "встановлено."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Необов'язкові</b></u>\n"
+"<u><b>ОБОВ'ЯЗКОВО</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
 msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
 msgstr ""
+"<i>Встановлення наступних пакетів є <b>ОБОВ’ЯЗКОВИМ</b>\"\n"
+" (Потрібна мінімальна або новіша версія.)</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "<u><b>Optional</b></u>\n"
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Необов'язкові</b></u>\n"
+"<u><b>РЕКОМЕНДУЄТЬСЯ</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
 msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
 msgstr ""
+"<i>Встановлення наступних пакетів <b>НАСТІЙНО РЕКОМЕНДУЄТЬСЯ</b>, оскільки "
+"вони необхідні для географії та діаграм</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
 msgid ""
 "\n"
 "<u><b>Optional</b></u>\n"
@@ -93,22 +71,18 @@ msgstr ""
 "\n"
 "<u><b>Необов'язкові</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr ""
+msgstr "<i>Встановлення наступних пакетів є <b>необов’язковим</b></i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
 msgstr "Gtkspell дозволяє перевірку орфографії в нотатках.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
 msgstr ""
 "Для обрізки зображень та виведення в LaTeX потрібна бібліотека Python Image "
 "Library (PIL)."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
 msgid ""
 "\n"
 "<u><b>Development & Translation Requirements</b></u>\n"
@@ -116,13 +90,13 @@ msgstr ""
 "\n"
 "<u><b>Вимоги до розробки та перекладу</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:241
 msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
+"<i>Встановлення наступних пакетів <b>РЕКОМЕНДУЄТЬСЯ</b>, якщо ви плануєте "
+"перекладати або займатися розробкою (доповнення тощо)</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
 "\n"
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
@@ -130,14 +104,15 @@ msgstr ""
 "\n"
 "<u><b>Необов'язкові пакети, необхідні для сторонніх доповнень</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
 msgid ""
 "<i>Prerequistes required for the following <a href=\"https://gramps-"
 "project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
 "to work</i>:\n"
 msgstr ""
+"<i>Необхідні передумови для роботи наступних <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">сторонніх доповнень</"
+"a></i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
 "\n"
 "<u><b>Diagnostic checks</b></u>\n"
@@ -145,11 +120,9 @@ msgstr ""
 "\n"
 "<u><b>Діагностичні перевірки</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
 msgid "Check for potential issues.\n"
 msgstr "Перевірка потенційних проблем.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
 msgid ""
 "\n"
 "Environment settings:\n"
@@ -157,7 +130,6 @@ msgstr ""
 "\n"
 "Налаштування середовища:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
 msgid ""
 "\n"
 "\n"
@@ -167,7 +139,6 @@ msgstr ""
 "\n"
 "<u><b>Доступні локалі:</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
 msgid ""
 "\n"
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
@@ -175,7 +146,6 @@ msgstr ""
 "\n"
 "<u><b>Зробіть резервну копію своїх генеалогічних файлів.</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:288
 msgid ""
 "If you have a reason to be checking Prerequisites, it is the right time to "
 "back up your genealogy files, and then test your backups!\n"
@@ -185,7 +155,6 @@ msgstr ""
 "ваших генеалогічних файлів, а потім перевірити її!\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
 msgid ""
 "<i><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find \"Make "
@@ -194,30 +163,38 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Резервне копіювання в Gramps XML</a> Ви "
+"знайдете опцію \"Зробити резервну копію...\" в меню \"Родинне дерево\" у "
+"нових версіях Gramps, або використовуйте \"Експорт...\" у тому ж меню, але "
+"зніміть прапорець з параметрів конфіденційності у Помічнику експорту, щоб "
+"експортувати всі дані.</i>\n"
+"\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
 msgid ""
 " • Backups can be made at any time and, at a minimum, on the first day of "
 "every month. But preferrably more often.\n"
 msgstr ""
+" • Резервні копії можна створювати у будь-який час, і, як мінімум, у перший "
+"день кожного місяця. Але бажано частіше.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
 msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
 msgstr ""
+" • Настійно рекомендується створювати резервні копії кожного з ваших "
+"родинних дерев перед будь-яким оновленням.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
 msgstr ""
+" • Перевірте свої резервні копії, створивши нове родинне дерево та "
+"імпортувавши резервну копію."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ", is the most current version.\n"
 msgstr ", це найновіша версія.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:339
 #, python-format
 msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
@@ -227,7 +204,6 @@ msgstr ""
 "оновіть.\n"
 "%s"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
 #, python-format
 msgid ""
 "You have Gramps %s installed; an unreleased development version. Thank you "
@@ -238,166 +214,102 @@ msgstr ""
 "за ваш внесок і тестування; будь ласка, повідомляйте про будь-які проблеми. "
 "Резервні копії — ваші друзі.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:351
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
 msgstr "У вас встановлено Gramps %s. Вітаємо, у вас найновіша версія.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:378
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:452
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:504
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:548
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:597
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:748
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1160
 msgid " (Requires version "
 msgstr " (Потрібна версія "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:379
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:457
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:511
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:554
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:566
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:602
 msgid " or greater installed.)\n"
 msgstr " або новіша встановлена.)\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:386
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:456
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:509
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:552
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:564
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:601
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:744
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:948
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1156
 msgid " (Passed: version "
 msgstr " (Успішно: версія "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:414
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:479
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:538
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:539
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:587
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:735
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:797
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:798
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1107
 msgid "unknown version"
 msgstr "невідома версія"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:422
 msgid "DISPLAY not set"
 msgstr "DISPLAY не встановлено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:453
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:505
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:549
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:561
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:598
 msgid " or greater.)\n"
 msgstr " або новіша.)\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:560
 msgid " (Requires "
 msgstr " (Потрібна "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
 msgid " • Berkeley Database library (bsddb3: "
-msgstr ""
+msgstr " • Бібліотека бази даних Berkeley (bsddb3: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:675
 msgid " • SQLite Database library (sqlite3: "
-msgstr ""
+msgstr " • Бібліотека бази даних SQLite (sqlite3: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:689
 msgid " • xdg-utils (Manual check see instructions link)"
-msgstr ""
+msgstr " • xdg-utils (Ручна перевірка, див. посилання з інструкцією)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:702
 msgid " • librsvg2 (Manual check see instructions link)"
-msgstr ""
+msgstr " • librsvg2 (Ручна перевірка, див. посилання з інструкцією)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:713
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
+" • language-pack-gnome-xx (Ручна перевірка, див. посилання з інструкцією) "
+"для вашої мови <показати локаль тут (TBD)>"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1161
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1560
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1759
 msgid " or greater installed.)"
 msgstr " або новіша встановлена.)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:749
 msgid " or greater)"
 msgstr " або новіша)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:780
 msgid "Graphviz not in system PATH"
 msgstr "Graphviz не в системному шляху (PATH)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:848
 msgid "Ghostscript not in system PATH"
 msgstr "Ghostscript не в системному шляху (PATH)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:863
 msgid " (Passed: version 0.5.x is installed.)"
 msgstr " (Успішно: встановлено версію 0.5.x.)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:866
 msgid " (Requires version 0.5.x)"
 msgstr " (Потрібна версія 0.5.x)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
-#, fuzzy
-#| msgid " (lxml: not found. Requires version "
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr " (lxml: не знайдено. Потрібна версія "
+msgstr " • python-fontconfig не знайдено, (потрібна версія 0.5.x)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
-msgstr ""
+msgstr " • python-fontconfig встановлено, версія недоступна"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
 msgid " or greater installed.) (enchant module: "
 msgstr " або новіша встановлена.) (модуль enchant: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1011
 #, python-format
 msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (Успішно: встановлена версія %s або новіша. Якщо не Microsoft "
+"Windows)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1015
 #, python-format
 msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (Потрібна версія %s або новіша. Якщо не Microsoft Windows)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1129
 msgid "can't found it because exiv2 not installed"
-msgstr ""
+msgstr "Не знайдено, оскільки exiv2 не встановлено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
 msgstr "GExiv2 : %s (Бібліотека Exiv2 : %s)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1197
 msgid "found another font"
 msgstr "знайдено інший шрифт"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1205
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
@@ -406,87 +318,61 @@ msgstr ""
 "white-rabbit\">White Rabbit</a> забезпечує надзвичайно читабельний "
 "результат.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
 msgstr "Чому, коли той самий код працює в Graphview"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1246
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1308
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1318
 msgid "not installed"
 msgstr "не встановлено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
 msgid "     and one of either: (pydotplus: "
-msgstr ""
+msgstr "     і один з наступних: (pydotplus: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
 msgid ") or (pygraphviz: "
 msgstr ") або (pygraphviz: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
 msgid "Installed(MS-Windows)"
 msgstr "Встановлено (MS-Windows)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
 msgid "Installed(Linux/Mac)"
 msgstr "Встановлено (Linux/Mac)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
 msgid "not installed "
 msgstr "не встановлено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1444
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1614
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1616
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1617
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1702
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1708
 msgid "not found."
 msgstr "не знайдено."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1466
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
 msgstr ""
 "Стандарт. Успішно: програму встановлено - 32-бітна версія на 64-бітній ОС "
 "Windows."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
 msgstr ") (Потрібен додаток gramps, вказаний у 'Бібліотеці плагінів')"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
 msgid "DBF installed"
 msgstr "DBF встановлено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1559
 msgid ".)(Requires version "
 msgstr ".)(Потрібна версія "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1564
 msgid " installed.)(Passed: version "
 msgstr " встановлено.)(Успішно: версія "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
 #, python-format
 msgid "(OpenCV facedetection: %s)"
 msgstr "(OpenCV розпізнавання облич: %s)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
 msgid " (lxml: not found. Requires version "
 msgstr " (lxml: не знайдено. Потрібна версія "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1776
 msgid " • Requires: MongoDB TBD / pymongo TBD"
-msgstr ""
+msgstr " • Потрібно: MongoDB TBD / pymongo TBD"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1790
 #, python-format
 msgid " • Operating System: %s"
-msgstr ""
+msgstr " • Операційна система: %s"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
 msgid ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=Gramps_5.0_Wiki_Manual_-"
@@ -498,29 +384,12 @@ msgstr ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Налаштування "
 "Локалей:</a></b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1819
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1820
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1870
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1871
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1872
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1874
 msgid "not set"
 msgstr "не встановлено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1822
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1823
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1824
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1825
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1876
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1877
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1878
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1879
 msgid "not tested"
 msgstr "не перевірено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1845
 msgid ""
 "\n"
 "Installed Locales\\Translations (If only English is listed please re-install "
@@ -532,7 +401,6 @@ msgstr ""
 "перевстановіть Gramps і переконайтеся, що обрали всі Переклади та Словники)\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1882
 msgid ""
 "\n"
 "Gramps Environment variables:\n"
@@ -540,13 +408,9 @@ msgstr ""
 "\n"
 "Змінні середовища Gramps:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1921
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1983
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2019
 msgid "found"
 msgstr "знайдено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2026
 msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"

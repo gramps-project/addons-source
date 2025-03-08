@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 11:39+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,96 +12,74 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
 msgstr "Selecteer filter om aantal mensen te beperken"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
 msgstr "Berekende datumschattingen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
 msgstr "Bron om te verwijderen en/of toe te voegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
 msgstr "Eerder toegevoegde gebeurtenissen, notities en bronnen verwijderen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
 "Berekende gebeurtenissen, notities en bronnen verwijderen; dit wordt "
 "onmiddellijk uitgevoerd"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
 msgstr "Geen geboortegebeurtenissen toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 msgid "Add birth events without dates"
 msgstr "Geboortegebeurtenissen zonder datum toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
 msgstr "Geboortegebeurtenissen met datum toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
 msgstr "Geboortegebeurtenissen met of zonder geschatte datums toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
 msgstr "Geen overlijdensgebeurtenissen toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
 msgstr "Overlijdensgebeurtenissen zonder datum toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
 msgstr "Overlijdensgebeurtenissen met datum toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
 msgstr "Overlijdensgebeurtenissen met of zonder geschatte datum toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
 msgstr "Maximum leeftijd"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
 msgstr "Maximum leeftijd die iemand kan bereiken"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Maximaal leeftijdsverschil tussen broers en zussen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
 msgstr "Gemiddeld leeftijdsverschil tussen twee generaties"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
 msgid "Estimated Dates"
 msgstr "Geschatte datums"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
 msgstr "Circa (ongeveer)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
 msgstr "Uitersten (voor en na)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
 msgstr "Datums van gebeurtenissen zijn ofwel ongeveer of voor/na"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
 "events for people that are missing these events.\n"
@@ -152,34 +120,26 @@ msgstr ""
 "gebeurtenissen te verwijderen) om alle mogelijke gebeurtenissen toe te "
 "voegen."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 msgid "Calculate Estimated Dates"
 msgstr "Geschatte datums berekenen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
 msgstr "Alles selecteren"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
 msgstr "Niets selecteren"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
 msgstr "Selectie wisselen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
 msgstr "Geselecteerde gebeurtenissen toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr ""
 "Gebeurtenissen, opmerkingen en bronnen verwijderen en gegevens opnieuw "
 "selecteren"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
@@ -187,48 +147,37 @@ msgstr ""
 "Weet u zeker dat u eerdere gebeurtenissen, opmerkingen en bronnen wilt "
 "verwijderen en gegevens opnieuw wilt selecteren?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
 msgstr "Verwijderen en selectie opnieuw uitvoeren"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
 msgstr "Gegevens opnieuw selecteren"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
 msgstr "Weet u zeker dat u gegevens opnieuw wilt selecteren?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
 msgid "Run Select Again"
 msgstr "Selectie opnieuw uitvoeren"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
 msgstr "Bewijs"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Relative"
 msgstr "Relatief"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
 msgstr "Wordt verwerkt...\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
 msgstr "Oude schattingen verwijderen... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
 msgstr "'%s' verwijderen…"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
 msgstr "Klaar!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 msgid ""
 "Selecting... \n"
 "\n"
@@ -236,73 +185,57 @@ msgstr ""
 "Selecteren...\n"
 "\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
 msgstr "Geboorte- en overlijdensgebeurtenissen toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
 msgstr "Geboortegebeurtenis toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
 msgid "Add death event"
 msgstr "Overlijdensgebeurtenis toevoegen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
 msgstr "Geen gebeurtenissen om toe te voegen."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
 msgstr "Selecteren... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
 msgid "Adding events '%s'..."
 msgstr "Gebeurtenissen toevoegen '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr "Geboortegebeurtenis toegevoegd gebaseerd op %(evidence)s, van %(name)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #, python-format
 msgid "Added birth event based on %s"
 msgstr "Geboortegebeurtenis toegevoegd gebaseerd op %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
 msgstr "Geschatte geboortedatum"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr ""
 "Overlijdensgebeurtenis toegevoegd gebaseerd op %(evidence)s, van %(person)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
 msgid "Added death event based on %s"
 msgstr "Overlijdensgebeurtenis toegevoegd gebaseerd op %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
 msgstr "Geschatte overlijdensdatum"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
 msgstr " Ok! Opgeslagen..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
 msgid "Added %d events."
 msgstr "%d gebeurtenissen toegevoegd."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Geschatte datum"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Geschatte datums voor geboorte en overlijden berekenen."

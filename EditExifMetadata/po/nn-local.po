@@ -1,14 +1,8 @@
-# Norwegian (Nynorsk) translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) 2008
-#
-# Sigmund Lorentsen <siglorent@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2014.
-# Sigmund Lorentsen <sigmund.lorentsen@tele2.no>, 2008, 2009, 2010, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-22 23:21+0000\n"
 "PO-Revision-Date: 2014-12-22 21:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -20,26 +14,18 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:30
-#: EditExifMetadata/editexifmetadata.py:723
-#: EditExifMetadata/editexifmetadata.py:1135
-#: EditExifMetadata/editexifmetadata.py:1147
 msgid "Edit Image Exif Metadata"
 msgstr "Rediger Exif Metadata for bilete"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr "Smågramps for å sjå, redigera og lagra Exif metadata for bilete"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
 msgstr "Rediger Exif Metadata"
 
-#: EditExifMetadata/editexifmetadata.py:135
 msgid "<-- Image Types -->"
 msgstr "<-- Bilettypar -->"
 
-#: EditExifMetadata/editexifmetadata.py:158
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
@@ -47,12 +33,6 @@ msgstr ""
 "ÅTVARING:  Endring av denne posten vil oppdatera tittelfeltet for "
 "mediaobjektet i Gramps og ikkje Exiv2-metadata."
 
-#: EditExifMetadata/editexifmetadata.py:161
-#, fuzzy
-msgid "Provide a short description for this image."
-msgstr "Gir ei kort beskrivning av dette biletet."
-
-#: EditExifMetadata/editexifmetadata.py:163
 msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
@@ -60,11 +40,9 @@ msgstr ""
 "Skriv inn kunstnar/forfattar av dette biletet.  Dette er personen eller "
 "firmaet som er ansvarleg for dette biletet."
 
-#: EditExifMetadata/editexifmetadata.py:167
 msgid "Enter the copyright information for this image. \n"
 msgstr "Skriv inn informasjon om opphavsrett for dett biletet. \n"
 
-#: EditExifMetadata/editexifmetadata.py:169
 msgid ""
 "The original date/ time when the image was first created/ taken as in a "
 "photograph.\n"
@@ -74,7 +52,6 @@ msgstr ""
 "fotografi.\n"
 "Døme: 1830-01-01 09:30:59"
 
-#: EditExifMetadata/editexifmetadata.py:173
 msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
@@ -82,25 +59,6 @@ msgstr ""
 "Dette er datoen/tida då dette biletet sist vart endra/modifisert.\n"
 "Døme: 2011-05-24 14:30:00"
 
-#: EditExifMetadata/editexifmetadata.py:176
-msgid ""
-"Enter the Latitude GPS coordinates for this image,\n"
-"Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:179
-msgid ""
-"Enter the Longitude GPS coordinates for this image,\n"
-"Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:182
-msgid ""
-"This is the measurement of Above or Below Sea Level.  It is measured in "
-"meters.  Example: 200.558, -200.558"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:191
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
@@ -108,7 +66,6 @@ msgstr ""
 "Viser hjelpesidene for 'Redigering av Exif Metadata' på Gramps Wiki i "
 "nettlesaren din."
 
-#: EditExifMetadata/editexifmetadata.py:194
 msgid ""
 "This will open up a new window to allow you to edit/ modify this image's "
 "Exif metadata.\n"
@@ -118,13 +75,11 @@ msgstr ""
 "dette biletet.\n"
 " Du vil og få høve til å lagra dei endra metadataene."
 
-#: EditExifMetadata/editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
 msgstr ""
 "Vil laga eit oppsprettsvindauga som viser eit område for visning av "
 "miniatyrbilete"
 
-#: EditExifMetadata/editexifmetadata.py:201
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
@@ -132,7 +87,6 @@ msgstr ""
 "Vel frå rullegardinmenyen den filtypen som du ønskjer å konvertera "
 "medieobjekta dine som ikkje er Exiv2-kompatible til."
 
-#: EditExifMetadata/editexifmetadata.py:205
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
@@ -140,7 +94,6 @@ msgstr ""
 "Du har kanskje bilete som du ikkje kan lesa eller skriva Exif Metadata til/"
 "frå. Vil du konvertera desse til ein type som kan?"
 
-#: EditExifMetadata/editexifmetadata.py:209
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
@@ -148,23 +101,12 @@ msgstr ""
 "ÅTVARING:  Dette kjem til å sletta alle Exif Metadata frå dette biletet!  Er "
 "du sikker på at du vil gjera dette?"
 
-#: EditExifMetadata/editexifmetadata.py:213
-msgid "Clear GPS"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"
 msgstr "Miniatyrbilete"
 
-#: EditExifMetadata/editexifmetadata.py:215
-msgid "Copy"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
 msgstr "Vel eit bilete for å byrja..."
 
-#: EditExifMetadata/editexifmetadata.py:421
 msgid ""
 "Image is NOT readable,\n"
 "Please choose a different image..."
@@ -172,17 +114,9 @@ msgstr ""
 "Biletet kan ikkje lesast,\n"
 " Vel eit anna bilete..."
 
-#: EditExifMetadata/editexifmetadata.py:441
 msgid "Please convert this image to an Exiv2- compatible image type..."
 msgstr "Konverter dette biletet til eit Exiv2-kompatibel bilet-type..."
 
-#: EditExifMetadata/editexifmetadata.py:465
-#, python-brace-format
-msgid "Image Size : {width} x {height} pixels"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:481
-#: EditExifMetadata/editexifmetadata.py:1440
 msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
@@ -190,15 +124,12 @@ msgstr ""
 "Biletet kan ikkje skrivast til,\n"
 "Du vil ikkje kunna lagra Exif metadata...."
 
-#: EditExifMetadata/editexifmetadata.py:648
 msgid "Click Close to close this Thumbnail View Area."
 msgstr "Klikk på Lukk for å lukka området for visning av miniatyrbilete."
 
-#: EditExifMetadata/editexifmetadata.py:654
 msgid "Thumbnail View Area"
 msgstr "Område for visning av miniatyrbilete"
 
-#: EditExifMetadata/editexifmetadata.py:724
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
@@ -206,11 +137,9 @@ msgstr ""
 "ÅTVARING:  Du er i ferd med å konvertera dette biletet til eit .jpeg-"
 "bilete.  Er du sikker på at du vil gjera dette?"
 
-#: EditExifMetadata/editexifmetadata.py:726
 msgid "Convert and Delete"
 msgstr "Konverter og slett"
 
-#: EditExifMetadata/editexifmetadata.py:807
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
@@ -218,32 +147,26 @@ msgstr ""
 "Biletet ditt er blitt oppdatert og originalfila er sletta.  Den fulle "
 "filstien er blitt oppdatert!"
 
-#: EditExifMetadata/editexifmetadata.py:812
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
 msgstr "Det har oppstått ein feil, sjekk kjelda og målet i filstien..."
 
-#: EditExifMetadata/editexifmetadata.py:816
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
 msgstr ""
 "Det oppstod ein feil ved sletting av originalfila.  Du må sletta ho sjølv!"
 
-#: EditExifMetadata/editexifmetadata.py:834
 msgid "There was an error in converting your image file."
 msgstr "Det oppstod ein feil ved konvertering av biletfila di."
 
-#: EditExifMetadata/editexifmetadata.py:844
 msgid "Media Path Update"
 msgstr "Oppdatering av mediastien"
 
-#: EditExifMetadata/editexifmetadata.py:853
 msgid "There has been an error in updating the image file's path!"
 msgstr "Det oppstod ein feil ved oppdatering av stien til biletfila!"
 
-#: EditExifMetadata/editexifmetadata.py:886
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
@@ -251,25 +174,15 @@ msgstr ""
 "Klikk på lukkeknappen når du er ferdig  med å modifisera Exif metadata for "
 "dette biletet."
 
-#: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
 msgstr "Lagrar ein kopi av datafelta i biletet sine Exif metadata."
 
-#: EditExifMetadata/editexifmetadata.py:928
 msgid "Re -display the data fields that were cleared from the Edit Area."
 msgstr "Vis på nytt dei data-felt som vart fjerna på redigeringsområdet."
 
-#: EditExifMetadata/editexifmetadata.py:932
 msgid "This button will clear all of the data fields shown here."
 msgstr "Denne knappen vil fjerna alle datafelt som er vist her."
 
-#: EditExifMetadata/editexifmetadata.py:936
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
-msgid "This button will clear all of the GPS fields shown here."
-msgstr "Denne knappen vil fjerna alle datafelt som er vist her."
-
-#: EditExifMetadata/editexifmetadata.py:940
 msgid ""
 "Closes this popup Edit window.\n"
 "WARNING: This action will NOT Save any changes/ modification made to this "
@@ -279,126 +192,66 @@ msgstr ""
 "ÅTVARING:  Dette vil ikkje lagra nokon endringar som er gjort i dette "
 "biletet sine Exif metadata."
 
-#: EditExifMetadata/editexifmetadata.py:969
 msgid "Media Object Title"
 msgstr "Tittel på mediaobjekt"
 
-#: EditExifMetadata/editexifmetadata.py:978
 msgid "media Title: "
 msgstr "Media-tittel: "
 
-#: EditExifMetadata/editexifmetadata.py:993
 msgid "General Data"
 msgstr "Generelle data"
 
-#: EditExifMetadata/editexifmetadata.py:1003
 msgid "Description: "
 msgstr "Omtale: "
 
-#: EditExifMetadata/editexifmetadata.py:1004
 msgid "Artist: "
 msgstr "Forfattar: "
 
-#: EditExifMetadata/editexifmetadata.py:1005
 msgid "Copyright: "
 msgstr "Opphavsrett: "
 
-#: EditExifMetadata/editexifmetadata.py:1019
 msgid "Date/ Time"
 msgstr "Dato/ Tid"
 
-#: EditExifMetadata/editexifmetadata.py:1034
 msgid "Original: "
 msgstr "Original: "
 
-#: EditExifMetadata/editexifmetadata.py:1035
 msgid "Modified: "
 msgstr "Endra: "
 
-#: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr "GPS-koordinatar for bredde-/lengdegrad og høgde"
 
-#: EditExifMetadata/editexifmetadata.py:1069
 msgid "Latitude :"
 msgstr "Breddegrad :"
 
-#: EditExifMetadata/editexifmetadata.py:1070
 msgid "Longitude :"
 msgstr "Lengdegrad :"
 
-#: EditExifMetadata/editexifmetadata.py:1071
 msgid "Altitude :"
 msgstr "Høgde :"
 
-#: EditExifMetadata/editexifmetadata.py:1114
 msgid "Bad Date/Time"
 msgstr "Feil Dato/ Tid"
 
-#: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Ugyldig breddegrad (syntax:18°9'"
-
-#: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 eller -18:9:48.21)"
 
-#: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
-msgid "Invalid longitude (syntax: 18°9'"
-msgstr "Ugyldig lengdegrad (syntax: 18°9'"
-
-#: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 eller -18:9:48.21)"
 
-#: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
-msgid ""
-"WARNING!  You are about to completely delete the Exif metadata from this "
-"image."
-msgstr ""
-"ÅTVARING!  Du er i ferd med fullstendig å fjerna Exif metadata frå dette "
-"biletet?"
-
-#: EditExifMetadata/editexifmetadata.py:1138
-#: EditExifMetadata/editexifmetadata.py:1150
-msgid "Delete?"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
-msgid ""
-"WARNING!  You are about to completely delete the GPS metadata from this "
-"image."
-msgstr ""
-"ÅTVARING!  Du er i ferd med fullstendig å fjerna Exif metadata frå dette "
-"biletet?"
-
-#: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
 msgstr "Oppdatering  av Medie-tittel"
 
-#: EditExifMetadata/editexifmetadata.py:1357
 msgid "Media Object Date Created"
 msgstr "Dato for oppretting av Medieobjekt"
 
-#: EditExifMetadata/editexifmetadata.py:1422
 msgid "Saving Exif metadata to this image..."
 msgstr "Exif metadata blir lagra til dette biletet..."
 
-#: EditExifMetadata/editexifmetadata.py:1465
 msgid "All Exif metadata has been deleted from this image..."
 msgstr "Alle Exif metadata er blitt fjerna frå dette biletet..."
 
-#: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr ""
 "Det oppstod ein feil ved fjerning av Exif-metadata frå dette biletet..."

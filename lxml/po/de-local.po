@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,60 +12,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
 msgstr "lxml"
 
-#: lxml/lxmlGramplet.gpr.py:11
 msgid "Gramplet for testing lxml and XSLT"
-msgstr "Gramplet zum testen von lxml und XSLT"
+msgstr "Gramplet zum Testen von lxml und XSLT"
 
-#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
 msgstr "etree"
 
-#: lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
-msgstr "Gramplet zum testen von etree mit Gramps XML"
+msgstr "Gramplet zum Testen von etree mit Gramps-XML"
 
-#: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
 msgstr "Ungültiger Zeitstempel"
 
-#: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
 msgstr "Keine Datei analysiert..."
 
-#: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Number of editions back"
-msgstr "Anzahl Änderungen zurück"
+msgstr "Anzahl der zurückliegenden Ausgaben"
 
-#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 msgid "Space character on filename"
-msgstr "Leerzeichen im Dateiname"
+msgstr "Leerzeichen im Dateinamen"
 
-#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr "Bitte korrigiere Leerzeichen in „%s”"
+msgstr "Bitte korrigiere das Leerzeichen in „%s“"
 
-#: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
 msgstr "Entschuldigung, noch keine Unterstützung für dein Betriebssystem!"
 
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr "Ist es eine gepackte .gramps?"
+msgstr "Ist es eine komprimierte .gramps?"
 
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr "Kann „%s” nicht entpacken"
+msgstr "Dekomprimierung von „%s“ nicht möglich"
 
-#: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
-#: lxml/lxmlGramplet.py:286
 #, python-format
 msgid ""
 "From:\n"
@@ -97,17 +64,14 @@ msgstr ""
 " nach:\n"
 " „%(file2)s”.\n"
 
-#: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
 msgid "Cannot copy \"%s\""
 msgstr "Kann „%s” nicht kopieren"
 
-#: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr "XML: Letzte %s Änderungen seit %s, waren an/in:\n"
+msgstr "XML: Die letzten %s Ausgaben seit %s, waren am/am :\n"
 
-#: lxml/etreeGramplet.py:471
 #, python-format
 msgid ""
 "\n"
@@ -118,25 +82,22 @@ msgstr ""
 "XML: Anzahl der Datensätze und Beziehungen : \t%s\n"
 "\n"
 
-#: lxml/etreeGramplet.py:474
 #, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
-"Anzahl der Markierungen: \n"
+"Anzahl der Etiketten: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:476
 #, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
-"Anzahl der Markierungen: \n"
+"Anzahl der Etiketten: \n"
 "\t\t\t%s\n"
 
-#: lxml/etreeGramplet.py:478
 #, python-format
 msgid ""
 "Number of  events : \n"
@@ -145,7 +106,6 @@ msgstr ""
 "Anzahl der Ereignisse: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:481
 #, python-format
 msgid ""
 "Number of persons : \n"
@@ -154,7 +114,6 @@ msgstr ""
 "Anzahl der Personen: \n"
 "\t\t\t%s\t|\t(%s) und (%s)* Nachnamen\n"
 
-#: lxml/etreeGramplet.py:483
 #, python-format
 msgid ""
 "Number of persons : \n"
@@ -163,7 +122,6 @@ msgstr ""
 "Anzahl der Personen: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:484
 #, python-format
 msgid ""
 "Number of families : \n"
@@ -172,7 +130,6 @@ msgstr ""
 "Anzahl der Familien: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:485
 #, python-format
 msgid ""
 "Number of sources : \n"
@@ -181,7 +138,6 @@ msgstr ""
 "Anzahl der Quellen: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:487
 #, python-format
 msgid ""
 "Number of citations : \n"
@@ -190,7 +146,6 @@ msgstr ""
 "Anzahl der Fundstellen: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:490
 #, python-format
 msgid ""
 "Number of places : \n"
@@ -199,7 +154,6 @@ msgstr ""
 "Anzahl der Orte: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:491
 #, python-format
 msgid ""
 "Number of media objects : \n"
@@ -208,7 +162,6 @@ msgstr ""
 "Anzahl der Medienobjekte: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:492
 #, python-format
 msgid ""
 "Number of repositories : \n"
@@ -217,7 +170,6 @@ msgstr ""
 "Anzahl der Aufbewahrungsorte: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:493
 #, python-format
 msgid ""
 "Number of notes : \n"
@@ -226,7 +178,6 @@ msgstr ""
 "Anzahl der Notizen: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:498
 #, python-format
 msgid ""
 "\n"
@@ -235,68 +186,54 @@ msgstr ""
 "\n"
 "XML: Anzahl zusätzlicher Datensätze und Beziehungen: \t%s\n"
 
-#: lxml/etreeGramplet.py:502
 #, python-format
 msgid ""
 "* loaded Family Tree base:\n"
 " \"%s\"\n"
 msgstr ""
-"* geladener Stammbaum Basis:\n"
+"* geladene Stammbaum-Basis:\n"
 " „%s”\n"
 
-#: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
 msgstr "Wo ist gzip?"
 
-#: lxml/lxmlGramplet.py:67
 msgid "\"gzip\" is missing"
 msgstr "„gzip” fehlt"
 
-#: lxml/lxmlGramplet.py:89
 msgid "Missing python3 lxml"
 msgstr "Fehlende Python3 lxml"
 
-#: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
-msgstr "Bitte versuche „python3 lxml” Paket zu installieren."
+msgstr "Bitte versuche das Paket „python3 lxml” zu installieren."
 
-#: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
-msgstr "Keine Datei geladen …"
+msgstr "Keine Datei geladen..."
 
-#: lxml/lxmlGramplet.py:298
 msgid "XSD validation (lxml)"
-msgstr "XSD Prüfung (lxml)"
+msgstr "XSD-Prüfung (lxml)"
 
-#: lxml/lxmlGramplet.py:298
 #, python-format
 msgid "Cannot validate \"%(file)s\" !"
 msgstr "Kann „%(file)s” nicht prüfen!"
 
-#: lxml/lxmlGramplet.py:306
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
-msgstr "xmllint: überspringe DTD Validierung für „%(file)s”"
+msgstr "xmllint: überspringe DTD-Validierung für „%(file)s”"
 
-#: lxml/lxmlGramplet.py:318
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
-msgstr "xmllint: überspringe RelaxNG Prüfung für „%(file)s”"
+msgstr "xmllint: überspringe RelaxNG-Prüfung für „%(file)s”"
 
-#: lxml/lxmlGramplet.py:329
 msgid "Parsing issue"
-msgstr "Analyse Problem"
+msgstr "Analyseproblem"
 
-#: lxml/lxmlGramplet.py:329
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
 msgstr "Kann den Inhalt von „%(file)s” nicht analysieren"
 
-#: lxml/lxmlGramplet.py:333
 msgid "Gramps version"
-msgstr "Gramps Version"
+msgstr "Gramps-Version"
 
-#: lxml/lxmlGramplet.py:333
 #, python-format
 msgid ""
 "Wrong namespace\n"
@@ -305,33 +242,26 @@ msgstr ""
 "Falscher Namensraum\n"
 "Benötige: %s"
 
-#: lxml/lxmlGramplet.py:337
 msgid "RelaxNG validation"
-msgstr "RelaxNG Prüfung"
+msgstr "RelaxNG-Prüfung"
 
-#: lxml/lxmlGramplet.py:337
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
-msgstr "Kann „%(file)s” nicht mit RelaxNG Schema prüfen"
+msgstr "Kann „%(file)s” nicht mit RelaxNG-Schema prüfen"
 
-#: lxml/lxmlGramplet.py:341
 msgid "File issue"
-msgstr "Datei Problem"
+msgstr "Dateiproblem"
 
-#: lxml/lxmlGramplet.py:341
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
 msgstr "Kann „%(file)s” nicht mit etree analysieren"
 
-#: lxml/lxmlGramplet.py:359
 msgid "Parsing file..."
 msgstr "Analysiere Datei..."
 
-#: lxml/lxmlGramplet.py:456
 msgid "Missing header"
 msgstr "Kopfzeile fehlt"
 
-#: lxml/lxmlGramplet.py:456
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
@@ -339,107 +269,82 @@ msgid ""
 "generated by Gramps 4.x."
 msgstr ""
 "Keine gültige .gramps.\n"
-"Kann das Gramplet nicht starten …\n"
-"Bitte versuch eine .gramps\n"
+"Kann das Gramplet nicht starten...\n"
+"Bitte versuche eine .gramps\n"
 "erstellt von Gramps 4.x."
 
-#: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
-#: lxml/lxmlGramplet.py:484
 msgid "0"
 msgstr "0"
 
-#: lxml/lxmlGramplet.py:495
 msgid "File parsed with"
 msgstr "Datei analysiert mit"
 
-#: lxml/lxmlGramplet.py:498
 msgid "File was generated on "
 msgstr "Datei wurde erstellt am "
 
-#: lxml/lxmlGramplet.py:498
 msgid " by Gramps "
 msgstr " von Gramps "
 
-#: lxml/lxmlGramplet.py:500
 msgid "Period: "
 msgstr "Zeitraum: "
 
-#: lxml/lxmlGramplet.py:502
 msgid " entries for surname(s); no frequency yet"
 msgstr " Einträge für Nachname(n); noch keine Häufigkeit"
 
-#: lxml/lxmlGramplet.py:503
 msgid " entries for place(s)"
-msgstr " Einträger für Ort(e)"
+msgstr " Einträge für Ort(e)"
 
-#: lxml/lxmlGramplet.py:504
 msgid " note(s)"
 msgstr " Notiz(en)"
 
-#: lxml/lxmlGramplet.py:505
 msgid " source(s)"
 msgstr " Quelle(n)"
 
-#: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
 msgid "Gallery.html"
 msgstr "Galerie.html"
 
-#: lxml/lxmlGramplet.py:522
 #, python-format
 msgid "2. Has generated a media index on \"%(file)s\".\n"
 msgstr "2. Medienindex wurde erstellt in „%(file)s”.\n"
 
-#: lxml/lxmlGramplet.py:525
 #, python-format
 msgid "3. Has written entries into \"%(file)s\".\n"
 msgstr "3. Einträge wurden geschrieben nach „%(file)s”.\n"
 
-#: lxml/lxmlGramplet.py:544
 msgid "Matches XSD schema."
-msgstr "Entspricht XSD Schema."
+msgstr "Entspricht XSD-Schema."
 
-#: lxml/lxmlGramplet.py:565
 msgid "xmllint: skip DTD validation"
-msgstr "xmllint: überspringe DTD Prüfung"
+msgstr "xmllint: überspringe DTD-Prüfung"
 
-#: lxml/lxmlGramplet.py:589
 msgid "I am looking at ..."
 msgstr "Ich suche in …"
 
-#: lxml/lxmlGramplet.py:590
 msgid "Content generated by Gramps"
 msgstr "Von Gramps erstellter Inhalt"
 
-#: lxml/lxmlGramplet.py:593
 msgid "List of sources"
 msgstr "Quellenliste"
 
-#: lxml/lxmlGramplet.py:611
 msgid "Australia"
 msgstr "Australien"
 
-#: lxml/lxmlGramplet.py:612
 msgid "Brazil"
-msgstr "Brasilianisch"
+msgstr "Brasilien"
 
-#: lxml/lxmlGramplet.py:623
 msgid "India"
 msgstr "Indien"
 
-#: lxml/lxmlGramplet.py:625
 msgid "Norway"
 msgstr "Norwegen"
 
-#: lxml/lxmlGramplet.py:626
 msgid "Portugal"
 msgstr "Portugal"
 
-#: lxml/lxmlGramplet.py:695
 #, python-format
 msgid "1. Has generated \"%s\".\n"
 msgstr "1. Wurde erstellt „%s”.\n"
 
-#: lxml/lxmlGramplet.py:696
 #, python-format
 msgid ""
 "Try to open\n"

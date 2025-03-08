@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,42 +12,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
 msgstr "Hent medier"
 
-#: DownloadMedia/DownloadMedia.py:87
 msgid "Media downloaded"
 msgstr "Medier hentet"
 
-#: DownloadMedia/DownloadMedia.py:88
 #, python-format
 msgid "%d media files downloaded"
 msgstr "%d mediefiler hentet"
 
-#: DownloadMedia/DownloadMedia.py:100
 msgid "Download media tool"
 msgstr "Hent medieværktøj"
 
-#: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
 msgstr ""
 "Sørg for at du er forbundet til internettet inden du starter dette værktøj."
 
-#: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
 msgid "Downloading files"
 msgstr "Henter filer"
 
-#: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
 msgstr "Fejl ved hentning af filer"
 
-#: DownloadMedia/DownloadMedia.gpr.py:36
 msgid "Download media files from the internet"
 msgstr "Hent mediafiler fra internettet"
 
-#: DownloadMedia/DownloadMedia.gpr.py:37
 msgid "This tool downloads media files from the internet"
 msgstr "Dette værktøj henter mediafiler fra internettet"

@@ -1,23 +1,8 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,31 +16,24 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: QuiltView/QuiltView.gpr.py:23 QuiltView/QuiltView.gpr.py:34
 msgid "Quilt Chart"
 msgstr "График Quilt"
 
-#: QuiltView/QuiltView.gpr.py:25
 msgid "The view shows a quilt chart visualisation of a family tree"
 msgstr "Представление семейного древа в виде графика Quilt"
 
-#: QuiltView/QuiltView.py:223
 msgid "Quilt chart"
 msgstr "График Quilt"
 
-#: QuiltView/QuiltView.py:307
 msgid "Select the name for which you want to see."
 msgstr "Выберите имя для которого хотите посмотреть."
 
-#: QuiltView/QuiltView.py:314
 msgid "Clear the entry field in the name selection box."
 msgstr "Очистить поле ввода для выбора имени."
 
-#: QuiltView/QuiltView.py:319
 msgid "Nothing is selected"
 msgstr "Ничего не выбрано"
 
-#: QuiltView/QuiltView.py:572
 #, python-format
 msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
@@ -64,46 +42,36 @@ msgstr ""
 "Вы %(filter)d отфильтровали людей, %(count)d людей показано в древе и "
 "%(total)d людей в базе данных."
 
-#: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
 msgstr "Загрузка лиц"
 
-#: QuiltView/QuiltView.py:663
 msgid "Loading the data"
 msgstr "Загрузка данных"
 
-#: QuiltView/QuiltView.py:1053
 msgid "About Quilt View"
 msgstr "О дополнении"
 
-#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
 msgid "Edit tags"
 msgstr "Изменить метки"
 
-#: QuiltView/QuiltView.py:1500
 msgid "Set as home person"
 msgstr "Сделать базовым лицом"
 
-#: QuiltView/QuiltView.py:1656
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Изменение меток лица (%s)"
 
-#: QuiltView/QuiltView.py:1661
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Изменение меток семьи (%s)"
 
-#: QuiltView/QuiltView.py:1865
 msgid "Printing the tree"
 msgstr "Печать древа"
 
-#: QuiltView/QuiltView.py:1869
 #, python-format
 msgid "Need to print %(pages)s pages (%(format)s format)"
 msgstr "Печатать %(pages)s страницы (%(format)s формат)"
 
-#: QuiltView/QuiltView.py:1921
 msgid ""
 "Center on the selected person.\n"
 "The new position of the person will be near the top left corner."
@@ -111,18 +79,14 @@ msgstr ""
 "Центрировать на выбранном лице.\n"
 "Новая позиция лица будет около верхнего левого угла."
 
-#: QuiltView/QuiltView.py:1926
 msgid "The path color"
 msgstr "Цвет пути"
 
-#: QuiltView/QuiltView.py:1931
 msgid "The selected person color"
 msgstr "Цвет выбранного лица"
 
-#: QuiltView/QuiltView.py:1936
 msgid "The path transparency"
 msgstr "Прозрачность пути"
 
-#: QuiltView/QuiltView.py:1939
 msgid "General options"
 msgstr "Основные параметры"

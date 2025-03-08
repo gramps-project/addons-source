@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,182 +12,125 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
-#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
-#: SourceIndex/death.glade:521 SourceIndex/death.glade:669
-#: SourceIndex/death.glade:939 SourceIndex/census.glade:286
-#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
-#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
-#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
-msgid "Age:"
-msgstr "Idade:"
-
-#: DynamicWeb/dynamicweb.py:3114 SourceIndex/marriage.py:87
-#: SourceIndex/census.py:82 SourceIndex/index.py:92 SourceIndex/death.py:87
-#: SourceIndex/witness.py:64 SourceIndex/birth.py:126
-msgid "Sources Index"
-msgstr "Índice de fontes"
-
-#: Form/editform.py:225 SourceIndex/birth.glade:113 SourceIndex/death.glade:182
-#: SourceIndex/census.glade:873 SourceIndex/marriage.glade:1263
-msgid "Reference:"
-msgstr "Referência:"
-
-#: SourceIndex/SourceIndex.gpr.py:24
 msgid "BirthIndex"
 msgstr "ÍndiceNascimentos"
 
-#: SourceIndex/SourceIndex.gpr.py:40
 msgid "MarriageIndex"
 msgstr "ÍndiceCasamentos"
 
-#: SourceIndex/SourceIndex.gpr.py:56
 msgid "DeathIndex"
 msgstr "ÍndiceÓbitos"
 
-#: SourceIndex/SourceIndex.gpr.py:72
 msgid "CensusIndex"
 msgstr "ÍndiceCensos"
 
-#: SourceIndex/SourceIndex.gpr.py:104
 msgid "SourceIndex"
 msgstr "ÍndiceFonte"
 
-#: SourceIndex/index.py:407
+msgid "Sources Index"
+msgstr "Índice de fontes"
+
 msgid "*** Error: Must install either ElementTree or lxml."
 msgstr "***Erro: tem de instalar o ElementTree ou o lxml."
 
-#: SourceIndex/index.py:409
 msgid "must install either ElementTree or lxml"
 msgstr "tem de instalar o ElementTree ou o lxml"
 
-#: SourceIndex/index.glade:7
 msgid "index"
 msgstr "índice"
 
-#: SourceIndex/index.glade:50
 msgid "_File"
 msgstr "_Ficheiro"
 
-#: SourceIndex/index.glade:79
 msgid "Import CSV"
 msgstr "Importar CSV"
 
-#: SourceIndex/index.glade:209
 msgid "Display all"
 msgstr "Mostrar tudo"
 
-#: SourceIndex/index.glade:220
 msgid "Display only births"
 msgstr "Mostrar só nascimentos"
 
-#: SourceIndex/index.glade:221
 msgid "Births/Baptisms"
 msgstr "Nascimentos/Baptizados"
 
-#: SourceIndex/index.glade:231
 msgid "Display only marriages"
 msgstr "Mostrar só casamentos"
 
-#: SourceIndex/index.glade:232
 msgid "Marriages/Families"
 msgstr "Casamentos/Famílias"
 
-#: SourceIndex/index.glade:242
 msgid "Display only deaths"
 msgstr "Mostrar só óbitos"
 
-#: SourceIndex/index.glade:243
 msgid "Deaths/Burials"
 msgstr "Óbitos/Inumações"
 
-#: SourceIndex/index.glade:253
 msgid "Display only censuses"
 msgstr "Mostrar só censos"
 
-#: SourceIndex/index.glade:254
 msgid "Censuses"
 msgstr "Censos"
 
-#: SourceIndex/index.glade:278
 msgid "About this utility."
 msgstr "Acerca da ferramenta."
 
-#: SourceIndex/index.glade:279
 msgid "About dialog"
 msgstr "Diálogo Acerca"
 
-#: SourceIndex/index.glade:312
 msgid "New birth or baptism"
 msgstr "Novo nascimento ou baptismo"
 
-#: SourceIndex/index.glade:341
 msgid "add birth act"
 msgstr "adicionar acto de nascimento"
 
-#: SourceIndex/index.glade:373
 msgid "New marriage"
 msgstr "Novo casamento"
 
-#: SourceIndex/index.glade:402
 msgid "add marriage act"
 msgstr "adicionar acto de casamento"
 
-#: SourceIndex/index.glade:434
 msgid "New death or burial"
 msgstr "Novo óbito ou inumação"
 
-#: SourceIndex/index.glade:463
 msgid "add death act"
 msgstr "adicionar acto de óbito"
 
-#: SourceIndex/index.glade:495
 msgid "New census"
 msgstr "Novo censo"
 
-#: SourceIndex/index.glade:524
 msgid "add census"
 msgstr "adicionar censo"
 
-#: SourceIndex/index.glade:556
 msgid "Select a birth source"
 msgstr "Seleccionar uma fonte de nascimento"
 
-#: SourceIndex/index.glade:585 SourceIndex/birth.glade:7
 msgid "birth"
 msgstr "nascimento"
 
-#: SourceIndex/index.glade:617
 msgid "Select a marriage source"
 msgstr "Seleccionar uma fonte de casamento"
 
-#: SourceIndex/index.glade:678
 msgid "Select a death source"
 msgstr "Seleccionar uma fonte de óbito"
 
-#: SourceIndex/index.glade:739
 msgid "Select a census source"
 msgstr "Seleccionar uma fonte de censos"
 
-#: SourceIndex/index.glade:768 SourceIndex/census.glade:7
 msgid "census"
 msgstr "censo"
 
-#: SourceIndex/index.glade:800
 msgid "Select a repository storing a source"
 msgstr "Seleccionar um repositório de uma fonte"
 
-#: SourceIndex/index.glade:829
 msgid "repositories"
 msgstr "repositórios"
 
-#: SourceIndex/index.glade:869
 msgid "Selected view"
 msgstr "Vista seleccionada"
 
-#: SourceIndex/index.glade:889
 msgid ""
 "Records transcriptions ... births/deaths/marriages/censuses with common "
 "fields: id, repository, person name, birth date and place, parents."
@@ -200,60 +138,39 @@ msgstr ""
 "Transcrições de registos de nascimentos/óbitos/casamentos/censos com campos "
 "comuns: id, repositório, nome do indivíduo, data e local de nascimento, pais."
 
-#: SourceIndex/witness.glade:7
 msgid "witness"
 msgstr "testemunha"
 
-#: SourceIndex/witness.glade:60
 msgid "<b>Witness</b>"
 msgstr "<b>Testemunha</b>"
 
-#: SourceIndex/witness.glade:73 SourceIndex/birth.glade:195
-#: SourceIndex/birth.glade:297 SourceIndex/birth.glade:644
 msgid "Names:"
 msgstr "Nomes:"
 
-#: SourceIndex/witness.glade:90 SourceIndex/birth.glade:278
-#: SourceIndex/birth.glade:511 SourceIndex/birth.glade:729
 msgid "First names:"
 msgstr "Nomes próprios:"
 
-#: SourceIndex/witness.glade:124 SourceIndex/death.glade:703
-#: SourceIndex/death.glade:892 SourceIndex/census.glade:510
-#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
-#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
-#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
+msgid "Age:"
+msgstr "Idade:"
+
 msgid "Origin:"
 msgstr "Origem:"
 
-#: SourceIndex/witness.glade:141 SourceIndex/birth.glade:578
-#: SourceIndex/birth.glade:677 SourceIndex/death.glade:722
-#: SourceIndex/death.glade:821 SourceIndex/census.glade:543
-#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
-#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
-#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
 msgid "Occupation:"
 msgstr "Profissão:"
 
-#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
-#: SourceIndex/birth.glade:710 SourceIndex/death.glade:741
-#: SourceIndex/death.glade:854 SourceIndex/marriage.glade:560
-#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
-#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
-#: SourceIndex/marriage.glade:1455
 msgid "Live:"
 msgstr "Vivo:"
 
-#: SourceIndex/birth.glade:65 SourceIndex/death.glade:97
-#: SourceIndex/census.glade:728 SourceIndex/marriage.glade:64
 msgid "Info:"
 msgstr "Informação:"
 
-#: SourceIndex/birth.glade:99
 msgid "Birth act:"
 msgstr "Acto de nascimento:"
 
-#: SourceIndex/birth.glade:129
+msgid "Reference:"
+msgstr "Referência:"
+
 msgid ""
 "Volume\n"
 "    Page:"
@@ -261,44 +178,33 @@ msgstr ""
 "Volume\n"
 "    Página:"
 
-#: SourceIndex/birth.glade:149
 msgid "The source title"
 msgstr "O título da fonte"
 
-#: SourceIndex/birth.glade:164
 msgid "The volume or page of this source"
 msgstr "O volume ou a página desta fonte"
 
-#: SourceIndex/birth.glade:214
 msgid "select the gender/sex"
 msgstr "seleccionar o sexo"
 
-#: SourceIndex/birth.glade:247
 msgid "The names of the main person written into the source"
 msgstr "Os nomes do indivíduo principal, escritos na fonte"
 
-#: SourceIndex/birth.glade:262
 msgid "The first names of the main person written into the source"
 msgstr "Os nomes próprios do indivíduo principal, escritos na fonte"
 
-#: SourceIndex/birth.glade:334 SourceIndex/birth.glade:493
 msgid "Other:"
 msgstr "Outros:"
 
-#: SourceIndex/birth.glade:351
 msgid "Repository title"
 msgstr "Título do repositório"
 
-#: SourceIndex/birth.glade:388 SourceIndex/death.glade:589
-#: SourceIndex/census.glade:973 SourceIndex/marriage.glade:234
 msgid "<b>Image</b>"
 msgstr "<b>Imagem</b>"
 
-#: SourceIndex/birth.glade:406
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>Repositório</i></b>"
 
-#: SourceIndex/birth.glade:421
 msgid ""
 "Spouse\n"
 "names:"
@@ -306,7 +212,6 @@ msgstr ""
 "Nomes do \n"
 "cônjuge:"
 
-#: SourceIndex/birth.glade:441
 msgid ""
 "Marriage\n"
 "date:"
@@ -314,7 +219,6 @@ msgstr ""
 "Data de\n"
 "casamento:"
 
-#: SourceIndex/birth.glade:460
 msgid ""
 "Death\n"
 "date:"
@@ -322,7 +226,6 @@ msgstr ""
 "Data de\n"
 "óbito:"
 
-#: SourceIndex/birth.glade:833
 msgid ""
 "<b>Witness\n"
 "Godfather\n"
@@ -332,31 +235,24 @@ msgstr ""
 "Padrinho\n"
 "Madrinha:</b>"
 
-#: SourceIndex/birth.glade:870
 msgid "Call number:"
 msgstr "Número de catálogo:"
 
-#: SourceIndex/birth.glade:887
 msgid "The call number into the repository"
 msgstr "O número de catálogo no repositório"
 
-#: SourceIndex/birth.glade:925
 msgid "<b><i>Data person</i></b>"
 msgstr "<b><i>Indivíduo dos dados</i></b>"
 
-#: SourceIndex/birth.glade:949
 msgid "<b><i>Data margin</i></b>"
 msgstr "<b><i>Margem dos dados</i></b>"
 
-#: SourceIndex/birth.glade:973
 msgid "<b><i>Data father</i></b>"
 msgstr "<b><i>Pai dos dados</i></b>"
 
-#: SourceIndex/birth.glade:985
 msgid "<b><i>Data mother</i></b>"
 msgstr "<b><i>Mãe dos dados</i></b>"
 
-#: SourceIndex/birth.glade:1021
 msgid ""
 "witness1, name, given, age, occupation;\n"
 "witness2, name, given, age, occupation;\n"
@@ -368,7 +264,6 @@ msgstr ""
 "padrinho, apelido, próprio, idade, profissão;\n"
 "etc."
 
-#: SourceIndex/birth.glade:1549
 msgid ""
 "Marriage\n"
 "place:"
@@ -376,7 +271,6 @@ msgstr ""
 "Local de \n"
 "casamento:"
 
-#: SourceIndex/birth.glade:1568
 msgid ""
 "Death\n"
 "place:"
@@ -384,7 +278,6 @@ msgstr ""
 "Local de \n"
 "óbito:"
 
-#: SourceIndex/birth.glade:1588
 msgid ""
 "Birth\n"
 "place:"
@@ -392,96 +285,66 @@ msgstr ""
 "Local de \n"
 "nascimento:"
 
-#: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
 msgid "Origine:"
 msgstr "Origem:"
 
-#: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
 msgstr "<b><i>Citação</i></b>"
 
-#: SourceIndex/birth.glade:2287
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Fonte</i></b>"
 
-#: SourceIndex/death.glade:165
 msgid "Death act:"
 msgstr "Acto de nascimento:"
 
-#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
-#: SourceIndex/marriage.glade:1296
 msgid "Volume:"
 msgstr "Volume:"
 
-#: SourceIndex/death.glade:282
 msgid "<b>Death act</b>"
 msgstr "<b>Acto de óbito</b>"
 
-#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
-#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
-#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
-#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
-#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
 msgid "First name:"
 msgstr "Nome próprio:"
 
-#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
-#: SourceIndex/marriage.glade:185
 msgid "<b>Repository</b>"
 msgstr "<b>Repositório</b>"
 
-#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
 msgid "<b>Data person</b>"
 msgstr "<b>Indivíduo dos dados</b>"
 
-#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
 msgid "<b>Witness:</b>"
 msgstr "<b>Testemunha:</b>"
 
-#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
 msgid "Birth date:"
 msgstr "Data de nascimento:"
 
-#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
 msgid "Birth place:"
 msgstr "Local de nascimento:"
 
-#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
 msgid "Note:"
 msgstr "Nota:"
 
-#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
 msgid "Spouse name:"
 msgstr "Nome do cônjuge:"
 
-#: SourceIndex/death.glade:1131
 msgid "Marriage date:"
 msgstr "Data de casamento:"
 
-#: SourceIndex/death.glade:1163
 msgid "Marriage place:"
 msgstr "Local de casamento:"
 
-#: SourceIndex/death.glade:1195
 msgid "<b>Data mother</b>"
 msgstr "<b>Mãe dos dados</b>"
 
-#: SourceIndex/death.glade:1210
 msgid "<b>Data father</b>"
 msgstr "<b>Pai dos dados</b>"
 
-#: SourceIndex/death.glade:1225
 msgid "<b>Spouse</b> "
 msgstr "<b>Cônjuge</b> "
 
-#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
-#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
-#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
-#: SourceIndex/marriage.glade:1874
 msgid "alive"
 msgstr "vivo"
 
-#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
 msgid ""
 "witness1, name, given, age, occupation; witness2, name, given, age, "
 "occupation, etc ..."
@@ -489,63 +352,48 @@ msgstr ""
 "testemunha1, apelido, próprio, idade, profissão, testemunha2, apelido, "
 "próprio, idade, profissão, etc."
 
-#: SourceIndex/census.glade:160
 msgid "<b>Census</b>"
 msgstr "<b>Censo</b>"
 
-#: SourceIndex/census.glade:364
 msgid "Death date:"
 msgstr "Data de óbito:"
 
-#: SourceIndex/census.glade:414
 msgid "Death place:"
 msgstr "Local de óbito:"
 
-#: SourceIndex/census.glade:447
 msgid "Family status:"
 msgstr "Estado da família:"
 
-#: SourceIndex/census.glade:1046
 msgid "order, person, surname, given, age, status, occupation, etc ..."
 msgstr "ordem, indivíduo, apelido, próprio, idade, estado, profissão, etc."
 
-#: SourceIndex/marriage.glade:49
 msgid "Marriage act:"
 msgstr "Acto de casamento:"
 
-#: SourceIndex/marriage.glade:81
 msgid "m. date:"
 msgstr "data c.:"
 
-#: SourceIndex/marriage.glade:97
 msgid "m. place:"
 msgstr "local c.:"
 
-#: SourceIndex/marriage.glade:113
 msgid "d.contract:"
 msgstr "contrato ó.:"
 
-#: SourceIndex/marriage.glade:131
 msgid "dates banns:"
 msgstr "data banhos:"
 
-#: SourceIndex/marriage.glade:149
 msgid "p.contract:"
 msgstr "contrato p.:"
 
-#: SourceIndex/marriage.glade:167
 msgid "places banns:"
 msgstr "locais banhos:"
 
-#: SourceIndex/marriage.glade:198
 msgid "<b>Data union</b>"
 msgstr "<b>União de dados</b>"
 
-#: SourceIndex/marriage.glade:318
 msgid "<b>Marriage act</b>"
 msgstr "<b>Acto de casamento</b>"
 
-#: SourceIndex/marriage.glade:333
 msgid ""
 "<b>Data father\n"
 "spouse1</b>"
@@ -553,7 +401,6 @@ msgstr ""
 "<b>Cônjuge 1 do pai\n"
 "dos dados</b>"
 
-#: SourceIndex/marriage.glade:351
 msgid ""
 "<b>Data mother\n"
 "spouse1</b>"
@@ -561,7 +408,6 @@ msgstr ""
 "<b>Cônjuge 1 da mãe\n"
 "dos dados</b>"
 
-#: SourceIndex/marriage.glade:369
 msgid ""
 "<b>Data mother\n"
 "spouse2</b>"
@@ -569,7 +415,6 @@ msgstr ""
 "<b>Cônjuge 2 da mãe\n"
 "dos dados</b>"
 
-#: SourceIndex/marriage.glade:387
 msgid ""
 "<b>Data father\n"
 "spouse2</b>"
@@ -577,10 +422,8 @@ msgstr ""
 "<b>Cônjuge 2 do pai\n"
 "dos dados</b>"
 
-#: SourceIndex/marriage.glade:1185
 msgid "<b>Data spouse1</b>"
 msgstr "<b>Cônjuge 1 dos dados</b>"
 
-#: SourceIndex/marriage.glade:1202
 msgid "<b>Data spouse2</b>"
 msgstr "<b>Cônjuge 2 dos dados</b>"

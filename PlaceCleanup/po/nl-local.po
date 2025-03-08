@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,13 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
 msgstr "Plaatsopschoning"
 
-#: PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
@@ -36,7 +24,6 @@ msgstr ""
 "De Plaatsopschoningsgramplet helpt bij het samenvoegen van plaatsen en bij "
 "het voltooien van plaatsen uit de GeoNames-webdatabase"
 
-#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1088
 msgid ""
 "No\n"
 "Matches"
@@ -44,11 +31,9 @@ msgstr ""
 "Geen\n"
 "overeenkomsten"
 
-#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
 msgid "Find"
 msgstr "Vind"
 
-#: PlaceCleanup/placecleanup.py:293
 #, python-format
 msgid ""
 "%s\n"
@@ -59,19 +44,15 @@ msgstr ""
 "lokale\n"
 "overeenkomsten"
 
-#: PlaceCleanup/placecleanup.py:295
 msgid "Find GeoNames"
 msgstr "Vind GeoNames"
 
-#: PlaceCleanup/placecleanup.py:303
 msgid "Need to set GeoNames ID"
 msgstr "Moet GeoNames ID instellen"
 
-#: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
 msgstr "Gebruik de Help-knop voor meer informatie"
 
-#: PlaceCleanup/placecleanup.py:337
 msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
 "the place manually."
@@ -79,7 +60,6 @@ msgstr ""
 "Wijzig de titel of gebruik de knop 'Bewerken' om dit niveau van de plaats "
 "handmatig te voltooien."
 
-#: PlaceCleanup/placecleanup.py:347
 #, python-format
 msgid ""
 "%s\n"
@@ -90,12 +70,10 @@ msgstr ""
 "GeoNames\n"
 "overeenkomsten"
 
-#: PlaceCleanup/placecleanup.py:353
 #, python-format
 msgid "%s matches were found"
 msgstr "%s overeenkomsten gevonden"
 
-#: PlaceCleanup/placecleanup.py:354
 msgid ""
 "Only 10 matches are shown.\n"
 "To see additional results, press the search button again.\n"
@@ -105,19 +83,15 @@ msgstr ""
 "Druk nogmaals op de zoekknop om meer resultaten te zien.\n"
 "Of probeer de titel te wijzigen met meer details, zoals een land."
 
-#: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
 msgstr "Probleem bij het ophalen van gegevens van internet"
 
-#: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
 msgstr "Time-out webverzoek, u kunt het opnieuw proberen..."
 
-#: PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
 msgstr "Probleem bij het ophalen van gegevens van GeoNames"
 
-#: PlaceCleanup/placecleanup.py:481
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
@@ -125,7 +99,6 @@ msgstr ""
 "Een van de plaatsen die u samenvoegt, omsluit de andere!\n"
 "Kies een andere plaats."
 
-#: PlaceCleanup/placecleanup.py:759
 msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
@@ -133,19 +106,15 @@ msgstr ""
 "De plaats die u kiest, is ingesloten in de plaats waar u aan werkt!\n"
 "Annuleer en kies een andere plaats."
 
-#: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
 msgstr "GeoNames-website"
 
-#: PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
 msgstr "GeoNames auteur"
 
-#: PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr "GeoNames is opgericht door Marc Wick. U kunt hem bereiken op "
 
-#: PlaceCleanup/placecleanup.py:959
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
@@ -155,20 +124,16 @@ msgstr ""
 "Zwitserland.\n"
 "Dit werk is in licentie gegeven onder een "
 
-#: PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
 msgstr "Creative Commons Attribution 3.0-licentie"
 
-#: PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "Voeg bron/bibl/notitie (%s) toe"
 
-#: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
 msgstr "Deze plaats wordt niet gebruikt!"
 
-#: PlaceCleanup/placecleanup.py:1076
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
@@ -176,54 +141,41 @@ msgstr ""
 "U moet het verwijderen of, als het nuttige opmerkingen of andere gegevens "
 "bevat, Vind gebruiken om het op een geldige plaats samen te voegen."
 
-#: PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
 msgstr "Stad, provincie, staat, land"
 
-#: PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
 msgstr "Primaire naam"
 
-#: PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
 msgstr "De huidige primaire naam."
 
-#: PlaceCleanup/placecleanup.glade:102
 msgid "The postal code for the place, if any."
 msgstr "De postcode van de plaats, indien aanwezig."
 
-#: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
 msgstr "Wat voor soort locatie dit is. Bijvoorbeeld 'Land', 'Stad', ... ."
 
-#: PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
 msgstr "Vink dit vakje aan als u de originele postcode wilt behouden."
 
-#: PlaceCleanup/placecleanup.glade:148
 msgid "Check this box if you want to keep the original Place Type."
 msgstr "Vink dit vakje aan als u het oorspronkelijke plaatstype wilt behouden."
 
-#: PlaceCleanup/placecleanup.glade:166 PlaceCleanup/placecleanup.glade:180
-#: PlaceCleanup/placecleanup.glade:339 PlaceCleanup/placecleanup.glade:353
 msgid "Orig"
 msgstr "Orig"
 
-#: PlaceCleanup/placecleanup.glade:280
 msgid "Check this box if you want to keep the original Latitude and Longitude."
 msgstr ""
 "Vink dit vakje aan als u de oorspronkelijke lengte- en breedtegraad wilt "
 "behouden."
 
-#: PlaceCleanup/placecleanup.glade:295
 msgid "The Gramps ID.."
 msgstr "Het Gramps-ID.."
 
-#: PlaceCleanup/placecleanup.glade:322
 msgid "Check this box if you want to keep the original Gramps ID."
 msgstr "Vink dit vakje aan als u de originele Gramps-ID wilt behouden."
 
-#: PlaceCleanup/placecleanup.glade:391
 msgid ""
 "Alterative Names\n"
 "Select one or more rows and press 'Keep' button to toggle the 'include into "
@@ -233,75 +185,59 @@ msgstr ""
 "Selecteer een of meer rijen en druk op de knop 'Behouden' om de status 'in "
 "plaats opnemen' te wisselen."
 
-#: PlaceCleanup/placecleanup.glade:406
 msgid "Inc"
 msgstr "Inclusief"
 
-#: PlaceCleanup/placecleanup.glade:446
 msgid "Lang"
 msgstr "Taal"
 
-#: PlaceCleanup/placecleanup.glade:520
 msgid ""
 "Select one or more rows and use this button to keep the alternative names."
 msgstr ""
 "Selecteer een of meer rijen en gebruik deze knop om de alternatieve namen te "
 "behouden."
 
-#: PlaceCleanup/placecleanup.glade:536
 msgid "Select one row and use this button to make the row the primary name."
 msgstr ""
 "Selecteer één rij en gebruik deze knop om de rij de primaire naam te maken."
 
-#: PlaceCleanup/placecleanup.glade:548
 msgid "Discard"
 msgstr "Negeren"
 
-#: PlaceCleanup/placecleanup.glade:552
 msgid ""
 "Select one or more rows and use this button to discard the alternative names."
 msgstr ""
 "Selecteer een of meer rijen en gebruik deze knop om de alternatieve namen te "
 "verwijderen."
 
-#: PlaceCleanup/placecleanup.glade:580
 msgid "Cancel the operation, no changes are made to your Place."
 msgstr ""
 "Annuleer de bewerking, er worden geen wijzigingen aangebracht aan uw plaats."
 
-#: PlaceCleanup/placecleanup.glade:595
 msgid "Store the values in your Place."
 msgstr "Sla de waarden op in uw plaats."
 
-#: PlaceCleanup/placecleanup.glade:677
 msgid "Keep Web Links"
 msgstr "Behoud weblinks"
 
-#: PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
 msgstr "Zet weblinks (meestal wikipedia) in uw plaats."
 
-#: PlaceCleanup/placecleanup.glade:693
 msgid "Add citation and source to Place"
 msgstr "Voeg citaat en bron toe aan plaats"
 
-#: PlaceCleanup/placecleanup.glade:697
 msgid "This Adds a Citation to your place, citing GeoNames."
 msgstr "Dit voegt een citaat toe aan uw plaats, onder vermelding van GeoNames."
 
-#: PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
 msgstr "Gebruikers-ID GeoNames"
 
-#: PlaceCleanup/placecleanup.glade:723
 msgid "Enter you Geonames user ID here."
 msgstr "Voer hier uw gebruikers-ID voor Geonames in."
 
-#: PlaceCleanup/placecleanup.glade:735
 msgid "Alternative Names Languages to keep"
 msgstr "Alternatieve namentalen om te bewaren"
 
-#: PlaceCleanup/placecleanup.glade:747
 msgid ""
 "Enter the two or three letter codes for the languages you wish to keep, "
 "seperated by spaces.\n"
@@ -317,11 +253,9 @@ msgstr ""
 "Als u vaak een ongecontroleerde naam ziet in een specifieke taal die u wilt, "
 "voeg dan hier de taalcode toe."
 
-#: PlaceCleanup/placecleanup.glade:763
 msgid "Currently Enclosed Places"
 msgstr "Momenteel ingesloten plaatsen"
 
-#: PlaceCleanup/placecleanup.glade:775
 msgid ""
 "When cleaning a place that is already enclosed, this affects what is done.\n"
 "If '<b>Keep current Enclosure</b>' is selected, no changes to the enclosing "
@@ -339,15 +273,12 @@ msgstr ""
 "kan ertoe leiden dat sommige ongebruikte plaatsen in uw database "
 "achterblijven."
 
-#: PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
 msgstr "Behoud de huidige omsluiting"
 
-#: PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
 msgstr "Vervang door GeoNames omsluiting"
 
-#: PlaceCleanup/placecleanup.glade:851
 msgid ""
 "Current Place title.\n"
 "You can edit this to help find other places, particularly to reduce the "
@@ -357,18 +288,15 @@ msgstr ""
 "U kunt dit bewerken om andere plaatsen te vinden, met name om het aantal "
 "resultaten te verminderen."
 
-#: PlaceCleanup/placecleanup.glade:899
 msgid "Search your local places and GeoNames for a match."
 msgstr "Zoek in uw lokale plaatsen en GeoNames naar een overeenkomst."
 
-#: PlaceCleanup/placecleanup.glade:915
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
 msgstr ""
 "Ga door met samenvoegen (voor lokale plaatsen) of voltooi een plaats (voor "
 "GeoNames)."
 
-#: PlaceCleanup/placecleanup.glade:932
 msgid ""
 "Split up Title, Edit manually, and enclose with next level of hierarchy.  "
 "For use when the initial component of the Title is too detailed to be found "
@@ -378,28 +306,22 @@ msgstr ""
 "hiërarchieniveau. Voor gebruik wanneer het eerste onderdeel van de titel te "
 "gedetailleerd is om in de gazetteer te vinden."
 
-#: PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
 msgstr "Volgende plaats"
 
-#: PlaceCleanup/placecleanup.glade:962
 msgid "Find an incomplete place."
 msgstr "Zoek een onvolledige plaats."
 
-#: PlaceCleanup/placecleanup.glade:985
 msgid "Set preferences"
 msgstr "Stel voorkeuren in"
 
-#: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
 msgstr ""
 "Selecteer een van deze plaatsen om door te gaan met het opschoningsproces."
 
-#: PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
 msgstr "Zoekresultaat plaatsen"
 
-#: PlaceCleanup/placecleanup.glade:1102
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
@@ -407,11 +329,9 @@ msgstr ""
 "Door het aankruisvak 'Bewoond' aan te vinken, bevat de GeoNames-zoekopdracht "
 "'Bewoonde plaatsen', plaatsen waar mensen wonen en werken."
 
-#: PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
 msgstr "Bewoond"
 
-#: PlaceCleanup/placecleanup.glade:1131
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
@@ -420,7 +340,6 @@ msgstr ""
 "GeoNames ervoor dat administratieve onderverdelingen in de zoekopdracht "
 "worden opgenomen (landen, staten, provincies enz.)."
 
-#: PlaceCleanup/placecleanup.glade:1148
 msgid ""
 "Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
 "variety of other places in the search (churches, burial grounds, buildings "
@@ -430,10 +349,8 @@ msgstr ""
 "voor een grote verscheidenheid aan andere plaatsen in de zoekopdracht "
 "(kerken, begraafplaatsen, gebouwen enz.)."
 
-#: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
 msgstr "Besturing"
 
-#: PlaceCleanup/placecleanup.glade:1174
 msgid "Spot"
 msgstr "Plek"

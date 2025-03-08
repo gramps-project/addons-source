@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,90 +13,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr "Дерево предків за допомогою LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
 msgstr "Дерево нащадків за допомогою LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
 msgstr "Дерево дідусів і бабусь"
 
-#: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
 msgstr "Дерево дідусів і бабусь за допомогою LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
 msgstr "Пісочний годинник"
 
-#: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
 msgstr "Пісочний годинник за допомогою LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
 msgstr "Пісочний годинник для сім'ї"
 
-#: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Пісочний годинник для сім'ї за допомогою LaTeX genealogytree"
 
-#: GenealogyTree/gt_sandclock.py:235
 msgid "The center family for the report"
 msgstr "Центральна сім'я для звіту"
 
-#: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
 msgstr "Покоління вгору"
 
-#: GenealogyTree/gt_sandclock.py:242
 msgid "Generations down"
 msgstr "Покоління вниз"
 
-#: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
 msgstr "Включити братів і сестер"
 
-#: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
 msgstr "Включити братів і сестер предків."
 
-#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
-#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
 msgid "Include images"
 msgstr "Включити зображення"
 
-#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
-#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
 msgid "Include images of people in the nodes."
 msgstr "Включити зображення людей у вузлах."
 
-#: GenealogyTree/gt_grandparent.py:119
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
 msgstr ""
 "Особа %s не має обох — бабусі та дідуся по материнській і батьківській лінії"
 
-#: GenealogyTree/gt_grandparent.py:227
 msgid "Grandparent family spacing"
 msgstr "Відстань між сім'ями дідусів і бабусь"
 
-#: GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
 msgstr "Додаткова відстань між сім'ями дідусів і бабусь (мм)"
 
-#: GenealogyTree/gt_descendant.py:191
 msgid "First spouse left"
-msgstr ""
+msgstr "Перший(а) чоловік/дружина зліва"
 
-#: GenealogyTree/gt_descendant.py:192
 msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
+"Завжди розміщувати першого(у) з декількох чоловіків/дружин зліва. Це може "
+"допомогти зменшити перехрещення ліній у випадку кількох шлюбів."

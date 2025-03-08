@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,52 +16,38 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:459
-#: GedcomExtensions/GedcomExtensions.py:198
-msgid "Include media"
-msgstr "Включать документы"
-
-#: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
 msgstr "Включать свидетелей"
 
-#: GedcomExtensions/GedcomExtensions.py:201
+msgid "Include media"
+msgstr "Включать документы"
+
 msgid "Patronymic names:"
 msgstr "Отчества:"
 
-#: GedcomExtensions/GedcomExtensions.py:203
-#: GedcomExtensions/GedcomExtensions.py:210
 msgid "Don't change"
 msgstr "Не изменять"
 
-#: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
 msgstr "Добавить Отчество после Имени"
 
-#: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
 msgstr "Игнорировать Отчество"
 
-#: GedcomExtensions/GedcomExtensions.py:208
 msgid "Type of surname:"
 msgstr "Тип фамилии:"
 
-#: GedcomExtensions/GedcomExtensions.py:261
 msgid "Export failed"
 msgstr "Ошибка при экспорте"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "Экспорт в GEDCOM (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:33
 msgid "GEDCOM Extensions (GED2)"
 msgstr "Дополнения GEDCOM (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:34
 msgid "Extensions to the common GEDCOM format."
 msgstr "Дополнения для обычного формата GEDCOM."
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:42
 msgid "GEDCOM Extensions options"
 msgstr "Параметры дополнений GEDCOM"

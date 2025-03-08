@@ -1,11 +1,3 @@
-# translation of pl.po to
-# Copyright (C) 2002-2003, 2006, 2007 Free Software Foundation, Inc.
-#
-# Piotr Czubaszek <pioterus(at)gmail(dot)com>, 2007.
-# Piotr Czubaszek <piotrek@gmail.com>, 2007.
-# Łukasz Rymarczyk <yenidai(at)poczta(dot)onet(dot)pl>, 2008, 2009.
-# Przemek Wiech <pwiech@gmail.com>, 2019.
-# Michał Stojek <stojex@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
@@ -25,284 +17,132 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:335
-#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
-#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
-#, python-format
-msgid "%s "
-msgstr "%s "
-
-#: PluginManager/PluginManager.py:158 GraphView/search_widget.py:400
-msgid "Search..."
-msgstr "Szukaj..."
-
-#: DynamicWeb/dynamicweb.py:3170 GraphView/graphview.py:1095
-msgid "Zoom in"
-msgstr "Przybliż"
-
-#: DynamicWeb/dynamicweb.py:3171 GraphView/graphview.py:1102
-msgid "Zoom out"
-msgstr "Oddal"
-
-#: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:968
-msgid "Search"
-msgstr "Szukaj"
-
-#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:4048
-msgid "Set as home person"
-msgstr "Ustaw jako osobę główną"
-
-# #: GraphView/graphview.py:4248
-#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4538
-#: GraphView/graphview.py:4584
-#, python-format
-msgid "Adding Tags to person (%s)"
-msgstr "Dodawanie tagów do osoby (%s)"
-
-#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4543
-#: GraphView/graphview.py:4595
-#, python-format
-msgid "Adding Tags to family (%s)"
-msgstr "Dodawanie tagów do rodziny (%s)"
-
-#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
-msgid "Copy"
-msgstr "Kopiuj"
-
-#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1109
-msgid "Zoom to original"
-msgstr "Powiększ do oryginału"
-
-#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1116
-msgid "Zoom to best fit"
-msgstr "Powiększ do najlepszego dopasowania"
-
-#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
-#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
 msgstr "Graph View"
 
-#: GraphView/graphview.py:754
-#, fuzzy
-#| msgid "Show places"
-msgid "Show IDs"
-msgstr "Pokaż miejsca"
-
-#: GraphView/graphview.py:757
 msgid "Show avatars"
 msgstr "Pokaż awatary"
 
-#: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
 msgstr "Wyróżnij osobę główną"
 
-#: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
 msgstr "Pokaż pełne daty"
 
-#: GraphView/graphview.py:768 GraphView/graphview.py:3752
 msgid "Show places"
 msgstr "Pokaż miejsca"
 
-#: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "top to bottom"
-msgid "Vertical: Top to Bottom"
-msgstr "Pionowo (z dołu do góry)"
-
-#: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "bottom to top"
-msgid "Vertical: Bottom to Top"
-msgstr "Pionowo (z dołu do góry)"
-
-#: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "left to right"
-msgid "Horizontal: Left to Right"
-msgstr "Poziomo (z lewa na prawo)"
-
-#: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "right to left"
-msgid "Horizontal: Right to Left"
-msgstr "Poziomo (z lewa na prawo)"
-
-#: GraphView/graphview.py:786
-#, fuzzy
-#| msgid "Unknown time direction"
-msgid "Time Direction"
-msgstr "Nieznany kierunek czasu"
-
-#: GraphView/graphview.py:791
-msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr ""
-
-#: GraphView/graphview.py:812
 msgid "Person theme"
 msgstr "Motyw osoby"
 
-#: GraphView/graphview.py:817
 msgid "Path color to home person"
 msgstr "Kolor ścieżki do osoby głównej"
 
-#: GraphView/graphview.py:821
 msgid "Font:"
 msgstr "Czcionka:"
 
-#: GraphView/graphview.py:835
 msgid "Avatars style"
 msgstr "Styl awatarów"
 
-#: GraphView/graphview.py:841
 msgid "PNG files"
 msgstr "Pliki PNG"
 
-#: GraphView/graphview.py:846
 msgid "Male avatar:"
 msgstr "Awatar dla mężczyzny:"
 
-#: GraphView/graphview.py:847
 msgid "Choose male avatar"
 msgstr "Wybierz awatar dla mężczyzny"
 
-#: GraphView/graphview.py:859
 msgid "Female avatar:"
 msgstr "Awatar dla kobiety:"
 
-#: GraphView/graphview.py:860
 msgid "Choose female avatar"
 msgstr "Wybierz kobiecy awatar"
 
-#: GraphView/graphview.py:872
-#, fuzzy
-#| msgid "Show avatars"
-msgid "Unknown avatar:"
-msgstr "Pokaż awatary"
-
-#: GraphView/graphview.py:873
-#, fuzzy
-#| msgid "Choose male avatar"
-msgid "Choose Unknown avatar"
-msgstr "Wybierz awatar dla mężczyzny"
-
-#: GraphView/graphview.py:885
-#, fuzzy
-#| msgid "Male avatar:"
-msgid "Other avatar:"
-msgstr "Awatar dla mężczyzny:"
-
-#: GraphView/graphview.py:886
-#, fuzzy
-#| msgid "Choose male avatar"
-msgid "Choose Other avatar"
-msgstr "Wybierz awatar dla mężczyzny"
-
-#: GraphView/graphview.py:900
-#, fuzzy
-#| msgid "Active person"
-msgid "Active person border size"
-msgstr "Aktywna osoba"
-
-#: GraphView/graphview.py:905
-#, fuzzy
-#| msgid "Person theme"
-msgid "Person border size"
-msgstr "Motyw osoby"
-
-#: GraphView/graphview.py:908
 msgid "Themes"
 msgstr "Motywy"
 
-#: GraphView/graphview.py:921 GraphView/graphview.py:3770
 msgid "Show animation"
 msgstr "Pokaż animację"
 
-#: GraphView/graphview.py:925
 msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "Szybkość animacji (1..5 gdzie 5 jest najwolniejsze)"
 
-#: GraphView/graphview.py:929
 msgid "Animation count (0..8 use 0 to turn off)"
 msgstr "Liczba animacji (0..8 gdzie 0 wyłącza)"
 
-#: GraphView/graphview.py:938
 msgid "Animation"
 msgstr "Animacja"
 
-#: GraphView/graphview.py:952
 msgid "Search in all database"
 msgstr "Szukaj we wszystkich bazach"
 
-#: GraphView/graphview.py:954
 msgid "Also apply search by all database."
 msgstr "Zastosuj również wyszukiwanie według wszystkich baz."
 
-#: GraphView/graphview.py:957
 msgid "Show person images"
 msgstr "Pokaż zdjęcia osób"
 
-#: GraphView/graphview.py:960
 msgid "Show persons thumbnails in search result list."
 msgstr "Pokaż miniatury osób na liście wyników wyszukiwania."
 
-#: GraphView/graphview.py:963
 msgid "Show bookmarked first"
 msgstr "Pokaż najpierw dodane do zakładek"
 
-#: GraphView/graphview.py:966
 msgid "Show bookmarked persons first in search result list."
 msgstr "Pokaż zaznaczone osoby jako pierwsze na liście wyników wyszukiwania."
 
-#: GraphView/graphview.py:999
+msgid "Search"
+msgstr "Szukaj"
+
 msgid "Select a dot file name"
 msgstr "Wybierz nazwę pliku dot"
 
-#: GraphView/graphview.py:1123
+msgid "Zoom in"
+msgstr "Przybliż"
+
+msgid "Zoom out"
+msgstr "Oddal"
+
+msgid "Zoom to original"
+msgstr "Powiększ do oryginału"
+
+msgid "Zoom to best fit"
+msgstr "Powiększ do najlepszego dopasowania"
+
 msgid "Go to active person"
 msgstr "Przejdź do osoby aktywnej"
 
-#: GraphView/graphview.py:1128
 msgid "Go to bookmark"
 msgstr "Przejdź do zakładki"
 
-#: GraphView/graphview.py:1130
 msgid "Center view on selected bookmark"
 msgstr "Wyśrodkuj widok na wybranej zakładce"
 
-#: GraphView/graphview.py:1132
 msgid "Bookmarks for current graph"
 msgstr "Zakładki dla bieżącego wykresu"
 
-#: GraphView/graphview.py:1133
 msgid "Other Bookmarks"
 msgstr "Inne zakładki"
 
-#: GraphView/graphview.py:1164
 msgid "Ancestor generations"
 msgstr "Pokolenia przodków"
 
-#: GraphView/graphview.py:1168
 msgid "Descendant generations"
 msgstr "Pokolenia potomków"
 
-#: GraphView/graphview.py:1179
 msgid "Vertical spacing between generations"
 msgstr "Odstępy w pionie między pokoleniami"
 
-#: GraphView/graphview.py:1184
 msgid "Horizontal spacing between generations"
 msgstr "Odstępy w poziomie między pokoleniami"
 
-#: GraphView/graphview.py:1188
 msgid "Spacings"
 msgstr "Odstępy"
 
-#: GraphView/graphview.py:1193
 msgid "All connected"
 msgstr "Wszyscy połączeni"
 
-#: GraphView/graphview.py:1195
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
@@ -310,15 +150,12 @@ msgstr ""
 "Pokaż wszystkie połączone osoby ograniczone pokoleniami.\n"
 "Działa wolno, więc nie ustawiaj dużych wartości pokoleń."
 
-#: GraphView/graphview.py:1337
 msgid "Add active person"
 msgstr "Dodaj aktywną osobę"
 
-#: GraphView/graphview.py:1342
 msgid "Call the bookmark editor"
 msgstr "Przejdź do edytora zakładek"
 
-#: GraphView/graphview.py:1399
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
@@ -326,21 +163,16 @@ msgstr ""
 "Nie masz jeszcze żadnych zakładek... \n"
 "Spróbuj dodać kilka często używanych osób, aby przyspieszyć nawigację."
 
-#: GraphView/graphview.py:1407
 msgid "No bookmarks for this graph..."
 msgstr "Brak zakładek dla tego wykresu..."
 
-#: GraphView/graphview.py:1412
 msgid "No other bookmarks..."
 msgstr "Brak innych zakładek..."
 
-#: GraphView/graphview.py:1417 GraphView/graphview.py:1419
-#: GraphView/search_widget.py:233 GraphView/search_widget.py:252
 #, python-format
 msgid "found: %s"
 msgstr "znaleziono: %s"
 
-#: GraphView/graphview.py:1429
 #, python-format
 msgid ""
 "Add active person to bookmarks\n"
@@ -349,7 +181,6 @@ msgstr ""
 "Dodaj aktywną osobę do zakładek\n"
 "%s"
 
-#: GraphView/graphview.py:1516
 #, python-format
 msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
@@ -358,157 +189,114 @@ msgstr ""
 "Osoba <b><i>%s</i></b> nie jest w bieżącym widoku.\n"
 "Ustawić jako osobę aktywną i odświeżyć widok?"
 
-#: GraphView/graphview.py:1519
 msgid "Change active person?"
 msgstr "Zmienić aktywną osobę?"
 
-#: GraphView/graphview.py:2668
-#, python-brace-format
-msgid ""
-"This graph would contain at least {people_count} people, which exceeds the "
-"limit of {people_limit} people. For performance reasons, at least "
-"{people_missing} people won't be shown. You can change this limit in the "
-"view configuration."
-msgstr ""
-
-#: GraphView/graphview.py:2678
 msgid "Incomplete graph"
 msgstr "Wykres niekompletny"
 
-#: GraphView/graphview.py:3047
 msgid "Image on right side"
 msgstr "Obraz po prawej stronie"
 
-#: GraphView/graphview.py:3068
 msgid "Image on left side"
 msgstr "Obraz po lewej stronie"
 
-#: GraphView/graphview.py:3399
+#, python-format
+msgid "%s "
+msgstr "%s "
+
 msgid "<b>Tags:</b>"
 msgstr "<b>Tagi:</b>"
 
-#: GraphView/graphview.py:3779
 msgid "Lines type"
 msgstr "Typ linii"
 
-#: GraphView/graphview.py:3783
 msgid "Direct"
 msgstr "Proste"
 
-#: GraphView/graphview.py:3791
 msgid "Curves"
 msgstr "Krzywe"
 
-#: GraphView/graphview.py:3799
 msgid "Ortho"
 msgstr "Prostopadłe"
 
-#: GraphView/graphview.py:3875
-#, fuzzy
-#| msgid "No relation to active person"
-msgid "No Events for this person"
-msgstr "Brak relacji do aktywnej osoby"
+msgid "Copy"
+msgstr "Kopiuj"
 
-#: GraphView/graphview.py:3896
 msgid "Select tags for person"
 msgstr "Wybierz tagi dla osoby"
 
-#: GraphView/graphview.py:3907
 msgid "Add new family"
 msgstr "Dodaj nową rodzinę"
 
-#: GraphView/graphview.py:4025
 msgid "Add parents"
 msgstr "Dodaj rodziców"
 
-#: GraphView/graphview.py:4051
-#, fuzzy
-#| msgid "Path color to home person"
-msgid "Show path to home person"
-msgstr "Kolor ścieżki do osoby głównej"
+msgid "Set as home person"
+msgstr "Ustaw jako osobę główną"
 
-#: GraphView/graphview.py:4057 GraphView/search_widget.py:286
-#: GraphView/search_widget.py:364
 msgid "Remove from bookmarks"
 msgstr "Usuń z zakładek"
 
-#: GraphView/graphview.py:4060 GraphView/search_widget.py:294
-#: GraphView/search_widget.py:377
 msgid "Add to bookmarks"
 msgstr "Dodaj do zakładek"
 
-#: GraphView/graphview.py:4161
-msgid "No Events for this family"
-msgstr ""
-
-#: GraphView/graphview.py:4182
 msgid "Select tags for family"
 msgstr "Wybierz tagi dla rodziny"
 
-#: GraphView/graphview.py:4201
 msgid "Add father"
 msgstr "Dodaj ojca"
 
-#: GraphView/graphview.py:4210
 msgid "Add mother"
 msgstr "Dodaj matkę"
 
-#: GraphView/graphview.py:4313
 msgid "About Graph View"
 msgstr "O Graph View"
 
-#: GraphView/graphview.py:4669
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Dodawanie tagów do osoby (%s)"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Dodawanie tagów do rodziny (%s)"
+
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
 msgstr "Usunięcie osoby [%s] usunie ją z bazy."
 
-#: GraphView/graphview.py:4698
 #, python-format
 msgid "Delete family [%s]?"
 msgstr "Usunąć rodzinę [%s]?"
 
-#: GraphView/graphview.py:4699
 msgid "Deleting the family will remove it from the database."
 msgstr "Usunięcie rodziny spowoduje usunięcie jej z bazy."
 
-#: GraphView/graphview.py:4710
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Usuń Rodzinę [%s]"
 
-#: GraphView/graphview.gpr.py:6
 msgid "Dynamic and interactive graph of relations"
 msgstr "Dynamiczny i interaktywny graf relacji"
 
-#: GraphView/avatars.py:60
 msgid "Dark (default)"
 msgstr "Ciemny (domyślny)"
 
-#: GraphView/avatars.py:61
 msgid "Light"
 msgstr "Jasny"
 
-#: GraphView/avatars.py:62
 msgid "Cartoon"
 msgstr "Rysunek"
 
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/search_widget.py:82
 msgid "Persons from current graph"
 msgstr "Osoby z aktualnego wykresu"
 
-#: GraphView/search_widget.py:83
 msgid "Other persons from database"
 msgstr "Pozostałe osoby z bazy"
 
-#: GraphView/search_widget.py:235
 msgid "No persons found..."
 msgstr "Nie znaleziono osób..."
 
-#: GraphView/search_widget.py:398
 msgid ""
 "Search people in the current visible graph and database.\n"
 "Use <Ctrl+F> to make search entry active."
@@ -516,11 +304,9 @@ msgstr ""
 "Szukaj osób w aktualnym widocznym wykresie i bazie.\n"
 "Użyj <Ctrl+F> aby aktywować pozycję wyszukiwania."
 
-#: GraphView/search_widget.py:592
+msgid "Search..."
+msgstr "Szukaj..."
+
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
-
-#: GraphView/search_widget.py:783
-msgid "Partners"
-msgstr ""

@@ -1,22 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,81 +12,62 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
 msgstr "PhpGedView"
 
-#: PhpGedView/phpgedview.gpr.py:25
 msgid "Download a GEDCOM file from a phpGedView server."
 msgstr "Ladda ner en GEDCOM-fil från en phpGedView-server."
 
-#: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
 msgid "Fetching index list..."
 msgstr "Hämtar indexlistan..."
 
-#: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
 msgid "Fetching records..."
 msgstr "Hämtar uppgifter..."
 
-#: PhpGedView/phpgedviewconnector.py:327
 msgid "Logging in..."
 msgstr "Loggar in..."
 
-#: PhpGedView/phpgedviewconnector.py:330
 msgid "Fetching GEDCOM..."
 msgstr "Hämtar GEDCOM..."
 
-#: PhpGedView/phpgedviewconnector.py:334
 msgid "Importing GEDCOM..."
 msgstr "Importerar GEDCOM..."
 
-#: PhpGedView/phpgedviewconnector.py:341
 msgid "Error: login failed"
 msgstr "Fel: inloggning misslyckades"
 
-#: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
 msgid "done."
 msgstr "klart."
 
-#: PhpGedView/phpgedviewconnector.py:347
 msgid "Connecting..."
 msgstr "Ansluter..."
 
-#: PhpGedView/phpgedviewconnector.py:349
 msgid "Get version..."
 msgstr "Hämta version..."
 
-#: PhpGedView/phpgedviewconnector.py:352
 #, python-format
 msgid "Version %s"
 msgstr "Version %s"
 
-#: PhpGedView/phpgedviewconnector.py:353
 msgid "Reading file list..."
 msgstr "Läser fil-listan..."
 
-#: PhpGedView/phpgedviewconnector.py:366
 msgid "Error: Invalid URL"
 msgstr "Fel: Ogiltig URL"
 
-#: PhpGedView/phpgedview.glade:12
 msgid "- default -"
 msgstr "- standard -"
 
-#: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
 msgid "phpGedView import"
 msgstr "phpGedView-import"
 
-#: PhpGedView/phpgedview.glade:103
 msgid "http://"
 msgstr "http://"
 
-#: PhpGedView/phpgedview.glade:170
 msgid "Username:"
 msgstr "Användarnamn:"
 
-#: PhpGedView/phpgedview.glade:182
 msgid "Password:"
 msgstr "Lösenord:"

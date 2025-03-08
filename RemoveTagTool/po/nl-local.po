@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,73 +12,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: RemoveTagTool/RemoveTagTool.py:271
-msgid "INFO"
-msgstr "INFO"
-
-#: DynamicWeb/dynamicweb.py:3052 RemoveTagTool/RemoveTagTool.py:124
-msgid "Persons"
-msgstr "Personen"
-
-#: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:89
-#: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
-msgid "General options"
-msgstr "Algemene opties"
-
-#: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
 msgstr "Het hulpmiddel vereist ten minste één label om uit te voeren."
 
-#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
 msgstr "FOUT"
 
-#: RemoveTagTool/RemoveTagTool.py:86
 msgid "Add/Remove"
 msgstr "Toevoegen/verwijderen"
 
-#: RemoveTagTool/RemoveTagTool.py:87
 msgid "Add or remove tags from objects."
 msgstr "Labels toevoegen aan of verwijderen uit objecten."
 
-#: RemoveTagTool/RemoveTagTool.py:88
 msgid "Add Tags"
 msgstr "Labels toevoegen"
 
-#: RemoveTagTool/RemoveTagTool.py:88
 msgid "Remove Tags"
 msgstr "Labels verwijderen"
 
-#: RemoveTagTool/RemoveTagTool.py:96
+msgid "General options"
+msgstr "Algemene opties"
+
 msgid "Choose a category."
 msgstr "Kies een categorie."
 
-#: RemoveTagTool/RemoveTagTool.py:103
 msgid "Choose Tag"
 msgstr "Kies label"
 
-#: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
 msgstr "Kies een label om te verwijderen."
 
-#: RemoveTagTool/RemoveTagTool.py:140
+msgid "Persons"
+msgstr "Personen"
+
 msgid "Filter options"
 msgstr "Filteropties"
 
-#: RemoveTagTool/RemoveTagTool.py:151
 #, python-format
 msgid "All %s"
 msgstr "Alle %s"
 
-#: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
-#: RemoveTagTool/RemoveTagTool.gpr.py:25
 msgid "Add/Remove Tag Tool"
 msgstr "Labels toevoegen/verwijderen"
 
-#: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
 "and objects."
@@ -96,32 +64,28 @@ msgstr ""
 "Kan het hulpmiddel niet uitvoeren. Controleer of uw database labels, filters "
 "en objecten bevat."
 
-#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
 msgid "WARNING"
 msgstr "WAARSCHUWING"
 
-#: RemoveTagTool/RemoveTagTool.py:234
 #, python-format
 msgid "No %s objects were found in database."
 msgstr "Er zijn geen %s objecten gevonden in de database."
 
-#: RemoveTagTool/RemoveTagTool.py:249
 msgid "Process tags..."
 msgstr "Labels verwerken..."
 
-#: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
 msgstr "toegevoegd"
 
-#: RemoveTagTool/RemoveTagTool.py:268
 msgid "removed"
 msgstr "verwijderd"
 
-#: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Label '{}' was {} naar {} {} objecten.\n"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "INFO"
+msgstr "INFO"
+
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr ""
 "Voeg een label toe of verwijder deze uit groepen personen, gebeurtenissen, "

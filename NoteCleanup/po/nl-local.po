@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,74 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
-msgid "Export"
-msgstr "Exporteren"
-
-#: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
-msgid "Export the results to a text file"
-msgstr "Exporteer de resultaten naar een tekstbestand"
-
-#: MediaVerify/MediaVerify.py:195 NoteCleanup/NoteCleanup.py:323
-msgid "Export results to a text file"
-msgstr "Exporteer resultaten naar een tekstbestand"
-
-#: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
-#, python-format
-msgid "Error when writing the report: %s"
-msgstr "Fout bij het schrijven van het rapport: %s"
-
-#: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
-msgid "Search"
-msgstr "Zoeken"
-
-#: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
 msgstr "Opmerking opschonen"
 
-#: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
 msgstr "Opschonen van opmerkingen die HTML-opmaak bevatten"
 
-#: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
 msgstr "Opmerking Cleanup Tool"
 
-#: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
 msgstr "Opgeschoonde opmerkingen"
 
-#: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
 msgstr "Alleen links"
 
-#: NoteCleanup/NoteCleanup.py:99
 msgid "Issues"
 msgstr "Problemen"
 
-#: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
 msgstr "Sluit de Opmerking Cleanup Tool"
 
-#: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
 msgstr "Alles opslaan"
 
-#: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
 msgstr "Sla alle wijzigingen op"
 
-#: NoteCleanup/NoteCleanup.py:127
+msgid "Search"
+msgstr "Zoeken"
+
 msgid "Search for Untidy Notes"
 msgstr "Zoek naar niet opgeschoonde opmerkingen"
 
-#: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
 msgstr "Genereer testopmerkingen"
 
-#: NoteCleanup/NoteCleanup.py:131
 msgid ""
 "Generate Test notes in range N99996-N99999.\n"
 "These are added to your database, so you may want to work with a test "
@@ -99,7 +59,12 @@ msgstr ""
 "Deze worden aan uw database toegevoegd, dus wellicht wilt u werken met een "
 "testdatabase of ze later verwijderen."
 
-#: NoteCleanup/NoteCleanup.py:181
+msgid "Export"
+msgstr "Exporteren"
+
+msgid "Export the results to a text file"
+msgstr "Exporteer de resultaten naar een tekstbestand"
+
 msgid ""
 "Please back up your database before running this tool.\n"
 "\n"
@@ -117,19 +82,22 @@ msgstr ""
 "U kunt een overzichtslijst exporteren van de aantekeningen die zijn gevonden "
 "met de 'Exporteren' knop."
 
-#: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
 msgstr "Opschonen opmerkingen"
 
-#: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
 msgstr "Opschonen van testopmerkingen"
 
-#: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
 msgstr "Voeg testopmerking toe"
 
-#: NoteCleanup/NoteCleanup.py:383
+msgid "Export results to a text file"
+msgstr "Exporteer resultaten naar een tekstbestand"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Fout bij het schrijven van het rapport: %s"
+
 msgid ""
 "\n"
 "\n"
@@ -140,7 +108,6 @@ msgstr ""
 "De opmerkingen die in het linkerdeelvenster zijn geselecteerd, worden vóór "
 "het opruimen in dit vak weergegeven."
 
-#: NoteCleanup/NoteCleanup.py:386
 msgid ""
 "\n"
 "\n"
@@ -155,14 +122,11 @@ msgstr ""
 "Als u wijzigingen wilt aanbrengen, kunt u die hier aanbrengen en de "
 "stijlbuttons in de werkbalk hierboven gebruiken."
 
-#: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
 msgstr "Opmerkingen opslaan"
 
-#: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
 msgstr "Opgeschoonde opmerkingen opslaan"
 
-#: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
 msgstr "Opmerkingen scannen"

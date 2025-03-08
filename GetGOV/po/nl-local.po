@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,50 +12,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: GetGOV/getgov.py:315
 msgid "Place ID to import from GOV (Historical Gazetteer):"
 msgstr "Plaats-ID om te importeren uit GOV (Historical Gazetteer):"
 
-#: GetGOV/getgov.py:323
 msgid "Get Place"
 msgstr "Krijg locatie"
 
-#: GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "GOV-id plaats %s toevoegen"
 
-#: GetGOV/getgov.py:388
 #, python-format
 msgid "GetGOV error: %s"
 msgstr "GetGOV-fout: %s"
 
-#: GetGOV/getgov.py:421
 #, python-format
 msgid "GOV error on id %s with code: "
 msgstr "GOV-fout op id %s met code: "
 
-#: GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
 msgstr "van %s tot %s"
 
-#: GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
 msgstr "na %s"
 
-#: GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
 msgstr "voor %s"
 
-#: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
 msgstr "KrijgGOV"
 
-#: GetGOV/getgov.gpr.py:33
 msgid "Gramplet to get places from the GOV database"
 msgstr "Gramplet om locaties uit de GOV-database te halen"

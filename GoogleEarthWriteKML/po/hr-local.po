@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,17 +13,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
 msgid "No place description"
 msgstr "Bez opisa za mjesto"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
 msgid "GoogleEarth not installed!"
 msgstr "GoogleEarth nije instaliran!"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:153
 #, python-format
 msgid ""
 "Create kmz/kml file ''%s''\n"
@@ -39,20 +29,16 @@ msgstr ""
 "Da li stvoriti kmz/kml datoteku „%s”\n"
 "u korisnički direktorij „%s”?"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
 #, python-format
 msgid "Failure writing to %s"
 msgstr "Greška prilikom zapisivanja u „%s”"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
 msgid "Directory does not exist"
 msgstr "Direktorij ne postoji"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:173
 msgid "GoogleEarth file exists!"
 msgstr "GoogleEarth datoteka postoji!"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:174
 #, python-format
 msgid ""
 "Overwrite kmz/kml file ''%s''\n"
@@ -61,10 +47,8 @@ msgstr ""
 "Da li prepisati kmz/kml datoteku „%s”\n"
 "u korisnički direktorij „%s”?"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
 msgid "GoogleEarth"
 msgstr "GoogleEarth"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
 msgid "Creates data file for GoogleEarth and opens it"
 msgstr "Stvara datoteku s podacima potrebnima za GoogleEarth, te je otvara"

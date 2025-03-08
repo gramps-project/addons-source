@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-22 17:04+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,52 +12,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: RUWebConnectPack/RUWebPack.gpr.py:11
 msgid "RU Web Connect Pack"
 msgstr "RU Web Connect Pack"
 
-#: RUWebConnectPack/RUWebPack.gpr.py:12
 msgid "Collection of Web sites for the RU (requires libwebconnect)"
 msgstr "Sammlung von Websites für RU (erfordert libwebconnect)"
 
-#: RUWebConnectPack/RUWebPack.py:40
 msgid "OBD \"Memorial\""
-msgstr "OBD \"Gedenkstätte\""
+msgstr "OBD-\"Gedenkstätte\""
 
-#: RUWebConnectPack/RUWebPack.py:41
 msgid "People memory"
 msgstr "Gedächtnis der Menschen"
 
-#: RUWebConnectPack/RUWebPack.py:42
 msgid "Winners"
 msgstr "Gewinner"
 
-#: RUWebConnectPack/RUWebPack.py:43
 msgid "Lived"
 msgstr "Lebte"
 
-#: RUWebConnectPack/RUWebPack.py:44
 msgid "Open list"
 msgstr "Open list"
 
-#: RUWebConnectPack/RUWebPack.py:45
 msgid "Wait for me"
 msgstr "Wartet auf mich"
 
-#: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
 msgstr "Ganz Russland Stammbaum (Forum)"
 
-#: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
 msgstr "Yandex people"
 
-#: RUWebConnectPack/RUWebPack.py:49
 msgid "RIA Officers"
 msgstr "RIA-Beamte"
 
-#: RUWebConnectPack/RUWebPack.py:50
 msgid "FamilySpace"
 msgstr "FamilySpace"

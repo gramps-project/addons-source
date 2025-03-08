@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,42 +12,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
 msgstr "Transferir multimédia"
 
-#: DownloadMedia/DownloadMedia.py:87
 msgid "Media downloaded"
 msgstr "Multimédia transferida"
 
-#: DownloadMedia/DownloadMedia.py:88
 #, python-format
 msgid "%d media files downloaded"
 msgstr "%d ficheiros multimédia transferidos"
 
-#: DownloadMedia/DownloadMedia.py:100
 msgid "Download media tool"
 msgstr "Ferramenta Transferir multimédia"
 
-#: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
 msgstr ""
 "Certifique-se de que tem ligação à Internet antes de iniciar a ferramenta."
 
-#: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
 msgid "Downloading files"
 msgstr "A transferir ficheiros"
 
-#: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
 msgstr "Erros de transferência detectados"
 
-#: DownloadMedia/DownloadMedia.gpr.py:36
 msgid "Download media files from the internet"
 msgstr "Transferir multimédia da Internet"
 
-#: DownloadMedia/DownloadMedia.gpr.py:37
 msgid "This tool downloads media files from the internet"
 msgstr "Esta ferramenta transfere multimédia da Internet"

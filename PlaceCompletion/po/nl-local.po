@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,13 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
 msgstr "Locatievoltooiing"
 
-#: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
@@ -36,7 +24,6 @@ msgstr ""
 "Biedt een doorzoekbare lijst van geselecteerde plaatsen, met de mogelijkheid "
 "om de kenmerkvelden in te vullen / te ontleden / in te stellen."
 
-#: PlaceCompletion/PlaceCompletion.py:95
 msgid ""
 "Place Completion by parsing, file lookup and batch setting of place "
 "attributes"
@@ -44,28 +31,22 @@ msgstr ""
 "Locatievoltooiing door ontleding, bestandsdoorzoeking en in bulk instellen "
 "van plaatskenmerken"
 
-#: PlaceCompletion/PlaceCompletion.py:258
 msgid "Error in PlaceCompletion.py"
 msgstr "Fout in PlaceCompletion.py"
 
-#: PlaceCompletion/PlaceCompletion.py:259
 msgid "Non existing group used in get"
 msgstr "Niet-bestaande groep gebruikt in 'get'"
 
-#: PlaceCompletion/PlaceCompletion.py:282
 #, python-format
 msgid "PlaceCompletion is unable to create %s %s"
 msgstr "Locatievoltooiing kan %s %s niet maken"
 
-#: PlaceCompletion/PlaceCompletion.py:340
 msgid "Places tool"
 msgstr "Locatiehulpmiddel"
 
-#: PlaceCompletion/PlaceCompletion.py:408
 msgid "Missing regex groups in match lat/lon"
 msgstr "Regex-groepen ontbreken in overeenkomende breedtegraad / lengtegraad"
 
-#: PlaceCompletion/PlaceCompletion.py:409
 #, python-format
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
@@ -73,238 +54,179 @@ msgstr ""
 "Regex-groepen %(lat)s en %(lon)s moeten aanwezig zijn in de brgrd/lngrd-"
 "overeenkomst. Stoppen"
 
-#: PlaceCompletion/PlaceCompletion.py:419
 msgid "Non valid regex for match lat/lon"
 msgstr "Ongeldige regex voor overeenkomst br / ln"
 
-#: PlaceCompletion/PlaceCompletion.py:420
 msgid "Non valid regular expression given to find lat/lon. Quiting."
 msgstr "Ongeldige reguliere expressie opgegeven om br / ln te vinden. Stoppen."
 
-#: PlaceCompletion/PlaceCompletion.py:479
 msgid "Finding Places and appropriate changes"
 msgstr "Plaatsen en passende wijzigingen vinden"
 
-#: PlaceCompletion/PlaceCompletion.py:481
 msgid "Filtering"
 msgstr "Filteren"
 
-#: PlaceCompletion/PlaceCompletion.py:491
 msgid "Loading lat/lon file in Memory..."
 msgstr "Brgrd / lngrd-bestand in het geheugen laden ..."
 
-#: PlaceCompletion/PlaceCompletion.py:497
 msgid "Examining places"
 msgstr "Plaatsen onderzoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:685
 msgid "Set Tag"
 msgstr "Label instellen"
 
-#: PlaceCompletion/PlaceCompletion.py:687
 msgid "Doing Place changes"
 msgstr "Locatiewijzigingen doen"
 
-#: PlaceCompletion/PlaceCompletion.py:731
 msgid "No place record was modified."
 msgstr "Er is geen plaatsgegeven gewijzigd."
 
-#: PlaceCompletion/PlaceCompletion.py:733
 msgid "1 place record was modified."
 msgstr "1 plaatsgegeven is gewijzigd."
 
-#: PlaceCompletion/PlaceCompletion.py:735
 #, python-format
 msgid "%d place records were modified."
 msgstr "%d plaatsgegevens zijn gewijzigd."
 
-#: PlaceCompletion/PlaceCompletion.py:736
 msgid "Change places"
 msgstr "Wijzig plaatsen"
 
-#: PlaceCompletion/PlaceCompletion.py:809
 msgid "The selected file is a directory, not a file."
 msgstr "Het geselecteerde bestand is een map, geen bestand."
 
-#: PlaceCompletion/PlaceCompletion.py:820
 msgid "The file you want to access is not a regular file."
 msgstr "Het bestand dat u wilt openen is geen gewoon bestand."
 
-#: PlaceCompletion/PlaceCompletion.py:826
 msgid "The file does not exist."
 msgstr "Het bestand bestaat niet."
 
-#: PlaceCompletion/PlaceCompletion.py:858
 msgid "Problem reading file"
 msgstr "Probleem bij het lezen van bestand"
 
-#: PlaceCompletion/PlaceCompletion.py:970
-#: PlaceCompletion/PlaceCompletion.py:982
 #, python-format
 msgid "invalid lat or lon value, %(lat)s, %(lon)s"
 msgstr "ongeldige brgrd of lngrd-waarde, %(lat)s, %(lon)s"
 
-#: PlaceCompletion/PlaceCompletion.py:1135
 msgid "No lat/lon conversion"
 msgstr "Geen brgrd/lngrd-conversie"
 
-#: PlaceCompletion/PlaceCompletion.py:1136
 msgid "All in degree notation"
 msgstr "Alles in graadnotatie"
 
-#: PlaceCompletion/PlaceCompletion.py:1137
 msgid "All in decimal notation"
 msgstr "Alles in decimale notatie"
 
-#: PlaceCompletion/PlaceCompletion.py:1138
 msgid "Correct -50° in 50°S"
 msgstr "Corrigeer -50° in 50°S"
 
-#: PlaceCompletion/PlaceCompletion.py:1142
 msgid "No changes"
 msgstr "Geen wijzigingen"
 
-#: PlaceCompletion/PlaceCompletion.py:1143
 msgid "City[, State]"
 msgstr "Stad[, staat]"
 
-#: PlaceCompletion/PlaceCompletion.py:1145
 msgid "City,PostalCode,Country"
 msgstr "Plaats,postcode,land"
 
-#: PlaceCompletion/PlaceCompletion.py:1147
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
 msgstr "Stad[(Straat;Plaats;Parochie)],Postcode,Land"
 
-#: PlaceCompletion/PlaceCompletion.py:1149
 msgid "TitleStart [, City] [, State]"
 msgstr "TitelStart [,Stad] [, Staat]"
 
-#: PlaceCompletion/PlaceCompletion.py:1151
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
 msgstr "TitelStart [,Stad] [, Provincie] [, Staat] [, Land]"
 
-#: PlaceCompletion/PlaceCompletion.py:1153
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
 msgstr "TitelStart [,Stad] [, Zip] [, Provincie] [, Staat] [, Land]"
 
-#: PlaceCompletion/PlaceCompletion.py:1177
 msgid "Don't search"
 msgstr "Niet zoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:1180
 msgid "GeoNames country file, city search"
 msgstr "GeoNames landenbestand, stad zoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city localized variants search"
 msgstr "GeoNames landenbestand, stad-gelokaliseerde varianten zoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:1190
 msgid "GeoNames country file, county/city search"
 msgstr "GeoNames landenbestand, provincie / stad zoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:1202
 msgid "GeoNames country file, title begin, general search"
 msgstr "GeoNames landenbestand, titelbegin, algemeen zoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:1207
 msgid "GeoNames USA state file, city search"
 msgstr "GeoNames VS statenbestand, stad zoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:1221
 msgid "GNS Geonet country file, city search"
 msgstr "GNS Geonet landenbestand, stad zoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:1228
 msgid "GNS Geonet country file, county/city search"
 msgstr "GNS Geonet landenbestand, provincie / stad zoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:1236
 msgid "GNS Geonet country file, title begin, general search"
 msgstr "GNS Geonet landenbestand, titelbegin, algemeen zoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:1244
 msgid "Wikipedia CSV Dump"
 msgstr "Wikipedia CSV Dump"
 
-#: PlaceCompletion/PlaceCompletion.py:1332
 msgid "All Places"
 msgstr "Alle locaties"
 
-#: PlaceCompletion/PlaceCompletion.py:1335
 msgid "No Latitude/Longitude given"
 msgstr "Geen lengte-/breedtegraad opgegeven"
 
-#: PlaceCompletion/placecompletion.glade:85
 msgid "_Google Maps"
 msgstr "_Google Maps"
 
-#: PlaceCompletion/placecompletion.glade:112
 msgid "Apply all suggested changes"
 msgstr "Pas alle voorgestelde wijzigingen toe"
 
-#: PlaceCompletion/placecompletion.glade:148
 msgid "Selection of the Places you want to complete:"
 msgstr "Selectie van de plaatsen die u wilt voltooien:"
 
-#: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
 msgstr "Parochie:"
 
-#: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
 msgstr "Locatie_filter:"
 
-#: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
 msgstr "_Land:"
 
-#: PlaceCompletion/placecompletion.glade:366
 msgid "C_enter latitude:"
 msgstr "_Middelpunt breedtegraad:"
 
-#: PlaceCompletion/placecompletion.glade:383
 msgid "Center longitude:"
 msgstr "Middelpunt lengtegraad:"
 
-#: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
 msgstr "Locaties in een rechthoek:"
 
-#: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"
 msgstr "Hoogte:"
 
-#: PlaceCompletion/placecompletion.glade:527
 msgid "1. Look up latitude and longitude:"
 msgstr "1. Zoek de lengte- en breedtegraad op:"
 
-#: PlaceCompletion/placecompletion.glade:554
 msgid "Search in:"
 msgstr "Zoek in:"
 
-#: PlaceCompletion/placecompletion.glade:566
 msgid "Select A File"
 msgstr "Selecteer een bestand"
 
-#: PlaceCompletion/placecompletion.glade:579
 msgid "Parse as:"
 msgstr "Ontleden als:"
 
-#: PlaceCompletion/placecompletion.glade:619
 msgid "2. Conversion of existing title or position:"
 msgstr "2. Omzetting van bestaande titel of positie:"
 
-#: PlaceCompletion/placecompletion.glade:649
 msgid "Change title into:"
 msgstr "Verander titel in:"
 
-#: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
 msgstr "Brgrd/lngrd omzetten in:"
 
-#: PlaceCompletion/placecompletion.glade:701
 msgid ""
 "Or define a simple\n"
 "title format:"
@@ -312,7 +234,6 @@ msgstr ""
 "Of definieer een\n"
 "eenvoudige titelopmaak:"
 
-#: PlaceCompletion/placecompletion.glade:730
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
@@ -320,7 +241,6 @@ msgstr ""
 "Beschikbare variabelen: stad, straat, plaats, parochie, graafschap/"
 "provincie, staat, land, postcode"
 
-#: PlaceCompletion/placecompletion.glade:820
 msgid ""
 "Delete to delete a row, Double-click on the row to edit place with changes "
 "pre-entered, \n"

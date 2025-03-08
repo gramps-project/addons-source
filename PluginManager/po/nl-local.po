@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-23 12:35-0600\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,22 +12,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "Verbeterde uitbreidingenbeheerder"
 
-#: PluginManager/PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr ""
 "Een addon-/uitbreidingenbeheerder met verschillende extra mogelijkheden"
 
-#: PluginManager/PluginManager.py:84
 msgid "Plugin Manager - Enhanced"
 msgstr "Uitbreidingenbeheerder - verbeterd"
 
-#: PluginManager/PluginManager.py:154
 msgid ""
 "Enter search words to filter the addons.\n"
 "All the words must be present somewhere in the row or\n"
@@ -49,28 +35,23 @@ msgstr ""
 "de addon-bestandsnaam die in de zoekopdracht moet worden opgenomen.\n"
 "Hoofdlettergebruik en volgorde wordt genegeerd."
 
-#: PluginManager/PluginManager.py:158
 msgid "Search..."
 msgstr "Zoeken..."
 
-#: PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Herstarten..."
 
-#: PluginManager/PluginManager.py:217
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
 "Start Gramps opnieuw zodat uw wijzigingen aan de add-ons veilig kunnen "
 "worden voltooid."
 
-#: PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
 "Fout bij het verwijderen van de map '%s'. Het verwijderen is mogelijk mislukt"
 
-#: PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -78,46 +59,35 @@ msgstr ""
 "'*' items worden geleverd door externe auteurs,\n"
 "<s>doorgestreepte</s> -items zijn verborgen"
 
-#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
 msgid "Hide"
 msgstr "Verberg"
 
-#: PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "Toon verborgen items"
 
-#: PluginManager/PluginManager.py:438
 msgid "Show Built-in items"
 msgstr "Toon ingebouwde items"
 
-#: PluginManager/PluginManager.py:445
 msgid "* indicates 3rd party addon"
 msgstr "* geeft add-on van derden aan"
 
-#: PluginManager/PluginManager.py:450
 msgid "Plugins"
 msgstr "Uitbreidingen"
 
-#: PluginManager/PluginManager.py:528
 msgid "Unhide"
 msgstr "Maak zichtbaar"
 
-#: PluginManager/PluginManager.py:547
 msgid "Uninstall"
 msgstr "Deïnstalleren"
 
-#: PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Beschikbaar"
 
-#: PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr "Ingebouwd"
 
-#: PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr "*Geïnstalleerd"
 
-#: PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Update beschikbaar"

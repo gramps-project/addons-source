@@ -1,22 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,126 +12,86 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
-msgid "RGB-color for male box background."
-msgstr "RGB-färg på bakgrunden för rutan för män."
-
-#: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
-msgid "Female Background"
-msgstr "Bakgrundsfärg för kvinnor"
-
-#: GraphView/graphview.py:3783 NetworkChart/NetworkChart.py:1174
-#: NetworkChart/NetworkChart.py:1188
-msgid "Direct"
-msgstr "Direkt"
-
-#: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
 msgstr "f."
 
-#: NetworkChart/NetworkChart.py:134
 msgid "death abbreviation|d."
 msgstr "d."
 
-#: NetworkChart/NetworkChart.py:135
 msgid "marriage abbreviation|m."
 msgstr "g."
 
-#: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr "Filen finns redan. Skriva över?"
 
-#: NetworkChart/NetworkChart.py:898
 msgid "created"
 msgstr "skapad"
 
-#: NetworkChart/NetworkChart.py:899 NetworkChart/NetworkChart.py:902
 msgid "last_written"
 msgstr "senast_skriven"
 
-#: NetworkChart/NetworkChart.py:912
 msgid "Main"
 msgstr "Huvud"
 
-#: NetworkChart/NetworkChart.py:916
 msgid "Orthogonal (right angles in connectors)"
 msgstr "Ortogonal (räta vinklar i förbindelserna)"
 
-#: NetworkChart/NetworkChart.py:917
 msgid "Straight (no right angles in connectors)"
 msgstr "Direkt (inga räta vinklar i förbindelserna)"
 
-#: NetworkChart/NetworkChart.py:918
 msgid "Curved (curved and straight connectors)"
 msgstr "Böjd (böjda och raka förbindelser)"
 
-#: NetworkChart/NetworkChart.py:920
 msgid "Default (Orthogonal)"
 msgstr "Standard (Ortogonal)"
 
-#: NetworkChart/NetworkChart.py:925
 msgid "Select the graph line connector format."
 msgstr "Välj graflinjeanslutningsformat."
 
-#: NetworkChart/NetworkChart.py:930
 msgid "Top to Bottom"
 msgstr "Uppifrån och ner"
 
-#: NetworkChart/NetworkChart.py:930
 msgid "Left to Right"
 msgstr "Vänster till höger"
 
-#: NetworkChart/NetworkChart.py:931
 msgid "Bottom to Top"
 msgstr "Nerifrån och upp"
 
-#: NetworkChart/NetworkChart.py:931
 msgid "Right to Left"
 msgstr "Höger till vänster"
 
-#: NetworkChart/NetworkChart.py:933
 msgid "Default (Top to Bottom)"
 msgstr "Standard (Uppifrån och ner)"
 
-#: NetworkChart/NetworkChart.py:936
 msgid "Select the graph direction."
 msgstr "Välj riktning för diagrammet."
 
-#: NetworkChart/NetworkChart.py:939
 msgid "URL Style"
 msgstr "URL-stil"
 
-#: NetworkChart/NetworkChart.py:941
 msgid "Include URLs from database."
 msgstr "Ta med URL:er från databas."
 
-#: NetworkChart/NetworkChart.py:942
 msgid "Dynamic URL = Prefix + GrampID + Suffix"
 msgstr "Dynamisk URL = Prefix + GrampID + Suffix"
 
-#: NetworkChart/NetworkChart.py:943
 msgid "Static URL = Prefix"
 msgstr "Statisk URL = Prefix"
 
-#: NetworkChart/NetworkChart.py:944
 msgid "Don't include URLs"
 msgstr "Ta inte med URL:er"
 
-#: NetworkChart/NetworkChart.py:945
 msgid "Default (include)"
 msgstr "Standard (ta med)"
 
-#: NetworkChart/NetworkChart.py:948
 msgid "Select URL style."
 msgstr "Välj URL-stil."
 
-#: NetworkChart/NetworkChart.py:951
 msgid "URL Prefix,Suffix"
 msgstr "URL-prefix, suffix"
 
-#: NetworkChart/NetworkChart.py:952
 msgid ""
 "Enter the Prefix,Suffix (use comma)\n"
 "for dynamically generated URLs.\n"
@@ -154,11 +101,9 @@ msgstr ""
 "för dynamiskt genererade URL:er.\n"
 "URL = Prefix + GrampsID + Suffix."
 
-#: NetworkChart/NetworkChart.py:957
 msgid "Enter Font Name"
 msgstr "Ange typsnittsnamn"
 
-#: NetworkChart/NetworkChart.py:959
 msgid ""
 "Enter the primary font style for the chart.\n"
 "Must already be installed.\n"
@@ -170,28 +115,22 @@ msgstr ""
 "White Rabbit kan hämtas från\n"
 "https://www.fontsquirrel.com/fonts/white-rabbit"
 
-#: NetworkChart/NetworkChart.py:964
 msgid "Spacing (inch)"
 msgstr "Mellanrum (tum)"
 
-#: NetworkChart/NetworkChart.py:965
 msgid ""
 "Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
 msgstr "Ange separationsavståndet mellan \"Generationer\" i tum (0.1-5.0)."
 
-#: NetworkChart/NetworkChart.py:969
 msgid "Enter Chart Title"
 msgstr "Ange diagramtitel"
 
-#: NetworkChart/NetworkChart.py:971
 msgid "Set the title of the chart."
 msgstr "Ställ in titeln på diagrammet."
 
-#: NetworkChart/NetworkChart.py:976
 msgid "Default (svg)"
 msgstr "Standard (svg)"
 
-#: NetworkChart/NetworkChart.py:979
 msgid ""
 "svg - Scalable Vector Graphics file.\n"
 "pdf - Adobe Portable Document Format.\n"
@@ -199,106 +138,85 @@ msgstr ""
 "svg - Scalable Vector Graphics-fil.\n"
 "pdf - Adobe Portable Document Format.\n"
 
-#: NetworkChart/NetworkChart.py:986
 msgid "The destination folder for generated files."
 msgstr "Målmappen för genererade filer."
 
-#: NetworkChart/NetworkChart.py:990 NetworkChart/NetworkChart.py:1280
-#: NetworkChart/NetworkChart.py:1288
 msgid "network"
 msgstr "nätverk"
 
-#: NetworkChart/NetworkChart.py:995
 msgid "The filename for the generated svg network chart."
 msgstr "Filnamnet för det genererade svg-nätverksdiagrammet."
 
-#: NetworkChart/NetworkChart.py:1002
 msgid "Different node shapes/edges for gender."
 msgstr "Olika nodformer/kanter för kön."
 
-#: NetworkChart/NetworkChart.py:1003
 msgid "Node differences for gender."
 msgstr "Nodskillnader för kön."
 
-#: NetworkChart/NetworkChart.py:1008
 msgid "Male Background"
 msgstr "Bakgrundsfärg för män"
 
-#: NetworkChart/NetworkChart.py:1012
+msgid "RGB-color for male box background."
+msgstr "RGB-färg på bakgrunden för rutan för män."
+
 msgid "Male Background Alpha"
 msgstr "Alpha-bakgrund för män"
 
-#: NetworkChart/NetworkChart.py:1014
 msgid "Alpha for Male box background (transparent=0, solid=255)."
 msgstr "Alpha-bakgrund för rutan för män (genomskinlig=0, ogenomskinlig=255)."
 
-#: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
 msgstr "Rutkant för män"
 
-#: NetworkChart/NetworkChart.py:1019
 msgid "RGB-color for Male box edge."
 msgstr "Rutkantens RGB-färg för män."
 
-#: NetworkChart/NetworkChart.py:1023
+msgid "Female Background"
+msgstr "Bakgrundsfärg för kvinnor"
+
 msgid "RGB-color for Female box background."
 msgstr "RGB-färg på bakgrunden för rutan för kvinnor."
 
-# added:
-#: NetworkChart/NetworkChart.py:1026
 msgid "Female Background Alpha"
 msgstr "Alpha-bakgrund för kvinnor"
 
-#: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
 msgstr ""
 "Alpha-bakgrund för rutan för kvinnor (genomskinlig=0, ogenomskinlig=255)."
 
-#: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
 msgstr "Rutkant för kvinnor"
 
-#: NetworkChart/NetworkChart.py:1034
 msgid "RGB-color for Female box edge."
 msgstr "Rutkantens RGB-färg för kvinnor."
 
-#: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
 msgstr "Annan bakgrundsfärg"
 
-#: NetworkChart/NetworkChart.py:1038
 msgid "RGB-color for other box background."
 msgstr "RGB-färg för andra rutbakgrunder."
 
-#: NetworkChart/NetworkChart.py:1041
 msgid "Other Background Alpha"
 msgstr "Annan alpha-bakgrund"
 
-#: NetworkChart/NetworkChart.py:1043
 msgid "Alpha for Other box background (transparent=0, solid=255)."
 msgstr "Alpha-bakgrund för andra rutor (genomskinlig=0, ogenomskinlig=255)."
 
-#: NetworkChart/NetworkChart.py:1047
 msgid "Family Connector Line"
 msgstr "Förbindelselinje för familj"
 
-#: NetworkChart/NetworkChart.py:1048
 msgid "RGB-color for family connector line."
 msgstr "RGB-färg för förbindelselinjen för familj."
 
-#: NetworkChart/NetworkChart.py:1051
 msgid "Marriage Connector Line"
 msgstr "Förbindelselinje för giftermål"
 
-#: NetworkChart/NetworkChart.py:1052
 msgid "RGB-color for marriage connector line."
 msgstr "RGB-färg för förbindelselinjen för giftermål."
 
-#: NetworkChart/NetworkChart.py:1055
 msgid "Highlight Connector Line"
 msgstr "Markerad förbindelselinje"
 
-#: NetworkChart/NetworkChart.py:1056
 msgid ""
 "RGB-color for the highlighted path between two individuals.  If the "
 "graph.inverts, reverse the order to change."
@@ -306,23 +224,18 @@ msgstr ""
 "RGB-färg för den markerade vägen mellan två individer.  Om diagrammet. "
 "inverterar, vänd ordningen som ska ändras."
 
-#: NetworkChart/NetworkChart.py:1061
 msgid "Trim Box Edge"
 msgstr "Förkortade rutkanter"
 
-#: NetworkChart/NetworkChart.py:1062
 msgid "RGB-color for box edge that has been trimmed."
 msgstr "RGB-färg för rutkant som har förkortats."
 
-#: NetworkChart/NetworkChart.py:1066
 msgid "Remove color background on all nodes."
 msgstr "Ta bort färgbakgrund på alla noder."
 
-#: NetworkChart/NetworkChart.py:1068
 msgid "Removes color background for individuals (nodes) on chart."
 msgstr "Tar bort färgbakgrund för individer (noder) i diagrammet."
 
-#: NetworkChart/NetworkChart.py:1073
 msgid ""
 "Enter year to start\n"
 "rounding birthday\n"
@@ -332,7 +245,6 @@ msgstr ""
 "avrunda födelsedag\n"
 "endast till år"
 
-#: NetworkChart/NetworkChart.py:1076
 msgid ""
 "Birthdays after this year are represented by the year only.  Invalid entries "
 "will be ignored."
@@ -340,15 +252,12 @@ msgstr ""
 "Födelsedagar efter detta år visas endast efter år.  Ogiltiga poster "
 "ignoreras."
 
-#: NetworkChart/NetworkChart.py:1080
 msgid "Round birthday to year after year entered (above)."
 msgstr "Avrunda födelsedagen med början året efter det angivna året (ovan)."
 
-#: NetworkChart/NetworkChart.py:1082
 msgid "Represent birthday by year only."
 msgstr "Visa födelsedag endast efter år."
 
-#: NetworkChart/NetworkChart.py:1086
 msgid ""
 "Enter year to start\n"
 "rounding marriage\n"
@@ -358,7 +267,6 @@ msgstr ""
 "avrunda giftermålsdag\n"
 "endast till år"
 
-#: NetworkChart/NetworkChart.py:1087
 msgid ""
 "Marriages after this year are represented bythe year only. Invalid entries "
 "will be ignored."
@@ -366,15 +274,12 @@ msgstr ""
 "Giftermålsdagar efter detta år visas endast efter år. Ogiltiga poster "
 "ignoreras."
 
-#: NetworkChart/NetworkChart.py:1092
 msgid "Round marriage to year after year entered (above)."
 msgstr "Avrunda giftermålsdagen med början året efter det angivna året (ovan)."
 
-#: NetworkChart/NetworkChart.py:1094
 msgid "Represent marriage by year only."
 msgstr "Visa giftermålsdag endast efter år."
 
-#: NetworkChart/NetworkChart.py:1099
 msgid ""
 "Attempts to remove middle names.  Only works for entries with birth year in "
 "the record."
@@ -382,31 +287,24 @@ msgstr ""
 "Försöker ta bort mellannamn.  Fungerar bara för poster med födelseår "
 "registrerade."
 
-#: NetworkChart/NetworkChart.py:1107
 msgid "Remove middle names."
 msgstr "Ta bort mellannamn."
 
-#: NetworkChart/NetworkChart.py:1112
 msgid "Allow inclusion of private records in chart."
 msgstr "Tillåt inkludering av privat information i diagrammet."
 
-#: NetworkChart/NetworkChart.py:1117
 msgid "Trim"
 msgstr "Förkorta"
 
-#: NetworkChart/NetworkChart.py:1119
 msgid "Trim descendants"
 msgstr "Förkorta ättlingar"
 
-#: NetworkChart/NetworkChart.py:1121
 msgid "All descendants (children) of selected individuals will not be shown."
 msgstr "Alla ättlingar (barn) av valda personer kommer inte att visas."
 
-#: NetworkChart/NetworkChart.py:1127
 msgid "Enable trimming of descendants."
 msgstr "Aktivera förkortning av ättlingar."
 
-#: NetworkChart/NetworkChart.py:1129
 msgid ""
 "You must enter valid person(s) before \n"
 "enabling trimming of descendants from tree."
@@ -414,27 +312,21 @@ msgstr ""
 "Du måste ange giltig(a) person(er) före \n"
 "aktivering av förkortning av ättlingar i trädet."
 
-#: NetworkChart/NetworkChart.py:1134
 msgid "Trim ancestors"
 msgstr "Förkorta anor"
 
-#: NetworkChart/NetworkChart.py:1135
 msgid "All ancestors (parents) of selected individuals will not be shown."
 msgstr "Alla ättlingar (föräldrar) av valda personer kommer inte att visas."
 
-#: NetworkChart/NetworkChart.py:1141
 msgid "Enable trimming of ancestors."
 msgstr "Aktivera förkortning av anor."
 
-#: NetworkChart/NetworkChart.py:1143
 msgid "Enable trimming of ancestors from tree."
 msgstr "Aktivera förkortning av anor i trädet."
 
-#: NetworkChart/NetworkChart.py:1147
 msgid "Enable trim groups."
 msgstr "Aktivera förkortning av grupper."
 
-#: NetworkChart/NetworkChart.py:1149
 msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
@@ -442,11 +334,9 @@ msgstr ""
 "Ta bort grupper som är mindre än 'Minimal gruppstorlek'.  Automatiskt\n"
 "för databaser med mer än 1500 individer."
 
-#: NetworkChart/NetworkChart.py:1154
 msgid "Min Group Size"
 msgstr "Minimal gruppstorlek"
 
-#: NetworkChart/NetworkChart.py:1156
 msgid ""
 "Enter the minimum size group to display.\n"
 "Value may be 2 or greater."
@@ -454,7 +344,6 @@ msgstr ""
 "Ange den minimala gruppstorleken för visning.\n"
 "Värdet kan vara 2 eller större."
 
-#: NetworkChart/NetworkChart.py:1164
 msgid ""
 "Select Start and\n"
 "End Individuals in\n"
@@ -466,7 +355,6 @@ msgstr ""
 "visade vägar.\n"
 "Välj två"
 
-#: NetworkChart/NetworkChart.py:1167
 msgid ""
 "Starting and ending person for displayed path(s).\n"
 "Select two people"
@@ -474,19 +362,18 @@ msgstr ""
 "Börja och sluta person för visad(e) väg(ar).\n"
 "Välj två personer"
 
-#: NetworkChart/NetworkChart.py:1171
 msgid "Highlight path(s)"
 msgstr "Markera väg(ar)"
 
-#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
+msgid "Direct"
+msgstr "Direkt"
+
 msgid "Any"
 msgstr "Alla"
 
-#: NetworkChart/NetworkChart.py:1176
 msgid "Default (None)"
 msgstr "Standard (ingen)"
 
-#: NetworkChart/NetworkChart.py:1181
 msgid ""
 "None - Don't highlight paths.\n"
 "Direct - Highlight direct descendant/ancestor paths.\n"
@@ -496,15 +383,12 @@ msgstr ""
 "Direkt - Markera direkta ättlinga/förfäders-vägar.\n"
 "Alla - Markera alla vägar inkluderande direkta och indirekta."
 
-#: NetworkChart/NetworkChart.py:1186
 msgid "Show only path(s)"
 msgstr "Visa endast vägar"
 
-#: NetworkChart/NetworkChart.py:1189
 msgid "Default (none)"
 msgstr "Standard (ingen)"
 
-#: NetworkChart/NetworkChart.py:1193
 msgid ""
 "None - Don't show paths only.\n"
 "Direct - Show only direct descendant/ancestor paths.\n"
@@ -514,11 +398,9 @@ msgstr ""
 "Direkt - Visa endast direkta ättlinga/förfäders-vägar.\n"
 "Alla - Visa endast vägar direkta eller indirekta."
 
-#: NetworkChart/NetworkChart.py:1200
 msgid "Select person at center of selection radius in graph."
 msgstr "Välj person i mitten av urvalsradien i diagrammet."
 
-#: NetworkChart/NetworkChart.py:1203
 msgid ""
 "Max connections\n"
 "from center"
@@ -526,7 +408,6 @@ msgstr ""
 "Maximala förbindelser\n"
 "från huvudperson"
 
-#: NetworkChart/NetworkChart.py:1206
 msgid ""
 "Enter the maximum number of connections allowed from\n"
 "the center person.  Value may be 1 or greater."
@@ -534,27 +415,21 @@ msgstr ""
 "Ange det maximala antalet förbindelser som är tillåtna från\n"
 "huvudpersonen.  Värdet kan vara 1 eller större."
 
-#: NetworkChart/NetworkChart.py:1211
 msgid "Limit graph to max connections from center."
 msgstr "Begränsa grafen till maximala förbindelser från huvudperson."
 
-#: NetworkChart/NetworkChart.py:1213
 msgid "Display up to max connections from central person."
 msgstr "Visa upp till maximala förbindelser från huvudperson."
 
-#: NetworkChart/NetworkChart.py:1217
 msgid "Highlight central person in graph."
 msgstr "Markera huvudperson i diagrammet."
 
-#: NetworkChart/NetworkChart.py:1219
 msgid "Add yellow color background to central person."
 msgstr "Lägg till gul bakgrund för huvudperson."
 
-#: NetworkChart/NetworkChart.py:1234
 msgid "Use database handle instead of GrampID id in URLs."
 msgstr "Använd databashantering istället för GrampID-id i URL:er."
 
-#: NetworkChart/NetworkChart.py:1236
 msgid ""
 "Use database handle instead of the gramps id for URLs.\n"
 "The handle should never change whereas gramps ids can."
@@ -562,18 +437,14 @@ msgstr ""
 "Använd databashantering istället för gramps-id för URL:er.\n"
 "Hanteringen ska aldrig förändras medan gramps-id kan det."
 
-#: NetworkChart/NetworkChart.py:1240
 msgid "Confirm overwrite file."
 msgstr "Bekräfta skriva över fil."
 
-#: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
 msgstr "Aktivera/avaktivera bekräftelse för överskrivning av fil."
 
-#: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
 msgstr "Nätverksdiagram"
 
-#: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
 msgstr "Skapar ett familjenätverksdiagram."

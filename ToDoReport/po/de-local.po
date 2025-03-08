@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,134 +12,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
-msgid "The style used for the title of the page."
-msgstr "Der Stil, der für den Seitentitel verwendet wird."
-
-#: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
 msgstr "ZeB-Titel"
 
-#: ToDoReport/TodoReport.py:111
 #, python-format
 msgid "Report on Notes Tagged '%s'"
 msgstr "Bericht über Notizen mit der Markierung '%s'"
 
-#: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
 msgid "TR-Heading"
 msgstr "ZeB-Überschrift"
 
-#: ToDoReport/TodoReport.py:243
 msgid "NoteTable"
 msgstr "NotizTabelle"
 
-#: ToDoReport/TodoReport.py:243 ToDoReport/TodoReport.py:962
 msgid "TR-Table"
 msgstr "ZeB-Tabelle"
 
-#: ToDoReport/TodoReport.py:247 ToDoReport/TodoReport.py:253
-#: ToDoReport/TodoReport.py:267 ToDoReport/TodoReport.py:273
-#: ToDoReport/TodoReport.py:302 ToDoReport/TodoReport.py:310
-#: ToDoReport/TodoReport.py:323 ToDoReport/TodoReport.py:329
-#: ToDoReport/TodoReport.py:347 ToDoReport/TodoReport.py:353
-#: ToDoReport/TodoReport.py:363 ToDoReport/TodoReport.py:373
-#: ToDoReport/TodoReport.py:392 ToDoReport/TodoReport.py:398
-#: ToDoReport/TodoReport.py:410 ToDoReport/TodoReport.py:421
-#: ToDoReport/TodoReport.py:437 ToDoReport/TodoReport.py:444
-#: ToDoReport/TodoReport.py:458 ToDoReport/TodoReport.py:469
-#: ToDoReport/TodoReport.py:474 ToDoReport/TodoReport.py:480
-#: ToDoReport/TodoReport.py:490 ToDoReport/TodoReport.py:512
-#: ToDoReport/TodoReport.py:518 ToDoReport/TodoReport.py:535
-#: ToDoReport/TodoReport.py:541 ToDoReport/TodoReport.py:547
-#: ToDoReport/TodoReport.py:564 ToDoReport/TodoReport.py:570
-#: ToDoReport/TodoReport.py:576 ToDoReport/TodoReport.py:582
-#: ToDoReport/TodoReport.py:599 ToDoReport/TodoReport.py:607
-#: ToDoReport/TodoReport.py:613 ToDoReport/TodoReport.py:619
-#: ToDoReport/TodoReport.py:636 ToDoReport/TodoReport.py:642
-#: ToDoReport/TodoReport.py:648 ToDoReport/TodoReport.py:654
-#: ToDoReport/TodoReport.py:678 ToDoReport/TodoReport.py:683
-#: ToDoReport/TodoReport.py:689 ToDoReport/TodoReport.py:947
 msgid "TR-TableCell"
 msgstr "ZeB-TabellenZelle"
 
-#: ToDoReport/TodoReport.py:248 ToDoReport/TodoReport.py:254
-#: ToDoReport/TodoReport.py:935
 msgid "TR-Normal-Bold"
 msgstr "ZeB-Normal-Fett"
 
-#: ToDoReport/TodoReport.py:268 ToDoReport/TodoReport.py:285
-#: ToDoReport/TodoReport.py:303 ToDoReport/TodoReport.py:311
-#: ToDoReport/TodoReport.py:324 ToDoReport/TodoReport.py:330
-#: ToDoReport/TodoReport.py:348 ToDoReport/TodoReport.py:354
-#: ToDoReport/TodoReport.py:364 ToDoReport/TodoReport.py:374
-#: ToDoReport/TodoReport.py:393 ToDoReport/TodoReport.py:399
-#: ToDoReport/TodoReport.py:411 ToDoReport/TodoReport.py:422
-#: ToDoReport/TodoReport.py:438 ToDoReport/TodoReport.py:445
-#: ToDoReport/TodoReport.py:459 ToDoReport/TodoReport.py:470
-#: ToDoReport/TodoReport.py:475 ToDoReport/TodoReport.py:481
-#: ToDoReport/TodoReport.py:491 ToDoReport/TodoReport.py:513
-#: ToDoReport/TodoReport.py:519 ToDoReport/TodoReport.py:536
-#: ToDoReport/TodoReport.py:542 ToDoReport/TodoReport.py:548
-#: ToDoReport/TodoReport.py:565 ToDoReport/TodoReport.py:571
-#: ToDoReport/TodoReport.py:577 ToDoReport/TodoReport.py:583
-#: ToDoReport/TodoReport.py:600 ToDoReport/TodoReport.py:608
-#: ToDoReport/TodoReport.py:614 ToDoReport/TodoReport.py:620
-#: ToDoReport/TodoReport.py:637 ToDoReport/TodoReport.py:643
-#: ToDoReport/TodoReport.py:649 ToDoReport/TodoReport.py:679
-#: ToDoReport/TodoReport.py:684 ToDoReport/TodoReport.py:690
-#: ToDoReport/TodoReport.py:924
 msgid "TR-Normal"
 msgstr "ZeB-Normal"
 
-#: ToDoReport/TodoReport.py:275 ToDoReport/TodoReport.py:942
 msgid "TR-Note"
 msgstr "ZeB-Notiz"
 
-#: ToDoReport/TodoReport.py:284 ToDoReport/TodoReport.py:952
 msgid "TR-BorderCell"
 msgstr "ZeB-RandZelle"
 
-#: ToDoReport/TodoReport.py:405
 msgid "date: "
 msgstr "Datum: "
 
-#: ToDoReport/TodoReport.py:417
 msgid "place: "
 msgstr "Ort: "
 
-#: ToDoReport/TodoReport.py:877
 msgid "Note Type"
 msgstr "Notizart"
 
-#: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
 msgstr "Gruppiere nach Referenzart"
 
-#: ToDoReport/TodoReport.py:886
 msgid "Group notes by Family, Person, Place, etc."
 msgstr "Gruppiere Notizen nach Familie, Person, Ort, usw."
 
-#: ToDoReport/TodoReport.py:946
+msgid "The style used for the title of the page."
+msgstr "Der Stil, der für den Seitentitel verwendet wird."
+
 msgid "The basic style used for the table cell display."
 msgstr "Der grundlegende Stil für die Anzeige von Tabellenzellen."
 
-#: ToDoReport/TodoReport.py:951
 msgid "The basic style used for the table border cell display."
 msgstr ""
 "Der grundlegende Stil, der für die Anzeige von Tabellenrandzellen verwendet "
 "wird."
 
-#: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "Der grundlegende Stil für die Tabellenanzeige."
 
-#: ToDoReport/TodoReport.gpr.py:25
 msgid "Todo Report"
-msgstr "Zu erledigen Bericht"
+msgstr "Aufgabenbericht"
 
-#: ToDoReport/TodoReport.gpr.py:27
 msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."

@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,149 +12,104 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
-msgid "Include records marked private"
-msgstr "Medtag oplysninger, der er mærket privat"
-
-#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
-msgid "Include Last Name Only"
-msgstr "Medtag kun efternavn"
-
-#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
-msgid "Include Full Name Only"
-msgstr "Medtag kun fuldt navn"
-
-#: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
 msgstr "Hvorvidt familiesider skal medtages"
 
-#: DynamicWeb/dynamicweb.gpr.py:17
 msgid "Produces dynamic web pages for the database"
 msgstr "Danner en dynamisk web rapport over databasen"
 
-#: DynamicWeb/dynamicweb.py:334
 msgid "SVG graphical tree"
 msgstr "SVG grafisk anetavle"
 
-#: DynamicWeb/dynamicweb.py:337
 msgid "Indexes pages"
 msgstr "Indekssider"
 
-#: DynamicWeb/dynamicweb.py:341 DynamicWeb/dynamicweb.py:5214
 #, python-format
 msgid "Custom page %(index)i"
 msgstr "Brugerdefineret side %(index)i"
 
-#: DynamicWeb/dynamicweb.py:358
 msgid "Ascending tree"
 msgstr "Stigende træ"
 
-#: DynamicWeb/dynamicweb.py:359
 msgid "Descending tree"
 msgstr "Faldende træ"
 
-#: DynamicWeb/dynamicweb.py:360
 msgid "Descending tree with spouses"
 msgstr "Faldende træ med ægtefæller"
 
-#: DynamicWeb/dynamicweb.py:361
 msgid "Ascending and descending tree"
 msgstr "Stigende og faldende træ"
 
-#: DynamicWeb/dynamicweb.py:362
 msgid "Ascending and descending tree with spouses"
 msgstr "Stigende og faldende træ med ægtefæller"
 
-#: DynamicWeb/dynamicweb.py:394
 msgid "Size proportional to number of ancestors"
 msgstr "Størrelse i forhold til antal aner"
 
-#: DynamicWeb/dynamicweb.py:395
 msgid "Homogeneous parents distribution"
 msgstr "Jævn fordeling af forældrene"
 
-#: DynamicWeb/dynamicweb.py:409
 msgid "Age based gradient"
 msgstr "Aldersafhængig gradient"
 
-#: DynamicWeb/dynamicweb.py:431
 msgid "Gradient"
 msgstr "Gradient"
 
-#: DynamicWeb/dynamicweb.py:780 DynamicWeb/dynamicweb.py:786
 #, python-format
 msgid "Could not create the directory: %(path)s"
 msgstr "Kunne ikke oprette mappen: %(path)s"
 
-#: DynamicWeb/dynamicweb.py:816 DynamicWeb/dynamicweb.py:4102
 msgid "Dynamic Web Site Report"
 msgstr "Dunamisk web rapport"
 
-#: DynamicWeb/dynamicweb.py:816
 msgid "Exporting family tree data ..."
 msgstr "Eksporterer slægtsbogsdata ..."
 
-#: DynamicWeb/dynamicweb.py:1737
 #, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
-#: DynamicWeb/dynamicweb.py:2011
 #, python-format
 msgid "Impossible to convert \"%(path)s\" to a relative path."
 msgstr "Umuligt at konvertere  \"%(path)s\" til en relativ sti."
 
-#: DynamicWeb/dynamicweb.py:2353
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr "Sidekonfigurationen er ikke gyldig: flere sider har samme indhold"
 
-#: DynamicWeb/dynamicweb.py:2368
 msgid "DynWeb|Home"
 msgstr "DynWeb|Home"
 
-#: DynamicWeb/dynamicweb.py:2375 DynamicWeb/dynamicweb.py:2442
-#: DynamicWeb/dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2456
 msgid "Tree"
 msgstr "Træ"
 
-#: DynamicWeb/dynamicweb.py:2435
 msgid "Search results"
 msgstr "Søgeresultater"
 
-#: DynamicWeb/dynamicweb.py:2595 DynamicWeb/dynamicweb.py:3014
-#: DynamicWeb/dynamicweb.py:4997
 msgid "Indexes"
 msgstr "Indekssider"
 
-#: DynamicWeb/dynamicweb.py:2918
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(filtreret fra _MAX_ total elementer)"
 
-#: DynamicWeb/dynamicweb.py:2920
 #, python-format
 msgid "(m. %s)"
 msgstr "(g. %s)"
 
-#: DynamicWeb/dynamicweb.py:2921
 msgid "(sort by name)"
 msgstr "(sorter efter navn)"
 
-#: DynamicWeb/dynamicweb.py:2922
 msgid "(sort by quantity)"
 msgstr "(sorter efter mængd3e)"
 
-#: DynamicWeb/dynamicweb.py:2925
 msgid ": activate to sort column ascending"
 msgstr ":aktiver for at sorter kolonne stigende"
 
-#: DynamicWeb/dynamicweb.py:2929
 msgid ": activate to sort column descending"
 msgstr ":aktiver for at sorter kolonne faldende"
 
-#: DynamicWeb/dynamicweb.py:2934
 msgid ""
 "<p>This page provides the SVG raw code.<br>Copy the contents into a text "
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
@@ -171,296 +119,223 @@ msgstr ""
 "tekstbehandling og gem som SVG fil<br>Kontroller at tekstindstilling er "
 "UTF-8</p>"
 
-#: DynamicWeb/dynamicweb.py:2942
 msgid "Alternate Name"
 msgstr "Alternativt navn"
 
-#: DynamicWeb/dynamicweb.py:2961
 msgid "Click on the map to show it full-screen"
 msgstr "Klik på kortet for at vise det på hele skærmen"
 
-#: DynamicWeb/dynamicweb.py:2965
 msgid "Configure"
 msgstr "Konfigurer"
 
-#: DynamicWeb/dynamicweb.py:2972
 msgid "DynamicWeb_report#Help"
 msgstr "DynamicWeb_report#Help"
 
-#: DynamicWeb/dynamicweb.py:2977
 msgid "Examples"
 msgstr "Eksempler"
 
-#: DynamicWeb/dynamicweb.py:2978
 msgid "F"
 msgstr "K"
 
-#: DynamicWeb/dynamicweb.py:2979
 msgid "Families Index"
 msgstr "Indeks over familier"
 
-#: DynamicWeb/dynamicweb.py:2981
 msgid "Family Nick Name"
 msgstr "Slægtstilnavn"
 
-#: DynamicWeb/dynamicweb.py:2984
 msgid "File ready"
 msgstr "Filen klar"
 
-#: DynamicWeb/dynamicweb.py:2991 DynamicWeb/dynamicweb.py:5042
 msgid "Include dates columns on the index pages"
 msgstr "Medtag en kolonne til datoer på indeks-siderne"
 
-#: DynamicWeb/dynamicweb.py:2999 DynamicWeb/dynamicweb.py:5071
 msgid "Include a column for media path on the index pages"
 msgstr "Medtag en kolonne til medier på indeks-siderne"
 
-#: DynamicWeb/dynamicweb.py:3007 DynamicWeb/dynamicweb.py:4903
 msgid "Include a map in the individuals and family pages"
 msgstr "Medtag et kort på person og familiesiderne"
 
-#: DynamicWeb/dynamicweb.py:3011 DynamicWeb/dynamicweb.py:4955
 msgid "Include half and/ or step-siblings on the individual pages"
 msgstr "Medtag halv- og/eller stedsøskende på de individuelle sider"
 
-#: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:5076
 msgid "Include references in indexes"
 msgstr "Medtag henvisninger på indekserne"
 
-#: DynamicWeb/dynamicweb.py:3018 DynamicWeb/dynamicweb.py:4985
 msgid "Insert sources author in the sources title"
 msgstr "Indsæt kildeforfatter i kildetitelen"
 
-#: DynamicWeb/dynamicweb.py:3026
 msgid "M"
 msgstr "M"
 
-#: DynamicWeb/dynamicweb.py:3030
 msgid "Maximize"
 msgstr "Maksimer"
 
-#: DynamicWeb/dynamicweb.py:3031
 msgid "Media Index"
 msgstr "Medieindeks"
 
-#: DynamicWeb/dynamicweb.py:3032
 msgid "Media Type"
 msgstr "Medietype"
 
-#: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
 msgstr "Ingen data tilgængeig i tabellen"
 
-#: DynamicWeb/dynamicweb.py:3039
 msgid "No matching records found"
 msgstr "Ingen matchene  poster fundet"
 
-#: DynamicWeb/dynamicweb.py:3040
 msgid "No matching surname."
 msgstr "Intet matchene efternavn."
 
-#: DynamicWeb/dynamicweb.py:3045
 msgid "Other participants"
 msgstr "Andre deltagere"
 
-#: DynamicWeb/dynamicweb.py:3048
 msgid "Person page"
 msgstr "Personside"
 
-#: DynamicWeb/dynamicweb.py:3049
 msgid "Person to search for"
 msgstr "Personer der skal søges efter"
 
-#: DynamicWeb/dynamicweb.py:3051
 msgid "Persons Index"
 msgstr "Personindeks"
 
-#: DynamicWeb/dynamicweb.py:3052
 msgid "Persons"
 msgstr "Personer"
 
-#: DynamicWeb/dynamicweb.py:3054
 msgid "Places Index"
 msgstr "Stedindeks"
 
-#: DynamicWeb/dynamicweb.py:3056
 msgid "Preparing file ..."
 msgstr "Forbereder filen ..."
 
-#: DynamicWeb/dynamicweb.py:3060
 msgid "Relationship to Father"
 msgstr "Slægtskab med fader"
 
-#: DynamicWeb/dynamicweb.py:3061
 msgid "Relationship to Mother"
 msgstr "Slægtskab med moder"
 
-#: DynamicWeb/dynamicweb.py:3063
 msgid "Repositories Index"
 msgstr "Arkivindeks"
 
-#: DynamicWeb/dynamicweb.py:3066
 msgid "Restore"
 msgstr "Genopret"
 
-#: DynamicWeb/dynamicweb.py:3067
 msgid "Restore default settings"
 msgstr "Genopret standardindstillinger"
 
-#: DynamicWeb/dynamicweb.py:3068 DynamicWeb/dynamicweb.py:4978
 msgid "Show last modification time"
 msgstr "Vis sidste ændringstidspunkt"
 
-#: DynamicWeb/dynamicweb.py:3069 DynamicWeb/dynamicweb.py:5133
 msgid "SVG tree children distribution"
 msgstr "SVG træ med børn"
 
-#: DynamicWeb/dynamicweb.py:3070
 msgid "SVG tree configuration"
 msgstr "SVG træ opsætning"
 
-#: DynamicWeb/dynamicweb.py:3071 DynamicWeb/dynamicweb.py:5115
 msgid "SVG tree graph shape"
 msgstr "SVG træ form"
 
-#: DynamicWeb/dynamicweb.py:3072 DynamicWeb/dynamicweb.py:5107
 msgid "SVG tree graph type"
 msgstr "SVG træ graf type"
 
-#: DynamicWeb/dynamicweb.py:3073 DynamicWeb/dynamicweb.py:5123
 msgid "SVG tree parents distribution"
 msgstr "SVG træ med forældre"
 
-#: DynamicWeb/dynamicweb.py:3074
 msgid "Save tree as file"
 msgstr "Gem træet som en fil"
 
-#: DynamicWeb/dynamicweb.py:3075
 msgid "Search:"
 msgstr "Søg:"
 
-#: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
 msgstr "Vælg bagrundens farveskema"
 
-#: DynamicWeb/dynamicweb.py:3082
 msgid "Select the children distribution (fan charts only)"
 msgstr "Vælg med børn (kun vifte grafer)"
 
-#: DynamicWeb/dynamicweb.py:3086
 msgid "Select the number of ascending generations"
 msgstr "Vælg antal stigende generationer"
 
-#: DynamicWeb/dynamicweb.py:3090
 msgid "Select the number of descending generations"
 msgstr "Vælg antal faldende generationer"
 
-#: DynamicWeb/dynamicweb.py:3094
 msgid "Select the parents distribution (fan charts only)"
 msgstr "Vælg med forældre (kun for viftegrafer)"
 
-#: DynamicWeb/dynamicweb.py:3096
 msgid "Select the shape of graph"
 msgstr "Vælg træets form"
 
-#: DynamicWeb/dynamicweb.py:3097
 msgid "Select the type of graph"
 msgstr "Vælg graftypen"
 
-#: DynamicWeb/dynamicweb.py:3101
 msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr ""
 "Flere matcher.<br>Tydeliggør din søgning eller vælg fra nedenstående liste."
 
-#: DynamicWeb/dynamicweb.py:3104
 msgid "Show _MENU_ entries"
 msgstr "Vis _MENU_poster"
 
-#: DynamicWeb/dynamicweb.py:3105 DynamicWeb/dynamicweb.py:5170
 msgid "Show duplicates"
 msgstr "Vis dubletter"
 
-#: DynamicWeb/dynamicweb.py:3106
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Vis 0 til 0 af 0 poster"
 
-#: DynamicWeb/dynamicweb.py:3109
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Vis _START_ ti l_SLUT_ af _TOTAL_ poster"
 
-#: DynamicWeb/dynamicweb.py:3112
 msgid "Sort by:"
 msgstr "Sortér efter:"
 
-#: DynamicWeb/dynamicweb.py:3114
 msgid "Sources Index"
 msgstr "Kildeindeks"
 
-#: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
 msgid "Suppress Gramps ID"
 msgstr "Undertryk Gramps ID"
 
-#: DynamicWeb/dynamicweb.py:3119
 msgid "Surnames Index"
 msgstr "Efternavnindeks"
 
-#: DynamicWeb/dynamicweb.py:3123
 msgid "U"
 msgstr "U"
 
-#: DynamicWeb/dynamicweb.py:3127 DynamicWeb/dynamicweb.py:4972
 msgid "Use tabbed panels instead of sections"
 msgstr "Brug felter med faneblade i stedet for sektioner"
 
-#: DynamicWeb/dynamicweb.py:3131
 msgid "Use the search box above in order to find a person."
 msgstr "Brug ovenstående ovenstående søgeboks for at finde en person."
 
-#: DynamicWeb/dynamicweb.py:3135
 msgid "Use a table format for the surnames index"
 msgstr "Brug tabelform til eftenavnsindekset"
 
-#: DynamicWeb/dynamicweb.py:3139
 msgid "Use a table format for the persons index"
 msgstr "Brug tabelform til personindekset"
 
-#: DynamicWeb/dynamicweb.py:3143
 msgid "Use a table format for the families index"
 msgstr "Brug tabelform til familieindekset"
 
-#: DynamicWeb/dynamicweb.py:3147
 msgid "Use a table format for the sources index"
 msgstr "Brug tabelform til kildeindekset"
 
-#: DynamicWeb/dynamicweb.py:3151
 msgid "Use a table format for the places index"
 msgstr "Brug tabelform til stedindekset"
 
-#: DynamicWeb/dynamicweb.py:3153
 msgid "Used for family"
 msgstr "Benyttet for familie"
 
-#: DynamicWeb/dynamicweb.py:3154
 msgid "Used for media"
 msgstr "Benyttet for medier"
 
-#: DynamicWeb/dynamicweb.py:3155
 msgid "Used for person"
 msgstr "Benyttet for person"
 
-#: DynamicWeb/dynamicweb.py:3156
 msgid "Used for place"
 msgstr "Benyttet for sted"
 
-#: DynamicWeb/dynamicweb.py:3157
 msgid "Used for source"
 msgstr "Benyttet for kilde"
 
-#: DynamicWeb/dynamicweb.py:3159
 msgid "Web Link"
 msgstr "Web Link"
 
-#: DynamicWeb/dynamicweb.py:3164 DynamicWeb/dynamicweb.py:5173
 msgid ""
 "Whether to use a special color for the persons that appear several times in "
 "the SVG tree"
@@ -468,81 +343,64 @@ msgstr ""
 "Hvorvidt en speciel farve skal benyttes til en person, der optræder flere "
 "gange i SVG træet"
 
-#: DynamicWeb/dynamicweb.py:3167
 msgid "Without name"
 msgstr "Uden navn"
 
-#: DynamicWeb/dynamicweb.py:3168
 msgid "Without surname"
 msgstr "Uden efternavn"
 
-#: DynamicWeb/dynamicweb.py:3169
 msgid "Without title"
 msgstr "Uden titel"
 
-#: DynamicWeb/dynamicweb.py:3170
 msgid "Zoom in"
 msgstr "Zoom ind"
 
-#: DynamicWeb/dynamicweb.py:3171
 msgid "Zoom out"
 msgstr "Zoom ud"
 
-#: DynamicWeb/dynamicweb.py:3172
 msgid "all"
 msgstr "alle"
 
-#: DynamicWeb/dynamicweb.py:3585
 #, python-format
 msgid "Copying error: %(error)s"
 msgstr "Kopieringsfejl:%(error)s"
 
-#: DynamicWeb/dynamicweb.py:3588
 #, python-format
 msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
 msgstr "Umuligt at kopiere \"%(src)s\" til \"%(dst)s\""
 
-#: DynamicWeb/dynamicweb.py:3632
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
 msgstr "Kan ikke kopiere websideskabelonerne fra \"%(path)s\""
 
-#: DynamicWeb/dynamicweb.py:3681
 #, python-format
 msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
 msgstr "Beholder \"%(dst)s\" (nyere end \"%(src)s\")"
 
-#: DynamicWeb/dynamicweb.py:3687
 #, python-format
 msgid "Copying \"%(src)s\" to \"%(dst)s\""
 msgstr "Kopierer \"%(src)s\" til \"%(dst)s\""
 
-#: DynamicWeb/dynamicweb.py:3718 DynamicWeb/dynamicweb.py:3742
 #, python-format
 msgid "Unable to overwrite archive file \"%(path)s\""
 msgstr "Umuligt at overskrive arkivfilen \"%(path)s\""
 
-#: DynamicWeb/dynamicweb.py:3731 DynamicWeb/dynamicweb.py:3752
 #, python-format
 msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
 msgstr "Kan ikke lægge filen \"%(file)s\" til arkivet  \"%(archive)s\""
 
-#: DynamicWeb/dynamicweb.py:3831
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
 msgstr "DynamicWebReport ignorerer linktypen  '%(class)s'"
 
-#: DynamicWeb/dynamicweb.py:4262
 #, python-format
 msgid "Family of %(father)s"
 msgstr "Familie til %(father)s"
 
-#: DynamicWeb/dynamicweb.py:4266
 #, python-format
 msgid "Family of %(mother)s"
 msgstr "Familie til %(mother)s"
 
-#: DynamicWeb/dynamicweb.py:4660
 msgid ""
 "In this note, the following special words are processed:\n"
 "__SEARCH_FORM__ is replaced by a search form.\n"
@@ -561,12 +419,12 @@ msgid ""
 "URL starting with \"relative://relative.<link>\" are replaced by the "
 "relative URL \"<link>\".\n"
 msgstr ""
-"Idenne note bliver følgende specialord behandlet:\n"
+"I denne note bliver følgende specialord behandlet:\n"
 "__SEARCH_FORM__ bliver erstattet med en søgefunktion.\n"
 "__NB_INDIVIDUALS__ bliver erstattet med antal personer.\n"
 "__NB_FAMILIES__ bliver erstattet med antal familier.\n"
 "__NB_MEDIA__ bliver erstattet med antal medier.\n"
-"__NB_SOURCES__ bliver erstattet med antal kilders.\n"
+"__NB_SOURCES__ bliver erstattet med antal kilder.\n"
 "__NB_REPOSITORIES__ bliver erstattet med antal arkiver.\n"
 "__NB_PLACES__ bliver erstattet med antal steder.\n"
 "__MEDIA_<gid>__ bliver erstattet med medier med Gramps ID <gid>.\n"
@@ -574,15 +432,13 @@ msgstr ""
 "<gid>.\n"
 "__EXPORT_DATE__ bliver erstattet med nuværende dato.\n"
 "__GRAMPS_VERSION__ bliver erstattet med Gramps versionen.\n"
-"__GRAMPS_HOMEPAGE__ bliver erstattet medGramps hjemmside link.\n"
-"URL der begynder medd \"relative://relative.<link>\" bliver erstattet med "
-"den relative URL \"<link>\".\n"
+"__GRAMPS_HOMEPAGE__ bliver erstattet med Gramps hjemmeside link.\n"
+"URL der begynder med \"relative://relative.<link>\" bliver erstattet med den "
+"relative URL \"<link>\".\n"
 
-#: DynamicWeb/dynamicweb.py:4712
 msgid "Store web pages in archive"
 msgstr "Gem websider i arkiv"
 
-#: DynamicWeb/dynamicweb.py:4715
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
@@ -590,47 +446,45 @@ msgstr ""
 "Hvorvidt der skal dannes en arkivfile (i ZIP eller TGZ format) der "
 "indeholder webstedet"
 
-#: DynamicWeb/dynamicweb.py:4722
 msgid "Archive file"
 msgstr "Arkivfil"
 
-#: DynamicWeb/dynamicweb.py:4728
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
 msgstr "Arkivfilnavn (med \".zip\" eller \".tgz\" fil-endelse)"
 
-#: DynamicWeb/dynamicweb.py:4735
 msgid "Web site title"
 msgstr "Websidetitel"
 
-#: DynamicWeb/dynamicweb.py:4736
 msgid "The title of the web site"
 msgstr "Titlen på websiden"
 
-#: DynamicWeb/dynamicweb.py:4741
 msgid "Select filter to restrict people that appear on web site"
 msgstr "Vælg filter til afgrænsning af personer der vises på websiden"
 
-#: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
 msgid "Name format (short)"
 msgstr "Navneformat (kort)"
 
-#: DynamicWeb/dynamicweb.py:4757 DynamicWeb/dynamicweb.py:4783
 msgid "Select the format to display a shorter version of the names"
 msgstr "Vælg format til at vise en kortere version af navne"
 
-#: DynamicWeb/dynamicweb.py:4787
 msgid "Web site template"
 msgstr "Webstedskabelon"
 
-#: DynamicWeb/dynamicweb.py:4790
 msgid "Select the template of the web site"
 msgstr "Vælg skabelonen for web stedet"
 
-#: DynamicWeb/dynamicweb.py:4812
+msgid "Include records marked private"
+msgstr "Medtag oplysninger, der er mærket privat"
+
 msgid "Whether to include private objects"
 msgstr "Hvorvidt private objekter skal medtages"
 
-#: DynamicWeb/dynamicweb.py:4833
+msgid "Include Last Name Only"
+msgstr "Medtag kun efternavn"
+
+msgid "Include Full Name Only"
+msgstr "Medtag kun fuldt navn"
+
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
@@ -638,194 +492,148 @@ msgstr ""
 "Dette giver dig mulighed for at begrænse oplysninger om personer der ikke "
 "har været døde i lang tid"
 
-#: DynamicWeb/dynamicweb.py:4839
 msgid "Export notes"
 msgstr "Eksporter noter"
 
-#: DynamicWeb/dynamicweb.py:4840
 msgid "Whether to export notes in the web pages"
 msgstr "Hvorvidt noter i web stedet skal eksporteres"
 
-#: DynamicWeb/dynamicweb.py:4843
 msgid "Export sources"
 msgstr "Eksporter kilder"
 
-#: DynamicWeb/dynamicweb.py:4845
 msgid "Whether to export sources and citations in the web pages"
 msgstr "Hvorvidt kilder i web stedet skal eksporteres"
 
-#: DynamicWeb/dynamicweb.py:4849
 msgid "Export addresses"
 msgstr "Eksporter adresser"
 
-#: DynamicWeb/dynamicweb.py:4850
 msgid "Whether to export addresses in the web pages"
 msgstr "Hvorvidt adresser i web stedet skal eksporteres"
 
-#: DynamicWeb/dynamicweb.py:4858
 msgid "Whether or not to include the Repository Pages."
 msgstr "Hvorvidt arkivsiderne skal medtages eller ej."
 
-#: DynamicWeb/dynamicweb.py:4861
 msgid "Include images and media"
 msgstr "Medtag billeder og medieobjekter"
 
-#: DynamicWeb/dynamicweb.py:4862
 msgid "Whether to include images and media in the web pages"
 msgstr "Hvorvidt billeder og medier skal medtages på web stedet"
 
-#: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
 msgstr "Kopier omdøb filer med en intern Gramps identifikator"
 
-#: DynamicWeb/dynamicweb.py:4870
 msgid "Copy, keep file names unchanged"
 msgstr "Kopier, behold navnet uændret"
 
-#: DynamicWeb/dynamicweb.py:4871
 msgid "Do not copy, reference existing files"
 msgstr "Kopier ikke, henvis til eksisterende filer"
 
-#: DynamicWeb/dynamicweb.py:4873
 msgid "Images and media"
 msgstr "Billeder og medier"
 
-#: DynamicWeb/dynamicweb.py:4876
 msgid "Whether to make a copy of the media"
 msgstr "Hvorvidt medier skal kopieres"
 
-#: DynamicWeb/dynamicweb.py:4879
 msgid "Print the notes type"
 msgstr "Udskriv notetypen"
 
-#: DynamicWeb/dynamicweb.py:4881
 msgid "Whether to print the notes type in the notes text"
 msgstr "Hvorvidt notetypen skal skrives i notens tekst"
 
-#: DynamicWeb/dynamicweb.py:4885
 msgid "Print place pages"
 msgstr "Udskriv stedsider"
 
-#: DynamicWeb/dynamicweb.py:4886
 msgid "Whether to show pages for the places"
 msgstr "Hvorvidt der skal vises sider for stederne"
 
-#: DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
 msgstr "Vælg din kortservice der skal danne stedkort siderne"
 
-#: DynamicWeb/dynamicweb.py:4926
 msgid "Google map API key"
 msgstr "Google Maps API nøgle"
 
-#: DynamicWeb/dynamicweb.py:4927
 msgid "The API key used for the Google map"
 msgstr "API nøglen der benyttes til Google map"
 
-#: DynamicWeb/dynamicweb.py:4945
 msgid "Whether or not to include family pages"
 msgstr "Hvorvidt familiesider skal medtages"
 
-#: DynamicWeb/dynamicweb.py:4959
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
 msgstr ""
 "Hvorvidt halv- og/eller stedsøskende skal medtages sammen med forældre og "
 "søskende"
 
-#: DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
 msgstr "Tillad sideopsætning"
 
-#: DynamicWeb/dynamicweb.py:4969
 msgid "Whether to enable page configuration"
 msgstr "Hvorvid sideopsætning skal tillades"
 
-#: DynamicWeb/dynamicweb.py:4974
 msgid "Whether to use tabbed panels for the different sections of the pages."
 msgstr ""
 "Hvorvidt der skal benyttes felter med faneblade for de forskellige sektioner "
 "af siderne."
 
-#: DynamicWeb/dynamicweb.py:4980
 msgid "Whether to show the last modification time in the pages footer"
 msgstr "Hvorvidt det seneste rettelsestidspunkt skal vises i sidefoden"
 
-#: DynamicWeb/dynamicweb.py:4988
 msgid "Whether to insert sources author in the sources title"
 msgstr "Hvorvidt kildeforfatter skal medtages i kildeoverskriften"
 
-#: DynamicWeb/dynamicweb.py:4993
 msgid "Whether to hide the Gramps ID"
 msgstr "Hvorvidt Gramps ID skal skjules"
 
-#: DynamicWeb/dynamicweb.py:5001
 msgid "List"
 msgstr "Liste"
 
-#: DynamicWeb/dynamicweb.py:5002
 msgid "Table"
 msgstr "Tabel"
 
-#: DynamicWeb/dynamicweb.py:5008
 msgid "Default format for the surnames index"
 msgstr "Standardformat for indeks over efternavne"
 
-#: DynamicWeb/dynamicweb.py:5009
 msgid "The default format for the surnames index"
 msgstr "Standardformatet for indeks over efternavne"
 
-#: DynamicWeb/dynamicweb.py:5014
 msgid "Default format for the persons index"
 msgstr "Standardformat for indeks over personer"
 
-#: DynamicWeb/dynamicweb.py:5015
 msgid "The default format for the persons index"
 msgstr "Standardformatet for indeks over personer"
 
-#: DynamicWeb/dynamicweb.py:5020
 msgid "Default format for the families index"
 msgstr "Standardformat for indeks over familier"
 
-#: DynamicWeb/dynamicweb.py:5021
 msgid "The default format for the families index"
 msgstr "Standardformatet for indeks over familier"
 
-#: DynamicWeb/dynamicweb.py:5026
 msgid "Default format for the sources index"
 msgstr "Standardformat for indeks over kilder"
 
-#: DynamicWeb/dynamicweb.py:5027
 msgid "The default format for the sources index"
 msgstr "Standardformatet for indeks over kilder"
 
-#: DynamicWeb/dynamicweb.py:5032
 msgid "Default format for the places index"
 msgstr "Standardformat for indeks over steder"
 
-#: DynamicWeb/dynamicweb.py:5033
 msgid "The default format for the places index"
 msgstr "Standardformatet for indeks over steder"
 
-#: DynamicWeb/dynamicweb.py:5045
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
 "Hvorvidt datokolonne (fødsel, død, ægteskab) skal medtages på indekssiderne"
 
-#: DynamicWeb/dynamicweb.py:5063
 msgid "Generate a families index page"
 msgstr "Dan en familieindeksside"
 
-#: DynamicWeb/dynamicweb.py:5066
 msgid "Whether to generate an index page for families"
 msgstr "Hvorvidt der skal dannes en indeksside for familier"
 
-#: DynamicWeb/dynamicweb.py:5073
 msgid "Whether to include a column showing the media path"
 msgstr "Hvorvidt der skal medtages en kolonne over mediestier"
 
-#: DynamicWeb/dynamicweb.py:5079
 msgid ""
 "Whether to include the references to the items in the index pages. For "
 "example, in the media index page, the names of the individuals, families, "
@@ -835,19 +643,15 @@ msgstr ""
 "eksempel i medieindekssiderne, navne på de personer, familier, steder, "
 "kilder som henviser til mediet."
 
-#: DynamicWeb/dynamicweb.py:5085
 msgid "Default number of entries in the indexes"
 msgstr "Standard antal poster på en indekset"
 
-#: DynamicWeb/dynamicweb.py:5090
 msgid "The default number of entries shown in one index page"
 msgstr "Standard antal poster der skal medtages på en indeksside"
 
-#: DynamicWeb/dynamicweb.py:5098
 msgid "Maximum number of generations"
 msgstr "Det største antal generationer"
 
-#: DynamicWeb/dynamicweb.py:5101
 msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
@@ -855,96 +659,74 @@ msgstr ""
 "Det største antal generationer der skal medtages i ane- og efterkommertavler "
 "og skemaer"
 
-#: DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
 msgstr "Vælg standard SVG tavletype"
 
-#: DynamicWeb/dynamicweb.py:5119
 msgid "Choose the default SVG tree graph shape"
 msgstr "Vælg standard SVG træ form"
 
-#: DynamicWeb/dynamicweb.py:5128
 msgid "Choose the default SVG tree parents distribution (for fan charts only)"
 msgstr "Vælg standard SVG træ forældrefordeling (kun for viftetavler)"
 
-#: DynamicWeb/dynamicweb.py:5138
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
 msgstr "Vælg standard SVG træ børnefordeling (kun for viftetavler)"
 
-#: DynamicWeb/dynamicweb.py:5149
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
 msgstr "Vælg baggrundsfarveskema for personer i SVG tavlerne"
 
-#: DynamicWeb/dynamicweb.py:5157
 msgid "Theme"
 msgstr "Tema"
 
-#: DynamicWeb/dynamicweb.py:5190
 msgid "Pages"
 msgstr "Sider"
 
-#: DynamicWeb/dynamicweb.py:5194
 msgid "A note to be used as the page header"
 msgstr "En note der benyttes som sidehoved"
 
-#: DynamicWeb/dynamicweb.py:5197
 msgid "HTML user brand name / icon"
 msgstr "HTML varemærkenavn/ikon"
 
-#: DynamicWeb/dynamicweb.py:5199
 msgid "A note to be used as the brand name or image in the menu"
 msgstr "En note der benyttes som varemærke eller billede i menuen"
 
-#: DynamicWeb/dynamicweb.py:5208
 msgid "Custom pages"
 msgstr "Brugerdefinerede sider"
 
-#: DynamicWeb/dynamicweb.py:5213
 #, python-format
 msgid "Title for the custom page %(index)i"
 msgstr "Titel på den brugerdefineret side %(index)i"
 
-#: DynamicWeb/dynamicweb.py:5217
 #, python-format
 msgid "Name for the custom page %(index)i"
 msgstr "Nvan på den brugerdefineret side %(index)i"
 
-#: DynamicWeb/dynamicweb.py:5222
 #, python-format
 msgid "Note for custom page %(index)i"
 msgstr "Note til den brugerdefineret side %(index)i"
 
-#: DynamicWeb/dynamicweb.py:5225
 msgid "A note to be used for the custom page content.\n"
 msgstr "En noter der benyttes for den brugerdefinerede sides indhold.\n"
 
-#: DynamicWeb/dynamicweb.py:5230
 #, python-format
 msgid "Menu for the custom page %(index)i"
 msgstr "Menu til den brugerdefineret side %(index)i"
 
-#: DynamicWeb/dynamicweb.py:5232
 msgid "Whether to print a menu for the custom page"
 msgstr "Hvorvidt er skal vises en menu for den brugerdefinerede side"
 
-#: DynamicWeb/dynamicweb.py:5236
 msgid "Pages selection"
 msgstr "Sidevalg"
 
-#: DynamicWeb/dynamicweb.py:5240
 msgid "Number of pages"
 msgstr "Antal sider"
 
-#: DynamicWeb/dynamicweb.py:5242
 msgid "Number pages in the web site menu."
 msgstr "Antal sider i websteds menuen."
 
-#: DynamicWeb/dynamicweb.py:5262
 #, python-format
 msgid "Contents of page %(index)i"
 msgstr "Indhold på  %(index)i"
 
-#: DynamicWeb/dynamicweb.py:5266
 msgid "Contents of the page"
 msgstr "Indhold af siden"

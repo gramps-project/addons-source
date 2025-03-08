@@ -1,15 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 10:31+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,106 +13,78 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
 msgstr "המקום לא נמצא. נא להבהיר מילות־מפתח לחיפוש."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
 msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr "כשל בחיפוש נקודות־ציון כתוצאה משגיאה לא צפויה."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
 msgid "The place was not found."
 msgstr "המקום לא נמצא."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
 msgid "The place was not identified."
 msgstr "המקוםלא זוהה."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
 msgid "Coordinates were not given."
 msgstr "לא ניתנו נקודות־ציון."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
 msgid "Failed to interpret the input format."
 msgstr "כשל בפרוש תסדיר הקלט."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
 msgstr "רשומת מסד־נתונים [{id}] {name}:"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
-#: PlaceCoordinateGramplet/placecoordinate.glade:132
 msgid "Nothing has been searched yet"
 msgstr "טרם בוצע חיפוש"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr "אין מקום פעיל"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
 msgstr "מצג גרמפלט נקודות־ציון מקום"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
 msgid "View for the place coordinate gramplet."
 msgstr "מצג גרמפלט נקודות־ציון מקום."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
 msgid "Place and Coordinates"
 msgstr "מקום ונקודות־ציון"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr "גרמפלט לפישוט קביעת נקודות־הציון של מקום"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
 msgid "Place Coordinates"
 msgstr "נקודות־ציון מקום"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
 msgid "Place Coordinate Gramplet"
 msgstr "גרמפלט נקודות־ציון מקום"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
 msgstr "תפריט מפה"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
 msgid "Add city as place"
 msgstr "הוספת עיר כ'מקום'"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
 msgid "Add addess as place"
 msgstr "הוספת כתובת כ'מקום'"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"
 msgstr "חיפוש:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:26
 msgid "Found place:"
 msgstr "נמצא מקום:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:53
 msgid "No DB entry is selected"
 msgstr "לא נבחרה רשומת מסד־נתונים"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
-msgstr "מיקוד"
+msgstr "מיקוד:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:116
 msgid "Show found place externally in Google Maps"
 msgstr "הצגת מקום שנמצא במפות גוגל באופן חיצוני"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:203
 msgid ""
 "Take last clicked position\n"
 "from Geography map"
@@ -126,18 +92,14 @@ msgstr ""
 "לקיחת איות מהקשה אחרונה\n"
 "על מפה גיאוגרפית"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:218
 msgid "Search location from DB"
 msgstr "חיפוש מקום ממסד־נתונים"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:232
 msgid "Apply geo location to Database"
 msgstr "החלת איכון (גאו־לוקיישן) על מסד הנתונים"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:269
 msgid "Go"
 msgstr "מעבר אל"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
 msgstr "הצגת עזרה"

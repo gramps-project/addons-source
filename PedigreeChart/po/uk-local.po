@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,38 +13,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
 msgstr "Родовідна діаграма"
 
-#: PedigreeChart/PedigreeChart.gpr.py:26
 msgid "Alternate version of the traditional pedigree chart."
 msgstr "Альтернативна версія традиційної родовідної діаграми."
 
-#: PedigreeChart/PedigreeChart.py:379
 #, python-format
 msgid "Pedigree Chart for %s"
 msgstr "Родовідна діаграма для %s"
 
-#: PedigreeChart/PedigreeChart.py:528
 #, python-format
 msgid "Page %d"
 msgstr "Сторінка %d"
 
-#: PedigreeChart/PedigreeChart.py:640
 msgid "Show Mother/Father captions"
 msgstr "Показувати підписи Мати/Батько"
 
-#: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Показувати підпис мати або батько поруч із кожним полем предка."
 
-#: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
 msgstr "Основний стиль, що використовується для відображення заголовків."
 
-#: PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
 msgstr "Стиль, що використовується для етикеток та підписів"

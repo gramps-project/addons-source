@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,68 +13,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: AttachSourceTool/AttachSourceTool.py:70
 msgid "Select filter to restrict people"
 msgstr "Odaberi filtar za ograničavanje osoba"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: AttachSourceTool/AttachSourceTool.py:157
-msgid "Processing...\n"
-msgstr "Obrada u tijeku …\n"
-
-#: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
 msgstr "Vrsta izvora"
 
-#: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
 msgstr "Novi izvor"
 
-#: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
 msgstr "Postojeći izvor"
 
-#: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
 msgstr "Odaberi vrstu izvora kao dodatak"
 
-#: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
 msgstr "Naslov novog izvora"
 
-#: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
 msgstr "Tekst izvora za dodavanje"
 
-#: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
 msgstr "Postojeći ID izvora"
 
-#: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
 msgstr "ID dodajućeg izvora"
 
-#: AttachSourceTool/AttachSourceTool.py:137
-#: AttachSourceTool/AttachSourceTool.py:155
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
 msgid "Attach Source"
 msgstr "Dodaj izvor"
 
-#: AttachSourceTool/AttachSourceTool.py:174
+msgid "Processing...\n"
+msgstr "Obrada u tijeku …\n"
+
 msgid "Attaching sources...\n"
 msgstr "Dodavanje izvora …\n"
 
-#: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
 msgstr "Dodavanje izvora …"
 
-#: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Gotovo!\n"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
 msgstr "Dodaje dijeljeni izvor objektima."

@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,15 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: FilterRules2/yinheritanceoffiltermatch.py:46
-#: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
 msgid "Y-chromosomal inheritance of <filter>"
 msgstr "Y-kromosomal arv efter <filter>"
 
-#: FilterRules2/yinheritanceoffiltermatch.py:47
-#: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
 msgid ""
 "Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
@@ -35,44 +24,31 @@ msgstr ""
 "Matcher registrerede efterkommere af et filter der følger Y.kromosomale "
 "arvemønstre."
 
-#: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
 msgstr "X-chromosomal ane til <person>"
 
-#: FilterRules2/xchromancestors.gpr.py:27 FilterRules2/xchromancestors.py:50
 msgid ""
 "Matches ancestors of <person> following a X-chromosomal inheritance pattern."
 msgstr "Matcher aner til <person> som følger et X-kromosomalt arvemønster."
 
-#: FilterRules2/xchromdescendants.gpr.py:25
-#: FilterRules2/xchromdescendants.py:48
 msgid "X-chromosomal descendants of <person>"
 msgstr "X-kromosonal efterkommere efter <person>"
 
-#: FilterRules2/xchromdescendants.gpr.py:27
 msgid ""
 "Matches descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
 "Matcher efterkommere til <person> der følger et X-kromosomalt arvemønster."
 
-#: FilterRules2/patrilinealprogenitor.py:45
-#: FilterRules2/patrilinealprogenitor.gpr.py:25
 msgid "Patrilineal progenitor of <person>"
 msgstr "Patrilineær stamfader for <person>"
 
-#: FilterRules2/patrilinealprogenitor.py:47
-#: FilterRules2/patrilinealprogenitor.gpr.py:26
 msgid "Matches the earliest recorded patrilineal ancestor father."
 msgstr "Matcher den tidligst registrerede patrilienær anefader."
 
-#: FilterRules2/mtinheritanceoffiltermatch.py:46
-#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
 msgid "Mitochondrial inheritance of <filter>"
 msgstr "Mitochondrial arv fra <filter>"
 
-#: FilterRules2/mtinheritanceoffiltermatch.py:47
-#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
 msgid ""
 "Matches recorded descendants of a filter result following mitochondrial "
 "inheritance patterns."
@@ -80,17 +56,12 @@ msgstr ""
 "Matcher registrerede efterkommere af et filterresultat der følger "
 "mitochondrial arvemønstre."
 
-#: FilterRules2/matrilinealprogenitrix.gpr.py:25
-#: FilterRules2/matrilinealprogenitrix.py:45
 msgid "Matrilineal progenitrix of <person>"
 msgstr "Matrilineær stammoder for <person>"
 
-#: FilterRules2/matrilinealprogenitrix.gpr.py:26
-#: FilterRules2/matrilinealprogenitrix.py:47
 msgid "Matches the earliest recorded matrilineal ancestor mother."
 msgstr "Matcher den tidligst registrerede matrilineær anes mor."
 
-#: FilterRules2/xchromdescendants.py:50
 msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
@@ -98,11 +69,9 @@ msgstr ""
 "Matcher alle efterkommere til <person> der følger et X-kromosomalt "
 "arvemønster."
 
-#: FilterRules2/mtinheritance.py:45 FilterRules2/mtinheritance.gpr.py:25
 msgid "Mitochondrial inheritance of <person>"
 msgstr "Mitochondrial arv fra <person>"
 
-#: FilterRules2/mtinheritance.py:46 FilterRules2/mtinheritance.gpr.py:27
 msgid ""
 "Matches recorded descendants of person following mitochondrial inheritance "
 "patterns."
@@ -110,11 +79,9 @@ msgstr ""
 "Matcher registrerede efterkommere af person der følger mitochondrial "
 "arvemønstre."
 
-#: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
 msgid "Y-chromosomal inheritance of <person>"
 msgstr "Y-kromosomal arv efter <person>"
 
-#: FilterRules2/yinheritance.gpr.py:27 FilterRules2/yinheritance.py:46
 msgid ""
 "Matches recorded descendants of person following Y-chromosomal inheritance "
 "patterns."

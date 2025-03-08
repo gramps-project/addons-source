@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,76 +12,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: AvatarGenerator/AvatarGenerator.py:86
-msgid "Select filter to restrict people"
-msgstr "Selecteer filter om aantal mensen te beperken"
-
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: AvatarGenerator/AvatarGenerator.py:211
-#: AvatarGenerator/AvatarGenerator.py:219
-#: AvatarGenerator/AvatarGenerator.py:316
-#: AvatarGenerator/AvatarGenerator.py:320
-msgid "INFO"
-msgstr "INFO"
-
-#: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
 msgstr "Avatar Generator Tool"
 
-#: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
 msgstr "Een tool om avatarafbeeldingen toe te voegen aan uw stamboom"
 
-#: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
 msgstr "enkele afbeelding modus"
 
-#: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
 msgstr "Kies hoeveel afbeeldingen u wilt gebruiken."
 
-#: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
 msgstr "Afbeelding voor mensen met een onbekend geslacht."
 
-#: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
 msgstr "Afbeelding voor mannen."
 
-#: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
 msgstr "Afbeelding voor vrouwen"
 
-#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Select filter to restrict people"
+msgstr "Selecteer filter om aantal mensen te beperken"
+
 msgid "Remove images from people"
 msgstr "Verwijder afbeeldingen van mensen"
 
-#: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
 msgstr "Verwijder geselecteerde afbeelding(en)."
 
-#: AvatarGenerator/AvatarGenerator.py:134
-#: AvatarGenerator/AvatarGenerator.py:183
-#: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
 msgstr "Avatar Generator"
 
-#: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
 msgstr "Avatar-afbeeldingen verwijderen..."
 
-#: AvatarGenerator/AvatarGenerator.py:211
+msgid "INFO"
+msgstr "INFO"
+
 msgid "No media was removed."
 msgstr "Er is geen media verwijderd."
 
-#: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
 msgstr "{} mediaverwijzingen zijn verwijderd van {} personen."
 
-#: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -99,19 +66,14 @@ msgstr ""
 "\n"
 "{} HandleError is opgetreden, maar werd genegeerd."
 
-#: AvatarGenerator/AvatarGenerator.py:263
-#: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
 msgstr "Avatarafbeeldingen toevoegen..."
 
-#: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
 msgstr "{} avatarafbeeldingen zijn toegevoegd."
 
-#: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
 msgstr "Er was geen avatarafbeelding om toe te voegen. "
 
-#: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
 msgstr "Alle personen hadden er al een."

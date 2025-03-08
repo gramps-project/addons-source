@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,27 +16,21 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: ExtractCity/extractcity.py:402
 msgid "Place title"
 msgstr "Название места"
 
-#: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
 msgstr "Извлечение данных о месте"
 
-#: ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
 msgstr "Проверка названий мест"
 
-#: ExtractCity/extractcity.py:456
 msgid "Looking for place fields"
 msgstr "Ищем части адресов"
 
-#: ExtractCity/extractcity.py:543
 msgid "No place information could be extracted."
 msgstr "Никакой информации о местах не может быть выделено."
 
-#: ExtractCity/extractcity.py:564
 msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
@@ -60,24 +39,9 @@ msgstr ""
 "из названия места. Отметьте места для которых Gramps должен выполнить "
 "конвертацию."
 
-#: ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
 msgstr "Извлечение данных о месте из названия"
 
-#: ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
 "Пробует извлечь названия города, штата, области и т.д. из названия места"
-
-#: ExtractCity/changenames.glade:94
-#, fuzzy
-#| msgid "Toggle Selection"
-msgid "_Toggle Selected"
-msgstr "Обратить выделение"
-
-#: ExtractCity/changenames.glade:98
-msgid ""
-"Toggles the checkmarks on selected rows,  Rows can be selected with <ctrl> "
-"(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
-"arrow keys and 'space'.  Or <ctrl>'a' for select all."
-msgstr ""

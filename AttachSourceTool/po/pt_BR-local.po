@@ -1,14 +1,3 @@
-# Brazilian-Portuguese translation for Gramps.
-# Tradução português-brasileiro para o Gramps.
-# Copyright (C) 2002 Free Software Foundation, Inc.
-#
-#
-# Marcos Bedinelli <bedinelli@sourceforge.net>, 2002, 2003, 2004, 2005, 2006.
-# Luiz Gonzaga dos Santos Filho <lfilho@gmail.com>, 2007.
-# lcc <lcc@6zap.com>, 2009.
-# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2011, 2012, 2013, 2014.
-# Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>, 2016, 2017, 2018.
-# Paulo Terezani de Paiva <terezani_ppaiva@yahoo.com.br>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
@@ -24,66 +13,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: AttachSourceTool/AttachSourceTool.py:70
 msgid "Select filter to restrict people"
 msgstr "Selecione o filtro para restringir as pessoas"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: AttachSourceTool/AttachSourceTool.py:157
-msgid "Processing...\n"
-msgstr "Processando...\n"
-
-#: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
 msgstr "Tipo de fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
 msgstr "Nova fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
 msgstr "Fonte existente"
 
-#: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
 msgstr "Selecione o tipo de fonte a anexar"
 
-#: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
 msgstr "Novo título da fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
 msgstr "Texto da fonte a anexar"
 
-#: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
 msgstr "ID da fonte existente"
 
-#: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
 msgstr "ID da fonte a anexar"
 
-#: AttachSourceTool/AttachSourceTool.py:137
-#: AttachSourceTool/AttachSourceTool.py:155
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
 msgid "Attach Source"
 msgstr "Anexar fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:174
+msgid "Processing...\n"
+msgstr "Processando...\n"
+
 msgid "Attaching sources...\n"
 msgstr "Anexando fontes...\n"
 
-#: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
 msgstr "Anexando fontes..."
 
-#: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Concluído!\n"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
 msgstr "Anexa uma fonte comum a vários objetos"

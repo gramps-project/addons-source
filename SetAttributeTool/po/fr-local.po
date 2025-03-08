@@ -1,84 +1,37 @@
-# French translation for gramps
-# Copyright (C) 2001-2011 Free Software Foundation, Inc.
-#
-# Quelques variables pour la cohérence:
-#  ancestor : ascendant
-#  descendant : descendant
-#  person, individual, people : individu(s)
-#  remove (context) : enlever une référence ou supprimer de la base
-#  home : souche
-#  active person : individu actif
-#  media : media (pas de 's' ou accent) : un medium
-#  les médias : journaux, tv
-#  call name : prénom usuel
-#  unknown (context) : inconnu ou non-connu (individu)
-#
-# Laurent Protois <laurent.protois@free.fr>, 2001, 2002, 2003, 2004.
-# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
-# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
-# Frederic Chateaux, 2007, 2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Mathieu MD <mathieu.md@gmail.com>, 2012.
-# Paul Culley <prc@prc-virtualbox>, 2018.
-# Christophe <khrys63@gmail.com>, 2018.
-# Paul Culley <paulr2787@gmail.com>, 2016.
-# J-Paul Bérard <arverne@wanadoo.fr>, 2021.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2011-12-17 18:49+0100\n"
-"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
-"Language-Team:  <fr@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-03-02 13:48+0000\n"
+"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetAttributeTool/SetAttributeTool.py:71
 msgid "Select filter to restrict people"
 msgstr "Sélectionne un filtre pour restreindre les individus"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: SetAttributeTool/SetAttributeTool.py:151
-#: SetAttributeTool/SetAttributeTool.py:193
-msgid "Processing...\n"
-msgstr "Traitement en cours...\n"
-
-#: AttachSourceTool/AttachSourceTool.py:197
-#: SetAttributeTool/SetAttributeTool.py:226
-msgid "Done!\n"
-msgstr "Terminé !\n"
-
-#: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Type d'attribut à ajouter ou éditer"
 
-#: SetAttributeTool/SetAttributeTool.py:84
 msgid "Attribute value to add or edit"
 msgstr "Valeur de l'attribut à ajouter ou éditer"
 
-#: SetAttributeTool/SetAttributeTool.py:92
-#, fuzzy
-#| msgid "Set an attribute to a given value."
-msgid "Remove attribute type and value set"
-msgstr "Définir une valeur à un attribut."
-
-#: SetAttributeTool/SetAttributeTool.py:122
-#: SetAttributeTool/SetAttributeTool.py:150
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
 msgid "Set Attribute"
 msgstr "Définir un attribut"
 
-#: SetAttributeTool/SetAttributeTool.py:152
+msgid "Processing...\n"
+msgstr "Traitement en cours...\n"
+
 msgid "Setting attributes..."
 msgstr "Définition des attributs..."
 
-#: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
 "Setting '%s' attributes to '%s'...\n"
@@ -87,7 +40,6 @@ msgstr ""
 "Définition des attributs '%s' à '%s'...\n"
 "\n"
 
-#: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
 "\n"
@@ -96,30 +48,8 @@ msgstr ""
 "\n"
 "A défini %d attributs '%s' à '%s'\n"
 
-#: SetAttributeTool/SetAttributeTool.py:191
-#, fuzzy
-#| msgid "Set Attribute"
-msgid "Remove Attribute"
-msgstr "Définir un attribut"
+msgid "Done!\n"
+msgstr "Terminé !\n"
 
-#: SetAttributeTool/SetAttributeTool.py:194
-#, fuzzy
-#| msgid "Setting attributes..."
-msgid "Removing attributes..."
-msgstr "Définition des attributs..."
-
-#: SetAttributeTool/SetAttributeTool.py:221
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Set %d '%s' attributes to '%s'\n"
-msgid ""
-"\n"
-"Removing %d '%s' attributes to '%s'\n"
-msgstr ""
-"\n"
-"A défini %d attributs '%s' à '%s'\n"
-
-#: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
 msgstr "Définir une valeur à un attribut."

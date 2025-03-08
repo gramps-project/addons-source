@@ -1,17 +1,9 @@
-# GRAMPS SLOVAK language version
-# Lubo Vasko, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
-# Dominik Sivak <bubakovsky@gmail.com>, 2019.
-# MILAN KUROVSKY, 2023.
-# Lubo Vasko <pgval at inmail dot sk>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
-# Jozef Riha, 2017.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-22 17:04+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,525 +12,86 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:335
-#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
-#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
+msgid "Graph View"
+msgstr "Grafický pohľad"
+
+msgid "Highlight the home person"
+msgstr "Zvýrazniť východziu osobu"
+
+msgid "Show full dates"
+msgstr "Zobraziť celé dátumy"
+
+msgid "Show places"
+msgstr "Zobraziť miesta"
+
+msgid "Show animation"
+msgstr "Zobraziť animáciu"
+
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "Rýchlosť animácie (1..5 a 5 je najpomalšia)"
+
+msgid "Animation"
+msgstr "Animácia"
+
+msgid "Search"
+msgstr "Hľadať"
+
+msgid "Select a dot file name"
+msgstr "Vyberte názov dot súboru"
+
+msgid "Zoom in"
+msgstr "Priblížiť"
+
+msgid "Zoom out"
+msgstr "Oddialiť"
+
+msgid "Zoom to original"
+msgstr "Pôvodné priblíženie"
+
+msgid "Zoom to best fit"
+msgstr "Prispôsobiť priblíženie obsahu"
+
+msgid "Go to active person"
+msgstr "Prejsť na aktívnu osobu"
+
+msgid "Go to bookmark"
+msgstr "Prejsť na záložku"
+
+msgid "Ancestor generations"
+msgstr "Generácie predkov"
+
+msgid "Descendant generations"
+msgstr "Generácie potomkov"
+
+msgid "Change active person?"
+msgstr "Zmeniť aktívnu osobu?"
+
 #, python-format
 msgid "%s "
 msgstr "%s "
 
-#: PluginManager/PluginManager.py:158 GraphView/search_widget.py:400
-msgid "Search..."
-msgstr "Hľadať..."
+msgid "<b>Tags:</b>"
+msgstr "<b>Značky:</b>"
 
-#: DynamicWeb/dynamicweb.py:3170 GraphView/graphview.py:1095
-msgid "Zoom in"
-msgstr "Priblížiť"
+msgid "Copy"
+msgstr "Kopírovať"
 
-#: DynamicWeb/dynamicweb.py:3171 GraphView/graphview.py:1102
-msgid "Zoom out"
-msgstr "Oddialiť"
-
-#: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:968
-msgid "Search"
-msgstr "Hľadať"
-
-#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:4048
 msgid "Set as home person"
 msgstr "Nastaviť ako domácu osobu"
 
-#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4538
-#: GraphView/graphview.py:4584
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Pridávanie značiek k osobe (%s)"
 
-#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4543
-#: GraphView/graphview.py:4595
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Pridávanie značiek k rodine (%s)"
 
-#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
-msgid "Copy"
-msgstr "Kopírovať"
+msgid "Search..."
+msgstr "Hľadať..."
 
-#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1109
-msgid "Zoom to original"
-msgstr "Pôvodné priblíženie"
-
-#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1116
-msgid "Zoom to best fit"
-msgstr "Prispôsobiť priblíženie obsahu"
-
-#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
-#: GraphView/graphview.gpr.py:14
-msgid "Graph View"
-msgstr "Grafický pohľad"
-
-#: GraphView/graphview.py:754
-#, fuzzy
-#| msgid "Show places"
-msgid "Show IDs"
-msgstr "Zobraziť miesta"
-
-#: GraphView/graphview.py:757
-#, fuzzy
-#| msgid "Show animation"
-msgid "Show avatars"
-msgstr "Zobraziť animáciu"
-
-#: GraphView/graphview.py:760 GraphView/graphview.py:3736
-msgid "Highlight the home person"
-msgstr "Zvýrazniť východziu osobu"
-
-#: GraphView/graphview.py:764 GraphView/graphview.py:3744
-msgid "Show full dates"
-msgstr "Zobraziť celé dátumy"
-
-#: GraphView/graphview.py:768 GraphView/graphview.py:3752
-msgid "Show places"
-msgstr "Zobraziť miesta"
-
-#: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "top to bottom"
-msgid "Vertical: Top to Bottom"
-msgstr "zhora nadol"
-
-#: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "bottom to top"
-msgid "Vertical: Bottom to Top"
-msgstr "Zdola nahor"
-
-#: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "left to right"
-msgid "Horizontal: Left to Right"
-msgstr "zľava doprava"
-
-#: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "right to left"
-msgid "Horizontal: Right to Left"
-msgstr "sprava doľava"
-
-#: GraphView/graphview.py:786
-#, fuzzy
-#| msgid "Unknown time direction"
-msgid "Time Direction"
-msgstr "Neznámy časový smer"
-
-#: GraphView/graphview.py:791
-msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr ""
-
-#: GraphView/graphview.py:812
-#, fuzzy
-#| msgid "Person page"
-msgid "Person theme"
-msgstr "Stránka osoby"
-
-#: GraphView/graphview.py:817
-#, fuzzy
-#| msgid "Color of male persons:"
-msgid "Path color to home person"
-msgstr "Farba mužských osôb:"
-
-#: GraphView/graphview.py:821
-msgid "Font:"
-msgstr ""
-
-#: GraphView/graphview.py:835
-msgid "Avatars style"
-msgstr ""
-
-#: GraphView/graphview.py:841
-msgid "PNG files"
-msgstr ""
-
-#: GraphView/graphview.py:846
-msgid "Male avatar:"
-msgstr ""
-
-#: GraphView/graphview.py:847
-msgid "Choose male avatar"
-msgstr ""
-
-#: GraphView/graphview.py:859
-msgid "Female avatar:"
-msgstr ""
-
-#: GraphView/graphview.py:860
-msgid "Choose female avatar"
-msgstr ""
-
-#: GraphView/graphview.py:872
-msgid "Unknown avatar:"
-msgstr ""
-
-#: GraphView/graphview.py:873
-msgid "Choose Unknown avatar"
-msgstr ""
-
-#: GraphView/graphview.py:885
-msgid "Other avatar:"
-msgstr ""
-
-#: GraphView/graphview.py:886
-msgid "Choose Other avatar"
-msgstr ""
-
-#: GraphView/graphview.py:900
-#, fuzzy
-#| msgid "Active person"
-msgid "Active person border size"
-msgstr "Aktívna osoba"
-
-#: GraphView/graphview.py:905
-msgid "Person border size"
-msgstr ""
-
-#: GraphView/graphview.py:908
-msgid "Themes"
-msgstr ""
-
-#: GraphView/graphview.py:921 GraphView/graphview.py:3770
-msgid "Show animation"
-msgstr "Zobraziť animáciu"
-
-#: GraphView/graphview.py:925
-msgid "Animation speed (1..5 and 5 is the slower)"
-msgstr "Rýchlosť animácie (1..5 a 5 je najpomalšia)"
-
-#: GraphView/graphview.py:929
-msgid "Animation count (0..8 use 0 to turn off)"
-msgstr ""
-
-#: GraphView/graphview.py:938
-msgid "Animation"
-msgstr "Animácia"
-
-#: GraphView/graphview.py:952
-msgid "Search in all database"
-msgstr ""
-
-#: GraphView/graphview.py:954
-msgid "Also apply search by all database."
-msgstr ""
-
-#: GraphView/graphview.py:957
-#, fuzzy
-#| msgid "Person page"
-msgid "Show person images"
-msgstr "Stránka osoby"
-
-#: GraphView/graphview.py:960
-msgid "Show persons thumbnails in search result list."
-msgstr ""
-
-#: GraphView/graphview.py:963
-msgid "Show bookmarked first"
-msgstr ""
-
-#: GraphView/graphview.py:966
-msgid "Show bookmarked persons first in search result list."
-msgstr ""
-
-#: GraphView/graphview.py:999
-msgid "Select a dot file name"
-msgstr "Vyberte názov dot súboru"
-
-#: GraphView/graphview.py:1123
-msgid "Go to active person"
-msgstr "Prejsť na aktívnu osobu"
-
-#: GraphView/graphview.py:1128
-msgid "Go to bookmark"
-msgstr "Prejsť na záložku"
-
-#: GraphView/graphview.py:1130
-msgid "Center view on selected bookmark"
-msgstr ""
-
-#: GraphView/graphview.py:1132
-msgid "Bookmarks for current graph"
-msgstr ""
-
-#: GraphView/graphview.py:1133
-#, fuzzy
-#| msgid "Go to bookmark"
-msgid "Other Bookmarks"
-msgstr "Prejsť na záložku"
-
-#: GraphView/graphview.py:1164
-msgid "Ancestor generations"
-msgstr "Generácie predkov"
-
-#: GraphView/graphview.py:1168
-msgid "Descendant generations"
-msgstr "Generácie potomkov"
-
-#: GraphView/graphview.py:1179
-#, fuzzy
-#| msgid "Average years between two generations"
-msgid "Vertical spacing between generations"
-msgstr "Priemerný počet rokov medzi dvomi generáciami"
-
-#: GraphView/graphview.py:1184
-#, fuzzy
-#| msgid "Average years between two generations"
-msgid "Horizontal spacing between generations"
-msgstr "Priemerný počet rokov medzi dvomi generáciami"
-
-#: GraphView/graphview.py:1188
-msgid "Spacings"
-msgstr ""
-
-#: GraphView/graphview.py:1193
-msgid "All connected"
-msgstr ""
-
-#: GraphView/graphview.py:1195
-msgid ""
-"Show all connected persons limited by generation restrictions.\n"
-"Works slow, so don't set large generation values."
-msgstr ""
-
-#: GraphView/graphview.py:1337
-#, fuzzy
-#| msgid "Active person"
-msgid "Add active person"
-msgstr "Aktívna osoba"
-
-#: GraphView/graphview.py:1342
-msgid "Call the bookmark editor"
-msgstr ""
-
-#: GraphView/graphview.py:1399
-msgid ""
-"You don't have any bookmarks yet...\n"
-"Try to add some frequently used persons to speedup navigation."
-msgstr ""
-
-#: GraphView/graphview.py:1407
-msgid "No bookmarks for this graph..."
-msgstr ""
-
-#: GraphView/graphview.py:1412
-#, fuzzy
-#| msgid "Go to bookmark"
-msgid "No other bookmarks..."
-msgstr "Prejsť na záložku"
-
-#: GraphView/graphview.py:1417 GraphView/graphview.py:1419
-#: GraphView/search_widget.py:233 GraphView/search_widget.py:252
-#, python-format
-msgid "found: %s"
-msgstr ""
-
-#: GraphView/graphview.py:1429
-#, python-format
-msgid ""
-"Add active person to bookmarks\n"
-"%s"
-msgstr ""
-
-#: GraphView/graphview.py:1516
-#, python-format
-msgid ""
-"Person <b><i>%s</i></b> is not in the current view.\n"
-"Do you want to set it active and rebuild view?"
-msgstr ""
-
-#: GraphView/graphview.py:1519
-msgid "Change active person?"
-msgstr "Zmeniť aktívnu osobu?"
-
-#: GraphView/graphview.py:2668
-#, python-brace-format
-msgid ""
-"This graph would contain at least {people_count} people, which exceeds the "
-"limit of {people_limit} people. For performance reasons, at least "
-"{people_missing} people won't be shown. You can change this limit in the "
-"view configuration."
-msgstr ""
-
-#: GraphView/graphview.py:2678
-msgid "Incomplete graph"
-msgstr ""
-
-#: GraphView/graphview.py:3047
-msgid "Image on right side"
-msgstr ""
-
-#: GraphView/graphview.py:3068
-msgid "Image on left side"
-msgstr ""
-
-#: GraphView/graphview.py:3399
-msgid "<b>Tags:</b>"
-msgstr "<b>Značky:</b>"
-
-#: GraphView/graphview.py:3779
-#, fuzzy
-#| msgid "Display type"
-msgid "Lines type"
-msgstr "Typ zobrazenia"
-
-#: GraphView/graphview.py:3783
-msgid "Direct"
-msgstr ""
-
-#: GraphView/graphview.py:3791
-msgid "Curves"
-msgstr ""
-
-#: GraphView/graphview.py:3799
-msgid "Ortho"
-msgstr ""
-
-#: GraphView/graphview.py:3875
-#, fuzzy
-#| msgid "No relation to active person"
-msgid "No Events for this person"
-msgstr "Žiaden vzťah k aktívnej osobe"
-
-#: GraphView/graphview.py:3896
-#, fuzzy
-#| msgid "Used for person"
-msgid "Select tags for person"
-msgstr "Použité pre osobu"
-
-#: GraphView/graphview.py:3907
-#, fuzzy
-#| msgid "Used for family"
-msgid "Add new family"
-msgstr "Použité pre rodinu"
-
-#: GraphView/graphview.py:4025
-#, fuzzy
-#| msgid "Add as a Parent"
-msgid "Add parents"
-msgstr "Pridať ako rodiča"
-
-#: GraphView/graphview.py:4051
-#, fuzzy
-#| msgid "Highlight the home person"
-msgid "Show path to home person"
-msgstr "Zvýrazniť východziu osobu"
-
-#: GraphView/graphview.py:4057 GraphView/search_widget.py:286
-#: GraphView/search_widget.py:364
-#, fuzzy
-#| msgid "Go to bookmark"
-msgid "Remove from bookmarks"
-msgstr "Prejsť na záložku"
-
-#: GraphView/graphview.py:4060 GraphView/search_widget.py:294
-#: GraphView/search_widget.py:377
-#, fuzzy
-#| msgid "Go to bookmark"
-msgid "Add to bookmarks"
-msgstr "Prejsť na záložku"
-
-#: GraphView/graphview.py:4161
-#, fuzzy
-#| msgid "Used for family"
-msgid "No Events for this family"
-msgstr "Použité pre rodinu"
-
-#: GraphView/graphview.py:4182
-#, fuzzy
-#| msgid "Used for family"
-msgid "Select tags for family"
-msgstr "Použité pre rodinu"
-
-#: GraphView/graphview.py:4201
-#, fuzzy
-#| msgid "Add Note"
-msgid "Add father"
-msgstr "Pridať poznámku"
-
-#: GraphView/graphview.py:4210
-#, fuzzy
-#| msgid "Add Note"
-msgid "Add mother"
-msgstr "Pridať poznámku"
-
-#: GraphView/graphview.py:4313
-#, fuzzy
-#| msgid "Graph View"
-msgid "About Graph View"
-msgstr "Grafický pohľad"
-
-#: GraphView/graphview.py:4669
-#, python-format
-msgid "Deleting the person [%s] will remove it from the database."
-msgstr ""
-
-#: GraphView/graphview.py:4698
-#, python-format
-msgid "Delete family [%s]?"
-msgstr ""
-
-#: GraphView/graphview.py:4699
-msgid "Deleting the family will remove it from the database."
-msgstr ""
-
-#: GraphView/graphview.py:4710
-#, python-format
-msgid "Delete Family [%s]"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
-msgstr ""
-
-#: GraphView/avatars.py:60
-msgid "Dark (default)"
-msgstr ""
-
-#: GraphView/avatars.py:61
-#, fuzzy
-#| msgid "Height:"
-msgid "Light"
-msgstr "Výška:"
-
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr ""
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/search_widget.py:82
-msgid "Persons from current graph"
-msgstr ""
-
-#: GraphView/search_widget.py:83
-msgid "Other persons from database"
-msgstr ""
-
-#: GraphView/search_widget.py:235
-msgid "No persons found..."
-msgstr ""
-
-#: GraphView/search_widget.py:398
-msgid ""
-"Search people in the current visible graph and database.\n"
-"Use <Ctrl+F> to make search entry active."
-msgstr ""
-
-#: GraphView/search_widget.py:592
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
-
-#: GraphView/search_widget.py:783
-msgid "Partners"
-msgstr ""

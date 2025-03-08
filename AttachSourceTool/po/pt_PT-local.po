@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,68 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: AttachSourceTool/AttachSourceTool.py:70
 msgid "Select filter to restrict people"
 msgstr "Seleccione um filtro para limitar os indivíduos"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: AttachSourceTool/AttachSourceTool.py:157
-msgid "Processing...\n"
-msgstr "A processar...\n"
-
-#: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
 msgstr "Tipo de fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
 msgstr "Nova fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
 msgstr "Fonte existente"
 
-#: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
 msgstr "Seleccione o tipo de fonte a anexar"
 
-#: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
 msgstr "Novo título da fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
 msgstr "Texto da fonte a anexar"
 
-#: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
 msgstr "ID de fonte existente"
 
-#: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
 msgstr "ID de fonte a anexar"
 
-#: AttachSourceTool/AttachSourceTool.py:137
-#: AttachSourceTool/AttachSourceTool.py:155
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
 msgid "Attach Source"
 msgstr "Anexar fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:174
+msgid "Processing...\n"
+msgstr "A processar...\n"
+
 msgid "Attaching sources...\n"
 msgstr "A anexar fontes...\n"
 
-#: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
 msgstr "A anexar fontes..."
 
-#: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Feito!\n"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
 msgstr "Anexa uma fonte partilhada a múltiplos objectos."

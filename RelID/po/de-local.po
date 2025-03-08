@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,77 +12,59 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 RelID/relation_tab.py:126
-msgid "Save"
-msgstr "Speichern"
-
-#: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
 msgstr "Zeigt Beziehungen und Entfernungen zu Hauptperson"
 
-#: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
 msgstr "Zeigt relationale Informationen zur Hauptperson an"
 
-#: RelID/relation_tab.py:75
 msgid "Relation and distances with root"
 msgstr "Beziehung und Entfernungen zur Wurzel"
 
-#: RelID/relation_tab.py:92
 msgid "Folder Chooser"
 msgstr "Ordnerauswahl"
 
-#: RelID/relation_tab.py:97
 msgid "_Select"
 msgstr "_Auswählen"
 
-#: RelID/relation_tab.py:99
 msgid "Please, select a folder"
 msgstr "Bitte wähle einen Ordner"
 
-#: RelID/relation_tab.py:110
 msgid "Rel_id"
 msgstr "Bez_id"
 
-#: RelID/relation_tab.py:111
 msgid "Relation"
 msgstr "Beziehung"
 
-#: RelID/relation_tab.py:113
 msgid "up"
 msgstr "hoch"
 
-#: RelID/relation_tab.py:114
 msgid "down"
 msgstr "runter"
 
-#: RelID/relation_tab.py:115
 msgid "Common MRA"
 msgstr "Gemeinsame MRA"
 
-#: RelID/relation_tab.py:116
 msgid "Rank"
 msgstr "Rang"
 
-#: RelID/relation_tab.py:117
 msgid "Period"
 msgstr "Zeitraum"
 
-#: RelID/relation_tab.py:164
+msgid "Save"
+msgstr "Speichern"
+
 msgid "Please wait, filtering..."
 msgstr "Bitte warten, filtere..."
 
-#: RelID/relation_tab.py:169
 msgid "No default_person"
-msgstr "Keine Standardperson"
+msgstr "Keine Standard_person"
 
-#: RelID/relation_tab.py:174
 msgid "Generating relation map..."
 msgstr "Erstelle Beziehungenkarte..."
 
-#: RelID/relation_tab.py:190
 #, python-format
 msgid ""
 "%d/%d \n"
@@ -114,6 +77,5 @@ msgstr ""
 " %d/%d \n"
 "%f|\t%f"
 
-#: RelID/relation_tab.py:308
 msgid "You do not have write rights on this folder"
 msgstr "Du hast keine Schreibrechte für diesen Ordner"

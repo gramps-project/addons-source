@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,47 +12,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetAttributeTool/SetAttributeTool.py:71
 msgid "Select filter to restrict people"
 msgstr "Seleccione um filtro para limitar os indivíduos"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: SetAttributeTool/SetAttributeTool.py:151
-#: SetAttributeTool/SetAttributeTool.py:193
-msgid "Processing...\n"
-msgstr "A processar...\n"
-
-#: AttachSourceTool/AttachSourceTool.py:197
-#: SetAttributeTool/SetAttributeTool.py:226
-msgid "Done!\n"
-msgstr "Feito!\n"
-
-#: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Tipo de atributo a adicionar/editar"
 
-#: SetAttributeTool/SetAttributeTool.py:84
 msgid "Attribute value to add or edit"
 msgstr "Valor do atributo a adicionar/editar"
 
-#: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
 msgstr "Remover tipo e valor do atributo"
 
-#: SetAttributeTool/SetAttributeTool.py:122
-#: SetAttributeTool/SetAttributeTool.py:150
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
 msgid "Set Attribute"
 msgstr "Definir atributo"
 
-#: SetAttributeTool/SetAttributeTool.py:152
+msgid "Processing...\n"
+msgstr "A processar...\n"
+
 msgid "Setting attributes..."
 msgstr "A definir atributos..."
 
-#: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
 "Setting '%s' attributes to '%s'...\n"
@@ -66,7 +43,6 @@ msgstr ""
 "A definir \"%s\" atributos para \"%s\"...\n"
 "\n"
 
-#: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
 "\n"
@@ -75,15 +51,12 @@ msgstr ""
 "\n"
 "Definir %d atributos \"%s\" para \"%s\"\n"
 
-#: SetAttributeTool/SetAttributeTool.py:191
 msgid "Remove Attribute"
 msgstr "Remover atributo"
 
-#: SetAttributeTool/SetAttributeTool.py:194
 msgid "Removing attributes..."
 msgstr "A remover atributos..."
 
-#: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
 msgid ""
 "\n"
@@ -92,6 +65,8 @@ msgstr ""
 "\n"
 "A remover %d atributos \"%s\" para \"%s\"\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:27
+msgid "Done!\n"
+msgstr "Feito!\n"
+
 msgid "Set an attribute to a given value."
 msgstr "Definir um atributo num dado valor."

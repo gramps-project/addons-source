@@ -1,14 +1,3 @@
-# Brazilian-Portuguese translation for Gramps.
-# Tradução português-brasileiro para o Gramps.
-# Copyright (C) 2002 Free Software Foundation, Inc.
-#
-#
-# Marcos Bedinelli <bedinelli@sourceforge.net>, 2002, 2003, 2004, 2005, 2006.
-# Luiz Gonzaga dos Santos Filho <lfilho@gmail.com>, 2007.
-# lcc <lcc@6zap.com>, 2009.
-# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2011, 2012, 2013, 2014.
-# Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>, 2016, 2017, 2018.
-# Paulo Terezani de Paiva <terezani_ppaiva@yahoo.com.br>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
@@ -24,31 +13,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
-msgid "Theme"
-msgstr "Tema"
-
-#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Tema está codificado por GTK_THEME"
 
-#: Themes/themes.py:180
+msgid "Theme"
+msgstr "Tema"
+
 msgid "Dark Variant"
 msgstr "Variante escura"
 
-#: Themes/themes.py:198
 msgid "Font"
 msgstr "Font"
 
-#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Barra de rolagem clássica (requer reinicialização)"
 
-#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Preferências do tema"
 
-#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."

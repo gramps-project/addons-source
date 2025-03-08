@@ -1,28 +1,9 @@
-# German translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of de.po to Deutsch
-#
-#
-# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
-# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
-# Sebastian Vöcking <voeck@web.de>, 2005.
-# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
-# Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
-# Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Allan Nordhøy <epost@anotheragency.no>, 2021.
-# R. B. <weblate@macdefender.org>, 2021.
-# RiseT <tareiss1971@yahoo.de>, 2021.
-# David Straub <straub@protonmail.com>, 2021.
-# nautilusx <translate@disroot.org>, 2021.
-# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
-# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 00:56+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,81 +12,62 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
 msgstr "PhpGedView"
 
-#: PhpGedView/phpgedview.gpr.py:25
 msgid "Download a GEDCOM file from a phpGedView server."
 msgstr "Lädt eine GEDCOM Datei von einem phpGedView Server."
 
-#: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
 msgid "Fetching index list..."
 msgstr "Hole Indexliste..."
 
-#: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
 msgid "Fetching records..."
 msgstr "Hole Datensätze..."
 
-#: PhpGedView/phpgedviewconnector.py:327
 msgid "Logging in..."
 msgstr "Einloggen..."
 
-#: PhpGedView/phpgedviewconnector.py:330
 msgid "Fetching GEDCOM..."
 msgstr "Hole GEDCOM..."
 
-#: PhpGedView/phpgedviewconnector.py:334
 msgid "Importing GEDCOM..."
 msgstr "Importiere GEDCOM..."
 
-#: PhpGedView/phpgedviewconnector.py:341
 msgid "Error: login failed"
 msgstr "Fehler: Anmeldung fehlgeschlagen"
 
-#: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
 msgid "done."
 msgstr "Fertig."
 
-#: PhpGedView/phpgedviewconnector.py:347
 msgid "Connecting..."
 msgstr "Verbinde..."
 
-#: PhpGedView/phpgedviewconnector.py:349
 msgid "Get version..."
 msgstr "Hole Version..."
 
-#: PhpGedView/phpgedviewconnector.py:352
 #, python-format
 msgid "Version %s"
 msgstr "Version %s"
 
-#: PhpGedView/phpgedviewconnector.py:353
 msgid "Reading file list..."
 msgstr "Lese Dateiliste..."
 
-#: PhpGedView/phpgedviewconnector.py:366
 msgid "Error: Invalid URL"
 msgstr "Fehler: Ungültige URL"
 
-#: PhpGedView/phpgedview.glade:12
 msgid "- default -"
-msgstr "- Standardwert -"
+msgstr "- Standard -"
 
-#: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
 msgid "phpGedView import"
 msgstr "phpGedView importieren"
 
-#: PhpGedView/phpgedview.glade:103
 msgid "http://"
 msgstr "http://"
 
-#: PhpGedView/phpgedview.glade:170
 msgid "Username:"
 msgstr "Benutzername:"
 
-#: PhpGedView/phpgedview.glade:182
 msgid "Password:"
 msgstr "Kennwort:"

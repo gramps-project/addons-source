@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,77 +12,56 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
-#: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
-msgid "Ancestry"
-msgstr "Aner"
-
-#: FamilyTree/FamilyTree.py:1047
-#: TimelinePedigreeView/TimelinePedigreeView.py:1481
-msgid "Ancestor Generations"
-msgstr "Ane generationer"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "Anegenerationer"
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
 msgstr "f."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for died|d."
 msgstr "d."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for baptized|bap."
 msgstr "døbt"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:85
 msgid "short for christened|chr."
 msgstr "døbt"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
 msgstr "begr."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:87
 msgid "short for cremated|crem."
 msgstr "krem."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"
 msgstr "Tidslinje anetræ"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
 msgstr "Orden efter tidslinje"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
 msgstr "Vis livstidsomfang"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1470
-#: TimelinePedigreeView/TimelinePedigreeView.py:1486
+msgid "Descendant Generations"
+msgstr "Anegenerationer"
+
 #, python-format
 msgid "%d generation"
 msgid_plural "%d generations"
 msgstr[0] "%d generation"
 msgstr[1] "%d generationer"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1505
+msgid "Ancestor Generations"
+msgstr "Ane generationer"
+
 msgid "About Timeline Pedigree View"
 msgstr "Om tidslinjeanetræ"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
 msgid "Timeline Pedigree"
 msgstr "Tidslinje anetræ"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
+msgid "Ancestry"
+msgstr "Aner"
+
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
 "selected person"

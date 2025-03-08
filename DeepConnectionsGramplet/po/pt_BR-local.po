@@ -1,19 +1,8 @@
-# Brazilian-Portuguese translation for Gramps.
-# Tradução português-brasileiro para o Gramps.
-# Copyright (C) 2002 Free Software Foundation, Inc.
-#
-#
-# Marcos Bedinelli <bedinelli@sourceforge.net>, 2002, 2003, 2004, 2005, 2006.
-# Luiz Gonzaga dos Santos Filho <lfilho@gmail.com>, 2007.
-# lcc <lcc@6zap.com>, 2009.
-# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2011, 2012, 2013, 2014.
-# Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>, 2016, 2017, 2018.
-# Paulo Terezani de Paiva <terezani_ppaiva@yahoo.com.br>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,56 +13,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: EditExifMetadata/editexifmetadata.py:215
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
-msgid "Copy"
-msgstr "Copiar"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet de relação detalhada"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr ""
 "Gramplet que mostra uma relação detalhada entre a pessoa ativa e a inicial"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr "Relação detalhada"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Pausar"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
-msgid "mentioned in note"
-msgstr ""
+msgid "Copy"
+msgstr "Copiar"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
-msgid "Note on Family"
-msgstr ""
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "irmã(o)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
-msgid "Note on Parent Family"
-msgstr ""
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
 msgid "%s (association)"
 msgstr "%s (associação)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "New person"
-msgid "Note on Person"
-msgstr "Nova pessoa"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
 msgid ""
 "\n"
@@ -82,25 +44,20 @@ msgstr ""
 "\n"
 "   %s de "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "Não foi definida uma pessoa ativa."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
 msgstr "Procurando por parentesco entre\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (Pessoa inicial) e\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Pessoa ativa)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -109,7 +66,6 @@ msgstr ""
 "Parentesco encontrado #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -117,7 +73,6 @@ msgstr ""
 "Pausado.\n"
 "Clique em Continuar para procurar outros parentescos.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
 msgid ""
 "\n"

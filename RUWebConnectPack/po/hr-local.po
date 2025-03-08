@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,52 +13,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: RUWebConnectPack/RUWebPack.gpr.py:11
 msgid "RU Web Connect Pack"
 msgstr "RU Web Connect zbirka"
 
-#: RUWebConnectPack/RUWebPack.gpr.py:12
 msgid "Collection of Web sites for the RU (requires libwebconnect)"
 msgstr "Zbirka web stranica za Rusiju (zahtijeva libwebconnect)"
 
-#: RUWebConnectPack/RUWebPack.py:40
 msgid "OBD \"Memorial\""
 msgstr "OBD „Memorial”"
 
-#: RUWebConnectPack/RUWebPack.py:41
 msgid "People memory"
 msgstr "Memorija ljudi"
 
-#: RUWebConnectPack/RUWebPack.py:42
 msgid "Winners"
 msgstr "Pobjednici"
 
-#: RUWebConnectPack/RUWebPack.py:43
 msgid "Lived"
 msgstr "Živjeli"
 
-#: RUWebConnectPack/RUWebPack.py:44
 msgid "Open list"
 msgstr "Otvori popis"
 
-#: RUWebConnectPack/RUWebPack.py:45
 msgid "Wait for me"
 msgstr "Čekaj na mene"
 
-#: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
 msgstr "Svi ruski rodoslovi (forum)"
 
-#: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
 msgstr "Yandex ljudi"
 
-#: RUWebConnectPack/RUWebPack.py:49
 msgid "RIA Officers"
 msgstr "RIA oficiri"
 
-#: RUWebConnectPack/RUWebPack.py:50
 msgid "FamilySpace"
 msgstr "FamilySpace"

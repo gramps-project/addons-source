@@ -1,15 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 10:31+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,41 +13,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
-msgid "Enter Python expressions"
-msgstr "הזנת ביטוי פייתון"
-
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
 #, python-format
 msgid "%d rows processed in %s seconds.\n"
 msgstr "%d שורות עובדו ב %s שניות.\n"
 
-#: Query/QueryQuickview.py:426
 msgid "Today"
 msgstr "היום"
 
-#: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "גרמפלט שאילתה"
 
-#: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
 msgstr "גרמפלט להרצת שאילתות דמוי-SQL"
 
-#: Query/Query.gpr.py:19
 msgid "Query"
 msgstr "שאילתה"
 
-#: Query/Query.gpr.py:33
 msgid "Query Quickview"
 msgstr "מבט מהיר לשאילתה"
 
-#: Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
 msgstr "מבט מהיר עסור גרמפלט להרצת שאילתות דמוי-SQL"
 
-#: Query/QueryGramplet.py:176
+msgid "Enter Python expressions"
+msgstr "הזנת ביטוי פייתון"
+
 msgid "Enter SQL query"
 msgstr "הזנת שאילתת SQL"

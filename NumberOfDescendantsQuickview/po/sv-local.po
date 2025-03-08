@@ -1,22 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Pär Ekholm <pehlm@pekholm.org>, 2021.
-# Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
-# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
-# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
-# Peter Landgren <peter@test>, 2010.
-# Pär Ekholm <github1@m.pekholm.org>, 2025.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,47 +12,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:115
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
-msgid "Number of descendants"
-msgstr "Antal ättlingar"
-
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-msgid "Generation"
-msgstr "Generation"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
 msgid "Number of %s's descendants"
 msgstr "Antal av %ss ättlingar"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
+msgid "Generation"
+msgstr "Generation"
+
 msgid "Seen"
 msgstr "Sedda"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
 msgid "Outlived"
 msgstr "Överlevda"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
 msgid "Now alive"
 msgstr "Nu levande"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
 msgstr "Sedda = antal ättlingar, vars födelse har inträffat under %s levnad"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
 msgstr "Överlevda = antal ättlingar, vilka avlidit medan %s fortfarande levde"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
+msgid "Number of descendants"
+msgstr "Antal ättlingar"
+
 msgid "Shows the number of descendants of the current person"
 msgstr "Visar antal ättlingar till aktuell person"

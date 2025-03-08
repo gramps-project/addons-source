@@ -1,75 +1,55 @@
-# translation of ca.po to Català
-# TRADUCCIÓ AL CATALÀ DE GRAMPS
-# Copyright (C) 2008 PEL GRUP DE GRAMPS
-# Aquest fitxer es distribueix segons la mateixa llicència que Gramps
-#
-# Joan Creus <joan punt creus a gmail punt com>, 2008.
-# Joan Creus <joan.creus at gmail dot com>, 2008, 2009, 2010, 2011, 2012, 2013.
-# Arnau <arnaullv at gmail dot com>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2010-03-07 17:48+0100\n"
-"Last-Translator: Joan Creus <joan.creus at gmail dot com>\n"
-"Language-Team: Català <en@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EditExifMetadata/editexifmetadata.py:215
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
-msgid "Copy"
-msgstr "Copia"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet de Connexions Profundes"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr ""
 "Gramplet que mostra les relacions profundes entre la persona activa i "
 "familiars"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr "Connexions Profundes"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Pausa"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+msgid "Copy"
+msgstr "Copia"
+
 msgid "mentioned in note"
 msgstr "esmentat a la nota"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
 msgid "Note on Family"
 msgstr "Nota sobre la família"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "germà"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
 msgid "Note on Parent Family"
 msgstr "Nota sobre la familia dels pares"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
 msgid "%s (association)"
 msgstr "%s (associació)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 msgid "Note on Person"
 msgstr "Nota sobre la Persona"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
 msgid ""
 "\n"
@@ -78,25 +58,20 @@ msgstr ""
 "\n"
 "   %s de "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "No s'ha fixat Persona Activa."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
 msgstr "S'està cercant la relació entre\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (Persona activa) i\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Persona activa)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -105,7 +80,6 @@ msgstr ""
 "Trobat parentesc #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -113,7 +87,6 @@ msgstr ""
 "En pausa.\n"
 "Premi Continuar per buscar parentescs addicionals.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
 msgid ""
 "\n"

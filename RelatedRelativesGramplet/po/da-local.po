@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,33 +12,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
 msgid "Relations of related people in your database:"
 msgstr "Slægtskab mellem beslægtede personer i din database:"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
 msgid "are partners and"
 msgstr "er partners og"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
 msgid "Common ancestor"
 msgstr "Fælles ane"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:253
 msgid "No relatives in a relation found"
 msgstr "Ingen beslægtede fundet i slægtsskab"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:254
 msgid "END"
 msgstr "SLUT"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
 msgid "Related Relatives"
 msgstr "Slægtninge Slægtskab"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
 msgid "Gramplet showing relatives in a relation"
 msgstr "Gramplet der viser slægtskabet mellem slægtninge"

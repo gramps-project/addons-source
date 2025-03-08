@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"POT-Creation-Date: 2025-03-08 16:41+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,19 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: MediaReport/media_report.py:106 MediaReport/media_report.py:112
-#: MediaReport/media_report.py:119 MediaReport/media_report.py:125
+msgid "Media Report"
+msgstr "Relatório multimédia"
+
+msgid "Generates report including images, image data and notes."
+msgstr "Gera um relatório incluindo imagens, dados das imagens e notas."
+
 msgid "INFO"
 msgstr "INFORMAÇÃO"
 
-#: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
 msgstr "Tem de seleccionar uma imagem para gerar este relatório."
 
-#: MediaReport/media_report.py:112
 msgid ""
 "You have to select a custom note or uncheck the option 'include custom note' "
 "to generate this report."
@@ -37,80 +33,55 @@ msgstr ""
 "Tem de seleccionar uma nota personalizada ou desmarcar a opção \"Incluir "
 "nota personalizada\" para gerar este relatório."
 
-#: MediaReport/media_report.py:125
 msgid "This report only supports PDF as output file format."
 msgstr "Este relatório só suporta o formato de saída em PDF."
 
-#: MediaReport/media_report.py:229
 msgid "General:"
 msgstr "Geral:"
 
-#: MediaReport/media_report.py:250
 msgid "Image type:"
 msgstr "Tipo de imagem:"
 
-#: MediaReport/media_report.py:426
 msgid "Heading"
 msgstr "Título"
 
-#: MediaReport/media_report.py:430
 msgid "Select a media file for this report"
 msgstr "Seleccionar um ficheiro multimédia para o relatório"
 
-#: MediaReport/media_report.py:433
 msgid "Custom note"
 msgstr "Nota personalizada"
 
-#: MediaReport/media_report.py:434
 msgid "Select a note for this report"
 msgstr "Seleccione uma nota para o relatório"
 
-#: MediaReport/media_report.py:437
 msgid "Include custom note"
 msgstr "Incluir nota personalizada"
 
-#: MediaReport/media_report.py:438
 msgid "The custom note will be included"
 msgstr "A nota personalizada será incluída"
 
-#: MediaReport/media_report.py:442
 msgid "Include referenced people"
 msgstr "Incluir indivíduos referenciados"
 
-#: MediaReport/media_report.py:443
 msgid "Referenced people will be included"
 msgstr "Os indivíduos referenciados serão incluídos"
 
-#: MediaReport/media_report.py:446
 msgid "Include media data"
 msgstr "Incluir dados multimédia"
 
-#: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
 msgstr "Etiquetas, notas e atributos serão incluídos"
 
-#: MediaReport/media_report.py:450
 msgid "Media width"
 msgstr "Largura da imagem"
 
-#: MediaReport/media_report.py:451
-#, python-format
+#, no-python-format
 msgid "Maximum media width in % of available page width."
 msgstr "Largura máxima da imagem em % da largura da página."
 
-#: MediaReport/media_report.py:455
 msgid "Media height"
 msgstr "Altura da imagem"
 
-#: MediaReport/media_report.py:456
 #, python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Altura máxima da imagem em % da altura da página."
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr "Relatório multimédia"
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr "Gera um relatório incluindo imagens, dados das imagens e notas."

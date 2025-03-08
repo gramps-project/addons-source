@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,57 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
 msgstr "Papéis de eventos"
 
-#: TypeCleanup/type_cleanup.py:102
 msgid "Event Types"
 msgstr "Tipos de eventos"
 
-#: TypeCleanup/type_cleanup.py:103
 msgid "Family Relation Types"
 msgstr "Tipos de relações familiares"
 
-#: TypeCleanup/type_cleanup.py:104
 msgid "Child reference Types"
 msgstr "Tipos de referências de filhos"
 
-#: TypeCleanup/type_cleanup.py:105
 msgid "Name Origin Types"
 msgstr "Tipos de origens de nomes"
 
-#: TypeCleanup/type_cleanup.py:106
 msgid "Name Types"
 msgstr "Tipos de nomes"
 
-#: TypeCleanup/type_cleanup.py:107
 msgid "Note Types"
 msgstr "Tipos de notas"
 
-#: TypeCleanup/type_cleanup.py:108
 msgid "Place Types"
 msgstr "Tipos de locais"
 
-#: TypeCleanup/type_cleanup.py:109
 msgid "Repository Types"
 msgstr "Tipos de repositórios"
 
-#: TypeCleanup/type_cleanup.py:111
 msgid "Source Media Types"
 msgstr "Tipos de multimédia das fontes"
 
-#: TypeCleanup/type_cleanup.py:112
 msgid "URL Types"
 msgstr "Tipos de URL"
 
-#: TypeCleanup/type_cleanup.py:124
 msgid "Types Cleanup Tool"
 msgstr "Ferramenta de limpeza de tipos"
 
-#: TypeCleanup/type_cleanup.py:166
 msgid ""
 "Remove the selected type from the db.\n"
 "This does not change any referenced objects."
@@ -75,7 +57,6 @@ msgstr ""
 "Remover o tipo seleccionado da base de dados.\n"
 "Não altera os objectos referenciados."
 
-#: TypeCleanup/type_cleanup.py:174
 msgid ""
 "Select a new name for the current type, prior to renaming the type in the "
 "referenced objects."
@@ -83,32 +64,25 @@ msgstr ""
 "Seleccione um novo nome para o tipo seleccionado antes de o renomear nos "
 "objectos referenciados."
 
-#: TypeCleanup/type_cleanup.py:182
 msgid "Rename"
 msgstr "Renomear"
 
-#: TypeCleanup/type_cleanup.py:185
 msgid "Rename the selected type in all referenced objects."
 msgstr "Renomear o tipo seleccionado em todos os objectos referenciados."
 
-#: TypeCleanup/type_cleanup.py:189
 msgid "Close the Type Cleanup Tool"
 msgstr "Fechar a ferramenta de limpeza de tipos"
 
-#: TypeCleanup/type_cleanup.py:195
 msgid "Types"
 msgstr "Tipos"
 
-#: TypeCleanup/type_cleanup.py:242
 msgid "Type Cleanup Tool"
 msgstr "Ferramenta de limpeza de tipos"
 
-#: TypeCleanup/type_cleanup.py:387
 #, python-format
 msgid "Changing type from %(old_type)s to %(new_type)s."
 msgstr "A alterar tipo de %(old_type)s para %(new_type)s."
 
-#: TypeCleanup/type_cleanup.py:432
 msgid ""
 "Removing this custom type will eliminate it from the type selection drop "
 "down lists\n"
@@ -124,10 +98,8 @@ msgstr ""
 "Contudo, não o removerá dos itens referenciados na base de dados.\n"
 "Se o deseja alterar nos itens referenciados, utilize \"Renomear\"."
 
-#: TypeCleanup/type_cleanup.gpr.py:30
 msgid "Type Cleanup"
 msgstr "Limpeza de tipos"
 
-#: TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
 msgstr "Limpar (remover) tipos personalizados"

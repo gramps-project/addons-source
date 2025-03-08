@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,63 +12,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
-msgid "Today"
-msgstr "Hoje"
-
-#: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
 msgstr "Sogros"
 
-#: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
 msgstr "Avôs"
 
-#: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
 msgstr "Pais dos sogros"
 
-#: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
 msgstr "Bisavôs"
 
-#: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
 msgstr "Avôs dos sogros"
 
-#: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
 msgstr "Avoengos, "
 
-#: TimelineQuickview/TimelineQuickview.py:61
-#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great, "
 msgstr "avoengos, "
 
-#: TimelineQuickview/TimelineQuickview.py:61
-#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great grandparents"
 msgstr "bisavôs"
 
-#: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
 msgstr "Avoengos dos sogros, "
 
-#: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
 msgstr "Cônjuge do companheiro"
 
-#: TimelineQuickview/TimelineQuickview.py:156
 #, python-format
 msgid "Timeline for %s"
 msgstr "Cronologia de %s"
 
-#: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Pessoas envolvidas"
 
-#: TimelineQuickview/TimelineQuickview.gpr.py:11
+msgid "Today"
+msgstr "Hoje"
+
 msgid "Display a person's events on a timeline"
 msgstr "Mostrar os eventos pessoais numa cronologia"

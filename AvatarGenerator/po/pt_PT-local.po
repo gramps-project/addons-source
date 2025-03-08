@@ -1,14 +1,9 @@
-# Addon MediaMerge for Gramps.
-# Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,76 +12,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: AvatarGenerator/AvatarGenerator.py:86
-msgid "Select filter to restrict people"
-msgstr "Seleccione um filtro para limitar os indivíduos"
-
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: AvatarGenerator/AvatarGenerator.py:211
-#: AvatarGenerator/AvatarGenerator.py:219
-#: AvatarGenerator/AvatarGenerator.py:316
-#: AvatarGenerator/AvatarGenerator.py:320
-msgid "INFO"
-msgstr "INFORMAÇÃO"
-
-#: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
 msgstr "Ferramenta de geração de avatar"
 
-#: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
 msgstr "Uma ferramenta para adicionar avatares à sua árvore genealógica"
 
-#: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
 msgstr "modo de imagem única"
 
-#: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
 msgstr "Escolha quantas imagens deseja utilizar."
 
-#: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
 msgstr "Imagem para indivíduos com sexo desconhecido."
 
-#: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
 msgstr "Imagem para homens."
 
-#: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
 msgstr "Imagem para mulheres"
 
-#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Select filter to restrict people"
+msgstr "Seleccione um filtro para limitar os indivíduos"
+
 msgid "Remove images from people"
 msgstr "Remover imagens de indivíduos"
 
-#: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
 msgstr "Remover as imagens seleccionadas."
 
-#: AvatarGenerator/AvatarGenerator.py:134
-#: AvatarGenerator/AvatarGenerator.py:183
-#: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
 msgstr "Gerador de avatar"
 
-#: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
 msgstr "Remover avatares..."
 
-#: AvatarGenerator/AvatarGenerator.py:211
+msgid "INFO"
+msgstr "INFORMAÇÃO"
+
 msgid "No media was removed."
 msgstr "Nenhuma imagem removida."
 
-#: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
 msgstr "{} referências multimédia removidas de {} indivíduos."
 
-#: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -94,19 +66,14 @@ msgstr ""
 "\n"
 "{} HandleError ocorrido, mas foi ignorado."
 
-#: AvatarGenerator/AvatarGenerator.py:263
-#: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
 msgstr "Adicionar avatares..."
 
-#: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
 msgstr "{} avatares adicionados com sucesso."
 
-#: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
 msgstr "Não havia avatar para adicionar. "
 
-#: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
 msgstr "Já havia um para cada indivíduo."

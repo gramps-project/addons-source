@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,96 +13,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
 msgstr "Odaberi filtar za ograničavanje osoba"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
 msgstr "Procijenjeni datumi"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
 msgstr "Izvor koji želiš ukloniti i/ili dodati"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
 msgstr "Ukloni prethodno dodane događaje, zabilješke i izvore"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
 "Ukloni izračunate događaje, zabilješke i izvore; djeluje trenutno nakon "
 "izvršavanja"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
 msgstr "Ne uključuj rođenja"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 msgid "Add birth events without dates"
 msgstr "Uključi rođenja bez datuma"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
 msgstr "Uključi rođenja s datumima"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
 msgstr "Uključi rođenja sa ili bez procijenjenih datuma"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
 msgstr "Ne uključuj smrti"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
 msgstr "Uključi smrti bez datuma"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
 msgstr "Uključi smrti s datumima"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
 msgstr "Uključi smrti sa ili bez procijenjenih datuma"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
 msgstr "Najviša životna dob"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
 msgstr "Najviša moguća životna dob"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Najveća starosna razlika između braće i sestara"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
 msgstr "Prosječni razmak u godinama između dviju generacija"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
 msgid "Estimated Dates"
 msgstr "Procijenjeni datumi"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
 msgstr "Približno (oko)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
 msgstr "Ekstremi (nakon i prije)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
 msgstr "Datumi u događajima sadrže ili ’oko' ili 'prije/nakon’"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
 "events for people that are missing these events.\n"
@@ -147,32 +118,24 @@ msgstr ""
 "Može biti, da ćeš morati pokrenuti alat više puta (bez uklanjanja prijašnjih "
 "događaja), kako bi se dodali svi mogući događaji."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 msgid "Calculate Estimated Dates"
 msgstr "Procijeni datume"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
 msgstr "Odaberi sve"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
 msgstr "Odaberi ništa"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
 msgstr "Uključi/Isključi odabir"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
 msgstr "Dodaj odabrane događaje"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr "Ukloni događaje, zabilješke i izvore, te ponovo odaberi podatke"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
@@ -180,48 +143,37 @@ msgstr ""
 "Zaista želiš ukloniti prethodne događaje, zabilješke i izvore, te ponovno "
 "odabrati podatke?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
 msgstr "Ukloni i ponovo odaberi"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
 msgstr "Ponovo odaberi podatke"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
 msgstr "Zaista želiš ponovo odabrati podatke?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
 msgid "Run Select Again"
 msgstr "Odaberi ponovo"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
 msgstr "Dokaz"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Relative"
 msgstr "Relativno"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
 msgstr "Obrada u tijeku …\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
 msgstr "Uklanjanje prijašnjih procjena … "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Uklanjanje „%s” …"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
 msgstr "gotovo!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 msgid ""
 "Selecting... \n"
 "\n"
@@ -229,72 +181,56 @@ msgstr ""
 "Odabiranje … \n"
 "\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
 msgstr "Uključi rođenja i smrti"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
 msgstr "Uključi rođenja"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
 msgid "Add death event"
 msgstr "Uključi smrti"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
 msgstr "Nema događaja, koji bi se mogli dodati."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
 msgstr "Odabiranje … "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
 msgid "Adding events '%s'..."
 msgstr "Dodavanje događaja „%s” …"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr "Dodano je rođenje na osnovi %(evidence)s iz %(name)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #, python-format
 msgid "Added birth event based on %s"
 msgstr "Dodano je rođenje na osnovi %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
 msgstr "Procijenjeni datum rođenja"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr "Dodana je smrt na osnovi %(evidence)s, od %(person)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
 msgid "Added death event based on %s"
 msgstr "Dodana je smrt na osnovi %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
 msgstr "Procijenjeni datum smrti"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
 msgstr " Završeno! Primjenjivanje …"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
 msgid "Added %d events."
 msgstr "Broj dodanih događaja: %d."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Procijenjeni datum"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Procjenjuje datume rođenja i smrti."

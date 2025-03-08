@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,44 +13,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:82
-#: HtreePedigreeView/HtreePedigreeView.py:93
-msgid "short for born|b."
-msgstr "скорочено для народжений|н."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:83
-#: HtreePedigreeView/HtreePedigreeView.py:94
-msgid "short for died|d."
-msgstr "скорочено для помер|п."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:84
-#: HtreePedigreeView/HtreePedigreeView.py:95
-msgid "short for baptized|bap."
-msgstr "скорочено для охрещений|охр."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:85
-#: HtreePedigreeView/HtreePedigreeView.py:96
-msgid "short for christened|chr."
-msgstr "скорочено для хрещений|хр."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:86
-#: HtreePedigreeView/HtreePedigreeView.py:97
-msgid "short for buried|bur."
-msgstr "скорочено для похований|пох."
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:87
-#: HtreePedigreeView/HtreePedigreeView.py:98
-msgid "short for cremated|crem."
-msgstr "скорочено для кремований|крем."
-
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:34
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:47
 msgid "H-Tree Pedigree"
 msgstr "Педигрі H-дерева (H-Tree Pedigree)"
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:37
 msgid ""
 "The view shows a space-efficient pedigree with ancestors of the selected "
 "person"
@@ -66,10 +25,26 @@ msgstr ""
 "Цей вигляд показує просторово ефективне родовідне дерево з предками обраної "
 "особи"
 
-#: HtreePedigreeView/HtreePedigreeView.py:543
+msgid "short for born|b."
+msgstr "скорочено для народжений|н."
+
+msgid "short for died|d."
+msgstr "скорочено для помер|п."
+
+msgid "short for baptized|bap."
+msgstr "скорочено для охрещений|охр."
+
+msgid "short for christened|chr."
+msgstr "скорочено для хрещений|хр."
+
+msgid "short for buried|bur."
+msgstr "скорочено для похований|пох."
+
+msgid "short for cremated|crem."
+msgstr "скорочено для кремований|крем."
+
 msgid "H-tree Pedigree View"
 msgstr "Вигляд родоводу H-дерева"
 
-#: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
 msgstr "Про H-дерево"

@@ -1,17 +1,9 @@
-# GRAMPS SLOVAK language version
-# Lubo Vasko, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
-# Dominik Sivak <bubakovsky@gmail.com>, 2019.
-# MILAN KUROVSKY, 2023.
-# Lubo Vasko <pgval at inmail dot sk>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
-# Jozef Riha, 2017.
-# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-18 15:33+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,13 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
-msgstr ""
+msgstr "Doplnenie miesta"
 
-#: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
@@ -34,7 +24,6 @@ msgstr ""
 "Poskytuje prehľadávateľný zoznam vybraných miest s možnosťou doplňovať/"
 "triediť/nastaviť atribúty polí."
 
-#: PlaceCompletion/PlaceCompletion.py:95
 msgid ""
 "Place Completion by parsing, file lookup and batch setting of place "
 "attributes"
@@ -42,288 +31,215 @@ msgstr ""
 "Doplnenie miesta triedením, hľadanie súborov a dávkové nastavenie atribútov "
 "miesta"
 
-#: PlaceCompletion/PlaceCompletion.py:258
 msgid "Error in PlaceCompletion.py"
 msgstr "Chyba v PlaceCompletion.py"
 
-#: PlaceCompletion/PlaceCompletion.py:259
 msgid "Non existing group used in get"
-msgstr "Neexistujúce skupina v metóde get"
+msgstr "Použitá neexistujúca skupina v get"
 
-#: PlaceCompletion/PlaceCompletion.py:282
 #, python-format
 msgid "PlaceCompletion is unable to create %s %s"
-msgstr ""
+msgstr "Doplnenie miesta nedokáže vytvoriť %s %s"
 
-#: PlaceCompletion/PlaceCompletion.py:340
 msgid "Places tool"
-msgstr "Nástroj Lokality"
+msgstr "Nástroj Miesta"
 
-#: PlaceCompletion/PlaceCompletion.py:408
 msgid "Missing regex groups in match lat/lon"
-msgstr "Chýbajúce skupiny regex v lat/lon"
+msgstr "Chýbajúce skupiny regex pri párovaní lat/lon"
 
-#: PlaceCompletion/PlaceCompletion.py:409
 #, python-format
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
-msgstr "Regex skupiny %(lat)s a %(lon)s musia byť v lat/lon. Koniec"
+msgstr ""
+"Regex skupiny %(lat)s a %(lon)s musia byť prítomné pri párovaní lat/lon. "
+"Koniec"
 
-#: PlaceCompletion/PlaceCompletion.py:419
 msgid "Non valid regex for match lat/lon"
-msgstr "Neplatné regex pre vyhľadanie lat/lon"
+msgstr "Neplatný regex pre párovanie lat/lon"
 
-#: PlaceCompletion/PlaceCompletion.py:420
 msgid "Non valid regular expression given to find lat/lon. Quiting."
-msgstr "Neplatný regul. výraz zadaný pre hľadanie lat/lon. Koniec."
+msgstr ""
+"Zadaný neplatný regulárny výraz pre nájdenie zemepisnej šírky/dĺžky. Koniec."
 
-#: PlaceCompletion/PlaceCompletion.py:479
 msgid "Finding Places and appropriate changes"
-msgstr "Hľadanie Lokalít a súvisiace zmeny"
+msgstr "Hľadanie miest a vhodné zmeny"
 
-#: PlaceCompletion/PlaceCompletion.py:481
 msgid "Filtering"
-msgstr "Prebieha filtrovanie"
+msgstr "Filtrovanie"
 
-#: PlaceCompletion/PlaceCompletion.py:491
 msgid "Loading lat/lon file in Memory..."
-msgstr "Ukladanie at/lon file do pamäti..."
+msgstr "Ukladanie súboru lat/lon do pamäti..."
 
-#: PlaceCompletion/PlaceCompletion.py:497
 msgid "Examining places"
 msgstr "Overovanie miest"
 
-#: PlaceCompletion/PlaceCompletion.py:685
 msgid "Set Tag"
-msgstr ""
+msgstr "Nastaviť značku"
 
-#: PlaceCompletion/PlaceCompletion.py:687
 msgid "Doing Place changes"
 msgstr "Vykonávanie zmien miesta"
 
-#: PlaceCompletion/PlaceCompletion.py:731
 msgid "No place record was modified."
-msgstr "Žiaden záznam o mieste nebol zmenený."
+msgstr "Žiadny záznam o mieste nebol zmenený."
 
-#: PlaceCompletion/PlaceCompletion.py:733
 msgid "1 place record was modified."
 msgstr "1 záznam o mieste bol zmenený."
 
-#: PlaceCompletion/PlaceCompletion.py:735
 #, python-format
 msgid "%d place records were modified."
 msgstr "záznamy o mieste v počte %d boli zmenené."
 
-#: PlaceCompletion/PlaceCompletion.py:736
 msgid "Change places"
 msgstr "Zmeniť miesta"
 
-#: PlaceCompletion/PlaceCompletion.py:809
 msgid "The selected file is a directory, not a file."
 msgstr "Zvolený je adresár, nie súbor."
 
-#: PlaceCompletion/PlaceCompletion.py:820
 msgid "The file you want to access is not a regular file."
 msgstr "Súbor ktorý chcete otvoriť nie je bežný súbor."
 
-#: PlaceCompletion/PlaceCompletion.py:826
 msgid "The file does not exist."
 msgstr "Súbor neexistuje."
 
-#: PlaceCompletion/PlaceCompletion.py:858
 msgid "Problem reading file"
 msgstr "Chyba pri čítaní súboru"
 
-#: PlaceCompletion/PlaceCompletion.py:970
-#: PlaceCompletion/PlaceCompletion.py:982
 #, python-format
 msgid "invalid lat or lon value, %(lat)s, %(lon)s"
 msgstr "neplatná hodnota lat alebo lon, %(lat)s, %(lon)s"
 
-#: PlaceCompletion/PlaceCompletion.py:1135
 msgid "No lat/lon conversion"
-msgstr "Nijaká konverzia lat/lon"
+msgstr "Žiadna konverzia lat/lon"
 
-#: PlaceCompletion/PlaceCompletion.py:1136
 msgid "All in degree notation"
 msgstr "Všetky zápisy v stupňoch"
 
-#: PlaceCompletion/PlaceCompletion.py:1137
 msgid "All in decimal notation"
 msgstr "Všetky zápisy decimálne"
 
-#: PlaceCompletion/PlaceCompletion.py:1138
 msgid "Correct -50° in 50°S"
-msgstr "Opraviť -50° v 50°S"
+msgstr "Opraviť -50° v 50°J"
 
-#: PlaceCompletion/PlaceCompletion.py:1142
 msgid "No changes"
 msgstr "Žiadne zmeny"
 
-#: PlaceCompletion/PlaceCompletion.py:1143
 msgid "City[, State]"
 msgstr "Mesto[, Štát]"
 
-#: PlaceCompletion/PlaceCompletion.py:1145
 msgid "City,PostalCode,Country"
-msgstr ""
+msgstr "Mesto,Poštové smerovacie číslo,Krajina"
 
-#: PlaceCompletion/PlaceCompletion.py:1147
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
-msgstr ""
+msgstr "Mesto[(Ulica;Lokalita; Farnosť)], Poštové smerovacie číslo,Krajina"
 
-#: PlaceCompletion/PlaceCompletion.py:1149
 msgid "TitleStart [, City] [, State]"
 msgstr "ZačiatokNázvu [, Mesto] [, Štát]"
 
-#: PlaceCompletion/PlaceCompletion.py:1151
-#, fuzzy
-#| msgid "TitleStart [, City] [, State]"
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
-msgstr "ZačiatokNázvu [, Mesto] [, Štát]"
+msgstr "ZačiatokNázvu [, Mesto] [, Okres] [, Štát] [, Krajina]"
 
-#: PlaceCompletion/PlaceCompletion.py:1153
-#, fuzzy
-#| msgid "TitleStart [, City] [, State]"
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
-msgstr "ZačiatokNázvu [, Mesto] [, Štát]"
+msgstr "ZačiatokNázvu [, Mesto] [, PSČ] [, Okres] [, Štát] [, Krajina]"
 
-#: PlaceCompletion/PlaceCompletion.py:1177
 msgid "Don't search"
-msgstr "Nehľadať"
+msgstr "Nevyhľadávať"
 
-#: PlaceCompletion/PlaceCompletion.py:1180
 msgid "GeoNames country file, city search"
-msgstr "Súbor GeoNames krajina, hľadanie mesta"
+msgstr "Súbor krajín GeoNames, vyhľadávanie mesta"
 
-#: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city localized variants search"
-msgstr "Súbor GeoNames krajina, varianty hľadania mesta"
+msgstr "Súbor krajín GeoNames, vyhľadávanie lokalizovaných variantov mesta"
 
-#: PlaceCompletion/PlaceCompletion.py:1190
-#, fuzzy
-#| msgid "GeoNames country file, city search"
 msgid "GeoNames country file, county/city search"
-msgstr "Súbor GeoNames krajina, hľadanie mesta"
+msgstr "Súbor krajín GeoNames, vyhľadávanie okresu/mesta"
 
-#: PlaceCompletion/PlaceCompletion.py:1202
 msgid "GeoNames country file, title begin, general search"
-msgstr "Súbor GeoNames krajina, začiatok názvu, celkové prehľadávanie"
+msgstr "Súbor krajín GeoNames, začiatok názvu, globálne vyhľadávanie"
 
-#: PlaceCompletion/PlaceCompletion.py:1207
 msgid "GeoNames USA state file, city search"
-msgstr "GeoNames USA súbor štát, hľadanie mesta"
+msgstr "Súbor štátov USA GeoNames, vyhľadávanie mesta"
 
-#: PlaceCompletion/PlaceCompletion.py:1221
 msgid "GNS Geonet country file, city search"
-msgstr "GNS Geonet, súbor krajina, hľadanie mesta"
+msgstr "Súbor krajín GNS Geonet, vyhľadávanie mesta"
 
-#: PlaceCompletion/PlaceCompletion.py:1228
-#, fuzzy
-#| msgid "GNS Geonet country file, city search"
 msgid "GNS Geonet country file, county/city search"
-msgstr "GNS Geonet, súbor krajina, hľadanie mesta"
+msgstr "Súbor krajín GNS Geonet, vyhľadávanie okresu/mesta"
 
-#: PlaceCompletion/PlaceCompletion.py:1236
 msgid "GNS Geonet country file, title begin, general search"
-msgstr "GNS Geonet, súbor krajina, začiatok názvu, celkové prehľadávanie"
+msgstr "Súbor krajín GNS Geonet, začiatok názvu, globálne vyhľadávanie"
 
-#: PlaceCompletion/PlaceCompletion.py:1244
 msgid "Wikipedia CSV Dump"
-msgstr "Wikipedia CSV"
+msgstr "Výňatok z Wikipedie v CSV"
 
-#: PlaceCompletion/PlaceCompletion.py:1332
 msgid "All Places"
-msgstr "Všetky lokality"
+msgstr "Všetky miesta"
 
-#: PlaceCompletion/PlaceCompletion.py:1335
 msgid "No Latitude/Longitude given"
-msgstr "Nie je udaná zem.šírka alebo dĺžka"
+msgstr "Nebola zadaná zemepisná šírka/dĺžka"
 
-#: PlaceCompletion/placecompletion.glade:85
 msgid "_Google Maps"
-msgstr "Mapy Google"
+msgstr "_Mapy Google"
 
-#: PlaceCompletion/placecompletion.glade:112
 msgid "Apply all suggested changes"
-msgstr ""
+msgstr "Použiť všetky navrhnuté zmeny"
 
-#: PlaceCompletion/placecompletion.glade:148
 msgid "Selection of the Places you want to complete:"
-msgstr ""
+msgstr "Výber miest, ktoré chcete doplniť:"
 
-#: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
 msgstr "Farnosť:"
 
-#: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
-msgstr ""
+msgstr "Miesto _filter:"
 
-#: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
 msgstr "Krajina:"
 
-#: PlaceCompletion/placecompletion.glade:366
-msgid "C_enter latitude:"
-msgstr ""
-
-#: PlaceCompletion/placecompletion.glade:383
-msgid "Center longitude:"
-msgstr ""
-
-#: PlaceCompletion/placecompletion.glade:430
-msgid "Places in a rectangle:"
-msgstr ""
-
-#: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"
 msgstr "Výška:"
 
-#: PlaceCompletion/placecompletion.glade:527
 msgid "1. Look up latitude and longitude:"
-msgstr ""
+msgstr "1. Vyhľadať zemepisnú šírku a dĺžku:"
 
-#: PlaceCompletion/placecompletion.glade:554
 msgid "Search in:"
-msgstr ""
+msgstr "Vyhľadať v:"
 
-#: PlaceCompletion/placecompletion.glade:566
 msgid "Select A File"
-msgstr "Zvoliť súbor"
+msgstr "Výber súboru"
 
-#: PlaceCompletion/placecompletion.glade:579
 msgid "Parse as:"
-msgstr ""
+msgstr "Analyzovať ako:"
 
-#: PlaceCompletion/placecompletion.glade:619
 msgid "2. Conversion of existing title or position:"
-msgstr ""
+msgstr "Konverzia existujúceho názvu alebo polohy:"
 
-#: PlaceCompletion/placecompletion.glade:649
 msgid "Change title into:"
-msgstr ""
+msgstr "Zmeniť názov na:"
 
-#: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
-msgstr ""
+msgstr "Konvertovať zem. šírku/dĺžku ako:"
 
-#: PlaceCompletion/placecompletion.glade:701
 msgid ""
 "Or define a simple\n"
 "title format:"
 msgstr ""
+"Alebo definovať jednoduchý\n"
+"formát názvu:"
 
-#: PlaceCompletion/placecompletion.glade:730
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
 msgstr ""
+"Dostupné premenné: mesto, ulica, lokalita, farnosť, okres, štát, krajina, "
+"poštové smerovacie číslo"
 
-#: PlaceCompletion/placecompletion.glade:820
 msgid ""
 "Delete to delete a row, Double-click on the row to edit place with changes "
 "pre-entered, \n"
 "Press Tab on a row or Google Maps button to see place on a map. Press Apply "
 "to do all changes automatically"
 msgstr ""
+"Pre zmazanie riadku stlačte Vymazať, dvojitým kliknutím na riadok upravíte "
+"miesto s predvyplnenými zmenami,\n"
+"Stlačením tabelátora na riadku alebo tlačidla Mapy Google zobrazíte miesto "
+"na mape. Stlačením Použiť vykonáte všetky zmeny automaticky"

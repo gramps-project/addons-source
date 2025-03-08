@@ -1,18 +1,3 @@
-# Russian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
-# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
-# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
-# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# vantu5z <vantu5z@mail.ru>, 2020.
-# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
-# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
@@ -31,62 +16,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: EditExifMetadata/editexifmetadata.py:215
-#: DateCalculator/DateCalculator.py:107
-msgid "Copy"
-msgstr "Копировать"
-
-#: DateCalculator/DateCalculator.py:86
-msgid "Reference Date or Date Range"
-msgstr ""
-
-#: DateCalculator/DateCalculator.py:86
-#, fuzzy
-#| msgid " by Gramps "
-msgid "a valid Gramps date"
-msgstr " Gramps "
-
-#: DateCalculator/DateCalculator.py:90
-msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
-
-#: DateCalculator/DateCalculator.py:92
-msgid ""
-"1. a Date\n"
-"2. a positive or negative number, representing years\n"
-"3. a positive or negative list of values, representing years, months, days"
-msgstr ""
-
-#: DateCalculator/DateCalculator.py:96
 msgid "Result"
 msgstr "Результат"
 
-#: DateCalculator/DateCalculator.py:104
 msgid "Calculate"
 msgstr "Вычислить"
 
-#: DateCalculator/DateCalculator.py:159
-msgid "Error: invalid date for first expression"
-msgstr ""
+msgid "Copy"
+msgstr "Копировать"
 
-#: DateCalculator/DateCalculator.py:169
-msgid "Error: invalid offset for second expression"
-msgstr ""
-
-#: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
-#: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
 msgid "Error: at least one expression must be a date"
 msgstr "Ошибка: хотябы одно выражение должно быть датой"
 
-#: DateCalculator/DateCalculator.py:223
-msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
-
-#: DateCalculator/DateCalculator.gpr.py:22
-#: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
 msgstr "Калькулятор дат"
-
-#: DateCalculator/DateCalculator.gpr.py:23
-msgid "Perform date math calculations"
-msgstr ""

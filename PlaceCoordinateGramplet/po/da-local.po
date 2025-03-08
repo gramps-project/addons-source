@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,106 +12,78 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
 msgstr "Stedet blev ikke fundet. Du kan afklare nøgleord til søgningen."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
 msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr "Kunne ikke søge efter koordinaterne grundet en uventet fejl."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
 msgid "The place was not found."
 msgstr "Stedet blev ikke fundet."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
 msgid "The place was not identified."
 msgstr "Stedet blev ikke identificeret."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
 msgid "Coordinates were not given."
 msgstr "Koordinater blev ikke angivet."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
 msgid "Failed to interpret the input format."
 msgstr "Fejl ved fortolkning af indtastningsformatet."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
 msgstr "DB indtastning [{id}] {name}:"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
-#: PlaceCoordinateGramplet/placecoordinate.glade:132
 msgid "Nothing has been searched yet"
 msgstr "Intet er søgt efter endnu"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr "Intet sted er aktivt"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
 msgstr "Sted koordinat Gramplet visning"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
 msgid "View for the place coordinate gramplet."
 msgstr "Visning for sted koordinat gramplet."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
 msgid "Place and Coordinates"
 msgstr "Sted og koorsinater"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr "Gramplet der gør det enklere at sætte et steds koordinater"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
 msgid "Place Coordinates"
 msgstr "Stedkoordinater"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
 msgid "Place Coordinate Gramplet"
 msgstr "Sted koordinat Gramplet"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
 msgstr "Kort menu"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
 msgid "Add city as place"
 msgstr "Tilføj by som sted"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
 msgid "Add addess as place"
 msgstr "Tilføj adresse som sted"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"
 msgstr "Søg efter:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:26
 msgid "Found place:"
 msgstr "Fandt sted:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:53
 msgid "No DB entry is selected"
 msgstr "Ingen DB er valgt"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
 msgstr "Postnummer:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:116
 msgid "Show found place externally in Google Maps"
 msgstr "Vis de fundne steder eksternt på Google Maps"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:203
 msgid ""
 "Take last clicked position\n"
 "from Geography map"
@@ -126,18 +91,14 @@ msgstr ""
 "Tag den senest klikkede position\n"
 "fra Geography map"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:218
 msgid "Search location from DB"
 msgstr "Søg efter lokation i DB"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:232
 msgid "Apply geo location to Database"
 msgstr "Anvend geo lokation til database"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:269
 msgid "Go"
 msgstr "Udfør"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
 msgstr "Vis hjælp"

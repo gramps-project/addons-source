@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,59 +13,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
 msgstr "Kromosom "
 
-#: DNA/dnasegmentmap.py:552
 msgid " Map for "
 msgstr " Karta za "
 
-#: DNA/dnasegmentmap.py:634
 msgid "Chr"
 msgstr "Kromosom"
 
-#: DNA/dnasegmentmap.py:759
 msgid "Legend"
 msgstr "Legenda"
 
-#: DNA/dnasegmentmap.py:761
 msgid ": Grandparent"
 msgstr ": Djed/baka"
 
-#: DNA/dnasegmentmap.py:1056
-#, python-brace-format
-msgid ""
-"\n"
-"{0}\n"
-"{1} cMs"
-msgstr ""
-
-#: DNA/dnasegmentmap.py:1060
-msgid " SNPs"
-msgstr ""
-
-#: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
 msgstr " : Počinje "
 
-#: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
 msgstr " i završava "
 
-#: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
 msgstr "{0}"
 
-#: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr "%(ancestor1)s i %(ancestor2)s"
 
-#: DNA/dnasegmentmap.py:1090
 #, python-brace-format
 msgid ""
 "\n"
@@ -81,12 +52,10 @@ msgstr ""
 "\n"
 "Srodstvo: {0} "
 
-#: DNA/dnasegmentmap.py:1091
 #, python-brace-format
 msgid " Ancestor: {0}"
 msgstr " Predak: {0}"
 
-#: DNA/dnasegmentmap.py:1115
 msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
@@ -94,10 +63,8 @@ msgstr ""
 "Pritisni za potavljanje ove osobe aktivnom\n"
 "Pritisni desni gumb miša za uređivanje ove osobe"
 
-#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
 msgstr "Karta DNA segmenata"
 
-#: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
 msgstr "Gramplet za prikaz karte poklapajućih DNA segmenata"

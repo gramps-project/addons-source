@@ -1,18 +1,10 @@
-# Ukrainian translation for MediaMerge
-# This file is distributed under the same license as the Gramps package.
-#
-# Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# Oleh Petriv, 2013.
-# Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
-# Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 07:21+0000\n"
-"Last-Translator: Illia Maier <Illia-M@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -21,99 +13,78 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
-#: GrampsWebSync/grampswebsync.py:210
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
 
-#: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Синхронізує локальну базу даних з Gramps Web."
 
-#: GrampsWebSync/grampswebsync.py:264
 msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
+"Ваш користувач не має достатніх прав на сервері для використання "
+"синхронізації."
 
-#: GrampsWebSync/grampswebsync.py:268
 msgid "Fetching remote data..."
 msgstr "Отримання віддалених даних..."
 
-#: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
 msgstr "Несподівана помилка під час застосування змін."
 
-#: GrampsWebSync/grampswebsync.py:322
 msgid "Media files are in sync."
 msgstr "Медіафайли синхронізовані."
 
-#: GrampsWebSync/grampswebsync.py:331
 #, python-format
 msgid "Successfully downloaded %s media files."
 msgstr "Успішно завантажено %s медіафайлів."
 
-#: GrampsWebSync/grampswebsync.py:334
 #, python-format
 msgid "Encountered %s errors during download."
 msgstr "Виявлено %s помилок під час завантаження."
 
-#: GrampsWebSync/grampswebsync.py:340
 #, python-format
 msgid "Successfully uploaded %s media files."
 msgstr "Успішно завантажено %s медіафайлів."
 
-#: GrampsWebSync/grampswebsync.py:343
 #, python-format
 msgid "Encountered %s errors during upload."
 msgstr "Виявлено %s помилок під час завантаження."
 
-#: GrampsWebSync/grampswebsync.py:389 GrampsWebSync/grampswebsync.py:410
 msgid "Error accessing media object."
 msgstr "Помилка доступу до медіаобʼєкта."
 
-#: GrampsWebSync/grampswebsync.py:451
 msgid "Failed importing downloaded XML file."
-msgstr ""
+msgstr "Не вдалося імпортувати завантажений XML-файл."
 
-#: GrampsWebSync/grampswebsync.py:457
 msgid "Comparing local and remote data..."
 msgstr "Порівняння локальних та віддалених даних..."
 
-#: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
 msgstr "Помилка авторизації на сервері."
 
-#: GrampsWebSync/grampswebsync.py:492
 msgid "Server authorization error: insufficient permissions."
 msgstr "Помилка авторизації на сервері: недостатньо прав."
 
-#: GrampsWebSync/grampswebsync.py:495
 msgid "Error: URL not found."
 msgstr "Помилка: URL не знайдено."
 
-#: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr "Не вдалося синхронізувати зміни з сервером: обʼєкти було змінено."
 
-#: GrampsWebSync/grampswebsync.py:503
 #, python-format
 msgid "Error %s while connecting to server."
 msgstr "Помилка %s під час підключення до сервера."
 
-#: GrampsWebSync/grampswebsync.py:506
 msgid "URL error while connecting to server."
-msgstr ""
+msgstr "Помилка URL під час підключення до сервера."
 
-#: GrampsWebSync/grampswebsync.py:509
 msgid "Error while parsing response from server."
 msgstr "Помилка під час розбору(парсингу) відповіді від сервера."
 
-#: GrampsWebSync/grampswebsync.py:537
 msgid "Continue without transport encryption?"
 msgstr "Продовжити без транспортного шифрування?"
 
-#: GrampsWebSync/grampswebsync.py:539
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
@@ -121,15 +92,12 @@ msgstr ""
 "Ви вказали URL зі схемою http. Якщо ви продовжите, ваш пароль буде надіслано "
 "незашифрованим через мережу. Використовуйте тільки для локального тестування!"
 
-#: GrampsWebSync/grampswebsync.py:544
 msgid "Continue with HTTP"
 msgstr "Продовжити з HTTP"
 
-#: GrampsWebSync/grampswebsync.py:545
 msgid "Use HTTPS"
 msgstr "Використати HTTPS"
 
-#: GrampsWebSync/grampswebsync.py:663
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -157,85 +125,64 @@ msgstr ""
 "Якщо ви хочете об'єднати дві значно різні бази з можливістю ручних змін, "
 "використовуйте інструмент Import Merge Tool."
 
-#: GrampsWebSync/grampswebsync.py:690
 msgid "Server URL: "
 msgstr "URL сервера: "
 
-#: GrampsWebSync/grampswebsync.py:774
 msgid "Bidirectional Synchronization"
-msgstr ""
+msgstr "Двостороння синхронізація"
 
-#: GrampsWebSync/grampswebsync.py:783
 msgid "Reset remote to local"
-msgstr ""
+msgstr "Скинути віддалені дані до локальних"
 
-#: GrampsWebSync/grampswebsync.py:791
 msgid "Reset local to remote"
-msgstr ""
+msgstr "Скинути локальні дані до віддалених"
 
-#: GrampsWebSync/grampswebsync.py:799
 msgid "Merge"
-msgstr ""
+msgstr "Об'єднати"
 
-#: GrampsWebSync/grampswebsync.py:824
 msgid "Local changes"
 msgstr "Локальні зміни"
 
-#: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
-#: GrampsWebSync/grampswebsync.py:834
 msgid "Modified"
 msgstr "Змінено"
 
-#: GrampsWebSync/grampswebsync.py:829
 msgid "Remote changes"
 msgstr "Віддалені зміни"
 
-#: GrampsWebSync/grampswebsync.py:834
 msgid "Simultaneous changes"
 msgstr "Одночасно змінено"
 
-#: GrampsWebSync/grampswebsync.py:891
 msgid "Fetching information about media files..."
-msgstr ""
+msgstr "Отримання інформації про медіафайли..."
 
-#: GrampsWebSync/grampswebsync.py:912
 msgid "Both trees are the same."
 msgstr "Обидва дерева однакові."
 
-#: GrampsWebSync/grampswebsync.py:918
 msgid "Applying changes to local database ..."
-msgstr ""
+msgstr "Застосування змін до локальної бази даних ..."
 
-#: GrampsWebSync/grampswebsync.py:920
 msgid "No changes to apply to local database."
-msgstr ""
+msgstr "Немає змін для застосування до локальної бази даних."
 
-#: GrampsWebSync/grampswebsync.py:923
 msgid "Applying changes to remote database ..."
-msgstr ""
+msgstr "Застосування змін до віддаленої бази даних ..."
 
-#: GrampsWebSync/grampswebsync.py:926
 msgid "No changes to apply to remote database."
-msgstr ""
+msgstr "Немає змін для застосування до віддаленої бази даних."
 
-#: GrampsWebSync/grampswebsync.py:933
 msgid "Successfully applied changes to local database."
-msgstr ""
+msgstr "Зміни успішно застосовані до локальної бази даних."
 
-#: GrampsWebSync/grampswebsync.py:962
 msgid "Missing locally"
 msgstr "Відсутнє локально"
 
-#: GrampsWebSync/grampswebsync.py:965
 msgid "Missing remotely"
 msgstr "Відсутнє віддалено"
 
-#: GrampsWebSync/grampswebsync.py:1003
 #, python-format
 msgid "Downloading %s media file(s)"
 msgstr "Завантаження %s медіафайлу(ів)"
 
-#: GrampsWebSync/grampswebsync.py:1011
 #, python-format
 msgid "Uploading %s media file(s)"
 msgstr "Завантаження %s медіафайлу(ів)"

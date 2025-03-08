@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,13 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
 msgstr "Sorter børn i fødselorden"
 
-#: BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -36,39 +27,30 @@ msgstr ""
 "godkende individuelle forslag til at rette fødselsordenen manuelt, godkende "
 "alle familier, der har børn med korrekte fødseldatoer, eller godkende alt."
 
-#: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
 msgstr "Ingen familier har brug for sortering"
 
-#: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
 msgstr "Alle børn var i fødselsorden."
 
-#: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Ret Familier"
 
-#: BirthOrder/birthorder.py:275
 msgid "Looking for children birth order"
 msgstr "Søger efter børn i fødselsorden"
 
-#: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Vælg familien som du vil undersøge."
 
-#: BirthOrder/birthorder.glade:155
 msgid "Accept All"
 msgstr "Godkend alt"
 
-#: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
 msgstr "Denne knap vil sortere alle viste familier."
 
-#: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
 msgstr "Godkend Alt *"
 
-#: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
@@ -76,11 +58,9 @@ msgstr ""
 "Denne knap vil sortere all familier med '*'. I disse familier, har alle "
 "børnene gyldige datoer, så sorteringen er entydig."
 
-#: BirthOrder/birthorder.glade:185
 msgid "Accept"
 msgstr "Godkend"
 
-#: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
@@ -88,23 +68,18 @@ msgstr ""
 "Denne knap vil kun godkende den valgte familie og gemme dem som vist i "
 "nederste højre felt."
 
-#: BirthOrder/birthorder.glade:232
 msgid "Done"
 msgstr "Udført"
 
-#: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
 msgstr "Denne knap vil afslutte, med de resterende familier urørt."
 
-#: BirthOrder/birthorder.glade:256
 msgid "Current sort"
 msgstr "Nuværende sortering"
 
-#: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
 msgstr "Foreslået sortering"
 
-#: BirthOrder/birthorder.glade:333
 msgid ""
 "When satisfied with the sort, use 'Accept' button below to accept the "
 "changes.  If you wish to adjust the order, select the child you wish to "

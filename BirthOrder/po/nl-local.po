@@ -1,19 +1,9 @@
-# Dutch translation of addon MediaMerge.
-# Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the MediaMerge package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
-# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
-# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-17 19:34+0000\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,13 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
 msgstr "Sorteer kinderen op volgorde van geboorte"
 
-#: BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -40,39 +28,30 @@ msgstr ""
 "geboortevolgorde te corrigeren of te bewerken, alle gezinnen waarvan alle "
 "kinderen de juiste geboortedatums hebben accepteren, of alles accepteren."
 
-#: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
 msgstr "Er hoeven geen families gesorteerd te worden"
 
-#: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
 msgstr "Er zijn geen kinderen buiten de geboortevolgorde."
 
-#: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Families bewerken"
 
-#: BirthOrder/birthorder.py:275
 msgid "Looking for children birth order"
 msgstr "Op zoek naar de geboortevolgorde van kinderen"
 
-#: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Selecteer de familie die u wilt onderzoeken."
 
-#: BirthOrder/birthorder.glade:155
 msgid "Accept All"
 msgstr "Accepteer alles"
 
-#: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
 msgstr "Deze knop sorteert alle vermelde families."
 
-#: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
 msgstr "Accepteer alle *"
 
-#: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
@@ -80,11 +59,9 @@ msgstr ""
 "Deze knop sorteert alle families met '*'. In deze families hebben alle "
 "kinderen geldige datums, daarom is de sortering niet problematisch."
 
-#: BirthOrder/birthorder.glade:185
 msgid "Accept"
 msgstr "Accepteren"
 
-#: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
@@ -92,24 +69,19 @@ msgstr ""
 "Deze knop accepteert alleen de geselecteerde familie en slaat deze op zoals "
 "weergegeven in het rechterdeelvenster."
 
-#: BirthOrder/birthorder.glade:232
 msgid "Done"
 msgstr "Voltooid"
 
-#: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
 msgstr ""
 "Met deze knop wordt afgesloten en de resterende gezinnen blijven ongewijzigd."
 
-#: BirthOrder/birthorder.glade:256
 msgid "Current sort"
 msgstr "Huidige sortering"
 
-#: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
 msgstr "Voorgestelde sortering"
 
-#: BirthOrder/birthorder.glade:333
 msgid ""
 "When satisfied with the sort, use 'Accept' button below to accept the "
 "changes.  If you wish to adjust the order, select the child you wish to "

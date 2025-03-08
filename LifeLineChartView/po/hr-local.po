@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,589 +13,174 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: DynamicWeb/dynamicweb.py:3170 LifeLineChartView/lifelinechartview.py:508
-msgid "Zoom in"
-msgstr "Uvećaj"
-
-#: DynamicWeb/dynamicweb.py:3171 LifeLineChartView/lifelinechartview.py:518
-msgid "Zoom out"
-msgstr "Umanji"
-
-#: DynamicWeb/dynamicweb.py:5098
-#: LifeLineChartView/_dummy_translation_string_po.py:101
-msgid "Maximum number of generations"
-msgstr "Najveći broj generacija"
-
-#: LifeLineChartView/lifelinechart.py:75
-msgid ""
-"LifeLineChartView dependencies are missing. It is not possible to use this "
-"plugin without them."
-msgstr ""
-
-#: LifeLineChartView/lifelinechart.py:1183
-#, python-brace-format
-msgid "cursor position at {date}"
-msgstr ""
-
-#: LifeLineChartView/lifelinechart.py:2591
 msgid "Hide person"
 msgstr "Sakrij osobu"
 
-#: LifeLineChartView/lifelinechart.py:2597
 msgid "Show person"
 msgstr "Prikaži osobu"
 
-#: LifeLineChartView/lifelinechart.py:2622
 msgid "Show siblings"
 msgstr "Prikaži braću/sestre"
 
-#: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
 msgstr "Sakrij braću/sestre"
 
-#: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
 msgstr "Prikaži pretke iznad "
 
-#: LifeLineChartView/lifelinechartview.py:386
-#: LifeLineChartView/lifelinechartview.py:883
 msgid "General Layout"
 msgstr "Opći raspored"
 
-#: LifeLineChartView/lifelinechartview.py:399
-#: LifeLineChartView/lifelinechartview.gpr.py:34
-#: LifeLineChartView/lifelinechartview.gpr.py:52
 msgid "Life Line Chart"
 msgstr "Linijski dijagram života"
 
-#: LifeLineChartView/lifelinechartview.py:509
-#: LifeLineChartView/lifelinechartview.py:510
-#: LifeLineChartView/lifelinechartview.py:519
-#: LifeLineChartView/lifelinechartview.py:520
+msgid "Zoom in"
+msgstr "Uvećaj"
+
 msgid "Ctrl"
 msgstr "Ctrl"
 
-#: LifeLineChartView/lifelinechartview.py:510
-#: LifeLineChartView/lifelinechartview.py:520
 msgid "Mouse wheel"
 msgstr "Kotačić miša"
 
-#: LifeLineChartView/lifelinechartview.py:527
+msgid "Zoom out"
+msgstr "Umanji"
+
 msgid "Zoom to original"
 msgstr "Zumiraj na originalnu veličinu"
 
-#: LifeLineChartView/lifelinechartview.py:534
 msgid "Zoom to best fit"
 msgstr "Zumiraj za najbolji prikaz"
 
-#: LifeLineChartView/lifelinechartview.py:541
 msgid "Rebuild data cache"
 msgstr "Ponovo izgradi predmemoriju"
 
-#: LifeLineChartView/lifelinechartview.py:548
 msgid "Revert the placement and person selection"
 msgstr "Preokreni odabir smještaja i osobe"
 
-#: LifeLineChartView/lifelinechartview.py:564
 msgid "Open Life Line Chart help"
 msgstr "Otvori pomoć za linijski dijagram života"
 
-#: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
 msgstr "Izvezi prikaz kao SVG"
 
-#: LifeLineChartView/lifelinechartview.py:884
-#: LifeLineChartView/_dummy_translation_string_po.py:29
-#: LifeLineChartView/_dummy_translation_string_po.py:32
-#: LifeLineChartView/_dummy_translation_string_po.py:35
-#: LifeLineChartView/_dummy_translation_string_po.py:38
-#: LifeLineChartView/_dummy_translation_string_po.py:41
-#: LifeLineChartView/_dummy_translation_string_po.py:47
-#: LifeLineChartView/_dummy_translation_string_po.py:52
-#: LifeLineChartView/_dummy_translation_string_po.py:55
-#: LifeLineChartView/_dummy_translation_string_po.py:58
-#: LifeLineChartView/_dummy_translation_string_po.py:61
-#: LifeLineChartView/_dummy_translation_string_po.py:67
-#: LifeLineChartView/_dummy_translation_string_po.py:74
-#: LifeLineChartView/_dummy_translation_string_po.py:77
 msgid "Label Configuration"
 msgstr "Konfiguracija etiketa"
 
-#: LifeLineChartView/lifelinechartview.py:946
 msgid "Reset all settings"
 msgstr "Resetiraj sve postavke"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"
 msgstr "Linijski dijagram života predaka"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:26
-#: LifeLineChartView/lifelinechartview.gpr.py:44
 msgid "Persons and their relation in a time based chart"
 msgstr "Osobe i njihova veza u vremenskom dijagramu"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:42
 msgid "Life Line Descendant Chart"
 msgstr "Linijski dijagram života potomaka"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:10
-msgid "Warp the chart shape"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:11
-msgid "The overall shape of the chart can be warped."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:12
-msgid "Normal grid shape"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:13
-msgid "Sine shape"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:14
-msgid "Triangular shape"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:15
-#, fuzzy
-#| msgid "Show persons"
-msgid "Show photos"
-msgstr "Prikaži osobe"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:16
-msgid "Photos of the individual are shown."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:17
-#, fuzzy
-#| msgid "Photo Tagging"
-msgid "Photo size"
-msgstr "Označivanje slika"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:18
-msgid ""
-"Photos which are shown are fitted into a square of this extent. The size is "
-"given relative to the line thickness."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:19
-#, fuzzy
-#| msgid "Media height"
-msgid "Total height"
-msgstr "Visina medija"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:20
-#, fuzzy
-#| msgid "Set the title of the chart."
-msgid "Total height of the whole chart."
-msgstr "Postavi naslov dijagrama."
-
-#: LifeLineChartView/_dummy_translation_string_po.py:21
-#, fuzzy
-#| msgid "Related Relatives"
-msgid "Relative line thickness"
-msgstr "Srodstva srodnika"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:22
-msgid ""
-"The line thickness of an individual is given relatively to the horizontal "
-"step size."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:23
-msgid "Horizontal step size"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:24
-msgid ""
-"This is the distance from one line to another. This value is also used for "
-"scaling of other items."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:25
-msgid "Show birth label"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:26
-#, fuzzy
-#| msgid "Estimated birth date"
-msgid "Activate the birth label."
-msgstr "Procijenjeni datum rođenja"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:27
-#, fuzzy
-#| msgid "Birthplace of Father"
-msgid "Birth label along path"
-msgstr "Mjesto rođenja oca"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:28
-msgid "The birth label is aligned to the individual line."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:30
-#, fuzzy
-#| msgid "birth abbreviation|b."
-msgid "Birth label rotation"
-msgstr "r."
-
-#: LifeLineChartView/_dummy_translation_string_po.py:31
-msgid "The birth label is written in a text frame rotated by this value."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:33
-msgid "Horizontal offset of birth label"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:34
-msgid ""
-"The birth label is moved horizontally by this value, which is given "
-"relatively to the font size."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:36
-msgid "Vertical offset of birth label"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:37
-msgid ""
-"The birth label is moved vertically by this value, which is given relatively "
-"to the font size."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:39
-msgid "Wrap words in birth label"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:40
-msgid "The birth label content is wrapped where possible."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:42
-#, fuzzy
-#| msgid "BirthPlaceFather"
-msgid "Birth label anchor"
-msgstr "Mjesto rođenja oca"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:43
-msgid "Text alignment of the birth label."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:45
-#: LifeLineChartView/_dummy_translation_string_po.py:65
-#, fuzzy
-#| msgid "Center person"
-msgid "Center"
-msgstr "Središnja osoba"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:48
-#, fuzzy
-#| msgid "Show more details"
-msgid "Show death label"
-msgstr "Prikaži više detalja"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:49
-#, fuzzy
-#| msgid "Estimated death date"
-msgid "Activate the death label."
-msgstr "Procijenjeni datum smrti"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:50
-#, fuzzy
-#| msgid "death abbreviation|d."
-msgid "Death label rotation"
-msgstr "u."
-
-#: LifeLineChartView/_dummy_translation_string_po.py:51
-msgid "The death label is written in a text frame rotated by this value."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:53
-msgid "Horizontal offset of death label"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:54
-msgid ""
-"The death label is moved horizontally by this value, which is given "
-"relatively to the font size."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:56
-msgid "Vertical offset of death label"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:57
-msgid ""
-"The death label is moved vertically by this value, which is given relatively "
-"to the font size."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:59
-msgid "Wrap words in death label"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:60
-msgid "The death label content is wrapped where possible."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:62
-#, fuzzy
-#| msgid "Death place:"
 msgid "Death label anchor"
-msgstr "Mjesto smrti:"
+msgstr "Poravnanje etikete smrti"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:63
 msgid "Text alignment of the death label."
-msgstr ""
+msgstr "Poravnanje teksta etikete smrti."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:68
-#, fuzzy
-#| msgid "Marriage place:"
 msgid "Show marriage label"
-msgstr "Mjesto sklapanja braka:"
+msgstr "Prikaži etiketu braka"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:69
 msgid "Activate the marriage label."
-msgstr ""
+msgstr "Aktiviraj etiketu braka."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:70
-#, fuzzy
-#| msgid "Loading individuals"
-msgid "Fade individual color"
-msgstr "Učitavanje osoba"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:71
-msgid "The color of the individuals is faded to black with increasing age."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:72
-#, fuzzy
-#| msgid "First name:"
 msgid "Font name"
-msgstr "Ime:"
+msgstr "Ime fonta"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:73
-#, fuzzy
-#| msgid "The style used for image labels."
-msgid "Name of the font family used for labels."
-msgstr "Sitl korišten za oznake slika."
-
-#: LifeLineChartView/_dummy_translation_string_po.py:75
-#, fuzzy
-#| msgid "Header Font size"
-msgid "Relative font size"
-msgstr "Veličina fonta zaglavlja"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:76
-msgid "The font size is given relatively to the line thickness."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:78
-#, fuzzy
-#| msgid "Family Sheet"
-msgid "Family shape"
-msgstr "Obiteljski list"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:79
-msgid "The shape of the families can be varied."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:80
-msgid "Rectangular"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:81
-msgid "Softer"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:82
-msgid "Upper year minimum margin"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:83
-msgid ""
-"The upper bound of the chart is extended by at least this number of years."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:84
-msgid "Lower year minimum margin"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:85
-msgid ""
-"The lower bound of the chart is extended by at least this number of years."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:86
-#, fuzzy
-#| msgid "Deep Connections"
-msgid "Visualize connections"
-msgstr "Duboka veza"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:87
-msgid ""
-"Visualize the connections between families and individuals. This is for "
-"debugging purposes."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:88
-msgid "Visualize ambiguous placement"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:89
 msgid "Visualize automatically detected errors in the placement algorithm."
-msgstr ""
+msgstr "Automatski vizualiziraj otkrivene greške u algoritmu za postavljanje."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:90
-#, fuzzy
-#| msgid "Loading individuals"
-msgid "Coloring of individuals"
-msgstr "Učitavanje osoba"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:91
-msgid "There are different ways to determine the color of an individual."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:92
-msgid "Unique"
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:93
-#, fuzzy
-#| msgid "Type of surname:"
 msgid "Based on surname"
-msgstr "Vrsta prezimena:"
+msgstr "Na osnovi prezimena"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:94
 msgid "Flip vertically"
-msgstr ""
+msgstr "Preokreni okomito"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:95
 msgid "If active, the chart is flipped vertically."
-msgstr ""
+msgstr "Ako je aktivno, dijagram će se preokrenuti okomito."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:96
 msgid "Line weighting"
-msgstr ""
+msgstr "Debljina linija"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
-msgstr ""
+msgstr "Debljina linija se može konfigurirati."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:98
 msgid "none"
-msgstr ""
+msgstr "bez"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:99
-#, fuzzy
-#| msgid "Pedigree Collapse "
-msgid "Show pedigree collapse"
-msgstr "Sklopljeni dijagram predaka "
+msgid "Maximum number of generations"
+msgstr "Maksimalni broj generacija"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:100
-msgid ""
-"Due to pedigree collapse one individual might appear several times in a "
-"simple ancestor chart. If this is active, then every individual only appears "
-"once."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
 "if this number of generations has been reached, the algorithm doesn't go any "
 "deeper"
-msgstr ""
+msgstr "ako je postignut ovaj broj generacija, algoritam ne ide dublje"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:103
 msgid "Fathers have the same color"
-msgstr ""
+msgstr "Očevi imaju istu boju"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:104
 msgid ""
 "Starting from the root person, each father of an added individual has the "
 "same color as that individual."
 msgstr ""
+"Polazeći od glavne osobe, svaki otac dodane osobe ima istu boju kao ta osoba."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:105
-#, fuzzy
-#| msgid "Maximum number of generations"
 msgid "Maximum number of compression steps"
-msgstr "Najveći broj generacija"
+msgstr "Maksimalni broj koraka sužavanja"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:106
 msgid "Debugging of the compression algorithm. Abort after x steps."
-msgstr ""
+msgstr "Uklanjanje grešaka algoritma za sužavanje. Prekini nakon x koraka."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:107
-#, fuzzy
-#| msgid "Maximum number of generations"
 msgid "Maximum number of flipping steps"
-msgstr "Najveći broj generacija"
+msgstr "Maksimalni broj koraka preokretanja"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:108
 msgid "Debugging of the flipping algorithm. Abort after x steps."
-msgstr ""
+msgstr "Uklanjanje grešaka algoritma za preokretanje. Prekini nakon x koraka."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:109
 msgid "Compress the chart horizontally"
-msgstr ""
+msgstr "Suzi dijagram vodoravno"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:110
 msgid ""
 "By default every individual has a unique horizontal slot. This can be "
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
 msgstr ""
+"Svaka osoba standardno ima jedinstveno vodoravno mjesto. To može biti "
+"nedostatno pri velikom broju generacija. Ovaj algoritam omogućuje da "
+"nekoliko ljudi dijele vodoravno mjesto, ako se ne preklapaju."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
-msgstr ""
+msgstr "Preokreni obitelji za smanjivanje broja vodoravnih veza"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:112
-msgid ""
-"Switch the position of mother and father in a family, to reduce the overall "
-"horizontal cross connections in larger graphs. This is happens if one person "
-"is shown in more than one family or it is caused by pedigree collapse."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:113
-#, fuzzy
-#| msgid "Highlight path(s)"
 msgid "Highlight descandants"
-msgstr "Istakni linije"
+msgstr "Istakni potomke"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:114
-#, fuzzy
-#| msgid "Center person and all descendants"
 msgid "Highlight the persons which are descendants."
-msgstr "Središnju osobu i sve potomke"
+msgstr "Istakni osobe koje su potomci."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:115
 msgid "Number of descendants"
 msgstr "Broj potomaka"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:116
 msgid "Very soft"
-msgstr ""
+msgstr "Vrlo blago"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:117
-#, fuzzy
-#| msgid "General Layout"
 msgid "General chart layout"
-msgstr "Opći raspored"
+msgstr "Opći raspored dijagrama"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:118
 msgid "There are different layouts for descendant charts."
-msgstr ""
+msgstr "Postoje različiti rasporedi za dijagrame potomaka."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:119
-#, fuzzy
-#| msgid "Include Children"
 msgid "Parents enclose children"
-msgstr "Uključi djecu"
+msgstr "Roditelji obuhvaćaju djecu"
 
-#: LifeLineChartView/_dummy_translation_string_po.py:120
 msgid "Cactus"
-msgstr ""
+msgstr "Kaktus"

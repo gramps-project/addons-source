@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,73 +13,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: RemoveTagTool/RemoveTagTool.py:271
-msgid "INFO"
-msgstr "INFORMACIJE"
-
-#: DynamicWeb/dynamicweb.py:3052 RemoveTagTool/RemoveTagTool.py:124
-msgid "Persons"
-msgstr "Osobe"
-
-#: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:89
-#: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
-msgid "General options"
-msgstr "Opći opcije"
-
-#: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
 msgstr "Za izvršavanje alata je potrebna barem jedna oznaka."
 
-#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
 msgstr "GREŠKA"
 
-#: RemoveTagTool/RemoveTagTool.py:86
 msgid "Add/Remove"
 msgstr "Dodaj/Ukloni"
 
-#: RemoveTagTool/RemoveTagTool.py:87
 msgid "Add or remove tags from objects."
 msgstr "Dodaj ili ukloni oznake iz objekata."
 
-#: RemoveTagTool/RemoveTagTool.py:88
 msgid "Add Tags"
 msgstr "Dodaj etikete"
 
-#: RemoveTagTool/RemoveTagTool.py:88
 msgid "Remove Tags"
 msgstr "Ukloni etikete"
 
-#: RemoveTagTool/RemoveTagTool.py:96
+msgid "General options"
+msgstr "Opći opcije"
+
 msgid "Choose a category."
 msgstr "Odaberi kategoriju."
 
-#: RemoveTagTool/RemoveTagTool.py:103
 msgid "Choose Tag"
 msgstr "Odaberi oznaku"
 
-#: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
 msgstr "Odaberi oznaku koju želiš ukloniti."
 
-#: RemoveTagTool/RemoveTagTool.py:140
+msgid "Persons"
+msgstr "Osobe"
+
 msgid "Filter options"
 msgstr "Opcije filtra"
 
-#: RemoveTagTool/RemoveTagTool.py:151
 #, python-format
 msgid "All %s"
 msgstr "Sve %s"
 
-#: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
-#: RemoveTagTool/RemoveTagTool.gpr.py:25
 msgid "Add/Remove Tag Tool"
 msgstr "Dodaj/Ukloni etikete"
 
-#: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
 "and objects."
@@ -94,31 +65,27 @@ msgstr ""
 "Alat nije moguće pokrenuti. Provjeri, sadrži li tvoja baza podataka oznake, "
 "filtre i objekte."
 
-#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
 msgid "WARNING"
 msgstr "UPOZORENJE"
 
-#: RemoveTagTool/RemoveTagTool.py:234
 #, python-format
 msgid "No %s objects were found in database."
 msgstr "Nijedan objekt %s nije pronađen u bazi podataka."
 
-#: RemoveTagTool/RemoveTagTool.py:249
 msgid "Process tags..."
 msgstr "Obrada oznaka …"
 
-#: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
 msgstr "dodana"
 
-#: RemoveTagTool/RemoveTagTool.py:268
 msgid "removed"
 msgstr "uklonjena"
 
-#: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Oznaka „{}” je {} u {} {} objekte.\n"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "INFO"
+msgstr "INFORMACIJE"
+
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr "Dodaj ili ukloni oznaku iz grupa osoba, događaja, itd."

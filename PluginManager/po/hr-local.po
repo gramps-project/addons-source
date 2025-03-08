@@ -1,16 +1,9 @@
-# Croatian translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019, 2020.
-# Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
-# Nick Hall <nick-h@gramps-project.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-19 18:13+0000\n"
+"POT-Creation-Date: 2025-02-23 12:35-0600\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,21 +13,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 
-#: PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "Napredni upravljač za dodatke"
 
-#: PluginManager/PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr "Upravljač za dodatke s nekolicinom dodatnih funkcija"
 
-#: PluginManager/PluginManager.py:84
 msgid "Plugin Manager - Enhanced"
 msgstr "Upravljač za dodatke – Napredni"
 
-#: PluginManager/PluginManager.py:154
 msgid ""
 "Enter search words to filter the addons.\n"
 "All the words must be present somewhere in the row or\n"
@@ -46,29 +35,24 @@ msgstr ""
 "u retku ili u imenu datoteke. Veličina slova i redoslijed riječi\n"
 "ne igraju ulogu u pretrazi."
 
-#: PluginManager/PluginManager.py:158
 msgid "Search..."
 msgstr "Traži …"
 
-#: PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Ponovo pokreni …"
 
-#: PluginManager/PluginManager.py:217
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
 "Ponovo pokreni Gramps, kako bi se tvoje promjene u dodacima mogle sigurno "
 "završiti."
 
-#: PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
 "Greška prilikom uklanjanja direktorija „%s”. Desintaliranje možda nije bilo "
 "usješno"
 
-#: PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -76,46 +60,35 @@ msgstr ""
 "Stavke s oznakom „*” su dodaci treće strane,\n"
 "<s>precrtane</s> stavke su skrivene"
 
-#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
 msgid "Hide"
 msgstr "Sakrij"
 
-#: PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "Prikaži skrivene stavke"
 
-#: PluginManager/PluginManager.py:438
 msgid "Show Built-in items"
 msgstr "Prikaži ugrađene stavke"
 
-#: PluginManager/PluginManager.py:445
 msgid "* indicates 3rd party addon"
 msgstr "„*” ukazuju na dodatak treće strane"
 
-#: PluginManager/PluginManager.py:450
 msgid "Plugins"
 msgstr "Dodaci"
 
-#: PluginManager/PluginManager.py:528
 msgid "Unhide"
 msgstr "Prikaži"
 
-#: PluginManager/PluginManager.py:547
 msgid "Uninstall"
 msgstr "Deinstaliraj"
 
-#: PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Dostupno"
 
-#: PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr "Ugrađeno"
 
-#: PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr "*Instalirano"
 
-#: PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Dostupna je nova verzija"

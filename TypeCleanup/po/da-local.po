@@ -1,16 +1,9 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
-# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-23 18:44+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -19,57 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.10.2-dev\n"
 
-#: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
 msgstr "Hændelsesroller"
 
-#: TypeCleanup/type_cleanup.py:102
 msgid "Event Types"
 msgstr "Hændelsestyper"
 
-#: TypeCleanup/type_cleanup.py:103
 msgid "Family Relation Types"
 msgstr "Familie slægtskabstyper"
 
-#: TypeCleanup/type_cleanup.py:104
 msgid "Child reference Types"
 msgstr "Børne henvisningstyper"
 
-#: TypeCleanup/type_cleanup.py:105
 msgid "Name Origin Types"
 msgstr "Navne oprindelsestyper"
 
-#: TypeCleanup/type_cleanup.py:106
 msgid "Name Types"
 msgstr "Navne typer"
 
-#: TypeCleanup/type_cleanup.py:107
 msgid "Note Types"
 msgstr "Note typer"
 
-#: TypeCleanup/type_cleanup.py:108
 msgid "Place Types"
 msgstr "Sted typer"
 
-#: TypeCleanup/type_cleanup.py:109
 msgid "Repository Types"
 msgstr "Arkiv typer"
 
-#: TypeCleanup/type_cleanup.py:111
 msgid "Source Media Types"
 msgstr "Kilde medietyper"
 
-#: TypeCleanup/type_cleanup.py:112
 msgid "URL Types"
 msgstr "URL typer"
 
-#: TypeCleanup/type_cleanup.py:124
 msgid "Types Cleanup Tool"
 msgstr "Type rensningsværktøj"
 
-#: TypeCleanup/type_cleanup.py:166
 msgid ""
 "Remove the selected type from the db.\n"
 "This does not change any referenced objects."
@@ -77,7 +57,6 @@ msgstr ""
 "Fjern de valgte typer fra db.\n"
 "Dette ændre ikke nogen af de henviste objekter."
 
-#: TypeCleanup/type_cleanup.py:174
 msgid ""
 "Select a new name for the current type, prior to renaming the type in the "
 "referenced objects."
@@ -85,32 +64,25 @@ msgstr ""
 "Vælg et nyt navn for den nuværende type, før at typen omdøbes i de henviste "
 "objekter."
 
-#: TypeCleanup/type_cleanup.py:182
 msgid "Rename"
 msgstr "Omdøb"
 
-#: TypeCleanup/type_cleanup.py:185
 msgid "Rename the selected type in all referenced objects."
 msgstr "Omdøb de valgte typer i alle henviste objekter."
 
-#: TypeCleanup/type_cleanup.py:189
 msgid "Close the Type Cleanup Tool"
 msgstr "Afslut værktøjet til typerensning"
 
-#: TypeCleanup/type_cleanup.py:195
 msgid "Types"
 msgstr "Typer"
 
-#: TypeCleanup/type_cleanup.py:242
 msgid "Type Cleanup Tool"
 msgstr "Typer rensningsværktøj"
 
-#: TypeCleanup/type_cleanup.py:387
 #, python-format
 msgid "Changing type from %(old_type)s to %(new_type)s."
 msgstr "Skifter type fra %(old_type)s til %(new_type)s."
 
-#: TypeCleanup/type_cleanup.py:432
 msgid ""
 "Removing this custom type will eliminate it from the type selection drop "
 "down lists\n"
@@ -125,10 +97,8 @@ msgstr ""
 "Men den vil ikke fjerne den fra henviste elementer i databasen.\n"
 "Hvis du vil skifte den i henviste elementer, så benyt 'Omdøb'."
 
-#: TypeCleanup/type_cleanup.gpr.py:30
 msgid "Type Cleanup"
 msgstr "Typerensning"
 
-#: TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
 msgstr "Rens (fjern) tilpassede typer"
