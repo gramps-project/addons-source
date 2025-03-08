@@ -956,10 +956,11 @@ elif command == "aggregate-pot":
         )
         exit()
 
-    args = ["msgcat", "--use-first"]
-    pot_files = glob.glob("*/po/template.pot")
-    args.extend(pot_files)
-    args.extend(["-o", "po/template.pot"])
+    args = ["touch", "po/template.pot"]
+    call(args)
+
+    args = ["xgettext", "-j", "-o", "po/template.pot"]
+    args.extend(glob.glob("*/po/template.pot"))
     call(args)
 
     gramps_pot = os.path.join(GRAMPSPATH, "po/gramps.pot")
