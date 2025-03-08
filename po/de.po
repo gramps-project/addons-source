@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 21:48+0000\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"PO-Revision-Date: 2025-03-06 21:56+0000\n"
+"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -13640,7 +13640,7 @@ msgstr "In welchem Staat (oder in einem anderen Land) wurde er geboren?"
 
 #: Form/form_us.xml.h:912
 msgid "Is he naturalized?"
-msgstr "Ist er eingebürgert?"
+msgstr "Wurde er eingebürgert?"
 
 #: Form/form_us.xml.h:913
 msgid "housework (H), work (W), unable to work (U) or other (Ot)"
@@ -13734,7 +13734,7 @@ msgstr "Hat er vor einem Jahr in diesem Landkreis gelebt?"
 
 #: Form/form_us.xml.h:935
 msgid "State or foreign country"
-msgstr "Bundesland oder anderes Land"
+msgstr "Bundesland oder Ausland"
 
 #: Form/form_us.xml.h:937
 msgid "What country was his father born in?"
@@ -13861,7 +13861,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:961
 msgid "WWII Veteran?"
-msgstr "WWII Veteran?"
+msgstr "WK2-Veteran?"
 
 #: Form/form_us.xml.h:962
 msgid "Did he ever serve in the U. S. Armed Forces during World War II?"
@@ -13869,7 +13869,7 @@ msgstr "Hat er während des Zweiten Weltkriegs in den US-Streitkräften gedient?
 
 #: Form/form_us.xml.h:963
 msgid "WWI Veteran?"
-msgstr "WWI Veteran?"
+msgstr "WK1-Veteran?"
 
 #: Form/form_us.xml.h:964
 msgid "World War I?"
@@ -13933,7 +13933,7 @@ msgstr "Alter des Ehepartners"
 
 #: Form/form_us.xml.h:982
 msgid "File No."
-msgstr "Akte Nr."
+msgstr "Aktennr."
 
 #: Form/form_us.xml.h:984 Form/form_us.xml.h:1003 Form/form_us.xml.h:1058
 msgid "Post Office Address"
@@ -15956,7 +15956,7 @@ msgstr "Wahlbezirk Nr."
 
 #: Form/form_us.xml.h:1977 Form/form_us.xml.h:1998
 msgid "Ward No."
-msgstr "Bezirk Nr."
+msgstr "Bezirksnr."
 
 #: Form/form_us.xml.h:1978 Form/form_us.xml.h:1999
 msgid "City or Village"
@@ -16386,7 +16386,7 @@ msgstr "Aufnahmedatum"
 
 #: Form/form_us.xml.h:2393
 msgid "License No."
-msgstr "Lizenz-Nr."
+msgstr "Lizenznr."
 
 #: Form/form_us.xml.h:2395
 msgid "Date of Marriage"
@@ -16451,7 +16451,7 @@ msgstr "Bildungsstand"
 
 #: Form/form_us.xml.h:2453
 msgid "Social Security No."
-msgstr "Sozialversicherungs-Nr."
+msgstr "Sozialversicherungsnr."
 
 #: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
 msgid "Date of Death"
@@ -16519,7 +16519,7 @@ msgstr "Laufende Nr."
 
 #: Form/form_us.xml.h:2522
 msgid "Registration No."
-msgstr "Registrierung Nr."
+msgstr "Registrierungsnr."
 
 #: Form/form_us.xml.h:2523
 msgid "Order No."
@@ -17533,7 +17533,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:258
 msgid "E.D. Letter Code"
-msgstr "E.D. Buchstabe Code"
+msgstr "E.D. Buchstabencode"
 
 #: Form/form_gb.xml.h:259
 msgid "Borough, U.D. or R.D."
@@ -18394,7 +18394,7 @@ msgstr ""
 "Für den Dateinamen sind nur die englischen Buchstaben A-Z, a-z und die "
 "Zahlen 0-9 sowie die Zeichen Leerzeichen, Unterstrich und Bindestrich "
 "erlaubt. Der Dateiname muss außerdem mit einem alphanumerischen Zeichen "
-"beginnen und enden, die Dateierweiterung „.html“ wird vom Bericht "
+"beginnen und enden. Die Dateierweiterung „.html“ wird vom Bericht "
 "hinzugefügt."
 
 #: Heatmap/heatmap.py:103
@@ -18414,19 +18414,19 @@ msgstr ""
 
 #: Heatmap/heatmap.py:124
 msgid "Start latitude"
-msgstr "Start Breitengrad"
+msgstr "Startbreitengrad"
 
 #: Heatmap/heatmap.py:126
 msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
 msgstr ""
-"Benutzerdefinierte Startposition Breitengrad festlegen\n"
+"Benutzerdefinierten Startposition-Breitengrad festlegen\n"
 "Standard: 50.0"
 
 #: Heatmap/heatmap.py:129
 msgid "Start longitude"
-msgstr "Start Längengrad"
+msgstr "Start-Längengrad"
 
 #: Heatmap/heatmap.py:131
 msgid ""
