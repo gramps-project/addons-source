@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-05 21:57+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
 "Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
@@ -1012,7 +1012,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
-msgstr ""
+msgstr "ID d'usuari de GeoNames"
 
 #: PlaceCleanup/placecleanup.glade:723
 msgid "Enter you Geonames user ID here."
@@ -1078,10 +1078,8 @@ msgid ""
 msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:958
-#, fuzzy
-#| msgid "All Places"
 msgid "Next Place"
-msgstr "Tots els Llocs"
+msgstr "Lloc següent"
 
 #: PlaceCleanup/placecleanup.glade:962
 msgid "Find an incomplete place."
@@ -1089,7 +1087,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:985
 msgid "Set preferences"
-msgstr ""
+msgstr "Estableix preferències"
 
 #: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
@@ -1124,7 +1122,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
-msgstr ""
+msgstr "Admin"
 
 #: PlaceCleanup/placecleanup.glade:1174
 msgid "Spot"
@@ -1183,23 +1181,19 @@ msgstr ""
 
 #: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
 msgid "Inverse"
-msgstr ""
+msgstr "Inverteix"
 
 #: FilterRules/hasrolerule.py:68
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "People with events with the <role>"
-msgstr "Afegir esdeveniments de naixement amb dates"
+msgstr "Persones amb esdeveniments amb el <role>"
 
 #: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
 msgid "Matches people with an event with a selected role"
 msgstr ""
 
 #: FilterRules/hasrolerule.py:92
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "Families with events with the <role>"
-msgstr "Afegir esdeveniments de naixement amb dates"
+msgstr "Famílies amb esdeveniments amb el <role>"
 
 #: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
 msgid "Matches families with an event with a selected role"
@@ -1242,20 +1236,16 @@ msgid "Matches persons which have events of given type and number."
 msgstr ""
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include Children"
-msgstr "Incloure esdeveniments"
+msgstr "Incloure Fills"
 
 #: FilterRules/infamilyrule.py:49
 msgid "Include the children in the matching families."
 msgstr ""
 
 #: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include Parents"
-msgstr "Incloure esdeveniments"
+msgstr "Inclou els pares"
 
 #: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
@@ -1284,10 +1274,8 @@ msgid "Multiple Parents Filter"
 msgstr ""
 
 #: FilterRules/hasrolerule.gpr.py:27
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "People with events with a selected role"
-msgstr "Afegir esdeveniments de naixement amb dates"
+msgstr "Persones amb esdeveniments amb un rol seleccionat"
 
 #: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
@@ -1295,10 +1283,8 @@ msgstr ""
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
-#, fuzzy
-#| msgid "Active person"
 msgid "The active Person"
-msgstr "Persona activa"
+msgstr "La Persona activa"
 
 #: FilterRules/hassourcefilter.py:58
 msgid "Matches sources with a particular value"
@@ -1309,10 +1295,8 @@ msgid "Active person"
 msgstr "Persona activa"
 
 #: FilterRules/activepersonrule.py:47
-#, fuzzy
-#| msgid "No relation to active person"
 msgid "Matches the active person"
-msgstr "No hi ha relació amb la persona activa"
+msgstr "Coincideix amb la persona activa"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
@@ -1404,16 +1388,12 @@ msgid " %s"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:413
-#, fuzzy
-#| msgid "Todo Report"
 msgid "Title of the Report"
-msgstr "Fer informe"
+msgstr "Títol de l'Informe"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:414
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "Title string for the report."
-msgstr "L'estil que es fa servir per al títol de l'informe."
+msgstr "Cadena de títol per a l'informe."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
@@ -1432,10 +1412,8 @@ msgid "Select sources using a filter"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:443
-#, fuzzy
-#| msgid "New person"
 msgid "Show persons"
-msgstr "Persona nova"
+msgstr "Mostra persones"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
@@ -1446,56 +1424,40 @@ msgid "The style used for the title of the report."
 msgstr "L'estil que es fa servir per al títol de l'informe."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:495
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the subtitle of the report."
-msgstr "L'estil que es fa servir per al títol de l'informe."
+msgstr "L'estil utilitzat per al subtítol de l'informe."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:509
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the footer of the report."
-msgstr "L'estil que es fa servir per al títol de l'informe."
+msgstr "L'estil utilitzat per al peu de l'informe."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:524
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for source title."
-msgstr "L'estil utilitzat per al títol del repositori."
+msgstr "L'estil utilitzat per al títol de la font."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:536
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for source subtitle."
-msgstr "L'estil utilitzat per al títol del repositori."
+msgstr "L'estil utilitzat per al subtítol de la font."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:548
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for Source details."
-msgstr "L'estil que es fa servir per cada secció."
+msgstr "L'estil utilitzat per als detalls de la font."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:563
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for citation title."
-msgstr "L'estil utilitzat per al títol del repositori."
+msgstr "L'estil utilitzat per al títol de la citació."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:575
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for a column title."
-msgstr "L'estil utilitzat per al títol del repositori."
+msgstr "L'estil utilitzat per al títol d'una columna."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
 msgid "The style used for each section."
 msgstr "L'estil que es fa servir per cada secció."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:622
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for event and person details."
-msgstr "L'estil que es fa servir per cada secció."
+msgstr "L'estil utilitzat per als detalls d'esdeveniments i persones."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -1542,10 +1504,8 @@ msgid "Generations down"
 msgstr ""
 
 #: GenealogyTree/gt_sandclock.py:246
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include siblings"
-msgstr "Incloure esdeveniments"
+msgstr "Inclou germans"
 
 #: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
@@ -1553,10 +1513,8 @@ msgstr ""
 
 #: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
 #: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include images"
-msgstr "Incloure esdeveniments"
+msgstr "Inclou imatges"
 
 #: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
 #: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
@@ -1633,10 +1591,8 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:840
 #: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include Generations"
-msgstr "Incloure esdeveniments"
+msgstr "Inclou generacions"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
 msgid "Male Background Color"
@@ -1736,10 +1692,8 @@ msgid "Expand All"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1811
-#, fuzzy
-#| msgid "Include Sources"
 msgid "Include contraction level"
-msgstr "Incloure fonts"
+msgstr "Inclou el nivell de contracció"
 
 #: D3Charts/DescendantIndentedTree.py:1813
 msgid "The number of descendant levels to contract on initial display."
@@ -1782,10 +1736,8 @@ msgid "Include records marked private"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1869
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include private objects."
-msgstr "Si s'han d'incloure imatges."
+msgstr "Si incloure objectes privats."
 
 #: D3Charts/DescendantIndentedTree.py:1877
 msgid "Include Last Name Only"
@@ -1804,10 +1756,8 @@ msgid "Whether or not to include people who may have recently died."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1896
-#, fuzzy
-#| msgid "abbreviation"
 msgid "Navigation"
-msgstr "abreviació"
+msgstr "Navegació"
 
 #: D3Charts/DescendantIndentedTree.py:1898
 msgid "Contraction/Expansion mechanism"
@@ -1924,10 +1874,8 @@ msgid "Whether or not to generate links for center person."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1971
-#, fuzzy
-#| msgid "Include Sources"
 msgid "Exclude Spouses"
-msgstr "Incloure fonts"
+msgstr "Exclou els cònjuges"
 
 #: D3Charts/DescendantIndentedTree.py:1972
 msgid "Whether or not to generate links for spouses."
@@ -2027,10 +1975,8 @@ msgid "FamilySearch.org"
 msgstr ""
 
 #: SVWebconnectPack/SVWebPack.py:35
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "Google SV"
-msgstr "_Google Maps"
+msgstr "Google SV"
 
 #: SVWebconnectPack/SVWebPack.py:38
 msgid "FamilySearch.org Tree"
@@ -2239,9 +2185,8 @@ msgid "Close the Media Verify Tool"
 msgstr ""
 
 #: MediaVerify/MediaVerify.py:103
-#, fuzzy
 msgid "Generate"
-msgstr "General"
+msgstr "Genera"
 
 #: MediaVerify/MediaVerify.py:104
 msgid "Generate md5 hashes for media objects"
@@ -2303,16 +2248,12 @@ msgid ""
 msgstr ""
 
 #: MediaVerify/MediaVerify.py:307
-#, fuzzy
-#| msgid "Examining places"
 msgid "Finding files"
-msgstr "Examinant llocs"
+msgstr "Cercant fitxers"
 
 #: MediaVerify/MediaVerify.py:335
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking paths"
-msgstr "Comprovant Títols de Lloc"
+msgstr "Comprovant camins"
 
 #: MediaVerify/MediaVerify.py:388
 msgid "Fixing file paths"
@@ -2403,20 +2344,16 @@ msgid "Pause search expansion"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:105
-#, fuzzy
-#| msgid "Note on Person"
 msgid "Completed Person"
-msgstr "Nota sobre la Persona"
+msgstr "Persona completada"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:118
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Ignore Person or Family"
-msgstr "Nota sobre la família"
+msgstr "Ignora la persona o la família"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
@@ -2889,10 +2826,8 @@ msgid "DynamicWeb_report#Help"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2977
-#, fuzzy
-#| msgid "Examining places"
 msgid "Examples"
-msgstr "Examinant llocs"
+msgstr "Exemples"
 
 #: DynamicWeb/dynamicweb.py:2978
 msgid "F"
@@ -2939,19 +2874,16 @@ msgid "M"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3030
-#, fuzzy
-#| msgid "Maximum age"
 msgid "Maximize"
-msgstr "Edat màxima"
+msgstr "Maximitza"
 
 #: DynamicWeb/dynamicweb.py:3031
 msgid "Media Index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3032
-#, fuzzy
 msgid "Media Type"
-msgstr "Filtre d'Audiovisuals"
+msgstr "Tipus de suport"
 
 #: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
@@ -2974,10 +2906,8 @@ msgid "Person page"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3049
-#, fuzzy
-#| msgid "Don't search"
 msgid "Person to search for"
-msgstr "No cerquis"
+msgstr "Persona a buscar"
 
 #: DynamicWeb/dynamicweb.py:3051
 msgid "Persons Index"
