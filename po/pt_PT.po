@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 18:38+0000\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"PO-Revision-Date: 2025-03-09 08:45+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -11794,8 +11794,6 @@ msgid "When imprisoned"
 msgstr "Quando esteve preso"
 
 #: Form/form_us.xml.h:1031
-#, fuzzy
-#| msgid "Were imprisoned"
 msgid "Where imprisoned"
 msgstr "Onde esteve preso"
 
@@ -16630,8 +16628,6 @@ msgid "18. Blind"
 msgstr "18. Cegos"
 
 #: Form/form_ca.xml.h:387
-#, fuzzy
-#| msgid "19/ Unsound mind"
 msgid "19. Unsound mind"
 msgstr "19. Mentes perturbadas"
 
@@ -21221,16 +21217,12 @@ msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet que mostra uma visão geral dos eventos de uma dada família"
 
 #: UAWebConnectPack/UAWebPack.gpr.py:11
-#, fuzzy
-#| msgid "UK Web Connect Pack"
 msgid "UA Web Connect Pack"
-msgstr "Pacote Internet do RU"
+msgstr "Pacote Internet do UA"
 
 #: UAWebConnectPack/UAWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the UA (requires libwebconnect)"
-msgstr "Colecção de páginas “web” para o Reino Unido (requer libwebconnect)"
+msgstr "Colecção de páginas “web” para o UA (requer libwebconnect)"
 
 #: UAWebConnectPack/UAWebPack.py:39
 msgid "Forum: ukrgenealogy.com.ua"
@@ -21253,20 +21245,16 @@ msgid "Repressed DB: reabit.org.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:50
-#, fuzzy
-#| msgid "FamilySearch.org"
 msgid "Genealogy DB: familysearch.org"
-msgstr "Family Search"
+msgstr "BD genealógica: familysearch.org"
 
 #: UAWebConnectPack/UAWebPack.py:51
 msgid "Genealogy DB: myheritage.com.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:53
-#, fuzzy
-#| msgid "Genealogy Online"
 msgid "Genealogy DB: pra.in.ua"
-msgstr "Genealogia em linha"
+msgstr "BD genealógica: pra.in.ua"
 
 #: UAWebConnectPack/UAWebPack.py:56
 msgid "Map: Ridni.org"
@@ -21277,10 +21265,8 @@ msgid "Search: google.com.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:60
-#, fuzzy
-#| msgid "Search Quota "
 msgid "Search: roots.in.ua"
-msgstr "Resultados da procura "
+msgstr "Procurar: roots.in.ua"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
