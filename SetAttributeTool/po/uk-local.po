@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Select filter to restrict people"
+msgstr "Виберіть фільтр для обмеження людей"
+
+msgid "Attribute type to add or edit"
+msgstr "Тип атрибута для додавання або редагування"
+
+msgid "Attribute value to add or edit"
+msgstr "Значення атрибута для додавання або редагування"
+
+msgid "Remove attribute type and value set"
+msgstr "Видалити тип атрибута та його значення"
+
+msgid "Set Attribute"
+msgstr "Встановити атрибут"
+
+msgid "Processing...\n"
+msgstr "Обробка...\n"
+
+msgid "Setting attributes..."
+msgstr "Встановлення атрибутів..."
+
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr ""
+"Встановлення атрибутів '%s' для '%s'...\n"
+"\n"
+
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Встановити %d '%s' атрибути для '%s'\n"
+
+msgid "Remove Attribute"
+msgstr "Видалити атрибут"
+
+msgid "Removing attributes..."
+msgstr "Видалення атрибутів..."
+
+#, python-format
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Видалення %d '%s' атрибутів для '%s'\n"
+
+msgid "Done!\n"
+msgstr "Готово!\n"
+
+msgid "Set an attribute to a given value."
+msgstr "Встановити атрибут у задане значення."

@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/da/>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+
+msgid "SV Web Connect Pack"
+msgstr "SV Web Connect Pack"
+
+msgid "Collection of Web sites for Sweden (requires libwebconnect)"
+msgstr "Samling af websteder for Sverige (kræver libwebconnect)"
+
+msgid "Find A Grave"
+msgstr "Find en grav"
+
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
+msgid "Google SV"
+msgstr "Google SV"
+
+msgid "FamilySearch.org Tree"
+msgstr "FamilySearch.org Tree"
+
+msgid "National archives of Sweden personsearch"
+msgstr "Riksarkivets personsøg"
+
+msgid "National archives of Sweden free search"
+msgstr "Riksarkivets fri søgning"
+
+msgid "Arkiv Digital estate records for Skåne"
+msgstr "ARkiv Digitals skifteprotokoller for Skåne"
+
+msgid "Ancestry Search"
+msgstr "Ancestry søgning"
+
+msgid "Find swedish portraits - Rötter.se"
+msgstr "Porträttfynd - Rötter.se"
+
+msgid "Gravar.se - find swedish graves"
+msgstr "Gravar.se"
+
+msgid "National archives of Sweden search censuses"
+msgstr "Riksarkivets folketælling"
+
+msgid "Arkiv Digital released prisoners"
+msgstr "Arkiv Digital frigivne fanger"
+
+msgid "Gravestone inventory - rötter.se"
+msgstr "Gravstensinventeringen - rötter.se"

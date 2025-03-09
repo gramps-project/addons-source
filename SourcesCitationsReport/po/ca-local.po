@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ca\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-26 15:11-0500\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Provides a source and Citations Report with notes"
+msgstr "Proporciona una font i un informe de citacions amb notes"
+
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#, python-format
+msgid "   %s"
+msgstr "   %s"
+
+#, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+msgid "   Spouses: "
+msgstr "   Cònjugues: "
+
+msgid "Title of the Report"
+msgstr "Títol de l'Informe"
+
+msgid "Title string for the report."
+msgstr "Cadena de títol per a l'informe."
+
+msgid "Show persons"
+msgstr "Mostra persones"
+
+msgid "The style used for the title of the report."
+msgstr "L'estil que es fa servir per al títol de l'informe."
+
+msgid "The style used for the subtitle of the report."
+msgstr "L'estil utilitzat per al subtítol de l'informe."
+
+msgid "The style used for the footer of the report."
+msgstr "L'estil utilitzat per al peu de l'informe."
+
+msgid "The style used for source title."
+msgstr "L'estil utilitzat per al títol de la font."
+
+msgid "The style used for source subtitle."
+msgstr "L'estil utilitzat per al subtítol de la font."
+
+msgid "The style used for Source details."
+msgstr "L'estil utilitzat per als detalls de la font."
+
+msgid "The style used for citation title."
+msgstr "L'estil utilitzat per al títol de la citació."
+
+msgid "The style used for a column title."
+msgstr "L'estil utilitzat per al títol d'una columna."
+
+msgid "The style used for each section."
+msgstr "L'estil que es fa servir per cada secció."
+
+msgid "The style used for event and person details."
+msgstr "L'estil utilitzat per als detalls d'esdeveniments i persones."

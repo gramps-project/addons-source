@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-26 15:11-0500\n"
+"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "   Spouses: "
+msgstr "   Ektefeller: "
+
+msgid "Whether to show events and persons mentioned in the note"
+msgstr "Om hendelser og personer nevnt i notatet skal vises"
+
+msgid "The style used for the title of the report."
+msgstr "Stilen som brukes på rapportens tittel."
+
+msgid "The style used for source title."
+msgstr "Stilen som brukes for kildetittel."
+
+msgid "The style used for source subtitle."
+msgstr "Stilen som brukes for kildens undertittel."
+
+msgid "The style used for citation title."
+msgstr "Stilen som brukes for sitattittel."
+
+msgid "The style used for a column title."
+msgstr "Stilen som brukes for kolonnetittel."
+
+msgid "The style used for each section."
+msgstr "Stilen som brukes til kapitteloverskriften."
+
+msgid "The style used for event and person details."
+msgstr "Stilen som brukes for detaljer om hendelser og personer."

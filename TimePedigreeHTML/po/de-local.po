@@ -1,0 +1,122 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Failed writing "
+msgstr "Schreiben fehlgeschlagen "
+
+msgid "Year of Birth of Center Person"
+msgstr "Geburtsjahr der Hauptperson"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr ""
+"Das Geburtsjahr der zentralen Person. Schätze ein Jahr, falls unbekannt"
+
+msgid "Destination directory"
+msgstr "Zielverzeichnis"
+
+msgid "Path for generated files"
+msgstr "Pfad für generierte Dateien"
+
+msgid "The destination file name for html content."
+msgstr "Der Zieldateiname für HTML Inhalt."
+
+msgid "Default Age"
+msgstr "Standardalter"
+
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr ""
+"Standardalter der Eltern bei Geburt eines Kindes mit unbekanntem Geburtsjahr"
+
+msgid "What to show"
+msgstr "Was gezeigt werden soll"
+
+msgid "Show GrampsID"
+msgstr "Zeige GrampsID"
+
+msgid "Show GrampsID on top right of the box"
+msgstr "GrampsID oben rechts im Feld anzeigen"
+
+msgid "Optimize"
+msgstr "Optimieren"
+
+msgid "Use as little space in horizontal direction as possible"
+msgstr "Möglichst wenig Platz in horizontaler Richtung verwenden"
+
+msgid "Male Box Color"
+msgstr "Männliche Feldfarbe"
+
+msgid "Box background color for male person"
+msgstr "Hintergrundfarbe für männliches Personenfeld"
+
+msgid "Female Box Color"
+msgstr "Farbe für weibliche Box"
+
+msgid "Box background color for female person"
+msgstr "Box-Hintergrundfarbe für weibliche Person"
+
+msgid "Number of pixel per year"
+msgstr "Anzahl der Pixel pro Jahr"
+
+msgid "How many pixel height is one year?"
+msgstr "Wie viele Pixel hoch ist ein Jahr?"
+
+msgid "Offset X Coordinate"
+msgstr "Abweichung X-Koordinate"
+
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr ""
+"Wie viele Pixel sind neben den Feldern ganz links und ganz rechts ungenutzt?"
+
+msgid "Offset Y Coordinate"
+msgstr "Abweichung Y-Koordinate"
+
+msgid "How many pixel are unused above first box?"
+msgstr "Wie viele Pixel sind über dem ersten Feld ungenutzt?"
+
+msgid "Width of a box in pixel"
+msgstr "Breite einer Box in Pixel"
+
+msgid "Width of the box of a person in pixel"
+msgstr "Breite der Box einer Person in Pixel"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "Horizontaler Abstand zwischen Feldern in Pixel"
+
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "Horizontaler Mindestabstand zwischen 2 Boxen in Pixel"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "Länge des vertikalen Teils einer Zeile in Pixel"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"Übergeordnete und untergeordnete Felder sind durch Linien verbunden. Dies "
+"ist die Länge des vertikalen Teils der Linien in Pixel"
+
+msgid "Number of pixel between left border and scale"
+msgstr "Anzahl der Pixel zwischen linkem Rand und Maßstab"
+
+msgid "Timeline Pedigree Report"
+msgstr "Zeitleisten-Stammbaum-Bericht"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+"Erstellt eine HTML-Webseite, die mithilfe von JavaScript ein vertikal nach "
+"Geburtsdatum angeordnetes Ahnentafel-Blockdiagramm anzeigt"

@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Place ID to import from GOV (Historical Gazetteer):"
+msgstr ""
+"Ідентифікатор місця для імпорту з GOV (історичний географічний покажчик):"
+
+msgid "Get Place"
+msgstr "Отримати місце"
+
+#, python-format
+msgid "Add GOV-id place %s"
+msgstr "Додати місце з GOV ID %s"
+
+#, python-format
+msgid "GetGOV error: %s"
+msgstr "Помилка GetGOV: %s"
+
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr "Помилка GOV для ID %s з кодом: "
+
+#, python-format
+msgid "from %s to %s"
+msgstr "з %s до %s"
+
+#, python-format
+msgid "after %s"
+msgstr "після %s"
+
+#, python-format
+msgid "before %s"
+msgstr "до %s"
+
+msgid "GetGOV"
+msgstr "GetGOV"
+
+msgid "Gramplet to get places from the GOV database"
+msgstr "Грамплет для отримання місць із бази даних GOV"

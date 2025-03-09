@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Failed writing "
+msgstr "Falha ao escrever "
+
+msgid "Destination directory"
+msgstr "Pasta destino"
+
+msgid "Path for generated files"
+msgstr "Caminho para ficheiros gerados"
+
+msgid "The destination file name for html content."
+msgstr "O nome de ficheiro destino para conteúdo html."
+
+msgid "Default Age"
+msgstr "Idade pré-definida"
+
+msgid "Show GrampsID"
+msgstr "Mostrar ID Gramps"
+
+msgid "Optimize"
+msgstr "Optimizar"
+
+msgid "Male Box Color"
+msgstr "Cor de caixa masculina"
+
+msgid "Box background color for male person"
+msgstr "Cor de fundo da caixa de homens"
+
+msgid "Female Box Color"
+msgstr "Contorno da caixa das mulheres"
+
+msgid "Box background color for female person"
+msgstr "Cor de fundo das caixas femininas"
+
+msgid "Number of pixel per year"
+msgstr "Número de pixels por ano"
+
+msgid "Width of a box in pixel"
+msgstr "Largura da caixa em pixels"
+
+msgid "Width of the box of a person in pixel"
+msgstr "Largura da caixa individual em pixels"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "Espaço horizontal entre caixas (px)"
+
+msgid "Timeline Pedigree Report"
+msgstr "Relatório Cronologia de costados"

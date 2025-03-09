@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "AncestorFill"
+msgstr "Географічний предок"
+
+msgid "Report on the filling of the tree"
+msgstr "Звіт про наповнення родового дерева"
+
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "Заповнення предків для %s"
+
+msgid "Generation "
+msgstr "Покоління "
+
+msgid "Number of Ancestors found "
+msgstr "Кількість знайдених предків "
+
+msgid "Percent of Ancestors found "
+msgstr "Відсоток знайдених предків "
+
+msgid "Number of unique Ancestors found "
+msgstr "Кількість знайдених унікальних предків "
+
+msgid "Number of theoretical Ancestors "
+msgstr "Кількість теоретичних предків "
+
+msgid "Pedigree Collapse "
+msgstr "Колапс родоводу "
+
+msgid "Total Number of Ancestors found "
+msgstr "Загальна кількість знайдених предків "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "Загальна кількість унікальних знайдених предків "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"Примітка: У цьому звіті враховуються лише предки, пов’язані відносинами "
+"народження (батько-дитина)."
+
+msgid "Filled digit"
+msgstr "Заповнена цифра"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"Кількість знаків після коми у звіті для відсотка знайдених предків у певному "
+"поколінні"
+
+msgid "Collapsed digit"
+msgstr "Кількість знаків для колапсу"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr "Кількість знаків після коми у звіті для показника колапсу родоводу"
+
+msgid "Display theoretical"
+msgstr "Відображати теоретичне значення"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Чи відображати теоретичну кількість предків за поколіннями"
+
+msgid "The style used for the title of the page."
+msgstr "Стиль, що використовується для заголовка сторінки."

@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 09:41-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Search"
+msgstr "Zoeken"
+
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet voor zoekobjecten in database."
+
+msgid "Show bookmarked first"
+msgstr "Toon personen met een bladwijzer eerst"
+
+msgid "Sort by object type"
+msgstr "Sorteren op objecttype"
+
+msgid "Persons"
+msgstr "Personen"
+
+msgid "Menu to set search objects"
+msgstr "Menu om zoekobjecten in te stellen"
+
+msgid "Select objects to search"
+msgstr "Selecteer objecten om te zoeken"
+
+msgid "SearchGramplet configuration menu"
+msgstr "SearchGramplet configuratiemenu"
+
+#, python-format
+msgid "found: %s"
+msgstr "gevonden: %s"
+
+msgid "No matches..."
+msgstr "Geen overeenkomsten…"
+
+msgid "Start type to search"
+msgstr "Begin met typen om te zoeken"
+
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+"Begin met typen om objecten te zoeken.\n"
+"Om alle objecten weer te geven, voer alleen het symbool «*» in."
+
+msgid "Search..."
+msgstr "Zoeken..."
+
+msgid "Remove from bookmarks"
+msgstr "Verwijderen uit bladwijzers"
+
+msgid "Add to bookmarks"
+msgstr "Voeg toe aan bladwijzers"
+
+#, python-format
+msgid "Birth: %s"
+msgstr "Geboorte: %s"
+
+#, python-format
+msgid "Death: %s"
+msgstr "Overlijden: %s"
+
+msgid "Parents:"
+msgstr "Ouders:"
+
+msgid "Set as Active person"
+msgstr "Instellen als actieve persoon"
+
+msgid "Set as Home person"
+msgstr "Instellen als centrale persoon"

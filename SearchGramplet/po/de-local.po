@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 09:41-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Search"
+msgstr "Suche"
+
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet für Suche nach Objekten in der Datenbank."
+
+msgid "Show bookmarked first"
+msgstr "Zeige zuerst mit Lesezeichen versehende"
+
+msgid "Sort by object type"
+msgstr "Sortiere nach Objektart"
+
+msgid "Persons"
+msgstr "Personen"
+
+msgid "Menu to set search objects"
+msgstr "Menü um Suchobjekte festzulegen"
+
+msgid "Select objects to search"
+msgstr "Suchobjekte auswählen"
+
+msgid "SearchGramplet configuration menu"
+msgstr "SearchGramplet-Konfigurationsmenü"
+
+#, python-format
+msgid "found: %s"
+msgstr "gefunden: %s"
+
+msgid "No matches..."
+msgstr "Keine Übereinstimmungen..."
+
+msgid "Start type to search"
+msgstr "Anfangsart für die Suche"
+
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+"Starttyp, um Objekte zu suchen.\n"
+"Um alle Objekte anzuzeigen, geben Sie nur das Symbol „*“ ein."
+
+msgid "Search..."
+msgstr "Suchen …"
+
+msgid "Remove from bookmarks"
+msgstr "Aus Lesezeichen entfernen"
+
+msgid "Add to bookmarks"
+msgstr "Zu Lesezeichen hinzufügen"
+
+#, python-format
+msgid "Birth: %s"
+msgstr "Geburt: %s"
+
+#, python-format
+msgid "Death: %s"
+msgstr "Tod: %s"
+
+msgid "Parents:"
+msgstr "Eltern:"
+
+msgid "Set as Active person"
+msgstr "Als aktive Person festlegen"
+
+msgid "Set as Home person"
+msgstr "Als Hauptperson festlegen"

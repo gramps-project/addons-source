@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Place ID to import from GOV (Historical Gazetteer):"
+msgstr "ID miesta na import z GOV (Historical Gazetteer):"
+
+msgid "Get Place"
+msgstr "Získať miesto"
+
+#, python-format
+msgid "Add GOV-id place %s"
+msgstr "Pridať miesto s ID GOV %s"
+
+#, python-format
+msgid "GetGOV error: %s"
+msgstr "Chyba GetGOV: %s"
+
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr "Chyba GOV na ID %s s kódom: "
+
+#, python-format
+msgid "from %s to %s"
+msgstr "od %s do %s"
+
+#, python-format
+msgid "after %s"
+msgstr "po %s"
+
+#, python-format
+msgid "before %s"
+msgstr "pred %s"
+
+msgid "GetGOV"
+msgstr "GetGOV"
+
+msgid "Gramplet to get places from the GOV database"
+msgstr "Gramplet na získanie miest z databázy GOV"

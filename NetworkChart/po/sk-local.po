@@ -1,0 +1,241 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Male Background"
+msgstr "Pozadie muža"
+
+msgid "RGB-color for male box background."
+msgstr "RGB-farba pre pozadie kolónky pre mužov."
+
+msgid "Male Background Alpha"
+msgstr "Pozadie muža alfa"
+
+msgid "Male Box Edge"
+msgstr "Okraj kolónky muža"
+
+msgid "RGB-color for Male box edge."
+msgstr "RGB-farba pre okraj kolónky muža."
+
+msgid "Female Background"
+msgstr "Pozadie pre ženy"
+
+msgid "RGB-color for Female box background."
+msgstr "RGB-farba pre pozadie kolónky Žena."
+
+msgid "Female Background Alpha"
+msgstr "Pozadie ženy alfa"
+
+msgid "Female Box Edge"
+msgstr "Pozadie kolónky ženy"
+
+msgid "RGB-color for Female box edge."
+msgstr "RGB-farba pre okraj kolónky ženy."
+
+msgid "Other Background"
+msgstr "Iné pozadie"
+
+msgid "Other Background Alpha"
+msgstr "Iné pozadie alfa"
+
+msgid "Alpha for Other box background (transparent=0, solid=255)."
+msgstr "Alfa pre pozadie inej kolónky (priehľadné=0, plné=255)."
+
+msgid "Family Connector Line"
+msgstr "Spojovacia linka rodiny"
+
+msgid "RGB-color for family connector line."
+msgstr "RGB-farba pre spojovaciu linku rodiny."
+
+msgid "Marriage Connector Line"
+msgstr "Spojovacia linka manželstva"
+
+msgid "RGB-color for marriage connector line."
+msgstr "RGB-farba pre spojovaciu linku manželstva."
+
+msgid "Highlight Connector Line"
+msgstr "Zvýrazniť spojovaciu linku"
+
+msgid ""
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
+msgstr ""
+"RGB-farba pre zvýraznenú cestu medzi dvoma jedincami.  Ak sa graf invertuje, "
+"obráťte poradie na zmenu."
+
+msgid "Trim Box Edge"
+msgstr "Orezať okraj kolónky"
+
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "RGB-farba pre okraj kolónky, ktorý bol orezaný."
+
+msgid "Remove color background on all nodes."
+msgstr "Odstrániť farebné pozadie na všetkých uzloch."
+
+msgid "Removes color background for individuals (nodes) on chart."
+msgstr "Odstráni farebné pozadie pre jedincov (uzly) v grafe."
+
+msgid "Represent birthday by year only."
+msgstr "Reprezentovať narodeniny len podľa roku."
+
+msgid "Represent marriage by year only."
+msgstr "Reprezentovať manželstvo len podľa roku."
+
+msgid ""
+"Attempts to remove middle names.  Only works for entries with birth year in "
+"the record."
+msgstr ""
+"Pokusy o odstránenie prostredných mien.  Funguje len pre položky s rokom "
+"narodenia v zázname."
+
+msgid "Remove middle names."
+msgstr "Odstrániť prostredné mená."
+
+msgid "Allow inclusion of private records in chart."
+msgstr "Povoliť zahrnutie súkromných záznamov do grafu."
+
+msgid "Trim"
+msgstr "Orezať"
+
+msgid "Trim descendants"
+msgstr "Orezať potomkov"
+
+msgid "All descendants (children) of selected individuals will not be shown."
+msgstr "Všetci potomkovia (deti) vybraných jedincov nebudú zobrazení."
+
+msgid "Enable trimming of descendants."
+msgstr "Povoliť orezávanie potomkov."
+
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"Musíte zadať platnú(é) osobu(y) pred \n"
+"umožnením orezania potomkov zo stromu."
+
+msgid "Trim ancestors"
+msgstr "Orezať predkov"
+
+msgid "All ancestors (parents) of selected individuals will not be shown."
+msgstr "Všetci predkovia (rodičia) vybraných jedincov nebudú zobrazení."
+
+msgid "Enable trimming of ancestors."
+msgstr "Povoliť orezávanie predkov."
+
+msgid "Enable trimming of ancestors from tree."
+msgstr "Umožní orezávanie predkov zo stromu."
+
+msgid "Enable trim groups."
+msgstr "Povoliť orezať skupiny."
+
+msgid ""
+"Remove groups less than Min Group Size.  Automatic\n"
+"for databases with more than 1500 individuals."
+msgstr ""
+"Odstráni skupiny menšie ako minimálna veľkosť skupiny.  Automatické\n"
+"pre databázy s viac ako 1500 jedincami."
+
+msgid "Min Group Size"
+msgstr "Najmenšia veľkosť skupiny"
+
+msgid ""
+"Enter the minimum size group to display.\n"
+"Value may be 2 or greater."
+msgstr ""
+"Zadať minimálnu veľkosť skupiny, ktorá sa má zobraziť.\n"
+"Hodnota môže byť 2 alebo viac."
+
+msgid ""
+"Select Start and\n"
+"End Individuals in\n"
+"displayed path(s).\n"
+"Select two"
+msgstr ""
+"Vybrať počiatočných a\n"
+"koncových jedincov v\n"
+"zobrazených cestách.\n"
+"Vybrať dvoch"
+
+msgid ""
+"Starting and ending person for displayed path(s).\n"
+"Select two people"
+msgstr ""
+"Počiatočná a koncová osoba pre zobrazenú(-é) cestu(-y).\n"
+"Vybrať dve osoby"
+
+msgid "Highlight path(s)"
+msgstr "Zvýrazniť cestu(-y)"
+
+msgid "Any"
+msgstr "Akékoľvek"
+
+msgid "Default (None)"
+msgstr "Predvolené (žiadne)"
+
+msgid ""
+"None - Don't highlight paths.\n"
+"Direct - Highlight direct descendant/ancestor paths.\n"
+"Any - Highlight any path(s) including direct or indirect."
+msgstr ""
+"Žiadne – nezvýrazňovať cesty.\n"
+"Priame – zvýrazniť priame cesty potomkov/predkov.\n"
+"Akékoľvek – zvýrazniť akúkoľvek cestu(-y), vrátane priamych alebo nepriamych."
+
+msgid "Show only path(s)"
+msgstr "Zobraziť len cestu(-y)"
+
+msgid "Default (none)"
+msgstr "Predvolené (žiadne)"
+
+msgid ""
+"None - Don't show paths only.\n"
+"Direct - Show only direct descendant/ancestor paths.\n"
+"Any - Show only path(s) direct or indirect."
+msgstr ""
+"Žiadne - nezobraziť iba cesty.\n"
+"Priame - zobraziť len priame cesty potomkov/predkov.\n"
+"Ľubovoľné - zobraziť len priame alebo nepriame cesty."
+
+msgid "Select person at center of selection radius in graph."
+msgstr "Vybrať osobu v strede okruhu výberu v grafe."
+
+msgid ""
+"Max connections\n"
+"from center"
+msgstr ""
+"Maximum spojení\n"
+"od stredu"
+
+msgid ""
+"Enter the maximum number of connections allowed from\n"
+"the center person.  Value may be 1 or greater."
+msgstr ""
+"Zadať maximálny počet povolených spojení od\n"
+"hlavnej osoby.  Hodnota môže byť 1 alebo vyššia."
+
+msgid "Limit graph to max connections from center."
+msgstr "Obmedzí graf na maximálny počet spojení od stredu."
+
+msgid "Display up to max connections from central person."
+msgstr "Zobraziť maximálny počet spojení od hlavnej osoby."
+
+msgid "Highlight central person in graph."
+msgstr "Zvýrazniť hlavnú osobu v grafe."
+
+msgid "Add yellow color background to central person."
+msgstr "Pridať žltú farbu pozadia k hlavnej osobe."
+
+msgid "Confirm overwrite file."
+msgstr "Potvrdiť prepísanie súboru."

@@ -1,0 +1,78 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Set Privacy Tool"
+msgstr "Інструмент налаштування конфіденційності"
+
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "Позначено як приватне: %d %s\n"
+
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "Не є приватним: %d %s\n"
+
+msgid "Set persons private.."
+msgstr "Позначити особи як приватні.."
+
+msgid "Set events private.."
+msgstr "Позначити події як приватні.."
+
+msgid "Set media private.."
+msgstr "Позначити медіафайли як приватні.."
+
+msgid "Set adresses private.."
+msgstr "Позначити адреси як приватні.."
+
+msgid "Set internet objects private.."
+msgstr "Позначити інтернет-об’єкти як приватні.."
+
+msgid ""
+"The time range in years from today you want to set objects private.\n"
+"'0 years' = remove privacy from all objects."
+msgstr ""
+"Діапазон часу в роках від сьогодні, протягом якого ви хочете зробити об’єкти "
+"приватними.\n"
+"'0 років' = зняти конфіденційність з усіх об’єктів."
+
+msgid "Always private if no date."
+msgstr "Завжди приватне, якщо немає дати."
+
+msgid "If checked, all objects without a date will also be set private."
+msgstr ""
+"Якщо увімкнено, всі об’єкти без дати також будуть позначені як приватні."
+
+msgid "Select filter to restrict people"
+msgstr "Виберіть фільтр для обмеження людей"
+
+msgid "Persons"
+msgstr "Особи"
+
+msgid "Select filter to restrict events"
+msgstr "Виберіть фільтр для обмеження подій"
+
+msgid "Select filter to restrict medias"
+msgstr "Виберіть фільтр для обмеження медіафайлів"
+
+msgid "Internet type filter"
+msgstr "Фільтр типу інтернет-об’єктів"
+
+msgid "E-Mail"
+msgstr "Електронна пошта"
+
+msgid "Set all objects of the last <number> of years private."
+msgstr "Позначити всі об’єкти за останні <number> років як приватні."

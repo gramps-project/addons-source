@@ -1,0 +1,420 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-08 17:04+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+
+msgid "Inhabitants of"
+msgstr "Abitanti di"
+
+msgid "Residing in the"
+msgstr "Residente in"
+
+msgid "Place of Record"
+msgstr "Luogo di registrazione"
+
+msgid "Book/Volume"
+msgstr "Libro/Volume"
+
+msgid "Race/Color"
+msgstr "Razza/Colore"
+
+msgid ""
+"STOP! If you want this record to be attached to the Parents move to Father."
+msgstr ""
+"STOP! Se vuoi che questo record venga allegato ai genitori spostati sul "
+"padre."
+
+msgid "Mother (Maiden Name)"
+msgstr "Madre (nome da ragazza)"
+
+msgid "Residence of Parents"
+msgstr "Residenza dei genitori"
+
+msgid "By Whom Reported"
+msgstr "Da chi è stato segnalato"
+
+msgid "Date Recorded"
+msgstr "Data di registrazione"
+
+msgid "License No."
+msgstr "Licenza n."
+
+msgid "Date of Marriage"
+msgstr "Data di matrimonio"
+
+msgid "Married by"
+msgstr "Sposato con"
+
+msgid "Place of Marriage"
+msgstr "Luogo di matrimonio"
+
+msgid "Consent given by"
+msgstr "Consenso prestato da"
+
+msgid "Place of Death"
+msgstr "Luogo di morte"
+
+msgid "Length of Residence"
+msgstr "Durata della residenza"
+
+msgid "Served in U.S. Military"
+msgstr "Ha prestato servizio nell'esercito degli Stati Uniti"
+
+msgid "Spouse's Name"
+msgstr "Nome del coniuge"
+
+msgid "Birth date of deceased"
+msgstr "Data di nascita del deceduto"
+
+msgid "Name of employer"
+msgstr "Nome del datore di lavoro"
+
+msgid "Date last worked"
+msgstr "Data dell'ultimo lavoro"
+
+msgid "Years in this occupation"
+msgstr "Anni in questo lavoro"
+
+msgid "Education Level"
+msgstr "Livello di istruzione"
+
+msgid "Social Security No."
+msgstr "Numero di previdenza sociale"
+
+msgid "Date of Death"
+msgstr "Data di morte"
+
+msgid "Place of Burial"
+msgstr "Luogo di sepoltura"
+
+msgid "Date of Burial"
+msgstr "Data di sepoltura"
+
+msgid "Residence Place"
+msgstr "Luogo di residenza"
+
+msgid "Burial Date"
+msgstr "Data di sepoltura"
+
+msgid "Burial Place"
+msgstr "Luogo di sepoltura"
+
+msgid "Congressional District"
+msgstr "Distretto del Congresso"
+
+msgid "in the Counties of"
+msgstr "nelle Contee di"
+
+msgid "in the month of"
+msgstr "nel mese di"
+
+msgid "Age 1 July 1863"
+msgstr "Età 1 luglio 1863"
+
+msgid "White or Colored"
+msgstr "Bianco o Colorato"
+
+msgid "Former Military Service"
+msgstr "Servizio militare"
+
+msgid "Congr. Dist. of"
+msgstr "Distr. Congr. di"
+
+msgid "Card (A, B, or C)"
+msgstr "Carta (A, B, o C)"
+
+msgid "Serial No."
+msgstr "N. di serie"
+
+msgid "Registration No."
+msgstr "N. di registrazione"
+
+msgid "Order No."
+msgstr "N. ordine"
+
+msgid "Age in yrs."
+msgstr "Età in anni"
+
+msgid "Home Address"
+msgstr "Indirizzo di casa"
+
+msgid "Citizenship"
+msgstr "Cittadinanza"
+
+msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
+msgstr ""
+"Cittadino per nascita, Cittadino naturalizzato, Straniero, Non cittadino o "
+"Cittadino indiano"
+
+msgid "If not a citizen, of what nation are you a citizen or subject?"
+msgstr "Se non hai la cittadinanza, di quale nazione sei cittadino o suddito?"
+
+msgid "Employer's Name & address"
+msgstr "Nome e indirizzo del datore di lavoro"
+
+msgid "Nearest Relative"
+msgstr "Parente più prossimo"
+
+msgid "Dependants & Address"
+msgstr "Discendenti e indirizzi"
+
+msgid ""
+"Have you a father, mother, wife, child under 12, or a sister or brother "
+"under 12, solely dependent on your support (specify which)?"
+msgstr ""
+"Hai un padre, una madre, una moglie, un figlio di età inferiore ai 12 anni, "
+"o una sorella o un fratello di età inferiore ai 12 anni che dipendono "
+"esclusivamente dal tuo mantenimento (specifica quali)?"
+
+msgid "What military service have you had? (Branch, Years, Nation or State)"
+msgstr ""
+"Che tipo di servizio militare hai svolto? (Arma, Anni, Nazione o Stato)"
+
+msgid "Do you claim exemption from draft (specify grounds)"
+msgstr "Richiesta di esenzione dalla leva (specifica i motivi)"
+
+msgid "Race "
+msgstr "Razza "
+
+msgid "Hair Color"
+msgstr "Colore dei capelli"
+
+msgid "Bald"
+msgstr "Calvo"
+
+msgid "Disability"
+msgstr "Disabilità"
+
+msgid "Place of Registration"
+msgstr "Luogo di registrazione"
+
+msgid "Date of Registration"
+msgstr "Data di registrazione"
+
+msgid "Serial Number"
+msgstr "Numero di serie"
+
+msgid "Order Number"
+msgstr "Numero ordine"
+
+msgid "Place of Residence"
+msgstr "Luogo di residenza"
+
+msgid "Telephone"
+msgstr "Telefono"
+
+msgid "Age in years"
+msgstr "Età in anni"
+
+msgid "Who will always know your address (Name & Address)"
+msgstr "Chi potrà sempre conoscere il tuo indirizzo (nome e indirizzo)"
+
+msgid "Place of employment or business"
+msgstr "Luogo di lavoro o di attività"
+
+msgid "Complexion"
+msgstr "Carnagione"
+
+msgid "Eyes"
+msgstr "Occhi"
+
+msgid "Hair"
+msgstr "Capelli"
+
+msgid "Other characteristics"
+msgstr "Altre caratteristiche"
+
+msgid "Date entered"
+msgstr "Data di inserimento"
+
+msgid "Place entered"
+msgstr "Luogo di inserimento"
+
+msgid "Term of enlistment"
+msgstr "Termine di arruolamento"
+
+msgid "Eye color"
+msgstr "Colore degli occhi"
+
+msgid "Hair color"
+msgstr "Colore dei capelli"
+
+msgid "Rank in"
+msgstr "Grado all'arruolamento"
+
+msgid "Branch"
+msgstr "Arma"
+
+msgid "Regiment/Unit/Ship"
+msgstr "Reggimento/Unità/Nave"
+
+msgid "No. of enlistment"
+msgstr "Matricola di arruolamento"
+
+msgid "Date discharged"
+msgstr "Data di congedo"
+
+msgid "Place discharged"
+msgstr "Luogo di congedo"
+
+msgid "Rank out"
+msgstr "Grado al congedo"
+
+msgid "Industry/Employer"
+msgstr "Settore/Datore di lavoro"
+
+msgid "Event Place (Original)"
+msgstr "Luogo dell'evento (originale)"
+
+msgid "Birth Year (Estimated)"
+msgstr "Anno di nascita (stimato)"
+
+msgid "Spouse's Gender"
+msgstr "Genere del coniuge"
+
+msgid "Spouse's Age"
+msgstr "Età del coniuge"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "Anno di nascita del coniuge (stimato)"
+
+msgid "Spouse's Father's Name"
+msgstr "Nome del padre del coniuge"
+
+msgid "Spouse's Mother's Name"
+msgstr "Nome della madre del coniuge"
+
+msgid "Record Number"
+msgstr "Numero del record"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Volume Beginning Year"
+msgstr "Anno iniziale del volume"
+
+msgid "Volume Ending Year"
+msgstr "Anno finale del volume"
+
+msgid "Town or City"
+msgstr "Città"
+
+msgid "Gift"
+msgstr "Regalo"
+
+msgid "Comments"
+msgstr "Commenti"
+
+msgid "Place of Work"
+msgstr "Luogo di lavoro"
+
+msgid "Years at current residence"
+msgstr "Anni nella residenza attuale"
+
+msgid "Previous residence"
+msgstr "Residenza precedente"
+
+msgid "Children Living"
+msgstr "Figli viventi"
+
+msgid "Children Dead"
+msgstr "Figli morti"
+
+msgid "Previous Residence"
+msgstr "Residenza precedente"
+
+msgid "Income"
+msgstr "Reddito"
+
+msgid "Residence on 5 Nov 1924"
+msgstr "Residenza il 5 novembre 1924"
+
+msgid "Date Married"
+msgstr "Data del matrimonio"
+
+msgid "Registration District"
+msgstr "Distretto di registrazione"
+
+msgid "Administrative Area"
+msgstr "Area amministrativa"
+
+msgid "Maiden Surname"
+msgstr "Cognome da nubile"
+
+msgid "Deceased"
+msgstr "Deceduto"
+
+msgid "Maiden surname of woman who was married"
+msgstr "Nome da nubile di una donna che è stata sposata"
+
+msgid "Usual Address"
+msgstr "Indirizzo abituale"
+
+msgid "City or Borough"
+msgstr "Città o borgo"
+
+msgid "Parish or Township"
+msgstr "Parrocchia o comune"
+
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr "NOMI di tutte le persone che vi hanno soggiornato la notte precedente."
+
+msgid ""
+"AGE, rounded down to the nearest five years for those aged fifteen or over."
+msgstr ""
+"ETÀ, arrotondata per difetto ai cinque anni più vicini per i soggetti di "
+"quindici anni o più."
+
+msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
+msgstr "PROFESSIONE, COMMERCIO, IMPIEGO o MEZZI INDIPENDENTI."
+
+msgid "Ecclesiastical District"
+msgstr "Distretto ecclesiastico"
+
+msgid ""
+"Name and Surname of each Person who abode in the house, on the Night of the "
+"30th March, 1851"
+msgstr ""
+"Nome e cognome di ogni persona che abitava nella casa la notte del 30 marzo "
+"1851"
+
+msgid "Relation to Head of Family"
+msgstr "Relazione con il capofamiglia"
+
+msgid "Rank, Profession or Occupation"
+msgstr "Grado, professione o impiego"
+
+msgid "Whether Blind or Deaf and Dumb"
+msgstr "Indicare se cieco o sordo e muto"
+
+msgid "Name and Surname of each Person"
+msgstr "Nome e cognome di ogni persona"
+
+msgid "Whether Blind, or Deaf-and-Dumb"
+msgstr "Indicare se cieco o sordomuto"
+
+msgid "Village or Hamlet"
+msgstr "Villaggio o frazione"
+
+msgid "Can read and write"
+msgstr "Sa leggere e scrivere"
+
+msgid "Military"
+msgstr "Militare"
+
+msgid "Taxes"
+msgstr "Tasse"
+
+msgid "Arrived since"
+msgstr "Arrivato dal"

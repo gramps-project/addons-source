@@ -1,0 +1,430 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "BirthIndex"
+msgstr "Індекс народжень"
+
+msgid "MarriageIndex"
+msgstr "Індекс шлюбів"
+
+msgid "DeathIndex"
+msgstr "Індекс смертей"
+
+msgid "CensusIndex"
+msgstr "Індекс переписів"
+
+msgid "SourceIndex"
+msgstr "Індекс джерел"
+
+msgid "Sources Index"
+msgstr "Індекс джерел"
+
+msgid "*** Error: Must install either ElementTree or lxml."
+msgstr "*** Помилка: Потрібно встановити ElementTree або lxml."
+
+msgid "must install either ElementTree or lxml"
+msgstr "Потрібно встановити ElementTree або lxml"
+
+msgid "index"
+msgstr "індекс"
+
+msgid "_File"
+msgstr "_Файл"
+
+msgid "Import CSV"
+msgstr "Імпорт CSV"
+
+msgid "Display all"
+msgstr "Показати всі"
+
+msgid "Display only births"
+msgstr "Показати лише народження"
+
+msgid "Births/Baptisms"
+msgstr "Народження/Хрещення"
+
+msgid "Display only marriages"
+msgstr "Показати лише шлюби"
+
+msgid "Marriages/Families"
+msgstr "Шлюби/Сім'ї"
+
+msgid "Display only deaths"
+msgstr "Показати лише смерті"
+
+msgid "Deaths/Burials"
+msgstr "Смерті/Поховання"
+
+msgid "Display only censuses"
+msgstr "Показати лише переписи"
+
+msgid "Censuses"
+msgstr "Переписи"
+
+msgid "About this utility."
+msgstr "Про цю утиліту."
+
+msgid "About dialog"
+msgstr "Діалог про програму"
+
+msgid "New birth or baptism"
+msgstr "Нове народження або хрещення"
+
+msgid "add birth act"
+msgstr "додати запис про народження"
+
+msgid "New marriage"
+msgstr "Новий шлюб"
+
+msgid "add marriage act"
+msgstr "додати запис про шлюб"
+
+msgid "New death or burial"
+msgstr "Нова смерть або поховання"
+
+msgid "add death act"
+msgstr "додати запис про смерть"
+
+msgid "New census"
+msgstr "Новий перепис"
+
+msgid "add census"
+msgstr "додати запис перепису"
+
+msgid "Select a birth source"
+msgstr "Вибрати джерело народження"
+
+msgid "birth"
+msgstr "народження"
+
+msgid "Select a marriage source"
+msgstr "Вибрати джерело шлюбу"
+
+msgid "Select a death source"
+msgstr "Вибрати джерело смерті"
+
+msgid "Select a census source"
+msgstr "Вибрати джерело перепису"
+
+msgid "census"
+msgstr "перепис"
+
+msgid "Select a repository storing a source"
+msgstr "Вибрати сховище для джерела"
+
+msgid "repositories"
+msgstr "сховища"
+
+msgid "Selected view"
+msgstr "Вибраний перегляд"
+
+msgid ""
+"Records transcriptions ... births/deaths/marriages/censuses with common "
+"fields: id, repository, person name, birth date and place, parents."
+msgstr ""
+"Записує транскрипції ... народжень/смертей/шлюбів/переписів із загальними "
+"полями: ID, сховище, ім'я особи, дата і місце народження, батьки."
+
+msgid "witness"
+msgstr "свідок"
+
+msgid "<b>Witness</b>"
+msgstr "<b>Свідок</b>"
+
+msgid "Names:"
+msgstr "Імена:"
+
+msgid "First names:"
+msgstr "Імена:"
+
+msgid "Age:"
+msgstr "Вік:"
+
+msgid "Origin:"
+msgstr "Походження:"
+
+msgid "Occupation:"
+msgstr "Професія:"
+
+msgid "Live:"
+msgstr "Проживає:"
+
+msgid "Info:"
+msgstr "Інформація:"
+
+msgid "Birth act:"
+msgstr "Запис про народження:"
+
+msgid "Reference:"
+msgstr "Посилання:"
+
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+"Том\n"
+"     сторінка:"
+
+msgid "The source title"
+msgstr "Назва джерела"
+
+msgid "The volume or page of this source"
+msgstr "Том або сторінка цього джерела"
+
+msgid "select the gender/sex"
+msgstr "виберіть стать"
+
+msgid "The names of the main person written into the source"
+msgstr "Імена головної особи, записані в джерелі"
+
+msgid "The first names of the main person written into the source"
+msgstr "Імена головної особи, записані в джерелі"
+
+msgid "Other:"
+msgstr "Інше:"
+
+msgid "Repository title"
+msgstr "Назва сховища"
+
+msgid "<b>Image</b>"
+msgstr "<b>Зображення</b>"
+
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>Сховище</i></b>"
+
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"Імена\n"
+"подружжя:"
+
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"Дата\n"
+"шлюбу:"
+
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"Дата\n"
+"смерті:"
+
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+"<b>Свідок\n"
+"Хрещений батько\n"
+"Хрещена мати:</b>"
+
+msgid "Call number:"
+msgstr "Інвентарний номер:"
+
+msgid "The call number into the repository"
+msgstr "Інвентарний номер у сховище"
+
+msgid "<b><i>Data person</i></b>"
+msgstr "<b><i>Дані особи</i></b>"
+
+msgid "<b><i>Data margin</i></b>"
+msgstr "<b><i>Дані на полях</i></b>"
+
+msgid "<b><i>Data father</i></b>"
+msgstr "<b><i>Дані батька</i></b>"
+
+msgid "<b><i>Data mother</i></b>"
+msgstr "<b><i>Дані матері</i></b>"
+
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+"свідок1, прізвище, ім'я, вік, професія;\n"
+"свідок2, прізвище, ім'я, вік, професія;\n"
+"хрещений батько, прізвище, ім'я, вік, професія;\n"
+"тощо ..."
+
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"Місце \n"
+"шлюбу:"
+
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Місце \n"
+"смерті:"
+
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Місце \n"
+"народження"
+
+msgid "Origine:"
+msgstr "Походження:"
+
+msgid "<b><i>Citation</i></b>"
+msgstr "<b><i>Цитування</i></b>"
+
+msgid "<b><i>Source</i></b>"
+msgstr "<b><i>Джерело</i></b>"
+
+msgid "Death act:"
+msgstr "Запис про смерть:"
+
+msgid "Volume:"
+msgstr "Том:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>Запис про смерть</b>"
+
+msgid "First name:"
+msgstr "Ім'я:"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Сховище</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>Дані особи</b>"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Свідок:</b>"
+
+msgid "Birth date:"
+msgstr "Дата народження:"
+
+msgid "Birth place:"
+msgstr "Місце народження:"
+
+msgid "Note:"
+msgstr "Примітка:"
+
+msgid "Spouse name:"
+msgstr "Ім'я подружжя:"
+
+msgid "Marriage date:"
+msgstr "Дата шлюбу:"
+
+msgid "Marriage place:"
+msgstr "Місце шлюбу:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>Дані матері</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>Дані батька</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Чоловік/Дружина</b> "
+
+msgid "alive"
+msgstr "живий/жива"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"свідок1, прізвище, ім'я, вік, професія; свідок2, прізвище, ім'я, вік, "
+"професія тощо ..."
+
+msgid "<b>Census</b>"
+msgstr "<b>Перепис</b>"
+
+msgid "Death date:"
+msgstr "Дата смерті:"
+
+msgid "Death place:"
+msgstr "Місце смерті:"
+
+msgid "Family status:"
+msgstr "Сімейний стан:"
+
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "номер, особа, прізвище, ім'я, вік, статус, професія тощо ..."
+
+msgid "Marriage act:"
+msgstr "Акт шлюбу:"
+
+msgid "m. date:"
+msgstr "дата шлюбу:"
+
+msgid "m. place:"
+msgstr "місце шлюбу:"
+
+msgid "d.contract:"
+msgstr "шлюбний договір (дата):"
+
+msgid "dates banns:"
+msgstr "дати оголошення шлюбу:"
+
+msgid "p.contract:"
+msgstr "шлюбний договір (умови):"
+
+msgid "places banns:"
+msgstr "місця оголошення шлюбу:"
+
+msgid "<b>Data union</b>"
+msgstr "<b>Дані про союз</b>"
+
+msgid "<b>Marriage act</b>"
+msgstr "<b>Акт шлюбу</b>"
+
+msgid ""
+"<b>Data father\n"
+"spouse1</b>"
+msgstr ""
+"<b>Дані батька\n"
+"чоловіка/дружини 1</b>"
+
+msgid ""
+"<b>Data mother\n"
+"spouse1</b>"
+msgstr ""
+"<b>Дані матері\n"
+"чоловіка/дружини 1</b>"
+
+msgid ""
+"<b>Data mother\n"
+"spouse2</b>"
+msgstr ""
+"<b>Дані матері\n"
+"чоловіка/дружини 2</b>"
+
+msgid ""
+"<b>Data father\n"
+"spouse2</b>"
+msgstr ""
+"<b>Дані батька\n"
+"чоловіка/дружини 2</b>"
+
+msgid "<b>Data spouse1</b>"
+msgstr "<b>Дані чоловіка/дружини 1</b>"
+
+msgid "<b>Data spouse2</b>"
+msgstr "<b>Дані чоловіка/дружини 2</b>"

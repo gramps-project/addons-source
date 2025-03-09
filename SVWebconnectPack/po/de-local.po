@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "SV Web Connect Pack"
+msgstr "SV Web Verknüpfungspaket"
+
+msgid "Collection of Web sites for Sweden (requires libwebconnect)"
+msgstr "Sammlung von Websites für Schweden (erfordert libwebconnect)"
+
+msgid "Find A Grave"
+msgstr "Finde ein Grab"
+
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
+msgid "Google SV"
+msgstr "Google SV"
+
+msgid "FamilySearch.org Tree"
+msgstr "FamilySearch.org Baum"
+
+msgid "National archives of Sweden personsearch"
+msgstr "Nationale Archive von Schweden Personensuche"
+
+msgid "National archives of Sweden free search"
+msgstr "Nationale Archive von Schweden freie Suche"
+
+msgid "Arkiv Digital estate records for Skåne"
+msgstr "Arkiv Digital Nachlassregister für Skåne"
+
+msgid "Ancestry Search"
+msgstr "Ancestry Suche"
+
+msgid "Find swedish portraits - Rötter.se"
+msgstr "Schwedische Porträts finden - Rötter.se"
+
+msgid "Gravar.se - find swedish graves"
+msgstr "Gravar.se - schwedische Gräber finden"
+
+msgid "National archives of Sweden search censuses"
+msgstr "Nationale Archive von Schweden Suche Volkszählungen"
+
+msgid "Arkiv Digital released prisoners"
+msgstr "Arkiv Digital entlässt Gefangene"
+
+msgid "Gravestone inventory - rötter.se"
+msgstr "Grabsteininventar - rötter.se"

@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Gramps Web Sync"
+msgstr "Sincronização \"web\" do Gramps"
+
+msgid "Fetching remote data..."
+msgstr "A obter dados remotos..."
+
+msgid "Media files are in sync."
+msgstr "Multimédia sincronizada."
+
+msgid "Comparing local and remote data..."
+msgstr "A comparar dados locais e remotos..."
+
+msgid "Error: URL not found."
+msgstr "Erro: URL não encontrado."
+
+msgid "Merge"
+msgstr "Unir"
+
+msgid "Local changes"
+msgstr "Alterações locais"
+
+msgid "Modified"
+msgstr "Modificado"
+
+msgid "Remote changes"
+msgstr "Alterações remotas"
+
+msgid "Simultaneous changes"
+msgstr "Alterações simultâneas"
+
+msgid "Fetching information about media files..."
+msgstr "A obter informação sobre multimédia..."
+
+msgid "Both trees are the same."
+msgstr "As árvores são idênticas."
+
+msgid "Applying changes to local database ..."
+msgstr "Aplicar alterações à base de dados local."
+
+msgid "No changes to apply to local database."
+msgstr "Não aplicar alterações à base de dados local."
+
+msgid "Missing locally"
+msgstr "Locais em falta"
+
+msgid "Missing remotely"
+msgstr "Remotos em falta"
+
+#, python-format
+msgid "Downloading %s media file(s)"
+msgstr "A transferir %s ficheiro(s) multimédia"
+
+#, python-format
+msgid "Uploading %s media file(s)"
+msgstr "A enviar %s ficheiro(s) multimédia"

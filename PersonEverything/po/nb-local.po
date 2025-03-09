@@ -1,0 +1,47 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid " This is the primary birth event."
+msgstr " Dette er den primære fødselshendelsen."
+
+msgid " This is the primary death event."
+msgstr " Dette er den primære dødshendelsen."
+
+msgid ""
+"Details of any children and events etc. would be in a similar report for the "
+"father or mother."
+msgstr ""
+"Detaljer om eventuelle barn og hendelser vil være i en lignende rapport for "
+"faren eller moren."
+
+msgid "Note type"
+msgstr "Notattype"
+
+msgid "Alternative Name"
+msgstr "Alternative navn"
+
+msgid "Latitude, Longitude"
+msgstr "Breddegrad, Lengdegrad"
+
+msgid "Repository type"
+msgstr "Arkivtype"
+
+msgid "Repository reference"
+msgstr "Arkivreferanse"
+
+msgid "The style used for the title of the page."
+msgstr "Stilen som brukes på sidens tittel."

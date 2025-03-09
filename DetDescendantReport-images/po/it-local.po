@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr "%(event_name)s: %(event_text)s"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+msgid "List children"
+msgstr "Elenca i figli"
+
+msgid "Add descendant reference in child list"
+msgstr "Aggiungi riferimento all'antenato nella elenco dei figli"
+
+msgid "The style used for the title of the page."
+msgstr "Lo stile usato per il titolo della pagina."
+
+msgid "The style used for the children list."
+msgstr "Lo stile usato per la elenco dei figli."
+
+msgid "The style used for the first personal entry."
+msgstr "Lo stile usato la prima registrazione personale."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"Lo stile usato per l'intestazione di 'Altre informazioni su' e per "
+"l'intestazione degli amici."
+
+msgid "The style used for additional detail data."
+msgstr "Lo stile usato per i dettagli addizionali."

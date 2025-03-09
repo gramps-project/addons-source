@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Hide person"
+msgstr "להסתיר אדם"
+
+msgid "Show person"
+msgstr "הצגת אדם"
+
+msgid "Show siblings"
+msgstr "הצגת אחאים"
+
+msgid "Hide siblings"
+msgstr "הסתרת אחאים"
+
+msgid "General Layout"
+msgstr "עימוד כללי"
+
+msgid "Zoom in"
+msgstr "התקרבות"
+
+msgid "Zoom out"
+msgstr "התרחקות"
+
+msgid "Reset all settings"
+msgstr "שיצוב כלל ההגדרות"
+
+msgid "Show photos"
+msgstr "הצגת תמונות"
+
+msgid "Photo size"
+msgstr "גודל תמונה"
+
+msgid "Total height"
+msgstr "גובה כללי"
+
+msgid "Relative line thickness"
+msgstr "עובי קו יחסי"
+
+msgid "Show birth label"
+msgstr "הצגת תווית לידה"
+
+msgid "Activate the birth label."
+msgstr "שפעול תווית הלידה."
+
+msgid "Show death label"
+msgstr "הצגת תווית פטירה"
+
+msgid "Activate the death label."
+msgstr "שפעול תווית הפטירה."
+
+msgid "Activate the marriage label."
+msgstr "שפעול תווית ההנישואין."
+
+msgid "Font name"
+msgstr "שם גופן"
+
+msgid "Relative font size"
+msgstr "גודל גופן יחסי"
+
+msgid "Family shape"
+msgstr "צורת משפחה"
+
+msgid "Visualize connections"
+msgstr "החזיית קשרים"
+
+msgid "General chart layout"
+msgstr "עימוד תרשים כללי"

@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "FamilyTree DNA"
+msgstr "FamilyTree-DNA"
+
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr "Werkzeug zum Importieren von FamilyFinder-DNA-Daten aus Family Tree"
+
+msgid "Family Finder Tool"
+msgstr "Family Finder-Werkzeug"
+
+msgid "Enter FTDNA Family Finder Filename:"
+msgstr "Gib den FTDNA Family Finder Dateinamen ein:"
+
+msgid "Enter FTDNA Chromosome Segment Filename:"
+msgstr "Gib den Dateinamen des FTDNA-Chromosomensegments ein:"
+
+msgid "Import Haplogroups"
+msgstr "Haplogruppen importieren"
+
+msgid "FTDNA Note string :"
+msgstr "FTDNA-Notizenzeichenfolge :"
+
+msgid "Shared Citation ID :"
+msgstr "Gemeinsame Fundstellen-ID :"
+
+msgid "Active Person : "
+msgstr "Aktive Person: "
+
+msgid "Import data from Family Finder files"
+msgstr "Daten aus Family Finder-Dateien importieren"
+
+msgid "Close the Family Finder Tool"
+msgstr "Das Werkzeug Familiensuche schließen"
+
+msgid "Read Help manual"
+msgstr "Hilfe-Handbuch lesen"
+
+msgid "FamilyTree DNA Import"
+msgstr "FamilyTree-DNA-Import"
+
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr ""
+"{} Verknüpfungen mit DNA-Daten erstellt. {} Haplogruppen-Attribute "
+"erstellt \n"
+
+msgid "No Family Finder File specified"
+msgstr "Keine Family Finder-Datei angegeben"
+
+msgid "No Segment File specified"
+msgstr "Keine Segmentdatei angegeben"
+
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr ""
+"Keine Verbindungen in FTdna Notizen gefunden. Keine Haplogruppen-Attribute "
+"erstellt."
+
+#, python-format
+msgid "Add %s haplogroup attribute"
+msgstr "%s Haplogruppen-Attribut hinzufügen"
+
+#, python-format
+msgid "Add %s DNA Association"
+msgstr "DNA-Assoziation %s hinzufügen"
+
+#, python-format
+msgid "Create Note for %s DNA Association"
+msgstr "Notiz für %s DNA- Verbindung erstellen"
+
+#, python-format
+msgid "Add Note to %s DNA Association"
+msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
+
+#, python-format
+msgid "Create Source Citation for %s DNA Association"
+msgstr "Quellenfundstelle für %s DNA-Verbindung erstellen"
+
+#, python-format
+msgid "Create Citation for %s DNA Association"
+msgstr "Fundstelle für %s DNA-Verbindung erstellen"
+
+#, python-format
+msgid "Add Citation to %s DNA Association"
+msgstr "Fundstelle zu %s DNA-Verbindung hinzufügen"

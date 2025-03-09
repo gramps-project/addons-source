@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-03 16:13-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Historical Context"
+msgstr "Historischer Kontext"
+
+msgid "Lists relevant historical events during the lifetime of a Person"
+msgstr ""
+"Listet relevante historische Ereignisse während der Lebenszeit einer Person "
+"auf"
+
+msgid "Rows starting with this in the text column will be hidden "
+msgstr ""
+"Zeilen, die in der Textspalte mit diesem Zeichen beginnen, werden "
+"ausgeblendet. "
+
+msgid "Use filter "
+msgstr "Filter anwenden "
+
+msgid "Show outside life span "
+msgstr "Zeige außerhalb der Lebensspanne "
+
+msgid "Use full dates"
+msgstr "Vollständiges Datum verwenden"
+
+msgid "Foreground color items in lifespan"
+msgstr "Vordergrundfarbe für Elemente in der Lebensspanne"
+
+msgid "Background color items in lifespan"
+msgstr "Hintergrundfarbe für Elemente in der Lebensspanne"
+
+msgid "Foreground color items outside lifespan"
+msgstr "Vordergrundfarbe für Elemente außerhalb der Lebensspanne"
+
+msgid "Background color items outside lifespan"
+msgstr "Hintergrundfarbe für Elemente außerhalb der Lebensspanne"
+
+msgid "Select from files"
+msgstr "Aus Dateien auswählen"
+
+msgid "Invalid date "
+msgstr "Ungültiges Datum "
+
+msgid " in line: "
+msgstr " in einer Reihe: "
+
+msgid "Error:"
+msgstr "Fehler:"
+
+msgid ": line does not contain four sections separated by semicolons in : \""
+msgstr ""
+": Zeile enthält nicht vier durch Semikolon getrennte Abschnitte in : \""
+
+msgid "Cannot open URL: "
+msgstr "Kann URL nicht öffnen: "
+
+msgid "Double click row to follow link"
+msgstr "Auf Zeile doppelklicken um Link zu folgen"

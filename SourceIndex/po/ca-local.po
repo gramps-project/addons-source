@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ca\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Select a marriage source"
+msgstr "Selecciona una font de matrimoni"
+
+msgid "Origin:"
+msgstr "Origen:"
+
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Mort\n"
+"lloc:"
+
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Naixement\n"
+"lloc:"
+
+msgid "Origine:"
+msgstr "Origen:"
+
+msgid "Birth place:"
+msgstr "Lloc de naixement:"
+
+msgid "Note:"
+msgstr "Nota:"
+
+msgid "Marriage place:"
+msgstr "Lloc de matrimoni:"
+
+msgid "Death date:"
+msgstr "Data de defunció:"
+
+msgid "Death place:"
+msgstr "Lloc de defunció:"
+
+msgid "m. date:"
+msgstr "data de m.:"
+
+msgid "m. place:"
+msgstr "Lloc de m.:"
+
+msgid "places banns:"
+msgstr "llocs prohibits:"

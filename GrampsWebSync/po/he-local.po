@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Error: URL not found."
+msgstr "שגיאה: לא נמצא URL."
+
+msgid "Reset remote to local"
+msgstr "שיצוב מצב מרוחק למקומי"
+
+msgid "Reset local to remote"
+msgstr "שיצוב מצב מקומי למרוחק"
+
+msgid "Merge"
+msgstr "מיזוג"
+
+msgid "Local changes"
+msgstr "שינויים מקומיים"
+
+msgid "Modified"
+msgstr "מוסגל"
+
+msgid "Remote changes"
+msgstr "שינויים מרחוק"
+
+msgid "Simultaneous changes"
+msgstr "שינויים בו־זמנית"
+
+msgid "Applying changes to local database ..."
+msgstr "החלת שינויים במסד נתונים מקומי ..."
+
+msgid "Applying changes to remote database ..."
+msgstr "החלת שינויים במסד נתונים מרוחק ..."
+
+#, python-format
+msgid "Downloading %s media file(s)"
+msgstr "מתבצעת הורדת %s קבצי מדיה"
+
+#, python-format
+msgid "Uploading %s media file(s)"
+msgstr "מתבצעת האלעת %s קבצי מדיה"

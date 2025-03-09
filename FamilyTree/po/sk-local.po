@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "%(ymd_date)s"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "v/vo %(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "v/vo %(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "%(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s (%(partial)s)"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "v/vo %(place)s"
+
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+msgid "Replace first name with call name"
+msgstr "Nahradiť krstné meno bežným menom"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr ""
+"Podčiarknuť bežné meno v krstnom mene / pridať bežné meno ku krstnému menu"

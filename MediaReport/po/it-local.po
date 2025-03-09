@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-08 16:41+0000\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+
+msgid "INFO"
+msgstr "INFO"
+
+msgid "Media width"
+msgstr "Larghezza oggetto multimediale"
+
+#, no-python-format
+msgid "Maximum media width in % of available page width."
+msgstr ""
+"Massima larghezza dell'oggetto multimediale in percentuale della larghezza "
+"disponibile della pagina."
+
+msgid "Media height"
+msgstr "Altezza dell'oggetto multimediale"
+
+#, python-format
+msgid "Maximum media height in % of available page height."
+msgstr ""
+"Massima altezza dell'oggetto multimediale in percentuale dell'altezza "
+"disponibile della pagina."

@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-03 16:13-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Historical Context"
+msgstr "Historische context"
+
+msgid "Lists relevant historical events during the lifetime of a Person"
+msgstr ""
+"Geeft een overzicht van relevante historische gebeurtenissen gedurende het "
+"leven van een persoon"
+
+msgid "Rows starting with this in the text column will be hidden "
+msgstr "Rijen die hiermee beginnen in de tekstkolom worden verborgen "
+
+msgid "Use filter "
+msgstr "Gebruik filter: "
+
+msgid "Show outside life span "
+msgstr "Toon buiten levensduur "
+
+msgid "Use full dates"
+msgstr "Volledige datums"
+
+msgid "Foreground color items in lifespan"
+msgstr "Voorgrondkleur van items in levensduur"
+
+msgid "Background color items in lifespan"
+msgstr "Achtergrondkleur van items in levensduur"
+
+msgid "Foreground color items outside lifespan"
+msgstr "Voorgrondkleur van items buiten levensduur"
+
+msgid "Background color items outside lifespan"
+msgstr "Achtergrondkleur van items buiten levensduur"
+
+msgid "Select from files"
+msgstr "Selecteer uit bestanden"
+
+msgid "Invalid date "
+msgstr "Ongeldige datum "
+
+msgid " in line: "
+msgstr " in regel: "
+
+msgid "Error:"
+msgstr "Fout:"
+
+msgid ": line does not contain four sections separated by semicolons in : \""
+msgstr ": regel bevat geen vier secties gescheiden door puntkomma's in : \""
+
+msgid "Cannot open URL: "
+msgstr "Kan URL niet openen: "
+
+msgid "Double click row to follow link"
+msgstr "Dubbelklik op regel om de link te volgen"

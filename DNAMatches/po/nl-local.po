@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 14:28+0000\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "DNA Matches"
+msgstr "DNA-overeenkomsten"
+
+msgid "Gramplet to display a list of DNA matches"
+msgstr "Gramplet om een lijst met DNA-overeenkomsten weer te geven"
+
+msgid "Pers."
+msgstr "Pers."
+
+msgid "Rel."
+msgstr "Rel."
+
+msgid "S. DNA"
+msgstr "S. DNA"
+
+msgid "S. Seg."
+msgstr "S. Seg."
+
+msgid "L. Seg"
+msgstr "L. Seg"
+
+msgid "Src(s)"
+msgstr "Src(s)"
+
+msgid "Shared DNA"
+msgstr "Gedeeld DNA"
+
+msgid "Shared Segments"
+msgstr "Gedeelde segmenten"
+
+msgid "Largest Segment"
+msgstr "Grootste segment"
+
+msgid "Source(s)"
+msgstr "Bron(nen)"
+
+msgid "Double-click on a row to navigate to the matched person."
+msgstr "Dubbelklik op een rij om naar de overeenkomstige persoon te navigeren."
+
+msgid "Right click to edit selected association."
+msgstr ""
+"Klik met de rechtermuisknop om de geselecteerde associatie te bewerken."
+
+msgid "LEGEND"
+msgstr "LEGENDA"
+
+msgid "="
+msgstr "="
+
+msgid "Not specified"
+msgstr "Niet gespecificeerd"
+
+msgid "cM"
+msgstr "cM"

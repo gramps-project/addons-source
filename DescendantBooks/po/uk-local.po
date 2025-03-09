@@ -1,0 +1,255 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+#, python-format
+msgid "sp. see  %(reference)s : %(spouse)s"
+msgstr "чол./друж. див. %(reference)s : %(spouse)s"
+
+#, python-format
+msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
+msgstr "див. звіт: %(report)s, реф.: %(reference)s : %(person)s і %(spouse)s"
+
+msgid "Descendants Report"
+msgstr "Звіт про нащадків"
+
+#, python-format
+msgid "Writing %s reports..."
+msgstr "Записування %s звітів..."
+
+#, python-format
+msgid "%s. Descendants of %s"
+msgstr "%s. Нащадки %s"
+
+#, python-format
+msgid "%d. %s"
+msgstr "%d. %s"
+
+msgid "Select filter to restrict people that appear in the report"
+msgstr "Виберіть фільтр для обмеження людей, що з'являються у звіті"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Чи показувати дубльовані сімейні дерева у звіті."
+
+msgid "The style used for the title of the page."
+msgstr "Стиль, що використовується для заголовка сторінки."
+
+msgid "The style used for the table of contents header."
+msgstr "Стиль, що використовується для заголовка змісту."
+
+msgid "The style used for the table of contents detail."
+msgstr "Стиль, що використовується для деталей змісту."
+
+msgid "Detailed Descendants Report"
+msgstr "Детальний звіт про нащадків"
+
+#, python-format
+msgid "Generating %s report references..."
+msgstr "Генерація %s посилань для звіту..."
+
+#, python-format
+msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgstr "%(report_count)s. Звіт про нащадків для %(person_name)s"
+
+msgid "Index of Places"
+msgstr "Індекс місць"
+
+msgid "Index of Dates"
+msgstr "Індекс дат"
+
+msgid "Index of Names"
+msgstr "Індекс імен"
+
+msgid "Report, Generation, Person, Name"
+msgstr "Звіт, Покоління, Особа, Ім'я"
+
+#, python-format
+msgid "See Report : %s, Generation : %s, Person : %s"
+msgstr "Див. звіт: %s, Покоління: %s, Особа: %s"
+
+#, python-format
+msgid "Report appearances for %s"
+msgstr "Згадки у звіті для %s"
+
+#, python-format
+msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+msgstr "Чоловік/Дружина: Звіт: %s, Покоління: %s, Особа: %s"
+
+#, python-format
+msgid "Report: %s, Generation: %s, Person: %s"
+msgstr "Звіт: %s, Покоління: %s, Особа: %s"
+
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(event_name)s у %(name)s "
+
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(event_name)s у %(name)s та %(mate)s "
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid ". Ref: %(repno)s %(gen)s %(per)s "
+msgstr ". Посилання: %(repno)s %(gen)s %(per)s "
+
+#, python-format
+msgid "%(event_name)s:"
+msgstr "%(event_name)s:"
+
+#, python-format
+msgid " %(event_text)s"
+msgstr " %(event_text)s"
+
+#, python-format
+msgid "Ref: %s. %s"
+msgstr "Посилання: %s. %s"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s:"
+msgstr "%(type)s:"
+
+#, python-format
+msgid " %(value)s%(endnotes)s"
+msgstr " %(value)s%(endnotes)s"
+
+msgid "List children"
+msgstr "Список дітей"
+
+msgid "Add descendant reference in child list"
+msgstr "Додати посилання на нащадка у списку дітей"
+
+msgid "Include Index of Names"
+msgstr "Включити індекс імен"
+
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "Чи включати індекс імен у кінці звіту."
+
+msgid "Include index of Dates"
+msgstr "Включити індекс дат"
+
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr "Чи включати індекс дат у кінці звіту."
+
+msgid "Include index of Places"
+msgstr "Включити індекс місць"
+
+msgid "Whether to include the index of Places at the end of the report."
+msgstr "Чи включати індекс місць у кінці звіту."
+
+msgid "Include the 'Report appearances' section with each person"
+msgstr "Включити розділ 'Згадки у звіті' для кожної людини"
+
+msgid ""
+"The 'Report appearances' section shows other places in the report where the "
+"person is mentioned."
+msgstr ""
+"Розділ 'Згадки у звіті' показує інші місця у звіті, де згадується ця людина."
+
+msgid "The style used for the children list."
+msgstr "Стиль, що використовується для списку дітей."
+
+msgid "The basic style used for Note header."
+msgstr "Основний стиль, що використовується для заголовка приміток."
+
+msgid "The style used for the first personal entry."
+msgstr "Стиль, що використовується для першого запису про особу."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"Стиль, що використовується для заголовка 'Докладніше' та заголовків чоловіка/"
+"дружини."
+
+msgid "The style used for additional detail data."
+msgstr "Стиль, що використовується для додаткових деталей."
+
+msgid "The style used for note detail data."
+msgstr "Стиль, що використовується для деталей приміток."
+
+msgid "The style used for the date in the Index of Dates."
+msgstr "Стиль, що використовується для дати в індексі дат."
+
+msgid "The style used for the events in the Index of Dates."
+msgstr "Стиль, що використовується для подій в індексі дат."
+
+msgid "The style used for the header in the Index of Names."
+msgstr "Стиль, що використовується для заголовка в індексі імен."
+
+msgid "The style used for the references in the Index of Names."
+msgstr "Стиль, що використовується для посилань в індексі імен."
+
+msgid "The style used for the header in the Index of Places."
+msgstr "Стиль, що використовується для заголовка в індексі місць."
+
+msgid "The style used for the references in the Index of Places."
+msgstr "Стиль, що використовується для посилань в індексі місць."
+
+msgid "Descendant Book"
+msgstr "Книга нащадків"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr "Створює один або кілька звітів про нащадків на основі наданого запиту."
+
+msgid "Detailed Descendant Book"
+msgstr "Детальна книга нащадків"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Створює один або кілька детальних звітів про нащадків на основі наданого "
+"запиту."
+
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Глибока обрізка предків із %s людей..."
+
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Обрізка предків із %s людей..."
+
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Отримання предків із %s людей..."
+
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Перевірка нащадків серед %s людей..."
+
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Отримання відсутніх нащадків серед %s людей..."
+
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Перевірка нащадків серед %s людей після обрізки..."
+
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Отримання відсутніх нащадків серед %s людей..."

@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Database Differences Report"
+msgstr "Hlásenie o rozdieloch v databáze"
+
+msgid "Differences between Database and File"
+msgstr "Rozdiely medzi databázou a súborom"
+
+msgid "No differences"
+msgstr "Žiadne rozdiely"
+
+msgid "Missing items in File that are added in Database"
+msgstr "Chýbajúce položky v súbore, ktoré sú pridané v databáze"
+
+#, python-format
+msgid "Missing %s: %s"
+msgstr "Chýba %s: %s"
+
+msgid "Nothing missing"
+msgstr "Nič nechýba"
+
+msgid "Added items in File that are missing in Database"
+msgstr "Pridané položky v súbore, ktoré chýbajú v databáze"
+
+#, python-format
+msgid "Added %s: %s "
+msgstr "Pridané %s: %s "
+
+msgid "Nothing added"
+msgstr "Nič nepridané"
+
+msgid "Select a .gpkg or .gramps file"
+msgstr "Vyberte súbor .gpkg alebo .gramps"
+
+msgid "Show items that are different"
+msgstr "Zobrazí položky, ktoré sú odlišné"
+
+msgid "Include items that are different"
+msgstr "Zahrnúť položky, ktoré sú odlišné"
+
+msgid "Show items missing from file"
+msgstr "Zobrazí položky chýbajúce v súbore"
+
+msgid "Include items not in file but in database"
+msgstr "Zahrnúť položky, ktoré nie sú v súbore, ale v databáze"
+
+msgid "Show items added in file"
+msgstr "Zobrazí položky pridané v súbore"
+
+msgid "Include items in file but not in database"
+msgstr "Zahrnúť položky v súbore, ale nie v databáze"
+
+msgid "Compares an external database with the current one."
+msgstr "Porovnáva externú databázu s aktuálnou."

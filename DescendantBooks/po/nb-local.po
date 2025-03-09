@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+#, python-format
+msgid "%s. Descendants of %s"
+msgstr "%s. Etterkommere av %s"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Om dupliserte slektstrær skal vises i rapporten."
+
+msgid "The style used for the title of the page."
+msgstr "Stilen som brukes på sidens tittel."
+
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(event_name)s for %(name)s "
+
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(event_name)s for %(name)s og %(mate)s "
+
+#, python-format
+msgid "%(event_name)s:"
+msgstr "%(event_name)s:"
+
+#, python-format
+msgid " %(event_text)s"
+msgstr " %(event_text)s"
+
+msgid "The style used for the events in the Index of Dates."
+msgstr "Stilen som brukes for hendelser i indeksen over datoer."

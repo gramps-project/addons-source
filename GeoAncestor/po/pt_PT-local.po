@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Ancestors map"
+msgstr "Mapa de ascendentes"
+
+msgid "A view showing ancestors places on the map."
+msgstr "Uma vista que mostra os locais dos ascendentes no mapa."
+
+msgid "Ancestors places on the map"
+msgstr "Locais dos ascendentes no mapa"
+
+msgid "GeoAncestor"
+msgstr "GeoAscendentes"
+
+#, python-format
+msgid "Ancestors places for %s"
+msgstr "Locais dos ascendentes de %s"
+
+msgid "Counting all places"
+msgstr "A contar todos os locais"
+
+msgid "Showing all places"
+msgstr "A mostrar todos os locais"

@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "Finds the items that don't have event Roles of the selected type."
+msgstr "Finner elementene som ikke har hendelsesroller av den valgte typen."
+
+msgid "People with events with the <role>"
+msgstr "Personer med hendelser med <role>"
+
+msgid "Matches people with an event with a selected role"
+msgstr "Matcher personer med en hendelse med en valgt rolle"
+
+msgid "Families with events with the <role>"
+msgstr "Familier med hendelser med <role>"
+
+msgid "Matches families with an event with a selected role"
+msgstr "Matcher familier med en hendelse med den valgte rollen"
+
+msgid "Events of families matching a <family filter>"
+msgstr "Hendelser i familier som matcher et <family filter>"
+
+msgid "Families matching <event filter>"
+msgstr "Familier som matcher <event filter>"
+
+msgid "Matches families that are matched by an event filter"
+msgstr "Matcher familier som matcher et hendelsesfilter"
+
+msgid "Matches families matched by an event filter"
+msgstr "Matcher familier som er matchet av et hendelsesfilter"
+
+msgid "People with <count> of <event>"
+msgstr "Personer med <count> <event>"
+
+msgid "Matches persons which have events of given type and number."
+msgstr "Matcher personer som har hendelser av en bestemt type og antall."
+
+msgid "People with events with a selected role"
+msgstr "Personer med hendelser med en valgt rolle"
+
+msgid "Families with events with a selected role"
+msgstr "Familier med hendelser med en valgt rolle"
+
+msgid "Active person"
+msgstr "Aktiv person"
+
+msgid "Age in years at person's death."
+msgstr "Alder i år ved personens død."

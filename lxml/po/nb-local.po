@@ -1,0 +1,307 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "lxml"
+msgstr "lxml"
+
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "Gramplet for å teste lxml og XSLT"
+
+msgid "etree"
+msgstr "etree"
+
+msgid "Gramplet for testing etree with Gramps XML"
+msgstr "Gramplet for å teste etree med Gramps XML"
+
+msgid "Invalid timestamp"
+msgstr "Ugyldig tidsstempel"
+
+msgid "Space character on filename"
+msgstr "Mellomromstegn i filnavn"
+
+#, python-format
+msgid "Please fix space on \"%s\""
+msgstr "Vennligst rett mellomrom i «%s»"
+
+msgid "Sorry, no support for your OS yet!"
+msgstr "Beklager, ingen støtte for ditt operativsystem ennå!"
+
+msgid "Is it a compressed .gramps?"
+msgstr "Er det en komprimert .gramps?"
+
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "Kan ikke pakke ut «%s»"
+
+#, python-format
+msgid ""
+"From:\n"
+" \"%(file1)s\"\n"
+" to:\n"
+" \"%(file2)s\".\n"
+msgstr ""
+"Fra:\n"
+" «%(file1)s»\n"
+" til:\n"
+" «%(file2)s».\n"
+
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "Kan ikke kopiere «%s»"
+
+#, python-format
+msgid "XML: Last %s editions since %s, were at/on :\n"
+msgstr "XML: Seneste %s utgaver siden %s, var den:\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of records and relations : \t%s\n"
+"\n"
+msgstr ""
+"\n"
+"XML: Antall oppføringer og slektskap : \t%s\n"
+"\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antall etiketter : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\n"
+msgstr ""
+"Antall etiketter : \n"
+"\t\t\t%s\n"
+
+#, python-format
+msgid ""
+"Number of  events : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antall  hendelser : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+msgstr ""
+"Antall personer : \n"
+"\t\t\t%s\t|\t(%s) og (%s)* etternavn\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antall personer : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of families : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antall familier : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of sources : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antall kilder : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of citations : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antall siteringer : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of places : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antall steder : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of media objects : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antall medieobjekter : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of repositories : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antall arkiver : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of notes : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antall notater : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of additional records and relations: \t%s\n"
+msgstr ""
+"\n"
+"XML: Antall ytterligere oppføringer og slektskap: \t%s\n"
+
+#, python-format
+msgid ""
+"* loaded Family Tree base:\n"
+" \"%s\"\n"
+msgstr ""
+"* åpnet slektsdatabase:\n"
+" «%s»\n"
+
+msgid "Where is gzip?"
+msgstr "Hvor er gzip?"
+
+msgid "\"gzip\" is missing"
+msgstr "«gzip» mangler"
+
+msgid "Missing python3 lxml"
+msgstr "Mangler python3 lxml"
+
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr "Vennligst prøv å installere pakken «python3 lxml»."
+
+msgid "No file loaded..."
+msgstr "Ingen fil åpnet..."
+
+msgid "XSD validation (lxml)"
+msgstr "XSD validering (lxml)"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" !"
+msgstr "Kan ikke validere «%(file)s» !"
+
+#, python-format
+msgid "xmllint: skip DTD validation for \"%(file)s\""
+msgstr "xmllint: hopp over DTD-validering for «%(file)s»"
+
+#, python-format
+msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
+msgstr "xmllint: hopp over RelaxNG-validering for «%(file)s»"
+
+msgid "Parsing issue"
+msgstr "Feil ved lesing"
+
+#, python-format
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Kan ikke analysere innholdet i «%(file)s»"
+
+msgid "Gramps version"
+msgstr "Gramps versjon"
+
+#, python-format
+msgid ""
+"Wrong namespace\n"
+"Need: %s"
+msgstr ""
+"Feil navneområde\n"
+"Behøver: %s"
+
+msgid "RelaxNG validation"
+msgstr "RelaxNG validering"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
+msgstr "Kan ikke validere «%(file)s» via RelaxNG skjema"
+
+msgid "File issue"
+msgstr "Filproblem"
+
+#, python-format
+msgid "Cannot parse \"%(file)s\" via etree"
+msgstr "Kan ikke lese «%(file)s» via etree"
+
+msgid "Parsing file..."
+msgstr "Leser fil..."
+
+msgid "Missing header"
+msgstr "Mangler overskrift"
+
+msgid ""
+"Not a valid .gramps.\n"
+"Cannot run the gramplet...\n"
+"Please, try to use a .gramps\n"
+"generated by Gramps 4.x."
+msgstr ""
+"Ikke en gyldig .gramps.\n"
+"Kan ikke kjøre gramplet...\n"
+"Vennligst prøv å bruke en .gramps\n"
+"laget med Gramps 4.x."
+
+msgid "0"
+msgstr "0"
+
+msgid "File parsed with"
+msgstr "Fil lest med"
+
+msgid "File was generated on "
+msgstr "Filen ble laget "
+
+msgid " by Gramps "
+msgstr " med Gramps "
+
+msgid "Period: "
+msgstr "Periode: "
+
+msgid " entries for surname(s); no frequency yet"
+msgstr " oppføringer for etternavn; ingen frekvens ennå"
+
+msgid " entries for place(s)"
+msgstr " oppføringer for sted(er)"
+
+msgid " note(s)"
+msgstr " notat(er)"
+
+msgid " source(s)"
+msgstr " kilde(r)"
+
+msgid "Gallery.html"
+msgstr "Gallery.html"
+
+#, python-format
+msgid "2. Has generated a media index on \"%(file)s\".\n"
+msgstr "2. Har laget en medieindeks for «%(file)s».\n"
+
+#, python-format
+msgid "3. Has written entries into \"%(file)s\".\n"
+msgstr "3. Har skrevet oppføringer til «%(file)s».\n"

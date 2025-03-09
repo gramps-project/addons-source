@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/hr/>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Gramps Web Sync"
+msgstr "Gramps web sinkronizacija"
+
+msgid "Media files are in sync."
+msgstr "Medijske datoteke su sinkronizirane."
+
+#, python-format
+msgid "Error %s while connecting to server."
+msgstr "Greška %s tijekom povezivanja na server."
+
+msgid "URL error while connecting to server."
+msgstr "URL greška tijekom povezivanja na server."
+
+msgid "Bidirectional Synchronization"
+msgstr "Dvosmjerna sinkronizacija"
+
+msgid "Merge"
+msgstr "Sjedini"
+
+msgid "Local changes"
+msgstr "Lokalne promjene"
+
+msgid "Modified"
+msgstr "Promijenjeno"
+
+msgid "Simultaneous changes"
+msgstr "Istovremene promjene"
+
+msgid "Fetching information about media files..."
+msgstr "Dohvaćanje podataka o medijskim datotekama …"
+
+msgid "Both trees are the same."
+msgstr "Oba rodoslova su jednaka."
+
+msgid "Applying changes to local database ..."
+msgstr "Primjena promjena na lokalnu bazu podataka …"
+
+msgid "No changes to apply to local database."
+msgstr "Nema promjena za lokalnu bazu podataka."
+
+msgid "Applying changes to remote database ..."
+msgstr "Primjena promjena na eksternu bazu podataka …"
+
+msgid "No changes to apply to remote database."
+msgstr "Nema promjena za eksternu bazu podataka."
+
+msgid "Successfully applied changes to local database."
+msgstr "Promjene na lokalnoj bazi podataka su uspješno primijenjene."
+
+msgid "Missing locally"
+msgstr "Nedostaje lokalno"
+
+msgid "Missing remotely"
+msgstr "Nedostaje eksterno"
+
+#, python-format
+msgid "Downloading %s media file(s)"
+msgstr "Preuzimanje medijskih datoteka (%s)"
+
+#, python-format
+msgid "Uploading %s media file(s)"
+msgstr "Prijenos medijskih datoteka (%s)"

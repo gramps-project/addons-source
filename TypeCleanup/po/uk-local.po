@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Event Roles"
+msgstr "Ролі подій"
+
+msgid "Event Types"
+msgstr "Типи подій"
+
+msgid "Family Relation Types"
+msgstr "Типи сімейних відносин"
+
+msgid "Child reference Types"
+msgstr "Типи посилань на дітей"
+
+msgid "Name Origin Types"
+msgstr "Типи походження імен"
+
+msgid "Name Types"
+msgstr "Типи імен"
+
+msgid "Note Types"
+msgstr "Типи нотаток"
+
+msgid "Place Types"
+msgstr "Типи місць"
+
+msgid "Repository Types"
+msgstr "Типи сховищ"
+
+msgid "Source Media Types"
+msgstr "Типи медіафайлів джерел"
+
+msgid "URL Types"
+msgstr "Типи URL"
+
+msgid "Types Cleanup Tool"
+msgstr "Інструмент очищення типів"
+
+msgid ""
+"Remove the selected type from the db.\n"
+"This does not change any referenced objects."
+msgstr ""
+"Видалити вибраний тип із бази даних.\n"
+"Це не змінює жодних пов’язаних об'єктів."
+
+msgid ""
+"Select a new name for the current type, prior to renaming the type in the "
+"referenced objects."
+msgstr ""
+"Виберіть нову назву для поточного типу перед його перейменуванням у всіх "
+"пов’язаних об'єктах."
+
+msgid "Rename"
+msgstr "Перейменувати"
+
+msgid "Rename the selected type in all referenced objects."
+msgstr "Перейменувати вибраний тип у всіх пов’язаних об'єктах."
+
+msgid "Close the Type Cleanup Tool"
+msgstr "Закрити інструмент очищення типів"
+
+msgid "Types"
+msgstr "Типи"
+
+msgid "Type Cleanup Tool"
+msgstr "Інструмент очищення типів"
+
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "Змінення типу з %(old_type)s на %(new_type)s."
+
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"Видалення цього користувацького типу прибере його зі списку вибору типів\n"
+"та з подальших запусків цього інструменту.\n"
+"\n"
+"Однак, це не видалить його з пов’язаних записів у базі даних.\n"
+"Якщо ви хочете змінити його у пов’язаних записах, використовуйте "
+"'Перейменувати'."
+
+msgid "Type Cleanup"
+msgstr "Очищення типів"
+
+msgid "Clean up (remove) custom types"
+msgstr "Очищення (видалення) користувацьких типів"

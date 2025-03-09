@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-02 13:48+0000\n"
+"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Edit tags"
+msgstr "Éditer les étiquettes"
+
+msgid "Set as home person"
+msgstr "Définir l’individu central"
+
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Ajout d’étiquettes à l’individu (%s)"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Ajout d’étiquettes à la famille (%s)"

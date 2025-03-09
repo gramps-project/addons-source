@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Database Differences Report"
+msgstr "Звіт про відмінності в базі даних"
+
+msgid "Differences between Database and File"
+msgstr "Відмінності між базою даних і файлом"
+
+msgid "No differences"
+msgstr "Відмінностей немає"
+
+msgid "Missing items in File that are added in Database"
+msgstr "Відсутні елементи у файлі, які є в базі даних"
+
+#, python-format
+msgid "Missing %s: %s"
+msgstr "Відсутній %s: %s"
+
+msgid "Nothing missing"
+msgstr "Нічого не бракує"
+
+msgid "Added items in File that are missing in Database"
+msgstr "Додані елементи у файлі, яких немає в базі даних"
+
+#, python-format
+msgid "Added %s: %s "
+msgstr "Додано %s: %s "
+
+msgid "Nothing added"
+msgstr "Нічого не додано"
+
+msgid "Family Tree file"
+msgstr "Файл генеалогічного дерева"
+
+msgid "Select a .gpkg or .gramps file"
+msgstr "Виберіть файл .gpkg або .gramps"
+
+msgid "Show items that are different"
+msgstr "Показати елементи, які відрізняються"
+
+msgid "Include items that are different"
+msgstr "Включити елементи, які відрізняються"
+
+msgid "Show items missing from file"
+msgstr "Показати елементи, яких бракує у файлі"
+
+msgid "Include items not in file but in database"
+msgstr "Включити елементи, яких немає у файлі, але вони є в базі даних"
+
+msgid "Show items added in file"
+msgstr "Показати елементи, додані у файлі"
+
+msgid "Include items in file but not in database"
+msgstr "Включити елементи, які є у файлі, але відсутні в базі даних"
+
+msgid "Compares an external database with the current one."
+msgstr "Порівнює зовнішню базу даних із поточною."

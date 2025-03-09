@@ -1,0 +1,354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-08 17:04+0000\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Select Form"
+msgstr "Välj formulär"
+
+msgid "Form Gramplet"
+msgstr "Gramplet för formulär"
+
+msgid "Gramplet interface for Forms"
+msgstr "Gramplet-gränssnitt för formulär"
+
+msgid "Order"
+msgstr "Ordning"
+
+msgid "New Form"
+msgstr "Nytt formulär"
+
+msgid "Edit Form"
+msgstr "Redigera formulär"
+
+msgid "Reference:"
+msgstr "Referens:"
+
+msgid "Headings"
+msgstr "Rubriker"
+
+msgid "NARA publication"
+msgstr "NARA-publikation"
+
+msgid "Page No."
+msgstr "Sida nr."
+
+msgid "Sheet No."
+msgstr "Blad nr."
+
+msgid "County of"
+msgstr "Län"
+
+msgid "All other free persons"
+msgstr "Alla andra fria personer"
+
+msgid "Enumeration Date"
+msgstr "Uppräkning datum"
+
+msgid "Slave males under 14"
+msgstr "Slavmän under 14 år"
+
+msgid "Slave females under 14"
+msgstr "Slavkvinnor under 14 år"
+
+msgid "Slave males under 10"
+msgstr "Slavmän under 10 år"
+
+msgid "Slave females under 10"
+msgstr "Slavkvinnor under 10 år"
+
+msgid "White persons blind"
+msgstr "Vita personer blinda"
+
+msgid "Colored persons blind"
+msgstr "Färgade personer blinda"
+
+msgid "Number of students"
+msgstr "Antal elever"
+
+msgid "Family No."
+msgstr "Familj nr."
+
+msgid "Place of birth"
+msgstr "Födelseort"
+
+msgid "Acres Improved"
+msgstr "Åkrar förbättrade"
+
+msgid "Acres Unimproved"
+msgstr "Åkrar oförbättrade"
+
+msgid "Other Cattle"
+msgstr "Andra nötkreatur"
+
+msgid "Indian Corn"
+msgstr "Indianska majs"
+
+msgid "Peas and Beans"
+msgstr "Ärtor och bönor"
+
+msgid "Value of personal estate"
+msgstr "Värdet av personlig egendom"
+
+msgid "Maple Sugar, pounds of"
+msgstr "Lönnsocker, pounds av"
+
+msgid "Number of days ill"
+msgstr "Antal sjukdagar"
+
+msgid "Relationship to head"
+msgstr "Släktskap till huvud"
+
+msgid "Widowed, divorced"
+msgstr "Änka/änkling, frånskild"
+
+msgid "Illness on day of enumeration"
+msgstr "Sjukdom på uppräkningsdagen"
+
+msgid "Horses on hand"
+msgstr "Hästar till hands"
+
+msgid "Swine on hand"
+msgstr "Svin till hands"
+
+msgid "Number of years in US"
+msgstr "Antal år i USA"
+
+msgid "Able to read"
+msgstr "Läskunnig"
+
+msgid "Able to write"
+msgstr "Skrivkunnig"
+
+msgid "Rank"
+msgstr "Rang"
+
+msgid "Date Enlisted"
+msgstr "Datum för värvning"
+
+msgid "Date Discharged"
+msgstr "Datum urladdat"
+
+msgid "Street Address"
+msgstr "Gatuadress"
+
+msgid "Relation to head"
+msgstr "Släktskap till huvud"
+
+msgid "Number of children living"
+msgstr "Antal barn som lever"
+
+msgid "Year of immigration"
+msgstr "År för immigration"
+
+msgid "Number of farm schedule"
+msgstr "Antal gårdsschema"
+
+msgid "Industry"
+msgstr "Industri"
+
+msgid "Incorporated place"
+msgstr "Inbyggd plats"
+
+msgid "Unincorporated place"
+msgstr "Ej införlivad plats"
+
+msgid "Institution"
+msgstr "Institution"
+
+msgid "Radio set"
+msgstr "Radioapparat"
+
+msgid "Marital condition"
+msgstr "Äktenskapligt tillstånd"
+
+msgid "Age at first marriage"
+msgstr "Ålder vid första äktenskapet"
+
+msgid "Color/Race"
+msgstr "Färg/ras"
+
+msgid "Marital Status"
+msgstr "Civilstånd"
+
+msgid "Hotel, large rooming house, institution, military installation, etc."
+msgstr "Hotel, veľká ubytovňa, inštitúcia, vojenské zariadenie a pod."
+
+msgid "Section"
+msgstr "Sektion"
+
+msgid "Relation"
+msgstr "Relation"
+
+msgid "Condition"
+msgstr "Kondition"
+
+msgid "Ancestry"
+msgstr "Anor"
+
+msgid "in"
+msgstr "i"
+
+msgid "of"
+msgstr "av"
+
+msgid "Where Born"
+msgstr "Var född"
+
+msgid "Enumerator"
+msgstr "Uppräknare"
+
+msgid "BirthPlace"
+msgstr "Födelseplats"
+
+msgid "SexFemale"
+msgstr "KönKvinna"
+
+msgid "9. Married or Single"
+msgstr "9. Gift eller ensamstående"
+
+msgid "Coloured"
+msgstr "Färgade"
+
+msgid "Indians"
+msgstr "Indianer"
+
+msgid "ResidentsMale"
+msgstr "InvånareMän"
+
+msgid "ResidentsFemale"
+msgstr "InvånareKvinna"
+
+msgid "HousesStories"
+msgstr "HusBerättelser"
+
+msgid "HousesFamilies"
+msgstr "HusFamiljer"
+
+msgid "HousesBuilding"
+msgstr "HusByggnad"
+
+msgid "AcresCultivation"
+msgstr "ÅkerOdling"
+
+msgid "Column37"
+msgstr "Kolumn37"
+
+msgid "Column38"
+msgstr "Kolumn38"
+
+msgid "Column39"
+msgstr "Kolumn39"
+
+msgid "Married1851"
+msgstr "Gifta1851"
+
+msgid "Vessels"
+msgstr "Fartyg"
+
+msgid "6.Families"
+msgstr "6.Familjer"
+
+msgid "7. Names"
+msgstr "7. Namn"
+
+msgid "13. Origin"
+msgstr "13. Ursprung"
+
+msgid "6. Families"
+msgstr "6. Familjer"
+
+msgid "5. Families"
+msgstr "5. Familjer"
+
+msgid "6. Names"
+msgstr "6. Namn"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. Släktskap med familjeöverhuvud"
+
+msgid "BirthPlaceFather"
+msgstr "FödelseplatsFar"
+
+msgid "13. Birth Place of Father"
+msgstr "13. Födelseplats för far"
+
+msgid "BirthPlaceMother"
+msgstr "FödelseplatsMor"
+
+msgid "SubTitle"
+msgstr "Undertitel"
+
+msgid "Colour"
+msgstr "Färg"
+
+msgid "5. Colour"
+msgstr "5. Färg"
+
+msgid "BirthMonth"
+msgstr "Födelsemånad"
+
+msgid "BirthYear"
+msgstr "Födelseår"
+
+msgid "EarningsOccupation"
+msgstr "FörtjänstYrke"
+
+msgid "SpeakEnglish"
+msgstr "TalarEngelska"
+
+msgid "PageRef"
+msgstr "SidoRef"
+
+msgid "Buildings"
+msgstr "Byggnader"
+
+msgid "LeasedHouses"
+msgstr "Hyreshus"
+
+msgid "LeasedStores"
+msgstr "HyrdaButiker"
+
+msgid "Denomination"
+msgstr "Benämning"
+
+msgid "Seating"
+msgstr "Sittplatser"
+
+msgid "SSDenomination"
+msgstr "SSBenämning"
+
+msgid "33. School: Number of teachers"
+msgstr "33. Skola: Antal lärare"
+
+msgid "WeeksOccupation"
+msgstr "VeckorBefattning"
+
+msgid "WeeksOther"
+msgstr "VeckorÖvrigt"
+
+msgid "HoursOccupation"
+msgstr "TimmarBefattning"
+
+msgid "HoursOther"
+msgstr "TimmarÖvrigt"
+
+msgid "Wages"
+msgstr "Löner"
+
+msgid "2. Family"
+msgstr "2. Familj"
+
+msgid "3. Name"
+msgstr "3. Namn"

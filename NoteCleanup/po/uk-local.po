@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Note Cleanup"
+msgstr "Очищення приміток"
+
+msgid "Clean up Notes that contain HTML markup"
+msgstr "Очищення приміток, що містять HTML-розмітку"
+
+msgid "Note Cleanup Tool"
+msgstr "Інструмент очищення приміток"
+
+msgid "Cleaned Notes"
+msgstr "Очищені примітки"
+
+msgid "Links Only"
+msgstr "Лише посилання"
+
+msgid "Issues"
+msgstr "Проблеми"
+
+msgid "Close the Note Cleanup Tool"
+msgstr "Закрити інструмент очищення приміток"
+
+msgid "Save All"
+msgstr "Зберегти все"
+
+msgid "Save All Changes"
+msgstr "Зберегти всі зміни"
+
+msgid "Search"
+msgstr "Пошук"
+
+msgid "Search for Untidy Notes"
+msgstr "Пошук неохайних приміток"
+
+msgid "Generate Test Notes"
+msgstr "Створити тестові примітки"
+
+msgid ""
+"Generate Test notes in range N99996-N99999.\n"
+"These are added to your database, so you may want to work with a test "
+"database or delete them later."
+msgstr ""
+"Згенерувати тестові нотатки в діапазоні N99996-N99999.\n"
+"Вони додаються до вашої бази даних, тому, можливо, вам варто використовувати "
+"тестову базу даних або видалити їх пізніше."
+
+msgid "Export"
+msgstr "Експорт"
+
+msgid "Export the results to a text file"
+msgstr "Експортувати результати у текстовий файл"
+
+msgid ""
+"Please back up your database before running this tool.\n"
+"\n"
+"Start the tool by pressing the 'Search' button, then review the results.\n"
+"When satisifed press the 'Save All' button to save your work.\n"
+"You may export a summary list of the notes that were found using the "
+"'Export' button."
+msgstr ""
+"Будь ласка, зробіть резервну копію вашої бази даних перед запуском цього "
+"інструменту.\n"
+"\n"
+"Запустіть інструмент, натиснувши кнопку «Пошук», а потім перегляньте "
+"результати.\n"
+"Коли будете задоволені, натисніть кнопку «Зберегти все», щоб зберегти свою "
+"роботу.\n"
+"Ви можете експортувати список знайдених приміток, використовуючи кнопку "
+"«Експорт»."
+
+msgid "Clean up Notes"
+msgstr "Очищення приміток"
+
+msgid "Cleanup Test Notes"
+msgstr "Очищення тестових приміток"
+
+msgid "Add Test Note"
+msgstr "Додати тестову примітку"
+
+msgid "Export results to a text file"
+msgstr "Експортувати результати у текстовий файл"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Помилка при записі звіту: %s"
+
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown Before cleanup in this box."
+msgstr ""
+"\n"
+"\n"
+"Примітки, вибрані в лівій панелі, відображаються тут до очищення."
+
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown After cleanup in this box.\n"
+"If you wish to make changes, you can make them here and use the style "
+"controls in the toolbar above."
+msgstr ""
+"\n"
+"\n"
+"Примітки, вибрані в лівій панелі, відображаються тут після очищення.\n"
+"Якщо ви хочете внести зміни, ви можете зробити це тут і використовувати "
+"елементи керування стилем на панелі інструментів вище."
+
+msgid "Saving Notes"
+msgstr "Збереження приміток"
+
+msgid "Saving Cleaned Notes"
+msgstr "Збереження очищених приміток"
+
+msgid "Scanning Notes"
+msgstr "Сканування приміток"

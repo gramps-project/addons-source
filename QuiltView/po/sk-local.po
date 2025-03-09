@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Quilt Chart"
+msgstr "Quilt Chart"
+
+msgid "Select the name for which you want to see."
+msgstr "Vyberte meno, ktoré chcete vidieť."
+
+msgid "Clear the entry field in the name selection box."
+msgstr "Vymažte vstupné pole v kolónke pre výber mena."
+
+msgid "Nothing is selected"
+msgstr "Nič nie je vybrané"
+
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"Máte %(filter)d filtrovaných osôb, %(count)d osôb zobrazených na strome a "
+"%(total)d osôb vo vašej databáze."
+
+msgid "Loading individuals"
+msgstr "Načítavanie jednotlivcov"
+
+msgid "Loading the data"
+msgstr "Načítavanie údajov"
+
+msgid "About Quilt View"
+msgstr "O pohľade Quilt"
+
+msgid "Edit tags"
+msgstr "Upraviť značky"
+
+msgid "Set as home person"
+msgstr "Nastaviť ako domácu osobu"
+
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Pridávanie značiek k osobe (%s)"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Pridávanie značiek k rodine (%s)"
+
+msgid "Printing the tree"
+msgstr "Tlačím strom"
+
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "Potrebujem vytlačiť %(pages)s strán (%(format)s formát)"
+
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Zamerajte sa na vybranú osobu. \n"
+"Nová pozícia osoby bude blízko ľavého horného rohu."
+
+msgid "The path color"
+msgstr "Farba cesty"
+
+msgid "The selected person color"
+msgstr "Farba vybranej osoby"
+
+msgid "The path transparency"
+msgstr "Priehľadnosť cesty"
+
+msgid "General options"
+msgstr "Všeobecné možnosti"

@@ -1,0 +1,140 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "People related to <filter>"
+msgstr "Особи, пов'язані з <фільтр>"
+
+msgid "Matches people who are related to anybody matched by a person filter"
+msgstr ""
+"Збігаються з особами, які пов'язані з будь-ким, кого знайшов фільтр осіб"
+
+msgid "People separated less than <N> degrees of <person>"
+msgstr "Особи, розділені менш ніж на <N> ступенів від <особи>"
+
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr "Правило фільтрації, яке знаходить родичів за ступенями спорідненості"
+
+msgid "Source matching parameters"
+msgstr "Параметри зіставлення джерела"
+
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr "Збігаються з джерелами, що містять вибрані параметри"
+
+msgid "People with multiple parent records"
+msgstr "Особи з кількома записами батьків"
+
+msgid "Matches people who have more than one set of parents"
+msgstr "Збігаються з особами, які мають більше ніж один набір батьків"
+
+msgid "Match associations of <person filter>"
+msgstr "Збігаються з асоціаціями <фільтр осіб>"
+
+msgid "Does NOT match with selected Role"
+msgstr "НЕ відповідає вибраній ролі"
+
+msgid "Finds the items that don't have event Roles of the selected type."
+msgstr "Знаходить елементи, які не мають ролей подій вибраного типу."
+
+msgid "Inverse"
+msgstr "Обернене"
+
+msgid "People with events with the <role>"
+msgstr "Люди з подіями з роллю <роль>"
+
+msgid "Matches people with an event with a selected role"
+msgstr "Збігаються з особами, які мають подію з вибраною роллю"
+
+msgid "Families with events with the <role>"
+msgstr "Сім'ї з подіями з роллю <роль>"
+
+msgid "Matches families with an event with a selected role"
+msgstr "Збігаються з сім'ями, які мають подію з вибраною роллю"
+
+msgid "Events of families matching a <family filter>"
+msgstr "Події сімей, які відповідають <фільтру сім'ї>"
+
+msgid "Families matching <event filter>"
+msgstr "Сім'ї, що відповідають <фільтру подій>"
+
+msgid "Matches families that are matched by an event filter"
+msgstr "Збігаються з сім'ями, які відповідають фільтру подій"
+
+msgid "Matches families matched by an event filter"
+msgstr "Збігаються з сім'ями, що відповідають фільтру подій"
+
+msgid "Number of degrees of separation from person."
+msgstr "Кількість ступенів спорідненості від особи."
+
+msgid "Degrees:"
+msgstr "Ступені:"
+
+msgid "People with <count> of <event>"
+msgstr "Особи з <кількістю> подій <подія>"
+
+msgid "Matches persons which have events of given type and number."
+msgstr "Збігаються з особами, які мають події заданого типу та кількості."
+
+msgid "Include Children"
+msgstr "Включити дітей"
+
+msgid "Include the children in the matching families."
+msgstr "Включити дітей у відповідні сім'ї."
+
+msgid "Include Parents"
+msgstr "Включити батьків"
+
+msgid "Include the parents in the matching families."
+msgstr "Включити батьків у відповідні сім'ї."
+
+msgid "Family Filter name:"
+msgstr "Назва сімейного фільтра:"
+
+msgid "People who are part of families matching <filter>"
+msgstr "Особи, які є частиною сімей, що відповідають <фільтру>"
+
+msgid "Filter people by their age at death"
+msgstr "Фільтр осіб за віком на момент смерті"
+
+msgid "Filter rule that matches people by their age at death"
+msgstr "Правило фільтрації, яке знаходить осіб за їхнім віком на момент смерті"
+
+msgid "Multiple Parents Filter"
+msgstr "Фільтр осіб із кількома батьками"
+
+msgid "People with events with a selected role"
+msgstr "Люди з подіями із вибраною роллю"
+
+msgid "Families with events with a selected role"
+msgstr "Сім'ї з подіями, що мають вибрану роль"
+
+msgid "The active Person"
+msgstr "Активна особа"
+
+msgid "Matches sources with a particular value"
+msgstr "Збігаються з джерелами, що містять певне значення"
+
+msgid "Active person"
+msgstr "Активна особа"
+
+msgid "Matches the active person"
+msgstr "Відповідає активній особі"
+
+msgid "Age in years at person's death."
+msgstr "Вік у роках на момент смерті особи."
+
+msgid "Age:"
+msgstr "Вік:"

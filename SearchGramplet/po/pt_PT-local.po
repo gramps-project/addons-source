@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 09:41-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Search"
+msgstr "Procurar"
+
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet para procurar objectos na base de dados."
+
+msgid "Show bookmarked first"
+msgstr "Mostrar favoritos primeiro"
+
+msgid "Sort by object type"
+msgstr "Ordenar por tipo de objecto"
+
+msgid "Persons"
+msgstr "Indivíduos"
+
+msgid "Menu to set search objects"
+msgstr "Menu para definir objectos de procura"
+
+msgid "Select objects to search"
+msgstr "Seleccionar objectos a procurar"
+
+msgid "SearchGramplet configuration menu"
+msgstr "Configuração do gramplet de procura"
+
+#, python-format
+msgid "found: %s"
+msgstr "encontrado:%s"
+
+msgid "No matches..."
+msgstr "Sem resultados..."
+
+msgid "Start type to search"
+msgstr "Escreva para procurar"
+
+msgid "Search..."
+msgstr "Procurar..."
+
+msgid "Remove from bookmarks"
+msgstr "Remover dos favoritos"
+
+msgid "Add to bookmarks"
+msgstr "Adicionar aos favoritos"
+
+#, python-format
+msgid "Birth: %s"
+msgstr "Nascimento: %s"
+
+#, python-format
+msgid "Death: %s"
+msgstr "Óbito: %s"
+
+msgid "Set as Active person"
+msgstr "Definir como indivíduo activo"
+
+msgid "Set as Home person"
+msgstr "Definir como indivíduo inicial"

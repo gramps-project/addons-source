@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Primary name"
+msgstr "שם עיקרי"
+
+msgid " This is the primary death event."
+msgstr " זהו אירוע הפטירה העיקרי."
+
+msgid "Relationship to Father"
+msgstr "יוחסה לאב"
+
+msgid "Parent Family"
+msgstr "משפחת אב"
+
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr "רחוב, עיר, מחוז, מדינה, קוד דואר, ארץ, מספר טלפון"
+
+msgid "Media Reference"
+msgstr "אזכור מדיה"
+
+msgid "Description and Path"
+msgstr "תיאור ונתיב"
+
+msgid "Referenced Region"
+msgstr "אזור מאוזכר"
+
+msgid "Mime type"
+msgstr "סוג Mime"
+
+msgid "Note type"
+msgstr "סוג הערה"
+
+msgid "Parent Place"
+msgstr "מקום אב"
+
+msgid "Alternate Location"
+msgstr "חלף מקום"
+
+msgid "Alternative Name"
+msgstr "שמות חלופיים"
+
+msgid "Latitude, Longitude"
+msgstr "קו אורך, קו רוחב"
+
+msgid "Repository reference"
+msgstr "העדפות מאגר"
+
+msgid "Media type"
+msgstr "סוג מדיה"
+
+msgid "Origin type"
+msgstr "סוג מוצא"
+
+msgid "No source information found"
+msgstr "לא נמצא מידע מקור"
+
+msgid "The style used for the title of the page."
+msgstr "הסגנון שמשמש בכותרת העמוד."

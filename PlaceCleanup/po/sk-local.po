@@ -1,0 +1,330 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Place Cleanup"
+msgstr "Údržba miest"
+
+msgid ""
+"Place Cleanup Gramplet assists in merging places, as well as completing "
+"places from the GeoNames web database"
+msgstr ""
+"Gramplet Údržba miest pomáha pri zlúčení miest a tiež pri dopĺňaní miest z "
+"webovej databázy GeoNames"
+
+msgid ""
+"No\n"
+"Matches"
+msgstr ""
+"Žiadne\n"
+"Zhody"
+
+msgid "Find"
+msgstr "Nájsť"
+
+#, python-format
+msgid ""
+"%s\n"
+"Local\n"
+"Matches"
+msgstr ""
+"%s\n"
+"Miestne \n"
+"Zhody"
+
+msgid "Find GeoNames"
+msgstr "Nájsť GeoNames"
+
+msgid "Need to set GeoNames ID"
+msgstr "Je potrebné nastaviť GeoNames ID"
+
+msgid "Use the Help button for more information"
+msgstr "Použite tlačidlo Pomoc pre viac informácií"
+
+msgid ""
+"Try changing the Title, or use the \"Edit\" button to finish this level of "
+"the place manually."
+msgstr ""
+"Skúste zmeniť názov alebo použite tlačidlo \"Upraviť\", aby ste manuálne "
+"dokončili túto úroveň miesta."
+
+#, python-format
+msgid ""
+"%s\n"
+"GeoNames\n"
+"Matches"
+msgstr ""
+"%s\n"
+"GeoNames\n"
+"Zhody"
+
+#, python-format
+msgid "%s matches were found"
+msgstr "Boli nájdené zhody: %s"
+
+msgid ""
+"Only 10 matches are shown.\n"
+"To see additional results, press the search button again.\n"
+"Or try changing the Title with more detail, such as a country."
+msgstr ""
+"Zobrazených je iba 10 zhôd.\n"
+"Aby ste videli ďalšie výsledky, stlačte tlačidlo vyhľadávania znova.\n"
+"Alebo skúste zmeniť názov s podrobnejšími informáciami, napríklad krajina."
+
+msgid "Problem getting data from web"
+msgstr "Problém so získaním údajov z webu"
+
+msgid "Web request Timeout, you can try again..."
+msgstr "Časový limit webovej požiadavky, môžete skúsiť znova..."
+
+msgid "Problem getting data from GeoNames"
+msgstr "Problém so získaním údajov z GeoNames"
+
+msgid ""
+"One of the places you are merging encloses the other!\n"
+"Please choose another place."
+msgstr ""
+"Jedno z miest, ktoré spájate, obklopuje druhé!\n"
+"Prosím, vyberte iné miesto."
+
+msgid ""
+"The place you chose is enclosed in the place you are workin on!\n"
+"Please cancel and choose another place."
+msgstr ""
+"Miesto, ktoré ste si vybrali, je obklopené miestom, na ktorom pracujete!\n"
+"Prosím, zrušte a vyberte iné miesto."
+
+msgid "GeoNames web site"
+msgstr "Webová stránka GeoNames"
+
+msgid "GeoNames author"
+msgstr "Autor GeoNames"
+
+msgid "GeoNames was founded by Marc Wick. You can reach him at "
+msgstr "GeoNames založil Marc Wick. Môžete ho kontaktovať na "
+
+msgid ""
+"GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Switzerland.\n"
+"This work is licensed under a "
+msgstr ""
+"GeoNames je projekt spoločnosti Unxos GmbH, Weingartenstrasse 8, 8708 "
+"Männedorf, Švajčiarsko\n"
+"Tento projekt je licencovaný pod "
+
+msgid "Creative Commons Attribution 3.0 License"
+msgstr "Licencia Creative Commons Attribution 3.0"
+
+#, python-format
+msgid "Add Souce/Repo/Note (%s)"
+msgstr "Pridať zdroj/repozitár/poznámku (%s)"
+
+msgid "This Place is not used!"
+msgstr "Toto miesto nie je použité!"
+
+msgid ""
+"You should delete it, or, if it contains useful notes or other data, use the "
+"Find to merge it into a valid place."
+msgstr ""
+"Mali by ste ho odstrániť alebo ak obsahuje užitočné poznámky alebo iné "
+"údaje, použite funkciu Nájsť na jeho zlúčenie do platného miesta."
+
+msgid "City, County, State, Country"
+msgstr "Mesto, Okres, Štát, Krajina"
+
+msgid "Primary Name"
+msgstr "Hlavný názov"
+
+msgid "The current Primary name."
+msgstr "Aktuálny hlavný názov."
+
+msgid "The postal code for the place, if any."
+msgstr "Poštové smerovacie číslo pre miesto, ak existuje."
+
+msgid "What type of place this is. Eg 'Country', 'City', ... ."
+msgstr "Aký typ miesta to je. Napr. 'Krajina', 'Mesto', ... ."
+
+msgid "Check this box if you want to keep the original Postal code."
+msgstr ""
+"Začiarknite toto políčko, ak chcete zachovať pôvodné poštové smerovacie "
+"číslo."
+
+msgid "Check this box if you want to keep the original Place Type."
+msgstr "Začiarknite toto políčko, ak chcete zachovať pôvodný typ miesta."
+
+msgid "Orig"
+msgstr "Pôvodný"
+
+msgid "Check this box if you want to keep the original Latitude and Longitude."
+msgstr ""
+"Začiarknite toto políčko, ak chcete zachovať pôvodnú zemepisnú šírku a dĺžku."
+
+msgid "The Gramps ID.."
+msgstr "ID Gramps.."
+
+msgid "Check this box if you want to keep the original Gramps ID."
+msgstr "Začiarknite toto políčko, ak chcete zachovať pôvodné ID Gramps."
+
+msgid ""
+"Alterative Names\n"
+"Select one or more rows and press 'Keep' button to toggle the 'include into "
+"place' status ."
+msgstr ""
+"Alternatívne názvy\n"
+"Vyberte jeden alebo viac riadkov a stlačte tlačidlo 'Zachovať', aby ste "
+"prepli stav 'zahrnúť do miesta'."
+
+msgid "Inc"
+msgstr "Zahr"
+
+msgid "Lang"
+msgstr "Jazyk"
+
+msgid ""
+"Select one or more rows and use this button to keep the alternative names."
+msgstr ""
+"Vyberte jeden alebo viac riadkov a použite toto tlačidlo na zachovanie "
+"alternatívnych názvov."
+
+msgid "Select one row and use this button to make the row the primary name."
+msgstr ""
+"Vyberte jeden riadok a použite toto tlačidlo na nastavenie riadku ako "
+"hlavného názvu."
+
+msgid "Discard"
+msgstr "Zahodiť"
+
+msgid ""
+"Select one or more rows and use this button to discard the alternative names."
+msgstr ""
+"Vyberte jeden alebo viac riadkov a použite toto tlačidlo na zahodenie "
+"alternatívnych názvov."
+
+msgid "Cancel the operation, no changes are made to your Place."
+msgstr "Zrušte operáciu, žiadne zmeny neboli vykonané vo vašom mieste."
+
+msgid "Store the values in your Place."
+msgstr "Uložte hodnoty vo vašom mieste."
+
+msgid "Keep Web Links"
+msgstr "Zachovať webové odkazy"
+
+msgid "Puts web links (typically wikipedia) into your place."
+msgstr "Umiestni webové odkazy (obvykle z Wikipedie) do vášho miesta."
+
+msgid "Add citation and source to Place"
+msgstr "Pridať citáciu a zdroj do miesta"
+
+msgid "This Adds a Citation to your place, citing GeoNames."
+msgstr "Toto pridáva citáciu k vášmu miestu, citujúc GeoNames."
+
+msgid "GeoNames User ID"
+msgstr "ID používateľa GeoNames"
+
+msgid "Enter you Geonames user ID here."
+msgstr "Sem zadajte svoje ID používateľa GeoNames."
+
+msgid "Alternative Names Languages to keep"
+msgstr "Alternatívne jazykové názvy na uchovanie"
+
+msgid ""
+"Enter the two or three letter codes for the languages you wish to keep, "
+"seperated by spaces.\n"
+"For example \"en fr ru\".\n"
+"These languages will initially be checked off on the Names result display.\n"
+"If you often see an un-checked name in a specific language you want, add the "
+"language code here."
+msgstr ""
+"Zadajte dvoj- alebo trojpísmenové kódy pre jazyky, ktoré chcete uchovať, "
+"oddelené medzerami.\n"
+"Napríklad \"en fr ru\".\n"
+"Tieto jazyky budú spočiatku začiarknuté na zobrazení výsledkov názvov.\n"
+"Ak často vidíte nezačiarknutý názov v konkrétnom jazyku, ktorý chcete, "
+"pridajte kód jazyka sem."
+
+msgid ""
+"Current Place title.\n"
+"You can edit this to help find other places, particularly to reduce the "
+"number of results."
+msgstr ""
+"Aktuálny názov miesta.\n"
+"Môžete ho upraviť, aby ste pomohli nájsť ďalšie miesta, najmä aby ste "
+"znížili počet výsledkov."
+
+msgid "Search your local places and GeoNames for a match."
+msgstr "Hľadajte svoje lokálne miesta a GeoNames pre zhodu."
+
+msgid ""
+"Continue to merge (for local places), or to complete a place (for GeoNames)."
+msgstr ""
+"Pokračujte v zlúčení (pre lokálne miesta) alebo dokončite miesto (pre "
+"GeoNames)."
+
+msgid ""
+"Split up Title, Edit manually, and enclose with next level of hierarchy.  "
+"For use when the initial component of the Title is too detailed to be found "
+"in the gazetteer."
+msgstr ""
+"Rozdeľte názov, upravte ho manuálne a uzavrite s ďalšou úrovňou "
+"hierarchie.  \n"
+"Použite ho, keď je počiatočná zložka názvu príliš podrobná na to, aby bola "
+"nájdená v geografickom lexikóne."
+
+msgid "Next Place"
+msgstr "Ďalšie miesto"
+
+msgid "Find an incomplete place."
+msgstr "Nájdite neúplné miesto."
+
+msgid "Set preferences"
+msgstr "Nastaviť preferencie"
+
+msgid "Select one of these places to continue the cleanup process."
+msgstr "Vyberte jedno z týchto miest na pokračovanie v procese čistenia."
+
+msgid "Search result places"
+msgstr "Výsledky vyhľadávania miest"
+
+msgid ""
+"Checking the 'Populated' checkbox causes the GeoNames search to include "
+"'Populted places', places where people live and work."
+msgstr ""
+"Začiarknutie políčka 'Obývané' spôsobí, že vyhľadávanie GeoNames zahrnie "
+"'Obývané miesta', miesta, kde ľudia žijú a pracujú."
+
+msgid "Populated"
+msgstr "Obývané"
+
+msgid ""
+"Checking the 'Admin' checkbox cause the GeoNames search to include "
+"adminstrative subdivisions in the search (countries, states, counties etc.)."
+msgstr ""
+"Začiarknutím políčka 'Admin' spôsobíte, že vyhľadávanie v GeoNames zahrnie "
+"administratívne podjednotky do vyhľadávania (krajiny, štáty, okresy atď.)."
+
+msgid ""
+"Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
+"variety of other places in the search (churches, burial grounds, buildings "
+"etc.)."
+msgstr ""
+"Začiarknutím políčka 'Spot' spôsobíte, že vyhľadávanie v GeoNames zahrnie "
+"širokú škálu ďalších miest do vyhľadávania (kostoly, pohrebiská, budovy "
+"atď.)."
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid "Spot"
+msgstr "Spot"

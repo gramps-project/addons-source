@@ -1,0 +1,356 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ca\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "lxml"
+msgstr "lxml"
+
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "Gramplet de prova lxml i XSLT"
+
+msgid "etree"
+msgstr "etree"
+
+msgid "Gramplet for testing etree with Gramps XML"
+msgstr "Gramplet per provar etree amb Gramps XML"
+
+msgid "Invalid timestamp"
+msgstr "Marca de temps no vàlida"
+
+msgid "No file parsed..."
+msgstr "No s'ha analitzat cap fitxer..."
+
+msgid "Number of editions back"
+msgstr "Número d'edicions enrere"
+
+msgid "Space character on filename"
+msgstr "Caràcter espai al nom del fitxer"
+
+#, python-format
+msgid "Please fix space on \"%s\""
+msgstr "Si us plau, arregla l'espai a \"%s\""
+
+msgid "Sorry, no support for your OS yet!"
+msgstr "Ho sento, encara no hi ha suport pel teu sistema operatiu!"
+
+msgid "Is it a compressed .gramps?"
+msgstr "És un .gramps comprimit?"
+
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "No es pot descomprimir \"%s\""
+
+#, python-format
+msgid ""
+"From:\n"
+" \"%(file1)s\"\n"
+" to:\n"
+" \"%(file2)s\".\n"
+msgstr ""
+"De:\n"
+" \"%(file1)s\"\n"
+" a:\n"
+" \"%(file2)s\".\n"
+
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "No es pot copiar \"%s\""
+
+#, python-format
+msgid "XML: Last %s editions since %s, were at/on :\n"
+msgstr "XML: les darreres %s edicions des de %s, eren a:\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of records and relations : \t%s\n"
+"\n"
+msgstr ""
+"\n"
+"XML: Nombre de registres i relacions : \t%s\n"
+"\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Nombre de marques : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\n"
+msgstr ""
+"Nombre de marques : \n"
+"\t\t\t%s\n"
+
+#, python-format
+msgid ""
+"Number of  events : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Nombre d'esdeveniments : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+msgstr ""
+"Nombre de persones : \n"
+"\t\t\t%s\t|\t(%s) i (%s)* cognoms\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Nombre de persones : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of families : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Nombre de famílies : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of sources : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Nombre de fonts : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of citations : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Nombre de cites : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of places : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Nombre de llocs : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of media objects : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Nombre d'objectes multimèdia : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of repositories : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Nombre de repositoris : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of notes : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Nombre de notes : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of additional records and relations: \t%s\n"
+msgstr ""
+"\n"
+"XML: nombre de registres i relacions addicionals: \t%s\n"
+
+#, python-format
+msgid ""
+"* loaded Family Tree base:\n"
+" \"%s\"\n"
+msgstr ""
+"* carregada la base de l'arbre genealògic:\n"
+" \"%s\"\n"
+
+msgid "Where is gzip?"
+msgstr "On és el gzip?"
+
+msgid "\"gzip\" is missing"
+msgstr "falta el \"gzip\""
+
+msgid "Missing python3 lxml"
+msgstr "Falta el python3 lxml"
+
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr "Si us plau, prova d'instal·lar el paquet \"python3 lxml\"."
+
+msgid "No file loaded..."
+msgstr "No hi ha cap fitxer carregat..."
+
+msgid "XSD validation (lxml)"
+msgstr "Validació XSD (lxml)"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" !"
+msgstr "No es pot validar \"%(file)s\"!"
+
+#, python-format
+msgid "xmllint: skip DTD validation for \"%(file)s\""
+msgstr "xmllint: omet la validació DTD per a \"%(file)s\""
+
+#, python-format
+msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
+msgstr "xmllint: omet la validació de RelaxNG per a \"%(file)s\""
+
+msgid "Parsing issue"
+msgstr "Problema d'anàlisi"
+
+#, python-format
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "No es pot analitzar el contingut de \"%(file)s\""
+
+msgid "Gramps version"
+msgstr "Versió de Gramps"
+
+#, python-format
+msgid ""
+"Wrong namespace\n"
+"Need: %s"
+msgstr ""
+"Espai de noms incorrecte\n"
+"Es necessita: %s"
+
+msgid "RelaxNG validation"
+msgstr "Validació RelaxNG"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
+msgstr "No es pot validar \"%(file)s\" mitjançant l'esquema RelaxNG"
+
+msgid "File issue"
+msgstr "Problema amb el fitxer"
+
+#, python-format
+msgid "Cannot parse \"%(file)s\" via etree"
+msgstr "No es pot analitzar \"%(file)s\" mitjançant etree"
+
+msgid "Parsing file..."
+msgstr "S'està analitzant el fitxer..."
+
+msgid "Missing header"
+msgstr "Falta la capçalera"
+
+msgid ""
+"Not a valid .gramps.\n"
+"Cannot run the gramplet...\n"
+"Please, try to use a .gramps\n"
+"generated by Gramps 4.x."
+msgstr ""
+"No és un .gramps vàlid.\n"
+"No es pot executar el gramplet...\n"
+"Si us plau, prova d'utilitzar un .gramps\n"
+"generat per Gramps 4.x."
+
+msgid "0"
+msgstr "0"
+
+msgid "File parsed with"
+msgstr "Fitxer analitzat amb"
+
+msgid "File was generated on "
+msgstr "El fitxer es va generar el "
+
+msgid " by Gramps "
+msgstr " per Gramps "
+
+msgid "Period: "
+msgstr "Període: "
+
+msgid " entries for surname(s); no frequency yet"
+msgstr " entrades de cognoms; encara no hi ha freqüència"
+
+msgid " entries for place(s)"
+msgstr " inscripcions per a llocs"
+
+msgid " note(s)"
+msgstr " notes"
+
+msgid " source(s)"
+msgstr " font(s)"
+
+msgid "Gallery.html"
+msgstr "Galeria.html"
+
+#, python-format
+msgid "2. Has generated a media index on \"%(file)s\".\n"
+msgstr "2. Ha generat un índex multimèdia a \"%(file)s\".\n"
+
+#, python-format
+msgid "3. Has written entries into \"%(file)s\".\n"
+msgstr "3. Té entrades escrites a \"%(file)s\".\n"
+
+msgid "Matches XSD schema."
+msgstr "Coincideix amb l'esquema XSD."
+
+msgid "xmllint: skip DTD validation"
+msgstr "xmllint: omet la validació de DTD"
+
+msgid "I am looking at ..."
+msgstr "Estic mirant..."
+
+msgid "Content generated by Gramps"
+msgstr "Contingut generat per Gramps"
+
+msgid "List of sources"
+msgstr "Llista de fonts"
+
+msgid "Australia"
+msgstr "Austràlia"
+
+msgid "Brazil"
+msgstr "Brasil"
+
+msgid "India"
+msgstr "Índia"
+
+msgid "Norway"
+msgstr "Noruega"
+
+msgid "Portugal"
+msgstr "Portugal"
+
+#, python-format
+msgid "1. Has generated \"%s\".\n"
+msgstr "1. Ha generat \"%s\".\n"
+
+#, python-format
+msgid ""
+"Try to open\n"
+" \"%s\"\n"
+" into your prefered web navigator ..."
+msgstr ""
+"Intenta obrir\n"
+" \"%s\"\n"
+" al teu navegador web preferit..."

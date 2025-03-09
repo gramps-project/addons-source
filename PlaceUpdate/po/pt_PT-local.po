@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Set properties for multiple places"
+msgstr "Definir propriedades para múltiplos locais"
+
+msgid "Clear original enclosing places"
+msgstr "Limpar locais contentores originais"
+
+msgid "Clear tags"
+msgstr "Limpar etiquetas"
+
+msgid "Generate hierarchy"
+msgstr "Gerar hierarquia"
+
+msgid "Replace text"
+msgstr "Substituir texto"
+
+msgid "New text:"
+msgstr "Novo texto:"
+
+msgid "Clear selections"
+msgstr "Limpar selecções"
+
+msgid "Apply to selected places"
+msgstr "Aplicar aos locais seleccionados"
+
+msgid "PlaceUpdate"
+msgstr "Actualizar local"

@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Event Description Editor"
+msgstr "Editor de descrições de eventos"
+
+msgid "Search substring..."
+msgstr "Subcadeia de procura..."
+
+msgid "INFO"
+msgstr "INFORMAÇÃO"
+
+#, python-format
+msgid "%s event descriptions of %s events were changed."
+msgstr "Foram alteradas %s descrições de eventos entre %s eventos."
+
+msgid "Find"
+msgstr "Localizar"
+
+msgid "Replace"
+msgstr "Substituir"
+
+msgid "Replace substring only"
+msgstr "Substituir só a subcadeia"
+
+msgid ""
+"If True only the substring will be replaced, otherwise the whole description "
+"will be deleted and replaced by the new one."
+msgstr ""
+"Se marcada, só a subcadeia será substituída, senão será substituída toda a "
+"descrição."
+
+msgid "Allow regex"
+msgstr "Permitir regex"
+
+msgid "Allow regular expressions."
+msgstr "Permite a utilização de expressões regulares."
+
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr ""
+"Uma ferramenta de procura e substituição de cadeias nas descrições de "
+"múltiplos eventos."

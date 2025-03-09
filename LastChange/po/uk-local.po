@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Last Change Report"
+msgstr "Звіт про останні зміни"
+
+msgid "You must select at least one type of record."
+msgstr "Ви повинні вибрати хоча б один тип запису."
+
+msgid "People Changed"
+msgstr "Змінені особи"
+
+msgid "Changed On"
+msgstr "Змінено"
+
+msgid "Families Changed"
+msgstr "Змінені родини"
+
+msgid "Family Surname"
+msgstr "Прізвище родини"
+
+#, python-format
+msgid "%s and %s"
+msgstr "%s і %s"
+
+msgid "Events Changed"
+msgstr "Змінені події"
+
+msgid "Places Changed"
+msgstr "Змінені місця"
+
+msgid "Media Changed"
+msgstr "Змінені медіафайли"
+
+msgid "Sources Changed"
+msgstr "Змінені джерела"
+
+msgid "Notes Changed"
+msgstr "Змінені нотатки"
+
+msgid "Citations Changed"
+msgstr "Змінені цитати"
+
+msgid "Select From"
+msgstr "Вибрати з"
+
+msgid "The style used for the title of the page."
+msgstr "Стиль, що використовується для заголовка сторінки."
+
+msgid "The style used for normal text"
+msgstr "Стиль, що використовується для звичайного тексту"
+
+msgid "changed on"
+msgstr "змінено"
+
+msgid "List the last ten person records that have been changed"
+msgstr "Список останніх десяти змінених записів осіб"
+
+msgid "Latest Changes"
+msgstr "Останні зміни"
+
+msgid "Report of the last records that have been changed"
+msgstr "Звіт про останні змінені записи"

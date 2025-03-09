@@ -1,0 +1,323 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+#, python-format
+msgid "Failed writing %s: %s"
+msgstr "Не вдалося записати %s: %s"
+
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "Не вдалося створити структуру директорій: %s"
+
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "Не вдалося скопіювати веб-файли: %s"
+
+msgid "Ancestral Collapsible Tree Options"
+msgstr "Параметри складного дерева предків"
+
+msgid "Include Generations"
+msgstr "Включити покоління"
+
+msgid "Male Background Color"
+msgstr "Колір фону для чоловіків"
+
+msgid "RGB-color for male box background."
+msgstr "RGB-колір для фону блоку чоловіка."
+
+msgid "Male Expandable Background Color"
+msgstr "Колір фону розгорнутого блоку чоловіка"
+
+msgid "RGB-color for male expandable box background."
+msgstr "RGB-колір для фону розгорнутого блоку чоловіка."
+
+msgid "Female Background"
+msgstr "Фон для жінки"
+
+msgid "RGB-color for female box background."
+msgstr "RGB-колір для фону блоку жінки."
+
+msgid "Female Expandable Background"
+msgstr "Фон для розгорнутого блоку жінки"
+
+msgid "RGB-color for female expandable box background."
+msgstr "RGB-колір для фону розгорнутого блоку жінки."
+
+msgid "The destination path for generated files."
+msgstr "Шлях призначення для згенерованих файлів."
+
+msgid "The destination file name for html content."
+msgstr "Імʼя файлу для HTML вмісту."
+
+msgid "Ancestral Fan Chart"
+msgstr "Віялова діаграма предків"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим як "
+"віялова діаграма з бібліотеки D3.js JavaScript."
+
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Див. %(reference)s : %(spouse)s"
+
+msgid "Generating report..."
+msgstr "Генерується звіт..."
+
+msgid "Descendant Indented Tree"
+msgstr "Ієрархічне дерево нащадків"
+
+msgid "Invalid Destination Directory"
+msgstr "Некоректний каталог призначення"
+
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"Каталог призначення %s не існує\n"
+"Бажаєте спробувати створити його?"
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "Не вдалося створити %s: %s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Файл призначення %s вже існує.\n"
+"Бажаєте перезаписати його?"
+
+msgid "Default View"
+msgstr "Перегляд за замовчуванням"
+
+msgid "Expand All"
+msgstr "Розгорнути все"
+
+msgid "Include contraction level"
+msgstr "Включити рівень згортання"
+
+msgid "The number of descendant levels to contract on initial display."
+msgstr "Кількість рівнів нащадків для згортання при початковому відображенні."
+
+msgid "The font size in pixels for each node."
+msgstr "Розмір шрифту у пікселях для кожного вузла."
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Чи показувати дубльовані сімейні дерева у звіті."
+
+msgid "Expanded Row Background Color"
+msgstr "Колір фону розгорнутого рядка"
+
+msgid "RGB-color for expanded row background."
+msgstr "RGB-колір для фону розгорнутого рядка."
+
+msgid "Expandable Background Color"
+msgstr "Колір фону розширюваного рядка"
+
+msgid "RGB-color for expandable row background."
+msgstr "RGB-колір для фону розширюваного рядка."
+
+msgid "Non-Expandable Background Color"
+msgstr "Колір фону нерозширюваного рядка"
+
+msgid "RGB-color for non-expandable row background."
+msgstr "RGB-колір для фону нерозширюваного рядка."
+
+msgid "Include records marked private"
+msgstr "Включати записи, позначені як приватні"
+
+msgid "Whether to include private objects."
+msgstr "Чи включати приватні об'єкти."
+
+msgid "Include Last Name Only"
+msgstr "Включати лише прізвище"
+
+msgid "Include Full Name Only"
+msgstr "Включати лише повне ім'я"
+
+msgid "How to handle living people."
+msgstr "Як обробляти живих осіб."
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "Чи включати осіб, які могли нещодавно померти."
+
+msgid "Navigation"
+msgstr "Навігація"
+
+msgid "Contraction/Expansion mechanism"
+msgstr "Механізм згортання/розгортання"
+
+msgid "Entire node."
+msgstr "Увесь вузол."
+
+msgid "Arrow images at start of node."
+msgstr "Зображення стрілок на початку вузла."
+
+msgid "Plus/Minus images at start of node."
+msgstr "Зображення плюс/мінус на початку вузла."
+
+msgid "Where to click to expand/contract nodes."
+msgstr "Де натискати для розгортання/згортання вузлів."
+
+msgid "Auto-generate HREF links for nodes"
+msgstr "Автоматично генерувати HREF-посилання для вузлів"
+
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr ""
+"Чи слід автоматично створювати HTML-посилання для кожного вузла у звіті."
+
+msgid "URL prefix path."
+msgstr "Префікс шляху URL."
+
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr ""
+"Префікс URL, що застосовується до кожного автоматично згенерованого HREF-"
+"посилання."
+
+msgid "URL file extension"
+msgstr "Розширення файлу URL"
+
+msgid "No file extension."
+msgstr "Немає розширення файлу."
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "URL file name delimeter"
+msgstr "Роздільник імені файлу URL"
+
+msgid "Remove all whitespace."
+msgstr "Видалити всі пробіли."
+
+msgid "Replace whitespace with dash(-)."
+msgstr "Замінити пробіли на дефіс (-)."
+
+msgid "Replace whitespace with underscore(_)"
+msgstr "Замінити пробіли на підкреслення (_)"
+
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "Що використовувати як роздільник імені файлу, замінюючи пробіли."
+
+msgid "Generations to generate HREF links"
+msgstr "Покоління для створення HREF-посилань"
+
+msgid "The number of generations to generate HREF links."
+msgstr "Кількість поколінь для створення HREF-посилань."
+
+msgid "Exclude persons who died before (years)"
+msgstr "Виключити осіб, які померли раніше (років)"
+
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr ""
+"Чи генерувати посилання для осіб, які померли в дитинстві; -1 не виключає "
+"нікого."
+
+msgid "Exclude center person"
+msgstr "Виключити активну особу"
+
+msgid "Whether or not to generate links for center person."
+msgstr "Чи створювати посилання для центральної особи."
+
+msgid "Exclude Spouses"
+msgstr "Виключити подружжя"
+
+msgid "Whether or not to generate links for spouses."
+msgstr "Чи створювати посилання для подружжя."
+
+msgid "Biography Content"
+msgstr "Зміст біографії"
+
+msgid "Show biography tooltips"
+msgstr "Показувати підказки біографії"
+
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "Чи показувати підказки біографії при наведенні на вузол."
+
+msgid "Text Color"
+msgstr "Колір тексту"
+
+msgid "RGB-color for biography text."
+msgstr "RGB-колір для тексту біографії."
+
+msgid "RGB-color for biography tooltip."
+msgstr "RGB-колір для підказки біографії."
+
+msgid "Header Font size"
+msgstr "Розмір шрифту заголовка"
+
+msgid "The font size in pixels for biography header text."
+msgstr "Розмір шрифту у пікселях для заголовка біографії."
+
+msgid "Body Font size"
+msgstr "Розмір шрифту основного тексту"
+
+msgid "The font size in pixels for biography body text."
+msgstr "Розмір шрифту у пікселях для основного тексту біографії."
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим у "
+"вигляді складного дерева з бібліотеки D3.js JavaScript."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Параметри віялової діаграми предків"
+
+msgid "Paternal Background Color"
+msgstr "Колір фону батьківської лінії"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-колір для фону блоку по батьківській лінії."
+
+msgid "Maternal Background"
+msgstr "Фон для материнської лінії"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-колір для фону блоку по материнській лінії."
+
+msgid "Ancestral Collapsible Tree"
+msgstr "Складне дерево предків"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим у "
+"вигляді складного дерева з бібліотеки D3.js JavaScript."

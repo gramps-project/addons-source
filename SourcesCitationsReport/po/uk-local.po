@@ -1,0 +1,130 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-26 15:11-0500\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Sources and Citations Report"
+msgstr "Звіт про джерела та цитати"
+
+msgid "Provides a source and Citations Report with notes"
+msgstr "Надає звіт про джерела та цитати з примітками"
+
+#, python-format
+msgid "Key: %s"
+msgstr "Ключ: %s"
+
+msgid "Citations:"
+msgstr "Цитати:"
+
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#, python-format
+msgid "  %s"
+msgstr "  %s"
+
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#, python-format
+msgid "   Type: %s"
+msgstr "   Тип: %s"
+
+#, python-format
+msgid "   N-ID: %s"
+msgstr "   N-ID: %s"
+
+#, python-format
+msgid "   %s"
+msgstr "   %s"
+
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+msgid "   Spouses: "
+msgstr "   Подружжя: "
+
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#, python-format
+msgid "and %s "
+msgstr "та %s "
+
+#, python-format
+msgid " %s"
+msgstr " %s"
+
+msgid "Title of the Report"
+msgstr "Заголовок звіту"
+
+msgid "Title string for the report."
+msgstr "Рядок заголовка для звіту."
+
+msgid "Subtitle of the Report"
+msgstr "Підзаголовок звіту"
+
+msgid "Subtitle string for the report."
+msgstr "Рядок підзаголовка для звіту."
+
+msgid "researcher name"
+msgstr "ім'я дослідника"
+
+msgid "Select sources using a filter"
+msgstr "Виберіть джерела за допомогою фільтра"
+
+msgid "Show persons"
+msgstr "Показати осіб"
+
+msgid "Whether to show events and persons mentioned in the note"
+msgstr "Чи відображати події та осіб, згаданих у примітці"
+
+msgid "The style used for the title of the report."
+msgstr "Стиль, що використовується для заголовка звіту."
+
+msgid "The style used for the subtitle of the report."
+msgstr "Стиль, що використовується для підзаголовка звіту."
+
+msgid "The style used for the footer of the report."
+msgstr "Стиль, що використовується для нижнього колонтитула звіту."
+
+msgid "The style used for source title."
+msgstr "Стиль, що використовується для заголовка джерела."
+
+msgid "The style used for source subtitle."
+msgstr "Стиль, що використовується для підзаголовка джерела."
+
+msgid "The style used for Source details."
+msgstr "Стиль, що використовується для деталей джерела."
+
+msgid "The style used for citation title."
+msgstr "Стиль, що використовується для заголовка цитати."
+
+msgid "The style used for a column title."
+msgstr "Стиль, що використовується для заголовка стовпця."
+
+msgid "The style used for each section."
+msgstr "Стиль, що використовується для кожного розділу."
+
+msgid "The style used for event and person details."
+msgstr "Стиль, що використовується для деталей подій та осіб."

@@ -1,0 +1,96 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "FamilyTree DNA"
+msgstr "FamilyTree DNA"
+
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr "Nástroj na importovanie údajov FamilyFinder DNA z Family Tree"
+
+msgid "Family Finder Tool"
+msgstr "Nástroj Family Finder"
+
+msgid "Enter FTDNA Family Finder Filename:"
+msgstr "Zadajte názov súboru FTDNA Family Finder:"
+
+msgid "Enter FTDNA Chromosome Segment Filename:"
+msgstr "Zadajte názov súboru FTDNA Chromosome Segment:"
+
+msgid "Import Haplogroups"
+msgstr "Importovať haploskupiny"
+
+msgid "FTDNA Note string :"
+msgstr "Reťazec poznámky FTDNA :"
+
+msgid "Shared Citation ID :"
+msgstr "ID zdieľanej citácie :"
+
+msgid "Active Person : "
+msgstr "Aktívna osoba : "
+
+msgid "Import data from Family Finder files"
+msgstr "Importovať údaje zo súborov Family Finder"
+
+msgid "Close the Family Finder Tool"
+msgstr "Zavrieť nástroj Family Finder"
+
+msgid "FamilyTree DNA Import"
+msgstr "Import FamilyTree DNA"
+
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr ""
+"Vytvorených {} asociácií s údajmi DNA. Vytvorených {} atribútov "
+"haploskupín \n"
+
+msgid "No Family Finder File specified"
+msgstr "Nebol špecifikovaný žiadny súbor Family Finder"
+
+msgid "No Segment File specified"
+msgstr "Nebol zadaný žiadny súbor Segment"
+
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr ""
+"V poznámkach FTDNA sa nenašli žiadne asociácie. Neboli vytvorené žiadne "
+"atribúty haploskupín."
+
+#, python-format
+msgid "Add %s haplogroup attribute"
+msgstr "Pridať atribút haploskupiny %s"
+
+#, python-format
+msgid "Add %s DNA Association"
+msgstr "Pridať asociáciu DNA %s"
+
+#, python-format
+msgid "Create Note for %s DNA Association"
+msgstr "Vytvoriť poznámku pre asociáciu DNA %s"
+
+#, python-format
+msgid "Add Note to %s DNA Association"
+msgstr "Pridať poznámku k asociácii DNA %s"
+
+#, python-format
+msgid "Create Source Citation for %s DNA Association"
+msgstr "Vytvoriť citáciu zdroja pre asociáciu DNA %s"
+
+#, python-format
+msgid "Create Citation for %s DNA Association"
+msgstr "Vytvoriť citáciu pre asociáciu DNA %s"
+
+#, python-format
+msgid "Add Citation to %s DNA Association"
+msgstr "Pridať citáciu k asociácii DNA %s"

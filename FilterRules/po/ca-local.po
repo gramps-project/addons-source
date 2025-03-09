@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ca\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Inverse"
+msgstr "Inverteix"
+
+msgid "People with events with the <role>"
+msgstr "Persones amb esdeveniments amb el <role>"
+
+msgid "Families with events with the <role>"
+msgstr "Famílies amb esdeveniments amb el <role>"
+
+msgid "Include Children"
+msgstr "Incloure Fills"
+
+msgid "Include Parents"
+msgstr "Inclou els pares"
+
+msgid "People with events with a selected role"
+msgstr "Persones amb esdeveniments amb un rol seleccionat"
+
+msgid "The active Person"
+msgstr "La Persona activa"
+
+msgid "Active person"
+msgstr "Persona activa"
+
+msgid "Matches the active person"
+msgstr "Coincideix amb la persona activa"

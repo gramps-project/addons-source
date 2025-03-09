@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "FamilyTree DNA"
+msgstr "FamilyTree DNA"
+
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr "Hulpmiddel om FamilyFinder DNA-gegevens uit Family Tree te importeren"
+
+msgid "Family Finder Tool"
+msgstr "Family Finder Tool"
+
+msgid "Enter FTDNA Family Finder Filename:"
+msgstr "Voer de bestandsnaam van FTDNA Family Finder in:"
+
+msgid "Enter FTDNA Chromosome Segment Filename:"
+msgstr "Voer de bestandsnaam van het FTDNA-chromosoomsegment in:"
+
+msgid "Import Haplogroups"
+msgstr "Haplogroepen importeren"
+
+msgid "FTDNA Note string :"
+msgstr "FTDNA Opmerking tekenreeks :"
+
+msgid "Shared Citation ID :"
+msgstr "Gedeelde citaat-ID :"
+
+msgid "Active Person : "
+msgstr "Actief persoon : "
+
+msgid "Import data from Family Finder files"
+msgstr "Gegevens importeren uit Family Finder-bestanden"
+
+msgid "Close the Family Finder Tool"
+msgstr "Family Finder-tool sluiten"
+
+msgid "Read Help manual"
+msgstr "Lees de Help-handleiding"
+
+msgid "FamilyTree DNA Import"
+msgstr "Stamboom DNA importeren"
+
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr ""
+"{} Associaties met gecreëerde DNA-gegevens. {} haplogroep-attributen "
+"aangemaakt \n"
+
+msgid "No Family Finder File specified"
+msgstr "Geen Family Finder-bestand opgegeven"
+
+msgid "No Segment File specified"
+msgstr "Geen segmentbestand opgegeven"
+
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr ""
+"Geen associaties gevonden in FTdna-notities. Geen haplogroep-attributen "
+"aangemaakt."
+
+#, python-format
+msgid "Add %s haplogroup attribute"
+msgstr "%s haplogroep-attribuut toevoegen"
+
+#, python-format
+msgid "Add %s DNA Association"
+msgstr "%s DNA-associatie toevoegen"
+
+#, python-format
+msgid "Create Note for %s DNA Association"
+msgstr "Notitie voor %s DNA-associatie aanmaken"
+
+#, python-format
+msgid "Add Note to %s DNA Association"
+msgstr "Opmerking toevoegen aan %s DNA-associatie"
+
+#, python-format
+msgid "Create Source Citation for %s DNA Association"
+msgstr "Bronvermelding voor %s DNA-associatie aanmaken"
+
+#, python-format
+msgid "Create Citation for %s DNA Association"
+msgstr "Citaat voor %s DNA-associatie aanmaken"
+
+#, python-format
+msgid "Add Citation to %s DNA Association"
+msgstr "Citaat aan %s DNA-associatie toevoegen"

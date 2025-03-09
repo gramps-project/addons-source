@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/hr/>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "File name"
+msgstr "Ime datoteke"
+
+msgid "Enable custom start position"
+msgstr "Aktiviraj prilagođenu početnu poziciju"
+
+msgid "Start latitude"
+msgstr "Početna zemljopisna širina"
+
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"Postavi početnu zemljopisnu širinu\n"
+"Zadano: 50,0"
+
+msgid "Start longitude"
+msgstr "Početna zemljopisna dužina"
+
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"Postavi početnu zemljopisnu dužinu\n"
+"Zadano: 10,0"
+
+msgid "Start zoom"
+msgstr "Početno zumiranje"
+
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"Postavi vrijednost za početno zumiranje\n"
+"Zadano: 5"
+
+msgid "Path does not exist."
+msgstr "Staza ne postoji."
+
+msgid "Invalid filename."
+msgstr "Neispravno ime datoteke."
+
+msgid "INFO"
+msgstr "INFORMACIJE"

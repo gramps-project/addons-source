@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+
+#, python-format
+msgid "All %s"
+msgstr "Tutti i %s"
+
+msgid "Process tags..."
+msgstr "Elaborazione etichette..."
+
+msgid "INFO"
+msgstr "INFO"

@@ -1,0 +1,423 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "No Source"
+msgstr "Немає джерела"
+
+msgid "onclick"
+msgstr "при натисканні"
+
+msgid "onmouseover"
+msgstr "при наведенні"
+
+msgid "Ancestor"
+msgstr "Предок"
+
+msgid "Descendant"
+msgstr "Нащадок"
+
+msgid "Fan"
+msgstr "Віяло"
+
+msgid "Growth Spiral"
+msgstr "Спіраль росту"
+
+msgid "Mandelbrot Tree"
+msgstr "Дерево Мандельброта"
+
+msgid "Pythagoras Tree"
+msgstr "Дерево Піфагора"
+
+msgid "right to left"
+msgstr "справа наліво"
+
+msgid "left to right"
+msgstr "зліва направо"
+
+msgid "top to bottom"
+msgstr "зверху вниз"
+
+msgid "bottom to top"
+msgstr "знизу вверх"
+
+msgid "role"
+msgstr "роль"
+
+msgid "description"
+msgstr "опис"
+
+msgid "witnesses"
+msgstr "свідки"
+
+#, python-format
+msgid "Failure writing %s: %s"
+msgstr "Не вдалося записати %s: %s"
+
+msgid "No central person selected"
+msgstr "Не вибрано головну особу"
+
+msgid "Unknown time direction"
+msgstr "Невідомий напрямок часу"
+
+msgid "author"
+msgstr "автор"
+
+msgid "publication_info"
+msgstr "інформація про публікацію"
+
+msgid "abbreviation"
+msgstr "абревіатура"
+
+msgid "volume"
+msgstr "том"
+
+msgid "of"
+msgstr "з"
+
+msgid "the chart type runs out of bounds"
+msgstr "тип діаграми виходить за межі"
+
+msgid "Search"
+msgstr "Пошук"
+
+msgid "in"
+msgstr "в"
+
+msgid "DenominoViso Options"
+msgstr "Налаштування DenominoViso"
+
+msgid "The destination file for the html-content."
+msgstr "Файл призначення для HTML-вмісту."
+
+msgid "Central Person"
+msgstr "Центральна особа"
+
+msgid "The central person for the tree"
+msgstr "Центральна особа для дерева"
+
+msgid "Title of the webpage"
+msgstr "Заголовок вебсторінки"
+
+msgid "Any string you wish."
+msgstr "Будь-який бажаний текст."
+
+msgid "Display mode"
+msgstr "Режим відображення"
+
+msgid "Either plot ancestor or descendants graph."
+msgstr "Відобразити граф предків або нащадків."
+
+msgid "Display type"
+msgstr "Тип відображення"
+
+msgid "The type of graph to create."
+msgstr "Тип графіка для створення."
+
+msgid "Direction of time"
+msgstr "Напрямок часу"
+
+msgid "Direction in which time increases."
+msgstr "Напрямок, у якому збільшується час."
+
+msgid "Max chart width (%)"
+msgstr "Максимальна ширина діаграми (%)"
+
+msgid "Width of the tree as fraction of the browser window"
+msgstr "Ширина дерева як частка вікна браузера"
+
+msgid "Max chart height (px)"
+msgstr "Максимальна висота діаграми (пікс.)"
+
+msgid "Height of the tree in pixels."
+msgstr "Висота дерева у пікселях."
+
+msgid "Closing remarks"
+msgstr "Заключні примітки"
+
+msgid ""
+"List of strings, free text added at the bottom, for example for a copyright "
+"notice."
+msgstr ""
+"Список текстових рядків, що додаються внизу, наприклад, для повідомлення про "
+"авторське право."
+
+msgid "Include Options"
+msgstr "Включити параметри"
+
+msgid "Include private records"
+msgstr "Включити приватні записи"
+
+msgid "Whether to leave out private data."
+msgstr "Чи виключати приватні дані."
+
+msgid "Include Events"
+msgstr "Включити події"
+
+msgid "Whether to include a person's events."
+msgstr "Чи включати події особи."
+
+msgid "Include birth children"
+msgstr "Включити народжених дітей"
+
+msgid "Whether to include the birth of children in the list of events."
+msgstr "Чи включати народження дітей у список подій."
+
+msgid "Include death relatives"
+msgstr "Включити померлих родичів"
+
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
+msgstr "Чи включати смерть родичів під час життя особи."
+
+msgid "Include witness note"
+msgstr "Включити примітку свідка"
+
+msgid ""
+"Whether to include the note belonging to a witness (if the event_format "
+"contains <witnesses>)"
+msgstr ""
+"Чи включати примітку, що належить свідку (якщо event_format містить "
+"<witnesses>)"
+
+msgid "Whether to include a person's attributes"
+msgstr "Чи включати атрибути особи"
+
+msgid "Include Addresses"
+msgstr "Включити адреси"
+
+msgid "Whether to include a person's addresses."
+msgstr "Чи включати адреси особи."
+
+msgid "Include Note"
+msgstr "Включити примітку"
+
+msgid "Whether to include a person's note."
+msgstr "Чи включати примітку особи."
+
+msgid "Include URL"
+msgstr "Включити URL"
+
+msgid "Whether to include a person's internet address."
+msgstr "Чи включати інтернет-адресу особи."
+
+msgid "Include URL description"
+msgstr "Включити опис URL"
+
+msgid "Whether to include the description of the first URL"
+msgstr "Чи включати опис першого URL"
+
+msgid "Include Sources"
+msgstr "Включити джерела"
+
+msgid "Whether to include a person's sources."
+msgstr "Чи включати джерела особи."
+
+msgid "Image Options"
+msgstr "Опції зображення"
+
+msgid "Include Photos/Images from Gallery"
+msgstr "Включити фотографії/зображення з галереї"
+
+msgid "Whether to include images"
+msgstr "Чи включати зображення"
+
+msgid "Copy Image"
+msgstr "Копіювати зображення"
+
+msgid "Copy the images to a designated directory."
+msgstr "Скопіювати зображення у визначений каталог."
+
+msgid "Images with Attribute"
+msgstr "Зображення з атрибутом"
+
+msgid "Determine images with which attributes to in/exclude"
+msgstr "Визначте, які зображення з певними атрибутами включати/виключати"
+
+msgid "Include Image source references"
+msgstr "Включити посилання на джерела зображень"
+
+msgid "Whether to include references for images"
+msgstr "Чи включати посилання на джерела зображень"
+
+msgid "Source reference attribute"
+msgstr "Атрибут посилання на джерело"
+
+msgid "Image attribute that should be used as source reference"
+msgstr "Атрибут зображення, який слід використовувати як посилання на джерело"
+
+msgid "Style Options"
+msgstr "Опції стилю"
+
+msgid "Color of active person:"
+msgstr "Колір активної особи:"
+
+msgid "RGB-color of geometric shape of the activated person."
+msgstr "RGB-колір геометричної фігури активної особи."
+
+msgid "Color of found persons:"
+msgstr "Колір знайдених осіб:"
+
+msgid "RGB-color of geometric shape of the persons found."
+msgstr "RGB-колір геометричної фігури знайдених осіб."
+
+msgid "Color of male persons:"
+msgstr "Колір чоловіків:"
+
+msgid "RGB-color of geometric shape of the male persons."
+msgstr "RGB-колір геометричної фігури чоловіків."
+
+msgid "Colour of female persons:"
+msgstr "Колір жінок:"
+
+msgid "RGB-color of geometric shape of the female persons."
+msgstr "RGB-колір геометричної фігури жінок."
+
+msgid "Width of rectangle (hrd):"
+msgstr "Ширина прямокутника (hrd):"
+
+msgid ""
+"The width of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"Ширина прямокутника, що представляє особу у звичайній діаграмі, виражена як "
+"частка від горизонтальної відстані між прямокутниками."
+
+msgid "Height of rectangle (hrd):"
+msgstr "Висота прямокутника (hrd):"
+
+msgid ""
+"The height of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"Висота прямокутника, що представляє особу у звичайній діаграмі, виражена як "
+"частка від горизонтальної відстані між прямокутниками."
+
+msgid "Vertical distance of rectangles (hrd):"
+msgstr "Вертикальна відстань між прямокутниками (hrd):"
+
+msgid ""
+"The vertical distance of person rectangles of the regular chart type "
+"expressed as fraction of the horizontal rectangle distance."
+msgstr ""
+"Вертикальна відстань між прямокутниками осіб у звичайній діаграмі, виражена "
+"як частка горизонтальної відстані між прямокутниками."
+
+msgid "Extra style settings:"
+msgstr "Додаткові налаштування стилю:"
+
+msgid "Whatever css style settings are needed."
+msgstr "Будь-які необхідні CSS-налаштування стилю."
+
+msgid "Mouse event handler"
+msgstr "Обробник подій миші"
+
+msgid "Mouse handler used to interact with visitor of webpage."
+msgstr "Обробник миші для взаємодії з відвідувачем вебсторінки."
+
+msgid "Birth relationship linestyle"
+msgstr "Стиль лінії зв’язку народження"
+
+msgid ""
+"List of lists where each sublist is a list with information about the dash "
+"pattern of lines connecting children to parents."
+msgstr ""
+"Список списків, де кожен підсписок містить інформацію про стиль пунктирних "
+"ліній, що з’єднують дітей з батьками."
+
+msgid "Source confidence color"
+msgstr "Колір рівня довіри до джерела"
+
+msgid ""
+"List of lists where each sublist is a list with information on the color to "
+"use for a certain confidence level."
+msgstr ""
+"Список списків, де кожен підсписок містить інформацію про колір, який слід "
+"використовувати для певного рівня впевненості."
+
+msgid "Event format"
+msgstr "Формат події"
+
+msgid "at"
+msgstr "у"
+
+msgid ""
+"List os strings with placeholders for events. Known placeholders: <type>, "
+"<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
+"<attribute-value>."
+msgstr ""
+"Список рядків із заповнювачами для подій. Відомі заповнювачі: <тип>, <роль>, "
+"<дата>, <місце>, <опис>, <свідки>, <джерело> і будь-яке <значення атрибута>."
+
+msgid "Source format"
+msgstr "Формат джерела"
+
+msgid ""
+"List of strings with placeholders for sources. Known placeholders: <title>, "
+"<volume>, <author>, <publication_info> and <abbreviation>."
+msgstr ""
+"Список рядків із заповнювачами для джерел. Відомі заповнювачі: <назва>, "
+"<том>, <автор>, <відомості про публікацію> і <абревіатура>."
+
+msgid "restricted to:"
+msgstr "обмежено до:"
+
+msgid "to directory:"
+msgstr "до каталогу:"
+
+msgid "Save images in ..."
+msgstr "Зберегти зображення в ..."
+
+msgid "should be"
+msgstr "повинно бути"
+
+msgid "Included"
+msgstr "Включено"
+
+msgid "Excluded"
+msgstr "Виключено"
+
+msgid "Name HTML-wrapper file"
+msgstr "Назва HTML-файлу-обгортки"
+
+msgid "Save HTML-wrapper file as ..."
+msgstr "Зберегти HTML-файл-обгортку як ..."
+
+msgid "Give a filename ..."
+msgstr "Вкажіть ім’я файлу ..."
+
+msgid "Relation type"
+msgstr "Тип зв’язку"
+
+msgid "Use dashed linestyle"
+msgstr "Використовувати пунктирний стиль лінії"
+
+msgid "Dash length"
+msgstr "Довжина пунктиру"
+
+msgid "Inter-dash length"
+msgstr "Відстань між пунктирними сегментами"
+
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Генерує веб-сторінку (HTML) з графічним представленням предків/нащадків "
+"(SVG), де деталі про осіб відображаються за подіями миші."

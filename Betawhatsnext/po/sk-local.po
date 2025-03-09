@@ -1,0 +1,186 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-17 15:05+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Beta What's Next"
+msgstr "Beta Čo ďalej"
+
+msgid "Beta Gramplet suggesting items to research"
+msgstr "Beta Gramplet navrhujúci položky na preskúmanie"
+
+msgid "Beta What's Next?"
+msgstr "Beta Čo ďalej?"
+
+msgid ""
+"\n"
+" ⛔ A local Genealogical Tree database has not yet been loaded.\n"
+"\n"
+msgstr ""
+"\n"
+" ⛔ Lokálna databáza genealogického stromu ešte nebola načítaná.\n"
+"\n"
+
+msgid " 👣 Next Steps:\n"
+msgstr " 👣 Ďalšie kroky:\n"
+
+msgid "  •  From the \"Family Trees\" menu,"
+msgstr "  •  Z menu \"Rodinné stromy\","
+
+msgid " use the \"Manage Family Trees...\" option to"
+msgstr " použite možnosť \"Spravovať rodinné stromy...\" na"
+
+msgid " create a New (or to select an existing) Tree database.\n"
+msgstr " vytvorenie novej (alebo na výber existujúcej) databázy stromu.\n"
+
+msgid "  •  Click the \"Load Family Tree\" button to begin"
+msgstr "  •  Kliknite na tlačidlo \"Načítať rodinný strom\" pre začatie"
+
+msgid ""
+" working with the selected genealogical tree.\n"
+"\n"
+msgstr ""
+" práce s vybraným genealogickým stromom.\n"
+"\n"
+
+msgid "Create and load an empty new tree to import a backup (or"
+msgstr "Vytvorte a načítajte prázdny nový strom na import zálohy (alebo"
+
+msgid ""
+" GEDCOM file) from another genealogical tool.\n"
+"\n"
+msgstr ""
+" súboru GEDCOM) z iného genealogického nástroja.\n"
+"\n"
+
+msgid ""
+"Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
+msgstr ""
+"Použite \"Konfigurovať\" v menu \"Pohľad\" na zmenu možností Grampletu."
+
+msgid "Search Quota "
+msgstr "Kvóta vyhľadávania "
+
+msgid "Depth per loop"
+msgstr "Hĺbka na slučku"
+
+msgid "Pause search expansion"
+msgstr "Pozastaviť rozšírenie vyhľadávania"
+
+msgid "Completed Person"
+msgstr "Dokončená osoba"
+
+msgid " Completed offspring Families"
+msgstr " Dokončené rodiny potomkov"
+
+msgid "Ignore Person or Family"
+msgstr "Ignorovať osobu alebo rodinu"
+
+msgid ""
+"\n"
+" ⛔ The current Tree database contains no people.\n"
+msgstr ""
+"\n"
+" ⛔ Aktuálna databáza stromu neobsahuje žiadne osoby.\n"
+
+msgid ""
+"\n"
+" 👣 Next Steps:\n"
+" Add a Family and a person in that family:\n"
+"  • A Family may be added via the \"Add\" menu\n"
+"  • A person may be added by pressing the \"+\" (plus) in the spouse "
+"(\"Father/partner1\" or \"Mother/partner2\") panels or \"Children\" tab.\n"
+"\n"
+"Or Import People from an external file:\n"
+"  • An external file may be used to populate the tree via \"Import...\" in "
+"the \"Family Trees\" menu."
+msgstr ""
+"\n"
+" 👣 Ďalšie kroky:\n"
+" Pridajte rodinu a osobu v tejto rodine:\n"
+" • Rodinu je možné pridať cez menu \"Pridať\".\n"
+" • Osobu je možné pridať stlačením tlačidla \"+\" (plus) v paneloch "
+"manželského partnera (\"Otec/partner1\" alebo \"Matka/partner2\") alebo na "
+"karte \"Deti\".\n"
+"\n"
+"Alebo importujte ľudí z externého súboru:\n"
+" • Externý súbor je možné použiť na doplnenie stromu cez \"Importovať...\" v "
+"menu \"Rodinné stromy\"."
+
+msgid ""
+"\n"
+" ⛔ No Person has been chosen as the focal \"Home Person\".\n"
+msgstr ""
+"\n"
+" ⛔ Žiadna osoba nebola vybraná ako ústredná \"Domovská osoba\".\n"
+
+msgid ""
+"\n"
+" 👣 Next Steps:\n"
+"  •  Select the People view icon in the Navigator sidebar.\n"
+"  •  Select someone to make them the \"Active Person\".\n"
+"  •  Choose \"Set Home Person\" from the Edit menu or from the (right-click) "
+"context menu.\n"
+"\n"
+" This sets them as the focal \"Home Person\"."
+msgstr ""
+"\n"
+" 👣 Ďalšie kroky:\n"
+"  •  Vyberte ikonu pohľadu Ľudia na bočnom paneli Navigátora.\n"
+"  •  Vyberte niekoho, aby ste ho urobili \"Aktívnou osobou\".\n"
+"  •  Vyberte \"Nastaviť domovskú osobu\" z menu Upraviť alebo z kontextovej "
+"ponuky (kliknutím pravým tlačidlom).\n"
+"\n"
+"\" Tým sa nastavia ako ústredná \"Domovská osoba\"."
+
+msgid "Double-click color text to edit details"
+msgstr "Dvojitým kliknutím na farebný text upravíte podrobnosti"
+
+msgid "Birth event missing."
+msgstr "Chýba udalosť narodenia."
+
+msgid "Add via the Events tab of the Edit Person dialog."
+msgstr "Pridajte cez kartu Udalosti v dialógovom okne Upraviť osobu."
+
+msgid "relationship type unknown"
+msgstr "typ vzťahu neznámy"
+
+msgid "Add via the Events tab of the Edit Family dialog."
+msgstr "Pridajte cez kartu Udalosti v dialógovom okne Upraviť rodinu."
+
+msgid "591 family not complete"
+msgstr "591 rodina nie je úplná"
+
+msgid "place unknown for the Event"
+msgstr "miesto pre udalosť neznáme"
+
+msgid "A partner relationship exists but the spouse is missing"
+msgstr "Existuje partnerský vzťah, ale chýba manžel/manželka"
+
+msgid "Add missing partner using the Edit Family dialog."
+msgstr "Pridajte chýbajúceho partnera pomocou dialógového okna Upraviť rodinu."
+
+msgid "Father missing from the parent family"
+msgstr "Otec chýba z rodiny rodičov"
+
+msgid "Mother missing from the parent family"
+msgstr "Matka chýba z rodiny rodičov"
+
+msgid "Parent family is unknown."
+msgstr "Rodina rodičov je neznáma."
+
+msgid ""
+"\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
+msgstr ""
+"\"Pridať nových/existujúcich rodičov\" z menu Upraviť v pohľade Vzťahy."

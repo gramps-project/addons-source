@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+#, python-format
+msgid "All information about %s"
+msgstr "Вся інформація про %s"
+
+msgid "Primary name"
+msgstr "Основне ім'я"
+
+msgid "Alternate name"
+msgstr "Альтернативне ім'я"
+
+msgid " This is the primary birth event."
+msgstr " Це основна подія народження."
+
+msgid " This is the primary death event."
+msgstr " Це основна подія смерті."
+
+msgid "Relationship to Father"
+msgstr "Відношення до батька"
+
+msgid "Relationship to Mother"
+msgstr "Відношення до матері"
+
+msgid "Parent Family"
+msgstr "Батьківська сім'я"
+
+msgid ""
+"Details of any children and events etc. would be in a similar report for the "
+"father or mother."
+msgstr ""
+"Деталі про дітей та події будуть у подібному звіті для батька або матері."
+
+msgid "Temple and status"
+msgstr "Храм і статус"
+
+msgid "LDS Ordinance family"
+msgstr "Сім'я обрядів LDS"
+
+msgid "LDS "
+msgstr "LDS "
+
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr ""
+"Вулиця, Місто, Округ/Район, Штат/Область, Поштовий індекс, Країна, Номер "
+"телефону"
+
+msgid "Media Reference"
+msgstr "Медіа-посилання"
+
+msgid "Description and Path"
+msgstr "Опис і шлях"
+
+msgid "Referenced Region"
+msgstr "Посиланий регіон"
+
+msgid "Mime type"
+msgstr "Тип MIME"
+
+msgid ""
+"Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
+msgstr ""
+"Ім'я (імена): Титул, Ім'я, Суфікс, Звертання, Прізвисько, Родинне прізвисько"
+
+msgid "Note type"
+msgstr "Тип примітки"
+
+msgid "Parent Place"
+msgstr "Батьківське місце"
+
+msgid "Alternate Location"
+msgstr "Альтернативне місце"
+
+msgid "Alternative Name"
+msgstr "Альтернативна назва"
+
+msgid "Latitude, Longitude"
+msgstr "Широта, Довгота"
+
+msgid "Repository type"
+msgstr "Тип сховища"
+
+msgid "Repository reference"
+msgstr "Посилання на сховище"
+
+msgid "Media type"
+msgstr "Тип медіа"
+
+msgid "Origin type"
+msgstr "Тип походження"
+
+msgid "Prefix, surname, connector"
+msgstr "Префікс, прізвище, з’єднувач"
+
+msgid "{This is the primary surname}"
+msgstr "{Це основне прізвище}"
+
+msgid "Tag name"
+msgstr "Назва мітки"
+
+msgid "Tag colour and priority"
+msgstr "Колір мітки та пріоритет"
+
+msgid "No source information found"
+msgstr "Інформація про джерело не знайдена"
+
+msgid "The style used for the title of the page."
+msgstr "Стиль, що використовується для заголовка сторінки."
+
+msgid "PersonEverything Report"
+msgstr "Звіт PersonEverything"
+
+msgid "Produces a report containing everything about the active person"
+msgstr "Створює звіт, що містить всю інформацію про активну особу"

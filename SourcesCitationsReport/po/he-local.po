@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-26 15:11-0500\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Provides a source and Citations Report with notes"
+msgstr "מספק דוח מקור ומבואות עם הערות"
+
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#, python-format
+msgid "  %s"
+msgstr "  %s"
+
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#, python-format
+msgid "   Type: %s"
+msgstr "   סוג: %s"
+
+#, python-format
+msgid "   N-ID: %s"
+msgstr "   N-ID: %s"
+
+#, python-format
+msgid "   %s"
+msgstr "   %s"
+
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+msgid "   Spouses: "
+msgstr "   זוגאים: "
+
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#, python-format
+msgid " %s"
+msgstr " %s"
+
+msgid "Title of the Report"
+msgstr "כותרת הדוח"
+
+msgid "Title string for the report."
+msgstr "מחרוזת כותרת לדוח זה."
+
+msgid "Subtitle of the Report"
+msgstr "כותרת משנה של הדוח"
+
+msgid "Subtitle string for the report."
+msgstr "מחרוזת כותרת משנה לדוח זה."
+
+msgid "Show persons"
+msgstr "להציג אנשים"
+
+msgid "The style used for the footer of the report."
+msgstr "הסגנון שישש לסיומת עמוד בדוח."
+
+msgid "The style used for each section."
+msgstr "הסיגנון שישמש בכל מקטע."

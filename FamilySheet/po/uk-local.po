@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Family Sheet"
+msgstr "Сімейний лист"
+
+msgid ""
+"Produces a family sheet showing full information about a person and his/her "
+"partners and children."
+msgstr ""
+"Створює сімейний лист із повною інформацією про особу, її партнерів та дітей."
+
+#, python-format
+msgid "\\u2192 %s"
+msgstr "\\u2192 %s"
+
+#, python-format
+msgid "Address (%(date)s): %(location)s"
+msgstr "Адреса (%(date)s): %(location)s"
+
+#, python-format
+msgid "Address: %(location)s"
+msgstr "Адреса: %(location)s"
+
+#, python-format
+msgid "; %(type)s: %(value)s"
+msgstr "; %(type)s: %(value)s"
+
+msgid "Source references:"
+msgstr "Посилання на джерела:"
+
+#, python-format
+msgid ", page %s"
+msgstr ", сторінка %s"
+
+msgid "Notes:"
+msgstr "Примітки:"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "на %(ymd_date)s"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "у %(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "у %(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "на %(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "на %(placeholder)s (%(partial)s)"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "у %(place)s"
+
+msgid "Center person"
+msgstr "Центральна особа"
+
+msgid "The person whose partners and children are printed"
+msgstr "Особа, чиї партнери та діти будуть надруковані"
+
+msgid "Print sheets for"
+msgstr "Друкувати листи для"
+
+msgid "Center person only"
+msgstr "Лише центральна особа"
+
+msgid "Center person and descendants in side branches"
+msgstr "Центральна особа та нащадки в бічних гілках"
+
+msgid "Center person and all descendants"
+msgstr "Центральна особа та всі нащадки"
+
+msgid "Whether to include descendants, and which ones."
+msgstr "Чи включати нащадків, і яких саме."
+
+msgid "Replace first name with call name"
+msgstr "Замінити перше ім'я на прізвисько"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr ""
+"Підкреслити прізвисько в першому імені / додати прізвисько до першого імені"
+
+msgid "Whether to include call name, and how."
+msgstr "Чи включати прізвисько та яким чином."
+
+msgid "Print placeholders for missing information"
+msgstr "Друкувати заглушки для відсутньої інформації"
+
+msgid "The basic style used for the text display"
+msgstr "Основний стиль, що використовується для відображення тексту."
+
+msgid "The style used for the page key on the top"
+msgstr "Стиль, що використовується для заголовка на верхній частині сторінки"
+
+msgid "The style used for names"
+msgstr "Стиль, що використовується для імен"
+
+msgid "The style used for numbers"
+msgstr "Стиль, що використовується для номерів"
+
+msgid "The style used for footnotes (notes and source references)"
+msgstr ""
+"Стиль, що використовується для виносок (приміток і посилань на джерела)"

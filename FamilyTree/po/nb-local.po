@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "i %(place)s"
+
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+msgid "The center family for the tree"
+msgstr "Fokusfamilien for treet"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"Kekulé-nummeret til ektemannen (fokusfamilie). Sett til 0 for å ikke vise "
+"Kekulé-numre"
+
+msgid "Print event data (dead person)"
+msgstr "Skriv ut hendelsesdata (død person)"
+
+msgid "Print event data (living person)"
+msgstr "Skriv ut hendelsesdata (levende person)"
+
+msgid "Fall back to baptism if birth event missing"
+msgstr "Bruk dåp som reserve hvis fødselshendelse mangler"
+
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Bruk begravelse eller kremering som reserve hvis dødshendelse mangler"
+
+msgid "Include event description"
+msgstr "Inkluder hendelsesbeskrivelse"

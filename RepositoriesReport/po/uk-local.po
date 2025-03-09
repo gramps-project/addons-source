@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Repositories Report Options"
+msgstr "Параметри звіту про сховища"
+
+msgid "Produces a textual repositories report"
+msgstr "Створює текстовий звіт про сховища"
+
+msgid "Repositories Report"
+msgstr "Звіт про сховища"
+
+msgid "Publication information:"
+msgstr "Інформація про публікацію:"
+
+msgid "Data:"
+msgstr "Дані:"
+
+msgid "Page:"
+msgstr "Сторінка:"
+
+msgid "Selection with a filter"
+msgstr "Вибір із фільтром"
+
+msgid "Include repository's urls"
+msgstr "Включити URL-адреси сховищ"
+
+msgid "Whether to include urls on repository."
+msgstr "Чи включати URL-адреси у сховище."
+
+msgid "Include repository's address"
+msgstr "Включити адресу сховища"
+
+msgid "Whether to include addresses on repository."
+msgstr "Чи включати адреси у сховище."
+
+msgid "Include source's author"
+msgstr "Включити автора джерела"
+
+msgid "Whether to include author."
+msgstr "Чи включати автора."
+
+msgid "Include source's abbreviation"
+msgstr "Включити скорочення джерела"
+
+msgid "Whether to include abbreviation."
+msgstr "Чи включати скорочення."
+
+msgid "Include source's publication information"
+msgstr "Включити інформацію про публікацію джерела"
+
+msgid "Whether to include publication information."
+msgstr "Чи включати інформацію про публікацію."
+
+msgid "Include source's data"
+msgstr "Включити дані джерела"
+
+msgid "Whether to include keys and values."
+msgstr "Чи включати ключі та значення."
+
+msgid "Whether to include notes on repositories and sources."
+msgstr "Чи включати нотатки про сховища та джерела."
+
+msgid "Include media"
+msgstr "Включити медіа"
+
+msgid "Whether to include media."
+msgstr "Чи включати медіа."
+
+msgid "Include citations"
+msgstr "Включити цитати"
+
+msgid "Whether to include citations on sources."
+msgstr "Чи включати цитати у джерелах."
+
+msgid "Include private records"
+msgstr "Включити приватні записи"
+
+msgid "Whether to include repositories and sources marked as private."
+msgstr "Чи включати сховища та джерела, позначені як приватні."
+
+msgid "Display empty values"
+msgstr "Відображати порожні значення"
+
+msgid "Whether to include key records with empty values."
+msgstr "Чи включати ключові записи з порожніми значеннями."
+
+msgid "The style used for the title of the report."
+msgstr "Стиль, що використовується для заголовка звіту."
+
+msgid "The style used for repository title."
+msgstr "Стиль, що використовується для заголовка сховища."
+
+msgid "The style used for each section."
+msgstr "Стиль, що використовується для кожного розділу."
+
+msgid "The style used for child section."
+msgstr "Стиль, що використовується для дочірнього розділу."

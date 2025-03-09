@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "PhpGedView"
+msgstr "PhpGedView"
+
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "Stiahnite si súbor GEDCOM z phpGedView servera."
+
+msgid "Fetching index list..."
+msgstr "Načítavanie indexového zoznamu..."
+
+msgid "Fetching records..."
+msgstr "Načítavanie záznamov..."
+
+msgid "Logging in..."
+msgstr "Prihlasovanie..."
+
+msgid "Fetching GEDCOM..."
+msgstr "Načítavanie GEDCOM..."
+
+msgid "Importing GEDCOM..."
+msgstr "Importovanie GEDCOM..."
+
+msgid "Error: login failed"
+msgstr "Chyba: prihlásenie zlyhalo"
+
+msgid "done."
+msgstr "hotovo."
+
+msgid "Connecting..."
+msgstr "Pripájanie..."
+
+msgid "Get version..."
+msgstr "Získať verziu..."
+
+#, python-format
+msgid "Version %s"
+msgstr "Verzia %s"
+
+msgid "Reading file list..."
+msgstr "Čítanie súborového zoznamu..."
+
+msgid "Error: Invalid URL"
+msgstr "Chyba: Neplatná URL"
+
+msgid "- default -"
+msgstr "- predvolené -"
+
+msgid "phpGedView import"
+msgstr "phpGedView import"
+
+msgid "http://"
+msgstr "http://"
+
+msgid "Username:"
+msgstr "Používateľské meno:"
+
+msgid "Password:"
+msgstr "Heslo:"

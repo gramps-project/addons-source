@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "SourceIndex"
+msgstr "מפתח מקורות"
+
+msgid "Sources Index"
+msgstr "מפתח מקורות"
+
+msgid "_File"
+msgstr "_קובץ"
+
+msgid "Display only births"
+msgstr "הצגת לידה בלבד"
+
+msgid "add birth act"
+msgstr "הוספת לידה"
+
+msgid "add death act"
+msgstr "הוספת פטירה"
+
+msgid "New census"
+msgstr "מפקד חדש"
+
+msgid "Select a birth source"
+msgstr "בחירת מקןר לידה"
+
+msgid "Select a marriage source"
+msgstr "בחירת מקור נישואין"
+
+msgid "Select a death source"
+msgstr "בחירת מקור פטירה"
+
+msgid "Selected view"
+msgstr "מצג שנבחר"
+
+msgid "Age:"
+msgstr "גיל:"
+
+msgid "Origin:"
+msgstr "מוצא:"
+
+msgid "Info:"
+msgstr "מידע:"
+
+msgid "Reference:"
+msgstr "אזכור:"
+
+msgid "Origine:"
+msgstr "מקור:"
+
+msgid "<b><i>Citation</i></b>"
+msgstr "<b><i>ציטוט</i></b>"
+
+msgid "Marriage place:"
+msgstr "מקום נישואין:"
+
+msgid "Death date:"
+msgstr "תאריך פטירה:"
+
+msgid "Death place:"
+msgstr "מקום פטירה:"
+
+msgid "Family status:"
+msgstr "מצב משפחה:"
+
+msgid "m. place:"
+msgstr "מקום נישואין:"

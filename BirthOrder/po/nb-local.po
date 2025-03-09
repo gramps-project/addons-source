@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "Sort Children in Birth order"
+msgstr "Sorter barn etter fødselsrekkefølge"
+
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"Søker gjennom familier for å finne barn som ikke er i fødselsrekkefølge.  Du "
+"kan godta individuelle forslag for å korrigere, justere rekkefølgen manuelt, "
+"godta alle familier der barna har gyldige fødselsdatoer, eller godta alt."
+
+msgid "No families need sorting"
+msgstr "Ingen familier behøver sortering"
+
+msgid "No children were out of birth order."
+msgstr "Alle barn var i fødselsrekkefølge."
+
+msgid "Edit Families"
+msgstr "Rediger familier"
+
+msgid "Select the family you wish to examine."
+msgstr "Velg familien du vil undersøke."
+
+msgid "Accept All"
+msgstr "Godkjenn alle"
+
+msgid "This button will sort all of the families listed."
+msgstr "Denne knappen vil sortere alle listede familier."
+
+msgid "Accept All *"
+msgstr "Godkjenn alt *"
+
+msgid "Done"
+msgstr "Utført"

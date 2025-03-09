@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 12:35-0600\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Plugin Manager Enhanced"
+msgstr "Менеджер плагінів - Покращений"
+
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "Менеджер додатків/плагінів з розширеними можливостями"
+
+msgid "Plugin Manager - Enhanced"
+msgstr "Менеджер плагінів - Покращений"
+
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"Введіть пошукові слова для фільтрації додатків.\n"
+"Усі слова повинні бути присутні десь у рядку або\n"
+"імені файлу додатку, щоб вони були включені в пошук.\n"
+"Регістр та порядок слів не враховуються."
+
+msgid "Search..."
+msgstr "Пошук..."
+
+msgid "Restart..."
+msgstr "Перезапустити..."
+
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr ""
+"Будь ласка, перезапустіть Gramps, щоб зміни у додатках були безпечно "
+"завершені."
+
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr "Помилка видалення каталогу '%s'. Видалення могло завершитися невдало."
+
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"'*' елементи надані сторонніми авторами,\n"
+"<s>закреслені</s> елементи приховані"
+
+msgid "Hide"
+msgstr "Сховати"
+
+msgid "Show hidden items"
+msgstr "Показати приховані елементи"
+
+msgid "Show Built-in items"
+msgstr "Показати вбудовані елементи"
+
+msgid "* indicates 3rd party addon"
+msgstr "* позначає сторонній додаток"
+
+msgid "Plugins"
+msgstr "Плагіни"
+
+msgid "Unhide"
+msgstr "Показати"
+
+msgid "Uninstall"
+msgstr "Видалити"
+
+msgid "*Available"
+msgstr "*Доступний"
+
+msgid "Built-in"
+msgstr "Вбудований"
+
+msgid "*Installed"
+msgstr "*Встановлений"
+
+msgid "Update Available"
+msgstr "Доступне оновлення"

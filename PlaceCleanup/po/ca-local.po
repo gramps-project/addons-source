@@ -1,0 +1,188 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ca\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Place Cleanup"
+msgstr "Neteja Llocs"
+
+msgid ""
+"Place Cleanup Gramplet assists in merging places, as well as completing "
+"places from the GeoNames web database"
+msgstr ""
+"El Gramplet de Neteja de Llocs ajuda a combinar llocs, així com a completar "
+"llocs de la base de dades web de GeoNames"
+
+msgid ""
+"No\n"
+"Matches"
+msgstr ""
+"Cap\n"
+"Resultat"
+
+msgid "Find"
+msgstr "Troba"
+
+#, python-format
+msgid ""
+"%s\n"
+"Local\n"
+"Matches"
+msgstr ""
+"%s\n"
+"Coïncidències\n"
+"Locals"
+
+msgid "Find GeoNames"
+msgstr "Troba GeoNames"
+
+msgid "Need to set GeoNames ID"
+msgstr "Cal establir l'ID de GeoNames"
+
+msgid "Use the Help button for more information"
+msgstr "Utilitza el botó Ajuda per obtenir més informació"
+
+msgid ""
+"Try changing the Title, or use the \"Edit\" button to finish this level of "
+"the place manually."
+msgstr ""
+"Prova de canviar el Títol o utilitza el botó \"Edita\" per acabar aquest "
+"nivell del lloc manualment."
+
+#, python-format
+msgid ""
+"%s\n"
+"GeoNames\n"
+"Matches"
+msgstr ""
+"%s\n"
+"Coïncidències de\n"
+"GeoNames"
+
+#, python-format
+msgid "%s matches were found"
+msgstr "S'han trobat %s coincidències"
+
+msgid ""
+"Only 10 matches are shown.\n"
+"To see additional results, press the search button again.\n"
+"Or try changing the Title with more detail, such as a country."
+msgstr ""
+"Només es mostren 10 coincidències.\n"
+"Per veure resultats addicionals, torneu a prémer el botó de cerca.\n"
+"O prova de canviar el títol amb més detalls, com ara un país."
+
+msgid "Problem getting data from web"
+msgstr "Problema en obtenir dades del web"
+
+msgid "Web request Timeout, you can try again..."
+msgstr "Temps d'espera de la sol·licitud web, podeu tornar-ho a provar..."
+
+msgid "Problem getting data from GeoNames"
+msgstr "Problema per obtenir dades de GeoNames"
+
+msgid ""
+"One of the places you are merging encloses the other!\n"
+"Please choose another place."
+msgstr ""
+"Un dels llocs que estàs fusionant tanca l'altre!\n"
+"Si us plau, trieu un altre lloc."
+
+msgid ""
+"The place you chose is enclosed in the place you are workin on!\n"
+"Please cancel and choose another place."
+msgstr ""
+"El lloc que heu escollit està tancat al lloc on esteu treballant!\n"
+"Cancel·la i tria un altre lloc."
+
+msgid "GeoNames web site"
+msgstr "Lloc web de GeoNames"
+
+msgid "GeoNames author"
+msgstr "Autor de GeoNames"
+
+msgid "GeoNames was founded by Marc Wick. You can reach him at "
+msgstr "GeoNames va ser fundada per Marc Wick. Pots contactar amb ell a "
+
+msgid ""
+"GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Switzerland.\n"
+"This work is licensed under a "
+msgstr ""
+"GeoNames és un projecte d'Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Suïssa.\n"
+"Aquesta obra està autoritzada sota una llicència a "
+
+msgid "Creative Commons Attribution 3.0 License"
+msgstr "Llicència Creative Commons Attribution 3.0"
+
+#, python-format
+msgid "Add Souce/Repo/Note (%s)"
+msgstr "Afegeix font/repositori/nota (%s)"
+
+msgid "This Place is not used!"
+msgstr "Aquest lloc no s'utilitza!"
+
+msgid ""
+"You should delete it, or, if it contains useful notes or other data, use the "
+"Find to merge it into a valid place."
+msgstr ""
+"Hauríeu de suprimir-lo o, si conté notes útils o altres dades, utilitzeu "
+"Cerca per combinar-lo en un lloc vàlid."
+
+msgid "City, County, State, Country"
+msgstr "Ciutat, Comtat, Estat, País"
+
+msgid "Primary Name"
+msgstr "Nom principal"
+
+msgid "The current Primary name."
+msgstr "El nom principal actual."
+
+msgid "The postal code for the place, if any."
+msgstr "El codi postal del lloc, si n'hi ha."
+
+msgid "What type of place this is. Eg 'Country', 'City', ... ."
+msgstr "Quin tipus de lloc és aquest. Per exemple, 'País', 'Ciutat', ... ."
+
+msgid "Check this box if you want to keep the original Postal code."
+msgstr "Marqueu aquesta casella si voleu conservar el codi postal original."
+
+msgid "Check this box if you want to keep the original Place Type."
+msgstr "Marqueu aquesta casella si voleu mantenir el tipus de lloc original."
+
+msgid "Orig"
+msgstr "Original"
+
+msgid "Check this box if you want to keep the original Latitude and Longitude."
+msgstr ""
+"Marqueu aquesta casella si voleu mantenir la latitud i la longitud originals."
+
+msgid "The Gramps ID.."
+msgstr "L'ID de Gramps.."
+
+msgid "Check this box if you want to keep the original Gramps ID."
+msgstr "Marqueu aquesta casella si voleu conservar l'ID de Gramps original."
+
+msgid "GeoNames User ID"
+msgstr "ID d'usuari de GeoNames"
+
+msgid "Next Place"
+msgstr "Lloc següent"
+
+msgid "Set preferences"
+msgstr "Estableix preferències"
+
+msgid "Admin"
+msgstr "Admin"

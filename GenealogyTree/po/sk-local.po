@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Strom predkov s použitím LaTeX genealogytree"
+
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Strom potomkov s použitím LaTeX genealogytree"
+
+msgid "Grandparent Tree"
+msgstr "Strom starých rodičov"
+
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Strom starých rodičov s použitím LaTeX genealogytree"
+
+msgid "Sandclock Tree"
+msgstr "Presýpacie hodiny - strom"
+
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "Presýpacie hodiny - strom s použitím LaTeX genealogytree"
+
+msgid "Sandclock Tree for a Family"
+msgstr "Presýpacie hodiny - strom pre rodinu"
+
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "Presýpacie hodiny - strom pre rodinu s použitím LaTeX genealogytree"
+
+msgid "The center family for the report"
+msgstr "Hlavná rodina pre správu"
+
+msgid "Generations up"
+msgstr "Generácie nahor"
+
+msgid "Generations down"
+msgstr "Generácie nadol"
+
+msgid "Include siblings"
+msgstr "Zahrnúť súrodencov"
+
+msgid "Include siblings of ancestors."
+msgstr "Zahrnie súrodencov predkov."
+
+msgid "Include images"
+msgstr "Zahrnúť obrázky"
+
+msgid "Include images of people in the nodes."
+msgstr "Zahrnúť obrázky ľudí v uzloch."
+
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "Osoba %s nemá otcovského ani materinského starého rodiča"
+
+msgid "Grandparent family spacing"
+msgstr "Medzery medzi rodinami starých rodičov"
+
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Dodatočné medzery medzi rodinami starých rodičov (mm)\""
+
+msgid "First spouse left"
+msgstr "Prvý manžel/manželka vľavo"
+
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+"Vždy umiestni prvého z viacerých manželov/manželiek vľavo. To môže pomôcť "
+"znížiť kríženie čiar pri viacnásobných manželstvách."

@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "Repositories Index"
+msgstr "Arkivindeks"
+
+#, python-format
+msgid "DynamicWebReport ignoring link type '%(class)s'"
+msgstr "DynamicWebReport ignorerer lenketypen «%(class)s»"
+
+msgid "Include records marked private"
+msgstr "Inkluder oppføringer som er merket privat"
+
+msgid "Export sources"
+msgstr "Eksporter kilder"
+
+msgid "Export addresses"
+msgstr "Eksporter adresser"
+
+msgid "Whether to export addresses in the web pages"
+msgstr "Om adresser skal eksporteres på nettsidene"
+
+msgid "Whether or not to include the Repository Pages."
+msgstr "Om arkivsidene skal inkluderes."
+
+msgid "Google map API key"
+msgstr "Google Maps API-nøkkel"
+
+msgid "The API key used for the Google map"
+msgstr "API-nøkkelen som brukes for Google Maps"
+
+msgid "Whether to insert sources author in the sources title"
+msgstr "Om kildens forfatter skal inkluderes i kildetittelen"
+
+msgid "Theme"
+msgstr "Tema"

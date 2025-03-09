@@ -1,0 +1,229 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Descendants Lines"
+msgstr "Línie potomkov"
+
+msgid "Produces descendants lines of a person"
+msgstr "Vytvára línie potomkov osoby"
+
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "Používanie typu SVG pre doplnkový dokument nie je podporované!"
+
+msgid "Output format"
+msgstr "Formát výstupu"
+
+msgid "PNG format"
+msgstr "Formát PNG"
+
+msgid "SVG format"
+msgstr "Formát SVG"
+
+msgid "PDF format"
+msgstr "Formát PDF"
+
+msgid "PS format"
+msgstr "Formát PS"
+
+msgid "The output format to be used"
+msgstr "Formát výstupu, ktorý sa má použiť"
+
+msgid "The destination file for the content."
+msgstr "Cieľový súbor pre obsah."
+
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "Počet generácií, ktoré sa majú zahrnúť do grafu. (0 pre neobmedzený)"
+
+msgid "Use d'Aboville descendant numbering system"
+msgstr "Použiť systém číslovania potomkov d'Aboville"
+
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "Pridať meno s číslom potomka d'Aboville v grafe."
+
+msgid "Include an image"
+msgstr "Zahrnúť obrázok"
+
+msgid "Whether to include an image if one is available."
+msgstr "Či zahrnúť obrázok, ak je k dispozícii."
+
+msgid "Max Image height"
+msgstr "Maximálna výška obrázku"
+
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr "Maximálna výška obrázka v pixeloch, 0=nemeniť mierku na výšku."
+
+msgid "Max Image width"
+msgstr "Maximálna šírka obrázku"
+
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "Maximálna šírka obrázka v pixeloch, 0=nemeniť mierku na šírku."
+
+msgid "Image Location"
+msgstr "Umiestnenie obrázka"
+
+msgid "Above text"
+msgstr "Nad textom"
+
+msgid "Left of text"
+msgstr "Vľavo od textu"
+
+msgid "Position of image relative to text"
+msgstr "Poloha obrázka vzhľadom na text"
+
+msgid "Colour Name by Gender"
+msgstr "Farbiť meno podľa pohlavia"
+
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "Zafarbí meno, aby sa označilo pohlavie osoby v grafe."
+
+msgid "Use alternate events, if Primary event is not found"
+msgstr "Použiť alternatívne udalosti, ak sa nenájde primárna udalosť"
+
+msgid "Sort Events by Date"
+msgstr "Zoradiť udalosti podľa dátumu"
+
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr ""
+"Zoradí udalosti podľa dátumu (inak sa použije poradie 'formátu zobrazenia' "
+"vyššie)."
+
+msgid "Text style"
+msgstr "Štýl textu"
+
+msgid "Center-aligned text"
+msgstr "Text zarovnaný na stred"
+
+msgid "Left-aligned text"
+msgstr "Text zarovnaný vľavo"
+
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "Zarovnanie textu v bloku pre každú osobu v grafe"
+
+msgid "Max Note Length"
+msgstr "Max. dĺžka poznámky"
+
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"Maximálna dĺžka poľa poznámky k udalosti v textovom bloku, '$e(n)'\n"
+" 0=bez obmedzenia "
+
+msgid "Box around Person's block"
+msgstr "Rámček okolo bloku osoby"
+
+msgid "Draw a thin black box around each person' text block."
+msgstr "Nakreslí tenký čierny rámček okolo textového bloku každej osoby."
+
+msgid "All Person's blocks have the same height"
+msgstr "Všetky bloky osôb majú rovnakú výšku"
+
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr ""
+"Všetky bloky všetkých osôb majú rovnakú výšku, čo je výška najvyššieho bloku."
+
+msgid "All Person's blocks have the same width"
+msgstr "Všetky bloky osôb majú rovnakú šírku"
+
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr ""
+"Všetky bloky všetkých osôb majú rovnakú šírku, čo je šírka najširšieho bloku."
+
+msgid "Colour blocks by Generation"
+msgstr "Farbiť bloky podľa generácie"
+
+msgid "Colour the background of text blocks by generation."
+msgstr "Zafarbí pozadie textových blokov podľa generácie."
+
+msgid "Descend block colour intensity"
+msgstr "Intenzita farby zostupného bloku"
+
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr ""
+"Intenzita farby pozadia v bloku potomkov, 0=slabá, 255=intenzívna farba"
+
+msgid "Spouse block colour intensity"
+msgstr "Intenzita farby bloku manželov"
+
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr "Intenzita farby pozadia v bloku manželov, 0=slabá 255=intenzívna farba"
+
+msgid "Display Formats"
+msgstr "Formáty zobrazenia"
+
+msgid "Name Display Format"
+msgstr "Formát zobrazenia mena"
+
+msgid "Replace"
+msgstr "Nahradiť"
+
+msgid "Spouse and Family"
+msgstr "Manžel/ka a rodina"
+
+msgid "Children distance"
+msgstr "Vzdialenosť medzi deťmi"
+
+msgid "The horizontal distance between two children of the same family."
+msgstr "Horizontálna vzdialenosť medzi dvoma deťmi tej istej rodiny."
+
+msgid "Space around text"
+msgstr "Medzera okolo textu"
+
+msgid "The space to add around the text block of a person."
+msgstr "Medzera, ktorá sa pridá okolo textového bloku osoby."
+
+msgid "Space between lines of text"
+msgstr "Medzera medzi riadkami textu"
+
+msgid "The space to add between a line and the next in a person text block."
+msgstr "Medzera, ktorá sa pridá medzi riadkami v textovom bloku osoby."
+
+msgid "Header and Footer"
+msgstr "Záhlavie a päta"
+
+msgid "The text that will be written in the header of the document"
+msgstr "Text, ktorý bude napísaný v záhlaví dokumentu"
+
+msgid "The text that will be written in the footer of the document"
+msgstr "Text, ktorý bude napísaný v päte dokumentu"
+
+msgid "Title and footer coefficient"
+msgstr "Koeficient názvu a päty"
+
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr "Číslo, ktoré násobí základnú veľkosť textu v názve a päte"
+
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "Chrániť osoby, obrázky alebo udalosti označené ako súkromné"
+
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr ""
+"Nastavenie súkromia sa kontroluje iba pri týchto typoch objektov Gramps"
+
+msgid "Text to display in block, when a Person is marked private"
+msgstr "Text, ktorý sa zobrazí v bloku, keď je osoba označená ako súkromná"
+
+msgid "The default style."
+msgstr "Predvolený štýl."

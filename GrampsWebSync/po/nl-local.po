@@ -1,0 +1,193 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Gramps Web Sync"
+msgstr "Gramps Web-synchronisatie"
+
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr ""
+"Synchroniseert een lokaal gegevensbestand met een Gramps Web-instantie."
+
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Uw gebruiker heeft niet voldoende servermachtigingen om synchronisatie te "
+"gebruiken."
+
+msgid "Fetching remote data..."
+msgstr "Gegevens van server ophalen..."
+
+msgid "Unexpected error while applying changes."
+msgstr "Onverwachte fout bij het verwerken van wijzigingen."
+
+msgid "Media files are in sync."
+msgstr "Mediabestanden zijn gesynchroniseerd."
+
+#, python-format
+msgid "Successfully downloaded %s media files."
+msgstr "%s mediabestanden succesvol gedownload."
+
+#, python-format
+msgid "Encountered %s errors during download."
+msgstr "%s fouten opgetreden tijdens het downloaden."
+
+#, python-format
+msgid "Successfully uploaded %s media files."
+msgstr "%s mediabestanden met succes geüploadet."
+
+#, python-format
+msgid "Encountered %s errors during upload."
+msgstr "%s fouten opgetreden tijdens het uploaden."
+
+msgid "Error accessing media object."
+msgstr "Fout bij het openen van het media-object."
+
+msgid "Failed importing downloaded XML file."
+msgstr "Het importeren van het gedownloade XML-bestand is mislukt."
+
+msgid "Comparing local and remote data..."
+msgstr "Lokale en externe gegevens vergelijken…"
+
+msgid "Server authorization error."
+msgstr "Fout bij serverautorisatie."
+
+msgid "Server authorization error: insufficient permissions."
+msgstr "Serverautorisatiefout: onvoldoende machtigingen."
+
+msgid "Error: URL not found."
+msgstr "Fout: URL niet gevonden."
+
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr ""
+"Kan wijzigingen naar de server niet synchroniseren: objecten zijn gewijzigd."
+
+#, python-format
+msgid "Error %s while connecting to server."
+msgstr "Fout %s tijdens het verbinden met de server."
+
+msgid "URL error while connecting to server."
+msgstr "URL-fout tijdens het verbinden met de server."
+
+msgid "Error while parsing response from server."
+msgstr "Fout tijdens het verwerken van de reactie van de server."
+
+msgid "Continue without transport encryption?"
+msgstr "Doorgaan zonder transportversleuteling?"
+
+msgid ""
+"You have specified a URL with http scheme. If you continue, your password "
+"will be sent in clear text over the network. Use only for local testing!"
+msgstr ""
+"U hebt een URL met http-schema opgegeven. Als u doorgaat, wordt uw "
+"wachtwoord in leesbare tekst via het netwerk verzonden. Gebruik dit alleen "
+"voor lokale tests!"
+
+msgid "Continue with HTTP"
+msgstr "Doorgaan met HTTP"
+
+msgid "Use HTTPS"
+msgstr "HTTPS gebruiken"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"Dit hulpmiddel maakt het mogelijk om de momenteel geopende stamboom te "
+"synchroniseren met een online stamboom die door Gramps Web wordt bediend.\n"
+"\n"
+"De tool gaat ervan uit dat de twee bomen afgeleiden van elkaar zijn, d.w.z. "
+"dat een van de twee werd gecreëerd op basis van een Gramps XML (niet "
+"GEDCOM!) export van de andere.\n"
+"\n"
+"Na een succesvolle synchronisatie zijn de twee bomen identiek. Wijzigingen "
+"worden doorgegeven op basis van tijdstempels. U wordt om bevestiging "
+"gevraagd voordat er wijzigingen worden aangebracht in de lokale of afgelegen "
+"bomen.\n"
+"\n"
+"Als u in plaats daarvan twee aanzienlijk verschillende bomen wilt "
+"samenvoegen met de optie om handmatige wijzigingen aan te brengen, gebruikt "
+"u in plaats daarvan de Import Merge Tool."
+
+msgid "Server URL: "
+msgstr "URL van de server: "
+
+msgid "Bidirectional Synchronization"
+msgstr "Synchronisatie in twee richtingen"
+
+msgid "Reset remote to local"
+msgstr "Server opnieuw instellen vanuit lokaal"
+
+msgid "Reset local to remote"
+msgstr "Lokaal opnieuw instellen vanuit server"
+
+msgid "Merge"
+msgstr "Samenvoegen"
+
+msgid "Local changes"
+msgstr "Lokale wijzigingen"
+
+msgid "Modified"
+msgstr "Aangepast"
+
+msgid "Remote changes"
+msgstr "Externe wijzigingen"
+
+msgid "Simultaneous changes"
+msgstr "Gelijktijdige wijzigingen"
+
+msgid "Fetching information about media files..."
+msgstr "Informatie over mediabestanden ophalen…"
+
+msgid "Both trees are the same."
+msgstr "Beide stambomen zijn hetzelfde."
+
+msgid "Applying changes to local database ..."
+msgstr "Wijzigingen toepassen op de lokale database…"
+
+msgid "No changes to apply to local database."
+msgstr "Geen wijzigingen toe te passen op lokale database."
+
+msgid "Applying changes to remote database ..."
+msgstr "Wijzigingen toepassen op externe database…"
+
+msgid "No changes to apply to remote database."
+msgstr "Geen wijzigingen nodig op externe database."
+
+msgid "Successfully applied changes to local database."
+msgstr "Wijzigingen zijn toegepast op lokale database."
+
+msgid "Missing locally"
+msgstr "Lokaal vermist"
+
+msgid "Missing remotely"
+msgstr "Extern vermist"
+
+#, python-format
+msgid "Downloading %s media file(s)"
+msgstr "%s media-bestand(en) downloaden"
+
+#, python-format
+msgid "Uploading %s media file(s)"
+msgstr "%s media-bestand(en) uploaden"

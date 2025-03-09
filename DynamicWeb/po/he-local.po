@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Search results"
+msgstr "תוצאות חיפוש"
+
+msgid ": activate to sort column ascending"
+msgstr ": שפעול למיון עמודות בסדר עולה"
+
+msgid ": activate to sort column descending"
+msgstr ": שפעול למיון עמודות בסדר יורד"
+
+msgid "Examples"
+msgstr "דוגמאות"
+
+msgid "Include references in indexes"
+msgstr "הכללת אזכורים במפתחות"
+
+msgid "Maximize"
+msgstr "מירוב"
+
+msgid "Media Index"
+msgstr "מפתח מדיה"
+
+msgid "Media Type"
+msgstr "סוג מדיה"
+
+msgid "No matching records found"
+msgstr "לא נמצאו רשומות התאמות"
+
+msgid "Person to search for"
+msgstr "האדם אותו יש לחפש"
+
+msgid "Persons"
+msgstr "אנשים"
+
+msgid "Places Index"
+msgstr "מפתח מקומות"
+
+msgid "Preparing file ..."
+msgstr "מתבצעת הכנת קובץ ..."
+
+msgid "Relationship to Father"
+msgstr "יוחסה לאב"
+
+msgid "Search:"
+msgstr "חיפוש:"
+
+msgid "Show duplicates"
+msgstr "הצגת רשומות כפולות"
+
+msgid "Sources Index"
+msgstr "מפתח מקורות"
+
+msgid "Suppress Gramps ID"
+msgstr "דיכוי מזהה גרמפס"
+
+msgid "Surnames Index"
+msgstr "מפתח שם משפחה"
+
+msgid "Use a table format for the places index"
+msgstr "להשתמש בתסדיר טבלאי למפתח המקומות"
+
+msgid "Used for family"
+msgstr "משמש למשפחות"
+
+msgid "Used for person"
+msgstr "משמש לאדם"
+
+msgid "Web Link"
+msgstr "קישור רשת"
+
+msgid "Zoom in"
+msgstr "התקרבות"
+
+msgid "Zoom out"
+msgstr "התרחקות"
+
+msgid "Store web pages in archive"
+msgstr "אחסון עמודי מרשתת בארכיון"
+
+msgid "The title of the web site"
+msgstr "כותרת אתר המרשתת"
+
+msgid "Select filter to restrict people that appear on web site"
+msgstr "בחירת מסנן להגבלת האנשים שמופיעים באתר מרשתת"
+
+msgid "Include Last Name Only"
+msgstr "הכללת שם משפחה בלבד"
+
+msgid "Export notes"
+msgstr "ייצוא הערות"
+
+msgid "Export sources"
+msgstr "ייצוא מקורות"
+
+msgid "Include images and media"
+msgstr "הכללת תמונות ומדיה"
+
+msgid "Print place pages"
+msgstr "הדפסת עמודי מקום"
+
+msgid "Whether to show pages for the places"
+msgstr "האם להציג עמודים עבור המקומות"
+
+msgid "Google map API key"
+msgstr "מפתח API של Google Maps"
+
+msgid "Whether to hide the Gramps ID"
+msgstr "האם להסתיר מזהה גרמפס"
+
+msgid "Default format for the places index"
+msgstr "תסדיר ברירת מחדל למפתח המקומות"
+
+msgid "The default format for the places index"
+msgstr "תסדיר ברירת המחדל של מפתח המקומות"
+
+msgid "Theme"
+msgstr "ערכת נושא"
+
+msgid "Custom pages"
+msgstr "עמודים מותאמים אישית"
+
+msgid "Pages selection"
+msgstr "בחירת עמודים"

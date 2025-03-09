@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "TimeLines Map"
+msgstr "TimeLines-kaart"
+
+msgid "Choose View Format"
+msgstr "Kies Weergaveformaat"
+
+msgid "Almost done"
+msgstr "Bijna klaar"
+
+msgid "Gathering data"
+msgstr "Gegevens vergaren"
+
+#, python-format
+msgid "Number of Persons: %s"
+msgstr "Aantal personen: %s"
+
+msgid ""
+"Stagger the map markers\n"
+"to differentiate different\n"
+"markers at the same location"
+msgstr ""
+"Spreid de kaartmarkeringen\n"
+"om verschillende soorten\n"
+"markeringen op dezelfde locatie\n"
+"te onderscheiden"
+
+msgid ""
+"Stagger Radius (hectometers)\n"
+"as measured along the equator\n"
+"(includes latitude distortion)"
+msgstr ""
+"Straal van de spreiding (hm)\n"
+"zoals gemeten langs de evenaar\n"
+"(incl. vervorming breedtegraad)"
+
+msgid ""
+"Display markers for unknown ancestors\n"
+"based on earliest descendant location"
+msgstr ""
+"Markeringen tonen voor onbekende voorouders\n"
+"op basis van de locatie van de vroegste afstammeling"
+
+msgid ""
+"Days to keep lines on the map after\n"
+"an event"
+msgstr ""
+"Dagen om lijnen op de kaart te houden\n"
+"na een evenement"
+
+msgid "Use custom map icons"
+msgstr "Aangepaste pictogrammen op kaart"
+
+msgid ""
+"If there is no birth event for a person, their age\n"
+"is assumed to be this at their first event"
+msgstr ""
+"Als er geen geboortegebeurtenis is voor een persoon, \n"
+"dan wordt de leeftijd berekend vanaf hun eerste evenement"
+
+msgid ""
+"If there is no death event for a person, they will\n"
+"be assumed dead at this age"
+msgstr ""
+"Als er geen overlijden is voor een persoon, wordt deze geacht\n"
+"te zijn overleden op deze leeftijd"
+
+msgid "Number of steps"
+msgstr "Aantal stappen"
+
+msgid "Type of steps"
+msgstr "Type van stappen"
+
+msgid "Steps per millisecond"
+msgstr "Stappen per milliseconde"
+
+msgid "Initial map view on Gramps startup"
+msgstr "Eerste kaartweergave bij het opstarten van Gramps"
+
+msgid ""
+"Initial map view after startup and\n"
+"after changing the active person"
+msgstr ""
+"Eerste kaartweergave bij het opstarten en\n"
+"na het wijzigen van de actieve persoon"
+
+msgid "Show map travel lines on startup"
+msgstr "Reislijnen op kaart weergeven bij opstarten"
+
+msgid "Show time ticks on navigation bar on startup"
+msgstr "Toon tijdtikken op de navigatiebalk bij het opstarten"
+
+msgid "TimeLines Map options"
+msgstr "TimeLines Map opties"
+
+msgid ""
+"A view showing all the places visited by a person or persons on various date."
+msgstr ""
+"Een weergave van alle plaatsen die op verschillende data door een persoon of "
+"personen zijn bezocht."
+
+msgid "TimeLines map"
+msgstr "TimeLines-kaart"

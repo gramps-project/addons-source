@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-03 16:13-0800\n"
+"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Historical Context"
+msgstr "Conteúdo histórico"
+
+msgid "Lists relevant historical events during the lifetime of a Person"
+msgstr "Lista eventos históricos relevantes durante a vida do indivíduo"
+
+msgid "Use filter "
+msgstr "Usar filtro "
+
+msgid "Show outside life span "
+msgstr "Mostrar fora da duração de vida "
+
+msgid "Use full dates"
+msgstr "Usar datas completas"
+
+msgid "Select from files"
+msgstr "Seleccionar de ficheiros"
+
+msgid "Invalid date "
+msgstr "Data inválida "
+
+msgid "Error:"
+msgstr "Erro:"
+
+msgid "Cannot open URL: "
+msgstr "Impossível abrir URL: "

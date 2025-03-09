@@ -1,0 +1,105 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Show full dates"
+msgstr "הצגת תאריכים מלאים"
+
+msgid "Show places"
+msgstr "הצגת מקומות"
+
+msgid "Time Direction"
+msgstr "כיוון ציר זמן"
+
+msgid "Font:"
+msgstr "גופן:"
+
+msgid "Unknown avatar:"
+msgstr "יצגן לא ידוע:"
+
+msgid "Active person border size"
+msgstr "גודל גבול אדם פעיל"
+
+msgid "Themes"
+msgstr "ערכות נושא"
+
+msgid "Show person images"
+msgstr "הצגת תמונות אדם"
+
+msgid "Search"
+msgstr "חיפוש"
+
+msgid "Select a dot file name"
+msgstr "בחר שם קובץ נקודה"
+
+msgid "Zoom in"
+msgstr "התקרבות"
+
+msgid "Zoom out"
+msgstr "התרחקות"
+
+msgid "Go to active person"
+msgstr "מעבר לאדם הפעיל"
+
+msgid "Vertical spacing between generations"
+msgstr "רווח אנכי בין דורות"
+
+msgid "Horizontal spacing between generations"
+msgstr "רווח אופקי בין דורות"
+
+msgid "Add active person"
+msgstr "הוספת אדם פעיל"
+
+#, python-format
+msgid "found: %s"
+msgstr "נמצא: %s"
+
+msgid "Change active person?"
+msgstr "לשנות אדם פעיל?"
+
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+msgid "Copy"
+msgstr "העתקה"
+
+msgid "No Events for this person"
+msgstr "אין אירועים לאדם זה"
+
+msgid "Select tags for person"
+msgstr "בחירת תגים לאדם"
+
+msgid "Add parents"
+msgstr "הוספת שותפים"
+
+msgid "Set as home person"
+msgstr "הגדרה כאדם הבית"
+
+msgid "Show path to home person"
+msgstr "הצגת נתיב לאדם הבית"
+
+msgid "Add father"
+msgstr "הוספת אב"
+
+msgid "Add mother"
+msgstr "הוספת אם"
+
+msgid "Light"
+msgstr "קל"
+
+msgid "Search..."
+msgstr "חיפוש..."

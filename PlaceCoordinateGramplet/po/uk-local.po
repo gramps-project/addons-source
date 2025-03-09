@@ -1,0 +1,105 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "The place was not found. You may clarify the search keywords."
+msgstr "Місце не знайдено. Ви можете уточнити ключові слова пошуку."
+
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr "Не вдалося виконати пошук координат через неочікувану помилку."
+
+msgid "The place was not found."
+msgstr "Місце не знайдено."
+
+msgid "The place was not identified."
+msgstr "Місце не було ідентифіковане."
+
+msgid "Coordinates were not given."
+msgstr "Координати не вказані."
+
+msgid "Failed to interpret the input format."
+msgstr "Не вдалося інтерпретувати формат введення."
+
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "Запис у базі даних [{id}] {name}:"
+
+msgid "Nothing has been searched yet"
+msgstr "Пошук ще не виконано."
+
+msgid "No place is active"
+msgstr "Немає активного місця"
+
+msgid "Place Coordinate Gramplet view"
+msgstr "Перегляд координат місця в грамплеті"
+
+msgid "View for the place coordinate gramplet."
+msgstr "Перегляд координат місця у грамплеті."
+
+msgid "Place and Coordinates"
+msgstr "Місце та координати"
+
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Грамплет, який спрощує встановлення координат місця"
+
+msgid "Place Coordinates"
+msgstr "Координати місця"
+
+msgid "Place Coordinate Gramplet"
+msgstr "Грамплет координат місця"
+
+msgid "Map Menu"
+msgstr "Меню карти"
+
+msgid "Add city as place"
+msgstr "Додати місто як місце"
+
+msgid "Add addess as place"
+msgstr "Додати адресу як місце"
+
+msgid "Search for:"
+msgstr "Пошук:"
+
+msgid "Found place:"
+msgstr "Знайдене місце:"
+
+msgid "No DB entry is selected"
+msgstr "Жоден запис у базі даних не вибрано"
+
+msgid "Postal-Code:"
+msgstr "Поштовий індекс:"
+
+msgid "Show found place externally in Google Maps"
+msgstr "Показати знайдене місце у Google Maps"
+
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"Взяти останню вибрану позицію\n"
+"з географічної карти"
+
+msgid "Search location from DB"
+msgstr "Шукати місце у базі даних"
+
+msgid "Apply geo location to Database"
+msgstr "Застосувати геолокацію до бази даних"
+
+msgid "Go"
+msgstr "Перейти"
+
+msgid "Show help"
+msgstr "Показати довідку"

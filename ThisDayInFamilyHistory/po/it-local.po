@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+
+#, python-format
+msgid "%(female_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(female_name)s è adottata nel %(year)s presso %(place)s."
+
+#, python-format
+msgid "%(male_name)s was born in %(year)s at %(place)s."
+msgstr "%(male_name)s nasce nel %(year)s presso %(place)s."
+
+#, python-format
+msgid "%(female_name)s was born in %(year)s at %(place)s."
+msgstr "%(female_name)s nasce nel %(year)s presso %(place)s."
+
+#, python-format
+msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(male_name)s riceva la confermazione nel %(year)s presso %(place)s."
+
+#, python-format
+msgid "%(female_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(female_name)s riceva la confermazione nel %(year)s presso %(place)s."
+
+#, python-format
+msgid "%(male_name)s died in %(year)s at %(place)s."
+msgstr "%(male_name)s muore nel %(year)s presso %(place)s."
+
+#, python-format
+msgid "%(female_name)s died in %(year)s at %(place)s."
+msgstr "%(female_name)s muore nel %(year)s presso %(place)s."
+
+#, python-format
+msgid "%(female_name)s got married in %(year)s at %(place)s."
+msgstr "%(female_name)s si sposa nel %(year)s presso %(place)s."
+
+#, python-format
+msgid "%(female_name)s retired in %(year)s at %(place)s."
+msgstr "%(female_name)s va in pensione nel %(year)s presso %(place)s."

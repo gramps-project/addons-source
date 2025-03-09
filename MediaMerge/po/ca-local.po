@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ca\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Media Merge"
+msgstr "Fusió de mitjans"
+
+#, python-brace-format
+msgid "{number_of} media merged"
+msgid_plural "{number_of} media merged"
+msgstr[0] "{number_of} mitjà fusionat"
+msgstr[1] "{number_of} mitjans fusionats"
+
+msgid "No media items merged."
+msgstr "No s'ha combinat cap element multimèdia."
+
+msgid "Merge Media"
+msgstr "Combina els mitjans"
+
+msgid ""
+"Searches the entire database, looking for media that have the same path and "
+"merges them."
+msgstr ""
+"Cerca a tota la base de dades, buscant mitjans que tinguin el mateix camí i "
+"els fusiona."

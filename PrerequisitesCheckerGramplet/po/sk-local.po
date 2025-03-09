@@ -1,0 +1,342 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Prerequisites Checker"
+msgstr "Kontrola náležitostí"
+
+msgid "Prerequisites Checker Gramplet"
+msgstr "Gramplet Kontrola náležitostí"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
+"\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
+"blob/master/README.md\">prerequisites</a> installed.\n"
+msgstr ""
+"Diagnostický Gramplet na pomoc pri hodnotení, či <a href=\"https://gramps-"
+"project.org/\">Gramps</a> má všetky <a href=\"https://github.com/gramps-"
+"project/gramps/blob/master/README.md\">náležitosti</a> nainštalované.\n"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
+"installed."
+msgstr ""
+"Diagnostický gramplet na pomoc pri hodnotení, či Gramps má všetky "
+"náležitosti nainštalované."
+
+msgid ""
+"\n"
+"<u><b>REQUIRED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>POŽADOVANÉ</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
+" (Requires the minimum version or greater.)</i>:\n"
+msgstr ""
+"<i>Inštalácie nasledujúcich balíkov sú <b>ABSOLÚTNE POŽADOVANÉ</b>\n"
+" (Vyžaduje minimálne verziu alebo vyššiu.)</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>RECOMMENDED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>ODPORÚČANÉ</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
+"as necessary for Geography and Charts</i>:\n"
+msgstr ""
+"<i>Inštalácie nasledujúcich balíkov sú <b>VEĽMI ODPORÚČANÉ</b> ako "
+"nevyhnutné pre geografiu a grafy</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Optional</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Voliteľné</b></u>\n"
+
+msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
+msgstr "<i>Inštalácie nasledujúcich balíkov sú <b>voliteľné</b></i>:\n"
+
+msgid "Gtkspell enables spell checking in the notes.\n"
+msgstr "Gtkspell umožňuje kontrolu pravopisu v poznámkach.\n"
+
+msgid ""
+"Python Image Library (PIL) is needed for cropping images and LaTeX output."
+msgstr ""
+"Knižnica Python Image Library (PIL) je potrebná na orezávanie obrázkov a "
+"výstup LaTeX."
+
+msgid ""
+"\n"
+"<u><b>Development & Translation Requirements</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Požiadavky na vývoj a preklad</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
+"intend to translate or do any development (addons etc.)</i>:\n"
+msgstr ""
+"<i>Inštalácie nasledujúcich balíkov sú <b>ODPORÚČANÉ</b>, ak plánujete "
+"prekladať alebo vykonávať akýkoľvek vývoj (doplnky atď.)</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Optional packages required by Third-party Addons</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Voliteľné balíčky požadované doplnkami tretích strán</b></u>\n"
+
+msgid ""
+"\n"
+"<u><b>Diagnostic checks</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Diagnostické kontroly</b></u>\n"
+
+msgid "Check for potential issues.\n"
+msgstr "Skontrolujte potenciálne problémy.\n"
+
+msgid ""
+"\n"
+"Environment settings:\n"
+msgstr ""
+"\n"
+"Nastavenia prostredia:\n"
+
+msgid ""
+"\n"
+"\n"
+"<u><b>Locales available:</b></u>\n"
+msgstr ""
+"\n"
+"\n"
+"<u><b>Dostupné lokácie:</b></u>\n"
+
+msgid ""
+"\n"
+"<u><b>Back Up Your Genealogy Files.</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Zálohujte svoje genealogické súbory.</b></u>\n"
+
+msgid ""
+"If you have a reason to be checking Prerequisites, it is the right time to "
+"back up your genealogy files, and then test your backups!\n"
+"\n"
+msgstr ""
+"Pokiaľ máte dôvod kontrolovať náležitosti, je to správny čas na zálohovanie "
+"vašich genealogických súborov a potom otestovanie vašich záloh!\n"
+"\n"
+
+msgid ""
+" • Backups can be made at any time and, at a minimum, on the first day of "
+"every month. But preferrably more often.\n"
+msgstr ""
+" Zálohy môžu byť vykonané kedykoľvek a minimálne prvý deň každého mesiaca. "
+"Ale radšej častejšie.\n"
+
+msgid ""
+" • It is strongly recommended to backup each of your Family Trees before any "
+"upgrade.\n"
+msgstr ""
+" Je veľmi odporúčané zálohovať každý z vašich rodinných stromov pred "
+"akoukoľvek aktualizáciou.\n"
+
+msgid ""
+" • Test your backups by creating a new Family Tree and then importing the "
+"backup."
+msgstr ""
+" Otestujte svoje zálohy vytvorením nového rodinného stromu a potom "
+"importovaním zálohy."
+
+msgid ", is the most current version.\n"
+msgstr ", je najnovšia verzia.\n"
+
+#, python-format
+msgid ""
+"You have Gramps %s. Please make a backup and then upgrade.\n"
+"%s"
+msgstr ""
+"Máte Gramps %s. Prosím, urobte si zálohu a potom aktualizujte.\n"
+"%s"
+
+#, python-format
+msgid ""
+"You have Gramps %s installed; an unreleased development version. Thank you "
+"for contributing and testing; please report any issues. Backups are your "
+"friend.\n"
+msgstr ""
+"Máte nainštalovaný Gramps %s; nevydanú vývojovú verziu. Ďakujeme za váš "
+"príspevok a testovanie; prosím, nahláste akékoľvek problémy. Zálohy sú váš "
+"priateľ.\n"
+
+#, python-format
+msgid "You have Gramps %s. Congratulations, you have the current version.\n"
+msgstr "Máte Gramps %s. Gratulujeme, máte aktuálnu verziu.\n"
+
+msgid " (Requires version "
+msgstr " (Vyžaduje verziu "
+
+msgid " or greater installed.)\n"
+msgstr " alebo vyššiu nainštalovanú.)\n"
+
+msgid " (Passed: version "
+msgstr " (Prešlo: verzia "
+
+msgid "unknown version"
+msgstr "neznáma verzia"
+
+msgid "DISPLAY not set"
+msgstr "ZOBRAZENIE nie je nastavené"
+
+msgid " or greater.)\n"
+msgstr " alebo vyššiu.)\n"
+
+msgid " (Requires "
+msgstr " (Vyžaduje "
+
+msgid " • Berkeley Database library (bsddb3: "
+msgstr " • knižnicu Berkeley Database (bsddb3: "
+
+msgid " • SQLite Database library (sqlite3: "
+msgstr " • knižnicu SQLite Database (sqlite3: "
+
+msgid " • xdg-utils (Manual check see instructions link)"
+msgstr " • xdg-utils (Manuálna kontrola, pozri odkaz na pokyny)"
+
+msgid " • librsvg2 (Manual check see instructions link)"
+msgstr " • librsvg2 (Manuálna kontrola, pozri odkaz na pokyny)"
+
+msgid ""
+" • language-pack-gnome-xx (Manual check see instructions link) for your "
+"Language <show locale here TBD>"
+msgstr ""
+" • language-pack-gnome-xx (Manuálna kontrola, pozri odkaz na pokyny) pre váš "
+"jazyk <zobraziť lokalitu tu TBD>"
+
+msgid " or greater installed.)"
+msgstr " alebo vyššiu nainštalovanú verziu.)"
+
+msgid " or greater)"
+msgstr " alebo vyššiu)"
+
+msgid " (Passed: version 0.5.x is installed.)"
+msgstr " (Prešlo: verzia 0.5.x je nainštalovaná.)"
+
+msgid " (Requires version 0.5.x)"
+msgstr " (Vyžaduje verziu 0.5.x)"
+
+msgid " • python-fontconfig not found, (Requires version 0.5.x)"
+msgstr " • python-fontconfig nenájdený, (Vyžaduje verziu 0.5.x)"
+
+msgid " • python-fontconfig installed, version unavailable"
+msgstr " • python-fontconfig nainštalovaný, verzia nedostupná"
+
+msgid " or greater installed.) (enchant module: "
+msgstr " alebo vyššia verzia je nainštalovaná.) (enchant modul: "
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (Prešlo: verzia %s alebo vyššia je nainštalovaná. Ak nie na "
+"Microsoft Windows)"
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (Vyžaduje verziu %s alebo vyššiu nainštalovanú. Ak nie na "
+"Microsoft Windows)"
+
+msgid "can't found it because exiv2 not installed"
+msgstr "nedá sa nájsť, pretože exiv2 nie je nainštalovaný"
+
+#, python-format
+msgid "GExiv2 : %s (Exiv2 library : %s)"
+msgstr "GExiv2 : %s (knižnica Exiv2 : %s)"
+
+msgid "found another font"
+msgstr "nájdený iný font"
+
+msgid ""
+"For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
+msgstr ""
+"Pre doplnok Networkchart, písmo <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> poskytuje mimoriadne čitateľný výsledok.\n"
+
+msgid "Why, when same code works in Graphview"
+msgstr "Prečo, keď rovnaký kód funguje v Graphview"
+
+msgid "not installed"
+msgstr "nenainštalovaný"
+
+msgid "     and one of either: (pydotplus: "
+msgstr "     a jeden z buď:(pydotplus: "
+
+msgid ") or (pygraphviz: "
+msgstr ") alebo (pygraphviz: "
+
+msgid "Installed(MS-Windows)"
+msgstr "Nainštalovaný (MS-Windows)"
+
+msgid "Installed(Linux/Mac)"
+msgstr "Nainštalovaný (Linux/Mac)"
+
+msgid "not installed "
+msgstr "nenainštalovaný "
+
+msgid "not found."
+msgstr "nenájdený."
+
+msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
+msgstr "Štandard. Prešlo: program nainštalovaný - 32bit na 64bit Win OS."
+
+msgid ") (Requires the gramps addon listed under 'Plugin lib')"
+msgstr ") (Vyžaduje doplnok gramps uvedený pod 'Plugin lib')"
+
+msgid "DBF installed"
+msgstr "DBF nainštalovaný"
+
+msgid ".)(Requires version "
+msgstr ".)(Vyžaduje verziu "
+
+msgid " installed.)(Passed: version "
+msgstr " nainštalovaný.)(Prešlo verzia "
+
+msgid " (lxml: not found. Requires version "
+msgstr " (lxml:nenájdený. Vyžaduje verziu "
+
+msgid " • Requires: MongoDB TBD / pymongo TBD"
+msgstr " • Vyžaduje: MongoDB TBD / pymongo TBD"
+
+#, python-format
+msgid " • Operating System: %s"
+msgstr " • Operačný systém: %s"
+
+msgid "not set"
+msgstr "nenastavený"
+
+msgid "not tested"
+msgstr "netestovaný"

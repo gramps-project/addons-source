@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "No Source"
+msgstr "אין מקור"
+
+msgid "Ancestor"
+msgstr "אב קדמון"
+
+msgid "description"
+msgstr "תיאור"
+
+msgid "No central person selected"
+msgstr "לא נבחר אדם מרכזי"
+
+msgid "Unknown time direction"
+msgstr "כיוון ציר זמן לא ידוע"
+
+msgid "Search"
+msgstr "חיפוש"
+
+msgid "in"
+msgstr "ב"
+
+msgid "Central Person"
+msgstr "אדם מרכזי"
+
+msgid "Direction of time"
+msgstr "כיוון ציר הזמן"
+
+msgid "Max chart height (px)"
+msgstr "גובה תרשים מירבי (פיקסל)"
+
+msgid "Include Options"
+msgstr "הכללת אפשרויות"
+
+msgid "Include Events"
+msgstr "הכללת אירועים"
+
+msgid "Include death relatives"
+msgstr "הכללת קרובי משפחת נפטר"
+
+msgid "Include witness note"
+msgstr "הכללת הערת עדים"
+
+msgid "Include Note"
+msgstr "הכללת הערה"
+
+msgid "Include Sources"
+msgstr "הכללת מקורות"
+
+msgid "Include Image source references"
+msgstr "הכללת איזכורי מקור תמונה"
+
+msgid "Color of active person:"
+msgstr "צבע האדם הפעיל:"
+
+msgid "Color of male persons:"
+msgstr "צבע אדם במגדר זכר:"
+
+msgid "Birth relationship linestyle"
+msgstr "סגנון קו קשרי קירבה מסוג לידה"
+
+msgid "Save images in ..."
+msgstr "שמירת תמונות בתוך ..."
+
+msgid "Included"
+msgstr "הכללה"
+
+msgid "Relation type"
+msgstr "סוג יוחסה"

@@ -1,0 +1,166 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-08 17:04+0000\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Select Form"
+msgstr "בחירת טופס"
+
+msgid "Form Gramplet"
+msgstr "גרמפלט טפסים"
+
+msgid "Reference:"
+msgstr "אזכור:"
+
+msgid "Headings"
+msgstr "כותרות"
+
+msgid "Sheet No."
+msgstr "מספר גליון"
+
+msgid "County of"
+msgstr "מחוז של"
+
+msgid "Family No."
+msgstr "מספר משפחה"
+
+msgid "Place of birth"
+msgstr "מקום הלידה"
+
+msgid "Date Discharged"
+msgstr "תאריך שחרור"
+
+msgid "Unincorporated place"
+msgstr "מקום לא מאוגד"
+
+msgid "Radio set"
+msgstr "מערכת רדיו"
+
+msgid "Type of work"
+msgstr "סוג עבודה"
+
+msgid "File No."
+msgstr "מספר קובץ"
+
+msgid "Place of Birth"
+msgstr "מקום הלידה"
+
+msgid "Place of Enlistment"
+msgstr "מקום הגיוס"
+
+msgid "Enlistment Place"
+msgstr "מקום גיוס"
+
+msgid "No. on pension roll"
+msgstr "מספר ברשימת הפנסיה"
+
+msgid "Place married"
+msgstr "מקום נישואין"
+
+msgid "Relation to Family"
+msgstr "קשר למשפחה"
+
+msgid "Native voters"
+msgstr "מצביעים ילידים"
+
+msgid "Section"
+msgstr "מקטע"
+
+msgid "Place of Birth-Self"
+msgstr "מקום לידה – האדם עצמו"
+
+msgid "Place of Birth-Mother"
+msgstr "מקום לידה – אמו של האדם"
+
+msgid "Place of birth, Mother"
+msgstr "מקום לידת האם"
+
+msgid "Place of Birth-Father"
+msgstr "מקום לידה – אבי האדם"
+
+msgid "Place of birth, Father"
+msgstr "מקום לידת האב"
+
+msgid "Relation"
+msgstr "יוחסה"
+
+msgid "Enumerated date from"
+msgstr "מתאריך משוער"
+
+msgid "Enumerated date to"
+msgstr "עד תאריך משוער"
+
+msgid "Birth Country"
+msgstr "מקום לידה, מדינה"
+
+msgid "in"
+msgstr "ב"
+
+msgid "Consent given by"
+msgstr "ניתנה הסכמה מאת"
+
+msgid "Place of Registration"
+msgstr "מקום הרישום"
+
+msgid "Complexion"
+msgstr "גון עור"
+
+msgid "Place entered"
+msgstr "מקום שהוזן"
+
+msgid "Term of enlistment"
+msgstr "תקופת שרות צבאי"
+
+msgid "Place discharged"
+msgstr "מקום השחרור"
+
+msgid "Place of Work"
+msgstr "מקום עבודה"
+
+msgid "Relation to Head of Family"
+msgstr "קרבה לראש המשפחה"
+
+msgid "RELATION to Head of Family"
+msgstr "קרבה לראש המשפחה"
+
+msgid "Civil Parish"
+msgstr "מועצה מקומית"
+
+msgid "Parish Ward"
+msgstr "ועד מועצה מקומית"
+
+msgid "Head of Family"
+msgstr "ראש משפחה"
+
+msgid "BirthPlace"
+msgstr "מקום לידה"
+
+msgid "AcresCultivation"
+msgstr "AcresCultivation"
+
+msgid "13. Origin"
+msgstr "13. מוצא"
+
+msgid "Buildings"
+msgstr "מבנים"
+
+msgid "Seating"
+msgstr "תושבת"
+
+msgid "2. Family"
+msgstr "2. משפחה"
+
+msgid "Type of roof"
+msgstr "סוג גג"

@@ -1,0 +1,47 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "FamilyTree DNA"
+msgstr "FamilyTree DNA"
+
+msgid "Family Finder Tool"
+msgstr "Verktyg för familjesläktskap"
+
+msgid "Enter FTDNA Family Finder Filename:"
+msgstr "Ange filnamn för FTDNA Family Finder:"
+
+msgid "Import Haplogroups"
+msgstr "Importera Haplogrupper"
+
+msgid "Shared Citation ID :"
+msgstr "Delat citerings-ID :"
+
+msgid "Active Person : "
+msgstr "Aktiv person : "
+
+msgid "Close the Family Finder Tool"
+msgstr "Stäng verktyget för familjesläktskap"
+
+msgid "FamilyTree DNA Import"
+msgstr "FamilyTree DNA import"
+
+#, python-format
+msgid "Add %s DNA Association"
+msgstr "Lägg till %s DNA-förening"
+
+#, python-format
+msgid "Add Note to %s DNA Association"
+msgstr "Lägg till anteckning till %s DNA-förening"

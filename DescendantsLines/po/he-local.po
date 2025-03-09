@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Include an image"
+msgstr "הכללת תמונה"
+
+msgid "Max Image height"
+msgstr "גובה תמונ מירבי"
+
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr "גובה תמונה מרבי בפיקסלים 0 =לא לבחור עבור גובה."
+
+msgid "Max Image width"
+msgstr "רוחב תמונה מירבי"
+
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "רוחב מדיה מרבי בפיקסלים 0=לא לבחור עבור רוחב."
+
+msgid "Above text"
+msgstr "מלל מעל"
+
+msgid "Text style"
+msgstr "סגנון מלל"
+
+msgid "Replace"
+msgstr "החלפה"
+
+msgid "Spouse and Family"
+msgstr "זוגאי ומשפחה"
+
+msgid "Space around text"
+msgstr "רווח מסביב למלל"

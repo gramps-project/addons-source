@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ca\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Examples"
+msgstr "Exemples"
+
+msgid "Maximize"
+msgstr "Maximitza"
+
+msgid "Media Type"
+msgstr "Tipus de suport"
+
+msgid "Person to search for"
+msgstr "Persona a buscar"
+
+msgid "Preparing file ..."
+msgstr "S'està preparant el fitxer..."
+
+msgid "The title of the web site"
+msgstr "El títol del lloc web"
+
+msgid "Whether to include private objects"
+msgstr "Si incloure objectes privats"
+
+msgid "Whether to include images and media in the web pages"
+msgstr "Si incloure imatges i suports a les pàgines web"
+
+msgid "The API key used for the Google map"
+msgstr "La clau de l'API utilitzada per al mapa de Google"
+
+msgid "Whether or not to include family pages"
+msgstr "Si incloure o no pàgines familiars"
+
+msgid "Whether to hide the Gramps ID"
+msgstr "Si s'ha d'amagar l'ID de Gramps"

@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Place title"
+msgstr "Назва місця"
+
+msgid "Extract Place data"
+msgstr "Витягти дані місця"
+
+msgid "Checking Place Titles"
+msgstr "Перевірка назв місця"
+
+msgid "Looking for place fields"
+msgstr "Пошук полів місця"
+
+msgid "No place information could be extracted."
+msgstr "Не вдалося витягти жодної інформації про місце."
+
+msgid ""
+"Below is a list of Places with the possible data that can be extracted from "
+"the place title. Select the places you wish Gramps to convert."
+msgstr ""
+"Нижче наведено список місць із можливими даними, які можна витягти з їхніх "
+"назв. Виберіть ті місця, які ви хочете, щоб Gramps конвертував."
+
+msgid "Extract Place Data from a Place Title"
+msgstr "Витягти дані місця з назви місця"
+
+msgid "Attempts to extract city and state/province from a place title"
+msgstr "Спроба витягти місто та штат/провінцію з назви місця"
+
+msgid "_Toggle Selected"
+msgstr "Перемкнути вибрані"
+
+msgid ""
+"Toggles the checkmarks on selected rows,  Rows can be selected with <ctrl> "
+"(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
+"arrow keys and 'space'.  Or <ctrl>'a' for select all."
+msgstr ""
+"Перемикає прапорці у вибраних рядках.  Рядки можна вибирати за допомогою "
+"<ctrl> (додати до групи) або <shift> (розширити групу) клацанням, а також "
+"клавішами зі стрілками <ctrl> або <shift> і 'пробіл'.  Або <ctrl>'a' для "
+"вибору всього."
