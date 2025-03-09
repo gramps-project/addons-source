@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 18:38+0000\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"PO-Revision-Date: 2025-03-09 13:13+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -11119,10 +11119,8 @@ msgid "Income of more than $50 from other sources?"
 msgstr ""
 
 #: Form/form_us.xml.h:869
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Farm Schedule"
-msgstr "Antal sidor"
+msgstr "Antal gårdsschema"
 
 #: Form/form_us.xml.h:873
 msgid "Veteran?"
@@ -11149,10 +11147,8 @@ msgid "If so, made from all, 1/2 or more, less from wages in 1939?"
 msgstr ""
 
 #: Form/form_us.xml.h:879
-#, fuzzy
-#| msgid "Occupation:"
 msgid "Usual Occupation"
-msgstr "Yrke:"
+msgstr "Vanlig sysselsättning"
 
 #: Form/form_us.xml.h:880
 msgid "Usual Industry"
@@ -11215,10 +11211,8 @@ msgid "How old was he on his last birthday?"
 msgstr ""
 
 #: Form/form_us.xml.h:908 Form/form_us.xml.h:2537
-#, fuzzy
-#| msgid "Family status:"
 msgid "Marital status"
-msgstr "Familjestatus:"
+msgstr "Civilstånd"
 
 #: Form/form_us.xml.h:909
 msgid "Is he now married, widowed, divorced, separated, or never married?"
@@ -11277,10 +11271,8 @@ msgid "How many hours did he work last week?"
 msgstr ""
 
 #: Form/form_us.xml.h:923
-#, fuzzy
-#| msgid "Type of link"
 msgid "Type of work"
-msgstr "Linktyp"
+msgstr "Typ av arbete"
 
 #: Form/form_us.xml.h:924
 msgid "What kind of work was he doing?"
@@ -11479,34 +11471,24 @@ msgid "How many children has she ever borne, not counting stillbirths?"
 msgstr ""
 
 #: Form/form_us.xml.h:973
-#, fuzzy
-#| msgid "Censuses"
 msgid "Census Date"
-msgstr "Folkräkningar"
+msgstr "Folkräkningsdatum"
 
 #: Form/form_us.xml.h:974
-#, fuzzy
-#| msgid "restricted to:"
 msgid "District of"
-msgstr "begränsat till:"
+msgstr "Distriktet"
 
 #: Form/form_us.xml.h:977
-#, fuzzy
-#| msgid "married"
 msgid "Married Y/N"
-msgstr "gift"
+msgstr "Gift J/N"
 
 #: Form/form_us.xml.h:978
-#, fuzzy
-#| msgid "   Spouses: "
 msgid "Spouses Age"
-msgstr "   Makar: "
+msgstr "Makarnas ålder"
 
 #: Form/form_us.xml.h:982
-#, fuzzy
-#| msgid "Files"
 msgid "File No."
-msgstr "Filer"
+msgstr "Fil nr."
 
 #: Form/form_us.xml.h:984 Form/form_us.xml.h:1003 Form/form_us.xml.h:1058
 msgid "Post Office Address"
@@ -11524,10 +11506,8 @@ msgstr ""
 #: Form/form_us.xml.h:1155 Form/form_us.xml.h:1452 Form/form_us.xml.h:2375
 #: Form/form_us.xml.h:2488 Form/form_us.xml.h:2513 Form/form_us.xml.h:2557
 #: Form/form_gb.xml.h:51
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Birth"
-msgstr "Plata_filter:"
+msgstr "Födelseort"
 
 #: Form/form_us.xml.h:987
 msgid "Entered service as (rank)"
@@ -11538,10 +11518,8 @@ msgid "Date Entered"
 msgstr ""
 
 #: Form/form_us.xml.h:989 Form/form_us.xml.h:1010
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Enlistment"
-msgstr "Plata_filter:"
+msgstr "Plats för mönstring"
 
 #: Form/form_us.xml.h:990
 msgid "Name, Letter of Co., Number of Regiment"
@@ -11556,10 +11534,8 @@ msgid "Re-enlisted as"
 msgstr ""
 
 #: Form/form_us.xml.h:993
-#, fuzzy
-#| msgid "m. date:"
 msgid "On date"
-msgstr "vig. datum:"
+msgstr "På datum"
 
 #: Form/form_us.xml.h:995
 msgid "and continued until"
@@ -11574,20 +11550,16 @@ msgid "Enlisted on"
 msgstr ""
 
 #: Form/form_us.xml.h:998
-#, fuzzy
-#| msgid "Parent Place"
 msgid "Enlistment Place"
-msgstr "Föräldraplats"
+msgstr "Värvningsplats"
 
 #: Form/form_us.xml.h:999
 msgid "in the command of"
 msgstr ""
 
 #: Form/form_us.xml.h:1001
-#, fuzzy
-#| msgid "Other participants"
 msgid "Other service, if any"
-msgstr "Andra deltagare"
+msgstr "Eventuell annan tjänst"
 
 #: Form/form_us.xml.h:1004
 msgid "No. on pension roll"
@@ -11614,10 +11586,8 @@ msgid "Letter of Company"
 msgstr ""
 
 #: Form/form_us.xml.h:1015
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Regiment"
-msgstr "Antal sidor"
+msgstr "Regementets nummer"
 
 #: Form/form_us.xml.h:1016
 msgid "Was it an Alabama Regiment"
@@ -11680,10 +11650,8 @@ msgid "When imprisoned"
 msgstr ""
 
 #: Form/form_us.xml.h:1031
-#, fuzzy
-#| msgid "Acres Unimproved"
 msgid "Where imprisoned"
-msgstr "Åkrar oförbättrade"
+msgstr "Fängslad"
 
 #: Form/form_us.xml.h:1032
 msgid "How were you discharged"
@@ -11706,36 +11674,24 @@ msgid "Captains name"
 msgstr ""
 
 #: Form/form_us.xml.h:1037
-#, fuzzy
-#| msgid "Font name"
 msgid "Colonels name"
-msgstr "Typsnittsnamn"
+msgstr "Överstens namn"
 
 #: Form/form_us.xml.h:1038
-#, fuzzy
-#| msgid "List of sources"
 msgid "Length of service"
-msgstr "Lista över källor"
+msgstr "Tjänstens längd"
 
 #: Form/form_us.xml.h:1039
-#, fuzzy
-#| msgid "married"
 msgid "Are you married"
-msgstr "gift"
+msgstr "Är du gift"
 
 #: Form/form_us.xml.h:1040
 msgid "Age of wife"
 msgstr ""
 
 #: Form/form_us.xml.h:1041
-#, fuzzy
-#| msgid ""
-#| "Birth\n"
-#| "place:"
 msgid "Birthplace of wife"
-msgstr ""
-"Födelse\n"
-"plats:"
+msgstr "Hustruns födelseplats"
 
 #: Form/form_us.xml.h:1042
 #, fuzzy
