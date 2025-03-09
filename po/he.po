@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 18:38+0000\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 13:13+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -533,6 +533,8 @@ msgid ""
 "\n"
 "XML: Number of additional records and relations: \t%s\n"
 msgstr ""
+"\n"
+"XML: מספר מסמכים נוספים ויוחסה: \t%s\n"
 
 #: lxml/etreeGramplet.py:502
 #, python-format
@@ -543,7 +545,7 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
-msgstr ""
+msgstr "היכן נמצא gzip?"
 
 #: lxml/lxmlGramplet.py:67
 msgid "\"gzip\" is missing"
@@ -578,7 +580,7 @@ msgstr ""
 #: lxml/lxmlGramplet.py:318
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
-msgstr ""
+msgstr "xmllint: לדלג על אימות RelaxNG עבור \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:329
 msgid "Parsing issue"
@@ -587,7 +589,7 @@ msgstr "סוגיית נלוח"
 #: lxml/lxmlGramplet.py:329
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
-msgstr ""
+msgstr "לא ניתן לנתח תוכן של  \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:333
 msgid "Gramps version"
@@ -599,15 +601,17 @@ msgid ""
 "Wrong namespace\n"
 "Need: %s"
 msgstr ""
+"מרחב שמות שגוי\n"
+"נדרש: %s"
 
 #: lxml/lxmlGramplet.py:337
 msgid "RelaxNG validation"
-msgstr ""
+msgstr "אימות RelaxNG"
 
 #: lxml/lxmlGramplet.py:337
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
-msgstr ""
+msgstr "לא ניתן לאמת \"%(file)s\"באמצעות סכימת RelaxNG"
 
 #: lxml/lxmlGramplet.py:341
 msgid "File issue"
@@ -616,7 +620,7 @@ msgstr "סוגיית קובץ"
 #: lxml/lxmlGramplet.py:341
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
-msgstr ""
+msgstr "לא ניתן לנתתח \"%(file)s\" באמצעות etree"
 
 #: lxml/lxmlGramplet.py:359
 msgid "Parsing file..."
@@ -6163,22 +6167,16 @@ msgid "Save Note"
 msgstr "שמירת הערה"
 
 #: NoteGramplet/NoteGramplet.gpr.py:4
-#, fuzzy
-#| msgid "Query Gramplet"
 msgid "Note Gramplet"
-msgstr "גרמפלט שאילתה"
+msgstr "גרמפלט הערות"
 
 #: NoteGramplet/NoteGramplet.gpr.py:5
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for editing active person's notes"
-msgstr "גראמפלט לתיוג אנשים בתמונות"
+msgstr "גראמפלט לעריכת הערות אנשים פעילים"
 
 #: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
-#, fuzzy
-#| msgid "Place Cleanup"
 msgid "Note Cleanup"
-msgstr "ארגון מקומות"
+msgstr "ניקוי הערות"
 
 #: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
@@ -13134,10 +13132,8 @@ msgid "Over 21/Illiterate"
 msgstr ""
 
 #: Form/form_us.xml.h:1895 Form/form_us.xml.h:1945
-#, fuzzy
-#| msgid "Abandon"
 msgid "Landowner"
-msgstr "נטישה"
+msgstr "בעלים"
 
 #: Form/form_us.xml.h:1896 Form/form_us.xml.h:1921 Form/form_us.xml.h:1947
 msgid "Deaf, Dumb, Blind, Insane, Idiotic"
@@ -13153,17 +13149,12 @@ msgid "Parent of how many children"
 msgstr ""
 
 #: Form/form_us.xml.h:1909
-#, fuzzy
-#| msgid "{number_of} media merged"
-#| msgid_plural "{number_of} media merged"
 msgid "Number of times married"
-msgstr "עצם מדיה {number_of} מוזג"
+msgstr "מספר נישואים"
 
 #: Form/form_us.xml.h:1914
-#, fuzzy
-#| msgid "PlaceCompletion"
 msgid "Place of Occupation"
-msgstr "PlaceCompletion"
+msgstr "מקום עיסוק"
 
 #: Form/form_us.xml.h:1919
 msgid "Land owner"
@@ -13630,10 +13621,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:2369 Form/form_us.xml.h:2390 Form/form_us.xml.h:2483
 #: Form/form_us.xml.h:2570
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Place of Record"
-msgstr "נקודות־ציון מקום"
+msgstr "מקום רישום"
 
 #: Form/form_us.xml.h:2370 Form/form_us.xml.h:2391 Form/form_us.xml.h:2484
 #: Form/form_us.xml.h:2571
@@ -13678,10 +13667,8 @@ msgid "Married by"
 msgstr ""
 
 #: Form/form_us.xml.h:2398
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Place of Marriage"
-msgstr "נקודות־ציון מקום"
+msgstr "מקום נישואין"
 
 #: Form/form_us.xml.h:2400
 msgid "Consent given by"
@@ -13721,10 +13708,8 @@ msgid "Name of employer"
 msgstr ""
 
 #: Form/form_us.xml.h:2445
-#, fuzzy
-#| msgid "Date Calculator"
 msgid "Date last worked"
-msgstr "מחשבון תאריכים"
+msgstr "תאריך עבודה אחרון"
 
 #: Form/form_us.xml.h:2446
 msgid "Years in this occupation"
@@ -13743,10 +13728,8 @@ msgid "Date of Death"
 msgstr ""
 
 #: Form/form_us.xml.h:2457
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Place of Burial"
-msgstr "נקודות־ציון מקום"
+msgstr "מקום קבורה"
 
 #: Form/form_us.xml.h:2458
 msgid "Date of Burial"
@@ -13757,15 +13740,12 @@ msgid "Residence Place"
 msgstr ""
 
 #: Form/form_us.xml.h:2480
-#, fuzzy
 msgid "Burial Date"
-msgstr "כללי"
+msgstr "תאריך קבורה"
 
 #: Form/form_us.xml.h:2481
-#, fuzzy
-#| msgid "All Places"
 msgid "Burial Place"
-msgstr "כל המקומות"
+msgstr "מקום קבורה"
 
 #: Form/form_us.xml.h:2503
 msgid "Congressional District"
@@ -13840,10 +13820,8 @@ msgid "Employer's Name & address"
 msgstr ""
 
 #: Form/form_us.xml.h:2534
-#, fuzzy
-#| msgid "Related Relatives"
 msgid "Nearest Relative"
-msgstr "קרובי משפחה"
+msgstr "קרוב משפחה הקרוב ביותר"
 
 #: Form/form_us.xml.h:2535
 msgid "Dependants & Address"
@@ -18611,10 +18589,8 @@ msgid "Automark Families"
 msgstr ""
 
 #: ImportMerge/importmerge.glade:498
-#, fuzzy
-#| msgid "Note on Parent Family"
 msgid "Automark Parent Families"
-msgstr "הערה על משפחת הורה"
+msgstr "אטמוט הערת משפחת הורה"
 
 #: ExtendedAttributes/ExtendedAttributes.py:54
 msgid ""
@@ -18751,10 +18727,8 @@ msgid "Gramplet for tagging people in photos"
 msgstr "גראמפלט לתיוג אנשים בתמונות"
 
 #: ImportGramplet/ImportGramplet.gpr.py:11
-#, fuzzy
-#| msgid "Gramplet for quick data entry"
 msgid "Gramplet for importing text"
-msgstr "גראמפלט להזנת נתונים מהירה"
+msgstr "גראמפלט לייבוא מלל"
 
 #: ImportGramplet/ImportGramplet.py:94
 msgid "VCard import"
@@ -18776,10 +18750,8 @@ msgid ""
 msgstr ""
 
 #: ImportGramplet/ImportGramplet.py:198
-#, fuzzy
-#| msgid "Export"
 msgid "_Import"
-msgstr "ייצוא"
+msgstr "_ייבוא"
 
 #: ImportGramplet/ImportGramplet.py:218
 msgid "Import done"
@@ -18894,10 +18866,8 @@ msgid "No double cousins were found in your database."
 msgstr ""
 
 #: DoubleCousins/double_cousins.py:170
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show info text"
-msgstr "הצג פריטים מוסתרים"
+msgstr "הצגת מלל מידע"
 
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
@@ -18913,10 +18883,8 @@ msgstr ""
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
-#, fuzzy
-#| msgid "Heading"
 msgid "Headline News"
-msgstr "כותרת"
+msgstr "כותרות חדשות"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
 msgid "Gramplet that shows the latest Gramps news"
@@ -18951,20 +18919,16 @@ msgid "Choose a category."
 msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:103
-#, fuzzy
-#| msgid "Photo Tagging"
 msgid "Choose Tag"
-msgstr "תיוג תמונה"
+msgstr "בתירת תג"
 
 #: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
 msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:140
-#, fuzzy
-#| msgid "Filtering"
 msgid "Filter options"
-msgstr "סינון"
+msgstr "אפשרויות סינון"
 
 #: RemoveTagTool/RemoveTagTool.py:151
 #, python-format
@@ -19086,10 +19050,8 @@ msgid "DNA Segment Map"
 msgstr ""
 
 #: DNA/dnasegmentmap.gpr.py:29
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing a matching DNA segment map"
-msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"
+msgstr "גרמפלט להצגת מפת מקטע DNA תואם"
 
 #: MongoDB/mongodb.gpr.py:23
 msgid "MongoDB"
@@ -19200,10 +19162,8 @@ msgid "The descendent to which to build the line"
 msgstr ""
 
 #: LinesOfDescendency/lines-of-descendency.py:82
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The style used for the title of a line."
-msgstr "המיקוד של המקום, אם קיים."
+msgstr "הסגנון ששימש לכותרת קו."
 
 #: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format
@@ -19272,10 +19232,8 @@ msgid "Remove avatar images..."
 msgstr ""
 
 #: AvatarGenerator/AvatarGenerator.py:211
-#, fuzzy
-#| msgid "No media items merged."
 msgid "No media was removed."
-msgstr "לא מוזגו פרטי מדיה."
+msgstr "לא הוסרה מדיה."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
@@ -19377,20 +19335,16 @@ msgid "How many pixel height is one year?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:910
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Offset X Coordinate"
-msgstr "נקודות־ציון מקום"
+msgstr "היסט נקודות־ציון X"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:917
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Offset Y Coordinate"
-msgstr "נקודות־ציון מקום"
+msgstr "היסט נקודות־ציון Y"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
@@ -19499,10 +19453,8 @@ msgid "Timespan:"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:123
-#, fuzzy
-#| msgid "Clear original enclosing places"
 msgid "Set timespan for enclosing places"
-msgstr "מחיקת המקום המכיל המקורי"
+msgstr "הגדרת טווח תאריכים למקום המכיל"
 
 #: PlaceUpdate/PlaceUpdate.py:159
 msgid "Clear original enclosing places"
@@ -19708,10 +19660,8 @@ msgid "Perform date math calculations"
 msgstr ""
 
 #: FixCoords/fixcoords.gpr.py:31
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Fix Place Coordinates"
-msgstr "נקודות־ציון מקום"
+msgstr "תיקון נקודות־ציון מקום"
 
 #: FixCoords/fixcoords.gpr.py:33
 msgid ""
@@ -19719,10 +19669,8 @@ msgid ""
 msgstr ""
 
 #: FixCoords/fixcoords.py:53
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Fix Coordinates"
-msgstr "נקודות־ציון מקום"
+msgstr "תיקון נקודות־ציון"
 
 #: FixCoords/fixcoords.py:58
 msgid "Looking for possible coords with \",\" characters"
@@ -19738,10 +19686,8 @@ msgid "Descendant Count"
 msgstr ""
 
 #: DescendantCount/DescendantCount.gpr.py:24
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for showing people and descendant counts"
-msgstr "גראמפלט לתיוג אנשים בתמונות"
+msgstr "גראמפלט להצגת אנשים ומספר דורות המשך"
 
 #: FRWebConnectPack/FRWebPack.py:41
 msgid "Cultural ministry (France)"
@@ -19789,10 +19735,8 @@ msgid "Family Tree for %s"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:152
-#, fuzzy
-#| msgid "Places tool"
 msgid "Paper too small"
-msgstr "כלי מקומות"
+msgstr "דף קטן מדי"
 
 #: FamilyTree/FamilyTree.py:153
 msgid "Some elements may not appear or be badly rendered."
@@ -19916,16 +19860,12 @@ msgid "Whether to shuffle colors or order them in rainbow fashion."
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:1091
-#, fuzzy
-#| msgid "Include custom note"
 msgid "Include Occupation"
-msgstr "הכללת הערה מותאם אישית"
+msgstr "הכללת עיסוק"
 
 #: FamilyTree/FamilyTree.py:1097
-#, fuzzy
-#| msgid "Include media data"
 msgid "Include Residence"
-msgstr "הכללת נתונים על מדיה"
+msgstr "הכללת מגורים"
 
 #: FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
@@ -20033,10 +19973,8 @@ msgid "Page:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:419
-#, fuzzy
-#| msgid "Select A File"
 msgid "Selection with a filter"
-msgstr "בחירת קובץ"
+msgstr "בחירה באמצעות מסנן"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
@@ -20079,10 +20017,8 @@ msgid "Whether to include publication information."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:451
-#, fuzzy
-#| msgid "Include media data"
 msgid "Include source's data"
-msgstr "הכללת נתונים על מדיה"
+msgstr "הכללת נתונים על מקורות"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
@@ -20742,10 +20678,8 @@ msgid "Search: google.com.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:60
-#, fuzzy
-#| msgid "Search Quota "
 msgid "Search: roots.in.ua"
-msgstr "מכסת חיפוש "
+msgstr "חיפוש: roots.in.ua"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
@@ -20821,22 +20755,16 @@ msgid "Gramplet for search objects in database."
 msgstr "גראמפלט לחיפוש עצמים מבמסד הנתונים."
 
 #: SearchGramplet/SearchGramplet.py:104
-#, fuzzy
-#| msgid "Source type"
 msgid "Sort by object type"
-msgstr "סוג מקור"
+msgstr "מיון לפי סוג עצם"
 
 #: SearchGramplet/SearchGramplet.py:138
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Menu to set search objects"
-msgstr "האדם אותו יש לחפש"
+msgstr "תפריט להגדרת עצמים לחיפוש"
 
 #: SearchGramplet/SearchGramplet.py:140
-#, fuzzy
-#| msgid "Select tags for person"
 msgid "Select objects to search"
-msgstr "בחירת תגים לאדם"
+msgstr "בחירת עצמים לחיפוש"
 
 #: SearchGramplet/SearchGramplet.py:154
 msgid "SearchGramplet configuration menu"
@@ -20867,14 +20795,10 @@ msgid "Death: %s"
 msgstr "תאריך: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
-#, fuzzy
-#| msgid "Set as active person"
 msgid "Set as Active person"
-msgstr "הגדרה כאדם נפעיל"
+msgstr "הגדרה כאדם פעיל"
 
 #: SearchGramplet/SearchGramplet.py:920
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Set as Home person"
 msgstr "הגדרה כאדם הבית"
 
@@ -21064,16 +20988,12 @@ msgid "Successfully applied changes to local database."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:962
-#, fuzzy
-#| msgid "Missing Files"
 msgid "Missing locally"
-msgstr "קבצים חסרים"
+msgstr "חסרים באופן מקומי"
 
 #: GrampsWebSync/grampswebsync.py:965
-#, fuzzy
-#| msgid "Missing Files"
 msgid "Missing remotely"
-msgstr "קבצים חסרים"
+msgstr "חסרים באופן מרוחק"
 
 #: GrampsWebSync/grampswebsync.py:1003
 #, python-format
@@ -21112,10 +21032,8 @@ msgid "Show the title of mother or father beside each ancestor's box."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The basic style used for the title display."
-msgstr "המיקוד של המקום, אם קיים."
+msgstr "הסגנון הבסיסי ששימש למצג כותרת."
 
 #: PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
@@ -21165,10 +21083,8 @@ msgid "Clock"
 msgstr ""
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for demonstrating Cairo graphics"
-msgstr "גראמפלט לתיוג אנשים בתמונות"
+msgstr "גראמפלט להדגמת עצמי Cairo"
 
 #: LastChange/LastChangeReport.py:74 LastChange/LastChangeReport.py:113
 #: LastChange/LastChange.gpr.py:42
@@ -21176,10 +21092,8 @@ msgid "Last Change Report"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:75
-#, fuzzy
-#| msgid "You have to select an image to generate this report."
 msgid "You must select at least one type of record."
-msgstr "יש לבחור תמונה כדי לחולל דוח זה."
+msgstr "נדרש לבחורלפחות סוג רשומה אחד."
 
 #: LastChange/LastChangeReport.py:180
 msgid "People Changed"
@@ -21189,10 +21103,8 @@ msgstr ""
 #: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
 #: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
 #: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
-#, fuzzy
-#| msgid "Change places"
 msgid "Changed On"
-msgstr "החלפת מקומות"
+msgstr "השתנה בתאריך"
 
 #: LastChange/LastChangeReport.py:197
 msgid "Families Changed"
@@ -21212,46 +21124,36 @@ msgid "Events Changed"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:251
-#, fuzzy
-#| msgid "Doing Place changes"
 msgid "Places Changed"
-msgstr "ביצוע שינויים ב'מקומות'"
+msgstr "מקומות השתנו"
 
 #: LastChange/LastChangeReport.py:269
-#, fuzzy
-#| msgid "Media Merge"
 msgid "Media Changed"
-msgstr "מיזוג מדיה"
+msgstr "מדיה השתנתה"
 
 #: LastChange/LastChangeReport.py:287
 msgid "Sources Changed"
 msgstr "מקורות שונו"
 
 #: LastChange/LastChangeReport.py:304
-#, fuzzy
-#| msgid "No changes"
 msgid "Notes Changed"
-msgstr "אין שינויים"
+msgstr "הערות השתנו"
 
 #: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:344
-#, fuzzy
-#| msgid "Select None"
 msgid "Select From"
-msgstr "לא לבחור דבר"
+msgstr "לבחור מתוך"
 
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
 msgstr ""
 
 #: LastChange/LastChangeGramplet.py:82
-#, fuzzy
-#| msgid "No changes"
 msgid "changed on"
-msgstr "אין שינויים"
+msgstr "תאריך שינוי"
 
 #: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
@@ -21354,10 +21256,8 @@ msgid "December"
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:247
-#, fuzzy
-#| msgid "Primary Name"
 msgid "Person Name"
-msgstr "שם עיקרי"
+msgstr "שם אדם"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:249
 msgid "Event Year"
@@ -21381,16 +21281,12 @@ msgid " and "
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:431
-#, fuzzy
-#| msgid "unknown version"
 msgid "unknown participant"
-msgstr "גרסה לא ידועה"
+msgstr "משתתף לא ידוע"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:438
-#, fuzzy
-#| msgid "unknown version"
 msgid "unknown location"
-msgstr "גרסה לא ידועה"
+msgstr "מיקום לא ידוע"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:481
 #, python-format
@@ -21845,7 +21741,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:941
 msgid "Include URLs from database."
-msgstr "הכללת כתובות URL ממסד הנתונים"
+msgstr "הכללת כתובות URL ממסד הנתונים."
 
 #: NetworkChart/NetworkChart.py:942
 msgid "Dynamic URL = Prefix + GrampID + Suffix"
@@ -21865,7 +21761,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:948
 msgid "Select URL style."
-msgstr "בחירת סגנון כתובת URL"
+msgstr "בחירת סגנון כתובת URL."
 
 #: NetworkChart/NetworkChart.py:951
 msgid "URL Prefix,Suffix"
@@ -22116,10 +22012,8 @@ msgid ""
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:1134
-#, fuzzy
-#| msgid "Common ancestor"
 msgid "Trim ancestors"
-msgstr "אבות קדמונים משותפים"
+msgstr "קיטום אבות קדמונים"
 
 #: NetworkChart/NetworkChart.py:1135
 msgid "All ancestors (parents) of selected individuals will not be shown."
@@ -22176,10 +22070,8 @@ msgid "Any"
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:1176
-#, fuzzy
-#| msgid "Select None"
 msgid "Default (None)"
-msgstr "לא לבחור דבר"
+msgstr "בררת מחדל (ללא)"
 
 #: NetworkChart/NetworkChart.py:1181
 msgid ""
@@ -22255,7 +22147,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
-msgstr ""
+msgstr "תרשים רשת"
 
 #: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
