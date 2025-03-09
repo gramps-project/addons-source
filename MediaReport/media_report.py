@@ -454,7 +454,8 @@ class ReportOptions(MenuReportOptions):
         menu.add_option(_("Report Options"), "media_w", media_w)
 
         media_h = NumberOption(_("Media height"), 100, 10, 100, 10)
-        media_h.set_help(_("Maximum media height in % of available page "
+        media_h.set_help(_(  # xgettext: no-python-format
+                           "Maximum media height in % of available page "
                            "height."))
         menu.add_option(_("Report Options"), "media_h", media_h)
 

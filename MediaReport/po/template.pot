@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 16:41+0000\n"
+"POT-Creation-Date: 2025-03-09 22:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,7 +76,7 @@ msgstr ""
 #: MediaReport/media_report.py:427 MediaReport/media_report.py:431
 #: MediaReport/media_report.py:435 MediaReport/media_report.py:439
 #: MediaReport/media_report.py:444 MediaReport/media_report.py:448
-#: MediaReport/media_report.py:454 MediaReport/media_report.py:459
+#: MediaReport/media_report.py:454 MediaReport/media_report.py:460
 msgid "Report Options"
 msgstr ""
 
@@ -133,7 +133,7 @@ msgstr ""
 msgid "Media height"
 msgstr ""
 
-#: MediaReport/media_report.py:457
-#, python-format
+#: MediaReport/media_report.py:458
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr ""
