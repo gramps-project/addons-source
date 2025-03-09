@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 13:13+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -26,3 +26,9 @@ msgstr "נטישה"
 
 msgid "Save Note"
 msgstr "שמירת הערה"
+
+msgid "Note Gramplet"
+msgstr "גרמפלט הערות"
+
+msgid "Gramplet for editing active person's notes"
+msgstr "גראמפלט לעריכת הערות אנשים פעילים"

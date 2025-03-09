@@ -3,18 +3,20 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2009-10-05 21:15+0100\n"
-"Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
-"Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-03-09 22:01+0000\n"
+"Last-Translator: Michał Stojek <stojex@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
 msgid "Select filter to restrict people"
@@ -26,6 +28,33 @@ msgstr "Obliczanie dat szacunkowych"
 msgid "Source to remove and/or add"
 msgstr "Źródło do usunięcia lub/i dodania"
 
+msgid "Remove previously added events, notes, and source"
+msgstr "Usuń wcześniej dodane wydarzenia, notatki i źródło"
+
+msgid "Do not add birth events"
+msgstr "Nie dodawaj wydarzeń związanych z urodzeniem"
+
+msgid "Add birth events without dates"
+msgstr "Dodaj wydarzenia urodzenia bez dat"
+
+msgid "Add birth events with dates"
+msgstr "Dodaj wydarzenia urodzenia z datami"
+
+msgid "Add a birth events with or without estimated dates"
+msgstr "Dodaj wydarzenia związane z urodzeniem z szacunkową datą lub bez niej"
+
+msgid "Do not add death events"
+msgstr "Nie dodawaj zdarzeń śmierci"
+
+msgid "Add death events without dates"
+msgstr "Dodaj zdarzenia śmierci bez dat"
+
+msgid "Add death events with dates"
+msgstr "Dodaj zdarzenia śmierci z datami"
+
+msgid "Add death events with or without estimated dates"
+msgstr "Dodaj zdarzenia śmierci z szacunkową datą lub bez niej"
+
 msgid "Maximum age"
 msgstr "Maksymalny wiek"
 
@@ -36,10 +65,52 @@ msgid "Maximum age difference between siblings"
 msgstr "Maksymalna różnica wieku pomiędzy rodzeństwem"
 
 msgid "Average years between two generations"
-msgstr "Średni wiek pomiędzy dwoma generacjami"
+msgstr "Średnia liczba lat między dwoma pokoleniami"
+
+msgid "Estimated Dates"
+msgstr "Szacowane daty"
+
+msgid "Approximate (about)"
+msgstr "Przybliżony (około)"
+
+msgid "Extremes (after and before)"
+msgstr "Skrajności (przed i po)"
+
+msgid "Dates on events are either about or after/before"
+msgstr "Daty wydarzeń są albo zbliżone, albo następujące przed/po"
 
 msgid "Calculate Estimated Dates"
 msgstr "Obliczanie dat szacunkowych"
+
+msgid "Select All"
+msgstr "Zaznacz wszystko"
+
+msgid "Select None"
+msgstr "Wybierz Brak"
+
+msgid "Toggle Selection"
+msgstr "Przełącz wybór"
+
+msgid "Add Selected Events"
+msgstr "Dodaj wybrane wydarzenia"
+
+msgid "Remove and Run Select Again"
+msgstr "Usuń i uruchom ponownie Wybierz"
+
+msgid "Reselect Data"
+msgstr "Wybierz ponownie dane"
+
+msgid "Are you sure you want to reselect data?"
+msgstr "Czy na pewno chcesz ponownie wybrać dane?"
+
+msgid "Run Select Again"
+msgstr "Uruchom ponownie Wybierz"
+
+msgid "Evidence"
+msgstr "Dowód"
+
+msgid "Relative"
+msgstr "Krewni"
 
 msgid "Processing...\n"
 msgstr "Przetwarzanie...\n"
@@ -48,11 +119,49 @@ msgstr "Przetwarzanie...\n"
 msgid "Removing '%s'..."
 msgstr "Usuwanie '%s'..."
 
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"Wybierz... \n"
+"\n"
+
+msgid "Add birth and death events"
+msgstr "Dodaj zdarzenia urodzenia i śmierci"
+
+msgid "Add birth event"
+msgstr "Dodaj wydarzenie urodzenia"
+
+msgid "Add death event"
+msgstr "Dodaj zdarzenie śmierci"
+
+msgid "No events to be added."
+msgstr "Brak wydarzeń do dodania."
+
+msgid "Selecting... "
+msgstr "Wybierz... "
+
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "Dodawanie zdarzeń '%s'..."
+
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "Dodano wydarzenie urodzenia na podstawie %s"
+
 msgid "Estimated birth date"
 msgstr "Szacowana data śmierci"
 
+#, python-format
+msgid "Added death event based on %s"
+msgstr "Dodano zdarzenie śmierci na podstawie %s"
+
 msgid "Estimated death date"
 msgstr "Szacowana data śmierci"
+
+#, python-format
+msgid "Added %d events."
+msgstr "Dodano %d wydarzeń."
 
 msgid "Estimated date"
 msgstr "Szacowana data"

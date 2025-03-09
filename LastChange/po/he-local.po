@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 13:13+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -15,8 +15,29 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Weblate 5.10.3-dev\n"
 
+msgid "You must select at least one type of record."
+msgstr "נדרש לבחורלפחות סוג רשומה אחד."
+
+msgid "Changed On"
+msgstr "השתנה בתאריך"
+
+msgid "Places Changed"
+msgstr "מקומות השתנו"
+
+msgid "Media Changed"
+msgstr "מדיה השתנתה"
+
 msgid "Sources Changed"
 msgstr "מקורות שונו"
 
+msgid "Notes Changed"
+msgstr "הערות השתנו"
+
+msgid "Select From"
+msgstr "לבחור מתוך"
+
 msgid "The style used for the title of the page."
 msgstr "הסגנון שמשמש בכותרת העמוד."
+
+msgid "changed on"
+msgstr "תאריך שינוי"

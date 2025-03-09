@@ -15,35 +15,5 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Weblate 5.10.3-dev\n"
 
-msgid "Missing"
-msgstr "חסר"
-
-msgid "Replace with import"
-msgstr "החלפה עם היבוא"
-
-msgid "Keep original"
-msgstr "להשאיר את המקורי"
-
-msgid "Original"
-msgstr "מקורי"
-
-msgid "Result  "
-msgstr "תוצאה  "
-
-msgid "Replace"
-msgstr "החלפה"
-
-msgid "Object Name/Description"
-msgstr "שם עצם/תיאור"
-
-msgid "Object and item"
-msgstr "עצם ופריט"
-
-msgid "Merge Original"
-msgstr "מזוג מקור"
-
-msgid "Edit Import"
-msgstr "עריכת ייבוא"
-
-msgid "Automark Parent Families"
-msgstr "אטמוט הערת משפחת הורה"
+msgid "Show info text"
+msgstr "הצגת מלל מידע"

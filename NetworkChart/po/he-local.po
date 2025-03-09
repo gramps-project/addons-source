@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 13:13+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -16,10 +16,19 @@ msgstr ""
 "X-Generator: Weblate 5.10.3-dev\n"
 
 msgid "Include URLs from database."
-msgstr "הכללת כתובות URL ממסד הנתונים"
+msgstr "הכללת כתובות URL ממסד הנתונים."
 
 msgid "Select URL style."
-msgstr "בחירת סגנון כתובת URL"
+msgstr "בחירת סגנון כתובת URL."
+
+msgid "Trim ancestors"
+msgstr "קיטום אבות קדמונים"
+
+msgid "Default (None)"
+msgstr "בררת מחדל (ללא)"
+
+msgid "Network Chart"
+msgstr "תרשים רשת"
 
 msgid "Generates a family network chart."
 msgstr "מייצר תרשים קשרי משפחה."

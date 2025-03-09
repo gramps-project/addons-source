@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 13:13+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -179,6 +179,17 @@ msgstr ""
 "מספר הערות : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
+#, python-format
+msgid ""
+"\n"
+"XML: Number of additional records and relations: \t%s\n"
+msgstr ""
+"\n"
+"XML: מספר מסמכים נוספים ויוחסה: \t%s\n"
+
+msgid "Where is gzip?"
+msgstr "היכן נמצא gzip?"
+
 msgid "\"gzip\" is missing"
 msgstr "\"gzip\" חסר"
 
@@ -198,14 +209,41 @@ msgstr "אימות XSD (lxml)"
 msgid "Cannot validate \"%(file)s\" !"
 msgstr "לא ניתן לאמת \"%(file)s\" !"
 
+#, python-format
+msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
+msgstr "xmllint: לדלג על אימות RelaxNG עבור \"%(file)s\""
+
 msgid "Parsing issue"
 msgstr "סוגיית נלוח"
+
+#, python-format
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "לא ניתן לנתח תוכן של  \"%(file)s\""
 
 msgid "Gramps version"
 msgstr "גרסת גרמפס"
 
+#, python-format
+msgid ""
+"Wrong namespace\n"
+"Need: %s"
+msgstr ""
+"מרחב שמות שגוי\n"
+"נדרש: %s"
+
+msgid "RelaxNG validation"
+msgstr "אימות RelaxNG"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
+msgstr "לא ניתן לאמת \"%(file)s\"באמצעות סכימת RelaxNG"
+
 msgid "File issue"
 msgstr "סוגיית קובץ"
+
+#, python-format
+msgid "Cannot parse \"%(file)s\" via etree"
+msgstr "לא ניתן לנתתח \"%(file)s\" באמצעות etree"
 
 msgid "Parsing file..."
 msgstr "מתבצע ניתוח קובץ..."

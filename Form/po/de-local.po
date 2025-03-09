@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 20:50+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -1828,6 +1828,9 @@ msgstr "Waren Sie inhaftiert"
 
 msgid "When imprisoned"
 msgstr "Wann inhaftiert"
+
+msgid "Where imprisoned"
+msgstr "Wo inhaftiert"
 
 msgid "How were you discharged"
 msgstr "Wie wurden Sie entlassen"
@@ -4363,7 +4366,7 @@ msgid "Town or Village"
 msgstr "Stadt oder Dorf"
 
 msgid "House Schedule No"
-msgstr "Haus Zeitplan Nr"
+msgstr "Haus-Zeitplannr"
 
 msgid "Relation to Head"
 msgstr "Beziehung zum Oberhaupt"
@@ -5327,6 +5330,9 @@ msgstr "17. Taub und stumm: Männlich"
 
 msgid "18. Blind"
 msgstr "18. Blind"
+
+msgid "19. Unsound mind"
+msgstr "19. ungesunder Geist"
 
 msgid "20. Date of Operations and Remarks"
 msgstr "20. Betriebsdatum und Bemerkungen"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 20:50+0000\n"
 "Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
@@ -18,8 +18,84 @@ msgstr ""
 msgid "Failed writing %s: %s"
 msgstr "Error en escriure %s: %s"
 
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "No s’ha pogut crear l’estructura de directoris: %s"
+
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "No s’ha pogut copiar els fitxers web: %s"
+
+msgid "Ancestral Collapsible Tree Options"
+msgstr "Opcions de l’arbre plegable d’avantpassats"
+
 msgid "Include Generations"
 msgstr "Inclou generacions"
+
+msgid "Male Background Color"
+msgstr "Color de fons per a homes"
+
+msgid "RGB-color for male box background."
+msgstr "Color RGB per al fons de la caixa dels homes."
+
+msgid "Male Expandable Background Color"
+msgstr "Color de fons ampliable per a homes"
+
+msgid "RGB-color for male expandable box background."
+msgstr "Color RGB per al fons de la caixa ampliable dels homes."
+
+msgid "Female Background"
+msgstr "Fons per a dones"
+
+msgid "RGB-color for female box background."
+msgstr "Color RGB per al fons de la caixa de les dones."
+
+msgid "Female Expandable Background"
+msgstr "Fons ampliable per a dones"
+
+msgid "RGB-color for female expandable box background."
+msgstr "Color RGB per al fons de la caixa ampliable de les dones."
+
+msgid "The destination path for generated files."
+msgstr "El camí de destinació per als fitxers generats."
+
+msgid "The destination file name for html content."
+msgstr "El nom del fitxer de destinació per al contingut HTML."
+
+msgid "Ancestral Fan Chart"
+msgstr "Diagrama en ventall d’avantpassats"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"Genera una pàgina web amb una representació gràfica dels avantpassats (SVG) "
+"en forma de diagrama en ventall, utilitzant la biblioteca JavaScript D3.js."
+
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Vegeu %(reference)s : %(spouse)s"
+
+msgid "Generating report..."
+msgstr "Generant informe…"
+
+msgid "Descendant Indented Tree"
+msgstr "Arbre de descendents amb sagnat"
+
+msgid "Invalid Destination Directory"
+msgstr "Directori de destinació no vàlid"
+
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"El directori de destinació %s no existeix.\n"
+"Vols intentar crear-lo?"
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "No s’ha pogut crear %s: %s"
 
 msgid "Include contraction level"
 msgstr "Inclou el nivell de contracció"

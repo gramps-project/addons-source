@@ -20,8 +20,5 @@ msgstr ""
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
 #, python-format
-msgid "%s. Descendants of %s"
-msgstr "%s. Potomkowie %s"
-
-msgid "The style used for the title of the page."
-msgstr "Styl używany do tytułu strony."
+msgid "Added %s: %s "
+msgstr "Dodano %s: %s "

@@ -19,9 +19,11 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
-#, python-format
-msgid "%s. Descendants of %s"
-msgstr "%s. Potomkowie %s"
+msgid "Space character on filename"
+msgstr "Znak spacji w nazwie pliku"
 
-msgid "The style used for the title of the page."
-msgstr "Styl używany do tytułu strony."
+msgid "Parsing file..."
+msgstr "Analizowanie pliku..."
+
+msgid " source(s)"
+msgstr " źródło(a)"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 20:50+0000\n"
 "Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
@@ -14,11 +14,68 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.3-dev\n"
 
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Arbre d’avantpassats utilitzant LaTeX genealogytree"
+
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Arbre de descendents utilitzant LaTeX genealogytree"
+
+msgid "Grandparent Tree"
+msgstr "Arbre d’avis"
+
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Arbre d’avis utilitzant LaTeX genealogytree"
+
+msgid "Sandclock Tree"
+msgstr "Arbre de rellotge de sorra"
+
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "Arbre de rellotge de sorra utilitzant LaTeX genealogytree"
+
+msgid "Sandclock Tree for a Family"
+msgstr "Arbre de rellotge de sorra per a una família"
+
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr ""
+"Arbre de rellotge de sorra per a una família utilitzant LaTeX genealogytree"
+
 msgid "The center family for the report"
 msgstr "La família del centre per a l'informe"
+
+msgid "Generations up"
+msgstr "Generacions amunt"
+
+msgid "Generations down"
+msgstr "Generacions avall"
 
 msgid "Include siblings"
 msgstr "Inclou germans"
 
+msgid "Include siblings of ancestors."
+msgstr "Inclou els germans dels avantpassats."
+
 msgid "Include images"
 msgstr "Inclou imatges"
+
+msgid "Include images of people in the nodes."
+msgstr "Inclou imatges de les persones als nodes."
+
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "La persona %s no té tant un avi patern com un avi matern"
+
+msgid "Grandparent family spacing"
+msgstr "Espaiat entre les famílies dels avis"
+
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Espai addicional entre les famílies dels avis (mm)"
+
+msgid "First spouse left"
+msgstr "Primer cònjuge a l’esquerra"
+
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+"Col·loca sempre el primer dels múltiples cònjuges a l’esquerra. Això pot "
+"ajudar a reduir els encreuaments de línies en cas de múltiples matrimonis."

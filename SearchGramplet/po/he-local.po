@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 09:41-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 13:13+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -21,8 +21,17 @@ msgstr "חיפוש"
 msgid "Gramplet for search objects in database."
 msgstr "גראמפלט לחיפוש עצמים מבמסד הנתונים."
 
+msgid "Sort by object type"
+msgstr "מיון לפי סוג עצם"
+
 msgid "Persons"
 msgstr "אנשים"
+
+msgid "Menu to set search objects"
+msgstr "תפריט להגדרת עצמים לחיפוש"
+
+msgid "Select objects to search"
+msgstr "בחירת עצמים לחיפוש"
 
 #, python-format
 msgid "found: %s"
@@ -37,3 +46,9 @@ msgstr "חיפוש..."
 #, python-format
 msgid "Death: %s"
 msgstr "תאריך: %s"
+
+msgid "Set as Active person"
+msgstr "הגדרה כאדם פעיל"
+
+msgid "Set as Home person"
+msgstr "הגדרה כאדם הבית"

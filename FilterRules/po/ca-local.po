@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 20:50+0000\n"
 "Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
@@ -14,29 +14,137 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.3-dev\n"
 
+msgid "People related to <filter>"
+msgstr "Persones relacionades amb <filter>"
+
+msgid "Matches people who are related to anybody matched by a person filter"
+msgstr ""
+"Coincideix amb les persones que estan relacionades amb qualsevol persona que "
+"compleixi el filtre de persones"
+
+msgid "People separated less than <N> degrees of <person>"
+msgstr "Persones separades menys de <N> graus de <person>"
+
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr ""
+"Regla de filtre que coincideix amb parents segons els graus de separació"
+
+msgid "Source matching parameters"
+msgstr "Paràmetres de coincidència de la font"
+
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr ""
+"Coincideix amb fonts que tenen valors que contenen els paràmetres "
+"seleccionats"
+
+msgid "People with multiple parent records"
+msgstr "Persones amb múltiples registres de progenitors"
+
+msgid "Matches people who have more than one set of parents"
+msgstr "Coincideix amb persones que tenen més d’un conjunt de progenitors"
+
+msgid "Match associations of <person filter>"
+msgstr "Coincideix amb les associacions de <person filter>"
+
+msgid "Does NOT match with selected Role"
+msgstr "NO coincideix amb el rol seleccionat"
+
+msgid "Finds the items that don't have event Roles of the selected type."
+msgstr ""
+"Troba els elements que no tenen rols d’esdeveniment del tipus seleccionat."
+
 msgid "Inverse"
 msgstr "Inverteix"
 
 msgid "People with events with the <role>"
 msgstr "Persones amb esdeveniments amb el <role>"
 
+msgid "Matches people with an event with a selected role"
+msgstr ""
+"Coincideix amb persones que tenen un esdeveniment amb el rol seleccionat"
+
 msgid "Families with events with the <role>"
 msgstr "Famílies amb esdeveniments amb el <role>"
+
+msgid "Matches families with an event with a selected role"
+msgstr ""
+"Coincideix amb famílies que tenen un esdeveniment amb el rol seleccionat"
+
+msgid "Events of families matching a <family filter>"
+msgstr "Esdeveniments de famílies que coincideixen amb un <family filter>"
+
+msgid "Families matching <event filter>"
+msgstr "Famílies que coincideixen amb <event filter>"
+
+msgid "Matches families that are matched by an event filter"
+msgstr "Coincideix amb les famílies que compleixen un filtre d’esdeveniments"
+
+msgid "Matches families matched by an event filter"
+msgstr "Coincideix amb les famílies que compleixen un filtre d’esdeveniments"
+
+msgid "Number of degrees of separation from person."
+msgstr "Nombre de graus de separació respecte a la persona."
+
+msgid "Degrees:"
+msgstr "Graus:"
+
+msgid "People with <count> of <event>"
+msgstr "Persones amb <count> de <event>"
+
+msgid "Matches persons which have events of given type and number."
+msgstr ""
+"Coincideix amb persones que tenen esdeveniments d’un tipus i nombre "
+"determinats."
 
 msgid "Include Children"
 msgstr "Incloure Fills"
 
+msgid "Include the children in the matching families."
+msgstr "Inclou els fills en les famílies coincidents."
+
 msgid "Include Parents"
 msgstr "Inclou els pares"
+
+msgid "Include the parents in the matching families."
+msgstr "Inclou els progenitors en les famílies coincidents."
+
+msgid "Family Filter name:"
+msgstr "Nom del filtre de família:"
+
+msgid "People who are part of families matching <filter>"
+msgstr "Persones que formen part de famílies que coincideixen amb <filter>"
+
+msgid "Filter people by their age at death"
+msgstr "Filtra les persones per la seva edat en el moment de la mort"
+
+msgid "Filter rule that matches people by their age at death"
+msgstr ""
+"Regla de filtre que coincideix amb les persones segons la seva edat en el "
+"moment de la mort"
+
+msgid "Multiple Parents Filter"
+msgstr "Filtre de múltiples progenitors"
 
 msgid "People with events with a selected role"
 msgstr "Persones amb esdeveniments amb un rol seleccionat"
 
+msgid "Families with events with a selected role"
+msgstr "Famílies amb esdeveniments amb el rol seleccionat"
+
 msgid "The active Person"
 msgstr "La Persona activa"
+
+msgid "Matches sources with a particular value"
+msgstr "Coincideix amb fonts que tenen un valor específic"
 
 msgid "Active person"
 msgstr "Persona activa"
 
 msgid "Matches the active person"
 msgstr "Coincideix amb la persona activa"
+
+msgid "Age in years at person's death."
+msgstr "Edat en anys en el moment de la mort de la persona."
+
+msgid "Age:"
+msgstr "Edat:"

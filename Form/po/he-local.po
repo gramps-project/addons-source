@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 13:13+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -102,14 +102,44 @@ msgstr "מתאריך משוער"
 msgid "Enumerated date to"
 msgstr "עד תאריך משוער"
 
+msgid "Landowner"
+msgstr "בעלים"
+
+msgid "Number of times married"
+msgstr "מספר נישואים"
+
+msgid "Place of Occupation"
+msgstr "מקום עיסוק"
+
 msgid "Birth Country"
 msgstr "מקום לידה, מדינה"
 
 msgid "in"
 msgstr "ב"
 
+msgid "Place of Record"
+msgstr "מקום רישום"
+
+msgid "Place of Marriage"
+msgstr "מקום נישואין"
+
 msgid "Consent given by"
 msgstr "ניתנה הסכמה מאת"
+
+msgid "Date last worked"
+msgstr "תאריך עבודה אחרון"
+
+msgid "Place of Burial"
+msgstr "מקום קבורה"
+
+msgid "Burial Date"
+msgstr "תאריך קבורה"
+
+msgid "Burial Place"
+msgstr "מקום קבורה"
+
+msgid "Nearest Relative"
+msgstr "קרוב משפחה הקרוב ביותר"
 
 msgid "Place of Registration"
 msgstr "מקום הרישום"

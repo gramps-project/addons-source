@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"PO-Revision-Date: 2025-03-09 08:45+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -1822,6 +1822,9 @@ msgstr "Bent u opgesloten"
 
 msgid "When imprisoned"
 msgstr "Wanneer opgesloten"
+
+msgid "Where imprisoned"
+msgstr "Waar opgesloten"
 
 msgid "How were you discharged"
 msgstr "Hoe bent u vrijgekomen"
@@ -5319,6 +5322,9 @@ msgstr "17. Doof en stom"
 
 msgid "18. Blind"
 msgstr "18. Blind"
+
+msgid "19. Unsound mind"
+msgstr "19. Ongezonde geest"
 
 msgid "20. Date of Operations and Remarks"
 msgstr "20. Datum van bewerkingen en opmerkingen"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 20:50+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -15,14 +15,14 @@ msgstr ""
 "X-Generator: Weblate 5.10.3-dev\n"
 
 msgid "Place Cleanup"
-msgstr "Orte bereinigen"
+msgstr "Ortsbereinigung"
 
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
 msgstr ""
-"Das Orte bereinigen Gramplet hilft beim Zusammenführen von Orten sowie beim "
-"Vervollständigen von Orten aus der GeoNames-Webdatenbank"
+"Das Gramplet Ortsbereinigung hilft bei der Zusammenführung von Orten und bei "
+"der Vervollständigung von Orten aus der GeoNames-Webdatenbank"
 
 msgid ""
 "No\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Übereinstimmungen"
 
 msgid "Find"
-msgstr "Suchen"
+msgstr "Finden"
 
 #, python-format
 msgid ""
@@ -51,14 +51,14 @@ msgid "Need to set GeoNames ID"
 msgstr "GeoNames-ID muss gesetzt werden"
 
 msgid "Use the Help button for more information"
-msgstr "Verwende die Schaltfläche Hilfe, um weitere Informationen zu erhalten"
+msgstr "Verwende die Hilfeschaltfläche für weitere Informationen"
 
 msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
 "the place manually."
 msgstr ""
-"Versuche den Titel zu ändern oder verwende die Schaltfläche \"Bearbeiten\", "
-"um diese Ebene des Ortes manuell fertig zu stellen."
+"Versuche, den Titel zu ändern, oder verwende die Schaltfläche „Bearbeiten“, "
+"um diese Ebene des Ortes manuell zu vervollständigen."
 
 #, python-format
 msgid ""

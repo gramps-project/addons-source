@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 20:50+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -190,7 +190,7 @@ msgid "Add birth event"
 msgstr "Geburtsereignis hinzufügen"
 
 msgid "Add death event"
-msgstr "Sterbeereignis hinzufügen"
+msgstr "Todesereignis hinzufügen"
 
 msgid "No events to be added."
 msgstr "Es sind keine Ereignisse hinzuzufügen."
@@ -215,14 +215,15 @@ msgstr "Geschätztes Geburtsdatum"
 
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr "Sterbeereignis basierend auf %(evidence)s, von %(person)s hinzugefügt"
+msgstr ""
+"Todesereignis auf der Grundlage von %(evidence)s, von %(person)s hinzugefügt"
 
 #, python-format
 msgid "Added death event based on %s"
-msgstr "Sterbeereignis basierend auf %s hinzugefügt"
+msgstr "Todesereignis basierend auf %s hinzugefügt"
 
 msgid "Estimated death date"
-msgstr "Geschätztes Sterbedatum"
+msgstr "Geschätztes Todesdatum"
 
 msgid " Done! Committing..."
 msgstr " Fertig! Festlegen..."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"PO-Revision-Date: 2025-03-09 13:13+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -182,8 +182,68 @@ msgstr "Färg/ras"
 msgid "Marital Status"
 msgstr "Civilstånd"
 
+msgid "Number of Farm Schedule"
+msgstr "Antal gårdsschema"
+
+msgid "Usual Occupation"
+msgstr "Vanlig sysselsättning"
+
 msgid "Hotel, large rooming house, institution, military installation, etc."
 msgstr "Hotel, veľká ubytovňa, inštitúcia, vojenské zariadenie a pod."
+
+msgid "Marital status"
+msgstr "Civilstånd"
+
+msgid "Type of work"
+msgstr "Typ av arbete"
+
+msgid "Census Date"
+msgstr "Folkräkningsdatum"
+
+msgid "District of"
+msgstr "Distriktet"
+
+msgid "Married Y/N"
+msgstr "Gift J/N"
+
+msgid "Spouses Age"
+msgstr "Makarnas ålder"
+
+msgid "File No."
+msgstr "Fil nr."
+
+msgid "Place of Birth"
+msgstr "Födelseort"
+
+msgid "Place of Enlistment"
+msgstr "Plats för mönstring"
+
+msgid "On date"
+msgstr "På datum"
+
+msgid "Enlistment Place"
+msgstr "Värvningsplats"
+
+msgid "Other service, if any"
+msgstr "Eventuell annan tjänst"
+
+msgid "Number of Regiment"
+msgstr "Regementets nummer"
+
+msgid "Where imprisoned"
+msgstr "Fängslad"
+
+msgid "Colonels name"
+msgstr "Överstens namn"
+
+msgid "Length of service"
+msgstr "Tjänstens längd"
+
+msgid "Are you married"
+msgstr "Är du gift"
+
+msgid "Birthplace of wife"
+msgstr "Hustruns födelseplats"
 
 msgid "Section"
 msgstr "Sektion"

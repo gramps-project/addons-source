@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 20:50+0000\n"
 "Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
@@ -25,3 +25,9 @@ msgstr "abreviatura de matrimoni|m."
 
 msgid "Select URL style."
 msgstr "Selecciona l'estil d'URL."
+
+msgid "RGB-color for male box background."
+msgstr "Color RGB per al fons de la caixa dels homes."
+
+msgid "Female Background"
+msgstr "Fons per a dones"

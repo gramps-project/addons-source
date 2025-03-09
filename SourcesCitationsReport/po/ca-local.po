@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-26 15:11-0500\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-09 20:50+0000\n"
 "Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
@@ -14,16 +14,46 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.3-dev\n"
 
+msgid "Sources and Citations Report"
+msgstr "Informe de fonts i citacions"
+
 msgid "Provides a source and Citations Report with notes"
 msgstr "Proporciona una font i un informe de citacions amb notes"
+
+#, python-format
+msgid "Key: %s"
+msgstr "Clau: %s"
+
+msgid "Citations:"
+msgstr "Citacions:"
+
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#, python-format
+msgid "  %s"
+msgstr "  %s"
 
 #, python-format
 msgid " - %s "
 msgstr " - %s "
 
 #, python-format
+msgid "   Type: %s"
+msgstr "   Tipus: %s"
+
+#, python-format
+msgid "   N-ID: %s"
+msgstr "   N-ID: %s"
+
+#, python-format
 msgid "   %s"
 msgstr "   %s"
+
+#, python-format
+msgid "%s"
+msgstr "%s"
 
 #, python-format
 msgid "   ( %s )"
@@ -32,14 +62,41 @@ msgstr "   ( %s )"
 msgid "   Spouses: "
 msgstr "   Cònjugues: "
 
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#, python-format
+msgid "and %s "
+msgstr "i %s "
+
+#, python-format
+msgid " %s"
+msgstr " %s"
+
 msgid "Title of the Report"
 msgstr "Títol de l'Informe"
 
 msgid "Title string for the report."
 msgstr "Cadena de títol per a l'informe."
 
+msgid "Subtitle of the Report"
+msgstr "Subtítol de l’informe"
+
+msgid "Subtitle string for the report."
+msgstr "Cadena de subtítol per a l’informe."
+
+msgid "researcher name"
+msgstr "Nom del investigador"
+
+msgid "Select sources using a filter"
+msgstr "Selecciona fonts mitjançant un filtre"
+
 msgid "Show persons"
 msgstr "Mostra persones"
+
+msgid "Whether to show events and persons mentioned in the note"
+msgstr "Si es mostren els esdeveniments i les persones esmentades a la nota"
 
 msgid "The style used for the title of the report."
 msgstr "L'estil que es fa servir per al títol de l'informe."
