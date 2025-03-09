@@ -5,24 +5,26 @@
 # Piotr Czubaszek <piotrek@gmail.com>, 2007.
 # Łukasz Rymarczyk <yenidai(at)poczta(dot)onet(dot)pl>, 2008, 2009.
 # Przemek Wiech <pwiech@gmail.com>, 2019.
-# Michał Stojek <stojex@gmail.com>, 2021.
+# Michał Stojek <stojex@gmail.com>, 2021, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 18:38+0000\n"
-"PO-Revision-Date: 2009-10-05 21:15+0100\n"
-"Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
-"Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-03-09 22:01+0000\n"
+"Last-Translator: Michał Stojek <stojex@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
 #: MediaMerge/mediamerge.py:104
@@ -67,9 +69,8 @@ msgid "Source to remove and/or add"
 msgstr "Źródło do usunięcia lub/i dodania"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
-#, fuzzy
 msgid "Remove previously added events, notes, and source"
-msgstr "Usuń poprzednio dodane daty"
+msgstr "Usuń wcześniej dodane wydarzenia, notatki i źródło"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
@@ -77,42 +78,36 @@ msgid ""
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
-#, fuzzy
 msgid "Do not add birth events"
-msgstr "dodano narodziny w %s"
+msgstr "Nie dodawaj wydarzeń związanych z urodzeniem"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:105
-#, fuzzy
 msgid "Add birth events without dates"
-msgstr "zdarzenie urodzin ale bez daty"
+msgstr "Dodaj wydarzenia urodzenia bez dat"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
-#, fuzzy
 msgid "Add birth events with dates"
-msgstr "zdarzenie urodzin ale bez daty"
+msgstr "Dodaj wydarzenia urodzenia z datami"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
-msgstr ""
+msgstr "Dodaj wydarzenia związane z urodzeniem z szacunkową datą lub bez niej"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
-#, fuzzy
 msgid "Do not add death events"
-msgstr "dodano śmierć w %s"
+msgstr "Nie dodawaj zdarzeń śmierci"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:112
-#, fuzzy
 msgid "Add death events without dates"
-msgstr "Dodaj szacowane daty urodzin"
+msgstr "Dodaj zdarzenia śmierci bez dat"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
-#, fuzzy
 msgid "Add death events with dates"
-msgstr "Dodaj szacowane daty urodzin"
+msgstr "Dodaj zdarzenia śmierci z datami"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
-msgstr ""
+msgstr "Dodaj zdarzenia śmierci z szacunkową datą lub bez niej"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
@@ -128,24 +123,23 @@ msgstr "Maksymalna różnica wieku pomiędzy rodzeństwem"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
-msgstr "Średni wiek pomiędzy dwoma generacjami"
+msgstr "Średnia liczba lat między dwoma pokoleniami"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:136
-#, fuzzy
 msgid "Estimated Dates"
-msgstr "Szacowana data"
+msgstr "Szacowane daty"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
-msgstr ""
+msgstr "Przybliżony (około)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
-msgstr ""
+msgstr "Skrajności (przed i po)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr ""
+msgstr "Daty wydarzeń są albo zbliżone, albo następujące przed/po"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -174,24 +168,20 @@ msgid "Calculate Estimated Dates"
 msgstr "Obliczanie dat szacunkowych"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
-#, fuzzy
 msgid "Select All"
-msgstr "Wybierz plik"
+msgstr "Zaznacz wszystko"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
-#, fuzzy
 msgid "Select None"
-msgstr "Wybierz notatkę"
+msgstr "Wybierz Brak"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
-#, fuzzy
 msgid "Toggle Selection"
-msgstr "Wybór narzędzi"
+msgstr "Przełącz wybór"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
-#, fuzzy
 msgid "Add Selected Events"
-msgstr "Wybierz zdarzenie"
+msgstr "Dodaj wybrane wydarzenia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
@@ -204,32 +194,26 @@ msgid ""
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
-#, fuzzy
 msgid "Remove and Run Select Again"
-msgstr "Usuń zaznaczoną osobę"
+msgstr "Usuń i uruchom ponownie Wybierz"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
-#, fuzzy
 msgid "Reselect Data"
-msgstr "Wybierz Ojca"
+msgstr "Wybierz ponownie dane"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:215
-#, fuzzy
 msgid "Are you sure you want to reselect data?"
-msgstr "Czy na pewno chcesz usunąć historię cofania?"
+msgstr "Czy na pewno chcesz ponownie wybrać dane?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:216
-#, fuzzy
 msgid "Run Select Again"
-msgstr "Wybór raportów"
+msgstr "Uruchom ponownie Wybierz"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
-#, fuzzy
 msgid "Evidence"
-msgstr "Zamieszkanie"
+msgstr "Dowód"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
-#, fuzzy
 msgid "Relative"
 msgstr "Krewni"
 
@@ -255,41 +239,37 @@ msgid "done!\n"
 msgstr "Gotowe!\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:323
-#, fuzzy
 msgid ""
 "Selecting... \n"
 "\n"
-msgstr "Wybierz..."
+msgstr ""
+"Wybierz... \n"
+"\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
-#, fuzzy
 msgid "Add birth and death events"
-msgstr "Dodaj nowe zdarzenie"
+msgstr "Dodaj zdarzenia urodzenia i śmierci"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:361
-#, fuzzy
 msgid "Add birth event"
-msgstr "brakujące zdarzenie urodzin"
+msgstr "Dodaj wydarzenie urodzenia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:363
-#, fuzzy
 msgid "Add death event"
-msgstr "Dodaj nowe zdarzenie"
+msgstr "Dodaj zdarzenie śmierci"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:398
-#, fuzzy
 msgid "No events to be added."
-msgstr "Nie dodano opisu do zdarzenia."
+msgstr "Brak wydarzeń do dodania."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
-#, fuzzy
 msgid "Selecting... "
-msgstr "Wybierz..."
+msgstr "Wybierz... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
-#, fuzzy, python-format
+#, python-format
 msgid "Adding events '%s'..."
-msgstr "Dodaj istniejących rodziców..."
+msgstr "Dodawanie zdarzeń '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
@@ -297,9 +277,9 @@ msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
-#, fuzzy, python-format
+#, python-format
 msgid "Added birth event based on %s"
-msgstr "dodano narodziny w %s"
+msgstr "Dodano wydarzenie urodzenia na podstawie %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
@@ -311,9 +291,9 @@ msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
-#, fuzzy, python-format
+#, python-format
 msgid "Added death event based on %s"
-msgstr "dodano śmierć w %s"
+msgstr "Dodano zdarzenie śmierci na podstawie %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
@@ -324,9 +304,9 @@ msgid " Done! Committing..."
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
-#, fuzzy, python-format
+#, python-format
 msgid "Added %d events."
-msgstr "Dodaj nowe zdarzenie"
+msgstr "Dodano %d wydarzeń."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
@@ -373,10 +353,8 @@ msgid "Number of editions back"
 msgstr ""
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
-#, fuzzy
-#| msgid "Select a dot file name"
 msgid "Space character on filename"
-msgstr "Wybierz nazwę pliku dot"
+msgstr "Znak spacji w nazwie pliku"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
@@ -600,10 +578,8 @@ msgid "Cannot parse \"%(file)s\" via etree"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:359
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Parsing file..."
-msgstr "Przetwarzanie...\n"
+msgstr "Analizowanie pliku..."
 
 #: lxml/lxmlGramplet.py:456
 msgid "Missing header"
@@ -651,10 +627,8 @@ msgid " note(s)"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:505
-#, fuzzy
-#| msgid "New source"
 msgid " source(s)"
-msgstr "Nowe Źródło"
+msgstr " źródło(a)"
 
 #: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
 msgid "Gallery.html"
@@ -791,10 +765,8 @@ msgid ""
 msgstr ""
 
 #: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
-#, fuzzy
-#| msgid "Problem reading file"
 msgid "Problem getting data from web"
-msgstr "Problem z odczytem pliku"
+msgstr "Problem z pobieraniem danych z sieci"
 
 #: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
@@ -867,10 +839,8 @@ msgid "The current Primary name."
 msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:102
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The postal code for the place, if any."
-msgstr "Styl używany do tytułu strony."
+msgstr "Kod pocztowy danej miejscowości, jeśli takowy istnieje."
 
 #: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
@@ -1026,10 +996,8 @@ msgid ""
 msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:958
-#, fuzzy
-#| msgid "All Places"
 msgid "Next Place"
-msgstr "Wszystkie miejsca"
+msgstr "Następne miejsce"
 
 #: PlaceCleanup/placecleanup.glade:962
 msgid "Find an incomplete place."
@@ -1134,18 +1102,16 @@ msgid "Inverse"
 msgstr ""
 
 #: FilterRules/hasrolerule.py:68
-#, fuzzy
 msgid "People with events with the <role>"
-msgstr "zdarzenie urodzin ale bez daty"
+msgstr "Osoby z wydarzeniami <role>"
 
 #: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
 msgid "Matches people with an event with a selected role"
 msgstr ""
 
 #: FilterRules/hasrolerule.py:92
-#, fuzzy
 msgid "Families with events with the <role>"
-msgstr "zdarzenie urodzin ale bez daty"
+msgstr "Rodziny z wydarzeniami <role>"
 
 #: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
 msgid "Matches families with an event with a selected role"
@@ -1188,22 +1154,16 @@ msgid "Matches persons which have events of given type and number."
 msgstr ""
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
-#, fuzzy
-#| msgid "Include birth children"
 msgid "Include Children"
-msgstr "Dołącz urodziny dzieci"
+msgstr "Włącz dzieci"
 
 #: FilterRules/infamilyrule.py:49
-#, fuzzy
-#| msgid "Whether to include the birth of children in the list of events."
 msgid "Include the children in the matching families."
-msgstr "Określa, czy dołączać urodziny dzieci do listy zdarzeń."
+msgstr "Dodaj dzieci do pasujących rodzin."
 
 #: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include Parents"
-msgstr "Dołącz zdarzenia"
+msgstr "Dołącz rodziców"
 
 #: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
@@ -1232,9 +1192,8 @@ msgid "Multiple Parents Filter"
 msgstr ""
 
 #: FilterRules/hasrolerule.gpr.py:27
-#, fuzzy
 msgid "People with events with a selected role"
-msgstr "zdarzenie urodzin ale bez daty"
+msgstr "Osoby z wydarzeniami o wybranej roli"
 
 #: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
@@ -1242,10 +1201,8 @@ msgstr ""
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
-#, fuzzy
-#| msgid "Change active person?"
 msgid "The active Person"
-msgstr "Zmienić aktywną osobę?"
+msgstr "Aktywna osoba"
 
 #: FilterRules/hassourcefilter.py:58
 msgid "Matches sources with a particular value"
@@ -1257,10 +1214,8 @@ msgid "Active person"
 msgstr "Aktywna osoba"
 
 #: FilterRules/activepersonrule.py:47
-#, fuzzy
-#| msgid "Go to active person"
 msgid "Matches the active person"
-msgstr "Przejdź do osoby aktywnej"
+msgstr "Dopasowuje się do aktywnej osoby"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
@@ -1281,10 +1236,8 @@ msgid "Sources and Citations Report"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
-#, fuzzy
-#| msgid "Provide a short description for this image."
 msgid "Provides a source and Citations Report with notes"
-msgstr "Podaj krótki opis dla tego zdjęcia."
+msgstr "Zapewnia źródło i raport cytowań z notatkami"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
@@ -1292,10 +1245,8 @@ msgid "Key: %s"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:277
-#, fuzzy
-#| msgid "Animation"
 msgid "Citations:"
-msgstr "Animacja"
+msgstr "Cytaty:"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:286
 #, python-format
@@ -1332,10 +1283,9 @@ msgstr ""
 #: SourcesCitationsReport/SourcesCitationsReport.py:372
 #: SourcesCitationsReport/SourcesCitationsReport.py:378
 #: SourcesCitationsReport/SourcesCitationsReport.py:384
-#, fuzzy, python-format
-#| msgid "%s "
+#, python-format
 msgid "%s"
-msgstr "%s "
+msgstr "%s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:326
 #: SourcesCitationsReport/SourcesCitationsReport.py:347
@@ -1344,10 +1294,8 @@ msgid "   ( %s )"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:333
-#, fuzzy
-#| msgid "Add as a Spouse"
 msgid "   Spouses: "
-msgstr "Dodaj jako małżonka"
+msgstr "   Małżonkowie: "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #: GraphView/graphview.py:3168 GraphView/graphview.py:3169
@@ -1362,28 +1310,21 @@ msgid "and %s "
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:349
-#, fuzzy, python-format
-#| msgid "%s "
+#, python-format
 msgid " %s"
-msgstr "%s "
+msgstr " %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:413
-#, fuzzy
-#| msgid "Title of the webpage"
 msgid "Title of the Report"
-msgstr "Tytuł strony www"
+msgstr "Tytuł raportu"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:414
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "Title string for the report."
-msgstr "Styl używany do tytułu raportu."
+msgstr "Ciąg tytułowy raportu."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:417
-#, fuzzy
-#| msgid "Title of the webpage"
 msgid "Subtitle of the Report"
-msgstr "Tytuł strony www"
+msgstr "Podtytuł raportu"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
@@ -1398,10 +1339,8 @@ msgid "Select sources using a filter"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:443
-#, fuzzy
-#| msgid "Show person images"
 msgid "Show persons"
-msgstr "Pokaż zdjęcia osób"
+msgstr "Pokaż osoby"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
@@ -1414,34 +1353,24 @@ msgid "The style used for the title of the report."
 msgstr "Styl używany do tytułu raportu."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:495
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the subtitle of the report."
-msgstr "Styl używany do tytułu raportu."
+msgstr "Styl użyty w podtytule raportu."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:509
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the footer of the report."
-msgstr "Styl używany do tytułu raportu."
+msgstr "Styl użyty w stopce raportu."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:524
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for source title."
-msgstr "Styl używany do tytułu repozytoriów."
+msgstr "Styl użyty w tytule źródła."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:536
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for source subtitle."
-msgstr "Styl używany do tytułu repozytoriów."
+msgstr "Styl użyty w napisach źródłowych."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:548
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for Source details."
-msgstr "Styl używany do każdej sekcji."
+msgstr "Styl użyty dla szczegółów źródła."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:563
 #, fuzzy
@@ -1595,10 +1524,9 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1677
 #: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
 #: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
-#, fuzzy, python-format
-#| msgid "Failure writing %s"
+#, python-format
 msgid "Failed writing %s: %s"
-msgstr "Niepowodzenie przy zapisywaniu %s"
+msgstr "Nie udało się zapisać %s: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:345
 #: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
@@ -2564,9 +2492,9 @@ msgid "Added items in File that are missing in Database"
 msgstr ""
 
 #: Differences/differences.py:191
-#, fuzzy, python-format
+#, python-format
 msgid "Added %s: %s "
-msgstr "Dodaj nowe zdarzenie"
+msgstr "Dodano %s: %s "
 
 #: Differences/differences.py:195
 msgid "Nothing added"
@@ -4466,10 +4394,9 @@ msgstr "Świadkowie"
 
 #: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
 #: DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-format
-#| msgid "Failure writing %s"
+#, python-format
 msgid "Failure writing %s: %s"
-msgstr "Niepowodzenie przy zapisywaniu %s"
+msgstr "Nie udało się zapisać %s: %s"
 
 #: DenominoViso/DenominoViso.py:395
 #, fuzzy
@@ -5898,10 +5825,9 @@ msgid "Writing %s reports..."
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-format
-#| msgid "Descendant"
+#, python-format
 msgid "%s. Descendants of %s"
-msgstr "Potomek"
+msgstr "%s. Potomkowie %s"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
