@@ -221,6 +221,8 @@ def strip_header(po_file):
     """
     header = True
     out_file = ""
+    if not os.path.isfile(po_file):
+        return out_file
     with open(po_file, "r") as in_file:
         for line in in_file:
             if not header:
@@ -999,16 +1001,21 @@ elif command == "extract-po":
             #print (lang)
             po = os.path.join(po_dir, f"{lang}-local.po")
             pot = os.path.join(po_dir, "template.pot")
-            if os.path.exists(po) and os.path.exists(f"po/{lang}.po"):
+            if os.path.exists(f"po/{lang}.po"):
                 old_file = strip_header(po)
                 args = ["msgmerge", f"po/{lang}.po", pot]
                 args.extend(["--for-msgfmt"])
+                args.extend(["--no-fuzzy-matching"])
                 args.extend(["-o", po])
                 call(args)
                 new_file = strip_header(po)
 
+                # Remove files that only consist of a header.
+                if not new_file:
+                    os.remove(po)
+
                 # Restore files that only have changes to the header.
-                if old_file == new_file:
+                if new_file and old_file == new_file:
                     args = ["git", "restore", po]
                     call(args)
 
