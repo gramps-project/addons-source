@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 18:38+0000\n"
 "PO-Revision-Date: 2025-03-09 20:50+0000\n"
-"Last-Translator: leo-jmateo <jmateo.sanchez@tinet.cat>\n"
+"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
 "Language: ca\n"
@@ -967,56 +967,65 @@ msgid ""
 "Select one or more rows and press 'Keep' button to toggle the 'include into "
 "place' status ."
 msgstr ""
+"Noms alternatius\n"
+"Seleccioneu una o més files i premeu el botó 'Conserva' per canviar l'estat "
+"d' 'inclou al lloc'."
 
 #: PlaceCleanup/placecleanup.glade:406
 msgid "Inc"
-msgstr ""
+msgstr "Inc"
 
 #: PlaceCleanup/placecleanup.glade:446
 msgid "Lang"
-msgstr ""
+msgstr "Llengua"
 
 #: PlaceCleanup/placecleanup.glade:520
 msgid ""
 "Select one or more rows and use this button to keep the alternative names."
 msgstr ""
+"Seleccioneu una o més files i utilitzeu aquest botó per mantenir els noms "
+"alternatius."
 
 #: PlaceCleanup/placecleanup.glade:536
 msgid "Select one row and use this button to make the row the primary name."
 msgstr ""
+"Seleccioneu una fila i utilitzeu aquest botó per fer que la fila sigui el "
+"nom principal."
 
 #: PlaceCleanup/placecleanup.glade:548
 msgid "Discard"
-msgstr ""
+msgstr "Descarta"
 
 #: PlaceCleanup/placecleanup.glade:552
 msgid ""
 "Select one or more rows and use this button to discard the alternative names."
 msgstr ""
+"Seleccioneu una o més files i utilitzeu aquest botó per descartar els noms "
+"alternatius."
 
 #: PlaceCleanup/placecleanup.glade:580
 msgid "Cancel the operation, no changes are made to your Place."
-msgstr ""
+msgstr "Cancel·leu l'operació, no es fan canvis al vostre lloc."
 
 #: PlaceCleanup/placecleanup.glade:595
 msgid "Store the values in your Place."
-msgstr ""
+msgstr "Emmagatzema els valors al teu lloc."
 
 #: PlaceCleanup/placecleanup.glade:677
 msgid "Keep Web Links"
-msgstr ""
+msgstr "Mantenir els enllaços web"
 
 #: PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
-msgstr ""
+msgstr "Col·loca enllaços web (normalment wikipedia) al teu lloc."
 
 #: PlaceCleanup/placecleanup.glade:693
 msgid "Add citation and source to Place"
-msgstr ""
+msgstr "Afegeix la citació i la font al lloc"
 
 #: PlaceCleanup/placecleanup.glade:697
 msgid "This Adds a Citation to your place, citing GeoNames."
-msgstr ""
+msgstr "Això afegeix una citació al vostre lloc, citant GeoNames."
 
 #: PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
@@ -1024,11 +1033,11 @@ msgstr "ID d'usuari de GeoNames"
 
 #: PlaceCleanup/placecleanup.glade:723
 msgid "Enter you Geonames user ID here."
-msgstr ""
+msgstr "Introduïu el vostre ID d'usuari de Geonames aquí."
 
 #: PlaceCleanup/placecleanup.glade:735
 msgid "Alternative Names Languages to keep"
-msgstr ""
+msgstr "Noms alternatius Idiomes a mantenir"
 
 #: PlaceCleanup/placecleanup.glade:747
 msgid ""
@@ -1039,10 +1048,16 @@ msgid ""
 "If you often see an un-checked name in a specific language you want, add the "
 "language code here."
 msgstr ""
+"Introduïu els codis de dues o tres lletres dels idiomes que voleu mantenir, "
+"separats per espais.\n"
+"Per exemple \"en fr ca\".\n"
+"Aquests idiomes es marcaran inicialment a la pantalla de resultats de Noms.\n"
+"Si sovint veieu un nom sense marcar en un idioma específic que vulgueu, "
+"afegiu el codi d'idioma aquí."
 
 #: PlaceCleanup/placecleanup.glade:763
 msgid "Currently Enclosed Places"
-msgstr ""
+msgstr "Llocs actualment adjuntats"
 
 #: PlaceCleanup/placecleanup.glade:775
 msgid ""
