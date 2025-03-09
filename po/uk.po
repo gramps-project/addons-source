@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 18:38+0000\n"
-"PO-Revision-Date: 2025-03-06 13:57+0000\n"
-"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"PO-Revision-Date: 2025-03-09 20:50+0000\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -11815,8 +11815,6 @@ msgid "When imprisoned"
 msgstr "Коли ув'язнений"
 
 #: Form/form_us.xml.h:1031
-#, fuzzy
-#| msgid "Were imprisoned"
 msgid "Where imprisoned"
 msgstr "Де ув'язнений"
 
@@ -16667,10 +16665,8 @@ msgid "18. Blind"
 msgstr "18. Сліпі"
 
 #: Form/form_ca.xml.h:387
-#, fuzzy
-#| msgid "19/ Unsound mind"
 msgid "19. Unsound mind"
-msgstr "19. Психічно хворий"
+msgstr "19. Нездоровий розум"
 
 #: Form/form_ca.xml.h:389
 msgid "20. Date of Operations and Remarks"
@@ -21333,66 +21329,56 @@ msgid "Gramplet showing an overview of events for a family"
 msgstr "Грамплет, що показує огляд подій для родини"
 
 #: UAWebConnectPack/UAWebPack.gpr.py:11
-#, fuzzy
-#| msgid "UK Web Connect Pack"
 msgid "UA Web Connect Pack"
-msgstr "Пакет підключення до вебсайтів Великої Британії"
+msgstr "Пакет UA Web Connect"
 
 #: UAWebConnectPack/UAWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the UA (requires libwebconnect)"
-msgstr "Збірка вебсайтів для Великої Британії (потрібен libwebconnect)"
+msgstr "Колекція веб-сайтів для UA (потрібна libwebconnect)"
 
 #: UAWebConnectPack/UAWebPack.py:39
 msgid "Forum: ukrgenealogy.com.ua"
-msgstr ""
+msgstr "Форум: ukrgenealogy.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:40
 msgid "Forum: genoua.name"
-msgstr ""
+msgstr "Форум: genoua.name"
 
 #: UAWebConnectPack/UAWebPack.py:43
 msgid "Encyclopedia: esu.com.ua"
-msgstr ""
+msgstr "Енциклопедія: esu.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:44
 msgid "Wikipedia: uk.wikipedia.org"
-msgstr ""
+msgstr "Вікіпедія: uk.wikipedia.org"
 
 #: UAWebConnectPack/UAWebPack.py:47
 msgid "Repressed DB: reabit.org.ua"
-msgstr ""
+msgstr "Репресовані БД: reabit.org.ua"
 
 #: UAWebConnectPack/UAWebPack.py:50
-#, fuzzy
-#| msgid "FamilySearch.org"
 msgid "Genealogy DB: familysearch.org"
-msgstr "FamilySearch.org"
+msgstr "БД генеології: familysearch.org"
 
 #: UAWebConnectPack/UAWebPack.py:51
 msgid "Genealogy DB: myheritage.com.ua"
-msgstr ""
+msgstr "БД генеології: myheritage.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:53
-#, fuzzy
-#| msgid "Genealogy Online"
 msgid "Genealogy DB: pra.in.ua"
-msgstr "Генеалогія онлайн"
+msgstr "Генеалогія БД: pra.in.ua"
 
 #: UAWebConnectPack/UAWebPack.py:56
 msgid "Map: Ridni.org"
-msgstr ""
+msgstr "Карта: Ridni.org"
 
 #: UAWebConnectPack/UAWebPack.py:59
 msgid "Search: google.com.ua"
-msgstr ""
+msgstr "Пошук: google.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:60
-#, fuzzy
-#| msgid "Search Quota "
 msgid "Search: roots.in.ua"
-msgstr "Ліміт пошуку "
+msgstr "Пошук: roots.in.ua"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
