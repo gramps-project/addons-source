@@ -7,13 +7,14 @@
 # Joan Creus <joan.creus at gmail dot com>, 2008, 2009, 2010, 2011, 2012, 2013.
 # Arnau <arnaullv at gmail dot com>, 2017.
 # Arnau Llovet Vidal <arnaullv@gmail.com>, 2025.
+# leo-jmateo <jmateo.sanchez@tinet.cat>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 18:38+0000\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
-"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"PO-Revision-Date: 2025-03-09 20:50+0000\n"
+"Last-Translator: leo-jmateo <jmateo.sanchez@tinet.cat>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
 "Language: ca\n"
@@ -1052,14 +1053,21 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
+"Quan es neteja un lloc que ja està delimitat, això afecta l’acció que es "
+"realitza.\n"
+"Si '<b>Mantenir l’actual delimitació</b>' està seleccionat, no es fa cap "
+"canvi al lloc delimitador.\n"
+"Si '<b>Substituir per la delimitació de GeoNames</b>' està seleccionat, el "
+"lloc delimitat es canvia pel lloc de nivell següent de GeoNames. Això pot "
+"provocar que alguns llocs no utilitzats continuïn a la base de dades."
 
 #: PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
-msgstr ""
+msgstr "Mantenir l’actual delimitació"
 
 #: PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
-msgstr ""
+msgstr "Substituir per la delimitació de GeoNames"
 
 #: PlaceCleanup/placecleanup.glade:851
 msgid ""
@@ -1067,15 +1075,20 @@ msgid ""
 "You can edit this to help find other places, particularly to reduce the "
 "number of results."
 msgstr ""
+"Títol del lloc actual.\n"
+"Pots editar-lo per ajudar a trobar altres llocs, especialment per reduir el "
+"nombre de resultats."
 
 #: PlaceCleanup/placecleanup.glade:899
 msgid "Search your local places and GeoNames for a match."
-msgstr ""
+msgstr "Cerca coincidències entre els teus llocs locals i GeoNames."
 
 #: PlaceCleanup/placecleanup.glade:915
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
 msgstr ""
+"Continua per fusionar (per als llocs locals) o per completar un lloc (per a "
+"GeoNames)."
 
 #: PlaceCleanup/placecleanup.glade:932
 msgid ""
@@ -1083,6 +1096,9 @@ msgid ""
 "For use when the initial component of the Title is too detailed to be found "
 "in the gazetteer."
 msgstr ""
+"Divideix el títol, edita manualment i delimita amb el nivell següent de la "
+"jerarquia.\tPer utilitzar quan el component inicial del títol és massa "
+"detallat per ser trobat al gaseter."
 
 #: PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
@@ -1090,7 +1106,7 @@ msgstr "Lloc següent"
 
 #: PlaceCleanup/placecleanup.glade:962
 msgid "Find an incomplete place."
-msgstr ""
+msgstr "Troba un lloc incomplet."
 
 #: PlaceCleanup/placecleanup.glade:985
 msgid "Set preferences"
@@ -1098,27 +1114,31 @@ msgstr "Estableix preferències"
 
 #: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
-msgstr ""
+msgstr "Selecciona un d’aquests llocs per continuar el procés de neteja."
 
 #: PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
-msgstr ""
+msgstr "Llocs dels resultats de la cerca"
 
 #: PlaceCleanup/placecleanup.glade:1102
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
 msgstr ""
+"Marcar la casella “Habitat” fa que la cerca a GeoNames inclogui “Llocs "
+"habitats”, és a dir, llocs on les persones viuen i treballen."
 
 #: PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
-msgstr ""
+msgstr "Habitat"
 
 #: PlaceCleanup/placecleanup.glade:1131
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
 msgstr ""
+"Marcar la casella “Administratiu” fa que la cerca a GeoNames inclogui "
+"subdivisions administratives (països, estats, comtats, etc.)."
 
 #: PlaceCleanup/placecleanup.glade:1148
 msgid ""
@@ -1126,6 +1146,8 @@ msgid ""
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
 msgstr ""
+"Marcar la casella “Punt” fa que la cerca a GeoNames inclogui una àmplia "
+"varietat d’altres llocs (esglésies, cementiris, edificis, etc.)."
 
 #: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
@@ -1133,58 +1155,64 @@ msgstr "Admin"
 
 #: PlaceCleanup/placecleanup.glade:1174
 msgid "Spot"
-msgstr ""
+msgstr "Punt"
 
 #: FilterRules/isrelatedwithfiltermatch.py:53
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 msgid "People related to <filter>"
-msgstr ""
+msgstr "Persones relacionades amb <filter>"
 
 #: FilterRules/isrelatedwithfiltermatch.py:55
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
+"Coincideix amb les persones que estan relacionades amb qualsevol persona que "
+"compleixi el filtre de persones"
 
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
 msgid "People separated less than <N> degrees of <person>"
-msgstr ""
+msgstr "Persones separades menys de <N> graus de <person>"
 
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr ""
+"Regla de filtre que coincideix amb parents segons els graus de separació"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
-msgstr ""
+msgstr "Paràmetres de coincidència de la font"
 
 #: FilterRules/hassourcefilter.gpr.py:29
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr ""
+"Coincideix amb fonts que tenen valors que contenen els paràmetres "
+"seleccionats"
 
 #: FilterRules/multipleparents.py:42
 msgid "People with multiple parent records"
-msgstr ""
+msgstr "Persones amb múltiples registres de progenitors"
 
 #: FilterRules/multipleparents.py:43
 msgid "Matches people who have more than one set of parents"
-msgstr ""
+msgstr "Coincideix amb persones que tenen més d’un conjunt de progenitors"
 
 #: FilterRules/associationsofpersonmatch.py:46
 #: FilterRules/associationsofpersonmatch.py:47
 #: FilterRules/associationsofpersonmatch.gpr.py:25
 #: FilterRules/associationsofpersonmatch.gpr.py:26
 msgid "Match associations of <person filter>"
-msgstr ""
+msgstr "Coincideix amb les associacions de <person filter>"
 
 #: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
-msgstr ""
+msgstr "NO coincideix amb el rol seleccionat"
 
 #: FilterRules/hasrolerule.py:56
 msgid "Finds the items that don't have event Roles of the selected type."
 msgstr ""
+"Troba els elements que no tenen rols d’esdeveniment del tipus seleccionat."
 
 #: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
 msgid "Inverse"
@@ -1197,6 +1225,7 @@ msgstr "Persones amb esdeveniments amb el <role>"
 #: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
 msgid "Matches people with an event with a selected role"
 msgstr ""
+"Coincideix amb persones que tenen un esdeveniment amb el rol seleccionat"
 
 #: FilterRules/hasrolerule.py:92
 msgid "Families with events with the <role>"
@@ -1205,42 +1234,45 @@ msgstr "Famílies amb esdeveniments amb el <role>"
 #: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
 msgid "Matches families with an event with a selected role"
 msgstr ""
+"Coincideix amb famílies que tenen un esdeveniment amb el rol seleccionat"
 
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:26
 #: FilterRules/isfamilyfiltermatchevent.py:63
 #: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
-msgstr ""
+msgstr "Esdeveniments de famílies que coincideixen amb un <family filter>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:25
 #: FilterRules/familieswitheventfiltermatch.py:45
 msgid "Families matching <event filter>"
-msgstr ""
+msgstr "Famílies que coincideixen amb <event filter>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
-msgstr ""
+msgstr "Coincideix amb les famílies que compleixen un filtre d’esdeveniments"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
-msgstr ""
+msgstr "Coincideix amb les famílies que compleixen un filtre d’esdeveniments"
 
 #: FilterRules/degreesofseparation.py:47
 msgid "Number of degrees of separation from person."
-msgstr ""
+msgstr "Nombre de graus de separació respecte a la persona."
 
 #: FilterRules/degreesofseparation.py:59
 msgid "Degrees:"
-msgstr ""
+msgstr "Graus:"
 
 #: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
 msgid "People with <count> of <event>"
-msgstr ""
+msgstr "Persones amb <count> de <event>"
 
 #: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
 msgid "Matches persons which have events of given type and number."
 msgstr ""
+"Coincideix amb persones que tenen esdeveniments d’un tipus i nombre "
+"determinats."
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
@@ -1248,7 +1280,7 @@ msgstr "Incloure Fills"
 
 #: FilterRules/infamilyrule.py:49
 msgid "Include the children in the matching families."
-msgstr ""
+msgstr "Inclou els fills en les famílies coincidents."
 
 #: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
 msgid "Include Parents"
@@ -1256,29 +1288,31 @@ msgstr "Inclou els pares"
 
 #: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
-msgstr ""
+msgstr "Inclou els progenitors en les famílies coincidents."
 
 #: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
 msgid "Family Filter name:"
-msgstr ""
+msgstr "Nom del filtre de família:"
 
 #: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
 #: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
 msgid "People who are part of families matching <filter>"
-msgstr ""
+msgstr "Persones que formen part de famílies que coincideixen amb <filter>"
 
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
 #: FilterRules/ageatdeath.py:74
 msgid "Filter people by their age at death"
-msgstr ""
+msgstr "Filtra les persones per la seva edat en el moment de la mort"
 
 #: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
 msgstr ""
+"Regla de filtre que coincideix amb les persones segons la seva edat en el "
+"moment de la mort"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
-msgstr ""
+msgstr "Filtre de múltiples progenitors"
 
 #: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
@@ -1286,7 +1320,7 @@ msgstr "Persones amb esdeveniments amb un rol seleccionat"
 
 #: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
-msgstr ""
+msgstr "Famílies amb esdeveniments amb el rol seleccionat"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
@@ -1295,7 +1329,7 @@ msgstr "La Persona activa"
 
 #: FilterRules/hassourcefilter.py:58
 msgid "Matches sources with a particular value"
-msgstr ""
+msgstr "Coincideix amb fonts que tenen un valor específic"
 
 #: FilterRules/activepersonrule.py:45 DataEntryGramplet/DataEntryGramplet.py:71
 #: NoteGramplet/NoteGramplet.py:65
@@ -1308,7 +1342,7 @@ msgstr "Coincideix amb la persona activa"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
-msgstr ""
+msgstr "Edat en anys en el moment de la mort de la persona."
 
 #: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
 #: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
@@ -1318,11 +1352,11 @@ msgstr ""
 #: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
 #: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
 msgid "Age:"
-msgstr ""
+msgstr "Edat:"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
-msgstr ""
+msgstr "Informe de fonts i citacions"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
@@ -1331,21 +1365,21 @@ msgstr "Proporciona una font i un informe de citacions amb notes"
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
 msgid "Key: %s"
-msgstr ""
+msgstr "Clau: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:277
 msgid "Citations:"
-msgstr ""
+msgstr "Citacions:"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:286
 #, python-format
 msgid "%d"
-msgstr ""
+msgstr "%d"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:288
 #, python-format
 msgid "  %s"
-msgstr ""
+msgstr "  %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:294
 #, python-format
@@ -1355,12 +1389,12 @@ msgstr " - %s "
 #: SourcesCitationsReport/SourcesCitationsReport.py:300
 #, python-format
 msgid "   Type: %s"
-msgstr ""
+msgstr "   Tipus: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:302
 #, python-format
 msgid "   N-ID: %s"
-msgstr ""
+msgstr "   N-ID: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:310
 #, python-format
@@ -1374,7 +1408,7 @@ msgstr "   %s"
 #: SourcesCitationsReport/SourcesCitationsReport.py:384
 #, python-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:326
 #: SourcesCitationsReport/SourcesCitationsReport.py:347
@@ -1391,17 +1425,17 @@ msgstr "   Cònjugues: "
 #: GraphView/graphview.py:3181 GraphView/graphview.py:3182
 #, python-format
 msgid "%s "
-msgstr ""
+msgstr "%s "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:338
 #, python-format
 msgid "and %s "
-msgstr ""
+msgstr "i %s "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:349
 #, python-format
 msgid " %s"
-msgstr ""
+msgstr " %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:413
 msgid "Title of the Report"
@@ -1413,19 +1447,19 @@ msgstr "Cadena de títol per a l'informe."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
-msgstr ""
+msgstr "Subtítol de l’informe"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
-msgstr ""
+msgstr "Cadena de subtítol per a l’informe."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
-msgstr ""
+msgstr "Nom del investigador"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:436
 msgid "Select sources using a filter"
-msgstr ""
+msgstr "Selecciona fonts mitjançant un filtre"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:443
 msgid "Show persons"
@@ -1433,7 +1467,7 @@ msgstr "Mostra persones"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
-msgstr ""
+msgstr "Si es mostren els esdeveniments i les persones esmentades a la nota"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
 #: RepositoriesReport/RepositoriesReportAlt.py:504
@@ -1481,35 +1515,36 @@ msgstr "L'estil utilitzat per als detalls d'esdeveniments i persones."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
-msgstr ""
+msgstr "Arbre d’avantpassats utilitzant LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
-msgstr ""
+msgstr "Arbre de descendents utilitzant LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
-msgstr ""
+msgstr "Arbre d’avis"
 
 #: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
-msgstr ""
+msgstr "Arbre d’avis utilitzant LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
-msgstr ""
+msgstr "Arbre de rellotge de sorra"
 
 #: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
-msgstr ""
+msgstr "Arbre de rellotge de sorra utilitzant LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
-msgstr ""
+msgstr "Arbre de rellotge de sorra per a una família"
 
 #: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr ""
+"Arbre de rellotge de sorra per a una família utilitzant LaTeX genealogytree"
 
 #: GenealogyTree/gt_sandclock.py:235
 msgid "The center family for the report"
@@ -1517,11 +1552,11 @@ msgstr "La família del centre per a l'informe"
 
 #: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
-msgstr ""
+msgstr "Generacions amunt"
 
 #: GenealogyTree/gt_sandclock.py:242
 msgid "Generations down"
-msgstr ""
+msgstr "Generacions avall"
 
 #: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
@@ -1529,7 +1564,7 @@ msgstr "Inclou germans"
 
 #: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
-msgstr ""
+msgstr "Inclou els germans dels avantpassats."
 
 #: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
 #: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
@@ -1539,46 +1574,48 @@ msgstr "Inclou imatges"
 #: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
 #: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
 msgid "Include images of people in the nodes."
-msgstr ""
+msgstr "Inclou imatges de les persones als nodes."
 
 #: GenealogyTree/gt_grandparent.py:119
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
-msgstr ""
+msgstr "La persona %s no té tant un avi patern com un avi matern"
 
 #: GenealogyTree/gt_grandparent.py:227
 msgid "Grandparent family spacing"
-msgstr ""
+msgstr "Espaiat entre les famílies dels avis"
 
 #: GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
-msgstr ""
+msgstr "Espai addicional entre les famílies dels avis (mm)"
 
 #: GenealogyTree/gt_descendant.py:191
 msgid "First spouse left"
-msgstr ""
+msgstr "Primer cònjuge a l’esquerra"
 
 #: GenealogyTree/gt_descendant.py:192
 msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
+"Col·loca sempre el primer dels múltiples cònjuges a l’esquerra. Això pot "
+"ajudar a reduir els encreuaments de línies en cas de múltiples matrimonis."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
-msgstr ""
+msgstr "Persona GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:31
 msgid "_Person GEXF"
-msgstr ""
+msgstr "_Persona GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
-msgstr ""
+msgstr "GEXF s’utilitza en moltes aplicacions de gràfics de xarxa."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
 msgid "GEXF export options"
-msgstr ""
+msgstr "Opcions d’exportació GEXF"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -1597,17 +1634,17 @@ msgstr "Error en escriure %s: %s"
 #: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
 #, python-format
 msgid "Failed to create directory structure : %s"
-msgstr ""
+msgstr "No s’ha pogut crear l’estructura de directoris: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368
 #: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr ""
+msgstr "No s’ha pogut copiar els fitxers web: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
-msgstr ""
+msgstr "Opcions de l’arbre plegable d’avantpassats"
 
 #: D3Charts/AncestralCollapsibleTree.py:840
 #: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
@@ -1616,74 +1653,76 @@ msgstr "Inclou generacions"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
 msgid "Male Background Color"
-msgstr ""
+msgstr "Color de fons per a homes"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
-msgstr ""
+msgstr "Color RGB per al fons de la caixa dels homes."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
 msgid "Male Expandable Background Color"
-msgstr ""
+msgstr "Color de fons ampliable per a homes"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
 msgid "RGB-color for male expandable box background."
-msgstr ""
+msgstr "Color RGB per al fons de la caixa ampliable dels homes."
 
 #: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
-msgstr ""
+msgstr "Fons per a dones"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr ""
+msgstr "Color RGB per al fons de la caixa de les dones."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
-msgstr ""
+msgstr "Fons ampliable per a dones"
 
 #: D3Charts/AncestralCollapsibleTree.py:861
 msgid "RGB-color for female expandable box background."
-msgstr ""
+msgstr "Color RGB per al fons de la caixa ampliable de les dones."
 
 #: D3Charts/AncestralCollapsibleTree.py:867
 #: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
 msgid "The destination path for generated files."
-msgstr ""
+msgstr "El camí de destinació per als fitxers generats."
 
 #: D3Charts/AncestralCollapsibleTree.py:872
 #: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
-msgstr ""
+msgstr "El nom del fitxer de destinació per al contingut HTML."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
-msgstr ""
+msgstr "Diagrama en ventall d’avantpassats"
 
 #: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
+"Genera una pàgina web amb una representació gràfica dels avantpassats (SVG) "
+"en forma de diagrama en ventall, utilitzant la biblioteca JavaScript D3.js."
 
 #: D3Charts/DescendantIndentedTree.py:673
 #, python-format
 msgid "See %(reference)s : %(spouse)s"
-msgstr ""
+msgstr "Vegeu %(reference)s : %(spouse)s"
 
 #: D3Charts/DescendantIndentedTree.py:764
 msgid "Generating report..."
-msgstr ""
+msgstr "Generant informe…"
 
 #: D3Charts/DescendantIndentedTree.py:909
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 msgid "Descendant Indented Tree"
-msgstr ""
+msgstr "Arbre de descendents amb sagnat"
 
 #: D3Charts/DescendantIndentedTree.py:1364
 msgid "Invalid Destination Directory"
-msgstr ""
+msgstr "Directori de destinació no vàlid"
 
 #: D3Charts/DescendantIndentedTree.py:1365
 #, python-format
@@ -1691,11 +1730,13 @@ msgid ""
 "Destinaton diretory %s does not exist\n"
 "Do you want to attempt to create it?"
 msgstr ""
+"El directori de destinació %s no existeix.\n"
+"Vols intentar crear-lo?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
-msgstr ""
+msgstr "No s’ha pogut crear %s: %s"
 
 #: D3Charts/DescendantIndentedTree.py:1391
 #, python-format
