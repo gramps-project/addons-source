@@ -213,6 +213,62 @@ class DataDict2(dict):
         )
 
     @property
+    def notes(self):
+        return DataList2(
+            [
+                DataDict2(sa.dbase.get_raw_note_data(handle), callback=self.callback)
+                for handle in self.note_list
+            ],
+        )
+
+    @property
+    def tags(self):
+        return DataList2(
+            [
+                DataDict2(sa.dbase.get_raw_tag_data(handle), callback=self.callback)
+                for handle in self.tag_list
+            ],
+        )
+
+    @property
+    def citations(self):
+        return DataList2(
+            [
+                DataDict2(sa.dbase.get_raw_citation_data(handle), callback=self.callback)
+                for handle in self.citation_list
+            ],
+        )
+
+    @property
+    def media(self):
+        return self.media_list
+
+    @property
+    def events(self):
+        return DataList2(
+            [
+                DataDict2(sa.dbase.get_raw_event_data(handle), callback=self.callback)
+                for handle in self.event_list
+            ],
+        )
+
+    @property
+    def attributes(self):
+        return self.attribute_list
+
+    @property
+    def addresses(self):
+        return self.address_list
+
+    @property
+    def lds_ords(self):
+        return self.lds_ord_list
+
+    @property
+    def references(self):
+        return self.person_ref_list
+
+    @property
     def name(self):
         if self["_class"] == "Person":
             return self.primary_name
