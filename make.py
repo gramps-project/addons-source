@@ -313,10 +313,12 @@ def extract_po(addon):
     Extract the Weblate translations for a single addon.
     """
     po_dir = os.path.join(addon, "po")
+    pot = os.path.join(po_dir, "template.pot")
+    if not os.path.exists(pot):
+        return
     for lang in get_all_languages():
         #print (lang)
         po = os.path.join(po_dir, f"{lang}-local.po")
-        pot = os.path.join(po_dir, "template.pot")
         if os.path.exists(f"po/{lang}.po"):
             old_file = strip_header(po)
             args = ["msgmerge", f"po/{lang}.po", pot]
