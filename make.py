@@ -215,6 +215,42 @@ def do_tar(inc_files):
     tar.close()
 
 
+def compile_addon(addon):
+    """
+    Compile a single addon.
+    """
+    for po in glob.glob(f"{addon}/po/*.po"):
+        locale = os.path.basename(po[:-9])
+        mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
+        system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
+
+
+def build_addon(addon):
+    """
+    Compile and build a single addon.
+    """
+    compile_addon(addon)
+
+    if os.path.isfile(f"{addon}/setup.py"):
+        system(f"cd {addon}; python3 setup.py --build")
+        return
+
+    patts = [
+        f"{addon}/*.py",
+        f"{addon}/*.glade",
+        f"{addon}/*.xml",
+        f"{addon}/*.txt",
+        f"{addon}/locale/*/LC_MESSAGES/*.mo",
+    ]
+    if os.path.isfile(f"{addon}/MANIFEST"):
+        patts.extend(open(f"{addon}/MANIFEST", "r").read().split())
+    files = []
+    for patt in patts:
+        files.extend(glob.glob(patt))
+    if files:
+        do_tar(files)
+
+
 def strip_header(po_file):
     """
     Strip the header off a `po` file and return its contents.
@@ -425,67 +461,21 @@ elif command == "update":
     # # Done!
     echo(f'\nYou can edit "{addon}/po/{locale}-local.po"')
 
-elif command in ["compile"]:
+elif command == "compile":
     if addon == "all":
         dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
         for addon in dirs:
-            for po in glob.glob(f"{addon}/po/*.po"):
-                locale = os.path.basename(po[:-9])
-                mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
-                system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
+            compile_addon(addon)
     else:
-        for po in glob.glob(f"{addon}/po/*.po"):
-            locale = os.path.basename(po[:-9])
-            mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
-            system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
+        compile_addon(addon)
+
 elif command == "build":
     if addon == "all":
         dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
-        # Compile all:
         for addon in dirs:
-            for po in glob.glob(f"{addon}/po/*.po"):
-                locale = os.path.basename(po[:-9])
-                mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
-                system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
-        # Build all:
-        for addon in dirs:
-            if os.path.isfile(f"{addon}/setup.py"):
-                system("cd %s; python3 setup.py --build" % addon)
-                continue
-            patts = [
-                f"{addon}/*.py",
-                f"{addon}/*.glade",
-                f"{addon}/*.xml",
-                f"{addon}/*.txt",
-                f"{addon}/locale/*/LC_MESSAGES/*.mo",
-            ]
-            if os.path.isfile(f"{addon}/MANIFEST"):
-                patts.extend(open(f"{addon}/MANIFEST", "r").read().split())
-            files = []
-            for patt in patts:
-                files.extend(glob.glob(patt))
-            if not files:
-                # git doesn't remove empty folders when switching branchs
-                continue
-            do_tar(files)
+            build_addon(addon)
     else:
-        for po in glob.glob(f"{addon}/po/*.po"):
-            locale = os.path.basename(po[:-9])
-            mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
-            system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
-        patts = [
-            f"{addon}/*.py",
-            f"{addon}/*.glade",
-            f"{addon}/*.xml",
-            f"{addon}/*.txt",
-            f"{addon}/locale/*/LC_MESSAGES/*.mo",
-        ]
-        if os.path.isfile(f"{addon}/MANIFEST"):
-            patts.extend(open(f"{addon}/MANIFEST", "r").read().split())
-        files = []
-        for patt in patts:
-            files.extend(glob.glob(patt))
-        do_tar(files)
+        build_addon(addon)
 
 elif command == "as-needed":
     import tempfile
