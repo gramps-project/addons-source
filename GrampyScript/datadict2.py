@@ -45,6 +45,7 @@ def flatten(lst):
             result.append(item)
     return result
 
+
 class NoneData:
 
     # def __setattr__(self, attr, value):
@@ -67,6 +68,9 @@ class NoneData:
     def __call__(self, *args, **kwargs):
         # print(args, kwargs)
         return ""
+
+    def __iter__(self):
+        return iter([])
 
 
 class DataDict2(dict):
@@ -234,7 +238,9 @@ class DataDict2(dict):
     def citations(self):
         return DataList2(
             [
-                DataDict2(sa.dbase.get_raw_citation_data(handle), callback=self.callback)
+                DataDict2(
+                    sa.dbase.get_raw_citation_data(handle), callback=self.callback
+                )
                 for handle in self.citation_list
             ],
         )
@@ -253,6 +259,10 @@ class DataDict2(dict):
         )
 
     @property
+    def reference(self):
+        return DataDict2(sa.dbase.get_raw_person_data(self.ref), callback=self.callback)
+
+    @property
     def attributes(self):
         return self.attribute_list
 
@@ -267,6 +277,22 @@ class DataDict2(dict):
     @property
     def references(self):
         return self.person_ref_list
+
+    @property
+    def back_references(self):
+        retval = []
+        for obj_type, ohandle in sa.dbase.find_backlink_handles(self.handle):
+            obj = sa.dbase.method("get_%s_from_handle", obj_type)(ohandle)
+            retval.append(DataDict2(obj, callback=self.callback))
+        return DataList2(retval)
+
+    @property
+    def back_references_recursively(self):
+        retval = []
+        for obj_type, ohandle in self._object.get_referenced_handles_recursively():
+            obj = sa.dbase.method("get_%s_from_handle", obj_type)(ohandle)
+            retval.append(DataDict2(obj, callback=self.callback))
+        return DataList2(retval)
 
     @property
     def name(self):
