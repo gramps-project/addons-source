@@ -631,9 +631,10 @@ for person in people():
             "Citation": EditCitation,
             "Media": EditMedia,
         }
-        editfunc = map[table_name]
-        obj = self.db._get_table_func(table_name, "handle_func")(handle)
-        editfunc(self.dbstate, self.uistate, [], obj)
+        if table_name in map:
+            editfunc = map[table_name]
+            obj = self.db._get_table_func(table_name, "handle_func")(handle)
+            editfunc(self.dbstate, self.uistate, [], obj)
 
     def add_table(self, args):
         # We store all data as strings
@@ -756,7 +757,7 @@ for person in people():
                 elif item["_class"] == "Note":
                     return "[%s] %s" % (item.gramps_id, item._object.type)
                 elif item["_class"] == "Tag":
-                    return "[%s] %s" % (item.gramps_id, item._object)
+                    return "%s" % (item.name)
                 # Misc:
                 elif item["_class"] == "Name":
                     return "%s, %s" % (
@@ -1153,9 +1154,9 @@ for person in people():
         except Exception:
             traceback.print_exc(file=sys.stdout)
         print("Executed: %r" % self.last_filename)
-        if self.count:
+        if self.treeview:
             print("Selected: %s" % self.count)
-        print("Execution time: %s (seconds)" % (time.time() - start_time))
+        print("Execution time: %0.5f (seconds)" % (time.time() - start_time))
         # Restore stdout
         sys.stdout = old_stdout
         STDOUT = redirected_output.getvalue()
@@ -1180,7 +1181,7 @@ for person in people():
             self.notebook.set_current_page(2)
             self.canvas.queue_draw()
             self.statusmsg.set_text("Chart is ready")
-        elif self.treeview:
+        elif self.count > 0:
             self.notebook.set_current_page(0)
             self.statusmsg.set_text("Table is ready")
         else:
