@@ -250,6 +250,19 @@ def build_addon(addon):
     if files:
         do_tar(files)
 
+def check_gramps_path(command):
+    try:
+        sys.path.insert(0, GRAMPSPATH)
+        os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
+        from gramps.gen.const import GRAMPS_LOCALE as glocale
+        from gramps.gen.plug import make_environment
+    except ImportError:
+        print(
+            "Where is Gramps: '%s'? Use "
+            "'GRAMPSPATH=path python3 make.py %s %s'"
+            % (os.path.abspath(GRAMPSPATH), gramps_version, command)
+        )
+        exit()
 
 def strip_header(po_file):
     """
@@ -267,6 +280,60 @@ def strip_header(po_file):
                 header = False
     return out_file
 
+
+def aggregate_pot():
+    """
+    Aggregate the template files for all addons into a single file without
+    strings that are already present in core Gramps.
+    """
+    args = ["touch", "po/template.pot"]
+    call(args)
+
+    args = ["xgettext", "-j", "-o", "po/template.pot"]
+    args.extend(glob.glob("*/po/template.pot"))
+    call(args)
+
+    gramps_pot = os.path.join(GRAMPSPATH, "po/gramps.pot")
+    args = ["msgcomm", "po/template.pot", gramps_pot]
+    args.extend(["--unique"])
+    args.extend(["-o", "po/unique.pot"])
+    call(args)
+
+    args = ["msgcomm", "po/template.pot", "po/unique.pot"]
+    args.extend(["--more-than", "1"])
+    args.extend(["-o", "po/addons.pot"])
+    call(args)
+
+    os.remove("po/template.pot")
+    os.remove("po/unique.pot")
+
+
+def extract_po(addon):
+    """
+    Extract the Weblate translations for a single addon.
+    """
+    po_dir = os.path.join(addon, "po")
+    for lang in get_all_languages():
+        #print (lang)
+        po = os.path.join(po_dir, f"{lang}-local.po")
+        pot = os.path.join(po_dir, "template.pot")
+        if os.path.exists(f"po/{lang}.po"):
+            old_file = strip_header(po)
+            args = ["msgmerge", f"po/{lang}.po", pot]
+            args.extend(["--for-msgfmt"])
+            args.extend(["--no-fuzzy-matching"])
+            args.extend(["-o", po])
+            call(args)
+            new_file = strip_header(po)
+
+            # Remove files that only consist of a header.
+            if not new_file:
+                os.remove(po)
+
+            # Restore files that only have changes to the header.
+            if new_file and old_file == new_file:
+                args = ["git", "restore", po]
+                call(args)
 
 if command == "clean":
     if len(sys.argv) == 3:
@@ -950,64 +1017,15 @@ elif command == "listing":
         json.dump(output, fp_out, indent=0)
 
 elif command == "aggregate-pot":
-    try:
-        sys.path.insert(0, GRAMPSPATH)
-        os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
-        from gramps.gen.const import GRAMPS_LOCALE as glocale
-        from gramps.gen.plug import make_environment
-    except ImportError:
-        print(
-            "Where is Gramps: '%s'? Use "
-            "'GRAMPSPATH=path python3 make.py %s aggregate-pot'"
-            % (os.path.abspath(GRAMPSPATH), gramps_version)
-        )
-        exit()
-
-    args = ["touch", "po/template.pot"]
-    call(args)
-
-    args = ["xgettext", "-j", "-o", "po/template.pot"]
-    args.extend(glob.glob("*/po/template.pot"))
-    call(args)
-
-    gramps_pot = os.path.join(GRAMPSPATH, "po/gramps.pot")
-    args = ["msgcomm", "po/template.pot", gramps_pot]
-    args.extend(["--unique"])
-    args.extend(["-o", "po/unique.pot"])
-    call(args)
-
-    args = ["msgcomm", "po/template.pot", "po/unique.pot"]
-    args.extend(["--more-than", "1"])
-    args.extend(["-o", "po/addons.pot"])
-    call(args)
-
-    os.remove("po/template.pot")
-    os.remove("po/unique.pot")
+    check_gramps_path(command)
+    aggregate_pot()
 
 elif command == "extract-po":
-    for po_dir in glob.glob("*/po"):
-        print (po_dir[:-3])
-        for lang in get_all_languages():
-            #print (lang)
-            po = os.path.join(po_dir, f"{lang}-local.po")
-            pot = os.path.join(po_dir, "template.pot")
-            if os.path.exists(f"po/{lang}.po"):
-                old_file = strip_header(po)
-                args = ["msgmerge", f"po/{lang}.po", pot]
-                args.extend(["--for-msgfmt"])
-                args.extend(["--no-fuzzy-matching"])
-                args.extend(["-o", po])
-                call(args)
-                new_file = strip_header(po)
-
-                # Remove files that only consist of a header.
-                if not new_file:
-                    os.remove(po)
-
-                # Restore files that only have changes to the header.
-                if new_file and old_file == new_file:
-                    args = ["git", "restore", po]
-                    call(args)
+    for addon in [file for file in glob.glob("*")
+                  if os.path.isdir(file)
+                  and file != "po"]:
+        print (addon)
+        extract_po(addon)
 
 else:
     raise AttributeError("unknown command")
