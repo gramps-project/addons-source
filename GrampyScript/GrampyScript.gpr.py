@@ -20,7 +20,7 @@
 register(
     GRAMPLET,
     id="Grampy Script",
-    name=_("Grampy Script"),
+    name=_("Gram.py Script"),
     description=_("Run a special Gramps Python script"),
     status=STABLE,
     version="0.0.1",
@@ -29,7 +29,7 @@ register(
     authors_email=["doug.blank@gmail.com"],
     gramps_target_version="6.0",
     gramplet="GrampyScript",
-    gramplet_title=_("Grampy Script"),
+    gramplet_title=_("Gram.py Script"),
     help_url="Addon:GrampyScript",
     height=800,
 )

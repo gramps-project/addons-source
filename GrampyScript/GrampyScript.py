@@ -1,6 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
+# Copyright (C) 2021-2023 Kari Kujansuu
 # Copyright (C) 2025      Doug Blank
 #
 # This program is free software; you can redistribute it and/or modify
@@ -87,7 +88,7 @@ class ScriptOpenFileChooserDialog(Gtk.FileChooserDialog):
         # type: (DisplayState) -> None
         Gtk.FileChooserDialog.__init__(
             self,
-            title="Load query from a .script file",
+            title=_("Load query from a .script file"),
             transient_for=uistate.window,
             action=Gtk.FileChooserAction.OPEN,
         )
@@ -117,7 +118,7 @@ class ScriptSaveFileChooserDialog(Gtk.FileChooserDialog):
         # type: (DisplayState) -> None
         Gtk.FileChooserDialog.__init__(
             self,
-            title="Save query to a .script file",
+            title=_("Save query to a .script file"),
             transient_for=uistate.window,
             action=Gtk.FileChooserAction.SAVE,
         )
@@ -137,7 +138,7 @@ class CsvFileChooserDialog(Gtk.FileChooserDialog):
         # type: (DisplayState) -> None
         Gtk.FileChooserDialog.__init__(
             self,
-            title="Download results as a CSV file",
+            title=_("Download results as a CSV file"),
             transient_for=uistate.window,
             action=Gtk.FileChooserAction.SAVE,
         )
@@ -1016,9 +1017,6 @@ for person in people():
                 self.execute_code(code)
 
     def execute_code(self, code):
-        with open(self.last_filename, "w") as fp:
-            fp.write(self.get_text())
-
         self.db = self.dbstate.db
         self.sa = SimpleAccess(self.db)
         set_sa(self.sa)
@@ -1026,7 +1024,7 @@ for person in people():
         self.column_names = get_columns(code, "row")
         self.statusmsg.set_text("")
 
-        def begin_changes(message="Grampy Script Edited Data"):
+        def begin_changes(message=_("Gram.py Script Edited Data")):
             if self.CHANGING:
                 end_changes()
 
