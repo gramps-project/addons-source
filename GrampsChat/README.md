@@ -18,7 +18,7 @@ In essence: GrampsChat provides a framework for interfacing with a conversationa
 
 Keep in mind: You'll need to configure it with an AI model and any necessary API keys to get it working.
 
-The Windows and Linux versions of the Addon Manager will us pip to automatically install the required `litellm' module, if the "Allow Gramps to install required Python modules" settings option is set appropriately. 
+The Windows and Linux versions of the Addon Manager will use `pip` to automatically install the required `litellm' module, if the "Allow Gramps to install required Python modules" settings option is set appropriately. 
 The macOS version Installation of the required module must be done manually.   
 
 See
