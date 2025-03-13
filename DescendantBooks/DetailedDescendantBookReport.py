@@ -614,7 +614,7 @@ class DetailedDescendantBookReport(Report):
             name = self._name_display.display_name(person.get_primary_name())
             report_count = report_count + 1
             self.doc.start_paragraph("DDR-Entry")
-            text = self._("%d. %s") % (report_count, name)
+            text = self._("{report_count:d}. {name}").format(report_count=report_count, name=name)
             mark = IndexMark(text, INDEX_TYPE_TOC, 2)
             self.doc.write_text(text, mark)
             self.doc.end_paragraph()
@@ -694,8 +694,7 @@ class DetailedDescendantBookReport(Report):
                 # Don't print duplicate people in second reports, simple reference them
                 rep, gen, dnum = self.persons_printed[person_handle]
                 self.doc.write_text(self._(
-                    "See Report : %s, Generation : %s, Person : %s") % \
-                    self.persons_printed[person_handle])
+                    "See Report : {report}, Generation : {generation}, Person : {person}").format(report=rep, generation=gen, person=dnum)
                 self.doc.end_paragraph()
                 return
 
@@ -768,8 +767,7 @@ class DetailedDescendantBookReport(Report):
                             header_done = True
 
                         self.doc.start_paragraph("DDR-Entry")
-                        ref_str = self._("Spouse of: Report: %s, Generation: %s, Person: %s") \
-                                % (repno, gen, per)
+                        ref_str = self._("Spouse of: Report: {report}, Generation: {generation}, Person: {person}").format(report=repno, generation=gen, person=per)
                         self.doc.write_text_citation(ref_str)
                         self.doc.end_paragraph()
                     else:
@@ -781,8 +779,7 @@ class DetailedDescendantBookReport(Report):
                             header_done = True
 
                         self.doc.start_paragraph("DDR-Entry")
-                        ref_str = self._("Report: %s, Generation: %s, Person: %s") \
-                                % (repno, gen, per)
+                        ref_str = self._("Report: {report}, Generation: {generation}, Person: {person}").format(report=repno, generation=gen, person=per)
                         self.doc.write_text_citation(ref_str)
                         self.doc.end_paragraph()
 #BOOK end
@@ -993,8 +990,7 @@ class DetailedDescendantBookReport(Report):
                 if mate_handle in self.dnumber:
                     self.doc.start_paragraph('DDR-MoreDetails')
                     self.doc.write_text_citation(
-                        self._("Ref: %s. %s") %
-                        (self.dnumber[mate_handle], name))
+                        self._("Ref: {number}. {name}").format(number=self.dnumber[mate_handle], name=name)
                     self.doc.end_paragraph()
                 else:
                     self.dmates[mate_handle] = person.get_handle()
