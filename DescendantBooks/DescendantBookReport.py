@@ -439,7 +439,7 @@ class DescendantBookReport(Report):
             if len(self.ascendants) > 1:
                 report_count = report_count + 1
                 report_titles[report_count] = \
-                    _("%s. Descendants of %s") % (report_count, name)
+                    _("{report_count}. Descendants of {name}").format(report_count=report_count, name=name)
             else:
                 report_titles[report_count] = _("Descendants of %s") % name
             mark = IndexMark(report_titles[report_count], INDEX_TYPE_TOC, 1)
@@ -478,7 +478,7 @@ class DescendantBookReport(Report):
             name = self._name_display.display_name(person.get_primary_name())
             report_count = report_count + 1
             self.doc.start_paragraph("DR-TOC-Detail")
-            text = _("%d. %s") % (report_count, name)
+            text = _("{report_count:d}. {name}").format(report_count=report_count, name=name)
             mark = IndexMark(text, INDEX_TYPE_TOC, 2)
             self.doc.write_text(text, mark)
             self.doc.end_paragraph()
