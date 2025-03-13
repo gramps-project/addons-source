@@ -391,8 +391,8 @@ class DenominoVisoReport(Report):
                 if self.start_person:
                     start_handle = self.start_person.get_handle()
                 else:
-                    ErrorDialog(_('Failure writing %s: %s') % (self.target_path,
-                        _('No central person selected')))
+                    ErrorDialog(_('Failure writing {target_path}: {message}').format(target_path=self.target_path,
+                        message=_('No central person selected')))
                     return
                 if self.options['DNMchart_type'] == _cnsts.REGULAR:
                     if self.options['DNMchart_mode'] == _cnsts.DESCENDANT:
@@ -408,7 +408,7 @@ class DenominoVisoReport(Report):
                                 startup[self.options['DNMchart_type']][self.options['DNMtime_dir']])
                 self.end_page(f)
         except IOError as msg:
-            ErrorDialog(_('Failure writing %s: %s') % (self.target_path,str(msg)))
+            ErrorDialog(_('Failure writing {target_path}: {message}').format(target_path=self.target_path, message=str(msg)))
             return
 
     # I need four tree-walking routines: for ascestor/descendant mode and for
@@ -2500,7 +2500,7 @@ function %(bd)s2html(person,containerDL) {
         try:
             f = codecs.open(self.options['DNMfilename4old_browser'], 'w', encoding='UTF-8')
         except IOError as msg:
-            ErrorDialog(_('Failure writing %s: %s') % (self.options['DNMfilename4old_browser'], str(msg)))
+            ErrorDialog(_('Failure writing {target_path}: {message}').format(target_path=self.options['DNMfilename4old_browser'], message=str(msg)))
             return
         f.write(strng)
         f.close()
