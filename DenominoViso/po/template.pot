@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -116,8 +116,8 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
 #: DenominoViso/DenominoViso.py:2503
-#, python-format
-msgid "Failure writing %s: %s"
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:395
