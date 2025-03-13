@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,33 +17,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: SourceIndex/SourceIndex.gpr.py:24
+#: SourceIndex/death.py:87 SourceIndex/birth.py:126 SourceIndex/marriage.py:87
+#: SourceIndex/index.py:92 SourceIndex/witness.py:64 SourceIndex/census.py:82
+msgid "Sources Index"
+msgstr ""
+
+#: SourceIndex/SourceIndex.gpr.py:24 SourceIndex/SourceIndex.gpr.py:25
 msgid "BirthIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:40
+#: SourceIndex/SourceIndex.gpr.py:40 SourceIndex/SourceIndex.gpr.py:41
 msgid "MarriageIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:56
+#: SourceIndex/SourceIndex.gpr.py:56 SourceIndex/SourceIndex.gpr.py:57
 msgid "DeathIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:72
+#: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
 msgid "CensusIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:88
+#: SourceIndex/SourceIndex.gpr.py:88 SourceIndex/SourceIndex.gpr.py:89
 msgid "Witness"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:104
+#: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
 msgid "SourceIndex"
-msgstr ""
-
-#: SourceIndex/marriage.py:87 SourceIndex/census.py:82 SourceIndex/index.py:92
-#: SourceIndex/death.py:87 SourceIndex/witness.py:64 SourceIndex/birth.py:126
-msgid "Sources Index"
 msgstr ""
 
 #: SourceIndex/index.py:407
@@ -208,6 +208,182 @@ msgid ""
 "fields: id, repository, person name, birth date and place, parents."
 msgstr ""
 
+#: SourceIndex/death.glade:78 SourceIndex/death.glade:484
+#: SourceIndex/census.glade:745 SourceIndex/birth.glade:47
+#: SourceIndex/birth.glade:316 SourceIndex/birth.glade:852
+#: SourceIndex/marriage.glade:266
+msgid "Date:"
+msgstr ""
+
+#: SourceIndex/death.glade:97 SourceIndex/census.glade:728
+#: SourceIndex/birth.glade:65 SourceIndex/marriage.glade:64
+msgid "Info:"
+msgstr ""
+
+#: SourceIndex/death.glade:131 SourceIndex/death.glade:201
+#: SourceIndex/census.glade:777 SourceIndex/census.glade:841
+#: SourceIndex/marriage.glade:284 SourceIndex/marriage.glade:1233
+msgid "ID:"
+msgstr ""
+
+#: SourceIndex/death.glade:165
+msgid "Death act:"
+msgstr ""
+
+#: SourceIndex/death.glade:182 SourceIndex/census.glade:873
+#: SourceIndex/birth.glade:113 SourceIndex/marriage.glade:1263
+msgid "Reference:"
+msgstr ""
+
+#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
+#: SourceIndex/marriage.glade:1296
+msgid "Volume:"
+msgstr ""
+
+#: SourceIndex/death.glade:282
+msgid "<b>Death act</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:353 SourceIndex/death.glade:465
+#: SourceIndex/death.glade:788 SourceIndex/census.glade:190
+#: SourceIndex/marriage.glade:405 SourceIndex/marriage.glade:591
+#: SourceIndex/marriage.glade:610 SourceIndex/marriage.glade:629
+#: SourceIndex/marriage.glade:1330 SourceIndex/marriage.glade:1493
+msgid "Name:"
+msgstr ""
+
+#: SourceIndex/death.glade:386 SourceIndex/census.glade:254
+#: SourceIndex/birth.glade:230
+msgid "Gender:"
+msgstr ""
+
+#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
+#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
+#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
+#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
+#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
+msgid "First name:"
+msgstr ""
+
+#: SourceIndex/death.glade:503
+msgid "Place:"
+msgstr ""
+
+#: SourceIndex/death.glade:521 SourceIndex/death.glade:669
+#: SourceIndex/death.glade:939 SourceIndex/witness.glade:107
+#: SourceIndex/census.glade:286 SourceIndex/birth.glade:544
+#: SourceIndex/birth.glade:762 SourceIndex/marriage.glade:467
+#: SourceIndex/marriage.glade:789 SourceIndex/marriage.glade:808
+#: SourceIndex/marriage.glade:827 SourceIndex/marriage.glade:1562
+#: SourceIndex/marriage.glade:1621
+msgid "Age:"
+msgstr ""
+
+#: SourceIndex/death.glade:589 SourceIndex/census.glade:973
+#: SourceIndex/birth.glade:388 SourceIndex/marriage.glade:234
+msgid "<b>Image</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
+#: SourceIndex/marriage.glade:185
+msgid "<b>Repository</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
+msgid "<b>Data person</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:703 SourceIndex/death.glade:892
+#: SourceIndex/witness.glade:124 SourceIndex/census.glade:510
+#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
+#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
+#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
+msgid "Origin:"
+msgstr ""
+
+#: SourceIndex/death.glade:722 SourceIndex/death.glade:821
+#: SourceIndex/witness.glade:141 SourceIndex/census.glade:543
+#: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
+#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
+#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
+#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
+msgid "Occupation:"
+msgstr ""
+
+#: SourceIndex/death.glade:741 SourceIndex/death.glade:854
+#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
+#: SourceIndex/birth.glade:710 SourceIndex/marriage.glade:560
+#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
+#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
+#: SourceIndex/marriage.glade:1455
+msgid "Live:"
+msgstr ""
+
+#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
+msgid "<b>Witness:</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
+msgid "Birth date:"
+msgstr ""
+
+#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
+msgid "Birth place:"
+msgstr ""
+
+#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
+msgid "Note:"
+msgstr ""
+
+#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
+msgid "Spouse name:"
+msgstr ""
+
+#: SourceIndex/death.glade:1131
+msgid "Marriage date:"
+msgstr ""
+
+#: SourceIndex/death.glade:1163
+msgid "Marriage place:"
+msgstr ""
+
+#: SourceIndex/death.glade:1195
+msgid "<b>Data mother</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:1210
+msgid "<b>Data father</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:1225
+msgid "<b>Spouse</b> "
+msgstr ""
+
+#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
+#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
+#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
+#: SourceIndex/marriage.glade:1874
+msgid "alive"
+msgstr ""
+
+#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+
+#: SourceIndex/death.glade:1452 SourceIndex/witness.glade:360
+#: SourceIndex/census.glade:63 SourceIndex/birth.glade:1365
+#: SourceIndex/marriage.glade:1976
+msgid "Cancel"
+msgstr ""
+
+#: SourceIndex/death.glade:1507 SourceIndex/witness.glade:415
+#: SourceIndex/census.glade:117 SourceIndex/birth.glade:1420
+#: SourceIndex/marriage.glade:2031
+msgid "OK"
+msgstr ""
+
 #: SourceIndex/witness.glade:7
 msgid "witness"
 msgstr ""
@@ -226,77 +402,40 @@ msgstr ""
 msgid "First names:"
 msgstr ""
 
-#: SourceIndex/witness.glade:107 SourceIndex/birth.glade:544
-#: SourceIndex/birth.glade:762 SourceIndex/death.glade:521
-#: SourceIndex/death.glade:669 SourceIndex/death.glade:939
-#: SourceIndex/census.glade:286 SourceIndex/marriage.glade:467
-#: SourceIndex/marriage.glade:789 SourceIndex/marriage.glade:808
-#: SourceIndex/marriage.glade:827 SourceIndex/marriage.glade:1562
-#: SourceIndex/marriage.glade:1621
-msgid "Age:"
-msgstr ""
-
-#: SourceIndex/witness.glade:124 SourceIndex/death.glade:703
-#: SourceIndex/death.glade:892 SourceIndex/census.glade:510
-#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
-#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
-#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
-msgid "Origin:"
-msgstr ""
-
-#: SourceIndex/witness.glade:141 SourceIndex/birth.glade:578
-#: SourceIndex/birth.glade:677 SourceIndex/death.glade:722
-#: SourceIndex/death.glade:821 SourceIndex/census.glade:543
-#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
-#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
-#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
-msgid "Occupation:"
-msgstr ""
-
-#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
-#: SourceIndex/birth.glade:710 SourceIndex/death.glade:741
-#: SourceIndex/death.glade:854 SourceIndex/marriage.glade:560
-#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
-#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
-#: SourceIndex/marriage.glade:1455
-msgid "Live:"
-msgstr ""
-
 #: SourceIndex/witness.glade:175
 msgid "Relationship:"
 msgstr ""
 
-#: SourceIndex/witness.glade:360 SourceIndex/birth.glade:1365
-#: SourceIndex/death.glade:1452 SourceIndex/census.glade:63
-#: SourceIndex/marriage.glade:1976
-msgid "Cancel"
+#: SourceIndex/census.glade:160
+msgid "<b>Census</b>"
 msgstr ""
 
-#: SourceIndex/witness.glade:415 SourceIndex/birth.glade:1420
-#: SourceIndex/death.glade:1507 SourceIndex/census.glade:117
-#: SourceIndex/marriage.glade:2031
-msgid "OK"
+#: SourceIndex/census.glade:364
+msgid "Death date:"
 msgstr ""
 
-#: SourceIndex/birth.glade:47 SourceIndex/birth.glade:316
-#: SourceIndex/birth.glade:852 SourceIndex/death.glade:78
-#: SourceIndex/death.glade:484 SourceIndex/census.glade:745
-#: SourceIndex/marriage.glade:266
-msgid "Date:"
+#: SourceIndex/census.glade:414
+msgid "Death place:"
 msgstr ""
 
-#: SourceIndex/birth.glade:65 SourceIndex/death.glade:97
-#: SourceIndex/census.glade:728 SourceIndex/marriage.glade:64
-msgid "Info:"
+#: SourceIndex/census.glade:447
+msgid "Family status:"
+msgstr ""
+
+#: SourceIndex/census.glade:811
+msgid "Address:"
+msgstr ""
+
+#: SourceIndex/census.glade:1046
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr ""
+
+#: SourceIndex/census.glade:1090
+msgid "Note"
 msgstr ""
 
 #: SourceIndex/birth.glade:99
 msgid "Birth act:"
-msgstr ""
-
-#: SourceIndex/birth.glade:113 SourceIndex/death.glade:182
-#: SourceIndex/census.glade:873 SourceIndex/marriage.glade:1263
-msgid "Reference:"
 msgstr ""
 
 #: SourceIndex/birth.glade:129
@@ -317,11 +456,6 @@ msgstr ""
 msgid "select the gender/sex"
 msgstr ""
 
-#: SourceIndex/birth.glade:230 SourceIndex/death.glade:386
-#: SourceIndex/census.glade:254
-msgid "Gender:"
-msgstr ""
-
 #: SourceIndex/birth.glade:247
 msgid "The names of the main person written into the source"
 msgstr ""
@@ -336,11 +470,6 @@ msgstr ""
 
 #: SourceIndex/birth.glade:351
 msgid "Repository title"
-msgstr ""
-
-#: SourceIndex/birth.glade:388 SourceIndex/death.glade:589
-#: SourceIndex/census.glade:973 SourceIndex/marriage.glade:234
-msgid "<b>Image</b>"
 msgstr ""
 
 #: SourceIndex/birth.glade:406
@@ -432,135 +561,6 @@ msgstr ""
 
 #: SourceIndex/birth.glade:2287
 msgid "<b><i>Source</i></b>"
-msgstr ""
-
-#: SourceIndex/death.glade:131 SourceIndex/death.glade:201
-#: SourceIndex/census.glade:777 SourceIndex/census.glade:841
-#: SourceIndex/marriage.glade:284 SourceIndex/marriage.glade:1233
-msgid "ID:"
-msgstr ""
-
-#: SourceIndex/death.glade:165
-msgid "Death act:"
-msgstr ""
-
-#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
-#: SourceIndex/marriage.glade:1296
-msgid "Volume:"
-msgstr ""
-
-#: SourceIndex/death.glade:282
-msgid "<b>Death act</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:353 SourceIndex/death.glade:465
-#: SourceIndex/death.glade:788 SourceIndex/census.glade:190
-#: SourceIndex/marriage.glade:405 SourceIndex/marriage.glade:591
-#: SourceIndex/marriage.glade:610 SourceIndex/marriage.glade:629
-#: SourceIndex/marriage.glade:1330 SourceIndex/marriage.glade:1493
-msgid "Name:"
-msgstr ""
-
-#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
-#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
-#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
-#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
-#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-msgid "First name:"
-msgstr ""
-
-#: SourceIndex/death.glade:503
-msgid "Place:"
-msgstr ""
-
-#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
-#: SourceIndex/marriage.glade:185
-msgid "<b>Repository</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
-msgid "<b>Data person</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
-msgid "<b>Witness:</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
-msgid "Birth date:"
-msgstr ""
-
-#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
-msgid "Birth place:"
-msgstr ""
-
-#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
-msgid "Note:"
-msgstr ""
-
-#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
-msgid "Spouse name:"
-msgstr ""
-
-#: SourceIndex/death.glade:1131
-msgid "Marriage date:"
-msgstr ""
-
-#: SourceIndex/death.glade:1163
-msgid "Marriage place:"
-msgstr ""
-
-#: SourceIndex/death.glade:1195
-msgid "<b>Data mother</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:1210
-msgid "<b>Data father</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:1225
-msgid "<b>Spouse</b> "
-msgstr ""
-
-#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
-#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
-#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
-#: SourceIndex/marriage.glade:1874
-msgid "alive"
-msgstr ""
-
-#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-
-#: SourceIndex/census.glade:160
-msgid "<b>Census</b>"
-msgstr ""
-
-#: SourceIndex/census.glade:364
-msgid "Death date:"
-msgstr ""
-
-#: SourceIndex/census.glade:414
-msgid "Death place:"
-msgstr ""
-
-#: SourceIndex/census.glade:447
-msgid "Family status:"
-msgstr ""
-
-#: SourceIndex/census.glade:811
-msgid "Address:"
-msgstr ""
-
-#: SourceIndex/census.glade:1046
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr ""
-
-#: SourceIndex/census.glade:1090
-msgid "Note"
 msgstr ""
 
 #: SourceIndex/marriage.glade:49
