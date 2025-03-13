@@ -344,7 +344,7 @@ class DBI(object):
         table = Table()
         self.sdb = SimpleAccess(self.database)
         self.process_table(table) # a class that has .row(1, 2, 3, ...)
-        print(_("%d rows processed in %s seconds.\n") % (self.select, time.time() - start_time))
+        print(_("{rows:d} rows processed in {secs} seconds.\n").format(rows=self.select, secs=time.time() - start_time)
         return table
 
     def eval(self):
@@ -364,7 +364,7 @@ class DBI(object):
             self.sdoc.paragraph("%d rows processed in %s seconds.\n" % (self.select, time.time() - start_time))
             self.stab.write(self.sdoc)
             self.sdoc.paragraph("")
-        return _("%d rows processed in %s seconds.\n") % (self.select, time.time() - start_time)
+        return _("{rows:d} rows processed in {secs} seconds.\n").format(rows=self.select, secs=time.time() - start_time)
 
     def get_columns(self, table):
         """
