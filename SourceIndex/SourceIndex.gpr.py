@@ -23,7 +23,7 @@ register(
     id="BirthIndex",
     name=_("BirthIndex"),
     description=_("BirthIndex"),
-    version = '0.0.38',
+    version = '0.0.39',
     gramps_target_version="6.0",
     include_in_listing=False,
     status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
@@ -39,7 +39,7 @@ register(
     id="MarriageIndex",
     name=_("MarriageIndex"),
     description=_("MarriageIndex"),
-    version = '0.0.36',
+    version = '0.0.37',
     gramps_target_version="6.0",
     include_in_listing=False,
     status=STABLE,  # not yet tested with python 3,
@@ -55,7 +55,7 @@ register(
     id="DeathIndex",
     name=_("DeathIndex"),
     description=_("DeathIndex"),
-    version = '0.0.36',
+    version = '0.0.37',
     gramps_target_version="6.0",
     include_in_listing=False,
     status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
@@ -71,7 +71,7 @@ register(
     id="CensusIndex",
     name=_("CensusIndex"),
     description=_("CensusIndex"),
-    version = '0.0.36',
+    version = '0.0.37',
     gramps_target_version="6.0",
     include_in_listing=False,
     status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
@@ -87,7 +87,7 @@ register(
     id="Witness",
     name=_("Witness"),
     description=_("Witness"),
-    version = '0.0.36',
+    version = '0.0.37',
     gramps_target_version="6.0",
     include_in_listing=False,
     status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
@@ -103,7 +103,7 @@ register(
     id="Index",
     name=_("SourceIndex"),
     description=_("SourceIndex"),
-    version = '0.0.40',
+    version = '0.0.41',
     gramps_target_version="6.0",
     include_in_listing=False,
     status=STABLE,  # not yet tested with python 3, see feature 5552
