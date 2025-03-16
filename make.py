@@ -70,6 +70,7 @@ command = sys.argv[2]
 if len(sys.argv) >= 4:
     addon = sys.argv[3]
 
+
 def system(scmd, **kwargs):
     """
     Replace and call system with scmd.
@@ -250,6 +251,7 @@ def build_addon(addon):
     if files:
         do_tar(files)
 
+
 def check_gramps_path(command):
     try:
         sys.path.insert(0, GRAMPSPATH)
@@ -263,6 +265,7 @@ def check_gramps_path(command):
             % (os.path.abspath(GRAMPSPATH), gramps_version, command)
         )
         exit()
+
 
 def strip_header(po_file):
     """
@@ -317,7 +320,7 @@ def extract_po(addon):
     if not os.path.exists(pot):
         return
     for lang in get_all_languages():
-        #print (lang)
+        # print (lang)
         po = os.path.join(po_dir, f"{lang}-local.po")
         if os.path.exists(f"po/{lang}.po"):
             old_file = strip_header(po)
@@ -336,6 +339,7 @@ def extract_po(addon):
             if new_file and old_file == new_file:
                 args = ["git", "restore", po]
                 call(args)
+
 
 if command == "clean":
     if len(sys.argv) == 3:
@@ -396,18 +400,18 @@ elif command == "init":
                 continue  # skip this one if not listed
 
             mkdir(f"{addon}/po")
-            fnames = ' '.join(glob.glob(f"{addon}/*.py"))
+            fnames = " ".join(glob.glob(f"{addon}/*.py"))
             system(
                 f"xgettext --language=Python --keyword=_ --keyword=N_"
                 f" --from-code=UTF-8"
                 f' -o "{addon}/po/template.pot" {fnames} '
             )
-            fnames = ' '.join(glob.glob("%s/*.glade" % addon))
+            fnames = " ".join(glob.glob("%s/*.glade" % addon))
             if fnames:
                 system(
                     "xgettext -j --add-comments -L Glade "
                     f'--from-code=UTF-8 -o "{addon}/po/template.pot" '
-                    f'{fnames}'
+                    f"{fnames}"
                 )
 
             # scan for xml files and get translation text where the tag
@@ -510,9 +514,7 @@ elif command == "update":
         f'"{addon}/po/{locale}-local.po" '
     )
     # Get all of the addon strings out of the catalog:
-    system(
-        f"touch {addon}/po/{locale}-temp.po"
-    )
+    system(f"touch {addon}/po/{locale}-temp.po")
     system(
         f"msggrep --location={addon}/* "
         f'"{addon}/po/{locale}-global.po" '
@@ -721,18 +723,18 @@ elif command == "as-needed":
         cleanup(addon)
         if todo:  # make an updated pot file
             mkdir("%(addon)s/po")
-            fnames = ' '.join(glob.glob(f"{addon}/*.py"))
+            fnames = " ".join(glob.glob(f"{addon}/*.py"))
             system(
                 "xgettext --language=Python --keyword=_ --keyword=N_"
                 " --from-code=UTF-8"
                 f' -o "{addon}/po/temp.pot" {fnames} '
             )
-            fnames = ' '.join(glob.glob(f"{addon}/*.glade"))
+            fnames = " ".join(glob.glob(f"{addon}/*.glade"))
             if fnames:
                 system(
                     "xgettext -j --add-comments -L Glade "
                     f'--from-code=UTF-8 -o "{addon}/po/temp.pot" '
-                    f'{fnames}'
+                    f"{fnames}"
                 )
 
             # scan for xml files and get translation text where the tag
@@ -1023,10 +1025,10 @@ elif command == "aggregate-pot":
     aggregate_pot()
 
 elif command == "extract-po":
-    for addon in [file for file in glob.glob("*")
-                  if os.path.isdir(file)
-                  and file != "po"]:
-        print (addon)
+    for addon in [
+        file for file in glob.glob("*") if os.path.isdir(file) and file != "po"
+    ]:
+        print(addon)
         extract_po(addon)
 
 else:
