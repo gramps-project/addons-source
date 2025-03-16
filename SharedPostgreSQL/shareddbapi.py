@@ -838,7 +838,7 @@ class SharedDBAPI(DbGeneric):
         changes as part of the transaction.
         """
         table = KEY_TO_NAME_MAP[obj_key]
-        handle = data["handle"]
+        handle = self.serializer.get_from_data_by_name(data, "handle")
 
         if self._has_handle(obj_key, handle):
             # update the object:
@@ -1236,7 +1236,7 @@ class SharedDBAPI(DbGeneric):
                     % table
                 )
                 self.dbapi.execute(sql, [self.dbapi.treeid, handle, self.serializer.data_to_string(data)])
-            obj = self.serializer.data_to_object(data)
+            obj = self.serializer.data_to_object(data, cls)
             self._update_secondary_values(obj)
 
     def get_surname_list(self):
