@@ -1,7 +1,7 @@
 <schema
  xmlns='http://www.w3.org/2001/XMLSchema'
- targetNamespace='http://gramps-project.org/xml/1.7.1/'
- xmlns:gramps='http://gramps-project.org/xml/1.7.1/'>
+ targetNamespace='http://gramps-project.org/xml/1.7.2/'
+ xmlns:gramps='http://gramps-project.org/xml/1.7.2/'>
  <element name='database'>
   <complexType>
    <sequence>
@@ -536,8 +536,8 @@
   <complexType>
    <sequence>
     <element ref='gramps:ptitle' minOccurs='0' maxOccurs='1'/>
-    <element ref='gramps:code' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:pname' maxOccurs='unbounded'/>
+    <element ref='gramps:code' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:coord' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:placeref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:location' minOccurs='0' maxOccurs='unbounded'/>
@@ -995,6 +995,7 @@
    <sequence>
     <element ref='gramps:attribute' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
    </sequence>
    <attribute name='hlink' type='IDREF' use='required'/>
    <attribute name='priv' use='optional'>
@@ -1210,4 +1211,3 @@
   </complexType>
  </element>
 </schema>
-
