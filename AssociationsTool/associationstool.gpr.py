@@ -35,6 +35,7 @@ register(
     id="associationstool",
     name=_("Check Associations data"),
     description=_("Will check the data on Association for people."),
+    help_url="Addon:AssociationsTool",
     version = '1.1.15',
     gramps_target_version=MODULE_VERSION,
     include_in_listing=True,
