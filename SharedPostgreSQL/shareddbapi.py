@@ -90,7 +90,7 @@ class SharedDBAPI(DbGeneric):
         """
         # Check if json_data exists on metadata as a proxy to see
         # if the database has been converted to use JSON data
-        return self.dbapi.column_exists("metadata", "json_data")
+        return self.dbapi._schema_version_exists()
 
     def upgrade_table_for_json_data(self, table_name):
         """
@@ -109,11 +109,18 @@ class SharedDBAPI(DbGeneric):
         """
         return self.dbapi.table_exists("trees")
 
-    def _create_schema(self):
+    def _create_schema(self, json_data):
         """
         Create and update schema.
         """
         self.dbapi.begin()
+
+        if json_data:
+            col_data = "json_data TEXT"
+            meta_col_data = "json_data TEXT, value BLOB"
+        else:
+            col_data = "blob_data BLOB"
+            meta_col_data = "value BLOB"
 
         # make sure schema is up to date:
         self.dbapi.execute(
@@ -131,7 +138,7 @@ class SharedDBAPI(DbGeneric):
             "PRIMARY KEY (treeid, handle), "
             "given_name TEXT, "
             "surname TEXT, "
-            "json_data TEXT"
+            f"{col_data}"
             ")"
         )
         self.dbapi.execute(
@@ -140,7 +147,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "json_data TEXT"
+            f"{col_data}"
             ")"
         )
         self.dbapi.execute(
@@ -149,7 +156,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "json_data TEXT"
+            f"{col_data}"
             ")"
         )
         self.dbapi.execute(
@@ -158,7 +165,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "json_data TEXT"
+            f"{col_data}"
             ")"
         )
         self.dbapi.execute(
@@ -167,7 +174,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "json_data TEXT"
+            f"{col_data}"
             ")"
         )
         self.dbapi.execute(
@@ -176,7 +183,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "json_data TEXT"
+            f"{col_data}"
             ")"
         )
         self.dbapi.execute(
@@ -186,7 +193,7 @@ class SharedDBAPI(DbGeneric):
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
             "enclosed_by VARCHAR(50), "
-            "json_data TEXT"
+            f"{col_data}"
             ")"
         )
         self.dbapi.execute(
@@ -195,7 +202,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "json_data TEXT"
+            f"{col_data}"
             ")"
         )
         self.dbapi.execute(
@@ -204,7 +211,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "json_data TEXT"
+            f"{col_data}"
             ")"
         )
         self.dbapi.execute(
@@ -213,7 +220,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "json_data TEXT"
+            f"{col_data}"
             ")"
         )
         # Secondary:
@@ -242,7 +249,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "setting VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, setting), "
-            "json_data TEXT"
+            f"{meta_col_data}"
             ")"
         )
         self.dbapi.execute(
@@ -298,6 +305,14 @@ class SharedDBAPI(DbGeneric):
         )
 
         self.dbapi.commit()
+
+    def _drop_column(self, table_name, column_name):
+        """
+        Used to remove a column of data which we don't need anymore.
+        Must be used within a tranaction
+        If db doesn't support, nothing happens
+        """
+        # we never do this for shared databases!
 
     def _close(self):
         self.dbapi.close()
@@ -404,7 +419,9 @@ class SharedDBAPI(DbGeneric):
         Get all of the metadata setting names from the
         database.
         """
-        self.dbapi.execute("SELECT setting FROM metadata WHERE treeid = ?", [self.dbapi.treeid])
+        self.dbapi.execute(
+            "SELECT setting FROM metadata WHERE treeid = ?", [self.dbapi.treeid]
+        )
         return [row[0] for row in self.dbapi.fetchall()]
 
     def _get_metadata(self, key, default=[]):
@@ -798,9 +815,13 @@ class SharedDBAPI(DbGeneric):
         if self._has_handle(obj_key, obj.handle):
             old_data = self._get_raw_data(obj_key, obj.handle)
             # update the object:
-            sql = f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?" % table
+            sql = (
+                f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?"
+                % table
+            )
             self.dbapi.execute(
-                sql, [self.serializer.object_to_string(obj), obj.handle, self.dbapi.treeid]
+                sql,
+                [self.serializer.object_to_string(obj), obj.handle, self.dbapi.treeid],
             )
         else:
             # Insert the object:
@@ -808,7 +829,8 @@ class SharedDBAPI(DbGeneric):
                 f"INSERT INTO %s (treeid, handle, {self.serializer.data_field}) VALUES (?, ?, ?)"
             ) % table
             self.dbapi.execute(
-                sql, [self.dbapi.treeid, obj.handle, self.serializer.object_to_string(obj)]
+                sql,
+                [self.dbapi.treeid, obj.handle, self.serializer.object_to_string(obj)],
             )
         self._update_secondary_values(obj)
         if not trans.batch:
@@ -842,12 +864,21 @@ class SharedDBAPI(DbGeneric):
 
         if self._has_handle(obj_key, handle):
             # update the object:
-            sql = f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?" % table
-            self.dbapi.execute(sql, [self.serializer.data_to_string(data), handle, self.dbapi.treeid])
+            sql = (
+                f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?"
+                % table
+            )
+            self.dbapi.execute(
+                sql, [self.serializer.data_to_string(data), handle, self.dbapi.treeid]
+            )
         else:
             # Insert the object:
-            sql = (f"INSERT INTO %s (treeid, handle, {self.serializer.data_field}) VALUES (?, ?)") % table
-            self.dbapi.execute(sql, [self.dbapi.treeid, handle, self.serializer.data_to_string(data)])
+            sql = (
+                f"INSERT INTO %s (treeid, handle, {self.serializer.data_field}) VALUES (?, ?)"
+            ) % table
+            self.dbapi.execute(
+                sql, [self.dbapi.treeid, handle, self.serializer.data_to_string(data)]
+            )
 
         return
 
@@ -874,7 +905,7 @@ class SharedDBAPI(DbGeneric):
         )
 
         # Now, add the current ones
-        for (ref_class_name, ref_handle) in current_references:
+        for ref_class_name, ref_handle in current_references:
             sql = (
                 "INSERT INTO reference "
                 + "(treeid, obj_handle, obj_class, ref_handle, ref_class)"
@@ -893,13 +924,13 @@ class SharedDBAPI(DbGeneric):
 
         if not transaction.batch:
             # Add new references to the transaction
-            for (ref_class_name, ref_handle) in new_references:
+            for ref_class_name, ref_handle in new_references:
                 key = (obj.handle, ref_handle)
                 data = (obj.handle, obj.__class__.__name__, ref_handle, ref_class_name)
                 transaction.add(REFERENCE_KEY, TXNADD, key, None, data)
 
             # Add old references to the transaction
-            for (ref_class_name, ref_handle) in no_longer_required_references:
+            for ref_class_name, ref_handle in no_longer_required_references:
                 key = (obj.handle, ref_handle)
                 old_data = (
                     obj.handle,
@@ -939,7 +970,7 @@ class SharedDBAPI(DbGeneric):
         )
         # Add old references to the transaction
         if not transaction.batch:
-            for (ref_class_name, ref_handle) in rows:
+            for ref_class_name, ref_handle in rows:
                 key = (obj_handle, ref_handle)
                 old_data = (obj_handle, obj_class, ref_handle, ref_class_name)
                 transaction.add(REFERENCE_KEY, TXNDEL, key, old_data, None)
@@ -1003,7 +1034,10 @@ class SharedDBAPI(DbGeneric):
         Return an iterator over raw data in the database.
         """
         table = KEY_TO_NAME_MAP[obj_key]
-        sql = f"SELECT handle, {self.serializer.data_field} FROM %s WHERE treeid = ?" % table
+        sql = (
+            f"SELECT handle, {self.serializer.data_field} FROM %s WHERE treeid = ?"
+            % table
+        )
         with self.dbapi.cursor() as cursor:
             cursor.execute(sql, [self.dbapi.treeid])
             rows = cursor.fetchmany()
@@ -1071,7 +1105,7 @@ class SharedDBAPI(DbGeneric):
                     obj = self.serializer.data_to_object(val, class_func)
                     references = set(obj.get_referenced_handles_recursively())
                     # handle addition of new references
-                    for (ref_class_name, ref_handle) in references:
+                    for ref_class_name, ref_handle in references:
                         self.dbapi.execute(
                             "INSERT INTO reference "
                             "(treeid, obj_handle, obj_class, ref_handle, ref_class) "
@@ -1156,7 +1190,10 @@ class SharedDBAPI(DbGeneric):
 
     def _get_raw_data(self, obj_key, handle):
         table = KEY_TO_NAME_MAP[obj_key]
-        sql = f"SELECT {self.serializer.data_field} FROM %s WHERE handle = ? AND treeid = ?" % table
+        sql = (
+            f"SELECT {self.serializer.data_field} FROM %s WHERE handle = ? AND treeid = ?"
+            % table
+        )
         self.dbapi.execute(sql, [handle, self.dbapi.treeid])
         row = self.dbapi.fetchone()
         if row:
@@ -1164,7 +1201,10 @@ class SharedDBAPI(DbGeneric):
 
     def _get_raw_from_id_data(self, obj_key, gramps_id):
         table = KEY_TO_NAME_MAP[obj_key]
-        sql = f"SELECT {self.serializer.data_field} FROM %s WHERE gramps_id = ? AND treeid = ?" % table
+        sql = (
+            f"SELECT {self.serializer.data_field} FROM %s WHERE gramps_id = ? AND treeid = ?"
+            % table
+        )
         self.dbapi.execute(sql, [gramps_id, self.dbapi.treeid])
         row = self.dbapi.fetchone()
         if row:
@@ -1229,13 +1269,19 @@ class SharedDBAPI(DbGeneric):
                     f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?"
                     % table
                 )
-                self.dbapi.execute(sql, [self.serializer.data_to_string(data), handle, self.dbapi.treeid])
+                self.dbapi.execute(
+                    sql,
+                    [self.serializer.data_to_string(data), handle, self.dbapi.treeid],
+                )
             else:
                 sql = (
                     f"INSERT INTO %s (treeid, handle, {self.serializer.data_field}) VALUES (?, ?, ?)"
                     % table
                 )
-                self.dbapi.execute(sql, [self.dbapi.treeid, handle, self.serializer.data_to_string(data)])
+                self.dbapi.execute(
+                    sql,
+                    [self.dbapi.treeid, handle, self.serializer.data_to_string(data)],
+                )
             obj = self.serializer.data_to_object(data, cls)
             self._update_secondary_values(obj)
 

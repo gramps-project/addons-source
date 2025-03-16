@@ -159,6 +159,21 @@ class Connection:
             [treeid, "version", version_str],
         )
 
+    def _schema_version_exists(self):
+        """Check if the schema version exists."""
+        treeid = self._get_treeid()
+        if not treeid:
+            raise ValueError("Tree ID not found")
+        self.execute(
+            "SELECT COUNT(*) FROM metadata WHERE treeid = ? AND setting = ? AND json_data IS NOT NULL",
+            [treeid, "version"],
+        )
+        row = self.fetchone()
+        if not row:
+            return False
+        count = row[0]
+        return count > 0
+
     def check_collation(self, locale):
         """
         Checks that a collation exists and if not creates it.
@@ -223,10 +238,13 @@ class Connection:
         """
         self.__cursor.execute(
             "SELECT COUNT(*) FROM information_schema.columns "
-            "WHERE table_name = %s AND column_name = %s", 
-            (table, column)
+            "WHERE table_name = %s AND column_name = %s",
+            (table, column),
         )
         return self.fetchone()[0] != 0
+
+    def drop_column(self, table_name, column_name):
+        pass  # we never delete columns on shared databases!
 
     def close(self):
         self.__connection.close()
