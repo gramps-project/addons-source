@@ -25,7 +25,6 @@ Backend for PostgreSQL database.
 """
 
 import os
-import pickle
 import re
 from uuid import uuid4
 
@@ -34,6 +33,7 @@ from gramps.gen.config import config
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db.dbconst import ARRAYSIZE
 from gramps.gen.db.exceptions import DbConnectionError
+from gramps.gen.lib.json_utils import dict_to_string
 from gramps.gen.utils.configmanager import ConfigManager
 
 try:
@@ -153,9 +153,10 @@ class Connection:
         if not treeid:
             raise ValueError("Tree ID not found")
         version = SharedPostgreSQL.VERSION[0]
+        version_str = dict_to_string({"type": "str", "value": str(version)})
         self.execute(
-            "INSERT INTO metadata (treeid, setting, value) VALUES (?, ?, ?)",
-            [treeid, "version", pickle.dumps(str(version))],
+            f"INSERT INTO metadata (treeid, setting, json_data) VALUES (?, ?, ?)",
+            [treeid, "version", version_str],
         )
 
     def check_collation(self, locale):
