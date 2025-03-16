@@ -275,7 +275,7 @@ def strip_header(po_file):
     out_file = ""
     if not os.path.isfile(po_file):
         return out_file
-    with open(po_file, "r") as in_file:
+    with open(po_file, "r", encoding="utf-8") as in_file:
         for line in in_file:
             if not header:
                 out_file += line
@@ -289,8 +289,8 @@ def aggregate_pot():
     Aggregate the template files for all addons into a single file without
     strings that are already present in core Gramps.
     """
-    args = ["touch", "po/template.pot"]
-    call(args)
+    f = open("po/template.pot", "w")
+    f.close()
 
     args = ["xgettext", "-j", "-o", "po/template.pot"]
     args.extend(glob.glob("*/po/template.pot"))
@@ -514,7 +514,9 @@ elif command == "update":
         f'"{addon}/po/{locale}-local.po" '
     )
     # Get all of the addon strings out of the catalog:
-    system(f"touch {addon}/po/{locale}-temp.po")
+    f = open(f"{addon}/po/{locale}-temp.po", "w")
+    f.close()
+
     system(
         f"msggrep --location={addon}/* "
         f'"{addon}/po/{locale}-global.po" '
@@ -574,9 +576,14 @@ elif command == "as-needed":
 
     languages = get_all_languages()
     listings = {lang: [] for lang in languages}
-    dirs = [
-        file for file in glob.glob("*") if os.path.isdir(file) and file != "__pycache__"
-    ]
+    if len(sys.argv) == 3 or addon == "all":
+        dirs = [
+            file
+            for file in glob.glob("*")
+            if os.path.isdir(file) and file != "__pycache__"
+        ]
+    else:
+        dirs = [addon]
     for addon in sorted(dirs):
         todo = False
         for po in glob.glob(f"{addon}/po/*-local.po"):
