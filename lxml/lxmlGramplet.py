@@ -554,7 +554,7 @@ class lxmlGramplet(Gramplet):
         unique_surnames = list(set(surnames))
         unique_surnames.sort()
 
-        self.WriteBackXML(filename, root, uniques_surnames, places, sources)
+        self.WriteBackXML(filename, root, unique_surnames, places, sources)
         sys.stdout.write(_('3. Has written entries into "%(file)s".\n') % {'file': filename})
 
 
