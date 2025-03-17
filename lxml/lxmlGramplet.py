@@ -42,6 +42,7 @@ from gramps.gen.plug import Gramplet
 from gramps.gen.lib import date
 import gramps.gen.datehandler
 from gramps.gen.const import USER_HOME, USER_PLUGINS
+from gramps.gen.config import config
 from gramps.gui.display import display_url
 from gramps.gui.dialog import ErrorDialog
 from gramps.plugins.lib.libhtml import Html, xml_lang
@@ -78,7 +79,7 @@ try:
     from lxml import etree, objectify
     LXML_OK = True
     # current code is working with:
-    # LXML_VERSION (3, 3, 3)
+    # LXML_VERSION (4, 3, 4)
     # LIBXML_VERSION (2, 9, 1))
     # LIBXSLT_VERSION (1, 1, 28))
     LXML_VERSION = etree.LXML_VERSION
@@ -323,12 +324,12 @@ class lxmlGramplet(Gramplet):
             doctype = tree.docinfo.doctype
             current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">'
             if self.RNGValidation(tree, rng) == True:
-                #self.ParseXML(tree, filename) for debug
+                #self.ParseXML(tree, filename)  for debug 
                 try:
                     self.ParseXML(tree, filename)
                 except:
                     ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename})
-                    LOG.error('Cannot parse the content of the XML copy')
+                    LOG.error('Cannot parse the content of the XML copy or missing "query_html.xsl" file.')
                     return
             elif doctype != current:
                 ErrorDialog(_('Gramps version'), _('Wrong namespace\nNeed: %s') % current)
@@ -367,6 +368,8 @@ class lxmlGramplet(Gramplet):
 
         surname_tag = etree.SubElement(root, NAMESPACE + 'surname')
         pname_tag = etree.SubElement(root, NAMESPACE + 'pname')
+        private_surname = config.get('preferences.private-surname-text')
+        private_record = config.get('preferences.private-record-text')
 
         # variable
 
@@ -410,6 +413,13 @@ class lxmlGramplet(Gramplet):
                 else:
                     mediapath = ''
 
+                # privacy
+
+                if two.get('priv'): # XML: optional
+                    text = private_record
+                else:
+                    text = ""
+
                 # search ptitle and time log
 
                 for three in two.iter():
@@ -417,16 +427,32 @@ class lxmlGramplet(Gramplet):
                     # timestamp
                     if two.get('change'):
                         timestamp.append(two.get('change'))
-
+                        
                     # with namespace ...
                     #print(desc(three))
                     (tag, items) = three.tag, three.items()
 
+                    if three.tag == NAMESPACE + 'ptitle':
+                        if text != private_record:
+                            text = str(three.text)
+                        if text not in places:
+                            places.append(text) # temp display
+
                     if three.tag == NAMESPACE + 'pname':
-                        text = str(three.attrib.get('value'))
+                        if text != private_record:
+                            text = str(three.attrib.get('value'))
+                        translation = str(three.attrib.get('lang'))
+                        if translation == 'None':
+                            translation = xml_lang()[0:2]
+                            text = text + _(' - (? or %(lang)s)') % {'lang':translation}
+                        else:
+                            text = text + _(' - (%(lang)s)') % {'lang':translation}
                         if text not in places:
                             places.append(text) # temp display
                     if three.tag == NAMESPACE + 'stitle' and three.text not in sources:
+                        # need to add an exception
+                        if not three.text:
+                            three.text = ""
                         sources.append(three.text)
                     if three.tag == NAMESPACE + 'file' and three.items() not in thumbs:
                         thumbs.append(three.items())
@@ -438,7 +464,10 @@ class lxmlGramplet(Gramplet):
                         # with namespace ...
 
                         if four.tag == NAMESPACE + 'surname' and four.text != None:
-                            surnames.append(four.text)
+                            if text != private_record:
+                                surnames.append(four.text)
+                            else:
+                                surnames.append(private_surname)
 
         LOG.info('end of loops')
 
@@ -529,7 +558,7 @@ class lxmlGramplet(Gramplet):
     def xsd(self, xsd, filename):
         """
         Look at schema, validation, conform, structure, content, etc...
-        Code for 1.7.1 and +
+        Code for 1.7.2
         """
 
         # syntax check against XSD for file format
@@ -550,7 +579,7 @@ class lxmlGramplet(Gramplet):
     def check_valid(self, filename):
         """
         Look at schema, validation, conform, etc...
-        Code for 1.7.1 and +
+        Code for 1.7.2
         """
 
         # syntax check against DTD for file format
