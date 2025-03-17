@@ -846,13 +846,15 @@ class lxmlGramplet(Gramplet):
         # clear the etree
 
         root.clear()
+        the_id = 0
 
         ## people/person/name/surname
 
         people = etree.SubElement(root, "people")
         for s in surnames:
+            the_id += 1
             person = etree.SubElement(people, "person")
-            person.set('id', str(s) + '_' + str(len(surnames)))
+            person.set('id', str(the_id) + '_' + str(len(surnames)))
             name = etree.SubElement(person, "name")
             surname = etree.SubElement(name, "surname")
             surname.text = s
@@ -863,8 +865,9 @@ class lxmlGramplet(Gramplet):
 
         pl = etree.SubElement(root, "places")
         for p in places:
+            the_id += 1 
             place = etree.SubElement(pl, "placeobj")
-            place.set('id', str(p) + '_' + str(len(places)))
+            place.set('id', str(the_id) + '_' + str(len(places)))
             name = etree.SubElement(place, "pname")
             pname = name.set('value', p)
 
@@ -874,8 +877,9 @@ class lxmlGramplet(Gramplet):
 
         src = etree.SubElement(root, "sources")
         for s in sources:
+            the_id += 1
             source = etree.SubElement(src, "source")
-            source.set('id', str(s) + '_' + str(len(sources)))
+            source.set('id', str(the_id) + '_' + str(len(sources)))
             stitle = etree.SubElement(source, "stitle")
             stitle.text = s
 
