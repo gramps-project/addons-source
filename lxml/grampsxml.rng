@@ -31,7 +31,7 @@
 
 <grammar
   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"  
-  ns="http://gramps-project.org/xml/1.7.1/"
+  ns="http://gramps-project.org/xml/1.7.2/"
   xmlns="http://relaxng.org/ns/structure/1.0">
 
   <start><element name="database">
@@ -635,6 +635,9 @@
     <zeroOrMore><element name="noteref">
         <ref name="noteref-content"/>
     </element></zeroOrMore>
+    <optional><zeroOrMore><element name="citationref">
+        <ref name="citationref-content"/>
+    </element></zeroOrMore></optional>
   </define>
 
   <define name="reporef-content">
