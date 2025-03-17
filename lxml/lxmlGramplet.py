@@ -521,6 +521,9 @@ class lxmlGramplet(Gramplet):
         images = os.path.join(USER_PLUGINS, 'lxml', _('Gallery.html'))
         sys.stdout.write(_('2. Has generated a media index on "%(file)s".\n') % {'file': images})
 
+        unique_surnames = list(set(surnames))
+        unique_surnames.sort()
+
         self.WriteBackXML(filename, root, surnames, places, sources)
         sys.stdout.write(_('3. Has written entries into "%(file)s".\n') % {'file': filename})
 
