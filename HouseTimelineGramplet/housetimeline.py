@@ -1,4 +1,5 @@
 # Copyright (C) 2018 Andrew Vitu <a.p.vitu@gmail.com>
+# Copyright (C) 2025 Brian McCullough
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,9 +39,9 @@ class HouseTimelineGramplet(Gramplet):
     def on_load(self):
         self.no_wrap()
         tag = self.gui.buffer.create_tag("fixed")
-        tag.set_property("font", "Courier 8")
+        tag.set_property("font", "Courier 12")
         if len(self.gui.data) != 1:
-            self.gui.data[:] = ["001", None]
+            self.gui.data[:] = ["004", None]
 
     def db_changed(self):
         self.connect(self.dbstate.db,'person-add', self.update)
@@ -51,7 +52,7 @@ class HouseTimelineGramplet(Gramplet):
         style = self.get_option(_("House Icon Style"))
         self.gui.data[:] = [style.get_value()]
         self.update()
-    
+
     def build_options(self):
         from gramps.gen.plug.menu import EnumeratedListOption
         # Add types:
@@ -59,7 +60,8 @@ class HouseTimelineGramplet(Gramplet):
         for item in [("001", _("Standard")),
                      ("002", _("Small")),
                      ("003", _("Unicode")),
-                     ("004", _("None")),
+                     ("004", _("Emoji")),
+                     ("005", _("None")),
                      ]:
             style_list.add_item(item[0], item[1])
         self.add_option(style_list)
@@ -85,7 +87,7 @@ class HouseTimelineGramplet(Gramplet):
                     address = item.get_text_data_list()
                     date = item.get_date_object()
                     self.build_parent_address_dict(address,date,person_handle,person_name)
-        
+
         if address_count == 0:
             self.set_text(_("There are no individuals with Address data. Please add Address data to people."))
         self.build_house()
@@ -147,7 +149,7 @@ class HouseTimelineGramplet(Gramplet):
                 first_year = int(sorted_dates[0][0][0])
                 last_year = int(sorted_dates[-1][0][0])
                 time_in_family = last_year - first_year if first_year != 0 else gl_unknown
-                self.append_text("=========================\n")
+                self.append_text("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n")
                 self.render_house(self.gui.data[0])
                 self.append_text("{0}: {1}\n".format(gl_location,item[0]) +
                 ("{0}: {1} years\n".format(gl_time,time_in_family)) +
@@ -177,24 +179,28 @@ class HouseTimelineGramplet(Gramplet):
         """
         if house_type == "001":
             self.append_text(
-                "     ~~~\n" +
-                " __[]________\n" +
-                "/____________\\ \n" +
-                "|            | \n" +
-                "| [)(]  [)(] | \n" +
-                "|     __     | \n" +
-                "|    |  |    | \n" +
-                "|____|__|____| \n" +
-                "                        \n"
+                "      ~~~\n" +
+                "  __[]________\n" +
+                " /____________\\ \n" +
+                " |            | \n" +
+                " | [)(]  [)(] | \n" +
+                " |     __     | \n" +
+                " |    |  |    | \n" +
+                " |____|__|____| \n" +
+                "                         \n"
             )
         elif house_type == "002":
             self.append_text(
-                " .___. \n" +
-                "/ \___\\ \n" +
-                "|_|_#_| \n" +
+                "  .___. \n" +
+                " / \___\\ \n" +
+                " |_|_#_| \n" +
                 "                        \n"
             )
         elif house_type == "003":
             self.append_text(
-                "⌂ \n"
+                " ⌂ \n"
+            )
+        elif house_type == "004":
+            self.append_text(
+                " 🏠 \n"
             )
