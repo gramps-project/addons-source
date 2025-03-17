@@ -1,7 +1,7 @@
 <schema
  xmlns='http://www.w3.org/2001/XMLSchema'
- targetNamespace='http://gramps-project.org/xml/1.7.1/'
- xmlns:gramps='http://gramps-project.org/xml/1.7.1/'>
+ targetNamespace='http://gramps-project.org/xml/1.7.2/'
+ xmlns:gramps='http://gramps-project.org/xml/1.7.2/'>
  <element name='database'>
   <complexType>
    <sequence>
@@ -995,6 +995,7 @@
    <sequence>
     <element ref='gramps:attribute' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
    </sequence>
    <attribute name='hlink' type='IDREF' use='required'/>
    <attribute name='priv' use='optional'>
