@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 18:38+0000\n"
+"POT-Creation-Date: 2025-03-09 22:42+0000\n"
 "PO-Revision-Date: 2025-03-02 13:48+0000\n"
 "Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
@@ -21021,8 +21021,8 @@ msgstr ""
 msgid "Media height"
 msgstr "Vérification des media"
 
-#: MediaReport/media_report.py:457
-#, fuzzy, python-format
+#: MediaReport/media_report.py:458
+#, fuzzy, no-python-format
 #| msgid "Maximum image height in pixels, 0=don't scale for height."
 msgid "Maximum media height in % of available page height."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 18:38+0000\n"
+"POT-Creation-Date: 2025-03-09 22:42+0000\n"
 "PO-Revision-Date: 2025-03-09 13:13+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
@@ -19601,8 +19601,8 @@ msgstr "רוחב מדיה מרבי באחוזים % מרוחב זמין בעמו
 msgid "Media height"
 msgstr "גובה מדיה"
 
-#: MediaReport/media_report.py:457
-#, python-format
+#: MediaReport/media_report.py:458
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr "גובה מדיה מרבי באחוזים % מגובה זמין בעמוד."
 

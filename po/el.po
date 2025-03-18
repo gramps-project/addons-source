@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.0.3.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 18:38+0000\n"
+"POT-Creation-Date: 2025-03-09 22:42+0000\n"
 "PO-Revision-Date: 2015-10-01 19:02+0200\n"
 "Last-Translator: Ζήσης Παπαδόπουλος <zissisp@gmail.com>\n"
 "Language-Team: Greek <zissis@mail.com>\n"
@@ -19426,8 +19426,8 @@ msgstr ""
 msgid "Media height"
 msgstr ""
 
-#: MediaReport/media_report.py:457
-#, python-format
+#: MediaReport/media_report.py:458
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr ""
 

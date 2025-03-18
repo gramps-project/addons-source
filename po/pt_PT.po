@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 18:38+0000\n"
+"POT-Creation-Date: 2025-03-09 22:42+0000\n"
 "PO-Revision-Date: 2025-03-09 08:45+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
@@ -20177,8 +20177,8 @@ msgstr "Largura máxima da imagem em % da largura da página."
 msgid "Media height"
 msgstr "Altura da imagem"
 
-#: MediaReport/media_report.py:457
-#, python-format
+#: MediaReport/media_report.py:458
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Altura máxima da imagem em % da altura da página."
 

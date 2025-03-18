@@ -65,7 +65,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 18:38+0000\n"
+"POT-Creation-Date: 2025-03-09 22:42+0000\n"
 "PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -20210,8 +20210,8 @@ msgstr ""
 msgid "Media height"
 msgstr "Altezza dell'oggetto multimediale"
 
-#: MediaReport/media_report.py:457
-#, python-format
+#: MediaReport/media_report.py:458
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr ""
 "Massima altezza dell'oggetto multimediale in percentuale dell'altezza "
