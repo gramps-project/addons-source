@@ -66,7 +66,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"PO-Revision-Date: 2025-03-18 14:54+0000\n"
 "Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -75,24 +75,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
-msgstr ""
+msgstr "Unisci media"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{number_of} media unito"
+msgstr[1] "{number_of} media uniti"
 
 #: MediaMerge/mediamerge.py:157
-#, fuzzy
-#| msgid "No media was removed."
 msgid "No media items merged."
-msgstr "Nessun media è stato rimosso."
+msgstr "Nessun media è stato unito."
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
@@ -103,6 +101,8 @@ msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
 msgstr ""
+"Cerca in tutto il database, controllando e unendo i media che hanno lo "
+"stesso path."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: AttachSourceTool/AttachSourceTool.py:70
@@ -397,19 +397,19 @@ msgstr "Effettua stima per date di nascita e di decesso."
 
 #: MediaBrowser/MediaBrowser.gpr.py:31
 msgid "Media Browser"
-msgstr ""
+msgstr "Browser dei media"
 
 #: MediaBrowser/MediaBrowser.gpr.py:39
 msgid "Browser"
-msgstr ""
+msgstr "Browser"
 
 #: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
-msgstr ""
+msgstr "lxml"
 
 #: lxml/lxmlGramplet.gpr.py:11
 msgid "Gramplet for testing lxml and XSLT"
-msgstr ""
+msgstr "Gramplet per il test di lxml and XSLT"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
@@ -417,7 +417,7 @@ msgstr ""
 
 #: lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
-msgstr ""
+msgstr "Gramplet per il test di etree con Gramps XML"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
@@ -438,20 +438,20 @@ msgstr ""
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr ""
+msgstr "Per favore controlla gli spazi in \"%s\""
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
-msgstr ""
+msgstr "Scusa, il tuo OS non è più supportato!"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr ""
+msgstr "E' un file .gramps compresso?"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr ""
+msgstr "Non si può decomprimere \"%s\""
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -543,6 +543,8 @@ msgid ""
 "Number of places : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Numero di luoghi: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:491
 #, python-format
@@ -550,6 +552,8 @@ msgid ""
 "Number of media objects : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Numero di media: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:492
 #, python-format
@@ -564,6 +568,8 @@ msgid ""
 "Number of notes : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Numero di note : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:498
 #, python-format
@@ -571,6 +577,8 @@ msgid ""
 "\n"
 "XML: Number of additional records and relations: \t%s\n"
 msgstr ""
+"\n"
+"XML: Numero di record e relazioni aggiuntive: \t%s\n"
 
 #: lxml/etreeGramplet.py:502
 #, python-format
@@ -578,35 +586,37 @@ msgid ""
 "* loaded Family Tree base:\n"
 " \"%s\"\n"
 msgstr ""
+"* Albero genealogico base caricato:\n"
+" \"%s\"\n"
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
-msgstr ""
+msgstr "Dov'è gzip?"
 
 #: lxml/lxmlGramplet.py:67
 msgid "\"gzip\" is missing"
-msgstr ""
+msgstr "\"gzip\" assente"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Missing python3 lxml"
-msgstr ""
+msgstr "Manca python3 lxml"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
-msgstr ""
+msgstr "Per favore, prova a installare il pacchetto \"python3 lxml\"."
 
 #: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
-msgstr ""
+msgstr "Nessun file caricato..."
 
 #: lxml/lxmlGramplet.py:298
 msgid "XSD validation (lxml)"
-msgstr ""
+msgstr "Validazione XSD (lxml)"
 
 #: lxml/lxmlGramplet.py:298
 #, python-format
 msgid "Cannot validate \"%(file)s\" !"
-msgstr ""
+msgstr "Non posso validare \"%(file)s\" !"
 
 #: lxml/lxmlGramplet.py:306
 #, python-format
