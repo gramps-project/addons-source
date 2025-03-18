@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-09 20:50+0000\n"
+"PO-Revision-Date: 2025-03-11 19:53+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -837,13 +837,13 @@ msgid ""
 "Matches"
 msgstr ""
 "%s\n"
-"GeoNames-\n"
+"GeoNames\n"
 "Übereinstimmungen"
 
 #: PlaceCleanup/placecleanup.py:353
 #, python-format
 msgid "%s matches were found"
-msgstr "%s Übereinstimmungen gefunden"
+msgstr "%s Übereinstimmungen wurden gefunden"
 
 #: PlaceCleanup/placecleanup.py:354
 msgid ""
@@ -851,9 +851,9 @@ msgid ""
 "To see additional results, press the search button again.\n"
 "Or try changing the Title with more detail, such as a country."
 msgstr ""
-"Es werden nur 10 Übereinstimmungen angezeigt.\n"
-"Um weitere Ergebnisse anzuzeigen, drücke Suchen erneut.\n"
-"Oder versuche den Titel detaillierter zu ändern, z. B. ein Land."
+"Es werden nur 10 Treffer angezeigt.\n"
+"Um weitere Ergebnisse zu sehen, drücke erneut auf die Schaltfläche Suchen.\n"
+"Oder versuche, den Titel mit mehr Details zu ändern, z. B. einem Land."
 
 #: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
@@ -861,11 +861,11 @@ msgstr "Problem beim Abrufen von Daten aus dem Web"
 
 #: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
-msgstr "Webanforderungs-Timeout, du kannst es erneut versuchen..."
+msgstr "Webanfrage Zeitüberschreitung, du kannst es erneut versuchen..."
 
 #: PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
-msgstr "Problem beim Abrufen der Daten von GeoNames"
+msgstr "Problem beim Abrufen von Daten von GeoNames"
 
 #: PlaceCleanup/placecleanup.py:481
 msgid ""
@@ -880,7 +880,7 @@ msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
 msgstr ""
-"Der von dir gewählte Ort enthält den Ort, an dem du gerade arbeitest!\n"
+"Der von dir gewählte Ort ist Teil des Ortes, den du gerade bearbeitest!\n"
 "Bitte brich ab und wähle einen anderen Ort."
 
 #: PlaceCleanup/placecleanup.py:946
@@ -902,12 +902,12 @@ msgid ""
 "This work is licensed under a "
 msgstr ""
 "GeoNames ist ein Projekt der Unxos GmbH, Weingartenstrasse 8, 8708 "
-"Männedorf, Schweiz\n"
-"Diese Arbeit ist lizenziert unter "
+"Männedorf, Schweiz.\n"
+"Diese Arbeit ist lizenziert unter einer "
 
 #: PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
-msgstr "Creative Commons Attribution 3.0-Lizenz"
+msgstr "Creative Commons Namensnennung 3.0-Lizenz"
 
 #: PlaceCleanup/placecleanup.py:974
 #, python-format
@@ -924,7 +924,8 @@ msgid ""
 "Find to merge it into a valid place."
 msgstr ""
 "Du solltest ihn löschen oder, wenn er nützliche Notizen oder andere Daten "
-"enthält, die Suche verwenden, um ihn mit einem gültigen Ort zusammenzuführen."
+"enthält, die Suche verwenden, um ihn mit einem passenden Ort "
+"zusammenzuführen."
 
 #: PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
@@ -932,7 +933,7 @@ msgstr "Stadt, Landkreis, Bundesland, Land"
 
 #: PlaceCleanup/placecleanup.glade:52 AllNamesQuickview/AllNames.py:54
 msgid "Primary Name"
-msgstr "Primärer Name"
+msgstr "Primärname"
 
 #: PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
@@ -940,23 +941,23 @@ msgstr "Der aktuelle Primärname."
 
 #: PlaceCleanup/placecleanup.glade:102
 msgid "The postal code for the place, if any."
-msgstr "Die Postleitzahl für den Ort, falls vorhanden."
+msgstr "Die Postleitzahl des Ortes, falls vorhanden."
 
 #: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
-msgstr "Was für eine Art Ort ist es. Z.B. \"Land\", \"Stadt\", ... ."
+msgstr "Um welche Art von Ort es sich handelt. Z. B. „Land“, „Stadt“, ... ."
 
 #: PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
 msgstr ""
 "Aktiviere dieses Kontrollkästchen, wenn du die ursprüngliche Postleitzahl "
-"beibehalten möchtest."
+"beibehalten willst."
 
 #: PlaceCleanup/placecleanup.glade:148
 msgid "Check this box if you want to keep the original Place Type."
 msgstr ""
 "Aktiviere dieses Kontrollkästchen, wenn du den ursprünglichen Ortstyp "
-"beibehalten möchtest."
+"beibehalten willst."
 
 #: PlaceCleanup/placecleanup.glade:166 PlaceCleanup/placecleanup.glade:180
 #: PlaceCleanup/placecleanup.glade:339 PlaceCleanup/placecleanup.glade:353
