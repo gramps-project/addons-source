@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-09 22:01+0000\n"
+"PO-Revision-Date: 2025-03-12 11:47+0000\n"
 "Last-Translator: Michał Stojek <stojex@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -29,29 +29,31 @@ msgstr ""
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
-msgstr ""
+msgstr "Scalanie mediów"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "{number_of} scalono"
+msgstr[1] "{number_of} scalono"
+msgstr[2] "{number_of} scalono"
 
 #: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
-msgstr ""
+msgstr "Nie scalono żadnych elementów multimedialnych."
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
-msgstr ""
+msgstr "Połącz media"
 
 #: MediaMerge/mediamerge.gpr.py:33
 msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
 msgstr ""
+"Przeszukuje całą bazę danych w poszukiwaniu multimediów o tej samej ścieżce "
+"i łączy je."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: AttachSourceTool/AttachSourceTool.py:70
@@ -76,6 +78,8 @@ msgstr "Usuń wcześniej dodane wydarzenia, notatki i źródło"
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
+"Usuń obliczone zdarzenia, notatki i źródło; następuje natychmiast po "
+"wykonaniu"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
@@ -185,13 +189,15 @@ msgstr "Dodaj wybrane wydarzenia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr ""
+msgstr "Usuń zdarzenia, notatki i źródło oraz ponownie wybierz dane"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
+"Czy na pewno chcesz usunąć poprzednie zdarzenia, notatki i źródła oraz "
+"ponownie wybrać dane?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
@@ -226,7 +232,7 @@ msgstr "Przetwarzanie...\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
-msgstr ""
+msgstr "Usuwanie starych szacunków... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
@@ -234,9 +240,8 @@ msgid "Removing '%s'..."
 msgstr "Usuwanie '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:319
-#, fuzzy
 msgid "done!\n"
-msgstr "Gotowe!\n"
+msgstr "gotowe!\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 msgid ""
@@ -274,7 +279,7 @@ msgstr "Dodawanie zdarzeń '%s'..."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr ""
+msgstr "Dodano zdarzenie urodzenia na podstawie %(evidence)s, z %(name)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #, python-format
@@ -288,7 +293,7 @@ msgstr "Szacowana data śmierci"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr ""
+msgstr "Dodano zdarzenie śmierci na podstawie %(evidence)s, od %(person)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
@@ -318,39 +323,39 @@ msgstr "Wylicza szacunkowe daty urodzenia i zgonu."
 
 #: MediaBrowser/MediaBrowser.gpr.py:31
 msgid "Media Browser"
-msgstr ""
+msgstr "Przeglądarka multimediów"
 
 #: MediaBrowser/MediaBrowser.gpr.py:39
 msgid "Browser"
-msgstr ""
+msgstr "Przeglądarka"
 
 #: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
-msgstr ""
+msgstr "lxml"
 
 #: lxml/lxmlGramplet.gpr.py:11
 msgid "Gramplet for testing lxml and XSLT"
-msgstr ""
+msgstr "Gramplet do testowania lxml i XSLT"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
-msgstr ""
+msgstr "etree"
 
 #: lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
-msgstr ""
+msgstr "Gramplet do testowania etree z Gramps XML"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
-msgstr ""
+msgstr "Nieprawidłowy znacznik czasu"
 
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
-msgstr ""
+msgstr "Nie przetworzono pliku..."
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Number of editions back"
-msgstr ""
+msgstr "Liczba wydań wstecz"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 msgid "Space character on filename"
@@ -359,20 +364,20 @@ msgstr "Znak spacji w nazwie pliku"
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr ""
+msgstr "Proszę naprawić spację w \"%s\""
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
-msgstr ""
+msgstr "Niestety, nie mamy jeszcze wsparcia dla Twojego systemu operacyjnego!"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr ""
+msgstr "Czy to jest skompresowany plik .gramps?"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr ""
+msgstr "Nie można rozpakować \"%s\""
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -383,16 +388,20 @@ msgid ""
 " to:\n"
 " \"%(file2)s\".\n"
 msgstr ""
+"Z:\n"
+" \"%(file1)s\"\n"
+" do:\n"
+" \"%(file2)s\".\n"
 
 #: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
 msgid "Cannot copy \"%s\""
-msgstr ""
+msgstr "Nie można skopiować \"%s\""
 
 #: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr ""
+msgstr "XML: Ostatnie %s wydań od %s, miało miejsce/na :\n"
 
 #: lxml/etreeGramplet.py:471
 #, python-format
@@ -401,6 +410,9 @@ msgid ""
 "XML: Number of records and relations : \t%s\n"
 "\n"
 msgstr ""
+"\n"
+"XML: Liczba rekordów i relacji: %s\n"
+"\n"
 
 #: lxml/etreeGramplet.py:474
 #, python-format
@@ -408,6 +420,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Liczba tagów : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
 #, python-format
@@ -415,6 +429,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
+"Liczba tagów : \n"
+"\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
 #, python-format
@@ -422,6 +438,8 @@ msgid ""
 "Number of  events : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Liczba zdarzeń : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:481
 #, python-format
@@ -429,6 +447,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgstr ""
+"Liczba osób : \n"
+"\t\t\t%s\t|\t(%s) i(%s)* nazwiska\n"
 
 #: lxml/etreeGramplet.py:483
 #, python-format
@@ -436,6 +456,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Liczba osób : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:484
 #, python-format
@@ -443,6 +465,8 @@ msgid ""
 "Number of families : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Liczba rodzin : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:485
 #, python-format
@@ -450,6 +474,8 @@ msgid ""
 "Number of sources : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Liczba źródeł : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:487
 #, python-format
@@ -457,6 +483,8 @@ msgid ""
 "Number of citations : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Liczba cytowań : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:490
 #, python-format
@@ -464,6 +492,8 @@ msgid ""
 "Number of places : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Liczba miejsc : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:491
 #, python-format
@@ -471,6 +501,8 @@ msgid ""
 "Number of media objects : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Liczba obiektów multimedialnych : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:492
 #, python-format
@@ -478,6 +510,8 @@ msgid ""
 "Number of repositories : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Liczba repozytoriów : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:493
 #, python-format
@@ -485,6 +519,8 @@ msgid ""
 "Number of notes : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Liczba notatek : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:498
 #, python-format
@@ -492,6 +528,8 @@ msgid ""
 "\n"
 "XML: Number of additional records and relations: \t%s\n"
 msgstr ""
+"\n"
+"XML: Liczba dodatkowych rekordów i relacji: \t%s\n"
 
 #: lxml/etreeGramplet.py:502
 #, python-format
@@ -502,32 +540,32 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
-msgstr ""
+msgstr "Gdzie jest gzip?"
 
 #: lxml/lxmlGramplet.py:67
 msgid "\"gzip\" is missing"
-msgstr ""
+msgstr "Brakuje „gzip”"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Missing python3 lxml"
-msgstr ""
+msgstr "Brak python3 lxml"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
-msgstr ""
+msgstr "Proszę spróbować zainstalować pakiet \"python3 lxml\"."
 
 #: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
-msgstr ""
+msgstr "Nie załadowano żadnego pliku..."
 
 #: lxml/lxmlGramplet.py:298
 msgid "XSD validation (lxml)"
-msgstr ""
+msgstr "Walidacja XSD (lxml)"
 
 #: lxml/lxmlGramplet.py:298
 #, python-format
 msgid "Cannot validate \"%(file)s\" !"
-msgstr ""
+msgstr "Nie można zweryfikować pliku \"%(file)s\"!"
 
 #: lxml/lxmlGramplet.py:306
 #, python-format
@@ -541,16 +579,16 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:329
 msgid "Parsing issue"
-msgstr ""
+msgstr "Problem z analizą składniową"
 
 #: lxml/lxmlGramplet.py:329
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
-msgstr ""
+msgstr "Nie można przeanalizować zawartości pliku „%(file)s”"
 
 #: lxml/lxmlGramplet.py:333
 msgid "Gramps version"
-msgstr ""
+msgstr "Wersja Grampsa"
 
 #: lxml/lxmlGramplet.py:333
 #, python-format
@@ -558,6 +596,8 @@ msgid ""
 "Wrong namespace\n"
 "Need: %s"
 msgstr ""
+"Nieprawidłowa przestrzeń nazw\n"
+"Potrzeba: %s"
 
 #: lxml/lxmlGramplet.py:337
 msgid "RelaxNG validation"
@@ -566,16 +606,16 @@ msgstr ""
 #: lxml/lxmlGramplet.py:337
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
-msgstr ""
+msgstr "Nie można zweryfikować „%(file)s” za pomocą schematu RelaxNG"
 
 #: lxml/lxmlGramplet.py:341
 msgid "File issue"
-msgstr ""
+msgstr "Problem z plikiem"
 
 #: lxml/lxmlGramplet.py:341
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
-msgstr ""
+msgstr "Nie można przeanalizować „%(file)s” przez etree"
 
 #: lxml/lxmlGramplet.py:359
 msgid "Parsing file..."
@@ -583,7 +623,7 @@ msgstr "Analizowanie pliku..."
 
 #: lxml/lxmlGramplet.py:456
 msgid "Missing header"
-msgstr ""
+msgstr "Brak nagłówka"
 
 #: lxml/lxmlGramplet.py:456
 msgid ""
@@ -592,6 +632,10 @@ msgid ""
 "Please, try to use a .gramps\n"
 "generated by Gramps 4.x."
 msgstr ""
+"Nieprawidłowy .gramps.\n"
+"Nie można uruchomić grampleta...\n"
+"Proszę spróbować użyć .gramps\n"
+"wygenerowanego przez Gramps 4.x."
 
 #: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
 #: lxml/lxmlGramplet.py:484
@@ -600,15 +644,15 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:495
 msgid "File parsed with"
-msgstr ""
+msgstr "Plik przeanalizowany za pomocą"
 
 #: lxml/lxmlGramplet.py:498
 msgid "File was generated on "
-msgstr ""
+msgstr "Plik został wygenerowany dnia "
 
 #: lxml/lxmlGramplet.py:498
 msgid " by Gramps "
-msgstr ""
+msgstr " przez Gramps "
 
 #: lxml/lxmlGramplet.py:500
 msgid "Period: "
@@ -716,7 +760,7 @@ msgstr ""
 #: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
 #: EventDescriptionEditor/EventDescriptionEditor.py:139
 msgid "Find"
-msgstr ""
+msgstr "Znajdź"
 
 #: PlaceCleanup/placecleanup.py:293
 #, python-format
@@ -728,21 +772,23 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.py:295
 msgid "Find GeoNames"
-msgstr ""
+msgstr "Znajdź GeoNames"
 
 #: PlaceCleanup/placecleanup.py:303
 msgid "Need to set GeoNames ID"
-msgstr ""
+msgstr "Należy ustawić identyfikator GeoNames"
 
 #: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
-msgstr ""
+msgstr "Aby uzyskać więcej informacji, kliknij przycisk Pomoc"
 
 #: PlaceCleanup/placecleanup.py:337
 msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
 "the place manually."
 msgstr ""
+"Spróbuj zmienić tytuł lub użyj przycisku „Edytuj”, aby ręcznie dokończyć ten "
+"poziom miejsca."
 
 #: PlaceCleanup/placecleanup.py:347
 #, python-format
@@ -755,7 +801,7 @@ msgstr ""
 #: PlaceCleanup/placecleanup.py:353
 #, python-format
 msgid "%s matches were found"
-msgstr ""
+msgstr "Znaleziono %s wyników"
 
 #: PlaceCleanup/placecleanup.py:354
 msgid ""
@@ -763,6 +809,9 @@ msgid ""
 "To see additional results, press the search button again.\n"
 "Or try changing the Title with more detail, such as a country."
 msgstr ""
+"Wyświetlono tylko 10 wyników.\n"
+"Aby zobaczyć dodatkowe wyniki, naciśnij ponownie przycisk wyszukiwania.\n"
+"Lub spróbuj zmienić tytuł, podając więcej szczegółów, np. kraj."
 
 #: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
@@ -771,34 +820,41 @@ msgstr "Problem z pobieraniem danych z sieci"
 #: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
 msgstr ""
+"Przekroczono limit czasu żądania internetowego. Możesz spróbować ponownie..."
 
 #: PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
-msgstr ""
+msgstr "Problem z pobieraniem danych z GeoNames"
 
 #: PlaceCleanup/placecleanup.py:481
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
 msgstr ""
+"Jedno z miejsc, które łączysz, obejmuje drugie!\n"
+"Wybierz inne miejsce."
 
 #: PlaceCleanup/placecleanup.py:759
 msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
 msgstr ""
+"Miejsce, które wybrałeś, jest zawarte w miejscu, nad którym pracujesz!\n"
+"Anuluj i wybierz inne miejsce."
 
 #: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
-msgstr ""
+msgstr "Strona internetowa GeoNames"
 
 #: PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
-msgstr ""
+msgstr "Autor GeoNames"
 
 #: PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr ""
+"GeoNames zostało przygotowane przez Marca Wicka. Możesz się z nim "
+"skontaktować pod adresem "
 
 #: PlaceCleanup/placecleanup.py:959
 msgid ""
@@ -806,19 +862,22 @@ msgid ""
 "Switzerland.\n"
 "This work is licensed under a "
 msgstr ""
+"GeoNames to projekt Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Szwajcaria.\n"
+"Ta praca jest licencjonowana na podstawie "
 
 #: PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
-msgstr ""
+msgstr "Creative Commons Attribution 3.0 License"
 
 #: PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
-msgstr ""
+msgstr "Dodaj źródło/repozytorium/notatki (%s)"
 
 #: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
-msgstr ""
+msgstr "To miejsce jest nieużywane!"
 
 #: PlaceCleanup/placecleanup.py:1076
 msgid ""
@@ -1354,35 +1413,31 @@ msgstr "Styl używany do tytułu raportu."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:495
 msgid "The style used for the subtitle of the report."
-msgstr "Styl użyty w podtytule raportu."
+msgstr "Styl używany w podtytule raportu."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:509
 msgid "The style used for the footer of the report."
-msgstr "Styl użyty w stopce raportu."
+msgstr "Styl używany w stopce raportu."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:524
 msgid "The style used for source title."
-msgstr "Styl użyty w tytule źródła."
+msgstr "Styl używany w tytule źródła."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:536
 msgid "The style used for source subtitle."
-msgstr "Styl użyty w napisach źródłowych."
+msgstr "Styl używany w napisach źródłowych."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:548
 msgid "The style used for Source details."
-msgstr "Styl użyty dla szczegółów źródła."
+msgstr "Styl używany dla szczegółów źródła."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:563
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for citation title."
-msgstr "Styl używany do tytułu repozytoriów."
+msgstr "Styl używany w tytule cytowania."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:575
-#, fuzzy
-#| msgid "The style used for repository title."
 msgid "The style used for a column title."
-msgstr "Styl używany do tytułu repozytoriów."
+msgstr "Styl używany w tytule kolumny."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
 #: RepositoriesReport/RepositoriesReportAlt.py:533
@@ -1391,24 +1446,20 @@ msgid "The style used for each section."
 msgstr "Styl używany do każdej sekcji."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:622
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for event and person details."
-msgstr "Styl używany do każdej sekcji."
+msgstr "Styl używany do opisu wydarzeń i osób."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
-msgstr ""
+msgstr "Drzewo przodków przy użyciu LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
-msgstr ""
+msgstr "Drzewo potomków przy użyciu LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:80
-#, fuzzy
-#| msgid "Mandelbrot Tree"
 msgid "Grandparent Tree"
-msgstr "Drzewo Mandelbrota"
+msgstr "Drzewo dziadków"
 
 #: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
@@ -3038,10 +3089,8 @@ msgid "Save tree as file"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3075
-#, fuzzy
-#| msgid "Search"
 msgid "Search:"
-msgstr "Szukaj"
+msgstr "Szukaj:"
 
 #: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
@@ -4111,7 +4160,7 @@ msgstr "Proszę ustawić płeć dla nowej albo aktywnej osoby."
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
-msgstr "Ta sama płeć dla nowej i  aktywnej osoby."
+msgstr "Ta sama płeć dla nowej i aktywnej osoby."
 
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
@@ -4233,10 +4282,8 @@ msgid "Dark Variant"
 msgstr ""
 
 #: Themes/themes.py:198
-#, fuzzy
-#| msgid "Font:"
 msgid "Font"
-msgstr "Czcionka:"
+msgstr "Czcionka"
 
 #: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
@@ -5706,9 +5753,8 @@ msgid "Error: login failed"
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
-#, fuzzy
 msgid "done."
-msgstr "Gotowe!\n"
+msgstr "gotowe."
 
 #: PhpGedView/phpgedviewconnector.py:347
 #, fuzzy
@@ -6209,9 +6255,8 @@ msgid " This is the primary birth event."
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:199
-#, fuzzy
 msgid " This is the primary death event."
-msgstr "Dodaj nowe zdarzenie"
+msgstr " Jest to główne zdarzenie powodujące śmierć."
 
 #: PersonEverything/PersonEverything.py:238
 #, fuzzy
@@ -7701,10 +7746,8 @@ msgid ""
 msgstr ""
 
 #: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done"
-msgstr "Gotowe!\n"
+msgstr "Gotowe"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
@@ -8661,10 +8704,8 @@ msgid "Label Configuration"
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:946
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Reset all settings"
-msgstr "Dodatkowe ustawienia stylu:"
+msgstr "Zresetuj wszystkie ustawienia"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"
@@ -18122,20 +18163,20 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:1568
-#, fuzzy
-#| msgid "place: "
 msgid ""
 "Death\n"
 "place:"
-msgstr "miejsce: "
+msgstr ""
+"Miejsce \n"
+"śmierci:"
 
 #: SourceIndex/birth.glade:1588
-#, fuzzy
-#| msgid "place: "
 msgid ""
 "Birth\n"
 "place:"
-msgstr "miejsce: "
+msgstr ""
+"Miejsce\n"
+"urodzenia:"
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
 #, fuzzy
@@ -21050,10 +21091,8 @@ msgid "Graph View"
 msgstr "Graph View"
 
 #: GraphView/graphview.py:754
-#, fuzzy
-#| msgid "Show places"
 msgid "Show IDs"
-msgstr "Pokaż miejsca"
+msgstr "Pokaż identyfikatory"
 
 #: GraphView/graphview.py:757
 msgid "Show avatars"
@@ -21072,38 +21111,30 @@ msgid "Show places"
 msgstr "Pokaż miejsca"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "top to bottom"
 msgid "Vertical: Top to Bottom"
-msgstr "Pionowo (z dołu do góry)"
+msgstr "Pionowo: od góry do dołu"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "bottom to top"
 msgid "Vertical: Bottom to Top"
-msgstr "Pionowo (z dołu do góry)"
+msgstr "Pionowo: od dołu do góry"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "left to right"
 msgid "Horizontal: Left to Right"
-msgstr "Poziomo (z lewa na prawo)"
+msgstr "Poziomo: od lewej do prawej"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "right to left"
 msgid "Horizontal: Right to Left"
-msgstr "Poziomo (z lewa na prawo)"
+msgstr "Poziomo: od prawej do lewej"
 
 #: GraphView/graphview.py:786
-#, fuzzy
-#| msgid "Unknown time direction"
 msgid "Time Direction"
-msgstr "Nieznany kierunek czasu"
+msgstr "Kierunek czasu"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
 msgstr ""
+"Ogranicz liczbę wyświetlanych osób (użyj 0, aby uzyskać nieograniczoną "
+"liczbę)"
 
 #: GraphView/graphview.py:812
 msgid "Person theme"
@@ -21139,43 +21170,31 @@ msgstr "Awatar dla kobiety:"
 
 #: GraphView/graphview.py:860
 msgid "Choose female avatar"
-msgstr "Wybierz kobiecy awatar"
+msgstr "Wybierz awatar dla kobiety"
 
 #: GraphView/graphview.py:872
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Unknown avatar:"
-msgstr "Pokaż awatary"
+msgstr "Nieznany awatar:"
 
 #: GraphView/graphview.py:873
-#, fuzzy
-#| msgid "Choose male avatar"
 msgid "Choose Unknown avatar"
-msgstr "Wybierz awatar dla mężczyzny"
+msgstr "Wybierz nieznany awatar"
 
 #: GraphView/graphview.py:885
-#, fuzzy
-#| msgid "Male avatar:"
 msgid "Other avatar:"
-msgstr "Awatar dla mężczyzny:"
+msgstr "Inny awatar:"
 
 #: GraphView/graphview.py:886
-#, fuzzy
-#| msgid "Choose male avatar"
 msgid "Choose Other avatar"
-msgstr "Wybierz awatar dla mężczyzny"
+msgstr "Wybierz inny awatar"
 
 #: GraphView/graphview.py:900
-#, fuzzy
-#| msgid "Active person"
 msgid "Active person border size"
-msgstr "Aktywna osoba"
+msgstr "Rozmiar obramowania aktywnej osoby"
 
 #: GraphView/graphview.py:905
-#, fuzzy
-#| msgid "Person theme"
 msgid "Person border size"
-msgstr "Motyw osoby"
+msgstr "Rozmiar obramowania osoby"
 
 #: GraphView/graphview.py:908
 msgid "Themes"
@@ -21338,6 +21357,10 @@ msgid ""
 "{people_missing} people won't be shown. You can change this limit in the "
 "view configuration."
 msgstr ""
+"Ten wykres zawierałby co najmniej {people_count} osób, co przekracza limit "
+"{people_limit} osób. Ze względu na wydajność co najmniej {people_missing} "
+"osób nie zostanie wyświetlonych. Możesz zmienić ten limit w konfiguracji "
+"widoku."
 
 #: GraphView/graphview.py:2678
 msgid "Incomplete graph"
@@ -21373,10 +21396,8 @@ msgid "Ortho"
 msgstr "Prostopadłe"
 
 #: GraphView/graphview.py:3875
-#, fuzzy
-#| msgid "No relation to active person"
 msgid "No Events for this person"
-msgstr "Brak relacji do aktywnej osoby"
+msgstr "Brak wydarzeń dla tej osoby"
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
@@ -21391,10 +21412,8 @@ msgid "Add parents"
 msgstr "Dodaj rodziców"
 
 #: GraphView/graphview.py:4051
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Show path to home person"
-msgstr "Kolor ścieżki do osoby głównej"
+msgstr "Pokaż ścieżkę do osoby głównej"
 
 #: GraphView/graphview.py:4057 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364 SearchGramplet/SearchGramplet.py:637
@@ -21410,7 +21429,7 @@ msgstr "Dodaj do zakładek"
 
 #: GraphView/graphview.py:4161
 msgid "No Events for this family"
-msgstr ""
+msgstr "Brak wydarzeń dla tej rodziny"
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
@@ -21465,7 +21484,7 @@ msgstr "Rysunek"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
-msgstr ""
+msgstr "Nowoczesny"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
@@ -21494,21 +21513,19 @@ msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
 msgid "Partners"
-msgstr ""
+msgstr "Partnerzy"
 
 #: Overview/Overview.gpr.py:29
-#, fuzzy
-#| msgid "Person theme"
 msgid "Person Overview"
-msgstr "Motyw osoby"
+msgstr "Przegląd osoby"
 
 #: Overview/Overview.gpr.py:30
 msgid "Gramplet showing an overview of events for a person"
-msgstr ""
+msgstr "Gramplet pokazujący przegląd zdarzeń dla danej osoby"
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
 msgid "Overview"
-msgstr ""
+msgstr "Opis"
 
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -21696,10 +21713,9 @@ msgid "Birth: %s"
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Death: %s"
-msgstr "Aktualizacja ścieżka do mediów"
+msgstr "Zgony: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
 #, fuzzy
@@ -23268,10 +23284,8 @@ msgid "Go"
 msgstr ""
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
-#, fuzzy
-#| msgid "Show places"
 msgid "Show help"
-msgstr "Pokaż miejsca"
+msgstr "Pokaż pomoc"
 
 #~ msgid "Beta"
 #~ msgstr "Wersja beta"
