@@ -1,6 +1,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2010  Doug Blank <doug.blank@gmail.com>
+# Copyright (C) 2025  Nick Hall
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,8 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-
-# $Id: $
 
 """
 The WebConnect API works as follows:
@@ -53,6 +52,8 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 from gramps.gen.config import config as configman
+from gramps.gen.utils.location import get_main_location
+from gramps.gen.lib import PlaceType
 
 #---------------------------------------------------------------
 #
@@ -126,20 +127,58 @@ def make_person_dict(dbstate, handle):
             results[key] = escape(results[key])
     return results
 
+def make_place_dict(dbstate, handle):
+    """
+    Create a dictionary to hold values for replacing in URLs.
+    """
+    results = {
+        "city": "",
+        "country": "",
+        }
+    place = dbstate.db.get_place_from_handle(handle)
+    if place:
+        place_dict = get_main_location(dbstate.db, place)
+        results["city"] = escape(place_dict.get(PlaceType.CITY, ""))
+        results["country"] = escape(place_dict.get(PlaceType.COUNTRY, ""))
+
+    return results
+
+def make_source_dict(dbstate, handle):
+    """
+    Create a dictionary to hold values for replacing in URLs.
+    """
+    results = {
+        "source_title": "",
+        }
+    source = dbstate.db.get_source_from_handle(handle)
+    if source:
+        results["source_title"] = escape(source.get_title())
+
+    return results
+
+
 class Search(object):
     """
     Necessary because Python scoping rules don't allow otherwise.
     Keeps track of pattern, key, name, and other values as it
     is registered and then called.
     """
-    def __init__(self, key, name, pattern):
+    def __init__(self, nav_type, key, name, pattern):
+        self.nav_type = nav_type
         self.key = key
         self.name = name
         self.pattern = pattern
 
     def callback(self, widget):
         from gramps.gui.display import display_url
-        results = make_person_dict(self.dbstate, self.handle)
+        if self.nav_type == "Person":
+            results = make_person_dict(self.dbstate, self.handle)
+        elif self.nav_type == "Place":
+            results = make_place_dict(self.dbstate, self.handle)
+        elif self.nav_type == "Source":
+            results = make_source_dict(self.dbstate, self.handle)
+        else:
+            results = {}
         display_url(self.pattern % results, self.uistate)
 
     def __call__(self, dbstate, uistate, nav_type, handle):
@@ -157,5 +196,5 @@ def make_search_functions(nav_type, patterns):
     retval = []
     for (nt, key, name, pattern) in patterns:
         if nt != nav_type: continue
-        retval.append(Search(key, name, pattern))
+        retval.append(Search(nav_type, key, name, pattern))
     return retval
