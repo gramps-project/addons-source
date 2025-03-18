@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-09 08:45+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -13836,28 +13836,28 @@ msgstr "Amarelo"
 #: Form/form_us.xml.h:2066 Form/form_us.xml.h:2102 Form/form_us.xml.h:2140
 #: Form/form_us.xml.h:2178 Form/form_us.xml.h:2216
 msgid "Divorced"
-msgstr ""
+msgstr "Divorciados"
 
 #: Form/form_us.xml.h:2067
 msgid "Can Read"
-msgstr ""
+msgstr "Sabe ler"
 
 #: Form/form_us.xml.h:2068
 msgid "Can't Read"
-msgstr ""
+msgstr "Não sabe ler"
 
 #: Form/form_us.xml.h:2069
 msgid "Can Write"
-msgstr ""
+msgstr "Sabe escrever"
 
 #: Form/form_us.xml.h:2070
 msgid "Can't Write"
-msgstr ""
+msgstr "Não sabe escrever"
 
 #: Form/form_us.xml.h:2083 Form/form_us.xml.h:2120 Form/form_us.xml.h:2158
 #: Form/form_us.xml.h:2196
 msgid "Do you own your home or farm"
-msgstr ""
+msgstr "Possui casa ou quinta próprias"
 
 #: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
 #: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
@@ -13867,95 +13867,95 @@ msgstr "Ascendência"
 #: Form/form_us.xml.h:2086 Form/form_us.xml.h:2123 Form/form_us.xml.h:2161
 #: Form/form_us.xml.h:2199
 msgid "Father's birthplace"
-msgstr ""
+msgstr "Local de nascimento do pai"
 
 #: Form/form_us.xml.h:2087 Form/form_us.xml.h:2124 Form/form_us.xml.h:2162
 #: Form/form_us.xml.h:2200
 msgid "Mother's birthplace"
-msgstr ""
+msgstr "Local de nascimento da mãe"
 
 #: Form/form_us.xml.h:2088 Form/form_us.xml.h:2125 Form/form_us.xml.h:2163
 #: Form/form_us.xml.h:2201
 msgid "Extent of Education"
-msgstr ""
+msgstr "Grau de instrução"
 
 #: Form/form_us.xml.h:2089 Form/form_us.xml.h:2126 Form/form_us.xml.h:2164
 #: Form/form_us.xml.h:2202
 msgid "Graduate of"
-msgstr ""
+msgstr "Concluiu"
 
 #: Form/form_us.xml.h:2094 Form/form_us.xml.h:2132 Form/form_us.xml.h:2170
 #: Form/form_us.xml.h:2208
 msgid "Maiden name of wife"
-msgstr ""
+msgstr "Nome de solteira da esposa"
 
 #: Form/form_us.xml.h:2095 Form/form_us.xml.h:2133 Form/form_us.xml.h:2171
 #: Form/form_us.xml.h:2209 Form/form_dk.xml.h:275
 msgid "Year married"
-msgstr ""
+msgstr "Ano de casamento"
 
 #: Form/form_us.xml.h:2096 Form/form_us.xml.h:2134 Form/form_us.xml.h:2172
 #: Form/form_us.xml.h:2210
 msgid "Church affiliation"
-msgstr ""
+msgstr "Filiação à igreja"
 
 #: Form/form_us.xml.h:2109 Form/form_us.xml.h:2147 Form/form_us.xml.h:2185
 #: Form/form_us.xml.h:2223
 msgid "If Foreign Born, are you Naturalized"
-msgstr ""
+msgstr "Se for estrangeiro, é naturalizado"
 
 #: Form/form_us.xml.h:2111 Form/form_us.xml.h:2149 Form/form_us.xml.h:2187
 #: Form/form_us.xml.h:2225
 msgid "Years in S.D."
-msgstr ""
+msgstr "Anos em S.D."
 
 #: Form/form_us.xml.h:2131 Form/form_us.xml.h:2169 Form/form_us.xml.h:2207
 msgid "Division"
-msgstr ""
+msgstr "Divisão"
 
 #: Form/form_us.xml.h:2228
 msgid "Male under 21"
-msgstr ""
+msgstr "Homem -21"
 
 #: Form/form_us.xml.h:2229
 msgid "Male over 21"
-msgstr ""
+msgstr "Homem +21"
 
 #: Form/form_us.xml.h:2230
 msgid "Female under 21"
-msgstr ""
+msgstr "Mulher -21"
 
 #: Form/form_us.xml.h:2231
 msgid "Female over 21"
-msgstr ""
+msgstr "Mulher +21"
 
 #: Form/form_us.xml.h:2234 Form/form_us.xml.h:2246
 msgid "Town/City"
-msgstr ""
+msgstr "Vila/Cidade"
 
 #: Form/form_us.xml.h:2236 Form/form_us.xml.h:2248 Form/form_us.xml.h:2260
 msgid "Heads of Families"
-msgstr ""
+msgstr "Chefes de família"
 
 #: Form/form_us.xml.h:2237 Form/form_us.xml.h:2249 Form/form_us.xml.h:2261
 #: Form/form_us.xml.h:2273 Form/form_us.xml.h:2302
 msgid "White males"
-msgstr ""
+msgstr "Homens brancos"
 
 #: Form/form_us.xml.h:2238 Form/form_us.xml.h:2250 Form/form_us.xml.h:2262
 #: Form/form_us.xml.h:2274 Form/form_us.xml.h:2303
 msgid "White females"
-msgstr ""
+msgstr "Mulheres brancas"
 
 #: Form/form_us.xml.h:2239 Form/form_us.xml.h:2251 Form/form_us.xml.h:2263
 #: Form/form_us.xml.h:2275 Form/form_us.xml.h:2304
 msgid "Colored males"
-msgstr ""
+msgstr "Homens de cor"
 
 #: Form/form_us.xml.h:2240 Form/form_us.xml.h:2252 Form/form_us.xml.h:2264
 #: Form/form_us.xml.h:2276 Form/form_us.xml.h:2305
 msgid "Colored females"
-msgstr ""
+msgstr "Mulheres de cor"
 
 #: Form/form_us.xml.h:2241 Form/form_us.xml.h:2253 Form/form_us.xml.h:2265
 msgid "Deaf & Dumb"
@@ -13963,357 +13963,360 @@ msgstr "Surdos e mudos"
 
 #: Form/form_us.xml.h:2244 Form/form_us.xml.h:2256
 msgid "Foreign Birth"
-msgstr ""
+msgstr "Estrangeiro"
 
 #: Form/form_us.xml.h:2258
 msgid "Inhabitants of"
-msgstr ""
+msgstr "Habitantes de"
 
 #: Form/form_us.xml.h:2277 Form/form_us.xml.h:2306
 msgid "Nativity - United States"
-msgstr ""
+msgstr "Natividade - Estados Unidos"
 
 #: Form/form_us.xml.h:2278 Form/form_us.xml.h:2307
 msgid "Nativity - Germany"
-msgstr ""
+msgstr "Natividade - Alemanha"
 
 #: Form/form_us.xml.h:2279 Form/form_us.xml.h:2308
 msgid "Nativity - Great Britain"
-msgstr ""
+msgstr "Natividade - Grã-Bretanha"
 
 #: Form/form_us.xml.h:2280 Form/form_us.xml.h:2309
 msgid "Nativity - Ireland"
-msgstr ""
+msgstr "Natividade - Irlanda"
 
 #: Form/form_us.xml.h:2281 Form/form_us.xml.h:2310
 msgid "Nativity - France"
-msgstr ""
+msgstr "Natividade - França"
 
 #: Form/form_us.xml.h:2282 Form/form_us.xml.h:2311
 msgid "Nativity - British America"
-msgstr ""
+msgstr "Natividade - América Britânica"
 
 #: Form/form_us.xml.h:2283 Form/form_us.xml.h:2312
 msgid "Nativity - Scandinavian"
-msgstr ""
+msgstr "Natividade - Escandinávia"
 
 #: Form/form_us.xml.h:2284 Form/form_us.xml.h:2313
 msgid "Nativity - Holland"
-msgstr ""
+msgstr "Natividade - Holanda"
 
 #: Form/form_us.xml.h:2285 Form/form_us.xml.h:2314
 msgid "Nativity - All other countries"
-msgstr ""
+msgstr "Natividade - Todos os outros países"
 
 #: Form/form_us.xml.h:2287 Form/form_us.xml.h:2316
 msgid "Residing in the"
-msgstr ""
+msgstr "Residindo em"
 
 #: Form/form_us.xml.h:2292 Form/form_us.xml.h:2321
 msgid "Co."
-msgstr ""
+msgstr "Comp."
 
 #: Form/form_us.xml.h:2293 Form/form_us.xml.h:2322
 msgid "Reg't."
-msgstr ""
+msgstr "Reg.º"
 
 #: Form/form_us.xml.h:2294 Form/form_us.xml.h:2323
 msgid "State or Vessel"
-msgstr ""
+msgstr "Estado ou vaso"
 
 #: Form/form_us.xml.h:2337
 msgid "Parents place of birth"
-msgstr ""
+msgstr "Local de nascimento dos pais"
 
 #: Form/form_us.xml.h:2340
 msgid "Owned/Rented"
-msgstr ""
+msgstr "Possuída/Alugada"
 
 #: Form/form_us.xml.h:2341
 msgid "Free/Mortgaged"
-msgstr ""
+msgstr "Livre/Hipotecada"
 
 #: Form/form_us.xml.h:2342
 msgid "Farm/House"
-msgstr ""
+msgstr "Quinta/Casa"
 
 #: Form/form_us.xml.h:2343 Form/form_us.xml.h:2401 Form/form_us.xml.h:2427
 #: Form/form_us.xml.h:2459 Form/form_gb.xml.h:1 Form/form_gb.xml.h:19
 #: Form/form_gb.xml.h:38
 msgid "Certificate Number"
-msgstr ""
+msgstr "Número de certificado"
 
 #: Form/form_us.xml.h:2344 Form/form_us.xml.h:2402 Form/form_us.xml.h:2428
 #: Form/form_us.xml.h:2460 Form/form_gb.xml.h:2 Form/form_gb.xml.h:20
 #: Form/form_gb.xml.h:39
 msgid "Entry Number"
-msgstr ""
+msgstr "Número de entrada"
 
 #: Form/form_us.xml.h:2345 Form/form_us.xml.h:2429 Form/form_us.xml.h:2461
 #: Form/form_gb.xml.h:6 Form/form_gb.xml.h:43
 msgid "Date Registered"
-msgstr ""
+msgstr "Data de registo"
 
 #: Form/form_us.xml.h:2346 Form/form_us.xml.h:2430 Form/form_us.xml.h:2462
 #: Form/form_gb.xml.h:7 Form/form_gb.xml.h:44
 msgid "Registrar"
-msgstr ""
+msgstr "Registo"
 
 #: Form/form_us.xml.h:2349
 msgid "Twin, triplet or other"
-msgstr ""
+msgstr "Gémeo, triplo ou outro"
 
 #: Form/form_us.xml.h:2350
 msgid "No. in order of birth"
-msgstr ""
+msgstr "N.º na ordem de nascimento"
 
 #: Form/form_us.xml.h:2351
 msgid "Legitimate"
-msgstr ""
+msgstr "Legitimidade"
 
 #: Form/form_us.xml.h:2352 Form/form_us.xml.h:2527 Form/form_fr.xml.h:2
 #: Form/form_fr.xml.h:10 Form/form_fr.xml.h:18 Form/form_fr.xml.h:26
 #: Form/form_fr.xml.h:138 Form/form_fr.xml.h:210
 msgid "Date of birth"
-msgstr ""
+msgstr "Data de nascimento"
 
 #: Form/form_us.xml.h:2369 Form/form_us.xml.h:2390 Form/form_us.xml.h:2483
 #: Form/form_us.xml.h:2570
 msgid "Place of Record"
-msgstr ""
+msgstr "Local de registo"
 
 #: Form/form_us.xml.h:2370 Form/form_us.xml.h:2391 Form/form_us.xml.h:2484
 #: Form/form_us.xml.h:2571
 msgid "Book/Volume"
-msgstr ""
+msgstr "Livro/Volume"
 
 #: Form/form_us.xml.h:2377 Form/form_us.xml.h:2493
 msgid "Race/Color"
-msgstr ""
+msgstr "Raça/Cor"
 
 #: Form/form_us.xml.h:2380
 msgid ""
 "STOP! If you want this record to be attached to the Parents move to Father."
-msgstr ""
+msgstr "PARE! Se quiser que este registo seja anexado aos Pais, vá para Pai."
 
 #: Form/form_us.xml.h:2381
 msgid "Mother (Maiden Name)"
-msgstr ""
+msgstr "Mãe (nome de solteira)"
 
 #: Form/form_us.xml.h:2382
 msgid "Residence of Parents"
-msgstr ""
+msgstr "Residência dos pais"
 
 #: Form/form_us.xml.h:2383
 msgid "By Whom Reported"
-msgstr ""
+msgstr "Por quem relatada"
 
 #: Form/form_us.xml.h:2384 Form/form_us.xml.h:2501
 msgid "Date Recorded"
-msgstr ""
+msgstr "Data de registo"
 
 #: Form/form_us.xml.h:2393
 msgid "License No."
-msgstr ""
+msgstr "Licença n.º"
 
 #: Form/form_us.xml.h:2395
 msgid "Date of Marriage"
-msgstr ""
+msgstr "Data de casamento"
 
 #: Form/form_us.xml.h:2396
 msgid "Married by"
-msgstr ""
+msgstr "Casados por"
 
 #: Form/form_us.xml.h:2398
 msgid "Place of Marriage"
-msgstr ""
+msgstr "Lugar de casamento"
 
 #: Form/form_us.xml.h:2400
 msgid "Consent given by"
-msgstr ""
+msgstr "Consentimento dado por"
 
 #: Form/form_us.xml.h:2403
 msgid "Bond/Licence"
-msgstr ""
+msgstr "Ligação/Licença"
 
 #: Form/form_us.xml.h:2432 Form/form_us.xml.h:2495
 msgid "Place of Death"
-msgstr ""
+msgstr "Local de óbito"
 
 #: Form/form_us.xml.h:2434
 msgid "Length of Residence"
-msgstr ""
+msgstr "Tamanho da residência"
 
 #: Form/form_us.xml.h:2435
 msgid "Served in U.S. Military"
-msgstr ""
+msgstr "Serviço militar nos EUA"
 
 #: Form/form_us.xml.h:2439 Form/form_us.xml.h:2479 Form/form_pl.xml.h:11
 #: Form/form_pl.xml.h:39
 msgid "Spouse's Name"
-msgstr ""
+msgstr "Nome do cônjuge"
 
 #: Form/form_us.xml.h:2440
 msgid "Birth date of deceased"
-msgstr ""
+msgstr "Data de nascimento do falecido"
 
 #: Form/form_us.xml.h:2443
 msgid "Industry or Business"
-msgstr ""
+msgstr "Indústria ou negócio"
 
 #: Form/form_us.xml.h:2444
 msgid "Name of employer"
-msgstr ""
+msgstr "Nome do empregador"
 
 #: Form/form_us.xml.h:2445
 msgid "Date last worked"
-msgstr ""
+msgstr "Data do último emprego"
 
 #: Form/form_us.xml.h:2446
 msgid "Years in this occupation"
-msgstr ""
+msgstr "Anos nesta profissão"
 
 #: Form/form_us.xml.h:2447
 msgid "Education Level"
-msgstr ""
+msgstr "Nível de escolaridade"
 
 #: Form/form_us.xml.h:2453
 msgid "Social Security No."
-msgstr ""
+msgstr "N.º de segurança social"
 
 #: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
 msgid "Date of Death"
-msgstr ""
+msgstr "Data de óbito"
 
 #: Form/form_us.xml.h:2457
 msgid "Place of Burial"
-msgstr ""
+msgstr "Local de inumação"
 
 #: Form/form_us.xml.h:2458
 msgid "Date of Burial"
-msgstr ""
+msgstr "Data de inumação"
 
 #: Form/form_us.xml.h:2478
 msgid "Residence Place"
-msgstr ""
+msgstr "Local de residência"
 
 #: Form/form_us.xml.h:2480
 msgid "Burial Date"
-msgstr ""
+msgstr "Data de inumação"
 
 #: Form/form_us.xml.h:2481
 msgid "Burial Place"
-msgstr ""
+msgstr "Local de inumação"
 
 #: Form/form_us.xml.h:2503
 msgid "Congressional District"
-msgstr ""
+msgstr "Distrito Congressional"
 
 #: Form/form_us.xml.h:2504
 msgid "in the Counties of"
-msgstr ""
+msgstr "nos condados de"
 
 #: Form/form_us.xml.h:2506
 msgid "in the month of"
-msgstr ""
+msgstr "no mês de"
 
 #: Form/form_us.xml.h:2510
 msgid "Age 1 July 1863"
-msgstr ""
+msgstr "Idade 1 de Julho de 1863"
 
 #: Form/form_us.xml.h:2511
 msgid "White or Colored"
-msgstr ""
+msgstr "Branco ou de cor"
 
 #: Form/form_us.xml.h:2514
 msgid "Former Military Service"
-msgstr ""
+msgstr "Serviço militar antigo"
 
 #: Form/form_us.xml.h:2516
 msgid "Station Headquarters"
-msgstr ""
+msgstr "Sede da estação"
 
 #: Form/form_us.xml.h:2517
 msgid "Congr. Dist. of"
-msgstr ""
+msgstr "Dist. Cong. de"
 
 #: Form/form_us.xml.h:2519
 msgid "Card (A, B, or C)"
-msgstr ""
+msgstr "Cartão (A, B ou C)"
 
 #: Form/form_us.xml.h:2521
 msgid "Serial No."
-msgstr ""
+msgstr "N.º de série"
 
 #: Form/form_us.xml.h:2522
 msgid "Registration No."
-msgstr ""
+msgstr "N.º de registo"
 
 #: Form/form_us.xml.h:2523
 msgid "Order No."
-msgstr ""
+msgstr "N.º de ordem"
 
 #: Form/form_us.xml.h:2525
 msgid "Age in yrs."
-msgstr ""
+msgstr "Idade em anos"
 
 #: Form/form_us.xml.h:2526
 msgid "Home Address"
-msgstr ""
+msgstr "Morada de casa"
 
 #: Form/form_us.xml.h:2529
 msgid "Citizenship"
-msgstr ""
+msgstr "Cidadania"
 
 #: Form/form_us.xml.h:2530
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
 msgstr ""
+"Natural, cidadão naturalizado, estrangeiro, não-cidadão ou cidadão índio"
 
 #: Form/form_us.xml.h:2531
 msgid "If not a citizen, of what nation are you a citizen or subject?"
-msgstr ""
+msgstr "Se não for cidadão, de que nação é cidadão ou súbdito?"
 
 #: Form/form_us.xml.h:2533 Form/form_us.xml.h:2559
 msgid "Employer's Name & address"
-msgstr ""
+msgstr "Nome e endereço do empregador"
 
 #: Form/form_us.xml.h:2534
 msgid "Nearest Relative"
-msgstr ""
+msgstr "Parente mais próximo"
 
 #: Form/form_us.xml.h:2535
 msgid "Dependants & Address"
-msgstr ""
+msgstr "Dependentes e endereço"
 
 #: Form/form_us.xml.h:2536
 msgid ""
 "Have you a father, mother, wife, child under 12, or a sister or brother "
 "under 12, solely dependent on your support (specify which)?"
 msgstr ""
+"Tem pai, mãe, mulher, filho -12 anos, irmão -12 anos, exclusivamente "
+"dependentes do seu sustento (especificar quais)?"
 
 #: Form/form_us.xml.h:2538
 msgid "What military service have you had? (Branch, Years, Nation or State)"
-msgstr ""
+msgstr "Que serviço militar prestou? (ramo, anos, nação ou estado)"
 
 #: Form/form_us.xml.h:2539
 msgid "Do you claim exemption from draft (specify grounds)"
-msgstr ""
+msgstr "Requer isenção de serviço (especificar os motivos)"
 
 #: Form/form_us.xml.h:2540
 msgid "Race "
-msgstr ""
+msgstr "Raça "
 
 #: Form/form_us.xml.h:2542
 msgid "Build / Weight"
-msgstr ""
+msgstr "Constituição/Peso"
 
 #: Form/form_us.xml.h:2544
 msgid "Hair Color"
-msgstr ""
+msgstr "Cor do cabelo"
 
 #: Form/form_us.xml.h:2545
 msgid "Bald"
-msgstr ""
+msgstr "Careca"
 
 #: Form/form_us.xml.h:2546 Form/form_gb.xml.h:83 Form/form_gb.xml.h:101
 #: Form/form_gb.xml.h:122 Form/form_gb.xml.h:143 Form/form_gb.xml.h:169
@@ -14321,167 +14324,167 @@ msgstr ""
 #: Form/form_gb.xml.h:325 Form/form_gb.xml.h:361 Form/form_gb.xml.h:592
 #: Form/form_gb.xml.h:624 Form/form_fr.xml.h:81 Form/form_fr.xml.h:219
 msgid "Disability"
-msgstr ""
+msgstr "Deficiência"
 
 #: Form/form_us.xml.h:2547 Form/form_us.xml.h:2569
 msgid "Place of Registration"
-msgstr ""
+msgstr "Local de registo"
 
 #: Form/form_us.xml.h:2548 Form/form_us.xml.h:2568
 msgid "Date of Registration"
-msgstr ""
+msgstr "Data de registo"
 
 #: Form/form_us.xml.h:2549
 msgid "Serial Number"
-msgstr ""
+msgstr "Número de série"
 
 #: Form/form_us.xml.h:2550
 msgid "Order Number"
-msgstr ""
+msgstr "N.º de ordem"
 
 #: Form/form_us.xml.h:2552
 msgid "Place of Residence"
-msgstr ""
+msgstr "Local de residência"
 
 #: Form/form_us.xml.h:2553
 msgid "Mailing Address"
-msgstr ""
+msgstr "Endereço de correio"
 
 #: Form/form_us.xml.h:2554
 msgid "Telephone"
-msgstr ""
+msgstr "Telefone"
 
 #: Form/form_us.xml.h:2555
 msgid "Age in years"
-msgstr ""
+msgstr "Idade em anos"
 
 #: Form/form_us.xml.h:2558
 msgid "Who will always know your address (Name & Address)"
-msgstr ""
+msgstr "Quem saberá sempre o seu endereço (nome e endereço)"
 
 #: Form/form_us.xml.h:2560
 msgid "Place of employment or business"
-msgstr ""
+msgstr "Local de trabalho ou empresa"
 
 #: Form/form_us.xml.h:2564 Form/form_us.xml.h:2582
 msgid "Complexion"
-msgstr ""
+msgstr "Constituição física"
 
 #: Form/form_us.xml.h:2565
 msgid "Eyes"
-msgstr ""
+msgstr "Olhos"
 
 #: Form/form_us.xml.h:2566
 msgid "Hair"
-msgstr ""
+msgstr "Cabelo"
 
 #: Form/form_us.xml.h:2567
 msgid "Other characteristics"
-msgstr ""
+msgstr "Outras características"
 
 #: Form/form_us.xml.h:2574
 msgid "Date entered"
-msgstr ""
+msgstr "Data de entrada"
 
 #: Form/form_us.xml.h:2575
 msgid "Place entered"
-msgstr ""
+msgstr "Local de entrada"
 
 #: Form/form_us.xml.h:2576
 msgid "Term of enlistment"
-msgstr ""
+msgstr "Termo de alistamento"
 
 #: Form/form_us.xml.h:2580
 msgid "Eye color"
-msgstr ""
+msgstr "Cor dos olhos"
 
 #: Form/form_us.xml.h:2581
 msgid "Hair color"
-msgstr ""
+msgstr "Cor do cabelo"
 
 #: Form/form_us.xml.h:2584
 msgid "Rank in"
-msgstr ""
+msgstr "Posto em"
 
 #: Form/form_us.xml.h:2585
 msgid "Branch"
-msgstr ""
+msgstr "Ramo"
 
 #: Form/form_us.xml.h:2586
 msgid "Regiment/Unit/Ship"
-msgstr ""
+msgstr "Regimento/Unidade/Navio"
 
 #: Form/form_us.xml.h:2588
 msgid "Service Number"
-msgstr ""
+msgstr "N.º de serviço"
 
 #: Form/form_us.xml.h:2589
 msgid "No. of enlistment"
-msgstr ""
+msgstr "N.º de alistamento"
 
 #: Form/form_us.xml.h:2590
 msgid "Date discharged"
-msgstr ""
+msgstr "Data de dispensa"
 
 #: Form/form_us.xml.h:2591
 msgid "Place discharged"
-msgstr ""
+msgstr "Local de dispensa"
 
 #: Form/form_us.xml.h:2592
 msgid "Rank out"
-msgstr ""
+msgstr "Posto de dispensa"
 
 #: Form/form_us.xml.h:2597
 msgid "Industry/Employer"
-msgstr ""
+msgstr "Indústria/Empregador"
 
 #: Form/form_us.xml.h:2600
 msgid "Residents Status"
-msgstr ""
+msgstr "Estado dos residentes"
 
 #: Form/form_pl.xml.h:5
 msgid "Event Place (Original)"
-msgstr ""
+msgstr "Local de evento (original)"
 
 #: Form/form_pl.xml.h:8 Form/form_pl.xml.h:36
 msgid "Birth Year (Estimated)"
-msgstr ""
+msgstr "Ano de nascimento (estimado)"
 
 #: Form/form_pl.xml.h:12 Form/form_pl.xml.h:40
 msgid "Spouse's Gender"
-msgstr ""
+msgstr "Sexo do cônjuge"
 
 #: Form/form_pl.xml.h:13 Form/form_pl.xml.h:41
 msgid "Spouse's Age"
-msgstr ""
+msgstr "Idade do cônjuge"
 
 #: Form/form_pl.xml.h:14 Form/form_pl.xml.h:42
 msgid "Spouse's Birth Year (Estimated)"
-msgstr ""
+msgstr "Ano de nascimento do cônjuge (estimado)"
 
 #: Form/form_pl.xml.h:15 Form/form_pl.xml.h:43
 msgid "Spouse's Father's Name"
-msgstr ""
+msgstr "Nome do pai do cônjuge"
 
 #: Form/form_pl.xml.h:16 Form/form_pl.xml.h:44
 msgid "Spouse's Mother's Name"
-msgstr ""
+msgstr "Nome da mãe do cônjuge"
 
 #: Form/form_pl.xml.h:18
 msgid "Record Number"
-msgstr ""
+msgstr "Número de registo"
 
 #: Form/form_pl.xml.h:19
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
 
 #: Form/form_pl.xml.h:28
 msgid "Volume Beginning Year"
-msgstr ""
+msgstr "Volume Ano de início"
 
 #: Form/form_pl.xml.h:29
 msgid "Volume Ending Year"
-msgstr ""
+msgstr "Volume Ano de fim"
 
 #: Form/form_dk.xml.h:2 Form/form_dk.xml.h:19 Form/form_dk.xml.h:36
 #: Form/form_dk.xml.h:51 Form/form_dk.xml.h:68 Form/form_dk.xml.h:85
@@ -14491,7 +14494,7 @@ msgstr ""
 #: Form/form_dk.xml.h:313 Form/form_dk.xml.h:337 Form/form_dk.xml.h:363
 #: Form/form_dk.xml.h:387 Form/form_dk.xml.h:407 Form/form_dk.xml.h:427
 msgid "Amt"
-msgstr ""
+msgstr "Qtd"
 
 #: Form/form_dk.xml.h:3 Form/form_dk.xml.h:20 Form/form_dk.xml.h:37
 #: Form/form_dk.xml.h:52 Form/form_dk.xml.h:69 Form/form_dk.xml.h:86
@@ -14501,7 +14504,7 @@ msgstr ""
 #: Form/form_dk.xml.h:314 Form/form_dk.xml.h:338 Form/form_dk.xml.h:364
 #: Form/form_dk.xml.h:388 Form/form_dk.xml.h:408 Form/form_dk.xml.h:428
 msgid "Town or City"
-msgstr ""
+msgstr "Vila ou cidade"
 
 #: Form/form_dk.xml.h:4 Form/form_dk.xml.h:21 Form/form_dk.xml.h:38
 #: Form/form_dk.xml.h:53 Form/form_dk.xml.h:70 Form/form_dk.xml.h:87
@@ -14511,7 +14514,7 @@ msgstr ""
 #: Form/form_dk.xml.h:315 Form/form_dk.xml.h:339 Form/form_dk.xml.h:365
 #: Form/form_dk.xml.h:389 Form/form_dk.xml.h:409 Form/form_dk.xml.h:429
 msgid "Herred eller By"
-msgstr ""
+msgstr "Concelho ou cidade"
 
 #: Form/form_dk.xml.h:6 Form/form_dk.xml.h:23 Form/form_dk.xml.h:40
 #: Form/form_dk.xml.h:55 Form/form_dk.xml.h:72 Form/form_dk.xml.h:89
@@ -14521,7 +14524,7 @@ msgstr ""
 #: Form/form_dk.xml.h:317 Form/form_dk.xml.h:341 Form/form_dk.xml.h:367
 #: Form/form_dk.xml.h:391 Form/form_dk.xml.h:411 Form/form_dk.xml.h:431
 msgid "Sogn"
-msgstr ""
+msgstr "Paróquia"
 
 #: Form/form_dk.xml.h:8 Form/form_dk.xml.h:25 Form/form_dk.xml.h:42
 #: Form/form_dk.xml.h:57 Form/form_dk.xml.h:74 Form/form_dk.xml.h:91
@@ -14531,7 +14534,7 @@ msgstr ""
 #: Form/form_dk.xml.h:319 Form/form_dk.xml.h:343 Form/form_dk.xml.h:369
 #: Form/form_dk.xml.h:393 Form/form_dk.xml.h:413 Form/form_dk.xml.h:433
 msgid "Gade"
-msgstr ""
+msgstr "Rua"
 
 #: Form/form_dk.xml.h:11 Form/form_dk.xml.h:28 Form/form_dk.xml.h:45
 #: Form/form_dk.xml.h:60 Form/form_dk.xml.h:77 Form/form_dk.xml.h:94
@@ -14539,7 +14542,7 @@ msgstr ""
 #: Form/form_dk.xml.h:170 Form/form_dk.xml.h:193 Form/form_dk.xml.h:214
 #: Form/form_dk.xml.h:235 Form/form_dk.xml.h:259 Form/form_dk.xml.h:294
 msgid "Gift"
-msgstr ""
+msgstr "Casamento"
 
 #: Form/form_dk.xml.h:13 Form/form_dk.xml.h:30 Form/form_dk.xml.h:47
 #: Form/form_dk.xml.h:62 Form/form_dk.xml.h:79 Form/form_dk.xml.h:96
@@ -14547,7 +14550,7 @@ msgstr ""
 #: Form/form_dk.xml.h:172 Form/form_dk.xml.h:195 Form/form_dk.xml.h:216
 #: Form/form_dk.xml.h:237
 msgid "Alder"
-msgstr ""
+msgstr "Ancião"
 
 #: Form/form_dk.xml.h:15 Form/form_dk.xml.h:32 Form/form_dk.xml.h:49
 #: Form/form_dk.xml.h:66 Form/form_dk.xml.h:83 Form/form_dk.xml.h:100
@@ -14557,15 +14560,15 @@ msgstr ""
 #: Form/form_dk.xml.h:332 Form/form_dk.xml.h:348 Form/form_dk.xml.h:380
 #: Form/form_dk.xml.h:400 Form/form_dk.xml.h:422 Form/form_dk.xml.h:442
 msgid "Stilling i familien"
-msgstr ""
+msgstr "Posição na família"
 
 #: Form/form_dk.xml.h:17
 msgid "Titel, Embed, Forretning, Håndværk"
-msgstr ""
+msgstr "Título, Incorporar, Negócio, Artesanato"
 
 #: Form/form_dk.xml.h:34
 msgid "Stilling, embede eller erhverv"
-msgstr ""
+msgstr "Cargo, função ou profissão"
 
 #: Form/form_dk.xml.h:63 Form/form_dk.xml.h:80 Form/form_dk.xml.h:97
 #: Form/form_dk.xml.h:116 Form/form_dk.xml.h:135 Form/form_dk.xml.h:152
@@ -14594,21 +14597,21 @@ msgstr "Onde nasceu"
 #: Form/form_dk.xml.h:324 Form/form_dk.xml.h:374 Form/form_dk.xml.h:398
 #: Form/form_dk.xml.h:420 Form/form_dk.xml.h:438
 msgid "Fødested"
-msgstr ""
+msgstr "Local de nascimento"
 
 #: Form/form_dk.xml.h:115 Form/form_dk.xml.h:134
 msgid "Erhverv"
-msgstr ""
+msgstr "Negócios"
 
 #: Form/form_dk.xml.h:155 Form/form_dk.xml.h:176 Form/form_dk.xml.h:199
 #: Form/form_dk.xml.h:220 Form/form_dk.xml.h:241 Form/form_dk.xml.h:269
 #: Form/form_dk.xml.h:304 Form/form_dk.xml.h:326
 msgid "Trossamfund"
-msgstr ""
+msgstr "Comunidades religiosas"
 
 #: Form/form_dk.xml.h:167 Form/form_dk.xml.h:190
 msgid "Sted"
-msgstr ""
+msgstr "Localização"
 
 #: Form/form_dk.xml.h:179 Form/form_dk.xml.h:202 Form/form_dk.xml.h:223
 #: Form/form_dk.xml.h:247 Form/form_dk.xml.h:281 Form/form_dk.xml.h:310
@@ -14624,177 +14627,177 @@ msgstr ""
 #: Form/form_fr.xml.h:180 Form/form_fr.xml.h:189 Form/form_fr.xml.h:198
 #: Form/form_fr.xml.h:207 Form/form_fr.xml.h:223
 msgid "Comments"
-msgstr ""
+msgstr "Comentários"
 
 #: Form/form_dk.xml.h:180 Form/form_dk.xml.h:203 Form/form_dk.xml.h:224
 #: Form/form_dk.xml.h:248 Form/form_dk.xml.h:282 Form/form_dk.xml.h:311
 msgid "Bemærkninger"
-msgstr ""
+msgstr "Observações"
 
 #: Form/form_dk.xml.h:245 Form/form_dk.xml.h:273 Form/form_dk.xml.h:308
 #: Form/form_dk.xml.h:334 Form/form_dk.xml.h:350 Form/form_dk.xml.h:382
 #: Form/form_dk.xml.h:424 Form/form_dk.xml.h:444 Form/form_gb.xml.h:253
 #: Form/form_gb.xml.h:388
 msgid "Place of Work"
-msgstr ""
+msgstr "Local de trabalho"
 
 #: Form/form_dk.xml.h:246 Form/form_dk.xml.h:274 Form/form_dk.xml.h:309
 #: Form/form_dk.xml.h:335 Form/form_dk.xml.h:351 Form/form_dk.xml.h:383
 #: Form/form_dk.xml.h:425 Form/form_dk.xml.h:445
 msgid "Arbejdssted"
-msgstr ""
+msgstr "Local de trabalho"
 
 #: Form/form_dk.xml.h:261 Form/form_dk.xml.h:296 Form/form_dk.xml.h:322
 #: Form/form_dk.xml.h:346 Form/form_dk.xml.h:372 Form/form_dk.xml.h:396
 #: Form/form_dk.xml.h:418 Form/form_dk.xml.h:436
 msgid "Fødselsdato"
-msgstr ""
+msgstr "Data de nascimento"
 
 #: Form/form_dk.xml.h:264 Form/form_dk.xml.h:299 Form/form_dk.xml.h:375
 msgid "Years at current residence"
-msgstr ""
+msgstr "Anos na residência actual"
 
 #: Form/form_dk.xml.h:265 Form/form_dk.xml.h:300 Form/form_dk.xml.h:376
 msgid "År tilflyttet"
-msgstr ""
+msgstr "Ano de mudança"
 
 #: Form/form_dk.xml.h:266 Form/form_dk.xml.h:301 Form/form_dk.xml.h:377
 msgid "Previous residence"
-msgstr ""
+msgstr "Residência anterior"
 
 #: Form/form_dk.xml.h:267 Form/form_dk.xml.h:302 Form/form_dk.xml.h:378
 msgid "Tilflyttet fra"
-msgstr ""
+msgstr "Transferido de"
 
 #: Form/form_dk.xml.h:276
 msgid "År gift"
-msgstr ""
+msgstr "Ano de casamento"
 
 #: Form/form_dk.xml.h:277 Form/form_gb.xml.h:212 Form/form_gb.xml.h:345
 #: Form/form_gb.xml.h:620
 msgid "Children Living"
-msgstr ""
+msgstr "Filhos vivos"
 
 #: Form/form_dk.xml.h:278
 msgid "Levende børn"
-msgstr ""
+msgstr "Filhos vivos"
 
 #: Form/form_dk.xml.h:279
 msgid "Children Dead"
-msgstr ""
+msgstr "Filhos falecidos"
 
 #: Form/form_dk.xml.h:280
 msgid "Døde børn"
-msgstr ""
+msgstr "Filhos falecidos"
 
 #: Form/form_dk.xml.h:292
 msgid "Køn"
-msgstr ""
+msgstr "Sexo"
 
 #: Form/form_dk.xml.h:327
 msgid "Year stayed in parish"
-msgstr ""
+msgstr "Anos que ficou na paróquia"
 
 #: Form/form_dk.xml.h:328
 msgid "Hvilket aar taget ophold i sognet"
-msgstr ""
+msgstr "Qual o ano de residência na freguesia"
 
 #: Form/form_dk.xml.h:329
 msgid "Previous Residence"
-msgstr ""
+msgstr "Residência anterior"
 
 #: Form/form_dk.xml.h:330
 msgid "Sidste bopæl inden tilflytning"
-msgstr ""
+msgstr "Última residência antes da mudança"
 
 #: Form/form_dk.xml.h:353 Form/form_dk.xml.h:385 Form/form_dk.xml.h:405
 msgid "Bemærkning"
-msgstr ""
+msgstr "Observação"
 
 #: Form/form_dk.xml.h:354
 msgid "Income"
-msgstr ""
+msgstr "Rendimentos"
 
 #: Form/form_dk.xml.h:355
 msgid "Indkomst"
-msgstr ""
+msgstr "Rendimentos"
 
 #: Form/form_dk.xml.h:356
 msgid "Assets"
-msgstr ""
+msgstr "Activos"
 
 #: Form/form_dk.xml.h:357
 msgid "Formue"
-msgstr ""
+msgstr "Formulário"
 
 #: Form/form_dk.xml.h:358
 msgid "State Tax"
-msgstr ""
+msgstr "Imposto de Estado"
 
 #: Form/form_dk.xml.h:359
 msgid "Statsskat"
-msgstr ""
+msgstr "Imposto estatal"
 
 #: Form/form_dk.xml.h:360
 msgid "Council"
-msgstr ""
+msgstr "Conselho"
 
 #: Form/form_dk.xml.h:361
 msgid "Kommuneskat"
-msgstr ""
+msgstr "Imposto municipal"
 
 #: Form/form_dk.xml.h:402
 msgid "Residence on 5 Nov 1924"
-msgstr ""
+msgstr "Residência em 5 Nov 1924"
 
 #: Form/form_dk.xml.h:403
 msgid "Bopæl 5 nov 1924"
-msgstr ""
+msgstr "Local de residência 5 de Novembro de 1924"
 
 #: Form/form_dk.xml.h:415
 msgid "Stay on 5 Nov 1929"
-msgstr ""
+msgstr "Estadia a 5 Nov 1929"
 
 #: Form/form_dk.xml.h:416
 msgid "Ophold 5 nov 1929"
-msgstr ""
+msgstr "Estadia 5 Nov 1929"
 
 #: Form/form_dk.xml.h:439
 msgid "Date Married"
-msgstr ""
+msgstr "Data de casamento"
 
 #: Form/form_dk.xml.h:440
 msgid "Dato gift"
-msgstr ""
+msgstr "Data de casamento"
 
 #: Form/form_gb.xml.h:3 Form/form_gb.xml.h:40 Form/form_gb.xml.h:196
 #: Form/form_gb.xml.h:230 Form/form_gb.xml.h:329 Form/form_gb.xml.h:365
 msgid "Registration District"
-msgstr ""
+msgstr "Distrito de registo"
 
 #: Form/form_gb.xml.h:4 Form/form_gb.xml.h:21 Form/form_gb.xml.h:41
 msgid "Administrative Area"
-msgstr ""
+msgstr "Área administrativa"
 
 #: Form/form_gb.xml.h:5 Form/form_gb.xml.h:22 Form/form_gb.xml.h:42
 msgid "County/Administrative Area"
-msgstr ""
+msgstr "Condado/Área administrativa"
 
 #: Form/form_gb.xml.h:13 Form/form_gb.xml.h:47
 msgid "Maiden Surname"
-msgstr ""
+msgstr "Nome de solteira"
 
 #: Form/form_gb.xml.h:23
 msgid "Banns/Licence"
-msgstr ""
+msgstr "Banhos/Licença"
 
 #: Form/form_gb.xml.h:31 Form/form_gb.xml.h:34
 msgid "Deceased"
-msgstr ""
+msgstr "Óbito"
 
 #: Form/form_gb.xml.h:48
 msgid "Maiden surname of woman who was married"
-msgstr ""
+msgstr "Apelido de solteira da mulher que foi casada"
 
 #: Form/form_gb.xml.h:53
 msgid "Usual Address"
@@ -14802,50 +14805,56 @@ msgstr "Endereço habitual"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
-msgstr ""
+msgstr "Cidade ou bairro"
 
 #: Form/form_gb.xml.h:60 Form/form_gb.xml.h:69 Form/form_gb.xml.h:85
 msgid "Parish or Township"
-msgstr ""
+msgstr "Paróquia ou vila"
 
 #: Form/form_gb.xml.h:62
 msgid "NAMES of each Person who abode therein the preceding Night."
-msgstr ""
+msgstr "NOMES de cada pessoa que morou ali na noite precedente."
 
 #: Form/form_gb.xml.h:64
 msgid ""
 "AGE, rounded down to the nearest five years for those aged fifteen or over."
 msgstr ""
+"IDADE, arredondada para os cinco anos mais próximos para aqueles com quinze "
+"anos ou mais."
 
 #: Form/form_gb.xml.h:66
 msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
-msgstr ""
+msgstr "PROFiSSÃO, NEGÓCIO, EMPREGO ou de MEIOS INDEPENDENTES."
 
 #: Form/form_gb.xml.h:68
 msgid ""
 "Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
 "Parts (P)."
 msgstr ""
+"Nascido no mesmo condado (S ou N), Escócia (S), Irlanda (I) ou estrangeiro "
+"(P)."
 
 #: Form/form_gb.xml.h:70 Form/form_gb.xml.h:91 Form/form_gb.xml.h:110
 msgid "Ecclesiastical District"
-msgstr ""
+msgstr "Distrito eclesiástico"
 
 #: Form/form_gb.xml.h:75
 msgid ""
 "Name and Surname of each Person who abode in the house, on the Night of the "
 "30th March, 1851"
 msgstr ""
+"Nome e apelido de cada pessoa que morava na casa, na noite de 30 de Março de "
+"1851"
 
 #: Form/form_gb.xml.h:77 Form/form_gb.xml.h:95 Form/form_gb.xml.h:433
 #: Form/form_gb.xml.h:460 Form/form_gb.xml.h:488 Form/form_gb.xml.h:520
 #: Form/form_gb.xml.h:559 Form/form_gb.xml.h:581 Form/form_gb.xml.h:610
 msgid "Relation to Head of Family"
-msgstr ""
+msgstr "Relação com chefe de família"
 
 #: Form/form_gb.xml.h:81
 msgid "Rank, Profession or Occupation"
-msgstr ""
+msgstr "Posto ou profissão"
 
 #: Form/form_gb.xml.h:84
 msgid "Whether Blind or Deaf and Dumb"
@@ -14853,29 +14862,29 @@ msgstr "Cegos ou surdos/mudos"
 
 #: Form/form_gb.xml.h:86 Form/form_gb.xml.h:104 Form/form_gb.xml.h:125
 msgid "City or Municipal Borough"
-msgstr ""
+msgstr "Cidade ou município"
 
 #: Form/form_gb.xml.h:87 Form/form_gb.xml.h:105 Form/form_gb.xml.h:126
 #: Form/form_gb.xml.h:148 Form/form_gb.xml.h:277
 msgid "Municipal Ward"
-msgstr ""
+msgstr "Bairro municipal"
 
 #: Form/form_gb.xml.h:88 Form/form_gb.xml.h:106 Form/form_gb.xml.h:127
 #: Form/form_gb.xml.h:601
 msgid "Parliamentary Borough"
-msgstr ""
+msgstr "Bairro parlamentar"
 
 #: Form/form_gb.xml.h:90
 msgid "Hamlet or Tything"
-msgstr ""
+msgstr "Lugar ou paróquia civil"
 
 #: Form/form_gb.xml.h:93 Form/form_gb.xml.h:180 Form/form_gb.xml.h:311
 msgid "Name and Surname of each Person"
-msgstr ""
+msgstr "Nome e apelido de cada indivíduo"
 
 #: Form/form_gb.xml.h:99
 msgid "Rank, Profession of Occupation"
-msgstr ""
+msgstr "Posto ou profissão"
 
 #: Form/form_gb.xml.h:102
 msgid "Whether Blind, or Deaf-and-Dumb"
@@ -14883,21 +14892,21 @@ msgstr "Cegos ou surdos/mudos"
 
 #: Form/form_gb.xml.h:103 Form/form_gb.xml.h:124
 msgid "Civil Parish or Township"
-msgstr ""
+msgstr "Paróquia civil ou vila"
 
 #: Form/form_gb.xml.h:108 Form/form_gb.xml.h:451 Form/form_gb.xml.h:479
 #: Form/form_gb.xml.h:510 Form/form_gb.xml.h:549
 msgid "Village or Hamlet"
-msgstr ""
+msgstr "Aldeia ou lugar"
 
 #: Form/form_gb.xml.h:109
 msgid "Local Board or Improvement Commissioners District"
-msgstr ""
+msgstr "Conselho local ou distrito de comissários de melhoramentos"
 
 #: Form/form_gb.xml.h:112 Form/form_gb.xml.h:133 Form/form_gb.xml.h:155
 #: Form/form_gb.xml.h:284
 msgid "NAME and Surname of each Person"
-msgstr ""
+msgstr "Nome e apelido de cada indivíduo"
 
 #: Form/form_gb.xml.h:114 Form/form_gb.xml.h:135 Form/form_gb.xml.h:157
 #: Form/form_gb.xml.h:182 Form/form_gb.xml.h:286 Form/form_gb.xml.h:313
@@ -14906,15 +14915,15 @@ msgstr "RELAÇÃO com o chefe de família"
 
 #: Form/form_gb.xml.h:116
 msgid "CONDITION"
-msgstr ""
+msgstr "CONDIÇÃO"
 
 #: Form/form_gb.xml.h:118
 msgid "AGE of"
-msgstr ""
+msgstr "IDADE de"
 
 #: Form/form_gb.xml.h:120 Form/form_gb.xml.h:141
 msgid "Rank, Profession or OCCUPATION"
-msgstr ""
+msgstr "Posto ou PROFISSÃO"
 
 #: Form/form_gb.xml.h:123
 msgid ""
@@ -14932,27 +14941,27 @@ msgstr ""
 
 #: Form/form_gb.xml.h:128 Form/form_gb.xml.h:150 Form/form_gb.xml.h:279
 msgid "Town, Village or Hamlet"
-msgstr ""
+msgstr "Cidade, vila ou lugar"
 
 #: Form/form_gb.xml.h:129 Form/form_gb.xml.h:149 Form/form_gb.xml.h:278
 msgid "Urban Sanitary District"
-msgstr ""
+msgstr "Distrito Sanitário Urbano"
 
 #: Form/form_gb.xml.h:130 Form/form_gb.xml.h:151 Form/form_gb.xml.h:280
 msgid "Rural Sanitary District"
-msgstr ""
+msgstr "Distrito Sanitário Rural"
 
 #: Form/form_gb.xml.h:131 Form/form_gb.xml.h:153 Form/form_gb.xml.h:282
 msgid "Ecclesiastical Parish or District"
-msgstr ""
+msgstr "Paróquia eclesiástica ou bairro"
 
 #: Form/form_gb.xml.h:137 Form/form_gb.xml.h:159 Form/form_gb.xml.h:288
 msgid "CONDITION as to Marriage"
-msgstr ""
+msgstr "CONDIÇÃO sobre casamento"
 
 #: Form/form_gb.xml.h:139 Form/form_gb.xml.h:161 Form/form_gb.xml.h:290
 msgid "AGE last Birthday of"
-msgstr ""
+msgstr "AGE último aniversário de"
 
 #: Form/form_gb.xml.h:144
 msgid ""
@@ -14971,26 +14980,26 @@ msgstr ""
 #: Form/form_gb.xml.h:145 Form/form_gb.xml.h:171 Form/form_gb.xml.h:274
 #: Form/form_gb.xml.h:302
 msgid "Administrative County"
-msgstr ""
+msgstr "Condado administrativo"
 
 #: Form/form_gb.xml.h:146 Form/form_gb.xml.h:172 Form/form_gb.xml.h:275
 #: Form/form_gb.xml.h:303 Form/form_gb.xml.h:445 Form/form_gb.xml.h:472
 #: Form/form_gb.xml.h:500 Form/form_gb.xml.h:537
 msgid "Civil Parish"
-msgstr ""
+msgstr "Paróquia civil"
 
 #: Form/form_gb.xml.h:147 Form/form_gb.xml.h:276
 msgid "Municipal Borough"
-msgstr ""
+msgstr "Bairro municipal"
 
 #: Form/form_gb.xml.h:152 Form/form_gb.xml.h:177 Form/form_gb.xml.h:281
 #: Form/form_gb.xml.h:308
 msgid "Parliamentary Borough or Division"
-msgstr ""
+msgstr "Bairro ou divisão parlamentar"
 
 #: Form/form_gb.xml.h:163 Form/form_gb.xml.h:292
 msgid "PROFESSION or OCCUPATION"
-msgstr ""
+msgstr "PROFISSÃO"
 
 #: Form/form_gb.xml.h:164 Form/form_gb.xml.h:293 Form/form_gb.xml.h:525
 #: Form/form_ca.xml.h:431 Form/form_ca.xml.h:496 Form/form_ca.xml.h:707
@@ -14999,11 +15008,11 @@ msgstr "Empregador"
 
 #: Form/form_gb.xml.h:166 Form/form_gb.xml.h:295 Form/form_gb.xml.h:527
 msgid "Neither"
-msgstr ""
+msgstr "Nenhum"
 
 #: Form/form_gb.xml.h:167 Form/form_gb.xml.h:296 Form/form_gb.xml.h:528
 msgid "Neither Employer nor Employed"
-msgstr ""
+msgstr "Nem empregador nem empregado"
 
 #: Form/form_gb.xml.h:170 Form/form_gb.xml.h:299
 msgid ""
@@ -15019,53 +15028,53 @@ msgstr ""
 
 #: Form/form_gb.xml.h:173 Form/form_gb.xml.h:304 Form/form_gb.xml.h:539
 msgid "Ecclesiastical Parish"
-msgstr ""
+msgstr "Paróquia eclesiástica"
 
 #: Form/form_gb.xml.h:174 Form/form_gb.xml.h:305
 msgid "County Borough, Municipal Borough, or Urban District"
-msgstr ""
+msgstr "Bairro, bairro municipal ou distrito urbano"
 
 #: Form/form_gb.xml.h:175 Form/form_gb.xml.h:306
 msgid "Ward of Municipal Borough or of Urban District"
-msgstr ""
+msgstr "Bairro de uma freguesia ou de um distrito urbano"
 
 #: Form/form_gb.xml.h:176 Form/form_gb.xml.h:307
 msgid "Rural District"
-msgstr ""
+msgstr "Distrito rural"
 
 #: Form/form_gb.xml.h:178 Form/form_gb.xml.h:309
 msgid "Town or Village or Hamlet"
-msgstr ""
+msgstr "Cidade, vila ou lugar"
 
 #: Form/form_gb.xml.h:184 Form/form_gb.xml.h:315 Form/form_gb.xml.h:561
 msgid "Condition as to Marriage"
-msgstr ""
+msgstr "Condição sobre casamento"
 
 #: Form/form_gb.xml.h:186 Form/form_gb.xml.h:317
 msgid "Age last Birthday of"
-msgstr ""
+msgstr "Idade último aniversário de"
 
 #: Form/form_gb.xml.h:188 Form/form_gb.xml.h:319
 msgid "PROFESSION OR OCCUPATION"
-msgstr ""
+msgstr "PROFISSÃO"
 
 #: Form/form_gb.xml.h:189 Form/form_gb.xml.h:220 Form/form_gb.xml.h:320
 #: Form/form_gb.xml.h:353
 msgid "Work Type"
-msgstr ""
+msgstr "Tipo de trabalho"
 
 #: Form/form_gb.xml.h:190 Form/form_gb.xml.h:321
 msgid "Employer, Worker or Own Account"
-msgstr ""
+msgstr "Empregador, trabalhador ou conta própria"
 
 #: Form/form_gb.xml.h:191 Form/form_gb.xml.h:222 Form/form_gb.xml.h:322
 #: Form/form_gb.xml.h:355
 msgid "At Home"
-msgstr ""
+msgstr "Em casa"
 
 #: Form/form_gb.xml.h:192 Form/form_gb.xml.h:323
 msgid "If Working at Home"
-msgstr ""
+msgstr "Se trabalha em casa"
 
 #: Form/form_gb.xml.h:195 Form/form_gb.xml.h:326
 msgid ""
@@ -15084,12 +15093,12 @@ msgstr ""
 #: Form/form_gb.xml.h:197 Form/form_gb.xml.h:231 Form/form_gb.xml.h:330
 #: Form/form_gb.xml.h:366
 msgid "Registration Sub-District"
-msgstr ""
+msgstr "Sub-distrito de registo"
 
 #: Form/form_gb.xml.h:198 Form/form_gb.xml.h:232 Form/form_gb.xml.h:331
 #: Form/form_gb.xml.h:367 Form/form_gb.xml.h:424
 msgid "Enumeration District"
-msgstr ""
+msgstr "Distrito de recenseamento"
 
 #: Form/form_gb.xml.h:199 Form/form_gb.xml.h:233 Form/form_gb.xml.h:332
 #: Form/form_gb.xml.h:368
@@ -15098,49 +15107,49 @@ msgstr "Número de quartos"
 
 #: Form/form_gb.xml.h:201 Form/form_gb.xml.h:334
 msgid "NAME AND SURNAME"
-msgstr ""
+msgstr "NOME E APELIDO"
 
 #: Form/form_gb.xml.h:203 Form/form_gb.xml.h:336
 msgid "RELATIONSHIP to Head of Family"
-msgstr ""
+msgstr "RELAÇÃO com o chefe de família"
 
 #: Form/form_gb.xml.h:205 Form/form_gb.xml.h:338
 msgid "AGE (last Birthday)"
-msgstr ""
+msgstr "IDADE (último aniversário)"
 
 #: Form/form_gb.xml.h:207 Form/form_gb.xml.h:340
 msgid ""
 "\"Single,\" \"Married,\" \"Widower,\" or \"Widow,\" for all persons aged 15 "
 "years and upwards."
-msgstr ""
+msgstr "\"Solteiro\", \"Casado\", ou \"Viúvo\", para todos com 15 anos ou mais."
 
 #: Form/form_gb.xml.h:208 Form/form_gb.xml.h:341 Form/form_gb.xml.h:617
 msgid "Years Married"
-msgstr ""
+msgstr "Anos de casamento"
 
 #: Form/form_gb.xml.h:209 Form/form_gb.xml.h:342
 msgid "Completed Years the present Marriage has lasted."
-msgstr ""
+msgstr "Anos completos que o actual casamento durou."
 
 #: Form/form_gb.xml.h:210 Form/form_gb.xml.h:343
 msgid "Children Total"
-msgstr ""
+msgstr "Total de filhos"
 
 #: Form/form_gb.xml.h:211 Form/form_gb.xml.h:344
 msgid "Total Children Born Alive."
-msgstr ""
+msgstr "Total de filhos nascidos vivos."
 
 #: Form/form_gb.xml.h:213 Form/form_gb.xml.h:346
 msgid "Children still Living."
-msgstr ""
+msgstr "Filhos ainda vivos."
 
 #: Form/form_gb.xml.h:214 Form/form_gb.xml.h:347
 msgid "Children Died"
-msgstr ""
+msgstr "Filhos falecidos"
 
 #: Form/form_gb.xml.h:215 Form/form_gb.xml.h:348
 msgid "Children who have Died."
-msgstr ""
+msgstr "Filhos falecidos."
 
 #: Form/form_gb.xml.h:217 Form/form_gb.xml.h:350
 msgid "Personal Occupation"
@@ -15148,11 +15157,11 @@ msgstr "Profissão pessoal"
 
 #: Form/form_gb.xml.h:219 Form/form_gb.xml.h:352
 msgid "Industry or Service with which worker is connected."
-msgstr ""
+msgstr "Indústria ou serviço com o qual o trabalhador está ligado."
 
 #: Form/form_gb.xml.h:221 Form/form_gb.xml.h:354
 msgid "Whether Employer, Worker or Working on Own Account"
-msgstr ""
+msgstr "Seja empregador, trabalhador ou por conta própria"
 
 #: Form/form_gb.xml.h:223 Form/form_gb.xml.h:356
 msgid "Whether Working at Home"
@@ -15160,7 +15169,7 @@ msgstr "Se deve trabalha em casa"
 
 #: Form/form_gb.xml.h:225 Form/form_gb.xml.h:358
 msgid "BIRTHPLACE of every Person."
-msgstr ""
+msgstr "LOCAL DE NASCIMENTO de cada um."
 
 #: Form/form_gb.xml.h:226 Form/form_gb.xml.h:247 Form/form_gb.xml.h:359
 #: Form/form_gb.xml.h:382 Form/form_ca.xml.h:488 Form/form_ca.xml.h:699
@@ -15176,50 +15185,53 @@ msgstr "Nacionalidade"
 
 #: Form/form_gb.xml.h:227 Form/form_gb.xml.h:360
 msgid "NATIONALITY of every Person born in a Foreign Country."
-msgstr ""
+msgstr "NACIONALIDADE de cada estrangeiro."
 
 #: Form/form_gb.xml.h:229 Form/form_gb.xml.h:362
 msgid "INFIRMITY"
-msgstr ""
+msgstr "ENFERMIDADES"
 
 #: Form/form_gb.xml.h:235 Form/form_gb.xml.h:370
 msgid "NAME and SURNAME"
-msgstr ""
+msgstr "NOME E APELIDO"
 
 #: Form/form_gb.xml.h:237 Form/form_gb.xml.h:372
 msgid "RELATIONSHIP to Head of Household"
-msgstr ""
+msgstr "RELAÇÃO com o chefe de família"
 
 #: Form/form_gb.xml.h:239 Form/form_gb.xml.h:374
 msgid "AGE years"
-msgstr ""
+msgstr "IDADE em anos"
 
 #: Form/form_gb.xml.h:240 Form/form_gb.xml.h:375
 msgid "Age Months"
-msgstr ""
+msgstr "Idade em meses"
 
 #: Form/form_gb.xml.h:241 Form/form_gb.xml.h:376
 msgid "AGE months"
-msgstr ""
+msgstr "IDADE em meses"
 
 #: Form/form_gb.xml.h:243 Form/form_gb.xml.h:378
 msgid "SEX"
-msgstr ""
+msgstr "SEXO"
 
 #: Form/form_gb.xml.h:245 Form/form_gb.xml.h:380
 msgid "MARRIAGE or ORPHANHOOD"
-msgstr ""
+msgstr "CASAMENTO ou ORFANATO"
 
 #: Form/form_gb.xml.h:249 Form/form_gb.xml.h:384
 msgid ""
 "If attending a School or any kind of Educational Institution for the purpose "
 "of receiving Instruction"
 msgstr ""
+"Se frequentar uma escola ou qualquer tipo de estabelecimento de ensino com o "
+"objectivo de receber instrução"
 
 #: Form/form_gb.xml.h:251 Form/form_gb.xml.h:386
 msgid ""
 "State here the precise branch of Profession, Trade, Manufacture, Service, &c."
 msgstr ""
+"Indicar aqui o ramo exacto da profissão, comércio, fabrico, serviço, etc."
 
 #: Form/form_gb.xml.h:254 Form/form_gb.xml.h:389
 msgid "Number of living children"
@@ -15228,107 +15240,109 @@ msgstr "Número de filhos vivos"
 #: Form/form_gb.xml.h:255 Form/form_gb.xml.h:390
 msgid "Total number under sixteen years of age. If none write \"None.\""
 msgstr ""
+"Número total de menores de dezasseis anos. Se não houver nenhum, escrever "
+"\"Nenhum\"."
 
 #: Form/form_gb.xml.h:256 Form/form_gb.xml.h:391
 msgid "Ages of living children"
-msgstr ""
+msgstr "Idades de filhos vivos"
 
 #: Form/form_gb.xml.h:257 Form/form_gb.xml.h:392
 msgid "For each child place a X in the column corresponding to its age."
-msgstr ""
+msgstr "Para cada filho, coloque um X na coluna correspondente à sua idade."
 
 #: Form/form_gb.xml.h:258
 msgid "E.D. Letter Code"
-msgstr ""
+msgstr "Código da letra E.D."
 
 #: Form/form_gb.xml.h:259
 msgid "Borough, U.D. or R.D."
-msgstr ""
+msgstr "Bairro, U.D. ou R.D."
 
 #: Form/form_gb.xml.h:260
 msgid "Registration District and Sub-district"
-msgstr ""
+msgstr "Distrito e sub-distrito de registo"
 
 #: Form/form_gb.xml.h:262
 msgid "SURNAMES and OTHER NAMES."
-msgstr ""
+msgstr "APELIDOS e OUTROS NOMES."
 
 #: Form/form_gb.xml.h:263
 msgid "OVSPI"
-msgstr ""
+msgstr "OVSPI"
 
 #: Form/form_gb.xml.h:264
 msgid "O, V, S, P or I"
-msgstr ""
+msgstr "O, V, S, P ou I"
 
 #: Form/form_gb.xml.h:266
 msgid "M or F"
-msgstr ""
+msgstr "M ou F"
 
 #: Form/form_gb.xml.h:269
 msgid "S, M, W or D."
-msgstr ""
+msgstr "S, C, V ou D."
 
 #: Form/form_gb.xml.h:271
 msgid "PERSONAL OCCUPATION"
-msgstr ""
+msgstr "PROFISSÃO PESSOAL"
 
 #: Form/form_gb.xml.h:272
 msgid "Instructions"
-msgstr ""
+msgstr "Instruções"
 
 #: Form/form_gb.xml.h:273
 msgid "See INSTRUCTIONS"
-msgstr ""
+msgstr "Ver INSTRUÇÕES"
 
 #: Form/form_gb.xml.h:301 Form/form_gb.xml.h:328 Form/form_gb.xml.h:364
 msgid "Language Spoken"
-msgstr ""
+msgstr "Língua falada"
 
 #: Form/form_gb.xml.h:394
 msgid "LANGUAGE SPOKEN."
-msgstr ""
+msgstr "LÍNGUA FALADA."
 
 #: Form/form_gb.xml.h:397 Form/form_gb.xml.h:408 Form/form_gb.xml.h:425
 #: Form/form_gb.xml.h:452 Form/form_gb.xml.h:480 Form/form_gb.xml.h:512
 #: Form/form_gb.xml.h:551
 msgid "GROS Data"
-msgstr ""
+msgstr "Dados GROS"
 
 #: Form/form_gb.xml.h:401
 msgid "Born in County"
-msgstr ""
+msgstr "Nascido no condado"
 
 #: Form/form_gb.xml.h:402
 msgid "Foreigner, Born England or Ireland"
-msgstr ""
+msgstr "Estrangeiro, nascido em Inglaterra ou na Irlanda"
 
 #: Form/form_gb.xml.h:404 Form/form_gb.xml.h:419 Form/form_gb.xml.h:446
 #: Form/form_gb.xml.h:473 Form/form_gb.xml.h:501 Form/form_gb.xml.h:540
 msgid "Quoad Sacra Parish"
-msgstr ""
+msgstr "Paróquia de Quoad Sacra"
 
 #: Form/form_gb.xml.h:405 Form/form_gb.xml.h:420 Form/form_gb.xml.h:447
 #: Form/form_gb.xml.h:475 Form/form_gb.xml.h:503 Form/form_gb.xml.h:542
 msgid "Parliamentary Burgh"
-msgstr ""
+msgstr "Burgo parlamentar"
 
 #: Form/form_gb.xml.h:406 Form/form_gb.xml.h:421 Form/form_gb.xml.h:448
 #: Form/form_gb.xml.h:476 Form/form_gb.xml.h:505 Form/form_gb.xml.h:544
 msgid "Royal Burgh"
-msgstr ""
+msgstr "Burgo real"
 
 #: Form/form_gb.xml.h:407 Form/form_gb.xml.h:604
 msgid "Town or Village"
-msgstr ""
+msgstr "Cidade ou vila"
 
 #: Form/form_gb.xml.h:410
 msgid "House Schedule No"
-msgstr ""
+msgstr "Calendário da casa n.º"
 
 #: Form/form_gb.xml.h:412
 msgid "Relation to Head"
-msgstr ""
+msgstr "Parentesco com o chefe"
 
 #: Form/form_gb.xml.h:417
 msgid "Blind, or Deaf and Dumb"
@@ -15337,27 +15351,27 @@ msgstr "Cegos ou surdos/mudos"
 #: Form/form_gb.xml.h:427 Form/form_gb.xml.h:454 Form/form_gb.xml.h:482
 #: Form/form_gb.xml.h:514 Form/form_gb.xml.h:553
 msgid "No. Of Schedule"
-msgstr ""
+msgstr "N.º de calendário"
 
 #: Form/form_gb.xml.h:429 Form/form_gb.xml.h:456 Form/form_gb.xml.h:484
 #: Form/form_gb.xml.h:516 Form/form_gb.xml.h:555
 msgid "Road, Street, etc, and No. or Name of House"
-msgstr ""
+msgstr "Estrada, rua, etc., e n.º ou nome da casa"
 
 #: Form/form_gb.xml.h:430 Form/form_gb.xml.h:457 Form/form_gb.xml.h:485
 #: Form/form_gb.xml.h:517 Form/form_gb.xml.h:556
 msgid "House Inhabited"
-msgstr ""
+msgstr "Casa desabitada"
 
 #: Form/form_gb.xml.h:431 Form/form_gb.xml.h:458 Form/form_gb.xml.h:486
 #: Form/form_gb.xml.h:518 Form/form_gb.xml.h:557
 msgid "House U or B"
-msgstr ""
+msgstr "Casa U ou B"
 
 #: Form/form_gb.xml.h:437 Form/form_gb.xml.h:464 Form/form_gb.xml.h:492
 #: Form/form_gb.xml.h:524
 msgid "Rank, Profession, or Occupation"
-msgstr ""
+msgstr "Posto ou profissão"
 
 #: Form/form_gb.xml.h:440
 msgid "Whether Blind, or Deaf and Dumb"
@@ -15366,22 +15380,22 @@ msgstr "Cegos ou surdos/mudos"
 #: Form/form_gb.xml.h:442 Form/form_gb.xml.h:469 Form/form_gb.xml.h:497
 #: Form/form_gb.xml.h:534 Form/form_gb.xml.h:571
 msgid "No. of Children from 5 to 13 attending School"
-msgstr ""
+msgstr "N.º de filhos 5-13 na escola"
 
 #: Form/form_gb.xml.h:443 Form/form_gb.xml.h:470 Form/form_gb.xml.h:498
 #: Form/form_gb.xml.h:535 Form/form_gb.xml.h:572
 msgid "WindowRooms"
-msgstr ""
+msgstr "DivisõesJanela"
 
 #: Form/form_gb.xml.h:444 Form/form_gb.xml.h:471 Form/form_gb.xml.h:499
 #: Form/form_gb.xml.h:536 Form/form_gb.xml.h:573
 msgid "No. of Rooms with one or more Windows"
-msgstr ""
+msgstr "N.º de divisões com uma ou mais janelas"
 
 #: Form/form_gb.xml.h:449 Form/form_gb.xml.h:477 Form/form_gb.xml.h:507
 #: Form/form_gb.xml.h:546
 msgid "Police Burgh"
-msgstr ""
+msgstr "Bairro da Polícia"
 
 #: Form/form_gb.xml.h:467 Form/form_gb.xml.h:495 Form/form_gb.xml.h:532
 #: Form/form_gb.xml.h:569
@@ -15390,72 +15404,74 @@ msgstr "Se 1. Surdos e mudos, 2. Cegos, 3. Imbecis ou idiotas 4. Lunáticos"
 
 #: Form/form_gb.xml.h:474
 msgid "School Board District"
-msgstr ""
+msgstr "Conselho escolar do bairro"
 
 #: Form/form_gb.xml.h:502 Form/form_gb.xml.h:541
 msgid "School board District"
-msgstr ""
+msgstr "Conselho escolar do bairro"
 
 #: Form/form_gb.xml.h:504 Form/form_gb.xml.h:543 Form/form_gb.xml.h:602
 msgid "Parliamentary Division"
-msgstr ""
+msgstr "Divisão Parlamentar"
 
 #: Form/form_gb.xml.h:506 Form/form_gb.xml.h:545
 msgid "Municipal Burgh"
-msgstr ""
+msgstr "Burgo municipal"
 
 #: Form/form_gb.xml.h:508 Form/form_gb.xml.h:547
 msgid "Burgh Ward"
-msgstr ""
+msgstr "Bairro do burgo"
 
 #: Form/form_gb.xml.h:511 Form/form_gb.xml.h:550
 msgid "Island"
-msgstr ""
+msgstr "Ilha"
 
 #: Form/form_gb.xml.h:530 Form/form_gb.xml.h:567
 msgid "Gaellic or G. & E."
-msgstr ""
+msgstr "Gaélico ou G. & E."
 
 #: Form/form_gb.xml.h:538
 msgid "Parish Ward"
-msgstr ""
+msgstr "Bairro da freguesia"
 
 #: Form/form_gb.xml.h:563
 msgid "Profession or Occupation"
-msgstr ""
+msgstr "Profissão ou ocupação"
 
 #: Form/form_gb.xml.h:564
 msgid "Employer, Worker or on Own Account"
-msgstr ""
+msgstr "Empregador, trabalhador ou conta própria"
 
 #: Form/form_gb.xml.h:565
 msgid "Working at Home"
-msgstr ""
+msgstr "A trabalhar em casa"
 
 #: Form/form_gb.xml.h:575 Form/form_gb.xml.h:596
 msgid "District Electoral Division"
-msgstr ""
+msgstr "Divisão eleitoral distrital"
 
 #: Form/form_gb.xml.h:576 Form/form_gb.xml.h:599
 msgid "Townland"
-msgstr ""
+msgstr "Concelho"
 
 #: Form/form_gb.xml.h:578 Form/form_gb.xml.h:607
 msgid "No. on Form B"
-msgstr ""
+msgstr "N.º no formulário B"
 
 #: Form/form_gb.xml.h:584 Form/form_gb.xml.h:613
 msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
-msgstr ""
+msgstr "\"Sabe ler e escrever\", \"Sabe ler\" ou \"Não sabe ler\""
 
 #: Form/form_gb.xml.h:590 Form/form_gb.xml.h:622
 msgid "Irish Language"
-msgstr ""
+msgstr "Língua irlandesa"
 
 #: Form/form_gb.xml.h:591 Form/form_gb.xml.h:623
 msgid ""
 "\"Irish\" or \"Irish & English\", in other cases no entry should be made"
 msgstr ""
+"\"Irlandês\" ou \"Irlandês & Inglês\", nos outros casos não deve ser feita "
+"qualquer entrada"
 
 #: Form/form_gb.xml.h:593 Form/form_gb.xml.h:625
 msgid ""
@@ -15467,27 +15483,27 @@ msgstr ""
 
 #: Form/form_gb.xml.h:595
 msgid "Poor Law Union"
-msgstr ""
+msgstr "União da Lei dos Pobres"
 
 #: Form/form_gb.xml.h:597
 msgid "Barony"
-msgstr ""
+msgstr "Baronato"
 
 #: Form/form_gb.xml.h:603
 msgid "Urban District"
-msgstr ""
+msgstr "Distrito urbano"
 
 #: Form/form_gb.xml.h:606
 msgid "Head of Family"
-msgstr ""
+msgstr "Chefe de família"
 
 #: Form/form_gb.xml.h:618
 msgid "Total Children"
-msgstr ""
+msgstr "Total de filhos"
 
 #: Form/form_gb.xml.h:619
 msgid "Children born alive to present Marriage"
-msgstr ""
+msgstr "Filhos nascidos vivos até ao presente casamento"
 
 #: Form/form_ca.xml.h:2 Form/form_ca.xml.h:93 Form/form_ca.xml.h:211
 #: Form/form_ca.xml.h:798
@@ -17672,23 +17688,23 @@ msgstr "26. Estado onde está empregado"
 
 #: Form/form_fr.xml.h:38 Form/form_fr.xml.h:55 Form/form_fr.xml.h:220
 msgid "Can read and write"
-msgstr ""
+msgstr "Sabe ler e escrever"
 
 #: Form/form_fr.xml.h:42 Form/form_fr.xml.h:47
 msgid "Military"
-msgstr ""
+msgstr "Militares"
 
 #: Form/form_fr.xml.h:56 Form/form_fr.xml.h:221
 msgid "Taxes"
-msgstr ""
+msgstr "Impostos"
 
 #: Form/form_fr.xml.h:57 Form/form_fr.xml.h:67 Form/form_fr.xml.h:222
 msgid "Type of roof"
-msgstr ""
+msgstr "Tipo de telhado"
 
 #: Form/form_fr.xml.h:144
 msgid "Arrived since"
-msgstr ""
+msgstr "Chegado desde"
 
 #: SourceIndex/SourceIndex.gpr.py:24
 msgid "BirthIndex"
@@ -18281,6 +18297,8 @@ msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
 msgstr ""
+"Defina o tamanho dos pontos de mapa térmico.\n"
+"Pré-definição: 15"
 
 #: Heatmap/heatmap.py:93
 msgid "File path"
@@ -18293,6 +18311,10 @@ msgid ""
 "has to start and end with an alphanumeric character.The file extention '."
 "html' is added by the report."
 msgstr ""
+"Para o nome do ficheiro, só são permitidas letras de A-Z, a-z, os algarismos "
+"0-9, os caracteres espaço, sublinhado e hífen. O nome do ficheiro também tem "
+"de começar e terminar com um carácter alfanumérico. A extensão de ficheiro "
+"'.html' é adicionada pelo relatório."
 
 #: Heatmap/heatmap.py:103
 msgid "File name"
@@ -18300,12 +18322,14 @@ msgstr "Nome de ficheiro"
 
 #: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
-msgstr ""
+msgstr "Activar posição inicial personalizada"
 
 #: Heatmap/heatmap.py:119
 msgid ""
 "Enabling will force the map open at your custom start position and zoom."
 msgstr ""
+"A activação forçará o mapa a abrir na sua posição inicial e ampliação "
+"personalizadas."
 
 #: Heatmap/heatmap.py:124
 msgid "Start latitude"
@@ -18316,6 +18340,8 @@ msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
 msgstr ""
+"Definir latitude da posição inicial personalizada\n"
+"Pré-definição: 50.0"
 
 #: Heatmap/heatmap.py:129
 msgid "Start longitude"
@@ -18326,16 +18352,20 @@ msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
 msgstr ""
+"Definir longitude da posição inicial personalizada\n"
+"Pré-definição: 10.0"
 
 #: Heatmap/heatmap.py:134
 msgid "Start zoom"
-msgstr ""
+msgstr "Ampliação inicial"
 
 #: Heatmap/heatmap.py:136
 msgid ""
 "Set the value for the starting zoom\n"
 "Default: 5"
 msgstr ""
+"Definir o valor da ampliação inicial\n"
+"Pré-definição: 5"
 
 #: Heatmap/heatmap.py:209
 msgid "Path does not exist."
@@ -18347,11 +18377,11 @@ msgstr "Nome de ficheiro inválido."
 
 #: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
-msgstr ""
+msgstr "Criar um relatório de mapa térmico."
 
 #: Heatmap/utils.py:55
 msgid "Stamen Terrain"
-msgstr ""
+msgstr "Terreno de Stamen"
 
 #: Heatmap/utils.py:58
 msgid "Stamen Terrain (Background only)"
@@ -18359,19 +18389,19 @@ msgstr "Terreno de estames (só o fundo)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
-msgstr ""
+msgstr "Tonalizador Stamen"
 
 #: Heatmap/utils.py:64
 msgid "Stamen Watercolor"
-msgstr ""
+msgstr "Cor de água Stamen"
 
 #: Heatmap/utils.py:67
 msgid "CartoDB Positron"
-msgstr ""
+msgstr "CartoDB Positron"
 
 #: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
-msgstr ""
+msgstr "CartoDB DarkMatter"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
 msgid "Number of ancestors"
@@ -18398,11 +18428,11 @@ msgstr "Encontrado"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:56
 msgid "Theoretical"
-msgstr ""
+msgstr "Teórico"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:57
 msgid "Percent"
-msgstr ""
+msgstr "Percentagem"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:65
 msgid ""
@@ -18410,6 +18440,9 @@ msgid ""
 "Only individual ancestors were counted. Duplicates caused by pedigree "
 "collapse were ignored."
 msgstr ""
+"Foram encontrados {} de {} ascendentes ({}).\n"
+"Apenas foram contados os individuais. As duplicações causadas pelos implexos "
+"foram ignoradas."
 
 #: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format
@@ -18794,7 +18827,7 @@ msgstr "Mapa de cronologias"
 
 #: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
-msgstr ""
+msgstr "Escolha o modo de ver"
 
 #: GeoTimeLines/GeoTimeLines.py:800
 msgid "Almost done"
@@ -18815,6 +18848,9 @@ msgid ""
 "to differentiate different\n"
 "markers at the same location"
 msgstr ""
+"Escalonar os marcadores do mapa\n"
+"para os distinguir\n"
+"na mesma localização"
 
 #: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
@@ -18822,34 +18858,45 @@ msgid ""
 "as measured along the equator\n"
 "(includes latitude distortion)"
 msgstr ""
+"Raio de escalonamento (hectómetros)\n"
+"medido ao longo do equador\n"
+"(inclui a distorção da latitude)"
 
 #: GeoTimeLines/GeoTimeLines.py:1794
 msgid ""
 "Display markers for unknown ancestors\n"
 "based on earliest descendant location"
 msgstr ""
+"Mostrar marcadores para antepassados desconhecidos\n"
+"com base na localização do descendente mais antigo"
 
 #: GeoTimeLines/GeoTimeLines.py:1803
 msgid ""
 "Days to keep lines on the map after\n"
 "an event"
 msgstr ""
+"Dias para manter as linhas no mapa depois de\n"
+"um evento"
 
 #: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
-msgstr ""
+msgstr "Use ícones de mapa personalizados"
 
 #: GeoTimeLines/GeoTimeLines.py:1829
 msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
 msgstr ""
+"Se não houver evento de nascimento dum indivíduo, a idade\n"
+"é presumida como esta ao seu primeiro evento"
 
 #: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
 "If there is no death event for a person, they will\n"
 "be assumed dead at this age"
 msgstr ""
+"Se não houver evento de óbito dum indivíduo,\n"
+"será presumido falecido nesta idade"
 
 #: GeoTimeLines/GeoTimeLines.py:1875
 msgid "Number of steps"
@@ -18861,25 +18908,27 @@ msgstr "Tipo de passos"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
-msgstr ""
+msgstr "Passos por mili-segundo"
 
 #: GeoTimeLines/GeoTimeLines.py:1915
 msgid "Initial map view on Gramps startup"
-msgstr ""
+msgstr "Vista inicial do mapa no arranque do Gramps"
 
 #: GeoTimeLines/GeoTimeLines.py:1927
 msgid ""
 "Initial map view after startup and\n"
 "after changing the active person"
 msgstr ""
+"Vista inicial do mapa após o arranque e\n"
+"depois de mudar o indivíduo activo"
 
 #: GeoTimeLines/GeoTimeLines.py:1936
 msgid "Show map travel lines on startup"
-msgstr ""
+msgstr "Mostrar linhas de viagem no arranque"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
-msgstr ""
+msgstr "Mostrar os tiques de tempo na barra de navegação no arranque"
 
 #: GeoTimeLines/GeoTimeLines.py:1974
 msgid "TimeLines Map options"
@@ -18889,6 +18938,8 @@ msgstr "Opções do mapa de cronologias"
 msgid ""
 "A view showing all the places visited by a person or persons on various date."
 msgstr ""
+"Uma vista que mostra todos os locais visitados por um ou vários indivíduos "
+"em várias datas."
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:39
 msgid "TimeLines map"
@@ -19174,7 +19225,7 @@ msgstr "Atributos familiares estendidos"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
-msgstr ""
+msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Replace existing references to the person being assigned without asking"
@@ -19198,7 +19249,7 @@ msgstr "Detectar face dentro de caixas existentes"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
 msgid "Sensitivity (1 min .. 20 max)"
-msgstr ""
+msgstr "Sensibilidade (1 min.. 20 max)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:291
 msgid "Add Person"
@@ -19377,15 +19428,15 @@ msgstr "Colecção de páginas web para a Rússia (requer libwebconnect)"
 
 #: RUWebConnectPack/RUWebPack.py:40
 msgid "OBD \"Memorial\""
-msgstr ""
+msgstr "\"Memorial\" OBD"
 
 #: RUWebConnectPack/RUWebPack.py:41
 msgid "People memory"
-msgstr ""
+msgstr "Memória de pessoas"
 
 #: RUWebConnectPack/RUWebPack.py:42
 msgid "Winners"
-msgstr ""
+msgstr "Vencedores"
 
 #: RUWebConnectPack/RUWebPack.py:43
 msgid "Lived"
@@ -19397,7 +19448,7 @@ msgstr "Abrir lista"
 
 #: RUWebConnectPack/RUWebPack.py:45
 msgid "Wait for me"
-msgstr ""
+msgstr "Espere por mim"
 
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
@@ -19405,11 +19456,11 @@ msgstr "Árvore de família de toda a Rússia (fórum)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
-msgstr ""
+msgstr "Pessoas Yandex"
 
 #: RUWebConnectPack/RUWebPack.py:49
 msgid "RIA Officers"
-msgstr ""
+msgstr "Oficiais RIA"
 
 #: RUWebConnectPack/RUWebPack.py:50
 msgid "FamilySpace"
@@ -19429,6 +19480,13 @@ msgid ""
 "25% of their DNA similar to half-siblings instead of 12.5% like normal first "
 "cousins.\n"
 msgstr ""
+"Os primos duplos (em primeiro grau) ocorrem quando dois irmãos da família A "
+"casam com dois irmãos da família B. Os seus filhos são primos duplos entre "
+"si e partilham os mesmos quatro avós em vez de seis, como os primos em "
+"primeiro grau normais. Por conseguinte, são geneticamente mais próximos do "
+"que os primos em primeiro grau normais e partilham 25% do seu ADN, "
+"semelhante a meios-irmãos, em vez de 12,5%, como os primos em primeiro grau "
+"normais.\n"
 
 #: DoubleCousins/double_cousins.py:136
 msgid "No double cousins were found in your database."
@@ -19440,11 +19498,11 @@ msgstr "Mostrar texto informativo"
 
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
-msgstr ""
+msgstr "Primos duplos"
 
 #: DoubleCousins/double_cousins.gpr.py:26
 msgid "A text report listing double cousins."
-msgstr ""
+msgstr "Um lista de texto de primos duplos."
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
 msgid "Read Gramps headline news"
@@ -19548,19 +19606,19 @@ msgstr "Adicione ou remova uma etiqueta de grupos de indivíduos, eventos, etc."
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
-msgstr ""
+msgstr "Cromossoma "
 
 #: DNA/dnasegmentmap.py:552
 msgid " Map for "
-msgstr ""
+msgstr " Mapa para "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
-msgstr ""
+msgstr "Car"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 #: DNA/dnasegmentmap.py:761
 msgid ": Grandparent"
@@ -19573,14 +19631,17 @@ msgid ""
 "{0}\n"
 "{1} cMs"
 msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
-msgstr ""
+msgstr " SNPs"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : começa em "
 
 #: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
@@ -19589,12 +19650,12 @@ msgstr " e acaba em "
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s e %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
 #, python-brace-format
@@ -19615,10 +19676,12 @@ msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
 msgstr ""
+"Clique para tornar este indivíduo activo\n"
+"Clique direito do rato para o editar"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
-msgstr ""
+msgstr "Mapa de segmentos ADN"
 
 #: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
@@ -19739,7 +19802,7 @@ msgstr "O estilo usado para o título da linha."
 #: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format
 msgid "%(line)s. line:"
-msgstr ""
+msgstr "linha %(line)s.:"
 
 #: LinesOfDescendency/lines-of-descendency.py:176
 #, python-format
@@ -19843,11 +19906,12 @@ msgstr "Falha ao escrever "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
-msgstr ""
+msgstr "Ano de nascimento do indivíduo central"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr ""
+"O ano de nascimento do indivíduo central. Estimar um ano, se desconhecido"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
 msgid "Destination directory"
@@ -19864,10 +19928,12 @@ msgstr "Idade pré-definida"
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
 msgstr ""
+"Idade pré-definida do progenitor quando o ano de nascimento do filho é "
+"desconhecido"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
-msgstr ""
+msgstr "O que mostrar"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Show GrampsID"
@@ -19875,7 +19941,7 @@ msgstr "Mostrar ID Gramps"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
-msgstr ""
+msgstr "Mostrar o ID Gramps no canto superior direito da caixa"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
@@ -19883,7 +19949,7 @@ msgstr "Optimizar"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
-msgstr ""
+msgstr "Utilizar o mínimo de espaço possível na horizontal"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
 msgid "Male Box Color"
@@ -19907,23 +19973,25 @@ msgstr "Número de pixels por ano"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
-msgstr ""
+msgstr "Quantos pixels de altura tem um ano?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:910
 msgid "Offset X Coordinate"
-msgstr ""
+msgstr "Desvio da coordenada X"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
+"Quantos pixels não são utilizados para além das caixas mais à esquerda e "
+"mais à direita?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:917
 msgid "Offset Y Coordinate"
-msgstr ""
+msgstr "Desvio da coordenada Y"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
-msgstr ""
+msgstr "Quantos pixels não são utilizados acima da primeira caixa?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
 msgid "Width of a box in pixel"
@@ -19939,22 +20007,24 @@ msgstr "Espaço horizontal entre caixas (px)"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
-msgstr ""
+msgstr "Espaço horizontal mínimo entre duas caixas, em pixels"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:934
 msgid "Length of vertical part of a line in pixel"
-msgstr ""
+msgstr "Comprimento da parte vertical de uma linha em pixels"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:936
 msgid ""
 "Parent and child boxes are connected with lines. This is the length of the "
 "vertical part of the lines in pixel"
 msgstr ""
+"As caixas-mãe e filha estão ligadas por linhas. Este é o comprimento da "
+"parte vertical das linhas em pixels"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:943
 #: TimePedigreeHTML/TimePedigreeHtml.py:945
 msgid "Number of pixel between left border and scale"
-msgstr ""
+msgstr "Número de pixels entre a margem esquerda e a escala"
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
 msgid "Timeline Pedigree Report"
@@ -19965,6 +20035,8 @@ msgid ""
 "Creates an HTML webpage that uses JavaScript to show a pedigree block "
 "diagram arranged vertically by birth date"
 msgstr ""
+"Cria uma página Web HTML que utiliza JavaScript para mostrar um diagrama de "
+"linhagem verticalmente por data de nascimento"
 
 #: USWebConnectPack/USWebPack.py:35
 msgid "US Google"
@@ -20019,18 +20091,19 @@ msgstr "Definir propriedades para múltiplos locais"
 msgid ""
 "This gramplet allows setting properties for multiple places at the same time"
 msgstr ""
+"Este Gramplet permite definir propriedades para vários locais ao mesmo tempo"
 
 #: PlaceUpdate/PlaceUpdate.py:111
 msgid "New enclosing place"
-msgstr ""
+msgstr "Novo local contentor"
 
 #: PlaceUpdate/PlaceUpdate.py:119
 msgid "Timespan:"
-msgstr ""
+msgstr "Período de tempo:"
 
 #: PlaceUpdate/PlaceUpdate.py:123
 msgid "Set timespan for enclosing places"
-msgstr ""
+msgstr "Definir período de tempo para locais contentores"
 
 #: PlaceUpdate/PlaceUpdate.py:159
 msgid "Clear original enclosing places"
@@ -20046,11 +20119,11 @@ msgstr "Gerar hierarquia"
 
 #: PlaceUpdate/PlaceUpdate.py:171
 msgid "use spaces as separator"
-msgstr ""
+msgstr "usar espaços como separador"
 
 #: PlaceUpdate/PlaceUpdate.py:175
 msgid "reverse hierarchy"
-msgstr ""
+msgstr "reverter hierarquia"
 
 #: PlaceUpdate/PlaceUpdate.py:181
 msgid "Replace text"
@@ -20058,11 +20131,11 @@ msgstr "Substituir texto"
 
 #: PlaceUpdate/PlaceUpdate.py:184
 msgid "Use regex"
-msgstr ""
+msgstr "Usar expressões regulares"
 
 #: PlaceUpdate/PlaceUpdate.py:193
 msgid "Old text:"
-msgstr ""
+msgstr "Texto anterior:"
 
 #: PlaceUpdate/PlaceUpdate.py:197
 msgid "New text:"
@@ -20078,11 +20151,11 @@ msgstr "Aplicar aos locais seleccionados"
 
 #: PlaceUpdate/PlaceUpdate.py:266
 msgid "Setting place properties"
-msgstr ""
+msgstr "Definir propriedades do local"
 
 #: PlaceUpdate/PlaceUpdate.py:304
 msgid "Regex operation failed: {}"
-msgstr ""
+msgstr "Falha na expressão regular: {}"
 
 #: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
 msgid "PlaceUpdate"
@@ -20090,7 +20163,7 @@ msgstr "Actualizar local"
 
 #: PlaceUpdate/PlaceUpdate.gpr.py:5
 msgid "Gramplet to manipulate multiple places"
-msgstr ""
+msgstr "Gramplet para manipular múltiplos locais"
 
 #: MediaReport/media_report.gpr.py:24
 msgid "Media Report"
@@ -20184,7 +20257,7 @@ msgstr "Altura máxima da imagem em % da altura da página."
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "Data de referência ou intervalo de datas"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "a valid Gramps date"
@@ -20192,7 +20265,7 @@ msgstr "uma data Gramps válida"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "Data ou desvio ±y ou ±y, m, d"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -20200,6 +20273,10 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. uma data\n"
+"2. um número positivo ou negativo, representando anos\n"
+"3. uma lista de valores positivos ou negativos, representando anos, meses, "
+"dias"
 
 #: DateCalculator/DateCalculator.py:96
 msgid "Result"
@@ -20211,11 +20288,11 @@ msgstr "Calcular"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "Erro: data inválida para a primeira expressão"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "Erro: desvio inválido para a segunda expressão"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
@@ -20224,7 +20301,7 @@ msgstr "Erro: pelo menos uma das expressões tem de ser uma data"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
+msgstr "Insira uma expressão nos campos acima e clique em Calcular."
 
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
@@ -20233,7 +20310,7 @@ msgstr "Calculadora de datas"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
-msgstr ""
+msgstr "Efectuar cálculos matemáticos de datas"
 
 #: FixCoords/fixcoords.gpr.py:31
 msgid "Fix Place Coordinates"
@@ -20243,6 +20320,8 @@ msgstr "Reparar coordenadas de locais"
 msgid ""
 "Tool to correct the place coordinates for extra spaces or comma characters."
 msgstr ""
+"Ferramenta para corrigir as coordenadas do local com espaços extra ou "
+"vírgulas."
 
 #: FixCoords/fixcoords.py:53
 msgid "Fix Coordinates"
@@ -20250,11 +20329,11 @@ msgstr "Reparar coordenadas"
 
 #: FixCoords/fixcoords.py:58
 msgid "Looking for possible coords with \",\" characters"
-msgstr ""
+msgstr "A procurar possíveis coordenadas com caracteres \",\""
 
 #: FixCoords/fixcoords.py:60
 msgid "Fix coords"
-msgstr ""
+msgstr "Corrigir coordenadas"
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
@@ -20511,13 +20590,15 @@ msgstr "Base de dados PostgreSQL"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Melhoradas"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"Um formatador de citações melhorado que adiciona um repositório e uma cota à "
+"funcionalidade padrão."
 
 #: libwebconnect/libwebconnect.gpr.py:11
 msgid "Library for web site collections"
@@ -20821,7 +20902,7 @@ msgstr "Direcção temporal"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr ""
+msgstr "Limitar o número de pessoas mostradas (utilizar 0 para ilimitado)"
 
 #: GraphView/graphview.py:812
 msgid "Person theme"
@@ -20841,11 +20922,11 @@ msgstr "Estilo dos avatares"
 
 #: GraphView/graphview.py:841
 msgid "PNG files"
-msgstr ""
+msgstr "Ficheiros PNG"
 
 #: GraphView/graphview.py:846
 msgid "Male avatar:"
-msgstr ""
+msgstr "Avatar masculino:"
 
 #: GraphView/graphview.py:847
 msgid "Choose male avatar"
@@ -20853,7 +20934,7 @@ msgstr "Escolha um avatar masculino"
 
 #: GraphView/graphview.py:859
 msgid "Female avatar:"
-msgstr ""
+msgstr "Avatar feminino:"
 
 #: GraphView/graphview.py:860
 msgid "Choose female avatar"
@@ -20873,7 +20954,7 @@ msgstr "Outro avatar:"
 
 #: GraphView/graphview.py:886
 msgid "Choose Other avatar"
-msgstr ""
+msgstr "Escolher outro avatar"
 
 #: GraphView/graphview.py:900
 msgid "Active person border size"
@@ -20973,13 +21054,15 @@ msgstr "Espaços"
 
 #: GraphView/graphview.py:1193
 msgid "All connected"
-msgstr ""
+msgstr "Tudo ligado"
 
 #: GraphView/graphview.py:1195
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
 msgstr ""
+"Mostra todas as pessoas ligadas limitadas por restrições de geração.\n"
+"Funciona lentamente, pelo que não deve definir valores de geração elevados."
 
 #: GraphView/graphview.py:1337
 msgid "Add active person"
@@ -21042,10 +21125,14 @@ msgid ""
 "{people_missing} people won't be shown. You can change this limit in the "
 "view configuration."
 msgstr ""
+"Este gráfico conteria pelo menos {people_count} indivíduos, o que excede o "
+"limite de {people_limit}. Por motivos de desempenho, pelo menos "
+"{people_missing} indivíduos não serão mostrados. Pode alterar este limite na "
+"configuração da vista."
 
 #: GraphView/graphview.py:2678
 msgid "Incomplete graph"
-msgstr ""
+msgstr "Gráfico incompleto"
 
 #: GraphView/graphview.py:3047
 msgid "Image on right side"
@@ -21161,11 +21248,11 @@ msgstr "Claro"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
-msgstr ""
+msgstr "Desenho animado"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
-msgstr ""
+msgstr "Moderno"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
@@ -21226,23 +21313,23 @@ msgstr "Colecção de páginas “web” para o UA (requer libwebconnect)"
 
 #: UAWebConnectPack/UAWebPack.py:39
 msgid "Forum: ukrgenealogy.com.ua"
-msgstr ""
+msgstr "Fórum: ukrgenealogy.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:40
 msgid "Forum: genoua.name"
-msgstr ""
+msgstr "Fórum: genoua.name"
 
 #: UAWebConnectPack/UAWebPack.py:43
 msgid "Encyclopedia: esu.com.ua"
-msgstr ""
+msgstr "Enciclopédia: esu.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:44
 msgid "Wikipedia: uk.wikipedia.org"
-msgstr ""
+msgstr "Wikipédia: uk.wikipedia.org"
 
 #: UAWebConnectPack/UAWebPack.py:47
 msgid "Repressed DB: reabit.org.ua"
-msgstr ""
+msgstr "BD reprimida: reabit.org.ua"
 
 #: UAWebConnectPack/UAWebPack.py:50
 msgid "Genealogy DB: familysearch.org"
@@ -21250,7 +21337,7 @@ msgstr "BD genealógica: familysearch.org"
 
 #: UAWebConnectPack/UAWebPack.py:51
 msgid "Genealogy DB: myheritage.com.ua"
-msgstr ""
+msgstr "BD de genealogia: myheritage.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:53
 msgid "Genealogy DB: pra.in.ua"
@@ -21258,11 +21345,11 @@ msgstr "BD genealógica: pra.in.ua"
 
 #: UAWebConnectPack/UAWebPack.py:56
 msgid "Map: Ridni.org"
-msgstr ""
+msgstr "Mapa: Ridni.org"
 
 #: UAWebConnectPack/UAWebPack.py:59
 msgid "Search: google.com.ua"
-msgstr ""
+msgstr "Procurar: google.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:60
 msgid "Search: roots.in.ua"
@@ -21278,7 +21365,7 @@ msgstr "Lista eventos históricos relevantes durante a vida do indivíduo"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
-msgstr ""
+msgstr "Linhas comeste início na coluna de texto serão ocultadas "
 
 #: HistContext/HistContext.py:126
 msgid "Use filter "
@@ -21294,19 +21381,19 @@ msgstr "Usar datas completas"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
-msgstr ""
+msgstr "Itens de cor de primeiro plano no tempo de vida"
 
 #: HistContext/HistContext.py:138
 msgid "Background color items in lifespan"
-msgstr ""
+msgstr "Itens de cor de fundo no tempo de vida"
 
 #: HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
-msgstr ""
+msgstr "Itens de cor de primeiro plano fora do tempo de vida"
 
 #: HistContext/HistContext.py:144
 msgid "Background color items outside lifespan"
-msgstr ""
+msgstr "Itens de cor de fundo fora do tempo de vida"
 
 #: HistContext/HistContext.py:149
 msgid "Select from files"
@@ -21318,7 +21405,7 @@ msgstr "Data inválida "
 
 #: HistContext/HistContext.py:288
 msgid " in line: "
-msgstr ""
+msgstr " em linha: "
 
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
@@ -21328,6 +21415,7 @@ msgstr "Erro:"
 #: HistContext/HistContext.py:327
 msgid ": line does not contain four sections separated by semicolons in : \""
 msgstr ""
+": a linha não contém quatro secções separadas por ponto e vírgula em: \""
 
 #: HistContext/HistContext.py:419
 msgid "Cannot open URL: "
@@ -21335,7 +21423,7 @@ msgstr "Impossível abrir URL: "
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
-msgstr ""
+msgstr "Duplo clique na linha para seguir a ligação"
 
 #: SearchGramplet/SearchGramplet.gpr.py:10
 msgid "Gramplet for search objects in database."
@@ -21370,6 +21458,8 @@ msgid ""
 "Start type to search objects.\n"
 "To show all objects enter only «*» symbol."
 msgstr ""
+"Escreva para procurar objectos.\n"
+"Para mostrar todos os objectos, insira apenas \"*\"."
 
 #: SearchGramplet/SearchGramplet.py:743
 #, python-format
@@ -21396,11 +21486,13 @@ msgstr "Sincronização \"web\" do Gramps"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
-msgstr ""
+msgstr "Sincroniza uma base de dados local com uma instância do Gramps Web."
 
 #: GrampsWebSync/grampswebsync.py:264
 msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
+"O utilizador não tem permissões de servidor suficientes para utilizar a "
+"sincronização."
 
 #: GrampsWebSync/grampswebsync.py:268
 msgid "Fetching remote data..."
@@ -21408,7 +21500,7 @@ msgstr "A obter dados remotos..."
 
 #: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
-msgstr ""
+msgstr "Erro inesperado ao aplicar as alterações."
 
 #: GrampsWebSync/grampswebsync.py:322
 msgid "Media files are in sync."
@@ -21417,30 +21509,30 @@ msgstr "Multimédia sincronizada."
 #: GrampsWebSync/grampswebsync.py:331
 #, python-format
 msgid "Successfully downloaded %s media files."
-msgstr ""
+msgstr "Transferiu com êxito %s ficheiros multimédia."
 
 #: GrampsWebSync/grampswebsync.py:334
 #, python-format
 msgid "Encountered %s errors during download."
-msgstr ""
+msgstr "Encontrou erros %s durante a transferência."
 
 #: GrampsWebSync/grampswebsync.py:340
 #, python-format
 msgid "Successfully uploaded %s media files."
-msgstr ""
+msgstr "Envio bem sucedido de %s ficheiros multimédia."
 
 #: GrampsWebSync/grampswebsync.py:343
 #, python-format
 msgid "Encountered %s errors during upload."
-msgstr ""
+msgstr "%s erros encontrados durante o envio."
 
 #: GrampsWebSync/grampswebsync.py:389 GrampsWebSync/grampswebsync.py:410
 msgid "Error accessing media object."
-msgstr ""
+msgstr "Erro ao aceder ao objecto multimédia."
 
 #: GrampsWebSync/grampswebsync.py:451
 msgid "Failed importing downloaded XML file."
-msgstr ""
+msgstr "Falha ao importar o ficheiro XML transferido."
 
 #: GrampsWebSync/grampswebsync.py:457
 msgid "Comparing local and remote data..."
@@ -21448,11 +21540,11 @@ msgstr "A comparar dados locais e remotos..."
 
 #: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
-msgstr ""
+msgstr "Erro de autorização do servidor."
 
 #: GrampsWebSync/grampswebsync.py:492
 msgid "Server authorization error: insufficient permissions."
-msgstr ""
+msgstr "Erro de autorização do servidor: permissões insuficientes."
 
 #: GrampsWebSync/grampswebsync.py:495
 msgid "Error: URL not found."
@@ -21461,37 +21553,41 @@ msgstr "Erro: URL não encontrado."
 #: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
+"Impossível sincronizar alterações com o servidor: os objectos foram "
+"modificados."
 
 #: GrampsWebSync/grampswebsync.py:503
 #, python-format
 msgid "Error %s while connecting to server."
-msgstr ""
+msgstr "Erro %s durante a ligação ao servidor."
 
 #: GrampsWebSync/grampswebsync.py:506
 msgid "URL error while connecting to server."
-msgstr ""
+msgstr "Erro de URL durante a ligação ao servidor."
 
 #: GrampsWebSync/grampswebsync.py:509
 msgid "Error while parsing response from server."
-msgstr ""
+msgstr "Erro ao analisar a resposta do servidor."
 
 #: GrampsWebSync/grampswebsync.py:537
 msgid "Continue without transport encryption?"
-msgstr ""
+msgstr "Continuar sem a encriptação de transporte?"
 
 #: GrampsWebSync/grampswebsync.py:539
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
+"Especificou um URL com esquema http. Se continuar, a sua senha será enviada "
+"em texto simples através da rede. Utilize apenas para testes locais!"
 
 #: GrampsWebSync/grampswebsync.py:544
 msgid "Continue with HTTP"
-msgstr ""
+msgstr "Continuar com HTTP"
 
 #: GrampsWebSync/grampswebsync.py:545
 msgid "Use HTTPS"
-msgstr ""
+msgstr "Usar HTTPS"
 
 #: GrampsWebSync/grampswebsync.py:663
 msgid ""
@@ -21508,22 +21604,37 @@ msgid ""
 "If you instead want to merge two significantly different trees with the "
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
+"Esta ferramenta permite sincronizar a árvore genealógica actual com uma "
+"árvore genealógica remota servida pelo Gramps Web.\n"
+"\n"
+"A ferramenta assume que as duas árvores são derivadas uma da outra, ou seja, "
+"uma das duas foi criada a partir de uma exportação Gramps XML (não GEDCOM!) "
+"da outra.\n"
+"\n"
+"Após uma sincronização bem sucedida, as duas árvores serão idênticas. As "
+"modificações serão propagadas com base nos carimbos de data e hora. Será "
+"solicitada uma confirmação antes que quaisquer alterações sejam feitas nas "
+"árvores local ou remota.\n"
+"\n"
+"Se, em vez disso, pretender unir duas árvores significativamente diferentes "
+"com a opção de efectuar modificações manuais, utilize a Ferramenta de união "
+"de importação."
 
 #: GrampsWebSync/grampswebsync.py:690
 msgid "Server URL: "
-msgstr ""
+msgstr "URL do servidor: "
 
 #: GrampsWebSync/grampswebsync.py:774
 msgid "Bidirectional Synchronization"
-msgstr ""
+msgstr "Sincronização bidireccional"
 
 #: GrampsWebSync/grampswebsync.py:783
 msgid "Reset remote to local"
-msgstr ""
+msgstr "Repor a remota com a local"
 
 #: GrampsWebSync/grampswebsync.py:791
 msgid "Reset local to remote"
-msgstr ""
+msgstr "Repor a local com a remota"
 
 #: GrampsWebSync/grampswebsync.py:799
 msgid "Merge"
@@ -21564,15 +21675,15 @@ msgstr "Não aplicar alterações à base de dados local."
 
 #: GrampsWebSync/grampswebsync.py:923
 msgid "Applying changes to remote database ..."
-msgstr ""
+msgstr "A aplicar alterações à base de dados remota..."
 
 #: GrampsWebSync/grampswebsync.py:926
 msgid "No changes to apply to remote database."
-msgstr ""
+msgstr "Não há alterações a aplicar à base de dados remota."
 
 #: GrampsWebSync/grampswebsync.py:933
 msgid "Successfully applied changes to local database."
-msgstr ""
+msgstr "Aplicadas com êxito as alterações à base de dados local."
 
 #: GrampsWebSync/grampswebsync.py:962
 msgid "Missing locally"
@@ -21640,7 +21751,7 @@ msgstr "Arquivos nacionais"
 
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
-msgstr ""
+msgstr "Quem procura quem?"
 
 #: NLWebConnectPack/NLWebPack.gpr.py:13
 msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
@@ -22819,11 +22930,12 @@ msgstr "Gera um gráfico familiar de rede."
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
 msgstr ""
+"O local não foi encontrado. Pode clarificar as palavras-chave de pesquisa."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
 msgid "Failed to search for the coordinates due to some unexpected error."
-msgstr ""
+msgstr "Falha na procura das coordenadas devido a um erro inesperado."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
 msgid "The place was not found."
@@ -22837,16 +22949,16 @@ msgstr "O local não foi identificado."
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
 msgid "Coordinates were not given."
-msgstr ""
+msgstr "As coordenadas não foram indicadas."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
 msgid "Failed to interpret the input format."
-msgstr ""
+msgstr "Falha na interpretação do formato de entrada."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
-msgstr ""
+msgstr "Entrada de BD [{id}] {name}:"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
@@ -22859,11 +22971,11 @@ msgstr "Nenhum local activo"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
-msgstr ""
+msgstr "Gramplet Coordenada do local (Vista)"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
 msgid "View for the place coordinate gramplet."
-msgstr ""
+msgstr "Vista das coordenadas de local."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
 msgid "Place and Coordinates"
@@ -22871,7 +22983,7 @@ msgstr "Locais e coordenadas"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
-msgstr ""
+msgstr "Gramplet que simplifica a definição das coordenadas de um local"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
 msgid "Place Coordinates"
@@ -22883,7 +22995,7 @@ msgstr "Gramplet Coordenadas de locais"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
-msgstr ""
+msgstr "Menu do mapa"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
 msgid "Add city as place"
@@ -22907,29 +23019,31 @@ msgstr "Nenhuma entrada de BD seleccionada"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
-msgstr ""
+msgstr "Código postal:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:116
 msgid "Show found place externally in Google Maps"
-msgstr ""
+msgstr "Mostrar externamente o local encontrado no Google Maps"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:203
 msgid ""
 "Take last clicked position\n"
 "from Geography map"
 msgstr ""
+"Retirar a última posição clicada\n"
+"no mapa geográfico"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:218
 msgid "Search location from DB"
-msgstr ""
+msgstr "Procurar localização a partir da BD"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:232
 msgid "Apply geo location to Database"
-msgstr ""
+msgstr "Aplicar a localização geográfica à base de dados"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:269
 msgid "Go"
-msgstr ""
+msgstr "Ir"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
