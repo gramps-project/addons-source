@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2025-03-13 22:50+0000\n"
+"PO-Revision-Date: 2025-03-18 20:52+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Descendant Book"
+msgstr "Nachkommenbuch"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Erstellt einen oder mehrere Nachkommenberichte basierend auf einer "
+"mitgelieferten Abfrage."
+
+msgid "Detailed Descendant Book"
+msgstr "Ausführliches Nachkommenbuch"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Erstellt basierend auf einer angegebenen Abfrage einen oder mehrere "
+"ausführliche Nachkommenberichte."
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -29,14 +46,6 @@ msgstr "Nachkommenbericht"
 #, python-format
 msgid "Writing %s reports..."
 msgstr "Schreibe %s Berichte..."
-
-#, python-format
-msgid "%s. Descendants of %s"
-msgstr "%s, Nachkommen von %s"
-
-#, python-format
-msgid "%d. %s"
-msgstr "%d. %s"
 
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
@@ -79,20 +88,8 @@ msgid "Report, Generation, Person, Name"
 msgstr "Bericht, Generation, Person, Name"
 
 #, python-format
-msgid "See Report : %s, Generation : %s, Person : %s"
-msgstr "Siehe Bericht : %s, Generation : %s, Person : %s"
-
-#, python-format
 msgid "Report appearances for %s"
 msgstr "Berichtserscheinungsbild für %s"
-
-#, python-format
-msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
-msgstr "Ehepartner von: Bericht: %s, Generation: %s, Person: %s"
-
-#, python-format
-msgid "Report: %s, Generation: %s, Person: %s"
-msgstr "Bericht: %s, Generation: %s, Person: %s"
 
 #, python-format
 msgid "%(event_name)s of %(name)s "
@@ -125,10 +122,6 @@ msgstr "%(event_name)s:"
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
-
-#, python-format
-msgid "Ref: %s. %s"
-msgstr "Ref: %s. %s"
 
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
@@ -213,23 +206,6 @@ msgstr "Der Stil der für die Überschrift im Ortsindex verwendet wird."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "Der Stil der für die Referenzen im Ortsindex verwendet wird."
-
-msgid "Descendant Book"
-msgstr "Nachkommenbuch"
-
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Erstellt einen oder mehrere Nachkommenberichte basierend auf einer "
-"mitgelieferten Abfrage."
-
-msgid "Detailed Descendant Book"
-msgstr "Ausführliches Nachkommenbuch"
-
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Erstellt basierend auf einer angegebenen Abfrage einen oder mehrere "
-"ausführliche Nachkommenberichte."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

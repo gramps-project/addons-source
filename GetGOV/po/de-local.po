@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-18 20:52+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,17 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Place ID to import from GOV (Historical Gazetteer):"
 msgstr "Orts-ID für den Import aus GOV (Historisches Ortsverzeichnis):"
 
 msgid "Get Place"
-msgstr "Hole Ort"
+msgstr "Ort holen"
 
 #, python-format
 msgid "Add GOV-id place %s"
-msgstr "GOV-ID hinzufügen Ort %s"
+msgstr "GOV-id Ort %s hinzufügen"
 
 #, python-format
 msgid "GetGOV error: %s"
@@ -48,4 +48,4 @@ msgid "GetGOV"
 msgstr "GetGOV"
 
 msgid "Gramplet to get places from the GOV database"
-msgstr "Gramplet um Orte aus der GOV Datenbank zu holen"
+msgstr "Gramplet zum Abrufen von Orten aus der GOV-Datenbank"

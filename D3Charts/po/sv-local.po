@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-03-18 09:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,11 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
-
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Fel vid skrivning av %s: %s"
+"X-Generator: Weblate 5.11-dev\n"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -62,6 +58,42 @@ msgstr "Målmappen för genererade filer."
 msgid "The destination file name for html content."
 msgstr "Målfilnamn för html-innehåll."
 
+msgid "Ancestral Collapsible Tree"
+msgstr "Hopfällbart släktträd"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Skapar en webbsida med en grafiskt antavla (SVG) som ett hopfällbart träd "
+"med hjälp av D3,js javaskript-bibliotek."
+
+msgid "Descendant Indented Tree"
+msgstr "Indraget träd för ättlingar"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Skapar en webbsida med en grafiskt ättlingatavla (SVG) som ett hopfällbart "
+"indraget träd med hjälp av D3,js javaskript-bibliotek."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Alternativ för Cirkeldiagram för förfäder"
+
+msgid "Paternal Background Color"
+msgstr "Bakgrundsfärg för fadersidan"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-färg på bakgrunden för rutan för fadersidan."
+
+msgid "Maternal Background"
+msgstr "Bakgrundsfärg för modersidan"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-färg på bakgrunden för rutan för modersidan."
+
 msgid "Ancestral Fan Chart"
 msgstr "Cirkeldiagram för förfäder"
 
@@ -79,9 +111,6 @@ msgstr "Se %(reference)s : %(spouse)s"
 msgid "Generating report..."
 msgstr "Skapar rapport..."
 
-msgid "Descendant Indented Tree"
-msgstr "Indraget träd för ättlingar"
-
 msgid "Invalid Destination Directory"
 msgstr "Felaktig målkatalog"
 
@@ -92,10 +121,6 @@ msgid ""
 msgstr ""
 "Målkatalog %s existerar inte\n"
 "Vill du försöka skapa den?"
-
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "Fel vid skapandet av %s: %s"
 
 #, python-format
 msgid ""
@@ -284,36 +309,3 @@ msgstr "Typsnittsstorleken för sidans body"
 
 msgid "The font size in pixels for biography body text."
 msgstr "Typsnittsstorleken i pixel för biografisidans body-text."
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Skapar en webbsida med en grafiskt ättlingatavla (SVG) som ett hopfällbart "
-"indraget träd med hjälp av D3,js javaskript-bibliotek."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Alternativ för Cirkeldiagram för förfäder"
-
-msgid "Paternal Background Color"
-msgstr "Bakgrundsfärg för fadersidan"
-
-msgid "RGB-color for paternal box background."
-msgstr "RGB-färg på bakgrunden för rutan för fadersidan."
-
-msgid "Maternal Background"
-msgstr "Bakgrundsfärg för modersidan"
-
-msgid "RGB-color for maternal box background."
-msgstr "RGB-färg på bakgrunden för rutan för modersidan."
-
-msgid "Ancestral Collapsible Tree"
-msgstr "Hopfällbart släktträd"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Skapar en webbsida med en grafiskt antavla (SVG) som ett hopfällbart träd "
-"med hjälp av D3,js javaskript-bibliotek."

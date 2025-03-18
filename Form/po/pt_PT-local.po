@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-09 08:45+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Select Form"
 msgstr "Seleccionar formulário"
@@ -3311,11 +3311,95 @@ msgstr "Vermelho"
 msgid "Yellow"
 msgstr "Amarelo"
 
+msgid "Divorced"
+msgstr "Divorciados"
+
+msgid "Can Read"
+msgstr "Sabe ler"
+
+msgid "Can't Read"
+msgstr "Não sabe ler"
+
+msgid "Can Write"
+msgstr "Sabe escrever"
+
+msgid "Can't Write"
+msgstr "Não sabe escrever"
+
+msgid "Do you own your home or farm"
+msgstr "Possui casa ou quinta próprias"
+
 msgid "Ancestry"
 msgstr "Ascendência"
 
+msgid "Father's birthplace"
+msgstr "Local de nascimento do pai"
+
+msgid "Mother's birthplace"
+msgstr "Local de nascimento da mãe"
+
+msgid "Extent of Education"
+msgstr "Grau de instrução"
+
+msgid "Graduate of"
+msgstr "Concluiu"
+
+msgid "Maiden name of wife"
+msgstr "Nome de solteira da esposa"
+
+msgid "Year married"
+msgstr "Ano de casamento"
+
+msgid "Church affiliation"
+msgstr "Filiação à igreja"
+
+msgid "If Foreign Born, are you Naturalized"
+msgstr "Se for estrangeiro, é naturalizado"
+
+msgid "Years in S.D."
+msgstr "Anos em S.D."
+
+msgid "Division"
+msgstr "Divisão"
+
+msgid "Male under 21"
+msgstr "Homem -21"
+
+msgid "Male over 21"
+msgstr "Homem +21"
+
+msgid "Female under 21"
+msgstr "Mulher -21"
+
+msgid "Female over 21"
+msgstr "Mulher +21"
+
+msgid "Town/City"
+msgstr "Vila/Cidade"
+
+msgid "Heads of Families"
+msgstr "Chefes de família"
+
+msgid "White males"
+msgstr "Homens brancos"
+
+msgid "White females"
+msgstr "Mulheres brancas"
+
+msgid "Colored males"
+msgstr "Homens de cor"
+
+msgid "Colored females"
+msgstr "Mulheres de cor"
+
 msgid "Deaf & Dumb"
 msgstr "Surdos e mudos"
+
+msgid "Foreign Birth"
+msgstr "Estrangeiro"
+
+msgid "Inhabitants of"
+msgstr "Habitantes de"
 
 msgid "in"
 msgstr "em"
@@ -3323,20 +3407,643 @@ msgstr "em"
 msgid "of"
 msgstr "de"
 
+msgid "Nativity - United States"
+msgstr "Natividade - Estados Unidos"
+
+msgid "Nativity - Germany"
+msgstr "Natividade - Alemanha"
+
+msgid "Nativity - Great Britain"
+msgstr "Natividade - Grã-Bretanha"
+
+msgid "Nativity - Ireland"
+msgstr "Natividade - Irlanda"
+
+msgid "Nativity - France"
+msgstr "Natividade - França"
+
+msgid "Nativity - British America"
+msgstr "Natividade - América Britânica"
+
+msgid "Nativity - Scandinavian"
+msgstr "Natividade - Escandinávia"
+
+msgid "Nativity - Holland"
+msgstr "Natividade - Holanda"
+
+msgid "Nativity - All other countries"
+msgstr "Natividade - Todos os outros países"
+
+msgid "Residing in the"
+msgstr "Residindo em"
+
+msgid "Co."
+msgstr "Comp."
+
+msgid "Reg't."
+msgstr "Reg.º"
+
+msgid "State or Vessel"
+msgstr "Estado ou vaso"
+
+msgid "Parents place of birth"
+msgstr "Local de nascimento dos pais"
+
+msgid "Owned/Rented"
+msgstr "Possuída/Alugada"
+
+msgid "Free/Mortgaged"
+msgstr "Livre/Hipotecada"
+
+msgid "Farm/House"
+msgstr "Quinta/Casa"
+
+msgid "Certificate Number"
+msgstr "Número de certificado"
+
+msgid "Entry Number"
+msgstr "Número de entrada"
+
+msgid "Date Registered"
+msgstr "Data de registo"
+
+msgid "Registrar"
+msgstr "Registo"
+
+msgid "Twin, triplet or other"
+msgstr "Gémeo, triplo ou outro"
+
+msgid "No. in order of birth"
+msgstr "N.º na ordem de nascimento"
+
+msgid "Legitimate"
+msgstr "Legitimidade"
+
+msgid "Date of birth"
+msgstr "Data de nascimento"
+
+msgid "Place of Record"
+msgstr "Local de registo"
+
+msgid "Book/Volume"
+msgstr "Livro/Volume"
+
+msgid "Race/Color"
+msgstr "Raça/Cor"
+
+msgid ""
+"STOP! If you want this record to be attached to the Parents move to Father."
+msgstr "PARE! Se quiser que este registo seja anexado aos Pais, vá para Pai."
+
+msgid "Mother (Maiden Name)"
+msgstr "Mãe (nome de solteira)"
+
+msgid "Residence of Parents"
+msgstr "Residência dos pais"
+
+msgid "By Whom Reported"
+msgstr "Por quem relatada"
+
+msgid "Date Recorded"
+msgstr "Data de registo"
+
+msgid "License No."
+msgstr "Licença n.º"
+
+msgid "Date of Marriage"
+msgstr "Data de casamento"
+
+msgid "Married by"
+msgstr "Casados por"
+
+msgid "Place of Marriage"
+msgstr "Lugar de casamento"
+
+msgid "Consent given by"
+msgstr "Consentimento dado por"
+
+msgid "Bond/Licence"
+msgstr "Ligação/Licença"
+
+msgid "Place of Death"
+msgstr "Local de óbito"
+
+msgid "Length of Residence"
+msgstr "Tamanho da residência"
+
+msgid "Served in U.S. Military"
+msgstr "Serviço militar nos EUA"
+
+msgid "Spouse's Name"
+msgstr "Nome do cônjuge"
+
+msgid "Birth date of deceased"
+msgstr "Data de nascimento do falecido"
+
+msgid "Industry or Business"
+msgstr "Indústria ou negócio"
+
+msgid "Name of employer"
+msgstr "Nome do empregador"
+
+msgid "Date last worked"
+msgstr "Data do último emprego"
+
+msgid "Years in this occupation"
+msgstr "Anos nesta profissão"
+
+msgid "Education Level"
+msgstr "Nível de escolaridade"
+
+msgid "Social Security No."
+msgstr "N.º de segurança social"
+
+msgid "Date of Death"
+msgstr "Data de óbito"
+
+msgid "Place of Burial"
+msgstr "Local de inumação"
+
+msgid "Date of Burial"
+msgstr "Data de inumação"
+
+msgid "Residence Place"
+msgstr "Local de residência"
+
+msgid "Burial Date"
+msgstr "Data de inumação"
+
+msgid "Burial Place"
+msgstr "Local de inumação"
+
+msgid "Congressional District"
+msgstr "Distrito Congressional"
+
+msgid "in the Counties of"
+msgstr "nos condados de"
+
+msgid "in the month of"
+msgstr "no mês de"
+
+msgid "Age 1 July 1863"
+msgstr "Idade 1 de Julho de 1863"
+
+msgid "White or Colored"
+msgstr "Branco ou de cor"
+
+msgid "Former Military Service"
+msgstr "Serviço militar antigo"
+
+msgid "Station Headquarters"
+msgstr "Sede da estação"
+
+msgid "Congr. Dist. of"
+msgstr "Dist. Cong. de"
+
+msgid "Card (A, B, or C)"
+msgstr "Cartão (A, B ou C)"
+
+msgid "Serial No."
+msgstr "N.º de série"
+
+msgid "Registration No."
+msgstr "N.º de registo"
+
+msgid "Order No."
+msgstr "N.º de ordem"
+
+msgid "Age in yrs."
+msgstr "Idade em anos"
+
+msgid "Home Address"
+msgstr "Morada de casa"
+
+msgid "Citizenship"
+msgstr "Cidadania"
+
+msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
+msgstr ""
+"Natural, cidadão naturalizado, estrangeiro, não-cidadão ou cidadão índio"
+
+msgid "If not a citizen, of what nation are you a citizen or subject?"
+msgstr "Se não for cidadão, de que nação é cidadão ou súbdito?"
+
+msgid "Employer's Name & address"
+msgstr "Nome e endereço do empregador"
+
+msgid "Nearest Relative"
+msgstr "Parente mais próximo"
+
+msgid "Dependants & Address"
+msgstr "Dependentes e endereço"
+
+msgid ""
+"Have you a father, mother, wife, child under 12, or a sister or brother "
+"under 12, solely dependent on your support (specify which)?"
+msgstr ""
+"Tem pai, mãe, mulher, filho -12 anos, irmão -12 anos, exclusivamente "
+"dependentes do seu sustento (especificar quais)?"
+
+msgid "What military service have you had? (Branch, Years, Nation or State)"
+msgstr "Que serviço militar prestou? (ramo, anos, nação ou estado)"
+
+msgid "Do you claim exemption from draft (specify grounds)"
+msgstr "Requer isenção de serviço (especificar os motivos)"
+
+msgid "Race "
+msgstr "Raça "
+
+msgid "Build / Weight"
+msgstr "Constituição/Peso"
+
+msgid "Hair Color"
+msgstr "Cor do cabelo"
+
+msgid "Bald"
+msgstr "Careca"
+
+msgid "Disability"
+msgstr "Deficiência"
+
+msgid "Place of Registration"
+msgstr "Local de registo"
+
+msgid "Date of Registration"
+msgstr "Data de registo"
+
+msgid "Serial Number"
+msgstr "Número de série"
+
+msgid "Order Number"
+msgstr "N.º de ordem"
+
+msgid "Place of Residence"
+msgstr "Local de residência"
+
+msgid "Mailing Address"
+msgstr "Endereço de correio"
+
+msgid "Telephone"
+msgstr "Telefone"
+
+msgid "Age in years"
+msgstr "Idade em anos"
+
+msgid "Who will always know your address (Name & Address)"
+msgstr "Quem saberá sempre o seu endereço (nome e endereço)"
+
+msgid "Place of employment or business"
+msgstr "Local de trabalho ou empresa"
+
+msgid "Complexion"
+msgstr "Constituição física"
+
+msgid "Eyes"
+msgstr "Olhos"
+
+msgid "Hair"
+msgstr "Cabelo"
+
+msgid "Other characteristics"
+msgstr "Outras características"
+
+msgid "Date entered"
+msgstr "Data de entrada"
+
+msgid "Place entered"
+msgstr "Local de entrada"
+
+msgid "Term of enlistment"
+msgstr "Termo de alistamento"
+
+msgid "Eye color"
+msgstr "Cor dos olhos"
+
+msgid "Hair color"
+msgstr "Cor do cabelo"
+
+msgid "Rank in"
+msgstr "Posto em"
+
+msgid "Branch"
+msgstr "Ramo"
+
+msgid "Regiment/Unit/Ship"
+msgstr "Regimento/Unidade/Navio"
+
+msgid "Service Number"
+msgstr "N.º de serviço"
+
+msgid "No. of enlistment"
+msgstr "N.º de alistamento"
+
+msgid "Date discharged"
+msgstr "Data de dispensa"
+
+msgid "Place discharged"
+msgstr "Local de dispensa"
+
+msgid "Rank out"
+msgstr "Posto de dispensa"
+
+msgid "Industry/Employer"
+msgstr "Indústria/Empregador"
+
+msgid "Residents Status"
+msgstr "Estado dos residentes"
+
+msgid "Event Place (Original)"
+msgstr "Local de evento (original)"
+
+msgid "Birth Year (Estimated)"
+msgstr "Ano de nascimento (estimado)"
+
+msgid "Spouse's Gender"
+msgstr "Sexo do cônjuge"
+
+msgid "Spouse's Age"
+msgstr "Idade do cônjuge"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "Ano de nascimento do cônjuge (estimado)"
+
+msgid "Spouse's Father's Name"
+msgstr "Nome do pai do cônjuge"
+
+msgid "Spouse's Mother's Name"
+msgstr "Nome da mãe do cônjuge"
+
+msgid "Record Number"
+msgstr "Número de registo"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Volume Beginning Year"
+msgstr "Volume Ano de início"
+
+msgid "Volume Ending Year"
+msgstr "Volume Ano de fim"
+
+msgid "Amt"
+msgstr "Qtd"
+
+msgid "Town or City"
+msgstr "Vila ou cidade"
+
+msgid "Herred eller By"
+msgstr "Concelho ou cidade"
+
+msgid "Sogn"
+msgstr "Paróquia"
+
+msgid "Gade"
+msgstr "Rua"
+
+msgid "Gift"
+msgstr "Casamento"
+
+msgid "Alder"
+msgstr "Ancião"
+
+msgid "Stilling i familien"
+msgstr "Posição na família"
+
+msgid "Titel, Embed, Forretning, Håndværk"
+msgstr "Título, Incorporar, Negócio, Artesanato"
+
+msgid "Stilling, embede eller erhverv"
+msgstr "Cargo, função ou profissão"
+
 msgid "Where Born"
 msgstr "Onde nasceu"
+
+msgid "Fødested"
+msgstr "Local de nascimento"
+
+msgid "Erhverv"
+msgstr "Negócios"
+
+msgid "Trossamfund"
+msgstr "Comunidades religiosas"
+
+msgid "Sted"
+msgstr "Localização"
+
+msgid "Comments"
+msgstr "Comentários"
+
+msgid "Bemærkninger"
+msgstr "Observações"
+
+msgid "Place of Work"
+msgstr "Local de trabalho"
+
+msgid "Arbejdssted"
+msgstr "Local de trabalho"
+
+msgid "Fødselsdato"
+msgstr "Data de nascimento"
+
+msgid "Years at current residence"
+msgstr "Anos na residência actual"
+
+msgid "År tilflyttet"
+msgstr "Ano de mudança"
+
+msgid "Previous residence"
+msgstr "Residência anterior"
+
+msgid "Tilflyttet fra"
+msgstr "Transferido de"
+
+msgid "År gift"
+msgstr "Ano de casamento"
+
+msgid "Children Living"
+msgstr "Filhos vivos"
+
+msgid "Levende børn"
+msgstr "Filhos vivos"
+
+msgid "Children Dead"
+msgstr "Filhos falecidos"
+
+msgid "Døde børn"
+msgstr "Filhos falecidos"
+
+msgid "Køn"
+msgstr "Sexo"
+
+msgid "Year stayed in parish"
+msgstr "Anos que ficou na paróquia"
+
+msgid "Hvilket aar taget ophold i sognet"
+msgstr "Qual o ano de residência na freguesia"
+
+msgid "Previous Residence"
+msgstr "Residência anterior"
+
+msgid "Sidste bopæl inden tilflytning"
+msgstr "Última residência antes da mudança"
+
+msgid "Bemærkning"
+msgstr "Observação"
+
+msgid "Income"
+msgstr "Rendimentos"
+
+msgid "Indkomst"
+msgstr "Rendimentos"
+
+msgid "Assets"
+msgstr "Activos"
+
+msgid "Formue"
+msgstr "Formulário"
+
+msgid "State Tax"
+msgstr "Imposto de Estado"
+
+msgid "Statsskat"
+msgstr "Imposto estatal"
+
+msgid "Council"
+msgstr "Conselho"
+
+msgid "Kommuneskat"
+msgstr "Imposto municipal"
+
+msgid "Residence on 5 Nov 1924"
+msgstr "Residência em 5 Nov 1924"
+
+msgid "Bopæl 5 nov 1924"
+msgstr "Local de residência 5 de Novembro de 1924"
+
+msgid "Stay on 5 Nov 1929"
+msgstr "Estadia a 5 Nov 1929"
+
+msgid "Ophold 5 nov 1929"
+msgstr "Estadia 5 Nov 1929"
+
+msgid "Date Married"
+msgstr "Data de casamento"
+
+msgid "Dato gift"
+msgstr "Data de casamento"
+
+msgid "Registration District"
+msgstr "Distrito de registo"
+
+msgid "Administrative Area"
+msgstr "Área administrativa"
+
+msgid "County/Administrative Area"
+msgstr "Condado/Área administrativa"
+
+msgid "Maiden Surname"
+msgstr "Nome de solteira"
+
+msgid "Banns/Licence"
+msgstr "Banhos/Licença"
+
+msgid "Deceased"
+msgstr "Óbito"
+
+msgid "Maiden surname of woman who was married"
+msgstr "Apelido de solteira da mulher que foi casada"
 
 msgid "Usual Address"
 msgstr "Endereço habitual"
 
+msgid "City or Borough"
+msgstr "Cidade ou bairro"
+
+msgid "Parish or Township"
+msgstr "Paróquia ou vila"
+
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr "NOMES de cada pessoa que morou ali na noite precedente."
+
+msgid ""
+"AGE, rounded down to the nearest five years for those aged fifteen or over."
+msgstr ""
+"IDADE, arredondada para os cinco anos mais próximos para aqueles com quinze "
+"anos ou mais."
+
+msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
+msgstr "PROFiSSÃO, NEGÓCIO, EMPREGO ou de MEIOS INDEPENDENTES."
+
+msgid ""
+"Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
+"Parts (P)."
+msgstr ""
+"Nascido no mesmo condado (S ou N), Escócia (S), Irlanda (I) ou estrangeiro "
+"(P)."
+
+msgid "Ecclesiastical District"
+msgstr "Distrito eclesiástico"
+
+msgid ""
+"Name and Surname of each Person who abode in the house, on the Night of the "
+"30th March, 1851"
+msgstr ""
+"Nome e apelido de cada pessoa que morava na casa, na noite de 30 de Março de "
+"1851"
+
+msgid "Relation to Head of Family"
+msgstr "Relação com chefe de família"
+
+msgid "Rank, Profession or Occupation"
+msgstr "Posto ou profissão"
+
 msgid "Whether Blind or Deaf and Dumb"
 msgstr "Cegos ou surdos/mudos"
+
+msgid "City or Municipal Borough"
+msgstr "Cidade ou município"
+
+msgid "Municipal Ward"
+msgstr "Bairro municipal"
+
+msgid "Parliamentary Borough"
+msgstr "Bairro parlamentar"
+
+msgid "Hamlet or Tything"
+msgstr "Lugar ou paróquia civil"
+
+msgid "Name and Surname of each Person"
+msgstr "Nome e apelido de cada indivíduo"
+
+msgid "Rank, Profession of Occupation"
+msgstr "Posto ou profissão"
 
 msgid "Whether Blind, or Deaf-and-Dumb"
 msgstr "Cegos ou surdos/mudos"
 
+msgid "Civil Parish or Township"
+msgstr "Paróquia civil ou vila"
+
+msgid "Village or Hamlet"
+msgstr "Aldeia ou lugar"
+
+msgid "Local Board or Improvement Commissioners District"
+msgstr "Conselho local ou distrito de comissários de melhoramentos"
+
+msgid "NAME and Surname of each Person"
+msgstr "Nome e apelido de cada indivíduo"
+
 msgid "RELATION to Head of Family"
 msgstr "RELAÇÃO com o chefe de família"
+
+msgid "CONDITION"
+msgstr "CONDIÇÃO"
+
+msgid "AGE of"
+msgstr "IDADE de"
+
+msgid "Rank, Profession or OCCUPATION"
+msgstr "Posto ou PROFISSÃO"
 
 msgid ""
 "Whether\n"
@@ -3351,6 +4058,24 @@ msgstr ""
 "3. Imbecis ou idiotas\n"
 "4. Lunáticos"
 
+msgid "Town, Village or Hamlet"
+msgstr "Cidade, vila ou lugar"
+
+msgid "Urban Sanitary District"
+msgstr "Distrito Sanitário Urbano"
+
+msgid "Rural Sanitary District"
+msgstr "Distrito Sanitário Rural"
+
+msgid "Ecclesiastical Parish or District"
+msgstr "Paróquia eclesiástica ou bairro"
+
+msgid "CONDITION as to Marriage"
+msgstr "CONDIÇÃO sobre casamento"
+
+msgid "AGE last Birthday of"
+msgstr "AGE último aniversário de"
+
 msgid ""
 "If\n"
 "(1) Deaf-and-Dumb\n"
@@ -3364,8 +4089,29 @@ msgstr ""
 "(3) Imbecis ou idiotas\n"
 "(4) Lunáticos"
 
+msgid "Administrative County"
+msgstr "Condado administrativo"
+
+msgid "Civil Parish"
+msgstr "Paróquia civil"
+
+msgid "Municipal Borough"
+msgstr "Bairro municipal"
+
+msgid "Parliamentary Borough or Division"
+msgstr "Bairro ou divisão parlamentar"
+
+msgid "PROFESSION or OCCUPATION"
+msgstr "PROFISSÃO"
+
 msgid "Employer"
 msgstr "Empregador"
+
+msgid "Neither"
+msgstr "Nenhum"
+
+msgid "Neither Employer nor Employed"
+msgstr "Nem empregador nem empregado"
 
 msgid ""
 "If\n"
@@ -3377,6 +4123,42 @@ msgstr ""
 "(1) Surdos e mudos\n"
 "(2) Cegos\n"
 "(3) Lunáticos, imbecis ou idiotas"
+
+msgid "Ecclesiastical Parish"
+msgstr "Paróquia eclesiástica"
+
+msgid "County Borough, Municipal Borough, or Urban District"
+msgstr "Bairro, bairro municipal ou distrito urbano"
+
+msgid "Ward of Municipal Borough or of Urban District"
+msgstr "Bairro de uma freguesia ou de um distrito urbano"
+
+msgid "Rural District"
+msgstr "Distrito rural"
+
+msgid "Town or Village or Hamlet"
+msgstr "Cidade, vila ou lugar"
+
+msgid "Condition as to Marriage"
+msgstr "Condição sobre casamento"
+
+msgid "Age last Birthday of"
+msgstr "Idade último aniversário de"
+
+msgid "PROFESSION OR OCCUPATION"
+msgstr "PROFISSÃO"
+
+msgid "Work Type"
+msgstr "Tipo de trabalho"
+
+msgid "Employer, Worker or Own Account"
+msgstr "Empregador, trabalhador ou conta própria"
+
+msgid "At Home"
+msgstr "Em casa"
+
+msgid "If Working at Home"
+msgstr "Se trabalha em casa"
 
 msgid ""
 "If\n"
@@ -3391,29 +4173,277 @@ msgstr ""
 "(3) Lunáticos\n"
 "(4) Imbecis, idiotas"
 
+msgid "Registration Sub-District"
+msgstr "Sub-distrito de registo"
+
+msgid "Enumeration District"
+msgstr "Distrito de recenseamento"
+
 msgid "Number of Rooms"
 msgstr "Número de quartos"
+
+msgid "NAME AND SURNAME"
+msgstr "NOME E APELIDO"
+
+msgid "RELATIONSHIP to Head of Family"
+msgstr "RELAÇÃO com o chefe de família"
+
+msgid "AGE (last Birthday)"
+msgstr "IDADE (último aniversário)"
+
+msgid ""
+"\"Single,\" \"Married,\" \"Widower,\" or \"Widow,\" for all persons aged 15 "
+"years and upwards."
+msgstr ""
+"\"Solteiro\", \"Casado\", ou \"Viúvo\", para todos com 15 anos ou mais."
+
+msgid "Years Married"
+msgstr "Anos de casamento"
+
+msgid "Completed Years the present Marriage has lasted."
+msgstr "Anos completos que o actual casamento durou."
+
+msgid "Children Total"
+msgstr "Total de filhos"
+
+msgid "Total Children Born Alive."
+msgstr "Total de filhos nascidos vivos."
+
+msgid "Children still Living."
+msgstr "Filhos ainda vivos."
+
+msgid "Children Died"
+msgstr "Filhos falecidos"
+
+msgid "Children who have Died."
+msgstr "Filhos falecidos."
 
 msgid "Personal Occupation"
 msgstr "Profissão pessoal"
 
+msgid "Industry or Service with which worker is connected."
+msgstr "Indústria ou serviço com o qual o trabalhador está ligado."
+
+msgid "Whether Employer, Worker or Working on Own Account"
+msgstr "Seja empregador, trabalhador ou por conta própria"
+
 msgid "Whether Working at Home"
 msgstr "Se deve trabalha em casa"
+
+msgid "BIRTHPLACE of every Person."
+msgstr "LOCAL DE NASCIMENTO de cada um."
 
 msgid "Nationality"
 msgstr "Nacionalidade"
 
+msgid "NATIONALITY of every Person born in a Foreign Country."
+msgstr "NACIONALIDADE de cada estrangeiro."
+
+msgid "INFIRMITY"
+msgstr "ENFERMIDADES"
+
+msgid "NAME and SURNAME"
+msgstr "NOME E APELIDO"
+
+msgid "RELATIONSHIP to Head of Household"
+msgstr "RELAÇÃO com o chefe de família"
+
+msgid "AGE years"
+msgstr "IDADE em anos"
+
+msgid "Age Months"
+msgstr "Idade em meses"
+
+msgid "AGE months"
+msgstr "IDADE em meses"
+
+msgid "SEX"
+msgstr "SEXO"
+
+msgid "MARRIAGE or ORPHANHOOD"
+msgstr "CASAMENTO ou ORFANATO"
+
+msgid ""
+"If attending a School or any kind of Educational Institution for the purpose "
+"of receiving Instruction"
+msgstr ""
+"Se frequentar uma escola ou qualquer tipo de estabelecimento de ensino com o "
+"objectivo de receber instrução"
+
+msgid ""
+"State here the precise branch of Profession, Trade, Manufacture, Service, &c."
+msgstr ""
+"Indicar aqui o ramo exacto da profissão, comércio, fabrico, serviço, etc."
+
 msgid "Number of living children"
 msgstr "Número de filhos vivos"
+
+msgid "Total number under sixteen years of age. If none write \"None.\""
+msgstr ""
+"Número total de menores de dezasseis anos. Se não houver nenhum, escrever "
+"\"Nenhum\"."
+
+msgid "Ages of living children"
+msgstr "Idades de filhos vivos"
+
+msgid "For each child place a X in the column corresponding to its age."
+msgstr "Para cada filho, coloque um X na coluna correspondente à sua idade."
+
+msgid "E.D. Letter Code"
+msgstr "Código da letra E.D."
+
+msgid "Borough, U.D. or R.D."
+msgstr "Bairro, U.D. ou R.D."
+
+msgid "Registration District and Sub-district"
+msgstr "Distrito e sub-distrito de registo"
+
+msgid "SURNAMES and OTHER NAMES."
+msgstr "APELIDOS e OUTROS NOMES."
+
+msgid "OVSPI"
+msgstr "OVSPI"
+
+msgid "O, V, S, P or I"
+msgstr "O, V, S, P ou I"
+
+msgid "M or F"
+msgstr "M ou F"
+
+msgid "S, M, W or D."
+msgstr "S, C, V ou D."
+
+msgid "PERSONAL OCCUPATION"
+msgstr "PROFISSÃO PESSOAL"
+
+msgid "Instructions"
+msgstr "Instruções"
+
+msgid "See INSTRUCTIONS"
+msgstr "Ver INSTRUÇÕES"
+
+msgid "Language Spoken"
+msgstr "Língua falada"
+
+msgid "LANGUAGE SPOKEN."
+msgstr "LÍNGUA FALADA."
+
+msgid "GROS Data"
+msgstr "Dados GROS"
+
+msgid "Born in County"
+msgstr "Nascido no condado"
+
+msgid "Foreigner, Born England or Ireland"
+msgstr "Estrangeiro, nascido em Inglaterra ou na Irlanda"
+
+msgid "Quoad Sacra Parish"
+msgstr "Paróquia de Quoad Sacra"
+
+msgid "Parliamentary Burgh"
+msgstr "Burgo parlamentar"
+
+msgid "Royal Burgh"
+msgstr "Burgo real"
+
+msgid "Town or Village"
+msgstr "Cidade ou vila"
+
+msgid "House Schedule No"
+msgstr "Calendário da casa n.º"
+
+msgid "Relation to Head"
+msgstr "Parentesco com o chefe"
 
 msgid "Blind, or Deaf and Dumb"
 msgstr "Cegos ou surdos/mudos"
 
+msgid "No. Of Schedule"
+msgstr "N.º de calendário"
+
+msgid "Road, Street, etc, and No. or Name of House"
+msgstr "Estrada, rua, etc., e n.º ou nome da casa"
+
+msgid "House Inhabited"
+msgstr "Casa desabitada"
+
+msgid "House U or B"
+msgstr "Casa U ou B"
+
+msgid "Rank, Profession, or Occupation"
+msgstr "Posto ou profissão"
+
 msgid "Whether Blind, or Deaf and Dumb"
 msgstr "Cegos ou surdos/mudos"
 
+msgid "No. of Children from 5 to 13 attending School"
+msgstr "N.º de filhos 5-13 na escola"
+
+msgid "WindowRooms"
+msgstr "DivisõesJanela"
+
+msgid "No. of Rooms with one or more Windows"
+msgstr "N.º de divisões com uma ou mais janelas"
+
+msgid "Police Burgh"
+msgstr "Bairro da Polícia"
+
 msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
 msgstr "Se 1. Surdos e mudos, 2. Cegos, 3. Imbecis ou idiotas 4. Lunáticos"
+
+msgid "School Board District"
+msgstr "Conselho escolar do bairro"
+
+msgid "School board District"
+msgstr "Conselho escolar do bairro"
+
+msgid "Parliamentary Division"
+msgstr "Divisão Parlamentar"
+
+msgid "Municipal Burgh"
+msgstr "Burgo municipal"
+
+msgid "Burgh Ward"
+msgstr "Bairro do burgo"
+
+msgid "Island"
+msgstr "Ilha"
+
+msgid "Gaellic or G. & E."
+msgstr "Gaélico ou G. & E."
+
+msgid "Parish Ward"
+msgstr "Bairro da freguesia"
+
+msgid "Profession or Occupation"
+msgstr "Profissão ou ocupação"
+
+msgid "Employer, Worker or on Own Account"
+msgstr "Empregador, trabalhador ou conta própria"
+
+msgid "Working at Home"
+msgstr "A trabalhar em casa"
+
+msgid "District Electoral Division"
+msgstr "Divisão eleitoral distrital"
+
+msgid "Townland"
+msgstr "Concelho"
+
+msgid "No. on Form B"
+msgstr "N.º no formulário B"
+
+msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
+msgstr "\"Sabe ler e escrever\", \"Sabe ler\" ou \"Não sabe ler\""
+
+msgid "Irish Language"
+msgstr "Língua irlandesa"
+
+msgid ""
+"\"Irish\" or \"Irish & English\", in other cases no entry should be made"
+msgstr ""
+"\"Irlandês\" ou \"Irlandês & Inglês\", nos outros casos não deve ser feita "
+"qualquer entrada"
 
 msgid ""
 "\"Deaf and Dumb\", \"Dumb only\", \"Blind\", \"Imbecile or Idiot\", or "
@@ -3421,6 +4451,24 @@ msgid ""
 msgstr ""
 "\"Surdo e mudo\", \"Só mudo\", \"Cego\", \"Imbecil ou idiota\", ou "
 "\"Lunático\""
+
+msgid "Poor Law Union"
+msgstr "União da Lei dos Pobres"
+
+msgid "Barony"
+msgstr "Baronato"
+
+msgid "Urban District"
+msgstr "Distrito urbano"
+
+msgid "Head of Family"
+msgstr "Chefe de família"
+
+msgid "Total Children"
+msgstr "Total de filhos"
+
+msgid "Children born alive to present Marriage"
+msgstr "Filhos nascidos vivos até ao presente casamento"
 
 msgid "EnumDistrict"
 msgstr "EnumDistrict"
@@ -5048,3 +6096,18 @@ msgstr "LocalEmprego"
 
 msgid "26. State where person is employed"
 msgstr "26. Estado onde está empregado"
+
+msgid "Can read and write"
+msgstr "Sabe ler e escrever"
+
+msgid "Military"
+msgstr "Militares"
+
+msgid "Taxes"
+msgstr "Impostos"
+
+msgid "Type of roof"
+msgstr "Tipo de telhado"
+
+msgid "Arrived since"
+msgstr "Chegado desde"

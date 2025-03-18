@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:40+0000\n"
 "PO-Revision-Date: 2025-03-09 20:50+0000\n"
 "Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
@@ -23,6 +23,21 @@ msgstr "Edat:"
 msgid "Origin:"
 msgstr "Origen:"
 
+msgid "Birth place:"
+msgstr "Lloc de naixement:"
+
+msgid "Note:"
+msgstr "Nota:"
+
+msgid "Marriage place:"
+msgstr "Lloc de matrimoni:"
+
+msgid "Death date:"
+msgstr "Data de defunció:"
+
+msgid "Death place:"
+msgstr "Lloc de defunció:"
+
 msgid ""
 "Death\n"
 "place:"
@@ -39,21 +54,6 @@ msgstr ""
 
 msgid "Origine:"
 msgstr "Origen:"
-
-msgid "Birth place:"
-msgstr "Lloc de naixement:"
-
-msgid "Note:"
-msgstr "Nota:"
-
-msgid "Marriage place:"
-msgstr "Lloc de matrimoni:"
-
-msgid "Death date:"
-msgstr "Data de defunció:"
-
-msgid "Death place:"
-msgstr "Lloc de defunció:"
 
 msgid "m. date:"
 msgstr "data de m.:"

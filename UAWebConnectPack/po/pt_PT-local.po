@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-06 20:38+0200\n"
-"PO-Revision-Date: 2025-03-09 08:45+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "UA Web Connect Pack"
 msgstr "Pacote Internet do UA"
@@ -20,11 +20,35 @@ msgstr "Pacote Internet do UA"
 msgid "Collection of Web sites for the UA (requires libwebconnect)"
 msgstr "Colecção de páginas “web” para o UA (requer libwebconnect)"
 
+msgid "Forum: ukrgenealogy.com.ua"
+msgstr "Fórum: ukrgenealogy.com.ua"
+
+msgid "Forum: genoua.name"
+msgstr "Fórum: genoua.name"
+
+msgid "Encyclopedia: esu.com.ua"
+msgstr "Enciclopédia: esu.com.ua"
+
+msgid "Wikipedia: uk.wikipedia.org"
+msgstr "Wikipédia: uk.wikipedia.org"
+
+msgid "Repressed DB: reabit.org.ua"
+msgstr "BD reprimida: reabit.org.ua"
+
 msgid "Genealogy DB: familysearch.org"
 msgstr "BD genealógica: familysearch.org"
 
+msgid "Genealogy DB: myheritage.com.ua"
+msgstr "BD de genealogia: myheritage.com.ua"
+
 msgid "Genealogy DB: pra.in.ua"
 msgstr "BD genealógica: pra.in.ua"
+
+msgid "Map: Ridni.org"
+msgstr "Mapa: Ridni.org"
+
+msgid "Search: google.com.ua"
+msgstr "Procurar: google.com.ua"
 
 msgid "Search: roots.in.ua"
 msgstr "Procurar: roots.in.ua"

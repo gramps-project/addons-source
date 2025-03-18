@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-03-18 20:52+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,11 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
-
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Fehler beim Schreiben %s: %s"
+"X-Generator: Weblate 5.11-dev\n"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -62,6 +58,44 @@ msgstr "Der Zielpfad für erstellte Dateien."
 msgid "The destination file name for html content."
 msgstr "Der Zieldateiname für HTML Inhalt."
 
+msgid "Ancestral Collapsible Tree"
+msgstr "Zusammenklappbarer Vorfahrenbaum"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Erzeugt eine Webseite mit einer grafischen Darstellung von Vorfahren "
+"(SVG)dargestellt als zusammenklappbares Baum-Layout aus der D3.js JavaScript-"
+"Bibliothek."
+
+msgid "Descendant Indented Tree"
+msgstr "Nachkommenbaum eingerückt"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Erzeugt eine Webseite mit einer grafischen Darstellung von Nachkommen "
+"(SVG)dargestellt als zusammenklappbares Baum-Layout aus der D3.js JavaScript-"
+"Bibliothek."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Ahnenfächergrafik Optionen"
+
+msgid "Paternal Background Color"
+msgstr "Väterliche Hintergrundfarbe"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-Hintergrundfarbe für väterliche Box."
+
+msgid "Maternal Background"
+msgstr "Hintergrund väterlich"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-Hintergrundfarbe für mütterliche Box."
+
 msgid "Ancestral Fan Chart"
 msgstr "Ahnenfächergrafik"
 
@@ -79,9 +113,6 @@ msgstr "Siehe %(reference)s : %(spouse)s"
 msgid "Generating report..."
 msgstr "Erstelle Bericht..."
 
-msgid "Descendant Indented Tree"
-msgstr "Nachkommenbaum eingerückt"
-
 msgid "Invalid Destination Directory"
 msgstr "Ungültiges Zielverzeichnis"
 
@@ -92,10 +123,6 @@ msgid ""
 msgstr ""
 "Das Zielverzeichnis %s existiert nicht\n"
 "Möchtest du versuchen, es zu erstellen?"
-
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "Fehler beim erstellen %s: %s"
 
 #, python-format
 msgid ""
@@ -289,38 +316,3 @@ msgstr "Hauptteil Schriftgröße"
 
 msgid "The font size in pixels for biography body text."
 msgstr "Die Textgröße in Punkten für den Biographiehaupteil Text."
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Erzeugt eine Webseite mit einer grafischen Darstellung von Nachkommen "
-"(SVG)dargestellt als zusammenklappbares Baum-Layout aus der D3.js JavaScript-"
-"Bibliothek."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Ahnenfächergrafik Optionen"
-
-msgid "Paternal Background Color"
-msgstr "Väterliche Hintergrundfarbe"
-
-msgid "RGB-color for paternal box background."
-msgstr "RGB-Hintergrundfarbe für väterliche Box."
-
-msgid "Maternal Background"
-msgstr "Hintergrund väterlich"
-
-msgid "RGB-color for maternal box background."
-msgstr "RGB-Hintergrundfarbe für mütterliche Box."
-
-msgid "Ancestral Collapsible Tree"
-msgstr "Zusammenklappbarer Vorfahrenbaum"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Erzeugt eine Webseite mit einer grafischen Darstellung von Vorfahren "
-"(SVG)dargestellt als zusammenklappbares Baum-Layout aus der D3.js JavaScript-"
-"Bibliothek."

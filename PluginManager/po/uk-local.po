@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 12:35-0600\n"
-"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"PO-Revision-Date: 2025-03-11 19:37+0000\n"
 "Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
@@ -49,7 +49,7 @@ msgstr ""
 
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
-msgstr "Помилка видалення каталогу '%s'. Видалення могло завершитися невдало."
+msgstr "Помилка видалення каталогу '%s'. Видалення могло завершитися невдало"
 
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"

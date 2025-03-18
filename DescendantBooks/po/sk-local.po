@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2025-03-13 22:50+0000\n"
+"PO-Revision-Date: 2025-03-16 11:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Descendant Book"
+msgstr "Kniha potomkov"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Vytvára jednu alebo viac správ o potomkoch na základe dodanej požiadavky."
+
+msgid "Detailed Descendant Book"
+msgstr "Podrobná kniha potomkov"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Vytvára jednu alebo viac podrobných správ o potomkoch na základe dodanej "
+"požiadavky."
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -28,14 +44,6 @@ msgstr "Správa o potomkoch"
 #, python-format
 msgid "Writing %s reports..."
 msgstr "Písanie %s správ..."
-
-#, python-format
-msgid "%s. Descendants of %s"
-msgstr "%s. Potomkovia osoby %s"
-
-#, python-format
-msgid "%d. %s"
-msgstr "%d. %s"
 
 msgid "Select filter to restrict people that appear in the report"
 msgstr "Vyberte filter na vymedzenie ľudí, ktorí sa objavia v správe"
@@ -76,20 +84,8 @@ msgid "Report, Generation, Person, Name"
 msgstr "Správa, Generácia, Osoba, Meno"
 
 #, python-format
-msgid "See Report : %s, Generation : %s, Person : %s"
-msgstr "Pozri správu : %s, Generácia : %s, Osoba : %s"
-
-#, python-format
 msgid "Report appearances for %s"
 msgstr "Zobrazenia správy pre %s"
-
-#, python-format
-msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
-msgstr "Manžel/manželka osoby: Správa: %s, Generácia: %s, Osoba: %s"
-
-#, python-format
-msgid "Report: %s, Generation: %s, Person: %s"
-msgstr "Správa: %s, Generácia: %s, Osoba: %s"
 
 #, python-format
 msgid "%(event_name)s of %(name)s "
@@ -122,10 +118,6 @@ msgstr "%(event_name)s:"
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
-
-#, python-format
-msgid "Ref: %s. %s"
-msgstr "Ref: %s. %s"
 
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
@@ -208,22 +200,6 @@ msgstr "Štýl použitý pre záhlavie v indexe miest."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "Štýl použitý pre referencie v indexe miest."
-
-msgid "Descendant Book"
-msgstr "Kniha potomkov"
-
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Vytvára jednu alebo viac správ o potomkoch na základe dodanej požiadavky."
-
-msgid "Detailed Descendant Book"
-msgstr "Podrobná kniha potomkov"
-
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Vytvára jednu alebo viac podrobných správ o potomkoch na základe dodanej "
-"požiadavky."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

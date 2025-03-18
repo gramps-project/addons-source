@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "The place was not found. You may clarify the search keywords."
+msgstr ""
+"O local não foi encontrado. Pode clarificar as palavras-chave de pesquisa."
+
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr "Falha na procura das coordenadas devido a um erro inesperado."
 
 msgid "The place was not found."
 msgstr "O local não foi encontrado."
@@ -20,20 +27,42 @@ msgstr "O local não foi encontrado."
 msgid "The place was not identified."
 msgstr "O local não foi identificado."
 
+msgid "Coordinates were not given."
+msgstr "As coordenadas não foram indicadas."
+
+msgid "Failed to interpret the input format."
+msgstr "Falha na interpretação do formato de entrada."
+
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "Entrada de BD [{id}] {name}:"
+
 msgid "Nothing has been searched yet"
 msgstr "Ainda nada foi procurado"
 
 msgid "No place is active"
 msgstr "Nenhum local activo"
 
+msgid "Place Coordinate Gramplet view"
+msgstr "Gramplet Coordenada do local (Vista)"
+
+msgid "View for the place coordinate gramplet."
+msgstr "Vista das coordenadas de local."
+
 msgid "Place and Coordinates"
 msgstr "Locais e coordenadas"
+
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Gramplet que simplifica a definição das coordenadas de um local"
 
 msgid "Place Coordinates"
 msgstr "Coordenadas de locais"
 
 msgid "Place Coordinate Gramplet"
 msgstr "Gramplet Coordenadas de locais"
+
+msgid "Map Menu"
+msgstr "Menu do mapa"
 
 msgid "Add city as place"
 msgstr "Adicionar cidade como local"
@@ -49,6 +78,28 @@ msgstr "Local encontrado:"
 
 msgid "No DB entry is selected"
 msgstr "Nenhuma entrada de BD seleccionada"
+
+msgid "Postal-Code:"
+msgstr "Código postal:"
+
+msgid "Show found place externally in Google Maps"
+msgstr "Mostrar externamente o local encontrado no Google Maps"
+
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"Retirar a última posição clicada\n"
+"no mapa geográfico"
+
+msgid "Search location from DB"
+msgstr "Procurar localização a partir da BD"
+
+msgid "Apply geo location to Database"
+msgstr "Aplicar a localização geográfica à base de dados"
+
+msgid "Go"
+msgstr "Ir"
 
 msgid "Show help"
 msgstr "Mostrar ajuda"

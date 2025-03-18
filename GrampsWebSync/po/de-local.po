@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-18 20:52+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps-Web-Synchronisierung"
@@ -34,7 +34,7 @@ msgstr "Mediendateien sind bereits synchron."
 
 #, python-format
 msgid "Successfully downloaded %s media files."
-msgstr "Erfolgreich heruntergeladen %s Mediendateien."
+msgstr "%s Mediendateien erfolgreich heruntergeladen."
 
 #, python-format
 msgid "Encountered %s errors during download."

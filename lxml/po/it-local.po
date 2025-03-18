@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"PO-Revision-Date: 2025-03-18 14:54+0000\n"
 "Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -12,7 +12,92 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "lxml"
+msgstr "lxml"
+
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "Gramplet per il test di lxml and XSLT"
+
+msgid "Gramplet for testing etree with Gramps XML"
+msgstr "Gramplet per il test di etree con Gramps XML"
+
+#, python-format
+msgid "Please fix space on \"%s\""
+msgstr "Per favore controlla gli spazi in \"%s\""
+
+msgid "Sorry, no support for your OS yet!"
+msgstr "Scusa, il tuo OS non è più supportato!"
+
+msgid "Is it a compressed .gramps?"
+msgstr "E' un file .gramps compresso?"
+
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "Non si può decomprimere \"%s\""
+
+#, python-format
+msgid ""
+"Number of places : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Numero di luoghi: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of media objects : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Numero di media: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of notes : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Numero di note : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of additional records and relations: \t%s\n"
+msgstr ""
+"\n"
+"XML: Numero di record e relazioni aggiuntive: \t%s\n"
+
+#, python-format
+msgid ""
+"* loaded Family Tree base:\n"
+" \"%s\"\n"
+msgstr ""
+"* Albero genealogico base caricato:\n"
+" \"%s\"\n"
+
+msgid "Where is gzip?"
+msgstr "Dov'è gzip?"
+
+msgid "\"gzip\" is missing"
+msgstr "\"gzip\" assente"
+
+msgid "Missing python3 lxml"
+msgstr "Manca python3 lxml"
+
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr "Per favore, prova a installare il pacchetto \"python3 lxml\"."
+
+msgid "No file loaded..."
+msgstr "Nessun file caricato..."
+
+msgid "XSD validation (lxml)"
+msgstr "Validazione XSD (lxml)"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" !"
+msgstr "Non posso validare \"%(file)s\" !"
 
 msgid "Parsing file..."
 msgstr "Elaborazione del file..."

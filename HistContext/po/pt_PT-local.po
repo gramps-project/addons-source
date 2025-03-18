@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-03 16:13-0800\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,13 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Historical Context"
 msgstr "Conteúdo histórico"
 
 msgid "Lists relevant historical events during the lifetime of a Person"
 msgstr "Lista eventos históricos relevantes durante a vida do indivíduo"
+
+msgid "Rows starting with this in the text column will be hidden "
+msgstr "Linhas comeste início na coluna de texto serão ocultadas "
 
 msgid "Use filter "
 msgstr "Usar filtro "
@@ -29,14 +32,36 @@ msgstr "Mostrar fora da duração de vida "
 msgid "Use full dates"
 msgstr "Usar datas completas"
 
+msgid "Foreground color items in lifespan"
+msgstr "Itens de cor de primeiro plano no tempo de vida"
+
+msgid "Background color items in lifespan"
+msgstr "Itens de cor de fundo no tempo de vida"
+
+msgid "Foreground color items outside lifespan"
+msgstr "Itens de cor de primeiro plano fora do tempo de vida"
+
+msgid "Background color items outside lifespan"
+msgstr "Itens de cor de fundo fora do tempo de vida"
+
 msgid "Select from files"
 msgstr "Seleccionar de ficheiros"
 
 msgid "Invalid date "
 msgstr "Data inválida "
 
+msgid " in line: "
+msgstr " em linha: "
+
 msgid "Error:"
 msgstr "Erro:"
 
+msgid ": line does not contain four sections separated by semicolons in : \""
+msgstr ""
+": a linha não contém quatro secções separadas por ponto e vírgula em: \""
+
 msgid "Cannot open URL: "
 msgstr "Impossível abrir URL: "
+
+msgid "Double click row to follow link"
+msgstr "Duplo clique na linha para seguir a ligação"

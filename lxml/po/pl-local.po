@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 22:01+0000\n"
+"PO-Revision-Date: 2025-03-12 11:47+0000\n"
 "Last-Translator: Michał Stojek <stojex@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -19,11 +19,254 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
+msgid "lxml"
+msgstr "lxml"
+
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "Gramplet do testowania lxml i XSLT"
+
+msgid "etree"
+msgstr "etree"
+
+msgid "Gramplet for testing etree with Gramps XML"
+msgstr "Gramplet do testowania etree z Gramps XML"
+
+msgid "Invalid timestamp"
+msgstr "Nieprawidłowy znacznik czasu"
+
+msgid "No file parsed..."
+msgstr "Nie przetworzono pliku..."
+
+msgid "Number of editions back"
+msgstr "Liczba wydań wstecz"
+
 msgid "Space character on filename"
 msgstr "Znak spacji w nazwie pliku"
 
+#, python-format
+msgid "Please fix space on \"%s\""
+msgstr "Proszę naprawić spację w \"%s\""
+
+msgid "Sorry, no support for your OS yet!"
+msgstr "Niestety, nie mamy jeszcze wsparcia dla Twojego systemu operacyjnego!"
+
+msgid "Is it a compressed .gramps?"
+msgstr "Czy to jest skompresowany plik .gramps?"
+
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "Nie można rozpakować \"%s\""
+
+#, python-format
+msgid ""
+"From:\n"
+" \"%(file1)s\"\n"
+" to:\n"
+" \"%(file2)s\".\n"
+msgstr ""
+"Z:\n"
+" \"%(file1)s\"\n"
+" do:\n"
+" \"%(file2)s\".\n"
+
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "Nie można skopiować \"%s\""
+
+#, python-format
+msgid "XML: Last %s editions since %s, were at/on :\n"
+msgstr "XML: Ostatnie %s wydań od %s, miało miejsce/na :\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of records and relations : \t%s\n"
+"\n"
+msgstr ""
+"\n"
+"XML: Liczba rekordów i relacji: %s\n"
+"\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Liczba tagów : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\n"
+msgstr ""
+"Liczba tagów : \n"
+"\t\t\t%s\n"
+
+#, python-format
+msgid ""
+"Number of  events : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Liczba zdarzeń : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+msgstr ""
+"Liczba osób : \n"
+"\t\t\t%s\t|\t(%s) i(%s)* nazwiska\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Liczba osób : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of families : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Liczba rodzin : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of sources : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Liczba źródeł : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of citations : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Liczba cytowań : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of places : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Liczba miejsc : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of media objects : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Liczba obiektów multimedialnych : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of repositories : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Liczba repozytoriów : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of notes : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Liczba notatek : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of additional records and relations: \t%s\n"
+msgstr ""
+"\n"
+"XML: Liczba dodatkowych rekordów i relacji: \t%s\n"
+
+msgid "Where is gzip?"
+msgstr "Gdzie jest gzip?"
+
+msgid "\"gzip\" is missing"
+msgstr "Brakuje „gzip”"
+
+msgid "Missing python3 lxml"
+msgstr "Brak python3 lxml"
+
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr "Proszę spróbować zainstalować pakiet \"python3 lxml\"."
+
+msgid "No file loaded..."
+msgstr "Nie załadowano żadnego pliku..."
+
+msgid "XSD validation (lxml)"
+msgstr "Walidacja XSD (lxml)"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" !"
+msgstr "Nie można zweryfikować pliku \"%(file)s\"!"
+
+msgid "Parsing issue"
+msgstr "Problem z analizą składniową"
+
+#, python-format
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Nie można przeanalizować zawartości pliku „%(file)s”"
+
+msgid "Gramps version"
+msgstr "Wersja Grampsa"
+
+#, python-format
+msgid ""
+"Wrong namespace\n"
+"Need: %s"
+msgstr ""
+"Nieprawidłowa przestrzeń nazw\n"
+"Potrzeba: %s"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
+msgstr "Nie można zweryfikować „%(file)s” za pomocą schematu RelaxNG"
+
+msgid "File issue"
+msgstr "Problem z plikiem"
+
+#, python-format
+msgid "Cannot parse \"%(file)s\" via etree"
+msgstr "Nie można przeanalizować „%(file)s” przez etree"
+
 msgid "Parsing file..."
 msgstr "Analizowanie pliku..."
+
+msgid "Missing header"
+msgstr "Brak nagłówka"
+
+msgid ""
+"Not a valid .gramps.\n"
+"Cannot run the gramplet...\n"
+"Please, try to use a .gramps\n"
+"generated by Gramps 4.x."
+msgstr ""
+"Nieprawidłowy .gramps.\n"
+"Nie można uruchomić grampleta...\n"
+"Proszę spróbować użyć .gramps\n"
+"wygenerowanego przez Gramps 4.x."
+
+msgid "File parsed with"
+msgstr "Plik przeanalizowany za pomocą"
+
+msgid "File was generated on "
+msgstr "Plik został wygenerowany dnia "
+
+msgid " by Gramps "
+msgstr " przez Gramps "
 
 msgid " source(s)"
 msgstr " źródło(a)"

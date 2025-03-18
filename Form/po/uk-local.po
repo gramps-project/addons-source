@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-09 20:50+0000\n"
-"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
+"PO-Revision-Date: 2025-03-11 19:37+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -1394,13 +1394,13 @@ msgid "housework (H), school (S), unable to work (U) or other (Ot)"
 msgstr "домашня робота (H), школа (S), не може працювати (U) або інше (Ot)"
 
 msgid "# hours worked during week March 24-30, 1940"
-msgstr "#  годин роботи протягом тижня 24-30 березня 1940 року"
+msgstr "# годин роботи протягом тижня 24-30 березня 1940 року"
 
 msgid "Weeks unemployed up to March 30, 1940"
 msgstr "Кількість тижнів безробіття до 30 березня 1940 року"
 
 msgid "# weeks worked in 1939"
-msgstr "#  тижнів роботи у 1939 році"
+msgstr "# тижнів роботи у 1939 році"
 
 msgid "Amount of money, wages, salary in 1939"
 msgstr "Сума грошей, заробітна плата у 1939 році"
@@ -1929,7 +1929,8 @@ msgid "Deaf and Dumb"
 msgstr "Глухий і німий"
 
 msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
-msgstr "Покалічений, інвалід, прикутий до ліжка або іншим чином непрацездатний"
+msgstr ""
+"Покалічений, інвалід, прикутий до ліжка або іншим чином непрацездатний."
 
 msgid "Can not read"
 msgstr "Не вміє читати"
@@ -3665,7 +3666,7 @@ msgid "Do you claim exemption from draft (specify grounds)"
 msgstr "Чи вимагаєте ви звільнення від призову (вкажіть підстави)"
 
 msgid "Race "
-msgstr "Раса"
+msgstr "Раса "
 
 msgid "Build / Weight"
 msgstr "Статура / Вага"
@@ -4229,7 +4230,7 @@ msgid "Children Died"
 msgstr "Діти, які померли"
 
 msgid "Children who have Died."
-msgstr "Діти, які померли"
+msgstr "Діти, які померли."
 
 msgid "Personal Occupation"
 msgstr "Особиста зайнятість"
@@ -4966,7 +4967,7 @@ msgid "CiderGalls"
 msgstr "Сидр (галони)"
 
 msgid "41. Cider Galls."
-msgstr "41. Сидр - галони"
+msgstr "41. Сидр - галони."
 
 msgid "ClothYards"
 msgstr "Сукно (ярди)"
@@ -5656,7 +5657,7 @@ msgid "OwnedStores"
 msgstr "Власні магазини"
 
 msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr "15. Нерухомість у власності: Кількість магазинів, складів тощо"
+msgstr "15. Нерухомість у власності: Кількість магазинів, складів тощо."
 
 msgid "OwnedBars"
 msgstr "Власні стайні"
@@ -5701,7 +5702,7 @@ msgid "LeasedStores"
 msgstr "Орендовані магазини"
 
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr "22. Орендована нерухомість: Кількість магазинів, складів тощо"
+msgstr "22. Орендована нерухомість: Кількість магазинів, складів тощо."
 
 msgid "LeasedBarns"
 msgstr "Орендовані сараї"

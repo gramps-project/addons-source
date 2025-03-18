@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-03-16 11:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,11 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
-
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Zápis %s zlyhal: %s"
+"X-Generator: Weblate 5.11-dev\n"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -62,6 +58,43 @@ msgstr "Cieľová cesta pre vygenerované súbory."
 msgid "The destination file name for html content."
 msgstr "Názov cieľového súboru pre obsah html."
 
+msgid "Ancestral Collapsible Tree"
+msgstr "Zbaliteľný strom predkov"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Vygeneruje webovú stránku s grafickým znázornením predkov (SVG) "
+"reprezentovaných ako Collapsible Tree Layout z knižnice JavaScript D3.js."
+
+msgid "Descendant Indented Tree"
+msgstr "Členitý strom potomkov"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Vygeneruje webovú stránku s grafickým znázornením potomkov (SVG) "
+"reprezentovaných ako Collapsible Indented Tree Layout z knižnice JavaScript "
+"D3.js."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Možnosti vejárového grafu predkov"
+
+msgid "Paternal Background Color"
+msgstr "Farba pozadia otcovskej línie"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-farba pre pozadie kolónky otcovskej línie."
+
+msgid "Maternal Background"
+msgstr "Pozadie materskej línie"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB -farba pre pozadie kolónky materskej línie."
+
 msgid "Ancestral Fan Chart"
 msgstr "Vejárový graf predkov"
 
@@ -79,9 +112,6 @@ msgstr "Pozri %(reference)s : %(spouse)s"
 msgid "Generating report..."
 msgstr "Generovanie správy..."
 
-msgid "Descendant Indented Tree"
-msgstr "Členitý strom potomkov"
-
 msgid "Invalid Destination Directory"
 msgstr "Neplatný cieľový adresár"
 
@@ -92,10 +122,6 @@ msgid ""
 msgstr ""
 "Cieľový adresár %s neexistuje.\n"
 "Chcete sa pokúsiť ho vytvoriť?"
-
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "Nepodarilo sa vytvoriť %s: %s"
 
 #, python-format
 msgid ""
@@ -284,37 +310,3 @@ msgstr "Veľkosť písma hlavného textu"
 
 msgid "The font size in pixels for biography body text."
 msgstr "Veľkosť písma v pixeloch pre hlavný text biografie."
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Vygeneruje webovú stránku s grafickým znázornením potomkov (SVG) "
-"reprezentovaných ako Collapsible Indented Tree Layout z knižnice JavaScript "
-"D3.js."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Možnosti vejárového grafu predkov"
-
-msgid "Paternal Background Color"
-msgstr "Farba pozadia otcovskej línie"
-
-msgid "RGB-color for paternal box background."
-msgstr "RGB-farba pre pozadie kolónky otcovskej línie."
-
-msgid "Maternal Background"
-msgstr "Pozadie materskej línie"
-
-msgid "RGB-color for maternal box background."
-msgstr "RGB -farba pre pozadie kolónky materskej línie."
-
-msgid "Ancestral Collapsible Tree"
-msgstr "Zbaliteľný strom predkov"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Vygeneruje webovú stránku s grafickým znázornením predkov (SVG) "
-"reprezentovaných ako Collapsible Tree Layout z knižnice JavaScript D3.js."

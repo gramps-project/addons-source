@@ -3,22 +3,27 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2009-10-05 21:15+0100\n"
-"Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
-"Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-03-12 11:47+0000\n"
+"Last-Translator: Michał Stojek <stojex@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10.3-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
 msgid "Graph View"
 msgstr "Graph View"
+
+msgid "Show IDs"
+msgstr "Pokaż identyfikatory"
 
 msgid "Show avatars"
 msgstr "Pokaż awatary"
@@ -31,6 +36,26 @@ msgstr "Pokaż pełne daty"
 
 msgid "Show places"
 msgstr "Pokaż miejsca"
+
+msgid "Vertical: Top to Bottom"
+msgstr "Pionowo: od góry do dołu"
+
+msgid "Vertical: Bottom to Top"
+msgstr "Pionowo: od dołu do góry"
+
+msgid "Horizontal: Left to Right"
+msgstr "Poziomo: od lewej do prawej"
+
+msgid "Horizontal: Right to Left"
+msgstr "Poziomo: od prawej do lewej"
+
+msgid "Time Direction"
+msgstr "Kierunek czasu"
+
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr ""
+"Ogranicz liczbę wyświetlanych osób (użyj 0, aby uzyskać nieograniczoną "
+"liczbę)"
 
 msgid "Person theme"
 msgstr "Motyw osoby"
@@ -57,7 +82,25 @@ msgid "Female avatar:"
 msgstr "Awatar dla kobiety:"
 
 msgid "Choose female avatar"
-msgstr "Wybierz kobiecy awatar"
+msgstr "Wybierz awatar dla kobiety"
+
+msgid "Unknown avatar:"
+msgstr "Nieznany awatar:"
+
+msgid "Choose Unknown avatar"
+msgstr "Wybierz nieznany awatar"
+
+msgid "Other avatar:"
+msgstr "Inny awatar:"
+
+msgid "Choose Other avatar"
+msgstr "Wybierz inny awatar"
+
+msgid "Active person border size"
+msgstr "Rozmiar obramowania aktywnej osoby"
+
+msgid "Person border size"
+msgstr "Rozmiar obramowania osoby"
 
 msgid "Themes"
 msgstr "Motywy"
@@ -192,6 +235,18 @@ msgstr ""
 msgid "Change active person?"
 msgstr "Zmienić aktywną osobę?"
 
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"Ten wykres zawierałby co najmniej {people_count} osób, co przekracza limit "
+"{people_limit} osób. Ze względu na wydajność co najmniej {people_missing} "
+"osób nie zostanie wyświetlonych. Możesz zmienić ten limit w konfiguracji "
+"widoku."
+
 msgid "Incomplete graph"
 msgstr "Wykres niekompletny"
 
@@ -223,6 +278,9 @@ msgstr "Prostopadłe"
 msgid "Copy"
 msgstr "Kopiuj"
 
+msgid "No Events for this person"
+msgstr "Brak wydarzeń dla tej osoby"
+
 msgid "Select tags for person"
 msgstr "Wybierz tagi dla osoby"
 
@@ -235,11 +293,17 @@ msgstr "Dodaj rodziców"
 msgid "Set as home person"
 msgstr "Ustaw jako osobę główną"
 
+msgid "Show path to home person"
+msgstr "Pokaż ścieżkę do osoby głównej"
+
 msgid "Remove from bookmarks"
 msgstr "Usuń z zakładek"
 
 msgid "Add to bookmarks"
 msgstr "Dodaj do zakładek"
+
+msgid "No Events for this family"
+msgstr "Brak wydarzeń dla tej rodziny"
 
 msgid "Select tags for family"
 msgstr "Wybierz tagi dla rodziny"
@@ -288,6 +352,9 @@ msgstr "Jasny"
 msgid "Cartoon"
 msgstr "Rysunek"
 
+msgid "Modern"
+msgstr "Nowoczesny"
+
 msgid "Persons from current graph"
 msgstr "Osoby z aktualnego wykresu"
 
@@ -310,3 +377,6 @@ msgstr "Szukaj..."
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
+
+msgid "Partners"
+msgstr "Partnerzy"

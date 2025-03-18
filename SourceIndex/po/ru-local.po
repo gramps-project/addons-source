@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:40+0000\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -15,6 +15,9 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+msgid "Sources Index"
+msgstr "Список источников"
 
 msgid "BirthIndex"
 msgstr "Список рождений"
@@ -31,9 +34,6 @@ msgstr "Список крещений"
 msgid "SourceIndex"
 msgstr "Список источников"
 
-msgid "Sources Index"
-msgstr "Список источников"
-
 msgid "*** Error: Must install either ElementTree or lxml."
 msgstr "*** Ошибка: необходимо установить ElementTree или lxml"
 
@@ -46,14 +46,17 @@ msgstr "рождение"
 msgid "census"
 msgstr "перепись"
 
-msgid "Names:"
-msgstr "Имена:"
+msgid "Info:"
+msgstr "Информация:"
 
-msgid "First names:"
-msgstr "Имена:"
+msgid "Reference:"
+msgstr "Ссылка:"
 
 msgid "Age:"
 msgstr "Возраст:"
+
+msgid "<b>Image</b>"
+msgstr "<b>Изображение</b>"
 
 msgid "Occupation:"
 msgstr "Место жительства:"
@@ -61,14 +64,14 @@ msgstr "Место жительства:"
 msgid "Live:"
 msgstr "Живой:"
 
-msgid "Info:"
-msgstr "Информация:"
+msgid "Names:"
+msgstr "Имена:"
+
+msgid "First names:"
+msgstr "Имена:"
 
 msgid "Birth act:"
 msgstr "Рождение (сертификат):"
-
-msgid "Reference:"
-msgstr "Ссылка:"
 
 msgid ""
 "Volume\n"
@@ -97,9 +100,6 @@ msgstr "Другое:"
 
 msgid "Repository title"
 msgstr "Название хранилища"
-
-msgid "<b>Image</b>"
-msgstr "<b>Изображение</b>"
 
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>Хранилище</i></b>"

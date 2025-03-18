@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-16 11:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,19 +12,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Order"
 msgstr "Poradie"
 
+msgid "County of"
+msgstr "Kraj"
+
+msgid "All other free persons"
+msgstr "Všetky ostatné slobodné osoby"
+
+msgid "Family No."
+msgstr "Rodina č."
+
 msgid "Rank"
 msgstr "Úroveň"
+
+msgid "District of"
+msgstr "Okres"
+
+msgid "City of"
+msgstr "Mesto"
 
 msgid "Relation"
 msgstr "Vzťah"
 
+msgid "Color or Race"
+msgstr "Farba alebo rasa"
+
 msgid "Mother's Name"
 msgstr "Meno matky"
+
+msgid "Colored females under 10"
+msgstr "Farebné ženy do 10 rokov"
+
+msgid "Birth Country"
+msgstr "Krajina narodenia"
+
+msgid "Colored females"
+msgstr "Farebné ženy"
 
 msgid "in"
 msgstr "na"
@@ -43,3 +70,12 @@ msgstr "Dátum sobáša"
 
 msgid "Usual Address"
 msgstr "Zvyčajná adresa"
+
+msgid "Civil Parish"
+msgstr "Civilná farnosť"
+
+msgid "Parish Ward"
+msgstr "Farský obvod"
+
+msgid "2. Family"
+msgstr "2. Rodina"

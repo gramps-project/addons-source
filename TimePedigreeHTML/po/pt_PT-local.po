@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,10 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Failed writing "
 msgstr "Falha ao escrever "
+
+msgid "Year of Birth of Center Person"
+msgstr "Ano de nascimento do indivíduo central"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr ""
+"O ano de nascimento do indivíduo central. Estimar um ano, se desconhecido"
 
 msgid "Destination directory"
 msgstr "Pasta destino"
@@ -29,11 +36,25 @@ msgstr "O nome de ficheiro destino para conteúdo html."
 msgid "Default Age"
 msgstr "Idade pré-definida"
 
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr ""
+"Idade pré-definida do progenitor quando o ano de nascimento do filho é "
+"desconhecido"
+
+msgid "What to show"
+msgstr "O que mostrar"
+
 msgid "Show GrampsID"
 msgstr "Mostrar ID Gramps"
 
+msgid "Show GrampsID on top right of the box"
+msgstr "Mostrar o ID Gramps no canto superior direito da caixa"
+
 msgid "Optimize"
 msgstr "Optimizar"
+
+msgid "Use as little space in horizontal direction as possible"
+msgstr "Utilizar o mínimo de espaço possível na horizontal"
 
 msgid "Male Box Color"
 msgstr "Cor de caixa masculina"
@@ -50,6 +71,23 @@ msgstr "Cor de fundo das caixas femininas"
 msgid "Number of pixel per year"
 msgstr "Número de pixels por ano"
 
+msgid "How many pixel height is one year?"
+msgstr "Quantos pixels de altura tem um ano?"
+
+msgid "Offset X Coordinate"
+msgstr "Desvio da coordenada X"
+
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr ""
+"Quantos pixels não são utilizados para além das caixas mais à esquerda e "
+"mais à direita?"
+
+msgid "Offset Y Coordinate"
+msgstr "Desvio da coordenada Y"
+
+msgid "How many pixel are unused above first box?"
+msgstr "Quantos pixels não são utilizados acima da primeira caixa?"
+
 msgid "Width of a box in pixel"
 msgstr "Largura da caixa em pixels"
 
@@ -59,5 +97,28 @@ msgstr "Largura da caixa individual em pixels"
 msgid "Horizontal space between boxes in pixel"
 msgstr "Espaço horizontal entre caixas (px)"
 
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "Espaço horizontal mínimo entre duas caixas, em pixels"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "Comprimento da parte vertical de uma linha em pixels"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"As caixas-mãe e filha estão ligadas por linhas. Este é o comprimento da "
+"parte vertical das linhas em pixels"
+
+msgid "Number of pixel between left border and scale"
+msgstr "Número de pixels entre a margem esquerda e a escala"
+
 msgid "Timeline Pedigree Report"
 msgstr "Relatório Cronologia de costados"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+"Cria uma página Web HTML que utiliza JavaScript para mostrar um diagrama de "
+"linhagem verticalmente por data de nascimento"

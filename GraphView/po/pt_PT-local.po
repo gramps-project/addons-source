@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Graph View"
 msgstr "Vista gráfica"
@@ -47,6 +47,9 @@ msgstr "Horizontal: da direita para a esquerda"
 msgid "Time Direction"
 msgstr "Direcção temporal"
 
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr "Limitar o número de pessoas mostradas (utilizar 0 para ilimitado)"
+
 msgid "Person theme"
 msgstr "Tema do indivíduo"
 
@@ -59,8 +62,17 @@ msgstr "Letra:"
 msgid "Avatars style"
 msgstr "Estilo dos avatares"
 
+msgid "PNG files"
+msgstr "Ficheiros PNG"
+
+msgid "Male avatar:"
+msgstr "Avatar masculino:"
+
 msgid "Choose male avatar"
 msgstr "Escolha um avatar masculino"
+
+msgid "Female avatar:"
+msgstr "Avatar feminino:"
 
 msgid "Choose female avatar"
 msgstr "Escolha um avatar feminino"
@@ -73,6 +85,9 @@ msgstr "Escolha o avatar para desconhecidos"
 
 msgid "Other avatar:"
 msgstr "Outro avatar:"
+
+msgid "Choose Other avatar"
+msgstr "Escolher outro avatar"
 
 msgid "Active person border size"
 msgstr "Tamanho do contorno do indivíduo activo"
@@ -161,6 +176,16 @@ msgstr "Espaço horizontal entre gerações"
 msgid "Spacings"
 msgstr "Espaços"
 
+msgid "All connected"
+msgstr "Tudo ligado"
+
+msgid ""
+"Show all connected persons limited by generation restrictions.\n"
+"Works slow, so don't set large generation values."
+msgstr ""
+"Mostra todas as pessoas ligadas limitadas por restrições de geração.\n"
+"Funciona lentamente, pelo que não deve definir valores de geração elevados."
+
 msgid "Add active person"
 msgstr "Adicionar indivíduo activo"
 
@@ -202,6 +227,21 @@ msgstr ""
 
 msgid "Change active person?"
 msgstr "Alterar o indivíduo activo?"
+
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"Este gráfico conteria pelo menos {people_count} indivíduos, o que excede o "
+"limite de {people_limit}. Por motivos de desempenho, pelo menos "
+"{people_missing} indivíduos não serão mostrados. Pode alterar este limite na "
+"configuração da vista."
+
+msgid "Incomplete graph"
+msgstr "Gráfico incompleto"
 
 msgid "Image on right side"
 msgstr "Imagem à direita"
@@ -301,6 +341,12 @@ msgstr "Escuro (pré-definição)"
 
 msgid "Light"
 msgstr "Claro"
+
+msgid "Cartoon"
+msgstr "Desenho animado"
+
+msgid "Modern"
+msgstr "Moderno"
 
 msgid "Persons from current graph"
 msgstr "Indivíduos para o gráfico actual"

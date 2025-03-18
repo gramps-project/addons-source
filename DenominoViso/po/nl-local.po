@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
+"PO-Revision-Date: 2025-03-09 08:45+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -61,10 +61,6 @@ msgstr "beschrijving"
 
 msgid "witnesses"
 msgstr "getuigen"
-
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "Fout bij het schrijven van %s: %s"
 
 msgid "No central person selected"
 msgstr "Geen hoofdpersoon geselecteerd"

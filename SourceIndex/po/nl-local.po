@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"POT-Creation-Date: 2025-03-13 23:40+0000\n"
+"PO-Revision-Date: 2025-03-09 08:45+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -13,6 +13,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Sources Index"
+msgstr "Bronnenindex"
 
 msgid "BirthIndex"
 msgstr "Geboorte-index"
@@ -28,9 +31,6 @@ msgstr "Volkstellingsindex"
 
 msgid "SourceIndex"
 msgstr "Bronindex"
-
-msgid "Sources Index"
-msgstr "Bronnenindex"
 
 msgid "*** Error: Must install either ElementTree or lxml."
 msgstr "*** Fout: moet ElementTree of lxml installeren."
@@ -139,6 +139,85 @@ msgstr ""
 "volkstellingen met gemeenschappelijke velden: id, bibliotheek, persoonsnaam, "
 "geboortedatum en -plaats, ouders."
 
+msgid "Info:"
+msgstr "Info:"
+
+msgid "Death act:"
+msgstr "Overlijdensmoment:"
+
+msgid "Reference:"
+msgstr "Referentie:"
+
+msgid "Volume:"
+msgstr "Volume:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>Overlijdensmoment</b>"
+
+msgid "First name:"
+msgstr "Voornaam:"
+
+msgid "Age:"
+msgstr "Leeftijd:"
+
+msgid "<b>Image</b>"
+msgstr "<b>Afbeelding</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Bibliotheek</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>Gegevens persoon</b>"
+
+msgid "Origin:"
+msgstr "Oorsprong:"
+
+msgid "Occupation:"
+msgstr "Beroep:"
+
+msgid "Live:"
+msgstr "Levend:"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Getuige:</b>"
+
+msgid "Birth date:"
+msgstr "Geboortedatum:"
+
+msgid "Birth place:"
+msgstr "Geboortelocatie:"
+
+msgid "Note:"
+msgstr "Notitie:"
+
+msgid "Spouse name:"
+msgstr "Naam echtgenoot:"
+
+msgid "Marriage date:"
+msgstr "Huwelijksdatum:"
+
+msgid "Marriage place:"
+msgstr "Huwelijkslocatie:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>Gegevens moeder</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>Gegevens vader</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Echtgenoot</b> "
+
+msgid "alive"
+msgstr "levend"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"getuige1, naam, opgegeven, leeftijd, beroep; getuige2, naam, voornaam, "
+"leeftijd, beroep, enz..."
+
 msgid "witness"
 msgstr "getuige"
 
@@ -151,26 +230,24 @@ msgstr "Namen:"
 msgid "First names:"
 msgstr "Voornamen:"
 
-msgid "Age:"
-msgstr "Leeftijd:"
+msgid "<b>Census</b>"
+msgstr "<b>Volkstelling</b>"
 
-msgid "Origin:"
-msgstr "Oorsprong:"
+msgid "Death date:"
+msgstr "Overlijdensdatum:"
 
-msgid "Occupation:"
-msgstr "Beroep:"
+msgid "Death place:"
+msgstr "Overlijdenslocatie:"
 
-msgid "Live:"
-msgstr "Levend:"
+msgid "Family status:"
+msgstr "Gezinsstatus:"
 
-msgid "Info:"
-msgstr "Info:"
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr ""
+"volgorde, persoon, achternaam, gegeven, leeftijd, status, beroep, enz..."
 
 msgid "Birth act:"
 msgstr "Geboortemoment:"
-
-msgid "Reference:"
-msgstr "Referentie:"
 
 msgid ""
 "Volume\n"
@@ -199,9 +276,6 @@ msgstr "Overige:"
 
 msgid "Repository title"
 msgstr "Bibliotheektitel"
-
-msgid "<b>Image</b>"
-msgstr "<b>Afbeelding</b>"
 
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>Bibliotheek</i></b>"
@@ -294,80 +368,6 @@ msgstr "<b><i>Citaat</i></b>"
 
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Bron</i></b>"
-
-msgid "Death act:"
-msgstr "Overlijdensmoment:"
-
-msgid "Volume:"
-msgstr "Volume:"
-
-msgid "<b>Death act</b>"
-msgstr "<b>Overlijdensmoment</b>"
-
-msgid "First name:"
-msgstr "Voornaam:"
-
-msgid "<b>Repository</b>"
-msgstr "<b>Bibliotheek</b>"
-
-msgid "<b>Data person</b>"
-msgstr "<b>Gegevens persoon</b>"
-
-msgid "<b>Witness:</b>"
-msgstr "<b>Getuige:</b>"
-
-msgid "Birth date:"
-msgstr "Geboortedatum:"
-
-msgid "Birth place:"
-msgstr "Geboortelocatie:"
-
-msgid "Note:"
-msgstr "Notitie:"
-
-msgid "Spouse name:"
-msgstr "Naam echtgenoot:"
-
-msgid "Marriage date:"
-msgstr "Huwelijksdatum:"
-
-msgid "Marriage place:"
-msgstr "Huwelijkslocatie:"
-
-msgid "<b>Data mother</b>"
-msgstr "<b>Gegevens moeder</b>"
-
-msgid "<b>Data father</b>"
-msgstr "<b>Gegevens vader</b>"
-
-msgid "<b>Spouse</b> "
-msgstr "<b>Echtgenoot</b> "
-
-msgid "alive"
-msgstr "levend"
-
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"getuige1, naam, opgegeven, leeftijd, beroep; getuige2, naam, voornaam, "
-"leeftijd, beroep, enz..."
-
-msgid "<b>Census</b>"
-msgstr "<b>Volkstelling</b>"
-
-msgid "Death date:"
-msgstr "Overlijdensdatum:"
-
-msgid "Death place:"
-msgstr "Overlijdenslocatie:"
-
-msgid "Family status:"
-msgstr "Gezinsstatus:"
-
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr ""
-"volgorde, persoon, achternaam, gegeven, leeftijd, status, beroep, enz..."
 
 msgid "Marriage act:"
 msgstr "Huwelijksmoment:"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 16:41+0000\n"
-"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"POT-Creation-Date: 2025-03-09 22:38+0000\n"
+"PO-Revision-Date: 2025-03-11 19:37+0000\n"
 "Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
@@ -83,6 +83,6 @@ msgstr "Максимальна ширина медіа у % від доступ�
 msgid "Media height"
 msgstr "Висота медіа"
 
-#, python-format
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Максимальна висота медіа у % від доступної висоти сторінки."

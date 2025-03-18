@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-03-11 19:37+0000\n"
 "Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
@@ -14,10 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10.3-dev\n"
-
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Не вдалося записати %s: %s"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -63,6 +59,42 @@ msgstr "Шлях призначення для згенерованих файл
 msgid "The destination file name for html content."
 msgstr "Імʼя файлу для HTML вмісту."
 
+msgid "Ancestral Collapsible Tree"
+msgstr "Складне дерево предків"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим у "
+"вигляді складного дерева з бібліотеки D3.js JavaScript."
+
+msgid "Descendant Indented Tree"
+msgstr "Ієрархічне дерево нащадків"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим у "
+"вигляді складного дерева з бібліотеки D3.js JavaScript."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Параметри віялової діаграми предків"
+
+msgid "Paternal Background Color"
+msgstr "Колір фону батьківської лінії"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-колір для фону блоку по батьківській лінії."
+
+msgid "Maternal Background"
+msgstr "Фон для материнської лінії"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-колір для фону блоку по материнській лінії."
+
 msgid "Ancestral Fan Chart"
 msgstr "Віялова діаграма предків"
 
@@ -80,9 +112,6 @@ msgstr "Див. %(reference)s : %(spouse)s"
 msgid "Generating report..."
 msgstr "Генерується звіт..."
 
-msgid "Descendant Indented Tree"
-msgstr "Ієрархічне дерево нащадків"
-
 msgid "Invalid Destination Directory"
 msgstr "Некоректний каталог призначення"
 
@@ -93,10 +122,6 @@ msgid ""
 msgstr ""
 "Каталог призначення %s не існує\n"
 "Бажаєте спробувати створити його?"
-
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "Не вдалося створити %s: %s"
 
 #, python-format
 msgid ""
@@ -288,36 +313,3 @@ msgstr "Розмір шрифту основного тексту"
 
 msgid "The font size in pixels for biography body text."
 msgstr "Розмір шрифту у пікселях для основного тексту біографії."
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим у "
-"вигляді складного дерева з бібліотеки D3.js JavaScript."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Параметри віялової діаграми предків"
-
-msgid "Paternal Background Color"
-msgstr "Колір фону батьківської лінії"
-
-msgid "RGB-color for paternal box background."
-msgstr "RGB-колір для фону блоку по батьківській лінії."
-
-msgid "Maternal Background"
-msgstr "Фон для материнської лінії"
-
-msgid "RGB-color for maternal box background."
-msgstr "RGB-колір для фону блоку по материнській лінії."
-
-msgid "Ancestral Collapsible Tree"
-msgstr "Складне дерево предків"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим у "
-"вигляді складного дерева з бібліотеки D3.js JavaScript."

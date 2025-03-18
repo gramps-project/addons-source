@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-18 20:52+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,21 +12,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "People related to <filter>"
 msgstr "Personen, die mit <Filter> verwandt sind"
 
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
-"Entspricht Personen, die mit Personen verwandt sind, die mit einem "
-"Personenfilter übereinstimmen"
+"Entspricht Personen, die mit einer Person verwandt sind, die durch einen "
+"Personenfilter gefunden wurde"
 
 msgid "People separated less than <N> degrees of <person>"
-msgstr "Personen trennten sich weniger als <N> Grad von <person>"
+msgstr "Personen, die weniger als <N> Grad von <Person> entfernt sind"
 
 msgid "Filter rule that matches relatives by degrees of separation"
-msgstr "Filterregel, die Verwandten nach Trennungsgraden entspricht"
+msgstr "Filterregel, die Verwandten nach dem Grad der Entfernung entspricht"
 
 msgid "Source matching parameters"
 msgstr "Quelle entsprechend Parameter"
@@ -35,7 +35,7 @@ msgid "Matches Sources with values containing the chosen parameters"
 msgstr "Entspricht Quellen mit Werten, die die gewählten Parameter enthalten"
 
 msgid "People with multiple parent records"
-msgstr "Personen mit mehrfachen Elterneinträgen"
+msgstr "Personen mit mehreren Elterndatensätzen"
 
 msgid "Matches people who have more than one set of parents"
 msgstr "Passt zu Personen, die mehr als ein Elternpaar haben"
@@ -69,19 +69,19 @@ msgid "Events of families matching a <family filter>"
 msgstr "Ereignisse von Familien, die einem <Familienfilter> entsprechen"
 
 msgid "Families matching <event filter>"
-msgstr "Familien, die mit <Ereignisfilter> übereinstimmen"
+msgstr "Familien, die <Ereignisfilter> entsprechen"
 
 msgid "Matches families that are matched by an event filter"
-msgstr "Entspricht Familien, die von einem Ereignisfilter abgeglichen werden"
+msgstr "Entspricht Familien, auf die ein Ereignisfilter zutrifft"
 
 msgid "Matches families matched by an event filter"
-msgstr "Entspricht Familien, die mit einem Ereignisfilter übereinstimmen"
+msgstr "Entspricht Familien, auf die ein Ereignisfilter zutrifft"
 
 msgid "Number of degrees of separation from person."
-msgstr "Anzahl der Trennungsgrade von der Person."
+msgstr "Anzahl der Grad der Trennung von der Person."
 
 msgid "Degrees:"
-msgstr "Grad:"
+msgstr "Grade:"
 
 msgid "People with <count> of <event>"
 msgstr "Personen mit <Anzahl> von <Ereignis>"
@@ -94,19 +94,19 @@ msgid "Include Children"
 msgstr "Kinder einbeziehen"
 
 msgid "Include the children in the matching families."
-msgstr "Schließt die Kinder in die passenden Familien ein."
+msgstr "Die Kinder in die passenden Familien einbeziehen."
 
 msgid "Include Parents"
 msgstr "Eltern einbeziehen"
 
 msgid "Include the parents in the matching families."
-msgstr "Schließt die Eltern in die passenden Familien ein."
+msgstr "Die Eltern in die passenden Familien einbeziehen."
 
 msgid "Family Filter name:"
-msgstr "Name des Familienfilters:"
+msgstr "Familienfilter Name:"
 
 msgid "People who are part of families matching <filter>"
-msgstr "Personen, die Teil von Familien sind, die mit <filter> übereinstimmen"
+msgstr "Personen, die Teil von Familien sind, die <Filter> entsprechen"
 
 msgid "Filter people by their age at death"
 msgstr "Personen nach ihrem Sterbealter filtern"

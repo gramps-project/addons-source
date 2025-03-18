@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
 "PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -62,10 +62,6 @@ msgstr "opis"
 
 msgid "witnesses"
 msgstr "svjedoci"
-
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "Greška prilikom zapisivanja „%s”: %s"
 
 msgid "No central person selected"
 msgstr "Nije odabrana središnja osoba"

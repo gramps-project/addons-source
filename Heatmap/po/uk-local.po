@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"PO-Revision-Date: 2025-03-11 19:37+0000\n"
 "Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
@@ -94,19 +94,19 @@ msgid "Create a heatmap web report."
 msgstr "Створити веб-звіт теплової мапи (Heatmap)."
 
 msgid "Stamen Terrain"
-msgstr "Stamen Terrain"
+msgstr "Топографічна карта Stamen"
 
 msgid "Stamen Terrain (Background only)"
 msgstr "Stamen Terrain (лише фон)"
 
 msgid "Stamen Toner"
-msgstr "Stamen Toner"
+msgstr "Контрастна карта Stamen"
 
 msgid "Stamen Watercolor"
-msgstr "Stamen Watercolor"
+msgstr "Акварельна карта Stamen"
 
 msgid "CartoDB Positron"
-msgstr "CartoDB Positron"
+msgstr "Світла карта CartoDB"
 
 msgid "CartoDB DarkMatter"
-msgstr "CartoDB DarkMatter"
+msgstr "Темна карта CartoDB"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
 "PO-Revision-Date: 2025-03-02 13:48+0000\n"
 "Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
@@ -55,10 +55,6 @@ msgstr "description"
 
 msgid "witnesses"
 msgstr "témoins"
-
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "Échec à l'écriture de %s : %s"
 
 msgid "No central person selected"
 msgstr "Aucun individu central sélectionné"

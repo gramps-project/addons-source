@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"PO-Revision-Date: 2025-03-18 09:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Select Form"
 msgstr "Välj formulär"
@@ -245,23 +245,251 @@ msgstr "Är du gift"
 msgid "Birthplace of wife"
 msgstr "Hustruns födelseplats"
 
+msgid "Date married"
+msgstr "Datum gift"
+
+msgid "Place married"
+msgstr "Plats gift"
+
+msgid "Date of marriage"
+msgstr "Datum för giftermål"
+
+msgid "Street Name"
+msgstr "Gatunamn"
+
+msgid "Relation to Family"
+msgstr "Släktskap till familjen"
+
+msgid "Degree of Education"
+msgstr "Utbildningsexamen"
+
+msgid "Male Negroes and Mulattoes"
+msgstr "Manliga svarta och mulatter"
+
+msgid "Female Negroes and Mulattoes"
+msgstr "Kvinnliga svarta och mulatter"
+
+msgid "Number of Colleges"
+msgstr "Antal högskolor"
+
+msgid "Number of Pupils"
+msgstr "Antal elever"
+
+msgid "Number of Common Schools"
+msgstr "Antal gemensamma skolor"
+
+msgid "Total number"
+msgstr "Totalt antal"
+
+msgid "Native voters"
+msgstr "Infödda väljare"
+
+msgid "Number of hogs sold"
+msgstr "Antal sålda svin"
+
+msgid "Number of cattle sold"
+msgstr "Antal sålda nötkreatur"
+
+msgid "City of"
+msgstr "Staden"
+
 msgid "Section"
 msgstr "Sektion"
+
+msgid "White Female"
+msgstr "Vit kvinna"
+
+msgid "Card No."
+msgstr "Kort nr."
+
+msgid "Place of Birth-Self"
+msgstr "Födelseort-Själv"
+
+msgid "Place of Birth-Mother"
+msgstr "Födelseort-mor"
+
+msgid "Place of birth, Mother"
+msgstr "Födelseort, mor"
+
+msgid "Place of Birth-Father"
+msgstr "Födelseort-far"
+
+msgid "Place of birth, Father"
+msgstr "Födelseort, far"
+
+msgid "Birthplace"
+msgstr "Födelseort"
+
+msgid "Father's Birthplace"
+msgstr "Fars födelseort"
+
+msgid "Mother's Birthplace"
+msgstr "Mors födelseort"
+
+msgid "House Number"
+msgstr "Husnummer"
 
 msgid "Relation"
 msgstr "Relation"
 
+msgid "Color or Race"
+msgstr "Färg eller ras"
+
+msgid "Years in US"
+msgstr "År i USA"
+
+msgid "Able to Write"
+msgstr "Kan skriva"
+
+msgid "Father's Name"
+msgstr "Fars namn"
+
+msgid "Parents Place of Marriage"
+msgstr "Föräldrars giftermålsort"
+
+msgid "Professional Services"
+msgstr "Professionella tjänster"
+
+msgid "Personal Estate"
+msgstr "Lösöre"
+
+msgid "Disabled"
+msgstr "Handikappad"
+
+msgid "Personal Property"
+msgstr "Personlig egendom"
+
+msgid "Where From"
+msgstr "Varifrån"
+
+msgid "Number of months unemployed"
+msgstr "Antal arbetslösa månader"
+
+msgid "Number of house"
+msgstr "Antal hus"
+
 msgid "Condition"
 msgstr "Kondition"
 
+msgid "Name of Village"
+msgstr "Byns namn"
+
+msgid "Enumerated date from"
+msgstr "Uppräknat datum från"
+
+msgid "Enumerated date to"
+msgstr "Uppräknat datum till"
+
+msgid "Enumeration number"
+msgstr "Uppräkningsnummer"
+
+msgid "Fathers birthplace"
+msgstr "Fars födelseort"
+
+msgid "Mothers birthplace"
+msgstr "Mors födelseort"
+
+msgid "Total White Males"
+msgstr "Totalt antal vita män"
+
+msgid "Colored males under 10"
+msgstr "Manliga färgade under 10 år"
+
+msgid "Colored males 45 and over"
+msgstr "Manliga färgade 45 år och äldre"
+
+msgid "Colored females under 10"
+msgstr "Kvinnliga färgade under 10 år"
+
+msgid "Blind Females"
+msgstr "Blinda kvinnor"
+
+msgid "Insane Females"
+msgstr "Galna kvinnor"
+
+msgid "Products Bushels Wheat"
+msgstr "Produkter bushels vete"
+
+msgid "Native Voter"
+msgstr "Infödd väljare"
+
+msgid "Landowner"
+msgstr "Jordägare"
+
+msgid "Parent of how many children"
+msgstr "Förälder till hur många barn"
+
+msgid "Number of times married"
+msgstr "Antal gånger gift"
+
+msgid "Place of Occupation"
+msgstr "Yrkesort"
+
+msgid "Now in navy"
+msgstr "Nu i marinen"
+
+msgid "Birth Country"
+msgstr "Födelseland"
+
+msgid "Number of years in the US"
+msgstr "Antal år i USA"
+
+msgid "Native Colored Females"
+msgstr "Infödda färgade kvinnor"
+
+msgid "Birthplace of Father"
+msgstr "Fars födelseort"
+
+msgid "Birthplace of Mother"
+msgstr "Mors födelseort"
+
+msgid "Red"
+msgstr "Red"
+
+msgid "Divorced"
+msgstr "Skild"
+
 msgid "Ancestry"
 msgstr "Anor"
+
+msgid "Extent of Education"
+msgstr "Utbildningens omfattning"
+
+msgid "Year married"
+msgstr "Gift år"
+
+msgid "Male under 21"
+msgstr "Man under 21 år"
+
+msgid "Female under 21"
+msgstr "Kvinna under 21 år"
+
+msgid "Female over 21"
+msgstr "Kvinna över 21 år"
+
+msgid "Heads of Families"
+msgstr "Familjeöverhuvuden"
+
+msgid "White females"
+msgstr "Vita kvinnor"
+
+msgid "Colored males"
+msgstr "Färgade män"
+
+msgid "Colored females"
+msgstr "Färgade kvinnor"
 
 msgid "in"
 msgstr "i"
 
 msgid "of"
 msgstr "av"
+
+msgid "Residing in the"
+msgstr "Bosatt i"
+
+msgid "Parents place of birth"
+msgstr "Föräldrarnas födelseort"
 
 msgid "Where Born"
 msgstr "Var född"

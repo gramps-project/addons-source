@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 22:01+0000\n"
+"PO-Revision-Date: 2025-03-12 11:47+0000\n"
 "Last-Translator: Michał Stojek <stojex@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -19,8 +19,91 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Find GeoNames"
+msgstr "Znajdź GeoNames"
+
+msgid "Need to set GeoNames ID"
+msgstr "Należy ustawić identyfikator GeoNames"
+
+msgid "Use the Help button for more information"
+msgstr "Aby uzyskać więcej informacji, kliknij przycisk Pomoc"
+
+msgid ""
+"Try changing the Title, or use the \"Edit\" button to finish this level of "
+"the place manually."
+msgstr ""
+"Spróbuj zmienić tytuł lub użyj przycisku „Edytuj”, aby ręcznie dokończyć ten "
+"poziom miejsca."
+
+#, python-format
+msgid "%s matches were found"
+msgstr "Znaleziono %s wyników"
+
+msgid ""
+"Only 10 matches are shown.\n"
+"To see additional results, press the search button again.\n"
+"Or try changing the Title with more detail, such as a country."
+msgstr ""
+"Wyświetlono tylko 10 wyników.\n"
+"Aby zobaczyć dodatkowe wyniki, naciśnij ponownie przycisk wyszukiwania.\n"
+"Lub spróbuj zmienić tytuł, podając więcej szczegółów, np. kraj."
+
 msgid "Problem getting data from web"
 msgstr "Problem z pobieraniem danych z sieci"
+
+msgid "Web request Timeout, you can try again..."
+msgstr ""
+"Przekroczono limit czasu żądania internetowego. Możesz spróbować ponownie..."
+
+msgid "Problem getting data from GeoNames"
+msgstr "Problem z pobieraniem danych z GeoNames"
+
+msgid ""
+"One of the places you are merging encloses the other!\n"
+"Please choose another place."
+msgstr ""
+"Jedno z miejsc, które łączysz, obejmuje drugie!\n"
+"Wybierz inne miejsce."
+
+msgid ""
+"The place you chose is enclosed in the place you are workin on!\n"
+"Please cancel and choose another place."
+msgstr ""
+"Miejsce, które wybrałeś, jest zawarte w miejscu, nad którym pracujesz!\n"
+"Anuluj i wybierz inne miejsce."
+
+msgid "GeoNames web site"
+msgstr "Strona internetowa GeoNames"
+
+msgid "GeoNames author"
+msgstr "Autor GeoNames"
+
+msgid "GeoNames was founded by Marc Wick. You can reach him at "
+msgstr ""
+"GeoNames zostało przygotowane przez Marca Wicka. Możesz się z nim "
+"skontaktować pod adresem "
+
+msgid ""
+"GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Switzerland.\n"
+"This work is licensed under a "
+msgstr ""
+"GeoNames to projekt Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Szwajcaria.\n"
+"Ta praca jest licencjonowana na podstawie "
+
+msgid "Creative Commons Attribution 3.0 License"
+msgstr "Creative Commons Attribution 3.0 License"
+
+#, python-format
+msgid "Add Souce/Repo/Note (%s)"
+msgstr "Dodaj źródło/repozytorium/notatki (%s)"
+
+msgid "This Place is not used!"
+msgstr "To miejsce jest nieużywane!"
 
 msgid "Primary Name"
 msgstr "Podstawowe imię"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
 "PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -14,10 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10.3-dev\n"
-
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Greška u pisanju %s: %s"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -63,6 +59,42 @@ msgstr "Odredište za stvorene datoteke."
 msgid "The destination file name for html content."
 msgstr "Ime datoteke za html sadržaj."
 
+msgid "Ancestral Collapsible Tree"
+msgstr "Sklopivo stablo predaka"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Stvara web-stranicu s grafičkim prikazom predaka (SVG) u sklopivom "
+"stablastom obliku pomoću D3.js JavaScript biblioteke."
+
+msgid "Descendant Indented Tree"
+msgstr "Stablo potomaka s uvlakama"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Stvara web-stranicu s grafičkim prikazom potomaka (SVG) u sklopivom "
+"stablastom obliku s uvlakama pomoću D3.js JavaScript biblioteke."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Opcije za lepezasti dijagram predaka"
+
+msgid "Paternal Background Color"
+msgstr "Očeva boja pozadine"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-boje za očevu boju pozadine."
+
+msgid "Maternal Background"
+msgstr "Majčina boja pozadine"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-boje za majčinu boju pozadine."
+
 msgid "Ancestral Fan Chart"
 msgstr "Lepezasti dijagram predaka"
 
@@ -80,9 +112,6 @@ msgstr "Pogledaj %(reference)s : %(spouse)s"
 msgid "Generating report..."
 msgstr "Izrada izvještaja …"
 
-msgid "Descendant Indented Tree"
-msgstr "Stablo potomaka s uvlakama"
-
 msgid "Invalid Destination Directory"
 msgstr "Nevažeća odredišna mapa"
 
@@ -93,10 +122,6 @@ msgid ""
 msgstr ""
 "Odredišna mapa %s ne postoji\n"
 "Želiš li je pokušati stvoriti?"
-
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "Greška prilikom stvaranja %s: %s"
 
 msgid "Default View"
 msgstr "Standardni prikaz"
@@ -280,36 +305,3 @@ msgstr "Veličina fonta osnovnog teksta"
 
 msgid "The font size in pixels for biography body text."
 msgstr "Veličina fonta u pikslima za osnovni tekst biografije."
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Stvara web-stranicu s grafičkim prikazom potomaka (SVG) u sklopivom "
-"stablastom obliku s uvlakama pomoću D3.js JavaScript biblioteke."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Opcije za lepezasti dijagram predaka"
-
-msgid "Paternal Background Color"
-msgstr "Očeva boja pozadine"
-
-msgid "RGB-color for paternal box background."
-msgstr "RGB-boje za očevu boju pozadine."
-
-msgid "Maternal Background"
-msgstr "Majčina boja pozadine"
-
-msgid "RGB-color for maternal box background."
-msgstr "RGB-boje za majčinu boju pozadine."
-
-msgid "Ancestral Collapsible Tree"
-msgstr "Sklopivo stablo predaka"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Stvara web-stranicu s grafičkim prikazom predaka (SVG) u sklopivom "
-"stablastom obliku pomoću D3.js JavaScript biblioteke."

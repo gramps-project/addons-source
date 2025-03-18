@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -15,10 +15,6 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Ошибка записи %s: %s"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -64,6 +60,43 @@ msgstr "Путь назначения к создаваемым файлам."
 msgid "The destination file name for html content."
 msgstr "Имя файла для html"
 
+msgid "Ancestral Collapsible Tree"
+msgstr "Древо предков (D3)"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Создаёт веб-станицу с графическим отображением предков (SVG) представленном "
+"в виде сворачиваемого древа при помощи D3.js JavaScript библиотеки."
+
+msgid "Descendant Indented Tree"
+msgstr "Древо потомков с отступами"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Создаёт веб-станицу с графическим отображением потомков (SVG) представленном "
+"в виде сворачиваемого древа с отступами при помощи D3.js JavaScript "
+"библиотеки."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Параметры круговой диаграммы"
+
+msgid "Paternal Background Color"
+msgstr "Цвет фона для отца"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-цвет для фона блока отца."
+
+msgid "Maternal Background"
+msgstr "Цвет фона для матери"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-цвет для фона блока матери."
+
 msgid "Ancestral Fan Chart"
 msgstr "Круговая диаграмма предков"
 
@@ -81,15 +114,8 @@ msgstr "Смотри %(reference)s : %(spouse)s"
 msgid "Generating report..."
 msgstr "Создание отчёта..."
 
-msgid "Descendant Indented Tree"
-msgstr "Древо потомков с отступами"
-
 msgid "Invalid Destination Directory"
 msgstr "Не верный каталог назначения"
-
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "Не удалось создать %s: %s"
 
 msgid "Default View"
 msgstr "Вид по умолчанию"
@@ -266,37 +292,3 @@ msgstr "Размер шрифта основного текста"
 
 msgid "The font size in pixels for biography body text."
 msgstr "Размер шрифта в пикселях для основного текста биографии."
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Создаёт веб-станицу с графическим отображением потомков (SVG) представленном "
-"в виде сворачиваемого древа с отступами при помощи D3.js JavaScript "
-"библиотеки."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Параметры круговой диаграммы"
-
-msgid "Paternal Background Color"
-msgstr "Цвет фона для отца"
-
-msgid "RGB-color for paternal box background."
-msgstr "RGB-цвет для фона блока отца."
-
-msgid "Maternal Background"
-msgstr "Цвет фона для матери"
-
-msgid "RGB-color for maternal box background."
-msgstr "RGB-цвет для фона блока матери."
-
-msgid "Ancestral Collapsible Tree"
-msgstr "Древо предков (D3)"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Создаёт веб-станицу с графическим отображением предков (SVG) представленном "
-"в виде сворачиваемого древа при помощи D3.js JavaScript библиотеки."

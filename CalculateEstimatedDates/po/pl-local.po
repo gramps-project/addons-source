@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 22:01+0000\n"
+"PO-Revision-Date: 2025-03-12 11:47+0000\n"
 "Last-Translator: Michał Stojek <stojex@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -30,6 +30,12 @@ msgstr "Źródło do usunięcia lub/i dodania"
 
 msgid "Remove previously added events, notes, and source"
 msgstr "Usuń wcześniej dodane wydarzenia, notatki i źródło"
+
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"Usuń obliczone zdarzenia, notatki i źródło; następuje natychmiast po "
+"wykonaniu"
 
 msgid "Do not add birth events"
 msgstr "Nie dodawaj wydarzeń związanych z urodzeniem"
@@ -94,6 +100,16 @@ msgstr "Przełącz wybór"
 msgid "Add Selected Events"
 msgstr "Dodaj wybrane wydarzenia"
 
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "Usuń zdarzenia, notatki i źródło oraz ponownie wybierz dane"
+
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+"Czy na pewno chcesz usunąć poprzednie zdarzenia, notatki i źródła oraz "
+"ponownie wybrać dane?"
+
 msgid "Remove and Run Select Again"
 msgstr "Usuń i uruchom ponownie Wybierz"
 
@@ -115,9 +131,15 @@ msgstr "Krewni"
 msgid "Processing...\n"
 msgstr "Przetwarzanie...\n"
 
+msgid "Removing old estimations... "
+msgstr "Usuwanie starych szacunków... "
+
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Usuwanie '%s'..."
+
+msgid "done!\n"
+msgstr "gotowe!\n"
 
 msgid ""
 "Selecting... \n"
@@ -146,11 +168,19 @@ msgid "Adding events '%s'..."
 msgstr "Dodawanie zdarzeń '%s'..."
 
 #, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "Dodano zdarzenie urodzenia na podstawie %(evidence)s, z %(name)s"
+
+#, python-format
 msgid "Added birth event based on %s"
 msgstr "Dodano wydarzenie urodzenia na podstawie %s"
 
 msgid "Estimated birth date"
 msgstr "Szacowana data śmierci"
+
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr "Dodano zdarzenie śmierci na podstawie %(evidence)s, od %(person)s"
 
 #, python-format
 msgid "Added death event based on %s"

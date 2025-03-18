@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
 "PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
@@ -61,10 +61,6 @@ msgstr "beskrivelse"
 
 msgid "witnesses"
 msgstr "vidne"
-
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "Fejl ved skrivning %s: %s"
 
 msgid "No central person selected"
 msgstr "Ingen hovedperson valgt"

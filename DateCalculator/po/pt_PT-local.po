@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,10 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Reference Date or Date Range"
+msgstr "Data de referência ou intervalo de datas"
 
 msgid "a valid Gramps date"
 msgstr "uma data Gramps válida"
+
+msgid "Date or offset ±y or ±y, m, d"
+msgstr "Data ou desvio ±y ou ±y, m, d"
+
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+"1. uma data\n"
+"2. um número positivo ou negativo, representando anos\n"
+"3. uma lista de valores positivos ou negativos, representando anos, meses, "
+"dias"
 
 msgid "Result"
 msgstr "Resultado"
@@ -26,8 +42,20 @@ msgstr "Calcular"
 msgid "Copy"
 msgstr "Copiar"
 
+msgid "Error: invalid date for first expression"
+msgstr "Erro: data inválida para a primeira expressão"
+
+msgid "Error: invalid offset for second expression"
+msgstr "Erro: desvio inválido para a segunda expressão"
+
 msgid "Error: at least one expression must be a date"
 msgstr "Erro: pelo menos uma das expressões tem de ser uma data"
 
+msgid "Enter an expression in the entries above and click Calculate."
+msgstr "Insira uma expressão nos campos acima e clique em Calcular."
+
 msgid "Date Calculator"
 msgstr "Calculadora de datas"
+
+msgid "Perform date math calculations"
+msgstr "Efectuar cálculos matemáticos de datas"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 22:50+0000\n"
 "PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -14,6 +14,22 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Descendant Book"
+msgstr "Knjiga o potomcima"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Stvara jedan ili više izvještaja o potomcima, na osnovi dostavljenog upita."
+
+msgid "Detailed Descendant Book"
+msgstr "Detaljna knjiga o potomcima"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Stvara jedan ili više detaljnih izvještaja o potomcima, na osnovi "
+"dostavljenog upita."
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -30,14 +46,6 @@ msgstr "Izvještaj o potomcima"
 #, python-format
 msgid "Writing %s reports..."
 msgstr "Ispis izvještaja (%s) …"
-
-#, python-format
-msgid "%s. Descendants of %s"
-msgstr "%s. Potomci od %s"
-
-#, python-format
-msgid "%d. %s"
-msgstr "%d. %s"
 
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
@@ -79,20 +87,8 @@ msgid "Report, Generation, Person, Name"
 msgstr "Izvještaj, generacija, osoba, ime"
 
 #, python-format
-msgid "See Report : %s, Generation : %s, Person : %s"
-msgstr "Vidi izvještaj: %s, %s. generacija, osoba: %s"
-
-#, python-format
 msgid "Report appearances for %s"
 msgstr "Izvjesti pojavljivanja za %s"
-
-#, python-format
-msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
-msgstr "Supružnik od: Izvještaj: %s, Generacija: %s, Osoba: %s"
-
-#, python-format
-msgid "Report: %s, Generation: %s, Person: %s"
-msgstr "Izvještaj: %s, Generacija: %s, Osoba: %s"
 
 #, python-format
 msgid "%(event_name)s of %(name)s "
@@ -125,10 +121,6 @@ msgstr "%(event_name)s:"
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
-
-#, python-format
-msgid "Ref: %s. %s"
-msgstr "Ref: %s. %s"
 
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
@@ -211,22 +203,6 @@ msgstr "Stil za zaglavlje u indeksu mjesta."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "Stil za reference u indeksu mjesta."
-
-msgid "Descendant Book"
-msgstr "Knjiga o potomcima"
-
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Stvara jedan ili više izvještaja o potomcima, na osnovi dostavljenog upita."
-
-msgid "Detailed Descendant Book"
-msgstr "Detaljna knjiga o potomcima"
-
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Stvara jedan ili više detaljnih izvještaja o potomcima, na osnovi "
-"dostavljenog upita."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

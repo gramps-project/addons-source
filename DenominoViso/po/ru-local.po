@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -57,10 +57,6 @@ msgstr "описание"
 
 msgid "witnesses"
 msgstr "свидетели"
-
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "Ошибка записи %s: %s"
 
 msgid "No central person selected"
 msgstr "Не выбрано главное лицо"

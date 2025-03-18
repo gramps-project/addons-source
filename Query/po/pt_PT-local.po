@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"POT-Creation-Date: 2025-03-13 22:17+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,14 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
-
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d linhas processadas em %s segundos.\n"
-
-msgid "Today"
-msgstr "Hoje"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Query Gramplet"
 msgstr "Gramplet Consulta"
@@ -41,3 +34,6 @@ msgstr "Insira expressões Python"
 
 msgid "Enter SQL query"
 msgstr "Insira uma consulta SQL"
+
+msgid "Today"
+msgstr "Hoje"

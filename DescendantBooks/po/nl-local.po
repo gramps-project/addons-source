@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"POT-Creation-Date: 2025-03-13 22:50+0000\n"
+"PO-Revision-Date: 2025-03-09 08:45+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -13,6 +13,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Descendant Book"
+msgstr "Afstammelingenboek"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Produceert een of meer afstammelingenverslagen op basis van een opgegeven "
+"zoekvraag."
+
+msgid "Detailed Descendant Book"
+msgstr "Gedetailleerd afstammelingenboek"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Produceert een of meer gedetailleerde afstammelingenverslagen op basis van "
+"een opgegeven zoekvraag."
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -28,14 +45,6 @@ msgstr "Afstammelingenverslag"
 #, python-format
 msgid "Writing %s reports..."
 msgstr "%s verslagen schrijven..."
-
-#, python-format
-msgid "%s. Descendants of %s"
-msgstr "%s. Afstammelingen van %s"
-
-#, python-format
-msgid "%d. %s"
-msgstr "%d. %s"
 
 msgid "Select filter to restrict people that appear in the report"
 msgstr "Selecteer filter om het aantal personen in het verslag te beperken"
@@ -76,20 +85,8 @@ msgid "Report, Generation, Person, Name"
 msgstr "Verslag, Generatie, Persoon, Naam"
 
 #, python-format
-msgid "See Report : %s, Generation : %s, Person : %s"
-msgstr "Zie verslag : %s, Generatie : %s, Persoon : %s"
-
-#, python-format
 msgid "Report appearances for %s"
 msgstr "Uiterlijk van het verslag %s"
-
-#, python-format
-msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
-msgstr "Echtgenoot van: Verslag: %s, Generatie: %s, Persoon: %s"
-
-#, python-format
-msgid "Report: %s, Generation: %s, Person: %s"
-msgstr "Verslag: %s, Generatie: %s, Persoon: %s"
 
 #, python-format
 msgid "%(event_name)s of %(name)s "
@@ -122,10 +119,6 @@ msgstr "%(event_name)s:"
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
-
-#, python-format
-msgid "Ref: %s. %s"
-msgstr "Ref: %s. %s"
 
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
@@ -213,23 +206,6 @@ msgstr "De stijl die wordt gebruikt voor de koptekst in de plaatsindex."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "De stijl die wordt gebruikt voor de verwijzingen in de plaatsindex."
-
-msgid "Descendant Book"
-msgstr "Afstammelingenboek"
-
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Produceert een of meer afstammelingenverslagen op basis van een opgegeven "
-"zoekvraag."
-
-msgid "Detailed Descendant Book"
-msgstr "Gedetailleerd afstammelingenboek"
-
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Produceert een of meer gedetailleerde afstammelingenverslagen op basis van "
-"een opgegeven zoekvraag."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 13:57+0000\n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
+"PO-Revision-Date: 2025-03-11 19:37+0000\n"
 "Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
@@ -62,10 +62,6 @@ msgstr "опис"
 
 msgid "witnesses"
 msgstr "свідки"
-
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "Не вдалося записати %s: %s"
 
 msgid "No central person selected"
 msgstr "Не вибрано головну особу"

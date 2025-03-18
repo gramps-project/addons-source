@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-26 15:11-0500\n"
-"PO-Revision-Date: 2025-03-09 22:01+0000\n"
+"PO-Revision-Date: 2025-03-12 11:47+0000\n"
 "Last-Translator: Michał Stojek <stojex@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -56,19 +56,28 @@ msgid "The style used for the title of the report."
 msgstr "Styl używany do tytułu raportu."
 
 msgid "The style used for the subtitle of the report."
-msgstr "Styl użyty w podtytule raportu."
+msgstr "Styl używany w podtytule raportu."
 
 msgid "The style used for the footer of the report."
-msgstr "Styl użyty w stopce raportu."
+msgstr "Styl używany w stopce raportu."
 
 msgid "The style used for source title."
-msgstr "Styl użyty w tytule źródła."
+msgstr "Styl używany w tytule źródła."
 
 msgid "The style used for source subtitle."
-msgstr "Styl użyty w napisach źródłowych."
+msgstr "Styl używany w napisach źródłowych."
 
 msgid "The style used for Source details."
-msgstr "Styl użyty dla szczegółów źródła."
+msgstr "Styl używany dla szczegółów źródła."
+
+msgid "The style used for citation title."
+msgstr "Styl używany w tytule cytowania."
+
+msgid "The style used for a column title."
+msgstr "Styl używany w tytule kolumny."
 
 msgid "The style used for each section."
 msgstr "Styl używany do każdej sekcji."
+
+msgid "The style used for event and person details."
+msgstr "Styl używany do opisu wydarzeń i osób."

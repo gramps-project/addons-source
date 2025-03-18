@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 22:01+0000\n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
+"PO-Revision-Date: 2025-03-12 11:47+0000\n"
 "Last-Translator: Michał Stojek <stojex@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -60,10 +60,6 @@ msgstr "opis"
 
 msgid "witnesses"
 msgstr "Świadkowie"
-
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "Nie udało się zapisać %s: %s"
 
 msgid "Unknown time direction"
 msgstr "Nieznany kierunek czasu"

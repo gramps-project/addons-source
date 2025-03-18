@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 22:01+0000\n"
+"PO-Revision-Date: 2025-03-12 11:47+0000\n"
 "Last-Translator: Michał Stojek <stojex@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -19,6 +19,25 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Nie udało się zapisać %s: %s"
+msgid "Media Merge"
+msgstr "Scalanie mediów"
+
+#, python-brace-format
+msgid "{number_of} media merged"
+msgid_plural "{number_of} media merged"
+msgstr[0] "{number_of} scalono"
+msgstr[1] "{number_of} scalono"
+msgstr[2] "{number_of} scalono"
+
+msgid "No media items merged."
+msgstr "Nie scalono żadnych elementów multimedialnych."
+
+msgid "Merge Media"
+msgstr "Połącz media"
+
+msgid ""
+"Searches the entire database, looking for media that have the same path and "
+"merges them."
+msgstr ""
+"Przeszukuje całą bazę danych w poszukiwaniu multimediów o tej samej ścieżce "
+"i łączy je."

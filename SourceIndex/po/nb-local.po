@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:40+0000\n"
 "PO-Revision-Date: 2025-02-26 20:54+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -28,6 +28,9 @@ msgstr ""
 "Registrerer transkripsjoner … fødsler/dødsfall/ekteskap/folketellinger med "
 "vanlige felter: ID, arkiv, personnavn, fødselsdato og -sted, foreldre."
 
+msgid "<b>Repository</b>"
+msgstr "<b>Arkiv</b>"
+
 msgid "Repository title"
 msgstr "Arkivtittel"
 
@@ -36,6 +39,3 @@ msgstr "<b><i>Arkiv</i></b>"
 
 msgid "The call number into the repository"
 msgstr "Arkivsignatur i arkivet"
-
-msgid "<b>Repository</b>"
-msgstr "<b>Arkiv</b>"

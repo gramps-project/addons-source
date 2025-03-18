@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,10 +12,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Set properties for multiple places"
 msgstr "Definir propriedades para múltiplos locais"
+
+msgid ""
+"This gramplet allows setting properties for multiple places at the same time"
+msgstr ""
+"Este Gramplet permite definir propriedades para vários locais ao mesmo tempo"
+
+msgid "New enclosing place"
+msgstr "Novo local contentor"
+
+msgid "Timespan:"
+msgstr "Período de tempo:"
+
+msgid "Set timespan for enclosing places"
+msgstr "Definir período de tempo para locais contentores"
 
 msgid "Clear original enclosing places"
 msgstr "Limpar locais contentores originais"
@@ -26,8 +40,20 @@ msgstr "Limpar etiquetas"
 msgid "Generate hierarchy"
 msgstr "Gerar hierarquia"
 
+msgid "use spaces as separator"
+msgstr "usar espaços como separador"
+
+msgid "reverse hierarchy"
+msgstr "reverter hierarquia"
+
 msgid "Replace text"
 msgstr "Substituir texto"
+
+msgid "Use regex"
+msgstr "Usar expressões regulares"
+
+msgid "Old text:"
+msgstr "Texto anterior:"
 
 msgid "New text:"
 msgstr "Novo texto:"
@@ -38,5 +64,14 @@ msgstr "Limpar selecções"
 msgid "Apply to selected places"
 msgstr "Aplicar aos locais seleccionados"
 
+msgid "Setting place properties"
+msgstr "Definir propriedades do local"
+
+msgid "Regex operation failed: {}"
+msgstr "Falha na expressão regular: {}"
+
 msgid "PlaceUpdate"
 msgstr "Actualizar local"
+
+msgid "Gramplet to manipulate multiple places"
+msgstr "Gramplet para manipular múltiplos locais"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,22 +12,134 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Sincronização \"web\" do Gramps"
 
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "Sincroniza uma base de dados local com uma instância do Gramps Web."
+
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"O utilizador não tem permissões de servidor suficientes para utilizar a "
+"sincronização."
+
 msgid "Fetching remote data..."
 msgstr "A obter dados remotos..."
+
+msgid "Unexpected error while applying changes."
+msgstr "Erro inesperado ao aplicar as alterações."
 
 msgid "Media files are in sync."
 msgstr "Multimédia sincronizada."
 
+#, python-format
+msgid "Successfully downloaded %s media files."
+msgstr "Transferiu com êxito %s ficheiros multimédia."
+
+#, python-format
+msgid "Encountered %s errors during download."
+msgstr "Encontrou erros %s durante a transferência."
+
+#, python-format
+msgid "Successfully uploaded %s media files."
+msgstr "Envio bem sucedido de %s ficheiros multimédia."
+
+#, python-format
+msgid "Encountered %s errors during upload."
+msgstr "%s erros encontrados durante o envio."
+
+msgid "Error accessing media object."
+msgstr "Erro ao aceder ao objecto multimédia."
+
+msgid "Failed importing downloaded XML file."
+msgstr "Falha ao importar o ficheiro XML transferido."
+
 msgid "Comparing local and remote data..."
 msgstr "A comparar dados locais e remotos..."
 
+msgid "Server authorization error."
+msgstr "Erro de autorização do servidor."
+
+msgid "Server authorization error: insufficient permissions."
+msgstr "Erro de autorização do servidor: permissões insuficientes."
+
 msgid "Error: URL not found."
 msgstr "Erro: URL não encontrado."
+
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr ""
+"Impossível sincronizar alterações com o servidor: os objectos foram "
+"modificados."
+
+#, python-format
+msgid "Error %s while connecting to server."
+msgstr "Erro %s durante a ligação ao servidor."
+
+msgid "URL error while connecting to server."
+msgstr "Erro de URL durante a ligação ao servidor."
+
+msgid "Error while parsing response from server."
+msgstr "Erro ao analisar a resposta do servidor."
+
+msgid "Continue without transport encryption?"
+msgstr "Continuar sem a encriptação de transporte?"
+
+msgid ""
+"You have specified a URL with http scheme. If you continue, your password "
+"will be sent in clear text over the network. Use only for local testing!"
+msgstr ""
+"Especificou um URL com esquema http. Se continuar, a sua senha será enviada "
+"em texto simples através da rede. Utilize apenas para testes locais!"
+
+msgid "Continue with HTTP"
+msgstr "Continuar com HTTP"
+
+msgid "Use HTTPS"
+msgstr "Usar HTTPS"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"Esta ferramenta permite sincronizar a árvore genealógica actual com uma "
+"árvore genealógica remota servida pelo Gramps Web.\n"
+"\n"
+"A ferramenta assume que as duas árvores são derivadas uma da outra, ou seja, "
+"uma das duas foi criada a partir de uma exportação Gramps XML (não GEDCOM!) "
+"da outra.\n"
+"\n"
+"Após uma sincronização bem sucedida, as duas árvores serão idênticas. As "
+"modificações serão propagadas com base nos carimbos de data e hora. Será "
+"solicitada uma confirmação antes que quaisquer alterações sejam feitas nas "
+"árvores local ou remota.\n"
+"\n"
+"Se, em vez disso, pretender unir duas árvores significativamente diferentes "
+"com a opção de efectuar modificações manuais, utilize a Ferramenta de união "
+"de importação."
+
+msgid "Server URL: "
+msgstr "URL do servidor: "
+
+msgid "Bidirectional Synchronization"
+msgstr "Sincronização bidireccional"
+
+msgid "Reset remote to local"
+msgstr "Repor a remota com a local"
+
+msgid "Reset local to remote"
+msgstr "Repor a local com a remota"
 
 msgid "Merge"
 msgstr "Unir"
@@ -55,6 +167,15 @@ msgstr "Aplicar alterações à base de dados local."
 
 msgid "No changes to apply to local database."
 msgstr "Não aplicar alterações à base de dados local."
+
+msgid "Applying changes to remote database ..."
+msgstr "A aplicar alterações à base de dados remota..."
+
+msgid "No changes to apply to remote database."
+msgstr "Não há alterações a aplicar à base de dados remota."
+
+msgid "Successfully applied changes to local database."
+msgstr "Aplicadas com êxito as alterações à base de dados local."
 
 msgid "Missing locally"
 msgstr "Locais em falta"

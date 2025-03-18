@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 16:41+0000\n"
+"POT-Creation-Date: 2025-03-09 22:38+0000\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -86,6 +86,6 @@ msgstr "Максимальная ширина в % от доступной ши�
 msgid "Media height"
 msgstr "Высота изображения"
 
-#, python-format
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Максимальная высота в % от доступной высоты страницы."

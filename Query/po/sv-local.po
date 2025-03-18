@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"POT-Creation-Date: 2025-03-13 22:17+0000\n"
+"PO-Revision-Date: 2025-03-18 09:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,14 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
-
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d rader bearbetade på %s sekunder.\n"
-
-msgid "Today"
-msgstr "Idag"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Query Gramplet"
 msgstr "Förfrågningsgramplet"
@@ -41,3 +34,6 @@ msgstr "Skriv ett python uttryck"
 
 msgid "Enter SQL query"
 msgstr "Ange SQL-fråga"
+
+msgid "Today"
+msgstr "Idag"

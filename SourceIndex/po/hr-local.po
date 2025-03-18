@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:40+0000\n"
 "PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -14,6 +14,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10.3-dev\n"
+
+msgid "Sources Index"
+msgstr "Indeks izvora"
 
 msgid "BirthIndex"
 msgstr "Indeks rođenja"
@@ -28,9 +31,6 @@ msgid "CensusIndex"
 msgstr "Indeks popisa stanovništva"
 
 msgid "SourceIndex"
-msgstr "Indeks izvora"
-
-msgid "Sources Index"
 msgstr "Indeks izvora"
 
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -139,6 +139,84 @@ msgstr ""
 "Prijepisi zapisa … rođenja/smrti/brakovi/popisi stanovništva s uobičajenim "
 "poljima: id, spremište, ime osobe, datum i mjesto rođenja, roditelji."
 
+msgid "Info:"
+msgstr "Informacije:"
+
+msgid "Death act:"
+msgstr "Potvrda o smrti:"
+
+msgid "Reference:"
+msgstr "Referenca:"
+
+msgid "Volume:"
+msgstr "Svezak:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>Potvrda o smrti</b>"
+
+msgid "First name:"
+msgstr "Ime:"
+
+msgid "Age:"
+msgstr "Starost:"
+
+msgid "<b>Image</b>"
+msgstr "<b>Slika</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Spremište</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>Podaci osobe</b>"
+
+msgid "Origin:"
+msgstr "Izvorno:"
+
+msgid "Occupation:"
+msgstr "Zanimanje:"
+
+msgid "Live:"
+msgstr "Živi:"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Svjedok:</b>"
+
+msgid "Birth date:"
+msgstr "Datum rođenja:"
+
+msgid "Birth place:"
+msgstr "Mjesto rođenja:"
+
+msgid "Note:"
+msgstr "Zabilješka:"
+
+msgid "Spouse name:"
+msgstr "Ime supružnika:"
+
+msgid "Marriage date:"
+msgstr "Datum sklapanja braka:"
+
+msgid "Marriage place:"
+msgstr "Mjesto sklapanja braka:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>Podaci majke</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>Podaci oca</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Supružnik</b> "
+
+msgid "alive"
+msgstr "živi"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"svjedok1, ime, starost, zanimanje; svjedok2, ime, starost, zanimanje; itd. …"
+
 msgid "witness"
 msgstr "svjedok"
 
@@ -151,26 +229,23 @@ msgstr "Imena:"
 msgid "First names:"
 msgstr "Ime:"
 
-msgid "Age:"
-msgstr "Starost:"
+msgid "<b>Census</b>"
+msgstr "<b>Popis stanovništva</b>"
 
-msgid "Origin:"
-msgstr "Izvorno:"
+msgid "Death date:"
+msgstr "Datum smrti:"
 
-msgid "Occupation:"
-msgstr "Zanimanje:"
+msgid "Death place:"
+msgstr "Mjesto smrti:"
 
-msgid "Live:"
-msgstr "Živi:"
+msgid "Family status:"
+msgstr "Obiteljski status:"
 
-msgid "Info:"
-msgstr "Informacije:"
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "red, osoba, prezime, ime, starost, status, zanimanje …"
 
 msgid "Birth act:"
 msgstr "Rođenje:"
-
-msgid "Reference:"
-msgstr "Referenca:"
 
 msgid ""
 "Volume\n"
@@ -199,9 +274,6 @@ msgstr "Ostalo:"
 
 msgid "Repository title"
 msgstr "Naslov spremišta"
-
-msgid "<b>Image</b>"
-msgstr "<b>Slika</b>"
 
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>Spremište</i></b>"
@@ -294,78 +366,6 @@ msgstr "<b><i>Citat</i></b>"
 
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Izvor</i></b>"
-
-msgid "Death act:"
-msgstr "Potvrda o smrti:"
-
-msgid "Volume:"
-msgstr "Svezak:"
-
-msgid "<b>Death act</b>"
-msgstr "<b>Potvrda o smrti</b>"
-
-msgid "First name:"
-msgstr "Ime:"
-
-msgid "<b>Repository</b>"
-msgstr "<b>Spremište</b>"
-
-msgid "<b>Data person</b>"
-msgstr "<b>Podaci osobe</b>"
-
-msgid "<b>Witness:</b>"
-msgstr "<b>Svjedok:</b>"
-
-msgid "Birth date:"
-msgstr "Datum rođenja:"
-
-msgid "Birth place:"
-msgstr "Mjesto rođenja:"
-
-msgid "Note:"
-msgstr "Zabilješka:"
-
-msgid "Spouse name:"
-msgstr "Ime supružnika:"
-
-msgid "Marriage date:"
-msgstr "Datum sklapanja braka:"
-
-msgid "Marriage place:"
-msgstr "Mjesto sklapanja braka:"
-
-msgid "<b>Data mother</b>"
-msgstr "<b>Podaci majke</b>"
-
-msgid "<b>Data father</b>"
-msgstr "<b>Podaci oca</b>"
-
-msgid "<b>Spouse</b> "
-msgstr "<b>Supružnik</b> "
-
-msgid "alive"
-msgstr "živi"
-
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"svjedok1, ime, starost, zanimanje; svjedok2, ime, starost, zanimanje; itd. …"
-
-msgid "<b>Census</b>"
-msgstr "<b>Popis stanovništva</b>"
-
-msgid "Death date:"
-msgstr "Datum smrti:"
-
-msgid "Death place:"
-msgstr "Mjesto smrti:"
-
-msgid "Family status:"
-msgstr "Obiteljski status:"
-
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr "red, osoba, prezime, ime, starost, status, zanimanje …"
 
 msgid "Marriage act:"
 msgstr "Potvrda o braku:"

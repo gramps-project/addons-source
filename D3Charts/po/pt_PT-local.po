@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-03-14 07:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,11 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
-
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Falha ao escrever %s: %s"
+"X-Generator: Weblate 5.11-dev\n"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -62,6 +58,43 @@ msgstr "O caminho destino para os ficheiros gerados."
 msgid "The destination file name for html content."
 msgstr "O nome de ficheiro destino para conteúdo html."
 
+msgid "Ancestral Collapsible Tree"
+msgstr "Árvore de ascendentes colapsável"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Gera uma página “web” com uma representação gráfica de ascendentes (SVG) "
+"representada como árvore colapsável da biblioteca JavaScript D3 js."
+
+msgid "Descendant Indented Tree"
+msgstr "Árvore de descendentes indentada"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Gera uma página “web” com uma representação gráfica de descendentes (SVG) "
+"representada como árvore indentada colapsável, da biblioteca JavaScript "
+"D3.js."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Opções do leque de ascendentes"
+
+msgid "Paternal Background Color"
+msgstr "Cor de fundo paterna"
+
+msgid "RGB-color for paternal box background."
+msgstr "Cor RGB do fundo da caixa da linha paterna."
+
+msgid "Maternal Background"
+msgstr "Cor de fundo materna"
+
+msgid "RGB-color for maternal box background."
+msgstr "Cor RGB do fundo da caixa da linha materna."
+
 msgid "Ancestral Fan Chart"
 msgstr "Leque de ascendentes"
 
@@ -79,9 +112,6 @@ msgstr "Veja %(reference)s : %(spouse)s"
 msgid "Generating report..."
 msgstr "A gerar o relatório..."
 
-msgid "Descendant Indented Tree"
-msgstr "Árvore de descendentes indentada"
-
 msgid "Invalid Destination Directory"
 msgstr "Pasta destino inválida"
 
@@ -92,10 +122,6 @@ msgid ""
 msgstr ""
 "A pasta destino %s não existe.\n"
 "Deseja tentar criá-la?"
-
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "Falha ao criar %s: %s"
 
 #, python-format
 msgid ""
@@ -285,37 +311,3 @@ msgstr "Tamanho da letra do corpo"
 
 msgid "The font size in pixels for biography body text."
 msgstr "O tamanho em pixels da letra do texto do corpo da biografia."
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Gera uma página “web” com uma representação gráfica de descendentes (SVG) "
-"representada como árvore indentada colapsável, da biblioteca JavaScript "
-"D3.js."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Opções do leque de ascendentes"
-
-msgid "Paternal Background Color"
-msgstr "Cor de fundo paterna"
-
-msgid "RGB-color for paternal box background."
-msgstr "Cor RGB do fundo da caixa da linha paterna."
-
-msgid "Maternal Background"
-msgstr "Cor de fundo materna"
-
-msgid "RGB-color for maternal box background."
-msgstr "Cor RGB do fundo da caixa da linha materna."
-
-msgid "Ancestral Collapsible Tree"
-msgstr "Árvore de ascendentes colapsável"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Gera uma página “web” com uma representação gráfica de ascendentes (SVG) "
-"representada como árvore colapsável da biblioteca JavaScript D3 js."

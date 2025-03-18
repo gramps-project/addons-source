@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-03-09 08:45+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -13,10 +13,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.3-dev\n"
-
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Kan %s: %s niet schrijven"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -62,6 +58,44 @@ msgstr "Het bestemmingspad voor gegenereerde bestanden."
 msgid "The destination file name for html content."
 msgstr "De bestemmingsbestandsnaam voor html-inhoud."
 
+msgid "Ancestral Collapsible Tree"
+msgstr "Inklapbare voorouderboom"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Genereert een webpagina met een grafische weergave van voorouders (SVG) "
+"weergegeven als een inklapbare boomlay-out uit de D3.js JavaScript-"
+"bibliotheek."
+
+msgid "Descendant Indented Tree"
+msgstr "Afstammelingsboom ingesprongen"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Genereert een webpagina met een grafische weergave van afstammelingen (SVG) "
+"die wordt weergegeven als een inklapbare ingesprongen boomlay-out uit de "
+"D3.js JavaScript-bibliotheek."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Opties cirkeldiagram voorouders"
+
+msgid "Paternal Background Color"
+msgstr "Vaderlijke achtergrondkleur"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-kleur voor vaderlijke kaderachtergrond."
+
+msgid "Maternal Background"
+msgstr "Moederlijke achtergrond"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-kleur voor moederlijke kaderachtergrond."
+
 msgid "Ancestral Fan Chart"
 msgstr "Cirkeldiagram voorouders"
 
@@ -79,9 +113,6 @@ msgstr "Zie %(reference)s : %(spouse)s"
 msgid "Generating report..."
 msgstr "Verslag genereren..."
 
-msgid "Descendant Indented Tree"
-msgstr "Afstammelingsboom ingesprongen"
-
 msgid "Invalid Destination Directory"
 msgstr "Ongeldige bestemmingsdirectory"
 
@@ -92,10 +123,6 @@ msgid ""
 msgstr ""
 "Bestemmingsmap %s bestaat niet\n"
 "Wilt u proberen deze aan te maken?"
-
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "Kan %s: %s niet maken"
 
 #, python-format
 msgid ""
@@ -295,38 +322,3 @@ msgstr "Hoofdlettergrootte"
 
 msgid "The font size in pixels for biography body text."
 msgstr "De lettergrootte in pixels voor de hoofdtekst van de biografie."
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Genereert een webpagina met een grafische weergave van afstammelingen (SVG) "
-"die wordt weergegeven als een inklapbare ingesprongen boomlay-out uit de "
-"D3.js JavaScript-bibliotheek."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Opties cirkeldiagram voorouders"
-
-msgid "Paternal Background Color"
-msgstr "Vaderlijke achtergrondkleur"
-
-msgid "RGB-color for paternal box background."
-msgstr "RGB-kleur voor vaderlijke kaderachtergrond."
-
-msgid "Maternal Background"
-msgstr "Moederlijke achtergrond"
-
-msgid "RGB-color for maternal box background."
-msgstr "RGB-kleur voor moederlijke kaderachtergrond."
-
-msgid "Ancestral Collapsible Tree"
-msgstr "Inklapbare voorouderboom"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Genereert een webpagina met een grafische weergave van voorouders (SVG) "
-"weergegeven als een inklapbare boomlay-out uit de D3.js JavaScript-"
-"bibliotheek."

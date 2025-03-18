@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
 "PO-Revision-Date: 2025-02-26 20:54+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -53,10 +53,6 @@ msgstr "beskrivelse"
 
 msgid "witnesses"
 msgstr "vitner"
-
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "Feil ved skriving av %s: %s"
 
 msgid "No central person selected"
 msgstr "Ingen fokusperson valgt"

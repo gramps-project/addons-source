@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-03-13 22:17+0000\n"
 "PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
@@ -13,13 +13,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.2-dev\n"
-
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d rækker behandlet i %s sekunder.\n"
-
-msgid "Today"
-msgstr "I dag"
 
 msgid "Query Gramplet"
 msgstr "Query Gramplet"
@@ -41,3 +34,6 @@ msgstr "Enter Python expressions"
 
 msgid "Enter SQL query"
 msgstr "Angiv SQL forespørgsel"
+
+msgid "Today"
+msgstr "I dag"
