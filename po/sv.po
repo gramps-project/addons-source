@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"PO-Revision-Date: 2025-03-18 09:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -11694,16 +11694,12 @@ msgid "Birthplace of wife"
 msgstr "Hustruns födelseplats"
 
 #: Form/form_us.xml.h:1042
-#, fuzzy
-#| msgid "married"
 msgid "Date married"
-msgstr "gift"
+msgstr "Datum gift"
 
 #: Form/form_us.xml.h:1043
-#, fuzzy
-#| msgid "married"
 msgid "Place married"
-msgstr "gift"
+msgstr "Plats gift"
 
 #: Form/form_us.xml.h:1044
 msgid "When, where and circumstances you quit the service"
@@ -11763,10 +11759,8 @@ msgid "Her date of birth"
 msgstr ""
 
 #: Form/form_us.xml.h:1064
-#, fuzzy
-#| msgid "New marriage"
 msgid "Date of marriage"
-msgstr "Ny vigsel"
+msgstr "Datum för giftermål"
 
 #: Form/form_us.xml.h:1074
 msgid "Born within census year"
@@ -11801,10 +11795,8 @@ msgid "Can not write"
 msgstr ""
 
 #: Form/form_us.xml.h:1103
-#, fuzzy
-#| msgid "Data Set Name"
 msgid "Street Name"
-msgstr "Namn på datauppsättning"
+msgstr "Gatunamn"
 
 #: Form/form_us.xml.h:1104
 msgid "House No."
@@ -11827,16 +11819,12 @@ msgid "Age Female"
 msgstr ""
 
 #: Form/form_us.xml.h:1140
-#, fuzzy
-#| msgid "Relation type"
 msgid "Relation to Family"
-msgstr "Typ av släktskap"
+msgstr "Släktskap till familjen"
 
 #: Form/form_us.xml.h:1142 Form/form_us.xml.h:1156
-#, fuzzy
-#| msgid "Image Location"
 msgid "Degree of Education"
-msgstr "Bildplats"
+msgstr "Utbildningsexamen"
 
 #: Form/form_us.xml.h:1143
 msgid "Owner or Renter"
@@ -11927,16 +11915,12 @@ msgid "White Females Over 90"
 msgstr ""
 
 #: Form/form_us.xml.h:1179
-#, fuzzy
-#| msgid "Male person|Dead at %s"
 msgid "Male Negroes and Mulattoes"
-msgstr "Mansperson|Död %s"
+msgstr "Manliga svarta och mulatter"
 
 #: Form/form_us.xml.h:1180
-#, fuzzy
-#| msgid "Female person|Dead at %s"
 msgid "Female Negroes and Mulattoes"
-msgstr "Kvinnoperson|Död %s"
+msgstr "Kvinnliga svarta och mulatter"
 
 #: Form/form_us.xml.h:1182 Form/form_us.xml.h:1212
 msgid "Militia"
@@ -11959,22 +11943,16 @@ msgid "Pounds of Wool"
 msgstr ""
 
 #: Form/form_us.xml.h:1188
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Colleges"
-msgstr "Antal sidor"
+msgstr "Antal högskolor"
 
 #: Form/form_us.xml.h:1189 Form/form_us.xml.h:1191
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Pupils"
-msgstr "Antal sidor"
+msgstr "Antal elever"
 
 #: Form/form_us.xml.h:1190
-#, fuzzy
-#| msgid "Number of ancestors"
 msgid "Number of Common Schools"
-msgstr "Antal förfäder"
+msgstr "Antal gemensamma skolor"
 
 #: Form/form_us.xml.h:1194
 msgid "Males over 21 years"
@@ -11985,10 +11963,8 @@ msgid "Males under 21 years"
 msgstr ""
 
 #: Form/form_us.xml.h:1197 Form/form_us.xml.h:1199
-#, fuzzy
-#| msgid "Call number:"
 msgid "Total number"
-msgstr "Arkiv(plats)nummer:"
+msgstr "Totalt antal"
 
 #: Form/form_us.xml.h:1205 Form/form_us.xml.h:1887 Form/form_us.xml.h:1911
 #: Form/form_us.xml.h:1938 Form/form_us.xml.h:2065 Form/form_us.xml.h:2101
@@ -12001,10 +11977,8 @@ msgid "Years resident in the state"
 msgstr ""
 
 #: Form/form_us.xml.h:1209
-#, fuzzy
-#| msgid "Active person"
 msgid "Native voters"
-msgstr "Aktiv person"
+msgstr "Infödda väljare"
 
 #: Form/form_us.xml.h:1210
 msgid "Naturalized voters"
@@ -12079,20 +12053,16 @@ msgid "Bushels harvested (potatoes)"
 msgstr ""
 
 #: Form/form_us.xml.h:1234
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of hogs sold"
-msgstr "Antal sidor"
+msgstr "Antal sålda svin"
 
 #: Form/form_us.xml.h:1235
 msgid "Value of hogs sold"
 msgstr ""
 
 #: Form/form_us.xml.h:1236
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of cattle sold"
-msgstr "Antal sidor"
+msgstr "Antal sålda nötkreatur"
 
 #: Form/form_us.xml.h:1237
 msgid "Value of cattle sold"
@@ -12125,10 +12095,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:1246 Form/form_us.xml.h:1273 Form/form_us.xml.h:1874
 #: Form/form_us.xml.h:1961
-#, fuzzy
-#| msgid "City:"
 msgid "City of"
-msgstr "Stad/Kommun:"
+msgstr "Staden"
 
 #: Form/form_us.xml.h:1247 Form/form_us.xml.h:1275 Form/form_us.xml.h:1876
 msgid "Township of"
@@ -12213,10 +12181,8 @@ msgid "White Male"
 msgstr ""
 
 #: Form/form_us.xml.h:1282
-#, fuzzy
-#| msgid "Web site template"
 msgid "White Female"
-msgstr "Webbsidesmall"
+msgstr "Vit kvinna"
 
 #: Form/form_us.xml.h:1283
 msgid "Colored Male"
@@ -12301,10 +12267,8 @@ msgstr ""
 #: Form/form_us.xml.h:1309 Form/form_us.xml.h:1376 Form/form_us.xml.h:2038
 #: Form/form_us.xml.h:2075 Form/form_us.xml.h:2112 Form/form_us.xml.h:2150
 #: Form/form_us.xml.h:2188
-#, fuzzy
-#| msgid "VCard import"
 msgid "Card No."
-msgstr "VCard-import"
+msgstr "Kort nr."
 
 #: Form/form_us.xml.h:1316
 msgid "P.O. Address"
@@ -12327,38 +12291,28 @@ msgid "Color, White-Black-Yellow-Red"
 msgstr ""
 
 #: Form/form_us.xml.h:1328
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Birth-Self"
-msgstr "Plata_filter:"
+msgstr "Födelseort-Själv"
 
 #: Form/form_us.xml.h:1329
 msgid "Place of birth, Self"
 msgstr ""
 
 #: Form/form_us.xml.h:1330
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Birth-Mother"
-msgstr "Plata_filter:"
+msgstr "Födelseort-mor"
 
 #: Form/form_us.xml.h:1331
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of birth, Mother"
-msgstr "Plata_filter:"
+msgstr "Födelseort, mor"
 
 #: Form/form_us.xml.h:1332
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Birth-Father"
-msgstr "Plata_filter:"
+msgstr "Födelseort-far"
 
 #: Form/form_us.xml.h:1333
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of birth, Father"
-msgstr "Plata_filter:"
+msgstr "Födelseort, far"
 
 #: Form/form_us.xml.h:1334
 msgid "Own home or farm"
@@ -12546,14 +12500,8 @@ msgstr ""
 #: Form/form_us.xml.h:2415 Form/form_us.xml.h:2419 Form/form_us.xml.h:2423
 #: Form/form_us.xml.h:2448 Form/form_us.xml.h:2470 Form/form_gb.xml.h:246
 #: Form/form_gb.xml.h:381
-#, fuzzy
-#| msgid ""
-#| "Birth\n"
-#| "place:"
 msgid "Birthplace"
-msgstr ""
-"Födelse\n"
-"plats:"
+msgstr "Födelseort"
 
 #: Form/form_us.xml.h:1391
 msgid "Own house or farm"
@@ -12612,24 +12560,12 @@ msgid "Church Affiliation"
 msgstr ""
 
 #: Form/form_us.xml.h:1405 Form/form_us.xml.h:2450 Form/form_us.xml.h:2473
-#, fuzzy
-#| msgid ""
-#| "Birth\n"
-#| "place:"
 msgid "Father's Birthplace"
-msgstr ""
-"Födelse\n"
-"plats:"
+msgstr "Fars födelseort"
 
 #: Form/form_us.xml.h:1406 Form/form_us.xml.h:2452 Form/form_us.xml.h:2475
-#, fuzzy
-#| msgid ""
-#| "Birth\n"
-#| "place:"
 msgid "Mother's Birthplace"
-msgstr ""
-"Födelse\n"
-"plats:"
+msgstr "Mors födelseort"
 
 #: Form/form_us.xml.h:1410
 msgid "Months in School 1914: Public"
@@ -12674,16 +12610,12 @@ msgid "Naturalized if foreign born?"
 msgstr ""
 
 #: Form/form_us.xml.h:1426 Form/form_pl.xml.h:24
-#, fuzzy
-#| msgid "House Timeline"
 msgid "House Number"
-msgstr "Hustidslinje"
+msgstr "Husnummer"
 
 #: Form/form_us.xml.h:1429 Form/form_us.xml.h:2332
-#, fuzzy
-#| msgid "Color of active person:"
 msgid "Color or Race"
-msgstr "Färg för aktiv person:"
+msgstr "Färg eller ras"
 
 #: Form/form_us.xml.h:1432
 msgid "Home Owned or Rented"
@@ -12710,10 +12642,8 @@ msgid "Insurance on Home"
 msgstr ""
 
 #: Form/form_us.xml.h:1439
-#, fuzzy
-#| msgid "Year only"
 msgid "Years in US"
-msgstr "Bara år"
+msgstr "År i USA"
 
 #: Form/form_us.xml.h:1441
 msgid "Attended Rural School"
@@ -12756,18 +12686,14 @@ msgid "Able to Read"
 msgstr ""
 
 #: Form/form_us.xml.h:1451
-#, fuzzy
-#| msgid "left to right"
 msgid "Able to Write"
-msgstr "vänster till höger"
+msgstr "Kan skriva"
 
 #: Form/form_us.xml.h:1453 Form/form_us.xml.h:2449 Form/form_us.xml.h:2472
 #: Form/form_us.xml.h:2498 Form/form_pl.xml.h:9 Form/form_pl.xml.h:26
 #: Form/form_pl.xml.h:37
-#, fuzzy
-#| msgid "Data Set Name"
 msgid "Father's Name"
-msgstr "Namn på datauppsättning"
+msgstr "Fars namn"
 
 #: Form/form_us.xml.h:1454
 msgid "Father's Place of Birth"
@@ -12784,10 +12710,8 @@ msgid "Mother's Place of Birth"
 msgstr ""
 
 #: Form/form_us.xml.h:1459
-#, fuzzy
-#| msgid "Parent Place"
 msgid "Parents Place of Marriage"
-msgstr "Föräldraplats"
+msgstr "Föräldrars giftermålsort"
 
 #: Form/form_us.xml.h:1460
 msgid "Civil War Veteran"
@@ -12830,10 +12754,8 @@ msgid "Agricultural Pursuits"
 msgstr ""
 
 #: Form/form_us.xml.h:1470
-#, fuzzy
-#| msgid "Person Overview"
 msgid "Professional Services"
-msgstr "Personöversikt"
+msgstr "Professionella tjänster"
 
 #: Form/form_us.xml.h:1471
 msgid "Domestic/Personal Services"
@@ -12877,10 +12799,8 @@ msgid "Real Estate"
 msgstr ""
 
 #: Form/form_us.xml.h:1492
-#, fuzzy
-#| msgid "Person page"
 msgid "Personal Estate"
-msgstr "Personsida"
+msgstr "Lösöre"
 
 #: Form/form_us.xml.h:1495
 msgid "Attended School"
@@ -12892,22 +12812,16 @@ msgstr ""
 
 #: Form/form_us.xml.h:1497 Form/form_gb.xml.h:439 Form/form_gb.xml.h:466
 #: Form/form_gb.xml.h:494 Form/form_gb.xml.h:531 Form/form_gb.xml.h:568
-#, fuzzy
-#| msgid "Table"
 msgid "Disabled"
-msgstr "Tabell"
+msgstr "Handikappad"
 
 #: Form/form_us.xml.h:1504
-#, fuzzy
-#| msgid "Person page"
 msgid "Personal Property"
-msgstr "Personsida"
+msgstr "Personlig egendom"
 
 #: Form/form_us.xml.h:1506 Form/form_us.xml.h:1526
-#, fuzzy
-#| msgid "Where Born"
 msgid "Where From"
-msgstr "Var född"
+msgstr "Varifrån"
 
 #: Form/form_us.xml.h:1507 Form/form_us.xml.h:1528
 msgid "School"
@@ -13038,10 +12952,8 @@ msgid "Where from to Kansas"
 msgstr ""
 
 #: Form/form_us.xml.h:1566 Form/form_us.xml.h:1588
-#, fuzzy
-#| msgid "Number of font sizes"
 msgid "Number of months unemployed"
-msgstr "Antal typsnittsstorlekar"
+msgstr "Antal arbetslösa månader"
 
 #: Form/form_us.xml.h:1570 Form/form_us.xml.h:1592
 msgid "Illiterate and 15 to 21 years old"
@@ -13052,10 +12964,8 @@ msgid "Number of volumes in home library"
 msgstr ""
 
 #: Form/form_us.xml.h:1603
-#, fuzzy
-#| msgid "Number of font sizes"
 msgid "Number of house"
-msgstr "Antal typsnittsstorlekar"
+msgstr "Antal hus"
 
 #: Form/form_us.xml.h:1613
 msgid "Year of immigration to the United States"
@@ -13159,10 +13069,8 @@ msgid "Unorganized Township"
 msgstr ""
 
 #: Form/form_us.xml.h:1671
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Name of Village"
-msgstr "Antal sidor"
+msgstr "Byns namn"
 
 #: Form/form_us.xml.h:1672
 msgid "Name of City"
@@ -13177,38 +13085,24 @@ msgid "Precincts"
 msgstr ""
 
 #: Form/form_us.xml.h:1676
-#, fuzzy
-#| msgid "Estimated date"
 msgid "Enumerated date from"
-msgstr "Uppskattat datum"
+msgstr "Uppräknat datum från"
 
 #: Form/form_us.xml.h:1677
-#, fuzzy
-#| msgid "Estimated date"
 msgid "Enumerated date to"
-msgstr "Uppskattat datum"
+msgstr "Uppräknat datum till"
 
 #: Form/form_us.xml.h:1680
-#, fuzzy
-#| msgid "Generations up"
 msgid "Enumeration number"
-msgstr "Generationer upp"
+msgstr "Uppräkningsnummer"
 
 #: Form/form_us.xml.h:1687
-#, fuzzy
-#| msgid "Activate the birth label."
 msgid "Fathers birthplace"
-msgstr "Aktivera födelsetextfältet."
+msgstr "Fars födelseort"
 
 #: Form/form_us.xml.h:1688
-#, fuzzy
-#| msgid ""
-#| "Birth\n"
-#| "place:"
 msgid "Mothers birthplace"
-msgstr ""
-"Födelse\n"
-"plats:"
+msgstr "Mors födelseort"
 
 #: Form/form_us.xml.h:1691
 msgid "Residence in District - years"
@@ -13247,10 +13141,8 @@ msgid "White males 45 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:1702 Form/form_us.xml.h:1775
-#, fuzzy
-#| msgid "Total height"
 msgid "Total White Males"
-msgstr "Total höjd"
+msgstr "Totalt antal vita män"
 
 #: Form/form_us.xml.h:1703 Form/form_us.xml.h:1776
 msgid "White females under 10"
@@ -13289,10 +13181,8 @@ msgid "No. White persons who can read and write"
 msgstr ""
 
 #: Form/form_us.xml.h:1712 Form/form_us.xml.h:1785
-#, fuzzy
-#| msgid "Colour Name by Gender"
 msgid "Colored males under 10"
-msgstr "Färga namn efter kön"
+msgstr "Manliga färgade under 10 år"
 
 #: Form/form_us.xml.h:1713 Form/form_us.xml.h:1786
 msgid "Colored males 10-17"
@@ -13307,20 +13197,16 @@ msgid "Colored males 21-44"
 msgstr ""
 
 #: Form/form_us.xml.h:1716 Form/form_us.xml.h:1789
-#, fuzzy
-#| msgid "Colour Name by Gender"
 msgid "Colored males 45 and over"
-msgstr "Färga namn efter kön"
+msgstr "Manliga färgade 45 år och äldre"
 
 #: Form/form_us.xml.h:1717 Form/form_us.xml.h:1790
 msgid "Total Colored Males"
 msgstr ""
 
 #: Form/form_us.xml.h:1718 Form/form_us.xml.h:1791
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Colored females under 10"
-msgstr "Färg på kvinnopersoner:"
+msgstr "Kvinnliga färgade under 10 år"
 
 #: Form/form_us.xml.h:1719 Form/form_us.xml.h:1792
 msgid "Colored females 10-17"
@@ -13391,10 +13277,8 @@ msgid "Blind Males Age"
 msgstr ""
 
 #: Form/form_us.xml.h:1736 Form/form_us.xml.h:1809
-#, fuzzy
-#| msgid "Find GeoNames"
 msgid "Blind Females"
-msgstr "Finn GeoNames"
+msgstr "Blinda kvinnor"
 
 #: Form/form_us.xml.h:1737 Form/form_us.xml.h:1810
 msgid "Blind Females Age"
@@ -13421,10 +13305,8 @@ msgid "Insane Males Age"
 msgstr ""
 
 #: Form/form_us.xml.h:1743 Form/form_us.xml.h:1816
-#, fuzzy
-#| msgid "Image for females"
 msgid "Insane Females"
-msgstr "Bild för kvinnor"
+msgstr "Galna kvinnor"
 
 #: Form/form_us.xml.h:1744 Form/form_us.xml.h:1817
 msgid "Insane Females Age"
@@ -13471,10 +13353,8 @@ msgid "Live Stock Hogs"
 msgstr ""
 
 #: Form/form_us.xml.h:1755 Form/form_us.xml.h:1828
-#, fuzzy
-#| msgid "Produit une liste eclair"
 msgid "Products Bushels Wheat"
-msgstr "Skapar en snabblista"
+msgstr "Produkter bushels vete"
 
 #: Form/form_us.xml.h:1756 Form/form_us.xml.h:1829
 msgid "Products Bushels Corn"
@@ -13545,10 +13425,8 @@ msgid "Years resident in this city or town"
 msgstr ""
 
 #: Form/form_us.xml.h:1890 Form/form_us.xml.h:1915 Form/form_us.xml.h:1942
-#, fuzzy
-#| msgid "Relative font size"
 msgid "Native Voter"
-msgstr "Relativ typsnittsstorlek"
+msgstr "Infödd väljare"
 
 #: Form/form_us.xml.h:1891 Form/form_us.xml.h:1916 Form/form_us.xml.h:1943
 msgid "Naturalized Voter"
@@ -13567,10 +13445,8 @@ msgid "Over 21/Illiterate"
 msgstr ""
 
 #: Form/form_us.xml.h:1895 Form/form_us.xml.h:1945
-#, fuzzy
-#| msgid "Abandon"
 msgid "Landowner"
-msgstr "Överge"
+msgstr "Jordägare"
 
 #: Form/form_us.xml.h:1896 Form/form_us.xml.h:1921 Form/form_us.xml.h:1947
 msgid "Deaf, Dumb, Blind, Insane, Idiotic"
@@ -13582,22 +13458,16 @@ msgid "Inhabitants in the"
 msgstr ""
 
 #: Form/form_us.xml.h:1908
-#, fuzzy
-#| msgid "Parents enclose children"
 msgid "Parent of how many children"
-msgstr "Föräldrar stänger in barn"
+msgstr "Förälder till hur många barn"
 
 #: Form/form_us.xml.h:1909
-#, fuzzy
-#| msgid "Number of editions back"
 msgid "Number of times married"
-msgstr "Antal utgåvor tillbaka"
+msgstr "Antal gånger gift"
 
 #: Form/form_us.xml.h:1914
-#, fuzzy
-#| msgid "Include Occupation"
 msgid "Place of Occupation"
-msgstr "Tag med yrke"
+msgstr "Yrkesort"
 
 #: Form/form_us.xml.h:1919
 msgid "Land owner"
@@ -13608,10 +13478,8 @@ msgid "Now in army"
 msgstr ""
 
 #: Form/form_us.xml.h:1923
-#, fuzzy
-#| msgid "Now alive"
 msgid "Now in navy"
-msgstr "Nu levande"
+msgstr "Nu i marinen"
 
 #: Form/form_us.xml.h:1924
 msgid "Formerly in army"
@@ -13635,10 +13503,8 @@ msgid "the County of"
 msgstr ""
 
 #: Form/form_us.xml.h:1956
-#, fuzzy
-#| msgid "Country:"
 msgid "Birth Country"
-msgstr "Land:"
+msgstr "Födelseland"
 
 #: Form/form_us.xml.h:1957 Form/form_us.xml.h:1971 Form/form_us.xml.h:1990
 #: Form/form_us.xml.h:2010
@@ -13654,10 +13520,8 @@ msgid "Election District, Ward"
 msgstr ""
 
 #: Form/form_us.xml.h:1970 Form/form_us.xml.h:1989 Form/form_us.xml.h:2009
-#, fuzzy
-#| msgid "Default number of entries in the indexes"
 msgid "Number of years in the US"
-msgstr "Standardnummer på poster i indexen"
+msgstr "Antal år i USA"
 
 #: Form/form_us.xml.h:1973 Form/form_us.xml.h:1992 Form/form_us.xml.h:2013
 msgid "Class"
@@ -13724,10 +13588,8 @@ msgid "Native Colored Males"
 msgstr ""
 
 #: Form/form_us.xml.h:2026
-#, fuzzy
-#| msgid "Image for females"
 msgid "Native Colored Females"
-msgstr "Bild för kvinnor"
+msgstr "Infödda färgade kvinnor"
 
 #: Form/form_us.xml.h:2027
 msgid "Foreign Males"
@@ -13807,30 +13669,20 @@ msgid "Years in United States"
 msgstr ""
 
 #: Form/form_us.xml.h:2055
-#, fuzzy
-#| msgid "Birth label along path"
 msgid "Birthplace of Father"
-msgstr "Födelsetextfält längs vägen"
+msgstr "Fars födelseort"
 
 #: Form/form_us.xml.h:2056
-#, fuzzy
-#| msgid ""
-#| "Birth\n"
-#| "place:"
 msgid "Birthplace of Mother"
-msgstr ""
-"Födelse\n"
-"plats:"
+msgstr "Mors födelseort"
 
 #: Form/form_us.xml.h:2060
 msgid "Black"
 msgstr ""
 
 #: Form/form_us.xml.h:2061
-#, fuzzy
-#| msgid "Rel_id"
 msgid "Red"
-msgstr "Rel_id"
+msgstr "Red"
 
 #: Form/form_us.xml.h:2062
 msgid "Yellow"
@@ -13838,10 +13690,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:2066 Form/form_us.xml.h:2102 Form/form_us.xml.h:2140
 #: Form/form_us.xml.h:2178 Form/form_us.xml.h:2216
-#, fuzzy
-#| msgid "divorced"
 msgid "Divorced"
-msgstr "skild"
+msgstr "Skild"
 
 #: Form/form_us.xml.h:2067
 msgid "Can Read"
@@ -13881,10 +13731,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:2088 Form/form_us.xml.h:2125 Form/form_us.xml.h:2163
 #: Form/form_us.xml.h:2201
-#, fuzzy
-#| msgid "Alternate Location"
 msgid "Extent of Education"
-msgstr "Alternativ plats"
+msgstr "Utbildningens omfattning"
 
 #: Form/form_us.xml.h:2089 Form/form_us.xml.h:2126 Form/form_us.xml.h:2164
 #: Form/form_us.xml.h:2202
@@ -13898,10 +13746,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:2095 Form/form_us.xml.h:2133 Form/form_us.xml.h:2171
 #: Form/form_us.xml.h:2209 Form/form_dk.xml.h:275
-#, fuzzy
-#| msgid "married"
 msgid "Year married"
-msgstr "gift"
+msgstr "Gift år"
 
 #: Form/form_us.xml.h:2096 Form/form_us.xml.h:2134 Form/form_us.xml.h:2172
 #: Form/form_us.xml.h:2210
@@ -13923,36 +13769,28 @@ msgid "Division"
 msgstr ""
 
 #: Form/form_us.xml.h:2228
-#, fuzzy
-#| msgid "Male line"
 msgid "Male under 21"
-msgstr "Manlig linje"
+msgstr "Man under 21 år"
 
 #: Form/form_us.xml.h:2229
 msgid "Male over 21"
 msgstr ""
 
 #: Form/form_us.xml.h:2230
-#, fuzzy
-#| msgid "Female line"
 msgid "Female under 21"
-msgstr "Kvinnlig linje"
+msgstr "Kvinna under 21 år"
 
 #: Form/form_us.xml.h:2231
-#, fuzzy
-#| msgid "Female line"
 msgid "Female over 21"
-msgstr "Kvinnlig linje"
+msgstr "Kvinna över 21 år"
 
 #: Form/form_us.xml.h:2234 Form/form_us.xml.h:2246
 msgid "Town/City"
 msgstr ""
 
 #: Form/form_us.xml.h:2236 Form/form_us.xml.h:2248 Form/form_us.xml.h:2260
-#, fuzzy
-#| msgid "Edit Families"
 msgid "Heads of Families"
-msgstr "Redigera familjer"
+msgstr "Familjeöverhuvuden"
 
 #: Form/form_us.xml.h:2237 Form/form_us.xml.h:2249 Form/form_us.xml.h:2261
 #: Form/form_us.xml.h:2273 Form/form_us.xml.h:2302
@@ -13961,24 +13799,18 @@ msgstr ""
 
 #: Form/form_us.xml.h:2238 Form/form_us.xml.h:2250 Form/form_us.xml.h:2262
 #: Form/form_us.xml.h:2274 Form/form_us.xml.h:2303
-#, fuzzy
-#| msgid "Image for females"
 msgid "White females"
-msgstr "Bild för kvinnor"
+msgstr "Vita kvinnor"
 
 #: Form/form_us.xml.h:2239 Form/form_us.xml.h:2251 Form/form_us.xml.h:2263
 #: Form/form_us.xml.h:2275 Form/form_us.xml.h:2304
-#, fuzzy
-#| msgid "Colors"
 msgid "Colored males"
-msgstr "Färger"
+msgstr "Färgade män"
 
 #: Form/form_us.xml.h:2240 Form/form_us.xml.h:2252 Form/form_us.xml.h:2264
 #: Form/form_us.xml.h:2276 Form/form_us.xml.h:2305
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Colored females"
-msgstr "Färg på kvinnopersoner:"
+msgstr "Färgade kvinnor"
 
 #: Form/form_us.xml.h:2241 Form/form_us.xml.h:2253 Form/form_us.xml.h:2265
 msgid "Deaf & Dumb"
@@ -14029,10 +13861,8 @@ msgid "Nativity - All other countries"
 msgstr ""
 
 #: Form/form_us.xml.h:2287 Form/form_us.xml.h:2316
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Residing in the"
-msgstr "Sjunkande träd"
+msgstr "Bosatt i"
 
 #: Form/form_us.xml.h:2292 Form/form_us.xml.h:2321
 msgid "Co."
@@ -14047,10 +13877,8 @@ msgid "State or Vessel"
 msgstr ""
 
 #: Form/form_us.xml.h:2337
-#, fuzzy
-#| msgid "Parent Place"
 msgid "Parents place of birth"
-msgstr "Föräldraplats"
+msgstr "Föräldrarnas födelseort"
 
 #: Form/form_us.xml.h:2340
 msgid "Owned/Rented"
