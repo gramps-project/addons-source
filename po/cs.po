@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-02-23 12:29+0000\n"
+"PO-Revision-Date: 2025-03-16 11:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -17836,10 +17836,8 @@ msgstr ""
 #: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
 #: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
 #: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
-#, fuzzy
-#| msgid "Original: "
 msgid "Origin:"
-msgstr "Původ: "
+msgstr "Původ:"
 
 #: SourceIndex/witness.glade:141 SourceIndex/birth.glade:578
 #: SourceIndex/birth.glade:677 SourceIndex/death.glade:722

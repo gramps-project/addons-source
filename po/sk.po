@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-16 11:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -8183,6 +8183,11 @@ msgid ""
 "Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
+"Priamy import zo súborov TMG nie je podporovaný doplnkom TMG Importer. "
+"Musíte použiť záložnú kópiu projektu TMG (*.sqz) Uistite sa, že váš projekt "
+"TMG bol vytvorený pomocou: TMG verzie 5.x alebo vyššej. Váš súbor: *.TMG - "
+"Version Control File for TMG 2.0 to TMG 4.0d Pozrite si: "
+"%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:131
 #, python-format
@@ -8193,20 +8198,25 @@ msgid ""
 "Control File for TMG 1.2 and earlierPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
+"Priamy import zo súborov TMG nie je podporovaný doplnkom TMG Importer. "
+"Musíte použiť záložnú kópiu projektu TMG (*.sqz) Uistite sa, že váš projekt "
+"TMG bol vytvorený pomocou: TMG verzie 5.x alebo vyššej. Váš súbor:*.VER - "
+"Version Control File for TMG 1.2 and earlier Pozrite si: "
+"%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.gpr.py:49
 msgid "TMG Project Backup"
-msgstr ""
+msgstr "Záloha projektu TMG"
 
 #: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
 #: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
 msgid "Import TMG project files"
-msgstr ""
+msgstr "Importovať súbory projektu TMG"
 
 #: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
 #: TMGimporter/importtmg.gpr.py:95
 msgid "TMG Unsupported"
-msgstr ""
+msgstr "TMG nie je podporovaný"
 
 #: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"
@@ -8214,7 +8224,7 @@ msgstr ""
 
 #: TMGimporter/libtmg.glade:31
 msgid "Unreleased Addon - Work In Progress"
-msgstr ""
+msgstr "Nevydaný doplnok - rozpracovaný"
 
 #: TMGimporter/libtmg.glade:51
 msgid ""
@@ -8222,16 +8232,17 @@ msgid ""
 "\n"
 "Select the TMG Data Set you wish to import."
 msgstr ""
+"Wholly Genes - The Master Genealogist (TMG) Importer\n"
+"\n"
+"Vyberte dátový súbor TMG, ktorý chcete importovať."
 
 #: TMGimporter/libtmg.glade:88
-#, fuzzy
-#| msgid "Data Entry Gramplet"
 msgid "Data Set Name"
-msgstr "Gramplet Zápis dát"
+msgstr "Názov dátového súboru"
 
 #: TMGimporter/libtmg.glade:148
 msgid "_Import TMG Data Set"
-msgstr ""
+msgstr "_Import dátového súboru TMG"
 
 #: FaceDetection/FaceDetection.gpr.py:4
 #, fuzzy
@@ -9372,10 +9383,8 @@ msgstr ""
 #: Form/form_us.xml.h:1650 Form/form_us.xml.h:1667 Form/form_us.xml.h:1845
 #: Form/form_us.xml.h:1877 Form/form_us.xml.h:1898 Form/form_us.xml.h:1927
 #: Form/form_us.xml.h:1981 Form/form_us.xml.h:2289 Form/form_us.xml.h:2318
-#, fuzzy
-#| msgid "Country:"
 msgid "County of"
-msgstr "Krajina:"
+msgstr "Kraj"
 
 #: Form/form_us.xml.h:7 Form/form_us.xml.h:20 Form/form_us.xml.h:41
 #: Form/form_us.xml.h:62 Form/form_us.xml.h:102 Form/form_us.xml.h:171
@@ -9395,10 +9404,8 @@ msgid "Free white females"
 msgstr ""
 
 #: Form/form_us.xml.h:12 Form/form_us.xml.h:33 Form/form_us.xml.h:54
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "All other free persons"
-msgstr "Farba ženských osôb:"
+msgstr "Všetky ostatné slobodné osoby"
 
 #: Form/form_us.xml.h:13 Form/form_us.xml.h:34 Form/form_us.xml.h:55
 msgid "Slaves"
@@ -9898,10 +9905,8 @@ msgstr ""
 #: Form/form_us.xml.h:260 Form/form_us.xml.h:336 Form/form_us.xml.h:435
 #: Form/form_us.xml.h:465 Form/form_us.xml.h:615 Form/form_us.xml.h:1105
 #: Form/form_us.xml.h:1848
-#, fuzzy
-#| msgid "Family:"
 msgid "Family No."
-msgstr "Rodina:"
+msgstr "Rodina č."
 
 #: Form/form_us.xml.h:263 Form/form_us.xml.h:339 Form/form_us.xml.h:416
 #: Form/form_us.xml.h:438 Form/form_us.xml.h:468 Form/form_us.xml.h:620
@@ -11668,10 +11673,8 @@ msgid "Census Date"
 msgstr ""
 
 #: Form/form_us.xml.h:974
-#, fuzzy
-#| msgid "restricted to:"
 msgid "District of"
-msgstr "obmedzené na:"
+msgstr "Okres"
 
 #: Form/form_us.xml.h:977
 msgid "Married Y/N"
@@ -12314,10 +12317,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:1246 Form/form_us.xml.h:1273 Form/form_us.xml.h:1874
 #: Form/form_us.xml.h:1961
-#, fuzzy
-#| msgid "City:"
 msgid "City of"
-msgstr "Mesto:"
+msgstr "Mesto"
 
 #: Form/form_us.xml.h:1247 Form/form_us.xml.h:1275 Form/form_us.xml.h:1876
 msgid "Township of"
@@ -12839,10 +12840,8 @@ msgid "House Number"
 msgstr ""
 
 #: Form/form_us.xml.h:1429 Form/form_us.xml.h:2332
-#, fuzzy
-#| msgid "Color of active person:"
 msgid "Color or Race"
-msgstr "Farba aktívnej osoby:"
+msgstr "Farba alebo rasa"
 
 #: Form/form_us.xml.h:1432
 msgid "Home Owned or Rented"
@@ -13452,10 +13451,8 @@ msgid "Total Colored Males"
 msgstr ""
 
 #: Form/form_us.xml.h:1718 Form/form_us.xml.h:1791
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Colored females under 10"
-msgstr "Farba ženských osôb:"
+msgstr "Farebné ženy do 10 rokov"
 
 #: Form/form_us.xml.h:1719 Form/form_us.xml.h:1792
 msgid "Colored females 10-17"
@@ -13756,10 +13753,8 @@ msgid "the County of"
 msgstr ""
 
 #: Form/form_us.xml.h:1956
-#, fuzzy
-#| msgid "Country:"
 msgid "Birth Country"
-msgstr "Krajina:"
+msgstr "Krajina narodenia"
 
 #: Form/form_us.xml.h:1957 Form/form_us.xml.h:1971 Form/form_us.xml.h:1990
 #: Form/form_us.xml.h:2010
@@ -14074,10 +14069,8 @@ msgstr "Farby"
 
 #: Form/form_us.xml.h:2240 Form/form_us.xml.h:2252 Form/form_us.xml.h:2264
 #: Form/form_us.xml.h:2276 Form/form_us.xml.h:2305
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Colored females"
-msgstr "Farba ženských osôb:"
+msgstr "Farebné ženy"
 
 #: Form/form_us.xml.h:2241 Form/form_us.xml.h:2253 Form/form_us.xml.h:2265
 msgid "Deaf & Dumb"
@@ -15122,10 +15115,8 @@ msgstr ""
 #: Form/form_gb.xml.h:146 Form/form_gb.xml.h:172 Form/form_gb.xml.h:275
 #: Form/form_gb.xml.h:303 Form/form_gb.xml.h:445 Form/form_gb.xml.h:472
 #: Form/form_gb.xml.h:500 Form/form_gb.xml.h:537
-#, fuzzy
-#| msgid "Parish:"
 msgid "Civil Parish"
-msgstr "Farnosť:"
+msgstr "Civilná farnosť"
 
 #: Form/form_gb.xml.h:147 Form/form_gb.xml.h:276
 msgid "Municipal Borough"
@@ -15564,10 +15555,8 @@ msgid "Gaellic or G. & E."
 msgstr ""
 
 #: Form/form_gb.xml.h:538
-#, fuzzy
-#| msgid "Parish:"
 msgid "Parish Ward"
-msgstr "Farnosť:"
+msgstr "Farský obvod"
 
 #: Form/form_gb.xml.h:563
 msgid "Profession or Occupation"
@@ -17672,10 +17661,8 @@ msgid "Dwelling house"
 msgstr ""
 
 #: Form/form_ca.xml.h:763
-#, fuzzy
-#| msgid "Family:"
 msgid "2. Family"
-msgstr "Rodina:"
+msgstr "2. Rodina"
 
 #: Form/form_ca.xml.h:764
 msgid "Family or household"
@@ -18092,10 +18079,8 @@ msgstr ""
 #: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
 #: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
 #: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
-#, fuzzy
-#| msgid "Original: "
 msgid "Origin:"
-msgstr "Originál: "
+msgstr "Pôvod:"
 
 #: SourceIndex/witness.glade:141 SourceIndex/birth.glade:578
 #: SourceIndex/birth.glade:677 SourceIndex/death.glade:722
@@ -18237,20 +18222,20 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:1568
-#, fuzzy
-#| msgid "place: "
 msgid ""
 "Death\n"
 "place:"
-msgstr "lokalita: "
+msgstr ""
+"Úmrtie\n"
+"miesto:"
 
 #: SourceIndex/birth.glade:1588
-#, fuzzy
-#| msgid "place: "
 msgid ""
 "Birth\n"
 "place:"
-msgstr "lokalita: "
+msgstr ""
+"Narodenie\n"
+"miesto:"
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
 #, fuzzy
@@ -18272,10 +18257,8 @@ msgstr ""
 
 #: SourceIndex/death.glade:217 SourceIndex/census.glade:904
 #: SourceIndex/marriage.glade:1296
-#, fuzzy
-#| msgid "volume"
 msgid "Volume:"
-msgstr "zväzok"
+msgstr "Zväzok:"
 
 #: SourceIndex/death.glade:282
 msgid "<b>Death act</b>"
@@ -18286,10 +18269,8 @@ msgstr ""
 #: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
 #: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
 #: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-#, fuzzy
-#| msgid "Without name"
 msgid "First name:"
-msgstr "Bez mena"
+msgstr "Prvé meno:"
 
 #: SourceIndex/death.glade:607 SourceIndex/census.glade:176
 #: SourceIndex/marriage.glade:185
@@ -18313,10 +18294,8 @@ msgid "Birth date:"
 msgstr ""
 
 #: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
-#, fuzzy
-#| msgid "place: "
 msgid "Birth place:"
-msgstr "lokalita: "
+msgstr "Miesto narodenia:"
 
 #: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
 #, fuzzy
@@ -18333,10 +18312,8 @@ msgid "Marriage date:"
 msgstr ""
 
 #: SourceIndex/death.glade:1163
-#, fuzzy
-#| msgid "Change places"
 msgid "Marriage place:"
-msgstr "Zmeniť miesta"
+msgstr "Miesto sobáša:"
 
 #: SourceIndex/death.glade:1195
 msgid "<b>Data mother</b>"
@@ -18372,16 +18349,12 @@ msgid "<b>Census</b>"
 msgstr "<b>Značky:</b>"
 
 #: SourceIndex/census.glade:364
-#, fuzzy
-#| msgid "Media Path Update"
 msgid "Death date:"
-msgstr "Aktualizácia cesty k médiám"
+msgstr "Dátum úmrtia:"
 
 #: SourceIndex/census.glade:414
-#, fuzzy
-#| msgid "place: "
 msgid "Death place:"
-msgstr "lokalita: "
+msgstr "Miesto úmrtia:"
 
 #: SourceIndex/census.glade:447
 #, fuzzy
@@ -18398,16 +18371,12 @@ msgid "Marriage act:"
 msgstr ""
 
 #: SourceIndex/marriage.glade:81
-#, fuzzy
-#| msgid "date: "
 msgid "m. date:"
-msgstr "dátum: "
+msgstr "dátum sob.:"
 
 #: SourceIndex/marriage.glade:97
-#, fuzzy
-#| msgid "place: "
 msgid "m. place:"
-msgstr "lokalita: "
+msgstr "miesto sob.:"
 
 #: SourceIndex/marriage.glade:113
 msgid "d.contract:"
@@ -18422,10 +18391,8 @@ msgid "p.contract:"
 msgstr ""
 
 #: SourceIndex/marriage.glade:167
-#, fuzzy
-#| msgid "place: "
 msgid "places banns:"
-msgstr "lokalita: "
+msgstr "miesta ohlášok:"
 
 #: SourceIndex/marriage.glade:198
 msgid "<b>Data union</b>"
@@ -18554,10 +18521,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:129
-#, fuzzy
-#| msgid "Longitude :"
 msgid "Start longitude"
-msgstr "Zemepisná dĺžka :"
+msgstr "Počiatočná zemepisná dĺžka"
 
 #: Heatmap/heatmap.py:131
 msgid ""
@@ -18752,10 +18717,8 @@ msgid "German digital library"
 msgstr ""
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
-#, fuzzy
-#| msgid "Family:"
 msgid "Family Sheet"
-msgstr "Rodina:"
+msgstr "Rodinný list"
 
 #: FamilySheet/FamilySheet.gpr.py:6
 msgid ""
@@ -19464,10 +19427,8 @@ msgid "Add Person"
 msgstr "Osoby"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:292
-#, fuzzy
-#| msgid "Source references:"
 msgid "Clear Reference"
-msgstr "Odkazy na zdroje:"
+msgstr "Vymazať odkaz"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:293
 #, fuzzy
@@ -20146,10 +20107,8 @@ msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
-#, fuzzy
-#| msgid "to directory:"
 msgid "Destination directory"
-msgstr "do adresára:"
+msgstr "Cieľový adresár"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Path for generated files"
@@ -20440,10 +20399,8 @@ msgid "This report only supports PDF as output file format."
 msgstr ""
 
 #: MediaReport/media_report.py:229
-#, fuzzy
-#| msgid "General Data"
 msgid "General:"
-msgstr "Všeobecné údaje"
+msgstr "Všeobecné:"
 
 #: MediaReport/media_report.py:250
 msgid "Image type:"
@@ -20925,10 +20882,8 @@ msgid "Data:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:378
-#, fuzzy
-#| msgid "Pages"
 msgid "Page:"
-msgstr "Stránky"
+msgstr "Strana:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:419
 #, fuzzy
@@ -21242,10 +21197,8 @@ msgid "Person theme"
 msgstr "Stránka osoby"
 
 #: GraphView/graphview.py:817
-#, fuzzy
-#| msgid "Color of male persons:"
 msgid "Path color to home person"
-msgstr "Farba mužských osôb:"
+msgstr "Farba cesty k domovskej osobe"
 
 #: GraphView/graphview.py:821
 msgid "Font:"
@@ -21606,10 +21559,8 @@ msgid "Dark (default)"
 msgstr ""
 
 #: GraphView/avatars.py:61
-#, fuzzy
-#| msgid "Height:"
 msgid "Light"
-msgstr "Výška:"
+msgstr "Svetlá"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
@@ -22311,10 +22262,8 @@ msgid "Show these events"
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:113
-#, fuzzy
-#| msgid "Sort by:"
 msgid "Sort by "
-msgstr "Zoradiť podľa:"
+msgstr "Zoradiť podľa "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:114
 msgid "Sort in ascending order?"
