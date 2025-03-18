@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-09 20:50+0000\n"
-"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
+"PO-Revision-Date: 2025-03-11 19:37+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -2041,7 +2041,7 @@ msgstr "Збірка вебсайтів для Швеції (потрібен li
 
 #: SVWebconnectPack/SVWebPack.py:33 USWebConnectPack/USWebPack.py:33
 msgid "Find A Grave"
-msgstr "Find A Grave"
+msgstr "Знайти могилу"
 
 #: SVWebconnectPack/SVWebPack.py:34 UKWebConnectPack/UKWebPack.py:35
 #: DEWebConnectPack/DEWebPack.py:39 USWebConnectPack/USWebPack.py:34
@@ -2136,7 +2136,7 @@ msgstr ""
 #: PluginManager\PluginManager.py:353
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
-msgstr "Помилка видалення каталогу '%s'. Видалення могло завершитися невдало."
+msgstr "Помилка видалення каталогу '%s'. Видалення могло завершитися невдало"
 
 #: PluginManager\PluginManager.py:402
 msgid ""
@@ -5148,8 +5148,10 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
-"Діагностичний грамплет для допомоги у перевірці, чи встановлені всі "
-"передумови для Gramps.\n"
+"Діагностичний Gramplet для перевірки, чи має <a href="
+"\"https://gramps-project.org/\">Gramps</a> усі необхідні <a href="
+"\"https://github.com/gramps-project/gramps/blob/master/README.md\""
+">залежності</a> встановлені.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
@@ -5562,7 +5564,7 @@ msgstr "Встановлено (Linux/Mac)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
 msgid "not installed "
-msgstr "не встановлено"
+msgstr "не встановлено "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1444
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1614
@@ -6750,8 +6752,8 @@ msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
-"Якщо ваш тип зображення не підтримує зчитування/записування метаданих Exif, "
-"перетворіть його в сумісний тип."
+"Якщо ваш формат зображення не підтримує читання/запис метаданих Exif, чи "
+"слід конвертувати його у формат, що підтримує?"
 
 #: EditExifMetadata/editexifmetadata.py:209
 msgid ""
@@ -6926,7 +6928,7 @@ msgstr "Дата/Час"
 
 #: EditExifMetadata/editexifmetadata.py:1034
 msgid "Original: "
-msgstr "Оригінал:"
+msgstr "Оригінал: "
 
 #: EditExifMetadata/editexifmetadata.py:1035
 msgid "Modified: "
@@ -7635,7 +7637,7 @@ msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
 msgstr ""
-"Число, яке множить базовий розмір тексту в заголовку та нижньому колонтитулі."
+"Число, яке множить базовий розмір тексту в заголовку та нижньому колонтитулі"
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"
@@ -11239,7 +11241,7 @@ msgstr "домашня робота (H), школа (S), не може прац�
 
 #: Form/form_us.xml.h:861
 msgid "# hours worked during week March 24-30, 1940"
-msgstr "#  годин роботи протягом тижня 24-30 березня 1940 року"
+msgstr "# годин роботи протягом тижня 24-30 березня 1940 року"
 
 #: Form/form_us.xml.h:862
 msgid "Weeks unemployed up to March 30, 1940"
@@ -11247,7 +11249,7 @@ msgstr "Кількість тижнів безробіття до 30 берез�
 
 #: Form/form_us.xml.h:866
 msgid "# weeks worked in 1939"
-msgstr "#  тижнів роботи у 1939 році"
+msgstr "# тижнів роботи у 1939 році"
 
 #: Form/form_us.xml.h:867
 msgid "Amount of money, wages, salary in 1939"
@@ -11949,7 +11951,7 @@ msgstr "Глухий і німий"
 
 #: Form/form_us.xml.h:1085
 msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
-msgstr "Покалічений, інвалід, прикутий до ліжка або іншим чином непрацездатний"
+msgstr "Покалічений, інвалід, прикутий до ліжка або іншим чином непрацездатний."
 
 #: Form/form_us.xml.h:1087
 msgid "Can not read"
@@ -14329,7 +14331,7 @@ msgstr "Чи вимагаєте ви звільнення від призову 
 
 #: Form/form_us.xml.h:2540
 msgid "Race "
-msgstr "Раса"
+msgstr "Раса "
 
 #: Form/form_us.xml.h:2542
 msgid "Build / Weight"
@@ -15174,7 +15176,7 @@ msgstr "Діти, які померли"
 
 #: Form/form_gb.xml.h:215 Form/form_gb.xml.h:348
 msgid "Children who have Died."
-msgstr "Діти, які померли"
+msgstr "Діти, які померли."
 
 #: Form/form_gb.xml.h:217 Form/form_gb.xml.h:350
 msgid "Personal Occupation"
@@ -16185,7 +16187,7 @@ msgstr "Сидр (галони)"
 
 #: Form/form_ca.xml.h:179
 msgid "41. Cider Galls."
-msgstr "41. Сидр - галони"
+msgstr "41. Сидр - галони."
 
 #: Form/form_ca.xml.h:180
 msgid "ClothYards"
@@ -17111,7 +17113,7 @@ msgstr "Власні магазини"
 
 #: Form/form_ca.xml.h:570
 msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr "15. Нерухомість у власності: Кількість магазинів, складів тощо"
+msgstr "15. Нерухомість у власності: Кількість магазинів, складів тощо."
 
 #: Form/form_ca.xml.h:571
 msgid "OwnedBars"
@@ -17170,7 +17172,7 @@ msgstr "Орендовані магазини"
 
 #: Form/form_ca.xml.h:584
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr "22. Орендована нерухомість: Кількість магазинів, складів тощо"
+msgstr "22. Орендована нерухомість: Кількість магазинів, складів тощо."
 
 #: Form/form_ca.xml.h:585
 msgid "LeasedBarns"
@@ -18082,7 +18084,7 @@ msgid ""
 "place:"
 msgstr ""
 "Місце \n"
-"народження"
+"народження:"
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
 msgid "Origine:"
@@ -18407,7 +18409,7 @@ msgstr "Створити веб-звіт теплової мапи (Heatmap)."
 
 #: Heatmap/utils.py:55
 msgid "Stamen Terrain"
-msgstr "Stamen Terrain"
+msgstr "Топографічна карта Stamen"
 
 #: Heatmap/utils.py:58
 msgid "Stamen Terrain (Background only)"
@@ -18415,19 +18417,19 @@ msgstr "Stamen Terrain (лише фон)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
-msgstr "Stamen Toner"
+msgstr "Контрастна карта Stamen"
 
 #: Heatmap/utils.py:64
 msgid "Stamen Watercolor"
-msgstr "Stamen Watercolor"
+msgstr "Акварельна карта Stamen"
 
 #: Heatmap/utils.py:67
 msgid "CartoDB Positron"
-msgstr "CartoDB Positron"
+msgstr "Світла карта CartoDB"
 
 #: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
-msgstr "CartoDB DarkMatter"
+msgstr "Темна карта CartoDB"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
 msgid "Number of ancestors"
@@ -18492,7 +18494,7 @@ msgstr "Експорт у Prolog"
 #: ExportProlog/ExportProlog.gpr.py:6
 msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
 msgstr ""
-"Експортує дані у формат фактів Prolog. Дані у кодуванні Unicode (utf-8)."
+"Експортує дані у формат фактів Prolog.  Дані у кодуванні Unicode (utf-8)"
 
 #: DetDescendantReport-images/detdescendantreport.gpr.py:4
 msgid "Detailed Descendant Report With All Images"
@@ -18680,7 +18682,7 @@ msgstr "Друкувати заглушки для відсутньої інфо
 
 #: FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"
-msgstr "Основний стиль, що використовується для відображення тексту."
+msgstr "Основний стиль, що використовується для відображення тексту"
 
 #: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
@@ -19923,7 +19925,7 @@ msgstr "У всіх осіб уже є аватари."
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
 msgid "Failed writing "
-msgstr "Не вдалося записати"
+msgstr "Не вдалося записати "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
@@ -20876,7 +20878,7 @@ msgid ""
 "selected person"
 msgstr ""
 "Цей вигляд показує хронологічне родовідне дерево з предками та нащадками "
-"вибраної особи."
+"вибраної особи"
 
 #: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
 #: GraphView/graphview.gpr.py:14
@@ -21390,15 +21392,15 @@ msgstr "Перелік відповідних історичних подій п
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
-msgstr "Рядки, що починаються з цього в текстовому стовпці, будуть приховані"
+msgstr "Рядки, що починаються з цього в текстовому стовпці, будуть приховані "
 
 #: HistContext/HistContext.py:126
 msgid "Use filter "
-msgstr "Використовувати фільтр"
+msgstr "Використовувати фільтр "
 
 #: HistContext/HistContext.py:129
 msgid "Show outside life span "
-msgstr "Показати поза межами тривалості життя"
+msgstr "Показати поза межами тривалості життя "
 
 #: HistContext/HistContext.py:132
 msgid "Use full dates"
@@ -21426,7 +21428,7 @@ msgstr "Вибрати з файлів"
 
 #: HistContext/HistContext.py:287
 msgid "Invalid date "
-msgstr "Невірна дата"
+msgstr "Невірна дата "
 
 #: HistContext/HistContext.py:288
 msgid " in line: "
@@ -21506,7 +21508,7 @@ msgstr "Встановити як домашню особу"
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
 msgid "Gramps Web Sync"
-msgstr "Gramps Web Sync"
+msgstr "Веб-синхронізація Gramps"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
@@ -22958,7 +22960,7 @@ msgstr "Запис у базі даних [{id}] {name}:"
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
 msgid "Nothing has been searched yet"
-msgstr "Пошук ще не виконано."
+msgstr "Пошук ще не виконано"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
