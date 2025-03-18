@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 18:38+0000\n"
+"POT-Creation-Date: 2025-03-09 22:42+0000\n"
 "PO-Revision-Date: 2012-05-10 21:26+0100\n"
 "Last-Translator: Nick Hall\n"
 "Language-Team: English (British)\n"
@@ -19639,8 +19639,8 @@ msgstr ""
 msgid "Media height"
 msgstr "Media Object Title"
 
-#: MediaReport/media_report.py:457
-#, python-format
+#: MediaReport/media_report.py:458
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr ""
 

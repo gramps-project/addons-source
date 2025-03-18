@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 18:38+0000\n"
+"POT-Creation-Date: 2025-03-09 22:42+0000\n"
 "PO-Revision-Date: 2008-02-22 23:19+0100\n"
 "Last-Translator: Bernard Banko <bernard.banko (afna) siol.net>\n"
 "Language-Team: lugos slovenizacija <lugos-slo at lugos.si>\n"
@@ -19614,8 +19614,8 @@ msgstr ""
 msgid "Media height"
 msgstr "Filtri za predmete"
 
-#: MediaReport/media_report.py:457
-#, python-format
+#: MediaReport/media_report.py:458
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr ""
 

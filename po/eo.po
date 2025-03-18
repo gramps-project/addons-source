@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 18:38+0000\n"
+"POT-Creation-Date: 2025-03-09 22:42+0000\n"
 "PO-Revision-Date: 2014-11-08 13:21+0100\n"
 "Last-Translator: josip <josip@pisoj.com>\n"
 "Language-Team: Esperanto <kde-i18n-it@kde.org>\n"
@@ -19429,8 +19429,8 @@ msgstr ""
 msgid "Media height"
 msgstr ""
 
-#: MediaReport/media_report.py:457
-#, python-format
+#: MediaReport/media_report.py:458
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr ""
 
