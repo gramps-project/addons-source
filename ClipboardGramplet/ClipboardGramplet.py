@@ -79,8 +79,7 @@ class ClipboardGramplet(Gramplet):
     """
     def init(self):
         self.object_list = ClipboardListView(self.dbstate,
-                 MultiTreeView(self.dbstate, self.uistate,
-                 lambda: _("Clipboard Gramplet: %s") % self.gui.get_title()))
+                 MultiTreeView(self.uistate, "clipboard_gramplet"))
         self.otree = ClipboardListModel()
         self.object_list.set_model(self.otree)
         self.gui.get_container_widget().remove(self.gui.textview)
