@@ -137,6 +137,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 from search_widget import SearchWidget, Popover, ListBoxRow, get_person_tooltip
 from avatars import Avatars
+from drag_n_drop import DragAndDrop
 
 
 #-------------------------------------------------------------------------
@@ -1143,6 +1144,7 @@ class GraphWidget(object):
 
         # for detecting double click
         self.click_events = []
+        self.double_click = False
 
         # for timeout on changing settings by spinners
         self.timeout_event = False
@@ -1154,6 +1156,11 @@ class GraphWidget(object):
         self.menu = None
         self.retest_font = True     # flag indicates need to resize font
         self.bold_size = self.norm_size = 0  # font sizes to send to dot
+
+        # setup drag and drop
+        self.canvas.connect("drag-begin", self.del_click_events)
+        self.dnd = DragAndDrop(self.canvas, self.dbstate, self.uistate,
+                               self.hadjustment, self.vadjustment)
 
     def add_popover(self, widget, container):
         """
@@ -1168,7 +1175,7 @@ class GraphWidget(object):
     def build_spinner(self, icon, start, end, tooltip, conf_const):
         """
         Build spinner with icon and pack it into box.
-        Chenges apply to config with delay.
+        Changes apply to config with delay.
         """
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         img = Gtk.Image.new_from_icon_name(icon, Gtk.IconSize.MENU)
@@ -1468,6 +1475,7 @@ class GraphWidget(object):
         """
         Populate the graph with widgets derived from Graphviz.
         """
+        self.dnd.enable_dnd(False)
         # set the busy cursor, so the user knows that we are working
         self.uistate.set_busy_cursor(True)
         if self.uistate.window.get_window().is_visible():
@@ -1603,7 +1611,8 @@ class GraphWidget(object):
             return False
 
         button = event.get_button()[1]
-        if button == 1 or button == 2:
+        if button in (1, 2):
+            self.dnd.enable_dnd(False)
             window = self.canvas.get_parent().get_window()
             window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
             self._last_x = event.x_root
@@ -1651,6 +1660,7 @@ class GraphWidget(object):
                      (event.y_root - self._last_y) * scale_coef)
             self.vadjustment.set_value(new_y)
             return True
+        self.dnd.enable_dnd(True)
         return False
 
     def set_zoom(self, value):
@@ -1661,10 +1671,19 @@ class GraphWidget(object):
         self.view._config.set('interface.graphview-scale', value)
         self.canvas.set_scale(value / self.transform_scale)
 
-    def select_node(self, item, target, event):
+    def del_click_events(self, *args):
         """
-        Perform actions when a node is clicked.
-        If middle mouse was clicked then try to set scroll mode.
+        Remove all single click events.
+        """
+        for click_item in self.click_events:
+            if not click_item.is_destroyed():
+                GLib.source_remove(click_item.get_id())
+        self.click_events.clear()
+
+    def press_node(self, item, target, event):
+        """
+        Perform actions when a node is clicked (button press).
+        If middle mouse was pressed then try to set scroll mode.
         """
         self.search_widget.hide_search_popover()
         self.hide_bkmark_popover()
@@ -1677,20 +1696,50 @@ class GraphWidget(object):
 
         # perform double click on node by left mouse button
         if event.type == getattr(Gdk.EventType, "DOUBLE_BUTTON_PRESS"):
-            # Remove all single click events
-            for click_item in self.click_events:
-                if not click_item.is_destroyed():
-                    GLib.source_remove(click_item.get_id())
-            self.click_events.clear()
+            self.del_click_events()
             if button == 1 and node_class == 'node':
                 GLib.idle_add(self.actions.edit_person, None, handle)
-                return True
             elif button == 1 and node_class == 'familynode':
                 GLib.idle_add(self.actions.edit_family, None, handle)
-                return True
+            self.double_click = True
+            return True
 
         if event.type != getattr(Gdk.EventType, "BUTTON_PRESS"):
             return False
+
+        # set targets for drag-n-drop (object type and handle)
+        if button == 1 and node_class in ('node', 'familynode'):
+            self.dnd.set_target(node_class, handle)
+
+        elif button == 3 and node_class:                    # right mouse
+            if node_class == 'node':
+                self.menu = PopupMenu(self, 'person', handle)
+                self.menu.show_menu(event)
+            elif node_class == 'familynode':
+                self.menu = PopupMenu(self, 'family', handle)
+                self.menu.show_menu(event)
+
+        elif button == 2:                                   # middle mouse
+            # to enter in scroll mode (we should change "item" to root item)
+            item = self.canvas.get_root_item()
+            self.button_press(item, target, event)
+
+        return True
+
+    def release_node(self, item, target, event):
+        """
+        Perform actions when a node is clicked (button release).
+        Set timer to handle single click at node and wait double click.
+        """
+        # don't handle single click if had double click before
+        # because we came here after DOUBLE_BUTTON_PRESS event
+        if self.double_click:
+            self.double_click = False
+            return True
+
+        handle = item.title
+        node_class = item.description
+        button = event.get_button()[1]
 
         if button == 1 and node_class == 'node':            # left mouse
             if handle == self.active_person_handle:
@@ -1710,21 +1759,6 @@ class GraphWidget(object):
             # add single click events to list, it will be removed if necessary
             context = GLib.main_context_default()
             self.click_events.append(context.find_source_by_id(click_event_id))
-
-        elif button == 3 and node_class:                    # right mouse
-            if node_class == 'node':
-                self.menu = PopupMenu(self, 'person', handle)
-                self.menu.show_menu(event)
-            elif node_class == 'familynode':
-                self.menu = PopupMenu(self, 'family', handle)
-                self.menu.show_menu(event)
-
-        elif button == 2:                                   # middle mouse
-            # to enter in scroll mode (we should change "item" to root item)
-            item = self.canvas.get_root_item()
-            self.button_press(item, target, event)
-
-        return True
 
     def find_a_parent(self, handle):
         """
@@ -1940,7 +1974,8 @@ class GraphvizSvgParser(object):
                          self.widget.motion_notify_event)
         else:
             item = GooCanvas.CanvasGroup(parent=self.current_parent())
-            item.connect("button-press-event", self.widget.select_node)
+            item.connect("button-press-event", self.widget.press_node)
+            item.connect("button-release-event", self.widget.release_node)
             self.items_list.append(item)
 
         item.description = attrs.get('class')
