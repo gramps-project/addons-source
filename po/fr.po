@@ -25,13 +25,14 @@
 # J-Paul Bérard <arverne@wanadoo.fr>, 2021.
 # Julien Lepiller <roptat@lepiller.eu>, 2025.
 # AnneLaureF <annelaure.fouque+github@gmail.com>, 2025.
+# jmichault <jmt.2000@free.fr>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-19 12:30+0000\n"
-"Last-Translator: AnneLaureF <annelaure.fouque+github@gmail.com>\n"
+"PO-Revision-Date: 2025-03-19 22:04+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -91,7 +92,7 @@ msgstr "Enlever les événements, notes et sources précédemment créés"
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
-"Enlever les événements, notes et sources calculés; effectif immédiatement à "
+"Enlever les événements, notes et sources calculés ; effectif immédiatement à "
 "l'exécution"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
@@ -148,7 +149,7 @@ msgstr "Dates estimées"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
-msgstr "Avoisinant (vers) "
+msgstr "Avoisinant (vers)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
@@ -156,7 +157,7 @@ msgstr "Extrêmes (avant et après)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr "Les dates des événements sont soit estimées soit avant/après "
+msgstr "Les dates des évènements sont soit estimées soit avant/après"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -178,11 +179,11 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
-"L'outil d'estimation des dates est utilisé pour ajouter et enlever\n"
-"des événements naissance et décès chez les individus pour lesquels ces "
-"événements manquent.\n"
+"L'outil d'estimation des dates est utilisé pour ajouter et enlever des "
+"évènements naissance et décès chez les individus pour lesquels ces "
+"évènements manquent.\n"
 "\n"
-"Pour l'utiliser :\n"
+"Pour l'utiliser :\n"
 "1. Allez dans l'onglet Options\n"
 "2. Cochez l'option [ ] Enlever pour enlever les estimations précédentes\n"
 "3. Sélectionnez les options sur la date ainsi que les événements\n"
@@ -191,14 +192,13 @@ msgstr ""
 "6. Cliquez sur le bouton 'Ajouter les événements sélectionnés' pour les "
 "créer\n"
 "\n"
-"NOTES : si vous décidez de créer un événement permanent, enlevez-le de la "
+"NOTES : si vous décidez de créer un événement permanent, enlevez-le de la "
 "source.\n"
 "Sinon, il sera enlevé la prochaine fois que vous enlèverez automatiquement "
 "ces événements.\n"
 "\n"
 "Peut être aurez-vous besoin de lancer l'outil plusieurs fois (sans enlever "
-"les événements déjà estimés)\n"
-"pour ajouter tous les événements possibles."
+"les événements déjà estimés) pour ajouter tous les événements possibles."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
@@ -267,7 +267,7 @@ msgstr "Traitement en cours...\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
-msgstr "Enlèvement des anciennes estimations..."
+msgstr "Enlèvement des anciennes estimations... "
 
 # Substantif (GNOME fr)
 # enlever car utilisé pour un calcul
@@ -306,7 +306,7 @@ msgstr "Ne pas ajouter d'événements."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
-msgstr "Sélection..."
+msgstr "Sélection… "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
@@ -401,7 +401,7 @@ msgstr "Espace dans le nom du fichier"
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr ""
+msgstr "Veuillez corriger l'espace dans \"%s\""
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
@@ -438,7 +438,7 @@ msgstr "Impossible de copier \"%s\""
 #: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr "XML: Les %s dernières éditions depuis %s, étaient le :\n"
+msgstr "XML : Les %s dernières éditions depuis %s, étaient le :\n"
 
 #: lxml/etreeGramplet.py:471
 #, python-format
@@ -448,7 +448,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"XML: Nombre d'enregistrements et de relations : \t%s\n"
+"XML : Nombre d'enregistrements et de relations : \t%s\n"
 "\n"
 
 #: lxml/etreeGramplet.py:474
@@ -458,16 +458,16 @@ msgid ""
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
 "Nombre d'étiquettes : \n"
-"\n"
 "\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
-msgstr "Nombre de pages"
+msgstr ""
+"Nombre d'étiquettes : \n"
+"\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
 #, python-format
@@ -475,6 +475,8 @@ msgid ""
 "Number of  events : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Nombre d'évènements : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:481
 #, python-format
@@ -482,6 +484,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgstr ""
+"Nombre de personnes : \n"
+"\t\t\t%s\t|\t(%s) et (%s)* noms\n"
 
 #: lxml/etreeGramplet.py:483
 #, python-format
@@ -489,6 +493,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Nombre de personnes : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:484
 #, python-format
@@ -496,6 +502,8 @@ msgid ""
 "Number of families : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Nombre de familles : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:485
 #, python-format
@@ -503,6 +511,8 @@ msgid ""
 "Number of sources : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Nombre de sources : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:487
 #, python-format
@@ -510,6 +520,8 @@ msgid ""
 "Number of citations : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Nombre de citations : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:490
 #, python-format
@@ -517,6 +529,8 @@ msgid ""
 "Number of places : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Nombre de lieux : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:491
 #, python-format
@@ -524,6 +538,8 @@ msgid ""
 "Number of media objects : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Nombre de media : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:492
 #, python-format
@@ -531,6 +547,8 @@ msgid ""
 "Number of repositories : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Nombre de dépôts : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:493
 #, python-format
@@ -538,6 +556,8 @@ msgid ""
 "Number of notes : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Nombre de notes : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:498
 #, python-format
@@ -546,7 +566,7 @@ msgid ""
 "XML: Number of additional records and relations: \t%s\n"
 msgstr ""
 "\n"
-"XML: Nombre d'enregistrements et de relations supplémentaires : \t%s\n"
+"XML : Nombre d'enregistrements et de relations supplémentaires : \t%s\n"
 
 #: lxml/etreeGramplet.py:502
 #, python-format
@@ -567,19 +587,19 @@ msgstr "\"gzip\" est manquant"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Missing python3 lxml"
-msgstr ""
+msgstr "«python3 lxml» est manquant"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
-msgstr ""
+msgstr "Veuillez essayer d'installer le paquet \"python3 lxml\"."
 
 #: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
-msgstr "Pas de fichier chargé"
+msgstr "Pas de fichier chargé…"
 
 #: lxml/lxmlGramplet.py:298
 msgid "XSD validation (lxml)"
-msgstr ""
+msgstr "Validation XSD (lxml)"
 
 #: lxml/lxmlGramplet.py:298
 #, python-format
@@ -595,7 +615,7 @@ msgstr "xmllint : ignore la validation RelaxNG pour  \"%(file)s\""
 #: lxml/lxmlGramplet.py:318
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
-msgstr "xmllint : ignore la validation RelaxNG pour  \"%(file)s\""
+msgstr "xmllint : ignore la validation RelaxNG pour \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:329
 msgid "Parsing issue"
@@ -662,7 +682,7 @@ msgstr ""
 #: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
 #: lxml/lxmlGramplet.py:484
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: lxml/lxmlGramplet.py:495
 msgid "File parsed with"
@@ -714,7 +734,7 @@ msgstr "3. A écrit les entrées dans \"%(file)s\".\n"
 
 #: lxml/lxmlGramplet.py:544
 msgid "Matches XSD schema."
-msgstr ""
+msgstr "Correspond au schéma XSD."
 
 #: lxml/lxmlGramplet.py:565
 msgid "xmllint: skip DTD validation"
@@ -1192,7 +1212,7 @@ msgstr ""
 #: FilterRules/isrelatedwithfiltermatch.py:53
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 msgid "People related to <filter>"
-msgstr ""
+msgstr "Individus reliées au <filtre>"
 
 #: FilterRules/isrelatedwithfiltermatch.py:55
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
@@ -1202,12 +1222,13 @@ msgstr ""
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
 msgid "People separated less than <N> degrees of <person>"
-msgstr ""
+msgstr "Personnes séparées par moins de <N> degrés de parenté de <individu>"
 
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
+#, fuzzy
 msgid "Filter rule that matches relatives by degrees of separation"
-msgstr ""
+msgstr "Règle de filtrage qui retourne les parents par degrés de séparation"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 #, fuzzy
@@ -1216,16 +1237,20 @@ msgid "Source matching parameters"
 msgstr "Il n'y a pas de nom correspondant."
 
 #: FilterRules/hassourcefilter.gpr.py:29
+#, fuzzy
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr ""
+"Renvoie les sources avec des valeurs contenant les paramètres sélectionnés"
 
 #: FilterRules/multipleparents.py:42
+#, fuzzy
 msgid "People with multiple parent records"
-msgstr ""
+msgstr "Personnes ayant des dossiers parentaux multiples"
 
 #: FilterRules/multipleparents.py:43
+#, fuzzy
 msgid "Matches people who have more than one set of parents"
-msgstr ""
+msgstr "Sélectionne les personnes qui ont plus d'une famille parentale"
 
 #: FilterRules/associationsofpersonmatch.py:46
 #: FilterRules/associationsofpersonmatch.py:47
@@ -1680,17 +1705,15 @@ msgstr "Échec à l'écriture de %s : %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:345
 #: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Failed to create directory structure : %s"
-msgstr "Impossible de créer le répertoire: %(path)s"
+msgstr "Impossible de créer le répertoire: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368
 #: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
-#, fuzzy, python-format
-#| msgid "Unable to copy web site template files from \"%(path)s\""
+#, python-format
 msgid "Failed to copy web files : %s"
-msgstr "Impossible de copier le modèle de site web depuis \"%(path)s\""
+msgstr "Impossible de copier les fichiers web : %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
@@ -4038,28 +4061,24 @@ msgid "%(abbrev)s %(date)s in %(place)s"
 msgstr ""
 
 #: CombinedView/basepage.py:495
-#, fuzzy, python-format
-#| msgid "Address (%(date)s): %(location)s"
+#, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
-msgstr "Adresse (%(date)s): %(location)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
 
 #: CombinedView/personpage.py:597
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr "%(type)s : %(value)s"
+msgstr "%(event_type)s: %(date)s à %(place)s"
 
 #: CombinedView/personpage.py:601
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(date)s"
-msgstr "%(type)s : %(value)s"
+msgstr "%(event_type)s : %(date)s"
 
 #: CombinedView/personpage.py:604
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(place)s"
-msgstr "%(type)s : %(value)s"
+msgstr "%(event_type)s : %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
@@ -6072,17 +6091,15 @@ msgid "Writing %s reports..."
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-format
-#| msgid "Descendants Lines"
+#, python-format
 msgid "%s. Descendants of %s"
-msgstr "Lignes des descendants"
+msgstr "%s. Descendants de %s"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
-#, fuzzy, python-format
-#| msgid "(m. %s)"
+#, python-format
 msgid "%d. %s"
-msgstr "(m. %s)"
+msgstr "%d. %s"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1345
@@ -6114,10 +6131,9 @@ msgstr "Rapport sur les lignes de descendance"
 # trunk
 # Substantif (GNOME fr)
 #: DescendantBooks/DetailedDescendantBookReport.py:359
-#, fuzzy, python-format
-#| msgid "Generating thumbnails for event references"
+#, python-format
 msgid "Generating %s report references..."
-msgstr "Création des miniatures pour les événements"
+msgstr "Création de %s références du rapport…"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:453
 #, python-format
@@ -6183,7 +6199,7 @@ msgstr ""
 #, fuzzy, python-format
 #| msgid "in %(place)s"
 msgid "%(date)s, %(place)s"
-msgstr "à %(place)s"
+msgstr "%(date)s, %(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:820
 #: DescendantBooks/DetailedDescendantBookReport.py:864
@@ -6191,7 +6207,7 @@ msgstr "à %(place)s"
 #, fuzzy, python-format
 #| msgid "in %(y_date)s"
 msgid "%(date)s"
-msgstr "en %(y_date)s"
+msgstr "%(date)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:822
 #: DescendantBooks/DetailedDescendantBookReport.py:866
@@ -6231,7 +6247,7 @@ msgstr ""
 #, fuzzy, python-format
 #| msgid "%(type)s: %(value)s"
 msgid "%(type)s:"
-msgstr "%(type)s : %(value)s"
+msgstr "%(type)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1303
 #, python-format
@@ -7058,7 +7074,7 @@ msgstr ""
 #: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr "Taille de l'image : %04(width)d x %04(height)d pixels"
+msgstr "Taille de l'image : {width} x {height} pixels"
 
 #: EditExifMetadata/editexifmetadata.py:481
 #: EditExifMetadata/editexifmetadata.py:1440
@@ -9544,16 +9560,15 @@ msgid "Set Privacy Tool"
 msgstr "Outil de vérification des media"
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
-#, fuzzy, python-format
-#| msgid "Protect private items"
+#, python-format
 msgid "Set private: %d %s\n"
-msgstr "Protéger les enregistrements privés"
+msgstr "Rendre privé : %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:92
 #, fuzzy, python-format
 #| msgid "Protect private items"
 msgid "Not private: %d %s\n"
-msgstr "Protéger les enregistrements privés"
+msgstr "Pas privé : %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:107
 #, fuzzy
@@ -19400,7 +19415,7 @@ msgstr "Parents"
 #, fuzzy, python-format
 #| msgid "(%(description)s)"
 msgid "%s (association)"
-msgstr "(%(description)s)"
+msgstr "%s (association)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 #, fuzzy
@@ -19485,10 +19500,9 @@ msgid "Gathering data"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid "Number of years in US"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr "Nombre d'années aux USA"
+msgstr "Nombre d'individus : %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -19963,7 +19977,7 @@ msgstr "Définir l’individu central"
 #, fuzzy, python-brace-format
 #| msgid "Replace"
 msgid "Replace to {0}"
-msgstr "Remplacer"
+msgstr "Remplacer par {0}"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
 #, fuzzy
@@ -19989,9 +20003,9 @@ msgid ""
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1110
-#, fuzzy, python-format
+#, python-format
 msgid "Male person|Dead at %s"
-msgstr "Sélectionner un individu en tant que père"
+msgstr "Individu masculin|Décédé le %s"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1112
 #, python-format
@@ -20254,7 +20268,7 @@ msgstr "Filtrage"
 #, fuzzy, python-format
 #| msgid "All Places"
 msgid "All %s"
-msgstr "Tous les lieux"
+msgstr "Tous les %s"
 
 #: RemoveTagTool/RemoveTagTool.py:186 RemoveTagTool/RemoveTagTool.py:246
 #: RemoveTagTool/RemoveTagTool.gpr.py:25
@@ -20358,13 +20372,15 @@ msgstr ""
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Relation avec le chef"
+msgstr ""
+"\n"
+"Relation : {0} "
 
 #: DNA/dnasegmentmap.py:1091
 #, fuzzy, python-brace-format
 #| msgid "Ancestor"
 msgid " Ancestor: {0}"
-msgstr "Ascendant"
+msgstr " Ascendant : {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -21702,7 +21718,7 @@ msgstr "Direction temporelle inconnue"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr ""
+msgstr "Limite du nombre de personnes affichées (0 pour illimité)"
 
 #: GraphView/graphview.py:812
 msgid "Person theme"
@@ -21944,6 +21960,10 @@ msgid ""
 "{people_missing} people won't be shown. You can change this limit in the "
 "view configuration."
 msgstr ""
+"Ce graphique comprendrait au moins {people_count} personnes, ce qui dépasse "
+"la limite de {people_limit}. Pour des raisons de performance, au moins "
+"{people_missing} personnes ne seront pas montrés. Vous pouvez modifier cette "
+"limite dans la configuration de vue."
 
 #: GraphView/graphview.py:2678
 msgid "Incomplete graph"
@@ -22073,7 +22093,7 @@ msgstr "Esquisse"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
-msgstr ""
+msgstr "Moderne"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
@@ -22338,10 +22358,9 @@ msgid ""
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:743
-#, fuzzy, python-format
-#| msgid "BirthYear"
+#, python-format
 msgid "Birth: %s"
-msgstr "Année de naissance"
+msgstr "Naissance : %s"
 
 #: SearchGramplet/SearchGramplet.py:747
 #, fuzzy, python-format
@@ -22584,16 +22603,15 @@ msgid "Missing remotely"
 msgstr "En-tête manquante"
 
 #: GrampsWebSync/grampswebsync.py:1003
-#, fuzzy, python-format
-#| msgid "Downloading files"
+#, python-format
 msgid "Downloading %s media file(s)"
-msgstr "Téléchargement des fichiers"
+msgstr "Téléchargement de %s fichier(s) media"
 
 #: GrampsWebSync/grampswebsync.py:1011
 #, fuzzy, python-format
 #| msgid "Downloading files"
 msgid "Uploading %s media file(s)"
-msgstr "Téléchargement des fichiers"
+msgstr "Téléchargement de %s fichier(s) media"
 
 #: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
