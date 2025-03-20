@@ -32,8 +32,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-19 22:04+0000\n"
-"Last-Translator: Emmanuel Vallois <emmanuel@vallois.name>\n"
+"PO-Revision-Date: 2025-03-20 13:33+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -608,10 +608,9 @@ msgid "Cannot validate \"%(file)s\" !"
 msgstr "Impossible de valider \"%(file)s\" !"
 
 #: lxml/lxmlGramplet.py:306
-#, fuzzy, python-format
-#| msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
+#, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
-msgstr "xmllint : ignore la validation RelaxNG pour  \"%(file)s\""
+msgstr "xmllint : ignore la validation DTD pour \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:318
 #, python-format
@@ -659,10 +658,8 @@ msgid "Cannot parse \"%(file)s\" via etree"
 msgstr "Impossible d'analyser \"%(file)s\" via etree"
 
 #: lxml/lxmlGramplet.py:359
-#, fuzzy
-#| msgid "Preparing file ..."
 msgid "Parsing file..."
-msgstr "Préparation du fichier ..."
+msgstr "Analyse du fichier..."
 
 #: lxml/lxmlGramplet.py:456
 msgid "Missing header"
@@ -1361,20 +1358,20 @@ msgstr "Nom de famille"
 #: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
 #: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
 msgid "People who are part of families matching <filter>"
-msgstr ""
+msgstr "Les gens qui font partie des familles qui correspondent à <filtre>"
 
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
 #: FilterRules/ageatdeath.py:74
 msgid "Filter people by their age at death"
-msgstr ""
+msgstr "Filtre les personnes par leur âge à leur décès"
 
 #: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
-msgstr ""
+msgstr "Règle de filtrage qui correspond aux personnes à leur âge à leur décès"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
-msgstr ""
+msgstr "Filtre de parents multiples"
 
 #: FilterRules/hasrolerule.gpr.py:27
 #, fuzzy
@@ -1384,7 +1381,7 @@ msgstr "Ajouter les événements naissance avec les dates"
 
 #: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
-msgstr ""
+msgstr "Familles avec des évènements avec un rôle sélectionné"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
@@ -1395,7 +1392,7 @@ msgstr "Voulez-vous changer l’individu actif ?"
 
 #: FilterRules/hassourcefilter.py:58
 msgid "Matches sources with a particular value"
-msgstr ""
+msgstr "Sélectionnne les sources ayant une valeur particulière"
 
 #: FilterRules/activepersonrule.py:45 DataEntryGramplet/DataEntryGramplet.py:71
 #: NoteGramplet/NoteGramplet.py:65
@@ -1410,7 +1407,7 @@ msgstr "Aller à l’individu actif"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
-msgstr ""
+msgstr "L'âge en anées au décès de la personne."
 
 #: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
 #: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
@@ -1420,7 +1417,7 @@ msgstr ""
 #: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
 #: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
 msgid "Age:"
-msgstr ""
+msgstr "Âge :"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
@@ -1663,10 +1660,13 @@ msgid "First spouse left"
 msgstr "de droite à gauche"
 
 #: GenealogyTree/gt_descendant.py:192
+#, fuzzy
 msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
+"Toujours mettre le premier de plusieurs conjoints sur la gauche. Cela peut "
+"aider à réduire les croisements de ligne avec des mariages multiples."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 #, fuzzy
@@ -1682,7 +1682,7 @@ msgstr "Personnes"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
-msgstr ""
+msgstr "GEXF est utilisé dans de nombreuses applications de graphique réseau."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
 #, fuzzy
@@ -1787,14 +1787,19 @@ msgid "The destination file name for html content."
 msgstr "Le fichier de destination pour le contenu."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
+#, fuzzy
 msgid "Ancestral Fan Chart"
-msgstr ""
+msgstr "Graphique d'évolution des ancêtres"
 
 #: D3Charts/AncestralFanChart.gpr.py:33
+#, fuzzy
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
+"Génère une page web avec une représentation graphique des ancêtres (SVG) "
+"représenté comme un graphique d'évolution de la bibliothèque D3.js "
+"JavaScript."
 
 #: D3Charts/DescendantIndentedTree.py:673
 #, python-format
@@ -1949,32 +1954,33 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1902
 msgid "Arrow images at start of node."
-msgstr ""
+msgstr "Images des flèches au début du nœud."
 
 #: D3Charts/DescendantIndentedTree.py:1903
 msgid "Plus/Minus images at start of node."
-msgstr ""
+msgstr "Images plus/moins au début du nœud."
 
 #: D3Charts/DescendantIndentedTree.py:1904
 #: D3Charts/DescendantIndentedTree.py:1933
 msgid "Where to click to expand/contract nodes."
-msgstr ""
+msgstr "Où cliquer pour agrandir/réduire les noeuds."
 
 #: D3Charts/DescendantIndentedTree.py:1908
 msgid "Auto-generate HREF links for nodes"
-msgstr ""
+msgstr "Liens autogénérés HREF pour les nœuds"
 
 #: D3Charts/DescendantIndentedTree.py:1910
 msgid "Whether to auto-generate HTML links for each node on the report."
 msgstr ""
+"Générer ou non automatiquement des liens HTML pour chaque nœud du rapport."
 
 #: D3Charts/DescendantIndentedTree.py:1916
 msgid "URL prefix path."
-msgstr ""
+msgstr "Chemin de préfixe d'URL."
 
 #: D3Charts/DescendantIndentedTree.py:1918
 msgid "URL prefix to apply to each auto-generated HREF link."
-msgstr ""
+msgstr "Préfixe d'URL à appliquer à chaque lien HREF autogénéré."
 
 #: D3Charts/DescendantIndentedTree.py:1924
 msgid "URL file extension"
@@ -2000,35 +2006,37 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1930
 msgid ".php"
-msgstr ""
+msgstr ".php"
 
 #: D3Charts/DescendantIndentedTree.py:1931
 msgid ".php3"
-msgstr ""
+msgstr ".php3"
 
 #: D3Charts/DescendantIndentedTree.py:1932
 msgid ".cgi"
-msgstr ""
+msgstr ".cgi"
 
 #: D3Charts/DescendantIndentedTree.py:1938
 msgid "URL file name delimeter"
-msgstr ""
+msgstr "Délimiteur de nom de fichier URL"
 
 #: D3Charts/DescendantIndentedTree.py:1940
 msgid "Remove all whitespace."
-msgstr ""
+msgstr "Enlever tous les espaces."
 
 #: D3Charts/DescendantIndentedTree.py:1941
 msgid "Replace whitespace with dash(-)."
-msgstr ""
+msgstr "Remplacer l'espace par un tiret (-)."
 
 #: D3Charts/DescendantIndentedTree.py:1942
 msgid "Replace whitespace with underscore(_)"
-msgstr ""
+msgstr "Remplacer l'espace par un souligné (_)"
 
 #: D3Charts/DescendantIndentedTree.py:1943
 msgid "What to use as file name delimiter replacing whitespace."
 msgstr ""
+"Que faut-il utiliser comme délimiteur de nom de fichier pour remplacer les "
+"espaces."
 
 #: D3Charts/DescendantIndentedTree.py:1948
 msgid "Generations to generate HREF links"
@@ -2043,12 +2051,14 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1956
 msgid "Exclude persons who died before (years)"
-msgstr ""
+msgstr "Exclure les personnes décédées avant (années)"
 
 #: D3Charts/DescendantIndentedTree.py:1959
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
 msgstr ""
+"Générer ou non les liens pour les personnes décédées en bas âge, -1 n'exclut "
+"personne."
 
 #: D3Charts/DescendantIndentedTree.py:1965
 #, fuzzy
@@ -2076,7 +2086,7 @@ msgstr "Inclure ou non des pages dépôt."
 
 #: D3Charts/DescendantIndentedTree.py:1979
 msgid "Biography Content"
-msgstr ""
+msgstr "Biographie"
 
 #: D3Charts/DescendantIndentedTree.py:1981
 msgid "Show biography tooltips"
@@ -18684,10 +18694,8 @@ msgstr "Sans nom"
 
 #: SourceIndex/death.glade:607 SourceIndex/census.glade:176
 #: SourceIndex/marriage.glade:185
-#, fuzzy
-#| msgid "Repository type"
 msgid "<b>Repository</b>"
-msgstr "Type de dépôt"
+msgstr "<b>Dépôt</b>"
 
 #: SourceIndex/death.glade:621 SourceIndex/census.glade:712
 #, fuzzy
@@ -23581,6 +23589,8 @@ msgstr ""
 #: NetworkChart/NetworkChart.py:1068
 msgid "Removes color background for individuals (nodes) on chart."
 msgstr ""
+"Supprime la couleur d'arrière-plan pour les individus (nœuds) sur le "
+"graphique."
 
 #: NetworkChart/NetworkChart.py:1073
 msgid ""
@@ -23667,6 +23677,8 @@ msgstr ""
 #: NetworkChart/NetworkChart.py:1135
 msgid "All ancestors (parents) of selected individuals will not be shown."
 msgstr ""
+"Tous les ancêtres (parents) des individus sélectionnés ne seront pas "
+"affichés."
 
 #: NetworkChart/NetworkChart.py:1141
 msgid "Enable trimming of ancestors."
