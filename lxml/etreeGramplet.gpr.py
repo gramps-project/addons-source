@@ -13,7 +13,7 @@ register(
     audience = DEVELOPER,
     version = '1.0.20',
     gramps_target_version="6.0",
-    include_in_listing=False,
+    include_in_listing=True,
     height=400,
     gramplet="etreeGramplet",
     fname="etreeGramplet.py",
