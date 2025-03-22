@@ -358,7 +358,10 @@ class lxmlGramplet(Gramplet):
 
         # GtkTextView ; buffer limitation ...
 
-        #self.text.set_text(_('Parsing file...'))
+        if isinstance(self.text, list):
+            pass
+        else:
+            self.text.set_text(_('Parsing file...'))
 
         #LOG.info(etree.tostring(root, pretty_print=True))
 
@@ -540,7 +543,10 @@ class lxmlGramplet(Gramplet):
 
         # GtkTextView
 
-        self.text.set_text(header + file_info + period + counters + libs)
+        if isinstance(self.text, list):
+            pass
+        else:
+            self.text.set_text(header + file_info + period + counters + libs)
 
         LOG.info('### NEW FILES ###')
         LOG.info('content parsed and copied')
