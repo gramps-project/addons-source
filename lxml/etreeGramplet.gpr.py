@@ -11,7 +11,7 @@ register(
     description=_("Gramplet for testing etree with Gramps XML"),
     status=EXPERIMENTAL,
     audience = DEVELOPER,
-    version = '1.0.21',
+    version = '1.0.22',
     gramps_target_version="6.0",
     include_in_listing=True,
     height=400,
