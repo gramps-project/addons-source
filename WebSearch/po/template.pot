@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-22 15:37+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <jurchello@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: settings_ui_manager.py:69
+msgid "Middle Name Handling"
+msgstr ""
+
+#: settings_ui_manager.py:73
+msgid "Leave alone"
+msgstr ""
+
+#: settings_ui_manager.py:74
+msgid "Separate"
+msgstr ""
+
+#: settings_ui_manager.py:75
+msgid "Remove"
+msgstr ""
+
+#: settings_ui_manager.py:81
+msgid "URL Compactness Level"
+msgstr ""
+
+#: settings_ui_manager.py:85
+msgid "Shortest - No Prefix, No Variables"
+msgstr ""
+
+#: settings_ui_manager.py:86
+msgid "Compact - No Prefix, Variables Without Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:87
+msgid "Compact - No Prefix, Variables With Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:88
+msgid "Long - Without Prefix on the Left"
+msgstr ""
+
+#: settings_ui_manager.py:91
+msgid "URL Prefix Replacement"
+msgstr ""
+
+#: settings_ui_manager.py:92
+msgid "Use OpenAI"
+msgstr ""
+
+#: settings_ui_manager.py:93
+msgid "OpenAI API Key"
+msgstr ""
+
+#: settings_ui_manager.py:94
+msgid "Display 'Website URL' Column"
+msgstr ""
+
+#: settings_ui_manager.py:95
+msgid "Display 'Vars' Column"
+msgstr ""
+
+#: settings_ui_manager.py:96
+msgid "Show User Data Icon"
+msgstr ""
+
+#: settings_ui_manager.py:97
+msgid "Show Flag Icons"
+msgstr ""
+
+#: settings_ui_manager.py:98
+msgid "Show Links From Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:104
+msgid "Enable CSV Files"
+msgstr ""
+
+#: WebSearch.gpr.py:26 WebSearch.gpr.py:36
+msgid "WebSearch"
+msgstr ""
+
+#: WebSearch.gpr.py:27
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+
+#: qr_window.py:65
+msgid "QR-code"
+msgstr ""
+
+#: qr_window.py:89
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+
+#: WebSearch.py:1017
+msgid "Vars"
+msgstr ""
+
+#: WebSearch.py:1018
+msgid "Title"
+msgstr ""
+
+#: WebSearch.py:1019
+msgid "Website URL"
+msgstr ""
+
+#: WebSearch.py:1020
+msgid "Comment"
+msgstr ""
+
+#: WebSearch.py:1022
+msgid "Add link to note"
+msgstr ""
+
+#: WebSearch.py:1023
+msgid "Show QR-code"
+msgstr ""
+
+#: WebSearch.py:1024
+msgid "Copy link to clipboard"
+msgstr ""
+
+#: WebSearch.py:1025
+msgid "Hide link for selected item"
+msgstr ""
+
+#: WebSearch.py:1026
+msgid "Hide link for all items"
+msgstr ""
+
+#: WebSearch.py:1028
+msgid "🔍 AI Suggestions"
+msgstr ""
+
+#: WebSearch.py:1126
+#, python-brace-format
+msgid ""
+"📌 This web link was added using the WebSearch gramplet for future "
+"reference:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this person."
+msgstr ""
+
+#: WebSearch.py:1134
+msgid "Add Web Link Note"
+msgstr ""
+
+#: WebSearch.py:1159
+msgid "URL is copied to the Clipboard"
+msgstr ""
+
+#: WebSearch.py:1206
+msgid "WebSearch Link"
+msgstr ""
+
+#: WebSearch.py:1237
+#, python-brace-format
+msgid "Title: {title}\n"
+msgstr ""
+
+#: WebSearch.py:1239
+#, python-brace-format
+msgid "Replaced: {variables}\n"
+msgstr ""
+
+#: WebSearch.py:1241
+#, python-brace-format
+msgid "Empty: {variables}\n"
+msgstr ""
+
+#: WebSearch.py:1243
+#, python-brace-format
+msgid "Comment: {comment}\n"
+msgstr ""

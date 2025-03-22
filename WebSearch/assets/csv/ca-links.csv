@@ -1,0 +1,3 @@
+Navigation type,Title,Is enabled,URL                                                                                                                                         ,Comment
+People,OrigineFile (people),1,https://www.fichierorigine.com/recherche?nom=%(surname)s,
+Places,OrigineFile (places),1,http://www.fichierorigine.com/recherche.php?commune=%(place)s&pays=%(root_place)s,
