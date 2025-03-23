@@ -21,32 +21,21 @@
 # ----------------------------------------------------------------------------
 
 """
-Registers the WebSearch Gramplet with Gramps.
+This module handles the initialization of the translator for the current file.
 
-This module contains metadata and configuration used by Gramps to integrate
-the WebSearch Gramplet, including supported navigation types and display settings.
+If the translator initialization through GRAMPS_LOCALE is successful,
+the appropriate translation is used.
+Otherwise, the default translation is applied.
+
+The variable _ contains the gettext function for retrieving translated strings.
 """
 
-# pylint: disable=E0602
-register(
-    GRAMPLET,
-    id="WebSearch",
-    name=_("WebSearch"),
-    description=_(
-        "Customized queries for online services based on the active "
-        "Person, Place, Family, or Source record"
-    ),
-    status=STABLE,
-    version="0.43.27",
-    fname="WebSearch.py",
-    height=20,
-    detached_width=400,
-    detached_height=300,
-    expand=True,
-    gramplet="WebSearch",
-    gramplet_title=_("WebSearch"),
-    gramps_target_version="5.2",
-    navtypes=["Person", "Place", "Source", "Family", "Event", "Citation", "Media"],
-    include_in_listing=True,
-    help_url="Addon:WebSearch",
-)
+try:
+    from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+    # Ініціалізація перекладача
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+
+_ = _trans.gettext

@@ -1,4 +1,2 @@
 Navigation type,Title,Is enabled,URL                                                                                                                                         ,Comment
-People,For test,1,https://www.google.com/search?q=I+like+this+link,
-People,For test,1,https://www.google.com/search?q=My+favourite,
-People,For test,1,https://www.google.com/search?q=Most+commonly+used+link,
+People,For demonstration,1,https://www.google.com/search?q=I+like+this+link,

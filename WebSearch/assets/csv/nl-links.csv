@@ -8,7 +8,7 @@ People,Who Searches Who,1,https://www.stamboomforum.nl/wiezoektwie/zoeken.php?q=
 People,FamilySearch,1,https://www.familysearch.org/search/record/results?givenname=%(given)s&surname=%(surname)s&surname_exact=on&birth_year_from=%(birth_year_from)s&birth_year_to=%(birth_year_to)s&death_year_from=%(death_year_from)s&death_year_to=%(death_year_to)s&record_country=Netherlands,
 People,GeneaNet,1,https://nl.geneanet.org/fonds/individus/?go=1&nom=%(surname)s&prenom=%(given)s,
 People,Stamboomzoeker,1,https://www.stamboomzoeker.nl/?a=search&fn=%(given)s&sn=%(surname)s&m=1&bd1=0&bd2=2020&bp=&t=1&submit=Zoeken,
-People,GenDex,1,http://gendexnetwork.org/index.php,
+People,GenDex,1,https://gendexnetwork.org,
 People,WieWasWie,1,https://www.wiewaswie.nl/nl/zoeken/,
 People,Mensenlinq,1,https://mensenlinq.nl/overlijdensberichten/?passed_at_from=&passed_at_until=&lastname=%(surname)s&firstname=%(given)s&filtered=true,
 People,GENi,1,https://www.geni.com/search?names=%(given)s+%(surname)s,
