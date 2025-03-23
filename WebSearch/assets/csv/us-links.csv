@@ -1,10 +1,10 @@
 Navigation type,Title,Is enabled,URL                                                                                                                                         ,Comment
-People,Find A Grave,1,http://www.findagrave.com/cgi-bin/fg.cgi?page=gsr&GSfn=%(given)s&GSmn=%(middle)s&GSln=%(surname)s&GSby=%(birth_year)s&GSbyrel=in&GSdy=%(death_year)s&GSdyrel=in&GScntry=0&GSst=0&GSgrid=&df=all&GSob=b,
-People,Australia Family Notices,1,http://trove.nla.gov.au/newspaper/result?q=%(given)s+%(surname)s&exactPhrase=&anyWords=&notWords=&requestHandler=&dateFrom=&dateTo=&l-advcategory=Family+Notices&sortby=,
-People,Geneanet (favrejhas),0,http://gw1.geneanet.org/index.php3?b=favrejhas&m=NG&n=%(surname)s&t=N&x=0&y=0,
-People,Roglo,1,http://roglo.eu/roglo?m=NG&n=%(given)s+%(surname)s&t=PN,
+People,Find A Grave,1,https://www.findagrave.com/cgi-bin/fg.cgi?page=gsr&GSfn=%(given)s&GSmn=%(middle)s&GSln=%(surname)s&GSby=%(birth_year)s&GSbyrel=in&GSdy=%(death_year)s&GSdyrel=in&GScntry=0&GSst=0&GSgrid=&df=all&GSob=b,
+People,Australia Family Notices,1,https://trove.nla.gov.au/newspaper/result?q=%(given)s+%(surname)s&exactPhrase=&anyWords=&notWords=&requestHandler=&dateFrom=&dateTo=&l-advcategory=Family+Notices&sortby=,
+People,Geneanet (favrejhas),0,https://gw1.geneanet.org/index.php3?b=favrejhas&m=NG&n=%(surname)s&t=N&x=0&y=0,
+People,Roglo,1,https://roglo.eu/roglo?m=NG&n=%(given)s+%(surname)s&t=PN,
 People,FindMyPast,1,https://www.findmypast.com/search/results?firstname=%(given)s&firstname_variants=true&lastname=%(surname)s&eventyear=%(birth_year)s&eventyear_offset=2&yearofdeath=%(death_year)s&yearofdeath_offset=2&sid=999,Account Login: free
-People,Hathi Trust,1,http://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls,
+People,Hathi Trust,1,https://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls,
 People,Legacy,1,https://www.legacy.com/search?countryId=366899&countryUrl=united-states-of-america&dateRange=All&firstName=%(given)s&lastName=%(surname)s,
 People,Wikipedia,1,https://en.wikipedia.org/w/index.php?search=%(given)s+%(surname)s,
 People,WeRelate,1,https://www.werelate.org/wiki/Special:Search?sort=score&ns=Person&a=&st=&g=%(given)s+%(middle)s&s=%(surname)s&p=&bd=%(birth_year)s&br=1&bp=&dd=%(death_year)s&dr=1&rows=20&ecp=c,

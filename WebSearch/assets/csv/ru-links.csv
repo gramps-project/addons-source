@@ -10,3 +10,4 @@ People,Yandex People,1,https://yandex.ru/people/search?text=%(surname)s+%(given)
 People,OK,1,https://ok.ru/search/profiles/%(surname)s %(given)s %(birth_year)s,
 People,RIA Officers,1,http://www.ria1914.info/index.php?title=Служебная:Поиск&search=%(surname)s+%(given)s,
 People,FamilySpace,1,https://arc.familyspace.ru/catalog/%(surname)s %(given)s,
+Places,Реестр GOV,1,https://gov.genealogy.net/search/name?name=%(place)s&lang=ru,
