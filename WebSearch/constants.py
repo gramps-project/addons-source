@@ -21,7 +21,8 @@
 # ----------------------------------------------------------------------------
 
 """
-This module defines various enumerations and constants used in the WebSearch Gramplet for Gramps.
+This module defines various enumerations and constants used in the
+WebSearch Gramplet for Gramps.
 
 Enums:
 - MiddleNameHandling: Specifies how to handle middle names.
@@ -38,7 +39,8 @@ Constants:
 - Default settings for URL handling and file management.
 - Category icons for different genealogy-related sections.
 
-These enums and constants help standardize data representation and ensure consistency in website data processing.
+These enums and constants help standardize data representation and
+ensure consistency in website data processing.
 """
 
 import os
@@ -49,12 +51,18 @@ from gramps.gen.const import USER_DATA
 # ENUMS
 # --------------------------
 
+
 class MiddleNameHandling(Enum):
+    """Specifies strategies for handling middle names in generated URLs."""
+
     LEAVE_ALONE = "leave alone"
     SEPARATE = "separate"
     REMOVE = "remove"
 
+
 class SupportedNavTypes(Enum):
+    """Enumerates supported navigation types in Gramps for WebSearch."""
+
     PEOPLE = "People"
     PLACES = "Places"
     SOURCES = "Sources"
@@ -63,7 +71,10 @@ class SupportedNavTypes(Enum):
     CITATIONS = "Citations"
     MEDIA = "Media"
 
+
 class PersonDataKeys(Enum):
+    """Defines all available variable keys for 'Person' navigation type."""
+
     GIVEN = "given"
     MIDDLE = "middle"
     SURNAME = "surname"
@@ -84,7 +95,10 @@ class PersonDataKeys(Enum):
 
     SYSTEM_LOCALE = "locale"
 
+
 class FamilyDataKeys(Enum):
+    """Defines all available variable keys for 'Family' navigation type."""
+
     FATHER_GIVEN = "father_given"
     FATHER_MIDDLE = "father_middle"
     FATHER_SURNAME = "father_surname"
@@ -139,20 +153,29 @@ class FamilyDataKeys(Enum):
 
     SYSTEM_LOCALE = "locale"
 
+
 class CsvColumnNames(Enum):
+    """Defines expected column headers for CSV files."""
+
     NAV_TYPE = "Navigation type"
     TITLE = "Title"
     IS_ENABLED = "Is enabled"
     URL = "URL"
     COMMENT = "Comment"
 
+
 class URLCompactnessLevel(Enum):
+    """Enumerates levels of URL compactness in formatting."""
+
     SHORTEST = "shortest"
     COMPACT_NO_ATTRIBUTES = "compact_no_attributes"
     COMPACT_WITH_ATTRIBUTES = "compact_with_attributes"
     LONG = "long"
 
+
 class PlaceDataKeys(Enum):
+    """Defines all variable keys for the 'Place' navigation type."""
+
     PLACE = "place"
     ROOT_PLACE = "root_place"
     LATITUDE = "latitude"
@@ -161,9 +184,13 @@ class PlaceDataKeys(Enum):
     TITLE = "title"
     SYSTEM_LOCALE = "locale"
 
+
 class SourceDataKeys(Enum):
+    """Defines variable keys for source-based navigation."""
+
     TITLE = "source_title"
     SYSTEM_LOCALE = "locale"
+
 
 # --------------------------
 # CONSTANTS
@@ -198,7 +225,9 @@ ATTRIBUTE_MAPPING_FILE_PATH = os.path.join(CONFIGS_DIR, "attribute_mapping.json"
 VISITED_HASH_FILE_PATH = os.path.join(DATA_DIR, "visited_links.txt")
 SAVED_HASH_FILE_PATH = os.path.join(DATA_DIR, "saved_links.txt")
 HIDDEN_HASH_FILE_PATH = os.path.join(DATA_DIR, "hidden_links.txt")
-SKIPPED_DOMAIN_SUGGESTIONS_FILE_PATH = os.path.join(DATA_DIR, "skipped_domain_suggestions.txt")
+SKIPPED_DOMAIN_SUGGESTIONS_FILE_PATH = os.path.join(
+    DATA_DIR, "skipped_domain_suggestions.txt"
+)
 ICON_VISITED_PATH = os.path.join(ICONS_DIR, "emblem-default.png")
 ICON_SAVED_PATH = os.path.join(ICONS_DIR, "media-floppy.png")
 ICON_UID_PATH = os.path.join(ICONS_DIR, "uid.png")
@@ -208,8 +237,12 @@ ICON_EARTH_PATH = os.path.join(ICONS_DIR, "earth.png")
 ICON_CHAIN_PATH = os.path.join(ICONS_DIR, "chain.png")
 
 STYLE_CSS_PATH = os.path.join(ASSETS_DIR, "style.css")
-DEFAULT_ATTRIBUTE_MAPPING_FILE_PATH = os.path.join(CONFIGS_DIR, "attribute_mapping.json")
-USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH = os.path.join(USER_DATA_JSON_DIR, "attribute_mapping.json")
+DEFAULT_ATTRIBUTE_MAPPING_FILE_PATH = os.path.join(
+    CONFIGS_DIR, "attribute_mapping.json"
+)
+USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH = os.path.join(
+    USER_DATA_JSON_DIR, "attribute_mapping.json"
+)
 
 
 DEFAULT_CATEGORY_ICON = "gramps-gramplet"
@@ -226,7 +259,7 @@ DEFAULT_SHOW_USER_DATA_ICON = False
 DEFAULT_SHOW_FLAG_ICONS = True
 DEFAULT_SHOW_ATTRIBUTE_LINKS = False
 
-DEFAULT_COLUMNS_ORDER = ['icons', 'locale', 'vars', 'title', 'url', 'comment']
+DEFAULT_COLUMNS_ORDER = ["icons", "locale", "vars", "title", "url", "comment"]
 
 CATEGORY_ICON = {
     "Dashboard": "gramps-gramplet",

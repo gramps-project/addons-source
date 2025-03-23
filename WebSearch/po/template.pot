@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-22 15:37+0200\n"
+"POT-Creation-Date: 2025-03-23 20:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <jurchello@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,139 +17,139 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: settings_ui_manager.py:69
+#: settings_ui_manager.py:103
 msgid "Middle Name Handling"
 msgstr ""
 
-#: settings_ui_manager.py:73
+#: settings_ui_manager.py:108
 msgid "Leave alone"
 msgstr ""
 
-#: settings_ui_manager.py:74
+#: settings_ui_manager.py:109
 msgid "Separate"
 msgstr ""
 
-#: settings_ui_manager.py:75
+#: settings_ui_manager.py:110
 msgid "Remove"
 msgstr ""
 
-#: settings_ui_manager.py:81
+#: settings_ui_manager.py:119
 msgid "URL Compactness Level"
 msgstr ""
 
-#: settings_ui_manager.py:85
+#: settings_ui_manager.py:125
 msgid "Shortest - No Prefix, No Variables"
 msgstr ""
 
-#: settings_ui_manager.py:86
+#: settings_ui_manager.py:128
 msgid "Compact - No Prefix, Variables Without Attributes"
 msgstr ""
 
-#: settings_ui_manager.py:87
+#: settings_ui_manager.py:131
 msgid "Compact - No Prefix, Variables With Attributes"
 msgstr ""
 
-#: settings_ui_manager.py:88
+#: settings_ui_manager.py:134
 msgid "Long - Without Prefix on the Left"
 msgstr ""
 
-#: settings_ui_manager.py:91
+#: settings_ui_manager.py:141
 msgid "URL Prefix Replacement"
 msgstr ""
 
-#: settings_ui_manager.py:92
+#: settings_ui_manager.py:145
 msgid "Use OpenAI"
 msgstr ""
 
-#: settings_ui_manager.py:93
+#: settings_ui_manager.py:147
 msgid "OpenAI API Key"
 msgstr ""
 
-#: settings_ui_manager.py:94
+#: settings_ui_manager.py:150
 msgid "Display 'Website URL' Column"
 msgstr ""
 
-#: settings_ui_manager.py:95
+#: settings_ui_manager.py:155
 msgid "Display 'Vars' Column"
 msgstr ""
 
-#: settings_ui_manager.py:96
+#: settings_ui_manager.py:160
 msgid "Show User Data Icon"
 msgstr ""
 
-#: settings_ui_manager.py:97
+#: settings_ui_manager.py:164
 msgid "Show Flag Icons"
 msgstr ""
 
-#: settings_ui_manager.py:98
+#: settings_ui_manager.py:168
 msgid "Show Links From Attributes"
 msgstr ""
 
-#: settings_ui_manager.py:104
+#: settings_ui_manager.py:181
 msgid "Enable CSV Files"
 msgstr ""
 
-#: WebSearch.gpr.py:26 WebSearch.gpr.py:36
+#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
 msgstr ""
 
-#: WebSearch.gpr.py:27
+#: WebSearch.gpr.py:36
 msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
 msgstr ""
 
-#: qr_window.py:65
+#: qr_window.py:76
 msgid "QR-code"
 msgstr ""
 
-#: qr_window.py:89
+#: qr_window.py:114
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
 msgstr ""
 
-#: WebSearch.py:1017
+#: WebSearch.py:1419
 msgid "Vars"
 msgstr ""
 
-#: WebSearch.py:1018
+#: WebSearch.py:1420
 msgid "Title"
 msgstr ""
 
-#: WebSearch.py:1019
+#: WebSearch.py:1421
 msgid "Website URL"
 msgstr ""
 
-#: WebSearch.py:1020
+#: WebSearch.py:1422
 msgid "Comment"
 msgstr ""
 
-#: WebSearch.py:1022
+#: WebSearch.py:1424
 msgid "Add link to note"
 msgstr ""
 
-#: WebSearch.py:1023
+#: WebSearch.py:1425
 msgid "Show QR-code"
 msgstr ""
 
-#: WebSearch.py:1024
+#: WebSearch.py:1426
 msgid "Copy link to clipboard"
 msgstr ""
 
-#: WebSearch.py:1025
+#: WebSearch.py:1428
 msgid "Hide link for selected item"
 msgstr ""
 
-#: WebSearch.py:1026
+#: WebSearch.py:1430
 msgid "Hide link for all items"
 msgstr ""
 
-#: WebSearch.py:1028
+#: WebSearch.py:1432
 msgid "🔍 AI Suggestions"
 msgstr ""
 
-#: WebSearch.py:1126
+#: WebSearch.py:1549
 #, python-brace-format
 msgid ""
 "📌 This web link was added using the WebSearch gramplet for future "
@@ -161,34 +161,34 @@ msgid ""
 "related to this person."
 msgstr ""
 
-#: WebSearch.py:1134
+#: WebSearch.py:1560
 msgid "Add Web Link Note"
 msgstr ""
 
-#: WebSearch.py:1159
+#: WebSearch.py:1596
 msgid "URL is copied to the Clipboard"
 msgstr ""
 
-#: WebSearch.py:1206
+#: WebSearch.py:1656
 msgid "WebSearch Link"
 msgstr ""
 
-#: WebSearch.py:1237
+#: WebSearch.py:1701
 #, python-brace-format
 msgid "Title: {title}\n"
 msgstr ""
 
-#: WebSearch.py:1239
+#: WebSearch.py:1703
 #, python-brace-format
 msgid "Replaced: {variables}\n"
 msgstr ""
 
-#: WebSearch.py:1241
+#: WebSearch.py:1707
 #, python-brace-format
 msgid "Empty: {variables}\n"
 msgstr ""
 
-#: WebSearch.py:1243
+#: WebSearch.py:1711
 #, python-brace-format
 msgid "Comment: {comment}\n"
 msgstr ""

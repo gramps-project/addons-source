@@ -5,14 +5,14 @@ Places,Archive.org (places),1,https://www.archive.org/search.php?query=%(place)s
 Sources,Archive.org (sources),1,https://www.archive.org/search.php?query=%(source_title)s,
 People,Open Library,1,"https://openlibrary.org/search?q=%(surname)s, %(given)s",
 People,"Google Search (g,s)",1,https://www.google.com/search?q=%(surname)s+%(given)s,
-People,"Google Search (g,m,s,b,d)",1,"https://www.google.com/search?q=""%(given)s+%(middle)s+%(surname)s+%(birth_year)s+%(death_year)s""'",
-People,Google Archives (s),1,https://news.google.de/archivesearch?q=%(surname)s,
+People,"Google Search (g,m,s,b,d)",1,https://www.google.com/search?q=%(given)s+%(middle)s+%(surname)s+%(birth_year)s+%(death_year)s,
 People,"FamilySearch (records) (g,m,s,b,d)",1,https://www.familysearch.org/search/record/results?q.birthLikeDate.from=%(birth_year_from)s&q.birthLikeDate.to=%(birth_year_to)s&q.deathLikeDate.from=%(death_year_from)s&q.deathLikeDate.to=%(death_year_to)s&q.givenName=%(given)s+%(middle)s&q.surname=%(surname)s,Account Login: free
 People,"FamilySearch (tree) (g,m,s,b,d)",1,https://www.familysearch.org/search/tree/results?count=20&q.birthLikeDate.from=%(birth_year_from)s&q.birthLikeDate.to=%(birth_year_to)s&q.deathLikeDate.from=%(death_year_from)s&q.deathLikeDate.to=%(death_year_to)s&q.givenName=%(given)s+%(middle)s&q.surname=%(surname)s,Account Login: free
 People,"Familysearch (Collections) (g,s)",1,https://www.familysearch.org/search/all-collections/results?q.surname=%(surname)s&q.givenName=%(given)s                                                      ,Account Login: free
 Places,Google Search (t),1,https://www.google.com/search?q=coordinates+%(title)s,
-Places,"Google Search (l,l)",1,"https://www.google.com.ua/maps/@%(latitude)s,%(longitude)s,14z?hl=%(locale)s",
+Places,"Google Search (l,l)",1,"https://www.google.com/maps/@%(latitude)s,%(longitude)s,14z?hl=%(locale)s",
 Places,"Geonames (l,l)",1,https://www.geonames.org/advanced-search.html?q=%(latitude)s+%(longitude)s,
 People,"Billiongraves (g,s,b,d)",1,https://billiongraves.com/search/results?given_names=%(given)s&family_names=%(surname)s&birth_year=%(birth_year)s&death_year=%(death_year)s&size=15
 Places,"Find a Grave (cemetery)",1,https://www.findagrave.com/cemetery/search?cemetery-name=%(place)s&cemetery-loc=%(root_place)s&only-with-cemeteries=cemOnly,
 People,"Find a Grave (memorial)",1,https://www.findagrave.com/memorial/search?firstname=%(given)s&middlename=%(middle)s&lastname=%(surname)s&birthyear=%(birth_year)s&birthyearfilter=&deathyear=%(death_year)s&deathyearfilter=&location=&locationId=&bio=&linkedToName=&plot=&memorialid=&mcid=&datefilter=&orderby=r
+Places,GOV Registry,1,https://gov.genealogy.net/search/name?name=%(place)s&lang=en,

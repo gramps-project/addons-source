@@ -1,6 +1,6 @@
 Navigation type,Title,Is enabled,URL                                                                                                                                         ,Comment
 People,Find A Grave,1,http://www.findagrave.com/cgi-bin/fg.cgi?page=gsr&GSfn=%(given)s&GSmn=%(middle)s&GSln=%(surname)s&GSby=%(birth_year)s&GSbyrel=in&GSdy=%(death_year)s&GSdyrel=in&GScntry=0&GSst=0&GSgrid=&df=all&GSob=b,
-People,Geneanet,1,http://search.geneanet.org/result.php?lang=sv&name=%(surname)s,
+People,Geneanet,1,https://search.geneanet.org/result.php?lang=sv&name=%(surname)s,
 People,Wikipedia,1,https://sv.wikipedia.org/w/index.php?search=%(given)s+%(surname)s,
 People,WikiTree,1,https://wikitree.sdms.si/function/WTWebProfileSearch/Profiles.htm?&Query=%(given)s+%(surname)s+B%(birth_year)s+D%(death_year)s&MaxProfiles=500&SortOrder=Default&PageSize=10,
 People,Riksarkivet (person),1,https://sok.riksarkivet.se/person?Namn=%(given)s+%(surname)s&Ort=&Fodelsear=%(birth_year)s&AvanceradSok=True&PageSize=100,

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 52\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-22 15:37+0200\n"
+"POT-Creation-Date: 2025-03-23 20:55+0200\n"
 "PO-Revision-Date: 2025-03-18 10:24+0200\n"
 "Last-Translator: yurii <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -18,85 +18,85 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: settings_ui_manager.py:69
+#: settings_ui_manager.py:103
 msgid "Middle Name Handling"
 msgstr "Обробка по батькові"
 
-#: settings_ui_manager.py:73
+#: settings_ui_manager.py:108
 msgid "Leave alone"
 msgstr "Залишити без змін"
 
-#: settings_ui_manager.py:74
+#: settings_ui_manager.py:109
 msgid "Separate"
 msgstr "Відокремити"
 
-#: settings_ui_manager.py:75
+#: settings_ui_manager.py:110
 msgid "Remove"
 msgstr "Видалити"
 
-#: settings_ui_manager.py:81
+#: settings_ui_manager.py:119
 msgid "URL Compactness Level"
 msgstr "Рівень стиснення URL"
 
-#: settings_ui_manager.py:85
+#: settings_ui_manager.py:125
 msgid "Shortest - No Prefix, No Variables"
 msgstr "Найкоротший – Без префікса, без змінних"
 
-#: settings_ui_manager.py:86
+#: settings_ui_manager.py:128
 msgid "Compact - No Prefix, Variables Without Attributes"
 msgstr "Компактний – Без префікса, змінні без атрибутів"
 
-#: settings_ui_manager.py:87
+#: settings_ui_manager.py:131
 msgid "Compact - No Prefix, Variables With Attributes"
 msgstr "Компактний – Без префікса, змінні з атрибутами"
 
-#: settings_ui_manager.py:88
+#: settings_ui_manager.py:134
 msgid "Long - Without Prefix on the Left"
 msgstr "Довгий – Без префікса зліва"
 
-#: settings_ui_manager.py:91
+#: settings_ui_manager.py:141
 msgid "URL Prefix Replacement"
 msgstr "Замінник префікса URL"
 
-#: settings_ui_manager.py:92
+#: settings_ui_manager.py:145
 msgid "Use OpenAI"
 msgstr "Використовувати OpenAI"
 
-#: settings_ui_manager.py:93
+#: settings_ui_manager.py:147
 msgid "OpenAI API Key"
 msgstr "Ключ API OpenAI"
 
-#: settings_ui_manager.py:94
+#: settings_ui_manager.py:150
 msgid "Display 'Website URL' Column"
 msgstr "Показувати колонку 'URL вебсайту'"
 
-#: settings_ui_manager.py:95
+#: settings_ui_manager.py:155
 #, fuzzy
 msgid "Display 'Vars' Column"
 msgstr "Показувати колонку 'Змінні'"
 
-#: settings_ui_manager.py:96
+#: settings_ui_manager.py:160
 msgid "Show User Data Icon"
 msgstr "Показувати іконку користувацьких даних"
 
-#: settings_ui_manager.py:97
+#: settings_ui_manager.py:164
 #, fuzzy
 msgid "Show Flag Icons"
 msgstr "Показувати прапори"
 
-#: settings_ui_manager.py:98
+#: settings_ui_manager.py:168
 msgid "Show Links From Attributes"
 msgstr "Показувати посилання з атрибутів"
 
-#: settings_ui_manager.py:104
+#: settings_ui_manager.py:181
 msgid "Enable CSV Files"
 msgstr "Увімкнути файли CSV"
 
-#: WebSearch.gpr.py:26 WebSearch.gpr.py:36
+#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
 msgstr "Веб-пошук"
 
-#: WebSearch.gpr.py:27
+#: WebSearch.gpr.py:36
 msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
@@ -104,11 +104,11 @@ msgstr ""
 "Налаштовувані запити до онлайн-сервісів на основі активного запису Персони, "
 "Місця, Сім'ї або Джерела"
 
-#: qr_window.py:65
+#: qr_window.py:76
 msgid "QR-code"
 msgstr "QR-код"
 
-#: qr_window.py:89
+#: qr_window.py:114
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
@@ -116,47 +116,47 @@ msgstr ""
 "⚠ Помилка генерації QR-коду:\n"
 "Оригінальна помилка: «{}»"
 
-#: WebSearch.py:1017
+#: WebSearch.py:1419
 msgid "Vars"
 msgstr "Змінні"
 
-#: WebSearch.py:1018
+#: WebSearch.py:1420
 msgid "Title"
 msgstr "Назва"
 
-#: WebSearch.py:1019
+#: WebSearch.py:1421
 msgid "Website URL"
 msgstr "URL вебсайту"
 
-#: WebSearch.py:1020
+#: WebSearch.py:1422
 msgid "Comment"
 msgstr "Коментар"
 
-#: WebSearch.py:1022
+#: WebSearch.py:1424
 msgid "Add link to note"
 msgstr "Додати посилання до нотатки"
 
-#: WebSearch.py:1023
+#: WebSearch.py:1425
 msgid "Show QR-code"
 msgstr "Показати QR-код"
 
-#: WebSearch.py:1024
+#: WebSearch.py:1426
 msgid "Copy link to clipboard"
 msgstr "Скопіювати посилання у буфер"
 
-#: WebSearch.py:1025
+#: WebSearch.py:1428
 msgid "Hide link for selected item"
 msgstr "Приховати посилання для вибраного елемента"
 
-#: WebSearch.py:1026
+#: WebSearch.py:1430
 msgid "Hide link for all items"
 msgstr "Приховати посилання для всіх елементів"
 
-#: WebSearch.py:1028
+#: WebSearch.py:1432
 msgid "🔍 AI Suggestions"
 msgstr "🔍 Рекомендації ШІ"
 
-#: WebSearch.py:1126
+#: WebSearch.py:1549
 #, python-brace-format
 msgid ""
 "📌 This web link was added using the WebSearch gramplet for future "
@@ -175,34 +175,34 @@ msgstr ""
 "Ви можете скористатися цим посиланням, щоб знову переглянути джерело та "
 "перевірити інформацію, пов’язану з цією особою."
 
-#: WebSearch.py:1134
+#: WebSearch.py:1560
 msgid "Add Web Link Note"
 msgstr "Додати нотатку з веб-посиланням"
 
-#: WebSearch.py:1159
+#: WebSearch.py:1596
 msgid "URL is copied to the Clipboard"
 msgstr "URL скопійовано до буфера обміну"
 
-#: WebSearch.py:1206
+#: WebSearch.py:1656
 msgid "WebSearch Link"
 msgstr "Посилання WebSearch"
 
-#: WebSearch.py:1237
+#: WebSearch.py:1701
 #, fuzzy, python-brace-format
 msgid "Title: {title}\n"
 msgstr "Назва: {title}\n"
 
-#: WebSearch.py:1239
+#: WebSearch.py:1703
 #, python-brace-format
 msgid "Replaced: {variables}\n"
 msgstr "Замінено: {variables}\n"
 
-#: WebSearch.py:1241
+#: WebSearch.py:1707
 #, python-brace-format
 msgid "Empty: {variables}\n"
 msgstr "Порожні: {variables}\n"
 
-#: WebSearch.py:1243
+#: WebSearch.py:1711
 #, python-brace-format
 msgid "Comment: {comment}\n"
 msgstr "Коментар: {comment}\n"

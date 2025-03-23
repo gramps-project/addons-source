@@ -20,16 +20,24 @@
 
 # ----------------------------------------------------------------------------
 
+"""
+Defines a custom GObject signal emitter for asynchronous events in the WebSearch Gramplet.
+"""
+
 import gi
+
 gi.require_version("Gtk", "3.0")
+
 from gi.repository import GObject
+
 
 class WebSearchSignalEmitter(GObject.GObject):
     """
     WebSearchSignalEmitter class for emitting custom signals in the WebSearch gramplet.
 
-    This class extends GObject to provide a custom signal mechanism for asynchronous operations.
-    It allows the WebSearch gramplet to emit signals when specific actions, such as fetching sites, are completed.
+    This class extends GObject to provide a custom signal mechanism for asynchronous
+    operations. It allows the WebSearch gramplet to emit signals when specific actions,
+    such as fetching sites, are completed.
 
     Key Features:
     - Defines a "sites-fetched" signal that carries a list of fetched sites as its payload.
@@ -42,11 +50,16 @@ class WebSearchSignalEmitter(GObject.GObject):
     - None (inherits from GObject.GObject)
 
     Signals:
-    - "sites-fetched": Emitted when a site-fetching operation completes, passing the results as an object.
+    - "sites-fetched": Emitted when a site-fetching operation completes, passing
+      the results as an object.
     """
-    __gsignals__ = {
-        "sites-fetched": (GObject.SignalFlags.RUN_FIRST, None, (object,))
-    }
+
+    __gsignals__ = {"sites-fetched": (GObject.SignalFlags.RUN_FIRST, None, (object,))}
 
     def __init__(self):
+        """
+        Initialize the WebSearchSignalEmitter.
+
+        Sets up the custom GObject signal infrastructure for use in WebSearch.
+        """
         GObject.GObject.__init__(self)
