@@ -39,9 +39,9 @@ class HouseTimelineGramplet(Gramplet):
     def on_load(self):
         self.no_wrap()
         tag = self.gui.buffer.create_tag("fixed")
-        tag.set_property("font", "Courier 12")
+        tag.set_property("font", "Courier 8")
         if len(self.gui.data) != 1:
-            self.gui.data[:] = ["004", None]
+            self.gui.data[:] = ["001", None]
 
     def db_changed(self):
         self.connect(self.dbstate.db,'person-add', self.update)
