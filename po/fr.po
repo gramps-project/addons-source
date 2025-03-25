@@ -26,13 +26,14 @@
 # Julien Lepiller <roptat@lepiller.eu>, 2025.
 # AnneLaureF <annelaure.fouque+github@gmail.com>, 2025.
 # jmichault <jmt.2000@free.fr>, 2025.
+# Emmanuel Vallois <emmanuel@vallois.name>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
 "PO-Revision-Date: 2025-03-19 22:04+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"Last-Translator: Emmanuel Vallois <emmanuel@vallois.name>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -484,7 +485,7 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgstr ""
-"Nombre de personnes : \n"
+"Nombre d’individus : \n"
 "\t\t\t%s\t|\t(%s) et (%s)* noms\n"
 
 #: lxml/etreeGramplet.py:483
@@ -493,7 +494,7 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
-"Nombre de personnes : \n"
+"Nombre d’individus : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:484
@@ -587,7 +588,7 @@ msgstr "\"gzip\" est manquant"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Missing python3 lxml"
-msgstr "«python3 lxml» est manquant"
+msgstr "python3 lxml est manquant"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
@@ -1212,7 +1213,7 @@ msgstr ""
 #: FilterRules/isrelatedwithfiltermatch.py:53
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 msgid "People related to <filter>"
-msgstr "Individus reliées au <filtre>"
+msgstr "Individus reliés au <filtre>"
 
 #: FilterRules/isrelatedwithfiltermatch.py:55
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
@@ -1707,7 +1708,7 @@ msgstr "Échec à l'écriture de %s : %s"
 #: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
 #, python-format
 msgid "Failed to create directory structure : %s"
-msgstr "Impossible de créer le répertoire: %s"
+msgstr "Impossible de créer le répertoire : %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368
 #: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
@@ -7074,7 +7075,7 @@ msgstr ""
 #: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr "Taille de l'image : {width} x {height} pixels"
+msgstr "Taille de l'image : {width} × {height} pixels"
 
 #: EditExifMetadata/editexifmetadata.py:481
 #: EditExifMetadata/editexifmetadata.py:1440
