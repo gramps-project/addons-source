@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-16 11:34+0000\n"
+"PO-Revision-Date: 2025-03-23 20:35+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -19621,7 +19621,7 @@ msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
-msgstr ""
+msgstr "Praprarodiče"
 
 #: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
@@ -19638,10 +19638,8 @@ msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:61
 #: TimelineQuickview/TimelineQuickview.py:63
-#, fuzzy
-#| msgid "Age based gradient"
 msgid "great grandparents"
-msgstr "Přechod založený na věku"
+msgstr "praprarodiče"
 
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
