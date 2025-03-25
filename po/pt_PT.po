@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-14 07:11+0000\n"
+"PO-Revision-Date: 2025-03-24 17:49+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -1617,10 +1617,9 @@ msgstr "Opções de exportação GEXF"
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing to %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Falha ao escrever em %s"
+msgstr "Falha ao escrever em {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
@@ -1768,10 +1767,9 @@ msgstr ""
 "Deseja tentar criá-la?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-brace-format
-#| msgid "Failed to create %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "Falha ao criar %s: %s"
+msgstr "Falha ao criar {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -5914,16 +5912,15 @@ msgid "Writing %s reports..."
 msgstr "A escrever %s relatórios..."
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-brace-format
-#| msgid "%(report_count)s. Descendant Report for %(person_name)s"
+#, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr "%(report_count)s. Relatório Descendentes de %(person_name)s"
+msgstr "{report_count}. Descendentes de {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
 #, python-brace-format
 msgid "{report_count:d}. {name}"
-msgstr ""
+msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
@@ -5970,10 +5967,9 @@ msgid "Report, Generation, Person, Name"
 msgstr "Relatório, Geração, Indivíduo, Nome"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr "Veja o relatório: %s, geração %s, indivíduo %s"
+msgstr "Veja o relatório: {report}, geração: {generation}, indivíduo: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
@@ -5982,16 +5978,14 @@ msgid "Report appearances for %s"
 msgstr "Relatar aparições de %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
-#, fuzzy, python-brace-format
-#| msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Cônjuge de: relatório %s, geração %s, indivíduo %s"
+msgstr "Cônjuge de: {report}, geração {generation}, indivíduo {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
-#, fuzzy, python-brace-format
-#| msgid "Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Relatório: %s, geração %s, indivíduo %s"
+msgstr "Relatório: {report}, geração {generation}, indivíduo {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
@@ -6042,7 +6036,7 @@ msgstr " %(event_text)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:993
 #, python-brace-format
 msgid "Ref: {number}. {name}"
-msgstr ""
+msgstr "Ref.: {number}. {name}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
@@ -7118,145 +7112,127 @@ msgstr ""
 
 #: settings_ui_manager.py:103
 msgid "Middle Name Handling"
-msgstr ""
+msgstr "Gestão de nomes do meio"
 
 #: settings_ui_manager.py:108
-#, fuzzy
-#| msgid "Save Note"
 msgid "Leave alone"
-msgstr "Gravar nota"
+msgstr "Deixar em paz"
 
 #: settings_ui_manager.py:109
-#, fuzzy
-#| msgid "Generate"
 msgid "Separate"
-msgstr "Gerar"
+msgstr "Separar"
 
 #: settings_ui_manager.py:119
 msgid "URL Compactness Level"
-msgstr ""
+msgstr "Nível de compressão do URL"
 
 #: settings_ui_manager.py:125
 msgid "Shortest - No Prefix, No Variables"
-msgstr ""
+msgstr "Curto - sem prefixo nem variáveis"
 
 #: settings_ui_manager.py:128
 msgid "Compact - No Prefix, Variables Without Attributes"
-msgstr ""
+msgstr "Compacto - sem prefixo, variáveis sem atributos"
 
 #: settings_ui_manager.py:131
 msgid "Compact - No Prefix, Variables With Attributes"
-msgstr ""
+msgstr "Compacto - sem prefixo, variáveis com atributos"
 
 #: settings_ui_manager.py:134
 msgid "Long - Without Prefix on the Left"
-msgstr ""
+msgstr "Longo - sem prefixo à esquerda"
 
 #: settings_ui_manager.py:141
-#, fuzzy
-#| msgid "URL prefix path."
 msgid "URL Prefix Replacement"
-msgstr "Caminho prefixo do URL."
+msgstr "Substituição do prefixo do URL"
 
 #: settings_ui_manager.py:145
 msgid "Use OpenAI"
-msgstr ""
+msgstr "Usar OpenAI"
 
 #: settings_ui_manager.py:147
 msgid "OpenAI API Key"
-msgstr ""
+msgstr "Chave OpenAI API"
 
 #: settings_ui_manager.py:150
 msgid "Display 'Website URL' Column"
-msgstr ""
+msgstr "Mostrar coluna \"URL do sítio web\""
 
 #: settings_ui_manager.py:155
-#, fuzzy
-#| msgid "Display all"
 msgid "Display 'Vars' Column"
-msgstr "Mostrar tudo"
+msgstr "Mostrar coluna \"Var.\""
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "Show person"
 msgid "Show User Data Icon"
-msgstr "Mostrar indivíduo"
+msgstr "Mostrar ícone de dados do utilizador"
 
 #: settings_ui_manager.py:164
-#, fuzzy
-#| msgid "Show places"
 msgid "Show Flag Icons"
-msgstr "Mostrar locais"
+msgstr "Mostrar ícones de bandeiras"
 
 #: settings_ui_manager.py:168
 msgid "Show Links From Attributes"
-msgstr ""
+msgstr "Mostrar ligações de atributos"
 
 #: settings_ui_manager.py:181
 msgid "Enable CSV Files"
-msgstr ""
+msgstr "Permitir ficheiros CSV"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search"
 msgid "WebSearch"
-msgstr "Procurar"
+msgstr "Procurar na web"
 
 #: WebSearch.gpr.py:36
 msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
 msgstr ""
+"Consultas personalizadas para serviços em rede com base no registo activo de "
+"Indivíduo, Local, Família ou Fonte"
 
 #: qr_window.py:76
 msgid "QR-code"
-msgstr ""
+msgstr "Código QR"
 
 #: qr_window.py:114
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
 msgstr ""
+"⚠ Erro ao gerar código QR:\n"
+"Erro original: “{}”"
 
 #: WebSearch.py:1419
 msgid "Vars"
-msgstr ""
+msgstr "Var."
 
 #: WebSearch.py:1421
-#, fuzzy
-#| msgid "Web site title"
 msgid "Website URL"
-msgstr "Título da página “web”"
+msgstr "URL do sítio web"
 
 #: WebSearch.py:1424
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add link to note"
-msgstr "Adicionar nota de teste"
+msgstr "Adicionar ligação à nota"
 
 #: WebSearch.py:1425
-#, fuzzy
-#| msgid "Show places"
 msgid "Show QR-code"
-msgstr "Mostrar locais"
+msgstr "Mostrar código QR"
 
 #: WebSearch.py:1426
-#, fuzzy
-#| msgid "Collections Clipboard"
 msgid "Copy link to clipboard"
-msgstr "Área de transferência de colecções"
+msgstr "Copiar ligação para a memória"
 
 #: WebSearch.py:1428
 msgid "Hide link for selected item"
-msgstr ""
+msgstr "Ocultar ligação para o item seleccionado"
 
 #: WebSearch.py:1430
 msgid "Hide link for all items"
-msgstr ""
+msgstr "Ocultar ligação para todos os itens"
 
 #: WebSearch.py:1432
 msgid "🔍 AI Suggestions"
-msgstr ""
+msgstr "🔍 Sugestões IA"
 
 #: WebSearch.py:1549
 #, python-brace-format
@@ -7269,43 +7245,45 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this person."
 msgstr ""
+"📌 Esta ligação web foi adicionada pelo gramplet WebSearch para referência "
+"futura:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Pode utilizá-la para voltar à fonte e verificar a informação relacionada com "
+"este indivíduo."
 
 #: WebSearch.py:1560
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add Web Link Note"
-msgstr "Adicionar nota de teste"
+msgstr "Adicionar nota à ligação web"
 
 #: WebSearch.py:1596
 msgid "URL is copied to the Clipboard"
-msgstr ""
+msgstr "URL copiado para a memória"
 
 #: WebSearch.py:1656
-#, fuzzy
-#| msgid "Search in:"
 msgid "WebSearch Link"
-msgstr "Procurar em:"
+msgstr "Ligação WebSearch"
 
 #: WebSearch.py:1701
-#, fuzzy, python-brace-format
-#| msgid "Web site title"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Título da página “web”"
+msgstr "Título: {title}\n"
 
 #: WebSearch.py:1703
 #, python-brace-format
 msgid "Replaced: {variables}\n"
-msgstr ""
+msgstr "Substituído: {variables}\n"
 
 #: WebSearch.py:1707
 #, python-brace-format
 msgid "Empty: {variables}\n"
-msgstr ""
+msgstr "Vazio: {variables}\n"
 
 #: WebSearch.py:1711
 #, python-brace-format
 msgid "Comment: {comment}\n"
-msgstr ""
+msgstr "Comentário: {comment}\n"
 
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
@@ -19604,10 +19582,9 @@ msgid "Enter SQL query"
 msgstr "Insira uma consulta SQL"
 
 #: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, fuzzy, python-brace-format
-#| msgid "%d rows processed in %s seconds.\n"
+#, python-brace-format
 msgid "{rows:d} rows processed in {secs} seconds.\n"
-msgstr "%d linhas processadas em %s segundos.\n"
+msgstr "{rows:d} linhas processadas em {secs} segundos.\n"
 
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
