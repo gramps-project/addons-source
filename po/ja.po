@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-09 22:42+0000\n"
+"POT-Creation-Date: 2025-03-24 13:38+0000\n"
 "PO-Revision-Date: 2025-03-24 10:31+0000\n"
 "Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
@@ -45,7 +45,8 @@ msgstr "メディアの結合"
 msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
-msgstr "データベース全体を検索し、同じパスを持つメディアを探してそれらを結合します。"
+msgstr ""
+"データベース全体を検索し、同じパスを持つメディアを探してそれらを結合します。"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: AttachSourceTool/AttachSourceTool.py:70
@@ -69,7 +70,8 @@ msgstr "以前に追加したイベント、メモ、ソースを削除"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
-msgstr "計算されたイベント、メモ、ソースを削除します。実行時に直ちに実行されます"
+msgstr ""
+"計算されたイベント、メモ、ソースを削除します。実行時に直ちに実行されます"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
@@ -162,19 +164,17 @@ msgstr ""
 "\n"
 "1. [オプション] タブに移動します\n"
 "2. [ ] 削除オプションをチェックして、以前の推定値を削除します\n"
-"3. 日付付きまたは日付なしのイベントの日付を追加するには、"
-"日付追加オプションを選択します\n"
+"3. 日付付きまたは日付なしのイベントの日付を追加するには、日付追加オプションを"
+"選択します\n"
 "4. [実行] をクリックします\n"
 "5. イベントを追加する人々を選択します\n"
 "6. [選択したイベントを追加] ボタンをクリックして作成します\n"
 "\n"
-"注 : "
-"イベントを永続的にする場合は、ソースから削除してください。そうしないと、次回"
-"これらのイベントを自動的に削除したときに削除されます。\n"
+"注 : イベントを永続的にする場合は、ソースから削除してください。そうしないと、"
+"次回これらのイベントを自動的に削除したときに削除されます。\n"
 "\n"
-"すべてのイベントを追加するには、"
-"ツールを繰り返し実行する必要がある場合があります "
-"(以前のイベントを削除せずに)。"
+"すべてのイベントを追加するには、ツールを繰り返し実行する必要がある場合があり"
+"ます (以前のイベントを削除せずに)。"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
@@ -205,7 +205,8 @@ msgstr "イベント、メモ、ソースを削除してデータを再選択す
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
-msgstr "以前のイベント、メモ、ソースを削除してデータを再選択してもよろしいですか?"
+msgstr ""
+"以前のイベント、メモ、ソースを削除してデータを再選択してもよろしいですか?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
@@ -756,8 +757,9 @@ msgstr "場所のクリーンアップ"
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
-msgstr "場所のクリーンアップ Gramplet は、場所のマージや、GeoNames Web "
-"データベースからの場所の補完に役立ちます"
+msgstr ""
+"場所のクリーンアップ Gramplet は、場所のマージや、GeoNames Web データベースか"
+"らの場所の補完に役立ちます"
 
 #: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1088
 msgid ""
@@ -799,7 +801,8 @@ msgstr "詳細についてはヘルプボタンを使用してください"
 msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
 "the place manually."
-msgstr "タイトルを変更するか、「編集」ボタンを使用してこの場所のレベルを手動で完了し"
+msgstr ""
+"タイトルを変更するか、「編集」ボタンを使用してこの場所のレベルを手動で完了し"
 "てください。"
 
 #: PlaceCleanup/placecleanup.py:347
@@ -1027,8 +1030,8 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
-"すでに囲まれている場所をクリーンアップする場合、これは実行内容に影響します。"
-"\n"
+"すでに囲まれている場所をクリーンアップする場合、これは実行内容に影響しま"
+"す。\n"
 "「<b>現在の囲いを保持</b>」を選択した場合、囲んでいる場所は変更されません。\n"
 "「<b>GeoNames 囲いに置換</b>」を選択した場合、囲まれている場所は次のレベルの "
 "GeoNames 場所に変更されます。.  \n"
@@ -1067,9 +1070,8 @@ msgid ""
 "For use when the initial component of the Title is too detailed to be found "
 "in the gazetteer."
 msgstr ""
-"タイトルを分割し、手動で編集し、次の階層レベルで囲みます。    "
-"タイトルの最初のコンポーネントが詳細すぎて地名辞典で見つからない場合に使用し"
-"ます。"
+"タイトルを分割し、手動で編集し、次の階層レベルで囲みます。    タイトルの最初"
+"のコンポーネントが詳細すぎて地名辞典で見つからない場合に使用します。"
 
 #: PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
@@ -1085,7 +1087,8 @@ msgstr "環境設定"
 
 #: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
-msgstr "クリーンアップ プロセスを続行するには、これらの場所のいずれかを選択します。"
+msgstr ""
+"クリーンアップ プロセスを続行するには、これらの場所のいずれかを選択します。"
 
 #: PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
@@ -1095,9 +1098,9 @@ msgstr "検索結果の場所"
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
-msgstr "「人口密集地」チェックボックスをオンにすると、GeoNames "
-"検索に「人口密集地」、つまり人が住み、働いている場所が含まれるようになります"
-"。"
+msgstr ""
+"「人口密集地」チェックボックスをオンにすると、GeoNames 検索に「人口密集地」、"
+"つまり人が住み、働いている場所が含まれるようになります。"
 
 #: PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
@@ -1107,16 +1110,18 @@ msgstr "人口が多い"
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
-msgstr "「管理」チェックボックスをオンにすると、GeoNames 検索に行政区分 "
-"(国、州、郡など) が含まれるようになります。"
+msgstr ""
+"「管理」チェックボックスをオンにすると、GeoNames 検索に行政区分 (国、州、郡な"
+"ど) が含まれるようになります。"
 
 #: PlaceCleanup/placecleanup.glade:1148
 msgid ""
 "Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
-msgstr "「スポット」チェックボックスをオンにすると、GeoNames "
-"検索にさまざまな他の場所 (教会、墓地、建物など) が含まれるようになります。"
+msgstr ""
+"「スポット」チェックボックスをオンにすると、GeoNames 検索にさまざまな他の場"
+"所 (教会、墓地、建物など) が含まれるようになります。"
 
 #: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
@@ -1301,10 +1306,10 @@ msgstr "アクティブな人に一致"
 msgid "Age in years at person's death."
 msgstr "人が死亡したときの年齢。"
 
-#: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
+#: FilterRules/ageatdeath.py:71 SourceIndex/death.glade:521
+#: SourceIndex/death.glade:669 SourceIndex/death.glade:939
+#: SourceIndex/witness.glade:107 SourceIndex/census.glade:286
 #: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
-#: SourceIndex/death.glade:521 SourceIndex/death.glade:669
-#: SourceIndex/death.glade:939 SourceIndex/census.glade:286
 #: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
 #: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
 #: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
@@ -1553,7 +1558,8 @@ msgstr "最初に残された配偶者"
 msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
-msgstr "複数の配偶者のうち最初の配偶者を常に左側に記入します。これにより、複数の結婚"
+msgstr ""
+"複数の配偶者のうち最初の配偶者を常に左側に記入します。これにより、複数の結婚"
 "による境界線の交差を減らすことができます。"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
@@ -1574,25 +1580,27 @@ msgstr "GEXF エクスポート オプション"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785
-#: D3Charts/DescendantIndentedTree.py:1500
-#: D3Charts/DescendantIndentedTree.py:1563
-#: D3Charts/DescendantIndentedTree.py:1570
-#: D3Charts/DescendantIndentedTree.py:1677
-#: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
+#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
 #: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "%s : %s の書き込みに失敗"
+#: D3Charts/DescendantIndentedTree.py:1499
+#: D3Charts/DescendantIndentedTree.py:1562
+#: D3Charts/DescendantIndentedTree.py:1569
+#: D3Charts/DescendantIndentedTree.py:1676
+#: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
+#: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
+#, fuzzy, python-brace-format
+#| msgid "Failure writing to %s"
+msgid "Failure writing {target_path}: {message}"
+msgstr "%s への書き込みに失敗しました"
 
-#: D3Charts/AncestralCollapsibleTree.py:345
-#: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
+#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
+#: D3Charts/DescendantIndentedTree.py:1518
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr "ディレクトリ構造の作成に失敗 : %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:368
-#: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
+#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
+#: D3Charts/DescendantIndentedTree.py:1554
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "Web ファイルのコピーに失敗 : %s"
@@ -1601,8 +1609,8 @@ msgstr "Web ファイルのコピーに失敗 : %s"
 msgid "Ancestral Collapsible Tree Options"
 msgstr "祖先折りたたみツリーオプション"
 
-#: D3Charts/AncestralCollapsibleTree.py:840
-#: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
+#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
+#: D3Charts/DescendantIndentedTree.py:1803
 msgid "Include Generations"
 msgstr "世代を含める"
 
@@ -1638,309 +1646,33 @@ msgstr "女性の拡張可能な背景"
 msgid "RGB-color for female expandable box background."
 msgstr "女性の拡張ボックスの背景のRGBカラー。"
 
-#: D3Charts/AncestralCollapsibleTree.py:867
-#: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
+#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
+#: D3Charts/DescendantIndentedTree.py:1825
 msgid "The destination path for generated files."
 msgstr "生成されたファイルの保存先パス。"
 
-#: D3Charts/AncestralCollapsibleTree.py:872
-#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
+#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
+#: D3Charts/DescendantIndentedTree.py:1830
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
 msgstr "HTML コンテンツの保存先ファイル名。"
 
-#: D3Charts/AncestralFanChart.gpr.py:23
-msgid "Ancestral Fan Chart"
-msgstr "祖先扇形チャート"
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
+msgstr "祖先の折りたたみ式ツリー"
 
-#: D3Charts/AncestralFanChart.gpr.py:33
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Fan Chart from the D3.js JavaScript library."
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
-"D3.js JavaScript ライブラリからファン "
-"チャートとして表される祖先のグラフィカル表現 (SVG) を含む Web "
-"ページを生成します。"
+"D3.js JavaScript ライブラリから折りたたみ可能なツリー レイアウトとして表され"
+"る祖先のグラフィカル表現 (SVG) を含む Web ページを生成します。"
 
-#: D3Charts/DescendantIndentedTree.py:673
-#, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "表示 %(reference)s : %(spouse)s"
-
-#: D3Charts/DescendantIndentedTree.py:764
-msgid "Generating report..."
-msgstr "レポートの生成中..."
-
-#: D3Charts/DescendantIndentedTree.py:909
 #: D3Charts/DescendantIndentedTree.gpr.py:23
+#: D3Charts/DescendantIndentedTree.py:909
 msgid "Descendant Indented Tree"
 msgstr "子孫インデントツリー"
-
-#: D3Charts/DescendantIndentedTree.py:1364
-msgid "Invalid Destination Directory"
-msgstr "無効な宛先ディレクトリ"
-
-#: D3Charts/DescendantIndentedTree.py:1365
-#, python-format
-msgid ""
-"Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it?"
-msgstr ""
-"宛先ディレクトリ %s が存在しません\n"
-"作成しますか?"
-
-#: D3Charts/DescendantIndentedTree.py:1374
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "作成失敗 %s : %s"
-
-#: D3Charts/DescendantIndentedTree.py:1391
-#, python-format
-msgid ""
-"Destination file %s already exists.\n"
-"Do you want to overwrite it?"
-msgstr ""
-"宛先ファイル %s は既に存在します。\n"
-"上書きしますか?"
-
-#: D3Charts/DescendantIndentedTree.py:1446
-msgid "Default View"
-msgstr "既定の表示"
-
-#: D3Charts/DescendantIndentedTree.py:1449
-msgid "Expand All"
-msgstr "すべて展開"
-
-#: D3Charts/DescendantIndentedTree.py:1811
-msgid "Include contraction level"
-msgstr "収縮レベルを含める"
-
-#: D3Charts/DescendantIndentedTree.py:1813
-msgid "The number of descendant levels to contract on initial display."
-msgstr "初期表示時に縮小する子孫レベルの数。"
-
-#: D3Charts/DescendantIndentedTree.py:1820
-msgid "The font size in pixels for each node."
-msgstr "各ノードのフォント サイズ (ピクセル単位)。"
-
-#: D3Charts/DescendantIndentedTree.py:1848
-#: DescendantBooks/DescendantBookReport.py:552
-msgid "Whether to show duplicate family trees in the report."
-msgstr "レポートに重複した家系図を表示するかどうか。"
-
-#: D3Charts/DescendantIndentedTree.py:1852
-msgid "Expanded Row Background Color"
-msgstr "展開行の背景色"
-
-#: D3Charts/DescendantIndentedTree.py:1853
-msgid "RGB-color for expanded row background."
-msgstr "展開された行の背景の RGB カラー。"
-
-#: D3Charts/DescendantIndentedTree.py:1856
-msgid "Expandable Background Color"
-msgstr "拡張可能な背景色"
-
-#: D3Charts/DescendantIndentedTree.py:1858
-msgid "RGB-color for expandable row background."
-msgstr "拡張可能な行の背景の RGB カラー。"
-
-#: D3Charts/DescendantIndentedTree.py:1861
-msgid "Non-Expandable Background Color"
-msgstr "拡張不可の背景色"
-
-#: D3Charts/DescendantIndentedTree.py:1863
-msgid "RGB-color for non-expandable row background."
-msgstr "展開できない行の背景の RGB カラー。"
-
-#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
-msgid "Include records marked private"
-msgstr "非公開とマークされたレコードを含める"
-
-#: D3Charts/DescendantIndentedTree.py:1869
-msgid "Whether to include private objects."
-msgstr "プライベートオブジェクトを含めるかどうか。"
-
-#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
-msgid "Include Last Name Only"
-msgstr "姓のみを含める"
-
-#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
-msgid "Include Full Name Only"
-msgstr "フルネームのみ含める"
-
-#: D3Charts/DescendantIndentedTree.py:1881
-msgid "How to handle living people."
-msgstr "生きている人間をどう扱うか。"
-
-#: D3Charts/DescendantIndentedTree.py:1888
-msgid "Whether or not to include people who may have recently died."
-msgstr "最近亡くなった可能性のある人を含めるかどうか。"
-
-#: D3Charts/DescendantIndentedTree.py:1896
-msgid "Navigation"
-msgstr "ナビゲーション"
-
-#: D3Charts/DescendantIndentedTree.py:1898
-msgid "Contraction/Expansion mechanism"
-msgstr "収縮 / 拡張機構"
-
-#: D3Charts/DescendantIndentedTree.py:1901
-msgid "Entire node."
-msgstr "ノード全体。"
-
-#: D3Charts/DescendantIndentedTree.py:1902
-msgid "Arrow images at start of node."
-msgstr "ノードの先頭にある矢印画像。"
-
-#: D3Charts/DescendantIndentedTree.py:1903
-msgid "Plus/Minus images at start of node."
-msgstr "ノードの開始時のプラス/マイナス画像。"
-
-#: D3Charts/DescendantIndentedTree.py:1904
-#: D3Charts/DescendantIndentedTree.py:1933
-msgid "Where to click to expand/contract nodes."
-msgstr "ノードを展開/縮小するためにクリックする場所。"
-
-#: D3Charts/DescendantIndentedTree.py:1908
-msgid "Auto-generate HREF links for nodes"
-msgstr "ノードのHREFリンクを自動生成"
-
-#: D3Charts/DescendantIndentedTree.py:1910
-msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr "レポート上の各ノードに対して HTML リンクを自動生成するかどうか。"
-
-#: D3Charts/DescendantIndentedTree.py:1916
-msgid "URL prefix path."
-msgstr "URL プレフィックス パス。"
-
-#: D3Charts/DescendantIndentedTree.py:1918
-msgid "URL prefix to apply to each auto-generated HREF link."
-msgstr "自動生成された各 HREF リンクに適用する URL プレフィックス。"
-
-#: D3Charts/DescendantIndentedTree.py:1924
-msgid "URL file extension"
-msgstr "URLファイル拡張子"
-
-#: D3Charts/DescendantIndentedTree.py:1926
-msgid "No file extension."
-msgstr "ファイル拡張子がありません。"
-
-#: D3Charts/DescendantIndentedTree.py:1927
-msgid ".html"
-msgstr ".html"
-
-#: D3Charts/DescendantIndentedTree.py:1928
-msgid ".htm"
-msgstr ".htm"
-
-#: D3Charts/DescendantIndentedTree.py:1929
-msgid ".shtml"
-msgstr ".shtml"
-
-#: D3Charts/DescendantIndentedTree.py:1930
-msgid ".php"
-msgstr ".php"
-
-#: D3Charts/DescendantIndentedTree.py:1931
-msgid ".php3"
-msgstr ".php3"
-
-#: D3Charts/DescendantIndentedTree.py:1932
-msgid ".cgi"
-msgstr ".cgi"
-
-#: D3Charts/DescendantIndentedTree.py:1938
-msgid "URL file name delimeter"
-msgstr "URLファイル名区切り文字"
-
-#: D3Charts/DescendantIndentedTree.py:1940
-msgid "Remove all whitespace."
-msgstr "すべての空白を削除する。"
-
-#: D3Charts/DescendantIndentedTree.py:1941
-msgid "Replace whitespace with dash(-)."
-msgstr "空白をダッシュ(-)に置き換える。"
-
-#: D3Charts/DescendantIndentedTree.py:1942
-msgid "Replace whitespace with underscore(_)"
-msgstr "空白をアンダースコア(_)に置き換える"
-
-#: D3Charts/DescendantIndentedTree.py:1943
-msgid "What to use as file name delimiter replacing whitespace."
-msgstr "空白を置き換えるファイル名の区切り文字として使用するもの。"
-
-#: D3Charts/DescendantIndentedTree.py:1948
-msgid "Generations to generate HREF links"
-msgstr "HREFリンクを生成する世代"
-
-#: D3Charts/DescendantIndentedTree.py:1950
-msgid "The number of generations to generate HREF links."
-msgstr "HREF リンクを生成する世代数。"
-
-#: D3Charts/DescendantIndentedTree.py:1956
-msgid "Exclude persons who died before (years)"
-msgstr "(years) 以前に死亡した人を除外する"
-
-#: D3Charts/DescendantIndentedTree.py:1959
-msgid ""
-"Whether to generate links for people who died in infancy, -1 excludes nobody."
-msgstr "幼児期に亡くなった人へのリンクを生成するかどうか。-1 は誰も除外しません。"
-
-#: D3Charts/DescendantIndentedTree.py:1965
-msgid "Exclude center person"
-msgstr "中心人物を除外"
-
-#: D3Charts/DescendantIndentedTree.py:1966
-msgid "Whether or not to generate links for center person."
-msgstr "中心人物へのリンクを生成するかどうか。"
-
-#: D3Charts/DescendantIndentedTree.py:1971
-msgid "Exclude Spouses"
-msgstr "配偶者を除外"
-
-#: D3Charts/DescendantIndentedTree.py:1972
-msgid "Whether or not to generate links for spouses."
-msgstr "配偶者のリンクを生成するかどうか。"
-
-#: D3Charts/DescendantIndentedTree.py:1979
-msgid "Biography Content"
-msgstr "略歴の内容"
-
-#: D3Charts/DescendantIndentedTree.py:1981
-msgid "Show biography tooltips"
-msgstr "経歴のツールチップを表示"
-
-#: D3Charts/DescendantIndentedTree.py:1982
-msgid "Whether to show biography tooltips when hovering over a node."
-msgstr "ノードにマウスを移動したときに経歴のツールチップを表示するかどうか。"
-
-#: D3Charts/DescendantIndentedTree.py:2026
-msgid "Text Color"
-msgstr "文字の色"
-
-#: D3Charts/DescendantIndentedTree.py:2028
-msgid "RGB-color for biography text."
-msgstr "経歴文字の RGB カラー。"
-
-#: D3Charts/DescendantIndentedTree.py:2033
-msgid "RGB-color for biography tooltip."
-msgstr "経歴ツールチップの RGB カラー。"
-
-#: D3Charts/DescendantIndentedTree.py:2036
-msgid "Header Font size"
-msgstr "ヘッダのフォントサイズ"
-
-#: D3Charts/DescendantIndentedTree.py:2038
-msgid "The font size in pixels for biography header text."
-msgstr "経歴のヘッダーテキストのフォント サイズ (ピクセル単位)。"
-
-#: D3Charts/DescendantIndentedTree.py:2044
-msgid "Body Font size"
-msgstr "本文フォントサイズ"
-
-#: D3Charts/DescendantIndentedTree.py:2046
-msgid "The font size in pixels for biography body text."
-msgstr "経歴本文のフォント サイズ (ピクセル単位)。"
 
 #: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
@@ -1948,9 +1680,9 @@ msgid ""
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
 "library."
 msgstr ""
-"D3.js JavaScript ライブラリから、折りたたみ可能なインデントされたツリー "
-"レイアウトとして表される子孫のグラフィカル表現 (SVG) を含む Web "
-"ページを生成します。"
+"D3.js JavaScript ライブラリから、折りたたみ可能なインデントされたツリー レイ"
+"アウトとして表される子孫のグラフィカル表現 (SVG) を含む Web ページを生成しま"
+"す。"
 
 #: D3Charts/AncestralFanChart.py:707
 msgid "Ancestral Fan Chart Options"
@@ -1972,18 +1704,294 @@ msgstr "母方の背景"
 msgid "RGB-color for maternal box background."
 msgstr "母方ボックスの背景の RGB カラー。"
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr "祖先の折りたたみ式ツリー"
+#: D3Charts/AncestralFanChart.gpr.py:23
+msgid "Ancestral Fan Chart"
+msgstr "祖先扇形チャート"
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
+#: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+"represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
-"D3.js JavaScript ライブラリから折りたたみ可能なツリー "
-"レイアウトとして表される祖先のグラフィカル表現 (SVG) を含む Web "
-"ページを生成します。"
+"D3.js JavaScript ライブラリからファン チャートとして表される祖先のグラフィカ"
+"ル表現 (SVG) を含む Web ページを生成します。"
+
+#: D3Charts/DescendantIndentedTree.py:673
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "表示 %(reference)s : %(spouse)s"
+
+#: D3Charts/DescendantIndentedTree.py:764
+msgid "Generating report..."
+msgstr "レポートの生成中..."
+
+#: D3Charts/DescendantIndentedTree.py:1364
+msgid "Invalid Destination Directory"
+msgstr "無効な宛先ディレクトリ"
+
+#: D3Charts/DescendantIndentedTree.py:1365
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"宛先ディレクトリ %s が存在しません\n"
+"作成しますか?"
+
+#: D3Charts/DescendantIndentedTree.py:1374
+#, fuzzy, python-brace-format
+#| msgid "Failed to create %s: %s"
+msgid "Failed to create {target_path}: {message}"
+msgstr "作成失敗 %s : %s"
+
+#: D3Charts/DescendantIndentedTree.py:1390
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"宛先ファイル %s は既に存在します。\n"
+"上書きしますか?"
+
+#: D3Charts/DescendantIndentedTree.py:1445
+msgid "Default View"
+msgstr "既定の表示"
+
+#: D3Charts/DescendantIndentedTree.py:1448
+msgid "Expand All"
+msgstr "すべて展開"
+
+#: D3Charts/DescendantIndentedTree.py:1810
+msgid "Include contraction level"
+msgstr "収縮レベルを含める"
+
+#: D3Charts/DescendantIndentedTree.py:1812
+msgid "The number of descendant levels to contract on initial display."
+msgstr "初期表示時に縮小する子孫レベルの数。"
+
+#: D3Charts/DescendantIndentedTree.py:1819
+msgid "The font size in pixels for each node."
+msgstr "各ノードのフォント サイズ (ピクセル単位)。"
+
+#: D3Charts/DescendantIndentedTree.py:1847
+#: DescendantBooks/DescendantBookReport.py:552
+msgid "Whether to show duplicate family trees in the report."
+msgstr "レポートに重複した家系図を表示するかどうか。"
+
+#: D3Charts/DescendantIndentedTree.py:1851
+msgid "Expanded Row Background Color"
+msgstr "展開行の背景色"
+
+#: D3Charts/DescendantIndentedTree.py:1852
+msgid "RGB-color for expanded row background."
+msgstr "展開された行の背景の RGB カラー。"
+
+#: D3Charts/DescendantIndentedTree.py:1855
+msgid "Expandable Background Color"
+msgstr "拡張可能な背景色"
+
+#: D3Charts/DescendantIndentedTree.py:1857
+msgid "RGB-color for expandable row background."
+msgstr "拡張可能な行の背景の RGB カラー。"
+
+#: D3Charts/DescendantIndentedTree.py:1860
+msgid "Non-Expandable Background Color"
+msgstr "拡張不可の背景色"
+
+#: D3Charts/DescendantIndentedTree.py:1862
+msgid "RGB-color for non-expandable row background."
+msgstr "展開できない行の背景の RGB カラー。"
+
+#: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
+msgid "Include records marked private"
+msgstr "非公開とマークされたレコードを含める"
+
+#: D3Charts/DescendantIndentedTree.py:1868
+msgid "Whether to include private objects."
+msgstr "プライベートオブジェクトを含めるかどうか。"
+
+#: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
+msgid "Include Last Name Only"
+msgstr "姓のみを含める"
+
+#: D3Charts/DescendantIndentedTree.py:1878 DynamicWeb/dynamicweb.py:4822
+msgid "Include Full Name Only"
+msgstr "フルネームのみ含める"
+
+#: D3Charts/DescendantIndentedTree.py:1880
+msgid "How to handle living people."
+msgstr "生きている人間をどう扱うか。"
+
+#: D3Charts/DescendantIndentedTree.py:1887
+msgid "Whether or not to include people who may have recently died."
+msgstr "最近亡くなった可能性のある人を含めるかどうか。"
+
+#: D3Charts/DescendantIndentedTree.py:1895
+msgid "Navigation"
+msgstr "ナビゲーション"
+
+#: D3Charts/DescendantIndentedTree.py:1897
+msgid "Contraction/Expansion mechanism"
+msgstr "収縮 / 拡張機構"
+
+#: D3Charts/DescendantIndentedTree.py:1900
+msgid "Entire node."
+msgstr "ノード全体。"
+
+#: D3Charts/DescendantIndentedTree.py:1901
+msgid "Arrow images at start of node."
+msgstr "ノードの先頭にある矢印画像。"
+
+#: D3Charts/DescendantIndentedTree.py:1902
+msgid "Plus/Minus images at start of node."
+msgstr "ノードの開始時のプラス/マイナス画像。"
+
+#: D3Charts/DescendantIndentedTree.py:1903
+#: D3Charts/DescendantIndentedTree.py:1932
+msgid "Where to click to expand/contract nodes."
+msgstr "ノードを展開/縮小するためにクリックする場所。"
+
+#: D3Charts/DescendantIndentedTree.py:1907
+msgid "Auto-generate HREF links for nodes"
+msgstr "ノードのHREFリンクを自動生成"
+
+#: D3Charts/DescendantIndentedTree.py:1909
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr "レポート上の各ノードに対して HTML リンクを自動生成するかどうか。"
+
+#: D3Charts/DescendantIndentedTree.py:1915
+msgid "URL prefix path."
+msgstr "URL プレフィックス パス。"
+
+#: D3Charts/DescendantIndentedTree.py:1917
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr "自動生成された各 HREF リンクに適用する URL プレフィックス。"
+
+#: D3Charts/DescendantIndentedTree.py:1923
+msgid "URL file extension"
+msgstr "URLファイル拡張子"
+
+#: D3Charts/DescendantIndentedTree.py:1925
+msgid "No file extension."
+msgstr "ファイル拡張子がありません。"
+
+#: D3Charts/DescendantIndentedTree.py:1926
+msgid ".html"
+msgstr ".html"
+
+#: D3Charts/DescendantIndentedTree.py:1927
+msgid ".htm"
+msgstr ".htm"
+
+#: D3Charts/DescendantIndentedTree.py:1928
+msgid ".shtml"
+msgstr ".shtml"
+
+#: D3Charts/DescendantIndentedTree.py:1929
+msgid ".php"
+msgstr ".php"
+
+#: D3Charts/DescendantIndentedTree.py:1930
+msgid ".php3"
+msgstr ".php3"
+
+#: D3Charts/DescendantIndentedTree.py:1931
+msgid ".cgi"
+msgstr ".cgi"
+
+#: D3Charts/DescendantIndentedTree.py:1937
+msgid "URL file name delimeter"
+msgstr "URLファイル名区切り文字"
+
+#: D3Charts/DescendantIndentedTree.py:1939
+msgid "Remove all whitespace."
+msgstr "すべての空白を削除する。"
+
+#: D3Charts/DescendantIndentedTree.py:1940
+msgid "Replace whitespace with dash(-)."
+msgstr "空白をダッシュ(-)に置き換える。"
+
+#: D3Charts/DescendantIndentedTree.py:1941
+msgid "Replace whitespace with underscore(_)"
+msgstr "空白をアンダースコア(_)に置き換える"
+
+#: D3Charts/DescendantIndentedTree.py:1942
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "空白を置き換えるファイル名の区切り文字として使用するもの。"
+
+#: D3Charts/DescendantIndentedTree.py:1947
+msgid "Generations to generate HREF links"
+msgstr "HREFリンクを生成する世代"
+
+#: D3Charts/DescendantIndentedTree.py:1949
+msgid "The number of generations to generate HREF links."
+msgstr "HREF リンクを生成する世代数。"
+
+#: D3Charts/DescendantIndentedTree.py:1955
+msgid "Exclude persons who died before (years)"
+msgstr "(years) 以前に死亡した人を除外する"
+
+#: D3Charts/DescendantIndentedTree.py:1958
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr ""
+"幼児期に亡くなった人へのリンクを生成するかどうか。-1 は誰も除外しません。"
+
+#: D3Charts/DescendantIndentedTree.py:1964
+msgid "Exclude center person"
+msgstr "中心人物を除外"
+
+#: D3Charts/DescendantIndentedTree.py:1965
+msgid "Whether or not to generate links for center person."
+msgstr "中心人物へのリンクを生成するかどうか。"
+
+#: D3Charts/DescendantIndentedTree.py:1970
+msgid "Exclude Spouses"
+msgstr "配偶者を除外"
+
+#: D3Charts/DescendantIndentedTree.py:1971
+msgid "Whether or not to generate links for spouses."
+msgstr "配偶者のリンクを生成するかどうか。"
+
+#: D3Charts/DescendantIndentedTree.py:1978
+msgid "Biography Content"
+msgstr "略歴の内容"
+
+#: D3Charts/DescendantIndentedTree.py:1980
+msgid "Show biography tooltips"
+msgstr "経歴のツールチップを表示"
+
+#: D3Charts/DescendantIndentedTree.py:1981
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "ノードにマウスを移動したときに経歴のツールチップを表示するかどうか。"
+
+#: D3Charts/DescendantIndentedTree.py:2025
+msgid "Text Color"
+msgstr "文字の色"
+
+#: D3Charts/DescendantIndentedTree.py:2027
+msgid "RGB-color for biography text."
+msgstr "経歴文字の RGB カラー。"
+
+#: D3Charts/DescendantIndentedTree.py:2032
+msgid "RGB-color for biography tooltip."
+msgstr "経歴ツールチップの RGB カラー。"
+
+#: D3Charts/DescendantIndentedTree.py:2035
+msgid "Header Font size"
+msgstr "ヘッダのフォントサイズ"
+
+#: D3Charts/DescendantIndentedTree.py:2037
+msgid "The font size in pixels for biography header text."
+msgstr "経歴のヘッダーテキストのフォント サイズ (ピクセル単位)。"
+
+#: D3Charts/DescendantIndentedTree.py:2043
+msgid "Body Font size"
+msgstr "本文フォントサイズ"
+
+#: D3Charts/DescendantIndentedTree.py:2045
+msgid "The font size in pixels for biography body text."
+msgstr "経歴本文のフォント サイズ (ピクセル単位)。"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
 msgid "SV Web Connect Pack"
@@ -2088,9 +2096,9 @@ msgstr "アドオンの変更が安全に完了するように、Gramps を再�
 #: PluginManager\PluginManager.py:353
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
-msgstr "'%s' "
-"ディレクトリの削除中にエラーが発生しました。アンインストールが失敗した可能性"
-"があります"
+msgstr ""
+"'%s' ディレクトリの削除中にエラーが発生しました。アンインストールが失敗した可"
+"能性があります"
 
 #: PluginManager\PluginManager.py:402
 msgid ""
@@ -2184,9 +2192,9 @@ msgstr "部分文字列のみを置き換え"
 msgid ""
 "If True only the substring will be replaced, otherwise the whole description "
 "will be deleted and replaced by the new one."
-msgstr "True "
-"の場合は部分文字列のみが置き換えられ、それ以外の場合は説明全体が削除され、新"
-"しい説明に置き換えられます。"
+msgstr ""
+"True の場合は部分文字列のみが置き換えられ、それ以外の場合は説明全体が削除さ"
+"れ、新しい説明に置き換えられます。"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:151
 msgid "Allow regex"
@@ -2247,7 +2255,8 @@ msgstr "検証"
 
 #: MediaVerify/MediaVerify.py:107
 msgid "Check media paths and report missing, duplicate and extra files"
-msgstr "メディアパスをチェックし、不足しているファイル、重複しているファイル、余分な"
+msgstr ""
+"メディアパスをチェックし、不足しているファイル、重複しているファイル、余分な"
 "ファイルを報告します"
 
 #: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
@@ -2295,8 +2304,9 @@ msgstr "メディアハッシュの設定"
 msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
-msgstr "メディア パスが設定されていません。環境設定で「相対メディア パスのベース "
-"パス」を設定する必要があります。"
+msgstr ""
+"メディア パスが設定されていません。環境設定で「相対メディア パスのベース パ"
+"ス」を設定する必要があります。"
 
 #: MediaVerify/MediaVerify.py:307
 msgid "Finding files"
@@ -2374,7 +2384,8 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:55
 msgid "Create and load an empty new tree to import a backup (or"
-msgstr "空の新しいツリーを作成して読み込み、バックアップをインポートします (または"
+msgstr ""
+"空の新しいツリーを作成して読み込み、バックアップをインポートします (または"
 
 #: Betawhatsnext/Betawhatsnext.py:56
 msgid ""
@@ -2387,7 +2398,8 @@ msgstr ""
 #: Betawhatsnext/Betawhatsnext.py:70
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
-msgstr "Gramplet オプションを変更するには、「表示」メニューの「設定」を使用します。"
+msgstr ""
+"Gramplet オプションを変更するには、「表示」メニューの「設定」を使用します。"
 
 #: Betawhatsnext/Betawhatsnext.py:86
 msgid "Search Quota "
@@ -2438,14 +2450,12 @@ msgstr ""
 " 👣 次のステップ :\n"
 " 家族とその家族内の人物を追加 :\n"
 "  • 家族は「追加」メニューから追加できます\n"
-"  • "
-"配偶者（「父/パートナー1」または「母/パートナー2」）パネルまたは「子供」タブ"
-"で「+」（プラス）を押すと、人物を追加できます。\n"
+"  • 配偶者（「父/パートナー1」または「母/パートナー2」）パネルまたは「子供」"
+"タブで「+」（プラス）を押すと、人物を追加できます。\n"
 "\n"
 "または外部ファイルから人物をインポートする :\n"
-"  • "
-"「家系図」メニューの「インポート...」を使用して、外部ファイルを使用してツリー"
-"を作成することができます。"
+"  • 「家系図」メニューの「インポート...」を使用して、外部ファイルを使用してツ"
+"リーを作成することができます。"
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
@@ -2470,8 +2480,8 @@ msgstr ""
 " 👣 次のステップ :\n"
 "  •  ナビゲーター サイドバーで [People] ビュー アイコンを選択します。\n"
 "  •  「アクティブユーザー」にするユーザーを選択します。\n"
-"  • [編集] メニューまたは (右クリック) コンテキスト メニューから "
-"[ホーム ユーザーの設定] を選択します。\n"
+"  • [編集] メニューまたは (右クリック) コンテキスト メニューから [ホーム ユー"
+"ザーの設定] を選択します。\n"
 "\n"
 " これにより、彼らは中心的な「ホームパーソン」として設定されます。"
 
@@ -2510,7 +2520,8 @@ msgstr "パートナー関係は存在するが配偶者がいない"
 #: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
 #: Betawhatsnext/Betawhatsnext.py:665
 msgid "Add missing partner using the Edit Family dialog."
-msgstr "ファミリの編集ダイアログを使用して、不足しているパートナーを追加します。"
+msgstr ""
+"ファミリの編集ダイアログを使用して、不足しているパートナーを追加します。"
 
 #: Betawhatsnext/Betawhatsnext.py:660
 msgid "Father missing from the parent family"
@@ -2527,8 +2538,9 @@ msgstr "親族は不明です。"
 #: Betawhatsnext/Betawhatsnext.py:670
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
-msgstr "リレーションシップ "
-"ビューの編集メニューから「新規/既存の親を追加」を選択します。"
+msgstr ""
+"リレーションシップ ビューの編集メニューから「新規/既存の親を追加」を選択しま"
+"す。"
 
 #: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
@@ -2689,7 +2701,7 @@ msgid "Whether to display the theoretical number of ancestor by generation"
 msgstr "世代ごとに祖先の理論的な数を表示するかどうか"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
-#: DescendantBooks/DetailedDescendantBookReport.py:1540
+#: DescendantBooks/DetailedDescendantBookReport.py:1536
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
 #: DetDescendantReport-images/detdescendantreporti.py:1252
 #: LinesOfDescendency/lines-of-descendency.py:72
@@ -2745,8 +2757,8 @@ msgid ""
 "<br>\n"
 "For example: "
 msgstr ""
-"上部にウェブページのアドレスを入力し、実行ボタンを押すと、"
-"このページにウェブページが読み込まれます\n"
+"上部にウェブページのアドレスを入力し、実行ボタンを押すと、このページにウェブ"
+"ページが読み込まれます\n"
 "<br>\n"
 "例 : "
 
@@ -2910,9 +2922,9 @@ msgid ""
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
 "is UTF-8.</p>"
 msgstr ""
-"<p>このページでは、SVG の生のコードを提供します。<br>内容をテキスト "
-"エディターにコピーし、SVG ファイルとして保存します。<br>テキスト "
-"エディターのエンコーディングが UTF-8 であることを確認してください。</p>"
+"<p>このページでは、SVG の生のコードを提供します。<br>内容をテキスト エディ"
+"ターにコピーし、SVG ファイルとして保存します。<br>テキスト エディターのエン"
+"コーディングが UTF-8 であることを確認してください。</p>"
 
 #: DynamicWeb/dynamicweb.py:2942
 msgid "Alternate Name"
@@ -3114,7 +3126,8 @@ msgstr "グラフの種類を選択"
 
 #: DynamicWeb/dynamicweb.py:3101
 msgid "Several matches.<br>Precise your search or choose in the lists below."
-msgstr "複数の一致があります。<br>検索を絞り込むか、下のリストから選択してください。"
+msgstr ""
+"複数の一致があります。<br>検索を絞り込むか、下のリストから選択してください。"
 
 #: DynamicWeb/dynamicweb.py:3104
 #, fuzzy
@@ -3138,9 +3151,9 @@ msgstr "Showing _START_ to _END_ of _TOTAL_ entries"
 msgid "Sort by:"
 msgstr "並べ替え :"
 
-#: DynamicWeb/dynamicweb.py:3114 SourceIndex/marriage.py:87
-#: SourceIndex/census.py:82 SourceIndex/index.py:92 SourceIndex/death.py:87
-#: SourceIndex/witness.py:64 SourceIndex/birth.py:126
+#: DynamicWeb/dynamicweb.py:3114 SourceIndex/death.py:87
+#: SourceIndex/birth.py:126 SourceIndex/marriage.py:87 SourceIndex/index.py:92
+#: SourceIndex/witness.py:64 SourceIndex/census.py:82
 msgid "Sources Index"
 msgstr "ソース インデックス"
 
@@ -3318,13 +3331,13 @@ msgstr ""
 "__NB_REPOSITORIES__ はリポジトリの数に置き換えられます。\n"
 "__NB_PLACES__ は場所の数に置き換えられます。\n"
 "__MEDIA_<gid>__ は Gramps ID <gid> のメディアに置き換えられます。\n"
-"__THUMB_<gid>__ は Gramps ID <gid> のメディアのサムネイルに置き換えられます。"
-"\n"
+"__THUMB_<gid>__ は Gramps ID <gid> のメディアのサムネイルに置き換えられま"
+"す。\n"
 "__EXPORT_DATE__ は現在の日付に置き換えられます。\n"
 "__GRAMPS_VERSION__ は Gramps バージョンに置き換えられます。\n"
 "__GRAMPS_HOMEPAGE__ は Gramps ホームページ リンクに置き換えられます。\n"
-"「relative://relative.<link>」で始まる URL は、相対 URL \"<link>\" "
-"に置き換えられます。\n"
+"「relative://relative.<link>」で始まる URL は、相対 URL \"<link>\" に置き換え"
+"られます。\n"
 
 #: DynamicWeb/dynamicweb.py:4712
 msgid "Store web pages in archive"
@@ -3570,9 +3583,9 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"インデックス ページにアイテムへの参照を含めるかどうか。たとえば、メディア "
-"インデックス "
-"ページでは、メディアを参照する個人、家族、場所、ソースの名前などです。"
+"インデックス ページにアイテムへの参照を含めるかどうか。たとえば、メディア イ"
+"ンデックス ページでは、メディアを参照する個人、家族、場所、ソースの名前などで"
+"す。"
 
 #: DynamicWeb/dynamicweb.py:5085
 msgid "Default number of entries in the indexes"
@@ -3743,10 +3756,9 @@ msgid ""
 "was previously closed.  It adds no new menus or Gramplets, but allows the "
 "last six objects visited to be found via the 'Go' menu."
 msgstr ""
-"このアドオンにより、Gramps "
-"は、以前閉じられたのと同じビューとオブジェクトで再起動します。"
-"新しいメニューや Gramplet は追加されませんが、最後にアクセスした 6 "
-"つのオブジェクトを「移動」メニューから見つけることができるようになります。"
+"このアドオンにより、Gramps は、以前閉じられたのと同じビューとオブジェクトで再"
+"起動します。新しいメニューや Gramplet は追加されませんが、最後にアクセスした "
+"6 つのオブジェクトを「移動」メニューから見つけることができるようになります。"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -3893,9 +3905,9 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
-"訪問先の「デフォルトの人」を設定する必要があります。 "
-"「人物ビュー」を選択し、「ホーム人物」にする人物を選択してから、メニューの「"
-"編集」->「ホーム人物を設定」で選択内容を確認します。"
+"訪問先の「デフォルトの人」を設定する必要があります。 「人物ビュー」を選択し、"
+"「ホーム人物」にする人物を選択してから、メニューの「編集」->「ホーム人物を設"
+"定」で選択内容を確認します。"
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
 #, fuzzy
@@ -4145,8 +4157,9 @@ msgstr "家系図 DNA のインポート"
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
-msgstr "{} DNA データとの関連付けが作成されました。 {} haplogroup "
-"属性が作成されました \n"
+msgstr ""
+"{} DNA データとの関連付けが作成されました。 {} haplogroup 属性が作成されまし"
+"た \n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
@@ -4158,8 +4171,9 @@ msgstr "セグメント ファイルが指定されていません"
 
 #: FamilyTreeDNA/ftdna_import.py:236
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
-msgstr "FTdna "
-"ノートに関連付けが見つかりません。haplogroup属性は作成されませんでした。"
+msgstr ""
+"FTdna ノートに関連付けが見つかりません。haplogroup属性は作成されませんでし"
+"た。"
 
 #: FamilyTreeDNA/ftdna_import.py:307
 #, python-format
@@ -4220,8 +4234,9 @@ msgstr "テーマの設定"
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
-msgstr "テーマとフォントを簡単に調整するための設定の追加。 Windows "
-"ユーザーにとって特に便利です。"
+msgstr ""
+"テーマとフォントを簡単に調整するための設定の追加。 Windows ユーザーにとって特"
+"に便利です。"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -4360,12 +4375,6 @@ msgstr "説明"
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
 msgid "witnesses"
 msgstr "証人"
-
-#: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
-#: DenominoViso/DenominoViso.py:2503
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "書き込みに失敗しました %s : %s"
 
 #: DenominoViso/DenominoViso.py:395
 msgid "No central person selected"
@@ -4531,8 +4540,9 @@ msgstr "証人メモを含める"
 msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
 "contains <witnesses>)"
-msgstr "証人に属するメモを含めるかどうか (event_format に <witnesses> "
-"が含まれている場合)"
+msgstr ""
+"証人に属するメモを含めるかどうか (event_format に <witnesses> が含まれている"
+"場合)"
 
 #: DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
@@ -4666,8 +4676,9 @@ msgstr "長方形の幅 (hrd) :"
 msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
-msgstr "通常のチャート "
-"タイプの人物長方形の幅を、長方形の水平距離の割合として表します。"
+msgstr ""
+"通常のチャート タイプの人物長方形の幅を、長方形の水平距離の割合として表しま"
+"す。"
 
 #: DenominoViso/DenominoViso.py:2711
 msgid "Height of rectangle (hrd):"
@@ -4677,8 +4688,9 @@ msgstr "長方形の高さ (hrd) :"
 msgid ""
 "The height of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
-msgstr "通常のチャート "
-"タイプの人物の四角形の高さは、水平方向の四角形の距離の割合として表されます。"
+msgstr ""
+"通常のチャート タイプの人物の四角形の高さは、水平方向の四角形の距離の割合とし"
+"て表されます。"
 
 #: DenominoViso/DenominoViso.py:2715
 msgid "Vertical distance of rectangles (hrd):"
@@ -4688,8 +4700,9 @@ msgstr "長方形の垂直距離 (hrd) :"
 msgid ""
 "The vertical distance of person rectangles of the regular chart type "
 "expressed as fraction of the horizontal rectangle distance."
-msgstr "通常のチャート "
-"タイプの人物の長方形の垂直距離は、水平長方形の距離の割合として表されます。"
+msgstr ""
+"通常のチャート タイプの人物の長方形の垂直距離は、水平長方形の距離の割合として"
+"表されます。"
 
 #: DenominoViso/DenominoViso.py:2719
 msgid "Extra style settings:"
@@ -4715,7 +4728,8 @@ msgstr "出生関係の線種"
 msgid ""
 "List of lists where each sublist is a list with information about the dash "
 "pattern of lines connecting children to parents."
-msgstr "各サブリストが子と親を結ぶ破線パターンに関する情報を含むリストであるリストの"
+msgstr ""
+"各サブリストが子と親を結ぶ破線パターンに関する情報を含むリストであるリストの"
 "一覧。"
 
 #: DenominoViso/DenominoViso.py:2744
@@ -4726,7 +4740,8 @@ msgstr "ソース信頼度カラー"
 msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
-msgstr "リストの一覧。各サブリストは、特定の信頼レベルに使用する色に関する情報を含む"
+msgstr ""
+"リストの一覧。各サブリストは、特定の信頼レベルに使用する色に関する情報を含む"
 "リストです。"
 
 #: DenominoViso/DenominoViso.py:2749
@@ -4744,10 +4759,9 @@ msgid ""
 "<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
 "<attribute-value>."
 msgstr ""
-"イベントのプレースホルダーを含む OS "
-"文字列を一覧表示します。既知のプレースホルダー: "
-"<type>、<role>、<date>、<place>、<description>、<witnesses>、<source>、"
-"および任意の <attribute-value>。"
+"イベントのプレースホルダーを含む OS 文字列を一覧表示します。既知のプレースホ"
+"ルダー: <type>、<role>、<date>、<place>、<description>、<witnesses>、"
+"<source>、および任意の <attribute-value>。"
 
 #: DenominoViso/DenominoViso.py:2757
 msgid "Source format"
@@ -4822,8 +4836,9 @@ msgid ""
 "Generates a web (HTML) page with a graphical representation of ancestors/"
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
-msgstr "マウス イベントで個人の詳細が表示される、祖先/子孫 (SVG) "
-"のグラフィカル表現を含む Web (HTML) ページを生成します。"
+msgstr ""
+"マウス イベントで個人の詳細が表示される、祖先/子孫 (SVG) のグラフィカル表現を"
+"含む Web (HTML) ページを生成します。"
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
@@ -5748,6 +5763,23 @@ msgid ""
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
 
+#: DescendantBooks/DescendantBooks.gpr.py:22
+msgid "Descendant Book"
+msgstr ""
+
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr ""
+
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -5769,18 +5801,18 @@ msgid "Writing %s reports..."
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, python-format
-msgid "%s. Descendants of %s"
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
-#, python-format
-msgid "%d. %s"
+#, python-brace-format
+msgid "{report_count:d}. {name}"
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:510
-#: DescendantBooks/DetailedDescendantBookReport.py:1345
+#: DescendantBooks/DetailedDescendantBookReport.py:1341
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
 
@@ -5823,205 +5855,188 @@ msgid "Report, Generation, Person, Name"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, python-format
-msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:766
-#: DescendantBooks/DetailedDescendantBookReport.py:779
+#: DescendantBooks/DetailedDescendantBookReport.py:765
+#: DescendantBooks/DetailedDescendantBookReport.py:777
 #, python-format
 msgid "Report appearances for %s"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:771
-#, python-format
-msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+#: DescendantBooks/DetailedDescendantBookReport.py:770
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:784
-#, python-format
-msgid "Report: %s, Generation: %s, Person: %s"
+#: DescendantBooks/DetailedDescendantBookReport.py:782
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:809
+#: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
 msgid "%(event_name)s of %(name)s "
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:813
+#: DescendantBooks/DetailedDescendantBookReport.py:810
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
+#: DescendantBooks/DetailedDescendantBookReport.py:814
+#: DescendantBooks/DetailedDescendantBookReport.py:858
 #: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:820
-#: DescendantBooks/DetailedDescendantBookReport.py:864
+#: DescendantBooks/DetailedDescendantBookReport.py:817
+#: DescendantBooks/DetailedDescendantBookReport.py:861
 #: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:822
-#: DescendantBooks/DetailedDescendantBookReport.py:866
+#: DescendantBooks/DetailedDescendantBookReport.py:819
+#: DescendantBooks/DetailedDescendantBookReport.py:863
 #: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:824
+#: DescendantBooks/DetailedDescendantBookReport.py:821
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:853
+#: DescendantBooks/DetailedDescendantBookReport.py:850
 #, python-format
 msgid "%(event_name)s:"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:878
+#: DescendantBooks/DetailedDescendantBookReport.py:875
 #, python-format
 msgid " %(event_text)s"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:996
-#, python-format
-msgid "Ref: %s. %s"
+#: DescendantBooks/DetailedDescendantBookReport.py:993
+#, python-brace-format
+msgid "Ref: {number}. {name}"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1237
+#: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1298
+#: DescendantBooks/DetailedDescendantBookReport.py:1294
 #, python-format
 msgid "%(type)s:"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1303
+#: DescendantBooks/DetailedDescendantBookReport.py:1299
 #, python-format
 msgid " %(value)s%(endnotes)s"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1405
+#: DescendantBooks/DetailedDescendantBookReport.py:1401
 #: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1422
+#: DescendantBooks/DetailedDescendantBookReport.py:1418
 #: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1486
+#: DescendantBooks/DetailedDescendantBookReport.py:1482
 msgid "Include Index of Names"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1487
+#: DescendantBooks/DetailedDescendantBookReport.py:1483
 msgid "Whether to include the index of Names at the end of the report."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1491
+#: DescendantBooks/DetailedDescendantBookReport.py:1487
 msgid "Include index of Dates"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1492
+#: DescendantBooks/DetailedDescendantBookReport.py:1488
 msgid "Whether to include the index of Dates at the end of the report."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1496
+#: DescendantBooks/DetailedDescendantBookReport.py:1492
 msgid "Include index of Places"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1497
+#: DescendantBooks/DetailedDescendantBookReport.py:1493
 msgid "Whether to include the index of Places at the end of the report."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1501
+#: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Include the 'Report appearances' section with each person"
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1503
+#: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1570
+#: DescendantBooks/DetailedDescendantBookReport.py:1566
 #: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1580
+#: DescendantBooks/DetailedDescendantBookReport.py:1576
 msgid "The basic style used for Note header."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1597
+#: DescendantBooks/DetailedDescendantBookReport.py:1593
 #: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1607
+#: DescendantBooks/DetailedDescendantBookReport.py:1603
 #: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1618
+#: DescendantBooks/DetailedDescendantBookReport.py:1614
 #: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1628
-#: DescendantBooks/DetailedDescendantBookReport.py:1638
+#: DescendantBooks/DetailedDescendantBookReport.py:1624
+#: DescendantBooks/DetailedDescendantBookReport.py:1634
 msgid "The style used for note detail data."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1648
+#: DescendantBooks/DetailedDescendantBookReport.py:1644
 msgid "The style used for the date in the Index of Dates."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1658
+#: DescendantBooks/DetailedDescendantBookReport.py:1654
 msgid "The style used for the events in the Index of Dates."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1668
+#: DescendantBooks/DetailedDescendantBookReport.py:1664
 msgid "The style used for the header in the Index of Names."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1678
+#: DescendantBooks/DetailedDescendantBookReport.py:1674
 msgid "The style used for the references in the Index of Names."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1688
+#: DescendantBooks/DetailedDescendantBookReport.py:1684
 msgid "The style used for the header in the Index of Places."
 msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1699
+#: DescendantBooks/DetailedDescendantBookReport.py:1695
 msgid "The style used for the references in the Index of Places."
-msgstr ""
-
-#: DescendantBooks/DescendantBooks.gpr.py:22
-msgid "Descendant Book"
-msgstr ""
-
-#: DescendantBooks/DescendantBooks.gpr.py:23
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-
-#: DescendantBooks/DescendantBooks.gpr.py:41
-msgid "Detailed Descendant Book"
-msgstr ""
-
-#: DescendantBooks/DescendantBooks.gpr.py:43
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
 msgstr ""
 
 #: DescendantBooks/CollectAscendants.py:178
@@ -6941,6 +6956,185 @@ msgstr ""
 msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
+msgstr ""
+
+#: settings_ui_manager.py:103
+msgid "Middle Name Handling"
+msgstr ""
+
+#: settings_ui_manager.py:108
+msgid "Leave alone"
+msgstr ""
+
+#: settings_ui_manager.py:109
+#, fuzzy
+#| msgid "Generate"
+msgid "Separate"
+msgstr "生成"
+
+#: settings_ui_manager.py:119
+msgid "URL Compactness Level"
+msgstr ""
+
+#: settings_ui_manager.py:125
+msgid "Shortest - No Prefix, No Variables"
+msgstr ""
+
+#: settings_ui_manager.py:128
+msgid "Compact - No Prefix, Variables Without Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:131
+msgid "Compact - No Prefix, Variables With Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:134
+msgid "Long - Without Prefix on the Left"
+msgstr ""
+
+#: settings_ui_manager.py:141
+#, fuzzy
+#| msgid "URL prefix path."
+msgid "URL Prefix Replacement"
+msgstr "URL プレフィックス パス。"
+
+#: settings_ui_manager.py:145
+msgid "Use OpenAI"
+msgstr ""
+
+#: settings_ui_manager.py:147
+msgid "OpenAI API Key"
+msgstr ""
+
+#: settings_ui_manager.py:150
+msgid "Display 'Website URL' Column"
+msgstr ""
+
+#: settings_ui_manager.py:155
+msgid "Display 'Vars' Column"
+msgstr ""
+
+#: settings_ui_manager.py:160
+msgid "Show User Data Icon"
+msgstr ""
+
+#: settings_ui_manager.py:164
+#, fuzzy
+#| msgid "Show Tags"
+msgid "Show Flag Icons"
+msgstr "タグを表示"
+
+#: settings_ui_manager.py:168
+msgid "Show Links From Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:181
+msgid "Enable CSV Files"
+msgstr ""
+
+#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
+#, fuzzy
+#| msgid "Search"
+msgid "WebSearch"
+msgstr "検索"
+
+#: WebSearch.gpr.py:36
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+
+#: qr_window.py:76
+msgid "QR-code"
+msgstr ""
+
+#: qr_window.py:114
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+
+#: WebSearch.py:1419
+msgid "Vars"
+msgstr ""
+
+#: WebSearch.py:1421
+#, fuzzy
+#| msgid "Web site title"
+msgid "Website URL"
+msgstr "ウェブサイトのタイトル"
+
+#: WebSearch.py:1424
+msgid "Add link to note"
+msgstr ""
+
+#: WebSearch.py:1425
+msgid "Show QR-code"
+msgstr ""
+
+#: WebSearch.py:1426
+msgid "Copy link to clipboard"
+msgstr ""
+
+#: WebSearch.py:1428
+msgid "Hide link for selected item"
+msgstr ""
+
+#: WebSearch.py:1430
+msgid "Hide link for all items"
+msgstr ""
+
+#: WebSearch.py:1432
+msgid "🔍 AI Suggestions"
+msgstr ""
+
+#: WebSearch.py:1549
+#, python-brace-format
+msgid ""
+"📌 This web link was added using the WebSearch gramplet for future "
+"reference:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this person."
+msgstr ""
+
+#: WebSearch.py:1560
+#, fuzzy
+#| msgid "Web Link"
+msgid "Add Web Link Note"
+msgstr "ウェブリンク"
+
+#: WebSearch.py:1596
+msgid "URL is copied to the Clipboard"
+msgstr ""
+
+#: WebSearch.py:1656
+#, fuzzy
+#| msgid "Web Link"
+msgid "WebSearch Link"
+msgstr "ウェブリンク"
+
+#: WebSearch.py:1701
+#, fuzzy, python-brace-format
+#| msgid "Web site title"
+msgid "Title: {title}\n"
+msgstr "ウェブサイトのタイトル"
+
+#: WebSearch.py:1703
+#, python-brace-format
+msgid "Replaced: {variables}\n"
+msgstr ""
+
+#: WebSearch.py:1707
+#, python-brace-format
+msgid "Empty: {variables}\n"
+msgstr ""
+
+#: WebSearch.py:1711
+#, python-brace-format
+msgid "Comment: {comment}\n"
 msgstr ""
 
 #: FilterRules2/yinheritanceoffiltermatch.py:46
@@ -8937,8 +9131,9 @@ msgstr ""
 msgid "Edit Form"
 msgstr ""
 
-#: Form/editform.py:225 SourceIndex/birth.glade:113 SourceIndex/death.glade:182
-#: SourceIndex/census.glade:873 SourceIndex/marriage.glade:1263
+#: Form/editform.py:225 SourceIndex/death.glade:182
+#: SourceIndex/census.glade:873 SourceIndex/birth.glade:113
+#: SourceIndex/marriage.glade:1263
 msgid "Reference:"
 msgstr ""
 
@@ -17307,23 +17502,23 @@ msgstr ""
 msgid "Arrived since"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:24
+#: SourceIndex/SourceIndex.gpr.py:24 SourceIndex/SourceIndex.gpr.py:25
 msgid "BirthIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:40
+#: SourceIndex/SourceIndex.gpr.py:40 SourceIndex/SourceIndex.gpr.py:41
 msgid "MarriageIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:56
+#: SourceIndex/SourceIndex.gpr.py:56 SourceIndex/SourceIndex.gpr.py:57
 msgid "DeathIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:72
+#: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
 msgid "CensusIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:104
+#: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
 msgid "SourceIndex"
 msgstr ""
 
@@ -17466,6 +17661,126 @@ msgid ""
 "fields: id, repository, person name, birth date and place, parents."
 msgstr ""
 
+#: SourceIndex/death.glade:97 SourceIndex/census.glade:728
+#: SourceIndex/birth.glade:65 SourceIndex/marriage.glade:64
+msgid "Info:"
+msgstr ""
+
+#: SourceIndex/death.glade:165
+msgid "Death act:"
+msgstr ""
+
+#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
+#: SourceIndex/marriage.glade:1296
+msgid "Volume:"
+msgstr ""
+
+#: SourceIndex/death.glade:282
+msgid "<b>Death act</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
+#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
+#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
+#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
+#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
+msgid "First name:"
+msgstr ""
+
+#: SourceIndex/death.glade:589 SourceIndex/census.glade:973
+#: SourceIndex/birth.glade:388 SourceIndex/marriage.glade:234
+msgid "<b>Image</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
+#: SourceIndex/marriage.glade:185
+msgid "<b>Repository</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
+msgid "<b>Data person</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:703 SourceIndex/death.glade:892
+#: SourceIndex/witness.glade:124 SourceIndex/census.glade:510
+#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
+#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
+#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
+#, fuzzy
+msgid "Origin:"
+msgstr "本来の名前"
+
+#: SourceIndex/death.glade:722 SourceIndex/death.glade:821
+#: SourceIndex/witness.glade:141 SourceIndex/census.glade:543
+#: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
+#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
+#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
+#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
+msgid "Occupation:"
+msgstr ""
+
+#: SourceIndex/death.glade:741 SourceIndex/death.glade:854
+#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
+#: SourceIndex/birth.glade:710 SourceIndex/marriage.glade:560
+#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
+#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
+#: SourceIndex/marriage.glade:1455
+msgid "Live:"
+msgstr ""
+
+#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
+msgid "<b>Witness:</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
+msgid "Birth date:"
+msgstr ""
+
+#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
+msgid "Birth place:"
+msgstr ""
+
+#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
+msgid "Note:"
+msgstr ""
+
+#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
+msgid "Spouse name:"
+msgstr ""
+
+#: SourceIndex/death.glade:1131
+msgid "Marriage date:"
+msgstr ""
+
+#: SourceIndex/death.glade:1163
+msgid "Marriage place:"
+msgstr ""
+
+#: SourceIndex/death.glade:1195
+msgid "<b>Data mother</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:1210
+msgid "<b>Data father</b>"
+msgstr ""
+
+#: SourceIndex/death.glade:1225
+msgid "<b>Spouse</b> "
+msgstr ""
+
+#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
+#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
+#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
+#: SourceIndex/marriage.glade:1874
+msgid "alive"
+msgstr ""
+
+#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+
 #: SourceIndex/witness.glade:7
 msgid "witness"
 msgstr ""
@@ -17484,36 +17799,25 @@ msgstr ""
 msgid "First names:"
 msgstr ""
 
-#: SourceIndex/witness.glade:124 SourceIndex/death.glade:703
-#: SourceIndex/death.glade:892 SourceIndex/census.glade:510
-#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
-#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
-#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
+#: SourceIndex/census.glade:160
+msgid "<b>Census</b>"
+msgstr ""
+
+#: SourceIndex/census.glade:364
 #, fuzzy
-msgid "Origin:"
-msgstr "本来の名前"
+msgid "Death date:"
+msgstr "死亡日"
 
-#: SourceIndex/witness.glade:141 SourceIndex/birth.glade:578
-#: SourceIndex/birth.glade:677 SourceIndex/death.glade:722
-#: SourceIndex/death.glade:821 SourceIndex/census.glade:543
-#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
-#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
-#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
-msgid "Occupation:"
+#: SourceIndex/census.glade:414
+msgid "Death place:"
 msgstr ""
 
-#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
-#: SourceIndex/birth.glade:710 SourceIndex/death.glade:741
-#: SourceIndex/death.glade:854 SourceIndex/marriage.glade:560
-#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
-#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
-#: SourceIndex/marriage.glade:1455
-msgid "Live:"
+#: SourceIndex/census.glade:447
+msgid "Family status:"
 msgstr ""
 
-#: SourceIndex/birth.glade:65 SourceIndex/death.glade:97
-#: SourceIndex/census.glade:728 SourceIndex/marriage.glade:64
-msgid "Info:"
+#: SourceIndex/census.glade:1046
+msgid "order, person, surname, given, age, status, occupation, etc ..."
 msgstr ""
 
 #: SourceIndex/birth.glade:99
@@ -17552,11 +17856,6 @@ msgstr ""
 
 #: SourceIndex/birth.glade:351
 msgid "Repository title"
-msgstr ""
-
-#: SourceIndex/birth.glade:388 SourceIndex/death.glade:589
-#: SourceIndex/census.glade:973 SourceIndex/marriage.glade:234
-msgid "<b>Image</b>"
 msgstr ""
 
 #: SourceIndex/birth.glade:406
@@ -17649,110 +17948,6 @@ msgstr ""
 
 #: SourceIndex/birth.glade:2287
 msgid "<b><i>Source</i></b>"
-msgstr ""
-
-#: SourceIndex/death.glade:165
-msgid "Death act:"
-msgstr ""
-
-#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
-#: SourceIndex/marriage.glade:1296
-msgid "Volume:"
-msgstr ""
-
-#: SourceIndex/death.glade:282
-msgid "<b>Death act</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
-#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
-#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
-#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
-#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-msgid "First name:"
-msgstr ""
-
-#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
-#: SourceIndex/marriage.glade:185
-msgid "<b>Repository</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
-msgid "<b>Data person</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
-msgid "<b>Witness:</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
-msgid "Birth date:"
-msgstr ""
-
-#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
-msgid "Birth place:"
-msgstr ""
-
-#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
-msgid "Note:"
-msgstr ""
-
-#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
-msgid "Spouse name:"
-msgstr ""
-
-#: SourceIndex/death.glade:1131
-msgid "Marriage date:"
-msgstr ""
-
-#: SourceIndex/death.glade:1163
-msgid "Marriage place:"
-msgstr ""
-
-#: SourceIndex/death.glade:1195
-msgid "<b>Data mother</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:1210
-msgid "<b>Data father</b>"
-msgstr ""
-
-#: SourceIndex/death.glade:1225
-msgid "<b>Spouse</b> "
-msgstr ""
-
-#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
-#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
-#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
-#: SourceIndex/marriage.glade:1874
-msgid "alive"
-msgstr ""
-
-#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-
-#: SourceIndex/census.glade:160
-msgid "<b>Census</b>"
-msgstr ""
-
-#: SourceIndex/census.glade:364
-#, fuzzy
-msgid "Death date:"
-msgstr "死亡日"
-
-#: SourceIndex/census.glade:414
-msgid "Death place:"
-msgstr ""
-
-#: SourceIndex/census.glade:447
-msgid "Family status:"
-msgstr ""
-
-#: SourceIndex/census.glade:1046
-msgid "order, person, surname, given, age, status, occupation, etc ..."
 msgstr ""
 
 #: SourceIndex/marriage.glade:49
@@ -18874,15 +19069,6 @@ msgstr ""
 msgid "Can't determine type of import"
 msgstr ""
 
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr ""
-
-#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
-msgid "Today"
-msgstr ""
-
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr ""
@@ -18905,6 +19091,15 @@ msgstr ""
 
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
+msgstr ""
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-brace-format
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr ""
+
+#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
+msgid "Today"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.gpr.py:11
@@ -22380,3 +22575,11 @@ msgstr ""
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
 msgstr ""
+
+#, python-format
+#~ msgid "Failed writing %s: %s"
+#~ msgstr "%s : %s の書き込みに失敗"
+
+#, python-format
+#~ msgid "Failure writing %s: %s"
+#~ msgstr "書き込みに失敗しました %s : %s"

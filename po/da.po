@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-09 22:42+0000\n"
+"POT-Creation-Date: 2025-03-24 13:38+0000\n"
 "PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
@@ -1342,10 +1342,10 @@ msgstr "Matcher hovedpersonen"
 msgid "Age in years at person's death."
 msgstr "Alder i år ved en persons død."
 
-#: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
+#: FilterRules/ageatdeath.py:71 SourceIndex/death.glade:521
+#: SourceIndex/death.glade:669 SourceIndex/death.glade:939
+#: SourceIndex/witness.glade:107 SourceIndex/census.glade:286
 #: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
-#: SourceIndex/death.glade:521 SourceIndex/death.glade:669
-#: SourceIndex/death.glade:939 SourceIndex/census.glade:286
 #: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
 #: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
 #: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
@@ -1616,25 +1616,27 @@ msgstr "GEXF eksport muligheder"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785
-#: D3Charts/DescendantIndentedTree.py:1500
-#: D3Charts/DescendantIndentedTree.py:1563
-#: D3Charts/DescendantIndentedTree.py:1570
-#: D3Charts/DescendantIndentedTree.py:1677
-#: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
+#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
 #: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Fejl ved skrivning  %s: %s"
+#: D3Charts/DescendantIndentedTree.py:1499
+#: D3Charts/DescendantIndentedTree.py:1562
+#: D3Charts/DescendantIndentedTree.py:1569
+#: D3Charts/DescendantIndentedTree.py:1676
+#: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
+#: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
+#, fuzzy, python-brace-format
+#| msgid "Failure writing to %s"
+msgid "Failure writing {target_path}: {message}"
+msgstr "Fejl ved skrivning til %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:345
-#: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
+#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
+#: D3Charts/DescendantIndentedTree.py:1518
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr "Kunne ikke danne folder struktur: %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:368
-#: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
+#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
+#: D3Charts/DescendantIndentedTree.py:1554
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "Kunne ikke kopiere web filer: %s"
@@ -1643,8 +1645,8 @@ msgstr "Kunne ikke kopiere web filer: %s"
 msgid "Ancestral Collapsible Tree Options"
 msgstr "Sammenfoldeligt anetræ tilvalg"
 
-#: D3Charts/AncestralCollapsibleTree.py:840
-#: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
+#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
+#: D3Charts/DescendantIndentedTree.py:1803
 msgid "Include Generations"
 msgstr "Medtag generationer"
 
@@ -1680,314 +1682,34 @@ msgstr "Kvindelig udvidelses baggrunds farve"
 msgid "RGB-color for female expandable box background."
 msgstr "RGB-farve til baggrund for kvindelig udvidelses boks."
 
-#: D3Charts/AncestralCollapsibleTree.py:867
-#: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
+#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
+#: D3Charts/DescendantIndentedTree.py:1825
 msgid "The destination path for generated files."
 msgstr "Mål stien for dannede filer"
 
-#: D3Charts/AncestralCollapsibleTree.py:872
-#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
+#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
+#: D3Charts/DescendantIndentedTree.py:1830
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
 msgstr "Mål filnavn for html indhold"
 
-#: D3Charts/AncestralFanChart.gpr.py:23
-msgid "Ancestral Fan Chart"
-msgstr "Ane viftetavle"
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
+msgstr "Sammenfolleligt anetræ"
 
-#: D3Charts/AncestralFanChart.gpr.py:33
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Fan Chart from the D3.js JavaScript library."
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
-"Danner e web side med en grafisk repræsentation af aner (SVG) repræsenteret "
-"som en viftetavle fra D3.js JavaScript bibliotek."
+"Danner en web side med en grafisk repræsentation af  aner (SVG) "
+"repræsenteret som et sammenfoldelig træ layout fra  D3.js javascript "
+"bibliotek."
 
-#: D3Charts/DescendantIndentedTree.py:673
-#, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "Se %(reference)s : %(spouse)s"
-
-#: D3Charts/DescendantIndentedTree.py:764
-msgid "Generating report..."
-msgstr "Danner rapporten..."
-
-#: D3Charts/DescendantIndentedTree.py:909
 #: D3Charts/DescendantIndentedTree.gpr.py:23
+#: D3Charts/DescendantIndentedTree.py:909
 msgid "Descendant Indented Tree"
 msgstr "Indrykket træ for efterkommere"
-
-#: D3Charts/DescendantIndentedTree.py:1364
-msgid "Invalid Destination Directory"
-msgstr "Ugyldig målfolder"
-
-#: D3Charts/DescendantIndentedTree.py:1365
-#, python-format
-msgid ""
-"Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it?"
-msgstr ""
-"Målfolder %s findes ikke\n"
-"Vil du forsøge at danne den?"
-
-#: D3Charts/DescendantIndentedTree.py:1374
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "Kunne ikke danne%s: %s"
-
-#: D3Charts/DescendantIndentedTree.py:1391
-#, python-format
-msgid ""
-"Destination file %s already exists.\n"
-"Do you want to overwrite it?"
-msgstr ""
-"Målfil %s findes allerede.\n"
-"Vil du overskrive den?"
-
-#: D3Charts/DescendantIndentedTree.py:1446
-msgid "Default View"
-msgstr "Standard visning"
-
-#: D3Charts/DescendantIndentedTree.py:1449
-msgid "Expand All"
-msgstr "Udfold alle"
-
-#: D3Charts/DescendantIndentedTree.py:1811
-msgid "Include contraction level"
-msgstr "Medtag sammenfoldede niveauer"
-
-#: D3Charts/DescendantIndentedTree.py:1813
-msgid "The number of descendant levels to contract on initial display."
-msgstr ""
-"Antal af efterkommerniveauer der skal sammenfoldes på begyndelsesvisningen."
-
-#: D3Charts/DescendantIndentedTree.py:1820
-msgid "The font size in pixels for each node."
-msgstr "Font størrelse i pixels for hver node."
-
-#: D3Charts/DescendantIndentedTree.py:1848
-#: DescendantBooks/DescendantBookReport.py:552
-msgid "Whether to show duplicate family trees in the report."
-msgstr "Hvorvidt dublerede træer skal vises i rapporten."
-
-#: D3Charts/DescendantIndentedTree.py:1852
-msgid "Expanded Row Background Color"
-msgstr "Baggrundsfarve for udvidet række"
-
-#: D3Charts/DescendantIndentedTree.py:1853
-msgid "RGB-color for expanded row background."
-msgstr "RGB-farve for udvidet raække baggrund."
-
-#: D3Charts/DescendantIndentedTree.py:1856
-msgid "Expandable Background Color"
-msgstr "Baggrundsfarve for udvidelse"
-
-#: D3Charts/DescendantIndentedTree.py:1858
-msgid "RGB-color for expandable row background."
-msgstr "RGB-farve for baggrund for række, der kan udvides."
-
-#: D3Charts/DescendantIndentedTree.py:1861
-msgid "Non-Expandable Background Color"
-msgstr "Baggrundsfarve for ikke-udvidelsesmulighed"
-
-#: D3Charts/DescendantIndentedTree.py:1863
-msgid "RGB-color for non-expandable row background."
-msgstr "RGB-farve for ikke udvidelsesbar baggrund."
-
-#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
-msgid "Include records marked private"
-msgstr "Medtag oplysninger, der er mærket privat"
-
-#: D3Charts/DescendantIndentedTree.py:1869
-msgid "Whether to include private objects."
-msgstr "Hvorvidt private objekter skal medtages."
-
-#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
-msgid "Include Last Name Only"
-msgstr "Medtag kun efternavn"
-
-#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
-msgid "Include Full Name Only"
-msgstr "Medtag kun fuldt navn"
-
-#: D3Charts/DescendantIndentedTree.py:1881
-msgid "How to handle living people."
-msgstr "Hvordan levende personer skal behandles"
-
-#: D3Charts/DescendantIndentedTree.py:1888
-msgid "Whether or not to include people who may have recently died."
-msgstr "Hvorvidt personer der er død fornylig skal medtages eller ej"
-
-#: D3Charts/DescendantIndentedTree.py:1896
-msgid "Navigation"
-msgstr "Navigering"
-
-#: D3Charts/DescendantIndentedTree.py:1898
-msgid "Contraction/Expansion mechanism"
-msgstr "Udvid/Sammenfold mekanisme"
-
-#: D3Charts/DescendantIndentedTree.py:1901
-msgid "Entire node."
-msgstr "Hele noden."
-
-#: D3Charts/DescendantIndentedTree.py:1902
-msgid "Arrow images at start of node."
-msgstr "Pil-billede ved begyndelsen af  noden"
-
-#: D3Charts/DescendantIndentedTree.py:1903
-msgid "Plus/Minus images at start of node."
-msgstr "Plus/Minus billede ved begyndelse af noden"
-
-#: D3Charts/DescendantIndentedTree.py:1904
-#: D3Charts/DescendantIndentedTree.py:1933
-msgid "Where to click to expand/contract nodes."
-msgstr "Hvor der skal klikkes for at udvide/sammenfolde noder."
-
-#: D3Charts/DescendantIndentedTree.py:1908
-msgid "Auto-generate HREF links for nodes"
-msgstr "Auto-generate HREF links for nodes"
-
-#: D3Charts/DescendantIndentedTree.py:1910
-msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr ""
-"Hvorvidt der skal auto-genereres  HTML links for hver node i rapporten."
-
-#: D3Charts/DescendantIndentedTree.py:1916
-msgid "URL prefix path."
-msgstr "URL præfix sti."
-
-#: D3Charts/DescendantIndentedTree.py:1918
-msgid "URL prefix to apply to each auto-generated HREF link."
-msgstr "URL præfix der skal tilføjes hvert auto-genereret HREF link."
-
-#: D3Charts/DescendantIndentedTree.py:1924
-msgid "URL file extension"
-msgstr "URL fil suffix"
-
-#: D3Charts/DescendantIndentedTree.py:1926
-msgid "No file extension."
-msgstr "Inegn fil suffix."
-
-#: D3Charts/DescendantIndentedTree.py:1927
-msgid ".html"
-msgstr ".html"
-
-#: D3Charts/DescendantIndentedTree.py:1928
-msgid ".htm"
-msgstr ".htm"
-
-#: D3Charts/DescendantIndentedTree.py:1929
-msgid ".shtml"
-msgstr ".shtml"
-
-#: D3Charts/DescendantIndentedTree.py:1930
-msgid ".php"
-msgstr ".php"
-
-#: D3Charts/DescendantIndentedTree.py:1931
-msgid ".php3"
-msgstr ".php3"
-
-#: D3Charts/DescendantIndentedTree.py:1932
-msgid ".cgi"
-msgstr ".cgi"
-
-#: D3Charts/DescendantIndentedTree.py:1938
-msgid "URL file name delimeter"
-msgstr "URL filnavn skilletegn"
-
-#: D3Charts/DescendantIndentedTree.py:1940
-msgid "Remove all whitespace."
-msgstr "Fjern alle \"whitespace\""
-
-#: D3Charts/DescendantIndentedTree.py:1941
-msgid "Replace whitespace with dash(-)."
-msgstr "Erstat \"whitespace\" med bindestreg(-)."
-
-#: D3Charts/DescendantIndentedTree.py:1942
-msgid "Replace whitespace with underscore(_)"
-msgstr "Erstat \"whitespace\" med understrgning(_)."
-
-#: D3Charts/DescendantIndentedTree.py:1943
-msgid "What to use as file name delimiter replacing whitespace."
-msgstr ""
-"Hvad der skal benyttes som filnavns skilletegn der ertstatter "
-"\"whitespace\". "
-
-#: D3Charts/DescendantIndentedTree.py:1948
-msgid "Generations to generate HREF links"
-msgstr "Generationer der skal danne HREF links"
-
-#: D3Charts/DescendantIndentedTree.py:1950
-msgid "The number of generations to generate HREF links."
-msgstr "Antal af generationer der skal danne HREF links. "
-
-#: D3Charts/DescendantIndentedTree.py:1956
-msgid "Exclude persons who died before (years)"
-msgstr "Udeluk personer som døde før (år)"
-
-#: D3Charts/DescendantIndentedTree.py:1959
-msgid ""
-"Whether to generate links for people who died in infancy, -1 excludes nobody."
-msgstr ""
-"Hvorvidt der skal dannes links for personer der døde ved fødslen. -1 "
-"undlader ingen."
-
-#: D3Charts/DescendantIndentedTree.py:1965
-msgid "Exclude center person"
-msgstr "Undlad hovedpersonen"
-
-#: D3Charts/DescendantIndentedTree.py:1966
-msgid "Whether or not to generate links for center person."
-msgstr "Hvorvidt der skal dannes links for hovedpersonen eller ej."
-
-#: D3Charts/DescendantIndentedTree.py:1971
-msgid "Exclude Spouses"
-msgstr "Undlad ægtefæller"
-
-#: D3Charts/DescendantIndentedTree.py:1972
-msgid "Whether or not to generate links for spouses."
-msgstr "Hvorvidt der skal dannes links for ægtefæller eller ej."
-
-#: D3Charts/DescendantIndentedTree.py:1979
-msgid "Biography Content"
-msgstr "Biografi indhold"
-
-#: D3Charts/DescendantIndentedTree.py:1981
-msgid "Show biography tooltips"
-msgstr "Vis biografi tips"
-
-#: D3Charts/DescendantIndentedTree.py:1982
-msgid "Whether to show biography tooltips when hovering over a node."
-msgstr "Hvorvidt der skal vises biografi tips når musen holdes over en node."
-
-#: D3Charts/DescendantIndentedTree.py:2026
-msgid "Text Color"
-msgstr "Tekst farve"
-
-#: D3Charts/DescendantIndentedTree.py:2028
-msgid "RGB-color for biography text."
-msgstr "RGB-farve for biografi tekst."
-
-#: D3Charts/DescendantIndentedTree.py:2033
-msgid "RGB-color for biography tooltip."
-msgstr "RGB-farve for biografi tips."
-
-#: D3Charts/DescendantIndentedTree.py:2036
-msgid "Header Font size"
-msgstr "Overskrift font størrelse"
-
-#: D3Charts/DescendantIndentedTree.py:2038
-msgid "The font size in pixels for biography header text."
-msgstr "Font størrelse i pixels for biografi overskrts tekst."
-
-#: D3Charts/DescendantIndentedTree.py:2044
-msgid "Body Font size"
-msgstr "Body font størrelse"
-
-#: D3Charts/DescendantIndentedTree.py:2046
-msgid "The font size in pixels for biography body text."
-msgstr "Font størrelse i pixels for biografi body tekst."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
@@ -2019,18 +1741,299 @@ msgstr "Mødre baggrund"
 msgid "RGB-color for maternal box background."
 msgstr "RGB-farve for mødreboks baggrund."
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr "Sammenfolleligt anetræ"
+#: D3Charts/AncestralFanChart.gpr.py:23
+msgid "Ancestral Fan Chart"
+msgstr "Ane viftetavle"
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
+#: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+"represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
-"Danner en web side med en grafisk repræsentation af  aner (SVG) "
-"repræsenteret som et sammenfoldelig træ layout fra  D3.js javascript "
-"bibliotek."
+"Danner e web side med en grafisk repræsentation af aner (SVG) repræsenteret "
+"som en viftetavle fra D3.js JavaScript bibliotek."
+
+#: D3Charts/DescendantIndentedTree.py:673
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Se %(reference)s : %(spouse)s"
+
+#: D3Charts/DescendantIndentedTree.py:764
+msgid "Generating report..."
+msgstr "Danner rapporten..."
+
+#: D3Charts/DescendantIndentedTree.py:1364
+msgid "Invalid Destination Directory"
+msgstr "Ugyldig målfolder"
+
+#: D3Charts/DescendantIndentedTree.py:1365
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"Målfolder %s findes ikke\n"
+"Vil du forsøge at danne den?"
+
+#: D3Charts/DescendantIndentedTree.py:1374
+#, fuzzy, python-brace-format
+#| msgid "Failed to create %s: %s"
+msgid "Failed to create {target_path}: {message}"
+msgstr "Kunne ikke danne%s: %s"
+
+#: D3Charts/DescendantIndentedTree.py:1390
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Målfil %s findes allerede.\n"
+"Vil du overskrive den?"
+
+#: D3Charts/DescendantIndentedTree.py:1445
+msgid "Default View"
+msgstr "Standard visning"
+
+#: D3Charts/DescendantIndentedTree.py:1448
+msgid "Expand All"
+msgstr "Udfold alle"
+
+#: D3Charts/DescendantIndentedTree.py:1810
+msgid "Include contraction level"
+msgstr "Medtag sammenfoldede niveauer"
+
+#: D3Charts/DescendantIndentedTree.py:1812
+msgid "The number of descendant levels to contract on initial display."
+msgstr ""
+"Antal af efterkommerniveauer der skal sammenfoldes på begyndelsesvisningen."
+
+#: D3Charts/DescendantIndentedTree.py:1819
+msgid "The font size in pixels for each node."
+msgstr "Font størrelse i pixels for hver node."
+
+#: D3Charts/DescendantIndentedTree.py:1847
+#: DescendantBooks/DescendantBookReport.py:552
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Hvorvidt dublerede træer skal vises i rapporten."
+
+#: D3Charts/DescendantIndentedTree.py:1851
+msgid "Expanded Row Background Color"
+msgstr "Baggrundsfarve for udvidet række"
+
+#: D3Charts/DescendantIndentedTree.py:1852
+msgid "RGB-color for expanded row background."
+msgstr "RGB-farve for udvidet raække baggrund."
+
+#: D3Charts/DescendantIndentedTree.py:1855
+msgid "Expandable Background Color"
+msgstr "Baggrundsfarve for udvidelse"
+
+#: D3Charts/DescendantIndentedTree.py:1857
+msgid "RGB-color for expandable row background."
+msgstr "RGB-farve for baggrund for række, der kan udvides."
+
+#: D3Charts/DescendantIndentedTree.py:1860
+msgid "Non-Expandable Background Color"
+msgstr "Baggrundsfarve for ikke-udvidelsesmulighed"
+
+#: D3Charts/DescendantIndentedTree.py:1862
+msgid "RGB-color for non-expandable row background."
+msgstr "RGB-farve for ikke udvidelsesbar baggrund."
+
+#: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
+msgid "Include records marked private"
+msgstr "Medtag oplysninger, der er mærket privat"
+
+#: D3Charts/DescendantIndentedTree.py:1868
+msgid "Whether to include private objects."
+msgstr "Hvorvidt private objekter skal medtages."
+
+#: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
+msgid "Include Last Name Only"
+msgstr "Medtag kun efternavn"
+
+#: D3Charts/DescendantIndentedTree.py:1878 DynamicWeb/dynamicweb.py:4822
+msgid "Include Full Name Only"
+msgstr "Medtag kun fuldt navn"
+
+#: D3Charts/DescendantIndentedTree.py:1880
+msgid "How to handle living people."
+msgstr "Hvordan levende personer skal behandles"
+
+#: D3Charts/DescendantIndentedTree.py:1887
+msgid "Whether or not to include people who may have recently died."
+msgstr "Hvorvidt personer der er død fornylig skal medtages eller ej"
+
+#: D3Charts/DescendantIndentedTree.py:1895
+msgid "Navigation"
+msgstr "Navigering"
+
+#: D3Charts/DescendantIndentedTree.py:1897
+msgid "Contraction/Expansion mechanism"
+msgstr "Udvid/Sammenfold mekanisme"
+
+#: D3Charts/DescendantIndentedTree.py:1900
+msgid "Entire node."
+msgstr "Hele noden."
+
+#: D3Charts/DescendantIndentedTree.py:1901
+msgid "Arrow images at start of node."
+msgstr "Pil-billede ved begyndelsen af  noden"
+
+#: D3Charts/DescendantIndentedTree.py:1902
+msgid "Plus/Minus images at start of node."
+msgstr "Plus/Minus billede ved begyndelse af noden"
+
+#: D3Charts/DescendantIndentedTree.py:1903
+#: D3Charts/DescendantIndentedTree.py:1932
+msgid "Where to click to expand/contract nodes."
+msgstr "Hvor der skal klikkes for at udvide/sammenfolde noder."
+
+#: D3Charts/DescendantIndentedTree.py:1907
+msgid "Auto-generate HREF links for nodes"
+msgstr "Auto-generate HREF links for nodes"
+
+#: D3Charts/DescendantIndentedTree.py:1909
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr ""
+"Hvorvidt der skal auto-genereres  HTML links for hver node i rapporten."
+
+#: D3Charts/DescendantIndentedTree.py:1915
+msgid "URL prefix path."
+msgstr "URL præfix sti."
+
+#: D3Charts/DescendantIndentedTree.py:1917
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr "URL præfix der skal tilføjes hvert auto-genereret HREF link."
+
+#: D3Charts/DescendantIndentedTree.py:1923
+msgid "URL file extension"
+msgstr "URL fil suffix"
+
+#: D3Charts/DescendantIndentedTree.py:1925
+msgid "No file extension."
+msgstr "Inegn fil suffix."
+
+#: D3Charts/DescendantIndentedTree.py:1926
+msgid ".html"
+msgstr ".html"
+
+#: D3Charts/DescendantIndentedTree.py:1927
+msgid ".htm"
+msgstr ".htm"
+
+#: D3Charts/DescendantIndentedTree.py:1928
+msgid ".shtml"
+msgstr ".shtml"
+
+#: D3Charts/DescendantIndentedTree.py:1929
+msgid ".php"
+msgstr ".php"
+
+#: D3Charts/DescendantIndentedTree.py:1930
+msgid ".php3"
+msgstr ".php3"
+
+#: D3Charts/DescendantIndentedTree.py:1931
+msgid ".cgi"
+msgstr ".cgi"
+
+#: D3Charts/DescendantIndentedTree.py:1937
+msgid "URL file name delimeter"
+msgstr "URL filnavn skilletegn"
+
+#: D3Charts/DescendantIndentedTree.py:1939
+msgid "Remove all whitespace."
+msgstr "Fjern alle \"whitespace\""
+
+#: D3Charts/DescendantIndentedTree.py:1940
+msgid "Replace whitespace with dash(-)."
+msgstr "Erstat \"whitespace\" med bindestreg(-)."
+
+#: D3Charts/DescendantIndentedTree.py:1941
+msgid "Replace whitespace with underscore(_)"
+msgstr "Erstat \"whitespace\" med understrgning(_)."
+
+#: D3Charts/DescendantIndentedTree.py:1942
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr ""
+"Hvad der skal benyttes som filnavns skilletegn der ertstatter "
+"\"whitespace\". "
+
+#: D3Charts/DescendantIndentedTree.py:1947
+msgid "Generations to generate HREF links"
+msgstr "Generationer der skal danne HREF links"
+
+#: D3Charts/DescendantIndentedTree.py:1949
+msgid "The number of generations to generate HREF links."
+msgstr "Antal af generationer der skal danne HREF links. "
+
+#: D3Charts/DescendantIndentedTree.py:1955
+msgid "Exclude persons who died before (years)"
+msgstr "Udeluk personer som døde før (år)"
+
+#: D3Charts/DescendantIndentedTree.py:1958
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr ""
+"Hvorvidt der skal dannes links for personer der døde ved fødslen. -1 "
+"undlader ingen."
+
+#: D3Charts/DescendantIndentedTree.py:1964
+msgid "Exclude center person"
+msgstr "Undlad hovedpersonen"
+
+#: D3Charts/DescendantIndentedTree.py:1965
+msgid "Whether or not to generate links for center person."
+msgstr "Hvorvidt der skal dannes links for hovedpersonen eller ej."
+
+#: D3Charts/DescendantIndentedTree.py:1970
+msgid "Exclude Spouses"
+msgstr "Undlad ægtefæller"
+
+#: D3Charts/DescendantIndentedTree.py:1971
+msgid "Whether or not to generate links for spouses."
+msgstr "Hvorvidt der skal dannes links for ægtefæller eller ej."
+
+#: D3Charts/DescendantIndentedTree.py:1978
+msgid "Biography Content"
+msgstr "Biografi indhold"
+
+#: D3Charts/DescendantIndentedTree.py:1980
+msgid "Show biography tooltips"
+msgstr "Vis biografi tips"
+
+#: D3Charts/DescendantIndentedTree.py:1981
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "Hvorvidt der skal vises biografi tips når musen holdes over en node."
+
+#: D3Charts/DescendantIndentedTree.py:2025
+msgid "Text Color"
+msgstr "Tekst farve"
+
+#: D3Charts/DescendantIndentedTree.py:2027
+msgid "RGB-color for biography text."
+msgstr "RGB-farve for biografi tekst."
+
+#: D3Charts/DescendantIndentedTree.py:2032
+msgid "RGB-color for biography tooltip."
+msgstr "RGB-farve for biografi tips."
+
+#: D3Charts/DescendantIndentedTree.py:2035
+msgid "Header Font size"
+msgstr "Overskrift font størrelse"
+
+#: D3Charts/DescendantIndentedTree.py:2037
+msgid "The font size in pixels for biography header text."
+msgstr "Font størrelse i pixels for biografi overskrts tekst."
+
+#: D3Charts/DescendantIndentedTree.py:2043
+msgid "Body Font size"
+msgstr "Body font størrelse"
+
+#: D3Charts/DescendantIndentedTree.py:2045
+msgid "The font size in pixels for biography body text."
+msgstr "Font størrelse i pixels for biografi body tekst."
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
 msgid "SV Web Connect Pack"
@@ -2743,7 +2746,7 @@ msgid "Whether to display the theoretical number of ancestor by generation"
 msgstr "Hvorvidt det teoretiske anta aber per generation skal medtagesl"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
-#: DescendantBooks/DetailedDescendantBookReport.py:1540
+#: DescendantBooks/DetailedDescendantBookReport.py:1536
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
 #: DetDescendantReport-images/detdescendantreporti.py:1252
 #: LinesOfDescendency/lines-of-descendency.py:72
@@ -3184,9 +3187,9 @@ msgstr "Vis _START_ ti l_SLUT_ af _TOTAL_ poster"
 msgid "Sort by:"
 msgstr "Sortér efter:"
 
-#: DynamicWeb/dynamicweb.py:3114 SourceIndex/marriage.py:87
-#: SourceIndex/census.py:82 SourceIndex/index.py:92 SourceIndex/death.py:87
-#: SourceIndex/witness.py:64 SourceIndex/birth.py:126
+#: DynamicWeb/dynamicweb.py:3114 SourceIndex/death.py:87
+#: SourceIndex/birth.py:126 SourceIndex/marriage.py:87 SourceIndex/index.py:92
+#: SourceIndex/witness.py:64 SourceIndex/census.py:82
 msgid "Sources Index"
 msgstr "Kildeindeks"
 
@@ -4414,12 +4417,6 @@ msgstr "beskrivelse"
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
 msgid "witnesses"
 msgstr "vidne"
-
-#: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
-#: DenominoViso/DenominoViso.py:2503
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "Fejl ved skrivning %s: %s"
 
 #: DenominoViso/DenominoViso.py:395
 msgid "No central person selected"
@@ -5882,6 +5879,27 @@ msgstr ""
 "gruppe), eller <shift> (udvidet gruppe) klik, eller med <ctrl> eller <shift> "
 "piltaster og 'mellemrum'.  eller <ctrl>'a' for at vælge alle."
 
+#: DescendantBooks/DescendantBooks.gpr.py:22
+msgid "Descendant Book"
+msgstr "Efterkommerbog"
+
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Danner en eller flere efterkommerrapporter baseret på en angivet "
+"forespørgsel."
+
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr "Detaljeret efterkommerbog"
+
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Danner en eller flere detaljerede efterkommerbøger baseret på en angivet "
+"forespørgsel."
+
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -5903,18 +5921,19 @@ msgid "Writing %s reports..."
 msgstr "Skriver %s rapporter..."
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, python-format
-msgid "%s. Descendants of %s"
-msgstr "%s. Efterkommere af %s"
+#, fuzzy, python-brace-format
+#| msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgid "{report_count}. Descendants of {name}"
+msgstr "%(report_count)s. efterkommerrapport for %(person_name)s"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
-#, python-format
-msgid "%d. %s"
-msgstr "%d. %s"
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:510
-#: DescendantBooks/DetailedDescendantBookReport.py:1345
+#: DescendantBooks/DetailedDescendantBookReport.py:1341
 msgid "Select filter to restrict people that appear in the report"
 msgstr "Vælg filter til afgrænsning af personer der vises i rapporten"
 
@@ -5957,132 +5976,135 @@ msgid "Report, Generation, Person, Name"
 msgstr "Rapport, Generation, Person, Navn"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, python-format
-msgid "See Report : %s, Generation : %s, Person : %s"
+#, fuzzy, python-brace-format
+#| msgid "See Report : %s, Generation : %s, Person : %s"
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
 msgstr "See Report : %s, Generation : %s, Person : %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:766
-#: DescendantBooks/DetailedDescendantBookReport.py:779
+#: DescendantBooks/DetailedDescendantBookReport.py:765
+#: DescendantBooks/DetailedDescendantBookReport.py:777
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Rapport udseende for %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:771
-#, python-format
-msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+#: DescendantBooks/DetailedDescendantBookReport.py:770
+#, fuzzy, python-brace-format
+#| msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
 msgstr "Ægtefælle til: Rapport: %s, Generation: %s, Person: %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:784
-#, python-format
-msgid "Report: %s, Generation: %s, Person: %s"
+#: DescendantBooks/DetailedDescendantBookReport.py:782
+#, fuzzy, python-brace-format
+#| msgid "Report: %s, Generation: %s, Person: %s"
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
 msgstr "Rapport: %s, Generation: %s, Person: %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:809
+#: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
 msgid "%(event_name)s of %(name)s "
 msgstr "%(event_name)s for %(name)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:813
+#: DescendantBooks/DetailedDescendantBookReport.py:810
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
 msgstr "%(event_name)s for %(name)s og %(mate)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
+#: DescendantBooks/DetailedDescendantBookReport.py:814
+#: DescendantBooks/DetailedDescendantBookReport.py:858
 #: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:820
-#: DescendantBooks/DetailedDescendantBookReport.py:864
+#: DescendantBooks/DetailedDescendantBookReport.py:817
+#: DescendantBooks/DetailedDescendantBookReport.py:861
 #: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
 msgstr "%(date)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:822
-#: DescendantBooks/DetailedDescendantBookReport.py:866
+#: DescendantBooks/DetailedDescendantBookReport.py:819
+#: DescendantBooks/DetailedDescendantBookReport.py:863
 #: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:824
+#: DescendantBooks/DetailedDescendantBookReport.py:821
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
 msgstr ". Ref: %(repno)s %(gen)s %(per)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:853
+#: DescendantBooks/DetailedDescendantBookReport.py:850
 #, python-format
 msgid "%(event_name)s:"
 msgstr "%(event_name)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:878
+#: DescendantBooks/DetailedDescendantBookReport.py:875
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:996
-#, python-format
-msgid "Ref: %s. %s"
-msgstr "Ref: %s. %s"
+#: DescendantBooks/DetailedDescendantBookReport.py:993
+#, python-brace-format
+msgid "Ref: {number}. {name}"
+msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1237
+#: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1298
+#: DescendantBooks/DetailedDescendantBookReport.py:1294
 #, python-format
 msgid "%(type)s:"
 msgstr "%(type)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1303
+#: DescendantBooks/DetailedDescendantBookReport.py:1299
 #, python-format
 msgid " %(value)s%(endnotes)s"
 msgstr " %(value)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1405
+#: DescendantBooks/DetailedDescendantBookReport.py:1401
 #: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
 msgstr "Vis børn"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1422
+#: DescendantBooks/DetailedDescendantBookReport.py:1418
 #: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
 msgstr "Medtag henvisning til efterkommer i listen over børn"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1486
+#: DescendantBooks/DetailedDescendantBookReport.py:1482
 msgid "Include Index of Names"
 msgstr "Medtag Indeks over Navne"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1487
+#: DescendantBooks/DetailedDescendantBookReport.py:1483
 msgid "Whether to include the index of Names at the end of the report."
 msgstr "Hvorvidt indeks over navne skal medtages i slutningen af rapporten."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1491
+#: DescendantBooks/DetailedDescendantBookReport.py:1487
 msgid "Include index of Dates"
 msgstr "Medtag indeks over datoer"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1492
+#: DescendantBooks/DetailedDescendantBookReport.py:1488
 msgid "Whether to include the index of Dates at the end of the report."
 msgstr "Hvovidt indeks over datoer skal medtages i slutningen af rapporten"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1496
+#: DescendantBooks/DetailedDescendantBookReport.py:1492
 msgid "Include index of Places"
 msgstr "Medtag indeks over Steder"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1497
+#: DescendantBooks/DetailedDescendantBookReport.py:1493
 msgid "Whether to include the index of Places at the end of the report."
 msgstr "Hvovidt indeks over steder skal medtages i slutningen af rapporten."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1501
+#: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Include the 'Report appearances' section with each person"
 msgstr "Medtag 'Rapportudseende' sekstion for hver person"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1503
+#: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
@@ -6090,80 +6112,59 @@ msgstr ""
 "'Rapportudseeende' sektionen viser andre steder i rapporten hvor personen er "
 "nævnt."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1570
+#: DescendantBooks/DetailedDescendantBookReport.py:1566
 #: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
 msgstr "Stilen der bruges til listen over børn."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1580
+#: DescendantBooks/DetailedDescendantBookReport.py:1576
 msgid "The basic style used for Note header."
 msgstr "Den grundlæggende stil der bruges til notens overskrift."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1597
+#: DescendantBooks/DetailedDescendantBookReport.py:1593
 #: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
 msgstr "Stilen der benyttes til den første personinformation."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1607
+#: DescendantBooks/DetailedDescendantBookReport.py:1603
 #: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
 "Stil der benyttes til Mere Om overskrift og til overskrift for ægtefæller."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1618
+#: DescendantBooks/DetailedDescendantBookReport.py:1614
 #: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
 msgstr "Stil der benyttes til yderligere detaljedata."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1628
-#: DescendantBooks/DetailedDescendantBookReport.py:1638
+#: DescendantBooks/DetailedDescendantBookReport.py:1624
+#: DescendantBooks/DetailedDescendantBookReport.py:1634
 msgid "The style used for note detail data."
 msgstr "Stilen der benyttes til note detaljedata."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1648
+#: DescendantBooks/DetailedDescendantBookReport.py:1644
 msgid "The style used for the date in the Index of Dates."
 msgstr "Stilen der benyttes til datoer i Indeks over Datoer."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1658
+#: DescendantBooks/DetailedDescendantBookReport.py:1654
 msgid "The style used for the events in the Index of Dates."
 msgstr "Stilen der benyttes for hændelser i Indeks over Hændelser."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1668
+#: DescendantBooks/DetailedDescendantBookReport.py:1664
 msgid "The style used for the header in the Index of Names."
 msgstr "Stilen der benyttes til overskrifter i Indeks over Navne."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1678
+#: DescendantBooks/DetailedDescendantBookReport.py:1674
 msgid "The style used for the references in the Index of Names."
 msgstr "Stilen der benyttes til henvisninger i Indeks over Navne"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1688
+#: DescendantBooks/DetailedDescendantBookReport.py:1684
 msgid "The style used for the header in the Index of Places."
 msgstr "Stilen der benyttes til oveskiften i Indeks over Steder."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1699
+#: DescendantBooks/DetailedDescendantBookReport.py:1695
 msgid "The style used for the references in the Index of Places."
 msgstr "Stilen der benyttes til henvisninger i Indeks over Steder."
-
-#: DescendantBooks/DescendantBooks.gpr.py:22
-msgid "Descendant Book"
-msgstr "Efterkommerbog"
-
-#: DescendantBooks/DescendantBooks.gpr.py:23
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Danner en eller flere efterkommerrapporter baseret på en angivet "
-"forespørgsel."
-
-#: DescendantBooks/DescendantBooks.gpr.py:41
-msgid "Detailed Descendant Book"
-msgstr "Detaljeret efterkommerbog"
-
-#: DescendantBooks/DescendantBooks.gpr.py:43
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Danner en eller flere detaljerede efterkommerbøger baseret på en angivet "
-"forespørgsel."
 
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
@@ -7121,6 +7122,197 @@ msgid ""
 msgstr ""
 "Danner en liste med alle de noter med et bestemt mærkat sammen med alle "
 "poster de henviser til, personen, familien, hændeser o.s.v."
+
+#: settings_ui_manager.py:103
+msgid "Middle Name Handling"
+msgstr ""
+
+#: settings_ui_manager.py:108
+#, fuzzy
+#| msgid "Save Note"
+msgid "Leave alone"
+msgstr "Gem note"
+
+#: settings_ui_manager.py:109
+#, fuzzy
+#| msgid "Generate"
+msgid "Separate"
+msgstr "_Generér"
+
+#: settings_ui_manager.py:119
+msgid "URL Compactness Level"
+msgstr ""
+
+#: settings_ui_manager.py:125
+msgid "Shortest - No Prefix, No Variables"
+msgstr ""
+
+#: settings_ui_manager.py:128
+msgid "Compact - No Prefix, Variables Without Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:131
+msgid "Compact - No Prefix, Variables With Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:134
+msgid "Long - Without Prefix on the Left"
+msgstr ""
+
+#: settings_ui_manager.py:141
+#, fuzzy
+#| msgid "URL prefix path."
+msgid "URL Prefix Replacement"
+msgstr "URL præfix sti."
+
+#: settings_ui_manager.py:145
+msgid "Use OpenAI"
+msgstr ""
+
+#: settings_ui_manager.py:147
+msgid "OpenAI API Key"
+msgstr ""
+
+#: settings_ui_manager.py:150
+msgid "Display 'Website URL' Column"
+msgstr ""
+
+#: settings_ui_manager.py:155
+#, fuzzy
+#| msgid "Display all"
+msgid "Display 'Vars' Column"
+msgstr "Vis alt"
+
+#: settings_ui_manager.py:160
+#, fuzzy
+#| msgid "Show person"
+msgid "Show User Data Icon"
+msgstr "Vis person"
+
+#: settings_ui_manager.py:164
+#, fuzzy
+#| msgid "Show places"
+msgid "Show Flag Icons"
+msgstr "Vis steder"
+
+#: settings_ui_manager.py:168
+msgid "Show Links From Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:181
+msgid "Enable CSV Files"
+msgstr ""
+
+#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
+#, fuzzy
+#| msgid "Search"
+msgid "WebSearch"
+msgstr "Søg"
+
+#: WebSearch.gpr.py:36
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+
+#: qr_window.py:76
+msgid "QR-code"
+msgstr ""
+
+#: qr_window.py:114
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+
+#: WebSearch.py:1419
+msgid "Vars"
+msgstr ""
+
+#: WebSearch.py:1421
+#, fuzzy
+#| msgid "Web site title"
+msgid "Website URL"
+msgstr "Websidetitel"
+
+#: WebSearch.py:1424
+#, fuzzy
+#| msgid "Add Test Note"
+msgid "Add link to note"
+msgstr "Tilføj testnote"
+
+#: WebSearch.py:1425
+#, fuzzy
+#| msgid "Show places"
+msgid "Show QR-code"
+msgstr "Vis steder"
+
+#: WebSearch.py:1426
+#, fuzzy
+#| msgid "Collections Clipboard"
+msgid "Copy link to clipboard"
+msgstr "Samlings Udklipsholder"
+
+#: WebSearch.py:1428
+msgid "Hide link for selected item"
+msgstr ""
+
+#: WebSearch.py:1430
+msgid "Hide link for all items"
+msgstr ""
+
+#: WebSearch.py:1432
+msgid "🔍 AI Suggestions"
+msgstr ""
+
+#: WebSearch.py:1549
+#, python-brace-format
+msgid ""
+"📌 This web link was added using the WebSearch gramplet for future "
+"reference:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this person."
+msgstr ""
+
+#: WebSearch.py:1560
+#, fuzzy
+#| msgid "Add Test Note"
+msgid "Add Web Link Note"
+msgstr "Tilføj testnote"
+
+#: WebSearch.py:1596
+msgid "URL is copied to the Clipboard"
+msgstr ""
+
+#: WebSearch.py:1656
+#, fuzzy
+#| msgid "Search in:"
+msgid "WebSearch Link"
+msgstr "Søg i:"
+
+#: WebSearch.py:1701
+#, fuzzy, python-brace-format
+#| msgid "Web site title"
+msgid "Title: {title}\n"
+msgstr "Websidetitel"
+
+#: WebSearch.py:1703
+#, python-brace-format
+msgid "Replaced: {variables}\n"
+msgstr ""
+
+#: WebSearch.py:1707
+#, python-brace-format
+msgid "Empty: {variables}\n"
+msgstr ""
+
+#: WebSearch.py:1711
+#, python-brace-format
+msgid "Comment: {comment}\n"
+msgstr ""
 
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
@@ -9258,8 +9450,9 @@ msgstr "Ny formular"
 msgid "Edit Form"
 msgstr "Rediger formular"
 
-#: Form/editform.py:225 SourceIndex/birth.glade:113 SourceIndex/death.glade:182
-#: SourceIndex/census.glade:873 SourceIndex/marriage.glade:1263
+#: Form/editform.py:225 SourceIndex/death.glade:182
+#: SourceIndex/census.glade:873 SourceIndex/birth.glade:113
+#: SourceIndex/marriage.glade:1263
 msgid "Reference:"
 msgstr "Henvisning:"
 
@@ -17633,23 +17826,23 @@ msgstr ""
 msgid "Arrived since"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:24
+#: SourceIndex/SourceIndex.gpr.py:24 SourceIndex/SourceIndex.gpr.py:25
 msgid "BirthIndex"
 msgstr "Fødselsindeks"
 
-#: SourceIndex/SourceIndex.gpr.py:40
+#: SourceIndex/SourceIndex.gpr.py:40 SourceIndex/SourceIndex.gpr.py:41
 msgid "MarriageIndex"
 msgstr "Ægteskabsindeks"
 
-#: SourceIndex/SourceIndex.gpr.py:56
+#: SourceIndex/SourceIndex.gpr.py:56 SourceIndex/SourceIndex.gpr.py:57
 msgid "DeathIndex"
 msgstr "Dødsindeks"
 
-#: SourceIndex/SourceIndex.gpr.py:72
+#: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
 msgid "CensusIndex"
 msgstr "Folketællingsindeks"
 
-#: SourceIndex/SourceIndex.gpr.py:104
+#: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
 msgid "SourceIndex"
 msgstr "Kildeindeks"
 
@@ -17793,6 +17986,127 @@ msgstr ""
 "Post transskribering fødsler/dødsfald/ægteskaber/folketællinger med fælles "
 "felter: id, arkiv, person, navn, fødselsdato og sted, forældre."
 
+#: SourceIndex/death.glade:97 SourceIndex/census.glade:728
+#: SourceIndex/birth.glade:65 SourceIndex/marriage.glade:64
+msgid "Info:"
+msgstr "Info:"
+
+#: SourceIndex/death.glade:165
+msgid "Death act:"
+msgstr "Dødshandling:"
+
+#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
+#: SourceIndex/marriage.glade:1296
+msgid "Volume:"
+msgstr "Bind:"
+
+#: SourceIndex/death.glade:282
+msgid "<b>Death act</b>"
+msgstr "<b>Dødshandling</b>"
+
+#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
+#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
+#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
+#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
+#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
+msgid "First name:"
+msgstr "Fornavn:"
+
+#: SourceIndex/death.glade:589 SourceIndex/census.glade:973
+#: SourceIndex/birth.glade:388 SourceIndex/marriage.glade:234
+msgid "<b>Image</b>"
+msgstr "<b>Billede</b>"
+
+#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
+#: SourceIndex/marriage.glade:185
+msgid "<b>Repository</b>"
+msgstr "<b>Arkiv</b>"
+
+#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
+msgid "<b>Data person</b>"
+msgstr "<b>Data person</b>"
+
+#: SourceIndex/death.glade:703 SourceIndex/death.glade:892
+#: SourceIndex/witness.glade:124 SourceIndex/census.glade:510
+#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
+#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
+#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
+msgid "Origin:"
+msgstr "Oprindelse:"
+
+#: SourceIndex/death.glade:722 SourceIndex/death.glade:821
+#: SourceIndex/witness.glade:141 SourceIndex/census.glade:543
+#: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
+#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
+#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
+#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
+msgid "Occupation:"
+msgstr "Profession:"
+
+#: SourceIndex/death.glade:741 SourceIndex/death.glade:854
+#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
+#: SourceIndex/birth.glade:710 SourceIndex/marriage.glade:560
+#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
+#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
+#: SourceIndex/marriage.glade:1455
+msgid "Live:"
+msgstr "Levende:"
+
+#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
+msgid "<b>Witness:</b>"
+msgstr "<b>Vidne:</b>"
+
+#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
+msgid "Birth date:"
+msgstr "Fødselsdato:"
+
+#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
+msgid "Birth place:"
+msgstr "Fødested:"
+
+#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
+msgid "Note:"
+msgstr "Note:"
+
+#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
+msgid "Spouse name:"
+msgstr "Ægtefælles navn:"
+
+#: SourceIndex/death.glade:1131
+msgid "Marriage date:"
+msgstr "Vielsesdato:"
+
+#: SourceIndex/death.glade:1163
+msgid "Marriage place:"
+msgstr "Vielsessted:"
+
+#: SourceIndex/death.glade:1195
+msgid "<b>Data mother</b>"
+msgstr "<b>Data moder</b>"
+
+#: SourceIndex/death.glade:1210
+msgid "<b>Data father</b>"
+msgstr "<b>Data fader</b>"
+
+#: SourceIndex/death.glade:1225
+msgid "<b>Spouse</b> "
+msgstr "<b>Ægtefælle</b> "
+
+#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
+#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
+#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
+#: SourceIndex/marriage.glade:1874
+msgid "alive"
+msgstr "i live"
+
+#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"vidne1, navn, ,fornavn, alder, status, beskæftigelse;vidne2, navn, ,fornavn, "
+"alder, status, beskæftigelse, o.s.v..."
+
 #: SourceIndex/witness.glade:7
 msgid "witness"
 msgstr "vidner"
@@ -17811,36 +18125,26 @@ msgstr "Navne:"
 msgid "First names:"
 msgstr "Fornavne:"
 
-#: SourceIndex/witness.glade:124 SourceIndex/death.glade:703
-#: SourceIndex/death.glade:892 SourceIndex/census.glade:510
-#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
-#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
-#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
-msgid "Origin:"
-msgstr "Oprindelse:"
+#: SourceIndex/census.glade:160
+msgid "<b>Census</b>"
+msgstr "<b>Folketælling</b>"
 
-#: SourceIndex/witness.glade:141 SourceIndex/birth.glade:578
-#: SourceIndex/birth.glade:677 SourceIndex/death.glade:722
-#: SourceIndex/death.glade:821 SourceIndex/census.glade:543
-#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
-#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
-#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
-msgid "Occupation:"
-msgstr "Profession:"
+#: SourceIndex/census.glade:364
+msgid "Death date:"
+msgstr "Dødsdato:"
 
-#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
-#: SourceIndex/birth.glade:710 SourceIndex/death.glade:741
-#: SourceIndex/death.glade:854 SourceIndex/marriage.glade:560
-#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
-#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
-#: SourceIndex/marriage.glade:1455
-msgid "Live:"
-msgstr "Levende:"
+#: SourceIndex/census.glade:414
+msgid "Death place:"
+msgstr "Dødssted:"
 
-#: SourceIndex/birth.glade:65 SourceIndex/death.glade:97
-#: SourceIndex/census.glade:728 SourceIndex/marriage.glade:64
-msgid "Info:"
-msgstr "Info:"
+#: SourceIndex/census.glade:447
+msgid "Family status:"
+msgstr "Familiestatus:"
+
+#: SourceIndex/census.glade:1046
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr ""
+"orden, person, efternavn, fornavn, alder, status, beskæftigelse, o.s.v..."
 
 #: SourceIndex/birth.glade:99
 msgid "Birth act:"
@@ -17881,11 +18185,6 @@ msgstr "Andre:"
 #: SourceIndex/birth.glade:351
 msgid "Repository title"
 msgstr "Arkivtitel"
-
-#: SourceIndex/birth.glade:388 SourceIndex/death.glade:589
-#: SourceIndex/census.glade:973 SourceIndex/marriage.glade:234
-msgid "<b>Image</b>"
-msgstr "<b>Billede</b>"
 
 #: SourceIndex/birth.glade:406
 msgid "<b><i>Repository</i></b>"
@@ -17996,112 +18295,6 @@ msgstr "<b><i>Kildehenvisning</i></b>"
 #: SourceIndex/birth.glade:2287
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Kilde</i></b>"
-
-#: SourceIndex/death.glade:165
-msgid "Death act:"
-msgstr "Dødshandling:"
-
-#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
-#: SourceIndex/marriage.glade:1296
-msgid "Volume:"
-msgstr "Bind:"
-
-#: SourceIndex/death.glade:282
-msgid "<b>Death act</b>"
-msgstr "<b>Dødshandling</b>"
-
-#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
-#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
-#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
-#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
-#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-msgid "First name:"
-msgstr "Fornavn:"
-
-#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
-#: SourceIndex/marriage.glade:185
-msgid "<b>Repository</b>"
-msgstr "<b>Arkiv</b>"
-
-#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
-msgid "<b>Data person</b>"
-msgstr "<b>Data person</b>"
-
-#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
-msgid "<b>Witness:</b>"
-msgstr "<b>Vidne:</b>"
-
-#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
-msgid "Birth date:"
-msgstr "Fødselsdato:"
-
-#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
-msgid "Birth place:"
-msgstr "Fødested:"
-
-#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
-msgid "Note:"
-msgstr "Note:"
-
-#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
-msgid "Spouse name:"
-msgstr "Ægtefælles navn:"
-
-#: SourceIndex/death.glade:1131
-msgid "Marriage date:"
-msgstr "Vielsesdato:"
-
-#: SourceIndex/death.glade:1163
-msgid "Marriage place:"
-msgstr "Vielsessted:"
-
-#: SourceIndex/death.glade:1195
-msgid "<b>Data mother</b>"
-msgstr "<b>Data moder</b>"
-
-#: SourceIndex/death.glade:1210
-msgid "<b>Data father</b>"
-msgstr "<b>Data fader</b>"
-
-#: SourceIndex/death.glade:1225
-msgid "<b>Spouse</b> "
-msgstr "<b>Ægtefælle</b> "
-
-#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
-#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
-#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
-#: SourceIndex/marriage.glade:1874
-msgid "alive"
-msgstr "i live"
-
-#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"vidne1, navn, ,fornavn, alder, status, beskæftigelse;vidne2, navn, ,fornavn, "
-"alder, status, beskæftigelse, o.s.v..."
-
-#: SourceIndex/census.glade:160
-msgid "<b>Census</b>"
-msgstr "<b>Folketælling</b>"
-
-#: SourceIndex/census.glade:364
-msgid "Death date:"
-msgstr "Dødsdato:"
-
-#: SourceIndex/census.glade:414
-msgid "Death place:"
-msgstr "Dødssted:"
-
-#: SourceIndex/census.glade:447
-msgid "Family status:"
-msgstr "Familiestatus:"
-
-#: SourceIndex/census.glade:1046
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr ""
-"orden, person, efternavn, fornavn, alder, status, beskæftigelse, o.s.v..."
 
 #: SourceIndex/marriage.glade:49
 msgid "Marriage act:"
@@ -19316,15 +19509,6 @@ msgstr "Importerer Tekst..."
 msgid "Can't determine type of import"
 msgstr "Kan ikke afgøre importtypen"
 
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d rækker behandlet i %s sekunder.\n"
-
-#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
-msgid "Today"
-msgstr "I dag"
-
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Query Gramplet"
@@ -19348,6 +19532,16 @@ msgstr "Kvikoversigt for at udføre SQL-lignende forespørgsler"
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
 msgstr "Angiv SQL forespørgsel"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, fuzzy, python-brace-format
+#| msgid "%d rows processed in %s seconds.\n"
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr "%d rækker behandlet i %s sekunder.\n"
+
+#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
+msgid "Today"
+msgstr "I dag"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:11
 msgid "RU Web Connect Pack"
@@ -23042,6 +23236,26 @@ msgstr "Udfør"
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
 msgstr "Vis hjælp"
+
+#, python-format
+#~ msgid "Failed writing %s: %s"
+#~ msgstr "Fejl ved skrivning  %s: %s"
+
+#, python-format
+#~ msgid "Failure writing %s: %s"
+#~ msgstr "Fejl ved skrivning %s: %s"
+
+#, python-format
+#~ msgid "%s. Descendants of %s"
+#~ msgstr "%s. Efterkommere af %s"
+
+#, python-format
+#~ msgid "%d. %s"
+#~ msgstr "%d. %s"
+
+#, python-format
+#~ msgid "Ref: %s. %s"
+#~ msgstr "Ref: %s. %s"
 
 #~ msgid "Enter GOV-id:"
 #~ msgstr "Indtast GOV-id:"
