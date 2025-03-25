@@ -33,8 +33,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
-"Last-Translator: Frédéric Schwartz <frederic@online404.com>\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -1233,20 +1233,17 @@ msgid "Source matching parameters"
 msgstr "Source correspondantes"
 
 #: FilterRules/hassourcefilter.gpr.py:29
-#, fuzzy
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr ""
 "Renvoie les sources avec des valeurs contenant les paramètres sélectionnés"
 
 #: FilterRules/multipleparents.py:42
-#, fuzzy
 msgid "People with multiple parent records"
 msgstr "Personnes ayant des dossiers parentaux multiples"
 
 #: FilterRules/multipleparents.py:43
-#, fuzzy
 msgid "Matches people who have more than one set of parents"
-msgstr "Sélectionne les personnes qui ont plus d'une famille parentale"
+msgstr "Renvoie les personnes qui ont plus d'une famille parentale"
 
 #: FilterRules/associationsofpersonmatch.py:46
 #: FilterRules/associationsofpersonmatch.py:47
@@ -1269,20 +1266,16 @@ msgid "Inverse"
 msgstr "Inverse"
 
 #: FilterRules/hasrolerule.py:68
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "People with events with the <role>"
-msgstr "Ajouter les événements naissance avec les dates"
+msgstr "Les gens avec des événements avec le <rôle>"
 
 #: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
 msgid "Matches people with an event with a selected role"
 msgstr "Sélectionne les personnes avec un événement avec un rôle sélectionné"
 
 #: FilterRules/hasrolerule.py:92
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "Families with events with the <role>"
-msgstr "Ajouter les événements naissance avec les dates"
+msgstr "Familles ayant des évènements avec le <rôle>"
 
 #: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
 msgid "Matches families with an event with a selected role"
@@ -1364,10 +1357,8 @@ msgid "Multiple Parents Filter"
 msgstr "Filtre de parents multiples"
 
 #: FilterRules/hasrolerule.gpr.py:27
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "People with events with a selected role"
-msgstr "Ajouter les événements naissance avec les dates"
+msgstr "Individus ayant des évènements avec le <rôle>"
 
 #: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
@@ -1388,10 +1379,8 @@ msgid "Active person"
 msgstr "Individu actif"
 
 #: FilterRules/activepersonrule.py:47
-#, fuzzy
-#| msgid "Go to active person"
 msgid "Matches the active person"
-msgstr "Aller à l’individu actif"
+msgstr "Renvoie l’individu actif"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
@@ -1478,7 +1467,7 @@ msgstr "   Conjoints : "
 #: GraphView/graphview.py:3181 GraphView/graphview.py:3182
 #, python-format
 msgid "%s "
-msgstr "et %s "
+msgstr "%s "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:338
 #, python-format
@@ -1642,13 +1631,10 @@ msgid "Extra spacing of grandparent families (mm)"
 msgstr "Espacement supplémentaire pour la famille grands-parents (mm)"
 
 #: GenealogyTree/gt_descendant.py:191
-#, fuzzy
-#| msgid "right to left"
 msgid "First spouse left"
-msgstr "de droite à gauche"
+msgstr "Premier conjoint à gauche"
 
 #: GenealogyTree/gt_descendant.py:192
-#, fuzzy
 msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
@@ -1657,26 +1643,20 @@ msgstr ""
 "aider à réduire les croisements de ligne avec des mariages multiples."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
-#, fuzzy
-#| msgid "Persons"
 msgid "Person GEXF"
-msgstr "Personnes"
+msgstr "Individu GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:31
-#, fuzzy
-#| msgid "Persons"
 msgid "_Person GEXF"
-msgstr "Personnes"
+msgstr "_Individu GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
 msgstr "GEXF est utilisé dans de nombreuses applications de graphique réseau."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
-#, fuzzy
-#| msgid "Export notes"
 msgid "GEXF export options"
-msgstr "Exporter les notes"
+msgstr "Options d'export GEXF"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -1688,10 +1668,9 @@ msgstr "Exporter les notes"
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing to %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Échec à l'écriture de %s"
+msgstr "Échec à l'écriture de {target_path} : {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
@@ -1715,63 +1694,47 @@ msgid "Include Generations"
 msgstr "Inclure les générations"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
-#, fuzzy
-#| msgid "Male Background"
 msgid "Male Background Color"
-msgstr "Arrière-plan masculin"
+msgstr "Couleur d'arrière-plan masculin"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
 msgstr "Couleur RGB pour l'arrière-plan masculin."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
-#, fuzzy
-#| msgid "Male Background"
 msgid "Male Expandable Background Color"
-msgstr "Arrière-plan masculin"
+msgstr "Couleur d'arrière-plan masculin extensible"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for male expandable box background."
-msgstr "Couleur RGB pour l'arrière-plan masculin."
+msgstr "Couleur RGB d'arrière-plan pour les cadres extensibles masculins."
 
 #: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
 msgstr "Arrière-plan féminin"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for female box background."
-msgstr "Couleur RGB pour l'arrière-plan masculin."
+msgstr "Couleur RGB d'arrière-plan pour les cadres féminins."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
-#, fuzzy
-#| msgid "Female Background"
 msgid "Female Expandable Background"
-msgstr "Arrière-plan féminin"
+msgstr "Arrière-plan féminin extensible"
 
 #: D3Charts/AncestralCollapsibleTree.py:861
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for female expandable box background."
-msgstr "Couleur RGB pour l'arrière-plan masculin."
+msgstr "Couleur RGB d'arrière-plan pour les cadres extensibles féminins."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
-#, fuzzy
-#| msgid "The destination folder for generated files."
 msgid "The destination path for generated files."
-msgstr "Le répertoire de destination pour les fichiers générés."
+msgstr "Le chemin de destination pour les fichiers générés."
 
 #: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
 #: D3Charts/DescendantIndentedTree.py:1830
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
-#, fuzzy
-#| msgid "The destination file for the content."
 msgid "The destination file name for html content."
-msgstr "Le fichier de destination pour le contenu."
+msgstr "Le fichier de destination pour le contenu HTML."
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -1785,10 +1748,8 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:909
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendant Indented Tree"
-msgstr "Arbre descendant"
+msgstr "Arbre descendant en retrait"
 
 #: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
@@ -1798,48 +1759,36 @@ msgid ""
 msgstr ""
 
 #: D3Charts/AncestralFanChart.py:707
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Ancestral Fan Chart Options"
-msgstr "Générations de ascendants"
+msgstr "Options du diagramme des ancêtres en éventail"
 
 #: D3Charts/AncestralFanChart.py:729
-#, fuzzy
-#| msgid "Other Background"
 msgid "Paternal Background Color"
-msgstr "Autre arrière-plan"
+msgstr "Couleur d'arrière-plan des parents"
 
 #: D3Charts/AncestralFanChart.py:730
-#, fuzzy
-#| msgid "RGB-color for other box background."
 msgid "RGB-color for paternal box background."
-msgstr "Couleur RGB pour les autres arrière-plans."
+msgstr "Couleur RGB d'arrière-plan pour les parents."
 
 #: D3Charts/AncestralFanChart.py:733
-#, fuzzy
-#| msgid "Male Background"
 msgid "Maternal Background"
-msgstr "Arrière-plan masculin"
+msgstr "Arrière-plan maternel"
 
 #: D3Charts/AncestralFanChart.py:734
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for maternal box background."
-msgstr "Couleur RGB pour l'arrière-plan masculin."
+msgstr "Couleur RGB d'arrière-plan pour le cadre maternel."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
-#, fuzzy
 msgid "Ancestral Fan Chart"
-msgstr "Graphique d'évolution des ancêtres"
+msgstr "Graphique des ancêtres en éventail"
 
 #: D3Charts/AncestralFanChart.gpr.py:33
-#, fuzzy
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
 "Génère une page web avec une représentation graphique des ancêtres (SVG) "
-"représenté comme un graphique d'évolution de la bibliothèque D3.js "
+"représenté comme un graphique en éventail de la bibliothèque D3.js "
 "JavaScript."
 
 #: D3Charts/DescendantIndentedTree.py:673
@@ -1865,10 +1814,9 @@ msgstr ""
 "Voulez-vous le créer ?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-brace-format
-#| msgid "Failure writing %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "Échec à l'écriture de %s : %s"
+msgstr "Échec à la création de {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -1891,13 +1839,12 @@ msgstr "Développer tout"
 #, fuzzy
 #| msgid "Include citations"
 msgid "Include contraction level"
-msgstr "Inclure les citations"
+msgstr "Inclure le niveau de contraction"
 
 #: D3Charts/DescendantIndentedTree.py:1812
-#, fuzzy
-#| msgid "The number of descendant generations to include in the tree"
 msgid "The number of descendant levels to contract on initial display."
-msgstr "Le nombre de générations descendants à inclure dans l'arbre."
+msgstr ""
+"Le nombre de générations descendants à inclure dans l'affichage initial."
 
 #: D3Charts/DescendantIndentedTree.py:1819
 msgid "The font size in pixels for each node."
@@ -1913,34 +1860,24 @@ msgid "Expanded Row Background Color"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1852
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for expanded row background."
-msgstr "Couleur RGB pour l'arrière-plan masculin."
+msgstr "Couleur RGB d'arrière-plan pour une ligne extensible masculine."
 
 #: D3Charts/DescendantIndentedTree.py:1855
-#, fuzzy
-#| msgid "Male Background"
 msgid "Expandable Background Color"
-msgstr "Arrière-plan masculin"
+msgstr "Couleur d'arrière-plan extensible"
 
 #: D3Charts/DescendantIndentedTree.py:1857
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for expandable row background."
-msgstr "Couleur RGB pour l'arrière-plan masculin."
+msgstr "Couleur RGB d'arrière-plan pour une ligne extensible."
 
 #: D3Charts/DescendantIndentedTree.py:1860
-#, fuzzy
-#| msgid "Male Background"
 msgid "Non-Expandable Background Color"
-msgstr "Arrière-plan masculin"
+msgstr "Couleur d'arrière-plan non-extensible"
 
 #: D3Charts/DescendantIndentedTree.py:1862
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for non-expandable row background."
-msgstr "Couleur RGB pour l'arrière-plan masculin."
+msgstr "Couleur RGB d'arrière-plan pour une ligne non-extensible."
 
 #: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
@@ -1963,16 +1900,12 @@ msgid "How to handle living people."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1887
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to include people who may have recently died."
-msgstr "Inclure ou non des pages dépôt."
+msgstr "Inclure ou non les gens qui pourraient être décédées récemment."
 
 #: D3Charts/DescendantIndentedTree.py:1895
-#, fuzzy
-#| msgid "abbreviation"
 msgid "Navigation"
-msgstr "abréviation"
+msgstr "Navigation"
 
 #: D3Charts/DescendantIndentedTree.py:1897
 msgid "Contraction/Expansion mechanism"
@@ -2086,28 +2019,20 @@ msgstr ""
 "personne."
 
 #: D3Charts/DescendantIndentedTree.py:1964
-#, fuzzy
-#| msgid "Center person"
 msgid "Exclude center person"
-msgstr "Individu central"
+msgstr "Exclure l'individu central"
 
 #: D3Charts/DescendantIndentedTree.py:1965
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to generate links for center person."
-msgstr "Inclure ou non des pages dépôt."
+msgstr "Générer ou non des liens pour l'individu central."
 
 #: D3Charts/DescendantIndentedTree.py:1970
-#, fuzzy
-#| msgid "Include Sources"
 msgid "Exclude Spouses"
-msgstr "Inclure les sources"
+msgstr "Exclure les conjoints"
 
 #: D3Charts/DescendantIndentedTree.py:1971
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to generate links for spouses."
-msgstr "Inclure ou non des pages dépôt."
+msgstr "Générer ou non les liens pour les conjoints."
 
 #: D3Charts/DescendantIndentedTree.py:1978
 msgid "Biography Content"
@@ -2122,22 +2047,16 @@ msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:2025
-#, fuzzy
-#| msgid "5. Colour"
 msgid "Text Color"
-msgstr "5. Couleur"
+msgstr "Couleur du texte"
 
 #: D3Charts/DescendantIndentedTree.py:2027
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for biography text."
-msgstr "Couleur RGB pour l'arrière-plan masculin."
+msgstr "Couleur RGB pour le texte de la biographie."
 
 #: D3Charts/DescendantIndentedTree.py:2032
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for biography tooltip."
-msgstr "Couleur RGB pour l'arrière-plan masculin."
+msgstr "Couleur RGB pour l'outil biographique."
 
 #: D3Charts/DescendantIndentedTree.py:2035
 msgid "Header Font size"
@@ -2157,17 +2076,12 @@ msgstr ""
 
 # trunk
 #: SVWebconnectPack/SVWebPack.gpr.py:11
-#, fuzzy
-#| msgid "US Web Connect Pack"
 msgid "SV Web Connect Pack"
-msgstr "Ensemble de liens internet US"
+msgstr "Ensemble de liens internet SV"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
-msgstr ""
-"Collection de sites internet pour le Royaume-uni (nécessite libwebconnect)"
+msgstr "Collection de sites internet pour la Suède (nécessite libwebconnect)"
 
 #: SVWebconnectPack/SVWebPack.py:33 USWebConnectPack/USWebPack.py:33
 msgid "Find A Grave"
@@ -2180,16 +2094,12 @@ msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
 #: SVWebconnectPack/SVWebPack.py:35
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "Google SV"
-msgstr "_Google Maps"
+msgstr "Google SV"
 
 #: SVWebconnectPack/SVWebPack.py:38
-#, fuzzy
-#| msgid "FamilySearch.org"
 msgid "FamilySearch.org Tree"
-msgstr "FamilySearch.org"
+msgstr "Arbre FamilySearch.org"
 
 #: SVWebconnectPack/SVWebPack.py:40
 msgid "National archives of Sweden personsearch"
@@ -2205,10 +2115,8 @@ msgstr ""
 
 # Ancêtres, Aïeux ?
 #: SVWebconnectPack/SVWebPack.py:43
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Search"
-msgstr "Lignée"
+msgstr "Chercher sur Ancestry"
 
 #: SVWebconnectPack/SVWebPack.py:44
 msgid "Find swedish portraits - Rötter.se"
@@ -2332,10 +2240,8 @@ msgid "Event Description Editor"
 msgstr "Éditeur de description d'événement"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
-#, fuzzy
-#| msgid "Search..."
 msgid "Search substring..."
-msgstr "Rechercher…"
+msgstr "Rechercher une sous-chaîne…"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
 #: Heatmap/heatmap.py:226 RemoveTagTool/RemoveTagTool.py:271
@@ -2582,20 +2488,16 @@ msgid "Pause search expansion"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:105
-#, fuzzy
-#| msgid "Center person"
 msgid "Completed Person"
-msgstr "Individu central"
+msgstr "Individu complété"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:118
-#, fuzzy
-#| msgid "Ignore Patronymic name"
 msgid "Ignore Person or Family"
-msgstr "Ignorer le nom patronymique"
+msgstr "Ignorer l'individu ou la famille"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
@@ -2659,10 +2561,8 @@ msgid "Add via the Events tab of the Edit Person dialog."
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:582
-#, fuzzy
-#| msgid "Relationship to Mother"
 msgid "relationship type unknown"
-msgstr "Relation à la mère"
+msgstr "Type de relation inconnu"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
@@ -7474,10 +7374,8 @@ msgid "Long - Without Prefix on the Left"
 msgstr ""
 
 #: settings_ui_manager.py:141
-#, fuzzy
-#| msgid "URL prefix path."
 msgid "URL Prefix Replacement"
-msgstr "Chemin de préfixe d'URL."
+msgstr "Remplacement du préfixe d'URL"
 
 #: settings_ui_manager.py:145
 msgid "Use OpenAI"
@@ -7602,16 +7500,13 @@ msgid "URL is copied to the Clipboard"
 msgstr ""
 
 #: WebSearch.py:1656
-#, fuzzy
-#| msgid "Search in:"
 msgid "WebSearch Link"
-msgstr "Rechercher dans :"
+msgstr "Lien WebSearch"
 
 #: WebSearch.py:1701
-#, fuzzy, python-brace-format
-#| msgid "Web site title"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Titre du site"
+msgstr "Titre : {title}\n"
 
 #: WebSearch.py:1703
 #, python-brace-format
@@ -9180,7 +9075,7 @@ msgstr "Zoom original"
 
 #: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1116
 msgid "Zoom to best fit"
-msgstr "Zoom à l’affichage adapté"
+msgstr "Zoom pour un affichage adapté"
 
 #: LifeLineChartView/lifelinechartview.py:541
 msgid "Rebuild data cache"
@@ -9740,14 +9635,19 @@ msgid ""
 "The time range in years from today you want to set objects private.\n"
 "'0 years' = remove privacy from all objects."
 msgstr ""
+"La période en années à partir d'aujourd'hui pour laquelle vous souhaitez "
+"définir les objets privés.\n"
+"« 0 ans » = supprimer la confidentialité de tous les objets."
 
 #: SetPrivacyTool/SetPrivacyTool.py:306
 msgid "Always private if no date."
-msgstr ""
+msgstr "Toujours privé s'il n'y a pas de date."
 
 #: SetPrivacyTool/SetPrivacyTool.py:307
 msgid "If checked, all objects without a date will also be set private."
 msgstr ""
+"Si cette case est cochée, tous les objets sans date seront également définis "
+"comme privés."
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
 #, fuzzy
@@ -9769,11 +9669,11 @@ msgstr "Impossible de déterminer le type d'importation"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
-msgstr ""
+msgstr "Courriel"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
-msgstr ""
+msgstr "Définir tous les objets des <nombre> dernières années comme privés."
 
 #: SyncAssociations/syncAssociations.gpr.py:4
 #: SyncAssociations/syncAssociations.py:130
@@ -20418,10 +20318,8 @@ msgid " : Starts at "
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1063
-#, fuzzy
-#| msgid "and %s "
 msgid " and ends at "
-msgstr "et %s "
+msgstr " et finit à "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
@@ -20879,10 +20777,8 @@ msgid "Shows the number of descendants of the current person"
 msgstr "Affiche le nombre de descendants de l'individu actif"
 
 #: PlaceUpdate/PlaceUpdate.py:56
-#, fuzzy
-#| msgid " entries for place(s)"
 msgid "Set properties for multiple places"
-msgstr " entrées pour les lieu(x)"
+msgstr "Définir les propriétés pour plusieurs lieux"
 
 #: PlaceUpdate/PlaceUpdate.py:96
 msgid ""
@@ -21090,10 +20986,8 @@ msgid "Reference Date or Date Range"
 msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
-#, fuzzy
-#| msgid " by Gramps "
 msgid "a valid Gramps date"
-msgstr " par Gramps"
+msgstr "une date Gramps valide"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
@@ -21703,10 +21597,8 @@ msgid "Graph View"
 msgstr "Vue Graphique"
 
 #: GraphView/graphview.py:754
-#, fuzzy
-#| msgid "Show places"
 msgid "Show IDs"
-msgstr "Afficher les lieux"
+msgstr "Afficher les IDs"
 
 # master
 #: GraphView/graphview.py:757
@@ -22156,13 +22048,11 @@ msgstr ""
 #: GraphView/search_widget.py:592
 #, python-format
 msgid "<b>%s:</b>"
-msgstr "<b>%s :</b>"
+msgstr "<b>%s :</b>"
 
 #: GraphView/search_widget.py:783
-#, fuzzy
-#| msgid "Partner's spouse"
 msgid "Partners"
-msgstr "Conjoint du concubin"
+msgstr "Conjoints"
 
 #: Overview/Overview.gpr.py:29
 #, fuzzy
