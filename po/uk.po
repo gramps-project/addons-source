@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-11 19:37+0000\n"
+"PO-Revision-Date: 2025-03-24 14:31+0000\n"
 "Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -1626,10 +1626,9 @@ msgstr "Параметри експорту GEXF"
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing to %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Помилка запису у %s"
+msgstr "Помилка запису в {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
@@ -1776,10 +1775,9 @@ msgstr ""
 "Бажаєте спробувати створити його?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-brace-format
-#| msgid "Failed to create %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "Не вдалося створити %s: %s"
+msgstr "Помилка створення {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -5924,16 +5922,15 @@ msgid "Writing %s reports..."
 msgstr "Записування %s звітів..."
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-brace-format
-#| msgid "%(report_count)s. Descendant Report for %(person_name)s"
+#, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr "%(report_count)s. Звіт про нащадків для %(person_name)s"
+msgstr "{report_count}. Нащадки {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
 #, python-brace-format
 msgid "{report_count:d}. {name}"
-msgstr ""
+msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
@@ -5979,10 +5976,9 @@ msgid "Report, Generation, Person, Name"
 msgstr "Звіт, Покоління, Особа, Ім'я"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr "Див. звіт: %s, Покоління: %s, Особа: %s"
+msgstr "Див. звіт: {report}, Покоління: {generation}, Особа: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
@@ -5991,16 +5987,15 @@ msgid "Report appearances for %s"
 msgstr "Згадки у звіті для %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
-#, fuzzy, python-brace-format
-#| msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Чоловік/Дружина: Звіт: %s, Покоління: %s, Особа: %s"
+msgstr ""
+"Чоловік/дружина: Звіт: {report}, Покоління: {generation}, Особа: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
-#, fuzzy, python-brace-format
-#| msgid "Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Звіт: %s, Покоління: %s, Особа: %s"
+msgstr "Звіт: {report}, Покоління: {generation}, Особа: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
@@ -6051,7 +6046,7 @@ msgstr " %(event_text)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:993
 #, python-brace-format
 msgid "Ref: {number}. {name}"
-msgstr ""
+msgstr "№ {number}. {name}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
@@ -7138,89 +7133,75 @@ msgstr ""
 
 #: settings_ui_manager.py:103
 msgid "Middle Name Handling"
-msgstr ""
+msgstr "Обробка по батькові"
 
 #: settings_ui_manager.py:108
-#, fuzzy
-#| msgid "Save Note"
 msgid "Leave alone"
-msgstr "Зберегти примітку"
+msgstr "Залишити без змін"
 
 #: settings_ui_manager.py:109
-#, fuzzy
-#| msgid "Generate"
 msgid "Separate"
-msgstr "Згенерувати"
+msgstr "Відокремити"
 
 #: settings_ui_manager.py:119
 msgid "URL Compactness Level"
-msgstr ""
+msgstr "Рівень стиснення URL"
 
 #: settings_ui_manager.py:125
 msgid "Shortest - No Prefix, No Variables"
-msgstr ""
+msgstr "Найкоротший – Без префікса, без змінних"
 
 #: settings_ui_manager.py:128
 msgid "Compact - No Prefix, Variables Without Attributes"
-msgstr ""
+msgstr "Компактний – Без префікса, змінні без атрибутів"
 
 #: settings_ui_manager.py:131
 msgid "Compact - No Prefix, Variables With Attributes"
-msgstr ""
+msgstr "Компактний – Без префікса, змінні з атрибутами"
 
 #: settings_ui_manager.py:134
 msgid "Long - Without Prefix on the Left"
-msgstr ""
+msgstr "Довгий – Без префікса зліва"
 
 #: settings_ui_manager.py:141
-#, fuzzy
-#| msgid "URL prefix path."
 msgid "URL Prefix Replacement"
-msgstr "Префікс шляху URL."
+msgstr "Замінник префікса URL"
 
 #: settings_ui_manager.py:145
 msgid "Use OpenAI"
-msgstr ""
+msgstr "Використовувати OpenAI"
 
 #: settings_ui_manager.py:147
 msgid "OpenAI API Key"
-msgstr ""
+msgstr "Ключ API OpenAI"
 
 #: settings_ui_manager.py:150
 msgid "Display 'Website URL' Column"
-msgstr ""
+msgstr "Показувати колонку 'URL вебсайту'"
 
 #: settings_ui_manager.py:155
-#, fuzzy
-#| msgid "Display all"
 msgid "Display 'Vars' Column"
-msgstr "Показати всі"
+msgstr "Показувати колонку 'Змінні'"
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "Show person"
 msgid "Show User Data Icon"
-msgstr "Показати особу"
+msgstr "Показувати іконку користувацьких даних"
 
 #: settings_ui_manager.py:164
-#, fuzzy
-#| msgid "Show places"
 msgid "Show Flag Icons"
-msgstr "Показати місця"
+msgstr "Показувати прапори"
 
 #: settings_ui_manager.py:168
 msgid "Show Links From Attributes"
-msgstr ""
+msgstr "Показувати посилання з атрибутів"
 
 #: settings_ui_manager.py:181
 msgid "Enable CSV Files"
-msgstr ""
+msgstr "Увімкнути файли CSV"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search"
 msgid "WebSearch"
-msgstr "Пошук"
+msgstr "Веб-пошук"
 
 #: WebSearch.gpr.py:36
 msgid ""
