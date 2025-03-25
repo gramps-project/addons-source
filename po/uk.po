@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-24 14:32+0000\n"
-"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
+"PO-Revision-Date: 2025-03-24 14:37+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -7233,7 +7233,7 @@ msgstr "URL веб-сайту"
 
 #: WebSearch.py:1424
 msgid "Add link to note"
-msgstr "Додайте посилання на нотатку"
+msgstr "Додати посилання до нотатки"
 
 #: WebSearch.py:1425
 msgid "Show QR-code"
@@ -7241,7 +7241,7 @@ msgstr "Показати QR-код"
 
 #: WebSearch.py:1426
 msgid "Copy link to clipboard"
-msgstr "Копіювати посилання в буфер обміну"
+msgstr "Скопіювати посилання у буфер обміну"
 
 #: WebSearch.py:1428
 msgid "Hide link for selected item"
@@ -7253,7 +7253,7 @@ msgstr "Приховати посилання для всіх елементів
 
 #: WebSearch.py:1432
 msgid "🔍 AI Suggestions"
-msgstr "🔍 AI пропозиції"
+msgstr "🔍 екомендації AI"
 
 #: WebSearch.py:1549
 #, python-brace-format
@@ -7271,20 +7271,20 @@ msgstr ""
 "\n"
 "🔗 {url}\n"
 "\n"
-"Ви можете скористатися цим посиланням, щоб переглянути джерело та перевірити "
-"інформацію, пов’язану з цією особою."
+"Ви можете скористатися цим посиланням, щоб знову переглянути джерело та "
+"перевірити інформацію, пов’язану з цією особою."
 
 #: WebSearch.py:1560
 msgid "Add Web Link Note"
-msgstr "Додати примітку про веб-посилання"
+msgstr "Додати нотатку з веб-посиланням"
 
 #: WebSearch.py:1596
 msgid "URL is copied to the Clipboard"
-msgstr "URL-адресу буде скопійовано в буфер обміну"
+msgstr "URL скопійовано до буфера обміну"
 
 #: WebSearch.py:1656
 msgid "WebSearch Link"
-msgstr "Посилання на веб-пошук"
+msgstr "Посилання WebSearch"
 
 #: WebSearch.py:1701
 #, python-brace-format
@@ -7299,7 +7299,7 @@ msgstr "Замінено: {variables}\n"
 #: WebSearch.py:1707
 #, python-brace-format
 msgid "Empty: {variables}\n"
-msgstr "Порожній: {variables}\n"
+msgstr "Порожні: {variables}\n"
 
 #: WebSearch.py:1711
 #, python-brace-format
