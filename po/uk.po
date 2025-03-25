@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-09 22:42+0000\n"
+"POT-Creation-Date: 2025-03-24 13:38+0000\n"
 "PO-Revision-Date: 2025-03-11 19:37+0000\n"
 "Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -1342,10 +1342,10 @@ msgstr "Відповідає активній особі"
 msgid "Age in years at person's death."
 msgstr "Вік у роках на момент смерті особи."
 
-#: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
+#: FilterRules/ageatdeath.py:71 SourceIndex/death.glade:521
+#: SourceIndex/death.glade:669 SourceIndex/death.glade:939
+#: SourceIndex/witness.glade:107 SourceIndex/census.glade:286
 #: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
-#: SourceIndex/death.glade:521 SourceIndex/death.glade:669
-#: SourceIndex/death.glade:939 SourceIndex/census.glade:286
 #: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
 #: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
 #: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
@@ -1618,25 +1618,27 @@ msgstr "Параметри експорту GEXF"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785
-#: D3Charts/DescendantIndentedTree.py:1500
-#: D3Charts/DescendantIndentedTree.py:1563
-#: D3Charts/DescendantIndentedTree.py:1570
-#: D3Charts/DescendantIndentedTree.py:1677
-#: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
+#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
 #: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Не вдалося записати %s: %s"
+#: D3Charts/DescendantIndentedTree.py:1499
+#: D3Charts/DescendantIndentedTree.py:1562
+#: D3Charts/DescendantIndentedTree.py:1569
+#: D3Charts/DescendantIndentedTree.py:1676
+#: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
+#: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
+#, fuzzy, python-brace-format
+#| msgid "Failure writing to %s"
+msgid "Failure writing {target_path}: {message}"
+msgstr "Помилка запису у %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:345
-#: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
+#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
+#: D3Charts/DescendantIndentedTree.py:1518
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr "Не вдалося створити структуру директорій: %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:368
-#: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
+#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
+#: D3Charts/DescendantIndentedTree.py:1554
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "Не вдалося скопіювати веб-файли: %s"
@@ -1645,8 +1647,8 @@ msgstr "Не вдалося скопіювати веб-файли: %s"
 msgid "Ancestral Collapsible Tree Options"
 msgstr "Параметри складного дерева предків"
 
-#: D3Charts/AncestralCollapsibleTree.py:840
-#: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
+#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
+#: D3Charts/DescendantIndentedTree.py:1803
 msgid "Include Generations"
 msgstr "Включити покоління"
 
@@ -1682,313 +1684,33 @@ msgstr "Фон для розгорнутого блоку жінки"
 msgid "RGB-color for female expandable box background."
 msgstr "RGB-колір для фону розгорнутого блоку жінки."
 
-#: D3Charts/AncestralCollapsibleTree.py:867
-#: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
+#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
+#: D3Charts/DescendantIndentedTree.py:1825
 msgid "The destination path for generated files."
 msgstr "Шлях призначення для згенерованих файлів."
 
-#: D3Charts/AncestralCollapsibleTree.py:872
-#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
+#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
+#: D3Charts/DescendantIndentedTree.py:1830
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
 msgstr "Імʼя файлу для HTML вмісту."
 
-#: D3Charts/AncestralFanChart.gpr.py:23
-msgid "Ancestral Fan Chart"
-msgstr "Віялова діаграма предків"
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
+msgstr "Складне дерево предків"
 
-#: D3Charts/AncestralFanChart.gpr.py:33
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Fan Chart from the D3.js JavaScript library."
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
-"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим як "
-"віялова діаграма з бібліотеки D3.js JavaScript."
+"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим у "
+"вигляді складного дерева з бібліотеки D3.js JavaScript."
 
-#: D3Charts/DescendantIndentedTree.py:673
-#, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "Див. %(reference)s : %(spouse)s"
-
-#: D3Charts/DescendantIndentedTree.py:764
-msgid "Generating report..."
-msgstr "Генерується звіт..."
-
-#: D3Charts/DescendantIndentedTree.py:909
 #: D3Charts/DescendantIndentedTree.gpr.py:23
+#: D3Charts/DescendantIndentedTree.py:909
 msgid "Descendant Indented Tree"
 msgstr "Ієрархічне дерево нащадків"
-
-#: D3Charts/DescendantIndentedTree.py:1364
-msgid "Invalid Destination Directory"
-msgstr "Некоректний каталог призначення"
-
-#: D3Charts/DescendantIndentedTree.py:1365
-#, python-format
-msgid ""
-"Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it?"
-msgstr ""
-"Каталог призначення %s не існує\n"
-"Бажаєте спробувати створити його?"
-
-#: D3Charts/DescendantIndentedTree.py:1374
-#, python-format
-msgid "Failed to create %s: %s"
-msgstr "Не вдалося створити %s: %s"
-
-#: D3Charts/DescendantIndentedTree.py:1391
-#, python-format
-msgid ""
-"Destination file %s already exists.\n"
-"Do you want to overwrite it?"
-msgstr ""
-"Файл призначення %s вже існує.\n"
-"Бажаєте перезаписати його?"
-
-#: D3Charts/DescendantIndentedTree.py:1446
-msgid "Default View"
-msgstr "Перегляд за замовчуванням"
-
-#: D3Charts/DescendantIndentedTree.py:1449
-msgid "Expand All"
-msgstr "Розгорнути все"
-
-#: D3Charts/DescendantIndentedTree.py:1811
-msgid "Include contraction level"
-msgstr "Включити рівень згортання"
-
-#: D3Charts/DescendantIndentedTree.py:1813
-msgid "The number of descendant levels to contract on initial display."
-msgstr "Кількість рівнів нащадків для згортання при початковому відображенні."
-
-#: D3Charts/DescendantIndentedTree.py:1820
-msgid "The font size in pixels for each node."
-msgstr "Розмір шрифту у пікселях для кожного вузла."
-
-#: D3Charts/DescendantIndentedTree.py:1848
-#: DescendantBooks/DescendantBookReport.py:552
-msgid "Whether to show duplicate family trees in the report."
-msgstr "Чи показувати дубльовані сімейні дерева у звіті."
-
-#: D3Charts/DescendantIndentedTree.py:1852
-msgid "Expanded Row Background Color"
-msgstr "Колір фону розгорнутого рядка"
-
-#: D3Charts/DescendantIndentedTree.py:1853
-msgid "RGB-color for expanded row background."
-msgstr "RGB-колір для фону розгорнутого рядка."
-
-#: D3Charts/DescendantIndentedTree.py:1856
-msgid "Expandable Background Color"
-msgstr "Колір фону розширюваного рядка"
-
-#: D3Charts/DescendantIndentedTree.py:1858
-msgid "RGB-color for expandable row background."
-msgstr "RGB-колір для фону розширюваного рядка."
-
-#: D3Charts/DescendantIndentedTree.py:1861
-msgid "Non-Expandable Background Color"
-msgstr "Колір фону нерозширюваного рядка"
-
-#: D3Charts/DescendantIndentedTree.py:1863
-msgid "RGB-color for non-expandable row background."
-msgstr "RGB-колір для фону нерозширюваного рядка."
-
-#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
-msgid "Include records marked private"
-msgstr "Включати записи, позначені як приватні"
-
-#: D3Charts/DescendantIndentedTree.py:1869
-msgid "Whether to include private objects."
-msgstr "Чи включати приватні об'єкти."
-
-#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
-msgid "Include Last Name Only"
-msgstr "Включати лише прізвище"
-
-#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
-msgid "Include Full Name Only"
-msgstr "Включати лише повне ім'я"
-
-#: D3Charts/DescendantIndentedTree.py:1881
-msgid "How to handle living people."
-msgstr "Як обробляти живих осіб."
-
-#: D3Charts/DescendantIndentedTree.py:1888
-msgid "Whether or not to include people who may have recently died."
-msgstr "Чи включати осіб, які могли нещодавно померти."
-
-#: D3Charts/DescendantIndentedTree.py:1896
-msgid "Navigation"
-msgstr "Навігація"
-
-#: D3Charts/DescendantIndentedTree.py:1898
-msgid "Contraction/Expansion mechanism"
-msgstr "Механізм згортання/розгортання"
-
-#: D3Charts/DescendantIndentedTree.py:1901
-msgid "Entire node."
-msgstr "Увесь вузол."
-
-#: D3Charts/DescendantIndentedTree.py:1902
-msgid "Arrow images at start of node."
-msgstr "Зображення стрілок на початку вузла."
-
-#: D3Charts/DescendantIndentedTree.py:1903
-msgid "Plus/Minus images at start of node."
-msgstr "Зображення плюс/мінус на початку вузла."
-
-#: D3Charts/DescendantIndentedTree.py:1904
-#: D3Charts/DescendantIndentedTree.py:1933
-msgid "Where to click to expand/contract nodes."
-msgstr "Де натискати для розгортання/згортання вузлів."
-
-#: D3Charts/DescendantIndentedTree.py:1908
-msgid "Auto-generate HREF links for nodes"
-msgstr "Автоматично генерувати HREF-посилання для вузлів"
-
-#: D3Charts/DescendantIndentedTree.py:1910
-msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr ""
-"Чи слід автоматично створювати HTML-посилання для кожного вузла у звіті."
-
-#: D3Charts/DescendantIndentedTree.py:1916
-msgid "URL prefix path."
-msgstr "Префікс шляху URL."
-
-#: D3Charts/DescendantIndentedTree.py:1918
-msgid "URL prefix to apply to each auto-generated HREF link."
-msgstr ""
-"Префікс URL, що застосовується до кожного автоматично згенерованого HREF-"
-"посилання."
-
-#: D3Charts/DescendantIndentedTree.py:1924
-msgid "URL file extension"
-msgstr "Розширення файлу URL"
-
-#: D3Charts/DescendantIndentedTree.py:1926
-msgid "No file extension."
-msgstr "Немає розширення файлу."
-
-#: D3Charts/DescendantIndentedTree.py:1927
-msgid ".html"
-msgstr ".html"
-
-#: D3Charts/DescendantIndentedTree.py:1928
-msgid ".htm"
-msgstr ".htm"
-
-#: D3Charts/DescendantIndentedTree.py:1929
-msgid ".shtml"
-msgstr ".shtml"
-
-#: D3Charts/DescendantIndentedTree.py:1930
-msgid ".php"
-msgstr ".php"
-
-#: D3Charts/DescendantIndentedTree.py:1931
-msgid ".php3"
-msgstr ".php3"
-
-#: D3Charts/DescendantIndentedTree.py:1932
-msgid ".cgi"
-msgstr ".cgi"
-
-#: D3Charts/DescendantIndentedTree.py:1938
-msgid "URL file name delimeter"
-msgstr "Роздільник імені файлу URL"
-
-#: D3Charts/DescendantIndentedTree.py:1940
-msgid "Remove all whitespace."
-msgstr "Видалити всі пробіли."
-
-#: D3Charts/DescendantIndentedTree.py:1941
-msgid "Replace whitespace with dash(-)."
-msgstr "Замінити пробіли на дефіс (-)."
-
-#: D3Charts/DescendantIndentedTree.py:1942
-msgid "Replace whitespace with underscore(_)"
-msgstr "Замінити пробіли на підкреслення (_)"
-
-#: D3Charts/DescendantIndentedTree.py:1943
-msgid "What to use as file name delimiter replacing whitespace."
-msgstr "Що використовувати як роздільник імені файлу, замінюючи пробіли."
-
-#: D3Charts/DescendantIndentedTree.py:1948
-msgid "Generations to generate HREF links"
-msgstr "Покоління для створення HREF-посилань"
-
-#: D3Charts/DescendantIndentedTree.py:1950
-msgid "The number of generations to generate HREF links."
-msgstr "Кількість поколінь для створення HREF-посилань."
-
-#: D3Charts/DescendantIndentedTree.py:1956
-msgid "Exclude persons who died before (years)"
-msgstr "Виключити осіб, які померли раніше (років)"
-
-#: D3Charts/DescendantIndentedTree.py:1959
-msgid ""
-"Whether to generate links for people who died in infancy, -1 excludes nobody."
-msgstr ""
-"Чи генерувати посилання для осіб, які померли в дитинстві; -1 не виключає "
-"нікого."
-
-#: D3Charts/DescendantIndentedTree.py:1965
-msgid "Exclude center person"
-msgstr "Виключити активну особу"
-
-#: D3Charts/DescendantIndentedTree.py:1966
-msgid "Whether or not to generate links for center person."
-msgstr "Чи створювати посилання для центральної особи."
-
-#: D3Charts/DescendantIndentedTree.py:1971
-msgid "Exclude Spouses"
-msgstr "Виключити подружжя"
-
-#: D3Charts/DescendantIndentedTree.py:1972
-msgid "Whether or not to generate links for spouses."
-msgstr "Чи створювати посилання для подружжя."
-
-#: D3Charts/DescendantIndentedTree.py:1979
-msgid "Biography Content"
-msgstr "Зміст біографії"
-
-#: D3Charts/DescendantIndentedTree.py:1981
-msgid "Show biography tooltips"
-msgstr "Показувати підказки біографії"
-
-#: D3Charts/DescendantIndentedTree.py:1982
-msgid "Whether to show biography tooltips when hovering over a node."
-msgstr "Чи показувати підказки біографії при наведенні на вузол."
-
-#: D3Charts/DescendantIndentedTree.py:2026
-msgid "Text Color"
-msgstr "Колір тексту"
-
-#: D3Charts/DescendantIndentedTree.py:2028
-msgid "RGB-color for biography text."
-msgstr "RGB-колір для тексту біографії."
-
-#: D3Charts/DescendantIndentedTree.py:2033
-msgid "RGB-color for biography tooltip."
-msgstr "RGB-колір для підказки біографії."
-
-#: D3Charts/DescendantIndentedTree.py:2036
-msgid "Header Font size"
-msgstr "Розмір шрифту заголовка"
-
-#: D3Charts/DescendantIndentedTree.py:2038
-msgid "The font size in pixels for biography header text."
-msgstr "Розмір шрифту у пікселях для заголовка біографії."
-
-#: D3Charts/DescendantIndentedTree.py:2044
-msgid "Body Font size"
-msgstr "Розмір шрифту основного тексту"
-
-#: D3Charts/DescendantIndentedTree.py:2046
-msgid "The font size in pixels for biography body text."
-msgstr "Розмір шрифту у пікселях для основного тексту біографії."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
@@ -2019,17 +1741,298 @@ msgstr "Фон для материнської лінії"
 msgid "RGB-color for maternal box background."
 msgstr "RGB-колір для фону блоку по материнській лінії."
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr "Складне дерево предків"
+#: D3Charts/AncestralFanChart.gpr.py:23
+msgid "Ancestral Fan Chart"
+msgstr "Віялова діаграма предків"
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
+#: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+"represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
-"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим у "
-"вигляді складного дерева з бібліотеки D3.js JavaScript."
+"Генерує веб-сторінку з графічним зображенням предків (SVG), представленим як "
+"віялова діаграма з бібліотеки D3.js JavaScript."
+
+#: D3Charts/DescendantIndentedTree.py:673
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Див. %(reference)s : %(spouse)s"
+
+#: D3Charts/DescendantIndentedTree.py:764
+msgid "Generating report..."
+msgstr "Генерується звіт..."
+
+#: D3Charts/DescendantIndentedTree.py:1364
+msgid "Invalid Destination Directory"
+msgstr "Некоректний каталог призначення"
+
+#: D3Charts/DescendantIndentedTree.py:1365
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"Каталог призначення %s не існує\n"
+"Бажаєте спробувати створити його?"
+
+#: D3Charts/DescendantIndentedTree.py:1374
+#, fuzzy, python-brace-format
+#| msgid "Failed to create %s: %s"
+msgid "Failed to create {target_path}: {message}"
+msgstr "Не вдалося створити %s: %s"
+
+#: D3Charts/DescendantIndentedTree.py:1390
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Файл призначення %s вже існує.\n"
+"Бажаєте перезаписати його?"
+
+#: D3Charts/DescendantIndentedTree.py:1445
+msgid "Default View"
+msgstr "Перегляд за замовчуванням"
+
+#: D3Charts/DescendantIndentedTree.py:1448
+msgid "Expand All"
+msgstr "Розгорнути все"
+
+#: D3Charts/DescendantIndentedTree.py:1810
+msgid "Include contraction level"
+msgstr "Включити рівень згортання"
+
+#: D3Charts/DescendantIndentedTree.py:1812
+msgid "The number of descendant levels to contract on initial display."
+msgstr "Кількість рівнів нащадків для згортання при початковому відображенні."
+
+#: D3Charts/DescendantIndentedTree.py:1819
+msgid "The font size in pixels for each node."
+msgstr "Розмір шрифту у пікселях для кожного вузла."
+
+#: D3Charts/DescendantIndentedTree.py:1847
+#: DescendantBooks/DescendantBookReport.py:552
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Чи показувати дубльовані сімейні дерева у звіті."
+
+#: D3Charts/DescendantIndentedTree.py:1851
+msgid "Expanded Row Background Color"
+msgstr "Колір фону розгорнутого рядка"
+
+#: D3Charts/DescendantIndentedTree.py:1852
+msgid "RGB-color for expanded row background."
+msgstr "RGB-колір для фону розгорнутого рядка."
+
+#: D3Charts/DescendantIndentedTree.py:1855
+msgid "Expandable Background Color"
+msgstr "Колір фону розширюваного рядка"
+
+#: D3Charts/DescendantIndentedTree.py:1857
+msgid "RGB-color for expandable row background."
+msgstr "RGB-колір для фону розширюваного рядка."
+
+#: D3Charts/DescendantIndentedTree.py:1860
+msgid "Non-Expandable Background Color"
+msgstr "Колір фону нерозширюваного рядка"
+
+#: D3Charts/DescendantIndentedTree.py:1862
+msgid "RGB-color for non-expandable row background."
+msgstr "RGB-колір для фону нерозширюваного рядка."
+
+#: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
+msgid "Include records marked private"
+msgstr "Включати записи, позначені як приватні"
+
+#: D3Charts/DescendantIndentedTree.py:1868
+msgid "Whether to include private objects."
+msgstr "Чи включати приватні об'єкти."
+
+#: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
+msgid "Include Last Name Only"
+msgstr "Включати лише прізвище"
+
+#: D3Charts/DescendantIndentedTree.py:1878 DynamicWeb/dynamicweb.py:4822
+msgid "Include Full Name Only"
+msgstr "Включати лише повне ім'я"
+
+#: D3Charts/DescendantIndentedTree.py:1880
+msgid "How to handle living people."
+msgstr "Як обробляти живих осіб."
+
+#: D3Charts/DescendantIndentedTree.py:1887
+msgid "Whether or not to include people who may have recently died."
+msgstr "Чи включати осіб, які могли нещодавно померти."
+
+#: D3Charts/DescendantIndentedTree.py:1895
+msgid "Navigation"
+msgstr "Навігація"
+
+#: D3Charts/DescendantIndentedTree.py:1897
+msgid "Contraction/Expansion mechanism"
+msgstr "Механізм згортання/розгортання"
+
+#: D3Charts/DescendantIndentedTree.py:1900
+msgid "Entire node."
+msgstr "Увесь вузол."
+
+#: D3Charts/DescendantIndentedTree.py:1901
+msgid "Arrow images at start of node."
+msgstr "Зображення стрілок на початку вузла."
+
+#: D3Charts/DescendantIndentedTree.py:1902
+msgid "Plus/Minus images at start of node."
+msgstr "Зображення плюс/мінус на початку вузла."
+
+#: D3Charts/DescendantIndentedTree.py:1903
+#: D3Charts/DescendantIndentedTree.py:1932
+msgid "Where to click to expand/contract nodes."
+msgstr "Де натискати для розгортання/згортання вузлів."
+
+#: D3Charts/DescendantIndentedTree.py:1907
+msgid "Auto-generate HREF links for nodes"
+msgstr "Автоматично генерувати HREF-посилання для вузлів"
+
+#: D3Charts/DescendantIndentedTree.py:1909
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr ""
+"Чи слід автоматично створювати HTML-посилання для кожного вузла у звіті."
+
+#: D3Charts/DescendantIndentedTree.py:1915
+msgid "URL prefix path."
+msgstr "Префікс шляху URL."
+
+#: D3Charts/DescendantIndentedTree.py:1917
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr ""
+"Префікс URL, що застосовується до кожного автоматично згенерованого HREF-"
+"посилання."
+
+#: D3Charts/DescendantIndentedTree.py:1923
+msgid "URL file extension"
+msgstr "Розширення файлу URL"
+
+#: D3Charts/DescendantIndentedTree.py:1925
+msgid "No file extension."
+msgstr "Немає розширення файлу."
+
+#: D3Charts/DescendantIndentedTree.py:1926
+msgid ".html"
+msgstr ".html"
+
+#: D3Charts/DescendantIndentedTree.py:1927
+msgid ".htm"
+msgstr ".htm"
+
+#: D3Charts/DescendantIndentedTree.py:1928
+msgid ".shtml"
+msgstr ".shtml"
+
+#: D3Charts/DescendantIndentedTree.py:1929
+msgid ".php"
+msgstr ".php"
+
+#: D3Charts/DescendantIndentedTree.py:1930
+msgid ".php3"
+msgstr ".php3"
+
+#: D3Charts/DescendantIndentedTree.py:1931
+msgid ".cgi"
+msgstr ".cgi"
+
+#: D3Charts/DescendantIndentedTree.py:1937
+msgid "URL file name delimeter"
+msgstr "Роздільник імені файлу URL"
+
+#: D3Charts/DescendantIndentedTree.py:1939
+msgid "Remove all whitespace."
+msgstr "Видалити всі пробіли."
+
+#: D3Charts/DescendantIndentedTree.py:1940
+msgid "Replace whitespace with dash(-)."
+msgstr "Замінити пробіли на дефіс (-)."
+
+#: D3Charts/DescendantIndentedTree.py:1941
+msgid "Replace whitespace with underscore(_)"
+msgstr "Замінити пробіли на підкреслення (_)"
+
+#: D3Charts/DescendantIndentedTree.py:1942
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "Що використовувати як роздільник імені файлу, замінюючи пробіли."
+
+#: D3Charts/DescendantIndentedTree.py:1947
+msgid "Generations to generate HREF links"
+msgstr "Покоління для створення HREF-посилань"
+
+#: D3Charts/DescendantIndentedTree.py:1949
+msgid "The number of generations to generate HREF links."
+msgstr "Кількість поколінь для створення HREF-посилань."
+
+#: D3Charts/DescendantIndentedTree.py:1955
+msgid "Exclude persons who died before (years)"
+msgstr "Виключити осіб, які померли раніше (років)"
+
+#: D3Charts/DescendantIndentedTree.py:1958
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr ""
+"Чи генерувати посилання для осіб, які померли в дитинстві; -1 не виключає "
+"нікого."
+
+#: D3Charts/DescendantIndentedTree.py:1964
+msgid "Exclude center person"
+msgstr "Виключити активну особу"
+
+#: D3Charts/DescendantIndentedTree.py:1965
+msgid "Whether or not to generate links for center person."
+msgstr "Чи створювати посилання для центральної особи."
+
+#: D3Charts/DescendantIndentedTree.py:1970
+msgid "Exclude Spouses"
+msgstr "Виключити подружжя"
+
+#: D3Charts/DescendantIndentedTree.py:1971
+msgid "Whether or not to generate links for spouses."
+msgstr "Чи створювати посилання для подружжя."
+
+#: D3Charts/DescendantIndentedTree.py:1978
+msgid "Biography Content"
+msgstr "Зміст біографії"
+
+#: D3Charts/DescendantIndentedTree.py:1980
+msgid "Show biography tooltips"
+msgstr "Показувати підказки біографії"
+
+#: D3Charts/DescendantIndentedTree.py:1981
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "Чи показувати підказки біографії при наведенні на вузол."
+
+#: D3Charts/DescendantIndentedTree.py:2025
+msgid "Text Color"
+msgstr "Колір тексту"
+
+#: D3Charts/DescendantIndentedTree.py:2027
+msgid "RGB-color for biography text."
+msgstr "RGB-колір для тексту біографії."
+
+#: D3Charts/DescendantIndentedTree.py:2032
+msgid "RGB-color for biography tooltip."
+msgstr "RGB-колір для підказки біографії."
+
+#: D3Charts/DescendantIndentedTree.py:2035
+msgid "Header Font size"
+msgstr "Розмір шрифту заголовка"
+
+#: D3Charts/DescendantIndentedTree.py:2037
+msgid "The font size in pixels for biography header text."
+msgstr "Розмір шрифту у пікселях для заголовка біографії."
+
+#: D3Charts/DescendantIndentedTree.py:2043
+msgid "Body Font size"
+msgstr "Розмір шрифту основного тексту"
+
+#: D3Charts/DescendantIndentedTree.py:2045
+msgid "The font size in pixels for biography body text."
+msgstr "Розмір шрифту у пікселях для основного тексту біографії."
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
 msgid "SV Web Connect Pack"
@@ -2741,7 +2744,7 @@ msgid "Whether to display the theoretical number of ancestor by generation"
 msgstr "Чи відображати теоретичну кількість предків за поколіннями"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
-#: DescendantBooks/DetailedDescendantBookReport.py:1540
+#: DescendantBooks/DetailedDescendantBookReport.py:1536
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
 #: DetDescendantReport-images/detdescendantreporti.py:1252
 #: LinesOfDescendency/lines-of-descendency.py:72
@@ -3183,9 +3186,9 @@ msgstr "Показано з _START_ по _END_ з _TOTAL_ записів"
 msgid "Sort by:"
 msgstr "Сортувати за:"
 
-#: DynamicWeb/dynamicweb.py:3114 SourceIndex/marriage.py:87
-#: SourceIndex/census.py:82 SourceIndex/index.py:92 SourceIndex/death.py:87
-#: SourceIndex/witness.py:64 SourceIndex/birth.py:126
+#: DynamicWeb/dynamicweb.py:3114 SourceIndex/death.py:87
+#: SourceIndex/birth.py:126 SourceIndex/marriage.py:87 SourceIndex/index.py:92
+#: SourceIndex/witness.py:64 SourceIndex/census.py:82
 msgid "Sources Index"
 msgstr "Індекс джерел"
 
@@ -4417,12 +4420,6 @@ msgstr "опис"
 msgid "witnesses"
 msgstr "свідки"
 
-#: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
-#: DenominoViso/DenominoViso.py:2503
-#, python-format
-msgid "Failure writing %s: %s"
-msgstr "Не вдалося записати %s: %s"
-
 #: DenominoViso/DenominoViso.py:395
 msgid "No central person selected"
 msgstr "Не вибрано головну особу"
@@ -5148,10 +5145,9 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
-"Діагностичний Gramplet для перевірки, чи має <a href="
-"\"https://gramps-project.org/\">Gramps</a> усі необхідні <a href="
-"\"https://github.com/gramps-project/gramps/blob/master/README.md\""
-">залежності</a> встановлені.\n"
+"Діагностичний Gramplet для перевірки, чи має <a href=\"https://gramps-"
+"project.org/\">Gramps</a> усі необхідні <a href=\"https://github.com/gramps-"
+"project/gramps/blob/master/README.md\">залежності</a> встановлені.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
@@ -5888,6 +5884,25 @@ msgstr ""
 "клавішами зі стрілками <ctrl> або <shift> і 'пробіл'.  Або <ctrl>'a' для "
 "вибору всього."
 
+#: DescendantBooks/DescendantBooks.gpr.py:22
+msgid "Descendant Book"
+msgstr "Книга нащадків"
+
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr "Створює один або кілька звітів про нащадків на основі наданого запиту."
+
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr "Детальна книга нащадків"
+
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Створює один або кілька детальних звітів про нащадків на основі наданого "
+"запиту."
+
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -5909,18 +5924,19 @@ msgid "Writing %s reports..."
 msgstr "Записування %s звітів..."
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, python-format
-msgid "%s. Descendants of %s"
-msgstr "%s. Нащадки %s"
+#, fuzzy, python-brace-format
+#| msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgid "{report_count}. Descendants of {name}"
+msgstr "%(report_count)s. Звіт про нащадків для %(person_name)s"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
-#, python-format
-msgid "%d. %s"
-msgstr "%d. %s"
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:510
-#: DescendantBooks/DetailedDescendantBookReport.py:1345
+#: DescendantBooks/DetailedDescendantBookReport.py:1341
 msgid "Select filter to restrict people that appear in the report"
 msgstr "Виберіть фільтр для обмеження людей, що з'являються у звіті"
 
@@ -5963,211 +5979,195 @@ msgid "Report, Generation, Person, Name"
 msgstr "Звіт, Покоління, Особа, Ім'я"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, python-format
-msgid "See Report : %s, Generation : %s, Person : %s"
+#, fuzzy, python-brace-format
+#| msgid "See Report : %s, Generation : %s, Person : %s"
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
 msgstr "Див. звіт: %s, Покоління: %s, Особа: %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:766
-#: DescendantBooks/DetailedDescendantBookReport.py:779
+#: DescendantBooks/DetailedDescendantBookReport.py:765
+#: DescendantBooks/DetailedDescendantBookReport.py:777
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Згадки у звіті для %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:771
-#, python-format
-msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+#: DescendantBooks/DetailedDescendantBookReport.py:770
+#, fuzzy, python-brace-format
+#| msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
 msgstr "Чоловік/Дружина: Звіт: %s, Покоління: %s, Особа: %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:784
-#, python-format
-msgid "Report: %s, Generation: %s, Person: %s"
+#: DescendantBooks/DetailedDescendantBookReport.py:782
+#, fuzzy, python-brace-format
+#| msgid "Report: %s, Generation: %s, Person: %s"
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
 msgstr "Звіт: %s, Покоління: %s, Особа: %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:809
+#: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
 msgid "%(event_name)s of %(name)s "
 msgstr "%(event_name)s у %(name)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:813
+#: DescendantBooks/DetailedDescendantBookReport.py:810
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
 msgstr "%(event_name)s у %(name)s та %(mate)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
+#: DescendantBooks/DetailedDescendantBookReport.py:814
+#: DescendantBooks/DetailedDescendantBookReport.py:858
 #: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:820
-#: DescendantBooks/DetailedDescendantBookReport.py:864
+#: DescendantBooks/DetailedDescendantBookReport.py:817
+#: DescendantBooks/DetailedDescendantBookReport.py:861
 #: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
 msgstr "%(date)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:822
-#: DescendantBooks/DetailedDescendantBookReport.py:866
+#: DescendantBooks/DetailedDescendantBookReport.py:819
+#: DescendantBooks/DetailedDescendantBookReport.py:863
 #: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:824
+#: DescendantBooks/DetailedDescendantBookReport.py:821
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
 msgstr ". Посилання: %(repno)s %(gen)s %(per)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:853
+#: DescendantBooks/DetailedDescendantBookReport.py:850
 #, python-format
 msgid "%(event_name)s:"
 msgstr "%(event_name)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:878
+#: DescendantBooks/DetailedDescendantBookReport.py:875
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:996
-#, python-format
-msgid "Ref: %s. %s"
-msgstr "Посилання: %s. %s"
+#: DescendantBooks/DetailedDescendantBookReport.py:993
+#, python-brace-format
+msgid "Ref: {number}. {name}"
+msgstr ""
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1237
+#: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1298
+#: DescendantBooks/DetailedDescendantBookReport.py:1294
 #, python-format
 msgid "%(type)s:"
 msgstr "%(type)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1303
+#: DescendantBooks/DetailedDescendantBookReport.py:1299
 #, python-format
 msgid " %(value)s%(endnotes)s"
 msgstr " %(value)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1405
+#: DescendantBooks/DetailedDescendantBookReport.py:1401
 #: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
 msgstr "Список дітей"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1422
+#: DescendantBooks/DetailedDescendantBookReport.py:1418
 #: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
 msgstr "Додати посилання на нащадка у списку дітей"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1486
+#: DescendantBooks/DetailedDescendantBookReport.py:1482
 msgid "Include Index of Names"
 msgstr "Включити індекс імен"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1487
+#: DescendantBooks/DetailedDescendantBookReport.py:1483
 msgid "Whether to include the index of Names at the end of the report."
 msgstr "Чи включати індекс імен у кінці звіту."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1491
+#: DescendantBooks/DetailedDescendantBookReport.py:1487
 msgid "Include index of Dates"
 msgstr "Включити індекс дат"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1492
+#: DescendantBooks/DetailedDescendantBookReport.py:1488
 msgid "Whether to include the index of Dates at the end of the report."
 msgstr "Чи включати індекс дат у кінці звіту."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1496
+#: DescendantBooks/DetailedDescendantBookReport.py:1492
 msgid "Include index of Places"
 msgstr "Включити індекс місць"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1497
+#: DescendantBooks/DetailedDescendantBookReport.py:1493
 msgid "Whether to include the index of Places at the end of the report."
 msgstr "Чи включати індекс місць у кінці звіту."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1501
+#: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Include the 'Report appearances' section with each person"
 msgstr "Включити розділ 'Згадки у звіті' для кожної людини"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1503
+#: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
 msgstr ""
 "Розділ 'Згадки у звіті' показує інші місця у звіті, де згадується ця людина."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1570
+#: DescendantBooks/DetailedDescendantBookReport.py:1566
 #: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
 msgstr "Стиль, що використовується для списку дітей."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1580
+#: DescendantBooks/DetailedDescendantBookReport.py:1576
 msgid "The basic style used for Note header."
 msgstr "Основний стиль, що використовується для заголовка приміток."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1597
+#: DescendantBooks/DetailedDescendantBookReport.py:1593
 #: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
 msgstr "Стиль, що використовується для першого запису про особу."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1607
+#: DescendantBooks/DetailedDescendantBookReport.py:1603
 #: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
 "Стиль, що використовується для заголовка 'Докладніше' та заголовків чоловіка/"
 "дружини."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1618
+#: DescendantBooks/DetailedDescendantBookReport.py:1614
 #: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
 msgstr "Стиль, що використовується для додаткових деталей."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1628
-#: DescendantBooks/DetailedDescendantBookReport.py:1638
+#: DescendantBooks/DetailedDescendantBookReport.py:1624
+#: DescendantBooks/DetailedDescendantBookReport.py:1634
 msgid "The style used for note detail data."
 msgstr "Стиль, що використовується для деталей приміток."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1648
+#: DescendantBooks/DetailedDescendantBookReport.py:1644
 msgid "The style used for the date in the Index of Dates."
 msgstr "Стиль, що використовується для дати в індексі дат."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1658
+#: DescendantBooks/DetailedDescendantBookReport.py:1654
 msgid "The style used for the events in the Index of Dates."
 msgstr "Стиль, що використовується для подій в індексі дат."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1668
+#: DescendantBooks/DetailedDescendantBookReport.py:1664
 msgid "The style used for the header in the Index of Names."
 msgstr "Стиль, що використовується для заголовка в індексі імен."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1678
+#: DescendantBooks/DetailedDescendantBookReport.py:1674
 msgid "The style used for the references in the Index of Names."
 msgstr "Стиль, що використовується для посилань в індексі імен."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1688
+#: DescendantBooks/DetailedDescendantBookReport.py:1684
 msgid "The style used for the header in the Index of Places."
 msgstr "Стиль, що використовується для заголовка в індексі місць."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1699
+#: DescendantBooks/DetailedDescendantBookReport.py:1695
 msgid "The style used for the references in the Index of Places."
 msgstr "Стиль, що використовується для посилань в індексі місць."
-
-#: DescendantBooks/DescendantBooks.gpr.py:22
-msgid "Descendant Book"
-msgstr "Книга нащадків"
-
-#: DescendantBooks/DescendantBooks.gpr.py:23
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr "Створює один або кілька звітів про нащадків на основі наданого запиту."
-
-#: DescendantBooks/DescendantBooks.gpr.py:41
-msgid "Detailed Descendant Book"
-msgstr "Детальна книга нащадків"
-
-#: DescendantBooks/DescendantBooks.gpr.py:43
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Створює один або кілька детальних звітів про нащадків на основі наданого "
-"запиту."
 
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
@@ -7135,6 +7135,197 @@ msgid ""
 msgstr ""
 "Виводить список усіх нотаток із заданим тегом разом із записами, на які вони "
 "посилаються (наприклад, особа, родина, подія тощо)."
+
+#: settings_ui_manager.py:103
+msgid "Middle Name Handling"
+msgstr ""
+
+#: settings_ui_manager.py:108
+#, fuzzy
+#| msgid "Save Note"
+msgid "Leave alone"
+msgstr "Зберегти примітку"
+
+#: settings_ui_manager.py:109
+#, fuzzy
+#| msgid "Generate"
+msgid "Separate"
+msgstr "Згенерувати"
+
+#: settings_ui_manager.py:119
+msgid "URL Compactness Level"
+msgstr ""
+
+#: settings_ui_manager.py:125
+msgid "Shortest - No Prefix, No Variables"
+msgstr ""
+
+#: settings_ui_manager.py:128
+msgid "Compact - No Prefix, Variables Without Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:131
+msgid "Compact - No Prefix, Variables With Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:134
+msgid "Long - Without Prefix on the Left"
+msgstr ""
+
+#: settings_ui_manager.py:141
+#, fuzzy
+#| msgid "URL prefix path."
+msgid "URL Prefix Replacement"
+msgstr "Префікс шляху URL."
+
+#: settings_ui_manager.py:145
+msgid "Use OpenAI"
+msgstr ""
+
+#: settings_ui_manager.py:147
+msgid "OpenAI API Key"
+msgstr ""
+
+#: settings_ui_manager.py:150
+msgid "Display 'Website URL' Column"
+msgstr ""
+
+#: settings_ui_manager.py:155
+#, fuzzy
+#| msgid "Display all"
+msgid "Display 'Vars' Column"
+msgstr "Показати всі"
+
+#: settings_ui_manager.py:160
+#, fuzzy
+#| msgid "Show person"
+msgid "Show User Data Icon"
+msgstr "Показати особу"
+
+#: settings_ui_manager.py:164
+#, fuzzy
+#| msgid "Show places"
+msgid "Show Flag Icons"
+msgstr "Показати місця"
+
+#: settings_ui_manager.py:168
+msgid "Show Links From Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:181
+msgid "Enable CSV Files"
+msgstr ""
+
+#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
+#, fuzzy
+#| msgid "Search"
+msgid "WebSearch"
+msgstr "Пошук"
+
+#: WebSearch.gpr.py:36
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+
+#: qr_window.py:76
+msgid "QR-code"
+msgstr ""
+
+#: qr_window.py:114
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+
+#: WebSearch.py:1419
+msgid "Vars"
+msgstr ""
+
+#: WebSearch.py:1421
+#, fuzzy
+#| msgid "Web site title"
+msgid "Website URL"
+msgstr "Назва веб-сайту"
+
+#: WebSearch.py:1424
+#, fuzzy
+#| msgid "Add Test Note"
+msgid "Add link to note"
+msgstr "Додати тестову примітку"
+
+#: WebSearch.py:1425
+#, fuzzy
+#| msgid "Show places"
+msgid "Show QR-code"
+msgstr "Показати місця"
+
+#: WebSearch.py:1426
+#, fuzzy
+#| msgid "Collections Clipboard"
+msgid "Copy link to clipboard"
+msgstr "Буфер обміну колекцій"
+
+#: WebSearch.py:1428
+msgid "Hide link for selected item"
+msgstr ""
+
+#: WebSearch.py:1430
+msgid "Hide link for all items"
+msgstr ""
+
+#: WebSearch.py:1432
+msgid "🔍 AI Suggestions"
+msgstr ""
+
+#: WebSearch.py:1549
+#, python-brace-format
+msgid ""
+"📌 This web link was added using the WebSearch gramplet for future "
+"reference:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this person."
+msgstr ""
+
+#: WebSearch.py:1560
+#, fuzzy
+#| msgid "Add Test Note"
+msgid "Add Web Link Note"
+msgstr "Додати тестову примітку"
+
+#: WebSearch.py:1596
+msgid "URL is copied to the Clipboard"
+msgstr ""
+
+#: WebSearch.py:1656
+#, fuzzy
+#| msgid "Search in:"
+msgid "WebSearch Link"
+msgstr "Шукати в:"
+
+#: WebSearch.py:1701
+#, fuzzy, python-brace-format
+#| msgid "Web site title"
+msgid "Title: {title}\n"
+msgstr "Назва веб-сайту"
+
+#: WebSearch.py:1703
+#, python-brace-format
+msgid "Replaced: {variables}\n"
+msgstr ""
+
+#: WebSearch.py:1707
+#, python-brace-format
+msgid "Empty: {variables}\n"
+msgstr ""
+
+#: WebSearch.py:1711
+#, python-brace-format
+msgid "Comment: {comment}\n"
+msgstr ""
 
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
@@ -9281,8 +9472,9 @@ msgstr "Нова форма"
 msgid "Edit Form"
 msgstr "Редагувати форму"
 
-#: Form/editform.py:225 SourceIndex/birth.glade:113 SourceIndex/death.glade:182
-#: SourceIndex/census.glade:873 SourceIndex/marriage.glade:1263
+#: Form/editform.py:225 SourceIndex/death.glade:182
+#: SourceIndex/census.glade:873 SourceIndex/birth.glade:113
+#: SourceIndex/marriage.glade:1263
 msgid "Reference:"
 msgstr "Посилання:"
 
@@ -11951,7 +12143,8 @@ msgstr "Глухий і німий"
 
 #: Form/form_us.xml.h:1085
 msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
-msgstr "Покалічений, інвалід, прикутий до ліжка або іншим чином непрацездатний."
+msgstr ""
+"Покалічений, інвалід, прикутий до ліжка або іншим чином непрацездатний."
 
 #: Form/form_us.xml.h:1087
 msgid "Can not read"
@@ -17734,23 +17927,23 @@ msgstr "Тип даху"
 msgid "Arrived since"
 msgstr "Прибув з"
 
-#: SourceIndex/SourceIndex.gpr.py:24
+#: SourceIndex/SourceIndex.gpr.py:24 SourceIndex/SourceIndex.gpr.py:25
 msgid "BirthIndex"
 msgstr "Індекс народжень"
 
-#: SourceIndex/SourceIndex.gpr.py:40
+#: SourceIndex/SourceIndex.gpr.py:40 SourceIndex/SourceIndex.gpr.py:41
 msgid "MarriageIndex"
 msgstr "Індекс шлюбів"
 
-#: SourceIndex/SourceIndex.gpr.py:56
+#: SourceIndex/SourceIndex.gpr.py:56 SourceIndex/SourceIndex.gpr.py:57
 msgid "DeathIndex"
 msgstr "Індекс смертей"
 
-#: SourceIndex/SourceIndex.gpr.py:72
+#: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
 msgid "CensusIndex"
 msgstr "Індекс переписів"
 
-#: SourceIndex/SourceIndex.gpr.py:104
+#: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
 msgid "SourceIndex"
 msgstr "Індекс джерел"
 
@@ -17894,6 +18087,127 @@ msgstr ""
 "Записує транскрипції ... народжень/смертей/шлюбів/переписів із загальними "
 "полями: ID, сховище, ім'я особи, дата і місце народження, батьки."
 
+#: SourceIndex/death.glade:97 SourceIndex/census.glade:728
+#: SourceIndex/birth.glade:65 SourceIndex/marriage.glade:64
+msgid "Info:"
+msgstr "Інформація:"
+
+#: SourceIndex/death.glade:165
+msgid "Death act:"
+msgstr "Запис про смерть:"
+
+#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
+#: SourceIndex/marriage.glade:1296
+msgid "Volume:"
+msgstr "Том:"
+
+#: SourceIndex/death.glade:282
+msgid "<b>Death act</b>"
+msgstr "<b>Запис про смерть</b>"
+
+#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
+#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
+#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
+#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
+#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
+msgid "First name:"
+msgstr "Ім'я:"
+
+#: SourceIndex/death.glade:589 SourceIndex/census.glade:973
+#: SourceIndex/birth.glade:388 SourceIndex/marriage.glade:234
+msgid "<b>Image</b>"
+msgstr "<b>Зображення</b>"
+
+#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
+#: SourceIndex/marriage.glade:185
+msgid "<b>Repository</b>"
+msgstr "<b>Сховище</b>"
+
+#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
+msgid "<b>Data person</b>"
+msgstr "<b>Дані особи</b>"
+
+#: SourceIndex/death.glade:703 SourceIndex/death.glade:892
+#: SourceIndex/witness.glade:124 SourceIndex/census.glade:510
+#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
+#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
+#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
+msgid "Origin:"
+msgstr "Походження:"
+
+#: SourceIndex/death.glade:722 SourceIndex/death.glade:821
+#: SourceIndex/witness.glade:141 SourceIndex/census.glade:543
+#: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
+#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
+#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
+#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
+msgid "Occupation:"
+msgstr "Професія:"
+
+#: SourceIndex/death.glade:741 SourceIndex/death.glade:854
+#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
+#: SourceIndex/birth.glade:710 SourceIndex/marriage.glade:560
+#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
+#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
+#: SourceIndex/marriage.glade:1455
+msgid "Live:"
+msgstr "Проживає:"
+
+#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
+msgid "<b>Witness:</b>"
+msgstr "<b>Свідок:</b>"
+
+#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
+msgid "Birth date:"
+msgstr "Дата народження:"
+
+#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
+msgid "Birth place:"
+msgstr "Місце народження:"
+
+#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
+msgid "Note:"
+msgstr "Примітка:"
+
+#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
+msgid "Spouse name:"
+msgstr "Ім'я подружжя:"
+
+#: SourceIndex/death.glade:1131
+msgid "Marriage date:"
+msgstr "Дата шлюбу:"
+
+#: SourceIndex/death.glade:1163
+msgid "Marriage place:"
+msgstr "Місце шлюбу:"
+
+#: SourceIndex/death.glade:1195
+msgid "<b>Data mother</b>"
+msgstr "<b>Дані матері</b>"
+
+#: SourceIndex/death.glade:1210
+msgid "<b>Data father</b>"
+msgstr "<b>Дані батька</b>"
+
+#: SourceIndex/death.glade:1225
+msgid "<b>Spouse</b> "
+msgstr "<b>Чоловік/Дружина</b> "
+
+#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
+#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
+#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
+#: SourceIndex/marriage.glade:1874
+msgid "alive"
+msgstr "живий/жива"
+
+#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"свідок1, прізвище, ім'я, вік, професія; свідок2, прізвище, ім'я, вік, "
+"професія тощо ..."
+
 #: SourceIndex/witness.glade:7
 msgid "witness"
 msgstr "свідок"
@@ -17912,36 +18226,25 @@ msgstr "Імена:"
 msgid "First names:"
 msgstr "Імена:"
 
-#: SourceIndex/witness.glade:124 SourceIndex/death.glade:703
-#: SourceIndex/death.glade:892 SourceIndex/census.glade:510
-#: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
-#: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
-#: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
-msgid "Origin:"
-msgstr "Походження:"
+#: SourceIndex/census.glade:160
+msgid "<b>Census</b>"
+msgstr "<b>Перепис</b>"
 
-#: SourceIndex/witness.glade:141 SourceIndex/birth.glade:578
-#: SourceIndex/birth.glade:677 SourceIndex/death.glade:722
-#: SourceIndex/death.glade:821 SourceIndex/census.glade:543
-#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
-#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
-#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
-msgid "Occupation:"
-msgstr "Професія:"
+#: SourceIndex/census.glade:364
+msgid "Death date:"
+msgstr "Дата смерті:"
 
-#: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
-#: SourceIndex/birth.glade:710 SourceIndex/death.glade:741
-#: SourceIndex/death.glade:854 SourceIndex/marriage.glade:560
-#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
-#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
-#: SourceIndex/marriage.glade:1455
-msgid "Live:"
-msgstr "Проживає:"
+#: SourceIndex/census.glade:414
+msgid "Death place:"
+msgstr "Місце смерті:"
 
-#: SourceIndex/birth.glade:65 SourceIndex/death.glade:97
-#: SourceIndex/census.glade:728 SourceIndex/marriage.glade:64
-msgid "Info:"
-msgstr "Інформація:"
+#: SourceIndex/census.glade:447
+msgid "Family status:"
+msgstr "Сімейний стан:"
+
+#: SourceIndex/census.glade:1046
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "номер, особа, прізвище, ім'я, вік, статус, професія тощо ..."
 
 #: SourceIndex/birth.glade:99
 msgid "Birth act:"
@@ -17982,11 +18285,6 @@ msgstr "Інше:"
 #: SourceIndex/birth.glade:351
 msgid "Repository title"
 msgstr "Назва сховища"
-
-#: SourceIndex/birth.glade:388 SourceIndex/death.glade:589
-#: SourceIndex/census.glade:973 SourceIndex/marriage.glade:234
-msgid "<b>Image</b>"
-msgstr "<b>Зображення</b>"
 
 #: SourceIndex/birth.glade:406
 msgid "<b><i>Repository</i></b>"
@@ -18097,111 +18395,6 @@ msgstr "<b><i>Цитування</i></b>"
 #: SourceIndex/birth.glade:2287
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Джерело</i></b>"
-
-#: SourceIndex/death.glade:165
-msgid "Death act:"
-msgstr "Запис про смерть:"
-
-#: SourceIndex/death.glade:217 SourceIndex/census.glade:904
-#: SourceIndex/marriage.glade:1296
-msgid "Volume:"
-msgstr "Том:"
-
-#: SourceIndex/death.glade:282
-msgid "<b>Death act</b>"
-msgstr "<b>Запис про смерть</b>"
-
-#: SourceIndex/death.glade:432 SourceIndex/death.glade:636
-#: SourceIndex/death.glade:873 SourceIndex/census.glade:221
-#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
-#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
-#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-msgid "First name:"
-msgstr "Ім'я:"
-
-#: SourceIndex/death.glade:607 SourceIndex/census.glade:176
-#: SourceIndex/marriage.glade:185
-msgid "<b>Repository</b>"
-msgstr "<b>Сховище</b>"
-
-#: SourceIndex/death.glade:621 SourceIndex/census.glade:712
-msgid "<b>Data person</b>"
-msgstr "<b>Дані особи</b>"
-
-#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
-msgid "<b>Witness:</b>"
-msgstr "<b>Свідок:</b>"
-
-#: SourceIndex/death.glade:1003 SourceIndex/census.glade:319
-msgid "Birth date:"
-msgstr "Дата народження:"
-
-#: SourceIndex/death.glade:1035 SourceIndex/census.glade:381
-msgid "Birth place:"
-msgstr "Місце народження:"
-
-#: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
-msgid "Note:"
-msgstr "Примітка:"
-
-#: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
-msgid "Spouse name:"
-msgstr "Ім'я подружжя:"
-
-#: SourceIndex/death.glade:1131
-msgid "Marriage date:"
-msgstr "Дата шлюбу:"
-
-#: SourceIndex/death.glade:1163
-msgid "Marriage place:"
-msgstr "Місце шлюбу:"
-
-#: SourceIndex/death.glade:1195
-msgid "<b>Data mother</b>"
-msgstr "<b>Дані матері</b>"
-
-#: SourceIndex/death.glade:1210
-msgid "<b>Data father</b>"
-msgstr "<b>Дані батька</b>"
-
-#: SourceIndex/death.glade:1225
-msgid "<b>Spouse</b> "
-msgstr "<b>Чоловік/Дружина</b> "
-
-#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
-#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
-#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
-#: SourceIndex/marriage.glade:1874
-msgid "alive"
-msgstr "живий/жива"
-
-#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"свідок1, прізвище, ім'я, вік, професія; свідок2, прізвище, ім'я, вік, "
-"професія тощо ..."
-
-#: SourceIndex/census.glade:160
-msgid "<b>Census</b>"
-msgstr "<b>Перепис</b>"
-
-#: SourceIndex/census.glade:364
-msgid "Death date:"
-msgstr "Дата смерті:"
-
-#: SourceIndex/census.glade:414
-msgid "Death place:"
-msgstr "Місце смерті:"
-
-#: SourceIndex/census.glade:447
-msgid "Family status:"
-msgstr "Сімейний стан:"
-
-#: SourceIndex/census.glade:1046
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr "номер, особа, прізвище, ім'я, вік, статус, професія тощо ..."
 
 #: SourceIndex/marriage.glade:49
 msgid "Marriage act:"
@@ -19409,15 +19602,6 @@ msgstr "Імпорт тексту..."
 msgid "Can't determine type of import"
 msgstr "Не вдалося визначити тип імпорту"
 
-#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, python-format
-msgid "%d rows processed in %s seconds.\n"
-msgstr "%d рядків оброблено за %s секунд.\n"
-
-#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
-msgid "Today"
-msgstr "Сьогодні"
-
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Грамплет запитів"
@@ -19441,6 +19625,16 @@ msgstr "Швидкий перегляд виконання SQL-подібних 
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
 msgstr "Введіть SQL-запит"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, fuzzy, python-brace-format
+#| msgid "%d rows processed in %s seconds.\n"
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr "%d рядків оброблено за %s секунд.\n"
+
+#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
+msgid "Today"
+msgstr "Сьогодні"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:11
 msgid "RU Web Connect Pack"
@@ -23045,3 +23239,23 @@ msgstr "Перейти"
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
 msgstr "Показати довідку"
+
+#, python-format
+#~ msgid "Failed writing %s: %s"
+#~ msgstr "Не вдалося записати %s: %s"
+
+#, python-format
+#~ msgid "Failure writing %s: %s"
+#~ msgstr "Не вдалося записати %s: %s"
+
+#, python-format
+#~ msgid "%s. Descendants of %s"
+#~ msgstr "%s. Нащадки %s"
+
+#, python-format
+#~ msgid "%d. %s"
+#~ msgstr "%d. %s"
+
+#, python-format
+#~ msgid "Ref: %s. %s"
+#~ msgstr "Посилання: %s. %s"
