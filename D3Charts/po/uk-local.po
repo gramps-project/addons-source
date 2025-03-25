@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-03-11 19:37+0000\n"
+"PO-Revision-Date: 2025-03-24 14:44+0000\n"
 "Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
@@ -13,7 +13,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Помилка запису в {target_path}: {message}"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -122,6 +126,10 @@ msgid ""
 msgstr ""
 "Каталог призначення %s не існує\n"
 "Бажаєте спробувати створити його?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "Помилка створення {target_path}: {message}"
 
 #, python-format
 msgid ""

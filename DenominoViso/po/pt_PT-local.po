@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-03-14 07:11+0000\n"
+"PO-Revision-Date: 2025-03-24 17:49+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -61,6 +61,10 @@ msgstr "descrição"
 
 msgid "witnesses"
 msgstr "testemunhas"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Falha ao escrever em {target_path}: {message}"
 
 msgid "No central person selected"
 msgstr "Sem indivíduo central seleccionado"

@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "Télécharger un fichier GEDCOM depuis un serveur phpGedView."
+
+msgid "Logging in..."
+msgstr "Connexion…"
+
+msgid "Fetching GEDCOM..."
+msgstr "Récupération du GEDCOM…"
+
+msgid "done."
+msgstr "terminé."
+
+msgid "Get version..."
+msgstr "Obtenir la version..."
+
+#, python-format
+msgid "Version %s"
+msgstr "Version %s"
+
+msgid "Error: Invalid URL"
+msgstr "Erreur : URL invalide"
+
+msgid "phpGedView import"
+msgstr "import phpGedView"
+
+msgid "http://"
+msgstr "http://"
+
+msgid "Username:"
+msgstr "Nom d'utilisateur :"
+
+msgid "Password:"
+msgstr "Mot de passe :"

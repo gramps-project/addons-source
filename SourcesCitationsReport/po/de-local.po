@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-26 15:11-0500\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-25 20:35+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,13 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Sources and Citations Report"
 msgstr "Quellen- und Fundstellenbericht"
 
 msgid "Provides a source and Citations Report with notes"
-msgstr "Bietet einen Quellen- und Fundstellenbericht mit Notizen an"
+msgstr "Liefert einen Quellen- und Fundstellenbericht mit Notizen"
 
 #, python-format
 msgid "Key: %s"
@@ -78,52 +78,53 @@ msgid "Title of the Report"
 msgstr "Titel des Berichts"
 
 msgid "Title string for the report."
-msgstr "Titeltext des Berichts."
+msgstr "Titelzeichenkette für den Bericht."
 
 msgid "Subtitle of the Report"
 msgstr "Untertitel des Berichts"
 
 msgid "Subtitle string for the report."
-msgstr "Untertiteltext des Berichts."
+msgstr "Untertitelzeichenkette für den Bericht."
 
 msgid "researcher name"
 msgstr "Name des Forschers"
 
 msgid "Select sources using a filter"
-msgstr "Wähle Quellen mit einem Filter aus"
+msgstr "Quellen mit einem Filter auswählen"
 
 msgid "Show persons"
 msgstr "Zeige Personen"
 
 msgid "Whether to show events and persons mentioned in the note"
-msgstr "Ob Ereignisse und Personen angezeigt werden sollen"
+msgstr ""
+"Ob die in der Notiz erwähnten Ereignisse und Personen angezeigt werden sollen"
 
 msgid "The style used for the title of the report."
-msgstr "Der Stil, der für den Titel des Berichts verwendet wird."
+msgstr "Der für den Titel des Berichts verwendete Stil."
 
 msgid "The style used for the subtitle of the report."
-msgstr "Der Stil, der für den Untertitel des Berichts verwendet wird."
+msgstr "Der für den Untertitel des Berichts verwendete Stil."
 
 msgid "The style used for the footer of the report."
 msgstr "Der Stil, der für die Fußzeile des Berichts verwendet wird."
 
 msgid "The style used for source title."
-msgstr "Stil für Quellentitel."
+msgstr "Der für den Quellentitel verwendete Stil."
 
 msgid "The style used for source subtitle."
-msgstr "Stil für Quellenuntertitel."
+msgstr "Der für den Quellenuntertitel verwendete Stil."
 
 msgid "The style used for Source details."
-msgstr "Stil der Quellendetails."
+msgstr "Der für die Quellendetails verwendete Stil."
 
 msgid "The style used for citation title."
-msgstr "Stil für den Fundstellentitel."
+msgstr "Der für Fundstellentitel verwendete Stil."
 
 msgid "The style used for a column title."
-msgstr "Der Stil, der für den Spaltentitel verwendet wird."
+msgstr "Der für einen Spaltentitel verwendete Stil."
 
 msgid "The style used for each section."
-msgstr "Der Stil, der für jeden Absatz verwendet wird."
+msgstr "Der für jeden Abschnitt verwendete Stil."
 
 msgid "The style used for event and person details."
-msgstr "Der Stil, der für Ereignis- und Personendetails verwendet wird."
+msgstr "Der für Ereignis- und Personendetails verwendete Stil."

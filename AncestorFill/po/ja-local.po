@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "AncestorFill"
+msgstr "先祖を埋める"
+
+msgid "Report on the filling of the tree"
+msgstr "ツリーの充填に関する報告"
+
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "%s の先祖の記入"
+
+msgid "Generation "
+msgstr "世代 "
+
+msgid "Number of Ancestors found "
+msgstr "発見された祖先の数 "
+
+msgid "Percent of Ancestors found "
+msgstr "見つかった祖先の割合 "
+
+msgid "Number of unique Ancestors found "
+msgstr "見つかった固有の祖先数 "
+
+msgid "Number of theoretical Ancestors "
+msgstr "理論上の祖先の数 "
+
+msgid "Pedigree Collapse "
+msgstr "家系崩壊 "
+
+msgid "Total Number of Ancestors found "
+msgstr "見つかった祖先の総数 "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "見つかった固有の祖先の総数 "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"注意 : このレポートでは、出生による親子関係を持つ先祖のみをカウントします。"
+
+msgid "Filled digit"
+msgstr "埋められた数字"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr "特定の世代で見つかった祖先の割合をレポートに含めるコンマの後の桁数"
+
+msgid "Collapsed digit"
+msgstr "折りたたまれた数字"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr "家系図レポートに含めるカンマの後の桁数"
+
+msgid "Display theoretical"
+msgstr "理論上の表示"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "世代ごとに祖先の理論的な数を表示するかどうか"
+
+msgid "The style used for the title of the page."
+msgstr "ページのタイトルに使用されるスタイル。"

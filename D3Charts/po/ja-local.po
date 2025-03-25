@@ -1,0 +1,314 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "ディレクトリ構造の作成に失敗 : %s"
+
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "Web ファイルのコピーに失敗 : %s"
+
+msgid "Ancestral Collapsible Tree Options"
+msgstr "祖先折りたたみツリーオプション"
+
+msgid "Include Generations"
+msgstr "世代を含める"
+
+msgid "Male Background Color"
+msgstr "男性の背景色"
+
+msgid "RGB-color for male box background."
+msgstr "男性ボックスの背景の RGB カラー。"
+
+msgid "Male Expandable Background Color"
+msgstr "男性用拡張可能な背景色"
+
+msgid "RGB-color for male expandable box background."
+msgstr "男性用拡張ボックスの背景のRGBカラー。"
+
+msgid "Female Background"
+msgstr "女性の背景"
+
+msgid "RGB-color for female box background."
+msgstr "女性ボックスの背景の RGB カラー。"
+
+msgid "Female Expandable Background"
+msgstr "女性の拡張可能な背景"
+
+msgid "RGB-color for female expandable box background."
+msgstr "女性の拡張ボックスの背景のRGBカラー。"
+
+msgid "The destination path for generated files."
+msgstr "生成されたファイルの保存先パス。"
+
+msgid "The destination file name for html content."
+msgstr "HTML コンテンツの保存先ファイル名。"
+
+msgid "Ancestral Collapsible Tree"
+msgstr "祖先の折りたたみ式ツリー"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"D3.js JavaScript ライブラリから折りたたみ可能なツリー レイアウトとして表され"
+"る祖先のグラフィカル表現 (SVG) を含む Web ページを生成します。"
+
+msgid "Descendant Indented Tree"
+msgstr "子孫インデントツリー"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"D3.js JavaScript ライブラリから、折りたたみ可能なインデントされたツリー レイ"
+"アウトとして表される子孫のグラフィカル表現 (SVG) を含む Web ページを生成しま"
+"す。"
+
+msgid "Ancestral Fan Chart Options"
+msgstr "祖先扇形チャートのオプション"
+
+msgid "Paternal Background Color"
+msgstr "父方の背景色"
+
+msgid "RGB-color for paternal box background."
+msgstr "父親のボックスの背景の RGB カラー。"
+
+msgid "Maternal Background"
+msgstr "母方の背景"
+
+msgid "RGB-color for maternal box background."
+msgstr "母方ボックスの背景の RGB カラー。"
+
+msgid "Ancestral Fan Chart"
+msgstr "祖先扇形チャート"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"D3.js JavaScript ライブラリからファン チャートとして表される祖先のグラフィカ"
+"ル表現 (SVG) を含む Web ページを生成します。"
+
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "表示 %(reference)s : %(spouse)s"
+
+msgid "Generating report..."
+msgstr "レポートの生成中..."
+
+msgid "Invalid Destination Directory"
+msgstr "無効な宛先ディレクトリ"
+
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"宛先ディレクトリ %s が存在しません\n"
+"作成しますか?"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"宛先ファイル %s は既に存在します。\n"
+"上書きしますか?"
+
+msgid "Default View"
+msgstr "既定の表示"
+
+msgid "Expand All"
+msgstr "すべて展開"
+
+msgid "Include contraction level"
+msgstr "収縮レベルを含める"
+
+msgid "The number of descendant levels to contract on initial display."
+msgstr "初期表示時に縮小する子孫レベルの数。"
+
+msgid "The font size in pixels for each node."
+msgstr "各ノードのフォント サイズ (ピクセル単位)。"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "レポートに重複した家系図を表示するかどうか。"
+
+msgid "Expanded Row Background Color"
+msgstr "展開行の背景色"
+
+msgid "RGB-color for expanded row background."
+msgstr "展開された行の背景の RGB カラー。"
+
+msgid "Expandable Background Color"
+msgstr "拡張可能な背景色"
+
+msgid "RGB-color for expandable row background."
+msgstr "拡張可能な行の背景の RGB カラー。"
+
+msgid "Non-Expandable Background Color"
+msgstr "拡張不可の背景色"
+
+msgid "RGB-color for non-expandable row background."
+msgstr "展開できない行の背景の RGB カラー。"
+
+msgid "Include records marked private"
+msgstr "非公開とマークされたレコードを含める"
+
+msgid "Whether to include private objects."
+msgstr "プライベートオブジェクトを含めるかどうか。"
+
+msgid "Include Last Name Only"
+msgstr "姓のみを含める"
+
+msgid "Include Full Name Only"
+msgstr "フルネームのみ含める"
+
+msgid "How to handle living people."
+msgstr "生きている人間をどう扱うか。"
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "最近亡くなった可能性のある人を含めるかどうか。"
+
+msgid "Navigation"
+msgstr "ナビゲーション"
+
+msgid "Contraction/Expansion mechanism"
+msgstr "収縮 / 拡張機構"
+
+msgid "Entire node."
+msgstr "ノード全体。"
+
+msgid "Arrow images at start of node."
+msgstr "ノードの先頭にある矢印画像。"
+
+msgid "Plus/Minus images at start of node."
+msgstr "ノードの開始時のプラス/マイナス画像。"
+
+msgid "Where to click to expand/contract nodes."
+msgstr "ノードを展開/縮小するためにクリックする場所。"
+
+msgid "Auto-generate HREF links for nodes"
+msgstr "ノードのHREFリンクを自動生成"
+
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr "レポート上の各ノードに対して HTML リンクを自動生成するかどうか。"
+
+msgid "URL prefix path."
+msgstr "URL プレフィックス パス。"
+
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr "自動生成された各 HREF リンクに適用する URL プレフィックス。"
+
+msgid "URL file extension"
+msgstr "URLファイル拡張子"
+
+msgid "No file extension."
+msgstr "ファイル拡張子がありません。"
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "URL file name delimeter"
+msgstr "URLファイル名区切り文字"
+
+msgid "Remove all whitespace."
+msgstr "すべての空白を削除する。"
+
+msgid "Replace whitespace with dash(-)."
+msgstr "空白をダッシュ(-)に置き換える。"
+
+msgid "Replace whitespace with underscore(_)"
+msgstr "空白をアンダースコア(_)に置き換える"
+
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "空白を置き換えるファイル名の区切り文字として使用するもの。"
+
+msgid "Generations to generate HREF links"
+msgstr "HREFリンクを生成する世代"
+
+msgid "The number of generations to generate HREF links."
+msgstr "HREF リンクを生成する世代数。"
+
+msgid "Exclude persons who died before (years)"
+msgstr "(years) 以前に死亡した人を除外する"
+
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr ""
+"幼児期に亡くなった人へのリンクを生成するかどうか。-1 は誰も除外しません。"
+
+msgid "Exclude center person"
+msgstr "中心人物を除外"
+
+msgid "Whether or not to generate links for center person."
+msgstr "中心人物へのリンクを生成するかどうか。"
+
+msgid "Exclude Spouses"
+msgstr "配偶者を除外"
+
+msgid "Whether or not to generate links for spouses."
+msgstr "配偶者のリンクを生成するかどうか。"
+
+msgid "Biography Content"
+msgstr "略歴の内容"
+
+msgid "Show biography tooltips"
+msgstr "経歴のツールチップを表示"
+
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "ノードにマウスを移動したときに経歴のツールチップを表示するかどうか。"
+
+msgid "Text Color"
+msgstr "文字の色"
+
+msgid "RGB-color for biography text."
+msgstr "経歴文字の RGB カラー。"
+
+msgid "RGB-color for biography tooltip."
+msgstr "経歴ツールチップの RGB カラー。"
+
+msgid "Header Font size"
+msgstr "ヘッダのフォントサイズ"
+
+msgid "The font size in pixels for biography header text."
+msgstr "経歴のヘッダーテキストのフォント サイズ (ピクセル単位)。"
+
+msgid "Body Font size"
+msgstr "本文フォントサイズ"
+
+msgid "The font size in pixels for biography body text."
+msgstr "経歴本文のフォント サイズ (ピクセル単位)。"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-03-18 20:52+0000\n"
+"PO-Revision-Date: 2025-03-25 20:35+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -61,6 +61,10 @@ msgstr "Beschreibung"
 
 msgid "witnesses"
 msgstr "Zeugen"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Fehler beim Schreiben von {target_path}: {message}"
 
 msgid "No central person selected"
 msgstr "Keine zentrale Person ausgewählt"

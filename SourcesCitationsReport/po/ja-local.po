@@ -1,0 +1,132 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-26 15:11-0500\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Sources and Citations Report"
+msgstr "ソースと引用レポート"
+
+msgid "Provides a source and Citations Report with notes"
+msgstr "出典と引用レポートを注釈付きで提供する"
+
+#, python-format
+msgid "Key: %s"
+msgstr "キー : %s"
+
+msgid "Citations:"
+msgstr "引用 :"
+
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#, python-format
+msgid "  %s"
+msgstr "  %s"
+
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#, python-format
+msgid "   Type: %s"
+msgstr "   種類 : %s"
+
+#, python-format
+msgid "   N-ID: %s"
+msgstr "   N-ID: %s"
+
+#, python-format
+msgid "   %s"
+msgstr "   %s"
+
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+msgid "   Spouses: "
+msgstr "   配偶者 : "
+
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#, python-format
+msgid "and %s "
+msgstr "および %s "
+
+#, python-format
+msgid " %s"
+msgstr " %s"
+
+msgid "Title of the Report"
+msgstr "レポートのタイトル"
+
+msgid "Title string for the report."
+msgstr "レポートのタイトル文字列。"
+
+msgid "Subtitle of the Report"
+msgstr "レポートのサブタイトル"
+
+msgid "Subtitle string for the report."
+msgstr "レポートのサブタイトル文字列。"
+
+msgid "researcher name"
+msgstr "リサーチャー名"
+
+msgid "Select sources using a filter"
+msgstr "フィルターを使用してソースを選択する"
+
+msgid "Show persons"
+msgstr "人物を表示"
+
+msgid "Whether to show events and persons mentioned in the note"
+msgstr "メモに記載されているイベントや人物を表示するかどうか"
+
+msgid "The style used for the title of the report."
+msgstr "レポートのタイトルに使用されるスタイル。"
+
+msgid "The style used for the subtitle of the report."
+msgstr "レポートのサブタイトルに使用されるスタイル。"
+
+msgid "The style used for the footer of the report."
+msgstr "レポートのフッターに使用されるスタイル。"
+
+msgid "The style used for source title."
+msgstr "ソースタイトルに使用されるスタイル。"
+
+msgid "The style used for source subtitle."
+msgstr "ソースのサブタイトルに使用されるスタイル。"
+
+msgid "The style used for Source details."
+msgstr "ソースの詳細に使用されるスタイル。"
+
+msgid "The style used for citation title."
+msgstr "引用タイトルに使用されるスタイル。"
+
+msgid "The style used for a column title."
+msgstr "列タイトルに使用されるスタイル。"
+
+msgid "The style used for each section."
+msgstr "各セクションで使用されるスタイル。"
+
+msgid "The style used for event and person details."
+msgstr "イベントや人物の詳細に使用されるスタイル。"

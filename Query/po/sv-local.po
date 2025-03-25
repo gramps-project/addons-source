@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:17+0000\n"
-"PO-Revision-Date: 2025-03-18 09:38+0000\n"
+"PO-Revision-Date: 2025-03-25 10:12+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -34,6 +34,10 @@ msgstr "Skriv ett python uttryck"
 
 msgid "Enter SQL query"
 msgstr "Ange SQL-fråga"
+
+#, python-brace-format
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr "{rows:d} rader bearbetade på {secs} sekunder.\n"
 
 msgid "Today"
 msgstr "Idag"

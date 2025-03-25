@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Media Verify Tool"
+msgstr "メディア検証ツール"
+
+msgid "Moved/Renamed Files"
+msgstr "移動/名前変更されたファイル"
+
+msgid "Missing Files"
+msgstr "不足しているファイル"
+
+msgid "Duplicate Files"
+msgstr "重複ファイル"
+
+msgid "Extra Files"
+msgstr "追加ファイル"
+
+msgid "No md5 Generated"
+msgstr "md5が生成されませんでした"
+
+msgid "Errors"
+msgstr "エラー"
+
+msgid "Close the Media Verify Tool"
+msgstr "メディア検証ツールを閉じる"
+
+msgid "Generate"
+msgstr "生成"
+
+msgid "Generate md5 hashes for media objects"
+msgstr "メディアオブジェクトのmd5ハッシュを生成する"
+
+msgid "Verify"
+msgstr "検証"
+
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr ""
+"メディアパスをチェックし、不足しているファイル、重複しているファイル、余分な"
+"ファイルを報告します"
+
+msgid "Export"
+msgstr "エクスポート"
+
+msgid "Export the results to a text file"
+msgstr "結果をテキストファイルにエクスポートする"
+
+msgid "Fix"
+msgstr "修正"
+
+msgid "Fix media paths of moved and renamed files"
+msgstr "移動および名前変更されたファイルのメディアパスを修正"
+
+msgid "Verify Gramps media using md5 hashes"
+msgstr "md5ハッシュを使用してGrampsメディアを検証する"
+
+msgid "Files"
+msgstr "ファイル"
+
+msgid "Export results to a text file"
+msgstr "結果をテキストファイルにエクスポートする"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "レポートの書き込み中エラー : %s"
+
+msgid "Generating media hashes"
+msgstr "メディアハッシュの生成"
+
+msgid "Set media hashes"
+msgstr "メディアハッシュの設定"
+
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"メディア パスが設定されていません。環境設定で「相対メディア パスのベース パ"
+"ス」を設定する必要があります。"
+
+msgid "Finding files"
+msgstr "ファイルの検索"
+
+msgid "Checking paths"
+msgstr "場所のタイトルパスの確認"
+
+msgid "Fixing file paths"
+msgstr "ファイルパスの修正"
+
+msgid "Fix media paths"
+msgstr "メディアパスの修正"
+
+msgid "Media Verify"
+msgstr "メディアの検証"
+
+msgid "Verify that media is present in the correct path"
+msgstr "メディアが正しいパスに存在することを確認する"

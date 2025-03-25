@@ -1,0 +1,399 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "No Source"
+msgstr "ソースなし"
+
+msgid "onclick"
+msgstr "クリック時"
+
+msgid "onmouseover"
+msgstr "マウスオーバー時"
+
+msgid "Ancestor"
+msgstr "祖先"
+
+msgid "Descendant"
+msgstr "降順"
+
+msgid "Fan"
+msgstr "ファン"
+
+msgid "Growth Spiral"
+msgstr "成長スパイラル"
+
+msgid "Mandelbrot Tree"
+msgstr "マンデルブロ ツリー"
+
+msgid "Pythagoras Tree"
+msgstr "ピタゴラスのツリー"
+
+msgid "right to left"
+msgstr "右から左へ"
+
+msgid "left to right"
+msgstr "左から右へ"
+
+msgid "top to bottom"
+msgstr "上から下へ"
+
+msgid "bottom to top"
+msgstr "下から上へ"
+
+msgid "role"
+msgstr "役割"
+
+msgid "description"
+msgstr "説明"
+
+msgid "witnesses"
+msgstr "証人"
+
+msgid "No central person selected"
+msgstr "中心人物が選択されていません"
+
+msgid "Unknown time direction"
+msgstr "時間の方向が不明"
+
+msgid "author"
+msgstr "著者"
+
+msgid "abbreviation"
+msgstr "略語"
+
+msgid "the chart type runs out of bounds"
+msgstr "チャートの種類が範囲外です"
+
+msgid "Search"
+msgstr "検索"
+
+msgid "DenominoViso Options"
+msgstr "DenominoViso オプション"
+
+msgid "The destination file for the html-content."
+msgstr "HTML コンテンツの保存先ファイル。"
+
+msgid "Central Person"
+msgstr "中心人物"
+
+msgid "The central person for the tree"
+msgstr "ツリーの中心人物"
+
+msgid "Title of the webpage"
+msgstr "ウェブページのタイトル"
+
+msgid "Any string you wish."
+msgstr "任意の文字列。"
+
+msgid "Display mode"
+msgstr "表示モード"
+
+msgid "Either plot ancestor or descendants graph."
+msgstr "祖先または子孫のグラフをプロットします。"
+
+msgid "Display type"
+msgstr "表示タイプ"
+
+msgid "The type of graph to create."
+msgstr "作成するグラフの種類。"
+
+msgid "Direction of time"
+msgstr "時間の方向"
+
+msgid "Direction in which time increases."
+msgstr "時間が増加する方向。"
+
+msgid "Max chart width (%)"
+msgstr "最大チャート幅 (%)"
+
+msgid "Width of the tree as fraction of the browser window"
+msgstr "ブラウザウィンドウに対するツリーの幅の割合"
+
+msgid "Max chart height (px)"
+msgstr "チャートの最大高さ (px)"
+
+msgid "Height of the tree in pixels."
+msgstr "ツリーの高さ (ピクセル単位)。"
+
+msgid ""
+"List of strings, free text added at the bottom, for example for a copyright "
+"notice."
+msgstr "文字列のリスト。著作権表示などのフリーテキストが下部に追加されます。"
+
+msgid "Include Options"
+msgstr "オプションを含める"
+
+msgid "Include private records"
+msgstr "個人記録を含める"
+
+msgid "Whether to leave out private data."
+msgstr "プライベートデータを省略するかどうか。"
+
+msgid "Include Events"
+msgstr "イベントを含める"
+
+msgid "Whether to include a person's events."
+msgstr "人物のイベントを含めるかどうか。"
+
+msgid "Include birth children"
+msgstr "子供の誕生を含める"
+
+msgid "Whether to include the birth of children in the list of events."
+msgstr "イベントのリストに子供の誕生を含めるかどうか。"
+
+msgid "Include death relatives"
+msgstr "死亡親族を含める"
+
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
+msgstr "生存中の親族の死亡を含めるかどうか。"
+
+msgid "Include witness note"
+msgstr "証人メモを含める"
+
+msgid ""
+"Whether to include the note belonging to a witness (if the event_format "
+"contains <witnesses>)"
+msgstr ""
+"証人に属するメモを含めるかどうか (event_format に <witnesses> が含まれている"
+"場合)"
+
+msgid "Whether to include a person's attributes"
+msgstr "人物の属性を含めるかどうか"
+
+msgid "Include Addresses"
+msgstr "住所を含める"
+
+msgid "Whether to include a person's addresses."
+msgstr "個人の住所を含めるかどうか。"
+
+msgid "Include Note"
+msgstr "メモを含める"
+
+msgid "Whether to include a person's note."
+msgstr "人物のメモを含めるかどうか。"
+
+msgid "Include URL"
+msgstr "URL を含める"
+
+msgid "Whether to include a person's internet address."
+msgstr "個人のインターネット アドレスを含めるかどうか。"
+
+msgid "Include URL description"
+msgstr "URL の説明を含める"
+
+msgid "Whether to include the description of the first URL"
+msgstr "最初のURLの説明を含めるかどうか"
+
+msgid "Include Sources"
+msgstr "ソースを含める"
+
+msgid "Whether to include a person's sources."
+msgstr "人物の情報源を含めるかどうか。"
+
+msgid "Image Options"
+msgstr "画像オプション"
+
+msgid "Include Photos/Images from Gallery"
+msgstr "ギャラリーから写真/画像を含める"
+
+msgid "Whether to include images"
+msgstr "画像を含めるかどうか"
+
+msgid "Copy Image"
+msgstr "画像をコピー"
+
+msgid "Copy the images to a designated directory."
+msgstr "画像を指定されたディレクトリにコピーします。"
+
+msgid "Images with Attribute"
+msgstr "属性付き画像"
+
+msgid "Determine images with which attributes to in/exclude"
+msgstr "どの属性を含めるか除外するか画像を決定する"
+
+msgid "Include Image source references"
+msgstr "画像ソースの参照を含める"
+
+msgid "Whether to include references for images"
+msgstr "画像の参照を含めるかどうか"
+
+msgid "Source reference attribute"
+msgstr "ソース参照属性"
+
+msgid "Image attribute that should be used as source reference"
+msgstr "ソース参照として使用する画像属性"
+
+msgid "Style Options"
+msgstr "スタイル オプション"
+
+msgid "Color of active person:"
+msgstr "アクティブな人の色 :"
+
+msgid "RGB-color of geometric shape of the activated person."
+msgstr "アクティブな人物の幾何学的形状の RGB カラー。"
+
+msgid "Color of found persons:"
+msgstr "発見された人物の色 :"
+
+msgid "RGB-color of geometric shape of the persons found."
+msgstr "発見された人物の幾何学的形状の RGB カラー。"
+
+msgid "Color of male persons:"
+msgstr "男性の色 :"
+
+msgid "RGB-color of geometric shape of the male persons."
+msgstr "男性の幾何学的形状の RGB カラー。"
+
+msgid "Colour of female persons:"
+msgstr "女性の色 :"
+
+msgid "RGB-color of geometric shape of the female persons."
+msgstr "女性の幾何学的形状の RGB カラー。"
+
+msgid "Width of rectangle (hrd):"
+msgstr "長方形の幅 (hrd) :"
+
+msgid ""
+"The width of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"通常のチャート タイプの人物長方形の幅を、長方形の水平距離の割合として表しま"
+"す。"
+
+msgid "Height of rectangle (hrd):"
+msgstr "長方形の高さ (hrd) :"
+
+msgid ""
+"The height of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"通常のチャート タイプの人物の四角形の高さは、水平方向の四角形の距離の割合とし"
+"て表されます。"
+
+msgid "Vertical distance of rectangles (hrd):"
+msgstr "長方形の垂直距離 (hrd) :"
+
+msgid ""
+"The vertical distance of person rectangles of the regular chart type "
+"expressed as fraction of the horizontal rectangle distance."
+msgstr ""
+"通常のチャート タイプの人物の長方形の垂直距離は、水平長方形の距離の割合として"
+"表されます。"
+
+msgid "Extra style settings:"
+msgstr "追加のスタイル設定 :"
+
+msgid "Whatever css style settings are needed."
+msgstr "必要な CSS スタイル設定はすべて。"
+
+msgid "Mouse event handler"
+msgstr "マウス イベント ハンドラー"
+
+msgid "Mouse handler used to interact with visitor of webpage."
+msgstr "Web ページの訪問者と対話するために使用されるマウス ハンドラー。"
+
+msgid "Birth relationship linestyle"
+msgstr "出生関係の線種"
+
+msgid ""
+"List of lists where each sublist is a list with information about the dash "
+"pattern of lines connecting children to parents."
+msgstr ""
+"各サブリストが子と親を結ぶ破線パターンに関する情報を含むリストであるリストの"
+"一覧。"
+
+msgid "Source confidence color"
+msgstr "ソース信頼度カラー"
+
+msgid ""
+"List of lists where each sublist is a list with information on the color to "
+"use for a certain confidence level."
+msgstr ""
+"リストの一覧。各サブリストは、特定の信頼レベルに使用する色に関する情報を含む"
+"リストです。"
+
+msgid "Event format"
+msgstr "イベント形式"
+
+msgid ""
+"List os strings with placeholders for events. Known placeholders: <type>, "
+"<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
+"<attribute-value>."
+msgstr ""
+"イベントのプレースホルダーを含む OS 文字列を一覧表示します。既知のプレースホ"
+"ルダー: <type>、<role>、<date>、<place>、<description>、<witnesses>、"
+"<source>、および任意の <attribute-value>。"
+
+msgid "Source format"
+msgstr "ソース形式"
+
+msgid ""
+"List of strings with placeholders for sources. Known placeholders: <title>, "
+"<volume>, <author>, <publication_info> and <abbreviation>."
+msgstr ""
+"ソースのプレースホルダーを含む文字列のリスト。既知のプレースホルダー: "
+"<title>、<volume>、<author>、<publication_info>、<abbreviation>。"
+
+msgid "restricted to:"
+msgstr "制限 :"
+
+msgid "to directory:"
+msgstr "ディレクトリ :"
+
+msgid "Save images in ..."
+msgstr "画像を保存する場所..."
+
+msgid "Included"
+msgstr "含める"
+
+msgid "Excluded"
+msgstr "除外"
+
+msgid "Name HTML-wrapper file"
+msgstr "HTML-wrapper ファイル名"
+
+msgid "Save HTML-wrapper file as ..."
+msgstr "HTML-wrapper ファイルに名前を付けて保存..."
+
+msgid "Give a filename ..."
+msgstr "ファイル名を指定 ..."
+
+msgid "Relation type"
+msgstr "関係の種類"
+
+msgid "Use dashed linestyle"
+msgstr "破線スタイルを使用する"
+
+msgid "Dash length"
+msgstr "ダッシュの長さ"
+
+msgid "Inter-dash length"
+msgstr "ダッシュ間の長さ"
+
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"マウス イベントで個人の詳細が表示される、祖先/子孫 (SVG) のグラフィカル表現を"
+"含む Web (HTML) ページを生成します。"

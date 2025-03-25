@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-03-18 20:52+0000\n"
+"PO-Revision-Date: 2025-03-25 20:35+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -47,12 +47,20 @@ msgstr "Nachkommenbericht"
 msgid "Writing %s reports..."
 msgstr "Schreibe %s Berichte..."
 
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. Nachkommen von {name}"
+
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr "{report_count:d}. {name}"
+
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
 "Wählen Filter aus, um Personen einzuschränken, die im Bericht vorkommen"
 
 msgid "Whether to show duplicate family trees in the report."
-msgstr "Ob doppelte Familienbäume im Bericht angezeigt werden."
+msgstr "Ob doppelte Stammbäume im Bericht angezeigt werden sollen."
 
 msgid "The style used for the title of the page."
 msgstr "Der Stil, der für den Seitentitel verwendet wird."
@@ -87,9 +95,22 @@ msgstr "Namensverzeichnis"
 msgid "Report, Generation, Person, Name"
 msgstr "Bericht, Generation, Person, Name"
 
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "Siehe Bericht : {report}, Generation : {generation}, Person : {person}"
+
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Berichtserscheinungsbild für %s"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr ""
+"Ehepartner von: Bericht: {report}, Generation: {generation}, Person:{person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Bericht: {report}, Generation: {generation}, Person: {person}"
 
 #, python-format
 msgid "%(event_name)s of %(name)s "
@@ -122,6 +143,10 @@ msgstr "%(event_name)s:"
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
+
+#, python-brace-format
+msgid "Ref: {number}. {name}"
+msgstr "Ref: {number}. {name}"
 
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"

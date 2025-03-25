@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Place ID to import from GOV (Historical Gazetteer):"
+msgstr "GOV (Historical Gazetteer) からインポートする場所 ID :"
+
+msgid "Get Place"
+msgstr "場所を取得"
+
+#, python-format
+msgid "Add GOV-id place %s"
+msgstr "GOV-id 場所 %s を追加"
+
+#, python-format
+msgid "GetGOV error: %s"
+msgstr "GetGOV エラー : %s"
+
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr "コード付き ID %s で GOV エラー : "
+
+#, python-format
+msgid "from %s to %s"
+msgstr "%s から %s へ"
+
+#, python-format
+msgid "after %s"
+msgstr "%s 以降"
+
+#, python-format
+msgid "before %s"
+msgstr "%s 以前"
+
+msgid "GetGOV"
+msgstr "GetGOV"
+
+msgid "Gramplet to get places from the GOV database"
+msgstr "GOVデータベースから場所を取得するためのGramplet"

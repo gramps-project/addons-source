@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 13:48+0000\n"
-"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"POT-Creation-Date: 2025-03-13 23:40+0000\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,10 +12,91 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Sources Index"
 msgstr "Index des sources"
 
+msgid "Select a marriage source"
+msgstr "Sélectionnez une source de mariage"
+
+msgid "Info:"
+msgstr "Info :"
+
 msgid "Reference:"
 msgstr "Référence :"
+
+msgid "Volume:"
+msgstr "Volume :"
+
+msgid "First name:"
+msgstr "Prénom :"
+
+msgid "Age:"
+msgstr "Âge :"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Dépôt</b>"
+
+msgid "Origin:"
+msgstr "Origine :"
+
+msgid "Occupation:"
+msgstr "Profession :"
+
+msgid "Birth date:"
+msgstr "Date de naissance :"
+
+msgid "Birth place:"
+msgstr "Lieu de naissance :"
+
+msgid "Marriage place:"
+msgstr "Lieu du mariage :"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Conjoint</b> "
+
+msgid "Names:"
+msgstr "Noms :"
+
+msgid "Death date:"
+msgstr "Date de décès :"
+
+msgid "Death place:"
+msgstr "Lieu de décès :"
+
+msgid "Birth act:"
+msgstr "Acte de naissance :"
+
+msgid "The names of the main person written into the source"
+msgstr "Les noms de la personne principale écrits dans la source"
+
+msgid "Other:"
+msgstr "Autre :"
+
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"Noms\n"
+"des conjoints :"
+
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Lieu du\n"
+"Décès :"
+
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Lieu de\n"
+"naissance :"
+
+msgid "Origine:"
+msgstr "Origine :"
+
+msgid "dates banns:"
+msgstr "Date des bans de mariage :"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:17+0000\n"
-"PO-Revision-Date: 2025-03-18 20:52+0000\n"
+"PO-Revision-Date: 2025-03-25 20:35+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -34,6 +34,10 @@ msgstr "Pythonausdruck eingeben"
 
 msgid "Enter SQL query"
 msgstr "SQL Abfrage eingeben"
+
+#, python-brace-format
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr "{rows:d} Zeilen in {secs} Sekunden verarbeitet.\n"
 
 msgid "Today"
 msgstr "Heute"

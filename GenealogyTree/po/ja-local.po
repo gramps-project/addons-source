@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "LaTeX 系図を使用した祖先ツリー"
+
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "LaTeX genealogytree を使用した子孫ツリー"
+
+msgid "Grandparent Tree"
+msgstr "祖父母のツリー"
+
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "LaTeX genealogytreeを使用した祖父母ツリー"
+
+msgid "Sandclock Tree"
+msgstr "砂時計のツリー"
+
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "LaTeX 系図ツリーを使用した砂時計ツリー"
+
+msgid "Sandclock Tree for a Family"
+msgstr "家族のための砂時計ツリー"
+
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "LaTeX genealogytreeを使った家系の砂時計ツリー"
+
+msgid "The center family for the report"
+msgstr "報告書の中心家族"
+
+msgid "Generations up"
+msgstr "上の世代"
+
+msgid "Generations down"
+msgstr "下の世代"
+
+msgid "Include siblings"
+msgstr "兄弟姉妹を含める"
+
+msgid "Include siblings of ancestors."
+msgstr "先祖の兄弟姉妹も含める。"
+
+msgid "Include images"
+msgstr "画像を含める"
+
+msgid "Include images of people in the nodes."
+msgstr "ノードに人物の画像を含める。"
+
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "人物 %s には父方と母方の祖父母がいません"
+
+msgid "Grandparent family spacing"
+msgstr "祖父母の家族の間隔"
+
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "祖父母家族の余分な間隔 (mm)"
+
+msgid "First spouse left"
+msgstr "最初に残された配偶者"
+
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+"複数の配偶者のうち最初の配偶者を常に左側に記入します。これにより、複数の結婚"
+"による境界線の交差を減らすことができます。"

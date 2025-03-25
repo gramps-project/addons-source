@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Click to make this event active"
+msgstr "このイベントをアクティブにするにはクリックしてください"
+
+msgid "Click to visit this link"
+msgstr "このリンクをクリックしてアクセス"
+
+msgid ": "
+msgstr ": "
+
+msgid "A view showing relationships and events for a person"
+msgstr "人物の関係とイベントを表示するビュー"
+
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"訪問先の「デフォルトの人」を設定する必要があります。 「人物ビュー」を選択し、"
+"「ホーム人物」にする人物を選択してから、メニューの「編集」->「ホーム人物を設"
+"定」で選択内容を確認します。"
+
+msgid "Edit the active event"
+msgstr "アクティブなイベントを編集する"
+
+msgid "Show Tags"
+msgstr "タグを表示"
+
+msgid "Vertical Details"
+msgstr "垂直方向の詳細"

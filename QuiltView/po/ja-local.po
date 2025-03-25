@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Quilt Chart"
+msgstr "キルトチャート"
+
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr "このビューには、家系図のキルトチャートの視覚化が表示されます"
+
+msgid "Quilt chart"
+msgstr "キルトチャート"
+
+msgid "Select the name for which you want to see."
+msgstr "表示する名前を選択します。"
+
+msgid "Clear the entry field in the name selection box."
+msgstr "名前選択ボックスの入力フィールドをクリアします。"
+
+msgid "Nothing is selected"
+msgstr "何も選択されていません"
+
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"フィルタリングされた人は %(filter)d 人、ツリーに表示された人は %(count)d 人、"
+"データベースには %(total)d 人います。"
+
+msgid "Loading individuals"
+msgstr "個人の読み込み"
+
+msgid "Loading the data"
+msgstr "データの読み込み"
+
+msgid "About Quilt View"
+msgstr "キルトビューについて"
+
+msgid "Edit tags"
+msgstr "タグの編集"
+
+msgid "Set as home person"
+msgstr "ホームユーザーとして設定"
+
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "人物 (%s) にタグを追加"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "家族 (%s) にタグを追加"
+
+msgid "Printing the tree"
+msgstr "ツリーの印刷"
+
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "%(pages)s ページ (%(format)s 形式) を印刷する必要があります"
+
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"選択した人物を中心に配置します。\n"
+"人物の新しい位置は左上隅付近になります。"
+
+msgid "The path color"
+msgstr "パスの色"
+
+msgid "The selected person color"
+msgstr "選択された人物の色"
+
+msgid "The path transparency"
+msgstr "パスの透明度"
+
+msgid "General options"
+msgstr "全般オプション"

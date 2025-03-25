@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 12:35-0600\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Plugin Manager Enhanced"
+msgstr "プラグインマネージャーの強化"
+
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "いくつかの追加機能を備えたアドオン/プラグインマネージャー"
+
+msgid "Plugin Manager - Enhanced"
+msgstr "プラグインマネージャー - 拡張"
+
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"アドオンをフィルタリングするには、検索語を入力します。\n"
+"検索に含めるには、すべての語が行または\n"
+"アドオン ファイル名のどこかに存在している必要があります。\n"
+"語の大文字と小文字の区別と順序は無視されます。"
+
+msgid "Search..."
+msgstr "検索..."
+
+msgid "Restart..."
+msgstr "再起動..."
+
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr "アドオンの変更が安全に完了するように、Gramps を再起動してください。"
+
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr ""
+"'%s' ディレクトリの削除中にエラーが発生しました。アンインストールが失敗した可"
+"能性があります"
+
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"'*' 項目はサードパーティの著者によって提供され、\n"
+"<s>取り消し線</s> 項目は非表示になっています"
+
+msgid "Hide"
+msgstr "非表示"
+
+msgid "Show hidden items"
+msgstr "非表示の項目を表示"
+
+msgid "Show Built-in items"
+msgstr "組み込みアイテムを表示"
+
+msgid "* indicates 3rd party addon"
+msgstr "* はサードパーティのアドオンを示します"
+
+msgid "Plugins"
+msgstr "プラグイン"
+
+msgid "Unhide"
+msgstr "非表示解除"
+
+msgid "Uninstall"
+msgstr "アンインストール"
+
+msgid "*Available"
+msgstr "*利用可能"
+
+msgid "Built-in"
+msgstr "内蔵"
+
+msgid "*Installed"
+msgstr "*インストール済み"
+
+msgid "Update Available"
+msgstr "アップデートが利用可能"

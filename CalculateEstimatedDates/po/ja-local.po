@@ -1,0 +1,237 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Select filter to restrict people"
+msgstr "人を制限するフィルターの選択"
+
+msgid "Calculated Date Estimates"
+msgstr "計算された日付の推定"
+
+msgid "Source to remove and/or add"
+msgstr "削除または追加するソース"
+
+msgid "Remove previously added events, notes, and source"
+msgstr "以前に追加したイベント、メモ、ソースを削除"
+
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"計算されたイベント、メモ、ソースを削除します。実行時に直ちに実行されます"
+
+msgid "Do not add birth events"
+msgstr "誕生イベントを追加しない"
+
+msgid "Add birth events without dates"
+msgstr "日付なしで出生イベントを追加する"
+
+msgid "Add birth events with dates"
+msgstr "誕生日イベントを日付とともに追加する"
+
+msgid "Add a birth events with or without estimated dates"
+msgstr "推定日の有無にかかわらず出生イベントを追加する"
+
+msgid "Do not add death events"
+msgstr "死亡イベントを追加しない"
+
+msgid "Add death events without dates"
+msgstr "日付なしで死亡イベントを追加する"
+
+msgid "Add death events with dates"
+msgstr "死亡イベントを日付とともに追加する"
+
+msgid "Add death events with or without estimated dates"
+msgstr "推定日の有無にかかわらず死亡イベントを追加する"
+
+msgid "Maximum age"
+msgstr "最高年齢"
+
+msgid "Maximum age that one can live to"
+msgstr "人が生きられる最長年齢"
+
+msgid "Maximum age difference between siblings"
+msgstr "兄弟間の最大年齢差"
+
+msgid "Average years between two generations"
+msgstr "2世代間の平均年齢"
+
+msgid "Estimated Dates"
+msgstr "推定された日付"
+
+msgid "Approximate (about)"
+msgstr "近似 (約)"
+
+msgid "Extremes (after and before)"
+msgstr "両極端 (前後)"
+
+msgid "Dates on events are either about or after/before"
+msgstr "イベントの日付は前後のいずれかです"
+
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+"推定日計算ツールは、出生および死亡イベントが欠落している人々の出生および死亡"
+"イベントを追加および削除するために使用されます。\n"
+"\n"
+"使用方法 :\n"
+"\n"
+"1. [オプション] タブに移動します\n"
+"2. [ ] 削除オプションをチェックして、以前の推定値を削除します\n"
+"3. 日付付きまたは日付なしのイベントの日付を追加するには、日付追加オプションを"
+"選択します\n"
+"4. [実行] をクリックします\n"
+"5. イベントを追加する人々を選択します\n"
+"6. [選択したイベントを追加] ボタンをクリックして作成します\n"
+"\n"
+"注 : イベントを永続的にする場合は、ソースから削除してください。そうしないと、"
+"次回これらのイベントを自動的に削除したときに削除されます。\n"
+"\n"
+"すべてのイベントを追加するには、ツールを繰り返し実行する必要がある場合があり"
+"ます (以前のイベントを削除せずに)。"
+
+msgid "Calculate Estimated Dates"
+msgstr "推定日の計算"
+
+msgid "Select All"
+msgstr "すべて選択"
+
+msgid "Select None"
+msgstr "選択解除"
+
+msgid "Toggle Selection"
+msgstr "選択の切り替え"
+
+msgid "Add Selected Events"
+msgstr "選択したイベントを追加"
+
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "イベント、メモ、ソースを削除してデータを再選択する"
+
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+"以前のイベント、メモ、ソースを削除してデータを再選択してもよろしいですか?"
+
+msgid "Remove and Run Select Again"
+msgstr "削除して再度選択する"
+
+msgid "Reselect Data"
+msgstr "データの再選択"
+
+msgid "Are you sure you want to reselect data?"
+msgstr "データを再選択しますか?"
+
+msgid "Run Select Again"
+msgstr "もう一度選択を実行"
+
+msgid "Evidence"
+msgstr "証拠"
+
+msgid "Relative"
+msgstr "相対的"
+
+msgid "Processing...\n"
+msgstr "処理中...\n"
+
+msgid "Removing old estimations... "
+msgstr "古い推定を削除しています... "
+
+#, python-format
+msgid "Removing '%s'..."
+msgstr "'%s' を削除しています..."
+
+msgid "done!\n"
+msgstr "完了 !\n"
+
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"選択中... \n"
+"\n"
+
+msgid "Add birth and death events"
+msgstr "誕生と死亡イベントを追加"
+
+msgid "Add birth event"
+msgstr "出生イベントの追加"
+
+msgid "Add death event"
+msgstr "死亡イベントの追加"
+
+msgid "No events to be added."
+msgstr "追加するイベントはありません。"
+
+msgid "Selecting... "
+msgstr "選択中... "
+
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "イベント '%s' を追加中..."
+
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "%(name)s から %(evidence)s に基づく出生イベントを追加しました"
+
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "%s に基づいて誕生イベントを追加しました"
+
+msgid "Estimated birth date"
+msgstr "推定生年月日"
+
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr "%(person)s から %(evidence)s に基づいて死亡イベントが追加されました"
+
+#, python-format
+msgid "Added death event based on %s"
+msgstr "%s に基づいて死亡イベントを追加しました"
+
+msgid "Estimated death date"
+msgstr "死亡推定日"
+
+msgid " Done! Committing..."
+msgstr " 完了! コミットしています..."
+
+#, python-format
+msgid "Added %d events."
+msgstr "%d 件のイベントを追加しました。"
+
+msgid "Estimated date"
+msgstr "推定された日付"
+
+msgid "Calculates estimated dates for birth and death."
+msgstr "出生と死亡の推定日を計算します。"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-03-14 07:11+0000\n"
+"PO-Revision-Date: 2025-03-24 17:49+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -47,6 +47,14 @@ msgstr "Relatório Descendentes"
 msgid "Writing %s reports..."
 msgstr "A escrever %s relatórios..."
 
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. Descendentes de {name}"
+
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr "{report_count:d}. {name}"
+
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
 "Seleccione o filtro para limitar os indivíduos que aparecem no relatório"
@@ -86,9 +94,21 @@ msgstr "Índice de nomes"
 msgid "Report, Generation, Person, Name"
 msgstr "Relatório, Geração, Indivíduo, Nome"
 
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "Veja o relatório: {report}, geração: {generation}, indivíduo: {person}"
+
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Relatar aparições de %s"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Cônjuge de: {report}, geração {generation}, indivíduo {person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Relatório: {report}, geração {generation}, indivíduo {person}"
 
 #, python-format
 msgid "%(event_name)s of %(name)s "
@@ -121,6 +141,10 @@ msgstr "%(event_name)s:"
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
+
+#, python-brace-format
+msgid "Ref: {number}. {name}"
+msgstr "Ref.: {number}. {name}"
 
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"

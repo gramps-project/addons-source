@@ -1,0 +1,153 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-23 20:55+0200\n"
+"PO-Revision-Date: 2025-03-25 20:35+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Middle Name Handling"
+msgstr "Handhabung des mittleren Namens"
+
+msgid "Leave alone"
+msgstr "In Ruhe lassen"
+
+msgid "Separate"
+msgstr "Trennen Sie"
+
+msgid "URL Compactness Level"
+msgstr "URL-Kompaktheitsstufe"
+
+msgid "Shortest - No Prefix, No Variables"
+msgstr "Kürzeste - kein Präfix, keine Variablen"
+
+msgid "Compact - No Prefix, Variables Without Attributes"
+msgstr "Kompakt - kein Präfix, Variablen ohne Attribute"
+
+msgid "Compact - No Prefix, Variables With Attributes"
+msgstr "Kompakt - kein Präfix, Variablen mit Attributen"
+
+msgid "Long - Without Prefix on the Left"
+msgstr "Lang - ohne Präfix auf der linken Seite"
+
+msgid "URL Prefix Replacement"
+msgstr "URL-Präfix-Ersetzung"
+
+msgid "Use OpenAI"
+msgstr "OpenAI verwenden"
+
+msgid "OpenAI API Key"
+msgstr "OpenAI API-Schlüssel"
+
+msgid "Display 'Website URL' Column"
+msgstr "Spalte 'Website URL' anzeigen"
+
+msgid "Display 'Vars' Column"
+msgstr "Spalte 'Varianten' anzeigen"
+
+msgid "Show User Data Icon"
+msgstr "Symbol für Benutzerdaten anzeigen"
+
+msgid "Show Flag Icons"
+msgstr "Flaggensymbole anzeigen"
+
+msgid "Show Links From Attributes"
+msgstr "Verknüpfungen von Attributen anzeigen"
+
+msgid "Enable CSV Files"
+msgstr "CSV-Dateien ermöglichen"
+
+msgid "WebSearch"
+msgstr "WebSuche"
+
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+"Benutzerdefinierte Abfragen für Online-Dienste auf der Grundlage des aktiven "
+"Personen-, Orts-, Familien- oder Quellendatensatzes"
+
+msgid "QR-code"
+msgstr "QR-Code"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Fehler beim Generieren des QR-Codes:\n"
+"Ursprünglicher Fehler: „{}“"
+
+msgid "Vars"
+msgstr "Varianten"
+
+msgid "Website URL"
+msgstr "Website-URL"
+
+msgid "Add link to note"
+msgstr "Verknüpfung zur Notiz hinzufügen"
+
+msgid "Show QR-code"
+msgstr "QR-Code anzeigen"
+
+msgid "Copy link to clipboard"
+msgstr "Verknüpfung in die Zwischenablage kopieren"
+
+msgid "Hide link for selected item"
+msgstr "Verknüpfung für ausgewähltes Element ausblenden"
+
+msgid "Hide link for all items"
+msgstr "Verknüpfung für alle Elemente ausblenden"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 KI-Vorschläge"
+
+#, python-brace-format
+msgid ""
+"📌 This web link was added using the WebSearch gramplet for future "
+"reference:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this person."
+msgstr ""
+"📌 Dieser Weblink wurde mit Hilfe des WebSuche-Gramplet für zukünftige "
+"Referenzen hinzugefügt:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Du kannst diesen Link verwenden, um die Quelle erneut aufzurufen und die "
+"Informationen zu dieser Person zu überprüfen."
+
+msgid "Add Web Link Note"
+msgstr "Weblink Notiz hinzufügen"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL wird in die Zwischenablage kopiert"
+
+msgid "WebSearch Link"
+msgstr "WebSuche Link"
+
+#, python-brace-format
+msgid "Title: {title}\n"
+msgstr "Titel: {title}\n"
+
+#, python-brace-format
+msgid "Replaced: {variables}\n"
+msgstr "Ersetzt: {variables}\n"
+
+#, python-brace-format
+msgid "Empty: {variables}\n"
+msgstr "Leer: {variables}\n"
+
+#, python-brace-format
+msgid "Comment: {comment}\n"
+msgstr "Kommentar: {comment}\n"

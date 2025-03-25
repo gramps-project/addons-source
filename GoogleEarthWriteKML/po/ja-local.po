@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "No place description"
+msgstr "場所の説明なし"
+
+msgid "GoogleEarth not installed!"
+msgstr "GoogleEarth がインストールされていません!"
+
+#, python-format
+msgid ""
+"Create kmz/kml file ''%s''\n"
+"in user directory ''%s''?"
+msgstr ""
+"kmz/kml ファイル ''%s''\n"
+"をユーザー ディレクトリ ''%s'' に作成しますか?"
+
+#, python-format
+msgid "Failure writing to %s"
+msgstr "%s への書き込みに失敗しました"
+
+msgid "Directory does not exist"
+msgstr "ディレクトリが存在しません"
+
+msgid "GoogleEarth file exists!"
+msgstr "GoogleEarth ファイルが存在します!"
+
+#, python-format
+msgid ""
+"Overwrite kmz/kml file ''%s''\n"
+"in user home directory ''%s''?"
+msgstr ""
+"kmz/kml ファイル ''%s'' (ユーザーのホーム ディレクトリ ''%s'' 内)\n"
+"を上書きしますか?"
+
+msgid "GoogleEarth"
+msgstr "GoogleEarth"
+
+msgid "Creates data file for GoogleEarth and opens it"
+msgstr "GoogleEarth用のデータファイルを作成して開きます"

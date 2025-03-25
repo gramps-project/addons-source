@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Event Description Editor"
+msgstr "イベント説明エディタ"
+
+msgid "Search substring..."
+msgstr "部分文字列の検索..."
+
+msgid "INFO"
+msgstr "INFO"
+
+#, python-format
+msgid "%s event descriptions of %s events were changed."
+msgstr "%s イベントの %s イベント説明が変更されました。"
+
+msgid "Find"
+msgstr "検索"
+
+msgid "Replace"
+msgstr "置き換え"
+
+msgid "Replace substring only"
+msgstr "部分文字列のみを置き換え"
+
+msgid ""
+"If True only the substring will be replaced, otherwise the whole description "
+"will be deleted and replaced by the new one."
+msgstr ""
+"True の場合は部分文字列のみが置き換えられ、それ以外の場合は説明全体が削除さ"
+"れ、新しい説明に置き換えられます。"
+
+msgid "Allow regex"
+msgstr "正規表現を許可する"
+
+msgid "Allow regular expressions."
+msgstr "正規表現を許可します。"
+
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr "複数のイベントのイベント説明内の文字列を検索して置換するツール。"

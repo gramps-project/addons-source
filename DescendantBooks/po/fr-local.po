@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 13:48+0000\n"
-"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"POT-Creation-Date: 2025-03-13 22:50+0000\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Inclure ou non les familles en double dans le rapport."
 
 msgid "The style used for the title of the page."
 msgstr "Le style utilisé pour les titres de page."
+
+#, python-format
+msgid "Generating %s report references..."
+msgstr "Création de %s références du rapport…"
+
+#, python-format
+msgid "%(type)s:"
+msgstr "%(type)s :"
+
+msgid "Include index of Places"
+msgstr "Inclure l'index des lieux"

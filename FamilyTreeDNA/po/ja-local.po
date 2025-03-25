@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "FamilyTree DNA"
+msgstr "家系図 DNA"
+
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr "家系図からFamilyFinder DNAデータをインポートするツール"
+
+msgid "Family Finder Tool"
+msgstr "Family Finder ツール"
+
+msgid "Enter FTDNA Family Finder Filename:"
+msgstr "FTDNAファミリーファインダーのファイル名を入力してください :"
+
+msgid "Enter FTDNA Chromosome Segment Filename:"
+msgstr "FTDNA染色体セグメントファイル名を入力してください :"
+
+msgid "Import Haplogroups"
+msgstr "Haplogroups のインポート"
+
+msgid "FTDNA Note string :"
+msgstr "FTDNA メモ文字列 :"
+
+msgid "Shared Citation ID :"
+msgstr "共有引用 ID :"
+
+msgid "Active Person : "
+msgstr "アクティブな人 : "
+
+msgid "Import data from Family Finder files"
+msgstr "Family Finderファイルからデータをインポートする"
+
+msgid "Close the Family Finder Tool"
+msgstr "ファミリーファインダーツールを閉じる"
+
+msgid "Read Help manual"
+msgstr "ヘルプマニュアルを読む"
+
+msgid "FamilyTree DNA Import"
+msgstr "家系図 DNA のインポート"
+
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr ""
+"{} DNA データとの関連付けが作成されました。 {} haplogroup 属性が作成されまし"
+"た \n"
+
+msgid "No Family Finder File specified"
+msgstr "ファミリーファインダーファイルが指定されていません"
+
+msgid "No Segment File specified"
+msgstr "セグメント ファイルが指定されていません"
+
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr ""
+"FTdna ノートに関連付けが見つかりません。haplogroup属性は作成されませんでし"
+"た。"
+
+#, python-format
+msgid "Add %s haplogroup attribute"
+msgstr "%s haplogroup属性の追加"
+
+#, python-format
+msgid "Add %s DNA Association"
+msgstr "%s DNA 関連付けの追加"
+
+#, python-format
+msgid "Create Note for %s DNA Association"
+msgstr "%s DNA 関連付けのメモを作成"
+
+#, python-format
+msgid "Add Note to %s DNA Association"
+msgstr "%s DNA 関連付けにメモを追加"
+
+#, python-format
+msgid "Create Source Citation for %s DNA Association"
+msgstr "%s DNA 関連付けのソース引用を作成"
+
+#, python-format
+msgid "Create Citation for %s DNA Association"
+msgstr "%s DNA 関連付けの引用を作成"
+
+#, python-format
+msgid "Add Citation to %s DNA Association"
+msgstr "%s DNA 関連付けへの引用を追加"

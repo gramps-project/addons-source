@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-15 15:06+0000\n"
+"PO-Revision-Date: 2025-03-24 13:44+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -18,11 +18,38 @@ msgstr ""
 msgid "People related to <filter>"
 msgstr "אנשים עם שיוך אל <מסנן>"
 
+msgid "Matches people who are related to anybody matched by a person filter"
+msgstr "איתור אנשים הקשורים לכל מי שמתאים למסנן אדם"
+
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr "כלל מסנן שמתאים קרובים בדרגות מרחק"
+
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr "איתור מקורות עם ערכים המכילים משתנים שנבחרו"
+
+msgid "Matches people who have more than one set of parents"
+msgstr "איתור אנשים שיש להם יותר מקבוצת הורים אחת"
+
 msgid "People with events with the <role>"
 msgstr "אירועם לאנשים עם <תפקיד>"
 
+msgid "Matches people with an event with a selected role"
+msgstr "איתור אנשים עם אירוע עם תפקיד שנבחר"
+
 msgid "Families with events with the <role>"
 msgstr "אירועם למשפחות עם <תפקיד>"
+
+msgid "Matches families with an event with a selected role"
+msgstr "איתור משפחות עם אירוע עם תפקיד שנבחר"
+
+msgid "Events of families matching a <family filter>"
+msgstr "אירועים של משפחות שתואמות ל<מסנן משפחה>"
+
+msgid "Families matching <event filter>"
+msgstr "משפחות שתואמות <מסנן אירוע>"
+
+msgid "Matches families that are matched by an event filter"
+msgstr "איתור משפחות שהותאמו על ידי מסנן אירועים"
 
 msgid "Include Parents"
 msgstr "הכללת הורים"

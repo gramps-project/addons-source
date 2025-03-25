@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 13:48+0000\n"
-"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,126 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "People related to <filter>"
+msgstr "Individus reliés au <filtre>"
+
+msgid "Matches people who are related to anybody matched by a person filter"
+msgstr ""
+"Correspond aux personnes qui sont liées à quelqu'un apparié par un filtre "
+"d'individu"
+
+msgid "People separated less than <N> degrees of <person>"
+msgstr "Personnes séparées par moins de <N> degrés de parenté de <individu>"
+
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr "Règle de filtrage qui retourne les parents par degré de séparation"
+
+msgid "Source matching parameters"
+msgstr "Source correspondantes"
+
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr ""
+"Renvoie les sources avec des valeurs contenant les paramètres sélectionnés"
+
+msgid "People with multiple parent records"
+msgstr "Personnes ayant des dossiers parentaux multiples"
+
+msgid "Matches people who have more than one set of parents"
+msgstr "Renvoie les personnes qui ont plus d'une famille parentale"
+
+msgid "Does NOT match with selected Role"
+msgstr "Ne correspond PAS au rôle sélectionné"
+
+msgid "Finds the items that don't have event Roles of the selected type."
+msgstr ""
+"Trouve les éléments qui n'ont pas d'événement Rôles du type sélectionné."
+
+msgid "Inverse"
+msgstr "Inverse"
+
+msgid "People with events with the <role>"
+msgstr "Les gens avec des événements avec le <rôle>"
+
+msgid "Matches people with an event with a selected role"
+msgstr "Sélectionne les personnes avec un événement avec un rôle sélectionné"
+
+msgid "Families with events with the <role>"
+msgstr "Familles ayant des évènements avec le <rôle>"
+
+msgid "Matches families with an event with a selected role"
+msgstr "Sélectionne les familles avec un événement ayant un rôle sélectionné"
+
+msgid "Events of families matching a <family filter>"
+msgstr "Evénements familiaux correspondant à <filtre familial>"
+
+msgid "Families matching <event filter>"
+msgstr "Familles correspondant à <filtre d'évènement>"
+
+msgid "Matches families that are matched by an event filter"
+msgstr "Sélectionne les familles qui correspondent à un filtre d'événements"
+
+msgid "Number of degrees of separation from person."
+msgstr "Nombre de degrés de séparation de l'individu."
+
+msgid "Degrees:"
+msgstr "Degrés :"
+
+msgid "People with <count> of <event>"
+msgstr "Individus avec <nombre> d' <évènement>"
+
+msgid "Matches persons which have events of given type and number."
+msgstr ""
+"Correspond aux personnes qui ont des évènements du type et nombre donnés."
+
+msgid "Include Children"
+msgstr "Inclure les enfants"
+
+msgid "Include the children in the matching families."
+msgstr "Inclure les enfants dans les familles correspondantes."
+
+msgid "Include Parents"
+msgstr "Inclure les parents"
+
+msgid "Include the parents in the matching families."
+msgstr "Inclure les parents dans les familles correspondantes."
+
+msgid "Family Filter name:"
+msgstr "Filtre du Nom de famille :"
+
+msgid "People who are part of families matching <filter>"
+msgstr "Les gens qui font partie des familles qui correspondent à <filtre>"
+
+msgid "Filter people by their age at death"
+msgstr "Filtre les personnes par leur âge à leur décès"
+
+msgid "Filter rule that matches people by their age at death"
+msgstr "Règle de filtrage qui correspond aux personnes à leur âge à leur décès"
+
+msgid "Multiple Parents Filter"
+msgstr "Filtre de parents multiples"
+
+msgid "People with events with a selected role"
+msgstr "Individus ayant des évènements avec le <rôle>"
+
+msgid "Families with events with a selected role"
+msgstr "Familles avec des évènements avec un rôle sélectionné"
+
+msgid "The active Person"
+msgstr "L'individu actif"
+
+msgid "Matches sources with a particular value"
+msgstr "Sélectionnne les sources ayant une valeur particulière"
 
 msgid "Active person"
 msgstr "Individu actif"
+
+msgid "Matches the active person"
+msgstr "Renvoie l’individu actif"
+
+msgid "Age in years at person's death."
+msgstr "L'âge en anées au décès de la personne."
+
+msgid "Age:"
+msgstr "Âge :"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-03-18 14:54+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -14,12 +14,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Errore durante la scrittura di {target_path}: {message}"
+
 msgid "The destination path for generated files."
 msgstr "Il percorso di destinazione per i file generati."
 
 msgid "The destination file name for html content."
 msgstr "Il nome di file di destinazione per il contenuto HTML."
 
+msgid "The number of descendant levels to contract on initial display."
+msgstr ""
+"Il numero di generazioni di discendenti da contrarre nella visualizzazione "
+"iniziale."
+
 msgid "Whether to show duplicate family trees in the report."
 msgstr ""
 "Indica se visualizzare o meno gli alberi familiari duplicati nel resoconto."
+
+msgid "The number of generations to generate HREF links."
+msgstr "Il numero di generazioni per cui generare collegamenti HREF."

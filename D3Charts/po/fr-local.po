@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 13:48+0000\n"
-"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,19 +12,241 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Échec à l'écriture de {target_path} : {message}"
+
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "Impossible de créer l'arborescence : %s"
+
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "Impossible de copier les fichiers web : %s"
+
+msgid "Include Generations"
+msgstr "Inclure les générations"
+
+msgid "Male Background Color"
+msgstr "Couleur d'arrière-plan masculin"
 
 msgid "RGB-color for male box background."
 msgstr "Couleur RGB pour l'arrière-plan masculin."
 
+msgid "Male Expandable Background Color"
+msgstr "Couleur d'arrière-plan masculin extensible"
+
+msgid "RGB-color for male expandable box background."
+msgstr "Couleur RGB d'arrière-plan pour les cadres extensibles masculins."
+
 msgid "Female Background"
 msgstr "Arrière-plan féminin"
 
+msgid "RGB-color for female box background."
+msgstr "Couleur RGB d'arrière-plan pour les cadres féminins."
+
+msgid "Female Expandable Background"
+msgstr "Arrière-plan féminin extensible"
+
+msgid "RGB-color for female expandable box background."
+msgstr "Couleur RGB d'arrière-plan pour les cadres extensibles féminins."
+
+msgid "The destination path for generated files."
+msgstr "Le chemin de destination pour les fichiers générés."
+
+msgid "The destination file name for html content."
+msgstr "Le fichier de destination pour le contenu HTML."
+
+msgid "Descendant Indented Tree"
+msgstr "Arbre descendant en retrait"
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Options du diagramme des ancêtres en éventail"
+
+msgid "Paternal Background Color"
+msgstr "Couleur d'arrière-plan des parents"
+
+msgid "RGB-color for paternal box background."
+msgstr "Couleur RGB d'arrière-plan pour les parents."
+
+msgid "Maternal Background"
+msgstr "Arrière-plan maternel"
+
+msgid "RGB-color for maternal box background."
+msgstr "Couleur RGB d'arrière-plan pour le cadre maternel."
+
+msgid "Ancestral Fan Chart"
+msgstr "Graphique des ancêtres en éventail"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"Génère une page web avec une représentation graphique des ancêtres (SVG) "
+"représenté comme un graphique en éventail de la bibliothèque D3.js "
+"JavaScript."
+
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Voir %(reference)s : %(spouse)s"
+
+msgid "Generating report..."
+msgstr "Génération du rapport..."
+
+msgid "Invalid Destination Directory"
+msgstr "Dossier de destination invalide"
+
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"Le dossier de destination %s n'existe pas.\n"
+"Voulez-vous le créer ?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "Échec à la création de {target_path}: {message}"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Le fichier de destination %s existe déjà.\n"
+"Voulez-vous le remplacer ?"
+
+msgid "Default View"
+msgstr "Vue par défaut"
+
+msgid "Expand All"
+msgstr "Développer tout"
+
+msgid "The number of descendant levels to contract on initial display."
+msgstr ""
+"Le nombre de générations descendants à inclure dans l'affichage initial."
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Inclure ou non les familles en double dans le rapport."
+
+msgid "RGB-color for expanded row background."
+msgstr "Couleur RGB d'arrière-plan pour une ligne extensible masculine."
+
+msgid "Expandable Background Color"
+msgstr "Couleur d'arrière-plan extensible"
+
+msgid "RGB-color for expandable row background."
+msgstr "Couleur RGB d'arrière-plan pour une ligne extensible."
+
+msgid "Non-Expandable Background Color"
+msgstr "Couleur d'arrière-plan non-extensible"
+
+msgid "RGB-color for non-expandable row background."
+msgstr "Couleur RGB d'arrière-plan pour une ligne non-extensible."
+
 msgid "Include records marked private"
 msgstr "Inclure les données privées"
+
+msgid "Whether to include private objects."
+msgstr "Inclure ou non les objets privés."
 
 msgid "Include Last Name Only"
 msgstr "N'inclure que le nom"
 
 msgid "Include Full Name Only"
 msgstr "Inclure le nom complet"
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "Inclure ou non les gens qui pourraient être décédées récemment."
+
+msgid "Navigation"
+msgstr "Navigation"
+
+msgid "Arrow images at start of node."
+msgstr "Images des flèches au début du nœud."
+
+msgid "Plus/Minus images at start of node."
+msgstr "Images plus/moins au début du nœud."
+
+msgid "Where to click to expand/contract nodes."
+msgstr "Où cliquer pour agrandir/réduire les noeuds."
+
+msgid "Auto-generate HREF links for nodes"
+msgstr "Liens autogénérés HREF pour les nœuds"
+
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr ""
+"Générer ou non automatiquement des liens HTML pour chaque nœud du rapport."
+
+msgid "URL prefix path."
+msgstr "Chemin de préfixe d'URL."
+
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr "Préfixe d'URL à appliquer à chaque lien HREF autogénéré."
+
+msgid "No file extension."
+msgstr "Aucune extension de fichier."
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "URL file name delimeter"
+msgstr "Délimiteur de nom de fichier URL"
+
+msgid "Remove all whitespace."
+msgstr "Enlever tous les espaces."
+
+msgid "Replace whitespace with dash(-)."
+msgstr "Remplacer l'espace par un tiret (-)."
+
+msgid "Replace whitespace with underscore(_)"
+msgstr "Remplacer l'espace par un souligné (_)"
+
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr ""
+"Que faut-il utiliser comme délimiteur de nom de fichier pour remplacer les "
+"espaces."
+
+msgid "The number of generations to generate HREF links."
+msgstr "Le nombre de générations pour lesquelles générer les liens HREFF."
+
+msgid "Exclude persons who died before (years)"
+msgstr "Exclure les personnes décédées avant (années)"
+
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr ""
+"Générer ou non les liens pour les personnes décédées en bas âge, -1 n'exclut "
+"personne."
+
+msgid "Exclude center person"
+msgstr "Exclure l'individu central"
+
+msgid "Whether or not to generate links for center person."
+msgstr "Générer ou non des liens pour l'individu central."
+
+msgid "Exclude Spouses"
+msgstr "Exclure les conjoints"
+
+msgid "Whether or not to generate links for spouses."
+msgstr "Générer ou non les liens pour les conjoints."
+
+msgid "Biography Content"
+msgstr "Biographie"
+
+msgid "Text Color"
+msgstr "Couleur du texte"
+
+msgid "RGB-color for biography text."
+msgstr "Couleur RGB pour le texte de la biographie."
+
+msgid "RGB-color for biography tooltip."
+msgstr "Couleur RGB pour l'outil biographique."

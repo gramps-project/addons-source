@@ -1,0 +1,702 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Dynamic Web Report"
+msgstr "動的ウェブレポート"
+
+msgid "Produces dynamic web pages for the database"
+msgstr "データベースの動的なWebページを作成します"
+
+msgid "SVG graphical tree"
+msgstr "SVG グラフィカル ツリー"
+
+msgid "Indexes pages"
+msgstr "インデックスページ"
+
+#, python-format
+msgid "Custom page %(index)i"
+msgstr "カスタムページ %(index)i"
+
+msgid "Ascending tree"
+msgstr "昇順ツリー"
+
+msgid "Descending tree"
+msgstr "降順ツリー"
+
+msgid "Descending tree with spouses"
+msgstr "配偶を持つ降順ツリー"
+
+msgid "Ascending and descending tree"
+msgstr "昇順および降順ツリー"
+
+msgid "Ascending and descending tree with spouses"
+msgstr "配偶を持つ昇順/降順ツリー"
+
+msgid "Size proportional to number of ancestors"
+msgstr "祖先の数に比例した大きさ"
+
+msgid "Homogeneous parents distribution"
+msgstr "均一な親の分布"
+
+msgid "Age based gradient"
+msgstr "年齢に基づくグラデーション"
+
+msgid "Gradient"
+msgstr "グラデーション"
+
+#, python-format
+msgid "Could not create the directory: %(path)s"
+msgstr "ディレクトリを作成できませんでした : %(path)s"
+
+msgid "Dynamic Web Site Report"
+msgstr "動的 Web サイト レポート"
+
+msgid "Exporting family tree data ..."
+msgstr "家系図データのエクスポート中..."
+
+#, python-format
+msgid "Impossible to convert \"%(path)s\" to a relative path."
+msgstr "\"%(path)s\" を相対パスに変換できません。"
+
+msgid ""
+"The pages configuration is not valid: several pages have the same content"
+msgstr "ページ構成が無効です : 複数のページに同じコンテンツがあります"
+
+msgid "Tree"
+msgstr "ツリー"
+
+msgid "Search results"
+msgstr "検索結果"
+
+msgid "Indexes"
+msgstr "インデックス"
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(合計 _MAX_ 件のエントリからフィルタリング)"
+
+msgid "(sort by name)"
+msgstr "(名前で並べ替え)"
+
+msgid "(sort by quantity)"
+msgstr "(数量順に並び替え)"
+
+msgid ": activate to sort column ascending"
+msgstr ": 列を昇順に並べ替えるには有効にします"
+
+msgid ": activate to sort column descending"
+msgstr ": 列を降順に並べ替えるには有効にします"
+
+msgid ""
+"<p>This page provides the SVG raw code.<br>Copy the contents into a text "
+"editor and save as an SVG file.<br>Make sure that the text editor encoding "
+"is UTF-8.</p>"
+msgstr ""
+"<p>このページでは、SVG の生のコードを提供します。<br>内容をテキスト エディ"
+"ターにコピーし、SVG ファイルとして保存します。<br>テキスト エディターのエン"
+"コーディングが UTF-8 であることを確認してください。</p>"
+
+msgid "Alternate Name"
+msgstr "別名"
+
+msgid "Click on the map to show it full-screen"
+msgstr "地図をクリックすると全画面で表示されます"
+
+msgid "Configure"
+msgstr "設定"
+
+msgid "Examples"
+msgstr "例"
+
+msgid "F"
+msgstr "F"
+
+msgid "Families Index"
+msgstr "家族のインデックス"
+
+msgid "Family Nick Name"
+msgstr "家族のニックネーム"
+
+msgid "File ready"
+msgstr "ファイル準備完了"
+
+msgid "Include dates columns on the index pages"
+msgstr "インデックスページに日付列を含める"
+
+msgid "Include a column for media path on the index pages"
+msgstr "インデックスページにメディアパスの列を含める"
+
+msgid "Include a map in the individuals and family pages"
+msgstr "個人および家族のページに地図を含める"
+
+msgid "Include half and/ or step-siblings on the individual pages"
+msgstr "異父兄弟や義理の兄弟を個別のページに記載する"
+
+msgid "Include references in indexes"
+msgstr "インデックスに参照を含める"
+
+msgid "Insert sources author in the sources title"
+msgstr "ソースのタイトルにソースの著者を挿入する"
+
+msgid "M"
+msgstr "M"
+
+msgid "Maximize"
+msgstr "最大化"
+
+msgid "Media Index"
+msgstr "メディア インデックス"
+
+msgid "Media Type"
+msgstr "メディアの種類"
+
+msgid "No data available in table"
+msgstr "表にデータがありません"
+
+msgid "No matching records found"
+msgstr "一致するレコードが見つかりません"
+
+msgid "No matching surname."
+msgstr "一致する姓がありません。"
+
+msgid "Other participants"
+msgstr "その他の参加者"
+
+msgid "Person page"
+msgstr "人物ページ"
+
+msgid "Person to search for"
+msgstr "検索する人物"
+
+msgid "Persons Index"
+msgstr "人物インデックス"
+
+msgid "Persons"
+msgstr "人物"
+
+msgid "Places Index"
+msgstr "場所のインデックス"
+
+msgid "Preparing file ..."
+msgstr "ファイルの準備中..."
+
+msgid "Relationship to Father"
+msgstr "父親との関係"
+
+msgid "Relationship to Mother"
+msgstr "母親との関係"
+
+msgid "Repositories Index"
+msgstr "リポジトリ インデックス"
+
+msgid "Restore"
+msgstr "復元"
+
+msgid "Restore default settings"
+msgstr "既定の設定を復元する"
+
+msgid "Show last modification time"
+msgstr "最終更新日時を表示"
+
+msgid "SVG tree children distribution"
+msgstr "SVGツリーの子の分布"
+
+msgid "SVG tree configuration"
+msgstr "SVGツリー構成"
+
+msgid "SVG tree graph shape"
+msgstr "SVG ツリーグラフの形状"
+
+msgid "SVG tree graph type"
+msgstr "SVG ツリーグラフの種類"
+
+msgid "SVG tree parents distribution"
+msgstr "SVGツリーの親分布"
+
+msgid "Save tree as file"
+msgstr "ツリーをファイルとして保存"
+
+msgid "Search:"
+msgstr "検索 :"
+
+msgid "Select the background color scheme"
+msgstr "背景の配色を選択する"
+
+msgid "Select the children distribution (fan charts only)"
+msgstr "子の分布を選択 (ファンチャートのみ)"
+
+msgid "Select the number of ascending generations"
+msgstr "昇順世代数の選択"
+
+msgid "Select the number of descending generations"
+msgstr "子孫世代の数を選択する"
+
+msgid "Select the parents distribution (fan charts only)"
+msgstr "親分布の選択 (ファンチャートのみ)"
+
+msgid "Select the shape of graph"
+msgstr "グラフ形状の選択"
+
+msgid "Select the type of graph"
+msgstr "グラフの種類を選択"
+
+msgid "Several matches.<br>Precise your search or choose in the lists below."
+msgstr ""
+"複数の一致があります。<br>検索を絞り込むか、下のリストから選択してください。"
+
+msgid "Show duplicates"
+msgstr "重複を表示"
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "0 件中 0 件から0 件を表示"
+
+msgid "Sort by:"
+msgstr "並べ替え :"
+
+msgid "Sources Index"
+msgstr "ソース インデックス"
+
+msgid "Suppress Gramps ID"
+msgstr "Gramps ID を非表示にする"
+
+msgid "Surnames Index"
+msgstr "姓インデックス"
+
+msgid "U"
+msgstr "U"
+
+msgid "Use tabbed panels instead of sections"
+msgstr "セクションの代わりにタブ付きパネルを使用する"
+
+msgid "Use the search box above in order to find a person."
+msgstr "人物を検索するには、上の検索ボックスを使用してください。"
+
+msgid "Use a table format for the surnames index"
+msgstr "姓インデックスには表形式を使用する"
+
+msgid "Use a table format for the persons index"
+msgstr "人物インデックスには表形式を使用する"
+
+msgid "Use a table format for the families index"
+msgstr "家族インデックスには表形式を使用する"
+
+msgid "Use a table format for the sources index"
+msgstr "ソースインデックスには表形式を使用する"
+
+msgid "Use a table format for the places index"
+msgstr "場所のインデックスには表形式を使用する"
+
+msgid "Used for family"
+msgstr "家族向け"
+
+msgid "Used for media"
+msgstr "メディア向け"
+
+msgid "Used for person"
+msgstr "個人向け"
+
+msgid "Used for place"
+msgstr "場所向け"
+
+msgid "Used for source"
+msgstr "ソース向け"
+
+msgid "Web Link"
+msgstr "ウェブリンク"
+
+msgid ""
+"Whether to use a special color for the persons that appear several times in "
+"the SVG tree"
+msgstr "SVGツリーに複数回出現する人物に特別な色を使用するかどうか"
+
+msgid "Without name"
+msgstr "名前なし"
+
+msgid "Without surname"
+msgstr "姓なし"
+
+msgid "Without title"
+msgstr "タイトルなし"
+
+msgid "Zoom in"
+msgstr "ズームイン"
+
+msgid "Zoom out"
+msgstr "ズームアウト"
+
+msgid "all"
+msgstr "すべて"
+
+#, python-format
+msgid "Copying error: %(error)s"
+msgstr "コピーエラー : %(error)s"
+
+#, python-format
+msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+msgstr "\"%(src)s\" を \"%(dst)s\" にコピーできません"
+
+#, python-format
+msgid "Unable to copy web site template files from \"%(path)s\""
+msgstr "\"%(path)s\" から Web サイト テンプレート ファイルをコピーできません"
+
+#, python-format
+msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
+msgstr "\"%(dst)s\" を保持 (\"%(src)s\"より新しい)"
+
+#, python-format
+msgid "Copying \"%(src)s\" to \"%(dst)s\""
+msgstr "\"%(src)s\" から \"%(dst)s\" へコピー中"
+
+#, python-format
+msgid "Unable to overwrite archive file \"%(path)s\""
+msgstr "アーカイブ ファイル \"%(path)s\" を上書きできません"
+
+#, python-format
+msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
+msgstr "ファイル \"%(file)s\" をアーカイブ \"%(archive)s\" に追加できません"
+
+#, python-format
+msgid "DynamicWebReport ignoring link type '%(class)s'"
+msgstr "DynamicWebReport はリンク タイプ '%(class)s' を無視します"
+
+#, python-format
+msgid "Family of %(father)s"
+msgstr "%(father)s の家族"
+
+#, python-format
+msgid "Family of %(mother)s"
+msgstr "%(mother)s の家族"
+
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+"このノートでは、次の特別な単語が処理されます:\n"
+"__SEARCH_FORM__ は検索フォームに置き換えられます。\n"
+"__NB_INDIVIDUALS__ は人数に置き換えられます。\n"
+"__NB_FAMILIES__ は家族の数に置き換えられます。\n"
+"__NB_MEDIA__ はメディアの数に置き換えられます。\n"
+"__NB_SOURCES__ はソースの数に置き換えられます。\n"
+"__NB_REPOSITORIES__ はリポジトリの数に置き換えられます。\n"
+"__NB_PLACES__ は場所の数に置き換えられます。\n"
+"__MEDIA_<gid>__ は Gramps ID <gid> のメディアに置き換えられます。\n"
+"__THUMB_<gid>__ は Gramps ID <gid> のメディアのサムネイルに置き換えられま"
+"す。\n"
+"__EXPORT_DATE__ は現在の日付に置き換えられます。\n"
+"__GRAMPS_VERSION__ は Gramps バージョンに置き換えられます。\n"
+"__GRAMPS_HOMEPAGE__ は Gramps ホームページ リンクに置き換えられます。\n"
+"「relative://relative.<link>」で始まる URL は、相対 URL \"<link>\" に置き換え"
+"られます。\n"
+
+msgid "Store web pages in archive"
+msgstr "ウェブページをアーカイブに保存する"
+
+msgid ""
+"Whether to create an archive file (in ZIP or TGZ format) containing the web "
+"site"
+msgstr "ウェブサイトを含む圧縮ファイル (ZIPまたはTGZ形式) を作成するかどうか"
+
+msgid "Archive file"
+msgstr "圧縮 ファイル"
+
+msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
+msgstr "圧縮ファイル名 (拡張子\".zip\"または\".tgz\")"
+
+msgid "Web site title"
+msgstr "ウェブサイトのタイトル"
+
+msgid "The title of the web site"
+msgstr "ウェブサイトのタイトル"
+
+msgid "Select filter to restrict people that appear on web site"
+msgstr "フィルターを選択して、ウェブサイトに表示される人物を制限します"
+
+msgid "Name format (short)"
+msgstr "名前の形式 (短縮形)"
+
+msgid "Select the format to display a shorter version of the names"
+msgstr "名前の短縮バージョンを表示する形式を選択します"
+
+msgid "Web site template"
+msgstr "ウェブサイトのテンプレート"
+
+msgid "Select the template of the web site"
+msgstr "ウェブサイトのテンプレートを選択する"
+
+msgid "Include records marked private"
+msgstr "非公開とマークされたレコードを含める"
+
+msgid "Whether to include private objects"
+msgstr "プライベートオブジェクトを含めるかどうか"
+
+msgid "Include Last Name Only"
+msgstr "姓のみを含める"
+
+msgid "Include Full Name Only"
+msgstr "フルネームのみ含める"
+
+msgid ""
+"This allows you to restrict information on people who have not been dead for "
+"very long"
+msgstr "これにより、死後それほど長く経っていない人々の情報を制限できます"
+
+msgid "Export notes"
+msgstr "メモのエクスポート"
+
+msgid "Whether to export notes in the web pages"
+msgstr "ウェブページ内のメモをエクスポートするかどうか"
+
+msgid "Export sources"
+msgstr "ソースのエクスポート"
+
+msgid "Whether to export sources and citations in the web pages"
+msgstr "ウェブページ内のソースと引用をエクスポートするかどうか"
+
+msgid "Export addresses"
+msgstr "アドレスのエクスポート"
+
+msgid "Whether to export addresses in the web pages"
+msgstr "ウェブページ内のアドレスをエクスポートするかどうか"
+
+msgid "Whether or not to include the Repository Pages."
+msgstr "リポジトリ ページを含めるかどうか。"
+
+msgid "Include images and media"
+msgstr "画像やメディアを含める"
+
+msgid "Whether to include images and media in the web pages"
+msgstr "ウェブページに画像やメディアを含めるかどうか"
+
+msgid "Copy, rename files with an internal Gramps identifier"
+msgstr "内部Gramps識別子を使用してファイルをコピー、名前変更する"
+
+msgid "Copy, keep file names unchanged"
+msgstr "コピー、ファイル名は変更しない"
+
+msgid "Do not copy, reference existing files"
+msgstr "コピーしないで、既存のファイルを参照する"
+
+msgid "Images and media"
+msgstr "画像とメディア"
+
+msgid "Whether to make a copy of the media"
+msgstr "メディアのコピーを作成するかどうか"
+
+msgid "Print the notes type"
+msgstr "メモの種類を印刷"
+
+msgid "Whether to print the notes type in the notes text"
+msgstr "メモテキストにメモの種類を印刷するかどうか"
+
+msgid "Print place pages"
+msgstr "場所ページを印刷"
+
+msgid "Whether to show pages for the places"
+msgstr "場所のページを表示するかどうか"
+
+msgid "Choose your choice of map service for creating the Place Map Pages"
+msgstr "場所マップページを作成するためのマップサービスを選択してください"
+
+msgid "Google map API key"
+msgstr "Google マップ API キー"
+
+msgid "The API key used for the Google map"
+msgstr "Googleマップで使用されるAPIキー"
+
+msgid "Whether or not to include family pages"
+msgstr "家族のページを含めるかどうか"
+
+msgid ""
+"Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr "両親や兄弟姉妹に異父兄弟姉妹や義理の兄弟姉妹を含めるかどうか"
+
+msgid "Enable page configuration"
+msgstr "ページ設定を有効にする"
+
+msgid "Whether to enable page configuration"
+msgstr "ページ設定を有効にするかどうか"
+
+msgid "Whether to use tabbed panels for the different sections of the pages."
+msgstr "ページのさまざまなセクションにタブ付きパネルを使用するかどうか。"
+
+msgid "Whether to show the last modification time in the pages footer"
+msgstr "ページのフッターに最終更新日時を表示するかどうか"
+
+msgid "Whether to insert sources author in the sources title"
+msgstr "ソースタイトルにソース著者を挿入するかどうか"
+
+msgid "Whether to hide the Gramps ID"
+msgstr "Gramps IDを非表示にするかどうか"
+
+msgid "List"
+msgstr "リスト"
+
+msgid "Table"
+msgstr "表"
+
+msgid "Default format for the surnames index"
+msgstr "姓インデックスのデフォルト形式"
+
+msgid "The default format for the surnames index"
+msgstr "姓インデックスのデフォルト形式"
+
+msgid "Default format for the persons index"
+msgstr "人物インデックスのデフォルト形式"
+
+msgid "The default format for the persons index"
+msgstr "人物インデックスのデフォルト形式"
+
+msgid "Default format for the families index"
+msgstr "家族インデックスのデフォルト形式"
+
+msgid "The default format for the families index"
+msgstr "家族インデックスのデフォルト形式"
+
+msgid "Default format for the sources index"
+msgstr "ソースインデックスのデフォルト形式"
+
+msgid "The default format for the sources index"
+msgstr "ソースインデックスのデフォルト形式"
+
+msgid "Default format for the places index"
+msgstr "場所インデックスのデフォルト形式"
+
+msgid "The default format for the places index"
+msgstr "場所インデックスのデフォルト形式"
+
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr "インデックスページに日付列（生年月日、死亡日、結婚日）を含めるかどうか"
+
+msgid "Generate a families index page"
+msgstr "家族インデックスページを生成する"
+
+msgid "Whether to generate an index page for families"
+msgstr "家族のインデックスページを生成するかどうか"
+
+msgid "Whether to include a column showing the media path"
+msgstr "メディアパスを示す列を含めるかどうか"
+
+msgid ""
+"Whether to include the references to the items in the index pages. For "
+"example, in the media index page, the names of the individuals, families, "
+"places, sources that reference the media."
+msgstr ""
+"インデックス ページにアイテムへの参照を含めるかどうか。たとえば、メディア イ"
+"ンデックス ページでは、メディアを参照する個人、家族、場所、ソースの名前などで"
+"す。"
+
+msgid "Default number of entries in the indexes"
+msgstr "インデックス内のエントリのデフォルト数"
+
+msgid "The default number of entries shown in one index page"
+msgstr "1つのインデックスページに表示されるデフォルトのエントリ数"
+
+msgid "Maximum number of generations"
+msgstr "最大世代数"
+
+msgid ""
+"The maximum number of generations to include in the ancestor and descendant "
+"trees and graphs"
+msgstr "祖先と子孫のツリーとグラフに含める世代の最大数"
+
+msgid "Choose the default SVG tree graph type"
+msgstr "デフォルトのSVGツリーグラフの種類を選択"
+
+msgid "Choose the default SVG tree graph shape"
+msgstr "デフォルトのSVGツリーグラフの形状を選択する"
+
+msgid "Choose the default SVG tree parents distribution (for fan charts only)"
+msgstr "デフォルトの SVG ツリーの親分布を選択します (ファン チャートのみ)"
+
+msgid "Choose the default SVG tree children distribution (for fan charts only)"
+msgstr "デフォルトの SVG ツリーの子の分布を選択します (ファン チャートのみ)"
+
+msgid ""
+"Choose the background color scheme for the persons in the SVG tree graph"
+msgstr "SVGツリーグラフ内の人物の背景色スキームを選択します"
+
+msgid "Theme"
+msgstr "テーマ"
+
+msgid "Pages"
+msgstr "ページ"
+
+msgid "A note to be used as the page header"
+msgstr "ページヘッダーとして使用されるメモ"
+
+msgid "HTML user brand name / icon"
+msgstr "HTML ユーザーブランド名 / アイコン"
+
+msgid "A note to be used as the brand name or image in the menu"
+msgstr "メニューのブランド名や画像として使用されるメモ"
+
+msgid "Custom pages"
+msgstr "カスタムページ"
+
+#, python-format
+msgid "Title for the custom page %(index)i"
+msgstr "カスタム ページのタイトル %(index)i"
+
+#, python-format
+msgid "Name for the custom page %(index)i"
+msgstr "カスタム ページの名前 %(index)i"
+
+#, python-format
+msgid "Note for custom page %(index)i"
+msgstr "カスタムページ に関する注記 %(index)i"
+
+msgid "A note to be used for the custom page content.\n"
+msgstr "カスタム ページ 内容に使用されるメモ。\n"
+
+#, python-format
+msgid "Menu for the custom page %(index)i"
+msgstr "カスタム ページのメニュー %(index)i"
+
+msgid "Whether to print a menu for the custom page"
+msgstr "カスタムページのメニューを印刷するかどうか"
+
+msgid "Pages selection"
+msgstr "ページの選択"
+
+msgid "Number of pages"
+msgstr "ページ数"
+
+msgid "Number pages in the web site menu."
+msgstr "ウェブサイト メニューのページ数。"
+
+#, python-format
+msgid "Contents of page %(index)i"
+msgstr "ページの内容 %(index)i"
+
+msgid "Contents of the page"
+msgstr "ページの内容"

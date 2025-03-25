@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Database Differences Report"
+msgstr "データベース差異レポート"
+
+msgid "Differences between Database and File"
+msgstr "データベースとファイルの違い"
+
+msgid "No differences"
+msgstr "違いはありません"
+
+msgid "Missing items in File that are added in Database"
+msgstr "データベースに追加されたファイル内の欠落項目"
+
+#, python-format
+msgid "Missing %s: %s"
+msgstr "欠落 %s : %s"
+
+msgid "Nothing missing"
+msgstr "欠落はありません"
+
+msgid "Added items in File that are missing in Database"
+msgstr "データベースにないファイル内の項目を追加しました"
+
+#, python-format
+msgid "Added %s: %s "
+msgstr "追加済み %s : %s "
+
+msgid "Nothing added"
+msgstr "何も追加されていません"
+
+msgid "Family Tree file"
+msgstr "家系図ファイル"
+
+msgid "Select a .gpkg or .gramps file"
+msgstr ".gpkg または .gramps ファイルの選択"
+
+msgid "Show items that are different"
+msgstr "異なるアイテムを表示する"
+
+msgid "Include items that are different"
+msgstr "異なるアイテムを含める"
+
+msgid "Show items missing from file"
+msgstr "ファイルに欠けている項目を表示"
+
+msgid "Include items not in file but in database"
+msgstr "ファイルではなくデータベース内の項目を含める"
+
+msgid "Show items added in file"
+msgstr "ファイルに追加された項目を表示"
+
+msgid "Include items in file but not in database"
+msgstr "ファイル内の項目を含めるがデータベース内の項目は含めない"
+
+msgid "Compares an external database with the current one."
+msgstr "外部データベースと現在のデータベースを比較します。"

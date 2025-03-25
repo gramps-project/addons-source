@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-02 13:48+0000\n"
-"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Select Form"
 msgstr "Sélectionner le formulaire"
@@ -445,7 +445,7 @@ msgid "Suffering from disease"
 msgstr "Souffre d'infirmité"
 
 msgid "Enumeration District No."
-msgstr "No. district"
+msgstr "Numéro de district de recensement"
 
 msgid "Rank"
 msgstr "Rang"
@@ -487,7 +487,7 @@ msgid "Naturalized or alien"
 msgstr "Naturalisé(e) ou étranger(ère)"
 
 msgid "Able to speak English; if not, language spoken"
-msgstr "Capable de parler anglais; sinon language parlé"
+msgstr "Capable de parler anglais ; sinon language parlé"
 
 msgid "Nature of industry"
 msgstr "Nature de l'industrie"
@@ -591,6 +591,22 @@ msgstr "Nombre d'enfants déjà nés"
 msgid "Race"
 msgstr "Éthnie"
 
+msgid "Is he now married, widowed, divorced, separated, or never married?"
+msgstr "Est-il maintenant marié, veuf, divorcé, séparé ou jamais marié ?"
+
+msgid "Is he naturalized?"
+msgstr "Est-il naturalisé ?"
+
+msgid "Attended school since Feb 1, 1950?"
+msgstr "École fréquentée depuis le 1er février 1950 ?"
+
+msgid ""
+"How many years since this person was married, widowed, divorced, or "
+"separated?"
+msgstr ""
+"Combien d'années depuis son mariage, son veuvage, son divorce ou sa "
+"séparation ?"
+
 msgid "Township"
 msgstr "Bidonville"
 
@@ -638,6 +654,9 @@ msgstr "Registre"
 
 msgid "Date of birth"
 msgstr "Date de naissance"
+
+msgid "Race "
+msgstr "Ethnie "
 
 msgid "Disability"
 msgstr "Handicap"
@@ -741,11 +760,23 @@ msgstr "District"
 msgid "Years Married"
 msgstr "Années de mariage"
 
+msgid "Completed Years the present Marriage has lasted."
+msgstr "Années de mariage."
+
 msgid "Children Total"
 msgstr "Total des enfants"
 
+msgid "Total Children Born Alive."
+msgstr "Nombre d'enfants nés en vie."
+
+msgid "Children still Living."
+msgstr "Enfants encore vivants."
+
 msgid "Children Died"
 msgstr "Enfants décédés"
+
+msgid "Children who have Died."
+msgstr "Enfants décédés."
 
 msgid "Nationality"
 msgstr "Nationalité"
@@ -856,13 +887,13 @@ msgid "SexMale"
 msgstr "SexeMasculin"
 
 msgid "7. Sex: Male"
-msgstr "7. Sexe: masculin"
+msgstr "7. Sexe : masculin"
 
 msgid "SexFemale"
 msgstr "SexeFéminin"
 
 msgid "8. Sex: Female"
-msgstr "8. Sexe: féminin"
+msgstr "8. Sexe : féminin"
 
 msgid "MaritalStatus"
 msgstr "StatutMarital"
@@ -886,49 +917,49 @@ msgid "ResidentsMale"
 msgstr "HommeRésidents"
 
 msgid "12. Residents: Members, Male"
-msgstr "12. Résidents: membres, homme"
+msgstr "12. Résidents : membres, homme"
 
 msgid "ResidentsFemale"
 msgstr "FemmesRésidentes"
 
 msgid "13. Residents: Members, Female"
-msgstr "13. Résidentes: membres, femme"
+msgstr "13. Résidentes : membres, femme"
 
 msgid "14. Residents: Not Members: Male"
-msgstr "14. Résidents: non-membres, homme"
+msgstr "14. Résidents : non-membres : homme"
 
 msgid "15. Residents: Not Members: Female"
-msgstr "15. Résidentes: non-membres, femme"
+msgstr "15. Résidentes : non-membres : femme"
 
 msgid "16. Members Absent: Male"
-msgstr "16. Membres absent: homme"
+msgstr "16. Membres absent : homme"
 
 msgid "17. Members Absent: Female"
-msgstr "17. Membres absents: femmes"
+msgstr "17. Membres absents : femmes"
 
 msgid "BlindMale"
 msgstr "HommeAveugle"
 
 msgid "20. Blind: Male"
-msgstr "20. Aveugle: homme"
+msgstr "20. Aveugle : homme"
 
 msgid "BlindFemale"
 msgstr "FemmeAveugle"
 
 msgid "21. Blind: Female"
-msgstr "21. Aveugle: femme"
+msgstr "21. Aveugle : femme"
 
 msgid "24. Attending School: Male"
-msgstr "24. École fréquentée: homme"
+msgstr "24. École fréquentée : homme"
 
 msgid "25. Attending School: Female"
-msgstr "25. École fréquentée: femme"
+msgstr "25. École fréquentée : femme"
 
 msgid "Birth1851Male"
 msgstr "Naissance1851Homme"
 
 msgid "26. Births During the Year 1851: Male"
-msgstr "26. Naissances durant l'année 1851: homme"
+msgstr "26. Naissances durant l'année 1851 : homme"
 
 msgid "Death1851Male"
 msgstr "Décès1851Homme"
@@ -967,34 +998,49 @@ msgid "Lot"
 msgstr "Lot"
 
 msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr "5. Nombre d'arpents de terre: en culture"
+msgstr "5. Nombre d'arpents de terre : en culture"
 
 msgid "10. Wheat: Acres"
 msgstr "10. Arpent de blé"
 
 msgid "11. Wheat: Produce Bsh."
-msgstr "11. Blé: produit Bsh."
+msgstr "11. Blé : produit Bsh."
 
 msgid "12. Barley: Acres"
 msgstr "12. Arpent d'orge"
 
 msgid "13. Barley: Produce Bsh."
-msgstr "13. Orge: production Bsh."
+msgstr "13. Orge : production Bsh."
 
 msgid "14. Rye: Acres"
-msgstr "14. Seigle: arpents"
+msgstr "14. Seigle : arpents"
 
 msgid "15. Rye: Produce Bsh."
 msgstr "15. Seigle : produit Bsh."
 
+msgid "17. Peas: Produce Bsh."
+msgstr "17. Pois : produit Bsh."
+
+msgid "19. Oats: Produce Bsh."
+msgstr "11. Avoine : produit Bsh."
+
 msgid "20. B.Wheat: Acres"
-msgstr "20. Blé: arpents"
+msgstr "20. Blé : arpents"
 
 msgid "21. B.Wheat: Produce Bsh."
-msgstr "21. Blé: production Bsh."
+msgstr "21. Blé : production Bsh."
+
+msgid "23. Corn: Produce Bsh."
+msgstr "11. Maïs : produit Bsh."
 
 msgid "24. Potatoes: Acres"
-msgstr "24. Pommes de terre: arpents"
+msgstr "24. Pommes de terre : arpents"
+
+msgid "25. Potatoes: Produce Bsh."
+msgstr "11. Pommes de terre : produit Bsh."
+
+msgid "27. Turnips: Produce Bsh."
+msgstr "11. Navets : produit Bsh."
 
 msgid "35. Tobacco Lbs."
 msgstr "35. Tabac - Lbs."
@@ -1066,10 +1112,10 @@ msgid "7. Age next Birthday"
 msgstr "7. Âge au prochain anniversaire"
 
 msgid "8. Sex: Male"
-msgstr "8. Sexe: masculin"
+msgstr "8. Sexe : masculin"
 
 msgid "9. Sex:Female"
-msgstr "9. Sexe: féminin"
+msgstr "9. Sexe : féminin"
 
 msgid "10. Married or Single"
 msgstr "10. Marié(e) ou célibataire"
@@ -1093,31 +1139,31 @@ msgid "MemberMale"
 msgstr "MembreHomme"
 
 msgid "14. Members: Male"
-msgstr "14. Membres: homme"
+msgstr "14. Membres : homme"
 
 msgid "MemberFemale"
 msgstr "MembreFemme"
 
 msgid "15. Members: Female"
-msgstr "15. Membres: femme"
+msgstr "15. Membres : femme"
 
 msgid "16. Not Members: Male"
-msgstr "16. Non-membre: homme"
+msgstr "16. Non-membre : homme"
 
 msgid "17. Not Members: Female"
-msgstr "17. Non-membres: femmes"
+msgstr "17. Non-membres : femmes"
 
 msgid "MemberAbsentMale"
 msgstr "MembreAbsentHomme"
 
 msgid "18. Members Absent: Male"
-msgstr "18. Membres absents: hommes"
+msgstr "18. Membres absents : hommes"
 
 msgid "MemberAbsentFemale"
 msgstr "MembreAbsentFemme"
 
 msgid "19. Members Absent: Female"
-msgstr "19. Membres absents: femmes"
+msgstr "19. Membres absents : femmes"
 
 msgid "20. Deaf and Dumb"
 msgstr "20. Simple d'esprit"
@@ -1129,7 +1175,7 @@ msgid "23. Attending School within the year: Male"
 msgstr "23. École fréquentée durant l'année : homme"
 
 msgid "24. Attending School within the year: Female"
-msgstr "24. École fréquentée durant l'année: femme"
+msgstr "24. École fréquentée durant l'année : femme"
 
 msgid "CantReadMale"
 msgstr "SaitLireHomme"
@@ -1141,16 +1187,16 @@ msgid "CantReadFemale"
 msgstr "Sait lire Féminin"
 
 msgid "26. Persons over 20, who cannot read or write: Female"
-msgstr "26. Personnes de plus de 20 ans, sachant lire et écrire: femme"
+msgstr "26. Personnes de plus de 20 ans, ne sachant pas lire ou écrire : femme"
 
 msgid "Birth1860Male"
 msgstr "Naissance1860Homme"
 
 msgid "27. Births in 1860: Male"
-msgstr "27. Naissances en 1860: homme"
+msgstr "27. Naissances en 1860 : homme"
 
 msgid "28. Births in 1860: Female"
-msgstr "28. Naissances en 1860: femme"
+msgstr "28. Naissances en 1860 : femme"
 
 msgid "Death1860Male"
 msgstr "Décès1860Homme"
@@ -1318,13 +1364,13 @@ msgid "CanRead"
 msgstr "SaitLire"
 
 msgid "21. Instruction: Read"
-msgstr "21. Instruction: lecture"
+msgstr "21. Instruction : lecture"
 
 msgid "CanWrite"
 msgstr "SaitÉcrire"
 
 msgid "22. Instruction: Write"
-msgstr "21. Instruction: écriture"
+msgstr "21. Instruction : écriture"
 
 msgid "23. Deaf and Dumb"
 msgstr "23. Simple d'esprit"
@@ -1435,13 +1481,13 @@ msgid "3. Place of Habitation"
 msgstr "3. Lieu d'habitation"
 
 msgid "4. Houses: In construction"
-msgstr "4. Maisons: en construction"
+msgstr "4. Maisons : en construction"
 
 msgid "5. Houses: Vacant"
-msgstr "5. Maisons: vacantes"
+msgstr "5. Maisons : vacantes"
 
 msgid "6. Houses: Inhabited"
-msgstr "6. Maison: inhabitées"
+msgstr "6. Maison : inhabitées"
 
 msgid "Buildings"
 msgstr "Immeubles"
@@ -1460,6 +1506,9 @@ msgstr "Pensionnaires"
 
 msgid "11. Number of inmates in institution"
 msgstr "11. Nombre de pensionnaires dans l'institution"
+
+msgid "33. School: Number of teachers"
+msgstr "33. École : Nombre d'enseignants"
 
 msgid "35. Date of visit"
 msgstr "35. Date de la visite"
@@ -1486,16 +1535,16 @@ msgid "8. Year of immigration to Canada"
 msgstr "8. Année d'immigration au Canada"
 
 msgid "10. Location: Section"
-msgstr "10. Emplacement: section"
+msgstr "10. Emplacement : section"
 
 msgid "11. Location: Township"
-msgstr "11. Emplacement: bidonville"
+msgstr "11. Emplacement : Canton"
 
 msgid "12. Location: Range"
-msgstr "12. Emplacement: secteur"
+msgstr "12. Emplacement : secteur"
 
 msgid "13. Location: Meridian"
-msgstr "13. Emplacement: méridien"
+msgstr "13. Emplacement : méridien"
 
 msgid "Cows"
 msgstr "Vaches"
@@ -1585,7 +1634,8 @@ msgid ""
 "16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
 "lunatic"
 msgstr ""
-"16. Infirmités: a. aveugle; b. simple d'esprit; c. idiot; d. fou ou lunatique"
+"16. Infirmités : a. aveugle ; b. simple d'esprit ; c. idiot ; d. fou ou "
+"lunatique"
 
 msgid "1. Dwelling House"
 msgstr "1. Demeure"
@@ -1595,6 +1645,12 @@ msgstr "ServiceMilitaire"
 
 msgid "4. Military Service"
 msgstr "4. Service militaire"
+
+msgid "6. Place of Habitation: Range"
+msgstr "12. Lieu d'habitation : secteur"
+
+msgid "7. Place of Habitation: Meridian"
+msgstr "13. Lieu d'habitation : méridien"
 
 msgid "10. Sex"
 msgstr "10. Sexe"

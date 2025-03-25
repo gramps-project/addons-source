@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:17+0000\n"
-"PO-Revision-Date: 2025-03-14 07:11+0000\n"
+"PO-Revision-Date: 2025-03-24 17:49+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -34,6 +34,10 @@ msgstr "Insira expressões Python"
 
 msgid "Enter SQL query"
 msgstr "Insira uma consulta SQL"
+
+#, python-brace-format
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr "{rows:d} linhas processadas em {secs} segundos.\n"
 
 msgid "Today"
 msgstr "Hoje"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 13:48+0000\n"
-"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,10 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Graph View"
 msgstr "Vue Graphique"
+
+msgid "Show IDs"
+msgstr "Afficher les IDs"
 
 msgid "Show avatars"
 msgstr "Afficher les avatars"
@@ -28,6 +31,9 @@ msgstr "Afficher les dates complètes"
 
 msgid "Show places"
 msgstr "Afficher les lieux"
+
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr "Limite du nombre de personnes affichées (0 pour illimité)"
 
 msgid "Person theme"
 msgstr "Thème d’individu"
@@ -55,6 +61,9 @@ msgstr "Avatar féminin :"
 
 msgid "Choose female avatar"
 msgstr "Choisir un avatar féminin"
+
+msgid "Unknown avatar:"
+msgstr "Avatar inconnu :"
 
 msgid "Themes"
 msgstr "Thèmes"
@@ -109,7 +118,7 @@ msgid "Zoom to original"
 msgstr "Zoom original"
 
 msgid "Zoom to best fit"
-msgstr "Zoom à l’affichage adapté"
+msgstr "Zoom pour un affichage adapté"
 
 msgid "Go to active person"
 msgstr "Aller à l’individu actif"
@@ -195,6 +204,18 @@ msgstr ""
 msgid "Change active person?"
 msgstr "Voulez-vous changer l’individu actif ?"
 
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"Ce graphique comprendrait au moins {people_count} personnes, ce qui dépasse "
+"la limite de {people_limit}. Pour des raisons de performance, au moins "
+"{people_missing} personnes ne seront pas montrés. Vous pouvez modifier cette "
+"limite dans la configuration de vue."
+
 msgid "Incomplete graph"
 msgstr "Graphique incomplet"
 
@@ -206,7 +227,7 @@ msgstr "Image sur la gauche"
 
 #, python-format
 msgid "%s "
-msgstr "et %s "
+msgstr "%s "
 
 msgid "<b>Tags:</b>"
 msgstr "<b>Étiquettes :</b>"
@@ -291,6 +312,9 @@ msgstr "Clair"
 msgid "Cartoon"
 msgstr "Esquisse"
 
+msgid "Modern"
+msgstr "Moderne"
+
 msgid "Persons from current graph"
 msgstr "Individus du graphique actuel"
 
@@ -313,4 +337,7 @@ msgstr "Rechercher…"
 
 #, python-format
 msgid "<b>%s:</b>"
-msgstr "<b>%s :</b>"
+msgstr "<b>%s :</b>"
+
+msgid "Partners"
+msgstr "Conjoints"

@@ -1,0 +1,133 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Data Entry Gramplet"
+msgstr "データ入力Gramplet"
+
+msgid "Gramplet for quick data entry"
+msgstr "素早いデータ入力のためのGramplet"
+
+msgid "Active person"
+msgstr "アクティブな人"
+
+msgid "Family:"
+msgstr "家族 :"
+
+msgid "Sources?"
+msgstr "ソース?"
+
+msgid "Surname, Given"
+msgstr "姓、名"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Abandon"
+msgstr "放棄"
+
+msgid "New person"
+msgstr "新しい人"
+
+msgid "Add relation"
+msgstr "関係を追加"
+
+msgid "No relation to active person"
+msgstr "アクティブな人とは関係ない"
+
+msgid "Add as a Parent"
+msgstr "親として追加"
+
+msgid "Add as a Mother"
+msgstr "母親として追加"
+
+msgid "Add as a Father"
+msgstr "父親として追加"
+
+msgid "Add as a Spouse"
+msgstr "配偶者として追加"
+
+msgid "Add as a Wife"
+msgstr "妻として追加"
+
+msgid "Add as a Husband"
+msgstr "夫として追加"
+
+msgid "Add as a Sibling"
+msgstr "兄弟として追加"
+
+msgid "Add as a Child"
+msgstr "子供として追加"
+
+msgid "Copy Active Data"
+msgstr "アクティブデータのコピー"
+
+#, python-format
+msgid "Gramplet Data Edit: %s"
+msgstr "Gramplet データ編集 : %s"
+
+msgid "Please provide a name."
+msgstr "名前を入力してください。"
+
+msgid "Can't add new person."
+msgstr "新しい人を追加できません。"
+
+msgid "Please set an active person."
+msgstr "アクティブな人を設定してください。"
+
+msgid "Can't add new person as a parent."
+msgstr "新しい人を親として追加できません。"
+
+msgid "Please set the new person's gender."
+msgstr "新しい人の性別を設定してください。"
+
+msgid "Can't add new person as a mother."
+msgstr "新しい人を母親として追加することはできません。"
+
+msgid "Can't add new person as a father."
+msgstr "新しい人を父親として追加することはできません。"
+
+msgid "Can't add new person as a spouse."
+msgstr "新しい人を配偶者として追加することはできません。"
+
+msgid "Can't add new person as a wife."
+msgstr "新しい人を妻として追加できません。"
+
+msgid "Can't add new person as a husband."
+msgstr "新しい人を夫として追加することはできません。"
+
+msgid "Can't add new person as a sibling."
+msgstr "新しい人を兄弟として追加することはできません。"
+
+msgid "Can't add new person as a child."
+msgstr "新しい人を子供として追加することはできません。"
+
+msgid "Please set Active person."
+msgstr "アクティブユーザーを設定してください。"
+
+msgid "Can't add new person as a spouse to no one."
+msgstr "誰にも新しい人を配偶者として追加することはできません。"
+
+msgid "Please set gender on Active or new person."
+msgstr "性別をアクティブまたは新規ユーザーに設定してください。"
+
+msgid "Same genders on Active and new person."
+msgstr "アクティブユーザーと新規ユーザーの性別は同じです。"
+
+msgid "Please set gender on Active person."
+msgstr "性別をアクティブな人に設定してください。"

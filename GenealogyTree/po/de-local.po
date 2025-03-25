@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-03-25 20:35+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,31 +12,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Ancestor tree using LaTeX genealogytree"
-msgstr "Ahnenbaum verwende LaTeX genealogytree"
+msgstr "Ahnentafel unter Verwendung von LaTeX genealogytree"
 
 msgid "Descendant tree using LaTeX genealogytree"
-msgstr "Nachkommenbaum verwende LaTeX genealogytree"
+msgstr "Nachfahrenbaum unter Verwendung von LaTeX genealogytree"
 
 msgid "Grandparent Tree"
 msgstr "Großelternbaum"
 
 msgid "Grandparent tree using LaTeX genealogytree"
-msgstr "Großelternbaum verwende LaTeX genealogytree"
+msgstr "Großelternbaum unter Verwendung von LaTeX genealogytree"
 
 msgid "Sandclock Tree"
 msgstr "Sanduhrbaum"
 
 msgid "Sandclock tree using LaTeX genealogytree"
-msgstr "Sanduhrbaum verwende LaTeX genealogytree"
+msgstr "Sanduhrbaum unter Verwendung von LaTeX genealogytree"
 
 msgid "Sandclock Tree for a Family"
 msgstr "Sanduhrbaum für eine Familie"
 
 msgid "Sandclock tree for a family using LaTeX genealogytree"
-msgstr "Sanduhrbaum für eine Familie verwende LaTex genealogytree"
+msgstr "Sanduhrbaum für eine Familie unter Verwendung von LaTeX genealogytree"
 
 msgid "The center family for the report"
 msgstr "Die zentrale Familie für den Bericht"
@@ -48,28 +48,28 @@ msgid "Generations down"
 msgstr "Generationen runter"
 
 msgid "Include siblings"
-msgstr "Geschwister einschließen"
+msgstr "Geschwister einbeziehen"
 
 msgid "Include siblings of ancestors."
-msgstr "Geschwister von Vorfahren aufnehmen."
+msgstr "Geschwister der Vorfahren einbeziehen."
 
 msgid "Include images"
-msgstr "Bilder aufnehmen"
+msgstr "Bilder einbeziehen"
 
 msgid "Include images of people in the nodes."
-msgstr "Bilder der Personen in den Knoten aufnehmen."
+msgstr "Bilder von Personen in die Knotenpunkte einfügen."
 
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
 msgstr ""
-"Person %s hat nicht sowohl einen väterlichen als auch einen mütterlichen "
-"Großelternteil"
+"Person %s hat nicht sowohl einen Großelternteil väterlicherseits als auch "
+"mütterlicherseits"
 
 msgid "Grandparent family spacing"
-msgstr "Großeltern Familie Abstand"
+msgstr "Abstand zwischen Großeltern und Familie"
 
 msgid "Extra spacing of grandparent families (mm)"
-msgstr "Extra Abstand Großelternfamilien (mm)"
+msgstr "Zusätzliche Abstände der Großelternfamilien (mm)"
 
 msgid "First spouse left"
 msgstr "Erster Ehepartner links"

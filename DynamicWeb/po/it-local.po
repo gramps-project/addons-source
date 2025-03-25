@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #, python-format
 msgid "%(type)s: %(value)s"
@@ -25,9 +25,18 @@ msgstr "(spos. %s)"
 msgid "Maximize"
 msgstr "Massimizza"
 
+msgid "Search:"
+msgstr "Cerca:"
+
 msgid "Select filter to restrict people that appear on web site"
 msgstr ""
 "Seleziona un filtro per restringere le persone che appariranno nel sito web"
+
+msgid "Whether to include private objects"
+msgstr "Indica se includere gli oggetti privati"
+
+msgid "Whether to include images and media in the web pages"
+msgstr "Se includere immagini e oggetti multimediali nelle pagine web"
 
 msgid "Theme"
 msgstr "Tema"

@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "The place was not found. You may clarify the search keywords."
+msgstr ""
+"Le lieu n'a pas été trouvé. Vous pouvez clarifier les mots-clés de recherche."
+
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr ""
+"Échec de la recherche des coordonnées en raison d'une erreur inattendue."
+
+msgid "The place was not found."
+msgstr "Ce lieu n'a pas été trouvé."
+
+msgid "The place was not identified."
+msgstr "Le lieu n'a pas été identifié."
+
+msgid "Coordinates were not given."
+msgstr "Les coordonnées n'ont pas été données."
+
+msgid "Failed to interpret the input format."
+msgstr "Impossible d'interpréter le format d'entrée."
+
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "entrée BD [{id}] {name}:"
+
+msgid "Nothing has been searched yet"
+msgstr "Rien n'a encore été recherché"
+
+msgid "No place is active"
+msgstr "Aucun lieu n'est actif"
+
+msgid "Place Coordinate Gramplet view"
+msgstr "Vue «Lieu et coordonnées»"
+
+msgid "View for the place coordinate gramplet."
+msgstr "Vue pour le gramplet «Lieu et coordonnées»."
+
+msgid "Place and Coordinates"
+msgstr "Lieu et coordonnées"
+
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Gramplet qui simplifie la définition des coordonnées d'un lieu"
+
+msgid "Place Coordinates"
+msgstr "Lieu et Coordonnées"
+
+msgid "Place Coordinate Gramplet"
+msgstr "Gramplet «Lieu et Coordonnées»"
+
+msgid "Map Menu"
+msgstr "Menu Carte"
+
+msgid "Add city as place"
+msgstr "Ajouter la ville comme lieu"
+
+msgid "Add addess as place"
+msgstr "Ajouter l'adresse comme lieu"
+
+msgid "Search for:"
+msgstr "Recherche pour :"
+
+msgid "Found place:"
+msgstr "Lieu trouvé :"
+
+msgid "No DB entry is selected"
+msgstr "Aucune entrée BD n'est sélectionnée"
+
+msgid "Postal-Code:"
+msgstr "Code postal :"
+
+msgid "Show found place externally in Google Maps"
+msgstr "Afficher le lieu trouvé en externe dans Google Maps"
+
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"Prendre la dernière position cliquée\n"
+"sur la carte géographique"
+
+msgid "Search location from DB"
+msgstr ""
+"Rechercher l'emplacement\n"
+"dans la base de données"
+
+msgid "Apply geo location to Database"
+msgstr ""
+"Appliquer la géolocalisation\n"
+"à la base de données"
+
+msgid "Go"
+msgstr "Chercher"
+
+msgid "Show help"
+msgstr "Afficher l'aide"

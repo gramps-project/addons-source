@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-18 09:38+0000\n"
+"PO-Revision-Date: 2025-03-25 10:12+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -490,6 +490,81 @@ msgstr "Bosatt i"
 
 msgid "Parents place of birth"
 msgstr "Föräldrarnas födelseort"
+
+msgid "Date of birth"
+msgstr "Födelsedatum"
+
+msgid "Place of Record"
+msgstr "Plats för registrering"
+
+msgid "Book/Volume"
+msgstr "Bok/volym"
+
+msgid "Race/Color"
+msgstr "Ras/färg"
+
+msgid "Mother (Maiden Name)"
+msgstr "Mor (flicknamn)"
+
+msgid "Residence of Parents"
+msgstr "Föräldrarnas bostad"
+
+msgid "Date of Marriage"
+msgstr "Datum för giftermål"
+
+msgid "Married by"
+msgstr "Gift av"
+
+msgid "Place of Marriage"
+msgstr "Plats för giftermål"
+
+msgid "Consent given by"
+msgstr "Samtycke gavs av"
+
+msgid "Length of Residence"
+msgstr "Bostadslängd"
+
+msgid "Spouse's Name"
+msgstr "Namn på make/maka"
+
+msgid "Birth date of deceased"
+msgstr "Den avlidnes födelsedatum"
+
+msgid "Name of employer"
+msgstr "Namn på arbetsgivare"
+
+msgid "Date last worked"
+msgstr "Arbetade senast"
+
+msgid "Education Level"
+msgstr "Utbildningsnivå"
+
+msgid "Place of Burial"
+msgstr "Begravningsplats"
+
+msgid "Date of Burial"
+msgstr "Datum för begravning"
+
+msgid "Burial Date"
+msgstr "Begravningsdatum"
+
+msgid "Burial Place"
+msgstr "Begravningsplats"
+
+msgid "in the Counties of"
+msgstr "i länen"
+
+msgid "Order No."
+msgstr "Beställningsnr."
+
+msgid "Home Address"
+msgstr "Hemadress"
+
+msgid "Nearest Relative"
+msgstr "Närmaste släkting"
+
+msgid "Dependants & Address"
+msgstr "Anhöriga och adress"
 
 msgid "Where Born"
 msgstr "Var född"

@@ -1,0 +1,78 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-03-24 10:31+0000\n"
+"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Display relations and distances with the home person"
+msgstr "自宅の人との人間関係や距離を表示する"
+
+msgid "Will display relational informations with the home person"
+msgstr "自宅の人との関連情報を表示します"
+
+msgid "Relation and distances with root"
+msgstr "ルートとの関係と距離"
+
+msgid "Folder Chooser"
+msgstr "フォルダー選択"
+
+msgid "Please, select a folder"
+msgstr "フォルダーを選択してください"
+
+msgid "Relation"
+msgstr "関係"
+
+msgid "up"
+msgstr "上"
+
+msgid "down"
+msgstr "下"
+
+msgid "Common MRA"
+msgstr "一般的なMRA"
+
+msgid "Rank"
+msgstr "ランク"
+
+msgid "Period"
+msgstr "期間"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Please wait, filtering..."
+msgstr "お待ちください。フィルタリング中です..."
+
+msgid "No default_person"
+msgstr "default_person なし"
+
+msgid "Generating relation map..."
+msgstr "関係マップを生成中..."
+
+#, python-format
+msgid ""
+"%d/%d \n"
+" %d/%d seconds \n"
+" %d/%d \n"
+"%f|\t%f"
+msgstr ""
+"%d/%d \n"
+" %d/%d 秒 \n"
+" %d/%d \n"
+"%f|\t%f"
+
+msgid "You do not have write rights on this folder"
+msgstr "このフォルダへの書き込み権限がありません"
