@@ -27,13 +27,14 @@
 # AnneLaureF <annelaure.fouque+github@gmail.com>, 2025.
 # jmichault <jmt.2000@free.fr>, 2025.
 # Emmanuel Vallois <emmanuel@vallois.name>, 2025.
+# Frédéric Schwartz <frederic@online404.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
 "PO-Revision-Date: 2025-03-23 20:35+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"Last-Translator: Frédéric Schwartz <frederic@online404.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -1224,9 +1225,8 @@ msgstr "Personnes séparées par moins de <N> degrés de parenté de <individu>"
 
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
-#, fuzzy
 msgid "Filter rule that matches relatives by degrees of separation"
-msgstr "Règle de filtrage qui retourne les parents par degrés de séparation"
+msgstr "Règle de filtrage qui retourne les parents par degré de séparation"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
@@ -1266,7 +1266,7 @@ msgstr ""
 
 #: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
 msgid "Inverse"
-msgstr ""
+msgstr "Inverse"
 
 #: FilterRules/hasrolerule.py:68
 #, fuzzy
@@ -1326,20 +1326,16 @@ msgstr ""
 "Correspond aux personnes qui ont des évènements du type et nombre donnés."
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
-#, fuzzy
-#| msgid "Include birth children"
 msgid "Include Children"
-msgstr "Inclure la naissance des enfants"
+msgstr "Inclure les enfants"
 
 #: FilterRules/infamilyrule.py:49
 msgid "Include the children in the matching families."
 msgstr "Inclure les enfants dans les familles correspondantes."
 
 #: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include Parents"
-msgstr "Inclure les événements"
+msgstr "Inclure les parents"
 
 #: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
@@ -1714,10 +1710,8 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:840
 #: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
-#, fuzzy
-#| msgid "Include citations"
 msgid "Include Generations"
-msgstr "Inclure les citations"
+msgstr "Inclure les générations"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
 #, fuzzy
@@ -1799,10 +1793,8 @@ msgid "See %(reference)s : %(spouse)s"
 msgstr "Voir %(reference)s : %(spouse)s"
 
 #: D3Charts/DescendantIndentedTree.py:764
-#, fuzzy
-#| msgid "Generating relation map..."
 msgid "Generating report..."
-msgstr "Génération de la table de relation..."
+msgstr "Génération du rapport..."
 
 #: D3Charts/DescendantIndentedTree.py:909
 #: D3Charts/DescendantIndentedTree.gpr.py:23
@@ -1836,16 +1828,16 @@ msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
+"Le fichier de destination %s existe déjà.\n"
+"Voulez-vous le remplacer ?"
 
 #: D3Charts/DescendantIndentedTree.py:1446
-#, fuzzy
-#| msgid "Default (None)"
 msgid "Default View"
-msgstr "Défaut (Aucun)"
+msgstr "Vue par défaut"
 
 #: D3Charts/DescendantIndentedTree.py:1449
 msgid "Expand All"
-msgstr ""
+msgstr "Développer tout"
 
 #: D3Charts/DescendantIndentedTree.py:1811
 #, fuzzy
@@ -2681,7 +2673,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:642
 msgid "place unknown for the Event"
-msgstr ""
+msgstr "lieu inconnu pour l'évènement"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
