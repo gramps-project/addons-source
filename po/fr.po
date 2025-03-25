@@ -24,13 +24,14 @@
 # Paul Culley <paulr2787@gmail.com>, 2016.
 # J-Paul Bérard <arverne@wanadoo.fr>, 2021.
 # Julien Lepiller <roptat@lepiller.eu>, 2025.
+# AnneLaureF <annelaure.fouque+github@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-02 13:48+0000\n"
-"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"PO-Revision-Date: 2025-03-19 12:30+0000\n"
+"Last-Translator: AnneLaureF <annelaure.fouque+github@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -38,13 +39,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #: MediaMerge/mediamerge.py:104
-#, fuzzy
-#| msgid "Media Verify"
 msgid "Media Merge"
-msgstr "Vérification des media"
+msgstr "Fusion des media"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
@@ -55,19 +54,19 @@ msgstr[1] "{number_of} médias fusionnés"
 
 #: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
-msgstr ""
+msgstr "Aucun média fusionné."
 
 #: MediaMerge/mediamerge.gpr.py:31
-#, fuzzy
-#| msgid "Merge Original"
 msgid "Merge Media"
-msgstr "Fusionner l'original"
+msgstr "Fusionner le média"
 
 #: MediaMerge/mediamerge.gpr.py:33
 msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
 msgstr ""
+"Recherche dans la base entière les médias qui ont le même chemin et les "
+"fusionne."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: AttachSourceTool/AttachSourceTool.py:70
@@ -396,10 +395,8 @@ msgid "Number of editions back"
 msgstr "Nombre d'éditions passées"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
-#, fuzzy
-#| msgid "Select a dot file name"
 msgid "Space character on filename"
-msgstr "Sélectionner le nom du fichier dot"
+msgstr "Espace dans le nom du fichier"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
@@ -460,6 +457,9 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Nombre d'étiquettes : \n"
+"\n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
 #, fuzzy, python-format
