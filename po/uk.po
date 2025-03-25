@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
 "PO-Revision-Date: 2025-03-24 14:37+0000\n"
-"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -19606,10 +19606,9 @@ msgid "Enter SQL query"
 msgstr "Введіть SQL-запит"
 
 #: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, fuzzy, python-brace-format
-#| msgid "%d rows processed in %s seconds.\n"
+#, python-brace-format
 msgid "{rows:d} rows processed in {secs} seconds.\n"
-msgstr "%d рядків оброблено за %s секунд.\n"
+msgstr "{rows:d} рядків, оброблених за {secs} с.\n"
 
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
