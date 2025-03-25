@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-18 09:38+0000\n"
+"PO-Revision-Date: 2025-03-23 20:35+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -13929,30 +13929,22 @@ msgstr ""
 #: Form/form_us.xml.h:2352 Form/form_us.xml.h:2527 Form/form_fr.xml.h:2
 #: Form/form_fr.xml.h:10 Form/form_fr.xml.h:18 Form/form_fr.xml.h:26
 #: Form/form_fr.xml.h:138 Form/form_fr.xml.h:210
-#, fuzzy
-#| msgid "Display only births"
 msgid "Date of birth"
-msgstr "Visa endast födslar"
+msgstr "Födelsedatum"
 
 #: Form/form_us.xml.h:2369 Form/form_us.xml.h:2390 Form/form_us.xml.h:2483
 #: Form/form_us.xml.h:2570
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Place of Record"
-msgstr "Platskoordinater"
+msgstr "Plats för registrering"
 
 #: Form/form_us.xml.h:2370 Form/form_us.xml.h:2391 Form/form_us.xml.h:2484
 #: Form/form_us.xml.h:2571
-#, fuzzy
-#| msgid "Volume:"
 msgid "Book/Volume"
-msgstr "Volym:"
+msgstr "Bok/volym"
 
 #: Form/form_us.xml.h:2377 Form/form_us.xml.h:2493
-#, fuzzy
-#| msgid "Colors"
 msgid "Race/Color"
-msgstr "Färger"
+msgstr "Ras/färg"
 
 #: Form/form_us.xml.h:2380
 msgid ""
@@ -13960,16 +13952,12 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:2381
-#, fuzzy
-#| msgid "Alternative Name"
 msgid "Mother (Maiden Name)"
-msgstr "Alternativt namn"
+msgstr "Mor (flicknamn)"
 
 #: Form/form_us.xml.h:2382
-#, fuzzy
-#| msgid "Include Parents"
 msgid "Residence of Parents"
-msgstr "Inkludera föräldrar"
+msgstr "Föräldrarnas bostad"
 
 #: Form/form_us.xml.h:2383
 msgid "By Whom Reported"
@@ -13984,28 +13972,20 @@ msgid "License No."
 msgstr ""
 
 #: Form/form_us.xml.h:2395
-#, fuzzy
-#| msgid "New marriage"
 msgid "Date of Marriage"
-msgstr "Ny vigsel"
+msgstr "Datum för giftermål"
 
 #: Form/form_us.xml.h:2396
-#, fuzzy
-#| msgid "married"
 msgid "Married by"
-msgstr "gift"
+msgstr "Gift av"
 
 #: Form/form_us.xml.h:2398
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Place of Marriage"
-msgstr "Platskoordinater"
+msgstr "Plats för giftermål"
 
 #: Form/form_us.xml.h:2400
-#, fuzzy
-#| msgid "Coordinates were not given."
 msgid "Consent given by"
-msgstr "Koordinater gavs inte."
+msgstr "Samtycke gavs av"
 
 #: Form/form_us.xml.h:2403
 msgid "Bond/Licence"
@@ -14016,10 +13996,8 @@ msgid "Place of Death"
 msgstr ""
 
 #: Form/form_us.xml.h:2434
-#, fuzzy
-#| msgid "Last Resident"
 msgid "Length of Residence"
-msgstr "Den sista boende"
+msgstr "Bostadslängd"
 
 #: Form/form_us.xml.h:2435
 msgid "Served in U.S. Military"
@@ -14027,42 +14005,32 @@ msgstr ""
 
 #: Form/form_us.xml.h:2439 Form/form_us.xml.h:2479 Form/form_pl.xml.h:11
 #: Form/form_pl.xml.h:39
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Spouse's Name"
-msgstr "Namn på make/maka:"
+msgstr "Namn på make/maka"
 
 #: Form/form_us.xml.h:2440
-#, fuzzy
-#| msgid "Birth date:"
 msgid "Birth date of deceased"
-msgstr "Födelsedatum:"
+msgstr "Den avlidnes födelsedatum"
 
 #: Form/form_us.xml.h:2443
 msgid "Industry or Business"
 msgstr ""
 
 #: Form/form_us.xml.h:2444
-#, fuzzy
-#| msgid "All Names of All People"
 msgid "Name of employer"
-msgstr "Samtliga namn för alla personer"
+msgstr "Namn på arbetsgivare"
 
 #: Form/form_us.xml.h:2445
-#, fuzzy
-#| msgid "Date Calculator"
 msgid "Date last worked"
-msgstr "Datumkalkylator"
+msgstr "Arbetade senast"
 
 #: Form/form_us.xml.h:2446
 msgid "Years in this occupation"
 msgstr ""
 
 #: Form/form_us.xml.h:2447
-#, fuzzy
-#| msgid "Include contraction level"
 msgid "Education Level"
-msgstr "Lägg till sammandragningsnivå"
+msgstr "Utbildningsnivå"
 
 #: Form/form_us.xml.h:2453
 msgid "Social Security No."
@@ -14073,42 +14041,32 @@ msgid "Date of Death"
 msgstr ""
 
 #: Form/form_us.xml.h:2457
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Place of Burial"
-msgstr "Platskoordinater"
+msgstr "Begravningsplats"
 
 #: Form/form_us.xml.h:2458
-#, fuzzy
-#| msgid "Deaths/Burials"
 msgid "Date of Burial"
-msgstr "Dödsfall/begravningar"
+msgstr "Datum för begravning"
 
 #: Form/form_us.xml.h:2478
 msgid "Residence Place"
 msgstr ""
 
 #: Form/form_us.xml.h:2480
-#, fuzzy
-#| msgid "General Data"
 msgid "Burial Date"
-msgstr "Allmänt"
+msgstr "Begravningsdatum"
 
 #: Form/form_us.xml.h:2481
-#, fuzzy
-#| msgid "All Places"
 msgid "Burial Place"
-msgstr "Alla platser"
+msgstr "Begravningsplats"
 
 #: Form/form_us.xml.h:2503
 msgid "Congressional District"
 msgstr ""
 
 #: Form/form_us.xml.h:2504
-#, fuzzy
-#| msgid "Print the notes type"
 msgid "in the Counties of"
-msgstr "Skriv ut notistypen"
+msgstr "i länen"
 
 #: Form/form_us.xml.h:2506
 msgid "in the month of"
@@ -14147,20 +14105,16 @@ msgid "Registration No."
 msgstr ""
 
 #: Form/form_us.xml.h:2523
-#, fuzzy
-#| msgid "Order"
 msgid "Order No."
-msgstr "Ordning"
+msgstr "Beställningsnr."
 
 #: Form/form_us.xml.h:2525
 msgid "Age in yrs."
 msgstr ""
 
 #: Form/form_us.xml.h:2526
-#, fuzzy
-#| msgid "Include Addresses"
 msgid "Home Address"
-msgstr "Ta med adresser"
+msgstr "Hemadress"
 
 #: Form/form_us.xml.h:2529
 msgid "Citizenship"
@@ -14179,16 +14133,12 @@ msgid "Employer's Name & address"
 msgstr ""
 
 #: Form/form_us.xml.h:2534
-#, fuzzy
-#| msgid "Related Relatives"
 msgid "Nearest Relative"
-msgstr "Relaterade släktingar"
+msgstr "Närmaste släkting"
 
 #: Form/form_us.xml.h:2535
-#, fuzzy
-#| msgid "Descendants Lines"
 msgid "Dependants & Address"
-msgstr "Ättlingslinjer"
+msgstr "Anhöriga och adress"
 
 #: Form/form_us.xml.h:2536
 msgid ""
