@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-09 08:45+0000\n"
+"PO-Revision-Date: 2025-03-25 10:12+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -1016,7 +1016,7 @@ msgstr "Sla de waarden op in uw plaats."
 
 #: PlaceCleanup/placecleanup.glade:677
 msgid "Keep Web Links"
-msgstr "Behoud weblinks"
+msgstr "Weblinks behouden"
 
 #: PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
@@ -1653,10 +1653,9 @@ msgstr "GEXF exportopties"
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing to %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Kan niet schrijven naar %s"
+msgstr "Kan niet schrijven {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
@@ -1805,10 +1804,9 @@ msgstr ""
 "Wilt u proberen deze aan te maken?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-brace-format
-#| msgid "Failed to create %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "Kan %s: %s niet maken"
+msgstr "Kan niet aanmaken {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -3305,7 +3303,7 @@ msgstr "Gebruikt voor bron"
 
 #: DynamicWeb/dynamicweb.py:3159
 msgid "Web Link"
-msgstr "Web link"
+msgstr "Weblink"
 
 #: DynamicWeb/dynamicweb.py:3164 DynamicWeb/dynamicweb.py:5173
 msgid ""
@@ -5994,16 +5992,15 @@ msgid "Writing %s reports..."
 msgstr "%s verslagen schrijven..."
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-brace-format
-#| msgid "%(report_count)s. Descendant Report for %(person_name)s"
+#, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr "%(report_count)s. Afstammelingenverslag voor %(person_name)s"
+msgstr "{report_count}. Afstammelingen van {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
 #, python-brace-format
 msgid "{report_count:d}. {name}"
-msgstr ""
+msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
@@ -6049,10 +6046,9 @@ msgid "Report, Generation, Person, Name"
 msgstr "Verslag, Generatie, Persoon, Naam"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr "Zie verslag : %s, Generatie : %s, Persoon : %s"
+msgstr "Zie verslag : {report}, Generatie : {generation}, Persoon : {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
@@ -6061,16 +6057,15 @@ msgid "Report appearances for %s"
 msgstr "Uiterlijk van het verslag %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
-#, fuzzy, python-brace-format
-#| msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Echtgenoot van: Verslag: %s, Generatie: %s, Persoon: %s"
+msgstr ""
+"Partner van: Verslag: {report}, Generatie: {generation}, Persoon: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
-#, fuzzy, python-brace-format
-#| msgid "Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Verslag: %s, Generatie: %s, Persoon: %s"
+msgstr "Verslag: {report}, Generatie: {generation}, Persoon: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
@@ -6121,7 +6116,7 @@ msgstr " %(event_text)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:993
 #, python-brace-format
 msgid "Ref: {number}. {name}"
-msgstr ""
+msgstr "Ref: {number}. {name}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
@@ -7229,145 +7224,127 @@ msgstr ""
 
 #: settings_ui_manager.py:103
 msgid "Middle Name Handling"
-msgstr ""
+msgstr "Verwerking van middelste namen"
 
 #: settings_ui_manager.py:108
-#, fuzzy
-#| msgid "Save Note"
 msgid "Leave alone"
-msgstr "Notitie opslaan"
+msgstr "Laten"
 
 #: settings_ui_manager.py:109
-#, fuzzy
-#| msgid "Generate"
 msgid "Separate"
-msgstr "Genereer"
+msgstr "Scheiden"
 
 #: settings_ui_manager.py:119
 msgid "URL Compactness Level"
-msgstr ""
+msgstr "Compactheid van de URL"
 
 #: settings_ui_manager.py:125
 msgid "Shortest - No Prefix, No Variables"
-msgstr ""
+msgstr "Kortst - Geen voorvoegsel, Geen variabelen"
 
 #: settings_ui_manager.py:128
 msgid "Compact - No Prefix, Variables Without Attributes"
-msgstr ""
+msgstr "Compact - Geen voorvoegsel, Variabelen zonder Kenmerken"
 
 #: settings_ui_manager.py:131
 msgid "Compact - No Prefix, Variables With Attributes"
-msgstr ""
+msgstr "Compact - Geen voorvoegsel, Variabelen met Kenmerken"
 
 #: settings_ui_manager.py:134
 msgid "Long - Without Prefix on the Left"
-msgstr ""
+msgstr "Lang - Zonder voorvoegsel aan Linkerzijde"
 
 #: settings_ui_manager.py:141
-#, fuzzy
-#| msgid "URL prefix path."
 msgid "URL Prefix Replacement"
-msgstr "URL-voorvoegsel pad."
+msgstr "URL-voorvoegselvervanging"
 
 #: settings_ui_manager.py:145
 msgid "Use OpenAI"
-msgstr ""
+msgstr "OpenAI gebruiken"
 
 #: settings_ui_manager.py:147
 msgid "OpenAI API Key"
-msgstr ""
+msgstr "OpenAI API-sleutel"
 
 #: settings_ui_manager.py:150
 msgid "Display 'Website URL' Column"
-msgstr ""
+msgstr "Kolom 'Website URL' weergeven"
 
 #: settings_ui_manager.py:155
-#, fuzzy
-#| msgid "Display all"
 msgid "Display 'Vars' Column"
-msgstr "Alles weergeven"
+msgstr "Kolom 'Vars' weergeven"
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "Show person"
 msgid "Show User Data Icon"
-msgstr "Toon persoon"
+msgstr "Pictogram Gebruikersgegevens weergeven"
 
 #: settings_ui_manager.py:164
-#, fuzzy
-#| msgid "Show places"
 msgid "Show Flag Icons"
-msgstr "Toon locaties"
+msgstr "Pictogrammen van vlaggen weergeven"
 
 #: settings_ui_manager.py:168
 msgid "Show Links From Attributes"
-msgstr ""
+msgstr "Koppelingen van kenmerken weergeven"
 
 #: settings_ui_manager.py:181
 msgid "Enable CSV Files"
-msgstr ""
+msgstr "CSV-bestanden inschakelen"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search"
 msgid "WebSearch"
-msgstr "Zoeken"
+msgstr "WebSearch"
 
 #: WebSearch.gpr.py:36
 msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
 msgstr ""
+"Aangepaste zoekopdrachten voor online diensten op basis van de actieve "
+"persoons-, plaats-, familie- of bronrecord"
 
 #: qr_window.py:76
 msgid "QR-code"
-msgstr ""
+msgstr "QR-code"
 
 #: qr_window.py:114
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
 msgstr ""
+"⚠ Fout bij genereren QR-code:\n"
+"Originele fout: “{}”"
 
 #: WebSearch.py:1419
 msgid "Vars"
-msgstr ""
+msgstr "Variabelen"
 
 #: WebSearch.py:1421
-#, fuzzy
-#| msgid "Web site title"
 msgid "Website URL"
-msgstr "Website titel"
+msgstr "Website-URL"
 
 #: WebSearch.py:1424
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add link to note"
-msgstr "Voeg testopmerking toe"
+msgstr "Koppeling toevoegen aan notitie"
 
 #: WebSearch.py:1425
-#, fuzzy
-#| msgid "Show places"
 msgid "Show QR-code"
-msgstr "Toon locaties"
+msgstr "QR-code weergeven"
 
 #: WebSearch.py:1426
-#, fuzzy
-#| msgid "Collections Clipboard"
 msgid "Copy link to clipboard"
-msgstr "Klembord collecties"
+msgstr "Koppeling naar klembord kopiëren"
 
 #: WebSearch.py:1428
 msgid "Hide link for selected item"
-msgstr ""
+msgstr "Koppeling verbergen voor geselecteerd item"
 
 #: WebSearch.py:1430
 msgid "Hide link for all items"
-msgstr ""
+msgstr "Koppeling verbergen voor alle items"
 
 #: WebSearch.py:1432
 msgid "🔍 AI Suggestions"
-msgstr ""
+msgstr "🔍 AI-suggesties"
 
 #: WebSearch.py:1549
 #, python-brace-format
@@ -7380,43 +7357,45 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this person."
 msgstr ""
+"📌 Deze weblink is toegevoegd met behulp van de WebSearch-gramplet voor "
+"toekomstig gebruik:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Je kunt deze link gebruiken om de bron opnieuw te bezoeken en de informatie "
+"met betrekking tot deze persoon te verifiëren."
 
 #: WebSearch.py:1560
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add Web Link Note"
-msgstr "Voeg testopmerking toe"
+msgstr "Weblink-notitie toevoegen"
 
 #: WebSearch.py:1596
 msgid "URL is copied to the Clipboard"
-msgstr ""
+msgstr "URL is gekopieerd naar het klembord"
 
 #: WebSearch.py:1656
-#, fuzzy
-#| msgid "Search in:"
 msgid "WebSearch Link"
-msgstr "Zoek in:"
+msgstr "WebSearch Link"
 
 #: WebSearch.py:1701
-#, fuzzy, python-brace-format
-#| msgid "Web site title"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Website titel"
+msgstr "Titel: {title}\n"
 
 #: WebSearch.py:1703
 #, python-brace-format
 msgid "Replaced: {variables}\n"
-msgstr ""
+msgstr "Vervangen: {variables}\n"
 
 #: WebSearch.py:1707
 #, python-brace-format
 msgid "Empty: {variables}\n"
-msgstr ""
+msgstr "Leeg: {variables}\n"
 
 #: WebSearch.py:1711
 #, python-brace-format
 msgid "Comment: {comment}\n"
-msgstr ""
+msgstr "Commentaar: {comment}\n"
 
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
@@ -19771,10 +19750,9 @@ msgid "Enter SQL query"
 msgstr "Voer SQL-zoekopdracht in"
 
 #: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, fuzzy, python-brace-format
-#| msgid "%d rows processed in %s seconds.\n"
+#, python-brace-format
 msgid "{rows:d} rows processed in {secs} seconds.\n"
-msgstr "%d rijen verwerkt in %s seconden.\n"
+msgstr "{rows:d} verwerkte rijen in {secs} seconden.\n"
 
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
