@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-15 15:06+0000\n"
+"PO-Revision-Date: 2025-03-24 13:44+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -591,7 +591,7 @@ msgstr "סוגיית נלוח"
 #: lxml/lxmlGramplet.py:329
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
-msgstr "לא ניתן לנתח תוכן של  \"%(file)s\""
+msgstr "לא ניתן לנתח תוכן של \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:333
 msgid "Gramps version"
@@ -1154,7 +1154,7 @@ msgstr "אנשים עם שיוך אל <מסנן>"
 #: FilterRules/isrelatedwithfiltermatch.py:55
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
 msgid "Matches people who are related to anybody matched by a person filter"
-msgstr ""
+msgstr "איתור אנשים הקשורים לכל מי שמתאים למסנן אדם"
 
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
@@ -1164,7 +1164,7 @@ msgstr ""
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
 msgid "Filter rule that matches relatives by degrees of separation"
-msgstr ""
+msgstr "כלל מסנן שמתאים קרובים בדרגות מרחק"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
@@ -1172,7 +1172,7 @@ msgstr ""
 
 #: FilterRules/hassourcefilter.gpr.py:29
 msgid "Matches Sources with values containing the chosen parameters"
-msgstr ""
+msgstr "איתור מקורות עם ערכים המכילים משתנים שנבחרו"
 
 #: FilterRules/multipleparents.py:42
 msgid "People with multiple parent records"
@@ -1180,7 +1180,7 @@ msgstr ""
 
 #: FilterRules/multipleparents.py:43
 msgid "Matches people who have more than one set of parents"
-msgstr ""
+msgstr "איתור אנשים שיש להם יותר מקבוצת הורים אחת"
 
 #: FilterRules/associationsofpersonmatch.py:46
 #: FilterRules/associationsofpersonmatch.py:47
@@ -1207,7 +1207,7 @@ msgstr "אירועם לאנשים עם <תפקיד>"
 
 #: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
 msgid "Matches people with an event with a selected role"
-msgstr ""
+msgstr "איתור אנשים עם אירוע עם תפקיד שנבחר"
 
 #: FilterRules/hasrolerule.py:92
 msgid "Families with events with the <role>"
@@ -1215,23 +1215,23 @@ msgstr "אירועם למשפחות עם <תפקיד>"
 
 #: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
 msgid "Matches families with an event with a selected role"
-msgstr ""
+msgstr "איתור משפחות עם אירוע עם תפקיד שנבחר"
 
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:26
 #: FilterRules/isfamilyfiltermatchevent.py:63
 #: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
-msgstr ""
+msgstr "אירועים של משפחות שתואמות ל<מסנן משפחה>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:25
 #: FilterRules/familieswitheventfiltermatch.py:45
 msgid "Families matching <event filter>"
-msgstr ""
+msgstr "משפחות שתואמות <מסנן אירוע>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
-msgstr ""
+msgstr "איתור משפחות שהותאמו על ידי מסנן אירועים"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
@@ -5032,7 +5032,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr ""
+msgstr "<i>התקנת החבילות הבאות היא<b>חלופית</b></i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
@@ -17927,7 +17927,7 @@ msgstr ""
 #: DetDescendantReport-images/detdescendantreport.gpr.py:6
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
-msgstr ""
+msgstr "הפקת דוח צאצאים מפורט עם כל התמונות ורשימת מטלות חלופיות."
 
 #: DetDescendantReport-images/detdescendantreporti.py:471
 #, python-format
