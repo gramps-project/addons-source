@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
 "PO-Revision-Date: 2025-03-24 14:32+0000\n"
-"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -7232,34 +7232,28 @@ msgid "Website URL"
 msgstr "URL веб-сайту"
 
 #: WebSearch.py:1424
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add link to note"
-msgstr "Додати тестову примітку"
+msgstr "Додайте посилання на нотатку"
 
 #: WebSearch.py:1425
-#, fuzzy
-#| msgid "Show places"
 msgid "Show QR-code"
-msgstr "Показати місця"
+msgstr "Показати QR-код"
 
 #: WebSearch.py:1426
-#, fuzzy
-#| msgid "Collections Clipboard"
 msgid "Copy link to clipboard"
-msgstr "Буфер обміну колекцій"
+msgstr "Копіювати посилання в буфер обміну"
 
 #: WebSearch.py:1428
 msgid "Hide link for selected item"
-msgstr ""
+msgstr "Приховати посилання для вибраного елемента"
 
 #: WebSearch.py:1430
 msgid "Hide link for all items"
-msgstr ""
+msgstr "Приховати посилання для всіх елементів"
 
 #: WebSearch.py:1432
 msgid "🔍 AI Suggestions"
-msgstr ""
+msgstr "🔍 AI пропозиції"
 
 #: WebSearch.py:1549
 #, python-brace-format
@@ -7272,43 +7266,45 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this person."
 msgstr ""
+"📌 Це веб-посилання було додано за допомогою графлета WebSearch для "
+"подальшого використання:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Ви можете скористатися цим посиланням, щоб переглянути джерело та перевірити "
+"інформацію, пов’язану з цією особою."
 
 #: WebSearch.py:1560
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add Web Link Note"
-msgstr "Додати тестову примітку"
+msgstr "Додати примітку про веб-посилання"
 
 #: WebSearch.py:1596
 msgid "URL is copied to the Clipboard"
-msgstr ""
+msgstr "URL-адресу буде скопійовано в буфер обміну"
 
 #: WebSearch.py:1656
-#, fuzzy
-#| msgid "Search in:"
 msgid "WebSearch Link"
-msgstr "Шукати в:"
+msgstr "Посилання на веб-пошук"
 
 #: WebSearch.py:1701
-#, fuzzy, python-brace-format
-#| msgid "Web site title"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Назва веб-сайту"
+msgstr "Назва: {title}\n"
 
 #: WebSearch.py:1703
 #, python-brace-format
 msgid "Replaced: {variables}\n"
-msgstr ""
+msgstr "Замінено: {variables}\n"
 
 #: WebSearch.py:1707
 #, python-brace-format
 msgid "Empty: {variables}\n"
-msgstr ""
+msgstr "Порожній: {variables}\n"
 
 #: WebSearch.py:1711
 #, python-brace-format
 msgid "Comment: {comment}\n"
-msgstr ""
+msgstr "Коментар: {comment}\n"
 
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
