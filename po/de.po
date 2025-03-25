@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:42+0000\n"
-"PO-Revision-Date: 2025-03-18 20:52+0000\n"
+"PO-Revision-Date: 2025-03-23 23:50+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -1391,7 +1391,7 @@ msgstr "Quellen- und Fundstellenbericht"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
-msgstr "Bietet einen Quellen- und Fundstellenbericht mit Notizen an"
+msgstr "Liefert einen Quellen- und Fundstellenbericht mit Notizen"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
@@ -1474,7 +1474,7 @@ msgstr "Titel des Berichts"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:414
 msgid "Title string for the report."
-msgstr "Titeltext des Berichts."
+msgstr "Titelzeichenkette für den Bericht."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
@@ -1482,7 +1482,7 @@ msgstr "Untertitel des Berichts"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
-msgstr "Untertiteltext des Berichts."
+msgstr "Untertitelzeichenkette für den Bericht."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
@@ -1490,7 +1490,7 @@ msgstr "Name des Forschers"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:436
 msgid "Select sources using a filter"
-msgstr "Wähle Quellen mit einem Filter aus"
+msgstr "Quellen mit einem Filter auswählen"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:443
 msgid "Show persons"
@@ -1498,17 +1498,18 @@ msgstr "Zeige Personen"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
-msgstr "Ob Ereignisse und Personen angezeigt werden sollen"
+msgstr ""
+"Ob die in der Notiz erwähnten Ereignisse und Personen angezeigt werden sollen"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
 #: RepositoriesReport/RepositoriesReportAlt.py:504
 #: RepositoriesReport/RepositoriesReport.py:175
 msgid "The style used for the title of the report."
-msgstr "Der Stil, der für den Titel des Berichts verwendet wird."
+msgstr "Der für den Titel des Berichts verwendete Stil."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:495
 msgid "The style used for the subtitle of the report."
-msgstr "Der Stil, der für den Untertitel des Berichts verwendet wird."
+msgstr "Der für den Untertitel des Berichts verwendete Stil."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:509
 msgid "The style used for the footer of the report."
@@ -1516,41 +1517,41 @@ msgstr "Der Stil, der für die Fußzeile des Berichts verwendet wird."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:524
 msgid "The style used for source title."
-msgstr "Stil für Quellentitel."
+msgstr "Der für den Quellentitel verwendete Stil."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:536
 msgid "The style used for source subtitle."
-msgstr "Stil für Quellenuntertitel."
+msgstr "Der für den Quellenuntertitel verwendete Stil."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:548
 msgid "The style used for Source details."
-msgstr "Stil der Quellendetails."
+msgstr "Der für die Quellendetails verwendete Stil."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:563
 msgid "The style used for citation title."
-msgstr "Stil für den Fundstellentitel."
+msgstr "Der für Fundstellentitel verwendete Stil."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:575
 msgid "The style used for a column title."
-msgstr "Der Stil, der für den Spaltentitel verwendet wird."
+msgstr "Der für einen Spaltentitel verwendete Stil."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
 #: RepositoriesReport/RepositoriesReportAlt.py:533
 #: RepositoriesReport/RepositoriesReport.py:203
 msgid "The style used for each section."
-msgstr "Der Stil, der für jeden Absatz verwendet wird."
+msgstr "Der für jeden Abschnitt verwendete Stil."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:622
 msgid "The style used for event and person details."
-msgstr "Der Stil, der für Ereignis- und Personendetails verwendet wird."
+msgstr "Der für Ereignis- und Personendetails verwendete Stil."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
-msgstr "Ahnenbaum verwende LaTeX genealogytree"
+msgstr "Ahnentafel unter Verwendung von LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
-msgstr "Nachkommenbaum verwende LaTeX genealogytree"
+msgstr "Nachfahrenbaum unter Verwendung von LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
@@ -1558,7 +1559,7 @@ msgstr "Großelternbaum"
 
 #: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
-msgstr "Großelternbaum verwende LaTeX genealogytree"
+msgstr "Großelternbaum unter Verwendung von LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
@@ -1566,7 +1567,7 @@ msgstr "Sanduhrbaum"
 
 #: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
-msgstr "Sanduhrbaum verwende LaTeX genealogytree"
+msgstr "Sanduhrbaum unter Verwendung von LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
@@ -1574,7 +1575,7 @@ msgstr "Sanduhrbaum für eine Familie"
 
 #: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
-msgstr "Sanduhrbaum für eine Familie verwende LaTex genealogytree"
+msgstr "Sanduhrbaum für eine Familie unter Verwendung von LaTeX genealogytree"
 
 #: GenealogyTree/gt_sandclock.py:235
 msgid "The center family for the report"
@@ -1590,36 +1591,36 @@ msgstr "Generationen runter"
 
 #: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
-msgstr "Geschwister einschließen"
+msgstr "Geschwister einbeziehen"
 
 #: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
-msgstr "Geschwister von Vorfahren aufnehmen."
+msgstr "Geschwister der Vorfahren einbeziehen."
 
 #: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
 #: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
 msgid "Include images"
-msgstr "Bilder aufnehmen"
+msgstr "Bilder einbeziehen"
 
 #: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
 #: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
 msgid "Include images of people in the nodes."
-msgstr "Bilder der Personen in den Knoten aufnehmen."
+msgstr "Bilder von Personen in die Knotenpunkte einfügen."
 
 #: GenealogyTree/gt_grandparent.py:119
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
 msgstr ""
-"Person %s hat nicht sowohl einen väterlichen als auch einen mütterlichen "
-"Großelternteil"
+"Person %s hat nicht sowohl einen Großelternteil väterlicherseits als auch "
+"mütterlicherseits"
 
 #: GenealogyTree/gt_grandparent.py:227
 msgid "Grandparent family spacing"
-msgstr "Großeltern Familie Abstand"
+msgstr "Abstand zwischen Großeltern und Familie"
 
 #: GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
-msgstr "Extra Abstand Großelternfamilien (mm)"
+msgstr "Zusätzliche Abstände der Großelternfamilien (mm)"
 
 #: GenealogyTree/gt_descendant.py:191
 msgid "First spouse left"
@@ -1661,28 +1662,28 @@ msgstr "GEXF-Exportoptionen"
 #: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
 #, python-format
 msgid "Failed writing %s: %s"
-msgstr "Fehler beim Schreiben %s: %s"
+msgstr "Schreiben von %s fehlgeschlagen: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:345
 #: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
 #, python-format
 msgid "Failed to create directory structure : %s"
-msgstr "Fehler beim erstellen der Verzeichnisstruktur: %s"
+msgstr "Verzeichnisstruktur konnte nicht erstellt werden: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368
 #: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr "Fehler beim Kopieren von Webdateien: %s"
+msgstr "Fehler beim Kopieren von Webdateien : %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
-msgstr "Zusammenklappbarer Vorfahrenbaum Optionen"
+msgstr "Optionen für den zusammenklappbaren Ahnenbaum"
 
 #: D3Charts/AncestralCollapsibleTree.py:840
 #: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
 msgid "Include Generations"
-msgstr "Generationen Aufnehmen"
+msgstr "Generationen einbeziehen"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
 msgid "Male Background Color"
@@ -1694,7 +1695,7 @@ msgstr "RGB-Hintergrundfarbe für männliche Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
 msgid "Male Expandable Background Color"
-msgstr "Männliche erweiterbare Hintergrundfarbe"
+msgstr "Männliche, erweiterbare Hintergrundfarbe"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
 msgid "RGB-color for male expandable box background."
@@ -1710,7 +1711,7 @@ msgstr "RGB-Hintergrundfarbe für weibliche Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
-msgstr "Erweiterbarer weiblicher Hintergrund"
+msgstr "Weiblicher, erweiterbarer Hintergrund"
 
 #: D3Charts/AncestralCollapsibleTree.py:861
 msgid "RGB-color for female expandable box background."
@@ -1719,13 +1720,13 @@ msgstr "RGB-Hintergrundfarbe für weibliche erweiterbare Box."
 #: D3Charts/AncestralCollapsibleTree.py:867
 #: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
 msgid "The destination path for generated files."
-msgstr "Der Zielpfad für erstellte Dateien."
+msgstr "Der Zielpfad für die generierten Dateien."
 
 #: D3Charts/AncestralCollapsibleTree.py:872
 #: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
-msgstr "Der Zieldateiname für HTML Inhalt."
+msgstr "Der Name der Zieldatei für den HTML-Inhalt."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
@@ -1736,8 +1737,8 @@ msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
-"Erzeugt eine Webseite mit einer grafischen Darstellung von Vorfahren "
-"(SVG)dargestellt als Fächergrafik aus der D3.js JavaScript-Bibliothek."
+"Erzeugt eine Webseite mit einer grafischen Darstellung der Vorfahren (SVG) "
+"in Form eines Fächerdiagramms aus der JavaScript-Bibliothek D3.js."
 
 #: D3Charts/DescendantIndentedTree.py:673
 #, python-format
@@ -1769,7 +1770,7 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
-msgstr "Fehler beim erstellen %s: %s"
+msgstr "Erstellen von %s fehlgeschlagen: %s"
 
 #: D3Charts/DescendantIndentedTree.py:1391
 #, python-format
@@ -1805,15 +1806,15 @@ msgstr "Die Schriftgröße in Punkten für jeden Knoten."
 #: D3Charts/DescendantIndentedTree.py:1848
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
-msgstr "Ob doppelte Familienbäume im Bericht angezeigt werden."
+msgstr "Ob doppelte Stammbäume im Bericht angezeigt werden sollen."
 
 #: D3Charts/DescendantIndentedTree.py:1852
 msgid "Expanded Row Background Color"
-msgstr "Expandierte Zeile Hintergrundfarbe"
+msgstr "Hintergrundfarbe der erweiterten Zeile"
 
 #: D3Charts/DescendantIndentedTree.py:1853
 msgid "RGB-color for expanded row background."
-msgstr "RGB-Farbe für expandierte Zeile Hintergrund."
+msgstr "RGB-Hintergrundfarbe der erweiterten Zeile."
 
 #: D3Charts/DescendantIndentedTree.py:1856
 msgid "Expandable Background Color"
