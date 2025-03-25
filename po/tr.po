@@ -5,13 +5,14 @@
 # Mehmet Ugur Kecik <mukecik@yahoo.com>, 2006.
 # Ugur Cetin <ugur@ugurcetin.com.tr>, 2014.
 # Bora Atıcı <boratici.acc@gmail.com>, 2025.
+# Muhammed YILMAZ <yilmazmu15@itu.edu.tr>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-02-28 21:42+0000\n"
-"Last-Translator: Bora Atıcı <boratici.acc@gmail.com>\n"
+"PO-Revision-Date: 2025-03-25 10:12+0000\n"
+"Last-Translator: Muhammed YILMAZ <yilmazmu15@itu.edu.tr>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
 "Language: tr\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -53,7 +54,7 @@ msgstr ""
 #: SetAttributeTool/SetAttributeTool.py:71 SetPrivacyTool/SetPrivacyTool.py:312
 #: AvatarGenerator/AvatarGenerator.py:86
 msgid "Select filter to restrict people"
-msgstr ""
+msgstr "İnsanları listelemek için filtreyi seçin"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
