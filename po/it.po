@@ -66,8 +66,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-18 14:54+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -1340,9 +1340,8 @@ msgid "Sources and Citations Report"
 msgstr "Resoconto dei discendenti"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
-#, fuzzy
 msgid "Provides a source and Citations Report with notes"
-msgstr "Fornire una breve descrizione per questa immagine."
+msgstr "Fornire una fonte e un resoconto citazioni con note"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
@@ -1641,10 +1640,9 @@ msgstr "Opzioni di testo"
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Errore durante la scrittura di %s"
+msgstr "Errore durante la scrittura di {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
@@ -1818,10 +1816,10 @@ msgid "Include contraction level"
 msgstr "Includi occupazione"
 
 #: D3Charts/DescendantIndentedTree.py:1812
-#, fuzzy
-#| msgid "The number of descendant generations to include in the tree"
 msgid "The number of descendant levels to contract on initial display."
-msgstr "Il numero di generazioni di discendenti da includere nell'albero"
+msgstr ""
+"Il numero di generazioni di discendenti da contrarre nella visualizzazione "
+"iniziale."
 
 #: D3Charts/DescendantIndentedTree.py:1819
 msgid "The font size in pixels for each node."
@@ -1986,10 +1984,8 @@ msgid "Generations to generate HREF links"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1949
-#, fuzzy
-#| msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgid "The number of generations to generate HREF links."
-msgstr "Il numero di generazioni da includere nel grafico. (0 per illimitato)"
+msgstr "Il numero di generazioni per cui generare collegamenti HREF."
 
 #: D3Charts/DescendantIndentedTree.py:1955
 msgid "Exclude persons who died before (years)"
@@ -2229,9 +2225,8 @@ msgstr "Aggiornamento disponibile"
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
-#, fuzzy
 msgid "Event Description Editor"
-msgstr "Descrizione:"
+msgstr "Editor descrizione evento"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
 #, fuzzy
@@ -2467,10 +2462,8 @@ msgid ""
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:86
-#, fuzzy
-#| msgid "Search..."
 msgid "Search Quota "
-msgstr "Ricerca..."
+msgstr "Quota di ricerca "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
@@ -3149,10 +3142,8 @@ msgid "Save tree as file"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3075
-#, fuzzy
-#| msgid "Search..."
 msgid "Search:"
-msgstr "Ricerca..."
+msgstr "Cerca:"
 
 #: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
@@ -3439,10 +3430,8 @@ msgid "Select the template of the web site"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4812
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include private objects"
-msgstr "Indica se includere le immagini."
+msgstr "Indica se includere gli oggetti privati"
 
 #: DynamicWeb/dynamicweb.py:4833
 msgid ""
@@ -3489,10 +3478,8 @@ msgid "Include images and media"
 msgstr "Includi un'immagine"
 
 #: DynamicWeb/dynamicweb.py:4862
-#, fuzzy
-#| msgid "Whether to include an image if one is available."
 msgid "Whether to include images and media in the web pages"
-msgstr "Se includere un'immagine se una è disponibile."
+msgstr "Se includere immagini e oggetti multimediali nelle pagine web"
 
 #: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
