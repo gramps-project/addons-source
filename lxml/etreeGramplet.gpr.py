@@ -18,4 +18,5 @@ register(
     gramplet="etreeGramplet",
     fname="etreeGramplet.py",
     gramplet_title=_("etree"),
+    help_url="https://gramps-project.org/wiki/index.php/Addon:Lxml_Gramplet",
 )
