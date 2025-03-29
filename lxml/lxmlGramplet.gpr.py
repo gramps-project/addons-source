@@ -16,4 +16,5 @@ height = 300,
 gramplet = "lxmlGramplet",
 fname ="lxmlGramplet.py",
 gramplet_title =_("lxml"),
+help_url="https://gramps-project.org/wiki/index.php/Addon:Lxml_Gramplet",
 )
