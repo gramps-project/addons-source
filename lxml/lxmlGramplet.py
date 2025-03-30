@@ -144,8 +144,7 @@ class lxmlGramplet(Gramplet):
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
         self.button = Gtk.Button()
-        image = Gtk.Image()
-        image.set_from_stock(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
+        image = Gtk.Image.new_from_icon_name(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
         self.button.add(image)
         self.button.connect('clicked', self.__select_file)
 
@@ -324,7 +323,7 @@ class lxmlGramplet(Gramplet):
             doctype = tree.docinfo.doctype
             current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">'
             if self.RNGValidation(tree, rng) == True:
-                #self.ParseXML(tree, filename)  for debug 
+                #self.ParseXML(tree, filename) for debug
                 try:
                     self.ParseXML(tree, filename)
                 except:
@@ -725,6 +724,8 @@ class lxmlGramplet(Gramplet):
         outfile.write(str(outdoc))
         outfile.close()
 
+        self.jsonl(content)
+
         # clear the etree
 
         content.clear()
@@ -935,6 +936,18 @@ class lxmlGramplet(Gramplet):
 
         root.clear()
 
+    def jsonl(self, content):
+        """
+        Generate a JSONL file from the custom XML file format
+        """
+        xslt_doc = etree.parse(os.path.join(USER_PLUGINS, 'lxml', 'JSONL.xsl'))
+        transform = etree.XSLT(xslt_doc)
+        outdoc = transform(content)
+        jsonl = os.path.join(USER_PLUGINS, 'lxml', 'text.jsonl')
+        outfile = open(jsonl, 'w')
+
+        outfile.write(str(outdoc))
+        outfile.close()
 
     def post(self, html):
         """
