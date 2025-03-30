@@ -155,16 +155,15 @@ class lxmlGramplet(Gramplet):
 
         hbox = Gtk.Box()
         hbox.pack_start(self.entry, True, True, 0)
-        hbox.pack_end(self.button, False, False, 0)
-
-        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        vbox.pack_start(hbox, False, True, 0) # v1
+        hbox.pack_start(self.button, False, False, 0)
 
         # button
 
-        button = Gtk.Button(_("Run"))
+        button = Gtk.Button()
+        exe = Gtk.Image.new_from_icon_name(Gtk.STOCK_GO_DOWN, 6)
+        button.add(exe)
         button.connect("clicked", self.run)
-        vbox.pack_start(button, False, False, 0) # v2
+        hbox.pack_end(button, False, False, 0) # v2
 
         # area
 
@@ -174,6 +173,8 @@ class lxmlGramplet(Gramplet):
         self.text = Gtk.TextBuffer()
         self.text.set_text(_('No file loaded...'))
         self.import_text.set_buffer(self.text)
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        vbox.pack_start(hbox, False, True, 0) # v1
         vbox.pack_end(self.import_text, True, True, 0) # v3
 
         self.gui.get_container_widget().remove(self.gui.textview)
