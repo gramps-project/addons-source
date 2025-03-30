@@ -152,19 +152,9 @@ class lxmlGramplet(Gramplet):
 
         vbox = Gtk.VBox()
         hbox = Gtk.HBox()
-
-        # area
-
-        self.import_text = Gtk.TextView()
-
-        self.import_text.set_wrap_mode(Gtk.WrapMode.WORD)
-        self.import_text.set_editable(False)
-
-        self.text = Gtk.TextBuffer()
-        self.text.set_text(_('No file loaded...'))
-        self.import_text.set_buffer(self.text)
-
-        vbox.pack_start(self.import_text, True, True, 0) # v1
+        hbox.pack_start(self.entry, True, True, 0)
+        hbox.pack_end(self.button, False, False, 0)
+        vbox.pack_start(hbox, False, False, 0) # v1
 
         # button
 
@@ -172,12 +162,15 @@ class lxmlGramplet(Gramplet):
         button.connect("clicked", self.run)
         vbox.pack_start(button, False, False, 0) # v2
 
-        # build
+        # area
 
-        hbox.pack_start(self.entry, True, True, 0)
-        hbox.pack_end(self.button, False, False, 0)
-
-        vbox.pack_end(hbox, False, False, 0) # v3
+        self.import_text = Gtk.TextView()
+        vbox.pack_end(self.import_text, True, True, 0) # v3
+        self.import_text.set_wrap_mode(Gtk.WrapMode.WORD)
+        self.import_text.set_editable(False)
+        self.text = Gtk.TextBuffer()
+        self.text.set_text(_('No file loaded...'))
+        self.import_text.set_buffer(self.text)
 
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(vbox)
