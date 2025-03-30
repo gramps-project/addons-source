@@ -3,3 +3,4 @@ lxml/grampsxml.rng
 lxml/grampsxml.xsd
 lxml/lxml.css
 lxml/query_html.xsl
+lxml/JSONL.xsl
