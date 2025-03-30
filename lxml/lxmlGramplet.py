@@ -193,7 +193,8 @@ class lxmlGramplet(Gramplet):
                                        buttons=(Gtk.STOCK_CANCEL,
                                                 Gtk.ResponseType.CANCEL,
                                                 Gtk.STOCK_OPEN,
-                                                Gtk.ResponseType.OK))
+                                                Gtk.ResponseType.OK),
+                                                parent=self.uistate.window)
 
         name = os.path.basename(self.entry.get_text())
         dialog.set_current_name(name)
