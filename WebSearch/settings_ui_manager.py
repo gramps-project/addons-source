@@ -39,14 +39,21 @@ from constants import (
     DEFAULT_SHOW_SHORT_URL,
     DEFAULT_URL_COMPACTNESS_LEVEL,
     DEFAULT_URL_PREFIX_REPLACEMENT,
-    DEFAULT_USE_OPEN_AI,
-    DEFAULT_SHOW_URL_COLUMN,
-    DEFAULT_SHOW_VARS_COLUMN,
-    DEFAULT_SHOW_USER_DATA_ICON,
-    DEFAULT_SHOW_FLAG_ICONS,
     DEFAULT_SHOW_ATTRIBUTE_LINKS,
+    DEFAULT_AI_PROVIDER,
+    COMMON_CSV_FILE_NAME,
+    UID_CSV_FILE_NAME,
+    STATIC_CSV_FILE_NAME,
+    CROSS_CSV_FILE_NAME,
+    ALL_COLUMNS,
+    DEFAULT_DISPLAY_COLUMNS,
+    ALL_COLUMNS_LOCALIZED,
+    ALL_ICONS,
+    DEFAULT_DISPLAY_ICONS,
+    ALL_ICONS_LOCALIZED,
     MiddleNameHandling,
     URLCompactnessLevel,
+    AIProviders,
 )
 
 from translation_helper import _
@@ -122,13 +129,13 @@ class SettingsUIManager:
                 default=DEFAULT_URL_COMPACTNESS_LEVEL,
                 descriptions={
                     URLCompactnessLevel.SHORTEST.value: _(
-                        "Shortest - No Prefix, No Variables"
+                        "Shortest - No Prefix, No Keys"
                     ),
                     URLCompactnessLevel.COMPACT_NO_ATTRIBUTES.value: _(
-                        "Compact - No Prefix, Variables Without Attributes"
+                        "Compact - No Prefix, Keys Without Attributes"
                     ),
                     URLCompactnessLevel.COMPACT_WITH_ATTRIBUTES.value: _(
-                        "Compact - No Prefix, Variables With Attributes"
+                        "Compact - No Prefix, Keys With Attributes"
                     ),
                     URLCompactnessLevel.LONG.value: _(
                         "Long - Without Prefix on the Left"
@@ -141,33 +148,49 @@ class SettingsUIManager:
             _("URL Prefix Replacement"),
             DEFAULT_URL_PREFIX_REPLACEMENT,
         )
-        self.add_boolean_option(
-            "websearch.use_openai", _("Use OpenAI"), DEFAULT_USE_OPEN_AI
+
+        # AI Provider selection (OpenAI, Mistral, etc.)
+        self.add_enum_option(
+            "websearch.ai_provider",
+            _("AI Provider"),
+            SimpleNamespace(
+                enum_class=AIProviders,
+                default=DEFAULT_AI_PROVIDER,
+                descriptions={
+                    AIProviders.DISABLED.value: _("(Disabled)"),
+                    AIProviders.OPENAI.value: _("OpenAI"),
+                    AIProviders.MISTRAL.value: _("Mistral AI"),
+                },
+            ),
         )
-        self.add_string_option("websearch.openai_api_key", _("OpenAI API Key"))
-        self.add_boolean_option(
-            "websearch.show_url_column",
-            _("Display 'Website URL' Column"),
-            DEFAULT_SHOW_URL_COLUMN,
+
+        self.add_string_option(
+            "websearch.openai_api_key",
+            _("OpenAI API Key"),
+            "",
         )
-        self.add_boolean_option(
-            "websearch.show_vars_column",
-            _("Display 'Vars' Column"),
-            DEFAULT_SHOW_VARS_COLUMN,
+        self.add_string_option(
+            "websearch.openai_model",
+            _("OpenAI Model"),
+            "",
         )
-        self.add_boolean_option(
-            "websearch.show_user_data_icon",
-            _("Show User Data Icon"),
-            DEFAULT_SHOW_USER_DATA_ICON,
+        self.add_string_option(
+            "websearch.mistral_api_key",
+            _("Mistral API Key"),
+            "",
         )
-        self.add_boolean_option(
-            "websearch.show_flag_icons", _("Show Flag Icons"), DEFAULT_SHOW_FLAG_ICONS
+        self.add_string_option(
+            "websearch.mistral_model",
+            _("Mistral Model"),
+            "",
         )
         self.add_boolean_option(
             "websearch.show_attribute_links",
             _("Show Links From Attributes"),
             DEFAULT_SHOW_ATTRIBUTE_LINKS,
         )
+        self.add_display_columns_option()
+        self.add_display_icons_option()
 
         return self.opts
 
@@ -178,41 +201,63 @@ class SettingsUIManager:
         all_files, selected_files = WebsiteLoader.get_all_and_selected_files(
             self.config_ini_manager
         )
+
+        priority_files = [
+            COMMON_CSV_FILE_NAME,
+            UID_CSV_FILE_NAME,
+            STATIC_CSV_FILE_NAME,
+            CROSS_CSV_FILE_NAME,
+        ]
+
+        def sort_key(f):
+            try:
+                return (0, priority_files.index(f))
+            except ValueError:
+                return (1, f.lower())
+
+        all_files.sort(key=sort_key)
+
         opt = BooleanListOption(_("Enable CSV Files"))
         for file in all_files:
             opt.add_button(file, file in selected_files)
         self.opts.append(opt)
 
-    def add_boolean_option(self, config_key, label, default):
-        """
-        Add a boolean toggle option to the settings.
+    def add_display_columns_option(self):
+        """Add a list of checkbox options for displaying columns."""
+        opt = BooleanListOption(_("Display Columns"))
 
-        Args:
-            config_key (str): The configuration key.
-            label (str): The display label for the option.
-            default (bool): The default value.
-        """
+        selected_columns = self.config_ini_manager.get_list(
+            "websearch.display_columns",
+            DEFAULT_DISPLAY_COLUMNS,
+        )
+        for column in ALL_COLUMNS:
+            label = ALL_COLUMNS_LOCALIZED.get(column, column)
+            opt.add_button(label, column in selected_columns)
+
+        self.opts.append(opt)
+
+    def add_display_icons_option(self):
+        """Add a list of checkbox options for displaying icons."""
+        opt = BooleanListOption(_("Display Icons"))
+
+        selected_icons = self.config_ini_manager.get_list(
+            "websearch.display_icons",
+            DEFAULT_DISPLAY_ICONS,
+        )
+        for icon in ALL_ICONS:
+            label = ALL_ICONS_LOCALIZED.get(icon, icon)
+            opt.add_button(label, icon in selected_icons)
+
+        self.opts.append(opt)
+
+    def add_boolean_option(self, config_key, label, default):
+        """Add a boolean toggle option to the settings."""
         value = self.config_ini_manager.get_boolean_option(config_key, default)
         opt = BooleanOption(label, value)
         self.opts.append(opt)
 
     def add_enum_option(self, config_key, label, options):
-        """
-        Adds an enumerated list option to the settings.
-
-        This method creates a list of enumerated options and adds them to the settings UI.
-        The options are defined by the provided `enum_class`, with an optional description
-        for each value.
-
-        Args:
-            config_key (str): The configuration key used to store the selected value.
-            label (str): The label to display for the option in the UI.
-            options (SimpleNamespace): An object containing the following attributes:
-                - enum_class (Enum): The enumeration class defining the available options.
-                - default: The default value to be selected from the enumeration.
-                - descriptions (dict, optional): A dictionary with localized display labels for
-                  each enum value. If not provided, the enum values are used as labels.
-        """
+        """Adds an enumerated list option to the settings."""
         enum_class = options.enum_class
         default = options.default
         descriptions = options.descriptions
@@ -227,14 +272,7 @@ class SettingsUIManager:
         self.opts.append(opt)
 
     def add_string_option(self, config_key, label, default=""):
-        """
-        Add a string input option to the settings.
-
-        Args:
-            config_key (str): The configuration key.
-            label (str): The display label for the option.
-            default (str, optional): The default string value.
-        """
+        """Add a string input option to the settings."""
         value = self.config_ini_manager.get_string(config_key, default)
         opt = StringOption(label, value)
         self.opts.append(opt)

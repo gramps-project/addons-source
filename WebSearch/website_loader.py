@@ -38,8 +38,9 @@ from constants import (
     CSV_DIR,
     USER_DATA_CSV_DIR,
     DEFAULT_ENABLED_FILES,
-    CsvColumnNames,
     SKIPPED_DOMAIN_SUGGESTIONS_FILE_PATH,
+    SourceTypes,
+    CsvColumnNames,
 )
 
 
@@ -226,7 +227,7 @@ class WebsiteLoader:
                 .replace("-links", "")
                 .upper()
             )
-            if locale == "COMMON":
+            if locale == SourceTypes.COMMON.value:
                 cls.include_global = True
             else:
                 cls.locales.add(locale)

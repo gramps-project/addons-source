@@ -21,7 +21,7 @@
 # ----------------------------------------------------------------------------
 
 """
-Provides the SiteFinder class, which uses OpenAI to suggest genealogy-related
+Provides the OpenaiSiteFinder class, which uses OpenAI to suggest genealogy-related
 websites in JSON format.
 """
 
@@ -36,9 +36,9 @@ except ImportError:
     )
 
 
-class SiteFinder:
+class OpenaiSiteFinder:
     """
-    SiteFinder class for retrieving genealogy-related websites using OpenAI.
+    OpenaiSiteFinder class for retrieving genealogy-related websites using OpenAI.
 
     This class interacts with OpenAI's API to fetch a list of genealogy research websites
     while excluding certain domains and filtering results based on locale preferences.
@@ -56,14 +56,15 @@ class SiteFinder:
         Sends a query to OpenAI and returns a JSON-formatted list of relevant genealogy websites.
     """
 
-    def __init__(self, api_key):
+    def __init__(self, api_key, model):
         """
-        Initialize the SiteFinder with an OpenAI API key.
+        Initialize the OpenaiSiteFinder with an OpenAI API key.
 
         Args:
             api_key (str): OpenAI API key used for authentication.
         """
         self.api_key = api_key
+        self.model = model
 
     def find_sites(self, excluded_domains, locales, include_global):
         """
@@ -110,7 +111,7 @@ class SiteFinder:
         try:
             client = openai.OpenAI(api_key=self.api_key)
             completion = client.chat.completions.create(
-                model="gpt-4-turbo",
+                model=self.model,
                 messages=[
                     {"role": "system", "content": system_message},
                     {"role": "user", "content": user_message},
