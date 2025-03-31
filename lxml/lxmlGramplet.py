@@ -151,7 +151,7 @@ class lxmlGramplet(Gramplet):
 
         # GUI setup:
 
-        self.set_tooltip(_("Please, select a Gramps XML file and\n clic on the Run button."))
+        self.set_tooltip(_("Select a Gramps XML file and\n click on the Run button."))
 
         hbox = Gtk.Box()
         hbox.pack_start(self.entry, True, True, 0)
