@@ -144,7 +144,7 @@ class lxmlGramplet(Gramplet):
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
         self.button = Gtk.Button()
-        image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
+        image = Gtk.Image.new_from_icon_name(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
         self.button.add(image)
         #self.button.set_size_request(40, 40)
         self.button.connect('clicked', self.__select_file)
@@ -943,6 +943,7 @@ class lxmlGramplet(Gramplet):
         xslt_doc = etree.parse(os.path.join(USER_PLUGINS, 'lxml', 'JSONL.xsl'))
         transform = etree.XSLT(xslt_doc)
         outdoc = transform(content)
+
         custom_jsonl = str(outdoc)
         jsonl = os.path.join(USER_PLUGINS, 'lxml', 'text.jsonl')
         outfile = open(jsonl, 'w')
@@ -963,7 +964,6 @@ class lxmlGramplet(Gramplet):
             LOG.info(text)
             info = self.text.get_text(start_iter, end_iter, True)
             self.text.set_text(custom_jsonl + info)
-
 
     def post(self, html):
         """
