@@ -1,6 +1,6 @@
 Navigation type,Title,Is enabled,URL                                                                                                                                         ,Comment
 People,"Archive.org (people) (g,s)",1,"https://www.archive.org/search.php?query=""%(surname)s+%(given)s""",
-People,"Archive.org (people) (g,s,b,d)",1,"https://www.archive.org/search.php?query=""%(given)s+%(surname)s+%(birth_year)s+""-""+%(death_year)s""'",
+People,"Archive.org (people) (g,s,b,d)",1,"https://www.archive.org/search.php?query="%(given)s+%(surname)s+%(birth_year)s+"-"+%(death_year)s",
 Places,Archive.org (places),1,https://www.archive.org/search.php?query=%(place)s,
 Sources,Archive.org (sources),1,https://www.archive.org/search.php?query=%(source_title)s,
 People,Open Library,1,"https://openlibrary.org/search?q=%(surname)s, %(given)s",

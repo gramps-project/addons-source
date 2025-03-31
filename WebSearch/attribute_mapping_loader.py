@@ -22,7 +22,7 @@
 
 """Module for loading and applying attribute mappings from JSON to Gramps objects.
 
-Used by the WebSearch Gramplet to match user-defined attributes to variable placeholders
+Used by the WebSearch Gramplet to match user-defined attributes to key placeholders
 in URL templates based on navigation type and regular expressions.
 """
 
@@ -41,7 +41,7 @@ class AttributeMappingLoader:
     Loads and processes attribute mappings from a JSON file.
 
     This class is responsible for reading a mapping file that defines how custom attributes
-    in Gramps should be interpreted as variables for constructing URLs in the WebSearch Gramplet.
+    in Gramps should be interpreted as keys for constructing URLs in the WebSearch Gramplet.
     """
 
     def __init__(self):
@@ -99,7 +99,7 @@ class AttributeMappingLoader:
                                 "nav_type": mapping["nav_type"],
                                 "attribute_name": mapping["attribute_name"],
                                 "url_regex": mapping["url_regex"],
-                                "variable_name": mapping["variable_name"],
+                                "key_name": mapping["key_name"],
                                 "value": attr_value,
                             }
                         )
@@ -108,23 +108,23 @@ class AttributeMappingLoader:
 
         return uids_data
 
-    def add_matching_variables_to_data(self, uids_data, url_pattern):
+    def add_matching_keys_to_data(self, uids_data, url_pattern):
         """
-        Filters and extracts only those variables whose regex matches the given URL.
+        Filters and extracts only those keys whose regex matches the given URL.
 
         Args:
             uids_data (list): List of attribute data with mapping information.
             url_pattern (str): The target URL pattern to match.
 
         Returns:
-            dict: Dictionary of variable names and values to be inserted into the URL.
+            dict: Dictionary of key names and values to be inserted into the URL.
         """
         filtered_uids_data = {}
         try:
             for uid_entry in uids_data:
                 if re.match(uid_entry["url_regex"], url_pattern, re.IGNORECASE):
-                    filtered_uids_data[uid_entry["variable_name"]] = uid_entry["value"]
+                    filtered_uids_data[uid_entry["key_name"]] = uid_entry["value"]
         except Exception as e:
-            print(f"❌ Error adding matching variables: {e}", file=sys.stderr)
+            print(f"❌ Error adding matching keys: {e}", file=sys.stderr)
 
         return filtered_uids_data

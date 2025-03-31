@@ -1,0 +1,4 @@
+Navigation type,Title,Is enabled,URL                                                                                                                                         ,Comment
+People,CA resource (fr-audience) (people),1,https://www.fichierorigine.com/recherche?nom=%(surname)s,
+Places,CA resource (fr-audience) (places),1,https://www.fichierorigine.com/recherche?commune=%(place)s&pays=%(root_place)s,
+People,BE resource (fr-audience),1,https://search.arch.be/fr/rechercher-des-personnes/resultats/q/zoekwijze/s?text=%(surname)s,

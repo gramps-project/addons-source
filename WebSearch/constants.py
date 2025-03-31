@@ -47,6 +47,8 @@ import os
 from enum import Enum
 from gramps.gen.const import USER_DATA
 
+from translation_helper import _
+
 # --------------------------
 # ENUMS
 # --------------------------
@@ -73,7 +75,7 @@ class SupportedNavTypes(Enum):
 
 
 class PersonDataKeys(Enum):
-    """Defines all available variable keys for 'Person' navigation type."""
+    """Defines all available key keys for 'Person' navigation type."""
 
     GIVEN = "given"
     MIDDLE = "middle"
@@ -97,7 +99,7 @@ class PersonDataKeys(Enum):
 
 
 class FamilyDataKeys(Enum):
-    """Defines all available variable keys for 'Family' navigation type."""
+    """Defines all available key keys for 'Family' navigation type."""
 
     FATHER_GIVEN = "father_given"
     FATHER_MIDDLE = "father_middle"
@@ -174,7 +176,7 @@ class URLCompactnessLevel(Enum):
 
 
 class PlaceDataKeys(Enum):
-    """Defines all variable keys for the 'Place' navigation type."""
+    """Defines all key keys for the 'Place' navigation type."""
 
     PLACE = "place"
     ROOT_PLACE = "root_place"
@@ -186,10 +188,53 @@ class PlaceDataKeys(Enum):
 
 
 class SourceDataKeys(Enum):
-    """Defines variable keys for source-based navigation."""
+    """Defines key keys for source-based navigation."""
 
     TITLE = "source_title"
     SYSTEM_LOCALE = "locale"
+
+
+class AIProviders(Enum):
+    """Enumeration of supported AI providers."""
+
+    DISABLED = ""
+    OPENAI = "openai"
+    MISTRAL = "mistral"
+
+
+class SourceTypes(Enum):
+    """Enumeration of source types for links."""
+
+    COMMON = "COMMON"
+    UID = "UID"
+    STATIC = "STATIC"
+    CROSS = "CROSS"
+    ATTR = "ATTR"
+
+
+SOURCE_TYPE_SORT_ORDER = {
+    SourceTypes.COMMON.value: "0",
+    SourceTypes.UID.value: "1",
+    SourceTypes.STATIC.value: "2",
+    SourceTypes.ATTR.value: "3",
+    SourceTypes.CROSS.value: "4",
+}
+
+VIEW_IDS_MAPPING = {
+    "dashboardview": None,
+    "personlistview": "Person",
+    "relview": None,
+    "familyview": "Family",
+    "family_tree_view": None,
+    "eventview": "Event",
+    "placetreeview": "Place",
+    "sourceview": "Source",
+    "citationlistview": "Citation",
+    "repoview": None,
+    "mediaview": "Media",
+    "noteview": None,
+    "geo1": None,
+}
 
 
 # --------------------------
@@ -208,6 +253,50 @@ URL_PREFIXES_TO_TRIM = ["https://www.", "http://www.", "https://", "http://"]
 COMMON_CSV_FILE_NAME = "common-links.csv"
 UID_CSV_FILE_NAME = "uid-links.csv"
 STATIC_CSV_FILE_NAME = "static-links.csv"
+CROSS_CSV_FILE_NAME = "cross-links.csv"
+ALL_COLUMNS = ["icons", "locale", "keys", "title", "url", "comment"]
+DEFAULT_DISPLAY_COLUMNS = ["icons", "locale", "keys", "title", "url", "comment"]
+ALL_COLUMNS_LOCALIZED = {
+    "icons": _("Column - Icons"),
+    "locale": _("Column - Source Types (flags)"),
+    "keys": _("Column - Keys"),
+    "title": _("Column - Title"),
+    "url": _("Column - Website Url"),
+    "comment": _("Column - Comment"),
+}
+ALL_ICONS = [
+    "visited",
+    "saved",
+    "uid",
+    "flag",
+    "pin",
+    "earth",
+    "chain",
+    "cross",
+    "user_data",
+]
+DEFAULT_DISPLAY_ICONS = [
+    "visited",
+    "saved",
+    "uid",
+    "flag",
+    "pin",
+    "earth",
+    "chain",
+    "cross",
+    "user_data",
+]
+ALL_ICONS_LOCALIZED = {
+    "visited": _("Icon - Visited URLs (checkmark)"),
+    "saved": _("Icon - Saved URLs (floppy disk)"),
+    "uid": _("Icon - URLs linked to UID attributes (UID badge)"),
+    "flag": _("Icon - URLs from regional CSV files (flag)"),
+    "pin": _("Icon - URLs from static CSV files (red pin)"),
+    "earth": _("Icon - URLs from common CSV files (earth)"),
+    "chain": _("Icon - Direct URLs from attributes (link chain)"),
+    "cross": _("Icon - URLs from cross CSV files (shuffle arrows)"),
+    "user_data": _("Icon - URLs from custom user directory (spreadsheet icon)"),
+}
 
 CONFIGS_DIR = os.path.join(os.path.dirname(__file__), "configs")
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
@@ -235,6 +324,7 @@ ICON_USER_DATA_PATH = os.path.join(ICONS_DIR, "user-file.png")
 ICON_PIN_PATH = os.path.join(ICONS_DIR, "pin.png")
 ICON_EARTH_PATH = os.path.join(ICONS_DIR, "earth.png")
 ICON_CHAIN_PATH = os.path.join(ICONS_DIR, "chain.png")
+ICON_CROSS_PATH = os.path.join(ICONS_DIR, "cross.png")
 
 STYLE_CSS_PATH = os.path.join(ASSETS_DIR, "style.css")
 DEFAULT_ATTRIBUTE_MAPPING_FILE_PATH = os.path.join(
@@ -247,19 +337,15 @@ USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH = os.path.join(
 
 DEFAULT_CATEGORY_ICON = "gramps-gramplet"
 DEFAULT_SHOW_SHORT_URL = False
-DEFAULT_USE_OPEN_AI = False
 DEFAULT_URL_PREFIX_REPLACEMENT = ""
 DEFAULT_QUERY_PARAMETERS_REPLACEMENT = "..."
 DEFAULT_URL_COMPACTNESS_LEVEL = URLCompactnessLevel.COMPACT_NO_ATTRIBUTES.value
 DEFAULT_MIDDLE_NAME_HANDLING = MiddleNameHandling.SEPARATE.value
 DEFAULT_ENABLED_FILES = [COMMON_CSV_FILE_NAME, UID_CSV_FILE_NAME, STATIC_CSV_FILE_NAME]
-DEFAULT_SHOW_URL_COLUMN = False
-DEFAULT_SHOW_VARS_COLUMN = False
-DEFAULT_SHOW_USER_DATA_ICON = False
-DEFAULT_SHOW_FLAG_ICONS = True
 DEFAULT_SHOW_ATTRIBUTE_LINKS = False
+DEFAULT_AI_PROVIDER = AIProviders.DISABLED.value
 
-DEFAULT_COLUMNS_ORDER = ["icons", "locale", "vars", "title", "url", "comment"]
+DEFAULT_COLUMNS_ORDER = ["icons", "locale", "keys", "title", "url", "comment"]
 
 CATEGORY_ICON = {
     "Dashboard": "gramps-gramplet",
