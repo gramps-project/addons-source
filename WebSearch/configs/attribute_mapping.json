@@ -3,96 +3,96 @@
     "nav_type": "Person",
     "attribute_name": "_FSFTID",
     "url_regex": ".*familysearch\\.org/.*/tree/person/details/.*",
-    "variable_name": "FamilySearch.personID"
+    "key_name": "FamilySearch.personID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "_FSFTID",
     "url_regex": ".*familysearch\\.org/.*/tree/pedigree/landscape/.*",
-    "variable_name": "FamilySearch.personID"
+    "key_name": "FamilySearch.personID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "WikiTreeID",
     "url_regex": ".*wikitree\\.com/wiki/.*",
-    "variable_name": "WikiTree.ID"
+    "key_name": "WikiTree.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "GeniID",
     "url_regex": ".*geni\\.com/people/.*",
-    "variable_name": "Geni.ID"
+    "key_name": "Geni.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "WeRelateID",
     "url_regex": ".*werelate\\.org/wiki/Person:.*",
-    "variable_name": "WeRelate.ID"
+    "key_name": "WeRelate.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "RogloID",
     "url_regex": ".*roglo\\.eu/roglo?.*",
-    "variable_name": "Roglo.ID"
+    "key_name": "Roglo.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "GeneeeID",
     "url_regex": ".*geneee\\.org/.*",
-    "variable_name": "Geneee.ID"
+    "key_name": "Geneee.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "FindAGraveID",
     "url_regex": ".*findagrave\\.com/memorial/.*",
-    "variable_name": "FindAGrave.ID"
+    "key_name": "FindAGrave.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "WikidataID",
     "url_regex": ".*wikidata\\.org/wiki/.*",
-    "variable_name": "Wikidata.ID"
+    "key_name": "Wikidata.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "WikipediaID",
     "url_regex": ".*wikipedia\\.org/wiki/.*",
-    "variable_name": "Wikipedia.ID"
+    "key_name": "Wikipedia.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "VIAFID",
     "url_regex": ".*viaf\\.org/viaf/.*",
-    "variable_name": "VIAF.ID"
+    "key_name": "VIAF.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "GNDID",
     "url_regex": ".*d-nb\\.info/gnd/.*",
-    "variable_name": "GND.ID"
+    "key_name": "GND.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "FacebookID",
     "url_regex": ".*facebook\\.com/.*",
-    "variable_name": "Facebook.ID"
+    "key_name": "Facebook.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "XINGID",
     "url_regex": ".*xing\\.com/profile/.*",
-    "variable_name": "XING.ID"
+    "key_name": "XING.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "LinkedInID",
     "url_regex": ".*linkedin\\.com/in/.*",
-    "variable_name": "LinkedIn.ID"
+    "key_name": "LinkedIn.ID"
   },
   {
     "nav_type": "Person",
     "attribute_name": "InstagramID",
     "url_regex": ".*instagram\\.com/.*",
-    "variable_name": "Instagram.ID"
+    "key_name": "Instagram.ID"
   }
 ]
