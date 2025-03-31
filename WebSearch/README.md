@@ -2,13 +2,13 @@
 
 ## 1. Purpose
 
-This Gramplet allows you to load and display a list of genealogical websites, configured through CSV files. These files contain patterns for generating URLs based on genealogical data such as name, birth year, death year, place, etc. (referred to as **Variables** throughout this document).
+This Gramplet allows you to load and display a list of genealogical websites, configured through CSV files. These files contain patterns for generating URLs based on genealogical data such as name, birth year, death year, place, etc. (referred to as **Keys** throughout this document).
 
 Each time the user activates a person, place, or other entity in Gramps, the list of updated links is dynamically generated. (These entities are referred to as **Navigation Types** throughout this document). These links contain pre-filled search queries relevant to the selected subject. This enables the user to quickly access ready-made search links to gather additional information for their research.
 
 ![Gramplet](assets/img/gramplet.png)
 
-## 2. Navigation types and Supported Variables
+## 2. Navigation types and Supported Keys
 
 ### 2.1. Navigation types
 The Gramplet supports the following **Navigation Types**, which correspond to the main sections of Gramps:
@@ -17,9 +17,9 @@ The Gramplet supports the following **Navigation Types**, which correspond to th
 - **Sources**
 - **Families**
 
-Each **Navigation Type** has its own set of supported **Variables** that can be used in URL templates. These **Variables** act as placeholders in the URLs stored in CSV files. When using the Gramplet, they are automatically replaced with real data from the active entity (such as a person’s name, birth year, or place), allowing you to generate personalized search links instantly.
+Each **Navigation Type** has its own set of supported **Keys** that can be used in URL templates. These **Keys** act as placeholders in the URLs stored in CSV files. When using the Gramplet, they are automatically replaced with real data from the active entity (such as a person’s name, birth year, or place), allowing you to generate personalized search links instantly.
 
-#### 2.1.1. **Variables** for the "People" **Navigation Type**:
+#### 2.1.1. **Keys** for the "People" **Navigation Type**:
 
 - `given`: This field represents the first name of a person.
 - `middle`: Middle name. This field represents the middle name of a person. The handling of middle names is configurable, and the exact mechanics for extracting and displaying the middle name are described in more detail in the Settings section of the Gramplet. In the settings, you can choose how middle names should be processed, such as separating the first and middle names or removing the middle name entirely.
@@ -40,17 +40,17 @@ Each **Navigation Type** has its own set of supported **Variables** that can be 
 - `birth_root_place`: This field represents the "root" birth place, which is the highest-level location in the place hierarchy. The `birth_root_place` encompasses the `birth_place`, meaning it includes the broader geographic area (e.g., a region, state, or country) that the specific `birth_place` falls under. The `birth_root_place` helps identify the broader context or administrative region to which the birth place belongs.
 - `death_root_place`: Just like `birth_root_place`, this field represents the "root" death place, which is the highest-level location in the place hierarchy. It encompasses the `death_place`, representing the broader geographic region (e.g., region, state, or country) that the `death_place` is part of. The `death_root_place` provides context for the `death_place` by identifying the larger geographical area or administrative region it belongs to.
 
-#### 2.1.2. **Variables** for the "Places" **Navigation Type**:
+#### 2.1.2. **Keys** for the "Places" **Navigation Type**:
 
-- `place`: The specific location associated with an event (e.g., birth, death, marriage). For a more detailed explanation, including a visual demonstration, see [**Variables for the "People" Navigation Type**](#211-variables-for-the-people-navigation-type).
-- `root_place`: The highest-level location in the place hierarchy that encompasses the `place`. For a more detailed explanation, including a visual demonstration, see [**Variables for the "People" Navigation Type**](#211-variables-for-the-people-navigation-type).
+- `place`: The specific location associated with an event (e.g., birth, death, marriage). For a more detailed explanation, including a visual demonstration, see [**Keys for the "People" Navigation Type**](#211-keys-for-the-people-navigation-type).
+- `root_place`: The highest-level location in the place hierarchy that encompasses the `place`. For a more detailed explanation, including a visual demonstration, see [**Keys for the "People" Navigation Type**](#211-keys-for-the-people-navigation-type).
 - `latitude`: The latitude of the place, if available.
 - `longitude`: The longitude of the place, if available.
 - `type`: The type of the place (e.g., city, village, region, etc.).
 - `title`: The hierarchical title representation of the place.
 - `locale`: The system locale detected in Gramps. Some examples of locale values: `en`, `de`, `fr`, `uk`, `es`, `it`, `pl`, `nl`, ...
 
-#### 2.1.3. **Variables** for the "Families" **Navigation Type**:
+#### 2.1.3. **Keys** for the "Families" **Navigation Type**:
 
 - `father_given` – This field represents the first name of the father.
 - `father_middle` – Middle name. This field represents the middle name of the father. The handling of middle names is configurable, and the exact mechanics for extracting and displaying the middle name are described in more detail in the Settings section of the Gramplet.
@@ -102,11 +102,11 @@ Each **Navigation Type** has its own set of supported **Variables** that can be 
 - `divorce_root_place` – The "root" place of the divorce, representing the highest-level location in the place hierarchy.
 - `locale` – The system locale detected in Gramps. Some examples of locale values: `en`, `de`, `fr`, `uk`, `es`, `it`, `pl`, `nl`, ...
 
-#### 2.1.4. **Variables** for the "Sources" **Navigation Type**:
+#### 2.1.4. **Keys** for the "Sources" **Navigation Type**:
 - `source_title`: Source title.
 - `locale`: The system locale detected in Gramps. Some examples of locale values: `en`, `de`, `fr`, `uk`, `es`, `it`, `pl`, `nl`, ...
 
-### 2.2 More details about some **variables**
+### 2.2 More details about some **Keys**
 #### 2.2.1 `place` VS `root_place`
 To better understand the difference between `place` and `root place`, see the example below:
 
@@ -115,29 +115,29 @@ To better understand the difference between `place` and `root place`, see the ex
 - The **place** (e.g., "Los Angeles") refers to the specific city, town, or village.
 - The **root place** (e.g., "USA") represents the highest-level geographical entity containing the place.
 
-#### 2.2.2 The `middle` **Variable**
-The `middle` **Variable** is not used everywhere. It represents the **middle name** of a person and is typically relevant in cultures and naming conventions where middle names play an important role. Some cultures frequently use middle names, while others may not.
+#### 2.2.2 The `middle` **Key**
+The `middle` **Key** is not used everywhere. It represents the **middle name** of a person and is typically relevant in cultures and naming conventions where middle names play an important role. Some cultures frequently use middle names, while others may not.
 It is expected that users enter middle names in the **Given** field, separated by a space from the first name.
-If other methods of storing middle names are used, such as including them in the **Surnames** field, the middle name detection mechanism will not work, and the 'middle' **Variable** will remain empty.
+If other methods of storing middle names are used, such as including them in the **Surnames** field, the middle name detection mechanism will not work, and the 'middle' **Key** will remain empty.
 
 ##### **Configuring Middle Name Handling**
-The way the `middle` **Variable** is extracted from personal data **can be configured** in the settings interface. This setting is called **Middle Name Handling** and allows users to adjust how middle names appear in search queries.
+The way the `middle` **Key** is extracted from personal data **can be configured** in the settings interface. This setting is called **Middle Name Handling** and allows users to adjust how middle names appear in search queries.
 
 For a more detailed explanation of this configuration, see the section [**config.ini – General Configuration**](#31-configini--general-configuration).
 
-#### 2.2.3 Custom Variables
+#### 2.2.3 Custom Keys
 
-Users can define their own **Variables** in the `attribute_mapping.json` file. These **Variables** will store values from the attributes of the active object. Currently, only **Person** attributes are supported.
+Users can define their own **Keys** in the `attribute_mapping.json` file. These **Keys** will store values from the attributes of the active object. Currently, only **Person** attributes are supported.
 
-Users can assign any name to the output **Variable**. Here are some examples, though any other naming convention can be used:
+Users can assign any name to the output **Key**. Here are some examples, though any other naming convention can be used:
 - `FamilySearch.UID`
 - `familysearch_person_id`
 - `_FS-ID`
 
-In the JSON file, these names should be specified in the `variable_name` field. Users can utilize them like any other **Variables** listed in [**2. Navigation Types and Supported Variables**](#2-navigation-types-and-supported-variables).
+In the JSON file, these names should be specified in the `key_name` field. Users can utilize them like any other **Keys** listed in [**2. Navigation Types and Supported Keys**](#2-navigation-types-and-supported-keys).
 
-##### **Example of using a custom variable**
-A user-defined variable can be inserted into a URL template of a csv file as follows:
+##### **Example of using a custom Key**
+A user-defined **Key** can be inserted into a URL template of a csv file as follows:
 ```
 https://www.familysearch.org/en/tree/person/details/%(FamilySearch.UID)s
 ```
@@ -147,7 +147,7 @@ https://www.familysearch.org/en/tree/person/details/%(FamilySearch.UID)s
 The WebSearch Gramplet uses two configuration files, each serving a specific purpose:
 
 - **`config.ini`** – Stores general settings for the Gramplet, such as enabled CSV files, middle name handling, URL compactness level, and integration with external services.
-- **`attribute_mapping.json`** – Defines rules for extracting and mapping attributes from Gramps entities to URL variables.
+- **`attribute_mapping.json`** – Defines rules for extracting and mapping attributes from Gramps entities to URL **Keys**.
 
 These configuration files are located in the `configs` directory:
 
@@ -172,7 +172,7 @@ If enabled, URLs will be displayed in a shortened format. Corresponds to `websea
 #### **URL Compactness Level (`websearch.url_compactness_level`)**
 Controls how URLs are formatted:
 - **Shortest** – Minimal URL, no prefix and no extra parameters.
-- **Compact - No Prefix, Variables Without Attributes** – Compact format, excludes attributes.
+- **Compact - No Prefix, Keys Without Attributes** – Compact format, excludes attributes.
 - **Compact - With Attributes** – Compact format, includes attributes.
 - **Long** – Full URL with all details.
 
@@ -182,12 +182,12 @@ Allows users to replace or remove certain URL prefixes (e.g., removing `https://
 #### **Use OpenAI (`websearch.use_openai`)**
 If enabled, OpenAI will be used to generate additional genealogy research suggestions.
 
-#### **OpenAI API Key (`websearch.openai_api_key`)**
+#### **AI API Key (`websearch.ai_api_key`)**
 The API key required to use OpenAI services for generating additional research links.
 
 Most settings take effect immediately. However, the following two settings require a restart, as OpenAI is only initialized once when the application starts:
 - **Use OpenAI**
-- **OpenAI API Key**
+- **AI API Key**
 
 For details on how OpenAI is used, the costs associated with it, and what data is transmitted, see the [See OpenAI Usage](#7-openai-usage) section.
 
@@ -204,13 +204,13 @@ For example, the file should be located in Ubuntu here:
 /home/<username>/.local/share/gramps/WebSearch/json/attribute_mapping.json
 ```
 
-If a user-defined file exists in this location, it will automatically override the default version. This allows you to make personalized adjustments to how Gramps attributes are converted into WebSearch variables without risking loss during upgrades.
+If a user-defined file exists in this location, it will automatically override the default version. This allows you to make personalized adjustments to how Gramps attributes are converted into WebSearch **Keys** without risking loss during upgrades.
 
 This folder is created automatically when the WebSearch Gramplet is first launched.
 
 ### 3.2.2. Attribute Mapping Rules
 
-The `attribute_mapping.json` file defines how attributes from Gramps **Navigation Types** are mapped to URL **Variables**. It ensures that specific fields (such as user-defined attributes) are correctly included in search queries.
+The `attribute_mapping.json` file defines how attributes from Gramps **Navigation Types** are mapped to URL **Keys**. It ensures that specific fields (such as user-defined attributes) are correctly included in search queries.
 
 Each entry follows this structure:
 
@@ -220,13 +220,13 @@ Each entry follows this structure:
     "nav_type": "People",
     "attribute_name": "Military Service",
     "url_regex": ".*army.*",
-    "variable_name": "military"
+    "key_name": "military"
   },
   {
     "nav_type": "Places",
     "attribute_name": "Old Name",
     "url_regex": ".*historic.*",
-    "variable_name": "old_name"
+    "key_name": "old_name"
   }
 ]
 ```
@@ -234,7 +234,7 @@ Each entry follows this structure:
 - **`nav_type`** – The **Navigation Type** to which the attribute belongs (`People`, `Places`, `Sources`, etc.). **Currently, only attributes for `People` are supported.**
 - **`attribute_name`** – The name of the attribute in Gramps.
 - **`url_regex`** – A regular expression to match relevant URLs.
-- **`variable_name`** – The name of the **Variable** that will be substituted in the URL template.
+- **`key_name`** – The name of the **Key** that will be substituted in the URL template.
 
 After making changes, restart Gramps for them to take effect.
 By default, the attribute_mapping.json file contains a large number of pre-configured services, such as WikiTree, Geni, Geneee, Find a Grave, Wikipedia, and others. Most likely, if you need to use them, you will only need to adjust the attribute_name field, as the current one is a placeholder.
@@ -243,7 +243,7 @@ More details on how this mechanism works, including how identifiers from attribu
 #### 3.2.1. How Attribute Mapping Works
 
 The URL templates added in CSV files are validated against the specified regex patterns. If a URL matches a defined pattern, the system will check whether the active person has an attribute with the name specified in `attribute_name`.
-- If such an attribute exists, a new **Variable** will be created with the name specified in `variable_name`, containing the value from that attribute.
+- If such an attribute exists, a new **Key** will be created with the name specified in `key_name`, containing the value from that attribute.
 - This value will be inserted into the appropriate place in the URL from the CSV file.
 
 ##### Examples of Configuration and Expected Output
@@ -269,11 +269,11 @@ Open `uid-links.csv` (or another preferred CSV file) and add the following line:
 ```
 https://www.familysearch.org/en/tree/person/details/%(FamilySearch.personID)s
 ```
-Here, instead of inserting a static FamilySearch ID, we use the custom variable **%(FamilySearch.personID)s**.
-You can use a different variable name if you prefer.
+Here, instead of inserting a static FamilySearch ID, we use the custom **Key** **%(FamilySearch.personID)s**.
+You can use a different **Key** name if you prefer.
 
 **Step 2: Modify `attribute_mapping.json`**
-Now, we need to configure how the WebSearch Gramplet extracts the FamilySearch ID (`_FSFTID`) from individuals in Gramps and assigns it to a variable.
+Now, we need to configure how the WebSearch Gramplet extracts the FamilySearch ID (`_FSFTID`) from individuals in Gramps and assigns it to a **Key**.
 Open the `attribute_mapping.json` file and add the following block:
 
 ```
@@ -281,7 +281,7 @@ Open the `attribute_mapping.json` file and add the following block:
   "nav_type": "People",
   "attribute_name": "_FSFTID",
   "url_regex": ".*familysearch\\.org/.*/tree/person/details/.*",
-  "variable_name": "FamilySearch.personID"
+  "key_name": "FamilySearch.personID"
 }
 ```
 
@@ -293,7 +293,7 @@ Open the `attribute_mapping.json` file and add the following block:
     - The beginning, ending, and locale parts of the URL are replaced with `.*`, which matches any characters of any length.
     - Dots (`.`) in URLs must be escaped with double backslashes (`\\.`).
     - This ensures the URL template remains flexible and works for different FamilySearch links.
-- **`variable_name`** → This is the custom variable name (`FamilySearch.personID`) we used in **Step 1**.
+- **`key_name`** → This is the custom **Key** name (`FamilySearch.personID`) we used in **Step 1**.
 
  ⚠ **Important JSON Formatting Rules**
 - Each block in the JSON array must be separated by a comma, except the last one.
@@ -343,7 +343,7 @@ Add the following JSON block to `attribute_mapping.json`:
   "nav_type": "Person",
   "attribute_name": "_FSFTID",
   "url_regex": ".*familysearch\\.org/.*/tree/pedigree/landscape/.*",
-  "variable_name": "FamilySearch.personID"
+  "key_name": "FamilySearch.personID"
 }
 ```
 **Alternative Approach: Using a Generalized Rule**
@@ -355,7 +355,7 @@ Instead of defining separate rules for different FamilySearch URLs, we can simpl
   "nav_type": "Person",
   "attribute_name": "_FSFTID",
   "url_regex": ".*familysearch\\.org/.*",
-  "variable_name": "FamilySearch.personID"
+  "key_name": "FamilySearch.personID"
 }
 ```
 
@@ -370,7 +370,7 @@ Simply save the configuration files, restart Gramps or the WebSearch Gramplet, a
 
 ###### Example 3: Using Custom Attributes in Search Queries
 
-You can use any attributes you wish for this task. You can pass them as custom variables inside URLs.  
+You can use any attributes you wish for this task. You can pass them as custom **Keys** inside URLs.  
 For example, let’s assume you need to pass the value of the "Caste" attribute into a search query to refine search conditions.  
 For simplicity, let’s use a Google search URL.
 
@@ -392,7 +392,7 @@ Now, add the following JSON entry inside `attribute_mapping.json`:
   "nav_type": "Person",
   "attribute_name": "Caste",
   "url_regex": ".*google\\.com/search.*",
-  "variable_name": "caste"
+  "key_name": "caste"
 }
 ```
 
@@ -423,15 +423,15 @@ Double-clicking on a URL in the Gramplet opens the associated website in the def
 2. **Locale**: Shows the locale or region associated with the website. This field can be sorted alphabetically to help organize links by region. In addition to locale names, certain links are marked with specific icons to indicate their type:
 
     - **`🌍` COMMON_LOCALE_SIGN** – Represents general links that are **suitable for all regions**. These links are found in **`common-links.csv`**.
-    - **`🆔` UID_SIGN** – Indicates links that use **custom variables**. These variables were primarily designed to retrieve **unique identifiers (UIDs)** from attributes, but users can repurpose them to store and pass any data. For example, a user could store **eye color** as an attribute and pass it as a custom variable in a URL. These links are stored in **`uid-links.csv`**.
+    - **`🆔` UID_SIGN** – Indicates links that use **custom Keys**. These **Keys** were primarily designed to retrieve **unique identifiers (UIDs)** from attributes, but users can repurpose them to store and pass any data. For example, a user could store **eye color** as an attribute and pass it as a custom key in a URL. These links are stored in **`uid-links.csv`**.
     - **`📌` STATIC_SIGN** – Represents **static links** that the user manually adds to **`static-links.csv`**. These are frequently used or favorite links that the user wants **permanent access** to.
 
 3. **Title**: Represents the title assigned to the website. This field is sortable, allowing you to arrange links by their respective categories.  
-   For ease of use, it is recommended to list the variables used in the URL template by their initial letters, as shown in the screenshot. This way, you can add several similar links with different sets of input parameters and quickly navigate through them. This greatly simplifies the search and convenient use of different template variations.  
+   For ease of use, it is recommended to list the **Keys** used in the URL template by their initial letters, as shown in the screenshot. This way, you can add several similar links with different sets of input parameters and quickly navigate through them. This greatly simplifies the search and convenient use of different template variations.  
 
 4. **Comment**: Provides additional information about the link. This field allows users to add custom notes regarding the purpose, source, or special usage of the link. Comments can help users quickly understand the context of each link without opening it. This field is optional and can be edited directly within the Gramplet.
 
-![Settings](assets/img/variables%20list.png)  
+![Settings](assets/img/keys%20list.png)  
    For example, the letters shown in the screenshot represent:
   - **g** - Given name
   - **m** - Middle name
@@ -447,8 +447,8 @@ Double-clicking on a URL in the Gramplet opens the associated website in the def
 
 When hovering over a row in the table, the tooltip will display:
 - **Title**: The title assigned to the website.
-- **Replaced**: The variables that were successfully replaced with data from the active entity.
-- **Empty**: Variables that did not have values and were replaced to empty.
+- **Replaced**: The **Keys** that were successfully replaced with data from the active entity.
+- **Empty**: **Keys** that did not have values and were replaced to empty.
 - **Comment**: Any comment associated with the website. These comments can be included in a separate column in the CSV file, allowing you to add additional context or information about each link.
 
 ## 5. Context Menu
@@ -510,9 +510,10 @@ You can disable this icon in the settings via the “Show User Data Icon” opti
 ### 6.3. Enabling Files
 You can select which CSV files to use by enabling or disabling them in the Gramplet's settings.
 
-## 7. OpenAI Usage
+## 7. AI Usage
 ![Settings](assets/img/ai.png)
 
+###7.1 OpenAI Usage
 This section provides an overview of how OpenAI is integrated into the WebSearch Gramplet. It covers:
 - **Usage of OpenAI**: The Gramplet interacts with OpenAI’s API to retrieve relevant genealogy websites based on user queries. The integration makes a **single API call** per request. OpenAI suggests **only those genealogy resources that are not already included** in the activated CSV files configured by the user.
 - **Data Transmission**: OpenAI receives **only** the following information:
@@ -522,8 +523,15 @@ This section provides an overview of how OpenAI is integrated into the WebSearch
 - **No data from the Gramps database is transmitted to OpenAI.**
 - **Cost Considerations:** As of **March 18, 2025**, the average cost per request is **0.0091 USD** (0.91 cents). With this pricing, approximately **109 requests** can be made for **1 USD**.
 - **Data Transmission**: When a request is made to OpenAI, the Gramplet sends a structured prompt describing the required genealogy resources.
-- **Disabling OpenAI Integration:** Users can **disable** the use of OpenAI in the settings at any time. Additionally, they can remove the OpenAI API key from the configuration. When OpenAI is disabled, the **AI-generated suggestions section will no longer appear** in the lower part of the Gramplet.
+- **Disabling OpenAI Integration:** Users can **disable** the use of OpenAI in the settings at any time. Additionally, they can remove the AI API key from the configuration. When OpenAI is disabled, the **AI-generated suggestions section will no longer appear** in the lower part of the Gramplet.
 - **Disclaimer:** The author assumes **no responsibility** for the use of OpenAI within this Gramplet. The user **accepts all risks** associated with its usage, whatever they may be. By enabling OpenAI integration, the user acknowledges and agrees that all interactions with OpenAI are subject to OpenAI’s terms of service and privacy policies.
+
+###7.2 Mistral Usage
+Mistral is another AI service integrated into the WebSearch Gramplet. It provides similar functionality to OpenAI in generating suggestions for genealogy resources based on user queries.
+- **Usage of Mistral**: Like OpenAI, Mistral makes a single API call per request and suggests genealogy websites not already included in the activated CSV files.
+- **Data Transmission**: Mistral receives the same data as OpenAI, including the list of domains from the activated CSV files and irrelevant domains marked by the user. No Gramps database data is transmitted.
+- **Disabling Mistral Integration**: Users can disable Mistral in the settings at any time, and if it’s disabled, the AI suggestions section for Mistral will not appear in the Gramplet.
+- **Disclaimer**: The author does not take responsibility for the use of Mistral within this Gramplet. The user accepts all risks associated with Mistral usage. By enabling Mistral, the user acknowledges and agrees to Mistral’s terms of service.
 
 ## 8. Community Contributions and Support
 
@@ -532,7 +540,7 @@ I encourage users who add **publicly useful links** to their **CSV files** to al
 To contribute:
 1. **Create an issue** on GitHub: [**WebSearch Issues**](https://github.com/jurchello/WebSearch/issues)
 2. **Provide the necessary details**, including:
-    - The **URL template** with the correct variable placeholders
+    - The **URL template** with the correct **key** placeholders
     - A **brief description** of the website
     - Any **specific navigation type or attributes** required
 
