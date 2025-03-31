@@ -4,3 +4,4 @@ lxml/grampsxml.xsd
 lxml/lxml.css
 lxml/query_html.xsl
 lxml/JSONL.xsl
+lxml/Mistral_AI.xsl
