@@ -144,7 +144,7 @@ class lxmlGramplet(Gramplet):
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
         self.button = Gtk.Button()
-        image = Gtk.Image.new_from_icon_name(Gtk.STOCK_OPEN, 6)
+        image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
         self.button.add(image)
         #self.button.set_size_request(40, 40)
         self.button.connect('clicked', self.__select_file)
@@ -160,7 +160,7 @@ class lxmlGramplet(Gramplet):
         # button
 
         button = Gtk.Button()
-        exe = Gtk.Image.new_from_icon_name(Gtk.STOCK_GO_DOWN, 6)
+        exe = Gtk.Image.new_from_icon_name(Gtk.STOCK_EXECUTE, 6)
         button.add(exe)
         button.connect("clicked", self.run)
         hbox.pack_end(button, False, False, 0) # v2
@@ -428,7 +428,7 @@ class lxmlGramplet(Gramplet):
                     # timestamp
                     if two.get('change'):
                         timestamp.append(two.get('change'))
-                        
+
                     # with namespace ...
                     #print(desc(three))
                     (tag, items) = three.tag, three.items()
@@ -765,11 +765,12 @@ class lxmlGramplet(Gramplet):
         page, head, body = Html.page(title, encoding='utf-8', lang=str(lang))
         head = body = ""
 
-        self.text = []
+        self.text_page = []
 
         self.XHTMLWriter(fname, page, head, body, of, thumbs, mediapath)
 
         LOG.info('End (Media)')
+        return self.text
 
     def __write_gallery(self, thumbs, mediapath):
         """
@@ -832,12 +833,12 @@ class lxmlGramplet(Gramplet):
             if mime.startswith("image"):
                 thumb = get_thumbnail_path(str(src), mtype=None, rectangle=None)
                 #LOG.debug(thumb)
-                self.text += Html('img', src=str(thumb), mtype=str(mime))
-                self.text += fullclear
-                self.text += Html('a', str(description), href=str(src), target='blank', title=str(mime))
-                self.text += fullclear
+                self.text_page += Html('img', src=str(thumb), mtype=str(mime))
+                self.text_page += fullclear
+                self.text_page += Html('a', str(description), href=str(src), target='blank', title=str(mime))
+                self.text_page += fullclear
 
-        return self.text
+        LOG.info(self.text_page)
 
 
     def close_file(self, of):
@@ -860,7 +861,7 @@ class lxmlGramplet(Gramplet):
 
         text = open(fname, 'w')
         text.write(head)
-        for i, txt in enumerate(self.text):
+        for i, txt in enumerate(self.text_page):
             #LOG.debug(txt)
             text.write(txt + '\n') # Html.write() ?
         text.close()
@@ -942,11 +943,27 @@ class lxmlGramplet(Gramplet):
         xslt_doc = etree.parse(os.path.join(USER_PLUGINS, 'lxml', 'JSONL.xsl'))
         transform = etree.XSLT(xslt_doc)
         outdoc = transform(content)
+        custom_jsonl = str(outdoc)
         jsonl = os.path.join(USER_PLUGINS, 'lxml', 'text.jsonl')
         outfile = open(jsonl, 'w')
 
-        outfile.write(str(outdoc))
+        outfile.write(custom_jsonl)
         outfile.close()
+
+        if isinstance(self.text, list):
+            LOG.info(self.text)
+        else:
+            start_iter = self.text.get_start_iter()
+            end_iter = self.text.get_end_iter()
+            format = self.text.register_serialize_tagset()
+            text = self.text.serialize(self.text,
+                                    format,
+                                    start_iter,
+                                    end_iter)
+            LOG.info(text)
+            info = self.text.get_text(start_iter, end_iter, True)
+            self.text.set_text(custom_jsonl + + info)
+
 
     def post(self, html):
         """
