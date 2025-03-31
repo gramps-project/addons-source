@@ -962,7 +962,7 @@ class lxmlGramplet(Gramplet):
                                     end_iter)
             LOG.info(text)
             info = self.text.get_text(start_iter, end_iter, True)
-            self.text.set_text(custom_jsonl + + info)
+            self.text.set_text(custom_jsonl + info)
 
 
     def post(self, html):
