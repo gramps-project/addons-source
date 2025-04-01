@@ -424,7 +424,7 @@ class lxmlGramplet(Gramplet):
 
                 msg.append(two.items())
 
-                if two.tag is (NAMESPACE + 'mediapath'):
+                if two.tag == (NAMESPACE + 'mediapath'):
                     mediapath = two.text
                 else:
                     mediapath = ''
@@ -826,25 +826,25 @@ class lxmlGramplet(Gramplet):
 
             # list of tuples [('',''),('','')]
 
-            if (list(thumb)[0])[0] is 'src':
+            if (list(thumb)[0])[0] == 'src':
                 src = (list(thumb)[0])[1]
             else:
                 src = 'No src'
             #LOG.debug(src)
 
-            if (list(thumb)[1])[0] is 'mime':
+            if (list(thumb)[1])[0] == 'mime':
                 mime = (list(thumb)[1])[1]
             else:
                 mime = 'No mime'
             #LOG.debug(mime)
 
-            if (list(thumb)[2])[0] is 'checksum':
+            if (list(thumb)[2])[0] == 'checksum':
                 checksum = (list(thumb)[2])[1]
             else:
                 checksum = 'No checksum'
             #LOG.debug(checksum)
 
-            if (list(thumb)[2])[0] is 'description':
+            if (list(thumb)[2])[0] == 'description':
                 description = (list(thumb)[2])[1]
             elif len(thumb) is 4:
                 description = (list(thumb)[3])[1]
