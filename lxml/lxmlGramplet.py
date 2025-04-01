@@ -109,15 +109,13 @@ def epoch(t):
             LOG.debug('Modules around time missing')
             return
 
-        if t == None:
+        if t is None:
             LOG.warning(_('Invalid timestamp'))
-            fmt = _('Unknown')
-        else:
-            date = int(t)
-            conv = datetime.fromtimestamp(date)
-            fmt = conv.strftime('%d %B %Y')
+            return _('Unknown')
 
-        return(fmt)
+        date = int(t)
+        conv = datetime.fromtimestamp(date)
+        return conv.strftime('%d %B %Y')
 
 #-------------------------------------------------------------------------
 #
@@ -269,7 +267,7 @@ class lxmlGramplet(Gramplet):
 
         filename = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
 
-        if LXML_OK and use_gzip == 1:
+        if LXML_OK and (use_gzip is 1):
             try:
                 os.system('gunzip < %s > %s' % (entry, filename))
             except:
@@ -277,7 +275,7 @@ class lxmlGramplet(Gramplet):
                 LOG.debug('Cannot use gunzip command')
                 return
             sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
-        elif LXML_OK and use_gzip == 0:
+        elif LXML_OK and (use_gzip is 0):
             try:
                 copy(entry, filename)
             except:
@@ -311,7 +309,7 @@ class lxmlGramplet(Gramplet):
         rng = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.rng')
 
         try:
-            if os.name == 'nt':
+            if os.name is 'nt':
                 os.system('xmllint --relaxng %s --noout %s' % (rng, filename))
             else:
                 os.system('xmllint --relaxng file://%s --noout %s' % (rng, filename))
@@ -323,7 +321,7 @@ class lxmlGramplet(Gramplet):
             tree = etree.parse(filename)
             doctype = tree.docinfo.doctype
             current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">'
-            if self.RNGValidation(tree, rng) == True:
+            if self.RNGValidation(tree, rng) is True:
                 # self.ParseXML(tree, filename) for debug
                 try:
                     self.xmltodict(filename)
@@ -426,7 +424,7 @@ class lxmlGramplet(Gramplet):
 
                 msg.append(two.items())
 
-                if two.tag == NAMESPACE + 'mediapath':
+                if two.tag is (NAMESPACE + 'mediapath'):
                     mediapath = two.text
                 else:
                     mediapath = ''
@@ -450,13 +448,13 @@ class lxmlGramplet(Gramplet):
                     #print(desc(three))
                     (tag, items) = three.tag, three.items()
 
-                    if three.tag == NAMESPACE + 'ptitle':
+                    if three.tag == (NAMESPACE + 'ptitle'):
                         if text != private_record:
                             text = str(three.text)
                         if text not in places:
                             places.append(text) # temp display
 
-                    if three.tag == NAMESPACE + 'pname':
+                    if three.tag == (NAMESPACE + 'pname'):
                         if text != private_record:
                             text = str(three.attrib.get('value'))
                         translation = str(three.attrib.get('lang'))
@@ -468,12 +466,12 @@ class lxmlGramplet(Gramplet):
                             LOG.info(where)
                         if text not in places:
                             places.append(text) # temp display
-                    if three.tag == NAMESPACE + 'stitle' and three.text not in sources:
+                    if three.tag == (NAMESPACE + 'stitle') and three.text not in sources:
                         # need to add an exception
                         if not three.text:
                             three.text = ""
                         sources.append(three.text)
-                    if three.tag == NAMESPACE + 'file' and three.items() not in thumbs:
+                    if three.tag == (NAMESPACE + 'file') and three.items() not in thumbs:
                         thumbs.append(three.items())
 
                     # search last name
@@ -482,7 +480,7 @@ class lxmlGramplet(Gramplet):
 
                         # with namespace ...
 
-                        if four.tag == NAMESPACE + 'surname' and four.text != None:
+                        if four.tag == (NAMESPACE + 'surname') and four.text != None:
                             if text != private_record:
                                 surnames.append(four.text)
                             else:
@@ -630,7 +628,7 @@ class lxmlGramplet(Gramplet):
 
         dtd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
-            if os.name == 'nt':
+            if os.name is 'nt':
                 os.system('xmllint --dtdvalid %(dtd)s --noout --dropdtd %(file)s' % {'dtd': dtd, 'file': filename})
             else:
                 os.system('xmllint --dtdvalid file://%(dtd)s --noout --dropdtd %(file)s' % {'dtd': dtd, 'file': filename})
@@ -828,27 +826,27 @@ class lxmlGramplet(Gramplet):
 
             # list of tuples [('',''),('','')]
 
-            if (list(thumb)[0])[0] == 'src':
+            if (list(thumb)[0])[0] is 'src':
                 src = (list(thumb)[0])[1]
             else:
                 src = 'No src'
             #LOG.debug(src)
 
-            if (list(thumb)[1])[0] == 'mime':
+            if (list(thumb)[1])[0] is 'mime':
                 mime = (list(thumb)[1])[1]
             else:
                 mime = 'No mime'
             #LOG.debug(mime)
 
-            if (list(thumb)[2])[0] == 'checksum':
+            if (list(thumb)[2])[0] is 'checksum':
                 checksum = (list(thumb)[2])[1]
             else:
                 checksum = 'No checksum'
             #LOG.debug(checksum)
 
-            if (list(thumb)[2])[0] == 'description':
+            if (list(thumb)[2])[0] is 'description':
                 description = (list(thumb)[2])[1]
-            elif len(thumb) == 4:
+            elif len(thumb) is 4:
                 description = (list(thumb)[3])[1]
             else:
                 description = 'No description'
