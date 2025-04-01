@@ -53,6 +53,8 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
+ngettext = _trans.ngettext
+
 LOG = logging.getLogger("lxml")
 
 #-------------------------------------------------------------------------
@@ -460,9 +462,9 @@ class lxmlGramplet(Gramplet):
                         translation = str(three.attrib.get('lang'))
                         if translation == 'None':
                             translation = xml_lang()[0:2]
-                            text = text + _(' - (? or %(lang)s)') % {'lang':translation}
+                            text += _(' - (? or %(lang)s)') % {'lang':translation}
                         else:
-                            text = text + _(' - (%(lang)s)') % {'lang':translation}
+                            text += _(' - (%(lang)s)') % {'lang':translation}
                         if text not in places:
                             places.append(text) # temp display
                     if three.tag == NAMESPACE + 'stitle' and three.text not in sources:
@@ -545,12 +547,24 @@ class lxmlGramplet(Gramplet):
 
         period = _('Period: ') +  first + ' => ' + last + '\n\n'
 
-        su =  '\t' + str(nb_surnames) + '\t' + _(' entries for surname(s); no frequency yet') + '\n'
-        p =  '\t' + str(nb_pnames) + '\t' + _(' entries for place(s)') + '\n'
-        n =  '\t' + str(nb_notes) + '\t' + _(' note(s)')  + '\n'
-        so =  '\t' + str(nb_sources) + '\t' + _(' source(s)') + '\n\n'
+        surnames_string = ngettext(
+                    '\t{number} surname',
+                    '\t{number} surnames; no frequency yet\n',
+                    nb_surnames).format(number=nb_surnames)
+        places_string = ngettext(
+                    '\t{number} place',
+                    '\t{number} places\n',
+                    nb_pnames).format(number=nb_pnames)
+        notes_string = ngettext(
+                    '\t{number} note',
+                    '\t{number} notes\n',
+                    nb_notes).format(number=nb_notes)
+        sources_string = ngettext(
+                    '\t{number} source',
+                    '\t{number} sources\n',
+                    nb_sources).format(number=nb_sources)
 
-        counters = su + p + n + so
+        counters = surnames_string + places_string + notes_string + sources_string 
 
         libs = 'LIBXML' + str(LIBXML_VERSION) + '\tLIBXSLT' + str(LIBXSLT_VERSION)
 
@@ -777,7 +791,7 @@ class lxmlGramplet(Gramplet):
         fname = os.path.join(USER_PLUGINS, 'lxml', _('Gallery.html'))
         of = open(fname, "w")
 
-        LOG.info('Empty "Gallery.hml" file created')
+        LOG.info('Empty "Gallery.html" file created')
 
         # htmlinstance = page
         # ignored by current code...
