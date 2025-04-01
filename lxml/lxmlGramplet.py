@@ -280,7 +280,7 @@ class lxmlGramplet(Gramplet):
         if LXML_OK and use_gzip:
             self.uncompress_file(entry, filename)
         elif LXML_OK:
-            self.copy_file(entry)
+            self.copy_file(entry, filename)
 
         # XSD structure via lxml
 
