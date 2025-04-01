@@ -324,7 +324,7 @@ class lxmlGramplet(Gramplet):
             doctype = tree.docinfo.doctype
             current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">'
             if self.RNGValidation(tree, rng) == True:
-                #self.ParseXML(tree, filename) for debug
+                # self.ParseXML(tree, filename) for debug
                 try:
                     self.xmltodict(filename)
                     self.ParseXML(tree, filename)
@@ -460,11 +460,12 @@ class lxmlGramplet(Gramplet):
                         if text != private_record:
                             text = str(three.attrib.get('value'))
                         translation = str(three.attrib.get('lang'))
-                        if translation == 'None':
-                            translation = xml_lang()[0:2]
-                            text += _(' - (? or %(lang)s)') % {'lang':translation}
-                        else:
+                        if translation != 'None':
                             text += _(' - (%(lang)s)') % {'lang':translation}
+                        else:
+                            translation = xml_lang()[0:2]
+                            where = _(' - (? or %(lang)s)') % {'lang':translation}
+                            LOG.info(where)
                         if text not in places:
                             places.append(text) # temp display
                     if three.tag == NAMESPACE + 'stitle' and three.text not in sources:
