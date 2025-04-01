@@ -185,7 +185,7 @@ class lxmlGramplet(Gramplet):
 
     def __select_file(self, obj):
         """
-        Call back function to handle the open button press
+        Callback function to handle the open button press
         """
 
         my_action = Gtk.FileChooserAction.SAVE
@@ -198,29 +198,22 @@ class lxmlGramplet(Gramplet):
                                                 Gtk.ResponseType.OK),
                                                 parent=self.uistate.window)
 
-        name = os.path.basename(self.entry.get_text())
-        dialog.set_current_name(name)
-        dialog.set_current_folder(self.__base_path)
+        dialog.set_current_name(os.path.basename(self.entry.get_text()))
         dialog.present()
-        status = dialog.run()
-        if status == Gtk.ResponseType.OK:
+        response = dialog.run()
+        if response == Gtk.ResponseType.OK:
             self.set_filename(dialog.get_filename())
         dialog.destroy()
 
 
     def set_filename(self, path):
         """
-        Set the currently selected dialog.
+        Set the currently selected file.
         """
-
         if not path:
             return
-        if os.path.dirname(path):
-            self.__base_path = os.path.dirname(path)
-            self.__file_name = os.path.basename(path)
-        else:
-            self.__base_path = os.getcwd()
-            self.__file_name = path
+        self.__base_path = os.path.dirname(path) or os.getcwd()
+        self.__file_name = os.path.basename(path)
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
 
@@ -228,64 +221,66 @@ class lxmlGramplet(Gramplet):
         """
         Method that is run when you click the Run button.
         """
-
         entry = self.entry.get_text()
         if ' ' in entry:
-            ErrorDialog(_('Space character on filename'), _('Please fix space on "%s"') % entry)
+            ErrorDialog(_('Space character in filename'), _('Please fix space in "%s"') % entry)
             LOG.debug('Space on filename')
             return
 
-        self.ReadXML(entry)
+        self.read_xml(entry)
 
 
-    def ReadXML(self, entry):
+    def is_gzip(self, entry):
+        """
+        Check if the file is gzip compressed.
+        """
+        if GZIP_OK:
+            try:
+                with gzip.open(entry, "r") as test:
+                    test.read(1)
+                return True
+            except (IOError, ValueError):
+                return False
+        return False
+
+
+    def uncompress_file(self, entry, filename):
+        """
+        Uncompress the gzip file.
+        """
+        try:
+            os.system(f'gunzip < {entry} > {filename}')
+        except Exception as e:
+            ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
+            LOG.error('Cannot use gunzip command')
+            raise e
+
+
+    def copy_file(self, entry, filename):
+        """
+        Copy the file to the destination.
+        """
+        try:
+            copy(entry, filename)
+        except Exception as e:
+            ErrorDialog(_('Is it a .gramps?'), _('Cannot copy "%s"') % entry)
+            LOG.error('Cannot copy the file')
+            raise e
+
+
+    def read_xml(self, entry):
         """
         Read the .gramps
         """
 
-        if GZIP_OK:
-            use_gzip = 1
-            try:
-                test = gzip.open(entry, "r")
-                test.read(1)
-                test.close()
-            except IOError:
-                use_gzip = 0
-            except ValueError:
-                use_gzip = 1
-        else:
-            use_gzip = 0
-
-        # lazy ...
-        if os.name != 'posix' and os.name != 'nt':
-
-            # GtkTextView
-
-            self.text.set_text(_('Sorry, no support for your OS yet!'))
-            LOG.error('Not tested under this OS')
-            return
+        use_gzip = self.is_gzip(entry)
 
         filename = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
 
-        if LXML_OK and (use_gzip is 1):
-            try:
-                os.system('gunzip < %s > %s' % (entry, filename))
-            except:
-                ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
-                LOG.debug('Cannot use gunzip command')
-                return
-            sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
-        elif LXML_OK and (use_gzip is 0):
-            try:
-                copy(entry, filename)
-            except:
-                ErrorDialog('Is it a .gramps ?', _('Cannot copy "%s"') % entry)
-                LOG.debug('Cannot copy the file')
-                return
-            sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
-        else:
-            LOG.error('lxml or gzip is missing')
-            return
+        if LXML_OK and use_gzip:
+            self.uncompress_file(entry, filename)
+        elif LXML_OK:
+            copy(entry, filename)
 
         # XSD structure via lxml
 
@@ -592,7 +587,7 @@ class lxmlGramplet(Gramplet):
 
     def xsd(self, xsd, filename):
         """
-        Look at schema, validation, conform, structure, content, etc...
+        Look at schema, validation, conform, structure, content, etc.
         Code for 1.7.2
         """
 
@@ -619,7 +614,7 @@ class lxmlGramplet(Gramplet):
 
     def check_valid(self, filename):
         """
-        Look at schema, validation, conform, etc...
+        Look at schema, validation, conform, etc.
         Code for 1.7.2
         """
 
