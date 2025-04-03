@@ -535,6 +535,10 @@ class lxmlGramplet(Gramplet):
 
         period = _('Period: ') +  first + ' => ' + last + '\n\n'
 
+        # for addons translators ? template .pot ?
+        _('\t{number} surname'), _('\t{number} surname; no frequency yet'),
+        _('\t{number} place'), _('\t{number} place'),
+        _('\t{number} note'), _('\t{number} note')
         surnames_string = ngettext(
                     '\t{number} surname',
                     '\t{number} surnames; no frequency yet\n',
