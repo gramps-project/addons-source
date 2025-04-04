@@ -273,7 +273,7 @@ class ModelRowGenerator:
             return str(data.get(key, f"%({key})s"))
 
         try:
-            pattern = re.compile(r"%\((\w+)\)s")
+            pattern = re.compile(r"%\(([a-zA-Z0-9_.-]+)\)s")
             return pattern.sub(replacer, template)
         except Exception as e:
             print(
