@@ -24,7 +24,15 @@ websites in JSON format.
 """
 
 import sys
-import requests
+import traceback
+
+try:
+    import requests
+except ImportError:
+    print(
+        "⚠ The 'requests' module is missing. Install it using: `pip install requests`.",
+        file=sys.stderr,
+    )
 
 
 class MistralSiteFinder:
@@ -114,7 +122,58 @@ class MistralSiteFinder:
             )
             response.raise_for_status()
             data = response.json()
+
+        except (
+            requests.ConnectionError,
+            requests.ConnectTimeout,
+            requests.Timeout,
+            requests.ReadTimeout,
+            requests.HTTPError,
+            requests.TooManyRedirects,
+            requests.InvalidURL,
+            requests.InvalidProxyURL,
+            requests.URLRequired,
+            requests.MissingSchema,
+            requests.InvalidSchema,
+            requests.SSLError,
+            requests.ProxyError,
+            requests.ChunkedEncodingError,
+        ) as e:
+            print(f"Error: {str(e)}", file=sys.stderr)
+            return "[]"
+
+        except (
+            requests.ContentDecodingError,
+            requests.InvalidHeader,
+            requests.StreamConsumedError,
+            requests.UnrewindableBodyError,
+        ) as e:
+            print(f"Error: {str(e)}", file=sys.stderr)
+            print(traceback.format_exc(), file=sys.stderr)
+            return "[]"
+
+        except (
+            requests.RequestsDependencyWarning,
+            requests.RequestsWarning,
+            requests.RetryError,
+            requests.FileModeWarning,
+        ) as e:
+            print(f"Warning: {str(e)}")
+            return "[]"
+
+        except requests.RequestException as e:
+            print(f"General request error: {str(e)}", file=sys.stderr)
+            return "[]"
+
+        except Exception as e:
+            print(f"Unexpected error: {str(e)}", file=sys.stderr)
+            print(traceback.format_exc(), file=sys.stderr)
+            return "[]"
+
+        try:
             return data["choices"][0]["message"]["content"]
         except Exception as e:
-            print(f"❌ Error while calling Mistral API: {e}", file=sys.stderr)
+            print(
+                f"❌ Error parsing Mistral response: {e}. data: {data}", file=sys.stderr
+            )
             return "[]"
