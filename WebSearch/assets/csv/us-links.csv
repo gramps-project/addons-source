@@ -1,5 +1,5 @@
 Navigation type,Title,Is enabled,URL                                                                                                                                         ,Comment
-People,Find A Grave,1,https://www.findagrave.com/cgi-bin/fg.cgi?page=gsr&GSfn=%(given)s&GSmn=%(middle)s&GSln=%(surname)s&GSby=%(birth_year)s&GSbyrel=in&GSdy=%(death_year)s&GSdyrel=in&GScntry=0&GSst=0&GSgrid=&df=all&GSob=b,
+People,Find A Grave,1,https://www.findagrave.com/cgi-bin/fg.cgi?page=gsr&GSfn=%(given)s&GSmn=%(middle)s&GSln=%(surname)s&GSby=%(birth_year)s&GSbyrel=in&GSdy=%(death_year)s&GSdyrel=in&GScntry=0&GSst=0&GSgrid=&df=all&GSob=b&includeMaidenName=true,
 People,Geneanet (favrejhas),0,https://gw1.geneanet.org/index.php3?b=favrejhas&m=NG&n=%(surname)s&t=N&x=0&y=0,
 People,Roglo,1,https://roglo.eu/roglo?m=NG&n=%(given)s+%(surname)s&t=PN,
 People,FindMyPast,1,https://www.findmypast.com/search/results?firstname=%(given)s&firstname_variants=true&lastname=%(surname)s&eventyear=%(birth_year)s&eventyear_offset=2&yearofdeath=%(death_year)s&yearofdeath_offset=2&sid=999,Account Login: free
