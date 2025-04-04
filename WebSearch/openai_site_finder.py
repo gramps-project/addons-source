@@ -117,12 +117,47 @@ class OpenaiSiteFinder:
                     {"role": "user", "content": user_message},
                 ],
             )
+
+        except (
+            openai.APIConnectionError,
+            openai.APIError,
+            openai.APIResponseValidationError,
+            openai.APIStatusError,
+            openai.APITimeoutError,
+            openai.AuthenticationError,
+            openai.ConflictError,
+            openai.ContentFilterFinishReasonError,
+            openai.InternalServerError,
+            openai.NotFoundError,
+            openai.PermissionDeniedError,
+            openai.RateLimitError,
+            openai.UnprocessableEntityError,
+        ) as e:
+            print(f"Error: {str(e)}", file=sys.stderr)
+            return "[]"
+
+        except (
+            openai.BadRequestError,
+            openai.LengthFinishReasonError,
+        ) as e:
+            print(f"Error: {str(e)}", file=sys.stderr)
+            print(traceback.format_exc(), file=sys.stderr)
+            return "[]"
+
+        except openai.OpenAIError as e:
+            print(f"General OpenAI error: {str(e)}", file=sys.stderr)
+            return "[]"
+
         except Exception as e:
-            print(f"❌ Unexpected error while calling OpenAI: {e}", file=sys.stderr)
+            print(f"Unexpected error: {str(e)}", file=sys.stderr)
+            print(traceback.format_exc(), file=sys.stderr)
             return "[]"
 
         try:
             return completion.choices[0].message.content
         except Exception as e:
-            print(f"❌ Error parsing OpenAI response: {e}", file=sys.stderr)
+            print(
+                f"❌ Error parsing OpenAI response: {e}. completion data: {completion}",
+                file=sys.stderr,
+            )
             return "[]"
