@@ -144,9 +144,12 @@ class lxmlGramplet(Gramplet):
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
         self.button = Gtk.Button()
-        image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
+        if os.name is 'nt':
+            image.set_from_stock(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
+            self.button.set_size_request(40, 40)
+        else:
+            image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
         self.button.add(image)
-        #self.button.set_size_request(40, 40)
         self.button.connect('clicked', self.__select_file)
 
         # GUI setup:
@@ -159,9 +162,12 @@ class lxmlGramplet(Gramplet):
 
         # button
 
-        button = Gtk.Button()
-        exe = Gtk.Image.new_from_icon_name(Gtk.STOCK_EXECUTE, 6)
-        button.add(exe)
+        if os.name is 'nt':
+            button = Gtk.Button(_("Run"))
+        else:
+            button = Gtk.Button()
+            exe = Gtk.Image.new_from_icon_name(Gtk.STOCK_EXECUTE, 6)
+            button.add(exe)
         button.connect("clicked", self.run)
         hbox.pack_end(button, False, False, 0) # v2
 
