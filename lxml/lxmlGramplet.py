@@ -765,7 +765,7 @@ class lxmlGramplet(Gramplet):
         LOG.info(_('Try to open\n "%s"\n into your preferred web navigator ...') % html)
         display_url(html)
 
-        #self.post(html)
+        self.post(html)
 
 
     def print_media(self, thumbs, mediapath):
@@ -979,6 +979,7 @@ class lxmlGramplet(Gramplet):
         """
         try:
             # Open the HTML file
+            import urllib
             with urllib.request.urlopen(f'file://{html}') as response:
                 data = response.read()
 
