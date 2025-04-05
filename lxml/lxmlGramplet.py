@@ -145,11 +145,12 @@ class lxmlGramplet(Gramplet):
 
         self.button = Gtk.Button()
         if os.name is 'nt':
-            image.set_from_stock(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
+            image = Gtk.Image.set_from_stock(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
             self.button.set_size_request(40, 40)
         else:
             image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
         self.button.add(image)
+        #self.button.set_size_request(40, 40)
         self.button.connect('clicked', self.__select_file)
 
         # GUI setup:
@@ -162,6 +163,7 @@ class lxmlGramplet(Gramplet):
 
         # button
 
+        button = Gtk.Button()
         if os.name is 'nt':
             button = Gtk.Button(_("Run"))
         else:
@@ -233,7 +235,9 @@ class lxmlGramplet(Gramplet):
             LOG.debug('Space on filename')
             return
 
-        self.read_xml(entry)
+        sys.excepthook = self.read_xml(entry)
+
+        #self.read_xml(entry)
 
 
     def is_gzip(self, entry):
