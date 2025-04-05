@@ -163,7 +163,6 @@ class lxmlGramplet(Gramplet):
 
         # button
 
-        button = Gtk.Button()
         if os.name is 'nt':
             button = Gtk.Button(_("Run"))
         else:
