@@ -145,8 +145,8 @@ class lxmlGramplet(Gramplet):
 
         self.button = Gtk.Button()
         if os.name is 'nt':
-            image = Gtk.Image.set_from_stock(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
-            self.button.set_size_request(40, 40)
+            self.button = Gtk.Button(_("Select file"))
+            #self.button.set_size_request(40, 40)
         else:
             image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
         self.button.add(image)
