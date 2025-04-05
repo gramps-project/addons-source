@@ -1,8 +1,10 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2009        Brian G. Matherly
+# Copyright (C) 2009        Michiel D. Nauta
 # Copyright (C) 2010        Douglas S. Blank
-# Copyright (C) 2011-2012   Jerome Rapinat
+# Copyright (C) 2010        Jakim Friant
+# Copyright (C) 2012        Jerome Rapinat
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,13 +27,13 @@
 # Python modules
 #
 #------------------------------------------------------------------------
+import codecs
 import sys
 import os
 from shutil import copy
 from gi.repository import Gtk
-#import subprocess
-
-import logging
+from xml.etree import ElementTree
+import gzip
 
 #------------------------------------------------------------------------
 #
@@ -40,57 +42,28 @@ import logging
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import date
-import gramps.gen.datehandler
-from gramps.gen.const import USER_HOME, USER_PLUGINS
-from gramps.gen.config import config
-from gramps.gui.display import display_url
-from gramps.gui.dialog import ErrorDialog
-from gramps.plugins.lib.libhtml import Html, xml_lang
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+from gramps.gen.const import USER_HOME, USER_PLUGINS
+from gramps.gui.dialog import ErrorDialog
 
-ngettext = _trans.ngettext
+#from gen.merge.mergeevent import MergeEventQuery
+#from gen.merge.mergeperson import MergePersonQuery
+#from gen.merge.mergefamily import MergeFamilyQuery
+#from gen.merge.mergesource import MergeSourceQuery
+#from gen.merge.mergecitation import MergeCitationQuery
+#from gen.merge.mergeplace import MergePlaceQuery
+#from gen.merge.mergemedia import MergeMediaQuery
+#from gen.merge.mergerepository import MergeRepoQuery
+#from gen.merge.mergenote import MergeNoteQuery
 
-LOG = logging.getLogger("lxml")
 
-#-------------------------------------------------------------------------
-#
-# Try to detect the presence of gzip
-#
-#-------------------------------------------------------------------------
-try:
-    import gzip
-    GZIP_OK = True
-except ImportError:
-    GZIP_OK = False
-    ErrorDialog(_('Where is gzip?'), _('"gzip" is missing'))
-    LOG.error('No gzip')
 
-#-------------------------------------------------------------------------
-#
-# Try to detect the presence of lxml (only for using XPATH/XSLT)
-#
-# from xml.etree import ElementTree from default python default python has a basic XPATH/XSLT API
-#
-#-------------------------------------------------------------------------
-try:
-    from lxml import etree, objectify
-    LXML_OK = True
-    # current code is working with:
-    # LXML_VERSION (4, 3, 4)
-    # LIBXML_VERSION (2, 9, 1))
-    # LIBXSLT_VERSION (1, 1, 28))
-    LXML_VERSION = etree.LXML_VERSION
-    LIBXML_VERSION = etree.LIBXML_VERSION
-    LIBXSLT_VERSION = etree.LIBXSLT_VERSION
-except ImportError:
-    LXML_OK = False
-    ErrorDialog(_('Missing python3 lxml'), _('Please, try to install "python3 lxml" package.'))
-    LOG.debug('No lxml')
+NAMESPACE = '{http://gramps-project.org/xml/1.7.2/}'
 
 #-------------------------------------------------------------------------
 #
@@ -98,24 +71,19 @@ except ImportError:
 #
 #-------------------------------------------------------------------------
 def epoch(t):
-        """
-        Try to convert timestamp
-        """
+    """
+    Convert a timestamp to a human-readable date format.
+    """
+    try:
+        from datetime import datetime
+    except ImportError:
+        return 'Unknown'
+    if t is None:
+        return _('Invalid timestamp')
 
-        try:
-            from datetime import datetime
-            from time import strftime
-        except ImportError:
-            LOG.debug('Modules around time missing')
-            return
-
-        if t is None:
-            LOG.warning(_('Invalid timestamp'))
-            return _('Unknown')
-
-        date = int(t)
-        conv = datetime.fromtimestamp(date)
-        return conv.strftime('%d %B %Y')
+    date = int(t)
+    conv = datetime.fromtimestamp(date)
+    return conv.strftime('%d %B %Y')
 
 #-------------------------------------------------------------------------
 #
@@ -123,20 +91,19 @@ def epoch(t):
 #
 #-------------------------------------------------------------------------
 
-NAMESPACE = '{http://gramps-project.org/xml/1.7.2/}'
-
-class lxmlGramplet(Gramplet):
+class etreeGramplet(Gramplet):
     """
-    Gramplet for testing lxml
+    Gramplet for testing etree (Python 2.7) and Gramps XML parsing
     """
 
     def init(self):
         """
-        Constructs the GUI, consisting of an entry, a text view and
-        a Run button.
+        Constructs the GUI, consisting of an entry, a text view and a Run button.
         """
 
-        # filename and selector
+        self.last = 5
+
+        # file selection
 
         self.__base_path = USER_HOME
         self.__file_name = "test.gramps"
@@ -145,12 +112,11 @@ class lxmlGramplet(Gramplet):
 
         self.button = Gtk.Button()
         if os.name is 'nt':
-            image = Gtk.Image.set_from_stock(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
+            image= Gtk.Image.set_from_stock(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
             self.button.set_size_request(40, 40)
         else:
             image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
         self.button.add(image)
-        #self.button.set_size_request(40, 40)
         self.button.connect('clicked', self.__select_file)
 
         # GUI setup:
@@ -197,7 +163,7 @@ class lxmlGramplet(Gramplet):
 
         my_action = Gtk.FileChooserAction.SAVE
 
-        dialog = Gtk.FileChooserDialog('lxml',
+        dialog = Gtk.FileChooserDialog('etree',
                                        action=my_action,
                                        buttons=(Gtk.STOCK_CANCEL,
                                                 Gtk.ResponseType.CANCEL,
@@ -224,33 +190,39 @@ class lxmlGramplet(Gramplet):
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
 
+    def build_options(self):
+        from gramps.gen.plug.menu import NumberOption
+        self.add_option(NumberOption(_("Number of editions back"),
+                                     self.last, 2, 5000))
+
+
+    def save_options(self):
+        self.last = int(self.get_option(_("Number of editions back")).get_value())
+
+
     def run(self, obj):
         """
         Method that is run when you click the Run button.
         """
+
         entry = self.entry.get_text()
         if ' ' in entry:
-            ErrorDialog(_('Space character in filename'), _('Please fix space in "%s"') % entry)
-            LOG.debug('Space on filename')
+            ErrorDialog(_('Space character on filename or path'), _('Please fix space on "%s"') % entry)
             return
 
         sys.excepthook = self.read_xml(entry)
-
-        #self.read_xml(entry)
 
 
     def is_gzip(self, entry):
         """
         Check if the file is gzip compressed.
         """
-        if GZIP_OK:
-            try:
-                with gzip.open(entry, "r") as test:
-                    test.read(1)
-                return True
-            except (IOError, ValueError):
-                return False
-        return False
+        try:
+            with gzip.open(entry, "r") as test:
+                test.read(1)
+            return True
+        except IOError:
+            return False
 
 
     def uncompress_file(self, entry, filename):
@@ -281,718 +253,293 @@ class lxmlGramplet(Gramplet):
         """
         Read the .gramps
         """
+        self.text.set_text('Reading the file...')
 
         use_gzip = self.is_gzip(entry)
 
-        filename = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
+        # lazy ...
+        if os.name != 'posix' and os.name != 'nt':
 
-        if LXML_OK and use_gzip:
-            self.uncompress_file(entry, filename)
-        elif LXML_OK:
-            self.copy_file(entry, filename)
+            # GtkTextView
 
-        # XSD structure via lxml
-
-        xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
-        try:
-            self.xsd(xsd, filename)
-            #pass
-        except:
-            ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
-            LOG.debug(self.xsd(xsd, filename))
-
-        # DTD syntax via xmllint (libxml2-utils)
-
-        try:
-            self.check_valid(filename)
-        except Exception as e:
-            LOG.info(_('xmllint: skip DTD validation for "%(file)s"') % {'file': entry})
-
-        # RNG validation via xmllint (libxml2-utils)
-
-        rng = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.rng')
-
-        try:
-            if os.name is 'nt':
-                os.system(f'xmllint --relaxng {rng} --noout {filename}')
-            else:
-                os.system(f'xmllint --relaxng file://{rng} --noout {filename}')
-        except Exception as e:
-            LOG.info(_('xmllint: skip RelaxNG validation for "%(file)s"') % {'file': entry})
-
-        try:
-            #tree = etree.ElementTree(file=filename)
-            tree = etree.parse(filename)
-            doctype = tree.docinfo.doctype
-            current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">'
-            if self.rng_validation(tree, rng):
-                # self.parse_xml(tree, filename) for debug
-                try:
-                    self.xmltodict(filename)
-                    self.parse_xml(tree, filename)
-                except:
-                    ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename})
-                    LOG.debug('Cannot parse the content of the XML copy or missing "query_html.xsl" file.')
-            elif doctype != current:
-                ErrorDialog(_('Gramps version'), _('Wrong namespace\nNeed: %s') % current)
-                LOG.debug('Namespace is wrong')
-            else:
-                ErrorDialog(_('RelaxNG validation'), _('Cannot validate "%(file)s" via RelaxNG schema') % {'file': entry})
-                LOG.debug('RelaxNG validation failed')
-        except etree.XMLSyntaxError as e:
-            ErrorDialog(_('File issue'), _('Cannot parse "%(file)s" via etree') % {'file': entry})
-            log = e.error_log.filter_from_level(etree.ErrorLevels.FATAL)
-            LOG.debug(log)
-            debug = e.error_log.last_error
-            LOG.debug(debug.domain_name)
-            LOG.debug(debug.type_name)
-            LOG.debug(debug.filename)
+            self.text.set_text(_('Sorry, no support for your OS yet!'))
             return
 
+        if use_gzip:
+            self.uncompress_file(entry)
+            self.copy_file(entry)
 
-    def xmltodict(self, filename):
-        """
-        xmltodict python 3rd-party lib
-        """
-        try:
-            import xmltodict, json
-            with open(filename, "rb") as file:
-                self.text.set_text(_('xmltodict'))
-                document = xmltodict.parse(file, dict_constructor=dict)
-                LOG.info(xmltodict.unparse(document, pretty=True))
-        except ImportError:
-            pass
+        filename = os.path.join(USER_PLUGINS, 'lxml', 'etree.xml')
+
+        tree = ElementTree.parse(filename)
+        self.parse_xml(tree, filename)
 
 
     def parse_xml(self, tree, filename):
         """
-        Parse the validated .gramps file
+        Parse the .gramps
         """
+
         root = tree.getroot()
 
         # GtkTextView ; buffer limitation ...
 
-        if isinstance(self.text, list):
-            pass
-        else:
-            self.text.set_text(_('Parsing file...'))
+        #self.text.set_text(ElementTree.tostring(root))
 
-        #LOG.info(etree.tostring(root, pretty_print=True))
+        # timestamp
 
-        # namespace issues !
+        timestamp = []
+        timestamp_int = []
 
-        namespace = root.nsmap
+        # XML attributes
 
-        surname_tag = etree.SubElement(root, NAMESPACE + 'surname')
-        pname_tag = etree.SubElement(root, NAMESPACE + 'pname')
-        private_surname = config.get('preferences.private-surname-text')
-        private_record = config.get('preferences.private-record-text')
+        # CVS, RCS like
+        keys = []
 
-        # variable
-
-        expr = "//*[local-name() = $name]"
-
-        # count function
-        # float and seems to also count the parent tag: name[0] !
-
-        count_elements = etree.XPath("count(//*[local-name() = $name])")
-
-        # textual children strings function
-
-        desc = etree.XPath('descendant-or-self::text()')
-
-        # TODO: cleanup !
-        # quick but not a nice method ...
-
-        msg = []
-        #tags = []
-        places = []
+        # counters
+        entries = []
+        tags = []
+        events = []
+        people = []
+        families = []
         sources = []
-        surnames = []
-        timestamp = []
-        thumbs = []
-
-        LOG.info('start iteration')
-
-        for one in root.iter():
-
-            #(tag, item) = one.tag, one.items()
-            #print(tag, item)
-
-            for two in one.iter():
-
-                #tags.append(two.tag)
-
-                msg.append(two.items())
-
-                if two.tag == (NAMESPACE + 'mediapath'):
-                    mediapath = two.text
-                else:
-                    mediapath = ''
-
-                # privacy
-
-                if two.get('priv'): # XML: optional
-                    text = private_record
-                else:
-                    text = ""
-
-                # search ptitle and time log
-
-                for three in two.iter():
-
-                    # timestamp
-                    if two.get('change'):
-                        timestamp.append(two.get('change'))
-
-                    # with namespace ...
-                    #print(desc(three))
-                    (tag, items) = three.tag, three.items()
-
-                    if three.tag == (NAMESPACE + 'ptitle'):
-                        if text != private_record:
-                            text = str(three.text)
-                        if text not in places:
-                            places.append(text) # temp display
-
-                    if three.tag == (NAMESPACE + 'pname'):
-                        if text != private_record:
-                            text = str(three.attrib.get('value'))
-                        translation = str(three.attrib.get('lang'))
-                        if translation != 'None':
-                            text += _(' - (%(lang)s)') % {'lang':translation}
-                        else:
-                            translation = xml_lang()[0:2]
-                            where = _(' - (? or %(lang)s)') % {'lang':translation}
-                            LOG.info(where)
-                        if text not in places:
-                            places.append(text) # temp display
-                    if three.tag == (NAMESPACE + 'stitle') and three.text not in sources:
-                        # need to add an exception
-                        sources.append(three.text or "")
-                    if three.tag == (NAMESPACE + 'file') and three.items() not in thumbs:
-                        thumbs.append(three.items())
-
-                    # search last name
-
-                    for four in three.iter():
-
-                        # with namespace ...
-
-                        if four.tag == (NAMESPACE + 'surname') and four.text != None:
-                            if text != private_record:
-                                surnames.append(four.text)
-                            else:
-                                surnames.append(private_surname)
-
-        LOG.info('end of loops')
-
-
-        # All tags
-        #print(tags)
-
-        # keys, values; no textual data;
-        # root child level items as keys for revision control ???
-        #revision = msg
-
-        #print(revision)
-
-        log = msg[2]
-        if not log:
-            ErrorDialog(_('Missing header'), _('Not a valid .gramps.\n'
-                                    'Cannot run the gramplet...\n'
-                                    'Please, try to use a .gramps\n'
-                                    'generated by Gramps 6.x.'))
-            LOG.debug('header missing')
-            return
-
-        # dirty XML write method ...
-        # need to create a fake entry !
-
-        if int(count_elements(root, name='surname')) > 1:
-            nb_surnames = int(count_elements(root, name='surname'))
-        else:
-            nb_surnames = surnames = [_('0')]
-
-        if int(count_elements(root, name='pname')) > 1:
-            nb_pnames = int(count_elements(root, name='pname'))
-        else:
-            nb_pnames = places = [_('0')]
-
-        if int(count_elements(root, name='note')) > 1:
-            nb_notes = int(count_elements(root, name='note'))
-        else:
-            nb_notes = _('0')
-
-        if int(count_elements(root, name='stitle')) > 1:
-            nb_sources = int(count_elements(root, name='stitle'))
-        else:
-            nb_sources = _('0')
-
-        # time logs
-
-        timestamp.sort()
-        start = timestamp[0]
-        end = timestamp[-1]
-        timestamp = []
-        first = epoch(start)
-        last = epoch(end)
-
-        header = _('File parsed with') + ' LXML' + str(LXML_VERSION) + '\n\n'
-        [(k1, v1),(k2, v2)] = log
-        file_info = _('File was generated on ') + v1 + '\n\t' + _(' by Gramps ') + v2 + '\n\n'
-
-        period = _('Period: ') +  first + ' => ' + last + '\n\n'
-
-        # for addons translators ? template .pot ?
-        _('\t{number} surname'), _('\t{number} surname; no frequency yet'),
-        _('\t{number} place'), _('\t{number} place'),
-        _('\t{number} note'), _('\t{number} note')
-        surnames_string = ngettext(
-                    '\t{number} surname',
-                    '\t{number} surnames; no frequency yet\n',
-                    nb_surnames).format(number=nb_surnames)
-        places_string = ngettext(
-                    '\t{number} place',
-                    '\t{number} places\n',
-                    nb_pnames).format(number=nb_pnames)
-        notes_string = ngettext(
-                    '\t{number} note',
-                    '\t{number} notes\n',
-                    nb_notes).format(number=nb_notes)
-        sources_string = ngettext(
-                    '\t{number} source',
-                    '\t{number} sources\n',
-                    nb_sources).format(number=nb_sources)
-
-        counters = surnames_string + places_string + notes_string + sources_string 
-
-        libs = 'LIBXML' + str(LIBXML_VERSION) + '\tLIBXSLT' + str(LIBXSLT_VERSION)
-
-        # GtkTextView
-
-        if isinstance(self.text, list):
-            pass
-        else:
-            self.text.set_text(header + file_info + period + counters + libs)
-
-        LOG.info('### NEW FILES ###')
-        LOG.info('content parsed and copied')
-
-        self.write_xml(log, first, last, surnames, places, sources)
-
-        self.print_media(thumbs, mediapath)
-        images = os.path.join(USER_PLUGINS, 'lxml', _('Gallery.html'))
-        sys.stdout.write(_('2. Has generated a media index on "%(file)s".\n') % {'file': images})
-
-        unique_surnames = list(set(surnames))
-        unique_surnames.sort()
-
-        self.write_back_xml(filename, root, unique_surnames, places, sources)
-        sys.stdout.write(_('3. Has written entries into "%(file)s".\n') % {'file': filename})
-
-
-    def xsd(self, xsd, filename):
-        """
-        Validate the XML file against the XSD schema.
-        """
-
-        # syntax check against XSD for file format
-
-        schema = etree.XMLSchema(file=xsd)
-        parser = objectify.makeparser(schema = schema)
-
-        tree = etree.parse(filename)
-        root = tree.getroot()
-
-        try:
-            database = objectify.fromstring(etree.tostring(root, encoding="UTF-8"), parser)
-        except:
-            ErrorDialog(_('XML SyntaxError'), _('Not a valid .gramps.\n'
-                                    'Cannot run the gramplet...\n'
-                                    'Please, try to use a .gramps\n'
-                                    'generated by Gramps 6.x.'))
-        LOG.info(_('Matches XSD schema.'))
-
-        #dump = objectify.dump(database)
-        #print(dump)
-
-    def check_valid(self, filename):
-        """
-        Validate the XML file against the DTD schema.
-        """
-
-        # syntax check against DTD for file format
-        # xmllint --loaddtd --dtdvalid --valid --shell --noout ...
-
-        dtd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.dtd')
-        try:
-            if os.name is 'nt':
-                os.system(f'xmllint --dtdvalid {dtd} --noout --dropdtd {filename}')
-            else:
-                os.system(f'xmllint --dtdvalid file://{dtd} --noout --dropdtd {filename}')
-        except Exception as e:
-            LOG.info(_('xmllint: skip DTD validation'))
-
-
-    def rng_validation(self, tree, rng):
-        """
-        Validate the XML file against the RNG schema.
-        """
-
-        # validity check against scheme for file format
-
-        valid = etree.ElementTree(file=rng)
-        schema = etree.RelaxNG(valid)
-        return(schema.validate(tree))
-
-
-    def write_xml(self, log, first, last, surnames, places, sources):
-        """
-        Write the result of the query for distributed, shared protocols.
-        """
-
-        # Custom XML file in buffer
-
-        self.lang = xml_lang()
-        self.title = _('I am looking at ...')
-        self.footer = _('Content generated by Gramps')
-        self.surnames_title = _('Surnames')
-        self.places_name = _('Places')
-        self.sources_title = _('List of sources')
-        time = date.Today()
-
-        xml = etree.Element("query")
-        xml.set("lang", self.lang)
-        xml.set("title", self.title)
-        xml.set("footer", self.footer)
-        xml.set("date", gramps.gen.datehandler.displayer.display(time))
-        xml.set("first", first)
-        xml.set("last", last)
-
-        # only for info
-
-        doc = etree.ElementTree(xml)
-
-        # custom countries list (re-use some Gramps translations ...) ;)
-
-        countries = ['',
-                    _('Australia'),
-                    _('Brazil'),
-                    _('Bulgaria'),
-                    _('Canada'),
-                    _('Chile'),
-                    _('China'),
-                    _('Croatia'),
-                    _('Czech Republic'),
-                    _('England'),
-                    _('Finland'),
-                    _('France'),
-                    _('Germany'),
-                    _('India'),
-                    _('Japan'),
-                    _('Norway'),
-                    _('Portugal'),
-                    _('Russia'),
-                    _('Sweden'),
-                    _('United States of America'),
-                    ]
-
-        c = etree.SubElement(xml, "clist")
-        self.name = _('Name')
-        self.country = _('Country')
-        c.set("pname", self.name)
-        c.set("country", self.country)
-        for country in countries:
-            c1 = etree.SubElement(c, "country")
-            c1.text = country
-
-        # data log
-
-        [(k1, v1),(k2, v2)] = log
-        l = etree.SubElement(xml, "log")
-        l.set("date", v1)
-        l.set("version", v2)
-
-        s = etree.SubElement(xml, "surnames")
-        s.set("title", self.surnames_title)
-
-        surnames.sort()
-        cnt = []
-        for surname in surnames:
-            if surname not in cnt:
-                s1 = etree.SubElement(s, "surname")
-                s1.text = surname
-                cnt.append(surname)
-
-        p = etree.SubElement(xml, "places")
-        p.set("pname", self.places_name)
-
-        places.sort()
-        for place in places:
-            p1 = etree.SubElement(p, "place")
-            p1.text = place
-
-        src = etree.SubElement(xml, "sources")
-        src.set("title", self.sources_title)
-
-        sources.sort()
-        for source in sources:
-            src1 = etree.SubElement(src, "source")
-            src1.text = source
-
-        content = etree.XML(etree.tostring(xml, encoding="UTF-8"))
-
-        # XSLT process
-
-        xslt_doc = etree.parse(os.path.join(USER_PLUGINS, 'lxml', 'query_html.xsl'))
-        transform = etree.XSLT(xslt_doc)
-        outdoc = transform(content)
-        #print(type(outdoc))
-        html = os.path.join(USER_PLUGINS, 'lxml', 'query.html')
-        with open(html, 'w') as outfile:
-            outfile.write(str(outdoc))
-
-        self.jsonl(content)
-
-        # clear the etree
-
-        content.clear()
-
-        # This is the end !
-
-        sys.stdout.write(_('1. Has generated "%s".\n') % html)
-        LOG.info(_('Try to open\n "%s"\n into your preferred web navigator ...') % html)
-        display_url(html)
-
-        #self.post(html)
-
-
-    def print_media(self, thumbs, mediapath):
-        """
-        Print some media infos via HTML class (Gramps).
-        """
-
-        LOG.info('Looking at media...')
-
-        # Web page filename extensions
-
-        _WEB_EXT = ['.html', '.htm', '.shtml', '.php', '.php3', '.cgi']
-
-        # page title
-
-        title = _('Gallery')
-
-        fname = os.path.join(USER_PLUGINS, 'lxml', _('Gallery.html'))
-        with open(fname, "w") as of:
-            LOG.info('Empty "Gallery.html" file created')
-
-            lang = xml_lang()
-            page, head, body = Html.page(title, encoding='utf-8', lang=str(lang))
-            head = body = ""
-
-            self.text_page = []
-
-        self.xhtml_writer(fname, page, head, body, of, thumbs, mediapath)
-
-        LOG.info('End (Media)')
-        #return self.text
-
-    def __write_gallery(self, thumbs, mediapath):
-        """
-        This procedure writes out the media.
-        """
-
-        LOG.info('Looking at gallery')
-
-        from gramps.gen.utils.thumbnails import get_thumbnail_path
-
-        # full clear line for proper styling
-
-        fullclear = Html("div", class_ = "fullclear", inline = True)
-
-        LOG.info('Start to enumerate for gallery')
-        #LOG.debug(thumbs)
-
-        for i, thumb in enumerate(thumbs):
-
-            # list of tuples [('',''),('','')]
-
-            if (list(thumb)[0])[0] == 'src':
-                src = (list(thumb)[0])[1]
-            else:
-                src = 'No src'
-            #LOG.debug(src)
-
-            if (list(thumb)[1])[0] == 'mime':
-                mime = (list(thumb)[1])[1]
-            else:
-                mime = 'No mime'
-            #LOG.debug(mime)
-
-            if (list(thumb)[2])[0] == 'checksum':
-                checksum = (list(thumb)[2])[1]
-            else:
-                checksum = 'No checksum'
-            #LOG.debug(checksum)
-
-            if (list(thumb)[2])[0] == 'description':
-                description = (list(thumb)[2])[1]
-            elif len(thumb) == 4:
-                description = (list(thumb)[3])[1]
-            else:
-                description = 'No description'
-            #LOG.debug(description)
-
-            # relative and absolute paths
-
-            src = os.path.join(mediapath, src)
-
-            # windows OS ???
-            if not src.startswith("/"):
-                src = os.path.join(USER_HOME, src)
-
-            #LOG.debug(src)
-
-            # only images
-
-            if mime.startswith("image"):
-                thumb = get_thumbnail_path(str(src), mtype=None, rectangle=None)
-                #LOG.debug(thumb)
-                self.text_page += Html('img', src=str(thumb), mtype=str(mime))
-                self.text_page += fullclear
-                self.text_page += Html('a', str(description), href=str(src), target='blank', title=str(mime))
-                self.text_page += fullclear
-
-        LOG.info(self.text_page)
-
-
-    def close_file(self, of):
-        """Close the file."""
-        of.close()
-
-
-    def xhtml_writer(self, fname, page, head, body, of, thumbs, mediapath):
-        """
-        Format, write, and close the file.
-
-        of -- open file that is being written to
-        htmlinstance -- web page created with libhtml
-            plugins/lib/libhtml.py
-        """
-
-        self.__write_gallery(thumbs, mediapath)
-
-        #LOG.debug(self.text)
-
-        with open(fname, 'w') as text:
-            text.write(head)
-            for txt in self.text_page:
-                text.write(txt + '\n')
-
-        # closes the file
-
-        self.close_file(of)
-
-        LOG.info('Gallery generated')
-
-
-    def write_back_xml(self, filename, root, surnames, places, sources):
-        """
-        Write the result of the query back into the XML file (Gramps scheme).
-        """
-
-        # Modify the XML copy of the .gramps
-
-        with open(filename, 'w') as outfile:
-            root.clear()
-            the_id = 0
-
-            ## people/person/name/surname
-            people = etree.SubElement(root, "people")
-            for s in surnames:
-                the_id += 1
-                person = etree.SubElement(people, "person")
-                person.set('id', f'{the_id}_{len(surnames)}')
-                name = etree.SubElement(person, "name")
-                surname = etree.SubElement(name, "surname")
-                surname.text = s
-
-            ## places/placeobj/pname
-            pl = etree.SubElement(root, "places")
-            for p in places:
-                the_id += 1
-                place = etree.SubElement(pl, "placeobj")
-                place.set('id', f'{the_id}_{len(places)}')
-                name = etree.SubElement(place, "pname")
-                name.set('value', p)
-
-            ## sources/source/stitle
-            src = etree.SubElement(root, "sources")
-            for s in sources:
-                the_id += 1
-                source = etree.SubElement(src, "source")
-                source.set('id', f'{the_id}_{len(sources)}')
-                stitle = etree.SubElement(source, "stitle")
-                stitle.text = s
-
-            out = etree.tostring(root, method='xml', pretty_print=True)
-            str_out = out.decode('utf-8')
-            outfile.write(str_out)
-
-        # clear the etree
+        citations = []
+        places = []
+        objects = []
+        repositories = []
+        notes = []
+
+        # DB: Family Tree loaded
+        # see gen/plug/_gramplet.py and gen/db/read.py
+
+        if self.dbstate.db.db_is_open:
+            print('tags', self.dbstate.db.get_number_of_tags())
+
+        print('events', self.dbstate.db.get_number_of_events())
+        print('people', self.dbstate.db.get_number_of_people())
+        print('families', self.dbstate.db.get_number_of_families())
+        print('sources', self.dbstate.db.get_number_of_sources())
+        if self.dbstate.db.db_is_open:
+            print('citations', self.dbstate.db.get_number_of_citations())
+        print('places', self.dbstate.db.get_number_of_places())
+        print('objects', self.dbstate.db.get_number_of_media())
+        print('repositories', self.dbstate.db.get_number_of_repositories())
+        print('notes', self.dbstate.db.get_number_of_notes())
+
+        #print('emap', self.dbstate.db.emap_index)
+        #print('pmap', self.dbstate.db.pmap_index)
+        #print('fmap', self.dbstate.db.fmap_index)
+        #print('smap', self.dbstate.db.smap_index)
+        #print('cmap', self.dbstate.db.cmap_index)
+        #print('lmap', self.dbstate.db.lmap_index)
+        #print('omap', self.dbstate.db.omap_index)
+        #print('rmap', self.dbstate.db.rmap_index)
+        #print('nmap', self.dbstate.db.nmap_index)
+
+        #print(self.dbstate.db.surname_list)
+
+        # XML
+
+        for one in root:
+
+            # iter() for python 2.7 and greater versions
+            ITERATION = one.iter()
+
+            # Primary objects (samples)
+
+            # find() needs memory - /!\ large files
+
+            # FutureWarning:
+            # The behavior of this method will change in future versions.
+            # Use specific 'len(elem)' or 'elem is not None' test instead.
+
+            lines = lazy = []
+            if one.find(NAMESPACE + 'event'):
+                print('XML: Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
+
+            for i in range(0, len(one.findall(NAMESPACE + 'event'))):
+                event = one.findall(NAMESPACE + 'event')[i]
+                lines.append(event.items())
+                print('Event:', ElementTree.tostring(event))
+                lazy = list(lines)
+            print(lazy)
+
+            # easier and faster match (do not forget upercase on handle into .gramps...)
+            if one.get('home'):
+                if self.dbstate.db.db_is_open:
+                    if self.dbstate.db.has_person_handle("%s" % one.attrib.get('home')[1:]):
+                        person = self.dbstate.db.get_person_from_handle(one.attrib.get('home')[1:])
+                        print('Home:', person.get_primary_name().get_name())
+
+            for two in ITERATION:
+
+                if two.get('change') != None:
+                    timestamp.append(two.get('change'))
+                    timestamp_int.append(int(two.get('change')))
+
+                #if two.get('handle') != None:
+                    #print('%s\n\t, %s'% (two.tag, two.items()))
+
+                #if two.get('priv') != None:
+                    #print('\tPrivate : %s, %s' % (two.tag, two.items()))
+
+                #if two.find(NAMESPACE + 'dateval') != None:
+                    #print('Date on event: %s' % two.items())
+
+                #if two.find(NAMESPACE + 'place') != None:
+                    #print('\tEvent record with places: %s' % two.items())
+
+                #if two.find(NAMESPACE + 'citationref') != None:
+                    #print('\t\tEvent record with citation/source: %s' % two.items())
+
+                (tag, item) = two.tag, two.items()
+                #print(tag)
+                #print(two.attrib)
+
+                entries.append(tag)
+
+                # two for serialisation (complete data/sequence) and/or ElementTree
+                keys.append((two, item))
+
+                if tag == NAMESPACE + 'tag':
+                    tags.append(two)
+                if tag == NAMESPACE + 'event':
+                    events.append(two)
+                if tag == NAMESPACE + 'person':
+                    people.append(two)
+                if tag == NAMESPACE + 'family':
+                    families.append(two)
+                if tag == NAMESPACE + 'source':
+                    sources.append(two)
+                if tag == NAMESPACE + 'citation':
+                    citations.append(two)
+                if tag == NAMESPACE + 'placeobj':
+                    places.append(two)
+                if tag == NAMESPACE + 'object':
+                    objects.append(two)
+                if tag == NAMESPACE + 'repository':
+                    repositories.append(two)
+                if tag == NAMESPACE + 'note':
+                    notes.append(two)
+
+                #if tag == NAMESPACE + 'name':
+                    #print('NAME', two, item)
 
         root.clear()
 
-    def jsonl(self, content):
-        """
-        Generate a JSONL file from the custom XML file format
-        """
-        xslt_doc = etree.parse(os.path.join(USER_PLUGINS, 'lxml', 'JSONL.xsl'))
-        transform = etree.XSLT(xslt_doc)
-        outdoc = transform(content)
+        # to see changes and match existing handles (Family Tree loaded)
 
-        custom_jsonl = str(outdoc)
-        jsonl = os.path.join(USER_PLUGINS, 'lxml', 'text.jsonl')
-        outfile = open(jsonl, 'w')
+        timestamp_control_like = sum(timestamp_int)
+        print('Timestamp sum and control %d:' % timestamp_control_like)
 
-        outfile.write(custom_jsonl)
-        outfile.close()
+        #for key in keys:
+            #print(key)
 
-        if isinstance(self.text, list):
-            LOG.info(self.text)
-        else:
-            start_iter = self.text.get_start_iter()
-            end_iter = self.text.get_end_iter()
-            format = self.text.register_serialize_tagset()
-            text = self.text.serialize(self.text,
-                                    format,
-                                    start_iter,
-                                    end_iter)
-            LOG.info(text)
-            info = self.text.get_text(start_iter, end_iter, True)
-            self.text.set_text(custom_jsonl + info)
+        # lazy
+        #jsonl_output = "\n".join(lines)
+        #print('########JSONL#########\n%s' % jsonl_output)
 
-    def post(self, html):
+        # XML
+
+        timestamp.sort()
+
+        if len(timestamp) < self.last:
+            self.last = len(timestamp)
+
+        last = [timestamp[-i] for i in range(1, self.last + 1)]
+
+        last.sort()
+        start = epoch(last[1])
+
+        time = _('XML: Last %s editions since %s, were at/on :\n' % (int(self.last), start))
+        for i in last:
+            time += '\t * %s\n' % epoch(i)
+
+        # GtkTextView
+
+        self.counters(time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes)
+
+        # DB
+
+        if self.dbstate.db.db_is_open:
+            self.change()
+
+
+    def change(self):
         """
-        Try to play with request and parse the HTML content.
+        obj.get_change_time(); Family Tree loaded
+        Display changes in the database.
         """
+
+        # event object
+
+        tevent = []
+
+        for handle in self.dbstate.db.get_event_handles():
+            event = self.dbstate.db.get_event_from_handle(handle)
+            tevent.append(event.get_change_time())
+
+        tevent.sort()
+
         try:
-            # Open the HTML file
-            with urllib.request.urlopen(f'file://{html}') as response:
-                data = response.read()
+            elast = epoch(tevent[-1])
+            print('DB: Last event object edition on/at:', elast)
+        except IndexError:
+            pass
 
-            # Parse the HTML content
-            post = etree.HTML(data)
+        handles = sorted(self.dbstate.db.get_person_handles(), key=self._getPersonTimestamp)
 
-            # Find text function
-            find_text = etree.XPath("//text()", smart_strings=False)
+        print('DB: Last %s persons edited:' % int(self.last))
+        for handle in reversed(handles[-self.last:]):
+            person = self.dbstate.db.get_person_from_handle(handle)
+            print(person.get_primary_name().get_name(), handle)
 
-            # Log the text content
-            LOG.info(find_text(post))
 
-            # Clear the parsed HTML content
-            post.clear()
+    def _getPersonTimestamp(self, person_handle):
+        timestamp = self.dbstate.db.get_person_from_handle(person_handle).change
+        return timestamp
 
-        except Exception as e:
-            LOG.error(f"An error occurred while processing the HTML file: {e}")
+
+    def counters(self, time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes):
+        """
+        Display counters for parsed Gramps XML and loaded family tree
+        """
+
+        total = _('\nXML: Number of records and relations : \t%s\n\n') % len(entries)
+
+        if self.dbstate.db.db_is_open:
+            tag = _('Number of tags : \n\t\t\t%s\t|\t(%s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
+        else:
+            tag = _('Number of tags : \n\t\t\t%s\n' % len(tags))
+
+        event = _('Number of  events : \n\t\t\t%s\t|\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
+        #DummyDB
+        if self.dbstate.db.db_is_open:
+            person = _('Number of persons : \n\t\t\t%s\t|\t(%s) and (%s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
+        else:
+            person = _('Number of persons : \n\t\t\t%s\t|\t(%s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
+        family = _('Number of families : \n\t\t\t%s\t|\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
+        source = _('Number of sources : \n\t\t\t%s\t|\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
+        if self.dbstate.db.db_is_open:
+            citation = _('Number of citations : \n\t\t\t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
+        else:
+            citation = ''
+        place = _('Number of places : \n\t\t\t%s\t|\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
+        media = _('Number of media objects : \n\t\t\t%s\t|\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media())
+        repository = _('Number of repositories : \n\t\t\t%s\t|\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
+        note = _('Number of notes : \n\t\t\t%s\t|\t(%s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
+
+        others = len(entries) - (len(tags) + len(events) + len(people) + len(families) + len(sources) + \
+        len(citations) + len(places) + len(objects) + len(repositories) + len(notes))
+
+        other = _('\nXML: Number of additional records and relations: \t%s\n') % others
+
+        #DummyDB
+        if self.dbstate.db.db_is_open:
+            nb = _('* loaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
+        else:
+            nb = ''
+
+        preview = time + total + tag + event + person + family + source + citation + place + media + repository + note + nb + other
+
+        self.text.set_text(preview)
