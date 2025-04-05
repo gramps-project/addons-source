@@ -149,7 +149,7 @@ class lxmlGramplet(Gramplet):
             #self.button.set_size_request(40, 40)
         else:
             image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
-        self.button.add(image)
+            self.button.add(image)
         #self.button.set_size_request(40, 40)
         self.button.connect('clicked', self.__select_file)
 
