@@ -233,7 +233,6 @@ class etreeGramplet(Gramplet):
             os.system(f'gunzip < {entry} > {filename}')
         except Exception as e:
             ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
-            LOG.error('Cannot use gunzip command')
             raise e
 
 
@@ -245,7 +244,6 @@ class etreeGramplet(Gramplet):
             copy(entry, filename)
         except Exception as e:
             ErrorDialog(_('Is it a .gramps?'), _('Cannot copy "%s"') % entry)
-            LOG.error('Cannot copy the file')
             raise e
 
 
