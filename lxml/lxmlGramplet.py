@@ -463,7 +463,7 @@ class lxmlGramplet(Gramplet):
                             text += _(' - (%(lang)s)') % {'lang':translation}
                         else:
                             translation = xml_lang()[0:2]
-                            where = _(' - (? or %(lang)s)') % {'lang':translation}
+                            where = text + _(' - (? or %(lang)s)') % {'lang':translation}
                             LOG.info(where)
                         if text not in places:
                             places.append(text) # temp display
@@ -567,7 +567,7 @@ class lxmlGramplet(Gramplet):
 
         counters = surnames_string + places_string + notes_string + sources_string 
 
-        libs = 'LIBXML' + str(LIBXML_VERSION) + '\tLIBXSLT' + str(LIBXSLT_VERSION)
+        libs = '\nLIBXML' + str(LIBXML_VERSION) + '\tLIBXSLT' + str(LIBXSLT_VERSION)
 
         # GtkTextView
 
