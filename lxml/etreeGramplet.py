@@ -265,11 +265,12 @@ class etreeGramplet(Gramplet):
             self.text.set_text(_('Sorry, no support for your OS yet!'))
             return
 
-        if use_gzip:
-            self.uncompress_file(entry)
-            self.copy_file(entry)
-
         filename = os.path.join(USER_PLUGINS, 'lxml', 'etree.xml')
+
+        if use_gzip:
+            self.uncompress_file(entry, filename)
+        else:
+            self.copy_file(entry, filename)
 
         tree = ElementTree.parse(filename)
         self.parse_xml(tree, filename)
