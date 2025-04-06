@@ -143,6 +143,10 @@ MARGIN_FOOTER = 100 # Margin used for the footer. In pixels
 MARGIN_LEFT   = 100 # Left margin
 MARGIN_RIGHT  = 100 # Right margin
 
+# global variables used in conjunction with font style
+FONT_NAME = 'sans-serif'
+BASE_FONT_SIZE = 20
+
 # global variables used in conjunction with same_width/same_height options
 global first_pass
 global max_image_width
@@ -175,8 +179,6 @@ IMAGE_LOC = None
 REPLACEMENT_LIST = None
 
 ctx = None
-font_name = 'sans-serif'
-base_font_size = 12
 
 _event_cache = {}
 
@@ -267,6 +269,8 @@ class DescendantsLinesReport(Report):
         replace_list - Replacement list
         same_width -All Person's blocks have the same width
         same_height-All Person's blocks have the same height
+        FONT_NAME - The name of the font, e.g. 'sans-serif'
+        BASE_FONT_SIZE - Base size for all texts
         """
 
         Report.__init__(self, database, options_class, user)
@@ -405,6 +409,11 @@ class DescendantsLinesReport(Report):
         # increase text pad to allow for box's line
         if STROKE_RECTANGLE:
             TEXT_PAD += RECTANGLE_TEXT_PAD
+            
+        global FONT_NAME
+        global BASE_FONT_SIZE
+        FONT_NAME = self.options['FONT_NAME']
+        BASE_FONT_SIZE = self.options['BASE_FONT_SIZE']
 
         self.title = menu.get_option_by_name('title').get_value()
         self.footer = menu.get_option_by_name('footer').get_value()
@@ -495,8 +504,8 @@ def draw_text(text, x, y, total_w, top_centered_lines=0):
     #(total_w, total_h) = size_text(text, ctx)
     n = 1
     for (size, color, line) in text:
-        ctx.select_font_face(font_name)
-        ctx.set_font_size(base_font_size * size)
+        ctx.select_font_face(FONT_NAME)
+        ctx.set_font_size(BASE_FONT_SIZE * size)
         (ascent, _, height, _, _) = ctx.font_extents()
         (lx, _, width, _, _, _,) = ctx.text_extents(line)
         if ((TEXT_ALIGNMENT == 'center') or (n <= top_centered_lines)):
@@ -513,8 +522,8 @@ def draw_text(text, x, y, total_w, top_centered_lines=0):
         n += 1
 
 def draw_header_footer(x, y, line, coeff):
-    ctx.select_font_face(font_name)
-    ctx.set_font_size(base_font_size * coeff)
+    ctx.select_font_face(FONT_NAME)
+    ctx.set_font_size(BASE_FONT_SIZE * coeff)
     (ascent, _, height, _, _) = ctx.font_extents()
     (lx, _, width, _, _, _,) = ctx.text_extents(line)
     total_w = 0
@@ -531,8 +540,8 @@ def size_text(text, cntx):
             first = False
         else:
             text_height += TEXT_LINE_PAD
-        cntx.select_font_face(font_name)
-        cntx.set_font_size(base_font_size * size)
+        cntx.select_font_face(FONT_NAME)
+        cntx.set_font_size(BASE_FONT_SIZE * size)
         (_, _, height, _, _) = cntx.font_extents()
         (lx, _, width, _, _, _,) = cntx.text_extents(line)
         text_width = max(text_width, width - lx)
@@ -1438,8 +1447,8 @@ def init_file(fn, writer):
 
 
 def draw_tree(head):
-    ctx.select_font_face(font_name)
-    ctx.set_font_size(base_font_size)
+    ctx.select_font_face(FONT_NAME)
+    ctx.set_font_size(BASE_FONT_SIZE)
     ctx.set_line_width(2)
     ctx.set_line_cap(cairo.LINE_CAP_SQUARE)
     ctx.set_line_join(cairo.LINE_JOIN_MITER)
@@ -1605,6 +1614,14 @@ class DescendantsLinesOptions(MenuReportOptions):
         max_note_len.set_help(_("Maximum length of an event's note field in"
                                 " a text block, '$e(n)'\n 0=no limit "))
         menu.add_option(category_name, "max_note_len", max_note_len)
+        
+        text_font_name = StringOption(_("Font Name"),
+                                r"sans-serif")
+        text_font_name.set_help(_("Name of the Font to use. On Windows enter the file name of the .ttf at /Windows/Fonts"))
+        menu.add_option(category_name, "FONT_NAME", text_font_name)
+        
+        text_font_size = NumberOption(_("Font base size"), 12, 10, 250)
+        menu.add_option(category_name, "BASE_FONT_SIZE", text_font_size)
 
         ##################
         category_name = _("Display")
@@ -1809,7 +1826,7 @@ class DescendantsLinesOptions(MenuReportOptions):
         font.set_type_face(FONT_SANS_SERIF)
         font.set_bold(1)
         para = ParagraphStyle()
-        para.set_top_margin(ReportUtils.pt2cm(base_font_size))
+        para.set_top_margin(ReportUtils.pt2cm(BASE_FONT_SIZE))
         para.set_font(font)
         para.set_alignment(PARA_ALIGN_LEFT)
         para.set_description(_('The default style.'))
