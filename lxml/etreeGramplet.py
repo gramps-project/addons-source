@@ -34,6 +34,7 @@ from shutil import copy
 from gi.repository import Gtk
 from xml.etree import ElementTree
 import gzip
+from pathlib import Path
 
 #------------------------------------------------------------------------
 #
@@ -106,7 +107,7 @@ class etreeGramplet(Gramplet):
         # file selection
 
         self.__base_path = USER_HOME
-        self.__file_name = "test.gramps"
+        self.__file_name = ""
         self.entry = Gtk.Entry()
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
@@ -185,9 +186,9 @@ class etreeGramplet(Gramplet):
         """
         if not path:
             return
-        self.__base_path = os.path.dirname(path) or os.getcwd()
-        self.__file_name = os.path.basename(path)
-        self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
+        self.__base_path = str(Path(path).parent) or os.getcwd()  # pathlib
+        self.__file_name = Path(path).name  # pathlib
+        self.entry.set_text(str(Path(os.path.join(self.__base_path, self.__file_name))))  #  pathlib
 
 
     def build_options(self):
@@ -210,7 +211,8 @@ class etreeGramplet(Gramplet):
             #ErrorDialog(_('Space character on filename or path'), _('Please fix space on "%s"') % entry)
             #return
 
-        sys.excepthook = self.read_xml(entry)
+        if self.__file_name is not "":
+            sys.excepthook = self.read_xml(entry)
 
 
     def is_gzip(self, entry):
@@ -242,8 +244,9 @@ class etreeGramplet(Gramplet):
         """
         try:
             copy(entry, filename)
-        except FileNotFoundError:
+        except FileNotFoundError or IsADirectoryError:
             ErrorDialog(_('Is it a .gramps?'), _('Cannot copy "%s"') % entry)
+            pass
             #raise e
 
 
