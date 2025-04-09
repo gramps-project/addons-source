@@ -211,6 +211,13 @@ class etreeGramplet(Gramplet):
             #ErrorDialog(_('Space character on filename or path'), _('Please fix space on "%s"') % entry)
             #return
 
+        #if Path(os.path.join(USER_PLUGINS, 'lxml', 'etree.xml')).exists():
+            #Path.unlink(os.path.join(USER_PLUGINS, 'lxml', 'etree.xml'))
+
+        if not self.__file_name.endswith('.gramps'):
+            print(self.__file_name)
+            return
+
         if self.__file_name is not "":
             sys.excepthook = self.read_xml(entry)
 
@@ -274,10 +281,10 @@ class etreeGramplet(Gramplet):
             self.copy_file(entry, filename)
 
         try:
-            tree = ElementTree.parse(filename)
-            self.parse_xml(tree, filename)
+            tree = ElementTree.parse(Path(filename))
+            self.parse_xml(tree, Path(filename))
         except FileNotFoundError as e:
-             ErrorDialog(_('Filenames issue or wide space character on filename path'), '%s' % e)
+             ErrorDialog(_('Filenames issue or white space character on filename path'), '%s' % e)
 
 
     def parse_xml(self, tree, filename):

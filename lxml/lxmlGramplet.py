@@ -235,6 +235,13 @@ class lxmlGramplet(Gramplet):
             LOG.debug('Space on filename or path')
             #return
 
+        #if Path(os.path.join(USER_PLUGINS, 'lxml', 'test.xml')).exists():
+            #Path.unlink(os.path.join(USER_PLUGINS, 'lxml', 'test.xml'))
+
+        if not self.__file_name.endswith('.gramps'):
+            LOG.info(self.__file_name)
+            return
+
         if self.__file_name is not "":
             sys.excepthook = self.read_xml(entry)
 
@@ -293,7 +300,7 @@ class lxmlGramplet(Gramplet):
         if LXML_OK and use_gzip:
             self.uncompress_file(entry, filename)
         elif LXML_OK:
-            self.copy_file(entry, filename)
+            self.copy_file(entry, Path(filename))
 
         # XSD structure via lxml
 
@@ -305,12 +312,12 @@ class lxmlGramplet(Gramplet):
                 pass
         except:
             ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
-            LOG.debug(self.xsd(xsd, filename))
+            LOG.debug(self.xsd(xsd, Path(filename)))
 
         # DTD syntax via xmllint (libxml2-utils)
 
         try:
-            self.check_valid(filename)
+            self.check_valid(Path(filename))
         except Exception as e:
             LOG.info(_('xmllint: skip DTD validation for "%(file)s"') % {'file': entry})
 
@@ -334,17 +341,21 @@ class lxmlGramplet(Gramplet):
             if self.rng_validation(tree, rng):
                 # self.parse_xml(tree, filename) for debug
                 try:
-                    self.xmltodict(filename)
-                    self.parse_xml(tree, filename)
+                    self.xmltodict(Path(filename))
+                    self.parse_xml(tree, Path(filename))
                 except:
                     ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename})
                     LOG.debug('Cannot parse the content of the XML copy or missing "query_html.xsl" file.')
+            elif doctype == '':
+                ErrorDialog(_('Space character in filename or path'), _('Please try to fix the space for validating the file'))
+                LOG.debug('Need to remove "test.xml" or space on filename or path')
             elif doctype != current:
-                ErrorDialog(_('Gramps version'), _('Wrong namespace\nNeed: %s') % current)
-                LOG.debug('Namespace is wrong')
+                LOG.debug('Namespace is wrong', doctype, current)
             else:
                 ErrorDialog(_('RelaxNG validation'), _('Cannot validate "%(file)s" via RelaxNG schema') % {'file': entry})
                 LOG.debug('RelaxNG validation failed')
+        except TypeError as t:
+            LOG.debug(t)
         except etree.XMLSyntaxError as e:
             ErrorDialog(_('File issue'), _('Cannot parse "%(file)s" via etree') % {'file': entry})
             log = e.error_log.filter_from_level(etree.ErrorLevels.FATAL)
@@ -362,7 +373,7 @@ class lxmlGramplet(Gramplet):
         """
         try:
             import xmltodict, json
-            with open(filename, "rb") as file:
+            with open(Path(filename), "rb") as file:
                 self.text.set_text(_('xmltodict'))
                 document = xmltodict.parse(file, dict_constructor=dict)
                 LOG.info(xmltodict.unparse(document, pretty=True))
