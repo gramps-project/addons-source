@@ -530,26 +530,26 @@ class etreeGramplet(Gramplet):
         total = _('\nXML: Number of records and relations : \t%s\n\n') % len(entries)
 
         if self.dbstate.db.db_is_open:
-            tag = _('Number of tags : \n\t\t\t%s\t|\t(%s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
+            tag = _('Number of tags : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
         else:
-            tag = _('Number of tags : \n\t\t\t%s\n' % len(tags))
+            tag = _('Number of tags : \n\t\t\t%06s\n' % len(tags))
 
-        event = _('Number of  events : \n\t\t\t%s\t|\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
+        event = _('Number of  events : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
         #DummyDB
         if self.dbstate.db.db_is_open:
-            person = _('Number of persons : \n\t\t\t%s\t|\t(%s) and (%s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
+            person = _('Number of persons : \n\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
         else:
-            person = _('Number of persons : \n\t\t\t%s\t|\t(%s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
-        family = _('Number of families : \n\t\t\t%s\t|\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
-        source = _('Number of sources : \n\t\t\t%s\t|\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
+            person = _('Number of persons : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
+        family = _('Number of families : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
+        source = _('Number of sources : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
         if self.dbstate.db.db_is_open:
-            citation = _('Number of citations : \n\t\t\t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
+            citation = _('Number of citations : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
         else:
             citation = ''
-        place = _('Number of places : \n\t\t\t%s\t|\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
-        media = _('Number of media objects : \n\t\t\t%s\t|\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media())
-        repository = _('Number of repositories : \n\t\t\t%s\t|\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
-        note = _('Number of notes : \n\t\t\t%s\t|\t(%s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
+        place = _('Number of places : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
+        media = _('Number of media objects : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(objects), self.dbstate.db.get_number_of_media())
+        repository = _('Number of repositories : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
+        note = _('Number of notes : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
 
         others = len(entries) - (len(tags) + len(events) + len(people) + len(families) + len(sources) + \
         len(citations) + len(places) + len(objects) + len(repositories) + len(notes))
