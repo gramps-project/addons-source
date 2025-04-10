@@ -306,7 +306,7 @@ class lxmlGramplet(Gramplet):
         xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
         try:
             if Path(filename).exists():
-                LOG.debug('%s' % Path(filename))
+                LOG.debug('%s' % entry)
                 self.xsd(xsd, filename)
             else:
                 pass
@@ -317,7 +317,7 @@ class lxmlGramplet(Gramplet):
 
         try:
             self.check_valid(filename)
-            LOG.debug('%s' % Path(filename))
+            LOG.debug('%s' % entry)
         except Exception as e:
             LOG.info(_('xmllint: skip DTD validation for "%(file)s"') % {'file': entry})
 
@@ -328,9 +328,9 @@ class lxmlGramplet(Gramplet):
         try:
             if os.name is 'nt':
                 os.system(f'xmllint --relaxng {rng} --noout {filename}')
-                LOG.debug('%s' % Path(filename))
+                LOG.debug('%s' % entry)
             else:
-                LOG.debug('%s' % Path(filename))
+                LOG.debug('%s' % entry)
                 os.system(f'xmllint --relaxng file://{rng} --noout {filename}')
         except Exception as e:
             LOG.info(_('xmllint: skip RelaxNG validation for "%(file)s"') % {'file': entry})
@@ -360,8 +360,10 @@ class lxmlGramplet(Gramplet):
             else:
                 ErrorDialog(_('RelaxNG validation'), _('Cannot validate "%(file)s" via RelaxNG schema') % {'file': entry})
                 LOG.debug('RelaxNG validation failed')
-        except TypeError as t:
-            LOG.debug(t)
+        except TypeError:
+            LOG.debug('"NoneType" object is not callable')
+        except OSError:
+            LOG.debug(etree.parse(filename))
         except etree.XMLSyntaxError as e:
             ErrorDialog(_('File issue'), _('Cannot parse "%(file)s" via etree') % {'file': entry})
             log = e.error_log.filter_from_level(etree.ErrorLevels.FATAL)
@@ -637,6 +639,7 @@ class lxmlGramplet(Gramplet):
             except TypeError as e:
                 LOG.debug(Path(filename))
                 LOG.debug(e)
+                LOG.debug('"NoneType" object is not callable')
                 return
             except:
                 ErrorDialog(_('XML SyntaxError'), _('Not a valid .gramps.\n'
