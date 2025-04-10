@@ -30,7 +30,7 @@
 import codecs
 import sys
 import os
-from shutil import copy
+from shutil import copyfile
 from gi.repository import Gtk
 from xml.etree import ElementTree
 import gzip
@@ -107,7 +107,7 @@ class etreeGramplet(Gramplet):
         # file selection
 
         self.__base_path = USER_HOME
-        self.__file_name = ""
+        self.__file_name = str(Path.home())
         self.entry = Gtk.Entry()
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
@@ -250,7 +250,7 @@ class etreeGramplet(Gramplet):
         Copy the file to the destination.
         """
         try:
-            copy(entry, filename)
+            copyfile(entry, filename)
         except FileNotFoundError or IsADirectoryError:
             ErrorDialog(_('Is it a .gramps?'), _('Cannot copy "%s"') % entry)
             pass

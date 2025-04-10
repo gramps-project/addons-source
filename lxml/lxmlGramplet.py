@@ -27,7 +27,7 @@
 #------------------------------------------------------------------------
 import sys
 import os
-from shutil import copy
+from shutil import copyfile
 from gi.repository import Gtk
 #import subprocess
 from pathlib import Path
@@ -140,7 +140,7 @@ class lxmlGramplet(Gramplet):
         # filename and selector
 
         self.__base_path = USER_HOME
-        self.__file_name = ""
+        self.__file_name = str(Path.home())
         self.entry = Gtk.Entry()
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
 
@@ -232,7 +232,7 @@ class lxmlGramplet(Gramplet):
         entry = self.entry.get_text()
         if ' ' in entry:
             #ErrorDialog(_('Space character in filename or path'), _('Please fix space in "%s"') % entry)
-            LOG.debug('Space on filename or path')
+            LOG.info('Space on filename or path')
             #return
 
         #if Path(os.path.join(USER_PLUGINS, 'lxml', 'test.xml')).exists():
@@ -244,8 +244,6 @@ class lxmlGramplet(Gramplet):
 
         if self.__file_name is not "":
             sys.excepthook = self.read_xml(entry)
-
-        #self.read_xml(entry)
 
 
     def is_gzip(self, entry):
@@ -269,7 +267,7 @@ class lxmlGramplet(Gramplet):
         try:
             os.system(f'gunzip < {entry} > {filename}')
         except Exception as e:
-            ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
+            ErrorDialog(_('Is it a compressed .gramps?'), _(f'Cannot uncompress "{entry}"'))
             LOG.error('Cannot use gunzip command')
             raise e
 
@@ -279,11 +277,12 @@ class lxmlGramplet(Gramplet):
         Copy the file to the destination.
         """
         try:
-            copy(entry, filename)
+            copyfile(entry, filename)
+            LOG.debug('%s' % Path(entry))
         except Exception as e:
             raise e
         except FileNotFoundError or IsADirectoryError:
-            ErrorDialog(_('Is it a .gramps?'), _('Cannot copy "%s"') % entry)
+            ErrorDialog(_('Is it a .gramps?'), _(f'Cannot copy "{entry}"'))
             LOG.error('Cannot copy the file')
             pass
 
@@ -307,17 +306,18 @@ class lxmlGramplet(Gramplet):
         xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
         try:
             if Path(filename).exists():
-                self.xsd(xsd, Path(filename))
+                LOG.debug('%s' % Path(filename))
+                self.xsd(xsd, filename)
             else:
                 pass
         except:
-            ErrorDialog(_('XSD validation (lxml)'), _('Cannot validate "%(file)s" !') % {'file': entry})
-            LOG.debug(self.xsd(xsd, Path(filename)))
+            ErrorDialog(_('XSD validation (lxml)'), _(f'Cannot validate "{entry}" !'))
 
         # DTD syntax via xmllint (libxml2-utils)
 
         try:
-            self.check_valid(Path(filename))
+            self.check_valid(filename)
+            LOG.debug('%s' % Path(filename))
         except Exception as e:
             LOG.info(_('xmllint: skip DTD validation for "%(file)s"') % {'file': entry})
 
@@ -328,13 +328,15 @@ class lxmlGramplet(Gramplet):
         try:
             if os.name is 'nt':
                 os.system(f'xmllint --relaxng {rng} --noout {filename}')
+                LOG.debug('%s' % Path(filename))
             else:
+                LOG.debug('%s' % Path(filename))
                 os.system(f'xmllint --relaxng file://{rng} --noout {filename}')
         except Exception as e:
             LOG.info(_('xmllint: skip RelaxNG validation for "%(file)s"') % {'file': entry})
 
         try:
-            #tree = etree.ElementTree(file=filename)
+            #etree.ElementTree(file=filename)
             tree = etree.parse(filename)
             doctype = tree.docinfo.doctype
             current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">'
@@ -349,6 +351,10 @@ class lxmlGramplet(Gramplet):
             elif doctype == '':
                 ErrorDialog(_('Space character in filename or path'), _('Please try to fix the space for validating the file'))
                 LOG.debug('Need to remove "test.xml" or space on filename or path')
+                LOG.debug('Filename: %s' % self.__file_name)
+                LOG.debug('Base path: %s' % self.__base_path)
+                LOG.debug('Temp file: %s' % tree.docinfo.URL)
+                LOG.debug('xml version: %s' % tree.docinfo.xml_version)
             elif doctype != current:
                 LOG.debug('Namespace is wrong', doctype, current)
             else:
@@ -374,7 +380,7 @@ class lxmlGramplet(Gramplet):
         try:
             import xmltodict, json
             with open(Path(filename), "rb") as file:
-                self.text.set_text(_('xmltodict'))
+                self.text.set_text('xmltodict')
                 document = xmltodict.parse(file, dict_constructor=dict)
                 LOG.info(xmltodict.unparse(document, pretty=True))
         except ImportError:
@@ -549,11 +555,15 @@ class lxmlGramplet(Gramplet):
         # time logs
 
         timestamp.sort()
-        start = timestamp[0]
-        end = timestamp[-1]
+        if len(timestamp) > 0:
+            start = timestamp[0]
+            end = timestamp[-1]
+            first = epoch(start)
+            last = epoch(end)
+        else:
+            return
         timestamp = []
-        first = epoch(start)
-        last = epoch(end)
+
 
         header = _('File parsed with') + ' LXML' + str(LXML_VERSION) + '\n\n'
         [(k1, v1),(k2, v2)] = log
@@ -621,10 +631,11 @@ class lxmlGramplet(Gramplet):
 
         if Path(filename).exists():
             try:
-                tree = etree.parse(Path(filename))
+                tree = etree.parse(filename)
                 root = tree.getroot()
                 database = objectify.fromstring(etree.tostring(root, encoding="UTF-8"), parser)
             except TypeError as e:
+                LOG.debug(Path(filename))
                 LOG.debug(e)
                 return
             except:
