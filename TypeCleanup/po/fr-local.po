@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -13,6 +13,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
+
+msgid "Event Roles"
+msgstr "Rôles de l'événement"
+
+msgid "Event Types"
+msgstr "Types d'évènement"
+
+msgid "Family Relation Types"
+msgstr "Types de relation familiale"
+
+msgid "Child reference Types"
+msgstr "Types de référence enfant"
+
+msgid "Name Origin Types"
+msgstr "Types d'origine du nom"
+
+msgid "Name Types"
+msgstr "Types de nom"
+
+msgid "Note Types"
+msgstr "Types de note"
+
+msgid "Place Types"
+msgstr "Types de lieu"
+
+msgid "Repository Types"
+msgstr "Types de dépôt"
+
+msgid "Source Media Types"
+msgstr "Types de media de source"
+
+msgid "URL Types"
+msgstr "Types d'URL"
+
+msgid "Types Cleanup Tool"
+msgstr "Outil de nettoyage des types"
 
 msgid ""
 "Remove the selected type from the db.\n"
@@ -34,8 +70,14 @@ msgstr "Renommer"
 msgid "Rename the selected type in all referenced objects."
 msgstr "Renommer le type sélectionné dans tous les objets référencés."
 
+msgid "Close the Type Cleanup Tool"
+msgstr "Fermer l'outil Nettoyage de type"
+
 msgid "Types"
 msgstr "Types"
+
+msgid "Type Cleanup Tool"
+msgstr "Outil de nettoyage de type"
 
 #, python-format
 msgid "Changing type from %(old_type)s to %(new_type)s."
@@ -56,3 +98,9 @@ msgstr ""
 "Cependant, il ne le supprimera pas des éléments référencés dans la base de "
 "données.\n"
 "Si vous voulez le modifier dans les articles référencés, utilisez 'Renommer'."
+
+msgid "Type Cleanup"
+msgstr "Nettoyage de type"
+
+msgid "Clean up (remove) custom types"
+msgstr "Nettoyer (supprimer) les types personnalisés"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-12 11:47+0000\n"
+"PO-Revision-Date: 2025-03-27 02:55+0000\n"
 "Last-Translator: Michał Stojek <stojex@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -13,11 +13,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+msgid "Place Cleanup"
+msgstr "Place Cleanup"
+
+msgid ""
+"Place Cleanup Gramplet assists in merging places, as well as completing "
+"places from the GeoNames web database"
+msgstr ""
+"Place Cleanup Gramplet pomaga w łączeniu miejsc, a także uzupełnianiu miejsc "
+"z internetowej bazy danych GeoNames"
+
+msgid ""
+"No\n"
+"Matches"
+msgstr ""
+"Brak\n"
+"dopasowań"
 
 msgid "Find"
 msgstr "Znajdź"
@@ -110,6 +127,39 @@ msgstr "Podstawowe imię"
 
 msgid "The postal code for the place, if any."
 msgstr "Kod pocztowy danej miejscowości, jeśli takowy istnieje."
+
+msgid "Discard"
+msgstr "Odrzuć"
+
+msgid ""
+"Select one or more rows and use this button to discard the alternative names."
+msgstr ""
+"Wybierz jeden lub więcej wierszy i użyj tego przycisku, aby odrzucić "
+"alternatywne nazwy."
+
+msgid "Cancel the operation, no changes are made to your Place."
+msgstr "Anuluj operację, w Twoim Miejscu nie zostaną wprowadzone żadne zmiany."
+
+msgid "Store the values in your Place."
+msgstr "Zapisz wartości w miejscu."
+
+msgid "Keep Web Links"
+msgstr "Zachowaj linki internetowe"
+
+msgid "Puts web links (typically wikipedia) into your place."
+msgstr "Umieszcza w Twoim miejscu linki internetowe (zazwyczaj Wikipedię)."
+
+msgid "Add citation and source to Place"
+msgstr "Dodaj cytat i źródło do miejsca"
+
+msgid "This Adds a Citation to your place, citing GeoNames."
+msgstr "Dodaje cytowanie do Twojego miejsca, powołując się na GeoNames."
+
+msgid "GeoNames User ID"
+msgstr "Identyfikator użytkownika GeoNames"
+
+msgid "Enter you Geonames user ID here."
+msgstr "Wprowadź tutaj swój identyfikator użytkownika GeoNames."
 
 msgid "Next Place"
 msgstr "Następne miejsce"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-03-16 11:34+0000\n"
+"PO-Revision-Date: 2025-04-06 09:03+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -13,6 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "X-Generator: Weblate 5.11-dev\n"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Chyba pri zápise {target_path}: {message}"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -122,6 +126,10 @@ msgid ""
 msgstr ""
 "Cieľový adresár %s neexistuje.\n"
 "Chcete sa pokúsiť ho vytvoriť?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "Nepodarilo sa vytvoriť {target_path}: {message}"
 
 #, python-format
 msgid ""

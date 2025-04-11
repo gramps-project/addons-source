@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14,9 +14,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+msgid "Family Relationship Tool"
+msgstr "Outil de relation familial"
+
 msgid "Mass-edit the family relationship type for a group of families."
 msgstr ""
 "Modifier en masse le type de relation familiale pour un groupe de familles."
+
+msgid "All Families"
+msgstr "Toutes les familles"
+
+msgid "Relationship Type"
+msgstr "Type de relation"
 
 msgid ""
 "Choose the new family relationship type.\n"

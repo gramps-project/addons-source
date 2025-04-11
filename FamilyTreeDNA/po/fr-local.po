@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14,8 +14,86 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+msgid "FamilyTree DNA"
+msgstr "ADN FamilyTree"
+
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr "Outil pour importer les données d'ADN FamilyFinder depuis Family Tree"
+
+msgid "Family Finder Tool"
+msgstr "Outil de recherche de famille"
+
+msgid "Enter FTDNA Family Finder Filename:"
+msgstr "Entrez le nom du fichier FTDNA Family Finder :"
+
+msgid "Enter FTDNA Chromosome Segment Filename:"
+msgstr "Entrez le nom du fichier du segment chromosomique FTDNA :"
+
+msgid "Import Haplogroups"
+msgstr "Importer des haplogroupes"
+
+msgid "FTDNA Note string :"
+msgstr "Chaîne de note FTDNA :"
+
 msgid "Shared Citation ID :"
 msgstr "ID de la citation partagée :"
 
 msgid "Active Person : "
 msgstr "Individu actif : "
+
+msgid "Import data from Family Finder files"
+msgstr "Importer des données à partir des fichiers Family Finder"
+
+msgid "Close the Family Finder Tool"
+msgstr "Fermer l'outil de recherche des familles"
+
+msgid "Read Help manual"
+msgstr "Lire le manuel d'aide"
+
+msgid "FamilyTree DNA Import"
+msgstr "Import d'ADN FamilyTree"
+
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr ""
+"{} Associations avec des données d'ADN créées. {} Attributs d'haplogroupe "
+"créés \n"
+
+msgid "No Family Finder File specified"
+msgstr "Aucun fichier Family Finder spécifié"
+
+msgid "No Segment File specified"
+msgstr "Aucun fichier de segment spécifié"
+
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr ""
+"Aucune association trouvée dans les notes FTdna. Aucun attribut "
+"d'haplogroupe créé."
+
+#, python-format
+msgid "Add %s haplogroup attribute"
+msgstr "Ajout de l'attribut haplogroupe à %s"
+
+#, python-format
+msgid "Add %s DNA Association"
+msgstr "Ajoutde l'association ADN à %s"
+
+#, python-format
+msgid "Create Note for %s DNA Association"
+msgstr "Créer une note pour l'association d'ADN de %s"
+
+#, python-format
+msgid "Add Note to %s DNA Association"
+msgstr "Ajouter une note d'association d'ADN pour %s"
+
+#, python-format
+msgid "Create Source Citation for %s DNA Association"
+msgstr "Création d'une source pour l'association d'ADN %s"
+
+#, python-format
+msgid "Create Citation for %s DNA Association"
+msgstr "Création d'une Citation pour l'association d'ADN %s"
+
+#, python-format
+msgid "Add Citation to %s DNA Association"
+msgstr "Ajout d'une citation à l'association d'ADN %s"

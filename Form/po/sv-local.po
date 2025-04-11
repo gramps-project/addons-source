@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-25 10:12+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -566,8 +566,131 @@ msgstr "Närmaste släkting"
 msgid "Dependants & Address"
 msgstr "Anhöriga och adress"
 
+msgid "Hair Color"
+msgstr "Hårfärg"
+
+msgid "Place of Registration"
+msgstr "Plats för registrering"
+
+msgid "Date of Registration"
+msgstr "Datum för registrering"
+
+msgid "Serial Number"
+msgstr "Serienummer"
+
+msgid "Place of Residence"
+msgstr "Bostadsort"
+
+msgid "Complexion"
+msgstr "Hudfärg"
+
+msgid "Other characteristics"
+msgstr "Andra egenskaper"
+
+msgid "Place entered"
+msgstr "Plats angett"
+
+msgid "Term of enlistment"
+msgstr "Mönstringstid"
+
+msgid "Eye color"
+msgstr "Ögonfärg"
+
+msgid "Hair color"
+msgstr "Hårfärg"
+
+msgid "Rank in"
+msgstr "Rang i"
+
+msgid "Place discharged"
+msgstr "Plats tömd"
+
+msgid "Rank out"
+msgstr "Rangordna"
+
+msgid "Event Place (Original)"
+msgstr "Händelseplats (Original)"
+
+msgid "Spouse's Gender"
+msgstr "Makarnas kön"
+
+msgid "Spouse's Age"
+msgstr "Makarnas ålder"
+
+msgid "Volume"
+msgstr "Volym"
+
 msgid "Where Born"
 msgstr "Var född"
+
+msgid "Place of Work"
+msgstr "Arbetsplats"
+
+msgid "Children Living"
+msgstr "Barn som lever"
+
+msgid "Children Dead"
+msgstr "Barn döda"
+
+msgid "Previous Residence"
+msgstr "Tidigare bostad"
+
+msgid "Date Married"
+msgstr "Datum för giftermål"
+
+msgid "Maiden Surname"
+msgstr "Flicknamn"
+
+msgid "Usual Address"
+msgstr "Vanlig adress"
+
+msgid "Village or Hamlet"
+msgstr "By eller mindre by"
+
+msgid "Civil Parish"
+msgstr "Socken"
+
+msgid "Neither"
+msgstr "Varken"
+
+msgid "Number of Rooms"
+msgstr "Antal rum"
+
+msgid "Years Married"
+msgstr "Antal år gift"
+
+msgid "Children Total"
+msgstr "Barn totalt"
+
+msgid "Children still Living."
+msgstr "Barn som fortfarande lever."
+
+msgid "Children Died"
+msgstr "Barn som avlidit"
+
+msgid "Personal Occupation"
+msgstr "Personlig sysselsättning"
+
+msgid "Whether Working at Home"
+msgstr "Huruvida du arbetar hemma"
+
+msgid "Number of living children"
+msgstr "Antal levande barn"
+
+msgid "Relation to Head"
+msgstr "Släktskap till huvudperson"
+
+msgid "House Inhabited"
+msgstr "Hus bebodda"
+
+msgid "Parish Ward"
+msgstr "Församlingsdistrikt"
+
+msgid "Head of Family"
+msgstr "Familjeöverhuvud"
+
+msgid "Total Children"
+msgstr "Totalt antal barn"
 
 msgid "Enumerator"
 msgstr "Uppräknare"
@@ -715,3 +838,6 @@ msgstr "2. Familj"
 
 msgid "3. Name"
 msgstr "3. Namn"
+
+msgid "Type of roof"
+msgstr "Typ av tak"

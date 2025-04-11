@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14,8 +14,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+msgid "PhpGedView"
+msgstr "PhpGedView"
+
 msgid "Download a GEDCOM file from a phpGedView server."
 msgstr "Télécharger un fichier GEDCOM depuis un serveur phpGedView."
+
+msgid "Fetching index list..."
+msgstr "Récupération de la liste d'index…"
+
+msgid "Fetching records..."
+msgstr "Récupération des enregistrements…"
 
 msgid "Logging in..."
 msgstr "Connexion…"
@@ -23,8 +32,17 @@ msgstr "Connexion…"
 msgid "Fetching GEDCOM..."
 msgstr "Récupération du GEDCOM…"
 
+msgid "Importing GEDCOM..."
+msgstr "Importation du GEDCOM…"
+
+msgid "Error: login failed"
+msgstr "Erreur : échec de connexion"
+
 msgid "done."
 msgstr "terminé."
+
+msgid "Connecting..."
+msgstr "Connexion..."
 
 msgid "Get version..."
 msgstr "Obtenir la version..."
@@ -33,8 +51,14 @@ msgstr "Obtenir la version..."
 msgid "Version %s"
 msgstr "Version %s"
 
+msgid "Reading file list..."
+msgstr "Lecture de la liste des fichiers…"
+
 msgid "Error: Invalid URL"
 msgstr "Erreur : URL invalide"
+
+msgid "- default -"
+msgstr "- défaut -"
 
 msgid "phpGedView import"
 msgstr "import phpGedView"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14,11 +14,38 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+msgid "Map tiles"
+msgstr "Fond de carte"
+
+msgid "File path"
+msgstr "Chemin du fichier"
+
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
+msgstr ""
+"Pour le nom de fichier, seules les lettres A à Z, a à z et les chiffres de 0 "
+"à 9, ainsi que les espaces, le soulignement et le trait d'union sont "
+"autorisés. Le nom de fichier doit également commencer et se terminer par un "
+"caractère alphanumérique. L'extension de fichier « .html » est ajoutée par "
+"le rapport."
+
+msgid "File name"
+msgstr "Nom du fichier"
+
 msgid "Start latitude"
 msgstr "Latitude de départ"
 
 msgid "Start longitude"
 msgstr "Longitude de départ"
 
+msgid "Path does not exist."
+msgstr "Chemin inexistant."
+
 msgid "Invalid filename."
 msgstr "Nom de fichier invalide."
+
+msgid "INFO"
+msgstr "INFORMATIONS"

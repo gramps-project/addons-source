@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Sheet No."
+msgstr "Foglio n."
+
+msgid "County of"
+msgstr "Contea/provincia di"
+
+msgid "Family No."
+msgstr "Famiglia n."
+
+msgid "City of"
+msgstr "Città di"
+
+msgid "Birth Country"
+msgstr "Nazione di nascita"
 
 msgid "Inhabitants of"
 msgstr "Abitanti di"
@@ -21,7 +36,7 @@ msgid "Residing in the"
 msgstr "Residente in"
 
 msgid "Place of Record"
-msgstr "Luogo di registrazione"
+msgstr "Luogo di registrazione dell'informazione"
 
 msgid "Book/Volume"
 msgstr "Libro/Volume"
@@ -32,8 +47,8 @@ msgstr "Razza/Colore"
 msgid ""
 "STOP! If you want this record to be attached to the Parents move to Father."
 msgstr ""
-"STOP! Se vuoi che questo record venga allegato ai genitori spostati sul "
-"padre."
+"STOP! Se vuoi che questa informazione di registro venga allegato ai genitori "
+"spostati sul padre."
 
 msgid "Mother (Maiden Name)"
 msgstr "Madre (nome da ragazza)"
@@ -296,7 +311,7 @@ msgid "Spouse's Mother's Name"
 msgstr "Nome della madre del coniuge"
 
 msgid "Record Number"
-msgstr "Numero del record"
+msgstr "Numero dell'informazione di registro"
 
 msgid "Volume"
 msgstr "Volume"
@@ -406,6 +421,18 @@ msgstr "Indicare se cieco o sordomuto"
 
 msgid "Village or Hamlet"
 msgstr "Villaggio o frazione"
+
+msgid "Civil Parish"
+msgstr "Parrocchia civile"
+
+msgid "Parish Ward"
+msgstr "Distretto (ward) della parrocchia"
+
+msgid "Seating"
+msgstr "Posti a sedere"
+
+msgid "2. Family"
+msgstr "2. Famiglia"
 
 msgid "Can read and write"
 msgstr "Sa leggere e scrivere"

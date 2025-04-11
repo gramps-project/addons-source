@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14,9 +14,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+msgid "Set Privacy Tool"
+msgstr "Outil de gestion de la confidentialité"
+
 #, python-format
 msgid "Set private: %d %s\n"
 msgstr "Rendre privé : %d %s\n"
+
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "Pas privé : %d %s\n"
 
 msgid "Set persons private.."
 msgstr "Définir les personnes comme privées."
@@ -48,6 +55,12 @@ msgstr "Sélectionne un filtre pour restreindre les individus"
 
 msgid "Persons"
 msgstr "Personnes"
+
+msgid "Select filter to restrict events"
+msgstr "Sélectionne un filtre pour restreindre les évènements"
+
+msgid "Select filter to restrict medias"
+msgstr "Sélectionner un filtre pour restreindre les media"
 
 msgid "E-Mail"
 msgstr "Courriel"

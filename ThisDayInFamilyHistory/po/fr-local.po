@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -17,11 +17,29 @@ msgstr ""
 msgid "Report only living tree members"
 msgstr "Lister uniquement les membres vivants de l'arbre"
 
+msgid "Show these events"
+msgstr "Montrer ces évènements"
+
 msgid "Sort by "
 msgstr "Tri par "
 
 msgid "Sort in ascending order?"
 msgstr "Trier dans l'ordre ascendant ?"
 
+msgid "March"
+msgstr "Mars"
+
+msgid "Person Name"
+msgstr "Nom de l'individu"
+
+msgid "Event Year"
+msgstr "Année de l'événement"
+
 msgid " and "
 msgstr " et "
+
+msgid "unknown participant"
+msgstr "participant inconnu"
+
+msgid "unknown location"
+msgstr "lieu inconnu"

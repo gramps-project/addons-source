@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-04-11 09:13+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,10 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Database Differences Report"
-msgstr "Datenbankunterschiede-Bericht"
+msgstr "Datenbankunterschiedebericht"
 
 msgid "Differences between Database and File"
 msgstr "Unterschiede zwischen Datenbank und Datei"
@@ -25,14 +25,14 @@ msgstr "Keine Unterschiede"
 
 msgid "Missing items in File that are added in Database"
 msgstr ""
-"Fehlende Elemente in der Datei, die in der Datenbank hinzugefügt wurden"
+"Fehlende Elemente in der Datei, die in der Datenbank hinzugefügt werden"
 
 #, python-format
 msgid "Missing %s: %s"
 msgstr "Fehlende %s: %s"
 
 msgid "Nothing missing"
-msgstr "Es fehlt nichts"
+msgstr "Nichts fehlt"
 
 msgid "Added items in File that are missing in Database"
 msgstr "Elemente in Datei hinzugefügt, die in der Datenbank fehlen"

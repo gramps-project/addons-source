@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 09:41-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -23,8 +23,14 @@ msgstr "Gramplet pour chercher des objets dans la base de données."
 msgid "Show bookmarked first"
 msgstr "Afficher les signets en premier"
 
+msgid "Sort by object type"
+msgstr "Tri par type d'objet"
+
 msgid "Persons"
 msgstr "Personnes"
+
+msgid "Select objects to search"
+msgstr "Sélectionnez les objets à chercher"
 
 #, python-format
 msgid "found: %s"
@@ -46,5 +52,15 @@ msgstr "Ajouter aux signets"
 msgid "Birth: %s"
 msgstr "Naissance : %s"
 
+#, python-format
+msgid "Death: %s"
+msgstr "Décès : %s"
+
 msgid "Parents:"
 msgstr "Parents :"
+
+msgid "Set as Active person"
+msgstr "Définir l’individu actif"
+
+msgid "Set as Home person"
+msgstr "Définir comme souche"

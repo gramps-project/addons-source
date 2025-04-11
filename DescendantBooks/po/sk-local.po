@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-03-16 11:34+0000\n"
+"PO-Revision-Date: 2025-04-06 09:03+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -45,6 +45,10 @@ msgstr "Správa o potomkoch"
 msgid "Writing %s reports..."
 msgstr "Písanie %s správ..."
 
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "(report_count). Potomkovia osoby (name)"
+
 msgid "Select filter to restrict people that appear in the report"
 msgstr "Vyberte filter na vymedzenie ľudí, ktorí sa objavia v správe"
 
@@ -83,9 +87,23 @@ msgstr "Index mien"
 msgid "Report, Generation, Person, Name"
 msgstr "Správa, Generácia, Osoba, Meno"
 
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "Pozri správu : {report}, Generácia : {generation}, Osoba : {person}"
+
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Zobrazenia správy pre %s"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr ""
+"Manžel/manželka osoby: Správa: {report}, Generácia: {generation}, Osoba: "
+"{person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Správa: {report}, Generácia: {generation}, Osoba: {person}"
 
 #, python-format
 msgid "%(event_name)s of %(name)s "

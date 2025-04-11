@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -13,6 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
+
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s à %(place)s"
 
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
@@ -30,5 +34,38 @@ msgstr "%(event_type)s : %(date)s"
 msgid "%(event_type)s: %(place)s"
 msgstr "%(event_type)s : %(place)s"
 
+msgid "Click to make this event active"
+msgstr "Cliquer pour rendre cet évènement actif"
+
+msgid "Click to visit this link"
+msgstr "Cliquer pour visiter ce lien"
+
+msgid ": "
+msgstr ": "
+
+msgid "Combined"
+msgstr "Combiné"
+
+msgid "A view showing relationships and events for a person"
+msgstr "Une vue montrant les relations et les évènements pour un individu"
+
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Vous devez définir une « souche ». Allez dans la vue Individus, sélectionnez "
+"la personne qui sera la « souche » de votre arbre puis confirmez votre choix "
+"via la menu Édition -> Définir comme souche."
+
 msgid "Order"
 msgstr "Rang"
+
+msgid "Edit the active event"
+msgstr "Modifier l'évènement actif"
+
+msgid "Show Tags"
+msgstr "Afficher les Étiquettes"
+
+msgid "Vertical Details"
+msgstr "Détails verticaux"

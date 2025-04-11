@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -17,6 +17,9 @@ msgstr ""
 msgid "Media Verify Tool"
 msgstr "Outil de vérification des media"
 
+msgid "Moved/Renamed Files"
+msgstr "Fichiers déplacés/renommés"
+
 msgid "Missing Files"
 msgstr "Fichiers manquants"
 
@@ -28,6 +31,9 @@ msgstr "Fichiers supplémentaires"
 
 msgid "No md5 Generated"
 msgstr "Pas de md5 généré"
+
+msgid "Errors"
+msgstr "Erreurs"
 
 msgid "Close the Media Verify Tool"
 msgstr "Fermer l'outil de vérification des media"
@@ -76,6 +82,13 @@ msgstr "Génération des hashes media"
 
 msgid "Set media hashes"
 msgstr "Définition des hashes media"
+
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"Le chemin des média n'est pas défini. Vous devez définir le « chemin relatif "
+"vers les medias » dans les Préférences."
 
 msgid "Finding files"
 msgstr "Recherche de fichiers"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -24,13 +24,28 @@ msgid "Show avatars"
 msgstr "Afficher les avatars"
 
 msgid "Highlight the home person"
-msgstr "Marquer l’individu central"
+msgstr "Mettre en valeur la souche"
 
 msgid "Show full dates"
 msgstr "Afficher les dates complètes"
 
 msgid "Show places"
 msgstr "Afficher les lieux"
+
+msgid "Vertical: Top to Bottom"
+msgstr "Vertical : du haut vers le bas"
+
+msgid "Vertical: Bottom to Top"
+msgstr "Vertical : du bas vers le haut"
+
+msgid "Horizontal: Left to Right"
+msgstr "Horizontal : de la gauche vers la droite"
+
+msgid "Horizontal: Right to Left"
+msgstr "Horizontal : de la droite vers la gauche"
+
+msgid "Time Direction"
+msgstr "Direction temporelle"
 
 msgid "Limit number of people displayed (use 0 for unlimited)"
 msgstr "Limite du nombre de personnes affichées (0 pour illimité)"
@@ -39,7 +54,7 @@ msgid "Person theme"
 msgstr "Thème d’individu"
 
 msgid "Path color to home person"
-msgstr "Couleur du chemin vers l’individu central"
+msgstr "Couleur du chemin vers la souche"
 
 msgid "Font:"
 msgstr "Police :"
@@ -64,6 +79,21 @@ msgstr "Choisir un avatar féminin"
 
 msgid "Unknown avatar:"
 msgstr "Avatar inconnu :"
+
+msgid "Choose Unknown avatar"
+msgstr "Choisir un avatar « Inconnu »"
+
+msgid "Other avatar:"
+msgstr "Avatar « Autre » :"
+
+msgid "Choose Other avatar"
+msgstr "Choisir un avatar « Autre »"
+
+msgid "Active person border size"
+msgstr "Taille de la bordure de l'individu actif"
+
+msgid "Person border size"
+msgstr "Taille de la bordure d'individu"
 
 msgid "Themes"
 msgstr "Thèmes"
@@ -247,6 +277,9 @@ msgstr "Orthogonal"
 msgid "Copy"
 msgstr "Copie"
 
+msgid "No Events for this person"
+msgstr "Aucun évènement pour cet individu"
+
 msgid "Select tags for person"
 msgstr "Sélectionnez les étiquettes pour l’individu"
 
@@ -257,13 +290,19 @@ msgid "Add parents"
 msgstr "Ajouter les parents"
 
 msgid "Set as home person"
-msgstr "Définir l’individu central"
+msgstr "Définir comme souche"
+
+msgid "Show path to home person"
+msgstr "Montrer le chemin vers la souche"
 
 msgid "Remove from bookmarks"
 msgstr "Enlever des signets"
 
 msgid "Add to bookmarks"
 msgstr "Ajouter aux signets"
+
+msgid "No Events for this family"
+msgstr "Pas d'évènement pour cette famille"
 
 msgid "Select tags for family"
 msgstr "Sélectionnez les étiquettes pour la famille"

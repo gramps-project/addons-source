@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -19,6 +19,11 @@ msgstr "Lignes des descendants"
 
 msgid "Produces descendants lines of a person"
 msgstr "Produit les lignes de descendants de l'individu"
+
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr ""
+"L'utilisation du type SVG pour un document supplémentaire n'est pas prise en "
+"charge !"
 
 msgid "Output format"
 msgstr "Format de sortie"
@@ -141,6 +146,23 @@ msgstr "Boîte autour de la section Individu"
 msgid "Draw a thin black box around each person' text block."
 msgstr "Entourer la section de l'individu avec un léger cadre noir."
 
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr ""
+"Tous les blocs de tous les individus ont la même hauteur, qui est la hauteur "
+"du plus haut bloc."
+
+msgid "All Person's blocks have the same width"
+msgstr "Tous les blocs d'individu ont la même largeur"
+
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr ""
+"Tous les blocs de tous les individus ont la même largeur, qui est la largeur "
+"du bloc le plus large."
+
 msgid "Colour blocks by Generation"
 msgstr "Utiliser une couleur par génération"
 
@@ -164,6 +186,9 @@ msgid ""
 msgstr ""
 "Intensité de la couleur d'arrière plan du conjoint, 0 = faible, 255 = "
 "couleur intense"
+
+msgid "Display Formats"
+msgstr "Formats d'affichage"
 
 msgid "Name Display Format"
 msgstr "Format d'affichage du nom"
@@ -196,11 +221,55 @@ msgstr ""
 "par ex.\n"
 "United States of America/USA"
 
+msgid "Spouse and Family"
+msgstr "Conjoint et famille"
+
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "Hauteur ligne descendant vers barre du mariage"
+
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr ""
+"La longueur de la ligne verticale du cadre d'un descendant avec la ligne "
+"horizontale vers son conjoint (0 à 50)."
+
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "Hauteur ligne barre du mariage vers conjoint"
+
+msgid "Horizontal space descendant to spouse"
+msgstr "Espace horizontal entre le descendant et son conjoint"
+
+msgid "Children distance"
+msgstr "Distance des enfants"
+
 msgid "MIN_C_WIDTH"
 msgstr "MIN_C_LARGEUR"
 
+msgid "Space between lines of text"
+msgstr "Espace entre les lignes de texte"
+
+msgid "The space to add between a line and the next in a person text block."
+msgstr ""
+"L'espace à ajouter entre une ligne et la suivante dans un bloc texte "
+"d'individu."
+
+msgid "Header and Footer"
+msgstr "En-tête et pied de page"
+
+msgid "The text that will be written in the header of the document"
+msgstr "Le texte qui sera écrit dans l'en-tête du document"
+
 msgid "The text that will be written in the footer of the document"
 msgstr "Le texte qui sera écrit en bas du document (pied-de-page)"
+
+msgid "Title and footer coefficient"
+msgstr "Coefficient de titre et de pied de page"
+
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr ""
+"Un nombre qui multiplie la taille de base du texte dans le titre et dans le "
+"pied-de-page"
 
 msgid "Protect People, Images or Events that are marked Private"
 msgstr "Protéger les individus, images ou événements marqués privés"
@@ -215,3 +284,6 @@ msgstr "Texte privé"
 
 msgid "Text to display in block, when a Person is marked private"
 msgstr "Texte pour afficher la section, quand l'individu est privé"
+
+msgid "The default style."
+msgstr "Le style par défaut."

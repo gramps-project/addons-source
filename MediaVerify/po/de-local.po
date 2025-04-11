@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-04-11 09:13+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,13 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Media Verify Tool"
 msgstr "Medienüberprüfungswerkzeug"
 
 msgid "Moved/Renamed Files"
-msgstr "Verschobene/umbenannte Dateien"
+msgstr "Verschobene/Umbenannte Dateien"
 
 msgid "Missing Files"
 msgstr "Fehlende Dateien"
@@ -30,7 +30,7 @@ msgid "Extra Files"
 msgstr "Zusätzliche Dateien"
 
 msgid "No md5 Generated"
-msgstr "Kein md5 erstellt"
+msgstr "Kein md5 generiert"
 
 msgid "Errors"
 msgstr "Fehler"
@@ -39,32 +39,32 @@ msgid "Close the Media Verify Tool"
 msgstr "Medienüberprüfungswerkzeug schließen"
 
 msgid "Generate"
-msgstr "Erstellen"
+msgstr "Generieren"
 
 msgid "Generate md5 hashes for media objects"
-msgstr "Erstelle md5 Hashes für Medienobjekt"
+msgstr "Generieren von md5-Hashes für Medienobjekte"
 
 msgid "Verify"
 msgstr "Überprüfen"
 
 msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
-"Überprüfe Medienpfade und melde fehlende, doppelte und zusätzliche Dateien"
+"Medienpfade prüfen und fehlende, doppelte und zusätzliche Dateien melden"
 
 msgid "Export"
 msgstr "Exportieren"
 
 msgid "Export the results to a text file"
-msgstr "Die Ergebnisse in eine Textdatei exportieren"
+msgstr "Exportiere die Ergebnisse in eine Textdatei"
 
 msgid "Fix"
-msgstr "Reparieren"
+msgstr "Korrigieren"
 
 msgid "Fix media paths of moved and renamed files"
-msgstr "Medienpfade von verschobenen und umbenannten Dateien reparieren"
+msgstr "Korrektur der Medienpfade von verschobenen und umbenannten Dateien"
 
 msgid "Verify Gramps media using md5 hashes"
-msgstr "Überprüfen von Gramps Medien mit md5 hashes"
+msgstr "Gramps-Medien mit md5-Hashes verifizieren"
 
 msgid "Files"
 msgstr "Dateien"
@@ -77,17 +77,17 @@ msgid "Error when writing the report: %s"
 msgstr "Fehler beim Schreiben des Berichts: %s"
 
 msgid "Generating media hashes"
-msgstr "Erstelle Medienhashes"
+msgstr "Medienhashes erzeugen"
 
 msgid "Set media hashes"
-msgstr "Bestimme Medienhashes"
+msgstr "Medienhashes setzen"
 
 msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
 msgstr ""
-"Medienpfad nicht gesetzt. Du musst den \"Basispfad für relative "
-"Medienpfade\" in den Einstellungen setzen."
+"Medienpfad nicht festgelegt.  Du musst den „Basispfad für relative "
+"Medienpfade“ in den Einstellungen festlegen."
 
 msgid "Finding files"
 msgstr "Dateien finden"
@@ -96,13 +96,13 @@ msgid "Checking paths"
 msgstr "Überprüfe Pfade"
 
 msgid "Fixing file paths"
-msgstr "Dateipfade reparieren"
+msgstr "Dateipfade korrigieren"
 
 msgid "Fix media paths"
-msgstr "Medienpfade reparieren"
+msgstr "Medienpfade korrigieren"
 
 msgid "Media Verify"
 msgstr "Medien Überprüfen"
 
 msgid "Verify that media is present in the correct path"
-msgstr "Überprüft, das die Medien im korrekten Pfad vorhanden sind"
+msgstr "Überprüfen, dass das Medium im richtigen Pfad vorhanden ist"

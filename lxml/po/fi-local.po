@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-04-03 22:10+0000\n"
+"Last-Translator: Kieli Puoli <kielipuoli@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,8 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "lxml"
+msgstr "lxml"
 
 msgid "Gramplet for testing lxml and XSLT"
 msgstr "Gramplet lxml- ja XSLT-testaukseen"
@@ -268,6 +271,9 @@ msgstr ""
 "Yritä käyttää .gramps\n"
 "joka on luotu Gramps 4.x:llä."
 
+msgid "0"
+msgstr "0"
+
 msgid "File parsed with"
 msgstr "Tiedosto jäsennetty"
 
@@ -289,6 +295,9 @@ msgstr " lisätietodot"
 msgid " source(s)"
 msgstr " lähteet"
 
+msgid "Gallery.html"
+msgstr "Galleria.html"
+
 #, python-format
 msgid "2. Has generated a media index on \"%(file)s\".\n"
 msgstr "2. On luonut mediahakemiston kohteelle \"%(file)s\".\n"
@@ -299,3 +308,28 @@ msgstr "3. On kirjoitettu merkintöjä kohtaan \"%(file)s\".\n"
 
 msgid "List of sources"
 msgstr "Lähdeluettelo"
+
+msgid "Australia"
+msgstr "Australia"
+
+msgid "Brazil"
+msgstr "Brasilia"
+
+msgid "India"
+msgstr "Intia"
+
+msgid "Norway"
+msgstr "Norja"
+
+msgid "Portugal"
+msgstr "Portugali"
+
+#, python-format
+msgid ""
+"Try to open\n"
+" \"%s\"\n"
+" into your prefered web navigator ..."
+msgstr ""
+"Yritä avata\n"
+" \"%s\"\n"
+" suosikkiselaimessasi ..."

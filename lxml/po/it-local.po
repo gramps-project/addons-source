@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-18 14:54+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -39,6 +39,88 @@ msgstr "Non si può decomprimere \"%s\""
 
 #, python-format
 msgid ""
+"From:\n"
+" \"%(file1)s\"\n"
+" to:\n"
+" \"%(file2)s\".\n"
+msgstr ""
+"Da:\n"
+" \"%(file1)s\"\n"
+"a:\n"
+" \"%(file2)s\".\n"
+
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "Non posso copiare \"%s\""
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of records and relations : \t%s\n"
+"\n"
+msgstr ""
+"\n"
+"XML: numero di informazioni e relazioni : \t%s\n"
+"\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Numero di etichette : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\n"
+msgstr ""
+"Numero di etichette : \n"
+"\t\t\t%s\n"
+
+#, python-format
+msgid ""
+"Number of  events : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Numero di eventi : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+msgstr ""
+"Numero di persone : \n"
+"\t\t\t%s\t|\t(%s) e (%s)* cognomi\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Numero di persone : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of families : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Numero di famiglie : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
+"Number of sources : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Numero di fonti : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#, python-format
+msgid ""
 "Number of places : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
@@ -67,7 +149,7 @@ msgid ""
 "XML: Number of additional records and relations: \t%s\n"
 msgstr ""
 "\n"
-"XML: Numero di record e relazioni aggiuntive: \t%s\n"
+"XML: numero di informazioni e relazioni aggiuntive: \t%s\n"
 
 #, python-format
 msgid ""

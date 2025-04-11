@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-03-18 14:54+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -46,6 +46,10 @@ msgstr "Resoconto dei discendenti"
 msgid "Writing %s reports..."
 msgstr "Scrittura di %s resoconti..."
 
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. Discendenza di {name}"
+
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
 "Seleziona un filtro per restringere le persone che appariranno nel resoconto"
@@ -74,9 +78,21 @@ msgstr "Generazione di %s riferimenti del resoconto..."
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr "%(report_count)s. resoconto discendenza di %(person_name)s"
 
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "Vedi resoconto: {report}, generazione: {generation}, persona: {person}"
+
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Occorrenze nel resoconto di %s"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Vedi resoconto: {report}, generazione: {generation}, persona: {person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Resoconto: {report}, generazione: {generation}, persona: {person}"
 
 #, python-format
 msgid "%(event_name)s of %(name)s "

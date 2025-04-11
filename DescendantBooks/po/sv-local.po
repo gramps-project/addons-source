@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-03-18 09:38+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -46,6 +46,10 @@ msgstr "Rapport för ättlingar"
 msgid "Writing %s reports..."
 msgstr "Skriver %s rapporter..."
 
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. Ättling för {name}"
+
 msgid "Select filter to restrict people that appear in the report"
 msgstr "Välj ett filter som begränsar vilka personer som tas med i rapporten"
 
@@ -84,9 +88,22 @@ msgstr "Namnindex"
 msgid "Report, Generation, Person, Name"
 msgstr "Rapport, Generation, Person, Namn"
 
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "Se rapport : {report}, Generation : {generation}, Person : {person}"
+
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Rapportutseende för %s"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr ""
+"Make för: Rapport: {report}, Generation: {generation}, Person: {person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Rapport: {report}, Generation: {generation}, Person: {person}"
 
 #, python-format
 msgid "%(event_name)s of %(name)s "

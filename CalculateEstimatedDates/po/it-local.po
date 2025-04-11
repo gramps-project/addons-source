@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Select filter to restrict people"
 msgstr "Seleziona filtro per restringere le persone"
@@ -25,6 +25,12 @@ msgstr "Fonti da rimuovere o aggiungere"
 
 msgid "Remove previously added events, notes, and source"
 msgstr "Rimuove eventi, note e fonti aggiunti precedentemente"
+
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"Rimuove eventi calcolati, note e fonti; viene fatto immediatamente cliccando "
+"su Esegui"
 
 msgid "Do not add birth events"
 msgstr "Non aggiungere eventi di tipo nascita"
@@ -65,8 +71,14 @@ msgstr "Numero medio di anni tra due generazioni"
 msgid "Estimated Dates"
 msgstr "Date stimate"
 
+msgid "Approximate (about)"
+msgstr "Approssimata (circa)"
+
 msgid "Extremes (after and before)"
 msgstr "Estremi (dopo e prima)"
+
+msgid "Dates on events are either about or after/before"
+msgstr "Le date degli eventi sono o circa o dopo/prima"
 
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
@@ -139,6 +151,9 @@ msgstr "Riselezionare veramente i dati?"
 
 msgid "Run Select Again"
 msgstr "Esegue nuovamente la selezione"
+
+msgid "Evidence"
+msgstr "Prova"
 
 msgid "Processing...\n"
 msgstr "Elaborazione in corso...\n"

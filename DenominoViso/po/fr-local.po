@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -16,6 +16,12 @@ msgstr ""
 
 msgid "No Source"
 msgstr "Pas de source"
+
+msgid "onclick"
+msgstr "en cliquant"
+
+msgid "onmouseover"
+msgstr "ausurvoldelasouris"
 
 msgid "Ancestor"
 msgstr "Ascendant"
@@ -93,6 +99,9 @@ msgstr "dans"
 msgid "DenominoViso Options"
 msgstr "Options DenominoViso"
 
+msgid "The destination file for the html-content."
+msgstr "Le fichier de destination pour le contenu HTML."
+
 msgid "Central Person"
 msgstr "L'individu central"
 
@@ -156,6 +165,9 @@ msgstr "Omettre ou non les données privés."
 
 msgid "Include Events"
 msgstr "Inclure les événements"
+
+msgid "Whether to include a person's events."
+msgstr "Inclure ou non des évènements d'individu."
 
 msgid "Include birth children"
 msgstr "Inclure la naissance des enfants"
@@ -333,6 +345,13 @@ msgstr ""
 msgid "Source confidence color"
 msgstr "Couleur pour la confiance de la source"
 
+msgid ""
+"List of lists where each sublist is a list with information on the color to "
+"use for a certain confidence level."
+msgstr ""
+"Liste de listes où chaque sous-liste est une liste contenant des "
+"informations sur la couleur à utiliser pour un certain niveau de confiance."
+
 msgid "Event format"
 msgstr "Format de l'événement"
 
@@ -369,6 +388,12 @@ msgstr "Sauver les images dans ..."
 msgid "should be"
 msgstr "devrait être"
 
+msgid "Included"
+msgstr "Compris"
+
+msgid "Excluded"
+msgstr "Exclus"
+
 msgid "Name HTML-wrapper file"
 msgstr "Nom du fichier HTML (wrapper)"
 
@@ -392,3 +417,12 @@ msgstr "Longueur du pointillé"
 
 msgid "DenominoViso"
 msgstr "DenominoViso"
+
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Génère une page Web (HTML) avec une représentation graphique des ancêtres/"
+"descendants (SVG) où les détails sur les individus deviennent visibles lors "
+"des événements de souris."

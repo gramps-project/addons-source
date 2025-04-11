@@ -3,12 +3,16 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2009-03-05 12:05+0100\n"
-"Last-Translator: Julio Sánchez <jsanchez@users.sourceforge.com>\n"
+"PO-Revision-Date: 2025-04-04 00:40+0000\n"
+"Last-Translator: gioboto <giomaussi@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione filtro para restringir las personas"
@@ -18,6 +22,18 @@ msgstr "Estimaciones de las fechas calculadas"
 
 msgid "Source to remove and/or add"
 msgstr "Fuente a eliminar y/o agregar"
+
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"La eliminación de los eventos, notas y fuentes calculados; sucede "
+"inmediatamente al ejecutar"
+
+msgid "Add a birth events with or without estimated dates"
+msgstr "Agregar evento de nacimiento con o sin fechas estimadas"
+
+msgid "Add death events with or without estimated dates"
+msgstr "Agregar eventos de defunción con o sin fechas estimadas"
 
 msgid "Maximum age"
 msgstr "Edad máxima"
@@ -31,11 +47,26 @@ msgstr "Diferencia máxima de edad entre hermanos"
 msgid "Average years between two generations"
 msgstr "Distancia media en años entre dos generaciones"
 
+msgid "Approximate (about)"
+msgstr "Aproximadamente"
+
+msgid "Extremes (after and before)"
+msgstr "Extremos (antes y después)"
+
+msgid "Dates on events are either about or after/before"
+msgstr "Las fechas de los eventos son anteriores o posteriores a los mismos"
+
 msgid "Calculate Estimated Dates"
 msgstr "Calcular fechas estimadas"
 
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "Eliminar eventos, notas y fuentes y volver a seleccionar datos"
+
 msgid "Processing...\n"
 msgstr "Procesando...\n"
+
+msgid "Removing old estimations... "
+msgstr "Eliminando estimaciones antiguas... "
 
 #, python-format
 msgid "Removing '%s'..."
@@ -46,6 +77,9 @@ msgstr "Fecha de nacimiento estimada"
 
 msgid "Estimated death date"
 msgstr "Fecha de defunción estimada"
+
+msgid " Done! Committing..."
+msgstr " Listo! Comprometido..."
 
 msgid "Estimated date"
 msgstr "Fecha estimada"

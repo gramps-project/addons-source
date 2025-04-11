@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-22 23:21+0000\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -277,8 +277,14 @@ msgstr "Altitude :"
 msgid "Bad Date/Time"
 msgstr "Mauvaise date / heure"
 
+msgid "Invalid latitude (syntax: 18°9'"
+msgstr "Latitude invalide (syntaxe : 18°9'"
+
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 ou -18:9:48.21)"
+
+msgid "Invalid longitude (syntax: 18°9'"
+msgstr "Longitude invalide (syntaxe : 18°9'"
 
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 ou -18:9:48.21)"
@@ -288,6 +294,9 @@ msgid ""
 "image."
 msgstr ""
 "ATTENTION ! Vous allez supprimer toutes les métadonnées Exif de cette image."
+
+msgid "Delete?"
+msgstr "Supprimer ?"
 
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-07 13:25+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -23,6 +23,12 @@ msgstr "testimoni"
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
 msgstr "Errore durante la scrittura di {target_path}: {message}"
+
+msgid "No central person selected"
+msgstr "Nessuna persona centrale selezionata"
+
+msgid "The destination file for the html-content."
+msgstr "Il file di destinazione per il contenuto HTML."
 
 msgid "Include private records"
 msgstr "Includere informazioni private"

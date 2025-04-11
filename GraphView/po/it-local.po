@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Font:"
+msgstr "Carattere:"
+
+msgid "Show person images"
+msgstr "Mostra le immagini delle persone"
 
 msgid "Vertical spacing between generations"
 msgstr "Spaziatura verticale tra le generazioni"
@@ -22,6 +28,29 @@ msgstr "Spaziatura orizzontale tra le generazioni"
 
 msgid "Change active person?"
 msgstr "Modificare la persona attiva?"
+
+msgid "Image on left side"
+msgstr "Immagine sulla sinistra"
+
+msgid "<b>Tags:</b>"
+msgstr "<b>Etichette:</b>"
+
+msgid "Select tags for person"
+msgstr "Seleziona etichette per persona"
+
+msgid "Select tags for family"
+msgstr "Seleziona etichette per famiglia"
+
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Aggiunta di etichette alla persona (%s)"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Aggiunta di etichette alla famiglia (%s)"
+
+msgid "Light"
+msgstr "Chiaro"
 
 msgid "Search..."
 msgstr "Ricerca..."

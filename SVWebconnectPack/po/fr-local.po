@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -32,8 +32,29 @@ msgstr "Google SV"
 msgid "FamilySearch.org Tree"
 msgstr "Arbre FamilySearch.org"
 
+msgid "National archives of Sweden personsearch"
+msgstr "Archives nationales de Suède : recherche de personne"
+
+msgid "National archives of Sweden free search"
+msgstr "Archives nationales de Suède : recherche libre"
+
+msgid "Arkiv Digital estate records for Skåne"
+msgstr "Archives numériques du domaine pour la Scanie"
+
 msgid "Ancestry Search"
 msgstr "Chercher sur Ancestry"
 
+msgid "Find swedish portraits - Rötter.se"
+msgstr "Trouvez des portraits suédois - Rötter.se"
+
+msgid "Gravar.se - find swedish graves"
+msgstr "Gravar.se - trouver des tombes suédoises"
+
 msgid "National archives of Sweden search censuses"
 msgstr "Archives nationales des recensements de la Suède"
+
+msgid "Arkiv Digital released prisoners"
+msgstr "Archives numériques des prisonniers libérés"
+
+msgid "Gravestone inventory - rötter.se"
+msgstr "Inventaire des pierres tombales - rötter.se"

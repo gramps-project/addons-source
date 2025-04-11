@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14,8 +14,26 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+msgid "Image for people with unknown gender."
+msgstr "Image pour les individus dont le sexe est inconnu."
+
 msgid "Image for males."
 msgstr "Image pour les hommes."
 
+msgid "Image for females"
+msgstr "Image pour les femmes"
+
 msgid "Select filter to restrict people"
 msgstr "Sélectionne un filtre pour restreindre les individus"
+
+msgid "Avatar Generator"
+msgstr "Générateur d'avatar"
+
+msgid "INFO"
+msgstr "INFORMATIONS"
+
+msgid "No media was removed."
+msgstr "Aucun medium n'a été supprimé."
+
+msgid "Add avatar images..."
+msgstr "Ajouter les images d'avatar…"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-03-18 09:38+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -13,6 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.11-dev\n"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Kunde inte skriva till {target_path}: {message}"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -121,6 +125,10 @@ msgid ""
 msgstr ""
 "Målkatalog %s existerar inte\n"
 "Vill du försöka skapa den?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "Fel vid skapandet av {target_path}: {message}"
 
 #, python-format
 msgid ""

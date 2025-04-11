@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-03-16 11:34+0000\n"
+"PO-Revision-Date: 2025-04-06 09:03+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -52,6 +52,10 @@ msgstr "popis"
 
 msgid "witnesses"
 msgstr "svedkovia"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Chyba pri zápise {target_path}: {message}"
 
 msgid "No central person selected"
 msgstr "Nebola vybratá hlavná osoba"

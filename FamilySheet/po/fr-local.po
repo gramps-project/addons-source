@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -84,11 +84,17 @@ msgstr "Individu central et ses descendants par branches"
 msgid "Center person and all descendants"
 msgstr "Individu central et tous ses descendants"
 
+msgid "Whether to include descendants, and which ones."
+msgstr "Inclure ou non les descendants, et lesquels."
+
 msgid "Replace first name with call name"
 msgstr "Remplacer le prénom par le prénom usuel"
 
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Souligner ou ajouter le prénom usuel dans le prénom"
+
+msgid "Whether to include call name, and how."
+msgstr "Inclure ou non la cote, et comment."
 
 msgid "Print placeholders for missing information"
 msgstr "Imprime un espace pour l'information manquante"

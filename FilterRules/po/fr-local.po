@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -41,6 +41,9 @@ msgstr "Personnes ayant des dossiers parentaux multiples"
 msgid "Matches people who have more than one set of parents"
 msgstr "Renvoie les personnes qui ont plus d'une famille parentale"
 
+msgid "Match associations of <person filter>"
+msgstr "Correspond aux associations de <filtre individu>"
+
 msgid "Does NOT match with selected Role"
 msgstr "Ne correspond PAS au rôle sélectionné"
 
@@ -71,6 +74,9 @@ msgstr "Familles correspondant à <filtre d'évènement>"
 
 msgid "Matches families that are matched by an event filter"
 msgstr "Sélectionne les familles qui correspondent à un filtre d'événements"
+
+msgid "Matches families matched by an event filter"
+msgstr "Correspond aux familles sélectionnées par un filtre d'évènement"
 
 msgid "Number of degrees of separation from person."
 msgstr "Nombre de degrés de séparation de l'individu."

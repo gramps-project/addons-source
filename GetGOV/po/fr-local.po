@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 13:48+0000\n"
-"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Place ID to import from GOV (Historical Gazetteer):"
+msgstr ""
+"ID de lieu à importer de GOV (Geschichtliche Orts-Verzeichnis = Index "
+"historique des lieux) :"
 
 msgid "Get Place"
 msgstr "Trouver le lieu"
@@ -20,6 +25,14 @@ msgstr "Trouver le lieu"
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "Ajouter l'id-GOV du lieu %s"
+
+#, python-format
+msgid "GetGOV error: %s"
+msgstr "erreur GetGOV : %s"
+
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr "Erreur GOV sur l'id %s avec le code : "
 
 #, python-format
 msgid "from %s to %s"
@@ -32,6 +45,9 @@ msgstr "après %s"
 #, python-format
 msgid "before %s"
 msgstr "avant %s"
+
+msgid "GetGOV"
+msgstr "GetGOV"
 
 msgid "Gramplet to get places from the GOV database"
 msgstr "Gramplet pour trouver des lieux depuis la base de données GOV"

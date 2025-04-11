@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14,8 +14,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+msgid "Hide person"
+msgstr "Cacher l'individu"
+
+msgid "Show person"
+msgstr "Affiche l'individu"
+
+msgid "Show siblings"
+msgstr "Afficher les frères et sœurs"
+
+msgid "Hide siblings"
+msgstr "Cacher les frères et sœurs"
+
+msgid "General Layout"
+msgstr "Disposition générale"
+
+msgid "Life Line Chart"
+msgstr "Carte des lignes de vie"
+
 msgid "Zoom in"
 msgstr "Zoom avant"
+
+msgid "Mouse wheel"
+msgstr "Roue de souris"
 
 msgid "Zoom out"
 msgstr "Zoom arrière"
@@ -26,11 +47,47 @@ msgstr "Zoom original"
 msgid "Zoom to best fit"
 msgstr "Zoom pour un affichage adapté"
 
+msgid "Export View as SVG"
+msgstr "Exporter la vue en SVG"
+
+msgid "Label Configuration"
+msgstr "Configuration de l'étiquette"
+
+msgid "Reset all settings"
+msgstr "Réinitialiser tous les paramètres"
+
+msgid "Life Line Descendant Chart"
+msgstr "Carte des descendants de la ligne de vie"
+
+msgid "Show photos"
+msgstr "Affiche les photos"
+
+msgid "Photo size"
+msgstr "Taille de photo"
+
+msgid "Total height"
+msgstr "Hauteur totale"
+
+msgid "Total height of the whole chart."
+msgstr "Hauteur totale de la carte."
+
+msgid "Relative line thickness"
+msgstr "Épaisseur de la ligne relative"
+
 msgid "Activate the birth label."
 msgstr "Activer l'étiquette de naissance."
 
 msgid "Birth label rotation"
 msgstr "Angle de rotation des étiquettes de naissance"
+
+msgid "Birth label anchor"
+msgstr "Ancrage de l'étiquette de naissance"
+
+msgid "Center"
+msgstr "Centre"
+
+msgid "Show death label"
+msgstr "Afficher l'étiquette de décès"
 
 msgid "Activate the death label."
 msgstr "Activer l'étiquette du décès."
@@ -38,14 +95,38 @@ msgstr "Activer l'étiquette du décès."
 msgid "Death label rotation"
 msgstr "Angle de rotation de l'étiquette de décès"
 
+msgid "Show marriage label"
+msgstr "Afficher l'étiquette du mariage"
+
+msgid "Font name"
+msgstr "Nom de la police"
+
+msgid "Relative font size"
+msgstr "Taille relative de la police"
+
+msgid "Family shape"
+msgstr "Forme de la famille"
+
+msgid "Visualize connections"
+msgstr "Visualiser les connexions"
+
 msgid "Based on surname"
 msgstr "Basé sur le nom de famille"
 
 msgid "Maximum number of generations"
 msgstr "Nombre maximal de générations"
 
+msgid "Maximum number of compression steps"
+msgstr "Nombre maximal de pas de compression"
+
+msgid "Highlight descandants"
+msgstr "Mise en relief des descendants"
+
 msgid "Highlight the persons which are descendants."
 msgstr "Mettre en évidence les personnes qui sont des descendants."
 
 msgid "Number of descendants"
 msgstr "Nombre de descendants"
+
+msgid "General chart layout"
+msgstr "Disposition générale"

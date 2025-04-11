@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -214,6 +214,9 @@ msgstr "Relation au père"
 msgid "Relationship to Mother"
 msgstr "Relation à la mère"
 
+msgid "Repositories Index"
+msgstr "Index des dépôts"
+
 msgid "Restore"
 msgstr "Restaurer"
 
@@ -284,6 +287,9 @@ msgstr "Eléments 0 à 0 affichés parmi 0"
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Eléments _START_ à _END_ affichés parmi _TOTAL_"
 
+msgid "Sort by:"
+msgstr "Trier par :"
+
 msgid "Sources Index"
 msgstr "Index des sources"
 
@@ -302,6 +308,21 @@ msgstr "Utiliser des onglets à la place des paragraphes"
 msgid "Use the search box above in order to find a person."
 msgstr ""
 "Utilisez le formulaire de recherche ci-dessus pour trouver un individu."
+
+msgid "Use a table format for the surnames index"
+msgstr "Utiliser un tableau pour l'index des noms de famille"
+
+msgid "Use a table format for the persons index"
+msgstr "Utiliser un tableau pour l'index des individus"
+
+msgid "Use a table format for the families index"
+msgstr "Utiliser un tableau pour l'index des familles"
+
+msgid "Use a table format for the sources index"
+msgstr "Utiliser un tableau pour l'index des sources"
+
+msgid "Use a table format for the places index"
+msgstr "Utiliser un tableau pour l'index des lieux"
 
 msgid "Used for family"
 msgstr "Référencé par les familles"

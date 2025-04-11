@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-03-18 09:38+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -58,6 +58,10 @@ msgstr "beskrivning"
 
 msgid "witnesses"
 msgstr "vittnen"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Kunde inte skriva till {target_path}: {message}"
 
 msgid "No central person selected"
 msgstr "Ingen centralperson är vald"

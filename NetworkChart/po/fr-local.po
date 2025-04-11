@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -134,6 +134,9 @@ msgstr "Couleur RGB pour l'arrière-plan masculin."
 
 msgid "Female Background"
 msgstr "Arrière-plan féminin"
+
+msgid "RGB-color for Female box edge."
+msgstr "Couleur RGB pour le cadre féminin."
 
 msgid "Other Background"
 msgstr "Autre arrière-plan"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -25,6 +25,9 @@ msgstr "Impossible de créer l'arborescence : %s"
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "Impossible de copier les fichiers web : %s"
+
+msgid "Ancestral Collapsible Tree Options"
+msgstr "Options de l'Arbre ancestral pliable"
 
 msgid "Include Generations"
 msgstr "Inclure les générations"
@@ -59,8 +62,27 @@ msgstr "Le chemin de destination pour les fichiers générés."
 msgid "The destination file name for html content."
 msgstr "Le fichier de destination pour le contenu HTML."
 
+msgid "Ancestral Collapsible Tree"
+msgstr "Arbre ancestral pliable"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Génère une page web avec une représentation graphique des ancêtres (SVG) "
+"représentée comme un Arbre Pliable de la bibliothèque D3.js JavaScript."
+
 msgid "Descendant Indented Tree"
 msgstr "Arbre descendant en retrait"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Génère une page Web avec une représentation graphique des descendants (SVG) "
+"représentée sous la forme d'un arbre pliable avec retrait à partir de la "
+"bibliothèque JavaScript D3.js."
 
 msgid "Ancestral Fan Chart Options"
 msgstr "Options du diagramme des ancêtres en éventail"
@@ -124,12 +146,21 @@ msgstr "Vue par défaut"
 msgid "Expand All"
 msgstr "Développer tout"
 
+msgid "Include contraction level"
+msgstr "Inclure le niveau de contraction"
+
 msgid "The number of descendant levels to contract on initial display."
 msgstr ""
 "Le nombre de générations descendants à inclure dans l'affichage initial."
 
+msgid "The font size in pixels for each node."
+msgstr "La taille de la police en pixels pour chaque noeud."
+
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Inclure ou non les familles en double dans le rapport."
+
+msgid "Expanded Row Background Color"
+msgstr "Couleur d'arrière-plan de la ligne développée"
 
 msgid "RGB-color for expanded row background."
 msgstr "Couleur RGB d'arrière-plan pour une ligne extensible masculine."
@@ -158,11 +189,20 @@ msgstr "N'inclure que le nom"
 msgid "Include Full Name Only"
 msgstr "Inclure le nom complet"
 
+msgid "How to handle living people."
+msgstr "Comment gérer les personnes vivantes."
+
 msgid "Whether or not to include people who may have recently died."
 msgstr "Inclure ou non les gens qui pourraient être décédées récemment."
 
 msgid "Navigation"
 msgstr "Navigation"
+
+msgid "Contraction/Expansion mechanism"
+msgstr "Mécanisme de contraction/expansion"
+
+msgid "Entire node."
+msgstr "Nœud entier."
 
 msgid "Arrow images at start of node."
 msgstr "Images des flèches au début du nœud."
@@ -186,8 +226,20 @@ msgstr "Chemin de préfixe d'URL."
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr "Préfixe d'URL à appliquer à chaque lien HREF autogénéré."
 
+msgid "URL file extension"
+msgstr "Extension du fichier URL"
+
 msgid "No file extension."
 msgstr "Aucune extension de fichier."
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
 
 msgid ".php"
 msgstr ".php"
@@ -214,6 +266,9 @@ msgid "What to use as file name delimiter replacing whitespace."
 msgstr ""
 "Que faut-il utiliser comme délimiteur de nom de fichier pour remplacer les "
 "espaces."
+
+msgid "Generations to generate HREF links"
+msgstr "Générations pour lesquelles générer des liens HREF"
 
 msgid "The number of generations to generate HREF links."
 msgstr "Le nombre de générations pour lesquelles générer les liens HREFF."
@@ -242,6 +297,12 @@ msgstr "Générer ou non les liens pour les conjoints."
 msgid "Biography Content"
 msgstr "Biographie"
 
+msgid "Show biography tooltips"
+msgstr "Afficher les infobulles de la biographie"
+
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "Montrer ou non des outils de biographie en survolant un noeud."
+
 msgid "Text Color"
 msgstr "Couleur du texte"
 
@@ -250,3 +311,19 @@ msgstr "Couleur RGB pour le texte de la biographie."
 
 msgid "RGB-color for biography tooltip."
 msgstr "Couleur RGB pour l'outil biographique."
+
+msgid "Header Font size"
+msgstr "Taille de la police de caractères de l'en-tête"
+
+msgid "The font size in pixels for biography header text."
+msgstr ""
+"La taille de la police de caractères en pixels pour le texte d'en-tête de la "
+"biographie."
+
+msgid "Body Font size"
+msgstr "Taille de la police de caractères du corps"
+
+msgid "The font size in pixels for biography body text."
+msgstr ""
+"La taille de la police de caractères en pixels pour le corps du texte de la "
+"biographie."

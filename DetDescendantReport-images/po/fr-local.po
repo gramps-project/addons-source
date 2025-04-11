@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -15,11 +15,56 @@ msgstr ""
 "X-Generator: Weblate 5.11-dev\n"
 
 #, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s : %(name)s%(endnotes)s"
+
+#, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s : %(value)s"
 
+msgid "List children"
+msgstr "Liste des enfants"
+
+msgid "Add descendant reference in child list"
+msgstr "Ajouter la référence du descendant dans la liste des enfants"
+
+msgid "Include TODO notes"
+msgstr "Inclure la note « À FAIRE »"
+
+msgid "Whether to include TODO notes."
+msgstr "Inclure ou non la note « À FAIRE » ."
+
 msgid "The style used for the title of the page."
 msgstr "Le style utilisé pour les titres de page."
+
+msgid "The style used for the children list."
+msgstr "Le style utilisé pour la liste des enfants."
+
+msgid "The style used for the first personal entry."
+msgstr "Le style utilisé pour la première entrée personnelle."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"Le style utilisé pour l'en-tête « En savoir plus sur » et pour les en-têtes "
+"des partenaires."
+
+msgid "The style used for additional detail data."
+msgstr "Le style utilisé pour les données détaillées supplémentaires."
+
+msgid "The style used for image labels."
+msgstr "Le style utilisé pour les étiquettes d'image."
 
 msgid "A style used for image captions."
 msgstr "Un style utilisé pour les légendes d'image."

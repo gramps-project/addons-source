@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 14:28+0000\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -17,8 +17,54 @@ msgstr ""
 msgid "DNA Matches"
 msgstr "Correspondances ADN"
 
+msgid "Gramplet to display a list of DNA matches"
+msgstr "Gramplet pour afficher une liste des correspondances ADN"
+
 msgid "Pers."
 msgstr "Ind."
 
+msgid "Rel."
+msgstr "Rel."
+
+msgid "S. DNA"
+msgstr "ADN P."
+
 msgid "S. Seg."
 msgstr "Seg. P."
+
+msgid "L. Seg"
+msgstr "P.G. Seg"
+
+msgid "Src(s)"
+msgstr "Src(s)"
+
+msgid "Shared DNA"
+msgstr "ADN partagé"
+
+msgid "Shared Segments"
+msgstr "Segments partagés"
+
+msgid "Largest Segment"
+msgstr "Plus grand segment"
+
+msgid "Source(s)"
+msgstr "Source(s)"
+
+msgid "Double-click on a row to navigate to the matched person."
+msgstr ""
+"Double-cliquez sur une ligne pour naviguer vers l'individu correspondant."
+
+msgid "Right click to edit selected association."
+msgstr "Clic droit pour modifier l'association sélectionnée."
+
+msgid "LEGEND"
+msgstr "LÉGENDE"
+
+msgid "="
+msgstr "="
+
+msgid "Not specified"
+msgstr "Non spécifié"
+
+msgid "cM"
+msgstr "cM"

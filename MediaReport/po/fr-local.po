@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:38+0000\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14,11 +14,52 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+msgid "Media Report"
+msgstr "Rapport Media"
+
+msgid "INFO"
+msgstr "INFORMATIONS"
+
+msgid "You have to select an image to generate this report."
+msgstr "Vous devez sélectionner une image pour générer ce rapport."
+
 msgid "General:"
 msgstr "Général :"
 
 msgid "Image type:"
 msgstr "Type d'image :"
 
+msgid "Heading"
+msgstr "En-tête"
+
+msgid "Select a media file for this report"
+msgstr "Sélectionnez un fichier medium pour ce rapport"
+
+msgid "Custom note"
+msgstr "Note personnalisée"
+
 msgid "Select a note for this report"
 msgstr "Sélectionnez une note pour ce rapport"
+
+msgid "Include custom note"
+msgstr "Inclure la note personnalisée"
+
+msgid "Include referenced people"
+msgstr "Inclure les individus référencés"
+
+msgid "Include media data"
+msgstr "Inclure les données des media"
+
+msgid "Media width"
+msgstr "Largeur du medium"
+
+#, no-python-format
+msgid "Maximum media width in % of available page width."
+msgstr "Largeur maximale du medium en pixels en % de la largeur de page."
+
+msgid "Media height"
+msgstr "Hauteur des media"
+
+#, no-python-format
+msgid "Maximum media height in % of available page height."
+msgstr "Hauteur maximale du medium en % de la hauteur de page."

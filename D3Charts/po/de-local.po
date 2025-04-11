@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-03-25 20:35+0000\n"
+"PO-Revision-Date: 2025-04-11 09:13+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -179,22 +179,24 @@ msgid "RGB-color for non-expandable row background."
 msgstr "RGB-Farbe für den Hintergrund einer nicht erweiterbaren Zeile."
 
 msgid "Include records marked private"
-msgstr "Mit als vertraulich markierten Datensätzen"
+msgstr "Als vertraulich gekennzeichnete Datensätze einbeziehen"
 
 msgid "Whether to include private objects."
-msgstr "Ob vertrauliche Objekte aufgenommen werden."
+msgstr "Ob vertrauliche Objekte einbezogen werden sollen."
 
 msgid "Include Last Name Only"
-msgstr "Nur Nachnamen aufnehmen"
+msgstr "Nur Nachname einschließen"
 
 msgid "Include Full Name Only"
-msgstr "Nur vollständigen Namen aufnehmen"
+msgstr "Nur den vollständigen Namen einschließen"
 
 msgid "How to handle living people."
-msgstr "Wie werden lebende Personen behandelt."
+msgstr "Wie mit lebenden Personen umzugehen ist."
 
 msgid "Whether or not to include people who may have recently died."
-msgstr "Ob Personen die vor kurzem gestorben sein könnten aufgenommen werden."
+msgstr ""
+"Ob Personen, die kürzlich verstorben sind, aufgenommen werden sollen oder "
+"nicht."
 
 msgid "Navigation"
 msgstr "Navigation"
@@ -206,25 +208,28 @@ msgid "Entire node."
 msgstr "Gesamter Knoten."
 
 msgid "Arrow images at start of node."
-msgstr "Pfeilbilder am Beginn des Knoten."
+msgstr "Pfeilbilder am Anfang des Knotens."
 
 msgid "Plus/Minus images at start of node."
-msgstr "Plus/Minus Bilder am Beginn des Knoten."
+msgstr "Plus/Minus-Bilder am Anfang des Knotens."
 
 msgid "Where to click to expand/contract nodes."
-msgstr "Wo klicken um Knoten zu erweitern/verkleinern."
+msgstr "Wo zum Erweitern/Verkleinern von Knoten klicken."
 
 msgid "Auto-generate HREF links for nodes"
 msgstr "HREF-Links für Knoten automatisch generieren"
 
 msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr "Ob HTML Links für jeden Knoten auto-erzeugt werden."
+msgstr ""
+"Ob HTML-Links für jeden Knoten im Bericht automatisch generiert werden "
+"sollen."
 
 msgid "URL prefix path."
 msgstr "URL-Präfixpfad."
 
 msgid "URL prefix to apply to each auto-generated HREF link."
-msgstr "URL-Präfix für jede automatisch generierte HREF-Verknüpfung."
+msgstr ""
+"URL-Präfix, das für jeden automatisch generierten HREF-Link gelten soll."
 
 msgid "URL file extension"
 msgstr "URL Dateierweiterung"
@@ -251,58 +256,59 @@ msgid ".cgi"
 msgstr ".cgi"
 
 msgid "URL file name delimeter"
-msgstr "URL-Dateinamensbegrenzer"
+msgstr "URL Dateinamen Begrenzung"
 
 msgid "Remove all whitespace."
 msgstr "Alle Leerzeichen entfernen."
 
 msgid "Replace whitespace with dash(-)."
-msgstr "Leerzeichen durch Bindestrich (-) ersetzen."
+msgstr "Leerzeichen durch Bindestrich(-) ersetzen."
 
 msgid "Replace whitespace with underscore(_)"
-msgstr "Leerzeichen durch Unterstrich (_) ersetzen"
+msgstr "Leerzeichen durch Unterstrich(_) ersetzen"
 
 msgid "What to use as file name delimiter replacing whitespace."
 msgstr ""
-"Was als Dateinamen-Trennzeichen zu verwenden ist, das Leerzeichen ersetzt."
+"Was als Trennzeichen für den Dateinamen zu verwenden ist, um Leerzeichen zu "
+"ersetzen."
 
 msgid "Generations to generate HREF links"
-msgstr "Generationen zum Generieren von HREF-Links"
+msgstr "Generationen zur Erzeugung von HREF-Links"
 
 msgid "The number of generations to generate HREF links."
-msgstr "Die Anzahl von Generationen für die HREF-Links generiert werden."
+msgstr "Die Anzahl der Generationen zur Erzeugung von HREF-Links."
 
 msgid "Exclude persons who died before (years)"
-msgstr "Personen ausschließen die vor (Jahren) gestorben sind"
+msgstr "Personen ausschließen, die vor (Jahren) gestorben sind"
 
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
 msgstr ""
-"Ob Links für Personen erstellt werden, die in der Kindheit gestorben sind. "
-"-1 keinen ausschließen."
+"Ob Links für Personen, die im Säuglingsalter gestorben sind, generiert "
+"werden sollen, -1 schließt niemanden aus."
 
 msgid "Exclude center person"
-msgstr "Hauptperson ausschließen"
+msgstr "Zentrale Person ausschließen"
 
 msgid "Whether or not to generate links for center person."
-msgstr "Ob Links für die Hauptperson generiert werden oder nicht."
+msgstr "Ob Links für die zentrale Person generiert werden sollen oder nicht."
 
 msgid "Exclude Spouses"
 msgstr "Partner ausschließen"
 
 msgid "Whether or not to generate links for spouses."
-msgstr "Ob Links für Ehepartner generiert werden oder nicht."
+msgstr "Ob Links für Partner erstellt werden sollen oder nicht."
 
 msgid "Biography Content"
-msgstr "Biographie Inhalt"
+msgstr "Biografie Inhalt"
 
 msgid "Show biography tooltips"
 msgstr "Biografie Werkzeughinweise anzeigen"
 
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
-"Ob Biografie-Werkzeughinweise angezeigt werden sollen, wenn sich der "
-"Mauszeiger über einen Knoten befindet."
+"Ob Biografie-Werkzeughinweise angezeigt werden sollen, wenn der Mauszeiger "
+"über einen Knoten bewegt wird."
 
 msgid "Text Color"
 msgstr "Textfarbe"
@@ -311,16 +317,16 @@ msgid "RGB-color for biography text."
 msgstr "RGB-Farbe für Biografietext."
 
 msgid "RGB-color for biography tooltip."
-msgstr "RGB-Farbe für Biografietext-Werkzeughinweis."
+msgstr "RGB-Farbe für Biografie-Werkzeughinweis."
 
 msgid "Header Font size"
 msgstr "Kopfzeile Schriftgröße"
 
 msgid "The font size in pixels for biography header text."
-msgstr "Die Textgröße in Punkten für den Kopfzeilentext."
+msgstr "Die Schriftgröße in Pixeln für den Biografie- Kopfzeilentext."
 
 msgid "Body Font size"
-msgstr "Hauptteil Schriftgröße"
+msgstr "Textkörper Schriftgröße"
 
 msgid "The font size in pixels for biography body text."
-msgstr "Die Textgröße in Punkten für den Biographiehaupteil Text."
+msgstr "Die Schriftgröße in Pixeln für den Biografietext."

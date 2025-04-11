@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14,6 +14,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+msgid "TimeLines Map"
+msgstr "Carte des chronologies"
+
+msgid "Choose View Format"
+msgstr "Choisir un format de vue"
+
+msgid "Almost done"
+msgstr "Presque fini"
+
 #, python-format
 msgid "Number of Persons: %s"
 msgstr "Nombre d'individus : %s"
+
+msgid "Number of steps"
+msgstr "Nombre d'étapes"
+
+msgid "Type of steps"
+msgstr "Type d'étapes"
+
+msgid "TimeLines map"
+msgstr "Carte des chronologies"

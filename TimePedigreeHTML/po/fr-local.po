@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -26,14 +26,35 @@ msgstr "Le répertoire de destination pour les fichiers générés"
 msgid "The destination file name for html content."
 msgstr "Le fichier de destination pour le contenu HTML."
 
+msgid "Default Age"
+msgstr "Âge par défaut"
+
+msgid "What to show"
+msgstr "Que montrer"
+
 msgid "Show GrampsID"
 msgstr "Montrer l'ID Gramps"
 
+msgid "Optimize"
+msgstr "Optimiser"
+
+msgid "Box background color for male person"
+msgstr "Couleur de fond du cadre pour un homme"
+
 msgid "Box background color for female person"
 msgstr "Couleur d'arrière-plan des individus féminins"
+
+msgid "Number of pixel per year"
+msgstr "Nombre de pixel par année"
 
 msgid "Width of a box in pixel"
 msgstr "Largeur du cadre en pixels"
 
 msgid "Width of the box of a person in pixel"
 msgstr "Largeur du cadre d'individu en pixels"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "Espace horizontal entre les cadres en pixel"
+
+msgid "Timeline Pedigree Report"
+msgstr "Rapport généalogique chronologique"

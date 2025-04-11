@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-07 13:25+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -25,18 +25,55 @@ msgstr "(spos. %s)"
 msgid "Maximize"
 msgstr "Massimizza"
 
+msgid "No matching records found"
+msgstr "Nessuna informazione di registro corrispondente trovata"
+
 msgid "Search:"
 msgstr "Cerca:"
+
+msgid "Show duplicates"
+msgstr "Mostra i duplicati"
 
 msgid "Select filter to restrict people that appear on web site"
 msgstr ""
 "Seleziona un filtro per restringere le persone che appariranno nel sito web"
+
+msgid "Include records marked private"
+msgstr "Includere informazioni marcate come private"
 
 msgid "Whether to include private objects"
 msgstr "Indica se includere gli oggetti privati"
 
 msgid "Whether to include images and media in the web pages"
 msgstr "Se includere immagini e oggetti multimediali nelle pagine web"
+
+msgid "Whether to print the notes type in the notes text"
+msgstr "Indica se stampare o meno il tipo di note nel testo delle note"
+
+msgid "Whether to show pages for the places"
+msgstr "Indica se visualizzare o meno le pagine per i luoghi"
+
+msgid "The API key used for the Google map"
+msgstr "La chiave dell'API usata per Google map"
+
+msgid "Whether or not to include family pages"
+msgstr "Indica se includere o meno le pagine delle famiglie"
+
+msgid "Whether to show the last modification time in the pages footer"
+msgstr ""
+"Indica se visualizzare o meno l'ora di ultima modifica nel piè di pagina "
+"delle pagine"
+
+msgid "Whether to hide the Gramps ID"
+msgstr "Indica se nascondere o meno l'ID Gramps"
+
+msgid "Whether to generate an index page for families"
+msgstr "Indica se generare o meno una pagina di indice per le famiglie"
+
+msgid "Whether to include a column showing the media path"
+msgstr ""
+"Indica se includere o meno una colonna che mostra il percorso dell'oggetto "
+"multimediale"
 
 msgid "Theme"
 msgstr "Tema"

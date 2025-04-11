@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14,8 +14,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.11-dev\n"
 
+msgid "Face detection"
+msgstr "Détection de visage"
+
+msgid "Minimum face height (px)"
+msgstr "Hauteur minimale du visage (px)"
+
+msgid "Add Person"
+msgstr "Ajouter un individu"
+
+msgid "Clear Reference"
+msgstr "Effacer la référence"
+
+msgid "Remove Selection"
+msgstr "Supprimer la sélection"
+
+msgid "Edit referenced Person"
+msgstr "Modifier l'individu référencé"
+
+msgid "Zoom In"
+msgstr "Zoom avant"
+
+msgid "Zoom Out"
+msgstr "Zoom arrière"
+
+msgid "Detect faces"
+msgstr "Détection des visages"
+
+msgid "Set as active person"
+msgstr "Définir comme l’individu actif"
+
 msgid "_Select"
 msgstr "_Sélectionner"
+
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "Remplacer par {0}"
+
+msgid "Detecting faces..."
+msgstr "Détection des visages…"
+
+msgid "Detection finished"
+msgstr "Détection terminée"
 
 #, python-format
 msgid "Male person|Dead at %s"

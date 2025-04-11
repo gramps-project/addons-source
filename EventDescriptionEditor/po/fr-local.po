@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -20,8 +20,37 @@ msgstr "Éditeur de description d'événement"
 msgid "Search substring..."
 msgstr "Rechercher une sous-chaîne…"
 
+msgid "INFO"
+msgstr "INFORMATIONS"
+
+#, python-format
+msgid "%s event descriptions of %s events were changed."
+msgstr "%s descriptions d'événements de %s événements ont été modifiées."
+
 msgid "Find"
 msgstr "Trouver"
 
 msgid "Replace"
 msgstr "Remplacer"
+
+msgid "Replace substring only"
+msgstr "Remplacer la sous-chaîne seulement"
+
+msgid ""
+"If True only the substring will be replaced, otherwise the whole description "
+"will be deleted and replaced by the new one."
+msgstr ""
+"Si coché, seule la sous-chaîne sera remplacée, sinon toute la description "
+"sera supprimée et remplacée par la nouvelle."
+
+msgid "Allow regex"
+msgstr "Permettre regex"
+
+msgid "Allow regular expressions."
+msgstr "Autorise les expressions régulières."
+
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr ""
+"Un outil pour trouver et remplacer une chaîne dans la description de "
+"multiples événements."
