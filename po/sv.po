@@ -12,13 +12,14 @@
 # Pär Ekholm <github1@m.pekholm.org>, 2025.
 # Milan <mobrcian@hotmail.com>, 2025.
 # Nick Hall <nick-h@gramps-project.org>, 2025.
+# Morgan Antonsson <morgan.antonsson@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-04-06 09:03+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"PO-Revision-Date: 2025-04-11 09:13+0000\n"
+"Last-Translator: Morgan Antonsson <morgan.antonsson@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -22098,143 +22099,125 @@ msgstr "Rapport över de poster, som har ändrats senast"
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:16
 msgid "This Day in Family History"
-msgstr ""
+msgstr "Denna dag i släkthistorien"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:9
 msgid ""
 "A configurable program that shows you the connected events from your family "
 "tree that match today's day and month."
 msgstr ""
+"Ett konfigurerbart program som visar kopplade händelser från ditt släktträd "
+"som matchar dagens dag och månad."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:105
 msgid "Database is not open, can't check history right now."
-msgstr ""
+msgstr "Databasen är inte öppen, kan inte kontrollera historiken just nu."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:106
 #, python-format
 msgid "On %(date)s in family history ...\n"
-msgstr ""
+msgstr "Den %(date)s i släkthistorien ...\n"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:107
 msgid "... nothing happened!  Check again tomorrow!"
-msgstr ""
+msgstr "... hände ingenting! Titta in igen i morgon!"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:111
-#, fuzzy
-#| msgid "Report on the filling of the tree"
 msgid "Report only living tree members"
-msgstr "Rapport över ifyllnad av släktträd"
+msgstr "Rapportera endast levande trädmedlemmar"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:112
-#, fuzzy
-#| msgid "Show persons"
 msgid "Show these events"
-msgstr "Visa personer"
+msgstr "Visa dessa händelser"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:113
-#, fuzzy
-#| msgid "Sort by:"
 msgid "Sort by "
-msgstr "Sortera efter:"
+msgstr "Sortera efter "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:114
-#, fuzzy
-#| msgid "Sort Children in Birth order"
 msgid "Sort in ascending order?"
-msgstr "Sortera barn i födelseordning"
+msgstr "Sortera i stigande ordning?"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
 msgid "January"
-msgstr ""
+msgstr "januari"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
 msgid "February"
-msgstr ""
+msgstr "februari"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
-#, fuzzy
-#| msgid "Search"
 msgid "March"
-msgstr "Sök"
+msgstr "mars"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "April"
-msgstr ""
+msgstr "april"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "May"
-msgstr ""
+msgstr "maj"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "June"
-msgstr ""
+msgstr "juni"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "July"
-msgstr ""
+msgstr "juli"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:129
 msgid "August"
-msgstr ""
+msgstr "augusti"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:129
 msgid "September"
-msgstr ""
+msgstr "september"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:129
 msgid "October"
-msgstr ""
+msgstr "oktober"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:130
 msgid "November"
-msgstr ""
+msgstr "november"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:130
 msgid "December"
-msgstr ""
+msgstr "december"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:247
-#, fuzzy
-#| msgid "Person page"
 msgid "Person Name"
-msgstr "Personsida"
+msgstr "Personnamn"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:249
-#, fuzzy
-#| msgid "Event format"
 msgid "Event Year"
-msgstr "Händelseformat"
+msgstr "Händelseår"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:328
 msgid "gregorian"
-msgstr ""
+msgstr "gregoriansk"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:383
 msgid "Unknown father/partner"
-msgstr ""
+msgstr "Okänd far/partner"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:398
 msgid "Unknown mother/partner"
-msgstr ""
+msgstr "Okänd mor/partner"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:427
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:429
-#, fuzzy
-#| msgid "%s and %s"
 msgid " and "
-msgstr "%s och %s"
+msgstr " och "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:431
-#, fuzzy
-#| msgid "Other participants"
 msgid "unknown participant"
-msgstr "Andra deltagare"
+msgstr "okänd deltagare"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:438
-#, fuzzy
-#| msgid "unknown version"
 msgid "unknown location"
-msgstr "okänd version"
+msgstr "okänd plats"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:481
 #, python-format
