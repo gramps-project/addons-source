@@ -66,8 +66,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-04-01 12:39+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -481,7 +481,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"XML: Numero di records e relazioni : \t%s\n"
+"XML: numero di informazioni e relazioni : \t%s\n"
 "\n"
 
 #: lxml/etreeGramplet.py:474
@@ -490,7 +490,7 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
-"Numero di tags : \n"
+"Numero di etichette : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
@@ -499,7 +499,7 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
-"Numero di tags : \n"
+"Numero di etichette : \n"
 "\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
@@ -508,7 +508,7 @@ msgid ""
 "Number of  events : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
-"Numero di  eventi : \n"
+"Numero di eventi : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:481
@@ -595,7 +595,7 @@ msgid ""
 "XML: Number of additional records and relations: \t%s\n"
 msgstr ""
 "\n"
-"XML: Numero di record e relazioni aggiuntive: \t%s\n"
+"XML: numero di informazioni e relazioni aggiuntive: \t%s\n"
 
 #: lxml/etreeGramplet.py:502
 #, python-format
@@ -1188,7 +1188,7 @@ msgstr ""
 
 #: FilterRules/multipleparents.py:42
 msgid "People with multiple parent records"
-msgstr ""
+msgstr "Persone con registri genitore multipli"
 
 #: FilterRules/multipleparents.py:43
 msgid "Matches people who have more than one set of parents"
@@ -1874,7 +1874,7 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
-msgstr ""
+msgstr "Includere informazioni marcate come private"
 
 #: D3Charts/DescendantIndentedTree.py:1868
 #, fuzzy
@@ -2675,10 +2675,8 @@ msgid "Include items not in file but in database"
 msgstr ""
 
 #: Differences/differences.py:321
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show items added in file"
-msgstr "Mostra gli elementi nascosti"
+msgstr "Mostra gli elementi aggiunti al file"
 
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
@@ -3073,7 +3071,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3039
 msgid "No matching records found"
-msgstr ""
+msgstr "Nessuna informazione di registro corrispondente trovata"
 
 #: DynamicWeb/dynamicweb.py:3040
 msgid "No matching surname."
@@ -3203,10 +3201,8 @@ msgid "Show _MENU_ entries"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3105 DynamicWeb/dynamicweb.py:5170
-#, fuzzy
-#| msgid "Show Built-in items"
 msgid "Show duplicates"
-msgstr "Mostra gli elementi interni"
+msgstr "Mostra i duplicati"
 
 #: DynamicWeb/dynamicweb.py:3106
 msgid "Showing 0 to 0 of 0 entries"
@@ -4005,7 +4001,7 @@ msgstr "Aggiunge un evento di tipo decesso"
 
 #: CombinedView/combinedview.py:630
 msgid "Show Tags"
-msgstr ""
+msgstr "Mostra etichette"
 
 #: CombinedView/combinedview.py:656
 msgid "Vertical Details"
@@ -5061,10 +5057,8 @@ msgid "About Quilt View"
 msgstr ""
 
 #: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
-#, fuzzy
-#| msgid "Edit Note"
 msgid "Edit tags"
-msgstr "Modifica nota"
+msgstr "Modifica etichette"
 
 #: QuiltView/QuiltView.py:1500 GraphView/graphview.py:4048
 msgid "Set as home person"
@@ -5074,13 +5068,13 @@ msgstr ""
 #: GraphView/graphview.py:4584
 #, python-format
 msgid "Adding Tags to person (%s)"
-msgstr ""
+msgstr "Aggiunta di etichette alla persona (%s)"
 
 #: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4543
 #: GraphView/graphview.py:4595
 #, python-format
 msgid "Adding Tags to family (%s)"
-msgstr ""
+msgstr "Aggiunta di etichette alla famiglia (%s)"
 
 #: QuiltView/QuiltView.py:1865
 msgid "Printing the tree"
@@ -5731,10 +5725,8 @@ msgid "Fetching index list..."
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
-#, fuzzy
-#| msgid "Writing %s reports..."
 msgid "Fetching records..."
-msgstr "Scrittura di %s resoconti..."
+msgstr "Recupero di informazioni..."
 
 #: PhpGedView/phpgedviewconnector.py:327
 msgid "Logging in..."
@@ -7083,8 +7075,9 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"Produce un elenco di tutte le note con un dato tag insieme ai record a cui "
-"fa riferimento, la persona, la famiglia, l'evento, ecc."
+"Produce un elenco di tutte le note con una data etichetta insieme alle "
+"informazioni di registro a cui fa riferimento, la persona, la famiglia, "
+"l'evento, ecc."
 
 #: settings_ui_manager.py:103
 msgid "Middle Name Handling"
@@ -8672,10 +8665,8 @@ msgid "Show person"
 msgstr "Nuova persona"
 
 #: LifeLineChartView/lifelinechart.py:2622
-#, fuzzy
-#| msgid "Show Built-in items"
 msgid "Show siblings"
-msgstr "Mostra gli elementi interni"
+msgstr "Mostra i fratelli e le sorelle"
 
 #: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
@@ -14172,7 +14163,7 @@ msgstr ""
 #: Form/form_us.xml.h:2369 Form/form_us.xml.h:2390 Form/form_us.xml.h:2483
 #: Form/form_us.xml.h:2570
 msgid "Place of Record"
-msgstr "Luogo di registrazione"
+msgstr "Luogo di registrazione dell'informazione"
 
 #: Form/form_us.xml.h:2370 Form/form_us.xml.h:2391 Form/form_us.xml.h:2484
 #: Form/form_us.xml.h:2571
@@ -14187,8 +14178,8 @@ msgstr "Razza/Colore"
 msgid ""
 "STOP! If you want this record to be attached to the Parents move to Father."
 msgstr ""
-"STOP! Se vuoi che questo record venga allegato ai genitori spostati sul "
-"padre."
+"STOP! Se vuoi che questa informazione di registro venga allegato ai genitori "
+"spostati sul padre."
 
 #: Form/form_us.xml.h:2381
 msgid "Mother (Maiden Name)"
@@ -14569,7 +14560,7 @@ msgstr "Nome della madre del coniuge"
 
 #: Form/form_pl.xml.h:18
 msgid "Record Number"
-msgstr "Numero del record"
+msgstr "Numero dell'informazione di registro"
 
 #: Form/form_pl.xml.h:19
 msgid "Volume"
@@ -19527,10 +19518,8 @@ msgid "No double cousins were found in your database."
 msgstr ""
 
 #: DoubleCousins/double_cousins.py:170
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show info text"
-msgstr "Mostra gli elementi nascosti"
+msgstr "Mostra il testo di informazione"
 
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
@@ -19567,15 +19556,15 @@ msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:87
 msgid "Add or remove tags from objects."
-msgstr ""
+msgstr "Aggiungi o rimuovi etichette dagli oggetti."
 
 #: RemoveTagTool/RemoveTagTool.py:88
 msgid "Add Tags"
-msgstr ""
+msgstr "Aggiungi etichette"
 
 #: RemoveTagTool/RemoveTagTool.py:88
 msgid "Remove Tags"
-msgstr ""
+msgstr "Rimuovi etichette"
 
 #: RemoveTagTool/RemoveTagTool.py:96
 msgid "Choose a category."
@@ -19610,6 +19599,8 @@ msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
 "and objects."
 msgstr ""
+"Impossibile eseguire lo strumento. Verificare se il database contiene "
+"etichette, filtri e oggetti."
 
 #: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
 msgid "WARNING"
@@ -19622,7 +19613,7 @@ msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:249
 msgid "Process tags..."
-msgstr "Elaborazione etichette..."
+msgstr "Elabora etichette..."
 
 #: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
@@ -20139,7 +20130,7 @@ msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:162
 msgid "Clear tags"
-msgstr ""
+msgstr "Pulisci etichette"
 
 #: PlaceUpdate/PlaceUpdate.py:165
 msgid "Generate hierarchy"
@@ -20274,7 +20265,7 @@ msgstr "Includi un'immagine"
 
 #: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
-msgstr ""
+msgstr "Etichette, note e attributi saranno inclusi"
 
 #: MediaReport/media_report.py:450
 msgid "Media width"
@@ -20757,10 +20748,9 @@ msgid "Display empty values"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:472
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include key records with empty values."
-msgstr "Indica se includere le immagini."
+msgstr ""
+"Indica se includere le informazioni di registro chiave con valori vuoti."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:518
 #: RepositoriesReport/RepositoriesReport.py:189
@@ -21048,10 +21038,8 @@ msgid "Also apply search by all database."
 msgstr ""
 
 #: GraphView/graphview.py:957
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show person images"
-msgstr "Mostra gli elementi nascosti"
+msgstr "Mostra le immagini delle persone"
 
 #: GraphView/graphview.py:960
 msgid "Show persons thumbnails in search result list."
@@ -21197,7 +21185,7 @@ msgstr "Immagine sulla sinistra"
 
 #: GraphView/graphview.py:3399
 msgid "<b>Tags:</b>"
-msgstr ""
+msgstr "<b>Etichette:</b>"
 
 #: GraphView/graphview.py:3779
 msgid "Lines type"
@@ -21222,7 +21210,7 @@ msgstr ""
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
-msgstr ""
+msgstr "Seleziona etichette per persona"
 
 #: GraphView/graphview.py:3907
 msgid "Add new family"
@@ -21256,7 +21244,7 @@ msgstr ""
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
-msgstr ""
+msgstr "Seleziona etichette per famiglia"
 
 #: GraphView/graphview.py:4201
 #, fuzzy
