@@ -28,13 +28,14 @@
 # jmichault <jmt.2000@free.fr>, 2025.
 # Emmanuel Vallois <emmanuel@vallois.name>, 2025.
 # Frédéric Schwartz <frederic@online404.com>, 2025.
+# Jean-Marc <m.balthazar@posteo.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"PO-Revision-Date: 2025-03-27 02:55+0000\n"
+"Last-Translator: Jean-Marc <m.balthazar@posteo.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -1897,7 +1898,7 @@ msgstr "Inclure le nom complet"
 
 #: D3Charts/DescendantIndentedTree.py:1880
 msgid "How to handle living people."
-msgstr ""
+msgstr "Comment gérer les personnes vivantes."
 
 #: D3Charts/DescendantIndentedTree.py:1887
 msgid "Whether or not to include people who may have recently died."
@@ -1955,15 +1956,15 @@ msgstr "Aucune extension de fichier."
 
 #: D3Charts/DescendantIndentedTree.py:1926
 msgid ".html"
-msgstr ""
+msgstr ".html"
 
 #: D3Charts/DescendantIndentedTree.py:1927
 msgid ".htm"
-msgstr ""
+msgstr ".htm"
 
 #: D3Charts/DescendantIndentedTree.py:1928
 msgid ".shtml"
-msgstr ""
+msgstr ".shtml"
 
 #: D3Charts/DescendantIndentedTree.py:1929
 msgid ".php"
@@ -2040,7 +2041,7 @@ msgstr "Biographie"
 
 #: D3Charts/DescendantIndentedTree.py:1980
 msgid "Show biography tooltips"
-msgstr ""
+msgstr "Afficher les infobulles de la biographie"
 
 #: D3Charts/DescendantIndentedTree.py:1981
 msgid "Whether to show biography tooltips when hovering over a node."
@@ -2060,19 +2061,23 @@ msgstr "Couleur RGB pour l'outil biographique."
 
 #: D3Charts/DescendantIndentedTree.py:2035
 msgid "Header Font size"
-msgstr ""
+msgstr "Taille de la police de caractères de l'en-tête"
 
 #: D3Charts/DescendantIndentedTree.py:2037
 msgid "The font size in pixels for biography header text."
 msgstr ""
+"La taille de la police de caractères en pixels pour le texte d'en-tête de la "
+"biographie."
 
 #: D3Charts/DescendantIndentedTree.py:2043
 msgid "Body Font size"
-msgstr ""
+msgstr "Taille de la police de caractères du corps"
 
 #: D3Charts/DescendantIndentedTree.py:2045
 msgid "The font size in pixels for biography body text."
 msgstr ""
+"La taille de la police de caractères en pixels pour le corps du texte de la "
+"biographie."
 
 # trunk
 #: SVWebconnectPack/SVWebPack.gpr.py:11
@@ -2252,7 +2257,7 @@ msgstr "Rechercher une sous-chaîne…"
 #: MediaReport/media_report.py:112 MediaReport/media_report.py:119
 #: MediaReport/media_report.py:125
 msgid "INFO"
-msgstr ""
+msgstr "INFORMATIONS"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
@@ -2294,7 +2299,7 @@ msgstr "Outil de vérification des media"
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Moved/Renamed Files"
-msgstr ""
+msgstr "Fichiers déplacés/renommés"
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Missing Files"
@@ -2314,7 +2319,7 @@ msgstr "Pas de md5 généré"
 
 #: MediaVerify/MediaVerify.py:85
 msgid "Errors"
-msgstr ""
+msgstr "Erreurs"
 
 #: MediaVerify/MediaVerify.py:101
 msgid "Close the Media Verify Tool"
@@ -2481,7 +2486,7 @@ msgstr "Quota de recherche "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
-msgstr ""
+msgstr "Profondeur par boucle"
 
 #: Betawhatsnext/Betawhatsnext.py:98
 msgid "Pause search expansion"
@@ -2550,7 +2555,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:268
 msgid "Double-click color text to edit details"
-msgstr ""
+msgstr "Double-cliquer sur le texte en couleur pour modifier les détails"
 
 #: Betawhatsnext/Betawhatsnext.py:504
 msgid "Birth event missing."
@@ -2578,7 +2583,7 @@ msgstr "lieu inconnu pour l'évènement"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
-msgstr ""
+msgstr "Une relation de partenariat existe mais le conjoint est absent"
 
 #: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
 #: Betawhatsnext/Betawhatsnext.py:665
@@ -2587,13 +2592,11 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:660
 msgid "Father missing from the parent family"
-msgstr ""
+msgstr "Père absent de la famille parentale"
 
 #: Betawhatsnext/Betawhatsnext.py:664
-#, fuzzy
-#| msgid "Show items missing from file"
 msgid "Mother missing from the parent family"
-msgstr "Afficher les éléments manquants dans le fichier"
+msgstr "Mère absente de la famille parentale"
 
 #: Betawhatsnext/Betawhatsnext.py:668
 msgid "Parent family is unknown."
@@ -2800,19 +2803,19 @@ msgstr ""
 
 #: HtmlView/htmlview.py:495
 msgid "Go to the previous page in the history"
-msgstr ""
+msgstr "Aller à la page précédente de l'historique"
 
 #: HtmlView/htmlview.py:503
 msgid "Go to the next page in the history"
-msgstr ""
+msgstr "Aller à la page suivante de l'historique"
 
 #: HtmlView/htmlview.py:508
 msgid "_Refresh"
-msgstr ""
+msgstr "_Actualiser"
 
 #: HtmlView/htmlview.py:511
 msgid "Stop and reload the page."
-msgstr ""
+msgstr "Arrêter et recharger la page."
 
 #: HtmlView/htmlview.py:555
 msgid "Start page for the Html View"
@@ -2836,7 +2839,7 @@ msgstr ""
 
 #: HtmlView/htmlview.gpr.py:40
 msgid "Web"
-msgstr ""
+msgstr "Web"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
@@ -3215,7 +3218,7 @@ msgstr "Eléments _START_ à _END_ affichés parmi _TOTAL_"
 
 #: DynamicWeb/dynamicweb.py:3112
 msgid "Sort by:"
-msgstr ""
+msgstr "Trier par :"
 
 #: DynamicWeb/dynamicweb.py:3114 SourceIndex/death.py:87
 #: SourceIndex/birth.py:126 SourceIndex/marriage.py:87 SourceIndex/index.py:92
@@ -3842,7 +3845,7 @@ msgstr "Gramplet pour trouver des lieux depuis la base de données GOV"
 
 #: RestoreHist/restorehist.gpr.py:30
 msgid "Restart where you were last working"
-msgstr ""
+msgstr "Reprenez là où vous travailliez la dernière fois"
 
 #: RestoreHist/restorehist.gpr.py:32
 msgid ""
@@ -3881,7 +3884,7 @@ msgstr "Un interpréteur python interactif"
 
 #: Topola/Topola.gpr.py:5
 msgid "Opens an interactive tree in the browser"
-msgstr ""
+msgstr "Ouvre un arbre interactif dans le navigateur"
 
 #: ListeEclair/ListeEclair.py:97 ListeEclair/ListeEclair.py:104
 #: ListeEclair/ListeEclair.gpr.py:4
@@ -3974,15 +3977,15 @@ msgstr "%(event_type)s : %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
-msgstr ""
+msgstr "Cliquer pour rendre cet évènement actif"
 
 #: CombinedView/personpage.py:743
 msgid "Click to visit this link"
-msgstr ""
+msgstr "Cliquer pour visiter ce lien"
 
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
-msgstr ""
+msgstr ": "
 
 #: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
@@ -4017,7 +4020,7 @@ msgstr "Afficher les lieux"
 
 #: CombinedView/combinedview.py:656
 msgid "Vertical Details"
-msgstr ""
+msgstr "Détails verticaux"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
@@ -4248,7 +4251,7 @@ msgstr "Fermer l'outil de vérification des media"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
-msgstr ""
+msgstr "Lire le manuel d'aide"
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
@@ -5095,7 +5098,7 @@ msgstr ""
 
 #: QuiltView/QuiltView.py:663
 msgid "Loading the data"
-msgstr ""
+msgstr "Chargement des données"
 
 #: QuiltView/QuiltView.py:1053
 #, fuzzy
@@ -5758,7 +5761,7 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "ADN partagé"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
@@ -5784,11 +5787,11 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
-msgstr ""
+msgstr "LÉGENDE"
 
 #: DNAMatches/dnamatches.py:228
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
@@ -5803,7 +5806,7 @@ msgstr "M"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
-msgstr ""
+msgstr "PhpGedView"
 
 #: PhpGedView/phpgedview.gpr.py:25
 msgid "Download a GEDCOM file from a phpGedView server."
