@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Generating thumbnails for person references"
+msgstr "Generazione delle miniature per i riferimenti persona"
+
+msgid "Generating thumbnails for family references"
+msgstr "Generazione delle miniature per i riferimenti famiglia"
+
+msgid "Generating thumbnails for event references"
+msgstr "Generazione delle miniature per i riferimenti evento"
+
+msgid "Generating thumbnails for place references"
+msgstr "Generazione delle miniature per i riferimenti luogo"
+
+msgid "Generating thumbnails for source references"
+msgstr "Generazione delle miniature per i riferimenti fonte"

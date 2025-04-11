@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-31 10:01+0300\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Middle Name Handling"
+msgstr "Gestion du deuxième prénom"
+
+msgid "Leave alone"
+msgstr "Laisser tel que"
+
+msgid "Separate"
+msgstr "Séparer"
+
+msgid "URL Compactness Level"
+msgstr "Niveau de compacité de l'URL"
+
+msgid "Long - Without Prefix on the Left"
+msgstr "Long - Sans préfixe sur la gauche"
+
+msgid "URL Prefix Replacement"
+msgstr "Remplacement du préfixe d'URL"
+
+msgid "OpenAI API Key"
+msgstr "Clé de l'API OpenAI"
+
+msgid "Show Links From Attributes"
+msgstr "Afficher les liens des attributs"
+
+msgid "Enable CSV Files"
+msgstr "Activer les fichiers CSV"
+
+msgid "WebSearch"
+msgstr "RechercheWeb"
+
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+"Requêtes personnalisées pour les services en ligne en fonction de "
+"l'enregistrement actif : individu, lieu, famille ou source"
+
+msgid "QR-code"
+msgstr "QR-code"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Erreur lors de la génération du code QR :\n"
+"Erreur initiale : \"{}\""
+
+msgid "Website URL"
+msgstr "URL du site"
+
+msgid "Add link to note"
+msgstr "Ajouter un lien à la note"
+
+msgid "Show QR-code"
+msgstr "Afficher le QR-code"
+
+msgid "Copy link to clipboard"
+msgstr "Copier le lien vers le presse-papiers"
+
+msgid "Hide link for selected item"
+msgstr "Masquer le lien pour l'élément sélectionné"
+
+msgid "Hide link for all items"
+msgstr "Masquer le lien pour tous les éléments"
+
+msgid "🔍 AI Suggestions"
+msgstr "Suggestions d'IA"
+
+#, python-brace-format
+msgid ""
+"📌 This web link was added using the WebSearch gramplet for future "
+"reference:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this person."
+msgstr ""
+"📌 Ce lien Web a été ajouté en utilisant le gramplet WebSearch pour "
+"référence ultérieure :\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Vous pouvez utiliser ce lien pour revisiter la source et vérifier les "
+"informations relatives à cet individu."
+
+msgid "Add Web Link Note"
+msgstr "Ajouter une note de lien Web"
+
+msgid "URL is copied to the Clipboard"
+msgstr "L'URL est copiée dans le presse-papiers"
+
+msgid "WebSearch Link"
+msgstr "Lien WebSearch"
+
+#, python-brace-format
+msgid "Title: {title}\n"
+msgstr "Titre : {title}\n"
+
+#, python-brace-format
+msgid "Comment: {comment}\n"
+msgstr "Commentaire : {comment}\n"

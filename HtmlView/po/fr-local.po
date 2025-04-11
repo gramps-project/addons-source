@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "HtmlView"
+msgstr "VueHTML"
+
+msgid "Go to the previous page in the history"
+msgstr "Aller à la page précédente de l'historique"
+
+msgid "Go to the next page in the history"
+msgstr "Aller à la page suivante de l'historique"
+
+msgid "_Refresh"
+msgstr "_Actualiser"
+
+msgid "Stop and reload the page."
+msgstr "Arrêter et recharger la page."
+
+msgid "Start page for the Html View"
+msgstr "Page de démarrage pour la vue HTML"
+
+msgid ""
+"Type a webpage address at the top, and hit the execute button to load a "
+"webpage in this page\n"
+"<br>\n"
+"For example: "
+msgstr ""
+"Entrez une adresse web en haut et appuyez sur le bouton \"exécution\" pour "
+"charger une page web dans cette page\n"
+"<br>\n"
+"Par exemple : "
+
+msgid "Html View"
+msgstr "Vue HTML"
+
+msgid "A view showing html pages embedded in Gramps"
+msgstr "Une vue montrant des pages HTML intégrées dans Gramps"
+
+msgid "Web"
+msgstr "Web"

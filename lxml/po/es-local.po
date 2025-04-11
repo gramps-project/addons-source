@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-04-04 00:40+0000\n"
+"Last-Translator: gioboto <giomaussi@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "No file parsed..."
+msgstr "No se ha analizado ningún archivo..."
+
+msgid "Number of editions back"
+msgstr "Número de ediciones anteriores"
+
+msgid "Space character on filename"
+msgstr "Carácter de espacio en el nombre del archivo"
+
+#, python-format
+msgid "Please fix space on \"%s\""
+msgstr "Por favor, arregle el espacio en \"%s\""
+
+msgid "Sorry, no support for your OS yet!"
+msgstr "Lo sentimos, ¡aún no hay soporte para tu sistema operativo!"
+
+msgid "Is it a compressed .gramps?"
+msgstr "¿Es un .gramps comprimido?"
+
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "No se puede descomprimir \"%s\""
+
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "No se puede copiar \"%s\""
+
+#, python-format
+msgid "XML: Last %s editions since %s, were at/on :\n"
+msgstr "XML: Las últimas %s ediciones desde %s, fueron en/en:\n"
+
+msgid "Where is gzip?"
+msgstr "Dónde esta el gzip?"
+
+msgid "\"gzip\" is missing"
+msgstr "\"gzip\" está perdido"

@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Ancestors map"
+msgstr "Carte des ancêtres"
+
+msgid "A view showing ancestors places on the map."
+msgstr "Une vue montrant les lieux des ancêtres sur la carte."
+
+msgid "Ancestors places on the map"
+msgstr "Lieux des ancêtres sur la carte"
+
+msgid "GeoAncestor"
+msgstr "GeoAncêtre"
+
+#, python-format
+msgid "Ancestors places for %s"
+msgstr "Lieux des ancêtres pour %s"
+
+msgid "Counting all places"
+msgstr "Comptage de tous les lieux"
+
+msgid "Showing all places"
+msgstr "Affichage de tous les lieux"

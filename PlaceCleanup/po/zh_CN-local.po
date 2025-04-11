@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS VERSION 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-04-09 13:53+0000\n"
+"Last-Translator: Tian Shixiong <tiansworld@fedoraproject.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hans/>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Place Cleanup"
+msgstr "地点清理"
+
+msgid ""
+"Place Cleanup Gramplet assists in merging places, as well as completing "
+"places from the GeoNames web database"
+msgstr ""
+"地点清理 Gramplet 可辅助用于地点合并，也可以通过 GeoNames 网络数据库完善地点"
+"信息"
+
+msgid ""
+"No\n"
+"Matches"
+msgstr ""
+"没有\n"
+"匹配项"
+
+msgid "Find"
+msgstr "查找"
+
+msgid "Find GeoNames"
+msgstr "查找 GeoNames"
+
+msgid "Need to set GeoNames ID"
+msgstr "需设置 GeoNames ID"
+
+msgid "Use the Help button for more information"
+msgstr "点击帮助按钮了解更多内容"
+
+#, python-format
+msgid "%s matches were found"
+msgstr "找到 %s 个匹配项"
+
+msgid ""
+"Only 10 matches are shown.\n"
+"To see additional results, press the search button again.\n"
+"Or try changing the Title with more detail, such as a country."
+msgstr ""
+"仅显示 10 个匹配项目。\n"
+"再次点击搜索按钮可查看剩余结果。\n"
+"或者尝试修改标题，增加更详细的信息，比如国家。"
+
+msgid "Problem getting data from web"
+msgstr "从网络获取数据遇到问题"
+
+msgid "Web request Timeout, you can try again..."
+msgstr "网络请求超时，重新尝试……"
+
+msgid "Problem getting data from GeoNames"
+msgstr "从 GeoNames 获取数据遇到问题"
+
+msgid "GeoNames web site"
+msgstr "GeoNames 网站"
+
+msgid "GeoNames author"
+msgstr "GeoNames 作者"
+
+msgid "GeoNames was founded by Marc Wick. You can reach him at "
+msgstr "GeoNames 由 Marc Wick 创建。可通过此与他联系 "

@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "Y-chromosomal inheritance of <filter>"
+msgstr "Hérédité du chromosome Y de <filtre>"
+
+msgid "X-chromosomal ancestors of <person>"
+msgstr "Ancêtres du chromosome X de <individu>"
+
+msgid "X-chromosomal descendants of <person>"
+msgstr "Descendants du chromosome X de <individu>"
+
+msgid "Patrilineal progenitor of <person>"
+msgstr "Ancêtre patrilinéaire de <individu>"
+
+msgid "Mitochondrial inheritance of <filter>"
+msgstr "Hérédité mitochondriale de <filtre>"
+
+msgid "Matrilineal progenitrix of <person>"
+msgstr "Ancêtre matrilinéaire de <individu>"
+
+msgid "Mitochondrial inheritance of <person>"
+msgstr "Hérédité mitochondriale de <individu>"
+
+msgid "Y-chromosomal inheritance of <person>"
+msgstr "Hérédité du chromosome Y de <individu>"

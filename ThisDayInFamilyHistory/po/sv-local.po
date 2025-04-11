@@ -1,0 +1,107 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
+
+msgid "This Day in Family History"
+msgstr "Denna dag i släkthistorien"
+
+msgid ""
+"A configurable program that shows you the connected events from your family "
+"tree that match today's day and month."
+msgstr ""
+"Ett konfigurerbart program som visar kopplade händelser från ditt släktträd "
+"som matchar dagens dag och månad."
+
+msgid "Database is not open, can't check history right now."
+msgstr "Databasen är inte öppen, kan inte kontrollera historiken just nu."
+
+#, python-format
+msgid "On %(date)s in family history ...\n"
+msgstr "Den %(date)s i släkthistorien ...\n"
+
+msgid "... nothing happened!  Check again tomorrow!"
+msgstr "... hände ingenting! Titta in igen i morgon!"
+
+msgid "Report only living tree members"
+msgstr "Rapportera endast levande trädmedlemmar"
+
+msgid "Show these events"
+msgstr "Visa dessa händelser"
+
+msgid "Sort by "
+msgstr "Sortera efter "
+
+msgid "Sort in ascending order?"
+msgstr "Sortera i stigande ordning?"
+
+msgid "January"
+msgstr "januari"
+
+msgid "February"
+msgstr "februari"
+
+msgid "March"
+msgstr "mars"
+
+msgid "April"
+msgstr "april"
+
+msgid "May"
+msgstr "maj"
+
+msgid "June"
+msgstr "juni"
+
+msgid "July"
+msgstr "juli"
+
+msgid "August"
+msgstr "augusti"
+
+msgid "September"
+msgstr "september"
+
+msgid "October"
+msgstr "oktober"
+
+msgid "November"
+msgstr "november"
+
+msgid "December"
+msgstr "december"
+
+msgid "Person Name"
+msgstr "Personnamn"
+
+msgid "Event Year"
+msgstr "Händelseår"
+
+msgid "gregorian"
+msgstr "gregoriansk"
+
+msgid "Unknown father/partner"
+msgstr "Okänd far/partner"
+
+msgid "Unknown mother/partner"
+msgstr "Okänd mor/partner"
+
+msgid " and "
+msgstr " och "
+
+msgid "unknown participant"
+msgstr "okänd deltagare"
+
+msgid "unknown location"
+msgstr "okänd plats"
