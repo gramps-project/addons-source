@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-25 20:35+0000\n"
+"PO-Revision-Date: 2025-04-11 09:13+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -806,7 +806,7 @@ msgid ""
 "Matches"
 msgstr ""
 "%s\n"
-"Lokale\n"
+"Ort\n"
 "Übereinstimmungen"
 
 #: PlaceCleanup/placecleanup.py:295
@@ -1220,7 +1220,7 @@ msgstr "Filterregel, die Verwandten nach dem Grad der Entfernung entspricht"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
-msgstr "Quelle entsprechend Parameter"
+msgstr "Quelle, die den Parametern entspricht"
 
 #: FilterRules/hassourcefilter.gpr.py:29
 msgid "Matches Sources with values containing the chosen parameters"
@@ -1878,27 +1878,29 @@ msgstr "RGB-Farbe für den Hintergrund einer nicht erweiterbaren Zeile."
 
 #: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
-msgstr "Mit als vertraulich markierten Datensätzen"
+msgstr "Als vertraulich gekennzeichnete Datensätze einbeziehen"
 
 #: D3Charts/DescendantIndentedTree.py:1868
 msgid "Whether to include private objects."
-msgstr "Ob vertrauliche Objekte aufgenommen werden."
+msgstr "Ob vertrauliche Objekte einbezogen werden sollen."
 
 #: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
-msgstr "Nur Nachnamen aufnehmen"
+msgstr "Nur Nachname einschließen"
 
 #: D3Charts/DescendantIndentedTree.py:1878 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
-msgstr "Nur vollständigen Namen aufnehmen"
+msgstr "Nur den vollständigen Namen einschließen"
 
 #: D3Charts/DescendantIndentedTree.py:1880
 msgid "How to handle living people."
-msgstr "Wie werden lebende Personen behandelt."
+msgstr "Wie mit lebenden Personen umzugehen ist."
 
 #: D3Charts/DescendantIndentedTree.py:1887
 msgid "Whether or not to include people who may have recently died."
-msgstr "Ob Personen die vor kurzem gestorben sein könnten aufgenommen werden."
+msgstr ""
+"Ob Personen, die kürzlich verstorben sind, aufgenommen werden sollen oder "
+"nicht."
 
 #: D3Charts/DescendantIndentedTree.py:1895
 msgid "Navigation"
@@ -1914,16 +1916,16 @@ msgstr "Gesamter Knoten."
 
 #: D3Charts/DescendantIndentedTree.py:1901
 msgid "Arrow images at start of node."
-msgstr "Pfeilbilder am Beginn des Knoten."
+msgstr "Pfeilbilder am Anfang des Knotens."
 
 #: D3Charts/DescendantIndentedTree.py:1902
 msgid "Plus/Minus images at start of node."
-msgstr "Plus/Minus Bilder am Beginn des Knoten."
+msgstr "Plus/Minus-Bilder am Anfang des Knotens."
 
 #: D3Charts/DescendantIndentedTree.py:1903
 #: D3Charts/DescendantIndentedTree.py:1932
 msgid "Where to click to expand/contract nodes."
-msgstr "Wo klicken um Knoten zu erweitern/verkleinern."
+msgstr "Wo zum Erweitern/Verkleinern von Knoten klicken."
 
 #: D3Charts/DescendantIndentedTree.py:1907
 msgid "Auto-generate HREF links for nodes"
@@ -1931,7 +1933,9 @@ msgstr "HREF-Links für Knoten automatisch generieren"
 
 #: D3Charts/DescendantIndentedTree.py:1909
 msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr "Ob HTML Links für jeden Knoten auto-erzeugt werden."
+msgstr ""
+"Ob HTML-Links für jeden Knoten im Bericht automatisch generiert werden "
+"sollen."
 
 #: D3Charts/DescendantIndentedTree.py:1915
 msgid "URL prefix path."
@@ -1939,7 +1943,8 @@ msgstr "URL-Präfixpfad."
 
 #: D3Charts/DescendantIndentedTree.py:1917
 msgid "URL prefix to apply to each auto-generated HREF link."
-msgstr "URL-Präfix für jede automatisch generierte HREF-Verknüpfung."
+msgstr ""
+"URL-Präfix, das für jeden automatisch generierten HREF-Link gelten soll."
 
 #: D3Charts/DescendantIndentedTree.py:1923
 msgid "URL file extension"
@@ -1975,7 +1980,7 @@ msgstr ".cgi"
 
 #: D3Charts/DescendantIndentedTree.py:1937
 msgid "URL file name delimeter"
-msgstr "URL-Dateinamensbegrenzer"
+msgstr "URL Dateinamen Begrenzung"
 
 #: D3Charts/DescendantIndentedTree.py:1939
 msgid "Remove all whitespace."
@@ -1983,43 +1988,44 @@ msgstr "Alle Leerzeichen entfernen."
 
 #: D3Charts/DescendantIndentedTree.py:1940
 msgid "Replace whitespace with dash(-)."
-msgstr "Leerzeichen durch Bindestrich (-) ersetzen."
+msgstr "Leerzeichen durch Bindestrich(-) ersetzen."
 
 #: D3Charts/DescendantIndentedTree.py:1941
 msgid "Replace whitespace with underscore(_)"
-msgstr "Leerzeichen durch Unterstrich (_) ersetzen"
+msgstr "Leerzeichen durch Unterstrich(_) ersetzen"
 
 #: D3Charts/DescendantIndentedTree.py:1942
 msgid "What to use as file name delimiter replacing whitespace."
 msgstr ""
-"Was als Dateinamen-Trennzeichen zu verwenden ist, das Leerzeichen ersetzt."
+"Was als Trennzeichen für den Dateinamen zu verwenden ist, um Leerzeichen zu "
+"ersetzen."
 
 #: D3Charts/DescendantIndentedTree.py:1947
 msgid "Generations to generate HREF links"
-msgstr "Generationen zum Generieren von HREF-Links"
+msgstr "Generationen zur Erzeugung von HREF-Links"
 
 #: D3Charts/DescendantIndentedTree.py:1949
 msgid "The number of generations to generate HREF links."
-msgstr "Die Anzahl von Generationen für die HREF-Links generiert werden."
+msgstr "Die Anzahl der Generationen zur Erzeugung von HREF-Links."
 
 #: D3Charts/DescendantIndentedTree.py:1955
 msgid "Exclude persons who died before (years)"
-msgstr "Personen ausschließen die vor (Jahren) gestorben sind"
+msgstr "Personen ausschließen, die vor (Jahren) gestorben sind"
 
 #: D3Charts/DescendantIndentedTree.py:1958
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
 msgstr ""
-"Ob Links für Personen erstellt werden, die in der Kindheit gestorben sind. "
-"-1 keinen ausschließen."
+"Ob Links für Personen, die im Säuglingsalter gestorben sind, generiert "
+"werden sollen, -1 schließt niemanden aus."
 
 #: D3Charts/DescendantIndentedTree.py:1964
 msgid "Exclude center person"
-msgstr "Hauptperson ausschließen"
+msgstr "Zentrale Person ausschließen"
 
 #: D3Charts/DescendantIndentedTree.py:1965
 msgid "Whether or not to generate links for center person."
-msgstr "Ob Links für die Hauptperson generiert werden oder nicht."
+msgstr "Ob Links für die zentrale Person generiert werden sollen oder nicht."
 
 #: D3Charts/DescendantIndentedTree.py:1970
 msgid "Exclude Spouses"
@@ -2027,11 +2033,11 @@ msgstr "Partner ausschließen"
 
 #: D3Charts/DescendantIndentedTree.py:1971
 msgid "Whether or not to generate links for spouses."
-msgstr "Ob Links für Ehepartner generiert werden oder nicht."
+msgstr "Ob Links für Partner erstellt werden sollen oder nicht."
 
 #: D3Charts/DescendantIndentedTree.py:1978
 msgid "Biography Content"
-msgstr "Biographie Inhalt"
+msgstr "Biografie Inhalt"
 
 #: D3Charts/DescendantIndentedTree.py:1980
 msgid "Show biography tooltips"
@@ -2040,8 +2046,8 @@ msgstr "Biografie Werkzeughinweise anzeigen"
 #: D3Charts/DescendantIndentedTree.py:1981
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
-"Ob Biografie-Werkzeughinweise angezeigt werden sollen, wenn sich der "
-"Mauszeiger über einen Knoten befindet."
+"Ob Biografie-Werkzeughinweise angezeigt werden sollen, wenn der Mauszeiger "
+"über einen Knoten bewegt wird."
 
 #: D3Charts/DescendantIndentedTree.py:2025
 msgid "Text Color"
@@ -2053,7 +2059,7 @@ msgstr "RGB-Farbe für Biografietext."
 
 #: D3Charts/DescendantIndentedTree.py:2032
 msgid "RGB-color for biography tooltip."
-msgstr "RGB-Farbe für Biografietext-Werkzeughinweis."
+msgstr "RGB-Farbe für Biografie-Werkzeughinweis."
 
 #: D3Charts/DescendantIndentedTree.py:2035
 msgid "Header Font size"
@@ -2061,15 +2067,15 @@ msgstr "Kopfzeile Schriftgröße"
 
 #: D3Charts/DescendantIndentedTree.py:2037
 msgid "The font size in pixels for biography header text."
-msgstr "Die Textgröße in Punkten für den Kopfzeilentext."
+msgstr "Die Schriftgröße in Pixeln für den Biografie- Kopfzeilentext."
 
 #: D3Charts/DescendantIndentedTree.py:2043
 msgid "Body Font size"
-msgstr "Hauptteil Schriftgröße"
+msgstr "Textkörper Schriftgröße"
 
 #: D3Charts/DescendantIndentedTree.py:2045
 msgid "The font size in pixels for biography body text."
-msgstr "Die Textgröße in Punkten für den Biographiehaupteil Text."
+msgstr "Die Schriftgröße in Pixeln für den Biografietext."
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
 msgid "SV Web Connect Pack"
@@ -2081,7 +2087,7 @@ msgstr "Sammlung von Websites für Schweden (erfordert libwebconnect)"
 
 #: SVWebconnectPack/SVWebPack.py:33 USWebConnectPack/USWebPack.py:33
 msgid "Find A Grave"
-msgstr "Finde ein Grab"
+msgstr "Find A Grave"
 
 #: SVWebconnectPack/SVWebPack.py:34 UKWebConnectPack/UKWebPack.py:35
 #: DEWebConnectPack/DEWebPack.py:39 USWebConnectPack/USWebPack.py:34
@@ -2139,11 +2145,12 @@ msgstr "Zusatzmodulverwaltung Verbessert"
 
 #: PluginManager\PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
-msgstr "Zusatzmodulverwaltung mit mehreren zusätzlichen Funktionen"
+msgstr ""
+"Erweiterungen/Zusatzmodul Verwaltung mit mehreren zusätzlichen Funktionen"
 
 #: PluginManager\PluginManager.py:91
 msgid "Plugin Manager - Enhanced"
-msgstr "Zusatzmodulverwaltung Verbessert"
+msgstr "Zusatzmodulverwaltung - Verbessert"
 
 #: PluginManager\PluginManager.py:163
 msgid ""
@@ -2152,10 +2159,10 @@ msgid ""
 "the addon filename to be included in the search.\n"
 "Word case and order is ignored."
 msgstr ""
-"Gib Suchbegriffe ein, um die Zusatzmodule zu filtern.\n"
-"Alle Wörter müssen irgendwo in der Zeile oder dem Dateinamen\n"
-"des Zusatzmoduls vorhanden sein, um sie in die Suche mit einzubeziehen.\n"
-"Groß-/Kleinschreibung und Reihenfolge werden ignoriert."
+"Gib Suchbegriffe ein, um die Erweiterungen zu filtern.\n"
+"Alle Wörter müssen irgendwo in der Zeile oder in dem Dateinamen\n"
+"der Erweiterung vorkommen, um in die Suche einbezogen zu werden.\n"
+"Groß-/Kleinschreibung und Reihenfolge der Wörter werden ignoriert."
 
 #: PluginManager\PluginManager.py:169 GraphView/search_widget.py:400
 #: SearchGramplet/SearchGramplet.py:391
@@ -2170,14 +2177,14 @@ msgstr "Neustart …"
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
-"Bitte starte Gramps neu, um sicherzustellen, dass Ihre Änderungen an den "
-"Zusatzmodulen erkannt werden."
+"Bitte starte Gramps neu, damit deine Erweiterungsänderungen sicher "
+"abgeschlossen werden können."
 
 #: PluginManager\PluginManager.py:353
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
-"Fehler beim Entfernen des '%s' Verzeichnisses. Die Deinstallation ist "
+"Fehler beim Entfernen des Verzeichnisses '%s', Die Deinstallation ist "
 "möglicherweise fehlgeschlagen"
 
 #: PluginManager\PluginManager.py:402
@@ -2185,8 +2192,8 @@ msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
 msgstr ""
-"'*' Artikel werden von Drittanbietern verschickt,\n"
-"<s>durchgestrichene</s> Artikel sind versteckt"
+"'*'-Elemente werden von Drittanbietern bereitgestellt,\n"
+"<s>Durchgestrichene</s> Elemente sind verborgen"
 
 #: PluginManager\PluginManager.py:441 PluginManager\PluginManager.py:558
 msgid "Hide"
@@ -2194,15 +2201,15 @@ msgstr "Verbergen"
 
 #: PluginManager\PluginManager.py:460
 msgid "Show hidden items"
-msgstr "Zeige versteckte Elemente"
+msgstr "Verborgene Elemente anzeigen"
 
 #: PluginManager\PluginManager.py:467
 msgid "Show Built-in items"
-msgstr "Show Eingebaute Elemente"
+msgstr "Eingebaute Elemente anzeigen"
 
 #: PluginManager\PluginManager.py:474
 msgid "* indicates 3rd party addon"
-msgstr "* zeigt das Erweiterung eines Drittanbieters an"
+msgstr "* zeigt Drittanbieter Erweiterung an"
 
 #: PluginManager\PluginManager.py:479
 msgid "Plugins"
@@ -2256,7 +2263,7 @@ msgstr "INFO"
 #: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
 msgid "%s event descriptions of %s events were changed."
-msgstr "%s Ereignisbeschreibung von %s Ereignissen wurde geändert."
+msgstr "%s Ereignisbeschreibungen von %s Ereignissen wurden geändert."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: DescendantsLines/DescendantsLines.py:1688 ImportMerge/importmerge.py:911
@@ -2266,15 +2273,15 @@ msgstr "Ersetzen"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
-msgstr "Ersetze nur Teilzeichenfolgen"
+msgstr "Nur Teilzeichenfolge ersetzen"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:146
 msgid ""
 "If True only the substring will be replaced, otherwise the whole description "
 "will be deleted and replaced by the new one."
 msgstr ""
-"Wenn Wahr, wird nur die Teilzeichenfolge ersetzt, andernfalls wird die "
-"gesamte Beschreibung gelöscht und durch die neue ersetzt."
+"Bei Wahr wird nur die Teilzeichenfolge ersetzt, andernfalls wird die gesamte "
+"Beschreibung gelöscht und durch die neue ersetzt."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:151
 msgid "Allow regex"
@@ -2297,7 +2304,7 @@ msgstr "Medienüberprüfungswerkzeug"
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Moved/Renamed Files"
-msgstr "Verschobene/umbenannte Dateien"
+msgstr "Verschobene/Umbenannte Dateien"
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Missing Files"
@@ -2313,7 +2320,7 @@ msgstr "Zusätzliche Dateien"
 
 #: MediaVerify/MediaVerify.py:85
 msgid "No md5 Generated"
-msgstr "Kein md5 erstellt"
+msgstr "Kein md5 generiert"
 
 #: MediaVerify/MediaVerify.py:85
 msgid "Errors"
@@ -2325,11 +2332,11 @@ msgstr "Medienüberprüfungswerkzeug schließen"
 
 #: MediaVerify/MediaVerify.py:103
 msgid "Generate"
-msgstr "Erstellen"
+msgstr "Generieren"
 
 #: MediaVerify/MediaVerify.py:104
 msgid "Generate md5 hashes for media objects"
-msgstr "Erstelle md5 Hashes für Medienobjekt"
+msgstr "Generieren von md5-Hashes für Medienobjekte"
 
 #: MediaVerify/MediaVerify.py:106
 msgid "Verify"
@@ -2338,7 +2345,7 @@ msgstr "Überprüfen"
 #: MediaVerify/MediaVerify.py:107
 msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
-"Überprüfe Medienpfade und melde fehlende, doppelte und zusätzliche Dateien"
+"Medienpfade prüfen und fehlende, doppelte und zusätzliche Dateien melden"
 
 #: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
 msgid "Export"
@@ -2346,19 +2353,19 @@ msgstr "Exportieren"
 
 #: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
-msgstr "Die Ergebnisse in eine Textdatei exportieren"
+msgstr "Exportiere die Ergebnisse in eine Textdatei"
 
 #: MediaVerify/MediaVerify.py:113
 msgid "Fix"
-msgstr "Reparieren"
+msgstr "Korrigieren"
 
 #: MediaVerify/MediaVerify.py:114
 msgid "Fix media paths of moved and renamed files"
-msgstr "Medienpfade von verschobenen und umbenannten Dateien reparieren"
+msgstr "Korrektur der Medienpfade von verschobenen und umbenannten Dateien"
 
 #: MediaVerify/MediaVerify.py:132
 msgid "Verify Gramps media using md5 hashes"
-msgstr "Überprüfen von Gramps Medien mit md5 hashes"
+msgstr "Gramps-Medien mit md5-Hashes verifizieren"
 
 #: MediaVerify/MediaVerify.py:143
 msgid "Files"
@@ -2375,19 +2382,19 @@ msgstr "Fehler beim Schreiben des Berichts: %s"
 
 #: MediaVerify/MediaVerify.py:259
 msgid "Generating media hashes"
-msgstr "Erstelle Medienhashes"
+msgstr "Medienhashes erzeugen"
 
 #: MediaVerify/MediaVerify.py:261
 msgid "Set media hashes"
-msgstr "Bestimme Medienhashes"
+msgstr "Medienhashes setzen"
 
 #: MediaVerify/MediaVerify.py:296
 msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
 msgstr ""
-"Medienpfad nicht gesetzt. Du musst den \"Basispfad für relative "
-"Medienpfade\" in den Einstellungen setzen."
+"Medienpfad nicht festgelegt.  Du musst den „Basispfad für relative "
+"Medienpfade“ in den Einstellungen festlegen."
 
 #: MediaVerify/MediaVerify.py:307
 msgid "Finding files"
@@ -2399,11 +2406,11 @@ msgstr "Überprüfe Pfade"
 
 #: MediaVerify/MediaVerify.py:388
 msgid "Fixing file paths"
-msgstr "Dateipfade reparieren"
+msgstr "Dateipfade korrigieren"
 
 #: MediaVerify/MediaVerify.py:390
 msgid "Fix media paths"
-msgstr "Medienpfade reparieren"
+msgstr "Medienpfade korrigieren"
 
 #: MediaVerify/MediaVerify.gpr.py:31
 msgid "Media Verify"
@@ -2411,7 +2418,7 @@ msgstr "Medien Überprüfen"
 
 #: MediaVerify/MediaVerify.gpr.py:32
 msgid "Verify that media is present in the correct path"
-msgstr "Überprüft, das die Medien im korrekten Pfad vorhanden sind"
+msgstr "Überprüfen, dass das Medium im richtigen Pfad vorhanden ist"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
@@ -2630,7 +2637,7 @@ msgstr ""
 
 #: Differences/differences.py:95 Differences/differences.gpr.py:4
 msgid "Database Differences Report"
-msgstr "Datenbankunterschiede-Bericht"
+msgstr "Datenbankunterschiedebericht"
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
@@ -2642,8 +2649,7 @@ msgstr "Keine Unterschiede"
 
 #: Differences/differences.py:168
 msgid "Missing items in File that are added in Database"
-msgstr ""
-"Fehlende Elemente in der Datei, die in der Datenbank hinzugefügt wurden"
+msgstr "Fehlende Elemente in der Datei, die in der Datenbank hinzugefügt werden"
 
 #: Differences/differences.py:174
 #, python-format
@@ -2652,7 +2658,7 @@ msgstr "Fehlende %s: %s"
 
 #: Differences/differences.py:178
 msgid "Nothing missing"
-msgstr "Es fehlt nichts"
+msgstr "Nichts fehlt"
 
 #: Differences/differences.py:185
 msgid "Added items in File that are missing in Database"
@@ -18981,7 +18987,7 @@ msgstr "Nur zentrale Person"
 
 #: FamilySheet/FamilySheet.py:872
 msgid "Center person and descendants in side branches"
-msgstr "Zentrale Person und Nachkommen in Nebenlinien"
+msgstr "Zentrale Person und Nachkommen in Nebenzweigen"
 
 #: FamilySheet/FamilySheet.py:873
 msgid "Center person and all descendants"
@@ -20275,7 +20281,7 @@ msgstr "Schreiben fehlgeschlagen "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
-msgstr "Geburtsjahr der Hauptperson"
+msgstr "Geburtsjahr der zentralen Person"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
@@ -23259,8 +23265,8 @@ msgid ""
 "Enter the maximum number of connections allowed from\n"
 "the center person.  Value may be 1 or greater."
 msgstr ""
-"Gib die maximale Anzahl der zulässigen Verbindungen ein die von der\n"
-" zentrale Person zulässig sind. Der Wert kann 1 oder größer sein."
+"Gib die maximale Anzahl der von der zentralen Person zugelassenen\n"
+"Verbindungen ein.  Der Wert kann 1 oder größer sein."
 
 #: NetworkChart/NetworkChart.py:1211
 msgid "Limit graph to max connections from center."
