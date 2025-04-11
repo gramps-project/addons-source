@@ -29,13 +29,14 @@
 # Emmanuel Vallois <emmanuel@vallois.name>, 2025.
 # Frédéric Schwartz <frederic@online404.com>, 2025.
 # Jean-Marc <m.balthazar@posteo.net>, 2025.
+# geoglorus <pierre+github@laminette.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-04-02 22:10+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"PO-Revision-Date: 2025-04-03 11:12+0000\n"
+"Last-Translator: geoglorus <pierre+github@laminette.net>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -2824,7 +2825,7 @@ msgstr "Le style utilisé pour les titres de page."
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
 msgid "SharedPostgreSQL"
-msgstr ""
+msgstr "PostgreSQL partagée"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:25
 msgid "Shared _PostgreSQL Database"
@@ -5095,7 +5096,7 @@ msgstr "Sélectionnez le nom que vous souhaitez examiner."
 
 #: QuiltView/QuiltView.py:314
 msgid "Clear the entry field in the name selection box."
-msgstr ""
+msgstr "Effacer le champ de saisie dans la zone de sélection du nom."
 
 #: QuiltView/QuiltView.py:319
 msgid "Nothing is selected"
@@ -5107,10 +5108,12 @@ msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
 "%(total)d people in your database."
 msgstr ""
+"Vous avez %(filter)d personnes filtrées, %(count)d personnes affichées sur "
+"l'arbre et %(total)d personnes dans votre base de données."
 
 #: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
-msgstr ""
+msgstr "Chargement des individus"
 
 #: QuiltView/QuiltView.py:663
 msgid "Loading the data"
@@ -5147,17 +5150,19 @@ msgstr "Imprimer l'arbre"
 #: QuiltView/QuiltView.py:1869
 #, python-format
 msgid "Need to print %(pages)s pages (%(format)s format)"
-msgstr ""
+msgstr "Besoin d'imprimer %(pages)s pages (%(format)s format)"
 
 #: QuiltView/QuiltView.py:1921
 msgid ""
 "Center on the selected person.\n"
 "The new position of the person will be near the top left corner."
 msgstr ""
+"Centrer sur la personne sélectionnée.\n"
+"La nouvelle position de la personne se trouve dans le coin supérieur gauche."
 
 #: QuiltView/QuiltView.py:1926
 msgid "The path color"
-msgstr ""
+msgstr "La couleur du chemin"
 
 #: QuiltView/QuiltView.py:1931
 msgid "The selected person color"
@@ -5341,16 +5346,20 @@ msgid ""
 "\n"
 "<u><b>Diagnostic checks</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Contrôles diagnostiques</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
 msgid "Check for potential issues.\n"
-msgstr ""
+msgstr "Vérifier s'il y a des problèmes potentiels.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
 msgid ""
 "\n"
 "Environment settings:\n"
 msgstr ""
+"\n"
+"Paramètres de l'environnement :\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
 msgid ""
