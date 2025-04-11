@@ -18,8 +18,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-04-11 09:13+0000\n"
-"Last-Translator: Morgan Antonsson <morgan.antonsson@gmail.com>\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -14444,10 +14444,8 @@ msgid "Place discharged"
 msgstr "Plats tömd"
 
 #: Form/form_us.xml.h:2592
-#, fuzzy
-#| msgid "Rank"
 msgid "Rank out"
-msgstr "Rank out"
+msgstr "Rangordna"
 
 #: Form/form_us.xml.h:2597
 msgid "Industry/Employer"
@@ -15122,36 +15120,28 @@ msgid "Completed Years the present Marriage has lasted."
 msgstr ""
 
 #: Form/form_gb.xml.h:210 Form/form_gb.xml.h:343
-#, fuzzy
-#| msgid "Children distance"
 msgid "Children Total"
-msgstr "Barnavstånd"
+msgstr "Barn totalt"
 
 #: Form/form_gb.xml.h:211 Form/form_gb.xml.h:344
 msgid "Total Children Born Alive."
 msgstr ""
 
 #: Form/form_gb.xml.h:213 Form/form_gb.xml.h:346
-#, fuzzy
-#| msgid "Children distance"
 msgid "Children still Living."
-msgstr "Barnavstånd"
+msgstr "Barn som fortfarande lever."
 
 #: Form/form_gb.xml.h:214 Form/form_gb.xml.h:347
-#, fuzzy
-#| msgid "Children distance"
 msgid "Children Died"
-msgstr "Barnavstånd"
+msgstr "Barn som avlidit"
 
 #: Form/form_gb.xml.h:215 Form/form_gb.xml.h:348
 msgid "Children who have Died."
 msgstr ""
 
 #: Form/form_gb.xml.h:217 Form/form_gb.xml.h:350
-#, fuzzy
-#| msgid "Include Occupation"
 msgid "Personal Occupation"
-msgstr "Tag med yrke"
+msgstr "Personlig sysselsättning"
 
 #: Form/form_gb.xml.h:219 Form/form_gb.xml.h:352
 msgid "Industry or Service with which worker is connected."
@@ -15162,10 +15152,8 @@ msgid "Whether Employer, Worker or Working on Own Account"
 msgstr ""
 
 #: Form/form_gb.xml.h:223 Form/form_gb.xml.h:356
-#, fuzzy
-#| msgid "Whether to include author."
 msgid "Whether Working at Home"
-msgstr "Huruvida ta med författare."
+msgstr "Huruvida du arbetar hemma"
 
 #: Form/form_gb.xml.h:225 Form/form_gb.xml.h:358
 msgid "BIRTHPLACE of every Person."
@@ -15231,10 +15219,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_gb.xml.h:254 Form/form_gb.xml.h:389
-#, fuzzy
-#| msgid "Number of editions back"
 msgid "Number of living children"
-msgstr "Antal utgåvor tillbaka"
+msgstr "Antal levande barn"
 
 #: Form/form_gb.xml.h:255 Form/form_gb.xml.h:390
 msgid "Total number under sixteen years of age. If none write \"None.\""
@@ -15338,10 +15324,8 @@ msgid "House Schedule No"
 msgstr ""
 
 #: Form/form_gb.xml.h:412
-#, fuzzy
-#| msgid "Relation type"
 msgid "Relation to Head"
-msgstr "Typ av släktskap"
+msgstr "Släktskap till huvudperson"
 
 #: Form/form_gb.xml.h:417
 msgid "Blind, or Deaf and Dumb"
@@ -15359,10 +15343,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:430 Form/form_gb.xml.h:457 Form/form_gb.xml.h:485
 #: Form/form_gb.xml.h:517 Form/form_gb.xml.h:556
-#, fuzzy
-#| msgid "House Icon Style"
 msgid "House Inhabited"
-msgstr "Mall för husikon"
+msgstr "Hus bebodda"
 
 #: Form/form_gb.xml.h:431 Form/form_gb.xml.h:458 Form/form_gb.xml.h:486
 #: Form/form_gb.xml.h:518 Form/form_gb.xml.h:557
@@ -15432,10 +15414,8 @@ msgid "Gaellic or G. & E."
 msgstr ""
 
 #: Form/form_gb.xml.h:538
-#, fuzzy
-#| msgid "Parish:"
 msgid "Parish Ward"
-msgstr "Församling:"
+msgstr "Församlingsdistrikt"
 
 #: Form/form_gb.xml.h:563
 msgid "Profession or Occupation"
@@ -15493,16 +15473,12 @@ msgid "Urban District"
 msgstr ""
 
 #: Form/form_gb.xml.h:606
-#, fuzzy
-#| msgid "Used for family"
 msgid "Head of Family"
-msgstr "Använd för familj"
+msgstr "Familjeöverhuvud"
 
 #: Form/form_gb.xml.h:618
-#, fuzzy
-#| msgid "Include Children"
 msgid "Total Children"
-msgstr "Inkludera barn"
+msgstr "Totalt antal barn"
 
 #: Form/form_gb.xml.h:619
 msgid "Children born alive to present Marriage"
@@ -17692,10 +17668,8 @@ msgid "Taxes"
 msgstr ""
 
 #: Form/form_fr.xml.h:57 Form/form_fr.xml.h:67 Form/form_fr.xml.h:222
-#, fuzzy
-#| msgid "Type of link"
 msgid "Type of roof"
-msgstr "Linktyp"
+msgstr "Typ av tak"
 
 #: Form/form_fr.xml.h:144
 msgid "Arrived since"
@@ -18256,10 +18230,8 @@ msgid "Merge primary objects via the command line."
 msgstr "Lägg ihop primära objekt via kommandoraden."
 
 #: UKWebConnectPack/UKWebPack.py:33
-#, fuzzy
-#| msgid "GoogleEarth"
 msgid "UK Google"
-msgstr "GoogleEarth"
+msgstr "Google UK"
 
 #: UKWebConnectPack/UKWebPack.py:34
 msgid "British, UK, and Ireland"
@@ -18382,10 +18354,8 @@ msgid "Stamen Terrain"
 msgstr "Stamen Terrain"
 
 #: Heatmap/utils.py:58
-#, fuzzy
-#| msgid "Paternal Background Color"
 msgid "Stamen Terrain (Background only)"
-msgstr "Bakgrundsfärg för fadersidan"
+msgstr "Stamen-terräng (endast bakgrund)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
@@ -18451,10 +18421,8 @@ msgstr "Urklippsgramplet: %s"
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:18
-#, fuzzy
-#| msgid "Clipboard"
 msgid "Collections Clipboard"
-msgstr "Urklipp"
+msgstr "Samlingar urklipp"
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:11
 msgid "Gramplet for grouping collections of items to aid in data entry."
@@ -18514,16 +18482,12 @@ msgid "Bielefeld Academic Search"
 msgstr ""
 
 #: DEWebConnectPack/DEWebPack.py:42
-#, fuzzy
-#| msgid "GoogleEarth"
 msgid "Google Archives"
-msgstr "GoogleEarth"
+msgstr "Google-arkiv"
 
 #: DEWebConnectPack/DEWebPack.py:43
-#, fuzzy
-#| msgid "GoogleEarth"
 msgid "DE Google"
-msgstr "GoogleEarth"
+msgstr "Google DE"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
@@ -18753,26 +18717,21 @@ msgid "mentioned in note"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
-#, fuzzy
-#| msgid "Time In Family"
 msgid "Note on Family"
-msgstr "Tid i familjen"
+msgstr "Anteckning för familj"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "syskon"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Note on Parent Family"
-msgstr "Föräldrafamilj"
+msgstr "Anteckning om föräldrafamilj"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
-#, fuzzy, python-format
-#| msgid "Sync Associations"
+#, python-format
 msgid "%s (association)"
-msgstr "Synkronisera föreningar"
+msgstr "%s (förening)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 #, fuzzy
