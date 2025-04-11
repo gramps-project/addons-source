@@ -1,54 +1,55 @@
 # GRAMPS
 # Copyright (C) 2009, 2010, 2011, 2012, 2014, 2015.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 # grampscn <grampscn@gmail.com>, 2001, 2009, 2010.
 # 黄友诚 <grampscn@gmail.com>, 2009, 2010, 2011.
 # 陈欣(Celia), 2009.
 # 黄晓敏 (武汉工业职业技术学院管理工程系会计0801班), 2009.
 # 赖洁(Lexi), 2009.
 # Anthony Fok (霍东灵) <foka@debian.org>, 2015.
+# Tian Shixiong <tiansworld@fedoraproject.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VERSION 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2010-03-09 22:25+0800\n"
-"Last-Translator: 黄友诚\n"
-"Language-Team: zh <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-04-09 13:53+0000\n"
+"Last-Translator: Tian Shixiong <tiansworld@fedoraproject.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: pygettext.py 1.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
+"Generated-By: pygettext.py 1.4\n"
 "X-Poedit-Language: Chinese\n"
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
-msgstr ""
+msgstr "媒体合并"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
-msgstr[0] ""
+msgstr[0] "已合并 {number_of} 个媒体"
 
 #: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
-msgstr ""
+msgstr "没有合并媒体项目。"
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
-msgstr ""
+msgstr "合并媒体"
 
 #: MediaMerge/mediamerge.gpr.py:33
 msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
-msgstr ""
+msgstr "搜索整个数据库，查找路径相同的媒体然后将其合并。"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: AttachSourceTool/AttachSourceTool.py:70
@@ -104,7 +105,7 @@ msgstr "添加含有日期的死亡事件"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
-msgstr ""
+msgstr "增加包含或不含估计日期的死亡事件"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
@@ -136,7 +137,7 @@ msgstr "极端的（之后和之前）"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr ""
+msgstr "事件日期可以是大约，或者之前/之后"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -297,7 +298,7 @@ msgstr "估算的死亡日期"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
-msgstr ""
+msgstr " 已完成！正在执行..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
@@ -314,31 +315,31 @@ msgstr "为出生和死亡的计算估计日期."
 
 #: MediaBrowser/MediaBrowser.gpr.py:31
 msgid "Media Browser"
-msgstr ""
+msgstr "媒体浏览器"
 
 #: MediaBrowser/MediaBrowser.gpr.py:39
 msgid "Browser"
-msgstr ""
+msgstr "浏览器"
 
 #: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
-msgstr ""
+msgstr "lxml"
 
 #: lxml/lxmlGramplet.gpr.py:11
 msgid "Gramplet for testing lxml and XSLT"
-msgstr ""
+msgstr "用于测试 lxml 和 XSLT 的 Gramplet"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
-msgstr ""
+msgstr "etree"
 
 #: lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
-msgstr ""
+msgstr "用于测试 etree 和 Gramps XML 的 Gramplet"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
-msgstr ""
+msgstr "无效时间戳"
 
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
@@ -359,16 +360,16 @@ msgstr ""
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
-msgstr ""
+msgstr "对不起，暂不支持您的操作系统！"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr ""
+msgstr "是压缩的 .gramps 文件吗？"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr ""
+msgstr "无法解压 \"%s\""
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -383,7 +384,7 @@ msgstr ""
 #: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
 msgid "Cannot copy \"%s\""
-msgstr ""
+msgstr "无法复制 \"%s\""
 
 #: lxml/etreeGramplet.py:418
 #, python-format
@@ -523,7 +524,7 @@ msgstr ""
 #: lxml/lxmlGramplet.py:298
 #, python-format
 msgid "Cannot validate \"%(file)s\" !"
-msgstr ""
+msgstr "无法验证 \"%(file)s\" ！"
 
 #: lxml/lxmlGramplet.py:306
 #, python-format
@@ -546,7 +547,7 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:333
 msgid "Gramps version"
-msgstr ""
+msgstr "Gramps 版本"
 
 #: lxml/lxmlGramplet.py:333
 #, python-format
@@ -566,7 +567,7 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:341
 msgid "File issue"
-msgstr ""
+msgstr "文件问题"
 
 #: lxml/lxmlGramplet.py:341
 #, python-format
@@ -574,14 +575,12 @@ msgid "Cannot parse \"%(file)s\" via etree"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:359
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Parsing file..."
-msgstr "处理...\n"
+msgstr "正在分析文件..."
 
 #: lxml/lxmlGramplet.py:456
 msgid "Missing header"
-msgstr ""
+msgstr "缺少文件头"
 
 #: lxml/lxmlGramplet.py:456
 msgid ""
@@ -590,11 +589,15 @@ msgid ""
 "Please, try to use a .gramps\n"
 "generated by Gramps 4.x."
 msgstr ""
+"不是有效的 .gramps 文件。\n"
+"无法运行该 gramplet...\n"
+"请尝试使用由 Gramps 4.x\n"
+"生成的 .gramps 文件。"
 
 #: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
 #: lxml/lxmlGramplet.py:484
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: lxml/lxmlGramplet.py:495
 msgid "File parsed with"
@@ -630,17 +633,17 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
 msgid "Gallery.html"
-msgstr ""
+msgstr "Gallery.html"
 
 #: lxml/lxmlGramplet.py:522
 #, python-format
 msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr ""
+msgstr "2. 已在 \"%(file)s\" 生成媒体索引。\n"
 
 #: lxml/lxmlGramplet.py:525
 #, python-format
 msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr ""
+msgstr "3. 已向 \"%(file)s\" 写入条目。\n"
 
 #: lxml/lxmlGramplet.py:544
 msgid "Matches XSD schema."
@@ -656,36 +659,36 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:590
 msgid "Content generated by Gramps"
-msgstr ""
+msgstr "内容由 Gramps 生成"
 
 #: lxml/lxmlGramplet.py:593
 msgid "List of sources"
-msgstr ""
+msgstr "来源列表"
 
 #: lxml/lxmlGramplet.py:611
 msgid "Australia"
-msgstr ""
+msgstr "澳大利亚"
 
 #: lxml/lxmlGramplet.py:612
 msgid "Brazil"
-msgstr ""
+msgstr "巴西"
 
 #: lxml/lxmlGramplet.py:623
 msgid "India"
-msgstr ""
+msgstr "印度"
 
 #: lxml/lxmlGramplet.py:625
 msgid "Norway"
-msgstr ""
+msgstr "挪威"
 
 #: lxml/lxmlGramplet.py:626
 msgid "Portugal"
-msgstr ""
+msgstr "葡萄牙"
 
 #: lxml/lxmlGramplet.py:695
 #, python-format
 msgid "1. Has generated \"%s\".\n"
-msgstr ""
+msgstr "1. 已生成 \"%s\"。\n"
 
 #: lxml/lxmlGramplet.py:696
 #, python-format
@@ -697,24 +700,27 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
-msgstr ""
+msgstr "地点清理"
 
 #: PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
-msgstr ""
+msgstr "地点清理 Gramplet 可辅助用于地点合并，也可以通过 GeoNames "
+"网络数据库完善地点信息"
 
 #: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1088
 msgid ""
 "No\n"
 "Matches"
 msgstr ""
+"没有\n"
+"匹配项"
 
 #: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
 #: EventDescriptionEditor/EventDescriptionEditor.py:139
 msgid "Find"
-msgstr ""
+msgstr "查找"
 
 #: PlaceCleanup/placecleanup.py:293
 #, python-format
@@ -726,15 +732,15 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.py:295
 msgid "Find GeoNames"
-msgstr ""
+msgstr "查找 GeoNames"
 
 #: PlaceCleanup/placecleanup.py:303
 msgid "Need to set GeoNames ID"
-msgstr ""
+msgstr "需设置 GeoNames ID"
 
 #: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
-msgstr ""
+msgstr "点击帮助按钮了解更多内容"
 
 #: PlaceCleanup/placecleanup.py:337
 msgid ""
@@ -753,7 +759,7 @@ msgstr ""
 #: PlaceCleanup/placecleanup.py:353
 #, python-format
 msgid "%s matches were found"
-msgstr ""
+msgstr "找到 %s 个匹配项"
 
 #: PlaceCleanup/placecleanup.py:354
 msgid ""
@@ -761,18 +767,21 @@ msgid ""
 "To see additional results, press the search button again.\n"
 "Or try changing the Title with more detail, such as a country."
 msgstr ""
+"仅显示 10 个匹配项目。\n"
+"再次点击搜索按钮可查看剩余结果。\n"
+"或者尝试修改标题，增加更详细的信息，比如国家。"
 
 #: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
-msgstr ""
+msgstr "从网络获取数据遇到问题"
 
 #: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
-msgstr ""
+msgstr "网络请求超时，重新尝试……"
 
 #: PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
-msgstr ""
+msgstr "从 GeoNames 获取数据遇到问题"
 
 #: PlaceCleanup/placecleanup.py:481
 msgid ""
@@ -788,15 +797,15 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
-msgstr ""
+msgstr "GeoNames 网站"
 
 #: PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
-msgstr ""
+msgstr "GeoNames 作者"
 
 #: PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
-msgstr ""
+msgstr "GeoNames 由 Marc Wick 创建。可通过此与他联系 "
 
 #: PlaceCleanup/placecleanup.py:959
 msgid ""
