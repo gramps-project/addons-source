@@ -35,8 +35,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-04-03 11:12+0000\n"
-"Last-Translator: geoglorus <pierre+github@laminette.net>\n"
+"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -4444,7 +4444,7 @@ msgstr "Pas de source"
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
 msgid "onclick"
-msgstr ""
+msgstr "en cliquant"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onmouseover"
@@ -5367,12 +5367,17 @@ msgid ""
 "\n"
 "<u><b>Locales available:</b></u>\n"
 msgstr ""
+"\n"
+"\n"
+"<u><b>Langues disponibles :</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
 msgid ""
 "\n"
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Sauvegardez vos fichiers généalogiques.</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:288
 msgid ""
@@ -5380,6 +5385,9 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
+"Si vous avez une raison de vérifier les prérequis, c'est le bon moment pour "
+"sauvegarder vos fichiers de généalogie, puis de tester vos sauvegardes!\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
 msgid ""
@@ -5390,6 +5398,13 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
+"<i><a href="
+"\"https://gramps-project.org/wiki/index.php/Comment_faire_une_sauvegarde\""
+">Sauvegarde Gramps XML</a> Vous trouverez « Sauvegarder... » dans le menu « "
+"Arbres familiaux » de Gramps, sinon utiliser \"Exporter...\" dans le même "
+"menu, mais décochez l'option de confidentialité dans l'Assistant d'export "
+"afin d'exporter toutes les données.</i>\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
 msgid ""
@@ -5492,7 +5507,7 @@ msgstr "version inconnue"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:422
 msgid "DISPLAY not set"
-msgstr ""
+msgstr "DISPLAY pas défini"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:453
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:505
@@ -5500,33 +5515,37 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:561
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:598
 msgid " or greater.)\n"
-msgstr ""
+msgstr " ou plus.)\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:560
 msgid " (Requires "
-msgstr ""
+msgstr " (Nécessite "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
 msgid " • Berkeley Database library (bsddb3: "
-msgstr ""
+msgstr " • Bibliothèque de base de données Berkeley (bsddb3 : "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:675
 msgid " • SQLite Database library (sqlite3: "
-msgstr ""
+msgstr " • Bibliothèque de bases de données SQLite (sqlite3 : "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:689
 msgid " • xdg-utils (Manual check see instructions link)"
 msgstr ""
+" • xdg-utils (Vérification manuelle, voyez le lien vers les instructions)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:702
 msgid " • librsvg2 (Manual check see instructions link)"
 msgstr ""
+" • librsvg2 (Vérification manuelle, voyez le lien vers les instructions)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:713
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
+" • language-pack-gnome-xx (Vérification manuelle, voyez le lien vers les "
+"instructions) pour votre Langue <show locale here TBD>"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
@@ -5539,31 +5558,31 @@ msgstr " ou supérieur installé.)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:749
 msgid " or greater)"
-msgstr ""
+msgstr " ou plus)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:780
 msgid "Graphviz not in system PATH"
-msgstr ""
+msgstr "Graphviz pas dans le PATH système"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:848
 msgid "Ghostscript not in system PATH"
-msgstr ""
+msgstr "Ghostscript pas dans le PATH système"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:863
 msgid " (Passed: version 0.5.x is installed.)"
-msgstr ""
+msgstr " (Succès : la version 0.5.x est installée.)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:866
 msgid " (Requires version 0.5.x)"
-msgstr ""
+msgstr " (Nécessite la version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr ""
+msgstr " • python-fontconfig pas trouvé, (version 0.5.x nécessaire)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
-msgstr ""
+msgstr " • python-fontconfig installé, version pas disponible"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
@@ -5576,6 +5595,8 @@ msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s à déterminer (Succès : version %s ou plus installée. Si pas sur "
+"Microsoft Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1015
 #, python-format
@@ -5583,29 +5604,34 @@ msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s à déterminer (Nécessite version %s ou plus installée. Si pas sur "
+"Microsoft Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1129
 msgid "can't found it because exiv2 not installed"
-msgstr ""
+msgstr "on ne peut pas le trouver parce que exiv2 n'est pas installé"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
-msgstr ""
+msgstr "GExiv2 : %s (bibliothèque Exiv2 : %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1197
 msgid "found another font"
-msgstr ""
+msgstr "une autre police a été trouvée"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1205
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
+"Pour le greffon « Networkchart », la police <a href="
+"\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> donne "
+"un résultat extrêmement lisible.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
-msgstr ""
+msgstr "Pourquoi, alors que le même code fonctionne dans Graphview"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1246
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
@@ -5616,15 +5642,15 @@ msgstr "pas installé"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
 msgid "     and one of either: (pydotplus: "
-msgstr ""
+msgstr "     et l'un des deux : (pydotplus : "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
 msgid ") or (pygraphviz: "
-msgstr ""
+msgstr ") ou (pygraphviz : "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
 msgid "Installed(MS-Windows)"
-msgstr ""
+msgstr "Installé(MS-Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
 msgid "Installed(Linux/Mac)"
@@ -5641,15 +5667,16 @@ msgstr "pas installé "
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1702
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1708
 msgid "not found."
-msgstr ""
+msgstr "pas trouvé."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1466
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
-msgstr ""
+msgstr "Standard. Passé : programme installé - sur OS Win 32bit sur 64bit."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
+#, fuzzy
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
-msgstr ""
+msgstr ") ( Nécessite le greffon gramps listé sous 'Plugin lib')"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
 msgid "DBF installed"
@@ -5657,29 +5684,29 @@ msgstr "DBF Installé"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1559
 msgid ".)(Requires version "
-msgstr ""
+msgstr ".)(Nécessite la version "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1564
 msgid " installed.)(Passed: version "
-msgstr ""
+msgstr " installée.)(Succès : version "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
 #, python-format
 msgid "(OpenCV facedetection: %s)"
-msgstr ""
+msgstr "(détection de visage OpenCV : %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
 msgid " (lxml: not found. Requires version "
-msgstr ""
+msgstr " (lxml : pas trouvé. Version requise "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1776
 msgid " • Requires: MongoDB TBD / pymongo TBD"
-msgstr ""
+msgstr " • Nécessite : MongoDB TBD / pymongo TBD"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1790
 #, python-format
 msgid " • Operating System: %s"
-msgstr ""
+msgstr " • Système d’exploitation : %s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
 msgid ""
@@ -5688,6 +5715,9 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php/"
+"Gramps_6.0_Wiki_Manual_-_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGES."
+"2C_LC_TIME\">Paramètres régionaux :</a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
@@ -5709,7 +5739,7 @@ msgstr "pas défini"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1878
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1879
 msgid "not tested"
-msgstr ""
+msgstr "pas testé"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1845
 msgid ""
@@ -5718,12 +5748,19 @@ msgid ""
 "Gramps again and make sure to select all the Translations and Dictionaries)\n"
 "\n"
 msgstr ""
+"\n"
+"Paramètres régionaux/traductions installés (si seul l'anglais est "
+"répertorié, veuillez réinstaller Gramps et assurez-vous de sélectionner "
+"toutes les traductions et tous les dictionnaires)\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1882
 msgid ""
 "\n"
 "Gramps Environment variables:\n"
 msgstr ""
+"\n"
+"Variables d'environnement Gramps :\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1921
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1983
@@ -5736,6 +5773,8 @@ msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"
 msgstr ""
+"Sphinx est un outil qui construit la documentation de développement Gramps "
+"et les pages du manuel\n"
 
 #: SourceReferences/SourceReferences.gpr.py:33
 msgid "Gramplet showing the references for a source"
@@ -5747,7 +5786,7 @@ msgstr "Correspondances ADN"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
-msgstr ""
+msgstr "Gramplet pour afficher une liste des correspondances ADN"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
@@ -5755,11 +5794,11 @@ msgstr "Ind."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
-msgstr ""
+msgstr "Rel."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "ADN P."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
@@ -5771,7 +5810,7 @@ msgstr "P.G. Seg"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Src(s)"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
@@ -5779,11 +5818,11 @@ msgstr "ADN partagé"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "Segments partagés"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "Plus grand segment"
 
 #: DNAMatches/dnamatches.py:159
 msgid "Source(s)"
@@ -5792,10 +5831,11 @@ msgstr "Source(s)"
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
 msgstr ""
+"Double-cliquez sur une ligne pour naviguer vers l'individu correspondant."
 
 #: DNAMatches/dnamatches.py:195
 msgid "Right click to edit selected association."
-msgstr ""
+msgstr "Clic droit pour modifier l'association sélectionnée."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
@@ -5808,7 +5848,7 @@ msgstr "="
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "Non spécifié"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
 msgid "cM"
@@ -5824,7 +5864,7 @@ msgstr "Télécharger un fichier GEDCOM depuis un serveur phpGedView."
 
 #: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
 msgid "Fetching index list..."
-msgstr ""
+msgstr "Récupération de la liste d'index…"
 
 #: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
 msgid "Fetching records..."
@@ -5937,6 +5977,10 @@ msgid ""
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
+"Active/désactive les coches sur les lignes sélectionnées. Les lignes peuvent "
+"être sélectionnées avec <Ctrl> clic (ajouter au groupe) ou <Maj> clic ("
+"étendre le groupe), ou avec <Ctrl> ou <Maj> et les touches flêchées ou la "
+"barre d'espace. Ou <Ctrl> « a » pour tout sélectionner."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
 msgid "Descendant Book"
@@ -5945,6 +5989,8 @@ msgstr "Livre de Descendance"
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
+"Produit un ou plusieurs rapports de descendants basés sur une requête "
+"fournie."
 
 #: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
@@ -5954,16 +6000,19 @@ msgstr "Livre détaillé de descendance"
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
 msgstr ""
+"Produit un ou plusieurs rapports détaillés sur les descendants basés sur une "
+"requête fournie."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
-msgstr ""
+msgstr "conj. vus   %(reference)s : %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:249
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 msgstr ""
+"voir le rapport : %(report)s, réf. : %(reference)s : %(person)s & %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:374
 msgid "Descendants Report"
@@ -5973,18 +6022,18 @@ msgstr "Rapport sur les descendants"
 #: DescendantBooks/DetailedDescendantBookReport.py:421
 #, python-format
 msgid "Writing %s reports..."
-msgstr ""
+msgstr "Rédaction de %s rapports…"
 
 #: DescendantBooks/DescendantBookReport.py:442
 #, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr ""
+msgstr "{report_count}. Descendants de {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
 #, python-brace-format
 msgid "{report_count:d}. {name}"
-msgstr ""
+msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
@@ -6015,7 +6064,7 @@ msgstr "Création de %s références du rapport…"
 #: DescendantBooks/DetailedDescendantBookReport.py:453
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
-msgstr ""
+msgstr "%(report_count)s. Rapport des descendants pour %(person_name)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:519
 msgid "Index of Places"
@@ -6031,38 +6080,41 @@ msgstr "Index des noms"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:571
 msgid "Report, Generation, Person, Name"
-msgstr ""
+msgstr "Rapport, Génération, Individu, Nom"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
 msgstr ""
+"Voir le rapport : {report}, Génération : {generation}, Individu : {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
 #, python-format
 msgid "Report appearances for %s"
-msgstr ""
+msgstr "Rapport des apparitions pour %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
 #, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
 msgstr ""
+"Conjoint de : Rapport : {report}, Génération : {generation}, Individu : "
+"{person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
 #, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr ""
+msgstr "Rapport : {report}, Génération : {generation}, Individu : {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
 msgid "%(event_name)s of %(name)s "
-msgstr ""
+msgstr "%(event_name)s de %(name)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:810
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
-msgstr ""
+msgstr "%(event_name)s de %(name)s et %(mate)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:814
 #: DescendantBooks/DetailedDescendantBookReport.py:858
@@ -6088,28 +6140,28 @@ msgstr "%(place)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:821
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
-msgstr ""
+msgstr ". Réf : %(repno)s %(gen)s %(per)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:850
 #, python-format
 msgid "%(event_name)s:"
-msgstr ""
+msgstr "%(event_name)s :"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:875
 #, python-format
 msgid " %(event_text)s"
-msgstr ""
+msgstr " %(event_text)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:993
 #, python-brace-format
 msgid "Ref: {number}. {name}"
-msgstr ""
+msgstr "Réf : {number}. {name}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
-msgstr ""
+msgstr "%(name_kind)s : %(name)s%(endnotes)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1294
 #, python-format
@@ -6119,7 +6171,7 @@ msgstr "%(type)s :"
 #: DescendantBooks/DetailedDescendantBookReport.py:1299
 #, python-format
 msgid " %(value)s%(endnotes)s"
-msgstr ""
+msgstr " %(value)s%(endnotes)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1401
 #: DetDescendantReport-images/detdescendantreporti.py:1147
@@ -6129,7 +6181,7 @@ msgstr "Liste des enfants"
 #: DescendantBooks/DetailedDescendantBookReport.py:1418
 #: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
-msgstr ""
+msgstr "Ajouter la référence du descendant dans la liste des enfants"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1482
 msgid "Include Index of Names"
@@ -6157,13 +6209,15 @@ msgstr "Inclure ou non l'index des lieux à la fin du rapport."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Include the 'Report appearances' section with each person"
-msgstr ""
+msgstr "Inclure la section « Rapport des apparitions » avec chaque individu"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
 msgstr ""
+"La section « Rapport des apparitions » montre d'autres endroits dans le "
+"rapport où l'individu est mentionnée."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1566
 #: DetDescendantReport-images/detdescendantreporti.py:1282
@@ -6223,38 +6277,38 @@ msgstr "Le style utilisé pour les références dans l'index des lieux."
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
 msgid "Deep pruning ascendants from %s people..."
-msgstr ""
+msgstr "Élagage profond des ascendants de %s individus…"
 
 #: DescendantBooks/CollectAscendants.py:182
 #, python-format
 msgid "Pruning ascendants from %s people..."
-msgstr ""
+msgstr "Élagage des ascendants de %s individus…"
 
 #: DescendantBooks/CollectAscendants.py:320
 #: DescendantBooks/CollectAscendants.py:413
 #, python-format
 msgid "Getting ascendants from %s people..."
-msgstr ""
+msgstr "Obtention des ascendants de %s individus..."
 
 #: DescendantBooks/CollectAscendants.py:331
 #, python-format
 msgid "Verifying descendants from %s people..."
-msgstr ""
+msgstr "Vérification des descendants de %s individus..."
 
 #: DescendantBooks/CollectAscendants.py:348
 #, python-format
 msgid "Getting missing descendants from %s people..."
-msgstr ""
+msgstr "Chargement des descendants manquants de %s individus..."
 
 #: DescendantBooks/CollectAscendants.py:367
-#, python-format
+#, fuzzy, python-format
 msgid "Verifying descendants from %s people after pruning..."
-msgstr ""
+msgstr "Vérification des descendants de %s individus après élagage..."
 
 #: DescendantBooks/CollectAscendants.py:383
 #, python-format
 msgid "Getting missing descendants from %s people ..."
-msgstr ""
+msgstr "Chargement des descendants manquants de %s individus..."
 
 #: WordleGramplet/WordleGramplet.py:126
 msgid "[Missing]"
@@ -6271,11 +6325,11 @@ msgstr "Sélectionnez un filtre pour restreindre la liste"
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
 msgid "Wordle"
-msgstr ""
+msgstr "Wordle"
 
 #: WordleGramplet/WordleGramplet.gpr.py:13
 msgid "Gramplet used to make word clouds with wordle.net"
-msgstr ""
+msgstr "Gramplet utilisé pour faire des nuages de mots avec wordle.net"
 
 #: PersonEverything/PersonEverything.py:133
 #, python-format
@@ -6419,11 +6473,11 @@ msgstr "Carte des ancêtres"
 
 #: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
-msgstr ""
+msgstr "Une vue montrant les lieux des ancêtres sur la carte."
 
 #: GeoAncestor/GeoAncestor.py:207
 msgid "Ancestors places on the map"
-msgstr ""
+msgstr "Lieux des ancêtres sur la carte"
 
 #: GeoAncestor/GeoAncestor.py:235
 msgid "GeoAncestor"
@@ -6672,16 +6726,16 @@ msgstr "Édition de la sélection"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
-msgstr ""
+msgstr "Biographie"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
-msgstr ""
+msgstr "Afficher une biographie textuelle"
 
 #: BiographyQuickview/BiographyQuickview.py:48
 #, python-format
 msgid "Biography for %s"
-msgstr ""
+msgstr "Biographie pour %s"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
 #: EditExifMetadata/editexifmetadata.py:723
@@ -7086,7 +7140,7 @@ msgstr ""
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
 msgid "Delete?"
-msgstr ""
+msgstr "Supprimer ?"
 
 #: EditExifMetadata/editexifmetadata.py:1148
 msgid ""
@@ -7321,10 +7375,8 @@ msgid "Enable CSV Files"
 msgstr "Activer les fichiers CSV"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search"
 msgid "WebSearch"
-msgstr "WebSearch"
+msgstr "RechercheWeb"
 
 #: WebSearch.gpr.py:36
 msgid ""
@@ -7348,7 +7400,7 @@ msgstr ""
 
 #: WebSearch.py:1419
 msgid "Vars"
-msgstr ""
+msgstr "Vars"
 
 #: WebSearch.py:1421
 msgid "Website URL"
@@ -7432,7 +7484,7 @@ msgstr "Commentaire : {comment}\n"
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
 msgid "Y-chromosomal inheritance of <filter>"
-msgstr ""
+msgstr "Hérédité du chromosome Y de <filtre>"
 
 #: FilterRules2/yinheritanceoffiltermatch.py:47
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
@@ -7443,7 +7495,7 @@ msgstr ""
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
-msgstr ""
+msgstr "Ancêtres du chromosome X de <individu>"
 
 #: FilterRules2/xchromancestors.gpr.py:27 FilterRules2/xchromancestors.py:50
 msgid ""
@@ -7464,7 +7516,7 @@ msgstr ""
 #: FilterRules2/patrilinealprogenitor.py:45
 #: FilterRules2/patrilinealprogenitor.gpr.py:25
 msgid "Patrilineal progenitor of <person>"
-msgstr ""
+msgstr "Ancêtre patrilinéaire de <individu>"
 
 #: FilterRules2/patrilinealprogenitor.py:47
 #: FilterRules2/patrilinealprogenitor.gpr.py:26
@@ -7474,7 +7526,7 @@ msgstr ""
 #: FilterRules2/mtinheritanceoffiltermatch.py:46
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
 msgid "Mitochondrial inheritance of <filter>"
-msgstr ""
+msgstr "Hérédité mitochondriale de <filtre>"
 
 #: FilterRules2/mtinheritanceoffiltermatch.py:47
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
@@ -7486,7 +7538,7 @@ msgstr ""
 #: FilterRules2/matrilinealprogenitrix.gpr.py:25
 #: FilterRules2/matrilinealprogenitrix.py:45
 msgid "Matrilineal progenitrix of <person>"
-msgstr ""
+msgstr "Ancêtre matrilinéaire de <individu>"
 
 #: FilterRules2/matrilinealprogenitrix.gpr.py:26
 #: FilterRules2/matrilinealprogenitrix.py:47
@@ -7501,7 +7553,7 @@ msgstr ""
 
 #: FilterRules2/mtinheritance.py:45 FilterRules2/mtinheritance.gpr.py:25
 msgid "Mitochondrial inheritance of <person>"
-msgstr ""
+msgstr "Hérédité mitochondriale de <individu>"
 
 #: FilterRules2/mtinheritance.py:46 FilterRules2/mtinheritance.gpr.py:27
 msgid ""
@@ -7511,7 +7563,7 @@ msgstr ""
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
 msgid "Y-chromosomal inheritance of <person>"
-msgstr ""
+msgstr "Hérédité du chromosome Y de <individu>"
 
 #: FilterRules2/yinheritance.gpr.py:27 FilterRules2/yinheritance.py:46
 msgid ""
@@ -7530,6 +7582,8 @@ msgstr "Produit les lignes de descendants de l'individu"
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr ""
+"L'utilisation du type SVG pour un document supplémentaire n'est pas prise en "
+"charge !"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
@@ -7695,16 +7749,20 @@ msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
 msgstr ""
+"Tous les blocs de tous les individus ont la même hauteur, qui est la hauteur "
+"du plus haut bloc."
 
 #: DescendantsLines/DescendantsLines.py:1623
 msgid "All Person's blocks have the same width"
-msgstr ""
+msgstr "Tous les blocs d'individu ont la même largeur"
 
 #: DescendantsLines/DescendantsLines.py:1624
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
 msgstr ""
+"Tous les blocs de tous les individus ont la même largeur, qui est la largeur "
+"du bloc le plus large."
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Colour blocks by Generation"
@@ -7779,15 +7837,17 @@ msgstr "Conjoint et famille"
 
 #: DescendantsLines/DescendantsLines.py:1699
 msgid "Vertical edge descendant to spouse-bar"
-msgstr ""
+msgstr "Hauteur ligne descendant vers barre du mariage"
 
 #: DescendantsLines/DescendantsLines.py:1700
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr ""
+"La longueur de la ligne verticale du cadre d'un descendant avec la ligne "
+"horizontale vers son conjoint (0 à 50)."
 
 #: DescendantsLines/DescendantsLines.py:1704
 msgid "Vertical edge spouse-bar to spouse"
-msgstr ""
+msgstr "Hauteur ligne barre du mariage vers conjoint"
 
 #: DescendantsLines/DescendantsLines.py:1705
 msgid "The length of the vertical edge from spouse-bar to spouse."
@@ -7882,19 +7942,21 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1767
 msgid "Space between lines of text"
-msgstr ""
+msgstr "Espace entre les lignes de texte"
 
 #: DescendantsLines/DescendantsLines.py:1768
 msgid "The space to add between a line and the next in a person text block."
 msgstr ""
+"L'espace à ajouter entre une ligne et la suivante dans un bloc texte "
+"d'individu."
 
 #: DescendantsLines/DescendantsLines.py:1773
 msgid "Header and Footer"
-msgstr ""
+msgstr "En-tête et pied de page"
 
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"
-msgstr ""
+msgstr "Le texte qui sera écrit dans l'en-tête du document"
 
 #: DescendantsLines/DescendantsLines.py:1781
 msgid "The text that will be written in the footer of the document"
@@ -7902,13 +7964,15 @@ msgstr "Le texte qui sera écrit en bas du document (pied-de-page)"
 
 #: DescendantsLines/DescendantsLines.py:1785
 msgid "Title and footer coefficient"
-msgstr ""
+msgstr "Coefficient de titre et de pied de page"
 
 #: DescendantsLines/DescendantsLines.py:1786
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
 msgstr ""
+"Un nombre qui multiplie la taille de base du texte dans le titre et dans le "
+"pied-de-page"
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"
@@ -7930,7 +7994,7 @@ msgstr "Texte pour afficher la section, quand l'individu est privé"
 
 #: DescendantsLines/DescendantsLines.py:1815
 msgid "The default style."
-msgstr ""
+msgstr "Le style par défaut."
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
@@ -9340,11 +9404,16 @@ msgid "Flip families to reduce horizontal connections"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:112
+#, fuzzy
 msgid ""
 "Switch the position of mother and father in a family, to reduce the overall "
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
 msgstr ""
+"Inverser la position de la mère et du père dans une famille, afin de réduire "
+"les connexions horizontales croisées dans les grands graphiques. Cela se "
+"produit si un individu est présent dans plus d'une famille ou par la "
+"contraction du pedigree."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
