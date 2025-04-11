@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
+"PO-Revision-Date: 2025-04-06 09:03+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -1628,10 +1628,9 @@ msgstr "Možnosti exportu GEXF"
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing to %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Chyba pri zápise do %s"
+msgstr "Chyba pri zápise {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
@@ -1779,10 +1778,9 @@ msgstr ""
 "Chcete sa pokúsiť ho vytvoriť?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-brace-format
-#| msgid "Failed to create %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "Nepodarilo sa vytvoriť %s: %s"
+msgstr "Nepodarilo sa vytvoriť {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -2623,10 +2621,8 @@ msgid "Nothing added"
 msgstr "Nič nepridané"
 
 #: Differences/differences.py:308
-#, fuzzy
-#| msgid "Save tree as file"
 msgid "Family Tree file"
-msgstr "Uložiť strom ako súbor"
+msgstr "Súbor Family Tree"
 
 #: Differences/differences.py:310
 msgid "Select a .gpkg or .gramps file"
@@ -5698,10 +5694,8 @@ msgid "S. DNA"
 msgstr "Zd. DNA"
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "L. Seg"
 msgid "S. Seg."
-msgstr "Naj. seg."
+msgstr "Zdieľ. seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
@@ -5921,10 +5915,9 @@ msgid "Writing %s reports..."
 msgstr "Písanie %s správ..."
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-brace-format
-#| msgid "%(report_count)s. Descendant Report for %(person_name)s"
+#, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr "%(report_count)s. Správa o potomkoch pre %(person_name)s"
+msgstr "(report_count). Potomkovia osoby (name)"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
@@ -5976,10 +5969,9 @@ msgid "Report, Generation, Person, Name"
 msgstr "Správa, Generácia, Osoba, Meno"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr "Pozri správu : %s, Generácia : %s, Osoba : %s"
+msgstr "Pozri správu : {report}, Generácia : {generation}, Osoba : {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
@@ -5988,16 +5980,16 @@ msgid "Report appearances for %s"
 msgstr "Zobrazenia správy pre %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
-#, fuzzy, python-brace-format
-#| msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Manžel/manželka osoby: Správa: %s, Generácia: %s, Osoba: %s"
+msgstr ""
+"Manžel/manželka osoby: Správa: {report}, Generácia: {generation}, Osoba: "
+"{person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
-#, fuzzy, python-brace-format
-#| msgid "Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Správa: %s, Generácia: %s, Osoba: %s"
+msgstr "Správa: {report}, Generácia: {generation}, Osoba: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
@@ -6290,7 +6282,6 @@ msgid "Mime type"
 msgstr "Typ MIME"
 
 #: PersonEverything/PersonEverything.py:516
-#, fuzzy
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
 msgstr ""
@@ -7133,10 +7124,8 @@ msgid "Middle Name Handling"
 msgstr ""
 
 #: settings_ui_manager.py:108
-#, fuzzy
-#| msgid "Save Note"
 msgid "Leave alone"
-msgstr "Uložiť poznámku"
+msgstr "Nechať tak"
 
 #: settings_ui_manager.py:109
 #, fuzzy
@@ -7189,16 +7178,12 @@ msgid "Display 'Vars' Column"
 msgstr "Typ zobrazenia"
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "New person"
 msgid "Show User Data Icon"
-msgstr "Nová osoba"
+msgstr "Zobraziť ikonu údajov o používateľovi"
 
 #: settings_ui_manager.py:164
-#, fuzzy
-#| msgid "Show places"
 msgid "Show Flag Icons"
-msgstr "Zobraziť miesta"
+msgstr "Zobraziť ikony vlajok"
 
 #: settings_ui_manager.py:168
 msgid "Show Links From Attributes"
@@ -7209,10 +7194,8 @@ msgid "Enable CSV Files"
 msgstr ""
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search"
 msgid "WebSearch"
-msgstr "Hľadať"
+msgstr "Vyhľadávanie na webe"
 
 #: WebSearch.gpr.py:36
 msgid ""
@@ -7235,22 +7218,16 @@ msgid "Vars"
 msgstr ""
 
 #: WebSearch.py:1421
-#, fuzzy
-#| msgid "Web site title"
 msgid "Website URL"
-msgstr "Titul webového sídla"
+msgstr "URL webového sídla"
 
 #: WebSearch.py:1424
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add link to note"
-msgstr "Pridať testovaciu poznámku"
+msgstr "Pridať odkaz na poznámku"
 
 #: WebSearch.py:1425
-#, fuzzy
-#| msgid "Show places"
 msgid "Show QR-code"
-msgstr "Zobraziť miesta"
+msgstr "Zobraziť QR kód"
 
 #: WebSearch.py:1426
 msgid "Copy link to clipboard"
@@ -7281,26 +7258,21 @@ msgid ""
 msgstr ""
 
 #: WebSearch.py:1560
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add Web Link Note"
-msgstr "Pridať testovaciu poznámku"
+msgstr "Pridať poznámku k webovému odkazu"
 
 #: WebSearch.py:1596
 msgid "URL is copied to the Clipboard"
 msgstr ""
 
 #: WebSearch.py:1656
-#, fuzzy
-#| msgid "Search in:"
 msgid "WebSearch Link"
-msgstr "Vyhľadať v:"
+msgstr "Odkaz na vyhľadávanie na webe"
 
 #: WebSearch.py:1701
-#, fuzzy, python-brace-format
-#| msgid "Web site title"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Titul webového sídla"
+msgstr "Názov: {title}\n"
 
 #: WebSearch.py:1703
 #, python-brace-format
@@ -8435,10 +8407,8 @@ msgid "_Import TMG Data Set"
 msgstr "_Import dátového súboru TMG"
 
 #: FaceDetection/FaceDetection.gpr.py:4
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Face Detection"
-msgstr "Výber stránky"
+msgstr "Detekcia tváre"
 
 #: FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
@@ -8461,10 +8431,8 @@ msgid "Download media"
 msgstr ""
 
 #: DownloadMedia/DownloadMedia.py:87
-#, fuzzy
-#| msgid "Media Index"
 msgid "Media downloaded"
-msgstr "Index médií"
+msgstr "Médiá stiahnuté"
 
 #: DownloadMedia/DownloadMedia.py:88
 #, python-format
@@ -8480,10 +8448,8 @@ msgid "Make sure you are connected to the internet before starting this tool."
 msgstr ""
 
 #: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
-#, fuzzy
-#| msgid "Problem reading file"
 msgid "Downloading files"
-msgstr "Chyba pri čítaní súboru"
+msgstr "Sťahovanie súborov"
 
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
@@ -8515,25 +8481,20 @@ msgid "Found %d custom event types"
 msgstr ""
 
 #: JSON/JSON.gpr.py:4
-#, fuzzy
 msgid "JSON Export"
-msgstr "Nespracovaný export"
+msgstr "Export JSON"
 
 #: JSON/JSON.gpr.py:5
 msgid "This is a JSON export"
 msgstr ""
 
 #: JSON/JSON.gpr.py:12
-#, fuzzy
-#| msgid "Style Options"
 msgid "JSON options"
-msgstr "Možnosti štýlu"
+msgstr "Možnosti JSON"
 
 #: JSON/JSON.gpr.py:20
-#, fuzzy
-#| msgid "SQLite Import"
 msgid "JSON Import"
-msgstr "Import SQLite"
+msgstr "Import JSON"
 
 #: JSON/JSON.gpr.py:21
 msgid "This is a JSON import"
@@ -8550,16 +8511,12 @@ msgid "Event Roles"
 msgstr "Formát udalostí"
 
 #: TypeCleanup/type_cleanup.py:102
-#, fuzzy
-#| msgid "Name Type"
 msgid "Event Types"
-msgstr "Typ mena"
+msgstr "Typy udalostí"
 
 #: TypeCleanup/type_cleanup.py:103
-#, fuzzy
-#| msgid "Relation type"
 msgid "Family Relation Types"
-msgstr "Druh vzťahu"
+msgstr "Typy rodinného vzťahu"
 
 #: TypeCleanup/type_cleanup.py:104
 #, fuzzy
@@ -23060,10 +23017,8 @@ msgid ""
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:957
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Enter Font Name"
-msgstr "Alternatívne meno"
+msgstr "Zadať názov písma"
 
 #: NetworkChart/NetworkChart.py:959
 msgid ""
@@ -23469,10 +23424,8 @@ msgid "Network Chart"
 msgstr ""
 
 #: NetworkChart/NetworkChart.gpr.py:35
-#, fuzzy
-#| msgid "Generate a families index page"
 msgid "Generates a family network chart."
-msgstr "Generovať indexovú stránku rodín"
+msgstr "Vygeneruje diagram rodinnej siete."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
@@ -23536,10 +23489,8 @@ msgid "Place Coordinates"
 msgstr "Súradnice miesta"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-#, fuzzy
-#| msgid "Note Gramplet"
 msgid "Place Coordinate Gramplet"
-msgstr "Gramplet Poznámka"
+msgstr "Gramplet Súradnice miesta"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
