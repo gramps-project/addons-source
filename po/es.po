@@ -2,39 +2,44 @@
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Andrés Sepúlveda  <andres@ccpo.odu.edu>, 2001.
 # Julio Sánchez <jsanchez@users.sourceforge.com> 2004-2008.
+# Juan Saavedra <jcsaaver@gmail.com>, 2025.
 #
-#   $Id: es.po 14573 2010-03-02 11:07:18Z romjerome $
+# $Id: es.po 14573 2010-03-02 11:07:18Z romjerome $
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2009-03-05 12:05+0100\n"
-"Last-Translator: Julio Sánchez <jsanchez@users.sourceforge.com>\n"
+"PO-Revision-Date: 2025-03-27 02:55+0000\n"
+"Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
-msgstr ""
+msgstr "Fusión de objetos audiovisuales"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{number_of} objeto audiovisual fusionado"
+msgstr[1] "{number_of} objetos audiovisuales fusionados"
 
 #: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
-msgstr ""
+msgstr "Ningún objeto audiovisual fusionado."
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
-msgstr ""
+msgstr "Fusionar objetos audiovisuales"
 
 #: MediaMerge/mediamerge.gpr.py:33
 msgid ""
