@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-25 10:12+0000\n"
+"PO-Revision-Date: 2025-04-06 09:03+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -1630,10 +1630,9 @@ msgstr "Exportalternativ för GEXF"
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing to %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Kunde inte skriva till %s"
+msgstr "Kunde inte skriva till {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
@@ -1780,10 +1779,9 @@ msgstr ""
 "Vill du försöka skapa den?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-brace-format
-#| msgid "Failed to create %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "Fel vid skapandet av %s: %s"
+msgstr "Fel vid skapandet av {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -5842,10 +5840,9 @@ msgid "Writing %s reports..."
 msgstr "Skriver %s rapporter..."
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-brace-format
-#| msgid "%(report_count)s. Descendant Report for %(person_name)s"
+#, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr "%(report_count)s. Ättlingarapport för %(person_name)s"
+msgstr "{report_count}. Ättling för {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
@@ -5897,10 +5894,9 @@ msgid "Report, Generation, Person, Name"
 msgstr "Rapport, Generation, Person, Namn"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr "Se rapport : %s, Generation : %s, Person : %s"
+msgstr "Se rapport : {report}, Generation : {generation}, Person : {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
@@ -5909,16 +5905,14 @@ msgid "Report appearances for %s"
 msgstr "Rapportutseende för %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
-#, fuzzy, python-brace-format
-#| msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Make till: Rapport: %s, Generation: %s, Person: %s"
+msgstr "Make för: Rapport: {report}, Generation: {generation}, Person: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
-#, fuzzy, python-brace-format
-#| msgid "Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Rapport: %s, Generation: %s, Person: %s"
+msgstr "Rapport: {report}, Generation: {generation}, Person: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
@@ -7042,16 +7036,12 @@ msgid "Middle Name Handling"
 msgstr ""
 
 #: settings_ui_manager.py:108
-#, fuzzy
-#| msgid "Save Note"
 msgid "Leave alone"
-msgstr "Spara anteckning"
+msgstr "Lämna ifred"
 
 #: settings_ui_manager.py:109
-#, fuzzy
-#| msgid "Generate"
 msgid "Separate"
-msgstr "Skapa"
+msgstr "Separera"
 
 #: settings_ui_manager.py:119
 msgid "URL Compactness Level"
@@ -7074,10 +7064,8 @@ msgid "Long - Without Prefix on the Left"
 msgstr ""
 
 #: settings_ui_manager.py:141
-#, fuzzy
-#| msgid "URL prefix path."
 msgid "URL Prefix Replacement"
-msgstr "Sökväg till URL-prefix."
+msgstr "Byte av URL-prefix"
 
 #: settings_ui_manager.py:145
 msgid "Use OpenAI"
@@ -7092,22 +7080,16 @@ msgid "Display 'Website URL' Column"
 msgstr ""
 
 #: settings_ui_manager.py:155
-#, fuzzy
-#| msgid "Display all"
 msgid "Display 'Vars' Column"
-msgstr "Visa alla"
+msgstr "Visa kolumnen 'Vars'"
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "Show person"
 msgid "Show User Data Icon"
-msgstr "Visa person"
+msgstr "Visa användardataikon"
 
 #: settings_ui_manager.py:164
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show Flag Icons"
-msgstr "Visa dubbletter"
+msgstr "Visa flaggikoner"
 
 #: settings_ui_manager.py:168
 msgid "Show Links From Attributes"
@@ -7118,10 +7100,8 @@ msgid "Enable CSV Files"
 msgstr ""
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search"
 msgid "WebSearch"
-msgstr "Sök"
+msgstr "Webbsökning"
 
 #: WebSearch.gpr.py:36
 msgid ""
@@ -7144,28 +7124,20 @@ msgid "Vars"
 msgstr ""
 
 #: WebSearch.py:1421
-#, fuzzy
-#| msgid "Web site title"
 msgid "Website URL"
-msgstr "Webbplatstitel"
+msgstr "Webbplatsens URL"
 
 #: WebSearch.py:1424
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add link to note"
-msgstr "Lägg till testnotis"
+msgstr "Lägg till länk till anteckning"
 
 #: WebSearch.py:1425
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show QR-code"
-msgstr "Visa dubbletter"
+msgstr "Visa QR-kod"
 
 #: WebSearch.py:1426
-#, fuzzy
-#| msgid "Clipboard"
 msgid "Copy link to clipboard"
-msgstr "Urklipp"
+msgstr "Kopiera länken till urklipp"
 
 #: WebSearch.py:1428
 msgid "Hide link for selected item"
@@ -7192,26 +7164,21 @@ msgid ""
 msgstr ""
 
 #: WebSearch.py:1560
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add Web Link Note"
-msgstr "Lägg till testnotis"
+msgstr "Lägg till webblänksnotis"
 
 #: WebSearch.py:1596
 msgid "URL is copied to the Clipboard"
 msgstr ""
 
 #: WebSearch.py:1656
-#, fuzzy
-#| msgid "Search in:"
 msgid "WebSearch Link"
-msgstr "Sök i:"
+msgstr "Webbsöklänk"
 
 #: WebSearch.py:1701
-#, fuzzy, python-brace-format
-#| msgid "Web site title"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Webbplatstitel"
+msgstr "Titel: {title}\n"
 
 #: WebSearch.py:1703
 #, python-brace-format
@@ -14356,10 +14323,8 @@ msgid "Build / Weight"
 msgstr ""
 
 #: Form/form_us.xml.h:2544
-#, fuzzy
-#| msgid "Colors"
 msgid "Hair Color"
-msgstr "Färger"
+msgstr "Hårfärg"
 
 #: Form/form_us.xml.h:2545
 msgid "Bald"
@@ -14374,32 +14339,24 @@ msgid "Disability"
 msgstr ""
 
 #: Form/form_us.xml.h:2547 Form/form_us.xml.h:2569
-#, fuzzy
-#| msgid "PlaceCompletion"
 msgid "Place of Registration"
-msgstr "Platskomplettering"
+msgstr "Plats för registrering"
 
 #: Form/form_us.xml.h:2548 Form/form_us.xml.h:2568
-#, fuzzy
-#| msgid "Label Configuration"
 msgid "Date of Registration"
-msgstr "Textfältskonfiguration"
+msgstr "Datum för registrering"
 
 #: Form/form_us.xml.h:2549
-#, fuzzy
-#| msgid "Call number:"
 msgid "Serial Number"
-msgstr "Arkiv(plats)nummer:"
+msgstr "Serienummer"
 
 #: Form/form_us.xml.h:2550
 msgid "Order Number"
 msgstr ""
 
 #: Form/form_us.xml.h:2552
-#, fuzzy
-#| msgid "Include Residence"
 msgid "Place of Residence"
-msgstr "Tag med boende"
+msgstr "Bostadsort"
 
 #: Form/form_us.xml.h:2553
 msgid "Mailing Address"
@@ -14422,10 +14379,8 @@ msgid "Place of employment or business"
 msgstr ""
 
 #: Form/form_us.xml.h:2564 Form/form_us.xml.h:2582
-#, fuzzy
-#| msgid "PlaceCompletion"
 msgid "Complexion"
-msgstr "Platskomplettering"
+msgstr "Hudfärg"
 
 #: Form/form_us.xml.h:2565
 msgid "Eyes"
@@ -14436,44 +14391,32 @@ msgid "Hair"
 msgstr ""
 
 #: Form/form_us.xml.h:2567
-#, fuzzy
-#| msgid "Other participants"
 msgid "Other characteristics"
-msgstr "Andra deltagare"
+msgstr "Andra egenskaper"
 
 #: Form/form_us.xml.h:2574
 msgid "Date entered"
 msgstr ""
 
 #: Form/form_us.xml.h:2575
-#, fuzzy
-#| msgid "Place title"
 msgid "Place entered"
-msgstr "Platsbenämning"
+msgstr "Plats angett"
 
 #: Form/form_us.xml.h:2576
-#, fuzzy
-#| msgid "Type of link"
 msgid "Term of enlistment"
-msgstr "Linktyp"
+msgstr "Mönstringstid"
 
 #: Form/form_us.xml.h:2580
-#, fuzzy
-#| msgid "No color"
 msgid "Eye color"
-msgstr "Ingen färg"
+msgstr "Ögonfärg"
 
 #: Form/form_us.xml.h:2581
-#, fuzzy
-#| msgid "No color"
 msgid "Hair color"
-msgstr "Ingen färg"
+msgstr "Hårfärg"
 
 #: Form/form_us.xml.h:2584
-#, fuzzy
-#| msgid "Rank"
 msgid "Rank in"
-msgstr "Rang"
+msgstr "Rang i"
 
 #: Form/form_us.xml.h:2585
 msgid "Branch"
@@ -14496,16 +14439,14 @@ msgid "Date discharged"
 msgstr ""
 
 #: Form/form_us.xml.h:2591
-#, fuzzy
-#| msgid "Places Changed"
 msgid "Place discharged"
-msgstr "Ändrade platser"
+msgstr "Plats tömd"
 
 #: Form/form_us.xml.h:2592
 #, fuzzy
 #| msgid "Rank"
 msgid "Rank out"
-msgstr "Rang"
+msgstr "Rank out"
 
 #: Form/form_us.xml.h:2597
 msgid "Industry/Employer"
@@ -14516,26 +14457,20 @@ msgid "Residents Status"
 msgstr ""
 
 #: Form/form_pl.xml.h:5
-#, fuzzy
-#| msgid "Merge Original"
 msgid "Event Place (Original)"
-msgstr "Slå samman originalet"
+msgstr "Händelseplats (Original)"
 
 #: Form/form_pl.xml.h:8 Form/form_pl.xml.h:36
 msgid "Birth Year (Estimated)"
 msgstr ""
 
 #: Form/form_pl.xml.h:12 Form/form_pl.xml.h:40
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Spouse's Gender"
-msgstr "Namn på make/maka:"
+msgstr "Makarnas kön"
 
 #: Form/form_pl.xml.h:13 Form/form_pl.xml.h:41
-#, fuzzy
-#| msgid "   Spouses: "
 msgid "Spouse's Age"
-msgstr "   Makar: "
+msgstr "Makarnas ålder"
 
 #: Form/form_pl.xml.h:14 Form/form_pl.xml.h:42
 msgid "Spouse's Birth Year (Estimated)"
@@ -14554,10 +14489,8 @@ msgid "Record Number"
 msgstr ""
 
 #: Form/form_pl.xml.h:19
-#, fuzzy
-#| msgid "Volume:"
 msgid "Volume"
-msgstr "Volym:"
+msgstr "Volym"
 
 #: Form/form_pl.xml.h:28
 msgid "Volume Beginning Year"
@@ -14719,10 +14652,8 @@ msgstr ""
 #: Form/form_dk.xml.h:334 Form/form_dk.xml.h:350 Form/form_dk.xml.h:382
 #: Form/form_dk.xml.h:424 Form/form_dk.xml.h:444 Form/form_gb.xml.h:253
 #: Form/form_gb.xml.h:388
-#, fuzzy
-#| msgid "Places tool"
 msgid "Place of Work"
-msgstr "Platsverktyg"
+msgstr "Arbetsplats"
 
 #: Form/form_dk.xml.h:246 Form/form_dk.xml.h:274 Form/form_dk.xml.h:309
 #: Form/form_dk.xml.h:335 Form/form_dk.xml.h:351 Form/form_dk.xml.h:383
@@ -14758,20 +14689,16 @@ msgstr ""
 
 #: Form/form_dk.xml.h:277 Form/form_gb.xml.h:212 Form/form_gb.xml.h:345
 #: Form/form_gb.xml.h:620
-#, fuzzy
-#| msgid "Children distance"
 msgid "Children Living"
-msgstr "Barnavstånd"
+msgstr "Barn som lever"
 
 #: Form/form_dk.xml.h:278
 msgid "Levende børn"
 msgstr ""
 
 #: Form/form_dk.xml.h:279
-#, fuzzy
-#| msgid "Children distance"
 msgid "Children Dead"
-msgstr "Barnavstånd"
+msgstr "Barn döda"
 
 #: Form/form_dk.xml.h:280
 msgid "Døde børn"
@@ -14790,10 +14717,8 @@ msgid "Hvilket aar taget ophold i sognet"
 msgstr ""
 
 #: Form/form_dk.xml.h:329
-#, fuzzy
-#| msgid "Include Residence"
 msgid "Previous Residence"
-msgstr "Tag med boende"
+msgstr "Tidigare bostad"
 
 #: Form/form_dk.xml.h:330
 msgid "Sidste bopæl inden tilflytning"
@@ -14852,10 +14777,8 @@ msgid "Ophold 5 nov 1929"
 msgstr ""
 
 #: Form/form_dk.xml.h:439
-#, fuzzy
-#| msgid "Date/ Time"
 msgid "Date Married"
-msgstr "Datum/tid"
+msgstr "Datum för giftermål"
 
 #: Form/form_dk.xml.h:440
 msgid "Dato gift"
@@ -14875,10 +14798,8 @@ msgid "County/Administrative Area"
 msgstr ""
 
 #: Form/form_gb.xml.h:13 Form/form_gb.xml.h:47
-#, fuzzy
-#| msgid "Family Surname"
 msgid "Maiden Surname"
-msgstr "Familjenamn"
+msgstr "Flicknamn"
 
 #: Form/form_gb.xml.h:23
 msgid "Banns/Licence"
@@ -14893,10 +14814,8 @@ msgid "Maiden surname of woman who was married"
 msgstr ""
 
 #: Form/form_gb.xml.h:53
-#, fuzzy
-#| msgid "Include Addresses"
 msgid "Usual Address"
-msgstr "Ta med adresser"
+msgstr "Vanlig adress"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
@@ -14985,10 +14904,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:108 Form/form_gb.xml.h:451 Form/form_gb.xml.h:479
 #: Form/form_gb.xml.h:510 Form/form_gb.xml.h:549
-#, fuzzy
-#| msgid "Image for males."
 msgid "Village or Hamlet"
-msgstr "Bild för män."
+msgstr "By eller mindre by"
 
 #: Form/form_gb.xml.h:109
 msgid "Local Board or Improvement Commissioners District"
@@ -15066,10 +14983,8 @@ msgstr ""
 #: Form/form_gb.xml.h:146 Form/form_gb.xml.h:172 Form/form_gb.xml.h:275
 #: Form/form_gb.xml.h:303 Form/form_gb.xml.h:445 Form/form_gb.xml.h:472
 #: Form/form_gb.xml.h:500 Form/form_gb.xml.h:537
-#, fuzzy
-#| msgid "Parish:"
 msgid "Civil Parish"
-msgstr "Församling:"
+msgstr "Socken"
 
 #: Form/form_gb.xml.h:147 Form/form_gb.xml.h:276
 msgid "Municipal Borough"
@@ -15090,10 +15005,8 @@ msgid "Employer"
 msgstr ""
 
 #: Form/form_gb.xml.h:166 Form/form_gb.xml.h:295 Form/form_gb.xml.h:527
-#, fuzzy
-#| msgid "Other:"
 msgid "Neither"
-msgstr "Andra:"
+msgstr "Varken"
 
 #: Form/form_gb.xml.h:167 Form/form_gb.xml.h:296 Form/form_gb.xml.h:528
 msgid "Neither Employer nor Employed"
@@ -15178,10 +15091,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:199 Form/form_gb.xml.h:233 Form/form_gb.xml.h:332
 #: Form/form_gb.xml.h:368
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Rooms"
-msgstr "Antal sidor"
+msgstr "Antal rum"
 
 #: Form/form_gb.xml.h:201 Form/form_gb.xml.h:334
 msgid "NAME AND SURNAME"
@@ -15202,10 +15113,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_gb.xml.h:208 Form/form_gb.xml.h:341 Form/form_gb.xml.h:617
-#, fuzzy
-#| msgid "married"
 msgid "Years Married"
-msgstr "gift"
+msgstr "Antal år gift"
 
 #: Form/form_gb.xml.h:209 Form/form_gb.xml.h:342
 msgid "Completed Years the present Marriage has lasted."
