@@ -66,8 +66,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-30 20:00+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2025-04-01 12:39+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -124,12 +124,11 @@ msgid "Remove previously added events, notes, and source"
 msgstr "Rimuove eventi, note e fonti aggiunti precedentemente"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
-#, fuzzy
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
-"Rimuove eventi, note e fonti calcolati; è eseguito immediatamente "
-"selezionando Esegui"
+"Rimuove eventi calcolati, note e fonti; viene fatto immediatamente cliccando "
+"su Esegui"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
@@ -184,7 +183,6 @@ msgid "Estimated Dates"
 msgstr "Date stimate"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
-#, fuzzy
 msgid "Approximate (about)"
 msgstr "Approssimata (circa)"
 
@@ -193,7 +191,6 @@ msgid "Extremes (after and before)"
 msgstr "Estremi (dopo e prima)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
-#, fuzzy
 msgid "Dates on events are either about or after/before"
 msgstr "Le date degli eventi sono o circa o dopo/prima"
 
@@ -287,7 +284,6 @@ msgid "Run Select Again"
 msgstr "Esegue nuovamente la selezione"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
-#, fuzzy
 msgid "Evidence"
 msgstr "Prova"
 
@@ -462,11 +458,15 @@ msgid ""
 " to:\n"
 " \"%(file2)s\".\n"
 msgstr ""
+"Da:\n"
+" \"%(file1)s\"\n"
+"a:\n"
+" \"%(file2)s\".\n"
 
 #: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
 msgid "Cannot copy \"%s\""
-msgstr ""
+msgstr "Non posso copiare \"%s\""
 
 #: lxml/etreeGramplet.py:418
 #, python-format
@@ -480,6 +480,9 @@ msgid ""
 "XML: Number of records and relations : \t%s\n"
 "\n"
 msgstr ""
+"\n"
+"XML: Numero di records e relazioni : \t%s\n"
+"\n"
 
 #: lxml/etreeGramplet.py:474
 #, python-format
@@ -487,6 +490,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Numero di tags : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
 #, python-format
@@ -494,6 +499,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
+"Numero di tags : \n"
+"\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
 #, python-format
@@ -501,6 +508,8 @@ msgid ""
 "Number of  events : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Numero di  eventi : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:481
 #, python-format
@@ -508,6 +517,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgstr ""
+"Numero di persone : \n"
+"\t\t\t%s\t|\t(%s) e (%s)* cognomi\n"
 
 #: lxml/etreeGramplet.py:483
 #, python-format
@@ -515,6 +526,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Numero di persone : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:484
 #, python-format
@@ -522,6 +535,8 @@ msgid ""
 "Number of families : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Numero di famiglie : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:485
 #, python-format
@@ -529,6 +544,8 @@ msgid ""
 "Number of sources : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Numero di fonti : \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:487
 #, python-format
