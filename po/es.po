@@ -3,6 +3,7 @@
 # Andrés Sepúlveda  <andres@ccpo.odu.edu>, 2001.
 # Julio Sánchez <jsanchez@users.sourceforge.com> 2004-2008.
 # Juan Saavedra <jcsaaver@gmail.com>, 2025.
+# Santi cluke <santicluke@gmail.com>, 2025.
 #
 # $Id: es.po 14573 2010-03-02 11:07:18Z romjerome $
 #
@@ -11,8 +12,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-27 02:55+0000\n"
-"Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
+"PO-Revision-Date: 2025-03-31 10:13+0000\n"
+"Last-Translator: Santi cluke <santicluke@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -46,6 +47,8 @@ msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
 msgstr ""
+"Buscar en toda la base de datos, identificando los objetos audiovisuales que "
+"tienen la misma ruta y unificarlos."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: AttachSourceTool/AttachSourceTool.py:70
@@ -71,6 +74,8 @@ msgstr "Eliminar fechas agregadas previamente"
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
+"La eliminación de los eventos, notas y fuentes calculados; sucede "
+"inmediatamente al ejecutar"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 #, fuzzy
@@ -89,7 +94,7 @@ msgstr "evento de nacimiento pero sin fecha"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
-msgstr ""
+msgstr "Agregar evento de nacimiento con o sin fechas estimadas"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 #, fuzzy
@@ -108,7 +113,7 @@ msgstr "Agregar fechas estimadas de nacimiento"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
-msgstr ""
+msgstr "Agregar eventos de defunción con o sin fechas estimadas"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
@@ -133,11 +138,11 @@ msgstr "Fecha estimada"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
-msgstr ""
+msgstr "Aproximadamente"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
-msgstr ""
+msgstr "Extremos (antes y después)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
@@ -4063,7 +4068,7 @@ msgstr "Variante oscura"
 
 #: Themes/themes.py:198
 msgid "Font"
-msgstr "Tipo de letra"
+msgstr "Tipografía"
 
 #: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
