@@ -66,7 +66,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-03-30 20:00+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -3506,11 +3506,8 @@ msgid "Print the notes type"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4881
-#, fuzzy
-#| msgid "Whether to include the index of Dates at the end of the report."
 msgid "Whether to print the notes type in the notes text"
-msgstr ""
-"Indica se includere o meno l'indice delle date alla fine del resoconto."
+msgstr "Indica se stampare o meno il tipo di note nel testo delle note"
 
 #: DynamicWeb/dynamicweb.py:4885
 #, fuzzy
@@ -3519,11 +3516,8 @@ msgid "Print place pages"
 msgstr "in %(place)s"
 
 #: DynamicWeb/dynamicweb.py:4886
-#, fuzzy
-#| msgid "Whether to show duplicate family trees in the report."
 msgid "Whether to show pages for the places"
-msgstr ""
-"Indica se visualizzare o meno gli alberi familiari duplicati nel resoconto."
+msgstr "Indica se visualizzare o meno le pagine per i luoghi"
 
 #: DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
@@ -3536,16 +3530,12 @@ msgid "Google map API key"
 msgstr "_Google Maps"
 
 #: DynamicWeb/dynamicweb.py:4927
-#, fuzzy
-#| msgid "The basic style used for the table display."
 msgid "The API key used for the Google map"
-msgstr "Lo stile di base utilizzato per la visualizzazione del tavolo."
+msgstr "La chiave dell'API usata per Google map"
 
 #: DynamicWeb/dynamicweb.py:4945
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether or not to include family pages"
-msgstr "Indica se includere le immagini."
+msgstr "Indica se includere o meno le pagine delle famiglie"
 
 #: DynamicWeb/dynamicweb.py:4959
 msgid ""
@@ -3567,21 +3557,18 @@ msgid "Whether to use tabbed panels for the different sections of the pages."
 msgstr "Lo stile usato per il titolo della pagina."
 
 #: DynamicWeb/dynamicweb.py:4980
-#, fuzzy
-#| msgid "Whether to show duplicate family trees in the report."
 msgid "Whether to show the last modification time in the pages footer"
 msgstr ""
-"Indica se visualizzare o meno gli alberi familiari duplicati nel resoconto."
+"Indica se visualizzare o meno l'ora di ultima modifica nel piè di pagina "
+"delle pagine"
 
 #: DynamicWeb/dynamicweb.py:4988
 msgid "Whether to insert sources author in the sources title"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4993
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to hide the Gramps ID"
-msgstr "Indica se includere le immagini."
+msgstr "Indica se nascondere o meno l'ID Gramps"
 
 #: DynamicWeb/dynamicweb.py:5001
 msgid "List"
@@ -3647,16 +3634,14 @@ msgid "Generate a families index page"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5066
-#, fuzzy
-#| msgid "Whether to include an image if one is available."
 msgid "Whether to generate an index page for families"
-msgstr "Se includere un'immagine se una è disponibile."
+msgstr "Indica se generare o meno una pagina di indice per le famiglie"
 
 #: DynamicWeb/dynamicweb.py:5073
-#, fuzzy
-#| msgid "Whether to include an image if one is available."
 msgid "Whether to include a column showing the media path"
-msgstr "Se includere un'immagine se una è disponibile."
+msgstr ""
+"Indica se includere o meno una colonna che mostra il percorso dell'oggetto "
+"multimediale"
 
 #: DynamicWeb/dynamicweb.py:5079
 msgid ""
@@ -4166,9 +4151,8 @@ msgid "Can't add new person as a child."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:763
-#, fuzzy
 msgid "Please set Active person."
-msgstr "Persona attiva: <b>%s</b>"
+msgstr "Impostare la persona attiva."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
@@ -4466,10 +4450,8 @@ msgid "witnesses"
 msgstr "testimoni"
 
 #: DenominoViso/DenominoViso.py:395
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "No central person selected"
-msgstr "Nessuna persona attiva impostata."
+msgstr "Nessuna persona centrale selezionata"
 
 #: DenominoViso/DenominoViso.py:769
 msgid "Unknown time direction"
@@ -4514,10 +4496,8 @@ msgid "DenominoViso Options"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2556
-#, fuzzy
-#| msgid "The destination file for the content."
 msgid "The destination file for the html-content."
-msgstr "Il file di destinazione per il contenuto"
+msgstr "Il file di destinazione per il contenuto HTML."
 
 #: DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
@@ -5781,10 +5761,8 @@ msgid "Error: Invalid URL"
 msgstr ""
 
 #: PhpGedView/phpgedview.glade:12
-#, fuzzy
-#| msgid "The default style."
 msgid "- default -"
-msgstr "Lo stile di default."
+msgstr "- predefinito -"
 
 #: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
 msgid "phpGedView import"
@@ -5892,10 +5870,9 @@ msgid "Writing %s reports..."
 msgstr "Scrittura di %s resoconti..."
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-brace-format
-#| msgid "%(report_count)s. Descendant Report for %(person_name)s"
+#, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr "%(report_count)s. resoconto discendenza di %(person_name)s"
+msgstr "{report_count}. Discendenza di {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
@@ -5956,10 +5933,9 @@ msgid "Report, Generation, Person, Name"
 msgstr "Vedi resoconto: %s, generazione: %s, persona: %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr "Vedi resoconto: %s, generazione: %s, persona: %s"
+msgstr "Vedi resoconto: {report}, generazione: {generation}, persona: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
@@ -5968,16 +5944,14 @@ msgid "Report appearances for %s"
 msgstr "Occorrenze nel resoconto di %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Vedi resoconto: %s, generazione: %s, persona: %s"
+msgstr "Vedi resoconto: {report}, generazione: {generation}, persona: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Vedi resoconto: %s, generazione: %s, persona: %s"
+msgstr "Resoconto: {report}, generazione: {generation}, persona: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
@@ -6226,10 +6200,8 @@ msgid " This is the primary death event."
 msgstr " Questo è l'evento decesso primario."
 
 #: PersonEverything/PersonEverything.py:238
-#, fuzzy
-#| msgid "Family:"
 msgid "Parent Family"
-msgstr "Famiglia:"
+msgstr "Famiglia genitore"
 
 #: PersonEverything/PersonEverything.py:240
 msgid ""
@@ -6261,9 +6233,8 @@ msgstr "Preferenze tematiche"
 
 #: PersonEverything/PersonEverything.py:455
 #: PersonEverything/PersonEverything.py:732
-#, fuzzy
 msgid "Description and Path"
-msgstr "Descrizione:"
+msgstr "Descrizione e percorso"
 
 #: PersonEverything/PersonEverything.py:484
 msgid "Referenced Region"
@@ -6298,9 +6269,8 @@ msgid "Alternative Name"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:618
-#, fuzzy
 msgid "Latitude, Longitude"
-msgstr "Latitudine:"
+msgstr "Latitudine, longitudine"
 
 #: PersonEverything/PersonEverything.py:648
 msgid "Repository type"
@@ -6899,9 +6869,8 @@ msgid "Longitude :"
 msgstr "Longitudine:"
 
 #: EditExifMetadata/editexifmetadata.py:1071
-#, fuzzy
 msgid "Altitude :"
-msgstr "Latitudine"
+msgstr "Altitudine :"
 
 #: EditExifMetadata/editexifmetadata.py:1114
 #, fuzzy
@@ -7176,10 +7145,8 @@ msgid "Enable CSV Files"
 msgstr ""
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search..."
 msgid "WebSearch"
-msgstr "Ricerca..."
+msgstr "Ricerca web"
 
 #: WebSearch.gpr.py:36
 msgid ""
@@ -7260,10 +7227,9 @@ msgid "WebSearch Link"
 msgstr ""
 
 #: WebSearch.py:1701
-#, fuzzy, python-brace-format
-#| msgid "Checking Place Titles"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Controllo titoli luoghi"
+msgstr "Titolo: {title}\n"
 
 #: WebSearch.py:1703
 #, python-brace-format
@@ -8254,34 +8220,24 @@ msgid "Generating media thumbnails"
 msgstr ""
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:67
-#, fuzzy
-#| msgid "Generating %s report references..."
 msgid "Generating thumbnails for person references"
-msgstr "Generazione di %s riferimenti del resoconto..."
+msgstr "Generazione delle miniature per i riferimenti persona"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:76
-#, fuzzy
-#| msgid "Generating %s report references..."
 msgid "Generating thumbnails for family references"
-msgstr "Generazione di %s riferimenti del resoconto..."
+msgstr "Generazione delle miniature per i riferimenti famiglia"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:85
-#, fuzzy
-#| msgid "Generating %s report references..."
 msgid "Generating thumbnails for event references"
-msgstr "Generazione di %s riferimenti del resoconto..."
+msgstr "Generazione delle miniature per i riferimenti evento"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:94
-#, fuzzy
-#| msgid "Generating %s report references..."
 msgid "Generating thumbnails for place references"
-msgstr "Generazione di %s riferimenti del resoconto..."
+msgstr "Generazione delle miniature per i riferimenti luogo"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:103
-#, fuzzy
-#| msgid "Generating %s report references..."
 msgid "Generating thumbnails for source references"
-msgstr "Generazione di %s riferimenti del resoconto..."
+msgstr "Generazione delle miniature per i riferimenti fonte"
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:28
 msgid "S3 Media Uploader"
@@ -8867,10 +8823,8 @@ msgid "Show birth label"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
-#, fuzzy
-#| msgid "Estimated birth date"
 msgid "Activate the birth label."
-msgstr "Data di nascita stimata"
+msgstr "Attive l'etichetta di nascita."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 msgid "Birth label along path"
@@ -8936,10 +8890,8 @@ msgid "Show death label"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
-#, fuzzy
-#| msgid "Estimated death date"
 msgid "Activate the death label."
-msgstr "Data di decesso stimata"
+msgstr "Attiva l'etichetta di decesso."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:50
 msgid "Death label rotation"
@@ -9020,10 +8972,8 @@ msgid "The font size is given relatively to the line thickness."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
-#, fuzzy
-#| msgid "Family:"
 msgid "Family shape"
-msgstr "Famiglia:"
+msgstr "Forma famiglia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:79
 msgid "The shape of the families can be varied."
@@ -9238,10 +9188,8 @@ msgid "Set persons private.."
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:157
-#, fuzzy
-#| msgid "Sort Events by Date"
 msgid "Set events private.."
-msgstr "Ordina gli eventi per data"
+msgstr "Imposta gli eventi come privati..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:197
 msgid "Set media private.."
@@ -9417,10 +9365,8 @@ msgstr ""
 #: Form/form_us.xml.h:665 Form/form_us.xml.h:707 Form/form_us.xml.h:793
 #: Form/form_us.xml.h:836 Form/form_us.xml.h:894 Form/form_us.xml.h:1095
 #: Form/form_us.xml.h:1678
-#, fuzzy
-#| msgid "Select None"
 msgid "Sheet No."
-msgstr "Non selezionare nulla"
+msgstr "Foglio n."
 
 #: Form/form_us.xml.h:5 Form/form_us.xml.h:18 Form/form_us.xml.h:39
 #: Form/form_us.xml.h:60 Form/form_us.xml.h:100 Form/form_us.xml.h:169
@@ -9442,10 +9388,8 @@ msgstr ""
 #: Form/form_us.xml.h:1650 Form/form_us.xml.h:1667 Form/form_us.xml.h:1845
 #: Form/form_us.xml.h:1877 Form/form_us.xml.h:1898 Form/form_us.xml.h:1927
 #: Form/form_us.xml.h:1981 Form/form_us.xml.h:2289 Form/form_us.xml.h:2318
-#, fuzzy
-#| msgid "Country:"
 msgid "County of"
-msgstr "Stato:"
+msgstr "Contea/provincia di"
 
 #: Form/form_us.xml.h:7 Form/form_us.xml.h:20 Form/form_us.xml.h:41
 #: Form/form_us.xml.h:62 Form/form_us.xml.h:102 Form/form_us.xml.h:171
@@ -9952,10 +9896,8 @@ msgstr ""
 #: Form/form_us.xml.h:260 Form/form_us.xml.h:336 Form/form_us.xml.h:435
 #: Form/form_us.xml.h:465 Form/form_us.xml.h:615 Form/form_us.xml.h:1105
 #: Form/form_us.xml.h:1848
-#, fuzzy
-#| msgid "Family:"
 msgid "Family No."
-msgstr "Famiglia:"
+msgstr "Famiglia n."
 
 #: Form/form_us.xml.h:263 Form/form_us.xml.h:339 Form/form_us.xml.h:416
 #: Form/form_us.xml.h:438 Form/form_us.xml.h:468 Form/form_us.xml.h:620
@@ -12335,10 +12277,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:1246 Form/form_us.xml.h:1273 Form/form_us.xml.h:1874
 #: Form/form_us.xml.h:1961
-#, fuzzy
-#| msgid "City:"
 msgid "City of"
-msgstr "Città:"
+msgstr "Città di"
 
 #: Form/form_us.xml.h:1247 Form/form_us.xml.h:1275 Form/form_us.xml.h:1876
 msgid "Township of"
@@ -13765,10 +13705,8 @@ msgid "the County of"
 msgstr ""
 
 #: Form/form_us.xml.h:1956
-#, fuzzy
-#| msgid "Country:"
 msgid "Birth Country"
-msgstr "Stato:"
+msgstr "Nazione di nascita"
 
 #: Form/form_us.xml.h:1957 Form/form_us.xml.h:1971 Form/form_us.xml.h:1990
 #: Form/form_us.xml.h:2010
@@ -15115,10 +15053,8 @@ msgstr ""
 #: Form/form_gb.xml.h:146 Form/form_gb.xml.h:172 Form/form_gb.xml.h:275
 #: Form/form_gb.xml.h:303 Form/form_gb.xml.h:445 Form/form_gb.xml.h:472
 #: Form/form_gb.xml.h:500 Form/form_gb.xml.h:537
-#, fuzzy
-#| msgid "Parish:"
 msgid "Civil Parish"
-msgstr "Parrocchia:"
+msgstr "Parrocchia civile"
 
 #: Form/form_gb.xml.h:147 Form/form_gb.xml.h:276
 msgid "Municipal Borough"
@@ -15553,10 +15489,8 @@ msgid "Gaellic or G. & E."
 msgstr ""
 
 #: Form/form_gb.xml.h:538
-#, fuzzy
-#| msgid "Parish:"
 msgid "Parish Ward"
-msgstr "Parrocchia:"
+msgstr "Distretto (ward) della parrocchia"
 
 #: Form/form_gb.xml.h:563
 msgid "Profession or Occupation"
@@ -17330,10 +17264,8 @@ msgid "27. Church or place of worship: Number of communicants"
 msgstr ""
 
 #: Form/form_ca.xml.h:595
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Seating"
-msgstr "Selezione... "
+msgstr "Posti a sedere"
 
 #: Form/form_ca.xml.h:596
 msgid "28. Church or place of worship: Seating capacity"
@@ -17646,10 +17578,8 @@ msgid "Dwelling house"
 msgstr ""
 
 #: Form/form_ca.xml.h:763
-#, fuzzy
-#| msgid "Family:"
 msgid "2. Family"
-msgstr "Famiglia:"
+msgstr "2. Famiglia"
 
 #: Form/form_ca.xml.h:764
 msgid "Family or household"
@@ -17986,10 +17916,8 @@ msgid "birth"
 msgstr ""
 
 #: SourceIndex/index.glade:617
-#, fuzzy
-#| msgid "Select an image to begin..."
 msgid "Select a marriage source"
-msgstr "Selezionare un'immagine per iniziare..."
+msgstr "Selezionare una fonte di matrimonio"
 
 #: SourceIndex/index.glade:678
 msgid "Select a death source"
@@ -18025,10 +17953,8 @@ msgstr ""
 
 #: SourceIndex/death.glade:97 SourceIndex/census.glade:728
 #: SourceIndex/birth.glade:65 SourceIndex/marriage.glade:64
-#, fuzzy
-#| msgid "Info"
 msgid "Info:"
-msgstr "Informazioni"
+msgstr "Info:"
 
 #: SourceIndex/death.glade:165
 msgid "Death act:"
@@ -18070,9 +17996,8 @@ msgstr ""
 #: SourceIndex/marriage.glade:498 SourceIndex/marriage.glade:846
 #: SourceIndex/marriage.glade:865 SourceIndex/marriage.glade:884
 #: SourceIndex/marriage.glade:1526 SourceIndex/marriage.glade:1654
-#, fuzzy
 msgid "Origin:"
-msgstr "Orario originale"
+msgstr "Origine:"
 
 #: SourceIndex/death.glade:722 SourceIndex/death.glade:821
 #: SourceIndex/witness.glade:141 SourceIndex/census.glade:543
@@ -18080,10 +18005,8 @@ msgstr "Orario originale"
 #: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
 #: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
 #: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
-#, fuzzy
-#| msgid "Include Occupation"
 msgid "Occupation:"
-msgstr "Includi occupazione"
+msgstr "Occupazione:"
 
 #: SourceIndex/death.glade:741 SourceIndex/death.glade:854
 #: SourceIndex/witness.glade:158 SourceIndex/birth.glade:597
@@ -18107,10 +18030,8 @@ msgid "Birth place:"
 msgstr "Luogo di nascita:"
 
 #: SourceIndex/death.glade:1067 SourceIndex/census.glade:671
-#, fuzzy
-#| msgid "TR-Note"
 msgid "Note:"
-msgstr "TR-Nota"
+msgstr "Nota:"
 
 #: SourceIndex/death.glade:1099 SourceIndex/census.glade:466
 msgid "Spouse name:"
@@ -18174,9 +18095,8 @@ msgid "<b>Census</b>"
 msgstr ""
 
 #: SourceIndex/census.glade:364
-#, fuzzy
 msgid "Death date:"
-msgstr "data del decesso"
+msgstr "Data del decesso:"
 
 #: SourceIndex/census.glade:414
 msgid "Death place:"
@@ -18316,9 +18236,8 @@ msgstr ""
 "nascita:"
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
-#, fuzzy
 msgid "Origine:"
-msgstr "Orario originale"
+msgstr "Origine:"
 
 #: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
@@ -18333,16 +18252,12 @@ msgid "Marriage act:"
 msgstr ""
 
 #: SourceIndex/marriage.glade:81
-#, fuzzy
-#| msgid "date: "
 msgid "m. date:"
-msgstr "data: "
+msgstr "data m.:"
 
 #: SourceIndex/marriage.glade:97
-#, fuzzy
-#| msgid "place: "
 msgid "m. place:"
-msgstr "posto: "
+msgstr "luogo m.:"
 
 #: SourceIndex/marriage.glade:113
 msgid "d.contract:"
@@ -18357,10 +18272,8 @@ msgid "p.contract:"
 msgstr ""
 
 #: SourceIndex/marriage.glade:167
-#, fuzzy
-#| msgid "place: "
 msgid "places banns:"
-msgstr "posto: "
+msgstr "luoghi pubblicazioni:"
 
 #: SourceIndex/marriage.glade:198
 msgid "<b>Data union</b>"
@@ -18485,9 +18398,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:129
-#, fuzzy
 msgid "Start longitude"
-msgstr "Longitudine:"
+msgstr "Longitudine di partenza"
 
 #: Heatmap/heatmap.py:131
 msgid ""
@@ -18506,10 +18418,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:209
-#, fuzzy
-#| msgid "The file does not exist."
 msgid "Path does not exist."
-msgstr "Il file non esiste"
+msgstr "Il percorso non esiste."
 
 #: Heatmap/heatmap.py:210
 msgid "Invalid filename."
@@ -18686,10 +18596,8 @@ msgid "German digital library"
 msgstr ""
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
-#, fuzzy
-#| msgid "Family:"
 msgid "Family Sheet"
-msgstr "Famiglia:"
+msgstr "Foglio famiglia"
 
 #: FamilySheet/FamilySheet.gpr.py:6
 msgid ""
@@ -18718,10 +18626,8 @@ msgid "; %(type)s: %(value)s"
 msgstr "; %(type)s: %(value)s"
 
 #: FamilySheet/FamilySheet.py:557
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Source references:"
-msgstr "Preferenze tematiche"
+msgstr "Riferimenti fonte:"
 
 #: FamilySheet/FamilySheet.py:575
 #, python-format
@@ -18729,10 +18635,8 @@ msgid ", page %s"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:588
-#, fuzzy
-#| msgid "TR-Note"
 msgid "Notes:"
-msgstr "TR-Nota"
+msgstr "Note:"
 
 #: FamilySheet/FamilySheet.py:769 FamilyTree/FamilyTree.py:932
 #, python-format
@@ -18816,34 +18720,24 @@ msgid "Print placeholders for missing information"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:909
-#, fuzzy
-#| msgid "The basic style used for the table display."
 msgid "The basic style used for the text display"
-msgstr "Lo stile di base utilizzato per la visualizzazione del tavolo."
+msgstr "Lo stile di base utilizzato per la visualizzazione del testo"
 
 #: FamilySheet/FamilySheet.py:919
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the page key on the top"
-msgstr "Lo stile usato per il titolo della pagina."
+msgstr "Lo stile usato per il titolo della pagina in alto"
 
 #: FamilySheet/FamilySheet.py:928
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for names"
-msgstr "Lo stile usato per i nomi."
+msgstr "Lo stile usato per i nomi"
 
 #: FamilySheet/FamilySheet.py:938
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for numbers"
-msgstr "Lo stile usato per i nomi."
+msgstr "Lo stile usato per i numeri"
 
 #: FamilySheet/FamilySheet.py:948
-#, fuzzy
-#| msgid "The style used for the events in the Index of Dates."
 msgid "The style used for footnotes (notes and source references)"
-msgstr "Lo stile usato per gli eventi nell'indice delle date."
+msgstr "Lo stile usato per le note a pie di pagina (riferimenti note e fonte)"
 
 #: HouseTimelineGramplet/housetimeline.gpr.py:4
 #: HouseTimelineGramplet/housetimeline.gpr.py:15
@@ -19251,9 +19145,8 @@ msgid "Select the difference you wish to examine."
 msgstr ""
 
 #: ImportMerge/importmerge.glade:180
-#, fuzzy
 msgid "Object Name/Description"
-msgstr "Descrizione:"
+msgstr "Nome/descrizione oggetto"
 
 #: ImportMerge/importmerge.glade:227
 msgid ""
@@ -19592,10 +19485,8 @@ msgid "RIA Officers"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:50
-#, fuzzy
-#| msgid "Family:"
 msgid "FamilySpace"
-msgstr "Famiglia:"
+msgstr "FamilySpace"
 
 #: DoubleCousins/double_cousins.py:112
 #, fuzzy
@@ -20260,10 +20151,8 @@ msgid "Old text:"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:197
-#, fuzzy
-#| msgid "Above text"
 msgid "New text:"
-msgstr "Sopra il testo"
+msgstr "Nuovo testo:"
 
 #: PlaceUpdate/PlaceUpdate.py:209
 #, fuzzy
@@ -20315,9 +20204,8 @@ msgid "This report only supports PDF as output file format."
 msgstr ""
 
 #: MediaReport/media_report.py:229
-#, fuzzy
 msgid "General:"
-msgstr "Generale"
+msgstr "Generale:"
 
 #: MediaReport/media_report.py:250
 msgid "Image type:"
@@ -21058,10 +20946,8 @@ msgid "Path color to home person"
 msgstr ""
 
 #: GraphView/graphview.py:821
-#, fuzzy
-#| msgid "Font"
 msgid "Font:"
-msgstr "Carattere"
+msgstr "Carattere:"
 
 #: GraphView/graphview.py:835
 #, fuzzy
@@ -21289,10 +21175,8 @@ msgid "Image on right side"
 msgstr ""
 
 #: GraphView/graphview.py:3068
-#, fuzzy
-#| msgid "Image for males."
 msgid "Image on left side"
-msgstr "Immagine per maschi."
+msgstr "Immagine sulla sinistra"
 
 #: GraphView/graphview.py:3399
 msgid "<b>Tags:</b>"
@@ -21401,10 +21285,8 @@ msgid "Dark (default)"
 msgstr ""
 
 #: GraphView/avatars.py:61
-#, fuzzy
-#| msgid "Height:"
 msgid "Light"
-msgstr "Altezza:"
+msgstr "Chiaro"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
@@ -21510,10 +21392,8 @@ msgid "Search: google.com.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:60
-#, fuzzy
-#| msgid "Search..."
 msgid "Search: roots.in.ua"
-msgstr "Ricerca..."
+msgstr "Cerca: roots.in.ua"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
@@ -21532,10 +21412,8 @@ msgid "Use filter "
 msgstr ""
 
 #: HistContext/HistContext.py:129
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show outside life span "
-msgstr "Mostra gli elementi nascosti"
+msgstr "Mostra al di fuori dell'intervallo di vita "
 
 #: HistContext/HistContext.py:132
 #, fuzzy
@@ -21632,9 +21510,9 @@ msgid "Birth: %s"
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
+#, python-format
 msgid "Death: %s"
-msgstr "data del decesso"
+msgstr "Decesso: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
 #, fuzzy
@@ -21883,10 +21761,8 @@ msgid "The basic style used for the title display."
 msgstr "Lo stile di base utilizzato per la visualizzazione del tavolo."
 
 #: PedigreeChart/PedigreeChart.py:671
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "Style used for labels and captions"
-msgstr "Lo stile usato per ogni sezione."
+msgstr "Lo stile usato per etichette e didascalie"
 
 #: NLWebConnectPack/NLWebPack.py:34
 msgid "Open Archives"
@@ -22000,10 +21876,8 @@ msgid "Select From"
 msgstr "Non selezionare nulla"
 
 #: LastChange/LastChangeReport.py:403
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for normal text"
-msgstr "Lo stile usato per i nomi."
+msgstr "Lo stile usato per il testo normale"
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
@@ -22518,19 +22392,16 @@ msgid "%(female_name)s retired in %(year)s at %(place)s."
 msgstr "%(female_name)s va in pensione nel %(year)s presso %(place)s."
 
 #: NetworkChart/NetworkChart.py:133
-#, fuzzy
 msgid "birth abbreviation|b."
-msgstr "Abbreviazione"
+msgstr "n."
 
 #: NetworkChart/NetworkChart.py:134
-#, fuzzy
 msgid "death abbreviation|d."
-msgstr "Abbreviazione"
+msgstr "d."
 
 #: NetworkChart/NetworkChart.py:135
-#, fuzzy
 msgid "marriage abbreviation|m."
-msgstr "Abbreviazione"
+msgstr "m."
 
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
@@ -22621,10 +22492,8 @@ msgid "Default (include)"
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:948
-#, fuzzy
-#| msgid "Select A File"
 msgid "Select URL style."
-msgstr "Selezione file"
+msgstr "Selezionare lo stile dell'URL."
 
 #: NetworkChart/NetworkChart.py:951
 msgid "URL Prefix,Suffix"
@@ -22679,10 +22548,8 @@ msgid ""
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:986
-#, fuzzy
-#| msgid "The destination file for the content."
 msgid "The destination folder for generated files."
-msgstr "Il file di destinazione per il contenuto"
+msgstr "La cartella di destinazione per i file generati."
 
 #: NetworkChart/NetworkChart.py:990 NetworkChart/NetworkChart.py:1280
 #: NetworkChart/NetworkChart.py:1288
@@ -23043,10 +22910,8 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
-#, fuzzy
-#| msgid "The file does not exist."
 msgid "The place was not identified."
-msgstr "Il file non esiste"
+msgstr "Il luogo non è stato identificato."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
@@ -23108,16 +22973,12 @@ msgid "Add addess as place"
 msgstr ""
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
-#, fuzzy
-#| msgid "Search..."
 msgid "Search for:"
-msgstr "Ricerca..."
+msgstr "Cerca:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:26
-#, fuzzy
-#| msgid "Full date and place"
 msgid "Found place:"
-msgstr "Data completa e luogo"
+msgstr "Luogo trovato:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:53
 msgid "No DB entry is selected"
