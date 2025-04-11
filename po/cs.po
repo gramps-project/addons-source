@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
+"PO-Revision-Date: 2025-04-02 07:35+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -7558,7 +7558,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
-msgstr ""
+msgstr "Formát zobrazení jména"
 
 #: DescendantsLines/DescendantsLines.py:1650
 msgid ""
