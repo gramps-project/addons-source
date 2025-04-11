@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-09 20:50+0000\n"
+"PO-Revision-Date: 2025-03-31 19:47+0000\n"
 "Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -9062,11 +9062,11 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
-msgstr ""
+msgstr "Realça els descendents"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:114
 msgid "Highlight the persons which are descendants."
-msgstr ""
+msgstr "Realça les persones que són descendents."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:115
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
@@ -19838,11 +19838,11 @@ msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Show GrampsID"
-msgstr ""
+msgstr "Mostra l'ID de Gramps"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
-msgstr ""
+msgstr "Mostra l'ID de Gramps a dalt a la dreta del requadre"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
@@ -20776,7 +20776,7 @@ msgstr ""
 
 #: GraphView/graphview.py:754
 msgid "Show IDs"
-msgstr ""
+msgstr "Mostra les IDs"
 
 #: GraphView/graphview.py:757
 msgid "Show avatars"
@@ -20784,7 +20784,7 @@ msgstr ""
 
 #: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
-msgstr ""
+msgstr "Realça la persona base"
 
 #: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
@@ -22535,13 +22535,15 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1055
 msgid "Highlight Connector Line"
-msgstr ""
+msgstr "Realça la línia de connexió"
 
 #: NetworkChart/NetworkChart.py:1056
 msgid ""
 "RGB-color for the highlighted path between two individuals.  If the graph."
 "inverts, reverse the order to change."
 msgstr ""
+"Color RGB per al camí ressaltat entre dos individus.  Si el gràfic "
+"s'inverteix, inverteix l'ordre per canviar."
 
 #: NetworkChart/NetworkChart.py:1061
 msgid "Trim Box Edge"
@@ -22689,7 +22691,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1171
 msgid "Highlight path(s)"
-msgstr ""
+msgstr "Realça el(s) camí(ns)"
 
 #: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
 msgid "Any"
@@ -22707,6 +22709,9 @@ msgid ""
 "Direct - Highlight direct descendant/ancestor paths.\n"
 "Any - Highlight any path(s) including direct or indirect."
 msgstr ""
+"Cap: no realça camins.\n"
+"Directe: realça els camins descendents/ancestres directes.\n"
+"Qualsevol: realça qualsevol camí, inclòs el directe o indirecte."
 
 #: NetworkChart/NetworkChart.py:1186
 msgid "Show only path(s)"
@@ -22749,7 +22754,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1217
 msgid "Highlight central person in graph."
-msgstr ""
+msgstr "Realça la persona central al gràfic."
 
 #: NetworkChart/NetworkChart.py:1219
 msgid "Add yellow color background to central person."
