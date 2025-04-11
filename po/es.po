@@ -4,6 +4,7 @@
 # Julio Sánchez <jsanchez@users.sourceforge.com> 2004-2008.
 # Juan Saavedra <jcsaaver@gmail.com>, 2025.
 # Santi cluke <santicluke@gmail.com>, 2025.
+# gioboto <giomaussi@hotmail.com>, 2025.
 #
 # $Id: es.po 14573 2010-03-02 11:07:18Z romjerome $
 #
@@ -12,8 +13,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:38+0000\n"
-"PO-Revision-Date: 2025-03-31 10:13+0000\n"
-"Last-Translator: Santi cluke <santicluke@gmail.com>\n"
+"PO-Revision-Date: 2025-04-04 00:40+0000\n"
+"Last-Translator: gioboto <giomaussi@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -146,7 +147,7 @@ msgstr "Extremos (antes y después)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr ""
+msgstr "Las fechas de los eventos son anteriores o posteriores a los mismos"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -196,7 +197,7 @@ msgstr "Seleccionar evento"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr ""
+msgstr "Eliminar eventos, notas y fuentes y volver a seleccionar datos"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
@@ -245,7 +246,7 @@ msgstr "Procesando...\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
-msgstr ""
+msgstr "Eliminando estimaciones antiguas... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
@@ -324,7 +325,7 @@ msgstr "Fecha de defunción estimada"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
-msgstr ""
+msgstr " Listo! Comprometido..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, fuzzy, python-format
@@ -341,11 +342,11 @@ msgstr "Calcula fechas estimadas de nacimiento y defunción."
 
 #: MediaBrowser/MediaBrowser.gpr.py:31
 msgid "Media Browser"
-msgstr ""
+msgstr "Navegador de medios"
 
 #: MediaBrowser/MediaBrowser.gpr.py:39
 msgid "Browser"
-msgstr ""
+msgstr "Navegador"
 
 #: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
@@ -369,33 +370,33 @@ msgstr ""
 
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
-msgstr ""
+msgstr "No se ha analizado ningún archivo..."
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Number of editions back"
-msgstr ""
+msgstr "Número de ediciones anteriores"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 msgid "Space character on filename"
-msgstr ""
+msgstr "Carácter de espacio en el nombre del archivo"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr ""
+msgstr "Por favor, arregle el espacio en \"%s\""
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
-msgstr ""
+msgstr "Lo sentimos, ¡aún no hay soporte para tu sistema operativo!"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr ""
+msgstr "¿Es un .gramps comprimido?"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr ""
+msgstr "No se puede descomprimir \"%s\""
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -410,12 +411,12 @@ msgstr ""
 #: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
 msgid "Cannot copy \"%s\""
-msgstr ""
+msgstr "No se puede copiar \"%s\""
 
 #: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr ""
+msgstr "XML: Las últimas %s ediciones desde %s, fueron en/en:\n"
 
 #: lxml/etreeGramplet.py:471
 #, python-format
@@ -525,11 +526,11 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
-msgstr ""
+msgstr "Dónde esta el gzip?"
 
 #: lxml/lxmlGramplet.py:67
 msgid "\"gzip\" is missing"
-msgstr ""
+msgstr "\"gzip\" está perdido"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Missing python3 lxml"
