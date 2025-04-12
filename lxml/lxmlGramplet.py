@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2009        Brian G. Matherly
 # Copyright (C) 2010        Douglas S. Blank
-# Copyright (C) 2011-2012   Jerome Rapinat
+# Copyright (C) 2011-2025   Jerome Rapinat
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

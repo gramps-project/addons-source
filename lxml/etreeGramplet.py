@@ -4,7 +4,7 @@
 # Copyright (C) 2009        Michiel D. Nauta
 # Copyright (C) 2010        Douglas S. Blank
 # Copyright (C) 2010        Jakim Friant
-# Copyright (C) 2012        Jerome Rapinat
+# Copyright (C) 2012-2025   Jerome Rapinat
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -473,7 +473,7 @@ class etreeGramplet(Gramplet):
         last.sort()
         start = epoch(last[1])
 
-        time = _('XML: Last %s editions since %s, were at/on :\n' % (int(self.last), start))
+        time = _('XML: Last %s additions and modifications since %s, were on :\n' % (int(self.last), start))
         for i in last:
             time += '\t * %s\n' % epoch(i)
 
