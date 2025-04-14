@@ -109,7 +109,7 @@ class etreeGramplet(Gramplet):
         self.__base_path = USER_HOME
         self.__file_name = str(Path.home())
         self.entry = Gtk.Entry()
-        self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
+        self.entry.set_text(self.__file_name)
 
         self.button = Gtk.Button()
         if os.name is 'nt':
