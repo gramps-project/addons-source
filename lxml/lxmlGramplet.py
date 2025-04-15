@@ -57,6 +57,7 @@ _ = _trans.gettext
 ngettext = _trans.ngettext
 
 LOG = logging.getLogger("lxml")
+desktop_session = os.environ.get("DESKTOP_SESSION")
 
 #-------------------------------------------------------------------------
 #
@@ -149,6 +150,7 @@ class lxmlGramplet(Gramplet):
             self.button = Gtk.Button(_("Select file"))
             #self.button.set_size_request(40, 40)
         else:
+            LOG.debug(desktop_session) # works on pantheon
             image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
             self.button.add(image)
         #self.button.set_size_request(40, 40)
@@ -167,6 +169,7 @@ class lxmlGramplet(Gramplet):
         if os.name == 'nt' or sys.platform == "darwin":
             button = Gtk.Button(_("Run"))
         else:
+            LOG.debug(desktop_session) # works on pantheon
             button = Gtk.Button()
             exe = Gtk.Image.new_from_icon_name(Gtk.STOCK_EXECUTE, 6)
             button.add(exe)

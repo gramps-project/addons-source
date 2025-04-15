@@ -36,6 +36,8 @@ from xml.etree import ElementTree
 import gzip
 from pathlib import Path
 
+desktop_session = os.environ.get("DESKTOP_SESSION")
+
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
@@ -61,8 +63,6 @@ from gramps.gui.dialog import ErrorDialog
 #from gen.merge.mergemedia import MergeMediaQuery
 #from gen.merge.mergerepository import MergeRepoQuery
 #from gen.merge.mergenote import MergeNoteQuery
-
-
 
 NAMESPACE = '{http://gramps-project.org/xml/1.7.2/}'
 
@@ -116,6 +116,7 @@ class etreeGramplet(Gramplet):
             self.button = Gtk.Button(_("Select file"))
             #self.button.set_size_request(40, 40)
         else:
+            print(desktop_session) # works on pantheon
             image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
             self.button.add(image)
         self.button.connect('clicked', self.__select_file)
@@ -133,6 +134,7 @@ class etreeGramplet(Gramplet):
         if os.name == 'nt' or sys.platform == "darwin":
             button = Gtk.Button(_("Run"))
         else:
+            print(desktop_session) # works on pantheon
             button = Gtk.Button()
             exe = Gtk.Image.new_from_icon_name(Gtk.STOCK_EXECUTE, 6)
             button.add(exe)
