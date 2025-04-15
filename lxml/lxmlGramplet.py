@@ -145,7 +145,7 @@ class lxmlGramplet(Gramplet):
         self.entry.set_text(self.__file_name)
 
         self.button = Gtk.Button()
-        if os.name is 'nt':
+        if os.name == 'nt' or sys.platform == "darwin":
             self.button = Gtk.Button(_("Select file"))
             #self.button.set_size_request(40, 40)
         else:
@@ -164,7 +164,7 @@ class lxmlGramplet(Gramplet):
 
         # button
 
-        if os.name is 'nt':
+        if os.name == 'nt' or sys.platform == "darwin":
             button = Gtk.Button(_("Run"))
         else:
             button = Gtk.Button()
@@ -242,7 +242,7 @@ class lxmlGramplet(Gramplet):
             LOG.info(self.__file_name)
             return
 
-        if self.__file_name is not "":
+        if self.__file_name != "":
             sys.excepthook = self.read_xml(entry)
 
 
