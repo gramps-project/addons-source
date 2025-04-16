@@ -300,6 +300,8 @@ class lxmlGramplet(Gramplet):
         use_gzip = self.is_gzip(entry)
 
         filename = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
+        with open(Path(filename), "w") as temp:
+            temp.write('')
 
         if LXML_OK and use_gzip:
             self.uncompress_file(entry, filename)
