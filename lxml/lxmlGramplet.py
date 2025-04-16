@@ -350,10 +350,10 @@ class lxmlGramplet(Gramplet):
             doctype = tree.docinfo.doctype
             current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">'
             if self.rng_validation(tree, rng):
-                #self.parse_xml(tree) for debug
+                self.parse_xml(tree)
                 try:
                     self.xmltodict(Path(filename))
-                    self.parse_xml(tree)
+                    #self.parse_xml(tree)
                 except:
                     ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename}, parent=self.uistate.window)
                     LOG.debug('Cannot parse the content of the XML copy or missing "query_html.xsl" file.')
@@ -791,6 +791,8 @@ class lxmlGramplet(Gramplet):
             src1.text = source
 
         content = etree.XML(etree.tostring(xml, encoding="UTF-8"))
+        self.jsonl(content)
+        self.write_back_xml(content)
 
         # XSLT process
 
@@ -801,9 +803,7 @@ class lxmlGramplet(Gramplet):
         html = os.path.join(USER_PLUGINS, 'lxml', 'query.html')
         with open(html, 'w') as outfile:
             outfile.write(str(outdoc))
-
-        self.jsonl(content)
-        self.write_back_xml(content)
+        self.close_file(outfile)
 
         # clear the etree
 
@@ -953,20 +953,28 @@ class lxmlGramplet(Gramplet):
         Write the result of the query back into the XML file (Gramps scheme).
         """
         outfile = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
-        step_file = etree.parse(outfile)
-        root = step_file.getroot()
 
-        surnames=places=sources=[]
-        print(content)
+        surnames_strings = etree.tostring(content.find(".//surnames"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
+        places_strings = etree.tostring(content.find(".//places"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
+        sources_strings = etree.tostring(content.find(".//sources"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
+        data = surnames_strings+places_strings+sources_strings
+
+        header= b'<xml version="1.0" encoding="UTF-8"?><!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd"><database xmlns="http://gramps-project.org/xml/1.7.2/"><header><created date="2025-03-18" version="6.0.0"/><researcher><resname></resname></researcher><mediapath>{GRAMPS_RESOURCES}/example/gramps</mediapath></header></database>'
 
         # Modify the XML copy of the .gramps
 
         with open(outfile, 'w') as my_file:
-            root.clear()
+            my_file.write(data)
+        self.close_file(my_file)
+
+        with open(outfile, 'w') as my_file:
             the_id = 0
+            surnames = content.findall(".//surname")
+            places = content.findall(".//place")
+            sources = content.findall(".//source")
 
             ## people/person/name/surname
-            people = etree.SubElement(root, "people")
+            people = etree.SubElement(content, "people")
             for s in surnames:
                 the_id += 1
                 person = etree.SubElement(people, "person")
@@ -993,14 +1001,14 @@ class lxmlGramplet(Gramplet):
                 stitle = etree.SubElement(source, "stitle")
                 stitle.text = s
 
-            out = etree.tostring(root, method='xml', pretty_print=True)
+            out = etree.tostring(content, method='xml', pretty_print=True)
             str_out = out.decode('utf-8')
             my_file.write(str_out)
-            self.close_file(my_file)
+        self.close_file(my_file)
 
         # clear the etree
 
-        root.clear()
+        content.clear()
 
     def jsonl(self, content):
         """
@@ -1055,4 +1063,3 @@ class lxmlGramplet(Gramplet):
 
         except Exception as e:
             LOG.error(f"An error occurred while processing the HTML file: {e}")
-
