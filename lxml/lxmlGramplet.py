@@ -979,7 +979,6 @@ class lxmlGramplet(Gramplet):
                 the_id += 1
                 person = etree.SubElement(people, "person")
                 person.set('id', f'{the_id}_{len(surnames)}')
-                print("2")
                 name = etree.SubElement(person, "name")
                 surname = etree.SubElement(name, "surname")
                 #surname.text = s
