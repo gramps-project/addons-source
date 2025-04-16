@@ -365,8 +365,9 @@ class lxmlGramplet(Gramplet):
             else:
                 ErrorDialog(_('RelaxNG validation'), _('Cannot validate "%(file)s" via RelaxNG schema') % {'file': filename})
                 LOG.debug('RelaxNG validation failed')
-        except TypeError:
+        except TypeError as e:
             LOG.debug('"NoneType" object is not callable')
+            LOG.debug(e)
         except OSError:
             if not Path(filename).exists():
                 LOG.debug(f'Failed to find {filename}')
@@ -395,8 +396,9 @@ class lxmlGramplet(Gramplet):
                 self.text.set_text('xmltodict')
                 document = xmltodict.parse(file, dict_constructor=dict)
                 LOG.info(xmltodict.unparse(document, pretty=True))
-        except ImportError:
-            pass
+        except:
+            LOG.debug('cannot use xmltodict')
+            return
 
 
     def parse_xml(self, tree):
@@ -642,14 +644,9 @@ class lxmlGramplet(Gramplet):
 
         if Path(filename).exists():
             try:
-                tree = etree.parse(filename)
-                root = tree.getroot()
+                valid = etree.parse(filename)
+                root = valid.getroot()
                 database = objectify.fromstring(etree.tostring(root, encoding="UTF-8"), parser)
-            except TypeError as e:
-                LOG.debug(Path(filename))
-                LOG.debug(e)
-                LOG.debug('"NoneType" object is not callable')
-                return
             except:
                 ErrorDialog(_('XML SyntaxError'), _('Not a valid .gramps.\n'
                                     'Cannot run the gramplet...\n'
@@ -801,6 +798,7 @@ class lxmlGramplet(Gramplet):
             outfile.write(str(outdoc))
 
         self.jsonl(content)
+        self.write_back_xml(content)
 
         # clear the etree
 
@@ -809,13 +807,11 @@ class lxmlGramplet(Gramplet):
         # This is the end !
 
         sys.stdout.write(_('2. Has generated "%s".\n') % html)
+
         LOG.info(_('Try to open\n "%s"\n into your preferred web navigator ...') % html)
         display_url(html)
 
         self.post(html)
-
-        #self.write_back_xml()
-        sys.stdout.write(_('3. Has written entries into "%(file)s".\n') % {'file': filename})
 
 
     def print_media(self, thumbs, mediapath):
@@ -947,16 +943,21 @@ class lxmlGramplet(Gramplet):
         LOG.info('Gallery generated')
 
 
-    def write_back_xml(self):
+    def write_back_xml(self, content):
         """
         Write the result of the query back into the XML file (Gramps scheme).
         """
         outfile = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
+        step_file = etree.parse(outfile)
+        root = step_file.getroot()
+
+        surnames=places=sources=[]
+        print(content)
 
         # Modify the XML copy of the .gramps
 
         with open(outfile, 'w'):
-            #root.clear()
+            root.clear()
             the_id = 0
 
             ## people/person/name/surname
@@ -989,7 +990,7 @@ class lxmlGramplet(Gramplet):
 
             out = etree.tostring(root, method='xml', pretty_print=True)
             str_out = out.decode('utf-8')
-            outfile.write(str_out)
+            #outfile.write(str_out)
 
         # clear the etree
 
@@ -1048,3 +1049,4 @@ class lxmlGramplet(Gramplet):
 
         except Exception as e:
             LOG.error(f"An error occurred while processing the HTML file: {e}")
+
