@@ -276,15 +276,15 @@ class lxmlGramplet(Gramplet):
             raise e
 
 
-    def copy_file(self, entry, filename):
+    def copy_file(self, filename):
         """
         Copy the file to the destination.
         """
         self.text.set_text('copy the file...')
         try:
-            copyfile(entry, filename)
-            LOG.debug('%s' % Path(entry))
+            copyfile(os.path.join(self.__base_path, self.__file_name), filename)
         except FileNotFoundError or IsADirectoryError:
+            entry = str(self.__file_name)
             ErrorDialog(_('Is it a .gramps?'), _(f'Cannot copy "{entry}"'))
             LOG.error('Cannot copy the file')
         except Exception as e:
@@ -304,7 +304,7 @@ class lxmlGramplet(Gramplet):
         if LXML_OK and use_gzip:
             self.uncompress_file(entry, filename)
         elif LXML_OK:
-            self.copy_file(entry, Path(filename))
+            self.copy_file(Path(filename))
 
         # XSD structure via lxml
 
@@ -354,8 +354,8 @@ class lxmlGramplet(Gramplet):
                     ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename}, parent=self.uistate.window)
                     LOG.debug('Cannot parse the content of the XML copy or missing "query_html.xsl" file.')
             elif doctype == '':
-                ErrorDialog(_('Space character in filename or path'), _('Please try to fix the space for validating the file'), parent=self.uistate.window)
-                LOG.debug('Need to find "test.xml" or space on filename or path')
+                ErrorDialog(_('Custom "test.xml" file'), _('Please try to fix "test.xml"'), parent=self.uistate.window)
+                LOG.debug('Need to find "test.xml"')
                 LOG.debug('Filename: %s' % self.__file_name)
                 LOG.debug('Base path: %s' % self.__base_path)
                 LOG.debug('Temp file: %s' % tree.docinfo.URL)
@@ -371,7 +371,7 @@ class lxmlGramplet(Gramplet):
         except OSError:
             if not Path(filename).exists():
                 LOG.debug(f'Failed to find {filename}')
-                self.copy_file(entry, Path(filename))
+                self.copy_file(Path(filename))
             else:
                 LOG.debug(etree.parse(filename))
             return
