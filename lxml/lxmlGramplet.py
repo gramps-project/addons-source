@@ -209,7 +209,7 @@ class lxmlGramplet(Gramplet):
                                                 Gtk.ResponseType.OK),
                                                 parent=self.uistate.window)
 
-        dialog.set_current_name(os.path.basename(self.entry.get_text()))
+        dialog.set_current_name(self.__file_name)
         dialog.present()
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
@@ -308,7 +308,7 @@ class lxmlGramplet(Gramplet):
         xsd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.xsd')
         try:
             if Path(filename).exists():
-                LOG.debug('%s' % entry)
+                LOG.debug('%s' % filename)
                 self.xsd(xsd, filename)
             else:
                 pass
@@ -319,7 +319,7 @@ class lxmlGramplet(Gramplet):
 
         try:
             self.check_valid(filename)
-            LOG.debug('%s' % entry)
+            LOG.debug('%s' % filename)
         except Exception as e:
             LOG.info(_('xmllint: skip DTD validation for "%(file)s"') % {'file': entry})
 
@@ -330,9 +330,9 @@ class lxmlGramplet(Gramplet):
         try:
             if os.name is 'nt':
                 os.system(f'xmllint --relaxng {rng} --noout {filename}')
-                LOG.debug('%s' % entry)
+                LOG.debug('%s' % filename)
             else:
-                LOG.debug('%s' % entry)
+                LOG.debug('%s' % filename)
                 os.system(f'xmllint --relaxng file://{rng} --noout {filename}')
         except Exception as e:
             LOG.info(_('xmllint: skip RelaxNG validation for "%(file)s"') % {'file': entry})
@@ -365,7 +365,11 @@ class lxmlGramplet(Gramplet):
         except TypeError:
             LOG.debug('"NoneType" object is not callable')
         except OSError:
-            LOG.debug(etree.parse(filename))
+            if not Path(filename).exists():
+                LOG.debug(f'Failed to find {entry}')
+            else:
+                LOG.debug(etree.parse(filename))
+            return
         except etree.XMLSyntaxError as e:
             ErrorDialog(_('File issue'), _('Cannot parse "%(file)s" via etree') % {'file': entry})
             log = e.error_log.filter_from_level(etree.ErrorLevels.FATAL)

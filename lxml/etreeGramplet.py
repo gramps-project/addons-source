@@ -174,7 +174,7 @@ class etreeGramplet(Gramplet):
                                                 Gtk.ResponseType.OK),
                                                 parent=self.uistate.window)
 
-        dialog.set_current_name(os.path.basename(self.entry.get_text()))
+        dialog.set_current_name(self.__file_name)
         dialog.present()
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
@@ -253,10 +253,9 @@ class etreeGramplet(Gramplet):
         """
         try:
             copyfile(entry, filename)
-        except FileNotFoundError or IsADirectoryError:
+        except FileNotFoundError or IsADirectoryError as e:
             ErrorDialog(_('Is it a .gramps?'), _('Cannot copy "%s"') % entry)
-            pass
-            #raise e
+            raise e
 
 
     def read_xml(self, entry):
