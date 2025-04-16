@@ -257,6 +257,7 @@ class lxmlGramplet(Gramplet):
             try:
                 with gzip.open(entry, "r") as test:
                     test.read(1)
+                self.close_file(test)
                 return True
             except (IOError, ValueError):
                 return False
@@ -302,6 +303,7 @@ class lxmlGramplet(Gramplet):
         filename = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
         with open(Path(filename), "w") as temp:
             temp.write('')
+        self.close_file(temp)
 
         if LXML_OK and use_gzip:
             self.uncompress_file(entry, filename)
@@ -398,6 +400,7 @@ class lxmlGramplet(Gramplet):
                 self.text.set_text('xmltodict')
                 document = xmltodict.parse(file, dict_constructor=dict)
                 LOG.info(xmltodict.unparse(document, pretty=True))
+            self.close_file(file)
         except:
             LOG.debug('cannot use xmltodict')
             return
@@ -993,6 +996,7 @@ class lxmlGramplet(Gramplet):
             out = etree.tostring(root, method='xml', pretty_print=True)
             str_out = out.decode('utf-8')
             my_file.write(str_out)
+            self.close_file(my_file)
 
         # clear the etree
 
