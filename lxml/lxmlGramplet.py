@@ -353,7 +353,7 @@ class lxmlGramplet(Gramplet):
                 self.parse_xml(tree)
                 try:
                     self.xmltodict(Path(filename))
-                    #self.parse_xml(tree)
+                    self.parse_xml(tree)
                 except:
                     ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename}, parent=self.uistate.window)
                     LOG.debug('Cannot parse the content of the XML copy or missing "query_html.xsl" file.')
@@ -792,7 +792,7 @@ class lxmlGramplet(Gramplet):
 
         content = etree.XML(etree.tostring(xml, encoding="UTF-8"))
         self.jsonl(content)
-        self.write_back_xml(content)
+        #self.write_back_xml(content)
 
         # XSLT process
 
@@ -953,7 +953,9 @@ class lxmlGramplet(Gramplet):
         Write the result of the query back into the XML file (Gramps scheme).
         """
         outfile = os.path.join(USER_PLUGINS, 'lxml', 'test.xml')
-
+        surnames = content.findall(".//surname")
+        places = content.findall(".//place")
+        sources = content.findall(".//source")
         surnames_strings = etree.tostring(content.find(".//surnames"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
         places_strings = etree.tostring(content.find(".//places"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
         sources_strings = etree.tostring(content.find(".//sources"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
@@ -963,15 +965,12 @@ class lxmlGramplet(Gramplet):
 
         # Modify the XML copy of the .gramps
 
-        with open(outfile, 'w') as my_file:
-            my_file.write(data)
-        self.close_file(my_file)
+        #with open(outfile, 'w') as my_file:
+            #my_file.write(data)
+        #self.close_file(my_file)
 
         with open(outfile, 'w') as my_file:
             the_id = 0
-            surnames = content.findall(".//surname")
-            places = content.findall(".//place")
-            sources = content.findall(".//source")
 
             ## people/person/name/surname
             people = etree.SubElement(content, "people")
@@ -984,7 +983,7 @@ class lxmlGramplet(Gramplet):
                 surname.text = s
 
             ## places/placeobj/pname
-            pl = etree.SubElement(root, "places")
+            pl = etree.SubElement(content, "places")
             for p in places:
                 the_id += 1
                 place = etree.SubElement(pl, "placeobj")
