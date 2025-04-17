@@ -1019,10 +1019,14 @@ class lxmlGramplet(Gramplet):
             stitle = etree.SubElement(source, "stitle")
             #stitle.text = s
 
+        # Merge the content into the new root
+        for element in content:
+            root.append(element)
+
         # Write the XML to the file
         with open(outfile, 'wb') as my_file:
             my_file.write(etree.tostring(root, method='xml', pretty_print=True, encoding='utf-8'))
-            my_file.write(etree.tostring(content, method='xml', pretty_print=True, encoding='utf-8'))
+            #my_file.write(etree.tostring(content, method='xml', pretty_print=True, encoding='utf-8'))
         self.close_file(my_file)
 
         # clear the etree
