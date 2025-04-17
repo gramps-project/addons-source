@@ -270,7 +270,7 @@ class lxmlGramplet(Gramplet):
 
         if LXML_OK and use_gzip == 1:
             try:
-                os.system('gunzip < %s > %s' % (entry, filename))
+                os.system('gunzip < "%s" > %s' % (entry, filename))
             except:
                 ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
                 LOG.error('Cannot use gunzip command')
