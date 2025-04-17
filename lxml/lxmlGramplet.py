@@ -272,9 +272,8 @@ class lxmlGramplet(Gramplet):
         Uncompress the gzip file.
         """
         self.text.set_text('gunzip the file...')
-        LOG.debug(os.system(f'gunzip < "{entry}" > {filename}'))
         try:
-            os.system(f'gunzip < {entry} > {filename}')
+            os.system(f'gunzip < "{entry}" > {filename}')
         except Exception as e:
             ErrorDialog(_('Is it a compressed .gramps?'), _(f'Cannot uncompress "{entry}"'))
             LOG.error('Cannot use gunzip command')
