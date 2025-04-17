@@ -960,16 +960,9 @@ class lxmlGramplet(Gramplet):
         sources = content.findall(".//source")
 
         # Convert elements to strings
-        surnames_strings = etree.tostring(content.find(".//surnames"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
-        places_strings = etree.tostring(content.find(".//places"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
-        sources_strings = etree.tostring(content.find(".//sources"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
-
-        data = surnames_strings+places_strings+sources_strings
-        LOG.debug(data)
-
-        #with open(outfile, 'w') as my_file:
-            #my_file.write(data)
-        #self.close_file(my_file)
+        #surnames_strings = etree.tostring(content.find(".//surnames"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
+        #places_strings = etree.tostring(content.find(".//places"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
+        #sources_strings = etree.tostring(content.find(".//sources"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
 
         header = b'''<?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">
@@ -991,6 +984,8 @@ class lxmlGramplet(Gramplet):
 
         # Modify the XML copy of the .gramps
 
+        content.clear()
+
         ## people/person/name/surname
         people = etree.SubElement(content, "people")
         for s in surnames:
@@ -999,7 +994,7 @@ class lxmlGramplet(Gramplet):
             person.set('id', f'{the_id}_{len(surnames)}')
             name = etree.SubElement(person, "name")
             surname = etree.SubElement(name, "surname")
-            #surname.text = s
+            surname.text = etree.tostring(s, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
 
         ## places/placeobj/pname
         pl = etree.SubElement(content, "places")
@@ -1008,16 +1003,17 @@ class lxmlGramplet(Gramplet):
             place = etree.SubElement(pl, "placeobj")
             place.set('id', f'{the_id}_{len(places)}')
             name = etree.SubElement(place, "pname")
-            #name.set('value', p)
+            val = etree.tostring(p, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
+            name.set('value', val)
 
         ## sources/source/stitle
         src = etree.SubElement(content, "sources")
-        for s in sources:
+        for sc in sources:
             the_id += 1
             source = etree.SubElement(src, "source")
             source.set('id', f'{the_id}_{len(sources)}')
             stitle = etree.SubElement(source, "stitle")
-            #stitle.text = s
+            stitle.text = etree.tostring(sc, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
 
         # Merge the content into the new root
         for element in content:
@@ -1026,11 +1022,11 @@ class lxmlGramplet(Gramplet):
         # Write the XML to the file
         with open(outfile, 'wb') as my_file:
             my_file.write(etree.tostring(root, method='xml', pretty_print=True, encoding='utf-8'))
-            #my_file.write(etree.tostring(content, method='xml', pretty_print=True, encoding='utf-8'))
         self.close_file(my_file)
 
         # clear the etree
         content.clear()
+
 
     def jsonl(self, content):
         """
