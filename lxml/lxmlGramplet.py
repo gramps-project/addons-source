@@ -997,8 +997,8 @@ class lxmlGramplet(Gramplet):
             person.set('id', f'{the_id}_{len(surnames)}')
             gender = etree.SubElement(person, "gender")
             name = etree.SubElement(person, "name")
-            surname = etree.SubElement(name, "surname")
-            surname.text = etree.tostring(s, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
+            #surname = etree.SubElement(name, "surname")
+            name.text = etree.tostring(s, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
 
         ## places/placeobj/pname
         pl = etree.SubElement(content, "places")
@@ -1008,7 +1008,9 @@ class lxmlGramplet(Gramplet):
             place.set('id', f'{the_id}_{len(places)}')
             name = etree.SubElement(place, "pname")
             val = etree.tostring(p, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
-            name.set('value', val)
+            rep_val = val.replace("<place>", "")
+            rep_val = rep_val.replace("</place>", "")
+            name.set('value', rep_val)
 
         ## sources/source/stitle
         src = etree.SubElement(content, "sources")
@@ -1018,6 +1020,8 @@ class lxmlGramplet(Gramplet):
             source.set('id', f'{the_id}_{len(sources)}')
             stitle = etree.SubElement(source, "stitle")
             stitle.text = etree.tostring(sc, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
+            stitle.text = stitle.text.replace("<source>", "")
+            stitle.text = stitle.text.replace("</source>", "")
 
         # Merge the content into the new root
         for element in content:
