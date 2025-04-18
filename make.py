@@ -292,7 +292,7 @@ def aggregate_pot():
     f = open("po/template.pot", "w")
     f.close()
 
-    args = ["xgettext", "-j", "-o", "po/template.pot"]
+    args = ["xgettext", "-F", "-j", "-o", "po/template.pot"]
     args.extend(glob.glob("*/po/template.pot"))
     call(args)
 
