@@ -961,6 +961,10 @@ class lxmlGramplet(Gramplet):
         surnames = content.findall(".//surname")
         places = content.findall(".//place")
         sources = content.findall(".//source")
+        custom_header = content.items()
+        for item in custom_header:
+            LOG.info(item)
+        today = custom_header[3][1]
 
         # Convert elements to strings
         #surnames_strings = etree.tostring(content.find(".//surnames"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
@@ -971,7 +975,7 @@ class lxmlGramplet(Gramplet):
         <!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">
         <database xmlns="http://gramps-project.org/xml/1.7.2/">
             <header>
-                <created date="2025-03-18" version="6.0.0"/>
+                <created date="" version="6.0.0"/>
                 <researcher>
                     <resname></resname>
                 </researcher>
@@ -988,6 +992,12 @@ class lxmlGramplet(Gramplet):
         # Modify the XML copy of the .gramps
 
         content.clear()
+
+        #from xml.sax.saxutils import escape
+        keys = {"&quot;" : '"',
+                  "&lt;" : "<",
+                  "&gt;" : ">",
+                 }
 
         ## people/person/name/surname
         people = etree.SubElement(content, "people")
@@ -1010,6 +1020,11 @@ class lxmlGramplet(Gramplet):
             val = etree.tostring(p, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
             rep_val = val.replace("<place>", "")
             rep_val = rep_val.replace("</place>", "")
+            rep_val = rep_val.replace("&#10;", "")
+            try:
+                LOG.debug(rep_val, rep_val.encode('utf-8', ''))
+            except:
+                continue
             name.set('value', rep_val)
 
         ## sources/source/stitle
