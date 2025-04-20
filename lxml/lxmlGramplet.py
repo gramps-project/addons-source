@@ -961,6 +961,10 @@ class lxmlGramplet(Gramplet):
         surnames = content.findall(".//surname")
         places = content.findall(".//place")
         sources = content.findall(".//source")
+        custom_header = content.items()
+        for item in custom_header:
+            LOG.info(item)
+        today = custom_header[3][1]
 
         # Convert elements to strings
         #surnames_strings = etree.tostring(content.find(".//surnames"), method='xml', encoding='utf-8', pretty_print=True).decode('utf-8')
@@ -971,7 +975,7 @@ class lxmlGramplet(Gramplet):
         <!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">
         <database xmlns="http://gramps-project.org/xml/1.7.2/">
             <header>
-                <created date="2025-03-18" version="6.0.0"/>
+                <created date="" version="6.0.0"/>
                 <researcher>
                     <resname></resname>
                 </researcher>
@@ -980,7 +984,8 @@ class lxmlGramplet(Gramplet):
         </database>'''
 
         # Create the root element
-        root = etree.fromstring(header)
+        parser = etree.XMLParser(remove_blank_text=True)
+        root = etree.fromstring(header, parser)
 
         # Add people, places, and sources to the root
         the_id = 0
@@ -998,7 +1003,7 @@ class lxmlGramplet(Gramplet):
             gender = etree.SubElement(person, "gender")
             name = etree.SubElement(person, "name")
             #surname = etree.SubElement(name, "surname")
-            name.text = etree.tostring(s, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
+            name.text = etree.tostring(s, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
 
         ## places/placeobj/pname
         pl = etree.SubElement(content, "places")
@@ -1007,7 +1012,7 @@ class lxmlGramplet(Gramplet):
             place = etree.SubElement(pl, "placeobj")
             place.set('id', f'{the_id}_{len(places)}')
             name = etree.SubElement(place, "pname")
-            val = etree.tostring(p, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
+            val = etree.tostring(p, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
             rep_val = val.replace("<place>", "")
             rep_val = rep_val.replace("</place>", "")
             name.set('value', rep_val)
@@ -1019,7 +1024,7 @@ class lxmlGramplet(Gramplet):
             source = etree.SubElement(src, "source")
             source.set('id', f'{the_id}_{len(sources)}')
             stitle = etree.SubElement(source, "stitle")
-            stitle.text = etree.tostring(sc, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
+            stitle.text = etree.tostring(sc, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
             stitle.text = stitle.text.replace("<source>", "")
             stitle.text = stitle.text.replace("</source>", "")
 
