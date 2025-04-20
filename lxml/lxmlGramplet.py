@@ -975,7 +975,7 @@ class lxmlGramplet(Gramplet):
         <!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">
         <database xmlns="http://gramps-project.org/xml/1.7.2/">
             <header>
-                <created date="" version="6.0.0"/>
+                <created date="2025-04-20" version="6.0.1"/>
                 <researcher>
                     <resname></resname>
                 </researcher>
@@ -999,34 +999,42 @@ class lxmlGramplet(Gramplet):
         for s in surnames:
             the_id += 1
             person = etree.SubElement(people, "person")
+            person.set('handle', f'_{the_id}')
+            person.set('change', '')
             person.set('id', f'{the_id}_{len(surnames)}')
             gender = etree.SubElement(person, "gender")
+            gender.text = 'U'
             name = etree.SubElement(person, "name")
-            #surname = etree.SubElement(name, "surname")
-            name.text = etree.tostring(s, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
-
-        ## places/placeobj/pname
-        pl = etree.SubElement(content, "places")
-        for p in places:
-            the_id += 1
-            place = etree.SubElement(pl, "placeobj")
-            place.set('id', f'{the_id}_{len(places)}')
-            name = etree.SubElement(place, "pname")
-            val = etree.tostring(p, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
-            rep_val = val.replace("<place>", "")
-            rep_val = rep_val.replace("</place>", "")
-            name.set('value', rep_val)
+            surname = etree.SubElement(name, "surname")
+            surname.text = etree.tostring(s, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
 
         ## sources/source/stitle
         src = etree.SubElement(content, "sources")
         for sc in sources:
             the_id += 1
             source = etree.SubElement(src, "source")
+            source.set('handle', f'_{the_id}')
+            source.set('change', '')
             source.set('id', f'{the_id}_{len(sources)}')
             stitle = etree.SubElement(source, "stitle")
             stitle.text = etree.tostring(sc, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
             stitle.text = stitle.text.replace("<source>", "")
             stitle.text = stitle.text.replace("</source>", "")
+
+        ## places/placeobj/pname
+        pl = etree.SubElement(content, "places")
+        for p in places:
+            the_id += 1
+            place = etree.SubElement(pl, "placeobj")
+            place.set('handle', f'_{the_id}')
+            place.set('change', '')
+            place.set('id', f'{the_id}_{len(places)}')
+            place.set('type', '')
+            name = etree.SubElement(place, "pname")
+            val = etree.tostring(p, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
+            rep_val = val.replace("<place>", "")
+            rep_val = rep_val.replace("</place>", "")
+            name.set('value', rep_val)
 
         # Merge the content into the new root
         for element in content:
