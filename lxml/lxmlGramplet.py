@@ -989,6 +989,9 @@ class lxmlGramplet(Gramplet):
 
         # Add people, places, and sources to the root
         the_id = 0
+        import calendar
+        from datetime import datetime
+        today_timestamp = calendar.timegm(datetime.utcnow().utctimetuple())
 
         # Modify the XML copy of the .gramps
 
@@ -1000,7 +1003,7 @@ class lxmlGramplet(Gramplet):
             the_id += 1
             person = etree.SubElement(people, "person")
             person.set('handle', f'_{the_id}')
-            person.set('change', '')
+            person.set('change', f'{today_timestamp}')
             person.set('id', f'{the_id}_{len(surnames)}')
             gender = etree.SubElement(person, "gender")
             gender.text = 'U'
@@ -1014,7 +1017,7 @@ class lxmlGramplet(Gramplet):
             the_id += 1
             source = etree.SubElement(src, "source")
             source.set('handle', f'_{the_id}')
-            source.set('change', '')
+            source.set('change', f'{today_timestamp}')
             source.set('id', f'{the_id}_{len(sources)}')
             stitle = etree.SubElement(source, "stitle")
             stitle.text = etree.tostring(sc, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
@@ -1027,7 +1030,7 @@ class lxmlGramplet(Gramplet):
             the_id += 1
             place = etree.SubElement(pl, "placeobj")
             place.set('handle', f'_{the_id}')
-            place.set('change', '')
+            place.set('change', f'{today_timestamp}')
             place.set('id', f'{the_id}_{len(places)}')
             place.set('type', '')
             name = etree.SubElement(place, "pname")
