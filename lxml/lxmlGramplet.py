@@ -984,7 +984,8 @@ class lxmlGramplet(Gramplet):
         </database>'''
 
         # Create the root element
-        root = etree.fromstring(header)
+        parser = etree.XMLParser(remove_blank_text=True)
+        root = etree.fromstring(header, parser)
 
         # Add people, places, and sources to the root
         the_id = 0
@@ -1014,11 +1015,6 @@ class lxmlGramplet(Gramplet):
             val = etree.tostring(p, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
             rep_val = val.replace("<place>", "")
             rep_val = rep_val.replace("</place>", "")
-            rep_val = rep_val.replace("&#10;", "")
-            try:
-                LOG.debug(rep_val, rep_val.encode('utf-8', ''))
-            except:
-                continue
             name.set('value', rep_val)
 
         ## sources/source/stitle
