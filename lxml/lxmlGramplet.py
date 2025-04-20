@@ -993,12 +993,6 @@ class lxmlGramplet(Gramplet):
 
         content.clear()
 
-        #from xml.sax.saxutils import escape
-        keys = {"&quot;" : '"',
-                  "&lt;" : "<",
-                  "&gt;" : ">",
-                 }
-
         ## people/person/name/surname
         people = etree.SubElement(content, "people")
         for s in surnames:
@@ -1008,7 +1002,7 @@ class lxmlGramplet(Gramplet):
             gender = etree.SubElement(person, "gender")
             name = etree.SubElement(person, "name")
             #surname = etree.SubElement(name, "surname")
-            name.text = etree.tostring(s, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
+            name.text = etree.tostring(s, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
 
         ## places/placeobj/pname
         pl = etree.SubElement(content, "places")
@@ -1017,7 +1011,7 @@ class lxmlGramplet(Gramplet):
             place = etree.SubElement(pl, "placeobj")
             place.set('id', f'{the_id}_{len(places)}')
             name = etree.SubElement(place, "pname")
-            val = etree.tostring(p, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
+            val = etree.tostring(p, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
             rep_val = val.replace("<place>", "")
             rep_val = rep_val.replace("</place>", "")
             rep_val = rep_val.replace("&#10;", "")
@@ -1034,7 +1028,7 @@ class lxmlGramplet(Gramplet):
             source = etree.SubElement(src, "source")
             source.set('id', f'{the_id}_{len(sources)}')
             stitle = etree.SubElement(source, "stitle")
-            stitle.text = etree.tostring(sc, method='xml', pretty_print=True, encoding='utf-8').decode('utf-8')
+            stitle.text = etree.tostring(sc, method='text', pretty_print=False, encoding='utf-8').decode('utf-8')
             stitle.text = stitle.text.replace("<source>", "")
             stitle.text = stitle.text.replace("</source>", "")
 
