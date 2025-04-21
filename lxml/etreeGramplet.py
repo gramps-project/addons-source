@@ -238,7 +238,7 @@ class etreeGramplet(Gramplet):
         Uncompress the gzip file.
         """
         try:
-            os.system(f'gunzip < "{entry}" > {filename}')
+            os.system(f'gunzip < "{entry}" > "{filename}"')
         except Exception as e:
             ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
             raise e
