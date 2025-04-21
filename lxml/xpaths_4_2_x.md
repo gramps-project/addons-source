@@ -136,12 +136,11 @@
 /database/people/person[0]/name[0]/group
 /database/people/person[0]/name[0]/group/text()
 /database/people/person[0]/name[0]/surname[0]
-/database/people/person[0]/name[0]/surname[0]/surname
-/database/people/person[0]/name[0]/surname[0]/surname/text()
-/database/people/person[0]/name[0]/surname[0]/surname/@prefix
-/database/people/person[0]/name[0]/surname[0]/surname/@primary
-/database/people/person[0]/name[0]/surname[0]/surname/@derivation
-/database/people/person[0]/name[0]/surname[0]/surname/@connector
+/database/people/person[0]/name[0]/surname[0]/text()
+/database/people/person[0]/name[0]/surname[0]/@prefix
+/database/people/person[0]/name[0]/surname[0]/@primary
+/database/people/person[0]/name[0]/surname[0]/@derivation
+/database/people/person[0]/name[0]/surname[0]/@connector
 /database/people/person[0]/name[0]/suffix
 /database/people/person[0]/name[0]/suffix/text()
 /database/people/person[0]/name[0]/title
