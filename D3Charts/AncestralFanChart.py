@@ -398,7 +398,7 @@ class AncestralFanChartReport(Report):
                 fp.write(outstr)
 
         except IOError as msg:
-            ErrorDialog(_("Failure writing {target_path}: {message}").format(target_path=self.desthtml, messgae=str(msg)),
+            ErrorDialog(_("Failure writing {target_path}: {message}").format(target_path=self.desthtml, message=str(msg)),
                         parent=self.user.uistate.window)
             return
 
@@ -645,7 +645,7 @@ class AncestralFanChartReport(Report):
                     'replace(location);\n')
 
         except IOError as msg:
-            ErrorDialog(_("Failure writing {target_path}: {message}").format(target_path=self.destjs, messgae=str(msg)),
+            ErrorDialog(_("Failure writing {target_path}: {message}").format(target_path=self.destjs, message=str(msg)),
                         parent=self.user.uistate.window)
             return
 

@@ -1496,7 +1496,7 @@ class DescendantIndentedTreeReport(Report):
                 fp.write(outstr)
 
         except IOError as msg:
-            ErrorDialog(_("Failure writing {target_path}: {message}").(target_path=self.desthtml, message=str(msg)),
+            ErrorDialog(_("Failure writing {target_path}: {message}").format(target_path=self.desthtml, message=str(msg)),
                         parent=self.user.uistate.window)
             return
 
