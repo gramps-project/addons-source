@@ -4,7 +4,7 @@
 # Copyright (C) 2009        Michiel D. Nauta
 # Copyright (C) 2010        Douglas S. Blank
 # Copyright (C) 2010        Jakim Friant
-# Copyright (C) 2012        Jerome Rapinat
+# Copyright (C) 2012-2025   Jerome Rapinat
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,10 +30,13 @@
 import codecs
 import sys
 import os
-from shutil import copy
+from shutil import copyfile
 from gi.repository import Gtk
 from xml.etree import ElementTree
 import gzip
+from pathlib import Path
+
+desktop_session = os.environ.get("DESKTOP_SESSION")
 
 #------------------------------------------------------------------------
 #
@@ -61,8 +64,6 @@ from gramps.gui.dialog import ErrorDialog
 #from gen.merge.mergerepository import MergeRepoQuery
 #from gen.merge.mergenote import MergeNoteQuery
 
-
-
 NAMESPACE = '{http://gramps-project.org/xml/1.7.2/}'
 
 #-------------------------------------------------------------------------
@@ -71,25 +72,19 @@ NAMESPACE = '{http://gramps-project.org/xml/1.7.2/}'
 #
 #-------------------------------------------------------------------------
 def epoch(t):
-        """
-        Try to convert timestamp
-        """
+    """
+    Convert a timestamp to a human-readable date format.
+    """
+    try:
+        from datetime import datetime
+    except ImportError:
+        return 'Unknown'
+    if t is None:
+        return _('Invalid timestamp')
 
-        try:
-            from datetime import datetime
-            from time import strftime
-        except:
-            return
-
-        if t == None:
-            print(_('Invalid timestamp'))
-            fmt = _('Unknown')
-        else:
-            date = int(t)
-            conv = datetime.fromtimestamp(date)
-            fmt = conv.strftime('%d %B %Y')
-
-        return(fmt)
+    date = int(t)
+    conv = datetime.fromtimestamp(date)
+    return conv.strftime('%d %B %Y')
 
 #-------------------------------------------------------------------------
 #
@@ -99,60 +94,64 @@ def epoch(t):
 
 class etreeGramplet(Gramplet):
     """
-    Gramplet for testing etree (python 2.7) and Gramps XML parsing
+    Gramplet for testing etree (Python 2.7) and Gramps XML parsing
     """
 
     def init(self):
         """
-        Constructs the GUI, consisting of an entry, a text view and
-        a Run button.
+        Constructs the GUI, consisting of an entry, a text view and a Run button.
         """
 
         self.last = 5
 
-        # filename and selector
+        # file selection
 
         self.__base_path = USER_HOME
-        self.__file_name = "test.gramps"
+        self.__file_name = str(Path.home())
         self.entry = Gtk.Entry()
-        self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
+        self.entry.set_text(self.__file_name)
 
         self.button = Gtk.Button()
-        image = Gtk.Image()
-        image.set_from_stock(Gtk.STOCK_OPEN, Gtk.IconSize.BUTTON)
-        self.button.add(image)
+        if os.name == 'nt'or sys.platform == "darwin":
+            self.button = Gtk.Button(_("Select file"))
+            #self.button.set_size_request(40, 40)
+        else:
+            print(desktop_session) # works on pantheon
+            image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
+            self.button.add(image)
         self.button.connect('clicked', self.__select_file)
 
         # GUI setup:
 
-        vbox = Gtk.VBox()
-        hbox = Gtk.HBox()
+        self.set_tooltip(_("Select a Gramps XML file and\n click on the Run button."))
+
+        hbox = Gtk.Box()
+        hbox.pack_start(self.entry, True, True, 0)
+        hbox.pack_start(self.button, False, False, 0)
+
+        # button
+
+        if os.name == 'nt' or sys.platform == "darwin":
+            button = Gtk.Button(_("Run"))
+        else:
+            print(desktop_session) # works on pantheon
+            button = Gtk.Button()
+            exe = Gtk.Image.new_from_icon_name(Gtk.STOCK_EXECUTE, 6)
+            button.add(exe)
+        button.connect("clicked", self.run)
+        hbox.pack_end(button, False, False, 0) # v2
 
         # area
 
         self.import_text = Gtk.TextView()
-
         self.import_text.set_wrap_mode(Gtk.WrapMode.WORD)
         self.import_text.set_editable(False)
-
         self.text = Gtk.TextBuffer()
-        self.text.set_text(_('No file parsed...'))
+        self.text.set_text(_('No file loaded...'))
         self.import_text.set_buffer(self.text)
-
-        vbox.pack_start(self.import_text, True, True, 0) # v1
-
-        # button
-
-        button = Gtk.Button(_("Run"))
-        button.connect("clicked", self.run)
-        vbox.pack_start(button, False, False, 0) # v2
-
-        # build
-
-        hbox.pack_start(self.entry, True, True, 0)
-        hbox.pack_end(self.button, False, False, 0)
-
-        vbox.pack_end(hbox, False, False, 0) # v3
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        vbox.pack_start(hbox, False, True, 0) # v1
+        vbox.pack_end(self.import_text, True, True, 0) # v3
 
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(vbox)
@@ -162,42 +161,36 @@ class etreeGramplet(Gramplet):
 
     def __select_file(self, obj):
         """
-        Call back function to handle the open button press
+        Callback function to handle the open button press
         """
 
         my_action = Gtk.FileChooserAction.SAVE
 
-        dialog = Gtk.FileChooserDialog('lxml',
+        dialog = Gtk.FileChooserDialog('etree',
                                        action=my_action,
                                        buttons=(Gtk.STOCK_CANCEL,
                                                 Gtk.ResponseType.CANCEL,
                                                 Gtk.STOCK_OPEN,
-                                                Gtk.ResponseType.OK))
+                                                Gtk.ResponseType.OK),
+                                                parent=self.uistate.window)
 
-        name = os.path.basename(self.entry.get_text())
-        dialog.set_current_name(name)
-        dialog.set_current_folder(self.__base_path)
+        dialog.set_current_name(self.__file_name)
         dialog.present()
-        status = dialog.run()
-        if status == Gtk.ResponseType.OK:
+        response = dialog.run()
+        if response == Gtk.ResponseType.OK:
             self.set_filename(dialog.get_filename())
         dialog.destroy()
 
 
     def set_filename(self, path):
         """
-        Set the currently selected dialog.
+        Set the currently selected file.
         """
-
         if not path:
             return
-        if os.path.dirname(path):
-            self.__base_path = os.path.dirname(path)
-            self.__file_name = os.path.basename(path)
-        else:
-            self.__base_path = os.getcwd()
-            self.__file_name = path
-        self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
+        self.__base_path = str(Path(path).parent) or os.getcwd()  # pathlib
+        self.__file_name = Path(path).name  # pathlib
+        self.entry.set_text(str(Path(os.path.join(self.__base_path, self.__file_name))))  #  pathlib
 
 
     def build_options(self):
@@ -216,26 +209,62 @@ class etreeGramplet(Gramplet):
         """
 
         entry = self.entry.get_text()
-        if ' ' in entry:
-            ErrorDialog(_('Space character on filename'), _('Please fix space on "%s"') % entry)
+        #if ' ' in entry:
+            #ErrorDialog(_('Space character on filename or path'), _('Please fix space on "%s"') % entry)
+            #return
+
+        #if Path(os.path.join(USER_PLUGINS, 'lxml', 'etree.xml')).exists():
+            #Path.unlink(os.path.join(USER_PLUGINS, 'lxml', 'etree.xml'))
+
+        if not self.__file_name.endswith('.gramps'):
+            print(self.__file_name)
             return
 
-        self.ReadXML(entry)
+        if self.__file_name != "":
+            sys.excepthook = self.read_xml(entry)
 
 
-    def ReadXML(self, entry):
+    def is_gzip(self, entry):
+        """
+        Check if the file is gzip compressed.
+        """
+        try:
+            with gzip.open(entry, "r") as test:
+                test.read(1)
+            return True
+        except IOError:
+            return False
+
+
+    def uncompress_file(self, entry, filename):
+        """
+        Uncompress the gzip file.
+        """
+        try:
+            os.system(f'gunzip < "{entry}" > "{filename}"')
+        except Exception as e:
+            ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
+            raise e
+
+
+    def copy_file(self, entry, filename):
+        """
+        Copy the file to the destination.
+        """
+        try:
+            copyfile(entry, filename)
+        except FileNotFoundError or IsADirectoryError as e:
+            ErrorDialog(_('Is it a .gramps?'), _('Cannot copy "%s"') % entry)
+            raise e
+
+
+    def read_xml(self, entry):
         """
         Read the .gramps
         """
-
         self.text.set_text('Reading the file...')
-        use_gzip = 1
-        try:
-            test = gzip.open(entry, "r")
-            test.read(1)
-            test.close()
-        except IOError:
-            use_gzip = 0
+
+        use_gzip = self.is_gzip(entry)
 
         # lazy ...
         if os.name != 'posix' and os.name != 'nt':
@@ -247,26 +276,19 @@ class etreeGramplet(Gramplet):
 
         filename = os.path.join(USER_PLUGINS, 'lxml', 'etree.xml')
 
-        if use_gzip == 1:
-            try:
-                os.system('gunzip < %s > %s' % (entry, filename))
-            except:
-                ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
-                return
-            sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
+        if use_gzip:
+            self.uncompress_file(entry, filename)
         else:
-            try:
-                copy(entry, filename)
-            except:
-                ErrorDialog('Is it a .gramps ?', _('Cannot copy "%s"') % entry)
-                return
-            sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
+            self.copy_file(entry, filename)
 
-        tree = ElementTree.parse(filename)
-        self.ParseXML(tree, filename)
+        try:
+            tree = ElementTree.parse(Path(filename))
+            self.parse_xml(tree, Path(filename))
+        except FileNotFoundError as e:
+             ErrorDialog(_('Filenames issue or white space character on filename path'), '%s' % e)
 
 
-    def ParseXML(self, tree, filename):
+    def parse_xml(self, tree, filename):
         """
         Parse the .gramps
         """
@@ -280,6 +302,7 @@ class etreeGramplet(Gramplet):
         # timestamp
 
         timestamp = []
+        timestamp_int = []
 
         # XML attributes
 
@@ -330,7 +353,7 @@ class etreeGramplet(Gramplet):
 
         # XML
 
-        for one in root.getchildren():
+        for one in root:
 
             # iter() for python 2.7 and greater versions
             ITERATION = one.iter()
@@ -343,8 +366,16 @@ class etreeGramplet(Gramplet):
             # The behavior of this method will change in future versions.
             # Use specific 'len(elem)' or 'elem is not None' test instead.
 
+            lines = lazy = []
             if one.find(NAMESPACE + 'event'):
                 print('XML: Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
+
+            for i in range(0, len(one.findall(NAMESPACE + 'event'))):
+                event = one.findall(NAMESPACE + 'event')[i]
+                lines.append(event.items())
+                print('Event:', ElementTree.tostring(event))
+                lazy = list(lines)
+            print(lazy)
 
             # easier and faster match (do not forget upercase on handle into .gramps...)
             if one.get('home'):
@@ -357,6 +388,22 @@ class etreeGramplet(Gramplet):
 
                 if two.get('change') != None:
                     timestamp.append(two.get('change'))
+                    timestamp_int.append(int(two.get('change')))
+
+                #if two.get('handle') != None:
+                    #print('%s\n\t, %s'% (two.tag, two.items()))
+
+                #if two.get('priv') != None:
+                    #print('\tPrivate : %s, %s' % (two.tag, two.items()))
+
+                #if two.find(NAMESPACE + 'dateval') != None:
+                    #print('Date on event: %s' % two.items())
+
+                #if two.find(NAMESPACE + 'place') != None:
+                    #print('\tEvent record with places: %s' % two.items())
+
+                #if two.find(NAMESPACE + 'citationref') != None:
+                    #print('\t\tEvent record with citation/source: %s' % two.items())
 
                 (tag, item) = two.tag, two.items()
                 #print(tag)
@@ -395,8 +442,25 @@ class etreeGramplet(Gramplet):
 
         # to see changes and match existing handles (Family Tree loaded)
 
+        timestamp_control_like = sum(timestamp_int)
+        print('Timestamp sum and control: %d' % timestamp_control_like)
+        time = date.Today()
+        try:
+            from datetime import datetime
+            from time import strftime
+            from decimal import Decimal
+            today_timestamp = datetime.strptime(str(time), "%Y-%m-%d").timestamp()
+            today_no_float = f"{today_timestamp:.0f}"
+            print('Today:', time, today_no_float)
+        except ImportError:
+            pass
+
         #for key in keys:
             #print(key)
+
+        # lazy
+        #jsonl_output = "\n".join(lines)
+        #print('########JSONL#########\n%s' % jsonl_output)
 
         # XML
 
@@ -405,19 +469,14 @@ class etreeGramplet(Gramplet):
         if len(timestamp) < self.last:
             self.last = len(timestamp)
 
-        last = []
-        for i in range(self.last):
-            if i == 0:
-                last.append(timestamp[-1])
-            else:
-                last.append(timestamp[-i])
+        last = [timestamp[-i] for i in range(1, self.last + 1)]
 
         last.sort()
         start = epoch(last[1])
 
-        time = _('XML: Last %s editions since %s, were at/on :\n' % (int(self.last), start))
+        time = _('XML: Last %s additions and modifications since %s, were on :\n' % (int(self.last), start))
         for i in last:
-            time +=  '\t * %s\n' % epoch(i)
+            time += '\t * %s\n' % epoch(i)
 
         # GtkTextView
 
@@ -432,6 +491,7 @@ class etreeGramplet(Gramplet):
     def change(self):
         """
         obj.get_change_time(); Family Tree loaded
+        Display changes in the database.
         """
 
         # event object
@@ -465,32 +525,32 @@ class etreeGramplet(Gramplet):
 
     def counters(self, time, entries, tags, events, people, families, sources, citations, places, objects, repositories, notes):
         """
-        Set of counters for parsed Gramps XML and loaded family tree
+        Display counters for parsed Gramps XML and loaded family tree
         """
 
         total = _('\nXML: Number of records and relations : \t%s\n\n') % len(entries)
 
         if self.dbstate.db.db_is_open:
-            tag = _('Number of tags : \n\t\t\t%s\t|\t(%s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
+            tag = _('Number of tags : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(tags), self.dbstate.db.get_number_of_tags())
         else:
-            tag = _('Number of tags : \n\t\t\t%s\n' % len(tags))
+            tag = _('Number of tags : \n\t\t\t%06s\n' % len(tags))
 
-        event = _('Number of  events : \n\t\t\t%s\t|\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
+        event = _('Number of  events : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
         #DummyDB
         if self.dbstate.db.db_is_open:
-            person = _('Number of persons : \n\t\t\t%s\t|\t(%s) and (%s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
+            person = _('Number of persons : \n\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
         else:
-            person = _('Number of persons : \n\t\t\t%s\t|\t(%s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
-        family = _('Number of families : \n\t\t\t%s\t|\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
-        source = _('Number of sources : \n\t\t\t%s\t|\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
+            person = _('Number of persons : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
+        family = _('Number of families : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
+        source = _('Number of sources : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
         if self.dbstate.db.db_is_open:
-            citation = _('Number of citations : \n\t\t\t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
+            citation = _('Number of citations : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
         else:
             citation = ''
-        place = _('Number of places : \n\t\t\t%s\t|\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
-        media = _('Number of media objects : \n\t\t\t%s\t|\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media())
-        repository = _('Number of repositories : \n\t\t\t%s\t|\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
-        note = _('Number of notes : \n\t\t\t%s\t|\t(%s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
+        place = _('Number of places : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
+        media = _('Number of media objects : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(objects), self.dbstate.db.get_number_of_media())
+        repository = _('Number of repositories : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
+        note = _('Number of notes : \n\t\t\t%06s\t|\t(%06s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
 
         others = len(entries) - (len(tags) + len(events) + len(people) + len(families) + len(sources) + \
         len(citations) + len(places) + len(objects) + len(repositories) + len(notes))
@@ -499,11 +559,10 @@ class etreeGramplet(Gramplet):
 
         #DummyDB
         if self.dbstate.db.db_is_open:
-            nb  = _('* loaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
+            nb = _('* loaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
         else:
             nb = ''
 
-        preview = time + total + tag + event + person + family + source + citation\
-        + place + media + repository + note + nb + other
+        preview = time + total + tag + event + person + family + source + citation + place + media + repository + note + nb + other
 
         self.text.set_text(preview)
