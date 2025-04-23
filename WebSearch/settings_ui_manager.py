@@ -28,35 +28,35 @@ from types import SimpleNamespace
 
 from gramps.gen.plug.menu import (
     BooleanListOption,
+    BooleanOption,
     EnumeratedListOption,
     StringOption,
-    BooleanOption,
 )
 
-from website_loader import WebsiteLoader
 from constants import (
+    ALL_COLUMNS,
+    ALL_COLUMNS_LOCALIZED,
+    ALL_ICONS,
+    ALL_ICONS_LOCALIZED,
+    COMMON_CSV_FILE_NAME,
+    CROSS_CSV_FILE_NAME,
+    DEFAULT_AI_PROVIDER,
+    DEFAULT_DISPLAY_COLUMNS,
+    DEFAULT_DISPLAY_ICONS,
     DEFAULT_MIDDLE_NAME_HANDLING,
+    DEFAULT_SHOW_ATTRIBUTE_LINKS,
+    DEFAULT_SHOW_INTERNET_LINKS,
     DEFAULT_SHOW_SHORT_URL,
     DEFAULT_URL_COMPACTNESS_LEVEL,
     DEFAULT_URL_PREFIX_REPLACEMENT,
-    DEFAULT_SHOW_ATTRIBUTE_LINKS,
-    DEFAULT_AI_PROVIDER,
-    COMMON_CSV_FILE_NAME,
-    UID_CSV_FILE_NAME,
     STATIC_CSV_FILE_NAME,
-    CROSS_CSV_FILE_NAME,
-    ALL_COLUMNS,
-    DEFAULT_DISPLAY_COLUMNS,
-    ALL_COLUMNS_LOCALIZED,
-    ALL_ICONS,
-    DEFAULT_DISPLAY_ICONS,
-    ALL_ICONS_LOCALIZED,
+    UID_CSV_FILE_NAME,
+    AIProviders,
     MiddleNameHandling,
     URLCompactnessLevel,
-    AIProviders,
 )
-
 from translation_helper import _
+from website_loader import WebsiteLoader
 
 
 class SettingsUIManager:
@@ -186,8 +186,18 @@ class SettingsUIManager:
         )
         self.add_boolean_option(
             "websearch.show_attribute_links",
-            _("Show Links From Attributes"),
+            _("Show Links From the 'Attributes' tab"),
             DEFAULT_SHOW_ATTRIBUTE_LINKS,
+        )
+        self.add_boolean_option(
+            "websearch.show_internet_links",
+            _("Show Links From the 'Internet' tab"),
+            DEFAULT_SHOW_INTERNET_LINKS,
+        )
+        self.add_boolean_option(
+            "websearch.show_note_links",
+            _("Show Links From the Notes"),
+            DEFAULT_SHOW_INTERNET_LINKS,
         )
         self.add_display_columns_option()
         self.add_display_icons_option()

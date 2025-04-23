@@ -34,74 +34,30 @@ except ImportError:
         file=sys.stderr,
     )
 
+from site_finder_prompt import BasePromptBuilder
+from models import AIDomainData
 
+
+# pylint: disable=too-few-public-methods
 class MistralSiteFinder:
     """
     MistralSiteFinder class for retrieving genealogy-related websites using Mistral AI.
 
     This class interacts with Mistral's API to fetch a list of genealogy research websites
     while excluding certain domains and filtering results based on locale preferences.
-
-    Attributes:
-    - api_key (str): API key for Mistral authentication.
-
-    Methods:
-    - find_sites(excluded_domains, locales, include_global):
-        Sends a query to Mistral and returns a JSON-formatted list of relevant genealogy websites.
     """
 
     def __init__(self, api_key, model):
-        """
-        Initialize the MistralSiteFinder with a Mistral API key.
-
-        Args:
-            api_key (str): Mistral API key used for authentication.
-        """
+        """Initialize the MistralSiteFinder with a Mistral API key."""
         self.api_key = api_key
         self.model = model
         self.api_url = "https://api.mistral.ai/v1/chat/completions"
+        self.prompt_builder = BasePromptBuilder()
 
-    def find_sites(self, excluded_domains, locales, include_global):
-        """
-        Query Mistral to find genealogy research websites.
+    def find_sites(self, ai_domain_data: AIDomainData):
+        """Query Mistral to find genealogy research websites."""
 
-        Args:
-            excluded_domains (list of str): List of domains to exclude from results.
-            locales (list of str): Regional locale codes to target.
-            include_global (bool): Whether to include globally used sites.
-
-        Returns:
-            str: JSON-formatted string representing a list of sites or "[]" if an error occurs.
-        """
-        system_message = (
-            "You assist in finding resources for genealogical research. "
-            "Your response must be strictly formatted as a JSON array of objects "
-            "with only two keys: 'domain' and 'url'. Do not include any additional text, "
-            "explanations, or comments."
-        )
-
-        if not locales:
-            locale_text = "only globally used"
-            locales_str = "none"
-        else:
-            locale_text = (
-                "both regional and globally used" if include_global else "regional"
-            )
-            locales_str = ", ".join(locales)
-
-        excluded_domains_str = (
-            ", ".join(excluded_domains) if excluded_domains else "none"
-        )
-
-        user_message = (
-            f"I am looking for additional genealogical research websites for {locale_text} "
-            f"resources. Relevant locales: {locales_str}. "
-            f"Exclude the following domains: {excluded_domains_str}. "
-            "Provide exactly 10 relevant websites formatted as a JSON array of objects "
-            "with keys 'domain' and 'url'. "
-            "Example response: [{'domain': 'example.com', 'url': 'https://example.com'}]. "
-            "If no relevant websites are found, return an empty array [] without any explanations."
-        )
+        system_message, user_message = self.prompt_builder.build_prompt(ai_domain_data)
 
         headers = {
             "Authorization": f"Bearer {self.api_key}",
@@ -122,58 +78,7 @@ class MistralSiteFinder:
             )
             response.raise_for_status()
             data = response.json()
-
-        except (
-            requests.ConnectionError,
-            requests.ConnectTimeout,
-            requests.Timeout,
-            requests.ReadTimeout,
-            requests.HTTPError,
-            requests.TooManyRedirects,
-            requests.InvalidURL,
-            requests.InvalidProxyURL,
-            requests.URLRequired,
-            requests.MissingSchema,
-            requests.InvalidSchema,
-            requests.SSLError,
-            requests.ProxyError,
-            requests.ChunkedEncodingError,
-        ) as e:
-            print(f"Error: {str(e)}", file=sys.stderr)
-            return "[]"
-
-        except (
-            requests.ContentDecodingError,
-            requests.InvalidHeader,
-            requests.StreamConsumedError,
-            requests.UnrewindableBodyError,
-        ) as e:
-            print(f"Error: {str(e)}", file=sys.stderr)
-            print(traceback.format_exc(), file=sys.stderr)
-            return "[]"
-
-        except (
-            requests.RequestsDependencyWarning,
-            requests.RequestsWarning,
-            requests.RetryError,
-            requests.FileModeWarning,
-        ) as e:
-            print(f"Warning: {str(e)}")
-            return "[]"
-
-        except requests.RequestException as e:
-            print(f"General request error: {str(e)}", file=sys.stderr)
-            return "[]"
-
-        except Exception as e:
-            print(f"Unexpected error: {str(e)}", file=sys.stderr)
-            print(traceback.format_exc(), file=sys.stderr)
-            return "[]"
-
-        try:
             return data["choices"][0]["message"]["content"]
-        except Exception as e:
-            print(
-                f"❌ Error parsing Mistral response: {e}. data: {data}", file=sys.stderr
-            )
+        except Exception:  # pylint: disable=broad-exception-caught
+            print(traceback.format_exc(), file=sys.stderr)
             return "[]"
