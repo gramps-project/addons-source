@@ -1,0 +1,5 @@
+Navigation type,Title,Is enabled,URL                                                                                                                                         ,Comment
+People,Google,1,https://www.google.co.uk/search?hl=en&q=%(surname)s+%(given)s,
+People,"British, UK, and Ireland",1,https://userdb.rootsweb.ancestry.com/uki/cgi-bin/uki.cgi?surname=%(surname)s&fname=%(given)s,
+People,Geneanet,1,https://search.geneanet.org/result.php?lang=en&name=%(surname)s,
+People,Hathi Trust,1,https://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls,
