@@ -94,7 +94,7 @@ def epoch(t):
 
 class etreeGramplet(Gramplet):
     """
-    Gramplet for testing etree (Python 2.7) and Gramps XML parsing
+    Gramplet for testing etree (Python) and Gramps XML parsing
     """
 
     def init(self):
