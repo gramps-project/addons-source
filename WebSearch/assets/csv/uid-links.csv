@@ -1,6 +1,7 @@
 Navigation type,Title,Is enabled,URL                                                                                                                                         ,Comment
 People,FS Person,1,https://www.familysearch.org/en/tree/person/details/%(FamilySearch.personID)s,
 People,FS Pedigree,1,https://www.familysearch.org/en/tree/pedigree/landscape/%(FamilySearch.personID)s,
+People,FS Lite,1,https://www.familysearch.org/tree/lite/person/%(FamilySearch.personID)s,
 People,WikiTree,1,https://www.wikitree.com/wiki/%(WikiTree.ID)s,
 People,Geni,1,https://www.geni.com/people/%(Geni.ID)s,
 People,WeRelate,1,https://www.werelate.org/wiki/Person:%(WeRelate.ID)s,
@@ -15,3 +16,6 @@ People,Facebook,1,https://www.facebook.com/%(Facebook.ID)s,
 People,XING,1,https://www.xing.com/profile/%(XING.ID)s/cv,
 People,LinkedIn,1,https://www.linkedin.com/in/%(LinkedIn.ID)s,
 People,Instagram,1,https://www.instagram.com/%(Instagram.ID)s,
+People,Gedbas,1,https://gedbas.de/uid/%(Gedbas.ID)s,
+
+

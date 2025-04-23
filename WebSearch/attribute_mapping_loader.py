@@ -30,9 +30,10 @@ import json
 import os
 import re
 import sys
+
 from constants import (
-    USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH,
     DEFAULT_ATTRIBUTE_MAPPING_FILE_PATH,
+    USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH,
 )
 
 
@@ -45,12 +46,7 @@ class AttributeMappingLoader:
     """
 
     def __init__(self):
-        """
-        Initializes the AttributeMappingLoader.
-
-        It chooses between a user-defined or default JSON mapping file and loads its content
-        into memory for further processing.
-        """
+        """Initializes the AttributeMappingLoader."""
         if os.path.exists(USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH):
             self.mapping_file = USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH
         else:
@@ -58,12 +54,7 @@ class AttributeMappingLoader:
         self.mappings = self.load_mappings()
 
     def load_mappings(self):
-        """
-        Loads attribute mappings from the selected JSON file.
-
-        Returns:
-            list: A list of mapping dictionaries, or an empty list if loading fails.
-        """
+        """Loads attribute mappings from the selected JSON file."""
         try:
             with open(self.mapping_file, "r", encoding="utf-8") as file:
                 return json.load(file)
@@ -72,16 +63,7 @@ class AttributeMappingLoader:
             return []
 
     def get_attributes_for_nav_type(self, nav_type, entity):
-        """
-        Retrieves attribute mappings relevant to a given navigation type and entity.
-
-        Args:
-            nav_type (str): The navigation type (e.g., "People", "Places").
-            entity: The Gramps object (e.g., a Person) containing attributes.
-
-        Returns:
-            list: A list of dictionaries with matched mappings and attribute values.
-        """
+        """Retrieves attribute mappings relevant to a given navigation type and entity."""
         uids_data = []
 
         try:
@@ -103,28 +85,19 @@ class AttributeMappingLoader:
                                 "value": attr_value,
                             }
                         )
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             print(f"❌ Error processing {nav_type} attributes: {e}", file=sys.stderr)
 
         return uids_data
 
     def add_matching_keys_to_data(self, uids_data, url_pattern):
-        """
-        Filters and extracts only those keys whose regex matches the given URL.
-
-        Args:
-            uids_data (list): List of attribute data with mapping information.
-            url_pattern (str): The target URL pattern to match.
-
-        Returns:
-            dict: Dictionary of key names and values to be inserted into the URL.
-        """
+        """Filters and extracts only those keys whose regex matches the given URL."""
         filtered_uids_data = {}
         try:
             for uid_entry in uids_data:
                 if re.match(uid_entry["url_regex"], url_pattern, re.IGNORECASE):
                     filtered_uids_data[uid_entry["key_name"]] = uid_entry["value"]
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             print(f"❌ Error adding matching keys: {e}", file=sys.stderr)
 
         return filtered_uids_data
