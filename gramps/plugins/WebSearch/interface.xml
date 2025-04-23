@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+
+    <!-- Main container -->
+    <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+        <property name="homogeneous">False</property>
+
+        <!-- TreeView -->
+        <child>
+            <object class="GtkScrolledWindow" id="treeview_container">
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <child>
+                    <object class="GtkTreeView" id="treeview">
+                        <property name="headers-visible">True</property>
+
+                        <child>
+                            <object class="GtkTreeViewColumn" id="icons_column">
+                                <property name="title"></property>
+                                <property name="clickable">True</property>
+                                <property name="resizable">True</property>
+                                <property name="sizing">autosize</property>
+                                <property name="expand">False</property>
+                                <child>
+                                    <object class="GtkCellRendererPixbuf" id="category_icon_renderer">
+                                        <property name="xalign">0.0</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkCellRendererPixbuf" id="visited_icon_renderer">
+                                        <property name="xalign">0.0</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkCellRendererPixbuf" id="saved_icon_renderer">
+                                        <property name="xalign">0.0</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkCellRendererPixbuf" id="user_data_icon_renderer">
+                                        <property name="xalign">0.0</property>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+
+                        <child>
+                            <object class="GtkTreeViewColumn" id="file_identifier_column">
+                                <property name="title"></property>
+                                <property name="clickable">True</property>
+                                <property name="resizable">True</property>
+                                <property name="sizing">autosize</property>
+                                <child>
+                                    <object class="GtkCellRendererPixbuf" id="file_identifier_icon_renderer">
+                                        <property name="xalign">0.5</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkCellRendererText" id="file_identifier_text_renderer">
+                                        <property name="xalign">0.5</property>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+
+                        <child>
+                            <object class="GtkTreeViewColumn" id="keys_column">
+                                <property name="title">Keys</property>
+                                <property name="clickable">True</property>
+                                <child>
+                                    <object class="GtkCellRendererText" id="keys_replaced_renderer"/>
+                                </child>
+                                <child>
+                                    <object class="GtkCellRendererText" id="slash_renderer">
+                                        <property name="text">/</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkCellRendererText" id="keys_total_renderer"/>
+                                </child>
+                            </object>
+                        </child>
+
+                        <child>
+                            <object class="GtkTreeViewColumn" id="title_column">
+                                <property name="title">Title</property>
+                                <property name="clickable">True</property>
+                                <property name="resizable">True</property>
+                                <property name="sizing">autosize</property>
+                                <property name="expand">True</property>
+                                <child>
+                                    <object class="GtkCellRendererText" id="title_renderer"/>
+                                </child>
+                            </object>
+                        </child>
+
+                        <child>
+                            <object class="GtkTreeViewColumn" id="url_column">
+                                <property name="title">Website URL</property>
+                                <property name="clickable">True</property>
+                                <property name="resizable">True</property>
+                                <property name="sizing">autosize</property>
+                                <child>
+                                    <object class="GtkCellRendererText" id="url_renderer"/>
+                                </child>
+                            </object>
+                        </child>
+
+                        <child>
+                            <object class="GtkTreeViewColumn" id="comment_column">
+                                <property name="title">Comment</property>
+                                <property name="clickable">True</property>
+                                <property name="resizable">True</property>
+                                <property name="sizing">autosize</property>
+                                <child>
+                                    <object class="GtkCellRendererText" id="comment_renderer"/>
+                                </child>
+                            </object>
+                        </child>
+
+                    </object>
+                </child>
+            </object>
+        </child>
+
+        <!-- Badges box -->
+        <child>
+            <object class="GtkBox" id="badges_box">
+                <property name="orientation">vertical</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">False</property>
+                <property name="spacing">5</property>
+
+                <!-- AI Recommendations Header -->
+                <child>
+                    <object class="GtkLabel" id="ai_recommendations_label">
+                        <property name="label">🔍 AI Suggestions</property>
+                        <property name="halign">start</property>
+                        <property name="xalign">0</property>
+                        <property name="margin-start">10</property>
+                        <property name="margin-top">5</property>
+                        <attributes>
+                            <attribute name="weight" value="bold"/>
+                            <attribute name="size" value="12000"/>
+                        </attributes>
+                    </object>
+                </child>
+
+                <!-- Scrolled Window for Badges -->
+                <child>
+                    <object class="GtkScrolledWindow">
+                        <property name="hexpand">True</property>
+                        <property name="vexpand">False</property>
+                        <property name="min-content-height">80</property>
+                        <child>
+                            <object class="GtkFlowBox" id="badge_container">
+                                <property name="selection-mode">none</property>
+                                <property name="max-children-per-line">10</property>
+                                <property name="homogeneous">False</property>
+                                <property name="valign">start</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+
+    </object>
+
+    <!-- Context menu -->
+    <object class="GtkMenu" id="context_menu">
+        <child>
+            <object class="GtkMenuItem" id="add_note">
+                <property name="label">Add link to note</property>
+                <signal name="activate" handler="on_add_note"/>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="add_attribute">
+                <property name="label">Add link to attribute</property>
+                <signal name="activate" handler="on_add_attribute"/>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="show_qr">
+                <property name="label">Show QR-code</property>
+                <signal name="activate" handler="on_show_qr_code"/>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="copy_link">
+                <property name="label">Copy link to clipboard</property>
+                <signal name="activate" handler="on_copy_url_to_clipboard"/>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="hide_selected">
+                <property name="label">Hide link for selected item</property>
+                <signal name="activate" handler="on_hide_link_for_selected_item"/>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="hide_all">
+                <property name="label">Hide link for all items</property>
+                <signal name="activate" handler="on_hide_link_for_all_items"/>
+            </object>
+        </child>
+    </object>
+</interface>

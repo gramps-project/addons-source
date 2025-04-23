@@ -1,0 +1,29 @@
+.badge {
+    background-color: #28a745;
+    color: white;
+    border-radius: 12px;
+    padding: 2px 6px;
+    margin: 2px;
+}
+
+.badge-label {
+    font-size: 12px;
+}
+
+.badge-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.badge-close:hover {
+    color: #ffcccc;
+}
+
+#ai_recommendations_label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2a6aad;
+}

@@ -1,0 +1,299 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-15 16:42+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <jurchello@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: settings_ui_manager.py:110
+msgid "Middle Name Handling"
+msgstr ""
+
+#: settings_ui_manager.py:115
+msgid "Leave alone"
+msgstr ""
+
+#: settings_ui_manager.py:116
+msgid "Separate"
+msgstr ""
+
+#: settings_ui_manager.py:117
+msgid "Remove"
+msgstr ""
+
+#: settings_ui_manager.py:126
+msgid "URL Compactness Level"
+msgstr ""
+
+#: settings_ui_manager.py:132
+msgid "Shortest - No Prefix, No Keys"
+msgstr ""
+
+#: settings_ui_manager.py:135
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:138
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr ""
+
+#: settings_ui_manager.py:141
+msgid "Long - Without Prefix on the Left"
+msgstr ""
+
+#: settings_ui_manager.py:148
+msgid "URL Prefix Replacement"
+msgstr ""
+
+#: settings_ui_manager.py:155
+msgid "AI Provider"
+msgstr ""
+
+#: settings_ui_manager.py:160
+msgid "(Disabled)"
+msgstr ""
+
+#: settings_ui_manager.py:161
+msgid "OpenAI"
+msgstr ""
+
+#: settings_ui_manager.py:162
+msgid "Mistral AI"
+msgstr ""
+
+#: settings_ui_manager.py:169
+msgid "OpenAI API Key"
+msgstr ""
+
+#: settings_ui_manager.py:174
+msgid "OpenAI Model"
+msgstr ""
+
+#: settings_ui_manager.py:179
+msgid "Mistral API Key"
+msgstr ""
+
+#: settings_ui_manager.py:184
+msgid "Mistral Model"
+msgstr ""
+
+#: settings_ui_manager.py:189
+msgid "Show Links From the 'Attributes' tab"
+msgstr ""
+
+#: settings_ui_manager.py:194
+msgid "Show Links From the 'Internet' tab"
+msgstr ""
+
+#: settings_ui_manager.py:199
+msgid "Show Links From the Notes"
+msgstr ""
+
+#: settings_ui_manager.py:230
+msgid "Enable CSV Files"
+msgstr ""
+
+#: settings_ui_manager.py:237
+msgid "Display Columns"
+msgstr ""
+
+#: settings_ui_manager.py:251
+msgid "Display Icons"
+msgstr ""
+
+#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
+msgid "WebSearch"
+msgstr ""
+
+#: WebSearch.gpr.py:36
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+
+#: constants.py:311
+msgid "Column - Icons"
+msgstr ""
+
+#: constants.py:312
+msgid "Column - Source Types (flags)"
+msgstr ""
+
+#: constants.py:313
+msgid "Column - Keys"
+msgstr ""
+
+#: constants.py:314
+msgid "Column - Title"
+msgstr ""
+
+#: constants.py:315
+msgid "Column - Website Url"
+msgstr ""
+
+#: constants.py:316
+msgid "Column - Comment"
+msgstr ""
+
+#: constants.py:345
+msgid "Icon - Visited URLs (checkmark)"
+msgstr ""
+
+#: constants.py:346
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr ""
+
+#: constants.py:347
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr ""
+
+#: constants.py:348
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr ""
+
+#: constants.py:349
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr ""
+
+#: constants.py:350
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr ""
+
+#: constants.py:351
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr ""
+
+#: constants.py:352
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+
+#: constants.py:353
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr ""
+
+#: constants.py:354
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr ""
+
+#: constants.py:355
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr ""
+
+#: qr_window.py:77
+msgid "QR-code"
+msgstr ""
+
+#: qr_window.py:115
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+
+#: WebSearch.py:874
+msgid "Keys"
+msgstr ""
+
+#: WebSearch.py:875
+msgid "Title"
+msgstr ""
+
+#: WebSearch.py:876
+msgid "Website URL"
+msgstr ""
+
+#: WebSearch.py:877
+msgid "Comment"
+msgstr ""
+
+#: WebSearch.py:879
+msgid "Add link to note"
+msgstr ""
+
+#: WebSearch.py:880
+msgid "Add link to attribute"
+msgstr ""
+
+#: WebSearch.py:881
+msgid "Show QR-code"
+msgstr ""
+
+#: WebSearch.py:882
+msgid "Copy link to clipboard"
+msgstr ""
+
+#: WebSearch.py:884
+msgid "Hide link for selected item"
+msgstr ""
+
+#: WebSearch.py:886
+msgid "Hide link for all items"
+msgstr ""
+
+#: WebSearch.py:888
+msgid "🔍 AI Suggestions"
+msgstr ""
+
+#: WebSearch.py:1040
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+
+#: WebSearch.py:1120
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr ""
+
+#: WebSearch.py:1124
+msgid "Error creating note"
+msgstr ""
+
+#: WebSearch.py:1145
+msgid "URL is copied to the Clipboard"
+msgstr ""
+
+#: WebSearch.py:1205
+msgid "WebSearch Link"
+msgstr ""
+
+#: WebSearch.py:1246
+msgid "Attribute has been successfully added"
+msgstr ""
+
+#: WebSearch.py:1277
+#, python-brace-format
+msgid "Title: {title}"
+msgstr ""
+
+#: WebSearch.py:1281
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr ""
+
+#: WebSearch.py:1284
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr ""
+
+#: WebSearch.py:1286
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr ""

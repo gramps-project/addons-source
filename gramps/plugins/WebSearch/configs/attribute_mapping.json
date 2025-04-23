@@ -1,0 +1,110 @@
+[
+  {
+    "nav_type": "Person",
+    "attribute_name": "_FSFTID",
+    "url_regex": ".*familysearch\\.org/.*/tree/person/details/.*",
+    "key_name": "FamilySearch.personID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "_FSFTID",
+    "url_regex": ".*familysearch\\.org/.*/tree/pedigree/landscape/.*",
+    "key_name": "FamilySearch.personID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "_FSFTID",
+    "url_regex": ".*familysearch\\.org/tree/lite/person/.*",
+    "key_name": "FamilySearch.personID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "WikiTreeID",
+    "url_regex": ".*wikitree\\.com/wiki/.*",
+    "key_name": "WikiTree.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "GeniID",
+    "url_regex": ".*geni\\.com/people/.*",
+    "key_name": "Geni.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "WeRelateID",
+    "url_regex": ".*werelate\\.org/wiki/Person:.*",
+    "key_name": "WeRelate.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "RogloID",
+    "url_regex": ".*roglo\\.eu/roglo?.*",
+    "key_name": "Roglo.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "GeneeeID",
+    "url_regex": ".*geneee\\.org/.*",
+    "key_name": "Geneee.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "FindAGraveID",
+    "url_regex": ".*findagrave\\.com/memorial/.*",
+    "key_name": "FindAGrave.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "WikidataID",
+    "url_regex": ".*wikidata\\.org/wiki/.*",
+    "key_name": "Wikidata.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "WikipediaID",
+    "url_regex": ".*wikipedia\\.org/wiki/.*",
+    "key_name": "Wikipedia.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "VIAFID",
+    "url_regex": ".*viaf\\.org/viaf/.*",
+    "key_name": "VIAF.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "GNDID",
+    "url_regex": ".*d-nb\\.info/gnd/.*",
+    "key_name": "GND.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "FacebookID",
+    "url_regex": ".*facebook\\.com/.*",
+    "key_name": "Facebook.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "XINGID",
+    "url_regex": ".*xing\\.com/profile/.*",
+    "key_name": "XING.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "LinkedInID",
+    "url_regex": ".*linkedin\\.com/in/.*",
+    "key_name": "LinkedIn.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "InstagramID",
+    "url_regex": ".*instagram\\.com/.*",
+    "key_name": "Instagram.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "GedbasID",
+    "url_regex": ".*gedbas\\.de/uid/.*",
+    "key_name": "Gedbas.ID"
+  }
+]
