@@ -46,18 +46,18 @@
                         </child>
 
                         <child>
-                            <object class="GtkTreeViewColumn" id="locale_column">
+                            <object class="GtkTreeViewColumn" id="file_identifier_column">
                                 <property name="title"></property>
                                 <property name="clickable">True</property>
                                 <property name="resizable">True</property>
                                 <property name="sizing">autosize</property>
                                 <child>
-                                    <object class="GtkCellRendererPixbuf" id="locale_icon_renderer">
+                                    <object class="GtkCellRendererPixbuf" id="file_identifier_icon_renderer">
                                         <property name="xalign">0.5</property>
                                     </object>
                                 </child>
                                 <child>
-                                    <object class="GtkCellRendererText" id="locale_text_renderer">
+                                    <object class="GtkCellRendererText" id="file_identifier_text_renderer">
                                         <property name="xalign">0.5</property>
                                     </object>
                                 </child>
@@ -176,12 +176,12 @@
                 <signal name="activate" handler="on_add_note"/>
             </object>
         </child>
-        <!-- <child>
-            <object class="GtkMenuItem" id="AddAttribute">
+        <child>
+            <object class="GtkMenuItem" id="add_attribute">
                 <property name="label">Add link to attribute</property>
                 <signal name="activate" handler="on_add_attribute"/>
             </object>
-        </child> -->
+        </child>
         <child>
             <object class="GtkMenuItem" id="show_qr">
                 <property name="label">Show QR-code</property>

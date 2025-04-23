@@ -48,7 +48,7 @@ class EventDataExtractor:
             if not place_ref:
                 return None
             return db.get_place_from_handle(place_ref) or None
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
             return None
 
@@ -61,7 +61,7 @@ class EventDataExtractor:
             date = event.get_date_object()
             if date and not date.is_compound():
                 return date.get_year() or None
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
         return None
 
@@ -95,6 +95,6 @@ class EventDataExtractor:
                 year_from = start_date[2] if start_date else None
                 year_to = stop_date[2] if stop_date else None
             return year, year_from, year_to, year_before, year_after
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
         return year, year_from, year_to, year_before, year_after

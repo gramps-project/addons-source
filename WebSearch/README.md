@@ -16,8 +16,21 @@ The Gramplet supports the following **Navigation Types**, which correspond to th
 - **Places**
 - **Sources**
 - **Families**
+- **Events**
+- **Citations**
+- **Media**
+- **Notes**
+- **Repositories**
 
-Each **Navigation Type** has its own set of supported **Keys** that can be used in URL templates. These **Keys** act as placeholders in the URLs stored in CSV files. When using the Gramplet, they are automatically replaced with real data from the active entity (such as a person’s name, birth year, or place), allowing you to generate personalized search links instantly.
+⚠️ Not all **Navigation Types** support data **keys**. Some of them only display static links, or links retrieved from **Attributes**, **Internet**, or **Notes** tabs (if available for that **Navigation Types**).
+
+✅ Full **key** support — with values automatically inserted into the URL templates — is currently implemented for:
+- **People**
+- **Places**
+- **Sources**
+- **Families**
+
+These **Navigation Types** support dynamic URL generation based on real entity data (e.g., names, years, locations). For other types, links may still appear if they are static or based on metadata (attributes, notes, etc.), but no substitution of template **keys** is performed.
 
 #### 2.1.1. **Keys** for the "People" **Navigation Type**:
 
@@ -104,6 +117,11 @@ Each **Navigation Type** has its own set of supported **Keys** that can be used 
 
 #### 2.1.4. **Keys** for the "Sources" **Navigation Type**:
 - `source_title`: Source title.
+- `full_abbreviation`: The full content of the **Abbreviation** field in the source.
+- `archive_code`: Archive code (e.g. `ДАЧО`, `TNA`, `NARA`), parsed from abbreviation, attribute, or repository.
+- `collection_number`: Fund number (e.g. `142`), parsed from abbreviation or attribute.
+- `series_number`: Inventory/series number (e.g. `1`), parsed from abbreviation or attribute.
+- `file_number`: Case/file number (e.g. `15`), parsed from abbreviation or attribute.
 - `locale`: The system locale detected in Gramps. Some examples of locale values: `en`, `de`, `fr`, `uk`, `es`, `it`, `pl`, `nl`, ...
 
 ### 2.2 More details about some **Keys**
@@ -141,6 +159,28 @@ A user-defined **Key** can be inserted into a URL template of a csv file as foll
 ```
 https://www.familysearch.org/en/tree/person/details/%(FamilySearch.UID)s
 ```
+
+### 2.3 Navigation Type Wildcards and Multiple Types
+
+WebSearch now supports advanced **navigation type syntax** in CSV files:
+
+- **Multiple types**: Use a comma-separated list of navigation types in the `Navigation type` column:
+
+
+```"People,Places"```
+
+This makes it easier to define links that are relevant across different Gramps entities, without duplicating entries.
+
+#### Example
+
+```
+Navigation type,Title,Is enabled,URL,Comment
+"People,Places",Geo Search,1,https://example.com/search?q=%(place)s,Available for people and places
+*,General Tool,1,https://example.com/tool?q=%(surname)s,Works for all types
+```
+
+ℹ️ The * wildcard expands automatically to all supported types listed in SupportedNavTypes.
+
 
 ## 3. Configuration
 
@@ -461,6 +501,8 @@ This option allows the user to add the selected link directly to a note in Gramp
 
 After saving a link to a note, a **floppy disk icon** appears in the icons column, indicating that the link has been stored.  
 ![Saved Link](assets/icons/media-floppy.png)
+
+Generated notes contain plain text only.
 
 ### **5.2 Show QR-code**
 Selecting this option generates and displays a **QR code** for the selected link. This enables users to quickly scan the QR code with a mobile device and open the link on a phone or tablet without manually copying and pasting it.

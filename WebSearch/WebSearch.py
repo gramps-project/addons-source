@@ -28,81 +28,98 @@ or source's data. Integrates multiple regional websites into a single sidebar to
 with customizable URL templates.
 """
 
+# pylint: disable=invalid-name
+
+# --------------------------
 # Standard Python libraries
+# --------------------------
+import json
 import os
 import sys
-import json
-import traceback
 import threading
-import webbrowser
 import urllib.parse
+import webbrowser
 from enum import IntEnum
 from types import SimpleNamespace
 
+# --------------------------
 # Third-party libraries
+# --------------------------
 import gi
 
-gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk, Gdk, GdkPixbuf, GObject
+gi.require_version("Gtk", "3.0")  # pylint: disable=wrong-import-position
+from gi.repository import Gdk, GdkPixbuf, GObject, Gtk
 
+# --------------------------
 # GRAMPS API
+# --------------------------
+from gramps.gen.db import DbTxn
+from gramps.gen.lib import Attribute, Note, NoteType, SrcAttribute
 from gramps.gen.plug import Gramplet
 from gramps.gui.display import display_url
-from gramps.gen.lib import Note, Attribute, NoteType
-from gramps.gen.db import DbTxn
+from gramps.gui.editors import EditObject
 
+# --------------------------
 # Own project imports
-from entity_data_builder import EntityDataBuilder
-from model_row_generator import ModelRowGenerator
-from helpers import get_system_locale
-from qr_window import QRCodeWindow
-from openai_site_finder import OpenaiSiteFinder
-from mistral_site_finder import MistralSiteFinder
-from config_ini_manager import ConfigINIManager
-from settings_ui_manager import SettingsUIManager
-from website_loader import WebsiteLoader
-from notification import Notification
-from signals import WebSearchSignalEmitter
-from url_formatter import UrlFormatter
-from attribute_mapping_loader import AttributeMappingLoader
+# --------------------------
 from attribute_links_loader import AttributeLinksLoader
+from attribute_mapping_loader import AttributeMappingLoader
+from config_ini_manager import ConfigINIManager
 from constants import (
+    ALL_COLUMNS_LOCALIZED,
+    ALL_ICONS_LOCALIZED,
+    CONFIGS_DIR,
+    DATA_DIR,
+    DEFAULT_AI_PROVIDER,
+    DEFAULT_COLUMNS_ORDER,
+    DEFAULT_DISPLAY_COLUMNS,
+    DEFAULT_DISPLAY_ICONS,
+    DEFAULT_ENABLED_FILES,
+    DEFAULT_MIDDLE_NAME_HANDLING,
+    DEFAULT_SHOW_ATTRIBUTE_LINKS,
+    DEFAULT_SHOW_INTERNET_LINKS,
+    DEFAULT_SHOW_NOTE_LINKS,
     DEFAULT_SHOW_SHORT_URL,
     DEFAULT_URL_COMPACTNESS_LEVEL,
     DEFAULT_URL_PREFIX_REPLACEMENT,
     HIDDEN_HASH_FILE_PATH,
-    USER_DATA_CSV_DIR,
-    USER_DATA_JSON_DIR,
-    DATA_DIR,
-    CONFIGS_DIR,
-    DEFAULT_ENABLED_FILES,
-    DEFAULT_MIDDLE_NAME_HANDLING,
-    ICON_VISITED_PATH,
     ICON_SAVED_PATH,
-    VISITED_HASH_FILE_PATH,
-    SAVED_HASH_FILE_PATH,
-    URL_SAFE_CHARS,
     ICON_SIZE,
+    ICON_VISITED_PATH,
     INTERFACE_FILE_PATH,
     RIGHT_MOUSE_BUTTON,
+    SAVED_HASH_FILE_PATH,
     STYLE_CSS_PATH,
-    DEFAULT_COLUMNS_ORDER,
-    DEFAULT_SHOW_ATTRIBUTE_LINKS,
-    DEFAULT_AI_PROVIDER,
+    URL_SAFE_CHARS,
+    USER_DATA_CSV_DIR,
+    USER_DATA_JSON_DIR,
     VIEW_IDS_MAPPING,
-    DEFAULT_DISPLAY_COLUMNS,
-    ALL_COLUMNS_LOCALIZED,
-    DEFAULT_DISPLAY_ICONS,
-    ALL_ICONS_LOCALIZED,
-    URLCompactnessLevel,
+    VISITED_HASH_FILE_PATH,
+    AIProviders,
     MiddleNameHandling,
     SupportedNavTypes,
-    AIProviders,
+    URLCompactnessLevel,
+    SourceTypes,
 )
+from entity_data_builder import EntityDataBuilder
+from helpers import get_system_locale
+from internet_links_loader import InternetLinksLoader
+from mistral_site_finder import MistralSiteFinder
+from model_row_generator import ModelRowGenerator
+from note_links_loader import NoteLinksLoader
+from notification import Notification
+from openai_site_finder import OpenaiSiteFinder
+from qr_window import QRCodeWindow
+from settings_ui_manager import SettingsUIManager
+from signals import WebSearchSignalEmitter
+from url_formatter import UrlFormatter
+from website_loader import WebsiteLoader
+from gramplet_version_extractor import GrampletVersionExtractor
+from translation_helper import _
+from models import LinkContext, AIDomainData
 
 MODEL_SCHEMA = [
     ("icon_name", str),
-    ("locale_text", str),
     ("title", str),
     ("final_url", str),
     ("comment", str),
@@ -120,19 +137,20 @@ MODEL_SCHEMA = [
     ("keys_color", str),
     ("user_data_icon", GdkPixbuf.Pixbuf),
     ("user_data_icon_visible", bool),
-    ("locale_icon", GdkPixbuf.Pixbuf),
-    ("locale_icon_visible", bool),
-    ("locale_text_visible", bool),
     ("display_keys_count", bool),
-    ("source_type_sort", str),
+    ("file_identifier_text", str),
+    ("file_identifier_text_visible", bool),
+    ("file_identifier_icon", GdkPixbuf.Pixbuf),
+    ("file_identifier_icon_visible", bool),
+    ("file_identifier_sort", str),
+    ("source_type", str),
+    ("country_code", str),
 ]
 
 ModelColumns = IntEnum(
     "ModelColumns", {name.upper(): idx for idx, (name, _) in enumerate(MODEL_SCHEMA)}
 )
 MODEL_TYPES = [type_ for _, type_ in MODEL_SCHEMA]
-
-from translation_helper import _
 
 
 class WebSearch(Gramplet):
@@ -157,6 +175,8 @@ class WebSearch(Gramplet):
         Sets up all required components, directories, signal emitters, and configuration managers.
         Also initializes the Gramplet GUI and internal context for tracking active Gramps objects.
         """
+
+        self.version = GrampletVersionExtractor().get()
         self._context = SimpleNamespace(
             person=None,
             family=None,
@@ -188,13 +208,16 @@ class WebSearch(Gramplet):
             context_menu=self.builder.get_object("context_menu"),
             context_menu_items=SimpleNamespace(
                 add_note=self.builder.get_object("add_note"),
+                add_attribute=self.builder.get_object("add_attribute"),
                 show_qr=self.builder.get_object("show_qr"),
                 copy_link=self.builder.get_object("copy_link"),
                 hide_selected=self.builder.get_object("hide_selected"),
                 hide_all=self.builder.get_object("hide_all"),
             ),
             text_renderers=SimpleNamespace(
-                locale=self.builder.get_object("locale_text_renderer"),
+                file_identifier=self.builder.get_object(
+                    "file_identifier_text_renderer"
+                ),
                 keys_replaced=self.builder.get_object("keys_replaced_renderer"),
                 slash=self.builder.get_object("slash_renderer"),
                 keys_total=self.builder.get_object("keys_total_renderer"),
@@ -207,11 +230,13 @@ class WebSearch(Gramplet):
                 visited=self.builder.get_object("visited_icon_renderer"),
                 saved=self.builder.get_object("saved_icon_renderer"),
                 user_data=self.builder.get_object("user_data_icon_renderer"),
-                locale=self.builder.get_object("locale_icon_renderer"),
+                file_identifier=self.builder.get_object(
+                    "file_identifier_icon_renderer"
+                ),
             ),
             columns=SimpleNamespace(
                 icons=self.builder.get_object("icons_column"),
-                locale=self.builder.get_object("locale_column"),
+                file_identifier=self.builder.get_object("file_identifier_column"),
                 keys=self.builder.get_object("keys_column"),
                 title=self.builder.get_object("title_column"),
                 url=self.builder.get_object("url_column"),
@@ -227,6 +252,7 @@ class WebSearch(Gramplet):
         self.signal_emitter = WebSearchSignalEmitter()
         self.attribute_loader = AttributeMappingLoader()
         self.attribute_links_loader = AttributeLinksLoader()
+        self.internet_links_loader = InternetLinksLoader()
         self.config_ini_manager = ConfigINIManager()
         self.settings_ui_manager = SettingsUIManager(self.config_ini_manager)
         self.website_loader = WebsiteLoader()
@@ -249,9 +275,7 @@ class WebSearch(Gramplet):
 
     def refresh_ai_section(self):
         """Updates AI provider settings and fetches AI-recommended sites if necessary."""
-        locales, domains, include_global = self.website_loader.get_domains_data(
-            self.config_ini_manager
-        )
+        ai_domin_data = self.website_loader.get_domains_data(self.config_ini_manager)
 
         self.toggle_badges_visibility()
 
@@ -276,7 +300,7 @@ class WebSearch(Gramplet):
 
         threading.Thread(
             target=self.fetch_sites_in_background,
-            args=(domains, locales, include_global),
+            args=(ai_domin_data,),
             daemon=True,
         ).start()
 
@@ -286,20 +310,17 @@ class WebSearch(Gramplet):
             if not os.path.exists(directory):
                 os.makedirs(directory, exist_ok=True)
 
-    def fetch_sites_in_background(self, csv_domains, locales, include_global):
+    def fetch_sites_in_background(self, ai_domain_data: AIDomainData):
         """Fetches AI-recommended genealogy sites in a background thread."""
-        skipped_domains = self.website_loader.load_skipped_domains()
-        all_excluded_domains = csv_domains.union(skipped_domains)
+        ai_domain_data.skipped_domains = self.website_loader.load_skipped_domains()
         try:
-            results = self.finder.find_sites(
-                all_excluded_domains, locales, include_global
-            )
+            results = self.finder.find_sites(ai_domain_data)
             GObject.idle_add(self.signal_emitter.emit, "sites-fetched", results)
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             print(f"❌ Error fetching sites: {e}", file=sys.stderr)
             GObject.idle_add(self.signal_emitter.emit, "sites-fetched", None)
 
-    def on_sites_fetched(self, gramplet, results):
+    def on_sites_fetched(self, unused_gramplet, results):
         """
         Handles the 'sites-fetched' signal and populates badges if valid results are received.
         """
@@ -317,7 +338,7 @@ class WebSearch(Gramplet):
                     self.populate_badges(domain_url_pairs)
             except json.JSONDecodeError as e:
                 print(f"❌ JSON Decode Error: {e}", file=sys.stderr)
-            except Exception as e:
+            except Exception as e:  # pylint: disable=broad-exception-caught
                 print(f"❌ Error processing sites: {e}", file=sys.stderr)
 
     def db_changed(self):
@@ -333,6 +354,7 @@ class WebSearch(Gramplet):
                 config_ini_manager=self.config_ini_manager,
             )
         )
+        self.note_links_loader = NoteLinksLoader(self.dbstate.db)
 
         self.connect_signal("Person", self.active_person_changed)
         self.connect_signal("Place", self.active_place_changed)
@@ -341,6 +363,8 @@ class WebSearch(Gramplet):
         self.connect_signal("Event", self.active_event_changed)
         self.connect_signal("Citation", self.active_citation_changed)
         self.connect_signal("Media", self.active_media_changed)
+        self.connect_signal("Note", self.active_note_changed)
+        self.connect_signal("Repository", self.active_repository_changed)
 
         active_person_handle = self.gui.uistate.get_active("Person")
         active_place_handle = self.gui.uistate.get_active("Place")
@@ -349,6 +373,8 @@ class WebSearch(Gramplet):
         active_event_handle = self.gui.uistate.get_active("Event")
         active_citation_handle = self.gui.uistate.get_active("Citation")
         active_media_handle = self.gui.uistate.get_active("Media")
+        active_note_handle = self.gui.uistate.get_active("Note")
+        active_repository_handle = self.gui.uistate.get_active("Repository")
 
         if active_person_handle:
             self.active_person_changed(active_person_handle)
@@ -364,12 +390,16 @@ class WebSearch(Gramplet):
             self.active_citation_changed(active_citation_handle)
         elif active_media_handle:
             self.active_media_changed(active_media_handle)
+        elif active_note_handle:
+            self.active_note_changed(active_note_handle)
+        elif active_repository_handle:
+            self.active_repository_changed(active_repository_handle)
 
         notebook = self.gui.uistate.viewmanager.notebook
         if notebook:
             notebook.connect("switch-page", self.on_category_changed)
 
-    def on_category_changed(self, notebook, page, page_num, *args):
+    def on_category_changed(self, unused_notebook, unused_page, page_num, *unused_args):
         """Handle changes in the selected category and update the context."""
         try:
             page_lookup = self.gui.uistate.viewmanager.page_lookup
@@ -387,31 +417,66 @@ class WebSearch(Gramplet):
                     else:
                         self.model.clear()
                     break
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             self.model.clear()
 
     def populate_links(self, core_keys, attribute_keys, nav_type, obj):
         """Populates the list model with formatted website links relevant to the current entity."""
         self.model.clear()
+
+        context = LinkContext(
+            core_keys=core_keys,
+            attribute_keys=attribute_keys,
+            nav_type=nav_type,
+            obj=obj,
+        )
+
+        websites = self.collect_all_websites(context)
+        self.insert_websites_into_model(websites, context)
+
+    def collect_all_websites(self, ctx):
+        """Returns a combined list of all applicable websites for the given entity context."""
         websites = self.website_loader.load_websites(self.config_ini_manager)
 
         if self._show_attribute_links:
-            attr_websites = self.attribute_links_loader.get_links_from_attributes(
-                obj, nav_type
+            websites += self.attribute_links_loader.get_links_from_attributes(
+                ctx.obj, ctx.nav_type
             )
-            websites += attr_websites
 
-        common_data = (core_keys, attribute_keys, nav_type, obj)
+        if self._show_internet_links and ctx.nav_type in [
+            SupportedNavTypes.PEOPLE.value,
+            SupportedNavTypes.PLACES.value,
+            SupportedNavTypes.REPOSITORIES.value,
+        ]:
+            websites += self.internet_links_loader.get_links_from_internet_objects(
+                ctx.obj, ctx.nav_type
+            )
+
+        if self._show_note_links:
+            websites += self.note_links_loader.get_links_from_notes(
+                ctx.obj, ctx.nav_type
+            )
+
+        return websites
+
+    def insert_websites_into_model(self, websites, link_context: LinkContext):
+        """Formats each website entry and appends it to the Gtk model."""
         for website_data in websites:
-            model_row = self.model_row_generator.generate(common_data, website_data)
+            model_row = self.model_row_generator.generate(link_context, website_data)
             if model_row:
                 self.model.append([model_row[name] for name, _ in MODEL_SCHEMA])
 
-    def on_link_clicked(self, tree_view, path, column):
+    def on_link_clicked(self, unused_tree_view, path, unused_column):
         """Handles the event when a URL is clicked in the tree view and opens the link."""
         tree_iter = self.model.get_iter(path)
         url = self.model.get_value(tree_iter, ModelColumns.FINAL_URL.value)
-        encoded_url = urllib.parse.quote(url, safe=URL_SAFE_CHARS)
+
+        if url.startswith("gramps://"):
+            self.open_internal_link(url)
+        else:
+            encoded_url = urllib.parse.quote(url, safe=URL_SAFE_CHARS)
+            display_url(encoded_url)
+
         self.add_icon_event(
             SimpleNamespace(
                 file_path=VISITED_HASH_FILE_PATH,
@@ -421,7 +486,15 @@ class WebSearch(Gramplet):
                 model_visibility_pos=ModelColumns.VISITED_ICON_VISIBLE.value,
             )
         )
-        display_url(encoded_url)
+
+    def open_internal_link(self, url):
+        """Opens internal Gramps link using EditObject."""
+        try:
+            if url.startswith("gramps://"):
+                obj_class, prop, value = url[9:].split("/")
+                EditObject(self.dbstate, self.gui.uistate, [], obj_class, prop, value)
+        except Exception as e:  # pylint: disable=broad-exception-caught
+            print(f"❌ Error when open the internal link: {url} - {e}")
 
     def add_icon_event(self, settings):
         """Adds a visual icon to the model and saves the hash when a link is clicked."""
@@ -444,7 +517,7 @@ class WebSearch(Gramplet):
                 self.ui.columns.icons.set_sizing(Gtk.TreeViewColumnSizing.AUTOSIZE)
                 self.ui.columns.icons.set_fixed_width(-1)
                 self.ui.columns.icons.queue_resize()
-            except Exception as e:
+            except Exception as e:  # pylint: disable=broad-exception-caught
                 print(f"❌ Error loading icon: {e}", file=sys.stderr)
 
     def active_person_changed(self, handle):
@@ -453,9 +526,14 @@ class WebSearch(Gramplet):
         self._context.last_active_entity_type = "Person"
         self.close_context_menu()
 
+        if handle is None:
+            self.model.clear()
+            return
+
         person = self.dbstate.db.get_person_from_handle(handle)
         self._context.person = person
         if not person:
+            self.model.clear()
             return
 
         person_data, attribute_keys = self.entity_data_builder.get_person_data(person)
@@ -469,9 +547,15 @@ class WebSearch(Gramplet):
         self._context.last_active_entity_handle = handle
         self._context.last_active_entity_type = "Event"
         self.close_context_menu()
+
+        if handle is None:
+            self.model.clear()
+            return
+
         event = self.dbstate.db.get_event_from_handle(handle)
         self._context.event = event
         if not event:
+            self.model.clear()
             return
 
         self.populate_links({}, {}, SupportedNavTypes.EVENTS.value, event)
@@ -482,9 +566,15 @@ class WebSearch(Gramplet):
         self._context.last_active_entity_handle = handle
         self._context.last_active_entity_type = "Citation"
         self.close_context_menu()
+
+        if handle is None:
+            self.model.clear()
+            return
+
         citation = self.dbstate.db.get_citation_from_handle(handle)
         self._context.citation = citation
         if not citation:
+            self.model.clear()
             return
 
         self.populate_links({}, {}, SupportedNavTypes.CITATIONS.value, citation)
@@ -496,37 +586,89 @@ class WebSearch(Gramplet):
         self._context.last_active_entity_type = "Media"
         self.close_context_menu()
 
+        if handle is None:
+            self.model.clear()
+            return
+
         media = self.dbstate.db.get_media_from_handle(handle)
         self._context.media = media
         if not media:
+            self.model.clear()
             return
 
         self.populate_links({}, {}, SupportedNavTypes.MEDIA.value, media)
+        self.update()
+
+    def active_note_changed(self, handle):
+        """Handles updates when the active note changes in the GUI."""
+        self._context.last_active_entity_handle = handle
+        self._context.last_active_entity_type = "Note"
+        self.close_context_menu()
+
+        if handle is None:
+            self.model.clear()
+            return
+
+        note = self.dbstate.db.get_note_from_handle(handle)
+        self._context.note = note
+        if not note:
+            self.model.clear()
+            return
+
+        self.populate_links({}, {}, SupportedNavTypes.NOTES.value, note)
+        self.update()
+
+    def active_repository_changed(self, handle):
+        """Handles updates when the active repository changes in the GUI."""
+        self._context.last_active_entity_handle = handle
+        self._context.last_active_entity_type = "Repository"
+        self.close_context_menu()
+
+        if handle is None:
+            self.model.clear()
+            return
+
+        repository = self.dbstate.db.get_repository_from_handle(handle)
+        self._context.repository = repository
+        if not repository:
+            self.model.clear()
+            return
+
+        self.populate_links({}, {}, SupportedNavTypes.REPOSITORIES.value, repository)
         self.update()
 
     def active_place_changed(self, handle):
         """Handles updates when the active place changes in the GUI."""
         self._context.last_active_entity_handle = handle
         self._context.last_active_entity_type = "Place"
-        try:
-            place = self.dbstate.db.get_place_from_handle(handle)
-            self._context.place = place
-            if not place:
-                return
 
-            place_data = self.entity_data_builder.get_place_data(place)
-            self.populate_links(place_data, {}, SupportedNavTypes.PLACES.value, place)
-            self.update()
-        except Exception:
-            print(traceback.format_exc(), file=sys.stderr)
+        if handle is None:
+            self.model.clear()
+            return
+
+        place = self.dbstate.db.get_place_from_handle(handle)
+        self._context.place = place
+        if not place:
+            self.model.clear()
+            return
+
+        place_data = self.entity_data_builder.get_place_data(place)
+        self.populate_links(place_data, {}, SupportedNavTypes.PLACES.value, place)
+        self.update()
 
     def active_source_changed(self, handle):
         """Handles updates when the active source changes in the GUI."""
         self._context.last_active_entity_handle = handle
         self._context.last_active_entity_type = "Source"
+
+        if handle is None:
+            self.model.clear()
+            return
+
         source = self.dbstate.db.get_source_from_handle(handle)
         self._context.source = source
         if not source:
+            self.model.clear()
             return
 
         source_data = self.entity_data_builder.get_source_data(source)
@@ -537,9 +679,15 @@ class WebSearch(Gramplet):
         """Handles updates when the active family changes in the GUI."""
         self._context.last_active_entity_handle = handle
         self._context.last_active_entity_type = "Family"
+
+        if handle is None:
+            self.model.clear()
+            return
+
         family = self.dbstate.db.get_family_from_handle(handle)
         self._context.family = family
         if not family:
+            self.model.clear()
             return
 
         family_data = self.entity_data_builder.get_family_data(family)
@@ -575,7 +723,9 @@ class WebSearch(Gramplet):
             column.set_reorderable(True)
 
         # Columns sorting
-        self.add_sorting(self.ui.columns.locale, ModelColumns.SOURCE_TYPE_SORT.value)
+        self.add_sorting(
+            self.ui.columns.file_identifier, ModelColumns.FILE_IDENTIFIER_SORT.value
+        )
         self.add_sorting(self.ui.columns.title, ModelColumns.TITLE.value)
         self.add_sorting(self.ui.columns.url, ModelColumns.FORMATTED_URL.value)
         self.add_sorting(self.ui.columns.comment, ModelColumns.COMMENT.value)
@@ -641,21 +791,25 @@ class WebSearch(Gramplet):
             ModelColumns.DISPLAY_KEYS_COUNT.value,
         )
         self.ui.text_renderers.keys_total.set_property("foreground", "green")
-        self.ui.columns.locale.add_attribute(
-            self.ui.text_renderers.locale, "text", ModelColumns.LOCALE_TEXT.value
+        self.ui.columns.file_identifier.add_attribute(
+            self.ui.text_renderers.file_identifier,
+            "text",
+            ModelColumns.FILE_IDENTIFIER_TEXT.value,
         )
-        self.ui.columns.locale.add_attribute(
-            self.ui.text_renderers.locale,
+        self.ui.columns.file_identifier.add_attribute(
+            self.ui.text_renderers.file_identifier,
             "visible",
-            ModelColumns.LOCALE_TEXT_VISIBLE.value,
+            ModelColumns.FILE_IDENTIFIER_TEXT_VISIBLE.value,
         )
-        self.ui.columns.locale.add_attribute(
-            self.ui.icon_renderers.locale, "pixbuf", ModelColumns.LOCALE_ICON.value
+        self.ui.columns.file_identifier.add_attribute(
+            self.ui.icon_renderers.file_identifier,
+            "pixbuf",
+            ModelColumns.FILE_IDENTIFIER_ICON.value,
         )
-        self.ui.columns.locale.add_attribute(
-            self.ui.icon_renderers.locale,
+        self.ui.columns.file_identifier.add_attribute(
+            self.ui.icon_renderers.file_identifier,
             "visible",
-            ModelColumns.LOCALE_ICON_VISIBLE.value,
+            ModelColumns.FILE_IDENTIFIER_ICON_VISIBLE.value,
         )
         self.ui.columns.title.add_attribute(
             self.ui.text_renderers.title, "text", ModelColumns.TITLE.value
@@ -706,7 +860,9 @@ class WebSearch(Gramplet):
             "websearch.display_columns", DEFAULT_DISPLAY_COLUMNS
         )
         self.ui.columns.icons.set_visible("icons" in self._display_columns)
-        self.ui.columns.locale.set_visible("locale" in self._display_columns)
+        self.ui.columns.file_identifier.set_visible(
+            "file_identifier" in self._display_columns
+        )
         self.ui.columns.keys.set_visible("keys" in self._display_columns)
         self.ui.columns.title.set_visible("title" in self._display_columns)
         self.ui.columns.url.set_visible("url" in self._display_columns)
@@ -714,13 +870,14 @@ class WebSearch(Gramplet):
 
     def translate(self):
         """Sets translated text for UI elements and context menu."""
-        self.ui.columns.locale.set_title("")
+        self.ui.columns.file_identifier.set_title("")
         self.ui.columns.keys.set_title(_("Keys"))
         self.ui.columns.title.set_title(_("Title"))
         self.ui.columns.url.set_title(_("Website URL"))
         self.ui.columns.comment.set_title(_("Comment"))
 
         self.ui.context_menu_items.add_note.set_label(_("Add link to note"))
+        self.ui.context_menu_items.add_attribute.set_label(_("Add link to attribute"))
         self.ui.context_menu_items.show_qr.set_label(_("Show QR-code"))
         self.ui.context_menu_items.copy_link.set_label(_("Copy link to clipboard"))
         self.ui.context_menu_items.hide_selected.set_label(
@@ -788,7 +945,7 @@ class WebSearch(Gramplet):
 
         return badge_box
 
-    def on_button_press_event(self, widget, event, url):
+    def on_button_press_event(self, unused_widget, unused_event, url):
         """Handles button press event to open a URL."""
         self.open_url(url)
 
@@ -796,7 +953,7 @@ class WebSearch(Gramplet):
         """Opens the given URL in the default web browser."""
         webbrowser.open(urllib.parse.quote(url, safe=URL_SAFE_CHARS))
 
-    def on_remove_badge(self, button, badge):
+    def on_remove_badge(self, unused_button, badge):
         """Handles removing a badge and saving its domain to skipped list."""
         domain_label = None
         for child in badge.get_children():
@@ -815,54 +972,135 @@ class WebSearch(Gramplet):
         if event.button == RIGHT_MOUSE_BUTTON:
             path_info = widget.get_path_at_pos(event.x, event.y)
             if path_info:
-                path, column, cell_x, cell_y = path_info
+                path, unused_column, unused_cell_x, unused_cell_y = path_info
                 tree_iter = self.model.get_iter(path)
                 if not tree_iter or not self.model.iter_is_valid(tree_iter):
                     return
                 url = self.model.get_value(tree_iter, ModelColumns.FINAL_URL.value)
                 nav_type = self.model.get_value(tree_iter, ModelColumns.NAV_TYPE.value)
+                source_type = self.model.get_value(
+                    tree_iter, ModelColumns.SOURCE_TYPE.value
+                )
+                saved_icon_visible = self.model.get_value(
+                    tree_iter, ModelColumns.SAVED_ICON_VISIBLE.value
+                )
 
                 self._context.active_tree_path = path
                 self._context.active_url = url
                 self.ui.context_menu.show_all()
-                # add_attribute_item = self.builder.get_object("AddAttribute")
 
-                if nav_type == SupportedNavTypes.PEOPLE.value:
-                    # add_attribute_item.show()
+                if (
+                    nav_type
+                    in [
+                        SupportedNavTypes.PEOPLE.value,
+                        SupportedNavTypes.FAMILIES.value,
+                        SupportedNavTypes.EVENTS.value,
+                        SupportedNavTypes.MEDIA.value,
+                        SupportedNavTypes.SOURCES.value,
+                        SupportedNavTypes.CITATIONS.value,
+                        SupportedNavTypes.REPOSITORIES.value,
+                        SupportedNavTypes.PLACES.value,
+                    ]
+                    and source_type != SourceTypes.NOTE.value
+                    and not saved_icon_visible
+                ):
                     self.ui.context_menu_items.add_note.show()
                 else:
-                    # add_attribute_item.hide()
                     self.ui.context_menu_items.add_note.hide()
+
+                if (
+                    nav_type
+                    in [
+                        SupportedNavTypes.PEOPLE.value,
+                        SupportedNavTypes.FAMILIES.value,
+                        SupportedNavTypes.EVENTS.value,
+                        SupportedNavTypes.MEDIA.value,
+                        SupportedNavTypes.SOURCES.value,
+                        SupportedNavTypes.CITATIONS.value,
+                    ]
+                    and source_type != SourceTypes.ATTRIBUTE.value
+                    and not saved_icon_visible
+                ):
+                    self.ui.context_menu_items.add_attribute.show()
+                else:
+                    self.ui.context_menu_items.add_attribute.hide()
 
                 self.ui.context_menu.popup_at_pointer(event)
 
-    def on_add_note(self, widget):
+    def on_add_note(self, unused_widget):
         """Adds the current selected URL as a note to the person record."""
         if not self._context.active_tree_path:
             print("❌ Error: No saved path to the iterator!", file=sys.stderr)
             return
 
         note = Note()
+        tree_iter = self.get_active_tree_iter(self._context.active_tree_path)
         note.set(
             _(
-                "📌 This web link was added using the WebSearch gramplet for future reference:\n\n"
-                "🔗 {url}\n\nYou can use this link to revisit the source and verify the "
-                "information related to this person."
-            ).format(url=self._context.active_url)
+                "📌 This '{title}' web link was archived for future reference by the "
+                "WebSearch gramplet (v. {version}):\n\n"
+                "🔗 {url}\n\n"
+                "You can use this link to revisit the source and verify the information "
+                "related to this entity."
+            ).format(
+                title=self.model.get_value(tree_iter, ModelColumns.TITLE.value),
+                version=self.version,
+                url=self._context.active_url,
+            )
         )
 
         note.set_privacy(True)
-
-        tree_iter = self.get_active_tree_iter(self._context.active_tree_path)
         nav_type = self.model.get_value(tree_iter, ModelColumns.NAV_TYPE.value)
         note_handle = None
 
-        with DbTxn(_("Add Web Link Note"), self.dbstate.db) as trans:
+        with DbTxn("Add Web Link Note", self.dbstate.db) as trans:
             if nav_type == SupportedNavTypes.PEOPLE.value:
                 note.set_type(NoteType.PERSON)
                 note_handle = self.dbstate.db.add_note(note, trans)
                 self._context.person.add_note(note_handle)
                 self.dbstate.db.commit_person(self._context.person, trans)
+
+            elif nav_type == SupportedNavTypes.FAMILIES.value:
+                note.set_type(NoteType.FAMILY)
+                note_handle = self.dbstate.db.add_note(note, trans)
+                self._context.family.add_note(note_handle)
+                self.dbstate.db.commit_family(self._context.family, trans)
+
+            elif nav_type == SupportedNavTypes.EVENTS.value:
+                note.set_type(NoteType.EVENT)
+                note_handle = self.dbstate.db.add_note(note, trans)
+                self._context.event.add_note(note_handle)
+                self.dbstate.db.commit_event(self._context.event, trans)
+
+            elif nav_type == SupportedNavTypes.PLACES.value:
+                note.set_type(NoteType.PLACE)
+                note_handle = self.dbstate.db.add_note(note, trans)
+                self._context.place.add_note(note_handle)
+                self.dbstate.db.commit_place(self._context.place, trans)
+
+            elif nav_type == SupportedNavTypes.SOURCES.value:
+                note.set_type(NoteType.SOURCE)
+                note_handle = self.dbstate.db.add_note(note, trans)
+                self._context.source.add_note(note_handle)
+                self.dbstate.db.commit_source(self._context.source, trans)
+
+            elif nav_type == SupportedNavTypes.CITATIONS.value:
+                note.set_type(NoteType.CITATION)
+                note_handle = self.dbstate.db.add_note(note, trans)
+                self._context.citation.add_note(note_handle)
+                self.dbstate.db.commit_citation(self._context.citation, trans)
+
+            elif nav_type == SupportedNavTypes.REPOSITORIES.value:
+                note.set_type(NoteType.REPO)
+                note_handle = self.dbstate.db.add_note(note, trans)
+                self._context.repository.add_note(note_handle)
+                self.dbstate.db.commit_repository(self._context.repository, trans)
+
+            elif nav_type == SupportedNavTypes.MEDIA.value:
+                note.set_type(NoteType.MEDIA)
+                note_handle = self.dbstate.db.add_note(note, trans)
+                self._context.media.add_note(note_handle)
+                self.dbstate.db.commit_media(self._context.media, trans)
 
         tree_iter = self.get_active_tree_iter(self._context.active_tree_path)
         self.add_icon_event(
@@ -882,11 +1120,11 @@ class WebSearch(Gramplet):
                 _("Note #%(id)s has been successfully added") % {"id": note_gramps_id}
             )
             notification.show_all()
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             notification = self.show_notification(_("Error creating note"))
             notification.show_all()
 
-    def on_show_qr_code(self, widget):
+    def on_show_qr_code(self, unused_widget):
         """Opens a window showing the QR code for the selected URL."""
         selection = self.ui.tree_view.get_selection()
         model, tree_iter = selection.get_selected()
@@ -895,7 +1133,7 @@ class WebSearch(Gramplet):
             qr_window = QRCodeWindow(url)
             qr_window.show_all()
 
-    def on_copy_url_to_clipboard(self, widget):
+    def on_copy_url_to_clipboard(self, unused_widget):
         """Copies the selected URL to the system clipboard."""
         selection = self.ui.tree_view.get_selection()
         model, tree_iter = selection.get_selected()
@@ -907,7 +1145,7 @@ class WebSearch(Gramplet):
             notification = self.show_notification(_("URL is copied to the Clipboard"))
             notification.show_all()
 
-    def on_hide_link_for_selected_item(self, widget):
+    def on_hide_link_for_selected_item(self, unused_widget):
         """Hides the selected link only for the current Gramps object."""
         selection = self.ui.tree_view.get_selection()
         model, tree_iter = selection.get_selected()
@@ -923,7 +1161,7 @@ class WebSearch(Gramplet):
                 )
             model.remove(tree_iter)
 
-    def on_hide_link_for_all_items(self, widget):
+    def on_hide_link_for_all_items(self, unused_widget):
         """Hides the selected link for all Gramps objects."""
         selection = self.ui.tree_view.get_selection()
         model, tree_iter = selection.get_selected()
@@ -953,28 +1191,58 @@ class WebSearch(Gramplet):
             self.ui.tree_view.set_cursor(tree_path)
             tree_iter = self.model.get_iter(tree_path)
             return tree_iter
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             print(f"❌ Error in get_active_tree_iter: {e}", file=sys.stderr)
             return None
 
-    def on_add_attribute(self, widget):
+    def on_add_attribute(self, unused_widget):
         """(Unused) Adds the selected URL as an attribute to the person."""
         if not self._context.active_tree_path:
             print("❌ Error: No saved path to the iterator!", file=sys.stderr)
             return
 
-        attribute = Attribute()
+        tree_iter = self.get_active_tree_iter(self._context.active_tree_path)
+        nav_type = self.model.get_value(tree_iter, ModelColumns.NAV_TYPE.value)
+
+        if nav_type in [
+            SupportedNavTypes.PEOPLE.value,
+            SupportedNavTypes.FAMILIES.value,
+            SupportedNavTypes.EVENTS.value,
+            SupportedNavTypes.MEDIA.value,
+        ]:
+            attribute = Attribute()
+
+        if nav_type in [
+            SupportedNavTypes.SOURCES.value,
+            SupportedNavTypes.CITATIONS.value,
+        ]:
+            attribute = SrcAttribute()
+
         attribute.set_type(_("WebSearch Link"))
         attribute.set_value(self._context.active_url)
         attribute.set_privacy(True)
 
-        tree_iter = self.get_active_tree_iter(self._context.active_tree_path)
-        # nav_type = self.model.get_value(tree_iter, ModelColumns.NAV_TYPE.value)
-
-        # with DbTxn(_("Add Web Link Attribute"), self.dbstate.db) as trans:
-        #    if nav_type == SupportedNavTypes.PEOPLE.value:
-        #        self._context.person.add_attribute(attribute)
-        #        self.dbstate.db.commit_person(self._context.person, trans)
+        with DbTxn("Add Web Link Attribute", self.dbstate.db) as trans:
+            if nav_type == SupportedNavTypes.PEOPLE.value:
+                self._context.person.add_attribute(attribute)
+                self.dbstate.db.commit_person(self._context.person, trans)
+            elif nav_type == SupportedNavTypes.FAMILIES.value:
+                self._context.family.add_attribute(attribute)
+                self.dbstate.db.commit_family(self._context.family, trans)
+            elif nav_type == SupportedNavTypes.EVENTS.value:
+                self._context.event.add_attribute(attribute)
+                self.dbstate.db.commit_event(self._context.event, trans)
+            elif nav_type == SupportedNavTypes.MEDIA.value:
+                self._context.media.add_attribute(attribute)
+                self.dbstate.db.commit_media(self._context.media, trans)
+            elif nav_type == SupportedNavTypes.SOURCES.value:
+                self._context.source.add_attribute(attribute)
+                self.dbstate.db.commit_source(self._context.source, trans)
+            elif nav_type == SupportedNavTypes.CITATIONS.value:
+                self._context.citation.add_attribute(attribute)
+                self.dbstate.db.commit_citation(self._context.citation, trans)
+            else:
+                return
 
         tree_iter = self.get_active_tree_iter(self._context.active_tree_path)
         self.add_icon_event(
@@ -987,39 +1255,50 @@ class WebSearch(Gramplet):
             )
         )
 
-    def on_query_tooltip(self, widget, x, y, keyboard_mode, tooltip):
+        notification = self.show_notification(
+            _("Attribute has been successfully added")
+        )
+        notification.show_all()
+
+    def on_query_tooltip(self, widget, x, y, unused_keyboard_mode, tooltip):
         """Displays a tooltip with key and comment information."""
         bin_x, bin_y = widget.convert_widget_to_bin_window_coords(x, y)
         path_info = widget.get_path_at_pos(bin_x, bin_y)
 
         if path_info:
-            path, column, cell_x, cell_y = path_info
+            path, *_ = path_info
             tree_iter = self.model.get_iter(path)
-            title = self.model.get_value(tree_iter, ModelColumns.TITLE.value)
-            comment = self.model.get_value(tree_iter, ModelColumns.COMMENT.value) or ""
-
-            keys_json = self.model.get_value(tree_iter, ModelColumns.KEYS_JSON.value)
-            keys = json.loads(keys_json)
-            replaced_keys = [
-                f"{key}={value}"
-                for var in keys["replaced_keys"]
-                for key, value in var.items()
-            ]
-            empty_keys = list(keys["empty_keys"])
-
-            tooltip_text = _("Title: {title}\n").format(title=title)
-            if replaced_keys:
-                tooltip_text += _("Replaced: {keys}\n").format(
-                    keys=", ".join(replaced_keys)
-                )
-            if empty_keys:
-                tooltip_text += _("Empty: {keys}\n").format(keys=", ".join(empty_keys))
-            if comment:
-                tooltip_text += _("Comment: {comment}\n").format(comment=comment)
-            tooltip_text = tooltip_text.rstrip()
+            tooltip_text = self._build_tooltip_text(tree_iter)
             tooltip.set_text(tooltip_text)
             return True
         return False
+
+    def _build_tooltip_text(self, tree_iter):
+        """Builds the tooltip text from a model row."""
+        title = self.model.get_value(tree_iter, ModelColumns.TITLE.value)
+        comment = self.model.get_value(tree_iter, ModelColumns.COMMENT.value) or ""
+        keys_json = self.model.get_value(tree_iter, ModelColumns.KEYS_JSON.value)
+        keys = json.loads(keys_json)
+
+        replaced_keys = [
+            f"{key}={value}"
+            for var in keys["replaced_keys"]
+            for key, value in var.items()
+        ]
+        empty_keys = list(keys["empty_keys"])
+
+        tooltip_lines = [_("Title: {title}").format(title=title)]
+
+        if replaced_keys:
+            tooltip_lines.append(
+                _("Replaced: {keys}").format(keys=", ".join(replaced_keys))
+            )
+        if empty_keys:
+            tooltip_lines.append(_("Empty: {keys}").format(keys=", ".join(empty_keys)))
+        if comment:
+            tooltip_lines.append(_("Comment: {comment}").format(comment=comment))
+
+        return "\n".join(tooltip_lines)
 
     def build_options(self):
         """Builds the list of configurable options for the Gramplet."""
@@ -1062,8 +1341,13 @@ class WebSearch(Gramplet):
         self.config_ini_manager.set_boolean_option(
             "websearch.show_attribute_links", self.opts[10].get_value()
         )
-
-        selected_labels = self.opts[11].get_selected()
+        self.config_ini_manager.set_boolean_option(
+            "websearch.show_internet_links", self.opts[11].get_value()
+        )
+        self.config_ini_manager.set_boolean_option(
+            "websearch.show_note_links", self.opts[12].get_value()
+        )
+        selected_labels = self.opts[13].get_selected()
         selected_columns = [
             key
             for key, label in ALL_COLUMNS_LOCALIZED.items()
@@ -1073,7 +1357,7 @@ class WebSearch(Gramplet):
             "websearch.display_columns", selected_columns
         )
 
-        selected_labels = self.opts[12].get_selected()
+        selected_labels = self.opts[14].get_selected()
         selected_icons = [
             key
             for key, label in ALL_ICONS_LOCALIZED.items()
@@ -1153,6 +1437,12 @@ class WebSearch(Gramplet):
         )
         self._show_attribute_links = self.config_ini_manager.get_boolean_option(
             "websearch.show_attribute_links", DEFAULT_SHOW_ATTRIBUTE_LINKS
+        )
+        self._show_internet_links = self.config_ini_manager.get_boolean_option(
+            "websearch.show_internet_links", DEFAULT_SHOW_INTERNET_LINKS
+        )
+        self._show_note_links = self.config_ini_manager.get_boolean_option(
+            "websearch.show_note_links", DEFAULT_SHOW_NOTE_LINKS
         )
         self._columns_order = self.config_ini_manager.get_list(
             "websearch.columns_order", DEFAULT_COLUMNS_ORDER

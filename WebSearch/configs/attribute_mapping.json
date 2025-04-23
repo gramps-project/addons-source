@@ -13,6 +13,12 @@
   },
   {
     "nav_type": "Person",
+    "attribute_name": "_FSFTID",
+    "url_regex": ".*familysearch\\.org/tree/lite/person/.*",
+    "key_name": "FamilySearch.personID"
+  },
+  {
+    "nav_type": "Person",
     "attribute_name": "WikiTreeID",
     "url_regex": ".*wikitree\\.com/wiki/.*",
     "key_name": "WikiTree.ID"
@@ -94,5 +100,11 @@
     "attribute_name": "InstagramID",
     "url_regex": ".*instagram\\.com/.*",
     "key_name": "Instagram.ID"
+  },
+  {
+    "nav_type": "Person",
+    "attribute_name": "GedbasID",
+    "url_regex": ".*gedbas\\.de/uid/.*",
+    "key_name": "Gedbas.ID"
   }
 ]
