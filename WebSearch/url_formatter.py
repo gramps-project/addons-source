@@ -29,11 +29,12 @@ user preferences and key replacement patterns.
 """
 
 import re
+
 from constants import (
+    DEFAULT_QUERY_PARAMETERS_REPLACEMENT,
     DEFAULT_SHOW_SHORT_URL,
     DEFAULT_URL_COMPACTNESS_LEVEL,
     DEFAULT_URL_PREFIX_REPLACEMENT,
-    DEFAULT_QUERY_PARAMETERS_REPLACEMENT,
     URL_PREFIXES_TO_TRIM,
     URLCompactnessLevel,
 )

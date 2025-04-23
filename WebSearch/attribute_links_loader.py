@@ -22,13 +22,15 @@
 
 """Extracts web links from attributes of Gramps objects for the WebSearch Gramplet."""
 
-import re
-from gramps.gen.lib.srcattrtype import SrcAttributeType
 from gramps.gen.lib import AttributeType
+from gramps.gen.lib.srcattrtype import SrcAttributeType
 
+from url_utils import UrlUtils
 from constants import SourceTypes
+from models import WebsiteEntry
 
 
+# pylint: disable=too-few-public-methods
 class AttributeLinksLoader:
     """
     Extracts direct URLs from the attributes of a Gramps object.
@@ -40,68 +42,46 @@ class AttributeLinksLoader:
 
     def __init__(self):
         """Initialize the regular expression for detecting URLs in attribute values."""
-        self.url_regex = re.compile(r"https?://[^\s]+")
+        self.url_regex = UrlUtils.compile_regex()
 
     def get_links_from_attributes(self, obj, nav_type):
-        """
-        Extract links from attributes of a given Gramps object.
-
-        Args:
-            obj: The Gramps object (e.g., Person, Source, etc.) to scan.
-            nav_type (str): The navigation type of the object (e.g., "People").
-
-        Returns:
-            list: A list of 7-element tuples representing found URLs. Each tuple contains:
-                (nav_type, "ATTR", title, is_enabled, url, comment, is_custom)
-        """
+        """Extract links from attributes of a given Gramps object."""
         links = []
 
         if not hasattr(obj, "get_attribute_list"):
             return links
 
         for attr in obj.get_attribute_list():
-            attr_type = attr.get_type()
 
-            if isinstance(attr_type, AttributeType):
-                attr_name = attr_type.type2base()
-            elif isinstance(attr_type, SrcAttributeType):
-                attr_name = attr_type.string
-            else:
+            attr_name = self.get_attribute_name(attr.get_type())
+            if not attr_name:
                 continue
 
             attr_value = attr.get_value()
             if not isinstance(attr_value, str):
                 continue
 
-            url = self._extract_url(attr_value)
+            url = UrlUtils.extract_url(attr_value, self.url_regex)
             if url:
-                title = attr_name.strip()
-                comment = None
-                is_enabled = True
-                is_custom = True
                 links.append(
-                    (
-                        nav_type,
-                        SourceTypes.ATTR.value,
-                        title,
-                        is_enabled,
-                        url,
-                        comment,
-                        is_custom,
+                    WebsiteEntry(
+                        nav_type=nav_type,
+                        country_code=None,
+                        source_type=SourceTypes.ATTRIBUTE.value,
+                        title=(attr_name or "").strip(),
+                        is_enabled=True,
+                        url_pattern=UrlUtils.clean_url(url),
+                        comment=None,
+                        is_custom_file=False,
                     )
                 )
 
         return links
 
-    def _extract_url(self, text):
-        """
-        Extract the first URL found in the given text.
-
-        Args:
-            text (str): The string to search for a URL.
-
-        Returns:
-            str or None: The extracted URL if found, otherwise None.
-        """
-        match = self.url_regex.search(text)
-        return match.group(0) if match else None
+    def get_attribute_name(self, attr_type):
+        """Returns the name of the attribute type or None if unsupported."""
+        if isinstance(attr_type, AttributeType):
+            return attr_type.type2base()
+        if isinstance(attr_type, SrcAttributeType):
+            return attr_type.string
+        return None

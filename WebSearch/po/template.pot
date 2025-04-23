@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-31 10:01+0300\n"
+"POT-Creation-Date: 2025-04-15 16:42+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <jurchello@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,18 +90,26 @@ msgid "Mistral Model"
 msgstr ""
 
 #: settings_ui_manager.py:189
-msgid "Show Links From Attributes"
+msgid "Show Links From the 'Attributes' tab"
 msgstr ""
 
-#: settings_ui_manager.py:220
+#: settings_ui_manager.py:194
+msgid "Show Links From the 'Internet' tab"
+msgstr ""
+
+#: settings_ui_manager.py:199
+msgid "Show Links From the Notes"
+msgstr ""
+
+#: settings_ui_manager.py:230
 msgid "Enable CSV Files"
 msgstr ""
 
-#: settings_ui_manager.py:227
+#: settings_ui_manager.py:237
 msgid "Display Columns"
 msgstr ""
 
-#: settings_ui_manager.py:241
+#: settings_ui_manager.py:251
 msgid "Display Icons"
 msgstr ""
 
@@ -115,165 +123,177 @@ msgid ""
 "Family, or Source record"
 msgstr ""
 
-#: constants.py:260
+#: constants.py:311
 msgid "Column - Icons"
 msgstr ""
 
-#: constants.py:261
+#: constants.py:312
 msgid "Column - Source Types (flags)"
 msgstr ""
 
-#: constants.py:262
+#: constants.py:313
 msgid "Column - Keys"
 msgstr ""
 
-#: constants.py:263
+#: constants.py:314
 msgid "Column - Title"
 msgstr ""
 
-#: constants.py:264
+#: constants.py:315
 msgid "Column - Website Url"
 msgstr ""
 
-#: constants.py:265
+#: constants.py:316
 msgid "Column - Comment"
 msgstr ""
 
-#: constants.py:290
+#: constants.py:345
 msgid "Icon - Visited URLs (checkmark)"
 msgstr ""
 
-#: constants.py:291
+#: constants.py:346
 msgid "Icon - Saved URLs (floppy disk)"
 msgstr ""
 
-#: constants.py:292
+#: constants.py:347
 msgid "Icon - URLs linked to UID attributes (UID badge)"
 msgstr ""
 
-#: constants.py:293
+#: constants.py:348
 msgid "Icon - URLs from regional CSV files (flag)"
 msgstr ""
 
-#: constants.py:294
+#: constants.py:349
 msgid "Icon - URLs from static CSV files (red pin)"
 msgstr ""
 
-#: constants.py:295
+#: constants.py:350
 msgid "Icon - URLs from common CSV files (earth)"
 msgstr ""
 
-#: constants.py:296
-msgid "Icon - Direct URLs from attributes (link chain)"
-msgstr ""
-
-#: constants.py:297
+#: constants.py:351
 msgid "Icon - URLs from cross CSV files (shuffle arrows)"
 msgstr ""
 
-#: constants.py:298
+#: constants.py:352
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr ""
 
-#: qr_window.py:76
+#: constants.py:353
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr ""
+
+#: constants.py:354
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr ""
+
+#: constants.py:355
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr ""
+
+#: qr_window.py:77
 msgid "QR-code"
 msgstr ""
 
-#: qr_window.py:114
+#: qr_window.py:115
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
 msgstr ""
 
-#: WebSearch.py:718
+#: WebSearch.py:874
 msgid "Keys"
 msgstr ""
 
-#: WebSearch.py:719
+#: WebSearch.py:875
 msgid "Title"
 msgstr ""
 
-#: WebSearch.py:720
+#: WebSearch.py:876
 msgid "Website URL"
 msgstr ""
 
-#: WebSearch.py:721
+#: WebSearch.py:877
 msgid "Comment"
 msgstr ""
 
-#: WebSearch.py:723
+#: WebSearch.py:879
 msgid "Add link to note"
 msgstr ""
 
-#: WebSearch.py:724
+#: WebSearch.py:880
+msgid "Add link to attribute"
+msgstr ""
+
+#: WebSearch.py:881
 msgid "Show QR-code"
 msgstr ""
 
-#: WebSearch.py:725
+#: WebSearch.py:882
 msgid "Copy link to clipboard"
 msgstr ""
 
-#: WebSearch.py:727
+#: WebSearch.py:884
 msgid "Hide link for selected item"
 msgstr ""
 
-#: WebSearch.py:729
+#: WebSearch.py:886
 msgid "Hide link for all items"
 msgstr ""
 
-#: WebSearch.py:731
+#: WebSearch.py:888
 msgid "🔍 AI Suggestions"
 msgstr ""
 
-#: WebSearch.py:848
+#: WebSearch.py:1040
 #, python-brace-format
 msgid ""
-"📌 This web link was added using the WebSearch gramplet for future "
-"reference:\n"
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
 "\n"
 "🔗 {url}\n"
 "\n"
 "You can use this link to revisit the source and verify the information "
-"related to this person."
+"related to this entity."
 msgstr ""
 
-#: WebSearch.py:860
-msgid "Add Web Link Note"
-msgstr ""
-
-#: WebSearch.py:882
+#: WebSearch.py:1120
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr ""
 
-#: WebSearch.py:886
+#: WebSearch.py:1124
 msgid "Error creating note"
 msgstr ""
 
-#: WebSearch.py:907
+#: WebSearch.py:1145
 msgid "URL is copied to the Clipboard"
 msgstr ""
 
-#: WebSearch.py:967
+#: WebSearch.py:1205
 msgid "WebSearch Link"
 msgstr ""
 
-#: WebSearch.py:1010
-#, python-brace-format
-msgid "Title: {title}\n"
+#: WebSearch.py:1246
+msgid "Attribute has been successfully added"
 msgstr ""
 
-#: WebSearch.py:1012
+#: WebSearch.py:1277
 #, python-brace-format
-msgid "Replaced: {keys}\n"
+msgid "Title: {title}"
 msgstr ""
 
-#: WebSearch.py:1016
+#: WebSearch.py:1281
 #, python-brace-format
-msgid "Empty: {keys}\n"
+msgid "Replaced: {keys}"
 msgstr ""
 
-#: WebSearch.py:1018
+#: WebSearch.py:1284
 #, python-brace-format
-msgid "Comment: {comment}\n"
+msgid "Empty: {keys}"
+msgstr ""
+
+#: WebSearch.py:1286
+#, python-brace-format
+msgid "Comment: {comment}"
 msgstr ""

@@ -25,23 +25,26 @@ This module provides the WebsiteLoader class responsible for managing
 CSV-based website data for the WebSearch Gramplet in Gramps.
 
 It supports loading genealogy websites from both built-in and user-defined
-CSV files, handles state tracking via hash files, and extracts locale/domain
+CSV files, handles state tracking via hash files, and extracts country_code/domain
 information for site suggestions and filtering.
 """
 
-import os
 import csv
-import sys
 import hashlib
+import os
+import sys
 
 from constants import (
     CSV_DIR,
-    USER_DATA_CSV_DIR,
     DEFAULT_ENABLED_FILES,
     SKIPPED_DOMAIN_SUGGESTIONS_FILE_PATH,
-    SourceTypes,
+    USER_DATA_CSV_DIR,
+    SUPPORTED_NAV_TYPE_VALUES,
+    SUPPORTED_SOURCE_TYPE_VALUES,
     CsvColumnNames,
+    SourceTypes,
 )
+from models import WebsiteEntry, AIDomainData
 
 
 class WebsiteLoader:
@@ -54,12 +57,8 @@ class WebsiteLoader:
     - Supports enabling/disabling websites via user-defined configuration.
     - Generates unique hash values for tracking visited and saved websites.
     - Maintains a list of skipped domains to avoid irrelevant suggestions.
-    - Extracts domains and locales for AI-based recommendations.
+    - Extracts domains and country_codes for AI-based recommendations.
     """
-
-    locales = set()
-    domains = set()
-    include_global = False
 
     @staticmethod
     def get_csv_files():
@@ -147,11 +146,21 @@ class WebsiteLoader:
     @classmethod
     def load_websites(cls, config_ini_manager):
         """
-        Loads websites from selected CSV files into a list.
+        Loads websites from selected CSV files into a list of SimpleNamespace objects.
+
+        Each CSV row is parsed and expanded into one or more website entries based on nav types.
+        The resulting objects contain structured website data for use in the WebSearch Gramplet.
 
         Returns:
-            list: Each item is a list containing:
-                [nav_type, locale, title, is_enabled, url, comment, is_custom_file]
+            list[SimpleNamespace]: Each object contains the following attributes:
+                - nav_type (str): Navigation type (e.g. "person", "family", etc.)
+                - country_code (Optional[str]): Country code derived from filename (e.g. "UA")
+                - source_type (Optional[str]): Source type derived from filename (e.g. "COMMUNITY")
+                - title (str): Human-readable title of the website
+                - is_enabled (str): Raw 'is_enabled' value from CSV (usually "1" or "0")
+                - url (str): URL or pattern from the CSV row
+                - comment (Optional[str]): Optional comment field
+                - is_custom_file (bool): True if the file comes from the user CSV folder
         """
         websites = []
         selected_csv_files = cls.get_selected_csv_files(config_ini_manager)
@@ -160,15 +169,14 @@ class WebsiteLoader:
             if not os.path.exists(selected_file_path):
                 continue
 
-            locale = (
-                os.path.splitext(os.path.basename(selected_file_path))[0]
-                .replace("-links", "")
-                .upper()
-            )
+            file_identifier = cls.extract_file_identifier(selected_file_path)
+            country_code, source_type = cls.parse_file_identifier(file_identifier)
             is_custom_file = selected_file_path.startswith(USER_DATA_CSV_DIR)
 
             with open(selected_file_path, "r", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
+                if not reader.fieldnames:
+                    continue
                 reader.fieldnames = [
                     name.strip() if name else name for name in reader.fieldnames
                 ]
@@ -177,60 +185,81 @@ class WebsiteLoader:
                     if not row:
                         continue
 
-                    nav_type = row.get(CsvColumnNames.NAV_TYPE.value, "").strip()
+                    nav_type_raw = row.get(CsvColumnNames.NAV_TYPE.value, "").strip()
                     title = row.get(CsvColumnNames.TITLE.value, "").strip()
                     is_enabled = row.get(CsvColumnNames.IS_ENABLED.value, "").strip()
                     url = row.get(CsvColumnNames.URL.value, "").strip()
                     comment = row.get(CsvColumnNames.COMMENT.value, None)
 
-                    if not all([nav_type, title, is_enabled, url]):
+                    if not all([nav_type_raw, title, is_enabled, url]):
                         print(
                             f"⚠️ Some data missing in: {selected_file_path}. A row is skipped: "
                             f"{row}",
                             file=sys.stderr,
                         )
-
                         continue
 
-                    websites.append(
-                        [
-                            nav_type,
-                            locale,
-                            title,
-                            is_enabled,
-                            url,
-                            comment,
-                            is_custom_file,
-                        ]
-                    )
+                    nav_types = cls.expand_nav_types(nav_type_raw)
+                    for nav_type in nav_types:
+                        websites.append(
+                            WebsiteEntry(
+                                nav_type=nav_type,
+                                country_code=country_code,
+                                source_type=source_type,
+                                title=title,
+                                is_enabled=is_enabled,
+                                url_pattern=url,
+                                comment=comment,
+                                is_custom_file=is_custom_file,
+                            )
+                        )
+
         return websites
+
+    @staticmethod
+    def expand_nav_types(nav_type_raw):
+        """
+        Parses and expands navigation type field from CSV, handling '*' as all supported types.
+        """
+        nav_type_raw = nav_type_raw.strip()
+        if nav_type_raw == "*":
+            return SUPPORTED_NAV_TYPE_VALUES
+
+        return [
+            nt.strip()
+            for nt in nav_type_raw.split(",")
+            if nt.strip() in SUPPORTED_NAV_TYPE_VALUES
+        ]
 
     @classmethod
     def get_domains_data(cls, config_ini_manager):
         """
-        Scans selected CSV files and extracts locales, domains, and include_global flag.
-
-        Returns:
-            tuple: (locales: set, domains: set, include_global: bool)
+        Scans selected CSV files and extracts domains, country_codes and URLs
+        grouped by source type.
         """
         selected_csv_files = cls.get_selected_csv_files(config_ini_manager)
-        cls.locales = set()
-        cls.domains = set()
-        cls.include_global = False
+
+        community_country_codes = set()
+        regular_country_codes = set()
+        regular_domains = set()
+        community_urls = set()
+        include_global = False
 
         for selected_file_path in selected_csv_files:
+
             if not os.path.exists(selected_file_path):
                 continue
 
-            locale = (
-                os.path.splitext(os.path.basename(selected_file_path))[0]
-                .replace("-links", "")
-                .upper()
-            )
-            if locale == SourceTypes.COMMON.value:
-                cls.include_global = True
-            else:
-                cls.locales.add(locale)
+            file_identifier = cls.extract_file_identifier(selected_file_path)
+            country_code, source_type = cls.parse_file_identifier(file_identifier)
+            if source_type == SourceTypes.COMMON.value:
+                include_global = True
+
+            if source_type == SourceTypes.COMMUNITY.value and country_code:
+                community_country_codes.add(country_code)
+
+            elif country_code:
+                regular_country_codes.add(country_code)
 
             with open(selected_file_path, "r", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
@@ -242,7 +271,76 @@ class WebsiteLoader:
                     if not row:
                         continue
                     url = row.get(CsvColumnNames.URL.value, "").strip()
-                    domain = url.split("/")[2] if "//" in url else url
-                    cls.domains.add(domain)
+                    if not url:
+                        continue
 
-        return cls.locales, cls.domains, cls.include_global
+                    if source_type == SourceTypes.COMMUNITY.value:
+                        community_urls.add(url)
+                    else:
+                        domain = url.split("/")[2] if "//" in url else url
+                        regular_domains.add(domain)
+
+        return AIDomainData(
+            community_country_codes=community_country_codes,
+            regular_country_codes=regular_country_codes,
+            regular_domains=regular_domains,
+            community_urls=community_urls,
+            include_global=include_global,
+        )
+
+    @staticmethod
+    def parse_file_identifier(file_identifier):
+        """
+        Parses a file identifier string into a country code and a source type.
+
+        The file identifier is typically derived from the filename by removing the extension
+        and the '-links' suffix. For example:
+            - "UA-COMMUNITY" → country_code = "UA", source_type = "COMMUNITY"
+            - "COMMON" → country_code = None, source_type = "COMMON"
+            - "PL" → country_code = "PL", source_type = None
+            - "PL-STATIC" → country_code = "PL", source_type = "STATIC"
+        """
+        parts = file_identifier.upper().split("-")
+
+        source_type = None
+        country_code = None
+
+        for part in parts:
+            if part in SUPPORTED_SOURCE_TYPE_VALUES and source_type is None:
+                source_type = part
+            elif part not in SUPPORTED_SOURCE_TYPE_VALUES and country_code is None:
+                country_code = part
+
+            if source_type and country_code:
+                break
+
+        return country_code, source_type
+
+    @staticmethod
+    def extract_file_identifier(file_path: str) -> str:
+        """
+        Extracts a normalized file identifier from the given file path.
+
+        This method:
+        - Removes the file extension (e.g., ".csv")
+        - Strips the "-links" suffix if present
+        - Converts the result to uppercase
+
+        This identifier is used to derive source type and country code via `parse_file_identifier`.
+
+        Example:
+            "pl-links.csv" → "PL"
+            "ua-community-links.csv" → "UA-COMMUNITY"
+            "common-links.csv" → "COMMON"
+
+        Args:
+            file_path (str): Full path to the CSV file.
+
+        Returns:
+            str: Normalized, uppercase file identifier.
+        """
+        return (
+            os.path.splitext(os.path.basename(file_path))[0]
+            .replace("-links", "")
+            .upper()
+        )
