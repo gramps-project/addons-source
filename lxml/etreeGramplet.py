@@ -210,7 +210,7 @@ class etreeGramplet(Gramplet):
 
         entry = self.entry.get_text()
         #if ' ' in entry:
-            #ErrorDialog(_('Space character on filename or path'), _('Please fix space on "%s"') % entry)
+            #ErrorDialog(_('Space character on filename or path'), _('Please fix space on "%s"') % entry, parent=self.uistate.window)
             #return
 
         #if Path(os.path.join(USER_PLUGINS, 'lxml', 'etree.xml')).exists():
@@ -243,7 +243,7 @@ class etreeGramplet(Gramplet):
         try:
             os.system(f'gunzip < "{entry}" > "{filename}"')
         except Exception as e:
-            ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry)
+            ErrorDialog(_('Is it a compressed .gramps?'), _('Cannot uncompress "%s"') % entry, parent=self.uistate.window)
             raise e
 
 
@@ -254,7 +254,7 @@ class etreeGramplet(Gramplet):
         try:
             copyfile(entry, filename)
         except FileNotFoundError or IsADirectoryError as e:
-            ErrorDialog(_('Is it a .gramps?'), _('Cannot copy "%s"') % entry)
+            ErrorDialog(_('Is it a .gramps?'), _('Cannot copy "%s"') % entry, parent=self.uistate.window)
             raise e
 
 
@@ -285,7 +285,7 @@ class etreeGramplet(Gramplet):
             tree = ElementTree.parse(Path(filename))
             self.parse_xml(tree, Path(filename))
         except FileNotFoundError as e:
-             ErrorDialog(_('Filenames issue or white space character on filename path'), '%s' % e)
+             ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename}, parent=self.uistate.window)
 
 
     def parse_xml(self, tree, filename):
