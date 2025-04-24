@@ -45,7 +45,7 @@ register(
     expand=True,
     gramplet="WebSearch",
     gramplet_title=_("WebSearch"),
-    gramps_target_version="6.0",
+    gramps_target_version="5.2",
     navtypes=[
         "Person",
         "Place",
