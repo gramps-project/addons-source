@@ -26,14 +26,6 @@ websites in JSON format.
 import sys
 import traceback
 
-try:
-    import requests
-except ImportError:
-    print(
-        "⚠ The 'requests' module is missing. Install it using: `pip install requests`.",
-        file=sys.stderr,
-    )
-
 from site_finder_prompt import BasePromptBuilder
 from models import AIDomainData
 
@@ -56,6 +48,15 @@ class MistralSiteFinder:
 
     def find_sites(self, ai_domain_data: AIDomainData):
         """Query Mistral to find genealogy research websites."""
+
+        try:
+            import requests
+        except ImportError:
+            print(
+                "⚠ The 'requests' module is missing. Install it using: `pip install requests`.",
+                file=sys.stderr,
+            )
+            return "[]"
 
         system_message, user_message = self.prompt_builder.build_prompt(ai_domain_data)
 
