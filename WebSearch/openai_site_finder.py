@@ -28,14 +28,6 @@ websites in JSON format.
 import sys
 import traceback
 
-try:
-    import openai
-except ImportError:
-    print(
-        "⚠ OpenAI module is missing. Install it using: `pip install openai`.",
-        file=sys.stderr,
-    )
-
 from site_finder_prompt import BasePromptBuilder
 from models import AIDomainData
 
@@ -57,6 +49,15 @@ class OpenaiSiteFinder:
 
     def find_sites(self, ai_domain_data: AIDomainData):
         """Query OpenAI to find genealogy research websites."""
+
+        try:
+            import openai
+        except ImportError:
+            print(
+                "⚠ OpenAI module is missing. Install it using: `pip install openai`.",
+                file=sys.stderr,
+            )
+            return "[]"
 
         system_message, user_message = self.prompt_builder.build_prompt(ai_domain_data)
 
