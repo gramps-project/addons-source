@@ -137,6 +137,6 @@ class DegreesOfSeparation(Rule):
                 if mother_h:
                     self.persons.add(mother_h)
 
-    def apply(self, db, person):
+    def apply_to_one(self, db, person):
         """Check if the filter applies to the person."""
         return person.handle in self.ref_list
