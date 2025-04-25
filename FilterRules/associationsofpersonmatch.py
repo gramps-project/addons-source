@@ -49,7 +49,7 @@ class AssociationsOfPersonMatch(Rule):
     namespace = 'Person'
 
     def prepare(self, db, user):
-        """Prepare a refernece list for the filter."""
+        """Prepare a reference list for the filter."""
         self.persons = set()
         iter_persons = db.iter_person_handles()
         filter_ = MatchesFilter(self.list).find_filter()

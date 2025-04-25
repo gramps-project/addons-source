@@ -34,7 +34,7 @@ Descendant Report Differences:
 ==============================
 Most of these specific differences I would hope end up in Trunk/Core as such
 there are bug/feature requets logged for each one.  If the bugs are marked
-resolved then they've been integrated and you can ignore the refernece here. or
+resolved then they've been integrated and you can ignore the reference here. or
 Just ping me to remove the reference. Other changes like the suppression of
 duplicates really only apply when there are more than one report being printed
 as such are unique to these plugins.
