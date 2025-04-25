@@ -69,7 +69,7 @@ class HasPersonEventRole(Rule):
     description = _("Matches people with an event with a selected role")
     category = _('Event filters')
 
-    def apply(self, dbase, person):
+    def apply_to_one(self, dbase, person):
         if not self.list[0]:
             return False
         for event_ref in person.get_event_ref_list():
@@ -93,7 +93,7 @@ class HasFamilyEventRole(Rule):
     description = _("Matches families with an event with a selected role")
     category = _('Event filters')
 
-    def apply(self, dbase, family):
+    def apply_to_one(self, dbase, family):
         if not self.list[0]:
             return False
         for event_ref in family.get_event_ref_list():
