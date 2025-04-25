@@ -195,12 +195,12 @@ class etreeGramplet(Gramplet):
 
     def build_options(self):
         from gramps.gen.plug.menu import NumberOption
-        self.add_option(NumberOption(_("Number of editions back"),
+        self.add_option(NumberOption(_("Number of additions and modifications back"),
                                      self.last, 2, 5000))
 
 
     def save_options(self):
-        self.last = int(self.get_option(_("Number of editions back")).get_value())
+        self.last = int(self.get_option(_("Number of additions and modifications back")).get_value())
 
 
     def run(self, obj):
@@ -506,7 +506,7 @@ class etreeGramplet(Gramplet):
 
         try:
             elast = epoch(tevent[-1])
-            print('DB: Last event object edition on/at:', elast)
+            print('DB: Last event object addition or modification on:', elast)
         except IndexError:
             pass
 
