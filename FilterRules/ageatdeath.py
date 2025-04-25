@@ -97,6 +97,6 @@ class AgeAtDeath(Rule):
                     elif leg == "greater than" and age[0] > max_age:
                         self.ref_list.add(person_h)
 
-    def apply(self, db, person):
+    def apply_to_one(self, db, person):
         """Check if the filter applies to the person."""
         return person.handle in self.ref_list
