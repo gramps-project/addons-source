@@ -138,6 +138,17 @@ class lxmlGramplet(Gramplet):
         a Run button.
         """
 
+        self.xmllint = "--nonet " # space at the end for additional options
+        self.load_trace = False
+        self.testIO = False
+        self.valid = False
+        self.dropdtd = False
+        self.recover = False
+        self.help = False
+        self.debug_places = False
+        self.debug_xml = False
+        self.extra = False
+
         # filename and selector
 
         self.__base_path = USER_HOME
@@ -194,6 +205,13 @@ class lxmlGramplet(Gramplet):
         vbox.show_all()
 
 
+    def post_init(self):
+        """
+        hook into post initialization phase
+        """
+        pass
+
+
     def __select_file(self, obj):
         """
         Callback function to handle the open button press
@@ -226,6 +244,40 @@ class lxmlGramplet(Gramplet):
         self.__base_path = str(Path(path).parent) or os.getcwd()  # pathlib
         self.__file_name = Path(path).name  # pathlib
         self.entry.set_text(str(Path(os.path.join(self.__base_path, self.__file_name))))  #  pathlib
+
+
+    def build_options(self):
+        """
+        Build options for the gramplet.
+        """
+        from gramps.gen.plug.menu import StringOption, BooleanOption
+        self.add_option(StringOption(_("xmllint options"),
+                                     self.xmllint))
+        self.add_option(BooleanOption("load_trace", self.load_trace))
+        self.add_option(BooleanOption("testIO", self.testIO))
+        self.add_option(BooleanOption("valid", self.valid))
+        self.add_option(BooleanOption("dropdtd", self.dropdtd))
+        self.add_option(BooleanOption("recover", self.recover))
+        self.add_option(BooleanOption("more", self.help))
+        self.add_option(BooleanOption(_("debug places"), self.debug_places))
+        self.add_option(BooleanOption(_("debug xml"), self.debug_xml))
+        self.add_option(BooleanOption("xmltodict", self.extra))
+
+
+    def save_options(self):
+        """
+        Save the options for the gramplet.
+        """
+        self.xmllint = self.get_option(_("xmllint options")).get_value()
+        self.load_trace = self.get_option("load_trace").get_value()
+        self.testIO = self.get_option("testIO").get_value()
+        self.valid = self.get_option("valid").get_value()
+        self.dropdtd = self.get_option("dropdtd").get_value()
+        self.recover = self.get_option("recover").get_value()
+        self.help = self.get_option("more").get_value()
+        self.debug_places = self.get_option(_("debug places")).get_value()
+        self.debug_xml = self.get_option(_("debug xml")).get_value()
+        self.extra = self.get_option("xmltodict").get_value()
 
 
     def run(self, obj):
@@ -336,14 +388,17 @@ class lxmlGramplet(Gramplet):
         # RNG validation via xmllint (libxml2-utils)
 
         rng = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.rng')
+        options = self.xmllint
+        if self.help:
+            os.system(f'xmllint')
 
         try:
             if os.name is 'nt':
-                os.system(f'xmllint --relaxng {rng} --noout {filename}')
+                os.system(f'xmllint --relaxng {rng} --noout {filename} {options}')
                 LOG.debug('xmllint (relaxng) : %s' % filename)
             else:
                 LOG.debug('xmllint (relaxng) : %s' % filename)
-                os.system(f'xmllint --relaxng file://{rng} --noout {filename}')
+                os.system(f'xmllint --relaxng file://{rng} --noout {filename} {options}')
         except Exception as e:
             LOG.info(_('xmllint: skip RelaxNG validation for "%(file)s"') % {'file': entry})
 
@@ -354,7 +409,8 @@ class lxmlGramplet(Gramplet):
             current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.2//EN" "http://gramps-project.org/xml/1.7.2/grampsxml.dtd">'
             if self.rng_validation(tree, rng):
                 try:
-                    self.xmltodict(Path(filename))
+                    if self.extra:
+                        self.xmltodict(Path(filename))
                     self.parse_xml(tree)
                 except:
                     ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename}, parent=self.uistate.window)
@@ -510,7 +566,8 @@ class lxmlGramplet(Gramplet):
                         else:
                             translation = xml_lang()[0:2]
                             where = text + _(' - (? or %(lang)s)') % {'lang':translation}
-                            LOG.info(where)
+                            if self.debug_places:
+                                print(where)
                         if text not in places:
                             places.append(text) # temp display
                     if three.tag == (NAMESPACE + 'stitle') and three.text not in sources:
@@ -663,14 +720,29 @@ class lxmlGramplet(Gramplet):
         else:
             return
 
-        #dump = objectify.dump(database)
-        #print(dump)
+        if self.debug_xml:
+            print(objectify.dump(database))
+
 
     def check_valid(self, filename):
         """
         Validate the XML file against the DTD schema.
         """
-        self.text.set_text('validating DTD')
+        options = self.xmllint
+
+        if self.load_trace:
+            options += "--load-trace "
+        if self.testIO:
+            options += "--testIO "
+        if self.valid:
+            options += "--valid "
+        if self.dropdtd:
+            options += "--dropdtd "
+        if self.recover:
+            options += "--recover "
+        LOG.debug("'$ xmllint " + options + "' object %s" % self.get_option_widget(_("xmllint options")))
+
+        self.text.set_text(f'validating DTD with {options}')
 
         # syntax check against DTD for file format
         # xmllint --loaddtd --dtdvalid --valid --shell --noout ...
@@ -678,9 +750,9 @@ class lxmlGramplet(Gramplet):
         dtd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
             if os.name is 'nt':
-                os.system(f'xmllint --dtdvalid {dtd} --noout --dropdtd {filename}')
+                os.system(f'xmllint --dtdvalid {dtd} --noout --dropdtd {filename} {options}')
             else:
-                os.system(f'xmllint --dtdvalid file://{dtd} --noout --dropdtd {filename}')
+                os.system(f'xmllint --dtdvalid file://{dtd} --noout --dropdtd {filename} {options}')
         except Exception as e:
             LOG.info(_('xmllint: skip DTD validation'))
 
@@ -723,7 +795,8 @@ class lxmlGramplet(Gramplet):
 
         # only for info
 
-        doc = etree.ElementTree(xml)
+        if self.debug_xml:
+            LOG.debug(etree.ElementTree(xml))
 
         # custom countries list (re-use some Gramps translations ...) ;)
 
