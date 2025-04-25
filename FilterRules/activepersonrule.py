@@ -48,7 +48,7 @@ class IsActivePerson(Rule):
     description = _("Matches the active person")
 
     def prepare(self, db, user):
-        self.active_person_handle = user.uistate.get_active('Person') if user.uistate else None
+        self.active_person_handle = user.uistate.get_active('Person') if (user and user.uistate) else None
         if not self.active_person_handle:
             user.warn("No active Person")
 
