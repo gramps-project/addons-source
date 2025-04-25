@@ -41,7 +41,7 @@ from gramps.gen.filters.rules import Rule
 #
 #-------------------------------------------------------------------------
 class IsActivePerson(Rule):
-    """Rule that checks for tha active person in the database"""
+    """Rule that checks for the active person in the database"""
 
     name = _('Active person')
     category = _('General filters')

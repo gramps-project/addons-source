@@ -74,7 +74,7 @@ class AgeAtDeath(Rule):
     description = _("Filter people by their age at death")
 
     def prepare(self, db, user):
-        """Prepare a refernece list for the filter."""
+        """Prepare a reference list for the filter."""
         self.ref_list = set()
         leg = self.list[0]  # LesserEqualGreater
         max_age = int(self.list[1])
