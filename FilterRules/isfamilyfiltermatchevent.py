@@ -75,8 +75,7 @@ class IsFamilyFilterMatchEvent(MatchesFilterBase):
                 family = db.get_family_from_handle(family_handle)
                 if self.MFF.apply_to_one(db, family):
                     event_refs = family.get_event_ref_list()
-                    for event_ref in event_refs:
-                        self.events.add(event_ref.ref)
+                    self.events.update(event_refs)
 
     def apply_to_one(self, db, obj):
         """
@@ -84,6 +83,4 @@ class IsFamilyFilterMatchEvent(MatchesFilterBase):
 
         :returns: True or False
         """
-        if obj.get_handle() in self.events:
-            return True
-        return False
+        return obj.handle in self.events
