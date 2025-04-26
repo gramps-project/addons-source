@@ -60,4 +60,4 @@ class AssociationsOfPersonMatch(Rule):
 
     def apply_to_one(self, db, person):
         """Check if the filter applies to the person."""
-        return person.get_handle() in self.persons
+        return person.handle in self.persons
