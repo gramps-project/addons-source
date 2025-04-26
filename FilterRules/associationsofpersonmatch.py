@@ -53,7 +53,7 @@ class AssociationsOfPersonMatch(Rule):
         self.persons = set()
         iter_persons = db.iter_person_handles()
         filter_ = MatchesFilter(self.list).find_filter()
-        handle_list = filter_.apply(db, iter_persons)
+        handle_list = filter_.apply(db, iter_persons, user=user)
         for handle in handle_list:
             person = db.get_person_from_handle(handle)
             self.persons.update([i.ref for i in person.get_person_ref_list()])
