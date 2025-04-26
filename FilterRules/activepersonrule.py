@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020  Paul Culley
+# Copyright (C) 2025  Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -47,13 +48,9 @@ class IsActivePerson(Rule):
     description = _("Matches the active person")
 
     def prepare(self, db, user):
-        self.pers_hndl = None
-        if user.uistate:
-            self.pers_hndl = user.uistate.get_active('Person')
-            if self.pers_hndl:
-                return
-        self.apply_to_one = lambda db, p: False
-        user.warn("No active Person")
+        self.active_person_handle = user.uistate.get_active('Person') if user.uistate else None
+        if not self.active_person_handle:
+            user.warn("No active Person")
 
     def apply_to_one(self, db, person):
-        return person.handle == self.pers_hndl
+        return person.handle == self.active_person_handle
