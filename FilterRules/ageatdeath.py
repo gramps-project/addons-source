@@ -106,8 +106,7 @@ class AgeAtDeath(Rule):
 
         max_age = int(self.list[1])
 
-        for person_h in db.iter_person_handles():
-            person = db.get_person_from_handle(person_h)
+        for person in db.iter_people():
             birth_ref = person.get_birth_ref()
             death_ref = person.get_death_ref()
             if birth_ref and death_ref:
@@ -118,7 +117,7 @@ class AgeAtDeath(Rule):
                 if birth_date.is_regular() and death_date.is_regular():
                     age = death_date - birth_date
                     if cmp(age[0], max_age):
-                        self.selected_handles.add(person_h)
+                        self.selected_handles.add(person.handle)
 
     def apply_to_one(self, db: Database, person: Person) -> bool:
         """Check if the filter applies to the person."""
