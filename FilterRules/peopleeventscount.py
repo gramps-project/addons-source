@@ -62,7 +62,7 @@ class PeopleEventsCount(Rule):
             self.count_type = 1  # "equal to"
         self.userSelectedCount = int(self.list[1])
 
-    def apply(self, dbase, person):
+    def apply_to_one(self, dbase, person):
         counter = 0
         for event_ref in person.get_event_ref_list():
             if not event_ref:
