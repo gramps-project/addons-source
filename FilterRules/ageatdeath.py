@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020    Matthias Kemmer
+# Copyright (C) 2025    Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,6 +19,11 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 """Filter rule that matches people by their age at death."""
+
+# ------------------------------------------------
+# python modules
+# ------------------------------------------------
+from operator import lt, eq, gt
 
 # -------------------------------------------------------------------------
 #
@@ -75,8 +81,16 @@ class AgeAtDeath(Rule):
 
     def prepare(self, db, user):
         """Prepare a reference list for the filter."""
-        self.ref_list = set()
+
+        cmp = None
         leg = self.list[0]  # LesserEqualGreater
+        if leg == "less than":
+            cmp = lt
+        elif leg == "equal to":
+            cmp = eq
+        elif leg == "greater than":
+            cmp = gt
+
         max_age = int(self.list[1])
 
         for person_h in db.iter_person_handles():
@@ -90,11 +104,7 @@ class AgeAtDeath(Rule):
                 death_date = death.get_date_object()
                 if birth_date.is_regular() and death_date.is_regular():
                     age = death_date - birth_date
-                    if leg == "less than" and age[0] < max_age:
-                        self.ref_list.add(person_h)
-                    elif leg == "equal to" and age[0] == max_age:
-                        self.ref_list.add(person_h)
-                    elif leg == "greater than" and age[0] > max_age:
+                    if cmp(age[0], max_age):
                         self.ref_list.add(person_h)
 
     def apply_to_one(self, db, person):
