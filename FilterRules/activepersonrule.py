@@ -24,6 +24,7 @@
 # Standard Python modules
 #
 #-------------------------------------------------------------------------
+from __future__ import annotations
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.gettext
 
@@ -34,6 +35,15 @@ _ = glocale.translation.gettext
 #-------------------------------------------------------------------------
 from gramps.gen.filters.rules import Rule
 
+# -------------------------------------------------------------------------
+#
+# Typing modules
+#
+# -------------------------------------------------------------------------
+from typing import Set
+from gramps.gen.types import PersonHandle
+from gramps.gen.lib import Person
+from gramps.gen.db import Database
 
 #-------------------------------------------------------------------------
 #
@@ -47,10 +57,13 @@ class IsActivePerson(Rule):
     category = _('General filters')
     description = _("Matches the active person")
 
-    def prepare(self, db, user):
-        self.active_person_handle = user.uistate.get_active('Person') if (user and user.uistate) else None
-        if not self.active_person_handle:
+    def prepare(self, db: Database, user):
+        self.selected_handles: Set[PersonHandle] = set()
+        active_person = user.uistate.get_active('Person') if (user and user.uistate) else None
+        if active_person:
+            self.selected_handles.add(active_person)
+        else:
             user.warn("No active Person")
 
-    def apply_to_one(self, db, person):
-        return person.handle == self.active_person_handle
+    def apply_to_one(self, db: Database, person: Person) -> bool:
+        return person.handle in self.selected_handles
