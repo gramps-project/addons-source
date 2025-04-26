@@ -135,8 +135,8 @@ class PersonsInFamilyFilterMatch(MatchesFilterBase):
         self.MFF_filt = self.find_filter()
         if self.MFF_filt:
             for family_handle in db.iter_family_handles():
-                if self.MFF_filt.check(db, family_handle):
-                    family = db.get_family_from_handle(family_handle)
+                family = db.get_family_from_handle(family_handle)
+                if self.MFF_filt.apply_to_one(db, family):
                     if bool(int(self.list[2])):
                         father = family.get_father_handle()
                         mother = family.get_mother_handle()
@@ -146,7 +146,7 @@ class PersonsInFamilyFilterMatch(MatchesFilterBase):
                         for child_ref in family.get_child_ref_list():
                             self.persons.add(child_ref.ref)
 
-    def apply(self, _db, obj):
+    def apply_to_one(self, _db, obj):
         """
         Return True if a person appies to the filter rule.
 
