@@ -51,10 +51,9 @@ class IsActivePerson(Rule):
         if user.uistate:
             self.pers_hndl = user.uistate.get_active('Person')
             if self.pers_hndl:
-                self.apply = self.apply_real
                 return
-        self.apply = lambda db, p: False
+        self.apply_to_one = lambda db, p: False
         user.warn("No active Person")
 
-    def apply_real(self, db, person):
+    def apply_to_one(self, db, person):
         return person.handle == self.pers_hndl
