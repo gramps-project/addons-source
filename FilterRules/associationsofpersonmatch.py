@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020    Matthias Kemmer
+# Copyright (C) 2025    Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,12 +22,30 @@
 
 # -------------------------------------------------------------------------
 #
+# Standard python modules
+#
+# -------------------------------------------------------------------------
+from __future__ import annotations
+
+# -------------------------------------------------------------------------
+#
 # Gramps modules
 #
 # -------------------------------------------------------------------------
 from gramps.gen.filters.rules import Rule
 from gramps.gen.filters.rules.person._matchesfilter import MatchesFilter
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+# -------------------------------------------------------------------------
+#
+# Typing modules
+#
+# -------------------------------------------------------------------------
+from typing import Set
+from gramps.gen.types import PersonHandle
+from gramps.gen.lib import Person
+from gramps.gen.db import Database
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -48,16 +67,18 @@ class AssociationsOfPersonMatch(Rule):
     category = _('General filters')
     namespace = 'Person'
 
-    def prepare(self, db, user):
+    def prepare(self, db: Database, user):
         """Prepare a reference list for the filter."""
-        self.persons = set()
+
         iter_persons = db.iter_person_handles()
         filter_ = MatchesFilter(self.list).find_filter()
         handle_list = filter_.apply(db, iter_persons, user=user)
-        for handle in handle_list:
-            person = db.get_person_from_handle(handle)
-            self.persons.update([i.ref for i in person.get_person_ref_list()])
 
-    def apply_to_one(self, db, person):
-        """Check if the filter applies to the person."""
-        return person.handle in self.persons
+        self.selected_handles: Set[PersonHandle] = set()
+        for handle in handle_list:
+            person = db.get_raw_person_data(handle)
+            self.selected_handles.update([r.ref for r in person.person_ref_list])
+
+    def apply_to_one(self, db: Database, person: Person) -> bool:
+        """Check if the rule matches the person."""
+        return person.handle in self.selected_handles
