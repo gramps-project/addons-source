@@ -58,6 +58,6 @@ class AssociationsOfPersonMatch(Rule):
             person = db.get_person_from_handle(handle)
             self.persons.update([i.ref for i in person.get_person_ref_list()])
 
-    def apply(self, db, person):
+    def apply_to_one(self, db, person):
         """Check if the filter applies to the person."""
         return person.get_handle() in self.persons
