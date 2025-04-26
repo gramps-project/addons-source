@@ -21,8 +21,9 @@
 """Filter rule that matches people by their age at death."""
 
 # ------------------------------------------------
-# python modules
+# Standard python modules
 # ------------------------------------------------
+from __future__ import annotations
 from operator import lt, eq, gt
 
 # -------------------------------------------------------------------------
@@ -33,6 +34,17 @@ from operator import lt, eq, gt
 from gramps.gen.filters.rules import Rule
 from gramps.gui.editors.filtereditor import MyInteger, MyLesserEqualGreater
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+# -------------------------------------------------------------------------
+#
+# Typing modules
+#
+# -------------------------------------------------------------------------
+from typing import Set
+from gramps.gen.types import PersonHandle
+from gramps.gen.lib import Person
+from gramps.gen.db import Database
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -79,8 +91,9 @@ class AgeAtDeath(Rule):
     category = _("General filters")
     description = _("Filter people by their age at death")
 
-    def prepare(self, db, user):
+    def prepare(self, db: Database, user):
         """Prepare a reference list for the filter."""
+        self.selected_handles: Set[PersonHandle] = set()
 
         cmp = None
         leg = self.list[0]  # LesserEqualGreater
@@ -105,8 +118,8 @@ class AgeAtDeath(Rule):
                 if birth_date.is_regular() and death_date.is_regular():
                     age = death_date - birth_date
                     if cmp(age[0], max_age):
-                        self.ref_list.add(person_h)
+                        self.selected_handles.add(person_h)
 
-    def apply_to_one(self, db, person):
+    def apply_to_one(self, db: Database, person: Person) -> bool:
         """Check if the filter applies to the person."""
-        return person.handle in self.ref_list
+        return person.handle in self.selected_handles
