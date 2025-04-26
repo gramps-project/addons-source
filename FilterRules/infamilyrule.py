@@ -134,17 +134,18 @@ class PersonsInFamilyFilterMatch(MatchesFilterBase):
         MatchesFilterBase.prepare(self, db, user)
         self.MFF_filt = self.find_filter()
         if self.MFF_filt:
+            include_children = bool(int(self.list[1]))
+            include_parents = bool(int(self.list[2]))
             for family_handle in db.iter_family_handles():
                 family = db.get_family_from_handle(family_handle)
                 if self.MFF_filt.apply_to_one(db, family):
-                    if bool(int(self.list[2])):
+                    if include_parents:
                         father = family.get_father_handle()
                         mother = family.get_mother_handle()
                         self.persons.add(father)
                         self.persons.add(mother)
-                    if bool(int(self.list[1])):
-                        for child_ref in family.get_child_ref_list():
-                            self.persons.add(child_ref.ref)
+                    if include_children:
+                        self.persons.update(family.get_child_ref_list()) 
 
     def apply_to_one(self, _db, obj):
         """
@@ -152,6 +153,4 @@ class PersonsInFamilyFilterMatch(MatchesFilterBase):
 
         :returns: True or False
         """
-        if obj.get_handle() in self.persons:
-            return True
-        return False
+        return obj.handle in self.persons
