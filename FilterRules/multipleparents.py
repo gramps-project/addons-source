@@ -43,5 +43,5 @@ class MultipleParents(Rule):
     description = _("Matches people who have more than one set of parents")
     category = _('Family filters')
 
-    def apply(self,db,person):
+    def apply_to_one(self,db,person):
         return len(person.get_parent_family_handle_list()) > 1
