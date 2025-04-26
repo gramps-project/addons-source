@@ -72,13 +72,13 @@ class IsFamilyFilterMatchEvent(MatchesFilterBase):
         self.MFF = self.find_filter()
         if self.MFF:
             for family_handle in db.iter_family_handles():
-                if self.MFF.check(db, family_handle):
-                    family = db.get_family_from_handle(family_handle)
+                family = db.get_family_from_handle(family_handle)
+                if self.MFF.apply_to_one(db, family):
                     event_refs = family.get_event_ref_list()
                     for event_ref in event_refs:
                         self.events.add(event_ref.ref)
 
-    def apply(self, db, obj):
+    def apply_to_one(self, db, obj):
         """
         Return True if an event appies to the filter rule.
 
