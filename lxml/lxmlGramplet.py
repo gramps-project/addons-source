@@ -142,7 +142,7 @@ class lxmlGramplet(Gramplet):
         self.load_trace = False
         self.testIO = False
         self.valid = False
-        self.dropdtd = False
+        self.dropdtd = True
         self.recover = False
         self.help = False
         self.debug_places = False
@@ -750,9 +750,9 @@ class lxmlGramplet(Gramplet):
         dtd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
             if os.name is 'nt':
-                os.system(f'xmllint --dtdvalid {dtd} --noout --dropdtd {filename} {options}')
+                os.system(f'xmllint --dtdvalid {dtd} --noout {filename} {options}')
             else:
-                os.system(f'xmllint --dtdvalid file://{dtd} --noout --dropdtd {filename} {options}')
+                os.system(f'xmllint --dtdvalid file://{dtd} --noout {filename} {options}')
         except Exception as e:
             LOG.info(_('xmllint: skip DTD validation'))
 
