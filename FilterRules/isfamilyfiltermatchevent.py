@@ -74,8 +74,7 @@ class IsFamilyFilterMatchEvent(MatchesFilterBase):
             for family_handle in db.iter_family_handles():
                 family = db.get_family_from_handle(family_handle)
                 if self.MFF.apply_to_one(db, family):
-                    event_refs = family.get_event_ref_list()
-                    self.events.update(event_refs)
+                    self.events.update([e.ref for e in family.get_event_ref_list()])
 
     def apply_to_one(self, db, obj):
         """
