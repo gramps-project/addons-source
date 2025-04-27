@@ -103,6 +103,9 @@ class etreeGramplet(Gramplet):
         """
 
         self.last = 5
+        self.print_extra = False
+        self.debug_interface = True
+        self.print_event_elements = False
 
         # file selection
 
@@ -116,7 +119,8 @@ class etreeGramplet(Gramplet):
             self.button = Gtk.Button(_("Select file"))
             #self.button.set_size_request(40, 40)
         else:
-            print(desktop_session) # works on pantheon
+            if self.debug_interface:
+                print(desktop_session) # works on pantheon
             image = Gtk.Image.new_from_icon_name(Gtk.STOCK_FIND, 6)
             self.button.add(image)
         self.button.connect('clicked', self.__select_file)
@@ -134,7 +138,8 @@ class etreeGramplet(Gramplet):
         if os.name == 'nt' or sys.platform == "darwin":
             button = Gtk.Button(_("Run"))
         else:
-            print(desktop_session) # works on pantheon
+            if self.debug_interface:
+                print(desktop_session) # works on pantheon
             button = Gtk.Button()
             exe = Gtk.Image.new_from_icon_name(Gtk.STOCK_EXECUTE, 6)
             button.add(exe)
@@ -194,13 +199,15 @@ class etreeGramplet(Gramplet):
 
 
     def build_options(self):
-        from gramps.gen.plug.menu import NumberOption
+        from gramps.gen.plug.menu import NumberOption, BooleanOption
         self.add_option(NumberOption(_("Number of additions and modifications back"),
                                      self.last, 2, 5000))
+        self.add_option(BooleanOption(_("Print more informations on console"), self.print_extra))
 
 
     def save_options(self):
         self.last = int(self.get_option(_("Number of additions and modifications back")).get_value())
+        self.print_extra = self.get_option(_("Print more informations on console")).get_value()
 
 
     def run(self, obj):
@@ -217,7 +224,8 @@ class etreeGramplet(Gramplet):
             #Path.unlink(os.path.join(USER_PLUGINS, 'lxml', 'etree.xml'))
 
         if not self.__file_name.endswith('.gramps'):
-            print(self.__file_name)
+            if self.debug_interface:
+                print(self.__file_name)
             return
 
         if self.__file_name != "":
@@ -325,6 +333,7 @@ class etreeGramplet(Gramplet):
         # DB: Family Tree loaded
         # see gen/plug/_gramplet.py and gen/db/read.py
 
+        print('Family Tree:')
         if self.dbstate.db.db_is_open:
             print('tags', self.dbstate.db.get_number_of_tags())
 
@@ -349,7 +358,9 @@ class etreeGramplet(Gramplet):
         #print('rmap', self.dbstate.db.rmap_index)
         #print('nmap', self.dbstate.db.nmap_index)
 
-        #print(self.dbstate.db.surname_list)
+        if self.print_extra:
+            print(self.dbstate.db.surname_list)
+            print('XML:\n')
 
         # XML
 
@@ -368,21 +379,25 @@ class etreeGramplet(Gramplet):
 
             lines = lazy = []
             if one.find(NAMESPACE + 'event'):
-                print('XML: Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
+                if self.print_extra:
+                    print('Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
 
             for i in range(0, len(one.findall(NAMESPACE + 'event'))):
                 event = one.findall(NAMESPACE + 'event')[i]
                 lines.append(event.items())
-                print('Event:', ElementTree.tostring(event))
+                if self.print_event_elements:
+                    print('Event:', ElementTree.tostring(event))
                 lazy = list(lines)
-            print(lazy)
+            if self.print_extra:
+                print(lazy)
 
             # easier and faster match (do not forget upercase on handle into .gramps...)
             if one.get('home'):
                 if self.dbstate.db.db_is_open:
                     if self.dbstate.db.has_person_handle("%s" % one.attrib.get('home')[1:]):
                         person = self.dbstate.db.get_person_from_handle(one.attrib.get('home')[1:])
-                        print('Home:', person.get_primary_name().get_name())
+                        if self.print_extra:
+                            print('Home:', person.get_primary_name().get_name())
 
             for two in ITERATION:
 
@@ -390,24 +405,30 @@ class etreeGramplet(Gramplet):
                     timestamp.append(two.get('change'))
                     timestamp_int.append(int(two.get('change')))
 
-                #if two.get('handle') != None:
-                    #print('%s\n\t, %s'% (two.tag, two.items()))
+                if two.get('handle') != None:
+                    if self.print_extra:
+                        print('%s\n\t, %s'% (two.tag, two.items()))
 
-                #if two.get('priv') != None:
-                    #print('\tPrivate : %s, %s' % (two.tag, two.items()))
+                if two.get('priv') != None:
+                    if self.print_extra:
+                        print('\n\tPrivate : %s, %s\n' % (two.tag, two.items()))
 
-                #if two.find(NAMESPACE + 'dateval') != None:
-                    #print('Date on event: %s' % two.items())
+                if two.find(NAMESPACE + 'dateval') != None:
+                    if self.print_extra:
+                        print('\nDate on event: %s\n' % two.items())
 
-                #if two.find(NAMESPACE + 'place') != None:
-                    #print('\tEvent record with places: %s' % two.items())
+                if two.find(NAMESPACE + 'place') != None:
+                    if self.print_extra:
+                        print('\n\tEvent record with places: %s\n' % two.items())
 
-                #if two.find(NAMESPACE + 'citationref') != None:
-                    #print('\t\tEvent record with citation/source: %s' % two.items())
+                if two.find(NAMESPACE + 'citationref') != None:
+                    if self.print_extra:
+                        print('\n\t\tRecords with citation/source: %s\n' % two.items())
 
                 (tag, item) = two.tag, two.items()
-                #print(tag)
-                #print(two.attrib)
+                if self.print_extra:
+                    print(tag)
+                    print(two.attrib)
 
                 entries.append(tag)
 
@@ -512,10 +533,12 @@ class etreeGramplet(Gramplet):
 
         handles = sorted(self.dbstate.db.get_person_handles(), key=self._getPersonTimestamp)
 
-        print('DB: Last %s persons edited:' % int(self.last))
+        if self.print_extra:
+            print('DB: Last %s persons edited:' % int(self.last))
         for handle in reversed(handles[-self.last:]):
             person = self.dbstate.db.get_person_from_handle(handle)
-            print(person.get_primary_name().get_name(), handle)
+            if self.print_extra:
+                print(person.get_primary_name().get_name(), handle)
 
 
     def _getPersonTimestamp(self, person_handle):
