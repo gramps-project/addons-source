@@ -139,10 +139,11 @@ class lxmlGramplet(Gramplet):
         """
 
         self.xmllint = "--nonet " # space at the end for additional options
+        self.noout = True
+        self.dropdtd = True
         self.load_trace = False
         self.testIO = False
         self.valid = False
-        self.dropdtd = True
         self.recover = False
         self.help = False
         self.debug_places = False
@@ -253,10 +254,11 @@ class lxmlGramplet(Gramplet):
         from gramps.gen.plug.menu import StringOption, BooleanOption
         self.add_option(StringOption(_("xmllint options"),
                                      self.xmllint))
+        self.add_option(BooleanOption("noout", self.noout))
+        self.add_option(BooleanOption("dropdtd", self.dropdtd))
         self.add_option(BooleanOption("load_trace", self.load_trace))
         self.add_option(BooleanOption("testIO", self.testIO))
         self.add_option(BooleanOption("valid", self.valid))
-        self.add_option(BooleanOption("dropdtd", self.dropdtd))
         self.add_option(BooleanOption("recover", self.recover))
         self.add_option(BooleanOption("more", self.help))
         self.add_option(BooleanOption(_("debug places"), self.debug_places))
@@ -269,6 +271,8 @@ class lxmlGramplet(Gramplet):
         Save the options for the gramplet.
         """
         self.xmllint = self.get_option(_("xmllint options")).get_value()
+        self.noout = self.get_option("noout").get_value()
+        self.dropdtd = self.get_option("dropdtd").get_value()
         self.load_trace = self.get_option("load_trace").get_value()
         self.testIO = self.get_option("testIO").get_value()
         self.valid = self.get_option("valid").get_value()
@@ -730,14 +734,16 @@ class lxmlGramplet(Gramplet):
         """
         options = self.xmllint
 
+        if self.noout:
+            options += "--noout "
+        if self.dropdtd:
+            options += "--dropdtd "
         if self.load_trace:
             options += "--load-trace "
         if self.testIO:
             options += "--testIO "
         if self.valid:
             options += "--valid "
-        if self.dropdtd:
-            options += "--dropdtd "
         if self.recover:
             options += "--recover "
         LOG.debug("'$ xmllint " + options + "' object %s" % self.get_option_widget(_("xmllint options")))
@@ -750,9 +756,9 @@ class lxmlGramplet(Gramplet):
         dtd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
             if os.name is 'nt':
-                os.system(f'xmllint --dtdvalid {dtd} --noout {filename} {options}')
+                os.system(f'xmllint --dtdvalid {dtd} {filename} {options}')
             else:
-                os.system(f'xmllint --dtdvalid file://{dtd} --noout {filename} {options}')
+                os.system(f'xmllint --dtdvalid file://{dtd} {filename} {options}')
         except Exception as e:
             LOG.info(_('xmllint: skip DTD validation'))
 
