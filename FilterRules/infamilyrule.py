@@ -145,7 +145,7 @@ class PersonsInFamilyFilterMatch(MatchesFilterBase):
                         self.persons.add(father)
                         self.persons.add(mother)
                     if include_children:
-                        self.persons.update(family.get_child_ref_list()) 
+                        self.persons.update([c.ref for c in family.get_child_ref_list()])
 
     def apply_to_one(self, _db, obj):
         """
