@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020    Matthias Kemmer
+# Copyright (C) 2025    Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,12 +22,30 @@
 
 # -------------------------------------------------------------------------
 #
+# Standard python modules
+#
+# -------------------------------------------------------------------------
+from __future__ import annotations
+
+# -------------------------------------------------------------------------
+#
 # Gramps modules
 #
 # -------------------------------------------------------------------------
 from gramps.gen.filters.rules import Rule
 from gramps.gui.editors.filtereditor import MyInteger
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+# -------------------------------------------------------------------------
+#
+# Typing modules
+#
+# -------------------------------------------------------------------------
+from typing import Set
+from gramps.gen.types import PersonHandle
+from gramps.gen.lib import Person
+from gramps.gen.db import Database
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -62,81 +81,79 @@ class DegreesOfSeparation(Rule):
     description = _("Filter rule that matches relatives by degrees of"
                     " separation")
 
-    def prepare(self, db, user):
-        """Prepare a refernece list for the filter."""
+    def prepare(self, db: Database, user):
+        """Prepare a reference list for the filter."""
         self.db = db
-        self.ref_list = set()
+        self.selected_handles: Set[PersonHandle] = set()
+
         self.persons = set()
         degrees = int(self.list[1])
 
         self.get_root_handle()
         for i in range(degrees+1):
             for handle in list(self.persons):
-                person = self.db.get_person_from_handle(handle)
+                person = self.db.get_raw_person_data(handle)
                 self.get_parents(person)
                 self.get_children(person)
                 self.get_siblings(person)
                 self.get_partners(person)
                 self.persons.remove(handle)
-                self.ref_list.add(handle)
+                self.selected_handles.add(handle)
 
     def get_root_handle(self):
         """Get the handle of the starting person."""
         pid = self.list[0]
-        person = self.db.get_person_from_gramps_id(pid)
+        person = self.db._get_raw_person_from_id_data(pid)
         if person:
-            root_handle = person.get_handle()
-            self.persons.add(root_handle)
+            self.persons.add(person.handle)
 
-    def get_parents(self, person):
+    def get_parents(self, person: Person):
         """Get all parents of a person."""
-        fam_list = person.get_parent_family_handle_list()
+        fam_list = person.parent_family_list
         for fam_h in fam_list:
-            fam = self.db.get_family_from_handle(fam_h)
-            father_h = fam.get_father_handle()
-            mother_h = fam.get_mother_handle()
+            fam = self.db.get_raw_family_data(fam_h)
+            father_h = fam.father_handle
+            mother_h = fam.mother_handle
             if father_h:
                 self.persons.add(father_h)
             if mother_h:
                 self.persons.add(mother_h)
 
-    def get_children(self, person):
+    def get_children(self, person: Person):
         """Get all children of a person."""
-        fam_list = person.get_family_handle_list()
+        fam_list = person.family_list
         for fam_h in fam_list:
-            fam = self.db.get_family_from_handle(fam_h)
-            for child_ref in fam.get_child_ref_list():
+            fam = self.db.get_raw_family_data(fam_h)
+            for child_ref in fam.child_ref_list:
                 self.persons.add(child_ref.ref)
 
-    def get_siblings(self, person):
+    def get_siblings(self, person: Person):
         """Get all siblings of a person."""
-        fam_list = person.get_parent_family_handle_list()
+        fam_list = person.parent_family_list
         for fam_h in fam_list:
-            fam = self.db.get_family_from_handle(fam_h)
-            father_h = fam.get_father_handle()
+            fam = self.db.get_raw_family_data(fam_h)
+            father_h = fam.father_handle
             if father_h:
-                father = self.db.get_person_from_handle(father_h)
-                if father:
-                    self.get_children(father)
-            mother_h = fam.get_mother_handle()
+                father = self.db.get_raw_person_data(father_h)
+                self.get_children(father)
+            mother_h = fam.mother_handle
             if mother_h:
-                mother = self.db.get_person_from_handle(mother_h)
-                if mother:
-                    self.get_children(mother)
+                mother = self.db.get_raw_person_data(mother_h)
+                self.get_children(mother)
 
-    def get_partners(self, person):
+    def get_partners(self, person: Person):
         """Get all partners."""
-        fam_list = person.get_family_handle_list()
+        fam_list = person.family_list
         if fam_list:
             for fam_h in fam_list:
-                fam = self.db.get_family_from_handle(fam_h)
-                father_h = fam.get_father_handle()
-                mother_h = fam.get_mother_handle()
+                fam = self.db.get_raw_family_data(fam_h)
+                father_h = fam.father_handle
+                mother_h = fam.mother_handle
                 if father_h:
                     self.persons.add(father_h)
                 if mother_h:
                     self.persons.add(mother_h)
 
-    def apply_to_one(self, db, person):
+    def apply_to_one(self, db: Database, person: Person) -> bool:
         """Check if the filter applies to the person."""
-        return person.handle in self.ref_list
+        return person.handle in self.selected_handles
