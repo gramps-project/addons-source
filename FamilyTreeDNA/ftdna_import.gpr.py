@@ -1,6 +1,6 @@
 register(
     TOOL,
-    id="FamilyTree DNA Import Gramplet",
+    id="FamilyTree DNA Import Tool",
     name=_("FamilyTree DNA"),
     description=_("Tool to import FamilyFinder DNA data from Family Tree"),
     status=STABLE,

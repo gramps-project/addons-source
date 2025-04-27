@@ -248,7 +248,7 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                 if row[12]: 
                     if  body_line: 
                         concat_name = ' '.join([row[1],row[2],row[3]])
-                        new_name = re.sub('\s{2,}', ' ', concat_name)
+                        new_name = re.sub("\\s{2,}", ' ', concat_name)
                         self.__FFdata.append((new_name.strip(),row[10],row[11],row[12]))
                     body_line = True
         self.__FFdata.sort()
@@ -262,7 +262,7 @@ class FamilyFinder(tool.Tool,ManagedWindow):
             for row in reader:
                 if body_line:
                     concat_name = row[0].strip()
-                    new_name = re.sub('\s{2,}', ' ', concat_name)
+                    new_name = re.sub("\\s{2,}", ' ', concat_name)
                     self.__Segment.append((new_name, row[1], row[2], row[3], row[4], row[5]))
                 body_line = True
         self.__Segment.sort()
