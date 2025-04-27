@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2021    Matthias Kemmer
+# Copyright (C) 2025    Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,12 +22,31 @@
 
 # -------------------------------------------------------------------------
 #
+# Standard Python modules
+#
+# -------------------------------------------------------------------------
+from __future__ import annotations
+from operator import lt, eq, gt
+
+# -------------------------------------------------------------------------
+#
 # Gramps modules
 #
 # -------------------------------------------------------------------------
 from gramps.gen.filters.rules import Rule
 from gramps.gen.lib.eventroletype import EventRoleType
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+# -------------------------------------------------------------------------
+#
+# Typing modules
+#
+# -------------------------------------------------------------------------
+from typing import Set
+from gramps.gen.types import PersonHandle
+from gramps.gen.lib import Person
+from gramps.gen.db import Database
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -43,39 +63,41 @@ class PeopleEventsCount(Rule):
     """Matches persons which have events of given type and number."""
 
     labels = [
-        _('Personal event:'),
-        _('Number of instances:'),
-        _('Number must be:'),
-        _('Primary Role:')]
-    name = _('People with <count> of <event>')
-    description = _(
-        "Matches persons which have events of given type and number.")
+        _("Personal event:"),
+        _("Number of instances:"),
+        _("Number must be:"),
+        _("Primary Role:"),
+    ]
+    name = _("People with <count> of <event>")
+    description = _("Matches persons which have events of given type and number.")
     category = _("Event filters")
     allow_regex = False
 
-    def prepare(self, db, user):
-        if self.list[2] == 'less than':
-            self.count_type = 0
-        elif self.list[2] == 'greater than':
-            self.count_type = 2
-        else:
-            self.count_type = 1  # "equal to"
-        self.userSelectedCount = int(self.list[1])
+    def prepare(self, db: Database, user):
+        event_type = self.list[0]
+        event_count = int(self.list[1])
+        cmp = (
+            lt
+            if self.list[2] == "less than"
+            else (
+                eq
+                if self.list[2] == "equal to"
+                else gt if self.list[2] == "greater than" else None
+            )
+        )
+        all_roles = not bool(self.list[3])
 
-    def apply_to_one(self, dbase, person):
-        counter = 0
-        for event_ref in person.get_event_ref_list():
-            if not event_ref:
-                continue
-            if int(self.list[3]) and event_ref.role != EventRoleType.PRIMARY:
-                continue
-            event = dbase.get_event_from_handle(event_ref.ref)
-            if event.type.is_type(self.list[0]):
-                counter += 1
+        self.selected_handles: Set[PersonHandle] = set()
 
-        if self.count_type == 0:  # "less than"
-            return counter < self.userSelectedCount
-        elif self.count_type == 2:  # "greater than"
-            return counter > self.userSelectedCount
-        # "equal to"
-        return counter == self.userSelectedCount
+        for person in db.iter_people():
+            count = 0
+            for event_ref in person.event_ref_list:
+                if event_ref and (all_roles or event_ref.role == EventRoleType.PRIMARY):
+                    event = db.get_raw_event_data(event_ref.ref)
+                    if event.type.is_type(event_type):
+                        count = count + 1
+            if cmp(count, event_count):
+                self.selected_handles.add(person.handle)
+
+    def apply_to_one(self, dbase: Database, person: Person) -> bool:
+        return person.handle in self.selected_handles
