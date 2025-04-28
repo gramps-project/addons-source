@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020    Matthias Kemmer
+# Copyright (C) 2025    Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,6 +20,11 @@
 #
 """Matches the earliest recorded patrilineal ancestor father."""
 
+# ------------------------------------------------
+# Standard python modules
+# ------------------------------------------------
+from __future__ import annotations
+
 # -------------------------------------------------------------------------
 #
 # Gramps modules
@@ -26,6 +32,17 @@
 # -------------------------------------------------------------------------
 from gramps.gen.filters.rules.person._hasidof import HasGrampsId
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+# -------------------------------------------------------------------------
+#
+# Typing modules
+#
+# -------------------------------------------------------------------------
+from typing import Set
+from gramps.gen.types import PersonHandle
+from gramps.gen.lib import Person
+from gramps.gen.db import Database
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -41,16 +58,15 @@ _ = _trans.gettext
 class PatrilinealProgenitor(HasGrampsId):
     """Matches the earliest recorded patrilineal ancestor father."""
 
-    labels = [_('ID:')]
-    name = _('Patrilineal progenitor of <person>')
+    labels = [_("ID:")]
+    name = _("Patrilineal progenitor of <person>")
     category = _("Ancestral filters")
-    description = _("Matches the earliest recorded patrilineal "
-                    "ancestor father.")
+    description = _("Matches the earliest recorded patrilineal " "ancestor father.")
 
-    def prepare(self, db, user):
+    def prepare(self, db: Database, user):
         """Prepare a reference list for the filter."""
         self.db = db
-        self.persons = set()
+        self.selected_handles: Set[PersonHandle] = set()
         self.run_search = True
 
         person = self.db.get_person_from_gramps_id(self.list[0])
@@ -74,8 +90,10 @@ class PatrilinealProgenitor(HasGrampsId):
         for family_handle in family_list:
             family = self.db.get_family_from_handle(family_handle)
             for child_ref in family.get_child_ref_list():
-                if (person.get_handle() == child_ref.ref and
-                        child_ref.get_father_relation() == _("Birth")):
+                if (
+                    person.get_handle() == child_ref.ref
+                    and child_ref.get_father_relation() == _("Birth")
+                ):
                     father_handle = family.get_father_handle()
                     father_set.add(father_handle)
 
@@ -92,8 +110,8 @@ class PatrilinealProgenitor(HasGrampsId):
                 self.get_root_father(father)
             else:
                 self.run_search = False
-                self.persons.add(person.get_handle())
+                self.selected_handles.add(person.get_handle())
 
-    def apply(self, db, obj):
+    def apply_to_one(self, db: Database, person: Person) -> bool:
         """Check if the filter applies to a person."""
-        return obj.get_handle() in self.persons
+        return person.handle in self.selected_handles

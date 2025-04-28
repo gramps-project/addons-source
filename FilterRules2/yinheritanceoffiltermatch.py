@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020  Matthias Kemmer
+# Copyright (C) 2025  Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,6 +20,11 @@
 #
 """Matches descendants of filter result following Y-chrom inheritance patterns."""
 
+# ------------------------------------------------
+# Standard python modules
+# ------------------------------------------------
+from __future__ import annotations
+
 # -------------------------------------------------------------------------
 #
 # Gramps modules
@@ -27,6 +33,17 @@
 from gramps.gen.filters.rules._rule import Rule
 from gramps.gen.filters.rules.person._matchesfilter import MatchesFilter
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+# -------------------------------------------------------------------------
+#
+# Typing modules
+#
+# -------------------------------------------------------------------------
+from typing import Set
+from gramps.gen.types import PersonHandle
+from gramps.gen.lib import Person
+from gramps.gen.db import Database
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -42,16 +59,18 @@ _ = _trans.gettext
 class YChromInheritanceFilterMatch(Rule):
     """Matches descendants of filter result following Y-chromosomal inheritance patterns."""
 
-    labels = [_('Filter name:')]
+    labels = [_("Filter name:")]
     name = _("Y-chromosomal inheritance of <filter>")
-    description = _("Matches recorded descendants of a filter result "
-                    "following Y-chromosomal inheritance patterns.")
+    description = _(
+        "Matches recorded descendants of a filter result "
+        "following Y-chromosomal inheritance patterns."
+    )
     category = _("Descendant filters")
 
-    def prepare(self, db, user):
+    def prepare(self, db: Database, user):
         """Prepare a reference list for the filter."""
         self.db = db
-        self.persons = set()
+        self.selected_handles: Set[PersonHandle] = set()
         self.current_children = set()
         self.next_children = set()
 
@@ -65,7 +84,7 @@ class YChromInheritanceFilterMatch(Rule):
 
     def setup(self):
         """Get the first round of male descendants."""
-        self.persons.add(self.root_father.get_handle())
+        self.selected_handles.add(self.root_father.get_handle())
         children = self.get_male_children(self.root_father)
         if children:
             for child_handle in children:
@@ -77,8 +96,8 @@ class YChromInheritanceFilterMatch(Rule):
         """Get all male descendant lines of root father recursively."""
         if self.current_children and (False not in self.current_children):
             for child_handle in self.current_children:
-                if child_handle not in self.persons:
-                    self.persons.add(child_handle)
+                if child_handle not in self.selected_handles:
+                    self.selected_handles.add(child_handle)
                     child = self.db.get_person_from_handle(child_handle)
                     has_children = self.get_male_children(child)
                     if has_children:
@@ -107,11 +126,13 @@ class YChromInheritanceFilterMatch(Rule):
             family = self.db.get_family_from_handle(family_handle)
             for child_ref in family.get_child_ref_list():
                 child = self.db.get_person_from_handle(child_ref.ref)
-                if (child_ref.get_father_relation() == _("Birth") and
-                        child.get_gender() == 1):
+                if (
+                    child_ref.get_father_relation() == _("Birth")
+                    and child.get_gender() == 1
+                ):
                     male_children.add(child_ref.ref)
         return male_children
 
-    def apply(self, db, obj):
+    def apply_to_one(self, db: Database, person: Person) -> bool:
         """Check if the filter applies to a person."""
-        return obj.get_handle() in self.persons
+        return person.handle in self.selected_handles

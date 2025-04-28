@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020  Matthias Kemmer
+# Copyright (C) 2025  Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,6 +20,11 @@
 #
 """Matches descendants following mitochondrial inheritance patterns."""
 
+# ------------------------------------------------
+# Standard python modules
+# ------------------------------------------------
+from __future__ import annotations
+
 # -------------------------------------------------------------------------
 #
 # Gramps modules
@@ -26,6 +32,17 @@
 # -------------------------------------------------------------------------
 from gramps.gen.filters.rules.person._hasidof import HasGrampsId
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+# -------------------------------------------------------------------------
+#
+# Typing modules
+#
+# -------------------------------------------------------------------------
+from typing import Set
+from gramps.gen.types import PersonHandle
+from gramps.gen.lib import Person
+from gramps.gen.db import Database
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -47,10 +64,10 @@ class MtChromInheritance(HasGrampsId):
                     " mitochondrial inheritance patterns.")
     category = _("Descendant filters")
 
-    def prepare(self, db, user):
+    def prepare(self, db: Database, user):
         """Prepare a reference list for the filter."""
         self.db = db
-        self.persons = set()
+        self.selected_handles: Set[PersonHandle] = set()
         self.root_mother = self.db.get_person_from_gramps_id(self.list[0])
         self.current_children = set()
         self.next_children = set()
@@ -59,7 +76,7 @@ class MtChromInheritance(HasGrampsId):
 
     def setup(self):
         """Get the first round of male descendants."""
-        self.persons.add(self.root_mother.get_handle())
+        self.selected_handles.add(self.root_mother.get_handle())
         children = self.get_all_children(self.root_mother)
         if children:
             for child_handle in children:
@@ -86,8 +103,8 @@ class MtChromInheritance(HasGrampsId):
         """Get all descendants of a person sharing mtDNA."""
         if self.current_children and (False not in self.current_children):
             for child_handle in self.current_children:
-                if child_handle not in self.persons:
-                    self.persons.add(child_handle)
+                if child_handle not in self.selected_handles:
+                    self.selected_handles.add(child_handle)
                     child = self.db.get_person_from_handle(child_handle)
                     if child.get_gender() == 0:
                         has_children = self.get_all_children(child)
@@ -100,6 +117,6 @@ class MtChromInheritance(HasGrampsId):
             self.next_children.clear()
             self.get_mt_desc()
 
-    def apply(self, db, obj):
+    def apply_to_one(self, db: Database, person: Person) -> bool:
         """Check if the filter applies to a person."""
-        return obj.get_handle() in self.persons
+        return person.handle in self.selected_handles
