@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020    Matthias Kemmer
+# Copyright (C) 2025    Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,16 +20,34 @@
 #
 """X-chromosomal ancestors of <person>."""
 
+# ------------------------------------------------
+# Standard python modules
+# ------------------------------------------------
+from __future__ import annotations
+
 # -------------------------------------------------------------------------
 #
 # Gramps modules
 #
 # -------------------------------------------------------------------------
 from gramps.gen.filters.rules.person._hasidof import HasGrampsId
+
 # -------------------------------------------------------------------------
 # Internationalization
 # -------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+
+# -------------------------------------------------------------------------
+#
+# Typing modules
+#
+# -------------------------------------------------------------------------
+from typing import Set
+from gramps.gen.types import PersonHandle
+from gramps.gen.lib import Person
+from gramps.gen.db import Database
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -44,22 +63,24 @@ _ = _trans.gettext
 class XChromAncestors(HasGrampsId):
     """X-chromosomal ancestors of <person>."""
 
-    labels = [_('ID:')]
-    name = _('X-chromosomal ancestors of <person>')
+    labels = [_("ID:")]
+    name = _("X-chromosomal ancestors of <person>")
     category = _("Ancestral filters")
-    description = _("Matches ancestors of <person> following a "
-                    "X-chromosomal inheritance pattern.")
+    description = _(
+        "Matches ancestors of <person> following a "
+        "X-chromosomal inheritance pattern."
+    )
 
-    def prepare(self, db, user):
+    def prepare(self, db: Database, user):
         """Prepare a reference list for the filter."""
         self.db = db
-        self.persons = set()
+        self.selected_handles: Set[PersonHandle] = set()
         person = self.db.get_person_from_gramps_id(self.list[0])
         self.get_ancestors(person)
 
     def get_ancestors(self, person):
         """Get all ancestors who contributed to X-chromosomal inheritance."""
-        self.persons.add(person.get_handle())
+        self.selected_handles.add(person.get_handle())
         male = person.get_gender() == 1
         female = person.get_gender() == 0
         family_handels = person.get_parent_family_handle_list()
@@ -99,6 +120,6 @@ class XChromAncestors(HasGrampsId):
                     return True
         return False
 
-    def apply(self, db, obj):
+    def apply_to_one(self, db: Database, person: Person) -> bool:
         """Check if the filter applies to a person."""
-        return obj.get_handle() in self.persons
+        return person.handle in self.selected_handles

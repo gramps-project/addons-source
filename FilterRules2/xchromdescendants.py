@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020    Matthias Kemmer
+# Copyright (C) 2025    Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,16 +20,33 @@
 #
 """X-chromosomal descendants of <person>."""
 
+# ------------------------------------------------
+# Standard python modules
+# ------------------------------------------------
+from __future__ import annotations
+
 # -------------------------------------------------------------------------
 #
 # Gramps modules
 #
 # -------------------------------------------------------------------------
 from gramps.gen.filters.rules.person._hasidof import HasGrampsId
+
 # -------------------------------------------------------------------------
 # Internationalization
 # -------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+# -------------------------------------------------------------------------
+#
+# Typing modules
+#
+# -------------------------------------------------------------------------
+from typing import Set
+from gramps.gen.types import PersonHandle
+from gramps.gen.lib import Person
+from gramps.gen.db import Database
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -44,19 +62,21 @@ _ = _trans.gettext
 class XChromDescendants(HasGrampsId):
     """X-chromosomal descendants of <person>."""
 
-    labels = [_('ID:')]
-    name = _('X-chromosomal descendants of <person>')
+    labels = [_("ID:")]
+    name = _("X-chromosomal descendants of <person>")
     category = _("Descendant filters")
-    description = _("Matches all descendants of <person> following a "
-                    "X-chromosomal inheritance pattern.")
+    description = _(
+        "Matches all descendants of <person> following a "
+        "X-chromosomal inheritance pattern."
+    )
 
-    def prepare(self, db, user):
+    def prepare(self, db: Database, user):
         """Prepare a reference list for the filter."""
         self.db = db
-        self.persons = set()
+        self.selected_handles: Set[PersonHandle] = set()
         person = self.db.get_person_from_gramps_id(self.list[0])
         self.get_descendants(person)
-        self.persons.add(person.get_handle())
+        self.selected_handles.add(person.get_handle())
 
     def get_descendants(self, person):
         """Get all descendants following a X-chrom inheritance pattern."""
@@ -67,17 +87,21 @@ class XChromDescendants(HasGrampsId):
             for child_ref in children:
                 child = self.db.get_person_from_handle(child_ref.ref)
                 gender = child.get_gender()
-                if (person.get_gender() == 0
-                        and child_ref.get_mother_relation() == _("Birth")
-                        and gender in [0, 1]):
-                    self.persons.add(child.get_handle())
+                if (
+                    person.get_gender() == 0
+                    and child_ref.get_mother_relation() == _("Birth")
+                    and gender in [0, 1]
+                ):
+                    self.selected_handles.add(child.get_handle())
                     self.get_descendants(child)
-                if (person.get_gender() == 1
-                        and child_ref.get_father_relation() == _("Birth")
-                        and gender == 0):
-                    self.persons.add(child.get_handle())
+                if (
+                    person.get_gender() == 1
+                    and child_ref.get_father_relation() == _("Birth")
+                    and gender == 0
+                ):
+                    self.selected_handles.add(child.get_handle())
                     self.get_descendants(child)
 
-    def apply(self, db, obj):
+    def apply_to_one(self, db: Database, person: Person) -> bool:
         """Check if the filter applies to a person."""
-        return obj.get_handle() in self.persons
+        return person.handle in self.selected_handles
