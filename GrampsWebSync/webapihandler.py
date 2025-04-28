@@ -372,64 +372,6 @@ class WebApiHandler:
             raise
 
 
-# special cases for type names. See https://github.com/gramps-project/gramps-webapi/issues/163#issuecomment-940361882
-_type_name_special_cases = {
-    "Father Age": "Father's Age",
-    "Mother Age": "Mother's Age",
-    "BIC": "Born In Covenant",
-    "DNS": "Do not seal",
-    "DNS/CAN": "Do not seal/Cancel",
-    "bold": "Bold",
-    "italic": "Italic",
-    "underline": "Underline",
-    "fontface": "Fontface",
-    "fontsize": "Fontsize",
-    "fontcolor": "Fontcolor",
-    "highlight": "Highlight",
-    "superscript": "Superscript",
-    "link": "Link",
-}
-
-
-def to_json(obj, lang: str | None = None) -> str:
-    """
-    Encode a Gramps object to a JSON object.
-
-    Patched from `gramps.gen.serialize` to allow translation of type names.
-    """
-
-    def __default(obj):
-        obj_dict = {"_class": obj.__class__.__name__}
-        if isinstance(obj, gramps.gen.lib.GrampsType):
-            if not lang:
-                obj_dict["string"] = getattr(obj, "string")
-            else:
-                # if the remote locale is different from the local one,
-                # need to translate type names.
-                glocale = GrampsLocale(lang=lang)
-                # In most cases, the xml_str
-                # is the same as the gettext message, so it can just be translated.
-                s_untrans = obj.xml_str()
-                # handle exceptional cases
-                s_untrans = _type_name_special_cases.get(s_untrans, s_untrans)
-                # translate
-                assert glocale is not None  # for type checker
-                obj_dict["string"] = glocale.translation.gettext(s_untrans)
-        if isinstance(obj, gramps.gen.lib.Date):
-            if obj.is_empty() and not obj.text:
-                return None
-        for key, value in obj.__dict__.items():
-            if not key.startswith("_"):
-                obj_dict[key] = value
-        for key, value in obj.__class__.__dict__.items():
-            if isinstance(value, property):
-                if key != "year":
-                    obj_dict[key] = getattr(obj, key)
-        return obj_dict
-
-    return json.dumps(obj, default=__default, ensure_ascii=False)
-
-
 def transaction_to_json(
     transaction: DbTxn, lang: str | None = None
 ) -> list[dict[str, Any]]:
@@ -442,17 +384,12 @@ def transaction_to_json(
         except KeyError:
             continue  # this happens for references
         trans_dict = {TXNUPD: "update", TXNDEL: "delete", TXNADD: "add"}
-        obj_cls = getattr(gramps.gen.lib, obj_cls_name)
-        if old_data:
-            old_data = obj_cls().unserialize(old_data)
-        if new_data:
-            new_data = obj_cls().unserialize(new_data)
         item = {
             "type": trans_dict[action],
             "handle": handle,
             "_class": obj_cls_name,
-            "old": json.loads(to_json(old_data, lang=lang)),
-            "new": json.loads(to_json(new_data, lang=lang)),
+            "old": None if old_data is None else dict(old_data),
+            "new": None if new_data is None else dict(new_data),
         }
         out.append(item)
     return out
