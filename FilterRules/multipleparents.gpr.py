@@ -26,7 +26,7 @@ register(
     id="multipleparents",
     name=_("Multiple Parents Filter"),
     description=_("Multiple Parents Filter"),
-    version = '0.0.13',
+    version = '0.0.14',
     authors=["Dave Scheipers"],
     authors_email=["dave.scheipers@gmail.com"],
     gramps_target_version="6.0",

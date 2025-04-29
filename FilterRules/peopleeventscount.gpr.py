@@ -24,7 +24,7 @@ register(
     id="peopleeventscount",
     name=_("People with <count> of <event>"),
     description=_("Matches persons which have events of given type and number."),
-    version = '1.0.8',
+    version = '1.0.9',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     gramps_target_version="6.0",
