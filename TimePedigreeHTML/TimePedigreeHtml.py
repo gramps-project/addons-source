@@ -50,6 +50,7 @@ from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback)
 from gramps.gen.utils.symbols import Symbols
 from gramps.gui.dialog import ErrorDialog
 from gramps.plugins.webreport.common import get_gendex_data
+from gramps.version import VERSION_TUPLE
 
 
 try:
@@ -113,14 +114,16 @@ class TimePedigreeHtml(Report):
         js_target = os.path.join(dest_path, "wz_jsgraphics.js")
         jpg_source = os.path.join(utils_path, "bg.jpg")
         jpg_target = os.path.join(dest_path, "bg.jpg")
-        jpg_source = os.path.join(utils_path, "README.txt")
-        jpg_target = os.path.join(dest_path, "README.txt")
+        txt_source = os.path.join(utils_path, "README.txt")
+        txt_target = os.path.join(dest_path, "README.txt")
         if not os.path.isdir(dest_path):
             os.makedirs(dest_path) # create dir if necessary
         if not os.path.isfile(js_target):
             shutil.copyfile(js_source,  js_target)
         if not os.path.isfile(jpg_target):
             shutil.copyfile(jpg_source, jpg_target)
+        if not os.path.isfile(txt_target):
+            shutil.copyfile(txt_source, txt_target)
 
     # ---------------------------------------------------------------- *
     # ----- W R I T E _ R E P O R T ---------------------------------- *
@@ -788,10 +791,16 @@ class TimePedigreeHtml(Report):
                     marrplace  = ""
                     marrday    = ""
                     marrperson = ""
-                    event_ref_list = family_obj.get_event_list()
+                    if VERSION_TUPLE < (6, 0, 0):
+                        event_ref_list = family_obj.get_event_list()
+                    else:
+                        event_ref_list = family_obj.get_event_ref_list()
                     for event_ref in event_ref_list:
                         if event_ref:
-                            event = self.db.get_event_from_handle(event_ref)
+                            if VERSION_TUPLE < (6, 0, 0):
+                                event = self.db.get_event_from_handle(event_ref)
+                            else:
+                                event = self.db.get_event_from_handle(event_ref.ref)
                             if event.get_type() == (_('Marriage')):
                                 mar_d = event.get_date_object().\
                                     to_calendar("gregorian")

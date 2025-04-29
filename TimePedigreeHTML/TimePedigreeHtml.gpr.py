@@ -34,7 +34,7 @@ from gramps.gen.plug._pluginreg import (
     REPORT_MODE_CLI,
 )
 
-MODULE_VERSION = "6.0"
+from gramps.version import major_version
 
 # ------------------------------------------------------------------------
 #
@@ -51,7 +51,7 @@ register(
         "show a pedigree block diagram arranged vertically by birth date"
     ),
     version = '0.0.10',
-    gramps_target_version=MODULE_VERSION,
+    gramps_target_version=major_version,
     status=STABLE,
     fname="TimePedigreeHtml.py",
     authors=["Manuela Kugel"],
