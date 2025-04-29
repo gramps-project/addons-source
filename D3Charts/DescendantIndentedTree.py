@@ -357,8 +357,13 @@ class Printinfo():
                         image_file = os.path.join(self.dest_path, "images",
                                                   self.dest_prefix,
                                                   person.gramps_id + ".jpg")
-                        self.json_fp.write('%s"image_ref": "%s",\n' %
-                            (self.pad_str(gen_pad+1), str(image_ref)))
+                        self.json_fp.write(
+                            '%s"image_ref": "%s",\n'
+                            % (
+                                self.pad_str(gen_pad + 1),
+                                image_ref.replace("\\", "\\\\"),
+                            )
+                        )
                         # Copy media file to images directory
                         # Ensure image directory exists:
                         if not os.path.exists(image_path):
