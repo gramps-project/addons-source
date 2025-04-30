@@ -36,11 +36,9 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-import gramps
-import gramps.gen.lib
+from gramps.gen.lib.json_utils import remove_object
 from gramps.gen.db import KEY_TO_CLASS_MAP, DbTxn
 from gramps.gen.db.dbconst import TXNADD, TXNDEL, TXNUPD
-from gramps.gen.utils.grampslocale import GrampsLocale
 
 LOG = logging.getLogger("grampswebsync")
 
@@ -379,6 +377,7 @@ def transaction_to_json(
     out = []
     for recno in transaction.get_recnos(reverse=False):
         key, action, handle, old_data, new_data = transaction.get_record(recno)
+        print(old_data, new_data)
         try:
             obj_cls_name = KEY_TO_CLASS_MAP[key]
         except KeyError:
@@ -388,8 +387,8 @@ def transaction_to_json(
             "type": trans_dict[action],
             "handle": handle,
             "_class": obj_cls_name,
-            "old": None if old_data is None else dict(old_data),
-            "new": None if new_data is None else dict(new_data),
+            "old": None if old_data is None else remove_object(old_data),
+            "new": None if new_data is None else remove_object(new_data),
         }
         out.append(item)
     return out
