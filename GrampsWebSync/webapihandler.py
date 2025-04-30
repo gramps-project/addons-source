@@ -377,7 +377,6 @@ def transaction_to_json(
     out = []
     for recno in transaction.get_recnos(reverse=False):
         key, action, handle, old_data, new_data = transaction.get_record(recno)
-        print(old_data, new_data)
         try:
             obj_cls_name = KEY_TO_CLASS_MAP[key]
         except KeyError:
