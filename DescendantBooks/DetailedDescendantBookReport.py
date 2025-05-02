@@ -694,7 +694,7 @@ class DetailedDescendantBookReport(Report):
                 # Don't print duplicate people in second reports, simple reference them
                 rep, gen, dnum = self.persons_printed[person_handle]
                 self.doc.write_text(self._(
-                    "See Report : {report}, Generation : {generation}, Person : {person}").format(report=rep, generation=gen, person=dnum)
+                    "See Report : {report}, Generation : {generation}, Person : {person}").format(report=rep, generation=gen, person=dnum))
                 self.doc.end_paragraph()
                 return
 
@@ -990,7 +990,7 @@ class DetailedDescendantBookReport(Report):
                 if mate_handle in self.dnumber:
                     self.doc.start_paragraph('DDR-MoreDetails')
                     self.doc.write_text_citation(
-                        self._("Ref: {number}. {name}").format(number=self.dnumber[mate_handle], name=name)
+                        self._("Ref: {number}. {name}").format(number=self.dnumber[mate_handle], name=name))
                     self.doc.end_paragraph()
                 else:
                     self.dmates[mate_handle] = person.get_handle()
