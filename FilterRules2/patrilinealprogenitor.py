@@ -70,9 +70,10 @@ class PatrilinealProgenitor(HasGrampsId):
         self.run_search = True
 
         person = self.db.get_person_from_gramps_id(self.list[0])
-        start_father = self.get_father(person)
-        if start_father:
-            self.get_root_father(start_father)
+        if person:
+            start_father = self.get_father(person)
+            if start_father:
+                self.get_root_father(start_father)
 
     def get_father(self, person):
         """

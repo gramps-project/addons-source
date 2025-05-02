@@ -75,8 +75,9 @@ class XChromDescendants(HasGrampsId):
         self.db = db
         self.selected_handles: Set[PersonHandle] = set()
         person = self.db.get_person_from_gramps_id(self.list[0])
-        self.get_descendants(person)
-        self.selected_handles.add(person.get_handle())
+        if person:
+            self.get_descendants(person)
+            self.selected_handles.add(person.get_handle())
 
     def get_descendants(self, person):
         """Get all descendants following a X-chrom inheritance pattern."""
