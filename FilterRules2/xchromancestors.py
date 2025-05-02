@@ -76,7 +76,8 @@ class XChromAncestors(HasGrampsId):
         self.db = db
         self.selected_handles: Set[PersonHandle] = set()
         person = self.db.get_person_from_gramps_id(self.list[0])
-        self.get_ancestors(person)
+        if person:
+            self.get_ancestors(person)
 
     def get_ancestors(self, person):
         """Get all ancestors who contributed to X-chromosomal inheritance."""

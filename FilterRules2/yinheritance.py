@@ -73,8 +73,9 @@ class YChromInheritance(HasGrampsId):
         self.current_children = set()
         self.next_children = set()
         self.root_father = self.db.get_person_from_gramps_id(self.list[0])
-        self.setup()
-        self.get_male_desc()
+        if self.root_father:
+            self.setup()
+            self.get_male_desc()
 
     def setup(self):
         """Get the first round of male descendants."""
