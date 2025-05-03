@@ -110,16 +110,12 @@ class TimePedigreeHtml(Report):
         # File and directory issues
         self.dest_html = os.path.join(dest_path, os.path.basename(dest_file))
         utils_path = os.path.join(USER_PLUGINS, "TimePedigreeHTML", "utils")
-        js_source = os.path.join(utils_path, "wz_jsgraphics.js")
-        js_target = os.path.join(dest_path, "wz_jsgraphics.js")
         jpg_source = os.path.join(utils_path, "bg.jpg")
         jpg_target = os.path.join(dest_path, "bg.jpg")
         txt_source = os.path.join(utils_path, "README.txt")
         txt_target = os.path.join(dest_path, "README.txt")
         if not os.path.isdir(dest_path):
             os.makedirs(dest_path) # create dir if necessary
-        if not os.path.isfile(js_target):
-            shutil.copyfile(js_source,  js_target)
         if not os.path.isfile(jpg_target):
             shutil.copyfile(jpg_source, jpg_target)
         if not os.path.isfile(txt_target):
@@ -178,8 +174,6 @@ class TimePedigreeHtml(Report):
                 + "<head>\n"
                 + "<meta http-equiv='Content-Type' content='text/html; "
                 + "charset=utf-8'/>\n\n"
-                + "<script type='text/javascript' src='wz_jsgraphics.js'>"
-                + "</script>\n\n"
                 + "<style>\n"
                 + "div.box {\n"
                 + "  padding:          3px;\n"
@@ -239,6 +233,7 @@ class TimePedigreeHtml(Report):
                 + "; height:" + str(y_max)
                 + "; background-size:" + str(x_max) + "px "
                 + str(y_max) + "px;'>\n"
+                + "<canvas id='canvas' width='" + str(x_max)+"' height='" + str(y_max) + "'></canvas>\n"
         )
 
         # Draw Scales (vertical lines)
@@ -250,16 +245,19 @@ class TimePedigreeHtml(Report):
                 + "<!--\n"
                 + "function draw()\n"
                 + "{\n"
-                + "  var jg = new jsGraphics('main');\n"
-                + "  jg.setColor('#ffffff');\n"
+                + "  const canvas = document.getElementById('canvas');"
+                + "  const ctx = canvas.getContext('2d');"
+                + "  ctx.fillStyle = '#ffffff';\n"
+                + "  ctx.strokeStyle = '#ffffff';\n"
+                + "  ctx.font = 'bold 9pt monospace';\n"
+                + "  ctx.lineWidth = 1.0;\n"
+                + "  ctx.beginPath();"
                 # Scale Verticale left
-                + "  jg.drawLine(" + str(sc_x) + ", "
-                + str(y_min) + ", " 
-                + str(sc_x) + ", " + str(y_max - self.offset_y) + ");\n"
+                + "  ctx.moveTo(" + str(sc_x+0.5) + ", " + str(y_min) + ");" 
+                + "  ctx.lineTo(" + str(sc_x+0.5) + ", " + str(y_max - self.offset_y) + ");\n"
                 # Scale Verticale Right
-                + "  jg.drawLine(" + str(x_max - sc_x) + ", " 
-                + str(y_min) + ", " 
-                + str(x_max - sc_x) + ", " + str(y_max - self.offset_y) + ");\n"
+                + "  ctx.moveTo(" + str(x_max - sc_x+0.5) + ", " + str(y_min) + ");" 
+                + "  ctx.lineTo(" + str(x_max - sc_x+0.5) + ", " + str(y_max - self.offset_y) + ");\n"
         )
 
         # Draw scale tick on each year ending on 0 or 5
@@ -268,19 +266,22 @@ class TimePedigreeHtml(Report):
                 yyy = ( (year-x_min_year) * self.year_to_pixel_factor
                     + self.offset_y
                 )
-                html += ( "  jg.drawLine(" + str(sc_x) + ", " + str(yyy) + ", "
-                        + str(sc_x + 10) + ", " + str(yyy) + ");"
-                        + "  jg.drawString('" + str(year) + "',"
-                        + str(sc_x + 12) + "," + str(yyy - 7) + ");"
-                        + "  jg.drawLine(" + str(x_max - sc_x) + ", " 
-                        + str(yyy) + ", "
-                        + str(x_max - sc_x - 10) + ", " + str(yyy) + ");"
-                        + "  jg.drawString('" + str(year) + "',"
-                        + str(x_max - sc_x - 43) + "," + str(yyy - 7) + ");"
+                html += ( "  ctx.moveTo(" + str(sc_x) + ", " + str(yyy+0.5) + ");"
+                        + "  ctx.lineTo(" + str(sc_x + 10) + ", " + str(yyy+0.5) + ");"
+                        + "  ctx.fillText('" + str(year) + "',"
+                        + str(sc_x + 12) + "," + str(yyy + 4) + ");"
+                        + "  ctx.moveTo(" + str(x_max - sc_x) + ", " + str(yyy+0.5) + ");"
+                        + "  ctx.lineTo(" + str(x_max - sc_x - 10) + ", " + str(yyy+0.5) + ");"
+                        + "  ctx.fillText('" + str(year) + "',"
+                        + str(x_max - sc_x - 43) + "," + str(yyy + 4) + ");"
                 )
 
+        html += "\n  ctx.stroke();\n"
+        html += "  ctx.closePath();\n"
         # Draw Lines between people
-        html = html + "  jg.setColor('#000000');\n" # black
+        html = html + "  ctx.strokeStyle = '#000000';\n" # black
+        html += "  ctx.lineWidth = 1.5;\n"
+        html += "  ctx.beginPath();\n"
 
         for pid in self.pid_list:
             if pid == self.root_pid:
@@ -289,23 +290,24 @@ class TimePedigreeHtml(Report):
                 continue # Other part of parents
 
             parent_pid = self.pid_list[pid]["parent"][0]
-            html += ( "  jg.drawLine("
+            html += ( "  ctx.moveTo("
                     + str(self.pid_list[pid]["x"] + self.box_width/2) + ", "
-                    + str(self.pid_list[pid]["y"]) + ", "
-                    + str(self.pid_list[parent_pid]["x"]
+                    + str(self.pid_list[pid]["y"]) + ");"
+                    + "  ctx.lineTo(" + str(self.pid_list[parent_pid]["x"]
                     + self.box_width/2) + ", "
                     + str(self.pid_list[parent_pid]["y"]
                     + self.vert_length) + ");\n"
-                    + "  jg.drawLine("
+                    + "  ctx.moveTo("
                     + str(self.pid_list[parent_pid]["x"]
                     + self.box_width/2) + ", "
-                    + str(self.pid_list[parent_pid]["y"] + 5) + ", "
-                    + str(self.pid_list[parent_pid]["x"]
+                    + str(self.pid_list[parent_pid]["y"] + 5) + ");"
+                    + "  ctx.lineTo(" + str(self.pid_list[parent_pid]["x"]
                     + self.box_width/2) + ", "
                     + str(self.pid_list[parent_pid]["y"]
                     + self.vert_length) + ");\n"
             )
-            html += "  jg.paint();\n"
+        html += "\n  ctx.stroke();\n"
+        html += "  ctx.closePath();\n"
 
         # Post
         html += ( "}\n"
