@@ -1,11 +1,5 @@
 LICENSES
 
-wz_jsgraphics.js
-================
-Licence: LGPL
-http://www.gnu.org/copyleft/lesser.html
-for more information check the header of the file
-
 bg.jpg
 ======
 This file was minimized and rotated compared to the Original
