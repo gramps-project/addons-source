@@ -21,7 +21,7 @@ register(
     id="DescendantBook",
     name=_("Descendant Book"),
     description=_("Produces one or more descendant reports based on a supplied query."),
-    version = '1.1.32',
+    version = '1.1.33',
     gramps_target_version="6.0",
     status=STABLE,
     fname="DescendantBookReport.py",
@@ -42,7 +42,7 @@ register(
     description=_(
         "Produces one or more detailed descendant reports based on a supplied query."
     ),
-    version = '1.1.32',
+    version = '1.1.33',
     gramps_target_version="6.0",
     status=STABLE,
     fname="DetailedDescendantBookReport.py",
