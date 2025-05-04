@@ -71,8 +71,9 @@ class MtChromInheritance(HasGrampsId):
         self.root_mother = self.db.get_person_from_gramps_id(self.list[0])
         self.current_children = set()
         self.next_children = set()
-        self.setup()
-        self.get_mt_desc()
+        if self.root_mother:
+            self.setup()
+            self.get_mt_desc()
 
     def setup(self):
         """Get the first round of male descendants."""
