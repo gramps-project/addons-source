@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-04-11 09:13+0000\n"
+"PO-Revision-Date: 2025-04-17 19:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.11.1-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -735,7 +735,7 @@ msgstr "Inhalt generiert von Gramps"
 
 #: lxml/lxmlGramplet.py:593
 msgid "List of sources"
-msgstr "Quellenverzeichnis"
+msgstr "Liste der Quellen"
 
 #: lxml/lxmlGramplet.py:611
 msgid "Australia"
@@ -2663,7 +2663,7 @@ msgstr "Nichts fehlt"
 
 #: Differences/differences.py:185
 msgid "Added items in File that are missing in Database"
-msgstr "Elemente in Datei hinzugefügt, die in der Datenbank fehlen"
+msgstr "In der Datei hinzugefügte Elemente, die in der Datenbank fehlen"
 
 #: Differences/differences.py:191
 #, python-format
@@ -2680,28 +2680,27 @@ msgstr "Stammbaumdatei"
 
 #: Differences/differences.py:310
 msgid "Select a .gpkg or .gramps file"
-msgstr "Eine .gpkg oder .gramps Datei wählen"
+msgstr "Wähle eine .gpkg oder .gramps Datei"
 
 #: Differences/differences.py:313
 msgid "Show items that are different"
-msgstr "Zeige unterschiedliche Elemente"
+msgstr "Elemente anzeigen, die sich unterscheiden"
 
 #: Differences/differences.py:314
 msgid "Include items that are different"
-msgstr "Elemente die unterschiedlich sind aufnehmen"
+msgstr "Elemente einbeziehen, die sich unterscheiden"
 
 #: Differences/differences.py:317
 msgid "Show items missing from file"
-msgstr "Zeige Elemente, die in der Datei fehlen"
+msgstr "Zeige in der Datei fehlende Elemente"
 
 #: Differences/differences.py:318
 msgid "Include items not in file but in database"
-msgstr ""
-"Elemente die sich nicht in der Datei aber in der Datenbank befinden aufnehmen"
+msgstr "Elemente nicht in die Datei, aber in die Datenbank aufnehmen"
 
 #: Differences/differences.py:321
 msgid "Show items added in file"
-msgstr "Zeige Elemente, die in der Datei hinzugefügt wurden"
+msgstr "Zeige hinzugefügte Elemente in der Datei"
 
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
@@ -2709,11 +2708,11 @@ msgstr "Elemente in die Datei, aber nicht in die Datenbank aufnehmen"
 
 #: Differences/differences.gpr.py:5
 msgid "Compares an external database with the current one."
-msgstr "Vergleicht eine externe Datenbank mit der aktuell geöffneten."
+msgstr "Vergleicht eine externe Datenbank mit der aktuellen."
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
-msgstr "VorfahrenFüllung"
+msgstr "VorfahrenAuffüllen"
 
 #: AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
@@ -2722,7 +2721,7 @@ msgstr "Bericht über die Befüllung des Baumes"
 #: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr "VorfahrenFüllung für %s"
+msgstr "VorfahrenAuffüllen für %s"
 
 #: AncestorFill/AncestorFill.py:205
 msgid "Generation "
@@ -2738,7 +2737,7 @@ msgstr "Prozentsatz der gefundenen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr "Anzahl der gefundenen einmaligen Vorfahren "
+msgstr "Anzahl der gefundenen eindeutigen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
@@ -2754,7 +2753,7 @@ msgstr "Gesamtzahl der gefundenen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
-msgstr "Gesamtzahl der gefundenen einzelnen Vorfahren "
+msgstr "Gesamtzahl der gefundenen eindeutigen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -2770,16 +2769,16 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
-msgstr "Gefüllte Ziffer"
+msgstr "Anzahl der Nachkommastellen"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
-"Die Anzahl der Stellen nach dem Komma, die für den Prozentsatz in den "
-"Bericht aufgenommen werden sollenvon gefundenen Vorfahren bei einer "
-"bestimmten Generation"
+"Die Anzahl der Ziffern nach dem Komma, die in den Bericht für den "
+"Prozentsatz der in einer bestimmten Generation gefundenen Vorfahren "
+"aufgenommen werden sollen"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
@@ -2790,18 +2789,16 @@ msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
 msgstr ""
-"Die Anzahl der Stellen nach dem Komma, die für den Prozentsatz in den "
-"Bericht aufgenommen werden sollenfür den zusammengeklappten Stammbaum"
+"Die Anzahl der Ziffern nach dem Komma im Bericht zusammengeklappter Stammbaum"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
-msgstr "Anzeige theoretisch"
+msgstr "Theoretische Darstellung"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
 msgstr ""
-"Gibt an, ob die theoretische Anzahl der Vorfahren nach Generation angezeigt "
-"werden soll"
+"Ob die theoretische Anzahl der Vorfahren pro Generation angezeigt werden soll"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
@@ -2810,7 +2807,7 @@ msgstr ""
 #: LinesOfDescendency/lines-of-descendency.py:72
 #: LastChange/LastChangeReport.py:378
 msgid "The style used for the title of the page."
-msgstr "Der Stil, der für den Seitentitel verwendet wird."
+msgstr "Der für den Titel der Seite verwendete Stil."
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
 msgid "SharedPostgreSQL"
@@ -2826,15 +2823,15 @@ msgstr "Gemeinsame PostgreSQL-Datenbank"
 
 #: HtmlView/htmlview.py:328
 msgid "HtmlView"
-msgstr "HTML-Ansicht"
+msgstr "HTMLAnsicht"
 
 #: HtmlView/htmlview.py:495
 msgid "Go to the previous page in the history"
-msgstr "Gehe zur vorherigen Seite in der Chronik"
+msgstr "Zur vorherigen Seite in der Historie wechseln"
 
 #: HtmlView/htmlview.py:503
 msgid "Go to the next page in the history"
-msgstr "Gehe zur nächsten Seite in der Chronik"
+msgstr "Zur nächsten Seite in der Historie wechseln"
 
 #: HtmlView/htmlview.py:508
 msgid "_Refresh"
@@ -2842,11 +2839,11 @@ msgstr "_Aktualisieren"
 
 #: HtmlView/htmlview.py:511
 msgid "Stop and reload the page."
-msgstr "Stopp und lade Seite neu."
+msgstr "Anhalten und die Seite neu laden."
 
 #: HtmlView/htmlview.py:555
 msgid "Start page for the Html View"
-msgstr "Startseite für die HTML-Ansicht"
+msgstr "Startseite für die Html-Ansicht"
 
 #: HtmlView/htmlview.py:556
 msgid ""
@@ -2855,8 +2852,8 @@ msgid ""
 "<br>\n"
 "For example: "
 msgstr ""
-"Gib oben eine Webadresse ein und drücke die Ausführen Schaltfläche, um eine "
-"Webseite auf dieser Seite zu laden\n"
+"Gib oben die Adresse einer Webseite ein, und drücke auf die Ausführen-"
+"Schaltfläche, um eine Webseite auf dieser Seite zu laden\n"
 "<br>\n"
 "Zum Beispiel: "
 
@@ -2866,7 +2863,7 @@ msgstr "HTML Ansicht"
 
 #: HtmlView/htmlview.gpr.py:32
 msgid "A view showing html pages embedded in Gramps"
-msgstr "Eine Ansicht, die HTML Seiten zeigt eingebunden in Gramps"
+msgstr "Eine Ansicht zur Anzeige von HTML-Seiten, eingebettet in Gramps"
 
 #: HtmlView/htmlview.gpr.py:40
 msgid "Web"
@@ -2874,11 +2871,11 @@ msgstr "Web"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
-msgstr "Rohdaten Export"
+msgstr "Rohmaterial Export"
 
 #: ExportRaw/ExportRaw.gpr.py:5
 msgid "This is a raw python object dump"
-msgstr "Dies ist eine Rohdaten Pythonobjekt Ausgabe"
+msgstr "Dies ist ein unbearbeiteter Python-Objektabzug"
 
 #: ExportRaw/ExportRaw.gpr.py:13
 msgid "Raw options"
@@ -2890,20 +2887,20 @@ msgstr "Dynamischer Webbericht"
 
 #: DynamicWeb/dynamicweb.gpr.py:17
 msgid "Produces dynamic web pages for the database"
-msgstr "Erstellt dynamische Webseiten aus der Datenbank"
+msgstr "Erzeugt dynamische Webseiten für die Datenbank"
 
 #: DynamicWeb/dynamicweb.py:334
 msgid "SVG graphical tree"
-msgstr "Grafischer SVG-Baum"
+msgstr "SVG-Grafikbaum"
 
 #: DynamicWeb/dynamicweb.py:337
 msgid "Indexes pages"
-msgstr "Indiziert Seiten"
+msgstr "Index-Seiten"
 
 #: DynamicWeb/dynamicweb.py:341 DynamicWeb/dynamicweb.py:5214
 #, python-format
 msgid "Custom page %(index)i"
-msgstr "Selbst definierte Seite %(index)i"
+msgstr "Benutzerdefinierte Seite %(index)i"
 
 #: DynamicWeb/dynamicweb.py:358
 msgid "Ascending tree"
@@ -2915,15 +2912,15 @@ msgstr "Absteigender Baum"
 
 #: DynamicWeb/dynamicweb.py:360
 msgid "Descending tree with spouses"
-msgstr "Absteigender Baum mit (Ehe-)Partner"
+msgstr "Absteigender Baum mit Partnern"
 
 #: DynamicWeb/dynamicweb.py:361
 msgid "Ascending and descending tree"
-msgstr "Aufsteigender Baum mit (Ehe-)Partner"
+msgstr "Aufsteigender und absteigender Baum"
 
 #: DynamicWeb/dynamicweb.py:362
 msgid "Ascending and descending tree with spouses"
-msgstr "Auf- und absteigender Baum mit (Ehe-)Partner"
+msgstr "Auf- und absteigender Baum mit Partnern"
 
 #: DynamicWeb/dynamicweb.py:394
 msgid "Size proportional to number of ancestors"
@@ -2931,11 +2928,11 @@ msgstr "Größe proportional zur Anzahl der Vorfahren"
 
 #: DynamicWeb/dynamicweb.py:395
 msgid "Homogeneous parents distribution"
-msgstr "Einheitliche Elternverteilung"
+msgstr "Homogene Verteilung der Eltern"
 
 #: DynamicWeb/dynamicweb.py:409
 msgid "Age based gradient"
-msgstr "Auf Alter basierender Farbverlauf"
+msgstr "Altersabhängiger Farbverlauf"
 
 #: DynamicWeb/dynamicweb.py:431
 msgid "Gradient"
@@ -2944,15 +2941,15 @@ msgstr "Farbverlauf"
 #: DynamicWeb/dynamicweb.py:780 DynamicWeb/dynamicweb.py:786
 #, python-format
 msgid "Could not create the directory: %(path)s"
-msgstr "Konnte Verzeichnis %(path)s nicht anlegen"
+msgstr "Das Verzeichnis konnte nicht erstellt werden: %(path)s"
 
 #: DynamicWeb/dynamicweb.py:816 DynamicWeb/dynamicweb.py:4102
 msgid "Dynamic Web Site Report"
-msgstr "Dynamische Website"
+msgstr "Dynamischer Websitebericht"
 
 #: DynamicWeb/dynamicweb.py:816
 msgid "Exporting family tree data ..."
-msgstr "Exportiere Stammbaum-Daten ..."
+msgstr "Exportieren von Stammbaumdaten ..."
 
 #: DynamicWeb/dynamicweb.py:1737
 #: DetDescendantReport-images/detdescendantreporti.py:940
@@ -2963,18 +2960,18 @@ msgstr "%(type)s: %(value)s"
 #: DynamicWeb/dynamicweb.py:2011
 #, python-format
 msgid "Impossible to convert \"%(path)s\" to a relative path."
-msgstr "Konvertierung von \"%(path)s\" in einen relativen Pfad nicht möglich."
+msgstr "Es ist nicht möglich, „%(path)s\" in einen relativen Pfad umzuwandeln."
 
 #: DynamicWeb/dynamicweb.py:2353
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr ""
-"Die Seitenkonfiguration ist ungültig: Mehrere Seiten haben den gleichen "
+"Die Seitenkonfiguration ist nicht gültig: mehrere Seiten haben den gleichen "
 "Inhalt"
 
 #: DynamicWeb/dynamicweb.py:2368
 msgid "DynWeb|Home"
-msgstr "Anfang"
+msgstr "Startseite"
 
 #: DynamicWeb/dynamicweb.py:2375 DynamicWeb/dynamicweb.py:2442
 #: DynamicWeb/dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2456
@@ -2992,7 +2989,7 @@ msgstr "Indizes"
 
 #: DynamicWeb/dynamicweb.py:2918
 msgid "(filtered from _MAX_ total entries)"
-msgstr "(aus _MAX_ Gesamteinträgen gefiltert)"
+msgstr "(gefiltert aus _MAX_ Gesamteinträgen)"
 
 #: DynamicWeb/dynamicweb.py:2920
 #, python-format
@@ -3001,19 +2998,19 @@ msgstr "(⚭ %s)"
 
 #: DynamicWeb/dynamicweb.py:2921
 msgid "(sort by name)"
-msgstr "(nach Name sortiert)"
+msgstr "(nach Namen sortieren)"
 
 #: DynamicWeb/dynamicweb.py:2922
 msgid "(sort by quantity)"
-msgstr "(nach Anzahl sortiert)"
+msgstr "(nach Anzahl sortieren)"
 
 #: DynamicWeb/dynamicweb.py:2925
 msgid ": activate to sort column ascending"
-msgstr ": aktiviere um Spalte aufsteigend zu sortieren"
+msgstr ": aktivieren, um die Spalte aufsteigend zu sortieren"
 
 #: DynamicWeb/dynamicweb.py:2929
 msgid ": activate to sort column descending"
-msgstr ": aktiviere um Spalte absteigend zu sortieren"
+msgstr ": aktivieren, um Spalte absteigend zu sortieren"
 
 #: DynamicWeb/dynamicweb.py:2934
 msgid ""
@@ -3021,9 +3018,9 @@ msgid ""
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
 "is UTF-8.</p>"
 msgstr ""
-"<p>Diese Seite beinhaltet den grundlegenden SVG-Code.<br>Kopiere den Inhalt "
-"in einen Texteditor und speichere ihn als eine SVG-Datei.<br>Stelle dabei "
-"sicher, dass die Kodierung des Texteditors UTF-8 ist.</p>"
+"<p>Diese Seite enthält den SVG-Rohcode.<br>Kopiere den Inhalt in einen "
+"Texteditor und speichere ihn als SVG-Datei.<br>Stelle sicher, dass die "
+"Kodierung des Texteditors UTF-8 ist.</p>"
 
 #: DynamicWeb/dynamicweb.py:2942
 msgid "Alternate Name"
@@ -3031,11 +3028,11 @@ msgstr "Alternativer Name"
 
 #: DynamicWeb/dynamicweb.py:2961
 msgid "Click on the map to show it full-screen"
-msgstr "Klicke auf die Karte um sie auf dem ganzen Bildschirm zu zeigen"
+msgstr "Klicke auf die Karte, um sie im Vollbildmodus anzuzeigen"
 
 #: DynamicWeb/dynamicweb.py:2965
 msgid "Configure"
-msgstr "Konfiguriere"
+msgstr "Konfigurieren"
 
 #: DynamicWeb/dynamicweb.py:2972
 msgid "DynamicWeb_report#Help"
@@ -3063,27 +3060,27 @@ msgstr "Datei fertig"
 
 #: DynamicWeb/dynamicweb.py:2991 DynamicWeb/dynamicweb.py:5042
 msgid "Include dates columns on the index pages"
-msgstr "Füge Datumsspalten auf den Indexseiten hinzu"
+msgstr "Datumsspalten auf den Indexseiten einfügen"
 
 #: DynamicWeb/dynamicweb.py:2999 DynamicWeb/dynamicweb.py:5071
 msgid "Include a column for media path on the index pages"
-msgstr "Füge auf den Indexseiten eine Spalte für den Medienpfad ein"
+msgstr "Eine Spalte für den Medienpfad auf den Indexseiten einfügen"
 
 #: DynamicWeb/dynamicweb.py:3007 DynamicWeb/dynamicweb.py:4903
 msgid "Include a map in the individuals and family pages"
-msgstr "Karte auf den Personen- und Familienseiten aufnehmen"
+msgstr "Eine Karte in die Personen- und Familienseiten einfügen"
 
 #: DynamicWeb/dynamicweb.py:3011 DynamicWeb/dynamicweb.py:4955
 msgid "Include half and/ or step-siblings on the individual pages"
-msgstr "Halb- und/oder Stiefgeschwister auf den Personenseiten aufnehmen"
+msgstr "Halb- und/oder Stiefgeschwister auf den Personenseiten einbeziehen"
 
 #: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:5076
 msgid "Include references in indexes"
-msgstr "Referenzen in den Indices ausgeben"
+msgstr "Referenzen in Indizes aufnehmen"
 
 #: DynamicWeb/dynamicweb.py:3018 DynamicWeb/dynamicweb.py:4985
 msgid "Insert sources author in the sources title"
-msgstr "Autor der Quellen in den Quelltitel einfügen"
+msgstr "Quellenautor in den Quellentitel einfügen"
 
 #: DynamicWeb/dynamicweb.py:3026
 msgid "M"
@@ -3099,7 +3096,7 @@ msgstr "Medienindex"
 
 #: DynamicWeb/dynamicweb.py:3032
 msgid "Media Type"
-msgstr "Medientyp"
+msgstr "Medienart"
 
 #: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
@@ -3107,11 +3104,11 @@ msgstr "Keine Daten in der Tabelle verfügbar"
 
 #: DynamicWeb/dynamicweb.py:3039
 msgid "No matching records found"
-msgstr "Keine passenden Einträge gefunden"
+msgstr "Keine passenden Datensätze gefunden"
 
 #: DynamicWeb/dynamicweb.py:3040
 msgid "No matching surname."
-msgstr "Keine passenden Nachnahmen."
+msgstr "Kein passender Nachname."
 
 #: DynamicWeb/dynamicweb.py:3045
 msgid "Other participants"
@@ -3136,7 +3133,7 @@ msgstr "Personen"
 
 #: DynamicWeb/dynamicweb.py:3054
 msgid "Places Index"
-msgstr "Ortsindex"
+msgstr "Orteindex"
 
 #: DynamicWeb/dynamicweb.py:3056
 msgid "Preparing file ..."
@@ -3164,7 +3161,7 @@ msgstr "Standardeinstellungen wiederherstellen"
 
 #: DynamicWeb/dynamicweb.py:3068 DynamicWeb/dynamicweb.py:4978
 msgid "Show last modification time"
-msgstr "Uhrzeit der letzten Änderung anzeigen"
+msgstr "Zeit der letzten Änderung anzeigen"
 
 #: DynamicWeb/dynamicweb.py:3069 DynamicWeb/dynamicweb.py:5133
 msgid "SVG tree children distribution"
@@ -3176,11 +3173,11 @@ msgstr "SVG Baumkonfiguration"
 
 #: DynamicWeb/dynamicweb.py:3071 DynamicWeb/dynamicweb.py:5115
 msgid "SVG tree graph shape"
-msgstr "SVG-Baum Grafikform"
+msgstr "SVG-Baumdiagrammform"
 
 #: DynamicWeb/dynamicweb.py:3072 DynamicWeb/dynamicweb.py:5107
 msgid "SVG tree graph type"
-msgstr "SVG-Baum Grafiktyp"
+msgstr "SVG-Baumdiagrammtyp"
 
 #: DynamicWeb/dynamicweb.py:3073 DynamicWeb/dynamicweb.py:5123
 msgid "SVG tree parents distribution"
@@ -3196,37 +3193,36 @@ msgstr "Suchen:"
 
 #: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
-msgstr "Wähle das Schema für die Hintergrundfarbe"
+msgstr "Wähle das Farbschema für den Hintergrund"
 
 #: DynamicWeb/dynamicweb.py:3082
 msgid "Select the children distribution (fan charts only)"
-msgstr "Wähle die Verteilung der Kinder (nur Fächergrafik)"
+msgstr "Wähle die Verteilung der Kinder (nur Fächergrafiken)"
 
 #: DynamicWeb/dynamicweb.py:3086
 msgid "Select the number of ascending generations"
-msgstr "Wähle die Anzahl der Vorfahren-Generationen"
+msgstr "Wähle die Anzahl der aufsteigenden Generationen"
 
 #: DynamicWeb/dynamicweb.py:3090
 msgid "Select the number of descending generations"
-msgstr "Wähle die Anzahl der Nachfahren-Generationen"
+msgstr "Wähle die Anzahl der absteigenden Generationen"
 
 #: DynamicWeb/dynamicweb.py:3094
 msgid "Select the parents distribution (fan charts only)"
-msgstr "Wähle die Verteilung der Eltern (nur Fächergrafik)"
+msgstr "Wähle die Verteilung der Eltern (nur Fächergrafiken)"
 
 #: DynamicWeb/dynamicweb.py:3096
 msgid "Select the shape of graph"
-msgstr "Wähle die Form der Grafik"
+msgstr "Wähle die Form des Diagramms"
 
 #: DynamicWeb/dynamicweb.py:3097
 msgid "Select the type of graph"
-msgstr "Wähle den Typ der Grafik"
+msgstr "Wählen Sie die Art des Diagramms"
 
 #: DynamicWeb/dynamicweb.py:3101
 msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr ""
-"Mehrere Übereinstimmungen.<br>Präzisiere deine Suche oder wähle in der Liste "
-"unten."
+"Mehrere Treffer.<br>Suche genauer oder wähle aus den untenstehenden Listen."
 
 #: DynamicWeb/dynamicweb.py:3104
 msgid "Show _MENU_ entries"
@@ -3234,7 +3230,7 @@ msgstr "Zeige _MENU_ Einträge"
 
 #: DynamicWeb/dynamicweb.py:3105 DynamicWeb/dynamicweb.py:5170
 msgid "Show duplicates"
-msgstr "Zeige Duplikate"
+msgstr "Duplikate anzeigen"
 
 #: DynamicWeb/dynamicweb.py:3106
 msgid "Showing 0 to 0 of 0 entries"
@@ -3242,25 +3238,25 @@ msgstr "Zeige 0 bis 0 von 0 Einträgen"
 
 #: DynamicWeb/dynamicweb.py:3109
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
-msgstr "Zeige _START_ bis _END_ von _TOTAL_ Einträgen"
+msgstr "Anzeige von _START_ bis _ENDE_ der _GESAMT_ Einträge"
 
 #: DynamicWeb/dynamicweb.py:3112
 msgid "Sort by:"
-msgstr "Sortiere nach:"
+msgstr "Sortieren nach:"
 
 #: DynamicWeb/dynamicweb.py:3114 SourceIndex/death.py:87
 #: SourceIndex/birth.py:126 SourceIndex/marriage.py:87 SourceIndex/index.py:92
 #: SourceIndex/witness.py:64 SourceIndex/census.py:82
 msgid "Sources Index"
-msgstr "Quellen Index"
+msgstr "Quellenverzeichnis"
 
 #: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
 msgid "Suppress Gramps ID"
-msgstr "Gramps-IDs ausblenden"
+msgstr "Gramps-ID unterdrücken"
 
 #: DynamicWeb/dynamicweb.py:3119
 msgid "Surnames Index"
-msgstr "Nachnahmensindex"
+msgstr "Nachnamenverzeichnis"
 
 #: DynamicWeb/dynamicweb.py:3123
 msgid "U"
@@ -3268,31 +3264,31 @@ msgstr "U"
 
 #: DynamicWeb/dynamicweb.py:3127 DynamicWeb/dynamicweb.py:4972
 msgid "Use tabbed panels instead of sections"
-msgstr "Verwende Registerkarten anstatt Abschnitten"
+msgstr "Registerkarten anstelle von Abschnitten verwenden"
 
 #: DynamicWeb/dynamicweb.py:3131
 msgid "Use the search box above in order to find a person."
-msgstr "Verwende die obige Suchbox um eine Person zu finden."
+msgstr "Verwende das obige Suchfeld, um eine Person zu finden."
 
 #: DynamicWeb/dynamicweb.py:3135
 msgid "Use a table format for the surnames index"
-msgstr "Verwenden ein Tabellenformat für den Nachnamenindex"
+msgstr "Verwende ein Tabellenformat für das Nachnamenverzeichnis"
 
 #: DynamicWeb/dynamicweb.py:3139
 msgid "Use a table format for the persons index"
-msgstr "Verwenden ein Tabellenformat für den Personenindex"
+msgstr "Verwende ein Tabellenformat für das Personenverzeichnis"
 
 #: DynamicWeb/dynamicweb.py:3143
 msgid "Use a table format for the families index"
-msgstr "Verwenden ein Tabellenformat für den Familienindex"
+msgstr "Verwende ein Tabellenformat für das Familienverzeichnis"
 
 #: DynamicWeb/dynamicweb.py:3147
 msgid "Use a table format for the sources index"
-msgstr "Verwenden ein Tabellenformat für den Quellenindex"
+msgstr "Verwende ein Tabellenformat für das Quellenverzeichnis"
 
 #: DynamicWeb/dynamicweb.py:3151
 msgid "Use a table format for the places index"
-msgstr "Verwenden ein Tabellenformat für den Ortsindex"
+msgstr "Verwende ein Tabellenformat für das Ortsverzeichnis"
 
 #: DynamicWeb/dynamicweb.py:3153
 msgid "Used for family"
@@ -3323,8 +3319,8 @@ msgid ""
 "Whether to use a special color for the persons that appear several times in "
 "the SVG tree"
 msgstr ""
-"Gibt an, ob für die Personen, die mehrmals im SVG-Baum erscheinen, eine "
-"spezielle Farbe verwendet werden soll"
+"Ob eine spezielle Farbe für die Personen verwendet werden soll, die mehrmals "
+"im SVG-Baum erscheinen"
 
 #: DynamicWeb/dynamicweb.py:3167
 msgid "Without name"
@@ -3341,7 +3337,7 @@ msgstr "Ohne Titel"
 #: DynamicWeb/dynamicweb.py:3170 LifeLineChartView/lifelinechartview.py:508
 #: GraphView/graphview.py:1095
 msgid "Zoom in"
-msgstr "Hineinzoomen"
+msgstr "Heranzoomen"
 
 #: DynamicWeb/dynamicweb.py:3171 LifeLineChartView/lifelinechartview.py:518
 #: GraphView/graphview.py:1102
@@ -3360,27 +3356,27 @@ msgstr "Kopierfehler: %(error)s"
 #: DynamicWeb/dynamicweb.py:3588
 #, python-format
 msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
-msgstr "Kopieren von \"%(src)s\" nach \"%(dst)s\" nicht möglich"
+msgstr "Kopieren von „%(src)s“ nach „%(dst)s“ nicht möglich"
 
 #: DynamicWeb/dynamicweb.py:3632
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
-msgstr "Kann Webseitenvorlage von \"%(path)s\" nicht kopieren"
+msgstr "Website-Vorlagendateien können nicht von „%(path)s“ kopiert werden"
 
 #: DynamicWeb/dynamicweb.py:3681
 #, python-format
 msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
-msgstr "Behalte \"%(dst)s\" (neuer als \"%(src)s\")"
+msgstr "Behalten von „%(dst)s“ (neuer als „%(src)s“)"
 
 #: DynamicWeb/dynamicweb.py:3687
 #, python-format
 msgid "Copying \"%(src)s\" to \"%(dst)s\""
-msgstr "Kopiere \"%(src)s\" nach \"%(dst)s\""
+msgstr "Kopieren von „%(src)s“ nach „%(dst)s“"
 
 #: DynamicWeb/dynamicweb.py:3718 DynamicWeb/dynamicweb.py:3742
 #, python-format
 msgid "Unable to overwrite archive file \"%(path)s\""
-msgstr "Kann Archivdatei \"%(path)s\" nicht überschreiben"
+msgstr "Archivdatei „%(path)s“ kann nicht überschrieben werden"
 
 #: DynamicWeb/dynamicweb.py:3731 DynamicWeb/dynamicweb.py:3752
 #, python-format
@@ -7249,22 +7245,16 @@ msgid "URL Compactness Level"
 msgstr "URL-Kompaktheitsstufe"
 
 #: settings_ui_manager.py:132
-#, fuzzy
-#| msgid "Shortest - No Prefix, No Variables"
 msgid "Shortest - No Prefix, No Keys"
-msgstr "Kürzeste - kein Präfix, keine Variablen"
+msgstr "Kürzeste - kein Präfix, keine Schlüssel"
 
 #: settings_ui_manager.py:135
-#, fuzzy
-#| msgid "Compact - No Prefix, Variables Without Attributes"
 msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Kompakt - kein Präfix, Variablen ohne Attribute"
+msgstr "Kompakt - Kein Präfix, Schlüssel ohne Attribute"
 
 #: settings_ui_manager.py:138
-#, fuzzy
-#| msgid "Compact - No Prefix, Variables With Attributes"
 msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Kompakt - kein Präfix, Variablen mit Attributen"
+msgstr "Kompakt - kein Präfix, Schlüssel mit Attributen"
 
 #: settings_ui_manager.py:141
 msgid "Long - Without Prefix on the Left"
@@ -7276,41 +7266,35 @@ msgstr "URL-Präfix-Ersetzung"
 
 #: settings_ui_manager.py:155
 msgid "AI Provider"
-msgstr ""
+msgstr "KI-Anbieter"
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "Disabled"
 msgid "(Disabled)"
-msgstr "Behindert"
+msgstr "(Deaktiviert)"
 
 #: settings_ui_manager.py:161
-#, fuzzy
-#| msgid "Use OpenAI"
 msgid "OpenAI"
-msgstr "OpenAI verwenden"
+msgstr "OpenAI"
 
 #: settings_ui_manager.py:162
 msgid "Mistral AI"
-msgstr ""
+msgstr "Mistral AI"
 
 #: settings_ui_manager.py:169
 msgid "OpenAI API Key"
 msgstr "OpenAI API-Schlüssel"
 
 #: settings_ui_manager.py:174
-#, fuzzy
-#| msgid "OpenAI API Key"
 msgid "OpenAI Model"
-msgstr "OpenAI API-Schlüssel"
+msgstr "OpenAI-Modell"
 
 #: settings_ui_manager.py:179
 msgid "Mistral API Key"
-msgstr ""
+msgstr "Mistral API Schlüssel"
 
 #: settings_ui_manager.py:184
 msgid "Mistral Model"
-msgstr ""
+msgstr "Mistral Modell"
 
 #: settings_ui_manager.py:189
 msgid "Show Links From Attributes"
@@ -7321,16 +7305,12 @@ msgid "Enable CSV Files"
 msgstr "CSV-Dateien ermöglichen"
 
 #: settings_ui_manager.py:227
-#, fuzzy
-#| msgid "Display 'Vars' Column"
 msgid "Display Columns"
-msgstr "Spalte 'Varianten' anzeigen"
+msgstr "Spalten anzeigen"
 
 #: settings_ui_manager.py:241
-#, fuzzy
-#| msgid "Display mode"
 msgid "Display Icons"
-msgstr "Anzeigemodus"
+msgstr "Symbole anzeigen"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
@@ -7346,65 +7326,65 @@ msgstr ""
 
 #: constants.py:260
 msgid "Column - Icons"
-msgstr ""
+msgstr "Spalte - Symbole"
 
 #: constants.py:261
 msgid "Column - Source Types (flags)"
-msgstr ""
+msgstr "Spalte - Quellentypen (Kennzeichen)"
 
 #: constants.py:262
 msgid "Column - Keys"
-msgstr ""
+msgstr "Spalte - Schlüssel"
 
 #: constants.py:263
 msgid "Column - Title"
-msgstr ""
+msgstr "Spalte - Titel"
 
 #: constants.py:264
 msgid "Column - Website Url"
-msgstr ""
+msgstr "Spalte - Website-Url"
 
 #: constants.py:265
-#, fuzzy
-#| msgid "Comment: {comment}\n"
 msgid "Column - Comment"
-msgstr "Kommentar: {comment}\n"
+msgstr "Spalte - Anmerkung"
 
 #: constants.py:290
 msgid "Icon - Visited URLs (checkmark)"
-msgstr ""
+msgstr "Symbol - Besuchte URLs (Häkchen)"
 
 #: constants.py:291
 msgid "Icon - Saved URLs (floppy disk)"
-msgstr ""
+msgstr "Symbol - Gespeicherte URLs (Diskette)"
 
 #: constants.py:292
 msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr ""
+msgstr "Symbol - URLs, die mit UID-Attributen verknüpft sind (UID- Ausweis)"
 
 #: constants.py:293
 msgid "Icon - URLs from regional CSV files (flag)"
-msgstr ""
+msgstr "Symbol - URLs aus regionalen CSV-Dateien ( Kennzeichen)"
 
 #: constants.py:294
 msgid "Icon - URLs from static CSV files (red pin)"
-msgstr ""
+msgstr "Symbol - URLs aus statischen CSV-Dateien (roter Stift)"
 
 #: constants.py:295
 msgid "Icon - URLs from common CSV files (earth)"
-msgstr ""
+msgstr "Symbol - URLs aus gängigen CSV-Dateien (Erde)"
 
 #: constants.py:296
 msgid "Icon - Direct URLs from attributes (link chain)"
-msgstr ""
+msgstr "Symbol - Direkte URLs von Attributen (Verknüpfungskette)"
 
 #: constants.py:297
 msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr ""
+msgstr "Symbol - URLs aus Kreuz-CSV-Dateien (Shuffle-Pfeile)"
 
 #: constants.py:298
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr ""
+"Symbol - URLs aus dem benutzerdefinierten Benutzerverzeichnis "
+"(Tabellenkalkulationssymbol)"
 
 #: qr_window.py:76
 msgid "QR-code"
@@ -7420,7 +7400,7 @@ msgstr ""
 
 #: WebSearch.py:718
 msgid "Keys"
-msgstr ""
+msgstr "Schlüssel"
 
 #: WebSearch.py:720
 msgid "Website URL"
@@ -7474,16 +7454,13 @@ msgid "Add Web Link Note"
 msgstr "Weblink Notiz hinzufügen"
 
 #: WebSearch.py:882
-#, fuzzy, python-format
-#| msgid "{} avatar images were sucessfully added."
+#, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "{} Avatar-Bilder wurden erfolgreich hinzugefügt."
+msgstr "Notiz #%(id)s wurde erfolgreich hinzugefügt"
 
 #: WebSearch.py:886
-#, fuzzy
-#| msgid "Error in reading '%s'"
 msgid "Error creating note"
-msgstr "Fehler beim Lesen von \"%s\""
+msgstr "Fehler beim Erstellen der Notiz"
 
 #: WebSearch.py:907
 msgid "URL is copied to the Clipboard"
@@ -7499,16 +7476,14 @@ msgid "Title: {title}\n"
 msgstr "Titel: {title}\n"
 
 #: WebSearch.py:1012
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {variables}\n"
+#, python-brace-format
 msgid "Replaced: {keys}\n"
-msgstr "Ersetzt: {variables}\n"
+msgstr "Ersetzt: {keys}\n"
 
 #: WebSearch.py:1016
-#, fuzzy, python-brace-format
-#| msgid "Empty: {variables}\n"
+#, python-brace-format
 msgid "Empty: {keys}\n"
-msgstr "Leer: {variables}\n"
+msgstr "Leer: {keys}\n"
 
 #: WebSearch.py:1018
 #, python-brace-format
@@ -19751,7 +19726,7 @@ msgstr "Referenzierte Person bearbeiten"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:295
 msgid "Zoom In"
-msgstr "Vergrößern"
+msgstr "Heranzoomen"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:296
 msgid "Zoom Out"
