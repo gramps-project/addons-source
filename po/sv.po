@@ -18,8 +18,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-04-12 05:53+0000\n"
-"Last-Translator: Morgan Antonsson <morgan.antonsson@gmail.com>\n"
+"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -79,7 +79,7 @@ msgstr "Tar bort tidigare tillagda händelser, notiser och källor"
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
-"Tag bort beräknade händelser, notiser och källor; sker omedelbart vi Utför"
+"Tag bort beräknade händelser, notiser och källor; sker omedelbart vid Utför"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
@@ -127,7 +127,7 @@ msgstr "Största åldersskillnader mellan syskon"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
-msgstr "Antal år i medel mellan två generationer"
+msgstr "Antal år i genomsnitt mellan två generationer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:136
 msgid "Estimated Dates"
@@ -135,7 +135,7 @@ msgstr "Uppskattade datum"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
-msgstr "Approximativt (omkring)"
+msgstr "Ungefärligt (omkring)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
@@ -168,7 +168,7 @@ msgstr ""
 "Verktyget beräkna uppskattade datum används för att lägga till och ta bort "
 "födelse- och dödshändelser för personer som saknar dessa händelser.\n"
 "\n"
-"Vid användning:\n"
+"För användning:\n"
 "1. Gå till valfliken\n"
 "2. Markera i [ ] tag-bort-valet för att ta bort tidigare uppskattningar\n"
 "3. Välj lägg-till-valet för att datera händelser med eller utan datum.\n"
@@ -213,8 +213,8 @@ msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
-"Är du säker på att du vill ta bort händelser, notiser och källor samt välj "
-"om data?"
+"Är du säker på att du vill ta bort tidigare händelser, notiser och källor "
+"samt välj om data?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
@@ -270,7 +270,7 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
-msgstr "Lägg till födelse- och dödshändelseer"
+msgstr "Lägg till födelse- och dödshändelser"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
@@ -301,7 +301,7 @@ msgstr "Tillagd födelsehändelse grundat på %(evidence)s, från %(name)s"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #, python-format
 msgid "Added birth event based on %s"
-msgstr "Lagt födelsehändelse grundat på %s"
+msgstr "Lagt till födelsehändelse grundat på %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
@@ -310,7 +310,7 @@ msgstr "Uppskattat födelsedatum"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr "Tillagd dödshändelse grundat på %(evidence)s, från %(person)s"
+msgstr "Lagt till dödshändelse grundat på %(evidence)s, från %(person)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
@@ -428,7 +428,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"XML: Antal data och relationer : \t%s\n"
+"XML: Antal poster och relationer : \t%s\n"
 "\n"
 
 #: lxml/etreeGramplet.py:474
@@ -546,7 +546,7 @@ msgid ""
 "XML: Number of additional records and relations: \t%s\n"
 msgstr ""
 "\n"
-"XML: Antal ytterligare data och relationer: \t%s\n"
+"XML: Antal ytterligare poster och relationer: \t%s\n"
 
 #: lxml/etreeGramplet.py:502
 #, python-format
@@ -615,7 +615,7 @@ msgid ""
 "Wrong namespace\n"
 "Need: %s"
 msgstr ""
-"Felaktig namnrymd\n"
+"Felaktigt namnutrymme\n"
 "Behöver: %s"
 
 #: lxml/lxmlGramplet.py:337
@@ -7074,10 +7074,8 @@ msgid "AI Provider"
 msgstr ""
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "Disabled"
 msgid "(Disabled)"
-msgstr "Handikappad"
+msgstr "(Handikappad)"
 
 #: settings_ui_manager.py:161
 msgid "OpenAI"
@@ -7112,16 +7110,12 @@ msgid "Enable CSV Files"
 msgstr ""
 
 #: settings_ui_manager.py:227
-#, fuzzy
-#| msgid "Display 'Vars' Column"
 msgid "Display Columns"
-msgstr "Visa kolumnen 'Vars'"
+msgstr "Visa kolumner"
 
 #: settings_ui_manager.py:241
-#, fuzzy
-#| msgid "Display mode"
 msgid "Display Icons"
-msgstr "Visningsläge"
+msgstr "Visa ikoner"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
@@ -7252,16 +7246,13 @@ msgid "Add Web Link Note"
 msgstr "Lägg till webblänksnotis"
 
 #: WebSearch.py:882
-#, fuzzy, python-format
-#| msgid "{} avatar images were sucessfully added."
+#, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "{} avatarbilder lades framgångsrikt till."
+msgstr "Notisen #%(id)s lades framgångsrikt till"
 
 #: WebSearch.py:886
-#, fuzzy
-#| msgid "Error in reading '%s'"
 msgid "Error creating note"
-msgstr "Fel vid läsning av '%s'"
+msgstr "Fel vid skapande av notis"
 
 #: WebSearch.py:907
 msgid "URL is copied to the Clipboard"
@@ -7277,10 +7268,9 @@ msgid "Title: {title}\n"
 msgstr "Titel: {title}\n"
 
 #: WebSearch.py:1012
-#, fuzzy, python-brace-format
-#| msgid "Replace to {0}"
+#, python-brace-format
 msgid "Replaced: {keys}\n"
-msgstr "Byt ut till {0}"
+msgstr "Utbytt: {keys}\n"
 
 #: WebSearch.py:1016
 #, python-brace-format
@@ -18830,10 +18820,8 @@ msgid "%s (association)"
 msgstr "%s (förening)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "New person"
 msgid "Note on Person"
-msgstr "Ny person"
+msgstr "Notis för person"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
@@ -18890,36 +18878,25 @@ msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:233 GeoTimeLines/GeoTimeLines.py:339
 #: GeoTimeLines/GeoTimeLines.gpr.py:25
-#, fuzzy
-#| msgid "Timeline pedigree"
 msgid "TimeLines Map"
-msgstr "Tidslinjeantavla"
+msgstr "GeoTimeLines-karta"
 
 #: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:800
-#, fuzzy
-#| msgid "Import done"
 msgid "Almost done"
-msgstr "Import klar"
+msgstr "Nästan klar"
 
 #: GeoTimeLines/GeoTimeLines.py:916
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Gathering data"
-msgstr "Laddar informationen"
+msgstr "Samlar in data"
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr ""
-"Antal personer : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+msgstr "Antal personer: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -18964,16 +18941,12 @@ msgid ""
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1875
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of steps"
-msgstr "Antal sidor"
+msgstr "Antal steg"
 
 #: GeoTimeLines/GeoTimeLines.py:1883
-#, fuzzy
-#| msgid "Type de Liste"
 msgid "Type of steps"
-msgstr "Listtyp"
+msgstr "Typ av steg"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
@@ -18998,10 +18971,8 @@ msgid "Show time ticks on navigation bar on startup"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1974
-#, fuzzy
-#| msgid "General options"
 msgid "TimeLines Map options"
-msgstr "Allmänna alternativ"
+msgstr "GeoTimeLines-karta alternativ"
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
@@ -19009,10 +18980,8 @@ msgid ""
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:39
-#, fuzzy
-#| msgid "Timeline pedigree"
 msgid "TimeLines map"
-msgstr "Tidslinjeantavla"
+msgstr "GeoTimeLines-karta"
 
 #: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
@@ -19510,26 +19479,20 @@ msgid "Winners"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:43
-#, fuzzy
-#| msgid "Live:"
 msgid "Lived"
-msgstr "Levande:"
+msgstr "Levde"
 
 #: RUWebConnectPack/RUWebPack.py:44
-#, fuzzy
-#| msgid "Type de liste"
 msgid "Open list"
-msgstr "Listtyp"
+msgstr "Öppna lista"
 
 #: RUWebConnectPack/RUWebPack.py:45
 msgid "Wait for me"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:46
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "All Russia Family Tree (forum)"
-msgstr "Släktträd för %s"
+msgstr "All Russia Family Tree (forum)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
@@ -19540,10 +19503,8 @@ msgid "RIA Officers"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:50
-#, fuzzy
-#| msgid "Family Surname"
 msgid "FamilySpace"
-msgstr "Familjenamn"
+msgstr "FamilySpace"
 
 #: DoubleCousins/double_cousins.py:112
 msgid "Double Cousins Report"
@@ -19699,10 +19660,8 @@ msgid "Legend"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:761
-#, fuzzy
-#| msgid "Grandparents"
 msgid ": Grandparent"
-msgstr "Far/mor-föräldrar"
+msgstr ": Far/mor-förälder"
 
 #: DNA/dnasegmentmap.py:1056
 #, python-brace-format
@@ -19721,10 +19680,8 @@ msgid " : Starts at "
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1063
-#, fuzzy
-#| msgid "and %s "
 msgid " and ends at "
-msgstr "och %s "
+msgstr " och slutar vid "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
@@ -19737,18 +19694,18 @@ msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship Type"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Relationstyp"
+msgstr ""
+"\n"
+"Släktskap: {0} "
 
 #: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestor"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Förfader"
+msgstr " Förfader: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -19980,10 +19937,8 @@ msgid "All persons already had one."
 msgstr "Alla personer har redan en."
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
-#, fuzzy
-#| msgid "Failure writing %s"
 msgid "Failed writing "
-msgstr "Fel vid skrivning av %s"
+msgstr "Fel vid skrivning av "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
@@ -19994,22 +19949,16 @@ msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Destination directory"
-msgstr "Felaktig målkatalog"
+msgstr "Målkatalog"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
-#, fuzzy
-#| msgid "The destination path for generated files."
 msgid "Path for generated files"
-msgstr "Målmappen för genererade filer."
+msgstr "Målmappen för genererade filer"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:868
-#, fuzzy
-#| msgid "Default View"
 msgid "Default Age"
-msgstr "Standardvisning"
+msgstr "Standardålder"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
@@ -20020,96 +19969,72 @@ msgid "What to show"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
-#, fuzzy
-#| msgid "The Gramps ID.."
 msgid "Show GrampsID"
-msgstr "Gramps-IDt.."
+msgstr "Visa Gramps-ID"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
-#, fuzzy
-#| msgid "Maximize"
 msgid "Optimize"
-msgstr "Maximera"
+msgstr "Optimera"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
-#, fuzzy
-#| msgid "Male Background Color"
 msgid "Male Box Color"
-msgstr "Bakgrundsfärg för män"
+msgstr "Färg i rutan för män"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:894
-#, fuzzy
-#| msgid "Color of male persons:"
 msgid "Box background color for male person"
-msgstr "Färg på manspersoner:"
+msgstr "Bakgrundsfärg för rutan på män"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:897
-#, fuzzy
-#| msgid "Female Box Edge"
 msgid "Female Box Color"
-msgstr "Rutkant för kvinnor"
+msgstr "Färg i rutan för kvinnor"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:898
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Box background color for female person"
-msgstr "Färg på kvinnopersoner:"
+msgstr "Bakgrundsfärg för rutan på kvinnor"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:904
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of pixel per year"
-msgstr "Antal sidor"
+msgstr "Antal pixlar per år"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:910
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Offset X Coordinate"
-msgstr "Platskoordinater"
+msgstr "Kompensera X-koordinat"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:917
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Offset Y Coordinate"
-msgstr "Platskoordinater"
+msgstr "Kompensera Y-koordinat"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
-#, fuzzy
-#| msgid "Height of the tree in pixels."
 msgid "Width of a box in pixel"
-msgstr "Höjd på trädet i punkter."
+msgstr "Bredden på en ruta i pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:922
-#, fuzzy
-#| msgid "Height of the tree in pixels."
 msgid "Width of the box of a person in pixel"
-msgstr "Höjd på trädet i punkter."
+msgstr "Bredden på rutan för en person i pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:925
-#, fuzzy
-#| msgid "Horizontal space descendant to spouse"
 msgid "Horizontal space between boxes in pixel"
-msgstr "Horisontellt utrymme ättling till make"
+msgstr "Horisontellt mellanrum mellan rutor i pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
@@ -20131,10 +20056,8 @@ msgid "Number of pixel between left border and scale"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
-#, fuzzy
-#| msgid "Timeline Pedigree"
 msgid "Timeline Pedigree Report"
-msgstr "Antavla med tidslinje"
+msgstr "Stamtavlerapport med tidslinje"
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
 msgid ""
@@ -20143,10 +20066,8 @@ msgid ""
 msgstr ""
 
 #: USWebConnectPack/USWebPack.py:35
-#, fuzzy
-#| msgid "GoogleEarth"
 msgid "US Google"
-msgstr "GoogleEarth"
+msgstr "Google USA"
 
 #: USWebConnectPack/USWebPack.gpr.py:11
 msgid "US Web Connect Pack"
@@ -20348,8 +20269,7 @@ msgid "Media width"
 msgstr "Mediabredd"
 
 #: MediaReport/media_report.py:452
-#, fuzzy, no-python-format
-#| msgid "Maximum media width in % of available page width."
+#, no-python-format
 msgid "Maximum media width in % of available page width."
 msgstr "Maximal mediabredd i % av den tillgängliga sidbredden."
 
@@ -20358,8 +20278,7 @@ msgid "Media height"
 msgstr "Mediahöjd"
 
 #: MediaReport/media_report.py:458
-#, fuzzy, no-python-format
-#| msgid "Maximum media height in % of available page height."
+#, no-python-format
 msgid "Maximum media height in % of available page height."
 msgstr "Maximal mediahöjd i % av den tillgängliga sidhöjden."
 
@@ -20368,10 +20287,8 @@ msgid "Reference Date or Date Range"
 msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
-#, fuzzy
-#| msgid " by Gramps "
 msgid "a valid Gramps date"
-msgstr " av Gramps "
+msgstr "ett giltigt Gramps-datum"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
@@ -20447,10 +20364,8 @@ msgid "Descendant Count"
 msgstr "Ättlingsräknare"
 
 #: DescendantCount/DescendantCount.gpr.py:24
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for showing people and descendant counts"
-msgstr "Gramplet för att tagga personer i foton"
+msgstr "Gramplet för att visa personer och ättlingar"
 
 #: FRWebConnectPack/FRWebPack.py:41
 msgid "Cultural ministry (France)"
@@ -20498,10 +20413,8 @@ msgid "Family Tree for %s"
 msgstr "Släktträd för %s"
 
 #: FamilyTree/FamilyTree.py:152
-#, fuzzy
-#| msgid "Places tool"
 msgid "Paper too small"
-msgstr "Platsverktyg"
+msgstr "För litet papper"
 
 #: FamilyTree/FamilyTree.py:153
 msgid "Some elements may not appear or be badly rendered."
@@ -20571,10 +20484,8 @@ msgid "The number of descendant generations to include in the tree"
 msgstr "Antal ättlingagenerationer som skall tas med i trädet"
 
 #: FamilyTree/FamilyTree.py:1055
-#, fuzzy
-#| msgid "The number of ??? pad"
 msgid "Kekule number of husband"
-msgstr "Antalet ??? pad"
+msgstr "Kekule-nummer för make"
 
 #: FamilyTree/FamilyTree.py:1056
 msgid ""
@@ -20583,10 +20494,8 @@ msgid ""
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:1059
-#, fuzzy
-#| msgid "Whether to scale to fit on a single page."
 msgid "Scale to fit on a single page"
-msgstr "Huruvida skala så att det ryms på en sida."
+msgstr "Skala för att passa på en enda sida"
 
 #: FamilyTree/FamilyTree.py:1060
 msgid "Whether to scale to fit on a single page."
@@ -20605,11 +20514,8 @@ msgid "Second generation"
 msgstr "Andra generation"
 
 #: FamilyTree/FamilyTree.py:1069
-#, fuzzy
-#| msgid "%d generation"
-#| msgid_plural "%d generations"
 msgid "Third generation"
-msgstr "%d generation"
+msgstr "Tredje generationen"
 
 #: FamilyTree/FamilyTree.py:1070
 msgid "Male line"
@@ -20668,10 +20574,8 @@ msgid "Fall back to burial or cremation if death event missing"
 msgstr "Använd begravning eller kremering om dödshändelse saknas"
 
 #: FamilyTree/FamilyTree.py:1122
-#, fuzzy
-#| msgid "Set private: %d %s\n"
 msgid "Protect private items"
-msgstr "Ange privata: %d %s\n"
+msgstr "Skydda privata föremål"
 
 #: FamilyTree/FamilyTree.py:1131
 msgid "Include event description"
@@ -20743,16 +20647,12 @@ msgid "Data:"
 msgstr "Data:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:378
-#, fuzzy
-#| msgid "Pages"
 msgid "Page:"
-msgstr "Sidor"
+msgstr "Sida:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:419
-#, fuzzy
-#| msgid "Select sources using a filter"
 msgid "Selection with a filter"
-msgstr "Välj källor med hjälp av ett filter"
+msgstr "Urval med hjälp av ett filter"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
@@ -20812,38 +20712,28 @@ msgid "Include media"
 msgstr "Tag med media"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:460
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include media."
-msgstr "Huruvida ta med bilder"
+msgstr "Huruvida ta med media."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:463
-#, fuzzy
-#| msgid "Include Options"
 msgid "Include citations"
-msgstr "Ta med alternativ"
+msgstr "Ta med citeringar"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:464
-#, fuzzy
-#| msgid "Whether to include a person's sources."
 msgid "Whether to include citations on sources."
-msgstr "Huruvida ta med källor."
+msgstr "Huruvida ta med citeringar för källor."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Whether to include repositories and sources marked as private."
 msgstr "Huruvida ta med arkivplatser och källor markerade som privata."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:471
-#, fuzzy
-#| msgid "Display type"
 msgid "Display empty values"
-msgstr "Visningstyp"
+msgstr "Visa tomma värden"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:472
-#, fuzzy
-#| msgid "Whether to include keys and values."
 msgid "Whether to include key records with empty values."
-msgstr "Huruvida ta med nycklar och värden."
+msgstr "Huruvida ta med nyckeldata med tomma värden."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:518
 #: RepositoriesReport/RepositoriesReport.py:189
@@ -20967,10 +20857,8 @@ msgstr[0] "%d generation"
 msgstr[1] "%d generationer"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
-#, fuzzy
-#| msgid "Timeline Pedigree"
 msgid "About Timeline Pedigree View"
-msgstr "Antavla med tidslinje"
+msgstr "Om antavla med tidslinje"
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
@@ -20989,92 +20877,64 @@ msgid "Graph View"
 msgstr "Diagramvy"
 
 #: GraphView/graphview.py:754
-#, fuzzy
-#| msgid "Show Tags"
 msgid "Show IDs"
-msgstr "Visa taggar"
+msgstr "Visa IDs"
 
 #: GraphView/graphview.py:757
-#, fuzzy
-#| msgid "Show Tags"
 msgid "Show avatars"
-msgstr "Visa taggar"
+msgstr "Visa avatarer"
 
 #: GraphView/graphview.py:760 GraphView/graphview.py:3736
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Highlight the home person"
-msgstr "Ställ in som huvudperson"
+msgstr "Markera hempersonen"
 
 #: GraphView/graphview.py:764 GraphView/graphview.py:3744
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show full dates"
-msgstr "Visa dubbletter"
+msgstr "Visa fullständiga datum"
 
 #: GraphView/graphview.py:768 GraphView/graphview.py:3752
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show places"
-msgstr "Visa dubbletter"
+msgstr "Visa platser"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Default (Top to Bottom)"
 msgid "Vertical: Top to Bottom"
-msgstr "Standard (Uppifrån och ner)"
+msgstr "Vertikal: Uppifrån och ner"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Bottom to Top"
 msgid "Vertical: Bottom to Top"
-msgstr "Nerifrån och upp"
+msgstr "Vertikal: Nerifrån och upp"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Left to Right"
 msgid "Horizontal: Left to Right"
-msgstr "Vänster till höger"
+msgstr "Horisontell: Vänster till höger"
 
 #: GraphView/graphview.py:784
-#, fuzzy
-#| msgid "Right to Left"
 msgid "Horizontal: Right to Left"
-msgstr "Höger till vänster"
+msgstr "Horisontell: Höger till vänster"
 
 #: GraphView/graphview.py:786
-#, fuzzy
-#| msgid "Unknown time direction"
 msgid "Time Direction"
-msgstr "Okänd tidsriktning"
+msgstr "Tidsriktning"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
 msgstr ""
 
 #: GraphView/graphview.py:812
-#, fuzzy
-#| msgid "Person page"
 msgid "Person theme"
-msgstr "Personsida"
+msgstr "Persontema"
 
 #: GraphView/graphview.py:817
-#, fuzzy
-#| msgid "Color of male persons:"
 msgid "Path color to home person"
-msgstr "Färg på manspersoner:"
+msgstr "Målfärg till hemperson"
 
 #: GraphView/graphview.py:821
-#, fuzzy
-#| msgid "Font"
 msgid "Font:"
-msgstr "Typsnitt"
+msgstr "Typsnitt:"
 
 #: GraphView/graphview.py:835
-#, fuzzy
-#| msgid "Text style"
 msgid "Avatars style"
-msgstr "Textstil"
+msgstr "Stil på avatarer"
 
 #: GraphView/graphview.py:841
 msgid "PNG files"
@@ -21085,64 +20945,48 @@ msgid "Male avatar:"
 msgstr ""
 
 #: GraphView/graphview.py:847
-#, fuzzy
-#| msgid "Choose a category."
 msgid "Choose male avatar"
-msgstr "Välj en kategori."
+msgstr "Välj mansavatar"
 
 #: GraphView/graphview.py:859
 msgid "Female avatar:"
 msgstr ""
 
 #: GraphView/graphview.py:860
-#, fuzzy
-#| msgid "Choose a category."
 msgid "Choose female avatar"
-msgstr "Välj en kategori."
+msgstr "Välj kvinnoavatar"
 
 #: GraphView/graphview.py:872
-#, fuzzy
-#| msgid "unknown version"
 msgid "Unknown avatar:"
-msgstr "okänd version"
+msgstr "Okänd avatar:"
 
 #: GraphView/graphview.py:873
 msgid "Choose Unknown avatar"
 msgstr ""
 
 #: GraphView/graphview.py:885
-#, fuzzy
-#| msgid "Other:"
 msgid "Other avatar:"
-msgstr "Andra:"
+msgstr "Annan avatar:"
 
 #: GraphView/graphview.py:886
 msgid "Choose Other avatar"
 msgstr ""
 
 #: GraphView/graphview.py:900
-#, fuzzy
-#| msgid "Active person"
 msgid "Active person border size"
-msgstr "Aktiv person"
+msgstr "Kantstorlek för aktiv person"
 
 #: GraphView/graphview.py:905
-#, fuzzy
-#| msgid "Person Overview"
 msgid "Person border size"
-msgstr "Personöversikt"
+msgstr "Kantstorlek på person"
 
 #: GraphView/graphview.py:908
-#, fuzzy
-#| msgid "Theme"
 msgid "Themes"
-msgstr "Tema"
+msgstr "Teman"
 
 #: GraphView/graphview.py:921 GraphView/graphview.py:3770
-#, fuzzy
-#| msgid "Condition"
 msgid "Show animation"
-msgstr "Kondition"
+msgstr "Visa animation"
 
 #: GraphView/graphview.py:925
 msgid "Animation speed (1..5 and 5 is the slower)"
@@ -21153,10 +20997,8 @@ msgid "Animation count (0..8 use 0 to turn off)"
 msgstr ""
 
 #: GraphView/graphview.py:938
-#, fuzzy
-#| msgid "Condition"
 msgid "Animation"
-msgstr "Kondition"
+msgstr "Animation"
 
 #: GraphView/graphview.py:952
 msgid "Search in all database"
@@ -21167,10 +21009,8 @@ msgid "Also apply search by all database."
 msgstr ""
 
 #: GraphView/graphview.py:957
-#, fuzzy
-#| msgid "Show persons"
 msgid "Show person images"
-msgstr "Visa personer"
+msgstr "Visa personbilder"
 
 #: GraphView/graphview.py:960
 msgid "Show persons thumbnails in search result list."
