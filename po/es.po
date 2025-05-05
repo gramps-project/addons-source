@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-04-04 00:40+0000\n"
+"PO-Revision-Date: 2025-04-11 15:26+0000\n"
 "Last-Translator: gioboto <giomaussi@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -538,7 +538,7 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
-msgstr ""
+msgstr "Por favor, intente instalar el paquete \"python3 lxml\"."
 
 #: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
