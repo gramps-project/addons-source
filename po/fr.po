@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-24 13:38+0000\n"
+"POT-Creation-Date: 2025-04-11 14:09+0100\n"
 "PO-Revision-Date: 2025-04-11 12:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
@@ -2558,8 +2558,8 @@ msgstr ""
 "\"Enfants\".\n"
 "\n"
 "Ou Importer des personnes d'un fichier externe:\n"
-"• Un fichier externe peut être utilisé pour peupler l'arbre via \"Importer…\""
-" dans le menu \"Arbres familiaux\"."
+"• Un fichier externe peut être utilisé pour peupler l'arbre via \"Importer…"
+"\" dans le menu \"Arbres familiaux\"."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
@@ -2582,8 +2582,8 @@ msgid ""
 msgstr ""
 "\n"
 " 👣 Prochaines étapes:\n"
-"• Sélectionnez l'icône de vue Individu dans la barre latérale de navigation."
-"\n"
+"• Sélectionnez l'icône de vue Individu dans la barre latérale de "
+"navigation.\n"
 "• Sélectionnez quelqu'un pour en faire l' \"indinvidu actif\".\n"
 "• Choisissez \"Définir comme souche\" dans le menu Édition ou dans le menu "
 "contextuel (clic-droit).\n"
@@ -5398,12 +5398,11 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href="
-"\"https://gramps-project.org/wiki/index.php/Comment_faire_une_sauvegarde\""
-">Sauvegarde Gramps XML</a> Vous trouverez « Sauvegarder... » dans le menu « "
-"Arbres familiaux » de Gramps, sinon utiliser \"Exporter...\" dans le même "
-"menu, mais décochez l'option de confidentialité dans l'Assistant d'export "
-"afin d'exporter toutes les données.</i>\n"
+"<i><a href=\"https://gramps-project.org/wiki/index.php/"
+"Comment_faire_une_sauvegarde\">Sauvegarde Gramps XML</a> Vous trouverez « "
+"Sauvegarder... » dans le menu « Arbres familiaux » de Gramps, sinon utiliser "
+"\"Exporter...\" dans le même menu, mais décochez l'option de confidentialité "
+"dans l'Assistant d'export afin d'exporter toutes les données.</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
@@ -5625,9 +5624,9 @@ msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
-"Pour le greffon « Networkchart », la police <a href="
-"\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> donne "
-"un résultat extrêmement lisible.\n"
+"Pour le greffon « Networkchart », la police <a href=\"https://www."
+"fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> donne un résultat "
+"extrêmement lisible.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
@@ -5716,8 +5715,9 @@ msgid ""
 "a></b></u>\n"
 msgstr ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php/"
-"Gramps_6.0_Wiki_Manual_-_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGES."
-"2C_LC_TIME\">Paramètres régionaux :</a></b></u>\n"
+"Gramps_6.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGES.2C_LC_TIME\">Paramètres "
+"régionaux :</a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
@@ -5978,8 +5978,8 @@ msgid ""
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
 "Active/désactive les coches sur les lignes sélectionnées. Les lignes peuvent "
-"être sélectionnées avec <Ctrl> clic (ajouter au groupe) ou <Maj> clic ("
-"étendre le groupe), ou avec <Ctrl> ou <Maj> et les touches flêchées ou la "
+"être sélectionnées avec <Ctrl> clic (ajouter au groupe) ou <Maj> clic "
+"(étendre le groupe), ou avec <Ctrl> ou <Maj> et les touches flêchées ou la "
 "barre d'espace. Ou <Ctrl> « a » pour tout sélectionner."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
@@ -7306,73 +7306,105 @@ msgstr ""
 "les enregistrements qui les référencent, l'individu, la famille, "
 "l'événement, etc."
 
-#: settings_ui_manager.py:103
+#: settings_ui_manager.py:110
 msgid "Middle Name Handling"
 msgstr "Gestion du deuxième prénom"
 
-#: settings_ui_manager.py:108
+#: settings_ui_manager.py:115
 msgid "Leave alone"
 msgstr "Laisser tel que"
 
-#: settings_ui_manager.py:109
+#: settings_ui_manager.py:116
 msgid "Separate"
 msgstr "Séparer"
 
-#: settings_ui_manager.py:119
+#: settings_ui_manager.py:126
 msgid "URL Compactness Level"
 msgstr "Niveau de compacité de l'URL"
 
-#: settings_ui_manager.py:125
-msgid "Shortest - No Prefix, No Variables"
+#: settings_ui_manager.py:132
+#, fuzzy
+#| msgid "Shortest - No Prefix, No Variables"
+msgid "Shortest - No Prefix, No Keys"
 msgstr "Le plus court - Pas de préfixe, pas de Variables"
 
-#: settings_ui_manager.py:128
-msgid "Compact - No Prefix, Variables Without Attributes"
+#: settings_ui_manager.py:135
+#, fuzzy
+#| msgid "Compact - No Prefix, Variables Without Attributes"
+msgid "Compact - No Prefix, Keys Without Attributes"
 msgstr "Compact - Pas de préfixe, Variables sans attributs"
 
-#: settings_ui_manager.py:131
-msgid "Compact - No Prefix, Variables With Attributes"
+#: settings_ui_manager.py:138
+#, fuzzy
+#| msgid "Compact - No Prefix, Variables With Attributes"
+msgid "Compact - No Prefix, Keys With Attributes"
 msgstr "Compact - Pas de préfixe, Variables avec Attributs"
 
-#: settings_ui_manager.py:134
+#: settings_ui_manager.py:141
 msgid "Long - Without Prefix on the Left"
 msgstr "Long - Sans préfixe sur la gauche"
 
-#: settings_ui_manager.py:141
+#: settings_ui_manager.py:148
 msgid "URL Prefix Replacement"
 msgstr "Remplacement du préfixe d'URL"
 
-#: settings_ui_manager.py:145
-msgid "Use OpenAI"
+#: settings_ui_manager.py:155
+msgid "AI Provider"
+msgstr ""
+
+#: settings_ui_manager.py:160
+#, fuzzy
+#| msgid "Disabled"
+msgid "(Disabled)"
+msgstr "Non-actif"
+
+#: settings_ui_manager.py:161
+#, fuzzy
+#| msgid "Use OpenAI"
+msgid "OpenAI"
 msgstr "Utiliser OpenAI"
 
-#: settings_ui_manager.py:147
+#: settings_ui_manager.py:162
+msgid "Mistral AI"
+msgstr ""
+
+#: settings_ui_manager.py:169
 msgid "OpenAI API Key"
 msgstr "Clé de l'API OpenAI"
 
-#: settings_ui_manager.py:150
-msgid "Display 'Website URL' Column"
-msgstr "Afficher la colonne « URL du site Web »"
+#: settings_ui_manager.py:174
+#, fuzzy
+#| msgid "OpenAI API Key"
+msgid "OpenAI Model"
+msgstr "Clé de l'API OpenAI"
 
-#: settings_ui_manager.py:155
-msgid "Display 'Vars' Column"
-msgstr "Afficher la colonne 'Vars'"
+#: settings_ui_manager.py:179
+msgid "Mistral API Key"
+msgstr ""
 
-#: settings_ui_manager.py:160
-msgid "Show User Data Icon"
-msgstr "Afficher l'icône des données utilisateur"
+#: settings_ui_manager.py:184
+msgid "Mistral Model"
+msgstr ""
 
-#: settings_ui_manager.py:164
-msgid "Show Flag Icons"
-msgstr "Afficher les icônes de drapeau"
-
-#: settings_ui_manager.py:168
+#: settings_ui_manager.py:189
 msgid "Show Links From Attributes"
 msgstr "Afficher les liens des attributs"
 
-#: settings_ui_manager.py:181
+#: settings_ui_manager.py:220
 msgid "Enable CSV Files"
 msgstr "Activer les fichiers CSV"
+
+#: settings_ui_manager.py:227
+#, fuzzy
+#| msgid "Display 'Vars' Column"
+msgid "Display Columns"
+msgstr "Afficher la colonne 'Vars'"
+
+#: settings_ui_manager.py:241
+#, fuzzy
+#| msgid "Display mode"
+msgid "Display Icons"
+msgstr "Mode d'affichage"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
@@ -7386,6 +7418,68 @@ msgstr ""
 "Requêtes personnalisées pour les services en ligne en fonction de "
 "l'enregistrement actif : individu, lieu, famille ou source"
 
+#: constants.py:260
+msgid "Column - Icons"
+msgstr ""
+
+#: constants.py:261
+msgid "Column - Source Types (flags)"
+msgstr ""
+
+#: constants.py:262
+msgid "Column - Keys"
+msgstr ""
+
+#: constants.py:263
+msgid "Column - Title"
+msgstr ""
+
+#: constants.py:264
+msgid "Column - Website Url"
+msgstr ""
+
+#: constants.py:265
+#, fuzzy
+#| msgid "Comment: {comment}\n"
+msgid "Column - Comment"
+msgstr "Commentaire : {comment}\n"
+
+#: constants.py:290
+msgid "Icon - Visited URLs (checkmark)"
+msgstr ""
+
+#: constants.py:291
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr ""
+
+#: constants.py:292
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr ""
+
+#: constants.py:293
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr ""
+
+#: constants.py:294
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr ""
+
+#: constants.py:295
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr ""
+
+#: constants.py:296
+msgid "Icon - Direct URLs from attributes (link chain)"
+msgstr ""
+
+#: constants.py:297
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr ""
+
+#: constants.py:298
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+
 #: qr_window.py:76
 msgid "QR-code"
 msgstr "QR-code"
@@ -7398,39 +7492,39 @@ msgstr ""
 "⚠ Erreur lors de la génération du code QR :\n"
 "Erreur initiale : \"{}\""
 
-#: WebSearch.py:1419
-msgid "Vars"
-msgstr "Vars"
+#: WebSearch.py:718
+msgid "Keys"
+msgstr ""
 
-#: WebSearch.py:1421
+#: WebSearch.py:720
 msgid "Website URL"
 msgstr "URL du site"
 
-#: WebSearch.py:1424
+#: WebSearch.py:723
 msgid "Add link to note"
 msgstr "Ajouter un lien à la note"
 
-#: WebSearch.py:1425
+#: WebSearch.py:724
 msgid "Show QR-code"
 msgstr "Afficher le QR-code"
 
-#: WebSearch.py:1426
+#: WebSearch.py:725
 msgid "Copy link to clipboard"
 msgstr "Copier le lien vers le presse-papiers"
 
-#: WebSearch.py:1428
+#: WebSearch.py:727
 msgid "Hide link for selected item"
 msgstr "Masquer le lien pour l'élément sélectionné"
 
-#: WebSearch.py:1430
+#: WebSearch.py:729
 msgid "Hide link for all items"
 msgstr "Masquer le lien pour tous les éléments"
 
-#: WebSearch.py:1432
+#: WebSearch.py:731
 msgid "🔍 AI Suggestions"
 msgstr "Suggestions d'IA"
 
-#: WebSearch.py:1549
+#: WebSearch.py:848
 #, python-brace-format
 msgid ""
 "📌 This web link was added using the WebSearch gramplet for future "
@@ -7449,34 +7543,45 @@ msgstr ""
 "Vous pouvez utiliser ce lien pour revisiter la source et vérifier les "
 "informations relatives à cet individu."
 
-#: WebSearch.py:1560
+#: WebSearch.py:860
 msgid "Add Web Link Note"
 msgstr "Ajouter une note de lien Web"
 
-#: WebSearch.py:1596
+#: WebSearch.py:882
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr ""
+
+#: WebSearch.py:886
+msgid "Error creating note"
+msgstr ""
+
+#: WebSearch.py:907
 msgid "URL is copied to the Clipboard"
 msgstr "L'URL est copiée dans le presse-papiers"
 
-#: WebSearch.py:1656
+#: WebSearch.py:967
 msgid "WebSearch Link"
 msgstr "Lien WebSearch"
 
-#: WebSearch.py:1701
+#: WebSearch.py:1010
 #, python-brace-format
 msgid "Title: {title}\n"
 msgstr "Titre : {title}\n"
 
-#: WebSearch.py:1703
-#, python-brace-format
-msgid "Replaced: {variables}\n"
+#: WebSearch.py:1012
+#, fuzzy, python-brace-format
+#| msgid "Replaced: {variables}\n"
+msgid "Replaced: {keys}\n"
 msgstr "Remplacé : {variables}\n"
 
-#: WebSearch.py:1707
-#, python-brace-format
-msgid "Empty: {variables}\n"
+#: WebSearch.py:1016
+#, fuzzy, python-brace-format
+#| msgid "Empty: {variables}\n"
+msgid "Empty: {keys}\n"
 msgstr "Vide : {variables}\n"
 
-#: WebSearch.py:1711
+#: WebSearch.py:1018
 #, python-brace-format
 msgid "Comment: {comment}\n"
 msgstr "Commentaire : {comment}\n"
@@ -8575,8 +8680,8 @@ msgid ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "L'import direct de fichiers TMG n'est pas pris en charge par le greffon "
-"d'import TMG. Vous devez utiliser une copie de sauvegarde du projet TMG "
-"(*.sqz). Assurez-vous que votre projet TMG a été créé par TMG version 5.x ou "
+"d'import TMG. Vous devez utiliser une copie de sauvegarde du projet TMG (*."
+"sqz). Assurez-vous que votre projet TMG a été créé par TMG version 5.x ou "
 "supérieure. Votre fichier : *.VER - Fichier de contrôle de version pour TMG "
 "1.2 et versions antérieures. Veuillez vous référer à : "
 "%(gramps_wiki_import_pjc_direct_url)s"
@@ -23202,6 +23307,18 @@ msgstr "Chercher"
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
 msgstr "Afficher l'aide"
+
+#~ msgid "Display 'Website URL' Column"
+#~ msgstr "Afficher la colonne « URL du site Web »"
+
+#~ msgid "Show User Data Icon"
+#~ msgstr "Afficher l'icône des données utilisateur"
+
+#~ msgid "Show Flag Icons"
+#~ msgstr "Afficher les icônes de drapeau"
+
+#~ msgid "Vars"
+#~ msgstr "Vars"
 
 #, fuzzy, python-format
 #~| msgid "Failure writing %s: %s"
