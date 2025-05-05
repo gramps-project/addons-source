@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-03-31 19:47+0000\n"
+"PO-Revision-Date: 2025-05-03 15:40+0000\n"
 "Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -1642,10 +1642,9 @@ msgstr "Opcions d’exportació GEXF"
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Error en escriure %s"
+msgstr "Error en escriure {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
@@ -1713,7 +1712,7 @@ msgstr "El nom del fitxer de destinació per al contingut HTML."
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
-msgstr ""
+msgstr "Arbre ancestral colapsable"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
@@ -1788,10 +1787,9 @@ msgstr ""
 "Vols intentar crear-lo?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-brace-format
-#| msgid "Failed to create %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "No s’ha pogut crear %s: %s"
+msgstr "No s’ha pogut crear {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -3018,10 +3016,8 @@ msgid "Persons"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3054
-#, fuzzy
-#| msgid "Places tool"
 msgid "Places Index"
-msgstr "Eina de llocs"
+msgstr "Índex de llocs"
 
 #: DynamicWeb/dynamicweb.py:3056
 msgid "Preparing file ..."
@@ -7264,16 +7260,14 @@ msgid "WebSearch Link"
 msgstr ""
 
 #: WebSearch.py:1010
-#, fuzzy, python-brace-format
-#| msgid "Places tool"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Eina de llocs"
+msgstr "Títol: {title}\n"
 
 #: WebSearch.py:1012
-#, fuzzy, python-brace-format
-#| msgid "Replace text"
+#, python-brace-format
 msgid "Replaced: {keys}\n"
-msgstr "Substitueix el text"
+msgstr "Substituït: {keys}\n"
 
 #: WebSearch.py:1016
 #, python-brace-format
