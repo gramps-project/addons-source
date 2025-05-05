@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-04 16:05+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -1372,7 +1372,7 @@ msgstr "Lähteet ja viittaukset -raportti"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
-msgstr "Tarjoaa lähde- ja viiteraportin muistiinpanoineen"
+msgstr "Tarjoaa lähde- ja viiteraportin lisätietoineen"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
@@ -1471,7 +1471,7 @@ msgstr "tutkijan nimi"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:436
 msgid "Select sources using a filter"
-msgstr "Valitse lähteet käyttämällä suodatinta"
+msgstr "Valitse lähteet käyttämällä suodinta"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:443
 msgid "Show persons"
@@ -1479,7 +1479,7 @@ msgstr "Näytä henkilöt"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
-msgstr "Näytetäänkö mainitut tapahtumat ja henkilöt lisätiedoissa"
+msgstr "Näytetäänkö lisätiedoissa mainitut tapahtumat ja henkilöt"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
 #: RepositoriesReport/RepositoriesReportAlt.py:504
@@ -1497,23 +1497,23 @@ msgstr "Raportin alatunnisteen tyyli."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:524
 msgid "The style used for source title."
-msgstr ""
+msgstr "Lähteen otsikon tyyli."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:536
 msgid "The style used for source subtitle."
-msgstr ""
+msgstr "Lähteen alaotsikon tyyli."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:548
 msgid "The style used for Source details."
-msgstr ""
+msgstr "Lähteen tietojen tyyli."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:563
 msgid "The style used for citation title."
-msgstr ""
+msgstr "Sitaatin otsikon tyyli."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:575
 msgid "The style used for a column title."
-msgstr ""
+msgstr "Sarakkeen otsikon tyyli."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
 #: RepositoriesReport/RepositoriesReportAlt.py:533
@@ -1523,15 +1523,15 @@ msgstr "Osioiden tyyli."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:622
 msgid "The style used for event and person details."
-msgstr ""
+msgstr "Henkilötietojen tyyli."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
-msgstr ""
+msgstr "Esivanhempien puu LaTeX-sukupuun avulla"
 
 #: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
-msgstr ""
+msgstr "Jälkeläispuu LaTeX-sukupuun avulla"
 
 #: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
@@ -1539,27 +1539,27 @@ msgstr "Isovanhempien puu"
 
 #: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
-msgstr ""
+msgstr "Isovanhempien puu LaTeX-sukupuun avulla"
 
 #: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
-msgstr ""
+msgstr "Tiimalasipuu"
 
 #: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
-msgstr ""
+msgstr "Tiimalasipuu LaTeX-sukupuun avulla"
 
 #: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
-msgstr ""
+msgstr "Perheen tiimalasipuu"
 
 #: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
-msgstr ""
+msgstr "Perheen tiimalasipuu LaTeX-sukupuun avulla"
 
 #: GenealogyTree/gt_sandclock.py:235
 msgid "The center family for the report"
-msgstr ""
+msgstr "Raportin keskusperhe"
 
 #: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
@@ -1571,7 +1571,7 @@ msgstr "Esipolvet"
 
 #: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
-msgstr "Sisarukset mukana"
+msgstr "Sisällytä sisarukset"
 
 #: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
@@ -1580,35 +1580,37 @@ msgstr "Sisällytä esivanhempien sisarukset."
 #: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
 #: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
 msgid "Include images"
-msgstr "Lisää kuvat"
+msgstr "Näytä kuvat"
 
 #: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
 #: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
 msgid "Include images of people in the nodes."
-msgstr "Lisää solmuihin henkilökuvat."
+msgstr "Näytä solmuissa henkilökuvat."
 
 #: GenealogyTree/gt_grandparent.py:119
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
-msgstr ""
+msgstr "Henkilöllä %s ei ole sekä isän että äidin puoleista isovanhempaa"
 
 #: GenealogyTree/gt_grandparent.py:227
 msgid "Grandparent family spacing"
-msgstr "Isovanhempien perheväli"
+msgstr "Isovanhempien perheiden väli"
 
 #: GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
-msgstr ""
+msgstr "Isovanhempien perheiden ylimääräinen väli (mm)"
 
 #: GenealogyTree/gt_descendant.py:191
 msgid "First spouse left"
-msgstr ""
+msgstr "Ensimmäinen puoliso vasemmalla"
 
 #: GenealogyTree/gt_descendant.py:192
 msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
+"Useista puolisoista ensimmäinen aina vasemmalle. Tämä voi auttaa vähentämään "
+"yhdysviivojen risteämisiä usean avioliiton yhteydessä."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -1620,11 +1622,11 @@ msgstr "_Henkilö GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
-msgstr "GEXF:ää käytetään monissa verkkokaavioissa."
+msgstr "GEXF:ää käytetään monissa kaavioissa."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
 msgid "GEXF export options"
-msgstr "GEXF-vientivalinnat"
+msgstr "GEXF-viennin valinnat"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -1644,38 +1646,38 @@ msgstr "Kirjoitus epäonnistui {target_path}: {message}"
 #: D3Charts/DescendantIndentedTree.py:1518
 #, python-format
 msgid "Failed to create directory structure : %s"
-msgstr "Ei voitu luoda hakemistoai: %s"
+msgstr "Hakemiston luonti ei onnistunut: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
 #: D3Charts/DescendantIndentedTree.py:1554
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr "Web-tiedostojen kopiointi epäonnistui : %s"
+msgstr "Web-tiedostojen kopiointi epäonnistui: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
-msgstr "Esivanhempien tiivistettävän puun asetukset"
+msgstr "Esivanhempien tiivistettävän puun valinnat"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
 msgid "Include Generations"
-msgstr "Lisää sukupolvet"
+msgstr "Näytettävät sukupolvet"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
 msgid "Male Background Color"
-msgstr "Miesten taustaväri"
+msgstr "Miehen taustaväri"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
-msgstr "RGB-taustaväri miehen laatikolle."
+msgstr "Miehen laatikon RGB-taustaväri."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
 msgid "Male Expandable Background Color"
-msgstr "Miehen taustavärin valinta"
+msgstr "Miehen laajennettavan laatikon taustaväri"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
 msgid "RGB-color for male expandable box background."
-msgstr "RGB-taustavärin valinta miehen laatikolle."
+msgstr "Miehen laajennettavan laatikon RGB-taustaväri."
 
 #: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
@@ -1683,20 +1685,20 @@ msgstr "Naisen taustaväri"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr "RGB-taustaväri naisen laatikolle."
+msgstr "Naisen laatikon RGB-taustaväri."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
-msgstr "Naisen taustavärin valinta"
+msgstr "Naisen laajennettavan laatikon taustaväri"
 
 #: D3Charts/AncestralCollapsibleTree.py:861
 msgid "RGB-color for female expandable box background."
-msgstr "RGB-värivalinta naisen laatikolle."
+msgstr "Naisen laajennettavan laatikon RGB-taustaväri."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
 msgid "The destination path for generated files."
-msgstr "Luodun tiedoston kohdehakemisto."
+msgstr "Kohdehakemisto uusille tiedostoille."
 
 #: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
 #: D3Charts/DescendantIndentedTree.py:1830
@@ -1752,18 +1754,20 @@ msgstr "RGB-taustaväri äidin laatikolle."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
-msgstr ""
+msgstr "Esivanhempien viuhkakaavio"
 
 #: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
+"Luo verkkosivun, jossa on graafinen esitys esi-isistä (SVG) viuhkakaaviona "
+"käyttäen D3.js JavaScript -kirjastoja."
 
 #: D3Charts/DescendantIndentedTree.py:673
 #, python-format
 msgid "See %(reference)s : %(spouse)s"
-msgstr ""
+msgstr "Katso %(reference)s : %(spouse)s"
 
 #: D3Charts/DescendantIndentedTree.py:764
 msgid "Generating report..."
@@ -1771,7 +1775,7 @@ msgstr "Raporttia luodaan..."
 
 #: D3Charts/DescendantIndentedTree.py:1364
 msgid "Invalid Destination Directory"
-msgstr ""
+msgstr "Virheellinen kohdehakemisto"
 
 #: D3Charts/DescendantIndentedTree.py:1365
 #, python-format
@@ -1779,11 +1783,13 @@ msgid ""
 "Destinaton diretory %s does not exist\n"
 "Do you want to attempt to create it?"
 msgstr ""
+"Kohdehakemistoa %s ei ole olemassa\n"
+"Haluatko yrittää luoda sen?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr ""
+msgstr "Luonti ei onnistunut {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -1791,6 +1797,8 @@ msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
+"Tiedosto %s on jo olemassa\n"
+"Haluatko korvata sen?"
 
 #: D3Charts/DescendantIndentedTree.py:1445
 msgid "Default View"
@@ -1798,32 +1806,32 @@ msgstr "Oletusnäkymä"
 
 #: D3Charts/DescendantIndentedTree.py:1448
 msgid "Expand All"
-msgstr ""
+msgstr "Laajenna kaikki"
 
 #: D3Charts/DescendantIndentedTree.py:1810
 msgid "Include contraction level"
-msgstr ""
+msgstr "Sisällytä supistuksen taso"
 
 #: D3Charts/DescendantIndentedTree.py:1812
 msgid "The number of descendant levels to contract on initial display."
-msgstr ""
+msgstr "Jälkeläisten supistettavien tasojen määrä aloitusnäytöllä."
 
 #: D3Charts/DescendantIndentedTree.py:1819
 msgid "The font size in pixels for each node."
-msgstr ""
+msgstr "Kunkin solmun fonttikoko pikseleinä."
 
 #: D3Charts/DescendantIndentedTree.py:1847
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
-msgstr "Näytetäänkö raportissa kaksoissukupuut."
+msgstr "Näytetäänkö raportissa toistuvat sukupuut."
 
 #: D3Charts/DescendantIndentedTree.py:1851
 msgid "Expanded Row Background Color"
-msgstr "Laajennetun rivin taustaväri"
+msgstr "Laajennettujen rivien taustaväri"
 
 #: D3Charts/DescendantIndentedTree.py:1852
 msgid "RGB-color for expanded row background."
-msgstr "RGB-taustaväri laajennetulle riville."
+msgstr "RGB-taustaväri laajennetuille riveille."
 
 #: D3Charts/DescendantIndentedTree.py:1855
 msgid "Expandable Background Color"
@@ -1835,35 +1843,35 @@ msgstr "RGB-taustaväri laajennettavalle riville."
 
 #: D3Charts/DescendantIndentedTree.py:1860
 msgid "Non-Expandable Background Color"
-msgstr "Kiinteä taustaväri"
+msgstr "Laajentumattomien rivien taustaväri"
 
 #: D3Charts/DescendantIndentedTree.py:1862
 msgid "RGB-color for non-expandable row background."
-msgstr "RGB-taustaväri riville."
+msgstr "RGB-taustaväri laajentumattomille riveille."
 
 #: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
-msgstr "Lisää yksityisiksi merkityt tiedot"
+msgstr "Näytä yksityisiksi merkityt tiedot"
 
 #: D3Charts/DescendantIndentedTree.py:1868
 msgid "Whether to include private objects."
-msgstr "Lisätäänkö yksityiset tiedot."
+msgstr "Näyetäänkö yksityiset kohteet."
 
 #: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
-msgstr "Lisää vain sukunimi"
+msgstr "Näytä vain sukunimi"
 
 #: D3Charts/DescendantIndentedTree.py:1878 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
-msgstr "Lisää vain koko nimi"
+msgstr "Näytä vain koko nimi"
 
 #: D3Charts/DescendantIndentedTree.py:1880
 msgid "How to handle living people."
-msgstr ""
+msgstr "Elävien ihmisten käsittely."
 
 #: D3Charts/DescendantIndentedTree.py:1887
 msgid "Whether or not to include people who may have recently died."
-msgstr "Lisätäänkö mukaan hiljattain kuolleet henkilöt vai ei."
+msgstr "Lisätäänkö mukaan hiljattain kuolleet henkilöt."
 
 #: D3Charts/DescendantIndentedTree.py:1895
 msgid "Navigation"
@@ -4435,10 +4443,8 @@ msgid "DenominoViso Options"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2556
-#, fuzzy
-#| msgid "The destination folder for generated files."
 msgid "The destination file for the html-content."
-msgstr "Luodun tiedoston kohdehakemisto."
+msgstr "Kohdehakemisto html-tiedostoille."
 
 #: DenominoViso/DenominoViso.py:2559
 #, fuzzy
@@ -7595,10 +7601,8 @@ msgid "The output format to be used"
 msgstr "Lähdeluettelon oletusmuoto"
 
 #: DescendantsLines/DescendantsLines.py:1541
-#, fuzzy
-#| msgid "The destination folder for generated files."
 msgid "The destination file for the content."
-msgstr "Luodun tiedoston kohdehakemisto."
+msgstr "Kohdehakemisto uusille tiedostoille."
 
 #: DescendantsLines/DescendantsLines.py:1545
 #, fuzzy
@@ -20523,10 +20527,8 @@ msgid "Destination directory"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
-#, fuzzy
-#| msgid "The destination folder for generated files."
 msgid "Path for generated files"
-msgstr "Luodun tiedoston kohdehakemisto."
+msgstr "Kohdehakemisto uusille tiedostoille."
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:868
 #, fuzzy
