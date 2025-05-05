@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-04-13 23:01+0000\n"
-"Last-Translator: mahmutozcan <mahmutozcan@protonmail.com>\n"
+"PO-Revision-Date: 2025-04-16 18:03+0000\n"
+"Last-Translator: Bora Atıcı <boratici.acc@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
 "Language: tr\n"
@@ -21,20 +21,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.11.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
-msgstr "Medya birleştir"
+msgstr "Ortam birleştir"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
-msgstr[0] "{number_of} medya birleştirildi"
+msgstr[0] "{number_of} ortam birleştirildi"
 
 #: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
@@ -6908,16 +6908,14 @@ msgid "WebSearch Link"
 msgstr ""
 
 #: WebSearch.py:1010
-#, fuzzy, python-brace-format
-#| msgid "Place title"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Yer başlığı"
+msgstr "Başlık: {title}\n"
 
 #: WebSearch.py:1012
-#, fuzzy, python-brace-format
-#| msgid "Check place titles"
+#, python-brace-format
 msgid "Replaced: {keys}\n"
-msgstr "Yer başlığı denetle"
+msgstr "Değiştirildi: {keys}\n"
 
 #: WebSearch.py:1016
 #, python-brace-format
@@ -7538,10 +7536,8 @@ msgid "PlaceCompletion is unable to create %s %s"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:340
-#, fuzzy
-#| msgid "Place titles"
 msgid "Places tool"
-msgstr "Yer başlıkları"
+msgstr "Yerler aracı"
 
 #: PlaceCompletion/PlaceCompletion.py:408
 msgid "Missing regex groups in match lat/lon"
