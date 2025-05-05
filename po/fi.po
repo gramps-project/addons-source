@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-03 15:40+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-05-04 16:02+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -38,29 +38,28 @@ msgstr ""
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
-msgstr "Median yhdistäminen"
+msgstr "Mediatietojen yhdistäminen"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
 msgstr[0] "{number_of} media yhdistetty"
-msgstr[1] "{number_of} mediaa yhdistetty"
+msgstr[1] "{number_of} mediatietoja yhdistetty"
 
 #: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
-msgstr "Mediakohteita ei ole yhdistetty."
+msgstr "Yhtään mediatietoja ei yhdistetty."
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
-msgstr "Yhdistä media"
+msgstr "Yhdistä mediatietoja"
 
 #: MediaMerge/mediamerge.gpr.py:33
 msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
-msgstr ""
-"Hakee koko tietokannasta, etsii mediaa, jolla on sama polku, ja yhdistää ne."
+msgstr "Etsii koko tietokannasta mediat, jolla on sama polku ja yhdistää ne."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: AttachSourceTool/AttachSourceTool.py:70
@@ -75,17 +74,17 @@ msgstr "Lasketut päivämääräarviot"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
-msgstr "Poistettavat ja/tai lisättävät lähteet"
+msgstr "Poistettavat tai lisättävät lähteet"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
-msgstr "Poista aiemmin lisätyt tapahtumat, muistiinpanot ja lähde"
+msgstr "Poista aiemmin lisätyt tapahtumat, listiedot ja lähde"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
-"Poista lasketut tapahtumat, muistiinpanot ja lähde; Tapahtuu välittömästi "
+"Poista lasketut tapahtumat, lisätiedot ja lähde; tapahtuu välittömästi "
 "Suorita painikkeesta"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
@@ -98,11 +97,11 @@ msgstr "Lisää syntymätapahtumat ilman päivämääriä"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
-msgstr "Lisää syntymätapahtumat päivämäärillä"
+msgstr "Lisää syntymätapahtumat päivämäärineen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
-msgstr "Lisää syntymätapahtumat arvioidun päivämäärän kanssa tai ilman niitä"
+msgstr "Lisää syntymätapahtumat mahdollisen arvioidun päivämäärän kanssa"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
@@ -114,11 +113,11 @@ msgstr "Lisää kuolintapahtumat ilman päivämääriä"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
-msgstr "Lisää kuolintapahtumat päivämäärillä"
+msgstr "Lisää kuolintapahtumat päivämäärineen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
-msgstr "Lisää kuolintapahtumat arvioidun päivämäärän kanssa tai ilman niitä"
+msgstr "Lisää kuolintapahtumat mahdollisen arvioidun päivämäärän kanssa"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
@@ -126,11 +125,11 @@ msgstr "Suurin mahdollinen ikä"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
-msgstr "Suurin mahdollinen ikä jonka voi elää"
+msgstr "Suurin mahdollinen elinikä"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
-msgstr "Suurin mahdollinen sisarusten välinen ikäero"
+msgstr "Suurin mahdollinen sisarusten ikäero"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
@@ -172,24 +171,24 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
-"Laske arvioidut päivämäärät työkalua käytetään lisäämään ja poistamaan "
-"syntymä- ja kuolintapahtumia ihmisille, joilla ei näitä tapahtumia ole.\n"
+"Laske arvioidut päivämäärät -työkalua käytetään lisäämään ja poistamaan "
+"syntymä- ja kuolintapahtumia ihmisille, joilta ne puuttuvat.\n"
 "\n"
 "Käyttö:\n"
-"1. Siirry valinnat välilehteen\n"
-"2. Tarkista [ ] Poista valinta aikaisemmin lisätyt tapahtuma-arviot\n"
-"3. Valitse Lisää päivämääräasetukset tapahtumiin päivämäärien kanssa tai "
-"ilman\n"
+"1. Siirry Valinnat-välilehdelle\n"
+"2. Aseta [ ]' Poista', jos haluat poistaa aiemmat arvioidut päivämäärät\n"
+"3. Aseta' Lisää päivämäärä' tapahtumiin, riippimatta onko niillä "
+"päivämääriä\n"
 "4. Napsauta Suorita\n"
-"5. Valitse henkilöt, joille voit lisätä tapahtumia\n"
-"6. Napsauta 'Lisää valitut tapahtumat' painiketta luodaksesi\n"
+"5. Valitse henkilöt, joille haluat lisätä tapahtumia\n"
+"6. Napsauta 'Lisää valitut tapahtumat' -painiketta.\n"
 "\n"
-"HUOMAUTUKSET: jos päätät tehdä tapahtuman pysyväksi, poista sen lähde. "
-"Muussa tapauksessa se poistetaan, kun seuraavan kerran poistat nämä "
-"tapahtumat automaattisesti.\n"
+"HUOM: jos päätät tehdä tapahtuman pysyväksi, poista se Lähteestä. Muuten se "
+"poistetaan seuraavalla kerralla kun poistat nämä tapahtumat automaattisesti."
+"\n"
 "\n"
 "Voit joutua käyttämään työkalua toistuvasti (poistamatta aiempia tapahtumia) "
-"lisätä kaikki mahdolliset tapahtumat."
+"lisätäksesi kaikki mahdolliset tapahtumat."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
@@ -202,7 +201,7 @@ msgstr "Valitse kaikki"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
-msgstr "Älä valitse mitään"
+msgstr "Valitse ei mitään"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
@@ -214,15 +213,15 @@ msgstr "Lisää valitut tapahtumat"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr "Poista tapahtumat, huomautukset ja lähde ja nollaa tiedot uudelleen"
+msgstr "Poista tapahtumat, huomautukset ja lähde ja valitse tiedot uudelleen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
-"Haluatko varmasti poistaa aiemmat tapahtumat, muistiinpanot ja lähdekoodin "
-"sekä valita uudelleen tietoja?"
+"Haluatko varmasti poistaa aiemmat tapahtumat, huomautukset ja lähteen sekä "
+"valita tiedot uudelleen?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
@@ -246,7 +245,7 @@ msgstr "Todisteet"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Relative"
-msgstr "Sukulaiset"
+msgstr "Sukulainen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 #: AttachSourceTool/AttachSourceTool.py:157
@@ -331,12 +330,12 @@ msgstr "Arvioitu kuolinaika"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
-msgstr " Tehty! Sitoutuminen ..."
+msgstr " Tehty! Talletetaan ..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
 msgid "Added %d events."
-msgstr "Tapahtumia lisätty %d."
+msgstr "%d tapahtumaa lisätty."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
@@ -344,7 +343,7 @@ msgstr "Arvioitu päivä"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
-msgstr "Laskee syntymälle ja kuolemalle päivämääräarvioita."
+msgstr "Laskee päivämääräarviot syntymälle ja kuolemalle."
 
 #: MediaBrowser/MediaBrowser.gpr.py:31
 msgid "Media Browser"
@@ -780,8 +779,8 @@ msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
 msgstr ""
-"Paikan puhdistus Gramplet auttaa yhdistämään paikkoja ja täyttämään "
-"paikkatietoja GeoNames tietokannasta"
+"Paikan puhdistus -Gramplet auttaa yhdistämään paikkoja ja täyttämään "
+"paikkatietoja GeoNames-tietokannasta"
 
 #: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1088
 msgid ""
@@ -813,7 +812,7 @@ msgstr "GeoNames etsintä"
 
 #: PlaceCleanup/placecleanup.py:303
 msgid "Need to set GeoNames ID"
-msgstr "Tarvitset GeoNames käyttäjätunnuksen"
+msgstr "Tarvitset GeoNames-käyttäjätunnuksen"
 
 #: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
@@ -824,8 +823,8 @@ msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
 "the place manually."
 msgstr ""
-"Yritä muuttaa nimikettä tai käytä \"Muokkaa\" painiketta, jos haluat "
-"viimeistellä tämän paikan manuaalisesti."
+"Yritä muuttaa nimeä tai paina \"Muokkaa\", jos haluat itse viimeistellä "
+"tämän paikan."
 
 #: PlaceCleanup/placecleanup.py:347
 #, python-format
@@ -851,7 +850,7 @@ msgid ""
 msgstr ""
 "Näytetään vain 10 osumaa.\n"
 "Jos haluat nähdä lisää tuloksia, paina \"etsi\" painiketta uudelleen.\n"
-"Tai yritä muuttaa nimikettä tarkemmaksi, esimerkiksi valtio."
+"Tai yritä tarkentaa nimikettä, esimerkiksi valtio."
 
 #: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
@@ -859,18 +858,18 @@ msgstr "Ongelmia tietojen saannissa netistä"
 
 #: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
-msgstr "Nettikysely aikakatkaistu, voit yrittää uudelleen ..."
+msgstr "Nettikyselyn aikakatkaisu, voit yrittää uudelleen ..."
 
 #: PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
-msgstr "GeoNames tietojen saannissa ongelmia"
+msgstr "GeoNames-tietojen saannissa ongelmia"
 
 #: PlaceCleanup/placecleanup.py:481
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
 msgstr ""
-"Yksi paikoista, joita yhdistät, ympäröi muut!\n"
+"Yksi yhdistettävistä paikoista ympäröi muita!\n"
 "Valitse toinen paikka."
 
 #: PlaceCleanup/placecleanup.py:759
@@ -878,20 +877,20 @@ msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
 msgstr ""
-"Paikka, jonka valitsit ympäröi työstämääsi paikkaa!\n"
+"Valitsemasi paikka ympäröi työstämääsi paikkaa!\n"
 "Peruuta ja valitse toinen paikka."
 
 #: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
-msgstr "GeoNames nettisivu"
+msgstr "GeoNames-nettisivu"
 
 #: PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
-msgstr "GeoNames tekijä"
+msgstr "GeoNamesin tekijä"
 
 #: PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
-msgstr "GeoNames on perustanut Marc Wick. Voit tavoittaa hänet osoitteesta "
+msgstr "GeoNamesin perustaja on Marc Wick. Voit tavoittaa hänet osoitteesta "
 
 #: PlaceCleanup/placecleanup.py:959
 msgid ""
@@ -899,7 +898,7 @@ msgid ""
 "Switzerland.\n"
 "This work is licensed under a "
 msgstr ""
-"GeoNames projektin osoite on Unxos GmbH, Weingartenstrasse 8, 8708 "
+"GeoNames-projektin osoite on Unxos GmbH, Weingartenstrasse 8, 8708 "
 "Männedorf, Sveitsi.\n"
 "Tämän teoksen lisenssi on "
 
@@ -914,14 +913,14 @@ msgstr "Lisää lähde, arkisto tai lisätieto (%s)"
 
 #: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
-msgstr "Paikka ei ole käytössä!"
+msgstr "Tämä paikka ei ole käytössä!"
 
 #: PlaceCleanup/placecleanup.py:1076
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
 msgstr ""
-"Sinun pitäisi poistaa se tai, jos se sisältää hyödyllisiä muistiinpanoja tai "
+"Sinun pitäisi poistaa se. Tai jos se sisältää hyödyllisiä lisätietoja tai "
 "muita tietoja, käytä Etsi-painiketta yhdistääksesi sen voimassa olevaan "
 "paikkaan."
 
@@ -943,8 +942,7 @@ msgstr "Paikan postinumero, jos sellainen on."
 
 #: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
-msgstr ""
-"Minkä tyyppinen paikka tämä on. Esimerkiksi \"Valtio\", \"Paikkakunta\", ...."
+msgstr "Paikan tyyppi, esimerkiksi \"Valtio\", \"Paikkakunta\", ...."
 
 #: PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
@@ -971,7 +969,7 @@ msgstr "Gramps ID.."
 
 #: PlaceCleanup/placecleanup.glade:322
 msgid "Check this box if you want to keep the original Gramps ID."
-msgstr "Valitse tämä ruutu, jos haluat säilyttää alkuperäisen Gramps ID."
+msgstr "Valitse tämä ruutu, jos haluat säilyttää alkuperäisen Gramps ID:n."
 
 #: PlaceCleanup/placecleanup.glade:391
 msgid ""
@@ -981,7 +979,7 @@ msgid ""
 msgstr ""
 "Vaihtoehtoiset nimet\n"
 "Valitse yksi tai useampi rivi ja paina 'Pidä' painiketta, jos haluat vaihtaa "
-"\"sisällytä paikka\" tilaan."
+"\"sisällytä paikka\" -tilaa."
 
 #: PlaceCleanup/placecleanup.glade:406
 msgid "Inc"
@@ -995,13 +993,13 @@ msgstr "Kieli"
 msgid ""
 "Select one or more rows and use this button to keep the alternative names."
 msgstr ""
-"Valitse yksi tai useampi rivi ja käytä tätä painiketta pitämään "
-"vaihtoehtoiset nimet."
+"Valitse yksi tai useampi rivi ja säilytä vaihtoehtoiset nimet tällä "
+"painikkeella."
 
 #: PlaceCleanup/placecleanup.glade:536
 msgid "Select one row and use this button to make the row the primary name."
 msgstr ""
-"Valitse yksi rivi ja käytä tätä painiketta, jos haluat rivin ensisijaiseksi "
+"Valitse yksi rivi ja paina tätä painiketta, jos haluat rivin ensisijaiseksi "
 "nimeksi."
 
 #: PlaceCleanup/placecleanup.glade:548
@@ -1012,7 +1010,7 @@ msgstr "Hylkää"
 msgid ""
 "Select one or more rows and use this button to discard the alternative names."
 msgstr ""
-"Valitse yksi tai useampi rivi ja käytä tätä painiketta hylkäämään "
+"Valitse yksi tai useampi rivi ja paina tätä painiketta hylätäksesi "
 "vaihtoehtoiset nimet."
 
 #: PlaceCleanup/placecleanup.glade:580
@@ -1021,11 +1019,11 @@ msgstr "Peruuta toiminta, paikkaa ei tehdä."
 
 #: PlaceCleanup/placecleanup.glade:595
 msgid "Store the values in your Place."
-msgstr "Tallenna arvot paikkaasi."
+msgstr "Tallenna tiedot paikkaasi."
 
 #: PlaceCleanup/placecleanup.glade:677
 msgid "Keep Web Links"
-msgstr "Pidä nettilinkit"
+msgstr "Säilytä nettilinkit"
 
 #: PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
@@ -1037,19 +1035,19 @@ msgstr "Lisää paikkaan lainaus ja lähde"
 
 #: PlaceCleanup/placecleanup.glade:697
 msgid "This Adds a Citation to your place, citing GeoNames."
-msgstr "Tämä lisää viitetiedot GeoNames paikkaasi."
+msgstr "Tämä lisää paikkaasi GeoNames-lainaus."
 
 #: PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
-msgstr "GeoNames käyttäjätunus"
+msgstr "GeoNames-käyttäjätunus"
 
 #: PlaceCleanup/placecleanup.glade:723
 msgid "Enter you Geonames user ID here."
-msgstr "Anna tässä Geonames käyttäjätunnus."
+msgstr "Anna Geonames-käyttäjätunnuksesi."
 
 #: PlaceCleanup/placecleanup.glade:735
 msgid "Alternative Names Languages to keep"
-msgstr "Vaihtoehtoiset maatunnukset, joita käytetään"
+msgstr "Säilytettävät vaihtoehtoiset nimen kielet"
 
 #: PlaceCleanup/placecleanup.glade:747
 msgid ""
@@ -1060,16 +1058,15 @@ msgid ""
 "If you often see an un-checked name in a specific language you want, add the "
 "language code here."
 msgstr ""
-"Anna kahden tai kolmen kirjaimen koodit kielille, jotka haluat säilyttää, "
-"erota välilyönnillä.\n"
+"Anna tässä säilytettävät kielikoodit (kaksi tai kolme kirjainta) "
+"välilyönnellä erotettuna.\n"
 "Esimerkiksi \"en fi sv ru\".\n"
-"Nämä kielet tarkistetaan ensin nimien tulosnäytössä.\n"
-"Jos näet usein haluamasi kielen, joka ei ole tarkistettu, lisää kielikoodi "
-"tähän."
+"Nämä kielet näkyvät aluksi valitsemattomina nimien tulosnäytössä.\n"
+"Jos haluamallasi kieli on usein valitsemattomana, lisää sen kielikoodi tähän."
 
 #: PlaceCleanup/placecleanup.glade:763
 msgid "Currently Enclosed Places"
-msgstr "Nykyiset ympärillä olevat paikat"
+msgstr "Nykyiset ympäröivät paikat"
 
 #: PlaceCleanup/placecleanup.glade:775
 msgid ""
@@ -1080,21 +1077,20 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
-"Kun puhdistat jo ympärillä olevan paikan, se vaikuttaa siihen, mitä "
-"tehdään.\n"
-"Jos '<b>Pidä nykyiset paikat ympärillä</b>' on valittu, ei muutoksia "
-"ympäröiviin paikkoihin.\n"
-"Jos '<b>Vaihda GeoNames paikat ympärille</b>' on valittu, ympäröivät paikat "
-"seuraavalla tasolla muuttuvat GeoNames paikoiksi.  Tämä voi johtaa siihen, "
-"että osa tietokantasi paikoista jää käyttämättä."
+"Kun puhdistat jo ympäröivän paikan, se vaikuttaa siihen, mitä tapahtuu.\n"
+"Jos '<b>Säilytä nykyinen ympäröivä paikka</b>' on valittu, ympäröiviä "
+"paikkoja ei muuteta.\n"
+"Jos '<b>Vaihda GeoNames-paikat ympärille</b>' on valittu, seuraavan tason "
+"ympäröivät paikat vaihdetaan GeoNames-paikoiksi.  Tämä voi johtaa siihen, "
+"että jotkut tietokantasi paikoista jäävät käyttämättömiksi."
 
 #: PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
-msgstr "Pidä nykyiset paikat ympärillä"
+msgstr "Säilytä nykyinen ympäröivä paikka"
 
 #: PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
-msgstr "Vaihda GeoNames paikat ympärille"
+msgstr "Vaihda GeoNames-paikat ympärille"
 
 #: PlaceCleanup/placecleanup.glade:851
 msgid ""
@@ -1102,19 +1098,20 @@ msgid ""
 "You can edit this to help find other places, particularly to reduce the "
 "number of results."
 msgstr ""
-"Paikan nykyinen nimike.\n"
-"Voit muokata tätä, jotta voit löytää muita paikkoja, erityisesti tulosten "
-"määrän vähentämiseksi."
+"Nykyinen paikan nimi.\n"
+"Voit muokata tätä löytääksesi muita paikkoja, erityisesti tulosten määrän "
+"vähentämiseksi."
 
 #: PlaceCleanup/placecleanup.glade:899
 msgid "Search your local places and GeoNames for a match."
-msgstr "Etsi paikallisten paikkojen ja GeoNames osumia."
+msgstr "Etsi paikallisista paikoista ja GeoNamesista."
 
 #: PlaceCleanup/placecleanup.glade:915
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
 msgstr ""
-"Jatka yhdistämistä (paikallisiin paikkoihin) tai täydennä (GeoNames) paikka."
+"Jatka yhdistämistä paikallisiin paikkoihin tai täydentämistä GeoNames-"
+"paikkaan."
 
 #: PlaceCleanup/placecleanup.glade:932
 msgid ""
@@ -1122,9 +1119,8 @@ msgid ""
 "For use when the initial component of the Title is too detailed to be found "
 "in the gazetteer."
 msgstr ""
-"Katkaise nimike, muokkaa se manuaalisesti hierarkian seuraavalle tasolle. "
-"Käytetään, kun nimikkeen alkuosa on liian yksityiskohtainen, löytyäkseen "
-"hakemistosta."
+"Jaa nimi osiin, muokkaa käsin ja liitä ylempään hierarkiatasoon. Käytä tätä, "
+"jos nimen alku on liian yksityiskohtainen löydettäväksi hakemistosta."
 
 #: PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
@@ -1140,19 +1136,19 @@ msgstr "Määritä asetukset"
 
 #: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
-msgstr "Jatka puhdistusprosessia valitsemalla yksi näistä paikoista."
+msgstr "Valitse yksi näistä paikoista jatkaksesi puhdistusta."
 
 #: PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
-msgstr "Paikkojen hakutulos"
+msgstr "Löydetyt paikat"
 
 #: PlaceCleanup/placecleanup.glade:1102
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
 msgstr ""
-"Valintaruudun \"Asutut\" valinta lisää GeoNames hakuun \"asutut paikat\", "
-"paikat joissa ihmiset elävät ja toimivat."
+"'Asutut'-valinta lisää GeoNames-haun tuloksiin 'Asutut paikat' eli paikat, "
+"joissa ihmiset asuvat ja työskentelevät."
 
 #: PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
@@ -1163,8 +1159,8 @@ msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
 msgstr ""
-"Valintaruudun \"Hallinnolliset\" valinta lisää GeoNames hakuun "
-"hallinnolliset osa-alueet, kuten (maat, valtiot, maakunnat jne.)."
+"'Hallinnolliset'-valinta lisää GeoNames-haun tuloksiin hallinnolliset osa-"
+"alueet (maat, osavaltiot, maakunnat jne.)."
 
 #: PlaceCleanup/placecleanup.glade:1148
 msgid ""
@@ -1172,8 +1168,8 @@ msgid ""
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
 msgstr ""
-"Valintaruudun \"Muu kohde\" valinta lisää GeoNames hakun monenlaisia muita "
-"paikkoja, kuten (kirkot, hautausmaat, rakennukset jne.)."
+"'Muu kohde'-valinta lisää GeoNames-haun tuloksiin joukon muita paikkoja ("
+"kirkkoja, hautausmaita, rakennuksia jne.)."
 
 #: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
@@ -1186,13 +1182,13 @@ msgstr "Muu kohde"
 #: FilterRules/isrelatedwithfiltermatch.py:53
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 msgid "People related to <filter>"
-msgstr "Henkilöt, jotka liittyvät <suotimeen>"
+msgstr "Henkilöt, jotka ovat sukulaisia <filter>"
 
 #: FilterRules/isrelatedwithfiltermatch.py:55
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
-"Poimii henkilöt, jotka ovat liitetty johonkin henkilösuotimen poimimista "
+"Poimii ihmisiä, jotka ovat sukua kenelle tahansa henkilösuotimen poimimista "
 "henkilöistä"
 
 #: FilterRules/degreesofseparation.gpr.py:25
@@ -1203,7 +1199,7 @@ msgstr "Ihmiset, jotka poikkeavat <N>:llä henkilöstä <person>"
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
 msgid "Filter rule that matches relatives by degrees of separation"
-msgstr "Suodatussääntö, joka yhdistää sukulaiset sukupolvien mukaan"
+msgstr "Suodatussääntö, sukulaisten löytämiseksi sukupolvieron avulla"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
@@ -1219,14 +1215,14 @@ msgstr "Henkilöt, joilla on useita vanhempia"
 
 #: FilterRules/multipleparents.py:43
 msgid "Matches people who have more than one set of parents"
-msgstr "Poimii henkilöt, joilla on useampi kuin yksi vanhempi"
+msgstr "Poimii henkilöt, joilla on useampia vanhempia"
 
 #: FilterRules/associationsofpersonmatch.py:46
 #: FilterRules/associationsofpersonmatch.py:47
 #: FilterRules/associationsofpersonmatch.gpr.py:25
 #: FilterRules/associationsofpersonmatch.gpr.py:26
 msgid "Match associations of <person filter>"
-msgstr "Yhdistä <person filter> liitokset"
+msgstr "Etsi yhteyksiä kohteelle <person filter>"
 
 #: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
@@ -1242,7 +1238,7 @@ msgstr "Käänteinen"
 
 #: FilterRules/hasrolerule.py:68
 msgid "People with events with the <role>"
-msgstr "Henkilöt, joiden tapahtumissa on <rooli>"
+msgstr "Henkilöt, joilla on tapahtumia roolissa <rooli>"
 
 #: FilterRules/hasrolerule.py:69 FilterRules/hasrolerule.gpr.py:28
 msgid "Matches people with an event with a selected role"
@@ -1250,7 +1246,7 @@ msgstr "Poimii henkilöt, joiden tapahtumissa on valittu rooli"
 
 #: FilterRules/hasrolerule.py:92
 msgid "Families with events with the <role>"
-msgstr "Perheet, joiden tapahtumissa on <rooli>"
+msgstr "Perheet, joiden tapahtumissa on rooli <rooli>"
 
 #: FilterRules/hasrolerule.py:93 FilterRules/hasrolerule.gpr.py:44
 msgid "Matches families with an event with a selected role"
@@ -1261,12 +1257,12 @@ msgstr "Poimii perheet, joiden tapahtumissa on valittu rooli"
 #: FilterRules/isfamilyfiltermatchevent.py:63
 #: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
-msgstr "Suodinta <family filter> vastaavien perheiden tapahtumat"
+msgstr "Suotimen <family filter> mukaisten perheiden tapahtumat"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:25
 #: FilterRules/familieswitheventfiltermatch.py:45
 msgid "Families matching <event filter>"
-msgstr "Perheet, jotka vastaavat hakusanaa <tapahtumasuodatin>"
+msgstr "Suotimen <family filter> mukaiset perheet"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
@@ -1274,7 +1270,7 @@ msgstr "Poimii perheet, joilla on suotimen mukainen tapahtuma"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
-msgstr "Poimii tapahtumasuodattimen mukaiset perheet"
+msgstr "Poimii tapahtumasuotimen mukaiset perheet"
 
 #: FilterRules/degreesofseparation.py:47
 msgid "Number of degrees of separation from person."
@@ -1306,16 +1302,16 @@ msgstr "Lisää vanhemmat"
 
 #: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
-msgstr "Lisää vanhemmat poimittuihin perheisiin"
+msgstr "Lisää vanhemmat poimittuihin perheisiin."
 
 #: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
 msgid "Family Filter name:"
-msgstr "Perhesuotimen nimi"
+msgstr "Perhesuotimen nimi:"
 
 #: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
 #: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
 msgid "People who are part of families matching <filter>"
-msgstr "Henkilöt, jotka kuuluvat perheisiin, jotka vastaavat hakuehtoa <suodin>"
+msgstr "Hakuehdon <filter> mukaisten perheiden jäsenet"
 
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
 #: FilterRules/ageatdeath.py:74
@@ -1324,7 +1320,7 @@ msgstr "Poimii henkilöt kuoliniän perusteella"
 
 #: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
-msgstr "Suodatinsääntö, joka yhdistää ihmiset kuoliniän mukaan"
+msgstr "Suodatinsääntö ihmisten kuoliniän perusteella"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -2635,37 +2631,24 @@ msgid "Include items not in file but in database"
 msgstr ""
 
 #: Differences/differences.py:321
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show items added in file"
-msgstr "Näytä piilotetut kohteet"
+msgstr "Näytä tiedostoon lisätyt kohteet"
 
 #: Differences/differences.py:322
-#, fuzzy
-#| msgid "Include URLs from database."
 msgid "Include items in file but not in database"
-msgstr "Lisää URL-osoitteet tietokannasta."
+msgstr "Lisää kohteet tiedostoon, mutta älä tietokantaan"
 
 #: Differences/differences.gpr.py:5
-#, fuzzy
-#| msgid ""
-#| "Compares a Gramps XML database with the current one, and allows merging "
-#| "of the differences."
 msgid "Compares an external database with the current one."
-msgstr ""
-"Vertaa Gramps XML -tietokantaa nykyiseen ja mahdollistaa erojen yhdistämisen."
+msgstr "Vertaa ulkoista tietokantaa nykyiseen."
 
 #: AncestorFill/AncestorFill.gpr.py:9
-#, fuzzy
-#| msgid "Ancestry"
 msgid "AncestorFill"
-msgstr "Esivanhemmat"
+msgstr "Esivanhempien täyttöaste"
 
 #: AncestorFill/AncestorFill.gpr.py:10
-#, fuzzy
-#| msgid "Printing the tree"
 msgid "Report on the filling of the tree"
-msgstr "Puun tulostus"
+msgstr "Puun täyttöaste"
 
 #: AncestorFill/AncestorFill.py:189
 #, python-format
@@ -2673,10 +2656,8 @@ msgid "AncestorFill for %s"
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:205
-#, fuzzy
-#| msgid "Generation"
 msgid "Generation "
-msgstr "Sukupolvi"
+msgstr "Sukupolvi "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
@@ -2691,20 +2672,16 @@ msgid "Number of unique Ancestors found "
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:209
-#, fuzzy
-#| msgid "Number of descendants"
 msgid "Number of theoretical Ancestors "
-msgstr "Jälkeläisten määrä"
+msgstr "Teoreettisten esi-isien lukumäärä "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:253
-#, fuzzy
-#| msgid "Size proportional to number of ancestors"
 msgid "Total Number of Ancestors found "
-msgstr "Koko suhteessa esivanhempien määrään"
+msgstr "Löydettyjä esi-isiä "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
@@ -2752,10 +2729,8 @@ msgstr ""
 #: DetDescendantReport-images/detdescendantreporti.py:1252
 #: LinesOfDescendency/lines-of-descendency.py:72
 #: LastChange/LastChangeReport.py:378
-#, fuzzy
-#| msgid "Set the title of the chart."
 msgid "The style used for the title of the page."
-msgstr "Aseta kaaaviolle otsikko."
+msgstr "Sivun otsikossa käytetty tyyli."
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
 msgid "SharedPostgreSQL"
@@ -2822,10 +2797,8 @@ msgid "This is a raw python object dump"
 msgstr ""
 
 #: ExportRaw/ExportRaw.gpr.py:13
-#, fuzzy
-#| msgid "General options"
 msgid "Raw options"
-msgstr "Yleiset valinnat"
+msgstr "Raakaviennin valinnat"
 
 #: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
@@ -3092,9 +3065,8 @@ msgid "Relationship to Mother"
 msgstr "Suhde äitiin"
 
 #: DynamicWeb/dynamicweb.py:3063
-#, fuzzy
 msgid "Repositories Index"
-msgstr "Arkistot"
+msgstr "Arkistojen indeksi"
 
 #: DynamicWeb/dynamicweb.py:3066
 msgid "Restore"
@@ -3216,29 +3188,24 @@ msgid "Use the search box above in order to find a person."
 msgstr "Käytä hakukenttää yllä löytääksesi henkilön."
 
 #: DynamicWeb/dynamicweb.py:3135
-#, fuzzy
 msgid "Use a table format for the surnames index"
-msgstr "Sukunimihakemiston oletusmuoto"
+msgstr "Sukunimihakemisto taulukkona"
 
 #: DynamicWeb/dynamicweb.py:3139
-#, fuzzy
 msgid "Use a table format for the persons index"
-msgstr "Henkilöhakemiston oletusmuoto"
+msgstr "Henkilöhakemisto taulukkona"
 
 #: DynamicWeb/dynamicweb.py:3143
-#, fuzzy
 msgid "Use a table format for the families index"
-msgstr "Perheluettelon oletusmuoto"
+msgstr "Perheluettelo taulukkona"
 
 #: DynamicWeb/dynamicweb.py:3147
-#, fuzzy
 msgid "Use a table format for the sources index"
-msgstr "Lähdeluettelon oletusmuoto"
+msgstr "Lähdeluettelo taulukkona"
 
 #: DynamicWeb/dynamicweb.py:3151
-#, fuzzy
 msgid "Use a table format for the places index"
-msgstr "Paikkaluettelon oletusmuoto"
+msgstr "Paikkaluettelo taulukkona"
 
 #: DynamicWeb/dynamicweb.py:3153
 msgid "Used for family"
@@ -3758,10 +3725,8 @@ msgid "Place ID to import from GOV (Historical Gazetteer):"
 msgstr ""
 
 #: GetGOV/getgov.py:323
-#, fuzzy
-#| msgid "Next Place"
 msgid "Get Place"
-msgstr "Seuraava paikka"
+msgstr "Hae paikka"
 
 #: GetGOV/getgov.py:356
 #, python-format
@@ -3825,10 +3790,8 @@ msgid "Associations state tool"
 msgstr ""
 
 #: AssociationsTool/associationstool.py:81
-#, fuzzy
-#| msgid "Type of surname:"
 msgid "Type of link"
-msgstr "Sukunimityyppi:"
+msgstr "Linkin tyyppi"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
@@ -3864,22 +3827,16 @@ msgid "Type de liste"
 msgstr ""
 
 #: ListeEclair/ListeEclair.py:284
-#, fuzzy
-#| msgid "Include media"
 msgid "Include private data"
-msgstr "Lisää media"
+msgstr "Lisää yksityiset tiedot"
 
 #: ListeEclair/ListeEclair.py:301
-#, fuzzy
-#| msgid "The API key used for the Google map"
 msgid "The style used for the liste eclair."
-msgstr "Käytetään Google kartat API-avainta"
+msgstr "Pikaluettelossa käytetty tyyli."
 
 #: ListeEclair/ListeEclair.py:314
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The style used for place title."
-msgstr "Paikan postinumero, jos sellainen on."
+msgstr "Paikan otsikossa käytetty tyyli."
 
 #: ListeEclair/ListeEclair.gpr.py:5
 msgid "Produit une liste eclair"
@@ -3893,10 +3850,8 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: Sqlite/Sqlite.gpr.py:4
-#, fuzzy
-#| msgid "Edit Import"
 msgid "SQLite Import"
-msgstr "Muokkaa tuontia"
+msgstr "Tuonti SQLite-kannasta"
 
 #: Sqlite/Sqlite.gpr.py:5 Sqlite/Sqlite.gpr.py:20
 msgid "SQLite is a common local database format"
@@ -3997,17 +3952,13 @@ msgid "Family:"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Sources?"
-msgstr "Lähteet valikko"
+msgstr "Lähteet?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
-#, fuzzy
-#| msgid "Surnames Index"
 msgid "Surname, Given"
-msgstr "Sukunimihakemisto"
+msgstr "Sukunimi, Etunimi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 RelID/relation_tab.py:126
 #: NoteGramplet/NoteGramplet.py:111
@@ -4019,41 +3970,28 @@ msgid "Abandon"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
-#, fuzzy
-#| msgid "Note on Person"
 msgid "New person"
-msgstr "Henkilön lisätietoja"
+msgstr "Uusi henkilö"
 
 #: DataEntryGramplet/DataEntryGramplet.py:98
-#, fuzzy
-#| msgid "%d generation"
-#| msgid_plural "%d generations"
 msgid "Add relation"
-msgstr "%d sukupolvi"
+msgstr "Lisää sukulaisuus"
 
 #: DataEntryGramplet/DataEntryGramplet.py:99
-#, fuzzy
-#| msgid "Go to active person"
 msgid "No relation to active person"
-msgstr "Siirry aktiivihenkilöön"
+msgstr "Ei aktiivihenkilön sukulainen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:100
-#, fuzzy
-#| msgid "Add parents"
 msgid "Add as a Parent"
-msgstr "Lisää vanhemmat"
+msgstr "Lisää vanhemmaksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
-#, fuzzy
-#| msgid "Add mother"
 msgid "Add as a Mother"
-msgstr "Lisää äiti"
+msgstr "Lisää äidiksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:102
-#, fuzzy
-#| msgid "Add father"
 msgid "Add as a Father"
-msgstr "Lisää isä"
+msgstr "Lisää isäksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
@@ -4068,10 +4006,8 @@ msgid "Add as a Husband"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
-#, fuzzy
-#| msgid "sibling"
 msgid "Add as a Sibling"
-msgstr "sisarus"
+msgstr "Lisää sisaruksena"
 
 #: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
@@ -4088,7 +4024,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Find"
 msgid "in"
-msgstr "Etsi"
+msgstr "paikassa"
 
 #: DataEntryGramplet/DataEntryGramplet.py:441
 #: DataEntryGramplet/DataEntryGramplet.py:569
@@ -4101,10 +4037,8 @@ msgid "Please provide a name."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
-#, fuzzy
-#| msgid "Change active person?"
 msgid "Can't add new person."
-msgstr "Vaihdetaanko aktiivihenkilö?"
+msgstr "Uutta henkilöa ei voi lisätä."
 
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:531
@@ -4114,10 +4048,8 @@ msgstr "Vaihdetaanko aktiivihenkilö?"
 #: DataEntryGramplet/DataEntryGramplet.py:555
 #: DataEntryGramplet/DataEntryGramplet.py:560
 #: DataEntryGramplet/DataEntryGramplet.py:565
-#, fuzzy
-#| msgid "Set as active person"
 msgid "Please set an active person."
-msgstr "Aseta aktiiviseksi henkilöksi"
+msgstr "Valise ensin aktiivihenkilö."
 
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:526
@@ -4163,10 +4095,8 @@ msgid "Can't add new person as a child."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:763
-#, fuzzy
-#| msgid "Set as active person"
 msgid "Please set Active person."
-msgstr "Aseta aktiiviseksi henkilöksi"
+msgstr "Valise ensin aktiivihenkilö."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
@@ -4206,10 +4136,8 @@ msgid "Enter FTDNA Chromosome Segment Filename:"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:112
-#, fuzzy
-#| msgid "Import Failure"
 msgid "Import Haplogroups"
-msgstr "Tuonti epäonnistui"
+msgstr "Tuo haploryhmiä"
 
 #: FamilyTreeDNA/ftdna_import.py:128
 msgid "FTDNA Note string :"
@@ -4220,10 +4148,8 @@ msgid "Shared Citation ID :"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:151
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Active Person : "
-msgstr "Aktiivihenkilöä ei ole asetettu."
+msgstr "Aktiivihenkilö: "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
@@ -4265,10 +4191,9 @@ msgid "Add %s haplogroup attribute"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:350
-#, fuzzy, python-format
-#| msgid "%s (association)"
+#, python-format
 msgid "Add %s DNA Association"
-msgstr "%s (liitoksen lisätietoja)"
+msgstr "Lisää %s DNA-yhteys"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
@@ -4324,28 +4249,20 @@ msgstr ""
 "hyödyllinen Windows-käyttäjille."
 
 #: AttachSourceTool/AttachSourceTool.py:81
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Source type"
-msgstr "Lähteet valikko"
+msgstr "Lähteen tyyppi"
 
 #: AttachSourceTool/AttachSourceTool.py:82
-#, fuzzy
-#| msgid "Used for source"
 msgid "New source"
-msgstr "Käytä lähteelle"
+msgstr "Uusi lähde"
 
 #: AttachSourceTool/AttachSourceTool.py:83
-#, fuzzy
-#| msgid "Export sources"
 msgid "Existing source"
-msgstr "Viedään lähteet"
+msgstr "Olemassa oleva lähde"
 
 #: AttachSourceTool/AttachSourceTool.py:84
-#, fuzzy
-#| msgid "Select the type of graph"
 msgid "Select the type of source to attach"
-msgstr "Valitse kaavion tyyppi"
+msgstr "Valitse liitettävän lähteen tyyppi"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
@@ -4370,23 +4287,17 @@ msgid "Attach Source"
 msgstr ""
 
 #: AttachSourceTool/AttachSourceTool.py:174
-#, fuzzy
-#| msgid "Detecting faces..."
 msgid "Attaching sources...\n"
-msgstr "Kasvojentunnistus..."
+msgstr "Lähteitä liitetään...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:175
-#, fuzzy
-#| msgid "Detecting faces..."
 msgid "Attaching sources..."
-msgstr "Kasvojentunnistus..."
+msgstr "Lähteitä liitetään..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
-#, fuzzy
-#| msgid "done!\n"
 msgid "Done!\n"
-msgstr "valmis!\n"
+msgstr "Valmis!\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
@@ -4398,20 +4309,16 @@ msgid "Python Shell"
 msgstr ""
 
 #: PythonGramplet/PythonGramplet.gpr.py:5
-#, fuzzy
-#| msgid "Interactive Family Tree"
 msgid "Interactive Python interpreter"
-msgstr "Interaktiivinen sukupuu"
+msgstr "Interaktiivinen Python-tulkki"
 
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:179
-#, fuzzy
-#| msgid "Export sources"
 msgid "No Source"
-msgstr "Viedään lähteet"
+msgstr "Ei lähdettä"
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
 msgid "onclick"
@@ -4423,16 +4330,12 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:208
 #: LinesOfDescendency/lines-of-descendency.py:55
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestor"
-msgstr "Esivanhemmat"
+msgstr "Esivanhempi"
 
 #: DenominoViso/DenominoViso.py:209
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendant"
-msgstr "Jälkeläisten sukupuu"
+msgstr "Jälkeläinen"
 
 #: DenominoViso/DenominoViso.py:214
 msgid "Fan"
@@ -4451,28 +4354,20 @@ msgid "Pythagoras Tree"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:221
-#, fuzzy
-#| msgid "Right to Left"
 msgid "right to left"
-msgstr "Oikealta vasemmalle"
+msgstr "oikealta vasemmalle"
 
 #: DenominoViso/DenominoViso.py:222
-#, fuzzy
-#| msgid "Left to Right"
 msgid "left to right"
-msgstr "Vasemmalta oikealle"
+msgstr "vasemmalta oikealle"
 
 #: DenominoViso/DenominoViso.py:223
-#, fuzzy
-#| msgid "Top to Bottom"
 msgid "top to bottom"
-msgstr "Ylhäältä alas"
+msgstr "ylhäältä alas"
 
 #: DenominoViso/DenominoViso.py:224
-#, fuzzy
-#| msgid "Bottom to Top"
 msgid "bottom to top"
-msgstr "Alhaalta ylös"
+msgstr "alhaalta ylös"
 
 #: DenominoViso/DenominoViso.py:306 DenominoViso/DenominoViso.py:974
 #: DenominoViso/DenominoViso.py:1034 DenominoViso/DenominoViso.py:1259
@@ -4483,22 +4378,17 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
 #: DenominoViso/DenominoViso.py:2752
-#, fuzzy
 msgid "description"
-msgstr "Kuvaus:"
+msgstr "kuvaus"
 
 #: DenominoViso/DenominoViso.py:310 DenominoViso/DenominoViso.py:976
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "witnesses"
-msgstr "Lisää todistajat"
+msgstr "todistajat"
 
 #: DenominoViso/DenominoViso.py:395
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "No central person selected"
-msgstr "Aktiivihenkilöä ei ole asetettu."
+msgstr "Aktiivihenkilöä ei ole asetettu"
 
 #: DenominoViso/DenominoViso.py:769
 #, fuzzy
@@ -4909,12 +4799,8 @@ msgid "Mouse handler used to interact with visitor of webpage."
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2736
-#, fuzzy
-#| msgid "Looking for relationship between\n"
 msgid "Birth relationship linestyle"
-msgstr ""
-"Etsitään henkilöiden väliset sukulaisuussuhteeet\n"
-" \n"
+msgstr "Syntymäsuhteen viivatyyli"
 
 #: DenominoViso/DenominoViso.py:2738
 msgid ""
@@ -5477,10 +5363,8 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:554
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:566
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:602
-#, fuzzy
-#| msgid "GoogleEarth not installed!"
 msgid " or greater installed.)\n"
-msgstr "GoogleEarth ei ole asennettu!"
+msgstr " tai uudempi asennettuna.)\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:386
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:456
@@ -5550,10 +5434,8 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1560
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1759
-#, fuzzy
-#| msgid "GoogleEarth not installed!"
 msgid " or greater installed.)"
-msgstr "GoogleEarth ei ole asennettu!"
+msgstr " tai uudempi asennettuna.)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:749
 msgid " or greater)"
@@ -5814,15 +5696,15 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "Jaettu DNA"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "Jaetut segmentit"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "Suurin segmentti"
 
 #: DNAMatches/dnamatches.py:159
 #, fuzzy
@@ -5896,10 +5778,8 @@ msgid "Error: login failed"
 msgstr "Vienti epäonnistui"
 
 #: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
-#, fuzzy
-#| msgid "done!\n"
 msgid "done."
-msgstr "valmis!\n"
+msgstr "valmis."
 
 #: PhpGedView/phpgedviewconnector.py:347
 #, fuzzy
@@ -5949,10 +5829,8 @@ msgid "Password:"
 msgstr ""
 
 #: ExtractCity/extractcity.py:402
-#, fuzzy
-#| msgid "Place Cleanup"
 msgid "Place title"
-msgstr "Paikan puhdistus"
+msgstr "Paikan nimi"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
@@ -6058,16 +5936,12 @@ msgid "Select filter to restrict people that appear in the report"
 msgstr "Valitse suodin rajoittamaan henkilöitä jotka näkyvät nettisivustossa"
 
 #: DescendantBooks/DescendantBookReport.py:585
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the table of contents header."
-msgstr "Mukautetun sivun sisältöä koskeva lisätieto.\n"
+msgstr "Sisällysluettelon otsikon tyyli."
 
 #: DescendantBooks/DescendantBookReport.py:595
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the table of contents detail."
-msgstr "Mukautetun sivun sisältöä koskeva lisätieto.\n"
+msgstr "Sisällysluettelorivin tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
@@ -6176,7 +6050,7 @@ msgstr "%(event_type)s: %(date)s"
 #, fuzzy, python-format
 #| msgid "%(event_type)s: %(date)s"
 msgid " %(event_text)s"
-msgstr "%(event_type)s: %(date)s"
+msgstr " %(event_text)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:993
 #, python-brace-format
@@ -6269,10 +6143,8 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1593
 #: DetDescendantReport-images/detdescendantreporti.py:1305
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the first personal entry."
-msgstr "Mukautetun sivun sisältöä koskeva lisätieto.\n"
+msgstr "Henkilön ensimmäisen kappaleen tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1603
 #: DetDescendantReport-images/detdescendantreporti.py:1315
@@ -6398,10 +6270,8 @@ msgid " This is the primary birth event."
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:199
-#, fuzzy
-#| msgid "Add birth and death events"
 msgid " This is the primary death event."
-msgstr "Lisää syntymä- ja kuolintapahtuma"
+msgstr " Tämä on ensisijainen kuolintapaus."
 
 #: PersonEverything/PersonEverything.py:238
 #, fuzzy
@@ -6860,9 +6730,8 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:167
-#, fuzzy
 msgid "Enter the copyright information for this image. \n"
-msgstr "Lisätäänkö lasten avioliittotiedot."
+msgstr "Anna tämän kuvan tekijänoikeustiedot. \n"
 
 #: EditExifMetadata/editexifmetadata.py:169
 msgid ""
@@ -7566,16 +7435,14 @@ msgid "WebSearch Link"
 msgstr "Etsi:"
 
 #: WebSearch.py:1010
-#, fuzzy, python-brace-format
-#| msgid "Web site title"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Nettisivuston otsikko"
+msgstr "Otsikko: {title}\n"
 
 #: WebSearch.py:1012
-#, fuzzy, python-brace-format
-#| msgid "Replace to {0}"
+#, python-brace-format
 msgid "Replaced: {keys}\n"
-msgstr "Vaihda henkilöksi {0}"
+msgstr "Vaihdettu: {keys}\n"
 
 #: WebSearch.py:1016
 #, python-brace-format
@@ -7920,7 +7787,7 @@ msgstr "Päivämäärän muoto"
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
-msgstr ""
+msgstr "Nimen näyttömuoto"
 
 #: DescendantsLines/DescendantsLines.py:1650
 msgid ""
@@ -8532,10 +8399,8 @@ msgid "2. Conversion of existing title or position:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:649
-#, fuzzy
-#| msgid "Change active person?"
 msgid "Change title into:"
-msgstr "Vaihdetaanko aktiivihenkilö?"
+msgstr "Uusi otsikko:"
 
 #: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
@@ -8751,10 +8616,8 @@ msgid "Faces"
 msgstr ""
 
 #: FaceDetection/FaceDetection.py:63
-#, fuzzy
-#| msgid "GoogleEarth not installed!"
 msgid "OpenCV-Python is not installed"
-msgstr "GoogleEarth ei ole asennettu!"
+msgstr "OpenCV-Python ei ole asennettu"
 
 #: FaceDetection/FaceDetection.py:72
 #, fuzzy
@@ -10986,7 +10849,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:502
 msgid "Owner"
-msgstr ""
+msgstr "Omistaja"
 
 #: Form/form_us.xml.h:503
 msgid "Rents for fixed money"
@@ -19335,10 +19198,8 @@ msgid "in %(place)s"
 msgstr "Tulosta paikkasivut"
 
 #: FamilySheet/FamilySheet.py:864
-#, fuzzy
-#| msgid "Change active person?"
 msgid "Center person"
-msgstr "Vaihdetaanko aktiivihenkilö?"
+msgstr "Keskushenkilö"
 
 #: FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
@@ -19395,10 +19256,8 @@ msgid "The basic style used for the text display"
 msgstr "Käytetään Google kartat API-avainta"
 
 #: FamilySheet/FamilySheet.py:919
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the page key on the top"
-msgstr "Mukautetun sivun sisältöä koskeva lisätieto.\n"
+msgstr "Yläosan sivunäppäimen tyyli"
 
 #: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
@@ -20365,10 +20224,8 @@ msgid "Legend"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:761
-#, fuzzy
-#| msgid "Grandparents"
 msgid ": Grandparent"
-msgstr "Isovanhemmat"
+msgstr ": Isovanhemmat"
 
 #: DNA/dnasegmentmap.py:1056
 #, python-brace-format
@@ -20401,18 +20258,18 @@ msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship to Father"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Suhde isään"
+msgstr ""
+"\n"
+"Sukulaisuus: {0} "
 
 #: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestry"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Esivanhemmat"
+msgstr " Esivanhempi: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -22762,7 +22619,7 @@ msgstr "Normaalissa tekstissä käytetty tyyli"
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
-msgstr "Muutettu"
+msgstr "muutettu"
 
 #: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
@@ -22876,7 +22733,7 @@ msgstr "Henkilösivu"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:249
 msgid "Event Year"
-msgstr ""
+msgstr "Tapahtumavuosi"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:328
 msgid "gregorian"
@@ -23288,7 +23145,7 @@ msgstr "s."
 
 #: NetworkChart/NetworkChart.py:134
 msgid "death abbreviation|d."
-msgstr "k."
+msgstr "kuolinajan lyhenne|k."
 
 #: NetworkChart/NetworkChart.py:135
 msgid "marriage abbreviation|m."
@@ -23443,7 +23300,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:986
 msgid "The destination folder for generated files."
-msgstr "Luodun tiedoston kohdehakemisto."
+msgstr "Hakemisto luotaville tiedostoille."
 
 #: NetworkChart/NetworkChart.py:990 NetworkChart/NetworkChart.py:1280
 #: NetworkChart/NetworkChart.py:1288
@@ -23830,17 +23687,13 @@ msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
-#, fuzzy
-#| msgid "This Place is not used!"
 msgid "The place was not found."
-msgstr "Paikka ei ole käytössä!"
+msgstr "Paikkaa ei löydy."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
-#, fuzzy
-#| msgid "This Place is not used!"
 msgid "The place was not identified."
-msgstr "Paikka ei ole käytössä!"
+msgstr "Paikka ei ole tunnistettu."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
