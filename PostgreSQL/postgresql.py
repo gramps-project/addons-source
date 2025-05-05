@@ -190,6 +190,34 @@ class Connection:
                               "WHERE table_name=%s;", [table])
         return self.fetchone()[0] != 0
 
+
+    def column_exists(self, table, column):
+        """
+        Test whether the specified SQL column exists in the specified table.
+        :param table: table name to check.
+        :type table: str
+        :param column: column name to check.
+        :type column: str
+        :returns: True if the column exists, False otherwise.
+        :rtype: bool
+        """
+        self.__cursor.execute(
+            "SELECT COUNT(*) FROM information_schema.columns "
+            "WHERE table_name = %s AND column_name = %s",
+            (table, column),
+        )
+        return self.fetchone()[0] != 0
+
+
+    def drop_column(self, table_name, column_name):
+        """Drop a column from a table.
+        :param table_name: name of the table to drop the column from.
+        :type table_name: str
+        :param column_name: name of the column to drop.
+        :type column_name: str
+        """
+        self.execute(f"ALTER TABLE {table_name} DROP COLUMN {column_name};")
+
     def close(self):
         self.__connection.close()
 
