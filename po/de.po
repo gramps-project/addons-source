@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
 "PO-Revision-Date: 2025-04-17 19:01+0000\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -19909,7 +19909,7 @@ msgstr "Wartet auf mich"
 
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
-msgstr "Ganz Russland Stammbaum (Forum)"
+msgstr "All Russia Family Tree (Forum)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
