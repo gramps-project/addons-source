@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-03-24 14:44+0000\n"
-"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"PO-Revision-Date: 2025-04-12 05:53+0000\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -7148,22 +7148,16 @@ msgid "URL Compactness Level"
 msgstr "Рівень стиснення URL"
 
 #: settings_ui_manager.py:132
-#, fuzzy
-#| msgid "Shortest - No Prefix, No Variables"
 msgid "Shortest - No Prefix, No Keys"
-msgstr "Найкоротший – Без префікса, без змінних"
+msgstr "Найкоротший - без префікса, без ключів"
 
 #: settings_ui_manager.py:135
-#, fuzzy
-#| msgid "Compact - No Prefix, Variables Without Attributes"
 msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Компактний – Без префікса, змінні без атрибутів"
+msgstr "Компактний – без префікса, ключі без атрибутів"
 
 #: settings_ui_manager.py:138
-#, fuzzy
-#| msgid "Compact - No Prefix, Variables With Attributes"
 msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Компактний – Без префікса, змінні з атрибутами"
+msgstr "Компактний - без префікса, ключі з атрибутами"
 
 #: settings_ui_manager.py:141
 msgid "Long - Without Prefix on the Left"
@@ -7175,41 +7169,35 @@ msgstr "Замінник префікса URL"
 
 #: settings_ui_manager.py:155
 msgid "AI Provider"
-msgstr ""
+msgstr "Постачальник AI"
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "Disabled"
 msgid "(Disabled)"
-msgstr "Інвалід"
+msgstr "(Вимкнено)"
 
 #: settings_ui_manager.py:161
-#, fuzzy
-#| msgid "Use OpenAI"
 msgid "OpenAI"
-msgstr "Використовувати OpenAI"
+msgstr "OpenAI"
 
 #: settings_ui_manager.py:162
 msgid "Mistral AI"
-msgstr ""
+msgstr "Містраль А.І"
 
 #: settings_ui_manager.py:169
 msgid "OpenAI API Key"
 msgstr "Ключ API OpenAI"
 
 #: settings_ui_manager.py:174
-#, fuzzy
-#| msgid "OpenAI API Key"
 msgid "OpenAI Model"
-msgstr "Ключ API OpenAI"
+msgstr "Моделі OpenAI"
 
 #: settings_ui_manager.py:179
 msgid "Mistral API Key"
-msgstr ""
+msgstr "Ключ API Mistral"
 
 #: settings_ui_manager.py:184
 msgid "Mistral Model"
-msgstr ""
+msgstr "Модель Містраль"
 
 #: settings_ui_manager.py:189
 msgid "Show Links From Attributes"
@@ -7220,16 +7208,12 @@ msgid "Enable CSV Files"
 msgstr "Увімкнути файли CSV"
 
 #: settings_ui_manager.py:227
-#, fuzzy
-#| msgid "Display 'Vars' Column"
 msgid "Display Columns"
-msgstr "Показувати колонку 'Змінні'"
+msgstr "Показати стовпці"
 
 #: settings_ui_manager.py:241
-#, fuzzy
-#| msgid "Display mode"
 msgid "Display Icons"
-msgstr "Режим відображення"
+msgstr "Значки дисплея"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
@@ -7245,65 +7229,65 @@ msgstr ""
 
 #: constants.py:260
 msgid "Column - Icons"
-msgstr ""
+msgstr "Колонка - Іконки"
 
 #: constants.py:261
 msgid "Column - Source Types (flags)"
-msgstr ""
+msgstr "Стовпець - типи джерел (прапорці)"
 
 #: constants.py:262
 msgid "Column - Keys"
-msgstr ""
+msgstr "Колонка - Ключі"
 
 #: constants.py:263
 msgid "Column - Title"
-msgstr ""
+msgstr "Колонка - Заголовок"
 
 #: constants.py:264
 msgid "Column - Website Url"
-msgstr ""
+msgstr "Стовпець – URL-адреса веб-сайту"
 
 #: constants.py:265
-#, fuzzy
-#| msgid "Comment: {comment}\n"
 msgid "Column - Comment"
-msgstr "Коментар: {comment}\n"
+msgstr "Колонка - коментар"
 
 #: constants.py:290
 msgid "Icon - Visited URLs (checkmark)"
-msgstr ""
+msgstr "Піктограма - Відвідані URL-адреси (галочка)"
 
 #: constants.py:291
 msgid "Icon - Saved URLs (floppy disk)"
-msgstr ""
+msgstr "Піктограма - Збережені URL-адреси (дискета)"
 
 #: constants.py:292
 msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr ""
+msgstr "Значок – URL-адреси, пов’язані з атрибутами UID (значок UID)"
 
 #: constants.py:293
 msgid "Icon - URLs from regional CSV files (flag)"
-msgstr ""
+msgstr "Значок – URL-адреси з регіональних файлів CSV (прапорець)"
 
 #: constants.py:294
 msgid "Icon - URLs from static CSV files (red pin)"
-msgstr ""
+msgstr "Піктограма – URL-адреси зі статичних файлів CSV (червона шпилька)"
 
 #: constants.py:295
 msgid "Icon - URLs from common CSV files (earth)"
-msgstr ""
+msgstr "Піктограма – URL-адреси зі звичайних файлів CSV (земля)"
 
 #: constants.py:296
 msgid "Icon - Direct URLs from attributes (link chain)"
-msgstr ""
+msgstr "Піктограма - Прямі URL-адреси з атрибутів (ланцюжок посилань)"
 
 #: constants.py:297
 msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr ""
+msgstr "Піктограма – URL-адреси з перехресних файлів CSV (перемішані стрілки)"
 
 #: constants.py:298
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr ""
+"Піктограма – URL-адреси зі спеціального каталогу користувача (піктограма "
+"електронної таблиці)"
 
 #: qr_window.py:76
 msgid "QR-code"
@@ -7319,7 +7303,7 @@ msgstr ""
 
 #: WebSearch.py:718
 msgid "Keys"
-msgstr ""
+msgstr "Ключі"
 
 #: WebSearch.py:720
 msgid "Website URL"
@@ -7373,14 +7357,13 @@ msgid "Add Web Link Note"
 msgstr "Додати нотатку з веб-посиланням"
 
 #: WebSearch.py:882
-#, fuzzy, python-format
-#| msgid "{} avatar images were sucessfully added."
+#, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "{} аватарів було успішно додано."
+msgstr "Примітку #%(id)s успішно додано"
 
 #: WebSearch.py:886
 msgid "Error creating note"
-msgstr ""
+msgstr "Помилка створення нотатки"
 
 #: WebSearch.py:907
 msgid "URL is copied to the Clipboard"
@@ -7396,16 +7379,14 @@ msgid "Title: {title}\n"
 msgstr "Назва: {title}\n"
 
 #: WebSearch.py:1012
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {variables}\n"
+#, python-brace-format
 msgid "Replaced: {keys}\n"
-msgstr "Замінено: {variables}\n"
+msgstr "Замінено: {keys}\n"
 
 #: WebSearch.py:1016
-#, fuzzy, python-brace-format
-#| msgid "Empty: {variables}\n"
+#, python-brace-format
 msgid "Empty: {keys}\n"
-msgstr "Порожні: {variables}\n"
+msgstr "Порожній: {keys}\n"
 
 #: WebSearch.py:1018
 #, python-brace-format
