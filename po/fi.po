@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
 "PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -1404,9 +1404,9 @@ msgid "   Type: %s"
 msgstr "   Tyyppi: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:302
-#, fuzzy, python-format
+#, python-format
 msgid "   N-ID: %s"
-msgstr "   N-ID: %s"
+msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:310
 #, python-format
@@ -23764,47 +23764,43 @@ msgstr "Lisää paikkaan lainaus ja lähde"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
 msgid "Add addess as place"
-msgstr ""
+msgstr "Lisää osoite sijainniksi"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
-#, fuzzy
-#| msgid "Search:"
 msgid "Search for:"
-msgstr "Etsi:"
+msgstr "Hae:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:26
-#, fuzzy
-#| msgid "Show places"
 msgid "Found place:"
-msgstr "Näytä paikat"
+msgstr "Löydetty sijainti:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:53
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "No DB entry is selected"
-msgstr "Mitään ei ole valittu"
+msgstr "Tietokantamerkintää ei ole valittu"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
-msgstr ""
+msgstr "Postinumero:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:116
 msgid "Show found place externally in Google Maps"
-msgstr ""
+msgstr "Näytä löydetty paikka ulkoisesti Google Mapsissa"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:203
 msgid ""
 "Take last clicked position\n"
 "from Geography map"
 msgstr ""
+"Ota viimeksi napsautettu sijainti\n"
+"maantieteelliseltä kartalta"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:218
 msgid "Search location from DB"
-msgstr ""
+msgstr "Hae sijaintia tietokannasta"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:232
 msgid "Apply geo location to Database"
-msgstr ""
+msgstr "Käytä maantieteellistä sijaintia tietokannassa"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:269
 msgid "Go"
