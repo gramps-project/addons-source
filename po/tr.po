@@ -6,13 +6,14 @@
 # Ugur Cetin <ugur@ugurcetin.com.tr>, 2014.
 # Bora Atıcı <boratici.acc@gmail.com>, 2025.
 # Muhammed YILMAZ <yilmazmu15@itu.edu.tr>, 2025.
+# mahmutozcan <mahmutozcan@protonmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-03-25 10:12+0000\n"
-"Last-Translator: Muhammed YILMAZ <yilmazmu15@itu.edu.tr>\n"
+"PO-Revision-Date: 2025-04-13 23:01+0000\n"
+"Last-Translator: mahmutozcan <mahmutozcan@protonmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
 "Language: tr\n"
@@ -41,7 +42,7 @@ msgstr "Hiçbir ortam ögesi birleştirilmedi."
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
-msgstr ""
+msgstr "Ortam Birleştirme"
 
 #: MediaMerge/mediamerge.gpr.py:33
 msgid ""
