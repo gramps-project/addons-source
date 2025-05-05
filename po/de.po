@@ -23,8 +23,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-04-17 19:01+0000\n"
-"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -3381,12 +3381,12 @@ msgstr "Archivdatei „%(path)s“ kann nicht überschrieben werden"
 #: DynamicWeb/dynamicweb.py:3731 DynamicWeb/dynamicweb.py:3752
 #, python-format
 msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
-msgstr "Kann Datei \"%(file)s\" dem Archiv \"%(archive)s\" nicht hinzufügen"
+msgstr "Datei „%(file)s“ kann nicht zum Archiv „%(archive)s“ hinzugefügt werden"
 
 #: DynamicWeb/dynamicweb.py:3831
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
-msgstr "DynamicWebReport ignoriert Linktype '%(class)s'"
+msgstr "DynamischerWebBericht ignoriert den Verknüpfungstyp '%(class)s'"
 
 #: DynamicWeb/dynamicweb.py:4262
 #, python-format
@@ -3436,7 +3436,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4712
 msgid "Store web pages in archive"
-msgstr "Speichere Webseiten in Archiv"
+msgstr "Webseiten im Archiv speichern"
 
 #: DynamicWeb/dynamicweb.py:4715
 msgid ""
@@ -3452,11 +3452,11 @@ msgstr "Archivdatei"
 
 #: DynamicWeb/dynamicweb.py:4728
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
-msgstr "Der Archivdateiname (mit \".zip\" or \".tgz\" extension)"
+msgstr "Der Name der Archivdatei (mit der Erweiterung „.zip“ oder „.tgz“)"
 
 #: DynamicWeb/dynamicweb.py:4735
 msgid "Web site title"
-msgstr "Webseitentitel"
+msgstr "Titel der Website"
 
 #: DynamicWeb/dynamicweb.py:4736
 msgid "The title of the web site"
@@ -3465,7 +3465,8 @@ msgstr "Der Titel der Website"
 #: DynamicWeb/dynamicweb.py:4741
 msgid "Select filter to restrict people that appear on web site"
 msgstr ""
-"Filter wählen, um Personen zu begrenzen, die auf der Website erscheinen"
+"Wähle einen Filter, um die Personen einzuschränken, die auf der Website "
+"erscheinen"
 
 #: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
 msgid "Name format (short)"
@@ -3473,19 +3474,19 @@ msgstr "Namensformat (kurz)"
 
 #: DynamicWeb/dynamicweb.py:4757 DynamicWeb/dynamicweb.py:4783
 msgid "Select the format to display a shorter version of the names"
-msgstr "Wähle das Format aus um eine kürzere Version der Namen anzuzeigen"
+msgstr "Wähle das Format, um eine kürzere Version der Namen anzuzeigen"
 
 #: DynamicWeb/dynamicweb.py:4787
 msgid "Web site template"
-msgstr "Webseitenvorlage"
+msgstr "Websitevorlage"
 
 #: DynamicWeb/dynamicweb.py:4790
 msgid "Select the template of the web site"
-msgstr "Wähle die Vorlage der Website aus"
+msgstr "Wähle die Vorlage für die Website"
 
 #: DynamicWeb/dynamicweb.py:4812
 msgid "Whether to include private objects"
-msgstr "Gibt an, ob vertrauliche Objekte eingeschlossen werden sollen"
+msgstr "Ob vertrauliche Objekte einbezogen werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4833
 msgid ""
@@ -3497,21 +3498,19 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4839
 msgid "Export notes"
-msgstr "Notizen exportiere"
+msgstr "Notizen exportieren"
 
 #: DynamicWeb/dynamicweb.py:4840
 msgid "Whether to export notes in the web pages"
-msgstr "Legt fest, ob Notizen exportiert in the Website werden sollen"
+msgstr "Ob Notizen auf den Webseiten exportiert werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4843
 msgid "Export sources"
-msgstr "Quellen exportiere"
+msgstr "Quellen exportieren"
 
 #: DynamicWeb/dynamicweb.py:4845
 msgid "Whether to export sources and citations in the web pages"
-msgstr ""
-"Gibt an, ob Quellen und Fundstellen auf den Webseiten exportiert werden "
-"sollen"
+msgstr "Ob Quellen und Funstellen auf die Webseiten exportiert werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4849
 msgid "Export addresses"
@@ -3519,11 +3518,11 @@ msgstr "Adressen exportieren"
 
 #: DynamicWeb/dynamicweb.py:4850
 msgid "Whether to export addresses in the web pages"
-msgstr "Legt fest, ob Adressen in die Website exportiert werden sollen"
+msgstr "Ob Adressen in den Webseiten exportiert werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4858
 msgid "Whether or not to include the Repository Pages."
-msgstr "Ob Aufbewahrungsorteseiten enthalten sind."
+msgstr "Ob die Aufbewahrungsortseiten aufgenommen werden sollen oder nicht."
 
 #: DynamicWeb/dynamicweb.py:4861
 msgid "Include images and media"
@@ -3535,7 +3534,7 @@ msgstr "Ob Bilder und Medien in die Webseiten aufgenommen werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
-msgstr "Kopieren, Dateien umbenennen mit einer internen Gramps-Kennung"
+msgstr "Kopieren, Umbenennen von Dateien mit einer internen Gramps-Kennung"
 
 #: DynamicWeb/dynamicweb.py:4870
 msgid "Copy, keep file names unchanged"
@@ -3543,7 +3542,7 @@ msgstr "Kopieren, Dateinamen unverändert lassen"
 
 #: DynamicWeb/dynamicweb.py:4871
 msgid "Do not copy, reference existing files"
-msgstr "Nicht kopieren, auf existierende Dateien verweisen"
+msgstr "Nicht kopieren, auf bestehende Dateien verweisen"
 
 #: DynamicWeb/dynamicweb.py:4873
 msgid "Images and media"
@@ -3551,27 +3550,28 @@ msgstr "Bilder und Medien"
 
 #: DynamicWeb/dynamicweb.py:4876
 msgid "Whether to make a copy of the media"
-msgstr "Ob eine Kopie der Medien erstellt wird"
+msgstr "Ob eine Kopie der Medien erstellt werden soll"
 
 #: DynamicWeb/dynamicweb.py:4879
 msgid "Print the notes type"
-msgstr "Notiztyp aufnehmen"
+msgstr "Den Notizentyp drucken"
 
 #: DynamicWeb/dynamicweb.py:4881
 msgid "Whether to print the notes type in the notes text"
-msgstr "Legt fest, ob der Notiztype ausgegeben wird"
+msgstr "Ob der Notizentyp im Notizentext gedruckt werden soll"
 
 #: DynamicWeb/dynamicweb.py:4885
 msgid "Print place pages"
-msgstr "Ortsseiten ausgeben"
+msgstr "Ortsseiten drucken"
 
 #: DynamicWeb/dynamicweb.py:4886
 msgid "Whether to show pages for the places"
-msgstr "Legt fest, ob Seiten für die Orte gezeigt werden"
+msgstr "Ob Seiten für die Orte angezeigt werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
-msgstr "Wählen den Kartendienst deiner Wahl zum Erstellen der Ortskartenseiten"
+msgstr ""
+"Wähle einen Kartendienst deiner Wahl für die Erstellung der Ortskartenseiten"
 
 #: DynamicWeb/dynamicweb.py:4926
 msgid "Google map API key"
@@ -3583,7 +3583,7 @@ msgstr "Der für Google map verwendete API-Schlüssel"
 
 #: DynamicWeb/dynamicweb.py:4945
 msgid "Whether or not to include family pages"
-msgstr "Legt fest, ob Familienseiten aufgenommen werden"
+msgstr "Ob Familienseiten aufgenommen werden sollen oder nicht"
 
 #: DynamicWeb/dynamicweb.py:4959
 msgid ""
@@ -3594,31 +3594,31 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
-msgstr "Erlaube Seitenkonfiguration"
+msgstr "Seitenkonfiguration aktivieren"
 
 #: DynamicWeb/dynamicweb.py:4969
 msgid "Whether to enable page configuration"
-msgstr "Ob eine Seitenkonfiguration erlaubt wird"
+msgstr "Ob die Seitenkonfiguration aktiviert werden soll"
 
 #: DynamicWeb/dynamicweb.py:4974
 msgid "Whether to use tabbed panels for the different sections of the pages."
 msgstr ""
-"Gibt an, ob Registerkarten für die verschiedenen Abschnitte der Seiten "
-"verwendet werden sollen."
+"Ob für die verschiedenen Abschnitte der Seiten Registerkarten verwendet "
+"werden sollen."
 
 #: DynamicWeb/dynamicweb.py:4980
 msgid "Whether to show the last modification time in the pages footer"
 msgstr ""
-"Gibt an, ob die Uhrzeit der letzten Änderung in der Fußzeile der Seite "
-"angezeigt werden soll"
+"Ob die Zeit der letzten Änderung in der Fußzeile der Seite angezeigt werden "
+"soll"
 
 #: DynamicWeb/dynamicweb.py:4988
 msgid "Whether to insert sources author in the sources title"
-msgstr "Ob der Autor der Quellen in den Quelltitel eingefügt wird"
+msgstr "Ob der Autor der Quelle in den Titel der Quelle eingefügt werden soll"
 
 #: DynamicWeb/dynamicweb.py:4993
 msgid "Whether to hide the Gramps ID"
-msgstr "Ob die Gramps ID verborgen wird"
+msgstr "Ob die Gramps ID versteckt werden soll"
 
 #: DynamicWeb/dynamicweb.py:5001
 msgid "List"
@@ -3672,20 +3672,20 @@ msgstr "Das Standardformat für den Orteindex"
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
-"Ob Datumsspalten (Geburt, Tod, Hochzeit) in die Indexseiten aufgenommen "
-"werden"
+"Ob Spalten mit Daten (Geburt, Tod, Heirat) auf den Indexseiten enthalten "
+"sein sollen"
 
 #: DynamicWeb/dynamicweb.py:5063
 msgid "Generate a families index page"
-msgstr "Erstelle eine Familienindex Seite"
+msgstr "Erzeugen einer Familienindexseite"
 
 #: DynamicWeb/dynamicweb.py:5066
 msgid "Whether to generate an index page for families"
-msgstr "Ob eine Indexseite für Familien erstellt wird"
+msgstr "Ob eine Indexseite für Familien erstellt werden soll"
 
 #: DynamicWeb/dynamicweb.py:5073
 msgid "Whether to include a column showing the media path"
-msgstr "Ob eine Spalte für den Medienpfad aufgenommen wird"
+msgstr "Ob eine Spalte mit dem Medienpfad eingefügt werden soll"
 
 #: DynamicWeb/dynamicweb.py:5079
 msgid ""
@@ -3709,7 +3709,7 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:5098
 #: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
-msgstr "Maximale Anzahl der Generationen"
+msgstr "Maximale Anzahl von Generationen"
 
 #: DynamicWeb/dynamicweb.py:5101
 msgid ""
@@ -3740,7 +3740,8 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:5149
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
-msgstr "Wähle das Hintergrundfarbschema für die Personen in der SVG-Baumgrafik"
+msgstr ""
+"Wähle die Farbschema für den Hintergrund der Personen im SVG-Baumdiagramm"
 
 #: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
@@ -3756,11 +3757,11 @@ msgstr "Eine Notiz, die als Seitenüberschrift verwendet werden soll"
 
 #: DynamicWeb/dynamicweb.py:5197
 msgid "HTML user brand name / icon"
-msgstr "HTML Benutzer-Markenzeichen / -Symbol"
+msgstr "HTML-Benutzermarke/Symbol"
 
 #: DynamicWeb/dynamicweb.py:5199
 msgid "A note to be used as the brand name or image in the menu"
-msgstr "Eine Notiz, die als Markenzeichen oder Bild im Menü verwendet wird"
+msgstr "Eine Notiz, die als Markenname oder Bild im Menü verwendet werden soll"
 
 #: DynamicWeb/dynamicweb.py:5208
 msgid "Custom pages"
@@ -3769,31 +3770,32 @@ msgstr "Benutzerdefinierte Seiten"
 #: DynamicWeb/dynamicweb.py:5213
 #, python-format
 msgid "Title for the custom page %(index)i"
-msgstr "Titel der benutzerdefinierte Seite %(index)i"
+msgstr "Titel für die benutzerdefinierte Seite %(index)i"
 
 #: DynamicWeb/dynamicweb.py:5217
 #, python-format
 msgid "Name for the custom page %(index)i"
-msgstr "Name der benutzerdefinierte Seite %(index)i"
+msgstr "Name für die benutzerdefinierte Seite %(index)i"
 
 #: DynamicWeb/dynamicweb.py:5222
 #, python-format
 msgid "Note for custom page %(index)i"
-msgstr "Notiz der benutzerdefinierte Seite %(index)i"
+msgstr "Notiz für benutzerdefinierte Seite %(index)i"
 
 #: DynamicWeb/dynamicweb.py:5225
 msgid "A note to be used for the custom page content.\n"
 msgstr ""
-"Eine Notiz, welche als Inhalt der benutzerdefinierten Seite verwendet wird.\n"
+"Eine Notiz, die für den Inhalt der benutzerdefinierten Seite verwendet wird."
+"\n"
 
 #: DynamicWeb/dynamicweb.py:5230
 #, python-format
 msgid "Menu for the custom page %(index)i"
-msgstr "Menü der benutzerdefinierten Seite %(index)i"
+msgstr "Menü für die benutzerdefinierte Seite %(index)i"
 
 #: DynamicWeb/dynamicweb.py:5232
 msgid "Whether to print a menu for the custom page"
-msgstr "Legt fest, ob ein Menü für die benutzerdefinierte Seite angezeigt wird"
+msgstr "Ob ein Menü für die benutzerdefinierte Seite gedruckt werden soll"
 
 #: DynamicWeb/dynamicweb.py:5236
 msgid "Pages selection"
@@ -3805,16 +3807,16 @@ msgstr "Anzahl der Seiten"
 
 #: DynamicWeb/dynamicweb.py:5242
 msgid "Number pages in the web site menu."
-msgstr "Anzahl der Seiten im Webseitenmenü."
+msgstr "Seiten im Menü der Website nummerieren."
 
 #: DynamicWeb/dynamicweb.py:5262
 #, python-format
 msgid "Contents of page %(index)i"
-msgstr "Inhalt der Seite %(index)i"
+msgstr "Inhalte der Seite %(index)i"
 
 #: DynamicWeb/dynamicweb.py:5266
 msgid "Contents of the page"
-msgstr "Inhalt der Seite"
+msgstr "Inhalte der Seite"
 
 #: GetGOV/getgov.py:315
 msgid "Place ID to import from GOV (Historical Gazetteer):"
@@ -3864,7 +3866,7 @@ msgstr "Gramplet zum Abrufen von Orten aus der GOV-Datenbank"
 
 #: RestoreHist/restorehist.gpr.py:30
 msgid "Restart where you were last working"
-msgstr "Starte neu, wo du zuletzt gearbeitet hast"
+msgstr "Neustart an der Stelle, an der du zuletzt gearbeitet hast"
 
 #: RestoreHist/restorehist.gpr.py:32
 msgid ""
@@ -3872,14 +3874,14 @@ msgid ""
 "was previously closed.  It adds no new menus or Gramplets, but allows the "
 "last six objects visited to be found via the 'Go' menu."
 msgstr ""
-"Dieses Zusatzmodul bewirkt, dass Gramps in der gleichen Ansicht und dem "
-"gleichen Objekt neu startet, in dem Gramps zuvor geschlossen wurde. Es "
-"werden keine neuen Menüs oder Gramplets hinzugefügt, sondern die letzten "
-"sechs besuchten Objekte werden über das Menü „Gehe zu” gefunden."
+"Dieses Zusatzmodul bewirkt, dass Gramps auf derselben Ansicht und demselben "
+"Objekt neu startet, auf dem Gramps zuvor geschlossen wurde.  Es fügt keine "
+"neuen Menüs oder Gramplets hinzu, ermöglicht aber, dass die letzten sechs "
+"besuchten Objekte über das Menü „ Gehe zu“ gefunden werden können."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr "Verbindungsdaten überprüfen"
+msgstr "Verknüpfungsdaten prüfen"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
@@ -3908,7 +3910,7 @@ msgstr "Öffnet einen interaktiven Baum im Browser"
 #: ListeEclair/ListeEclair.py:97 ListeEclair/ListeEclair.py:104
 #: ListeEclair/ListeEclair.gpr.py:4
 msgid "Liste Eclair"
-msgstr "Blitz Liste"
+msgstr "Blitzliste"
 
 #: ListeEclair/ListeEclair.py:277
 msgid "Type de Liste"
@@ -3928,19 +3930,19 @@ msgstr "Art der Liste"
 
 #: ListeEclair/ListeEclair.py:284
 msgid "Include private data"
-msgstr "Vertrauliche Daten aufnehmen"
+msgstr "Vertrauliche Daten einbeziehen"
 
 #: ListeEclair/ListeEclair.py:301
 msgid "The style used for the liste eclair."
-msgstr "Der Stil, der für die Blitz Liste verwendet wird."
+msgstr "Der für die Blitzliste verwendete Stil."
 
 #: ListeEclair/ListeEclair.py:314
 msgid "The style used for place title."
-msgstr "Der Stil, der für den Ortstitel verwendet wird."
+msgstr "Der für den Ortstitel verwendete Stil."
 
 #: ListeEclair/ListeEclair.gpr.py:5
 msgid "Produit une liste eclair"
-msgstr "Erstellt eine Blitz Liste"
+msgstr "Produziert eine Blitzliste"
 
 #: Sqlite/ExportSql.py:1346
 #, python-format
@@ -3955,7 +3957,7 @@ msgstr "SQLite Import"
 
 #: Sqlite/Sqlite.gpr.py:5 Sqlite/Sqlite.gpr.py:20
 msgid "SQLite is a common local database format"
-msgstr "SQLite ist ein gebräuchliches lokales Datenbankformat"
+msgstr "SQLite ist ein gängiges lokales Datenbankformat"
 
 #: Sqlite/Sqlite.gpr.py:19
 msgid "SQLite Export"
@@ -4011,7 +4013,7 @@ msgstr "Kombiniert"
 
 #: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
-msgstr "Eine Ansicht, die Beziehungen und Ereignisse für eine Person zeigt"
+msgstr "Eine Ansicht mit Beziehungen und Ereignissen für eine Person"
 
 #: CombinedView/navigationview.py:346
 msgid ""
@@ -4034,7 +4036,7 @@ msgstr "Das aktive Ereignis bearbeiten"
 
 #: CombinedView/combinedview.py:630
 msgid "Show Tags"
-msgstr "Markierungen zeigen"
+msgstr "Etiketten anzeigen"
 
 #: CombinedView/combinedview.py:656
 msgid "Vertical Details"
@@ -4084,7 +4086,7 @@ msgstr "Keine Beziehung zur aktiven Person"
 
 #: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
-msgstr "Als Elter hinzufügen"
+msgstr "Als Elternteil hinzufügen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
 msgid "Add as a Mother"
@@ -4100,11 +4102,11 @@ msgstr "Als Partner hinzufügen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
 msgid "Add as a Wife"
-msgstr "Als Ehefrau hinzufügen"
+msgstr "Als Frau hinzufügen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
 msgid "Add as a Husband"
-msgstr "Als Ehemann hinzufügen"
+msgstr "Als Mann hinzufügen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
@@ -4133,7 +4135,7 @@ msgstr "Gramplet-Daten bearbeiten: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
-msgstr "Bitte nenne einen Namen."
+msgstr "Bitte gib einen Namen an."
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
@@ -4148,17 +4150,17 @@ msgstr "Kann neue Person nicht hinzufügen."
 #: DataEntryGramplet/DataEntryGramplet.py:560
 #: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
-msgstr "Bitte eine aktive Person setzen."
+msgstr "Bitte setz eine aktive Person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:526
 msgid "Can't add new person as a parent."
-msgstr "Kann neue Person nicht als Elter hinzufügen."
+msgstr "Kann neue Person nicht als Elternteil hinzufügen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
-msgstr "Bitte Geschlecht der neuen Person angeben."
+msgstr "Bitte gib das Geschlecht der neuen Person an."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
 msgid "Can't add new person as a mother."
@@ -4199,20 +4201,20 @@ msgstr "Bitte aktive Person setzen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
-msgstr "Kann neue Person nicht als Partner von Niemanden hinzufügen."
+msgstr "Kann neue Person nicht als Partner zu niemandem hinzufügen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr "Bitte das Geschlecht für aktive oder neue Person angeben."
+msgstr "Bitte Geschlecht der aktiven oder neuen Person einstellen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
-msgstr "Selbe Geschlecht bei aktiver und neuer Person."
+msgstr "Gleiche Geschlechter bei Aktiver und neuer Person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
-msgstr "Bitte das Geschlecht der aktiven Person angeben."
+msgstr "Bitte gib Sie bei aktiver Person das Geschlecht an."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
 msgid "FamilyTree DNA"
@@ -4325,7 +4327,7 @@ msgstr "Fundstelle zu %s DNA-Verbindung hinzufügen"
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
-msgstr "Das Thema ist fest einprogrammiert durch GTK_THEME"
+msgstr "Das Thema ist durch GTK_THEME hart kodiert"
 
 #: Themes/themes.py:180
 msgid "Dark Variant"
@@ -4341,15 +4343,15 @@ msgstr "Feste Bildlaufleiste (erfordert Neustart)"
 
 #: Themes/themes.gpr.py:29
 msgid "Theme preferences"
-msgstr "Theme-Einstellungen"
+msgstr "Thema Einstellungen"
 
 #: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
 msgstr ""
-"Eine Ergänzung zu den Voreinstellungen für die einfache Anpassung von Design "
-"und Schrift. Besonders nützlich für Windows-Benutzer."
+"Ein Zusatz zu den Einstellungen zur einfachen Anpassung von Themen und "
+"Schriftarten.  Besonders nützlich für Windows-Benutzer."
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -4365,7 +4367,7 @@ msgstr "Vorhandene Quelle"
 
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
-msgstr "Art der anzuhängenden Quelle wählen"
+msgstr "Wähle die Art der anzuhängenden Quelle"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
@@ -4387,15 +4389,15 @@ msgstr "ID der anzuhängenden Quelle"
 #: AttachSourceTool/AttachSourceTool.py:155
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 msgid "Attach Source"
-msgstr "Quelle hinzufügen"
+msgstr "Quelle anhängen"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
-msgstr "Quellen anfügen...\n"
+msgstr "Quellen anhängen...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
-msgstr "Quellen anfügen..."
+msgstr "Quellen anhängen..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
@@ -4404,20 +4406,20 @@ msgstr "Fertig!\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
-msgstr "Fügt verteilte Quellen mehreren Objekten hinzu."
+msgstr "Hängt eine gemeinsame Quelle an mehrere Objekte an."
 
 #: PythonGramplet/PythonGramplet.gpr.py:4
 #: PythonGramplet/PythonGramplet.gpr.py:11
 msgid "Python Shell"
-msgstr "Python Konsole"
+msgstr "Python-Shell"
 
 #: PythonGramplet/PythonGramplet.gpr.py:5
 msgid "Interactive Python interpreter"
-msgstr "Interaktiver Pythoninterpreter"
+msgstr "Interaktiver Python-Interpreter"
 
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
-msgstr "Pythonausdruck eingeben"
+msgstr "Pythonausdrücke eingeben"
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -4429,7 +4431,7 @@ msgstr "aufKlick"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onmouseover"
-msgstr "aufMausüber"
+msgstr "beim Überfahren mit der Maus"
 
 #: DenominoViso/DenominoViso.py:208
 #: LinesOfDescendency/lines-of-descendency.py:55
@@ -4438,7 +4440,7 @@ msgstr "Vorfahre"
 
 #: DenominoViso/DenominoViso.py:209
 msgid "Descendant"
-msgstr "Nachfahre"
+msgstr "Nachkomme"
 
 #: DenominoViso/DenominoViso.py:214
 msgid "Fan"
@@ -4446,7 +4448,7 @@ msgstr "Fächer"
 
 #: DenominoViso/DenominoViso.py:215
 msgid "Growth Spiral"
-msgstr "Wachsende Spirale"
+msgstr "Wachstumsspirale"
 
 #: DenominoViso/DenominoViso.py:216
 msgid "Mandelbrot Tree"
@@ -4462,15 +4464,15 @@ msgstr "von rechts nach links"
 
 #: DenominoViso/DenominoViso.py:222
 msgid "left to right"
-msgstr "Links nach Rechts"
+msgstr "links nach rechts"
 
 #: DenominoViso/DenominoViso.py:223
 msgid "top to bottom"
-msgstr "Oben nach Unten"
+msgstr "von oben nach unten"
 
 #: DenominoViso/DenominoViso.py:224
 msgid "bottom to top"
-msgstr "Unten nach Oben"
+msgstr "von unten nach oben"
 
 #: DenominoViso/DenominoViso.py:306 DenominoViso/DenominoViso.py:974
 #: DenominoViso/DenominoViso.py:1034 DenominoViso/DenominoViso.py:1259
@@ -4503,7 +4505,7 @@ msgstr "Autor"
 
 #: DenominoViso/DenominoViso.py:1513 DenominoViso/DenominoViso.py:1563
 msgid "publication_info"
-msgstr "Veröffentlichungs_information"
+msgstr "Veröffentlichungshinweis"
 
 #: DenominoViso/DenominoViso.py:1518 DenominoViso/DenominoViso.py:1564
 msgid "abbreviation"
@@ -4521,7 +4523,7 @@ msgstr "von"
 
 #: DenominoViso/DenominoViso.py:1959
 msgid "the chart type runs out of bounds"
-msgstr "der Grafiktyp läuft aus den Begrenzungen"
+msgstr "der Diagrammtyp überschreitet die Grenzwerte"
 
 #: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
 #: GraphView/graphview.py:968 SearchGramplet/SearchGramplet.gpr.py:9
@@ -4535,7 +4537,7 @@ msgstr "DenominoViso Optionen"
 
 #: DenominoViso/DenominoViso.py:2556
 msgid "The destination file for the html-content."
-msgstr "Die Zieldatei für den HTML-Inhalt."
+msgstr "Die Zieldatei für den html-Inhalt."
 
 #: DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
@@ -4551,7 +4553,7 @@ msgstr "Titel der Webseite"
 
 #: DenominoViso/DenominoViso.py:2564
 msgid "Any string you wish."
-msgstr "Jede Zeichenfolge die du willst."
+msgstr "Jede beliebige Zeichenkette, die du willst."
 
 #: DenominoViso/DenominoViso.py:2567
 msgid "Display mode"
@@ -4559,7 +4561,7 @@ msgstr "Anzeigemodus"
 
 #: DenominoViso/DenominoViso.py:2568
 msgid "Either plot ancestor or descendants graph."
-msgstr "Zeichnet Vorfahren oder Nachfahrengrafik."
+msgstr "Entweder Vorfahren- oder Nachfahren-Diagramm zeichnen."
 
 #: DenominoViso/DenominoViso.py:2573
 msgid "Display type"
@@ -4567,7 +4569,7 @@ msgstr "Anzeigeart"
 
 #: DenominoViso/DenominoViso.py:2574
 msgid "The type of graph to create."
-msgstr "Die Art der zu erstellenden Grafik."
+msgstr "Die Art des zu erstellenden Diagramms."
 
 #: DenominoViso/DenominoViso.py:2582
 msgid "Direction of time"
@@ -4583,7 +4585,7 @@ msgstr "Maximale Diagrammbreite (%)"
 
 #: DenominoViso/DenominoViso.py:2593
 msgid "Width of the tree as fraction of the browser window"
-msgstr "Breite des Baum als Teil des Browserfenster"
+msgstr "Breite des Baums als Bruchteil des Browserfensters"
 
 #: DenominoViso/DenominoViso.py:2596
 msgid "Max chart height (px)"
@@ -4602,64 +4604,66 @@ msgid ""
 "List of strings, free text added at the bottom, for example for a copyright "
 "notice."
 msgstr ""
-"Liste von Zeichenketten, frei hinzugefügter Text unten, zum Beispiel für "
-"eine Copyright Notiz."
+"Liste von Zeichenketten, freier Text wird unten hinzugefügt, z. B. für einen "
+"Urheberrechtshinweis."
 
 #: DenominoViso/DenominoViso.py:2604
 msgid "Include Options"
-msgstr "Aufnahmeoptionen"
+msgstr "Aufnehmen Optionen"
 
 #: DenominoViso/DenominoViso.py:2607
 #: RepositoriesReport/RepositoriesReportAlt.py:467
 msgid "Include private records"
-msgstr "Vertrauliche Daten aufnehmen"
+msgstr "Vertrauliche Aufzeichnungen einbeziehen"
 
 #: DenominoViso/DenominoViso.py:2608
 msgid "Whether to leave out private data."
-msgstr "Ob private Daten weggelassen werden sollen."
+msgstr "Ob vertrauliche Daten ausgelassen werden sollen."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
-msgstr "Ereignisse aufnehmen"
+msgstr "Ereignisse einbeziehen"
 
 #: DenominoViso/DenominoViso.py:2613
 msgid "Whether to include a person's events."
-msgstr "Ob die Ereignisse einer Person berücksichtigt werden."
+msgstr "Ob die Ereignisse einer Person aufgenommen werden sollen."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
-msgstr "Kindesgeburt aufnehmen"
+msgstr "Geburtstage der Kinder einbeziehen"
 
 #: DenominoViso/DenominoViso.py:2622
 msgid "Whether to include the birth of children in the list of events."
-msgstr "Ob die Geburt von Kindern in der Ereignisliste aufgenommen wird."
+msgstr ""
+"Ob die Geburt von Kindern in die Liste der Ereignisse aufgenommen werden "
+"soll."
 
 #: DenominoViso/DenominoViso.py:2625
 msgid "Include death relatives"
-msgstr "Tote Verwandte aufnehmen"
+msgstr "Todesfälle von Angehörigen einbeziehen"
 
 #: DenominoViso/DenominoViso.py:2626
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
 msgstr ""
-"Ob der Tod von Verwandten während der Lebenszeit der Person aufgenommen "
-"werden."
+"Ob der Tod von Angehörigen zu Lebzeiten der Person berücksichtigt werden "
+"soll."
 
 #: DenominoViso/DenominoViso.py:2629
 msgid "Include witness note"
-msgstr "Mit Zeugen Notiz"
+msgstr "Zeugennotiz aufnehmen"
 
 #: DenominoViso/DenominoViso.py:2630
 msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
 "contains <witnesses>)"
 msgstr ""
-"Ob die Notiz zu einem Zeugen aufgenommen wird (wenn das Ereignisformat "
-"<witnesses> enthält)"
+"Ob die zu einem Zeugen gehörende Notiz aufgenommen werden soll (wenn das "
+"Ereignisformat <Zeugen> enthält)"
 
 #: DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
-msgstr "Ob Attribute einer Person aufgenommen werden"
+msgstr "Ob die Attribute einer Person aufgenommen werden sollen"
 
 #: DenominoViso/DenominoViso.py:2638
 msgid "Include Addresses"
@@ -4667,7 +4671,7 @@ msgstr "Adressen aufnehmen"
 
 #: DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
-msgstr "Ob die Adressen einer Person aufgenommen werden."
+msgstr "Ob die Adressen einer Person aufgenommen werden sollen."
 
 #: DenominoViso/DenominoViso.py:2642
 msgid "Include Note"
@@ -4675,7 +4679,7 @@ msgstr "Notizen aufnehmen"
 
 #: DenominoViso/DenominoViso.py:2643
 msgid "Whether to include a person's note."
-msgstr "Ob Notizen einer Person aufgenommen werden."
+msgstr "Ob die Notiz einer Person aufgenommen werden soll."
 
 #: DenominoViso/DenominoViso.py:2646
 msgid "Include URL"
@@ -4683,15 +4687,15 @@ msgstr "URL aufnehmen"
 
 #: DenominoViso/DenominoViso.py:2647
 msgid "Whether to include a person's internet address."
-msgstr "Ob die Internetadresse einer Person aufgenommen wird."
+msgstr "Ob die Internetadresse einer Person aufgenommen werden soll."
 
 #: DenominoViso/DenominoViso.py:2650
 msgid "Include URL description"
-msgstr "URL Beschreibung aufnehmen"
+msgstr "URL-Beschreibung aufnehmen"
 
 #: DenominoViso/DenominoViso.py:2651
 msgid "Whether to include the description of the first URL"
-msgstr "Ob die Beschreibung der ersten URL aufgenommen wird"
+msgstr "Ob die Beschreibung der ersten URL aufgenommen werden soll"
 
 #: DenominoViso/DenominoViso.py:2656
 msgid "Include Sources"
@@ -4699,7 +4703,7 @@ msgstr "Quellen aufnehmen"
 
 #: DenominoViso/DenominoViso.py:2657
 msgid "Whether to include a person's sources."
-msgstr "Ob die Quellen einer Person aufgenommen werden."
+msgstr "Ob die Quellen einer Person aufgenommen werden sollen."
 
 #: DenominoViso/DenominoViso.py:2660
 msgid "Image Options"
@@ -4711,7 +4715,7 @@ msgstr "Fotos/Bilder aus der Galerie aufnehmen"
 
 #: DenominoViso/DenominoViso.py:2663
 msgid "Whether to include images"
-msgstr "Ob Bilder aufgenommen werden"
+msgstr "Ob Bilder aufgenommen werden sollen"
 
 #: DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
@@ -4719,7 +4723,7 @@ msgstr "Bild kopieren"
 
 #: DenominoViso/DenominoViso.py:2667
 msgid "Copy the images to a designated directory."
-msgstr "Bilder in ein bestimmtes Verzeichnis kopieren."
+msgstr "Die Bilder in ein bestimmtes Verzeichnis kopieren."
 
 #: DenominoViso/DenominoViso.py:2674
 msgid "Images with Attribute"
@@ -4728,8 +4732,8 @@ msgstr "Bilder mit Attributen"
 #: DenominoViso/DenominoViso.py:2675
 msgid "Determine images with which attributes to in/exclude"
 msgstr ""
-"Festlegen welche Bilder mit welchen Attributen aufgenommen/ausgeschlossen "
-"werden"
+"Bestimmung der Bilder, deren Attribute aufgenommen/ausgeschlossen werden "
+"sollen"
 
 #: DenominoViso/DenominoViso.py:2678
 msgid "Include Image source references"
@@ -4737,7 +4741,7 @@ msgstr "Bild Quellenreferenzen aufnehmen"
 
 #: DenominoViso/DenominoViso.py:2679
 msgid "Whether to include references for images"
-msgstr "Ob Referenzen für Bilder aufgenommen werden"
+msgstr "Ob Referenzen für Bilder aufgenommen werden sollen"
 
 #: DenominoViso/DenominoViso.py:2682
 msgid "Source reference attribute"
@@ -4745,7 +4749,7 @@ msgstr "Quellenreferenzattribute"
 
 #: DenominoViso/DenominoViso.py:2683
 msgid "Image attribute that should be used as source reference"
-msgstr "Bildattribute die als Quellenreferenz verwendet werden sollen"
+msgstr "Bildattribut, das als Quellenangabe verwendet werden soll"
 
 #: DenominoViso/DenominoViso.py:2689
 msgid "Style Options"
@@ -4757,11 +4761,11 @@ msgstr "Farbe der aktiven Person:"
 
 #: DenominoViso/DenominoViso.py:2692
 msgid "RGB-color of geometric shape of the activated person."
-msgstr "RGB-Farbe der geometrischen Form der aktiven Person."
+msgstr "RGB-Farbe der geometrischen Form der aktivierten Person."
 
 #: DenominoViso/DenominoViso.py:2695
 msgid "Color of found persons:"
-msgstr "Farbe gefundener Personen:"
+msgstr "Farbe der gefundenen Personen:"
 
 #: DenominoViso/DenominoViso.py:2696
 msgid "RGB-color of geometric shape of the persons found."
@@ -4769,7 +4773,7 @@ msgstr "RGB-Farbe der geometrischen Form der gefundenen Personen."
 
 #: DenominoViso/DenominoViso.py:2699
 msgid "Color of male persons:"
-msgstr "Farbe männlicher Personen:"
+msgstr "Farbe der männlichen Personen:"
 
 #: DenominoViso/DenominoViso.py:2700
 msgid "RGB-color of geometric shape of the male persons."
@@ -4777,7 +4781,7 @@ msgstr "RGB-Farbe der geometrischen Form der männlichen Personen."
 
 #: DenominoViso/DenominoViso.py:2703
 msgid "Colour of female persons:"
-msgstr "Farbe weiblicher Personen:"
+msgstr "Farbe der weiblichen Personen:"
 
 #: DenominoViso/DenominoViso.py:2704
 msgid "RGB-color of geometric shape of the female persons."
@@ -4785,79 +4789,81 @@ msgstr "RGB-Farbe der geometrischen Form der weiblichen Personen."
 
 #: DenominoViso/DenominoViso.py:2707
 msgid "Width of rectangle (hrd):"
-msgstr "Breite des Rechteck (hrd):"
+msgstr "Breite des Rechtecks (hRa):"
 
 #: DenominoViso/DenominoViso.py:2708
 msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
-"Die Breite eines Personenrechtecks des regulären Diagrammtyps ausgedrückt "
-"als Bruch des horizontalen Rechteckabstands."
+"Die Breite eines Personenrechtecks des regulären Diagrammtyps, ausgedrückt "
+"als Bruchteil des horizontalen Rechteckabstands."
 
 #: DenominoViso/DenominoViso.py:2711
 msgid "Height of rectangle (hrd):"
-msgstr "Höhe des Rechteck (hrd):"
+msgstr "Höhe des Rechtecks (hRa):"
 
 #: DenominoViso/DenominoViso.py:2712
 msgid ""
 "The height of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
-"Die Höhe eines Personenrechtecks des regulären Diagrammtyps ausgedrückt als "
-"Bruch des horizontalen Rechteckabstands."
+"Die Höhe eines Personenrechtecks des regulären Diagrammtyps, ausgedrückt als "
+"Bruchteil des horizontalen Rechteckabstands."
 
 #: DenominoViso/DenominoViso.py:2715
 msgid "Vertical distance of rectangles (hrd):"
-msgstr "Vertikaler Abstand der Rechtecke (hrd):"
+msgstr "Vertikaler Abstand der Rechtecke (hRa):"
 
 #: DenominoViso/DenominoViso.py:2716
 msgid ""
 "The vertical distance of person rectangles of the regular chart type "
 "expressed as fraction of the horizontal rectangle distance."
 msgstr ""
-"Der vertikale Abstand von Personenrechtecken des regulären Diagrammtyps "
-"ausgedrückt als Bruch des horizontalen Rechteckabstands."
+"Der vertikale Abstand der Personenrechtecke des regulären Diagrammtyps, "
+"ausgedrückt als Bruchteil des horizontalen Rechteckabstands."
 
 #: DenominoViso/DenominoViso.py:2719
 msgid "Extra style settings:"
-msgstr "Zusätzliche Gestaltungseinstellungen:"
+msgstr "Zusätzliche Stileinstellungen:"
 
 #: DenominoViso/DenominoViso.py:2720
 msgid "Whatever css style settings are needed."
-msgstr "Welche CSS Gestaltungseinstellungen auch immer benötigt werden."
+msgstr "Alle erforderlichen css-Einstellungen."
 
 #: DenominoViso/DenominoViso.py:2730
 msgid "Mouse event handler"
-msgstr "Mausereignissteuerungsprogramm"
+msgstr "Maus- Ereignisbehandlung"
 
 #: DenominoViso/DenominoViso.py:2732
 msgid "Mouse handler used to interact with visitor of webpage."
-msgstr "Maussteuerungsprogramm zum interagieren mit dem Webseitenbesucher."
+msgstr ""
+"Maus-Handler, der zur Interaktion mit dem Besucher einer Webseite verwendet "
+"wird."
 
 #: DenominoViso/DenominoViso.py:2736
 msgid "Birth relationship linestyle"
-msgstr "Geburtsbeziehung Linienart"
+msgstr "Geburt Beziehung Linienstil"
 
 #: DenominoViso/DenominoViso.py:2738
 msgid ""
 "List of lists where each sublist is a list with information about the dash "
 "pattern of lines connecting children to parents."
 msgstr ""
-"Liste mit Listen in der jede Unterliste eine Liste mit Informationen über "
-"das Strichmuster der Linien die Kinder und Eltern verbinden."
+"Liste von Listen, wobei jede Unterliste eine Liste mit Informationen über "
+"das Strichmuster der Linien ist, die Kinder mit Eltern verbinden."
 
 #: DenominoViso/DenominoViso.py:2744
 msgid "Source confidence color"
-msgstr "Quellen Vertrauensfarbe"
+msgstr "Quellen Zuverlässigkeitsfarbe"
 
 #: DenominoViso/DenominoViso.py:2746
 msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
-"Liste der Listen, in denen jede Unterliste eine Liste mit Informationen zur "
-"Farbe istfür ein bestimmtes Vertraulichkeitsstufe verwenden."
+"Liste von Listen, wobei jede Unterliste eine Liste mit Informationen über "
+"die für eine bestimmte Zuverlässigkeitsstufe zu verwendende Farbe ist."
 
 #: DenominoViso/DenominoViso.py:2749
 msgid "Event format"
@@ -4874,8 +4880,8 @@ msgid ""
 "<attribute-value>."
 msgstr ""
 "Liste von Zeichenketten mit Platzhaltern für Ereignisse. Bekannte "
-"Platzhalter: <type>, <role>, <date>, <place>, <description>, <witnesses>, "
-"<source> und jedes <attribute-value>."
+"Platzhalter sind: <Art>, <Rolle>, <Datum>, <Ort>, <Beschreibung>, <Zeugen>, "
+"<Quelle> und ein beliebiger <Attribut-Wert>."
 
 #: DenominoViso/DenominoViso.py:2757
 msgid "Source format"
@@ -4886,20 +4892,20 @@ msgid ""
 "List of strings with placeholders for sources. Known placeholders: <title>, "
 "<volume>, <author>, <publication_info> and <abbreviation>."
 msgstr ""
-"Liste von Zeichenketten mit Platzhaltern für Quellen. Bekannte Platzhalter: "
-"<title>, <volume>, <author>, <publication_info> und <abbreviation>."
+"Liste von Zeichenketten mit Platzhaltern für Quellen. Bekannte Platzhalter "
+"sind: <Titel>, <Band>, <Autor>, <Veröffentlichungsinfo> und <Abkürzung>."
 
 #: DenominoViso/DenominoViso.py:2819
 msgid "restricted to:"
-msgstr "Begrenzt auf:"
+msgstr "beschränkt auf:"
 
 #: DenominoViso/DenominoViso.py:2859
 msgid "to directory:"
-msgstr "auf Verzeichnis:"
+msgstr "zum Verzeichnis:"
 
 #: DenominoViso/DenominoViso.py:2861
 msgid "Save images in ..."
-msgstr "Speichere Bilder in ..."
+msgstr "Bilder speichern in ..."
 
 #: DenominoViso/DenominoViso.py:2911
 msgid "should be"
@@ -4907,23 +4913,23 @@ msgstr "sollte sein"
 
 #: DenominoViso/DenominoViso.py:2913
 msgid "Included"
-msgstr "Einbezogen"
+msgstr "Inklusive"
 
 #: DenominoViso/DenominoViso.py:2914
 msgid "Excluded"
-msgstr "Ausgeschlossen"
+msgstr "Ausgenommen"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
-msgstr "Name HTML-Umschlag Datei"
+msgstr "Name der HTML-Wrapper-Datei"
 
 #: DenominoViso/DenominoViso.py:2955
 msgid "Save HTML-wrapper file as ..."
-msgstr "Speichere HTML-Umschlag Datei als ..."
+msgstr "HTML-Wrapper-Datei speichern als ..."
 
 #: DenominoViso/DenominoViso.py:2980
 msgid "Give a filename ..."
-msgstr "Gib einen Dateinamen ..."
+msgstr "Gib einen Dateinamen an ..."
 
 #: DenominoViso/DenominoViso.py:3114
 msgid "Relation type"
@@ -4931,7 +4937,7 @@ msgstr "Beziehungsart"
 
 #: DenominoViso/DenominoViso.py:3119
 msgid "Use dashed linestyle"
-msgstr "Verwende gestrichelte Linien"
+msgstr "Gestrichelten Linienstil verwenden"
 
 #: DenominoViso/DenominoViso.py:3124
 msgid "Dash length"
@@ -4939,7 +4945,7 @@ msgstr "Strichlänge"
 
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
-msgstr "Länge zwischen den Strichen"
+msgstr "Abstand zwischen den Strichen"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -4951,17 +4957,17 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Erzeugt eine Webseite (HTML) mit einer grafischen Darstellung der Vorfahren /"
-"Nachkommen (SVG), bei denen Details über Individuen bei Maus-Ereignissen "
+"Erzeugt eine Web-(HTML)-Seite mit einer grafischen Darstellung von Vorfahren/"
+"Nachkommen (SVG), auf der Details zu den Personen bei Mausereignissen "
 "sichtbar werden."
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
-msgstr "Zeigt Beziehungen und Entfernungen zu Hauptperson"
+msgstr "Anzeige von Beziehungen und Entfernungen zur Hauptperson"
 
 #: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
-msgstr "Zeigt relationale Informationen zur Hauptperson an"
+msgstr "Zeigt Informationen über die Beziehung zur Hauptperson an"
 
 #: RelID/relation_tab.py:75
 msgid "Relation and distances with root"
