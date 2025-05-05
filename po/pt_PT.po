@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-03-24 17:49+0000\n"
+"PO-Revision-Date: 2025-04-12 05:53+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -7127,22 +7127,16 @@ msgid "URL Compactness Level"
 msgstr "Nível de compressão do URL"
 
 #: settings_ui_manager.py:132
-#, fuzzy
-#| msgid "Shortest - No Prefix, No Variables"
 msgid "Shortest - No Prefix, No Keys"
-msgstr "Curto - sem prefixo nem variáveis"
+msgstr "Curto - sem prefixo nem chaves"
 
 #: settings_ui_manager.py:135
-#, fuzzy
-#| msgid "Compact - No Prefix, Variables Without Attributes"
 msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Compacto - sem prefixo, variáveis sem atributos"
+msgstr "Compacto - sem prefixo, chaves sem atributos"
 
 #: settings_ui_manager.py:138
-#, fuzzy
-#| msgid "Compact - No Prefix, Variables With Attributes"
 msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Compacto - sem prefixo, variáveis com atributos"
+msgstr "Compacto - sem prefixo, chaves com atributos"
 
 #: settings_ui_manager.py:141
 msgid "Long - Without Prefix on the Left"
@@ -7154,41 +7148,35 @@ msgstr "Substituição do prefixo do URL"
 
 #: settings_ui_manager.py:155
 msgid "AI Provider"
-msgstr ""
+msgstr "Fornecedor de IA"
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "Disabled"
 msgid "(Disabled)"
-msgstr "Deficiente"
+msgstr "(desactivado)"
 
 #: settings_ui_manager.py:161
-#, fuzzy
-#| msgid "Use OpenAI"
 msgid "OpenAI"
-msgstr "Usar OpenAI"
+msgstr "OpenAI"
 
 #: settings_ui_manager.py:162
 msgid "Mistral AI"
-msgstr ""
+msgstr "Mistral AI"
 
 #: settings_ui_manager.py:169
 msgid "OpenAI API Key"
 msgstr "Chave OpenAI API"
 
 #: settings_ui_manager.py:174
-#, fuzzy
-#| msgid "OpenAI API Key"
 msgid "OpenAI Model"
-msgstr "Chave OpenAI API"
+msgstr "Modelo OpenAI API"
 
 #: settings_ui_manager.py:179
 msgid "Mistral API Key"
-msgstr ""
+msgstr "Chave API Mistral"
 
 #: settings_ui_manager.py:184
 msgid "Mistral Model"
-msgstr ""
+msgstr "Modelo Mistral"
 
 #: settings_ui_manager.py:189
 msgid "Show Links From Attributes"
@@ -7199,16 +7187,12 @@ msgid "Enable CSV Files"
 msgstr "Permitir ficheiros CSV"
 
 #: settings_ui_manager.py:227
-#, fuzzy
-#| msgid "Display 'Vars' Column"
 msgid "Display Columns"
-msgstr "Mostrar coluna \"Var.\""
+msgstr "Mostrar colunas"
 
 #: settings_ui_manager.py:241
-#, fuzzy
-#| msgid "Display mode"
 msgid "Display Icons"
-msgstr "Modo de exibição"
+msgstr "Ícones de exibição"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
@@ -7224,65 +7208,63 @@ msgstr ""
 
 #: constants.py:260
 msgid "Column - Icons"
-msgstr ""
+msgstr "Coluna - Ícones"
 
 #: constants.py:261
 msgid "Column - Source Types (flags)"
-msgstr ""
+msgstr "Coluna - Tipos de fonte (bandeiras)"
 
 #: constants.py:262
 msgid "Column - Keys"
-msgstr ""
+msgstr "Coluna - Chaves"
 
 #: constants.py:263
 msgid "Column - Title"
-msgstr ""
+msgstr "Coluna - Título"
 
 #: constants.py:264
 msgid "Column - Website Url"
-msgstr ""
+msgstr "Coluna - Url da página web"
 
 #: constants.py:265
-#, fuzzy
-#| msgid "Comment: {comment}\n"
 msgid "Column - Comment"
-msgstr "Comentário: {comment}\n"
+msgstr "Coluna - Comentário"
 
 #: constants.py:290
 msgid "Icon - Visited URLs (checkmark)"
-msgstr ""
+msgstr "Ícone - Urls visitados (visto)"
 
 #: constants.py:291
 msgid "Icon - Saved URLs (floppy disk)"
-msgstr ""
+msgstr "Ícone - Urls gravados (disquete)"
 
 #: constants.py:292
 msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr ""
+msgstr "Ícone - Urls ligados a atributos de UID (distintivo)"
 
 #: constants.py:293
 msgid "Icon - URLs from regional CSV files (flag)"
-msgstr ""
+msgstr "Ícone - Urls de ficheiros CSV regionais (bandeira)"
 
 #: constants.py:294
 msgid "Icon - URLs from static CSV files (red pin)"
-msgstr ""
+msgstr "Ícone - Urls de ficheiros CSV estáticos (pino vermelho)"
 
 #: constants.py:295
 msgid "Icon - URLs from common CSV files (earth)"
-msgstr ""
+msgstr "Ícone - Urls de ficheiros CSV comuns"
 
 #: constants.py:296
 msgid "Icon - Direct URLs from attributes (link chain)"
-msgstr ""
+msgstr "Ícone - Urls directos de atributos (cadeia de ligação)"
 
 #: constants.py:297
 msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr ""
+msgstr "Ícone - Urls de ficheiros CSV cruzados (baralhar)"
 
 #: constants.py:298
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr ""
+msgstr "Ícone - Urls da pasta de utilizador personalizada (folha de cálculo)"
 
 #: qr_window.py:76
 msgid "QR-code"
@@ -7298,7 +7280,7 @@ msgstr ""
 
 #: WebSearch.py:718
 msgid "Keys"
-msgstr ""
+msgstr "Chaves"
 
 #: WebSearch.py:720
 msgid "Website URL"
@@ -7352,14 +7334,13 @@ msgid "Add Web Link Note"
 msgstr "Adicionar nota à ligação web"
 
 #: WebSearch.py:882
-#, fuzzy, python-format
-#| msgid "{} avatar images were sucessfully added."
+#, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "{} avatares adicionados com sucesso."
+msgstr "Nota n.º %(id)s adicionada com sucesso"
 
 #: WebSearch.py:886
 msgid "Error creating note"
-msgstr ""
+msgstr "Erro ao criar a nota"
 
 #: WebSearch.py:907
 msgid "URL is copied to the Clipboard"
@@ -7375,16 +7356,14 @@ msgid "Title: {title}\n"
 msgstr "Título: {title}\n"
 
 #: WebSearch.py:1012
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {variables}\n"
+#, python-brace-format
 msgid "Replaced: {keys}\n"
-msgstr "Substituído: {variables}\n"
+msgstr "Substituído: {keys}\n"
 
 #: WebSearch.py:1016
-#, fuzzy, python-brace-format
-#| msgid "Empty: {variables}\n"
+#, python-brace-format
 msgid "Empty: {keys}\n"
-msgstr "Vazio: {variables}\n"
+msgstr "Vazio: {keys}\n"
 
 #: WebSearch.py:1018
 #, python-brace-format
