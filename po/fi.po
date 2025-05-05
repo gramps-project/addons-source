@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-02 08:01+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-05-02 19:37+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -1567,37 +1567,29 @@ msgstr ""
 
 #: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
-msgstr "Sukupolvet ylös"
+msgstr "Jälkipolvet"
 
 #: GenealogyTree/gt_sandclock.py:242
-#, fuzzy
-#| msgid "Generation"
 msgid "Generations down"
-msgstr "Sukupolvi"
+msgstr "Esipolvet"
 
 #: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
 msgstr "Sisarukset mukana"
 
 #: GenealogyTree/gt_sandclock.py:247
-#, fuzzy
-#| msgid "Enable trimming of ancestors."
 msgid "Include siblings of ancestors."
-msgstr "Käytä esivanhempien rajausta."
+msgstr "Sisällytä esivanhempien sisarukset."
 
 #: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
 #: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
-#, fuzzy
-#| msgid "Include media"
 msgid "Include images"
-msgstr "Lisää media"
+msgstr "Lisää kuvat"
 
 #: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
 #: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
-#, fuzzy
-#| msgid "Include dates columns on the index pages"
 msgid "Include images of people in the nodes."
-msgstr "Lisää päivämääräsarakkeet hakemistosivulle"
+msgstr "Lisää solmuihin henkilökuvat"
 
 #: GenealogyTree/gt_grandparent.py:119
 #, python-format
@@ -1605,10 +1597,8 @@ msgid "Person %s does not have both a paternal and a maternal grandparent"
 msgstr ""
 
 #: GenealogyTree/gt_grandparent.py:227
-#, fuzzy
-#| msgid "Grandparents"
 msgid "Grandparent family spacing"
-msgstr "Isovanhemmat"
+msgstr "Isovanhempien perheväli"
 
 #: GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
@@ -1625,26 +1615,20 @@ msgid ""
 msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
-#, fuzzy
-#| msgid "Persons"
 msgid "Person GEXF"
-msgstr "Henkilöt"
+msgstr "Henkilö GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:31
-#, fuzzy
-#| msgid "Persons"
 msgid "_Person GEXF"
-msgstr "Henkilöt"
+msgstr "_Henkilö GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
 msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
-#, fuzzy
-#| msgid "Filter options"
 msgid "GEXF export options"
-msgstr "Suodinvalinnat"
+msgstr "GEXF-vientivalinnat"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -1656,24 +1640,21 @@ msgstr "Suodinvalinnat"
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing to %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Kirjoitus epäonnistui %s"
+msgstr "Kirjoitus epäonnistui {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Failed to create directory structure : %s"
-msgstr "Ei voitu luoda hakemistoa: %(path)s"
+msgstr "Ei voitu luoda hakemistoai: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
 #: D3Charts/DescendantIndentedTree.py:1554
-#, fuzzy, python-format
-#| msgid "Unable to copy web site template files from \"%(path)s\""
+#, python-format
 msgid "Failed to copy web files : %s"
-msgstr "Sivustojen mallitiedostoja ei voi kopioida \"%(path)s\""
+msgstr "Web-tiedostojen kopiointi epäonnistui : %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
@@ -1681,69 +1662,51 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Include Generations"
-msgstr "Esivanhempien sukupolvet"
+msgstr "Lisää sukupolvet"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
-#, fuzzy
-#| msgid "Male Background"
 msgid "Male Background Color"
 msgstr "Miehen taustaväri"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
-msgstr "RGB-väri miessolun taustalle."
+msgstr "RGB-taustaväri miehen laatikolle."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
-#, fuzzy
-#| msgid "Male Background Alpha"
 msgid "Male Expandable Background Color"
-msgstr "Miesvärin läpinäkyvyys"
+msgstr "Miehen taustavärin valinta"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for male expandable box background."
-msgstr "RGB-väri miessolun taustalle."
+msgstr "RGB-taustavärin valinta miehen laatikolle."
 
 #: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
 msgstr "Naisen taustaväri"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
-#, fuzzy
-#| msgid "RGB-color for Female box background."
 msgid "RGB-color for female box background."
-msgstr "RGB-väri naissolun taustalle."
+msgstr "RGB-taustaväri naisen laatikolle."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
-#, fuzzy
-#| msgid "Female Background"
 msgid "Female Expandable Background"
-msgstr "Naisen taustaväri"
+msgstr "Naisen taustavärin valinta"
 
 #: D3Charts/AncestralCollapsibleTree.py:861
-#, fuzzy
-#| msgid "RGB-color for Female box background."
 msgid "RGB-color for female expandable box background."
-msgstr "RGB-väri naissolun taustalle."
+msgstr "RGB-värivalinta naisen laatikolle."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
-#, fuzzy
-#| msgid "The destination folder for generated files."
 msgid "The destination path for generated files."
 msgstr "Luodun tiedoston kohdehakemisto."
 
 #: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
 #: D3Charts/DescendantIndentedTree.py:1830
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
-#, fuzzy
-#| msgid "The destination folder for generated files."
 msgid "The destination file name for html content."
-msgstr "Luodun tiedoston kohdehakemisto."
+msgstr "HTML-tiedoston nimi."
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -1757,10 +1720,8 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:909
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendant Indented Tree"
-msgstr "Jälkeläisten sukupuu"
+msgstr "Jälkeläisten sisennetty sukupuu"
 
 #: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
@@ -1770,32 +1731,24 @@ msgid ""
 msgstr ""
 
 #: D3Charts/AncestralFanChart.py:707
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Ancestral Fan Chart Options"
-msgstr "Esivanhempien sukupolvet"
+msgstr "Esivanhempien viuhkakaavion valinnat"
 
 #: D3Charts/AncestralFanChart.py:729
-#, fuzzy
-#| msgid "Other Background"
 msgid "Paternal Background Color"
-msgstr "Muiden taustaväri"
+msgstr "Isän taustaväri"
 
 #: D3Charts/AncestralFanChart.py:730
 msgid "RGB-color for paternal box background."
-msgstr "RGB-väri isälaatikon taustalle."
+msgstr "RGB-taustaväri isän laatikolle."
 
 #: D3Charts/AncestralFanChart.py:733
-#, fuzzy
-#| msgid "Male Background"
 msgid "Maternal Background"
-msgstr "Miehen taustaväri"
+msgstr "Äidin taustaväri"
 
 #: D3Charts/AncestralFanChart.py:734
-#, fuzzy
-#| msgid "RGB-color for male box background."
 msgid "RGB-color for maternal box background."
-msgstr "RGB-väri miessolun taustalle."
+msgstr "RGB-taustaväri äidin laatikolle."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
@@ -1813,10 +1766,8 @@ msgid "See %(reference)s : %(spouse)s"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:764
-#, fuzzy
-#| msgid "Generation"
 msgid "Generating report..."
-msgstr "Sukupolvi"
+msgstr "Raporttia luodaan..."
 
 #: D3Charts/DescendantIndentedTree.py:1364
 msgid "Invalid Destination Directory"
@@ -1842,10 +1793,8 @@ msgid ""
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1445
-#, fuzzy
-#| msgid "Default (None)"
 msgid "Default View"
-msgstr "Oletus (tyhjä)"
+msgstr "Oletusnäkymä"
 
 #: D3Charts/DescendantIndentedTree.py:1448
 msgid "Expand All"
@@ -1869,50 +1818,36 @@ msgid "Whether to show duplicate family trees in the report."
 msgstr "Näytetäänkö raportissa kaksoissukupuut."
 
 #: D3Charts/DescendantIndentedTree.py:1851
-#, fuzzy
-#| msgid "Male Background Alpha"
 msgid "Expanded Row Background Color"
-msgstr "Miesvärin läpinäkyvyys"
+msgstr "Laajennetun rivin taustaväri"
 
 #: D3Charts/DescendantIndentedTree.py:1852
-#, fuzzy
-#| msgid "RGB-color for Female box background."
 msgid "RGB-color for expanded row background."
-msgstr "RGB-väri naissolun taustalle."
+msgstr "RGB-taustaväri laajennetulle riville."
 
 #: D3Charts/DescendantIndentedTree.py:1855
-#, fuzzy
-#| msgid "Male Background Alpha"
 msgid "Expandable Background Color"
-msgstr "Miesvärin läpinäkyvyys"
+msgstr "Laajennettava taustaväri"
 
 #: D3Charts/DescendantIndentedTree.py:1857
-#, fuzzy
-#| msgid "RGB-color for Female box background."
 msgid "RGB-color for expandable row background."
-msgstr "RGB-väri naissolun taustalle."
+msgstr "RGB-taustaväri laajennettavalle riville."
 
 #: D3Charts/DescendantIndentedTree.py:1860
-#, fuzzy
-#| msgid "Male Background Alpha"
 msgid "Non-Expandable Background Color"
-msgstr "Miesvärin läpinäkyvyys"
+msgstr "Kiinteä taustaväri"
 
 #: D3Charts/DescendantIndentedTree.py:1862
-#, fuzzy
-#| msgid "RGB-color for Female box background."
 msgid "RGB-color for non-expandable row background."
-msgstr "RGB-väri naissolun taustalle."
+msgstr "RGB-taustaväri riville."
 
 #: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Lisää yksityisiksi merkityt tiedot"
 
 #: D3Charts/DescendantIndentedTree.py:1868
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include private objects."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Lisätäänkö yksityiset tiedot."
 
 #: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
@@ -1927,10 +1862,8 @@ msgid "How to handle living people."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1887
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to include people who may have recently died."
-msgstr "Lisätäänkö arkistosivut"
+msgstr "Lisätäänkö mukaan hiljattain kuolleet henkilöt vai ei."
 
 #: D3Charts/DescendantIndentedTree.py:1895
 msgid "Navigation"
@@ -2030,10 +1963,8 @@ msgid "Generations to generate HREF links"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1949
-#, fuzzy
-#| msgid "Select the number of ascending generations"
 msgid "The number of generations to generate HREF links."
-msgstr "Valitse esivanhempien sukupolvien lukumäärä"
+msgstr "HREF-linkkien luomiseen käytettävien sukupolvien määrä."
 
 #: D3Charts/DescendantIndentedTree.py:1955
 msgid "Exclude persons who died before (years)"
@@ -2045,26 +1976,20 @@ msgid ""
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1964
-#, fuzzy
-#| msgid "Add active person"
 msgid "Exclude center person"
-msgstr "Lisää aktiivihenkilö"
+msgstr "Keskushenkilöä lukuun ottamatta"
 
 #: D3Charts/DescendantIndentedTree.py:1965
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to generate links for center person."
-msgstr "Lisätäänkö arkistosivut"
+msgstr "Luodaanko linkkejä keskushenkilölle vai ei."
 
 #: D3Charts/DescendantIndentedTree.py:1970
 msgid "Exclude Spouses"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1971
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether or not to generate links for spouses."
-msgstr "Lisätäänkö arkistosivut"
+msgstr "Luodaanko linkkejä puolisoille."
 
 #: D3Charts/DescendantIndentedTree.py:1978
 msgid "Biography Content"
@@ -2079,22 +2004,16 @@ msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:2025
-#, fuzzy
-#| msgid "The path color"
 msgid "Text Color"
-msgstr "Polun väri"
+msgstr "Tekstin väri"
 
 #: D3Charts/DescendantIndentedTree.py:2027
-#, fuzzy
-#| msgid "RGB-color for Male box edge."
 msgid "RGB-color for biography text."
-msgstr "RGB-väri miessolun reunalle."
+msgstr "RGB-väri elämäkertatekstille."
 
 #: D3Charts/DescendantIndentedTree.py:2032
-#, fuzzy
-#| msgid "RGB-color for family connector line."
 msgid "RGB-color for biography tooltip."
-msgstr "RGB-väri perheen yhdysviivalle."
+msgstr "RGB-väri elämäkerran työkaluvihjeitä varten."
 
 #: D3Charts/DescendantIndentedTree.py:2035
 msgid "Header Font size"
@@ -2113,22 +2032,16 @@ msgid "The font size in pixels for biography body text."
 msgstr ""
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
-#, fuzzy
-#| msgid "UK Web Connect Pack"
 msgid "SV Web Connect Pack"
-msgstr "UK Web Connect Pack"
+msgstr "SV Web Connect Pack"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
-msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
+msgstr "Verkkosivustojen kokoelma Ruotsia varten (vaatii libwebconnect)"
 
 #: SVWebconnectPack/SVWebPack.py:33 USWebConnectPack/USWebPack.py:33
-#, fuzzy
-#| msgid "Find GeoNames"
 msgid "Find A Grave"
-msgstr "GeoNames etsintä"
+msgstr "Etsi hauta"
 
 #: SVWebconnectPack/SVWebPack.py:34 UKWebConnectPack/UKWebPack.py:35
 #: DEWebConnectPack/DEWebPack.py:39 USWebConnectPack/USWebPack.py:34
@@ -2137,16 +2050,12 @@ msgid "FamilySearch.org"
 msgstr "FamilySearch.org UK"
 
 #: SVWebconnectPack/SVWebPack.py:35
-#, fuzzy
-#| msgid "UK Google"
 msgid "Google SV"
-msgstr "Google UK"
+msgstr "Google SV"
 
 #: SVWebconnectPack/SVWebPack.py:38
-#, fuzzy
-#| msgid "FamilySearch.org"
 msgid "FamilySearch.org Tree"
-msgstr "FamilySearch.org UK"
+msgstr "FamilySearch.org sukupuu"
 
 #: SVWebconnectPack/SVWebPack.py:40
 msgid "National archives of Sweden personsearch"
@@ -2161,10 +2070,8 @@ msgid "Arkiv Digital estate records for Skåne"
 msgstr ""
 
 #: SVWebconnectPack/SVWebPack.py:43
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Search"
-msgstr "Esivanhemmat"
+msgstr "Ancestry haku"
 
 #: SVWebconnectPack/SVWebPack.py:44
 msgid "Find swedish portraits - Rötter.se"
@@ -2284,15 +2191,12 @@ msgstr "Päivitys saatavilla"
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
-#, fuzzy
 msgid "Event Description Editor"
-msgstr "Kuvaus:"
+msgstr "Tapahtuman kuvausmuokkain"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
-#, fuzzy
-#| msgid "Search..."
 msgid "Search substring..."
-msgstr "Hae..."
+msgstr "Etsi osamerkkijono..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
 #: Heatmap/heatmap.py:226 RemoveTagTool/RemoveTagTool.py:271
@@ -2327,10 +2231,8 @@ msgid ""
 msgstr ""
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:151
-#, fuzzy
-#| msgid "Use regex"
 msgid "Allow regex"
-msgstr "Käytä säännöllisiä lausekkeita"
+msgstr "Salli säännölliset lausekkeet"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
@@ -2350,16 +2252,12 @@ msgid "Moved/Renamed Files"
 msgstr ""
 
 #: MediaVerify/MediaVerify.py:83
-#, fuzzy
-#| msgid "Missing"
 msgid "Missing Files"
-msgstr "Puuttuva"
+msgstr "Puuttuvat tiedostot"
 
 #: MediaVerify/MediaVerify.py:84
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Duplicate Files"
-msgstr "Näytä kaksoiskappaleet"
+msgstr "Päällekkäiset tiedostot"
 
 #: MediaVerify/MediaVerify.py:84
 msgid "Extra Files"
@@ -2378,10 +2276,8 @@ msgid "Close the Media Verify Tool"
 msgstr ""
 
 #: MediaVerify/MediaVerify.py:103
-#, fuzzy
-#| msgid "Generation"
 msgid "Generate"
-msgstr "Sukupolvi"
+msgstr "Muodosta"
 
 #: MediaVerify/MediaVerify.py:104
 msgid "Generate md5 hashes for media objects"
@@ -2396,10 +2292,8 @@ msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
 
 #: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
-#, fuzzy
-#| msgid "Export notes"
 msgid "Export"
-msgstr "Viedään lisätiedot"
+msgstr "Vie"
 
 #: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
@@ -2449,10 +2343,8 @@ msgid "Finding files"
 msgstr ""
 
 #: MediaVerify/MediaVerify.py:335
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking paths"
-msgstr "Tarkistetaan paikkojen nimiä"
+msgstr "Polkujen tarkistaminen"
 
 #: MediaVerify/MediaVerify.py:388
 msgid "Fixing file paths"
@@ -2463,10 +2355,8 @@ msgid "Fix media paths"
 msgstr ""
 
 #: MediaVerify/MediaVerify.gpr.py:31
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media Verify"
-msgstr "Mediatyyppi"
+msgstr "Median tarkistus"
 
 #: MediaVerify/MediaVerify.gpr.py:32
 msgid "Verify that media is present in the correct path"
@@ -2687,54 +2577,42 @@ msgid "Differences between Database and File"
 msgstr ""
 
 #: Differences/differences.py:161
-#, fuzzy
-#| msgid "Differences"
 msgid "No differences"
-msgstr "Erot"
+msgstr "Ei eroja"
 
 #: Differences/differences.py:168
 msgid "Missing items in File that are added in Database"
 msgstr ""
 
 #: Differences/differences.py:174
-#, fuzzy, python-format
-#| msgid "Missing"
+#, python-format
 msgid "Missing %s: %s"
-msgstr "Puuttuva"
+msgstr "Puuttuva %s: %s"
 
 #: Differences/differences.py:178
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "Nothing missing"
-msgstr "Mitään ei ole valittu"
+msgstr "Mitään ei puutu"
 
 #: Differences/differences.py:185
 msgid "Added items in File that are missing in Database"
 msgstr ""
 
 #: Differences/differences.py:191
-#, fuzzy, python-format
-#| msgid "Added %d events."
+#, python-format
 msgid "Added %s: %s "
-msgstr "Tapahtumia lisätty %d."
+msgstr "Lisätty %s: %s "
 
 #: Differences/differences.py:195
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "Nothing added"
-msgstr "Mitään ei ole valittu"
+msgstr "Mitään ei lisätty"
 
 #: Differences/differences.py:308
-#, fuzzy
-#| msgid "Save tree as file"
 msgid "Family Tree file"
-msgstr "Tallenna puu tiedostona"
+msgstr "Sukupuutiedosto"
 
 #: Differences/differences.py:310
-#, fuzzy
-#| msgid "Select tags for family"
 msgid "Select a .gpkg or .gramps file"
-msgstr "Valitse tagi perheelle"
+msgstr "Valitse .gpkg- tai .gramps tiedosto"
 
 #: Differences/differences.py:313
 msgid "Show items that are different"
@@ -22734,56 +22612,49 @@ msgstr ""
 
 #: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
-msgstr ""
+msgstr "Sukutaulu"
 
 #: PedigreeChart/PedigreeChart.gpr.py:26
 msgid "Alternate version of the traditional pedigree chart."
-msgstr ""
+msgstr "Vaihtoehtoinen versio perinteisestä sukutaulukosta."
 
 #: PedigreeChart/PedigreeChart.py:379
 #, python-format
 msgid "Pedigree Chart for %s"
-msgstr ""
+msgstr "Sukupuukaavio henkilölle %s"
 
 #: PedigreeChart/PedigreeChart.py:528
-#, fuzzy, python-format
-#| msgid "Pages"
+#, python-format
 msgid "Page %d"
-msgstr "Sivut"
+msgstr "Sivu %d"
 
 #: PedigreeChart/PedigreeChart.py:640
 msgid "Show Mother/Father captions"
-msgstr ""
+msgstr "Näytä äidin/isän kuvatekstit"
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
-msgstr ""
+msgstr "Näytä äidin tai isän nimi kunkin esi-isän laatikon vieressä."
 
 #: PedigreeChart/PedigreeChart.py:662
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The basic style used for the title display."
-msgstr "Paikan postinumero, jos sellainen on."
+msgstr "Otsikossa käytettävä perustyyli."
 
 #: PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
-msgstr ""
+msgstr "Otsikoissa ja kuvateksteissä käytetty tyyli"
 
 #: NLWebConnectPack/NLWebPack.py:34
-#, fuzzy
-#| msgid "National Archives"
 msgid "Open Archives"
-msgstr "National Archives UK"
+msgstr "Avaa arkistot"
 
 #: NLWebConnectPack/NLWebPack.py:35
 msgid "Genealogy Online"
-msgstr ""
+msgstr "Sukututkimus verkossa"
 
 #: NLWebConnectPack/NLWebPack.py:36
-#, fuzzy
-#| msgid "National Archives"
 msgid "National Archive"
-msgstr "National Archives UK"
+msgstr "Kansallinen arkisto"
 
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
@@ -22827,101 +22698,83 @@ msgstr "Gramplet henkilöiden merkintään valokuvissa"
 #: LastChange/LastChangeReport.py:74 LastChange/LastChangeReport.py:113
 #: LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
-msgstr ""
+msgstr "Viimeisin muutosraportti"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
-msgstr ""
+msgstr "Sinun on valittava vähintään yksi tietuetyyppi."
 
 #: LastChange/LastChangeReport.py:180
-#, fuzzy
-#| msgid "People involved"
 msgid "People Changed"
-msgstr "Mukana olevat henkilöt"
+msgstr "Henkilöitä muutettu"
 
 #: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
 #: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
 #: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
 #: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
 msgid "Changed On"
-msgstr ""
+msgstr "Muutettu"
 
 #: LastChange/LastChangeReport.py:197
-#, fuzzy
-#| msgid "Families Index"
 msgid "Families Changed"
-msgstr "Perhehakemisto"
+msgstr "Perheitä muutettu"
 
 #: LastChange/LastChangeReport.py:198
-#, fuzzy
-#| msgid "Family Nick Name"
 msgid "Family Surname"
-msgstr "Perheen lempinimi"
+msgstr "Perheen sukunimi"
 
 #: LastChange/LastChangeReport.py:215
 #, python-format
 msgid "%s and %s"
-msgstr ""
+msgstr "%s ja %s"
 
 #: LastChange/LastChangeReport.py:228
-#, fuzzy
-#| msgid "Don't change"
 msgid "Events Changed"
-msgstr "Älä muuta"
+msgstr "Tapahtumia muutettu"
 
 #: LastChange/LastChangeReport.py:251
-#, fuzzy
-#| msgid "Places Index"
 msgid "Places Changed"
-msgstr "Paikkahakemisto"
+msgstr "Paikkoja muutettu"
 
 #: LastChange/LastChangeReport.py:269
-#, fuzzy
-#| msgid "Media Index"
 msgid "Media Changed"
-msgstr "Mediahakemisto"
+msgstr "Media muutikset"
 
 #: LastChange/LastChangeReport.py:287
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Sources Changed"
-msgstr "Lähteet valikko"
+msgstr "Lähteitä muutettu"
 
 #: LastChange/LastChangeReport.py:304
-#, fuzzy
-#| msgid "Don't change"
 msgid "Notes Changed"
-msgstr "Älä muuta"
+msgstr "Lisätietoja muutettu"
 
 #: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
-msgstr ""
+msgstr "Viitteitä muutettu"
 
 #: LastChange/LastChangeReport.py:344
-#, fuzzy
-#| msgid "Select None"
 msgid "Select From"
-msgstr "Älä valitse mitään"
+msgstr "Valitse alkaen"
 
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
-msgstr ""
+msgstr "Normaalissa tekstissä käytetty tyyli"
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
-msgstr ""
+msgstr "Muutettu"
 
 #: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
-msgstr ""
+msgstr "Listaa kymmenen viimeisintä henkilötietoa, joita on muutettu"
 
 #: LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
-msgstr ""
+msgstr "Viimeisimmät muutokset"
 
 #: LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
-msgstr ""
+msgstr "Raportti viimeksi muutetuista tietueista"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:16
@@ -24100,13 +23953,11 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:269
 msgid "Go"
-msgstr ""
+msgstr "Mene"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
-#, fuzzy
-#| msgid "Show lifespan"
 msgid "Show help"
-msgstr "Näytä elinkaari"
+msgstr "Näytä ohje"
 
 #, fuzzy
 #~| msgid "Show person images"
