@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-04-02 17:48+0000\n"
+"PO-Revision-Date: 2025-04-14 22:32+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -810,7 +810,7 @@ msgstr "Moet GeoNames ID instellen"
 
 #: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
-msgstr "Gebruik de Help-knop voor meer informatie"
+msgstr "Gebruik de Hulp-knop voor meer informatie"
 
 #: PlaceCleanup/placecleanup.py:337
 msgid ""
@@ -1487,7 +1487,7 @@ msgstr "Selecteer bronnen met behulp van een filter"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:443
 msgid "Show persons"
-msgstr "Toon personen"
+msgstr "Personen weergeven"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
@@ -2033,7 +2033,7 @@ msgstr "Biografie-inhoud"
 
 #: D3Charts/DescendantIndentedTree.py:1980
 msgid "Show biography tooltips"
-msgstr "Toon biografie-tooltips"
+msgstr "Biografie-tooltips weergeven"
 
 #: D3Charts/DescendantIndentedTree.py:1981
 msgid "Whether to show biography tooltips when hovering over a node."
@@ -2192,11 +2192,11 @@ msgstr "Verberg"
 
 #: PluginManager\PluginManager.py:460
 msgid "Show hidden items"
-msgstr "Toon verborgen items"
+msgstr "Verborgen items weergeven"
 
 #: PluginManager\PluginManager.py:467
 msgid "Show Built-in items"
-msgstr "Toon ingebouwde items"
+msgstr "Ingebouwde items weergeven"
 
 #: PluginManager\PluginManager.py:474
 msgid "* indicates 3rd party addon"
@@ -2674,7 +2674,7 @@ msgstr "Selecteer een .gpkg- of .gramps-bestand"
 
 #: Differences/differences.py:313
 msgid "Show items that are different"
-msgstr "Toon items die verschillend zijn"
+msgstr "Verschillen weergeven"
 
 #: Differences/differences.py:314
 msgid "Include items that are different"
@@ -2682,7 +2682,7 @@ msgstr "Voeg items toe die verschillend zijn"
 
 #: Differences/differences.py:317
 msgid "Show items missing from file"
-msgstr "Toon items die ontbreken in het bestand"
+msgstr "Items die ontbreken in het bestand weergeven"
 
 #: Differences/differences.py:318
 msgid "Include items not in file but in database"
@@ -2690,7 +2690,7 @@ msgstr "Neem items op die niet in het bestand maar in de database staan"
 
 #: Differences/differences.py:321
 msgid "Show items added in file"
-msgstr "Toon items die in het bestand zijn toegevoegd"
+msgstr "Items die in het bestand zijn toegevoegd weergeven"
 
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
@@ -3026,7 +3026,7 @@ msgstr "Configureer"
 
 #: DynamicWeb/dynamicweb.py:2972
 msgid "DynamicWeb_report#Help"
-msgstr "DynamicWeb_report#Help"
+msgstr "DynamicWeb_report#Hulp"
 
 #: DynamicWeb/dynamicweb.py:2977
 msgid "Examples"
@@ -3217,11 +3217,11 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3104
 msgid "Show _MENU_ entries"
-msgstr "Toon _MENU_-vermeldingen"
+msgstr "_MENU_-vermeldingen weergeven"
 
 #: DynamicWeb/dynamicweb.py:3105 DynamicWeb/dynamicweb.py:5170
 msgid "Show duplicates"
-msgstr "Toon duplicaten"
+msgstr "Duplicaten weergeven"
 
 #: DynamicWeb/dynamicweb.py:3106
 msgid "Showing 0 to 0 of 0 entries"
@@ -3229,7 +3229,7 @@ msgstr "Toont 0 tot 0 van 0 vermeldingen"
 
 #: DynamicWeb/dynamicweb.py:3109
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
-msgstr "Toont _START_ tot _END_ van _TOTAL_ vermeldingen"
+msgstr "_START_ tot _END_ van _TOTAL_ vermeldingen weergeven"
 
 #: DynamicWeb/dynamicweb.py:3112
 msgid "Sort by:"
@@ -4022,7 +4022,7 @@ msgstr "Bewerk de actieve gebeurtenis"
 
 #: CombinedView/combinedview.py:630
 msgid "Show Tags"
-msgstr "Toon labels"
+msgstr "Labels weergeven"
 
 #: CombinedView/combinedview.py:656
 msgid "Vertical Details"
@@ -4248,7 +4248,7 @@ msgstr "Family Finder-tool sluiten"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
-msgstr "Lees de Help-handleiding"
+msgstr "Lees de Hulp-handleiding"
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
@@ -5094,7 +5094,7 @@ msgstr "Over Quiltweergave"
 
 #: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
 msgid "Edit tags"
-msgstr "Bewerk labels"
+msgstr "Labels bewerken"
 
 #: QuiltView/QuiltView.py:1500 GraphView/graphview.py:4048
 msgid "Set as home person"
@@ -5745,7 +5745,7 @@ msgstr ""
 
 #: SourceReferences/SourceReferences.gpr.py:33
 msgid "Gramplet showing the references for a source"
-msgstr "Gramplet dat de bronreferenties toont"
+msgstr "Gramplet dat de bronreferenties weergeeft"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
@@ -6707,7 +6707,7 @@ msgstr "Biografie voor %s"
 #: EditExifMetadata/editexifmetadata.py:1135
 #: EditExifMetadata/editexifmetadata.py:1147
 msgid "Edit Image Exif Metadata"
-msgstr "Bewerk afbeeldings-Exif-metagegevens"
+msgstr "Afbeeldings-Exif-metagegevens bewerken"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
@@ -6795,7 +6795,7 @@ msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
-"Toont de Gramps Wiki Help-pagina voor 'Bewerk afbeeldings-Exif-metagegevens' "
+"Toont de Gramps Wiki Hulp-pagina voor 'Bewerk afbeeldings-Exif-metagegevens' "
 "in uw webbrowser."
 
 #: EditExifMetadata/editexifmetadata.py:194
@@ -7239,22 +7239,16 @@ msgid "URL Compactness Level"
 msgstr "Compactheid van de URL"
 
 #: settings_ui_manager.py:132
-#, fuzzy
-#| msgid "Shortest - No Prefix, No Variables"
 msgid "Shortest - No Prefix, No Keys"
-msgstr "Kortst - Geen voorvoegsel, Geen variabelen"
+msgstr "Kortst - Geen voorvoegsel, Geen sleutels"
 
 #: settings_ui_manager.py:135
-#, fuzzy
-#| msgid "Compact - No Prefix, Variables Without Attributes"
 msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Compact - Geen voorvoegsel, Variabelen zonder Kenmerken"
+msgstr "Compact - Geen sleutels, Variabelen zonder Kenmerken"
 
 #: settings_ui_manager.py:138
-#, fuzzy
-#| msgid "Compact - No Prefix, Variables With Attributes"
 msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Compact - Geen voorvoegsel, Variabelen met Kenmerken"
+msgstr "Compact - Geen voorvoegsel, Sleutels met Kenmerken"
 
 #: settings_ui_manager.py:141
 msgid "Long - Without Prefix on the Left"
@@ -7266,41 +7260,35 @@ msgstr "URL-voorvoegselvervanging"
 
 #: settings_ui_manager.py:155
 msgid "AI Provider"
-msgstr ""
+msgstr "AI-leverancier"
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "Disabled"
 msgid "(Disabled)"
-msgstr "Gehandicapt"
+msgstr "(Uitgeschakeld)"
 
 #: settings_ui_manager.py:161
-#, fuzzy
-#| msgid "Use OpenAI"
 msgid "OpenAI"
-msgstr "OpenAI gebruiken"
+msgstr "OpenAI"
 
 #: settings_ui_manager.py:162
 msgid "Mistral AI"
-msgstr ""
+msgstr "Mistral AI"
 
 #: settings_ui_manager.py:169
 msgid "OpenAI API Key"
 msgstr "OpenAI API-sleutel"
 
 #: settings_ui_manager.py:174
-#, fuzzy
-#| msgid "OpenAI API Key"
 msgid "OpenAI Model"
-msgstr "OpenAI API-sleutel"
+msgstr "OpenAI-model"
 
 #: settings_ui_manager.py:179
 msgid "Mistral API Key"
-msgstr ""
+msgstr "Mistral API-sleutel"
 
 #: settings_ui_manager.py:184
 msgid "Mistral Model"
-msgstr ""
+msgstr "Mistral-model"
 
 #: settings_ui_manager.py:189
 msgid "Show Links From Attributes"
@@ -7311,16 +7299,12 @@ msgid "Enable CSV Files"
 msgstr "CSV-bestanden inschakelen"
 
 #: settings_ui_manager.py:227
-#, fuzzy
-#| msgid "Display 'Vars' Column"
 msgid "Display Columns"
-msgstr "Kolom 'Vars' weergeven"
+msgstr "Kolomen weergeven"
 
 #: settings_ui_manager.py:241
-#, fuzzy
-#| msgid "Display mode"
 msgid "Display Icons"
-msgstr "Weergavemodus"
+msgstr "Pictogrammen weergeven"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
@@ -7336,65 +7320,63 @@ msgstr ""
 
 #: constants.py:260
 msgid "Column - Icons"
-msgstr ""
+msgstr "Kolom - Pictogrammen"
 
 #: constants.py:261
 msgid "Column - Source Types (flags)"
-msgstr ""
+msgstr "Kolom - Brontypen (kenmerken)"
 
 #: constants.py:262
 msgid "Column - Keys"
-msgstr ""
+msgstr "Kolom - Sleutels"
 
 #: constants.py:263
 msgid "Column - Title"
-msgstr ""
+msgstr "Kolom - Titel"
 
 #: constants.py:264
 msgid "Column - Website Url"
-msgstr ""
+msgstr "Kolom - Website-url"
 
 #: constants.py:265
-#, fuzzy
-#| msgid "Comment: {comment}\n"
 msgid "Column - Comment"
-msgstr "Commentaar: {comment}\n"
+msgstr "Kolom - Commentaar"
 
 #: constants.py:290
 msgid "Icon - Visited URLs (checkmark)"
-msgstr ""
+msgstr "Pictogram - Bezochte URLs (vinkje)"
 
 #: constants.py:291
 msgid "Icon - Saved URLs (floppy disk)"
-msgstr ""
+msgstr "Pictogram - Opgeslagen URLs (diskette)"
 
 #: constants.py:292
 msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr ""
+msgstr "Pictogram - URLs gekoppeld met UID-attributen (UID-insigne)"
 
 #: constants.py:293
 msgid "Icon - URLs from regional CSV files (flag)"
-msgstr ""
+msgstr "Pictogram - URLs van regionale CSV-gegevens uit (vlag)"
 
 #: constants.py:294
 msgid "Icon - URLs from static CSV files (red pin)"
-msgstr ""
+msgstr "Pictogram - URLs van statische CSV-bestanden (rode pin)"
 
 #: constants.py:295
 msgid "Icon - URLs from common CSV files (earth)"
-msgstr ""
+msgstr "Pictogram - URLs van algemene CSV-bestanden (aarde)"
 
 #: constants.py:296
 msgid "Icon - Direct URLs from attributes (link chain)"
-msgstr ""
+msgstr "Pictogram - Directe URLs van attributen (schakels)"
 
 #: constants.py:297
 msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr ""
+msgstr "Pictogram - URLs van CSV-kruisgegevens (pijlen)"
 
 #: constants.py:298
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr ""
+msgstr "Pictogram - URLs van aangepaste gebruikersmap (tabel)"
 
 #: qr_window.py:76
 msgid "QR-code"
@@ -7410,7 +7392,7 @@ msgstr ""
 
 #: WebSearch.py:718
 msgid "Keys"
-msgstr ""
+msgstr "Sleutels"
 
 #: WebSearch.py:720
 msgid "Website URL"
@@ -7464,16 +7446,13 @@ msgid "Add Web Link Note"
 msgstr "Weblink-notitie toevoegen"
 
 #: WebSearch.py:882
-#, fuzzy, python-format
-#| msgid "{} avatar images were sucessfully added."
+#, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "{} avatarafbeeldingen zijn toegevoegd."
+msgstr "Notitie #%(id)s is met succes toegevoeg"
 
 #: WebSearch.py:886
-#, fuzzy
-#| msgid "Error in reading '%s'"
 msgid "Error creating note"
-msgstr "Fout bij het lezen van '%s'"
+msgstr "Fout bij aanmaken notitie"
 
 #: WebSearch.py:907
 msgid "URL is copied to the Clipboard"
@@ -7489,16 +7468,14 @@ msgid "Title: {title}\n"
 msgstr "Titel: {title}\n"
 
 #: WebSearch.py:1012
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {variables}\n"
+#, python-brace-format
 msgid "Replaced: {keys}\n"
-msgstr "Vervangen: {variables}\n"
+msgstr "Vervangen: {keys}\n"
 
 #: WebSearch.py:1016
-#, fuzzy, python-brace-format
-#| msgid "Empty: {variables}\n"
+#, python-brace-format
 msgid "Empty: {keys}\n"
-msgstr "Leeg: {variables}\n"
+msgstr "Leeg: {keys}\n"
 
 #: WebSearch.py:1018
 #, python-brace-format
@@ -7845,7 +7822,7 @@ msgstr "Weergave-indeling"
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
-msgstr "Naam weergave-indeling"
+msgstr "Naamweergave-indeling"
 
 #: DescendantsLines/DescendantsLines.py:1650
 msgid ""
@@ -8159,11 +8136,11 @@ msgstr ""
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
-msgstr "Negeer verjaardagen met tag"
+msgstr "Verjaardagen met label negeren"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
-msgstr "Toon alleen verjaardagen met tag"
+msgstr "Alleen verjaardagen met label weergeven"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
@@ -8519,7 +8496,7 @@ msgstr "Kopieer de inhoud van het locatienaamveld naar een nieuwe notitie."
 
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr "Bevestig een tag op geselecteerde plaatsen."
+msgstr "Een label bevestigen op geselecteerde plaatsen."
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
@@ -9004,11 +8981,11 @@ msgstr "Verberg persoon"
 
 #: LifeLineChartView/lifelinechart.py:2597
 msgid "Show person"
-msgstr "Toon persoon"
+msgstr "Persoon weergeven"
 
 #: LifeLineChartView/lifelinechart.py:2622
 msgid "Show siblings"
-msgstr "Toon broers en zussen"
+msgstr "Broers en zussen weergeven"
 
 #: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
@@ -9016,7 +8993,7 @@ msgstr "Verberg broers en zussen"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
-msgstr "Toon voorouders boven "
+msgstr "Voorouders weergeven boven "
 
 #: LifeLineChartView/lifelinechartview.py:386
 #: LifeLineChartView/lifelinechartview.py:883
@@ -9059,7 +9036,7 @@ msgstr "Zet de plaatsing en persoonsselectie terug"
 
 #: LifeLineChartView/lifelinechartview.py:564
 msgid "Open Life Line Chart help"
-msgstr "Open Help van levenslijndiagram"
+msgstr "Open Hulp bij levenslijndiagram"
 
 #: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
@@ -9121,11 +9098,11 @@ msgstr "Driehoekige vorm"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:15
 msgid "Show photos"
-msgstr "Toon foto's"
+msgstr "Foto's weergeven"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:16
 msgid "Photos of the individual are shown."
-msgstr "Foto's van het individu worden getoond."
+msgstr "Foto's van de persoon worden weergegeven."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:17
 msgid "Photo size"
@@ -9173,7 +9150,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
 msgid "Show birth label"
-msgstr "Laat het geboortelabel zien"
+msgstr "Geboortelabel weergeven"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
 msgid "Activate the birth label."
@@ -9244,7 +9221,7 @@ msgstr "Midden"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:48
 msgid "Show death label"
-msgstr "Toon overlijdenslabel"
+msgstr "Overlijdenslabel weergeven"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
 msgid "Activate the death label."
@@ -9302,7 +9279,7 @@ msgstr "Tekstuitlijning van het overlijdenslabel."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:68
 msgid "Show marriage label"
-msgstr "Toon huwelijkslabel"
+msgstr "Huwelijkslabel weergeven"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:69
 msgid "Activate the marriage label."
@@ -9428,7 +9405,7 @@ msgstr "geen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
-msgstr "Toon kwartierherhaling"
+msgstr "Kwartierherhaling weergeven"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:100
 msgid ""
@@ -19367,7 +19344,7 @@ msgstr "Reislijnen op kaart weergeven bij opstarten"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
-msgstr "Toon tijdtikken op de navigatiebalk bij het opstarten"
+msgstr "Tijdtikken op de navigatiebalk weergeven bij het opstarten"
 
 #: GeoTimeLines/GeoTimeLines.py:1974
 msgid "TimeLines Map options"
@@ -19637,7 +19614,7 @@ msgstr ""
 
 #: ImportMerge/importmerge.glade:464
 msgid "Show more details"
-msgstr "Toon meer details"
+msgstr "Meer details weergeven"
 
 #: ImportMerge/importmerge.glade:481
 msgid "Automark Families"
@@ -19941,7 +19918,7 @@ msgstr "Er zijn geen dubbele neven en nichten gevonden in uw database."
 
 #: DoubleCousins/double_cousins.py:170
 msgid "Show info text"
-msgstr "Informatietekst tonen"
+msgstr "Informatietekst weergeven"
 
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
@@ -20382,15 +20359,15 @@ msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
-msgstr "Wat tonen"
+msgstr "Wat weergeven moet worden"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Show GrampsID"
-msgstr "Toon GrampsID"
+msgstr "GrampsID weergeven"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
-msgstr "Toon GrampsID rechtsboven in het vak"
+msgstr "GrampsID rechtsboven in het vak weergeven"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
@@ -20562,7 +20539,7 @@ msgstr "Wis originele omsluitende plaatsen"
 
 #: PlaceUpdate/PlaceUpdate.py:162
 msgid "Clear tags"
-msgstr "Wis labels"
+msgstr "Labels wissen"
 
 #: PlaceUpdate/PlaceUpdate.py:165
 msgid "Generate hierarchy"
@@ -21290,7 +21267,7 @@ msgstr "Sorteer op tijdlijn"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
-msgstr "Toon levensperiode"
+msgstr "Levensperiode weergeven"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
@@ -21328,7 +21305,7 @@ msgstr "IDs weergeven"
 
 #: GraphView/graphview.py:757
 msgid "Show avatars"
-msgstr "Toon avatars"
+msgstr "Avatars weergeven"
 
 #: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
@@ -21336,11 +21313,11 @@ msgstr "Markeer de centrale persoon"
 
 #: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
-msgstr "Toon volledige datums"
+msgstr "Volledige datums weergeven"
 
 #: GraphView/graphview.py:768 GraphView/graphview.py:3752
 msgid "Show places"
-msgstr "Toon locaties"
+msgstr "Locaties weergeven"
 
 #: GraphView/graphview.py:784
 msgid "Vertical: Top to Bottom"
@@ -21432,7 +21409,7 @@ msgstr "Thema's"
 
 #: GraphView/graphview.py:921 GraphView/graphview.py:3770
 msgid "Show animation"
-msgstr "Toon animatie"
+msgstr "Animatie afspelen"
 
 #: GraphView/graphview.py:925
 msgid "Animation speed (1..5 and 5 is the slower)"
@@ -21456,7 +21433,7 @@ msgstr "Pas ook zoeken door de gehele database toe."
 
 #: GraphView/graphview.py:957
 msgid "Show person images"
-msgstr "Toon persoonsafbeeldingen"
+msgstr "Persoonsafbeeldingen weergeven"
 
 #: GraphView/graphview.py:960
 msgid "Show persons thumbnails in search result list."
@@ -21464,12 +21441,13 @@ msgstr "Toon miniaturen van personen in de lijst met zoekresultaten."
 
 #: GraphView/graphview.py:963 SearchGramplet/SearchGramplet.py:102
 msgid "Show bookmarked first"
-msgstr "Toon personen met een bladwijzer eerst"
+msgstr "Personen met een bladwijzer eerst weergeven"
 
 #: GraphView/graphview.py:966
 msgid "Show bookmarked persons first in search result list."
 msgstr ""
-"Toon personen met een bladwijzer als eerste in de lijst met zoekresultaten."
+"Personen met een bladwijzer als eerste weergeven in de lijst met "
+"zoekresultaten."
 
 #: GraphView/graphview.py:999
 msgid "Select a dot file name"
@@ -22189,7 +22167,7 @@ msgstr "Pagina %d"
 
 #: PedigreeChart/PedigreeChart.py:640
 msgid "Show Mother/Father captions"
-msgstr "Toon moeder / vader bijschriften"
+msgstr "Moeder / vader bijschriften weergeven"
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
@@ -22365,7 +22343,7 @@ msgstr "Rapporteer alleen levende stamboomleden"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:112
 msgid "Show these events"
-msgstr "Toon deze gebeurtenissen"
+msgstr "Deze gebeurtenissen weergeven"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:113
 msgid "Sort by "
@@ -23310,7 +23288,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1186
 msgid "Show only path(s)"
-msgstr "Laat alleen pad(en) zien"
+msgstr "Alleen pad(en) weergeven"
 
 #: NetworkChart/NetworkChart.py:1189
 msgid "Default (none)"
@@ -23487,7 +23465,7 @@ msgstr "Postcode:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:116
 msgid "Show found place externally in Google Maps"
-msgstr "Toon gevonden plaats extern in Google Maps"
+msgstr "Gevonden plaats extern in Google Maps weergeven"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:203
 msgid ""
@@ -23511,7 +23489,7 @@ msgstr "Ga"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
-msgstr "Toon help"
+msgstr "Hulp weergeven"
 
 #~ msgid "Display 'Website URL' Column"
 #~ msgstr "Kolom 'Website URL' weergeven"
