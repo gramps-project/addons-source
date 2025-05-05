@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-02 19:37+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-05-03 15:40+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -363,7 +363,6 @@ msgid "Gramplet for testing lxml and XSLT"
 msgstr "Gramplet lxml- ja XSLT-testaukseen"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
-#, fuzzy
 msgid "etree"
 msgstr "etree"
 
@@ -1279,11 +1278,11 @@ msgstr "Poimii tapahtumasuodattimen mukaiset perheet"
 
 #: FilterRules/degreesofseparation.py:47
 msgid "Number of degrees of separation from person."
-msgstr ""
+msgstr "Etäisyyden asteiden lukumäärä henkilöstä."
 
 #: FilterRules/degreesofseparation.py:59
 msgid "Degrees:"
-msgstr ""
+msgstr "Tutkinnot:"
 
 #: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
 msgid "People with <count> of <event>"
@@ -1389,12 +1388,12 @@ msgid "Citations:"
 msgstr "Viitteet:"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:286
-#, fuzzy, python-format
+#, python-format
 msgid "%d"
 msgstr "%d"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:288
-#, fuzzy, python-format
+#, python-format
 msgid "  %s"
 msgstr "  %s"
 
@@ -1409,9 +1408,9 @@ msgid "   Type: %s"
 msgstr "   Tyyppi: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:302
-#, python-format
+#, fuzzy, python-format
 msgid "   N-ID: %s"
-msgstr ""
+msgstr "   N-ID: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:310
 #, python-format
@@ -2579,7 +2578,7 @@ msgstr ""
 
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
-msgstr ""
+msgstr "Tietokannan ja tiedoston väliset erot"
 
 #: Differences/differences.py:161
 msgid "No differences"
@@ -2624,10 +2623,8 @@ msgid "Show items that are different"
 msgstr ""
 
 #: Differences/differences.py:314
-#, fuzzy
-#| msgid "Include images and media"
 msgid "Include items that are different"
-msgstr "Lisää kuvat ja muut mediatiedostot"
+msgstr "Lisää erilaisia kohteita"
 
 #: Differences/differences.py:317
 msgid "Show items missing from file"
