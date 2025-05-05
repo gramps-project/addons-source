@@ -18,13 +18,14 @@
 # Alex Roitman <shura@gramps-project.org>, 2006.
 # Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Kieli Puoli <kielipuoli@gmail.com>, 2025.
+# Juha Mäkeläinen <juha.makelainen@iki.fi>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-04-30 06:19+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-05-02 08:01+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -1225,7 +1226,7 @@ msgstr "Poimii henkilöt, joilla on useampi kuin yksi vanhempi"
 #: FilterRules/associationsofpersonmatch.gpr.py:25
 #: FilterRules/associationsofpersonmatch.gpr.py:26
 msgid "Match associations of <person filter>"
-msgstr ""
+msgstr "Yhdistä <person filter> liitokset"
 
 #: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
@@ -1260,7 +1261,7 @@ msgstr "Poimii perheet, joiden tapahtumissa on valittu rooli"
 #: FilterRules/isfamilyfiltermatchevent.py:63
 #: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
-msgstr ""
+msgstr "Suodinta <family filter> vastaavien perheiden tapahtumat"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:25
 #: FilterRules/familieswitheventfiltermatch.py:45
@@ -1285,11 +1286,11 @@ msgstr ""
 
 #: FilterRules/peopleeventscount.py:50 FilterRules/peopleeventscount.gpr.py:25
 msgid "People with <count> of <event>"
-msgstr ""
+msgstr "Ihmiset, joilla on <count> <event>-tapahtumaa"
 
 #: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
 msgid "Matches persons which have events of given type and number."
-msgstr ""
+msgstr "Henkilöt, joilla on annetun tyyppisiä tapahtumia pyydetty määrä."
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
@@ -1319,15 +1320,15 @@ msgstr "Henkilöt, jotka kuuluvat perheisiin, jotka vastaavat hakuehtoa <suodin>
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
 #: FilterRules/ageatdeath.py:74
 msgid "Filter people by their age at death"
-msgstr ""
+msgstr "Poimii henkilöt kuoliniän perusteella"
 
 #: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
-msgstr ""
+msgstr "Suodatinsääntö, joka yhdistää ihmiset kuoliniän mukaan"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
-msgstr ""
+msgstr "Useiden vanhempien suodatin"
 
 #: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
@@ -1357,7 +1358,7 @@ msgstr "Täsmää aktiivihenkilöön"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
-msgstr ""
+msgstr "Henkilön kuolinikä vuosina."
 
 #: FilterRules/ageatdeath.py:71 SourceIndex/death.glade:521
 #: SourceIndex/death.glade:669 SourceIndex/death.glade:939
@@ -1367,11 +1368,11 @@ msgstr ""
 #: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
 #: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
 msgid "Age:"
-msgstr ""
+msgstr "Ikä:"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
-msgstr ""
+msgstr "Lähteet ja viittaukset -raportti"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
@@ -1380,21 +1381,21 @@ msgstr "Tarjoaa lähde- ja viiteraportin muistiinpanoineen"
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
 msgid "Key: %s"
-msgstr ""
+msgstr "Avain: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:277
 msgid "Citations:"
 msgstr "Viitteet:"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:286
-#, python-format
+#, fuzzy, python-format
 msgid "%d"
-msgstr ""
+msgstr "%d"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:288
-#, python-format
+#, fuzzy, python-format
 msgid "  %s"
-msgstr ""
+msgstr "  %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:294
 #, python-format
@@ -1404,7 +1405,7 @@ msgstr " - %s "
 #: SourcesCitationsReport/SourcesCitationsReport.py:300
 #, python-format
 msgid "   Type: %s"
-msgstr ""
+msgstr "   Tyyppi: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:302
 #, python-format
@@ -1433,7 +1434,7 @@ msgstr "   ( %s )"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:333
 msgid "   Spouses: "
-msgstr ""
+msgstr "   Puolisot: "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #: GraphView/graphview.py:3168 GraphView/graphview.py:3169
@@ -1445,7 +1446,7 @@ msgstr "%s "
 #: SourcesCitationsReport/SourcesCitationsReport.py:338
 #, python-format
 msgid "and %s "
-msgstr ""
+msgstr "ja %s "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:349
 #, python-format
@@ -1458,7 +1459,7 @@ msgstr "Raportin otsikko"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:414
 msgid "Title string for the report."
-msgstr ""
+msgstr "Raportin otsikkomerkkijono."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
@@ -1466,15 +1467,15 @@ msgstr "Raportin alaotsikko"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
-msgstr ""
+msgstr "Raportin alaotsikkomerkkijono."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
-msgstr ""
+msgstr "tutkijan nimi"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:436
 msgid "Select sources using a filter"
-msgstr ""
+msgstr "Valitse lähteet käyttämällä suodatinta"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:443
 msgid "Show persons"
