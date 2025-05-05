@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-03-24 13:44+0000\n"
+"PO-Revision-Date: 2025-05-02 08:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -667,7 +667,7 @@ msgstr "תקופה: "
 
 #: lxml/lxmlGramplet.py:502
 msgid " entries for surname(s); no frequency yet"
-msgstr ""
+msgstr " רשומות שם משפחה, ללא שכיחות עדין"
 
 #: lxml/lxmlGramplet.py:503
 msgid " entries for place(s)"
@@ -835,7 +835,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
-msgstr "הייתה בעיה באחזור הנתונים מהרשת"
+msgstr "בעיה באחזור נתונים מהרשת"
 
 #: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
@@ -843,14 +843,14 @@ msgstr "פסק־זמן בקשת רשת, נא לנסות שנית..."
 
 #: PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
-msgstr "הייתה בעיה באחזור נתונים מ־GeoNames"
+msgstr "בעיה באחזור נתונים מ־GeoNames"
 
 #: PlaceCleanup/placecleanup.py:481
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
 msgstr ""
-"אחד המקומות שמיועדים למיזוג מכיל בתוכו את המקום שני!\n"
+"אחד מהמקומות שנבחרו למיזוג מכיל בתוכו את המקום שני!\n"
 "נא לבחור מקום אחר."
 
 #: PlaceCleanup/placecleanup.py:759
@@ -1047,19 +1047,19 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
-"ארגון מקום שכבר מוכל במקום אחר, ישפע גם על מה שכבר נעשה.\n"
-"אם  נבחרה האפשרות '<b>שמירת הכללה נוכחית</b>', לא יעשו שינויים במקום המכיל.\n"
-"אם  נבחרה האפשרות '<b>החלפה בהכללת GeoNames</b>', פרטי המקום המוכל ישתנו "
-"לרמה הבאה של מקומות GeoNames. מצב זה עשוי לגרום לכך שמספר מקומות במסד "
-"הנתונים יוותרו ללא שימוש."
+"ארגון מקום שכבר מוכל בתוך מקום אחר, ישפע גם על מה שכבר בוצע.\n"
+"אם נבחרה האפשרות '<b>שמירת הכללה נוכחית</b>', לא יעשו שינויים במקום המכיל.\n"
+"אם נבחרה האפשרות '<b>החלפה בהכללת GeoNames</b>', פרטי המקום המוכל ישתנו לרמה "
+"הבאה של מקומות GeoNames.  מצב זה עשוי לגרום לכך שמספר מקומות במסד הנתונים "
+"יהיו ללא שימוש."
 
 #: PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
-msgstr "שמירת הכללה נוכחית"
+msgstr "השארת הכללה נוכחית"
 
 #: PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
-msgstr "מקומות מוכלים גאו-נאמס"
+msgstr "החלפה בהכללת מקומות GeoNames"
 
 #: PlaceCleanup/placecleanup.glade:851
 msgid ""
@@ -1068,17 +1068,18 @@ msgid ""
 "number of results."
 msgstr ""
 "כותרת מקום נוכחי.\n"
-"ניתן לעריכה על מנת לסייע באיתור מקומות אחרים, במיוחד כדי לצמצום את מספר "
+"ניתן לערוך זאת על מנת לסייע באיתור מקומות אחרים, במיוחד כדי לצמצום את מספר "
 "התוצאות."
 
 #: PlaceCleanup/placecleanup.glade:899
 msgid "Search your local places and GeoNames for a match."
-msgstr "חיפוש התאמה במקומות local ומקומות GeoNames."
+msgstr "חיפוש מקומות מקומיים ו־GeoNames להתאמה."
 
 #: PlaceCleanup/placecleanup.glade:915
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
-msgstr "להמשיך במיזוג (מקומות local), או להשלים תכונות מקום (מקומות GeoNames)."
+msgstr ""
+"להמשיך במיזוג (מקומות מקומיים), או להשלים תכונות מקום (מקומות GeoNames)."
 
 #: PlaceCleanup/placecleanup.glade:932
 msgid ""
@@ -1086,8 +1087,8 @@ msgid ""
 "For use when the initial component of the Title is too detailed to be found "
 "in the gazetteer."
 msgstr ""
-"פיצול כותרת, עריכה באופן ידני והכללה ברמה הבאה של ההיררכיה.  לשימוש כאשר "
-"הרכיב הראשוני של הכותרת מפורט מכדי להימצא במִלוֹן הגֵאוֹגרָפִי."
+"פיצול כותרת, עריכה ידנית והכללה ברמת המדרג.  משמש כאשר רכיב הכותרת הראשוני "
+"מפורט מכדי להימצא במִלוֹן הגֵאוֹגרָפִי."
 
 #: PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
@@ -1099,7 +1100,7 @@ msgstr "מציאת מקום חלקי."
 
 #: PlaceCleanup/placecleanup.glade:985
 msgid "Set preferences"
-msgstr "קביעת העדפות"
+msgstr "הגדרת העדפות"
 
 #: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
@@ -1135,8 +1136,8 @@ msgid ""
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
 msgstr ""
-"סימון תיבת הסימון 'כתם' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש מגוון רחב "
-"של מקומות אחרים (כנסיות, אתרי קבורה, מבני ציבור, וכדומה)."
+"סימון תיבת הסימון 'אזור' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש מגוון "
+"רחב של מקומות אחרים (כנסיות, אתרי קבורה, מבני ציבור, וכדומה)."
 
 #: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
@@ -1144,7 +1145,7 @@ msgstr "מנהלתי"
 
 #: PlaceCleanup/placecleanup.glade:1174
 msgid "Spot"
-msgstr "כתם"
+msgstr "אזור"
 
 #: FilterRules/isrelatedwithfiltermatch.py:53
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
@@ -1159,7 +1160,7 @@ msgstr "איתור אנשים הקשורים לכל מי שמתאים למסנן
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
 msgid "People separated less than <N> degrees of <person>"
-msgstr ""
+msgstr "אנשים בפער של פחות מ <N> דרגות מ<אדם>"
 
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
@@ -1742,10 +1743,9 @@ msgid ""
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-brace-format
-#| msgid "Failed to create %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "כשל ביצירת %s: %s"
+msgstr "כשל ביצירת{target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -2207,7 +2207,7 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
-msgstr "כלי לאימות אוביקטי מדיה"
+msgstr "כלי לאימות מדיה"
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Moved/Renamed Files"
@@ -2239,19 +2239,19 @@ msgstr "סגירת הכלי לאימות נתונים"
 
 #: MediaVerify/MediaVerify.py:103
 msgid "Generate"
-msgstr "חילול"
+msgstr "לחולל"
 
 #: MediaVerify/MediaVerify.py:104
 msgid "Generate md5 hashes for media objects"
-msgstr "חילול האש md5 לאוביקטי מדיה"
+msgstr "לחולל האש md5 לעצמי מדיה"
 
 #: MediaVerify/MediaVerify.py:106
 msgid "Verify"
-msgstr "אימות"
+msgstr "לאמת"
 
 #: MediaVerify/MediaVerify.py:107
 msgid "Check media paths and report missing, duplicate and extra files"
-msgstr "בדיקת נתיבי מדיה ודיווח על פריטים חסרים, שכפול וחילוץ קבצים"
+msgstr "לבדוק נתיבי מדיה ולןווח על פריטים חסרים, לשכפל ולחלוץ קבצים"
 
 #: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
 msgid "Export"
@@ -2263,11 +2263,11 @@ msgstr "ייצוא התוצאות לקובץ מלל"
 
 #: MediaVerify/MediaVerify.py:113
 msgid "Fix"
-msgstr "תיקון"
+msgstr "לתקן"
 
 #: MediaVerify/MediaVerify.py:114
 msgid "Fix media paths of moved and renamed files"
-msgstr "תיקון נתיבי מדיה לקבצים שהועברו או ששם השתנה"
+msgstr "לתקן נתיבי מדיה לקבצים שהועברו או ששם השתנה"
 
 #: MediaVerify/MediaVerify.py:132
 msgid "Verify Gramps media using md5 hashes"
@@ -2284,15 +2284,15 @@ msgstr "ייצוא תוצאות לקובץ מלל"
 #: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
 #, python-format
 msgid "Error when writing the report: %s"
-msgstr "שגיאה בעת כתיבת דוח: %s"
+msgstr "שגיאה בעת כתיבת הדוח: %s"
 
 #: MediaVerify/MediaVerify.py:259
 msgid "Generating media hashes"
-msgstr "חילול האש למדיה"
+msgstr "לחולל האש למדיה"
 
 #: MediaVerify/MediaVerify.py:261
 msgid "Set media hashes"
-msgstr "הגדרת האש לאוביקטי מדיה"
+msgstr "הגדרת האש למדיה"
 
 #: MediaVerify/MediaVerify.py:296
 msgid ""
@@ -3627,12 +3627,12 @@ msgstr ""
 
 #: GetGOV/getgov.py:323
 msgid "Get Place"
-msgstr "אחזור מקום"
+msgstr "קבלת מקום"
 
 #: GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
-msgstr "הוספת מקום מזהה GOV ‏%s"
+msgstr "הוספת מקום GOV-id ‏%s"
 
 #: GetGOV/getgov.py:388
 #, python-format
@@ -3647,7 +3647,7 @@ msgstr ""
 #: GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
-msgstr "מ %s ל %s"
+msgstr "מ־ %s עד %s"
 
 #: GetGOV/getgov.py:557
 #, python-format
@@ -3661,11 +3661,11 @@ msgstr "לפני %s"
 
 #: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
-msgstr "גטגוב"
+msgstr "GetGOV"
 
 #: GetGOV/getgov.gpr.py:33
 msgid "Gramplet to get places from the GOV database"
-msgstr "גראמפלט לאחזור מקומות ממסד נתונים GOV"
+msgstr "גראמפלט לקבלת מקומות ממסד נתוני GOV"
 
 #: RestoreHist/restorehist.gpr.py:30
 msgid "Restart where you were last working"
@@ -3696,7 +3696,7 @@ msgstr "סוג קישור"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
-msgstr "מ"
+msgstr "מתוך"
 
 #: Topola/Topola.gpr.py:4
 msgid "Interactive Family Tree"
@@ -3897,7 +3897,7 @@ msgstr "הוספה כאב"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
-msgstr "הוספה כבן(ת) זוג"
+msgstr "הוספהכזוגאי"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
 msgid "Add as a Wife"
@@ -3909,11 +3909,11 @@ msgstr "הוספה כבעל"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
-msgstr "הוספה כצאצא"
+msgstr "הוספה כאחאי"
 
 #: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
-msgstr "הוספת צאצא"
+msgstr "הוספת כצאצא"
 
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
@@ -3930,7 +3930,7 @@ msgstr "ב"
 #: DataEntryGramplet/DataEntryGramplet.py:569
 #, python-format
 msgid "Gramplet Data Edit: %s"
-msgstr "גראמפלט הזנת נתונים: %s"
+msgstr "גראמפלט עריכת נתונים: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
@@ -3975,7 +3975,7 @@ msgstr "לא ניתן להוסיף אדם חדש כאב."
 #: DataEntryGramplet/DataEntryGramplet.py:805
 #: DataEntryGramplet/DataEntryGramplet.py:838
 msgid "Can't add new person as a spouse."
-msgstr "לא ניתן להוסיף אדם חדש כבן(ת) זוג."
+msgstr "לא ניתן להוסיף אדם חדש כזוגאי."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
 msgid "Can't add new person as a wife."
@@ -3987,7 +3987,7 @@ msgstr "לא ניתן להוסיף אדם חדש כבעל."
 
 #: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
-msgstr "לא ניתן להוסיף אדם חדש כאח או אחות."
+msgstr "לא ניתן להוסיף אדם חדש כאחאי."
 
 #: DataEntryGramplet/DataEntryGramplet.py:565
 #: DataEntryGramplet/DataEntryGramplet.py:938
@@ -4000,7 +4000,7 @@ msgstr "נא להגדיר אדם פעיל."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
-msgstr "לא ניתן להוסיף אדם חדש כבן(ת) זוג לאף אחד."
+msgstr "לא ניתן להוסיף אדם חדש כזוגאי לאף אחד."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
@@ -4145,7 +4145,7 @@ msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
 msgstr ""
-"תוספת למועדפים להתאמת ערכת נושא וגופן פשוטים. שימושי במיוחד עבור משתמשי "
+"תוספת למועדפים, להתאמת ערכת נושא וגופן פשוטים. שימושי במיוחד עבור משתמשי "
 "ווינדווז."
 
 #: AttachSourceTool/AttachSourceTool.py:81
@@ -4967,11 +4967,11 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
 msgid "Prerequisites Checker"
-msgstr "בדיקת דרישות־קדם"
+msgstr "בודק דרישות־קדם"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:30
 msgid "Prerequisites Checker Gramplet"
-msgstr "גרמפלט בדיקת דרישות־קדם"
+msgstr "גרמפלט לבדיקת דרישות־קדם"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:143
 msgid ""
@@ -4980,8 +4980,9 @@ msgid ""
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
 "גרמפלט אבחון שנועד להעריך אם <a href=\"https://gramps-project.org/\">גרמפס</"
-"a> , <a href=\"https://github.com/gramps-project/gramps/blob/master/README."
-"md\">כל דרישות הקדם הנחוצות להפעלה תקינה של</a> מותקנות.\n"
+"a> , <a href="
+"\"https://github.com/gramps-project/gramps/blob/master/README.md\">כל דרישות "
+"הקדם הנחוצות להפעלה תקינה של</a> מותקנות.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
@@ -5032,7 +5033,7 @@ msgstr "<i>התקנת החבילות הבאות היא<b>חלופית</b></i>:\n
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
-msgstr "Gtkspell מאפשר בדיקת־איות שדות 'הערה'\n"
+msgstr "חבילת Gtkspell מאפשרת בדיקת־איות בשדות 'הערה'.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
 msgid ""
@@ -5143,7 +5144,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ", is the most current version.\n"
-msgstr ",זוהי הגרסה העדכנית ביותר.\n"
+msgstr ",היא הגרסה העדכנית ביותר.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:339
 #, python-format
@@ -6852,16 +6853,12 @@ msgid "Middle Name Handling"
 msgstr ""
 
 #: settings_ui_manager.py:115
-#, fuzzy
-#| msgid "Save Note"
 msgid "Leave alone"
-msgstr "שמירת הערה"
+msgstr "להניח לזה"
 
 #: settings_ui_manager.py:116
-#, fuzzy
-#| msgid "Generate"
 msgid "Separate"
-msgstr "חילול"
+msgstr "הפרדה"
 
 #: settings_ui_manager.py:126
 msgid "URL Compactness Level"
@@ -6928,22 +6925,16 @@ msgid "Enable CSV Files"
 msgstr ""
 
 #: settings_ui_manager.py:227
-#, fuzzy
-#| msgid "Display only births"
 msgid "Display Columns"
-msgstr "הצגת לידה בלבד"
+msgstr "הצגת עמודות"
 
 #: settings_ui_manager.py:241
-#, fuzzy
-#| msgid "Display only births"
 msgid "Display Icons"
-msgstr "הצגת לידה בלבד"
+msgstr "הצגת סמלים"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search"
 msgid "WebSearch"
-msgstr "חיפוש"
+msgstr "חיפוש מרשתת"
 
 #: WebSearch.gpr.py:36
 msgid ""
@@ -7030,16 +7021,12 @@ msgid "Website URL"
 msgstr ""
 
 #: WebSearch.py:723
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add link to note"
-msgstr "הוספת הערת בדיקה"
+msgstr "הוספת קישור להערה"
 
 #: WebSearch.py:724
-#, fuzzy
-#| msgid "Show places"
 msgid "Show QR-code"
-msgstr "הצגת מקומות"
+msgstr "הצגת קוד־QR"
 
 #: WebSearch.py:725
 msgid "Copy link to clipboard"
@@ -7070,10 +7057,8 @@ msgid ""
 msgstr ""
 
 #: WebSearch.py:860
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Add Web Link Note"
-msgstr "הוספת הערת בדיקה"
+msgstr "הוספת הערת קישור רשת"
 
 #: WebSearch.py:882
 #, python-format
@@ -7089,22 +7074,18 @@ msgid "URL is copied to the Clipboard"
 msgstr ""
 
 #: WebSearch.py:967
-#, fuzzy
-#| msgid "Search in:"
 msgid "WebSearch Link"
-msgstr "חיפוש ב:"
+msgstr "קישור חיפוש מרשתת"
 
 #: WebSearch.py:1010
-#, fuzzy, python-brace-format
-#| msgid "Place title"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "כותרת מקום"
+msgstr "כותרת: {title}\n"
 
 #: WebSearch.py:1012
-#, fuzzy, python-brace-format
-#| msgid "Replace to {0}"
+#, python-brace-format
 msgid "Replaced: {keys}\n"
-msgstr "החלפה ל {0}"
+msgstr "חילוף: {keys}\n"
 
 #: WebSearch.py:1016
 #, python-brace-format
@@ -19065,10 +19046,9 @@ msgid "Enter SQL query"
 msgstr "הזנת שאילתת SQL"
 
 #: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, fuzzy, python-brace-format
-#| msgid "%d rows processed in %s seconds.\n"
+#, python-brace-format
 msgid "{rows:d} rows processed in {secs} seconds.\n"
-msgstr "%d שורות עובדו ב %s שניות.\n"
+msgstr "{rows:d} שורות עובדו תוך {secs} שניות.\n"
 
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
