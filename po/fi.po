@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
 "PO-Revision-Date: 2025-05-02 19:37+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -363,8 +363,9 @@ msgid "Gramplet for testing lxml and XSLT"
 msgstr "Gramplet lxml- ja XSLT-testaukseen"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
+#, fuzzy
 msgid "etree"
-msgstr ""
+msgstr "etree"
 
 #: lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
@@ -910,7 +911,7 @@ msgstr "Creative Commons Attribution 3.0 License"
 #: PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
-msgstr "Lisää lähde/selvitys/muistio  (%s)"
+msgstr "Lisää lähde, arkisto tai lisätieto (%s)"
 
 #: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
@@ -1198,7 +1199,7 @@ msgstr ""
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
 msgid "People separated less than <N> degrees of <person>"
-msgstr ""
+msgstr "Ihmiset, jotka poikkeavat <N>:llä henkilöstä <person>"
 
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
@@ -1270,7 +1271,7 @@ msgstr "Perheet, jotka vastaavat hakusanaa <tapahtumasuodatin>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
-msgstr "Poimii perheet, jotka vastaavat tapahtumasuodinta."
+msgstr "Poimii perheet, joilla on suotimen mukainen tapahtuma"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
@@ -1539,7 +1540,7 @@ msgstr ""
 
 #: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
-msgstr "Isovanhemmat"
+msgstr "Isovanhempien puu"
 
 #: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
@@ -1589,7 +1590,7 @@ msgstr "Lisää kuvat"
 #: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
 #: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
 msgid "Include images of people in the nodes."
-msgstr "Lisää solmuihin henkilökuvat"
+msgstr "Lisää solmuihin henkilökuvat."
 
 #: GenealogyTree/gt_grandparent.py:119
 #, python-format
@@ -1624,7 +1625,7 @@ msgstr "_Henkilö GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
-msgstr ""
+msgstr "GEXF:ää käytetään monissa verkkokaavioissa."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
 msgid "GEXF export options"
@@ -1658,7 +1659,7 @@ msgstr "Web-tiedostojen kopiointi epäonnistui : %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
-msgstr ""
+msgstr "Esivanhempien tiivistettävän puun asetukset"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
@@ -1667,7 +1668,7 @@ msgstr "Lisää sukupolvet"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
 msgid "Male Background Color"
-msgstr "Miehen taustaväri"
+msgstr "Miesten taustaväri"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
@@ -1710,13 +1711,15 @@ msgstr "HTML-tiedoston nimi."
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
-msgstr ""
+msgstr "Esivanhempien tiivistettävä puu"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
+"Luo verkkosivun, jossa on esivanhempien graafinen esitys (SVG) "
+"tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:909
@@ -1729,6 +1732,8 @@ msgid ""
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
 "library."
 msgstr ""
+"Luo verkkosivun, jossa on jälkeläisten graafinen esitys (SVG) "
+"tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."
 
 #: D3Charts/AncestralFanChart.py:707
 msgid "Ancestral Fan Chart Options"
@@ -2133,7 +2138,7 @@ msgstr ""
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
-"Virhe poistettaessa '% s' -hakemistoa, asennuksen poisto voi olla "
+"Virhe poistettaessa '%s' -hakemistoa, asennuksen poisto voi olla "
 "epäonnistunut"
 
 #: PluginManager\PluginManager.py:402
@@ -3050,7 +3055,7 @@ msgstr "Vastaavia merkintöjä ei löydy"
 
 #: DynamicWeb/dynamicweb.py:3040
 msgid "No matching surname."
-msgstr "Vastaavia sukunimiä ei löydy"
+msgstr "Vastaavia sukunimiä ei löydy."
 
 #: DynamicWeb/dynamicweb.py:3045
 msgid "Other participants"
@@ -3466,7 +3471,7 @@ msgstr "Viedäänkö osoitteet nettisivulle"
 
 #: DynamicWeb/dynamicweb.py:4858
 msgid "Whether or not to include the Repository Pages."
-msgstr "Lisätäänkö arkistosivut"
+msgstr "Lisätäänkö arkistosivut."
 
 #: DynamicWeb/dynamicweb.py:4861
 msgid "Include images and media"
@@ -3514,7 +3519,7 @@ msgstr "Näytetäänkö paikkasivut"
 
 #: DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
-msgstr "Valitse karttapalvelu, jota haluat käyttää paikkakarttasivuilla."
+msgstr "Valitse karttapalvelu, jota haluat käyttää paikojen karttasivuilla"
 
 #: DynamicWeb/dynamicweb.py:4926
 msgid "Google map API key"
@@ -3526,7 +3531,7 @@ msgstr "Käytetään Google kartat API-avainta"
 
 #: DynamicWeb/dynamicweb.py:4945
 msgid "Whether or not to include family pages"
-msgstr "Lisätäänkö perhesivut."
+msgstr "Lisätäänkö perhesivut"
 
 #: DynamicWeb/dynamicweb.py:4959
 msgid ""
@@ -19520,9 +19525,7 @@ msgstr "Aktiivihenkilöä ei ole asetettu."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
-msgstr ""
-"Etsitään henkilöiden väliset sukulaisuussuhteeet\n"
-" \n"
+msgstr "Etsitään henkilöiden väliset sukulaisuussuhteet\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
@@ -19834,7 +19837,7 @@ msgstr "Tuotu"
 #: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
 #: ImportMerge/importmerge.py:985
 msgid "Result  "
-msgstr "Tulos "
+msgstr "Tulos  "
 
 #: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
@@ -20864,7 +20867,7 @@ msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:111
 msgid "New enclosing place"
-msgstr "Uusi ympäröivä paikka:"
+msgstr "Uusi ympäröivä paikka"
 
 #: PlaceUpdate/PlaceUpdate.py:119
 msgid "Timespan:"
