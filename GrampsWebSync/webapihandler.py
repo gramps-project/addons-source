@@ -368,6 +368,11 @@ class WebApiHandler:
                 self.fetch_token()
                 return self._upload_file(url=url, fobj=fobj, retry=False)
             raise
+        except (URLError, socket.timeout) as exc:
+            if retry:
+                sleep(1)
+                return self._upload_file(url=url, fobj=fobj, retry=False)
+            raise
 
 
 def transaction_to_json(
