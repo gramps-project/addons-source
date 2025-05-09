@@ -37,6 +37,10 @@ import xml.dom.minidom
 # ---------------------------------------------------------------
 from gramps.gen.datehandler import parser
 from gramps.gen.config import config
+from gramps.gui.dialog import ErrorDialog, WarningDialog
+import logging
+
+LOG = logging.getLogger(".FormGramplet")
 
 # ------------------------------------------------------------------------
 #
@@ -121,7 +125,17 @@ class Form:
         for file_name in definition_files:
             full_path = os.path.join(os.path.dirname(__file__), file_name)
             if os.path.exists(full_path):
-                self.__load_definitions(full_path)
+                try:
+                    self.__load_definitions(full_path)
+                except Exception as e:
+                    WarningDialog(
+                        _("Failed to load Form definition file:\n%s\n") % full_path,
+                    )
+                    LOG.warning(
+                        "\nERROR: failed to load Form definition file.\n%s\nException:\n%s",
+                        full_path,
+                        str(e),
+                    )
 
     def __load_definitions(self, definition_file):
         dom = xml.dom.minidom.parse(definition_file)
