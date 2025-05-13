@@ -90,6 +90,10 @@ class SharedDBAPI(DbGeneric):
         """
         # Check if json_data exists on metadata as a proxy to see
         # if the database has been converted to use JSON data
+        if not self.dbapi.column_exists("metadata", "json_data"):
+            return False
+        # but even if it does, it could be that the specific tree
+        # is not converted yet.
         return self.dbapi._schema_version_exists()
 
     def upgrade_table_for_json_data(self, table_name):
