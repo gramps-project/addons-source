@@ -19,6 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
+
 # ----------------------------------------------------------------------------
 """A diagnostic tool to help work out if users have the prerequistes installed
 as well as the latest version of Gramps also helps on OS's like windows and
@@ -416,7 +417,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         test)
         """
         # Start check
-        MIN_PYTHON_VERSION = (3, 8, 0)
+        MIN_PYTHON_VERSION = (3, 9, 0)
         min_py_str = verstr(MIN_PYTHON_VERSION)
 
         # version to check against
@@ -440,6 +441,36 @@ class PrerequisitesCheckerGramplet(Gramplet):
             messagesuccess = messagesuccess1 + min_py_str + messagesuccess3
 
             result = check1 + py_str + messagesuccess
+        # End check
+        self.append_text(result)
+
+        import orjson
+
+        MIN_ORJSON_VERSION = (3, 8, 5)
+        min_str = verstr(MIN_ORJSON_VERSION)
+
+        # version to check against
+        # Gramps running version of orjson
+        orjson_str = orjson.__version__
+        orjson_ver = vertup(orjson_str)
+        check1 = " • orjson "
+
+        if not orjson_ver >= MIN_ORJSON_VERSION:
+            # print("Failed")
+            messagefailed1 = _(" (Requires version ")
+            messagefailed3 = _(" or greater installed.)\n")
+
+            messagefailed = messagefailed1 + min_str + messagefailed3
+
+            result = check1 + orjson_str + messagefailed
+        else:
+            # print("Success")
+            messagesuccess1 = _(" (Passed: version ")
+            messagesuccess3 = _(" or greater installed.)\n")
+
+            messagesuccess = messagesuccess1 + min_str + messagesuccess3
+
+            result = check1 + orjson_str + messagesuccess
         # End check
         self.append_text(result)
 
@@ -780,7 +811,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             import sqlite3
 
             # sqlite3.version - pysqlite version
-            sqlite3_py_version_str = sqlite3.version
+            # sqlite3_py_version_str = sqlite3.version # deprecated and meaningless
             # sqlite3.sqlite_version - sqlite version
             sqlite3_version_str = sqlite3.sqlite_version
         except ImportError:
@@ -790,8 +821,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         result = (
             _(" • SQLite Database library (sqlite3: ")
             + sqlite3_version_str
-            + ") (Python-sqlite3: "
-            + sqlite3_py_version_str
+            # + ") (Python-sqlite3: "
+            # + sqlite3_py_version_str
             + ")"
         )
         # End check
@@ -1406,17 +1437,15 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # Start check
 
         # check for GooCanvas
-        try:
+        for goo_ver in ("3.0", "2.0"):
             try:
-                gi.require_version("GooCanvas", "2.0")
-            except Exception:
-                print(_("Why, when same code works in Graphview"))
-            from gi.repository import GooCanvas
+                gi.require_version("GooCanvas", goo_ver)
+                from gi.repository import GooCanvas
 
-            goocanvas_ver = str(GooCanvas._version)
-            # print("GooCanvas version:" + goocanvas_ver)
-        except ImportError:
-            goocanvas_ver = _("not installed")
+                goocanvas_ver = str(GooCanvas._version)
+                break
+            except (ImportError, ValueError):
+                goocanvas_ver = _("not installed")
 
         result = "(GooCanvas:" + goocanvas_ver + ")(PyGoocanvas: TBD?)"
         # End check
@@ -2092,7 +2121,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         self.append_text(
             _(
-                "\nInstalled Locales\Translations (If only English "
+                "\nInstalled Locales\\Translations (If only English "
                 "is listed please re-install Gramps again and make "
                 "sure to select all the Translations and "
                 "Dictionaries)\n\n"
