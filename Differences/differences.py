@@ -19,29 +19,37 @@
 # $Id: $
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # python modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 import copy
 import datetime
 import time
 import re
 import os
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # GRAMPS modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 from gramps.gen.display.name import displayer as global_name_display
-from gramps.gen.plug.docgen import (FontStyle, ParagraphStyle, GraphicsStyle,
-                             FONT_SERIF, PARA_ALIGN_RIGHT,
-                             PARA_ALIGN_LEFT, PARA_ALIGN_CENTER,
-                             TableStyle, TableCellStyle, FONT_SANS_SERIF)
-from gramps.gen.plug.menu import (BooleanOption, DestinationOption, StringOption)
+from gramps.gen.plug.docgen import (
+    FontStyle,
+    ParagraphStyle,
+    GraphicsStyle,
+    FONT_SERIF,
+    PARA_ALIGN_RIGHT,
+    PARA_ALIGN_LEFT,
+    PARA_ALIGN_CENTER,
+    TableStyle,
+    TableCellStyle,
+    FONT_SANS_SERIF,
+)
+from gramps.gen.plug.menu import BooleanOption, DestinationOption, StringOption
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
@@ -51,78 +59,82 @@ from gramps.gen.db.utils import import_as_dict
 from gramps.gen.simple import SimpleAccess
 from gramps.gen.config import config
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Internationalisation
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-#------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
 #
 # Local Functions
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 def todate(t):
     return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(t))
 
-#------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
 #
 # DifferencesReport
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 class DifferencesReport(Report):
     """
     Create the DifferencesReport object that produces the report.
     """
+
     def __init__(self, database, options, user):
         Report.__init__(self, database, options, user)
         self._user = user
         menu = options.menu
-        mgobn = lambda name:options.menu.get_option_by_name(name).get_value()
-        self.filename = mgobn('filename')
-        self.show_diff = mgobn('show_diff')
-        self.show_missing = mgobn('show_missing')
-        self.show_added = mgobn('show_added')
+        mgobn = lambda name: options.menu.get_option_by_name(name).get_value()
+        self.filename = mgobn("filename")
+        self.show_diff = mgobn("show_diff")
+        self.show_missing = mgobn("show_missing")
+        self.show_added = mgobn("show_added")
 
     def write_report(self):
-        """ The short method that runs through each month and creates a page. """
-        self.doc.start_paragraph('DIFF-Title')
+        """The short method that runs through each month and creates a page."""
+        self.doc.start_paragraph("DIFF-Title")
         self.doc.write_text(_("Database Differences Report"))
         self.doc.end_paragraph()
 
-        self.doc.start_table('DiffTable','DIFF-Table2')
+        self.doc.start_table("DiffTable", "DIFF-Table2")
         self.doc.start_row()
-        self.doc.start_cell('DIFF-TableCellNoBorder')
-        self.doc.start_paragraph('DIFF-TableHeading')
+        self.doc.start_cell("DIFF-TableCellNoBorder")
+        self.doc.start_paragraph("DIFF-TableHeading")
         self.doc.write_text("Database:")
         self.doc.end_paragraph()
         self.doc.end_cell()
-        self.doc.start_cell('DIFF-TableCellNoBorder')
-        self.doc.start_paragraph('DIFF-Text')
+        self.doc.start_cell("DIFF-TableCellNoBorder")
+        self.doc.start_paragraph("DIFF-Text")
         self.doc.write_text(str(self.database.get_dbname()))
         self.doc.end_paragraph()
         self.doc.end_cell()
         self.doc.end_row()
         self.doc.start_row()
-        self.doc.start_cell('DIFF-TableCellNoBorder')
-        self.doc.start_paragraph('DIFF-TableHeading')
+        self.doc.start_cell("DIFF-TableCellNoBorder")
+        self.doc.start_paragraph("DIFF-TableHeading")
         self.doc.write_text(_("File:"))
         self.doc.end_paragraph()
         self.doc.end_cell()
-        self.doc.start_cell('DIFF-TableCellNoBorder')
-        self.doc.start_paragraph('DIFF-Text')
+        self.doc.start_cell("DIFF-TableCellNoBorder")
+        self.doc.start_paragraph("DIFF-Text")
         self.doc.write_text(self.filename)
         self.doc.end_paragraph()
         self.doc.end_cell()
         self.doc.end_row()
         self.doc.end_table()
-        self.doc.start_paragraph('DIFF-Heading')
+        self.doc.start_paragraph("DIFF-Heading")
         self.doc.write_text("")
         self.doc.end_paragraph()
         self.database2 = import_as_dict(self.filename, self._user)
@@ -131,91 +143,106 @@ class DifferencesReport(Report):
         self.sa = [SimpleAccess(self.database), SimpleAccess(self.database2)]
         diffs, added, missing = diff_dbs(self.database, self.database2, self._user)
         if self.show_diff:
-            self.doc.start_paragraph('DIFF-Heading')
+            self.doc.start_paragraph("DIFF-Heading")
             self.doc.write_text(_("Differences between Database and File"))
             self.doc.end_paragraph()
             last_object = None
             if diffs:
-                self._user.begin_progress(_('Family Tree Differences'),
-                                          _('Processing...'), len(diffs))
+                self._user.begin_progress(
+                    _("Family Tree Differences"), _("Processing..."), len(diffs)
+                )
                 for diff in diffs:
                     self._user.step_progress()
                     obj_type, item1, item2 = diff
                     if last_object != item1:
                         if last_object != None:
                             self.doc.end_table()
-                            self.doc.start_paragraph('DIFF-Heading')
+                            self.doc.start_paragraph("DIFF-Heading")
                             self.doc.write_text("")
                             self.doc.end_paragraph()
-                        self.doc.start_table('DiffTable','DIFF-Table3')
+                        self.doc.start_table("DiffTable", "DIFF-Table3")
                     last_object = item1
                     if hasattr(item1, "gramps_id"):
-                        self.start_list(self.doc, "%s: %s" % (obj_type, item1.gramps_id),
-                                        "Database", "File")
+                        self.start_list(
+                            self.doc,
+                            "%s: %s" % (obj_type, item1.gramps_id),
+                            "Database",
+                            "File",
+                        )
                     else:
-                        self.start_list(self.doc, "%s: %s" % (obj_type, item1.get_name()),
-                                        "Database", "File")
-                    self.report_diff(obj_type, object_to_dict(item1), object_to_dict(item2), self.doc)
+                        self.start_list(
+                            self.doc,
+                            "%s: %s" % (obj_type, item1.get_name()),
+                            "Database",
+                            "File",
+                        )
+                    self.report_diff(
+                        obj_type, object_to_dict(item1), object_to_dict(item2), self.doc
+                    )
                 self.doc.end_table()
             else:
-                self.doc.start_table('DiffTable','DIFF-Table3')
+                self.doc.start_table("DiffTable", "DIFF-Table3")
                 self.start_list(self.doc, _("No differences"), "", "")
                 self.doc.end_table()
-            self.doc.start_paragraph('DIFF-Heading')
+            self.doc.start_paragraph("DIFF-Heading")
             self.doc.write_text("")
             self.doc.end_paragraph()
         if self.show_missing:
-            self.doc.start_paragraph('DIFF-Heading')
+            self.doc.start_paragraph("DIFF-Heading")
             self.doc.write_text(_("Missing items in File that are added in Database"))
             self.doc.end_paragraph()
             if missing:
                 for pair in missing:
                     obj_type, item = pair
-                    self.doc.start_paragraph('DIFF-Text')
-                    self.doc.write_text(_("Missing %s: %s") % (obj_type, self.sa[0].describe(item)))
+                    self.doc.start_paragraph("DIFF-Text")
+                    self.doc.write_text(
+                        _("Missing %s: %s") % (obj_type, self.sa[0].describe(item))
+                    )
                     self.doc.end_paragraph()
             else:
-                self.doc.start_paragraph('DIFF-Text')
+                self.doc.start_paragraph("DIFF-Text")
                 self.doc.write_text(_("Nothing missing"))
                 self.doc.end_paragraph()
-            self.doc.start_paragraph('DIFF-Heading')
+            self.doc.start_paragraph("DIFF-Heading")
             self.doc.write_text("")
             self.doc.end_paragraph()
         if self.show_added:
-            self.doc.start_paragraph('DIFF-Heading')
+            self.doc.start_paragraph("DIFF-Heading")
             self.doc.write_text(_("Added items in File that are missing in Database"))
             self.doc.end_paragraph()
             if added:
                 for pair in added:
                     obj_type, item = pair
-                    self.doc.start_paragraph('DIFF-Text')
-                    self.doc.write_text(_("Added %s: %s ") % (obj_type, self.sa[1].describe(item)))
+                    self.doc.start_paragraph("DIFF-Text")
+                    self.doc.write_text(
+                        _("Added %s: %s ") % (obj_type, self.sa[1].describe(item))
+                    )
                     self.doc.end_paragraph()
             else:
-                self.doc.start_paragraph('DIFF-Text')
+                self.doc.start_paragraph("DIFF-Text")
                 self.doc.write_text(_("Nothing added"))
                 self.doc.end_paragraph()
-            self.doc.start_paragraph('DIFF-Heading')
+            self.doc.start_paragraph("DIFF-Heading")
             self.doc.write_text("")
             self.doc.end_paragraph()
         self._user.end_progress()
 
     def start_list(self, doc, text, heading1, heading2):
         doc.start_row()
-        doc.start_cell('DIFF-TableCell')
-        doc.start_paragraph('DIFF-TableHeading')
+        doc.start_cell("DIFF-TableCell")
+        doc.start_paragraph("DIFF-TableHeading")
         doc.write_text(text)
         doc.end_paragraph()
         doc.end_cell()
         if heading1:
-            doc.start_cell('DIFF-TableCell')
-            doc.start_paragraph('DIFF-TableHeading')
+            doc.start_cell("DIFF-TableCell")
+            doc.start_paragraph("DIFF-TableHeading")
             doc.write_text(heading1)
             doc.end_paragraph()
             doc.end_cell()
         if heading2:
-            doc.start_cell('DIFF-TableCell')
-            doc.start_paragraph('DIFF-TableHeading')
+            doc.start_cell("DIFF-TableCell")
+            doc.start_paragraph("DIFF-TableHeading")
             doc.write_text(heading2)
             doc.end_paragraph()
             doc.end_cell()
@@ -251,18 +278,18 @@ class DifferencesReport(Report):
         if diff1 == diff2:
             return
         doc.start_row()
-        doc.start_cell('DIFF-TableCell')
-        doc.start_paragraph('DIFF-TableHeading')
+        doc.start_cell("DIFF-TableCell")
+        doc.start_paragraph("DIFF-TableHeading")
         doc.write_text(self.format_struct_path(path))
         doc.end_paragraph()
         doc.end_cell()
-        doc.start_cell('DIFF-TableCell')
-        doc.start_paragraph('DIFF-Text')
+        doc.start_cell("DIFF-TableCell")
+        doc.start_paragraph("DIFF-Text")
         doc.write_text(desc1)
         doc.end_paragraph()
         doc.end_cell()
-        doc.start_cell('DIFF-TableCell')
-        doc.start_paragraph('DIFF-Text')
+        doc.start_cell("DIFF-TableCell")
+        doc.start_paragraph("DIFF-Text")
         doc.write_text(desc2)
         doc.end_paragraph()
         doc.end_cell()
@@ -274,8 +301,7 @@ class DifferencesReport(Report):
         """
         if struct1 == struct2:
             return
-        elif (isinstance(struct1, (list, tuple)) or
-              isinstance(struct2, (list, tuple))):
+        elif isinstance(struct1, (list, tuple)) or isinstance(struct2, (list, tuple)):
             len1 = len(struct1) if isinstance(struct1, (list, tuple)) else 0
             len2 = len(struct2) if isinstance(struct2, (list, tuple)) else 0
             for pos in range(max(len1, len2)):
@@ -287,27 +313,29 @@ class DifferencesReport(Report):
             for key in keys:
                 value1 = struct1[key] if struct1 is not None else None
                 value2 = struct2[key] if struct2 is not None else None
-                if key == "dict": # a raw dict, not a struct
+                if key == "dict":  # a raw dict, not a struct
                     self.report_details(path, value1, value2, doc)
                 else:
                     self.report_diff(path + "." + key, value1, value2, doc)
         else:
             self.report_details(doc, path, struct1, struct2)
 
-#------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
 #
 # DifferencesOptions
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 class DifferencesOptions(MenuReportOptions):
-    """ Options for the Differences Report """
+    """Options for the Differences Report"""
 
     def add_menu_options(self, menu):
-        """ Add the options for the text differences report """
+        """Add the options for the text differences report"""
         category_name = _("Report Options")
-        path = config.get('paths.recent-import-dir')
-        filename = DestinationOption(_("Family Tree file"),
-                                     os.path.join(path, "data.gramps"))
+        path = config.get("paths.recent-import-dir")
+        filename = DestinationOption(
+            _("Family Tree file"), os.path.join(path, "data.gramps")
+        )
         filename.set_help(_("Select a .gpkg or .gramps file"))
         menu.add_option(category_name, "filename", filename)
 
@@ -323,11 +351,23 @@ class DifferencesOptions(MenuReportOptions):
         show_added.set_help(_("Include items in file but not in database"))
         menu.add_option(category_name, "show_added", show_added)
 
-    def make_my_style(self, default_style, name, description,
-                      size=9, font=FONT_SERIF, justified ="left",
-                      color=None, align=PARA_ALIGN_CENTER,
-                      shadow = None, italic=0, bold=0, borders=0, indent=None):
-        """ Create paragraph and graphic styles of the same name """
+    def make_my_style(
+        self,
+        default_style,
+        name,
+        description,
+        size=9,
+        font=FONT_SERIF,
+        justified="left",
+        color=None,
+        align=PARA_ALIGN_CENTER,
+        shadow=None,
+        italic=0,
+        bold=0,
+        borders=0,
+        indent=None,
+    ):
+        """Create paragraph and graphic styles of the same name"""
         # Paragraph:
         f = FontStyle()
         f.set_size(size)
@@ -363,26 +403,31 @@ class DifferencesOptions(MenuReportOptions):
         default_style.add_draw_style(name, g)
 
     def make_default_style(self, default_style):
-        """ Add the styles used in this report """
-        self.make_my_style(default_style, "DIFF-Text",
-                           _('Text'), 12, justified="left")
-        self.make_my_style(default_style, "DIFF-Title",
-                           _('Text'), 16, justified="left",
-                           bold=1)
-        self.make_my_style(default_style, "DIFF-Heading",
-                           _('Text'), 14, justified="left",
-                           bold=1, italic=1)
-        self.make_my_style(default_style, "DIFF-TableHeading",
-                           _('Text'), 12, justified="left",
-                           bold=1)
+        """Add the styles used in this report"""
+        self.make_my_style(default_style, "DIFF-Text", _("Text"), 12, justified="left")
+        self.make_my_style(
+            default_style, "DIFF-Title", _("Text"), 16, justified="left", bold=1
+        )
+        self.make_my_style(
+            default_style,
+            "DIFF-Heading",
+            _("Text"),
+            14,
+            justified="left",
+            bold=1,
+            italic=1,
+        )
+        self.make_my_style(
+            default_style, "DIFF-TableHeading", _("Text"), 12, justified="left", bold=1
+        )
 
-        #Table Styles
+        # Table Styles
         cell = TableCellStyle()
         cell.set_borders(1)
-        default_style.add_cell_style('DIFF-TableCell', cell)
+        default_style.add_cell_style("DIFF-TableCell", cell)
 
         cell = TableCellStyle()
-        default_style.add_cell_style('DIFF-TableCellNoBorder', cell)
+        default_style.add_cell_style("DIFF-TableCellNoBorder", cell)
 
         table = TableStyle()
         table.set_width(100)
@@ -390,12 +435,11 @@ class DifferencesOptions(MenuReportOptions):
         table.set_column_width(0, 50)
         table.set_column_width(1, 25)
         table.set_column_width(2, 25)
-        default_style.add_table_style('DIFF-Table3',table)
+        default_style.add_table_style("DIFF-Table3", table)
 
         table = TableStyle()
         table.set_width(100)
         table.set_columns(2)
         table.set_column_width(0, 15)
         table.set_column_width(1, 85)
-        default_style.add_table_style('DIFF-Table2',table)
-
+        default_style.add_table_style("DIFF-Table2", table)
