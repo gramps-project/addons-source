@@ -19,32 +19,34 @@
 #
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Gramps modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gui.plug.export import WriterOptionBox
 from gramps.gen.plug.utils import OpenFileOrStdout
-from gramps.gen.lib.serialize import to_json
+from gramps.gen.lib.json_utils import object_to_string
 
-def exportData(db, filename,
-               error_dialog=None, option_box=None, callback=None):
+
+def exportData(db, filename, error_dialog=None, option_box=None, callback=None):
     if not callable(callback):
-        callback = lambda percent: None # dummy
+        callback = lambda percent: None  # dummy
 
     with OpenFileOrStdout(filename, encoding="utf-8") as fp:
 
-        total = (db.get_number_of_notes() +
-                 db.get_number_of_people() +
-                 db.get_number_of_events() +
-                 db.get_number_of_families() +
-                 db.get_number_of_repositories() +
-                 db.get_number_of_places() +
-                 db.get_number_of_media() +
-                 db.get_number_of_citations() +
-                 db.get_number_of_sources() +
-                 db.get_number_of_tags())
+        total = (
+            db.get_number_of_notes()
+            + db.get_number_of_people()
+            + db.get_number_of_events()
+            + db.get_number_of_families()
+            + db.get_number_of_repositories()
+            + db.get_number_of_places()
+            + db.get_number_of_media()
+            + db.get_number_of_citations()
+            + db.get_number_of_sources()
+            + db.get_number_of_tags()
+        )
         count = 0.0
 
         # ---------------------------------
@@ -53,7 +55,7 @@ def exportData(db, filename,
         for obj in db.iter_notes():
             write_line(fp, obj)
             count += 1
-            callback(100 * count/total)
+            callback(100 * count / total)
 
         # ---------------------------------
         # Event
@@ -61,7 +63,7 @@ def exportData(db, filename,
         for obj in db.iter_events():
             write_line(fp, obj)
             count += 1
-            callback(100 * count/total)
+            callback(100 * count / total)
 
         # ---------------------------------
         # Person
@@ -69,7 +71,7 @@ def exportData(db, filename,
         for obj in db.iter_people():
             write_line(fp, obj)
             count += 1
-            callback(100 * count/total)
+            callback(100 * count / total)
 
         # ---------------------------------
         # Family
@@ -77,7 +79,7 @@ def exportData(db, filename,
         for obj in db.iter_families():
             write_line(fp, obj)
             count += 1
-            callback(100 * count/total)
+            callback(100 * count / total)
 
         # ---------------------------------
         # Repository
@@ -85,7 +87,7 @@ def exportData(db, filename,
         for obj in db.iter_repositories():
             write_line(fp, obj)
             count += 1
-            callback(100 * count/total)
+            callback(100 * count / total)
 
         # ---------------------------------
         # Place
@@ -93,7 +95,7 @@ def exportData(db, filename,
         for obj in db.iter_places():
             write_line(fp, obj)
             count += 1
-            callback(100 * count/total)
+            callback(100 * count / total)
 
         # ---------------------------------
         # Source
@@ -101,7 +103,7 @@ def exportData(db, filename,
         for obj in db.iter_sources():
             write_line(fp, obj)
             count += 1
-            callback(100 * count/total)
+            callback(100 * count / total)
 
         # ---------------------------------
         # Citation
@@ -109,7 +111,7 @@ def exportData(db, filename,
         for obj in db.iter_citations():
             write_line(fp, obj)
             count += 1
-            callback(100 * count/total)
+            callback(100 * count / total)
 
         # ---------------------------------
         # Media
@@ -117,7 +119,7 @@ def exportData(db, filename,
         for obj in db.iter_media():
             write_line(fp, obj)
             count += 1
-            callback(100 * count/total)
+            callback(100 * count / total)
 
         # ---------------------------------
         # Tag
@@ -125,12 +127,13 @@ def exportData(db, filename,
         for obj in db.iter_tags():
             write_line(fp, obj)
             count += 1
-            callback(100 * count/total)
+            callback(100 * count / total)
 
     return True
+
 
 def write_line(fp, obj):
     """
     Write a single object to the file.
     """
-    fp.write(to_json(obj) + "\n")
+    fp.write(object_to_string(obj) + "\n")

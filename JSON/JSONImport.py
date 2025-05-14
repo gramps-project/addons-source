@@ -21,32 +21,44 @@
 
 "Import from JSON data"
 
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Standard Python Modules
 #
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 import logging
 
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Gramps modules
 #
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 from gramps.gen.db import DbTxn
 from gramps.gen.plug.utils import OpenFileOrStdin
-from gramps.gen.lib import (Note, Person, Event, Family, Repository, Place,
-                            Media, Source, Tag, Citation)
-from gramps.gen.lib.serialize import from_json
+from gramps.gen.lib import (
+    Note,
+    Person,
+    Event,
+    Family,
+    Repository,
+    Place,
+    Media,
+    Source,
+    Tag,
+    Citation,
+)
+from gramps.gen.lib.json_utils import string_to_object
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 _ = glocale.translation.sgettext
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Set up logging
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 LOG = logging.getLogger(".ImportJSON")
+
 
 def importData(db, filename, user):
     """Function called by Gramps to import data on persons in CSV format."""
@@ -57,7 +69,7 @@ def importData(db, filename, user):
             with OpenFileOrStdin(filename, encoding="utf-8") as fp:
                 line = fp.readline()
                 while line:
-                    obj = from_json(line)
+                    obj = string_to_object(line)
                     if isinstance(obj, Person):
                         db.add_person(obj, trans)
                     elif isinstance(obj, Family):
