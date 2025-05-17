@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-06 16:01+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-05-07 15:03+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -44,16 +44,16 @@ msgstr "Median yhdistäminen"
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
-msgstr[0] "{number_of} media yhdistetty"
-msgstr[1] "{number_of} mediatietoja yhdistetty"
+msgstr[0] "{number_of} mediatieto yhdistetty"
+msgstr[1] "{number_of} mediatietoa yhdistetty"
 
 #: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
-msgstr "Yhtään mediatietoja ei yhdistetty."
+msgstr "Yhtään mediatietoa ei yhdistetty."
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
-msgstr "Yhdistä mediatietoja"
+msgstr "Mediatietojen yhdistäminen"
 
 #: MediaMerge/mediamerge.gpr.py:33
 msgid ""
@@ -2624,7 +2624,7 @@ msgstr "Ei puuttuvia"
 
 #: Differences/differences.py:185
 msgid "Added items in File that are missing in Database"
-msgstr ""
+msgstr "Tiedostoon lisätty kohteita, jotka puuttuvat tietokannasta"
 
 #: Differences/differences.py:191
 #, python-format
@@ -2657,7 +2657,7 @@ msgstr "Näytä tiedostosta puuttuvat kohteet"
 
 #: Differences/differences.py:318
 msgid "Include items not in file but in database"
-msgstr ""
+msgstr "Sisällytä kohteet, jotka eivät ole tiedostossa mutta tietokannassa"
 
 #: Differences/differences.py:321
 msgid "Show items added in file"
@@ -2682,7 +2682,7 @@ msgstr "Puun täyttöaste"
 #: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr ""
+msgstr "AncestorFill kohteelle %s"
 
 #: AncestorFill/AncestorFill.py:205
 msgid "Generation "
@@ -2690,23 +2690,24 @@ msgstr "Sukupolvi "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr ""
+msgstr "Löydettyjen esi-isien lukumäärä "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
-msgstr ""
+msgstr "Löydettyjen esi-isien prosenttiosuus "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr ""
+msgstr "Löytyneiden eri esivanhempien määrä "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
 msgstr "Teoreettisten esi-isien lukumäärä "
 
 #: AncestorFill/AncestorFill.py:210
+#, fuzzy
 msgid "Pedigree Collapse "
-msgstr ""
+msgstr "Sukutaulun romahdus "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
@@ -2714,7 +2715,7 @@ msgstr "Löydettyjä esi-isiä "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
-msgstr ""
+msgstr "Löydettyjen eri esi-isien yhteismäärä "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -2723,16 +2724,23 @@ msgid ""
 "Note: This report only counts ancestors with a parent-child relationship of "
 "birth."
 msgstr ""
+"\n"
+"\n"
+"Huomaa: Tämä raportti laskee mukaan vain ne esivanhemmat, joilla on "
+"syntymäsuhde vanhemman ja lapsen välillä."
 
 #: AncestorFill/AncestorFill.py:305
+#, fuzzy
 msgid "Filled digit"
-msgstr ""
+msgstr "Filled digit"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
+"Pilkun jälkeisten numeroiden määrä, joka näytetään raportin tietyn "
+"sukupolven esivanhempien prosenttiosuudessa"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
@@ -2743,14 +2751,16 @@ msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
 msgstr ""
+"Pilkun jälkeisten numeroiden määrä, joka sisällytetään sukutaulun "
+"tiivistysraporttiin"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
-msgstr ""
+msgstr "Näytä teoreettinen"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "Näytetäänkö esi-isien teoreettinen lukumäärä sukupolvittain"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
@@ -2763,39 +2773,39 @@ msgstr "Sivun otsikossa käytetty tyyli."
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
 msgid "SharedPostgreSQL"
-msgstr ""
+msgstr "SharedPostgreSQL"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:25
 msgid "Shared _PostgreSQL Database"
-msgstr ""
+msgstr "Shared _PostgreSQL tietokanta"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:26
 msgid "Shared PostgreSQL Database"
-msgstr ""
+msgstr "Shared PostgreSQL tietokanta"
 
 #: HtmlView/htmlview.py:328
 msgid "HtmlView"
-msgstr ""
+msgstr "HtmlView-näyttö"
 
 #: HtmlView/htmlview.py:495
 msgid "Go to the previous page in the history"
-msgstr ""
+msgstr "Siirry edelliselle sivulle historiassa"
 
 #: HtmlView/htmlview.py:503
 msgid "Go to the next page in the history"
-msgstr ""
+msgstr "Siirry seuraavalle sivulle historiassa"
 
 #: HtmlView/htmlview.py:508
 msgid "_Refresh"
-msgstr ""
+msgstr "_Virkistä"
 
 #: HtmlView/htmlview.py:511
 msgid "Stop and reload the page."
-msgstr ""
+msgstr "Pysäytä ja lataa sivu uudelleen."
 
 #: HtmlView/htmlview.py:555
 msgid "Start page for the Html View"
-msgstr ""
+msgstr "Html-katselun alkusivu"
 
 #: HtmlView/htmlview.py:556
 msgid ""
@@ -2804,26 +2814,30 @@ msgid ""
 "<br>\n"
 "For example: "
 msgstr ""
+"Kirjoita verkkosivun osoite yläreunaan ja paina suorituspainiketta "
+"ladataksesi verkkosivun.\n"
+"<br>\n"
+"Esimerkiksi: "
 
 #: HtmlView/htmlview.gpr.py:31
 msgid "Html View"
-msgstr ""
+msgstr "Katselu html-muodossa"
 
 #: HtmlView/htmlview.gpr.py:32
 msgid "A view showing html pages embedded in Gramps"
-msgstr ""
+msgstr "Html-katselu Grampsiin upotettuna"
 
 #: HtmlView/htmlview.gpr.py:40
 msgid "Web"
-msgstr ""
+msgstr "Web"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
-msgstr ""
+msgstr "Raakavienti"
 
 #: ExportRaw/ExportRaw.gpr.py:5
 msgid "This is a raw python object dump"
-msgstr ""
+msgstr "Tämä on python-objektien vedos rakana"
 
 #: ExportRaw/ExportRaw.gpr.py:13
 msgid "Raw options"
@@ -2831,7 +2845,7 @@ msgstr "Raakaviennin valinnat"
 
 #: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
-msgstr "Dynaaminen-nettisivusto"
+msgstr "Dynaaminen verkkoraportti"
 
 #: DynamicWeb/dynamicweb.gpr.py:17
 msgid "Produces dynamic web pages for the database"
@@ -2839,7 +2853,7 @@ msgstr "Tuottaa dynaamiset verkkosivut tietokannasta"
 
 #: DynamicWeb/dynamicweb.py:334
 msgid "SVG graphical tree"
-msgstr "SVG graafinen sukupuu"
+msgstr "Graafinen sukupuu SVG-muodossa"
 
 #: DynamicWeb/dynamicweb.py:337
 msgid "Indexes pages"
@@ -2913,11 +2927,11 @@ msgstr "Polkua \"%(path)s\" ei ole mahdollista muuntaa suhteelliseksi."
 #: DynamicWeb/dynamicweb.py:2353
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
-msgstr "Sivujen kokoonpano ei ole voimassa: useilla sivuilla on sama sisältö"
+msgstr "Sivujen kokoonpano ei ole kelvollinen: useilla sivuilla on sama sisältö"
 
 #: DynamicWeb/dynamicweb.py:2368
 msgid "DynWeb|Home"
-msgstr "Kotisivu"
+msgstr "Dynaaminen kotisivu"
 
 #: DynamicWeb/dynamicweb.py:2375 DynamicWeb/dynamicweb.py:2442
 #: DynamicWeb/dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2456
@@ -2952,7 +2966,7 @@ msgstr "(lajittele määrän mukaan)"
 
 #: DynamicWeb/dynamicweb.py:2925
 msgid ": activate to sort column ascending"
-msgstr ": aktivoi lajittelu sarake nousevaksi"
+msgstr ": lajittele sarake nousevasti"
 
 #: DynamicWeb/dynamicweb.py:2929
 msgid ": activate to sort column descending"
@@ -2974,7 +2988,7 @@ msgstr "Vaihtoehtoinen nimi"
 
 #: DynamicWeb/dynamicweb.py:2961
 msgid "Click on the map to show it full-screen"
-msgstr "Napsauta karttaa näyttääksesi sen koko näytöllä"
+msgstr "Siirry koko näytölle napsauttamalla karttaa"
 
 #: DynamicWeb/dynamicweb.py:2965
 msgid "Configure"
@@ -2998,7 +3012,7 @@ msgstr "Perhehakemisto"
 
 #: DynamicWeb/dynamicweb.py:2981
 msgid "Family Nick Name"
-msgstr "Perheen lempinimi"
+msgstr "Perheen kutsumanimi"
 
 #: DynamicWeb/dynamicweb.py:2984
 msgid "File ready"
@@ -3006,7 +3020,7 @@ msgstr "Tiedosto valmis"
 
 #: DynamicWeb/dynamicweb.py:2991 DynamicWeb/dynamicweb.py:5042
 msgid "Include dates columns on the index pages"
-msgstr "Lisää päivämääräsarakkeet hakemistosivulle"
+msgstr "Lisää hakemistosivulle päivämääräsarake"
 
 #: DynamicWeb/dynamicweb.py:2999 DynamicWeb/dynamicweb.py:5071
 msgid "Include a column for media path on the index pages"
@@ -3046,7 +3060,7 @@ msgstr "Mediatyyppi"
 
 #: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
-msgstr "Taulukon tietoja ei ole saatavilla"
+msgstr "Taulukkoon ei ole tietoja"
 
 #: DynamicWeb/dynamicweb.py:3039
 msgid "No matching records found"
@@ -3066,7 +3080,7 @@ msgstr "Henkilösivu"
 
 #: DynamicWeb/dynamicweb.py:3049
 msgid "Person to search for"
-msgstr "Henkilöhaku"
+msgstr "Etsittävä henkilö"
 
 #: DynamicWeb/dynamicweb.py:3051
 msgid "Persons Index"
@@ -3095,7 +3109,7 @@ msgstr "Suhde äitiin"
 
 #: DynamicWeb/dynamicweb.py:3063
 msgid "Repositories Index"
-msgstr "Arkistojen indeksi"
+msgstr "Arkistojen hakemisto"
 
 #: DynamicWeb/dynamicweb.py:3066
 msgid "Restore"
@@ -3115,7 +3129,7 @@ msgstr "SVG-puun lasten jakauma"
 
 #: DynamicWeb/dynamicweb.py:3070
 msgid "SVG tree configuration"
-msgstr "SVG-puun kokoonpano"
+msgstr "SVG-puun määritykset"
 
 #: DynamicWeb/dynamicweb.py:3071 DynamicWeb/dynamicweb.py:5115
 msgid "SVG tree graph shape"
@@ -3126,12 +3140,13 @@ msgid "SVG tree graph type"
 msgstr "SVG-puun kaaviotyyppi"
 
 #: DynamicWeb/dynamicweb.py:3073 DynamicWeb/dynamicweb.py:5123
+#, fuzzy
 msgid "SVG tree parents distribution"
 msgstr "SVG-puun vanhempien jakauma"
 
 #: DynamicWeb/dynamicweb.py:3074
 msgid "Save tree as file"
-msgstr "Tallenna puu tiedostona"
+msgstr "Tallenna puu tiedostoon"
 
 #: DynamicWeb/dynamicweb.py:3075
 msgid "Search:"
@@ -3139,11 +3154,12 @@ msgstr "Etsi:"
 
 #: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
-msgstr "Valitse taustan värijärjestelmä"
+msgstr "Valitse taustan värivalikoima"
 
 #: DynamicWeb/dynamicweb.py:3082
+#, fuzzy
 msgid "Select the children distribution (fan charts only)"
-msgstr "Valitse lasten jakautuma (vain viuhkamallit)"
+msgstr "Valitse lasten jakautuma (vain viuhkakaavioihin)"
 
 #: DynamicWeb/dynamicweb.py:3086
 msgid "Select the number of ascending generations"
@@ -3167,8 +3183,7 @@ msgstr "Valitse kaavion tyyppi"
 
 #: DynamicWeb/dynamicweb.py:3101
 msgid "Several matches.<br>Precise your search or choose in the lists below."
-msgstr ""
-"Löydetty useita.<br>Tarkenna hakuasi tai valitse alla olevista listoista."
+msgstr "Löydetty useita.<br>Tarkenna hakuasi tai valitse listalta."
 
 #: DynamicWeb/dynamicweb.py:3104
 msgid "Show _MENU_ entries"
@@ -3188,13 +3203,13 @@ msgstr "Näytetään _START_ - _END_ / _TOTAL_ merkinnöille"
 
 #: DynamicWeb/dynamicweb.py:3112
 msgid "Sort by:"
-msgstr ""
+msgstr "Lajitteluavain:"
 
 #: DynamicWeb/dynamicweb.py:3114 SourceIndex/death.py:87
 #: SourceIndex/birth.py:126 SourceIndex/marriage.py:87 SourceIndex/index.py:92
 #: SourceIndex/witness.py:64 SourceIndex/census.py:82
 msgid "Sources Index"
-msgstr "Lähteet valikko"
+msgstr "Lähteiden valikko"
 
 #: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
 msgid "Suppress Gramps ID"
@@ -3210,11 +3225,11 @@ msgstr "U"
 
 #: DynamicWeb/dynamicweb.py:3127 DynamicWeb/dynamicweb.py:4972
 msgid "Use tabbed panels instead of sections"
-msgstr "Käytä välilehtiä paneeleiden sijaan"
+msgstr "Käytä välilehtipaneeleita osioiden sijaan"
 
 #: DynamicWeb/dynamicweb.py:3131
 msgid "Use the search box above in order to find a person."
-msgstr "Käytä hakukenttää yllä löytääksesi henkilön."
+msgstr "Käytä yllä olevaa hakukenttää löytääksesi henkilön."
 
 #: DynamicWeb/dynamicweb.py:3135
 msgid "Use a table format for the surnames index"
@@ -3265,7 +3280,7 @@ msgid ""
 "Whether to use a special color for the persons that appear several times in "
 "the SVG tree"
 msgstr ""
-"Käytetäänkö erityistä väriä henkilöille, jotka näkyvät useita kertoja SVG-"
+"Käytetäänkö erityistä väriä henkilöille, jotka esiintyvät toistuvasti SVG-"
 "sukupuussa"
 
 #: DynamicWeb/dynamicweb.py:3167
@@ -3332,17 +3347,17 @@ msgstr "Tiedoston \"%(file)s\" lisääminen ei onnistu arkistoon \"%(archive)s\"
 #: DynamicWeb/dynamicweb.py:3831
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
-msgstr "DynaaminenNettiraportti ohittaa linkki tyyppi '%(class)s'"
+msgstr "DynaaminenNettiraportti huomioimatta linkkityyppiä '%(class)s'"
 
 #: DynamicWeb/dynamicweb.py:4262
 #, python-format
 msgid "Family of %(father)s"
-msgstr "Perhe isälle %(father)s"
+msgstr "Isän %(father)s perhe"
 
 #: DynamicWeb/dynamicweb.py:4266
 #, python-format
 msgid "Family of %(mother)s"
-msgstr "Perhe äidille %(mother)s"
+msgstr "Äidin %(mother)s perhe"
 
 #: DynamicWeb/dynamicweb.py:4660
 msgid ""
@@ -3369,14 +3384,14 @@ msgstr ""
 "__NB_FAMILIES__ korvataan perheiden määrällä.\n"
 "__NB_MEDIA__ korvataan median määrällä.\n"
 "__NB_SOURCES__ korvataan lähteiden määrällä.\n"
-"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_REPOSITORIES__ korvataan arkistojen lukumäärällä.\n"
 "__NB_PLACES__ korvataan paikkamäärällä.\n"
 "__MEDIA_<gid>__ korvataan median Gramps ID: llä<gid>.\n"
 "__THUMB_<gid>__ korvataa median pikkukuvalla ja Gramps ID:llä<gid>.\n"
 "__EXPORT_DATE__ korvataan nykyisellä päivämäärällä.\n"
 "__GRAMPS_VERSION__ korvataan Gramps-versiolla.\n"
 "__GRAMPS_HOMEPAGE__ Korvataan Gramps kotisivun linkillä.\n"
-"URL-osoite, joka alkaa suhteessa://suhteellinen <linkki>, korvataan "
+"URL-osoite, joka alkaa \"relative://relative.<link>\", korvataan "
 "suhteellisella URL-osoitteella \"<linkki>\".\n"
 
 #: DynamicWeb/dynamicweb.py:4712
@@ -3387,8 +3402,7 @@ msgstr "Tallenna verkkosivut arkistoon"
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
-msgstr ""
-"Luodaanko arkistotiedosto (ZIP- tai TGZ-muodossa), joka sisältää verkkosivun"
+msgstr "Luodaanko verkkosvun sisältävä arkistotiedosto (ZIP- tai TGZ-muodossa)"
 
 #: DynamicWeb/dynamicweb.py:4722
 msgid "Archive file"
@@ -3396,7 +3410,7 @@ msgstr "Arkistotiedosto"
 
 #: DynamicWeb/dynamicweb.py:4728
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
-msgstr "Arkistotiedoston nimi (\".zip\" tai \".tgz\" -laajennuksella)"
+msgstr "Arkistotiedoston nimi (\".zip\" tai \".tgz\" -päätteellä)"
 
 #: DynamicWeb/dynamicweb.py:4735
 msgid "Web site title"
@@ -3408,7 +3422,7 @@ msgstr "Sivuston otsikko"
 
 #: DynamicWeb/dynamicweb.py:4741
 msgid "Select filter to restrict people that appear on web site"
-msgstr "Valitse suodin rajoittamaan henkilöitä jotka näkyvät nettisivustossa"
+msgstr "Valitse suodin rajoittamaan näytettävien ihmisten määrää"
 
 #: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
 msgid "Name format (short)"
@@ -3416,7 +3430,7 @@ msgstr "Nimen muoto (lyhyt)"
 
 #: DynamicWeb/dynamicweb.py:4757 DynamicWeb/dynamicweb.py:4783
 msgid "Select the format to display a shorter version of the names"
-msgstr "Valitse muoto, joka näyttää lyhyemmän version nimistä"
+msgstr "Valitse muoto näyttääksesi nimistä lyhyemmän version"
 
 #: DynamicWeb/dynamicweb.py:4787
 msgid "Web site template"
@@ -3428,15 +3442,15 @@ msgstr "Valitse verkkosivuston malli"
 
 #: DynamicWeb/dynamicweb.py:4812
 msgid "Whether to include private objects"
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Näytetäänkö yksityiset tiedot"
 
 #: DynamicWeb/dynamicweb.py:4833
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
 msgstr ""
-"Tällä voit rajoittaa tietoja henkilöistä, jotka eivät ole olleet kuolleina "
-"kovin pitkään"
+"Tämä mahdollistaa rajoitettujen tietojen näyttämisen melko äskettäin "
+"kuolleista ihmisistä"
 
 #: DynamicWeb/dynamicweb.py:4839
 msgid "Export notes"
@@ -3484,7 +3498,7 @@ msgstr "Kopioi, säilytä tiedostonimet ennallaan"
 
 #: DynamicWeb/dynamicweb.py:4871
 msgid "Do not copy, reference existing files"
-msgstr "Älä kopioi olemassa olevia tiedostoja"
+msgstr "Älä kopioi, viittaa olemassa oleviin tiedostoihin"
 
 #: DynamicWeb/dynamicweb.py:4873
 msgid "Images and media"
@@ -3492,15 +3506,15 @@ msgstr "Kuvat ja media"
 
 #: DynamicWeb/dynamicweb.py:4876
 msgid "Whether to make a copy of the media"
-msgstr "Kopioidaanko media"
+msgstr "Tehdäänkö mediastatiedoista kopiot"
 
 #: DynamicWeb/dynamicweb.py:4879
 msgid "Print the notes type"
-msgstr "Tulosta lisätiedon tyyppi"
+msgstr "Näytä lisätiedon tyyppi"
 
 #: DynamicWeb/dynamicweb.py:4881
 msgid "Whether to print the notes type in the notes text"
-msgstr "Tulostetaanko muistiinpanoja kirjoittamalla lisätietoja tekstinä"
+msgstr "Näytetäänkö lisätietojen tyyppi tekstissä"
 
 #: DynamicWeb/dynamicweb.py:4885
 msgid "Print place pages"
