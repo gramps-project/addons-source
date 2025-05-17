@@ -1,0 +1,176 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-15 16:42+0300\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Middle Name Handling"
+msgstr "Handhabung des mittleren Namens"
+
+msgid "Leave alone"
+msgstr "In Ruhe lassen"
+
+msgid "Separate"
+msgstr "Trennen Sie"
+
+msgid "URL Compactness Level"
+msgstr "URL-Kompaktheitsstufe"
+
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Kürzeste - kein Präfix, keine Schlüssel"
+
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Kompakt - Kein Präfix, Schlüssel ohne Attribute"
+
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Kompakt - kein Präfix, Schlüssel mit Attributen"
+
+msgid "Long - Without Prefix on the Left"
+msgstr "Lang - ohne Präfix auf der linken Seite"
+
+msgid "URL Prefix Replacement"
+msgstr "URL-Präfix-Ersetzung"
+
+msgid "AI Provider"
+msgstr "KI-Anbieter"
+
+msgid "(Disabled)"
+msgstr "(Deaktiviert)"
+
+msgid "OpenAI"
+msgstr "OpenAI"
+
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+msgid "OpenAI API Key"
+msgstr "OpenAI API-Schlüssel"
+
+msgid "OpenAI Model"
+msgstr "OpenAI-Modell"
+
+msgid "Mistral API Key"
+msgstr "Mistral API Schlüssel"
+
+msgid "Mistral Model"
+msgstr "Mistral Modell"
+
+msgid "Enable CSV Files"
+msgstr "CSV-Dateien ermöglichen"
+
+msgid "Display Columns"
+msgstr "Spalten anzeigen"
+
+msgid "Display Icons"
+msgstr "Symbole anzeigen"
+
+msgid "WebSearch"
+msgstr "WebSuche"
+
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+"Benutzerdefinierte Abfragen für Online-Dienste auf der Grundlage des aktiven "
+"Personen-, Orts-, Familien- oder Quellendatensatzes"
+
+msgid "Column - Icons"
+msgstr "Spalte - Symbole"
+
+msgid "Column - Source Types (flags)"
+msgstr "Spalte - Quellentypen (Kennzeichen)"
+
+msgid "Column - Keys"
+msgstr "Spalte - Schlüssel"
+
+msgid "Column - Title"
+msgstr "Spalte - Titel"
+
+msgid "Column - Website Url"
+msgstr "Spalte - Website-Url"
+
+msgid "Column - Comment"
+msgstr "Spalte - Anmerkung"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Symbol - Besuchte URLs (Häkchen)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Symbol - Gespeicherte URLs (Diskette)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Symbol - URLs, die mit UID-Attributen verknüpft sind (UID- Ausweis)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Symbol - URLs aus regionalen CSV-Dateien ( Kennzeichen)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Symbol - URLs aus statischen CSV-Dateien (roter Stift)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Symbol - URLs aus gängigen CSV-Dateien (Erde)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Symbol - URLs aus Kreuz-CSV-Dateien (Shuffle-Pfeile)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Symbol - URLs aus dem benutzerdefinierten Benutzerverzeichnis "
+"(Tabellenkalkulationssymbol)"
+
+msgid "QR-code"
+msgstr "QR-Code"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Fehler beim Generieren des QR-Codes:\n"
+"Ursprünglicher Fehler: „{}“"
+
+msgid "Keys"
+msgstr "Schlüssel"
+
+msgid "Website URL"
+msgstr "Website-URL"
+
+msgid "Add link to note"
+msgstr "Verknüpfung zur Notiz hinzufügen"
+
+msgid "Show QR-code"
+msgstr "QR-Code anzeigen"
+
+msgid "Copy link to clipboard"
+msgstr "Verknüpfung in die Zwischenablage kopieren"
+
+msgid "Hide link for selected item"
+msgstr "Verknüpfung für ausgewähltes Element ausblenden"
+
+msgid "Hide link for all items"
+msgstr "Verknüpfung für alle Elemente ausblenden"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 KI-Vorschläge"
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "Notiz #%(id)s wurde erfolgreich hinzugefügt"
+
+msgid "Error creating note"
+msgstr "Fehler beim Erstellen der Notiz"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL wird in die Zwischenablage kopiert"
+
+msgid "WebSearch Link"
+msgstr "WebSuche Link"

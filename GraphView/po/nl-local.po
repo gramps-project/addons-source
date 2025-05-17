@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"PO-Revision-Date: 2025-04-14 22:32+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Graph View"
 msgstr "Grafiekweergave"
@@ -21,16 +21,16 @@ msgid "Show IDs"
 msgstr "IDs weergeven"
 
 msgid "Show avatars"
-msgstr "Toon avatars"
+msgstr "Avatars weergeven"
 
 msgid "Highlight the home person"
 msgstr "Markeer de centrale persoon"
 
 msgid "Show full dates"
-msgstr "Toon volledige datums"
+msgstr "Volledige datums weergeven"
 
 msgid "Show places"
-msgstr "Toon locaties"
+msgstr "Locaties weergeven"
 
 msgid "Vertical: Top to Bottom"
 msgstr "Verticaal: van boven naar beneden"
@@ -99,7 +99,7 @@ msgid "Themes"
 msgstr "Thema's"
 
 msgid "Show animation"
-msgstr "Toon animatie"
+msgstr "Animatie afspelen"
 
 msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "Animatiesnelheid (1..5 en 5 is het langzaamst)"
@@ -117,17 +117,18 @@ msgid "Also apply search by all database."
 msgstr "Pas ook zoeken door de gehele database toe."
 
 msgid "Show person images"
-msgstr "Toon persoonsafbeeldingen"
+msgstr "Persoonsafbeeldingen weergeven"
 
 msgid "Show persons thumbnails in search result list."
 msgstr "Toon miniaturen van personen in de lijst met zoekresultaten."
 
 msgid "Show bookmarked first"
-msgstr "Toon personen met een bladwijzer eerst"
+msgstr "Personen met een bladwijzer eerst weergeven"
 
 msgid "Show bookmarked persons first in search result list."
 msgstr ""
-"Toon personen met een bladwijzer als eerste in de lijst met zoekresultaten."
+"Personen met een bladwijzer als eerste weergeven in de lijst met "
+"zoekresultaten."
 
 msgid "Search"
 msgstr "Zoeken"

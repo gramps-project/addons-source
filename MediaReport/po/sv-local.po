@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 16:41+0000\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"POT-Creation-Date: 2025-03-09 22:38+0000\n"
+"PO-Revision-Date: 2025-04-29 17:58+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Media Report"
 msgstr "Mediarapport"
@@ -75,5 +75,13 @@ msgstr "Taggar, notiser och attribut kommer att tas med"
 msgid "Media width"
 msgstr "Mediabredd"
 
+#, no-python-format
+msgid "Maximum media width in % of available page width."
+msgstr "Maximal mediabredd i % av den tillgängliga sidbredden."
+
 msgid "Media height"
 msgstr "Mediahöjd"
+
+#, no-python-format
+msgid "Maximum media height in % of available page height."
+msgstr "Maximal mediahöjd i % av den tillgängliga sidhöjden."

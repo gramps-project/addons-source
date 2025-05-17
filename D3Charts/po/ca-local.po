@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-03-09 20:50+0000\n"
+"PO-Revision-Date: 2025-05-03 15:40+0000\n"
 "Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
@@ -12,7 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Error en escriure {target_path}: {message}"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -58,6 +62,9 @@ msgstr "El camí de destinació per als fitxers generats."
 msgid "The destination file name for html content."
 msgstr "El nom del fitxer de destinació per al contingut HTML."
 
+msgid "Ancestral Collapsible Tree"
+msgstr "Arbre ancestral colapsable"
+
 msgid "Descendant Indented Tree"
 msgstr "Arbre de descendents amb sagnat"
 
@@ -88,6 +95,10 @@ msgid ""
 msgstr ""
 "El directori de destinació %s no existeix.\n"
 "Vols intentar crear-lo?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "No s’ha pogut crear {target_path}: {message}"
 
 msgid "Include contraction level"
 msgstr "Inclou el nivell de contracció"

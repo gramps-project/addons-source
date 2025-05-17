@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "The place was not found."
+msgstr "Paikkaa ei löydy."
+
+msgid "The place was not identified."
+msgstr "Paikka ei ole tunnistettu."
+
+msgid "Add addess as place"
+msgstr "Lisää osoite sijainniksi"
+
+msgid "Search for:"
+msgstr "Hae:"
+
+msgid "Found place:"
+msgstr "Löydetty sijainti:"
+
+msgid "No DB entry is selected"
+msgstr "Tietokantamerkintää ei ole valittu"
+
+msgid "Postal-Code:"
+msgstr "Postinumero:"
+
+msgid "Show found place externally in Google Maps"
+msgstr "Näytä löydetty paikka ulkoisesti Google Mapsissa"
+
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"Ota viimeksi napsautettu sijainti\n"
+"maantieteelliseltä kartalta"
+
+msgid "Search location from DB"
+msgstr "Hae sijaintia tietokannasta"
+
+msgid "Apply geo location to Database"
+msgstr "Käytä maantieteellistä sijaintia tietokannassa"
+
+msgid "Go"
+msgstr "Mene"
+
+msgid "Show help"
+msgstr "Näytä ohje"

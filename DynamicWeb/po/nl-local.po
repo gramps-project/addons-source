@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-25 10:12+0000\n"
+"PO-Revision-Date: 2025-04-14 22:32+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -131,7 +131,7 @@ msgid "Configure"
 msgstr "Configureer"
 
 msgid "DynamicWeb_report#Help"
-msgstr "DynamicWeb_report#Help"
+msgstr "DynamicWeb_report#Hulp"
 
 msgid "Examples"
 msgstr "Voorbeelden"
@@ -274,16 +274,16 @@ msgstr ""
 "onderstaande lijsten."
 
 msgid "Show _MENU_ entries"
-msgstr "Toon _MENU_-vermeldingen"
+msgstr "_MENU_-vermeldingen weergeven"
 
 msgid "Show duplicates"
-msgstr "Toon duplicaten"
+msgstr "Duplicaten weergeven"
 
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Toont 0 tot 0 van 0 vermeldingen"
 
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
-msgstr "Toont _START_ tot _END_ van _TOTAL_ vermeldingen"
+msgstr "_START_ tot _END_ van _TOTAL_ vermeldingen weergeven"
 
 msgid "Sort by:"
 msgstr "Sorteer op:"

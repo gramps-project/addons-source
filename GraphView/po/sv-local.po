@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"PO-Revision-Date: 2025-04-29 17:58+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,10 +12,82 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Graph View"
 msgstr "Diagramvy"
+
+msgid "Show IDs"
+msgstr "Visa IDs"
+
+msgid "Show avatars"
+msgstr "Visa avatarer"
+
+msgid "Highlight the home person"
+msgstr "Markera hempersonen"
+
+msgid "Show full dates"
+msgstr "Visa fullständiga datum"
+
+msgid "Show places"
+msgstr "Visa platser"
+
+msgid "Vertical: Top to Bottom"
+msgstr "Vertikal: Uppifrån och ner"
+
+msgid "Vertical: Bottom to Top"
+msgstr "Vertikal: Nerifrån och upp"
+
+msgid "Horizontal: Left to Right"
+msgstr "Horisontell: Vänster till höger"
+
+msgid "Horizontal: Right to Left"
+msgstr "Horisontell: Höger till vänster"
+
+msgid "Time Direction"
+msgstr "Tidsriktning"
+
+msgid "Person theme"
+msgstr "Persontema"
+
+msgid "Path color to home person"
+msgstr "Målfärg till hemperson"
+
+msgid "Font:"
+msgstr "Typsnitt:"
+
+msgid "Avatars style"
+msgstr "Stil på avatarer"
+
+msgid "Choose male avatar"
+msgstr "Välj mansavatar"
+
+msgid "Choose female avatar"
+msgstr "Välj kvinnoavatar"
+
+msgid "Unknown avatar:"
+msgstr "Okänd avatar:"
+
+msgid "Other avatar:"
+msgstr "Annan avatar:"
+
+msgid "Active person border size"
+msgstr "Kantstorlek för aktiv person"
+
+msgid "Person border size"
+msgstr "Kantstorlek på person"
+
+msgid "Themes"
+msgstr "Teman"
+
+msgid "Show animation"
+msgstr "Visa animation"
+
+msgid "Animation"
+msgstr "Animation"
+
+msgid "Show person images"
+msgstr "Visa personbilder"
 
 msgid "Search"
 msgstr "Sök"

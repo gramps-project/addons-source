@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-11 09:13+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,23 +12,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Dynamic Web Report"
 msgstr "Dynamischer Webbericht"
 
 msgid "Produces dynamic web pages for the database"
-msgstr "Erstellt dynamische Webseiten aus der Datenbank"
+msgstr "Erzeugt dynamische Webseiten für die Datenbank"
 
 msgid "SVG graphical tree"
-msgstr "Grafischer SVG-Baum"
+msgstr "SVG-Grafikbaum"
 
 msgid "Indexes pages"
-msgstr "Indiziert Seiten"
+msgstr "Index-Seiten"
 
 #, python-format
 msgid "Custom page %(index)i"
-msgstr "Selbst definierte Seite %(index)i"
+msgstr "Benutzerdefinierte Seite %(index)i"
 
 msgid "Ascending tree"
 msgstr "Aufsteigender Baum"
@@ -37,35 +37,35 @@ msgid "Descending tree"
 msgstr "Absteigender Baum"
 
 msgid "Descending tree with spouses"
-msgstr "Absteigender Baum mit (Ehe-)Partner"
+msgstr "Absteigender Baum mit Partnern"
 
 msgid "Ascending and descending tree"
-msgstr "Aufsteigender Baum mit (Ehe-)Partner"
+msgstr "Aufsteigender und absteigender Baum"
 
 msgid "Ascending and descending tree with spouses"
-msgstr "Auf- und absteigender Baum mit (Ehe-)Partner"
+msgstr "Auf- und absteigender Baum mit Partnern"
 
 msgid "Size proportional to number of ancestors"
 msgstr "Größe proportional zur Anzahl der Vorfahren"
 
 msgid "Homogeneous parents distribution"
-msgstr "Einheitliche Elternverteilung"
+msgstr "Homogene Verteilung der Eltern"
 
 msgid "Age based gradient"
-msgstr "Auf Alter basierender Farbverlauf"
+msgstr "Altersabhängiger Farbverlauf"
 
 msgid "Gradient"
 msgstr "Farbverlauf"
 
 #, python-format
 msgid "Could not create the directory: %(path)s"
-msgstr "Konnte Verzeichnis %(path)s nicht anlegen"
+msgstr "Das Verzeichnis konnte nicht erstellt werden: %(path)s"
 
 msgid "Dynamic Web Site Report"
-msgstr "Dynamische Website"
+msgstr "Dynamischer Websitebericht"
 
 msgid "Exporting family tree data ..."
-msgstr "Exportiere Stammbaum-Daten ..."
+msgstr "Exportieren von Stammbaumdaten ..."
 
 #, python-format
 msgid "%(type)s: %(value)s"
@@ -73,16 +73,16 @@ msgstr "%(type)s: %(value)s"
 
 #, python-format
 msgid "Impossible to convert \"%(path)s\" to a relative path."
-msgstr "Konvertierung von \"%(path)s\" in einen relativen Pfad nicht möglich."
+msgstr "Es ist nicht möglich, „%(path)s\" in einen relativen Pfad umzuwandeln."
 
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr ""
-"Die Seitenkonfiguration ist ungültig: Mehrere Seiten haben den gleichen "
+"Die Seitenkonfiguration ist nicht gültig: mehrere Seiten haben den gleichen "
 "Inhalt"
 
 msgid "DynWeb|Home"
-msgstr "Anfang"
+msgstr "Startseite"
 
 msgid "Tree"
 msgstr "Baum"
@@ -94,41 +94,41 @@ msgid "Indexes"
 msgstr "Indizes"
 
 msgid "(filtered from _MAX_ total entries)"
-msgstr "(aus _MAX_ Gesamteinträgen gefiltert)"
+msgstr "(gefiltert aus _MAX_ Gesamteinträgen)"
 
 #, python-format
 msgid "(m. %s)"
 msgstr "(⚭ %s)"
 
 msgid "(sort by name)"
-msgstr "(nach Name sortiert)"
+msgstr "(nach Namen sortieren)"
 
 msgid "(sort by quantity)"
-msgstr "(nach Anzahl sortiert)"
+msgstr "(nach Anzahl sortieren)"
 
 msgid ": activate to sort column ascending"
-msgstr ": aktiviere um Spalte aufsteigend zu sortieren"
+msgstr ": aktivieren, um die Spalte aufsteigend zu sortieren"
 
 msgid ": activate to sort column descending"
-msgstr ": aktiviere um Spalte absteigend zu sortieren"
+msgstr ": aktivieren, um Spalte absteigend zu sortieren"
 
 msgid ""
 "<p>This page provides the SVG raw code.<br>Copy the contents into a text "
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
 "is UTF-8.</p>"
 msgstr ""
-"<p>Diese Seite beinhaltet den grundlegenden SVG-Code.<br>Kopiere den Inhalt "
-"in einen Texteditor und speichere ihn als eine SVG-Datei.<br>Stelle dabei "
-"sicher, dass die Kodierung des Texteditors UTF-8 ist.</p>"
+"<p>Diese Seite enthält den SVG-Rohcode.<br>Kopiere den Inhalt in einen "
+"Texteditor und speichere ihn als SVG-Datei.<br>Stelle sicher, dass die "
+"Kodierung des Texteditors UTF-8 ist.</p>"
 
 msgid "Alternate Name"
 msgstr "Alternativer Name"
 
 msgid "Click on the map to show it full-screen"
-msgstr "Klicke auf die Karte um sie auf dem ganzen Bildschirm zu zeigen"
+msgstr "Klicke auf die Karte, um sie im Vollbildmodus anzuzeigen"
 
 msgid "Configure"
-msgstr "Konfiguriere"
+msgstr "Konfigurieren"
 
 msgid "DynamicWeb_report#Help"
 msgstr "DynamischerWeb_Bericht#Hilfe"
@@ -149,22 +149,22 @@ msgid "File ready"
 msgstr "Datei fertig"
 
 msgid "Include dates columns on the index pages"
-msgstr "Füge Datumsspalten auf den Indexseiten hinzu"
+msgstr "Datumsspalten auf den Indexseiten einfügen"
 
 msgid "Include a column for media path on the index pages"
-msgstr "Füge auf den Indexseiten eine Spalte für den Medienpfad ein"
+msgstr "Eine Spalte für den Medienpfad auf den Indexseiten einfügen"
 
 msgid "Include a map in the individuals and family pages"
-msgstr "Karte auf den Personen- und Familienseiten aufnehmen"
+msgstr "Eine Karte in die Personen- und Familienseiten einfügen"
 
 msgid "Include half and/ or step-siblings on the individual pages"
-msgstr "Halb- und/oder Stiefgeschwister auf den Personenseiten aufnehmen"
+msgstr "Halb- und/oder Stiefgeschwister auf den Personenseiten einbeziehen"
 
 msgid "Include references in indexes"
-msgstr "Referenzen in den Indices ausgeben"
+msgstr "Referenzen in Indizes aufnehmen"
 
 msgid "Insert sources author in the sources title"
-msgstr "Autor der Quellen in den Quelltitel einfügen"
+msgstr "Quellenautor in den Quellentitel einfügen"
 
 msgid "M"
 msgstr "M"
@@ -176,16 +176,16 @@ msgid "Media Index"
 msgstr "Medienindex"
 
 msgid "Media Type"
-msgstr "Medientyp"
+msgstr "Medienart"
 
 msgid "No data available in table"
 msgstr "Keine Daten in der Tabelle verfügbar"
 
 msgid "No matching records found"
-msgstr "Keine passenden Einträge gefunden"
+msgstr "Keine passenden Datensätze gefunden"
 
 msgid "No matching surname."
-msgstr "Keine passenden Nachnahmen."
+msgstr "Kein passender Nachname."
 
 msgid "Other participants"
 msgstr "Andere Beteiligte"
@@ -203,7 +203,7 @@ msgid "Persons"
 msgstr "Personen"
 
 msgid "Places Index"
-msgstr "Ortsindex"
+msgstr "Orteindex"
 
 msgid "Preparing file ..."
 msgstr "Datei vorbereiten ..."
@@ -224,7 +224,7 @@ msgid "Restore default settings"
 msgstr "Standardeinstellungen wiederherstellen"
 
 msgid "Show last modification time"
-msgstr "Uhrzeit der letzten Änderung anzeigen"
+msgstr "Zeit der letzten Änderung anzeigen"
 
 msgid "SVG tree children distribution"
 msgstr "SVG-Baum Kinderverteilung"
@@ -233,10 +233,10 @@ msgid "SVG tree configuration"
 msgstr "SVG Baumkonfiguration"
 
 msgid "SVG tree graph shape"
-msgstr "SVG-Baum Grafikform"
+msgstr "SVG-Baumdiagrammform"
 
 msgid "SVG tree graph type"
-msgstr "SVG-Baum Grafiktyp"
+msgstr "SVG-Baumdiagrammtyp"
 
 msgid "SVG tree parents distribution"
 msgstr "SVG-Baum Elternverteilung"
@@ -248,78 +248,77 @@ msgid "Search:"
 msgstr "Suchen:"
 
 msgid "Select the background color scheme"
-msgstr "Wähle das Schema für die Hintergrundfarbe"
+msgstr "Wähle das Farbschema für den Hintergrund"
 
 msgid "Select the children distribution (fan charts only)"
-msgstr "Wähle die Verteilung der Kinder (nur Fächergrafik)"
+msgstr "Wähle die Verteilung der Kinder (nur Fächergrafiken)"
 
 msgid "Select the number of ascending generations"
-msgstr "Wähle die Anzahl der Vorfahren-Generationen"
+msgstr "Wähle die Anzahl der aufsteigenden Generationen"
 
 msgid "Select the number of descending generations"
-msgstr "Wähle die Anzahl der Nachfahren-Generationen"
+msgstr "Wähle die Anzahl der absteigenden Generationen"
 
 msgid "Select the parents distribution (fan charts only)"
-msgstr "Wähle die Verteilung der Eltern (nur Fächergrafik)"
+msgstr "Wähle die Verteilung der Eltern (nur Fächergrafiken)"
 
 msgid "Select the shape of graph"
-msgstr "Wähle die Form der Grafik"
+msgstr "Wähle die Form des Diagramms"
 
 msgid "Select the type of graph"
-msgstr "Wähle den Typ der Grafik"
+msgstr "Wählen Sie die Art des Diagramms"
 
 msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr ""
-"Mehrere Übereinstimmungen.<br>Präzisiere deine Suche oder wähle in der Liste "
-"unten."
+"Mehrere Treffer.<br>Suche genauer oder wähle aus den untenstehenden Listen."
 
 msgid "Show _MENU_ entries"
 msgstr "Zeige _MENU_ Einträge"
 
 msgid "Show duplicates"
-msgstr "Zeige Duplikate"
+msgstr "Duplikate anzeigen"
 
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Zeige 0 bis 0 von 0 Einträgen"
 
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
-msgstr "Zeige _START_ bis _END_ von _TOTAL_ Einträgen"
+msgstr "Anzeige von _START_ bis _ENDE_ der _GESAMT_ Einträge"
 
 msgid "Sort by:"
-msgstr "Sortiere nach:"
+msgstr "Sortieren nach:"
 
 msgid "Sources Index"
-msgstr "Quellen Index"
+msgstr "Quellenverzeichnis"
 
 msgid "Suppress Gramps ID"
-msgstr "Gramps-IDs ausblenden"
+msgstr "Gramps-ID unterdrücken"
 
 msgid "Surnames Index"
-msgstr "Nachnahmensindex"
+msgstr "Nachnamenverzeichnis"
 
 msgid "U"
 msgstr "U"
 
 msgid "Use tabbed panels instead of sections"
-msgstr "Verwende Registerkarten anstatt Abschnitten"
+msgstr "Registerkarten anstelle von Abschnitten verwenden"
 
 msgid "Use the search box above in order to find a person."
-msgstr "Verwende die obige Suchbox um eine Person zu finden."
+msgstr "Verwende das obige Suchfeld, um eine Person zu finden."
 
 msgid "Use a table format for the surnames index"
-msgstr "Verwenden ein Tabellenformat für den Nachnamenindex"
+msgstr "Verwende ein Tabellenformat für das Nachnamenverzeichnis"
 
 msgid "Use a table format for the persons index"
-msgstr "Verwenden ein Tabellenformat für den Personenindex"
+msgstr "Verwende ein Tabellenformat für das Personenverzeichnis"
 
 msgid "Use a table format for the families index"
-msgstr "Verwenden ein Tabellenformat für den Familienindex"
+msgstr "Verwende ein Tabellenformat für das Familienverzeichnis"
 
 msgid "Use a table format for the sources index"
-msgstr "Verwenden ein Tabellenformat für den Quellenindex"
+msgstr "Verwende ein Tabellenformat für das Quellenverzeichnis"
 
 msgid "Use a table format for the places index"
-msgstr "Verwenden ein Tabellenformat für den Ortsindex"
+msgstr "Verwende ein Tabellenformat für das Ortsverzeichnis"
 
 msgid "Used for family"
 msgstr "Verwendet für Familie"
@@ -343,8 +342,8 @@ msgid ""
 "Whether to use a special color for the persons that appear several times in "
 "the SVG tree"
 msgstr ""
-"Gibt an, ob für die Personen, die mehrmals im SVG-Baum erscheinen, eine "
-"spezielle Farbe verwendet werden soll"
+"Ob eine spezielle Farbe für die Personen verwendet werden soll, die mehrmals "
+"im SVG-Baum erscheinen"
 
 msgid "Without name"
 msgstr "Ohne Name"
@@ -356,7 +355,7 @@ msgid "Without title"
 msgstr "Ohne Titel"
 
 msgid "Zoom in"
-msgstr "Hineinzoomen"
+msgstr "Heranzoomen"
 
 msgid "Zoom out"
 msgstr "Herauszoomen"
@@ -370,31 +369,32 @@ msgstr "Kopierfehler: %(error)s"
 
 #, python-format
 msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
-msgstr "Kopieren von \"%(src)s\" nach \"%(dst)s\" nicht möglich"
+msgstr "Kopieren von „%(src)s“ nach „%(dst)s“ nicht möglich"
 
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
-msgstr "Kann Webseitenvorlage von \"%(path)s\" nicht kopieren"
+msgstr "Website-Vorlagendateien können nicht von „%(path)s“ kopiert werden"
 
 #, python-format
 msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
-msgstr "Behalte \"%(dst)s\" (neuer als \"%(src)s\")"
+msgstr "Behalten von „%(dst)s“ (neuer als „%(src)s“)"
 
 #, python-format
 msgid "Copying \"%(src)s\" to \"%(dst)s\""
-msgstr "Kopiere \"%(src)s\" nach \"%(dst)s\""
+msgstr "Kopieren von „%(src)s“ nach „%(dst)s“"
 
 #, python-format
 msgid "Unable to overwrite archive file \"%(path)s\""
-msgstr "Kann Archivdatei \"%(path)s\" nicht überschreiben"
+msgstr "Archivdatei „%(path)s“ kann nicht überschrieben werden"
 
 #, python-format
 msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
-msgstr "Kann Datei \"%(file)s\" dem Archiv \"%(archive)s\" nicht hinzufügen"
+msgstr ""
+"Datei „%(file)s“ kann nicht zum Archiv „%(archive)s“ hinzugefügt werden"
 
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
-msgstr "DynamicWebReport ignoriert Linktype '%(class)s'"
+msgstr "DynamischerWebBericht ignoriert den Verknüpfungstyp '%(class)s'"
 
 #, python-format
 msgid "Family of %(father)s"
@@ -440,7 +440,7 @@ msgstr ""
 "relative URL „<link>“ ersetzt.\n"
 
 msgid "Store web pages in archive"
-msgstr "Speichere Webseiten in Archiv"
+msgstr "Webseiten im Archiv speichern"
 
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
@@ -453,35 +453,36 @@ msgid "Archive file"
 msgstr "Archivdatei"
 
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
-msgstr "Der Archivdateiname (mit \".zip\" or \".tgz\" extension)"
+msgstr "Der Name der Archivdatei (mit der Erweiterung „.zip“ oder „.tgz“)"
 
 msgid "Web site title"
-msgstr "Webseitentitel"
+msgstr "Titel der Website"
 
 msgid "The title of the web site"
 msgstr "Der Titel der Website"
 
 msgid "Select filter to restrict people that appear on web site"
 msgstr ""
-"Filter wählen, um Personen zu begrenzen, die auf der Website erscheinen"
+"Wähle einen Filter, um die Personen einzuschränken, die auf der Website "
+"erscheinen"
 
 msgid "Name format (short)"
 msgstr "Namensformat (kurz)"
 
 msgid "Select the format to display a shorter version of the names"
-msgstr "Wähle das Format aus um eine kürzere Version der Namen anzuzeigen"
+msgstr "Wähle das Format, um eine kürzere Version der Namen anzuzeigen"
 
 msgid "Web site template"
-msgstr "Webseitenvorlage"
+msgstr "Websitevorlage"
 
 msgid "Select the template of the web site"
-msgstr "Wähle die Vorlage der Website aus"
+msgstr "Wähle die Vorlage für die Website"
 
 msgid "Include records marked private"
 msgstr "Als vertraulich gekennzeichnete Datensätze einbeziehen"
 
 msgid "Whether to include private objects"
-msgstr "Gibt an, ob vertrauliche Objekte eingeschlossen werden sollen"
+msgstr "Ob vertrauliche Objekte einbezogen werden sollen"
 
 msgid "Include Last Name Only"
 msgstr "Nur Nachname einschließen"
@@ -497,27 +498,25 @@ msgstr ""
 "tot sind"
 
 msgid "Export notes"
-msgstr "Notizen exportiere"
+msgstr "Notizen exportieren"
 
 msgid "Whether to export notes in the web pages"
-msgstr "Legt fest, ob Notizen exportiert in the Website werden sollen"
+msgstr "Ob Notizen auf den Webseiten exportiert werden sollen"
 
 msgid "Export sources"
-msgstr "Quellen exportiere"
+msgstr "Quellen exportieren"
 
 msgid "Whether to export sources and citations in the web pages"
-msgstr ""
-"Gibt an, ob Quellen und Fundstellen auf den Webseiten exportiert werden "
-"sollen"
+msgstr "Ob Quellen und Funstellen auf die Webseiten exportiert werden sollen"
 
 msgid "Export addresses"
 msgstr "Adressen exportieren"
 
 msgid "Whether to export addresses in the web pages"
-msgstr "Legt fest, ob Adressen in die Website exportiert werden sollen"
+msgstr "Ob Adressen in den Webseiten exportiert werden sollen"
 
 msgid "Whether or not to include the Repository Pages."
-msgstr "Ob Aufbewahrungsorteseiten enthalten sind."
+msgstr "Ob die Aufbewahrungsortseiten aufgenommen werden sollen oder nicht."
 
 msgid "Include images and media"
 msgstr "Bilder und Medien aufnehmen"
@@ -526,34 +525,35 @@ msgid "Whether to include images and media in the web pages"
 msgstr "Ob Bilder und Medien in die Webseiten aufgenommen werden sollen"
 
 msgid "Copy, rename files with an internal Gramps identifier"
-msgstr "Kopieren, Dateien umbenennen mit einer internen Gramps-Kennung"
+msgstr "Kopieren, Umbenennen von Dateien mit einer internen Gramps-Kennung"
 
 msgid "Copy, keep file names unchanged"
 msgstr "Kopieren, Dateinamen unverändert lassen"
 
 msgid "Do not copy, reference existing files"
-msgstr "Nicht kopieren, auf existierende Dateien verweisen"
+msgstr "Nicht kopieren, auf bestehende Dateien verweisen"
 
 msgid "Images and media"
 msgstr "Bilder und Medien"
 
 msgid "Whether to make a copy of the media"
-msgstr "Ob eine Kopie der Medien erstellt wird"
+msgstr "Ob eine Kopie der Medien erstellt werden soll"
 
 msgid "Print the notes type"
-msgstr "Notiztyp aufnehmen"
+msgstr "Den Notizentyp drucken"
 
 msgid "Whether to print the notes type in the notes text"
-msgstr "Legt fest, ob der Notiztype ausgegeben wird"
+msgstr "Ob der Notizentyp im Notizentext gedruckt werden soll"
 
 msgid "Print place pages"
-msgstr "Ortsseiten ausgeben"
+msgstr "Ortsseiten drucken"
 
 msgid "Whether to show pages for the places"
-msgstr "Legt fest, ob Seiten für die Orte gezeigt werden"
+msgstr "Ob Seiten für die Orte angezeigt werden sollen"
 
 msgid "Choose your choice of map service for creating the Place Map Pages"
-msgstr "Wählen den Kartendienst deiner Wahl zum Erstellen der Ortskartenseiten"
+msgstr ""
+"Wähle einen Kartendienst deiner Wahl für die Erstellung der Ortskartenseiten"
 
 msgid "Google map API key"
 msgstr "Google map API-Schlüssel"
@@ -562,7 +562,7 @@ msgid "The API key used for the Google map"
 msgstr "Der für Google map verwendete API-Schlüssel"
 
 msgid "Whether or not to include family pages"
-msgstr "Legt fest, ob Familienseiten aufgenommen werden"
+msgstr "Ob Familienseiten aufgenommen werden sollen oder nicht"
 
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
@@ -571,26 +571,26 @@ msgstr ""
 "einbezogen werden sollen"
 
 msgid "Enable page configuration"
-msgstr "Erlaube Seitenkonfiguration"
+msgstr "Seitenkonfiguration aktivieren"
 
 msgid "Whether to enable page configuration"
-msgstr "Ob eine Seitenkonfiguration erlaubt wird"
+msgstr "Ob die Seitenkonfiguration aktiviert werden soll"
 
 msgid "Whether to use tabbed panels for the different sections of the pages."
 msgstr ""
-"Gibt an, ob Registerkarten für die verschiedenen Abschnitte der Seiten "
-"verwendet werden sollen."
+"Ob für die verschiedenen Abschnitte der Seiten Registerkarten verwendet "
+"werden sollen."
 
 msgid "Whether to show the last modification time in the pages footer"
 msgstr ""
-"Gibt an, ob die Uhrzeit der letzten Änderung in der Fußzeile der Seite "
-"angezeigt werden soll"
+"Ob die Zeit der letzten Änderung in der Fußzeile der Seite angezeigt werden "
+"soll"
 
 msgid "Whether to insert sources author in the sources title"
-msgstr "Ob der Autor der Quellen in den Quelltitel eingefügt wird"
+msgstr "Ob der Autor der Quelle in den Titel der Quelle eingefügt werden soll"
 
 msgid "Whether to hide the Gramps ID"
-msgstr "Ob die Gramps ID verborgen wird"
+msgstr "Ob die Gramps ID versteckt werden soll"
 
 msgid "List"
 msgstr "Liste"
@@ -631,17 +631,17 @@ msgstr "Das Standardformat für den Orteindex"
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
-"Ob Datumsspalten (Geburt, Tod, Hochzeit) in die Indexseiten aufgenommen "
-"werden"
+"Ob Spalten mit Daten (Geburt, Tod, Heirat) auf den Indexseiten enthalten "
+"sein sollen"
 
 msgid "Generate a families index page"
-msgstr "Erstelle eine Familienindex Seite"
+msgstr "Erzeugen einer Familienindexseite"
 
 msgid "Whether to generate an index page for families"
-msgstr "Ob eine Indexseite für Familien erstellt wird"
+msgstr "Ob eine Indexseite für Familien erstellt werden soll"
 
 msgid "Whether to include a column showing the media path"
-msgstr "Ob eine Spalte für den Medienpfad aufgenommen wird"
+msgstr "Ob eine Spalte mit dem Medienpfad eingefügt werden soll"
 
 msgid ""
 "Whether to include the references to the items in the index pages. For "
@@ -660,7 +660,7 @@ msgstr ""
 "Die Standardanzahl von Einträgen, die auf einer Indexseite angezeigt werden"
 
 msgid "Maximum number of generations"
-msgstr "Maximale Anzahl der Generationen"
+msgstr "Maximale Anzahl von Generationen"
 
 msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
@@ -685,7 +685,8 @@ msgstr ""
 
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
-msgstr "Wähle das Hintergrundfarbschema für die Personen in der SVG-Baumgrafik"
+msgstr ""
+"Wähle die Farbschema für den Hintergrund der Personen im SVG-Baumdiagramm"
 
 msgid "Theme"
 msgstr "Thema"
@@ -697,36 +698,37 @@ msgid "A note to be used as the page header"
 msgstr "Eine Notiz, die als Seitenüberschrift verwendet werden soll"
 
 msgid "HTML user brand name / icon"
-msgstr "HTML Benutzer-Markenzeichen / -Symbol"
+msgstr "HTML-Benutzermarke/Symbol"
 
 msgid "A note to be used as the brand name or image in the menu"
-msgstr "Eine Notiz, die als Markenzeichen oder Bild im Menü verwendet wird"
+msgstr "Eine Notiz, die als Markenname oder Bild im Menü verwendet werden soll"
 
 msgid "Custom pages"
 msgstr "Benutzerdefinierte Seiten"
 
 #, python-format
 msgid "Title for the custom page %(index)i"
-msgstr "Titel der benutzerdefinierte Seite %(index)i"
+msgstr "Titel für die benutzerdefinierte Seite %(index)i"
 
 #, python-format
 msgid "Name for the custom page %(index)i"
-msgstr "Name der benutzerdefinierte Seite %(index)i"
+msgstr "Name für die benutzerdefinierte Seite %(index)i"
 
 #, python-format
 msgid "Note for custom page %(index)i"
-msgstr "Notiz der benutzerdefinierte Seite %(index)i"
+msgstr "Notiz für benutzerdefinierte Seite %(index)i"
 
 msgid "A note to be used for the custom page content.\n"
 msgstr ""
-"Eine Notiz, welche als Inhalt der benutzerdefinierten Seite verwendet wird.\n"
+"Eine Notiz, die für den Inhalt der benutzerdefinierten Seite verwendet "
+"wird.\n"
 
 #, python-format
 msgid "Menu for the custom page %(index)i"
-msgstr "Menü der benutzerdefinierten Seite %(index)i"
+msgstr "Menü für die benutzerdefinierte Seite %(index)i"
 
 msgid "Whether to print a menu for the custom page"
-msgstr "Legt fest, ob ein Menü für die benutzerdefinierte Seite angezeigt wird"
+msgstr "Ob ein Menü für die benutzerdefinierte Seite gedruckt werden soll"
 
 msgid "Pages selection"
 msgstr "Seitenauswahl"
@@ -735,11 +737,11 @@ msgid "Number of pages"
 msgstr "Anzahl der Seiten"
 
 msgid "Number pages in the web site menu."
-msgstr "Anzahl der Seiten im Webseitenmenü."
+msgstr "Seiten im Menü der Website nummerieren."
 
 #, python-format
 msgid "Contents of page %(index)i"
-msgstr "Inhalt der Seite %(index)i"
+msgstr "Inhalte der Seite %(index)i"
 
 msgid "Contents of the page"
-msgstr "Inhalt der Seite"
+msgstr "Inhalte der Seite"

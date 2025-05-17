@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,13 +12,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Chromosome "
+msgstr "Chromosome "
+
+msgid " Map for "
+msgstr " Carte pour "
+
+msgid "Chr"
+msgstr "Chr"
+
+msgid "Legend"
+msgstr "Légende"
 
 msgid ": Grandparent"
 msgstr ": grand-parent"
 
+#, python-brace-format
+msgid ""
+"\n"
+"{0}\n"
+"{1} cMs"
+msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
+
+msgid " : Starts at "
+msgstr " : Débute à "
+
 msgid " and ends at "
 msgstr " et finit à "
+
+#, python-brace-format
+msgid "{0}"
+msgstr "{0}"
+
+#, python-format
+msgid "%(ancestor1)s and %(ancestor2)s"
+msgstr "%(ancestor1)s et %(ancestor2)s"
 
 #, python-brace-format
 msgid ""
@@ -31,6 +64,16 @@ msgstr ""
 #, python-brace-format
 msgid " Ancestor: {0}"
 msgstr " Ascendant : {0}"
+
+msgid ""
+"Click to make this person active\n"
+"Right-click to edit this person"
+msgstr ""
+"Clic pour rendre cet individu actif\n"
+"Clic-droit pour modifier cet individu"
+
+msgid "DNA Segment Map"
+msgstr "Carte de Segment d'ADN"
 
 msgid "Gramplet showing a matching DNA segment map"
 msgstr "Gramplet affichant une carte des segments ADN en correspondance"

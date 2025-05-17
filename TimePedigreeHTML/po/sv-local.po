@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"PO-Revision-Date: 2025-04-29 17:58+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,58 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Failed writing "
+msgstr "Fel vid skrivning av "
+
+msgid "Destination directory"
+msgstr "Målkatalog"
+
+msgid "Path for generated files"
+msgstr "Målmappen för genererade filer"
 
 msgid "The destination file name for html content."
 msgstr "Målfilnamn för html-innehåll."
+
+msgid "Default Age"
+msgstr "Standardålder"
+
+msgid "Show GrampsID"
+msgstr "Visa Gramps-ID"
+
+msgid "Optimize"
+msgstr "Optimera"
+
+msgid "Male Box Color"
+msgstr "Färg i rutan för män"
+
+msgid "Box background color for male person"
+msgstr "Bakgrundsfärg för rutan på män"
+
+msgid "Female Box Color"
+msgstr "Färg i rutan för kvinnor"
+
+msgid "Box background color for female person"
+msgstr "Bakgrundsfärg för rutan på kvinnor"
+
+msgid "Number of pixel per year"
+msgstr "Antal pixlar per år"
+
+msgid "Offset X Coordinate"
+msgstr "Kompensera X-koordinat"
+
+msgid "Offset Y Coordinate"
+msgstr "Kompensera Y-koordinat"
+
+msgid "Width of a box in pixel"
+msgstr "Bredden på en ruta i pixel"
+
+msgid "Width of the box of a person in pixel"
+msgstr "Bredden på rutan för en person i pixel"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "Horisontellt mellanrum mellan rutor i pixel"
+
+msgid "Timeline Pedigree Report"
+msgstr "Stamtavlerapport med tidslinje"

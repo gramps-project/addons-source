@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "birth abbreviation|b."
 msgstr "n."
@@ -34,6 +34,12 @@ msgstr "dernier_écrit"
 
 msgid "Main"
 msgstr "Principal"
+
+msgid "Orthogonal (right angles in connectors)"
+msgstr "Orthogonal (angles droit dans les connecteurs)"
+
+msgid "Straight (no right angles in connectors)"
+msgstr "Droit (aucun angle droit dans les connecteurs)"
 
 msgid "Curved (curved and straight connectors)"
 msgstr "Incurvé (curved and straight connectors)"
@@ -89,6 +95,17 @@ msgstr "Préfixe de l'url, suffixe"
 msgid "Enter Font Name"
 msgstr "Entrez le nom de la police"
 
+msgid ""
+"Enter the primary font style for the chart.\n"
+"Must already be installed.\n"
+"White Rabbit can be obtained from\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+msgstr ""
+"Entrez la police primaire pour le graphique.\n"
+"Elle doit déjà être installée.\n"
+"La police «White Rabbit» peut être obtenu. à partir de\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+
 msgid "Spacing (inch)"
 msgstr "Espacement (en inch)"
 
@@ -132,8 +149,24 @@ msgstr "Arrière-plan masculin"
 msgid "RGB-color for male box background."
 msgstr "Couleur RGB pour l'arrière-plan masculin."
 
+msgid "Alpha for Male box background (transparent=0, solid=255)."
+msgstr ""
+"Canal alpha pour l'arrière-plan de la boîte masculine (transparent = 0, "
+"solide = 255)."
+
+msgid "RGB-color for Male box edge."
+msgstr "Couleur RVB pour le bord du cadre masculin."
+
 msgid "Female Background"
 msgstr "Arrière-plan féminin"
+
+msgid "RGB-color for Female box background."
+msgstr "Couleur RVB pour le fond du cadre féminin."
+
+msgid "Alpha for Female box background (transparent=0, solid=255)."
+msgstr ""
+"Canal alpha pour l'arrière-plan du cadre féminin (transparent = 0, solide = "
+"255)."
 
 msgid "RGB-color for Female box edge."
 msgstr "Couleur RGB pour le cadre féminin."
@@ -158,6 +191,9 @@ msgstr "Représenter le mariage par l'année seulement."
 msgid "Allow inclusion of private records in chart."
 msgstr "Permettre d'inclure les enregistrements privés dans le graphique."
 
+msgid "Trim"
+msgstr "Raccourcir"
+
 msgid "All ancestors (parents) of selected individuals will not be shown."
 msgstr ""
 "Tous les ancêtres (parents) des individus sélectionnés ne seront pas "
@@ -168,6 +204,9 @@ msgstr "Mise en relief des chemins"
 
 msgid "Direct"
 msgstr "Direct"
+
+msgid "Any"
+msgstr "Tous"
 
 msgid "Default (None)"
 msgstr "Défaut (Aucun)"

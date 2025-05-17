@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-05-02 08:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,10 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Media Verify Tool"
-msgstr "כלי לאימות אוביקטי מדיה"
+msgstr "כלי לאימות מדיה"
 
 msgid "Moved/Renamed Files"
 msgstr "קבצים שהועברו או ששם השתנה"
@@ -40,16 +40,16 @@ msgid "Close the Media Verify Tool"
 msgstr "סגירת הכלי לאימות נתונים"
 
 msgid "Generate"
-msgstr "חילול"
+msgstr "לחולל"
 
 msgid "Generate md5 hashes for media objects"
-msgstr "חילול האש md5 לאוביקטי מדיה"
+msgstr "לחולל האש md5 לעצמי מדיה"
 
 msgid "Verify"
-msgstr "אימות"
+msgstr "לאמת"
 
 msgid "Check media paths and report missing, duplicate and extra files"
-msgstr "בדיקת נתיבי מדיה ודיווח על פריטים חסרים, שכפול וחילוץ קבצים"
+msgstr "לבדוק נתיבי מדיה ולןווח על פריטים חסרים, לשכפל ולחלוץ קבצים"
 
 msgid "Export"
 msgstr "ייצוא"
@@ -58,10 +58,10 @@ msgid "Export the results to a text file"
 msgstr "ייצוא התוצאות לקובץ מלל"
 
 msgid "Fix"
-msgstr "תיקון"
+msgstr "לתקן"
 
 msgid "Fix media paths of moved and renamed files"
-msgstr "תיקון נתיבי מדיה לקבצים שהועברו או ששם השתנה"
+msgstr "לתקן נתיבי מדיה לקבצים שהועברו או ששם השתנה"
 
 msgid "Verify Gramps media using md5 hashes"
 msgstr "לאמת מדית גרמפס תוך שימוש בהאש md5"
@@ -74,13 +74,13 @@ msgstr "ייצוא תוצאות לקובץ מלל"
 
 #, python-format
 msgid "Error when writing the report: %s"
-msgstr "שגיאה בעת כתיבת דוח: %s"
+msgstr "שגיאה בעת כתיבת הדוח: %s"
 
 msgid "Generating media hashes"
-msgstr "חילול האש למדיה"
+msgstr "לחולל האש למדיה"
 
 msgid "Set media hashes"
-msgstr "הגדרת האש לאוביקטי מדיה"
+msgstr "הגדרת האש למדיה"
 
 msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "

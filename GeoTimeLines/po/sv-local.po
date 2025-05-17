@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "TimeLines Map"
+msgstr "GeoTimeLines-karta"
+
+msgid "Almost done"
+msgstr "Nästan klar"
+
+msgid "Gathering data"
+msgstr "Samlar in data"
+
+#, python-format
+msgid "Number of Persons: %s"
+msgstr "Antal personer: %s"
+
+msgid "Number of steps"
+msgstr "Antal steg"
+
+msgid "Type of steps"
+msgstr "Typ av steg"
+
+msgid "TimeLines Map options"
+msgstr "GeoTimeLines-karta alternativ"
+
+msgid "TimeLines map"
+msgstr "GeoTimeLines-karta"

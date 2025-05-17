@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Esivanhempien puu LaTeX-sukupuun avulla"
+
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Jälkeläispuu LaTeX-sukupuun avulla"
+
+msgid "Grandparent Tree"
+msgstr "Isovanhempien puu"
+
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Isovanhempien puu LaTeX-sukupuun avulla"
+
+msgid "Sandclock Tree"
+msgstr "Tiimalasipuu"
+
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "Tiimalasipuu LaTeX-sukupuun avulla"
+
+msgid "Sandclock Tree for a Family"
+msgstr "Perheen tiimalasipuu"
+
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "Perheen tiimalasipuu LaTeX-sukupuun avulla"
+
+msgid "The center family for the report"
+msgstr "Raportin keskusperhe"
+
+msgid "Generations up"
+msgstr "Jälkipolvet"
+
+msgid "Generations down"
+msgstr "Esipolvet"
+
+msgid "Include siblings"
+msgstr "Sisällytä sisarukset"
+
+msgid "Include siblings of ancestors."
+msgstr "Sisällytä esivanhempien sisarukset."
+
+msgid "Include images"
+msgstr "Näytä kuvat"
+
+msgid "Include images of people in the nodes."
+msgstr "Näytä solmuissa henkilökuvat."
+
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "Henkilöllä %s ei ole sekä isän että äidin puoleista isovanhempaa"
+
+msgid "Grandparent family spacing"
+msgstr "Isovanhempien perheiden väli"
+
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Isovanhempien perheiden ylimääräinen väli (mm)"
+
+msgid "First spouse left"
+msgstr "Ensimmäinen puoliso vasemmalla"
+
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+"Useista puolisoista ensimmäinen aina vasemmalle. Tämä voi auttaa vähentämään "
+"yhdysviivojen risteämisiä usean avioliiton yhteydessä."

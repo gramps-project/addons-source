@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet Connexions approfondies"
@@ -30,6 +30,9 @@ msgstr "Pause"
 
 msgid "Copy"
 msgstr "Copie"
+
+msgid "mentioned in note"
+msgstr "mentionné dans la note"
 
 msgid "Note on Family"
 msgstr "Note sur la famille"
@@ -67,7 +70,7 @@ msgstr "  <b>%s</b> (Souche) et\n"
 
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "  <b>%s</b> (la personne active)...\n"
+msgstr "  <b>%s</b> (l'individu actif)…\n"
 
 #, python-format
 msgid ""

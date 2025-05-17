@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"PO-Revision-Date: 2025-04-14 22:32+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid ""
 "LifeLineChartView dependencies are missing. It is not possible to use this "
@@ -29,16 +29,16 @@ msgid "Hide person"
 msgstr "Verberg persoon"
 
 msgid "Show person"
-msgstr "Toon persoon"
+msgstr "Persoon weergeven"
 
 msgid "Show siblings"
-msgstr "Toon broers en zussen"
+msgstr "Broers en zussen weergeven"
 
 msgid "Hide siblings"
 msgstr "Verberg broers en zussen"
 
 msgid "Show ancestors above "
-msgstr "Toon voorouders boven "
+msgstr "Voorouders weergeven boven "
 
 msgid "General Layout"
 msgstr "Algemene indeling"
@@ -71,7 +71,7 @@ msgid "Revert the placement and person selection"
 msgstr "Zet de plaatsing en persoonsselectie terug"
 
 msgid "Open Life Line Chart help"
-msgstr "Open Help van levenslijndiagram"
+msgstr "Open Hulp bij levenslijndiagram"
 
 msgid "Export View as SVG"
 msgstr "Exporteer weergave als SVG"
@@ -107,10 +107,10 @@ msgid "Triangular shape"
 msgstr "Driehoekige vorm"
 
 msgid "Show photos"
-msgstr "Toon foto's"
+msgstr "Foto's weergeven"
 
 msgid "Photos of the individual are shown."
-msgstr "Foto's van het individu worden getoond."
+msgstr "Foto's van de persoon worden weergegeven."
 
 msgid "Photo size"
 msgstr "Foto grootte"
@@ -149,7 +149,7 @@ msgstr ""
 "gebruikt voor het schalen van andere items."
 
 msgid "Show birth label"
-msgstr "Laat het geboortelabel zien"
+msgstr "Geboortelabel weergeven"
 
 msgid "Activate the birth label."
 msgstr "Activeer het geboortelabel."
@@ -204,7 +204,7 @@ msgid "Center"
 msgstr "Midden"
 
 msgid "Show death label"
-msgstr "Toon overlijdenslabel"
+msgstr "Overlijdenslabel weergeven"
 
 msgid "Activate the death label."
 msgstr "Activeer het overlijdenslabel."
@@ -250,7 +250,7 @@ msgid "Text alignment of the death label."
 msgstr "Tekstuitlijning van het overlijdenslabel."
 
 msgid "Show marriage label"
-msgstr "Toon huwelijkslabel"
+msgstr "Huwelijkslabel weergeven"
 
 msgid "Activate the marriage label."
 msgstr "Activeer het huwelijkslabel."
@@ -346,7 +346,7 @@ msgid "none"
 msgstr "geen"
 
 msgid "Show pedigree collapse"
-msgstr "Toon kwartierherhaling"
+msgstr "Kwartierherhaling weergeven"
 
 msgid ""
 "Due to pedigree collapse one individual might appear several times in a "

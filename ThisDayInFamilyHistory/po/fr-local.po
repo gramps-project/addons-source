@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Report only living tree members"
 msgstr "Lister uniquement les membres vivants de l'arbre"
@@ -26,14 +26,56 @@ msgstr "Tri par "
 msgid "Sort in ascending order?"
 msgstr "Trier dans l'ordre ascendant ?"
 
+msgid "January"
+msgstr "Janvier"
+
+msgid "February"
+msgstr "Février"
+
 msgid "March"
 msgstr "Mars"
+
+msgid "April"
+msgstr "Avril"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "June"
+msgstr "Juin"
+
+msgid "July"
+msgstr "Juillet"
+
+msgid "August"
+msgstr "Août"
+
+msgid "September"
+msgstr "Septembre"
+
+msgid "October"
+msgstr "Octobre"
+
+msgid "November"
+msgstr "Novembre"
+
+msgid "December"
+msgstr "Décembre"
 
 msgid "Person Name"
 msgstr "Nom de l'individu"
 
 msgid "Event Year"
 msgstr "Année de l'événement"
+
+msgid "gregorian"
+msgstr "grégorien"
+
+msgid "Unknown father/partner"
+msgstr "Père/partenaire inconnu"
+
+msgid "Unknown mother/partner"
+msgstr "Mère/partenaire inconnu"
 
 msgid " and "
 msgstr " et "
@@ -43,3 +85,214 @@ msgstr "participant inconnu"
 
 msgid "unknown location"
 msgstr "lieu inconnu"
+
+#, python-format
+msgid "%(male_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(male_name)s a été adopté en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(female_name)s a été adoptée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was christened in %(year)s at %(place)s."
+msgstr "%(male_name)s a été baptisé en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was christened in %(year)s at %(place)s."
+msgstr "%(female_name)s a été baptisée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was married in %(year)s at %(place)s."
+msgstr "%(male_name)s s'est marié en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was married in %(year)s at %(place)s."
+msgstr "%(female_name)s s'est mariée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(male_name)s a été baptisé en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(female_name)s a été baptisée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was born in %(year)s at %(place)s."
+msgstr "%(male_name)s est né en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was born in %(year)s at %(place)s."
+msgstr "%(female_name)s est née en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was buried in %(year)s at %(place)s."
+msgstr "%(male_name)s a été inhumé en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was buried in %(year)s at %(place)s."
+msgstr "%(female_name)s a été inhumée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(male_name)s a été confirmé en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(female_name)s a été confirmée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(male_name)s a été incinéré en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(female_name)s a été incinérée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s died in %(year)s at %(place)s."
+msgstr "%(male_name)s est mort en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s died in %(year)s at %(place)s."
+msgstr "%(female_name)s est morte en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr "%(male_name)s a obtenu un diplôme en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr "%(female_name)s a obtenu un diplôme en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr "%(male_name)s a divorcé en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr "%(female_name)s a divorcé en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s filed for divorce in %(year)s at %(place)s."
+msgstr "%(male_name)s a demandé le divorce en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s filed for divorce in %(year)s at %(place)s."
+msgstr "%(female_name)s a demandé le divorce en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was elected in %(year)s at %(place)s."
+msgstr "%(male_name)s a été élu en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was elected in %(year)s at %(place)s."
+msgstr "%(female_name)s a été élue en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s a émigré en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s a émigré en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(male_name)s s'est engagé en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(female_name)s s'est engagée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s received first communion in %(year)s at %(place)s."
+msgstr "%(male_name)s a reçu la première communion en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s received first communion in %(year)s at %(place)s."
+msgstr "%(female_name)s a reçu la première communion en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s graduated in %(year)s at %(place)s."
+msgstr "%(male_name)s a obtenu son diplôme en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s graduated in %(year)s at %(place)s."
+msgstr "%(female_name)s a obtenu son diplôme en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s a immigré en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s a immigré en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s got married in %(year)s at %(place)s."
+msgstr "%(male_name)s s'est marié en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s got married in %(year)s at %(place)s."
+msgstr "%(female_name)s s'est mariée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr "%(male_name)s a obtenu un contrat de mariage en %(year)s à %(place)s."
+
+#, python-format
+msgid ""
+"%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s a obtenu un contrat de mariage en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s entered military service in %(year)s at %(place)s."
+msgstr "%(male_name)s est entré en service militaire en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s entered military service in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s est entrée au service militaire en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s became naturalized in %(year)s at %(place)s."
+msgstr "%(male_name)s a été naturalisé en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s became naturalized in %(year)s at %(place)s."
+msgstr "%(female_name)s a été naturalisée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr "%(male_name)s a reçu un titre en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr "%(female_name)s a reçu un titre en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was ordained in %(year)s at %(place)s."
+msgstr "%(male_name)s a été ordonné en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was ordained in %(year)s at %(place)s."
+msgstr "%(female_name)s a été ordonnée en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was granted probate in %(year)s at %(place)s."
+msgstr "%(male_name)s a obtenu une homologation en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
+msgstr "%(female_name)s a obtenu une homologation en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s retired in %(year)s at %(place)s."
+msgstr "%(male_name)s a pris sa retraite dans %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s retired in %(year)s at %(place)s."
+msgstr "%(female_name)s a pris sa retraite dans %(year)s à %(place)s."

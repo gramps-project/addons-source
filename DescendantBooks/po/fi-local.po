@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
+"POT-Creation-Date: 2025-03-13 22:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,10 +12,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 msgstr ""
 "katso raportti: %(report)s, viite: %(reference)s : %(person)s & %(spouse)s"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Näytetäänkö raportissa toistuvat sukupuut."
+
+msgid "The style used for the title of the page."
+msgstr "Sivun otsikossa käytetty tyyli."
+
+msgid "The style used for the table of contents header."
+msgstr "Sisällysluettelon otsikon tyyli."
+
+msgid "The style used for the table of contents detail."
+msgstr "Sisällysluettelorivin tyyli."
+
+msgid "The style used for the first personal entry."
+msgstr "Henkilön ensimmäisen kappaleen tyyli."

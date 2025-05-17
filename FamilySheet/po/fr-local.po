@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Family Sheet"
 msgstr "Résumé familial"
@@ -23,6 +23,10 @@ msgid ""
 msgstr ""
 "Produit un résumé familial montrant les informations complètes sur "
 "l'individu, ses conjoints et enfants."
+
+#, python-format
+msgid "\\u2192 %s"
+msgstr "\\u2192 %s"
 
 #, python-format
 msgid "Address (%(date)s): %(location)s"
@@ -38,6 +42,10 @@ msgstr "; %(type)s : %(value)s"
 
 msgid "Source references:"
 msgstr "Références de la source :"
+
+#, python-format
+msgid ", page %s"
+msgstr ", page %s"
 
 msgid "Notes:"
 msgstr "Notes :"

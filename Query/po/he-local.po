@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:17+0000\n"
-"PO-Revision-Date: 2025-03-15 15:06+0000\n"
+"PO-Revision-Date: 2025-05-02 08:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Query Gramplet"
 msgstr "גרמפלט שאילתה"
@@ -35,6 +35,10 @@ msgstr "הזנת ביטוי פייתון"
 
 msgid "Enter SQL query"
 msgstr "הזנת שאילתת SQL"
+
+#, python-brace-format
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr "{rows:d} שורות עובדו תוך {secs} שניות.\n"
 
 msgid "Today"
 msgstr "היום"

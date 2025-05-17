@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"PO-Revision-Date: 2025-04-29 17:58+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,11 +12,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #, python-format
 msgid "Family Tree for %s"
 msgstr "Släktträd för %s"
+
+msgid "Paper too small"
+msgstr "För litet papper"
 
 msgid "Anonymous"
 msgstr "Anonym"
@@ -88,6 +91,12 @@ msgstr "Ättlingagenerationer"
 msgid "The number of descendant generations to include in the tree"
 msgstr "Antal ättlingagenerationer som skall tas med i trädet"
 
+msgid "Kekule number of husband"
+msgstr "Kekule-nummer för make"
+
+msgid "Scale to fit on a single page"
+msgstr "Skala för att passa på en enda sida"
+
 msgid "Whether to scale to fit on a single page."
 msgstr "Huruvida skala så att det ryms på en sida."
 
@@ -99,6 +108,9 @@ msgstr "Första generation"
 
 msgid "Second generation"
 msgstr "Andra generation"
+
+msgid "Third generation"
+msgstr "Tredje generationen"
 
 msgid "Male line"
 msgstr "Manlig linje"
@@ -147,6 +159,9 @@ msgstr "Använd dop om födelsehändelse saknas"
 
 msgid "Fall back to burial or cremation if death event missing"
 msgstr "Använd begravning eller kremering om dödshändelse saknas"
+
+msgid "Protect private items"
+msgstr "Skydda privata föremål"
 
 msgid "Include event description"
 msgstr "Tag med händelsebeskrivning"

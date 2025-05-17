@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "Database Differences Report"
+msgstr "Tietokantojen erot raportti"
+
+msgid "Differences between Database and File"
+msgstr "Tietokannan ja tiedoston väliset erot"
+
+msgid "No differences"
+msgstr "Ei eroja"
+
+msgid "Missing items in File that are added in Database"
+msgstr "Tiedostoon lisätty kohteita, jotka puuttuvat tietokannasta"
+
+#, python-format
+msgid "Missing %s: %s"
+msgstr "Puuttuva %s: %s"
+
+msgid "Nothing missing"
+msgstr "Ei puuttuvia"
+
+#, python-format
+msgid "Added %s: %s "
+msgstr "Lisätty %s: %s "
+
+msgid "Nothing added"
+msgstr "Ei lisättyjä"
+
+msgid "Family Tree file"
+msgstr "Sukupuutiedosto"
+
+msgid "Select a .gpkg or .gramps file"
+msgstr "Valitse .gpkg- tai .gramps tiedosto"
+
+msgid "Show items that are different"
+msgstr "Näytä erilaiset kohteet"
+
+msgid "Include items that are different"
+msgstr "Liitä erilaiset kohteet"
+
+msgid "Show items missing from file"
+msgstr "Näytä tiedostosta puuttuvat kohteet"
+
+msgid "Show items added in file"
+msgstr "Näytä tiedostoon lisätyt kohteet"
+
+msgid "Include items in file but not in database"
+msgstr "Lisää kohteet tiedostoon, mutta älä tietokantaan"
+
+msgid "Compares an external database with the current one."
+msgstr "Vertaa ulkoista tietokantaa nykyiseen."

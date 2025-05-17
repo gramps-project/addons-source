@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "Active person"
+msgstr "Aktiivihenkilö"
+
+msgid "Sources?"
+msgstr "Lähteet?"
+
+msgid "Surname, Given"
+msgstr "Sukunimi, Etunimi"
+
+msgid "New person"
+msgstr "Uusi henkilö"
+
+msgid "Add relation"
+msgstr "Lisää sukulaisuus"
+
+msgid "No relation to active person"
+msgstr "Ei aktiivihenkilön sukulainen"
+
+msgid "Add as a Parent"
+msgstr "Lisää vanhemmaksi"
+
+msgid "Add as a Mother"
+msgstr "Lisää äidiksi"
+
+msgid "Add as a Father"
+msgstr "Lisää isäksi"
+
+msgid "Add as a Sibling"
+msgstr "Lisää sisaruksena"
+
+msgid "Can't add new person."
+msgstr "Uutta henkilöa ei voi lisätä."
+
+msgid "Please set an active person."
+msgstr "Valise ensin aktiivihenkilö."
+
+msgid "Please set Active person."
+msgstr "Valise ensin aktiivihenkilö."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-11 09:13+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Database Differences Report"
 msgstr "Datenbankunterschiedebericht"
@@ -35,7 +35,7 @@ msgid "Nothing missing"
 msgstr "Nichts fehlt"
 
 msgid "Added items in File that are missing in Database"
-msgstr "Elemente in Datei hinzugefügt, die in der Datenbank fehlen"
+msgstr "In der Datei hinzugefügte Elemente, die in der Datenbank fehlen"
 
 #, python-format
 msgid "Added %s: %s "
@@ -48,26 +48,25 @@ msgid "Family Tree file"
 msgstr "Stammbaumdatei"
 
 msgid "Select a .gpkg or .gramps file"
-msgstr "Eine .gpkg oder .gramps Datei wählen"
+msgstr "Wähle eine .gpkg oder .gramps Datei"
 
 msgid "Show items that are different"
-msgstr "Zeige unterschiedliche Elemente"
+msgstr "Elemente anzeigen, die sich unterscheiden"
 
 msgid "Include items that are different"
-msgstr "Elemente die unterschiedlich sind aufnehmen"
+msgstr "Elemente einbeziehen, die sich unterscheiden"
 
 msgid "Show items missing from file"
-msgstr "Zeige Elemente, die in der Datei fehlen"
+msgstr "Zeige in der Datei fehlende Elemente"
 
 msgid "Include items not in file but in database"
-msgstr ""
-"Elemente die sich nicht in der Datei aber in der Datenbank befinden aufnehmen"
+msgstr "Elemente nicht in die Datei, aber in die Datenbank aufnehmen"
 
 msgid "Show items added in file"
-msgstr "Zeige Elemente, die in der Datei hinzugefügt wurden"
+msgstr "Zeige hinzugefügte Elemente in der Datei"
 
 msgid "Include items in file but not in database"
 msgstr "Elemente in die Datei, aber nicht in die Datenbank aufnehmen"
 
 msgid "Compares an external database with the current one."
-msgstr "Vergleicht eine externe Datenbank mit der aktuell geöffneten."
+msgstr "Vergleicht eine externe Datenbank mit der aktuellen."

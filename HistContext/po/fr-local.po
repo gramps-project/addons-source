@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-03 16:13-0800\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,14 +12,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Historical Context"
+msgstr "Contexte historique"
 
 msgid "Lists relevant historical events during the lifetime of a Person"
 msgstr ""
 "Liste les évènements historiques pertinents pendant la vie d'un individu"
 
+msgid "Rows starting with this in the text column will be hidden "
+msgstr ""
+"Les lignes commençant par ceci dans la colonne de texte seront masquées "
+
 msgid "Use filter "
 msgstr "Utiliser le filtre "
+
+msgid "Background color items outside lifespan"
+msgstr "Couleur de fond des éléments en dehors de la durée de vie"
+
+msgid "Select from files"
+msgstr "Sélectionnez les fichiers"
 
 msgid "Invalid date "
 msgstr "Date invalide "
@@ -27,5 +40,16 @@ msgstr "Date invalide "
 msgid " in line: "
 msgstr " à la ligne : "
 
+msgid "Error:"
+msgstr "Erreur :"
+
+msgid ": line does not contain four sections separated by semicolons in : \""
+msgstr ""
+": la ligne ne contient pas quatre sections séparées par des points-virgules "
+"dans : \""
+
 msgid "Cannot open URL: "
 msgstr "Impossible d'ouvrir l'URL : "
+
+msgid "Double click row to follow link"
+msgstr "Double-cliquez sur la ligne pour suivre le lien"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Data Entry Gramplet"
 msgstr "Dateneingabe Gramplet"
@@ -48,7 +48,7 @@ msgid "No relation to active person"
 msgstr "Keine Beziehung zur aktiven Person"
 
 msgid "Add as a Parent"
-msgstr "Als Elter hinzufügen"
+msgstr "Als Elternteil hinzufügen"
 
 msgid "Add as a Mother"
 msgstr "Als Mutter hinzufügen"
@@ -60,10 +60,10 @@ msgid "Add as a Spouse"
 msgstr "Als Partner hinzufügen"
 
 msgid "Add as a Wife"
-msgstr "Als Ehefrau hinzufügen"
+msgstr "Als Frau hinzufügen"
 
 msgid "Add as a Husband"
-msgstr "Als Ehemann hinzufügen"
+msgstr "Als Mann hinzufügen"
 
 msgid "Add as a Sibling"
 msgstr "Als Geschwister hinzufügen"
@@ -82,19 +82,19 @@ msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet-Daten bearbeiten: %s"
 
 msgid "Please provide a name."
-msgstr "Bitte nenne einen Namen."
+msgstr "Bitte gib einen Namen an."
 
 msgid "Can't add new person."
 msgstr "Kann neue Person nicht hinzufügen."
 
 msgid "Please set an active person."
-msgstr "Bitte eine aktive Person setzen."
+msgstr "Bitte setz eine aktive Person."
 
 msgid "Can't add new person as a parent."
-msgstr "Kann neue Person nicht als Elter hinzufügen."
+msgstr "Kann neue Person nicht als Elternteil hinzufügen."
 
 msgid "Please set the new person's gender."
-msgstr "Bitte Geschlecht der neuen Person angeben."
+msgstr "Bitte gib das Geschlecht der neuen Person an."
 
 msgid "Can't add new person as a mother."
 msgstr "Kann neue Person nicht als Mutter hinzufügen."
@@ -121,13 +121,13 @@ msgid "Please set Active person."
 msgstr "Bitte aktive Person setzen."
 
 msgid "Can't add new person as a spouse to no one."
-msgstr "Kann neue Person nicht als Partner von Niemanden hinzufügen."
+msgstr "Kann neue Person nicht als Partner zu niemandem hinzufügen."
 
 msgid "Please set gender on Active or new person."
-msgstr "Bitte das Geschlecht für aktive oder neue Person angeben."
+msgstr "Bitte Geschlecht der aktiven oder neuen Person einstellen."
 
 msgid "Same genders on Active and new person."
-msgstr "Selbe Geschlecht bei aktiver und neuer Person."
+msgstr "Gleiche Geschlechter bei Aktiver und neuer Person."
 
 msgid "Please set gender on Active person."
-msgstr "Bitte das Geschlecht der aktiven Person angeben."
+msgstr "Bitte gib Sie bei aktiver Person das Geschlecht an."

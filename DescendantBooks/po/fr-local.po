@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Descendant Book"
 msgstr "Livre de Descendance"
@@ -253,6 +253,10 @@ msgstr "Vérification des descendants de %s individus..."
 #, python-format
 msgid "Getting missing descendants from %s people..."
 msgstr "Chargement des descendants manquants de %s individus..."
+
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Vérification des descendants de %s individus après élagage..."
 
 #, python-format
 msgid "Getting missing descendants from %s people ..."

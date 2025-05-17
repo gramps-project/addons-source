@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-06 20:38+0200\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,10 +12,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "UA Web Connect Pack"
 msgstr "Ensemble de liens internet ukrainiens"
 
 msgid "Collection of Web sites for the UA (requires libwebconnect)"
 msgstr "Collection de sites internet pour l'Ukraine (nécessite libwebconnect)"
+
+msgid "Forum: ukrgenealogy.com.ua"
+msgstr "Forum : ukrgenealogy.com.ua"
+
+msgid "Forum: genoua.name"
+msgstr "Forum : genoua.name"
+
+msgid "Encyclopedia: esu.com.ua"
+msgstr "Encyclopédie : esu.com.ua"
+
+msgid "Wikipedia: uk.wikipedia.org"
+msgstr "Wikipédia : uk.wikipedia.org"
+
+msgid "Genealogy DB: familysearch.org"
+msgstr "Base de données généalogique : familysearch.org"
+
+msgid "Genealogy DB: myheritage.com.ua"
+msgstr "Base de données généalogique : myheritage.com.ua"
+
+msgid "Genealogy DB: pra.in.ua"
+msgstr "Base de données généalogique : pra.in.ua"
+
+msgid "Map: Ridni.org"
+msgstr "Carte : Ridni.org"
+
+msgid "Search: google.com.ua"
+msgstr "Recherche : google.com.ua"
+
+msgid "Search: roots.in.ua"
+msgstr "Recherche : roots.in.ua"

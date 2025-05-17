@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-26 15:11-0500\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,13 +12,115 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Sources and Citations Report"
+msgstr "Lähteet ja viittaukset -raportti"
+
+msgid "Provides a source and Citations Report with notes"
+msgstr "Tarjoaa lähde- ja viiteraportin lisätietoineen"
+
+#, python-format
+msgid "Key: %s"
+msgstr "Avain: %s"
+
+msgid "Citations:"
+msgstr "Viitteet:"
+
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#, python-format
+msgid "  %s"
+msgstr "  %s"
+
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#, python-format
+msgid "   Type: %s"
+msgstr "   Tyyppi: %s"
+
+#, python-format
+msgid "   %s"
+msgstr "   %s"
 
 #, python-format
 msgid "%s"
 msgstr "%s"
 
 #, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+msgid "   Spouses: "
+msgstr "   Puolisot: "
+
+#, python-format
 msgid "%s "
 msgstr "%s "
+
+#, python-format
+msgid "and %s "
+msgstr "ja %s "
+
+#, python-format
+msgid " %s"
+msgstr " %s"
+
+msgid "Title of the Report"
+msgstr "Raportin otsikko"
+
+msgid "Title string for the report."
+msgstr "Raportin otsikkomerkkijono."
+
+msgid "Subtitle of the Report"
+msgstr "Raportin alaotsikko"
+
+msgid "Subtitle string for the report."
+msgstr "Raportin alaotsikkomerkkijono."
+
+msgid "researcher name"
+msgstr "tutkijan nimi"
+
+msgid "Select sources using a filter"
+msgstr "Valitse lähteet käyttämällä suodinta"
+
+msgid "Show persons"
+msgstr "Näytä henkilöt"
+
+msgid "Whether to show events and persons mentioned in the note"
+msgstr "Näytetäänkö lisätiedoissa mainitut tapahtumat ja henkilöt"
+
+msgid "The style used for the title of the report."
+msgstr "Raportin otsikon tyyli."
+
+msgid "The style used for the subtitle of the report."
+msgstr "Raportin alaotsikon tyyli."
+
+msgid "The style used for the footer of the report."
+msgstr "Raportin alatunnisteen tyyli."
+
+msgid "The style used for source title."
+msgstr "Lähteen otsikon tyyli."
+
+msgid "The style used for source subtitle."
+msgstr "Lähteen alaotsikon tyyli."
+
+msgid "The style used for Source details."
+msgstr "Lähteen tietojen tyyli."
+
+msgid "The style used for citation title."
+msgstr "Sitaatin otsikon tyyli."
+
+msgid "The style used for a column title."
+msgstr "Sarakkeen otsikon tyyli."
+
+msgid "The style used for each section."
+msgstr "Osioiden tyyli."
+
+msgid "The style used for event and person details."
+msgstr "Henkilötietojen tyyli."

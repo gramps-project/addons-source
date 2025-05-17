@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "Last Change Report"
+msgstr "Viimeisin muutosraportti"
+
+msgid "You must select at least one type of record."
+msgstr "Sinun on valittava vähintään yksi tietuetyyppi."
+
+msgid "People Changed"
+msgstr "Henkilöitä muutettu"
+
+msgid "Changed On"
+msgstr "Muutettu"
+
+msgid "Families Changed"
+msgstr "Perheitä muutettu"
+
+msgid "Family Surname"
+msgstr "Perheen sukunimi"
+
+#, python-format
+msgid "%s and %s"
+msgstr "%s ja %s"
+
+msgid "Events Changed"
+msgstr "Tapahtumia muutettu"
+
+msgid "Places Changed"
+msgstr "Paikkoja muutettu"
+
+msgid "Media Changed"
+msgstr "Media muutikset"
+
+msgid "Sources Changed"
+msgstr "Lähteitä muutettu"
+
+msgid "Notes Changed"
+msgstr "Lisätietoja muutettu"
+
+msgid "Citations Changed"
+msgstr "Viitteitä muutettu"
+
+msgid "Select From"
+msgstr "Valitse alkaen"
+
+msgid "The style used for the title of the page."
+msgstr "Sivun otsikossa käytetty tyyli."
+
+msgid "The style used for normal text"
+msgstr "Normaalissa tekstissä käytetty tyyli"
+
+msgid "changed on"
+msgstr "muutettu"
+
+msgid "List the last ten person records that have been changed"
+msgstr "Listaa kymmenen viimeisintä henkilötietoa, joita on muutettu"
+
+msgid "Latest Changes"
+msgstr "Viimeisimmät muutokset"
+
+msgid "Report of the last records that have been changed"
+msgstr "Raportti viimeksi muutetuista tietueista"

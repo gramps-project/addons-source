@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,11 +12,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Select filter to restrict people"
 msgstr "Rajoita henkilöitä valitsemalla suodatin"
 
+msgid "Source type"
+msgstr "Lähteen tyyppi"
+
+msgid "New source"
+msgstr "Uusi lähde"
+
+msgid "Existing source"
+msgstr "Olemassa oleva lähde"
+
+msgid "Select the type of source to attach"
+msgstr "Valitse liitettävän lähteen tyyppi"
+
 msgid "Processing...\n"
 msgstr "Käsitellään...\n"
+
+msgid "Attaching sources...\n"
+msgstr "Lähteitä liitetään...\n"
+
+msgid "Attaching sources..."
+msgstr "Lähteitä liitetään..."
+
+msgid "Done!\n"
+msgstr "Valmis!\n"

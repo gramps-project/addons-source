@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,22 +12,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "People related to <filter>"
-msgstr "Henkilöt, jotka liittyvät <suotimeen>"
+msgstr "Henkilöt, jotka ovat sukulaisia <filter>"
 
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
-"Poimii henkilöt, jotka ovat liitetty johonkin henkilösuotimen poimimista "
+"Poimii ihmisiä, jotka ovat sukua kenelle tahansa henkilösuotimen poimimista "
 "henkilöistä"
+
+msgid "People separated less than <N> degrees of <person>"
+msgstr "Ihmiset, jotka poikkeavat <N>:llä henkilöstä <person>"
+
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr "Suodatussääntö, sukulaisten löytämiseksi sukupolvieron avulla"
 
 msgid "Source matching parameters"
 msgstr "Lähteet valitulla arvolla"
 
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr "Poimii lähteet, jotka sisältävät valitun arvon"
+
+msgid "People with multiple parent records"
+msgstr "Henkilöt, joilla on useita vanhempia"
+
+msgid "Matches people who have more than one set of parents"
+msgstr "Poimii henkilöt, joilla on useampia vanhempia"
+
+msgid "Match associations of <person filter>"
+msgstr "Etsi yhteyksiä kohteelle <person filter>"
 
 msgid "Does NOT match with selected Role"
 msgstr "EI vastaa valittua roolia"
@@ -39,16 +54,67 @@ msgid "Inverse"
 msgstr "Käänteinen"
 
 msgid "People with events with the <role>"
-msgstr "Henkilöt, joiden tapahtumissa on <rooli>"
+msgstr "Henkilöt, joilla on tapahtumia roolissa <rooli>"
 
 msgid "Matches people with an event with a selected role"
 msgstr "Poimii henkilöt, joiden tapahtumissa on valittu rooli"
 
 msgid "Families with events with the <role>"
-msgstr "Perheet, joiden tapahtumissa on <rooli>"
+msgstr "Perheet, joiden tapahtumissa on rooli <rooli>"
 
 msgid "Matches families with an event with a selected role"
 msgstr "Poimii perheet, joiden tapahtumissa on valittu rooli"
+
+msgid "Events of families matching a <family filter>"
+msgstr "Suotimen <family filter> mukaisten perheiden tapahtumat"
+
+msgid "Families matching <event filter>"
+msgstr "Suotimen <family filter> mukaiset perheet"
+
+msgid "Matches families that are matched by an event filter"
+msgstr "Poimii perheet, joilla on suotimen mukainen tapahtuma"
+
+msgid "Matches families matched by an event filter"
+msgstr "Poimii tapahtumasuotimen mukaiset perheet"
+
+msgid "Number of degrees of separation from person."
+msgstr "Etäisyyden asteiden lukumäärä henkilöstä."
+
+msgid "Degrees:"
+msgstr "Tutkinnot:"
+
+msgid "People with <count> of <event>"
+msgstr "Ihmiset, joilla on <count> <event>-tapahtumaa"
+
+msgid "Matches persons which have events of given type and number."
+msgstr "Henkilöt, joilla on annetun tyyppisiä tapahtumia pyydetty määrä."
+
+msgid "Include Children"
+msgstr "Lisää lapset"
+
+msgid "Include the children in the matching families."
+msgstr "Lisää lapset mukaan vastaaviin perheisiin."
+
+msgid "Include Parents"
+msgstr "Lisää vanhemmat"
+
+msgid "Include the parents in the matching families."
+msgstr "Lisää vanhemmat poimittuihin perheisiin."
+
+msgid "Family Filter name:"
+msgstr "Perhesuotimen nimi:"
+
+msgid "People who are part of families matching <filter>"
+msgstr "Hakuehdon <filter> mukaisten perheiden jäsenet"
+
+msgid "Filter people by their age at death"
+msgstr "Poimii henkilöt kuoliniän perusteella"
+
+msgid "Filter rule that matches people by their age at death"
+msgstr "Suodatinsääntö ihmisten kuoliniän perusteella"
+
+msgid "Multiple Parents Filter"
+msgstr "Useiden vanhempien suodatin"
 
 msgid "People with events with a selected role"
 msgstr "Henkilöt, joiden tapahtumissa on valittu rooli"
@@ -56,5 +122,20 @@ msgstr "Henkilöt, joiden tapahtumissa on valittu rooli"
 msgid "Families with events with a selected role"
 msgstr "Perheet, joiden tapahtumissa on valittu rooli"
 
+msgid "The active Person"
+msgstr "Aktiivihenkilö"
+
 msgid "Matches sources with a particular value"
 msgstr "Poimii lähteet, jotka sisältävät valitun arvon"
+
+msgid "Active person"
+msgstr "Aktiivihenkilö"
+
+msgid "Matches the active person"
+msgstr "Täsmää aktiivihenkilöön"
+
+msgid "Age in years at person's death."
+msgstr "Henkilön kuolinikä vuosina."
+
+msgid "Age:"
+msgstr "Ikä:"

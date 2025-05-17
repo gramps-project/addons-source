@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:38+0000\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,16 +12,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Media Report"
 msgstr "Rapport Media"
+
+msgid "Generates report including images, image data and notes."
+msgstr ""
+"Génère un rapport comprenant des images, des données d'image et des notes."
 
 msgid "INFO"
 msgstr "INFORMATIONS"
 
 msgid "You have to select an image to generate this report."
 msgstr "Vous devez sélectionner une image pour générer ce rapport."
+
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"Vous devez sélectionner une note personnalisée ou décocher l'option 'inclure "
+"une note personnalisée' pour générer ce rapport."
+
+msgid "This report only supports PDF as output file format."
+msgstr ""
+"Ce rapport ne supporte que le format PDF comme format de fichier de sortie."
 
 msgid "General:"
 msgstr "Général :"
@@ -44,8 +59,14 @@ msgstr "Sélectionnez une note pour ce rapport"
 msgid "Include custom note"
 msgstr "Inclure la note personnalisée"
 
+msgid "The custom note will be included"
+msgstr "La note personnalisée sera incluse"
+
 msgid "Include referenced people"
 msgstr "Inclure les individus référencés"
+
+msgid "Referenced people will be included"
+msgstr "Les individus référencés seront incluse"
 
 msgid "Include media data"
 msgstr "Inclure les données des media"

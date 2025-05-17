@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,8 +12,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "No Source"
+msgstr "Ei lähdettä"
+
+msgid "Ancestor"
+msgstr "Esivanhempi"
+
+msgid "Descendant"
+msgstr "Jälkeläinen"
+
+msgid "right to left"
+msgstr "oikealta vasemmalle"
+
+msgid "left to right"
+msgstr "vasemmalta oikealle"
+
+msgid "top to bottom"
+msgstr "ylhäältä alas"
+
+msgid "bottom to top"
+msgstr "alhaalta ylös"
+
+msgid "description"
+msgstr "kuvaus"
+
+msgid "witnesses"
+msgstr "todistajat"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Kirjoitus epäonnistui {target_path}: {message}"
+
+msgid "No central person selected"
+msgstr "Aktiivihenkilöä ei ole asetettu"
 
 msgid "Search"
 msgstr "Hae"
+
+msgid "The destination file for the html-content."
+msgstr "Kohdehakemisto html-tiedostoille."
+
+msgid "Birth relationship linestyle"
+msgstr "Syntymäsuhteen viivatyyli"

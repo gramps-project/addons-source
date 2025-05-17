@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"PO-Revision-Date: 2025-04-29 17:58+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Repositories Report Options"
 msgstr "Arkivplatsrapportalternativ"
@@ -28,6 +28,12 @@ msgstr "Publiceringsinformation:"
 
 msgid "Data:"
 msgstr "Data:"
+
+msgid "Page:"
+msgstr "Sida:"
+
+msgid "Selection with a filter"
+msgstr "Urval med hjälp av ett filter"
 
 msgid "Include repository's urls"
 msgstr "Tag med arkivplatsens url"
@@ -71,11 +77,26 @@ msgstr "Huruvida ta med notiser om arkivplatser och källor."
 msgid "Include media"
 msgstr "Tag med media"
 
+msgid "Whether to include media."
+msgstr "Huruvida ta med media."
+
+msgid "Include citations"
+msgstr "Ta med citeringar"
+
+msgid "Whether to include citations on sources."
+msgstr "Huruvida ta med citeringar för källor."
+
 msgid "Include private records"
 msgstr "Ta med privata poster"
 
 msgid "Whether to include repositories and sources marked as private."
 msgstr "Huruvida ta med arkivplatser och källor markerade som privata."
+
+msgid "Display empty values"
+msgstr "Visa tomma värden"
+
+msgid "Whether to include key records with empty values."
+msgstr "Huruvida ta med nyckeldata med tomma värden."
 
 msgid "The style used for the title of the report."
 msgstr "Den mall, som används för rapportens titel."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,10 +12,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Gramps Web Sync"
+msgstr "Synchronisation Gramps Web"
+
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "Synchronise une base de données locale avec une instance «Gramps Web»."
+
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Votre utilisateur ne dispose pas des autorisations serveur suffisantes pour "
+"utiliser la synchronisation."
+
+msgid "Fetching remote data..."
+msgstr "Récupération des données distantes…"
+
+msgid "Unexpected error while applying changes."
+msgstr "Erreur inattendue en appliquant les modifications."
 
 msgid "Media files are in sync."
 msgstr "Les fichiers media sont synchronisés."
+
+#, python-format
+msgid "Successfully downloaded %s media files."
+msgstr "Téléchargement réussi de %s fichiers media."
+
+#, python-format
+msgid "Encountered %s errors during download."
+msgstr "%s erreurs rencontrées lors du téléchargement."
+
+#, python-format
+msgid "Successfully uploaded %s media files."
+msgstr "Téléchargement réussi de %s fichiers media."
 
 msgid "Comparing local and remote data..."
 msgstr "Comparaison des données locales et distantes…"

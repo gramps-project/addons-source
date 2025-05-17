@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+"Des dépendances de la «Ligne de Vie» sont manquantes. Il n'est pas possible "
+"d'utiliser ce greffon sans elles."
+
+#, python-brace-format
+msgid "cursor position at {date}"
+msgstr "pointeur positionné à {date}"
 
 msgid "Hide person"
 msgstr "Cacher l'individu"
@@ -26,14 +37,20 @@ msgstr "Afficher les frères et sœurs"
 msgid "Hide siblings"
 msgstr "Cacher les frères et sœurs"
 
+msgid "Show ancestors above "
+msgstr "Montrer les ancêtres au-dessus "
+
 msgid "General Layout"
 msgstr "Disposition générale"
 
 msgid "Life Line Chart"
-msgstr "Carte des lignes de vie"
+msgstr "Ligne de Vie"
 
 msgid "Zoom in"
 msgstr "Zoom avant"
+
+msgid "Ctrl"
+msgstr "Ctrl"
 
 msgid "Mouse wheel"
 msgstr "Roue de souris"
@@ -47,6 +64,15 @@ msgstr "Zoom original"
 msgid "Zoom to best fit"
 msgstr "Zoom pour un affichage adapté"
 
+msgid "Rebuild data cache"
+msgstr "Reconstruire le cache des données"
+
+msgid "Revert the placement and person selection"
+msgstr "Ré-initialiser le placement et la sélection des individus"
+
+msgid "Open Life Line Chart help"
+msgstr "Ouvrir l'aide de la «Ligne de Vie»"
+
 msgid "Export View as SVG"
 msgstr "Exporter la vue en SVG"
 
@@ -56,14 +82,45 @@ msgstr "Configuration de l'étiquette"
 msgid "Reset all settings"
 msgstr "Réinitialiser tous les paramètres"
 
+msgid "Life Line Ancestor Chart"
+msgstr "Ligne de Vie des ancêtres"
+
+msgid "Persons and their relation in a time based chart"
+msgstr "Individus et leur lien dans un graphique temporel"
+
 msgid "Life Line Descendant Chart"
-msgstr "Carte des descendants de la ligne de vie"
+msgstr "Ligne de Vie des descendants"
+
+msgid "Warp the chart shape"
+msgstr "Déformer le graphique"
+
+msgid "The overall shape of the chart can be warped."
+msgstr "La forme générale du graphique peut être déformée."
+
+msgid "Normal grid shape"
+msgstr "Forme de grille normale"
+
+msgid "Sine shape"
+msgstr "Forme sinusoïdale"
+
+msgid "Triangular shape"
+msgstr "Forme triangulaire"
 
 msgid "Show photos"
 msgstr "Affiche les photos"
 
+msgid "Photos of the individual are shown."
+msgstr "Les photos de l'individu sont montrées."
+
 msgid "Photo size"
 msgstr "Taille de photo"
+
+msgid ""
+"Photos which are shown are fitted into a square of this extent. The size is "
+"given relative to the line thickness."
+msgstr ""
+"Les photos qui sont montrées sont montées dans un carré de cette dimension. "
+"La taille est donnée par rapport à l'épaisseur de la ligne."
 
 msgid "Total height"
 msgstr "Hauteur totale"
@@ -74,11 +131,55 @@ msgstr "Hauteur totale de la carte."
 msgid "Relative line thickness"
 msgstr "Épaisseur de la ligne relative"
 
+msgid ""
+"The line thickness of an individual is given relatively to the horizontal "
+"step size."
+msgstr ""
+"L'épaisseur de la ligne d'un individu est donnée relativement à la taille de "
+"l'étape horizontale."
+
+msgid "Horizontal step size"
+msgstr "Taille de l'étape horizontale"
+
+msgid ""
+"This is the distance from one line to another. This value is also used for "
+"scaling of other items."
+msgstr ""
+"C'est la distance d'une ligne à l'autre. Cette valeur est également utilisée "
+"pour l'échelle des autres éléments."
+
+msgid "Show birth label"
+msgstr "Afficher l 'étiquette de naissance"
+
 msgid "Activate the birth label."
 msgstr "Activer l'étiquette de naissance."
 
 msgid "Birth label rotation"
 msgstr "Angle de rotation des étiquettes de naissance"
+
+msgid "The birth label is written in a text frame rotated by this value."
+msgstr ""
+"L'étiquette de naissance est écrite dans un cadre tourné de cette valeur."
+
+msgid "Horizontal offset of birth label"
+msgstr "Décalage horizontal de l ' étiquette de naissance"
+
+msgid ""
+"The birth label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"L'étiquette de naissance est déplacée horizontalement de cette valeur, qui "
+"est relative à la taille de la police."
+
+msgid "Vertical offset of birth label"
+msgstr "Décalage vertical de l'étiquette de naissance"
+
+msgid ""
+"The birth label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"L'étiquette de naissance est déplacée verticalement de cette valeur, qui est "
+"relative à la taille de la police."
 
 msgid "Birth label anchor"
 msgstr "Ancrage de l'étiquette de naissance"
@@ -107,17 +208,90 @@ msgstr "Taille relative de la police"
 msgid "Family shape"
 msgstr "Forme de la famille"
 
+msgid "Rectangular"
+msgstr "Rectangulaire"
+
+msgid "Softer"
+msgstr "Plus doux"
+
+msgid ""
+"The lower bound of the chart is extended by at least this number of years."
+msgstr ""
+"La limite inférieure du graphique est prolongée d'au moins ce nombre "
+"d'années."
+
 msgid "Visualize connections"
 msgstr "Visualiser les connexions"
+
+msgid ""
+"Visualize the connections between families and individuals. This is for "
+"debugging purposes."
+msgstr ""
+"Visualiser les liens entre les familles et les individus. C'est à des fins "
+"de débogage."
+
+msgid "Visualize ambiguous placement"
+msgstr "Visualiser un placement ambigu"
+
+msgid "Visualize automatically detected errors in the placement algorithm."
+msgstr ""
+"Visualiser automatiquement les erreurs détectées dans l'algorithme de "
+"placement."
+
+msgid "Coloring of individuals"
+msgstr "Coloration des individus"
+
+msgid "There are different ways to determine the color of an individual."
+msgstr "Il existe différentes façons de déterminer la couleur d'un individu."
+
+msgid "Unique"
+msgstr "Unique"
 
 msgid "Based on surname"
 msgstr "Basé sur le nom de famille"
 
+msgid "Flip vertically"
+msgstr "Retourner verticalement"
+
+msgid "If active, the chart is flipped vertically."
+msgstr "S'il est actif, le graphique est retourné verticalement."
+
+msgid "Line weighting"
+msgstr "Épaississement de ligne"
+
+msgid "The line width can be configured."
+msgstr "La largeur de ligne peut être configurée."
+
+msgid "none"
+msgstr "aucun"
+
+msgid "Show pedigree collapse"
+msgstr "Afficher le pedigree réduit"
+
 msgid "Maximum number of generations"
 msgstr "Nombre maximal de générations"
 
+msgid ""
+"if this number of generations has been reached, the algorithm doesn't go any "
+"deeper"
+msgstr ""
+"si ce nombre de générations a été atteint, l'algorithme ne va pas plus loin"
+
+msgid "Fathers have the same color"
+msgstr "Les pères ont la même couleur"
+
+msgid ""
+"Starting from the root person, each father of an added individual has the "
+"same color as that individual."
+msgstr ""
+"À partir de l'individu racine, chaque père d'un individu ajouté a la même "
+"couleur que cet individu."
+
 msgid "Maximum number of compression steps"
 msgstr "Nombre maximal de pas de compression"
+
+msgid "Debugging of the compression algorithm. Abort after x steps."
+msgstr "Déboguage de l'algorithme de compression. Avorter après x étapes."
 
 msgid "Highlight descandants"
 msgstr "Mise en relief des descendants"
@@ -130,3 +304,6 @@ msgstr "Nombre de descendants"
 
 msgid "General chart layout"
 msgstr "Disposition générale"
+
+msgid "Cactus"
+msgstr "Cactus"

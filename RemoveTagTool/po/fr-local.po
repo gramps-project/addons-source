@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "ERROR"
+msgstr "ERREUR"
+
+msgid "Add/Remove"
+msgstr "Ajouter/Enlever"
 
 msgid "Add Tags"
 msgstr "Ajouter des étiquettes"
@@ -39,8 +45,35 @@ msgstr "Options de filtrage"
 msgid "All %s"
 msgstr "Tous les %s"
 
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"Impossible de lancer l'outil. Veuillez vérifier si votre base de données "
+"contient des étiquettes, des filtres et des objets."
+
+msgid "WARNING"
+msgstr "AVERTISSEMENT"
+
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "Aucun objet %s n'a été trouvé dans la base de données."
+
 msgid "Process tags..."
 msgstr "Traitement des étiquettes..."
 
+msgid "added"
+msgstr "ajouté"
+
+msgid "removed"
+msgstr "enlevé"
+
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "L'étiquette '{}' était {} pour {} {} objets.\n"
+
 msgid "INFO"
 msgstr "INFORMATIONS"
+
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr ""
+"Ajouter ou supprimer une étiquette de groupes d'individus, évènements, etc."

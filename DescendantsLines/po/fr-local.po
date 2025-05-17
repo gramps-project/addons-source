@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Descendants Lines"
 msgstr "Lignes des descendants"
@@ -235,14 +235,53 @@ msgstr ""
 msgid "Vertical edge spouse-bar to spouse"
 msgstr "Hauteur ligne barre du mariage vers conjoint"
 
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr ""
+"La Hauteur de la ligne verticale de la barre du mariage vers leconjoint."
+
+msgid "Vertical space spouse-bar to other spouse"
+msgstr "Espace vertical barre du mariage à autre conjoint"
+
 msgid "Horizontal space descendant to spouse"
 msgstr "Espace horizontal entre le descendant et son conjoint"
+
+msgid "The space to add between the descendant and the spouse."
+msgstr "L'espace à ajouter entre le descendant et le conjoint."
+
+msgid "Horizonal space family to family"
+msgstr "Espace horizontal de famille à famille"
+
+msgid ""
+"The space to add between the more extern descendant (or spouse) of a family "
+"and the more extern descendant (or spouse) of the next family."
+msgstr ""
+"L'espace à ajouter entre le descendant le plus externe (ou conjoint) d'une "
+"famille et le descendant le plus externe (ou conjoint) de la famille "
+"suivante."
+
+msgid ""
+"If this value is 0, the children bar is centered under the spouse. The "
+"bigger the value, more the center is moved to the left towards the "
+"descendant."
+msgstr ""
+"Si cette valeur est de 0, la barre des enfants est centrée sous le conjoint. "
+"Plus la valeur est grande, plus le centre est déplacé à gauche vers le "
+"descendant."
+
+msgid "OL_PAD"
+msgstr "OL_PAD"
 
 msgid "Children distance"
 msgstr "Distance des enfants"
 
 msgid "MIN_C_WIDTH"
 msgstr "MIN_C_LARGEUR"
+
+msgid "Space around text"
+msgstr "Espace autour du texte"
+
+msgid "The space to add around the text block of a person."
+msgstr "L'espace à ajouter autour du bloc texte d'un individu."
 
 msgid "Space between lines of text"
 msgstr "Espace entre les lignes de texte"

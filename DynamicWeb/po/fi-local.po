@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Dynamic Web Report"
@@ -184,7 +184,7 @@ msgid "No matching records found"
 msgstr "Vastaavia merkintöjä ei löydy"
 
 msgid "No matching surname."
-msgstr "Vastaavia sukunimiä ei löydy"
+msgstr "Vastaavia sukunimiä ei löydy."
 
 msgid "Other participants"
 msgstr "Muut osallistujat"
@@ -212,6 +212,9 @@ msgstr "Suhde isään"
 
 msgid "Relationship to Mother"
 msgstr "Suhde äitiin"
+
+msgid "Repositories Index"
+msgstr "Arkistojen indeksi"
 
 msgid "Restore"
 msgstr "Palauta"
@@ -297,6 +300,21 @@ msgstr "Käytä välilehtiä paneeleiden sijaan"
 
 msgid "Use the search box above in order to find a person."
 msgstr "Käytä hakukenttää yllä löytääksesi henkilön."
+
+msgid "Use a table format for the surnames index"
+msgstr "Sukunimihakemisto taulukkona"
+
+msgid "Use a table format for the persons index"
+msgstr "Henkilöhakemisto taulukkona"
+
+msgid "Use a table format for the families index"
+msgstr "Perheluettelo taulukkona"
+
+msgid "Use a table format for the sources index"
+msgstr "Lähdeluettelo taulukkona"
+
+msgid "Use a table format for the places index"
+msgstr "Paikkaluettelo taulukkona"
 
 msgid "Used for family"
 msgstr "Käytetään perheelle"
@@ -452,16 +470,16 @@ msgid "Select the template of the web site"
 msgstr "Valitse verkkosivuston malli"
 
 msgid "Include records marked private"
-msgstr "Lisää yksityisiksi merkityt tiedot"
+msgstr "Näytä yksityisiksi merkityt tiedot"
 
 msgid "Whether to include private objects"
 msgstr "Lisätäänkö yksityiset tiedot"
 
 msgid "Include Last Name Only"
-msgstr "Lisää vain sukunimi"
+msgstr "Näytä vain sukunimi"
 
 msgid "Include Full Name Only"
-msgstr "Lisää vain koko nimi"
+msgstr "Näytä vain koko nimi"
 
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
@@ -489,7 +507,7 @@ msgid "Whether to export addresses in the web pages"
 msgstr "Viedäänkö osoitteet nettisivulle"
 
 msgid "Whether or not to include the Repository Pages."
-msgstr "Lisätäänkö arkistosivut"
+msgstr "Lisätäänkö arkistosivut."
 
 msgid "Include images and media"
 msgstr "Lisää kuvat ja muut mediatiedostot"
@@ -525,7 +543,7 @@ msgid "Whether to show pages for the places"
 msgstr "Näytetäänkö paikkasivut"
 
 msgid "Choose your choice of map service for creating the Place Map Pages"
-msgstr "Valitse karttapalvelu, jota haluat käyttää paikkakarttasivuilla."
+msgstr "Valitse karttapalvelu, jota haluat käyttää paikojen karttasivuilla"
 
 msgid "Google map API key"
 msgstr "Google kartat API-avain"
@@ -534,7 +552,7 @@ msgid "The API key used for the Google map"
 msgstr "Käytetään Google kartat API-avainta"
 
 msgid "Whether or not to include family pages"
-msgstr "Lisätäänkö perhesivut."
+msgstr "Lisätäänkö perhesivut"
 
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"

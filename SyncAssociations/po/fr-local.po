@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Sync Associations"
 msgstr "Synchroniser les associations"
+
+msgid ""
+"Traverses the Person list for all Associations that are bi-directional and "
+"adds any which are missing to the Associated Person."
+msgstr ""
+"Parcourt la liste des individus pour toutes les associations "
+"bidirectionnelles et ajoute celles qui manquent à l'individu associé."
+
+#, python-format
+msgid "Add %s reciprocal association"
+msgstr "Ajoute l'association réciproque %s"
+
+msgid "{} Reciprocal associations created"
+msgstr "{} Associations réciproques créées"
+
+msgid "All reciprocal associations exist, none created"
+msgstr "Toutes les associations réciproques existent, aucune n'a été créée"
+
+msgid "No existing associations, so no reciprocal ones needed"
+msgstr "Pas d'associations existantes, donc pas de réciproques nécessaires"

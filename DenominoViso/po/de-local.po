@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-03-25 20:35+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "No Source"
 msgstr "Keine Quelle"
@@ -21,19 +21,19 @@ msgid "onclick"
 msgstr "aufKlick"
 
 msgid "onmouseover"
-msgstr "aufMausüber"
+msgstr "beim Überfahren mit der Maus"
 
 msgid "Ancestor"
 msgstr "Vorfahre"
 
 msgid "Descendant"
-msgstr "Nachfahre"
+msgstr "Nachkomme"
 
 msgid "Fan"
 msgstr "Fächer"
 
 msgid "Growth Spiral"
-msgstr "Wachsende Spirale"
+msgstr "Wachstumsspirale"
 
 msgid "Mandelbrot Tree"
 msgstr "Mandelbrotbaum"
@@ -45,13 +45,13 @@ msgid "right to left"
 msgstr "von rechts nach links"
 
 msgid "left to right"
-msgstr "Links nach Rechts"
+msgstr "links nach rechts"
 
 msgid "top to bottom"
-msgstr "Oben nach Unten"
+msgstr "von oben nach unten"
 
 msgid "bottom to top"
-msgstr "Unten nach Oben"
+msgstr "von unten nach oben"
 
 msgid "role"
 msgstr "Rolle"
@@ -76,7 +76,7 @@ msgid "author"
 msgstr "Autor"
 
 msgid "publication_info"
-msgstr "Veröffentlichungs_information"
+msgstr "Veröffentlichungshinweis"
 
 msgid "abbreviation"
 msgstr "Abkürzung"
@@ -88,7 +88,7 @@ msgid "of"
 msgstr "von"
 
 msgid "the chart type runs out of bounds"
-msgstr "der Grafiktyp läuft aus den Begrenzungen"
+msgstr "der Diagrammtyp überschreitet die Grenzwerte"
 
 msgid "Search"
 msgstr "Suche"
@@ -100,7 +100,7 @@ msgid "DenominoViso Options"
 msgstr "DenominoViso Optionen"
 
 msgid "The destination file for the html-content."
-msgstr "Die Zieldatei für den HTML-Inhalt."
+msgstr "Die Zieldatei für den html-Inhalt."
 
 msgid "Central Person"
 msgstr "Zentrale Person"
@@ -112,19 +112,19 @@ msgid "Title of the webpage"
 msgstr "Titel der Webseite"
 
 msgid "Any string you wish."
-msgstr "Jede Zeichenfolge die du willst."
+msgstr "Jede beliebige Zeichenkette, die du willst."
 
 msgid "Display mode"
 msgstr "Anzeigemodus"
 
 msgid "Either plot ancestor or descendants graph."
-msgstr "Zeichnet Vorfahren oder Nachfahrengrafik."
+msgstr "Entweder Vorfahren- oder Nachfahren-Diagramm zeichnen."
 
 msgid "Display type"
 msgstr "Anzeigeart"
 
 msgid "The type of graph to create."
-msgstr "Die Art der zu erstellenden Grafik."
+msgstr "Die Art des zu erstellenden Diagramms."
 
 msgid "Direction of time"
 msgstr "Richtung der Zeit"
@@ -136,7 +136,7 @@ msgid "Max chart width (%)"
 msgstr "Maximale Diagrammbreite (%)"
 
 msgid "Width of the tree as fraction of the browser window"
-msgstr "Breite des Baum als Teil des Browserfenster"
+msgstr "Breite des Baums als Bruchteil des Browserfensters"
 
 msgid "Max chart height (px)"
 msgstr "Maximale Diagrammhöhe (Px)"
@@ -151,81 +151,83 @@ msgid ""
 "List of strings, free text added at the bottom, for example for a copyright "
 "notice."
 msgstr ""
-"Liste von Zeichenketten, frei hinzugefügter Text unten, zum Beispiel für "
-"eine Copyright Notiz."
+"Liste von Zeichenketten, freier Text wird unten hinzugefügt, z. B. für einen "
+"Urheberrechtshinweis."
 
 msgid "Include Options"
-msgstr "Aufnahmeoptionen"
+msgstr "Aufnehmen Optionen"
 
 msgid "Include private records"
-msgstr "Vertrauliche Daten aufnehmen"
+msgstr "Vertrauliche Aufzeichnungen einbeziehen"
 
 msgid "Whether to leave out private data."
-msgstr "Ob private Daten weggelassen werden sollen."
+msgstr "Ob vertrauliche Daten ausgelassen werden sollen."
 
 msgid "Include Events"
-msgstr "Ereignisse aufnehmen"
+msgstr "Ereignisse einbeziehen"
 
 msgid "Whether to include a person's events."
-msgstr "Ob die Ereignisse einer Person berücksichtigt werden."
+msgstr "Ob die Ereignisse einer Person aufgenommen werden sollen."
 
 msgid "Include birth children"
-msgstr "Kindesgeburt aufnehmen"
+msgstr "Geburtstage der Kinder einbeziehen"
 
 msgid "Whether to include the birth of children in the list of events."
-msgstr "Ob die Geburt von Kindern in der Ereignisliste aufgenommen wird."
+msgstr ""
+"Ob die Geburt von Kindern in die Liste der Ereignisse aufgenommen werden "
+"soll."
 
 msgid "Include death relatives"
-msgstr "Tote Verwandte aufnehmen"
+msgstr "Todesfälle von Angehörigen einbeziehen"
 
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
 msgstr ""
-"Ob der Tod von Verwandten während der Lebenszeit der Person aufgenommen "
-"werden."
+"Ob der Tod von Angehörigen zu Lebzeiten der Person berücksichtigt werden "
+"soll."
 
 msgid "Include witness note"
-msgstr "Mit Zeugen Notiz"
+msgstr "Zeugennotiz aufnehmen"
 
 msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
 "contains <witnesses>)"
 msgstr ""
-"Ob die Notiz zu einem Zeugen aufgenommen wird (wenn das Ereignisformat "
-"<witnesses> enthält)"
+"Ob die zu einem Zeugen gehörende Notiz aufgenommen werden soll (wenn das "
+"Ereignisformat <Zeugen> enthält)"
 
 msgid "Whether to include a person's attributes"
-msgstr "Ob Attribute einer Person aufgenommen werden"
+msgstr "Ob die Attribute einer Person aufgenommen werden sollen"
 
 msgid "Include Addresses"
 msgstr "Adressen aufnehmen"
 
 msgid "Whether to include a person's addresses."
-msgstr "Ob die Adressen einer Person aufgenommen werden."
+msgstr "Ob die Adressen einer Person aufgenommen werden sollen."
 
 msgid "Include Note"
 msgstr "Notizen aufnehmen"
 
 msgid "Whether to include a person's note."
-msgstr "Ob Notizen einer Person aufgenommen werden."
+msgstr "Ob die Notiz einer Person aufgenommen werden soll."
 
 msgid "Include URL"
 msgstr "URL aufnehmen"
 
 msgid "Whether to include a person's internet address."
-msgstr "Ob die Internetadresse einer Person aufgenommen wird."
+msgstr "Ob die Internetadresse einer Person aufgenommen werden soll."
 
 msgid "Include URL description"
-msgstr "URL Beschreibung aufnehmen"
+msgstr "URL-Beschreibung aufnehmen"
 
 msgid "Whether to include the description of the first URL"
-msgstr "Ob die Beschreibung der ersten URL aufgenommen wird"
+msgstr "Ob die Beschreibung der ersten URL aufgenommen werden soll"
 
 msgid "Include Sources"
 msgstr "Quellen aufnehmen"
 
 msgid "Whether to include a person's sources."
-msgstr "Ob die Quellen einer Person aufgenommen werden."
+msgstr "Ob die Quellen einer Person aufgenommen werden sollen."
 
 msgid "Image Options"
 msgstr "Bild Optionen"
@@ -234,33 +236,33 @@ msgid "Include Photos/Images from Gallery"
 msgstr "Fotos/Bilder aus der Galerie aufnehmen"
 
 msgid "Whether to include images"
-msgstr "Ob Bilder aufgenommen werden"
+msgstr "Ob Bilder aufgenommen werden sollen"
 
 msgid "Copy Image"
 msgstr "Bild kopieren"
 
 msgid "Copy the images to a designated directory."
-msgstr "Bilder in ein bestimmtes Verzeichnis kopieren."
+msgstr "Die Bilder in ein bestimmtes Verzeichnis kopieren."
 
 msgid "Images with Attribute"
 msgstr "Bilder mit Attributen"
 
 msgid "Determine images with which attributes to in/exclude"
 msgstr ""
-"Festlegen welche Bilder mit welchen Attributen aufgenommen/ausgeschlossen "
-"werden"
+"Bestimmung der Bilder, deren Attribute aufgenommen/ausgeschlossen werden "
+"sollen"
 
 msgid "Include Image source references"
 msgstr "Bild Quellenreferenzen aufnehmen"
 
 msgid "Whether to include references for images"
-msgstr "Ob Referenzen für Bilder aufgenommen werden"
+msgstr "Ob Referenzen für Bilder aufgenommen werden sollen"
 
 msgid "Source reference attribute"
 msgstr "Quellenreferenzattribute"
 
 msgid "Image attribute that should be used as source reference"
-msgstr "Bildattribute die als Quellenreferenz verwendet werden sollen"
+msgstr "Bildattribut, das als Quellenangabe verwendet werden soll"
 
 msgid "Style Options"
 msgstr "Stiel Optionen"
@@ -269,87 +271,89 @@ msgid "Color of active person:"
 msgstr "Farbe der aktiven Person:"
 
 msgid "RGB-color of geometric shape of the activated person."
-msgstr "RGB-Farbe der geometrischen Form der aktiven Person."
+msgstr "RGB-Farbe der geometrischen Form der aktivierten Person."
 
 msgid "Color of found persons:"
-msgstr "Farbe gefundener Personen:"
+msgstr "Farbe der gefundenen Personen:"
 
 msgid "RGB-color of geometric shape of the persons found."
 msgstr "RGB-Farbe der geometrischen Form der gefundenen Personen."
 
 msgid "Color of male persons:"
-msgstr "Farbe männlicher Personen:"
+msgstr "Farbe der männlichen Personen:"
 
 msgid "RGB-color of geometric shape of the male persons."
 msgstr "RGB-Farbe der geometrischen Form der männlichen Personen."
 
 msgid "Colour of female persons:"
-msgstr "Farbe weiblicher Personen:"
+msgstr "Farbe der weiblichen Personen:"
 
 msgid "RGB-color of geometric shape of the female persons."
 msgstr "RGB-Farbe der geometrischen Form der weiblichen Personen."
 
 msgid "Width of rectangle (hrd):"
-msgstr "Breite des Rechteck (hrd):"
+msgstr "Breite des Rechtecks (hRa):"
 
 msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
-"Die Breite eines Personenrechtecks des regulären Diagrammtyps ausgedrückt "
-"als Bruch des horizontalen Rechteckabstands."
+"Die Breite eines Personenrechtecks des regulären Diagrammtyps, ausgedrückt "
+"als Bruchteil des horizontalen Rechteckabstands."
 
 msgid "Height of rectangle (hrd):"
-msgstr "Höhe des Rechteck (hrd):"
+msgstr "Höhe des Rechtecks (hRa):"
 
 msgid ""
 "The height of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
-"Die Höhe eines Personenrechtecks des regulären Diagrammtyps ausgedrückt als "
-"Bruch des horizontalen Rechteckabstands."
+"Die Höhe eines Personenrechtecks des regulären Diagrammtyps, ausgedrückt als "
+"Bruchteil des horizontalen Rechteckabstands."
 
 msgid "Vertical distance of rectangles (hrd):"
-msgstr "Vertikaler Abstand der Rechtecke (hrd):"
+msgstr "Vertikaler Abstand der Rechtecke (hRa):"
 
 msgid ""
 "The vertical distance of person rectangles of the regular chart type "
 "expressed as fraction of the horizontal rectangle distance."
 msgstr ""
-"Der vertikale Abstand von Personenrechtecken des regulären Diagrammtyps "
-"ausgedrückt als Bruch des horizontalen Rechteckabstands."
+"Der vertikale Abstand der Personenrechtecke des regulären Diagrammtyps, "
+"ausgedrückt als Bruchteil des horizontalen Rechteckabstands."
 
 msgid "Extra style settings:"
-msgstr "Zusätzliche Gestaltungseinstellungen:"
+msgstr "Zusätzliche Stileinstellungen:"
 
 msgid "Whatever css style settings are needed."
-msgstr "Welche CSS Gestaltungseinstellungen auch immer benötigt werden."
+msgstr "Alle erforderlichen css-Einstellungen."
 
 msgid "Mouse event handler"
-msgstr "Mausereignissteuerungsprogramm"
+msgstr "Maus- Ereignisbehandlung"
 
 msgid "Mouse handler used to interact with visitor of webpage."
-msgstr "Maussteuerungsprogramm zum interagieren mit dem Webseitenbesucher."
+msgstr ""
+"Maus-Handler, der zur Interaktion mit dem Besucher einer Webseite verwendet "
+"wird."
 
 msgid "Birth relationship linestyle"
-msgstr "Geburtsbeziehung Linienart"
+msgstr "Geburt Beziehung Linienstil"
 
 msgid ""
 "List of lists where each sublist is a list with information about the dash "
 "pattern of lines connecting children to parents."
 msgstr ""
-"Liste mit Listen in der jede Unterliste eine Liste mit Informationen über "
-"das Strichmuster der Linien die Kinder und Eltern verbinden."
+"Liste von Listen, wobei jede Unterliste eine Liste mit Informationen über "
+"das Strichmuster der Linien ist, die Kinder mit Eltern verbinden."
 
 msgid "Source confidence color"
-msgstr "Quellen Vertrauensfarbe"
+msgstr "Quellen Zuverlässigkeitsfarbe"
 
 msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
-"Liste der Listen, in denen jede Unterliste eine Liste mit Informationen zur "
-"Farbe istfür ein bestimmtes Vertraulichkeitsstufe verwenden."
+"Liste von Listen, wobei jede Unterliste eine Liste mit Informationen über "
+"die für eine bestimmte Zuverlässigkeitsstufe zu verwendende Farbe ist."
 
 msgid "Event format"
 msgstr "Ereignisformat"
@@ -363,8 +367,8 @@ msgid ""
 "<attribute-value>."
 msgstr ""
 "Liste von Zeichenketten mit Platzhaltern für Ereignisse. Bekannte "
-"Platzhalter: <type>, <role>, <date>, <place>, <description>, <witnesses>, "
-"<source> und jedes <attribute-value>."
+"Platzhalter sind: <Art>, <Rolle>, <Datum>, <Ort>, <Beschreibung>, <Zeugen>, "
+"<Quelle> und ein beliebiger <Attribut-Wert>."
 
 msgid "Source format"
 msgstr "Quellenformat"
@@ -373,47 +377,47 @@ msgid ""
 "List of strings with placeholders for sources. Known placeholders: <title>, "
 "<volume>, <author>, <publication_info> and <abbreviation>."
 msgstr ""
-"Liste von Zeichenketten mit Platzhaltern für Quellen. Bekannte Platzhalter: "
-"<title>, <volume>, <author>, <publication_info> und <abbreviation>."
+"Liste von Zeichenketten mit Platzhaltern für Quellen. Bekannte Platzhalter "
+"sind: <Titel>, <Band>, <Autor>, <Veröffentlichungsinfo> und <Abkürzung>."
 
 msgid "restricted to:"
-msgstr "Begrenzt auf:"
+msgstr "beschränkt auf:"
 
 msgid "to directory:"
-msgstr "auf Verzeichnis:"
+msgstr "zum Verzeichnis:"
 
 msgid "Save images in ..."
-msgstr "Speichere Bilder in ..."
+msgstr "Bilder speichern in ..."
 
 msgid "should be"
 msgstr "sollte sein"
 
 msgid "Included"
-msgstr "Einbezogen"
+msgstr "Inklusive"
 
 msgid "Excluded"
-msgstr "Ausgeschlossen"
+msgstr "Ausgenommen"
 
 msgid "Name HTML-wrapper file"
-msgstr "Name HTML-Umschlag Datei"
+msgstr "Name der HTML-Wrapper-Datei"
 
 msgid "Save HTML-wrapper file as ..."
-msgstr "Speichere HTML-Umschlag Datei als ..."
+msgstr "HTML-Wrapper-Datei speichern als ..."
 
 msgid "Give a filename ..."
-msgstr "Gib einen Dateinamen ..."
+msgstr "Gib einen Dateinamen an ..."
 
 msgid "Relation type"
 msgstr "Beziehungsart"
 
 msgid "Use dashed linestyle"
-msgstr "Verwende gestrichelte Linien"
+msgstr "Gestrichelten Linienstil verwenden"
 
 msgid "Dash length"
 msgstr "Strichlänge"
 
 msgid "Inter-dash length"
-msgstr "Länge zwischen den Strichen"
+msgstr "Abstand zwischen den Strichen"
 
 msgid "DenominoViso"
 msgstr "DenominoViso"
@@ -423,6 +427,6 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Erzeugt eine Webseite (HTML) mit einer grafischen Darstellung der Vorfahren /"
-"Nachkommen (SVG), bei denen Details über Individuen bei Maus-Ereignissen "
+"Erzeugt eine Web-(HTML)-Seite mit einer grafischen Darstellung von Vorfahren/"
+"Nachkommen (SVG), auf der Details zu den Personen bei Mausereignissen "
 "sichtbar werden."

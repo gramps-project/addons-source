@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-05-05 14:44+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,20 +12,207 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Kirjoitus epäonnistui {target_path}: {message}"
+
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "Hakemiston luonti ei onnistunut: %s"
+
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "Web-tiedostojen kopiointi epäonnistui: %s"
+
+msgid "Ancestral Collapsible Tree Options"
+msgstr "Esivanhempien tiivistettävän puun valinnat"
+
+msgid "Include Generations"
+msgstr "Näytettävät sukupolvet"
+
+msgid "Male Background Color"
+msgstr "Miehen taustaväri"
+
 msgid "RGB-color for male box background."
-msgstr "RGB-väri miessolun taustalle."
+msgstr "Miehen laatikon RGB-taustaväri."
+
+msgid "Male Expandable Background Color"
+msgstr "Miehen laajennettavan laatikon taustaväri"
+
+msgid "RGB-color for male expandable box background."
+msgstr "Miehen laajennettavan laatikon RGB-taustaväri."
 
 msgid "Female Background"
 msgstr "Naisen taustaväri"
 
+msgid "RGB-color for female box background."
+msgstr "Naisen laatikon RGB-taustaväri."
+
+msgid "Female Expandable Background"
+msgstr "Naisen laajennettavan laatikon taustaväri"
+
+msgid "RGB-color for female expandable box background."
+msgstr "Naisen laajennettavan laatikon RGB-taustaväri."
+
+msgid "The destination path for generated files."
+msgstr "Kohdehakemisto uusille tiedostoille."
+
+msgid "The destination file name for html content."
+msgstr "HTML-tiedoston nimi."
+
+msgid "Ancestral Collapsible Tree"
+msgstr "Esivanhempien tiivistettävä puu"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Luo verkkosivun, jossa on esivanhempien graafinen esitys (SVG) "
+"tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."
+
+msgid "Descendant Indented Tree"
+msgstr "Jälkeläisten sisennetty sukupuu"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Luo verkkosivun, jossa on jälkeläisten graafinen esitys (SVG) "
+"tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Esivanhempien viuhkakaavion valinnat"
+
+msgid "Paternal Background Color"
+msgstr "Isän taustaväri"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-taustaväri isän laatikolle."
+
+msgid "Maternal Background"
+msgstr "Äidin taustaväri"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-taustaväri äidin laatikolle."
+
+msgid "Ancestral Fan Chart"
+msgstr "Esivanhempien viuhkakaavio"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"Luo verkkosivun, jossa on graafinen esitys esi-isistä (SVG) viuhkakaaviona "
+"käyttäen D3.js JavaScript -kirjastoja."
+
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Katso %(reference)s : %(spouse)s"
+
+msgid "Generating report..."
+msgstr "Raporttia luodaan..."
+
+msgid "Invalid Destination Directory"
+msgstr "Virheellinen kohdehakemisto"
+
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"Kohdehakemistoa %s ei ole olemassa\n"
+"Haluatko yrittää luoda sen?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "Luonti ei onnistunut {target_path}: {message}"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Tiedosto %s on jo olemassa\n"
+"Haluatko korvata sen?"
+
+msgid "Default View"
+msgstr "Oletusnäkymä"
+
+msgid "Expand All"
+msgstr "Laajenna kaikki"
+
+msgid "Include contraction level"
+msgstr "Sisällytä supistuksen taso"
+
+msgid "The number of descendant levels to contract on initial display."
+msgstr "Jälkeläisten supistettavien tasojen määrä aloitusnäytöllä."
+
+msgid "The font size in pixels for each node."
+msgstr "Kunkin solmun fonttikoko pikseleinä."
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Näytetäänkö raportissa toistuvat sukupuut."
+
+msgid "Expanded Row Background Color"
+msgstr "Laajennettujen rivien taustaväri"
+
+msgid "RGB-color for expanded row background."
+msgstr "RGB-taustaväri laajennetuille riveille."
+
+msgid "Expandable Background Color"
+msgstr "Laajennettava taustaväri"
+
+msgid "RGB-color for expandable row background."
+msgstr "RGB-taustaväri laajennettavalle riville."
+
+msgid "Non-Expandable Background Color"
+msgstr "Laajentumattomien rivien taustaväri"
+
+msgid "RGB-color for non-expandable row background."
+msgstr "RGB-taustaväri laajentumattomille riveille."
+
 msgid "Include records marked private"
-msgstr "Lisää yksityisiksi merkityt tiedot"
+msgstr "Näytä yksityisiksi merkityt tiedot"
+
+msgid "Whether to include private objects."
+msgstr "Näyetäänkö yksityiset kohteet."
 
 msgid "Include Last Name Only"
-msgstr "Lisää vain sukunimi"
+msgstr "Näytä vain sukunimi"
 
 msgid "Include Full Name Only"
-msgstr "Lisää vain koko nimi"
+msgstr "Näytä vain koko nimi"
+
+msgid "How to handle living people."
+msgstr "Elävien ihmisten käsittely."
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "Lisätäänkö mukaan hiljattain kuolleet henkilöt."
+
+msgid "Navigation"
+msgstr "Navigointi"
+
+msgid "The number of generations to generate HREF links."
+msgstr "HREF-linkkien luomiseen käytettävien sukupolvien määrä."
+
+msgid "Exclude center person"
+msgstr "Keskushenkilöä lukuun ottamatta"
+
+msgid "Whether or not to generate links for center person."
+msgstr "Luodaanko linkkejä keskushenkilölle vai ei."
+
+msgid "Whether or not to generate links for spouses."
+msgstr "Luodaanko linkkejä puolisoille."
+
+msgid "Text Color"
+msgstr "Tekstin väri"
+
+msgid "RGB-color for biography text."
+msgstr "RGB-väri elämäkertatekstille."
+
+msgid "RGB-color for biography tooltip."
+msgstr "RGB-väri elämäkerran työkaluvihjeitä varten."
