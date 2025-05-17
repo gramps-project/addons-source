@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-05-06 16:01+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -1818,7 +1818,7 @@ msgstr "Jälkeläisten supistettavien tasojen määrä aloitusnäytöllä."
 
 #: D3Charts/DescendantIndentedTree.py:1819
 msgid "The font size in pixels for each node."
-msgstr "Kunkin solmun fonttikoko pikseleinä."
+msgstr "Kunkin solmun kirjainkoko pikseleinä."
 
 #: D3Charts/DescendantIndentedTree.py:1847
 #: DescendantBooks/DescendantBookReport.py:552
@@ -1879,96 +1879,98 @@ msgstr "Navigointi"
 
 #: D3Charts/DescendantIndentedTree.py:1897
 msgid "Contraction/Expansion mechanism"
-msgstr ""
+msgstr "Supistus-/laajentamismekanismi"
 
 #: D3Charts/DescendantIndentedTree.py:1900
 msgid "Entire node."
-msgstr ""
+msgstr "Koko solmu."
 
 #: D3Charts/DescendantIndentedTree.py:1901
+#, fuzzy
 msgid "Arrow images at start of node."
-msgstr ""
+msgstr "Nuolikuviot solmun lähtöpisteessä."
 
 #: D3Charts/DescendantIndentedTree.py:1902
+#, fuzzy
 msgid "Plus/Minus images at start of node."
-msgstr ""
+msgstr "Plus/miinusmerkit solmun alussa."
 
 #: D3Charts/DescendantIndentedTree.py:1903
 #: D3Charts/DescendantIndentedTree.py:1932
 msgid "Where to click to expand/contract nodes."
-msgstr ""
+msgstr "Mistä napsautetaan solmujen laajentamiseksi/supistamiseksi."
 
 #: D3Charts/DescendantIndentedTree.py:1907
 msgid "Auto-generate HREF links for nodes"
-msgstr ""
+msgstr "Luo HREF-linkit automaattisesti solmuille"
 
 #: D3Charts/DescendantIndentedTree.py:1909
 msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr ""
+msgstr "Luodaanko HTML-linkit automaattisesti jokaiseen raportin solmuun."
 
 #: D3Charts/DescendantIndentedTree.py:1915
 msgid "URL prefix path."
-msgstr ""
+msgstr "URL-osoitteen etuliite."
 
 #: D3Charts/DescendantIndentedTree.py:1917
 msgid "URL prefix to apply to each auto-generated HREF link."
-msgstr ""
+msgstr "URL-etuliite, jokaiseen automaattisesti luotuun HREF-linkkiin."
 
 #: D3Charts/DescendantIndentedTree.py:1923
 msgid "URL file extension"
-msgstr ""
+msgstr "URL-tiedoston pääte"
 
 #: D3Charts/DescendantIndentedTree.py:1925
 msgid "No file extension."
-msgstr ""
+msgstr "Ei tiedostopäätettä."
 
 #: D3Charts/DescendantIndentedTree.py:1926
 msgid ".html"
-msgstr ""
+msgstr ".html"
 
 #: D3Charts/DescendantIndentedTree.py:1927
 msgid ".htm"
-msgstr ""
+msgstr ".htm"
 
 #: D3Charts/DescendantIndentedTree.py:1928
 msgid ".shtml"
-msgstr ""
+msgstr ".shtml"
 
 #: D3Charts/DescendantIndentedTree.py:1929
 msgid ".php"
-msgstr ""
+msgstr ".php"
 
 #: D3Charts/DescendantIndentedTree.py:1930
 msgid ".php3"
-msgstr ""
+msgstr ".php3"
 
 #: D3Charts/DescendantIndentedTree.py:1931
 msgid ".cgi"
-msgstr ""
+msgstr ".cgi"
 
 #: D3Charts/DescendantIndentedTree.py:1937
 msgid "URL file name delimeter"
-msgstr ""
+msgstr "URL-tiedoston nimen erotin"
 
 #: D3Charts/DescendantIndentedTree.py:1939
 msgid "Remove all whitespace."
-msgstr ""
+msgstr "Poista kaikki välilyönnit."
 
 #: D3Charts/DescendantIndentedTree.py:1940
 msgid "Replace whitespace with dash(-)."
-msgstr ""
+msgstr "Korvaa välilyönti yhdysmerkillä '-'."
 
 #: D3Charts/DescendantIndentedTree.py:1941
 msgid "Replace whitespace with underscore(_)"
-msgstr ""
+msgstr "Korvaa välilyönti alaviivalla '_'"
 
 #: D3Charts/DescendantIndentedTree.py:1942
 msgid "What to use as file name delimiter replacing whitespace."
-msgstr ""
+msgstr "Mitä käytetään tiedostonimen erottimena korvaamaan välilyönnit."
 
 #: D3Charts/DescendantIndentedTree.py:1947
 msgid "Generations to generate HREF links"
-msgstr ""
+msgstr "Sukupolvet HREF-linkkien luomiseen"
 
 #: D3Charts/DescendantIndentedTree.py:1949
 msgid "The number of generations to generate HREF links."
@@ -1976,12 +1978,12 @@ msgstr "HREF-linkkien luomiseen käytettävien sukupolvien määrä."
 
 #: D3Charts/DescendantIndentedTree.py:1955
 msgid "Exclude persons who died before (years)"
-msgstr ""
+msgstr "Ohita persons who died before (years)"
 
 #: D3Charts/DescendantIndentedTree.py:1958
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
-msgstr ""
+msgstr "Luodaanko linkkejä imeväisinä kuolleille, -1 ei ohiteta ketään."
 
 #: D3Charts/DescendantIndentedTree.py:1964
 msgid "Exclude center person"
@@ -1989,11 +1991,11 @@ msgstr "Keskushenkilöä lukuun ottamatta"
 
 #: D3Charts/DescendantIndentedTree.py:1965
 msgid "Whether or not to generate links for center person."
-msgstr "Luodaanko linkkejä keskushenkilölle vai ei."
+msgstr "Luodaanko linkkejä keskushenkilölle."
 
 #: D3Charts/DescendantIndentedTree.py:1970
 msgid "Exclude Spouses"
-msgstr ""
+msgstr "Ohita puolisot"
 
 #: D3Charts/DescendantIndentedTree.py:1971
 msgid "Whether or not to generate links for spouses."
@@ -2001,15 +2003,17 @@ msgstr "Luodaanko linkkejä puolisoille."
 
 #: D3Charts/DescendantIndentedTree.py:1978
 msgid "Biography Content"
-msgstr ""
+msgstr "Elämäkerran sisältö"
 
 #: D3Charts/DescendantIndentedTree.py:1980
 msgid "Show biography tooltips"
-msgstr ""
+msgstr "Näytä elämäkerran työkaluvinkit"
 
 #: D3Charts/DescendantIndentedTree.py:1981
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
+"Näytetäänkö elämäkerran työkaluvihjeitä vietäessä hiiren osoitin solmun "
+"päälle."
 
 #: D3Charts/DescendantIndentedTree.py:2025
 msgid "Text Color"
@@ -2025,41 +2029,42 @@ msgstr "RGB-väri elämäkerran työkaluvihjeitä varten."
 
 #: D3Charts/DescendantIndentedTree.py:2035
 msgid "Header Font size"
-msgstr ""
+msgstr "Otsikon kirjainkoko"
 
 #: D3Charts/DescendantIndentedTree.py:2037
 msgid "The font size in pixels for biography header text."
-msgstr ""
+msgstr "Elämäkerran otsikon kirjainkoko pikseleinä."
 
 #: D3Charts/DescendantIndentedTree.py:2043
 msgid "Body Font size"
-msgstr ""
+msgstr "Tekstin kirjainkoko"
 
 #: D3Charts/DescendantIndentedTree.py:2045
 msgid "The font size in pixels for biography body text."
-msgstr ""
+msgstr "Elämäkerran kirjainkoko pikseleinä."
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
 msgid "SV Web Connect Pack"
-msgstr "SV Web Connect Pack"
+msgstr "Ruotsin Web Connect Pack"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:12
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
-msgstr "Verkkosivustojen kokoelma Ruotsia varten (vaatii libwebconnect)"
+msgstr ""
+"Verkkosivustojen kokoelma Ruotsia varten (vaatii libwebconnect-kirjaston)"
 
 #: SVWebconnectPack/SVWebPack.py:33 USWebConnectPack/USWebPack.py:33
 msgid "Find A Grave"
-msgstr "Etsi hauta"
+msgstr "Find A Grave"
 
 #: SVWebconnectPack/SVWebPack.py:34 UKWebConnectPack/UKWebPack.py:35
 #: DEWebConnectPack/DEWebPack.py:39 USWebConnectPack/USWebPack.py:34
 #: USWebConnectPack/USWebPack.py:46
 msgid "FamilySearch.org"
-msgstr "FamilySearch.org UK"
+msgstr "Englannin FamilySearch.org"
 
 #: SVWebconnectPack/SVWebPack.py:35
 msgid "Google SV"
-msgstr "Google SV"
+msgstr "Ruotsin Google"
 
 #: SVWebconnectPack/SVWebPack.py:38
 msgid "FamilySearch.org Tree"
@@ -2067,39 +2072,40 @@ msgstr "FamilySearch.org sukupuu"
 
 #: SVWebconnectPack/SVWebPack.py:40
 msgid "National archives of Sweden personsearch"
-msgstr ""
+msgstr "Ruotsin kansallisarkiston henkilöhaku"
 
 #: SVWebconnectPack/SVWebPack.py:41
 msgid "National archives of Sweden free search"
-msgstr ""
+msgstr "Ruotsin kansallisarkiston vapaa haku"
 
 #: SVWebconnectPack/SVWebPack.py:42
 msgid "Arkiv Digital estate records for Skåne"
-msgstr ""
+msgstr "Skånen kiinteistörekisterit"
 
 #: SVWebconnectPack/SVWebPack.py:43
+#, fuzzy
 msgid "Ancestry Search"
-msgstr "Ancestry haku"
+msgstr "Ancestry Search"
 
 #: SVWebconnectPack/SVWebPack.py:44
 msgid "Find swedish portraits - Rötter.se"
-msgstr ""
+msgstr "Rötter.se - ruotsalaisten muotokuvien haku"
 
 #: SVWebconnectPack/SVWebPack.py:45
 msgid "Gravar.se - find swedish graves"
-msgstr ""
+msgstr "Gravar.se - ruotsalainen hautahaku"
 
 #: SVWebconnectPack/SVWebPack.py:46
 msgid "National archives of Sweden search censuses"
-msgstr ""
+msgstr "Ruotsin kansallisarkiston väestönlaskenta"
 
 #: SVWebconnectPack/SVWebPack.py:47
 msgid "Arkiv Digital released prisoners"
-msgstr ""
+msgstr "Archive Digitalin vapautetut vangit"
 
 #: SVWebconnectPack/SVWebPack.py:48
 msgid "Gravestone inventory - rötter.se"
-msgstr ""
+msgstr "Rötter.se - hautakivien inventaario"
 
 #: PluginManager\PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
@@ -2107,7 +2113,7 @@ msgstr "Laajennusten parannettu hallinta"
 
 #: PluginManager\PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
-msgstr "Lisäosien/Laajennusten hallinta, jolla on useita lisäominaisuuksia"
+msgstr "Lisäosien ja laajennusten hallinta, jolla on useita lisäominaisuuksia"
 
 #: PluginManager\PluginManager.py:91
 msgid "Plugin Manager - Enhanced"
@@ -2120,6 +2126,10 @@ msgid ""
 "the addon filename to be included in the search.\n"
 "Word case and order is ignored."
 msgstr ""
+"Suodata lisäosat kirjoittamalla hakusanat.\n"
+"Kaikkien sanojen on esiinnyttävä jollain rivillä\n"
+"tai lisäosan tiedostonimessä.\n"
+"Sanojen kirjainkoko ja järjestys jätetään huomiotta."
 
 #: PluginManager\PluginManager.py:169 GraphView/search_widget.py:400
 #: SearchGramplet/SearchGramplet.py:391
@@ -2204,7 +2214,7 @@ msgstr "Tapahtuman kuvausmuokkain"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
-msgstr "Etsi osamerkkijono..."
+msgstr "Etsi osamerkkijonoa..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
 #: Heatmap/heatmap.py:226 RemoveTagTool/RemoveTagTool.py:271
@@ -2220,7 +2230,7 @@ msgstr "INFO"
 #: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
 msgid "%s event descriptions of %s events were changed."
-msgstr ""
+msgstr "%s/%s tapahtumakuvausta muutettiin."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: DescendantsLines/DescendantsLines.py:1688 ImportMerge/importmerge.py:911
@@ -2230,13 +2240,15 @@ msgstr "Korvaa"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
-msgstr ""
+msgstr "Korvaa vain osamerkkijono"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:146
 msgid ""
 "If True only the substring will be replaced, otherwise the whole description "
 "will be deleted and replaced by the new one."
 msgstr ""
+"Jos Tosi/True, vain alimerkkijono korvataan, muuten koko kuvaus poistetaan "
+"ja korvataan uudella."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:151
 msgid "Allow regex"
@@ -2244,20 +2256,21 @@ msgstr "Salli säännölliset lausekkeet"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
-msgstr ""
+msgstr "Salli säännölliset lausekkeet."
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
 "A tool to find and replace a string in event description of multiple events."
 msgstr ""
+"Työkalu, jolla voit etsiä ja korvata merkkijonon useaan tapahtumakuvaukseen."
 
 #: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
-msgstr ""
+msgstr "Mediatietojen tarkastustyökalu"
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Moved/Renamed Files"
-msgstr ""
+msgstr "Siirretyt tai uudelleennimetyt tiedostot"
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Missing Files"
@@ -2269,19 +2282,19 @@ msgstr "Päällekkäiset tiedostot"
 
 #: MediaVerify/MediaVerify.py:84
 msgid "Extra Files"
-msgstr ""
+msgstr "Ylimääräisiä tiedostoja"
 
 #: MediaVerify/MediaVerify.py:85
 msgid "No md5 Generated"
-msgstr ""
+msgstr "Ei luotu md5:tä"
 
 #: MediaVerify/MediaVerify.py:85
 msgid "Errors"
-msgstr ""
+msgstr "Virheitä"
 
 #: MediaVerify/MediaVerify.py:101
 msgid "Close the Media Verify Tool"
-msgstr ""
+msgstr "Sulje mediatietojen tarkastustyökalu"
 
 #: MediaVerify/MediaVerify.py:103
 msgid "Generate"
@@ -2289,15 +2302,18 @@ msgstr "Muodosta"
 
 #: MediaVerify/MediaVerify.py:104
 msgid "Generate md5 hashes for media objects"
-msgstr ""
+msgstr "Luo md5-hajautusarvoja mediatiedoille"
 
 #: MediaVerify/MediaVerify.py:106
+#, fuzzy
 msgid "Verify"
-msgstr ""
+msgstr "Tarkista"
 
 #: MediaVerify/MediaVerify.py:107
 msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
+"Tarkista mediapolut ja ilmoita puuttuvista, kaksoiskappaleista ja "
+"ylimääräisistä tiedostoista"
 
 #: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
 msgid "Export"
@@ -2305,62 +2321,67 @@ msgstr "Vie"
 
 #: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
-msgstr ""
+msgstr "Vie tulokset tekstitiedostoon"
 
 #: MediaVerify/MediaVerify.py:113
 msgid "Fix"
-msgstr ""
+msgstr "Korjaa"
 
 #: MediaVerify/MediaVerify.py:114
 msgid "Fix media paths of moved and renamed files"
-msgstr ""
+msgstr "Korjaa siirrettyjen ja uudelleennimettyjen tiedostojen mediapolut"
 
 #: MediaVerify/MediaVerify.py:132
 msgid "Verify Gramps media using md5 hashes"
-msgstr ""
+msgstr "Tarkista Gramps-media md5-tiivisteillä"
 
 #: MediaVerify/MediaVerify.py:143
+#, fuzzy
 msgid "Files"
-msgstr ""
+msgstr "Tiedostot"
 
 #: MediaVerify/MediaVerify.py:195 NoteCleanup/NoteCleanup.py:323
 msgid "Export results to a text file"
-msgstr ""
+msgstr "Vie tulokset tekstitiedostoon"
 
 #: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
 #, python-format
 msgid "Error when writing the report: %s"
-msgstr ""
+msgstr "Virhe kirjoitettaessa raporttia: %s"
 
 #: MediaVerify/MediaVerify.py:259
 msgid "Generating media hashes"
-msgstr ""
+msgstr "Median tiivisteiden luominen"
 
 #: MediaVerify/MediaVerify.py:261
 msgid "Set media hashes"
-msgstr ""
+msgstr "Aseta mediatiivisteet"
 
 #: MediaVerify/MediaVerify.py:296
 msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
 msgstr ""
+"Mediapolkua ei ole asetettu. Sinun on määritettävä "
+"\"Suhteellisten mediapolkujen peruspolku\" asetuksissa."
 
 #: MediaVerify/MediaVerify.py:307
+#, fuzzy
 msgid "Finding files"
-msgstr ""
+msgstr "Tiedostojen löytäminen"
 
 #: MediaVerify/MediaVerify.py:335
 msgid "Checking paths"
 msgstr "Polkujen tarkistaminen"
 
 #: MediaVerify/MediaVerify.py:388
+#, fuzzy
 msgid "Fixing file paths"
-msgstr ""
+msgstr "Tiedostopolkujen korjaaminen"
 
 #: MediaVerify/MediaVerify.py:390
 msgid "Fix media paths"
-msgstr ""
+msgstr "Mediapolkujen korjaaminen"
 
 #: MediaVerify/MediaVerify.gpr.py:31
 msgid "Media Verify"
@@ -2368,7 +2389,7 @@ msgstr "Median tarkistus"
 
 #: MediaVerify/MediaVerify.gpr.py:32
 msgid "Verify that media is present in the correct path"
-msgstr ""
+msgstr "Varmista, että median polku on oikein"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
@@ -2402,11 +2423,11 @@ msgstr "  •  ”Sukupuut\"-valikossa,"
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
-msgstr " käytä \"Hallinnoi sukupuita...\" vaihtoehtoa"
+msgstr " käytä \"Hallinnoi sukupuita...\" valintaa"
 
 #: Betawhatsnext/Betawhatsnext.py:52
 msgid " create a New (or to select an existing) Tree database.\n"
-msgstr " luo uusi (tai valitse olemassa oleva) sukupuu tietokanta.\n"
+msgstr " luo uusi (tai valitse olemassa oleva) sukupuu-tietokanta.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
@@ -2439,11 +2460,11 @@ msgstr "Voit muuttaa Gramplet-asetuksia ”Näytä” valikon ”Asetukset” ko
 
 #: Betawhatsnext/Betawhatsnext.py:86
 msgid "Search Quota "
-msgstr "Hakutulokset "
+msgstr "Vähimmäisrivimäärä "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
-msgstr "Syvyys silmukkaa kohden"
+msgstr "Montako jälkeläispolvea kullakin kierroksella"
 
 #: Betawhatsnext/Betawhatsnext.py:98
 msgid "Pause search expansion"
@@ -2485,8 +2506,8 @@ msgstr ""
 "\n"
 " 👣Seuraavat vaiheet:\n"
 " Lisää perhe ja henkilö kyseiseen perheeseen:\n"
-"  • Perheen voi lisätä \"Lisää\"-valikon kautta.\n"
-"  • Henkilön voi lisätä painamalla \"+\" (plus) -painiketta perhe ikkunassa ("
+"  • Perheen voi lisätä valikon \"Lisää\"-valinnalla.\n"
+"  • Henkilön voi lisätä painamalla \"+\" (plus) -painiketta perheikkunassa ("
 "\"Isä/kumppani1\" tai \"Äiti/kumppani2\") tai \"Lapset\"-välilehdellä..\n"
 "\n"
 "Tai tuo ihmisiä ulkoisesta tiedostosta:\n"
@@ -2499,7 +2520,7 @@ msgid ""
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
 "\n"
-" ⛔ Ketään ei ole tehty keskeiseksi \"kotihenkilöksi\".\n"
+" ⛔ Ketään ei ole merkitty \"kotihenkilöksi\".\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -2514,7 +2535,7 @@ msgid ""
 msgstr ""
 "\n"
 " 👣 Seuraavat vaiheet:\n"
-"  •  Valitse navigaattorin sivupalkin Henkilöt näkymän kuvake.\n"
+"  •  Valitse navigaattorin sivupalkin Henkilöt-näkymän kuvake.\n"
 "  •  Valitse joku, josta tulee \"Aktiivinen henkilö\".\n"
 "  •  Valitse Muokkaa-valikosta tai (hiiren kakkospainikkeella) avautuvasta "
 "kontekstivalikosta \"Aseta kotihenkilö\".\n"
@@ -6234,10 +6255,8 @@ msgid "[Missing]"
 msgstr "Puuttuva"
 
 #: WordleGramplet/WordleGramplet.py:140
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of font sizes"
-msgstr "Sivujen määrä"
+msgstr "Kirjainkokojen määrä"
 
 #: WordleGramplet/WordleGramplet.py:144
 #, fuzzy
@@ -9143,69 +9162,67 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
 msgid "Show birth label"
-msgstr ""
+msgstr "Näytä syntymätieto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
-#, fuzzy
-#| msgid "Estimated birth date"
 msgid "Activate the birth label."
-msgstr "Arvioitu syntymäaika"
+msgstr "Aktivoi syntymätieto."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 msgid "Birth label along path"
-msgstr ""
+msgstr "Syntymätieto polkua seuraten"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:28
 msgid "The birth label is aligned to the individual line."
-msgstr ""
+msgstr "Syntymätieto kohdistetaan yksittäiseen riviin."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
-#, fuzzy
-#| msgid "birth abbreviation|b."
 msgid "Birth label rotation"
-msgstr "s."
+msgstr "Syntymätiedon kierto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:31
 msgid "The birth label is written in a text frame rotated by this value."
-msgstr ""
+msgstr "Syntymätietoa kierretään tekstikehyksessä tällä arvolla."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:33
-#, fuzzy
-#| msgid "Horizontal: Left to Right"
 msgid "Horizontal offset of birth label"
-msgstr "Vaakasuora: Vasemmalta oikealle"
+msgstr "Syntymätiedon vaakasuuntainen siirtymä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:34
 msgid ""
 "The birth label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
+"Syntymätietoa siirretään vaakasuunnassa tällä arvolla suhteessa "
+"kirjainkokoon."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:36
 msgid "Vertical offset of birth label"
-msgstr ""
+msgstr "Syntymätiedon pystysuuntainen siirtymä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:37
 msgid ""
 "The birth label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
+"Syntymätunnistetta siirretään pystysuunnassa tällä arvolla suhteessa "
+"kirjainkokoon."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:39
 msgid "Wrap words in birth label"
-msgstr ""
+msgstr "Rivitä syntymätieto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:40
 msgid "The birth label content is wrapped where possible."
-msgstr ""
+msgstr "Syntymätieto rivitetään jos mahdollista."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:42
 msgid "Birth label anchor"
-msgstr ""
+msgstr "Syntymätiedon ankkuri"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:43
 msgid "Text alignment of the birth label."
-msgstr ""
+msgstr "Syntymätiedon tekstin tasaus."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:45
 #: LifeLineChartView/_dummy_translation_string_po.py:65
@@ -9213,62 +9230,58 @@ msgid "Center"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:48
-#, fuzzy
-#| msgid "Show more details"
 msgid "Show death label"
-msgstr "Näytä lisää tietoja"
+msgstr "Näytä kuolintieto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
-#, fuzzy
-#| msgid "Estimated death date"
 msgid "Activate the death label."
-msgstr "Arvioitu kuolinaika"
+msgstr "Aktivoi kuolintieto."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:50
-#, fuzzy
-#| msgid "death abbreviation|d."
 msgid "Death label rotation"
-msgstr "k."
+msgstr "Kuolintiedon kierto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
-msgstr ""
+msgstr "Kuolintietoa kierretään tekstikehyksessä tällä arvolla."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
-msgstr ""
+msgstr "Kuolintiedon vaakasuora siirtymä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:54
 msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
+"Kuolintietoa siirretään vaakasuunnassa tällä arvolla suhteessa kirjainkokoon."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:56
 msgid "Vertical offset of death label"
-msgstr ""
+msgstr "Kuolintiedon pystysuuntainen siirtymä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:57
 msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
+"Kuolintietoa siirretään pystysuunnassa tällä arvolla suhteessa kirjainkokoon."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:59
 msgid "Wrap words in death label"
-msgstr ""
+msgstr "Rivitä sanat kuolintietoon"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:60
 msgid "The death label content is wrapped where possible."
-msgstr ""
+msgstr "Kuolintieto rivitetään jos mahdollista."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:62
 msgid "Death label anchor"
-msgstr ""
+msgstr "Kuolintiedon ankkuri"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:63
 msgid "Text alignment of the death label."
-msgstr ""
+msgstr "Kuolintiedon tasaus."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:68
 #, fuzzy
