@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-09 07:16+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -22643,10 +22643,8 @@ msgid "Show these events"
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:113
-#, fuzzy
-#| msgid "(sort by name)"
 msgid "Sort by "
-msgstr "(lajittele nimen mukaan)"
+msgstr "Lajitteluperuste "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:114
 msgid "Sort in ascending order?"
@@ -22661,10 +22659,8 @@ msgid "February"
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
-#, fuzzy
-#| msgid "Search"
 msgid "March"
-msgstr "Hae"
+msgstr "Maaliskuu"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "April"
@@ -22703,10 +22699,8 @@ msgid "December"
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:247
-#, fuzzy
-#| msgid "Person page"
 msgid "Person Name"
-msgstr "Henkilösivu"
+msgstr "Henkilön nimi"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:249
 msgid "Event Year"
@@ -22730,10 +22724,8 @@ msgid " and "
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:431
-#, fuzzy
-#| msgid "Other participants"
 msgid "unknown participant"
-msgstr "Muut osallistujat"
+msgstr "tuntematon osallistuja"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:438
 msgid "unknown location"
@@ -22784,32 +22776,32 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:502
 #, python-format
 msgid "%(male_name)s was baptized in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s kastettiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:504
 #, python-format
 msgid "%(female_name)s was baptized in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s kastettiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:507
 #, python-format
 msgid "%(male_name)s became a bar mitzvah in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)si tuli bar mitsva vuonna %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:509
 #, python-format
 msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)si tuli bar mitsva vuonna %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:512
 #, python-format
 msgid "%(male_name)s became a bat mitzvah in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s suoritti bat mitsvan %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:514
 #, python-format
 msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s suoritti bat mitsvan %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:517
 #, python-format
@@ -22824,206 +22816,204 @@ msgstr "%(female_name)s syntyi %(year)s - %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:522
 #, python-format
 msgid "%(male_name)s was blessed in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s siunattiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:524
 #, python-format
 msgid "%(female_name)s was blessed in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s siunattiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:527
 #, python-format
 msgid "%(male_name)s was buried in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s haudattu %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:529
 #, python-format
 msgid "%(female_name)s was buried in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s haudattu %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:532
 #, python-format
 msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s osallistui väestönlaskentaan %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:535
 #, python-format
 msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s osallistui väestönlaskentaan %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:544
 #, python-format
 msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s konfirmoitiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:546
 #, python-format
 msgid "%(female_name)s was confirmed in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s konfirmoitiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:549
 #, python-format
 msgid "%(male_name)s was cremated in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s tuhkattiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:551
 #, python-format
 msgid "%(female_name)s was cremated in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s tuhkattiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:554
-#, fuzzy, python-format
-#| msgid "%(abbrev)s %(date)s in %(place)s"
+#, python-format
 msgid "%(male_name)s died in %(year)s at %(place)s."
-msgstr "%(abbrev)s %(date)s - %(place)s"
+msgstr "%(male_name)s kuoli %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:556
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s in %(place)s"
+#, python-format
 msgid "%(female_name)s died in %(year)s at %(place)s."
-msgstr "%(event_type)s: %(date)s - %(place)s"
+msgstr "%(female_name)s kuoli %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:559
 #, python-format
 msgid "%(male_name)s was awarded a degree in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s sai tutkintotodistuksen %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:561
 #, python-format
 msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s sai tutkintotodistuksen %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:564
 #, python-format
 msgid "%(male_name)s was granted a divorce in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s sai avioeron %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:567
 #, python-format
 msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s sai avioeron %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:571
 #, python-format
 msgid "%(male_name)s filed for divorce in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s haki avioeroa %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:573
 #, python-format
 msgid "%(female_name)s filed for divorce in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s haki avioeroa %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:576
 #, python-format
 msgid "%(male_name)s was elected in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s valittiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:578
 #, python-format
 msgid "%(female_name)s was elected in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s valittiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:581
 #, python-format
 msgid "%(male_name)s emigrated in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s muutti muualle %(year)s aikana - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:583
 #, python-format
 msgid "%(female_name)s emigrated in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s muutti muualle %(year)s aikana - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:586
 #, python-format
 msgid "%(male_name)s became engaged in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s kihlautui %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:588
 #, python-format
 msgid "%(female_name)s became engaged in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s kihlautui %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:591
 #, python-format
 msgid "%(male_name)s received first communion in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s ensimmäinen ehtoollinen %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:594
 #, python-format
 msgid "%(female_name)s received first communion in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s ensimmäinen ehtoollinen %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:598
 #, python-format
 msgid "%(male_name)s graduated in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s valmistui %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:600
 #, python-format
 msgid "%(female_name)s graduated in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s valmistui %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:603
 #, python-format
 msgid "%(male_name)s immigrated in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s muutti maahan %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:605
 #, python-format
 msgid "%(female_name)s immigrated in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s muutti maahan %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:611
 #, python-format
 msgid "%(male_name)s got married in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s meni naimisiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:613
 #, python-format
 msgid "%(female_name)s got married in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s meni naimisiin %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:616
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:627
 #, python-format
 msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s muodosti perheen %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:618
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:629
 #, python-format
 msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s muodosti perheen %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:621
 #, python-format
 msgid "%(male_name)s entered a civil union in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s solmi siviiliavioliiton %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:623
 #, python-format
 msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s solmi siviiliavioliiton %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:632
 #, python-format
 msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s solmi perinteisen avioliiton %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:634
 #, python-format
 msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s solmi perinteisen avioliiton %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:638
 #, python-format
 msgid "%(male_name)s announced a marriage banns in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s kuulutettu avioliittoon %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:641
 #, python-format
 msgid "%(female_name)s announced a marriage banns in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s kuulutettu avioliittoon %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:645
 #, python-format
@@ -23048,13 +23038,13 @@ msgstr "%(female_name)s sai avioliittoluvan %(year)s - %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:659
 #, python-format
 msgid "%(male_name)s obtained a marriage settlement in %(year)s at %(place)s."
-msgstr "%(male_name)s sai avioehtosopimuksen %(year)s - %(place)s."
+msgstr "%(male_name)s teki avioehtosopimuksen %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:662
 #, python-format
 msgid ""
 "%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
-msgstr "%(female_name)s sai avioehtosopimuksen %(year)s - %(place)s."
+msgstr "%(female_name)s teki avioehtosopimuksen %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:666
 #, python-format
