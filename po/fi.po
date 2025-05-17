@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
 "PO-Revision-Date: 2025-05-06 16:01+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -38,7 +38,7 @@ msgstr ""
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
-msgstr "Mediatietojen yhdistäminen"
+msgstr "Median yhdistäminen"
 
 #: MediaMerge/mediamerge.py:149
 #, python-brace-format
@@ -23553,12 +23553,12 @@ msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
 msgstr ""
-"Poista ryhmät, jotka ovat pienempiä kuin pienryhmäkoko. Automaattinen\n"
-"tietokannoissa, joissa on yli 1500 henkilöä."
+"Poista ryhmät, jotka ovat pienempiä kuin vähimmäisryhmäkoko. \n"
+"Automaattinen tietokannoissa, joissa on yli 1500 henkilöä."
 
 #: NetworkChart/NetworkChart.py:1154
 msgid "Min Group Size"
-msgstr "Min. Ryhmän koko"
+msgstr "Ryhmän vähimmäiskoko"
 
 #: NetworkChart/NetworkChart.py:1156
 msgid ""
@@ -23630,7 +23630,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1200
 msgid "Select person at center of selection radius in graph."
-msgstr "Valitse henkilö kaavion valintaruudun keskellä."
+msgstr "Valitse henkilö kaavion valintasäteen keskeltä."
 
 #: NetworkChart/NetworkChart.py:1203
 msgid ""
@@ -23654,7 +23654,7 @@ msgstr "Rajoita kaavion enimmäisyhteyksiä keskeltä."
 
 #: NetworkChart/NetworkChart.py:1213
 msgid "Display up to max connections from central person."
-msgstr "Näytä max. yhteydet keskushenkilöltä."
+msgstr "Näytä keskushenkilön enimmäis yhteydet."
 
 #: NetworkChart/NetworkChart.py:1217
 msgid "Highlight central person in graph."
@@ -23662,27 +23662,27 @@ msgstr "Korosta kaavion keskushenkilö."
 
 #: NetworkChart/NetworkChart.py:1219
 msgid "Add yellow color background to central person."
-msgstr "Lisää keltainen väri keskushenkilön taustalle."
+msgstr "Lisää keltainen tausta keskushenkilölle."
 
 #: NetworkChart/NetworkChart.py:1234
 msgid "Use database handle instead of GrampID id in URLs."
-msgstr "Käytä tietokannan kahvan sijasta GrampID ja URL-osoitteita."
+msgstr "Käytä tietokannan tunnuksen sijasta GrampID ja URL-osoitteita."
 
 #: NetworkChart/NetworkChart.py:1236
 msgid ""
 "Use database handle instead of the gramps id for URLs.\n"
 "The handle should never change whereas gramps ids can."
 msgstr ""
-"Käytä tietokannan kahvaa URL-osoitteiden gramps-tunnuksen sijaan.\n"
-"Kahvan ei pitäisi koskaan muuttua, kun taas gramps id voi."
+"Käytä tietokannan tunnusta URL-osoitteiden gramps-tunnuksen sijaan.\n"
+"Tunnuksen ei pitäisi koskaan muuttua, kun taas gramps id voi."
 
 #: NetworkChart/NetworkChart.py:1240
 msgid "Confirm overwrite file."
-msgstr "Vahvista ylikirjoitustiedosto."
+msgstr "Vahvista tiedoston korvaaminen."
 
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
-msgstr "Ota tiedoston päällekirjoitus käyttöön/poista se käytöstä."
+msgstr "Ota tiedoston korvaaminen käyttöön/poista se käytöstä."
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
@@ -23690,94 +23690,84 @@ msgstr "Nettikaavio"
 
 #: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
-msgstr "Tuota perheiden nettikaavio."
+msgstr "Tuottaa perheiden nettikaavion."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
-msgstr ""
+msgstr "Paikkaa ei löytynyt. Voit tarkentaa hakusanoja."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
 msgid "Failed to search for the coordinates due to some unexpected error."
-msgstr ""
+msgstr "Koordinaattien haku epäonnistui odottamattoman virheen vuoksi."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
 msgid "The place was not found."
-msgstr "Paikkaa ei löydy."
+msgstr "Paikkaa ei löytynyt."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
 msgid "The place was not identified."
-msgstr "Paikka ei ole tunnistettu."
+msgstr "Paikkaa ei tunnistettu."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
 msgid "Coordinates were not given."
-msgstr ""
+msgstr "Koordinaatteja ei annettu."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
 msgid "Failed to interpret the input format."
-msgstr ""
+msgstr "Syöttömuodon tulkinta epäonnistui."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
-msgstr ""
+msgstr "Tietokantamerkintä [{id}] {name}:"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "Nothing has been searched yet"
-msgstr "Mitään ei ole valittu"
+msgstr "Mitään ei ole vielä haettu"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
-#, fuzzy
-#| msgid "No place description"
 msgid "No place is active"
-msgstr "Ei paikkatietoa"
+msgstr "Ei aktiivisia paikkoja"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
-msgstr ""
+msgstr "Paikkakoordinaatit Gramplet näkymä"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
 msgid "View for the place coordinate gramplet."
-msgstr ""
+msgstr "Näkymä paikkakoordinaatit grampletille."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
 msgid "Place and Coordinates"
-msgstr ""
+msgstr "Paikka ja koordinaatit"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
-msgstr ""
+msgstr "Gramplet, joka yksinkertaistaa paikan koordinaattien asettamista"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
-#, fuzzy
-#| msgid "PlaceUpdate"
 msgid "Place Coordinates"
-msgstr "Paikkatyökalu"
+msgstr "Paikan koordinaatit"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-#, fuzzy
-#| msgid "Deep Connections Gramplet"
 msgid "Place Coordinate Gramplet"
-msgstr "Syväsuhteet Gramplet"
+msgstr "Paikan koordinaatit Gramplet"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
-msgstr ""
+msgstr "Karttavalikko"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
-#, fuzzy
-#| msgid "Add citation and source to Place"
 msgid "Add city as place"
-msgstr "Lisää paikkaan lainaus ja lähde"
+msgstr "Lisää kaupunki paikaksi"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
 msgid "Add addess as place"
-msgstr "Lisää osoite sijainniksi"
+msgstr "Lisää osoite paikaksi"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"
@@ -23785,7 +23775,7 @@ msgstr "Hae:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:26
 msgid "Found place:"
-msgstr "Löydetty sijainti:"
+msgstr "Löydetty paikka:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:53
 msgid "No DB entry is selected"
