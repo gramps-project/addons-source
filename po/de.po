@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -933,7 +933,7 @@ msgstr "Stadt, Landkreis, Bundesland, Land"
 
 #: PlaceCleanup/placecleanup.glade:52 AllNamesQuickview/AllNames.py:54
 msgid "Primary Name"
-msgstr "Primärname"
+msgstr "Hauptname"
 
 #: PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
@@ -4971,7 +4971,7 @@ msgstr "Zeigt Informationen über die Beziehung zur Hauptperson an"
 
 #: RelID/relation_tab.py:75
 msgid "Relation and distances with root"
-msgstr "Beziehung und Entfernungen zur Wurzel"
+msgstr "Beziehung und Abstände zur Wurzel"
 
 #: RelID/relation_tab.py:92
 msgid "Folder Chooser"
@@ -5038,7 +5038,7 @@ msgstr "Zeitraum"
 
 #: RelID/relation_tab.py:164
 msgid "Please wait, filtering..."
-msgstr "Bitte warten, filtere..."
+msgstr "Bitte warten, filtern..."
 
 #: RelID/relation_tab.py:169
 msgid "No default_person"
@@ -5046,7 +5046,7 @@ msgstr "Keine Standard_person"
 
 #: RelID/relation_tab.py:174
 msgid "Generating relation map..."
-msgstr "Erstelle Beziehungenkarte..."
+msgstr "Beziehungskarte erzeugen..."
 
 #: RelID/relation_tab.py:190
 #, python-format
@@ -5067,24 +5067,23 @@ msgstr "Du hast keine Schreibrechte für diesen Ordner"
 
 #: QuiltView/QuiltView.gpr.py:23 QuiltView/QuiltView.gpr.py:34
 msgid "Quilt Chart"
-msgstr "Steppdeckendiagramm"
+msgstr "Steppdiagramm"
 
 #: QuiltView/QuiltView.gpr.py:25
 msgid "The view shows a quilt chart visualisation of a family tree"
-msgstr ""
-"Die Ansicht zeigt eine Steppdecken-Diagramm-Visualisierung eines Stammbaums"
+msgstr "Die Ansicht zeigt eine Steppdiagramm-Visualisierung eines Stammbaums"
 
 #: QuiltView/QuiltView.py:223
 msgid "Quilt chart"
-msgstr "Steppdeckendiagramm"
+msgstr "Steppdiagramm"
 
 #: QuiltView/QuiltView.py:307
 msgid "Select the name for which you want to see."
-msgstr "Wähle den Namen, den du sehen möchtest."
+msgstr "Wähle den Namen, den du sehen willst."
 
 #: QuiltView/QuiltView.py:314
 msgid "Clear the entry field in the name selection box."
-msgstr "Löscht das Eingabefeld in der Namensauswahlbox."
+msgstr "Leere das Eingabefeld in der Namensauswahlbox."
 
 #: QuiltView/QuiltView.py:319
 msgid "Nothing is selected"
@@ -5096,56 +5095,56 @@ msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
 "%(total)d people in your database."
 msgstr ""
-"Du hast %(filter)d gefilterte Personen, %(count)d Personen werden im Baum "
-"gezeigt und %(total)d Personen sind in deiner Datenbank."
+"Du hast %(filter)d gefilterte Personen, %(count)d im Baum angezeigte "
+"Personen und %(total)d Personen in deiner Datenbank."
 
 #: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
-msgstr "Lade Personen"
+msgstr "Personen laden"
 
 #: QuiltView/QuiltView.py:663
 msgid "Loading the data"
-msgstr "Lade die Daten"
+msgstr "Laden der Daten"
 
 #: QuiltView/QuiltView.py:1053
 msgid "About Quilt View"
-msgstr "Über Steppdeckenansicht"
+msgstr "Über Steppansicht"
 
 #: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
 msgid "Edit tags"
-msgstr "Markierungen bearbeiten"
+msgstr "Etiketten bearbeiten"
 
 #: QuiltView/QuiltView.py:1500 GraphView/graphview.py:4048
 msgid "Set as home person"
-msgstr "Als Hauptperson setzen"
+msgstr "Als Hauptperson festlegen"
 
 #: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4538
 #: GraphView/graphview.py:4584
 #, python-format
 msgid "Adding Tags to person (%s)"
-msgstr "Markierungen zu Person (%s) hinzufügen"
+msgstr "Hinzufügen von Etiketten zur Person (%s)"
 
 #: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4543
 #: GraphView/graphview.py:4595
 #, python-format
 msgid "Adding Tags to family (%s)"
-msgstr "Markierungen zu Familie (%s) hinzufügen"
+msgstr "Hinzufügen von Etiketten zur Familie (%s)"
 
 #: QuiltView/QuiltView.py:1865
 msgid "Printing the tree"
-msgstr "Drucke den Baum"
+msgstr "Den Baum drucken"
 
 #: QuiltView/QuiltView.py:1869
 #, python-format
 msgid "Need to print %(pages)s pages (%(format)s format)"
-msgstr "Es müssen %(pages)s Seiten (%(format)s format) gedruckt werden"
+msgstr "Muss %(pages)s pages drucken (%(format)s Format)"
 
 #: QuiltView/QuiltView.py:1921
 msgid ""
 "Center on the selected person.\n"
 "The new position of the person will be near the top left corner."
 msgstr ""
-"Die ausgewählte Person zentrieren.\n"
+"Auf die ausgewählte Person zentrieren.\n"
 "Die neue Position der Person wird in der Nähe der oberen linken Ecke sein."
 
 #: QuiltView/QuiltView.py:1926
@@ -5154,7 +5153,7 @@ msgstr "Die Pfadfarbe"
 
 #: QuiltView/QuiltView.py:1931
 msgid "The selected person color"
-msgstr "Die Farbe der gewählten Person"
+msgstr "Die Farbe der ausgewählten Person"
 
 #: QuiltView/QuiltView.py:1936
 msgid "The path transparency"
@@ -5179,13 +5178,13 @@ msgid ""
 "Create kmz/kml file ''%s''\n"
 "in user directory ''%s''?"
 msgstr ""
-"Erstelle Kmz/kml Datei \"%s\"\n"
-"im Anwenderverzeichnis \"%s\"?"
+"kmz/kml-Datei ''%s'' erstellen\n"
+"im Benutzerverzeichnis ''%s''?"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
 #, python-format
 msgid "Failure writing to %s"
-msgstr "Fehler beim Schreiben nach %s"
+msgstr "Schreiben in %s fehlgeschlagen"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
 msgid "Directory does not exist"
@@ -5201,8 +5200,8 @@ msgid ""
 "Overwrite kmz/kml file ''%s''\n"
 "in user home directory ''%s''?"
 msgstr ""
-"Überschreiben Kmz/kml Datei \"%s\"\n"
-"im Anwenderverzeichnis \"%s\"?"
+"Kmz/kml-Datei ''%s'' überschreiben\n"
+"im Benutzer-Home-Verzeichnis ''%s''?"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
 msgid "GoogleEarth"
@@ -5210,7 +5209,7 @@ msgstr "GoogleEarth"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
 msgid "Creates data file for GoogleEarth and opens it"
-msgstr "Erstellt Datendatei für GoogleEarth und öffnet sie"
+msgstr "Erstellt eine Datendatei für GoogleEarth und öffnet sie"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
@@ -5227,17 +5226,18 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
-"Diagnose-Gramplet zur Bewertung, ob <a href=\"https://gramps-project.org/\"> "
-"in Gramps </a> alle <a href=\"https://github.com/gramps-project/gramps/blob/"
-"master/README.md\"> Voraussetzungen </a> installiert sind.\n"
+"Diagnose-Gramplet, um zu prüfen, ob <a href=\"https://gramps-project.org/\""
+">Gramps</a> alle <a href="
+"\"https://github.com/gramps-project/gramps/blob/master/README.md\""
+">Voraussetzungen</a> installiert hat.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
 "Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
 "installed."
 msgstr ""
-"Diagnose-Gramplet, um zu bewerten, ob in Gramps alle Voraussetzungen "
-"installiert sind."
+"Diagnose Gramplet, um zu überprüfen, ob Gramps alle Voraussetzungen "
+"installiert hat."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
 msgid ""
@@ -5291,8 +5291,8 @@ msgstr "Gtkspell ermöglicht die Rechtschreibprüfung in den Notizen.\n"
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
 msgstr ""
-"Python Image Library (PIL) wird zum Zuschneiden von Bildern und zur LaTeX-"
-"Ausgabe benötigt."
+"Die Python Image Library (PIL) wird für das Zuschneiden von Bildern und die "
+"LaTeX-Ausgabe benötigt."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
 msgid ""
@@ -5339,7 +5339,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
 msgid "Check for potential issues.\n"
-msgstr "Suche nach möglichen Problemen.\n"
+msgstr "Prüfung auf mögliche Probleme.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
 msgid ""
@@ -5357,7 +5357,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"<u><b>Verfügbare Gebietsschemas:</b></u>\n"
+"<u><b>Verfügbare Sprachversionen:</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
 msgid ""
@@ -5440,14 +5440,14 @@ msgid ""
 "friend.\n"
 msgstr ""
 "Du hast Gramps %s installiert; eine unveröffentlichte Entwicklungsversion. "
-"Vielen Dank für deinen Beitrag und deine Tests. Bitte melde alle Probleme. "
+"Vielen Dank für deine Mithilfe und das Testen; bitte melde alle Probleme. "
 "Sicherungen sind dein Freund.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:351
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
 msgstr ""
-"Du hast Gramps %s. Herzlichen Glückwunsch, Du hast die aktuelle Version.\n"
+"Du hast Gramps %s. Herzlichen Glückwunsch, du hast die aktuelle Version.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:378
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:452
@@ -5508,7 +5508,7 @@ msgstr " oder höher.)\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:560
 msgid " (Requires "
-msgstr " (Erfordert "
+msgstr " (Benötigt "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
 msgid " • Berkeley Database library (bsddb3: "
@@ -5549,11 +5549,11 @@ msgstr " oder höher)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:780
 msgid "Graphviz not in system PATH"
-msgstr "Graphviz nicht im Systempfad"
+msgstr "Graphviz nicht im Systempfad (PATH)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:848
 msgid "Ghostscript not in system PATH"
-msgstr "Ghostscript nicht im Systempfad"
+msgstr "Ghostscript nicht im Systempfad (PATH)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:863
 msgid " (Passed: version 0.5.x is installed.)"
@@ -5612,13 +5612,13 @@ msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
-"Für die Erweiterung Netzwerkgrafik liefert die Schriftart <a href=\"https://"
-"www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> ein äußerst "
-"lesbares Ergebnis.\n"
+"Für die Erweiterung Netzwerkdiagramm liefert die Schriftart <a href="
+"\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> ein "
+"äußerst lesbares Ergebnis.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
-msgstr "Warum, wenn der gleiche Code in Graphview funktioniert"
+msgstr "Warum, wenn derselbe Code in Graphview funktioniert"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1246
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
@@ -5637,11 +5637,11 @@ msgstr ") oder (pygraphviz: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
 msgid "Installed(MS-Windows)"
-msgstr "Installiert (MS-Windows)"
+msgstr "Installiert(MS-Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
 msgid "Installed(Linux/Mac)"
-msgstr "Installiert (Linux/Mac)"
+msgstr "Installiert(Linux/Mac)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
 msgid "not installed "
@@ -5658,7 +5658,7 @@ msgstr "nicht gefunden."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1466
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
-msgstr "Standard. Bestanden: Programm installiert - 32bit unter 64bit Win OS."
+msgstr "Standard. Bestanden: Programm installiert - 32Bit auf 64Bit Win OS."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
@@ -5701,10 +5701,9 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/index.php/De:"
-"Gramps_5.1_Wiki_Handbuch_-"
-"_Kommandozeilen_Referenz#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Gebietsschemaeinstellungen:"
-"</a></b></u>\n"
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php/"
+"De:Gramps_6.0_Wiki_Handbuch_-_Kommandozeilen_Referenz#LANG.2C_LANGUAGE.2C_LC_MESSAGES."
+"2C_LC_TIME\">Gebietsschemaeinstellungen:</a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
@@ -5736,9 +5735,9 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Installierte Gebietsschemas \\ Übersetzungen (Wenn nur Englisch aufgeführt "
-"ist, installiere Gramps erneut und installiere alle Übersetzungen und "
-"Wörterbücher.)\n"
+"Installierte Gebietsschemata\\Übersetzungen (Wenn nur Englisch aufgeführt "
+"ist, Installiere Gramps bitte noch einmal und stelle sicher, dass alle "
+"Übersetzungen und Wörterbücher ausgewählt sind)\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1882
@@ -5760,7 +5759,7 @@ msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"
 msgstr ""
-"Sphinx ist ein Werkzeug, das die Gramps-Entwicklungsdokumentation und "
+"Sphinx ist ein Werkzeug, das die Gramps-Entwicklungsdokumentation und die "
 "Manpages erstellt\n"
 
 #: SourceReferences/SourceReferences.gpr.py:33
@@ -5849,15 +5848,15 @@ msgstr "PhpGedView"
 
 #: PhpGedView/phpgedview.gpr.py:25
 msgid "Download a GEDCOM file from a phpGedView server."
-msgstr "Lädt eine GEDCOM Datei von einem phpGedView Server."
+msgstr "Lade eine GEDCOM-Datei von einem phpGedView Server herunter."
 
 #: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
 msgid "Fetching index list..."
-msgstr "Hole Indexliste..."
+msgstr "Indexliste abrufen..."
 
 #: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
 msgid "Fetching records..."
-msgstr "Hole Datensätze..."
+msgstr "Datensätze abrufen..."
 
 #: PhpGedView/phpgedviewconnector.py:327
 msgid "Logging in..."
@@ -5869,7 +5868,7 @@ msgstr "Hole GEDCOM..."
 
 #: PhpGedView/phpgedviewconnector.py:334
 msgid "Importing GEDCOM..."
-msgstr "Importiere GEDCOM..."
+msgstr "GEDCOM importieren..."
 
 #: PhpGedView/phpgedviewconnector.py:341
 msgid "Error: login failed"
@@ -5906,7 +5905,7 @@ msgstr "- Standard -"
 
 #: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
 msgid "phpGedView import"
-msgstr "phpGedView importieren"
+msgstr "phpGedView Import"
 
 #: PhpGedView/phpgedview.glade:103
 msgid "http://"
@@ -5930,33 +5929,33 @@ msgstr "Ortsdaten extrahieren"
 
 #: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
-msgstr "Überprüfung von Ortstiteln"
+msgstr "Überprüfen von Ortstiteln"
 
 #: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
-msgstr "Suche nach Ortsfeldern"
+msgstr "Suche nach Platzfeldern"
 
 #: ExtractCity/extractcity.py:543
 msgid "No place information could be extracted."
-msgstr "Es konnten keine Ortsinformationen extrahiert werden."
+msgstr "Es konnten keine Ortsangaben extrahiert werden."
 
 #: ExtractCity/extractcity.py:564
 msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
 msgstr ""
-"Es folgt eine Liste von Orten, mit den möglichen Daten, die aus dem "
-"Ortstitel extrahiert werden können. Wähle die Orte aus, die Gramps "
+"Nachfolgend findest du eine Liste von Orten mit den möglichen Daten, die aus "
+"dem Ortstitel extrahiert werden können. Wähle die Orte aus, die Gramps "
 "konvertieren soll."
 
 #: ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
-msgstr "Extrahiere Ortsdaten aus Ortstitel"
+msgstr "Extrahieren von Ortsdaten aus einem Ortstitel"
 
 #: ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
-"Versuche, Stadt und Bundesland/Provinz von einem Ortstitel zu extrahieren"
+"Versucht, Stadt und Bundesland/Provinz aus einem Ortstitel zu extrahieren"
 
 #: ExtractCity/changenames.glade:94
 msgid "_Toggle Selected"
@@ -5980,8 +5979,8 @@ msgstr "Nachkommenbuch"
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
-"Erstellt einen oder mehrere Nachkommenberichte basierend auf einer "
-"mitgelieferten Abfrage."
+"Erzeugt einen oder mehrere Nachkommenberichte auf der Grundlage einer "
+"bereitgestellten Abfrage."
 
 #: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
@@ -5991,8 +5990,8 @@ msgstr "Ausführliches Nachkommenbuch"
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
 msgstr ""
-"Erstellt basierend auf einer angegebenen Abfrage einen oder mehrere "
-"ausführliche Nachkommenberichte."
+"Erzeugt einen oder mehrere detaillierte Nachkommenberichte auf der Grundlage "
+"einer bereitgestellten Abfrage."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
@@ -6002,8 +6001,7 @@ msgstr "Part. siehe %(reference)s : %(spouse)s"
 #: DescendantBooks/DescendantBookReport.py:249
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
-msgstr ""
-"siehe Bericht: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
+msgstr "siehe Bericht: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:374
 msgid "Descendants Report"
@@ -6030,16 +6028,16 @@ msgstr "{report_count:d}. {name}"
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
-"Wählen Filter aus, um Personen einzuschränken, die im Bericht vorkommen"
+"Wähle einen Filter aus, um die Personen einzuschränken, die im Bericht "
+"erscheinen"
 
 #: DescendantBooks/DescendantBookReport.py:585
 msgid "The style used for the table of contents header."
-msgstr ""
-"Der Stil, der für die Überschrift des Inhaltsverzeichnisses verwendet wird."
+msgstr "Der für die Kopfzeile des Inhaltsverzeichnisses verwendete Stil."
 
 #: DescendantBooks/DescendantBookReport.py:595
 msgid "The style used for the table of contents detail."
-msgstr "Der Stil, der für die Angaben im Inhaltsverzeichnisses verwendet wird."
+msgstr "Der für das Inhaltsverzeichnis verwendete Stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
@@ -6061,7 +6059,7 @@ msgstr "Ortsverzeichnis"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:542
 msgid "Index of Dates"
-msgstr "Index der Daten"
+msgstr "Datumsindex"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:565
 msgid "Index of Names"
@@ -6168,108 +6166,108 @@ msgstr "Kinder auflisten"
 #: DescendantBooks/DetailedDescendantBookReport.py:1418
 #: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
-msgstr "Nachkommenreferenzen zu Kinderliste hinzufügen"
+msgstr "Nachkommenreferenz in Kinderliste hinzufügen"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1482
 msgid "Include Index of Names"
-msgstr "Namensindex aufnehmen"
+msgstr "Namensverzeichnis einbeziehen"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1483
 msgid "Whether to include the index of Names at the end of the report."
-msgstr "Ob ein Namensregister am Ende des Berichts aufgenommen wird."
+msgstr "Ob das Namensverzeichnis am Ende des Berichts aufgenommen werden soll."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1487
 msgid "Include index of Dates"
-msgstr "Datenindex aufnehmen"
+msgstr "Datumsindex einbeziehen"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1488
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr "Ob ein Datumsregister am Ende des Berichts aufgenommen wird."
+msgstr "Ob der Datumsindex am Ende des Berichts erscheinen soll."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1492
 msgid "Include index of Places"
-msgstr "Ortsindex aufnehmen"
+msgstr "Ortsverzeichnis einbeziehen"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1493
 msgid "Whether to include the index of Places at the end of the report."
-msgstr "Ob ein Ortsregister am Ende des Berichts aufgenommen wird."
+msgstr "Ob das Ortsverzeichnis am Ende des Berichts erscheinen soll."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Include the 'Report appearances' section with each person"
-msgstr "Fügen Sie jeder Person den Abschnitt 'Auftritte melden' hinzu"
+msgstr "Fügt den Abschnitt „Vorkommen im Bericht“ bei jeder Person ein"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
 msgstr ""
-"Der Abschnitt 'Berichtserscheinungen' zeigt andere Stellen im Bericht, an "
+"Der Abschnitt „Vorkommen im Bericht“ zeigt andere Stellen im Bericht, an "
 "denen die Person erwähnt wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1566
 #: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
-msgstr "Der Stil, der für die Kinderliste verwendet wird."
+msgstr "Der für die Kinderliste verwendete Stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1576
 msgid "The basic style used for Note header."
-msgstr "Der Basisstil, der für die Notiz Überschrift verwendet wird."
+msgstr "Der Basisstil, der für die Kopfzeile der Notiz verwendet wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1593
 #: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
-msgstr "Der Stil, der für den ersten persönlichen Eintrag verwendet wird."
+msgstr "Der für den ersten persönlichen Eintrag verwendete Stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1603
 #: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
-"Der Stil, der für die \"Mehr über\" Kopfzeile und Kopfzeile von Partnern "
-"verwendet wird."
+"Der Stil, der für die Überschrift Mehr über und für die Überschriften der "
+"Partner verwendet wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1614
 #: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
-msgstr "Der Stil, der für die sonstigen genauen Daten verwendet wird."
+msgstr "Der für zusätzliche Detaildaten verwendete Stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1624
 #: DescendantBooks/DetailedDescendantBookReport.py:1634
 msgid "The style used for note detail data."
-msgstr "Der Stil, der für Notizdetaildaten verwendet wird."
+msgstr "Der für die Notizdetails verwendete Stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1644
 msgid "The style used for the date in the Index of Dates."
-msgstr "Der Stil der für die Daten im Datenindex verwendet wird."
+msgstr "Der Stil, der für das Datum im Index der Daten verwendet wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1654
 msgid "The style used for the events in the Index of Dates."
-msgstr "Der Stil der für die Ereignisse im Datenindex verwendet wird."
+msgstr "Der Stil, der für die Ereignisse im Index der Daten verwendet wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1664
 msgid "The style used for the header in the Index of Names."
-msgstr "Der Stil der für die Überschrift im Namensindex verwendet wird."
+msgstr "Der Stil, der für die Überschrift im Namensregister verwendet wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1674
 msgid "The style used for the references in the Index of Names."
-msgstr "Der Stil der für die Referenzen im Namensindex verwendet wird."
+msgstr "Der für die Verweise im Namensregister verwendete Stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1684
 msgid "The style used for the header in the Index of Places."
-msgstr "Der Stil der für die Überschrift im Ortsindex verwendet wird."
+msgstr "Der für die Kopfzeile des Ortsverzeichnisses verwendete Stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1695
 msgid "The style used for the references in the Index of Places."
-msgstr "Der Stil der für die Referenzen im Ortsindex verwendet wird."
+msgstr "Der für die Verweise im Ortsverzeichnis verwendete Stil."
 
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
 msgid "Deep pruning ascendants from %s people..."
-msgstr "Tiefgreifende Beschneidung der Aszendenten von %s Personen..."
+msgstr "Tiefes Beschneiden der Aszendenten von %s Personen..."
 
 #: DescendantBooks/CollectAscendants.py:182
 #, python-format
 msgid "Pruning ascendants from %s people..."
-msgstr "Reduziere Aszendenten von %s Personen..."
+msgstr "Beschneide Aszendenten von %s Personen..."
 
 #: DescendantBooks/CollectAscendants.py:320
 #: DescendantBooks/CollectAscendants.py:413
@@ -6280,12 +6278,12 @@ msgstr "Hole Aszendenten von %s Personen..."
 #: DescendantBooks/CollectAscendants.py:331
 #, python-format
 msgid "Verifying descendants from %s people..."
-msgstr "Vergleiche Nachkommen von %s Personen..."
+msgstr "Überprüfung der Nachkommen von %s Personen..."
 
 #: DescendantBooks/CollectAscendants.py:348
 #, python-format
 msgid "Getting missing descendants from %s people..."
-msgstr "Hole fehlende Nachkommen von %s Personen..."
+msgstr "Holen von fehlenden Nachkommen von %s Personen..."
 
 #: DescendantBooks/CollectAscendants.py:367
 #, python-format
@@ -6295,11 +6293,11 @@ msgstr "Vergleiche Nachkommen von %s Personen nach Reduzierung..."
 #: DescendantBooks/CollectAscendants.py:383
 #, python-format
 msgid "Getting missing descendants from %s people ..."
-msgstr "Hole fehlende Nachkommen von %s Personen ..."
+msgstr "Holen von fehlenden Nachkommen von %s Personen ..."
 
 #: WordleGramplet/WordleGramplet.py:126
 msgid "[Missing]"
-msgstr "[Fehlend]"
+msgstr "[Fehlt]"
 
 #: WordleGramplet/WordleGramplet.py:140
 msgid "Number of font sizes"
@@ -6307,7 +6305,7 @@ msgstr "Anzahl der Schriftgrößen"
 
 #: WordleGramplet/WordleGramplet.py:144
 msgid "Select filter to restrict list"
-msgstr "Wählen den Filter, um die Liste zu beschränken"
+msgstr "Filter auswählen, um Liste einzuschränken"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -6316,7 +6314,7 @@ msgstr "Wordle"
 
 #: WordleGramplet/WordleGramplet.gpr.py:13
 msgid "Gramplet used to make word clouds with wordle.net"
-msgstr "Gramplet zum Erstellen von Wortwolken mit wordle.net"
+msgstr "Gramplet verwendet, um Wortwolken mit wordle.net zu erstellen"
 
 #: PersonEverything/PersonEverything.py:133
 #, python-format
@@ -6325,7 +6323,7 @@ msgstr "Alle Informationen über %s"
 
 #: PersonEverything/PersonEverything.py:173
 msgid "Primary name"
-msgstr "Primärer Name"
+msgstr "Hauptname"
 
 #: PersonEverything/PersonEverything.py:180
 msgid "Alternate name"
@@ -6348,8 +6346,8 @@ msgid ""
 "Details of any children and events etc. would be in a similar report for the "
 "father or mother."
 msgstr ""
-"Einzelheiten zu Kindern, Ereignissen usw. sind in einem ähnlichen Bericht "
-"für den Vater oder die Mutter enthalten."
+"Einzelheiten zu Kindern und Ereignissen usw. würden in einem ähnlichen "
+"Bericht für den Vater oder die Mutter enthalten sein."
 
 #: PersonEverything/PersonEverything.py:403
 msgid "Temple and status"
@@ -6365,7 +6363,7 @@ msgstr "HLT "
 
 #: PersonEverything/PersonEverything.py:434
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
-msgstr "Straße, Ort, Kreis, Staat, Postleitzahl, Land, Telefonnummer"
+msgstr "Straße, Stadt, Landkreis, Bundesland, Postleitzahl, Land, Telefonnummer"
 
 #: PersonEverything/PersonEverything.py:448
 msgid "Media Reference"
@@ -6382,21 +6380,21 @@ msgstr "Referenzierte Region"
 
 #: PersonEverything/PersonEverything.py:505
 msgid "Mime type"
-msgstr "Mime Typ"
+msgstr "Mime-Typ"
 
 #: PersonEverything/PersonEverything.py:516
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
 msgstr ""
-"Vorname(n): Titel, Vorname, Suffix, Rufname, Spitzname, Familienspitzname"
+"Vorname(n): Titel, Vorname, Nachname, Rufname, Spitzname, Familienspitzname"
 
 #: PersonEverything/PersonEverything.py:542
 msgid "Note type"
-msgstr "Notiztyp"
+msgstr "Notizart"
 
 #: PersonEverything/PersonEverything.py:553
 msgid "Parent Place"
-msgstr "Eltern Ort"
+msgstr "Elterlicher Ort"
 
 #: PersonEverything/PersonEverything.py:568
 #: PersonEverything/PersonEverything.py:572
@@ -6433,15 +6431,15 @@ msgstr "Präfix, Nachname, Verbinder"
 
 #: PersonEverything/PersonEverything.py:691
 msgid "{This is the primary surname}"
-msgstr "{Dies ist der primäre Nachname}"
+msgstr "(Dies ist der Hauptnachname)"
 
 #: PersonEverything/PersonEverything.py:704
 msgid "Tag name"
-msgstr "Makierungsname"
+msgstr "Etikettname"
 
 #: PersonEverything/PersonEverything.py:715
 msgid "Tag colour and priority"
-msgstr "Markierungsfarbe und Priorität"
+msgstr "Farbe und Priorität des Etiketts"
 
 #: PersonEverything/PersonEverything.py:960
 msgid "No source information found"
@@ -6453,11 +6451,11 @@ msgstr "PersonAlles Bericht"
 
 #: PersonEverything/PersonEverything.gpr.py:33
 msgid "Produces a report containing everything about the active person"
-msgstr "Erstellt einen Bericht der alles über die aktive Person enthält"
+msgstr "Erstellt einen Bericht mit allen Informationen über die aktive Person"
 
 #: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
 msgid "Ancestors map"
-msgstr "Ahnenkarte"
+msgstr "Vorfahren Karte"
 
 #: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
@@ -6465,7 +6463,7 @@ msgstr "Eine Ansicht mit den Orten der Vorfahren auf der Karte."
 
 #: GeoAncestor/GeoAncestor.py:207
 msgid "Ancestors places on the map"
-msgstr "Ahnenplätze auf der Karte"
+msgstr "Orte der Vorfahren auf der Karte"
 
 #: GeoAncestor/GeoAncestor.py:235
 msgid "GeoAncestor"
@@ -6478,7 +6476,7 @@ msgstr "Ahnenplätze für %s"
 
 #: GeoAncestor/GeoAncestor.py:311
 msgid "Counting all places"
-msgstr "Alle Orte zählen"
+msgstr "Zählung aller Orte"
 
 #: GeoAncestor/GeoAncestor.py:314
 msgid "Showing all places"
@@ -6494,19 +6492,19 @@ msgstr "Notiz Gramplet"
 
 #: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
-msgstr "Gramplet zum bearbeiten der Notizen der aktiven Person"
+msgstr "Gramplet zur Bearbeitung der Notizen der aktiven Person"
 
 #: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
-msgstr "Notiz Bereinigung"
+msgstr "Bereinigung von Notizen"
 
 #: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
-msgstr "Bereinigt Notizen, die HTML-Markup enthalten"
+msgstr "Bereinigung von Notizen, die HTML-Markup enthalten"
 
 #: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
-msgstr "Notiz Bereinigung Werkzeug"
+msgstr "Notizbereinigungswerkzeug"
 
 #: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
@@ -23031,7 +23029,7 @@ msgstr "Netzwerk"
 
 #: NetworkChart/NetworkChart.py:995
 msgid "The filename for the generated svg network chart."
-msgstr "Der Dateiname für die generierte SVG-Netzwerkgrafik."
+msgstr "Der Dateiname für das generierte svg-Netzdiagramm."
 
 #: NetworkChart/NetworkChart.py:1002
 msgid "Different node shapes/edges for gender."
@@ -23396,11 +23394,11 @@ msgstr "Aktivieren/deaktivieren der Bestätigung der Dateiüberschreibung."
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
-msgstr "Netzwerkgrafik"
+msgstr "Netzwerkdiagramm"
 
 #: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
-msgstr "Erstellt eine Familiennetzwerkgrafik."
+msgstr "Erzeugt ein Familiennetzwerkdiagramm."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
