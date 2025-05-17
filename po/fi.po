@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
 "PO-Revision-Date: 2025-05-07 15:03+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -22866,12 +22866,12 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:517
 #, python-format
 msgid "%(male_name)s was born in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s syntyi %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:519
 #, python-format
 msgid "%(female_name)s was born in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s syntyi %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:522
 #, python-format
@@ -23121,52 +23121,52 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:673
 #, python-format
 msgid "%(male_name)s became naturalized in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s kansalaisuus %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:675
 #, python-format
 msgid "%(female_name)s became naturalized in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s kansalaisuus %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:678
 #, python-format
 msgid "%(male_name)s had a title bestowed in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s arvonimi %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:680
 #, python-format
 msgid "%(female_name)s had a title bestowed in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s arvonimi %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:683
 #, python-format
 msgid "%(male_name)s was ordained in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s asetettu virkaan %(year)s -%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:685
 #, python-format
 msgid "%(female_name)s was ordained in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s asetettu virkaan %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:688
 #, python-format
 msgid "%(male_name)s was granted probate in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s testamentti %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:690
 #, python-format
 msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s testamentti %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:693
 #, python-format
 msgid "%(male_name)s retired in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s eläkkeelle %(year)s - %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:695
 #, python-format
 msgid "%(female_name)s retired in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s eläkkeelle %(year)s - %(place)s."
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
@@ -23386,10 +23386,8 @@ msgid "Female Box Edge"
 msgstr "Naissolun reuna"
 
 #: NetworkChart/NetworkChart.py:1034
-#, fuzzy
-#| msgid "RGB-color for Male box edge."
 msgid "RGB-color for Female box edge."
-msgstr "RGB-väri miessolun reunalle."
+msgstr "RGB-väri naissolun reunalle."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
@@ -23437,7 +23435,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1061
 msgid "Trim Box Edge"
-msgstr "Rajaa solun reunat"
+msgstr "Rajatun solun reunat"
 
 #: NetworkChart/NetworkChart.py:1062
 msgid "RGB-color for box edge that has been trimmed."
@@ -23475,7 +23473,7 @@ msgstr "Pyöristää syntymäpäivät vuosi vuodelta (yllä)."
 
 #: NetworkChart/NetworkChart.py:1082
 msgid "Represent birthday by year only."
-msgstr "Edistää syntymäpäivästä vain vuoden."
+msgstr "Näyttää syntymäpäivästä vain vuoden."
 
 #: NetworkChart/NetworkChart.py:1086
 msgid ""
@@ -23501,18 +23499,17 @@ msgstr "Pyöristää avioitumispäivän vuosi vuodelta (yllä)."
 
 #: NetworkChart/NetworkChart.py:1094
 msgid "Represent marriage by year only."
-msgstr "Edistää avioitumispäivästä vain vuoden."
+msgstr "Näyttää avioliittoja vain vuoden mukaan."
 
 #: NetworkChart/NetworkChart.py:1099
 msgid ""
 "Attempts to remove middle names.  Only works for entries with birth year in "
 "the record."
-msgstr ""
-"Yrität poistaa keskimmäiset nimet. Toimii vain syntymävuoden merkinnöissä."
+msgstr "Yrität poistaa toiset nimet. Toimii vain syntymävuoden merkinnöissä."
 
 #: NetworkChart/NetworkChart.py:1107
 msgid "Remove middle names."
-msgstr "Poista keskimmäiset nimet."
+msgstr "Poista toiset nimet."
 
 #: NetworkChart/NetworkChart.py:1112
 msgid "Allow inclusion of private records in chart."
@@ -23539,16 +23536,16 @@ msgid ""
 "You must enter valid person(s) before \n"
 "enabling trimming of descendants from tree."
 msgstr ""
-"Sinun on annettava vapaa(t) henkilö(t) ennen\n"
-"mahdollisuutta jälkeläisten rajaamiseen sukupuusta."
+"Sinun on annettava kelvollinen henkilö(t) ennen \n"
+"mahdollisuutta jälkeläisten karsimiseen puusta."
 
 #: NetworkChart/NetworkChart.py:1134
 msgid "Trim ancestors"
-msgstr "Rajaa esivanhemmat"
+msgstr "Rajaa esivanhempia"
 
 #: NetworkChart/NetworkChart.py:1135
 msgid "All ancestors (parents) of selected individuals will not be shown."
-msgstr "Valitun henkilön esivanhempia (vanhempia) ei näytetä."
+msgstr "Valittujen henkilöiden kaikkia esivanhempia ei näytetä."
 
 #: NetworkChart/NetworkChart.py:1141
 msgid "Enable trimming of ancestors."
