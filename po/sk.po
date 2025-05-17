@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-04-06 09:03+0000\n"
+"PO-Revision-Date: 2025-05-07 15:03+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -2755,16 +2755,17 @@ msgid "The style used for the title of the page."
 msgstr "Štýl použitý pre titul strany."
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
+#, fuzzy
 msgid "SharedPostgreSQL"
-msgstr ""
+msgstr "SharedPostgreSQL"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:25
 msgid "Shared _PostgreSQL Database"
-msgstr ""
+msgstr "Zdieľaná _PostgreSQL databáza"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:26
 msgid "Shared PostgreSQL Database"
-msgstr ""
+msgstr "Zdieľaná PostgreSQL databáza"
 
 #: HtmlView/htmlview.py:328
 msgid "HtmlView"
@@ -5650,28 +5651,37 @@ msgid ""
 "Gramps again and make sure to select all the Translations and Dictionaries)\n"
 "\n"
 msgstr ""
+"\n"
+"Nainštalované lokality\\preklady (Ak je uvedená iba angličtina, "
+"preinštalujte Gramps a uistite sa, že ste vybrali všetky preklady a slovníky)"
+"\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1882
 msgid ""
 "\n"
 "Gramps Environment variables:\n"
 msgstr ""
+"\n"
+"Premenné prostredia Gramps:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1921
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1983
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2019
 msgid "found"
-msgstr ""
+msgstr "nájdené"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2026
 msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"
 msgstr ""
+"Sphinx je nástroj, ktorý vytvára dokumentáciu vývoja Gramps a manuálové "
+"stránky\n"
 
 #: SourceReferences/SourceReferences.gpr.py:33
 msgid "Gramplet showing the references for a source"
-msgstr ""
+msgstr "Gramplet zobrazujúci odkazy na zdroj"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
@@ -5923,7 +5933,7 @@ msgstr "(report_count). Potomkovia osoby (name)"
 #: DescendantBooks/DetailedDescendantBookReport.py:617
 #, python-brace-format
 msgid "{report_count:d}. {name}"
-msgstr ""
+msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
@@ -6040,7 +6050,7 @@ msgstr " %(event_text)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:993
 #, python-brace-format
 msgid "Ref: {number}. {name}"
-msgstr ""
+msgstr "Ref: {number}. {name}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
