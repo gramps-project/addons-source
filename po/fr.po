@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 15:52+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -7636,13 +7636,15 @@ msgstr "Ancêtre matrilinéaire de <individu>"
 #: FilterRules2/matrilinealprogenitrix.gpr.py:26
 #: FilterRules2/matrilinealprogenitrix.py:47
 msgid "Matches the earliest recorded matrilineal ancestor mother."
-msgstr ""
+msgstr "Sélectionne l'ancêtre matrilinéaire la plus ancienne enregistrée."
 
 #: FilterRules2/xchromdescendants.py:50
 msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
+"Sélectionne tous les descendants de l'<individu> suivant un modèle "
+"d'hérédité chromosomique X."
 
 #: FilterRules2/mtinheritance.py:45 FilterRules2/mtinheritance.gpr.py:25
 msgid "Mitochondrial inheritance of <person>"
@@ -7653,6 +7655,8 @@ msgid ""
 "Matches recorded descendants of person following mitochondrial inheritance "
 "patterns."
 msgstr ""
+"Sélectionne les descendants enregistrés d'un individu suivant les modèles "
+"d'hérédité mitochondriale."
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
 msgid "Y-chromosomal inheritance of <person>"
@@ -7663,6 +7667,8 @@ msgid ""
 "Matches recorded descendants of person following Y-chromosomal inheritance "
 "patterns."
 msgstr ""
+"Sélectionne less descendants d'un individu selon les modèles d'hérédité du "
+"chromosome Y."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -7835,7 +7841,7 @@ msgstr "Entourer la section de l'individu avec un léger cadre noir."
 
 #: DescendantsLines/DescendantsLines.py:1617
 msgid "All Person's blocks have the same height"
-msgstr ""
+msgstr "Tous les blocs d'individu ont la même hauteur"
 
 #: DescendantsLines/DescendantsLines.py:1618
 msgid ""
@@ -7956,6 +7962,8 @@ msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
 msgstr ""
+"L'espace à ajouter entre la barre d'un conjoint et un autre conjoint en cas "
+"de familles multiples avec le même descendant."
 
 #: DescendantsLines/DescendantsLines.py:1715
 msgid "Horizontal space descendant to spouse"
@@ -7980,7 +7988,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1727
 msgid "Horizontal distance spouse to family edge"
-msgstr ""
+msgstr "Distance horizontale entre le conjoint et le bord de la famille"
 
 #: DescendantsLines/DescendantsLines.py:1728
 msgid ""
@@ -8007,6 +8015,7 @@ msgstr ""
 #: DescendantsLines/DescendantsLines.py:1740
 msgid "The length of the vertical edge from spouse-bar to child-bar."
 msgstr ""
+"La longueur du bord vertical de la barre du conjoint à la barre de l'enfant."
 
 #: DescendantsLines/DescendantsLines.py:1746
 msgid "Children distance"
@@ -8014,7 +8023,7 @@ msgstr "Distance des enfants"
 
 #: DescendantsLines/DescendantsLines.py:1747
 msgid "The horizontal distance between two children of the same family."
-msgstr ""
+msgstr "La distance horizontale entre deux enfants de la même famille."
 
 #: DescendantsLines/DescendantsLines.py:1751
 msgid "Vertical edge child to child-bar"
@@ -8022,7 +8031,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1753
 msgid "The length of the vertical edge from child to child-bar."
-msgstr ""
+msgstr "La longueur du bord vertical entre l'enfant et la barre d'enfant."
 
 #: DescendantsLines/DescendantsLines.py:1756
 msgid "MIN_C_WIDTH"
@@ -9351,7 +9360,7 @@ msgstr "Afficher l'étiquette du mariage"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:69
 msgid "Activate the marriage label."
-msgstr ""
+msgstr "Activez l'étiquette du mariage."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:70
 msgid "Fade individual color"
@@ -9359,7 +9368,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:71
 msgid "The color of the individuals is faded to black with increasing age."
-msgstr ""
+msgstr "La couleur des individus s'estompe vers le noir avec l'âge."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
 msgid "Font name"
@@ -9367,7 +9376,7 @@ msgstr "Nom de la police"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:73
 msgid "Name of the font family used for labels."
-msgstr ""
+msgstr "Nom de la famille de police utilisée pour les étiquettes."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:75
 msgid "Relative font size"
@@ -9376,6 +9385,7 @@ msgstr "Taille relative de la police"
 #: LifeLineChartView/_dummy_translation_string_po.py:76
 msgid "The font size is given relatively to the line thickness."
 msgstr ""
+"La taille de la police est donnée relativement à l'épaisseur de la ligne."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
 msgid "Family shape"
@@ -18196,7 +18206,7 @@ msgstr "À propos"
 
 #: SourceIndex/index.glade:312
 msgid "New birth or baptism"
-msgstr ""
+msgstr "Nouvelle naissance ou baptême"
 
 #: SourceIndex/index.glade:341
 msgid "add birth act"
@@ -18208,11 +18218,11 @@ msgstr "Nouveau mariage"
 
 #: SourceIndex/index.glade:402
 msgid "add marriage act"
-msgstr ""
+msgstr "ajouter un acte de mariage"
 
 #: SourceIndex/index.glade:434
 msgid "New death or burial"
-msgstr ""
+msgstr "Nouvelle mort ou sépulture"
 
 #: SourceIndex/index.glade:463
 msgid "add death act"
@@ -18244,7 +18254,7 @@ msgstr "Sélectionnez une source de décès"
 
 #: SourceIndex/index.glade:739
 msgid "Select a census source"
-msgstr ""
+msgstr "Sélectionnez une source de recensement"
 
 #: SourceIndex/index.glade:768 SourceIndex/census.glade:7
 msgid "census"
@@ -18252,7 +18262,7 @@ msgstr "recensement"
 
 #: SourceIndex/index.glade:800
 msgid "Select a repository storing a source"
-msgstr ""
+msgstr "Sélectionnez un dépôt stockant une source"
 
 #: SourceIndex/index.glade:829
 msgid "repositories"
@@ -18267,6 +18277,9 @@ msgid ""
 "Records transcriptions ... births/deaths/marriages/censuses with common "
 "fields: id, repository, person name, birth date and place, parents."
 msgstr ""
+"Transcriptions des documents ... naissances/décès/mariages/recensements avec "
+"des champs communs : id., dépôt, nom de l'individu, date de naissance et "
+"lieu, parents."
 
 #: SourceIndex/death.glade:97 SourceIndex/census.glade:728
 #: SourceIndex/birth.glade:65 SourceIndex/marriage.glade:64
@@ -18275,7 +18288,7 @@ msgstr "Info :"
 
 #: SourceIndex/death.glade:165
 msgid "Death act:"
-msgstr ""
+msgstr "Acte de décès :"
 
 #: SourceIndex/death.glade:217 SourceIndex/census.glade:904
 #: SourceIndex/marriage.glade:1296
@@ -18284,7 +18297,7 @@ msgstr "Volume :"
 
 #: SourceIndex/death.glade:282
 msgid "<b>Death act</b>"
-msgstr ""
+msgstr "<b>Acte de décés</b>"
 
 #: SourceIndex/death.glade:432 SourceIndex/death.glade:636
 #: SourceIndex/death.glade:873 SourceIndex/census.glade:221
@@ -18577,7 +18590,7 @@ msgstr "<b><i>Source</i></b>"
 
 #: SourceIndex/marriage.glade:49
 msgid "Marriage act:"
-msgstr ""
+msgstr "Acte de mariage :"
 
 #: SourceIndex/marriage.glade:81
 msgid "m. date:"
@@ -18609,7 +18622,7 @@ msgstr ""
 
 #: SourceIndex/marriage.glade:318
 msgid "<b>Marriage act</b>"
-msgstr ""
+msgstr "<b>Acte de Mariage</b>"
 
 #: SourceIndex/marriage.glade:333
 msgid ""
@@ -18870,7 +18883,7 @@ msgstr ""
 #: DetDescendantReport-images/detdescendantreporti.py:471
 #, python-format
 msgid "%(event_name)s: %(event_text)s"
-msgstr ""
+msgstr "%(event_name)s : %(event_text)s"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1177
 msgid "Include TODO notes"
@@ -18912,7 +18925,7 @@ msgstr "Google DE"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
-msgstr ""
+msgstr "Carte des noms (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
@@ -19244,6 +19257,9 @@ msgid ""
 "to differentiate different\n"
 "markers at the same location"
 msgstr ""
+"Décalez les marqueurs de la carte\n"
+"pour différencier les différents\n"
+"marqueurs situés au même endroit"
 
 #: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
@@ -19257,6 +19273,8 @@ msgid ""
 "Display markers for unknown ancestors\n"
 "based on earliest descendant location"
 msgstr ""
+"Afficher des marqueurs pour les ancêtres inconnus\n"
+"en fonction de la localisation du plus ancien descendant"
 
 #: GeoTimeLines/GeoTimeLines.py:1803
 msgid ""

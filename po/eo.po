@@ -7,21 +7,23 @@
 # Copyright (C) YEAR ORGANIZATION
 #
 # Pier Luigi Cinquantini <petrolinux@infinito.it>, 2003, 2014.
+# jmichault <jmt.2000@free.fr>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2014-11-08 13:21+0100\n"
-"Last-Translator: josip <josip@pisoj.com>\n"
-"Language-Team: Esperanto <kde-i18n-it@kde.org>\n"
+"PO-Revision-Date: 2025-05-06 16:01+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
+"addons/eo/>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
-"X-Generator: Poedit 1.6.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
@@ -94,27 +96,27 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
-msgstr ""
+msgstr "Aldoni mortokazaĵojn sen datoj"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
-msgstr ""
+msgstr "Aldoni mortokazaĵojn kun datoj"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
-msgstr ""
+msgstr "Aldoni mortokazaĵojn kun aŭ sen laŭtaksaj datoj"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
-msgstr ""
+msgstr "Maksimuma aĝo"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
-msgstr ""
+msgstr "Maksimuma aĝo ke unu povas vivi al"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
-msgstr ""
+msgstr "Maksimuma aĝdiferenco inter gefratoj"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
@@ -2190,10 +2192,8 @@ msgid "Finding files"
 msgstr ""
 
 #: MediaVerify/MediaVerify.py:335
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking paths"
-msgstr "Kontrolas loktitolojn"
+msgstr "Kontrolante vojojn"
 
 #: MediaVerify/MediaVerify.py:388
 msgid "Fixing file paths"
@@ -5468,10 +5468,8 @@ msgid "Password:"
 msgstr ""
 
 #: ExtractCity/extractcity.py:402
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Place title"
-msgstr "Kontrolas loktitolojn"
+msgstr "Loka titolo"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
@@ -6189,10 +6187,8 @@ msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking Given Names"
-msgstr "Kontrolas loktitolojn"
+msgstr "Kontrolante personaj nomoj"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
@@ -6912,10 +6908,9 @@ msgid "WebSearch Link"
 msgstr ""
 
 #: WebSearch.py:1010
-#, fuzzy, python-brace-format
-#| msgid "Checking Place Titles"
+#, python-brace-format
 msgid "Title: {title}\n"
-msgstr "Kontrolas loktitolojn"
+msgstr "Titolo: {title}\n"
 
 #: WebSearch.py:1012
 #, python-brace-format
@@ -7434,10 +7429,8 @@ msgid "Edit Families"
 msgstr ""
 
 #: BirthOrder/birthorder.py:275
-#, fuzzy
-#| msgid "Looking for place fields"
 msgid "Looking for children birth order"
-msgstr "Serĉas lokkampojn"
+msgstr "Serĉante infanojn naskiĝi ordon"
 
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
@@ -7583,10 +7576,8 @@ msgid "Set Tag"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:687
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Doing Place changes"
-msgstr "Kontrolas loktitolojn"
+msgstr "Farante ŝanĝojn al la loko"
 
 #: PlaceCompletion/PlaceCompletion.py:731
 msgid "No place record was modified."
