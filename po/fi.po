@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-08 17:01+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-05-09 07:16+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -4709,76 +4709,78 @@ msgid "Color of found persons:"
 msgstr "Löydettyjen henkilöiden väri:"
 
 #: DenominoViso/DenominoViso.py:2696
-#, fuzzy
-#| msgid "RGB-color for other box background."
 msgid "RGB-color of geometric shape of the persons found."
-msgstr "RGB-väri muiden solujen taustalle."
+msgstr "Löydettyjen henkilöiden muodon RGB-väri."
 
 #: DenominoViso/DenominoViso.py:2699
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Color of male persons:"
-msgstr "Polun väri kotihenkilölle"
+msgstr "Miesten väri:"
 
 #: DenominoViso/DenominoViso.py:2700
 msgid "RGB-color of geometric shape of the male persons."
-msgstr ""
+msgstr "Miesten muodon RGB-väri."
 
 #: DenominoViso/DenominoViso.py:2703
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Colour of female persons:"
-msgstr "Polun väri kotihenkilölle"
+msgstr "Naisten väri:"
 
 #: DenominoViso/DenominoViso.py:2704
 msgid "RGB-color of geometric shape of the female persons."
-msgstr ""
+msgstr "Naisten muodon RGB-väri."
 
 #: DenominoViso/DenominoViso.py:2707
 msgid "Width of rectangle (hrd):"
-msgstr ""
+msgstr "Suorakulmion leveys (hrd):"
 
 #: DenominoViso/DenominoViso.py:2708
 msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
+"Tavallisen kaaviotyypin henkilösuorakulmion leveys ilmaistuna "
+"vaakasuuntaisten suorakulmiden etäisyyden murto-osana."
 
 #: DenominoViso/DenominoViso.py:2711
 msgid "Height of rectangle (hrd):"
-msgstr ""
+msgstr "Suorakulmion korkeus (hrd):"
 
 #: DenominoViso/DenominoViso.py:2712
 msgid ""
 "The height of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
+"Tavallisen kaaviotyypin henkilösuorakulmion korkeus ilmaistuna "
+"vaakasuuntaisen suorakulmioiden etäisyyden murto-osana."
 
 #: DenominoViso/DenominoViso.py:2715
 msgid "Vertical distance of rectangles (hrd):"
-msgstr ""
+msgstr "Suorakulmioiden pystysuora etäisyys (hrd):"
 
 #: DenominoViso/DenominoViso.py:2716
 msgid ""
 "The vertical distance of person rectangles of the regular chart type "
 "expressed as fraction of the horizontal rectangle distance."
 msgstr ""
+"Tavallisen kaaviotyypin henkilöiden suorakulmioiden pystysuora etäisyys "
+"ilmaistuna vaakasuoran suorakulmioiden etäisyyden murto-osana."
 
 #: DenominoViso/DenominoViso.py:2719
 msgid "Extra style settings:"
-msgstr ""
+msgstr "Muita tyyliasetuksia:"
 
 #: DenominoViso/DenominoViso.py:2720
 msgid "Whatever css style settings are needed."
-msgstr ""
+msgstr "Mahdollisesti tarpeellisia CSS-tyyliasetuksia."
 
 #: DenominoViso/DenominoViso.py:2730
 msgid "Mouse event handler"
-msgstr ""
+msgstr "Hiiren tapahtumankäsittelijä"
 
 #: DenominoViso/DenominoViso.py:2732
 msgid "Mouse handler used to interact with visitor of webpage."
 msgstr ""
+"Hiirikäsittelijä, jota käytetään vuorovaikutukseen verkkosivun käyttäjän "
+"kanssa."
 
 #: DenominoViso/DenominoViso.py:2736
 msgid "Birth relationship linestyle"
@@ -4789,26 +4791,28 @@ msgid ""
 "List of lists where each sublist is a list with information about the dash "
 "pattern of lines connecting children to parents."
 msgstr ""
+"Luettelo, jossa kukin aliluettelo määrittelee lasten ja vanhempien välisten "
+"viivojen katkoviivakuvioita."
 
 #: DenominoViso/DenominoViso.py:2744
 msgid "Source confidence color"
-msgstr ""
+msgstr "Lähteen luotettavuusväri"
 
 #: DenominoViso/DenominoViso.py:2746
 msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
+"Luettelo, jossa kukin aliluettelo määrittelee tietyn luotettavuustason "
+"viivojen värin."
 
 #: DenominoViso/DenominoViso.py:2749
-#, fuzzy
-#| msgid "Date format"
 msgid "Event format"
-msgstr "Päivämäärän muoto"
+msgstr "Tapahtuman muoto"
 
 #: DenominoViso/DenominoViso.py:2750
 msgid "at"
-msgstr ""
+msgstr "paikalle"
 
 #: DenominoViso/DenominoViso.py:2754
 msgid ""
@@ -4816,22 +4820,25 @@ msgid ""
 "<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
 "<attribute-value>."
 msgstr ""
+"Listaa merkkijonoja tapahtumien paikkamerkkeineen. Tunnetut paikkamerkit: "
+"<type>, <role>, <date>, <place>, <description>, <witnesses>, <source> ja "
+"mikä tahansa <attribute-value>."
 
 #: DenominoViso/DenominoViso.py:2757
-#, fuzzy
-#| msgid "Date format"
 msgid "Source format"
-msgstr "Päivämäärän muoto"
+msgstr "Lähteen muoto"
 
 #: DenominoViso/DenominoViso.py:2758
 msgid ""
 "List of strings with placeholders for sources. Known placeholders: <title>, "
 "<volume>, <author>, <publication_info> and <abbreviation>."
 msgstr ""
+"Listaa merkkijonoja lähteiden paikkamerkkeineen. Tunnetut paikkamerkit: "
+"<title>, <volume>, <author>, <publication_info> ja <abbreviation>."
 
 #: DenominoViso/DenominoViso.py:2819
 msgid "restricted to:"
-msgstr ""
+msgstr "rajoitettuna:"
 
 #: DenominoViso/DenominoViso.py:2859
 msgid "to directory:"
