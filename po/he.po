@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-02 08:01+0000\n"
+"PO-Revision-Date: 2025-05-16 05:37+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -697,7 +697,7 @@ msgstr "3. נכתבו רשומות ללתוך \"%(file)s\".\n"
 
 #: lxml/lxmlGramplet.py:544
 msgid "Matches XSD schema."
-msgstr "התאמה לסכימת XSD."
+msgstr "איתור סכימת XSD."
 
 #: lxml/lxmlGramplet.py:565
 msgid "xmllint: skip DTD validation"
@@ -768,7 +768,7 @@ msgid ""
 "No\n"
 "Matches"
 msgstr ""
-"אין\n"
+"לא נמצאו\n"
 "התאמות"
 
 #: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
@@ -1104,7 +1104,7 @@ msgstr "הגדרת העדפות"
 
 #: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
-msgstr "בחירת אחד מהמקומות הללו להמשך בתהליך הארגון."
+msgstr "בחירה באחד מהמקומות הללו כדי להמשך בתהליך הארגון."
 
 #: PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
@@ -1165,7 +1165,7 @@ msgstr "אנשים בפער של פחות מ <N> דרגות מ<אדם>"
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
 msgid "Filter rule that matches relatives by degrees of separation"
-msgstr "כלל מסנן שמתאים קרובים בדרגות מרחק"
+msgstr "כלל מסנן לאיתור קרובים לפי דרגות מרחק"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
@@ -1232,11 +1232,11 @@ msgstr "משפחות שתואמות <מסנן אירוע>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
-msgstr "איתור משפחות שהותאמו על ידי מסנן אירועים"
+msgstr "איתור משפחות שאותרו על ידי מסנן אירועים"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
-msgstr ""
+msgstr "איתור משפחות שאותרו על ידי מסנן אירועים"
 
 #: FilterRules/degreesofseparation.py:47
 msgid "Number of degrees of separation from person."
@@ -1252,7 +1252,7 @@ msgstr ""
 
 #: FilterRules/peopleeventscount.py:52 FilterRules/peopleeventscount.gpr.py:26
 msgid "Matches persons which have events of given type and number."
-msgstr ""
+msgstr "איתור אנשים עם אירועים מסוג וכמות מסויימים."
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
 msgid "Include Children"
@@ -1286,7 +1286,7 @@ msgstr "סינון אנשים לפי גילם בפטירתם"
 
 #: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
-msgstr "כלל סינון שמתאים לאנשים לפי גילם בפטירתם"
+msgstr "כלל סינון לאיתור לאנשים לפי גיל פטירתם"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -1307,7 +1307,7 @@ msgstr "האדם הפעיל"
 
 #: FilterRules/hassourcefilter.py:58
 msgid "Matches sources with a particular value"
-msgstr ""
+msgstr "איתור מקורות עם ערך מסויים"
 
 #: FilterRules/activepersonrule.py:45 DataEntryGramplet/DataEntryGramplet.py:71
 #: NoteGramplet/NoteGramplet.py:65
@@ -1316,7 +1316,7 @@ msgstr "אדם פעיל"
 
 #: FilterRules/activepersonrule.py:47
 msgid "Matches the active person"
-msgstr "תואם לאדם הפעיל"
+msgstr "איתור האדם הפעיל"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
@@ -3069,7 +3069,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3101
 msgid "Several matches.<br>Precise your search or choose in the lists below."
-msgstr ""
+msgstr "איתורים מרובים.<br> נא לדייק את החיפוש או לבחור מהרשימה מטה."
 
 #: DynamicWeb/dynamicweb.py:3104
 msgid "Show _MENU_ entries"
@@ -5479,11 +5479,11 @@ msgstr "גרמפלט להצגת אזכורים למקור"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
-msgstr "התאמות DNA"
+msgstr "איתור DNA"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
-msgstr "גרמפלט להצגת רשימת התאמות DNA"
+msgstr "גרמפלט להצגת רשימת איתורי DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
@@ -7108,6 +7108,7 @@ msgid ""
 "Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
 msgstr ""
+"איתור תוצאת סינון של צאצאים שתועדו ועקיבה אחר דפוסי תורשה של כרומוזום Y."
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
@@ -7116,7 +7117,7 @@ msgstr ""
 #: FilterRules2/xchromancestors.gpr.py:27 FilterRules2/xchromancestors.py:50
 msgid ""
 "Matches ancestors of <person> following a X-chromosomal inheritance pattern."
-msgstr ""
+msgstr "איתור אבות קדמונים של <אדם> ועקיבה אחר דפוסי תורשה של כרומוזום X."
 
 #: FilterRules2/xchromdescendants.gpr.py:25
 #: FilterRules2/xchromdescendants.py:48
@@ -7127,7 +7128,7 @@ msgstr ""
 msgid ""
 "Matches descendants of <person> following a X-chromosomal inheritance "
 "pattern."
-msgstr ""
+msgstr "איתור דורות ממשיכים של <אדם> ועקיבה אחר דפוסי תורשה של כרומוזום X."
 
 #: FilterRules2/patrilinealprogenitor.py:45
 #: FilterRules2/patrilinealprogenitor.gpr.py:25
@@ -7137,7 +7138,7 @@ msgstr ""
 #: FilterRules2/patrilinealprogenitor.py:47
 #: FilterRules2/patrilinealprogenitor.gpr.py:26
 msgid "Matches the earliest recorded patrilineal ancestor father."
-msgstr ""
+msgstr "איתור האב הקדמון המוקדם ביותר שמתועד מצד משפחת האב."
 
 #: FilterRules2/mtinheritanceoffiltermatch.py:46
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
