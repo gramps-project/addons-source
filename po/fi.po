@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-05-07 15:03+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-05-08 17:01+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -3526,7 +3526,7 @@ msgstr "Näytetäänkö paikkasivut"
 
 #: DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
-msgstr "Valitse karttapalvelu, jota haluat käyttää paikojen karttasivuilla"
+msgstr "Valitse karttapohja, jota haluat käyttää paikkakartalla"
 
 #: DynamicWeb/dynamicweb.py:4926
 msgid "Google map API key"
@@ -3549,11 +3549,11 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
-msgstr "Ota sivun kokoonpano käyttöön"
+msgstr "Käytä sivun määrityksiä"
 
 #: DynamicWeb/dynamicweb.py:4969
 msgid "Whether to enable page configuration"
-msgstr "Otetaanko sivun kokoonpano"
+msgstr "Käytetäänkö sivun määrityksiä"
 
 #: DynamicWeb/dynamicweb.py:4974
 msgid "Whether to use tabbed panels for the different sections of the pages."
@@ -3561,11 +3561,12 @@ msgstr "Käytetäänkö välilehtipaneeleja sivujen eri osiin."
 
 #: DynamicWeb/dynamicweb.py:4980
 msgid "Whether to show the last modification time in the pages footer"
-msgstr "Näytetäänkö muokkausaika sivun alatunnisteessa"
+msgstr "Näytetäänkö sivun muutosaika alatunnisteessa"
 
 #: DynamicWeb/dynamicweb.py:4988
+#, fuzzy
 msgid "Whether to insert sources author in the sources title"
-msgstr "Lisätäänkö lähteiden tekijä lähteet otsikkoon"
+msgstr "Näytetäänkö lähteen tekijä lähdetiedoissa"
 
 #: DynamicWeb/dynamicweb.py:4993
 msgid "Whether to hide the Gramps ID"
@@ -3581,11 +3582,11 @@ msgstr "Taulukko"
 
 #: DynamicWeb/dynamicweb.py:5008
 msgid "Default format for the surnames index"
-msgstr "Sukunimihakemiston oletusmuoto"
+msgstr "Sukunimiluettelon oletusmuoto"
 
 #: DynamicWeb/dynamicweb.py:5009
 msgid "The default format for the surnames index"
-msgstr "Sukunimihakemiston oletusmuoto"
+msgstr "Sukunimiluettelon oletusmuoto"
 
 #: DynamicWeb/dynamicweb.py:5014
 msgid "Default format for the persons index"
@@ -3636,7 +3637,7 @@ msgstr "Luodaanko perheille hakemistosivu"
 
 #: DynamicWeb/dynamicweb.py:5073
 msgid "Whether to include a column showing the media path"
-msgstr "Lisätäänkö sarake, joka näyttää mediapolun"
+msgstr "Näytetäänkö mediapolku-sarake"
 
 #: DynamicWeb/dynamicweb.py:5079
 msgid ""
@@ -3644,17 +3645,17 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"Lisätäänkö viittaukset hakemistosivujen kohteisiin. Esimerkiksi media-"
-"hakemistosivulla henkilöden, perheiden ja paikkojen lähteet, jotka "
-"viittaavat mediaan."
+"Sisällytetäänkö viittaukset hakemistosivujen kohteisiin. Esimerkiksi "
+"mediahakemistossa mainitaan mediaan viittaavat henkilöt, perheet, paikat ja "
+"lähteet."
 
 #: DynamicWeb/dynamicweb.py:5085
 msgid "Default number of entries in the indexes"
-msgstr "Hakemiston merkintöjen oletusmäärä"
+msgstr "Hakemistorivien oletusmäärä"
 
 #: DynamicWeb/dynamicweb.py:5090
 msgid "The default number of entries shown in one index page"
-msgstr "Yhdellä hakemistosivulla näkyvien merkintöjen oletusmäärä"
+msgstr "Yhdellä hakemistosivulla näytettävien kohteiden oletusmäärä"
 
 #: DynamicWeb/dynamicweb.py:5098
 #: LifeLineChartView/_dummy_translation_string_po.py:101
@@ -3666,8 +3667,8 @@ msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
 msgstr ""
-"Sukupolvien enimmäismäärä, jotka lisätään esivanhempien ja jälkeläisten "
-"sukupuihin ja kaavioihin"
+"Esivanhempien ja jälkeläisten puissa ja graafeissa näytettävien sukupolvien "
+"enimmäismäärä"
 
 #: DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
@@ -3688,7 +3689,7 @@ msgstr "Valitse lasten oletusjakautuma SVG-sukupuuhun (vain viuhkamallit)"
 #: DynamicWeb/dynamicweb.py:5149
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
-msgstr "Valitse henkilöiden taustaväri SVG-sukupuu kaaviolle"
+msgstr "Valitse henkilöiden värivalikoima SVG-sukupuu -kaaviolle"
 
 #: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
@@ -3703,12 +3704,13 @@ msgid "A note to be used as the page header"
 msgstr "Sivun ylätunnisteena käytettävä lisätieto"
 
 #: DynamicWeb/dynamicweb.py:5197
+#, fuzzy
 msgid "HTML user brand name / icon"
-msgstr "HTML käyttäjän tuotemerkki / kuvake"
+msgstr "HTML-käyttäjän tuotenimi tai kuvake"
 
 #: DynamicWeb/dynamicweb.py:5199
 msgid "A note to be used as the brand name or image in the menu"
-msgstr "Merkki, jota käytetään valikossa tuotemerkkinä tai kuvana"
+msgstr "Merkki, jota käytetään tuotemerkkinä tai kuvana valikossa"
 
 #: DynamicWeb/dynamicweb.py:5208
 msgid "Custom pages"
@@ -3811,7 +3813,7 @@ msgstr ""
 
 #: RestoreHist/restorehist.gpr.py:30
 msgid "Restart where you were last working"
-msgstr ""
+msgstr "Jatka siitä kohdasta, jossa viimeksi työskentelit"
 
 #: RestoreHist/restorehist.gpr.py:32
 msgid ""
@@ -3819,6 +3821,10 @@ msgid ""
 "was previously closed.  It adds no new menus or Gramplets, but allows the "
 "last six objects visited to be found via the 'Go' menu."
 msgstr ""
+"Tällä lisäosalla Gramps käynnistyy uudelleen samasta näkymästä ja kohteesta, "
+"josta viimeksi poistuttiin. Uusia valikoita tai Grampletteja ei listät, "
+"mutta mahdollistaa kuuden viimeksi vieraillun kohteen löytämisen 'Siirry'-"
+"valikon kautta."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -3826,19 +3832,19 @@ msgstr ""
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
-msgstr ""
+msgstr "Tarkastaa ihmisellä olevat liitokset."
 
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
-msgstr ""
+msgstr "Liitosten tilatyökalu"
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
-msgstr "Linkin tyyppi"
+msgstr "Liitoksen tyyppi"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
-msgstr ""
+msgstr "-"
 
 #: Topola/Topola.gpr.py:4
 msgid "Interactive Family Tree"
@@ -3851,27 +3857,27 @@ msgstr "Avaa interaktiivisen puun selaimessa"
 #: ListeEclair/ListeEclair.py:97 ListeEclair/ListeEclair.py:104
 #: ListeEclair/ListeEclair.gpr.py:4
 msgid "Liste Eclair"
-msgstr ""
+msgstr "Pikaluettelo"
 
 #: ListeEclair/ListeEclair.py:277
 msgid "Type de Liste"
-msgstr ""
+msgstr "Listan tyyppi"
 
 #: ListeEclair/ListeEclair.py:279
 msgid "Tiny Tafel"
-msgstr ""
+msgstr "Pikku sukutaulu"
 
 #: ListeEclair/ListeEclair.py:280
 msgid "cousingenweb"
-msgstr ""
+msgstr "Serkkutaulu"
 
 #: ListeEclair/ListeEclair.py:281
 msgid "Type de liste"
-msgstr ""
+msgstr "Listan tyyppi"
 
 #: ListeEclair/ListeEclair.py:284
 msgid "Include private data"
-msgstr "Lisää yksityiset tiedot"
+msgstr "Näytä yksityiset tiedot"
 
 #: ListeEclair/ListeEclair.py:301
 msgid "The style used for the liste eclair."
@@ -3879,18 +3885,18 @@ msgstr "Pikaluettelossa käytetty tyyli."
 
 #: ListeEclair/ListeEclair.py:314
 msgid "The style used for place title."
-msgstr "Paikan otsikossa käytetty tyyli."
+msgstr "Paikannimessä käytetty tyyli."
 
 #: ListeEclair/ListeEclair.gpr.py:5
 msgid "Produit une liste eclair"
-msgstr ""
+msgstr "Tuottaa pikalistan"
 
 #: Sqlite/ExportSql.py:1346
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vienti suoritettu %d sekunnissa"
+msgstr[1] "Vienti suoritettu %d sekunnissa"
 
 #: Sqlite/Sqlite.gpr.py:4
 msgid "SQLite Import"
@@ -3898,18 +3904,18 @@ msgstr "Tuonti SQLite-kannasta"
 
 #: Sqlite/Sqlite.gpr.py:5 Sqlite/Sqlite.gpr.py:20
 msgid "SQLite is a common local database format"
-msgstr ""
+msgstr "SQLite on yleisesti käytetty paikallinen tietokanta"
 
 #: Sqlite/Sqlite.gpr.py:19
 msgid "SQLite Export"
-msgstr ""
+msgstr "SQLite vienti"
 
 #: Sqlite/ImportSql.py:893
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tuonti valmis %d sekunnissa"
+msgstr[1] "Tuonti valmis %d sekunnissa"
 
 #: CombinedView/basepage.py:493
 #, python-format
@@ -3942,7 +3948,7 @@ msgstr "Aktivoi tapahtuma napsauttamalla"
 
 #: CombinedView/personpage.py:743
 msgid "Click to visit this link"
-msgstr "Napsauta käydäksesi tässä linkkissä"
+msgstr "Klikkaa tästä vieraillaksesi tässä linkissä"
 
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
@@ -3984,15 +3990,15 @@ msgstr "Alekkaiset tiedot"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
-msgstr ""
+msgstr "Tiedonsyöttö-gramplet"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
-msgstr ""
+msgstr "Gramplet nopeaan tiedonsyöttöön"
 
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
-msgstr ""
+msgstr "Perhe:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
 msgid "Sources?"
@@ -4006,11 +4012,11 @@ msgstr "Sukunimi, Etunimi"
 #: DataEntryGramplet/DataEntryGramplet.py:89 RelID/relation_tab.py:126
 #: NoteGramplet/NoteGramplet.py:111
 msgid "Save"
-msgstr ""
+msgstr "Tallenna"
 
 #: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
-msgstr ""
+msgstr "Hylkää"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
@@ -4022,7 +4028,7 @@ msgstr "Lisää sukulaisuus"
 
 #: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "No relation to active person"
-msgstr "Ei aktiivihenkilön sukulainen"
+msgstr "Ei sukua aktiiviselle henkilölle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
@@ -4038,15 +4044,15 @@ msgstr "Lisää isäksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
-msgstr ""
+msgstr "Lisää puoliso"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
 msgid "Add as a Wife"
-msgstr ""
+msgstr "Lisää vaimona"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
 msgid "Add as a Husband"
-msgstr ""
+msgstr "Lisää aviomiehenä"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
@@ -4054,11 +4060,11 @@ msgstr "Lisää sisaruksena"
 
 #: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
-msgstr ""
+msgstr "Lisää lapseksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
-msgstr ""
+msgstr "Kopioi aktiiviset tiedot"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
@@ -4073,11 +4079,11 @@ msgstr "paikassa"
 #: DataEntryGramplet/DataEntryGramplet.py:569
 #, python-format
 msgid "Gramplet Data Edit: %s"
-msgstr ""
+msgstr "Gramplet-tietojen muokkaus: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
-msgstr ""
+msgstr "Anna nimi."
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
@@ -4097,20 +4103,20 @@ msgstr "Valise ensin aktiivihenkilö."
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:526
 msgid "Can't add new person as a parent."
-msgstr ""
+msgstr "Uutta henkilöä ei voi lisätä vanhemmaksi."
 
 #: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
-msgstr ""
+msgstr "Aseta uuden henkilön sukupuoli."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
 msgid "Can't add new person as a mother."
-msgstr ""
+msgstr "Uutta henkilöä ei voi lisätä äidiksi."
 
 #: DataEntryGramplet/DataEntryGramplet.py:536
 msgid "Can't add new person as a father."
-msgstr ""
+msgstr "Uutta henkilöä ei voi lisätä isäksi."
 
 #: DataEntryGramplet/DataEntryGramplet.py:541
 #: DataEntryGramplet/DataEntryGramplet.py:545
@@ -4118,24 +4124,24 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:805
 #: DataEntryGramplet/DataEntryGramplet.py:838
 msgid "Can't add new person as a spouse."
-msgstr ""
+msgstr "Uutta henkilöä ei voi lisätä puolisoksi."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
 msgid "Can't add new person as a wife."
-msgstr ""
+msgstr "Uutta henkilöä ei voi lisätä vaimoksi."
 
 #: DataEntryGramplet/DataEntryGramplet.py:555
 msgid "Can't add new person as a husband."
-msgstr ""
+msgstr "Uutta henkilöä ei voi lisätä aviopuolisoksi."
 
 #: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
-msgstr ""
+msgstr "Uutta henkilöä ei voi lisätä sisarukseksi."
 
 #: DataEntryGramplet/DataEntryGramplet.py:565
 #: DataEntryGramplet/DataEntryGramplet.py:938
 msgid "Can't add new person as a child."
-msgstr ""
+msgstr "Uutta henkilöä ei voi lisätä lapseksi."
 
 #: DataEntryGramplet/DataEntryGramplet.py:763
 msgid "Please set Active person."
@@ -4143,40 +4149,40 @@ msgstr "Valise ensin aktiivihenkilö."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
-msgstr ""
+msgstr "Ei voi lisätä uutta henkilöä puolisoksi kenellekään."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr ""
+msgstr "Aseta sukupuoli aktiiviselle tai uudelle henkilölle."
 
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
-msgstr ""
+msgstr "Samat sukupuolet aktiivisella ja uudella henkilöllä."
 
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
-msgstr ""
+msgstr "Aseta sukupuoli aktiivihenkilölle."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
 msgid "FamilyTree DNA"
-msgstr ""
+msgstr "FamilyTree DNA"
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:5
 msgid "Tool to import FamilyFinder DNA data from Family Tree"
-msgstr ""
+msgstr "Työkalu FamilyFinder-DNA-tietojen tuomiseen Family Treestä"
 
 #: FamilyTreeDNA/ftdna_import.py:75
 msgid "Family Finder Tool"
-msgstr ""
+msgstr "Family Finder -työkalu"
 
 #: FamilyTreeDNA/ftdna_import.py:104
 msgid "Enter FTDNA Family Finder Filename:"
-msgstr ""
+msgstr "Anna FTDNA Family Finder -tiedostonimi:"
 
 #: FamilyTreeDNA/ftdna_import.py:109
 msgid "Enter FTDNA Chromosome Segment Filename:"
-msgstr ""
+msgstr "Anna FTDNA-kromosomisegmentin tiedostonimi:"
 
 #: FamilyTreeDNA/ftdna_import.py:112
 msgid "Import Haplogroups"
@@ -4184,11 +4190,11 @@ msgstr "Tuo haploryhmiä"
 
 #: FamilyTreeDNA/ftdna_import.py:128
 msgid "FTDNA Note string :"
-msgstr ""
+msgstr "FTDNA Note -merkkijono:"
 
 #: FamilyTreeDNA/ftdna_import.py:137
 msgid "Shared Citation ID :"
-msgstr ""
+msgstr "Jaetun viittauksen ID:"
 
 #: FamilyTreeDNA/ftdna_import.py:151
 msgid "Active Person : "
@@ -4196,76 +4202,77 @@ msgstr "Aktiivihenkilö: "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
-msgstr ""
+msgstr "Tuo tietoja Family Finder -tiedostoista"
 
 #: FamilyTreeDNA/ftdna_import.py:169
 msgid "Close the Family Finder Tool"
-msgstr ""
+msgstr "Sulje Family Finder -työkalu"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
-msgstr ""
+msgstr "Lue ohjekirjaa"
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
 msgid "FamilyTree DNA Import"
-msgstr ""
+msgstr "FamilyTree DNA-tuonti"
 
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
-msgstr ""
+msgstr "{} Yhteydet DNA-dataan luotu. {} Haploryhmäattribuutit luotu \n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
-msgstr ""
+msgstr "Family Finder -tiedostoa ei ole määritetty"
 
 #: FamilyTreeDNA/ftdna_import.py:232
 msgid "No Segment File specified"
-msgstr ""
+msgstr "Segmenttitiedostoa ei ole määritetty"
 
 #: FamilyTreeDNA/ftdna_import.py:236
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
 msgstr ""
+"FTdna Notesista ei löytynyt assosiaatioita. Haploryhmäattribuutteja ei luotu."
 
 #: FamilyTreeDNA/ftdna_import.py:307
 #, python-format
 msgid "Add %s haplogroup attribute"
-msgstr ""
+msgstr "Lisää %s haploryhmäattribuutti"
 
 #: FamilyTreeDNA/ftdna_import.py:350
 #, python-format
 msgid "Add %s DNA Association"
-msgstr "Lisää %s DNA-yhteys"
+msgstr "Lisää %s DNA-liitos"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr ""
+msgstr "Luo muistiinpano %s DNA-liitokselle"
 
 #: FamilyTreeDNA/ftdna_import.py:369
 #, python-format
 msgid "Add Note to %s DNA Association"
-msgstr ""
+msgstr "Lisää muistiinpano %s DNA-yhteydelle"
 
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr ""
+msgstr "Luo lähdeviittaus DNA-yhteydelle %s"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr ""
+msgstr "Luo viittaus DNA-liitokselle %s"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr ""
+msgstr "Lisää viittaus DNA-liitokseen %s"
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
-msgstr "Teema on koodattu GTK_THEME"
+msgstr "Teema on kiinteästi määritelty GTK_THEME:ssä"
 
 #: Themes/themes.py:180
 msgid "Dark Variant"
@@ -4309,25 +4316,25 @@ msgstr "Valitse liitettävän lähteen tyyppi"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
-msgstr ""
+msgstr "Uusi lähteen nimi"
 
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
-msgstr ""
+msgstr "Liitettävän lähteen teksti"
 
 #: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
-msgstr ""
+msgstr "Olemassa olevan lähteen ID"
 
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr ""
+msgstr "Liitettävän lähteen tunnus"
 
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 msgid "Attach Source"
-msgstr ""
+msgstr "Liitä lähde"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
@@ -4344,12 +4351,12 @@ msgstr "Valmis!\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
-msgstr ""
+msgstr "Liittää jaetun lähteen useisiin kohteisiin."
 
 #: PythonGramplet/PythonGramplet.gpr.py:4
 #: PythonGramplet/PythonGramplet.gpr.py:11
 msgid "Python Shell"
-msgstr ""
+msgstr "Python-tulkki"
 
 #: PythonGramplet/PythonGramplet.gpr.py:5
 msgid "Interactive Python interpreter"
@@ -4357,7 +4364,7 @@ msgstr "Interaktiivinen Python-tulkki"
 
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
-msgstr ""
+msgstr "Syötä Python-lausekkeita"
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -4365,11 +4372,11 @@ msgstr "Ei lähdettä"
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
 msgid "onclick"
-msgstr ""
+msgstr "napsautuksella"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onmouseover"
-msgstr ""
+msgstr "hiiren osoittimen päällä"
 
 #: DenominoViso/DenominoViso.py:208
 #: LinesOfDescendency/lines-of-descendency.py:55
@@ -4382,19 +4389,19 @@ msgstr "Jälkeläinen"
 
 #: DenominoViso/DenominoViso.py:214
 msgid "Fan"
-msgstr ""
+msgstr "Viuhka"
 
 #: DenominoViso/DenominoViso.py:215
 msgid "Growth Spiral"
-msgstr ""
+msgstr "Kasvuspiraali"
 
 #: DenominoViso/DenominoViso.py:216
 msgid "Mandelbrot Tree"
-msgstr ""
+msgstr "Mandelbrotin puu"
 
 #: DenominoViso/DenominoViso.py:217
 msgid "Pythagoras Tree"
-msgstr ""
+msgstr "Pythagoraan puu"
 
 #: DenominoViso/DenominoViso.py:221
 msgid "right to left"
@@ -4416,7 +4423,7 @@ msgstr "alhaalta ylös"
 #: DenominoViso/DenominoViso.py:1034 DenominoViso/DenominoViso.py:1259
 #: DenominoViso/DenominoViso.py:2750
 msgid "role"
-msgstr ""
+msgstr "rooli"
 
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
@@ -4431,41 +4438,37 @@ msgstr "todistajat"
 
 #: DenominoViso/DenominoViso.py:395
 msgid "No central person selected"
-msgstr "Aktiivihenkilöä ei ole asetettu"
+msgstr "Keskushenkilöä ei ole asetettu"
 
 #: DenominoViso/DenominoViso.py:769
-#, fuzzy
-#| msgid "Time Direction"
 msgid "Unknown time direction"
-msgstr "Ajan suunta"
+msgstr "Tuntematon ajan suunta"
 
 #: DenominoViso/DenominoViso.py:1508 DenominoViso/DenominoViso.py:1562
 msgid "author"
-msgstr ""
+msgstr "tekijä"
 
 #: DenominoViso/DenominoViso.py:1513 DenominoViso/DenominoViso.py:1563
 msgid "publication_info"
-msgstr ""
+msgstr "julkaisutiedot"
 
 #: DenominoViso/DenominoViso.py:1518 DenominoViso/DenominoViso.py:1564
-#, fuzzy
-#| msgid "birth abbreviation|b."
 msgid "abbreviation"
-msgstr "s."
+msgstr "lyhenne"
 
 #: DenominoViso/DenominoViso.py:1562
 msgid "volume"
-msgstr ""
+msgstr "vuosikerta"
 
 #: DenominoViso/DenominoViso.py:1754 Form/form_us.xml.h:2270
 #: Form/form_us.xml.h:2288 Form/form_us.xml.h:2299 Form/form_us.xml.h:2317
 #: Form/form_us.xml.h:2327
 msgid "of"
-msgstr ""
+msgstr "/"
 
 #: DenominoViso/DenominoViso.py:1959
 msgid "the chart type runs out of bounds"
-msgstr ""
+msgstr "kaaviotyyppi ylittää rajat"
 
 #: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
 #: GraphView/graphview.py:968 SearchGramplet/SearchGramplet.gpr.py:9
@@ -4475,39 +4478,35 @@ msgstr "Hae"
 
 #: DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
-msgstr ""
+msgstr "DenominoVison asetukset"
 
 #: DenominoViso/DenominoViso.py:2556
 msgid "The destination file for the html-content."
 msgstr "Kohdehakemisto html-tiedostoille."
 
 #: DenominoViso/DenominoViso.py:2559
-#, fuzzy
-#| msgid "Note on Person"
 msgid "Central Person"
-msgstr "Henkilön lisätietoja"
+msgstr "Keskushenkilö"
 
 #: DenominoViso/DenominoViso.py:2560
 msgid "The central person for the tree"
-msgstr ""
+msgstr "Puun keskushenkilö"
 
 #: DenominoViso/DenominoViso.py:2563
-#, fuzzy
-#| msgid "The title of the web site"
 msgid "Title of the webpage"
-msgstr "Sivuston otsikko"
+msgstr "Sivun otsikko"
 
 #: DenominoViso/DenominoViso.py:2564
 msgid "Any string you wish."
-msgstr ""
+msgstr "Mielivaltainen merkkijono."
 
 #: DenominoViso/DenominoViso.py:2567
 msgid "Display mode"
-msgstr ""
+msgstr "Näyttötila"
 
 #: DenominoViso/DenominoViso.py:2568
 msgid "Either plot ancestor or descendants graph."
-msgstr ""
+msgstr "Joko esi-isän tai jälkeläisten kuvaaja."
 
 #: DenominoViso/DenominoViso.py:2573
 #, fuzzy
@@ -4516,256 +4515,198 @@ msgid "Display type"
 msgstr "Viivan tyyppi"
 
 #: DenominoViso/DenominoViso.py:2574
-#, fuzzy
-#| msgid "Select the type of graph"
 msgid "The type of graph to create."
-msgstr "Valitse kaavion tyyppi"
+msgstr "Luotavan kaavion tyyppi."
 
 #: DenominoViso/DenominoViso.py:2582
-#, fuzzy
-#| msgid "Detection finished"
 msgid "Direction of time"
-msgstr "Kasvojentunnistus valmis"
+msgstr "Ajan suunta"
 
 #: DenominoViso/DenominoViso.py:2583
 msgid "Direction in which time increases."
-msgstr ""
+msgstr "Mihin suuntaan aika kasvaa."
 
 #: DenominoViso/DenominoViso.py:2592
 msgid "Max chart width (%)"
-msgstr ""
+msgstr "Kaavion enimmäisleveys (%)"
 
 #: DenominoViso/DenominoViso.py:2593
 msgid "Width of the tree as fraction of the browser window"
-msgstr ""
+msgstr "Puun leveys selainikkunan murto-osana"
 
 #: DenominoViso/DenominoViso.py:2596
-#, fuzzy
-#| msgid "Minimum face height (px)"
 msgid "Max chart height (px)"
-msgstr "Kasvojen minimikorkeus (px)"
+msgstr "Kaavion enimmäiskorkeus (%)"
 
 #: DenominoViso/DenominoViso.py:2597
 msgid "Height of the tree in pixels."
-msgstr ""
+msgstr "Puun korkeus pikseleinä."
 
 #: DenominoViso/DenominoViso.py:2600
 msgid "Closing remarks"
-msgstr ""
+msgstr "Loppusanat"
 
 #: DenominoViso/DenominoViso.py:2601
 msgid ""
 "List of strings, free text added at the bottom, for example for a copyright "
 "notice."
 msgstr ""
+"Merkkijonoluettelo, lopussa vapaamuotoista tekstiä esimerkiksi "
+"tekijänoikeusilmoitusta varten."
 
 #: DenominoViso/DenominoViso.py:2604
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "Include Options"
-msgstr "Lisää todistajat"
+msgstr "Näytä vaihtoehdot"
 
 #: DenominoViso/DenominoViso.py:2607
 #: RepositoriesReport/RepositoriesReportAlt.py:467
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "Include private records"
-msgstr "Lisää todistajat"
+msgstr "Näytä yksityiset tiedot"
 
 #: DenominoViso/DenominoViso.py:2608
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to leave out private data."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Jätetäänkö yksityiset tiedot pois."
 
 #: DenominoViso/DenominoViso.py:2611
-#, fuzzy
-#| msgid "Include media"
 msgid "Include Events"
-msgstr "Lisää media"
+msgstr "Näytä tapahtumat"
 
 #: DenominoViso/DenominoViso.py:2613
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include a person's events."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Näytetäänkö yksityiset tiedot."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
-msgstr ""
+msgstr "Sisällytä syntymälapset"
 
 #: DenominoViso/DenominoViso.py:2622
-#, fuzzy
-#| msgid ""
-#| "Whether to include dates columns (birth, death, marriage) on the index "
-#| "pages"
 msgid "Whether to include the birth of children in the list of events."
-msgstr ""
-"Lisätäänkö hakemistosivuihin päivämääräsarakkeet (syntymälle, kuolemalle ja "
-"avioliitolle)"
+msgstr "Näytetäänkö lasten syntymät tapahtumaluettelossa."
 
 #: DenominoViso/DenominoViso.py:2625
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "Include death relatives"
-msgstr "Lisää todistajat"
+msgstr "Näytä kuolleet sukulaiset"
 
 #: DenominoViso/DenominoViso.py:2626
-#, fuzzy
-#| msgid "Whether to include images and media in the web pages"
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
-msgstr "Lisätäänkö kuvat ja media nettisivulle"
+msgstr "Näytetäänkö sukulaisten kuolemat henkilön elinaikana."
 
 #: DenominoViso/DenominoViso.py:2629
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "Include witness note"
-msgstr "Lisää todistajat"
+msgstr "Näytä todistajanlausunto"
 
 #: DenominoViso/DenominoViso.py:2630
 msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
 "contains <witnesses>)"
 msgstr ""
+"Näytetäänkö todistajalle kuuluva muistiinpano (jos tapahtuma sisältää "
+"<witnesses>)"
 
 #: DenominoViso/DenominoViso.py:2635
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include a person's attributes"
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Näytetäänkö henkilön ominaisuudet"
 
 #: DenominoViso/DenominoViso.py:2638
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "Include Addresses"
-msgstr "Lisää todistajat"
+msgstr "Näytä osoitteet"
 
 #: DenominoViso/DenominoViso.py:2639
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include a person's addresses."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Näytetäänkö henkilön osoitteet."
 
 #: DenominoViso/DenominoViso.py:2642
-#, fuzzy
-#| msgid "Include media"
 msgid "Include Note"
-msgstr "Lisää media"
+msgstr "Näytä lisätiedot"
 
 #: DenominoViso/DenominoViso.py:2643
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include a person's note."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Näytetäänkö henkilön lisätiedot."
 
 #: DenominoViso/DenominoViso.py:2646
-#, fuzzy
-#| msgid "Don't include URLs"
 msgid "Include URL"
-msgstr "Älä lisää URL-osoitteita"
+msgstr "Näytä URL-osoitteet"
 
 #: DenominoViso/DenominoViso.py:2647
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include a person's internet address."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Näytetäänkö henkilön internet-osoite."
 
 #: DenominoViso/DenominoViso.py:2650
-#, fuzzy
-#| msgid "No place description"
 msgid "Include URL description"
-msgstr "Ei paikkatietoa"
+msgstr "Näytä URL-kuvaus"
 
 #: DenominoViso/DenominoViso.py:2651
-#, fuzzy
-#| msgid "Whether to include a column showing the media path"
 msgid "Whether to include the description of the first URL"
-msgstr "Lisätäänkö sarake, joka näyttää mediapolun"
+msgstr "Näytetäänkö ensimmäisen URL-osoitteen kuvaus"
 
 #: DenominoViso/DenominoViso.py:2656
-#, fuzzy
-#| msgid "Include media"
 msgid "Include Sources"
-msgstr "Lisää media"
+msgstr "Näytä lähteet"
 
 #: DenominoViso/DenominoViso.py:2657
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include a person's sources."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Näytetäänkö henkilön lähteet."
 
 #: DenominoViso/DenominoViso.py:2660
 msgid "Image Options"
-msgstr ""
+msgstr "Kuva-asetukset"
 
 #: DenominoViso/DenominoViso.py:2662
 msgid "Include Photos/Images from Gallery"
-msgstr ""
+msgstr "Sisällytä kuvia galleriasta"
 
 #: DenominoViso/DenominoViso.py:2663
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include images"
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Näytetäänkö kuvat"
 
 #: DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
-msgstr ""
+msgstr "Kopioi kuva"
 
 #: DenominoViso/DenominoViso.py:2667
 msgid "Copy the images to a designated directory."
-msgstr ""
+msgstr "Kopioi kuvat tiettyyn hakemistoon."
 
 #: DenominoViso/DenominoViso.py:2674
 msgid "Images with Attribute"
-msgstr ""
+msgstr "Kuvat ominaisuuksineen"
 
 #: DenominoViso/DenominoViso.py:2675
 msgid "Determine images with which attributes to in/exclude"
-msgstr ""
+msgstr "Määritä kuvat, joiden oinaisuudet sisällytetään tai jätetään pois"
 
 #: DenominoViso/DenominoViso.py:2678
-#, fuzzy
-#| msgid "Include references in indexes"
 msgid "Include Image source references"
-msgstr "Lisää lähdeviitteet hakemistoihin"
+msgstr "Näytä kuvien lähdeviitteet"
 
 #: DenominoViso/DenominoViso.py:2679
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include references for images"
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Näytetäänkö viittaukset kuviin"
 
 #: DenominoViso/DenominoViso.py:2682
 msgid "Source reference attribute"
-msgstr ""
+msgstr "Lähdeviittauksen ominaisuudet"
 
 #: DenominoViso/DenominoViso.py:2683
 msgid "Image attribute that should be used as source reference"
-msgstr ""
+msgstr "Kuvan ominaisuus, jota tulisi käyttää lähdeviitteenä"
 
 #: DenominoViso/DenominoViso.py:2689
-#, fuzzy
-#| msgid "Filter options"
 msgid "Style Options"
-msgstr "Suodinvalinnat"
+msgstr "Tyylivalinnat"
 
 #: DenominoViso/DenominoViso.py:2691
-#, fuzzy
-#| msgid "Go to active person"
 msgid "Color of active person:"
-msgstr "Siirry aktiivihenkilöön"
+msgstr "Aktiivisen henkilön väri:"
 
 #: DenominoViso/DenominoViso.py:2692
 msgid "RGB-color of geometric shape of the activated person."
-msgstr ""
+msgstr "Aktivihenkilön muodon RGB-väri."
 
 #: DenominoViso/DenominoViso.py:2695
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Color of found persons:"
-msgstr "Polun väri kotihenkilölle"
+msgstr "Löydettyjen henkilöiden väri:"
 
 #: DenominoViso/DenominoViso.py:2696
 #, fuzzy
