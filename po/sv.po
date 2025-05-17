@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-11 14:09+0100\n"
-"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"PO-Revision-Date: 2025-05-12 06:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -2397,11 +2397,11 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
-msgstr ""
+msgstr " 👣 Nästa steg:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
 msgid "  •  From the \"Family Trees\" menu,"
-msgstr ""
+msgstr "  •  Från familjeträds-menyn,"
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
@@ -21025,22 +21025,16 @@ msgid "Show bookmarked persons first in search result list."
 msgstr ""
 
 #: GraphView/graphview.py:999
-#, fuzzy
-#| msgid "Select A File"
 msgid "Select a dot file name"
-msgstr "Välj fil"
+msgstr "Välj ett punktfilnamn"
 
 #: GraphView/graphview.py:1123
-#, fuzzy
-#| msgid "Color of active person:"
 msgid "Go to active person"
-msgstr "Färg för aktiv person:"
+msgstr "Gå till aktiv person"
 
 #: GraphView/graphview.py:1128
-#, fuzzy
-#| msgid "top to bottom"
 msgid "Go to bookmark"
-msgstr "uppifrån och ner"
+msgstr "Gå till bokmärke"
 
 #: GraphView/graphview.py:1130
 msgid "Center view on selected bookmark"
@@ -21055,34 +21049,24 @@ msgid "Other Bookmarks"
 msgstr ""
 
 #: GraphView/graphview.py:1164
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Ancestor generations"
-msgstr "Färfädersgenertioner"
+msgstr "Förfädersgenerationer"
 
 #: GraphView/graphview.py:1168
-#, fuzzy
-#| msgid "Descendant Generations"
 msgid "Descendant generations"
 msgstr "Ättlingagenerationer"
 
 #: GraphView/graphview.py:1179
-#, fuzzy
-#| msgid "Average years between two generations"
 msgid "Vertical spacing between generations"
-msgstr "Antal år i medel mellan två generationer"
+msgstr "Vertikalt avstånd mellan generationer"
 
 #: GraphView/graphview.py:1184
-#, fuzzy
-#| msgid "Average years between two generations"
 msgid "Horizontal spacing between generations"
-msgstr "Antal år i medel mellan två generationer"
+msgstr "Horisontellt avstånd mellan generationer"
 
 #: GraphView/graphview.py:1188
-#, fuzzy
-#| msgid "Spacing (inch)"
 msgid "Spacings"
-msgstr "Mellanrum (tum)"
+msgstr "Mellanrum"
 
 #: GraphView/graphview.py:1193
 msgid "All connected"
@@ -21095,10 +21079,8 @@ msgid ""
 msgstr ""
 
 #: GraphView/graphview.py:1337
-#, fuzzy
-#| msgid "Active person"
 msgid "Add active person"
-msgstr "Aktiv person"
+msgstr "Lägg till aktiv person"
 
 #: GraphView/graphview.py:1342
 msgid "Call the bookmark editor"
@@ -21121,10 +21103,9 @@ msgstr ""
 #: GraphView/graphview.py:1417 GraphView/graphview.py:1419
 #: GraphView/search_widget.py:233 GraphView/search_widget.py:252
 #: SearchGramplet/SearchGramplet.py:259 SearchGramplet/SearchGramplet.py:281
-#, fuzzy, python-format
-#| msgid "found"
+#, python-format
 msgid "found: %s"
-msgstr "hittad"
+msgstr "hittade: %s"
 
 #: GraphView/graphview.py:1429
 #, python-format
@@ -21141,10 +21122,8 @@ msgid ""
 msgstr ""
 
 #: GraphView/graphview.py:1519
-#, fuzzy
-#| msgid "The active Person"
 msgid "Change active person?"
-msgstr "Den aktiva personen"
+msgstr "Ändra den aktiva personen?"
 
 #: GraphView/graphview.py:2668
 #, python-brace-format
@@ -21164,22 +21143,16 @@ msgid "Image on right side"
 msgstr ""
 
 #: GraphView/graphview.py:3068
-#, fuzzy
-#| msgid "Image for males."
 msgid "Image on left side"
-msgstr "Bild för män."
+msgstr "Bild på vänstra sidan"
 
 #: GraphView/graphview.py:3399
-#, fuzzy
-#| msgid "<b>Image</b>"
 msgid "<b>Tags:</b>"
-msgstr "<b>Bild</b>"
+msgstr "<b>Taggar:</b>"
 
 #: GraphView/graphview.py:3779
-#, fuzzy
-#| msgid "Mime type"
 msgid "Lines type"
-msgstr "Mimetyp"
+msgstr "Linjetyp"
 
 #: GraphView/graphview.py:3783 NetworkChart/NetworkChart.py:1174
 #: NetworkChart/NetworkChart.py:1188
@@ -21195,34 +21168,24 @@ msgid "Ortho"
 msgstr ""
 
 #: GraphView/graphview.py:3875
-#, fuzzy
-#| msgid "No relation to active person"
 msgid "No Events for this person"
-msgstr "Ingen släktskap till aktiv person"
+msgstr "Inga händelser för denna person"
 
 #: GraphView/graphview.py:3896
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Select tags for person"
-msgstr "Ställ in som huvudperson"
+msgstr "Välj taggar för personen"
 
 #: GraphView/graphview.py:3907
-#, fuzzy
-#| msgid "Used for family"
 msgid "Add new family"
-msgstr "Använd för familj"
+msgstr "Lägg till ny familj"
 
 #: GraphView/graphview.py:4025
-#, fuzzy
-#| msgid "Grandparents"
 msgid "Add parents"
-msgstr "Far/mor-föräldrar"
+msgstr "Lägg till föräldrar"
 
 #: GraphView/graphview.py:4051
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Show path to home person"
-msgstr "Ställ in som huvudperson"
+msgstr "Visa mål till hemperson"
 
 #: GraphView/graphview.py:4057 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364 SearchGramplet/SearchGramplet.py:637
@@ -21237,34 +21200,24 @@ msgid "Add to bookmarks"
 msgstr ""
 
 #: GraphView/graphview.py:4161
-#, fuzzy
-#| msgid "Used for family"
 msgid "No Events for this family"
-msgstr "Använd för familj"
+msgstr "Inga händelser för denna familj"
 
 #: GraphView/graphview.py:4182
-#, fuzzy
-#| msgid "Select a .gpkg or .gramps file"
 msgid "Select tags for family"
-msgstr "Välj en .gpkg eller .gramps-fil"
+msgstr "Välj taggar för familj"
 
 #: GraphView/graphview.py:4201
-#, fuzzy
-#| msgid "Add Note"
 msgid "Add father"
-msgstr "Lägg till notis"
+msgstr "Lägg till far"
 
 #: GraphView/graphview.py:4210
-#, fuzzy
-#| msgid "Add Note"
 msgid "Add mother"
-msgstr "Lägg till notis"
+msgstr "Lägg till mor"
 
 #: GraphView/graphview.py:4313
-#, fuzzy
-#| msgid "Graph View"
 msgid "About Graph View"
-msgstr "Diagramvy"
+msgstr "Om Graph View"
 
 #: GraphView/graphview.py:4669
 #, python-format
@@ -21290,22 +21243,16 @@ msgid "Dynamic and interactive graph of relations"
 msgstr ""
 
 #: GraphView/avatars.py:60
-#, fuzzy
-#| msgid "- default -"
 msgid "Dark (default)"
-msgstr "- standard -"
+msgstr "Mörk (standard)"
 
 #: GraphView/avatars.py:61
-#, fuzzy
-#| msgid "Height:"
 msgid "Light"
-msgstr "Höjd:"
+msgstr "Ljus"
 
 #: GraphView/avatars.py:62
-#, fuzzy
-#| msgid "CartoDB Positron"
 msgid "Cartoon"
-msgstr "CartoDB Positron"
+msgstr "Tecknad film"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
@@ -21316,10 +21263,8 @@ msgid "Persons from current graph"
 msgstr ""
 
 #: GraphView/search_widget.py:83
-#, fuzzy
-#| msgid "Include URLs from database."
 msgid "Other persons from database"
-msgstr "Ta med URL:er från databas."
+msgstr "Andra personer från databasen"
 
 #: GraphView/search_widget.py:235
 msgid "No persons found..."
@@ -21332,16 +21277,13 @@ msgid ""
 msgstr ""
 
 #: GraphView/search_widget.py:592
-#, fuzzy, python-format
-#| msgid "<b>Witness:</b>"
+#, python-format
 msgid "<b>%s:</b>"
-msgstr "<b>Vittne:</b>"
+msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
-#, fuzzy
-#| msgid "Partner's spouse"
 msgid "Partners"
-msgstr "Partners maka/make"
+msgstr "Partners"
 
 #: Overview/Overview.gpr.py:29
 msgid "Person Overview"
@@ -21364,16 +21306,12 @@ msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet som visar en översikt på händelser för en familj"
 
 #: UAWebConnectPack/UAWebPack.gpr.py:11
-#, fuzzy
-#| msgid "SV Web Connect Pack"
 msgid "UA Web Connect Pack"
-msgstr "SV Web Connect Pack"
+msgstr "UA Web Connect Pack"
 
 #: UAWebConnectPack/UAWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for Sweden (requires libwebconnect)"
 msgid "Collection of Web sites for the UA (requires libwebconnect)"
-msgstr "Samling av webbplatser för Sverige (kräver libwebconnect)"
+msgstr "Samling av webbplatser för UA (kräver libwebconnect)"
 
 #: UAWebConnectPack/UAWebPack.py:39
 msgid "Forum: ukrgenealogy.com.ua"
@@ -21396,10 +21334,8 @@ msgid "Repressed DB: reabit.org.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:50
-#, fuzzy
-#| msgid "FamilySearch.org"
 msgid "Genealogy DB: familysearch.org"
-msgstr "FamilySearch.org"
+msgstr "Genealogy DB: familysearch.org"
 
 #: UAWebConnectPack/UAWebPack.py:51
 msgid "Genealogy DB: myheritage.com.ua"
@@ -21418,45 +21354,32 @@ msgid "Search: google.com.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:60
-#, fuzzy
-#| msgid "Search Quota "
 msgid "Search: roots.in.ua"
-msgstr "Sökkvot "
+msgstr "Sök: rötter.i.ua"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
-#, fuzzy
-#| msgid "Biography Content"
 msgid "Historical Context"
-msgstr "Biografi-innehåll"
+msgstr "Historisk kontext"
 
 #: HistContext/HistContext.gpr.py:5
-#, fuzzy
-#| msgid ""
-#| "Whether to include the death of relatives during the lifetime of person."
 msgid "Lists relevant historical events during the lifetime of a Person"
-msgstr "Huruvida ta med döden för släktingar under personens liv."
+msgstr "Listar relevanta historiska händelser under en persons livstid"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
 msgstr ""
 
 #: HistContext/HistContext.py:126
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Use filter "
-msgstr "Plata_filter:"
+msgstr "Använd filter "
 
 #: HistContext/HistContext.py:129
-#, fuzzy
-#| msgid "Show lifespan"
 msgid "Show outside life span "
-msgstr "Visa levnadsomfång"
+msgstr "Visa yttre livslängd "
 
 #: HistContext/HistContext.py:132
-#, fuzzy
-#| msgid "Full date"
 msgid "Use full dates"
-msgstr "Komplett datum"
+msgstr "Använd kompletta datum"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
@@ -21475,89 +21398,61 @@ msgid "Background color items outside lifespan"
 msgstr ""
 
 #: HistContext/HistContext.py:149
-#, fuzzy
-#| msgid "Select A File"
 msgid "Select from files"
-msgstr "Välj fil"
+msgstr "Välj från filer"
 
 #: HistContext/HistContext.py:287
-#, fuzzy
-#| msgid "Invalid timestamp"
 msgid "Invalid date "
-msgstr "Ogiltig tidsstämpel"
+msgstr "Ogiltigt datum "
 
 #: HistContext/HistContext.py:288
-#, fuzzy
-#| msgid "%(line)s. line:"
 msgid " in line: "
-msgstr "%(line)s. linje:"
+msgstr " i kö: "
 
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
-#, fuzzy
-#| msgid "Errors"
 msgid "Error:"
-msgstr "Fel"
+msgstr "Fel:"
 
 #: HistContext/HistContext.py:327
 msgid ": line does not contain four sections separated by semicolons in : \""
 msgstr ""
 
 #: HistContext/HistContext.py:419
-#, fuzzy
-#| msgid "Cannot copy \"%s\""
 msgid "Cannot open URL: "
-msgstr "Kan inte kopiera \"%s\""
+msgstr "Kan inte öppna URL: "
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.gpr.py:10
-#, fuzzy
-#| msgid "Gramplet to get places from the GOV database"
 msgid "Gramplet for search objects in database."
-msgstr "Gramplet för att hämta platser från GOV-databasen"
+msgstr "Gramplet för att söka objekt i databasen."
 
 #: SearchGramplet/SearchGramplet.py:104
-#, fuzzy
-#| msgid "Source type"
 msgid "Sort by object type"
-msgstr "Typ av källa"
+msgstr "Sortera efter objekttyp"
 
 #: SearchGramplet/SearchGramplet.py:138
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Menu to set search objects"
-msgstr "Person att söka efter"
+msgstr "Meny för att ställa in sökobjekt"
 
 #: SearchGramplet/SearchGramplet.py:140
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Select objects to search"
-msgstr "Ställ in som huvudperson"
+msgstr "Välj objekt att söka efter"
 
 #: SearchGramplet/SearchGramplet.py:154
-#, fuzzy
-#| msgid "SVG tree configuration"
 msgid "SearchGramplet configuration menu"
-msgstr "SVG-trädkonfiguration"
+msgstr "Konfigurationsmeny för SökGramplet"
 
 #: SearchGramplet/SearchGramplet.py:261
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "No matches..."
-msgstr ""
-"Inga\n"
-"Matchningar"
+msgstr "Inga matchningar..."
 
 #: SearchGramplet/SearchGramplet.py:353
-#, fuzzy
-#| msgid "Internet type filter"
 msgid "Start type to search"
-msgstr "Internettypsfilter"
+msgstr "Börja skriva för att söka"
 
 #: SearchGramplet/SearchGramplet.py:389
 msgid ""
@@ -21566,35 +21461,27 @@ msgid ""
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:743
-#, fuzzy, python-format
-#| msgid "Birthdays"
+#, python-format
 msgid "Birth: %s"
-msgstr "Födelsedagar"
+msgstr "Födelse: %s"
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
-#| msgid "Death act:"
+#, python-format
 msgid "Death: %s"
-msgstr "Dödsfallshandling:"
+msgstr "Död: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
-#, fuzzy
-#| msgid "Set as active person"
 msgid "Set as Active person"
 msgstr "Ställ in som aktiv person"
 
 #: SearchGramplet/SearchGramplet.py:920
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Set as Home person"
 msgstr "Ställ in som huvudperson"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Web Sync"
-msgstr "Gramps version"
+msgstr "Gramps Webb-synkronisering"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
@@ -21605,20 +21492,16 @@ msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:268
-#, fuzzy
-#| msgid "Fetching records..."
 msgid "Fetching remote data..."
-msgstr "Hämtar uppgifter..."
+msgstr "Hämtar fjärrdata..."
 
 #: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:322
-#, fuzzy
-#| msgid "Media Reference"
 msgid "Media files are in sync."
-msgstr "Mediareferens"
+msgstr "Mediefiler är synkroniserade."
 
 #: GrampsWebSync/grampswebsync.py:331
 #, python-format
@@ -21649,10 +21532,8 @@ msgid "Failed importing downloaded XML file."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:457
-#, fuzzy
-#| msgid "Exporting family tree data ..."
 msgid "Comparing local and remote data..."
-msgstr "Exporterar familjeträdsdata ..."
+msgstr "Jämför lokala- och fjärrdata..."
 
 #: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
@@ -21663,10 +21544,8 @@ msgid "Server authorization error: insufficient permissions."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:495
-#, fuzzy
-#| msgid "not found."
 msgid "Error: URL not found."
-msgstr "inte hittad."
+msgstr "Fel: URL inte hittad."
 
 #: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
@@ -21736,63 +21615,45 @@ msgid "Reset local to remote"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:799
-#, fuzzy
-#| msgid "Merge Media"
 msgid "Merge"
-msgstr "Slå samman media"
+msgstr "Slå samman"
 
 #: GrampsWebSync/grampswebsync.py:824
-#, fuzzy
-#| msgid "No changes"
 msgid "Local changes"
-msgstr "Inga ändringar"
+msgstr "Lokala ändringar"
 
 #: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
 #: GrampsWebSync/grampswebsync.py:834
-#, fuzzy
-#| msgid "Modified: "
 msgid "Modified"
-msgstr "Ändrat: "
+msgstr "Ändrat"
 
 #: GrampsWebSync/grampswebsync.py:829
-#, fuzzy
-#| msgid "No changes"
 msgid "Remote changes"
-msgstr "Inga ändringar"
+msgstr "Fjärrändringar"
 
 #: GrampsWebSync/grampswebsync.py:834
-#, fuzzy
-#| msgid "Doing Place changes"
 msgid "Simultaneous changes"
-msgstr "Genomför platsändringar"
+msgstr "Samtidiga förändringar"
 
 #: GrampsWebSync/grampswebsync.py:891
-#, fuzzy
-#| msgid "All information about %s"
 msgid "Fetching information about media files..."
-msgstr "All information om %s"
+msgstr "Hämtar information om mediefiler..."
 
 #: GrampsWebSync/grampswebsync.py:912
-#, fuzzy
-#| msgid "Your Tree and import are the same."
 msgid "Both trees are the same."
-msgstr "Ditt träd och importen är samma."
+msgstr "Båda träden är likadana."
 
 #: GrampsWebSync/grampswebsync.py:918
-#, fuzzy
-#| msgid "Apply geo location to Database"
 msgid "Applying changes to local database ..."
-msgstr "Tillämpa geolokaliseringen i databasen"
+msgstr "Tillämpar ändringar i den lokala databasen ..."
 
 #: GrampsWebSync/grampswebsync.py:920
 msgid "No changes to apply to local database."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:923
-#, fuzzy
-#| msgid "Apply geo location to Database"
 msgid "Applying changes to remote database ..."
-msgstr "Tillämpa geolokaliseringen i databasen"
+msgstr "Tillämpar ändringar i fjärrdatabasen ..."
 
 #: GrampsWebSync/grampswebsync.py:926
 msgid "No changes to apply to remote database."
@@ -21803,28 +21664,22 @@ msgid "Successfully applied changes to local database."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:962
-#, fuzzy
-#| msgid "Missing Files"
 msgid "Missing locally"
-msgstr "Saknade filer"
+msgstr "Saknas lokalt"
 
 #: GrampsWebSync/grampswebsync.py:965
-#, fuzzy
-#| msgid "Missing header"
 msgid "Missing remotely"
-msgstr "Rubrik saknas"
+msgstr "Saknas på distans"
 
 #: GrampsWebSync/grampswebsync.py:1003
-#, fuzzy, python-format
-#| msgid "Downloading files"
+#, python-format
 msgid "Downloading %s media file(s)"
-msgstr "Laddar ner filer"
+msgstr "Laddar ner mediefil(er) %s"
 
 #: GrampsWebSync/grampswebsync.py:1011
-#, fuzzy, python-format
-#| msgid "Downloading files"
+#, python-format
 msgid "Uploading %s media file(s)"
-msgstr "Laddar ner filer"
+msgstr "Laddar upp mediefil(er) %s"
 
 #: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
@@ -21905,10 +21760,8 @@ msgid "Clock"
 msgstr "Klocka"
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
-#, fuzzy
-#| msgid "Gramplet for detecting and assigning faces"
 msgid "Gramplet for demonstrating Cairo graphics"
-msgstr "Gramplet för igenkänning och tilldelning av ansikten"
+msgstr "Gramplet för att demonstrera Cairo-grafik"
 
 #: LastChange/LastChangeReport.py:74 LastChange/LastChangeReport.py:113
 #: LastChange/LastChange.gpr.py:42
