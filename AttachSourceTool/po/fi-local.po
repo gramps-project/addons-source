@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -30,6 +30,21 @@ msgstr "Olemassa oleva lähde"
 msgid "Select the type of source to attach"
 msgstr "Valitse liitettävän lähteen tyyppi"
 
+msgid "New Source Title"
+msgstr "Uusi lähteen nimi"
+
+msgid "Text of source to attach"
+msgstr "Liitettävän lähteen teksti"
+
+msgid "Existing Source ID"
+msgstr "Olemassa olevan lähteen ID"
+
+msgid "ID of source to attach"
+msgstr "Liitettävän lähteen tunnus"
+
+msgid "Attach Source"
+msgstr "Liitä lähde"
+
 msgid "Processing...\n"
 msgstr "Käsitellään...\n"
 
@@ -41,3 +56,6 @@ msgstr "Lähteitä liitetään..."
 
 msgid "Done!\n"
 msgstr "Valmis!\n"
+
+msgid "Attaches a shared source to multiple objects."
+msgstr "Liittää jaetun lähteen useisiin kohteisiin."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 15:52+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -80,11 +80,20 @@ msgstr "À propos de cet utilitaire."
 msgid "About dialog"
 msgstr "À propos"
 
+msgid "New birth or baptism"
+msgstr "Nouvelle naissance ou baptême"
+
 msgid "add birth act"
 msgstr "Ajouter l'acte de naissance"
 
 msgid "New marriage"
 msgstr "Nouveau mariage"
+
+msgid "add marriage act"
+msgstr "ajouter un acte de mariage"
+
+msgid "New death or burial"
+msgstr "Nouvelle mort ou sépulture"
 
 msgid "add death act"
 msgstr "Ajouter l'acte de décès"
@@ -107,8 +116,14 @@ msgstr "Sélectionnez une source de mariage"
 msgid "Select a death source"
 msgstr "Sélectionnez une source de décès"
 
+msgid "Select a census source"
+msgstr "Sélectionnez une source de recensement"
+
 msgid "census"
 msgstr "recensement"
+
+msgid "Select a repository storing a source"
+msgstr "Sélectionnez un dépôt stockant une source"
 
 msgid "repositories"
 msgstr "dépôts"
@@ -116,14 +131,28 @@ msgstr "dépôts"
 msgid "Selected view"
 msgstr "Vue sélectionnée"
 
+msgid ""
+"Records transcriptions ... births/deaths/marriages/censuses with common "
+"fields: id, repository, person name, birth date and place, parents."
+msgstr ""
+"Transcriptions des documents ... naissances/décès/mariages/recensements avec "
+"des champs communs : id., dépôt, nom de l'individu, date de naissance et "
+"lieu, parents."
+
 msgid "Info:"
 msgstr "Info :"
+
+msgid "Death act:"
+msgstr "Acte de décès :"
 
 msgid "Reference:"
 msgstr "Référence :"
 
 msgid "Volume:"
 msgstr "Volume :"
+
+msgid "<b>Death act</b>"
+msgstr "<b>Acte de décés</b>"
 
 msgid "First name:"
 msgstr "Prénom :"
@@ -309,6 +338,9 @@ msgstr "<b><i>Citation</i></b>"
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Source</i></b>"
 
+msgid "Marriage act:"
+msgstr "Acte de mariage :"
+
 msgid "m. date:"
 msgstr "date m. :"
 
@@ -320,3 +352,6 @@ msgstr "Date des bans de mariage :"
 
 msgid "places banns:"
 msgstr "lieux bans :"
+
+msgid "<b>Marriage act</b>"
+msgstr "<b>Acte de Mariage</b>"

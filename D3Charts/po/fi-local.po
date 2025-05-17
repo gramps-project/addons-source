@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -152,7 +152,7 @@ msgid "The number of descendant levels to contract on initial display."
 msgstr "Jälkeläisten supistettavien tasojen määrä aloitusnäytöllä."
 
 msgid "The font size in pixels for each node."
-msgstr "Kunkin solmun fonttikoko pikseleinä."
+msgstr "Kunkin solmun kirjainkoko pikseleinä."
 
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Näytetäänkö raportissa toistuvat sukupuut."
@@ -196,17 +196,101 @@ msgstr "Lisätäänkö mukaan hiljattain kuolleet henkilöt."
 msgid "Navigation"
 msgstr "Navigointi"
 
+msgid "Contraction/Expansion mechanism"
+msgstr "Supistus-/laajentamismekanismi"
+
+msgid "Entire node."
+msgstr "Koko solmu."
+
+msgid "Where to click to expand/contract nodes."
+msgstr "Mistä napsautetaan solmujen laajentamiseksi/supistamiseksi."
+
+msgid "Auto-generate HREF links for nodes"
+msgstr "Luo HREF-linkit automaattisesti solmuille"
+
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr "Luodaanko HTML-linkit automaattisesti jokaiseen raportin solmuun."
+
+msgid "URL prefix path."
+msgstr "URL-osoitteen etuliite."
+
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr "URL-etuliite, jokaiseen automaattisesti luotuun HREF-linkkiin."
+
+msgid "URL file extension"
+msgstr "URL-tiedoston pääte"
+
+msgid "No file extension."
+msgstr "Ei tiedostopäätettä."
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "URL file name delimeter"
+msgstr "URL-tiedoston nimen erotin"
+
+msgid "Remove all whitespace."
+msgstr "Poista kaikki välilyönnit."
+
+msgid "Replace whitespace with dash(-)."
+msgstr "Korvaa välilyönti yhdysmerkillä '-'."
+
+msgid "Replace whitespace with underscore(_)"
+msgstr "Korvaa välilyönti alaviivalla '_'"
+
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "Mitä käytetään tiedostonimen erottimena korvaamaan välilyönnit."
+
+msgid "Generations to generate HREF links"
+msgstr "Sukupolvet HREF-linkkien luomiseen"
+
 msgid "The number of generations to generate HREF links."
 msgstr "HREF-linkkien luomiseen käytettävien sukupolvien määrä."
+
+msgid "Exclude persons who died before (years)"
+msgstr "Ohita persons who died before (years)"
+
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr "Luodaanko linkkejä imeväisinä kuolleille, -1 ei ohiteta ketään."
 
 msgid "Exclude center person"
 msgstr "Keskushenkilöä lukuun ottamatta"
 
 msgid "Whether or not to generate links for center person."
-msgstr "Luodaanko linkkejä keskushenkilölle vai ei."
+msgstr "Luodaanko linkkejä keskushenkilölle."
+
+msgid "Exclude Spouses"
+msgstr "Ohita puolisot"
 
 msgid "Whether or not to generate links for spouses."
 msgstr "Luodaanko linkkejä puolisoille."
+
+msgid "Biography Content"
+msgstr "Elämäkerran sisältö"
+
+msgid "Show biography tooltips"
+msgstr "Näytä elämäkerran työkaluvinkit"
+
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr ""
+"Näytetäänkö elämäkerran työkaluvihjeitä vietäessä hiiren osoitin solmun "
+"päälle."
 
 msgid "Text Color"
 msgstr "Tekstin väri"
@@ -216,3 +300,15 @@ msgstr "RGB-väri elämäkertatekstille."
 
 msgid "RGB-color for biography tooltip."
 msgstr "RGB-väri elämäkerran työkaluvihjeitä varten."
+
+msgid "Header Font size"
+msgstr "Otsikon kirjainkoko"
+
+msgid "The font size in pixels for biography header text."
+msgstr "Elämäkerran otsikon kirjainkoko pikseleinä."
+
+msgid "Body Font size"
+msgstr "Tekstin kirjainkoko"
+
+msgid "The font size in pixels for biography body text."
+msgstr "Elämäkerran kirjainkoko pikseleinä."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -15,20 +15,84 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "Media Verify Tool"
+msgstr "Mediatietojen tarkastustyökalu"
+
+msgid "Moved/Renamed Files"
+msgstr "Siirretyt tai uudelleennimetyt tiedostot"
+
 msgid "Missing Files"
 msgstr "Puuttuvat tiedostot"
 
 msgid "Duplicate Files"
 msgstr "Päällekkäiset tiedostot"
 
+msgid "Extra Files"
+msgstr "Ylimääräisiä tiedostoja"
+
+msgid "No md5 Generated"
+msgstr "Ei luotu md5:tä"
+
+msgid "Errors"
+msgstr "Virheitä"
+
+msgid "Close the Media Verify Tool"
+msgstr "Sulje mediatietojen tarkastustyökalu"
+
 msgid "Generate"
 msgstr "Muodosta"
+
+msgid "Generate md5 hashes for media objects"
+msgstr "Luo md5-hajautusarvoja mediatiedoille"
+
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr ""
+"Tarkista mediapolut ja ilmoita puuttuvista, kaksoiskappaleista ja "
+"ylimääräisistä tiedostoista"
 
 msgid "Export"
 msgstr "Vie"
 
+msgid "Export the results to a text file"
+msgstr "Vie tulokset tekstitiedostoon"
+
+msgid "Fix"
+msgstr "Korjaa"
+
+msgid "Fix media paths of moved and renamed files"
+msgstr "Korjaa siirrettyjen ja uudelleennimettyjen tiedostojen mediapolut"
+
+msgid "Verify Gramps media using md5 hashes"
+msgstr "Tarkista Gramps-media md5-tiivisteillä"
+
+msgid "Export results to a text file"
+msgstr "Vie tulokset tekstitiedostoon"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Virhe kirjoitettaessa raporttia: %s"
+
+msgid "Generating media hashes"
+msgstr "Median tiivisteiden luominen"
+
+msgid "Set media hashes"
+msgstr "Aseta mediatiivisteet"
+
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"Mediapolkua ei ole asetettu. Sinun on määritettävä \"Suhteellisten "
+"mediapolkujen peruspolku\" asetuksissa."
+
 msgid "Checking paths"
 msgstr "Polkujen tarkistaminen"
 
+msgid "Fix media paths"
+msgstr "Mediapolkujen korjaaminen"
+
 msgid "Media Verify"
 msgstr "Median tarkistus"
+
+msgid "Verify that media is present in the correct path"
+msgstr "Varmista, että median polku on oikein"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-02 08:01+0000\n"
+"PO-Revision-Date: 2025-05-16 05:37+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -25,7 +25,7 @@ msgid "People separated less than <N> degrees of <person>"
 msgstr "אנשים בפער של פחות מ <N> דרגות מ<אדם>"
 
 msgid "Filter rule that matches relatives by degrees of separation"
-msgstr "כלל מסנן שמתאים קרובים בדרגות מרחק"
+msgstr "כלל מסנן לאיתור קרובים לפי דרגות מרחק"
 
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr "איתור מקורות עם ערכים המכילים משתנים שנבחרו"
@@ -52,7 +52,13 @@ msgid "Families matching <event filter>"
 msgstr "משפחות שתואמות <מסנן אירוע>"
 
 msgid "Matches families that are matched by an event filter"
-msgstr "איתור משפחות שהותאמו על ידי מסנן אירועים"
+msgstr "איתור משפחות שאותרו על ידי מסנן אירועים"
+
+msgid "Matches families matched by an event filter"
+msgstr "איתור משפחות שאותרו על ידי מסנן אירועים"
+
+msgid "Matches persons which have events of given type and number."
+msgstr "איתור אנשים עם אירועים מסוג וכמות מסויימים."
 
 msgid "Include Parents"
 msgstr "הכללת הורים"
@@ -61,7 +67,7 @@ msgid "Filter people by their age at death"
 msgstr "סינון אנשים לפי גילם בפטירתם"
 
 msgid "Filter rule that matches people by their age at death"
-msgstr "כלל סינון שמתאים לאנשים לפי גילם בפטירתם"
+msgstr "כלל סינון לאיתור לאנשים לפי גיל פטירתם"
 
 msgid "People with events with a selected role"
 msgstr "אירועם לאנשים עם תפקיד שנבחר"
@@ -69,11 +75,14 @@ msgstr "אירועם לאנשים עם תפקיד שנבחר"
 msgid "The active Person"
 msgstr "האדם הפעיל"
 
+msgid "Matches sources with a particular value"
+msgstr "איתור מקורות עם ערך מסויים"
+
 msgid "Active person"
 msgstr "אדם פעיל"
 
 msgid "Matches the active person"
-msgstr "תואם לאדם הפעיל"
+msgstr "איתור האדם הפעיל"
 
 msgid "Age in years at person's death."
 msgstr "גילו של אדם בשנים בעת פטירתו."

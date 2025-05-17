@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -187,6 +187,9 @@ msgstr "Naissolun taustavärin läpinäkyvyys (läpinäkyvä = 0, kiinteä = 255
 msgid "Female Box Edge"
 msgstr "Naissolun reuna"
 
+msgid "RGB-color for Female box edge."
+msgstr "RGB-väri naissolun reunalle."
+
 msgid "Other Background"
 msgstr "Muiden taustaväri"
 
@@ -222,7 +225,7 @@ msgstr ""
 "käännetään, muuta järjestys käänteiseksi."
 
 msgid "Trim Box Edge"
-msgstr "Rajaa solun reunat"
+msgstr "Rajatun solun reunat"
 
 msgid "RGB-color for box edge that has been trimmed."
 msgstr "RGB-väri solun reunalle, joka on rajattu."
@@ -253,7 +256,7 @@ msgid "Round birthday to year after year entered (above)."
 msgstr "Pyöristää syntymäpäivät vuosi vuodelta (yllä)."
 
 msgid "Represent birthday by year only."
-msgstr "Edistää syntymäpäivästä vain vuoden."
+msgstr "Näyttää syntymäpäivästä vain vuoden."
 
 msgid ""
 "Enter year to start\n"
@@ -275,16 +278,15 @@ msgid "Round marriage to year after year entered (above)."
 msgstr "Pyöristää avioitumispäivän vuosi vuodelta (yllä)."
 
 msgid "Represent marriage by year only."
-msgstr "Edistää avioitumispäivästä vain vuoden."
+msgstr "Näyttää avioliittoja vain vuoden mukaan."
 
 msgid ""
 "Attempts to remove middle names.  Only works for entries with birth year in "
 "the record."
-msgstr ""
-"Yrität poistaa keskimmäiset nimet. Toimii vain syntymävuoden merkinnöissä."
+msgstr "Yrität poistaa toiset nimet. Toimii vain syntymävuoden merkinnöissä."
 
 msgid "Remove middle names."
-msgstr "Poista keskimmäiset nimet."
+msgstr "Poista toiset nimet."
 
 msgid "Allow inclusion of private records in chart."
 msgstr "Lisää yksityiset tiedot kaavioon."
@@ -305,14 +307,14 @@ msgid ""
 "You must enter valid person(s) before \n"
 "enabling trimming of descendants from tree."
 msgstr ""
-"Sinun on annettava vapaa(t) henkilö(t) ennen\n"
-"mahdollisuutta jälkeläisten rajaamiseen sukupuusta."
+"Sinun on annettava kelvollinen henkilö(t) ennen \n"
+"mahdollisuutta jälkeläisten karsimiseen puusta."
 
 msgid "Trim ancestors"
-msgstr "Rajaa esivanhemmat"
+msgstr "Rajaa esivanhempia"
 
 msgid "All ancestors (parents) of selected individuals will not be shown."
-msgstr "Valitun henkilön esivanhempia (vanhempia) ei näytetä."
+msgstr "Valittujen henkilöiden kaikkia esivanhempia ei näytetä."
 
 msgid "Enable trimming of ancestors."
 msgstr "Käytä esivanhempien rajausta."
@@ -327,11 +329,11 @@ msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
 msgstr ""
-"Poista ryhmät, jotka ovat pienempiä kuin pienryhmäkoko. Automaattinen\n"
-"tietokannoissa, joissa on yli 1500 henkilöä."
+"Poista ryhmät, jotka ovat pienempiä kuin vähimmäisryhmäkoko. \n"
+"Automaattinen tietokannoissa, joissa on yli 1500 henkilöä."
 
 msgid "Min Group Size"
-msgstr "Min. Ryhmän koko"
+msgstr "Ryhmän vähimmäiskoko"
 
 msgid ""
 "Enter the minimum size group to display.\n"
@@ -395,7 +397,7 @@ msgstr ""
 "Kaikki - Näytä vain suorat tai epäsuorat polut."
 
 msgid "Select person at center of selection radius in graph."
-msgstr "Valitse henkilö kaavion valintaruudun keskellä."
+msgstr "Valitse henkilö kaavion valintasäteen keskeltä."
 
 msgid ""
 "Max connections\n"
@@ -415,32 +417,32 @@ msgid "Limit graph to max connections from center."
 msgstr "Rajoita kaavion enimmäisyhteyksiä keskeltä."
 
 msgid "Display up to max connections from central person."
-msgstr "Näytä max. yhteydet keskushenkilöltä."
+msgstr "Näytä keskushenkilön enimmäis yhteydet."
 
 msgid "Highlight central person in graph."
 msgstr "Korosta kaavion keskushenkilö."
 
 msgid "Add yellow color background to central person."
-msgstr "Lisää keltainen väri keskushenkilön taustalle."
+msgstr "Lisää keltainen tausta keskushenkilölle."
 
 msgid "Use database handle instead of GrampID id in URLs."
-msgstr "Käytä tietokannan kahvan sijasta GrampID ja URL-osoitteita."
+msgstr "Käytä tietokannan tunnuksen sijasta GrampID ja URL-osoitteita."
 
 msgid ""
 "Use database handle instead of the gramps id for URLs.\n"
 "The handle should never change whereas gramps ids can."
 msgstr ""
-"Käytä tietokannan kahvaa URL-osoitteiden gramps-tunnuksen sijaan.\n"
-"Kahvan ei pitäisi koskaan muuttua, kun taas gramps id voi."
+"Käytä tietokannan tunnusta URL-osoitteiden gramps-tunnuksen sijaan.\n"
+"Tunnuksen ei pitäisi koskaan muuttua, kun taas gramps id voi."
 
 msgid "Confirm overwrite file."
-msgstr "Vahvista ylikirjoitustiedosto."
+msgstr "Vahvista tiedoston korvaaminen."
 
 msgid "Enable/disable confirmation of file overwrite."
-msgstr "Ota tiedoston päällekirjoitus käyttöön/poista se käytöstä."
+msgstr "Ota tiedoston korvaaminen käyttöön/poista se käytöstä."
 
 msgid "Network Chart"
 msgstr "Nettikaavio"
 
 msgid "Generates a family network chart."
-msgstr "Tuota perheiden nettikaavio."
+msgstr "Tuottaa perheiden nettikaavion."

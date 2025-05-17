@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 15:52+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -199,11 +199,24 @@ msgstr "Angle de rotation de l'étiquette de décès"
 msgid "Show marriage label"
 msgstr "Afficher l'étiquette du mariage"
 
+msgid "Activate the marriage label."
+msgstr "Activez l'étiquette du mariage."
+
+msgid "The color of the individuals is faded to black with increasing age."
+msgstr "La couleur des individus s'estompe vers le noir avec l'âge."
+
 msgid "Font name"
 msgstr "Nom de la police"
 
+msgid "Name of the font family used for labels."
+msgstr "Nom de la famille de police utilisée pour les étiquettes."
+
 msgid "Relative font size"
 msgstr "Taille relative de la police"
+
+msgid "The font size is given relatively to the line thickness."
+msgstr ""
+"La taille de la police est donnée relativement à l'épaisseur de la ligne."
 
 msgid "Family shape"
 msgstr "Forme de la famille"

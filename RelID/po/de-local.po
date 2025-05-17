@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -21,7 +21,7 @@ msgid "Will display relational informations with the home person"
 msgstr "Zeigt Informationen über die Beziehung zur Hauptperson an"
 
 msgid "Relation and distances with root"
-msgstr "Beziehung und Entfernungen zur Wurzel"
+msgstr "Beziehung und Abstände zur Wurzel"
 
 msgid "Folder Chooser"
 msgstr "Ordnerauswahl"
@@ -57,13 +57,13 @@ msgid "Save"
 msgstr "Speichern"
 
 msgid "Please wait, filtering..."
-msgstr "Bitte warten, filtere..."
+msgstr "Bitte warten, filtern..."
 
 msgid "No default_person"
 msgstr "Keine Standard_person"
 
 msgid "Generating relation map..."
-msgstr "Erstelle Beziehungenkarte..."
+msgstr "Beziehungskarte erzeugen..."
 
 #, python-format
 msgid ""

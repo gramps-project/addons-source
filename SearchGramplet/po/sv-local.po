@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 09:41-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"PO-Revision-Date: 2025-05-12 06:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,13 +12,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Search"
 msgstr "Sök"
 
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet för att söka objekt i databasen."
+
+msgid "Sort by object type"
+msgstr "Sortera efter objekttyp"
+
 msgid "Persons"
 msgstr "Personer"
 
+msgid "Menu to set search objects"
+msgstr "Meny för att ställa in sökobjekt"
+
+msgid "Select objects to search"
+msgstr "Välj objekt att söka efter"
+
+msgid "SearchGramplet configuration menu"
+msgstr "Konfigurationsmeny för SökGramplet"
+
+#, python-format
+msgid "found: %s"
+msgstr "hittade: %s"
+
+msgid "No matches..."
+msgstr "Inga matchningar..."
+
+msgid "Start type to search"
+msgstr "Börja skriva för att söka"
+
 msgid "Search..."
 msgstr "Sök..."
+
+#, python-format
+msgid "Birth: %s"
+msgstr "Födelse: %s"
+
+#, python-format
+msgid "Death: %s"
+msgstr "Död: %s"
+
+msgid "Set as Active person"
+msgstr "Ställ in som aktiv person"
+
+msgid "Set as Home person"
+msgstr "Ställ in som huvudperson"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -15,12 +15,83 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "FamilyTree DNA"
+msgstr "FamilyTree DNA"
+
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr "Työkalu FamilyFinder-DNA-tietojen tuomiseen Family Treestä"
+
+msgid "Family Finder Tool"
+msgstr "Family Finder -työkalu"
+
+msgid "Enter FTDNA Family Finder Filename:"
+msgstr "Anna FTDNA Family Finder -tiedostonimi:"
+
+msgid "Enter FTDNA Chromosome Segment Filename:"
+msgstr "Anna FTDNA-kromosomisegmentin tiedostonimi:"
+
 msgid "Import Haplogroups"
 msgstr "Tuo haploryhmiä"
+
+msgid "FTDNA Note string :"
+msgstr "FTDNA Note -merkkijono:"
+
+msgid "Shared Citation ID :"
+msgstr "Jaetun viittauksen ID:"
 
 msgid "Active Person : "
 msgstr "Aktiivihenkilö: "
 
+msgid "Import data from Family Finder files"
+msgstr "Tuo tietoja Family Finder -tiedostoista"
+
+msgid "Close the Family Finder Tool"
+msgstr "Sulje Family Finder -työkalu"
+
+msgid "Read Help manual"
+msgstr "Lue ohjekirjaa"
+
+msgid "FamilyTree DNA Import"
+msgstr "FamilyTree DNA-tuonti"
+
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr "{} Yhteydet DNA-dataan luotu. {} Haploryhmäattribuutit luotu \n"
+
+msgid "No Family Finder File specified"
+msgstr "Family Finder -tiedostoa ei ole määritetty"
+
+msgid "No Segment File specified"
+msgstr "Segmenttitiedostoa ei ole määritetty"
+
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr ""
+"FTdna Notesista ei löytynyt assosiaatioita. Haploryhmäattribuutteja ei luotu."
+
+#, python-format
+msgid "Add %s haplogroup attribute"
+msgstr "Lisää %s haploryhmäattribuutti"
+
 #, python-format
 msgid "Add %s DNA Association"
-msgstr "Lisää %s DNA-yhteys"
+msgstr "Lisää %s DNA-liitos"
+
+#, python-format
+msgid "Create Note for %s DNA Association"
+msgstr "Luo muistiinpano %s DNA-liitokselle"
+
+#, python-format
+msgid "Add Note to %s DNA Association"
+msgstr "Lisää muistiinpano %s DNA-yhteydelle"
+
+#, python-format
+msgid "Create Source Citation for %s DNA Association"
+msgstr "Luo lähdeviittaus DNA-yhteydelle %s"
+
+#, python-format
+msgid "Create Citation for %s DNA Association"
+msgstr "Luo viittaus DNA-liitokselle %s"
+
+#, python-format
+msgid "Add Citation to %s DNA Association"
+msgstr "Lisää viittaus DNA-liitokseen %s"

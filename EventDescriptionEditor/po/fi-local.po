@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -19,10 +19,14 @@ msgid "Event Description Editor"
 msgstr "Tapahtuman kuvausmuokkain"
 
 msgid "Search substring..."
-msgstr "Etsi osamerkkijono..."
+msgstr "Etsi osamerkkijonoa..."
 
 msgid "INFO"
 msgstr "INFO"
+
+#, python-format
+msgid "%s event descriptions of %s events were changed."
+msgstr "%s/%s tapahtumakuvausta muutettiin."
 
 msgid "Find"
 msgstr "Etsi"
@@ -30,5 +34,23 @@ msgstr "Etsi"
 msgid "Replace"
 msgstr "Korvaa"
 
+msgid "Replace substring only"
+msgstr "Korvaa vain osamerkkijono"
+
+msgid ""
+"If True only the substring will be replaced, otherwise the whole description "
+"will be deleted and replaced by the new one."
+msgstr ""
+"Jos Tosi/True, vain alimerkkijono korvataan, muuten koko kuvaus poistetaan "
+"ja korvataan uudella."
+
 msgid "Allow regex"
 msgstr "Salli säännölliset lausekkeet"
+
+msgid "Allow regular expressions."
+msgstr "Salli säännölliset lausekkeet."
+
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr ""
+"Työkalu, jolla voit etsiä ja korvata merkkijonon useaan tapahtumakuvaukseen."

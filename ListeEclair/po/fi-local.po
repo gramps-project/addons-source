@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -15,11 +15,29 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "Liste Eclair"
+msgstr "Pikaluettelo"
+
+msgid "Type de Liste"
+msgstr "Listan tyyppi"
+
+msgid "Tiny Tafel"
+msgstr "Pikku sukutaulu"
+
+msgid "cousingenweb"
+msgstr "Serkkutaulu"
+
+msgid "Type de liste"
+msgstr "Listan tyyppi"
+
 msgid "Include private data"
-msgstr "Lisää yksityiset tiedot"
+msgstr "Näytä yksityiset tiedot"
 
 msgid "The style used for the liste eclair."
 msgstr "Pikaluettelossa käytetty tyyli."
 
 msgid "The style used for place title."
-msgstr "Paikan otsikossa käytetty tyyli."
+msgstr "Paikannimessä käytetty tyyli."
+
+msgid "Produit une liste eclair"
+msgstr "Tuottaa pikalistan"

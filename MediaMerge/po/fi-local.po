@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -16,19 +16,19 @@ msgstr ""
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Media Merge"
-msgstr "Mediatietojen yhdistäminen"
+msgstr "Median yhdistäminen"
 
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
-msgstr[0] "{number_of} media yhdistetty"
-msgstr[1] "{number_of} mediatietoja yhdistetty"
+msgstr[0] "{number_of} mediatieto yhdistetty"
+msgstr[1] "{number_of} mediatietoa yhdistetty"
 
 msgid "No media items merged."
-msgstr "Yhtään mediatietoja ei yhdistetty."
+msgstr "Yhtään mediatietoa ei yhdistetty."
 
 msgid "Merge Media"
-msgstr "Yhdistä mediatietoja"
+msgstr "Mediatietojen yhdistäminen"
 
 msgid ""
 "Searches the entire database, looking for media that have the same path and "

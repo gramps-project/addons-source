@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -15,5 +15,23 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+#, python-format
+msgid "Export Complete: %d second"
+msgid_plural "Export Complete: %d seconds"
+msgstr[0] "Vienti suoritettu %d sekunnissa"
+msgstr[1] "Vienti suoritettu %d sekunnissa"
+
 msgid "SQLite Import"
 msgstr "Tuonti SQLite-kannasta"
+
+msgid "SQLite is a common local database format"
+msgstr "SQLite on yleisesti käytetty paikallinen tietokanta"
+
+msgid "SQLite Export"
+msgstr "SQLite vienti"
+
+#, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Tuonti valmis %d sekunnissa"
+msgstr[1] "Tuonti valmis %d sekunnissa"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -16,22 +16,44 @@ msgstr ""
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "SV Web Connect Pack"
-msgstr "SV Web Connect Pack"
+msgstr "Ruotsin Web Connect Pack"
 
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
-msgstr "Verkkosivustojen kokoelma Ruotsia varten (vaatii libwebconnect)"
+msgstr ""
+"Verkkosivustojen kokoelma Ruotsia varten (vaatii libwebconnect-kirjaston)"
 
 msgid "Find A Grave"
-msgstr "Etsi hauta"
+msgstr "Find A Grave"
 
 msgid "FamilySearch.org"
-msgstr "FamilySearch.org UK"
+msgstr "Englannin FamilySearch.org"
 
 msgid "Google SV"
-msgstr "Google SV"
+msgstr "Ruotsin Google"
 
 msgid "FamilySearch.org Tree"
 msgstr "FamilySearch.org sukupuu"
 
-msgid "Ancestry Search"
-msgstr "Ancestry haku"
+msgid "National archives of Sweden personsearch"
+msgstr "Ruotsin kansallisarkiston henkilöhaku"
+
+msgid "National archives of Sweden free search"
+msgstr "Ruotsin kansallisarkiston vapaa haku"
+
+msgid "Arkiv Digital estate records for Skåne"
+msgstr "Skånen kiinteistörekisterit"
+
+msgid "Find swedish portraits - Rötter.se"
+msgstr "Rötter.se - ruotsalaisten muotokuvien haku"
+
+msgid "Gravar.se - find swedish graves"
+msgstr "Gravar.se - ruotsalainen hautahaku"
+
+msgid "National archives of Sweden search censuses"
+msgstr "Ruotsin kansallisarkiston väestönlaskenta"
+
+msgid "Arkiv Digital released prisoners"
+msgstr "Archive Digitalin vapautetut vangit"
+
+msgid "Gravestone inventory - rötter.se"
+msgstr "Rötter.se - hautakivien inventaario"

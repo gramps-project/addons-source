@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -18,11 +18,29 @@ msgstr ""
 msgid "No Source"
 msgstr "Ei lähdettä"
 
+msgid "onclick"
+msgstr "napsautuksella"
+
+msgid "onmouseover"
+msgstr "hiiren osoittimen päällä"
+
 msgid "Ancestor"
 msgstr "Esivanhempi"
 
 msgid "Descendant"
 msgstr "Jälkeläinen"
+
+msgid "Fan"
+msgstr "Viuhka"
+
+msgid "Growth Spiral"
+msgstr "Kasvuspiraali"
+
+msgid "Mandelbrot Tree"
+msgstr "Mandelbrotin puu"
+
+msgid "Pythagoras Tree"
+msgstr "Pythagoraan puu"
 
 msgid "right to left"
 msgstr "oikealta vasemmalle"
@@ -36,6 +54,9 @@ msgstr "ylhäältä alas"
 msgid "bottom to top"
 msgstr "alhaalta ylös"
 
+msgid "role"
+msgstr "rooli"
+
 msgid "description"
 msgstr "kuvaus"
 
@@ -47,13 +68,306 @@ msgid "Failure writing {target_path}: {message}"
 msgstr "Kirjoitus epäonnistui {target_path}: {message}"
 
 msgid "No central person selected"
-msgstr "Aktiivihenkilöä ei ole asetettu"
+msgstr "Keskushenkilöä ei ole asetettu"
+
+msgid "Unknown time direction"
+msgstr "Tuntematon ajan suunta"
+
+msgid "author"
+msgstr "tekijä"
+
+msgid "publication_info"
+msgstr "julkaisutiedot"
+
+msgid "abbreviation"
+msgstr "lyhenne"
+
+msgid "volume"
+msgstr "vuosikerta"
+
+msgid "of"
+msgstr "/"
+
+msgid "the chart type runs out of bounds"
+msgstr "kaaviotyyppi ylittää rajat"
 
 msgid "Search"
 msgstr "Hae"
 
+msgid "DenominoViso Options"
+msgstr "DenominoVison asetukset"
+
 msgid "The destination file for the html-content."
 msgstr "Kohdehakemisto html-tiedostoille."
 
+msgid "Central Person"
+msgstr "Keskushenkilö"
+
+msgid "The central person for the tree"
+msgstr "Puun keskushenkilö"
+
+msgid "Title of the webpage"
+msgstr "Sivun otsikko"
+
+msgid "Any string you wish."
+msgstr "Mielivaltainen merkkijono."
+
+msgid "Display mode"
+msgstr "Näyttötila"
+
+msgid "Either plot ancestor or descendants graph."
+msgstr "Joko esi-isän tai jälkeläisten kuvaaja."
+
+msgid "The type of graph to create."
+msgstr "Luotavan kaavion tyyppi."
+
+msgid "Direction of time"
+msgstr "Ajan suunta"
+
+msgid "Direction in which time increases."
+msgstr "Mihin suuntaan aika kasvaa."
+
+msgid "Max chart width (%)"
+msgstr "Kaavion enimmäisleveys (%)"
+
+msgid "Width of the tree as fraction of the browser window"
+msgstr "Puun leveys selainikkunan murto-osana"
+
+msgid "Max chart height (px)"
+msgstr "Kaavion enimmäiskorkeus (%)"
+
+msgid "Height of the tree in pixels."
+msgstr "Puun korkeus pikseleinä."
+
+msgid "Closing remarks"
+msgstr "Loppusanat"
+
+msgid ""
+"List of strings, free text added at the bottom, for example for a copyright "
+"notice."
+msgstr ""
+"Merkkijonoluettelo, lopussa vapaamuotoista tekstiä esimerkiksi "
+"tekijänoikeusilmoitusta varten."
+
+msgid "Include Options"
+msgstr "Näytä vaihtoehdot"
+
+msgid "Include private records"
+msgstr "Näytä yksityiset tiedot"
+
+msgid "Whether to leave out private data."
+msgstr "Jätetäänkö yksityiset tiedot pois."
+
+msgid "Include Events"
+msgstr "Näytä tapahtumat"
+
+msgid "Whether to include a person's events."
+msgstr "Näytetäänkö yksityiset tiedot."
+
+msgid "Include birth children"
+msgstr "Sisällytä syntymälapset"
+
+msgid "Whether to include the birth of children in the list of events."
+msgstr "Näytetäänkö lasten syntymät tapahtumaluettelossa."
+
+msgid "Include death relatives"
+msgstr "Näytä kuolleet sukulaiset"
+
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
+msgstr "Näytetäänkö sukulaisten kuolemat henkilön elinaikana."
+
+msgid "Include witness note"
+msgstr "Näytä todistajanlausunto"
+
+msgid ""
+"Whether to include the note belonging to a witness (if the event_format "
+"contains <witnesses>)"
+msgstr ""
+"Näytetäänkö todistajalle kuuluva muistiinpano (jos tapahtuma sisältää "
+"<witnesses>)"
+
+msgid "Whether to include a person's attributes"
+msgstr "Näytetäänkö henkilön ominaisuudet"
+
+msgid "Include Addresses"
+msgstr "Näytä osoitteet"
+
+msgid "Whether to include a person's addresses."
+msgstr "Näytetäänkö henkilön osoitteet."
+
+msgid "Include Note"
+msgstr "Näytä lisätiedot"
+
+msgid "Whether to include a person's note."
+msgstr "Näytetäänkö henkilön lisätiedot."
+
+msgid "Include URL"
+msgstr "Näytä URL-osoitteet"
+
+msgid "Whether to include a person's internet address."
+msgstr "Näytetäänkö henkilön internet-osoite."
+
+msgid "Include URL description"
+msgstr "Näytä URL-kuvaus"
+
+msgid "Whether to include the description of the first URL"
+msgstr "Näytetäänkö ensimmäisen URL-osoitteen kuvaus"
+
+msgid "Include Sources"
+msgstr "Näytä lähteet"
+
+msgid "Whether to include a person's sources."
+msgstr "Näytetäänkö henkilön lähteet."
+
+msgid "Image Options"
+msgstr "Kuva-asetukset"
+
+msgid "Include Photos/Images from Gallery"
+msgstr "Sisällytä kuvia galleriasta"
+
+msgid "Whether to include images"
+msgstr "Näytetäänkö kuvat"
+
+msgid "Copy Image"
+msgstr "Kopioi kuva"
+
+msgid "Copy the images to a designated directory."
+msgstr "Kopioi kuvat tiettyyn hakemistoon."
+
+msgid "Images with Attribute"
+msgstr "Kuvat ominaisuuksineen"
+
+msgid "Determine images with which attributes to in/exclude"
+msgstr "Määritä kuvat, joiden oinaisuudet sisällytetään tai jätetään pois"
+
+msgid "Include Image source references"
+msgstr "Näytä kuvien lähdeviitteet"
+
+msgid "Whether to include references for images"
+msgstr "Näytetäänkö viittaukset kuviin"
+
+msgid "Source reference attribute"
+msgstr "Lähdeviittauksen ominaisuudet"
+
+msgid "Image attribute that should be used as source reference"
+msgstr "Kuvan ominaisuus, jota tulisi käyttää lähdeviitteenä"
+
+msgid "Style Options"
+msgstr "Tyylivalinnat"
+
+msgid "Color of active person:"
+msgstr "Aktiivisen henkilön väri:"
+
+msgid "RGB-color of geometric shape of the activated person."
+msgstr "Aktivihenkilön muodon RGB-väri."
+
+msgid "Color of found persons:"
+msgstr "Löydettyjen henkilöiden väri:"
+
+msgid "RGB-color of geometric shape of the persons found."
+msgstr "Löydettyjen henkilöiden muodon RGB-väri."
+
+msgid "Color of male persons:"
+msgstr "Miesten väri:"
+
+msgid "RGB-color of geometric shape of the male persons."
+msgstr "Miesten muodon RGB-väri."
+
+msgid "Colour of female persons:"
+msgstr "Naisten väri:"
+
+msgid "RGB-color of geometric shape of the female persons."
+msgstr "Naisten muodon RGB-väri."
+
+msgid "Width of rectangle (hrd):"
+msgstr "Suorakulmion leveys (hrd):"
+
+msgid ""
+"The width of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"Tavallisen kaaviotyypin henkilösuorakulmion leveys ilmaistuna "
+"vaakasuuntaisten suorakulmiden etäisyyden murto-osana."
+
+msgid "Height of rectangle (hrd):"
+msgstr "Suorakulmion korkeus (hrd):"
+
+msgid ""
+"The height of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"Tavallisen kaaviotyypin henkilösuorakulmion korkeus ilmaistuna "
+"vaakasuuntaisen suorakulmioiden etäisyyden murto-osana."
+
+msgid "Vertical distance of rectangles (hrd):"
+msgstr "Suorakulmioiden pystysuora etäisyys (hrd):"
+
+msgid ""
+"The vertical distance of person rectangles of the regular chart type "
+"expressed as fraction of the horizontal rectangle distance."
+msgstr ""
+"Tavallisen kaaviotyypin henkilöiden suorakulmioiden pystysuora etäisyys "
+"ilmaistuna vaakasuoran suorakulmioiden etäisyyden murto-osana."
+
+msgid "Extra style settings:"
+msgstr "Muita tyyliasetuksia:"
+
+msgid "Whatever css style settings are needed."
+msgstr "Mahdollisesti tarpeellisia CSS-tyyliasetuksia."
+
+msgid "Mouse event handler"
+msgstr "Hiiren tapahtumankäsittelijä"
+
+msgid "Mouse handler used to interact with visitor of webpage."
+msgstr ""
+"Hiirikäsittelijä, jota käytetään vuorovaikutukseen verkkosivun käyttäjän "
+"kanssa."
+
 msgid "Birth relationship linestyle"
 msgstr "Syntymäsuhteen viivatyyli"
+
+msgid ""
+"List of lists where each sublist is a list with information about the dash "
+"pattern of lines connecting children to parents."
+msgstr ""
+"Luettelo, jossa kukin aliluettelo määrittelee lasten ja vanhempien välisten "
+"viivojen katkoviivakuvioita."
+
+msgid "Source confidence color"
+msgstr "Lähteen luotettavuusväri"
+
+msgid ""
+"List of lists where each sublist is a list with information on the color to "
+"use for a certain confidence level."
+msgstr ""
+"Luettelo, jossa kukin aliluettelo määrittelee tietyn luotettavuustason "
+"viivojen värin."
+
+msgid "Event format"
+msgstr "Tapahtuman muoto"
+
+msgid "at"
+msgstr "paikalle"
+
+msgid ""
+"List os strings with placeholders for events. Known placeholders: <type>, "
+"<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
+"<attribute-value>."
+msgstr ""
+"Listaa merkkijonoja tapahtumien paikkamerkkeineen. Tunnetut paikkamerkit: "
+"<type>, <role>, <date>, <place>, <description>, <witnesses>, <source> ja "
+"mikä tahansa <attribute-value>."
+
+msgid "Source format"
+msgstr "Lähteen muoto"
+
+msgid ""
+"List of strings with placeholders for sources. Known placeholders: <title>, "
+"<volume>, <author>, <publication_info> and <abbreviation>."
+msgstr ""
+"Listaa merkkijonoja lähteiden paikkamerkkeineen. Tunnetut paikkamerkit: "
+"<title>, <volume>, <author>, <publication_info> ja <abbreviation>."
+
+msgid "restricted to:"
+msgstr "rajoitettuna:"

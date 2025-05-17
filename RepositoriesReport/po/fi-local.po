@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -17,6 +17,9 @@ msgstr ""
 
 msgid "Include media"
 msgstr "Lisää media"
+
+msgid "Include private records"
+msgstr "Näytä yksityiset tiedot"
 
 msgid "The style used for the title of the report."
 msgstr "Raportin otsikon tyyli."

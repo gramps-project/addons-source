@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"PO-Revision-Date: 2025-05-12 06:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -92,6 +92,9 @@ msgstr "Visa personbilder"
 msgid "Search"
 msgstr "Sök"
 
+msgid "Select a dot file name"
+msgstr "Välj ett punktfilnamn"
+
 msgid "Zoom in"
 msgstr "Zooma in"
 
@@ -104,9 +107,49 @@ msgstr "Zooma till originalet"
 msgid "Zoom to best fit"
 msgstr "Zooma för att passa bäst"
 
+msgid "Go to active person"
+msgstr "Gå till aktiv person"
+
+msgid "Go to bookmark"
+msgstr "Gå till bokmärke"
+
+msgid "Ancestor generations"
+msgstr "Förfädersgenerationer"
+
+msgid "Descendant generations"
+msgstr "Ättlingagenerationer"
+
+msgid "Vertical spacing between generations"
+msgstr "Vertikalt avstånd mellan generationer"
+
+msgid "Horizontal spacing between generations"
+msgstr "Horisontellt avstånd mellan generationer"
+
+msgid "Spacings"
+msgstr "Mellanrum"
+
+msgid "Add active person"
+msgstr "Lägg till aktiv person"
+
+#, python-format
+msgid "found: %s"
+msgstr "hittade: %s"
+
+msgid "Change active person?"
+msgstr "Ändra den aktiva personen?"
+
+msgid "Image on left side"
+msgstr "Bild på vänstra sidan"
+
 #, python-format
 msgid "%s "
 msgstr "%s "
+
+msgid "<b>Tags:</b>"
+msgstr "<b>Taggar:</b>"
+
+msgid "Lines type"
+msgstr "Linjetyp"
 
 msgid "Direct"
 msgstr "Direkt"
@@ -114,8 +157,38 @@ msgstr "Direkt"
 msgid "Copy"
 msgstr "Kopiera"
 
+msgid "No Events for this person"
+msgstr "Inga händelser för denna person"
+
+msgid "Select tags for person"
+msgstr "Välj taggar för personen"
+
+msgid "Add new family"
+msgstr "Lägg till ny familj"
+
+msgid "Add parents"
+msgstr "Lägg till föräldrar"
+
 msgid "Set as home person"
 msgstr "Ställ in som huvudperson"
+
+msgid "Show path to home person"
+msgstr "Visa mål till hemperson"
+
+msgid "No Events for this family"
+msgstr "Inga händelser för denna familj"
+
+msgid "Select tags for family"
+msgstr "Välj taggar för familj"
+
+msgid "Add father"
+msgstr "Lägg till far"
+
+msgid "Add mother"
+msgstr "Lägg till mor"
+
+msgid "About Graph View"
+msgstr "Om Graph View"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
@@ -125,5 +198,24 @@ msgstr "Lägger till taggar till person (%s)"
 msgid "Adding Tags to family (%s)"
 msgstr "Lägger till taggar till familjen (%s)"
 
+msgid "Dark (default)"
+msgstr "Mörk (standard)"
+
+msgid "Light"
+msgstr "Ljus"
+
+msgid "Cartoon"
+msgstr "Tecknad film"
+
+msgid "Other persons from database"
+msgstr "Andra personer från databasen"
+
 msgid "Search..."
 msgstr "Sök..."
+
+#, python-format
+msgid "<b>%s:</b>"
+msgstr "<b>%s:</b>"
+
+msgid "Partners"
+msgstr "Partners"

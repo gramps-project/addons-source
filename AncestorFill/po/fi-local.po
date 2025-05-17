@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -21,14 +21,61 @@ msgstr "Esivanhempien täyttöaste"
 msgid "Report on the filling of the tree"
 msgstr "Puun täyttöaste"
 
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "AncestorFill kohteelle %s"
+
 msgid "Generation "
 msgstr "Sukupolvi "
+
+msgid "Number of Ancestors found "
+msgstr "Löydettyjen esi-isien lukumäärä "
+
+msgid "Percent of Ancestors found "
+msgstr "Löydettyjen esi-isien prosenttiosuus "
+
+msgid "Number of unique Ancestors found "
+msgstr "Löytyneiden eri esivanhempien määrä "
 
 msgid "Number of theoretical Ancestors "
 msgstr "Teoreettisten esi-isien lukumäärä "
 
 msgid "Total Number of Ancestors found "
 msgstr "Löydettyjä esi-isiä "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "Löydettyjen eri esi-isien yhteismäärä "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"Huomaa: Tämä raportti laskee mukaan vain ne esivanhemmat, joilla on "
+"syntymäsuhde vanhemman ja lapsen välillä."
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"Pilkun jälkeisten numeroiden määrä, joka näytetään raportin tietyn "
+"sukupolven esivanhempien prosenttiosuudessa"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr ""
+"Pilkun jälkeisten numeroiden määrä, joka sisällytetään sukutaulun "
+"tiivistysraporttiin"
+
+msgid "Display theoretical"
+msgstr "Näytä teoreettinen"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Näytetäänkö esi-isien teoreettinen lukumäärä sukupolvittain"
 
 msgid "The style used for the title of the page."
 msgstr "Sivun otsikossa käytetty tyyli."

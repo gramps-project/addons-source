@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,23 +12,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Quilt Chart"
-msgstr "Steppdeckendiagramm"
+msgstr "Steppdiagramm"
 
 msgid "The view shows a quilt chart visualisation of a family tree"
-msgstr ""
-"Die Ansicht zeigt eine Steppdecken-Diagramm-Visualisierung eines Stammbaums"
+msgstr "Die Ansicht zeigt eine Steppdiagramm-Visualisierung eines Stammbaums"
 
 msgid "Quilt chart"
-msgstr "Steppdeckendiagramm"
+msgstr "Steppdiagramm"
 
 msgid "Select the name for which you want to see."
-msgstr "Wähle den Namen, den du sehen möchtest."
+msgstr "Wähle den Namen, den du sehen willst."
 
 msgid "Clear the entry field in the name selection box."
-msgstr "Löscht das Eingabefeld in der Namensauswahlbox."
+msgstr "Leere das Eingabefeld in der Namensauswahlbox."
 
 msgid "Nothing is selected"
 msgstr "Nichts ist ausgewählt"
@@ -38,51 +37,51 @@ msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
 "%(total)d people in your database."
 msgstr ""
-"Du hast %(filter)d gefilterte Personen, %(count)d Personen werden im Baum "
-"gezeigt und %(total)d Personen sind in deiner Datenbank."
+"Du hast %(filter)d gefilterte Personen, %(count)d im Baum angezeigte "
+"Personen und %(total)d Personen in deiner Datenbank."
 
 msgid "Loading individuals"
-msgstr "Lade Personen"
+msgstr "Personen laden"
 
 msgid "Loading the data"
-msgstr "Lade die Daten"
+msgstr "Laden der Daten"
 
 msgid "About Quilt View"
-msgstr "Über Steppdeckenansicht"
+msgstr "Über Steppansicht"
 
 msgid "Edit tags"
-msgstr "Markierungen bearbeiten"
+msgstr "Etiketten bearbeiten"
 
 msgid "Set as home person"
-msgstr "Als Hauptperson setzen"
+msgstr "Als Hauptperson festlegen"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
-msgstr "Markierungen zu Person (%s) hinzufügen"
+msgstr "Hinzufügen von Etiketten zur Person (%s)"
 
 #, python-format
 msgid "Adding Tags to family (%s)"
-msgstr "Markierungen zu Familie (%s) hinzufügen"
+msgstr "Hinzufügen von Etiketten zur Familie (%s)"
 
 msgid "Printing the tree"
-msgstr "Drucke den Baum"
+msgstr "Den Baum drucken"
 
 #, python-format
 msgid "Need to print %(pages)s pages (%(format)s format)"
-msgstr "Es müssen %(pages)s Seiten (%(format)s format) gedruckt werden"
+msgstr "Muss %(pages)s pages drucken (%(format)s Format)"
 
 msgid ""
 "Center on the selected person.\n"
 "The new position of the person will be near the top left corner."
 msgstr ""
-"Die ausgewählte Person zentrieren.\n"
+"Auf die ausgewählte Person zentrieren.\n"
 "Die neue Position der Person wird in der Nähe der oberen linken Ecke sein."
 
 msgid "The path color"
 msgstr "Die Pfadfarbe"
 
 msgid "The selected person color"
-msgstr "Die Farbe der gewählten Person"
+msgstr "Die Farbe der ausgewählten Person"
 
 msgid "The path transparency"
 msgstr "Die Pfadtransparenz"

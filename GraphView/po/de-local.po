@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -287,7 +287,7 @@ msgid "Add parents"
 msgstr "Eltern hinzufügen"
 
 msgid "Set as home person"
-msgstr "Als Hauptperson setzen"
+msgstr "Als Hauptperson festlegen"
 
 msgid "Show path to home person"
 msgstr "Zeige Pfad zur Hauptperson"
@@ -315,11 +315,11 @@ msgstr "Über Graphenansicht"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
-msgstr "Markierungen zu Person (%s) hinzufügen"
+msgstr "Hinzufügen von Etiketten zur Person (%s)"
 
 #, python-format
 msgid "Adding Tags to family (%s)"
-msgstr "Markierungen zu Familie (%s) hinzufügen"
+msgstr "Hinzufügen von Etiketten zur Familie (%s)"
 
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."

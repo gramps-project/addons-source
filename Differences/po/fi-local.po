@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -34,6 +34,9 @@ msgstr "Puuttuva %s: %s"
 msgid "Nothing missing"
 msgstr "Ei puuttuvia"
 
+msgid "Added items in File that are missing in Database"
+msgstr "Tiedostoon lisätty kohteita, jotka puuttuvat tietokannasta"
+
 #, python-format
 msgid "Added %s: %s "
 msgstr "Lisätty %s: %s "
@@ -55,6 +58,9 @@ msgstr "Liitä erilaiset kohteet"
 
 msgid "Show items missing from file"
 msgstr "Näytä tiedostosta puuttuvat kohteet"
+
+msgid "Include items not in file but in database"
+msgstr "Sisällytä kohteet, jotka eivät ole tiedostossa mutta tietokannassa"
 
 msgid "Show items added in file"
 msgstr "Näytä tiedostoon lisätyt kohteet"

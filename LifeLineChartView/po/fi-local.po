@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Zoom in"
@@ -26,6 +26,98 @@ msgstr "Alkuperäinen koko"
 
 msgid "Zoom to best fit"
 msgstr "Ikkunaan sopivaksi"
+
+msgid "Show birth label"
+msgstr "Näytä syntymätieto"
+
+msgid "Activate the birth label."
+msgstr "Aktivoi syntymätieto."
+
+msgid "Birth label along path"
+msgstr "Syntymätieto polkua seuraten"
+
+msgid "The birth label is aligned to the individual line."
+msgstr "Syntymätieto kohdistetaan yksittäiseen riviin."
+
+msgid "Birth label rotation"
+msgstr "Syntymätiedon kierto"
+
+msgid "The birth label is written in a text frame rotated by this value."
+msgstr "Syntymätietoa kierretään tekstikehyksessä tällä arvolla."
+
+msgid "Horizontal offset of birth label"
+msgstr "Syntymätiedon vaakasuuntainen siirtymä"
+
+msgid ""
+"The birth label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Syntymätietoa siirretään vaakasuunnassa tällä arvolla suhteessa "
+"kirjainkokoon."
+
+msgid "Vertical offset of birth label"
+msgstr "Syntymätiedon pystysuuntainen siirtymä"
+
+msgid ""
+"The birth label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Syntymätunnistetta siirretään pystysuunnassa tällä arvolla suhteessa "
+"kirjainkokoon."
+
+msgid "Wrap words in birth label"
+msgstr "Rivitä syntymätieto"
+
+msgid "The birth label content is wrapped where possible."
+msgstr "Syntymätieto rivitetään jos mahdollista."
+
+msgid "Birth label anchor"
+msgstr "Syntymätiedon ankkuri"
+
+msgid "Text alignment of the birth label."
+msgstr "Syntymätiedon tekstin tasaus."
+
+msgid "Show death label"
+msgstr "Näytä kuolintieto"
+
+msgid "Activate the death label."
+msgstr "Aktivoi kuolintieto."
+
+msgid "Death label rotation"
+msgstr "Kuolintiedon kierto"
+
+msgid "The death label is written in a text frame rotated by this value."
+msgstr "Kuolintietoa kierretään tekstikehyksessä tällä arvolla."
+
+msgid "Horizontal offset of death label"
+msgstr "Kuolintiedon vaakasuora siirtymä"
+
+msgid ""
+"The death label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Kuolintietoa siirretään vaakasuunnassa tällä arvolla suhteessa kirjainkokoon."
+
+msgid "Vertical offset of death label"
+msgstr "Kuolintiedon pystysuuntainen siirtymä"
+
+msgid ""
+"The death label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Kuolintietoa siirretään pystysuunnassa tällä arvolla suhteessa kirjainkokoon."
+
+msgid "Wrap words in death label"
+msgstr "Rivitä sanat kuolintietoon"
+
+msgid "The death label content is wrapped where possible."
+msgstr "Kuolintieto rivitetään jos mahdollista."
+
+msgid "Death label anchor"
+msgstr "Kuolintiedon ankkuri"
+
+msgid "Text alignment of the death label."
+msgstr "Kuolintiedon tasaus."
 
 msgid "none"
 msgstr "ei mitään"

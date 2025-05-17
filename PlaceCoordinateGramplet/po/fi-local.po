@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -15,20 +15,66 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "The place was not found. You may clarify the search keywords."
+msgstr "Paikkaa ei löytynyt. Voit tarkentaa hakusanoja."
+
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr "Koordinaattien haku epäonnistui odottamattoman virheen vuoksi."
+
 msgid "The place was not found."
-msgstr "Paikkaa ei löydy."
+msgstr "Paikkaa ei löytynyt."
 
 msgid "The place was not identified."
-msgstr "Paikka ei ole tunnistettu."
+msgstr "Paikkaa ei tunnistettu."
+
+msgid "Coordinates were not given."
+msgstr "Koordinaatteja ei annettu."
+
+msgid "Failed to interpret the input format."
+msgstr "Syöttömuodon tulkinta epäonnistui."
+
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "Tietokantamerkintä [{id}] {name}:"
+
+msgid "Nothing has been searched yet"
+msgstr "Mitään ei ole vielä haettu"
+
+msgid "No place is active"
+msgstr "Ei aktiivisia paikkoja"
+
+msgid "Place Coordinate Gramplet view"
+msgstr "Paikkakoordinaatit Gramplet näkymä"
+
+msgid "View for the place coordinate gramplet."
+msgstr "Näkymä paikkakoordinaatit grampletille."
+
+msgid "Place and Coordinates"
+msgstr "Paikka ja koordinaatit"
+
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Gramplet, joka yksinkertaistaa paikan koordinaattien asettamista"
+
+msgid "Place Coordinates"
+msgstr "Paikan koordinaatit"
+
+msgid "Place Coordinate Gramplet"
+msgstr "Paikan koordinaatit Gramplet"
+
+msgid "Map Menu"
+msgstr "Karttavalikko"
+
+msgid "Add city as place"
+msgstr "Lisää kaupunki paikaksi"
 
 msgid "Add addess as place"
-msgstr "Lisää osoite sijainniksi"
+msgstr "Lisää osoite paikaksi"
 
 msgid "Search for:"
 msgstr "Hae:"
 
 msgid "Found place:"
-msgstr "Löydetty sijainti:"
+msgstr "Löydetty paikka:"
 
 msgid "No DB entry is selected"
 msgstr "Tietokantamerkintää ei ole valittu"

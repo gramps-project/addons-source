@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -19,8 +19,8 @@ msgstr "Nachkommenbuch"
 
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
-"Erstellt einen oder mehrere Nachkommenberichte basierend auf einer "
-"mitgelieferten Abfrage."
+"Erzeugt einen oder mehrere Nachkommenberichte auf der Grundlage einer "
+"bereitgestellten Abfrage."
 
 msgid "Detailed Descendant Book"
 msgstr "Ausführliches Nachkommenbuch"
@@ -28,8 +28,8 @@ msgstr "Ausführliches Nachkommenbuch"
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
 msgstr ""
-"Erstellt basierend auf einer angegebenen Abfrage einen oder mehrere "
-"ausführliche Nachkommenberichte."
+"Erzeugt einen oder mehrere detaillierte Nachkommenberichte auf der Grundlage "
+"einer bereitgestellten Abfrage."
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -57,7 +57,8 @@ msgstr "{report_count:d}. {name}"
 
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
-"Wählen Filter aus, um Personen einzuschränken, die im Bericht vorkommen"
+"Wähle einen Filter aus, um die Personen einzuschränken, die im Bericht "
+"erscheinen"
 
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Ob doppelte Stammbäume im Bericht angezeigt werden sollen."
@@ -66,11 +67,10 @@ msgid "The style used for the title of the page."
 msgstr "Der für den Titel der Seite verwendete Stil."
 
 msgid "The style used for the table of contents header."
-msgstr ""
-"Der Stil, der für die Überschrift des Inhaltsverzeichnisses verwendet wird."
+msgstr "Der für die Kopfzeile des Inhaltsverzeichnisses verwendete Stil."
 
 msgid "The style used for the table of contents detail."
-msgstr "Der Stil, der für die Angaben im Inhaltsverzeichnisses verwendet wird."
+msgstr "Der für das Inhaltsverzeichnis verwendete Stil."
 
 msgid "Detailed Descendants Report"
 msgstr "Ausführlicher Nachkommenbericht"
@@ -87,7 +87,7 @@ msgid "Index of Places"
 msgstr "Ortsverzeichnis"
 
 msgid "Index of Dates"
-msgstr "Index der Daten"
+msgstr "Datumsindex"
 
 msgid "Index of Names"
 msgstr "Namensverzeichnis"
@@ -164,81 +164,81 @@ msgid "List children"
 msgstr "Kinder auflisten"
 
 msgid "Add descendant reference in child list"
-msgstr "Nachkommenreferenzen zu Kinderliste hinzufügen"
+msgstr "Nachkommenreferenz in Kinderliste hinzufügen"
 
 msgid "Include Index of Names"
-msgstr "Namensindex aufnehmen"
+msgstr "Namensverzeichnis einbeziehen"
 
 msgid "Whether to include the index of Names at the end of the report."
-msgstr "Ob ein Namensregister am Ende des Berichts aufgenommen wird."
+msgstr "Ob das Namensverzeichnis am Ende des Berichts aufgenommen werden soll."
 
 msgid "Include index of Dates"
-msgstr "Datenindex aufnehmen"
+msgstr "Datumsindex einbeziehen"
 
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr "Ob ein Datumsregister am Ende des Berichts aufgenommen wird."
+msgstr "Ob der Datumsindex am Ende des Berichts erscheinen soll."
 
 msgid "Include index of Places"
-msgstr "Ortsindex aufnehmen"
+msgstr "Ortsverzeichnis einbeziehen"
 
 msgid "Whether to include the index of Places at the end of the report."
-msgstr "Ob ein Ortsregister am Ende des Berichts aufgenommen wird."
+msgstr "Ob das Ortsverzeichnis am Ende des Berichts erscheinen soll."
 
 msgid "Include the 'Report appearances' section with each person"
-msgstr "Fügen Sie jeder Person den Abschnitt 'Auftritte melden' hinzu"
+msgstr "Fügt den Abschnitt „Vorkommen im Bericht“ bei jeder Person ein"
 
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
 msgstr ""
-"Der Abschnitt 'Berichtserscheinungen' zeigt andere Stellen im Bericht, an "
+"Der Abschnitt „Vorkommen im Bericht“ zeigt andere Stellen im Bericht, an "
 "denen die Person erwähnt wird."
 
 msgid "The style used for the children list."
-msgstr "Der Stil, der für die Kinderliste verwendet wird."
+msgstr "Der für die Kinderliste verwendete Stil."
 
 msgid "The basic style used for Note header."
-msgstr "Der Basisstil, der für die Notiz Überschrift verwendet wird."
+msgstr "Der Basisstil, der für die Kopfzeile der Notiz verwendet wird."
 
 msgid "The style used for the first personal entry."
-msgstr "Der Stil, der für den ersten persönlichen Eintrag verwendet wird."
+msgstr "Der für den ersten persönlichen Eintrag verwendete Stil."
 
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
-"Der Stil, der für die \"Mehr über\" Kopfzeile und Kopfzeile von Partnern "
-"verwendet wird."
+"Der Stil, der für die Überschrift Mehr über und für die Überschriften der "
+"Partner verwendet wird."
 
 msgid "The style used for additional detail data."
-msgstr "Der Stil, der für die sonstigen genauen Daten verwendet wird."
+msgstr "Der für zusätzliche Detaildaten verwendete Stil."
 
 msgid "The style used for note detail data."
-msgstr "Der Stil, der für Notizdetaildaten verwendet wird."
+msgstr "Der für die Notizdetails verwendete Stil."
 
 msgid "The style used for the date in the Index of Dates."
-msgstr "Der Stil der für die Daten im Datenindex verwendet wird."
+msgstr "Der Stil, der für das Datum im Index der Daten verwendet wird."
 
 msgid "The style used for the events in the Index of Dates."
-msgstr "Der Stil der für die Ereignisse im Datenindex verwendet wird."
+msgstr "Der Stil, der für die Ereignisse im Index der Daten verwendet wird."
 
 msgid "The style used for the header in the Index of Names."
-msgstr "Der Stil der für die Überschrift im Namensindex verwendet wird."
+msgstr "Der Stil, der für die Überschrift im Namensregister verwendet wird."
 
 msgid "The style used for the references in the Index of Names."
-msgstr "Der Stil der für die Referenzen im Namensindex verwendet wird."
+msgstr "Der für die Verweise im Namensregister verwendete Stil."
 
 msgid "The style used for the header in the Index of Places."
-msgstr "Der Stil der für die Überschrift im Ortsindex verwendet wird."
+msgstr "Der für die Kopfzeile des Ortsverzeichnisses verwendete Stil."
 
 msgid "The style used for the references in the Index of Places."
-msgstr "Der Stil der für die Referenzen im Ortsindex verwendet wird."
+msgstr "Der für die Verweise im Ortsverzeichnis verwendete Stil."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."
-msgstr "Tiefgreifende Beschneidung der Aszendenten von %s Personen..."
+msgstr "Tiefes Beschneiden der Aszendenten von %s Personen..."
 
 #, python-format
 msgid "Pruning ascendants from %s people..."
-msgstr "Reduziere Aszendenten von %s Personen..."
+msgstr "Beschneide Aszendenten von %s Personen..."
 
 #, python-format
 msgid "Getting ascendants from %s people..."
@@ -246,11 +246,11 @@ msgstr "Hole Aszendenten von %s Personen..."
 
 #, python-format
 msgid "Verifying descendants from %s people..."
-msgstr "Vergleiche Nachkommen von %s Personen..."
+msgstr "Überprüfung der Nachkommen von %s Personen..."
 
 #, python-format
 msgid "Getting missing descendants from %s people..."
-msgstr "Hole fehlende Nachkommen von %s Personen..."
+msgstr "Holen von fehlenden Nachkommen von %s Personen..."
 
 #, python-format
 msgid "Verifying descendants from %s people after pruning..."
@@ -258,4 +258,4 @@ msgstr "Vergleiche Nachkommen von %s Personen nach Reduzierung..."
 
 #, python-format
 msgid "Getting missing descendants from %s people ..."
-msgstr "Hole fehlende Nachkommen von %s Personen ..."
+msgstr "Holen von fehlenden Nachkommen von %s Personen ..."

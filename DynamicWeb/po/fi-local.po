@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 08:47+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Dynamic Web Report"
-msgstr "Dynaaminen-nettisivusto"
+msgstr "Dynaaminen verkkoraportti"
 
 msgid "Produces dynamic web pages for the database"
 msgstr "Tuottaa dynaamiset verkkosivut tietokannasta"
 
 msgid "SVG graphical tree"
-msgstr "SVG graafinen sukupuu"
+msgstr "Graafinen sukupuu SVG-muodossa"
 
 msgid "Indexes pages"
 msgstr "Hakemistosivut"
@@ -78,10 +78,11 @@ msgstr "Polkua \"%(path)s\" ei ole mahdollista muuntaa suhteelliseksi."
 
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
-msgstr "Sivujen kokoonpano ei ole voimassa: useilla sivuilla on sama sisältö"
+msgstr ""
+"Sivujen kokoonpano ei ole kelvollinen: useilla sivuilla on sama sisältö"
 
 msgid "DynWeb|Home"
-msgstr "Kotisivu"
+msgstr "Dynaaminen kotisivu"
 
 msgid "Tree"
 msgstr "Sukupuu"
@@ -106,7 +107,7 @@ msgid "(sort by quantity)"
 msgstr "(lajittele määrän mukaan)"
 
 msgid ": activate to sort column ascending"
-msgstr ": aktivoi lajittelu sarake nousevaksi"
+msgstr ": lajittele sarake nousevasti"
 
 msgid ": activate to sort column descending"
 msgstr ": aktivoi lajittelu sarake laskevaksi"
@@ -124,7 +125,7 @@ msgid "Alternate Name"
 msgstr "Vaihtoehtoinen nimi"
 
 msgid "Click on the map to show it full-screen"
-msgstr "Napsauta karttaa näyttääksesi sen koko näytöllä"
+msgstr "Siirry koko näytölle napsauttamalla karttaa"
 
 msgid "Configure"
 msgstr "Asetukset"
@@ -142,13 +143,13 @@ msgid "Families Index"
 msgstr "Perhehakemisto"
 
 msgid "Family Nick Name"
-msgstr "Perheen lempinimi"
+msgstr "Perheen kutsumanimi"
 
 msgid "File ready"
 msgstr "Tiedosto valmis"
 
 msgid "Include dates columns on the index pages"
-msgstr "Lisää päivämääräsarakkeet hakemistosivulle"
+msgstr "Lisää hakemistosivulle päivämääräsarake"
 
 msgid "Include a column for media path on the index pages"
 msgstr "Lisää hakemistosivuille mediapolun sarake"
@@ -178,7 +179,7 @@ msgid "Media Type"
 msgstr "Mediatyyppi"
 
 msgid "No data available in table"
-msgstr "Taulukon tietoja ei ole saatavilla"
+msgstr "Taulukkoon ei ole tietoja"
 
 msgid "No matching records found"
 msgstr "Vastaavia merkintöjä ei löydy"
@@ -193,7 +194,7 @@ msgid "Person page"
 msgstr "Henkilösivu"
 
 msgid "Person to search for"
-msgstr "Henkilöhaku"
+msgstr "Etsittävä henkilö"
 
 msgid "Persons Index"
 msgstr "Henkilöhakemisto"
@@ -214,7 +215,7 @@ msgid "Relationship to Mother"
 msgstr "Suhde äitiin"
 
 msgid "Repositories Index"
-msgstr "Arkistojen indeksi"
+msgstr "Arkistojen hakemisto"
 
 msgid "Restore"
 msgstr "Palauta"
@@ -229,7 +230,7 @@ msgid "SVG tree children distribution"
 msgstr "SVG-puun lasten jakauma"
 
 msgid "SVG tree configuration"
-msgstr "SVG-puun kokoonpano"
+msgstr "SVG-puun määritykset"
 
 msgid "SVG tree graph shape"
 msgstr "SVG-puun kaavion muoto"
@@ -237,20 +238,14 @@ msgstr "SVG-puun kaavion muoto"
 msgid "SVG tree graph type"
 msgstr "SVG-puun kaaviotyyppi"
 
-msgid "SVG tree parents distribution"
-msgstr "SVG-puun vanhempien jakauma"
-
 msgid "Save tree as file"
-msgstr "Tallenna puu tiedostona"
+msgstr "Tallenna puu tiedostoon"
 
 msgid "Search:"
 msgstr "Etsi:"
 
 msgid "Select the background color scheme"
-msgstr "Valitse taustan värijärjestelmä"
-
-msgid "Select the children distribution (fan charts only)"
-msgstr "Valitse lasten jakautuma (vain viuhkamallit)"
+msgstr "Valitse taustan värivalikoima"
 
 msgid "Select the number of ascending generations"
 msgstr "Valitse esivanhempien sukupolvien lukumäärä"
@@ -268,8 +263,7 @@ msgid "Select the type of graph"
 msgstr "Valitse kaavion tyyppi"
 
 msgid "Several matches.<br>Precise your search or choose in the lists below."
-msgstr ""
-"Löydetty useita.<br>Tarkenna hakuasi tai valitse alla olevista listoista."
+msgstr "Löydetty useita.<br>Tarkenna hakuasi tai valitse listalta."
 
 msgid "Show _MENU_ entries"
 msgstr "Näytä _MENU_ merkinnät"
@@ -283,8 +277,11 @@ msgstr "Näytetään 0-0 0 merkinnästä"
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Näytetään _START_ - _END_ / _TOTAL_ merkinnöille"
 
+msgid "Sort by:"
+msgstr "Lajitteluavain:"
+
 msgid "Sources Index"
-msgstr "Lähteet valikko"
+msgstr "Lähteiden valikko"
 
 msgid "Suppress Gramps ID"
 msgstr "Jätä pois Gramps ID"
@@ -296,10 +293,10 @@ msgid "U"
 msgstr "U"
 
 msgid "Use tabbed panels instead of sections"
-msgstr "Käytä välilehtiä paneeleiden sijaan"
+msgstr "Käytä välilehtipaneeleita osioiden sijaan"
 
 msgid "Use the search box above in order to find a person."
-msgstr "Käytä hakukenttää yllä löytääksesi henkilön."
+msgstr "Käytä yllä olevaa hakukenttää löytääksesi henkilön."
 
 msgid "Use a table format for the surnames index"
 msgstr "Sukunimihakemisto taulukkona"
@@ -338,7 +335,7 @@ msgid ""
 "Whether to use a special color for the persons that appear several times in "
 "the SVG tree"
 msgstr ""
-"Käytetäänkö erityistä väriä henkilöille, jotka näkyvät useita kertoja SVG-"
+"Käytetäänkö erityistä väriä henkilöille, jotka esiintyvät toistuvasti SVG-"
 "sukupuussa"
 
 msgid "Without name"
@@ -389,15 +386,15 @@ msgstr "Tiedoston \"%(file)s\" lisääminen ei onnistu arkistoon \"%(archive)s\"
 
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
-msgstr "DynaaminenNettiraportti ohittaa linkki tyyppi '%(class)s'"
+msgstr "DynaaminenNettiraportti huomioimatta linkkityyppiä '%(class)s'"
 
 #, python-format
 msgid "Family of %(father)s"
-msgstr "Perhe isälle %(father)s"
+msgstr "Isän %(father)s perhe"
 
 #, python-format
 msgid "Family of %(mother)s"
-msgstr "Perhe äidille %(mother)s"
+msgstr "Äidin %(mother)s perhe"
 
 msgid ""
 "In this note, the following special words are processed:\n"
@@ -423,14 +420,14 @@ msgstr ""
 "__NB_FAMILIES__ korvataan perheiden määrällä.\n"
 "__NB_MEDIA__ korvataan median määrällä.\n"
 "__NB_SOURCES__ korvataan lähteiden määrällä.\n"
-"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_REPOSITORIES__ korvataan arkistojen lukumäärällä.\n"
 "__NB_PLACES__ korvataan paikkamäärällä.\n"
 "__MEDIA_<gid>__ korvataan median Gramps ID: llä<gid>.\n"
 "__THUMB_<gid>__ korvataa median pikkukuvalla ja Gramps ID:llä<gid>.\n"
 "__EXPORT_DATE__ korvataan nykyisellä päivämäärällä.\n"
 "__GRAMPS_VERSION__ korvataan Gramps-versiolla.\n"
 "__GRAMPS_HOMEPAGE__ Korvataan Gramps kotisivun linkillä.\n"
-"URL-osoite, joka alkaa suhteessa://suhteellinen <linkki>, korvataan "
+"URL-osoite, joka alkaa \"relative://relative.<link>\", korvataan "
 "suhteellisella URL-osoitteella \"<linkki>\".\n"
 
 msgid "Store web pages in archive"
@@ -439,14 +436,13 @@ msgstr "Tallenna verkkosivut arkistoon"
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
-msgstr ""
-"Luodaanko arkistotiedosto (ZIP- tai TGZ-muodossa), joka sisältää verkkosivun"
+msgstr "Luodaanko verkkosvun sisältävä arkistotiedosto (ZIP- tai TGZ-muodossa)"
 
 msgid "Archive file"
 msgstr "Arkistotiedosto"
 
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
-msgstr "Arkistotiedoston nimi (\".zip\" tai \".tgz\" -laajennuksella)"
+msgstr "Arkistotiedoston nimi (\".zip\" tai \".tgz\" -päätteellä)"
 
 msgid "Web site title"
 msgstr "Nettisivuston otsikko"
@@ -455,13 +451,13 @@ msgid "The title of the web site"
 msgstr "Sivuston otsikko"
 
 msgid "Select filter to restrict people that appear on web site"
-msgstr "Valitse suodin rajoittamaan henkilöitä jotka näkyvät nettisivustossa"
+msgstr "Valitse suodin rajoittamaan näytettävien ihmisten määrää"
 
 msgid "Name format (short)"
 msgstr "Nimen muoto (lyhyt)"
 
 msgid "Select the format to display a shorter version of the names"
-msgstr "Valitse muoto, joka näyttää lyhyemmän version nimistä"
+msgstr "Valitse muoto näyttääksesi nimistä lyhyemmän version"
 
 msgid "Web site template"
 msgstr "Sivuston mallipohja"
@@ -473,7 +469,7 @@ msgid "Include records marked private"
 msgstr "Näytä yksityisiksi merkityt tiedot"
 
 msgid "Whether to include private objects"
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Näytetäänkö yksityiset tiedot"
 
 msgid "Include Last Name Only"
 msgstr "Näytä vain sukunimi"
@@ -485,8 +481,8 @@ msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
 msgstr ""
-"Tällä voit rajoittaa tietoja henkilöistä, jotka eivät ole olleet kuolleina "
-"kovin pitkään"
+"Tämä mahdollistaa rajoitettujen tietojen näyttämisen melko äskettäin "
+"kuolleista ihmisistä"
 
 msgid "Export notes"
 msgstr "Viedään lisätiedot"
@@ -522,19 +518,19 @@ msgid "Copy, keep file names unchanged"
 msgstr "Kopioi, säilytä tiedostonimet ennallaan"
 
 msgid "Do not copy, reference existing files"
-msgstr "Älä kopioi olemassa olevia tiedostoja"
+msgstr "Älä kopioi, viittaa olemassa oleviin tiedostoihin"
 
 msgid "Images and media"
 msgstr "Kuvat ja media"
 
 msgid "Whether to make a copy of the media"
-msgstr "Kopioidaanko media"
+msgstr "Tehdäänkö mediastatiedoista kopiot"
 
 msgid "Print the notes type"
-msgstr "Tulosta lisätiedon tyyppi"
+msgstr "Näytä lisätiedon tyyppi"
 
 msgid "Whether to print the notes type in the notes text"
-msgstr "Tulostetaanko muistiinpanoja kirjoittamalla lisätietoja tekstinä"
+msgstr "Näytetäänkö lisätietojen tyyppi tekstissä"
 
 msgid "Print place pages"
 msgstr "Tulosta paikkasivut"
@@ -543,7 +539,7 @@ msgid "Whether to show pages for the places"
 msgstr "Näytetäänkö paikkasivut"
 
 msgid "Choose your choice of map service for creating the Place Map Pages"
-msgstr "Valitse karttapalvelu, jota haluat käyttää paikojen karttasivuilla"
+msgstr "Valitse karttapohja, jota haluat käyttää paikkakartalla"
 
 msgid "Google map API key"
 msgstr "Google kartat API-avain"
@@ -561,19 +557,16 @@ msgstr ""
 "sisaruksineen"
 
 msgid "Enable page configuration"
-msgstr "Ota sivun kokoonpano käyttöön"
+msgstr "Käytä sivun määrityksiä"
 
 msgid "Whether to enable page configuration"
-msgstr "Otetaanko sivun kokoonpano"
+msgstr "Käytetäänkö sivun määrityksiä"
 
 msgid "Whether to use tabbed panels for the different sections of the pages."
 msgstr "Käytetäänkö välilehtipaneeleja sivujen eri osiin."
 
 msgid "Whether to show the last modification time in the pages footer"
-msgstr "Näytetäänkö muokkausaika sivun alatunnisteessa"
-
-msgid "Whether to insert sources author in the sources title"
-msgstr "Lisätäänkö lähteiden tekijä lähteet otsikkoon"
+msgstr "Näytetäänkö sivun muutosaika alatunnisteessa"
 
 msgid "Whether to hide the Gramps ID"
 msgstr "Piilotetaanko Gramps ID"
@@ -585,10 +578,10 @@ msgid "Table"
 msgstr "Taulukko"
 
 msgid "Default format for the surnames index"
-msgstr "Sukunimihakemiston oletusmuoto"
+msgstr "Sukunimiluettelon oletusmuoto"
 
 msgid "The default format for the surnames index"
-msgstr "Sukunimihakemiston oletusmuoto"
+msgstr "Sukunimiluettelon oletusmuoto"
 
 msgid "Default format for the persons index"
 msgstr "Henkilöhakemiston oletusmuoto"
@@ -627,22 +620,22 @@ msgid "Whether to generate an index page for families"
 msgstr "Luodaanko perheille hakemistosivu"
 
 msgid "Whether to include a column showing the media path"
-msgstr "Lisätäänkö sarake, joka näyttää mediapolun"
+msgstr "Näytetäänkö mediapolku-sarake"
 
 msgid ""
 "Whether to include the references to the items in the index pages. For "
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"Lisätäänkö viittaukset hakemistosivujen kohteisiin. Esimerkiksi media-"
-"hakemistosivulla henkilöden, perheiden ja paikkojen lähteet, jotka "
-"viittaavat mediaan."
+"Sisällytetäänkö viittaukset hakemistosivujen kohteisiin. Esimerkiksi "
+"mediahakemistossa mainitaan mediaan viittaavat henkilöt, perheet, paikat ja "
+"lähteet."
 
 msgid "Default number of entries in the indexes"
-msgstr "Hakemiston merkintöjen oletusmäärä"
+msgstr "Hakemistorivien oletusmäärä"
 
 msgid "The default number of entries shown in one index page"
-msgstr "Yhdellä hakemistosivulla näkyvien merkintöjen oletusmäärä"
+msgstr "Yhdellä hakemistosivulla näytettävien kohteiden oletusmäärä"
 
 msgid "Maximum number of generations"
 msgstr "Sukupolvien enimmäismäärä"
@@ -651,8 +644,8 @@ msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
 msgstr ""
-"Sukupolvien enimmäismäärä, jotka lisätään esivanhempien ja jälkeläisten "
-"sukupuihin ja kaavioihin"
+"Esivanhempien ja jälkeläisten puissa ja graafeissa näytettävien sukupolvien "
+"enimmäismäärä"
 
 msgid "Choose the default SVG tree graph type"
 msgstr "Valitse SVG-sukupuukaavion oletustyyppi"
@@ -668,7 +661,7 @@ msgstr "Valitse lasten oletusjakautuma SVG-sukupuuhun (vain viuhkamallit)"
 
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
-msgstr "Valitse henkilöiden taustaväri SVG-sukupuu kaaviolle"
+msgstr "Valitse henkilöiden värivalikoima SVG-sukupuu -kaaviolle"
 
 msgid "Theme"
 msgstr "Teema"
@@ -679,11 +672,8 @@ msgstr "Sivut"
 msgid "A note to be used as the page header"
 msgstr "Sivun ylätunnisteena käytettävä lisätieto"
 
-msgid "HTML user brand name / icon"
-msgstr "HTML käyttäjän tuotemerkki / kuvake"
-
 msgid "A note to be used as the brand name or image in the menu"
-msgstr "Merkki, jota käytetään valikossa tuotemerkkinä tai kuvana"
+msgstr "Merkki, jota käytetään tuotemerkkinä tai kuvana valikossa"
 
 msgid "Custom pages"
 msgstr "Mukautetut sivut"

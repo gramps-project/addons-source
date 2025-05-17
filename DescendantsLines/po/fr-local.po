@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-17 15:52+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -146,6 +146,9 @@ msgstr "Boîte autour de la section Individu"
 msgid "Draw a thin black box around each person' text block."
 msgstr "Entourer la section de l'individu avec un léger cadre noir."
 
+msgid "All Person's blocks have the same height"
+msgstr "Tous les blocs d'individu ont la même hauteur"
+
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
@@ -242,6 +245,13 @@ msgstr ""
 msgid "Vertical space spouse-bar to other spouse"
 msgstr "Espace vertical barre du mariage à autre conjoint"
 
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr ""
+"L'espace à ajouter entre la barre d'un conjoint et un autre conjoint en cas "
+"de familles multiples avec le même descendant."
+
 msgid "Horizontal space descendant to spouse"
 msgstr "Espace horizontal entre le descendant et son conjoint"
 
@@ -259,6 +269,9 @@ msgstr ""
 "famille et le descendant le plus externe (ou conjoint) de la famille "
 "suivante."
 
+msgid "Horizontal distance spouse to family edge"
+msgstr "Distance horizontale entre le conjoint et le bord de la famille"
+
 msgid ""
 "If this value is 0, the children bar is centered under the spouse. The "
 "bigger the value, more the center is moved to the left towards the "
@@ -271,8 +284,18 @@ msgstr ""
 msgid "OL_PAD"
 msgstr "OL_PAD"
 
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr ""
+"La longueur du bord vertical de la barre du conjoint à la barre de l'enfant."
+
 msgid "Children distance"
 msgstr "Distance des enfants"
+
+msgid "The horizontal distance between two children of the same family."
+msgstr "La distance horizontale entre deux enfants de la même famille."
+
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "La longueur du bord vertical entre l'enfant et la barre d'enfant."
 
 msgid "MIN_C_WIDTH"
 msgstr "MIN_C_LARGEUR"
