@@ -92,8 +92,12 @@ class SharedDBAPI(DbGeneric):
         # if the database has been converted to use JSON data
         if not self.dbapi.column_exists("metadata", "json_data"):
             return False
-        # but even if it does, it could be that the specific tree
-        # is not converted yet.
+        # if the column exists, but the tree ID is not in the trees
+        # table yet, the tree is still empty, so we are OK
+        if not self.dbapi._get_treeid():
+            return True
+        # if the column exists and the tree does too, it could be
+        # that this specific tree is not converted yet.
         return self.dbapi._schema_version_exists()
 
     def upgrade_table_for_json_data(self, table_name):
