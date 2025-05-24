@@ -59,18 +59,6 @@ import json
 from xml.etree import ElementTree
 from subprocess import call, Popen, PIPE
 
-if "GRAMPSPATH" in os.environ:
-    GRAMPSPATH = os.environ["GRAMPSPATH"]
-else:
-    GRAMPSPATH = "../../.."
-
-gramps_version = sys.argv[1]
-
-command = sys.argv[2]
-if len(sys.argv) >= 4:
-    addon = sys.argv[3]
-
-
 def system(scmd, **kwargs):
     """
     Replace and call system with scmd.
@@ -340,6 +328,100 @@ def extract_po(addon):
                 args = ["git", "restore", po]
                 call(args)
 
+def usage():
+    """
+    what are my options?
+    """
+    print(f"usage: {sys.argv[0]} <version> <command> [<options>]")
+    print("where:")
+    print("    <version>    => Gramps maintenance branch name: one of")
+    print("                    {gramps42 | gramps50 } gramps51 | gramps52 | gramps60}" )
+    print("    <command>    => one of the following, with their <options>:")
+    print()
+    print("        as-needed:")
+    print("            build packages (tgz files) for only those addons that have")
+    print("            changed, then rebuild listings files, and do some cleanup.")
+    print()
+    print("        aggregate-pot:")
+    print("            aggregates all 'template.pot' files into a single 'po/addons.pot'")
+    print("            file. Strings already in 'gramps.pot' are excluded.")
+    print()
+    print("        build {<addon> | all}:")
+    print("            build a specific adddon package if named and put it in")
+    print("            addons/Addon/Addon.addon.tgz; or, if 'all' used, build")
+    print("            a package for all existing addons.")
+    print()
+    print("        clean [<addon>]:")
+    print("            remove unneeded local files, typically used before")
+    print("            making commits; if <addon> is used, clean that specific")
+    print("            addon, otherwise clean all addons.")
+    print()
+    print("        compile {<addon> | all}:")
+    print("            compile AddOn/po/*-local.po files for the named addon")
+    print("            and put the output .mo file in AddOn/locale/*/LC_MESSAGES/addon.mo;")
+    print("            or, if 'all' is used, do the same thing for all addons.")
+    print()
+    print("        extract-po:")
+    print("            extract strings from the aggregated 'po/<lang>.po' files")
+    print("            into the '<lang>-local.po' files for each addon.")
+    print()
+    print("        {-h | --help | help}:")
+    print("            print out this help message")
+    print()
+    print("        init <addon> [<lang>]:")
+    print("            create a new addon working directory (use a name in")
+    print("            in camel case); if <lang> is given, create an empty")
+    print("            translation file (e.g., for 'fr', AddOn/po/fr-local.po)")
+    print()
+    print("        listing {<addon> | all}:")
+    print("            create or update the <version>/listings/*.json files for")
+    print("            the languages supported by the named addonput; or, if 'all'")
+    print("            is used, do the same thing for all addons.")
+    print()
+    print("        manifest-check:")
+    print("            verify that the manifest files for all addons are correct.")
+    print()
+    print("        unlist <addon>:")
+    print("            remove the named addon from all language listings files.")
+    print()
+    print("        update <addon> <lang>:")
+    print("            update the adddon with the latest translations for that")
+    print("            language (e.g., for 'fr', AddOn/po/fr-local.po)")
+    print("            in camel case); if <lang> is given, create an empty")
+    print("            files that are required.")
+
+
+#--- main ------------------------------------------------------------
+if "GRAMPSPATH" in os.environ:
+    GRAMPSPATH = os.environ["GRAMPSPATH"]
+else:
+    GRAMPSPATH = "../../.."
+
+#-- should probably convert to parseargs some day ....
+if len(sys.argv) < 2:           # no parameters provided
+    usage()
+    exit(0)
+elif len(sys.argv) == 2 and \
+     (sys.argv[1] == "help" or sys.argv[1] == "-h" or sys.argv[1] == "--help"):
+    usage()
+    exit(0)
+
+KNOWN_GRAMPS_VERSIONS = [
+    "gramps42",
+    "gramps50",
+    "gramps51",
+    "gramps52",
+    "gramps60",
+]
+
+gramps_version = sys.argv[1]
+if gramps_version not in KNOWN_GRAMPS_VERSIONS:
+    print(f"? {gramps_version} is not a supported version of gramps")
+    sys.exit(1)
+
+command = sys.argv[2]
+if len(sys.argv) >= 4:
+    addon = sys.argv[3]
 
 if command == "clean":
     if len(sys.argv) == 3:
@@ -1039,4 +1121,6 @@ elif command == "extract-po":
         extract_po(addon)
 
 else:
-    raise AttributeError("unknown command")
+    print(f"? unknown command: {command}")
+    exit(1)
+
