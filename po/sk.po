@@ -6,13 +6,14 @@
 # Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
 # Jozef Riha, 2017.
 # Milan <mobrcian@hotmail.com>, 2025.
+# Jozef Gaal <preklady@mayday.sk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-07 15:03+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -269,10 +270,8 @@ msgstr ""
 #: AvatarGenerator/AvatarGenerator.py:134
 #: AvatarGenerator/AvatarGenerator.py:183
 #: AvatarGenerator/AvatarGenerator.py:257
-#, fuzzy
-#| msgid "Ancestor generations"
 msgid "Avatar Generator"
-msgstr "Generácie predkov"
+msgstr "Generátor avatarov"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
@@ -290,10 +289,8 @@ msgid "INFO"
 msgstr "INFO"
 
 #: AvatarGenerator/AvatarGenerator.py:211
-#, fuzzy
-#| msgid "No place record was modified."
 msgid "No media was removed."
-msgstr "Žiaden záznam o mieste nebol zmenený."
+msgstr "Žiadne médiá neboli odstránené."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
@@ -2100,12 +2097,10 @@ msgid "No Source"
 msgstr "Žiadny zdroj"
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
-#, fuzzy
 msgid "onclick"
 msgstr "onclick"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
-#, fuzzy
 msgid "onmouseover"
 msgstr "onmouseover"
 
@@ -2673,7 +2668,7 @@ msgstr "Písanie %s správ..."
 #: DescendantBooks/DescendantBookReport.py:442
 #, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr "(report_count). Potomkovia osoby (name)"
+msgstr "{report_count}. Potomkovia osoby {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
@@ -5085,10 +5080,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process relationships..."
-msgstr "Spracovávanie...\n"
+msgstr "Spracovať vzťahy..."
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
@@ -5343,10 +5336,8 @@ msgid "Scale to fit on a single page"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:1060
-#, fuzzy
-#| msgid "Whether or not to include family pages"
 msgid "Whether to scale to fit on a single page."
-msgstr "Či zahrnúť stránky rodín alebo nie"
+msgstr "Či sa má zmenšiť tak, aby sa zmestilo na jednu stránku."
 
 #: FamilyTree/FamilyTree.py:1065
 msgid "No color"
@@ -7034,10 +7025,8 @@ msgid "12. Religion"
 msgstr ""
 
 #: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
-#, fuzzy
-#| msgid "Original: "
 msgid "13. Origin"
-msgstr "Originál: "
+msgstr "13. Pôvod"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
@@ -9011,7 +9000,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:210 Form/form_gb.xml.h:343
 msgid "Children Total"
-msgstr ""
+msgstr "Detí celkom"
 
 #: Form/form_gb.xml.h:211 Form/form_gb.xml.h:344
 msgid "Total Children Born Alive."
@@ -9496,10 +9485,8 @@ msgstr ""
 #: Form/form_us.xml.h:2233 Form/form_us.xml.h:2245 Form/form_us.xml.h:2257
 #: Form/form_us.xml.h:2268 Form/form_us.xml.h:2286 Form/form_us.xml.h:2296
 #: Form/form_us.xml.h:2315 Form/form_us.xml.h:2325 Form/form_us.xml.h:2502
-#, fuzzy
-#| msgid "Pages"
 msgid "Page No."
-msgstr "Stránky"
+msgstr "Strana č."
 
 #: Form/form_us.xml.h:4 Form/form_us.xml.h:17 Form/form_us.xml.h:38
 #: Form/form_us.xml.h:59 Form/form_us.xml.h:99 Form/form_us.xml.h:168
@@ -9508,10 +9495,8 @@ msgstr "Stránky"
 #: Form/form_us.xml.h:665 Form/form_us.xml.h:707 Form/form_us.xml.h:793
 #: Form/form_us.xml.h:836 Form/form_us.xml.h:894 Form/form_us.xml.h:1095
 #: Form/form_us.xml.h:1678
-#, fuzzy
-#| msgid "Select None"
 msgid "Sheet No."
-msgstr "Vybrať žiadne"
+msgstr "List č."
 
 #: Form/form_us.xml.h:5 Form/form_us.xml.h:18 Form/form_us.xml.h:39
 #: Form/form_us.xml.h:60 Form/form_us.xml.h:100 Form/form_us.xml.h:169
@@ -11787,10 +11772,8 @@ msgid "Re-enlisted as"
 msgstr ""
 
 #: Form/form_us.xml.h:993
-#, fuzzy
-#| msgid "date: "
 msgid "On date"
-msgstr "dátum: "
+msgstr "Dňa"
 
 #: Form/form_us.xml.h:995
 msgid "and continued until"
@@ -15045,10 +15028,8 @@ msgstr "Žiadne zmeny"
 
 #: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
 #: GrampsWebSync/grampswebsync.py:834
-#, fuzzy
-#| msgid "Modified: "
 msgid "Modified"
-msgstr "Posledná zmena: "
+msgstr "Zmenené"
 
 #: GrampsWebSync/grampswebsync.py:829
 #, fuzzy
@@ -15390,10 +15371,8 @@ msgid "No bookmarks for this graph..."
 msgstr ""
 
 #: GraphView/graphview.py:1412
-#, fuzzy
-#| msgid "Go to bookmark"
 msgid "No other bookmarks..."
-msgstr "Prejsť na záložku"
+msgstr "Žiadne iné záložky..."
 
 #: GraphView/graphview.py:1417 GraphView/graphview.py:1419
 #: GraphView/search_widget.py:233 GraphView/search_widget.py:252
@@ -15741,11 +15720,8 @@ msgid "Historical Context"
 msgstr ""
 
 #: HistContext/HistContext.gpr.py:5
-#, fuzzy
-#| msgid ""
-#| "Whether to include the death of relatives during the lifetime of person."
 msgid "Lists relevant historical events during the lifetime of a Person"
-msgstr "Či zahrnúť úmrtie príbuzných počas života osoby."
+msgstr "Zoznam relevantných historických udalostí počas života osoby"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
@@ -16009,10 +15985,8 @@ msgid "Select the difference you wish to examine."
 msgstr ""
 
 #: ImportMerge/importmerge.glade:180
-#, fuzzy
-#| msgid "Description: "
 msgid "Object Name/Description"
-msgstr "Popis: "
+msgstr "Názov/popis objektu"
 
 #: ImportMerge/importmerge.glade:227
 msgid ""
@@ -16055,10 +16029,8 @@ msgid ""
 msgstr ""
 
 #: ImportMerge/importmerge.glade:392
-#, fuzzy
-#| msgid "Original: "
 msgid "Merge Original"
-msgstr "Originál: "
+msgstr "Zlúčiť originál"
 
 #: ImportMerge/importmerge.glade:396
 msgid ""
@@ -16225,10 +16197,8 @@ msgstr ""
 
 #: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
 #: ImportMerge/importmerge.py:982
-#, fuzzy
-#| msgid "Original: "
 msgid "Original"
-msgstr "Originál: "
+msgstr "Originál"
 
 #: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
 #: ImportMerge/importmerge.py:983
@@ -16364,10 +16334,8 @@ msgid "Select From"
 msgstr "Vybrať žiadne"
 
 #: LastChange/LastChangeReport.py:403
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for normal text"
-msgstr "Štýl použitý pre každú sekciu."
+msgstr "Štýl používaný pre normálny text"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
@@ -16442,10 +16410,8 @@ msgid "Show birth label"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
-#, fuzzy
-#| msgid "Estimated birth date"
 msgid "Activate the birth label."
-msgstr "Odhadnuté dátumy narodenia"
+msgstr "Aktivovať štítok narodenia."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 msgid "Birth label along path"
@@ -16530,10 +16496,8 @@ msgid "Show death label"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
-#, fuzzy
-#| msgid "Estimated death date"
 msgid "Activate the death label."
-msgstr "Odhadnuté dátumy úmrtia"
+msgstr "Aktivovať štítok úmrtia."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:50
 msgid "Death label rotation"
@@ -17385,10 +17349,8 @@ msgid "Default (Top to Bottom)"
 msgstr "zhora nadol"
 
 #: NetworkChart/NetworkChart.py:936
-#, fuzzy
-#| msgid "Select the type of graph"
 msgid "Select the graph direction."
-msgstr "Zvoľte typ grafu"
+msgstr "Vyberte smer grafu."
 
 #: NetworkChart/NetworkChart.py:939
 msgid "URL Style"
@@ -17975,10 +17937,9 @@ msgid "Shows the number of ancestors of the current person"
 msgstr ""
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of %s's ancestors"
-msgstr "Počet stránok"
+msgstr "Počet predkov osoby %s"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
@@ -18351,10 +18312,8 @@ msgid "Replace to {0}"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Detecting faces..."
-msgstr "Výber... "
+msgstr "Rozpoznávanie tvárí..."
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
 #, fuzzy
@@ -18605,7 +18564,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:763
 msgid "Currently Enclosed Places"
-msgstr ""
+msgstr "Aktuálne priliehajúce miesta"
 
 #: PlaceCleanup/placecleanup.glade:775
 msgid ""
@@ -18817,7 +18776,7 @@ msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
 msgstr ""
-"Miesto, ktoré ste si vybrali, je obklopené miestom, na ktorom pracujete!\n"
+"Miesto, ktoré ste si vybrali už prilieha miestu, na ktorom pracujete!\n"
 "Prosím, zrušte a vyberte iné miesto."
 
 #: PlaceCleanup/placecleanup.py:946
@@ -19349,10 +19308,8 @@ msgid "reverse hierarchy"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:181
-#, fuzzy
-#| msgid "place: "
 msgid "Replace text"
-msgstr "lokalita: "
+msgstr "Nahradiť text"
 
 #: PlaceUpdate/PlaceUpdate.py:184
 msgid "Use regex"
@@ -20410,10 +20367,8 @@ msgid "No %s objects were found in database."
 msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:249
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process tags..."
-msgstr "Spracovávanie...\n"
+msgstr "Spracovať štítky..."
 
 #: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
@@ -20530,10 +20485,8 @@ msgid "Whether to include notes on repositories and sources."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:460
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include media."
-msgstr "Či zahrnúť obrázky"
+msgstr "Či zahrnúť médiá."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:463
 #, fuzzy
@@ -20681,14 +20634,8 @@ msgid "SearchGramplet configuration menu"
 msgstr "Konfigurácia SVG stromu"
 
 #: SearchGramplet/SearchGramplet.py:261
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "No matches..."
-msgstr ""
-"Žiadne\n"
-"Zhody"
+msgstr "Žiadne zhody..."
 
 #: SearchGramplet/SearchGramplet.py:353
 msgid "Start type to search"
@@ -21070,10 +21017,8 @@ msgstr ""
 "miesto:"
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
-#, fuzzy
-#| msgid "Original: "
 msgid "Origine:"
-msgstr "Originál: "
+msgstr "Pôvod:"
 
 #: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
@@ -21192,10 +21137,8 @@ msgid "<b>Data father</b>"
 msgstr ""
 
 #: SourceIndex/death.glade:1225
-#, fuzzy
-#| msgid "<b>Tags:</b>"
 msgid "<b>Spouse</b> "
-msgstr "<b>Značky:</b>"
+msgstr "<b>Manžel/manželka</b> "
 
 #: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
 #: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
@@ -22357,10 +22300,8 @@ msgid ""
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
-#, fuzzy
-#| msgid "Failure writing %s"
 msgid "Failed writing "
-msgstr "Chyba pri zápise %s"
+msgstr "Chyba pri zápise "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
@@ -22415,20 +22356,16 @@ msgid "Male Box Color"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:894
-#, fuzzy
-#| msgid "Color of male persons:"
 msgid "Box background color for male person"
-msgstr "Farba mužských osôb:"
+msgstr "Farba pozadia rámčeka pre mužskú osobu"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:897
 msgid "Female Box Color"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:898
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Box background color for female person"
-msgstr "Farba ženských osôb:"
+msgstr "Farba pozadia rámčeka pre ženskú osobu"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:904
 #, fuzzy
@@ -22457,16 +22394,12 @@ msgid "How many pixel are unused above first box?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
-#, fuzzy
-#| msgid "Height of the tree in pixels."
 msgid "Width of a box in pixel"
-msgstr "Výška stromu v pixeloch."
+msgstr "Šírka rámčeka v pixeloch"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:922
-#, fuzzy
-#| msgid "Height of the tree in pixels."
 msgid "Width of the box of a person in pixel"
-msgstr "Výška stromu v pixeloch."
+msgstr "Šírka rámčeka osoby v pixeloch"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:925
 msgid "Horizontal space between boxes in pixel"
@@ -22893,10 +22826,8 @@ msgid "Search: google.com.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:60
-#, fuzzy
-#| msgid "Search Quota "
 msgid "Search: roots.in.ua"
-msgstr "Kvóta vyhľadávania "
+msgstr "Hľadať: roots.in.ua"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:11
 msgid "UK Web Connect Pack"
@@ -23016,22 +22947,19 @@ msgid "Attribute has been successfully added"
 msgstr ""
 
 #: WebSearch.py:1277
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Názov: {title}\n"
+msgstr "Názov: {title}"
 
 #: WebSearch.py:1281
-#, fuzzy, python-brace-format
-#| msgid "place: "
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "lokalita: "
+msgstr "Nahradené: {keys}"
 
 #: WebSearch.py:1284
-#, fuzzy, python-brace-format
-#| msgid "place: "
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "lokalita: "
+msgstr "Prázdne: {keys}"
 
 #: WebSearch.py:1286
 #, python-brace-format
