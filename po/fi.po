@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -41,10 +41,8 @@ msgid "All Names of All People"
 msgstr ""
 
 #: AllNamesQuickview/AllNames.gpr.py:5
-#, fuzzy
-#| msgid "Display a person's events on a timeline"
 msgid "Display all names of all people"
-msgstr "Näytä henkilön tapahtumat aikajanalla"
+msgstr "Näytä kaikkien henkilöiden nimet"
 
 #: AllNamesQuickview/AllNames.py:54
 #, fuzzy
@@ -22426,10 +22424,8 @@ msgid "Generating thumbnails for source references"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
-#, fuzzy
-#| msgid "Timeline Pedigree"
 msgid "Timeline Pedigree Report"
-msgstr "Aikajana sukupuu"
+msgstr "Sukupuun aikajanaraportti"
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
 msgid ""
@@ -22438,10 +22434,8 @@ msgid ""
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
-#, fuzzy
-#| msgid "Failure writing to %s"
 msgid "Failed writing "
-msgstr "Kirjoitus epäonnistui %s"
+msgstr "Kirjoitus epäonnistui "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
@@ -22460,10 +22454,8 @@ msgid "Path for generated files"
 msgstr "Kohdehakemisto uusille tiedostoille."
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:868
-#, fuzzy
-#| msgid "Default (svg)"
 msgid "Default Age"
-msgstr "Oletus (svg)"
+msgstr "Oletusikä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
@@ -22474,54 +22466,40 @@ msgid "What to show"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
-#, fuzzy
-#| msgid "The Gramps ID.."
 msgid "Show GrampsID"
-msgstr "Gramps ID.."
+msgstr "Näytä gramps ID"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
-#, fuzzy
-#| msgid "Maximize"
 msgid "Optimize"
-msgstr "Maksimoi"
+msgstr "Optimoi"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
-#, fuzzy
-#| msgid "Male Box Edge"
 msgid "Male Box Color"
-msgstr "Miessolun reuna"
+msgstr "Laatikon väri miehelle"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:894
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Box background color for male person"
-msgstr "Polun väri kotihenkilölle"
+msgstr "Laatikon taustaväri miehelle"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:897
-#, fuzzy
-#| msgid "Female Box Edge"
 msgid "Female Box Color"
-msgstr "Naissolun reuna"
+msgstr "Laatikon väri naiselle"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:898
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Box background color for female person"
-msgstr "Polun väri kotihenkilölle"
+msgstr "Laatikon taustaväri naiselle"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:904
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of pixel per year"
-msgstr "Sivujen määrä"
+msgstr "Vuoden pikselien määrä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
@@ -22552,10 +22530,8 @@ msgid "Width of the box of a person in pixel"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:925
-#, fuzzy
-#| msgid "Horizontal spacing between generations"
 msgid "Horizontal space between boxes in pixel"
-msgstr "Sukupolvien välinen vaakasuora väli"
+msgstr "Ruutujen välinen vaakasuora tila pikseleinä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
@@ -22692,16 +22668,12 @@ msgid "TR-Heading"
 msgstr ""
 
 #: ToDoReport/TodoReport.py:243
-#, fuzzy
-#| msgid "Table"
 msgid "NoteTable"
-msgstr "Taulukko"
+msgstr "Lisätieto taulukko"
 
 #: ToDoReport/TodoReport.py:243 ToDoReport/TodoReport.py:962
-#, fuzzy
-#| msgid "Table"
 msgid "TR-Table"
-msgstr "Taulukko"
+msgstr "TR-taulukko"
 
 #: ToDoReport/TodoReport.py:247 ToDoReport/TodoReport.py:253
 #: ToDoReport/TodoReport.py:267 ToDoReport/TodoReport.py:273
@@ -22770,16 +22742,12 @@ msgid "date: "
 msgstr ""
 
 #: ToDoReport/TodoReport.py:417
-#, fuzzy
-#| msgid "Replace"
 msgid "place: "
-msgstr "Korvaa"
+msgstr "paikka: "
 
 #: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Media Type"
 msgid "Note Type"
-msgstr "Mediatyyppi"
+msgstr "Lisätietotyyppi"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
@@ -22790,20 +22758,16 @@ msgid "Group notes by Family, Person, Place, etc."
 msgstr ""
 
 #: ToDoReport/TodoReport.py:946
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The basic style used for the table cell display."
-msgstr "Paikan postinumero, jos sellainen on."
+msgstr "Taulukon solunäytön perustyyli."
 
 #: ToDoReport/TodoReport.py:951
 msgid "The basic style used for the table border cell display."
 msgstr ""
 
 #: ToDoReport/TodoReport.py:961
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The basic style used for the table display."
-msgstr "Paikan postinumero, jos sellainen on."
+msgstr "Taulukkonäytön perustyyli."
 
 #: Topola/Topola.gpr.py:4
 msgid "Interactive Family Tree"
@@ -22814,10 +22778,8 @@ msgid "Opens an interactive tree in the browser"
 msgstr "Avaa interaktiivisen puun selaimessa"
 
 #: TypeCleanup/type_cleanup.gpr.py:30
-#, fuzzy
-#| msgid "Place Cleanup"
 msgid "Type Cleanup"
-msgstr "Paikan puhdistus"
+msgstr "Tyypin puhdistus"
 
 #: TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
@@ -22836,49 +22798,36 @@ msgid "Family Relation Types"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:104
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Child reference Types"
-msgstr "Muokkaa viitattua henkilöä"
+msgstr "Lapsen viitetyypit"
 
 #: TypeCleanup/type_cleanup.py:105
 msgid "Name Origin Types"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:106
-#, fuzzy
-#| msgid "Media Type"
 msgid "Name Types"
-msgstr "Mediatyyppi"
+msgstr "Nimityypit"
 
 #: TypeCleanup/type_cleanup.py:107
-#, fuzzy
-#| msgid "Media Type"
 msgid "Note Types"
-msgstr "Mediatyyppi"
+msgstr "Lisätietotyypit"
 
 #: TypeCleanup/type_cleanup.py:108
-#, fuzzy
-#| msgid "Print place pages"
 msgid "Place Types"
-msgstr "Tulosta paikkasivut"
+msgstr "Paikkatyypit"
 
 #: TypeCleanup/type_cleanup.py:109
-#, fuzzy
 msgid "Repository Types"
-msgstr "Arkistot"
+msgstr "Arkistotyypit"
 
 #: TypeCleanup/type_cleanup.py:111
-#, fuzzy
-#| msgid "Media Type"
 msgid "Source Media Types"
-msgstr "Mediatyyppi"
+msgstr "Lähteen mediatyypit"
 
 #: TypeCleanup/type_cleanup.py:112
-#, fuzzy
-#| msgid "URL Style"
 msgid "URL Types"
-msgstr "Tyylitiedosto"
+msgstr "URL tyypit"
 
 #: TypeCleanup/type_cleanup.py:124
 msgid "Types Cleanup Tool"
@@ -22913,10 +22862,8 @@ msgid "Types"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:242
-#, fuzzy
-#| msgid "Place Cleanup"
 msgid "Type Cleanup Tool"
-msgstr "Paikan puhdistus"
+msgstr "Tyypin puhdistustyökalu"
 
 #: TypeCleanup/type_cleanup.py:387
 #, python-format
@@ -22934,16 +22881,12 @@ msgid ""
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.gpr.py:11
-#, fuzzy
-#| msgid "UK Web Connect Pack"
 msgid "UA Web Connect Pack"
-msgstr "UK Web Connect Pack"
+msgstr "Web Connect Pack UA"
 
 #: UAWebConnectPack/UAWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the UA (requires libwebconnect)"
-msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
+msgstr "Nettisivustojen kokoelma UA (vaatii libwebconnectin)"
 
 #: UAWebConnectPack/UAWebPack.py:39
 msgid "Forum: ukrgenealogy.com.ua"
@@ -22966,10 +22909,8 @@ msgid "Repressed DB: reabit.org.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:50
-#, fuzzy
-#| msgid "FamilySearch.org"
 msgid "Genealogy DB: familysearch.org"
-msgstr "FamilySearch.org UK"
+msgstr "Sukututkimus DB: familysearch.org"
 
 #: UAWebConnectPack/UAWebPack.py:51
 msgid "Genealogy DB: myheritage.com.ua"
@@ -22988,10 +22929,8 @@ msgid "Search: google.com.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:60
-#, fuzzy
-#| msgid "Search results"
 msgid "Search: roots.in.ua"
-msgstr "Hakutulokset"
+msgstr "Haku: roots.in.ua"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:11
 msgid "UK Web Connect Pack"
@@ -23018,28 +22957,20 @@ msgid "Hathi Trust Digital Library"
 msgstr "Hathi Trust Digital kirjasto"
 
 #: USWebConnectPack/USWebPack.gpr.py:11
-#, fuzzy
-#| msgid "UK Web Connect Pack"
 msgid "US Web Connect Pack"
-msgstr "UK Web Connect Pack"
+msgstr "Web Connect Pack US"
 
 #: USWebConnectPack/USWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the US (requires libwebconnect)"
-msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
+msgstr "Nettisivustojen kokoelma US (vaatii libwebconnectin)"
 
 #: USWebConnectPack/USWebPack.py:35
-#, fuzzy
-#| msgid "UK Google"
 msgid "US Google"
-msgstr "Google UK"
+msgstr "Google US"
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search"
 msgid "WebSearch"
-msgstr "Hae"
+msgstr "Nettihaku"
 
 #: WebSearch.gpr.py:36
 msgid ""
@@ -23052,28 +22983,20 @@ msgid "Keys"
 msgstr ""
 
 #: WebSearch.py:876
-#, fuzzy
-#| msgid "Web site title"
 msgid "Website URL"
-msgstr "Nettisivuston otsikko"
+msgstr "Nettisivuston URL"
 
 #: WebSearch.py:879
-#, fuzzy
-#| msgid "Add Person"
 msgid "Add link to note"
-msgstr "Lisää henkilö"
+msgstr "Lisää linkki lisätietoon"
 
 #: WebSearch.py:880
-#, fuzzy
-#| msgid "Add Person"
 msgid "Add link to attribute"
-msgstr "Lisää henkilö"
+msgstr "Lisää linkki ominaisuuteen"
 
 #: WebSearch.py:881
-#, fuzzy
-#| msgid "Show places"
 msgid "Show QR-code"
-msgstr "Näytä paikat"
+msgstr "Näytä QR-koodi"
 
 #: WebSearch.py:882
 msgid "Copy link to clipboard"
@@ -23104,10 +23027,9 @@ msgid ""
 msgstr ""
 
 #: WebSearch.py:1120
-#, fuzzy, python-format
-#| msgid "{} avatar images were sucessfully added."
+#, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "{} avatar kuvaa lisättiin onnistuneesti."
+msgstr "Lisätieto #%(id)s on onnistuneesti lisätty."
 
 #: WebSearch.py:1124
 msgid "Error creating note"
@@ -23118,34 +23040,27 @@ msgid "URL is copied to the Clipboard"
 msgstr ""
 
 #: WebSearch.py:1205
-#, fuzzy
-#| msgid "Search:"
 msgid "WebSearch Link"
-msgstr "Etsi:"
+msgstr "Verkkohaku Linkki"
 
 #: WebSearch.py:1246
-#, fuzzy
-#| msgid "{} avatar images were sucessfully added."
 msgid "Attribute has been successfully added"
-msgstr "{} avatar kuvaa lisättiin onnistuneesti."
+msgstr "Ominaisuus on lisätty onnistuneesti"
 
 #: WebSearch.py:1277
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Otsikko: {title}\n"
+msgstr "Otsikko: {title}"
 
 #: WebSearch.py:1281
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "Vaihdettu: {keys}\n"
+msgstr "Korvattu: {keys}"
 
 #: WebSearch.py:1284
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "Vaihdettu: {keys}\n"
+msgstr "Tyhjä: {keys}"
 
 #: WebSearch.py:1286
 #, python-brace-format
@@ -23162,20 +23077,16 @@ msgid "Gramplet used to make word clouds with wordle.net"
 msgstr ""
 
 #: WordleGramplet/WordleGramplet.py:126
-#, fuzzy
-#| msgid "Missing"
 msgid "[Missing]"
-msgstr "Puuttuva"
+msgstr "[Puuttuu]"
 
 #: WordleGramplet/WordleGramplet.py:140
 msgid "Number of font sizes"
 msgstr "Kirjainkokojen määrä"
 
 #: WordleGramplet/WordleGramplet.py:144
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict list"
-msgstr "Rajoita henkilöitä valitsemalla suodatin"
+msgstr "Valitse suodatin luettelon rajaamiseksi"
 
 #: constants.py:311
 msgid "Column - Icons"
@@ -23697,10 +23608,8 @@ msgid "Leave alone"
 msgstr ""
 
 #: settings_ui_manager.py:116
-#, fuzzy
-#| msgid "Generation"
 msgid "Separate"
-msgstr "Sukupolvi"
+msgstr "Erilliset"
 
 #: settings_ui_manager.py:126
 msgid "URL Compactness Level"
@@ -23712,83 +23621,75 @@ msgstr ""
 
 #: settings_ui_manager.py:135
 msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr ""
+msgstr "Kompakti - Ei etuliitettä, avaimet ilman ominaisuuksia"
 
 #: settings_ui_manager.py:138
 msgid "Compact - No Prefix, Keys With Attributes"
-msgstr ""
+msgstr "Kompakti - Ei etuliitettä, avaimet ominaisuuksilla"
 
 #: settings_ui_manager.py:141
 msgid "Long - Without Prefix on the Left"
-msgstr ""
+msgstr "Pitkä - ilman etuliitettä vasemmalla"
 
 #: settings_ui_manager.py:148
 msgid "URL Prefix Replacement"
-msgstr ""
+msgstr "URL-etuliitteen korvaaminen"
 
 #: settings_ui_manager.py:155
 msgid "AI Provider"
-msgstr ""
+msgstr "AI Provider"
 
 #: settings_ui_manager.py:160
-#, fuzzy
-#| msgid "Table"
 msgid "(Disabled)"
-msgstr "Taulukko"
+msgstr "(Pois käytöstä)"
 
 #: settings_ui_manager.py:161
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: settings_ui_manager.py:162
 msgid "Mistral AI"
-msgstr ""
+msgstr "Mistral AI"
 
 #: settings_ui_manager.py:169
 msgid "OpenAI API Key"
-msgstr ""
+msgstr "OpenAI API avain"
 
 #: settings_ui_manager.py:174
 msgid "OpenAI Model"
-msgstr ""
+msgstr "OpenAI malli"
 
 #: settings_ui_manager.py:179
 msgid "Mistral API Key"
-msgstr ""
+msgstr "Mistral API avain"
 
 #: settings_ui_manager.py:184
 msgid "Mistral Model"
-msgstr ""
+msgstr "Mistral malli"
 
 #: settings_ui_manager.py:189
 msgid "Show Links From the 'Attributes' tab"
-msgstr ""
+msgstr "Näytä linkit ominaisuus välilehdeltä"
 
 #: settings_ui_manager.py:194
 msgid "Show Links From the 'Internet' tab"
-msgstr ""
+msgstr "Näytä linkit välilehdeltä 'Internet'"
 
 #: settings_ui_manager.py:199
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show Links From the Notes"
-msgstr "Näytä piilotetut kohteet"
+msgstr "Näytä lisätietojen linkit"
 
 #: settings_ui_manager.py:230
 msgid "Enable CSV Files"
-msgstr ""
+msgstr "CSV-tiedostot käyttöön"
 
 #: settings_ui_manager.py:237
-#, fuzzy
-#| msgid "Date format"
 msgid "Display Columns"
-msgstr "Päivämäärän muoto"
+msgstr "Näytä sarakkeet"
 
 #: settings_ui_manager.py:251
-#, fuzzy
-#| msgid "Date format"
 msgid "Display Icons"
-msgstr "Päivämäärän muoto"
+msgstr "Näytön kuvakkeet"
 
 #, fuzzy
 #~| msgid "Add Person"
