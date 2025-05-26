@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-12 06:01+0000\n"
+"PO-Revision-Date: 2025-05-26 07:15+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -102,20 +102,26 @@ msgid ""
 "Note: This report only counts ancestors with a parent-child relationship of "
 "birth."
 msgstr ""
+"\n"
+"\n"
+"Obs: Denna rapport räknar endast förfäder med en förälder-barn-relation vid "
+"födseln."
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
-msgstr ""
+msgstr "Fylld siffra"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
+"Antalet siffror efter kommatecken som ska inkluderas i rapporten för "
+"procentandelen av förfäder som hittats i en given generation"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
-msgstr ""
+msgstr "Kollapsad siffra"
 
 #: AncestorFill/AncestorFill.py:313
 msgid ""
@@ -131,7 +137,7 @@ msgstr "Visa teoretisk"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "Huruvida det teoretiska antalet förfäder ska visas per generation"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
@@ -353,36 +359,43 @@ msgstr "  •  Från familjeträds-menyn,"
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
-msgstr ""
+msgstr " använd alternativet \"Hantera släktträd...\" för att"
 
 #: Betawhatsnext/Betawhatsnext.py:52
 msgid " create a New (or to select an existing) Tree database.\n"
-msgstr ""
+msgstr " skapa en ny (eller välj en befintlig) träddatabas.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr ""
+msgstr "  •  Klicka på knappen \"Ladda släktträd\" för att börja"
 
 #: Betawhatsnext/Betawhatsnext.py:54
 msgid ""
 " working with the selected genealogical tree.\n"
 "\n"
 msgstr ""
+" arbetar med det valda släktträdet.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:55
 msgid "Create and load an empty new tree to import a backup (or"
 msgstr ""
+"Skapa och ladda ett tomt nytt träd för att importera en säkerhetskopia (eller"
 
 #: Betawhatsnext/Betawhatsnext.py:56
 msgid ""
 " GEDCOM file) from another genealogical tool.\n"
 "\n"
 msgstr ""
+" GEDCOM-fil) från ett annat släktforskningsverktyg.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:70
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
 msgstr ""
+"Använd \"Konfigurera\" i \"Visa\"-menyn för att ändra Gramplet-"
+"inställningarna."
 
 #: Betawhatsnext/Betawhatsnext.py:86
 msgid "Search Quota "
@@ -390,11 +403,11 @@ msgstr "Sökkvot "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
-msgstr ""
+msgstr "Djup per slinga"
 
 #: Betawhatsnext/Betawhatsnext.py:98
 msgid "Pause search expansion"
-msgstr ""
+msgstr "Pausa sökutökning"
 
 #: Betawhatsnext/Betawhatsnext.py:105
 msgid "Completed Person"
@@ -402,7 +415,7 @@ msgstr "Komplett person"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
-msgstr ""
+msgstr " Avkommor familjer färdigt"
 
 #: Betawhatsnext/Betawhatsnext.py:118
 msgid "Ignore Person or Family"
@@ -413,6 +426,8 @@ msgid ""
 "\n"
 " ⛔ The current Tree database contains no people.\n"
 msgstr ""
+"\n"
+" ⛔ Den nuvarande träddatabasen innehåller inga personer.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:226
 msgid ""
@@ -427,12 +442,25 @@ msgid ""
 "  • An external file may be used to populate the tree via \"Import...\" in "
 "the \"Family Trees\" menu."
 msgstr ""
+"\n"
+" 👣 Nästa steg:\n"
+" Lägg till en familj och en person i den familjen:\n"
+"  • En familj kan läggas till via menyn \"Lägg till\"\n"
+"  • En person kan läggas till genom att trycka på \"+\" (plus) i panelerna "
+"för make/maka (\"Far/partner1\" eller \"Mor/partner2\") eller på fliken "
+"\"Barn\".\n"
+"\n"
+"Eller importera personer från en extern fil:\n"
+"  • En extern fil kan användas för att fylla i trädet via \"Importera...\" i "
+"menyn \"Släktträd\"."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
 "\n"
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
+"\n"
+" ⛔ Ingen person har valts som central \"Hemperson\".\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -445,10 +473,18 @@ msgid ""
 "\n"
 " This sets them as the focal \"Home Person\"."
 msgstr ""
+"\n"
+" 👣 Nästa steg:\n"
+"  •  Välj ikonen för personvyn i sidofältet i navigatorn.\n"
+"  •  Välj någon för att göra dem till \"Aktiv person\".\n"
+"  •  Välj \"Ange hemperson\" från Redigera-menyn eller från snabbmenyn "
+"(högerklicka).\n"
+"\n"
+" Detta sätter dem i centrum för \"hemmapersonen\"."
 
 #: Betawhatsnext/Betawhatsnext.py:268
 msgid "Double-click color text to edit details"
-msgstr ""
+msgstr "Dubbelklicka på färgad text för att redigera detaljer"
 
 #: Betawhatsnext/Betawhatsnext.py:504
 msgid "Birth event missing."
@@ -456,7 +492,7 @@ msgstr "Födelsehändelse saknas."
 
 #: Betawhatsnext/Betawhatsnext.py:505
 msgid "Add via the Events tab of the Edit Person dialog."
-msgstr ""
+msgstr "Lägg till via fliken Händelser i dialogrutan Redigera person."
 
 #: Betawhatsnext/Betawhatsnext.py:582
 msgid "relationship type unknown"
@@ -464,28 +500,28 @@ msgstr "relationstyp okänd"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
-msgstr ""
+msgstr "Lägg till via fliken Händelser i dialogrutan Redigera familj."
 
 #: Betawhatsnext/Betawhatsnext.py:621
 msgid "591 family not complete"
-msgstr ""
+msgstr "591 familj inte komplett"
 
 #: Betawhatsnext/Betawhatsnext.py:642
 msgid "place unknown for the Event"
-msgstr ""
+msgstr "okänd plats för händelsen"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
-msgstr ""
+msgstr "En partnerrelation existerar men maken/makan saknas"
 
 #: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
 #: Betawhatsnext/Betawhatsnext.py:665
 msgid "Add missing partner using the Edit Family dialog."
-msgstr ""
+msgstr "Lägg till saknad partner med hjälp av dialogrutan Redigera familj."
 
 #: Betawhatsnext/Betawhatsnext.py:660
 msgid "Father missing from the parent family"
-msgstr ""
+msgstr "Far saknas i föräldrarnas familj"
 
 #: Betawhatsnext/Betawhatsnext.py:664
 msgid "Mother missing from the parent family"
@@ -499,6 +535,7 @@ msgstr "Föräldrafamilj är okänd."
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
 msgstr ""
+"\"Lägg till nya/befintliga föräldrar\" från Redigera-menyn i relationsvyn."
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
@@ -619,11 +656,11 @@ msgstr "en Gramplet, som visar födelsedagarna för levande personer"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
-msgstr ""
+msgstr "Ignorera födelsedagar med tagg"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
-msgstr ""
+msgstr "Visa endast födelsedagar med tagg"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
@@ -995,13 +1032,15 @@ msgstr "Platstitlar"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Förbättrad"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"En förbättrad citeringsformatering som lägger till ett arkiv och ett "
+"samtalsnummer till standardfunktionen."
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
@@ -1019,6 +1058,8 @@ msgstr "Samlingar urklipp"
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:11
 msgid "Gramplet for grouping collections of items to aid in data entry."
 msgstr ""
+"Gramplet för gruppering av samlingar av objekt för att underlätta "
+"datainmatning."
 
 #: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format
@@ -1519,15 +1560,15 @@ msgstr "Typsnittsstorleken i pixel för biografisidans body-text."
 
 #: DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "DE Web Connect Pack"
-msgstr ""
+msgstr "DE Web Connect Pack"
 
 #: DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr ""
+msgstr "Samling av webbplatser för DE (kräver libwebconnect)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
-msgstr ""
+msgstr "Akademisk sökning i Bielefeld"
 
 #: DEWebConnectPack/DEWebPack.py:39 SVWebconnectPack/SVWebPack.py:34
 #: UKWebConnectPack/UKWebPack.py:35 USWebConnectPack/USWebPack.py:34
@@ -1546,19 +1587,19 @@ msgstr "Google DE"
 #: DEWebConnectPack/DEWebPack.py:44 UKWebConnectPack/UKWebPack.py:39
 #: USWebConnectPack/USWebPack.py:42
 msgid "Open Library"
-msgstr ""
+msgstr "Open library"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
-msgstr ""
+msgstr "Efternamnskarta (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
-msgstr ""
+msgstr "GenWiki"
 
 #: DEWebConnectPack/DEWebPack.py:47
 msgid "German digital library"
-msgstr ""
+msgstr "Tyska digitala biblioteket"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
@@ -1570,11 +1611,11 @@ msgstr "Gramplet som visar en matchande DNA-segmentskarta"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
-msgstr ""
+msgstr "Kromosom "
 
 #: DNA/dnasegmentmap.py:552
 msgid " Map for "
-msgstr ""
+msgstr " Karta för "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
@@ -1582,7 +1623,7 @@ msgstr "Kr"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "Tecken"
 
 #: DNA/dnasegmentmap.py:761
 msgid ": Grandparent"
@@ -1595,14 +1636,17 @@ msgid ""
 "{0}\n"
 "{1} cMs"
 msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
-msgstr ""
+msgstr " SNPs"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " Börjar vid "
 
 #: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
@@ -1611,12 +1655,12 @@ msgstr " och slutar vid "
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s och %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
 #, python-brace-format
