@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-23 22:01+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -38,7 +38,7 @@ msgstr ""
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Kaikkien ihmisten kaikki nimet"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
@@ -57,7 +57,7 @@ msgstr "Ensisijainen nimi"
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "Nimiä yhteensä %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
@@ -118,9 +118,8 @@ msgstr ""
 "syntymäsuhde vanhemman ja lapsen välillä."
 
 #: AncestorFill/AncestorFill.py:305
-#, fuzzy
 msgid "Filled digit"
-msgstr "Filled digit"
+msgstr "Täytenumerot"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
@@ -132,7 +131,7 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
-msgstr ""
+msgstr "Tiivistetyt numerot"
 
 #: AncestorFill/AncestorFill.py:313
 msgid ""
@@ -161,7 +160,7 @@ msgstr "Sivun otsikossa käytetty tyyli."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr ""
+msgstr "Tarkasta liitokset"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
@@ -546,16 +545,16 @@ msgstr ""
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
-msgstr ""
+msgstr "Elämäkerta"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
-msgstr ""
+msgstr "Näytä elämäkerta tekstimuodossa"
 
 #: BiographyQuickview/BiographyQuickview.py:48
 #, python-format
 msgid "Biography for %s"
-msgstr ""
+msgstr "Henkilön %s elämäkerta"
 
 #: BirthOrder/birthorder.glade:56
 #, fuzzy
@@ -577,23 +576,28 @@ msgstr "Painikkeella korvataan sukupuusi tiedot tuodulla tiedolla."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
-msgstr ""
+msgstr "Hyväksy kaikki *"
 
 #: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
 msgstr ""
+"Tällä painikkeella lajittellaan tähdellä (*) merkityt perheet. Näissä "
+"perheissä kaikilla lapsilla on kelvolliset päivämäärät, joten lajittelu "
+"onnistuu."
 
 #: BirthOrder/birthorder.glade:185
 msgid "Accept"
-msgstr ""
+msgstr "Hyväksy"
 
 #: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
 msgstr ""
+"Tällä painikkeella vain valittu perhe tallennetaan oikeassa alakulmassa "
+"mainitulla tavalla."
 
 #: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
 msgid "Done"
@@ -601,15 +605,15 @@ msgstr "Valmis"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
-msgstr ""
+msgstr "Poistuminen muuttamatta muita perheitä."
 
 #: BirthOrder/birthorder.glade:256
 msgid "Current sort"
-msgstr ""
+msgstr "Nykyinen lajittelu"
 
 #: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
-msgstr ""
+msgstr "Ehdotettu lajittelu"
 
 #: BirthOrder/birthorder.glade:333
 msgid ""
@@ -617,10 +621,13 @@ msgid ""
 "changes.  If you wish to adjust the order, select the child you wish to "
 "move, and use 'Up' or 'Down' buttons below to move them."
 msgstr ""
+"Kun olet tyytyväinen, hyväksy järjestys painamalla 'Hyväksy'. Jos haluat "
+"muuttaa järjestystä, valitse siirrettävä lapsi ja siirrä 'Ylös' / "
+"'Alas'-painikkeilla."
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
-msgstr ""
+msgstr "Lajittele lapset syntymäjärjestykseen"
 
 #: BirthOrder/birthorder.gpr.py:12
 msgid ""
@@ -629,14 +636,17 @@ msgid ""
 "manually, accept all those families that have all children with proper birth "
 "dates, or accept all."
 msgstr ""
+"Etsi perheitä, joiden lapset ei ole syntymäjärjestyksessä. Voit hyväksyä "
+"yksittäisiä korjausehdotuksia, muokata syntymäjärjestystä itse, hyväksyä ne "
+"perheet, joilla on oikeat syntymäajat, tai hyväksyä kaikki perheet."
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
-msgstr ""
+msgstr "Kaikki perheet on järjestyksessä"
 
 #: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
-msgstr ""
+msgstr "Mikään lapsi ei ollut väärässä paikassa syntymäjärjestyksessä."
 
 #: BirthOrder/birthorder.py:204
 #, fuzzy
@@ -939,17 +949,18 @@ msgstr "Arvioitu päivä"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
-msgstr ""
+msgstr "Korjaa etunimien isot alkukirjaimet"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
-msgstr ""
+msgstr "Yritetään korjata etunimien isot alkukirjaimet koko tietokannasta."
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
+#, fuzzy
 msgid "manual|Fix_Capitalization_of_Given_Names..."
-msgstr ""
+msgstr "manual|Fix_Capitalization_of_Given_Names..."
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
 #, fuzzy
@@ -959,7 +970,7 @@ msgstr "Tarkistetaan paikkojen nimiä"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
-msgstr ""
+msgstr "Etsitään etunimiä"
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
 #, fuzzy
@@ -973,6 +984,9 @@ msgid ""
 "Gramps can convert to correct capitalization. \n"
 "Select the names you wish Gramps to convert. "
 msgstr ""
+"Alla on luettelo etunimistä, joita Gramps\n"
+"osaa muuntaa oikeaan muotoon.\n"
+"Valitse muunnettavat nimet Grampsille. "
 
 #: ChangeGivenNames/changenames.glade:107
 #, fuzzy
