@@ -7,13 +7,14 @@
 # Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
 # Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
 # Yurii Liubymyi <jurchello@gmail.com>, 2025.
+# Максим Горпиніч <maksimgorpinic4@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-04-12 05:53+0000\n"
-"Last-Translator: Максим Горпиніч <maksimgorpinic2005a@gmail.com>\n"
+"PO-Revision-Date: 2025-05-18 05:35+0000\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic4@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -22,7 +23,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -22613,10 +22614,8 @@ msgid "Add link to note"
 msgstr "Додати посилання до нотатки"
 
 #: WebSearch.py:880
-#, fuzzy
-#| msgid "Add link to note"
 msgid "Add link to attribute"
-msgstr "Додати посилання до нотатки"
+msgstr "Додати посилання до атрибута"
 
 #: WebSearch.py:881
 msgid "Show QR-code"
@@ -22639,15 +22638,7 @@ msgid "🔍 AI Suggestions"
 msgstr "🔍 екомендації AI"
 
 #: WebSearch.py:1040
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "📌 This web link was added using the WebSearch gramplet for future "
-#| "reference:\n"
-#| "\n"
-#| "🔗 {url}\n"
-#| "\n"
-#| "You can use this link to revisit the source and verify the information "
-#| "related to this person."
+#, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
 "WebSearch gramplet (v. {version}):\n"
@@ -22657,13 +22648,13 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this entity."
 msgstr ""
-"📌 Це веб-посилання було додано за допомогою графлета WebSearch для "
-"подальшого використання:\n"
+"📌 Це веб-посилання '{title}' було архівовано для подальшого використання "
+"граплетом WebSearch (версія {version}):\n"
 "\n"
 "🔗 {url}\n"
 "\n"
-"Ви можете скористатися цим посиланням, щоб знову переглянути джерело та "
-"перевірити інформацію, пов’язану з цією особою."
+"Ви можете скористатися цим посиланням, щоб переглянути джерело та перевірити "
+"інформацію, пов’язану з цією сутністю."
 
 #: WebSearch.py:1120
 #, python-format
@@ -22683,34 +22674,28 @@ msgid "WebSearch Link"
 msgstr "Посилання WebSearch"
 
 #: WebSearch.py:1246
-#, fuzzy
-#| msgid "Note #%(id)s has been successfully added"
 msgid "Attribute has been successfully added"
-msgstr "Примітку #%(id)s успішно додано"
+msgstr "Атрибут успішно додано"
 
 #: WebSearch.py:1277
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Назва: {title}\n"
+msgstr "Назва: {title}"
 
 #: WebSearch.py:1281
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "Замінено: {keys}\n"
+msgstr "Замінено: {keys}"
 
 #: WebSearch.py:1284
-#, fuzzy, python-brace-format
-#| msgid "Empty: {keys}\n"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "Порожній: {keys}\n"
+msgstr "Порожній: {keys}"
 
 #: WebSearch.py:1286
-#, fuzzy, python-brace-format
-#| msgid "Comment: {comment}\n"
+#, python-brace-format
 msgid "Comment: {comment}"
-msgstr "Коментар: {comment}\n"
+msgstr "Коментар: {comment}"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -22793,24 +22778,16 @@ msgstr ""
 "електронної таблиці)"
 
 #: constants.py:353
-#, fuzzy
-#| msgid "Icon - Direct URLs from attributes (link chain)"
 msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Піктограма - Прямі URL-адреси з атрибутів (ланцюжок посилань)"
+msgstr "Піктограма – URL-адреси з вкладки «Атрибути» (піктограма «A»)"
 
 #: constants.py:354
-#, fuzzy
-#| msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr ""
-"Піктограма – URL-адреси зі спеціального каталогу користувача (піктограма "
-"електронної таблиці)"
+msgstr "Піктограма – URL-адреси з вкладки «Інтернет» (піктограма «I»)"
 
 #: constants.py:355
-#, fuzzy
-#| msgid "Icon - URLs from static CSV files (red pin)"
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Піктограма – URL-адреси зі статичних файлів CSV (червона шпилька)"
+msgstr "Піктограма – URL-адреси з вкладки «Нотатки» (піктограма «N»)"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -23326,22 +23303,16 @@ msgid "Mistral Model"
 msgstr "Модель Містраль"
 
 #: settings_ui_manager.py:189
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the 'Attributes' tab"
-msgstr "Показувати посилання з атрибутів"
+msgstr "Показати посилання з вкладки «Атрибути»"
 
 #: settings_ui_manager.py:194
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the 'Internet' tab"
-msgstr "Показувати посилання з атрибутів"
+msgstr "Показати посилання з вкладки «Інтернет»"
 
 #: settings_ui_manager.py:199
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the Notes"
-msgstr "Показувати посилання з атрибутів"
+msgstr "Показати посилання з нотаток"
 
 #: settings_ui_manager.py:230
 msgid "Enable CSV Files"
