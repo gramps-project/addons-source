@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-04-14 22:32+0000\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -5512,12 +5512,12 @@ msgstr "Gebeurtenisgegevens afdrukken (levend persoon)"
 
 #: FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
-msgstr "Val terug op de doop als de geboortegebeurtenis ontbreekt"
+msgstr "Terugvallen op de doop als de geboortegebeurtenis ontbreekt"
 
 #: FamilyTree/FamilyTree.py:1119
 msgid "Fall back to burial or cremation if death event missing"
 msgstr ""
-"Val terug op begrafenis of crematie als de overlijdensgebeurtenis ontbreekt"
+"Terugvallen op begrafenis of crematie als de overlijdensgebeurtenis ontbreekt"
 
 #: FamilyTree/FamilyTree.py:1122
 msgid "Protect private items"
@@ -22801,10 +22801,8 @@ msgid "Add link to note"
 msgstr "Koppeling toevoegen aan notitie"
 
 #: WebSearch.py:880
-#, fuzzy
-#| msgid "Add link to note"
 msgid "Add link to attribute"
-msgstr "Koppeling toevoegen aan notitie"
+msgstr "Koppeling toevoegen aan attribuut"
 
 #: WebSearch.py:881
 msgid "Show QR-code"
@@ -22827,15 +22825,7 @@ msgid "🔍 AI Suggestions"
 msgstr "🔍 AI-suggesties"
 
 #: WebSearch.py:1040
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "📌 This web link was added using the WebSearch gramplet for future "
-#| "reference:\n"
-#| "\n"
-#| "🔗 {url}\n"
-#| "\n"
-#| "You can use this link to revisit the source and verify the information "
-#| "related to this person."
+#, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
 "WebSearch gramplet (v. {version}):\n"
@@ -22845,13 +22835,13 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this entity."
 msgstr ""
-"📌 Deze weblink is toegevoegd met behulp van de WebSearch-gramplet voor "
-"toekomstig gebruik:\n"
+"📌 Deze '{title}' weblink werd gearchiveerd voor toekomstig gebruik door de "
+"WebSearch gramplet (v. {version}):\n"
 "\n"
 "🔗 {url}\n"
 "\n"
 "Je kunt deze link gebruiken om de bron opnieuw te bezoeken en de informatie "
-"met betrekking tot deze persoon te verifiëren."
+"met betrekking tot deze entiteit te verifiëren."
 
 #: WebSearch.py:1120
 #, python-format
@@ -22871,34 +22861,28 @@ msgid "WebSearch Link"
 msgstr "WebSearch Link"
 
 #: WebSearch.py:1246
-#, fuzzy
-#| msgid "Note #%(id)s has been successfully added"
 msgid "Attribute has been successfully added"
-msgstr "Notitie #%(id)s is met succes toegevoeg"
+msgstr "Attribuut is met success toegevoegd"
 
 #: WebSearch.py:1277
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Titel: {title}\n"
+msgstr "Titel: {title}"
 
 #: WebSearch.py:1281
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "Vervangen: {keys}\n"
+msgstr "Vervangen: {keys}"
 
 #: WebSearch.py:1284
-#, fuzzy, python-brace-format
-#| msgid "Empty: {keys}\n"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "Leeg: {keys}\n"
+msgstr "Leeg: {keys}"
 
 #: WebSearch.py:1286
-#, fuzzy, python-brace-format
-#| msgid "Comment: {comment}\n"
+#, python-brace-format
 msgid "Comment: {comment}"
-msgstr "Commentaar: {comment}\n"
+msgstr "Commentaar: {comment}"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -22978,22 +22962,16 @@ msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr "Pictogram - URLs van aangepaste gebruikersmap (tabel)"
 
 #: constants.py:353
-#, fuzzy
-#| msgid "Icon - Direct URLs from attributes (link chain)"
 msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Pictogram - Directe URLs van attributen (schakels)"
+msgstr "Pictogram - URLs van de tab 'Attributen' ('A'-pictogram)"
 
 #: constants.py:354
-#, fuzzy
-#| msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Pictogram - URLs van aangepaste gebruikersmap (tabel)"
+msgstr "Pictogram - URLs van de tab 'Internet' ('I'-pictogram)"
 
 #: constants.py:355
-#, fuzzy
-#| msgid "Icon - URLs from static CSV files (red pin)"
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Pictogram - URLs van statische CSV-bestanden (rode pin)"
+msgstr "Pictogram - URLs van de tab 'Notities' ('N'-pictogram)"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -23510,22 +23488,16 @@ msgid "Mistral Model"
 msgstr "Mistral-model"
 
 #: settings_ui_manager.py:189
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the 'Attributes' tab"
-msgstr "Koppelingen van kenmerken weergeven"
+msgstr "Koppelingen van de tab 'Attributen' weergeven"
 
 #: settings_ui_manager.py:194
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the 'Internet' tab"
-msgstr "Koppelingen van kenmerken weergeven"
+msgstr "Koppelingen van de tab 'Internet' weergeven"
 
 #: settings_ui_manager.py:199
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the Notes"
-msgstr "Koppelingen van kenmerken weergeven"
+msgstr "Koppelingen van de Notities weergeven"
 
 #: settings_ui_manager.py:230
 msgid "Enable CSV Files"
