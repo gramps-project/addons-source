@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
+"PO-Revision-Date: 2025-05-19 21:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -44,7 +44,7 @@ msgstr "Zeigt alle Namen aller Personen"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
-msgstr "Namentyp"
+msgstr "Namensart"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
@@ -245,31 +245,31 @@ msgstr "Fertig!\n"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
-msgstr "Avatar Generator"
+msgstr "Avatar Generator Werkzeug"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
-msgstr "Werkzeug, um Deinem Stammbaum Avatar-Bilder hinzuzufügen"
+msgstr "Ein Werkzeug zum Hinzufügen von Avatarbildern zu deinem Stammbaum"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
-msgstr "Darstellung einzelner Bilder"
+msgstr "Einzelbildmodus"
 
 #: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
-msgstr "Wähle die Anzahl an Bildern, die Du benutzen möchtest."
+msgstr "Wähle die Anzahl der Bilder, die du verwenden möchtest."
 
 #: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
-msgstr "Bild für Personen, deren Geschlecht unbekannt ist."
+msgstr "Bild für Personen mit unbekanntem Geschlecht."
 
 #: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
-msgstr "Bild für Männer."
+msgstr "Bild für männliche Personen."
 
 #: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
-msgstr "Bild für Frauen"
+msgstr "Bild für weibliche Personen"
 
 #: AvatarGenerator/AvatarGenerator.py:95
 msgid "Remove images from people"
@@ -277,7 +277,7 @@ msgstr "Bilder von Personen entfernen"
 
 #: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
-msgstr "Ausgewählte Bilder entfernen."
+msgstr "Ausgewählte(s) Bild(er) entfernen."
 
 #: AvatarGenerator/AvatarGenerator.py:134
 #: AvatarGenerator/AvatarGenerator.py:183
@@ -287,7 +287,7 @@ msgstr "Avatargenerator"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
-msgstr "Avatar-Bilder entfernen …"
+msgstr "Avatarbilder entfernen..."
 
 #: AvatarGenerator/AvatarGenerator.py:211
 #: AvatarGenerator/AvatarGenerator.py:219
@@ -302,7 +302,7 @@ msgstr "INFO"
 
 #: AvatarGenerator/AvatarGenerator.py:211
 msgid "No media was removed."
-msgstr "Kein Medienobjekt wurden entfernt."
+msgstr "Es wurden keine Medien entfernt."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
@@ -314,12 +314,12 @@ msgid ""
 "{} HandleError occured, but were ignored."
 msgstr ""
 "\n"
-"{} Fehler in der Handhabung aufgetreten, wurden aber ignoriert."
+"{} HandleError traten auf, wurden aber ignoriert."
 
 #: AvatarGenerator/AvatarGenerator.py:263
 #: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
-msgstr "Avatar-Bilder hinzufügen…"
+msgstr "Avatarbilder hinzufügen..."
 
 #: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
@@ -327,11 +327,11 @@ msgstr "{} Avatar-Bilder wurden erfolgreich hinzugefügt."
 
 #: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
-msgstr "Es gab kein Avatar-Bild zum Hinzufügen. "
+msgstr "Es war kein Avatarbild hinzuzufügen. "
 
 #: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
-msgstr "Alle Personen hatten schon eins."
+msgstr "Alle Personen hatten bereits eines."
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
@@ -554,7 +554,7 @@ msgstr "Biographie"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
-msgstr "Zeigen eine Textbiographie an"
+msgstr "Anzeige einer Textbiographie"
 
 #: BiographyQuickview/BiographyQuickview.py:48
 #, python-format
@@ -563,39 +563,41 @@ msgstr "Biografie für %s"
 
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
-msgstr "Wähle die Familie, die du untersuchen willst."
+msgstr "Wähle die Familie aus, die du untersuchen möchtest."
 
 #: BirthOrder/birthorder.glade:155
 msgid "Accept All"
-msgstr "Alle übernehmen"
+msgstr "Alle annehmen"
 
 #: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
-msgstr "Diese Schaltfläche sortiert alle aufgelisteten Familien."
+msgstr ""
+"Mit dieser Schaltfläche kannst du alle aufgelisteten Familien sortieren."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
-msgstr "Übernimm Alle *"
+msgstr "Alle annehmen *"
 
 #: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
 msgstr ""
-"Diese Schaltfläche sortiert alle Familien mit '*'. In diesen Familien haben "
-"alle Kinder ein Geburtsdatum, daher ist die Sortierung unproblematisch."
+"Mit dieser Schaltfläche werden alle Familien mit „*“ sortiert.  In diesen "
+"Familien haben alle Kinder gültige Daten, so dass die Sortierung eindeutig "
+"ist."
 
 #: BirthOrder/birthorder.glade:185
 msgid "Accept"
-msgstr "Übernehmen"
+msgstr "Annehmen"
 
 #: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
 msgstr ""
-"Diese Schaltfläche übernimmt nur die ausgewählten Familien und speichert "
-"sie, wie im unteren rechten Fenster gezeigt."
+"Mit dieser Schaltfläche wird nur die ausgewählte Familie akzeptiert und wie "
+"im unteren rechten Fensterbereich angezeigt gespeichert."
 
 #: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
 msgid "Done"
@@ -604,7 +606,8 @@ msgstr "Fertig"
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
 msgstr ""
-"Diese Schaltfläche beendet und lässt die verbleibenden Familien unverändert."
+"Mit dieser Schaltfläche wird die Funktion beendet, wobei die übrigen "
+"Familien unverändert bleiben."
 
 #: BirthOrder/birthorder.glade:256
 msgid "Current sort"
@@ -612,7 +615,7 @@ msgstr "Aktuelle Sortierung"
 
 #: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
-msgstr "Geplante Sortierung"
+msgstr "Vorgeschlagene Sortierung"
 
 #: BirthOrder/birthorder.glade:333
 msgid ""
@@ -620,14 +623,15 @@ msgid ""
 "changes.  If you wish to adjust the order, select the child you wish to "
 "move, and use 'Up' or 'Down' buttons below to move them."
 msgstr ""
-"Wenn du mit der Sortierung zufrieden bist, verwende die 'Übernehmen' "
-"Schaltfläche unten um die Änderungen zu übernehmen. Wenn du die Reihenfolge "
-"korrigieren willst, wähle das Kind welches du verschieben möchtest, und "
-"verwende die 'Hoch' oder 'Runter' Schaltflächen unten um es zu bewegen."
+"Wenn du mit der Sortierung zufrieden bist, klicke auf die Schaltfläche "
+"„Akzeptieren“, um die Änderungen zu übernehmen.  Wenn du die Reihenfolge "
+"ändern möchtest, wähle das Kind aus, das du verschieben möchtest, und "
+"verwende die Schaltflächen „Nach oben“ oder „Nach unten“ unten, um es zu "
+"verschieben."
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
-msgstr "Sortiert Kinder in Geburtsreihenfolge"
+msgstr "Kinder in Geburtsreihenfolge sortieren"
 
 #: BirthOrder/birthorder.gpr.py:12
 msgid ""
@@ -636,19 +640,18 @@ msgid ""
 "manually, accept all those families that have all children with proper birth "
 "dates, or accept all."
 msgstr ""
-"Geht durch die Familien und schaut nach Kindern, die sich nicht in der "
-"Geburtsreihenfolge befinden. Der Anwender kann einzelne Vorschläge zum "
-"manuellen Korrigieren/Bearbeiten der Geburtsreihenfolge übernehmen, alle "
-"Familien mit korrekter Geburtsreihenfolge übernehmen oder alle Familien "
-"übernehmen."
+"Durchsucht Familien nach Kindern, die nicht in der richtigen Reihenfolge "
+"geboren wurden.  Der Anwender kann einzelne Korrekturvorschläge akzeptieren, "
+"die Geburtsreihenfolge manuell bearbeiten, alle Familien akzeptieren, die "
+"alle Kinder mit korrekten Geburtsdaten haben, oder alle akzeptieren."
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
-msgstr "Es muss keine Familie sortiert werden"
+msgstr "Es müssen keine Familien sortiert werden"
 
 #: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
-msgstr "Es sind keine Kinder außerhalb der Geburtsreihenfolge."
+msgstr "Keines der Kinder war außerhalb der Reihenfolge der Geburt."
 
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
@@ -665,15 +668,15 @@ msgstr "Geburtstage"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
-msgstr "ein Gramplet welches die Geburtstage von lebenden Personen zeigt"
+msgstr "ein Gramplet, das die Geburtstage der lebenden Personen anzeigt"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
-msgstr "Geburtstage mit Markierung nicht berücksichtigen"
+msgstr "Geburtstage mit Etikett ignorieren"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
-msgstr "Zeige nur Geburtstage mit Markierung"
+msgstr "Nur Geburtstage mit Etikett anzeigen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
@@ -957,8 +960,8 @@ msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
 msgstr ""
-"Durchsucht die gesamte Datenbank und versucht Großschreibung von Vornamen zu "
-"korrigieren."
+"Durchsucht die gesamte Datenbank und versucht, die Großschreibung der "
+"Vornamen zu korrigieren."
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
@@ -966,7 +969,7 @@ msgstr "Großschreibung_von_Vornamen_korrigieren..."
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
-msgstr "Überprüfe Vornamen"
+msgstr "Überprüfung der Vornamen"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
@@ -992,15 +995,15 @@ msgstr "Auswahl bearbeiten"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr "Entferne den Inhalt des Ortstitelfeld wenn er nicht passt"
+msgstr "Inhalt des Feldes für den Ortstitel entfernen, wenn er nicht passt"
 
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr "Kopiere den Inhalt des Ortstitelfeldes in eine neue Notiz."
+msgstr "Kopiere den Inhalt des Feldes Ortstitel in eine neue Notiz."
 
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr "Füge eine Markierung ausgewählten Orten hinzu."
+msgstr "Bringt ein Etikett an ausgewählten Orten an."
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
@@ -1008,7 +1011,7 @@ msgstr "Spalte"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
-msgstr "Ortstitel Überprüfen"
+msgstr "Ortstitel überprüfen"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
@@ -1032,7 +1035,7 @@ msgstr "Unterschiede"
 
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
-msgstr "Keiner benötigt Änderungen"
+msgstr "Keine Änderungen erforderlich"
 
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
@@ -1044,7 +1047,7 @@ msgstr "Veraltete Ort"
 
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
-msgstr "Ortstitel Ändern"
+msgstr "Ortstitel ändern"
 
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
@@ -1059,8 +1062,8 @@ msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
-"Ein erweiterter Fundestellenformatierer, der einen Aufbewahrungsort und eine "
-"Signatur zu den Standardfunktionen hinzufügt."
+"Ein erweiterter Fundstellenformatierer, der die Standardfunktionalität um "
+"ein Aufbewahrungsort und eine Signatur ergänzt."
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
@@ -1068,17 +1071,17 @@ msgstr "Befehlszeilenzusammenführung"
 
 #: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
-msgstr "Primäre Objekte über die Kommandozeile zusammenfassen."
+msgstr "Zusammenführen primärer Objekte über die Befehlszeile."
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:18
 msgid "Collections Clipboard"
-msgstr "Sammlungen-Zwischenablage"
+msgstr "Sammlungen Zwischenablage"
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:11
 msgid "Gramplet for grouping collections of items to aid in data entry."
 msgstr ""
-"Gramplet zur Gruppierung von Sammlungen von Elementen zur Unterstützung bei "
+"Gramplet für die Gruppierung von Sammlungen von Elementen zur Erleichterung "
 "der Dateneingabe."
 
 #: ClipboardGramplet/ClipboardGramplet.py:83
@@ -1092,7 +1095,7 @@ msgstr "Uhr"
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
 msgid "Gramplet for demonstrating Cairo graphics"
-msgstr "Gramplet für Demo von Cairo-Grafik"
+msgstr "Gramplet zur Demonstration von Kairo-Grafiken"
 
 #: CombinedView/basepage.py:493
 #, python-format
@@ -1598,7 +1601,7 @@ msgstr "DE Web Connect Pack"
 
 #: DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr "Sammlung von Webseiten für DE (benötigt libwebconnect)"
+msgstr "Sammlung von Websites für DE (erfordert libwebconnect)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
@@ -1612,7 +1615,7 @@ msgstr "FamilySearch.org"
 
 #: DEWebConnectPack/DEWebPack.py:42
 msgid "Google Archives"
-msgstr "Google Archiv"
+msgstr "Google-Archiv"
 
 #: DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
@@ -1621,7 +1624,7 @@ msgstr "DE Google"
 #: DEWebConnectPack/DEWebPack.py:44 UKWebConnectPack/UKWebPack.py:39
 #: USWebConnectPack/USWebPack.py:42
 msgid "Open Library"
-msgstr "Die freie Bibliothek"
+msgstr "Open Library"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
@@ -1637,11 +1640,11 @@ msgstr "Deutsche Digitale Bibliothek"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
-msgstr "DNA-Segmentkarte"
+msgstr "DNS-Segmentkarte"
 
 #: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
-msgstr "Gramplet zeigt eine passende DNA-Segmentkarte"
+msgstr "Gramplet zeigt eine passende DNS-Segmentkarte"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
@@ -1720,11 +1723,11 @@ msgstr ""
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
-msgstr "DNA-Übereinstimmungen"
+msgstr "DNS-Übereinstimmungen"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
-msgstr "Gramplet zur Anzeige einer Liste von DNA-Übereinstimmungen"
+msgstr "Gramplet zur Anzeige einer Liste von DNS-Übereinstimmungen"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
@@ -1740,7 +1743,7 @@ msgstr "Bez."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr "Gem. DNA"
+msgstr "Gem. DNS"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
@@ -1752,7 +1755,7 @@ msgstr "Qu"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr "Gemeinsame DNA"
+msgstr "Gemeinsame DNS"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
@@ -1984,7 +1987,7 @@ msgstr "Datumsberechnungen durchführen"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr "Referenzdatum oder -datumsbereich"
+msgstr "Bezugsdatum oder Datumsbereich"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "a valid Gramps date"
@@ -3610,7 +3613,7 @@ msgstr ""
 "Familie A zwei Geschwister der Familie B heiraten. Ihre Kinder sind doppelte "
 "Cousins und Cousinen und haben dieselben vier Großeltern, anstatt sechs wie "
 "normale erste Cousins. Daher sind sie sich genetisch näher als normale "
-"Cousins ersten Grades und teilen 25 % ihrer DNA, ähnlich wie "
+"Cousins ersten Grades und teilen 25 % ihrer DNS, ähnlich wie "
 "Halbgeschwister, anstatt 12,5 % wie normale Cousins ersten Grades.\n"
 
 #: DoubleCousins/double_cousins.py:136
@@ -5609,8 +5612,8 @@ msgstr "FamilyTree-DNA-Import"
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
-"{} Verknüpfungen mit DNA-Daten erstellt. {} Haplogruppen-Attribute "
-"erstellt \n"
+"{} Verknüpfungen mit DNS-Daten erstellt. {} Haplogruppen-Attribute erstellt "
+"\n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
@@ -5634,32 +5637,32 @@ msgstr "%s Haplogruppen-Attribut hinzufügen"
 #: FamilyTreeDNA/ftdna_import.py:350
 #, python-format
 msgid "Add %s DNA Association"
-msgstr "DNA-Assoziation %s hinzufügen"
+msgstr "DNS-Assoziation %s hinzufügen"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr "Notiz für %s DNA- Verbindung erstellen"
+msgstr "Notiz für %s DNS- Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:369
 #, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
+msgstr "Notiz zu %s DNS-Assoziation hinzufügen"
 
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Quellenfundstelle für %s DNA-Verbindung erstellen"
+msgstr "Quellenfundstelle für %s DNS-Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Fundstelle für %s DNA-Verbindung erstellen"
+msgstr "Fundstelle für %s DNS-Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Fundstelle zu %s DNA-Verbindung hinzufügen"
+msgstr "Fundstelle zu %s DNS-Verbindung hinzufügen"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
@@ -22833,10 +22836,8 @@ msgid "Add link to note"
 msgstr "Verknüpfung zur Notiz hinzufügen"
 
 #: WebSearch.py:880
-#, fuzzy
-#| msgid "Add link to note"
 msgid "Add link to attribute"
-msgstr "Verknüpfung zur Notiz hinzufügen"
+msgstr "Verknüpfung zum Attribut hinzufügen"
 
 #: WebSearch.py:881
 msgid "Show QR-code"
@@ -22859,15 +22860,7 @@ msgid "🔍 AI Suggestions"
 msgstr "🔍 KI-Vorschläge"
 
 #: WebSearch.py:1040
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "📌 This web link was added using the WebSearch gramplet for future "
-#| "reference:\n"
-#| "\n"
-#| "🔗 {url}\n"
-#| "\n"
-#| "You can use this link to revisit the source and verify the information "
-#| "related to this person."
+#, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
 "WebSearch gramplet (v. {version}):\n"
@@ -22877,13 +22870,13 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this entity."
 msgstr ""
-"📌 Dieser Weblink wurde mit Hilfe des WebSuche-Gramplet für zukünftige "
-"Referenzen hinzugefügt:\n"
+"📌 Dieser '{title}'-Weblink wurde vom WebSuche-Gramplet (v. {version}) für "
+"zukünftige Referenzen archiviert:\n"
 "\n"
 "🔗 {url}\n"
 "\n"
-"Du kannst diesen Link verwenden, um die Quelle erneut aufzurufen und die "
-"Informationen zu dieser Person zu überprüfen."
+"Du kannst diesen Link verwenden, um die Quelle zu besuchen und die "
+"Informationen zu dieser Entität zu überprüfen."
 
 #: WebSearch.py:1120
 #, python-format
@@ -22903,34 +22896,28 @@ msgid "WebSearch Link"
 msgstr "WebSuche Link"
 
 #: WebSearch.py:1246
-#, fuzzy
-#| msgid "Note #%(id)s has been successfully added"
 msgid "Attribute has been successfully added"
-msgstr "Notiz #%(id)s wurde erfolgreich hinzugefügt"
+msgstr "Attribut wurde erfolgreich hinzugefügt"
 
 #: WebSearch.py:1277
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Titel: {title}\n"
+msgstr "Titel: {title}"
 
 #: WebSearch.py:1281
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "Ersetzt: {keys}\n"
+msgstr "Ersetzt: {keys}"
 
 #: WebSearch.py:1284
-#, fuzzy, python-brace-format
-#| msgid "Empty: {keys}\n"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "Leer: {keys}\n"
+msgstr "Leer: {keys}"
 
 #: WebSearch.py:1286
-#, fuzzy, python-brace-format
-#| msgid "Comment: {comment}\n"
+#, python-brace-format
 msgid "Comment: {comment}"
-msgstr "Kommentar: {comment}\n"
+msgstr "Kommentar: {comment}"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -23012,24 +22999,16 @@ msgstr ""
 "(Tabellenkalkulationssymbol)"
 
 #: constants.py:353
-#, fuzzy
-#| msgid "Icon - Direct URLs from attributes (link chain)"
 msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Symbol - Direkte URLs von Attributen (Verknüpfungskette)"
+msgstr "Symbol - URLs auf der Registerkarte „Attribute“ (Symbol „A“)"
 
 #: constants.py:354
-#, fuzzy
-#| msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr ""
-"Symbol - URLs aus dem benutzerdefinierten Benutzerverzeichnis "
-"(Tabellenkalkulationssymbol)"
+msgstr "Symbol - URLs aus der Registerkarte „Internet“ (Symbol „I“)"
 
 #: constants.py:355
-#, fuzzy
-#| msgid "Icon - URLs from static CSV files (red pin)"
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Symbol - URLs aus statischen CSV-Dateien (roter Stift)"
+msgstr "Symbol - URLs aus der Registerkarte „Notizen“ („N“-Symbol)"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -23547,22 +23526,16 @@ msgid "Mistral Model"
 msgstr "Mistral Modell"
 
 #: settings_ui_manager.py:189
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the 'Attributes' tab"
-msgstr "Verknüpfungen von Attributen anzeigen"
+msgstr "Verknüpfungen auf der Registerkarte „Attribute“ anzeigen"
 
 #: settings_ui_manager.py:194
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the 'Internet' tab"
-msgstr "Verknüpfungen von Attributen anzeigen"
+msgstr "Verknüpfungen aus der Registerkarte „Internet“ anzeigen"
 
 #: settings_ui_manager.py:199
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the Notes"
-msgstr "Verknüpfungen von Attributen anzeigen"
+msgstr "Verknüpfungen aus den Notizen anzeigen"
 
 #: settings_ui_manager.py:230
 msgid "Enable CSV Files"
