@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -15,8 +15,41 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "Failed writing "
+msgstr "Kirjoitus epäonnistui "
+
 msgid "Path for generated files"
 msgstr "Kohdehakemisto uusille tiedostoille."
 
 msgid "The destination file name for html content."
 msgstr "HTML-tiedoston nimi."
+
+msgid "Default Age"
+msgstr "Oletusikä"
+
+msgid "Show GrampsID"
+msgstr "Näytä gramps ID"
+
+msgid "Optimize"
+msgstr "Optimoi"
+
+msgid "Male Box Color"
+msgstr "Laatikon väri miehelle"
+
+msgid "Box background color for male person"
+msgstr "Laatikon taustaväri miehelle"
+
+msgid "Female Box Color"
+msgstr "Laatikon väri naiselle"
+
+msgid "Box background color for female person"
+msgstr "Laatikon taustaväri naiselle"
+
+msgid "Number of pixel per year"
+msgstr "Vuoden pikselien määrä"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "Ruutujen välinen vaakasuora tila pikseleinä"
+
+msgid "Timeline Pedigree Report"
+msgstr "Sukupuun aikajanaraportti"

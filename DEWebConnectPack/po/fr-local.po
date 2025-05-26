@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-05-17 15:52+0000\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -32,6 +32,9 @@ msgstr "Archives Google"
 
 msgid "DE Google"
 msgstr "Google DE"
+
+msgid "Open Library"
+msgstr "Bibliothèque «Open Library»"
 
 msgid "Surname map (1890-1996)"
 msgstr "Carte des noms (1890-1996)"

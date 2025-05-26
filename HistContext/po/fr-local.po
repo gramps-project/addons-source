@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-03 16:13-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -27,6 +27,9 @@ msgstr ""
 
 msgid "Use filter "
 msgstr "Utiliser le filtre "
+
+msgid "Foreground color items outside lifespan"
+msgstr "Couleur de premier plan des éléments en dehors de la durée de vie"
 
 msgid "Background color items outside lifespan"
 msgstr "Couleur de fond des éléments en dehors de la durée de vie"

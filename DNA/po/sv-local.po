@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"PO-Revision-Date: 2025-05-26 07:15+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -14,14 +14,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.12-dev\n"
 
+msgid "Chromosome "
+msgstr "Kromosom "
+
+msgid " Map for "
+msgstr " Karta för "
+
 msgid "Chr"
 msgstr "Kr"
+
+msgid "Legend"
+msgstr "Tecken"
 
 msgid ": Grandparent"
 msgstr ": Far/mor-förälder"
 
+#, python-brace-format
+msgid ""
+"\n"
+"{0}\n"
+"{1} cMs"
+msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
+
+msgid " SNPs"
+msgstr " SNPs"
+
+msgid " : Starts at "
+msgstr " Börjar vid "
+
 msgid " and ends at "
 msgstr " och slutar vid "
+
+#, python-brace-format
+msgid "{0}"
+msgstr "{0}"
+
+#, python-format
+msgid "%(ancestor1)s and %(ancestor2)s"
+msgstr "%(ancestor1)s och %(ancestor2)s"
 
 #, python-brace-format
 msgid ""

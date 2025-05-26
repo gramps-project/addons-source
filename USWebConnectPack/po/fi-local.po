@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -21,8 +21,17 @@ msgstr "Find A Grave"
 msgid "FamilySearch.org"
 msgstr "Englannin FamilySearch.org"
 
+msgid "US Google"
+msgstr "Google US"
+
 msgid "Hathi Trust Digital Library"
 msgstr "Hathi Trust Digital kirjasto"
 
 msgid "Open Library"
 msgstr "Open Library UK"
+
+msgid "US Web Connect Pack"
+msgstr "Web Connect Pack US"
+
+msgid "Collection of Web sites for the US (requires libwebconnect)"
+msgstr "Nettisivustojen kokoelma US (vaatii libwebconnectin)"

@@ -213,8 +213,8 @@ msgid "Highlight Connector Line"
 msgstr "Подсвеченная линия"
 
 msgid ""
-"RGB-color for the highlighted path between two individuals.  If the "
-"graph.inverts, reverse the order to change."
+"RGB-color for the highlighted path between two individuals.  If the graph."
+"inverts, reverse the order to change."
 msgstr "RGB-цвет для подсвеченного пути между двумя лицами."
 
 msgid "Trim Box Edge"

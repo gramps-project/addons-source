@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -17,11 +17,33 @@ msgstr ""
 msgid "a valid Gramps date"
 msgstr "une date Gramps valide"
 
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+"1. une date\n"
+"2. un nombre positif ou négatif, représentant des années\n"
+"3. une liste de valeurs positives ou négatives, représentant des années, "
+"mois, jours"
+
 msgid "Result"
 msgstr "Résultat"
 
+msgid "Calculate"
+msgstr "Calculer"
+
 msgid "Copy"
 msgstr "Copie"
+
+msgid "Error: invalid date for first expression"
+msgstr "Erreur : date invalide pour la première expression"
+
+msgid "Error: invalid offset for second expression"
+msgstr "Erreur : décalage invalide pour deuxième expression"
+
+msgid "Error: at least one expression must be a date"
+msgstr "Erreur : au moins une expression doit être une date"
 
 msgid "Date Calculator"
 msgstr "Calculateur de dates"

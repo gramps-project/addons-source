@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-05-19 21:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,28 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Avatar Generator Tool"
-msgstr "Avatar Generator"
+msgstr "Avatar Generator Werkzeug"
 
 msgid "A tool to add avatar pictures to your family tree"
-msgstr "Werkzeug, um Deinem Stammbaum Avatar-Bilder hinzuzufügen"
+msgstr "Ein Werkzeug zum Hinzufügen von Avatarbildern zu deinem Stammbaum"
 
 msgid "single image mode"
-msgstr "Darstellung einzelner Bilder"
+msgstr "Einzelbildmodus"
 
 msgid "Choose how many images you'd like to use."
-msgstr "Wähle die Anzahl an Bildern, die Du benutzen möchtest."
+msgstr "Wähle die Anzahl der Bilder, die du verwenden möchtest."
 
 msgid "Image for people with unknown gender."
-msgstr "Bild für Personen, deren Geschlecht unbekannt ist."
+msgstr "Bild für Personen mit unbekanntem Geschlecht."
 
 msgid "Image for males."
-msgstr "Bild für Männer."
+msgstr "Bild für männliche Personen."
 
 msgid "Image for females"
-msgstr "Bild für Frauen"
+msgstr "Bild für weibliche Personen"
 
 msgid "Select filter to restrict people"
 msgstr "Filter wählen, um Personen einzugrenzen"
@@ -42,19 +42,19 @@ msgid "Remove images from people"
 msgstr "Bilder von Personen entfernen"
 
 msgid "Remove selected image(s)."
-msgstr "Ausgewählte Bilder entfernen."
+msgstr "Ausgewählte(s) Bild(er) entfernen."
 
 msgid "Avatar Generator"
 msgstr "Avatargenerator"
 
 msgid "Remove avatar images..."
-msgstr "Avatar-Bilder entfernen …"
+msgstr "Avatarbilder entfernen..."
 
 msgid "INFO"
 msgstr "INFO"
 
 msgid "No media was removed."
-msgstr "Kein Medienobjekt wurden entfernt."
+msgstr "Es wurden keine Medien entfernt."
 
 msgid "{} media references were removed from {} persons."
 msgstr "{} Medienreferenzen wurden entfernt von {} Personen."
@@ -64,16 +64,16 @@ msgid ""
 "{} HandleError occured, but were ignored."
 msgstr ""
 "\n"
-"{} Fehler in der Handhabung aufgetreten, wurden aber ignoriert."
+"{} HandleError traten auf, wurden aber ignoriert."
 
 msgid "Add avatar images..."
-msgstr "Avatar-Bilder hinzufügen…"
+msgstr "Avatarbilder hinzufügen..."
 
 msgid "{} avatar images were sucessfully added."
 msgstr "{} Avatar-Bilder wurden erfolgreich hinzugefügt."
 
 msgid "There was no avatar image to add. "
-msgstr "Es gab kein Avatar-Bild zum Hinzufügen. "
+msgstr "Es war kein Avatarbild hinzuzufügen. "
 
 msgid "All persons already had one."
-msgstr "Alle Personen hatten schon eins."
+msgstr "Alle Personen hatten bereits eines."

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-16 11:34+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,10 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Order"
 msgstr "Poradie"
+
+msgid "Page No."
+msgstr "Strana č."
+
+msgid "Sheet No."
+msgstr "List č."
 
 msgid "County of"
 msgstr "Kraj"
@@ -31,6 +37,9 @@ msgstr "Úroveň"
 
 msgid "District of"
 msgstr "Okres"
+
+msgid "On date"
+msgstr "Dňa"
 
 msgid "City of"
 msgstr "Mesto"
@@ -74,8 +83,14 @@ msgstr "Zvyčajná adresa"
 msgid "Civil Parish"
 msgstr "Civilná farnosť"
 
+msgid "Children Total"
+msgstr "Detí celkom"
+
 msgid "Parish Ward"
 msgstr "Farský obvod"
+
+msgid "13. Origin"
+msgstr "13. Pôvod"
 
 msgid "2. Family"
 msgstr "2. Rodina"

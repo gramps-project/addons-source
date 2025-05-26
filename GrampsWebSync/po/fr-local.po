@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -50,6 +50,19 @@ msgid "Comparing local and remote data..."
 msgstr "Comparaison des données locales et distantes…"
 
 msgid ""
+"You have specified a URL with http scheme. If you continue, your password "
+"will be sent in clear text over the network. Use only for local testing!"
+msgstr ""
+"Vous avez spécifié une URL http. Si vous continuez, votre mot de passe sera "
+"envoyé en clair sur le réseau. Utilisez seulement pour les tests locaux !"
+
+msgid "Continue with HTTP"
+msgstr "Continuer avec HTTP"
+
+msgid "Use HTTPS"
+msgstr "Utiliser HTTPS"
+
+msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
 "\n"
@@ -78,6 +91,12 @@ msgstr ""
 "possibilité d'effectuer des modifications manuelles, utilisez plutôt l'outil "
 "d'importation et de fusion."
 
+msgid "Server URL: "
+msgstr "URL du serveur : "
+
+msgid "Bidirectional Synchronization"
+msgstr "Synchronisation bidirectionnelle"
+
 msgid "Local changes"
 msgstr "Changements locaux"
 
@@ -98,6 +117,24 @@ msgstr "Les deux arbrers sont identiques."
 
 msgid "Applying changes to local database ..."
 msgstr "Application des changements à la base de données locale…"
+
+msgid "No changes to apply to local database."
+msgstr "Aucune modification à appliquer à la base de données locale."
+
+msgid "Applying changes to remote database ..."
+msgstr "Appliquer les modifications à la base de données distante ..."
+
+msgid "No changes to apply to remote database."
+msgstr "Aucun changement à appliquer à la base de données distante."
+
+msgid "Successfully applied changes to local database."
+msgstr "Modifications apportées à la base de données locale avec succès."
+
+msgid "Missing locally"
+msgstr "Manque localement"
+
+msgid "Missing remotely"
+msgstr "Manque sur le serveur distant"
 
 #, python-format
 msgid "Downloading %s media file(s)"

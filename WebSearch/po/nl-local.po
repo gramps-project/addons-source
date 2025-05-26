@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-15 16:42+0300\n"
-"PO-Revision-Date: 2025-04-14 22:32+0000\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Middle Name Handling"
 msgstr "Verwerking van middelste namen"
@@ -64,6 +64,15 @@ msgstr "Mistral API-sleutel"
 
 msgid "Mistral Model"
 msgstr "Mistral-model"
+
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Koppelingen van de tab 'Attributen' weergeven"
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "Koppelingen van de tab 'Internet' weergeven"
+
+msgid "Show Links From the Notes"
+msgstr "Koppelingen van de Notities weergeven"
 
 msgid "Enable CSV Files"
 msgstr "CSV-bestanden inschakelen"
@@ -126,6 +135,15 @@ msgstr "Pictogram - URLs van CSV-kruisgegevens (pijlen)"
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr "Pictogram - URLs van aangepaste gebruikersmap (tabel)"
 
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Pictogram - URLs van de tab 'Attributen' ('A'-pictogram)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Pictogram - URLs van de tab 'Internet' ('I'-pictogram)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Pictogram - URLs van de tab 'Notities' ('N'-pictogram)"
+
 msgid "QR-code"
 msgstr "QR-code"
 
@@ -145,6 +163,9 @@ msgstr "Website-URL"
 msgid "Add link to note"
 msgstr "Koppeling toevoegen aan notitie"
 
+msgid "Add link to attribute"
+msgstr "Koppeling toevoegen aan attribuut"
+
 msgid "Show QR-code"
 msgstr "QR-code weergeven"
 
@@ -160,6 +181,24 @@ msgstr "Koppeling verbergen voor alle items"
 msgid "🔍 AI Suggestions"
 msgstr "🔍 AI-suggesties"
 
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Deze '{title}' weblink werd gearchiveerd voor toekomstig gebruik door de "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Je kunt deze link gebruiken om de bron opnieuw te bezoeken en de informatie "
+"met betrekking tot deze entiteit te verifiëren."
+
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Notitie #%(id)s is met succes toegevoeg"
@@ -172,3 +211,22 @@ msgstr "URL is gekopieerd naar het klembord"
 
 msgid "WebSearch Link"
 msgstr "WebSearch Link"
+
+msgid "Attribute has been successfully added"
+msgstr "Attribuut is met success toegevoegd"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Titel: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Vervangen: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Leeg: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Commentaar: {comment}"

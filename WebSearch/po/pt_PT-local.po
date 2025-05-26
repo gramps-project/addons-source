@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-15 16:42+0300\n"
-"PO-Revision-Date: 2025-04-12 05:53+0000\n"
+"PO-Revision-Date: 2025-05-18 05:35+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Middle Name Handling"
 msgstr "Gestão de nomes do meio"
@@ -64,6 +64,15 @@ msgstr "Chave API Mistral"
 
 msgid "Mistral Model"
 msgstr "Modelo Mistral"
+
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Mostrar ligações do separador Atributos"
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "Mostrar ligações do separador Internet"
+
+msgid "Show Links From the Notes"
+msgstr "Mostrar ligações de notas"
 
 msgid "Enable CSV Files"
 msgstr "Permitir ficheiros CSV"
@@ -126,6 +135,15 @@ msgstr "Ícone - Urls de ficheiros CSV cruzados (baralhar)"
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr "Ícone - Urls da pasta de utilizador personalizada (folha de cálculo)"
 
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Ícone - Urls do separador Atributos (ícone \"A\")"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Ícone - Urls do separador Internet (ícone \"I\")"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Ícone - Urls do separador Notas (ícone \"N\")"
+
 msgid "QR-code"
 msgstr "Código QR"
 
@@ -145,6 +163,9 @@ msgstr "URL do sítio web"
 msgid "Add link to note"
 msgstr "Adicionar ligação à nota"
 
+msgid "Add link to attribute"
+msgstr "Adicionar ligação ao atributo"
+
 msgid "Show QR-code"
 msgstr "Mostrar código QR"
 
@@ -160,6 +181,24 @@ msgstr "Ocultar ligação para todos os itens"
 msgid "🔍 AI Suggestions"
 msgstr "🔍 Sugestões IA"
 
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Esta ligação web \"{title}\" foi arquivada pelo gramplet WebSearch para "
+"referência futura(v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Pode utilizá-la para voltar à fonte e verificar a informação relacionada com "
+"esta entidade."
+
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Nota n.º %(id)s adicionada com sucesso"
@@ -172,3 +211,22 @@ msgstr "URL copiado para a memória"
 
 msgid "WebSearch Link"
 msgstr "Ligação WebSearch"
+
+msgid "Attribute has been successfully added"
+msgstr "Atributo adicionado com sucesso"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Título: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Substituído: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Vazio: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Comentário: {comment}"

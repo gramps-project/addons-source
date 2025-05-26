@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,10 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Failed writing "
 msgstr "Échec d'écriture "
+
+msgid "Year of Birth of Center Person"
+msgstr "Année de naissance de la personne centrale"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr ""
+"L'année de naissance de la personne centrale. Estimez une année si inconnue"
 
 msgid "Destination directory"
 msgstr "Répertoire de destination"
@@ -29,11 +36,19 @@ msgstr "Le fichier de destination pour le contenu HTML."
 msgid "Default Age"
 msgstr "Âge par défaut"
 
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr ""
+"Âge par défaut du parent lorsque l 'enfant n'a pas d'année de naissance "
+"connue"
+
 msgid "What to show"
 msgstr "Que montrer"
 
 msgid "Show GrampsID"
 msgstr "Montrer l'ID Gramps"
+
+msgid "Show GrampsID on top right of the box"
+msgstr "Montrer l'ID Gramps en haut à droite de la boîte"
 
 msgid "Optimize"
 msgstr "Optimiser"
@@ -58,3 +73,10 @@ msgstr "Espace horizontal entre les cadres en pixel"
 
 msgid "Timeline Pedigree Report"
 msgstr "Rapport généalogique chronologique"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+"Crée une page Web HTML qui utilise JavaScript pour afficher un diagramme "
+"d'ascendance disposé verticalement par date de naissance"

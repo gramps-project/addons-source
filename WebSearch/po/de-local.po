@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-15 16:42+0300\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-19 21:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -64,6 +64,15 @@ msgstr "Mistral API Schlüssel"
 
 msgid "Mistral Model"
 msgstr "Mistral Modell"
+
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Verknüpfungen auf der Registerkarte „Attribute“ anzeigen"
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "Verknüpfungen aus der Registerkarte „Internet“ anzeigen"
+
+msgid "Show Links From the Notes"
+msgstr "Verknüpfungen aus den Notizen anzeigen"
 
 msgid "Enable CSV Files"
 msgstr "CSV-Dateien ermöglichen"
@@ -128,6 +137,15 @@ msgstr ""
 "Symbol - URLs aus dem benutzerdefinierten Benutzerverzeichnis "
 "(Tabellenkalkulationssymbol)"
 
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Symbol - URLs auf der Registerkarte „Attribute“ (Symbol „A“)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Symbol - URLs aus der Registerkarte „Internet“ (Symbol „I“)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Symbol - URLs aus der Registerkarte „Notizen“ („N“-Symbol)"
+
 msgid "QR-code"
 msgstr "QR-Code"
 
@@ -147,6 +165,9 @@ msgstr "Website-URL"
 msgid "Add link to note"
 msgstr "Verknüpfung zur Notiz hinzufügen"
 
+msgid "Add link to attribute"
+msgstr "Verknüpfung zum Attribut hinzufügen"
+
 msgid "Show QR-code"
 msgstr "QR-Code anzeigen"
 
@@ -162,6 +183,24 @@ msgstr "Verknüpfung für alle Elemente ausblenden"
 msgid "🔍 AI Suggestions"
 msgstr "🔍 KI-Vorschläge"
 
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Dieser '{title}'-Weblink wurde vom WebSuche-Gramplet (v. {version}) für "
+"zukünftige Referenzen archiviert:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Du kannst diesen Link verwenden, um die Quelle zu besuchen und die "
+"Informationen zu dieser Entität zu überprüfen."
+
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Notiz #%(id)s wurde erfolgreich hinzugefügt"
@@ -174,3 +213,22 @@ msgstr "URL wird in die Zwischenablage kopiert"
 
 msgid "WebSearch Link"
 msgstr "WebSuche Link"
+
+msgid "Attribute has been successfully added"
+msgstr "Attribut wurde erfolgreich hinzugefügt"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Titel: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Ersetzt: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Leer: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Kommentar: {comment}"

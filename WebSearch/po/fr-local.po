@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-15 16:42+0300\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -64,6 +64,12 @@ msgstr "Clé de l'API Mistral"
 
 msgid "Mistral Model"
 msgstr "Modèle Mistral"
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "Afficher les liens de l'onglet \"Internet»"
+
+msgid "Show Links From the Notes"
+msgstr "Afficher les liens des notes"
 
 msgid "Enable CSV Files"
 msgstr "Activer les fichiers CSV"

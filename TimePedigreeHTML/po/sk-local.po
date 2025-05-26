@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-16 11:34+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,10 +12,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Failed writing "
+msgstr "Chyba pri zápise "
 
 msgid "Destination directory"
 msgstr "Cieľový adresár"
 
 msgid "The destination file name for html content."
 msgstr "Názov cieľového súboru pre obsah html."
+
+msgid "Box background color for male person"
+msgstr "Farba pozadia rámčeka pre mužskú osobu"
+
+msgid "Box background color for female person"
+msgstr "Farba pozadia rámčeka pre ženskú osobu"
+
+msgid "Width of a box in pixel"
+msgstr "Šírka rámčeka v pixeloch"
+
+msgid "Width of the box of a person in pixel"
+msgstr "Šírka rámčeka osoby v pixeloch"

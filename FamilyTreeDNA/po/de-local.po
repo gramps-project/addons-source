@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-05-19 21:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "FamilyTree DNA"
 msgstr "FamilyTree-DNA"
@@ -56,7 +56,7 @@ msgstr "FamilyTree-DNA-Import"
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
-"{} Verknüpfungen mit DNA-Daten erstellt. {} Haplogruppen-Attribute "
+"{} Verknüpfungen mit DNS-Daten erstellt. {} Haplogruppen-Attribute "
 "erstellt \n"
 
 msgid "No Family Finder File specified"
@@ -76,24 +76,24 @@ msgstr "%s Haplogruppen-Attribut hinzufügen"
 
 #, python-format
 msgid "Add %s DNA Association"
-msgstr "DNA-Assoziation %s hinzufügen"
+msgstr "DNS-Assoziation %s hinzufügen"
 
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr "Notiz für %s DNA- Verbindung erstellen"
+msgstr "Notiz für %s DNS- Verbindung erstellen"
 
 #, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
+msgstr "Notiz zu %s DNS-Assoziation hinzufügen"
 
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Quellenfundstelle für %s DNA-Verbindung erstellen"
+msgstr "Quellenfundstelle für %s DNS-Verbindung erstellen"
 
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Fundstelle für %s DNA-Verbindung erstellen"
+msgstr "Fundstelle für %s DNS-Verbindung erstellen"
 
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Fundstelle zu %s DNA-Verbindung hinzufügen"
+msgstr "Fundstelle zu %s DNS-Verbindung hinzufügen"
