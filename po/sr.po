@@ -2,29 +2,31 @@
 # This file is distributed under the same license as the Gramps package.
 # Vlada Perić <vlada.peric@gmail.com>, 2008.
 # Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013—2014.
+# Atdhe <at@mtc.systems>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2014-10-21 23:12+0200\n"
-"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: Serbian <(nothing)>\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
+"Last-Translator: Atdhe <at@mtc.systems>\n"
+"Language-Team: Serbian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sr/>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Sva lična imena svih osoba"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Prikaži sva lična imena svih osoba"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
