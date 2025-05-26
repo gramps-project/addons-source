@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-04-12 05:53+0000\n"
+"PO-Revision-Date: 2025-05-18 05:35+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -22617,10 +22617,8 @@ msgid "Add link to note"
 msgstr "Adicionar ligação à nota"
 
 #: WebSearch.py:880
-#, fuzzy
-#| msgid "Add link to note"
 msgid "Add link to attribute"
-msgstr "Adicionar ligação à nota"
+msgstr "Adicionar ligação ao atributo"
 
 #: WebSearch.py:881
 msgid "Show QR-code"
@@ -22643,15 +22641,7 @@ msgid "🔍 AI Suggestions"
 msgstr "🔍 Sugestões IA"
 
 #: WebSearch.py:1040
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "📌 This web link was added using the WebSearch gramplet for future "
-#| "reference:\n"
-#| "\n"
-#| "🔗 {url}\n"
-#| "\n"
-#| "You can use this link to revisit the source and verify the information "
-#| "related to this person."
+#, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
 "WebSearch gramplet (v. {version}):\n"
@@ -22661,13 +22651,13 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this entity."
 msgstr ""
-"📌 Esta ligação web foi adicionada pelo gramplet WebSearch para referência "
-"futura:\n"
+"📌 Esta ligação web \"{title}\" foi arquivada pelo gramplet WebSearch para "
+"referência futura(v. {version}):\n"
 "\n"
 "🔗 {url}\n"
 "\n"
 "Pode utilizá-la para voltar à fonte e verificar a informação relacionada com "
-"este indivíduo."
+"esta entidade."
 
 #: WebSearch.py:1120
 #, python-format
@@ -22687,34 +22677,28 @@ msgid "WebSearch Link"
 msgstr "Ligação WebSearch"
 
 #: WebSearch.py:1246
-#, fuzzy
-#| msgid "Note #%(id)s has been successfully added"
 msgid "Attribute has been successfully added"
-msgstr "Nota n.º %(id)s adicionada com sucesso"
+msgstr "Atributo adicionado com sucesso"
 
 #: WebSearch.py:1277
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Título: {title}\n"
+msgstr "Título: {title}"
 
 #: WebSearch.py:1281
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "Substituído: {keys}\n"
+msgstr "Substituído: {keys}"
 
 #: WebSearch.py:1284
-#, fuzzy, python-brace-format
-#| msgid "Empty: {keys}\n"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "Vazio: {keys}\n"
+msgstr "Vazio: {keys}"
 
 #: WebSearch.py:1286
-#, fuzzy, python-brace-format
-#| msgid "Comment: {comment}\n"
+#, python-brace-format
 msgid "Comment: {comment}"
-msgstr "Comentário: {comment}\n"
+msgstr "Comentário: {comment}"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -22794,22 +22778,16 @@ msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr "Ícone - Urls da pasta de utilizador personalizada (folha de cálculo)"
 
 #: constants.py:353
-#, fuzzy
-#| msgid "Icon - Direct URLs from attributes (link chain)"
 msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Ícone - Urls directos de atributos (cadeia de ligação)"
+msgstr "Ícone - Urls do separador Atributos (ícone \"A\")"
 
 #: constants.py:354
-#, fuzzy
-#| msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Ícone - Urls da pasta de utilizador personalizada (folha de cálculo)"
+msgstr "Ícone - Urls do separador Internet (ícone \"I\")"
 
 #: constants.py:355
-#, fuzzy
-#| msgid "Icon - URLs from static CSV files (red pin)"
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Ícone - Urls de ficheiros CSV estáticos (pino vermelho)"
+msgstr "Ícone - Urls do separador Notas (ícone \"N\")"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -23325,22 +23303,16 @@ msgid "Mistral Model"
 msgstr "Modelo Mistral"
 
 #: settings_ui_manager.py:189
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the 'Attributes' tab"
-msgstr "Mostrar ligações de atributos"
+msgstr "Mostrar ligações do separador Atributos"
 
 #: settings_ui_manager.py:194
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the 'Internet' tab"
-msgstr "Mostrar ligações de atributos"
+msgstr "Mostrar ligações do separador Internet"
 
 #: settings_ui_manager.py:199
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the Notes"
-msgstr "Mostrar ligações de atributos"
+msgstr "Mostrar ligações de notas"
 
 #: settings_ui_manager.py:230
 msgid "Enable CSV Files"
