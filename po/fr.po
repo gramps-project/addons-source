@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-17 15:52+0000\n"
+"PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -262,11 +262,11 @@ msgstr "Un outil pour ajouter des images d'avatar à votre arbre généalogique"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
-msgstr ""
+msgstr "mode image simple"
 
 #: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
-msgstr ""
+msgstr "Choisissez combien d'images vous souhaitez utiliser."
 
 #: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
@@ -286,7 +286,7 @@ msgstr ""
 
 #: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
-msgstr ""
+msgstr "Supprimer les images sélectionnées."
 
 #: AvatarGenerator/AvatarGenerator.py:134
 #: AvatarGenerator/AvatarGenerator.py:183
@@ -296,7 +296,7 @@ msgstr "Générateur d'avatar"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
-msgstr ""
+msgstr "Supprimer les images d'avatar…"
 
 #: AvatarGenerator/AvatarGenerator.py:211
 #: AvatarGenerator/AvatarGenerator.py:219
@@ -315,7 +315,7 @@ msgstr "Aucun medium n'a été supprimé."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
-msgstr ""
+msgstr "{} références de medium ont été supprimées de {} individus."
 
 #: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
@@ -330,15 +330,15 @@ msgstr "Ajouter les images d'avatar…"
 
 #: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
-msgstr ""
+msgstr "{} images d'avatar ont été ajoutées avec succès."
 
 #: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
-msgstr ""
+msgstr "Il n'y avait pas d'image d'avatar à ajouter. "
 
 #: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
-msgstr ""
+msgstr "Toutes les personnes en avaient déjà un."
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
@@ -1083,6 +1083,8 @@ msgstr "Presse-papiers Collections"
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:11
 msgid "Gramplet for grouping collections of items to aid in data entry."
 msgstr ""
+"Gramplet pour grouper les collections d'éléments pour faciliter l'entrée des "
+"données."
 
 #: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format
@@ -1622,7 +1624,7 @@ msgstr "Google DE"
 #: DEWebConnectPack/DEWebPack.py:44 UKWebConnectPack/UKWebPack.py:39
 #: USWebConnectPack/USWebPack.py:42
 msgid "Open Library"
-msgstr ""
+msgstr "Bibliothèque «Open Library»"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
@@ -2000,6 +2002,10 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. une date\n"
+"2. un nombre positif ou négatif, représentant des années\n"
+"3. une liste de valeurs positives ou négatives, représentant des années, "
+"mois, jours"
 
 #: DateCalculator/DateCalculator.py:96
 msgid "Result"
@@ -2007,7 +2013,7 @@ msgstr "Résultat"
 
 #: DateCalculator/DateCalculator.py:104
 msgid "Calculate"
-msgstr ""
+msgstr "Calculer"
 
 #: DateCalculator/DateCalculator.py:107
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
@@ -2017,16 +2023,16 @@ msgstr "Copie"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "Erreur : date invalide pour la première expression"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "Erreur : décalage invalide pour deuxième expression"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
 msgid "Error: at least one expression must be a date"
-msgstr ""
+msgstr "Erreur : au moins une expression doit être une date"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
@@ -14734,7 +14740,7 @@ msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1936
 msgid "Show map travel lines on startup"
-msgstr ""
+msgstr "Afficher les lignes de voyage sur la carte au démarrage"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
@@ -14936,14 +14942,16 @@ msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
+"Vous avez spécifié une URL http. Si vous continuez, votre mot de passe sera "
+"envoyé en clair sur le réseau. Utilisez seulement pour les tests locaux !"
 
 #: GrampsWebSync/grampswebsync.py:544
 msgid "Continue with HTTP"
-msgstr ""
+msgstr "Continuer avec HTTP"
 
 #: GrampsWebSync/grampswebsync.py:545
 msgid "Use HTTPS"
-msgstr ""
+msgstr "Utiliser HTTPS"
 
 #: GrampsWebSync/grampswebsync.py:663
 msgid ""
@@ -14977,11 +14985,11 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:690
 msgid "Server URL: "
-msgstr ""
+msgstr "URL du serveur : "
 
 #: GrampsWebSync/grampswebsync.py:774
 msgid "Bidirectional Synchronization"
-msgstr ""
+msgstr "Synchronisation bidirectionnelle"
 
 #: GrampsWebSync/grampswebsync.py:783
 msgid "Reset remote to local"
@@ -15027,27 +15035,27 @@ msgstr "Application des changements à la base de données locale…"
 
 #: GrampsWebSync/grampswebsync.py:920
 msgid "No changes to apply to local database."
-msgstr ""
+msgstr "Aucune modification à appliquer à la base de données locale."
 
 #: GrampsWebSync/grampswebsync.py:923
 msgid "Applying changes to remote database ..."
-msgstr ""
+msgstr "Appliquer les modifications à la base de données distante ..."
 
 #: GrampsWebSync/grampswebsync.py:926
 msgid "No changes to apply to remote database."
-msgstr ""
+msgstr "Aucun changement à appliquer à la base de données distante."
 
 #: GrampsWebSync/grampswebsync.py:933
 msgid "Successfully applied changes to local database."
-msgstr ""
+msgstr "Modifications apportées à la base de données locale avec succès."
 
 #: GrampsWebSync/grampswebsync.py:962
 msgid "Missing locally"
-msgstr ""
+msgstr "Manque localement"
 
 #: GrampsWebSync/grampswebsync.py:965
 msgid "Missing remotely"
-msgstr ""
+msgstr "Manque sur le serveur distant"
 
 #: GrampsWebSync/grampswebsync.py:1003
 #, python-format
@@ -15539,7 +15547,7 @@ msgstr "Nouvelles"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
 msgid "Gramplet that shows the latest Gramps news"
-msgstr ""
+msgstr "Gramplet qui montre les dernières nouvelles de Gramps"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
 msgid "Read Gramps headline news"
@@ -15697,7 +15705,7 @@ msgstr ""
 
 #: HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
-msgstr ""
+msgstr "Couleur de premier plan des éléments en dehors de la durée de vie"
 
 #: HistContext/HistContext.py:144
 msgid "Background color items outside lifespan"
@@ -17310,6 +17318,9 @@ msgid ""
 "for dynamically generated URLs.\n"
 "URL = Prefix + GrampsID + Suffix."
 msgstr ""
+"Entrez Préfixe,Suffixe (utilisez la virgule)\n"
+"pour les URL générées dynamiquement.\n"
+"URL = Préfixe + GrampsID + Suffixe."
 
 #: NetworkChart/NetworkChart.py:957
 msgid "Enter Font Name"
@@ -22136,6 +22147,8 @@ msgid ""
 "Creates an HTML webpage that uses JavaScript to show a pedigree block "
 "diagram arranged vertically by birth date"
 msgstr ""
+"Crée une page Web HTML qui utilise JavaScript pour afficher un diagramme "
+"d'ascendance disposé verticalement par date de naissance"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
 msgid "Failed writing "
@@ -22143,11 +22156,12 @@ msgstr "Échec d'écriture "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
-msgstr ""
+msgstr "Année de naissance de la personne centrale"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr ""
+"L'année de naissance de la personne centrale. Estimez une année si inconnue"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
 msgid "Destination directory"
@@ -22164,6 +22178,8 @@ msgstr "Âge par défaut"
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
 msgstr ""
+"Âge par défaut du parent lorsque l 'enfant n'a pas d'année de naissance "
+"connue"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
@@ -22175,7 +22191,7 @@ msgstr "Montrer l'ID Gramps"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
-msgstr ""
+msgstr "Montrer l'ID Gramps en haut à droite de la boîte"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
@@ -23434,16 +23450,12 @@ msgid "Show Links From the 'Attributes' tab"
 msgstr "Afficher les liens des attributs"
 
 #: settings_ui_manager.py:194
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the 'Internet' tab"
-msgstr "Afficher les liens des attributs"
+msgstr "Afficher les liens de l'onglet \"Internet»"
 
 #: settings_ui_manager.py:199
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the Notes"
-msgstr "Afficher les liens des attributs"
+msgstr "Afficher les liens des notes"
 
 #: settings_ui_manager.py:230
 msgid "Enable CSV Files"
