@@ -470,6 +470,120 @@ def usage():
     print("            files that are required.")
 
 
+def init_command(command, path, target_addon):
+    # Get all of the strings from the addon and create template.po:
+    pwd = os.environ["PWD"]
+    os.chdir(path)
+    if target_addon == "all":
+        dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
+    else:
+        dirs = [os.path.join(path, target_addon)]
+    if (command == "init" and len(sys.argv) == 4) or \
+       (command == "workspace" and len(sys.argv) == 5):
+        plugins = []
+        try:
+            sys.path.insert(0, GRAMPSPATH)
+            os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
+            from gramps.gen.plug import make_environment
+        except ImportError:
+            print(
+                "Where is Gramps: '%s'? Use "
+                "'GRAMPSPATH=path python3 make.py %s init'"
+                % (os.path.abspath(GRAMPSPATH), gramps_version)
+            )
+
+        def register(ptype, **kwargs):
+            kwargs["ptype"] = ptype
+            plugins.append(kwargs)
+
+        for addonpath in dirs:
+            addon = os.path.basename(addonpath)
+            fnames = glob.glob("%s/*.py" % addon)
+            if not fnames:
+                continue
+            # check if we need to initialize based on listing
+            listed = False
+            for gpr in glob.glob(f"{addon}/*.gpr.py"):
+                plugins = []
+                with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
+                    code = compile(
+                        f.read(), gpr.encode("utf-8", errors="backslashreplace"), "exec"
+                    )
+                    exec(
+                        code,
+                        make_environment(_=lambda x: x),
+                        {"register": register, "build_script": True},
+                    )
+                for p in plugins:
+                    if p.get("include_in_listing", True):
+                        listed = True  # got at least one listable plugin
+            if not listed:
+                continue  # skip this one if not listed
+
+            where = os.path.join(addon, "po")
+            os.makedirs(where, exist_ok=True)
+            fnames = " ".join(glob.glob(f"{addon}/*.py"))
+            system(
+                f"xgettext --language=Python --keyword=_ --keyword=N_"
+                f" --from-code=UTF-8"
+                f' -o "{addon}/po/template.pot" {fnames} '
+            )
+            fnames = " ".join(glob.glob("%s/*.glade" % addon))
+            if fnames:
+                system(
+                    "xgettext -j --add-comments -L Glade "
+                    f'--from-code=UTF-8 -o "{addon}/po/template.pot" '
+                    f"{fnames}"
+                )
+
+            # scan for xml files and get translation text where the tag
+            # starts with an '_'.  Create a .h file with the text strings
+            fnames = glob.glob("%s/*.xml" % addon)
+            for filename in fnames:
+                tree = ElementTree.parse(filename)
+                root = tree.getroot()
+                with open(filename + ".h", "w", encoding="utf-8") as head:
+                    for key in root.iter():
+                        if key.tag.startswith("_") and len(key.tag) > 1:
+                            msg = key.text.replace('"', '\\"').replace("\n", "\\n")
+                            txl = '_("%s")\n' % msg
+                            head.write(txl)
+                root.clear()
+                # now append XML text to the pot
+                system(
+                    "xgettext -j --keyword=_ --from-code=UTF-8 "
+                    f'--language=Python -o "{addon}/po/template.pot" '
+                    f'"{filename}.h"'
+                )
+                os.remove(filename + ".h")
+            # fix up the charset setting in the pot
+            with open(
+                "%s/po/template.pot" % addon, "r", encoding="utf-8", newline="\n"
+            ) as file:
+                contents = file.read()
+            contents = contents.replace("charset=CHARSET", "charset=UTF-8")
+            with open(
+                "%s/po/template.pot" % addon, "w", encoding="utf-8", newline="\n"
+            ) as file:
+                file.write(contents)
+    elif command == "init" and len(sys.argv) > 4:
+        locale = sys.argv[4]
+        # make a copy for locale
+        if os.path.isfile(f"{addon}/po/{locale}-local.po"):
+            raise ValueError(f'"{addon}/po/{locale}-local.po" already exists!')
+        system(
+            f"msginit --locale={locale} "
+            f'--input="{addon}/po/template.pot" '
+            f'--output="{addon}/po/{locale}-local.po"'
+        )
+        echo(f'You can now edit "{addon}/po/{locale}-local.po"')
+    else:
+        print(f"? do not know what to init in {addon}")
+        exit(1)
+
+    os.chdir(pwd)
+    return
+
 #--- main ------------------------------------------------------------
 if "GRAMPSPATH" in os.environ:
     GRAMPSPATH = os.environ["GRAMPSPATH"]
@@ -516,110 +630,8 @@ if command == "clean":
         cleanup(addon)
 
 elif command == "init":
-    # # Get all of the strings from the addon and create template.po:
-    if addon == "all":
-        dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
-    else:
-        dirs = [addon]
-    if len(sys.argv) == 4:
-        try:
-            sys.path.insert(0, GRAMPSPATH)
-            os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
-            from gramps.gen.plug import make_environment
-        except ImportError:
-            print(
-                "Where is Gramps: '%s'? Use "
-                "'GRAMPSPATH=path python3 make.py %s init'"
-                % (os.path.abspath(GRAMPSPATH), gramps_version)
-            )
-            exit()
-
-        def register(ptype, **kwargs):
-            global plugins
-            kwargs["ptype"] = ptype
-            plugins.append(kwargs)
-
-        for addon in dirs:
-            fnames = glob.glob("%s/*.py" % addon)
-            if not fnames:
-                continue
-            # check if we need to initialize based on listing
-            listed = False
-            for gpr in glob.glob(f"{addon}/*.gpr.py"):
-                plugins = []
-                with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
-                    code = compile(
-                        f.read(), gpr.encode("utf-8", errors="backslashreplace"), "exec"
-                    )
-                    exec(
-                        code,
-                        make_environment(_=lambda x: x),
-                        {"register": register, "build_script": True},
-                    )
-                for p in plugins:
-                    if p.get("include_in_listing", True):
-                        listed = True  # got at least one listable plugin
-            if not listed:
-                continue  # skip this one if not listed
-
-            mkdir(f"{addon}/po")
-            fnames = " ".join(glob.glob(f"{addon}/*.py"))
-            system(
-                f"xgettext --language=Python --keyword=_ --keyword=N_"
-                f" --from-code=UTF-8"
-                f' -o "{addon}/po/template.pot" {fnames} '
-            )
-            fnames = " ".join(glob.glob("%s/*.glade" % addon))
-            if fnames:
-                system(
-                    "xgettext -j --add-comments -L Glade "
-                    f'--from-code=UTF-8 -o "{addon}/po/template.pot" '
-                    f"{fnames}"
-                )
-
-            # scan for xml files and get translation text where the tag
-            # starts with an '_'.  Create a .h file with the text strings
-            fnames = glob.glob("%s/*.xml" % addon)
-            for filename in fnames:
-                tree = ElementTree.parse(filename)
-                root = tree.getroot()
-                with open(filename + ".h", "w", encoding="utf-8") as head:
-                    for key in root.iter():
-                        if key.tag.startswith("_") and len(key.tag) > 1:
-                            msg = key.text.replace('"', '\\"').replace("\n", "\\n")
-                            txl = '_("%s")\n' % msg
-                            head.write(txl)
-                root.clear()
-                # now append XML text to the pot
-                system(
-                    "xgettext -j --keyword=_ --from-code=UTF-8 "
-                    f'--language=Python -o "{addon}/po/template.pot" '
-                    f'"{filename}.h"'
-                )
-                os.remove(filename + ".h")
-            # fix up the charset setting in the pot
-            with open(
-                "%s/po/template.pot" % addon, "r", encoding="utf-8", newline="\n"
-            ) as file:
-                contents = file.read()
-            contents = contents.replace("charset=CHARSET", "charset=UTF-8")
-            with open(
-                "%s/po/template.pot" % addon, "w", encoding="utf-8", newline="\n"
-            ) as file:
-                file.write(contents)
-    elif len(sys.argv) > 4:
-        locale = sys.argv[4]
-        # make a copy for locale
-        if os.path.isfile(f"{addon}/po/{locale}-local.po"):
-            raise ValueError(f'"{addon}/po/{locale}-local.po" already exists!')
-        system(
-            f"msginit --locale={locale} "
-            f'--input="{addon}/po/template.pot" '
-            f'--output="{addon}/po/{locale}-local.po"'
-        )
-        echo(f'You can now edit "{addon}/po/{locale}-local.po"')
-    else:
-        raise AttributeError("init what?")
+    # Get all of the strings from the addon and create template.po:
+    init_command(command, os.environ["PWD"], addon)
 
 elif command == "update":
     locale = sys.argv[4]
@@ -1282,7 +1294,7 @@ register(TOOL,                                     # change to the proper type
 
     # build the directory structure
     if len(sys.argv) < 5:
-        print("? workspace requires a <path> and an <addon> name.")
+        print("? workspace requires an <addon> and a <path> name.")
         exit(1)
     path = os.path.expandvars(os.path.expanduser(sys.argv[4]))
     if os.path.exists(path):
@@ -1379,6 +1391,7 @@ register(TOOL,                                     # change to the proper type
     # add in some templates if needed
     addon_template(addonpath, addon)
     gpr_template(addonpath, addon)
+    init_command(command, os.path.join(path, "addons-source"), addon)
 
     # write out the config file
     with open(os.path.join(path, "addons-source", CONFIG_FILE), "w+") as cfd:
