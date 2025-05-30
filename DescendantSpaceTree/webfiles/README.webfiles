@@ -1,0 +1,16 @@
+Files in this directory are the source for building the amalgamated 
+prototype html file.  
+
+Note that several substituions are made by the python code to produce the
+final html file.  Do not delete any of these substitutions.
+
+To make changes to the prototype html file, edit the
+html/descendant_tree.html file, then run mk_proto.sh file
+from this diretory:
+
+   ./mk_proto.sh > ../proto/descendant_tree.html
+
+
+Gawk (or Awk) is required.  Windows and Mac users should
+install Gawk and Bash.  Alternative, careful inlining of
+the referenced CSS and JS files can be done by hand editing.
