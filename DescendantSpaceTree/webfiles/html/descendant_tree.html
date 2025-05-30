@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Descendant SpaceTree Viewer</title>
+
+<!-- CSS Files -->
+<link type="text/css" href="./css/pico.classless.css" rel="stylesheet" />
+<link type="text/css" href="./css/auto-complete.css" rel="stylesheet" />
+
+<!-- customize some pico variables -->
+<style>
+  :root {
+    --pico-font-size: 100%;
+    --pico-form-element-spacing-vertical: 1px;
+    --pico-form-element-spacing-horizontal: 15px;
+  }
+</style>
+
+<!-- Javascript files -->
+
+<!-- autocomplete -->
+<script language="javascript" type="text/javascript" src="./js/auto-complete.min.js"></script>
+
+<!-- GED tree data file -->
+<script language="javascript" type="text/javascript" src="./js/ged.js"></script>
+
+<!-- space tree -->
+<script language="javascript" type="text/javascript" src="./js/jit-yc.js"></script>
+<script language="javascript" type="text/javascript" src="./js/tree_base.js"></script>
+
+
+
+</head>
+
+<body onload="init();">                      <!-- init() function is in tree_base.js -->
+
+<!-- modal help info -->
+<dialog  id="modalHelp">
+    <article>
+      <header>
+        <h4>___HELP_TITLE___</h4>
+        <button aria-label="Close" rel="prev" onclick="modalHelp.close()"></button>
+        </header>
+      <small>
+       <ul>
+        <li>___HELP_TEXT1___</li>
+        <li>___HELP_TEXT2___</li>
+        <li>___HELP_TEXT3___</li>
+        <li>___HELP_TEXT4___</li>
+        <li>___HELP_TEXT5___</li>
+        <li>___HELP_TEXT6___</li>
+        <li>___HELP_TEXT7___</li>
+        <li>___HELP_TEXT8___</li>
+        <li>___HELP_TEXT9___</li>
+        <li>___HELP_TEXT10___</li>
+        </ul>
+        <p>___HELP_CREDITS___<br><br>
+          <a href="https://gramps-project.org">Gramps Project</a>
+          &emsp;&emsp;
+          <a href="https://philogb.github.io/jit/">JavaScript InfoVis Toolkit </a>
+          &emsp;&emsp;
+          <a href="https://github.com/Pixabay/JavaScript-autoComplete">JavaScript Autocomplete </a>
+          &emsp;&emsp;
+          <a href="https://picocss.com/">Pico CSS Framework </a>
+        </p>
+        <p>DescendantSpaceTree - Copyright 2018-2025 Thomas S. Poindexter. DescendantSpaceTree is licensed
+         under terms of the <a href="https://opensource.org/license/mit"> the MIT license</a>
+        <!--
+        <footer>
+           <button autofocus role="button" onclick="modalHelp.close()"> &#128473; </button>
+        </footer>
+        -->
+      </small>
+   </article>
+
+</dialog>
+
+
+<nav>
+  <ul>
+     <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+     <li> <h2 id="chartname">Descendant Chart</h2>  </li>
+   </ul>
+   <ul>
+     <li> <form  onSubmit="return false;"> <input name="q" style="margin: 1px 1px 1px;width: 30em;" autocomplete="off" placeholder="___SEARCH___" type="search"/></form> </li>
+     <li> <button  style="font-size:1.15rem;" onClick="st.onClick(st.root,{Move:{ offsetX: st.canvas.translateOffsetX, offsetY: st.canvas.translateOffsetY}});"> &nbsp; &nbsp; &#10227; &nbsp; &nbsp; </button> </li> 
+     <!-- <li> <button  onClick="window.location.reload();">Reset</button> </li> -->
+     <li> <button  style="font-size:1.15rem;" onclick="modalHelp.showModal()"> &nbsp; &nbsp; &#65311; &nbsp; &nbsp; </button> </li>
+     <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+  </ul>
+</nav>
+
+
+<table style="height: stretch;">
+  <tr>
+    <td style="width: 16%; vertical-align: top;">
+       <small>
+       <div id="log"></div>    
+       </small>
+    </td>
+    <td style="width: 84%; vertical-align: top;">
+       <div style="background-color: #222; vertical-align: top; height: calc(100vh - 150px);" id="infovis"></div>    
+    </td
+  </tr>
+</table>
+
+
+
+
+
+<!-- start code, autocomplete wiring -->
+
+<script language="javascript" type="text/javascript" src="./js/ged_aux.js"></script>
+
+
+</body>
+</html>
