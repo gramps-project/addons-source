@@ -53,7 +53,10 @@ class WebSearchSignalEmitter(GObject.GObject):
       the results as an object.
     """
 
-    __gsignals__ = {"sites-fetched": (GObject.SignalFlags.RUN_FIRST, None, (object,))}
+    __gsignals__ = {
+        "sites-fetched": (GObject.SignalFlags.RUN_FIRST, None, (object,)),
+        "place-history-fetched": (GObject.SignalFlags.RUN_FIRST, None, (str,)),
+    }
 
     def __init__(self):
         """

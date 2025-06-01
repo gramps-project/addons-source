@@ -18,3 +18,4 @@ People,"Find a Grave (memorial)",1,https://www.findagrave.com/memorial/search?fi
 Places,GOV Registry,1,https://gov.genealogy.net/search/name?name=%(place)s&lang=en,
 Sources,"FamilySearch (archive)",1,https://www.familysearch.org/en/records/images/search-results?keyword="%(collection_number)s-%(series_number)s-%(file_number)s",
 Places,"Who's On First (WOF)",1,https://spelunker.whosonfirst.org/search/?q=%(place)s,
+Places,"Wikipedia Place",1,https://uk.wikipedia.org/wiki/%(underscored_place)s,

@@ -25,6 +25,12 @@
   },
   {
     "nav_type": "Person",
+    "attribute_name": "WikiTreeID",
+    "url_regex": ".*wikitree\\.com/index\\.php.*Special:Connection.*",
+    "key_name": "WikiTree.ID"
+  },
+  {
+    "nav_type": "Person",
     "attribute_name": "GeniID",
     "url_regex": ".*geni\\.com/people/.*",
     "key_name": "Geni.ID"

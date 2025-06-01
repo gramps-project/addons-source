@@ -39,6 +39,7 @@ from constants import (
     PersonDataKeys,
     PlaceDataKeys,
     SourceDataKeys,
+    UIDAttributeContext,
 )
 from event_data_extractor import EventDataExtractor
 from helpers import get_system_locale
@@ -142,11 +143,26 @@ class EntityDataBuilder:
             PersonDataKeys.SYSTEM_LOCALE.value: self.system_locale or "",
         }
 
-        attribute_keys = self.attribute_loader.get_attributes_for_nav_type(
-            "Person", person
+        attribute_keys = []
+        attribute_keys += (
+            self.attribute_loader.get_attributes_for_nav_type_with_context(
+                "Person", person, UIDAttributeContext.ACTIVE_PERSON.value
+            )
         )
 
+        home_person = self.get_home_person()
+        if home_person:
+            attribute_keys += (
+                self.attribute_loader.get_attributes_for_nav_type_with_context(
+                    "Person", home_person, UIDAttributeContext.HOME_PERSON.value
+                )
+            )
+
         return person_data, attribute_keys
+
+    def get_home_person(self):
+        """Get home person."""
+        return self.db.get_default_person()
 
     def get_family_data(self, family):
         """Extracts structured data related to a family, including parents and events."""
@@ -334,7 +350,7 @@ class EntityDataBuilder:
         """Extracts structured place data such as name, coordinates, and type."""
         place_name = root_place_name = latitude = longitude = place_type = None
         try:
-            place_name = PlaceDataExtractor.get_place_name(place)
+            place_name = PlaceDataExtractor.get_place_name(place) or ""
             root_place_name = PlaceDataExtractor.get_root_place_name(self.db, place)
             place_title = PlaceDataExtractor.get_place_title(self.db, place)
             latitude = PlaceDataExtractor.get_place_latitude(place)
@@ -344,13 +360,14 @@ class EntityDataBuilder:
             print(traceback.format_exc(), file=sys.stderr)
 
         place_data = {
-            PlaceDataKeys.PLACE.value: place_name or "",
+            PlaceDataKeys.PLACE.value: place_name,
             PlaceDataKeys.ROOT_PLACE.value: root_place_name or "",
             PlaceDataKeys.LATITUDE.value: latitude or "",
             PlaceDataKeys.LONGITUDE.value: longitude or "",
             PlaceDataKeys.TYPE.value: place_type or "",
             PlaceDataKeys.TITLE.value: place_title or "",
             PlaceDataKeys.SYSTEM_LOCALE.value: self.system_locale or "",
+            PlaceDataKeys.UNDERSCORED_PLACE.value: place_name.strip().replace(" ", "_"),
         }
 
         return place_data
