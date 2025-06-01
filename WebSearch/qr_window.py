@@ -36,7 +36,18 @@ try:
     import qrcode
 except ImportError:
     print(
-        "⚠ QR codes are disabled. Install it using: `pip install qrcode[pil]`.",
+        "❌ Error. QR codes are disabled. Install it using: `pip install qrcode[pil]`.",
+        file=sys.stderr,
+    )
+
+try:
+    import qrcode
+
+    QR_AVAILABLE = True
+except ImportError:
+    QR_AVAILABLE = False
+    print(
+        "❌ Error. QR codes are disabled. Install it using: `pip install qrcode[pil]`.",
         file=sys.stderr,
     )
 
@@ -103,6 +114,13 @@ class QRCodeWindow(Gtk.Window):
             tuple: (GdkPixbuf.Pixbuf, None) if successful,
                    (None, str) with error message otherwise.
         """
+
+        if not QR_AVAILABLE:
+            return None, _('⚠ Missing dependency "qrcode"')
+
+        if not hasattr(qrcode, "make"):
+            return None, _('⚠ Missing dependency "qrcode"')
+
         try:
             qr = qrcode.make(url)
             qr.save("/tmp/qrcode.png")

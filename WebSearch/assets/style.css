@@ -27,3 +27,11 @@
     font-weight: bold;
     color: #2a6aad;
 }
+
+.badge-resource {
+    background-color: #28a745;
+}
+
+.badge-community {
+    background-color: #17a2b8;
+}

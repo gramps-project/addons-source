@@ -190,6 +190,7 @@ class PlaceDataKeys(Enum):
     LONGITUDE = "longitude"
     TYPE = "type"
     TITLE = "title"
+    UNDERSCORED_PLACE = "underscored_place"
     SYSTEM_LOCALE = "locale"
 
 
@@ -226,6 +227,84 @@ class SourceTypes(Enum):
     COMMUNITY = "COMMUNITY"
     ARCHIVE = "ARCHIVE"
     FORUM = "FORUM"
+
+
+class DuplicateHandlingMode(Enum):
+    """Mode for handling duplicates during bulk operations."""
+
+    THROW_ERROR = "error"
+    IGNORE_DUPLICATES = "ignore"
+
+
+class DBFileTables(Enum):
+    """Enumeration of database table filenames."""
+
+    PLACE_HISTORY_REQUESTS = "place_history_requests.json"
+    MIGRATIONS = "migrations.json"
+    VISITS = "visits.json"
+    SAVES = "saves.json"
+    HIDDEN_LINKS = "hidden_links.json"
+    DOMAIN_SUGGESTIONS = "domain_suggestions.json"
+    ACTIVITIES = "activities.json"
+
+
+class DomainSuggestionStatus(Enum):
+    """Status of domain suggestion processing."""
+
+    PENDING = "pending"
+    SKIPPED = "skipped"
+
+
+class DomainSuggestionValidationStatus(Enum):
+    """Validation result of a suggested domain."""
+
+    NOT_CHECKED = "not_checked"
+    VALID = "valid"
+    INVALID = "invalid"
+
+
+class DomainType(Enum):
+    """Enum representing the type of domain suggested by the AI."""
+
+    RESOURCE = "resource"
+    COMMUNITY = "community"
+
+
+class HiddenLinksScope(Enum):
+    """Possible values of the 'scope' key in the 'hidden_links' table."""
+
+    ALL = "all"
+    OBJECT = "object"
+
+
+class ActivityType(Enum):
+    """Enumeration of supported activity types for WebSearch activity logging."""
+
+    LINK_VISIT = "link_visit"
+    LINK_SAVE_TO_NOTE = "link_save_to_note"
+    LINK_SAVE_TO_ATTRIBUTE = "link_save_to_attribute"
+    PLACE_HISTORY_LOAD = "place_history_load"
+    DOMAIN_SKIP = "domain_skip"
+    HIDE_LINK_FOR_OBJECT = "hide_link_for_object"
+    HIDE_LINK_FOR_ALL = "hide_link_for_all"
+    ATTRIBUTE_EDIT = "attribute_edit"
+    NOTE_EDIT = "note_edit"
+
+
+class SavedTo(Enum):
+    """Possible values of the 'saved_to' key in the 'saves' table."""
+
+    NOTE = "note"
+    ATTRIBUTE = "attribute"
+
+
+class UIDAttributeContext(Enum):
+    """
+    Enum to represent attribute key contexts for UID substitution.
+    """
+
+    ACTIVE_PERSON = "ActivePerson"
+    HOME_PERSON = "HomePerson"
 
 
 SUPPORTED_SOURCE_TYPE_VALUES = {st.value for st in SourceTypes}
@@ -356,7 +435,6 @@ ALL_ICONS_LOCALIZED = {
 }
 
 CONFIGS_DIR = os.path.join(os.path.dirname(__file__), "configs")
-DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 ASSETS_DIR = os.path.join(os.path.dirname(__file__), "assets")
 CSV_DIR = os.path.join(ASSETS_DIR, "csv")
 ICONS_DIR = os.path.join(ASSETS_DIR, "icons")
@@ -364,16 +442,17 @@ FLAGS_DIR = os.path.join(ICONS_DIR, "flags")
 USER_DATA_BASE_DIR = os.path.join(USER_DATA, "WebSearch")
 USER_DATA_CSV_DIR = os.path.join(USER_DATA_BASE_DIR, "csv")
 USER_DATA_JSON_DIR = os.path.join(USER_DATA_BASE_DIR, "json")
+USER_DATA_DATA_DIR = os.path.join(USER_DATA_BASE_DIR, "data")
+ADMINISTRATIVE_DIVISIONS_DIR = os.path.join(
+    USER_DATA_DATA_DIR, "administrative_divisions"
+)
+DB_FILE_TABLE_DIR = os.path.join(USER_DATA_BASE_DIR, "database")
+MIGRATIONS_DIR = os.path.join(os.path.dirname(__file__), "migrations")
 
 INTERFACE_FILE_PATH = os.path.join(os.path.dirname(__file__), "interface.xml")
 CONFIG_FILE_PATH = os.path.join(CONFIGS_DIR, "config.ini")
 ATTRIBUTE_MAPPING_FILE_PATH = os.path.join(CONFIGS_DIR, "attribute_mapping.json")
-VISITED_HASH_FILE_PATH = os.path.join(DATA_DIR, "visited_links.txt")
-SAVED_HASH_FILE_PATH = os.path.join(DATA_DIR, "saved_links.txt")
-HIDDEN_HASH_FILE_PATH = os.path.join(DATA_DIR, "hidden_links.txt")
-SKIPPED_DOMAIN_SUGGESTIONS_FILE_PATH = os.path.join(
-    DATA_DIR, "skipped_domain_suggestions.txt"
-)
+MIGRATIONS_FILE_PATH = os.path.join(DB_FILE_TABLE_DIR, "migrations.json")
 ICON_VISITED_PATH = os.path.join(ICONS_DIR, "emblem-default.png")
 ICON_SAVED_PATH = os.path.join(ICONS_DIR, "media-floppy.png")
 ICON_UID_PATH = os.path.join(ICONS_DIR, "uid.png")
@@ -405,6 +484,8 @@ DEFAULT_SHOW_ATTRIBUTE_LINKS = True
 DEFAULT_SHOW_INTERNET_LINKS = True
 DEFAULT_SHOW_NOTE_LINKS = True
 DEFAULT_AI_PROVIDER = AIProviders.DISABLED.value
+DEFAULT_ENABLED_PLACE_HISTORY = False
+DEFAULT_CUSTOM_COUNTRY_CODE_FOR_AI_NOTES = ""
 
 DEFAULT_COLUMNS_ORDER = ["icons", "file_identifier", "keys", "title", "url", "comment"]
 
