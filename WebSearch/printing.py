@@ -48,7 +48,6 @@ def print_dataclass_table(
             Example: {5: 30, 6: 50}
     """
     if not data_list:
-        print("No data to display.")
         return
 
     if not is_dataclass(data_list[0]):

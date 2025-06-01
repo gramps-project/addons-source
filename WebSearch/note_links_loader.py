@@ -26,6 +26,7 @@ Parses and returns URLs from note objects in the Gramps database.
 Supports both manually entered URLs and Gramps-internal note links.
 """
 
+from gettext import gettext as _
 from gramps.gen.lib import Note
 
 from url_utils import UrlUtils
@@ -65,11 +66,12 @@ class NoteLinksLoader:
                     nav_type=nav_type,
                     country_code=None,
                     source_type=SourceTypes.NOTE.value,
-                    title="Note Link (parsed)",
-                    is_enabled=True,
+                    title=_("Note Link (parsed)"),
+                    is_enabled=True,  # pylint: disable=duplicate-code
                     url_pattern=UrlUtils.clean_url(url),
                     comment=None,
                     is_custom_file=False,
+                    source_file_path=None,
                 )
                 links.append(link_data)
                 existing_links.add(url)
@@ -100,17 +102,13 @@ class NoteLinksLoader:
         """Retrieve the note object from the database."""
         try:
             note_obj = self.db.get_note_from_handle(note_handle)
-            if note_obj is None:
-                print(f"⚠️ Warning: Note with handle {note_handle} not found.")
             return note_obj
         except Exception:  # pylint: disable=broad-exception-caught
-            print(f"⚠️ Warning: Handle {note_handle} not found in the database.")
             return None
 
     def create_existing_link_data(self, nav_type, link):
         """Creates structured data for a note's existing link."""
         if len(link) != 4:
-            print(f"⚠️ Warning: Invalid link format: {link}")
             return None
 
         source, obj_type, sub_type, handle = link
@@ -119,10 +117,10 @@ class NoteLinksLoader:
 
         if source == "gramps":
             url = f"{source}://{obj_type}/{sub_type}/{handle}"
-            title = "Note Link (internal)"
+            title = _("Note Link (internal)")
         else:
             url = handle
-            title = "Note Link (external)"
+            title = _("Note Link (external)")
 
         return WebsiteEntry(
             nav_type=nav_type,
@@ -133,4 +131,5 @@ class NoteLinksLoader:
             url_pattern=UrlUtils.clean_url(url),
             comment=None,
             is_custom_file=False,
+            source_file_path=None,
         )

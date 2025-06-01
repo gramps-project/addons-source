@@ -22,6 +22,7 @@
 
 """Extracts and formats links from the 'Internet' tab of Gramps objects."""
 
+from translation_helper import _
 from url_utils import UrlUtils
 from constants import SourceTypes
 from models import WebsiteEntry
@@ -56,6 +57,7 @@ class InternetLinksLoader:
                         url_pattern=UrlUtils.clean_url(url),
                         comment=(url_obj.get_description() or "").strip(),
                         is_custom_file=False,
+                        source_file_path=None,
                     )
                 )
 
@@ -65,5 +67,5 @@ class InternetLinksLoader:
         """Returns a cleaned title from the URL type object, or a default title."""
         if url_type:
             raw_title = url_type.xml_str()
-            return (raw_title or "No title").strip()
-        return "No title"
+            return (raw_title or _("No title")).strip()
+        return _("No title")
