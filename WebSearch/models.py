@@ -35,8 +35,9 @@ for web search and archival queries.
 
 
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Optional, List
 from typing import Set
+from constants import DuplicateHandlingMode
 
 
 @dataclass
@@ -52,6 +53,7 @@ class WebsiteEntry:
     url_pattern: str
     comment: Optional[str]
     is_custom_file: bool
+    source_file_path: Optional[str]
 
 
 @dataclass
@@ -68,9 +70,53 @@ class LinkContext:
 class AIDomainData:
     """Categorizes domains for AI-driven filtering of search results."""
 
-    community_country_codes: Set[str]
-    regular_country_codes: Set[str]
+    country_codes: Set[str]
+    include_global: bool
     regular_domains: Set[str]
+    skipped_domains: Set[str] = field(default_factory=set)
+
+
+@dataclass
+class AIUrlData:
+    """Categorizes urls for AI-driven filtering of search results."""
+
+    country_codes: Set[str]
     community_urls: Set[str]
     include_global: bool
-    skipped_domains: Set[str] = field(default_factory=set)
+    skipped_urls: Set[str] = field(default_factory=set)
+
+
+@dataclass
+class PlaceHistoryRequestData:
+    """Data class for holding place history request data."""
+
+    name: str
+    full_hierarchy: str
+    language: str
+    latitude: Optional[str]
+    longitude: Optional[str]
+    handle: str
+    gramps_id: str
+
+
+@dataclass
+class DBFileTableConfig:
+    """Configuration for FileTable class."""
+
+    filename: str
+    cache_fields: Optional[List[str]] = None
+    backup_path: Optional[str] = None
+    unique_fields: Optional[List[str]] = None
+    on_bulk_duplicate: str = DuplicateHandlingMode.THROW_ERROR.value
+    set_created_at: bool = True
+    set_updated_at: bool = False
+    required_fields: Optional[List[str]] = None
+
+    def __post_init__(self):
+        """Set default values for optional fields."""
+        if self.cache_fields is None:
+            self.cache_fields = []
+        if self.unique_fields is None:
+            self.unique_fields = []
+        if self.required_fields is None:
+            self.required_fields = []

@@ -51,6 +51,8 @@ from constants import (
     DEFAULT_URL_PREFIX_REPLACEMENT,
     STATIC_CSV_FILE_NAME,
     UID_CSV_FILE_NAME,
+    DEFAULT_ENABLED_PLACE_HISTORY,
+    DEFAULT_CUSTOM_COUNTRY_CODE_FOR_AI_NOTES,
     AIProviders,
     MiddleNameHandling,
     URLCompactnessLevel,
@@ -201,6 +203,18 @@ class SettingsUIManager:
         )
         self.add_display_columns_option()
         self.add_display_icons_option()
+
+        self.add_boolean_option(
+            "websearch.enabled_place_history",
+            _("Enable AI-generated historical place data"),
+            DEFAULT_ENABLED_PLACE_HISTORY,
+        )
+
+        self.add_string_option(
+            "websearch.custom_country_code_for_ai_notes",
+            _("Custom country code for AI notes (optional)"),
+            DEFAULT_CUSTOM_COUNTRY_CODE_FOR_AI_NOTES,
+        )
 
         return self.opts
 
