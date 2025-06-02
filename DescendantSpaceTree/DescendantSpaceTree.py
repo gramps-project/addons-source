@@ -760,7 +760,7 @@ class DescendantSpaceTreeReport(Report):
             prompt = QuestionDialog2(
                 _("Invalid Destination Directory"),
                 _(
-                    "Destinaton diretory %s does not "
+                    "Destination Directory %s does not "
                     "exist\nDo you want to attempt to "
                     "create it."
                 )
@@ -948,7 +948,7 @@ class DescendantSpaceTreeReport(Report):
                 html.escape(
                     _(
                         "The currently selected descendant and all of the "
-                        "ancestors of that person are highlighed in yellow."
+                        "ancestors of that person are highlighted in yellow."
                     )
                 ),
             ),
@@ -1067,7 +1067,7 @@ class DescendantSpaceTreeOptions(MenuReportOptions):
 
         #
         birth_year_limit = NumberOption(
-            _("Maximun display birth year"), DEF_BIRTH_YEAR, 0, 2400
+            _("Maximum display birth year"), DEF_BIRTH_YEAR, 0, 2400
         )
         birth_year_limit.set_help(
             _("Birth/date dates will not be displayed after this year")
