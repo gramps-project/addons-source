@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-29 10:00-0600\n"
+"POT-Creation-Date: 2025-06-02 10:30-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,6 @@ msgid "Descendant SpaceTree"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:615
-#: DescendantSpaceTree/DescendantSpaceTree.py:656
 msgid "Id"
 msgstr ""
 
@@ -72,10 +71,6 @@ msgstr ""
 msgid "Married"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:697
-msgid "children"
-msgstr ""
-
 #: DescendantSpaceTree/DescendantSpaceTree.py:761
 msgid "Invalid Destination Directory"
 msgstr ""
@@ -83,7 +78,7 @@ msgstr ""
 #: DescendantSpaceTree/DescendantSpaceTree.py:763
 #, python-format
 msgid ""
-"Destinaton diretory %s does not exist\n"
+"Destination Directory %s does not exist\n"
 "Do you want to attempt to create it."
 msgstr ""
 
@@ -174,13 +169,13 @@ msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:921
 msgid ""
-"A descendant and any/all spouses are listed in the same node.  Children of "
-"all of the descendant's families are grouped together."
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:931
 msgid ""
-"Persons born after a specified date may not display their birth and/or death "
+"Persons born after a specified date may not display their birth or death "
 "dates."
 msgstr ""
 
@@ -193,7 +188,7 @@ msgstr ""
 #: DescendantSpaceTree/DescendantSpaceTree.py:950
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
-"are highlighed in yellow."
+"are highlighted in yellow."
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:959
@@ -246,7 +241,7 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1070
-msgid "Maximun display birth year"
+msgid "Maximum display birth year"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1073
@@ -275,7 +270,7 @@ msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
 msgid ""
-"Generates a web page with a graphical representation of descendants "
-"represented as a Space Tree for efficient viewing, even with many "
-"descendants and/or generations."
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
 msgstr ""
