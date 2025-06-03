@@ -63,10 +63,6 @@ class MistralAIClient:
         try:
             import requests  # pylint: disable=import-outside-toplevel
         except ImportError:
-            print(
-                "❌ Error. The 'requests' module is missing. Install it: `pip install requests`.",
-                file=sys.stderr,
-            )
             return base_request.parse_response("{}")
 
         try:
