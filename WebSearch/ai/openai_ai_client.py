@@ -59,10 +59,6 @@ class OpenaiAIClient:
         try:
             import openai  # pylint: disable=import-outside-toplevel
         except ImportError:
-            print(
-                "⚠ OpenAI module is missing. Install it using: `pip install openai`.",
-                file=sys.stderr,
-            )
             return base_request.parse_response("{}")
 
         try:
