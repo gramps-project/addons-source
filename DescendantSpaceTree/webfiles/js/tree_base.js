@@ -112,7 +112,8 @@ function init(){
                 delete node.data.$color;
                 //if the node belongs to the last plotted level
                 if(!node.anySubnode("exist")) {
-                    if (node.data.info.match(/Follow Descendant Tree/)) {
+                    // see if this node is an alternate branch
+                    if (node.data.info.match(/nav_goto\(\"@.[0-9]+@\"\)/)) {
                         node.data.$color = '#bbf';
                     } else {
                         //count children number
