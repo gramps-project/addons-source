@@ -34,22 +34,10 @@ from gi.repository import GdkPixbuf, Gtk
 
 try:
     import qrcode
-except ImportError:
-    print(
-        "❌ Error. QR codes are disabled. Install it using: `pip install qrcode[pil]`.",
-        file=sys.stderr,
-    )
-
-try:
-    import qrcode
 
     QR_AVAILABLE = True
 except ImportError:
     QR_AVAILABLE = False
-    print(
-        "❌ Error. QR codes are disabled. Install it using: `pip install qrcode[pil]`.",
-        file=sys.stderr,
-    )
 
 from translation_helper import _
 
