@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-01 14:55+0300\n"
+"PO-Revision-Date: 2025-05-26 07:15+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Leave alone"
+msgstr "Lämna ifred"
+
+msgid "Separate"
+msgstr "Separera"
+
+msgid "URL Prefix Replacement"
+msgstr "Byte av URL-prefix"
+
+msgid "(Disabled)"
+msgstr "(Handikappad)"
+
+msgid "Display Columns"
+msgstr "Visa kolumner"
+
+msgid "Display Icons"
+msgstr "Visa ikoner"
+
+msgid "WebSearch"
+msgstr "Webbsökning"
+
+msgid "Note:"
+msgstr "Notis:"
+
+msgid "Website URL"
+msgstr "Webbplatsens URL"
+
+msgid "Add link to note"
+msgstr "Lägg till länk till anteckning"
+
+msgid "Show QR-code"
+msgstr "Visa QR-kod"
+
+msgid "Copy link to clipboard"
+msgstr "Kopiera länken till urklipp"
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "Notisen #%(id)s lades framgångsrikt till"
+
+msgid "Error creating note"
+msgstr "Fel vid skapande av notis"
+
+msgid "WebSearch Link"
+msgstr "Webbsöklänk"

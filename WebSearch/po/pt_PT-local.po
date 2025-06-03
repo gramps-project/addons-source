@@ -1,0 +1,235 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-01 14:55+0300\n"
+"PO-Revision-Date: 2025-05-18 05:35+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Middle Name Handling"
+msgstr "Gestão de nomes do meio"
+
+msgid "Leave alone"
+msgstr "Deixar em paz"
+
+msgid "Separate"
+msgstr "Separar"
+
+msgid "URL Compactness Level"
+msgstr "Nível de compressão do URL"
+
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Curto - sem prefixo nem chaves"
+
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Compacto - sem prefixo, chaves sem atributos"
+
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Compacto - sem prefixo, chaves com atributos"
+
+msgid "Long - Without Prefix on the Left"
+msgstr "Longo - sem prefixo à esquerda"
+
+msgid "URL Prefix Replacement"
+msgstr "Substituição do prefixo do URL"
+
+msgid "AI Provider"
+msgstr "Fornecedor de IA"
+
+msgid "(Disabled)"
+msgstr "(desactivado)"
+
+msgid "OpenAI"
+msgstr "OpenAI"
+
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+msgid "OpenAI API Key"
+msgstr "Chave OpenAI API"
+
+msgid "OpenAI Model"
+msgstr "Modelo OpenAI API"
+
+msgid "Mistral API Key"
+msgstr "Chave API Mistral"
+
+msgid "Mistral Model"
+msgstr "Modelo Mistral"
+
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Mostrar ligações do separador Atributos"
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "Mostrar ligações do separador Internet"
+
+msgid "Show Links From the Notes"
+msgstr "Mostrar ligações de notas"
+
+msgid "Enable CSV Files"
+msgstr "Permitir ficheiros CSV"
+
+msgid "Display Columns"
+msgstr "Mostrar colunas"
+
+msgid "Display Icons"
+msgstr "Ícones de exibição"
+
+msgid "WebSearch"
+msgstr "Procurar na web"
+
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+"Consultas personalizadas para serviços em rede com base no registo activo de "
+"Indivíduo, Local, Família ou Fonte"
+
+msgid "Column - Icons"
+msgstr "Coluna - Ícones"
+
+msgid "Column - Source Types (flags)"
+msgstr "Coluna - Tipos de fonte (bandeiras)"
+
+msgid "Column - Keys"
+msgstr "Coluna - Chaves"
+
+msgid "Column - Title"
+msgstr "Coluna - Título"
+
+msgid "Column - Website Url"
+msgstr "Coluna - Url da página web"
+
+msgid "Column - Comment"
+msgstr "Coluna - Comentário"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Ícone - Urls visitados (visto)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Ícone - Urls gravados (disquete)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Ícone - Urls ligados a atributos de UID (distintivo)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Ícone - Urls de ficheiros CSV regionais (bandeira)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Ícone - Urls de ficheiros CSV estáticos (pino vermelho)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Ícone - Urls de ficheiros CSV comuns"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Ícone - Urls de ficheiros CSV cruzados (baralhar)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr "Ícone - Urls da pasta de utilizador personalizada (folha de cálculo)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Ícone - Urls do separador Atributos (ícone \"A\")"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Ícone - Urls do separador Internet (ícone \"I\")"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Ícone - Urls do separador Notas (ícone \"N\")"
+
+msgid "Note:"
+msgstr "Nota:"
+
+msgid "QR-code"
+msgstr "Código QR"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Erro ao gerar código QR:\n"
+"Erro original: “{}”"
+
+msgid "Keys"
+msgstr "Chaves"
+
+msgid "Website URL"
+msgstr "URL do sítio web"
+
+msgid "Add link to note"
+msgstr "Adicionar ligação à nota"
+
+msgid "Add link to attribute"
+msgstr "Adicionar ligação ao atributo"
+
+msgid "Show QR-code"
+msgstr "Mostrar código QR"
+
+msgid "Copy link to clipboard"
+msgstr "Copiar ligação para a memória"
+
+msgid "Hide link for selected item"
+msgstr "Ocultar ligação para o item seleccionado"
+
+msgid "Hide link for all items"
+msgstr "Ocultar ligação para todos os itens"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 Sugestões IA"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Esta ligação web \"{title}\" foi arquivada pelo gramplet WebSearch para "
+"referência futura(v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Pode utilizá-la para voltar à fonte e verificar a informação relacionada com "
+"esta entidade."
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "Nota n.º %(id)s adicionada com sucesso"
+
+msgid "Error creating note"
+msgstr "Erro ao criar a nota"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL copiado para a memória"
+
+msgid "WebSearch Link"
+msgstr "Ligação WebSearch"
+
+msgid "Attribute has been successfully added"
+msgstr "Atributo adicionado com sucesso"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Título: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Substituído: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Vazio: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Comentário: {comment}"
