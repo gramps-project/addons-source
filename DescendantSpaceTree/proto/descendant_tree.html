@@ -11,9 +11,25 @@
 <style>
 
 @charset "UTF-8";
-/*!
+/*
  * Pico CSS ✨ v2.0.6 (https://picocss.com)
- * Copyright 2019-2024 - Licensed under MIT
+ * Copyright 2019-2024 Pico - Licensed under MIT LICENSE
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
+ * associated documentation files (the "Software"), to deal in the Software without restriction, including 
+ * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+ * copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to 
+ * the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all copies or substantial 
+ * portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+ * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN 
+ * AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 /**
  * Styles
@@ -2448,6 +2464,27 @@ textarea,
 <!-- INLINED: <link type="text/css" href="./css/auto-complete.css" rel="stylesheet" /> -->
 <style>
 
+/*
+ * JavaScript autoComplete v1.0.4
+ * Copyright (c) 2014 Simon Steinberger / Pixabay - Licensed under MIT LICENSE
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
+ * associated documentation files (the "Software"), to deal in the Software without restriction, including 
+ * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+ * copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to 
+ * the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all copies or substantial 
+ * portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+ * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN 
+ * AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 .autocomplete-suggestions {
     text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 1px rgba(0,0,0,.1); font-size: 0.85em; padding: 2px;  margin-top: 3px; border-bottom: 0px; 
 
@@ -2479,9 +2516,24 @@ textarea,
 
 /*
     JavaScript autoComplete v1.0.4
-    Copyright (c) 2014 Simon Steinberger / Pixabay
+    Copyright (c) 2014 Simon Steinberger / Pixabay - Licensed under MIT LICENSE
     GitHub: https://github.com/Pixabay/JavaScript-autoComplete
-    License: http://www.opensource.org/licenses/mit-license.php
+
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
+ * associated documentation files (the "Software"), to deal in the Software without restriction, including 
+ * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+ * copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to 
+ * the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all copies or substantial 
+ * portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+ * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN 
+ * AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 var autoComplete = (function(){
@@ -2741,6 +2793,7 @@ ged_names = [];
 
 /*
 Copyright (c) 2011 Sencha Inc. - Author: Nicolas Garcia Belmonte (http://philogb.github.com/)
+Licensed under MIT LICENSE
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2883,7 +2936,8 @@ function init(){
                 delete node.data.$color;
                 //if the node belongs to the last plotted level
                 if(!node.anySubnode("exist")) {
-                    if (node.data.info.match(/Follow Descendant Tree/)) {
+                    // see if this node is an alternate branch
+                    if (node.data.info.match(/nav_goto\(\"@.[0-9]+@\"\)/)) {
                         node.data.$color = '#bbf';
                     } else {
                         //count children number
@@ -2959,7 +3013,7 @@ function init(){
         <li>___HELP_TEXT9___</li>
         <li>___HELP_TEXT10___</li>
         </ul>
-        <p>___HELP_CREDITS___<br><br>
+        <p>___HELP_CREDITS___<br>
           <a href="https://gramps-project.org">Gramps Project</a>
           &emsp;&emsp;
           <a href="https://philogb.github.io/jit/">JavaScript InfoVis Toolkit </a>
@@ -2968,8 +3022,7 @@ function init(){
           &emsp;&emsp;
           <a href="https://picocss.com/">Pico CSS Framework </a>
         </p>
-        <p>DescendantSpaceTree - Copyright 2018-2025 Thomas S. Poindexter. DescendantSpaceTree is licensed
-         under terms of the <a href="https://opensource.org/license/mit"> the MIT license</a>
+        <p>DescendantSpaceTree - Copyright 2018-2025 Thomas S. Poindexter.</p>
         <!--
         <footer>
            <button autofocus role="button" onclick="modalHelp.close()"> &#128473; </button>
