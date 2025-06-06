@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-23 22:01+0000\n"
+"PO-Revision-Date: 2025-06-01 08:03+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -14997,11 +14997,11 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:791
 msgid "Reset local to remote"
-msgstr ""
+msgstr "Réinitialiser l'arbre local depuis l'arbre distant"
 
 #: GrampsWebSync/grampswebsync.py:799
 msgid "Merge"
-msgstr ""
+msgstr "Fusionner"
 
 #: GrampsWebSync/grampswebsync.py:824
 msgid "Local changes"
@@ -15647,27 +15647,27 @@ msgstr "Nom de fichier invalide."
 
 #: Heatmap/utils.py:55
 msgid "Stamen Terrain"
-msgstr ""
+msgstr "Stamen Terrain"
 
 #: Heatmap/utils.py:58
 msgid "Stamen Terrain (Background only)"
-msgstr ""
+msgstr "Stamen Terrain (arrière-plan uniquement)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
-msgstr ""
+msgstr "Stamen Toner"
 
 #: Heatmap/utils.py:64
 msgid "Stamen Watercolor"
-msgstr ""
+msgstr "Stamen Aquarelle"
 
 #: Heatmap/utils.py:67
 msgid "CartoDB Positron"
-msgstr ""
+msgstr "CartoDB Positron"
 
 #: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
-msgstr ""
+msgstr "CartoDB Matière Noire"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
