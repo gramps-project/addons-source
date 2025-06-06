@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"PO-Revision-Date: 2025-05-27 08:05+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -45,10 +45,8 @@ msgid "Display all names of all people"
 msgstr "Näytä kaikkien henkilöiden nimet"
 
 #: AllNamesQuickview/AllNames.py:54
-#, fuzzy
-#| msgid "Media Type"
 msgid "Name Type"
-msgstr "Mediatyyppi"
+msgstr "Nimen tyyppi"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
@@ -996,31 +994,31 @@ msgstr "Sivujen valinta"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "Tyhjennä paikan nimi, jos se ei täsmää"
 
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr ""
+msgstr "Kopioi paikan nimi uuteen lisätietoon."
 
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "Liitä tunniste valittuihin paikkoihin."
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
-msgstr ""
+msgstr "sarake"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
-msgstr ""
+msgstr "Tarkasta paikkojen nimet"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
-msgstr ""
+msgstr "Tarkasta paikkojen nimet"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "Tarkasta paikan nimi"
 
 #: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
@@ -1036,33 +1034,35 @@ msgstr "Erot"
 
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
-msgstr ""
+msgstr "Ei tarvitse muuttaa"
 
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
-msgstr ""
+msgstr "Muutoksia ei tarvita."
 
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
-msgstr ""
+msgstr "Vanhempi paikka"
 
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
-msgstr ""
+msgstr "Moukkaa paikannimiä"
 
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
-msgstr ""
+msgstr "Paikannimet"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Parannettu"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"Parannettu lainauksen muotoilu lisäämällä arkiston ja puhelinnumeron "
+"vakiotoimintoihin."
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
@@ -1627,7 +1627,7 @@ msgstr ""
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
-msgstr ""
+msgstr "GenWiki"
 
 #: DEWebConnectPack/DEWebPack.py:47
 #, fuzzy
@@ -1637,61 +1637,66 @@ msgstr "Hathi Trust Digital kirjasto"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
-msgstr ""
+msgstr "DNA-segmenttikartta"
 
 #: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
-msgstr ""
+msgstr "Gramplet, joka näyttää vastaavan DNA-segmenttikartan"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
-msgstr ""
+msgstr "Kromosomi "
 
 #: DNA/dnasegmentmap.py:552
 msgid " Map for "
-msgstr ""
+msgstr " Kartta henkilöstä "
 
 #: DNA/dnasegmentmap.py:634
+#, fuzzy
 msgid "Chr"
-msgstr ""
+msgstr "Chr"
 
 #: DNA/dnasegmentmap.py:759
+#, fuzzy
 msgid "Legend"
-msgstr ""
+msgstr "Selitys"
 
 #: DNA/dnasegmentmap.py:761
 msgid ": Grandparent"
 msgstr ": Isovanhemmat"
 
 #: DNA/dnasegmentmap.py:1056
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid ""
 "\n"
 "{0}\n"
 "{1} cMs"
 msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
-msgstr ""
+msgstr " SNPs"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : Alkaen "
 
 #: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
-msgstr ""
+msgstr " päättyen "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s ja %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
 #, python-brace-format
@@ -1712,16 +1717,12 @@ msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
 msgstr ""
+"Tee henkilö aktiiviseksi napsauttamalla\n"
+"Muokkaa hiiren kakkospainikkeella"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "DNA Matches"
-msgstr ""
-"Ei\n"
-"osumia"
+msgstr "DNA-osumia"
 
 #: DNAMatches/dnamatches.gpr.py:30
 #, fuzzy
@@ -1731,29 +1732,27 @@ msgstr "Gramplet, joka käsittelee useita paikkoja kerrallaan"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr ""
+msgstr "Suurin seg."
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "Persons"
 msgid "Pers."
-msgstr "Henkilöt"
+msgstr "Henk."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
-msgstr ""
+msgstr "Suhde"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "Yht. DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
-msgstr ""
+msgstr "Yht. segm."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Lähteet"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
@@ -1775,24 +1774,25 @@ msgstr "Lähteet valikko"
 
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
-msgstr ""
+msgstr "Siirry vastaavaan henkilöön kaksoisnapsaututtamalla riviä."
 
 #: DNAMatches/dnamatches.py:195
 msgid "Right click to edit selected association."
-msgstr ""
+msgstr "Muokkaa valittua yhteyttä hiiren kakkospainikkeella."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
-msgstr ""
+msgstr "Merkkien selitykset"
 
 #: DNAMatches/dnamatches.py:228
+#, fuzzy
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "Ei määritelty"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
 #, fuzzy
@@ -1984,23 +1984,23 @@ msgstr "Aseta sukupuoli aktiivihenkilölle."
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
-msgstr ""
+msgstr "Pävämäärälaskin"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
-msgstr ""
+msgstr "Suorita päivämäärälaskuja"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "Viitepäivä tai ajanjakso"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "a valid Gramps date"
-msgstr ""
+msgstr "kelvollinen Gramps-päivämäärä"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "Päivämäärä tai ero ±v tai ±v,kk,pv"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -2008,16 +2008,18 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. päivämäärä\n"
+"2. positiivinen tai negatiivinen vuosimäärä\n"
+"3. positiivinen tai negatiivinen arvolista, joka edustaa vuosia, kuukausia "
+"ja päiviä"
 
 #: DateCalculator/DateCalculator.py:96
-#, fuzzy
-#| msgid "Result  "
 msgid "Result"
-msgstr "Tulos "
+msgstr "Tulos"
 
 #: DateCalculator/DateCalculator.py:104
 msgid "Calculate"
-msgstr ""
+msgstr "Laske"
 
 #: DateCalculator/DateCalculator.py:107
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
@@ -2027,20 +2029,20 @@ msgstr "Kopioi"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "Virhe: ensimmäisen lausekkeen päivämäärä on virheellinen"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "Virhe: virheellinen toisen lausekkeen siirtymä"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
 msgid "Error: at least one expression must be a date"
-msgstr ""
+msgstr "Virhe: ainakin toisen lausekkeen on oltava päivämäärä"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
+msgstr "Syötä lauseke yllä oleviin kenttiin ja napsauta Laske."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -2137,8 +2139,9 @@ msgstr ""
 "Haku valmis. %d suhdetta löytynyt."
 
 #: DenominoViso/DenominoViso.gpr.py:9
+#, fuzzy
 msgid "DenominoViso"
-msgstr ""
+msgstr "DenominoViso"
 
 #: DenominoViso/DenominoViso.gpr.py:19
 msgid ""
@@ -2146,6 +2149,8 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
+"Luo html-verkkosivun sisältäen graafisen esityksen esivanhemmista/"
+"jälkeläisistä svg-muodossa. Yksilöiden tiedot saa näkyviin hiirellä."
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -2623,7 +2628,7 @@ msgstr "rajoitettuna:"
 
 #: DenominoViso/DenominoViso.py:2859
 msgid "to directory:"
-msgstr ""
+msgstr "hakemistoon:"
 
 #: DenominoViso/DenominoViso.py:2861
 #, fuzzy
@@ -2633,7 +2638,7 @@ msgstr "Lisää avatar kuvia..."
 
 #: DenominoViso/DenominoViso.py:2911
 msgid "should be"
-msgstr ""
+msgstr "pitäisi olla"
 
 #: DenominoViso/DenominoViso.py:2913
 #, fuzzy
@@ -2643,19 +2648,19 @@ msgstr "Lisää media"
 
 #: DenominoViso/DenominoViso.py:2914
 msgid "Excluded"
-msgstr ""
+msgstr "poislukien"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
-msgstr ""
+msgstr "Html-kuoritiedoston nimi"
 
 #: DenominoViso/DenominoViso.py:2955
 msgid "Save HTML-wrapper file as ..."
-msgstr ""
+msgstr "Tallenna html-kuoritiedosto nimellä ..."
 
 #: DenominoViso/DenominoViso.py:2980
 msgid "Give a filename ..."
-msgstr ""
+msgstr "Anna tiedostonimi ..."
 
 #: DenominoViso/DenominoViso.py:3114
 #, fuzzy
@@ -2665,46 +2670,46 @@ msgstr "Sukulaiset"
 
 #: DenominoViso/DenominoViso.py:3119
 msgid "Use dashed linestyle"
-msgstr ""
+msgstr "Käytä katkoviivaa"
 
 #: DenominoViso/DenominoViso.py:3124
 msgid "Dash length"
-msgstr ""
+msgstr "Viivan pituus"
 
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
-msgstr ""
+msgstr "Välin pituus"
 
 #: DescendantBooks/CollectAscendants.py:178
-#, python-format
+#, fuzzy, python-format
 msgid "Deep pruning ascendants from %s people..."
-msgstr ""
+msgstr "Syvä rajaaminen %s henkilön esipolviin..."
 
 #: DescendantBooks/CollectAscendants.py:182
 #, python-format
 msgid "Pruning ascendants from %s people..."
-msgstr ""
+msgstr "Esipolvet rajataan %s. henkilöön..."
 
 #: DescendantBooks/CollectAscendants.py:320
 #: DescendantBooks/CollectAscendants.py:413
 #, python-format
 msgid "Getting ascendants from %s people..."
-msgstr ""
+msgstr "Haetaan esipolvia %s henkilöltä..."
 
 #: DescendantBooks/CollectAscendants.py:331
 #, python-format
 msgid "Verifying descendants from %s people..."
-msgstr ""
+msgstr "Tarkastetaan esipolvia %s henkilöltä..."
 
 #: DescendantBooks/CollectAscendants.py:348
 #, python-format
 msgid "Getting missing descendants from %s people..."
-msgstr ""
+msgstr "Haetaan puuttuvia jälkeläisiä %s henkilöltä..."
 
 #: DescendantBooks/CollectAscendants.py:367
 #, python-format
 msgid "Verifying descendants from %s people after pruning..."
-msgstr ""
+msgstr "Vahvistetaan %s henkilön jälkeläisiä rajauksen jälkeen..."
 
 #: DescendantBooks/CollectAscendants.py:383
 #, python-format
