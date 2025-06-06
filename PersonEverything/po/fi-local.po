@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -15,6 +15,12 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "Primary name"
+msgstr "Ensisijainen nimi"
+
+msgid "Alternate name"
+msgstr "Vaihtoehtoinen nimi"
+
 msgid " This is the primary death event."
 msgstr " Tämä on ensisijainen kuolintapaus."
 
@@ -23,6 +29,51 @@ msgstr "Suhde isään"
 
 msgid "Relationship to Mother"
 msgstr "Suhde äitiin"
+
+msgid "Parent Family"
+msgstr "Vanhemman perhe"
+
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr "Katu, kaupunki, maakunta, osavaltio, postinumero, maa, puhelinnumero"
+
+msgid "Media Reference"
+msgstr "Mediaviite"
+
+msgid "Description and Path"
+msgstr "Kuvaus ja polku"
+
+msgid "Referenced Region"
+msgstr "Viitattu alue"
+
+msgid "Mime type"
+msgstr "Mime-tyyppi"
+
+msgid "Note type"
+msgstr "Lisätiedon tyyppi"
+
+msgid "Parent Place"
+msgstr "Vanhemman paikka"
+
+msgid "Alternate Location"
+msgstr "Vaihtoehtoinen paikka"
+
+msgid "Alternative Name"
+msgstr "Vaihtoehtoinen nimi"
+
+msgid "Latitude, Longitude"
+msgstr "Leveysaste, pituusaste"
+
+msgid "Repository type"
+msgstr "Arkiston tyyppi"
+
+msgid "Repository reference"
+msgstr "Arkiston viite"
+
+msgid "Media type"
+msgstr "Median tyyppi"
+
+msgid "Origin type"
+msgstr "Alkuperän tyyppi"
 
 msgid "The style used for the title of the page."
 msgstr "Sivun otsikossa käytetty tyyli."

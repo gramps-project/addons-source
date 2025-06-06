@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -74,6 +74,24 @@ msgstr "Näytön kuvakkeet"
 
 msgid "WebSearch"
 msgstr "Nettihaku"
+
+msgid "Note Link (parsed)"
+msgstr "Linkki lisätietoihin (jäsennetty)"
+
+msgid "No data available."
+msgstr "Ei tietoja saatavilla."
+
+msgid "Foundation date:"
+msgstr "Perustamispäivä:"
+
+msgid "Coordinates:"
+msgstr "Koordinaatit:"
+
+msgid "Full hierarchy"
+msgstr "Koko hierarkia"
+
+msgid "Place Type:"
+msgstr "Paikan tyyppi:"
 
 msgid "Website URL"
 msgstr "Nettisivuston URL"

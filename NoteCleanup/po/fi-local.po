@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -15,6 +15,30 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "Note Cleanup"
+msgstr "Lisätiedon puhdistus"
+
+msgid "Clean up Notes that contain HTML markup"
+msgstr "Puhdista lisätiedot, joissa on HTML-merkintöjä"
+
+msgid "Note Cleanup Tool"
+msgstr "Lisätietojen puhdistustyökalu"
+
+msgid "Cleaned Notes"
+msgstr "Puhdistetut lisätiedot"
+
+msgid "Links Only"
+msgstr "Vain linkit"
+
+msgid "Issues"
+msgstr "Ongelmat"
+
+msgid "Close the Note Cleanup Tool"
+msgstr "Sulje lisätietojen puhdistustyökalu"
+
+msgid "Save All"
+msgstr "Tallenna kaikki"
+
 msgid "Search"
 msgstr "Hae"
 
@@ -23,6 +47,9 @@ msgstr "Vie"
 
 msgid "Export the results to a text file"
 msgstr "Vie tulokset tekstitiedostoon"
+
+msgid "Add Test Note"
+msgstr "Lisää testilisätieto"
 
 msgid "Export results to a text file"
 msgstr "Vie tulokset tekstitiedostoon"

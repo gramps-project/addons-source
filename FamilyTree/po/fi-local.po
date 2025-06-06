@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,11 +12,83 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+#, python-format
+msgid "Family Tree for %s"
+msgstr "Sukupuu henkilölle %s"
+
+msgid "cremated"
+msgstr "tuhkattu"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "paikoissa %(place)s"
+
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+msgid "The center family for the tree"
+msgstr "Puun keskusperhe"
 
 msgid "Ancestor Generations"
 msgstr "Esivanhempien sukupolvet"
 
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Puuhun sisällytettävien esipolvien lukumäärä"
+
 msgid "Descendant Generations"
 msgstr "Jälkeläisten sukupolvet"
+
+msgid "The number of descendant generations to include in the tree"
+msgstr "Puuhun sisällytettävien jälkipolvien lukumäärä"
+
+msgid "Whether to scale to fit on a single page."
+msgstr "Skaalataanko se yhdelle sivulle sopivaksi."
+
+msgid "First generation"
+msgstr "Ensimmäinen sukupolvi"
+
+msgid "Second generation"
+msgstr "Toinen sukupolvi"
+
+msgid "Third generation"
+msgstr "%d. sukupolvi"
+
+msgid "Male line"
+msgstr "Mieslinja"
+
+msgid "Male line and illegitimate children"
+msgstr "Mieslinja ja aviottomat lapset"
+
+msgid "Female line"
+msgstr "Naislinja"
+
+msgid "Replace first name with call name"
+msgstr "Korvaa etunimi kutsumanimellä"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Alleviivaa kutsumanimi etunimissä tai lisää kutsumanimi etunimiin"
+
+msgid "Include Residence"
+msgstr "Sisällytä asuinpaikka"
+
+msgid "Year only"
+msgstr "Vain vuosi"
+
+msgid "Full date"
+msgstr "Koko päivämäärä"
+
+msgid "Full date and place"
+msgstr "Päivämäärä ja paikka"
+
+msgid "Print event data (living person)"
+msgstr "Tulosta tapahtumatiedot (eläville)"
+
+msgid "Include event description"
+msgstr "Sisällytä tapahtuman kuvaus"
+
+msgid "Text Options"
+msgstr "Tekstivalinnat"

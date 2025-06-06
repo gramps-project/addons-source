@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-23 22:01+0000\n"
+"PO-Revision-Date: 2025-06-01 08:03+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -96,6 +96,12 @@ msgstr "URL du serveur : "
 
 msgid "Bidirectional Synchronization"
 msgstr "Synchronisation bidirectionnelle"
+
+msgid "Reset local to remote"
+msgstr "Réinitialiser l'arbre local depuis l'arbre distant"
+
+msgid "Merge"
+msgstr "Fusionner"
 
 msgid "Local changes"
 msgstr "Changements locaux"

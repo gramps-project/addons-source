@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -14,8 +14,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.12-dev\n"
 
+msgid "Reference Date or Date Range"
+msgstr "Referensdatum eller datumintervall"
+
 msgid "a valid Gramps date"
 msgstr "ett giltigt Gramps-datum"
+
+msgid "Date or offset ±y or ±y, m, d"
+msgstr "Datum eller kompensation ±y eller ±y, m, d"
+
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+"1. ett datum\n"
+"2. ett positivt eller negativt tal som representerar år\n"
+"3. en positiv eller negativ lista med värden som representerar år, månader, "
+"dagar"
 
 msgid "Result"
 msgstr "Resultat"
@@ -26,8 +42,20 @@ msgstr "Beräkna"
 msgid "Copy"
 msgstr "Kopiera"
 
+msgid "Error: invalid date for first expression"
+msgstr "Fel: ogiltigt datum för första uttrycket"
+
+msgid "Error: invalid offset for second expression"
+msgstr "Fel: ogiltig kompensation för andra uttrycket"
+
 msgid "Error: at least one expression must be a date"
 msgstr "Fel: åtminstone ett uttryck måste vara ett datum"
 
+msgid "Enter an expression in the entries above and click Calculate."
+msgstr "Ange ett uttryck i posterna ovan och klicka på Beräkna."
+
 msgid "Date Calculator"
 msgstr "Datumkalkylator"
+
+msgid "Perform date math calculations"
+msgstr "Utför matematikberäkningar för datum"

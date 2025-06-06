@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -19,6 +19,46 @@ msgstr "Nechať tak"
 
 msgid "WebSearch"
 msgstr "Vyhľadávanie na webe"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "Navštívené: %s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "Odkaz: %s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "Atribút: %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "Hodnota: %s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Načítané zo súboru: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "Doména: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "Objekt: %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "Vzor: %s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Objekt Gramps ID: %s"
+
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
 
 msgid "Website URL"
 msgstr "URL webového sídla"

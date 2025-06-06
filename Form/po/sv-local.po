@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Select Form"
 msgstr "Välj formulär"
@@ -25,6 +25,13 @@ msgstr "Gramplet-gränssnitt för formulär"
 
 msgid "Order"
 msgstr "Ordning"
+
+msgid "Form"
+msgstr "Form"
+
+#, python-format
+msgid "Form: %s"
+msgstr "Form: %s"
 
 msgid "New Form"
 msgstr "Nytt formulär"
@@ -115,6 +122,9 @@ msgstr "Änka/änkling, frånskild"
 
 msgid "Illness on day of enumeration"
 msgstr "Sjukdom på uppräkningsdagen"
+
+msgid "Owner"
+msgstr "Ägare"
 
 msgid "Horses on hand"
 msgstr "Hästar till hands"
@@ -293,6 +303,9 @@ msgstr "Antal sålda nötkreatur"
 msgid "City of"
 msgstr "Staden"
 
+msgid "Township"
+msgstr "Kommun"
+
 msgid "Section"
 msgstr "Sektion"
 
@@ -370,6 +383,9 @@ msgstr "Antal hus"
 
 msgid "Condition"
 msgstr "Kondition"
+
+msgid "Schedule"
+msgstr "Schema"
 
 msgid "Name of Village"
 msgstr "Byns namn"
@@ -691,6 +707,12 @@ msgstr "Familjeöverhuvud"
 
 msgid "Total Children"
 msgstr "Totalt antal barn"
+
+msgid "EnumDistrict"
+msgstr "EnumDistrict"
+
+msgid "Comprising"
+msgstr "Bestående av"
 
 msgid "Enumerator"
 msgstr "Uppräknare"

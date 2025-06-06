@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -15,11 +15,67 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "Descendants Lines"
+msgstr "Jälkeläislinjat"
+
+msgid "Output format"
+msgstr "Tulostusmuoto"
+
+msgid "PNG format"
+msgstr "PNG-muoto"
+
+msgid "SVG format"
+msgstr "SVG-muoto"
+
+msgid "PDF format"
+msgstr "PDF-muoto"
+
+msgid "PS format"
+msgstr "PS-muoto"
+
+msgid "The output format to be used"
+msgstr "Käytettävä tulostusmuoto"
+
 msgid "The destination file for the content."
 msgstr "Kohdehakemisto uusille tiedostoille."
+
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr ""
+"Kaavioon sisällytettävien sukupolvien määrä. (0 tarkoittaa rajoittamatonta "
+"määrää)"
+
+msgid "Include an image"
+msgstr "Näytetäänkö kuva"
+
+msgid "Whether to include an image if one is available."
+msgstr "Sisällytetäänkö kuva, jos sellainen on saatavilla."
+
+msgid "Image Location"
+msgstr "Kuvan sijainti"
+
+msgid "Above text"
+msgstr "Tekstin yläpuolella"
+
+msgid "Left of text"
+msgstr "Tekstin vasemmalla puolella"
+
+msgid "Text style"
+msgstr "Tekstityyli"
+
+msgid "Display Formats"
+msgstr "Esitysmuodot"
 
 msgid "Name Display Format"
 msgstr "Nimen näyttömuoto"
 
 msgid "Replace"
 msgstr "Korvaa"
+
+msgid "Spouse and Family"
+msgstr "Puoliso ja perhe"
+
+msgid "Horizontal space descendant to spouse"
+msgstr "Puolison ja jälkeläisen välinen vaakasuora tila"
+
+msgid "Space around text"
+msgstr "Tila tekstin ympärillä"

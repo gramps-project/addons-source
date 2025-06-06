@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -15,12 +15,82 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "PlaceCompletion"
+msgstr "Paikan täydentäminen"
+
 msgid ""
 "Place Completion by parsing, file lookup and batch setting of place "
 "attributes"
 msgstr ""
 "Paikan viimeistely jäsentämällä, tiedostohaulla ja paikkamääritteiden "
 "eräasetuksella"
+
+msgid "Places tool"
+msgstr "Paikat-työkalu"
+
+msgid "Filtering"
+msgstr "Suodatus"
+
+msgid "Examining places"
+msgstr "Tutkimassa paikkoja"
+
+msgid "Set Tag"
+msgstr "Aseta tagi"
+
+msgid "Doing Place changes"
+msgstr "Muutetaan paikkoja"
+
+msgid "No place record was modified."
+msgstr "Yhtään paikkatietuetta ei muokattu."
+
+msgid "Change places"
+msgstr "Muuta paikkoja"
+
+msgid "The file does not exist."
+msgstr "Tiedostoa ei ole."
+
+msgid "Problem reading file"
+msgstr "Ongelma tiedoston lukemisessa"
+
+msgid "No changes"
+msgstr "Ei muutoksia"
+
+msgid "City,PostalCode,Country"
+msgstr "Kaupunki, postinumero, maa"
+
+msgid "TitleStart [, City] [, County] [, State] [, Country]"
+msgstr "Nimen alku [, kaupunki] [, maakunta] [, osavaltio] [, maa]"
+
+msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
+msgstr ""
+"Nimen alku [, kaupunki] [, postinumero] [, maakunta] [, osavaltio] [, maa]"
+
+msgid "Don't search"
+msgstr "Älä etsi"
+
+msgid "All Places"
+msgstr "Kaikki paikat"
+
+msgid "_Google Maps"
+msgstr "_Googlen kartat"
+
+msgid "Apply all suggested changes"
+msgstr "Toteuta kaikki ehdotetut muutokset"
+
+msgid "Selection of the Places you want to complete:"
+msgstr "Valitse täydennettävät paikat:"
+
+msgid "Center longitude:"
+msgstr "Keskipisteen pituusaste:"
+
+msgid "Height:"
+msgstr "Korkeus:"
+
+msgid "Search in:"
+msgstr "Mistä haetaan:"
+
+msgid "Select A File"
+msgstr "Valitse tiedosto"
 
 msgid "Change title into:"
 msgstr "Uusi otsikko:"

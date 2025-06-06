@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -39,6 +39,9 @@ msgstr "Löytyneiden eri esivanhempien määrä "
 
 msgid "Number of theoretical Ancestors "
 msgstr "Teoreettisten esi-isien lukumäärä "
+
+msgid "Pedigree Collapse "
+msgstr "Sukutaulun romahdus "
 
 msgid "Total Number of Ancestors found "
 msgstr "Löydettyjä esi-isiä "

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -23,8 +23,17 @@ msgid ""
 "names."
 msgstr "Yritetään korjata etunimien isot alkukirjaimet koko tietokannasta."
 
+msgid "manual|Fix_Capitalization_of_Given_Names..."
+msgstr "manual|Fix_Capitalization_of_Given_Names..."
+
+msgid "Checking Given Names"
+msgstr "Tarkistetaan etunimiä"
+
 msgid "Searching given names"
 msgstr "Etsitään etunimiä"
+
+msgid "Affected Names"
+msgstr "Liittyvät nimet"
 
 msgid ""
 "Below is a list of the given names that \n"
@@ -34,3 +43,6 @@ msgstr ""
 "Alla on luettelo etunimistä, joita Gramps\n"
 "osaa muuntaa oikeaan muotoon.\n"
 "Valitse muunnettavat nimet Grampsille. "
+
+msgid "Edit selection"
+msgstr "Muokkaa valintaa"

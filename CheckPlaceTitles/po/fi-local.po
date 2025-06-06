@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,8 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Check Place Titles"
+msgstr "Tarkasta paikkojen nimet"
+
+msgid "Check place titles"
+msgstr "Tarkasta paikkojen nimet"
+
+msgid "Check Place title"
+msgstr "Tarkasta paikan nimi"
 
 msgid "Checking Place Titles"
 msgstr "Tarkistetaan paikkojen nimiä"
@@ -23,3 +32,30 @@ msgstr "Etsitään paikkatietoja"
 
 msgid "Differences"
 msgstr "Erot"
+
+msgid "No need modifications"
+msgstr "Ei tarvitse muuttaa"
+
+msgid "No changes need."
+msgstr "Muutoksia ei tarvita."
+
+msgid "Legacy place"
+msgstr "Vanhempi paikka"
+
+msgid "Modify Place titles"
+msgstr "Moukkaa paikannimiä"
+
+msgid "Place titles"
+msgstr "Paikannimet"
+
+msgid "Remove content of place title field if it does not match"
+msgstr "Tyhjennä paikan nimi, jos se ei täsmää"
+
+msgid "Copy content of place title field to a new note."
+msgstr "Kopioi paikan nimi uuteen lisätietoon."
+
+msgid "Attach a tag on selected places."
+msgstr "Liitä tunniste valittuihin paikkoihin."
+
+msgid "column"
+msgstr "sarake"

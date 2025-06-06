@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 09:41-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,21 +12,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Search"
 msgstr "Hae"
 
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet kohteiden etsimiseksi tietokannasta."
+
 msgid "Show bookmarked first"
 msgstr "Näytä kirjanmerkityt ensin"
+
+msgid "Sort by object type"
+msgstr "Lajittele objektityypin mukaan"
 
 msgid "Persons"
 msgstr "Henkilöt"
 
+msgid "Menu to set search objects"
+msgstr "Valikko hakuobjektien asettamiseen"
+
+msgid "Select objects to search"
+msgstr "Valitse haettavat kohteet"
+
+msgid "SearchGramplet configuration menu"
+msgstr "SearchGrampletin määritysvalikko"
+
 #, python-format
 msgid "found: %s"
 msgstr "löytyi: %s"
+
+msgid "No matches..."
+msgstr "Ei osumia..."
 
 msgid "Search..."
 msgstr "Hae..."
@@ -37,5 +55,19 @@ msgstr "Poista kirjanmerkeistä"
 msgid "Add to bookmarks"
 msgstr "Lisää kirjanmerkkeihin"
 
+#, python-format
+msgid "Birth: %s"
+msgstr "Syntynyt: %s"
+
+#, python-format
+msgid "Death: %s"
+msgstr "Kuollut: %s"
+
 msgid "Parents:"
 msgstr "Vanhemmat:"
+
+msgid "Set as Active person"
+msgstr "Aseta aktiiviseksi henkilöksi"
+
+msgid "Set as Home person"
+msgstr "Aseta kotihenkilö"

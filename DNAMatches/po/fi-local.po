@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 14:28+0000\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -15,6 +15,30 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "DNA Matches"
+msgstr "DNA-osumia"
+
+msgid "Gramplet to display a list of DNA matches"
+msgstr "Gramplet DNA-osumien luettelon näyttämiseen"
+
+msgid "Pers."
+msgstr "Henk."
+
+msgid "Rel."
+msgstr "Suhde"
+
+msgid "S. DNA"
+msgstr "Yht. DNA"
+
+msgid "S. Seg."
+msgstr "Yht. segm."
+
+msgid "L. Seg"
+msgstr "Suurin seg."
+
+msgid "Src(s)"
+msgstr "Lähteet"
+
 msgid "Shared DNA"
 msgstr "Jaettu DNA"
 
@@ -23,3 +47,24 @@ msgstr "Jaetut segmentit"
 
 msgid "Largest Segment"
 msgstr "Suurin segmentti"
+
+msgid "Source(s)"
+msgstr "Lähteet"
+
+msgid "Double-click on a row to navigate to the matched person."
+msgstr "Siirry vastaavaan henkilöön kaksoisnapsaututtamalla riviä."
+
+msgid "Right click to edit selected association."
+msgstr "Muokkaa valittua yhteyttä hiiren kakkospainikkeella."
+
+msgid "LEGEND"
+msgstr "Merkkien selitykset"
+
+msgid "="
+msgstr "="
+
+msgid "Not specified"
+msgstr "Ei määritelty"
+
+msgid "cM"
+msgstr "cM"

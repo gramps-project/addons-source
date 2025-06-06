@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 14:28+0000\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "DNA Matches"
 msgstr "DNA-matchningar"
@@ -22,6 +22,30 @@ msgstr "Gramplet för att visa en lista med DNA-matchningar"
 
 msgid "Pers."
 msgstr "Pers."
+
+msgid "Rel."
+msgstr "Rel."
+
+msgid "S. DNA"
+msgstr "D. DNA"
+
+msgid "S. Seg."
+msgstr "D. Seg."
+
+msgid "L. Seg"
+msgstr "L. Seg"
+
+msgid "Src(s)"
+msgstr "Käll(or)"
+
+msgid "Shared DNA"
+msgstr "Delat DNA"
+
+msgid "Shared Segments"
+msgstr "Delade Segment"
+
+msgid "Largest Segment"
+msgstr "Längsta Segment"
 
 msgid "Source(s)"
 msgstr "Källa/källor"
@@ -34,6 +58,12 @@ msgstr "Högerklicka för att redigera den valda associationen."
 
 msgid "LEGEND"
 msgstr "Teckenförklaring"
+
+msgid "="
+msgstr "="
+
+msgid "Not specified"
+msgstr "Icke specificerat"
 
 msgid "cM"
 msgstr "cM"
