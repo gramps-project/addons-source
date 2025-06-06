@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-26 07:15+0000\n"
+"PO-Revision-Date: 2025-06-01 08:03+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -61,7 +61,7 @@ msgstr "Rapport över ifyllnad av släktträd"
 #: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr "AncestorFill för %s"
+msgstr "Anors fyllnadsgrad för %s"
 
 #: AncestorFill/AncestorFill.py:205
 msgid "Generation "
@@ -1694,7 +1694,7 @@ msgstr "Gramplet för att visa en lista med DNA-matchningar"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr ""
+msgstr "L. Seg"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
@@ -1702,31 +1702,31 @@ msgstr "Pers."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
-msgstr ""
+msgstr "Rel."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "D. DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
-msgstr ""
+msgstr "D. Seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Käll(or)"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "Delat DNA"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "Delade Segment"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "Längsta Segment"
 
 #: DNAMatches/dnamatches.py:159
 msgid "Source(s)"
@@ -1746,12 +1746,12 @@ msgstr "Teckenförklaring"
 
 #: DNAMatches/dnamatches.py:228
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "Icke specificerat"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
 msgid "cM"
@@ -1943,11 +1943,11 @@ msgstr "Datumkalkylator"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
-msgstr ""
+msgstr "Utför matematikberäkningar för datum"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "Referensdatum eller datumintervall"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "a valid Gramps date"
@@ -1955,7 +1955,7 @@ msgstr "ett giltigt Gramps-datum"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "Datum eller kompensation ±y eller ±y, m, d"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -1963,6 +1963,10 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. ett datum\n"
+"2. ett positivt eller negativt tal som representerar år\n"
+"3. en positiv eller negativ lista med värden som representerar år, månader, "
+"dagar"
 
 #: DateCalculator/DateCalculator.py:96
 msgid "Result"
@@ -1980,11 +1984,11 @@ msgstr "Kopiera"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "Fel: ogiltigt datum för första uttrycket"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "Fel: ogiltig kompensation för andra uttrycket"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
@@ -1993,7 +1997,7 @@ msgstr "Fel: åtminstone ett uttryck måste vara ett datum"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
+msgstr "Ange ett uttryck i posterna ovan och klicka på Beräkna."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -2013,7 +2017,7 @@ msgstr "Paus"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
 msgid "mentioned in note"
-msgstr ""
+msgstr "nämns i anteckningen"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
 msgid "Note on Family"
@@ -2108,7 +2112,7 @@ msgstr "Ny källa"
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
 msgid "onclick"
-msgstr ""
+msgstr "vid klick"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onmouseover"
@@ -2469,6 +2473,8 @@ msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
+"Bredden på en personrektangel av vanlig diagramtyp uttryckt som en bråkdel "
+"av den horisontella rektangelns avstånd."
 
 #: DenominoViso/DenominoViso.py:2711
 msgid "Height of rectangle (hrd):"
@@ -2479,6 +2485,8 @@ msgid ""
 "The height of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
+"Höjden på en personrektangel av vanlig diagramtyp uttryckt som en bråkdel av "
+"den horisontella rektangelns avstånd."
 
 #: DenominoViso/DenominoViso.py:2715
 msgid "Vertical distance of rectangles (hrd):"
@@ -2489,6 +2497,8 @@ msgid ""
 "The vertical distance of person rectangles of the regular chart type "
 "expressed as fraction of the horizontal rectangle distance."
 msgstr ""
+"Det vertikala avståndet mellan personrektanglar av den vanliga diagramtypen "
+"uttryckt som en bråkdel av det horisontella rektangelavståndet."
 
 #: DenominoViso/DenominoViso.py:2719
 msgid "Extra style settings:"
@@ -2496,7 +2506,7 @@ msgstr "Extra mallinställningar:"
 
 #: DenominoViso/DenominoViso.py:2720
 msgid "Whatever css style settings are needed."
-msgstr ""
+msgstr "Oavsett vilka css-stilinställningar som behövs."
 
 #: DenominoViso/DenominoViso.py:2730
 msgid "Mouse event handler"
@@ -2677,7 +2687,7 @@ msgstr "{report_count}. Ättling för {name}"
 #: DescendantBooks/DetailedDescendantBookReport.py:617
 #, python-brace-format
 msgid "{report_count:d}. {name}"
-msgstr ""
+msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
@@ -2814,7 +2824,7 @@ msgstr " %(event_text)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:993
 #, python-brace-format
 msgid "Ref: {number}. {name}"
-msgstr ""
+msgstr "Ref: {number}. {name}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
@@ -4544,18 +4554,24 @@ msgid ""
 "Enter the Latitude GPS coordinates for this image,\n"
 "Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
 msgstr ""
+"Ange GPS-koordinaterna för latituden för den här bilden,\n"
+"Exempel: -43.722965, -43:43:22, 38° 38′ 03″ N"
 
 #: EditExifMetadata/editexifmetadata.py:179
 msgid ""
 "Enter the Longitude GPS coordinates for this image,\n"
 "Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
 msgstr ""
+"Ange GPS-koordinaterna för longituden för den här bilden,\n"
+"Exempel: -10.396378, -10:23:46, 105° 6′ 6″ W"
 
 #: EditExifMetadata/editexifmetadata.py:182
 msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
+"Detta är måttet över eller under havsnivån.  Det mäts i meter.  Exempel: "
+"200,558, -200,558"
 
 #: EditExifMetadata/editexifmetadata.py:191
 msgid ""
@@ -4629,7 +4645,7 @@ msgstr "Omvandla denna bild till en Exiv2-kompatibel bildtyp..."
 #: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr ""
+msgstr "Bildstorlek : {width} x {height} pixels"
 
 #: EditExifMetadata/editexifmetadata.py:481
 #: EditExifMetadata/editexifmetadata.py:1440
@@ -4809,7 +4825,7 @@ msgstr ""
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
 msgid "Delete?"
-msgstr ""
+msgstr "Ta bort?"
 
 #: EditExifMetadata/editexifmetadata.py:1148
 msgid ""
@@ -4987,43 +5003,43 @@ msgstr ""
 
 #: FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
-msgstr ""
+msgstr "FR Web Connect Pack"
 
 #: FRWebConnectPack/FRWebPack.gpr.py:12
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
-msgstr ""
+msgstr "Samling av webbplatser för FR (kräver libwebconnect)"
 
 #: FRWebConnectPack/FRWebPack.py:41
 msgid "Cultural ministry (France)"
-msgstr ""
+msgstr "Kulturministeriet (Frankrike)"
 
 #: FRWebConnectPack/FRWebPack.py:42
 msgid "Genealogical bank"
-msgstr ""
+msgstr "Genealogical bank"
 
 #: FRWebConnectPack/FRWebPack.py:44
 msgid "OrigineFile (Quebec)"
-msgstr ""
+msgstr "OrigineFile (Quebec)"
 
 #: FRWebConnectPack/FRWebPack.py:50
 msgid "Cyber genealogy"
-msgstr ""
+msgstr "Cyber-genealogi"
 
 #: FRWebConnectPack/FRWebPack.py:53
 msgid "RetroNews (Bnf)"
-msgstr ""
+msgstr "RetroNews (Bnf)"
 
 #: FRWebConnectPack/FRWebPack.py:58
 msgid "Hathi Trust Digital Library (fr)"
-msgstr ""
+msgstr "Hathi Trust digitala bibliotek (fr)"
 
 #: FRWebConnectPack/FRWebPack.py:59
 msgid "Open Library (fr)"
-msgstr ""
+msgstr "Open Library (fr)"
 
 #: FRWebConnectPack/FRWebPack.py:60
 msgid "Belgium's Archives"
-msgstr ""
+msgstr "Belgiens arkiv"
 
 #: FaceDetection/FaceDetection.gpr.py:4
 msgid "Face Detection"
@@ -5238,7 +5254,7 @@ msgstr "För litet papper"
 
 #: FamilyTree/FamilyTree.py:153
 msgid "Some elements may not appear or be badly rendered."
-msgstr ""
+msgstr "Vissa element kanske inte visas eller är dåligt återgivna."
 
 #: FamilyTree/FamilyTree.py:684
 msgid "Anonymous"
@@ -5312,6 +5328,7 @@ msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
 msgstr ""
+"Makens Kekule-tal (centralfamiljen). Sätt 0 för att inte visa Kekule-tal"
 
 #: FamilyTree/FamilyTree.py:1059
 msgid "Scale to fit on a single page"
@@ -5419,7 +5436,7 @@ msgstr "FamilyTree DNA"
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:5
 msgid "Tool to import FamilyFinder DNA data from Family Tree"
-msgstr ""
+msgstr "Verktyg för att importera FamilyFinder DNA-data från Family Tree"
 
 #: FamilyTreeDNA/ftdna_import.py:75
 msgid "Family Finder Tool"
@@ -5431,7 +5448,7 @@ msgstr "Ange filnamn för FTDNA Family Finder:"
 
 #: FamilyTreeDNA/ftdna_import.py:109
 msgid "Enter FTDNA Chromosome Segment Filename:"
-msgstr ""
+msgstr "Ange FTDNA-kromosomsegmentets filnamn:"
 
 #: FamilyTreeDNA/ftdna_import.py:112
 msgid "Import Haplogroups"
@@ -5439,7 +5456,7 @@ msgstr "Importera Haplogrupper"
 
 #: FamilyTreeDNA/ftdna_import.py:128
 msgid "FTDNA Note string :"
-msgstr ""
+msgstr "FTDNA-anteckningssträng :"
 
 #: FamilyTreeDNA/ftdna_import.py:137
 msgid "Shared Citation ID :"
@@ -5451,7 +5468,7 @@ msgstr "Aktiv person : "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
-msgstr ""
+msgstr "Importera data från Family Finder-filer"
 
 #: FamilyTreeDNA/ftdna_import.py:169
 msgid "Close the Family Finder Tool"
@@ -5459,7 +5476,7 @@ msgstr "Stäng verktyget för familjesläktskap"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
-msgstr ""
+msgstr "Läs hjälpmanualen"
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
@@ -5469,24 +5486,26 @@ msgstr "FamilyTree DNA import"
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
-msgstr ""
+msgstr "{} Kopplingar med DNA-data skapades. {} haplogruppattribut skapade \n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
-msgstr ""
+msgstr "Ingen Family Finder-fil specificerad"
 
 #: FamilyTreeDNA/ftdna_import.py:232
 msgid "No Segment File specified"
-msgstr ""
+msgstr "Ingen segmentfil specificerad"
 
 #: FamilyTreeDNA/ftdna_import.py:236
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
 msgstr ""
+"Inga kopplingar hittades i FTdna-anteckningarna. Inga haplogruppattribut "
+"skapades."
 
 #: FamilyTreeDNA/ftdna_import.py:307
 #, python-format
 msgid "Add %s haplogroup attribute"
-msgstr ""
+msgstr "Lägg till %s haplogruppattribut"
 
 #: FamilyTreeDNA/ftdna_import.py:350
 #, python-format
@@ -5496,7 +5515,7 @@ msgstr "Lägg till %s DNA-förening"
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr ""
+msgstr "Skapa anteckning för %s DNA-kopplingen"
 
 #: FamilyTreeDNA/ftdna_import.py:369
 #, python-format
@@ -5506,17 +5525,17 @@ msgstr "Lägg till anteckning till %s DNA-förening"
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr ""
+msgstr "Skapa källhänvisning för %s DNA-kopplingen"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr ""
+msgstr "Skapa citering för %s DNA-kopplingen"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr ""
+msgstr "Lägg till citering till %s DNA-kopplingen"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
@@ -5825,7 +5844,7 @@ msgstr "Laga koordinater"
 #: Form/editform.py:181
 #, python-format
 msgid "Form: %s"
-msgstr ""
+msgstr "Form: %s"
 
 #: Form/editform.py:183
 msgid "New Form"
@@ -5847,7 +5866,7 @@ msgstr "Rubriker"
 
 #: Form/form.py:65
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -5855,22 +5874,22 @@ msgstr ""
 #: Form/form_ca.xml.h:661 Form/form_ca.xml.h:754 Form/form_ca.xml.h:794
 #: Form/form_us.xml.h:1633 Form/form_us.xml.h:1648
 msgid "Schedule"
-msgstr ""
+msgstr "Schema"
 
 #: Form/form_ca.xml.h:2 Form/form_ca.xml.h:93 Form/form_ca.xml.h:211
 #: Form/form_ca.xml.h:798
 msgid "EnumDistrict"
-msgstr ""
+msgstr "EnumDistrict"
 
 #: Form/form_ca.xml.h:3 Form/form_ca.xml.h:94 Form/form_ca.xml.h:212
 #: Form/form_ca.xml.h:644 Form/form_ca.xml.h:812 Form/form_us.xml.h:1250
 #: Form/form_us.xml.h:1311 Form/form_us.xml.h:2041
 msgid "Township"
-msgstr ""
+msgstr "Kommun"
 
 #: Form/form_ca.xml.h:5
 msgid "Comprising"
-msgstr ""
+msgstr "Bestående av"
 
 #: Form/form_ca.xml.h:6
 msgid "OfTheSaid"
@@ -10418,7 +10437,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:502
 msgid "Owner"
-msgstr ""
+msgstr "Ägare"
 
 #: Form/form_us.xml.h:503
 msgid "Rents for fixed money"
@@ -22365,10 +22384,8 @@ msgid "Add link to note"
 msgstr "Lägg till länk till anteckning"
 
 #: WebSearch.py:880
-#, fuzzy
-#| msgid "Add link to note"
 msgid "Add link to attribute"
-msgstr "Lägg till länk till anteckning"
+msgstr "Lägg till länk till attribut"
 
 #: WebSearch.py:881
 msgid "Show QR-code"
@@ -22420,28 +22437,23 @@ msgid "WebSearch Link"
 msgstr "Webbsöklänk"
 
 #: WebSearch.py:1246
-#, fuzzy
-#| msgid "Note #%(id)s has been successfully added"
 msgid "Attribute has been successfully added"
-msgstr "Notisen #%(id)s lades framgångsrikt till"
+msgstr "Attributet lades framgångsrikt till"
 
 #: WebSearch.py:1277
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Titel: {title}\n"
+msgstr "Titel: {title}"
 
 #: WebSearch.py:1281
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "Utbytt: {keys}\n"
+msgstr "Utbytt: {keys}"
 
 #: WebSearch.py:1284
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "Utbytt: {keys}\n"
+msgstr "Tom: {keys}"
 
 #: WebSearch.py:1286
 #, python-brace-format
@@ -23058,10 +23070,8 @@ msgid "Show Links From the 'Internet' tab"
 msgstr ""
 
 #: settings_ui_manager.py:199
-#, fuzzy
-#| msgid "Show info text"
 msgid "Show Links From the Notes"
-msgstr "Visa informationstext"
+msgstr "Visa länkar från anteckningarna"
 
 #: settings_ui_manager.py:230
 msgid "Enable CSV Files"
