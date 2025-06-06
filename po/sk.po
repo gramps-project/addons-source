@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-03 09:24-0700\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -2930,10 +2930,8 @@ msgstr "Štýl použitý pre referencie v indexe miest."
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendant Count"
-msgstr "Potomok"
+msgstr "Počítanie potomkov"
 
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
@@ -23033,59 +23031,52 @@ msgstr "Vyberte filter na vymedzenie zoznamu"
 #: activity_row_generator.py:110
 #, python-format
 msgid "Visited: %s"
-msgstr ""
+msgstr "Navštívené: %s"
 
 #: activity_row_generator.py:114 activity_row_generator.py:129
 #, python-format
 msgid "Link: %s"
-msgstr ""
+msgstr "Odkaz: %s"
 
 #: activity_row_generator.py:116
-#, fuzzy, python-format
-#| msgid "Images with Attribute"
+#, python-format
 msgid "Attribute: %s"
-msgstr "Obrázky s atribútom"
+msgstr "Atribút: %s"
 
 #: activity_row_generator.py:118
-#, fuzzy, python-format
-#| msgid "Key: %s"
+#, python-format
 msgid "Value: %s"
-msgstr "Kľúč: %s"
+msgstr "Hodnota: %s"
 
 #: activity_row_generator.py:123
-#, fuzzy, python-format
-#| msgid "Select A File"
+#, python-format
 msgid "Loaded from file: %s"
-msgstr "Zvoliť súbor"
+msgstr "Načítané zo súboru: %s"
 
 #: activity_row_generator.py:126
-#, fuzzy, python-format
-#| msgid "Key: %s"
+#, python-format
 msgid "Domain: %s"
-msgstr "Kľúč: %s"
+msgstr "Doména: %s"
 
 #: activity_row_generator.py:131
-#, fuzzy, python-format
-#| msgid "Key: %s"
+#, python-format
 msgid "Object: %s"
-msgstr "Kľúč: %s"
+msgstr "Objekt: %s"
 
 #: activity_row_generator.py:135
-#, fuzzy, python-format
-#| msgid "Key: %s"
+#, python-format
 msgid "Pattern: %s"
-msgstr "Kľúč: %s"
+msgstr "Vzor: %s"
 
 #: activity_row_generator.py:138
-#, fuzzy, python-format
-#| msgid "The Gramps ID.."
+#, python-format
 msgid "Object Gramps ID: %s"
-msgstr "ID Gramps.."
+msgstr "Objekt Gramps ID: %s"
 
 #: activity_row_generator.py:142
 #, python-format
 msgid "%s: %s → %s: %s"
-msgstr ""
+msgstr "%s: %s → %s: %s"
 
 #: activity_row_generator.py:152
 msgid "Link visited"

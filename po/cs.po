@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-03 09:24-0700\n"
-"PO-Revision-Date: 2025-04-02 07:35+0000\n"
+"PO-Revision-Date: 2025-06-04 05:30+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -22725,10 +22725,9 @@ msgid "Domain: %s"
 msgstr "Aktualizace cest k médiím"
 
 #: activity_row_generator.py:131
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Object: %s"
-msgstr "Aktualizace cest k médiím"
+msgstr "Objekt: %s"
 
 #: activity_row_generator.py:135
 #, fuzzy, python-format
