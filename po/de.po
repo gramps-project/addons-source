@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-19 21:02+0000\n"
+"PO-Revision-Date: 2025-06-01 08:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -1640,11 +1640,11 @@ msgstr "Deutsche Digitale Bibliothek"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
-msgstr "DNS-Segmentkarte"
+msgstr "DNA-Segmentkarte"
 
 #: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
-msgstr "Gramplet zeigt eine passende DNS-Segmentkarte"
+msgstr "Gramplet zeigt eine passende DNA-Segmentkarte"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
@@ -1723,11 +1723,11 @@ msgstr ""
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
-msgstr "DNS-Übereinstimmungen"
+msgstr "DNA-Übereinstimmungen"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
-msgstr "Gramplet zur Anzeige einer Liste von DNS-Übereinstimmungen"
+msgstr "Gramplet zur Anzeige einer Liste von DNA-Übereinstimmungen"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
@@ -1743,7 +1743,7 @@ msgstr "Bez."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr "Gem. DNS"
+msgstr "Gem. DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
@@ -1755,7 +1755,7 @@ msgstr "Qu"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr "Gemeinsame DNS"
+msgstr "Gemeinsame DNA"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
@@ -2024,11 +2024,11 @@ msgstr "Kopieren"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr "Fehler: ungültiges Datum im ersten Ausdruck"
+msgstr "Fehler: Ungültiges Datenformat für den ersten Ausdruck"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr "Fehler: ungültige Abweichung im zweiten Ausdruck"
+msgstr "Fehler: Ungültiger Offset für den zweiten Ausdruck"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
@@ -2037,21 +2037,20 @@ msgstr "Fehler: Mindestens ein Ausdruck muss ein Datum sein"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
-"Gib einen Ausdruck in den Eintragsfeldern oben ein und klicke auf Berechnen."
+msgstr "Gib einen Ausdruck in die Felder oben ein und klicke auf Berechnen."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
-msgstr "Tief gehende Beziehungen Gramplet"
+msgstr "Tiefe Verbindungen Gramplet"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr ""
-"Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson"
+"Gramplet, das eine tiefe Beziehung zwischen aktiver und Hauptperson zeigt"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
-msgstr "Tief gehende Verbindungen"
+msgstr "Tiefe Verbindungen"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
@@ -2071,7 +2070,7 @@ msgstr "Geschwister"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
 msgid "Note on Parent Family"
-msgstr "Notiz zu Eltern Familie"
+msgstr "Notiz zur Elternfamilie"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
@@ -2093,7 +2092,7 @@ msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
-msgstr "Keine aktive Person gesetzt."
+msgstr "Keine aktive Person festgelegt."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
@@ -2123,8 +2122,8 @@ msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
 msgstr ""
-"Pausiert.\n"
-"Drücke fortsetzen für weitere Beziehungen.\n"
+"Angehalten.\n"
+"Klicke auf Weiter, um nach weiteren Beziehungen zu suchen.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
@@ -3002,25 +3001,24 @@ msgstr "Der für die Verweise im Ortsverzeichnis verwendete Stil."
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
 msgid "Descendant Count"
-msgstr "Anzahl der Nachkommen"
+msgstr "Nachkomme Zählen"
 
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
-msgstr "Gramplet zum zeigen der Personen und der Anzahl ihrer Nachkommen"
+msgstr "Gramplet zur Anzeige von Personen und Anzahl der Nachkommen"
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
-msgstr "Nachkommen Linien"
+msgstr "Nachkommenschaftslinien"
 
 #: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
-msgstr "Erstellt Nachkommenlinien einer Person"
+msgstr "Erzeugt Nachkommenlinien einer Person"
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr ""
-"Die Verwendung des SVG-Typs für das Ergänzungsdokument wird nicht "
-"unterstützt!"
+"Die Verwendung des SVG-Typs für ergänzende Dokumente wird nicht unterstützt!"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
@@ -3613,7 +3611,7 @@ msgstr ""
 "Familie A zwei Geschwister der Familie B heiraten. Ihre Kinder sind doppelte "
 "Cousins und Cousinen und haben dieselben vier Großeltern, anstatt sechs wie "
 "normale erste Cousins. Daher sind sie sich genetisch näher als normale "
-"Cousins ersten Grades und teilen 25 % ihrer DNS, ähnlich wie "
+"Cousins ersten Grades und teilen 25 % ihrer DNA, ähnlich wie "
 "Halbgeschwister, anstatt 12,5 % wie normale Cousins ersten Grades.\n"
 
 #: DoubleCousins/double_cousins.py:136
@@ -5569,11 +5567,11 @@ msgstr "Family Finder-Werkzeug"
 
 #: FamilyTreeDNA/ftdna_import.py:104
 msgid "Enter FTDNA Family Finder Filename:"
-msgstr "Gib den FTDNA Family Finder Dateinamen ein:"
+msgstr "FTDNA Family Finder Dateiname eingeben:"
 
 #: FamilyTreeDNA/ftdna_import.py:109
 msgid "Enter FTDNA Chromosome Segment Filename:"
-msgstr "Gib den Dateinamen des FTDNA-Chromosomensegments ein:"
+msgstr "FTDNA-Chromosomen-Segment-Dateiname eingeben:"
 
 #: FamilyTreeDNA/ftdna_import.py:112
 msgid "Import Haplogroups"
@@ -5612,7 +5610,7 @@ msgstr "FamilyTree-DNA-Import"
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
-"{} Verknüpfungen mit DNS-Daten erstellt. {} Haplogruppen-Attribute erstellt "
+"{} Verknüpfungen mit DNA-Daten erstellt. {} Haplogruppen-Attribute erstellt "
 "\n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
@@ -5637,32 +5635,32 @@ msgstr "%s Haplogruppen-Attribut hinzufügen"
 #: FamilyTreeDNA/ftdna_import.py:350
 #, python-format
 msgid "Add %s DNA Association"
-msgstr "DNS-Assoziation %s hinzufügen"
+msgstr "DNA-Assoziation %s hinzufügen"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr "Notiz für %s DNS- Verbindung erstellen"
+msgstr "Notiz für %s DNA- Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:369
 #, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "Notiz zu %s DNS-Assoziation hinzufügen"
+msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
 
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Quellenfundstelle für %s DNS-Verbindung erstellen"
+msgstr "Quellenfundstelle für %s DNA-Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Fundstelle für %s DNS-Verbindung erstellen"
+msgstr "Fundstelle für %s DNA-Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Fundstelle zu %s DNS-Verbindung hinzufügen"
+msgstr "Fundstelle zu %s DNA-Verbindung hinzufügen"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
