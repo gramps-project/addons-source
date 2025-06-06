@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-03 09:24-0700\n"
-"PO-Revision-Date: 2025-06-01 08:03+0000\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -22373,10 +22373,8 @@ msgid ""
 msgstr ""
 
 #: WebSearch.py:468
-#, fuzzy
-#| msgid "Contents of the page"
 msgid "Save Coordinates to the Place"
-msgstr "Innehåll på sidan"
+msgstr "Spara koordinater för platsen"
 
 #: WebSearch.py:609
 msgid "AI provider is disabled"
@@ -22525,10 +22523,9 @@ msgid "Select filter to restrict list"
 msgstr "Välj ett filter för att begränsa lista"
 
 #: activity_row_generator.py:110
-#, fuzzy, python-format
-#| msgid "Birth: %s"
+#, python-format
 msgid "Visited: %s"
-msgstr "Födelse: %s"
+msgstr "Besökt: %s"
 
 #: activity_row_generator.py:114 activity_row_generator.py:129
 #, python-format
@@ -22536,46 +22533,39 @@ msgid "Link: %s"
 msgstr ""
 
 #: activity_row_generator.py:116
-#, fuzzy, python-format
-#| msgid "Set Attribute"
+#, python-format
 msgid "Attribute: %s"
-msgstr "Sätt attribut"
+msgstr "Attribut: %s"
 
 #: activity_row_generator.py:118
-#, fuzzy, python-format
-#| msgid "Key: %s"
+#, python-format
 msgid "Value: %s"
-msgstr "Nyckel: %s"
+msgstr "Värde: %s"
 
 #: activity_row_generator.py:123
-#, fuzzy, python-format
-#| msgid "Select from files"
+#, python-format
 msgid "Loaded from file: %s"
-msgstr "Välj från filer"
+msgstr "Laddad från fil: %s"
 
 #: activity_row_generator.py:126
-#, fuzzy, python-format
-#| msgid "Form: %s"
+#, python-format
 msgid "Domain: %s"
-msgstr "Form: %s"
+msgstr "Domän: %s"
 
 #: activity_row_generator.py:131
-#, fuzzy, python-format
-#| msgid "Death: %s"
+#, python-format
 msgid "Object: %s"
-msgstr "Död: %s"
+msgstr "Objekt: %s"
 
 #: activity_row_generator.py:135
-#, fuzzy, python-format
-#| msgid "Death: %s"
+#, python-format
 msgid "Pattern: %s"
-msgstr "Död: %s"
+msgstr "Mönster: %s"
 
 #: activity_row_generator.py:138
-#, fuzzy, python-format
-#| msgid "The Gramps ID.."
+#, python-format
 msgid "Object Gramps ID: %s"
-msgstr "Gramps-IDt.."
+msgstr "Objektets Gramps-ID: %s"
 
 #: activity_row_generator.py:142
 #, python-format
@@ -22591,16 +22581,12 @@ msgid "Link saved to Note"
 msgstr ""
 
 #: activity_row_generator.py:154
-#, fuzzy
-#| msgid "Add link to attribute"
 msgid "Link saved to Attribute"
-msgstr "Lägg till länk till attribut"
+msgstr "Länk sparad till attribut"
 
 #: activity_row_generator.py:155
-#, fuzzy
-#| msgid "Place title"
 msgid "Place history loaded"
-msgstr "Platsbenämning"
+msgstr "Platshistorik laddad"
 
 #: activity_row_generator.py:156
 msgid "Domain skipped"
@@ -22615,16 +22601,12 @@ msgid "Link hidden for all objects"
 msgstr ""
 
 #: activity_row_generator.py:159
-#, fuzzy
-#| msgid "Attribute type to add or edit"
 msgid "Attribute updated"
-msgstr "Attributtyp add lägga till eller redigera"
+msgstr "Attribut uppdaterat"
 
 #: activity_row_generator.py:160
-#, fuzzy
-#| msgid "Note type"
 msgid "Note updated"
-msgstr "Notistyp"
+msgstr "Anteckning uppdaterad"
 
 #: constants.py:390
 msgid "Column - Icons"
@@ -22842,10 +22824,8 @@ msgid "🧩 WebSearch Gramplet version: `%s`"
 msgstr ""
 
 #: internet_links_loader.py:70 internet_links_loader.py:71
-#, fuzzy
-#| msgid "Without title"
 msgid "No title"
-msgstr "Utan titel"
+msgstr "Ingen titel"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -23282,30 +23262,20 @@ msgstr ""
 "till din föredragna webbnavigator ..."
 
 #: markdown_place_history_formatter.py:52
-#, fuzzy
-#| msgid "No data available in table"
 msgid "No data available."
-msgstr "Ingen data tillgänglig i tabellen"
+msgstr "Ingen data tillgänglig."
 
 #: markdown_place_history_formatter.py:57
 msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
 msgstr ""
 
 #: markdown_place_history_formatter.py:58
-#, fuzzy
-#| msgid ""
-#| "Found relation #%d: \n"
-#| "   "
 msgid "Foundation date:"
-msgstr ""
-"Hittade släktskap #%d: \n"
-"   "
+msgstr "Grunddatum:"
 
 #: markdown_place_history_formatter.py:60
-#, fuzzy
-#| msgid "Fix Coordinates"
 msgid "Coordinates:"
-msgstr "Laga koordinater"
+msgstr "Koordinater:"
 
 #: markdown_place_history_formatter.py:61
 msgid "Administrative history"
@@ -23316,28 +23286,20 @@ msgid "Data provided to AI:"
 msgstr ""
 
 #: markdown_place_history_formatter.py:64
-#, fuzzy
-#| msgid "reverse hierarchy"
 msgid "Full hierarchy"
-msgstr "omvänd hierarki"
+msgstr "Fullständig hierarki"
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Place Types"
 msgid "Place Type:"
-msgstr "Platstyper"
+msgstr "Platstyp:"
 
 #: markdown_place_history_formatter.py:69
-#, fuzzy
-#| msgid "Last Resident"
 msgid "Last Retrieved At:"
-msgstr "Den sista boende"
+msgstr "Senast hämtad vid:"
 
 #: note_links_loader.py:69
-#, fuzzy
-#| msgid "No file parsed..."
 msgid "Note Link (parsed)"
-msgstr "Ingen fil tolkades..."
+msgstr "Anteckningslänk (tolkades)"
 
 #: note_links_loader.py:124
 msgid "Note Link (internal)"
