@@ -40,4 +40,5 @@ register(
     ),
     version="1.0.0",
     gramps_target_version="6.0",
+    help_url="Addon:DescendantSpaceTree",
 )
