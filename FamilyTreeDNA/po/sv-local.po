@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,10 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "FamilyTree DNA"
 msgstr "FamilyTree DNA"
+
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr "Verktyg för att importera FamilyFinder DNA-data från Family Tree"
 
 msgid "Family Finder Tool"
 msgstr "Verktyg för familjesläktskap"
@@ -23,8 +26,14 @@ msgstr "Verktyg för familjesläktskap"
 msgid "Enter FTDNA Family Finder Filename:"
 msgstr "Ange filnamn för FTDNA Family Finder:"
 
+msgid "Enter FTDNA Chromosome Segment Filename:"
+msgstr "Ange FTDNA-kromosomsegmentets filnamn:"
+
 msgid "Import Haplogroups"
 msgstr "Importera Haplogrupper"
+
+msgid "FTDNA Note string :"
+msgstr "FTDNA-anteckningssträng :"
 
 msgid "Shared Citation ID :"
 msgstr "Delat citerings-ID :"
@@ -32,16 +41,57 @@ msgstr "Delat citerings-ID :"
 msgid "Active Person : "
 msgstr "Aktiv person : "
 
+msgid "Import data from Family Finder files"
+msgstr "Importera data från Family Finder-filer"
+
 msgid "Close the Family Finder Tool"
 msgstr "Stäng verktyget för familjesläktskap"
 
+msgid "Read Help manual"
+msgstr "Läs hjälpmanualen"
+
 msgid "FamilyTree DNA Import"
 msgstr "FamilyTree DNA import"
+
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr "{} Kopplingar med DNA-data skapades. {} haplogruppattribut skapade \n"
+
+msgid "No Family Finder File specified"
+msgstr "Ingen Family Finder-fil specificerad"
+
+msgid "No Segment File specified"
+msgstr "Ingen segmentfil specificerad"
+
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr ""
+"Inga kopplingar hittades i FTdna-anteckningarna. Inga haplogruppattribut "
+"skapades."
+
+#, python-format
+msgid "Add %s haplogroup attribute"
+msgstr "Lägg till %s haplogruppattribut"
 
 #, python-format
 msgid "Add %s DNA Association"
 msgstr "Lägg till %s DNA-förening"
 
 #, python-format
+msgid "Create Note for %s DNA Association"
+msgstr "Skapa anteckning för %s DNA-kopplingen"
+
+#, python-format
 msgid "Add Note to %s DNA Association"
 msgstr "Lägg till anteckning till %s DNA-förening"
+
+#, python-format
+msgid "Create Source Citation for %s DNA Association"
+msgstr "Skapa källhänvisning för %s DNA-kopplingen"
+
+#, python-format
+msgid "Create Citation for %s DNA Association"
+msgstr "Skapa citering för %s DNA-kopplingen"
+
+#, python-format
+msgid "Add Citation to %s DNA Association"
+msgstr "Lägg till citering till %s DNA-kopplingen"

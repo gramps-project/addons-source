@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -15,14 +15,269 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "Select Form"
+msgstr "Valintalomake"
+
 msgid "Order"
 msgstr "Järjestys"
+
+msgid "Edit Form"
+msgstr "Muokkaussivu"
+
+msgid "Reference:"
+msgstr "Viite:"
+
+msgid "Headings"
+msgstr "Otsikot"
+
+msgid "Page No."
+msgstr "Sivunumero"
+
+msgid "Enumeration Date"
+msgstr "Luettelopäivä"
+
+msgid "Number of students"
+msgstr "Oppilaiden määrä"
+
+msgid "Family No."
+msgstr "Perheen numero"
+
+msgid "Other Cattle"
+msgstr "Muuta karjaa"
+
+msgid "Peas and Beans"
+msgstr "Herneet ja pavut"
+
+msgid "Number of days ill"
+msgstr "Sairaspäivien määrä"
+
+msgid "Relationship to head"
+msgstr "Suhde päähenkilöön"
 
 msgid "Owner"
 msgstr "Omistaja"
 
+msgid "Number of years in US"
+msgstr "Vuosia Yhdysvalloissa"
+
+msgid "Able to read"
+msgstr "Lukutaitoinen"
+
+msgid "Date Discharged"
+msgstr "Kotiutumispäivämäärä"
+
+msgid "Street Address"
+msgstr "Katuosoite"
+
+msgid "Relation to head"
+msgstr "Suhde päähenkilöön"
+
+msgid "Number of children living"
+msgstr "Elävien lasten määrä"
+
+msgid "Number of farm schedule"
+msgstr "Maatilasuunnitelmien lukumäärä"
+
+msgid "Industry"
+msgstr "Teollisuus"
+
+msgid "Unincorporated place"
+msgstr "Rekisteröimätön paikka"
+
+msgid "Institution"
+msgstr "Laitos"
+
+msgid "Color/Race"
+msgstr "Väri/Rotu"
+
+msgid "Type of work"
+msgstr "Työn tyyppi"
+
+msgid "Date of Birth"
+msgstr "Syntymäpäivä"
+
+msgid "Enlistment Place"
+msgstr "Värväytyspaikka"
+
+msgid "Other service, if any"
+msgstr "Mahdollinen muu palvelu"
+
+msgid "Number of Regiment"
+msgstr "Rykmentin numero"
+
+msgid "Where imprisoned"
+msgstr "Missä vangittiin"
+
+msgid "Date married"
+msgstr "Avioliiton päivämäärä"
+
+msgid "Street Name"
+msgstr "Kadunnimi"
+
+msgid "Relation to Family"
+msgstr "Suhde perheeseen"
+
+msgid "Number of Colleges"
+msgstr "Yliopistojen lukumäärä"
+
+msgid "Number of Pupils"
+msgstr "Oppilaiden määrä"
+
+msgid "Number of cattle sold"
+msgstr "Myydyn karjan määrä"
+
+msgid "Section"
+msgstr "Osa"
+
+msgid "Birthplace"
+msgstr "Syntymäpaikka"
+
+msgid "Relation"
+msgstr "Suhde"
+
+msgid "Parents Place of Marriage"
+msgstr "Vanhempien vihkipaikka"
+
+msgid "Personal Property"
+msgstr "Henkilökohtainen omaisuus"
+
+msgid "Number of house"
+msgstr "Talon numero"
+
+msgid "Condition"
+msgstr "Ehto"
+
+msgid "Name of Village"
+msgstr "Kylän nimi"
+
+msgid "Number of times married"
+msgstr "Avioliittojen lukumäärä"
+
+msgid "Number of years in the US"
+msgstr "Vuosa Yhdysvalloissa"
+
 msgid "Ancestry"
 msgstr "Esivanhemmat"
 
+msgid "in"
+msgstr "paikassa"
+
 msgid "of"
 msgstr "/"
+
+msgid "Residing in the"
+msgstr "Asuinpaikka"
+
+msgid "Date of birth"
+msgstr "Syntymäpäivä"
+
+msgid "Date of Death"
+msgstr "Kuolinpävä"
+
+msgid "Date of Burial"
+msgstr "Hautauspäivä"
+
+msgid "Burial Date"
+msgstr "Hautauspäivä"
+
+msgid "in the Counties of"
+msgstr "piirikunnissa"
+
+msgid "Nearest Relative"
+msgstr "Lähisukulainen"
+
+msgid "Hair Color"
+msgstr "Hiusten väri"
+
+msgid "Other characteristics"
+msgstr "Muut tuntomerkit"
+
+msgid "Place entered"
+msgstr "Annettu paikka"
+
+msgid "Eye color"
+msgstr "Silmien väri"
+
+msgid "Event Place (Original)"
+msgstr "Tapahtumapaikka (alkuperäinen)"
+
+msgid "Relation to Head of Family"
+msgstr "Suhde perheenpäähän"
+
+msgid "Village or Hamlet"
+msgstr "Kylä tai taajama"
+
+msgid "Number of Rooms"
+msgstr "Huoneiden määrä"
+
+msgid "Personal Occupation"
+msgstr "Henkilön ammatti"
+
+msgid "Nationality"
+msgstr "Kansallisuus"
+
+msgid "Number of living children"
+msgstr "Elossa olevien lasten määrä"
+
+msgid "Relation to Head"
+msgstr "Suhde päähenkilöön"
+
+msgid "Head of Family"
+msgstr "Perheenpää"
+
+msgid "Enumerator"
+msgstr "Luetelma"
+
+msgid "BirthPlace"
+msgstr "Syntymäpaikka"
+
+msgid "9. Married or Single"
+msgstr "9. Naimisissa tai naimaton"
+
+msgid "Coloured"
+msgstr "Värillinen"
+
+msgid "6.Families"
+msgstr "6. Perheet"
+
+msgid "13. Origin"
+msgstr "13. Alkuperä"
+
+msgid "6. Families"
+msgstr "6. Perheet"
+
+msgid "5. Families"
+msgstr "5. Perheet"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. Suhde perheenpäähän"
+
+msgid "Colour"
+msgstr "Väri"
+
+msgid "5. Colour"
+msgstr "5. Väri"
+
+msgid "BirthYear"
+msgstr "Syntymävuosi"
+
+msgid "PageRef"
+msgstr "Sivuviite"
+
+msgid "Buildings"
+msgstr "Rakennukset"
+
+msgid "Denomination"
+msgstr "Nimitys"
+
+msgid "3.Relation to head of family"
+msgstr "3. Suhde perheenpäähän"
+
+msgid "Wages"
+msgstr "Palkat"
+
+msgid "2. Family"
+msgstr "2. Perhe"
+
+msgid "Type of roof"
+msgstr "Kattotyyppi"

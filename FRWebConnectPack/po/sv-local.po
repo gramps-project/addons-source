@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Cultural ministry (France)"
+msgstr "Kulturministeriet (Frankrike)"
+
+msgid "Genealogical bank"
+msgstr "Genealogical bank"
+
+msgid "OrigineFile (Quebec)"
+msgstr "OrigineFile (Quebec)"
+
+msgid "Cyber genealogy"
+msgstr "Cyber-genealogi"
+
+msgid "RetroNews (Bnf)"
+msgstr "RetroNews (Bnf)"
+
+msgid "Hathi Trust Digital Library (fr)"
+msgstr "Hathi Trust digitala bibliotek (fr)"
+
+msgid "Open Library (fr)"
+msgstr "Open Library (fr)"
+
+msgid "Belgium's Archives"
+msgstr "Belgiens arkiv"
+
+msgid "FR Web Connect Pack"
+msgstr "FR Web Connect Pack"
+
+msgid "Collection of Web sites for the FR (requires libwebconnect)"
+msgstr "Samling av webbplatser för FR (kräver libwebconnect)"

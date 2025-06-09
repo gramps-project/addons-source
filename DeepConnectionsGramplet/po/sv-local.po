@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -28,6 +28,9 @@ msgstr "Paus"
 
 msgid "Copy"
 msgstr "Kopiera"
+
+msgid "mentioned in note"
+msgstr "nämns i anteckningen"
 
 msgid "Note on Family"
 msgstr "Anteckning för familj"

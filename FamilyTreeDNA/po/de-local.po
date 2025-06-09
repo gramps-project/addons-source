@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-19 21:02+0000\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -24,10 +24,10 @@ msgid "Family Finder Tool"
 msgstr "Family Finder-Werkzeug"
 
 msgid "Enter FTDNA Family Finder Filename:"
-msgstr "Gib den FTDNA Family Finder Dateinamen ein:"
+msgstr "FTDNA Family Finder Dateiname eingeben:"
 
 msgid "Enter FTDNA Chromosome Segment Filename:"
-msgstr "Gib den Dateinamen des FTDNA-Chromosomensegments ein:"
+msgstr "FTDNA-Chromosomen-Segment-Dateiname eingeben:"
 
 msgid "Import Haplogroups"
 msgstr "Haplogruppen importieren"
@@ -56,7 +56,7 @@ msgstr "FamilyTree-DNA-Import"
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
-"{} Verknüpfungen mit DNS-Daten erstellt. {} Haplogruppen-Attribute "
+"{} Verknüpfungen mit DNA-Daten erstellt. {} Haplogruppen-Attribute "
 "erstellt \n"
 
 msgid "No Family Finder File specified"
@@ -76,24 +76,24 @@ msgstr "%s Haplogruppen-Attribut hinzufügen"
 
 #, python-format
 msgid "Add %s DNA Association"
-msgstr "DNS-Assoziation %s hinzufügen"
+msgstr "DNA-Assoziation %s hinzufügen"
 
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr "Notiz für %s DNS- Verbindung erstellen"
+msgstr "Notiz für %s DNA- Verbindung erstellen"
 
 #, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "Notiz zu %s DNS-Assoziation hinzufügen"
+msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
 
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Quellenfundstelle für %s DNS-Verbindung erstellen"
+msgstr "Quellenfundstelle für %s DNA-Verbindung erstellen"
 
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Fundstelle für %s DNS-Verbindung erstellen"
+msgstr "Fundstelle für %s DNA-Verbindung erstellen"
 
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Fundstelle zu %s DNS-Verbindung hinzufügen"
+msgstr "Fundstelle zu %s DNA-Verbindung hinzufügen"

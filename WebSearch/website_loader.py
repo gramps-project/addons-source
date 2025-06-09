@@ -37,14 +37,13 @@ import sys
 from constants import (
     CSV_DIR,
     DEFAULT_ENABLED_FILES,
-    SKIPPED_DOMAIN_SUGGESTIONS_FILE_PATH,
     USER_DATA_CSV_DIR,
     SUPPORTED_NAV_TYPE_VALUES,
     SUPPORTED_SOURCE_TYPE_VALUES,
     CsvColumnNames,
     SourceTypes,
 )
-from models import WebsiteEntry, AIDomainData
+from models import WebsiteEntry, AIDomainData, AIUrlData
 
 
 class WebsiteLoader:
@@ -129,20 +128,6 @@ class WebsiteLoader:
             with open(file_path, "a", encoding="utf-8") as file:
                 file.write(string_value + "\n")
 
-    @staticmethod
-    def load_skipped_domains() -> set:
-        """Loads and returns a set of skipped domain names from file."""
-        if not os.path.exists(SKIPPED_DOMAIN_SUGGESTIONS_FILE_PATH):
-            return set()
-        with open(SKIPPED_DOMAIN_SUGGESTIONS_FILE_PATH, "r", encoding="utf-8") as file:
-            return {line.strip() for line in file if line.strip()}
-
-    @staticmethod
-    def save_skipped_domain(domain: str):
-        """Saves a domain name to the skipped domains file."""
-        with open(SKIPPED_DOMAIN_SUGGESTIONS_FILE_PATH, "a", encoding="utf-8") as file:
-            file.write(domain + "\n")
-
     @classmethod
     def load_websites(cls, config_ini_manager):
         """
@@ -211,6 +196,7 @@ class WebsiteLoader:
                                 url_pattern=url,
                                 comment=comment,
                                 is_custom_file=is_custom_file,
+                                source_file_path=selected_file_path,
                             )
                         )
 
@@ -239,9 +225,62 @@ class WebsiteLoader:
         """
         selected_csv_files = cls.get_selected_csv_files(config_ini_manager)
 
-        community_country_codes = set()
-        regular_country_codes = set()
+        country_codes = set()
         regular_domains = set()
+        include_global = False
+
+        for selected_file_path in selected_csv_files:
+
+            if not os.path.exists(selected_file_path):
+                continue
+
+            file_identifier = cls.extract_file_identifier(selected_file_path)
+            country_code, source_type = cls.parse_file_identifier(file_identifier)
+            if source_type == SourceTypes.COMMON.value:
+                include_global = True
+
+            if source_type == SourceTypes.COMMUNITY.value and country_code:
+                country_codes.add(country_code)
+
+            with open(selected_file_path, "r", encoding="utf-8") as csvfile:
+                reader = csv.DictReader(csvfile)
+                reader.fieldnames = [
+                    name.strip() if name else name for name in reader.fieldnames
+                ]
+
+                for row in reader:
+                    if not row:
+                        continue
+                    url = row.get(CsvColumnNames.URL.value, "").strip()
+                    if not url:
+                        continue
+
+                    if source_type in [
+                        SourceTypes.COMMON.value,
+                        SourceTypes.UID.value,
+                        SourceTypes.STATIC.value,
+                        SourceTypes.CROSS.value,
+                        SourceTypes.ARCHIVE.value,
+                        SourceTypes.FORUM.value,
+                    ]:
+                        domain = url.split("/")[2] if "//" in url else url
+                        regular_domains.add(domain)
+
+        return AIDomainData(
+            country_codes=country_codes,
+            regular_domains=regular_domains,
+            include_global=include_global,
+        )
+
+    @classmethod
+    def get_urls_data(cls, config_ini_manager):
+        """
+        Scans selected CSV files and extracts urls, country_codes and URLs
+        grouped by source type.
+        """
+        selected_csv_files = cls.get_selected_csv_files(config_ini_manager)
+
+        country_codes = set()
         community_urls = set()
         include_global = False
 
@@ -256,10 +295,7 @@ class WebsiteLoader:
                 include_global = True
 
             if source_type == SourceTypes.COMMUNITY.value and country_code:
-                community_country_codes.add(country_code)
-
-            elif country_code:
-                regular_country_codes.add(country_code)
+                country_codes.add(country_code)
 
             with open(selected_file_path, "r", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
@@ -276,14 +312,9 @@ class WebsiteLoader:
 
                     if source_type == SourceTypes.COMMUNITY.value:
                         community_urls.add(url)
-                    else:
-                        domain = url.split("/")[2] if "//" in url else url
-                        regular_domains.add(domain)
 
-        return AIDomainData(
-            community_country_codes=community_country_codes,
-            regular_country_codes=regular_country_codes,
-            regular_domains=regular_domains,
+        return AIUrlData(
+            country_codes=country_codes,
             community_urls=community_urls,
             include_global=include_global,
         )

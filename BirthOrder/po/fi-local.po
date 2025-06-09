@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -33,6 +33,21 @@ msgstr "Kaikki perheet on järjestyksessä"
 
 msgid "No children were out of birth order."
 msgstr "Mikään lapsi ei ollut väärässä paikassa syntymäjärjestyksessä."
+
+msgid "Edit Families"
+msgstr "Muikkaa perheitä"
+
+msgid "Looking for children birth order"
+msgstr "Haetaan lapset syntymäjärjestyksessä"
+
+msgid "Select the family you wish to examine."
+msgstr "Valitse perhe, jota haluat tarkastella."
+
+msgid "Accept All"
+msgstr "Hyväksy kaikki"
+
+msgid "This button will sort all of the families listed."
+msgstr "Tällä painikkeella lajitellaan kaikki luetellut perheet."
 
 msgid "Accept All *"
 msgstr "Hyväksy kaikki *"

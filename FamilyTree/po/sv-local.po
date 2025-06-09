@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -20,6 +20,9 @@ msgstr "Släktträd för %s"
 
 msgid "Paper too small"
 msgstr "För litet papper"
+
+msgid "Some elements may not appear or be badly rendered."
+msgstr "Vissa element kanske inte visas eller är dåligt återgivna."
 
 msgid "Anonymous"
 msgstr "Anonym"
@@ -93,6 +96,12 @@ msgstr "Antal ättlingagenerationer som skall tas med i trädet"
 
 msgid "Kekule number of husband"
 msgstr "Kekule-nummer för make"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"Makens Kekule-tal (centralfamiljen). Sätt 0 för att inte visa Kekule-tal"
 
 msgid "Scale to fit on a single page"
 msgstr "Skala för att passa på en enda sida"

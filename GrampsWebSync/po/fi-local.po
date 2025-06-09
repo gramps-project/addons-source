@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,8 +12,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Fetching remote data..."
+msgstr "Haetaan etätietoja..."
+
+msgid "Comparing local and remote data..."
+msgstr "Verrataan paikallisia ja etätietoja..."
 
 msgid "Error while parsing response from server."
 msgstr "Virhe palvelimen vastauksen jäsentämisessä."
+
+msgid "Local changes"
+msgstr "Paikalliset muutokset"
+
+msgid "Modified"
+msgstr "Muutettu"
+
+msgid "Remote changes"
+msgstr "Etämuutokset"
+
+msgid "Both trees are the same."
+msgstr "Puut ovat samoja."
+
+msgid "Applying changes to local database ..."
+msgstr "Muutoksia toteutaan paikalliseen tietokantaan..."
+
+msgid "No changes to apply to local database."
+msgstr "Ei muutoksia paikalliseen tietokantaan."
+
+msgid "Missing locally"
+msgstr "Puuttuu paikallisesti"
+
+msgid "Missing remotely"
+msgstr "Puuttuu etäältä"

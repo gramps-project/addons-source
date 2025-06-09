@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -15,10 +15,19 @@ msgstr ""
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "Descendant Book"
+msgstr "Jälkeläiskirja"
+
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 msgstr ""
 "katso raportti: %(report)s, viite: %(reference)s : %(person)s & %(spouse)s"
+
+msgid "Descendants Report"
+msgstr "Jälkeläisraportti"
+
+msgid "Select filter to restrict people that appear in the report"
+msgstr "Valitse suodatin rajoittamaan raportin henkilöitä"
 
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Näytetäänkö raportissa toistuvat sukupuut."
@@ -32,5 +41,87 @@ msgstr "Sisällysluettelon otsikon tyyli."
 msgid "The style used for the table of contents detail."
 msgstr "Sisällysluettelorivin tyyli."
 
+msgid "Index of Places"
+msgstr "Paikkahakemisto"
+
+msgid "Index of Dates"
+msgstr "Päivämäärähakemisto"
+
+msgid "Index of Names"
+msgstr "Nimihakemisto"
+
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(event_type)s: %(date)s "
+
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(event_type)s: %(date)s - %(place)s "
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid "%(event_name)s:"
+msgstr "%(event_name)s:"
+
+#, python-format
+msgid " %(event_text)s"
+msgstr " %(event_text)s"
+
+#, python-format
+msgid "%(type)s:"
+msgstr "%(type)s:"
+
+msgid "Include Index of Names"
+msgstr "Sisällytä nimihakemisto"
+
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "Sisällytetäänkö nimihakemisto raportin loppuun."
+
+msgid "Include index of Dates"
+msgstr "Sisällytä nimihakemisto"
+
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr "Sisällytetäänkö päivämäärähakemisto raportin loppuun."
+
+msgid "Include index of Places"
+msgstr "Sisällytä paikkahakemisto"
+
+msgid "Whether to include the index of Places at the end of the report."
+msgstr "Sisällytetäänkö paikkahakemisto raportin loppuun."
+
+msgid "The style used for the children list."
+msgstr "Lasten luettelossa käytetty tyyli."
+
 msgid "The style used for the first personal entry."
 msgstr "Henkilön ensimmäisen kappaleen tyyli."
+
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "%s henkilön esipolvien syväkarsinta..."
+
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Esipolvet rajataan %s. henkilöön..."
+
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Haetaan esipolvia %s henkilöltä..."
+
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Tarkastetaan esipolvia %s henkilöltä..."
+
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Haetaan puuttuvia jälkeläisiä %s henkilöltä..."
+
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Vahvistetaan %s henkilön jälkeläisiä rajauksen jälkeen..."

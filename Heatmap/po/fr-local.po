@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-23 22:01+0000\n"
+"PO-Revision-Date: 2025-06-01 08:03+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -92,3 +92,21 @@ msgstr "INFORMATIONS"
 
 msgid "Create a heatmap web report."
 msgstr "Créer un rapport web de carte thermique."
+
+msgid "Stamen Terrain"
+msgstr "Stamen Terrain"
+
+msgid "Stamen Terrain (Background only)"
+msgstr "Stamen Terrain (arrière-plan uniquement)"
+
+msgid "Stamen Toner"
+msgstr "Stamen Toner"
+
+msgid "Stamen Watercolor"
+msgstr "Stamen Aquarelle"
+
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB Matière Noire"

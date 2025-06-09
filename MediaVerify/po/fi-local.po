@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -45,6 +45,9 @@ msgstr "Muodosta"
 msgid "Generate md5 hashes for media objects"
 msgstr "Luo md5-hajautusarvoja mediatiedoille"
 
+msgid "Verify"
+msgstr "Tarkista"
+
 msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
 "Tarkista mediapolut ja ilmoita puuttuvista, kaksoiskappaleista ja "
@@ -64,6 +67,9 @@ msgstr "Korjaa siirrettyjen ja uudelleennimettyjen tiedostojen mediapolut"
 
 msgid "Verify Gramps media using md5 hashes"
 msgstr "Tarkista Gramps-media md5-tiivisteillä"
+
+msgid "Files"
+msgstr "Tiedostot"
 
 msgid "Export results to a text file"
 msgstr "Vie tulokset tekstitiedostoon"
@@ -85,8 +91,14 @@ msgstr ""
 "Mediapolkua ei ole asetettu. Sinun on määritettävä \"Suhteellisten "
 "mediapolkujen peruspolku\" asetuksissa."
 
+msgid "Finding files"
+msgstr "Tiedostojen etsiminen"
+
 msgid "Checking paths"
 msgstr "Polkujen tarkistaminen"
+
+msgid "Fixing file paths"
+msgstr "Tiedostopolkujen korjaaminen"
 
 msgid "Fix media paths"
 msgstr "Mediapolkujen korjaaminen"

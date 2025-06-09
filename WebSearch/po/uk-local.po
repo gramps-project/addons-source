@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-15 16:42+0300\n"
-"PO-Revision-Date: 2025-05-18 05:35+0000\n"
+"POT-Creation-Date: 2025-06-01 14:55+0300\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Максим Горпиніч <maksimgorpinic4@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
@@ -75,6 +75,12 @@ msgstr "Показати посилання з вкладки «Інтернет
 msgid "Show Links From the Notes"
 msgstr "Показати посилання з нотаток"
 
+msgid "Enable AI-generated historical place data"
+msgstr "Увімкнути історичні дані про місця, згенеровані штучним інтелектом"
+
+msgid "Custom country code for AI notes (optional)"
+msgstr "Спеціальний код країни для нотаток AI (необов'язково)"
+
 msgid "Enable CSV Files"
 msgstr "Увімкнути файли CSV"
 
@@ -93,6 +99,221 @@ msgid ""
 msgstr ""
 "Індивідуальні запити для онлайн-сервісів на основі активного запису про "
 "особу, місце, сім’ю або джерело"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "Відвідано: %s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "Посилання: %s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "Атрибут: %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "Значення: %s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Завантажено з файлу: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "Домен: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "Об'єкт: %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "Візерунок: %s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Ідентифікатор об'єкта Gramps: %s"
+
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+msgid "Link visited"
+msgstr "Посилання відвідано"
+
+msgid "Link saved to Note"
+msgstr "Посилання збережено в нотатці"
+
+msgid "Link saved to Attribute"
+msgstr "Посилання збережено до атрибута"
+
+msgid "Place history loaded"
+msgstr "Історія місць завантажена"
+
+msgid "Domain skipped"
+msgstr "Домен пропущено"
+
+msgid "Link hidden for object"
+msgstr "Посилання приховано для об'єкта"
+
+msgid "Link hidden for all objects"
+msgstr "Посилання приховано для всіх об'єктів"
+
+msgid "Attribute updated"
+msgstr "Атрибут оновлено"
+
+msgid "Note updated"
+msgstr "Примітку оновлено"
+
+msgid "Note Link (parsed)"
+msgstr "Посилання на нотатку (проаналізовано)"
+
+msgid "Note Link (internal)"
+msgstr "Посилання на примітку (внутрішнє)"
+
+msgid "Note Link (external)"
+msgstr "Посилання на примітку (зовнішнє)"
+
+msgid "No title"
+msgstr "Без назви"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Про веб-пошук"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch — це граплет для Gramps, який допомагає вам шукати інформацію на "
+"вебсайтах, пов'язаних з генеалогією."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Він підтримує шаблони посилань на основі CSV, виявлення сайтів за допомогою "
+"штучного інтелекту та пряму інтеграцію з нотатками та атрибутами."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Інформація про систему"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Відсутній:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Ця бібліотека Python недоступна у вашій системі."
+
+msgid "Without it, QR code generation will not work."
+msgstr "Без нього генерація QR-коду не працюватиме."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Зазвичай встановлюється за допомогою: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Примітка: Деякі операційні системи або середовища можуть вимагати "
+"альтернативних методів встановлення.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Відсутнє:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr "ℹ️ Ця бібліотека необхідна для доступу до функцій на базі OpenAI."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Без нього пропозиції сайтів, створені штучним інтелектом, та історія місць "
+"будуть вимкнені."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Зазвичай встановлюється за допомогою: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Відсутнє:** `запити`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Ця бібліотека використовується для зв'язку з веб-API."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "Без нього зовнішні джерела даних можуть бути недоступні."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Зазвичай встановлюється за допомогою: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Розташування файлів даних"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Нижче наведено шляхи до системних та користувацьких файлів даних, що "
+"використовуються WebSearch."
+
+msgid "#### CSV File Paths"
+msgstr "#### Шляхи до CSV-файлів"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **Шлях до системи:** `{dir|%s}` – містить вбудовані CSV-файли"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Шлях, визначений користувачем:** `{dir|%s}` – для власних CSV-файлів, "
+"визначених користувачем"
+
+msgid "#### JSON File Paths"
+msgstr "#### Шляхи до JSON-файлів"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Шлях до системи:** `{dir|%s}` – містить вбудований файл "
+"attribute_mapping.json"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Шлях, визначений користувачем:** `{dir|%s}` – для власного файлу "
+"attribute_mapping.json, визначеного користувачем"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Порада: натисніть будь-який шлях вище, щоб відкрити його у файловому "
+"менеджері.*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 Переглянути детальне використання в: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 Підтримка"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Створено та підтримується Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Щоб отримати допомогу або відгук, не соромтеся згадати `@Urchello` на "
+"форумі Gramps:"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr ""
+"✅ Звіти про помилки та запити на нові функції абсолютно **безкоштовні**."
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 Версія Gramplet WebSearch: `%s`"
 
 msgid "Column - Icons"
 msgstr "Колонка - Іконки"
@@ -147,8 +368,41 @@ msgstr "Піктограма – URL-адреси з вкладки «Інтер
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
 msgstr "Піктограма – URL-адреси з вкладки «Нотатки» (піктограма «N»)"
 
+msgid "No data available."
+msgstr "Дані недоступні."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "ІСТОРИЧНИЙ АДМІНІСТРАТИВНИЙ ПОДІЛ"
+
+msgid "Foundation date:"
+msgstr "Дата заснування:"
+
+msgid "Note:"
+msgstr "Примітка:"
+
+msgid "Coordinates:"
+msgstr "Координати:"
+
+msgid "Administrative history"
+msgstr "Адміністративна історія"
+
+msgid "Data provided to AI:"
+msgstr "Дані, що надаються ШІ:"
+
+msgid "Full hierarchy"
+msgstr "Повна ієрархія"
+
+msgid "Place Type:"
+msgstr "Тип місця:"
+
+msgid "Last Retrieved At:"
+msgstr "Останнє отримання:"
+
 msgid "QR-code"
 msgstr "QR-код"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Відсутня залежність \"qrcode\""
 
 msgid ""
 "⚠ Error generating QR code:\n"
@@ -156,6 +410,27 @@ msgid ""
 msgstr ""
 "⚠ Помилка генерації QR-коду:\n"
 "Оригінальна помилка: “{}”"
+
+msgid "Save Coordinates to the Place"
+msgstr "Зберегти координати місця"
+
+msgid "AI provider is disabled"
+msgstr "Постачальника штучного інтелекту вимкнено"
+
+msgid "No AI API key provided"
+msgstr "Ключ API штучного інтелекту не надано"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr ""
+"Дані про історичні місця, згенеровані штучним інтелектом, наразі вимкнено"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"Постачальник штучного інтелекту невідомий. Перевірте налаштування "
+"постачальника штучного інтелекту."
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Генерування історичних даних про місця, зачекайте..."
 
 msgid "Keys"
 msgstr "Ключі"
@@ -181,8 +456,20 @@ msgstr "Приховати посилання для вибраного елем
 msgid "Hide link for all items"
 msgstr "Приховати посилання для всіх елементів"
 
+msgid "Edit Attribute with the Link"
+msgstr "Редагувати атрибут за допомогою посилання"
+
+msgid "Edit Note with the Link"
+msgstr "Редагувати нотатку за допомогою посилання"
+
 msgid "🔍 AI Suggestions"
 msgstr "🔍 екомендації AI"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "Атрибут більше не існує. Додатковий значок видалено"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "Нотатки більше не існує. Додатковий значок видалено"
 
 #, python-brace-format
 msgid ""

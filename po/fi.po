@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"POT-Creation-Date: 2025-06-03 09:24-0700\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -45,10 +45,8 @@ msgid "Display all names of all people"
 msgstr "Näytä kaikkien henkilöiden nimet"
 
 #: AllNamesQuickview/AllNames.py:54
-#, fuzzy
-#| msgid "Media Type"
 msgid "Name Type"
-msgstr "Mediatyyppi"
+msgstr "Nimen tyyppi"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
@@ -93,7 +91,6 @@ msgid "Number of theoretical Ancestors "
 msgstr "Teoreettisten esi-isien lukumäärä "
 
 #: AncestorFill/AncestorFill.py:210
-#, fuzzy
 msgid "Pedigree Collapse "
 msgstr "Sukutaulun romahdus "
 
@@ -557,22 +554,16 @@ msgid "Biography for %s"
 msgstr "Henkilön %s elämäkerta"
 
 #: BirthOrder/birthorder.glade:56
-#, fuzzy
-#| msgid "Select the difference you wish to examine."
 msgid "Select the family you wish to examine."
-msgstr "Valitse ero, jota haluat tarkastella."
+msgstr "Valitse perhe, jota haluat tarkastella."
 
 #: BirthOrder/birthorder.glade:155
-#, fuzzy
-#| msgid "Select All"
 msgid "Accept All"
-msgstr "Valitse kaikki"
+msgstr "Hyväksy kaikki"
 
 #: BirthOrder/birthorder.glade:159
-#, fuzzy
-#| msgid "This button will replace your tree data with the imported data."
 msgid "This button will sort all of the families listed."
-msgstr "Painikkeella korvataan sukupuusi tiedot tuodulla tiedolla."
+msgstr "Tällä painikkeella lajitellaan kaikki luetellut perheet."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
@@ -622,8 +613,8 @@ msgid ""
 "move, and use 'Up' or 'Down' buttons below to move them."
 msgstr ""
 "Kun olet tyytyväinen, hyväksy järjestys painamalla 'Hyväksy'. Jos haluat "
-"muuttaa järjestystä, valitse siirrettävä lapsi ja siirrä 'Ylös' / "
-"'Alas'-painikkeilla."
+"muuttaa järjestystä, valitse siirrettävä lapsi ja siirrä 'Ylös' / 'Alas'-"
+"painikkeilla."
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
@@ -649,16 +640,12 @@ msgid "No children were out of birth order."
 msgstr "Mikään lapsi ei ollut väärässä paikassa syntymäjärjestyksessä."
 
 #: BirthOrder/birthorder.py:204
-#, fuzzy
-#| msgid "Automark Families"
 msgid "Edit Families"
-msgstr "Automaattisesti merkityt perheet"
+msgstr "Muikkaa perheitä"
 
 #: BirthOrder/birthorder.py:275
-#, fuzzy
-#| msgid "Looking for place fields"
 msgid "Looking for children birth order"
-msgstr "Etsitään paikkatietoja"
+msgstr "Haetaan lapset syntymäjärjestyksessä"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
@@ -958,25 +945,20 @@ msgid ""
 msgstr "Yritetään korjata etunimien isot alkukirjaimet koko tietokannasta."
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
-#, fuzzy
 msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr "manual|Fix_Capitalization_of_Given_Names..."
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking Given Names"
-msgstr "Tarkistetaan paikkojen nimiä"
+msgstr "Tarkistetaan etunimiä"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
 msgstr "Etsitään etunimiä"
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Affected Names"
-msgstr "Vaihtoehtoinen nimi"
+msgstr "Liittyvät nimet"
 
 #: ChangeGivenNames/changenames.glade:32
 msgid ""
@@ -989,38 +971,36 @@ msgstr ""
 "Valitse muunnettavat nimet Grampsille. "
 
 #: ChangeGivenNames/changenames.glade:107
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Edit selection"
-msgstr "Sivujen valinta"
+msgstr "Muokkaa valintaa"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "Tyhjennä paikan nimi, jos se ei täsmää"
 
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr ""
+msgstr "Kopioi paikan nimi uuteen lisätietoon."
 
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "Liitä tunniste valittuihin paikkoihin."
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
-msgstr ""
+msgstr "sarake"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
-msgstr ""
+msgstr "Tarkasta paikkojen nimet"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
-msgstr ""
+msgstr "Tarkasta paikkojen nimet"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "Tarkasta paikan nimi"
 
 #: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
@@ -1036,33 +1016,35 @@ msgstr "Erot"
 
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
-msgstr ""
+msgstr "Ei tarvitse muuttaa"
 
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
-msgstr ""
+msgstr "Muutoksia ei tarvita."
 
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
-msgstr ""
+msgstr "Vanhempi paikka"
 
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
-msgstr ""
+msgstr "Moukkaa paikannimiä"
 
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
-msgstr ""
+msgstr "Paikannimet"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Parannettu"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"Parannettu lainauksen muotoilu lisäämällä arkiston ja puhelinnumeron "
+"vakiotoimintoihin."
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
@@ -1091,10 +1073,8 @@ msgid "Clock"
 msgstr ""
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for demonstrating Cairo graphics"
-msgstr "Gramplet henkilöiden merkintään valokuvissa"
+msgstr "Gramplet Kairon grafiikan esittelyyn"
 
 #: CombinedView/basepage.py:493
 #, python-format
@@ -1425,12 +1405,10 @@ msgid "Entire node."
 msgstr "Koko solmu."
 
 #: D3Charts/DescendantIndentedTree.py:1901
-#, fuzzy
 msgid "Arrow images at start of node."
 msgstr "Nuolikuviot solmun lähtöpisteessä."
 
 #: D3Charts/DescendantIndentedTree.py:1902
-#, fuzzy
 msgid "Plus/Minus images at start of node."
 msgstr "Plus/miinusmerkit solmun alussa."
 
@@ -1583,16 +1561,12 @@ msgid "The font size in pixels for biography body text."
 msgstr "Elämäkerran kirjainkoko pikseleinä."
 
 #: DEWebConnectPack/DEWebPack.gpr.py:11
-#, fuzzy
-#| msgid "UK Web Connect Pack"
 msgid "DE Web Connect Pack"
-msgstr "UK Web Connect Pack"
+msgstr "Saksan Web Connect Pack"
 
 #: DEWebConnectPack/DEWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
+msgstr "Nettisivustojen kokoelma DE (vaatii libwebconnectin)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
@@ -1605,16 +1579,12 @@ msgid "FamilySearch.org"
 msgstr "Englannin FamilySearch.org"
 
 #: DEWebConnectPack/DEWebPack.py:42
-#, fuzzy
-#| msgid "National Archives"
 msgid "Google Archives"
-msgstr "National Archives UK"
+msgstr "Google-arkisto"
 
 #: DEWebConnectPack/DEWebPack.py:43
-#, fuzzy
-#| msgid "UK Google"
 msgid "DE Google"
-msgstr "Google UK"
+msgstr "Google DE"
 
 #: DEWebConnectPack/DEWebPack.py:44 UKWebConnectPack/UKWebPack.py:39
 #: USWebConnectPack/USWebPack.py:42
@@ -1627,37 +1597,35 @@ msgstr ""
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
-msgstr ""
+msgstr "GenWiki"
 
 #: DEWebConnectPack/DEWebPack.py:47
-#, fuzzy
-#| msgid "Hathi Trust Digital Library"
 msgid "German digital library"
-msgstr "Hathi Trust Digital kirjasto"
+msgstr "Saksan digitaalinen kirjasto"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
-msgstr ""
+msgstr "DNA-segmenttikartta"
 
 #: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
-msgstr ""
+msgstr "Gramplet, joka näyttää vastaavan DNA-segmenttikartan"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
-msgstr ""
+msgstr "Kromosomi "
 
 #: DNA/dnasegmentmap.py:552
 msgid " Map for "
-msgstr ""
+msgstr " Kartta henkilöstä "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
-msgstr ""
+msgstr "Chr"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "Selitys"
 
 #: DNA/dnasegmentmap.py:761
 msgid ": Grandparent"
@@ -1670,28 +1638,31 @@ msgid ""
 "{0}\n"
 "{1} cMs"
 msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
-msgstr ""
+msgstr " SNPs"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : Alkaen "
 
 #: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
-msgstr ""
+msgstr " päättyen "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s ja %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
 #, python-brace-format
@@ -1712,48 +1683,40 @@ msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
 msgstr ""
+"Tee henkilö aktiiviseksi napsauttamalla\n"
+"Muokkaa hiiren kakkospainikkeella"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "DNA Matches"
-msgstr ""
-"Ei\n"
-"osumia"
+msgstr "DNA-osumia"
 
 #: DNAMatches/dnamatches.gpr.py:30
-#, fuzzy
-#| msgid "Gramplet to manipulate multiple places"
 msgid "Gramplet to display a list of DNA matches"
-msgstr "Gramplet, joka käsittelee useita paikkoja kerrallaan"
+msgstr "Gramplet DNA-osumien luettelon näyttämiseen"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr ""
+msgstr "Suurin seg."
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "Persons"
 msgid "Pers."
-msgstr "Henkilöt"
+msgstr "Henk."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
-msgstr ""
+msgstr "Suhde"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "Yht. DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
-msgstr ""
+msgstr "Yht. segm."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Lähteet"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
@@ -1768,37 +1731,33 @@ msgid "Largest Segment"
 msgstr "Suurin segmentti"
 
 #: DNAMatches/dnamatches.py:159
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Source(s)"
-msgstr "Lähteet valikko"
+msgstr "Lähteet"
 
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
-msgstr ""
+msgstr "Siirry vastaavaan henkilöön kaksoisnapsaututtamalla riviä."
 
 #: DNAMatches/dnamatches.py:195
 msgid "Right click to edit selected association."
-msgstr ""
+msgstr "Muokkaa valittua yhteyttä hiiren kakkospainikkeella."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
-msgstr ""
+msgstr "Merkkien selitykset"
 
 #: DNAMatches/dnamatches.py:228
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "Ei määritelty"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
-#, fuzzy
-#| msgid "M"
 msgid "cM"
-msgstr "M"
+msgstr "cM"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
@@ -1887,8 +1846,6 @@ msgstr "Kopioi aktiiviset tiedot"
 #: DataEntryGramplet/DataEntryGramplet.py:178
 #: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 #: Form/form_us.xml.h:2259
-#, fuzzy
-#| msgid "Find"
 msgid "in"
 msgstr "paikassa"
 
@@ -1984,23 +1941,23 @@ msgstr "Aseta sukupuoli aktiivihenkilölle."
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
-msgstr ""
+msgstr "Pävämäärälaskin"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
-msgstr ""
+msgstr "Suorita päivämäärälaskuja"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "Viitepäivä tai ajanjakso"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "a valid Gramps date"
-msgstr ""
+msgstr "kelvollinen Gramps-päivämäärä"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "Päivämäärä tai ero ±v tai ±v,kk,pv"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -2008,16 +1965,18 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. päivämäärä\n"
+"2. positiivinen tai negatiivinen vuosimäärä\n"
+"3. positiivinen tai negatiivinen arvolista, joka edustaa vuosia, kuukausia "
+"ja päiviä"
 
 #: DateCalculator/DateCalculator.py:96
-#, fuzzy
-#| msgid "Result  "
 msgid "Result"
-msgstr "Tulos "
+msgstr "Tulos"
 
 #: DateCalculator/DateCalculator.py:104
 msgid "Calculate"
-msgstr ""
+msgstr "Laske"
 
 #: DateCalculator/DateCalculator.py:107
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
@@ -2027,20 +1986,20 @@ msgstr "Kopioi"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "Virhe: ensimmäisen lausekkeen päivämäärä on virheellinen"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "Virhe: virheellinen toisen lausekkeen siirtymä"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
 msgid "Error: at least one expression must be a date"
-msgstr ""
+msgstr "Virhe: ainakin toisen lausekkeen on oltava päivämäärä"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
+msgstr "Syötä lauseke yllä oleviin kenttiin ja napsauta Laske."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -2138,7 +2097,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
-msgstr ""
+msgstr "DenominoViso"
 
 #: DenominoViso/DenominoViso.gpr.py:19
 msgid ""
@@ -2146,6 +2105,8 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
+"Luo html-verkkosivun sisältäen graafisen esityksen esivanhemmista/"
+"jälkeläisistä svg-muodossa. Yksilöiden tiedot saa näkyviin hiirellä."
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -2290,10 +2251,8 @@ msgid "Either plot ancestor or descendants graph."
 msgstr "Joko esi-isän tai jälkeläisten kuvaaja."
 
 #: DenominoViso/DenominoViso.py:2573
-#, fuzzy
-#| msgid "Lines type"
 msgid "Display type"
-msgstr "Viivan tyyppi"
+msgstr "Näyttötyyppi"
 
 #: DenominoViso/DenominoViso.py:2574
 msgid "The type of graph to create."
@@ -2623,88 +2582,82 @@ msgstr "rajoitettuna:"
 
 #: DenominoViso/DenominoViso.py:2859
 msgid "to directory:"
-msgstr ""
+msgstr "hakemistoon:"
 
 #: DenominoViso/DenominoViso.py:2861
-#, fuzzy
-#| msgid "Add avatar images..."
 msgid "Save images in ..."
-msgstr "Lisää avatar kuvia..."
+msgstr "Tallenna kuvat kansioon..."
 
 #: DenominoViso/DenominoViso.py:2911
 msgid "should be"
-msgstr ""
+msgstr "pitäisi olla"
 
 #: DenominoViso/DenominoViso.py:2913
-#, fuzzy
-#| msgid "Include media"
 msgid "Included"
-msgstr "Lisää media"
+msgstr "Sisältäen"
 
 #: DenominoViso/DenominoViso.py:2914
 msgid "Excluded"
-msgstr ""
+msgstr "poislukien"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
-msgstr ""
+msgstr "Html-kuoritiedoston nimi"
 
 #: DenominoViso/DenominoViso.py:2955
 msgid "Save HTML-wrapper file as ..."
-msgstr ""
+msgstr "Tallenna html-kuoritiedosto nimellä ..."
 
 #: DenominoViso/DenominoViso.py:2980
 msgid "Give a filename ..."
-msgstr ""
+msgstr "Anna tiedostonimi ..."
 
 #: DenominoViso/DenominoViso.py:3114
-#, fuzzy
-#| msgid "Relative"
 msgid "Relation type"
-msgstr "Sukulaiset"
+msgstr "Sukulaisuus"
 
 #: DenominoViso/DenominoViso.py:3119
 msgid "Use dashed linestyle"
-msgstr ""
+msgstr "Käytä katkoviivaa"
 
 #: DenominoViso/DenominoViso.py:3124
 msgid "Dash length"
-msgstr ""
+msgstr "Viivan pituus"
 
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
-msgstr ""
+msgstr "Välin pituus"
 
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
 msgid "Deep pruning ascendants from %s people..."
-msgstr ""
+msgstr "%s henkilön esipolvien syväkarsinta..."
 
 #: DescendantBooks/CollectAscendants.py:182
 #, python-format
 msgid "Pruning ascendants from %s people..."
-msgstr ""
+msgstr "Esipolvet rajataan %s. henkilöön..."
 
 #: DescendantBooks/CollectAscendants.py:320
 #: DescendantBooks/CollectAscendants.py:413
 #, python-format
 msgid "Getting ascendants from %s people..."
-msgstr ""
+msgstr "Haetaan esipolvia %s henkilöltä..."
 
 #: DescendantBooks/CollectAscendants.py:331
 #, python-format
 msgid "Verifying descendants from %s people..."
-msgstr ""
+msgstr "Tarkastetaan esipolvia %s henkilöltä..."
 
 #: DescendantBooks/CollectAscendants.py:348
 #, python-format
 msgid "Getting missing descendants from %s people..."
-msgstr ""
+msgstr "Haetaan puuttuvia jälkeläisiä %s henkilöltä..."
 
 #: DescendantBooks/CollectAscendants.py:367
 #, python-format
 msgid "Verifying descendants from %s people after pruning..."
-msgstr ""
+msgstr "Vahvistetaan %s henkilön jälkeläisiä rajauksen jälkeen..."
 
 #: DescendantBooks/CollectAscendants.py:383
 #, python-format
@@ -2723,10 +2676,8 @@ msgstr ""
 "katso raportti: %(report)s, viite: %(reference)s : %(person)s & %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:374
-#, fuzzy
-#| msgid "Descendant Generations"
 msgid "Descendants Report"
-msgstr "Jälkeläisten sukupolvet"
+msgstr "Jälkeläisraportti"
 
 #: DescendantBooks/DescendantBookReport.py:423
 #: DescendantBooks/DetailedDescendantBookReport.py:421
@@ -2747,10 +2698,8 @@ msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
-#, fuzzy
-#| msgid "Select filter to restrict people that appear on web site"
 msgid "Select filter to restrict people that appear in the report"
-msgstr "Valitse suodin rajoittamaan henkilöitä jotka näkyvät nettisivustossa"
+msgstr "Valitse suodatin rajoittamaan raportin henkilöitä"
 
 #: DescendantBooks/DescendantBookReport.py:585
 msgid "The style used for the table of contents header."
@@ -2761,10 +2710,8 @@ msgid "The style used for the table of contents detail."
 msgstr "Sisällysluettelorivin tyyli."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
-#, fuzzy
-#| msgid "Descendant Generations"
 msgid "Descendant Book"
-msgstr "Jälkeläisten sukupolvet"
+msgstr "Jälkeläiskirja"
 
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
@@ -2794,22 +2741,16 @@ msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:519
-#, fuzzy
-#| msgid "Indexes pages"
 msgid "Index of Places"
-msgstr "Hakemistosivut"
+msgstr "Paikkahakemisto"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:542
-#, fuzzy
-#| msgid "Indexes pages"
 msgid "Index of Dates"
-msgstr "Hakemistosivut"
+msgstr "Päivämäärähakemisto"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:565
-#, fuzzy
-#| msgid "Find GeoNames"
 msgid "Index of Names"
-msgstr "GeoNames etsintä"
+msgstr "Nimihakemisto"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:571
 msgid "Report, Generation, Person, Name"
@@ -2837,24 +2778,21 @@ msgid "Report: {report}, Generation: {generation}, Person: {person}"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s"
+#, python-format
 msgid "%(event_name)s of %(name)s "
-msgstr "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:810
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s in %(place)s"
+#, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
-msgstr "%(event_type)s: %(date)s - %(place)s"
+msgstr "%(event_type)s: %(date)s - %(place)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:814
 #: DescendantBooks/DetailedDescendantBookReport.py:858
 #: DetDescendantReport-images/detdescendantreporti.py:454
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(place)s"
+#, python-format
 msgid "%(date)s, %(place)s"
-msgstr "%(event_type)s: %(place)s"
+msgstr "%(date)s, %(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
@@ -2866,10 +2804,9 @@ msgstr ""
 #: DescendantBooks/DetailedDescendantBookReport.py:819
 #: DescendantBooks/DetailedDescendantBookReport.py:863
 #: DetDescendantReport-images/detdescendantreporti.py:459
-#, fuzzy, python-format
-#| msgid "Replace"
+#, python-format
 msgid "%(place)s"
-msgstr "Korvaa"
+msgstr "%(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:821
 #, python-format
@@ -2877,14 +2814,12 @@ msgid ". Ref: %(repno)s %(gen)s %(per)s "
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:850
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s"
+#, python-format
 msgid "%(event_name)s:"
-msgstr "%(event_type)s: %(date)s"
+msgstr "%(event_name)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:875
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s"
+#, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
 
@@ -2900,10 +2835,9 @@ msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1294
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(type)s:"
-msgstr "%(type)s: %(value)s"
+msgstr "%(type)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1299
 #, python-format
@@ -2921,40 +2855,28 @@ msgid "Add descendant reference in child list"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1482
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "Include Index of Names"
-msgstr "Lisää todistajat"
+msgstr "Sisällytä nimihakemisto"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1483
-#, fuzzy
-#| msgid "Whether to print the notes type in the notes text"
 msgid "Whether to include the index of Names at the end of the report."
-msgstr "Tulostetaanko muistiinpanoja kirjoittamalla lisätietoja tekstinä"
+msgstr "Sisällytetäänkö nimihakemisto raportin loppuun."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1487
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "Include index of Dates"
-msgstr "Lisää todistajat"
+msgstr "Sisällytä nimihakemisto"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1488
-#, fuzzy
-#| msgid "Whether to print the notes type in the notes text"
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr "Tulostetaanko muistiinpanoja kirjoittamalla lisätietoja tekstinä"
+msgstr "Sisällytetäänkö päivämäärähakemisto raportin loppuun."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1492
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "Include index of Places"
-msgstr "Lisää todistajat"
+msgstr "Sisällytä paikkahakemisto"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1493
-#, fuzzy
-#| msgid "Whether to print the notes type in the notes text"
 msgid "Whether to include the index of Places at the end of the report."
-msgstr "Tulostetaanko muistiinpanoja kirjoittamalla lisätietoja tekstinä"
+msgstr "Sisällytetäänkö paikkahakemisto raportin loppuun."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Include the 'Report appearances' section with each person"
@@ -2968,10 +2890,8 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1566
 #: DetDescendantReport-images/detdescendantreporti.py:1282
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The style used for the children list."
-msgstr "Paikan postinumero, jos sellainen on."
+msgstr "Lasten luettelossa käytetty tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1576
 msgid "The basic style used for Note header."
@@ -3023,22 +2943,16 @@ msgstr ""
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
-#, fuzzy
-#| msgid "Descendant Generations"
 msgid "Descendant Count"
-msgstr "Jälkeläisten sukupolvet"
+msgstr "Jälkeläisten määrä"
 
 #: DescendantCount/DescendantCount.gpr.py:24
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for showing people and descendant counts"
-msgstr "Gramplet henkilöiden merkintään valokuvissa"
+msgstr "Gramplet näyttämään henkilöiden ja jälkeläisten määrän"
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
-#, fuzzy
-#| msgid "Descendant Generations"
 msgid "Descendants Lines"
-msgstr "Jälkeläisten sukupolvet"
+msgstr "Jälkeläislinjat"
 
 #: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
@@ -3049,54 +2963,38 @@ msgid "Using SVG type for supplemental document is not supported!"
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1531
-#, fuzzy
-#| msgid "Date format"
 msgid "Output format"
-msgstr "Päivämäärän muoto"
+msgstr "Tulostusmuoto"
 
 #: DescendantsLines/DescendantsLines.py:1532
-#, fuzzy
-#| msgid "Date format"
 msgid "PNG format"
-msgstr "Päivämäärän muoto"
+msgstr "PNG-muoto"
 
 #: DescendantsLines/DescendantsLines.py:1533
-#, fuzzy
-#| msgid "Date format"
 msgid "SVG format"
-msgstr "Päivämäärän muoto"
+msgstr "SVG-muoto"
 
 #: DescendantsLines/DescendantsLines.py:1534
-#, fuzzy
-#| msgid "Date format"
 msgid "PDF format"
-msgstr "Päivämäärän muoto"
+msgstr "PDF-muoto"
 
 #: DescendantsLines/DescendantsLines.py:1535
-#, fuzzy
-#| msgid "Date format"
 msgid "PS format"
-msgstr "Päivämäärän muoto"
+msgstr "PS-muoto"
 
 #: DescendantsLines/DescendantsLines.py:1536
-#, fuzzy
-#| msgid "The default format for the sources index"
 msgid "The output format to be used"
-msgstr "Lähdeluettelon oletusmuoto"
+msgstr "Käytettävä tulostusmuoto"
 
 #: DescendantsLines/DescendantsLines.py:1541
 msgid "The destination file for the content."
 msgstr "Kohdehakemisto uusille tiedostoille."
 
 #: DescendantsLines/DescendantsLines.py:1545
-#, fuzzy
-#| msgid ""
-#| "The maximum number of generations to include in the ancestor and "
-#| "descendant trees and graphs"
 msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgstr ""
-"Sukupolvien enimmäismäärä, jotka lisätään esivanhempien ja jälkeläisten "
-"sukupuihin ja kaavioihin"
+"Kaavioon sisällytettävien sukupolvien määrä. (0 tarkoittaa rajoittamatonta "
+"määrää)"
 
 #: DescendantsLines/DescendantsLines.py:1550
 msgid "Use d'Aboville descendant numbering system"
@@ -3107,16 +3005,12 @@ msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1555
-#, fuzzy
-#| msgid "Include media"
 msgid "Include an image"
-msgstr "Lisää media"
+msgstr "Näytetäänkö kuva"
 
 #: DescendantsLines/DescendantsLines.py:1556
-#, fuzzy
-#| msgid "Whether to include images and media in the web pages"
 msgid "Whether to include an image if one is available."
-msgstr "Lisätäänkö kuvat ja media nettisivulle"
+msgstr "Sisällytetäänkö kuva, jos sellainen on saatavilla."
 
 #: DescendantsLines/DescendantsLines.py:1560
 msgid "Max Image height"
@@ -3135,22 +3029,16 @@ msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1570
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Image Location"
-msgstr "Sivujen valinta"
+msgstr "Kuvan sijainti"
 
 #: DescendantsLines/DescendantsLines.py:1571
-#, fuzzy
-#| msgid "New text:"
 msgid "Above text"
-msgstr "Uusi teksti:"
+msgstr "Tekstin yläpuolella"
 
 #: DescendantsLines/DescendantsLines.py:1572
-#, fuzzy
-#| msgid "Left to Right"
 msgid "Left of text"
-msgstr "Vasemmalta oikealle"
+msgstr "Tekstin vasemmalla puolella"
 
 #: DescendantsLines/DescendantsLines.py:1573
 msgid "Position of image relative to text"
@@ -3185,10 +3073,8 @@ msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1597
-#, fuzzy
-#| msgid "Avatars style"
 msgid "Text style"
-msgstr "Hahmon tyyli"
+msgstr "Tekstityyli"
 
 #: DescendantsLines/DescendantsLines.py:1598
 msgid "Center-aligned text"
@@ -3268,10 +3154,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1645
-#, fuzzy
-#| msgid "Date format"
 msgid "Display Formats"
-msgstr "Päivämäärän muoto"
+msgstr "Esitysmuodot"
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
@@ -3305,10 +3189,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1697
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Spouse and Family"
-msgstr "Perheen lisätietoja"
+msgstr "Puoliso ja perhe"
 
 #: DescendantsLines/DescendantsLines.py:1699
 msgid "Vertical edge descendant to spouse-bar"
@@ -3337,10 +3219,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1715
-#, fuzzy
-#| msgid "Horizontal spacing between generations"
 msgid "Horizontal space descendant to spouse"
-msgstr "Sukupolvien välinen vaakasuora väli"
+msgstr "Puolison ja jälkeläisen välinen vaakasuora tila"
 
 #: DescendantsLines/DescendantsLines.py:1716
 msgid "The space to add between the descendant and the spouse."
@@ -3372,10 +3252,8 @@ msgid "OL_PAD"
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1736
-#, fuzzy
-#| msgid "Number of pages"
 msgid "The number of ??? pad"
-msgstr "Sivujen määrä"
+msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1739
 msgid "Vertical edge spouse-bar to child-bar"
@@ -3410,10 +3288,8 @@ msgid "The number of ??? min width"
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1762
-#, fuzzy
-#| msgid "Replace text"
 msgid "Space around text"
-msgstr "Korvaa teksti"
+msgstr "Tila tekstin ympärillä"
 
 #: DescendantsLines/DescendantsLines.py:1763
 msgid "The space to add around the text block of a person."
@@ -3479,10 +3355,9 @@ msgid ""
 msgstr ""
 
 #: DetDescendantReport-images/detdescendantreporti.py:471
-#, fuzzy, python-format
-#| msgid "%(event_type)s: %(date)s"
+#, python-format
 msgid "%(event_name)s: %(event_text)s"
-msgstr "%(event_type)s: %(date)s"
+msgstr "%(event_name)s: %(event_text)s"
 
 #: DetDescendantReport-images/detdescendantreporti.py:940
 #: DynamicWeb/dynamicweb.py:1737
@@ -3491,16 +3366,12 @@ msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1177
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "Include TODO notes"
-msgstr "Lisää todistajat"
+msgstr "Sisällytä TODO-lisätietoja"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1178
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include TODO notes."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Sisällytetäänkö tehtävämuistiinpanoja."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1351
 msgid "The style used for image labels."
@@ -3625,16 +3496,12 @@ msgid ""
 msgstr ""
 
 #: DoubleCousins/double_cousins.py:136
-#, fuzzy
-#| msgid "No %s objects were found in database."
 msgid "No double cousins were found in your database."
-msgstr "Tietokannasta ei löytynyt %s kohteita."
+msgstr "Tietokannastasi ei löytynyt kaksoisserkkuja."
 
 #: DoubleCousins/double_cousins.py:170
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show info text"
-msgstr "Näytä piilotetut kohteet"
+msgstr "Näytä infoteksti"
 
 #: DownloadMedia/DownloadMedia.gpr.py:36
 msgid "Download media files from the internet"
@@ -3645,16 +3512,12 @@ msgid "This tool downloads media files from the internet"
 msgstr ""
 
 #: DownloadMedia/DownloadMedia.py:71
-#, fuzzy
-#| msgid "Include media"
 msgid "Download media"
-msgstr "Lisää media"
+msgstr "Lataa mediaa"
 
 #: DownloadMedia/DownloadMedia.py:87
-#, fuzzy
-#| msgid "Media Index"
 msgid "Media downloaded"
-msgstr "Mediahakemisto"
+msgstr "Media ladattu"
 
 #: DownloadMedia/DownloadMedia.py:88
 #, python-format
@@ -3969,7 +3832,6 @@ msgid "SVG tree graph type"
 msgstr "SVG-puun kaaviotyyppi"
 
 #: DynamicWeb/dynamicweb.py:3073 DynamicWeb/dynamicweb.py:5123
-#, fuzzy
 msgid "SVG tree parents distribution"
 msgstr "SVG-puun vanhempien jakauma"
 
@@ -3986,7 +3848,6 @@ msgid "Select the background color scheme"
 msgstr "Valitse taustan värivalikoima"
 
 #: DynamicWeb/dynamicweb.py:3082
-#, fuzzy
 msgid "Select the children distribution (fan charts only)"
 msgstr "Valitse lasten jakautuma (vain viuhkakaavioihin)"
 
@@ -4393,7 +4254,6 @@ msgid "Whether to show the last modification time in the pages footer"
 msgstr "Näytetäänkö sivun muutosaika alatunnisteessa"
 
 #: DynamicWeb/dynamicweb.py:4988
-#, fuzzy
 msgid "Whether to insert sources author in the sources title"
 msgstr "Näytetäänkö lähteen tekijä lähdetiedoissa"
 
@@ -4533,9 +4393,8 @@ msgid "A note to be used as the page header"
 msgstr "Sivun ylätunnisteena käytettävä lisätieto"
 
 #: DynamicWeb/dynamicweb.py:5197
-#, fuzzy
 msgid "HTML user brand name / icon"
-msgstr "HTML-käyttäjän tuotenimi tai kuvake"
+msgstr "HTML tavaramerkki tai kuvake"
 
 #: DynamicWeb/dynamicweb.py:5199
 msgid "A note to be used as the brand name or image in the menu"
@@ -4620,9 +4479,8 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:161
-#, fuzzy
 msgid "Provide a short description for this image."
-msgstr "Lisätäänkö lasten avioliittotiedot."
+msgstr "Anna tälle kuvalle lyhyt kuvaus."
 
 #: EditExifMetadata/editexifmetadata.py:163
 msgid ""
@@ -4704,17 +4562,15 @@ msgstr ""
 #, fuzzy
 #| msgid "Clear tags"
 msgid "Clear GPS"
-msgstr "Poista aiemmat tagit"
+msgstr "Tyhjennä GPS"
 
 #: EditExifMetadata/editexifmetadata.py:214
-#, fuzzy
 msgid "Thumbnail"
-msgstr "Pikkukuvien sijainti"
+msgstr "Pienoiskuva"
 
 #: EditExifMetadata/editexifmetadata.py:402
-#, fuzzy
 msgid "Select an image to begin..."
-msgstr "Valitse mediatiedosto"
+msgstr "Aloita valitsemalla kuva..."
 
 #: EditExifMetadata/editexifmetadata.py:421
 msgid ""
@@ -4753,9 +4609,8 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:726
-#, fuzzy
 msgid "Convert and Delete"
-msgstr "Muunna suhteelliseksi poluksi"
+msgstr "Muunna ja poista"
 
 #: EditExifMetadata/editexifmetadata.py:807
 msgid ""
@@ -4780,9 +4635,8 @@ msgid "There was an error in converting your image file."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:844
-#, fuzzy
 msgid "Media Path Update"
-msgstr "kuolinpäivä"
+msgstr "Mediapolun päivitys"
 
 #: EditExifMetadata/editexifmetadata.py:853
 msgid "There has been an error in updating the image file's path!"
@@ -4818,75 +4672,62 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:969
-#, fuzzy
 msgid "Media Object Title"
-msgstr "Mediatiedostosuotimet"
+msgstr "Mediaobjektin nimi"
 
 #: EditExifMetadata/editexifmetadata.py:978
-#, fuzzy
 msgid "media Title: "
-msgstr "Kalenteriotsikko"
+msgstr "median nimi: "
 
 #: EditExifMetadata/editexifmetadata.py:993
-#, fuzzy
 msgid "General Data"
-msgstr "Yleiset"
+msgstr "Yleistietoa"
 
 #: EditExifMetadata/editexifmetadata.py:1003
-#, fuzzy
 msgid "Description: "
-msgstr "Kuvaus:"
+msgstr "Kuvaus: "
 
 #: EditExifMetadata/editexifmetadata.py:1004
-#, fuzzy
 msgid "Artist: "
-msgstr "Tekijä"
+msgstr "Tekijä: "
 
 #: EditExifMetadata/editexifmetadata.py:1005
-#, fuzzy
 msgid "Copyright: "
-msgstr "Tekijänoikeudet"
+msgstr "Tekijänoikeudet: "
 
 #: EditExifMetadata/editexifmetadata.py:1019
 msgid "Date/ Time"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1034
-#, fuzzy
 msgid "Original: "
-msgstr "Alkuperäinen aika"
+msgstr "Alkuperäinen: "
 
 #: EditExifMetadata/editexifmetadata.py:1035
-#, fuzzy
 msgid "Modified: "
-msgstr "Viimeisin muutos"
+msgstr "Muutettu: "
 
 #: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1069
-#, fuzzy
 msgid "Latitude :"
 msgstr "Leveysaste:"
 
 #: EditExifMetadata/editexifmetadata.py:1070
-#, fuzzy
 msgid "Longitude :"
 msgstr "Pituusaste:"
 
 #: EditExifMetadata/editexifmetadata.py:1071
-#, fuzzy
 msgid "Altitude :"
-msgstr "Leveysaste:"
+msgstr "Korkeus:"
 
 #: EditExifMetadata/editexifmetadata.py:1114
-#, fuzzy
 msgid "Bad Date/Time"
-msgstr "Virheellinen päivämäärä"
+msgstr "Virheellinen päivä tai aika"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
 msgid "Invalid latitude (syntax: 18°9'"
 msgstr "Kelvoton leveysaste (muotoa: 18°9'"
 
@@ -4895,7 +4736,6 @@ msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
 msgid "Invalid longitude (syntax: 18°9'"
 msgstr "Kelvoton pituusaste (muotoa: 18°9'"
 
@@ -4921,14 +4761,12 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1333
-#, fuzzy
 msgid "Media Title Update"
-msgstr "Mediasuotimet"
+msgstr "Median nimen päivitys"
 
 #: EditExifMetadata/editexifmetadata.py:1357
-#, fuzzy
 msgid "Media Object Date Created"
-msgstr "Yksityisiksi merkityt mediatiedostot"
+msgstr "Mediaobjekti luotu"
 
 #: EditExifMetadata/editexifmetadata.py:1422
 msgid "Saving Exif metadata to this image..."
@@ -5043,10 +4881,8 @@ msgid ""
 msgstr ""
 
 #: ExtractCity/changenames.glade:94
-#, fuzzy
-#| msgid "Toggle Selection"
 msgid "_Toggle Selected"
-msgstr "Vaihda valinta"
+msgstr "_Vaihda valinta"
 
 #: ExtractCity/changenames.glade:98
 msgid ""
@@ -5082,16 +4918,12 @@ msgid ""
 msgstr ""
 
 #: FRWebConnectPack/FRWebPack.gpr.py:11
-#, fuzzy
-#| msgid "UK Web Connect Pack"
 msgid "FR Web Connect Pack"
-msgstr "UK Web Connect Pack"
+msgstr "FR Web Connect Pack"
 
 #: FRWebConnectPack/FRWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
-msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
+msgstr "Nettisivustojen kokoelma FR (vaatii libwebconnectin)"
 
 #: FRWebConnectPack/FRWebPack.py:41
 msgid "Cultural ministry (France)"
@@ -5114,24 +4946,18 @@ msgid "RetroNews (Bnf)"
 msgstr ""
 
 #: FRWebConnectPack/FRWebPack.py:58
-#, fuzzy
-#| msgid "Hathi Trust Digital Library"
 msgid "Hathi Trust Digital Library (fr)"
-msgstr "Hathi Trust Digital kirjasto"
+msgstr "Hathi Trust Digital kirjasto (ranska)"
 
 #: FRWebConnectPack/FRWebPack.py:59
-#, fuzzy
-#| msgid "Open Library"
 msgid "Open Library (fr)"
-msgstr "Open Library UK"
+msgstr "Open Library, Ranska"
 
 #: FRWebConnectPack/FRWebPack.py:60
 msgid "Belgium's Archives"
 msgstr ""
 
 #: FaceDetection/FaceDetection.gpr.py:4
-#, fuzzy
-#| msgid "Face detection"
 msgid "Face Detection"
 msgstr "Kasvojentunnistus"
 
@@ -5148,28 +4974,22 @@ msgid "OpenCV-Python is not installed"
 msgstr "OpenCV-Python ei ole asennettu"
 
 #: FaceDetection/FaceDetection.py:72
-#, fuzzy
-#| msgid "Detect faces"
 msgid "Detect New Faces"
-msgstr "Tunnista kasvot"
+msgstr "Tunnista uusia kasvoja"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:103
-#, fuzzy
-#| msgid "Relationship to Mother"
 msgid "Family Relationship Tool"
-msgstr "Suhde äitiin"
+msgstr "Perhesuhteiden työkalu"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
-#, fuzzy
-#| msgid "Automark Families"
 msgid "All Families"
-msgstr "Automaattisesti merkityt perheet"
+msgstr "Kaikki perheet"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:64
 msgid ""
@@ -5178,10 +4998,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:70
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship Type"
-msgstr "Suhde isään"
+msgstr "Perhesuhteen tyyppi"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:71
 msgid ""
@@ -5190,10 +5008,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
-#, fuzzy
-#| msgid "Process tags..."
 msgid "Process relationships..."
-msgstr "Käsittelee tageja..."
+msgstr "Käsittele suhteita..."
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
@@ -5211,10 +5027,9 @@ msgid "\\u2192 %s"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:397
-#, fuzzy, python-format
-#| msgid "%(abbrev)s %(date)s%(place)s"
+#, python-format
 msgid "Address (%(date)s): %(location)s"
-msgstr "%(abbrev)s %(date)s%(place)s"
+msgstr "Osoite (%(date)s): %(location)s"
 
 #: FamilySheet/FamilySheet.py:401
 #, python-format
@@ -5222,16 +5037,13 @@ msgid "Address: %(location)s"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:469
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "; %(type)s: %(value)s"
-msgstr "%(type)s: %(value)s"
+msgstr "; %(type)s: %(value)s"
 
 #: FamilySheet/FamilySheet.py:557
-#, fuzzy
-#| msgid "Set preferences"
 msgid "Source references:"
-msgstr "Määritä asetukset"
+msgstr "Lähdeviitteet:"
 
 #: FamilySheet/FamilySheet.py:575
 #, python-format
@@ -5269,10 +5081,9 @@ msgstr ""
 
 #: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #: FamilyTree/FamilyTree.py:960
-#, fuzzy, python-format
-#| msgid "Print place pages"
+#, python-format
 msgid "in %(place)s"
-msgstr "Tulosta paikkasivut"
+msgstr "paikoissa %(place)s"
 
 #: FamilySheet/FamilySheet.py:864
 msgid "Center person"
@@ -5280,57 +5091,47 @@ msgstr "Keskushenkilö"
 
 #: FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
-msgstr ""
+msgstr "Henkilö, jonka kumppanit ja lapset näytetään"
 
 #: FamilySheet/FamilySheet.py:869
-#, fuzzy
-#| msgid "Print the notes type"
 msgid "Print sheets for"
-msgstr "Tulosta lisätiedon tyyppi"
+msgstr "Tulosta sivu"
 
 #: FamilySheet/FamilySheet.py:871
-#, fuzzy
-#| msgid "The selected person color"
 msgid "Center person only"
-msgstr "Valitun henkilön väri"
+msgstr "vain keskushenkilölle"
 
 #: FamilySheet/FamilySheet.py:872
 msgid "Center person and descendants in side branches"
-msgstr ""
+msgstr "keskushenkilölle ja sivuhaarojenjälkeläisille"
 
 #: FamilySheet/FamilySheet.py:873
 msgid "Center person and all descendants"
-msgstr ""
+msgstr "keskushenkilölle ja kaikille jälkeläisille"
 
 #: FamilySheet/FamilySheet.py:874
-#, fuzzy
-#| msgid "Whether to include images and media in the web pages"
 msgid "Whether to include descendants, and which ones."
-msgstr "Lisätäänkö kuvat ja media nettisivulle"
+msgstr "Sisällytetäänkö jälkeläiset ja mitkä niistä."
 
 #: FamilySheet/FamilySheet.py:880 FamilyTree/FamilyTree.py:1084
 msgid "Replace first name with call name"
-msgstr ""
+msgstr "Korvaa etunimi kutsumanimellä"
 
 #: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
-msgstr ""
+msgstr "Alleviivaa kutsumanimi etunimissä tai lisää kutsumanimi etunimiin"
 
 #: FamilySheet/FamilySheet.py:882
-#, fuzzy
-#| msgid "Whether to include images and media in the web pages"
 msgid "Whether to include call name, and how."
-msgstr "Lisätäänkö kuvat ja media nettisivulle"
+msgstr "Sisällytetäänkö kutsumanimi, miten."
 
 #: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
-msgstr ""
+msgstr "Näytä paikkamerkki puuttuville tiedoille"
 
 #: FamilySheet/FamilySheet.py:909
-#, fuzzy
-#| msgid "The API key used for the Google map"
 msgid "The basic style used for the text display"
-msgstr "Käytetään Google kartat API-avainta"
+msgstr "Teksteille käytetty perustyyli"
 
 #: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
@@ -5353,10 +5154,9 @@ msgid "Produces a graphical family tree."
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:102
-#, fuzzy, python-format
-#| msgid "Timeline for %s"
+#, python-format
 msgid "Family Tree for %s"
-msgstr "Aikajana henkilölle %s"
+msgstr "Sukupuu henkilölle %s"
 
 #: FamilyTree/FamilyTree.py:152
 msgid "Paper too small"
@@ -5387,10 +5187,8 @@ msgid "buried"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:919
-#, fuzzy
-#| msgid "created"
 msgid "cremated"
-msgstr "tuotettu"
+msgstr "tuhkattu"
 
 #: FamilyTree/FamilyTree.py:921
 msgid "married"
@@ -5405,15 +5203,13 @@ msgid "resident"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:971
-#, fuzzy, python-format
+#, python-format
 msgid "(%(description)s)"
-msgstr "Kuvaus:"
+msgstr "(%(description)s)"
 
 #: FamilyTree/FamilyTree.py:1044
-#, fuzzy
-#| msgid "The default format for the sources index"
 msgid "The center family for the tree"
-msgstr "Lähdeluettelon oletusmuoto"
+msgstr "Puun keskusperhe"
 
 #: FamilyTree/FamilyTree.py:1047
 #: TimelinePedigreeView/TimelinePedigreeView.py:1481
@@ -5421,14 +5217,8 @@ msgid "Ancestor Generations"
 msgstr "Esivanhempien sukupolvet"
 
 #: FamilyTree/FamilyTree.py:1048
-#, fuzzy
-#| msgid ""
-#| "The maximum number of generations to include in the ancestor and "
-#| "descendant trees and graphs"
 msgid "The number of ancestor generations to include in the tree"
-msgstr ""
-"Sukupolvien enimmäismäärä, jotka lisätään esivanhempien ja jälkeläisten "
-"sukupuihin ja kaavioihin"
+msgstr "Puuhun sisällytettävien esipolvien lukumäärä"
 
 #: FamilyTree/FamilyTree.py:1051
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
@@ -5436,10 +5226,8 @@ msgid "Descendant Generations"
 msgstr "Jälkeläisten sukupolvet"
 
 #: FamilyTree/FamilyTree.py:1052
-#, fuzzy
-#| msgid "Select the number of descending generations"
 msgid "The number of descendant generations to include in the tree"
-msgstr "Valitse jälkeläisten sukupolvien lukumäärä"
+msgstr "Puuhun sisällytettävien jälkipolvien lukumäärä"
 
 #: FamilyTree/FamilyTree.py:1055
 msgid "Kekule number of husband"
@@ -5456,49 +5244,36 @@ msgid "Scale to fit on a single page"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:1060
-#, fuzzy
-#| msgid "Whether or not to include family pages"
 msgid "Whether to scale to fit on a single page."
-msgstr "Lisätäänkö perhesivut."
+msgstr "Skaalataanko se yhdelle sivulle sopivaksi."
 
 #: FamilyTree/FamilyTree.py:1065
 msgid "No color"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:1067
-#, fuzzy
-#| msgid "%d generation"
-#| msgid_plural "%d generations"
 msgid "First generation"
-msgstr "%d sukupolvi"
+msgstr "Ensimmäinen sukupolvi"
 
 #: FamilyTree/FamilyTree.py:1068
-#, fuzzy
-#| msgid "%d generation"
-#| msgid_plural "%d generations"
 msgid "Second generation"
-msgstr "%d sukupolvi"
+msgstr "Toinen sukupolvi"
 
 #: FamilyTree/FamilyTree.py:1069
-#, fuzzy
-#| msgid "%d generation"
-#| msgid_plural "%d generations"
 msgid "Third generation"
-msgstr "%d sukupolvi"
+msgstr "%d. sukupolvi"
 
 #: FamilyTree/FamilyTree.py:1070
 msgid "Male line"
-msgstr ""
+msgstr "Mieslinja"
 
 #: FamilyTree/FamilyTree.py:1071
 msgid "Male line and illegitimate children"
-msgstr ""
+msgstr "Mieslinja ja aviottomat lapset"
 
 #: FamilyTree/FamilyTree.py:1072
-#, fuzzy
-#| msgid "Female Box Edge"
 msgid "Female line"
-msgstr "Naissolun reuna"
+msgstr "Naislinja"
 
 #: FamilyTree/FamilyTree.py:1075
 msgid "Shuffle colors"
@@ -5513,10 +5288,8 @@ msgid "Include Occupation"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:1097
-#, fuzzy
-#| msgid "Include media"
 msgid "Include Residence"
-msgstr "Lisää media"
+msgstr "Sisällytä asuinpaikka"
 
 #: FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
@@ -5524,21 +5297,19 @@ msgstr ""
 
 #: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
 msgid "Year only"
-msgstr ""
+msgstr "Vain vuosi"
 
 #: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
-#, fuzzy
-#| msgid "Show full dates"
 msgid "Full date"
-msgstr "Näytä täydelliset päivämäärät"
+msgstr "Koko päivämäärä"
 
 #: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
 msgid "Full date and place"
-msgstr ""
+msgstr "Päivämäärä ja paikka"
 
 #: FamilyTree/FamilyTree.py:1108
 msgid "Print event data (living person)"
-msgstr ""
+msgstr "Tulosta tapahtumatiedot (eläville)"
 
 #: FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
@@ -5553,16 +5324,12 @@ msgid "Protect private items"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:1131
-#, fuzzy
-#| msgid "No place description"
 msgid "Include event description"
-msgstr "Ei paikkatietoa"
+msgstr "Sisällytä tapahtuman kuvaus"
 
 #: FamilyTree/FamilyTree.py:1134
-#, fuzzy
-#| msgid "Filter options"
 msgid "Text Options"
-msgstr "Suodinvalinnat"
+msgstr "Tekstivalinnat"
 
 #: FamilyTree/FamilyTree.py:1162
 msgid "The style used for names."
@@ -5981,24 +5748,18 @@ msgid "New Form"
 msgstr ""
 
 #: Form/editform.py:190
-#, fuzzy
-#| msgid "Edit Import"
 msgid "Edit Form"
-msgstr "Muokkaa tuontia"
+msgstr "Muokkaussivu"
 
 #: Form/editform.py:225 SourceIndex/birth.glade:113
 #: SourceIndex/census.glade:873 SourceIndex/death.glade:182
 #: SourceIndex/marriage.glade:1263
-#, fuzzy
-#| msgid "Clear Reference"
 msgid "Reference:"
-msgstr "Tyhjennä viittaus"
+msgstr "Viite:"
 
 #: Form/editform.py:421
-#, fuzzy
-#| msgid "Spacings"
 msgid "Headings"
-msgstr "Välit"
+msgstr "Otsikot"
 
 #: Form/form.py:65
 msgid "Form"
@@ -6035,10 +5796,8 @@ msgstr ""
 #: Form/form_ca.xml.h:396 Form/form_ca.xml.h:457 Form/form_ca.xml.h:536
 #: Form/form_ca.xml.h:621 Form/form_ca.xml.h:668 Form/form_ca.xml.h:758
 #: Form/form_ca.xml.h:801
-#, fuzzy
-#| msgid "Generation"
 msgid "Enumerator"
-msgstr "Sukupolvi"
+msgstr "Luetelma"
 
 #: Form/form_ca.xml.h:11 Form/form_ca.xml.h:217
 msgid "1. Names of Inmates"
@@ -6052,10 +5811,8 @@ msgstr ""
 #: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
 #: Form/form_ca.xml.h:636 Form/form_ca.xml.h:691 Form/form_ca.xml.h:777
 #: Form/form_ca.xml.h:828
-#, fuzzy
-#| msgid "Birthdays"
 msgid "BirthPlace"
-msgstr "Syntymäpäivät"
+msgstr "Syntymäpaikka"
 
 #: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
 msgid "3. Place of Birth"
@@ -6097,16 +5854,12 @@ msgid "MaritalStatus"
 msgstr ""
 
 #: Form/form_ca.xml.h:27
-#, fuzzy
-#| msgid "Marriage Connector Line"
 msgid "9. Married or Single"
-msgstr "Avioliiton yhdysviiva"
+msgstr "9. Naimisissa tai naimaton"
 
 #: Form/form_ca.xml.h:28 Form/form_ca.xml.h:240
-#, fuzzy
-#| msgid "Colors"
 msgid "Coloured"
-msgstr "Värit"
+msgstr "Värillinen"
 
 #: Form/form_ca.xml.h:29
 msgid "10. Coloured Persons - Negroes"
@@ -7069,10 +6822,8 @@ msgid "5. Dwelling houses inhabited"
 msgstr ""
 
 #: Form/form_ca.xml.h:307
-#, fuzzy
-#| msgid "Families Index"
 msgid "6.Families"
-msgstr "Perhehakemisto"
+msgstr "6. Perheet"
 
 #: Form/form_ca.xml.h:309 Form/form_ca.xml.h:363
 msgid "7. Names"
@@ -7127,10 +6878,8 @@ msgid "12. Religion"
 msgstr ""
 
 #: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
-#, fuzzy
-#| msgid "Original"
 msgid "13. Origin"
-msgstr "Alkuperäinen"
+msgstr "13. Alkuperä"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
@@ -7193,10 +6942,8 @@ msgid "5. Houses inhabited"
 msgstr ""
 
 #: Form/form_ca.xml.h:361
-#, fuzzy
-#| msgid "Automark Families"
 msgid "6. Families"
-msgstr "Automaattisesti merkityt perheet"
+msgstr "6. Perheet"
 
 #: Form/form_ca.xml.h:368
 msgid "Birth1881"
@@ -7239,10 +6986,8 @@ msgid "4. Houses inhabited"
 msgstr ""
 
 #: Form/form_ca.xml.h:408
-#, fuzzy
-#| msgid "Automark Families"
 msgid "5. Families"
-msgstr "Automaattisesti merkityt perheet"
+msgstr "5. Perheet"
 
 #: Form/form_ca.xml.h:410
 msgid "6. Names"
@@ -7283,16 +7028,12 @@ msgstr ""
 #: Form/form_gb.xml.h:558 Form/form_gb.xml.h:580 Form/form_gb.xml.h:609
 #: Form/form_us.xml.h:1427 Form/form_us.xml.h:1965 Form/form_us.xml.h:1984
 #: Form/form_us.xml.h:2004 RelID/relation_tab.py:111
-#, fuzzy
-#| msgid "Relative"
 msgid "Relation"
-msgstr "Sukulaiset"
+msgstr "Suhde"
 
 #: Form/form_ca.xml.h:418
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "10. Relationship to Head of Family"
-msgstr "Suhde isään"
+msgstr "10. Suhde perheenpäähän"
 
 #: Form/form_ca.xml.h:422
 msgid "12. FrenchCanadian"
@@ -7413,16 +7154,12 @@ msgid "4. Sex"
 msgstr ""
 
 #: Form/form_ca.xml.h:468
-#, fuzzy
-#| msgid "Colors"
 msgid "Colour"
-msgstr "Värit"
+msgstr "Väri"
 
 #: Form/form_ca.xml.h:469
-#, fuzzy
-#| msgid "Colors"
 msgid "5. Colour"
-msgstr "Värit"
+msgstr "5. Väri"
 
 #: Form/form_ca.xml.h:471 Form/form_ca.xml.h:682
 msgid "6. Relation to head of family"
@@ -7441,10 +7178,8 @@ msgid "8. Month and Date of Birth"
 msgstr ""
 
 #: Form/form_ca.xml.h:476 Form/form_ca.xml.h:687
-#, fuzzy
-#| msgid "Birthdays"
 msgid "BirthYear"
-msgstr "Syntymäpäivät"
+msgstr "Syntymävuosi"
 
 #: Form/form_ca.xml.h:477 Form/form_ca.xml.h:688
 msgid "9. Year of birth"
@@ -7487,10 +7222,8 @@ msgstr ""
 #: Form/form_fr.xml.h:195 Form/form_fr.xml.h:204 Form/form_fr.xml.h:215
 #: Form/form_gb.xml.h:226 Form/form_gb.xml.h:247 Form/form_gb.xml.h:359
 #: Form/form_gb.xml.h:382
-#, fuzzy
-#| msgid "National Archives"
 msgid "Nationality"
-msgstr "National Archives UK"
+msgstr "Kansallisuus"
 
 #: Form/form_ca.xml.h:489 Form/form_ca.xml.h:700
 msgid "15. Nationality"
@@ -7641,10 +7374,8 @@ msgid "Line on Schedule 2"
 msgstr ""
 
 #: Form/form_ca.xml.h:541
-#, fuzzy
-#| msgid "Pages"
 msgid "PageRef"
-msgstr "Sivut"
+msgstr "Sivuviite"
 
 #: Form/form_ca.xml.h:542
 msgid "2. Page from Schedule 1"
@@ -7680,20 +7411,16 @@ msgstr ""
 
 #: Form/form_ca.xml.h:553 Form/form_us.xml.h:789 Form/form_us.xml.h:832
 #: Form/form_us.xml.h:891
-#, fuzzy
-#| msgid "Animation"
 msgid "Institution"
-msgstr "Animaatio"
+msgstr "Laitos"
 
 #: Form/form_ca.xml.h:554
 msgid "7. Institution: Special or legal name"
 msgstr ""
 
 #: Form/form_ca.xml.h:555
-#, fuzzy
-#| msgid "Built-in"
 msgid "Buildings"
-msgstr "Sisäänrakennettu"
+msgstr "Rakennukset"
 
 #: Form/form_ca.xml.h:556
 msgid "8. Institution: Number of buildings"
@@ -7800,10 +7527,8 @@ msgid "21. Real Estate Leased: Number of dwelling houses"
 msgstr ""
 
 #: Form/form_ca.xml.h:583
-#, fuzzy
-#| msgid "Restore"
 msgid "LeasedStores"
-msgstr "Palauta"
+msgstr ""
 
 #: Form/form_ca.xml.h:584
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
@@ -7834,10 +7559,8 @@ msgid "25. Real Estate Leased: Number of manufacturing establishments"
 msgstr ""
 
 #: Form/form_ca.xml.h:591
-#, fuzzy
-#| msgid "Animation"
 msgid "Denomination"
-msgstr "Animaatio"
+msgstr "Nimitys"
 
 #: Form/form_ca.xml.h:592
 msgid "26. Church or place of worship: Religious denomination"
@@ -7852,20 +7575,16 @@ msgid "27. Church or place of worship: Number of communicants"
 msgstr ""
 
 #: Form/form_ca.xml.h:595
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Seating"
-msgstr "Valitaan... "
+msgstr ""
 
 #: Form/form_ca.xml.h:596
 msgid "28. Church or place of worship: Seating capacity"
 msgstr ""
 
 #: Form/form_ca.xml.h:597
-#, fuzzy
-#| msgid "Animation"
 msgid "SSDenomination"
-msgstr "Animaatio"
+msgstr ""
 
 #: Form/form_ca.xml.h:598
 msgid "29. Sunday School: Religious Denomination"
@@ -7944,10 +7663,8 @@ msgid "2. Name of each person in the family"
 msgstr ""
 
 #: Form/form_ca.xml.h:629
-#, fuzzy
-#| msgid "Select tags for family"
 msgid "3.Relation to head of family"
-msgstr "Valitse tagi perheelle"
+msgstr "3. Suhde perheenpäähän"
 
 #: Form/form_ca.xml.h:633
 msgid "5. Married, single, widowed or divorced"
@@ -7974,10 +7691,8 @@ msgid "9. Post office address"
 msgstr ""
 
 #: Form/form_ca.xml.h:642 Form/form_us.xml.h:1252
-#, fuzzy
-#| msgid "Toggle Selection"
 msgid "Section"
-msgstr "Vaihda valinta"
+msgstr "Osa"
 
 #: Form/form_ca.xml.h:643
 msgid "10. Location: Section"
@@ -8092,10 +7807,8 @@ msgid "28. Total earnings in 1910 from other than chief occupation or trade"
 msgstr ""
 
 #: Form/form_ca.xml.h:727
-#, fuzzy
-#| msgid "Pages"
 msgid "Wages"
-msgstr "Sivut"
+msgstr "Palkat"
 
 #: Form/form_ca.xml.h:728
 msgid "29. Rate of earnings per hour when employed by the hour-Cents"
@@ -8182,10 +7895,8 @@ msgid "Dwelling house"
 msgstr ""
 
 #: Form/form_ca.xml.h:763
-#, fuzzy
-#| msgid "Note on Family"
 msgid "2. Family"
-msgstr "Perheen lisätietoja"
+msgstr "2. Perhe"
 
 #: Form/form_ca.xml.h:764
 msgid "Family or household"
@@ -8432,10 +8143,8 @@ msgstr ""
 #: Form/form_gb.xml.h:560 Form/form_gb.xml.h:588 Form/form_gb.xml.h:616
 #: Form/form_us.xml.h:1631 Form/form_us.xml.h:1645 Form/form_us.xml.h:2406
 #: Overview/Overview.py:79 Overview/Overview.py:114
-#, fuzzy
-#| msgid "Animation"
 msgid "Condition"
-msgstr "Animaatio"
+msgstr "Ehto"
 
 #: Form/form_dk.xml.h:11 Form/form_dk.xml.h:28 Form/form_dk.xml.h:45
 #: Form/form_dk.xml.h:60 Form/form_dk.xml.h:77 Form/form_dk.xml.h:94
@@ -8553,10 +8262,8 @@ msgstr ""
 #: Form/form_dk.xml.h:417 Form/form_dk.xml.h:435 Form/form_gb.xml.h:50
 #: Form/form_us.xml.h:985 Form/form_us.xml.h:1009 Form/form_us.xml.h:2374
 #: Form/form_us.xml.h:2556
-#, fuzzy
-#| msgid "Date format"
 msgid "Date of Birth"
-msgstr "Päivämäärän muoto"
+msgstr "Syntymäpäivä"
 
 #: Form/form_dk.xml.h:261 Form/form_dk.xml.h:296 Form/form_dk.xml.h:322
 #: Form/form_dk.xml.h:346 Form/form_dk.xml.h:372 Form/form_dk.xml.h:396
@@ -8689,10 +8396,8 @@ msgstr ""
 #: Form/form_fr.xml.h:2 Form/form_fr.xml.h:10 Form/form_fr.xml.h:18
 #: Form/form_fr.xml.h:26 Form/form_fr.xml.h:138 Form/form_fr.xml.h:210
 #: Form/form_us.xml.h:2352 Form/form_us.xml.h:2527
-#, fuzzy
-#| msgid "Date format"
 msgid "Date of birth"
-msgstr "Päivämäärän muoto"
+msgstr "Syntymäpäivä"
 
 #: Form/form_fr.xml.h:38 Form/form_fr.xml.h:55 Form/form_fr.xml.h:220
 msgid "Can read and write"
@@ -8713,10 +8418,8 @@ msgid "Taxes"
 msgstr ""
 
 #: Form/form_fr.xml.h:57 Form/form_fr.xml.h:67 Form/form_fr.xml.h:222
-#, fuzzy
-#| msgid "Type of surname:"
 msgid "Type of roof"
-msgstr "Sukunimityyppi:"
+msgstr "Kattotyyppi"
 
 #: Form/form_fr.xml.h:81 Form/form_fr.xml.h:219 Form/form_gb.xml.h:83
 #: Form/form_gb.xml.h:101 Form/form_gb.xml.h:122 Form/form_gb.xml.h:143
@@ -8837,10 +8540,8 @@ msgstr ""
 #: Form/form_gb.xml.h:77 Form/form_gb.xml.h:95 Form/form_gb.xml.h:433
 #: Form/form_gb.xml.h:460 Form/form_gb.xml.h:488 Form/form_gb.xml.h:520
 #: Form/form_gb.xml.h:559 Form/form_gb.xml.h:581 Form/form_gb.xml.h:610
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Relation to Head of Family"
-msgstr "Perheen lisätietoja"
+msgstr "Suhde perheenpäähän"
 
 #: Form/form_gb.xml.h:81
 msgid "Rank, Profession or Occupation"
@@ -8886,10 +8587,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:108 Form/form_gb.xml.h:451 Form/form_gb.xml.h:479
 #: Form/form_gb.xml.h:510 Form/form_gb.xml.h:549
-#, fuzzy
-#| msgid "Image for males."
 msgid "Village or Hamlet"
-msgstr "Kuva miehille."
+msgstr "Kylä tai taajama"
 
 #: Form/form_gb.xml.h:109
 msgid "Local Board or Improvement Commissioners District"
@@ -8902,10 +8601,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:114 Form/form_gb.xml.h:135 Form/form_gb.xml.h:157
 #: Form/form_gb.xml.h:182 Form/form_gb.xml.h:286 Form/form_gb.xml.h:313
-#, fuzzy
-#| msgid "Note on Family"
 msgid "RELATION to Head of Family"
-msgstr "Perheen lisätietoja"
+msgstr ""
 
 #: Form/form_gb.xml.h:116
 msgid "CONDITION"
@@ -9077,10 +8774,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:199 Form/form_gb.xml.h:233 Form/form_gb.xml.h:332
 #: Form/form_gb.xml.h:368
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Rooms"
-msgstr "Sivujen määrä"
+msgstr "Huoneiden määrä"
 
 #: Form/form_gb.xml.h:201 Form/form_gb.xml.h:334
 msgid "NAME AND SURNAME"
@@ -9129,17 +8824,13 @@ msgid "Children who have Died."
 msgstr ""
 
 #: Form/form_gb.xml.h:217 Form/form_gb.xml.h:350
-#, fuzzy
-#| msgid "Person page"
 msgid "Personal Occupation"
-msgstr "Henkilösivu"
+msgstr "Henkilön ammatti"
 
 #: Form/form_gb.xml.h:218 Form/form_gb.xml.h:351 Form/form_us.xml.h:778
 #: Form/form_us.xml.h:817 Form/form_us.xml.h:864 Form/form_us.xml.h:1617
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Industry"
-msgstr "Esivanhemmat"
+msgstr "Teollisuus"
 
 #: Form/form_gb.xml.h:219 Form/form_gb.xml.h:352
 msgid "Industry or Service with which worker is connected."
@@ -9200,10 +8891,8 @@ msgstr ""
 #: Form/form_us.xml.h:2409 Form/form_us.xml.h:2411 Form/form_us.xml.h:2415
 #: Form/form_us.xml.h:2419 Form/form_us.xml.h:2423 Form/form_us.xml.h:2448
 #: Form/form_us.xml.h:2470
-#, fuzzy
-#| msgid "Birthdays"
 msgid "Birthplace"
-msgstr "Syntymäpäivät"
+msgstr "Syntymäpaikka"
 
 #: Form/form_gb.xml.h:249 Form/form_gb.xml.h:384
 msgid ""
@@ -9217,10 +8906,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_gb.xml.h:254 Form/form_gb.xml.h:389
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of living children"
-msgstr "Sivujen määrä"
+msgstr "Elossa olevien lasten määrä"
 
 #: Form/form_gb.xml.h:255 Form/form_gb.xml.h:390
 msgid "Total number under sixteen years of age. If none write \"None.\""
@@ -9324,10 +9011,8 @@ msgid "House Schedule No"
 msgstr ""
 
 #: Form/form_gb.xml.h:412
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relation to Head"
-msgstr "Suhde isään"
+msgstr "Suhde päähenkilöön"
 
 #: Form/form_gb.xml.h:417
 msgid "Blind, or Deaf and Dumb"
@@ -9360,10 +9045,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:439 Form/form_gb.xml.h:466 Form/form_gb.xml.h:494
 #: Form/form_gb.xml.h:531 Form/form_gb.xml.h:568 Form/form_us.xml.h:1497
-#, fuzzy
-#| msgid "Table"
 msgid "Disabled"
-msgstr "Taulukko"
+msgstr ""
 
 #: Form/form_gb.xml.h:440
 msgid "Whether Blind, or Deaf and Dumb"
@@ -9482,10 +9165,8 @@ msgid "Urban District"
 msgstr ""
 
 #: Form/form_gb.xml.h:606
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Head of Family"
-msgstr "Perheen lisätietoja"
+msgstr "Perheenpää"
 
 #: Form/form_gb.xml.h:618
 msgid "Total Children"
@@ -9496,10 +9177,8 @@ msgid "Children born alive to present Marriage"
 msgstr ""
 
 #: Form/form_pl.xml.h:5
-#, fuzzy
-#| msgid "Merge Original"
 msgid "Event Place (Original)"
-msgstr "Yhdistä alkuperäisestä"
+msgstr "Tapahtumapaikka (alkuperäinen)"
 
 #: Form/form_pl.xml.h:8 Form/form_pl.xml.h:36
 msgid "Birth Year (Estimated)"
@@ -9599,10 +9278,8 @@ msgstr ""
 #: Form/form_us.xml.h:2233 Form/form_us.xml.h:2245 Form/form_us.xml.h:2257
 #: Form/form_us.xml.h:2268 Form/form_us.xml.h:2286 Form/form_us.xml.h:2296
 #: Form/form_us.xml.h:2315 Form/form_us.xml.h:2325 Form/form_us.xml.h:2502
-#, fuzzy
-#| msgid "Pages"
 msgid "Page No."
-msgstr "Sivut"
+msgstr "Sivunumero"
 
 #: Form/form_us.xml.h:4 Form/form_us.xml.h:17 Form/form_us.xml.h:38
 #: Form/form_us.xml.h:59 Form/form_us.xml.h:99 Form/form_us.xml.h:168
@@ -9611,10 +9288,8 @@ msgstr "Sivut"
 #: Form/form_us.xml.h:665 Form/form_us.xml.h:707 Form/form_us.xml.h:793
 #: Form/form_us.xml.h:836 Form/form_us.xml.h:894 Form/form_us.xml.h:1095
 #: Form/form_us.xml.h:1678
-#, fuzzy
-#| msgid "Select None"
 msgid "Sheet No."
-msgstr "Älä valitse mitään"
+msgstr ""
 
 #: Form/form_us.xml.h:5 Form/form_us.xml.h:18 Form/form_us.xml.h:39
 #: Form/form_us.xml.h:60 Form/form_us.xml.h:100 Form/form_us.xml.h:169
@@ -9673,10 +9348,8 @@ msgstr ""
 #: Form/form_us.xml.h:896 Form/form_us.xml.h:1101 Form/form_us.xml.h:1481
 #: Form/form_us.xml.h:1636 Form/form_us.xml.h:1651 Form/form_us.xml.h:1846
 #: Form/form_us.xml.h:1899 Form/form_us.xml.h:1928 Form/form_us.xml.h:2329
-#, fuzzy
-#| msgid "Generation"
 msgid "Enumeration Date"
-msgstr "Sukupolvi"
+msgstr "Luettelopäivä"
 
 #: Form/form_us.xml.h:23 Form/form_us.xml.h:44 Form/form_us.xml.h:65
 msgid "Free white males under 10"
@@ -10087,10 +9760,8 @@ msgid "Colored persons deaf/dumb"
 msgstr ""
 
 #: Form/form_us.xml.h:241
-#, fuzzy
-#| msgid "No persons found..."
 msgid "Colored persons blind"
-msgstr "Henkilöitä ei löytynyt..."
+msgstr ""
 
 #: Form/form_us.xml.h:242
 msgid "Colored persons insane and idiots at private charge"
@@ -10105,10 +9776,8 @@ msgid "Universities or college"
 msgstr ""
 
 #: Form/form_us.xml.h:245
-#, fuzzy
-#| msgid "Number of descendants"
 msgid "Number of students"
-msgstr "Jälkeläisten määrä"
+msgstr "Oppilaiden määrä"
 
 #: Form/form_us.xml.h:246
 msgid "Academies and Grammar Schools"
@@ -10150,10 +9819,8 @@ msgstr ""
 #: Form/form_us.xml.h:260 Form/form_us.xml.h:336 Form/form_us.xml.h:435
 #: Form/form_us.xml.h:465 Form/form_us.xml.h:615 Form/form_us.xml.h:1105
 #: Form/form_us.xml.h:1848
-#, fuzzy
-#| msgid "Family Nick Name"
 msgid "Family No."
-msgstr "Perheen lempinimi"
+msgstr "Perheen numero"
 
 #: Form/form_us.xml.h:266 Form/form_us.xml.h:342 Form/form_us.xml.h:441
 msgid "Value of real estate"
@@ -10202,16 +9869,12 @@ msgid "Owner, Agent, or Manager"
 msgstr ""
 
 #: Form/form_us.xml.h:282 Form/form_us.xml.h:359
-#, fuzzy
-#| msgid "removed"
 msgid "Acres Improved"
-msgstr "poistettu"
+msgstr ""
 
 #: Form/form_us.xml.h:283 Form/form_us.xml.h:360
-#, fuzzy
-#| msgid "removed"
 msgid "Acres Unimproved"
-msgstr "poistettu"
+msgstr ""
 
 #: Form/form_us.xml.h:284 Form/form_us.xml.h:361
 msgid "Cash Value of Farm"
@@ -10230,10 +9893,8 @@ msgid "Working Oxen"
 msgstr ""
 
 #: Form/form_us.xml.h:290 Form/form_us.xml.h:368
-#, fuzzy
-#| msgid "Enter Chart Title"
 msgid "Other Cattle"
-msgstr "Anna kaavion otsikko"
+msgstr "Muuta karjaa"
 
 #: Form/form_us.xml.h:292 Form/form_us.xml.h:370
 msgid "Swine"
@@ -10273,10 +9934,8 @@ msgid "Wool"
 msgstr ""
 
 #: Form/form_us.xml.h:301
-#, fuzzy
-#| msgid "Images and media"
 msgid "Peas and Beans"
-msgstr "Kuvat ja media"
+msgstr "Herneet ja pavut"
 
 #: Form/form_us.xml.h:302
 msgid "Irish Potatoes"
@@ -10546,10 +10205,8 @@ msgid "Cause of death"
 msgstr ""
 
 #: Form/form_us.xml.h:424
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of days ill"
-msgstr "Sivujen määrä"
+msgstr "Sairaspäivien määrä"
 
 #: Form/form_us.xml.h:444 Form/form_us.xml.h:1643
 msgid "Father of foreign birth"
@@ -10612,10 +10269,8 @@ msgstr ""
 #: Form/form_us.xml.h:757 Form/form_us.xml.h:797 Form/form_us.xml.h:1075
 #: Form/form_us.xml.h:1111 Form/form_us.xml.h:1854 Form/form_us.xml.h:1884
 #: Form/form_us.xml.h:1906 Form/form_us.xml.h:1935 Form/form_us.xml.h:2331
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship to head"
-msgstr "Suhde isään"
+msgstr "Suhde päähenkilöön"
 
 #: Form/form_us.xml.h:472 Form/form_us.xml.h:1112 Form/form_us.xml.h:1522
 #: Form/form_us.xml.h:1855 Form/form_us.xml.h:1912 Form/form_us.xml.h:1939
@@ -11095,10 +10750,8 @@ msgid "Mother of how many children and number of children living"
 msgstr ""
 
 #: Form/form_us.xml.h:628 Form/form_us.xml.h:687
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of years in US"
-msgstr "Sivujen määrä"
+msgstr "Vuosia Yhdysvalloissa"
 
 #: Form/form_us.xml.h:629 Form/form_us.xml.h:1438
 msgid "Naturalized"
@@ -11110,10 +10763,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:633 Form/form_us.xml.h:733 Form/form_us.xml.h:768
 #: Form/form_us.xml.h:1619
-#, fuzzy
-#| msgid "File ready"
 msgid "Able to read"
-msgstr "Tiedosto valmis"
+msgstr "Lukutaitoinen"
 
 #: Form/form_us.xml.h:634 Form/form_us.xml.h:734 Form/form_us.xml.h:769
 #: Form/form_us.xml.h:1620
@@ -11168,10 +10819,8 @@ msgid "Date Enlisted"
 msgstr ""
 
 #: Form/form_us.xml.h:653
-#, fuzzy
-#| msgid "Discard"
 msgid "Date Discharged"
-msgstr "Hylkää"
+msgstr "Kotiutumispäivämäärä"
 
 #: Form/form_us.xml.h:654
 msgid "Length of Service"
@@ -11206,16 +10855,12 @@ msgstr ""
 
 #: Form/form_us.xml.h:670 Form/form_us.xml.h:755 Form/form_us.xml.h:795
 #: Form/form_us.xml.h:838 Form/form_us.xml.h:1069 Form/form_us.xml.h:2594
-#, fuzzy
-#| msgid "Export addresses"
 msgid "Street Address"
-msgstr "Viedään osoitteet"
+msgstr "Katuosoite"
 
 #: Form/form_us.xml.h:673 Form/form_us.xml.h:1604
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relation to head"
-msgstr "Suhde isään"
+msgstr "Suhde päähenkilöön"
 
 #: Form/form_us.xml.h:676
 msgid "Month of birth"
@@ -11230,10 +10875,8 @@ msgid "Mother of how many children"
 msgstr ""
 
 #: Form/form_us.xml.h:682 Form/form_us.xml.h:721
-#, fuzzy
-#| msgid "Number of descendants"
 msgid "Number of children living"
-msgstr "Jälkeläisten määrä"
+msgstr "Elävien lasten määrä"
 
 #: Form/form_us.xml.h:686 Form/form_us.xml.h:725 Form/form_us.xml.h:764
 #: Form/form_us.xml.h:813
@@ -11277,10 +10920,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:699 Form/form_us.xml.h:739 Form/form_us.xml.h:780
 #: Form/form_us.xml.h:823
-#, fuzzy
-#| msgid "Number of descendants"
 msgid "Number of farm schedule"
-msgstr "Jälkeläisten määrä"
+msgstr "Maatilasuunnitelmien lukumäärä"
 
 #: Form/form_us.xml.h:726 Form/form_us.xml.h:765 Form/form_us.xml.h:814
 msgid "Naturalized or alien"
@@ -11351,10 +10992,8 @@ msgid "Incorporated place"
 msgstr ""
 
 #: Form/form_us.xml.h:788 Form/form_us.xml.h:831
-#, fuzzy
-#| msgid "Find an incomplete place."
 msgid "Unincorporated place"
-msgstr "Etsi epätäydellinen paikka."
+msgstr "Rekisteröimätön paikka"
 
 #: Form/form_us.xml.h:799
 msgid "Value of home or monthly rental"
@@ -11413,10 +11052,8 @@ msgid "Home value/monthly rental"
 msgstr ""
 
 #: Form/form_us.xml.h:845
-#, fuzzy
-#| msgid "Colors"
 msgid "Color/Race"
-msgstr "Värit"
+msgstr "Väri/Rotu"
 
 #: Form/form_us.xml.h:846
 msgid "Age at Last Birthday"
@@ -11497,7 +11134,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Number of pages"
 msgid "Number of Farm Schedule"
-msgstr "Sivujen määrä"
+msgstr "Maatilasuunnitelmien määrä"
 
 #: Form/form_us.xml.h:873
 msgid "Veteran?"
@@ -11640,10 +11277,8 @@ msgid "How many hours did he work last week?"
 msgstr ""
 
 #: Form/form_us.xml.h:923
-#, fuzzy
-#| msgid "Type of surname:"
 msgid "Type of work"
-msgstr "Sukunimityyppi:"
+msgstr "Työn tyyppi"
 
 #: Form/form_us.xml.h:924
 msgid "What kind of work was he doing?"
@@ -11906,26 +11541,20 @@ msgid "Enlisted on"
 msgstr ""
 
 #: Form/form_us.xml.h:998
-#, fuzzy
-#| msgid "Next Place"
 msgid "Enlistment Place"
-msgstr "Seuraava paikka"
+msgstr "Värväytyspaikka"
 
 #: Form/form_us.xml.h:999
 msgid "in the command of"
 msgstr ""
 
 #: Form/form_us.xml.h:1001
-#, fuzzy
-#| msgid "Other participants"
 msgid "Other service, if any"
-msgstr "Muut osallistujat"
+msgstr "Mahdollinen muu palvelu"
 
 #: Form/form_us.xml.h:1004
-#, fuzzy
-#| msgid "Note on Person"
 msgid "No. on pension roll"
-msgstr "Henkilön lisätietoja"
+msgstr ""
 
 #: Form/form_us.xml.h:1005
 msgid "County lived in when first placed on roll"
@@ -11948,10 +11577,8 @@ msgid "Letter of Company"
 msgstr ""
 
 #: Form/form_us.xml.h:1015
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Regiment"
-msgstr "Sivujen määrä"
+msgstr "Rykmentin numero"
 
 #: Form/form_us.xml.h:1016
 msgid "Was it an Alabama Regiment"
@@ -12014,10 +11641,8 @@ msgid "When imprisoned"
 msgstr ""
 
 #: Form/form_us.xml.h:1031
-#, fuzzy
-#| msgid "removed"
 msgid "Where imprisoned"
-msgstr "poistettu"
+msgstr "Missä vangittiin"
 
 #: Form/form_us.xml.h:1032
 msgid "How were you discharged"
@@ -12060,10 +11685,8 @@ msgid "Birthplace of wife"
 msgstr ""
 
 #: Form/form_us.xml.h:1042
-#, fuzzy
-#| msgid "Date format"
 msgid "Date married"
-msgstr "Päivämäärän muoto"
+msgstr "Avioliiton päivämäärä"
 
 #: Form/form_us.xml.h:1043
 msgid "Place married"
@@ -12158,10 +11781,8 @@ msgid "Can not write"
 msgstr ""
 
 #: Form/form_us.xml.h:1103
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Street Name"
-msgstr "Vaihtoehtoinen nimi"
+msgstr "Kadunnimi"
 
 #: Form/form_us.xml.h:1104
 msgid "House No."
@@ -12184,10 +11805,8 @@ msgid "Age Female"
 msgstr ""
 
 #: Form/form_us.xml.h:1140
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relation to Family"
-msgstr "Suhde isään"
+msgstr "Suhde perheeseen"
 
 #: Form/form_us.xml.h:1142 Form/form_us.xml.h:1156
 msgid "Degree of Education"
@@ -12310,16 +11929,12 @@ msgid "Pounds of Wool"
 msgstr ""
 
 #: Form/form_us.xml.h:1188
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Colleges"
-msgstr "Sivujen määrä"
+msgstr "Yliopistojen lukumäärä"
 
 #: Form/form_us.xml.h:1189 Form/form_us.xml.h:1191
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Pupils"
-msgstr "Sivujen määrä"
+msgstr "Oppilaiden määrä"
 
 #: Form/form_us.xml.h:1190
 msgid "Number of Common Schools"
@@ -12348,10 +11963,8 @@ msgid "Years resident in the state"
 msgstr ""
 
 #: Form/form_us.xml.h:1209
-#, fuzzy
-#| msgid "Add active person"
 msgid "Native voters"
-msgstr "Lisää aktiivihenkilö"
+msgstr ""
 
 #: Form/form_us.xml.h:1210
 msgid "Naturalized voters"
@@ -12426,20 +12039,16 @@ msgid "Bushels harvested (potatoes)"
 msgstr ""
 
 #: Form/form_us.xml.h:1234
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of hogs sold"
-msgstr "Sivujen määrä"
+msgstr ""
 
 #: Form/form_us.xml.h:1235
 msgid "Value of hogs sold"
 msgstr ""
 
 #: Form/form_us.xml.h:1236
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of cattle sold"
-msgstr "Sivujen määrä"
+msgstr "Myydyn karjan määrä"
 
 #: Form/form_us.xml.h:1237
 msgid "Value of cattle sold"
@@ -12548,10 +12157,8 @@ msgid "White Male"
 msgstr ""
 
 #: Form/form_us.xml.h:1282
-#, fuzzy
-#| msgid "Web site template"
 msgid "White Female"
-msgstr "Sivuston mallipohja"
+msgstr ""
 
 #: Form/form_us.xml.h:1283
 msgid "Colored Male"
@@ -13041,10 +12648,8 @@ msgid "Mother's Place of Birth"
 msgstr ""
 
 #: Form/form_us.xml.h:1459
-#, fuzzy
-#| msgid "Print place pages"
 msgid "Parents Place of Marriage"
-msgstr "Tulosta paikkasivut"
+msgstr "Vanhempien vihkipaikka"
 
 #: Form/form_us.xml.h:1460
 msgid "Civil War Veteran"
@@ -13132,10 +12737,8 @@ msgid "Real Estate"
 msgstr ""
 
 #: Form/form_us.xml.h:1492
-#, fuzzy
-#| msgid "Person page"
 msgid "Personal Estate"
-msgstr "Henkilösivu"
+msgstr ""
 
 #: Form/form_us.xml.h:1495
 msgid "Attended School"
@@ -13146,10 +12749,8 @@ msgid "Illiterate"
 msgstr ""
 
 #: Form/form_us.xml.h:1504
-#, fuzzy
-#| msgid "Person page"
 msgid "Personal Property"
-msgstr "Henkilösivu"
+msgstr "Henkilökohtainen omaisuus"
 
 #: Form/form_us.xml.h:1506 Form/form_us.xml.h:1526
 msgid "Where From"
@@ -13296,10 +12897,8 @@ msgid "Number of volumes in home library"
 msgstr ""
 
 #: Form/form_us.xml.h:1603
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of house"
-msgstr "Sivujen määrä"
+msgstr "Talon numero"
 
 #: Form/form_us.xml.h:1613
 msgid "Year of immigration to the United States"
@@ -13375,10 +12974,8 @@ msgid "Unorganized Township"
 msgstr ""
 
 #: Form/form_us.xml.h:1671
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Name of Village"
-msgstr "Sivujen määrä"
+msgstr "Kylän nimi"
 
 #: Form/form_us.xml.h:1672
 msgid "Name of City"
@@ -13393,16 +12990,12 @@ msgid "Precincts"
 msgstr ""
 
 #: Form/form_us.xml.h:1676
-#, fuzzy
-#| msgid "Estimated date"
 msgid "Enumerated date from"
-msgstr "Arvioitu päivä"
+msgstr ""
 
 #: Form/form_us.xml.h:1677
-#, fuzzy
-#| msgid "Estimated date"
 msgid "Enumerated date to"
-msgstr "Arvioitu päivä"
+msgstr ""
 
 #: Form/form_us.xml.h:1680
 msgid "Enumeration number"
@@ -13509,10 +13102,8 @@ msgid "Colored males 21-44"
 msgstr ""
 
 #: Form/form_us.xml.h:1716 Form/form_us.xml.h:1789
-#, fuzzy
-#| msgid "Choose male avatar"
 msgid "Colored males 45 and over"
-msgstr "Valitse miehen hahmo"
+msgstr ""
 
 #: Form/form_us.xml.h:1717 Form/form_us.xml.h:1790
 msgid "Total Colored Males"
@@ -13535,10 +13126,8 @@ msgid "Colored females 21-44"
 msgstr ""
 
 #: Form/form_us.xml.h:1722 Form/form_us.xml.h:1795
-#, fuzzy
-#| msgid "Choose female avatar"
 msgid "Colored females 45 and over"
-msgstr "Valitse naisen hahmo"
+msgstr ""
 
 #: Form/form_us.xml.h:1723 Form/form_us.xml.h:1796
 msgid "Total Colored Females"
@@ -13593,10 +13182,8 @@ msgid "Blind Males Age"
 msgstr ""
 
 #: Form/form_us.xml.h:1736 Form/form_us.xml.h:1809
-#, fuzzy
-#| msgid "Find GeoNames"
 msgid "Blind Females"
-msgstr "GeoNames etsintä"
+msgstr ""
 
 #: Form/form_us.xml.h:1737 Form/form_us.xml.h:1810
 msgid "Blind Females Age"
@@ -13623,10 +13210,8 @@ msgid "Insane Males Age"
 msgstr ""
 
 #: Form/form_us.xml.h:1743 Form/form_us.xml.h:1816
-#, fuzzy
-#| msgid "Image for females"
 msgid "Insane Females"
-msgstr "Kuva naisille"
+msgstr ""
 
 #: Form/form_us.xml.h:1744 Form/form_us.xml.h:1817
 msgid "Insane Females Age"
@@ -13757,10 +13342,8 @@ msgid "Alien"
 msgstr ""
 
 #: Form/form_us.xml.h:1893 Form/form_us.xml.h:1918
-#, fuzzy
-#| msgid "Persons from current graph"
 msgid "Persons of color not taxed"
-msgstr "Henkilöt nykyisestä kaaviosta"
+msgstr ""
 
 #: Form/form_us.xml.h:1894 Form/form_us.xml.h:1920 Form/form_us.xml.h:1946
 msgid "Over 21/Illiterate"
@@ -13784,10 +13367,8 @@ msgid "Parent of how many children"
 msgstr ""
 
 #: Form/form_us.xml.h:1909
-#, fuzzy
-#| msgid "Number of descendants"
 msgid "Number of times married"
-msgstr "Jälkeläisten määrä"
+msgstr "Avioliittojen lukumäärä"
 
 #: Form/form_us.xml.h:1914
 msgid "Place of Occupation"
@@ -13802,10 +13383,8 @@ msgid "Now in army"
 msgstr ""
 
 #: Form/form_us.xml.h:1923
-#, fuzzy
-#| msgid "Now alive"
 msgid "Now in navy"
-msgstr "Elossa"
+msgstr ""
 
 #: Form/form_us.xml.h:1924
 msgid "Formerly in army"
@@ -13846,10 +13425,8 @@ msgid "Election District, Ward"
 msgstr ""
 
 #: Form/form_us.xml.h:1970 Form/form_us.xml.h:1989 Form/form_us.xml.h:2009
-#, fuzzy
-#| msgid "Default number of entries in the indexes"
 msgid "Number of years in the US"
-msgstr "Hakemiston merkintöjen oletusmäärä"
+msgstr "Vuosa Yhdysvalloissa"
 
 #: Form/form_us.xml.h:1973 Form/form_us.xml.h:1992 Form/form_us.xml.h:2013
 msgid "Class"
@@ -13916,10 +13493,8 @@ msgid "Native Colored Males"
 msgstr ""
 
 #: Form/form_us.xml.h:2026
-#, fuzzy
-#| msgid "Image for females"
 msgid "Native Colored Females"
-msgstr "Kuva naisille"
+msgstr ""
 
 #: Form/form_us.xml.h:2027
 msgid "Foreign Males"
@@ -14102,16 +13677,12 @@ msgid "Male over 21"
 msgstr ""
 
 #: Form/form_us.xml.h:2230
-#, fuzzy
-#| msgid "Female Background"
 msgid "Female under 21"
-msgstr "Naisen taustaväri"
+msgstr ""
 
 #: Form/form_us.xml.h:2231
-#, fuzzy
-#| msgid "Female avatar:"
 msgid "Female over 21"
-msgstr "Naisen hahmo:"
+msgstr ""
 
 #: Form/form_us.xml.h:2234 Form/form_us.xml.h:2246
 msgid "Town/City"
@@ -14128,24 +13699,18 @@ msgstr ""
 
 #: Form/form_us.xml.h:2238 Form/form_us.xml.h:2250 Form/form_us.xml.h:2262
 #: Form/form_us.xml.h:2274 Form/form_us.xml.h:2303
-#, fuzzy
-#| msgid "Image for females"
 msgid "White females"
-msgstr "Kuva naisille"
+msgstr ""
 
 #: Form/form_us.xml.h:2239 Form/form_us.xml.h:2251 Form/form_us.xml.h:2263
 #: Form/form_us.xml.h:2275 Form/form_us.xml.h:2304
-#, fuzzy
-#| msgid "Colors"
 msgid "Colored males"
-msgstr "Värit"
+msgstr ""
 
 #: Form/form_us.xml.h:2240 Form/form_us.xml.h:2252 Form/form_us.xml.h:2264
 #: Form/form_us.xml.h:2276 Form/form_us.xml.h:2305
-#, fuzzy
-#| msgid "Choose female avatar"
 msgid "Colored females"
-msgstr "Valitse naisen hahmo"
+msgstr ""
 
 #: Form/form_us.xml.h:2241 Form/form_us.xml.h:2253 Form/form_us.xml.h:2265
 msgid "Deaf & Dumb"
@@ -14196,10 +13761,8 @@ msgid "Nativity - All other countries"
 msgstr ""
 
 #: Form/form_us.xml.h:2287 Form/form_us.xml.h:2316
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Residing in the"
-msgstr "Jälkeläisten sukupuu"
+msgstr "Asuinpaikka"
 
 #: Form/form_us.xml.h:2292 Form/form_us.xml.h:2321
 msgid "Co."
@@ -14252,10 +13815,8 @@ msgid "Book/Volume"
 msgstr ""
 
 #: Form/form_us.xml.h:2377 Form/form_us.xml.h:2493
-#, fuzzy
-#| msgid "Colors"
 msgid "Race/Color"
-msgstr "Värit"
+msgstr ""
 
 #: Form/form_us.xml.h:2380
 msgid ""
@@ -14343,29 +13904,24 @@ msgid "Social Security No."
 msgstr ""
 
 #: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
-#, fuzzy
-#| msgid "Date format"
 msgid "Date of Death"
-msgstr "Päivämäärän muoto"
+msgstr "Kuolinpävä"
 
 #: Form/form_us.xml.h:2457
 msgid "Place of Burial"
 msgstr ""
 
 #: Form/form_us.xml.h:2458
-#, fuzzy
-#| msgid "Date format"
 msgid "Date of Burial"
-msgstr "Päivämäärän muoto"
+msgstr "Hautauspäivä"
 
 #: Form/form_us.xml.h:2478
 msgid "Residence Place"
 msgstr ""
 
 #: Form/form_us.xml.h:2480
-#, fuzzy
 msgid "Burial Date"
-msgstr "Yleiset"
+msgstr "Hautauspäivä"
 
 #: Form/form_us.xml.h:2481
 msgid "Burial Place"
@@ -14376,10 +13932,8 @@ msgid "Congressional District"
 msgstr ""
 
 #: Form/form_us.xml.h:2504
-#, fuzzy
-#| msgid "Print the notes type"
 msgid "in the Counties of"
-msgstr "Tulosta lisätiedon tyyppi"
+msgstr "piirikunnissa"
 
 #: Form/form_us.xml.h:2506
 msgid "in the month of"
@@ -14418,10 +13972,8 @@ msgid "Registration No."
 msgstr ""
 
 #: Form/form_us.xml.h:2523
-#, fuzzy
-#| msgid "Order"
 msgid "Order No."
-msgstr "Järjestys"
+msgstr ""
 
 #: Form/form_us.xml.h:2525
 msgid "Age in yrs."
@@ -14448,10 +14000,8 @@ msgid "Employer's Name & address"
 msgstr ""
 
 #: Form/form_us.xml.h:2534
-#, fuzzy
-#| msgid "Relative"
 msgid "Nearest Relative"
-msgstr "Sukulaiset"
+msgstr "Lähisukulainen"
 
 #: Form/form_us.xml.h:2535
 msgid "Dependants & Address"
@@ -14480,10 +14030,8 @@ msgid "Build / Weight"
 msgstr ""
 
 #: Form/form_us.xml.h:2544
-#, fuzzy
-#| msgid "Colors"
 msgid "Hair Color"
-msgstr "Värit"
+msgstr "Hiusten väri"
 
 #: Form/form_us.xml.h:2545
 msgid "Bald"
@@ -14542,30 +14090,24 @@ msgid "Hair"
 msgstr ""
 
 #: Form/form_us.xml.h:2567
-#, fuzzy
-#| msgid "Other participants"
 msgid "Other characteristics"
-msgstr "Muut osallistujat"
+msgstr "Muut tuntomerkit"
 
 #: Form/form_us.xml.h:2574
 msgid "Date entered"
 msgstr ""
 
 #: Form/form_us.xml.h:2575
-#, fuzzy
-#| msgid "Places Index"
 msgid "Place entered"
-msgstr "Paikkahakemisto"
+msgstr "Annettu paikka"
 
 #: Form/form_us.xml.h:2576
 msgid "Term of enlistment"
 msgstr ""
 
 #: Form/form_us.xml.h:2580
-#, fuzzy
-#| msgid "The path color"
 msgid "Eye color"
-msgstr "Polun väri"
+msgstr "Silmien väri"
 
 #: Form/form_us.xml.h:2581
 msgid "Hair color"
@@ -14624,10 +14166,8 @@ msgid "Forms"
 msgstr ""
 
 #: Form/selectform.py:74 Form/selectform.py:81
-#, fuzzy
-#| msgid "Select None"
 msgid "Select Form"
-msgstr "Älä valitse mitään"
+msgstr "Valintalomake"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
@@ -14767,10 +14307,8 @@ msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Perheen tiimalasipuu LaTeX-sukupuun avulla"
 
 #: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestors map"
-msgstr "Esivanhemmat"
+msgstr "Esivanhempien kaavio"
 
 #: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
@@ -14781,10 +14319,8 @@ msgid "Ancestors places on the map"
 msgstr ""
 
 #: GeoAncestor/GeoAncestor.py:235
-#, fuzzy
-#| msgid "Ancestry"
 msgid "GeoAncestor"
-msgstr "Esivanhemmat"
+msgstr ""
 
 #: GeoAncestor/GeoAncestor.py:304
 #, python-format
@@ -14796,17 +14332,13 @@ msgid "Counting all places"
 msgstr ""
 
 #: GeoAncestor/GeoAncestor.py:314
-#, fuzzy
-#| msgid "Show places"
 msgid "Showing all places"
-msgstr "Näytä paikat"
+msgstr "Näytetään kaikki paikat"
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:25 GeoTimeLines/GeoTimeLines.py:233
 #: GeoTimeLines/GeoTimeLines.py:339
-#, fuzzy
-#| msgid "Lines type"
 msgid "TimeLines Map"
-msgstr "Viivan tyyppi"
+msgstr "GeoTimeLines-kartta"
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
@@ -14814,32 +14346,25 @@ msgid ""
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:39
-#, fuzzy
-#| msgid "Lines type"
 msgid "TimeLines map"
-msgstr "Viivan tyyppi"
+msgstr "GeoTimeLines-kartta"
 
 #: GeoTimeLines/GeoTimeLines.py:755
-#, fuzzy
-#| msgid "Choose male avatar"
 msgid "Choose View Format"
-msgstr "Valitse miehen hahmo"
+msgstr "Valitse näkymämuoto"
 
 #: GeoTimeLines/GeoTimeLines.py:800
 msgid "Almost done"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:916
-#, fuzzy
-#| msgid "Loading the data"
 msgid "Gathering data"
-msgstr "Tietojen lataaminen"
+msgstr "Tietojen keräys"
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr "Sivujen määrä"
+msgstr "Henkilöiden määrä: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -14884,16 +14409,12 @@ msgid ""
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1875
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of steps"
-msgstr "Sivujen määrä"
+msgstr "Askelten määrä"
 
 #: GeoTimeLines/GeoTimeLines.py:1883
-#, fuzzy
-#| msgid "Type of surname:"
 msgid "Type of steps"
-msgstr "Sukunimityyppi:"
+msgstr "Askenten tyyppi"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
@@ -14918,10 +14439,8 @@ msgid "Show time ticks on navigation bar on startup"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1974
-#, fuzzy
-#| msgid "General options"
 msgid "TimeLines Map options"
-msgstr "Yleiset valinnat"
+msgstr "GeoTimeLines-kartan valinnat"
 
 #: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
@@ -15030,10 +14549,8 @@ msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:268
-#, fuzzy
-#| msgid "Exporting family tree data ..."
 msgid "Fetching remote data..."
-msgstr "Viedään sukupuun tietoja ..."
+msgstr "Haetaan etätietoja..."
 
 #: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
@@ -15072,10 +14589,8 @@ msgid "Failed importing downloaded XML file."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:457
-#, fuzzy
-#| msgid "Exporting family tree data ..."
 msgid "Comparing local and remote data..."
-msgstr "Viedään sukupuun tietoja ..."
+msgstr "Verrataan paikallisia ja etätietoja..."
 
 #: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
@@ -15161,22 +14676,17 @@ msgid "Merge"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:824
-#, fuzzy
-#| msgid "Don't change"
 msgid "Local changes"
-msgstr "Älä muuta"
+msgstr "Paikalliset muutokset"
 
 #: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
 #: GrampsWebSync/grampswebsync.py:834
-#, fuzzy
 msgid "Modified"
-msgstr "Viimeisin muutos"
+msgstr "Muutettu"
 
 #: GrampsWebSync/grampswebsync.py:829
-#, fuzzy
-#| msgid "Remove Tags"
 msgid "Remote changes"
-msgstr "Poista tageja"
+msgstr "Etämuutokset"
 
 #: GrampsWebSync/grampswebsync.py:834
 msgid "Simultaneous changes"
@@ -15187,22 +14697,16 @@ msgid "Fetching information about media files..."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:912
-#, fuzzy
-#| msgid "Your Tree and import are the same."
 msgid "Both trees are the same."
-msgstr "Puu ja tuonti ovat samat."
+msgstr "Puut ovat samoja."
 
 #: GrampsWebSync/grampswebsync.py:918
-#, fuzzy
-#| msgid "Also apply search by all database."
 msgid "Applying changes to local database ..."
-msgstr "Käytä myös hakua kaikista tietokannoista."
+msgstr "Muutoksia toteutaan paikalliseen tietokantaan..."
 
 #: GrampsWebSync/grampswebsync.py:920
-#, fuzzy
-#| msgid "Also apply search by all database."
 msgid "No changes to apply to local database."
-msgstr "Käytä myös hakua kaikista tietokannoista."
+msgstr "Ei muutoksia paikalliseen tietokantaan."
 
 #: GrampsWebSync/grampswebsync.py:923
 msgid "Applying changes to remote database ..."
@@ -15217,16 +14721,12 @@ msgid "Successfully applied changes to local database."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:962
-#, fuzzy
-#| msgid "Missing"
 msgid "Missing locally"
-msgstr "Puuttuva"
+msgstr "Puuttuu paikallisesti"
 
 #: GrampsWebSync/grampswebsync.py:965
-#, fuzzy
-#| msgid "Missing"
 msgid "Missing remotely"
-msgstr "Puuttuva"
+msgstr "Puuttuu etäältä"
 
 #: GrampsWebSync/grampswebsync.py:1003
 #, python-format
@@ -15264,10 +14764,8 @@ msgid "Dynamic and interactive graph of relations"
 msgstr "Dynaaminen ja vuorovaikutteinen suhteiden kuvaaja"
 
 #: GraphView/graphview.py:754
-#, fuzzy
-#| msgid "Show Tags"
 msgid "Show IDs"
-msgstr "Näytä tagit"
+msgstr "Näytä IDt"
 
 #: GraphView/graphview.py:757
 msgid "Show avatars"
@@ -15346,28 +14844,20 @@ msgid "Choose female avatar"
 msgstr "Valitse naisen hahmo"
 
 #: GraphView/graphview.py:872
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Unknown avatar:"
-msgstr "Näytä hahmot"
+msgstr "Tuntematon avatar:"
 
 #: GraphView/graphview.py:873
-#, fuzzy
-#| msgid "Choose male avatar"
 msgid "Choose Unknown avatar"
-msgstr "Valitse miehen hahmo"
+msgstr "Valitse tuntemattoman avatar"
 
 #: GraphView/graphview.py:885
-#, fuzzy
-#| msgid "Male avatar:"
 msgid "Other avatar:"
-msgstr "Miehen hahmo:"
+msgstr "Muu avatar:"
 
 #: GraphView/graphview.py:886
-#, fuzzy
-#| msgid "Choose male avatar"
 msgid "Choose Other avatar"
-msgstr "Valitse miehen hahmo"
+msgstr "Valitse muu avatar"
 
 #: GraphView/graphview.py:900
 msgid "Active person border size"
@@ -15588,10 +15078,8 @@ msgid "Ortho"
 msgstr "Suorakulmainen"
 
 #: GraphView/graphview.py:3875
-#, fuzzy
-#| msgid "Go to active person"
 msgid "No Events for this person"
-msgstr "Siirry aktiivihenkilöön"
+msgstr "Ei tapahtumia tälle henkilölle"
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
@@ -15610,10 +15098,8 @@ msgid "Set as home person"
 msgstr "Aseta kotihenkilö"
 
 #: GraphView/graphview.py:4051
-#, fuzzy
-#| msgid "Path color to home person"
 msgid "Show path to home person"
-msgstr "Polun väri kotihenkilölle"
+msgstr "Näytä polku kotihenkilöön"
 
 #: GraphView/graphview.py:4057 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364 SearchGramplet/SearchGramplet.py:637
@@ -15628,10 +15114,8 @@ msgid "Add to bookmarks"
 msgstr "Lisää kirjanmerkkeihin"
 
 #: GraphView/graphview.py:4161
-#, fuzzy
-#| msgid "Used for family"
 msgid "No Events for this family"
-msgstr "Käytetään perheelle"
+msgstr "Ei tapahtumia tälle perheelle"
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
@@ -15711,10 +15195,8 @@ msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
-#, fuzzy
-#| msgid "Partner's spouse"
 msgid "Partners"
-msgstr "Kumppanin puoliso"
+msgstr "Kumppanit"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
@@ -15744,10 +15226,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:93
-#, fuzzy
-#| msgid "File ready"
 msgid "File path"
-msgstr "Tiedosto valmis"
+msgstr "Tiedostopolku"
 
 #: Heatmap/heatmap.py:98
 msgid ""
@@ -15758,10 +15238,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:103
-#, fuzzy
-#| msgid "File ready"
 msgid "File name"
-msgstr "Tiedosto valmis"
+msgstr "Tiedostonimi"
 
 #: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
@@ -15783,9 +15261,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:129
-#, fuzzy
 msgid "Start longitude"
-msgstr "Pituusaste:"
+msgstr "Alun pituusaste"
 
 #: Heatmap/heatmap.py:131
 msgid ""
@@ -15804,10 +15281,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:209
-#, fuzzy
-#| msgid "Directory does not exist"
 msgid "Path does not exist."
-msgstr "Hakemistoa ei ole olemassa"
+msgstr "Hakemistoa ei ole olemassa."
 
 #: Heatmap/heatmap.py:210
 msgid "Invalid filename."
@@ -15830,10 +15305,8 @@ msgid "Stamen Watercolor"
 msgstr ""
 
 #: Heatmap/utils.py:67
-#, fuzzy
-#| msgid "Cartoon"
 msgid "CartoDB Positron"
-msgstr "Väripiirros"
+msgstr ""
 
 #: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
@@ -15856,16 +15329,12 @@ msgid "Use filter "
 msgstr ""
 
 #: HistContext/HistContext.py:129
-#, fuzzy
-#| msgid "Show lifespan"
 msgid "Show outside life span "
-msgstr "Näytä elinkaari"
+msgstr "Näytä elinkaaren ulkopuoli "
 
 #: HistContext/HistContext.py:132
-#, fuzzy
-#| msgid "Show full dates"
 msgid "Use full dates"
-msgstr "Näytä täydelliset päivämäärät"
+msgstr "Käytä koko päivämääriä"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
@@ -15884,10 +15353,8 @@ msgid "Background color items outside lifespan"
 msgstr ""
 
 #: HistContext/HistContext.py:149
-#, fuzzy
-#| msgid "Select a dot file name"
 msgid "Select from files"
-msgstr "Valitse pistetiedoston nimi"
+msgstr "Valitse tiedostoista"
 
 #: HistContext/HistContext.py:287
 msgid "Invalid date "
@@ -15939,10 +15406,8 @@ msgid ""
 msgstr ""
 
 #: HouseTimelineGramplet/housetimeline.py:129
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Time In Family"
-msgstr "Perheen lisätietoja"
+msgstr "Aika perheessä"
 
 #: HouseTimelineGramplet/housetimeline.py:130
 msgid "First Resident"
@@ -16054,17 +15519,13 @@ msgid "About H-Tree"
 msgstr "Tietoja H-Sukupuusta"
 
 #: ImportGramplet/ImportGramplet.gpr.py:11
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for importing text"
-msgstr "Gramplet henkilöiden merkintään valokuvissa"
+msgstr "Gramplet tekstin tuontiin"
 
 # Lisää tuonti
 #: ImportGramplet/ImportGramplet.py:94
-#, fuzzy
-#| msgid "Add Import"
 msgid "VCard import"
-msgstr "Lisätään tuonnista"
+msgstr "VCard tuonti"
 
 #: ImportGramplet/ImportGramplet.py:144
 #, python-format
@@ -16082,10 +15543,8 @@ msgid ""
 msgstr ""
 
 #: ImportGramplet/ImportGramplet.py:198
-#, fuzzy
-#| msgid "Imported"
 msgid "_Import"
-msgstr "Tuotu"
+msgstr "_Tuo"
 
 #: ImportGramplet/ImportGramplet.py:218
 #, fuzzy
@@ -16368,17 +15827,13 @@ msgid "This is a JSON export"
 msgstr ""
 
 #: JSON/JSON.gpr.py:12
-#, fuzzy
-#| msgid "Filter options"
 msgid "JSON options"
-msgstr "Suodinvalinnat"
+msgstr "JSON-valinnat"
 
 # Lisää tuonti
 #: JSON/JSON.gpr.py:20
-#, fuzzy
-#| msgid "Add Import"
 msgid "JSON Import"
-msgstr "Lisätään tuonnista"
+msgstr "JSON-tuonti"
 
 #: JSON/JSON.gpr.py:21
 msgid "This is a JSON import"
@@ -16386,10 +15841,8 @@ msgstr ""
 
 # tuotu
 #: JSON/JSONImport.py:56
-#, fuzzy
-#| msgid "imported "
 msgid "JSON import"
-msgstr "tuodaan "
+msgstr "JSON tuonti"
 
 #: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
@@ -16493,58 +15946,54 @@ msgid "Triangular shape"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:15
-#, fuzzy
-#| msgid "Show places"
 msgid "Show photos"
-msgstr "Näytä paikat"
+msgstr "Näytä kuvat"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:16
 msgid "Photos of the individual are shown."
-msgstr ""
+msgstr "Henkilön kuvat näytetään."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:17
-#, fuzzy
-#| msgid "Photo Tagging"
 msgid "Photo size"
-msgstr "Valokuvien merkintä"
+msgstr "Kuvan koko"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:18
 msgid ""
 "Photos which are shown are fitted into a square of this extent. The size is "
 "given relative to the line thickness."
 msgstr ""
+"Kuvat sovitetaan tämän kokoiseen neliöön. Koko on annettu suhteessa viivan "
+"paksuuteen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
 msgid "Total height"
-msgstr ""
+msgstr "Kokonaiskorkeus"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:20
-#, fuzzy
-#| msgid "Set the title of the chart."
 msgid "Total height of the whole chart."
-msgstr "Aseta kaaaviolle otsikko."
+msgstr "Kaavion kokonaiskorkeus."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:21
 msgid "Relative line thickness"
-msgstr ""
+msgstr "Viivan suhteellinen paksuus"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:22
 msgid ""
 "The line thickness of an individual is given relatively to the horizontal "
 "step size."
-msgstr ""
+msgstr "Yksilön viivan paksuus annetaan suhteessa vaakasuoran askeleen kokoon."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:23
-#, fuzzy
-#| msgid "Horizontal: Left to Right"
 msgid "Horizontal step size"
-msgstr "Vaakasuora: Vasemmalta oikealle"
+msgstr "Vaakasuoran askeleen koko"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:24
 msgid ""
 "This is the distance from one line to another. This value is also used for "
 "scaling of other items."
 msgstr ""
+"Tämä on rivin välinen etäisyys, arvoa käytetään myös muiden kohteiden "
+"skaalaamiseen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
 msgid "Show birth label"
@@ -16576,10 +16025,8 @@ msgstr "Syntymätieto kohdistetaan yksittäiseen riviin."
 #: LifeLineChartView/_dummy_translation_string_po.py:74
 #: LifeLineChartView/_dummy_translation_string_po.py:77
 #: LifeLineChartView/lifelinechartview.py:884
-#, fuzzy
-#| msgid "Enable page configuration"
 msgid "Label Configuration"
-msgstr "Ota sivun kokoonpano käyttöön"
+msgstr "Tietoruudun määritykset"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 msgid "Birth label rotation"
@@ -16689,50 +16136,40 @@ msgid "Text alignment of the death label."
 msgstr "Kuolintiedon tasaus."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:68
-#, fuzzy
-#| msgid "Show more details"
 msgid "Show marriage label"
-msgstr "Näytä lisää tietoja"
+msgstr "Näytä avioliittotieto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:69
 msgid "Activate the marriage label."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:70
-#, fuzzy
-#| msgid "Loading individuals"
 msgid "Fade individual color"
-msgstr "Henkilöiden lataaminen"
+msgstr "Yksittäisen värin häivytys"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:71
 msgid "The color of the individuals is faded to black with increasing age."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
-#, fuzzy
-#| msgid "Without name"
 msgid "Font name"
-msgstr "Ilman nimeä"
+msgstr "Fontin nimi"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:73
 msgid "Name of the font family used for labels."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:75
-#, fuzzy
-#| msgid "Relative"
 msgid "Relative font size"
-msgstr "Sukulaiset"
+msgstr "Suhteellinen fonttikoko"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:76
 msgid "The font size is given relatively to the line thickness."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
-#, fuzzy
-#| msgid "Family Nick Name"
 msgid "Family shape"
-msgstr "Perheen lempinimi"
+msgstr "Perheen muoto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:79
 msgid "The shape of the families can be varied."
@@ -16765,10 +16202,8 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:86
-#, fuzzy
-#| msgid "Deep Connections"
 msgid "Visualize connections"
-msgstr "Syväsuhteet"
+msgstr "Visualisoi yhteydet"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:87
 msgid ""
@@ -16785,10 +16220,8 @@ msgid "Visualize automatically detected errors in the placement algorithm."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:90
-#, fuzzy
-#| msgid "Loading individuals"
 msgid "Coloring of individuals"
-msgstr "Henkilöiden lataaminen"
+msgstr "Henkilöiden väritys"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:91
 msgid "There are different ways to determine the color of an individual."
@@ -16799,10 +16232,8 @@ msgid "Unique"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:93
-#, fuzzy
-#| msgid "Type of surname:"
 msgid "Based on surname"
-msgstr "Sukunimityyppi:"
+msgstr "Perustuu sukunimeen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:94
 msgid "Flip vertically"
@@ -16852,20 +16283,16 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
-#, fuzzy
-#| msgid "Maximum number of generations"
 msgid "Maximum number of compression steps"
-msgstr "Sukupolvien enimmäismäärä"
+msgstr "Pakkausvaiheiden enimmäismäärä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:106
 msgid "Debugging of the compression algorithm. Abort after x steps."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:107
-#, fuzzy
-#| msgid "Maximum number of generations"
 msgid "Maximum number of flipping steps"
-msgstr "Sukupolvien enimmäismäärä"
+msgstr "Kääntövaiheiden enimmäismäärä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:108
 msgid "Debugging of the flipping algorithm. Abort after x steps."
@@ -16894,16 +16321,12 @@ msgid ""
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
-#, fuzzy
-#| msgid "Highlight path(s)"
 msgid "Highlight descandants"
-msgstr "Korosta polut"
+msgstr "Korosta jälkeläiset"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:114
-#, fuzzy
-#| msgid "Highlight central person in graph."
 msgid "Highlight the persons which are descendants."
-msgstr "Korosta kaavion keskushenkilö."
+msgstr "Korosta henkilöt, jotka ovat jälkeläisiä."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:115
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
@@ -16915,9 +16338,8 @@ msgid "Very soft"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:117
-#, fuzzy
 msgid "General chart layout"
-msgstr "Yleiset"
+msgstr "Kaavion yleinen asettelu"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:118
 msgid "There are different layouts for descendant charts."
@@ -16943,28 +16365,20 @@ msgid "cursor position at {date}"
 msgstr ""
 
 #: LifeLineChartView/lifelinechart.py:2591
-#, fuzzy
-#| msgid "Add Person"
 msgid "Hide person"
-msgstr "Lisää henkilö"
+msgstr "Piilota henkilö"
 
 #: LifeLineChartView/lifelinechart.py:2597
-#, fuzzy
-#| msgid "Show person images"
 msgid "Show person"
-msgstr "Näytä henkilökuvat"
+msgstr "Näytä henkilö"
 
 #: LifeLineChartView/lifelinechart.py:2622
-#, fuzzy
-#| msgid "sibling"
 msgid "Show siblings"
-msgstr "sisarus"
+msgstr "Näytä sisarukset"
 
 #: LifeLineChartView/lifelinechart.py:2627
-#, fuzzy
-#| msgid "sibling"
 msgid "Hide siblings"
-msgstr "sisarus"
+msgstr "Piilota sisarukset"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
@@ -16991,9 +16405,8 @@ msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:386
 #: LifeLineChartView/lifelinechartview.py:883
-#, fuzzy
 msgid "General Layout"
-msgstr "Yleiset"
+msgstr "Yleinen asettelu"
 
 #: LifeLineChartView/lifelinechartview.py:509
 #: LifeLineChartView/lifelinechartview.py:510
@@ -17020,16 +16433,12 @@ msgid "Open Life Line Chart help"
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:831
-#, fuzzy
-#| msgid "Export notes"
 msgid "Export View as SVG"
-msgstr "Viedään lisätiedot"
+msgstr "Vie näkymä SVG-muodossa"
 
 #: LifeLineChartView/lifelinechartview.py:946
-#, fuzzy
-#| msgid "Restore default settings"
 msgid "Reset all settings"
-msgstr "Palauta oletusasetukset"
+msgstr "Palauta kaikki asetukset"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
@@ -17046,20 +16455,16 @@ msgid "The ancestor from which to start the line"
 msgstr ""
 
 #: LinesOfDescendency/lines-of-descendency.py:59
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Descendent"
-msgstr "Jälkeläisten sukupuu"
+msgstr "Jälkeläinen"
 
 #: LinesOfDescendency/lines-of-descendency.py:60
 msgid "The descendent to which to build the line"
 msgstr ""
 
 #: LinesOfDescendency/lines-of-descendency.py:82
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The style used for the title of a line."
-msgstr "Paikan postinumero, jos sellainen on."
+msgstr "Viivan nimessä käytetty tyyli."
 
 #: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format
@@ -17142,10 +16547,8 @@ msgid "No media items merged."
 msgstr "Yhtään mediatietoa ei yhdistetty."
 
 #: MediaReport/media_report.gpr.py:24
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media Report"
-msgstr "Mediatyyppi"
+msgstr "Mediaraportti"
 
 #: MediaReport/media_report.gpr.py:25
 msgid "Generates report including images, image data and notes."
@@ -17166,9 +16569,8 @@ msgid "This report only supports PDF as output file format."
 msgstr ""
 
 #: MediaReport/media_report.py:229
-#, fuzzy
 msgid "General:"
-msgstr "Yleiset"
+msgstr "Yleistä:"
 
 #: MediaReport/media_report.py:250
 msgid "Image type:"
@@ -17183,52 +16585,40 @@ msgid "Select a media file for this report"
 msgstr ""
 
 #: MediaReport/media_report.py:433
-#, fuzzy
-#| msgid "Custom pages"
 msgid "Custom note"
-msgstr "Mukautetut sivut"
+msgstr "Mukautettu lisätieto"
 
 #: MediaReport/media_report.py:434
-#, fuzzy
-#| msgid "Select a dot file name"
 msgid "Select a note for this report"
-msgstr "Valitse pistetiedoston nimi"
+msgstr "Valitse lisätieto tälle raportille"
 
 #: MediaReport/media_report.py:437
-#, fuzzy
-#| msgid "Include Last Name Only"
 msgid "Include custom note"
-msgstr "Lisää vain sukunimi"
+msgstr "Sisällytä mukautettu lisätieto"
 
 #: MediaReport/media_report.py:438
 msgid "The custom note will be included"
 msgstr ""
 
 #: MediaReport/media_report.py:442
-#, fuzzy
-#| msgid "Include references in indexes"
 msgid "Include referenced people"
-msgstr "Lisää lähdeviitteet hakemistoihin"
+msgstr "Sisällytä viitatut henkilöt"
 
 #: MediaReport/media_report.py:443
 msgid "Referenced people will be included"
 msgstr ""
 
 #: MediaReport/media_report.py:446
-#, fuzzy
-#| msgid "Include media"
 msgid "Include media data"
-msgstr "Lisää media"
+msgstr "Sisällytä mediatiedot"
 
 #: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
 msgstr ""
 
 #: MediaReport/media_report.py:450
-#, fuzzy
-#| msgid "Media Index"
 msgid "Media width"
-msgstr "Mediahakemisto"
+msgstr "Median leveys"
 
 #: MediaReport/media_report.py:452
 #, no-python-format
@@ -17236,10 +16626,8 @@ msgid "Maximum media width in % of available page width."
 msgstr ""
 
 #: MediaReport/media_report.py:456
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media height"
-msgstr "Mediatyyppi"
+msgstr "Median korkeus"
 
 #: MediaReport/media_report.py:458
 #, no-python-format
@@ -17295,7 +16683,6 @@ msgid "Generate md5 hashes for media objects"
 msgstr "Luo md5-hajautusarvoja mediatiedoille"
 
 #: MediaVerify/MediaVerify.py:106
-#, fuzzy
 msgid "Verify"
 msgstr "Tarkista"
 
@@ -17326,7 +16713,6 @@ msgid "Verify Gramps media using md5 hashes"
 msgstr "Tarkista Gramps-media md5-tiivisteillä"
 
 #: MediaVerify/MediaVerify.py:143
-#, fuzzy
 msgid "Files"
 msgstr "Tiedostot"
 
@@ -17356,16 +16742,14 @@ msgstr ""
 "mediapolkujen peruspolku\" asetuksissa."
 
 #: MediaVerify/MediaVerify.py:307
-#, fuzzy
 msgid "Finding files"
-msgstr "Tiedostojen löytäminen"
+msgstr "Tiedostojen etsiminen"
 
 #: MediaVerify/MediaVerify.py:335
 msgid "Checking paths"
 msgstr "Polkujen tarkistaminen"
 
 #: MediaVerify/MediaVerify.py:388
-#, fuzzy
 msgid "Fixing file paths"
 msgstr "Tiedostopolkujen korjaaminen"
 
@@ -17386,10 +16770,8 @@ msgid "MongoDB Database"
 msgstr ""
 
 #: NLWebConnectPack/NLWebPack.gpr.py:13
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
-msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
+msgstr "Alankomaiden Web-sivustojen kokoelma (vaatii libwebconnectin)"
 
 #: NLWebConnectPack/NLWebPack.py:34
 msgid "Open Archives"
@@ -17943,44 +17325,36 @@ msgid "Enable/disable confirmation of file overwrite."
 msgstr "Ota tiedoston korvaaminen käyttöön/poista se käytöstä."
 
 #: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
-#, fuzzy
-#| msgid "Place Cleanup"
 msgid "Note Cleanup"
-msgstr "Paikan puhdistus"
+msgstr "Lisätiedon puhdistus"
 
 #: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
-msgstr ""
+msgstr "Puhdista lisätiedot, joissa on HTML-merkintöjä"
 
 #: NoteCleanup/NoteCleanup.py:92
-#, fuzzy
-#| msgid "Place Cleanup"
 msgid "Note Cleanup Tool"
-msgstr "Paikan puhdistus"
+msgstr "Lisätietojen puhdistustyökalu"
 
 #: NoteCleanup/NoteCleanup.py:98
-#, fuzzy
-#| msgid "Clear tags"
 msgid "Cleaned Notes"
-msgstr "Poista aiemmat tagit"
+msgstr "Puhdistetut lisätiedot"
 
 #: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
-msgstr ""
+msgstr "Vain linkit"
 
 #: NoteCleanup/NoteCleanup.py:99
 msgid "Issues"
-msgstr ""
+msgstr "Ongelmat"
 
 #: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
-msgstr ""
+msgstr "Sulje lisätietojen puhdistustyökalu"
 
 #: NoteCleanup/NoteCleanup.py:123
-#, fuzzy
-#| msgid "Select All"
 msgid "Save All"
-msgstr "Valitse kaikki"
+msgstr "Tallenna kaikki"
 
 #: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
@@ -18020,10 +17394,8 @@ msgid "Cleanup Test Notes"
 msgstr ""
 
 #: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
-#, fuzzy
-#| msgid "Add Person"
 msgid "Add Test Note"
-msgstr "Lisää henkilö"
+msgstr "Lisää testilisätieto"
 
 #: NoteCleanup/NoteCleanup.py:383
 msgid ""
@@ -18058,32 +17430,25 @@ msgid "Note Gramplet"
 msgstr ""
 
 #: NoteGramplet/NoteGramplet.gpr.py:5
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for editing active person's notes"
-msgstr "Gramplet henkilöiden merkintään valokuvissa"
+msgstr "Gramplet aktiivisen henkilön lisätietojen muokkaamiseen"
 
 #: NoteGramplet/NoteGramplet.py:255
 msgid "Save Note"
 msgstr ""
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of ancestors"
-msgstr "Sivujen määrä"
+msgstr "Esivanhempien lukumäärä"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:5
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid "Shows the number of ancestors of the current person"
-msgstr "Näyttää nykyisen henkilön jälkeläisten lukumäärän"
+msgstr "Näyttää nykyisen henkilön esivanhempien lukumäärän"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
-#, fuzzy, python-format
-#| msgid "Number of %s's descendants"
+#, python-format
 msgid "Number of %s's ancestors"
-msgstr "Henkilön %s jälkeläisten lukumäärä"
+msgstr "Henkilön %s esivanhempien lukumäärä"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
@@ -18145,26 +17510,20 @@ msgstr ""
 "elossa"
 
 #: Overview/Overview.gpr.py:29
-#, fuzzy
-#| msgid "Person theme"
 msgid "Person Overview"
-msgstr "Henkilöteema"
+msgstr "Henkilön yleiskatsaus"
 
 #: Overview/Overview.gpr.py:30
-#, fuzzy
-#| msgid "A view showing relationships and events for a person"
 msgid "Gramplet showing an overview of events for a person"
-msgstr "Yhdistetty näkymä henkilön suhteista ja tapahtumista"
+msgstr "Gramplet näyttää yleiskatsauksen henkilön tapahtumista"
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
 msgid "Overview"
 msgstr ""
 
 #: Overview/Overview.gpr.py:45
-#, fuzzy
-#| msgid "Family Connector Line"
 msgid "Family Overview"
-msgstr "Perheen yhdysviiva"
+msgstr "Perheen yleiskatsaus"
 
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
@@ -18226,14 +17585,10 @@ msgid "All information about %s"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:173
-#, fuzzy
-#| msgid "Primary Name"
 msgid "Primary name"
 msgstr "Ensisijainen nimi"
 
 #: PersonEverything/PersonEverything.py:180
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Alternate name"
 msgstr "Vaihtoehtoinen nimi"
 
@@ -18246,10 +17601,8 @@ msgid " This is the primary death event."
 msgstr " Tämä on ensisijainen kuolintapaus."
 
 #: PersonEverything/PersonEverything.py:238
-#, fuzzy
-#| msgid "Note on Parent Family"
 msgid "Parent Family"
-msgstr "Vanhempien perheen lisätietoja"
+msgstr "Vanhemman perhe"
 
 #: PersonEverything/PersonEverything.py:240
 msgid ""
@@ -18270,34 +17623,25 @@ msgid "LDS "
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:434
-#, fuzzy
-#| msgid "City, County, State, Country"
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
-msgstr "Kaupunki, maakunta, osavaltio, valtio"
+msgstr "Katu, kaupunki, maakunta, osavaltio, postinumero, maa, puhelinnumero"
 
 #: PersonEverything/PersonEverything.py:448
-#, fuzzy
-#| msgid "Clear Reference"
 msgid "Media Reference"
-msgstr "Tyhjennä viittaus"
+msgstr "Mediaviite"
 
 #: PersonEverything/PersonEverything.py:455
 #: PersonEverything/PersonEverything.py:732
-#, fuzzy
 msgid "Description and Path"
-msgstr "Kuvaus:"
+msgstr "Kuvaus ja polku"
 
 #: PersonEverything/PersonEverything.py:484
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Referenced Region"
-msgstr "Muokkaa viitattua henkilöä"
+msgstr "Viitattu alue"
 
 #: PersonEverything/PersonEverything.py:505
-#, fuzzy
-#| msgid "Lines type"
 msgid "Mime type"
-msgstr "Viivan tyyppi"
+msgstr "Mime-tyyppi"
 
 #: PersonEverything/PersonEverything.py:516
 msgid ""
@@ -18305,56 +17649,41 @@ msgid ""
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:542
-#, fuzzy
-#| msgid "Lines type"
 msgid "Note type"
-msgstr "Viivan tyyppi"
+msgstr "Lisätiedon tyyppi"
 
 #: PersonEverything/PersonEverything.py:553
-#, fuzzy
-#| msgid "Next Place"
 msgid "Parent Place"
-msgstr "Seuraava paikka"
+msgstr "Vanhemman paikka"
 
 #: PersonEverything/PersonEverything.py:568
 #: PersonEverything/PersonEverything.py:572
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Alternate Location"
-msgstr "Vaihtoehtoinen nimi"
+msgstr "Vaihtoehtoinen paikka"
 
 #: PersonEverything/PersonEverything.py:607
-#, fuzzy
-#| msgid "Alternate Name"
 msgid "Alternative Name"
 msgstr "Vaihtoehtoinen nimi"
 
 #: PersonEverything/PersonEverything.py:618
-#, fuzzy
 msgid "Latitude, Longitude"
-msgstr "Leveysaste:"
+msgstr "Leveysaste, pituusaste"
 
 #: PersonEverything/PersonEverything.py:648
-#, fuzzy
 msgid "Repository type"
-msgstr "Arkistot"
+msgstr "Arkiston tyyppi"
 
 #: PersonEverything/PersonEverything.py:670
-#, fuzzy
-#| msgid "Set preferences"
 msgid "Repository reference"
-msgstr "Määritä asetukset"
+msgstr "Arkiston viite"
 
 #: PersonEverything/PersonEverything.py:671
-#, fuzzy
-#| msgid "Media Type"
 msgid "Media type"
-msgstr "Mediatyyppi"
+msgstr "Median tyyppi"
 
 #: PersonEverything/PersonEverything.py:679
-#, fuzzy
 msgid "Origin type"
-msgstr "Alkuperäinen aika"
+msgstr "Alkuperän tyyppi"
 
 #: PersonEverything/PersonEverything.py:686
 msgid "Prefix, surname, connector"
@@ -18497,10 +17826,8 @@ msgid "Unknown gender person|Dead at %s"
 msgstr ""
 
 #: PhpGedView/phpgedview.glade:12
-#, fuzzy
-#| msgid "Dark (default)"
 msgid "- default -"
-msgstr "Tumma (oletus)"
+msgstr "- oletus -"
 
 #: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
 msgid "phpGedView import"
@@ -18527,16 +17854,12 @@ msgid "Download a GEDCOM file from a phpGedView server."
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
-#, fuzzy
-#| msgid "Detecting faces..."
 msgid "Fetching index list..."
-msgstr "Kasvojentunnistus..."
+msgstr "Haetaan indeksiluetteloa..."
 
 #: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
-#, fuzzy
-#| msgid "Detecting faces..."
 msgid "Fetching records..."
-msgstr "Kasvojentunnistus..."
+msgstr "Noudetaan tietueita…"
 
 #: PhpGedView/phpgedviewconnector.py:327
 msgid "Logging in..."
@@ -18551,20 +17874,16 @@ msgid "Importing GEDCOM..."
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:341
-#, fuzzy
-#| msgid "Export failed"
 msgid "Error: login failed"
-msgstr "Vienti epäonnistui"
+msgstr "Virhe: kirjautuminen ei onnistunut"
 
 #: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
 msgid "done."
 msgstr "valmis."
 
 #: PhpGedView/phpgedviewconnector.py:347
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Connecting..."
-msgstr "Valitaan... "
+msgstr "Yhdistetään..."
 
 #: PhpGedView/phpgedviewconnector.py:349
 msgid "Get version..."
@@ -18576,10 +17895,8 @@ msgid "Version %s"
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:353
-#, fuzzy
-#| msgid "Preparing file ..."
 msgid "Reading file list..."
-msgstr "Tiedoston valmistelu ..."
+msgstr "Luetaan tiedostoluetteloa..."
 
 #: PhpGedView/phpgedviewconnector.py:366
 msgid "Error: Invalid URL"
@@ -18986,10 +18303,8 @@ msgstr ""
 "paikkaan."
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
-#, fuzzy
-#| msgid "Place Cleanup"
 msgid "PlaceCompletion"
-msgstr "Paikan puhdistus"
+msgstr "Paikan täydentäminen"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
@@ -19019,10 +18334,8 @@ msgid "PlaceCompletion is unable to create %s %s"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:340
-#, fuzzy
-#| msgid "Places Index"
 msgid "Places tool"
-msgstr "Paikkahakemisto"
+msgstr "Paikat-työkalu"
 
 #: PlaceCompletion/PlaceCompletion.py:408
 msgid "Missing regex groups in match lat/lon"
@@ -19047,38 +18360,28 @@ msgid "Finding Places and appropriate changes"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:481
-#, fuzzy
-#| msgid "Filter options"
 msgid "Filtering"
-msgstr "Suodinvalinnat"
+msgstr "Suodatus"
 
 #: PlaceCompletion/PlaceCompletion.py:491
 msgid "Loading lat/lon file in Memory..."
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:497
-#, fuzzy
-#| msgid "Examples"
 msgid "Examining places"
-msgstr "Esimerkkejä"
+msgstr "Tutkimassa paikkoja"
 
 #: PlaceCompletion/PlaceCompletion.py:685
-#, fuzzy
-#| msgid "Show Tags"
 msgid "Set Tag"
-msgstr "Näytä tagit"
+msgstr "Aseta tagi"
 
 #: PlaceCompletion/PlaceCompletion.py:687
-#, fuzzy
-#| msgid "Print place pages"
 msgid "Doing Place changes"
-msgstr "Tulosta paikkasivut"
+msgstr "Muutetaan paikkoja"
 
 #: PlaceCompletion/PlaceCompletion.py:731
-#, fuzzy
-#| msgid "No media was removed."
 msgid "No place record was modified."
-msgstr "Mediaa ei poistettu."
+msgstr "Yhtään paikkatietuetta ei muokattu."
 
 #: PlaceCompletion/PlaceCompletion.py:733
 msgid "1 place record was modified."
@@ -19090,10 +18393,8 @@ msgid "%d place records were modified."
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:736
-#, fuzzy
-#| msgid "Show places"
 msgid "Change places"
-msgstr "Näytä paikat"
+msgstr "Muuta paikkoja"
 
 #: PlaceCompletion/PlaceCompletion.py:809
 msgid "The selected file is a directory, not a file."
@@ -19104,16 +18405,12 @@ msgid "The file you want to access is not a regular file."
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:826
-#, fuzzy
-#| msgid "Directory does not exist"
 msgid "The file does not exist."
-msgstr "Hakemistoa ei ole olemassa"
+msgstr "Tiedostoa ei ole."
 
 #: PlaceCompletion/PlaceCompletion.py:858
-#, fuzzy
-#| msgid "Preparing file ..."
 msgid "Problem reading file"
-msgstr "Tiedoston valmistelu ..."
+msgstr "Ongelma tiedoston lukemisessa"
 
 #: PlaceCompletion/PlaceCompletion.py:970
 #: PlaceCompletion/PlaceCompletion.py:982
@@ -19138,20 +18435,16 @@ msgid "Correct -50° in 50°S"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1142
-#, fuzzy
-#| msgid "Don't change"
 msgid "No changes"
-msgstr "Älä muuta"
+msgstr "Ei muutoksia"
 
 #: PlaceCompletion/PlaceCompletion.py:1143
 msgid "City[, State]"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1145
-#, fuzzy
-#| msgid "City, County, State, Country"
 msgid "City,PostalCode,Country"
-msgstr "Kaupunki, maakunta, osavaltio, valtio"
+msgstr "Kaupunki, postinumero, maa"
 
 #: PlaceCompletion/PlaceCompletion.py:1147
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
@@ -19162,22 +18455,17 @@ msgid "TitleStart [, City] [, State]"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1151
-#, fuzzy
-#| msgid "City, County, State, Country"
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
-msgstr "Kaupunki, maakunta, osavaltio, valtio"
+msgstr "Nimen alku [, kaupunki] [, maakunta] [, osavaltio] [, maa]"
 
 #: PlaceCompletion/PlaceCompletion.py:1153
-#, fuzzy
-#| msgid "City, County, State, Country"
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
-msgstr "Kaupunki, maakunta, osavaltio, valtio"
+msgstr ""
+"Nimen alku [, kaupunki] [, postinumero] [, maakunta] [, osavaltio] [, maa]"
 
 #: PlaceCompletion/PlaceCompletion.py:1177
-#, fuzzy
-#| msgid "Don't change"
 msgid "Don't search"
-msgstr "Älä muuta"
+msgstr "Älä etsi"
 
 #: PlaceCompletion/PlaceCompletion.py:1180
 msgid "GeoNames country file, city search"
@@ -19216,32 +18504,24 @@ msgid "Wikipedia CSV Dump"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1332
-#, fuzzy
-#| msgid "All %s"
 msgid "All Places"
-msgstr "Kaikki %s"
+msgstr "Kaikki paikat"
 
 #: PlaceCompletion/PlaceCompletion.py:1335
 msgid "No Latitude/Longitude given"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:85
-#, fuzzy
-#| msgid "GoogleEarth"
 msgid "_Google Maps"
-msgstr "GoogleEarth"
+msgstr "_Googlen kartat"
 
 #: PlaceCompletion/placecompletion.glade:112
-#, fuzzy
-#| msgid "Apply to selected places"
 msgid "Apply all suggested changes"
-msgstr "Suorita valituille paikoilla"
+msgstr "Toteuta kaikki ehdotetut muutokset"
 
 #: PlaceCompletion/placecompletion.glade:148
-#, fuzzy
-#| msgid "Select the name for which you want to see."
 msgid "Selection of the Places you want to complete:"
-msgstr "Valitse nimi, jonka haluat nähdä."
+msgstr "Valitse täydennettävät paikat:"
 
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
@@ -19260,35 +18540,28 @@ msgid "C_enter latitude:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:383
-#, fuzzy
 msgid "Center longitude:"
-msgstr "Pituusaste:"
+msgstr "Keskipisteen pituusaste:"
 
 #: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:460
-#, fuzzy
-#| msgid "Light"
 msgid "Height:"
-msgstr "Vaalea"
+msgstr "Korkeus:"
 
 #: PlaceCompletion/placecompletion.glade:527
 msgid "1. Look up latitude and longitude:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:554
-#, fuzzy
-#| msgid "Search:"
 msgid "Search in:"
-msgstr "Etsi:"
+msgstr "Mistä haetaan:"
 
 #: PlaceCompletion/placecompletion.glade:566
-#, fuzzy
-#| msgid "Select All"
 msgid "Select A File"
-msgstr "Valitse kaikki"
+msgstr "Valitse tiedosto"
 
 #: PlaceCompletion/placecompletion.glade:579
 msgid "Parse as:"
@@ -19474,10 +18747,8 @@ msgid "Timespan:"
 msgstr "Aikaväli:"
 
 #: PlaceUpdate/PlaceUpdate.py:123
-#, fuzzy
-#| msgid "Clear original enclosing places"
 msgid "Set timespan for enclosing places"
-msgstr "Poista aiemmat ympäröivät paikat"
+msgstr "Aseta aikaväli ympäröiville paikoille"
 
 #: PlaceUpdate/PlaceUpdate.py:159
 msgid "Clear original enclosing places"
@@ -19984,10 +19255,8 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1308
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1318
-#, fuzzy
-#| msgid "Uninstall"
 msgid "not installed"
-msgstr "Poista asennus"
+msgstr "ei asennettu"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
 msgid "     and one of either: (pydotplus: "
@@ -20002,16 +19271,12 @@ msgid "Installed(MS-Windows)"
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
-#, fuzzy
-#| msgid "*Installed"
 msgid "Installed(Linux/Mac)"
-msgstr "*Asennettu"
+msgstr "Asennettu(Linux/Mac)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
-#, fuzzy
-#| msgid "Uninstall"
 msgid "not installed "
-msgstr "Poista asennus"
+msgstr "ei asennettu "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1444
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1614
@@ -20031,10 +19296,8 @@ msgid ") (Requires the gramps addon listed under 'Plugin lib')"
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
-#, fuzzy
-#| msgid "*Installed"
 msgid "DBF installed"
-msgstr "*Asennettu"
+msgstr "DBF-kirjasto asennettu"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1559
 msgid ".)(Requires version "
@@ -20045,10 +19308,9 @@ msgid " installed.)(Passed: version "
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
-#, fuzzy, python-format
-#| msgid "Face detection"
+#, python-format
 msgid "(OpenCV facedetection: %s)"
-msgstr "Kasvojentunnistus"
+msgstr "(OpenCV kasvojen tunnistus: %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
 msgid " (lxml: not found. Requires version "
@@ -20110,10 +19372,8 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1921
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1983
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2019
-#, fuzzy
-#| msgid "found: %s"
 msgid "found"
-msgstr "löytyi: %s"
+msgstr "löytyi"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2026
 msgid ""
@@ -20251,14 +19511,10 @@ msgid "General options"
 msgstr "Yleiset valinnat"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:11
-#, fuzzy
-#| msgid "UK Web Connect Pack"
 msgid "RU Web Connect Pack"
-msgstr "UK Web Connect Pack"
+msgstr "RU Web Connect Pack"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the RU (requires libwebconnect)"
 msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
 
@@ -20275,20 +19531,16 @@ msgid "Winners"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:43
-#, fuzzy
-#| msgid "Outlived"
 msgid "Lived"
-msgstr "Kuollut"
+msgstr "Elänyt"
 
 #: RUWebConnectPack/RUWebPack.py:44
 msgid "Open list"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:45
-#, fuzzy
-#| msgid "Date format"
 msgid "Wait for me"
-msgstr "Päivämäärän muoto"
+msgstr "Wait for me"
 
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
@@ -20303,10 +19555,8 @@ msgid "RIA Officers"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:50
-#, fuzzy
-#| msgid "FamilySearch.org"
 msgid "FamilySpace"
-msgstr "FamilySearch.org UK"
+msgstr "FamilySpace"
 
 #: RebuildTypes/RebuildTypes.gpr.py:26
 msgid "Rebuild Gramps Types"
@@ -20392,10 +19642,8 @@ msgstr ""
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
-#, fuzzy
-#| msgid "Relative"
 msgid "Related Relatives"
-msgstr "Sukulaiset"
+msgstr "Liittyvät sukulaiset"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
 msgid "Gramplet showing relatives in a relation"
@@ -20410,10 +19658,8 @@ msgid "are partners and"
 msgstr ""
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
-#, fuzzy
-#| msgid "Trim ancestors"
 msgid "Common ancestor"
-msgstr "Rajaa esivanhemmat"
+msgstr "Yhteinen esivanhempi"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:253
 msgid "No relatives in a relation found"
@@ -20511,9 +19757,8 @@ msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Tageja '{}' on {} - {} {} kohteessa.\n"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
-#, fuzzy
 msgid "Repositories Report Options"
-msgstr "Arkistot"
+msgstr "Arkistoraportin valinnat"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:27
 #: RepositoriesReport/RepositoriesReport.gpr.py:46
@@ -20523,9 +19768,8 @@ msgstr ""
 #: RepositoriesReport/RepositoriesReport.gpr.py:45
 #: RepositoriesReport/RepositoriesReport.py:80
 #: RepositoriesReport/RepositoriesReportAlt.py:139
-#, fuzzy
 msgid "Repositories Report"
-msgstr "Arkistot"
+msgstr "Arkistoraportti"
 
 #: RepositoriesReport/RepositoriesReport.py:175
 #: RepositoriesReport/RepositoriesReportAlt.py:504
@@ -20553,10 +19797,8 @@ msgid "Data:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:378
-#, fuzzy
-#| msgid "Pages"
 msgid "Page:"
-msgstr "Sivut"
+msgstr "Sivu:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:419
 msgid "Selection with a filter"
@@ -20567,106 +19809,76 @@ msgid "Include repository's urls"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:432
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether to include urls on repository."
-msgstr "Lisätäänkö arkistosivut"
+msgstr "Näytetäänkö arkiston URL-osoitteet."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:435
-#, fuzzy
-#| msgid "Include records marked private"
 msgid "Include repository's address"
-msgstr "Lisää yksityisiksi merkityt tiedot"
+msgstr "Näytä arkiston osoite"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:436
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether to include addresses on repository."
-msgstr "Lisätäänkö arkistosivut"
+msgstr "Sisällytetäänkö arkistoon osoitteet."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:440
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include author."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Sisällytetäänkö tekijä."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:443
-#, fuzzy
-#| msgid "Include records marked private"
 msgid "Include source's abbreviation"
-msgstr "Lisää yksityisiksi merkityt tiedot"
+msgstr "Sisällytä lähteen lyhenne"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:444
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include abbreviation."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Sisällytetäänkö lähteen lyhenne."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:448
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include publication information."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Sisällytetäänkö julkaisutiedot."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:451
-#, fuzzy
-#| msgid "Include media"
 msgid "Include source's data"
-msgstr "Lisää media"
+msgstr "Sisällytä lähteen tiedot"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:452
-#, fuzzy
-#| msgid "Whether to include images and media in the web pages"
 msgid "Whether to include keys and values."
-msgstr "Lisätäänkö kuvat ja media nettisivulle"
+msgstr "Sisällytetäänkö avaimet ja arvot."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:456
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether to include notes on repositories and sources."
-msgstr "Lisätäänkö arkistosivut"
+msgstr "Sisällytetäänkö lisätiedot arkistoista ja lähteistä."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:460
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include media."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Sisällytetäänkö media."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:463
-#, fuzzy
-#| msgid "Include witnesses"
 msgid "Include citations"
-msgstr "Lisää todistajat"
+msgstr "Sisällytä viitteet"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:464
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include citations on sources."
-msgstr "Lisätäänkö yksityiset tiedot"
+msgstr "Sisällytetäänkö viittaukset lähteisiin."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:468
-#, fuzzy
-#| msgid "Whether to include a column showing the media path"
 msgid "Whether to include repositories and sources marked as private."
-msgstr "Lisätäänkö sarake, joka näyttää mediapolun"
+msgstr "Sisällytetäänkö yksityisiksi merkityt arkistot ja lähteet."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:471
 msgid "Display empty values"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:472
-#, fuzzy
-#| msgid "Whether or not to include the Repository Pages."
 msgid "Whether to include key records with empty values."
-msgstr "Lisätäänkö arkistosivut"
+msgstr "Sisällytetäänkö avaintietueet, joissa on tyhjä arvo."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
@@ -20731,7 +19943,6 @@ msgid "Arkiv Digital estate records for Skåne"
 msgstr "Skånen kiinteistörekisterit"
 
 #: SVWebconnectPack/SVWebPack.py:43
-#, fuzzy
 msgid "Ancestry Search"
 msgstr "Ancestry Search"
 
@@ -20756,44 +19967,28 @@ msgid "Gravestone inventory - rötter.se"
 msgstr "Rötter.se - hautakivien inventaario"
 
 #: SearchGramplet/SearchGramplet.gpr.py:10
-#, fuzzy
-#| msgid "No %s objects were found in database."
 msgid "Gramplet for search objects in database."
-msgstr "Tietokannasta ei löytynyt %s kohteita."
+msgstr "Gramplet kohteiden etsimiseksi tietokannasta."
 
 #: SearchGramplet/SearchGramplet.py:104
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Sort by object type"
-msgstr "Lähteet valikko"
+msgstr "Lajittele objektityypin mukaan"
 
 #: SearchGramplet/SearchGramplet.py:138
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Menu to set search objects"
-msgstr "Henkilöhaku"
+msgstr "Valikko hakuobjektien asettamiseen"
 
 #: SearchGramplet/SearchGramplet.py:140
-#, fuzzy
-#| msgid "Select tags for person"
 msgid "Select objects to search"
-msgstr "Valitse tagi henkilölle"
+msgstr "Valitse haettavat kohteet"
 
 #: SearchGramplet/SearchGramplet.py:154
-#, fuzzy
-#| msgid "SVG tree configuration"
 msgid "SearchGramplet configuration menu"
-msgstr "SVG-puun kokoonpano"
+msgstr "SearchGrampletin määritysvalikko"
 
 #: SearchGramplet/SearchGramplet.py:261
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "No matches..."
-msgstr ""
-"Ei\n"
-"osumia"
+msgstr "Ei osumia..."
 
 #: SearchGramplet/SearchGramplet.py:353
 msgid "Start type to search"
@@ -20806,25 +20001,20 @@ msgid ""
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:743
-#, fuzzy, python-format
-#| msgid "Birthdays"
+#, python-format
 msgid "Birth: %s"
-msgstr "Syntymäpäivät"
+msgstr "Syntynyt: %s"
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
+#, python-format
 msgid "Death: %s"
-msgstr "kuolinpäivä"
+msgstr "Kuollut: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
-#, fuzzy
-#| msgid "Set as active person"
 msgid "Set as Active person"
 msgstr "Aseta aktiiviseksi henkilöksi"
 
 #: SearchGramplet/SearchGramplet.py:920
-#, fuzzy
-#| msgid "Set as home person"
 msgid "Set as Home person"
 msgstr "Aseta kotihenkilö"
 
@@ -20851,10 +20041,8 @@ msgid "Remove attribute type and value set"
 msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.py:152
-#, fuzzy
-#| msgid "Detecting faces..."
 msgid "Setting attributes..."
-msgstr "Kasvojentunnistus..."
+msgstr "Asetetaan ominaisuuksia…"
 
 #: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
@@ -20875,10 +20063,8 @@ msgid "Remove Attribute"
 msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.py:194
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Removing attributes..."
-msgstr "Poistetaan '%s'..."
+msgstr "Poistetaan ominaisuuksia..."
 
 #: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
@@ -20909,10 +20095,8 @@ msgid "Not private: %d %s\n"
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:107
-#, fuzzy
-#| msgid "Show person images"
 msgid "Set persons private.."
-msgstr "Näytä henkilökuvat"
+msgstr "Aseta henkilöt yksityisiksi."
 
 #: SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set events private.."
@@ -20945,16 +20129,12 @@ msgid "If checked, all objects without a date will also be set private."
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "Rajoita henkilöitä valitsemalla suodatin"
+msgstr "Valitse tapahtumat käyttämällä suodinta"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict medias"
-msgstr "Rajoita henkilöitä valitsemalla suodatin"
+msgstr "Valitse medioita käyttämällä suodinta"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
 msgid "Internet type filter"
@@ -20977,80 +20157,68 @@ msgid "Shared PostgreSQL Database"
 msgstr "Shared PostgreSQL tietokanta"
 
 #: SourceIndex/SourceIndex.gpr.py:24 SourceIndex/SourceIndex.gpr.py:25
-#, fuzzy
-#| msgid "Birthdays"
 msgid "BirthIndex"
-msgstr "Syntymäpäivät"
+msgstr "Syntymäpäivähakemisto"
 
 #: SourceIndex/SourceIndex.gpr.py:40 SourceIndex/SourceIndex.gpr.py:41
-#, fuzzy
-#| msgid "Media Index"
 msgid "MarriageIndex"
-msgstr "Mediahakemisto"
+msgstr "Avioliittohakemisto"
 
 #: SourceIndex/SourceIndex.gpr.py:56 SourceIndex/SourceIndex.gpr.py:57
-#, fuzzy
-#| msgid "Media Index"
 msgid "DeathIndex"
-msgstr "Mediahakemisto"
+msgstr "Kuolemien hakemisto"
 
 #: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
-#, fuzzy
-#| msgid "Persons Index"
 msgid "CensusIndex"
-msgstr "Henkilöhakemisto"
+msgstr "Väestönlaskennan hakemisto"
 
 #: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
-#, fuzzy
-#| msgid "Sources Index"
 msgid "SourceIndex"
-msgstr "Lähteet valikko"
+msgstr "Lähteiden hakemisto"
 
 #: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
 msgid "birth"
-msgstr ""
+msgstr "syntymä"
 
 #: SourceIndex/birth.glade:65 SourceIndex/census.glade:728
 #: SourceIndex/death.glade:97 SourceIndex/marriage.glade:64
-#, fuzzy
-#| msgid "Info"
 msgid "Info:"
-msgstr "Tiedot"
+msgstr "Tiedot:"
 
 #: SourceIndex/birth.glade:99
 #, fuzzy
 #| msgid "Birthdays"
 msgid "Birth act:"
-msgstr "Syntymäpäivät"
+msgstr "Syntymäkirja:"
 
 #: SourceIndex/birth.glade:129
 msgid ""
 "Volume\n"
 "    Page:"
 msgstr ""
+"Vuosikerta\n"
+"    Sivu:"
 
 #: SourceIndex/birth.glade:149
-#, fuzzy
-#| msgid "Web site title"
 msgid "The source title"
-msgstr "Nettisivuston otsikko"
+msgstr "Lähteen nimi"
 
 #: SourceIndex/birth.glade:164
 msgid "The volume or page of this source"
-msgstr ""
+msgstr "Tämän lähteen vuosikerta tai sivu"
 
 #: SourceIndex/birth.glade:195 SourceIndex/birth.glade:297
 #: SourceIndex/birth.glade:644 SourceIndex/witness.glade:73
 msgid "Names:"
-msgstr ""
+msgstr "Nimet:"
 
 #: SourceIndex/birth.glade:214
 msgid "select the gender/sex"
-msgstr ""
+msgstr "valitse sukupuoli"
 
 #: SourceIndex/birth.glade:247
 msgid "The names of the main person written into the source"
-msgstr ""
+msgstr "Päähenkilön nimet lähteen mukaisena"
 
 #: SourceIndex/birth.glade:262
 msgid "The first names of the main person written into the source"
@@ -21256,6 +20424,7 @@ msgid "Origin:"
 msgstr "Alkuperäinen aika"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
+#: markdown_place_history_formatter.py:59
 msgid "Note:"
 msgstr ""
 
@@ -21737,23 +20906,17 @@ msgid "Gramplet for editing the grouping of surnames"
 msgstr "Gramplet henkilöiden merkintään valokuvissa"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:67
-#, fuzzy
-#| msgid "Add Tags"
 msgid "Add Mapping"
-msgstr "Lisää tageja"
+msgstr "Lisää karttija"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:68
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:158
-#, fuzzy
-#| msgid "Edit tags"
 msgid "Edit Mapping"
-msgstr "Muokkaa tageja"
+msgstr "Muokkaa karttoja"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:69
-#, fuzzy
-#| msgid "Remove Tags"
 msgid "Remove Mapping"
-msgstr "Poista tageja"
+msgstr "Poista kartat"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:78
 msgid "Group Name"
@@ -21771,10 +20934,8 @@ msgstr ""
 #: SyncAssociations/syncAssociations.py:130
 #: SyncAssociations/syncAssociations.py:134
 #: SyncAssociations/syncAssociations.py:138
-#, fuzzy
-#| msgid "%s (association)"
 msgid "Sync Associations"
-msgstr "%s (liitoksen lisätietoja)"
+msgstr "Synkronoi liitokset"
 
 #: SyncAssociations/syncAssociations.gpr.py:6
 msgid ""
@@ -21783,10 +20944,9 @@ msgid ""
 msgstr ""
 
 #: SyncAssociations/syncAssociations.py:124
-#, fuzzy, python-format
-#| msgid "%s (association)"
+#, python-format
 msgid "Add %s reciprocal association"
-msgstr "%s (liitoksen lisätietoja)"
+msgstr "Lisää %s yhteinen liitos"
 
 #: SyncAssociations/syncAssociations.py:131
 msgid "{} Reciprocal associations created"
@@ -21806,10 +20966,8 @@ msgstr ""
 
 #: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
 #: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
-#, fuzzy
-#| msgid "Import file"
 msgid "Import TMG project files"
-msgstr "Tuo tiedosto"
+msgstr "Tuo TMG-projektitiedostoja"
 
 #: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
 #: TMGimporter/importtmg.gpr.py:95
@@ -21855,10 +21013,8 @@ msgid ""
 msgstr ""
 
 #: TMGimporter/libtmg.glade:15
-#, fuzzy
-#| msgid "Imported"
 msgid "TMG Importer"
-msgstr "Tuotu"
+msgstr "TMG-tuoja"
 
 #: TMGimporter/libtmg.glade:31
 msgid "Unreleased Addon - Work In Progress"
@@ -22405,9 +21561,8 @@ msgstr "%(female_name)s eläkkeelle %(year)s - %(place)s."
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:31
 #: ThumbnailGenerator/ThumbnailGenerator.py:53
-#, fuzzy
 msgid "Thumbnail Generator"
-msgstr "Pikkukuvien sijainti"
+msgstr "Pikkukuvageneraattori"
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:32
 msgid "Generates thumbnails for media files"
@@ -22992,43 +22147,87 @@ msgid ""
 "Family, or Source record"
 msgstr ""
 
-#: WebSearch.py:874
+#: WebSearch.py:468
+#, fuzzy
+#| msgid "Contents of the page"
+msgid "Save Coordinates to the Place"
+msgstr "Sivun sisältö"
+
+#: WebSearch.py:609
+msgid "AI provider is disabled"
+msgstr ""
+
+#: WebSearch.py:613
+#, fuzzy
+#| msgid "AI Provider"
+msgid "No AI API key provided"
+msgstr "AI Provider"
+
+#: WebSearch.py:619
+msgid "AI-generated historical place data is currently disabled"
+msgstr ""
+
+#: WebSearch.py:629
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+
+#: WebSearch.py:649
+msgid "⏳ Generating historical place data, please wait..."
+msgstr ""
+
+#: WebSearch.py:1521
 msgid "Keys"
 msgstr ""
 
-#: WebSearch.py:876
+#: WebSearch.py:1523
 msgid "Website URL"
 msgstr "Nettisivuston URL"
 
-#: WebSearch.py:879
+#: WebSearch.py:1526
 msgid "Add link to note"
 msgstr "Lisää linkki lisätietoon"
 
-#: WebSearch.py:880
+#: WebSearch.py:1528
 msgid "Add link to attribute"
 msgstr "Lisää linkki ominaisuuteen"
 
-#: WebSearch.py:881
+#: WebSearch.py:1530
 msgid "Show QR-code"
 msgstr "Näytä QR-koodi"
 
-#: WebSearch.py:882
+#: WebSearch.py:1532
 msgid "Copy link to clipboard"
 msgstr ""
 
-#: WebSearch.py:884
+#: WebSearch.py:1535
 msgid "Hide link for selected item"
 msgstr ""
 
-#: WebSearch.py:886
+#: WebSearch.py:1538
 msgid "Hide link for all items"
 msgstr ""
 
-#: WebSearch.py:888
+#: WebSearch.py:1542
+msgid "Edit Attribute with the Link"
+msgstr ""
+
+#: WebSearch.py:1546
+msgid "Edit Note with the Link"
+msgstr ""
+
+#: WebSearch.py:1549
 msgid "🔍 AI Suggestions"
 msgstr ""
 
-#: WebSearch.py:1040
+#: WebSearch.py:1769
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr ""
+
+#: WebSearch.py:1815
+msgid "Note no longer exists. The extra icon is removed"
+msgstr ""
+
+#: WebSearch.py:1840
 #, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
@@ -23040,43 +22239,43 @@ msgid ""
 "related to this entity."
 msgstr ""
 
-#: WebSearch.py:1120
+#: WebSearch.py:1926
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Lisätieto #%(id)s on onnistuneesti lisätty."
 
-#: WebSearch.py:1124
+#: WebSearch.py:1929
 msgid "Error creating note"
 msgstr ""
 
-#: WebSearch.py:1145
+#: WebSearch.py:1949
 msgid "URL is copied to the Clipboard"
 msgstr ""
 
-#: WebSearch.py:1205
+#: WebSearch.py:2068
 msgid "WebSearch Link"
 msgstr "Verkkohaku Linkki"
 
-#: WebSearch.py:1246
+#: WebSearch.py:2110
 msgid "Attribute has been successfully added"
 msgstr "Ominaisuus on lisätty onnistuneesti"
 
-#: WebSearch.py:1277
+#: WebSearch.py:2142
 #, python-brace-format
 msgid "Title: {title}"
 msgstr "Otsikko: {title}"
 
-#: WebSearch.py:1281
+#: WebSearch.py:2146
 #, python-brace-format
 msgid "Replaced: {keys}"
 msgstr "Korvattu: {keys}"
 
-#: WebSearch.py:1284
+#: WebSearch.py:2149
 #, python-brace-format
 msgid "Empty: {keys}"
 msgstr "Tyhjä: {keys}"
 
-#: WebSearch.py:1286
+#: WebSearch.py:2151
 #, python-brace-format
 msgid "Comment: {comment}"
 msgstr ""
@@ -23102,73 +22301,323 @@ msgstr "Kirjainkokojen määrä"
 msgid "Select filter to restrict list"
 msgstr "Valitse suodatin luettelon rajaamiseksi"
 
-#: constants.py:311
+#: activity_row_generator.py:110
+#, fuzzy, python-format
+#| msgid "Birthdays"
+msgid "Visited: %s"
+msgstr "Syntymäpäivät"
+
+#: activity_row_generator.py:114 activity_row_generator.py:129
+#, python-format
+msgid "Link: %s"
+msgstr ""
+
+#: activity_row_generator.py:116
+#, python-format
+msgid "Attribute: %s"
+msgstr ""
+
+#: activity_row_generator.py:118
+#, fuzzy, python-format
+#| msgid "Key: %s"
+msgid "Value: %s"
+msgstr "Avain: %s"
+
+#: activity_row_generator.py:123
+#, fuzzy, python-format
+#| msgid "Select a dot file name"
+msgid "Loaded from file: %s"
+msgstr "Valitse pistetiedoston nimi"
+
+#: activity_row_generator.py:126
+#, fuzzy, python-format
+#| msgid "found: %s"
+msgid "Domain: %s"
+msgstr "löytyi: %s"
+
+#: activity_row_generator.py:131
+#, fuzzy, python-format
+msgid "Object: %s"
+msgstr "kuolinpäivä"
+
+#: activity_row_generator.py:135
+#, fuzzy, python-format
+msgid "Pattern: %s"
+msgstr "kuolinpäivä"
+
+#: activity_row_generator.py:138
+#, fuzzy, python-format
+#| msgid "The Gramps ID.."
+msgid "Object Gramps ID: %s"
+msgstr "Gramps ID.."
+
+#: activity_row_generator.py:142
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr ""
+
+#: activity_row_generator.py:152
+msgid "Link visited"
+msgstr ""
+
+#: activity_row_generator.py:153
+msgid "Link saved to Note"
+msgstr ""
+
+#: activity_row_generator.py:154
+#, fuzzy
+#| msgid "Add link to attribute"
+msgid "Link saved to Attribute"
+msgstr "Lisää linkki ominaisuuteen"
+
+#: activity_row_generator.py:155
+#, fuzzy
+#| msgid "Place title"
+msgid "Place history loaded"
+msgstr "Paikan nimi"
+
+#: activity_row_generator.py:156
+msgid "Domain skipped"
+msgstr ""
+
+#: activity_row_generator.py:157
+msgid "Link hidden for object"
+msgstr ""
+
+#: activity_row_generator.py:158
+msgid "Link hidden for all objects"
+msgstr ""
+
+#: activity_row_generator.py:159
+msgid "Attribute updated"
+msgstr ""
+
+#: activity_row_generator.py:160
+#, fuzzy
+#| msgid "Lines type"
+msgid "Note updated"
+msgstr "Viivan tyyppi"
+
+#: constants.py:390
 msgid "Column - Icons"
 msgstr ""
 
-#: constants.py:312
+#: constants.py:391
 msgid "Column - Source Types (flags)"
 msgstr ""
 
-#: constants.py:313
+#: constants.py:392
 msgid "Column - Keys"
 msgstr ""
 
-#: constants.py:314
+#: constants.py:393
 msgid "Column - Title"
 msgstr ""
 
-#: constants.py:315
+#: constants.py:394
 msgid "Column - Website Url"
 msgstr ""
 
-#: constants.py:316
+#: constants.py:395
 msgid "Column - Comment"
 msgstr ""
 
-#: constants.py:345
+#: constants.py:424
 msgid "Icon - Visited URLs (checkmark)"
 msgstr ""
 
-#: constants.py:346
+#: constants.py:425
 msgid "Icon - Saved URLs (floppy disk)"
 msgstr ""
 
-#: constants.py:347
+#: constants.py:426
 msgid "Icon - URLs linked to UID attributes (UID badge)"
 msgstr ""
 
-#: constants.py:348
+#: constants.py:427
 msgid "Icon - URLs from regional CSV files (flag)"
 msgstr ""
 
-#: constants.py:349
+#: constants.py:428
 msgid "Icon - URLs from static CSV files (red pin)"
 msgstr ""
 
-#: constants.py:350
+#: constants.py:429
 msgid "Icon - URLs from common CSV files (earth)"
 msgstr ""
 
-#: constants.py:351
+#: constants.py:430
 msgid "Icon - URLs from cross CSV files (shuffle arrows)"
 msgstr ""
 
-#: constants.py:352
+#: constants.py:431
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr ""
 
-#: constants.py:353
+#: constants.py:432
 msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
 msgstr ""
 
-#: constants.py:354
+#: constants.py:433
 msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
 msgstr ""
 
-#: constants.py:355
+#: constants.py:434
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
 msgstr ""
+
+#: info_panel.py:108
+msgid "## 🧩 About WebSearch"
+msgstr ""
+
+#: info_panel.py:111
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+
+#: info_panel.py:117
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+
+#: info_panel.py:125
+msgid "## ⚙️ System Information"
+msgstr ""
+
+#: info_panel.py:128
+msgid "🔻 **Missing:** `qrcode`"
+msgstr ""
+
+#: info_panel.py:130
+msgid "ℹ️ This Python library is not available in your system."
+msgstr ""
+
+#: info_panel.py:133
+msgid "Without it, QR code generation will not work."
+msgstr ""
+
+#: info_panel.py:136
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr ""
+
+#: info_panel.py:140 info_panel.py:162 info_panel.py:181
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+
+#: info_panel.py:147
+msgid "🔻 **Missing:** `openai`"
+msgstr ""
+
+#: info_panel.py:149
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+
+#: info_panel.py:153
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+
+#: info_panel.py:158
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr ""
+
+#: info_panel.py:169
+msgid "🔻 **Missing:** `requests`"
+msgstr ""
+
+#: info_panel.py:171
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr ""
+
+#: info_panel.py:174
+msgid "Without it, external data sources may not be accessible."
+msgstr ""
+
+#: info_panel.py:177
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr ""
+
+#: info_panel.py:188
+msgid "## 📂 Data File Locations"
+msgstr ""
+
+#: info_panel.py:191
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+
+#: info_panel.py:195
+msgid "#### CSV File Paths"
+msgstr ""
+
+#: info_panel.py:197
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr ""
+
+#: info_panel.py:201
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+
+#: info_panel.py:205
+msgid "#### JSON File Paths"
+msgstr ""
+
+#: info_panel.py:208
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+
+#: info_panel.py:214
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+
+#: info_panel.py:221
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+
+#: info_panel.py:224
+msgid "📖 View detailed usage in: "
+msgstr ""
+
+#: info_panel.py:233
+msgid "## 💬 Support"
+msgstr ""
+
+#: info_panel.py:234
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr ""
+
+#: info_panel.py:237
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+
+#: info_panel.py:245
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr ""
+
+#: info_panel.py:255
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr ""
+
+#: internet_links_loader.py:70 internet_links_loader.py:71
+#, fuzzy
+#| msgid "Without title"
+msgid "No title"
+msgstr "Ilman nimikettä"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -23603,105 +23052,165 @@ msgstr ""
 " \"%s\"\n"
 " suosikkiselaimessasi ..."
 
-#: qr_window.py:77
+#: markdown_place_history_formatter.py:52
+msgid "No data available."
+msgstr "Ei tietoja saatavilla."
+
+#: markdown_place_history_formatter.py:57
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr ""
+
+#: markdown_place_history_formatter.py:58
+msgid "Foundation date:"
+msgstr "Perustamispäivä:"
+
+#: markdown_place_history_formatter.py:60
+msgid "Coordinates:"
+msgstr "Koordinaatit:"
+
+#: markdown_place_history_formatter.py:61
+msgid "Administrative history"
+msgstr ""
+
+#: markdown_place_history_formatter.py:62
+msgid "Data provided to AI:"
+msgstr ""
+
+#: markdown_place_history_formatter.py:64
+msgid "Full hierarchy"
+msgstr "Koko hierarkia"
+
+#: markdown_place_history_formatter.py:68
+msgid "Place Type:"
+msgstr "Paikan tyyppi:"
+
+#: markdown_place_history_formatter.py:69
+msgid "Last Retrieved At:"
+msgstr ""
+
+#: note_links_loader.py:69
+msgid "Note Link (parsed)"
+msgstr "Linkki lisätietoihin (jäsennetty)"
+
+#: note_links_loader.py:124
+msgid "Note Link (internal)"
+msgstr ""
+
+#: note_links_loader.py:127
+msgid "Note Link (external)"
+msgstr ""
+
+#: qr_window.py:88
 msgid "QR-code"
 msgstr ""
 
-#: qr_window.py:115
+#: qr_window.py:119 qr_window.py:122
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr ""
+
+#: qr_window.py:133
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
 msgstr ""
 
-#: settings_ui_manager.py:110
+#: settings_ui_manager.py:112
 msgid "Middle Name Handling"
 msgstr ""
 
-#: settings_ui_manager.py:115
+#: settings_ui_manager.py:117
 msgid "Leave alone"
 msgstr ""
 
-#: settings_ui_manager.py:116
+#: settings_ui_manager.py:118
 msgid "Separate"
 msgstr "Erilliset"
 
-#: settings_ui_manager.py:126
+#: settings_ui_manager.py:128
 msgid "URL Compactness Level"
 msgstr ""
 
-#: settings_ui_manager.py:132
+#: settings_ui_manager.py:134
 msgid "Shortest - No Prefix, No Keys"
 msgstr ""
 
-#: settings_ui_manager.py:135
+#: settings_ui_manager.py:137
 msgid "Compact - No Prefix, Keys Without Attributes"
 msgstr "Kompakti - Ei etuliitettä, avaimet ilman ominaisuuksia"
 
-#: settings_ui_manager.py:138
+#: settings_ui_manager.py:140
 msgid "Compact - No Prefix, Keys With Attributes"
 msgstr "Kompakti - Ei etuliitettä, avaimet ominaisuuksilla"
 
-#: settings_ui_manager.py:141
+#: settings_ui_manager.py:143
 msgid "Long - Without Prefix on the Left"
 msgstr "Pitkä - ilman etuliitettä vasemmalla"
 
-#: settings_ui_manager.py:148
+#: settings_ui_manager.py:150
 msgid "URL Prefix Replacement"
 msgstr "URL-etuliitteen korvaaminen"
 
-#: settings_ui_manager.py:155
+#: settings_ui_manager.py:157
 msgid "AI Provider"
 msgstr "AI Provider"
 
-#: settings_ui_manager.py:160
+#: settings_ui_manager.py:162
 msgid "(Disabled)"
 msgstr "(Pois käytöstä)"
 
-#: settings_ui_manager.py:161
+#: settings_ui_manager.py:163
 msgid "OpenAI"
 msgstr "OpenAI"
 
-#: settings_ui_manager.py:162
+#: settings_ui_manager.py:164
 msgid "Mistral AI"
 msgstr "Mistral AI"
 
-#: settings_ui_manager.py:169
+#: settings_ui_manager.py:171
 msgid "OpenAI API Key"
 msgstr "OpenAI API avain"
 
-#: settings_ui_manager.py:174
+#: settings_ui_manager.py:176
 msgid "OpenAI Model"
 msgstr "OpenAI malli"
 
-#: settings_ui_manager.py:179
+#: settings_ui_manager.py:181
 msgid "Mistral API Key"
 msgstr "Mistral API avain"
 
-#: settings_ui_manager.py:184
+#: settings_ui_manager.py:186
 msgid "Mistral Model"
 msgstr "Mistral malli"
 
-#: settings_ui_manager.py:189
+#: settings_ui_manager.py:191
 msgid "Show Links From the 'Attributes' tab"
 msgstr "Näytä linkit ominaisuus välilehdeltä"
 
-#: settings_ui_manager.py:194
+#: settings_ui_manager.py:196
 msgid "Show Links From the 'Internet' tab"
 msgstr "Näytä linkit välilehdeltä 'Internet'"
 
-#: settings_ui_manager.py:199
+#: settings_ui_manager.py:201
 msgid "Show Links From the Notes"
 msgstr "Näytä lisätietojen linkit"
 
-#: settings_ui_manager.py:230
+#: settings_ui_manager.py:209
+msgid "Enable AI-generated historical place data"
+msgstr ""
+
+#: settings_ui_manager.py:215
+msgid "Custom country code for AI notes (optional)"
+msgstr ""
+
+#: settings_ui_manager.py:244
 msgid "Enable CSV Files"
 msgstr "CSV-tiedostot käyttöön"
 
-#: settings_ui_manager.py:237
+#: settings_ui_manager.py:251
 msgid "Display Columns"
 msgstr "Näytä sarakkeet"
 
-#: settings_ui_manager.py:251
+#: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Näytön kuvakkeet"
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-15 16:42+0300\n"
-"PO-Revision-Date: 2025-05-23 22:01+0000\n"
+"POT-Creation-Date: 2025-06-01 14:55+0300\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -74,6 +74,12 @@ msgstr "Koppelingen van de tab 'Internet' weergeven"
 msgid "Show Links From the Notes"
 msgstr "Koppelingen van de Notities weergeven"
 
+msgid "Enable AI-generated historical place data"
+msgstr "AI-gegenereerde historische plaatsgegevens inschakelen"
+
+msgid "Custom country code for AI notes (optional)"
+msgstr "Aangepaste landcode voor AI-notities (optioneel)"
+
 msgid "Enable CSV Files"
 msgstr "CSV-bestanden inschakelen"
 
@@ -92,6 +98,219 @@ msgid ""
 msgstr ""
 "Aangepaste zoekopdrachten voor online diensten op basis van de actieve "
 "persoons-, plaats-, familie- of bronrecord"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "Bezocht: %s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "Link: %s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "Kenmerk: %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "Waarde: %s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Geladen vanuit bestand: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "Domein: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "Object: %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "Patroon: %s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Object Gramps-ID: %s"
+
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+msgid "Link visited"
+msgstr "Link bezocht"
+
+msgid "Link saved to Note"
+msgstr "Link opgeslagen naar Notitie"
+
+msgid "Link saved to Attribute"
+msgstr "Link opgeslagen naar kenmerk"
+
+msgid "Place history loaded"
+msgstr "Plaatsgeschiedenis geladen"
+
+msgid "Domain skipped"
+msgstr "Domein overgeslagen"
+
+msgid "Link hidden for object"
+msgstr "Link verborgen voor object"
+
+msgid "Link hidden for all objects"
+msgstr "Link verborgen voor alle objecten"
+
+msgid "Attribute updated"
+msgstr "Kenmerk bijgewerkt"
+
+msgid "Note updated"
+msgstr "Notitie bijgewerkt"
+
+msgid "Note Link (parsed)"
+msgstr "Notitiekoppeling (verwerkt)"
+
+msgid "Note Link (internal)"
+msgstr "Notitiekoppeling (intern)"
+
+msgid "Note Link (external)"
+msgstr "Notitiekoppeling (extern)"
+
+msgid "No title"
+msgstr "Geen titel"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Over WebSearch"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch is een Gramps Gramplet dat u helpt bij het zoeken naar genealogie-"
+"gerelateerde websites."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Het ondersteunt op CSV gebaseerde linktemplates, AI-ondersteunde ontdekking "
+"van websites en biedt directe integratie met notities en kenmerken."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Systeeminformatie"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Ontbrekend:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Deze Python-bibliotheek is niet beschikbaar op uw systeem."
+
+msgid "Without it, QR code generation will not work."
+msgstr "Zonder zal het genereren van QR-codes niet werken."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Meestal geïnstalleerd met: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Opmerking: Sommige besturingssystemen of omgevingen vereisen mogelijk "
+"alternatieve installatiemethoden.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Ontbrekend:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Deze bibliotheek is vereist voor toegang tot OpenAI-gebaseerde functies."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Zonder zullen AI-gegenereerde sitevoorstellen en plaatsgeschiedenis "
+"uitgeschakeld zijn."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Meestal geïnstalleerd met: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Ontbrekend:** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Deze bibliotheek wordt gebruikt om te communiceren met web-API's."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "Zonder zijn externe gegevensbronnen mogelijk niet toegankelijk."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Meestal geïnstalleerd met: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Locatie van gegevensbestanden"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Hieronder staan de paden naar systeem- en gebruikersgedefinieerde "
+"gegevensbestanden gebruikt door WebSearch."
+
+msgid "#### CSV File Paths"
+msgstr "#### CSV-bestandspaden"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **Systeempad:** `{dir|%s}` – bevat de ingebouwde CSV-bestanden"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Gebruikersgedefinieerd pad:** `{dir|%s}` – voor aangepaste "
+"gebruikersgedefinieerde CSV-bestanden"
+
+msgid "#### JSON File Paths"
+msgstr "#### JSON-bestandspaden"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Systeempad:** `{dir|%s}` – bevat het ingebouwde bestand "
+"attribute_mapping.json"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Gebruikersgedefinieerd pad:** `{dir|%s}` – voor het aangepaste "
+"gebruikersgedefinieerde bestand attribute_mapping.json"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Tip: klik op een pad hierboven om het openen in uw bestandsverkenner.*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 Gebruiksdetails in: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 Ondersteuning"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Gemaakt en onderhouden door Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Voor hulp of reacties, vermeld gerust `@Urchello` op het Gramps forum:"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Foutmeldingen en functieverzoeken zijn volledig **gratis**."
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 WebSearch Gramplet versie: `%s`"
 
 msgid "Column - Icons"
 msgstr "Kolom - Pictogrammen"
@@ -144,8 +363,41 @@ msgstr "Pictogram - URLs van de tab 'Internet' ('I'-pictogram)"
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
 msgstr "Pictogram - URLs van de tab 'Notities' ('N'-pictogram)"
 
+msgid "No data available."
+msgstr "Geen gegevens beschikbaar."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "HISTORISCHE ADMINISTRATIEVE DELEN VAN"
+
+msgid "Foundation date:"
+msgstr "Oprichtingsdatum:"
+
+msgid "Note:"
+msgstr "Notitie:"
+
+msgid "Coordinates:"
+msgstr "Coördinaten:"
+
+msgid "Administrative history"
+msgstr "Administratieve geschiedenis"
+
+msgid "Data provided to AI:"
+msgstr "Gegevens verstrekt aan AI:"
+
+msgid "Full hierarchy"
+msgstr "Volledige hiërarchie"
+
+msgid "Place Type:"
+msgstr "Locatietype:"
+
+msgid "Last Retrieved At:"
+msgstr "Laatst opgehaald op:"
+
 msgid "QR-code"
 msgstr "QR-code"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Ontbrekende afhankelijkheid \"qrcode\""
 
 msgid ""
 "⚠ Error generating QR code:\n"
@@ -153,6 +405,27 @@ msgid ""
 msgstr ""
 "⚠ Fout bij genereren QR-code:\n"
 "Originele fout: “{}”"
+
+msgid "Save Coordinates to the Place"
+msgstr "Coördinaten naar de plaats opslaan"
+
+msgid "AI provider is disabled"
+msgstr "AI-leverancier is uitgeschakeld"
+
+msgid "No AI API key provided"
+msgstr "Geen AI API-sleutel opgegeven"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr ""
+"AI-gegenereerde historische plaatsgegevens zijn momenteel uitgeschakeld"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"AI-leverancier is onbekend. Controleer uw instellingen voor de AI-"
+"leverancier."
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Historische plaatsgegevens genereren, even geduld…"
 
 msgid "Keys"
 msgstr "Sleutels"
@@ -178,8 +451,20 @@ msgstr "Koppeling verbergen voor geselecteerd item"
 msgid "Hide link for all items"
 msgstr "Koppeling verbergen voor alle items"
 
+msgid "Edit Attribute with the Link"
+msgstr "Kenmerk met de link bewerken"
+
+msgid "Edit Note with the Link"
+msgstr "Notitie met de link bewerken"
+
 msgid "🔍 AI Suggestions"
 msgstr "🔍 AI-suggesties"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "Kenmerk bestaat niet meer. Extra pictogram wordt verwijderd"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "Notitie bestaat niet meer. Exptra pictogram wordt verwijderd"
 
 #, python-brace-format
 msgid ""

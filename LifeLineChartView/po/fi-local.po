@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -14,6 +14,21 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Hide person"
+msgstr "Piilota henkilö"
+
+msgid "Show person"
+msgstr "Näytä henkilö"
+
+msgid "Show siblings"
+msgstr "Näytä sisarukset"
+
+msgid "Hide siblings"
+msgstr "Piilota sisarukset"
+
+msgid "General Layout"
+msgstr "Yleinen asettelu"
 
 msgid "Zoom in"
 msgstr "Lähennä"
@@ -26,6 +41,55 @@ msgstr "Alkuperäinen koko"
 
 msgid "Zoom to best fit"
 msgstr "Ikkunaan sopivaksi"
+
+msgid "Export View as SVG"
+msgstr "Vie näkymä SVG-muodossa"
+
+msgid "Label Configuration"
+msgstr "Tietoruudun määritykset"
+
+msgid "Reset all settings"
+msgstr "Palauta kaikki asetukset"
+
+msgid "Show photos"
+msgstr "Näytä kuvat"
+
+msgid "Photos of the individual are shown."
+msgstr "Henkilön kuvat näytetään."
+
+msgid "Photo size"
+msgstr "Kuvan koko"
+
+msgid ""
+"Photos which are shown are fitted into a square of this extent. The size is "
+"given relative to the line thickness."
+msgstr ""
+"Kuvat sovitetaan tämän kokoiseen neliöön. Koko on annettu suhteessa viivan "
+"paksuuteen."
+
+msgid "Total height"
+msgstr "Kokonaiskorkeus"
+
+msgid "Total height of the whole chart."
+msgstr "Kaavion kokonaiskorkeus."
+
+msgid "Relative line thickness"
+msgstr "Viivan suhteellinen paksuus"
+
+msgid ""
+"The line thickness of an individual is given relatively to the horizontal "
+"step size."
+msgstr "Yksilön viivan paksuus annetaan suhteessa vaakasuoran askeleen kokoon."
+
+msgid "Horizontal step size"
+msgstr "Vaakasuoran askeleen koko"
+
+msgid ""
+"This is the distance from one line to another. This value is also used for "
+"scaling of other items."
+msgstr ""
+"Tämä on rivin välinen etäisyys, arvoa käytetään myös muiden kohteiden "
+"skaalaamiseen."
 
 msgid "Show birth label"
 msgstr "Näytä syntymätieto"
@@ -119,11 +183,50 @@ msgstr "Kuolintiedon ankkuri"
 msgid "Text alignment of the death label."
 msgstr "Kuolintiedon tasaus."
 
+msgid "Show marriage label"
+msgstr "Näytä avioliittotieto"
+
+msgid "Fade individual color"
+msgstr "Yksittäisen värin häivytys"
+
+msgid "Font name"
+msgstr "Fontin nimi"
+
+msgid "Relative font size"
+msgstr "Suhteellinen fonttikoko"
+
+msgid "Family shape"
+msgstr "Perheen muoto"
+
+msgid "Visualize connections"
+msgstr "Visualisoi yhteydet"
+
+msgid "Coloring of individuals"
+msgstr "Henkilöiden väritys"
+
+msgid "Based on surname"
+msgstr "Perustuu sukunimeen"
+
 msgid "none"
 msgstr "ei mitään"
 
 msgid "Maximum number of generations"
 msgstr "Sukupolvien enimmäismäärä"
 
+msgid "Maximum number of compression steps"
+msgstr "Pakkausvaiheiden enimmäismäärä"
+
+msgid "Maximum number of flipping steps"
+msgstr "Kääntövaiheiden enimmäismäärä"
+
+msgid "Highlight descandants"
+msgstr "Korosta jälkeläiset"
+
+msgid "Highlight the persons which are descendants."
+msgstr "Korosta henkilöt, jotka ovat jälkeläisiä."
+
 msgid "Number of descendants"
 msgstr "Jälkeläisten määrä"
+
+msgid "General chart layout"
+msgstr "Kaavion yleinen asettelu"

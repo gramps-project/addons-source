@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -238,6 +238,9 @@ msgstr "SVG-puun kaavion muoto"
 msgid "SVG tree graph type"
 msgstr "SVG-puun kaaviotyyppi"
 
+msgid "SVG tree parents distribution"
+msgstr "SVG-puun vanhempien jakauma"
+
 msgid "Save tree as file"
 msgstr "Tallenna puu tiedostoon"
 
@@ -246,6 +249,9 @@ msgstr "Etsi:"
 
 msgid "Select the background color scheme"
 msgstr "Valitse taustan värivalikoima"
+
+msgid "Select the children distribution (fan charts only)"
+msgstr "Valitse lasten jakautuma (vain viuhkakaavioihin)"
 
 msgid "Select the number of ascending generations"
 msgstr "Valitse esivanhempien sukupolvien lukumäärä"
@@ -568,6 +574,9 @@ msgstr "Käytetäänkö välilehtipaneeleja sivujen eri osiin."
 msgid "Whether to show the last modification time in the pages footer"
 msgstr "Näytetäänkö sivun muutosaika alatunnisteessa"
 
+msgid "Whether to insert sources author in the sources title"
+msgstr "Näytetäänkö lähteen tekijä lähdetiedoissa"
+
 msgid "Whether to hide the Gramps ID"
 msgstr "Piilotetaanko Gramps ID"
 
@@ -671,6 +680,9 @@ msgstr "Sivut"
 
 msgid "A note to be used as the page header"
 msgstr "Sivun ylätunnisteena käytettävä lisätieto"
+
+msgid "HTML user brand name / icon"
+msgstr "HTML tavaramerkki tai kuvake"
 
 msgid "A note to be used as the brand name or image in the menu"
 msgstr "Merkki, jota käytetään tuotemerkkinä tai kuvana valikossa"

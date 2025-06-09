@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 16:41+0000\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"POT-Creation-Date: 2025-03-09 22:38+0000\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,8 +12,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Media Report"
+msgstr "Mediaraportti"
 
 msgid "INFO"
 msgstr "INFO"
+
+msgid "General:"
+msgstr "Yleistä:"
+
+msgid "Custom note"
+msgstr "Mukautettu lisätieto"
+
+msgid "Select a note for this report"
+msgstr "Valitse lisätieto tälle raportille"
+
+msgid "Include custom note"
+msgstr "Sisällytä mukautettu lisätieto"
+
+msgid "Include referenced people"
+msgstr "Sisällytä viitatut henkilöt"
+
+msgid "Include media data"
+msgstr "Sisällytä mediatiedot"
+
+msgid "Media width"
+msgstr "Median leveys"
+
+msgid "Media height"
+msgstr "Median korkeus"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -94,6 +94,9 @@ msgstr "kaaviotyyppi ylittää rajat"
 msgid "Search"
 msgstr "Hae"
 
+msgid "in"
+msgstr "paikassa"
+
 msgid "DenominoViso Options"
 msgstr "DenominoVison asetukset"
 
@@ -117,6 +120,9 @@ msgstr "Näyttötila"
 
 msgid "Either plot ancestor or descendants graph."
 msgstr "Joko esi-isän tai jälkeläisten kuvaaja."
+
+msgid "Display type"
+msgstr "Näyttötyyppi"
 
 msgid "The type of graph to create."
 msgstr "Luotavan kaavion tyyppi."
@@ -371,3 +377,50 @@ msgstr ""
 
 msgid "restricted to:"
 msgstr "rajoitettuna:"
+
+msgid "to directory:"
+msgstr "hakemistoon:"
+
+msgid "Save images in ..."
+msgstr "Tallenna kuvat kansioon..."
+
+msgid "should be"
+msgstr "pitäisi olla"
+
+msgid "Included"
+msgstr "Sisältäen"
+
+msgid "Excluded"
+msgstr "poislukien"
+
+msgid "Name HTML-wrapper file"
+msgstr "Html-kuoritiedoston nimi"
+
+msgid "Save HTML-wrapper file as ..."
+msgstr "Tallenna html-kuoritiedosto nimellä ..."
+
+msgid "Give a filename ..."
+msgstr "Anna tiedostonimi ..."
+
+msgid "Relation type"
+msgstr "Sukulaisuus"
+
+msgid "Use dashed linestyle"
+msgstr "Käytä katkoviivaa"
+
+msgid "Dash length"
+msgstr "Viivan pituus"
+
+msgid "Inter-dash length"
+msgstr "Välin pituus"
+
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Luo html-verkkosivun sisältäen graafisen esityksen esivanhemmista/"
+"jälkeläisistä svg-muodossa. Yksilöiden tiedot saa näkyviin hiirellä."

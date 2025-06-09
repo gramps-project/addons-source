@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,8 +12,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Reference Date or Date Range"
+msgstr "Viitepäivä tai ajanjakso"
+
+msgid "a valid Gramps date"
+msgstr "kelvollinen Gramps-päivämäärä"
+
+msgid "Date or offset ±y or ±y, m, d"
+msgstr "Päivämäärä tai ero ±v tai ±v,kk,pv"
+
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+"1. päivämäärä\n"
+"2. positiivinen tai negatiivinen vuosimäärä\n"
+"3. positiivinen tai negatiivinen arvolista, joka edustaa vuosia, kuukausia "
+"ja päiviä"
+
+msgid "Result"
+msgstr "Tulos"
+
+msgid "Calculate"
+msgstr "Laske"
 
 msgid "Copy"
 msgstr "Kopioi"
+
+msgid "Error: invalid date for first expression"
+msgstr "Virhe: ensimmäisen lausekkeen päivämäärä on virheellinen"
+
+msgid "Error: invalid offset for second expression"
+msgstr "Virhe: virheellinen toisen lausekkeen siirtymä"
+
+msgid "Error: at least one expression must be a date"
+msgstr "Virhe: ainakin toisen lausekkeen on oltava päivämäärä"
+
+msgid "Enter an expression in the entries above and click Calculate."
+msgstr "Syötä lauseke yllä oleviin kenttiin ja napsauta Laske."
+
+msgid "Date Calculator"
+msgstr "Pävämäärälaskin"
+
+msgid "Perform date math calculations"
+msgstr "Suorita päivämäärälaskuja"

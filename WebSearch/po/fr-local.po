@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-15 16:42+0300\n"
+"POT-Creation-Date: 2025-06-01 14:55+0300\n"
 "PO-Revision-Date: 2025-05-23 22:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
@@ -131,6 +131,9 @@ msgstr "Icône - URL d'un fichier CSV croisé (flèches croisées)"
 
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr "Icône - URL du répertoire utilisateur (icône de feuille de calcul)"
+
+msgid "Note:"
+msgstr "Note :"
 
 msgid "QR-code"
 msgstr "QR-code"

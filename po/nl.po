@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-17 16:57+0100\n"
-"PO-Revision-Date: 2025-05-23 22:01+0000\n"
+"POT-Creation-Date: 2025-06-03 09:24-0700\n"
+"PO-Revision-Date: 2025-06-05 06:02+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -21010,6 +21010,7 @@ msgid "Origin:"
 msgstr "Oorsprong:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
+#: markdown_place_history_formatter.py:59
 msgid "Note:"
 msgstr "Notitie:"
 
@@ -22788,43 +22789,85 @@ msgstr ""
 "Aangepaste zoekopdrachten voor online diensten op basis van de actieve "
 "persoons-, plaats-, familie- of bronrecord"
 
-#: WebSearch.py:874
+#: WebSearch.py:468
+msgid "Save Coordinates to the Place"
+msgstr "Coördinaten naar de plaats opslaan"
+
+#: WebSearch.py:609
+msgid "AI provider is disabled"
+msgstr "AI-leverancier is uitgeschakeld"
+
+#: WebSearch.py:613
+msgid "No AI API key provided"
+msgstr "Geen AI API-sleutel opgegeven"
+
+#: WebSearch.py:619
+msgid "AI-generated historical place data is currently disabled"
+msgstr "AI-gegenereerde historische plaatsgegevens zijn momenteel uitgeschakeld"
+
+#: WebSearch.py:629
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"AI-leverancier is onbekend. Controleer uw instellingen voor de AI-"
+"leverancier."
+
+#: WebSearch.py:649
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Historische plaatsgegevens genereren, even geduld…"
+
+#: WebSearch.py:1521
 msgid "Keys"
 msgstr "Sleutels"
 
-#: WebSearch.py:876
+#: WebSearch.py:1523
 msgid "Website URL"
 msgstr "Website-URL"
 
-#: WebSearch.py:879
+#: WebSearch.py:1526
 msgid "Add link to note"
 msgstr "Koppeling toevoegen aan notitie"
 
-#: WebSearch.py:880
+#: WebSearch.py:1528
 msgid "Add link to attribute"
 msgstr "Koppeling toevoegen aan attribuut"
 
-#: WebSearch.py:881
+#: WebSearch.py:1530
 msgid "Show QR-code"
 msgstr "QR-code weergeven"
 
-#: WebSearch.py:882
+#: WebSearch.py:1532
 msgid "Copy link to clipboard"
 msgstr "Koppeling naar klembord kopiëren"
 
-#: WebSearch.py:884
+#: WebSearch.py:1535
 msgid "Hide link for selected item"
 msgstr "Koppeling verbergen voor geselecteerd item"
 
-#: WebSearch.py:886
+#: WebSearch.py:1538
 msgid "Hide link for all items"
 msgstr "Koppeling verbergen voor alle items"
 
-#: WebSearch.py:888
+#: WebSearch.py:1542
+msgid "Edit Attribute with the Link"
+msgstr "Kenmerk met de link bewerken"
+
+#: WebSearch.py:1546
+msgid "Edit Note with the Link"
+msgstr "Notitie met de link bewerken"
+
+#: WebSearch.py:1549
 msgid "🔍 AI Suggestions"
 msgstr "🔍 AI-suggesties"
 
-#: WebSearch.py:1040
+#: WebSearch.py:1769
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "Kenmerk bestaat niet meer. Extra pictogram wordt verwijderd"
+
+#: WebSearch.py:1815
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "Notitie bestaat niet meer. Exptra pictogram wordt verwijderd"
+
+#: WebSearch.py:1840
 #, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
@@ -22843,43 +22886,43 @@ msgstr ""
 "Je kunt deze link gebruiken om de bron opnieuw te bezoeken en de informatie "
 "met betrekking tot deze entiteit te verifiëren."
 
-#: WebSearch.py:1120
+#: WebSearch.py:1926
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Notitie #%(id)s is met succes toegevoeg"
 
-#: WebSearch.py:1124
+#: WebSearch.py:1929
 msgid "Error creating note"
 msgstr "Fout bij aanmaken notitie"
 
-#: WebSearch.py:1145
+#: WebSearch.py:1949
 msgid "URL is copied to the Clipboard"
 msgstr "URL is gekopieerd naar het klembord"
 
-#: WebSearch.py:1205
+#: WebSearch.py:2068
 msgid "WebSearch Link"
 msgstr "WebSearch Link"
 
-#: WebSearch.py:1246
+#: WebSearch.py:2110
 msgid "Attribute has been successfully added"
 msgstr "Attribuut is met success toegevoegd"
 
-#: WebSearch.py:1277
+#: WebSearch.py:2142
 #, python-brace-format
 msgid "Title: {title}"
 msgstr "Titel: {title}"
 
-#: WebSearch.py:1281
+#: WebSearch.py:2146
 #, python-brace-format
 msgid "Replaced: {keys}"
 msgstr "Vervangen: {keys}"
 
-#: WebSearch.py:1284
+#: WebSearch.py:2149
 #, python-brace-format
 msgid "Empty: {keys}"
 msgstr "Leeg: {keys}"
 
-#: WebSearch.py:1286
+#: WebSearch.py:2151
 #, python-brace-format
 msgid "Comment: {comment}"
 msgstr "Commentaar: {comment}"
@@ -22905,73 +22948,329 @@ msgstr "Aantal lettergroottes"
 msgid "Select filter to restrict list"
 msgstr "Selecteer een filter om de lijst te beperken"
 
-#: constants.py:311
+#: activity_row_generator.py:110
+#, python-format
+msgid "Visited: %s"
+msgstr "Bezocht: %s"
+
+#: activity_row_generator.py:114 activity_row_generator.py:129
+#, python-format
+msgid "Link: %s"
+msgstr "Link: %s"
+
+#: activity_row_generator.py:116
+#, python-format
+msgid "Attribute: %s"
+msgstr "Kenmerk: %s"
+
+#: activity_row_generator.py:118
+#, python-format
+msgid "Value: %s"
+msgstr "Waarde: %s"
+
+#: activity_row_generator.py:123
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Geladen vanuit bestand: %s"
+
+#: activity_row_generator.py:126
+#, python-format
+msgid "Domain: %s"
+msgstr "Domein: %s"
+
+#: activity_row_generator.py:131
+#, python-format
+msgid "Object: %s"
+msgstr "Object: %s"
+
+#: activity_row_generator.py:135
+#, python-format
+msgid "Pattern: %s"
+msgstr "Patroon: %s"
+
+#: activity_row_generator.py:138
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Object Gramps-ID: %s"
+
+#: activity_row_generator.py:142
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+#: activity_row_generator.py:152
+msgid "Link visited"
+msgstr "Link bezocht"
+
+#: activity_row_generator.py:153
+msgid "Link saved to Note"
+msgstr "Link opgeslagen naar Notitie"
+
+#: activity_row_generator.py:154
+msgid "Link saved to Attribute"
+msgstr "Link opgeslagen naar kenmerk"
+
+#: activity_row_generator.py:155
+msgid "Place history loaded"
+msgstr "Plaatsgeschiedenis geladen"
+
+#: activity_row_generator.py:156
+msgid "Domain skipped"
+msgstr "Domein overgeslagen"
+
+#: activity_row_generator.py:157
+msgid "Link hidden for object"
+msgstr "Link verborgen voor object"
+
+#: activity_row_generator.py:158
+msgid "Link hidden for all objects"
+msgstr "Link verborgen voor alle objecten"
+
+#: activity_row_generator.py:159
+msgid "Attribute updated"
+msgstr "Kenmerk bijgewerkt"
+
+#: activity_row_generator.py:160
+msgid "Note updated"
+msgstr "Notitie bijgewerkt"
+
+#: constants.py:390
 msgid "Column - Icons"
 msgstr "Kolom - Pictogrammen"
 
-#: constants.py:312
+#: constants.py:391
 msgid "Column - Source Types (flags)"
 msgstr "Kolom - Brontypen (kenmerken)"
 
-#: constants.py:313
+#: constants.py:392
 msgid "Column - Keys"
 msgstr "Kolom - Sleutels"
 
-#: constants.py:314
+#: constants.py:393
 msgid "Column - Title"
 msgstr "Kolom - Titel"
 
-#: constants.py:315
+#: constants.py:394
 msgid "Column - Website Url"
 msgstr "Kolom - Website-url"
 
-#: constants.py:316
+#: constants.py:395
 msgid "Column - Comment"
 msgstr "Kolom - Commentaar"
 
-#: constants.py:345
+#: constants.py:424
 msgid "Icon - Visited URLs (checkmark)"
 msgstr "Pictogram - Bezochte URLs (vinkje)"
 
-#: constants.py:346
+#: constants.py:425
 msgid "Icon - Saved URLs (floppy disk)"
 msgstr "Pictogram - Opgeslagen URLs (diskette)"
 
-#: constants.py:347
+#: constants.py:426
 msgid "Icon - URLs linked to UID attributes (UID badge)"
 msgstr "Pictogram - URLs gekoppeld met UID-attributen (UID-insigne)"
 
-#: constants.py:348
+#: constants.py:427
 msgid "Icon - URLs from regional CSV files (flag)"
 msgstr "Pictogram - URLs van regionale CSV-gegevens uit (vlag)"
 
-#: constants.py:349
+#: constants.py:428
 msgid "Icon - URLs from static CSV files (red pin)"
 msgstr "Pictogram - URLs van statische CSV-bestanden (rode pin)"
 
-#: constants.py:350
+#: constants.py:429
 msgid "Icon - URLs from common CSV files (earth)"
 msgstr "Pictogram - URLs van algemene CSV-bestanden (aarde)"
 
-#: constants.py:351
+#: constants.py:430
 msgid "Icon - URLs from cross CSV files (shuffle arrows)"
 msgstr "Pictogram - URLs van CSV-kruisgegevens (pijlen)"
 
-#: constants.py:352
+#: constants.py:431
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr "Pictogram - URLs van aangepaste gebruikersmap (tabel)"
 
-#: constants.py:353
+#: constants.py:432
 msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
 msgstr "Pictogram - URLs van de tab 'Attributen' ('A'-pictogram)"
 
-#: constants.py:354
+#: constants.py:433
 msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
 msgstr "Pictogram - URLs van de tab 'Internet' ('I'-pictogram)"
 
-#: constants.py:355
+#: constants.py:434
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
 msgstr "Pictogram - URLs van de tab 'Notities' ('N'-pictogram)"
+
+#: info_panel.py:108
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Over WebSearch"
+
+#: info_panel.py:111
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch is een Gramps Gramplet dat u helpt bij het zoeken naar genealogie-"
+"gerelateerde websites."
+
+#: info_panel.py:117
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Het ondersteunt op CSV gebaseerde linktemplates, AI-ondersteunde ontdekking "
+"van websites en biedt directe integratie met notities en kenmerken."
+
+#: info_panel.py:125
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Systeeminformatie"
+
+#: info_panel.py:128
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Ontbrekend:** `qrcode`"
+
+#: info_panel.py:130
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Deze Python-bibliotheek is niet beschikbaar op uw systeem."
+
+#: info_panel.py:133
+msgid "Without it, QR code generation will not work."
+msgstr "Zonder zal het genereren van QR-codes niet werken."
+
+#: info_panel.py:136
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Meestal geïnstalleerd met: `pip install qrcode[pil]`"
+
+#: info_panel.py:140 info_panel.py:162 info_panel.py:181
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Opmerking: Sommige besturingssystemen of omgevingen vereisen mogelijk "
+"alternatieve installatiemethoden.*"
+
+#: info_panel.py:147
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Ontbrekend:** `openai`"
+
+#: info_panel.py:149
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Deze bibliotheek is vereist voor toegang tot OpenAI-gebaseerde functies."
+
+#: info_panel.py:153
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Zonder zullen AI-gegenereerde sitevoorstellen en plaatsgeschiedenis "
+"uitgeschakeld zijn."
+
+#: info_panel.py:158
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Meestal geïnstalleerd met: `pip install openai`"
+
+#: info_panel.py:169
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Ontbrekend:** `requests`"
+
+#: info_panel.py:171
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Deze bibliotheek wordt gebruikt om te communiceren met web-API's."
+
+#: info_panel.py:174
+msgid "Without it, external data sources may not be accessible."
+msgstr "Zonder zijn externe gegevensbronnen mogelijk niet toegankelijk."
+
+#: info_panel.py:177
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Meestal geïnstalleerd met: `pip install requests`"
+
+#: info_panel.py:188
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Locatie van gegevensbestanden"
+
+#: info_panel.py:191
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Hieronder staan de paden naar systeem- en gebruikersgedefinieerde "
+"gegevensbestanden gebruikt door WebSearch."
+
+#: info_panel.py:195
+msgid "#### CSV File Paths"
+msgstr "#### CSV-bestandspaden"
+
+#: info_panel.py:197
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **Systeempad:** `{dir|%s}` – bevat de ingebouwde CSV-bestanden"
+
+#: info_panel.py:201
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Gebruikersgedefinieerd pad:** `{dir|%s}` – voor aangepaste "
+"gebruikersgedefinieerde CSV-bestanden"
+
+#: info_panel.py:205
+msgid "#### JSON File Paths"
+msgstr "#### JSON-bestandspaden"
+
+#: info_panel.py:208
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Systeempad:** `{dir|%s}` – bevat het ingebouwde bestand "
+"attribute_mapping.json"
+
+#: info_panel.py:214
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Gebruikersgedefinieerd pad:** `{dir|%s}` – voor het aangepaste "
+"gebruikersgedefinieerde bestand attribute_mapping.json"
+
+#: info_panel.py:221
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Tip: klik op een pad hierboven om het openen in uw bestandsverkenner.*"
+
+#: info_panel.py:224
+msgid "📖 View detailed usage in: "
+msgstr "📖 Gebruiksdetails in: "
+
+#: info_panel.py:233
+msgid "## 💬 Support"
+msgstr "## 💬 Ondersteuning"
+
+#: info_panel.py:234
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Gemaakt en onderhouden door Yurii Liubymyi"
+
+#: info_panel.py:237
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Voor hulp of reacties, vermeld gerust `@Urchello` op het Gramps forum:"
+
+#: info_panel.py:245
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Foutmeldingen en functieverzoeken zijn volledig **gratis**."
+
+#: info_panel.py:255
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 WebSearch Gramplet versie: `%s`"
+
+#: internet_links_loader.py:70 internet_links_loader.py:71
+msgid "No title"
+msgstr "Geen titel"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -23407,11 +23706,63 @@ msgstr ""
 " \"%s\" te openen\n"
 " in uw favoriete webnavigator..."
 
-#: qr_window.py:77
+#: markdown_place_history_formatter.py:52
+msgid "No data available."
+msgstr "Geen gegevens beschikbaar."
+
+#: markdown_place_history_formatter.py:57
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "HISTORISCHE ADMINISTRATIEVE DELEN VAN"
+
+#: markdown_place_history_formatter.py:58
+msgid "Foundation date:"
+msgstr "Oprichtingsdatum:"
+
+#: markdown_place_history_formatter.py:60
+msgid "Coordinates:"
+msgstr "Coördinaten:"
+
+#: markdown_place_history_formatter.py:61
+msgid "Administrative history"
+msgstr "Administratieve geschiedenis"
+
+#: markdown_place_history_formatter.py:62
+msgid "Data provided to AI:"
+msgstr "Gegevens verstrekt aan AI:"
+
+#: markdown_place_history_formatter.py:64
+msgid "Full hierarchy"
+msgstr "Volledige hiërarchie"
+
+#: markdown_place_history_formatter.py:68
+msgid "Place Type:"
+msgstr "Locatietype:"
+
+#: markdown_place_history_formatter.py:69
+msgid "Last Retrieved At:"
+msgstr "Laatst opgehaald op:"
+
+#: note_links_loader.py:69
+msgid "Note Link (parsed)"
+msgstr "Notitiekoppeling (verwerkt)"
+
+#: note_links_loader.py:124
+msgid "Note Link (internal)"
+msgstr "Notitiekoppeling (intern)"
+
+#: note_links_loader.py:127
+msgid "Note Link (external)"
+msgstr "Notitiekoppeling (extern)"
+
+#: qr_window.py:88
 msgid "QR-code"
 msgstr "QR-code"
 
-#: qr_window.py:115
+#: qr_window.py:119 qr_window.py:122
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Ontbrekende afhankelijkheid \"qrcode\""
+
+#: qr_window.py:133
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
@@ -23419,95 +23770,103 @@ msgstr ""
 "⚠ Fout bij genereren QR-code:\n"
 "Originele fout: “{}”"
 
-#: settings_ui_manager.py:110
+#: settings_ui_manager.py:112
 msgid "Middle Name Handling"
 msgstr "Verwerking van middelste namen"
 
-#: settings_ui_manager.py:115
+#: settings_ui_manager.py:117
 msgid "Leave alone"
 msgstr "Laten"
 
-#: settings_ui_manager.py:116
+#: settings_ui_manager.py:118
 msgid "Separate"
 msgstr "Scheiden"
 
-#: settings_ui_manager.py:126
+#: settings_ui_manager.py:128
 msgid "URL Compactness Level"
 msgstr "Compactheid van de URL"
 
-#: settings_ui_manager.py:132
+#: settings_ui_manager.py:134
 msgid "Shortest - No Prefix, No Keys"
 msgstr "Kortst - Geen voorvoegsel, Geen sleutels"
 
-#: settings_ui_manager.py:135
+#: settings_ui_manager.py:137
 msgid "Compact - No Prefix, Keys Without Attributes"
 msgstr "Compact - Geen sleutels, Variabelen zonder Kenmerken"
 
-#: settings_ui_manager.py:138
+#: settings_ui_manager.py:140
 msgid "Compact - No Prefix, Keys With Attributes"
 msgstr "Compact - Geen voorvoegsel, Sleutels met Kenmerken"
 
-#: settings_ui_manager.py:141
+#: settings_ui_manager.py:143
 msgid "Long - Without Prefix on the Left"
 msgstr "Lang - Zonder voorvoegsel aan Linkerzijde"
 
-#: settings_ui_manager.py:148
+#: settings_ui_manager.py:150
 msgid "URL Prefix Replacement"
 msgstr "URL-voorvoegselvervanging"
 
-#: settings_ui_manager.py:155
+#: settings_ui_manager.py:157
 msgid "AI Provider"
 msgstr "AI-leverancier"
 
-#: settings_ui_manager.py:160
+#: settings_ui_manager.py:162
 msgid "(Disabled)"
 msgstr "(Uitgeschakeld)"
 
-#: settings_ui_manager.py:161
+#: settings_ui_manager.py:163
 msgid "OpenAI"
 msgstr "OpenAI"
 
-#: settings_ui_manager.py:162
+#: settings_ui_manager.py:164
 msgid "Mistral AI"
 msgstr "Mistral AI"
 
-#: settings_ui_manager.py:169
+#: settings_ui_manager.py:171
 msgid "OpenAI API Key"
 msgstr "OpenAI API-sleutel"
 
-#: settings_ui_manager.py:174
+#: settings_ui_manager.py:176
 msgid "OpenAI Model"
 msgstr "OpenAI-model"
 
-#: settings_ui_manager.py:179
+#: settings_ui_manager.py:181
 msgid "Mistral API Key"
 msgstr "Mistral API-sleutel"
 
-#: settings_ui_manager.py:184
+#: settings_ui_manager.py:186
 msgid "Mistral Model"
 msgstr "Mistral-model"
 
-#: settings_ui_manager.py:189
+#: settings_ui_manager.py:191
 msgid "Show Links From the 'Attributes' tab"
 msgstr "Koppelingen van de tab 'Attributen' weergeven"
 
-#: settings_ui_manager.py:194
+#: settings_ui_manager.py:196
 msgid "Show Links From the 'Internet' tab"
 msgstr "Koppelingen van de tab 'Internet' weergeven"
 
-#: settings_ui_manager.py:199
+#: settings_ui_manager.py:201
 msgid "Show Links From the Notes"
 msgstr "Koppelingen van de Notities weergeven"
 
-#: settings_ui_manager.py:230
+#: settings_ui_manager.py:209
+msgid "Enable AI-generated historical place data"
+msgstr "AI-gegenereerde historische plaatsgegevens inschakelen"
+
+#: settings_ui_manager.py:215
+msgid "Custom country code for AI notes (optional)"
+msgstr "Aangepaste landcode voor AI-notities (optioneel)"
+
+#: settings_ui_manager.py:244
 msgid "Enable CSV Files"
 msgstr "CSV-bestanden inschakelen"
 
-#: settings_ui_manager.py:237
+#: settings_ui_manager.py:251
 msgid "Display Columns"
 msgstr "Kolomen weergeven"
 
-#: settings_ui_manager.py:251
+#: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Pictogrammen weergeven"
 
