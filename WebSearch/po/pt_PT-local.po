@@ -276,8 +276,8 @@ msgid ""
 "- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
 "file"
 msgstr ""
-"- **Caminho do sistema:** `{dir|%s}` - contém o ficheiro attribute_mapping."
-"json interno"
+"- **Caminho do sistema:** `{dir|%s}` - contém o ficheiro "
+"attribute_mapping.json interno"
 
 #, python-format
 msgid ""
