@@ -29,6 +29,15 @@ function init(){
     //init data
     var json = ged_data;
     
+    var theme = "___TREE_THEME___";
+    if (theme && theme == "light") {
+        var selected_path_color = "#33f";
+        var unselected_path_color = "#222";
+    } else {
+        // dark default theme
+        var selected_path_color = "#eed";
+        var unselected_path_color = "#eee";
+    }
     
     //init Spacetree
     //Create a new ST instance
@@ -135,11 +144,11 @@ function init(){
         //override the Edge global style properties.
         onBeforePlotLine: function(adj){
             if (adj.nodeFrom.selected && adj.nodeTo.selected) {
-                adj.data.$color = "#eed";
+                adj.data.$color = selected_path_color;
                 adj.data.$lineWidth = 3;
             }
             else {
-                delete adj.data.$color;
+                adj.data.$color = unselected_path_color;
                 delete adj.data.$lineWidth;
             }
         }

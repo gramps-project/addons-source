@@ -2853,6 +2853,15 @@ function init(){
     //init data
     var json = ged_data;
     
+    var theme = "___TREE_THEME___";
+    if (theme && theme == "light") {
+        var selected_path_color = "#33f";
+        var unselected_path_color = "#222";
+    } else {
+        // dark default theme
+        var selected_path_color = "#eed";
+        var unselected_path_color = "#eee";
+    }
     
     //init Spacetree
     //Create a new ST instance
@@ -2959,11 +2968,11 @@ function init(){
         //override the Edge global style properties.
         onBeforePlotLine: function(adj){
             if (adj.nodeFrom.selected && adj.nodeTo.selected) {
-                adj.data.$color = "#eed";
+                adj.data.$color = selected_path_color;
                 adj.data.$lineWidth = 3;
             }
             else {
-                delete adj.data.$color;
+                adj.data.$color = unselected_path_color;
                 delete adj.data.$lineWidth;
             }
         }
@@ -3057,7 +3066,7 @@ function init(){
        </small>
     </td>
     <td style="width: 84%; vertical-align: top;">
-       <div style="background-color: #222; vertical-align: top; height: calc(100vh - 150px);" id="infovis"></div>    
+       <div style="background-color: ___GRAPH_BG_COLOR___; border-style: solid; border-width: thin; vertical-align: top; height: calc(100vh - 150px);" id="infovis"></div>    
     </td
   </tr>
 </table>
@@ -3114,6 +3123,13 @@ function nav_goto(id) {
 /* set the chartname */
 var chartname = document.getElementById('chartname');
 chartname.innerHTML = " ___DESCENDANTS_OF___ " + ged_name;
+
+/* destroy and rebuild infovis canvas on browser resize or fullscreen */
+function doResize() {
+    document.getElementById("infovis").textContent = '';
+    init();
+}
+window.onresize = doResize;
 
 
 

@@ -38,6 +38,8 @@ import io
 import html
 import os
 import logging
+import subprocess
+import sys
 
 # ------------------------------------------------------------------------
 #
@@ -62,6 +64,7 @@ from gramps.gen.plug.menu import (
     DestinationOption,
     StringOption,
     EnumeratedListOption,
+    BooleanOption,
 )
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import MenuReportOptions
@@ -98,6 +101,10 @@ DATE_EMPTY = Date(Date.EMPTY)
 # branch_pref items
 PATRIARCHAL_LINE = _("Patriarchal Line (Male ancestor)")
 MATRIARCHAL_LINE = _("Matriarchal Line (Female ancestor)")
+
+# graph theme_pref items
+DARK_THEME = _("Dark theme")
+LIGHT_THEME = _("Light theme")
 
 
 def _q_double(s):
@@ -431,7 +438,7 @@ class DescendantSpaceTreeReport(Report):
         birth_year_limit - Maximum birth year to show birth/death years
         dest_path        - Destination directory
         dest_file        - Destination file name
-        output_type      - Single file or Multiple files
+        open_browser     - Open with default browser after generation
 
 
         """
@@ -453,8 +460,10 @@ class DescendantSpaceTreeReport(Report):
         self.birth_year_limit = menu.get_option_by_name(
             "birth_year_limit"
         ).get_value()
+        self.theme_pref = menu.get_option_by_name("theme_pref").get_value()
         self.dest_path = menu.get_option_by_name("dest_path").get_value()
         self.dest_file = menu.get_option_by_name("dest_file").get_value()
+        self.open_browser = menu.get_option_by_name("open_browser").get_value()
 
     def _dump_people_map(self):
         """
@@ -847,6 +856,10 @@ class DescendantSpaceTreeReport(Report):
             )
             return
 
+        # open file with browser if requested
+        if self.open_browser:
+            self.open_path(html_out)
+
     def _i18n_html(self, proto):
         """
         Replace the i18n placeholder strings in the proto file with
@@ -870,8 +883,8 @@ class DescendantSpaceTreeReport(Report):
                 html.escape(
                     _(
                         "For the best viewing experience, maximize your "
-                        "browser window to use the entire screen and reload "
-                        "this page.  The viewer is fitted to your screen size."
+                        "browser window to use the entire screen.  A "
+                        "resize will reset the graph to the center person."
                     )
                 ),
             ),
@@ -1001,7 +1014,28 @@ class DescendantSpaceTreeReport(Report):
             _("Search. . ."),
         )
 
+        # replace the theme preference
+        if self.theme_pref == LIGHT_THEME:
+            proto = proto.replace("___GRAPH_BG_COLOR___", "#eef")
+            proto = proto.replace("___TREE_THEME___", "light")
+        else:
+            proto = proto.replace("___GRAPH_BG_COLOR___", "#222")
+            proto = proto.replace("___TREE_THEME___", "dark")
+
         return proto
+
+    def open_path(self, path):
+        """Open a file path with the default a default application, O/S dependent."""
+        if sys.platform == "win32":
+            os.startfile(path)
+        elif sys.platform == "darwin":
+            subprocess.Popen(
+                ["open", path]
+            )  # pylint: disable=consider-using-with
+        else:
+            subprocess.Popen(
+                ["xdg-open", path]
+            )  # pylint: disable=consider-using-with
 
 
 # ------------------------------------------------------------------------
@@ -1018,8 +1052,10 @@ class DescendantSpaceTreeOptions(MenuReportOptions):
         pid              - Center person ID
         max_gen          - Maximum number of generations to include.
         birth_year_limit - Maximum birth year to show birth/death years
+        theme_pref       - Theme preference (dark or light)
         dest_path        - Destination directory
         dest_file        - Destination file name
+        open_browser     - Open generated file with browser
 
     """
 
@@ -1058,6 +1094,7 @@ class DescendantSpaceTreeOptions(MenuReportOptions):
                 (MATRIARCHAL_LINE, MATRIARCHAL_LINE),
             ]
         )
+
         branch_pref.set_help(
             _(
                 "When a descendant appears more than once, prefer"
@@ -1076,6 +1113,17 @@ class DescendantSpaceTreeOptions(MenuReportOptions):
         add_option("birth_year_limit", birth_year_limit)
 
         #
+        theme_pref = EnumeratedListOption(_("Theme preference"), DARK_THEME)
+        theme_pref.set_items(
+            [
+                (DARK_THEME, DARK_THEME),
+                (LIGHT_THEME, LIGHT_THEME),
+            ]
+        )
+        theme_pref.set_help(_("Theme color preference for Space Tree"))
+        add_option("theme_pref", theme_pref)
+
+        #
         dest_path = DestinationOption(
             _("Destination"), config.get("paths.website-directory")
         )
@@ -1089,3 +1137,10 @@ class DescendantSpaceTreeOptions(MenuReportOptions):
         )
         dest_file.set_help(_("The destination file name for the report."))
         add_option("dest_file", dest_file)
+
+        #
+        open_browser = BooleanOption(_("Open with default viewer"), True)
+        open_browser.set_help(
+            _("Open generated HTML file with default browser.")
+        )
+        add_option("open_browser", open_browser)
