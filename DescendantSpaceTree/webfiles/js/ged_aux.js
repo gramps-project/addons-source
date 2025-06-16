@@ -42,4 +42,11 @@ function nav_goto(id) {
 var chartname = document.getElementById('chartname');
 chartname.innerHTML = " ___DESCENDANTS_OF___ " + ged_name;
 
+/* destroy and rebuild infovis canvas on browser resize or fullscreen */
+function doResize() {
+    document.getElementById("infovis").textContent = '';
+    init();
+}
+window.onresize = doResize;
+
 
