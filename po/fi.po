@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-10 08:08-0700\n"
-"PO-Revision-Date: 2025-06-09 18:01+0000\n"
+"PO-Revision-Date: 2025-06-15 21:02+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -2924,7 +2924,6 @@ msgstr "Lisätietojen tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1624
 #: DescendantBooks/DetailedDescendantBookReport.py:1634
-#, fuzzy
 msgid "The style used for note detail data."
 msgstr "Lisätietojen tyyli."
 
@@ -2983,74 +2982,56 @@ msgid "Matriarchal Line (Female ancestor)"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:419
-#, fuzzy
-#| msgid "Detailed Descendants Report"
 msgid "Continue Descendant Tree"
-msgstr "Yksityiskohtainen jälkeläisten raportti"
+msgstr "Jälkeläispuun jatko"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:420
-#, fuzzy
-#| msgid "Alternate name"
 msgid "Alternate Descendant Tree"
-msgstr "Vaihtoehtoinen nimi"
+msgstr "Vaihtoehtoinen jälkeläispuu"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:448
-#, fuzzy
-#| msgid "Descendant Indented Tree"
 msgid "Descendant SpaceTree"
-msgstr "Jälkeläisten sisennetty sukupuu"
+msgstr "Jälkeläisten tilaasäästävä sukupuu"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:626
-#, fuzzy
-#| msgid "Trim descendants"
 msgid "Total descendants"
-msgstr "Rajaa jälkeläiset"
+msgstr "Jälkeläisiä yhteensä"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:650
 msgid "Marriages/Families:<ul>"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:764
-#, fuzzy, python-format
-#| msgid ""
-#| "Destinaton diretory %s does not exist\n"
-#| "Do you want to attempt to create it?"
+#, python-format
 msgid ""
 "Destination Directory %s does not exist\n"
 "Do you want to attempt to create it."
 msgstr ""
 "Kohdehakemistoa %s ei ole olemassa\n"
-"Haluatko yrittää luoda sen?"
+"Haluatko yrittää luoda sen."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:778
-#, fuzzy, python-format
-#| msgid "Failure writing to %s"
+#, python-format
 msgid "Failed to create %s: %s"
-msgstr "Kirjoitus epäonnistui %s"
+msgstr "Kohteen %s luonti ei onnistu: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:807
-#, fuzzy, python-format
-#| msgid "Failed to copy web files : %s"
+#, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr "Web-tiedostojen kopiointi epäonnistui: %s"
+msgstr "Mallitiedoston %s lukeminen epäonnistui: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:818
-#, fuzzy, python-format
-#| msgid ""
-#| "Destination file %s already exists.\n"
-#| "Do you want to overwrite it?"
+#, python-format
 msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite?"
 msgstr ""
-"Tiedosto %s on jo olemassa\n"
+"Kohdetiedosto %s on jo olemassa\n"
 "Haluatko korvata sen?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:845
-#, fuzzy
-#| msgid "Failed writing "
 msgid "Failed writing file: "
-msgstr "Kirjoitus epäonnistui "
+msgstr "Tiedoston kirjoittaminen epäonnistui: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:862
 #, fuzzy
@@ -3132,10 +3113,8 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1001
-#, fuzzy
-#| msgid "Search..."
 msgid "Search. . ."
-msgstr "Hae..."
+msgstr "Etsi..."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1053
 msgid "Branch to expand when duplicated"
@@ -3156,16 +3135,12 @@ msgid "Birth/date dates will not be displayed after this year"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1088
-#, fuzzy
-#| msgid "Denomination"
 msgid "Destination File"
-msgstr "Nimitys"
+msgstr "Kohdetiedosto"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1090
-#, fuzzy
-#| msgid "The destination file name for html content."
 msgid "The destination file name for the report."
-msgstr "HTML-tiedoston nimi."
+msgstr "Raporttitiedoston nimi."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
