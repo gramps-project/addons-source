@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-03 09:24-0700\n"
 "PO-Revision-Date: 2025-06-09 18:01+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -4776,18 +4776,18 @@ msgstr ""
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr ""
+msgstr "VAROITUS!  Olet kokonaan poistamassa Exif-metatiedot tästä kuvasta."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
 msgid "Delete?"
-msgstr ""
+msgstr "Poistetaan?"
 
 #: EditExifMetadata/editexifmetadata.py:1148
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
-msgstr ""
+msgstr "VAROITUS!  Olet poistamassa kokonaan GPS-metatiedot tästä kuvasta."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
@@ -4799,15 +4799,15 @@ msgstr "Mediaobjekti luotu"
 
 #: EditExifMetadata/editexifmetadata.py:1422
 msgid "Saving Exif metadata to this image..."
-msgstr ""
+msgstr "Tallennetaan kuvan Exif-metatietoja..."
 
 #: EditExifMetadata/editexifmetadata.py:1465
 msgid "All Exif metadata has been deleted from this image..."
-msgstr ""
+msgstr "Kaikki Exif-metatiedot on poistettu tästä kuvasta..."
 
 #: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
-msgstr ""
+msgstr "Exif-metatietojen poistaminen tästä kuvasta ei onnistunut..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
@@ -4873,11 +4873,11 @@ msgstr "GEXF-viennin valinnat"
 
 #: ExportProlog/ExportProlog.gpr.py:4
 msgid "Prolog Export"
-msgstr ""
+msgstr "Vie Prolog-muodossa"
 
 #: ExportProlog/ExportProlog.gpr.py:6
 msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
-msgstr ""
+msgstr "Vie tiedot Prolog-tiedostomuotoon. Tiedot ovat Unicode-muodossa (utf-8)"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
@@ -4893,16 +4893,16 @@ msgstr "Raakaviennin valinnat"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Extended Person Attributes"
-msgstr ""
+msgstr "Henkilön lisäominaisuudet"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:40
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:56
 msgid "Extended Attributes"
-msgstr ""
+msgstr "Lisäominisuudet"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:48
 msgid "Extended Family Attributes"
-msgstr ""
+msgstr "Perheen lisäominaisuudet"
 
 #: ExtendedAttributes/ExtendedAttributes.py:54
 msgid ""
