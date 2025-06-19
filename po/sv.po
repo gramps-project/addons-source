@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-03 09:24-0700\n"
-"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"PO-Revision-Date: 2025-06-06 21:38+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -5893,7 +5893,7 @@ msgstr "Bestående av"
 
 #: Form/form_ca.xml.h:6
 msgid "OfTheSaid"
-msgstr ""
+msgstr "AvSagda"
 
 #: Form/form_ca.xml.h:7 Form/form_ca.xml.h:293 Form/form_ca.xml.h:347
 #: Form/form_ca.xml.h:396 Form/form_ca.xml.h:457 Form/form_ca.xml.h:536
@@ -5904,11 +5904,11 @@ msgstr "Uppräknare"
 
 #: Form/form_ca.xml.h:11 Form/form_ca.xml.h:217
 msgid "1. Names of Inmates"
-msgstr ""
+msgstr "1. Namn på fångar"
 
 #: Form/form_ca.xml.h:13
 msgid "2. Profession, Trade or Occupation"
-msgstr ""
+msgstr "2. Yrke, handel eller sysselsättning"
 
 #: Form/form_ca.xml.h:14 Form/form_ca.xml.h:220 Form/form_ca.xml.h:316
 #: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
@@ -5919,27 +5919,27 @@ msgstr "Födelseplats"
 
 #: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
 msgid "3. Place of Birth"
-msgstr ""
+msgstr "3. Födelseort"
 
 #: Form/form_ca.xml.h:17
 msgid "4. Religion"
-msgstr ""
+msgstr "4. Religion"
 
 #: Form/form_ca.xml.h:19
 msgid "5. Residence if Outside of Limits"
-msgstr ""
+msgstr "5. Bostad om utanför gränserna"
 
 #: Form/form_ca.xml.h:21
 msgid "6. Age at Next Birthday"
-msgstr ""
+msgstr "6. Ålder vid nästa födelsedag"
 
 #: Form/form_ca.xml.h:22 Form/form_ca.xml.h:230
 msgid "SexMale"
-msgstr ""
+msgstr "KönMan"
 
 #: Form/form_ca.xml.h:23
 msgid "7. Sex: Male"
-msgstr ""
+msgstr "7. Kön: Man"
 
 #: Form/form_ca.xml.h:24
 msgid "SexFemale"
@@ -5947,14 +5947,14 @@ msgstr "KönKvinna"
 
 #: Form/form_ca.xml.h:25
 msgid "8. Sex: Female"
-msgstr ""
+msgstr "8. Kön: Kvinna"
 
 #: Form/form_ca.xml.h:26 Form/form_ca.xml.h:234 Form/form_ca.xml.h:324
 #: Form/form_ca.xml.h:378 Form/form_ca.xml.h:415 Form/form_ca.xml.h:472
 #: Form/form_ca.xml.h:632 Form/form_ca.xml.h:683 Form/form_ca.xml.h:771
 #: Form/form_ca.xml.h:824
 msgid "MaritalStatus"
-msgstr ""
+msgstr "Civilstånd"
 
 #: Form/form_ca.xml.h:27
 msgid "9. Married or Single"
@@ -5966,7 +5966,7 @@ msgstr "Färgade"
 
 #: Form/form_ca.xml.h:29
 msgid "10. Coloured Persons - Negroes"
-msgstr ""
+msgstr "10. Färgade personer - Svarta"
 
 #: Form/form_ca.xml.h:30
 msgid "Indians"
@@ -5974,7 +5974,7 @@ msgstr "Indianer"
 
 #: Form/form_ca.xml.h:31
 msgid "11. Indians, if any"
-msgstr ""
+msgstr "11. Indianer, om några"
 
 #: Form/form_ca.xml.h:32
 msgid "ResidentsMale"
@@ -5982,7 +5982,7 @@ msgstr "InvånareMän"
 
 #: Form/form_ca.xml.h:33
 msgid "12. Residents: Members, Male"
-msgstr ""
+msgstr "12. Invånare: Medlemmar, män"
 
 #: Form/form_ca.xml.h:34
 msgid "ResidentsFemale"
@@ -5990,107 +5990,107 @@ msgstr "InvånareKvinna"
 
 #: Form/form_ca.xml.h:35
 msgid "13. Residents: Members, Female"
-msgstr ""
+msgstr "13. Invånare: Medlemmar, kvinnor"
 
 #: Form/form_ca.xml.h:36
 msgid "NonMembersMale"
-msgstr ""
+msgstr "Icke-medlemmarMan"
 
 #: Form/form_ca.xml.h:37
 msgid "14. Residents: Not Members: Male"
-msgstr ""
+msgstr "14. Invånare: Ej medlemmar: Män"
 
 #: Form/form_ca.xml.h:38
 msgid "NonMembersFemale"
-msgstr ""
+msgstr "Icke-medlemmarKvinna"
 
 #: Form/form_ca.xml.h:39
 msgid "15. Residents: Not Members: Female"
-msgstr ""
+msgstr "15. Invånare: Ej medlemmar: Kvinnor"
 
 #: Form/form_ca.xml.h:40
 msgid "AbsentMembersMale"
-msgstr ""
+msgstr "FrånvarandeMedlemmarMan"
 
 #: Form/form_ca.xml.h:41
 msgid "16. Members Absent: Male"
-msgstr ""
+msgstr "16. Medlemmar frånvarande: Män"
 
 #: Form/form_ca.xml.h:42
 msgid "AbsentMembersFemale"
-msgstr ""
+msgstr "FrånvarandeMedlemmarKvinna"
 
 #: Form/form_ca.xml.h:43
 msgid "17. Members Absent: Female"
-msgstr ""
+msgstr "17. Frånvarande medlemmar: Kvinna"
 
 #: Form/form_ca.xml.h:44
 msgid "DeafDumbMale"
-msgstr ""
+msgstr "DövstumMan"
 
 #: Form/form_ca.xml.h:45
 msgid "18. Deaf and Dumb: Male"
-msgstr ""
+msgstr "18. Dövstum: Man"
 
 #: Form/form_ca.xml.h:46
 msgid "DeafDumbFemale"
-msgstr ""
+msgstr "DövstumKvinna"
 
 #: Form/form_ca.xml.h:47
 msgid "19. Deaf and Dumb: Female"
-msgstr ""
+msgstr "19. Dövstum: Kvinna"
 
 #: Form/form_ca.xml.h:48
 msgid "BlindMale"
-msgstr ""
+msgstr "BlindMan"
 
 #: Form/form_ca.xml.h:49
 msgid "20. Blind: Male"
-msgstr ""
+msgstr "20. Blind: Man"
 
 #: Form/form_ca.xml.h:50
 msgid "BlindFemale"
-msgstr ""
+msgstr "BlindKvinna"
 
 #: Form/form_ca.xml.h:51
 msgid "21. Blind: Female"
-msgstr ""
+msgstr "21. Blind: Kvinna"
 
 #: Form/form_ca.xml.h:52
 msgid "LunaticMale"
-msgstr ""
+msgstr "GalenMan"
 
 #: Form/form_ca.xml.h:53
 msgid "22. Lunatics: Male"
-msgstr ""
+msgstr "22. Galningar: Man"
 
 #: Form/form_ca.xml.h:54
 msgid "LunaticFemale"
-msgstr ""
+msgstr "GalenKvinna"
 
 #: Form/form_ca.xml.h:55
 msgid "23. Lunatics: Female"
-msgstr ""
+msgstr "23. Galningar: Kvinna"
 
 #: Form/form_ca.xml.h:56 Form/form_ca.xml.h:260
 msgid "ScholarMale"
-msgstr ""
+msgstr "AkademikerMan"
 
 #: Form/form_ca.xml.h:57
 msgid "24. Attending School: Male"
-msgstr ""
+msgstr "24. Går i skolan: Man"
 
 #: Form/form_ca.xml.h:58 Form/form_ca.xml.h:262
 msgid "ScholarFemale"
-msgstr ""
+msgstr "AkademikerKvinna"
 
 #: Form/form_ca.xml.h:59
 msgid "25. Attending School: Female"
-msgstr ""
+msgstr "25. Går i skolan: Kvinna"
 
 #: Form/form_ca.xml.h:60
 msgid "Birth1851Male"
-msgstr ""
+msgstr "Födelse1851Man"
 
 #: Form/form_ca.xml.h:61
 msgid "26. Births During the Year 1851: Male"
