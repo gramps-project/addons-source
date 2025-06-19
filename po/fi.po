@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-03 09:24-0700\n"
-"PO-Revision-Date: 2025-06-08 16:42+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-06-09 18:01+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -2915,7 +2915,6 @@ msgstr "Tyyli, jota käytetään Lisätietojen ja puolisoiden otsikoissa."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1614
 #: DetDescendantReport-images/detdescendantreporti.py:1326
-#, fuzzy
 msgid "The style used for additional detail data."
 msgstr "Lisätietojen tyyli."
 
@@ -3178,14 +3177,13 @@ msgid "Name Display Format"
 msgstr "Nimen näyttömuoto"
 
 #: DescendantsLines/DescendantsLines.py:1650
-#, fuzzy
 msgid ""
 "f=first & middle names, l=surname, n=nickname,\n"
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
 "See Wiki Manual > Reports > part 2"
 msgstr ""
 "f=etunimet, l=sukunimi, n=lempinimi,\n"
-"c=kutsumanimi, t=titteli, s=loppuliite, g=perheen kansanomainen lempinimi\n"
+"c=kutsumanimi, t=titteli, s=loppuliite, g=perheen lempinimi\n"
 "Katso Wiki-käyttöohje > Raportit > Osa 2"
 
 #: DescendantsLines/DescendantsLines.py:1662
@@ -3218,27 +3216,22 @@ msgid "Spouse and Family"
 msgstr "Puoliso ja perhe"
 
 #: DescendantsLines/DescendantsLines.py:1699
-#, fuzzy
 msgid "Vertical edge descendant to spouse-bar"
 msgstr "Pystyviiva jälkeläisen ja puolison välillä"
 
 #: DescendantsLines/DescendantsLines.py:1700
-#, fuzzy
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr "Jälkeläisen ja puolison välisen pystyviivan pituus."
 
 #: DescendantsLines/DescendantsLines.py:1704
-#, fuzzy
 msgid "Vertical edge spouse-bar to spouse"
-msgstr "Pystyviiva puolisoiden välillä"
+msgstr "Pystyreuna puolisopalkista puolisoon"
 
 #: DescendantsLines/DescendantsLines.py:1705
-#, fuzzy
 msgid "The length of the vertical edge from spouse-bar to spouse."
-msgstr "Pystyvaavan pituus puolisopalkista puolisoon."
+msgstr "Pystysuoran reunan etäisyys puolisopalkista puolisoon."
 
 #: DescendantsLines/DescendantsLines.py:1709
-#, fuzzy
 msgid "Vertical space spouse-bar to other spouse"
 msgstr "Pystysuora väli toiseen puolisoon"
 
@@ -3292,9 +3285,8 @@ msgid "The number of ??? pad"
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1739
-#, fuzzy
 msgid "Vertical edge spouse-bar to child-bar"
-msgstr "Pystysuora reuna puolison ja lapsen välisestä palkista"
+msgstr "Pystysuora reuna puolisopalkista lapsipalkkiin"
 
 #: DescendantsLines/DescendantsLines.py:1740
 msgid "The length of the vertical edge from spouse-bar to child-bar."
@@ -3321,9 +3313,8 @@ msgid "MIN_C_WIDTH"
 msgstr "MIN_C_WIDTH"
 
 #: DescendantsLines/DescendantsLines.py:1757
-#, fuzzy
 msgid "The number of ??? min width"
-msgstr "Määrän ??? minimi leveys"
+msgstr "Vähimmäisleveyden määrä ???"
 
 #: DescendantsLines/DescendantsLines.py:1762
 msgid "Space around text"
@@ -11169,8 +11160,6 @@ msgid "Income of more than $50 from other sources?"
 msgstr ""
 
 #: Form/form_us.xml.h:869
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Farm Schedule"
 msgstr "Maatilasuunnitelmien määrä"
 
@@ -20222,10 +20211,8 @@ msgid "Info:"
 msgstr "Tiedot:"
 
 #: SourceIndex/birth.glade:99
-#, fuzzy
-#| msgid "Birthdays"
 msgid "Birth act:"
-msgstr "Syntymäkirja:"
+msgstr "Syntymätodistus:"
 
 #: SourceIndex/birth.glade:129
 msgid ""
@@ -20496,8 +20483,6 @@ msgstr "<b>Puoliso</b> "
 #: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
 #: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
 #: SourceIndex/marriage.glade:1874
-#, fuzzy
-#| msgid "Now alive"
 msgid "alive"
 msgstr "elossa"
 
@@ -22320,9 +22305,9 @@ msgid "Object: %s"
 msgstr "Kohde: %s"
 
 #: activity_row_generator.py:135
-#, fuzzy, python-format
+#, python-format
 msgid "Pattern: %s"
-msgstr "Pattern: %s"
+msgstr "Kuvio: %s"
 
 #: activity_row_generator.py:138
 #, python-format
