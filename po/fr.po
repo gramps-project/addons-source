@@ -35,8 +35,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-10 08:08-0700\n"
-"PO-Revision-Date: 2025-06-15 21:02+0000\n"
-"Last-Translator: Frédéric Schwartz <frederic@online404.com>\n"
+"PO-Revision-Date: 2025-06-19 15:37+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -3145,24 +3145,32 @@ msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
 msgstr ""
+"Un descendant et tous ses conjoints sont répertoriés dans le même noeud. Les "
+"enfants de toutes les familles du descendant sont regroupés."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:932
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
 msgstr ""
+"Les individus nés après une date déterminée n'affichent pas leurs dates de "
+"naissance ou de décès."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:941
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
 msgstr ""
+"Les noeuds d'individu sont colorés pour indiquer le nombre d'enfants, plus "
+"la teinte est colorée, plus il y a d'enfants."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:951
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
 msgstr ""
+"Le descendant sélectionné et tous les ancêtres de cet individu sont mis en "
+"évidence en jaune."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:960
 msgid ""
@@ -3172,12 +3180,20 @@ msgid ""
 "___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
 "expand descendants of this person. "
 msgstr ""
+"Un individu peut apparaître dans différentes branches.  C'est généralement "
+"en raison de mariages intrafamiliaux (comme des cousins). Dans ce cas, un "
+"bouton apparaîtra également pour cette personne,  ___NAV_BUTTON_CONTINUE___ "
+"ou ___NAV_BUTTON_ALT___  pour naviguer dans l'autre branche.  Une seule "
+"branche affichera les descendants de cette personne. "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:974
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
 msgstr ""
+"Les projets open source suivants sont utilisés dans la construction de ce "
+"visionneur, voir les fichiers source LICENSE*.txt pour les licences "
+"complètes et les obligations."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1001
 msgid "Search. . ."
@@ -3789,11 +3805,11 @@ msgstr ""
 
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
-msgstr ""
+msgstr "Cousins doubles"
 
 #: DoubleCousins/double_cousins.gpr.py:26
 msgid "A text report listing double cousins."
-msgstr ""
+msgstr "Un rapport textuel des cousins doubles."
 
 #: DoubleCousins/double_cousins.py:112
 msgid "Double Cousins Report"
@@ -3819,7 +3835,7 @@ msgstr ""
 
 #: DoubleCousins/double_cousins.py:136
 msgid "No double cousins were found in your database."
-msgstr ""
+msgstr "Aucun cousin double n'a été trouvé dans votre base de données."
 
 #: DoubleCousins/double_cousins.py:170
 msgid "Show info text"
@@ -15104,7 +15120,7 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:451
 msgid "Failed importing downloaded XML file."
-msgstr ""
+msgstr "Échec du téléchargement du fichier XML."
 
 #: GrampsWebSync/grampswebsync.py:457
 msgid "Comparing local and remote data..."
@@ -15112,15 +15128,15 @@ msgstr "Comparaison des données locales et distantes…"
 
 #: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
-msgstr ""
+msgstr "Erreur d'autorisation du serveur."
 
 #: GrampsWebSync/grampswebsync.py:492
 msgid "Server authorization error: insufficient permissions."
-msgstr ""
+msgstr "Erreur d'autorisation du serveur : autorisations insuffisantes."
 
 #: GrampsWebSync/grampswebsync.py:495
 msgid "Error: URL not found."
-msgstr ""
+msgstr "Erreur : URL non trouvée."
 
 #: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
