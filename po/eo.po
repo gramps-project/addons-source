@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-10 08:08-0700\n"
-"PO-Revision-Date: 2025-05-06 16:01+0000\n"
+"PO-Revision-Date: 2025-06-15 21:02+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
 "addons/eo/>\n"
@@ -21974,10 +21974,9 @@ msgid "Attribute has been successfully added"
 msgstr ""
 
 #: WebSearch.py:2142
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Titolo: {title}\n"
+msgstr "Titolo: {title}"
 
 #: WebSearch.py:2146
 #, python-brace-format
@@ -22078,10 +22077,8 @@ msgid "Link saved to Attribute"
 msgstr ""
 
 #: activity_row_generator.py:155
-#, fuzzy
-#| msgid "Place title"
 msgid "Place history loaded"
-msgstr "Loka titolo"
+msgstr "Loka historio ŝarĝita"
 
 #: activity_row_generator.py:156
 msgid "Domain skipped"
@@ -22319,10 +22316,8 @@ msgid "🧩 WebSearch Gramplet version: `%s`"
 msgstr ""
 
 #: internet_links_loader.py:70 internet_links_loader.py:71
-#, fuzzy
-#| msgid "Place title"
 msgid "No title"
-msgstr "Loka titolo"
+msgstr "Neniu titolo"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -22742,10 +22737,8 @@ msgid "Full hierarchy"
 msgstr ""
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Place title"
 msgid "Place Type:"
-msgstr "Loka titolo"
+msgstr "Loktipo:"
 
 #: markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"
