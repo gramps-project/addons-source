@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Separate"
@@ -75,8 +75,48 @@ msgstr "Näytön kuvakkeet"
 msgid "WebSearch"
 msgstr "Nettihaku"
 
+#, python-format
+msgid "Visited: %s"
+msgstr "Katsottu: %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "Arvo: %s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Ladattu tiedostosta: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "Domain: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "Kohde: %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "Kuvio: %s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Kohteen Gramps ID: %s"
+
+msgid "Link saved to Attribute"
+msgstr "Linkki tallennettu ominaisuutena"
+
+msgid "Place history loaded"
+msgstr "Paikkahistoria ladattu"
+
+msgid "Note updated"
+msgstr "Lisätieto päivitetty"
+
 msgid "Note Link (parsed)"
 msgstr "Linkki lisätietoihin (jäsennetty)"
+
+msgid "No title"
+msgstr "Ei nimeä"
 
 msgid "No data available."
 msgstr "Ei tietoja saatavilla."
@@ -92,6 +132,12 @@ msgstr "Koko hierarkia"
 
 msgid "Place Type:"
 msgstr "Paikan tyyppi:"
+
+msgid "Save Coordinates to the Place"
+msgstr "Tallenna paikan koordinaatit"
+
+msgid "No AI API key provided"
+msgstr "Yhtään AI API :n avainta ei ole annettu"
 
 msgid "Website URL"
 msgstr "Nettisivuston URL"

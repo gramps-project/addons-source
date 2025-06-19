@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Last Change Report"
+msgstr "Informe de cambios más reciente"
+
+msgid "You must select at least one type of record."
+msgstr "Debe seleccionar por lo menos un tipo de registro."
+
+msgid "People Changed"
+msgstr "Personas cambiadas"
+
+msgid "Changed On"
+msgstr "Cambiado el"
+
+msgid "Families Changed"
+msgstr "Familias cambiadas"
+
+#, python-format
+msgid "%s and %s"
+msgstr "%s y %s"
+
+msgid "Events Changed"
+msgstr "Eventos cambiados"
+
+msgid "Places Changed"
+msgstr "Lugares cambiados"
+
+msgid "Media Changed"
+msgstr "Objetos audiovisuales cambiados"
+
+msgid "Sources Changed"
+msgstr "Fuentes cambiadas"
+
+msgid "Notes Changed"
+msgstr "Notas cambiadas"
+
+msgid "Citations Changed"
+msgstr "Citas cambiadas"
+
+msgid "Select From"
+msgstr "Seleccionar desde"
+
+msgid "The style used for normal text"
+msgstr "El estilo que usa el texto normal"
+
+msgid "changed on"
+msgstr "cambiado el"
+
+msgid "List the last ten person records that have been changed"
+msgstr "Enumerar los últimos diez registros de personas que han cambiado"
+
+msgid "Latest Changes"
+msgstr "Cambios recientes"
+
+msgid "Report of the last records that have been changed"
+msgstr "Informe con los últimos registros que se han modificado"

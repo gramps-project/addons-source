@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 20:12-0600\n"
-"PO-Revision-Date: 2025-06-05 06:02+0000\n"
-"Last-Translator: Максим Горпиніч <maksimgorpinic4@gmail.com>\n"
+"POT-Creation-Date: 2025-06-16 17:49-0600\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -13,13 +13,181 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
+
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "Патріархальна лінія (предок чоловічої лінії)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "Матріархальна лінія (жіноча предкиня)"
+
+msgid "Continue Descendant Tree"
+msgstr "Продовжити дерево нащадків"
+
+msgid "Alternate Descendant Tree"
+msgstr "Альтернативне дерево нащадків"
+
+msgid "Descendant SpaceTree"
+msgstr "Нащадок SpaceTree"
+
+msgid "Total descendants"
+msgstr "Загальна кількість нащадків"
+
+msgid "Marriages/Families:<ul>"
+msgstr "Шлюби/Сім'ї:<ul>"
 
 msgid "Invalid Destination Directory"
 msgstr "Некоректний каталог призначення"
 
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"Каталогу %s не існує\n"
+"Спробувати створити його?"
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "Не вдалося створити %s: %s"
+
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "Не вдалося прочитати файл прототипу %s: %s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"Цільовий файл %s вже існує.\n"
+"Перезаписати?"
+
+msgid "Failed writing file: "
+msgstr "Не вдалося записати файл: "
+
+msgid "Descendants of"
+msgstr "Нащадків"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "Як використовувати переглядач DescendantSpaceTree"
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr ""
+"Клацніть на вузлі, щоб зосередитися на нащадку та розгорнути будь-які "
+"дочірні об'єкти."
+
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr ""
+"Клацніть і перетягніть будь-де в переглядачі, щоб розташувати дерево "
+"нащадків."
+
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr ""
+"Натисніть кнопку скидання ___HELP_RESET_BUTTON___, щоб повернутися до "
+"початкового нащадка."
+
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+"Знайдіть людину, ввівши її в поле пошуку.  Для пошуку потрібно щонайменше "
+"три символи.  Натисніть на будь-яку з пропозицій, щоб швидко перейти до цієї "
+"особи.  Особа може з’являтися в пошуку кілька разів, знак плюс (+) після "
+"імені вказує на те, що ця особа відображається як чоловік/дружина."
+
+msgid ""
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
+msgstr ""
+"Нащадок та будь-які подружжя перелічені в одному вузлі.  Діти всіх сімей "
+"нащадка згруповані разом."
+
+msgid ""
+"Persons born after a specified date may not display their birth or death "
+"dates."
+msgstr ""
+"Особи, народжені після певної дати, можуть не відображати дати свого "
+"народження або смерті."
+
+msgid ""
+"Person nodes are colored to indicate the number of children, the deeper tint "
+"of the coloring, the greater number of children."
+msgstr ""
+"Вузли осіб забарвлені відповідно до кількості дітей, чим глибший відтінок "
+"кольору, тим більша кількість дітей."
+
+msgid ""
+"The currently selected descendant and all of the ancestors of that person "
+"are highlighted in yellow."
+msgstr ""
+"Поточний вибраний нащадок та всі предки цієї особи виділені жовтим кольором."
+
+msgid ""
+"A person may occur in different branches.  This is usually because of inter-"
+"family marriages (such as that of cousins.)  In this case, a button will "
+"also appear for that person,  ___NAV_BUTTON_CONTINUE___ or "
+"___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
+"expand descendants of this person. "
+msgstr ""
+"Особа може зустрічатися в різних гілках. Зазвичай це відбувається через "
+"міжродинні шлюби (наприклад, між двоюрідними братами та сестрами). У цьому "
+"випадку для цієї особи також з'явиться кнопка ___NAV_BUTTON_CONTINUE___ або "
+"___NAV_BUTTON_ALT___ для переходу до іншої гілки. Тільки одна гілка розгорне "
+"нащадків цієї особи. "
+
+msgid ""
+"The following open source projects are used in building this viewer, see "
+"source code LICENSE*.txt files for complete licenses and required notices."
+msgstr ""
+"Для створення цього переглядача використовуються такі проекти з відкритим "
+"кодом, повний перелік ліцензій та необхідні повідомлення дивіться у файлах "
+"вихідного коду LICENSE*.txt."
+
+msgid "Search. . ."
+msgstr "Пошук. . ."
+
 msgid "Include Generations"
 msgstr "Включити покоління"
 
+msgid "Branch to expand when duplicated"
+msgstr "Гілка для розгортання при дублюванні"
+
+msgid ""
+"When a descendant appears more than once, prefer the selected lineage to "
+"expand descendancy line"
+msgstr ""
+"Коли нащадок з'являється більше одного разу, перевага надається вибраному "
+"родоводу для розширення лінії нащадків"
+
+msgid "Maximum display birth year"
+msgstr "Максимальний рік народження, що відображається"
+
+msgid "Birth/date dates will not be displayed after this year"
+msgstr "Дати народження/дати не відображатимуться після цього року"
+
 msgid "The destination path for generated files."
 msgstr "Шлях призначення для згенерованих файлів."
+
+msgid "Destination File"
+msgstr "Файл призначення"
+
+msgid "The destination file name for the report."
+msgstr "Ім'я файлу призначення для звіту."
+
+msgid "Descendant Space Tree"
+msgstr "Дерево космосу нащадків"
+
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"Генерує веб-сторінку з інтерактивним графіком нащадків, представленим у "
+"вигляді просторового дерева для ефективного перегляду, навіть за наявності "
+"багатьох нащадків або поколінь."

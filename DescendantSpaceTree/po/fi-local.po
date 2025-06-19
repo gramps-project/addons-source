@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 20:12-0600\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"POT-Creation-Date: 2025-06-16 17:49-0600\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,14 +12,178 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "Patriarkaalinen sukulinja (miespuoliset esivanhemmat)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "Matriarkaalilinja (naispuoliset esivanhemmat)"
+
+msgid "Continue Descendant Tree"
+msgstr "Jälkeläispuun jatko"
+
+msgid "Alternate Descendant Tree"
+msgstr "Vaihtoehtoinen jälkeläispuu"
+
+msgid "Descendant SpaceTree"
+msgstr "Jälkeläisten tilaasäästävä sukupuu"
+
+msgid "Total descendants"
+msgstr "Jälkeläisiä yhteensä"
+
+msgid "Marriages/Families:<ul>"
+msgstr "Avioliitot/perheet:<ul>"
 
 msgid "Invalid Destination Directory"
 msgstr "Virheellinen kohdehakemisto"
 
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"Kohdehakemistoa %s ei ole olemassa\n"
+"Haluatko yrittää luoda sen."
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "Kohteen %s luonti ei onnistu: %s"
+
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "Mallitiedoston %s lukeminen epäonnistui: %s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"Kohdetiedosto %s on jo olemassa\n"
+"Haluatko korvata sen?"
+
+msgid "Failed writing file: "
+msgstr "Tiedoston kirjoittaminen epäonnistui: "
+
+msgid "Descendants of"
+msgstr "Jälkeläiset"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "DescendantSpaceTree-katseluohjelman käyttö"
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr "Napsauta solmua keskittyäksesi jälkeläiseen lapsineen."
+
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr ""
+"Napsauta ja vedä mitä tahansa kohtaa katseluohjelmassa sijoittaaksesi "
+"jälkeläispuun."
+
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr ""
+"Palauta alkuperäiseen jälkeläiseen napsauttamalla nollauspainiketta "
+"___HELP_RESET_BUTTON___."
+
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+"Etsi henkilöä kirjoittamalla hakukenttään vähintään kolme merkkiä. Napsauta "
+"ehdokasta siirtyäksesi kyseisen henkilön kohdalle. Henkilö voi esiintyä "
+"toistuvasti haussa. Nimen perässä oleva plusmerkki (+) osoittaa, että "
+"kysessä on puoliso."
+
+msgid ""
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
+msgstr ""
+"Jälkeläinen ja mahdolliset puolisot luetellaan samassa solmussa. Kaikkien "
+"perheiden lapset ryhmitellään yhteen."
+
+msgid ""
+"Persons born after a specified date may not display their birth or death "
+"dates."
+msgstr ""
+"Tuoreimmille tietyn ajankohdan jälkeen syntyneille henkilöille ei "
+"välttämättä näytetä syntymä- tai kuolinaikaa."
+
+msgid ""
+"Person nodes are colored to indicate the number of children, the deeper tint "
+"of the coloring, the greater number of children."
+msgstr ""
+"Henkilösolmujen väri kuvaa lasten määrää: vahvempi väri tarkoittaa enemmän "
+"lapsia."
+
+msgid ""
+"The currently selected descendant and all of the ancestors of that person "
+"are highlighted in yellow."
+msgstr "Valittu jälkeläinen esivanhempineen on korostettu keltaisella."
+
+msgid ""
+"A person may occur in different branches.  This is usually because of inter-"
+"family marriages (such as that of cousins.)  In this case, a button will "
+"also appear for that person,  ___NAV_BUTTON_CONTINUE___ or "
+"___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
+"expand descendants of this person. "
+msgstr ""
+"Henkilö voi esiintyä eri haaroissa. Tämä johtuu yleensä suvun sisäisistä "
+"avioliitoista (kuten serkkujen avioliitoista). Tässä tapauksessa kyseiselle "
+"henkilölle ilmestyy myös painike, ___NAV_BUTTON_CONTINUE___ tai "
+"___NAV_BUTTON_ALT___, jolla voi navigoida toiseen haaraan. Jälkeläiset "
+"esitetään vuorollaan vain yhdessä haarassa. "
+
+msgid ""
+"The following open source projects are used in building this viewer, see "
+"source code LICENSE*.txt files for complete licenses and required notices."
+msgstr ""
+"Seuraavia avoimen lähdekoodin projekteja on käytetty tämän katseluohjelman "
+"rakentamisessa. Katso täydelliset lisenssit ja tarvittavat ilmoitukset "
+"lähdekoodin LICENSE*.txt-tiedostoista."
+
+msgid "Search. . ."
+msgstr "Etsi..."
+
 msgid "Include Generations"
 msgstr "Näytettävät sukupolvet"
 
+msgid "Branch to expand when duplicated"
+msgstr "Haara, joka laajenee kopioitaessa"
+
+msgid ""
+"When a descendant appears more than once, prefer the selected lineage to "
+"expand descendancy line"
+msgstr ""
+"Kun jälkeläinen esiintyy useammin kuin kerran, valitse sukulinja "
+"jälkeläislinjan laajennukseen"
+
+msgid "Maximum display birth year"
+msgstr "Suurin mahdollinen syntymävuosi"
+
+msgid "Birth/date dates will not be displayed after this year"
+msgstr "Syntymäaikoja ei näytetä tämän vuoden jälkeen"
+
 msgid "The destination path for generated files."
 msgstr "Kohdehakemisto uusille tiedostoille."
+
+msgid "Destination File"
+msgstr "Kohdetiedosto"
+
+msgid "The destination file name for the report."
+msgstr "Raporttitiedoston nimi."
+
+msgid "Descendant Space Tree"
+msgstr "Jälkeläisten avaruussukupuu"
+
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"Luo verkkosivun, jolla on interaktiivinen jälkeläispuu kätevänä avaruuspuuna "
+"soveltuen suureen määrään jälkeläisiä tai sukupolvia."

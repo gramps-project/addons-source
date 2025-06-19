@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "No se admite el uso del tipo SVG en el documento suplementario."
+
+msgid "Output format"
+msgstr "Formato de salida"
+
+msgid "PNG format"
+msgstr "Formato PNG"
+
+msgid "SVG format"
+msgstr "Formato SVG"
+
+msgid "PDF format"
+msgstr "Formato PDF"
+
+msgid "PS format"
+msgstr "Formato PS"
+
+msgid "The output format to be used"
+msgstr "El formato de salida que se utilizará"
+
+msgid "The destination file for the content."
+msgstr "El archivo de destino del contenido."
+
+msgid "Max Image height"
+msgstr "Altura máxima de imagen"
+
+msgid "Max Image width"
+msgstr "Anchura máxima de imagen"
+
+msgid "Image Location"
+msgstr "Ubicación de la imagen"
+
+msgid "Above text"
+msgstr "Encima del texto"
+
+msgid "Left of text"
+msgstr "A la izquierda del texto"
+
+msgid "Position of image relative to text"
+msgstr "Posición de la imagen respecto al texto"
+
+msgid "Sort Events by Date"
+msgstr "Ordenar eventos por fecha"
+
+msgid "Text style"
+msgstr "Estilo de texto"
+
+msgid "Center-aligned text"
+msgstr "Texto centrado"
+
+msgid "Left-aligned text"
+msgstr "Texto alineado a la izquierda"
+
+msgid "Replace"
+msgstr "Reemplazar"

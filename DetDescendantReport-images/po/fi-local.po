@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,12 +12,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Detailed Descendant Report With All Images"
+msgstr "Yksityiskohtainen jälkeläisraportti kuvineen"
+
+msgid ""
+"Produces a detailed descendant report with all images and optional todo list."
+msgstr ""
+"Tuottaa yksityiskohtaisen jälkeläisraportin, joka sisältää kaikki kuvat ja "
+"valinnaisen tehtävälistan."
 
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
 
 #, python-format
 msgid "%(place)s"
@@ -28,8 +41,18 @@ msgid "%(event_name)s: %(event_text)s"
 msgstr "%(event_name)s: %(event_text)s"
 
 #, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
+
+msgid "List children"
+msgstr "Näytetäänkö lapset"
+
+msgid "Add descendant reference in child list"
+msgstr "Lisää jälkeläisviittaus lasten luetteloon"
 
 msgid "Include TODO notes"
 msgstr "Sisällytä TODO-lisätietoja"
@@ -45,3 +68,15 @@ msgstr "Lasten luettelossa käytetty tyyli."
 
 msgid "The style used for the first personal entry."
 msgstr "Henkilön ensimmäisen kappaleen tyyli."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "Tyyli, jota käytetään Lisätietojen ja puolisoiden otsikoissa."
+
+msgid "The style used for additional detail data."
+msgstr "Lisätietojen tyyli."
+
+msgid "The style used for image labels."
+msgstr "Kuvaotsikoissa käytetty tyyli."
+
+msgid "A style used for image captions."
+msgstr "Kuvateksteissä käytetty tyyli."

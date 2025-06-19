@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,16 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
+
+msgid "Avatar Generator Tool"
+msgstr "Nástroj na generovanie avatarov"
+
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "Nástroj na pridávanie obrázkov avatarov do vášho rodinného stromu"
+
+msgid "single image mode"
+msgstr "režim jedného obrázku"
+
+msgid "Choose how many images you'd like to use."
+msgstr "Vyberte, koľko obrázkov chcete použiť."
+
+msgid "Image for people with unknown gender."
+msgstr "Obrázok pre osoby s neznámym pohlavím."
+
+msgid "Image for males."
+msgstr "Obrázok pre mužov."
+
+msgid "Image for females"
+msgstr "Obrázok pre ženy"
 
 msgid "Select filter to restrict people"
 msgstr "Vyberte filter na obmedzenie osôb"
 
+msgid "Remove images from people"
+msgstr "Odstrániť obrázky od ľudí"
+
+msgid "Remove selected image(s)."
+msgstr "Odstrániť vybrané obrázky."
+
 msgid "Avatar Generator"
 msgstr "Generátor avatarov"
+
+msgid "Remove avatar images..."
+msgstr "Odstrániť obrázky avatarov..."
 
 msgid "INFO"
 msgstr "INFO"
 
 msgid "No media was removed."
 msgstr "Žiadne médiá neboli odstránené."
+
+msgid "{} media references were removed from {} persons."
+msgstr "{} odkazy na médiá boli odstránené z {} osôb."

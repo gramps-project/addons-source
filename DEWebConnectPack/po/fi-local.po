@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "DE Web Connect Pack"
@@ -20,6 +20,9 @@ msgstr "Saksan Web Connect Pack"
 
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
 msgstr "Nettisivustojen kokoelma DE (vaatii libwebconnectin)"
+
+msgid "Bielefeld Academic Search"
+msgstr "Bielefeld Academic Search"
 
 msgid "FamilySearch.org"
 msgstr "Englannin FamilySearch.org"
@@ -32,6 +35,9 @@ msgstr "Google DE"
 
 msgid "Open Library"
 msgstr "Open Library UK"
+
+msgid "Surname map (1890-1996)"
+msgstr "Sukunimikartta (1890-1996)"
 
 msgid "GenWiki"
 msgstr "GenWiki"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 20:12-0600\n"
-"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"POT-Creation-Date: 2025-06-16 17:49-0600\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,13 +12,115 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
+
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "Patriarkal linje (manlig förfader)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "Matriarkal linje (kvinnlig förfader)"
+
+msgid "Continue Descendant Tree"
+msgstr "Fortsätt ättlingträd"
+
+msgid "Alternate Descendant Tree"
+msgstr "Alternativt ättlingträd"
+
+msgid "Descendant SpaceTree"
+msgstr "SpaceTree för ättlingar"
+
+msgid "Total descendants"
+msgstr "Totalt antal ättlingar"
+
+msgid "Marriages/Families:<ul>"
+msgstr "Vigslar/familjer:<ul>"
 
 msgid "Invalid Destination Directory"
 msgstr "Felaktig målkatalog"
+
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"Målkatalog %s existerar inte\n"
+"Vill du försöka skapa den?"
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "Fel vid skapandet av %s: %s"
+
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "Fel vid läsning av proto-fil %s: %s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"Målfilen %s finns redan.\n"
+"Vill du skriva över?"
+
+msgid "Failed writing file: "
+msgstr "Fel vid skrivning av filen "
+
+msgid "Descendants of"
+msgstr "Ättlingar till"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "Så här använder du DescendantSpaceTree-visaren"
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr ""
+"Klicka på en nod för att fokusera på en ättling och expandera eventuella "
+"barn."
+
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr ""
+"Klicka och dra var som helst i visningsfönstret för att placera "
+"ättlingträdet."
+
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr ""
+"Klicka på återställningsknappen ___HJÄLP_ÅTERSTÄLLNINGS_KNAPP___ för att "
+"återställa till startättlingen."
+
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+"Sök efter en person genom att skriva i sökrutan.  Minst tre tecken krävs för "
+"att söka.  Klicka på något av förslagen för att snabbt navigera till den "
+"personen.  En person kan förekomma mer än en gång i en sökning, ett "
+"plustecken (+) efter namnet indikerar att personen visas som make/maka."
+
+msgid ""
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
+msgstr ""
+"En ättling och eventuella makar listas i samma nod.  Barn till alla "
+"ättlingens familjer grupperas tillsammans."
 
 msgid "Include Generations"
 msgstr "Ta med generationer"
 
 msgid "The destination path for generated files."
 msgstr "Målmappen för genererade filer."
+
+msgid "Descendant Space Tree"
+msgstr "Space Tree för ättlingar"
+
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"Genererar en webbsida med ett interaktivt diagram över ättlingar "
+"representerade som ett Space Tree för effektiv visning, även med många "
+"ättlingar eller generationer."

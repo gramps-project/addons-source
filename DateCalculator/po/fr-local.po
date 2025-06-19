@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-23 22:01+0000\n"
+"PO-Revision-Date: 2025-06-19 15:37+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,10 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
+
+msgid "Reference Date or Date Range"
+msgstr "Date de référence ou intervalle de dates"
 
 msgid "a valid Gramps date"
 msgstr "une date Gramps valide"
+
+msgid "Date or offset ±y or ±y, m, d"
+msgstr "Date ou écart ±y ou ±y, m, j"
 
 msgid ""
 "1. a Date\n"
@@ -44,6 +50,10 @@ msgstr "Erreur : décalage invalide pour deuxième expression"
 
 msgid "Error: at least one expression must be a date"
 msgstr "Erreur : au moins une expression doit être une date"
+
+msgid "Enter an expression in the entries above and click Calculate."
+msgstr ""
+"Saisissez une expression dans les entrées ci-dessus et cliquez sur Calculer."
 
 msgid "Date Calculator"
 msgstr "Calculateur de dates"

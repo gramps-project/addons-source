@@ -1,0 +1,241 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-01 14:55+0300\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Leave alone"
+msgstr "Dejar tal cual"
+
+msgid "Separate"
+msgstr "Separar"
+
+msgid "AI Provider"
+msgstr "Proveedor de IA"
+
+msgid "OpenAI"
+msgstr "OpenAI"
+
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+msgid "OpenAI API Key"
+msgstr "Clave de API de OpenAI"
+
+msgid "OpenAI Model"
+msgstr "Modelo de OpenAI"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "Visitado: %s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "Enlace: %s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "Atributo: %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "Valor: %s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Cargado desde archivo: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "Dominio: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "Objeto: %s"
+
+msgid "Note Link (parsed)"
+msgstr "Enlace a nota (analizado)"
+
+msgid "Note Link (internal)"
+msgstr "Enlace a nota (interna)"
+
+msgid "Note Link (external)"
+msgstr "Enlace a nota (externa)"
+
+msgid "No title"
+msgstr "Ningún título"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Acerca de WebSearch"
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Información del sistema"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Falta:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Esta biblioteca Python no está disponible en su sistema."
+
+msgid "Without it, QR code generation will not work."
+msgstr "Sin ella, la generación de códigos QR no funcionará."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Normalmente se instala con: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Nota: determinados sistemas operativos o entornos pueden requerir métodos "
+"alternativos de instalación.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Falta:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Esta biblioteca se requiere para acceder a las funcionalidades basadas en "
+"OpenAI."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Sin ella, se desactivarán las sugerencias de sitios e históricos de lugares "
+"generadas por IA."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Normalmente se instala con: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Falta:** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Esta biblioteca permite la comunicación con API de la web."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "Sin ella, no podrá acceder a fuentes de datos externas."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Normalmente se instala con: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Ubicaciones de archivos de datos"
+
+msgid "#### CSV File Paths"
+msgstr "#### Rutas de archivos CSV"
+
+msgid "#### JSON File Paths"
+msgstr "#### Rutas de archivos JSON"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Consejo: pulse en cualquier ruta anterior para abrirla en el gestor de "
+"archivos.*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 Ver uso detallado en: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 Asistencia"
+
+msgid "No data available."
+msgstr "No hay ningún dato disponible."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "DIVISIONES ADMINISTRATIVAS HISTÓRICAS DE"
+
+msgid "Foundation date:"
+msgstr "Fecha de fundación:"
+
+msgid "Coordinates:"
+msgstr "Coordenadas:"
+
+msgid "Administrative history"
+msgstr "Historia administrativa"
+
+msgid "Data provided to AI:"
+msgstr "Datos proporcionados a la IA:"
+
+msgid "Full hierarchy"
+msgstr "Jerarquía completa"
+
+msgid "Place Type:"
+msgstr "Tipo de lugar:"
+
+msgid "QR-code"
+msgstr "Código QR"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Falta la dependencia «qrcode»"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Error al generar el código QR:\n"
+"Error original: «{}»"
+
+msgid "Save Coordinates to the Place"
+msgstr "Guardar coordenadas en el lugar"
+
+msgid "AI provider is disabled"
+msgstr "Se desactivó el proveedor de IA"
+
+msgid "No AI API key provided"
+msgstr "No se proporcionó ninguna clave de API de IA"
+
+msgid "Keys"
+msgstr "Claves"
+
+msgid "Website URL"
+msgstr "URL del sitio web"
+
+msgid "Add link to note"
+msgstr "Añadir enlace a nota"
+
+msgid "Add link to attribute"
+msgstr "Añadir enlace a atributo"
+
+msgid "Show QR-code"
+msgstr "Mostrar código QR"
+
+msgid "Copy link to clipboard"
+msgstr "Copiar enlace en el portapapeles"
+
+msgid "Hide link for selected item"
+msgstr "Ocultar enlace para el elemento seleccionado"
+
+msgid "Hide link for all items"
+msgstr "Ocultar enlace para todos los elementos"
+
+msgid "Edit Attribute with the Link"
+msgstr "Editar atributo con el enlace"
+
+msgid "Edit Note with the Link"
+msgstr "Editar nota con el enlace"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 Sugerencias de IA"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "El atributo ya no existe. Se quitará el icono adicional"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "La nota ya no existe. Se quitará el icono adicional"
+
+msgid "Error creating note"
+msgstr "Error al crear la nota"
+
+msgid "URL is copied to the Clipboard"
+msgstr "El URL se copió en el portapapeles"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 
 msgid "Select Form"
 msgstr "Välj formulär"
@@ -714,14 +714,47 @@ msgstr "EnumDistrict"
 msgid "Comprising"
 msgstr "Bestående av"
 
+msgid "OfTheSaid"
+msgstr "AvSagda"
+
 msgid "Enumerator"
 msgstr "Uppräknare"
+
+msgid "1. Names of Inmates"
+msgstr "1. Namn på fångar"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Yrke, handel eller sysselsättning"
 
 msgid "BirthPlace"
 msgstr "Födelseplats"
 
+msgid "3. Place of Birth"
+msgstr "3. Födelseort"
+
+msgid "4. Religion"
+msgstr "4. Religion"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. Bostad om utanför gränserna"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. Ålder vid nästa födelsedag"
+
+msgid "SexMale"
+msgstr "KönMan"
+
+msgid "7. Sex: Male"
+msgstr "7. Kön: Man"
+
 msgid "SexFemale"
 msgstr "KönKvinna"
+
+msgid "8. Sex: Female"
+msgstr "8. Kön: Kvinna"
+
+msgid "MaritalStatus"
+msgstr "Civilstånd"
 
 msgid "9. Married or Single"
 msgstr "9. Gift eller ensamstående"
@@ -729,14 +762,101 @@ msgstr "9. Gift eller ensamstående"
 msgid "Coloured"
 msgstr "Färgade"
 
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Färgade personer - Svarta"
+
 msgid "Indians"
 msgstr "Indianer"
+
+msgid "11. Indians, if any"
+msgstr "11. Indianer, om några"
 
 msgid "ResidentsMale"
 msgstr "InvånareMän"
 
+msgid "12. Residents: Members, Male"
+msgstr "12. Invånare: Medlemmar, män"
+
 msgid "ResidentsFemale"
 msgstr "InvånareKvinna"
+
+msgid "13. Residents: Members, Female"
+msgstr "13. Invånare: Medlemmar, kvinnor"
+
+msgid "NonMembersMale"
+msgstr "Icke-medlemmarMan"
+
+msgid "14. Residents: Not Members: Male"
+msgstr "14. Invånare: Ej medlemmar: Män"
+
+msgid "NonMembersFemale"
+msgstr "Icke-medlemmarKvinna"
+
+msgid "15. Residents: Not Members: Female"
+msgstr "15. Invånare: Ej medlemmar: Kvinnor"
+
+msgid "AbsentMembersMale"
+msgstr "FrånvarandeMedlemmarMan"
+
+msgid "16. Members Absent: Male"
+msgstr "16. Medlemmar frånvarande: Män"
+
+msgid "AbsentMembersFemale"
+msgstr "FrånvarandeMedlemmarKvinna"
+
+msgid "17. Members Absent: Female"
+msgstr "17. Frånvarande medlemmar: Kvinna"
+
+msgid "DeafDumbMale"
+msgstr "DövstumMan"
+
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. Dövstum: Man"
+
+msgid "DeafDumbFemale"
+msgstr "DövstumKvinna"
+
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. Dövstum: Kvinna"
+
+msgid "BlindMale"
+msgstr "BlindMan"
+
+msgid "20. Blind: Male"
+msgstr "20. Blind: Man"
+
+msgid "BlindFemale"
+msgstr "BlindKvinna"
+
+msgid "21. Blind: Female"
+msgstr "21. Blind: Kvinna"
+
+msgid "LunaticMale"
+msgstr "GalenMan"
+
+msgid "22. Lunatics: Male"
+msgstr "22. Galningar: Man"
+
+msgid "LunaticFemale"
+msgstr "GalenKvinna"
+
+msgid "23. Lunatics: Female"
+msgstr "23. Galningar: Kvinna"
+
+msgid "ScholarMale"
+msgstr "AkademikerMan"
+
+msgid "24. Attending School: Male"
+msgstr "24. Går i skolan: Man"
+
+msgid "ScholarFemale"
+msgstr "AkademikerKvinna"
+
+msgid "25. Attending School: Female"
+msgstr "25. Går i skolan: Kvinna"
+
+msgid "Birth1851Male"
+msgstr "Födelse1851Man"
 
 msgid "HousesStories"
 msgstr "HusBerättelser"

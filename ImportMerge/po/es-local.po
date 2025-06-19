@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Import and Merge tool"
+msgstr "Herramienta Importar y fusionar"
+
+msgid "Import and merge a Gramps XML"
+msgstr "Importe y fusione un XML de Gramps"
+
+msgid "Delete original"
+msgstr "Eliminar original"
+
+msgid "Add Import"
+msgstr "Añadir importación"
+
+msgid "Merge into original"
+msgstr "Fusionar en original"
+
+msgid "Merge into import"
+msgstr "Fusionar en importación"
+
+msgid "Replace with import"
+msgstr "Reemplazar por importación"
+
+msgid "Keep original"
+msgstr "Mantener original"
+
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Este elemento se fusionará, usando datos de la importación. Los elementos a "
+"los que haga referencia también se marcarán para fusión o adición."
+
+msgid "Your Tree and import are the same."
+msgstr "Su árbol y la importación son iguales."
+
+msgid "your tree "
+msgstr "su árbol "
+
+msgid "Original"
+msgstr "Original"
+
+msgid "Imported"
+msgstr "Importado"
+
+msgid "Result  "
+msgstr "Resultado  "
+
+msgid "Import and Merge"
+msgstr "Importar y fusionar"
+
+msgid "Replace"
+msgstr "Reemplazar"
+
+msgid "Object and item"
+msgstr "Objeto y elemento"
+
+msgid "Differences"
+msgstr "Diferencias"
+
+msgid "Done"
+msgstr "Hecho"
+
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr ""
+"Este botón fusionará los datos importados en su árbol, fungiendo como base "
+"su árbol mismo."
+
+msgid "Merge Import"
+msgstr "Fusionar importación"
+
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr ""
+"Este botón fusionará los datos importados en su árbol, fungiendo como base "
+"los datos importados."
+
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"Este botón permitirá editar los datos importados. Estos aún deberán "
+"fusionarse, adicionarse o reemplazarse."

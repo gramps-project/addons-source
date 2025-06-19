@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Show IDs"
+msgstr "Mostrar ids."
+
+msgid "Show avatars"
+msgstr "Mostrar avatares"
+
+msgid "Show full dates"
+msgstr "Mostrar fechas completas"
+
+msgid "Show places"
+msgstr "Mostrar lugares"
+
+msgid "Font:"
+msgstr "Tipo de letra:"
+
+msgid "Themes"
+msgstr "Temas"
+
+msgid "Search"
+msgstr "Buscar"
+
+msgid "Vertical spacing between generations"
+msgstr "Espaciado vertical entre generaciones"
+
+msgid "Horizontal spacing between generations"
+msgstr "Espaciado horizontal entre generaciones"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Deleting the family will remove it from the database."
+msgstr "Eliminar la familia la quitará de la base de datos."
+
+msgid "Dark (default)"
+msgstr "Oscuro (predeterminado)"
+
+msgid "Light"
+msgstr "Claro"
+
+msgid "Search..."
+msgstr "Buscar…"

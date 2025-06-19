@@ -3,12 +3,16 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-22 23:21+0000\n"
-"PO-Revision-Date: 2009-03-05 12:05+0100\n"
-"Last-Translator: Julio Sánchez <jsanchez@users.sourceforge.com>\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Edit Image Exif Metadata"
 msgstr "Editar los metadatos Exif de la imagen"
@@ -60,8 +64,8 @@ msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
-"Muestra la página de ayuda en la Wiki de Gramps para 'Editar los metadatos "
-"Exif de la imagen'."
+"Muestra la página de ayuda en el wiki de Gramps para «Editar los metadatos "
+"Exif de la imagen» en el navegador web."
 
 msgid ""
 "This will open up a new window to allow you to edit/ modify this image's "
@@ -100,6 +104,9 @@ msgstr ""
 msgid "Thumbnail"
 msgstr "Miniatura"
 
+msgid "Copy"
+msgstr "Copiar"
+
 msgid "Select an image to begin..."
 msgstr "Seleccionar una imagen para comenzar..."
 
@@ -111,7 +118,11 @@ msgstr ""
 "Escoja una imagen diferente..."
 
 msgid "Please convert this image to an Exiv2- compatible image type..."
-msgstr "Por favor, convierta esta imagen a un formato compatible con Exiv2..."
+msgstr "Convierta esta imagen a un formato compatible con Exiv2…"
+
+#, python-brace-format
+msgid "Image Size : {width} x {height} pixels"
+msgstr "Tamaño de imagen: {width} × {height} píxeles"
 
 msgid ""
 "Image is NOT writable,\n"
@@ -223,22 +234,42 @@ msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr "Coordenadas GPS de Latitud/ Longitud/ Altitud"
 
 msgid "Latitude :"
-msgstr "Latitud:  "
+msgstr "Latitud:"
 
 msgid "Longitude :"
-msgstr "Longitud: "
+msgstr "Longitud:"
 
 msgid "Altitude :"
-msgstr "Altitud:  "
+msgstr "Altitud:"
 
 msgid "Bad Date/Time"
 msgstr "Fecha/hora incorrecta"
 
+msgid "Invalid latitude (syntax: 18°9'"
+msgstr "Latitud no válida (sintaxis: 18°9'"
+
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 o -18:9:48.21)"
 
+msgid "Invalid longitude (syntax: 18°9'"
+msgstr "Longitud no válida (sintaxis: 18°9'"
+
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 o -18:9:48.21)"
+
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image."
+msgstr ""
+"ATENCIÓN:  está a punto de eliminar completamente los metadatos Exif de esta "
+"imagen."
+
+msgid ""
+"WARNING!  You are about to completely delete the GPS metadata from this "
+"image."
+msgstr ""
+"ATENCIÓN:  está a punto de eliminar completamente los metadatos GPS de esta "
+"imagen."
 
 msgid "Media Title Update"
 msgstr "Actualización del título del objeto audiovisual"

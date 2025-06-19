@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,11 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Descendant Book"
 msgstr "Jälkeläiskirja"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Tuottaa yhden tai useamman jälkeläisraportin annetun kyselyn perusteella."
+
+msgid "Detailed Descendant Book"
+msgstr "Yksityiskohtainen jälkeläiskirja"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Tuottaa yhden tai useamman yksityiskohtaisen jälkeläisraportin annetun "
+"kyselyn perusteella."
+
+#, python-format
+msgid "sp. see  %(reference)s : %(spouse)s"
+msgstr "sp. katso  %(reference)s : %(spouse)s"
 
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
@@ -25,6 +42,18 @@ msgstr ""
 
 msgid "Descendants Report"
 msgstr "Jälkeläisraportti"
+
+#, python-format
+msgid "Writing %s reports..."
+msgstr "Kirjoitetaan %s raporttia..."
+
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. Henkilön {name} jälkeläiset"
+
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr "{report_count:d}. {name}"
 
 msgid "Select filter to restrict people that appear in the report"
 msgstr "Valitse suodatin rajoittamaan raportin henkilöitä"
@@ -41,6 +70,17 @@ msgstr "Sisällysluettelon otsikon tyyli."
 msgid "The style used for the table of contents detail."
 msgstr "Sisällysluettelorivin tyyli."
 
+msgid "Detailed Descendants Report"
+msgstr "Yksityiskohtainen jälkeläisten raportti"
+
+#, python-format
+msgid "Generating %s report references..."
+msgstr "Luodaan %s raporttiviittausta..."
+
+#, python-format
+msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgstr "%(report_count)s. Jälkeläisraportti henkilölle %(person_name)s"
+
 msgid "Index of Places"
 msgstr "Paikkahakemisto"
 
@@ -50,21 +90,49 @@ msgstr "Päivämäärähakemisto"
 msgid "Index of Names"
 msgstr "Nimihakemisto"
 
+msgid "Report, Generation, Person, Name"
+msgstr "Raportti, sukupolvi, henkilö, nimi"
+
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "Katso raportti: {report}, sukupolvi: {generation}, henkilö: {person}"
+
+#, python-format
+msgid "Report appearances for %s"
+msgstr "Ilmoita esiintymisestä: %s"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr ""
+"Puoliso: Raportti: {report}, sukupolvi: {generation}, henkilö: {person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Raportti: {report}, sukupolvi: {generation}, henkilö: {person}"
+
 #, python-format
 msgid "%(event_name)s of %(name)s "
-msgstr "%(event_type)s: %(date)s "
+msgstr "%(event_name)s henkilölle %(name)s "
 
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
-msgstr "%(event_type)s: %(date)s - %(place)s "
+msgstr "%(event_name)s henkiöille %(name)s ja %(mate)s "
 
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
 #, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
+
+#, python-format
+msgid ". Ref: %(repno)s %(gen)s %(per)s "
+msgstr ". Ref: %(repno)s %(gen)s %(per)s "
 
 #, python-format
 msgid "%(event_name)s:"
@@ -74,9 +142,27 @@ msgstr "%(event_name)s:"
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
 
+#, python-brace-format
+msgid "Ref: {number}. {name}"
+msgstr "Ref: {number}. {name}"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
 #, python-format
 msgid "%(type)s:"
 msgstr "%(type)s:"
+
+#, python-format
+msgid " %(value)s%(endnotes)s"
+msgstr " %(value)s%(endnotes)s"
+
+msgid "List children"
+msgstr "Näytetäänkö lapset"
+
+msgid "Add descendant reference in child list"
+msgstr "Lisää jälkeläisviittaus lasten luetteloon"
 
 msgid "Include Index of Names"
 msgstr "Sisällytä nimihakemisto"
@@ -96,11 +182,51 @@ msgstr "Sisällytä paikkahakemisto"
 msgid "Whether to include the index of Places at the end of the report."
 msgstr "Sisällytetäänkö paikkahakemisto raportin loppuun."
 
+msgid "Include the 'Report appearances' section with each person"
+msgstr "Sisällytä jokaisen henkilön ilmoituksiin osio ”Ilmoita esiintymisistä”"
+
+msgid ""
+"The 'Report appearances' section shows other places in the report where the "
+"person is mentioned."
+msgstr ""
+"”Esiintymiset raportissa” -osio näyttää raportin muut kohdat, joissa henkilö "
+"mainitaan."
+
 msgid "The style used for the children list."
 msgstr "Lasten luettelossa käytetty tyyli."
 
+msgid "The basic style used for Note header."
+msgstr "Lisätiedon otsikossa käytetty perustyyli."
+
 msgid "The style used for the first personal entry."
 msgstr "Henkilön ensimmäisen kappaleen tyyli."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "Tyyli, jota käytetään Lisätietojen ja puolisoiden otsikoissa."
+
+msgid "The style used for additional detail data."
+msgstr "Lisätietojen tyyli."
+
+msgid "The style used for note detail data."
+msgstr "Lisätietojen tyyli."
+
+msgid "The style used for the date in the Index of Dates."
+msgstr "Päiväyshakemiston päivämäärälle käytetty tyyli."
+
+msgid "The style used for the events in the Index of Dates."
+msgstr "Päiväyshakemiston tapahtumille käytetty tyyli."
+
+msgid "The style used for the header in the Index of Names."
+msgstr "Nimihakemiston otsikossa käytetty tyyli."
+
+msgid "The style used for the references in the Index of Names."
+msgstr "Nimihakemiston viittauksissa käytetty tyyli."
+
+msgid "The style used for the header in the Index of Places."
+msgstr "Paikkahakemiston otsikossa käytetty tyyli."
+
+msgid "The style used for the references in the Index of Places."
+msgstr "Paikkahakemiston viittauksissa käytetty tyyli."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."
@@ -125,3 +251,7 @@ msgstr "Haetaan puuttuvia jälkeläisiä %s henkilöltä..."
 #, python-format
 msgid "Verifying descendants from %s people after pruning..."
 msgstr "Vahvistetaan %s henkilön jälkeläisiä rajauksen jälkeen..."
+
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Haetaan puuttuvia jälkeläisiä %s henkilöltä..."

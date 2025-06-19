@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-08 17:04+0000\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Forms"
+msgstr "Formularios"
+
+msgid "Order"
+msgstr "Orden"
+
+msgid "Form"
+msgstr "Formulario"
+
+#, python-format
+msgid "Form: %s"
+msgstr "Formulario: %s"
+
+msgid "New Form"
+msgstr "Formulario nuevo"
+
+msgid "Edit Form"
+msgstr "Editar formulario"
+
+msgid "Reference:"
+msgstr "Referencia:"
+
+msgid "Headings"
+msgstr "Títulos"
+
+msgid "Sheet No."
+msgstr "N.º de foja"
+
+msgid "Horses"
+msgstr "Caballos"
+
+msgid "Sheep"
+msgstr "Ovejas"
+
+msgid "Wheat"
+msgstr "Trigo"
+
+msgid "Oats"
+msgstr "Avena"
+
+msgid "Rice"
+msgstr "Arroz"
+
+msgid "Tobacco"
+msgstr "Tabaco"
+
+msgid "Wool"
+msgstr "Lana"
+
+msgid "Barley"
+msgstr "Cebada"
+
+msgid "Buckwheat"
+msgstr "Alforfón"
+
+msgid "Wine"
+msgstr "Vino"
+
+msgid "Butter"
+msgstr "Manteca"
+
+msgid "Cheese"
+msgstr "Queso"
+
+msgid "Hay"
+msgstr "Heno"
+
+msgid "Industry"
+msgstr "Industria"
+
+msgid "Section"
+msgstr "Sección"
+
+msgid "of"
+msgstr "de"
+
+msgid "Hair Color"
+msgstr "Color de cabello"
+
+msgid "Bulls"
+msgstr "Toros"
+
+msgid "Calves"
+msgstr "Terneros"
+
+msgid "Pigs"
+msgstr "Cerdos"
+
+msgid "13. Origin"
+msgstr "13. Origen"
+
+msgid "Colour"
+msgstr "Color"
+
+msgid "5. Colour"
+msgstr "5. Color"

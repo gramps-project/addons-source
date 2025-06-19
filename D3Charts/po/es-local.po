@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Include Generations"
+msgstr "Incluir generaciones"
+
+msgid "The destination path for generated files."
+msgstr "La ruta de destino de los archivos generados."
+
+msgid "The destination file name for html content."
+msgstr "El nombre de archivo de destino del contenido HTML."
+
+msgid "Generating report..."
+msgstr "Generando informe…"
+
+msgid "Invalid Destination Directory"
+msgstr "Directorio de destino no válido"
+
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"El directorio de destino «%s» no existe.\n"
+"¿Quiere intentar crearlo?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "No se pudo crear {target_path}: {message}"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Ya existe el archivo de destino, «%s».\n"
+"¿Quiere sobrescribirlo?"
+
+msgid "Default View"
+msgstr "Vista predeterminada"
+
+msgid "Expand All"
+msgstr "Expandir todo"
+
+msgid "Include contraction level"
+msgstr "Incluir nivel de contracción"
+
+msgid "The font size in pixels for each node."
+msgstr "El tamaño de letra en píxeles para cada nodo."
+
+msgid "Include records marked private"
+msgstr "Incluir registros marcados como privados"
+
+msgid "Navigation"
+msgstr "Navegación"
+
+msgid "Entire node."
+msgstr "Todo el nodo."
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "Remove all whitespace."
+msgstr "Quitar todo el espacio en blanco."
+
+msgid "Text Color"
+msgstr "Color de texto"

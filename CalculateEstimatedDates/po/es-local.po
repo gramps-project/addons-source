@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-04 00:40+0000\n"
-"Last-Translator: gioboto <giomaussi@hotmail.com>\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione filtro para restringir las personas"
@@ -47,6 +47,9 @@ msgstr "Diferencia máxima de edad entre hermanos"
 msgid "Average years between two generations"
 msgstr "Distancia media en años entre dos generaciones"
 
+msgid "Estimated Dates"
+msgstr "Fechas estimadas"
+
 msgid "Approximate (about)"
 msgstr "Aproximadamente"
 
@@ -59,8 +62,29 @@ msgstr "Las fechas de los eventos son anteriores o posteriores a los mismos"
 msgid "Calculate Estimated Dates"
 msgstr "Calcular fechas estimadas"
 
+msgid "Select All"
+msgstr "Seleccionar todo"
+
+msgid "Select None"
+msgstr "No seleccionar nada"
+
+msgid "Toggle Selection"
+msgstr "Alternar selección"
+
+msgid "Add Selected Events"
+msgstr "Añadir eventos seleccionados"
+
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr "Eliminar eventos, notas y fuentes y volver a seleccionar datos"
+
+msgid "Reselect Data"
+msgstr "Reseleccionar datos"
+
+msgid "Are you sure you want to reselect data?"
+msgstr "¿Confirma que quiere reseleccionar los datos?"
+
+msgid "Evidence"
+msgstr "Evidencia"
 
 msgid "Processing...\n"
 msgstr "Procesando...\n"
@@ -70,7 +94,21 @@ msgstr "Eliminando estimaciones antiguas... "
 
 #, python-format
 msgid "Removing '%s'..."
-msgstr "Eliminando '%s'..."
+msgstr "Quitando «%s»…"
+
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"Seleccionando… \n"
+"\n"
+
+msgid "Selecting... "
+msgstr "Seleccionando… "
+
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "Añadiendo eventos «%s»…"
 
 msgid "Estimated birth date"
 msgstr "Fecha de nacimiento estimada"
@@ -80,6 +118,10 @@ msgstr "Fecha de defunción estimada"
 
 msgid " Done! Committing..."
 msgstr " Listo! Comprometido..."
+
+#, python-format
+msgid "Added %d events."
+msgstr "Se añadieron %d eventos."
 
 msgid "Estimated date"
 msgstr "Fecha estimada"

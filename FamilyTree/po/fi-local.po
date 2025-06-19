@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,15 +12,61 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #, python-format
 msgid "Family Tree for %s"
 msgstr "Sukupuu henkilölle %s"
 
+msgid "Paper too small"
+msgstr "Liian pieni sivu"
+
+msgid "Some elements may not appear or be badly rendered."
+msgstr "Jotkin elementit eivät välttämättä näy tai ne erottuvat huonosti."
+
+msgid "Anonymous"
+msgstr "Nimetön"
+
+msgid "born"
+msgstr "syntynyt"
+
+msgid "baptised"
+msgstr "kastettu"
+
+msgid "died"
+msgstr "kuollut"
+
+msgid "buried"
+msgstr "haudattu"
+
 msgid "cremated"
 msgstr "tuhkattu"
+
+msgid "married"
+msgstr "avioliitto"
+
+msgid "divorced"
+msgstr "ero"
+
+msgid "resident"
+msgstr "asunto"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "%(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "%(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "%(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s (%(partial)s)"
 
 #, python-format
 msgid "in %(place)s"
@@ -45,8 +91,24 @@ msgstr "Jälkeläisten sukupolvet"
 msgid "The number of descendant generations to include in the tree"
 msgstr "Puuhun sisällytettävien jälkipolvien lukumäärä"
 
+msgid "Kekule number of husband"
+msgstr "Aviomiehen Kekule-numero"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"Aviomiehen Kekule-numero (keskeinen perhe). Aseta arvoksi 0, jos et halua "
+"Kekule-numeroita näkyvän"
+
+msgid "Scale to fit on a single page"
+msgstr "Sovita yhdelle sivulle"
+
 msgid "Whether to scale to fit on a single page."
 msgstr "Skaalataanko se yhdelle sivulle sopivaksi."
+
+msgid "No color"
+msgstr "Ilman värejä"
 
 msgid "First generation"
 msgstr "Ensimmäinen sukupolvi"
@@ -66,14 +128,26 @@ msgstr "Mieslinja ja aviottomat lapset"
 msgid "Female line"
 msgstr "Naislinja"
 
+msgid "Shuffle colors"
+msgstr "Sekoita värit"
+
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Sekoitataanko värit vai järjestätäänkö ne sateenkaaren järjestykseen."
+
 msgid "Replace first name with call name"
 msgstr "Korvaa etunimi kutsumanimellä"
 
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Alleviivaa kutsumanimi etunimissä tai lisää kutsumanimi etunimiin"
 
+msgid "Include Occupation"
+msgstr "Sisällytä ammatti"
+
 msgid "Include Residence"
 msgstr "Sisällytä asuinpaikka"
+
+msgid "Print event data (dead person)"
+msgstr "Näytä (kuolleen henkilön) tapahtumatiedot"
 
 msgid "Year only"
 msgstr "Vain vuosi"
@@ -87,8 +161,26 @@ msgstr "Päivämäärä ja paikka"
 msgid "Print event data (living person)"
 msgstr "Tulosta tapahtumatiedot (eläville)"
 
+msgid "Fall back to baptism if birth event missing"
+msgstr "Käytä kastetta, jos syntymätapahtuma puuttuu"
+
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Käytä hautausaikaa, jos kuolematieto puuttuu"
+
+msgid "Protect private items"
+msgstr "Suojaa yksityiset tiedot"
+
 msgid "Include event description"
 msgstr "Sisällytä tapahtuman kuvaus"
 
 msgid "Text Options"
 msgstr "Tekstivalinnat"
+
+msgid "The style used for names."
+msgstr "Nimissä käytetty tyyli."
+
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "Tietojen tyyli (syntymä, kuolema, avioliitto, avioero)."
+
+msgid "Produces a graphical family tree."
+msgstr "Tuottaa graafisen sukupuun."

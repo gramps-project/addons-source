@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #, python-format
@@ -25,6 +25,22 @@ msgstr "; %(type)s: %(value)s"
 
 msgid "Source references:"
 msgstr "Lähdeviitteet:"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "%(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "%(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "%(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s (%(partial)s)"
 
 #, python-format
 msgid "in %(place)s"
@@ -68,3 +84,12 @@ msgstr "Teksteille käytetty perustyyli"
 
 msgid "The style used for the page key on the top"
 msgstr "Yläosan sivunäppäimen tyyli"
+
+msgid "The style used for names"
+msgstr "Nimien tyyli"
+
+msgid "The style used for numbers"
+msgstr "Numeroissa käytetty tyyli"
+
+msgid "The style used for footnotes (notes and source references)"
+msgstr "Alaviitteissä (huomautuksissa ja lähdeviittauksissa) käytetty tyyli"

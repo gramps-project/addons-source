@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-22 23:21+0000\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,14 +12,88 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Edit Image Exif Metadata"
+msgstr "Muokkaa kuvan Exif-metatietoja"
+
+msgid "Gramplet to view, edit, and save image Exif metadata"
+msgstr ""
+"Gramplet kuvan Exif-metatietojen tarkasteluun, muokkaamiseen ja "
+"tallentamiseen"
+
+msgid "Edit Exif Metadata"
+msgstr "Muokkaa Exif-metatietoja"
+
+msgid "<-- Image Types -->"
+msgstr "<-- Kuvatyypit -->"
+
+msgid ""
+"Warning:  Changing this entry will update the Media object title field in "
+"Gramps not Exiv2 metadata."
+msgstr ""
+"Varoitus: Tämän merkinnän muuttaminen päivittää Grampsin mediaobjektin "
+"otsikon, ei Exiv2-metatietoja."
 
 msgid "Provide a short description for this image."
 msgstr "Anna tälle kuvalle lyhyt kuvaus."
 
+msgid ""
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr ""
+"Anna kuvan tekijä. Henkilön nimi tai yritys, joka on vastuussa kuvan "
+"luomisesta."
+
 msgid "Enter the copyright information for this image. \n"
 msgstr "Anna tämän kuvan tekijänoikeustiedot. \n"
+
+msgid ""
+"The original date/ time when the image was first created/ taken as in a "
+"photograph.\n"
+"Example: 1830-01-1 09:30:59"
+msgstr ""
+"Alkuperäinen päivämäärä ja kellonaika, jolloin kuva luotiin tai "
+"valokuvattiin.\n"
+"Esimerkki: 1830-01-1 09:30:59"
+
+msgid ""
+"This is the date/ time that the image was last changed/ modified.\n"
+"Example: 2011-05-24 14:30:00"
+msgstr ""
+"Tämä on päivämäärä ja aika, jolloin kuvaa viimeksi muutettiin.\n"
+"Esimerkki: 2011-05-24 14:30:00"
+
+msgid ""
+"Enter the Latitude GPS coordinates for this image,\n"
+"Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
+msgstr ""
+"Anna kuvan leveysasteen GPS-koordinaatit.\n"
+"Esimerkkejä: -43.722965, -43:43:22, 38° 38′ 03″ N"
+
+msgid ""
+"Enter the Longitude GPS coordinates for this image,\n"
+"Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
+msgstr ""
+"Anna tämän kuvan pituusasteen GPS-koordinaatit.\n"
+"Esimerkkejä: -10.396378, -10:23:46, 105° 6′ 6″ W"
+
+msgid ""
+"This is the measurement of Above or Below Sea Level.  It is measured in "
+"meters.  Example: 200.558, -200.558"
+msgstr ""
+"Tämä on korkeus merenpinnasta metreinä (ylä- tai alapuolella). Esimerkkejä: "
+"200,558, -200,558"
+
+msgid ""
+"Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
+"web browser."
+msgstr ""
+"Avaa selaimessasi Grampsin Wikin ohjesivu 'Muokkaa kuvan Exif-metatietoja'."
+
+msgid "Clear GPS"
+msgstr "Tyhjennä GPS"
 
 msgid "Thumbnail"
 msgstr "Pienoiskuva"
@@ -35,6 +109,27 @@ msgstr "Muunna ja poista"
 
 msgid "Media Path Update"
 msgstr "Mediapolun päivitys"
+
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr "Tallentaa tietokenttien sisällöt kuvan Exif-metatietoihin."
+
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr "Näytä uudelleen tietokentät, jotka on tyhjennetty muokkausalueelta."
+
+msgid "This button will clear all of the data fields shown here."
+msgstr "Tällä painikkeella tyhjennetään kaikki nämä tietokentät."
+
+msgid "This button will clear all of the GPS fields shown here."
+msgstr "Tämä painike tyhjentää kaikki nämä GPS-kentät."
+
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+"Sulkee tämän ponnahdusikkunan.\n"
+"VAROITUS: Tämä toiminto EI tallenna kuvan Exif-metatietoihin tehtyjä "
+"muutoksia."
 
 msgid "Media Object Title"
 msgstr "Mediaobjektin nimi"
@@ -54,11 +149,17 @@ msgstr "Tekijä: "
 msgid "Copyright: "
 msgstr "Tekijänoikeudet: "
 
+msgid "Date/ Time"
+msgstr "Päiväys ja aika"
+
 msgid "Original: "
 msgstr "Alkuperäinen: "
 
 msgid "Modified: "
 msgstr "Muutettu: "
+
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr "Leveys- ja pituusaste sekä korkeus GPS-koordinaatit"
 
 msgid "Latitude :"
 msgstr "Leveysaste:"
@@ -75,11 +176,39 @@ msgstr "Virheellinen päivä tai aika"
 msgid "Invalid latitude (syntax: 18°9'"
 msgstr "Kelvoton leveysaste (muotoa: 18°9'"
 
+msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"E, -18.2412 tai -18:9:48.21)"
+
 msgid "Invalid longitude (syntax: 18°9'"
 msgstr "Kelvoton pituusaste (muotoa: 18°9'"
+
+msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"I, -18.2412 or -18:9:48.21)"
+
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image."
+msgstr "VAROITUS!  Olet kokonaan poistamassa Exif-metatiedot tästä kuvasta."
+
+msgid "Delete?"
+msgstr "Poistetaan?"
+
+msgid ""
+"WARNING!  You are about to completely delete the GPS metadata from this "
+"image."
+msgstr "VAROITUS!  Olet poistamassa kokonaan GPS-metatiedot tästä kuvasta."
 
 msgid "Media Title Update"
 msgstr "Median nimen päivitys"
 
 msgid "Media Object Date Created"
 msgstr "Mediaobjekti luotu"
+
+msgid "Saving Exif metadata to this image..."
+msgstr "Tallennetaan kuvan Exif-metatietoja..."
+
+msgid "All Exif metadata has been deleted from this image..."
+msgstr "Kaikki Exif-metatiedot on poistettu tästä kuvasta..."
+
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr "Exif-metatietojen poistaminen tästä kuvasta ei onnistunut..."

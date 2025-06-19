@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 20:12-0600\n"
-"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"POT-Creation-Date: 2025-06-16 17:49-0600\n"
+"PO-Revision-Date: 2025-06-15 21:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -14,11 +14,182 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.12-dev\n"
 
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "Patriarchale Linie (männliche Vorfahren)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "Matriarchale Linie (weibliche Vorfahren)"
+
+msgid "Continue Descendant Tree"
+msgstr "Nachkommenbaum fortsetzen"
+
+msgid "Alternate Descendant Tree"
+msgstr "Alternativer Nachkommenbaum"
+
+msgid "Descendant SpaceTree"
+msgstr "Nachkomme-Raumbaum"
+
+msgid "Total descendants"
+msgstr "Gesamtzahl der Nachkommen"
+
+msgid "Marriages/Families:<ul>"
+msgstr "Hochzeiten/Familien:<ul>"
+
 msgid "Invalid Destination Directory"
 msgstr "Ungültiges Zielverzeichnis"
+
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"Das Zielverzeichnis %s existiert nicht.\n"
+"Willst du versuchen, es zu erstellen."
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "Erstellen von %s fehlgeschlagen: %s"
+
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "Das Lesen der Proto-Datei %s ist fehlgeschlagen: %s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"Die Zieldatei %s existiert bereits.\n"
+"Willst du sie überschreiben?"
+
+msgid "Failed writing file: "
+msgstr "Fehler beim Schreiben der Datei: "
+
+msgid "Descendants of"
+msgstr "Nachkommen von"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "Verwendung vom Nachkommen Raumbaum Ansichtsprogramm"
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr ""
+"Klicke auf einen Knoten, um einen Nachkommen zu fokussieren und alle Kinder "
+"zu erweitern."
+
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr ""
+"Klicke und ziehe an einer beliebigen Stelle in der Ansicht, um den "
+"Nachkommenbaum zu positionieren."
+
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr ""
+"Klicke auf die Schaltfläche „Zurücksetzen“ ___HILFE_RESET_TASTE___, um zum "
+"ersten Nachkommen zurückzukehren."
+
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+"Suche nach einer Person durch Eingabe in das Suchfeld.  Für die Suche sind "
+"mindestens drei Zeichen erforderlich.  Klicke auf einen der Vorschläge, um "
+"schnell zu dieser Person zu gelangen.  Eine Person kann mehrmals in einer "
+"Suche erscheinen. Ein Pluszeichen (+) hinter dem Namen zeigt an, dass diese "
+"Person als Ehepartner erscheint."
+
+msgid ""
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
+msgstr ""
+"Ein Nachkomme und alle Ehepartner werden im selben Knoten aufgeführt.  Die "
+"Kinder aller Familien des Nachkommens werden zusammen gruppiert."
+
+msgid ""
+"Persons born after a specified date may not display their birth or death "
+"dates."
+msgstr ""
+"Personen, die nach einem bestimmten Datum geboren sind, dürfen ihr Geburts- "
+"oder Sterbedatum nicht anzeigen."
+
+msgid ""
+"Person nodes are colored to indicate the number of children, the deeper tint "
+"of the coloring, the greater number of children."
+msgstr ""
+"Personenknoten sind farblich gekennzeichnet, um die Anzahl der Kinder "
+"anzuzeigen. Je dunkler die Farbe, desto größer ist die Anzahl der Kinder."
+
+msgid ""
+"The currently selected descendant and all of the ancestors of that person "
+"are highlighted in yellow."
+msgstr ""
+"Der aktuell ausgewählte Nachkomme und alle Vorfahren dieser Person sind gelb "
+"hervorgehoben."
+
+msgid ""
+"A person may occur in different branches.  This is usually because of inter-"
+"family marriages (such as that of cousins.)  In this case, a button will "
+"also appear for that person,  ___NAV_BUTTON_CONTINUE___ or "
+"___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
+"expand descendants of this person. "
+msgstr ""
+"Eine Person kann in verschiedenen Zweigen vorkommen.  Dies ist in der Regel "
+"auf Eheschließungen innerhalb der Familie zurückzuführen (z. B. zwischen "
+"Cousins und Cousinen).  In diesem Fall wird für diese Person ebenfalls eine "
+"Schaltfläche angezeigt,  ___NAV_SCHALTFLÄCHE_WEITER___ oder "
+"___NAV_SCHALTFLÄCHE_ALT___ , um zum anderen Zweig zu navigieren.  Nur ein "
+"Zweig zeigt die Nachkommen dieser Person an. "
+
+msgid ""
+"The following open source projects are used in building this viewer, see "
+"source code LICENSE*.txt files for complete licenses and required notices."
+msgstr ""
+"Die folgenden Open-Source-Projekte werden beim Erstellen dieser Ansicht "
+"verwendet. Die vollständigen Lizenzen und erforderlichen Hinweise findest du "
+"in den Quellcode-Dateien LICENSE*.txt."
+
+msgid "Search. . ."
+msgstr "Suchen. . ."
 
 msgid "Include Generations"
 msgstr "Generationen einbeziehen"
 
+msgid "Branch to expand when duplicated"
+msgstr "Zweig wird beim Duplizieren erweitert"
+
+msgid ""
+"When a descendant appears more than once, prefer the selected lineage to "
+"expand descendancy line"
+msgstr ""
+"Wenn ein Nachkomme mehr als einmal erscheint, wird die ausgewählte Linie "
+"bevorzugt, um die Nachkommenslinie zu erweitern"
+
+msgid "Maximum display birth year"
+msgstr "Maximales Geburtsjahr für die Anzeige"
+
+msgid "Birth/date dates will not be displayed after this year"
+msgstr "Geburtsdaten werden nach diesem Jahr nicht mehr angezeigt"
+
 msgid "The destination path for generated files."
 msgstr "Der Zielpfad für die generierten Dateien."
+
+msgid "Destination File"
+msgstr "Zieldatei"
+
+msgid "The destination file name for the report."
+msgstr "Der Name der Zieldatei für den Bericht."
+
+msgid "Descendant Space Tree"
+msgstr "Nachkommen-Raumbaum"
+
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"Erstellt eine Webseite mit einem interaktiven Stammbaum, der als Raumbaum "
+"dargestellt wird, um auch bei vielen Nachkommen oder Generationen eine "
+"effiziente Anzeige zu gewährleisten."

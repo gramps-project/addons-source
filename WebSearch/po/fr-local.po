@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-05-23 22:01+0000\n"
+"PO-Revision-Date: 2025-06-19 15:37+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 
 msgid "Middle Name Handling"
 msgstr "Gestion du deuxième prénom"
@@ -90,6 +90,18 @@ msgstr ""
 "Requêtes personnalisées pour les services en ligne en fonction de "
 "l'enregistrement actif : individu, lieu, famille ou source"
 
+#, python-format
+msgid "Attribute: %s"
+msgstr "Attribut : %s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Chargé du fichier : %s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "ID d'objet Gramps : %s"
+
 msgid "Column - Icons"
 msgstr "Colonne - Icônes"
 
@@ -145,6 +157,12 @@ msgstr ""
 "⚠ Erreur lors de la génération du code QR :\n"
 "Erreur initiale : \"{}\""
 
+msgid "Save Coordinates to the Place"
+msgstr "Enregistrer les coordonnées de localisation"
+
+msgid "No AI API key provided"
+msgstr "Pas de clé IA-API fournie"
+
 msgid "Keys"
 msgstr "Clés"
 
@@ -153,6 +171,9 @@ msgstr "URL du site"
 
 msgid "Add link to note"
 msgstr "Ajouter un lien à la note"
+
+msgid "Add link to attribute"
+msgstr "Ajouter un lien à l'attribut"
 
 msgid "Show QR-code"
 msgstr "Afficher le QR-code"
@@ -169,6 +190,24 @@ msgstr "Masquer le lien pour tous les éléments"
 msgid "🔍 AI Suggestions"
 msgstr "Suggestions d'IA"
 
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Ce lien Web '{title}' a été ajouté en utilisant le gramplet WebSearch (v. "
+"{version}) pour référence ultérieure :\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Vous pouvez utiliser ce lien pour revisiter la source et vérifier les "
+"informations relatives à cet individu."
+
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "La note #%(id)s a été ajoutée avec succès"
@@ -181,3 +220,10 @@ msgstr "L'URL est copiée dans le presse-papiers"
 
 msgid "WebSearch Link"
 msgstr "Lien de Recherche Web"
+
+msgid "Attribute has been successfully added"
+msgstr "L'attribut a été ajouté avec succès"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Titre : {title}"

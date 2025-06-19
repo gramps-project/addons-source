@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12.1\n"
+"Generated-By: pygettext.py 1.4\n"
+
+#, python-format
+msgid "Clipboard Gramplet: %s"
+msgstr "Leikepöytä-Gramplet: %s"
+
+msgid "Collections Clipboard"
+msgstr "Kokoelmien leikepöytä"
+
+msgid "Gramplet for grouping collections of items to aid in data entry."
+msgstr ""
+"Gramplet kohdekokoelmien ryhmittelyyn tiedon syöttämisen helpottamiseksi."

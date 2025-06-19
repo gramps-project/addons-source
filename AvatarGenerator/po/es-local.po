@@ -3,12 +3,49 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2009-03-05 12:05+0100\n"
-"Last-Translator: Julio Sánchez <jsanchez@users.sourceforge.com>\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "Avatar Generator Tool"
+msgstr "Herramienta de generación de avatares"
+
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "Una herramienta para añadir avatares a su árbol genealógico"
+
+msgid "single image mode"
+msgstr "modo de imagen única"
+
+msgid "Choose how many images you'd like to use."
+msgstr "Elija cuantas imágenes desee usar."
+
+msgid "Image for people with unknown gender."
+msgstr "Imagen para personas de género desconocido."
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione filtro para restringir las personas"
+
+msgid "Remove images from people"
+msgstr "Quitar imágenes de personas"
+
+msgid "Remove selected image(s)."
+msgstr "Quitar las imágenes seleccionadas."
+
+msgid "Avatar Generator"
+msgstr "Generador de avatares"
+
+msgid "Remove avatar images..."
+msgstr "Quitar imágenes de avatar…"
+
+msgid "INFO"
+msgstr "INF."
+
+msgid "All persons already had one."
+msgstr "Todas las personas ya tenían uno."

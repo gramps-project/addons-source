@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,11 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Descendants Lines"
 msgstr "Jälkeläislinjat"
+
+msgid "Produces descendants lines of a person"
+msgstr "Tuottaa henkilön jälkeläislinjoja"
+
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "SVG-tiedostoja ei tueta lisädokumenteissa!"
 
 msgid "Output format"
 msgstr "Tulostusmuoto"
@@ -44,11 +50,29 @@ msgstr ""
 "Kaavioon sisällytettävien sukupolvien määrä. (0 tarkoittaa rajoittamatonta "
 "määrää)"
 
+msgid "Use d'Aboville descendant numbering system"
+msgstr "Käytä d'Abovillen jälkeläisten numerointijärjestelmää"
+
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "Lisää kaavioissa nimen eteen d'Abovillen jälkeläisnumero."
+
 msgid "Include an image"
 msgstr "Näytetäänkö kuva"
 
 msgid "Whether to include an image if one is available."
 msgstr "Sisällytetäänkö kuva, jos sellainen on saatavilla."
+
+msgid "Max Image height"
+msgstr "Kuvan enimmäiskorkeus"
+
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr "Kuvan enimmäiskorkeus pikseleinä, 0 = ei skaalata korkeuden mukaan."
+
+msgid "Max Image width"
+msgstr "Kuvan enimmäisleveys"
+
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "Kuvan enimmäisleveys pikseleinä, 0 = ei skaalata leveyden mukaan."
 
 msgid "Image Location"
 msgstr "Kuvan sijainti"
@@ -59,8 +83,101 @@ msgstr "Tekstin yläpuolella"
 msgid "Left of text"
 msgstr "Tekstin vasemmalla puolella"
 
+msgid "Position of image relative to text"
+msgstr "Kuvan sijainti suhteessa tekstiin"
+
+msgid "Colour Name by Gender"
+msgstr "Sukupuolen mukaisen värin nimi"
+
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "Väritä nimi ilmaisemaan henkilön sukupuoli kaaviossa."
+
+msgid "Use alternate events, if Primary event is not found"
+msgstr "Käytä tarvittaessa vaihtoehtoista tapahtumaa"
+
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"Käytetään syntymälle (kristillenen kaste)\n"
+"   avioliitolle (avioliitto, kihlaus)\n"
+"   avioerolle (mitätöinti, ero),\n"
+"   kuolemalle (hautaus, tuhkaaminen, perunkirjoitus)."
+
+msgid "Sort Events by Date"
+msgstr "Järjestä tapahtumat päiväyksen mukaan"
+
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr ""
+"Järjestä tapahtumat päiväyksen mukaan (tai käytä yllä olevaa 'Näyttömuoto'-"
+"kohdan järjestystä)."
+
 msgid "Text style"
 msgstr "Tekstityyli"
+
+msgid "Center-aligned text"
+msgstr "Keskitetty teksti"
+
+msgid "Left-aligned text"
+msgstr "Vasemmalle tasattu teksti"
+
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "Tekstin tasaus lohkossa kullekin kaavion henkilölle"
+
+msgid "Max Note Length"
+msgstr "Suurin lisätiedon pituus"
+
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"Tapahtuman lisätiedon enimmäispituus tekstilohkossa, '$e(n)'\n"
+"0 = ei rajoitusta "
+
+msgid "Box around Person's block"
+msgstr "Henkilölohkoa ympäröivä laatikko"
+
+msgid "Draw a thin black box around each person' text block."
+msgstr "Piirrä ohut musta laatikko henkilöiden tekstilohkojen ympärille."
+
+msgid "All Person's blocks have the same height"
+msgstr "Kaikki henkilön lohkot ovat samankorkuisia"
+
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr "Kaikki henkilölohkot on korkeimman lohkon korkuisia."
+
+msgid "All Person's blocks have the same width"
+msgstr "Kaikki henkilölohkot on samanlevyisiä"
+
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr "Kaikki henkilölohkot on leveimmän lohkon levyisiä."
+
+msgid "Colour blocks by Generation"
+msgstr "Lohkojen väri sukupolven mukaan"
+
+msgid "Colour the background of text blocks by generation."
+msgstr "Tekstilohkojen taustaväri sukupolven mukaan."
+
+msgid "Descend block colour intensity"
+msgstr "Vähennä lohkojen värin voimakkuutta"
+
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr "Taustaväri jälkeläislohkoissa, 0 = haalea, 255 = voimakas väri"
+
+msgid "Spouse block colour intensity"
+msgstr "Puolison lohkon väri, 0 = haalea, 255 = voimakas väri"
+
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr "Puolison lohkon taustaväri, 0 = haalea, 255 = voimakas väri"
 
 msgid "Display Formats"
 msgstr "Esitysmuodot"
@@ -68,14 +185,156 @@ msgstr "Esitysmuodot"
 msgid "Name Display Format"
 msgstr "Nimen näyttömuoto"
 
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f=etunimet, l=sukunimi, n=lempinimi,\n"
+"c=kutsumanimi, t=titteli, s=loppuliite, g=perheen lempinimi\n"
+"Katso Wiki-käyttöohje > Raportit > Osa 2"
+
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+"[tapahtuma, lista]$e(muotoilu)\n"
+"Katso Wiki-käyttöopas > Raportit > osa 2\n"
+"muotoilu: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+
 msgid "Replace"
 msgstr "Korvaa"
+
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"ts.\n"
+"Yhdysvallat/USA"
 
 msgid "Spouse and Family"
 msgstr "Puoliso ja perhe"
 
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "Pystyviiva jälkeläisen ja puolison välillä"
+
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr "Jälkeläisen ja puolison välisen pystyviivan pituus."
+
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "Pystyreuna puolisopalkista puolisoon"
+
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "Pystysuoran reunan etäisyys puolisopalkista puolisoon."
+
+msgid "Vertical space spouse-bar to other spouse"
+msgstr "Pystysuora väli toiseen puolisoon"
+
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr ""
+"Puolison ja toisen puolison väliin lisättävä väli, jos eri perheillä on sama "
+"jälkeläinen."
+
 msgid "Horizontal space descendant to spouse"
 msgstr "Puolison ja jälkeläisen välinen vaakasuora tila"
 
+msgid "The space to add between the descendant and the spouse."
+msgstr "Jälkeläisen ja puolison väliin lisättävä tila."
+
+msgid "Horizonal space family to family"
+msgstr "Vaakasuora tila perheiden välillä"
+
+msgid ""
+"The space to add between the more extern descendant (or spouse) of a family "
+"and the more extern descendant (or spouse) of the next family."
+msgstr ""
+"Väli, joka lisätään perheiden laitimmaisten jälkeläisten (tai puolisojen) "
+"välille."
+
+msgid "Horizontal distance spouse to family edge"
+msgstr "Vaakasuora etäisyys puolisosta perheen reunaan"
+
+msgid ""
+"If this value is 0, the children bar is centered under the spouse. The "
+"bigger the value, more the center is moved to the left towards the "
+"descendant."
+msgstr ""
+"Jos tämä arvo on 0, lasten palkki on keskitetty puolison alle. Suuremmalla "
+"arvolla keskiosaa siirretään vasemmalle jälkeläistä kohti."
+
+msgid "OL_PAD"
+msgstr "OL_PAD"
+
+msgid "The number of ??? pad"
+msgstr "Montako ??? padia"
+
+msgid "Vertical edge spouse-bar to child-bar"
+msgstr "Pystysuora reuna puolisopalkista lapsipalkkiin"
+
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "Puolisosta lapseen kulkevan pystysuoran viivan pituus."
+
+msgid "Children distance"
+msgstr "Lasten etäisyys"
+
+msgid "The horizontal distance between two children of the same family."
+msgstr "Saman perheen lasten välinen vaakaetäisyys."
+
+msgid "Vertical edge child to child-bar"
+msgstr "Vaakaviiva lapsesta lapsipalkkiin"
+
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "Pystyviivan pituus lapsesta lapsipalkkiin."
+
+msgid "MIN_C_WIDTH"
+msgstr "MIN_C_WIDTH"
+
+msgid "The number of ??? min width"
+msgstr "Vähimmäisleveyden määrä ???"
+
 msgid "Space around text"
 msgstr "Tila tekstin ympärillä"
+
+msgid "The space to add around the text block of a person."
+msgstr "Henkilön tekstilohkoa ympäröivä tila."
+
+msgid "Space between lines of text"
+msgstr "Rivien väli"
+
+msgid "The space to add between a line and the next in a person text block."
+msgstr "Henkilötekstilohkossa rivien väliin lisättävä tila."
+
+msgid "Header and Footer"
+msgstr "Ylätunniste ja alatunniste"
+
+msgid "The text that will be written in the header of the document"
+msgstr "Teksti asiakirjan ylätunnisteessa"
+
+msgid "The text that will be written in the footer of the document"
+msgstr "Teksti asiakirjan alatunnisteessa"
+
+msgid "Title and footer coefficient"
+msgstr "Ylä- ja alatunnisteen kerroin"
+
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr "Otsikon ja alatunnisteen tekstin kokokerroin"
+
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "Suojaa yksityisiksi merkityt ihmiset, kuvat ja tapahtumat"
+
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr "Valitaan vain näiden Gramps-kohteidetyyppien yksityisyysasetukset."
+
+msgid "Privacy text"
+msgstr "Yksityisyys-teksti"
+
+msgid "Text to display in block, when a Person is marked private"
+msgstr "Lohkossa näkyvä teksti, kun henkilö on merkitty yksityiseksi"
+
+msgid "The default style."
+msgstr "Oletustyyli"

@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
+
+msgid "description"
+msgstr "descripción"
+
+msgid "witnesses"
+msgstr "testigos"
+
+msgid "abbreviation"
+msgstr "abreviatura"
+
+msgid "volume"
+msgstr "volumen"
+
+msgid "of"
+msgstr "de"
+
+msgid "Search"
+msgstr "Buscar"
+
+msgid "Max chart width (%)"
+msgstr "Anchura máxima del gráfico (%)"
+
+msgid "Width of the tree as fraction of the browser window"
+msgstr "La anchura del árbol como fracción de la ventana del navegador"
+
+msgid "Max chart height (px)"
+msgstr "Altura máxima del gráfico (px)"
+
+msgid "Height of the tree in pixels."
+msgstr "La altura del árbol en píxeles."
+
+msgid "Include Addresses"
+msgstr "Incluir direcciones"
+
+msgid "Include Note"
+msgstr "Incluir nota"
+
+msgid "Include URL"
+msgstr "Incluir URL"
+
+msgid "Include URL description"
+msgstr "Incluir descripción de URL"
+
+msgid "Include Sources"
+msgstr "Incluir fuentes"
+
+msgid "Image Options"
+msgstr "Opciones de imágenes"
+
+msgid "Copy Image"
+msgstr "Copiar imagen"
+
+msgid "Images with Attribute"
+msgstr "Imágenes con atributo"
+
+msgid "Style Options"
+msgstr "Opciones de estilo"
+
+msgid "Color of found persons:"
+msgstr "Color de personas encontradas:"
+
+msgid "Save images in ..."
+msgstr "Guardar imágenes en…"
+
+msgid "Relation type"
+msgstr "Tipo de relación"
