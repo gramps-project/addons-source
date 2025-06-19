@@ -35,8 +35,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-10 08:08-0700\n"
-"PO-Revision-Date: 2025-06-09 18:02+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"PO-Revision-Date: 2025-06-15 21:02+0000\n"
+"Last-Translator: Frédéric Schwartz <frederic@online404.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -3014,10 +3014,8 @@ msgid "Gramplet for showing people and descendant counts"
 msgstr "Gramplet pour afficher les individus et le nombre de leurs descendants"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
-#, fuzzy
-#| msgid "Descendant Indented Tree"
 msgid "Descendant Space Tree"
-msgstr "Arbre descendant en retrait"
+msgstr "Arbre spatial descendant"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
 msgid ""
@@ -3025,6 +3023,9 @@ msgid ""
 "a Space Tree for efficient viewing, even with many descendants or "
 "generations."
 msgstr ""
+"Génère une page web avec un graphique interactif des descendants représenté "
+"sous la forme d'un arbre spatial pour une visualisation efficace, même avec "
+"de nombreux descendants ou générations."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:99
 msgid "Patriarchal Line (Male ancestor)"
@@ -3053,16 +3054,12 @@ msgid "Descendant SpaceTree"
 msgstr "Arbre descendant en retrait"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:626
-#, fuzzy
-#| msgid "Number of descendants"
 msgid "Total descendants"
-msgstr "Nombre de descendants"
+msgstr "Total de descendants"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:650
-#, fuzzy
-#| msgid "Marriages/Families"
 msgid "Marriages/Families:<ul>"
-msgstr "Mariages/Familles"
+msgstr "Mariages/Familles:<ul>"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:764
 #, fuzzy, python-format
@@ -3077,10 +3074,9 @@ msgstr ""
 "Voulez-vous le créer ?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:778
-#, fuzzy, python-format
-#| msgid "Failure writing %s: %s"
+#, python-format
 msgid "Failed to create %s: %s"
-msgstr "Échec à l'écriture de %s : %s"
+msgstr "Échec à a création de %s : %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:807
 #, fuzzy, python-format
@@ -3107,10 +3103,8 @@ msgid "Failed writing file: "
 msgstr "Échec d'écriture "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:862
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendants of"
-msgstr "Descendants"
+msgstr "Descendants de"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:866
 msgid "How to Use the DescendantSpaceTree Viewer"
@@ -3186,10 +3180,8 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1001
-#, fuzzy
-#| msgid "Search..."
 msgid "Search. . ."
-msgstr "Rechercher…"
+msgstr "Rechercher. . ."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1053
 msgid "Branch to expand when duplicated"
