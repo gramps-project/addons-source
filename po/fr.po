@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-03 09:24-0700\n"
-"PO-Revision-Date: 2025-06-01 08:03+0000\n"
+"PO-Revision-Date: 2025-06-09 18:02+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -282,7 +282,7 @@ msgstr "Image pour les femmes"
 
 #: AvatarGenerator/AvatarGenerator.py:95
 msgid "Remove images from people"
-msgstr ""
+msgstr "Supprimer les media des individus"
 
 #: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
@@ -322,6 +322,8 @@ msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
 msgstr ""
+"\n"
+"{} Une erreur de «Handle» s'est produite, mais a été ignorée."
 
 #: AvatarGenerator/AvatarGenerator.py:263
 #: AvatarGenerator/AvatarGenerator.py:280
@@ -1069,7 +1071,7 @@ msgstr ""
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
-msgstr ""
+msgstr "Réunir les lignes de commande"
 
 #: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
@@ -1632,7 +1634,7 @@ msgstr "Carte des noms (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
-msgstr ""
+msgstr "GenWiki"
 
 #: DEWebConnectPack/DEWebPack.py:47
 msgid "German digital library"
@@ -1679,7 +1681,7 @@ msgstr ""
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
-msgstr ""
+msgstr " SNPs"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
@@ -1986,7 +1988,7 @@ msgstr "Effectuer des calculs mathématiques de date"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "Date de référence ou intervalle de dates"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "a valid Gramps date"
@@ -1994,7 +1996,7 @@ msgstr "une date Gramps valide"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "Date ou écart ±y ou ±y, m, j"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -2037,6 +2039,7 @@ msgstr "Erreur : au moins une expression doit être une date"
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
 msgstr ""
+"Saisissez une expression dans les entrées ci-dessus et cliquez sur Calculer."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -16640,15 +16643,14 @@ msgid "Show pedigree collapse"
 msgstr "Afficher le pedigree réduit"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:100
-#, fuzzy
 msgid ""
 "Due to pedigree collapse one individual might appear several times in a "
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
-"En raison de l'effondrement du pedigree, un individu peut apparaître "
-"plusieurs fois dans le graphique. Si c'est actif, chaque individu n'apparaît "
-"qu'une fois."
+"En raison de l'éclatement des lignées, un individu peut apparaître plusieurs "
+"fois dans le graphique. Si cette option est active, chaque individu "
+"n'apparaît qu'une fois."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
@@ -16701,7 +16703,6 @@ msgid "Flip families to reduce horizontal connections"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:112
-#, fuzzy
 msgid ""
 "Switch the position of mother and father in a family, to reduce the overall "
 "horizontal cross connections in larger graphs. This is happens if one person "
@@ -16709,8 +16710,8 @@ msgid ""
 msgstr ""
 "Inverser la position de la mère et du père dans une famille, afin de réduire "
 "les connexions horizontales croisées dans les grands graphiques. Cela se "
-"produit si un individu est présent dans plus d'une famille ou par la "
-"contraction du pedigree."
+"produit si un individu est présent dans plus d'une famille ou par "
+"l'éclatement des lignées."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -22722,20 +22723,16 @@ msgstr ""
 "l'enregistrement actif : individu, lieu, famille ou source"
 
 #: WebSearch.py:468
-#, fuzzy
-#| msgid "Contents of the page"
 msgid "Save Coordinates to the Place"
-msgstr "Contenu de la page"
+msgstr "Enregistrer les coordonnées de localisation"
 
 #: WebSearch.py:609
 msgid "AI provider is disabled"
 msgstr ""
 
 #: WebSearch.py:613
-#, fuzzy
-#| msgid "AI Provider"
 msgid "No AI API key provided"
-msgstr "Fournisseur d'IA"
+msgstr "Pas de clé IA-API fournie"
 
 #: WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
@@ -22762,10 +22759,8 @@ msgid "Add link to note"
 msgstr "Ajouter un lien à la note"
 
 #: WebSearch.py:1528
-#, fuzzy
-#| msgid "Add link to note"
 msgid "Add link to attribute"
-msgstr "Ajouter un lien à la note"
+msgstr "Ajouter un lien à l'attribut"
 
 #: WebSearch.py:1530
 msgid "Show QR-code"
@@ -22804,15 +22799,7 @@ msgid "Note no longer exists. The extra icon is removed"
 msgstr ""
 
 #: WebSearch.py:1840
-#, fuzzy, python-brace-format
-#| msgid ""
-#| "📌 This web link was added using the WebSearch gramplet for future "
-#| "reference:\n"
-#| "\n"
-#| "🔗 {url}\n"
-#| "\n"
-#| "You can use this link to revisit the source and verify the information "
-#| "related to this person."
+#, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
 "WebSearch gramplet (v. {version}):\n"
@@ -22822,8 +22809,8 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this entity."
 msgstr ""
-"📌 Ce lien Web a été ajouté en utilisant le gramplet WebSearch pour "
-"référence ultérieure :\n"
+"📌 Ce lien Web '{title}' a été ajouté en utilisant le gramplet WebSearch (v. "
+"{version}) pour référence ultérieure :\n"
 "\n"
 "🔗 {url}\n"
 "\n"
@@ -22848,16 +22835,13 @@ msgid "WebSearch Link"
 msgstr "Lien de Recherche Web"
 
 #: WebSearch.py:2110
-#, fuzzy
-#| msgid "Note #%(id)s has been successfully added"
 msgid "Attribute has been successfully added"
-msgstr "La note #%(id)s a été ajoutée avec succès"
+msgstr "L'attribut a été ajouté avec succès"
 
 #: WebSearch.py:2142
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Titre : {title}\n"
+msgstr "Titre : {title}"
 
 #: WebSearch.py:2146
 #, fuzzy, python-brace-format
@@ -22910,10 +22894,9 @@ msgid "Link: %s"
 msgstr ""
 
 #: activity_row_generator.py:116
-#, fuzzy, python-format
-#| msgid "Set Attribute"
+#, python-format
 msgid "Attribute: %s"
-msgstr "Définir un attribut"
+msgstr "Attribut : %s"
 
 #: activity_row_generator.py:118
 #, fuzzy, python-format
@@ -22922,10 +22905,9 @@ msgid "Value: %s"
 msgstr "Clé : %s"
 
 #: activity_row_generator.py:123
-#, fuzzy, python-format
-#| msgid "Select from files"
+#, python-format
 msgid "Loaded from file: %s"
-msgstr "Sélectionnez les fichiers"
+msgstr "Chargé du fichier : %s"
 
 #: activity_row_generator.py:126
 #, fuzzy, python-format
@@ -22946,10 +22928,9 @@ msgid "Pattern: %s"
 msgstr "Décès : %s"
 
 #: activity_row_generator.py:138
-#, fuzzy, python-format
-#| msgid "The Gramps ID.."
+#, python-format
 msgid "Object Gramps ID: %s"
-msgstr "L'ID Gramps .."
+msgstr "ID d'objet Gramps : %s"
 
 #: activity_row_generator.py:142
 #, python-format
