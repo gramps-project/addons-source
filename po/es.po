@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-10 08:08-0700\n"
-"PO-Revision-Date: 2025-06-10 15:04+0000\n"
+"PO-Revision-Date: 2025-06-14 20:06+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -27,11 +27,11 @@ msgstr ""
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Todos los nombres de todas las personas"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Mostrar todos los nombres de todas las personas"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -39,7 +39,7 @@ msgstr ""
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr ""
+msgstr "Nombre primario"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -160,11 +160,11 @@ msgstr "De"
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
-msgstr ""
+msgstr "Adjuntar fuente"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
-msgstr ""
+msgstr "Adjunta una fuente compartida a varios objetos."
 
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
@@ -175,15 +175,15 @@ msgstr "Seleccione filtro para restringir las personas"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
-msgstr ""
+msgstr "Tipo de fuente"
 
 #: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
-msgstr ""
+msgstr "Fuente nueva"
 
 #: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
-msgstr ""
+msgstr "Fuente existente"
 
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
@@ -191,7 +191,7 @@ msgstr ""
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
-msgstr ""
+msgstr "Título de la fuente nueva"
 
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
@@ -240,7 +240,7 @@ msgstr "modo de imagen única"
 
 #: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
-msgstr ""
+msgstr "Elija cuantas imágenes desee usar."
 
 #: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
@@ -256,11 +256,11 @@ msgstr ""
 
 #: AvatarGenerator/AvatarGenerator.py:95
 msgid "Remove images from people"
-msgstr ""
+msgstr "Quitar imágenes de personas"
 
 #: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
-msgstr ""
+msgstr "Quitar las imágenes seleccionadas."
 
 #: AvatarGenerator/AvatarGenerator.py:134
 #: AvatarGenerator/AvatarGenerator.py:183
@@ -270,7 +270,7 @@ msgstr "Generador de avatares"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
-msgstr ""
+msgstr "Quitar imágenes de avatar…"
 
 #: AvatarGenerator/AvatarGenerator.py:211
 #: AvatarGenerator/AvatarGenerator.py:219
@@ -312,7 +312,7 @@ msgstr ""
 
 #: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
-msgstr ""
+msgstr "Todas las personas ya tenían uno."
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
@@ -335,7 +335,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
-msgstr ""
+msgstr " 👣 Próximos pasos:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
 msgid "  •  From the \"Family Trees\" menu,"
@@ -396,7 +396,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:118
 msgid "Ignore Person or Family"
-msgstr ""
+msgstr "Ignorar persona o familia"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
@@ -738,9 +738,8 @@ msgid "Toggle Selection"
 msgstr "Alternar selección"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
-#, fuzzy
 msgid "Add Selected Events"
-msgstr "Seleccionar evento"
+msgstr "Añadir eventos seleccionados"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
@@ -954,7 +953,7 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
-msgstr ""
+msgstr "No se necesita ningún cambio."
 
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
@@ -970,7 +969,7 @@ msgstr ""
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Mejorado"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
@@ -1398,7 +1397,7 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1939
 msgid "Remove all whitespace."
-msgstr ""
+msgstr "Quitar todo el espacio en blanco."
 
 #: D3Charts/DescendantIndentedTree.py:1940
 msgid "Replace whitespace with dash(-)."
@@ -1650,7 +1649,7 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:159
 msgid "Source(s)"
-msgstr ""
+msgstr "Fuente(s)"
 
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
@@ -1662,7 +1661,7 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
-msgstr ""
+msgstr "LEYENDA"
 
 #: DNAMatches/dnamatches.py:228
 msgid "="
@@ -1696,7 +1695,7 @@ msgstr "Familia:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
 msgid "Sources?"
-msgstr ""
+msgstr "¿Fuentes?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
@@ -1897,7 +1896,7 @@ msgstr ""
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
 #: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
@@ -2081,7 +2080,7 @@ msgstr "descripción"
 #: DenominoViso/DenominoViso.py:310 DenominoViso/DenominoViso.py:976
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
 msgid "witnesses"
-msgstr ""
+msgstr "testigos"
 
 #: DenominoViso/DenominoViso.py:395
 msgid "No central person selected"
@@ -2173,19 +2172,19 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2592
 msgid "Max chart width (%)"
-msgstr ""
+msgstr "Anchura máxima del gráfico (%)"
 
 #: DenominoViso/DenominoViso.py:2593
 msgid "Width of the tree as fraction of the browser window"
-msgstr ""
+msgstr "La anchura del árbol como fracción de la ventana del navegador"
 
 #: DenominoViso/DenominoViso.py:2596
 msgid "Max chart height (px)"
-msgstr ""
+msgstr "Altura máxima del gráfico (px)"
 
 #: DenominoViso/DenominoViso.py:2597
 msgid "Height of the tree in pixels."
-msgstr ""
+msgstr "La altura del árbol en píxeles."
 
 #: DenominoViso/DenominoViso.py:2600
 msgid "Closing remarks"
@@ -2251,7 +2250,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2638
 msgid "Include Addresses"
-msgstr ""
+msgstr "Incluir direcciones"
 
 #: DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
@@ -2259,7 +2258,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2642
 msgid "Include Note"
-msgstr ""
+msgstr "Incluir nota"
 
 #: DenominoViso/DenominoViso.py:2643
 msgid "Whether to include a person's note."
@@ -2267,7 +2266,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2646
 msgid "Include URL"
-msgstr ""
+msgstr "Incluir URL"
 
 #: DenominoViso/DenominoViso.py:2647
 msgid "Whether to include a person's internet address."
@@ -2275,7 +2274,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2650
 msgid "Include URL description"
-msgstr ""
+msgstr "Incluir descripción de URL"
 
 #: DenominoViso/DenominoViso.py:2651
 msgid "Whether to include the description of the first URL"
@@ -2283,7 +2282,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2656
 msgid "Include Sources"
-msgstr ""
+msgstr "Incluir fuentes"
 
 #: DenominoViso/DenominoViso.py:2657
 msgid "Whether to include a person's sources."
@@ -2291,7 +2290,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2660
 msgid "Image Options"
-msgstr ""
+msgstr "Opciones de imágenes"
 
 #: DenominoViso/DenominoViso.py:2662
 msgid "Include Photos/Images from Gallery"
@@ -2303,7 +2302,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
-msgstr ""
+msgstr "Copiar imagen"
 
 #: DenominoViso/DenominoViso.py:2667
 msgid "Copy the images to a designated directory."
@@ -2311,7 +2310,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2674
 msgid "Images with Attribute"
-msgstr ""
+msgstr "Imágenes con atributo"
 
 #: DenominoViso/DenominoViso.py:2675
 msgid "Determine images with which attributes to in/exclude"
@@ -2335,7 +2334,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2689
 msgid "Style Options"
-msgstr ""
+msgstr "Opciones de estilo"
 
 #: DenominoViso/DenominoViso.py:2691
 msgid "Color of active person:"
@@ -2347,7 +2346,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2695
 msgid "Color of found persons:"
-msgstr ""
+msgstr "Color de personas encontradas:"
 
 #: DenominoViso/DenominoViso.py:2696
 msgid "RGB-color of geometric shape of the persons found."
@@ -2497,9 +2496,8 @@ msgid "Give a filename ..."
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:3114
-#, fuzzy
 msgid "Relation type"
-msgstr "Relacionados"
+msgstr "Tipo de relación"
 
 #: DenominoViso/DenominoViso.py:3119
 msgid "Use dashed linestyle"
@@ -2875,10 +2873,7 @@ msgid "Marriages/Families:<ul>"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:764
-#, fuzzy, python-format
-#| msgid ""
-#| "Destinaton diretory %s does not exist\n"
-#| "Do you want to attempt to create it?"
+#, python-format
 msgid ""
 "Destination Directory %s does not exist\n"
 "Do you want to attempt to create it."
@@ -2887,22 +2882,17 @@ msgstr ""
 "¿Quiere intentar crearlo?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:778
-#, fuzzy, python-format
-#| msgid "Failed to create {target_path}: {message}"
+#, python-format
 msgid "Failed to create %s: %s"
-msgstr "No se pudo crear {target_path}: {message}"
+msgstr "No se pudo crear %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:807
-#, fuzzy, python-format
-#| msgid "Loaded from file: %s"
+#, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr "Cargado desde archivo: %s"
+msgstr "No se pudo leer el protoarchivo %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:818
-#, fuzzy, python-format
-#| msgid ""
-#| "Destination file %s already exists.\n"
-#| "Do you want to overwrite it?"
+#, python-format
 msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite?"
@@ -2912,7 +2902,7 @@ msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:845
 msgid "Failed writing file: "
-msgstr ""
+msgstr "No se pudo escribir el archivo: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:862
 msgid "Descendants of"
@@ -2992,8 +2982,6 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1001
-#, fuzzy
-#| msgid "Search..."
 msgid "Search. . ."
 msgstr "Buscar…"
 
@@ -3016,16 +3004,12 @@ msgid "Birth/date dates will not be displayed after this year"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1088
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Destination File"
-msgstr "Directorio de destino no válido"
+msgstr "Archivo de destino"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1090
-#, fuzzy
-#| msgid "The destination file name for html content."
 msgid "The destination file name for the report."
-msgstr "El nombre de archivo de destino del contenido HTML."
+msgstr "El nombre de archivo de destino del informe."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -3037,35 +3021,35 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
-msgstr ""
+msgstr "No se admite el uso del tipo SVG en el documento suplementario."
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
-msgstr ""
+msgstr "Formato de salida"
 
 #: DescendantsLines/DescendantsLines.py:1532
 msgid "PNG format"
-msgstr ""
+msgstr "Formato PNG"
 
 #: DescendantsLines/DescendantsLines.py:1533
 msgid "SVG format"
-msgstr ""
+msgstr "Formato SVG"
 
 #: DescendantsLines/DescendantsLines.py:1534
 msgid "PDF format"
-msgstr ""
+msgstr "Formato PDF"
 
 #: DescendantsLines/DescendantsLines.py:1535
 msgid "PS format"
-msgstr ""
+msgstr "Formato PS"
 
 #: DescendantsLines/DescendantsLines.py:1536
 msgid "The output format to be used"
-msgstr ""
+msgstr "El formato de salida que se utilizará"
 
 #: DescendantsLines/DescendantsLines.py:1541
 msgid "The destination file for the content."
-msgstr ""
+msgstr "El archivo de destino del contenido."
 
 #: DescendantsLines/DescendantsLines.py:1545
 msgid "The number of generations to include in the chart. (0 for unlimited)"
@@ -3089,7 +3073,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1560
 msgid "Max Image height"
-msgstr ""
+msgstr "Altura máxima de imagen"
 
 #: DescendantsLines/DescendantsLines.py:1561
 msgid "Maximum image height in pixels, 0=don't scale for height."
@@ -3097,7 +3081,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1565
 msgid "Max Image width"
-msgstr ""
+msgstr "Anchura máxima de imagen"
 
 #: DescendantsLines/DescendantsLines.py:1566
 msgid "Maximum image width in pixels, 0=don't scale for width."
@@ -3105,19 +3089,19 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1570
 msgid "Image Location"
-msgstr ""
+msgstr "Ubicación de la imagen"
 
 #: DescendantsLines/DescendantsLines.py:1571
 msgid "Above text"
-msgstr ""
+msgstr "Encima del texto"
 
 #: DescendantsLines/DescendantsLines.py:1572
 msgid "Left of text"
-msgstr ""
+msgstr "A la izquierda del texto"
 
 #: DescendantsLines/DescendantsLines.py:1573
 msgid "Position of image relative to text"
-msgstr ""
+msgstr "Posición de la imagen respecto al texto"
 
 #: DescendantsLines/DescendantsLines.py:1579
 msgid "Colour Name by Gender"
@@ -3141,7 +3125,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1592
 msgid "Sort Events by Date"
-msgstr ""
+msgstr "Ordenar eventos por fecha"
 
 #: DescendantsLines/DescendantsLines.py:1593
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
@@ -3149,15 +3133,15 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1597
 msgid "Text style"
-msgstr ""
+msgstr "Estilo de texto"
 
 #: DescendantsLines/DescendantsLines.py:1598
 msgid "Center-aligned text"
-msgstr ""
+msgstr "Texto centrado"
 
 #: DescendantsLines/DescendantsLines.py:1599
 msgid "Left-aligned text"
-msgstr ""
+msgstr "Texto alineado a la izquierda"
 
 #: DescendantsLines/DescendantsLines.py:1600
 msgid "Alignment of the text in the block for each person on the chart"
@@ -3500,7 +3484,7 @@ msgstr ""
 
 #: Differences/differences.py:178
 msgid "Nothing missing"
-msgstr ""
+msgstr "No falta nada"
 
 #: Differences/differences.py:185
 msgid "Added items in File that are missing in Database"
@@ -3818,10 +3802,8 @@ msgid "Media Index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3032
-#, fuzzy
-#| msgid "Media Title Update"
 msgid "Media Type"
-msgstr "Actualización del título del objeto audiovisual"
+msgstr "Tipo de objeto audiovisual"
 
 #: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
@@ -4654,7 +4636,7 @@ msgstr "Convierta esta imagen a un formato compatible con Exiv2…"
 #: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr ""
+msgstr "Tamaño de imagen: {width} × {height} píxeles"
 
 # TBC
 #: EditExifMetadata/editexifmetadata.py:481
@@ -4875,10 +4857,8 @@ msgstr "Hubo un error eliminando los metadatos Exif de esta imagen..."
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
-#, fuzzy
-#| msgid "Description: "
 msgid "Event Description Editor"
-msgstr "Descripción: "
+msgstr "Editor de descripciones de eventos"
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
@@ -4992,10 +4972,8 @@ msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
 
 #: ExtractCity/extractcity.py:402
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Place title"
-msgstr "Comprobando los nombres de los sitios"
+msgstr "Título de lugar"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
@@ -5061,7 +5039,7 @@ msgstr ""
 
 #: FaceDetection/FaceDetection.gpr.py:13
 msgid "Faces"
-msgstr ""
+msgstr "Rostros"
 
 #: FaceDetection/FaceDetection.py:63
 msgid "OpenCV-Python is not installed"
@@ -5102,10 +5080,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process relationships..."
-msgstr "Procesando...\n"
+msgstr "Procesar relaciones…"
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
@@ -5817,7 +5793,7 @@ msgstr ""
 
 #: FixCoords/fixcoords.gpr.py:31
 msgid "Fix Place Coordinates"
-msgstr ""
+msgstr "Corregir coordenadas de lugar"
 
 #: FixCoords/fixcoords.gpr.py:33
 msgid ""
@@ -5826,42 +5802,42 @@ msgstr ""
 
 #: FixCoords/fixcoords.py:53
 msgid "Fix Coordinates"
-msgstr ""
+msgstr "Corregir coordenadas"
 
 #: FixCoords/fixcoords.py:58
 msgid "Looking for possible coords with \",\" characters"
-msgstr ""
+msgstr "Buscando posibles coordenadas con caracteres «,»"
 
 #: FixCoords/fixcoords.py:60
 msgid "Fix coords"
-msgstr ""
+msgstr "Corregir coords."
 
 #: Form/editform.py:181
 #, python-format
 msgid "Form: %s"
-msgstr ""
+msgstr "Formulario: %s"
 
 #: Form/editform.py:183
 msgid "New Form"
-msgstr ""
+msgstr "Formulario nuevo"
 
 #: Form/editform.py:190
 msgid "Edit Form"
-msgstr ""
+msgstr "Editar formulario"
 
 #: Form/editform.py:225 SourceIndex/birth.glade:113
 #: SourceIndex/census.glade:873 SourceIndex/death.glade:182
 #: SourceIndex/marriage.glade:1263
 msgid "Reference:"
-msgstr ""
+msgstr "Referencia:"
 
 #: Form/editform.py:421
 msgid "Headings"
-msgstr ""
+msgstr "Títulos"
 
 #: Form/form.py:65
 msgid "Form"
-msgstr ""
+msgstr "Formulario"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -6562,7 +6538,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:186
 msgid "Bulls"
-msgstr ""
+msgstr "Toros"
 
 #: Form/form_ca.xml.h:187
 msgid "45. Bulls, Oxen or Steers"
@@ -6578,7 +6554,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:190
 msgid "Calves"
-msgstr ""
+msgstr "Terneros"
 
 #: Form/form_ca.xml.h:191
 msgid "47. Calves or Heifers"
@@ -6587,7 +6563,7 @@ msgstr ""
 #: Form/form_ca.xml.h:192 Form/form_ca.xml.h:650 Form/form_us.xml.h:286
 #: Form/form_us.xml.h:364
 msgid "Horses"
-msgstr ""
+msgstr "Caballos"
 
 #: Form/form_ca.xml.h:193
 msgid "48. Horses of all ages"
@@ -6596,7 +6572,7 @@ msgstr ""
 #: Form/form_ca.xml.h:194 Form/form_ca.xml.h:656 Form/form_us.xml.h:291
 #: Form/form_us.xml.h:369
 msgid "Sheep"
-msgstr ""
+msgstr "Ovejas"
 
 #: Form/form_ca.xml.h:195
 msgid "49. Sheep"
@@ -6604,7 +6580,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:196 Form/form_ca.xml.h:658
 msgid "Pigs"
-msgstr ""
+msgstr "Cerdos"
 
 #: Form/form_ca.xml.h:197
 msgid "50. Pigs"
@@ -8934,7 +8910,7 @@ msgstr ""
 #: Form/form_gb.xml.h:218 Form/form_gb.xml.h:351 Form/form_us.xml.h:778
 #: Form/form_us.xml.h:817 Form/form_us.xml.h:864 Form/form_us.xml.h:1617
 msgid "Industry"
-msgstr ""
+msgstr "Industria"
 
 #: Form/form_gb.xml.h:219 Form/form_gb.xml.h:352
 msgid "Industry or Service with which worker is connected."
@@ -10011,7 +9987,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:294
 msgid "Wheat"
-msgstr ""
+msgstr "Trigo"
 
 #: Form/form_us.xml.h:295
 msgid "Indian Corn"
@@ -10019,15 +9995,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:296
 msgid "Oats"
-msgstr ""
+msgstr "Avena"
 
 #: Form/form_us.xml.h:297
 msgid "Rice"
-msgstr ""
+msgstr "Arroz"
 
 #: Form/form_us.xml.h:298
 msgid "Tobacco"
-msgstr ""
+msgstr "Tabaco"
 
 #: Form/form_us.xml.h:299
 msgid "Ginned Cotton"
@@ -10035,7 +10011,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:300
 msgid "Wool"
-msgstr ""
+msgstr "Lana"
 
 #: Form/form_us.xml.h:301
 msgid "Peas and Beans"
@@ -10051,11 +10027,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:304
 msgid "Barley"
-msgstr ""
+msgstr "Cebada"
 
 #: Form/form_us.xml.h:305
 msgid "Buckwheat"
-msgstr ""
+msgstr "Alforfón"
 
 #: Form/form_us.xml.h:306
 msgid "Value of Orchard Products"
@@ -10063,7 +10039,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:307
 msgid "Wine"
-msgstr ""
+msgstr "Vino"
 
 #: Form/form_us.xml.h:308
 msgid "Value of Market Gardens"
@@ -10071,15 +10047,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:309
 msgid "Butter"
-msgstr ""
+msgstr "Manteca"
 
 #: Form/form_us.xml.h:310
 msgid "Cheese"
-msgstr ""
+msgstr "Queso"
 
 #: Form/form_us.xml.h:311
 msgid "Hay"
-msgstr ""
+msgstr "Heno"
 
 #: Form/form_us.xml.h:312
 msgid "Clover Seed"
@@ -14282,7 +14258,7 @@ msgstr ""
 
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
-msgstr ""
+msgstr "Formularios"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 #, fuzzy
@@ -14770,14 +14746,29 @@ msgid ""
 "If you instead want to merge two significantly different trees with the "
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
+"Esta herramienta permite sincronizar el árbol genealógico abierto "
+"actualmente con un árbol genealógico remoto servido por Web de Gramps.\n"
+"\n"
+"La herramienta da por hecho que los dos árboles derivan el uno del otro, es "
+"decir, que uno de los dos se creó a partir de una exportación a Gramps XML (¡"
+"no GEDCOM!) del otro.\n"
+"\n"
+"Tras una sincronización correcta, ambos árboles serán idénticos. Las "
+"modificaciones se propagarán basándose en cronomarcadores. Se le pedirá "
+"confirmación antes de efectuar cualquier cambio en los árboles local o "
+"remoto.\n"
+"\n"
+"Si en cambio quiere combinar dos árboles sustancialmente diferentes con la "
+"opción de realizar modificaciones manuales, utilice en su lugar la "
+"herramienta Importar fusión."
 
 #: GrampsWebSync/grampswebsync.py:690
 msgid "Server URL: "
-msgstr ""
+msgstr "URL del servidor: "
 
 #: GrampsWebSync/grampswebsync.py:774
 msgid "Bidirectional Synchronization"
-msgstr ""
+msgstr "Sincronización bidireccional"
 
 #: GrampsWebSync/grampswebsync.py:783
 msgid "Reset remote to local"
@@ -14789,11 +14780,11 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:799
 msgid "Merge"
-msgstr ""
+msgstr "Fusionar"
 
 #: GrampsWebSync/grampswebsync.py:824
 msgid "Local changes"
-msgstr ""
+msgstr "Cambios locales"
 
 #: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
 #: GrampsWebSync/grampswebsync.py:834
@@ -14804,23 +14795,23 @@ msgstr "Modificado: "
 
 #: GrampsWebSync/grampswebsync.py:829
 msgid "Remote changes"
-msgstr ""
+msgstr "Cambios remotos"
 
 #: GrampsWebSync/grampswebsync.py:834
 msgid "Simultaneous changes"
-msgstr ""
+msgstr "Cambios simultáneos"
 
 #: GrampsWebSync/grampswebsync.py:891
 msgid "Fetching information about media files..."
-msgstr ""
+msgstr "Recuperando información sobre archivos multimedia…"
 
 #: GrampsWebSync/grampswebsync.py:912
 msgid "Both trees are the same."
-msgstr ""
+msgstr "Ambos árboles son iguales."
 
 #: GrampsWebSync/grampswebsync.py:918
 msgid "Applying changes to local database ..."
-msgstr ""
+msgstr "Aplicando cambios a la base de datos local…"
 
 #: GrampsWebSync/grampswebsync.py:920
 msgid "No changes to apply to local database."
@@ -14858,11 +14849,11 @@ msgstr ""
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
-msgstr ""
+msgstr "Oscuro (predeterminado)"
 
 #: GraphView/avatars.py:61
 msgid "Light"
-msgstr ""
+msgstr "Claro"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
@@ -14883,11 +14874,11 @@ msgstr ""
 
 #: GraphView/graphview.py:754
 msgid "Show IDs"
-msgstr ""
+msgstr "Mostrar ids."
 
 #: GraphView/graphview.py:757
 msgid "Show avatars"
-msgstr ""
+msgstr "Mostrar avatares"
 
 #: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
@@ -14895,11 +14886,11 @@ msgstr ""
 
 #: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
-msgstr ""
+msgstr "Mostrar fechas completas"
 
 #: GraphView/graphview.py:768 GraphView/graphview.py:3752
 msgid "Show places"
-msgstr ""
+msgstr "Mostrar lugares"
 
 #: GraphView/graphview.py:784
 msgid "Horizontal: Left to Right"
@@ -15271,7 +15262,7 @@ msgstr ""
 
 #: GraphView/graphview.py:4699
 msgid "Deleting the family will remove it from the database."
-msgstr ""
+msgstr "Eliminar la familia la quitará de la base de datos."
 
 #: GraphView/graphview.py:4710
 #, python-format
@@ -15735,6 +15726,8 @@ msgid ""
 "This button will merge the imported data into your tree with your tree data "
 "as a base."
 msgstr ""
+"Este botón fusionará los datos importados en su árbol, fungiendo como base "
+"su árbol mismo."
 
 #: ImportMerge/importmerge.glade:411
 #, fuzzy
@@ -15744,13 +15737,15 @@ msgstr "Este botón limpiará todos los campos de datos que se muestra aquí."
 
 #: ImportMerge/importmerge.glade:422
 msgid "Merge Import"
-msgstr ""
+msgstr "Fusionar importación"
 
 #: ImportMerge/importmerge.glade:426
 msgid ""
 "This button will merge the imported data into your tree with the imported "
 "data as a base."
 msgstr ""
+"Este botón fusionará los datos importados en su árbol, fungiendo como base "
+"los datos importados."
 
 #: ImportMerge/importmerge.glade:437
 msgid "Edit Import"
@@ -15761,6 +15756,8 @@ msgid ""
 "This button will edit the imported data.  The data will still need to be "
 "merged, added or replaced."
 msgstr ""
+"Este botón permitirá editar los datos importados. Estos aún deberán "
+"fusionarse, adicionarse o reemplazarse."
 
 #: ImportMerge/importmerge.glade:464
 msgid "Show more details"
@@ -15777,7 +15774,7 @@ msgstr ""
 #: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
 msgid "Import and Merge tool"
-msgstr ""
+msgstr "Herramienta Importar y fusionar"
 
 #: ImportMerge/importmerge.gpr.py:33
 msgid ""
@@ -15787,7 +15784,7 @@ msgstr ""
 
 #: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
-msgstr ""
+msgstr "Importe y fusione un XML de Gramps"
 
 #: ImportMerge/importmerge.py:90
 msgid "Missing"
@@ -15799,23 +15796,23 @@ msgstr ""
 
 #: ImportMerge/importmerge.py:109
 msgid "Delete original"
-msgstr ""
+msgstr "Eliminar original"
 
 #: ImportMerge/importmerge.py:111
 msgid "Add Import"
-msgstr ""
+msgstr "Añadir importación"
 
 #: ImportMerge/importmerge.py:112
 msgid "Merge into original"
-msgstr ""
+msgstr "Fusionar en original"
 
 #: ImportMerge/importmerge.py:113
 msgid "Merge into import"
-msgstr ""
+msgstr "Fusionar en importación"
 
 #: ImportMerge/importmerge.py:114
 msgid "Replace with import"
-msgstr ""
+msgstr "Reemplazar por importación"
 
 #: ImportMerge/importmerge.py:115
 msgid "Keep original"
@@ -15850,6 +15847,8 @@ msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
 msgstr ""
+"Este elemento se fusionará, usando datos de la importación. Los elementos a "
+"los que haga referencia también se marcarán para fusión o adición."
 
 #: ImportMerge/importmerge.py:129
 msgid ""
@@ -15869,12 +15868,12 @@ msgstr ""
 
 #: ImportMerge/importmerge.py:407
 msgid "Your Tree and import are the same."
-msgstr ""
+msgstr "Su árbol y la importación son iguales."
 
 #: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
 #: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
 msgid "your tree "
-msgstr ""
+msgstr "su árbol "
 
 #: ImportMerge/importmerge.py:459 ImportMerge/importmerge.py:467
 #: ImportMerge/importmerge.py:475
@@ -15889,80 +15888,80 @@ msgstr "Original"
 #: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
 #: ImportMerge/importmerge.py:983
 msgid "Imported"
-msgstr ""
+msgstr "Importado"
 
 #: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
 #: ImportMerge/importmerge.py:985
 msgid "Result  "
-msgstr ""
+msgstr "Resultado  "
 
 #: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
-msgstr ""
+msgstr "Importar y fusionar"
 
 #: JSON/JSON.gpr.py:4
 msgid "JSON Export"
-msgstr ""
+msgstr "Exportación a JSON"
 
 #: JSON/JSON.gpr.py:5
 msgid "This is a JSON export"
-msgstr ""
+msgstr "Esta es una exportación a JSON"
 
 #: JSON/JSON.gpr.py:12
 msgid "JSON options"
-msgstr ""
+msgstr "Opciones de JSON"
 
 #: JSON/JSON.gpr.py:20
 msgid "JSON Import"
-msgstr ""
+msgstr "Importación de JSON"
 
 #: JSON/JSON.gpr.py:21
 msgid "This is a JSON import"
-msgstr ""
+msgstr "Esta es una importación de JSON"
 
 #: JSON/JSONImport.py:56
 msgid "JSON import"
-msgstr ""
+msgstr "Importación de JSON"
 
 #: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
-msgstr ""
+msgstr "Enumerar los últimos diez registros de personas que han cambiado"
 
 #: LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
-msgstr ""
+msgstr "Cambios recientes"
 
 #: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
 #: LastChange/LastChangeReport.py:113
 msgid "Last Change Report"
-msgstr ""
+msgstr "Informe de cambios más reciente"
 
 #: LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
-msgstr ""
+msgstr "Informe con los últimos registros que se han modificado"
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
-msgstr ""
+msgstr "cambiado el"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
-msgstr ""
+msgstr "Debe seleccionar por lo menos un tipo de registro."
 
 #: LastChange/LastChangeReport.py:180
 msgid "People Changed"
-msgstr ""
+msgstr "Personas cambiadas"
 
 #: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
 #: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
 #: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
 #: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
 msgid "Changed On"
-msgstr ""
+msgstr "Cambiado el"
 
 #: LastChange/LastChangeReport.py:197
 msgid "Families Changed"
-msgstr ""
+msgstr "Familias cambiadas"
 
 #: LastChange/LastChangeReport.py:198
 msgid "Family Surname"
@@ -15971,33 +15970,31 @@ msgstr ""
 #: LastChange/LastChangeReport.py:215
 #, python-format
 msgid "%s and %s"
-msgstr ""
+msgstr "%s y %s"
 
 #: LastChange/LastChangeReport.py:228
 msgid "Events Changed"
-msgstr ""
+msgstr "Eventos cambiados"
 
 #: LastChange/LastChangeReport.py:251
 msgid "Places Changed"
-msgstr ""
+msgstr "Lugares cambiados"
 
 #: LastChange/LastChangeReport.py:269
-#, fuzzy
-#| msgid "Media Path Update"
 msgid "Media Changed"
-msgstr "Actualización de la ruta al objeto"
+msgstr "Objetos audiovisuales cambiados"
 
 #: LastChange/LastChangeReport.py:287
 msgid "Sources Changed"
-msgstr ""
+msgstr "Fuentes cambiadas"
 
 #: LastChange/LastChangeReport.py:304
 msgid "Notes Changed"
-msgstr ""
+msgstr "Notas cambiadas"
 
 #: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
-msgstr ""
+msgstr "Citas cambiadas"
 
 #: LastChange/LastChangeReport.py:344
 msgid "Select From"
@@ -16005,7 +16002,7 @@ msgstr "Seleccionar desde"
 
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
-msgstr ""
+msgstr "El estilo que usa el texto normal"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
@@ -16021,15 +16018,15 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:13
 msgid "Sine shape"
-msgstr ""
+msgstr "Forma senoidal"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:14
 msgid "Triangular shape"
-msgstr ""
+msgstr "Forma triangular"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:15
 msgid "Show photos"
-msgstr ""
+msgstr "Mostrar fotos"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:16
 msgid "Photos of the individual are shown."
@@ -16047,7 +16044,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
 msgid "Total height"
-msgstr ""
+msgstr "Altura total"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:20
 msgid "Total height of the whole chart."
@@ -16347,6 +16344,8 @@ msgid ""
 "if this number of generations has been reached, the algorithm doesn't go any "
 "deeper"
 msgstr ""
+"si se ha alcanzado esta cantidad de generaciones, el algoritmo no irá más "
+"allá"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:103
 msgid "Fathers have the same color"
@@ -16483,10 +16482,8 @@ msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:386
 #: LifeLineChartView/lifelinechartview.py:883
-#, fuzzy
-#| msgid "General Data"
 msgid "General Layout"
-msgstr "Datos generales"
+msgstr "Disposición general"
 
 #: LifeLineChartView/lifelinechartview.py:509
 #: LifeLineChartView/lifelinechartview.py:510
@@ -16672,19 +16669,19 @@ msgstr ""
 
 #: MediaReport/media_report.py:433
 msgid "Custom note"
-msgstr ""
+msgstr "Nota personalizada"
 
 #: MediaReport/media_report.py:434
 msgid "Select a note for this report"
-msgstr ""
+msgstr "Seleccione una nota para este informe"
 
 #: MediaReport/media_report.py:437
 msgid "Include custom note"
-msgstr ""
+msgstr "Incluir nota personalizada"
 
 #: MediaReport/media_report.py:438
 msgid "The custom note will be included"
-msgstr ""
+msgstr "Se incluirá la nota personalizada"
 
 #: MediaReport/media_report.py:442
 msgid "Include referenced people"
@@ -16703,10 +16700,8 @@ msgid "Tags, notes and attributes will be included"
 msgstr ""
 
 #: MediaReport/media_report.py:450
-#, fuzzy
-#| msgid "Media Title Update"
 msgid "Media width"
-msgstr "Actualización del título del objeto audiovisual"
+msgstr "Anchura del objeto audiovisual"
 
 #: MediaReport/media_report.py:452
 #, no-python-format
@@ -16714,10 +16709,8 @@ msgid "Maximum media width in % of available page width."
 msgstr ""
 
 #: MediaReport/media_report.py:456
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media height"
-msgstr "Titulo del objeto audiovisual"
+msgstr "Altura del objeto audiovisual"
 
 #: MediaReport/media_report.py:458
 #, no-python-format
@@ -16738,19 +16731,19 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Missing Files"
-msgstr ""
+msgstr "Archivos faltantes"
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Moved/Renamed Files"
-msgstr ""
+msgstr "Archivos movidos/con nombre cambiado"
 
 #: MediaVerify/MediaVerify.py:84
 msgid "Duplicate Files"
-msgstr ""
+msgstr "Archivos duplicados"
 
 #: MediaVerify/MediaVerify.py:84
 msgid "Extra Files"
-msgstr ""
+msgstr "Archivos adicionales"
 
 #: MediaVerify/MediaVerify.py:85
 msgid "Errors"
@@ -16758,7 +16751,7 @@ msgstr "Errores"
 
 #: MediaVerify/MediaVerify.py:85
 msgid "No md5 Generated"
-msgstr ""
+msgstr "No se generó ningún MD5"
 
 #: MediaVerify/MediaVerify.py:101
 msgid "Close the Media Verify Tool"
@@ -17669,10 +17662,8 @@ msgid "Street, City, County, State, Postal Code, Country, Phone number"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:448
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Media Reference"
-msgstr "Preferencias del tema"
+msgstr "Referencia a objeto audiovisual"
 
 #: PersonEverything/PersonEverything.py:455
 #: PersonEverything/PersonEverything.py:732
@@ -17724,10 +17715,8 @@ msgid "Repository reference"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:671
-#, fuzzy
-#| msgid "Media Path Update"
 msgid "Media type"
-msgstr "Actualización de la ruta al objeto"
+msgstr "Tipo de objeto audiovisual"
 
 #: PersonEverything/PersonEverything.py:679
 msgid "Origin type"
@@ -17889,11 +17878,11 @@ msgstr ""
 
 #: PhpGedView/phpgedview.glade:170
 msgid "Username:"
-msgstr ""
+msgstr "Nombre de usuario:"
 
 #: PhpGedView/phpgedview.glade:182
 msgid "Password:"
-msgstr ""
+msgstr "Contraseña:"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
@@ -18012,10 +18001,14 @@ msgstr ""
 msgid ""
 "Select one or more rows and use this button to keep the alternative names."
 msgstr ""
+"Seleccione una o más filas y use este botón para mantener los nombres "
+"alternativos."
 
 #: PlaceCleanup/placecleanup.glade:536
 msgid "Select one row and use this button to make the row the primary name."
 msgstr ""
+"Seleccione una fila y use este botón para hacer de la fila el nombre "
+"primario."
 
 #: PlaceCleanup/placecleanup.glade:548
 msgid "Discard"
@@ -18351,7 +18344,7 @@ msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:481
 msgid "Filtering"
-msgstr ""
+msgstr "Filtrado"
 
 #: PlaceCompletion/PlaceCompletion.py:491
 msgid "Loading lat/lon file in Memory..."
@@ -18456,7 +18449,7 @@ msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1177
 msgid "Don't search"
-msgstr ""
+msgstr "No buscar"
 
 #: PlaceCompletion/PlaceCompletion.py:1180
 msgid "GeoNames country file, city search"
@@ -18492,11 +18485,11 @@ msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1244
 msgid "Wikipedia CSV Dump"
-msgstr ""
+msgstr "Volcado CSV de Wikipedia"
 
 #: PlaceCompletion/PlaceCompletion.py:1332
 msgid "All Places"
-msgstr ""
+msgstr "Todos los lugares"
 
 #: PlaceCompletion/PlaceCompletion.py:1335
 #, fuzzy
@@ -18544,7 +18537,7 @@ msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"
-msgstr ""
+msgstr "Altura:"
 
 #: PlaceCompletion/placecompletion.glade:527
 msgid "1. Look up latitude and longitude:"
@@ -18953,21 +18946,26 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
 msgstr ""
+"<i>La instalación de los paquetes siguientes es <b>facultativa</b></i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
-msgstr ""
+msgstr "Gtkspell permite revisar la ortografía de las notas.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
 msgstr ""
+"La Biblioteca de Imágenes de Python (PIL) se necesita para recortar imágenes "
+"y emitir salida LaTeX."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
 msgid ""
 "\n"
 "<u><b>Development & Translation Requirements</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Requisitos para desarrollo y traducción</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:241
 msgid ""
@@ -18980,6 +18978,8 @@ msgid ""
 "\n"
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Paquetes opcionales que requieren complementos de terceros</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
 msgid ""
@@ -18993,6 +18993,8 @@ msgid ""
 "\n"
 "<u><b>Diagnostic checks</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Comprobaciones diagnósticas</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
 msgid "Check for potential issues.\n"
@@ -19003,6 +19005,8 @@ msgid ""
 "\n"
 "Environment settings:\n"
 msgstr ""
+"\n"
+"Configuración del entorno:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
 msgid ""
@@ -19010,12 +19014,17 @@ msgid ""
 "\n"
 "<u><b>Locales available:</b></u>\n"
 msgstr ""
+"\n"
+"\n"
+"<u><b>Configuraciones regionales disponibles:</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
 msgid ""
 "\n"
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Respalde sus archivos de genealogía.</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:288
 msgid ""
@@ -19062,6 +19071,9 @@ msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
 "%s"
 msgstr ""
+"Tiene Gramps %s. Haga una copia de respaldo y luego efectúe la actualización."
+"\n"
+"%s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
 #, python-format
@@ -19596,7 +19608,7 @@ msgstr ""
 
 #: RelID/relation_tab.py:117
 msgid "Period"
-msgstr ""
+msgstr "Período"
 
 #: RelID/relation_tab.py:164
 msgid "Please wait, filtering..."
@@ -19684,7 +19696,7 @@ msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:88
 msgid "Remove Tags"
-msgstr ""
+msgstr "Quitar etiquetas"
 
 #: RemoveTagTool/RemoveTagTool.py:96
 msgid "Choose a category."
@@ -19723,10 +19735,8 @@ msgid "No %s objects were found in database."
 msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:249
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process tags..."
-msgstr "Procesando...\n"
+msgstr "Procesar etiquetas…"
 
 #: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
@@ -19790,7 +19800,7 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
-msgstr ""
+msgstr "Incluir URL del repositorio"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
@@ -19798,7 +19808,7 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
-msgstr ""
+msgstr "Incluir dirección del repositorio"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
@@ -19806,7 +19816,7 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
-msgstr ""
+msgstr "Incluir autoría de la fuente"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
@@ -19814,7 +19824,7 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
-msgstr ""
+msgstr "Incluir abreviatura de la fuente"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
@@ -19822,7 +19832,7 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
-msgstr ""
+msgstr "Incluir información de publicación de la fuente"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
@@ -19830,7 +19840,7 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
-msgstr ""
+msgstr "Incluir datos de la fuente"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
@@ -19846,7 +19856,7 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:463
 msgid "Include citations"
-msgstr ""
+msgstr "Incluir citas"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:464
 msgid "Whether to include citations on sources."
@@ -19858,7 +19868,7 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:471
 msgid "Display empty values"
-msgstr ""
+msgstr "Mostrar valores vacíos"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:472
 msgid "Whether to include key records with empty values."
@@ -21501,10 +21511,8 @@ msgstr ""
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:31
 #: ThumbnailGenerator/ThumbnailGenerator.py:53
-#, fuzzy
-#| msgid "Thumbnail View Area"
 msgid "Thumbnail Generator"
-msgstr "Área de visualización de miniatura"
+msgstr "Generador de miniaturas"
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:32
 msgid "Generates thumbnails for media files"
@@ -21848,11 +21856,11 @@ msgstr ""
 
 #: ToDoReport/TodoReport.py:405
 msgid "date: "
-msgstr ""
+msgstr "fecha: "
 
 #: ToDoReport/TodoReport.py:417
 msgid "place: "
-msgstr ""
+msgstr "lugar: "
 
 #: ToDoReport/TodoReport.py:877
 msgid "Note Type"
@@ -21958,7 +21966,7 @@ msgstr ""
 
 #: TypeCleanup/type_cleanup.py:182
 msgid "Rename"
-msgstr ""
+msgstr "Cambiar nombre"
 
 #: TypeCleanup/type_cleanup.py:185
 msgid "Rename the selected type in all referenced objects."
@@ -21970,7 +21978,7 @@ msgstr ""
 
 #: TypeCleanup/type_cleanup.py:195
 msgid "Types"
-msgstr ""
+msgstr "Tipos"
 
 #: TypeCleanup/type_cleanup.py:242
 msgid "Type Cleanup Tool"
@@ -22061,7 +22069,7 @@ msgstr ""
 
 #: UKWebConnectPack/UKWebPack.py:37
 msgid "National Archives"
-msgstr ""
+msgstr "Archivos Nacionales"
 
 #: UKWebConnectPack/UKWebPack.py:38 USWebConnectPack/USWebPack.py:41
 msgid "Hathi Trust Digital Library"
@@ -22091,15 +22099,15 @@ msgstr ""
 
 #: WebSearch.py:468
 msgid "Save Coordinates to the Place"
-msgstr ""
+msgstr "Guardar coordenadas en el lugar"
 
 #: WebSearch.py:609
 msgid "AI provider is disabled"
-msgstr ""
+msgstr "Se desactivó el proveedor de IA"
 
 #: WebSearch.py:613
 msgid "No AI API key provided"
-msgstr ""
+msgstr "No se proporcionó ninguna clave de API de IA"
 
 #: WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
@@ -22115,55 +22123,55 @@ msgstr ""
 
 #: WebSearch.py:1521
 msgid "Keys"
-msgstr ""
+msgstr "Claves"
 
 #: WebSearch.py:1523
 msgid "Website URL"
-msgstr ""
+msgstr "URL del sitio web"
 
 #: WebSearch.py:1526
 msgid "Add link to note"
-msgstr ""
+msgstr "Añadir enlace a nota"
 
 #: WebSearch.py:1528
 msgid "Add link to attribute"
-msgstr ""
+msgstr "Añadir enlace a atributo"
 
 #: WebSearch.py:1530
 msgid "Show QR-code"
-msgstr ""
+msgstr "Mostrar código QR"
 
 #: WebSearch.py:1532
 msgid "Copy link to clipboard"
-msgstr ""
+msgstr "Copiar enlace en el portapapeles"
 
 #: WebSearch.py:1535
 msgid "Hide link for selected item"
-msgstr ""
+msgstr "Ocultar enlace para el elemento seleccionado"
 
 #: WebSearch.py:1538
 msgid "Hide link for all items"
-msgstr ""
+msgstr "Ocultar enlace para todos los elementos"
 
 #: WebSearch.py:1542
 msgid "Edit Attribute with the Link"
-msgstr ""
+msgstr "Editar atributo con el enlace"
 
 #: WebSearch.py:1546
 msgid "Edit Note with the Link"
-msgstr ""
+msgstr "Editar nota con el enlace"
 
 #: WebSearch.py:1549
 msgid "🔍 AI Suggestions"
-msgstr ""
+msgstr "🔍 Sugerencias de IA"
 
 #: WebSearch.py:1769
 msgid "Attribute no longer exists. The extra icon is removed"
-msgstr ""
+msgstr "El atributo ya no existe. Se quitará el icono adicional"
 
 #: WebSearch.py:1815
 msgid "Note no longer exists. The extra icon is removed"
-msgstr ""
+msgstr "La nota ya no existe. Se quitará el icono adicional"
 
 #: WebSearch.py:1840
 #, python-brace-format
@@ -22237,10 +22245,8 @@ msgid "Number of font sizes"
 msgstr ""
 
 #: WordleGramplet/WordleGramplet.py:144
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict list"
-msgstr "Seleccione filtro para restringir las personas"
+msgstr "Seleccione un filtro para restringir la lista"
 
 #: activity_row_generator.py:110
 #, python-format
@@ -22401,7 +22407,7 @@ msgstr ""
 
 #: info_panel.py:108
 msgid "## 🧩 About WebSearch"
-msgstr ""
+msgstr "## 🧩 Acerca de WebSearch"
 
 #: info_panel.py:111
 msgid ""
@@ -22417,66 +22423,72 @@ msgstr ""
 
 #: info_panel.py:125
 msgid "## ⚙️ System Information"
-msgstr ""
+msgstr "## ⚙️ Información del sistema"
 
 #: info_panel.py:128
 msgid "🔻 **Missing:** `qrcode`"
-msgstr ""
+msgstr "🔻 **Falta:** `qrcode`"
 
 #: info_panel.py:130
 msgid "ℹ️ This Python library is not available in your system."
-msgstr ""
+msgstr "ℹ️ Esta biblioteca Python no está disponible en su sistema."
 
 #: info_panel.py:133
 msgid "Without it, QR code generation will not work."
-msgstr ""
+msgstr "Sin ella, la generación de códigos QR no funcionará."
 
 #: info_panel.py:136
 msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr ""
+msgstr "💡 Normalmente se instala con: `pip install qrcode[pil]`"
 
 #: info_panel.py:140 info_panel.py:162 info_panel.py:181
 msgid ""
 "*Note: Some operating systems or environments may require alternative "
 "installation methods.*"
 msgstr ""
+"*Nota: determinados sistemas operativos o entornos pueden requerir métodos "
+"alternativos de instalación.*"
 
 #: info_panel.py:147
 msgid "🔻 **Missing:** `openai`"
-msgstr ""
+msgstr "🔻 **Falta:** `openai`"
 
 #: info_panel.py:149
 msgid "ℹ️ This library is required for accessing OpenAI-based features."
 msgstr ""
+"ℹ️ Esta biblioteca se requiere para acceder a las funcionalidades basadas en "
+"OpenAI."
 
 #: info_panel.py:153
 msgid ""
 "Without it, AI-generated site suggestions and place history will be disabled."
 msgstr ""
+"Sin ella, se desactivarán las sugerencias de sitios e históricos de lugares "
+"generadas por IA."
 
 #: info_panel.py:158
 msgid "💡 Usually installed with: `pip install openai`"
-msgstr ""
+msgstr "💡 Normalmente se instala con: `pip install openai`"
 
 #: info_panel.py:169
 msgid "🔻 **Missing:** `requests`"
-msgstr ""
+msgstr "🔻 **Falta:** `requests`"
 
 #: info_panel.py:171
 msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr ""
+msgstr "ℹ️ Esta biblioteca permite la comunicación con API de la web."
 
 #: info_panel.py:174
 msgid "Without it, external data sources may not be accessible."
-msgstr ""
+msgstr "Sin ella, no podrá acceder a fuentes de datos externas."
 
 #: info_panel.py:177
 msgid "💡 Usually installed with: `pip install requests`"
-msgstr ""
+msgstr "💡 Normalmente se instala con: `pip install requests`"
 
 #: info_panel.py:188
 msgid "## 📂 Data File Locations"
-msgstr ""
+msgstr "## 📂 Ubicaciones de archivos de datos"
 
 #: info_panel.py:191
 msgid ""
@@ -22485,7 +22497,7 @@ msgstr ""
 
 #: info_panel.py:195
 msgid "#### CSV File Paths"
-msgstr ""
+msgstr "#### Rutas de archivos CSV"
 
 #: info_panel.py:197
 #, python-format
@@ -22499,7 +22511,7 @@ msgstr ""
 
 #: info_panel.py:205
 msgid "#### JSON File Paths"
-msgstr ""
+msgstr "#### Rutas de archivos JSON"
 
 #: info_panel.py:208
 #, python-format
@@ -22518,10 +22530,12 @@ msgstr ""
 #: info_panel.py:221
 msgid "  💡 *Tip: click any path above to open it in your file manager.*"
 msgstr ""
+"  💡 *Consejo: pulse en cualquier ruta anterior para abrirla en el gestor de "
+"archivos.*"
 
 #: info_panel.py:224
 msgid "📖 View detailed usage in: "
-msgstr ""
+msgstr "📖 Ver uso detallado en: "
 
 #: info_panel.py:233
 msgid "## 💬 Support"
@@ -22547,14 +22561,14 @@ msgid "🧩 WebSearch Gramplet version: `%s`"
 msgstr ""
 
 #: internet_links_loader.py:70 internet_links_loader.py:71
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "No title"
-msgstr "Comprobando los nombres de los sitios"
+msgstr "Ningún título"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
 msgstr ""
+"Proporciona una biblioteca para acceso genérico a la base de datos y a "
+"gen.lib."
 
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
@@ -22578,7 +22592,7 @@ msgstr ""
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
-msgstr ""
+msgstr "Cronomarcador no válido"
 
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
@@ -22619,6 +22633,10 @@ msgid ""
 " to:\n"
 " \"%(file2)s\".\n"
 msgstr ""
+"De:\n"
+" «%(file1)s»\n"
+" a:\n"
+" «%(file2)s».\n"
 
 #: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
@@ -22637,6 +22655,9 @@ msgid ""
 "XML: Number of records and relations : \t%s\n"
 "\n"
 msgstr ""
+"\n"
+"XML: Número de registros y relaciones: \t%s\n"
+"\n"
 
 #: lxml/etreeGramplet.py:474
 #, python-format
@@ -22644,6 +22665,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Número de etiquetas: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
 #, python-format
@@ -22651,6 +22674,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
+"Número de etiquetas: \n"
+"\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
 #, python-format
@@ -22672,6 +22697,8 @@ msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Número de personas: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:484
 #, python-format
@@ -22679,6 +22706,8 @@ msgid ""
 "Number of families : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Número de familias: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:485
 #, python-format
@@ -22686,6 +22715,8 @@ msgid ""
 "Number of sources : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Número de fuentes: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:487
 #, python-format
@@ -22693,6 +22724,8 @@ msgid ""
 "Number of citations : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Número de citas: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:490
 #, python-format
@@ -22700,6 +22733,8 @@ msgid ""
 "Number of places : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Número de lugares: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:491
 #, python-format
@@ -22707,6 +22742,8 @@ msgid ""
 "Number of media objects : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Número de objetos audiovisuales: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:492
 #, python-format
@@ -22714,6 +22751,8 @@ msgid ""
 "Number of repositories : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Número de repositorios: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:493
 #, python-format
@@ -22721,6 +22760,8 @@ msgid ""
 "Number of notes : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"Número de notas: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:498
 #, python-format
@@ -22762,12 +22803,12 @@ msgstr "Intente instalar el paquete «python3 lxml»."
 
 #: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
-msgstr ""
+msgstr "No se cargó ningún archivo…"
 
 #: lxml/lxmlGramplet.py:298
 #, python-format
 msgid "Cannot validate \"%(file)s\" !"
-msgstr ""
+msgstr "No se puede validar «%(file)s»"
 
 #: lxml/lxmlGramplet.py:298
 msgid "XSD validation (lxml)"
@@ -22838,6 +22879,10 @@ msgid ""
 "Please, try to use a .gramps\n"
 "generated by Gramps 4.x."
 msgstr ""
+"No es un .gramps válido.\n"
+"No se puede ejecutar el gramplete.\n"
+"Pruebe a usar un .gramps\n"
+"generado por Gramps 4.x."
 
 #: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
 #: lxml/lxmlGramplet.py:484
@@ -22968,17 +23013,15 @@ msgstr "Historia administrativa"
 
 #: markdown_place_history_formatter.py:62
 msgid "Data provided to AI:"
-msgstr ""
+msgstr "Datos proporcionados a la IA:"
 
 #: markdown_place_history_formatter.py:64
 msgid "Full hierarchy"
 msgstr "Jerarquía completa"
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Place Type:"
-msgstr "Comprobando los nombres de los sitios"
+msgstr "Tipo de lugar:"
 
 #: markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"
@@ -23050,7 +23093,7 @@ msgstr ""
 
 #: settings_ui_manager.py:157
 msgid "AI Provider"
-msgstr ""
+msgstr "Proveedor de IA"
 
 #: settings_ui_manager.py:162
 msgid "(Disabled)"
@@ -23058,19 +23101,19 @@ msgstr ""
 
 #: settings_ui_manager.py:163
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: settings_ui_manager.py:164
 msgid "Mistral AI"
-msgstr ""
+msgstr "Mistral AI"
 
 #: settings_ui_manager.py:171
 msgid "OpenAI API Key"
-msgstr ""
+msgstr "Clave de API de OpenAI"
 
 #: settings_ui_manager.py:176
 msgid "OpenAI Model"
-msgstr ""
+msgstr "Modelo de OpenAI"
 
 #: settings_ui_manager.py:181
 msgid "Mistral API Key"
