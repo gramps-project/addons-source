@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-10 08:08-0700\n"
+"POT-Creation-Date: 2025-06-19 08:52-0700\n"
 "PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -1192,7 +1192,7 @@ msgstr "Esivanhempien tiivistettävän puun valinnat"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
-#: DescendantSpaceTree/DescendantSpaceTree.py:1044
+#: DescendantSpaceTree/DescendantSpaceTree.py:1080
 msgid "Include Generations"
 msgstr "Näytettävät sukupolvet"
 
@@ -1230,7 +1230,7 @@ msgstr "Naisen laajennettavan laatikon RGB-taustaväri."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
-#: DescendantSpaceTree/DescendantSpaceTree.py:1082
+#: DescendantSpaceTree/DescendantSpaceTree.py:1130
 msgid "The destination path for generated files."
 msgstr "Kohdehakemisto uusille tiedostoille."
 
@@ -1296,7 +1296,7 @@ msgid "Generating report..."
 msgstr "Raporttia luodaan..."
 
 #: D3Charts/DescendantIndentedTree.py:1364
-#: DescendantSpaceTree/DescendantSpaceTree.py:762
+#: DescendantSpaceTree/DescendantSpaceTree.py:771
 msgid "Invalid Destination Directory"
 msgstr "Virheellinen kohdehakemisto"
 
@@ -2973,35 +2973,47 @@ msgstr ""
 "Luo verkkosivun, jolla on interaktiivinen jälkeläispuu kätevänä avaruuspuuna "
 "soveltuen suureen määrään jälkeläisiä tai sukupolvia."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:99
+#: DescendantSpaceTree/DescendantSpaceTree.py:102
 msgid "Patriarchal Line (Male ancestor)"
 msgstr "Patriarkaalinen sukulinja (miespuoliset esivanhemmat)"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:100
+#: DescendantSpaceTree/DescendantSpaceTree.py:103
 msgid "Matriarchal Line (Female ancestor)"
 msgstr "Matriarkaalilinja (naispuoliset esivanhemmat)"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:419
+#: DescendantSpaceTree/DescendantSpaceTree.py:106
+#, fuzzy
+#| msgid "Person theme"
+msgid "Dark theme"
+msgstr "Henkilöteema"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:107
+#, fuzzy
+#| msgid "Light"
+msgid "Light theme"
+msgstr "Vaalea"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:426
 msgid "Continue Descendant Tree"
 msgstr "Jälkeläispuun jatko"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:420
+#: DescendantSpaceTree/DescendantSpaceTree.py:427
 msgid "Alternate Descendant Tree"
 msgstr "Vaihtoehtoinen jälkeläispuu"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:448
+#: DescendantSpaceTree/DescendantSpaceTree.py:455
 msgid "Descendant SpaceTree"
 msgstr "Jälkeläisten tilaasäästävä sukupuu"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:626
+#: DescendantSpaceTree/DescendantSpaceTree.py:635
 msgid "Total descendants"
 msgstr "Jälkeläisiä yhteensä"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:650
+#: DescendantSpaceTree/DescendantSpaceTree.py:659
 msgid "Marriages/Families:<ul>"
 msgstr "Avioliitot/perheet:<ul>"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:764
+#: DescendantSpaceTree/DescendantSpaceTree.py:773
 #, python-format
 msgid ""
 "Destination Directory %s does not exist\n"
@@ -3010,17 +3022,17 @@ msgstr ""
 "Kohdehakemistoa %s ei ole olemassa\n"
 "Haluatko yrittää luoda sen."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:778
+#: DescendantSpaceTree/DescendantSpaceTree.py:787
 #, python-format
 msgid "Failed to create %s: %s"
 msgstr "Kohteen %s luonti ei onnistu: %s"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:807
+#: DescendantSpaceTree/DescendantSpaceTree.py:816
 #, python-format
 msgid "Failed to read proto file %s: %s"
 msgstr "Mallitiedoston %s lukeminen epäonnistui: %s"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:818
+#: DescendantSpaceTree/DescendantSpaceTree.py:827
 #, python-format
 msgid ""
 "Destination file %s already exists.\n"
@@ -3029,39 +3041,43 @@ msgstr ""
 "Kohdetiedosto %s on jo olemassa\n"
 "Haluatko korvata sen?"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:845
+#: DescendantSpaceTree/DescendantSpaceTree.py:854
 msgid "Failed writing file: "
 msgstr "Tiedoston kirjoittaminen epäonnistui: "
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:862
+#: DescendantSpaceTree/DescendantSpaceTree.py:875
 msgid "Descendants of"
 msgstr "Jälkeläiset"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:866
+#: DescendantSpaceTree/DescendantSpaceTree.py:879
 msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr "DescendantSpaceTree-katseluohjelman käyttö"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:872
+#: DescendantSpaceTree/DescendantSpaceTree.py:885
+#, fuzzy
+#| msgid ""
+#| "For the best viewing experience, maximize your browser window to use the "
+#| "entire screen and reload this page.  The viewer is fitted to your screen "
+#| "size."
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
-"entire screen and reload this page.  The viewer is fitted to your screen "
-"size."
+"entire screen.  A resize will reset the graph to the center person."
 msgstr ""
 "Parhaan katselukokemuksen saavuttamiseksi suurenna selainikkunasi koko "
 "näyttöäön ja lataa tämä sivu uudelleen. Katseluohjelma sovitetaan näyttösi "
 "kokoon."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:882
+#: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
 msgstr "Napsauta solmua keskittyäksesi jälkeläiseen lapsineen."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:891
+#: DescendantSpaceTree/DescendantSpaceTree.py:904
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
 msgstr ""
 "Napsauta ja vedä mitä tahansa kohtaa katseluohjelmassa sijoittaaksesi "
 "jälkeläispuun."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:900
+#: DescendantSpaceTree/DescendantSpaceTree.py:913
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
@@ -3069,7 +3085,7 @@ msgstr ""
 "Palauta alkuperäiseen jälkeläiseen napsauttamalla nollauspainiketta "
 "___HELP_RESET_BUTTON___."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:909
+#: DescendantSpaceTree/DescendantSpaceTree.py:922
 msgid ""
 "Search for a person by typing into the search box.  At least three "
 "characters are required to search.  Click on any of the suggestions to "
@@ -3082,7 +3098,7 @@ msgstr ""
 "toistuvasti haussa. Nimen perässä oleva plusmerkki (+) osoittaa, että "
 "kysessä on puoliso."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:922
+#: DescendantSpaceTree/DescendantSpaceTree.py:935
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
@@ -3090,7 +3106,7 @@ msgstr ""
 "Jälkeläinen ja mahdolliset puolisot luetellaan samassa solmussa. Kaikkien "
 "perheiden lapset ryhmitellään yhteen."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:932
+#: DescendantSpaceTree/DescendantSpaceTree.py:945
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
@@ -3098,7 +3114,7 @@ msgstr ""
 "Tuoreimmille tietyn ajankohdan jälkeen syntyneille henkilöille ei "
 "välttämättä näytetä syntymä- tai kuolinaikaa."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:941
+#: DescendantSpaceTree/DescendantSpaceTree.py:954
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
@@ -3106,13 +3122,13 @@ msgstr ""
 "Henkilösolmujen väri kuvaa lasten määrää: vahvempi väri tarkoittaa enemmän "
 "lapsia."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:951
+#: DescendantSpaceTree/DescendantSpaceTree.py:964
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
 msgstr "Valittu jälkeläinen esivanhempineen on korostettu keltaisella."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:960
+#: DescendantSpaceTree/DescendantSpaceTree.py:973
 msgid ""
 "A person may occur in different branches.  This is usually because of inter-"
 "family marriages (such as that of cousins.)  In this case, a button will "
@@ -3126,7 +3142,7 @@ msgstr ""
 "___NAV_BUTTON_ALT___, jolla voi navigoida toiseen haaraan. Jälkeläiset "
 "esitetään vuorollaan vain yhdessä haarassa. "
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:974
+#: DescendantSpaceTree/DescendantSpaceTree.py:987
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
@@ -3135,15 +3151,15 @@ msgstr ""
 "rakentamisessa. Katso täydelliset lisenssit ja tarvittavat ilmoitukset "
 "lähdekoodin LICENSE*.txt-tiedostoista."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1001
+#: DescendantSpaceTree/DescendantSpaceTree.py:1014
 msgid "Search. . ."
 msgstr "Etsi..."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1053
+#: DescendantSpaceTree/DescendantSpaceTree.py:1089
 msgid "Branch to expand when duplicated"
 msgstr "Haara, joka laajenee kopioitaessa"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1063
+#: DescendantSpaceTree/DescendantSpaceTree.py:1100
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
@@ -3151,21 +3167,39 @@ msgstr ""
 "Kun jälkeläinen esiintyy useammin kuin kerran, valitse sukulinja "
 "jälkeläislinjan laajennukseen"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1071
+#: DescendantSpaceTree/DescendantSpaceTree.py:1108
 msgid "Maximum display birth year"
 msgstr "Suurin mahdollinen syntymävuosi"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1074
+#: DescendantSpaceTree/DescendantSpaceTree.py:1111
 msgid "Birth/date dates will not be displayed after this year"
 msgstr "Syntymäaikoja ei näytetä tämän vuoden jälkeen"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1088
+#: DescendantSpaceTree/DescendantSpaceTree.py:1116
+#, fuzzy
+#| msgid "Theme preferences"
+msgid "Theme preference"
+msgstr "Teeman asetukset"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1123
+#, fuzzy
+#| msgid "The central person for the tree"
+msgid "Theme color preference for Space Tree"
+msgstr "Puun keskushenkilö"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1136
 msgid "Destination File"
 msgstr "Kohdetiedosto"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1090
+#: DescendantSpaceTree/DescendantSpaceTree.py:1138
 msgid "The destination file name for the report."
 msgstr "Raporttitiedoston nimi."
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1144
+#, fuzzy
+#| msgid "Opens an interactive tree in the browser"
+msgid "Open generated HTML file with default browser."
+msgstr "Avaa interaktiivisen puun selaimessa"
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -3637,7 +3671,8 @@ msgstr "Deterministinen ID -työkalu"
 #: DetId/DetId.py:80
 msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
-msgstr "ID ja kahvat alkavat nyt luvusta 0x00000000 ja kasvavat 0x100000001:llä"
+msgstr ""
+"ID ja kahvat alkavat nyt luvusta 0x00000000 ja kasvavat 0x100000001:llä"
 
 #: Differences/differences.gpr.py:4 Differences/differences.py:95
 msgid "Database Differences Report"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-10 08:08-0700\n"
+"POT-Creation-Date: 2025-06-19 08:52-0700\n"
 "PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
@@ -1183,7 +1183,7 @@ msgstr "Možnosti zbaliteľného stromu predkov"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
-#: DescendantSpaceTree/DescendantSpaceTree.py:1044
+#: DescendantSpaceTree/DescendantSpaceTree.py:1080
 msgid "Include Generations"
 msgstr "Zahrnúť generácie"
 
@@ -1221,7 +1221,7 @@ msgstr "RGB-farba pozadia rozbaliteľnej kolónky pre ženy."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
-#: DescendantSpaceTree/DescendantSpaceTree.py:1082
+#: DescendantSpaceTree/DescendantSpaceTree.py:1130
 msgid "The destination path for generated files."
 msgstr "Cieľová cesta pre vygenerované súbory."
 
@@ -1288,7 +1288,7 @@ msgid "Generating report..."
 msgstr "Generovanie správy..."
 
 #: D3Charts/DescendantIndentedTree.py:1364
-#: DescendantSpaceTree/DescendantSpaceTree.py:762
+#: DescendantSpaceTree/DescendantSpaceTree.py:771
 msgid "Invalid Destination Directory"
 msgstr "Neplatný cieľový adresár"
 
@@ -2953,43 +2953,55 @@ msgid ""
 "generations."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:99
+#: DescendantSpaceTree/DescendantSpaceTree.py:102
 msgid "Patriarchal Line (Male ancestor)"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:100
+#: DescendantSpaceTree/DescendantSpaceTree.py:103
 msgid "Matriarchal Line (Female ancestor)"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:419
+#: DescendantSpaceTree/DescendantSpaceTree.py:106
+#, fuzzy
+#| msgid "Person page"
+msgid "Dark theme"
+msgstr "Stránka osoby"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:107
+#, fuzzy
+#| msgid "Light"
+msgid "Light theme"
+msgstr "Svetlá"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:426
 #, fuzzy
 #| msgid "Detailed Descendants Report"
 msgid "Continue Descendant Tree"
 msgstr "Podrobná správa o potomkoch"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:420
+#: DescendantSpaceTree/DescendantSpaceTree.py:427
 #, fuzzy
 #| msgid "Alternate name"
 msgid "Alternate Descendant Tree"
 msgstr "Alternatívne meno"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:448
+#: DescendantSpaceTree/DescendantSpaceTree.py:455
 #, fuzzy
 #| msgid "Descendant Indented Tree"
 msgid "Descendant SpaceTree"
 msgstr "Členitý strom potomkov"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:626
+#: DescendantSpaceTree/DescendantSpaceTree.py:635
 #, fuzzy
 #| msgid "Trim descendants"
 msgid "Total descendants"
 msgstr "Orezať potomkov"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:650
+#: DescendantSpaceTree/DescendantSpaceTree.py:659
 msgid "Marriages/Families:<ul>"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:764
+#: DescendantSpaceTree/DescendantSpaceTree.py:773
 #, fuzzy, python-format
 #| msgid ""
 #| "Destinaton diretory %s does not exist\n"
@@ -3001,19 +3013,19 @@ msgstr ""
 "Cieľový adresár %s neexistuje.\n"
 "Chcete sa pokúsiť ho vytvoriť?"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:778
+#: DescendantSpaceTree/DescendantSpaceTree.py:787
 #, fuzzy, python-format
 #| msgid "Failed writing %s: %s"
 msgid "Failed to create %s: %s"
 msgstr "Zápis %s zlyhal: %s"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:807
+#: DescendantSpaceTree/DescendantSpaceTree.py:816
 #, fuzzy, python-format
 #| msgid "Failed to copy web files : %s"
 msgid "Failed to read proto file %s: %s"
 msgstr "Nepodarilo sa skopírovať webové súbory: %s"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:818
+#: DescendantSpaceTree/DescendantSpaceTree.py:827
 #, fuzzy, python-format
 #| msgid ""
 #| "Destination file %s already exists.\n"
@@ -3025,44 +3037,43 @@ msgstr ""
 "Cieľový súbor %s už existuje.\n"
 "Chcete ho prepísať?"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:845
+#: DescendantSpaceTree/DescendantSpaceTree.py:854
 #, fuzzy
 #| msgid "Failed writing "
 msgid "Failed writing file: "
 msgstr "Chyba pri zápise "
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:862
+#: DescendantSpaceTree/DescendantSpaceTree.py:875
 #, fuzzy
 #| msgid "Descendant"
 msgid "Descendants of"
 msgstr "Potomok"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:866
+#: DescendantSpaceTree/DescendantSpaceTree.py:879
 msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:872
+#: DescendantSpaceTree/DescendantSpaceTree.py:885
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
-"entire screen and reload this page.  The viewer is fitted to your screen "
-"size."
+"entire screen.  A resize will reset the graph to the center person."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:882
+#: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:891
+#: DescendantSpaceTree/DescendantSpaceTree.py:904
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:900
+#: DescendantSpaceTree/DescendantSpaceTree.py:913
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:909
+#: DescendantSpaceTree/DescendantSpaceTree.py:922
 msgid ""
 "Search for a person by typing into the search box.  At least three "
 "characters are required to search.  Click on any of the suggestions to "
@@ -3071,31 +3082,31 @@ msgid ""
 "spouse."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:922
+#: DescendantSpaceTree/DescendantSpaceTree.py:935
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:932
+#: DescendantSpaceTree/DescendantSpaceTree.py:945
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:941
+#: DescendantSpaceTree/DescendantSpaceTree.py:954
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:951
+#: DescendantSpaceTree/DescendantSpaceTree.py:964
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:960
+#: DescendantSpaceTree/DescendantSpaceTree.py:973
 msgid ""
 "A person may occur in different branches.  This is usually because of inter-"
 "family marriages (such as that of cousins.)  In this case, a button will "
@@ -3104,47 +3115,65 @@ msgid ""
 "expand descendants of this person. "
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:974
+#: DescendantSpaceTree/DescendantSpaceTree.py:987
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1001
+#: DescendantSpaceTree/DescendantSpaceTree.py:1014
 #, fuzzy
 #| msgid "Search..."
 msgid "Search. . ."
 msgstr "Hľadať..."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1053
+#: DescendantSpaceTree/DescendantSpaceTree.py:1089
 msgid "Branch to expand when duplicated"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1063
+#: DescendantSpaceTree/DescendantSpaceTree.py:1100
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1071
+#: DescendantSpaceTree/DescendantSpaceTree.py:1108
 msgid "Maximum display birth year"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1074
+#: DescendantSpaceTree/DescendantSpaceTree.py:1111
 msgid "Birth/date dates will not be displayed after this year"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1088
+#: DescendantSpaceTree/DescendantSpaceTree.py:1116
+#, fuzzy
+#| msgid "Theme preferences"
+msgid "Theme preference"
+msgstr "Predvoľby témy"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1123
+#, fuzzy
+#| msgid "The central person for the tree"
+msgid "Theme color preference for Space Tree"
+msgstr "Hlavná osoba pre strom"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1136
 #, fuzzy
 #| msgid "Destination directory"
 msgid "Destination File"
 msgstr "Cieľový adresár"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1090
+#: DescendantSpaceTree/DescendantSpaceTree.py:1138
 #, fuzzy
 #| msgid "The destination file name for html content."
 msgid "The destination file name for the report."
 msgstr "Názov cieľového súboru pre obsah html."
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1144
+#, fuzzy
+#| msgid "Opens an interactive tree in the browser"
+msgid "Open generated HTML file with default browser."
+msgstr "Otvára interaktívny strom v prehliadači"
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -19812,13 +19841,12 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href="
-"\"https://gramps-project.org/wiki/index.php?title=How_to_make_a_backup\""
-">Zálohovanie do Gramps XML</a> V posledných verziách programu Gramps nájdete "
-"v ponuke Rodokmeň možnosť \"Vytvoriť zálohu...\", v opačnom prípade použite "
-"v tej istej ponuke možnosť \"Exportovať...\", ale zrušte označenie možnosti "
-"ochrany osobných údajov v Asistentovi exportéra, aby ste exportovali všetky "
-"údaje.</i>\n"
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V posledných "
+"verziách programu Gramps nájdete v ponuke Rodokmeň možnosť \"Vytvoriť "
+"zálohu...\", v opačnom prípade použite v tej istej ponuke možnosť "
+"\"Exportovať...\", ale zrušte označenie možnosti ochrany osobných údajov v "
+"Asistentovi exportéra, aby ste exportovali všetky údaje.</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
