@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-10 08:08-0700\n"
 "PO-Revision-Date: 2025-06-15 21:02+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -2961,10 +2961,8 @@ msgid "Gramplet for showing people and descendant counts"
 msgstr "Gramplet näyttämään henkilöiden ja jälkeläisten määrän"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
-#, fuzzy
-#| msgid "Descendant Indented Tree"
 msgid "Descendant Space Tree"
-msgstr "Jälkeläisten sisennetty sukupuu"
+msgstr "Jälkeläisten avaruussukupuu"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
 msgid ""
@@ -3034,10 +3032,8 @@ msgid "Failed writing file: "
 msgstr "Tiedoston kirjoittaminen epäonnistui: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:862
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendants of"
-msgstr "Jälkeläinen"
+msgstr "Jälkeläiset"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:866
 msgid "How to Use the DescendantSpaceTree Viewer"
