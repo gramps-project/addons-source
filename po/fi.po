@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-10 08:08-0700\n"
-"PO-Revision-Date: 2025-06-15 21:02+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -2970,14 +2970,16 @@ msgid ""
 "a Space Tree for efficient viewing, even with many descendants or "
 "generations."
 msgstr ""
+"Luo verkkosivun, jolla on interaktiivinen jälkeläispuu kätevänä avaruuspuuna "
+"soveltuen suureen määrään jälkeläisiä tai sukupolvia."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:99
 msgid "Patriarchal Line (Male ancestor)"
-msgstr ""
+msgstr "Patriarkaalinen sukulinja (miespuoliset esivanhemmat)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:100
 msgid "Matriarchal Line (Female ancestor)"
-msgstr ""
+msgstr "Matriarkaalilinja (naispuoliset esivanhemmat)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:419
 msgid "Continue Descendant Tree"
@@ -2997,7 +2999,7 @@ msgstr "Jälkeläisiä yhteensä"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:650
 msgid "Marriages/Families:<ul>"
-msgstr ""
+msgstr "Avioliitot/perheet:<ul>"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:764
 #, python-format
@@ -3037,7 +3039,7 @@ msgstr "Jälkeläiset"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:866
 msgid "How to Use the DescendantSpaceTree Viewer"
-msgstr ""
+msgstr "DescendantSpaceTree-katseluohjelman käyttö"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:872
 msgid ""
@@ -3045,20 +3047,27 @@ msgid ""
 "entire screen and reload this page.  The viewer is fitted to your screen "
 "size."
 msgstr ""
+"Parhaan katselukokemuksen saavuttamiseksi suurenna selainikkunasi koko "
+"näyttöäön ja lataa tämä sivu uudelleen. Katseluohjelma sovitetaan näyttösi "
+"kokoon."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:882
 msgid "Click on a node to focus on a descendant and expand any children."
-msgstr ""
+msgstr "Napsauta solmua keskittyäksesi jälkeläiseen lapsineen."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:891
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
 msgstr ""
+"Napsauta ja vedä mitä tahansa kohtaa katseluohjelmassa sijoittaaksesi "
+"jälkeläispuun."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:900
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
 msgstr ""
+"Palauta alkuperäiseen jälkeläiseen napsauttamalla nollauspainiketta "
+"___HELP_RESET_BUTTON___."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:909
 msgid ""
@@ -3068,30 +3077,40 @@ msgid ""
 "search, a plus sign (+) after the name indicates that person appears as a "
 "spouse."
 msgstr ""
+"Etsi henkilöä kirjoittamalla hakukenttään vähintään kolme merkkiä. Napsauta "
+"ehdokasta siirtyäksesi kyseisen henkilön kohdalle. Henkilö voi esiintyä "
+"toistuvasti haussa. Nimen perässä oleva plusmerkki (+) osoittaa, että "
+"kysessä on puoliso."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:922
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
 msgstr ""
+"Jälkeläinen ja mahdolliset puolisot luetellaan samassa solmussa. Kaikkien "
+"perheiden lapset ryhmitellään yhteen."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:932
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
 msgstr ""
+"Tuoreimmille tietyn ajankohdan jälkeen syntyneille henkilöille ei "
+"välttämättä näytetä syntymä- tai kuolinaikaa."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:941
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
 msgstr ""
+"Henkilösolmujen väri kuvaa lasten määrää: vahvempi väri tarkoittaa enemmän "
+"lapsia."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:951
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
-msgstr ""
+msgstr "Valittu jälkeläinen esivanhempineen on korostettu keltaisella."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:960
 msgid ""
@@ -3101,12 +3120,20 @@ msgid ""
 "___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
 "expand descendants of this person. "
 msgstr ""
+"Henkilö voi esiintyä eri haaroissa. Tämä johtuu yleensä suvun sisäisistä "
+"avioliitoista (kuten serkkujen avioliitoista). Tässä tapauksessa kyseiselle "
+"henkilölle ilmestyy myös painike, ___NAV_BUTTON_CONTINUE___ tai "
+"___NAV_BUTTON_ALT___, jolla voi navigoida toiseen haaraan. Jälkeläiset "
+"esitetään vuorollaan vain yhdessä haarassa. "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:974
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
 msgstr ""
+"Seuraavia avoimen lähdekoodin projekteja on käytetty tämän katseluohjelman "
+"rakentamisessa. Katso täydelliset lisenssit ja tarvittavat ilmoitukset "
+"lähdekoodin LICENSE*.txt-tiedostoista."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1001
 msgid "Search. . ."
@@ -3114,21 +3141,23 @@ msgstr "Etsi..."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1053
 msgid "Branch to expand when duplicated"
-msgstr ""
+msgstr "Haara, joka laajenee kopioitaessa"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1063
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
 msgstr ""
+"Kun jälkeläinen esiintyy useammin kuin kerran, valitse sukulinja "
+"jälkeläislinjan laajennukseen"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1071
 msgid "Maximum display birth year"
-msgstr ""
+msgstr "Suurin mahdollinen syntymävuosi"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1074
 msgid "Birth/date dates will not be displayed after this year"
-msgstr ""
+msgstr "Syntymäaikoja ei näytetä tämän vuoden jälkeen"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1088
 msgid "Destination File"
@@ -3459,11 +3488,11 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1735
 msgid "OL_PAD"
-msgstr ""
+msgstr "OL_PAD"
 
 #: DescendantsLines/DescendantsLines.py:1736
 msgid "The number of ??? pad"
-msgstr ""
+msgstr "Montako ??? padia"
 
 #: DescendantsLines/DescendantsLines.py:1739
 msgid "Vertical edge spouse-bar to child-bar"
@@ -3591,24 +3620,24 @@ msgstr "Kuvaotsikoissa käytetty tyyli."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1364
 msgid "A style used for image captions."
-msgstr ""
+msgstr "Kuvateksteissä käytetty tyyli."
 
 #: DetId/DetId.gpr.py:31
 msgid "Deterministic ID"
-msgstr ""
+msgstr "Deterministinen ID"
 
 #: DetId/DetId.gpr.py:32
 msgid "Set/reset Gramps to use a Deterministic ID"
-msgstr ""
+msgstr "Valitse käyetäänkö Grampsissa determinististä ID:tä"
 
 #: DetId/DetId.py:74
 msgid "Deterministic ID Tool"
-msgstr ""
+msgstr "Deterministinen ID -työkalu"
 
 #: DetId/DetId.py:80
 msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
-msgstr ""
+msgstr "ID ja kahvat alkavat nyt luvusta 0x00000000 ja kasvavat 0x100000001:llä"
 
 #: Differences/differences.gpr.py:4 Differences/differences.py:95
 msgid "Database Differences Report"
@@ -3686,15 +3715,15 @@ msgstr "Lisää kohteet tiedostoon, mutta älä tietokantaan"
 
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
-msgstr ""
+msgstr "Kaksoisserkut"
 
 #: DoubleCousins/double_cousins.gpr.py:26
 msgid "A text report listing double cousins."
-msgstr ""
+msgstr "Kaksoisserkut sisältävä tekstimuotoinen raportti."
 
 #: DoubleCousins/double_cousins.py:112
 msgid "Double Cousins Report"
-msgstr ""
+msgstr "Kaksoisserkkujen raportti"
 
 #: DoubleCousins/double_cousins.py:120
 #, no-python-format
@@ -3706,6 +3735,12 @@ msgid ""
 "25% of their DNA similar to half-siblings instead of 12.5% like normal first "
 "cousins.\n"
 msgstr ""
+"Kaksoisserkkuja muodostuu, kun kaksi perheen A sisarusta menee naimisiin "
+"perheen B sisaruksen kanssa. Heidän lapsensa ovat serkkuja keskenään ja "
+"heillä on samat neljä isovanhempaa eikä kuusi kuten normaaleilla serkuilla. "
+"Siksi he ovat geneettisesti läheisempiä kuin normaalit serkut ja heillä on "
+"25 % yhteistä DNA:staan kuten puolisisaruksilla, eikä 12,5 % kuten "
+"normaaleilla serkuilla.\n"
 
 #: DoubleCousins/double_cousins.py:136
 msgid "No double cousins were found in your database."
@@ -3717,11 +3752,11 @@ msgstr "Näytä infoteksti"
 
 #: DownloadMedia/DownloadMedia.gpr.py:36
 msgid "Download media files from the internet"
-msgstr ""
+msgstr "Lataa mediatiedostoja Internetistä"
 
 #: DownloadMedia/DownloadMedia.gpr.py:37
 msgid "This tool downloads media files from the internet"
-msgstr ""
+msgstr "Tällä työkalulla ladataan mediatiedostoja internetistä"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
@@ -3734,23 +3769,23 @@ msgstr "Media ladattu"
 #: DownloadMedia/DownloadMedia.py:88
 #, python-format
 msgid "%d media files downloaded"
-msgstr ""
+msgstr "%d mediatiedostoa ladattu"
 
 #: DownloadMedia/DownloadMedia.py:100
 msgid "Download media tool"
-msgstr ""
+msgstr "Mediatiedostojen lataustyökalu"
 
 #: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
-msgstr ""
+msgstr "Varmista internetyhteytesi ennen tämän työkalun käynnistystä."
 
 #: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
 msgid "Downloading files"
-msgstr ""
+msgstr "Tiedostoja ladataan"
 
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
-msgstr ""
+msgstr "Virheitä mediatiedostojen latauksessa"
 
 #: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
@@ -4670,25 +4705,29 @@ msgstr "Sivun sisältö"
 #: EditExifMetadata/editexifmetadata.py:1135
 #: EditExifMetadata/editexifmetadata.py:1147
 msgid "Edit Image Exif Metadata"
-msgstr ""
+msgstr "Muokkaa kuvan Exif-metatietoja"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr ""
+"Gramplet kuvan Exif-metatietojen tarkasteluun, muokkaamiseen ja "
+"tallentamiseen"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
-msgstr ""
+msgstr "Muokkaa Exif-metatietoja"
 
 #: EditExifMetadata/editexifmetadata.py:135
 msgid "<-- Image Types -->"
-msgstr ""
+msgstr "<-- Kuvatyypit -->"
 
 #: EditExifMetadata/editexifmetadata.py:158
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
 msgstr ""
+"Varoitus: Tämän merkinnän muuttaminen päivittää Grampsin mediaobjektin "
+"otsikon, ei Exiv2-metatietoja."
 
 #: EditExifMetadata/editexifmetadata.py:161
 msgid "Provide a short description for this image."
@@ -4699,6 +4738,8 @@ msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
 msgstr ""
+"Anna kuvan tekijä. Henkilön nimi tai yritys, joka on vastuussa kuvan "
+"luomisesta."
 
 #: EditExifMetadata/editexifmetadata.py:167
 msgid "Enter the copyright information for this image. \n"
@@ -4710,36 +4751,48 @@ msgid ""
 "photograph.\n"
 "Example: 1830-01-1 09:30:59"
 msgstr ""
+"Alkuperäinen päivämäärä ja kellonaika, jolloin kuva luotiin tai "
+"valokuvattiin.\n"
+"Esimerkki: 1830-01-1 09:30:59"
 
 #: EditExifMetadata/editexifmetadata.py:173
 msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
 msgstr ""
+"Tämä on päivämäärä ja aika, jolloin kuvaa viimeksi muutettiin.\n"
+"Esimerkki: 2011-05-24 14:30:00"
 
 #: EditExifMetadata/editexifmetadata.py:176
 msgid ""
 "Enter the Latitude GPS coordinates for this image,\n"
 "Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
 msgstr ""
+"Anna kuvan leveysasteen GPS-koordinaatit.\n"
+"Esimerkkejä: -43.722965, -43:43:22, 38° 38′ 03″ N"
 
 #: EditExifMetadata/editexifmetadata.py:179
 msgid ""
 "Enter the Longitude GPS coordinates for this image,\n"
 "Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
 msgstr ""
+"Anna tämän kuvan pituusasteen GPS-koordinaatit.\n"
+"Esimerkkejä: -10.396378, -10:23:46, 105° 6′ 6″ W"
 
 #: EditExifMetadata/editexifmetadata.py:182
 msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
+"Tämä on korkeus merenpinnasta metreinä (ylä- tai alapuolella). Esimerkkejä: "
+"200,558, -200,558"
 
 #: EditExifMetadata/editexifmetadata.py:191
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
+"Avaa selaimessasi Grampsin Wikin ohjesivu 'Muokkaa kuvan Exif-metatietoja'."
 
 #: EditExifMetadata/editexifmetadata.py:194
 msgid ""
@@ -4860,19 +4913,19 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
-msgstr ""
+msgstr "Tallentaa tietokenttien sisällöt kuvan Exif-metatietoihin."
 
 #: EditExifMetadata/editexifmetadata.py:928
 msgid "Re -display the data fields that were cleared from the Edit Area."
-msgstr ""
+msgstr "Näytä uudelleen tietokentät, jotka on tyhjennetty muokkausalueelta."
 
 #: EditExifMetadata/editexifmetadata.py:932
 msgid "This button will clear all of the data fields shown here."
-msgstr ""
+msgstr "Tällä painikkeella tyhjennetään kaikki nämä tietokentät."
 
 #: EditExifMetadata/editexifmetadata.py:936
 msgid "This button will clear all of the GPS fields shown here."
-msgstr ""
+msgstr "Tämä painike tyhjentää kaikki nämä GPS-kentät."
 
 #: EditExifMetadata/editexifmetadata.py:940
 msgid ""
@@ -4880,6 +4933,9 @@ msgid ""
 "WARNING: This action will NOT Save any changes/ modification made to this "
 "image's Exif metadata."
 msgstr ""
+"Sulkee tämän ponnahdusikkunan.\n"
+"VAROITUS: Tämä toiminto EI tallenna kuvan Exif-metatietoihin tehtyjä "
+"muutoksia."
 
 #: EditExifMetadata/editexifmetadata.py:969
 msgid "Media Object Title"
@@ -4907,7 +4963,7 @@ msgstr "Tekijänoikeudet: "
 
 #: EditExifMetadata/editexifmetadata.py:1019
 msgid "Date/ Time"
-msgstr ""
+msgstr "Päiväys ja aika"
 
 #: EditExifMetadata/editexifmetadata.py:1034
 msgid "Original: "
@@ -4919,7 +4975,7 @@ msgstr "Muutettu: "
 
 #: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
-msgstr ""
+msgstr "Leveys- ja pituusaste sekä korkeus GPS-koordinaatit"
 
 #: EditExifMetadata/editexifmetadata.py:1069
 msgid "Latitude :"
@@ -4943,7 +4999,7 @@ msgstr "Kelvoton leveysaste (muotoa: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
-msgstr ""
+msgstr "48.21\"E, -18.2412 tai -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
 msgid "Invalid longitude (syntax: 18°9'"
@@ -4951,7 +5007,7 @@ msgstr "Kelvoton pituusaste (muotoa: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr ""
+msgstr "48.21\"I, -18.2412 or -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -5090,6 +5146,7 @@ msgstr "Perheen lisäominaisuudet"
 msgid ""
 "Double-click on a row to edit the object containing the selected attribute."
 msgstr ""
+"Kaksoisnapsauta riviä muokataksesi valitun attribuutin sisältävää objektia."
 
 #: ExtractCity/changenames.glade:94
 msgid "_Toggle Selected"
@@ -5101,14 +5158,18 @@ msgid ""
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
+"Asettaa/poistaa valittujen rivien valinnat.   Rivejä voi valita <ctrl>-"
+"näppäimellä (lisää ryhmään) tai <shift>-näppäimellä (laajenna ryhmää) tai "
+"<ctrl>- tai <shift>-nuolinäppäimillä ja välilyönnillä.   Tai <ctrl>'a'-"
+"näppäimellä kaikkien valitsemiseen."
 
 #: ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
-msgstr ""
+msgstr "Paikkatietojen poimiminen paikan nimestä"
 
 #: ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
-msgstr ""
+msgstr "Yritetään poimia kaupunki ja osavaltio/maakunta paikan nimestä"
 
 #: ExtractCity/extractcity.py:402
 msgid "Place title"
@@ -5116,17 +5177,19 @@ msgstr "Paikan nimi"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
-msgstr ""
+msgstr "Poimi Paikkatiedot"
 
 #: ExtractCity/extractcity.py:543
 msgid "No place information could be extracted."
-msgstr ""
+msgstr "Mitään paikkatietoja ei voitu poimia."
 
 #: ExtractCity/extractcity.py:564
 msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
 msgstr ""
+"Alla on luettelo paikoista ja niistä mahdollisesti erotettavista tiedoista. "
+"Valitse paikat, jotka haluat Grampsin muuntavan."
 
 #: FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
@@ -5138,7 +5201,7 @@ msgstr "Nettisivustojen kokoelma FR (vaatii libwebconnectin)"
 
 #: FRWebConnectPack/FRWebPack.py:41
 msgid "Cultural ministry (France)"
-msgstr ""
+msgstr "Kulttuuriministeriö (Ranska)"
 
 #: FRWebConnectPack/FRWebPack.py:42
 msgid "Genealogical bank"
@@ -5273,22 +5336,22 @@ msgstr ""
 #: FamilySheet/FamilySheet.py:771 FamilyTree/FamilyTree.py:934
 #, python-format
 msgid "in %(ym_date)s"
-msgstr ""
+msgstr "%(ym_date)s"
 
 #: FamilySheet/FamilySheet.py:773 FamilyTree/FamilyTree.py:936
 #, python-format
 msgid "in %(y_date)s"
-msgstr ""
+msgstr "%(y_date)s"
 
 #: FamilySheet/FamilySheet.py:777 FamilyTree/FamilyTree.py:940
 #, python-format
 msgid "on %(placeholder)s"
-msgstr ""
+msgstr "%(placeholder)s"
 
 #: FamilySheet/FamilySheet.py:779 FamilyTree/FamilyTree.py:943
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
-msgstr ""
+msgstr "%(placeholder)s (%(partial)s)"
 
 #: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #: FamilyTree/FamilyTree.py:960
@@ -5350,19 +5413,19 @@ msgstr "Yläosan sivunäppäimen tyyli"
 
 #: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
-msgstr ""
+msgstr "Nimien tyyli"
 
 #: FamilySheet/FamilySheet.py:938
 msgid "The style used for numbers"
-msgstr ""
+msgstr "Numeroissa käytetty tyyli"
 
 #: FamilySheet/FamilySheet.py:948
 msgid "The style used for footnotes (notes and source references)"
-msgstr ""
+msgstr "Alaviitteissä (huomautuksissa ja lähdeviittauksissa) käytetty tyyli"
 
 #: FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
-msgstr ""
+msgstr "Tuottaa graafisen sukupuun."
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
@@ -5371,31 +5434,31 @@ msgstr "Sukupuu henkilölle %s"
 
 #: FamilyTree/FamilyTree.py:152
 msgid "Paper too small"
-msgstr ""
+msgstr "Liian pieni sivu"
 
 #: FamilyTree/FamilyTree.py:153
 msgid "Some elements may not appear or be badly rendered."
-msgstr ""
+msgstr "Jotkin elementit eivät välttämättä näy tai ne erottuvat huonosti."
 
 #: FamilyTree/FamilyTree.py:684
 msgid "Anonymous"
-msgstr ""
+msgstr "Nimetön"
 
 #: FamilyTree/FamilyTree.py:911
 msgid "born"
-msgstr ""
+msgstr "syntynyt"
 
 #: FamilyTree/FamilyTree.py:913
 msgid "baptised"
-msgstr ""
+msgstr "kastettu"
 
 #: FamilyTree/FamilyTree.py:915
 msgid "died"
-msgstr ""
+msgstr "kuollut"
 
 #: FamilyTree/FamilyTree.py:917
 msgid "buried"
-msgstr ""
+msgstr "haudattu"
 
 #: FamilyTree/FamilyTree.py:919
 msgid "cremated"
@@ -5403,15 +5466,15 @@ msgstr "tuhkattu"
 
 #: FamilyTree/FamilyTree.py:921
 msgid "married"
-msgstr ""
+msgstr "avioliitto"
 
 #: FamilyTree/FamilyTree.py:923
 msgid "divorced"
-msgstr ""
+msgstr "ero"
 
 #: FamilyTree/FamilyTree.py:925
 msgid "resident"
-msgstr ""
+msgstr "asunto"
 
 #: FamilyTree/FamilyTree.py:971
 #, python-format
@@ -5442,17 +5505,19 @@ msgstr "Puuhun sisällytettävien jälkipolvien lukumäärä"
 
 #: FamilyTree/FamilyTree.py:1055
 msgid "Kekule number of husband"
-msgstr ""
+msgstr "Aviomiehen Kekule-numero"
 
 #: FamilyTree/FamilyTree.py:1056
 msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
 msgstr ""
+"Aviomiehen Kekule-numero (keskeinen perhe). Aseta arvoksi 0, jos et halua "
+"Kekule-numeroita näkyvän"
 
 #: FamilyTree/FamilyTree.py:1059
 msgid "Scale to fit on a single page"
-msgstr ""
+msgstr "Sovita yhdelle sivulle"
 
 #: FamilyTree/FamilyTree.py:1060
 msgid "Whether to scale to fit on a single page."
@@ -5460,7 +5525,7 @@ msgstr "Skaalataanko se yhdelle sivulle sopivaksi."
 
 #: FamilyTree/FamilyTree.py:1065
 msgid "No color"
-msgstr ""
+msgstr "Ilman värejä"
 
 #: FamilyTree/FamilyTree.py:1067
 msgid "First generation"
@@ -5488,15 +5553,15 @@ msgstr "Naislinja"
 
 #: FamilyTree/FamilyTree.py:1075
 msgid "Shuffle colors"
-msgstr ""
+msgstr "Sekoita värit"
 
 #: FamilyTree/FamilyTree.py:1076
 msgid "Whether to shuffle colors or order them in rainbow fashion."
-msgstr ""
+msgstr "Sekoitataanko värit vai järjestätäänkö ne sateenkaaren järjestykseen."
 
 #: FamilyTree/FamilyTree.py:1091
 msgid "Include Occupation"
-msgstr ""
+msgstr "Sisällytä ammatti"
 
 #: FamilyTree/FamilyTree.py:1097
 msgid "Include Residence"
@@ -5504,7 +5569,7 @@ msgstr "Sisällytä asuinpaikka"
 
 #: FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
-msgstr ""
+msgstr "Näytä (kuolleen henkilön) tapahtumatiedot"
 
 #: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
 msgid "Year only"
@@ -5524,15 +5589,15 @@ msgstr "Tulosta tapahtumatiedot (eläville)"
 
 #: FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
-msgstr ""
+msgstr "Käytä kastetta, jos syntymätapahtuma puuttuu"
 
 #: FamilyTree/FamilyTree.py:1119
 msgid "Fall back to burial or cremation if death event missing"
-msgstr ""
+msgstr "Käytä hautausaikaa, jos kuolematieto puuttuu"
 
 #: FamilyTree/FamilyTree.py:1122
 msgid "Protect private items"
-msgstr ""
+msgstr "Suojaa yksityiset tiedot"
 
 #: FamilyTree/FamilyTree.py:1131
 msgid "Include event description"
@@ -5544,11 +5609,11 @@ msgstr "Tekstivalinnat"
 
 #: FamilyTree/FamilyTree.py:1162
 msgid "The style used for names."
-msgstr ""
+msgstr "Nimissä käytetty tyyli."
 
 #: FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr ""
+msgstr "Tietojen tyyli (syntymä, kuolema, avioliitto, avioero)."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
 msgid "FamilyTree DNA"
