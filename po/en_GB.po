@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-10 08:08-0700\n"
-"PO-Revision-Date: 2025-03-27 12:34+0000\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -37,28 +37,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "All Names of All People"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Display all names of all people"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
-msgstr ""
+msgstr "Name Type"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr ""
+msgstr "Primary Name"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "Total names %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
