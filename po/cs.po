@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-03 09:24-0700\n"
+"POT-Creation-Date: 2025-06-10 08:08-0700\n"
 "PO-Revision-Date: 2025-06-04 05:30+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
@@ -1161,6 +1161,7 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
+#: DescendantSpaceTree/DescendantSpaceTree.py:1044
 msgid "Include Generations"
 msgstr ""
 
@@ -1200,6 +1201,7 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
+#: DescendantSpaceTree/DescendantSpaceTree.py:1082
 msgid "The destination path for generated files."
 msgstr ""
 
@@ -1263,6 +1265,7 @@ msgid "Generating report..."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1364
+#: DescendantSpaceTree/DescendantSpaceTree.py:762
 msgid "Invalid Destination Directory"
 msgstr ""
 
@@ -2974,6 +2977,200 @@ msgstr "Strom potomků"
 
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
+#, fuzzy
+#| msgid "Descending tree"
+msgid "Descendant Space Tree"
+msgstr "Strom potomků"
+
+#: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:99
+msgid "Patriarchal Line (Male ancestor)"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:100
+msgid "Matriarchal Line (Female ancestor)"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:419
+#, fuzzy
+#| msgid "Descending tree"
+msgid "Continue Descendant Tree"
+msgstr "Strom potomků"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:420
+#, fuzzy
+#| msgid "Alternate Name"
+msgid "Alternate Descendant Tree"
+msgstr "Alternativní jméno"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:448
+#, fuzzy
+#| msgid "Descending tree"
+msgid "Descendant SpaceTree"
+msgstr "Strom potomků"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:626
+#, fuzzy
+#| msgid "Number of pages"
+msgid "Total descendants"
+msgstr "Počet stránek"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:650
+msgid "Marriages/Families:<ul>"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:764
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:778
+#, fuzzy, python-format
+#| msgid "Unable to copy web site template files from \"%(path)s\""
+msgid "Failed to create %s: %s"
+msgstr "Nelze zkopírovat soubory šablony WWW stránek z \"%(path)s\""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:807
+#, fuzzy, python-format
+#| msgid "Unable to copy web site template files from \"%(path)s\""
+msgid "Failed to read proto file %s: %s"
+msgstr "Nelze zkopírovat soubory šablony WWW stránek z \"%(path)s\""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:818
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:845
+#, fuzzy
+#| msgid "Unable to copy web site template files from \"%(path)s\""
+msgid "Failed writing file: "
+msgstr "Nelze zkopírovat soubory šablony WWW stránek z \"%(path)s\""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:862
+#, fuzzy
+#| msgid "Descending tree"
+msgid "Descendants of"
+msgstr "Strom potomků"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:866
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:872
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen and reload this page.  The viewer is fitted to your screen "
+"size."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:882
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:891
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:900
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:909
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:922
+msgid ""
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:932
+msgid ""
+"Persons born after a specified date may not display their birth or death "
+"dates."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:941
+msgid ""
+"Person nodes are colored to indicate the number of children, the deeper tint "
+"of the coloring, the greater number of children."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:951
+msgid ""
+"The currently selected descendant and all of the ancestors of that person "
+"are highlighted in yellow."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:960
+msgid ""
+"A person may occur in different branches.  This is usually because of inter-"
+"family marriages (such as that of cousins.)  In this case, a button will "
+"also appear for that person,  ___NAV_BUTTON_CONTINUE___ or "
+"___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
+"expand descendants of this person. "
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:974
+msgid ""
+"The following open source projects are used in building this viewer, see "
+"source code LICENSE*.txt files for complete licenses and required notices."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1001
+#, fuzzy
+#| msgid "Search:"
+msgid "Search. . ."
+msgstr "Hledat:"
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1053
+msgid "Branch to expand when duplicated"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1063
+msgid ""
+"When a descendant appears more than once, prefer the selected lineage to "
+"expand descendancy line"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1071
+msgid "Maximum display birth year"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1074
+msgid "Birth/date dates will not be displayed after this year"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1088
+#, fuzzy
+#| msgid "Description: "
+msgid "Destination File"
+msgstr "Description: "
+
+#: DescendantSpaceTree/DescendantSpaceTree.py:1090
+msgid "The destination file name for the report."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
