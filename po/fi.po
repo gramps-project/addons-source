@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-03 09:24-0700\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"PO-Revision-Date: 2025-06-08 16:42+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -1048,29 +1048,30 @@ msgstr ""
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
-msgstr ""
+msgstr "Yhdistäminen komentoriviä käyttäen"
 
 #: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
-msgstr ""
+msgstr "Yhdistä ensisijaiset objektit komentorivillä."
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:18
 msgid "Collections Clipboard"
-msgstr ""
+msgstr "Kokoelmien leikepöytä"
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:11
 msgid "Gramplet for grouping collections of items to aid in data entry."
 msgstr ""
+"Gramplet kohdekokoelmien ryhmittelyyn tiedon syöttämisen helpottamiseksi."
 
 #: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format
 msgid "Clipboard Gramplet: %s"
-msgstr ""
+msgstr "Leikepöytä-Gramplet: %s"
 
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
-msgstr ""
+msgstr "Kello"
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
 msgid "Gramplet for demonstrating Cairo graphics"
@@ -1570,7 +1571,7 @@ msgstr "Nettisivustojen kokoelma DE (vaatii libwebconnectin)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
-msgstr ""
+msgstr "Bielefeld Academic Search"
 
 #: DEWebConnectPack/DEWebPack.py:39 SVWebconnectPack/SVWebPack.py:34
 #: UKWebConnectPack/UKWebPack.py:35 USWebConnectPack/USWebPack.py:34
@@ -1593,7 +1594,7 @@ msgstr "Open Library UK"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
-msgstr ""
+msgstr "Sukunimikartta (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
@@ -2662,12 +2663,12 @@ msgstr "Vahvistetaan %s henkilön jälkeläisiä rajauksen jälkeen..."
 #: DescendantBooks/CollectAscendants.py:383
 #, python-format
 msgid "Getting missing descendants from %s people ..."
-msgstr ""
+msgstr "Haetaan puuttuvia jälkeläisiä %s henkilöltä..."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
-msgstr ""
+msgstr "sp. katso  %(reference)s : %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:249
 #, python-format
@@ -2683,18 +2684,18 @@ msgstr "Jälkeläisraportti"
 #: DescendantBooks/DetailedDescendantBookReport.py:421
 #, python-format
 msgid "Writing %s reports..."
-msgstr ""
+msgstr "Kirjoitetaan %s raporttia..."
 
 #: DescendantBooks/DescendantBookReport.py:442
 #, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr ""
+msgstr "{report_count}. Henkilön {name} jälkeläiset"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
 #, python-brace-format
 msgid "{report_count:d}. {name}"
-msgstr ""
+msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
@@ -2716,29 +2717,32 @@ msgstr "Jälkeläiskirja"
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
+"Tuottaa yhden tai useamman jälkeläisraportin annetun kyselyn perusteella."
 
 #: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
-msgstr ""
+msgstr "Yksityiskohtainen jälkeläiskirja"
 
 #: DescendantBooks/DescendantBooks.gpr.py:43
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
 msgstr ""
+"Tuottaa yhden tai useamman yksityiskohtaisen jälkeläisraportin annetun "
+"kyselyn perusteella."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
-msgstr ""
+msgstr "Yksityiskohtainen jälkeläisten raportti"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:359
 #, python-format
 msgid "Generating %s report references..."
-msgstr ""
+msgstr "Luodaan %s raporttiviittausta..."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:453
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
-msgstr ""
+msgstr "%(report_count)s. Jälkeläisraportti henkilölle %(person_name)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:519
 msgid "Index of Places"
@@ -2754,38 +2758,38 @@ msgstr "Nimihakemisto"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:571
 msgid "Report, Generation, Person, Name"
-msgstr ""
+msgstr "Raportti, sukupolvi, henkilö, nimi"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr ""
+msgstr "Katso raportti: {report}, sukupolvi: {generation}, henkilö: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
 #, python-format
 msgid "Report appearances for %s"
-msgstr ""
+msgstr "Ilmoita esiintymisestä: %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
 #, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr ""
+msgstr "Puoliso: Raportti: {report}, sukupolvi: {generation}, henkilö: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
 #, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr ""
+msgstr "Raportti: {report}, sukupolvi: {generation}, henkilö: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
 msgid "%(event_name)s of %(name)s "
-msgstr "%(event_type)s: %(date)s "
+msgstr "%(event_name)s henkilölle %(name)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:810
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
-msgstr "%(event_type)s: %(date)s - %(place)s "
+msgstr "%(event_name)s henkiöille %(name)s ja %(mate)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:814
 #: DescendantBooks/DetailedDescendantBookReport.py:858
@@ -2799,7 +2803,7 @@ msgstr "%(date)s, %(place)s"
 #: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
-msgstr ""
+msgstr "%(date)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:819
 #: DescendantBooks/DetailedDescendantBookReport.py:863
@@ -2811,7 +2815,7 @@ msgstr "%(place)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:821
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
-msgstr ""
+msgstr ". Ref: %(repno)s %(gen)s %(per)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:850
 #, python-format
@@ -2826,13 +2830,13 @@ msgstr " %(event_text)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:993
 #, python-brace-format
 msgid "Ref: {number}. {name}"
-msgstr ""
+msgstr "Ref: {number}. {name}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
-msgstr ""
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1294
 #, python-format
@@ -2842,17 +2846,17 @@ msgstr "%(type)s:"
 #: DescendantBooks/DetailedDescendantBookReport.py:1299
 #, python-format
 msgid " %(value)s%(endnotes)s"
-msgstr ""
+msgstr " %(value)s%(endnotes)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1401
 #: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
-msgstr ""
+msgstr "Näytetäänkö lapset"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1418
 #: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
-msgstr ""
+msgstr "Lisää jälkeläisviittaus lasten luetteloon"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1482
 msgid "Include Index of Names"
@@ -2880,13 +2884,15 @@ msgstr "Sisällytetäänkö paikkahakemisto raportin loppuun."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Include the 'Report appearances' section with each person"
-msgstr ""
+msgstr "Sisällytä jokaisen henkilön ilmoituksiin osio ”Ilmoita esiintymisistä”"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
 msgstr ""
+"”Esiintymiset raportissa” -osio näyttää raportin muut kohdat, joissa henkilö "
+"mainitaan."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1566
 #: DetDescendantReport-images/detdescendantreporti.py:1282
@@ -2895,7 +2901,7 @@ msgstr "Lasten luettelossa käytetty tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1576
 msgid "The basic style used for Note header."
-msgstr ""
+msgstr "Lisätiedon otsikossa käytetty perustyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1593
 #: DetDescendantReport-images/detdescendantreporti.py:1305
@@ -2905,41 +2911,43 @@ msgstr "Henkilön ensimmäisen kappaleen tyyli."
 #: DescendantBooks/DetailedDescendantBookReport.py:1603
 #: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
-msgstr ""
+msgstr "Tyyli, jota käytetään Lisätietojen ja puolisoiden otsikoissa."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1614
 #: DetDescendantReport-images/detdescendantreporti.py:1326
+#, fuzzy
 msgid "The style used for additional detail data."
-msgstr ""
+msgstr "Lisätietojen tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1624
 #: DescendantBooks/DetailedDescendantBookReport.py:1634
+#, fuzzy
 msgid "The style used for note detail data."
-msgstr ""
+msgstr "Lisätietojen tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1644
 msgid "The style used for the date in the Index of Dates."
-msgstr ""
+msgstr "Päiväyshakemiston päivämäärälle käytetty tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1654
 msgid "The style used for the events in the Index of Dates."
-msgstr ""
+msgstr "Päiväyshakemiston tapahtumille käytetty tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1664
 msgid "The style used for the header in the Index of Names."
-msgstr ""
+msgstr "Nimihakemiston otsikossa käytetty tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1674
 msgid "The style used for the references in the Index of Names."
-msgstr ""
+msgstr "Nimihakemiston viittauksissa käytetty tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1684
 msgid "The style used for the header in the Index of Places."
-msgstr ""
+msgstr "Paikkahakemiston otsikossa käytetty tyyli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1695
 msgid "The style used for the references in the Index of Places."
-msgstr ""
+msgstr "Paikkahakemiston viittauksissa käytetty tyyli."
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
@@ -2956,11 +2964,11 @@ msgstr "Jälkeläislinjat"
 
 #: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
-msgstr ""
+msgstr "Tuottaa henkilön jälkeläislinjoja"
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
-msgstr ""
+msgstr "SVG-tiedostoja ei tueta lisädokumenteissa!"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
@@ -2998,11 +3006,11 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1550
 msgid "Use d'Aboville descendant numbering system"
-msgstr ""
+msgstr "Käytä d'Abovillen jälkeläisten numerointijärjestelmää"
 
 #: DescendantsLines/DescendantsLines.py:1552
 msgid "Prepend name with d'Aboville descendant number in the chart."
-msgstr ""
+msgstr "Lisää kaavioissa nimen eteen d'Abovillen jälkeläisnumero."
 
 #: DescendantsLines/DescendantsLines.py:1555
 msgid "Include an image"
@@ -3014,19 +3022,19 @@ msgstr "Sisällytetäänkö kuva, jos sellainen on saatavilla."
 
 #: DescendantsLines/DescendantsLines.py:1560
 msgid "Max Image height"
-msgstr ""
+msgstr "Kuvan enimmäiskorkeus"
 
 #: DescendantsLines/DescendantsLines.py:1561
 msgid "Maximum image height in pixels, 0=don't scale for height."
-msgstr ""
+msgstr "Kuvan enimmäiskorkeus pikseleinä, 0 = ei skaalata korkeuden mukaan."
 
 #: DescendantsLines/DescendantsLines.py:1565
 msgid "Max Image width"
-msgstr ""
+msgstr "Kuvan enimmäisleveys"
 
 #: DescendantsLines/DescendantsLines.py:1566
 msgid "Maximum image width in pixels, 0=don't scale for width."
-msgstr ""
+msgstr "Kuvan enimmäisleveys pikseleinä, 0 = ei skaalata leveyden mukaan."
 
 #: DescendantsLines/DescendantsLines.py:1570
 msgid "Image Location"
@@ -3042,19 +3050,19 @@ msgstr "Tekstin vasemmalla puolella"
 
 #: DescendantsLines/DescendantsLines.py:1573
 msgid "Position of image relative to text"
-msgstr ""
+msgstr "Kuvan sijainti suhteessa tekstiin"
 
 #: DescendantsLines/DescendantsLines.py:1579
 msgid "Colour Name by Gender"
-msgstr ""
+msgstr "Sukupuolen mukaisen värin nimi"
 
 #: DescendantsLines/DescendantsLines.py:1581
 msgid "Color the name to indicate a person's gender in the chart."
-msgstr ""
+msgstr "Väritä nimi ilmaisemaan henkilön sukupuoli kaaviossa."
 
 #: DescendantsLines/DescendantsLines.py:1585
 msgid "Use alternate events, if Primary event is not found"
-msgstr ""
+msgstr "Käytä tarvittaessa vaihtoehtoista tapahtumaa"
 
 #: DescendantsLines/DescendantsLines.py:1586
 msgid ""
@@ -3063,14 +3071,20 @@ msgid ""
 "   Divorce (annulment, div_filing),\n"
 "   Death (burial, cremation, probate)."
 msgstr ""
+"Käytetään syntymälle (kristillenen kaste)\n"
+"   avioliitolle (avioliitto, kihlaus)\n"
+"   avioerolle (mitätöinti, ero),\n"
+"   kuolemalle (hautaus, tuhkaaminen, perunkirjoitus)."
 
 #: DescendantsLines/DescendantsLines.py:1592
 msgid "Sort Events by Date"
-msgstr ""
+msgstr "Järjestä tapahtumat päiväyksen mukaan"
 
 #: DescendantsLines/DescendantsLines.py:1593
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
+"Järjestä tapahtumat päiväyksen mukaan (tai käytä yllä olevaa 'Näyttömuoto'-"
+"kohdan järjestystä)."
 
 #: DescendantsLines/DescendantsLines.py:1597
 msgid "Text style"
@@ -3078,80 +3092,82 @@ msgstr "Tekstityyli"
 
 #: DescendantsLines/DescendantsLines.py:1598
 msgid "Center-aligned text"
-msgstr ""
+msgstr "Keskitetty teksti"
 
 #: DescendantsLines/DescendantsLines.py:1599
 msgid "Left-aligned text"
-msgstr ""
+msgstr "Vasemmalle tasattu teksti"
 
 #: DescendantsLines/DescendantsLines.py:1600
 msgid "Alignment of the text in the block for each person on the chart"
-msgstr ""
+msgstr "Tekstin tasaus lohkossa kullekin kaavion henkilölle"
 
 #: DescendantsLines/DescendantsLines.py:1604
 msgid "Max Note Length"
-msgstr ""
+msgstr "Suurin lisätiedon pituus"
 
 #: DescendantsLines/DescendantsLines.py:1605
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
 msgstr ""
+"Tapahtuman lisätiedon enimmäispituus tekstilohkossa, '$e(n)'\n"
+"0 = ei rajoitusta "
 
 #: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
-msgstr ""
+msgstr "Henkilölohkoa ympäröivä laatikko"
 
 #: DescendantsLines/DescendantsLines.py:1613
 msgid "Draw a thin black box around each person' text block."
-msgstr ""
+msgstr "Piirrä ohut musta laatikko henkilöiden tekstilohkojen ympärille."
 
 #: DescendantsLines/DescendantsLines.py:1617
 msgid "All Person's blocks have the same height"
-msgstr ""
+msgstr "Kaikki henkilön lohkot ovat samankorkuisia"
 
 #: DescendantsLines/DescendantsLines.py:1618
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
-msgstr ""
+msgstr "Kaikki henkilölohkot on korkeimman lohkon korkuisia."
 
 #: DescendantsLines/DescendantsLines.py:1623
 msgid "All Person's blocks have the same width"
-msgstr ""
+msgstr "Kaikki henkilölohkot on samanlevyisiä"
 
 #: DescendantsLines/DescendantsLines.py:1624
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
-msgstr ""
+msgstr "Kaikki henkilölohkot on leveimmän lohkon levyisiä."
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Colour blocks by Generation"
-msgstr ""
+msgstr "Lohkojen väri sukupolven mukaan"
 
 #: DescendantsLines/DescendantsLines.py:1630
 msgid "Colour the background of text blocks by generation."
-msgstr ""
+msgstr "Tekstilohkojen taustaväri sukupolven mukaan."
 
 #: DescendantsLines/DescendantsLines.py:1634
 msgid "Descend block colour intensity"
-msgstr ""
+msgstr "Vähennä lohkojen värin voimakkuutta"
 
 #: DescendantsLines/DescendantsLines.py:1635
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
 "colour"
-msgstr ""
+msgstr "Taustaväri jälkeläislohkoissa, 0 = haalea, 255 = voimakas väri"
 
 #: DescendantsLines/DescendantsLines.py:1639
 msgid "Spouse block colour intensity"
-msgstr ""
+msgstr "Puolison lohkon väri, 0 = haalea, 255 = voimakas väri"
 
 #: DescendantsLines/DescendantsLines.py:1640
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
-msgstr ""
+msgstr "Puolison lohkon taustaväri, 0 = haalea, 255 = voimakas väri"
 
 #: DescendantsLines/DescendantsLines.py:1645
 msgid "Display Formats"
@@ -3162,11 +3178,15 @@ msgid "Name Display Format"
 msgstr "Nimen näyttömuoto"
 
 #: DescendantsLines/DescendantsLines.py:1650
+#, fuzzy
 msgid ""
 "f=first & middle names, l=surname, n=nickname,\n"
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
 "See Wiki Manual > Reports > part 2"
 msgstr ""
+"f=etunimet, l=sukunimi, n=lempinimi,\n"
+"c=kutsumanimi, t=titteli, s=loppuliite, g=perheen kansanomainen lempinimi\n"
+"Katso Wiki-käyttöohje > Raportit > Osa 2"
 
 #: DescendantsLines/DescendantsLines.py:1662
 #: DescendantsLines/DescendantsLines.py:1681
@@ -3175,6 +3195,9 @@ msgid ""
 "See Wiki Manual > Reports > part 2\n"
 "formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
 msgstr ""
+"[tapahtuma, lista]$e(muotoilu)\n"
+"Katso Wiki-käyttöopas > Raportit > osa 2\n"
+"muotoilu: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
 
 #: DescendantsLines/DescendantsLines.py:1688
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
@@ -3187,36 +3210,45 @@ msgid ""
 "i.e.\n"
 "United States of America/USA"
 msgstr ""
+"ts.\n"
+"Yhdysvallat/USA"
 
 #: DescendantsLines/DescendantsLines.py:1697
 msgid "Spouse and Family"
 msgstr "Puoliso ja perhe"
 
 #: DescendantsLines/DescendantsLines.py:1699
+#, fuzzy
 msgid "Vertical edge descendant to spouse-bar"
-msgstr ""
+msgstr "Pystyviiva jälkeläisen ja puolison välillä"
 
 #: DescendantsLines/DescendantsLines.py:1700
+#, fuzzy
 msgid "The length of the vertical edge from descendant to spouse-bar."
-msgstr ""
+msgstr "Jälkeläisen ja puolison välisen pystyviivan pituus."
 
 #: DescendantsLines/DescendantsLines.py:1704
+#, fuzzy
 msgid "Vertical edge spouse-bar to spouse"
-msgstr ""
+msgstr "Pystyviiva puolisoiden välillä"
 
 #: DescendantsLines/DescendantsLines.py:1705
+#, fuzzy
 msgid "The length of the vertical edge from spouse-bar to spouse."
-msgstr ""
+msgstr "Pystyvaavan pituus puolisopalkista puolisoon."
 
 #: DescendantsLines/DescendantsLines.py:1709
+#, fuzzy
 msgid "Vertical space spouse-bar to other spouse"
-msgstr ""
+msgstr "Pystysuora väli toiseen puolisoon"
 
 #: DescendantsLines/DescendantsLines.py:1710
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
 msgstr ""
+"Puolison ja toisen puolison väliin lisättävä väli, jos eri perheillä on sama "
+"jälkeläinen."
 
 #: DescendantsLines/DescendantsLines.py:1715
 msgid "Horizontal space descendant to spouse"
@@ -3224,21 +3256,23 @@ msgstr "Puolison ja jälkeläisen välinen vaakasuora tila"
 
 #: DescendantsLines/DescendantsLines.py:1716
 msgid "The space to add between the descendant and the spouse."
-msgstr ""
+msgstr "Jälkeläisen ja puolison väliin lisättävä tila."
 
 #: DescendantsLines/DescendantsLines.py:1721
 msgid "Horizonal space family to family"
-msgstr ""
+msgstr "Vaakasuora tila perheiden välillä"
 
 #: DescendantsLines/DescendantsLines.py:1722
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
 msgstr ""
+"Väli, joka lisätään perheiden laitimmaisten jälkeläisten (tai puolisojen) "
+"välille."
 
 #: DescendantsLines/DescendantsLines.py:1727
 msgid "Horizontal distance spouse to family edge"
-msgstr ""
+msgstr "Vaakasuora etäisyys puolisosta perheen reunaan"
 
 #: DescendantsLines/DescendantsLines.py:1728
 msgid ""
@@ -3246,6 +3280,8 @@ msgid ""
 "bigger the value, more the center is moved to the left towards the "
 "descendant."
 msgstr ""
+"Jos tämä arvo on 0, lasten palkki on keskitetty puolison alle. Suuremmalla "
+"arvolla keskiosaa siirretään vasemmalle jälkeläistä kohti."
 
 #: DescendantsLines/DescendantsLines.py:1735
 msgid "OL_PAD"
@@ -3256,36 +3292,38 @@ msgid "The number of ??? pad"
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1739
+#, fuzzy
 msgid "Vertical edge spouse-bar to child-bar"
-msgstr ""
+msgstr "Pystysuora reuna puolison ja lapsen välisestä palkista"
 
 #: DescendantsLines/DescendantsLines.py:1740
 msgid "The length of the vertical edge from spouse-bar to child-bar."
-msgstr ""
+msgstr "Puolisosta lapseen kulkevan pystysuoran viivan pituus."
 
 #: DescendantsLines/DescendantsLines.py:1746
 msgid "Children distance"
-msgstr ""
+msgstr "Lasten etäisyys"
 
 #: DescendantsLines/DescendantsLines.py:1747
 msgid "The horizontal distance between two children of the same family."
-msgstr ""
+msgstr "Saman perheen lasten välinen vaakaetäisyys."
 
 #: DescendantsLines/DescendantsLines.py:1751
 msgid "Vertical edge child to child-bar"
-msgstr ""
+msgstr "Vaakaviiva lapsesta lapsipalkkiin"
 
 #: DescendantsLines/DescendantsLines.py:1753
 msgid "The length of the vertical edge from child to child-bar."
-msgstr ""
+msgstr "Pystyviivan pituus lapsesta lapsipalkkiin."
 
 #: DescendantsLines/DescendantsLines.py:1756
 msgid "MIN_C_WIDTH"
-msgstr ""
+msgstr "MIN_C_WIDTH"
 
 #: DescendantsLines/DescendantsLines.py:1757
+#, fuzzy
 msgid "The number of ??? min width"
-msgstr ""
+msgstr "Määrän ??? minimi leveys"
 
 #: DescendantsLines/DescendantsLines.py:1762
 msgid "Space around text"
@@ -3293,66 +3331,68 @@ msgstr "Tila tekstin ympärillä"
 
 #: DescendantsLines/DescendantsLines.py:1763
 msgid "The space to add around the text block of a person."
-msgstr ""
+msgstr "Henkilön tekstilohkoa ympäröivä tila."
 
 #: DescendantsLines/DescendantsLines.py:1767
 msgid "Space between lines of text"
-msgstr ""
+msgstr "Rivien väli"
 
 #: DescendantsLines/DescendantsLines.py:1768
 msgid "The space to add between a line and the next in a person text block."
-msgstr ""
+msgstr "Henkilötekstilohkossa rivien väliin lisättävä tila."
 
 #: DescendantsLines/DescendantsLines.py:1773
 msgid "Header and Footer"
-msgstr ""
+msgstr "Ylätunniste ja alatunniste"
 
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"
-msgstr ""
+msgstr "Teksti asiakirjan ylätunnisteessa"
 
 #: DescendantsLines/DescendantsLines.py:1781
 msgid "The text that will be written in the footer of the document"
-msgstr ""
+msgstr "Teksti asiakirjan alatunnisteessa"
 
 #: DescendantsLines/DescendantsLines.py:1785
 msgid "Title and footer coefficient"
-msgstr ""
+msgstr "Ylä- ja alatunnisteen kerroin"
 
 #: DescendantsLines/DescendantsLines.py:1786
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
-msgstr ""
+msgstr "Otsikon ja alatunnisteen tekstin kokokerroin"
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"
-msgstr ""
+msgstr "Suojaa yksityisiksi merkityt ihmiset, kuvat ja tapahtumat"
 
 #: DescendantsLines/DescendantsLines.py:1795
 msgid "The Privacy setting of only these types of Gramps objects are checked"
-msgstr ""
+msgstr "Valitaan vain näiden Gramps-kohteidetyyppien yksityisyysasetukset."
 
 #: DescendantsLines/DescendantsLines.py:1799
 msgid "Privacy text"
-msgstr ""
+msgstr "Yksityisyys-teksti"
 
 #: DescendantsLines/DescendantsLines.py:1800
 msgid "Text to display in block, when a Person is marked private"
-msgstr ""
+msgstr "Lohkossa näkyvä teksti, kun henkilö on merkitty yksityiseksi"
 
 #: DescendantsLines/DescendantsLines.py:1815
 msgid "The default style."
-msgstr ""
+msgstr "Oletustyyli"
 
 #: DetDescendantReport-images/detdescendantreport.gpr.py:4
 msgid "Detailed Descendant Report With All Images"
-msgstr ""
+msgstr "Yksityiskohtainen jälkeläisraportti kuvineen"
 
 #: DetDescendantReport-images/detdescendantreport.gpr.py:6
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
 msgstr ""
+"Tuottaa yksityiskohtaisen jälkeläisraportin, joka sisältää kaikki kuvat ja "
+"valinnaisen tehtävälistan."
 
 #: DetDescendantReport-images/detdescendantreporti.py:471
 #, python-format
@@ -3375,7 +3415,7 @@ msgstr "Sisällytetäänkö tehtävämuistiinpanoja."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1351
 msgid "The style used for image labels."
-msgstr ""
+msgstr "Kuvaotsikoissa käytetty tyyli."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1364
 msgid "A style used for image captions."
@@ -4559,8 +4599,6 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:213
-#, fuzzy
-#| msgid "Clear tags"
 msgid "Clear GPS"
 msgstr "Tyhjennä GPS"
 
@@ -15547,8 +15585,6 @@ msgid "_Import"
 msgstr "_Tuo"
 
 #: ImportGramplet/ImportGramplet.py:218
-#, fuzzy
-#| msgid "Imported"
 msgid "Import done"
 msgstr "Tuotu"
 
@@ -20234,17 +20270,13 @@ msgid "Other:"
 msgstr ""
 
 #: SourceIndex/birth.glade:351
-#, fuzzy
-#| msgid "Web site title"
 msgid "Repository title"
-msgstr "Nettisivuston otsikko"
+msgstr "Arkiston nimi"
 
 #: SourceIndex/birth.glade:388 SourceIndex/census.glade:973
 #: SourceIndex/death.glade:589 SourceIndex/marriage.glade:234
-#, fuzzy
-#| msgid "<b>Tags:</b>"
 msgid "<b>Image</b>"
-msgstr "<b>Tagit:</b>"
+msgstr "<b>Kuva</b>"
 
 #: SourceIndex/birth.glade:406
 msgid "<b><i>Repository</i></b>"
@@ -20332,12 +20364,12 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:1568
-#, fuzzy
-#| msgid "Replace"
 msgid ""
 "Death\n"
 "place:"
-msgstr "Korvaa"
+msgstr ""
+"Kuolin-\n"
+"paikka:"
 
 #: SourceIndex/birth.glade:1588
 msgid ""
@@ -20346,9 +20378,8 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
-#, fuzzy
 msgid "Origine:"
-msgstr "Alkuperäinen aika"
+msgstr "Alkuperä:"
 
 #: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
@@ -20363,10 +20394,8 @@ msgid "census"
 msgstr ""
 
 #: SourceIndex/census.glade:160
-#, fuzzy
-#| msgid "<b>%s:</b>"
 msgid "<b>Census</b>"
-msgstr "<b>%s:</b>"
+msgstr "<b>Väestönlaskenta</b>"
 
 #: SourceIndex/census.glade:176 SourceIndex/death.glade:607
 #: SourceIndex/marriage.glade:185
@@ -20378,33 +20407,24 @@ msgstr ""
 #: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
 #: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
 #: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-#, fuzzy
-#| msgid "Without name"
 msgid "First name:"
-msgstr "Ilman nimeä"
+msgstr "Etunimi:"
 
 #: SourceIndex/census.glade:319 SourceIndex/death.glade:1003
-#, fuzzy
-#| msgid "Birthdays"
 msgid "Birth date:"
-msgstr "Syntymäpäivät"
+msgstr "Syntymäpäivä:"
 
 #: SourceIndex/census.glade:364
-#, fuzzy
 msgid "Death date:"
-msgstr "kuolinpäivä"
+msgstr "Kuolinpäivä:"
 
 #: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
-#, fuzzy
-#| msgid "Show places"
 msgid "Birth place:"
-msgstr "Näytä paikat"
+msgstr "Syntymäpaikka:"
 
 #: SourceIndex/census.glade:414
-#, fuzzy
-#| msgid "Next Place"
 msgid "Death place:"
-msgstr "Seuraava paikka"
+msgstr "Kuolinpaikka:"
 
 #: SourceIndex/census.glade:447
 msgid "Family status:"
@@ -20419,9 +20439,8 @@ msgstr ""
 #: SourceIndex/marriage.glade:846 SourceIndex/marriage.glade:865
 #: SourceIndex/marriage.glade:884 SourceIndex/marriage.glade:1526
 #: SourceIndex/marriage.glade:1654 SourceIndex/witness.glade:124
-#, fuzzy
 msgid "Origin:"
-msgstr "Alkuperäinen aika"
+msgstr "Alkuperä:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
 #: markdown_place_history_formatter.py:59
@@ -20429,10 +20448,8 @@ msgid "Note:"
 msgstr ""
 
 #: SourceIndex/census.glade:712 SourceIndex/death.glade:621
-#, fuzzy
-#| msgid "<b>Tags:</b>"
 msgid "<b>Data person</b>"
-msgstr "<b>Tagit:</b>"
+msgstr "<b>Henkilötiedot</b>"
 
 #: SourceIndex/census.glade:904 SourceIndex/death.glade:217
 #: SourceIndex/marriage.glade:1296
@@ -20452,10 +20469,8 @@ msgid "<b>Death act</b>"
 msgstr ""
 
 #: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
-#, fuzzy
-#| msgid "<b>%s:</b>"
 msgid "<b>Witness:</b>"
-msgstr "<b>%s:</b>"
+msgstr "<b>Todistajat:</b>"
 
 #: SourceIndex/death.glade:1131
 msgid "Marriage date:"
@@ -20474,10 +20489,8 @@ msgid "<b>Data father</b>"
 msgstr ""
 
 #: SourceIndex/death.glade:1225
-#, fuzzy
-#| msgid "<b>%s:</b>"
 msgid "<b>Spouse</b> "
-msgstr "<b>%s:</b>"
+msgstr "<b>Puoliso</b> "
 
 #: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
 #: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
@@ -20486,7 +20499,7 @@ msgstr "<b>%s:</b>"
 #, fuzzy
 #| msgid "Now alive"
 msgid "alive"
-msgstr "Elossa"
+msgstr "elossa"
 
 #: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
 msgid ""
@@ -20495,20 +20508,16 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/index.glade:7
-#, fuzzy
-#| msgid "Indexes"
 msgid "index"
-msgstr "Hakemistot"
+msgstr "hakemisto"
 
 #: SourceIndex/index.glade:50
 msgid "_File"
 msgstr ""
 
 #: SourceIndex/index.glade:79
-#, fuzzy
-#| msgid "Import file"
 msgid "Import CSV"
-msgstr "Tuo tiedosto"
+msgstr "Tuo CSV-tiedosto"
 
 #: SourceIndex/index.glade:209
 msgid "Display all"
@@ -20559,10 +20568,8 @@ msgid "New birth or baptism"
 msgstr ""
 
 #: SourceIndex/index.glade:341
-#, fuzzy
-#| msgid "Add birth event"
 msgid "add birth act"
-msgstr "Lisää syntymätapahtuma"
+msgstr "näytä syntymä"
 
 #: SourceIndex/index.glade:373
 msgid "New marriage"
@@ -20577,10 +20584,8 @@ msgid "New death or burial"
 msgstr ""
 
 #: SourceIndex/index.glade:463
-#, fuzzy
-#| msgid "Add death event"
 msgid "add death act"
-msgstr "Lisää kuolintapahtuma"
+msgstr "näytä kuolema"
 
 #: SourceIndex/index.glade:495
 msgid "New census"
@@ -20591,21 +20596,16 @@ msgid "add census"
 msgstr ""
 
 #: SourceIndex/index.glade:556
-#, fuzzy
-#| msgid "Select tags for person"
 msgid "Select a birth source"
-msgstr "Valitse tagi henkilölle"
+msgstr "Valitse syntymän lähde"
 
 #: SourceIndex/index.glade:617
-#, fuzzy
 msgid "Select a marriage source"
-msgstr "Valitse mediatiedosto"
+msgstr "Valitse avioliiton lähde"
 
 #: SourceIndex/index.glade:678
-#, fuzzy
-#| msgid "Select a dot file name"
 msgid "Select a death source"
-msgstr "Valitse pistetiedoston nimi"
+msgstr "Valitse kuoleman lähde"
 
 #: SourceIndex/index.glade:739
 msgid "Select a census source"
@@ -20616,15 +20616,12 @@ msgid "Select a repository storing a source"
 msgstr ""
 
 #: SourceIndex/index.glade:829
-#, fuzzy
 msgid "repositories"
-msgstr "Arkistot"
+msgstr "arkistot"
 
 #: SourceIndex/index.glade:869
-#, fuzzy
-#| msgid "Add Selected Events"
 msgid "Selected view"
-msgstr "Lisää valitut tapahtumat"
+msgstr "Valittu näkymä"
 
 #: SourceIndex/index.glade:889
 msgid ""
@@ -20641,20 +20638,16 @@ msgid "must install either ElementTree or lxml"
 msgstr ""
 
 #: SourceIndex/marriage.glade:49
-#, fuzzy
-#| msgid "Marriage Connector Line"
 msgid "Marriage act:"
-msgstr "Avioliiton yhdysviiva"
+msgstr "Vihkiminen:"
 
 #: SourceIndex/marriage.glade:81
 msgid "m. date:"
 msgstr ""
 
 #: SourceIndex/marriage.glade:97
-#, fuzzy
-#| msgid "Replace"
 msgid "m. place:"
-msgstr "Korvaa"
+msgstr "vihkipaikka:"
 
 #: SourceIndex/marriage.glade:113
 msgid "d.contract:"
@@ -20717,10 +20710,8 @@ msgid "witness"
 msgstr ""
 
 #: SourceIndex/witness.glade:60
-#, fuzzy
-#| msgid "<b>%s:</b>"
 msgid "<b>Witness</b>"
-msgstr "<b>%s:</b>"
+msgstr "<b>Todistajat</b>"
 
 #: SourceReferences/SourceReferences.gpr.py:33
 msgid "Gramplet showing the references for a source"
@@ -20894,16 +20885,12 @@ msgstr "SQLite vienti"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:11
-#, fuzzy
-#| msgid "Surnames Index"
 msgid "Surname Mapping"
-msgstr "Sukunimihakemisto"
+msgstr "Sukunimen antaminen"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:4
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for editing the grouping of surnames"
-msgstr "Gramplet henkilöiden merkintään valokuvissa"
+msgstr "Gramplet sukunimiryhmittelyn muokkaamiseen"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:67
 msgid "Add Mapping"
@@ -22148,20 +22135,16 @@ msgid ""
 msgstr ""
 
 #: WebSearch.py:468
-#, fuzzy
-#| msgid "Contents of the page"
 msgid "Save Coordinates to the Place"
-msgstr "Sivun sisältö"
+msgstr "Tallenna paikan koordinaatit"
 
 #: WebSearch.py:609
 msgid "AI provider is disabled"
 msgstr ""
 
 #: WebSearch.py:613
-#, fuzzy
-#| msgid "AI Provider"
 msgid "No AI API key provided"
-msgstr "AI Provider"
+msgstr "Yhtään AI API :n avainta ei ole annettu"
 
 #: WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
@@ -22302,10 +22285,9 @@ msgid "Select filter to restrict list"
 msgstr "Valitse suodatin luettelon rajaamiseksi"
 
 #: activity_row_generator.py:110
-#, fuzzy, python-format
-#| msgid "Birthdays"
+#, python-format
 msgid "Visited: %s"
-msgstr "Syntymäpäivät"
+msgstr "Katsottu: %s"
 
 #: activity_row_generator.py:114 activity_row_generator.py:129
 #, python-format
@@ -22318,38 +22300,34 @@ msgid "Attribute: %s"
 msgstr ""
 
 #: activity_row_generator.py:118
-#, fuzzy, python-format
-#| msgid "Key: %s"
+#, python-format
 msgid "Value: %s"
-msgstr "Avain: %s"
+msgstr "Arvo: %s"
 
 #: activity_row_generator.py:123
-#, fuzzy, python-format
-#| msgid "Select a dot file name"
+#, python-format
 msgid "Loaded from file: %s"
-msgstr "Valitse pistetiedoston nimi"
+msgstr "Ladattu tiedostosta: %s"
 
 #: activity_row_generator.py:126
-#, fuzzy, python-format
-#| msgid "found: %s"
+#, python-format
 msgid "Domain: %s"
-msgstr "löytyi: %s"
+msgstr "Domain: %s"
 
 #: activity_row_generator.py:131
-#, fuzzy, python-format
+#, python-format
 msgid "Object: %s"
-msgstr "kuolinpäivä"
+msgstr "Kohde: %s"
 
 #: activity_row_generator.py:135
 #, fuzzy, python-format
 msgid "Pattern: %s"
-msgstr "kuolinpäivä"
+msgstr "Pattern: %s"
 
 #: activity_row_generator.py:138
-#, fuzzy, python-format
-#| msgid "The Gramps ID.."
+#, python-format
 msgid "Object Gramps ID: %s"
-msgstr "Gramps ID.."
+msgstr "Kohteen Gramps ID: %s"
 
 #: activity_row_generator.py:142
 #, python-format
@@ -22365,16 +22343,12 @@ msgid "Link saved to Note"
 msgstr ""
 
 #: activity_row_generator.py:154
-#, fuzzy
-#| msgid "Add link to attribute"
 msgid "Link saved to Attribute"
-msgstr "Lisää linkki ominaisuuteen"
+msgstr "Linkki tallennettu ominaisuutena"
 
 #: activity_row_generator.py:155
-#, fuzzy
-#| msgid "Place title"
 msgid "Place history loaded"
-msgstr "Paikan nimi"
+msgstr "Paikkahistoria ladattu"
 
 #: activity_row_generator.py:156
 msgid "Domain skipped"
@@ -22393,10 +22367,8 @@ msgid "Attribute updated"
 msgstr ""
 
 #: activity_row_generator.py:160
-#, fuzzy
-#| msgid "Lines type"
 msgid "Note updated"
-msgstr "Viivan tyyppi"
+msgstr "Lisätieto päivitetty"
 
 #: constants.py:390
 msgid "Column - Icons"
@@ -22614,10 +22586,8 @@ msgid "🧩 WebSearch Gramplet version: `%s`"
 msgstr ""
 
 #: internet_links_loader.py:70 internet_links_loader.py:71
-#, fuzzy
-#| msgid "Without title"
 msgid "No title"
-msgstr "Ilman nimikettä"
+msgstr "Ei nimeä"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
