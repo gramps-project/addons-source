@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-10 08:08-0700\n"
-"PO-Revision-Date: 2025-06-07 22:06+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -11301,10 +11301,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:670 Form/form_us.xml.h:755 Form/form_us.xml.h:795
 #: Form/form_us.xml.h:838 Form/form_us.xml.h:1069 Form/form_us.xml.h:2594
-#, fuzzy
-#| msgid "Export addresses"
 msgid "Street Address"
-msgstr "Exportovať adresy"
+msgstr "Adresa ulice"
 
 #: Form/form_us.xml.h:673 Form/form_us.xml.h:1604
 #, fuzzy
@@ -14760,10 +14758,8 @@ msgid "Type of surname:"
 msgstr ""
 
 #: GedcomExtensions/GedcomExtensions.py:261
-#, fuzzy
-#| msgid "Export notes"
 msgid "Export failed"
-msgstr "Exportovať poznámky"
+msgstr "Exportovanie sa nepodarilo"
 
 #: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
 #: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
@@ -15097,10 +15093,8 @@ msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:268
-#, fuzzy
-#| msgid "Exporting family tree data ..."
 msgid "Fetching remote data..."
-msgstr "Exportujú sa data rodokmeňu ..."
+msgstr "Získavanie vzdialených údajov..."
 
 #: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
@@ -15139,10 +15133,8 @@ msgid "Failed importing downloaded XML file."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:457
-#, fuzzy
-#| msgid "Exporting family tree data ..."
 msgid "Comparing local and remote data..."
-msgstr "Exportujú sa data rodokmeňu ..."
+msgstr "Porovnávanie miestnych a vzdialených údajov..."
 
 #: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
@@ -15206,6 +15198,18 @@ msgid ""
 "If you instead want to merge two significantly different trees with the "
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
+"Tento nástroj umožňuje synchronizovať aktuálne otvorený rodokmeň so "
+"vzdialeným rodokmeňom, ktorý poskytuje Gramps Web.\n"
+"\n"
+"Nástroj predpokladá, že oba stromy sú vzájomne odvodené, t. j. jeden z nich "
+"bol vytvorený z exportu druhého pomocou Gramps XML (nie GEDCOM!).\n"
+"\n"
+"Po úspešnej synchronizácii budú oba stromy identické. Zmeny sa budú šíriť na "
+"základe časových značiek. Pred vykonaním akýchkoľvek zmien v miestnom alebo "
+"vzdialenom strome budete vyzvaní na potvrdenie.\n"
+"\n"
+"Ak chcete namiesto toho zlúčiť dva výrazne odlišné stromy s možnosťou "
+"vykonať ručné úpravy, použite namiesto toho nástroj Import Merge Tool."
 
 #: GrampsWebSync/grampswebsync.py:690
 msgid "Server URL: "
@@ -15664,10 +15668,8 @@ msgid "No Events for this person"
 msgstr "Žiaden vzťah k aktívnej osobe"
 
 #: GraphView/graphview.py:3896
-#, fuzzy
-#| msgid "Used for person"
 msgid "Select tags for person"
-msgstr "Použité pre osobu"
+msgstr "Vyberte štítky pre osobu"
 
 #: GraphView/graphview.py:3907
 #, fuzzy
@@ -15965,10 +15967,8 @@ msgid "Background color items outside lifespan"
 msgstr ""
 
 #: HistContext/HistContext.py:149
-#, fuzzy
-#| msgid "Select A File"
 msgid "Select from files"
-msgstr "Zvoliť súbor"
+msgstr "Vybrať zo súborov"
 
 #: HistContext/HistContext.py:287
 msgid "Invalid date "
@@ -16164,10 +16164,8 @@ msgid "_Import"
 msgstr "Import SQLite"
 
 #: ImportGramplet/ImportGramplet.py:218
-#, fuzzy
-#| msgid "Export notes"
 msgid "Import done"
-msgstr "Exportovať poznámky"
+msgstr "Importovanie dokončené"
 
 #: ImportGramplet/ImportGramplet.py:228
 msgid "Importing Text..."
@@ -16427,7 +16425,7 @@ msgstr "Export JSON"
 
 #: JSON/JSON.gpr.py:5
 msgid "This is a JSON export"
-msgstr ""
+msgstr "Toto je export vo formáte JSON"
 
 #: JSON/JSON.gpr.py:12
 msgid "JSON options"
@@ -16470,7 +16468,7 @@ msgstr "Žiadne zmeny"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
-msgstr ""
+msgstr "Musíte vybrať aspoň jeden typ záznamu."
 
 #: LastChange/LastChangeReport.py:180
 msgid "People Changed"
@@ -16535,10 +16533,8 @@ msgid "Citations Changed"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:344
-#, fuzzy
-#| msgid "Select None"
 msgid "Select From"
-msgstr "Vybrať žiadne"
+msgstr "Vybrať z"
 
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
@@ -17080,10 +17076,8 @@ msgid "Open Life Line Chart help"
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:831
-#, fuzzy
-#| msgid "Export notes"
 msgid "Export View as SVG"
-msgstr "Exportovať poznámky"
+msgstr "Exportovať zobrazenie ako SVG"
 
 #: LifeLineChartView/lifelinechartview.py:946
 #, fuzzy
@@ -17243,7 +17237,7 @@ msgstr "TR-nadpis"
 
 #: MediaReport/media_report.py:430
 msgid "Select a media file for this report"
-msgstr ""
+msgstr "Vyberte mediálny súbor pre túto zostavu"
 
 #: MediaReport/media_report.py:433
 #, fuzzy
@@ -17252,10 +17246,8 @@ msgid "Custom note"
 msgstr "Vlastné stránky"
 
 #: MediaReport/media_report.py:434
-#, fuzzy
-#| msgid "Select a dot file name"
 msgid "Select a note for this report"
-msgstr "Vyberte názov dot súboru"
+msgstr "Vyberte poznámku pre túto zostavu"
 
 #: MediaReport/media_report.py:437
 #, fuzzy
@@ -17586,10 +17578,8 @@ msgid "Default (include)"
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:948
-#, fuzzy
-#| msgid "Select A File"
 msgid "Select URL style."
-msgstr "Zvoliť súbor"
+msgstr "Vyberte štýl URL."
 
 #: NetworkChart/NetworkChart.py:951
 msgid "URL Prefix,Suffix"
@@ -18236,10 +18226,8 @@ msgid "Gramplet showing the participants in an event"
 msgstr ""
 
 #: Participants/Participants.py:75
-#, fuzzy
-#| msgid "Double-click on a row to navigate to the matched person."
 msgid "Double-click on a row to edit the selected participant."
-msgstr "Dvojklikom myši na riadok sa môžete presunúť na zvolenú osobu."
+msgstr "Ak chcete upraviť vybraného účastníka, dvakrát kliknite na riadok."
 
 #: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
@@ -18470,10 +18458,8 @@ msgid "Clear Reference"
 msgstr "Vymazať odkaz"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:293
-#, fuzzy
-#| msgid "Toggle Selection"
 msgid "Remove Selection"
-msgstr "Prepnúť výber"
+msgstr "Odstrániť výber"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:294
 msgid "Edit referenced Person"
@@ -19531,10 +19517,8 @@ msgid "New text:"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:209
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Clear selections"
-msgstr "Výber stránky"
+msgstr "Vyčistiť výbery"
 
 #: PlaceUpdate/PlaceUpdate.py:213
 msgid "Apply to selected places"
@@ -19828,6 +19812,14 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
+"<i><a href="
+"\"https://gramps-project.org/wiki/index.php?title=How_to_make_a_backup\""
+">Zálohovanie do Gramps XML</a> V posledných verziách programu Gramps nájdete "
+"v ponuke Rodokmeň možnosť \"Vytvoriť zálohu...\", v opačnom prípade použite "
+"v tej istej ponuke možnosť \"Exportovať...\", ale zrušte označenie možnosti "
+"ochrany osobných údajov v Asistentovi exportéra, aby ste exportovali všetky "
+"údaje.</i>\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
 msgid ""
@@ -20634,10 +20626,8 @@ msgid "Page:"
 msgstr "Strana:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:419
-#, fuzzy
-#| msgid "Select A File"
 msgid "Selection with a filter"
-msgstr "Zvoliť súbor"
+msgstr "Výber pomocou filtra"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
@@ -20829,10 +20819,8 @@ msgid "Menu to set search objects"
 msgstr "Osoba, ktorú hľadáte"
 
 #: SearchGramplet/SearchGramplet.py:140
-#, fuzzy
-#| msgid "Used for person"
 msgid "Select objects to search"
-msgstr "Použité pre osobu"
+msgstr "Vyberte objekty na vyhľadávanie"
 
 #: SearchGramplet/SearchGramplet.py:154
 #, fuzzy
@@ -20994,10 +20982,8 @@ msgid "If checked, all objects without a date will also be set private."
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "Zvoliť filter pre zúženie výberu osôb"
+msgstr "Vyberte filter na obmedzenie udalostí"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
 #, fuzzy
@@ -21090,7 +21076,7 @@ msgstr ""
 
 #: SourceIndex/birth.glade:214
 msgid "select the gender/sex"
-msgstr ""
+msgstr "vybrať pohlavie"
 
 #: SourceIndex/birth.glade:247
 msgid "The names of the main person written into the source"
@@ -21465,19 +21451,15 @@ msgstr ""
 
 #: SourceIndex/index.glade:556
 msgid "Select a birth source"
-msgstr ""
+msgstr "Vyberte zdroj narodenia"
 
 #: SourceIndex/index.glade:617
-#, fuzzy
-#| msgid "Select an image to begin..."
 msgid "Select a marriage source"
-msgstr "Zvoliť obrázok kde začať ..."
+msgstr "Vyberte zdroj pre manželstvo"
 
 #: SourceIndex/index.glade:678
-#, fuzzy
-#| msgid "Select a dot file name"
 msgid "Select a death source"
-msgstr "Vyberte názov dot súboru"
+msgstr "Vyberte zdroj pre úmrtie"
 
 #: SourceIndex/index.glade:739
 msgid "Select a census source"
@@ -21494,10 +21476,8 @@ msgid "repositories"
 msgstr "Index prameňov"
 
 #: SourceIndex/index.glade:869
-#, fuzzy
-#| msgid "Select A File"
 msgid "Selected view"
-msgstr "Zvoliť súbor"
+msgstr "Vybrané zobrazenie"
 
 #: SourceIndex/index.glade:889
 msgid ""
