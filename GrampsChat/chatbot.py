@@ -144,6 +144,7 @@ class Chatbot:
     ) -> Any:
         response = litellm.completion(
             model=GRAMPS_AI_MODEL_NAME,  # self.model,
+            base_url=GRAMPS_AI_MODEL_URL,
             messages=all_messages,
             seed=seed,
             tools=tool_definitions,
