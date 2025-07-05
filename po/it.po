@@ -66,8 +66,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-27 12:04+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -103,10 +103,8 @@ msgid "AncestorFill"
 msgstr ""
 
 #: AncestorFill/AncestorFill.gpr.py:10
-#, fuzzy
-#| msgid "The center family for the tree"
 msgid "Report on the filling of the tree"
-msgstr "La famiglia principale dell'albero"
+msgstr "Resoconto sul riempimento dell'albero"
 
 #: AncestorFill/AncestorFill.py:189
 #, python-format
@@ -154,8 +152,8 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Nota: Questo report conta solo gli antenati che hanno una relazione genitore-"
-"figlio alla nascita."
+"Nota: Questo resoconto conta solo gli antenati che hanno una relazione "
+"genitore-figlio alla nascita."
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
@@ -2684,7 +2682,7 @@ msgstr "sp. vedi %(reference)s : %(spouse)s"
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 msgstr ""
-"vedi resoconto: %(report)s, rif: %(reference)s : %(person)s & %(spouse)s"
+"vedi resoconto: %(report)s, rif: %(reference)s : %(person)s e %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:374
 msgid "Descendants Report"
@@ -2753,7 +2751,7 @@ msgstr "Generazione di %s riferimenti del resoconto..."
 #: DescendantBooks/DetailedDescendantBookReport.py:453
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
-msgstr "%(report_count)s. resoconto discendenza di %(person_name)s"
+msgstr "%(report_count)s. Resoconto discendenza di %(person_name)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:519
 #, fuzzy
@@ -3186,7 +3184,7 @@ msgstr "File di destinazione:"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
 msgid "The destination file name for the report."
-msgstr "Il nome di file di destinazione per il report."
+msgstr "Il nome di file di destinazione per il resoconto."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
 msgid "Open generated HTML file with default browser."
