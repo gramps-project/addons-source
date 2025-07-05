@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-25 09:02+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-06-28 18:50+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -165,11 +165,11 @@ msgstr "Tarkastaa ihmisellä olevat liitokset."
 
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
-msgstr "Liitosten tilatyökalu"
+msgstr "Suhteiden tilatyökalu"
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
-msgstr "Liitoksen tyyppi"
+msgstr "Yhteyden tyyppi"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
@@ -1625,7 +1625,7 @@ msgstr " Kartta henkilöstä "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
-msgstr "Chr"
+msgstr ""
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
@@ -3588,7 +3588,7 @@ msgstr "Suojaa yksityisiksi merkityt ihmiset, kuvat ja tapahtumat"
 
 #: DescendantsLines/DescendantsLines.py:1795
 msgid "The Privacy setting of only these types of Gramps objects are checked"
-msgstr "Valitaan vain näiden Gramps-kohteidetyyppien yksityisyysasetukset."
+msgstr "Valitaan vain näiden Gramps-kohteidetyyppien yksityisyysasetukset"
 
 #: DescendantsLines/DescendantsLines.py:1799
 msgid "Privacy text"
@@ -3600,7 +3600,7 @@ msgstr "Lohkossa näkyvä teksti, kun henkilö on merkitty yksityiseksi"
 
 #: DescendantsLines/DescendantsLines.py:1815
 msgid "The default style."
-msgstr "Oletustyyli"
+msgstr "Oletustyyli."
 
 #: DetDescendantReport-images/detdescendantreport.gpr.py:4
 msgid "Detailed Descendant Report With All Images"
@@ -5998,38 +5998,46 @@ msgstr "X-kromosomaaliset esi-isät henkilölle <person>"
 msgid ""
 "Matches ancestors of <person> following a X-chromosomal inheritance pattern."
 msgstr ""
+"Löytää henkilön <person> esivanhemmat X-kromosomin periytymismallin "
+"mukaisesti."
 
 #: FilterRules2/xchromdescendants.gpr.py:25
 #: FilterRules2/xchromdescendants.py:48
 msgid "X-chromosomal descendants of <person>"
-msgstr ""
+msgstr "Henkilön <person> X-kromosomaaliset jälkeläiset"
 
 #: FilterRules2/xchromdescendants.gpr.py:27
 msgid ""
 "Matches descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
+"Löytää henkilön <person> jälkeläiset X-kromosomin periytymismallin "
+"mukaisesti."
 
 #: FilterRules2/xchromdescendants.py:50
 msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
+"Löytää kaikki henkiön <person> jälkeläiset X-kromosomin periytymismallin "
+"mukaisesti."
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
 msgid "Y-chromosomal inheritance of <person>"
-msgstr ""
+msgstr "Henkilön <person> Y-kromosomaalinen perinnöllisyys"
 
 #: FilterRules2/yinheritance.gpr.py:27 FilterRules2/yinheritance.py:46
 msgid ""
 "Matches recorded descendants of person following Y-chromosomal inheritance "
 "patterns."
 msgstr ""
+"Löytää henkilön tallennettuja jälkeläisiä Y-kromosomin periytymismallien "
+"mukaisesti."
 
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
 #: FilterRules2/yinheritanceoffiltermatch.py:46
 msgid "Y-chromosomal inheritance of <filter>"
-msgstr ""
+msgstr "Suodattimen <filter> Y-kromosomaalinen perinnöllisyys"
 
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:27
 #: FilterRules2/yinheritanceoffiltermatch.py:47
@@ -6037,6 +6045,8 @@ msgid ""
 "Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
 msgstr ""
+"Yhdistää suodatustuloksen tallennettuihin jälkeläisiin Y-kromosomien "
+"periytymismallien mukaisesti."
 
 #: FixCoords/fixcoords.gpr.py:31
 msgid "Fix Place Coordinates"
@@ -21886,7 +21896,7 @@ msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Path for generated files"
-msgstr "Kohdehakemisto uusille tiedostoille."
+msgstr "Kohdehakemisto uusille tiedostoille"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:868
 msgid "Default Age"
@@ -22504,7 +22514,7 @@ msgstr ""
 #: WebSearch.py:1926
 #, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "Lisätieto #%(id)s on onnistuneesti lisätty."
+msgstr "Lisätieto #%(id)s on onnistuneesti lisätty"
 
 #: WebSearch.py:1929
 msgid "Error creating note"
@@ -22615,11 +22625,11 @@ msgstr ""
 
 #: activity_row_generator.py:152
 msgid "Link visited"
-msgstr ""
+msgstr "Vierailtu linkki"
 
 #: activity_row_generator.py:153
 msgid "Link saved to Note"
-msgstr ""
+msgstr "Linkki tallennettu lisätietoihin"
 
 #: activity_row_generator.py:154
 msgid "Link saved to Attribute"
@@ -22631,19 +22641,19 @@ msgstr "Paikkahistoria ladattu"
 
 #: activity_row_generator.py:156
 msgid "Domain skipped"
-msgstr ""
+msgstr "Verkkotunnus ohitettu"
 
 #: activity_row_generator.py:157
 msgid "Link hidden for object"
-msgstr ""
+msgstr "Linkki piilotettu kohteelta"
 
 #: activity_row_generator.py:158
 msgid "Link hidden for all objects"
-msgstr ""
+msgstr "Linkki piilotettu kaikilta kohteilta"
 
 #: activity_row_generator.py:159
 msgid "Attribute updated"
-msgstr ""
+msgstr "Ominaisuus päivitetty"
 
 #: activity_row_generator.py:160
 msgid "Note updated"
@@ -22651,173 +22661,189 @@ msgstr "Lisätieto päivitetty"
 
 #: constants.py:390
 msgid "Column - Icons"
-msgstr ""
+msgstr "Sarake - Kuvakkeet"
 
 #: constants.py:391
 msgid "Column - Source Types (flags)"
-msgstr ""
+msgstr "Sarake - Lähdetyypit (liput)"
 
 #: constants.py:392
 msgid "Column - Keys"
-msgstr ""
+msgstr "Sarake - Avaimet"
 
 #: constants.py:393
 msgid "Column - Title"
-msgstr ""
+msgstr "Sarake - Otsikko"
 
 #: constants.py:394
 msgid "Column - Website Url"
-msgstr ""
+msgstr "Sarake - Verkkosivuston URL-osoite"
 
 #: constants.py:395
 msgid "Column - Comment"
-msgstr ""
+msgstr "Sarake - Kommentti"
 
 #: constants.py:424
 msgid "Icon - Visited URLs (checkmark)"
-msgstr ""
+msgstr "Kuvake - Vieraillut URL-osoitteet (valintamerkki)"
 
 #: constants.py:425
 msgid "Icon - Saved URLs (floppy disk)"
-msgstr ""
+msgstr "Kuvake - Tallennetut URL-osoitteet (levyke)"
 
 #: constants.py:426
 msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr ""
+msgstr "Kuvake - UID-attribuutteihin (UID-merkki) linkitetyt URL-osoitteet"
 
 #: constants.py:427
 msgid "Icon - URLs from regional CSV files (flag)"
-msgstr ""
+msgstr "Kuvake - URL-osoitteet alueen CSV-tiedostoista (lippu)"
 
 #: constants.py:428
 msgid "Icon - URLs from static CSV files (red pin)"
-msgstr ""
+msgstr "Kuvake - URL-osoitteet kiinteistä CSV-tiedostoista (punainen neula)"
 
 #: constants.py:429
 msgid "Icon - URLs from common CSV files (earth)"
-msgstr ""
+msgstr "Kuvake - URL-osoitteet yleisistä CSV-tiedostoista (maapallo)"
 
 #: constants.py:430
 msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr ""
+msgstr "Kuvake - URL-osoitteet CSV-tiedostojen kesken (sekoitusnuolet)"
 
 #: constants.py:431
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr ""
+"Kuvake - URL-osoitteet käyttäjän mukautetusta hakemistosta (laskentataulukon "
+"kuvake)"
 
 #: constants.py:432
 msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr ""
+msgstr "Kuvake – Ominaisuudet-välilehden URL-osoitteet ('A'-kuvake)"
 
 #: constants.py:433
 msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr ""
+msgstr "Kuvake – Internet-välilehden URL-osoitteet ('I'-kuvake)"
 
 #: constants.py:434
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr ""
+msgstr "Kuvake – Lisätiedot-välilehden URL-osoitteet ('N'-kuvake)"
 
 #: info_panel.py:108
 msgid "## 🧩 About WebSearch"
-msgstr ""
+msgstr "## 🧩 Tietoja WebSearchistä"
 
 #: info_panel.py:111
 msgid ""
 "WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
 "websites."
 msgstr ""
+"WebSearch on Grampsin Gramplet, joka auttaa sinua hakemaan sukututkimukseen "
+"liittyviä verkkosivustoja."
 
 #: info_panel.py:117
 msgid ""
 "It supports CSV-based link templates, AI-assisted site discovery, and direct "
 "integration with notes and attributes."
 msgstr ""
+"Se tukee CSV-pohjaisia linkkipohjia, tekoälyavusteista sivustojen etsintää "
+"ja suoraa integrointia muistiinpanoihin ja ominaisuuksiin."
 
 #: info_panel.py:125
 msgid "## ⚙️ System Information"
-msgstr ""
+msgstr "## ⚙️ Järjestelmätiedot"
 
 #: info_panel.py:128
 msgid "🔻 **Missing:** `qrcode`"
-msgstr ""
+msgstr "🔻 **Puuttuu:** `qrcode`"
 
 #: info_panel.py:130
 msgid "ℹ️ This Python library is not available in your system."
-msgstr ""
+msgstr "ℹ️ Tätä Python-kirjastoa ei ole saatavilla järjestelmässäsi."
 
 #: info_panel.py:133
 msgid "Without it, QR code generation will not work."
-msgstr ""
+msgstr "QR-koodien luonti ei toimi ilman sitä."
 
 #: info_panel.py:136
 msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr ""
+msgstr "💡 Yleensä asennetaan komennolla: `pip install qrcode[pil]`"
 
 #: info_panel.py:140 info_panel.py:162 info_panel.py:181
 msgid ""
 "*Note: Some operating systems or environments may require alternative "
 "installation methods.*"
 msgstr ""
+"*Huomaa: Joissakin käyttöjärjestelmissä tai ympäristössä on käytetävä "
+"vaihtoehtoisia asennustapoja.*"
 
 #: info_panel.py:147
 msgid "🔻 **Missing:** `openai`"
-msgstr ""
+msgstr "🔻 **Puuttuu:** `openai`"
 
 #: info_panel.py:149
 msgid "ℹ️ This library is required for accessing OpenAI-based features."
 msgstr ""
+"ℹ️ Tämä kirjasto on tarpeen OpenAI-pohjaisten ominaisuuksien käyttämiseksi."
 
 #: info_panel.py:153
 msgid ""
 "Without it, AI-generated site suggestions and place history will be disabled."
 msgstr ""
+"Ilman sitä ei tekoälyn luomat sivustoehdotukset ja paikkahistoria ole "
+"käytettävissä."
 
 #: info_panel.py:158
 msgid "💡 Usually installed with: `pip install openai`"
-msgstr ""
+msgstr "💡 Asennetaan yleensä komennolla: `pip install openai`"
 
 #: info_panel.py:169
 msgid "🔻 **Missing:** `requests`"
-msgstr ""
+msgstr "🔻 **Puuttuu:** `pyynnöt`"
 
 #: info_panel.py:171
 msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr ""
+msgstr "ℹ️ Tätä kirjastoa käytetään kommunikointiin web-rajapintojen kanssa."
 
 #: info_panel.py:174
 msgid "Without it, external data sources may not be accessible."
-msgstr ""
+msgstr "Ilman sitä ulkoiset tietolähteet eivät välttämättä ole käytettävissä."
 
 #: info_panel.py:177
 msgid "💡 Usually installed with: `pip install requests`"
-msgstr ""
+msgstr "💡 Tavallisesti asennetaan komennolla: `pip install requests`"
 
 #: info_panel.py:188
 msgid "## 📂 Data File Locations"
-msgstr ""
+msgstr "## 📂 Tiedostojen sijainnit"
 
 #: info_panel.py:191
 msgid ""
 "Below are the paths to system and user-defined data files used by WebSearch."
 msgstr ""
+"Alla on polut WebSearchin käyttämiin järjestelmän ja käyttäjän määrittämiin "
+"datatiedostoihin."
 
 #: info_panel.py:195
 msgid "#### CSV File Paths"
-msgstr ""
+msgstr "#### CSV-tiedostopolut"
 
 #: info_panel.py:197
 #, python-format
 msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
 msgstr ""
+"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetut CSV-tiedostot"
 
 #: info_panel.py:201
 #, python-format
 msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
 msgstr ""
+"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukautettuja CSV-"
+"tiedostoja varten"
 
 #: info_panel.py:205
 msgid "#### JSON File Paths"
-msgstr ""
+msgstr "#### JSON tiedostopolut"
 
 #: info_panel.py:208
 #, python-format
@@ -22825,6 +22851,8 @@ msgid ""
 "- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
 "file"
 msgstr ""
+"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetun "
+"attribute_mapping.json-tiedoston"
 
 #: info_panel.py:214
 #, python-format
@@ -22832,37 +22860,42 @@ msgid ""
 "- **User-defined path:** `{dir|%s}` – for custom user-defined "
 "attribute_mapping.json file"
 msgstr ""
+"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukauttamille "
+"attribute_mapping.json-tiedostolle"
 
 #: info_panel.py:221
 msgid "  💡 *Tip: click any path above to open it in your file manager.*"
 msgstr ""
+"  💡 *Vinkki: avaa tiedostonhallinnassa napsauttamalla valitsemaasi polkua "
+"yllä*"
 
 #: info_panel.py:224
 msgid "📖 View detailed usage in: "
-msgstr ""
+msgstr "📖 Katso yksityiskohtainen ohje: "
 
 #: info_panel.py:233
 msgid "## 💬 Support"
-msgstr ""
+msgstr "## 💬 Tuki"
 
 #: info_panel.py:234
 msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr ""
+msgstr "👤 Luonut ja ylläpitänyt Yurii Liubymyi"
 
 #: info_panel.py:237
 msgid ""
 "💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
 "forum:"
 msgstr ""
+"💬 Jos tarvitset apua tai palautetta, mainitse `@Urchello` Gramps-foorumilla:"
 
 #: info_panel.py:245
 msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr ""
+msgstr "✅ Virheilmoitukset ja ominaisuuspyynnöt ovat täysin **ilmaisia**."
 
 #: info_panel.py:255
 #, python-format
 msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr ""
+msgstr "🧩 WebSearch Gramplet versio: `%s`"
 
 #: internet_links_loader.py:70 internet_links_loader.py:71
 msgid "No title"
@@ -22870,19 +22903,19 @@ msgstr "Ei nimeä"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
-msgstr ""
+msgstr "Yleiskirjasto tietokannan ja gen.lib-tiedoston käyttämiseksi."
 
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
-msgstr ""
+msgstr "libaccess muokkaa nimeä"
 
 #: libaccess/libaccess.py:260
 msgid "libaccess edit person"
-msgstr ""
+msgstr "libaccess muokkaa henkilöä"
 
 #: libwebconnect/libwebconnect.gpr.py:11
 msgid "Library for web site collections"
-msgstr ""
+msgstr "Verkkosivustojen kokoelmakirjasto"
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
@@ -23307,7 +23340,7 @@ msgstr "Ei tietoja saatavilla."
 
 #: markdown_place_history_formatter.py:57
 msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr ""
+msgstr "HISTORIALLISET HALLINNOLLISET OSAT"
 
 #: markdown_place_history_formatter.py:58
 msgid "Foundation date:"
@@ -23319,11 +23352,11 @@ msgstr "Koordinaatit:"
 
 #: markdown_place_history_formatter.py:61
 msgid "Administrative history"
-msgstr ""
+msgstr "Hallinnollinen historia"
 
 #: markdown_place_history_formatter.py:62
 msgid "Data provided to AI:"
-msgstr ""
+msgstr "Tekoälylle toimitetut tiedot:"
 
 #: markdown_place_history_formatter.py:64
 msgid "Full hierarchy"
@@ -23335,7 +23368,7 @@ msgstr "Paikan tyyppi:"
 
 #: markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"
-msgstr ""
+msgstr "Viimeksi noudettu:"
 
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
@@ -23343,33 +23376,35 @@ msgstr "Linkki lisätietoihin (jäsennetty)"
 
 #: note_links_loader.py:124
 msgid "Note Link (internal)"
-msgstr ""
+msgstr "Linkki lisätietoihin (sisäinen)"
 
 #: note_links_loader.py:127
 msgid "Note Link (external)"
-msgstr ""
+msgstr "Linkki lisätietoihin (ulkoinen)"
 
 #: qr_window.py:88
 msgid "QR-code"
-msgstr ""
+msgstr "QR-koodi"
 
 #: qr_window.py:119 qr_window.py:122
 msgid "⚠ Missing dependency \"qrcode\""
-msgstr ""
+msgstr "⚠ Riippuvuus \"qrcode\" puuttuu"
 
 #: qr_window.py:133
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
 msgstr ""
+"⚠ Virhe QR-koodissa:\n"
+"Alkuperäinen virhe: “{}”"
 
 #: settings_ui_manager.py:112
 msgid "Middle Name Handling"
-msgstr ""
+msgstr "Toisen nimen käsittely"
 
 #: settings_ui_manager.py:117
 msgid "Leave alone"
-msgstr ""
+msgstr "Jätä rauhaan"
 
 #: settings_ui_manager.py:118
 msgid "Separate"
@@ -23377,11 +23412,11 @@ msgstr "Erilliset"
 
 #: settings_ui_manager.py:128
 msgid "URL Compactness Level"
-msgstr ""
+msgstr "URL-osoitteen tiiviystaso"
 
 #: settings_ui_manager.py:134
 msgid "Shortest - No Prefix, No Keys"
-msgstr ""
+msgstr "Lyhin - ei etuliitettä eikä avaimia"
 
 #: settings_ui_manager.py:137
 msgid "Compact - No Prefix, Keys Without Attributes"
@@ -23445,15 +23480,15 @@ msgstr "Näytä lisätietojen linkit"
 
 #: settings_ui_manager.py:209
 msgid "Enable AI-generated historical place data"
-msgstr ""
+msgstr "Hyödynnä tekoälyn luomia historiallisia paikkatietoja"
 
 #: settings_ui_manager.py:215
 msgid "Custom country code for AI notes (optional)"
-msgstr ""
+msgstr "Mukautettu maakoodi tekoälylisätietoja verten (valinnainen)"
 
 #: settings_ui_manager.py:244
 msgid "Enable CSV Files"
-msgstr "CSV-tiedostot käyttöön"
+msgstr "Hyödynnä CSV-tiedostoja"
 
 #: settings_ui_manager.py:251
 msgid "Display Columns"
@@ -23461,7 +23496,7 @@ msgstr "Näytä sarakkeet"
 
 #: settings_ui_manager.py:265
 msgid "Display Icons"
-msgstr "Näytön kuvakkeet"
+msgstr "Näytä kuvakkeet"
 
 #, fuzzy
 #~| msgid "Add Person"
