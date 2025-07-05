@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
-"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"PO-Revision-Date: 2025-06-20 05:24+0000\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic4@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -2971,16 +2971,12 @@ msgid "Matriarchal Line (Female ancestor)"
 msgstr "Матріархальна лінія (жіноча предкиня)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
-#, fuzzy
-#| msgid "Person theme"
 msgid "Dark theme"
-msgstr "Тема для осіб"
+msgstr "Темна тема"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Light"
 msgid "Light theme"
-msgstr "Світлий"
+msgstr "Світла тема"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
 msgid "Continue Descendant Tree"
@@ -3043,18 +3039,12 @@ msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr "Як використовувати переглядач DescendantSpaceTree"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:885
-#, fuzzy
-#| msgid ""
-#| "For the best viewing experience, maximize your browser window to use the "
-#| "entire screen and reload this page.  The viewer is fitted to your screen "
-#| "size."
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
-"Для найкращого перегляду розгорніть вікно браузера на весь екран і "
-"перезавантажте цю сторінку. Розмір переглядача підлаштовано під розмір "
-"вашого екрана."
+"Для найкращого перегляду розгорніть вікно браузера, щоб використовувати весь "
+"екран. Зміна розміру поверне графік до центрального положення людини."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
@@ -3168,16 +3158,12 @@ msgid "Birth/date dates will not be displayed after this year"
 msgstr "Дати народження/дати не відображатимуться після цього року"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1116
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "Тематичні уподобання"
+msgstr "Налаштування теми"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1123
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "Theme color preference for Space Tree"
-msgstr "Центральна особа для дерева"
+msgstr "Параметри кольору теми для Space Tree"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1136
 msgid "Destination File"
@@ -3188,10 +3174,8 @@ msgid "The destination file name for the report."
 msgstr "Ім'я файлу призначення для звіту."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
-#, fuzzy
-#| msgid "Opens an interactive tree in the browser"
 msgid "Open generated HTML file with default browser."
-msgstr "Відкриває інтерактивне дерево у браузері"
+msgstr "Відкрийте згенерований HTML-файл у браузері за замовчуванням."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
