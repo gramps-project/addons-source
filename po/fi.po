@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"PO-Revision-Date: 2025-06-21 17:01+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -2982,16 +2982,12 @@ msgid "Matriarchal Line (Female ancestor)"
 msgstr "Matriarkaalilinja (naispuoliset esivanhemmat)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
-#, fuzzy
-#| msgid "Person theme"
 msgid "Dark theme"
-msgstr "Henkilöteema"
+msgstr "Tumma teema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Light"
 msgid "Light theme"
-msgstr "Vaalea"
+msgstr "Vaalea teema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
 msgid "Continue Descendant Tree"
@@ -3054,18 +3050,12 @@ msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr "DescendantSpaceTree-katseluohjelman käyttö"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:885
-#, fuzzy
-#| msgid ""
-#| "For the best viewing experience, maximize your browser window to use the "
-#| "entire screen and reload this page.  The viewer is fitted to your screen "
-#| "size."
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
 "Parhaan katselukokemuksen saavuttamiseksi suurenna selainikkunasi koko "
-"näyttöäön ja lataa tämä sivu uudelleen. Katseluohjelma sovitetaan näyttösi "
-"kokoon."
+"näyttöön ja lataa uudelleen. Keskushenkilö sijoittuu keskelle kaaviota."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
@@ -3176,16 +3166,12 @@ msgid "Birth/date dates will not be displayed after this year"
 msgstr "Syntymäaikoja ei näytetä tämän vuoden jälkeen"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1116
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "Teeman asetukset"
+msgstr "Teeman valinta"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1123
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "Theme color preference for Space Tree"
-msgstr "Puun keskushenkilö"
+msgstr "Avaruuspuun teeman värien valinta"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1136
 msgid "Destination File"
@@ -3196,10 +3182,8 @@ msgid "The destination file name for the report."
 msgstr "Raporttitiedoston nimi."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
-#, fuzzy
-#| msgid "Opens an interactive tree in the browser"
 msgid "Open generated HTML file with default browser."
-msgstr "Avaa interaktiivisen puun selaimessa"
+msgstr "Avaa luotu HTML-tiedosto oletusselaimella."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -4835,28 +4819,36 @@ msgid ""
 "Exif metadata.\n"
 "  It will also allow you to be able to Save the modified metadata."
 msgstr ""
+"Avataan uusi ikkuna kuvan Exif-metatietojen muokkaamiseksi.\n"
+"  Voit myös tallentaa muokatut metatiedot."
 
 #: EditExifMetadata/editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
-msgstr ""
+msgstr "Tuottaa ponnahdusikkunan pikkukuvien katsomiseksi"
 
 #: EditExifMetadata/editexifmetadata.py:201
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
 msgstr ""
+"Valitse pudotusvalikosta tiedostotyyppi, johon haluat muuntaa ei-Exiv2-"
+"yhteensopivan mediatiedostosi."
 
 #: EditExifMetadata/editexifmetadata.py:205
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
+"Muunnetaanko kuva tarvittaessa sellaiseen muotoon, jonne voi tallettaa Exif-"
+"tietoja?"
 
 #: EditExifMetadata/editexifmetadata.py:209
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
 msgstr ""
+"VAROITUS: Kaikki Exif-metatiedot poistetaan tästä kuvasta! Haluatko varmasti "
+"tehdä niin?"
 
 #: EditExifMetadata/editexifmetadata.py:213
 msgid "Clear GPS"
@@ -4875,15 +4867,17 @@ msgid ""
 "Image is NOT readable,\n"
 "Please choose a different image..."
 msgstr ""
+"Kuva EI ole luettavissa,\n"
+"Valitse toinen kuva..."
 
 #: EditExifMetadata/editexifmetadata.py:441
 msgid "Please convert this image to an Exiv2- compatible image type..."
-msgstr ""
+msgstr "Muunna tämä kuva Exiv2-yhteensopivaksi kuvaksi..."
 
 #: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr ""
+msgstr "Kuvan koko : {width} x {height} pikseliä"
 
 #: EditExifMetadata/editexifmetadata.py:481
 #: EditExifMetadata/editexifmetadata.py:1440
@@ -4891,20 +4885,22 @@ msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
 msgstr ""
+"Kuva EI ole kirjoituskelpoinen,\n"
+"Et voi tallentaa Exif-metatietoja...."
 
 #: EditExifMetadata/editexifmetadata.py:648
 msgid "Click Close to close this Thumbnail View Area."
-msgstr ""
+msgstr "Sulje tämä pikkukuvanäkymä napsauttamalla Sulje."
 
 #: EditExifMetadata/editexifmetadata.py:654
 msgid "Thumbnail View Area"
-msgstr ""
+msgstr "Pienoiskuvanäkymä"
 
 #: EditExifMetadata/editexifmetadata.py:724
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
-msgstr ""
+msgstr "VAROITUS: olet muuntamassa tämän kuvan .jpeg-kuvaksi. Oletko varma?"
 
 #: EditExifMetadata/editexifmetadata.py:726
 msgid "Convert and Delete"
@@ -4915,22 +4911,25 @@ msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
 msgstr ""
+"Kuvasi on muunnettu ja alkuperäinen on poistettu. Kuvan polku on päivitetty!"
 
 #: EditExifMetadata/editexifmetadata.py:812
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
-msgstr ""
+msgstr "Virhe. Tarkista lähde- ja kohdetiedostojen polut..."
 
 #: EditExifMetadata/editexifmetadata.py:816
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
 msgstr ""
+"Alkuperäisen tiedoston poistaminen ei onnistunut. Sinun on poistettava se "
+"itse!"
 
 #: EditExifMetadata/editexifmetadata.py:834
 msgid "There was an error in converting your image file."
-msgstr ""
+msgstr "Virhe kuvatiedoston muuntamisessa."
 
 #: EditExifMetadata/editexifmetadata.py:844
 msgid "Media Path Update"
@@ -4938,13 +4937,14 @@ msgstr "Mediapolun päivitys"
 
 #: EditExifMetadata/editexifmetadata.py:853
 msgid "There has been an error in updating the image file's path!"
-msgstr ""
+msgstr "Virhe päivitettäessä kuvatiedoston polkua!"
 
 #: EditExifMetadata/editexifmetadata.py:886
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
 msgstr ""
+"Napsauta sulkemispainiketta, kun olet muokannut tämän kuvan Exif-metatietoja."
 
 #: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
@@ -5240,19 +5240,19 @@ msgstr "Kulttuuriministeriö (Ranska)"
 
 #: FRWebConnectPack/FRWebPack.py:42
 msgid "Genealogical bank"
-msgstr ""
+msgstr "Genealogical bank"
 
 #: FRWebConnectPack/FRWebPack.py:44
 msgid "OrigineFile (Quebec)"
-msgstr ""
+msgstr "Alkuperäistiedosto (Quebec)"
 
 #: FRWebConnectPack/FRWebPack.py:50
 msgid "Cyber genealogy"
-msgstr ""
+msgstr "Cyber-genealogia"
 
 #: FRWebConnectPack/FRWebPack.py:53
 msgid "RetroNews (Bnf)"
-msgstr ""
+msgstr "RetroNews (Bnf)"
 
 #: FRWebConnectPack/FRWebPack.py:58
 msgid "Hathi Trust Digital Library (fr)"
@@ -5264,7 +5264,7 @@ msgstr "Open Library, Ranska"
 
 #: FRWebConnectPack/FRWebPack.py:60
 msgid "Belgium's Archives"
-msgstr ""
+msgstr "Belgian arkistot"
 
 #: FaceDetection/FaceDetection.gpr.py:4
 msgid "Face Detection"
@@ -5272,11 +5272,11 @@ msgstr "Kasvojentunnistus"
 
 #: FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
-msgstr ""
+msgstr "Gramplet kasvojen tunnistamiseen ja asettamiseen"
 
 #: FaceDetection/FaceDetection.gpr.py:13
 msgid "Faces"
-msgstr ""
+msgstr "Kasvot"
 
 #: FaceDetection/FaceDetection.py:63
 msgid "OpenCV-Python is not installed"
@@ -5294,7 +5294,7 @@ msgstr "Perhesuhteiden työkalu"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
-msgstr ""
+msgstr "Joukkomuokkaa perhesuhdetyyppiä perheryhmälle."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
 msgid "All Families"
@@ -5305,6 +5305,8 @@ msgid ""
 "Choose the set of families to process.\n"
 "Create custom filters if empty."
 msgstr ""
+"Valitse käsiteltävät perheet.\n"
+"Luo mukautettuja suodattimia, jos ne ovat tyhjiä."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:70
 msgid "Relationship Type"
@@ -5315,6 +5317,8 @@ msgid ""
 "Choose the new family relationship type.\n"
 "Custom relationship types aren't supported."
 msgstr ""
+"Valitse uusi perhesuhteen tyyppi.\n"
+"Mukautettuja suhdetyyppejä ei tueta."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
 msgid "Process relationships..."
@@ -5322,18 +5326,20 @@ msgstr "Käsittele suhteita..."
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
-msgstr ""
+msgstr "Perhelehti"
 
 #: FamilySheet/FamilySheet.gpr.py:6
 msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
 msgstr ""
+"Tuottaa perhelomakkeen, joka näyttää täydelliset tiedot henkilöstä, "
+"puolisoistaan ja lapsistaan."
 
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
 msgid "\\u2192 %s"
-msgstr ""
+msgstr "\\u2192 %s"
 
 #: FamilySheet/FamilySheet.py:397
 #, python-format
@@ -5343,7 +5349,7 @@ msgstr "Osoite (%(date)s): %(location)s"
 #: FamilySheet/FamilySheet.py:401
 #, python-format
 msgid "Address: %(location)s"
-msgstr ""
+msgstr "Osoite: %(location)s"
 
 #: FamilySheet/FamilySheet.py:469
 #, python-format
@@ -5357,16 +5363,16 @@ msgstr "Lähdeviitteet:"
 #: FamilySheet/FamilySheet.py:575
 #, python-format
 msgid ", page %s"
-msgstr ""
+msgstr ", sivu %s"
 
 #: FamilySheet/FamilySheet.py:588
 msgid "Notes:"
-msgstr ""
+msgstr "Lisätiedot:"
 
 #: FamilySheet/FamilySheet.py:769 FamilyTree/FamilyTree.py:932
 #, python-format
 msgid "on %(ymd_date)s"
-msgstr ""
+msgstr "%(ymd_date)s"
 
 #: FamilySheet/FamilySheet.py:771 FamilyTree/FamilyTree.py:934
 #, python-format
@@ -5941,48 +5947,53 @@ msgstr "Henkilöt, joilla on annetun tyyppisiä tapahtumia pyydetty määrä."
 #: FilterRules2/matrilinealprogenitrix.gpr.py:25
 #: FilterRules2/matrilinealprogenitrix.py:45
 msgid "Matrilineal progenitrix of <person>"
-msgstr ""
+msgstr "Henkilön <person> matrilineaarinen esi-äiti"
 
 #: FilterRules2/matrilinealprogenitrix.gpr.py:26
 #: FilterRules2/matrilinealprogenitrix.py:47
 msgid "Matches the earliest recorded matrilineal ancestor mother."
-msgstr ""
+msgstr "Vastaa varhaisinta kirjattua matrilineaarista esi-äitiä."
 
 #: FilterRules2/mtinheritance.gpr.py:25 FilterRules2/mtinheritance.py:45
 msgid "Mitochondrial inheritance of <person>"
-msgstr ""
+msgstr "Mitokondriaalinen periytyminen henkilölle <person>"
 
 #: FilterRules2/mtinheritance.gpr.py:27 FilterRules2/mtinheritance.py:46
 msgid ""
 "Matches recorded descendants of person following mitochondrial inheritance "
 "patterns."
 msgstr ""
+"Yhdistää henkilön tallennetut jälkeläiset mitokondrioiden periytymismallien "
+"mukaisesti."
 
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
 #: FilterRules2/mtinheritanceoffiltermatch.py:46
 msgid "Mitochondrial inheritance of <filter>"
-msgstr ""
+msgstr "Mitokondriaalinen periytyminen suotimelle <filter>"
 
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:27
 #: FilterRules2/mtinheritanceoffiltermatch.py:47
+#, fuzzy
 msgid ""
 "Matches recorded descendants of a filter result following mitochondrial "
 "inheritance patterns."
 msgstr ""
+"Vastaa mitokondrioiden periytymismalleja noudattavan suotimen tulosten "
+"tallennettuja jälkeläisiä."
 
 #: FilterRules2/patrilinealprogenitor.gpr.py:25
 #: FilterRules2/patrilinealprogenitor.py:45
 msgid "Patrilineal progenitor of <person>"
-msgstr ""
+msgstr "Henkilön <person> patrilineaarinen kantaisä"
 
 #: FilterRules2/patrilinealprogenitor.gpr.py:26
 #: FilterRules2/patrilinealprogenitor.py:47
 msgid "Matches the earliest recorded patrilineal ancestor father."
-msgstr ""
+msgstr "Vastaa varhaisinta kirjattua patrilineaarista esi-isää."
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
-msgstr ""
+msgstr "X-kromosomaaliset esi-isät henkilölle <person>"
 
 #: FilterRules2/xchromancestors.gpr.py:27 FilterRules2/xchromancestors.py:50
 msgid ""
@@ -6030,33 +6041,35 @@ msgstr ""
 
 #: FixCoords/fixcoords.gpr.py:31
 msgid "Fix Place Coordinates"
-msgstr ""
+msgstr "Korjaa paikan koordinaatit"
 
 #: FixCoords/fixcoords.gpr.py:33
 msgid ""
 "Tool to correct the place coordinates for extra spaces or comma characters."
 msgstr ""
+"Työkalu paikkakoordinaattien ylimääräisten välilyöntien tai pilkkumerkkien "
+"korjaamiseksi."
 
 #: FixCoords/fixcoords.py:53
 msgid "Fix Coordinates"
-msgstr ""
+msgstr "Korjaa koordinaatit"
 
 #: FixCoords/fixcoords.py:58
 msgid "Looking for possible coords with \",\" characters"
-msgstr ""
+msgstr "Etsitään mahdollisesti \",\"-merkkejä sisältäviä koordinaatteja"
 
 #: FixCoords/fixcoords.py:60
 msgid "Fix coords"
-msgstr ""
+msgstr "Korjaa koordinaatit"
 
 #: Form/editform.py:181
 #, python-format
 msgid "Form: %s"
-msgstr ""
+msgstr "Lomake: %s"
 
 #: Form/editform.py:183
 msgid "New Form"
-msgstr ""
+msgstr "Uusi lomake"
 
 #: Form/editform.py:190
 msgid "Edit Form"
@@ -6074,7 +6087,7 @@ msgstr "Otsikot"
 
 #: Form/form.py:65
 msgid "Form"
-msgstr ""
+msgstr "Lomake"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -6082,26 +6095,26 @@ msgstr ""
 #: Form/form_ca.xml.h:661 Form/form_ca.xml.h:754 Form/form_ca.xml.h:794
 #: Form/form_us.xml.h:1633 Form/form_us.xml.h:1648
 msgid "Schedule"
-msgstr ""
+msgstr "Ajoitus"
 
 #: Form/form_ca.xml.h:2 Form/form_ca.xml.h:93 Form/form_ca.xml.h:211
 #: Form/form_ca.xml.h:798
 msgid "EnumDistrict"
-msgstr ""
+msgstr "EnumDistrict"
 
 #: Form/form_ca.xml.h:3 Form/form_ca.xml.h:94 Form/form_ca.xml.h:212
 #: Form/form_ca.xml.h:644 Form/form_ca.xml.h:812 Form/form_us.xml.h:1250
 #: Form/form_us.xml.h:1311 Form/form_us.xml.h:2041
 msgid "Township"
-msgstr ""
+msgstr "Kaupunkikunta"
 
 #: Form/form_ca.xml.h:5
 msgid "Comprising"
-msgstr ""
+msgstr "Koostuen"
 
 #: Form/form_ca.xml.h:6
 msgid "OfTheSaid"
-msgstr ""
+msgstr "OfTheSaid"
 
 #: Form/form_ca.xml.h:7 Form/form_ca.xml.h:293 Form/form_ca.xml.h:347
 #: Form/form_ca.xml.h:396 Form/form_ca.xml.h:457 Form/form_ca.xml.h:536
@@ -6112,11 +6125,11 @@ msgstr "Luetelma"
 
 #: Form/form_ca.xml.h:11 Form/form_ca.xml.h:217
 msgid "1. Names of Inmates"
-msgstr ""
+msgstr "1. Vankien nimet"
 
 #: Form/form_ca.xml.h:13
 msgid "2. Profession, Trade or Occupation"
-msgstr ""
+msgstr "2. Ammatti tai elinkeino"
 
 #: Form/form_ca.xml.h:14 Form/form_ca.xml.h:220 Form/form_ca.xml.h:316
 #: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
@@ -6127,19 +6140,19 @@ msgstr "Syntymäpaikka"
 
 #: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
 msgid "3. Place of Birth"
-msgstr ""
+msgstr "3. Syntymäpaikka"
 
 #: Form/form_ca.xml.h:17
 msgid "4. Religion"
-msgstr ""
+msgstr "4. Uskonto"
 
 #: Form/form_ca.xml.h:19
 msgid "5. Residence if Outside of Limits"
-msgstr ""
+msgstr "5. Asuinpaikka ulkomailla"
 
 #: Form/form_ca.xml.h:21
 msgid "6. Age at Next Birthday"
-msgstr ""
+msgstr "6. Ikä seuraavana syntymäpäivänä"
 
 #: Form/form_ca.xml.h:22 Form/form_ca.xml.h:230
 msgid "SexMale"
