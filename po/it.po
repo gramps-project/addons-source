@@ -66,8 +66,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2025-06-27 12:04+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -75,15 +75,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Tutti i nomi di tutte le persone"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Mostra tutti i nomi di tutte le persone"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -96,7 +96,7 @@ msgstr ""
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "Nomi totali %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
@@ -119,11 +119,11 @@ msgstr "Generazione "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr ""
+msgstr "Numero di antenati trovati "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
-msgstr ""
+msgstr "Percentuale di antenati trovati "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
@@ -131,7 +131,7 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
-msgstr ""
+msgstr "Numero teorico degli antenati "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
@@ -139,7 +139,7 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
-msgstr ""
+msgstr "Numero totale di antenati trovato "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
@@ -152,6 +152,10 @@ msgid ""
 "Note: This report only counts ancestors with a parent-child relationship of "
 "birth."
 msgstr ""
+"\n"
+"\n"
+"Nota: Questo report conta solo gli antenati che hanno una relazione genitore-"
+"figlio alla nascita."
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
@@ -3169,30 +3173,24 @@ msgid "Birth/date dates will not be displayed after this year"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1116
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "Preferenze tematiche"
+msgstr "Preferenza tematica"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1123
 msgid "Theme color preference for Space Tree"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1136
-#, fuzzy
-#| msgid "Description: "
 msgid "Destination File"
-msgstr "Descrizione: "
+msgstr "File di destinazione:"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
-#, fuzzy
-#| msgid "The destination file name for html content."
 msgid "The destination file name for the report."
-msgstr "Il nome di file di destinazione per il contenuto HTML."
+msgstr "Il nome di file di destinazione per il report."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
 msgid "Open generated HTML file with default browser."
-msgstr ""
+msgstr "Apri il file HTML generato con il browser predefinito."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
