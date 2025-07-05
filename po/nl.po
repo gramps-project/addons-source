@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-11 04:56+0000\n"
+"PO-Revision-Date: 2025-06-20 16:46+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -3015,16 +3015,12 @@ msgid "Matriarchal Line (Female ancestor)"
 msgstr "Matriarchale lijn (vrouwelijke voorouder)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
-#, fuzzy
-#| msgid "Person theme"
 msgid "Dark theme"
-msgstr "Persoonsthema"
+msgstr "Donker hema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Light"
 msgid "Light theme"
-msgstr "Licht"
+msgstr "Licht thema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
 msgid "Continue Descendant Tree"
@@ -3087,18 +3083,12 @@ msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr "De DescendantSpaceTree Viewer gebruiken"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:885
-#, fuzzy
-#| msgid ""
-#| "For the best viewing experience, maximize your browser window to use the "
-#| "entire screen and reload this page.  The viewer is fitted to your screen "
-#| "size."
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
 "Voor het beste resultaat maximaliseert u uw browservenster tot het volledige "
-"scherm en laadt u deze pagina opnieuw.  De weergave wordt aangepast aan uw "
-"schermgrootte."
+"scherm.  Formaat wijzigen zal de grafiek terugzetten naar de hoofdpersoon."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
@@ -3213,16 +3203,12 @@ msgid "Birth/date dates will not be displayed after this year"
 msgstr "Geboorte-/sterfdatums na dit jaar niet meer weergegeven"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1116
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "Thema-voorkeuren"
+msgstr "Thema-voorkeur"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1123
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "Theme color preference for Space Tree"
-msgstr "De centrale persoon voor de stamboom"
+msgstr "Voorkeur van themakleur voor ruimteboom"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1136
 msgid "Destination File"
@@ -3233,10 +3219,8 @@ msgid "The destination file name for the report."
 msgstr "De naam van het doelbestand voor het rapport."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
-#, fuzzy
-#| msgid "Opens an interactive tree in the browser"
 msgid "Open generated HTML file with default browser."
-msgstr "Opent een interactieve boom in de browser"
+msgstr "Gegenereerd HTML-bestand openen met standaardbrowser."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
