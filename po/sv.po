@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"PO-Revision-Date: 2025-07-03 08:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -2975,16 +2975,12 @@ msgid "Matriarchal Line (Female ancestor)"
 msgstr "Matriarkal linje (kvinnlig förfader)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
-#, fuzzy
-#| msgid "Person theme"
 msgid "Dark theme"
-msgstr "Persontema"
+msgstr "Mörkt tema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Light"
 msgid "Light theme"
-msgstr "Ljus"
+msgstr "Ljust tema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
 msgid "Continue Descendant Tree"
@@ -3047,17 +3043,12 @@ msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr "Så här använder du DescendantSpaceTree-visaren"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:885
-#, fuzzy
-#| msgid ""
-#| "For the best viewing experience, maximize your browser window to use the "
-#| "entire screen and reload this page.  The viewer is fitted to your screen "
-#| "size."
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
-"För bästa möjliga visningsupplevelse, maximera webbläsarfönstret så att hela "
-"skärmen används och ladda om sidan. Visaren anpassas till din skärmstorlek."
+"För bästa visningsupplevelse, maximera webbläsarfönstret så att hela skärmen "
+"används.   En storleksändring återställer grafen till personen i mitten."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
@@ -3105,18 +3096,24 @@ msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
 msgstr ""
+"Personer födda efter ett visst datum får inte visa sina födelse- eller "
+"dödsdatum."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:954
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
 msgstr ""
+"Personnoder är färgade för att indikera antalet barn, ju mörkare nyans "
+"färgen har, desto större antal barn."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:964
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
 msgstr ""
+"Den för närvarande valda ättlingen och alla förfäder till den personen är "
+"markerade med gult."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:973
 msgid ""
@@ -3126,66 +3123,64 @@ msgid ""
 "___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
 "expand descendants of this person. "
 msgstr ""
+"En person kan förekomma i olika grenar. Detta beror vanligtvis på äktenskap "
+"inom familjen (t.ex. kusiner). I det här fallet visas även en knapp för den "
+"personen, ___NAV_BUTTON_CONTINUE___ eller ___NAV_BUTTON_ALT___ för att "
+"navigera i den andra grenen. Endast en gren kommer att expandera ättlingar "
+"till denna person. "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:987
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
 msgstr ""
+"Följande projekt med öppen källkod används för att bygga den här "
+"visningsprogramvaran. Se källkodsfilerna LICENSE*.txt för fullständiga "
+"licenser och obligatoriska meddelanden."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1014
-#, fuzzy
-#| msgid "Search..."
 msgid "Search. . ."
-msgstr "Sök..."
+msgstr "Sök. . ."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1089
 msgid "Branch to expand when duplicated"
-msgstr ""
+msgstr "Grenen som ska expanderas vid duplicering"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1100
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
 msgstr ""
+"När en ättling förekommer mer än en gång, föredra den valda släktlinjen för "
+"att expandera släktlinjen"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1108
 msgid "Maximum display birth year"
-msgstr ""
+msgstr "Maximalt visningsår för födelse"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1111
 msgid "Birth/date dates will not be displayed after this year"
-msgstr ""
+msgstr "Födelse/dödsdatum visas inte efter detta år"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1116
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "Temainställningar"
+msgstr "Temainställning"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1123
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "Theme color preference for Space Tree"
-msgstr "Huvudpersonen för trädet"
+msgstr "Temafärginställning för Space Tree"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1136
-#, fuzzy
-#| msgid "Destination directory"
 msgid "Destination File"
-msgstr "Målkatalog"
+msgstr "Målfil"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
-#, fuzzy
-#| msgid "The destination file name for html content."
 msgid "The destination file name for the report."
-msgstr "Målfilnamn för html-innehåll."
+msgstr "Målfilnamn för rapporten."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
-#, fuzzy
-#| msgid "Opens an interactive tree in the browser"
 msgid "Open generated HTML file with default browser."
-msgstr "Öppnar ett interaktivt träd i webbläsaren"
+msgstr "Öppna den genererade HTML-filen med standardwebbläsaren."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -6332,48 +6327,49 @@ msgstr "Födelse1851Man"
 
 #: Form/form_ca.xml.h:61
 msgid "26. Births During the Year 1851: Male"
-msgstr ""
+msgstr "26. Födslar under år 1851: Man"
 
 #: Form/form_ca.xml.h:62
 msgid "Birth1851Female"
-msgstr ""
+msgstr "Födelse1851Kvinna"
 
 #: Form/form_ca.xml.h:63
 msgid "27. Births During the Year 1851: Female"
-msgstr ""
+msgstr "27. Födslar under år 1851: Kvinna"
 
 #: Form/form_ca.xml.h:64
 msgid "Death1851Male"
-msgstr ""
+msgstr "Dödsfall1851Män"
 
 #: Form/form_ca.xml.h:65
 msgid "28. Deaths During the Year 1851: Male"
-msgstr ""
+msgstr "28. Dödsfall under året 1851: Man"
 
 #: Form/form_ca.xml.h:66
 msgid "Death1851Female"
-msgstr ""
+msgstr "Dödsfall1851Kvinna"
 
 #: Form/form_ca.xml.h:67
 msgid "29. Deaths During the Year 1851: Female"
-msgstr ""
+msgstr "29. Dödsfall under året 1851: Kvinnor"
 
 #: Form/form_ca.xml.h:68 Form/form_ca.xml.h:276
 msgid "DeathAgeCause"
-msgstr ""
+msgstr "DödsfallsÅlderOrsak"
 
 #: Form/form_ca.xml.h:69
 msgid "30. Age and Cause of Deaths"
-msgstr ""
+msgstr "30. Ålder och dödsorsak"
 
 #: Form/form_ca.xml.h:70 Form/form_ca.xml.h:278
 msgid "Houses"
-msgstr ""
+msgstr "Hus"
 
 #: Form/form_ca.xml.h:71
 msgid ""
 "31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
 msgstr ""
+"31. Hus: Tegel, sten, stomme, timmer, skjul eller andra typer av bostäder"
 
 #: Form/form_ca.xml.h:72 Form/form_ca.xml.h:280
 msgid "HousesStories"
@@ -6381,7 +6377,7 @@ msgstr "HusBerättelser"
 
 #: Form/form_ca.xml.h:73
 msgid "32. Houses: No. of Stories"
-msgstr ""
+msgstr "32. Hus: Antal våningar"
 
 #: Form/form_ca.xml.h:74 Form/form_ca.xml.h:282
 msgid "HousesFamilies"
@@ -6389,16 +6385,16 @@ msgstr "HusFamiljer"
 
 #: Form/form_ca.xml.h:75
 msgid "33. No. of Families Occupying"
-msgstr ""
+msgstr "33. Antal familjer som bor"
 
 #: Form/form_ca.xml.h:76 Form/form_ca.xml.h:284 Form/form_ca.xml.h:302
 #: Form/form_ca.xml.h:356 Form/form_ca.xml.h:403 Form/form_ca.xml.h:549
 msgid "HousesVacant"
-msgstr ""
+msgstr "HusLediga"
 
 #: Form/form_ca.xml.h:77
 msgid "34. Houses: Vacant"
-msgstr ""
+msgstr "34. Hus: Lediga"
 
 #: Form/form_ca.xml.h:78
 msgid "HousesBuilding"
@@ -6406,80 +6402,82 @@ msgstr "HusByggnad"
 
 #: Form/form_ca.xml.h:79
 msgid "35. Houses: Building"
-msgstr ""
+msgstr "35. Hus: Byggnad"
 
 #: Form/form_ca.xml.h:80
 msgid "Shops"
-msgstr ""
+msgstr "Butiker"
 
 #: Form/form_ca.xml.h:81
 msgid "36. Shops, Stores, Inns, Taverns etc."
-msgstr ""
+msgstr "36. Butiker, affärer, värdshus, krogar etc."
 
 #: Form/form_ca.xml.h:82
 msgid "PublicBuildings"
-msgstr ""
+msgstr "Offentliga byggnader"
 
 #: Form/form_ca.xml.h:83
 msgid "37. Public Buildings"
-msgstr ""
+msgstr "37. Offentliga byggnader"
 
 #: Form/form_ca.xml.h:84
 msgid "WorshipPlaces"
-msgstr ""
+msgstr "ReligiösaPlatser"
 
 #: Form/form_ca.xml.h:85
 msgid "38. Places of Worship"
-msgstr ""
+msgstr "38. Religiösa platser"
 
 #: Form/form_ca.xml.h:86
 msgid "BuisnessInfo"
-msgstr ""
+msgstr "Företagsinformation"
 
 #: Form/form_ca.xml.h:87
 msgid ""
 "39. Information on Mills, Factories etc., their cost, power, produce, etc."
 msgstr ""
+"39. Information om kvarnar, fabriker etc., deras kostnader, energi, "
+"produktion etc."
 
 #: Form/form_ca.xml.h:88
 msgid "NumEmployees"
-msgstr ""
+msgstr "AntalAnställda"
 
 #: Form/form_ca.xml.h:89
 msgid "40. Number of Persons Usually Employed Therein"
-msgstr ""
+msgstr "40. Antal personer som vanligtvis är anställda där"
 
 #: Form/form_ca.xml.h:91
 msgid "41. General Remarks of the Enumerator"
-msgstr ""
+msgstr "41. Räknarens allmänna anmärkningar"
 
 #: Form/form_ca.xml.h:99
 msgid "1. Name of Occupier"
-msgstr ""
+msgstr "1. Namn på boende"
 
 #: Form/form_ca.xml.h:100
 msgid "Concession"
-msgstr ""
+msgstr "Koncession"
 
 #: Form/form_ca.xml.h:101
 msgid "2. Concession or Range"
-msgstr ""
+msgstr "2. Koncession eller omfattning"
 
 #: Form/form_ca.xml.h:102
 msgid "Lot"
-msgstr ""
+msgstr "Tomt"
 
 #: Form/form_ca.xml.h:103
 msgid "3. Lot or part of Lot"
-msgstr ""
+msgstr "3. Tomt eller del av tomt"
 
 #: Form/form_ca.xml.h:104
 msgid "AcresHeld"
-msgstr ""
+msgstr "Tunnland hållna"
 
 #: Form/form_ca.xml.h:105
 msgid "4. Number of Acres of Land: Held by each person or family"
-msgstr ""
+msgstr "4. Antal tunnland mark: Innehas av varje person eller familj"
 
 #: Form/form_ca.xml.h:106
 msgid "AcresCultivation"
@@ -6487,15 +6485,15 @@ msgstr "ÅkerOdling"
 
 #: Form/form_ca.xml.h:107
 msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr ""
+msgstr "5. Antal tunnland mark: Med odling"
 
 #: Form/form_ca.xml.h:108
 msgid "AcresCrops"
-msgstr ""
+msgstr "TunnlandGrödor"
 
 #: Form/form_ca.xml.h:109
 msgid "6. Number of Acres of Land: Under Crops in 1851"
-msgstr ""
+msgstr "6. Antal tunnland mark: Med grödor år 1851"
 
 #: Form/form_ca.xml.h:110
 msgid "AcresPasture"
