@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"PO-Revision-Date: 2025-06-21 17:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -35,7 +35,7 @@ msgstr "Mostrar todos los nombres de todas las personas"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
-msgstr ""
+msgstr "Tipo de nombre"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
@@ -150,7 +150,7 @@ msgstr ""
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
-msgstr ""
+msgstr "Tipo de enlace"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
@@ -1269,6 +1269,7 @@ msgstr "El tamaño de letra en píxeles para cada nodo."
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
 msgstr ""
+"Indica si se deben mostrar los árboles genealógicos duplicados en el informe."
 
 #: D3Charts/DescendantIndentedTree.py:1851
 msgid "Expanded Row Background Color"
@@ -1300,7 +1301,7 @@ msgstr "Incluir registros marcados como privados"
 
 #: D3Charts/DescendantIndentedTree.py:1868
 msgid "Whether to include private objects."
-msgstr ""
+msgstr "Indica si se deben incluir objetos privados."
 
 #: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
@@ -1317,6 +1318,8 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1887
 msgid "Whether or not to include people who may have recently died."
 msgstr ""
+"Indica si se deben incluir o no las personas que podrían haber fallecido "
+"recientemente."
 
 #: D3Charts/DescendantIndentedTree.py:1895
 msgid "Navigation"
@@ -1350,6 +1353,8 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1909
 msgid "Whether to auto-generate HTML links for each node on the report."
 msgstr ""
+"Indica si se deben generar automáticamente enlaces HTML por cada nodo en el "
+"informe."
 
 #: D3Charts/DescendantIndentedTree.py:1915
 msgid "URL prefix path."
@@ -2207,7 +2212,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2608
 msgid "Whether to leave out private data."
-msgstr ""
+msgstr "Indica si se deben excluir los datos privados."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
@@ -2215,7 +2220,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2613
 msgid "Whether to include a person's events."
-msgstr ""
+msgstr "Indica si se deben incluir los eventos de una persona."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
@@ -2233,6 +2238,8 @@ msgstr ""
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
 msgstr ""
+"Indica si se deben incluir los fallecimientos de parientes durante la vida "
+"de la persona."
 
 #: DenominoViso/DenominoViso.py:2629
 msgid "Include witness note"
@@ -2246,7 +2253,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
-msgstr ""
+msgstr "Indica si se deben incluir los atributos de una persona"
 
 #: DenominoViso/DenominoViso.py:2638
 msgid "Include Addresses"
@@ -2254,7 +2261,7 @@ msgstr "Incluir direcciones"
 
 #: DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
-msgstr ""
+msgstr "Indica si se deben incluir las direcciones de una persona."
 
 #: DenominoViso/DenominoViso.py:2642
 msgid "Include Note"
@@ -2262,7 +2269,7 @@ msgstr "Incluir nota"
 
 #: DenominoViso/DenominoViso.py:2643
 msgid "Whether to include a person's note."
-msgstr ""
+msgstr "Indica si se debe incluir la nota de una persona."
 
 #: DenominoViso/DenominoViso.py:2646
 msgid "Include URL"
@@ -2270,7 +2277,7 @@ msgstr "Incluir URL"
 
 #: DenominoViso/DenominoViso.py:2647
 msgid "Whether to include a person's internet address."
-msgstr ""
+msgstr "Indica si se debe incluir la dirección en internet de una persona."
 
 #: DenominoViso/DenominoViso.py:2650
 msgid "Include URL description"
@@ -2278,7 +2285,7 @@ msgstr "Incluir descripción de URL"
 
 #: DenominoViso/DenominoViso.py:2651
 msgid "Whether to include the description of the first URL"
-msgstr ""
+msgstr "Indica si se debe incluir la descripción del primer URL"
 
 #: DenominoViso/DenominoViso.py:2656
 msgid "Include Sources"
@@ -2286,7 +2293,7 @@ msgstr "Incluir fuentes"
 
 #: DenominoViso/DenominoViso.py:2657
 msgid "Whether to include a person's sources."
-msgstr ""
+msgstr "Indica si se deben incluir las fuentes de una persona."
 
 #: DenominoViso/DenominoViso.py:2660
 msgid "Image Options"
@@ -2298,7 +2305,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2663
 msgid "Whether to include images"
-msgstr ""
+msgstr "Indica si se deben incluir imágenes"
 
 #: DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
@@ -2739,27 +2746,27 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1482
 msgid "Include Index of Names"
-msgstr ""
+msgstr "Incluir índice de nombres"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1483
 msgid "Whether to include the index of Names at the end of the report."
-msgstr ""
+msgstr "Indica si se debe incluir el índice de nombres al final del informe."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1487
 msgid "Include index of Dates"
-msgstr ""
+msgstr "Incluir índice de fechas"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1488
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr ""
+msgstr "Indica si se debe incluir el índice de fechas al final del informe."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1492
 msgid "Include index of Places"
-msgstr ""
+msgstr "Incluir índice de lugares"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1493
 msgid "Whether to include the index of Places at the end of the report."
-msgstr ""
+msgstr "Indica si se debe incluir el índice de lugares al final del informe."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Include the 'Report appearances' section with each person"
@@ -2802,32 +2809,32 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1644
 msgid "The style used for the date in the Index of Dates."
-msgstr ""
+msgstr "El estilo usado para la fecha en el índice de fechas."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1654
 msgid "The style used for the events in the Index of Dates."
-msgstr ""
+msgstr "El estilo usado para los eventos en el índice de fechas."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1664
 msgid "The style used for the header in the Index of Names."
-msgstr ""
+msgstr "El estilo usado para la cabecera en el índice de nombres."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1674
 msgid "The style used for the references in the Index of Names."
-msgstr ""
+msgstr "El estilo usado para las referencias en el índice de nombres."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1684
 msgid "The style used for the header in the Index of Places."
-msgstr ""
+msgstr "El estilo usado para la cabecera en el índice de lugares."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1695
 msgid "The style used for the references in the Index of Places."
-msgstr ""
+msgstr "El estilo usado para las referencias en el índice de lugares."
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
 msgid "Descendant Count"
-msgstr ""
+msgstr "Recuento de descendientes"
 
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
@@ -2846,21 +2853,19 @@ msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:102
 msgid "Patriarchal Line (Male ancestor)"
-msgstr ""
+msgstr "Línea patriarcal (ascendiente masculino)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:103
 msgid "Matriarchal Line (Female ancestor)"
-msgstr ""
+msgstr "Línea matriarcal (ascendiente femenina)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
 msgid "Dark theme"
-msgstr ""
+msgstr "Tema oscuro"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Light"
 msgid "Light theme"
-msgstr "Claro"
+msgstr "Tema claro"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
 msgid "Continue Descendant Tree"
@@ -2876,7 +2881,7 @@ msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:635
 msgid "Total descendants"
-msgstr ""
+msgstr "Descendientes totales"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:659
 msgid "Marriages/Families:<ul>"
@@ -3013,10 +3018,8 @@ msgid "Birth/date dates will not be displayed after this year"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1116
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "Preferencias del tema"
+msgstr "Preferencia de tema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1123
 msgid "Theme color preference for Space Tree"
@@ -3092,7 +3095,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1556
 msgid "Whether to include an image if one is available."
-msgstr ""
+msgstr "Indica si se debe incluir una imagen si la hay."
 
 #: DescendantsLines/DescendantsLines.py:1560
 msgid "Max Image height"
@@ -4154,6 +4157,8 @@ msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
 msgstr ""
+"Indica si se debe crear un archivador (en formato ZIP o TGZ) que contenga el "
+"sitio web"
 
 #: DynamicWeb/dynamicweb.py:4722
 msgid "Archive file"
@@ -4194,7 +4199,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4812
 msgid "Whether to include private objects"
-msgstr ""
+msgstr "Indica si se deben incluir los objetos privados"
 
 #: DynamicWeb/dynamicweb.py:4833
 msgid ""
@@ -4208,7 +4213,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4840
 msgid "Whether to export notes in the web pages"
-msgstr ""
+msgstr "Indica si se deben exportar las notas en las páginas web"
 
 #: DynamicWeb/dynamicweb.py:4843
 msgid "Export sources"
@@ -4216,7 +4221,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4845
 msgid "Whether to export sources and citations in the web pages"
-msgstr ""
+msgstr "Indica si se deben exportar las fuentes y las citas en las páginas web"
 
 #: DynamicWeb/dynamicweb.py:4849
 msgid "Export addresses"
@@ -4224,11 +4229,11 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4850
 msgid "Whether to export addresses in the web pages"
-msgstr ""
+msgstr "Indica si se deben exportar las direcciones en las páginas web"
 
 #: DynamicWeb/dynamicweb.py:4858
 msgid "Whether or not to include the Repository Pages."
-msgstr ""
+msgstr "Indica si se deben incluir las páginas del repositorio."
 
 #: DynamicWeb/dynamicweb.py:4861
 msgid "Include images and media"
@@ -4237,6 +4242,8 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:4862
 msgid "Whether to include images and media in the web pages"
 msgstr ""
+"Indica si se deben incluir imágenes y objetos audiovisuales en las páginas "
+"web"
 
 #: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
@@ -4256,7 +4263,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4876
 msgid "Whether to make a copy of the media"
-msgstr ""
+msgstr "Indica si se deben hacer copias de los objetos audiovisuales"
 
 #: DynamicWeb/dynamicweb.py:4879
 msgid "Print the notes type"
@@ -4900,7 +4907,7 @@ msgstr ""
 #: EventDescriptionEditor/EventDescriptionEditor.py:139
 #: PlaceCleanup/placecleanup.glade:895 PlaceCleanup/placecleanup.py:267
 msgid "Find"
-msgstr ""
+msgstr "Buscar"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
@@ -5571,7 +5578,7 @@ msgstr ""
 #: SourceIndex/marriage.glade:827 SourceIndex/marriage.glade:1562
 #: SourceIndex/marriage.glade:1621 SourceIndex/witness.glade:107
 msgid "Age:"
-msgstr ""
+msgstr "Edad:"
 
 #: FilterRules/associationsofpersonmatch.gpr.py:25
 #: FilterRules/associationsofpersonmatch.gpr.py:26
@@ -5596,7 +5603,7 @@ msgstr ""
 
 #: FilterRules/degreesofseparation.py:59
 msgid "Degrees:"
-msgstr ""
+msgstr "Grados:"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:25
 #: FilterRules/familieswitheventfiltermatch.py:45
@@ -6126,7 +6133,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:70 Form/form_ca.xml.h:278
 msgid "Houses"
-msgstr ""
+msgstr "Inmuebles"
 
 #: Form/form_ca.xml.h:71
 msgid ""
@@ -7030,7 +7037,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:355
 msgid "3. Houses in construction"
-msgstr ""
+msgstr "3. Inmuebles en construcción"
 
 #: Form/form_ca.xml.h:357
 msgid "4. Houses unoccupied"
@@ -7074,7 +7081,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:402
 msgid "2. Houses in construction"
-msgstr ""
+msgstr "2. Inmuebles en construcción"
 
 #: Form/form_ca.xml.h:404
 msgid "3. Houses unoccupied"
@@ -7235,7 +7242,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:460 Form/form_ca.xml.h:671 Form/form_ca.xml.h:804
 msgid "House"
-msgstr ""
+msgstr "Inmueble"
 
 #: Form/form_ca.xml.h:461 Form/form_ca.xml.h:672
 msgid "1. Dwelling house"
@@ -7323,7 +7330,7 @@ msgstr ""
 #: Form/form_gb.xml.h:226 Form/form_gb.xml.h:247 Form/form_gb.xml.h:359
 #: Form/form_gb.xml.h:382
 msgid "Nationality"
-msgstr ""
+msgstr "Nacionalidad"
 
 #: Form/form_ca.xml.h:489 Form/form_ca.xml.h:700
 msgid "15. Nationality"
@@ -7741,7 +7748,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:611
 msgid "Reason"
-msgstr ""
+msgstr "Razón"
 
 #: Form/form_ca.xml.h:612
 msgid "36. The reason, if not enumerated on first visit"
@@ -7989,7 +7996,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:761
 msgid "1. House"
-msgstr ""
+msgstr "1. Inmueble"
 
 #: Form/form_ca.xml.h:762
 msgid "Dwelling house"
@@ -9129,7 +9136,7 @@ msgstr ""
 #: Form/form_gb.xml.h:429 Form/form_gb.xml.h:456 Form/form_gb.xml.h:484
 #: Form/form_gb.xml.h:516 Form/form_gb.xml.h:555
 msgid "Road, Street, etc, and No. or Name of House"
-msgstr ""
+msgstr "Vía, calle, etc., y número o nombre de inmueble"
 
 #: Form/form_gb.xml.h:430 Form/form_gb.xml.h:457 Form/form_gb.xml.h:485
 #: Form/form_gb.xml.h:517 Form/form_gb.xml.h:556
@@ -9190,7 +9197,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:504 Form/form_gb.xml.h:543 Form/form_gb.xml.h:602
 msgid "Parliamentary Division"
-msgstr ""
+msgstr "División parlamentaria"
 
 #: Form/form_gb.xml.h:506 Form/form_gb.xml.h:545
 msgid "Municipal Burgh"
@@ -9202,7 +9209,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:511 Form/form_gb.xml.h:550
 msgid "Island"
-msgstr ""
+msgstr "Isla"
 
 #: Form/form_gb.xml.h:530 Form/form_gb.xml.h:567
 msgid "Gaellic or G. & E."
@@ -9214,7 +9221,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:563
 msgid "Profession or Occupation"
-msgstr ""
+msgstr "Profesión u ocupación"
 
 #: Form/form_gb.xml.h:564
 msgid "Employer, Worker or on Own Account"
@@ -9265,7 +9272,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:603
 msgid "Urban District"
-msgstr ""
+msgstr "Distrito urbano"
 
 #: Form/form_gb.xml.h:606
 msgid "Head of Family"
@@ -9330,11 +9337,11 @@ msgstr ""
 
 #: Form/form_pl.xml.h:19
 msgid "Volume"
-msgstr ""
+msgstr "Volumen"
 
 #: Form/form_pl.xml.h:24 Form/form_us.xml.h:1426
 msgid "House Number"
-msgstr ""
+msgstr "Número de inmueble"
 
 #: Form/form_pl.xml.h:28
 msgid "Volume Beginning Year"
@@ -9353,7 +9360,7 @@ msgstr ""
 #: Form/form_us.xml.h:743 Form/form_us.xml.h:781 Form/form_us.xml.h:824
 #: Form/form_us.xml.h:885 Form/form_us.xml.h:1092
 msgid "NARA publication"
-msgstr ""
+msgstr "Publicación de la NARA"
 
 #: Form/form_us.xml.h:2 Form/form_us.xml.h:15 Form/form_us.xml.h:36
 #: Form/form_us.xml.h:57 Form/form_us.xml.h:97 Form/form_us.xml.h:166
@@ -9364,7 +9371,7 @@ msgstr ""
 #: Form/form_us.xml.h:744 Form/form_us.xml.h:782 Form/form_us.xml.h:825
 #: Form/form_us.xml.h:886 Form/form_us.xml.h:1093
 msgid "Roll No."
-msgstr ""
+msgstr "N.º de censo"
 
 #: Form/form_us.xml.h:3 Form/form_us.xml.h:16 Form/form_us.xml.h:37
 #: Form/form_us.xml.h:58 Form/form_us.xml.h:98 Form/form_us.xml.h:167
@@ -9382,7 +9389,7 @@ msgstr ""
 #: Form/form_us.xml.h:2268 Form/form_us.xml.h:2286 Form/form_us.xml.h:2296
 #: Form/form_us.xml.h:2315 Form/form_us.xml.h:2325 Form/form_us.xml.h:2502
 msgid "Page No."
-msgstr ""
+msgstr "N.º de página"
 
 #: Form/form_us.xml.h:4 Form/form_us.xml.h:17 Form/form_us.xml.h:38
 #: Form/form_us.xml.h:59 Form/form_us.xml.h:99 Form/form_us.xml.h:168
@@ -11021,7 +11028,7 @@ msgstr ""
 #: Form/form_us.xml.h:698 Form/form_us.xml.h:738 Form/form_us.xml.h:1559
 #: Form/form_us.xml.h:1581
 msgid "Farm or house"
-msgstr ""
+msgstr "Granja o inmueble"
 
 #: Form/form_us.xml.h:699 Form/form_us.xml.h:739 Form/form_us.xml.h:780
 #: Form/form_us.xml.h:823
@@ -11307,7 +11314,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:901
 msgid "Is this house on a place of three or more acres?"
-msgstr ""
+msgstr "¿Este inmueble se ubica en un lugar de tres o más acres?"
 
 #: Form/form_us.xml.h:902
 msgid "Agricultural Questionnaire Number"
@@ -11889,11 +11896,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:1103
 msgid "Street Name"
-msgstr ""
+msgstr "Nombre de calle"
 
 #: Form/form_us.xml.h:1104
 msgid "House No."
-msgstr ""
+msgstr "N.º de inmueble"
 
 #: Form/form_us.xml.h:1130 Form/form_us.xml.h:1145
 msgid "Precinct No."
@@ -18526,15 +18533,15 @@ msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:112
 msgid "Apply all suggested changes"
-msgstr ""
+msgstr "Aplicar todos los cambios sugeridos"
 
 #: PlaceCompletion/placecompletion.glade:148
 msgid "Selection of the Places you want to complete:"
-msgstr ""
+msgstr "Selección de los lugares que quiere completar:"
 
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
-msgstr ""
+msgstr "Parroquia:"
 
 #: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
@@ -18568,12 +18575,11 @@ msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:554
 msgid "Search in:"
-msgstr ""
+msgstr "Buscar en:"
 
 #: PlaceCompletion/placecompletion.glade:566
-#, fuzzy
 msgid "Select A File"
-msgstr "Seleccionar archivo"
+msgstr "Seleccione un archivo"
 
 #: PlaceCompletion/placecompletion.glade:579
 msgid "Parse as:"
@@ -18621,11 +18627,11 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
 msgid "Add city as place"
-msgstr ""
+msgstr "Añadir ciudad como lugar"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
 msgid "Add addess as place"
-msgstr ""
+msgstr "Añadir dirección como lugar"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
@@ -18637,7 +18643,7 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
 msgid "Place and Coordinates"
-msgstr ""
+msgstr "Lugar y coordenadas"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
@@ -18645,7 +18651,7 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
 msgid "Place Coordinates"
-msgstr ""
+msgstr "Coordenadas del lugar"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
@@ -18658,21 +18664,21 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
 msgid "The place was not found."
-msgstr ""
+msgstr "No se encontró el lugar."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
 msgid "The place was not identified."
-msgstr ""
+msgstr "No se identificó el lugar."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
 msgid "Coordinates were not given."
-msgstr ""
+msgstr "No se proporcionaron coordenadas."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
 msgid "Failed to interpret the input format."
-msgstr ""
+msgstr "No se pudo interpretar el formato de entrada."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-brace-format
@@ -18690,7 +18696,7 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
 msgid "Search for:"
-msgstr ""
+msgstr "Buscar:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:26
 msgid "Found place:"
@@ -18724,11 +18730,11 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:269
 msgid "Go"
-msgstr ""
+msgstr "Ir"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
-msgstr ""
+msgstr "Mostrar ayuda"
 
 #: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
 msgid "PlaceUpdate"
@@ -18769,7 +18775,7 @@ msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:165
 msgid "Generate hierarchy"
-msgstr ""
+msgstr "Generar jerarquía"
 
 #: PlaceUpdate/PlaceUpdate.py:171
 msgid "use spaces as separator"
@@ -18777,32 +18783,31 @@ msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:175
 msgid "reverse hierarchy"
-msgstr ""
+msgstr "invertir jerarquía"
 
 #: PlaceUpdate/PlaceUpdate.py:181
 msgid "Replace text"
-msgstr ""
+msgstr "Reemplazar texto"
 
 #: PlaceUpdate/PlaceUpdate.py:184
 msgid "Use regex"
-msgstr ""
+msgstr "Usar expresiones regulares"
 
 #: PlaceUpdate/PlaceUpdate.py:193
 msgid "Old text:"
-msgstr ""
+msgstr "Texto anterior:"
 
 #: PlaceUpdate/PlaceUpdate.py:197
 msgid "New text:"
-msgstr ""
+msgstr "Texto nuevo:"
 
 #: PlaceUpdate/PlaceUpdate.py:209
-#, fuzzy
 msgid "Clear selections"
-msgstr "Selección de Herramientas"
+msgstr "Vaciar selecciones"
 
 #: PlaceUpdate/PlaceUpdate.py:213
 msgid "Apply to selected places"
-msgstr ""
+msgstr "Aplicar a lugares seleccionados"
 
 #: PlaceUpdate/PlaceUpdate.py:266
 msgid "Setting place properties"
@@ -18814,7 +18819,7 @@ msgstr ""
 
 #: PluginManager\PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
-msgstr ""
+msgstr "Gestor de complementos mejorado"
 
 #: PluginManager\PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
@@ -18845,6 +18850,7 @@ msgstr ""
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
+"Error al quitar el directorio «%s»; puede haber fallado la desinstalación"
 
 #: PluginManager\PluginManager.py:402
 msgid ""
@@ -18858,15 +18864,15 @@ msgstr "Ocultar"
 
 #: PluginManager\PluginManager.py:460
 msgid "Show hidden items"
-msgstr ""
+msgstr "Mostrar elementos ocultos"
 
 #: PluginManager\PluginManager.py:467
 msgid "Show Built-in items"
-msgstr ""
+msgstr "Mostrar elementos incorporados"
 
 #: PluginManager\PluginManager.py:474
 msgid "* indicates 3rd party addon"
-msgstr ""
+msgstr "* indica una extensión de terceros"
 
 #: PluginManager\PluginManager.py:479
 msgid "Plugins"
@@ -22946,7 +22952,7 @@ msgstr " fuente(s)"
 
 #: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
 msgid "Gallery.html"
-msgstr ""
+msgstr "Galería.html"
 
 #: lxml/lxmlGramplet.py:522
 #, python-format
