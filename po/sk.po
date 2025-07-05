@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -311,11 +311,11 @@ msgstr "Uložiť obrázky do ..."
 
 #: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
-msgstr ""
+msgstr "{} avatarové obrázky boli úspešne pridané."
 
 #: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
-msgstr ""
+msgstr "Nebol žiadny obrázok avatara na pridanie. "
 
 #: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
@@ -1058,7 +1058,7 @@ msgstr ""
 #: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format
 msgid "Clipboard Gramplet: %s"
-msgstr ""
+msgstr "Gramplet Schránka: %s"
 
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
@@ -1066,7 +1066,7 @@ msgstr "Hodiny"
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
 msgid "Gramplet for demonstrating Cairo graphics"
-msgstr ""
+msgstr "Gramplet na predvádzanie grafiky Cairo"
 
 #: CombinedView/basepage.py:493
 #, python-format
@@ -1562,11 +1562,11 @@ msgstr ""
 
 #: DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr ""
+msgstr "Zoznam webových stránok pre DE (vyžaduje libwebconnect)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
-msgstr ""
+msgstr "Bielefeld Academic Search"
 
 #: DEWebConnectPack/DEWebPack.py:39 SVWebconnectPack/SVWebPack.py:34
 #: UKWebConnectPack/UKWebPack.py:35 USWebConnectPack/USWebPack.py:34
@@ -1580,16 +1580,16 @@ msgstr ""
 
 #: DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
-msgstr ""
+msgstr "DE Google"
 
 #: DEWebConnectPack/DEWebPack.py:44 UKWebConnectPack/UKWebPack.py:39
 #: USWebConnectPack/USWebPack.py:42
 msgid "Open Library"
-msgstr ""
+msgstr "Open Library"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
-msgstr ""
+msgstr "Mapa priezvisk (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
@@ -1687,7 +1687,7 @@ msgstr "Gramplet na zobrazenie zoznamu DNA zhôd"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr "Naj. seg."
+msgstr "Najv. seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
@@ -3002,10 +3002,7 @@ msgid "Marriages/Families:<ul>"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:773
-#, fuzzy, python-format
-#| msgid ""
-#| "Destinaton diretory %s does not exist\n"
-#| "Do you want to attempt to create it?"
+#, python-format
 msgid ""
 "Destination Directory %s does not exist\n"
 "Do you want to attempt to create it."
@@ -3170,10 +3167,8 @@ msgid "The destination file name for the report."
 msgstr "Názov cieľového súboru pre obsah html."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
-#, fuzzy
-#| msgid "Opens an interactive tree in the browser"
 msgid "Open generated HTML file with default browser."
-msgstr "Otvára interaktívny strom v prehliadači"
+msgstr "Otvoriť vygenerovaný súbor HTML v predvolenom prehliadači."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -7235,10 +7230,8 @@ msgid "Sex"
 msgstr ""
 
 #: Form/form_ca.xml.h:311 Form/form_ca.xml.h:365
-#, fuzzy
-#| msgid "L. Seg"
 msgid "8. Sex"
-msgstr "Naj. seg."
+msgstr "8. Pohlavie"
 
 #: Form/form_ca.xml.h:313 Form/form_ca.xml.h:367
 msgid "9. Age"
@@ -7381,10 +7374,8 @@ msgid "6. Names"
 msgstr ""
 
 #: Form/form_ca.xml.h:412
-#, fuzzy
-#| msgid "L. Seg"
 msgid "7. Sex"
-msgstr "Naj. seg."
+msgstr "7. Pohlavie"
 
 #: Form/form_ca.xml.h:414
 msgid "8. Age"
@@ -7543,10 +7534,8 @@ msgid "3. Name of each person in family"
 msgstr ""
 
 #: Form/form_ca.xml.h:467 Form/form_ca.xml.h:631 Form/form_ca.xml.h:768
-#, fuzzy
-#| msgid "L. Seg"
 msgid "4. Sex"
-msgstr "Naj. seg."
+msgstr "4. Pohlavie"
 
 #: Form/form_ca.xml.h:468
 #, fuzzy
@@ -7982,10 +7971,8 @@ msgid "27. Church or place of worship: Number of communicants"
 msgstr ""
 
 #: Form/form_ca.xml.h:595
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Seating"
-msgstr "Výber... "
+msgstr "Sedenie"
 
 #: Form/form_ca.xml.h:596
 msgid "28. Church or place of worship: Seating capacity"
@@ -8156,10 +8143,8 @@ msgid "4. Place of habitation"
 msgstr ""
 
 #: Form/form_ca.xml.h:680
-#, fuzzy
-#| msgid "L. Seg"
 msgid "5. Sex"
-msgstr "Naj. seg."
+msgstr "5. Pohlavie"
 
 #: Form/form_ca.xml.h:686
 msgid "8. Month of birth"
@@ -8420,10 +8405,8 @@ msgid "9. Relationship to head of family or household"
 msgstr ""
 
 #: Form/form_ca.xml.h:823
-#, fuzzy
-#| msgid "L. Seg"
 msgid "10. Sex"
-msgstr "Naj. seg."
+msgstr "10. Pohlavie"
 
 #: Form/form_ca.xml.h:825
 msgid "11. Single, married, widowed, divorced or legally separated"
@@ -9857,10 +9840,8 @@ msgid "Persons engaged in Manufactures"
 msgstr ""
 
 #: Form/form_us.xml.h:80
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave males under 14"
-msgstr "Uložiť obrázky do ..."
+msgstr "Otroci mužského pohlavia do 14 rokov"
 
 #: Form/form_us.xml.h:81
 msgid "Slave males 14-25"
@@ -9875,10 +9856,8 @@ msgid "Slave males 45 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:84
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave females under 14"
-msgstr "Uložiť obrázky do ..."
+msgstr "Otroci ženského pohlavia do 14 rokov"
 
 #: Form/form_us.xml.h:85
 msgid "Slave females 14-25"
@@ -10029,10 +10008,8 @@ msgid "Free white females 100 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:131 Form/form_us.xml.h:212
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave males under 10"
-msgstr "Uložiť obrázky do ..."
+msgstr "Otroci mužského pohlavia do 10 rokov"
 
 #: Form/form_us.xml.h:132 Form/form_us.xml.h:213
 msgid "Slave males 10-23"
@@ -10055,10 +10032,8 @@ msgid "Slave males 100 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:137 Form/form_us.xml.h:218
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave females under 10"
-msgstr "Uložiť obrázky do ..."
+msgstr "Otroci ženského pohlavia do 10 rokov"
 
 #: Form/form_us.xml.h:138 Form/form_us.xml.h:219
 msgid "Slave females 10-23"
@@ -10213,10 +10188,8 @@ msgid "Colored persons deaf/dumb"
 msgstr ""
 
 #: Form/form_us.xml.h:241
-#, fuzzy
-#| msgid "Color of male persons:"
 msgid "Colored persons blind"
-msgstr "Farba mužských osôb:"
+msgstr "Farebné osoby slepé"
 
 #: Form/form_us.xml.h:242
 msgid "Colored persons insane and idiots at private charge"
@@ -16979,10 +16952,8 @@ msgid "Highlight descandants"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:114
-#, fuzzy
-#| msgid "Center person and all descendants"
 msgid "Highlight the persons which are descendants."
-msgstr "Ústredná osoba so všetkými potomkami"
+msgstr "Zvýrazniť osoby, ktoré sú potomkami."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:115
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
@@ -17493,22 +17464,16 @@ msgid "Generates a family network chart."
 msgstr "Vygeneruje diagram rodinnej siete."
 
 #: NetworkChart/NetworkChart.py:133
-#, fuzzy
-#| msgid "abbreviation"
 msgid "birth abbreviation|b."
-msgstr "skratka"
+msgstr "skratka pre narodenie|n."
 
 #: NetworkChart/NetworkChart.py:134
-#, fuzzy
-#| msgid "abbreviation"
 msgid "death abbreviation|d."
-msgstr "skratka"
+msgstr "skratka pre smrť|z."
 
 #: NetworkChart/NetworkChart.py:135
-#, fuzzy
-#| msgid "abbreviation"
 msgid "marriage abbreviation|m."
-msgstr "skratka"
+msgstr "skratka pre manželstvo|m."
 
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
@@ -18291,10 +18256,8 @@ msgid "The basic style used for the title display."
 msgstr "Základný štýl používaný pre zobrazenie tabuľky."
 
 #: PedigreeChart/PedigreeChart.py:671
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "Style used for labels and captions"
-msgstr "Štýl použitý pre každú sekciu."
+msgstr "Štýl použitý pre štítky a popisy"
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -18833,8 +18796,7 @@ msgid ""
 "For use when the initial component of the Title is too detailed to be found "
 "in the gazetteer."
 msgstr ""
-"Rozdeľte názov, upravte ho manuálne a uzavrite s ďalšou úrovňou "
-"hierarchie.  \n"
+"Rozdeľte názov, upravte ho manuálne a uzavrite s ďalšou úrovňou hierarchie.  "
 "Použite ho, keď je počiatočná zložka názvu príliš podrobná na to, aby bola "
 "nájdená v geografickom lexikóne."
 
@@ -20393,10 +20355,8 @@ msgid "RIA Officers"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:50
-#, fuzzy
-#| msgid "Family:"
 msgid "FamilySpace"
-msgstr "Rodina:"
+msgstr "FamilySpace"
 
 #: RebuildTypes/RebuildTypes.gpr.py:26
 msgid "Rebuild Gramps Types"
@@ -20736,10 +20696,8 @@ msgid "Display empty values"
 msgstr "Typ zobrazenia"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:472
-#, fuzzy
-#| msgid "Whether to include references for images"
 msgid "Whether to include key records with empty values."
-msgstr "Či zahrnúť odkazy na obrázky"
+msgstr "Či zahrnúť kľúčové záznamy s prázdnymi hodnotami."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
@@ -20829,10 +20787,8 @@ msgid "Gravestone inventory - rötter.se"
 msgstr "Inventár náhrobných kameňov - rötter.se"
 
 #: SearchGramplet/SearchGramplet.gpr.py:10
-#, fuzzy
-#| msgid "Gramplet to get places from the GOV database"
 msgid "Gramplet for search objects in database."
-msgstr "Gramplet na získanie miest z databázy GOV"
+msgstr "Gramplet na vyhľadávanie objektov v databáze."
 
 #: SearchGramplet/SearchGramplet.py:104
 #, fuzzy
@@ -23994,30 +23950,20 @@ msgstr ""
 " do svojho preferovaného webového prehliadača ..."
 
 #: markdown_place_history_formatter.py:52
-#, fuzzy
-#| msgid "No data available in table"
 msgid "No data available."
-msgstr "Žiadne údaje k dispozícii v tabuľke"
+msgstr "Žiadne údaje nie sú k dispozícii."
 
 #: markdown_place_history_formatter.py:57
 msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
 msgstr ""
 
 #: markdown_place_history_formatter.py:58
-#, fuzzy
-#| msgid ""
-#| "Found relation #%d: \n"
-#| "   "
 msgid "Foundation date:"
-msgstr ""
-"zistený vzťah #%d: \n"
-"   "
+msgstr "Dátum založenia:"
 
 #: markdown_place_history_formatter.py:60
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Coordinates:"
-msgstr "Súradnice miesta"
+msgstr "Súradnice:"
 
 #: markdown_place_history_formatter.py:61
 msgid "Administrative history"
@@ -24032,20 +23978,16 @@ msgid "Full hierarchy"
 msgstr ""
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Name Type"
 msgid "Place Type:"
-msgstr "Typ mena"
+msgstr "Typ miesta:"
 
 #: markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"
 msgstr ""
 
 #: note_links_loader.py:69
-#, fuzzy
-#| msgid "No file parsed..."
 msgid "Note Link (parsed)"
-msgstr "Nebol analyzovaný žiadny súbor..."
+msgstr "Odkaz na poznámku (analyzovaný)"
 
 #: note_links_loader.py:124
 msgid "Note Link (internal)"
@@ -24104,10 +24046,8 @@ msgid "Long - Without Prefix on the Left"
 msgstr ""
 
 #: settings_ui_manager.py:150
-#, fuzzy
-#| msgid "URL prefix path."
 msgid "URL Prefix Replacement"
-msgstr "Predpona URL cesty."
+msgstr "Nahradenie predpony URL"
 
 #: settings_ui_manager.py:157
 msgid "AI Provider"
