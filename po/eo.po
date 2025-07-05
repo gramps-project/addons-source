@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-15 21:02+0000\n"
+"PO-Revision-Date: 2025-06-29 22:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
 "addons/eo/>\n"
@@ -22,24 +22,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Ĉiuj Nomoj de Ĉiuj Homoj"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Ekranas ĉiujn nomojn de ĉiuj homoj"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
-msgstr ""
+msgstr "Nomtipo"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr ""
+msgstr "Ĉefa nomo"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -134,7 +134,7 @@ msgstr ""
 #: LinesOfDescendency/lines-of-descendency.py:72
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
-msgstr ""
+msgstr "La stilo uzata por la titolo de la paĝo."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
