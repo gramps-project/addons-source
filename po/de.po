@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-15 21:01+0000\n"
+"PO-Revision-Date: 2025-07-05 23:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -3033,16 +3033,12 @@ msgid "Matriarchal Line (Female ancestor)"
 msgstr "Matriarchale Linie (weibliche Vorfahren)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
-#, fuzzy
-#| msgid "Person theme"
 msgid "Dark theme"
-msgstr "Personenthema"
+msgstr "Dunkles Design"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Light"
 msgid "Light theme"
-msgstr "Licht"
+msgstr "Helles Design"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
 msgid "Continue Descendant Tree"
@@ -3105,18 +3101,13 @@ msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr "Verwendung vom Nachkommen Raumbaum Ansichtsprogramm"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:885
-#, fuzzy
-#| msgid ""
-#| "For the best viewing experience, maximize your browser window to use the "
-#| "entire screen and reload this page.  The viewer is fitted to your screen "
-#| "size."
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
 "Für ein optimales Seherlebnis maximiere dein Browserfenster, um den gesamten "
-"Bildschirm zu nutzen, und lad diese Seite neu. Die Anzeige wird an deine "
-"Bildschirmgröße angepasst."
+"Bildschirm zu nutzen.  Durch eine Größenänderung wird die Grafik auf die "
+"zentrale Person zurückgesetzt."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
@@ -3233,16 +3224,12 @@ msgid "Birth/date dates will not be displayed after this year"
 msgstr "Geburtsdaten werden nach diesem Jahr nicht mehr angezeigt"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1116
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "Thema Einstellungen"
+msgstr "Designvorlage"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1123
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "Theme color preference for Space Tree"
-msgstr "Die zentrale Person für den Baum"
+msgstr "Designfarbe-Einstellung für Raumbaum"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1136
 msgid "Destination File"
@@ -3253,10 +3240,8 @@ msgid "The destination file name for the report."
 msgstr "Der Name der Zieldatei für den Bericht."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
-#, fuzzy
-#| msgid "Opens an interactive tree in the browser"
 msgid "Open generated HTML file with default browser."
-msgstr "Öffnet einen interaktiven Baum im Browser"
+msgstr "Die generierte HTML-Datei mit dem Standardbrowser öffnen."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -4983,8 +4968,8 @@ msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
 msgstr ""
-"WARNUNG: Dies löscht alle Exif Metadaten von diesem Bild! Bist du sicher, "
-"das du dies tun willst?"
+"WARNUNG:  Dadurch werden alle Exif-Metadaten aus diesem Bild vollständig "
+"gelöscht!  Möchtest du dies wirklich tun?"
 
 #: EditExifMetadata/editexifmetadata.py:213
 msgid "Clear GPS"
@@ -4996,19 +4981,19 @@ msgstr "Miniaturbild"
 
 #: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
-msgstr "Wähle zum Start ein Bild..."
+msgstr "Wähle ein Bild aus, um zu beginnen..."
 
 #: EditExifMetadata/editexifmetadata.py:421
 msgid ""
 "Image is NOT readable,\n"
 "Please choose a different image..."
 msgstr ""
-"Bild kann NICHT gelesen werden,\n"
-"Bitte wähle ein anderes Bild..."
+"Das Bild ist NICHT lesbar.\n"
+"Bitte wähle ein anderes Bild aus..."
 
 #: EditExifMetadata/editexifmetadata.py:441
 msgid "Please convert this image to an Exiv2- compatible image type..."
-msgstr "Bitte dieses Bild in ein Exiv2 kompatibles Format umwandeln..."
+msgstr "Bitte konvertiere dieses Bild in einen Exiv2-kompatiblen Bildtyp..."
 
 #: EditExifMetadata/editexifmetadata.py:465
 #, python-brace-format
@@ -5021,24 +5006,24 @@ msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
 msgstr ""
-"Bild kann NICHT geschrieben werden,\n"
-"Du kannst KEINE Exif Metadaten speichern...."
+"Das Bild ist NICHT beschreibbar.\n"
+"Du kannst die Exif-Metadaten NICHT speichern..."
 
 #: EditExifMetadata/editexifmetadata.py:648
 msgid "Click Close to close this Thumbnail View Area."
-msgstr "Klicke auf Schließen um den Vorschaubildanzeigebereich zu schließen."
+msgstr "Klicke auf „Schließen“, um diesen Miniaturansichtsbereich zu schließen."
 
 #: EditExifMetadata/editexifmetadata.py:654
 msgid "Thumbnail View Area"
-msgstr "Vorschaubildanzeigebereich"
+msgstr "Miniaturansichtsbereich"
 
 #: EditExifMetadata/editexifmetadata.py:724
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
 msgstr ""
-"ACHTUNG: Du bist dabei dieses Bild in ein .jpeg Bild zu umzuwandeln. Bist du "
-"dir sicher, das tu das tun willst?"
+"WARNUNG: Du bist dabei, dieses Bild in ein JPEG-Bild umzuwandeln. Bist du "
+"sicher, dass du das tun möchtest?"
 
 #: EditExifMetadata/editexifmetadata.py:726
 msgid "Convert and Delete"
@@ -5049,15 +5034,15 @@ msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
 msgstr ""
-"Dein Bild wurde konvertiert, das Original gelöscht und der komplette Pfad "
-"wurde aktualisiert!"
+"Dein Bild wurde konvertiert, die Originaldatei gelöscht und der vollständige "
+"Pfad aktualisiert!"
 
 #: EditExifMetadata/editexifmetadata.py:812
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
 msgstr ""
-"Es ist ein Fehler aufgetreten, Bitte überprüfe deine Quell und "
+"Es ist ein Fehler aufgetreten. Bitte überprüfe deine Quell- und "
 "Zieldateipfade..."
 
 #: EditExifMetadata/editexifmetadata.py:816
@@ -5065,45 +5050,47 @@ msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
 msgstr ""
-"Beim Löschen der original Datei ist ein Fehler aufgetreten. Du musst sie "
+"Beim Löschen der Originaldatei ist ein Fehler aufgetreten.  Du musst sie "
 "selbst löschen!"
 
 #: EditExifMetadata/editexifmetadata.py:834
 msgid "There was an error in converting your image file."
-msgstr "Beim Konvertieren deines Bildes ist ein Fehler aufgetreten."
+msgstr "Bei der Konvertierung deiner Bilddatei ist ein Fehler aufgetreten."
 
 #: EditExifMetadata/editexifmetadata.py:844
 msgid "Media Path Update"
-msgstr "Medienpfad aktualisiert"
+msgstr "Medienpfad aktualisieren"
 
 #: EditExifMetadata/editexifmetadata.py:853
 msgid "There has been an error in updating the image file's path!"
-msgstr "Beim Aktualisieren des Bilddateipfad ist ein Fehler aufgetreten!"
+msgstr ""
+"Bei der Aktualisierung des Pfads der Bilddatei ist ein Fehler aufgetreten!"
 
 #: EditExifMetadata/editexifmetadata.py:886
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
 msgstr ""
-"Klicke die Schließen Schaltfläche wenn du das Ändern dieser Bild Exif "
-"Metadaten abgeschlossen hast."
+"Klicke auf die Schaltfläche „Schließen“, wenn du die Exif-Metadaten dieses "
+"Bildes fertig bearbeitet hast."
 
 #: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
-msgstr "Speichert eine Kopie der Datenfelder in den Exif Metadaten des Bild."
+msgstr "Speichert eine Kopie der Datenfelder in den Exif-Metadaten des Bildes."
 
 #: EditExifMetadata/editexifmetadata.py:928
 msgid "Re -display the data fields that were cleared from the Edit Area."
 msgstr ""
-"Zeigt die Datenfelder die aus dem Editorbereich entfernt wurden wieder an."
+"Zeige die Datenfelder, die aus dem Bearbeitungsbereich gelöscht wurden, "
+"erneut an."
 
 #: EditExifMetadata/editexifmetadata.py:932
 msgid "This button will clear all of the data fields shown here."
-msgstr "Diese Schaltfläche leert alle hier gezeigten Datenfelder."
+msgstr "Diese Schaltfläche löscht alle hier angezeigten Datenfelder."
 
 #: EditExifMetadata/editexifmetadata.py:936
 msgid "This button will clear all of the GPS fields shown here."
-msgstr "Diese Schaltfläche löscht alle hier gezeigten GPS-Felder."
+msgstr "Diese Schaltfläche löscht alle hier angezeigten GPS-Felder."
 
 #: EditExifMetadata/editexifmetadata.py:940
 msgid ""
@@ -5111,8 +5098,9 @@ msgid ""
 "WARNING: This action will NOT Save any changes/ modification made to this "
 "image's Exif metadata."
 msgstr ""
-"Schließt dieses Editorfenster.\n"
-"WARNUNG: Diese Aktion speichert KEINE Änderungen, dieser Bild Exif Metadaten."
+"Schließt dieses Popup-Fenster „Bearbeiten“.\n"
+"WARNUNG: Diese Aktion speichert KEINE Änderungen/Modifikationen, die an den "
+"Exif-Metadaten dieses Bildes vorgenommen wurden."
 
 #: EditExifMetadata/editexifmetadata.py:969
 msgid "Media Object Title"
@@ -5168,7 +5156,7 @@ msgstr "Höhe:"
 
 #: EditExifMetadata/editexifmetadata.py:1114
 msgid "Bad Date/Time"
-msgstr "Falsches Datum/Zeit"
+msgstr "Ungültiges Datum/Zeit"
 
 #: EditExifMetadata/editexifmetadata.py:1122
 msgid "Invalid latitude (syntax: 18°9'"
@@ -5209,24 +5197,24 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
-msgstr "Medientitel aktualisiert"
+msgstr "Medientitel aktualisieren"
 
 #: EditExifMetadata/editexifmetadata.py:1357
 msgid "Media Object Date Created"
-msgstr "Medienobjektdatum erstellt"
+msgstr "Medienobjekt Erstellungsdatum"
 
 #: EditExifMetadata/editexifmetadata.py:1422
 msgid "Saving Exif metadata to this image..."
-msgstr "Speichere Exif Metadaten in dieses Bild..."
+msgstr "Exif-Metadaten für dieses Bild speichern..."
 
 #: EditExifMetadata/editexifmetadata.py:1465
 msgid "All Exif metadata has been deleted from this image..."
-msgstr "Alle Exif Metadaten wurden von diesem Bild entfernt..."
+msgstr "Alle Exif-Metadaten wurden aus diesem Bild gelöscht..."
 
 #: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr ""
-"Beim reinitialisieren der Exif Metadaten für dieses Bild ist ein Fehler "
+"Beim Entfernen der Exif-Metadaten aus diesem Bild ist ein Fehler "
 "aufgetreten..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
@@ -5299,7 +5287,8 @@ msgstr "Prolog-Export"
 #: ExportProlog/ExportProlog.gpr.py:6
 msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
 msgstr ""
-"Exportiert Daten in ein Prolog-Faktenformat. Daten sind in Unicode (utf-8)"
+"Exportiert Daten in ein Prolog-Faktenformat. Die Daten liegen im Unicode-"
+"Format (utf-8) vor"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
@@ -5315,7 +5304,7 @@ msgstr "Rohdaten Optionen"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Extended Person Attributes"
-msgstr "Erweiterte Person Attribute"
+msgstr "Erweiterte Personenattribute"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:40
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:56
@@ -5380,11 +5369,11 @@ msgstr ""
 
 #: FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
-msgstr "FR Web Verknüpfungspaket"
+msgstr "FR Web-Verbindungspaket"
 
 #: FRWebConnectPack/FRWebPack.gpr.py:12
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
-msgstr "Sammlung von Webseiten für FR (benötigt libwebconnect)"
+msgstr "Sammlung von Websites für das FR (erfordert libwebconnect)"
 
 #: FRWebConnectPack/FRWebPack.py:41
 msgid "Cultural ministry (France)"
@@ -5392,7 +5381,7 @@ msgstr "Kulturministerium (Frankreich)"
 
 #: FRWebConnectPack/FRWebPack.py:42
 msgid "Genealogical bank"
-msgstr "Genealogische Bank"
+msgstr "Genealogische Datenbank"
 
 #: FRWebConnectPack/FRWebPack.py:44
 msgid "OrigineFile (Quebec)"
@@ -5416,7 +5405,7 @@ msgstr "Offene Bibliothek (fr)"
 
 #: FRWebConnectPack/FRWebPack.py:60
 msgid "Belgium's Archives"
-msgstr "Belgiens Archive"
+msgstr "Belgische Archive"
 
 #: FaceDetection/FaceDetection.gpr.py:4
 msgid "Face Detection"
@@ -5424,7 +5413,7 @@ msgstr "Gesichtserkennung"
 
 #: FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
-msgstr "Gramplet zur Erkennung und Zuordnung von Gesichtern"
+msgstr "Gramplet zum Erkennen und Zuordnen von Gesichtern"
 
 #: FaceDetection/FaceDetection.gpr.py:13
 msgid "Faces"
@@ -5436,18 +5425,17 @@ msgstr "OpenCV-Python ist nicht installiert"
 
 #: FaceDetection/FaceDetection.py:72
 msgid "Detect New Faces"
-msgstr "Erkannte neue Gesichter"
+msgstr "Neue Gesichter erkennen"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:103
 msgid "Family Relationship Tool"
-msgstr "Werkzeug für Familienbeziehungen"
+msgstr "Beziehungswerkzeug für Familien"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
-msgstr ""
-"Massen-Bearbeitung des Familienbeziehungstyp für eine Gruppe von Familien."
+msgstr "Massenbearbeitung des Verwandtschaftstyps für eine Gruppe von Familien."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
 msgid "All Families"
@@ -5458,8 +5446,8 @@ msgid ""
 "Choose the set of families to process.\n"
 "Create custom filters if empty."
 msgstr ""
-"Wähle die Gruppe zu verarbeitenden Familien aus.\n"
-"Erstelle benutzerdefinierte Filter, wenn diese leer sind."
+"Wähle die zu verarbeitenden Familien aus.\n"
+"Erstelle benutzerdefinierte Filter, wenn das Feld leer ist."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:70
 msgid "Relationship Type"
@@ -5470,7 +5458,7 @@ msgid ""
 "Choose the new family relationship type.\n"
 "Custom relationship types aren't supported."
 msgstr ""
-"Wähle den neuen Familienbeziehungstyp.\n"
+"Wähle den neuen Familientyp aus.\n"
 "Benutzerdefinierte Beziehungstypen werden nicht unterstützt."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
@@ -5486,8 +5474,8 @@ msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
 msgstr ""
-"Erstellt ein Familienblatt, das vollständige Informationen über eine Person "
-"und ihre Partner und Kinder enthält."
+"Erstellt ein Familienblatt mit vollständigen Informationen über eine Person "
+"und ihre Partner und Kinder."
 
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
@@ -5559,11 +5547,11 @@ msgstr "Zentrale Person"
 
 #: FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
-msgstr "Die Person, deren Partner und Kinder gedruckt werden"
+msgstr "Die Person, deren Partner und Kinder angezeigt werden"
 
 #: FamilySheet/FamilySheet.py:869
 msgid "Print sheets for"
-msgstr "Blätter drucken für"
+msgstr "Drucke Blätter für"
 
 #: FamilySheet/FamilySheet.py:871
 msgid "Center person only"
@@ -5579,19 +5567,19 @@ msgstr "Zentrale Person und alle Nachkommen"
 
 #: FamilySheet/FamilySheet.py:874
 msgid "Whether to include descendants, and which ones."
-msgstr "Ob Nachkommen enthalten sind und welche."
+msgstr "Ob Nachkommen einbezogen werden sollen und welche."
 
 #: FamilySheet/FamilySheet.py:880 FamilyTree/FamilyTree.py:1084
 msgid "Replace first name with call name"
-msgstr "Vornamen durch Rufname ersetzen"
+msgstr "Vorname durch Rufname ersetzen"
 
 #: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
-msgstr "Rufname im Vornamen unterstreichen / zum Vornamen hinzufügen"
+msgstr "Rufnamen im Vornamen unterstreichen / Rufnamen zum Vornamen hinzufügen"
 
 #: FamilySheet/FamilySheet.py:882
 msgid "Whether to include call name, and how."
-msgstr "Ob Rufnamen enthalten sind und wie."
+msgstr "Ob der Rufername angegeben werden soll und wie."
 
 #: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
@@ -5599,7 +5587,7 @@ msgstr "Platzhalter für fehlende Informationen drucken"
 
 #: FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"
-msgstr "Der Grundstil, der für Text verwendet wird"
+msgstr "Der für die Textanzeige verwendete Grundstil"
 
 #: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
@@ -5607,19 +5595,19 @@ msgstr "Der Stil für die Seitentaste im oberen Bereich"
 
 #: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
-msgstr "Der Stil der für Namen verwendet wird"
+msgstr "Der für Namen verwendete Stil"
 
 #: FamilySheet/FamilySheet.py:938
 msgid "The style used for numbers"
-msgstr "Der Stil der für Nummern verwendet wird"
+msgstr "Der für Zahlen verwendete Stil"
 
 #: FamilySheet/FamilySheet.py:948
 msgid "The style used for footnotes (notes and source references)"
-msgstr "Der Stil der für Fußnoten (Notizen und Quellenangaben) verwendet wird"
+msgstr "Der für Fußnoten (Notizen und Quellenangaben) verwendete Stil"
 
 #: FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
-msgstr "Erzeugt einen grafischen Stammbaum."
+msgstr "Erstellt einen grafischen Stammbaum."
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
@@ -5633,8 +5621,8 @@ msgstr "Papier zu klein"
 #: FamilyTree/FamilyTree.py:153
 msgid "Some elements may not appear or be badly rendered."
 msgstr ""
-"Einige Elemente werden möglicherweise nicht angezeigt oder sind schlecht "
-"gerendert."
+"Einige Elemente werden möglicherweise nicht angezeigt oder schlecht "
+"dargestellt."
 
 #: FamilyTree/FamilyTree.py:684
 msgid "Anonymous"
@@ -5650,7 +5638,7 @@ msgstr "getauft"
 
 #: FamilyTree/FamilyTree.py:915
 msgid "died"
-msgstr "gestorben"
+msgstr "verstorben"
 
 #: FamilyTree/FamilyTree.py:917
 msgid "buried"
@@ -5662,7 +5650,7 @@ msgstr "eingeäschert"
 
 #: FamilyTree/FamilyTree.py:921
 msgid "married"
-msgstr "geheiratet"
+msgstr "verheiratet"
 
 #: FamilyTree/FamilyTree.py:923
 msgid "divorced"
@@ -5679,7 +5667,7 @@ msgstr "(%(description)s)"
 
 #: FamilyTree/FamilyTree.py:1044
 msgid "The center family for the tree"
-msgstr "Die zentrale Familie für den Stammbaum"
+msgstr "Die zentrale Familie für den Baum"
 
 #: FamilyTree/FamilyTree.py:1047
 #: TimelinePedigreeView/TimelinePedigreeView.py:1481
@@ -5689,7 +5677,8 @@ msgstr "Vorfahrengenerationen"
 #: FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr ""
-"Die Anzahl der Vorfahrengenerationen, die in den Stammbaum aufgenommen werden"
+"Die Anzahl der Vorfahren-Generationen, die in den Stammbaum aufgenommen "
+"werden sollen"
 
 #: FamilyTree/FamilyTree.py:1051
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
@@ -5699,28 +5688,28 @@ msgstr "Nachkommengenerationen"
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
 msgstr ""
-"Die Anzahl der Nachkommen-Generationen, die in den Stammbaum aufgenommen "
-"werden sollen"
+"Die Anzahl der Nachkommengenerationen, die in den Baum aufgenommen werden "
+"sollen"
 
 #: FamilyTree/FamilyTree.py:1055
 msgid "Kekule number of husband"
-msgstr "Kekule-Nummer des Mann"
+msgstr "Keulé-Nummer des Ehemanns"
 
 #: FamilyTree/FamilyTree.py:1056
 msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
 msgstr ""
-"Die Kekule-Nummer des Mann (zentrale Familie). Setze sie auf 0 um keine "
-"Kekule_Nummern anzuzeigen"
+"Die Kekulé-Nummer des Ehemanns (zentrale Familie). Setzen Sie den Wert auf "
+"0, um die Kekulé-Nummern nicht anzuzeigen"
 
 #: FamilyTree/FamilyTree.py:1059
 msgid "Scale to fit on a single page"
-msgstr "Skalieren, um auf eine einzelne Seite zu passen"
+msgstr "Auf eine Seite skalieren"
 
 #: FamilyTree/FamilyTree.py:1060
 msgid "Whether to scale to fit on a single page."
-msgstr "Ob die Größe auf eine Seite angepasst ist."
+msgstr "Ob auf eine Seite angepasst werden soll."
 
 #: FamilyTree/FamilyTree.py:1065
 msgid "No color"
@@ -5744,7 +5733,7 @@ msgstr "Männliche Linie"
 
 #: FamilyTree/FamilyTree.py:1071
 msgid "Male line and illegitimate children"
-msgstr "Mänliche Linie und illigitime Kinder"
+msgstr "Männliche Linie und uneheliche Kinder"
 
 #: FamilyTree/FamilyTree.py:1072
 msgid "Female line"
@@ -5757,15 +5746,15 @@ msgstr "Farben mischen"
 #: FamilyTree/FamilyTree.py:1076
 msgid "Whether to shuffle colors or order them in rainbow fashion."
 msgstr ""
-"Ob die Farben durchmischt werden sollen oder nach Regenbogenart geordnet."
+"Ob die Farben gemischt oder in Regenbogenfarben angeordnet werden sollen."
 
 #: FamilyTree/FamilyTree.py:1091
 msgid "Include Occupation"
-msgstr "Beruf aufnehmen"
+msgstr "Beruf angeben"
 
 #: FamilyTree/FamilyTree.py:1097
 msgid "Include Residence"
-msgstr "Wohnort aufnehmen"
+msgstr "Wohnort angeben"
 
 #: FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
@@ -16590,7 +16579,7 @@ msgstr "Geänderte Quellen"
 
 #: LastChange/LastChangeReport.py:304
 msgid "Notes Changed"
-msgstr "Geänderte Notizen"
+msgstr "Notizen geändert"
 
 #: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
@@ -17278,9 +17267,9 @@ msgid ""
 "You have to select a custom note or uncheck the option 'include custom note' "
 "to generate this report."
 msgstr ""
-"Um diesen Bericht zu erstellen, muss ein benutzerdefinierte Notiz ausgewählt "
-"werden, oder die Option ‚Benutzerdefinierte Notiz aufnehmen‘ deaktiviert "
-"werden."
+"Du musst eine benutzerdefinierte Notiz auswählen oder die Option „"
+"Benutzerdefinierte Notiz einbeziehen” deaktivieren, um diesen Bericht zu "
+"erstellen."
 
 #: MediaReport/media_report.py:125
 msgid "This report only supports PDF as output file format."
@@ -17308,15 +17297,15 @@ msgstr "Benutzerdefinierte Notiz"
 
 #: MediaReport/media_report.py:434
 msgid "Select a note for this report"
-msgstr "Notiz für diesen Bericht auswählen"
+msgstr "Wähle eine Notiz für diesen Bericht aus"
 
 #: MediaReport/media_report.py:437
 msgid "Include custom note"
-msgstr "Benutzerdefinierte Notiz einbeziehen"
+msgstr "Benutzerdefinierte Notiz hinzufügen"
 
 #: MediaReport/media_report.py:438
 msgid "The custom note will be included"
-msgstr "Benutzerdefinierte Notiz wird einbezogen"
+msgstr "Die benutzerdefinierte Notiz wird hinzugefügt"
 
 #: MediaReport/media_report.py:442
 msgid "Include referenced people"
@@ -17332,7 +17321,7 @@ msgstr "Mediendaten einbeziehen"
 
 #: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
-msgstr "Markierungen, Notizen und Attribute werden einbezogen"
+msgstr "Etiketten, Notizen und Attribute werden enthalten sein"
 
 #: MediaReport/media_report.py:450
 msgid "Media width"
@@ -18073,7 +18062,7 @@ msgstr "Probleme"
 
 #: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
-msgstr "Das Notiz Bereinigung Werkzeug schließen"
+msgstr "Das Werkzeug zum Bereinigen von Notizen schließen"
 
 #: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
@@ -18085,11 +18074,11 @@ msgstr "Alle Änderungen Speichern"
 
 #: NoteCleanup/NoteCleanup.py:127
 msgid "Search for Untidy Notes"
-msgstr "Suche nach unaufgeräumten Notizen"
+msgstr "Suche nach ungeordneten Notizen"
 
 #: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
-msgstr "Erstelle Testnotizen"
+msgstr "Testnotizen erstellen"
 
 #: NoteCleanup/NoteCleanup.py:131
 msgid ""
@@ -18110,22 +18099,22 @@ msgid ""
 "You may export a summary list of the notes that were found using the "
 "'Export' button."
 msgstr ""
-"Bitte sichern Sie Ihre Datenbank, bevor Sie dieses Tool ausführen.\n"
+"Bitte sichere deine Datenbank, bevor du dieses Programm startest.\n"
 "\n"
-"Starte das Tool, indem du auf die Schaltfläche \"Suchen\" klickst, und "
-"überprüfe die Ergebnisse.\n"
-"Wenn du zufrieden bist, klicke auf 'Alles speichern', um deine Arbeit zu "
-"speichern.\n"
-"Du kannst eine Übersichtsliste der gefundenen Notizen exportieren, indem du "
-"auf die Schaltfläche \"Exportieren\" klickst."
+"Starte das Programm, indem du auf die Schaltfläche „Suchen” klickst, und "
+"überprüfe dann die Ergebnisse.\n"
+"Wenn du zufrieden bist, klicke auf die Schaltfläche „Alle speichern”, um "
+"deine Arbeit zu speichern.\n"
+"Du kannst eine Zusammenfassung der gefundenen Notizen über die Schaltfläche "
+"„Exportieren” exportieren."
 
 #: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
-msgstr "Notizen aufräumen"
+msgstr "Notizen bereinigen"
 
 #: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
-msgstr "Bereinige Testnotizen"
+msgstr "Testnotizen bereinigen"
 
 #: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
@@ -18139,8 +18128,8 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Die im linken Fensterbereich ausgewählten Notizen werden vor der Bereinigung "
-"in diesem Feld angezeigt."
+"Die im linken Fensterbereich ausgewählten Notizen werden in diesem Feld vor "
+"der Bereinigung angezeigt."
 
 #: NoteCleanup/NoteCleanup.py:386
 msgid ""
@@ -18152,14 +18141,14 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Die im linken Bereich ausgewählten Notizen werden nach der Bereinigung in "
-"diesem Feld angezeigt.\n"
-"Wenn du Änderungen vornehmen möchtest, kannst du sie hier vornehmen und den "
-"Stil verwenden der in der Werkzeugleiste oben kontrolliert wird."
+"Die im linken Fensterbereich ausgewählten Notizen werden nach der "
+"Bereinigung in diesem Feld angezeigt.\n"
+"Wenn du Änderungen vornehmen möchtest, kannst du diese hier vornehmen und "
+"die Stilsteuerelemente in der Symbolleiste oben verwenden."
 
 #: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
-msgstr "Notizen Speichern"
+msgstr "Notizen speichern"
 
 #: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
@@ -20725,7 +20714,7 @@ msgstr "Ob Schlüssel und Werte aufgenommen werden."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
-msgstr "Ob Notizen über Aufbewahrungsorte und Quellen enthalten sind."
+msgstr "Ob Notizen zu Aufbewahrungsorte und Quellen aufgenommen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:460
 msgid "Whether to include media."
@@ -21932,7 +21921,7 @@ msgstr "TMG-Datensatz _Importieren"
 
 #: Themes/themes.gpr.py:29
 msgid "Theme preferences"
-msgstr "Thema Einstellungen"
+msgstr "Designvorlagen"
 
 #: Themes/themes.gpr.py:31
 msgid ""
@@ -22740,8 +22729,8 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"Erstellt eine Liste aller Notizen mit einer bestimmten Markierung zusammen "
-"mit den Datensätzen auf die sie referenziert, die Person, Familie, Ereignis, "
+"Erstellt eine Liste aller Notizen mit einem bestimmten Etikett zusammen mit "
+"den Datensätzen, auf die sie sich beziehen, also Person, Familie, Ereignis "
 "usw."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
@@ -22751,7 +22740,7 @@ msgstr "ZeB-Titel"
 #: ToDoReport/TodoReport.py:111
 #, python-format
 msgid "Report on Notes Tagged '%s'"
-msgstr "Bericht über Notizen mit der Markierung '%s'"
+msgstr "Bericht über Notizen mit dem Etikett „%s“"
 
 #: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
 msgid "TR-Heading"
@@ -22845,7 +22834,7 @@ msgstr "Gruppiere nach Referenzart"
 
 #: ToDoReport/TodoReport.py:886
 msgid "Group notes by Family, Person, Place, etc."
-msgstr "Gruppiere Notizen nach Familie, Person, Ort, usw."
+msgstr "Notizen nach Familie, Person, Ort usw. gruppieren."
 
 #: ToDoReport/TodoReport.py:946
 msgid "The basic style used for the table cell display."
