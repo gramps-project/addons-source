@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-16 17:49-0600\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"PO-Revision-Date: 2025-06-28 18:50+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Patriarchal Line (Male ancestor)"
@@ -20,6 +20,12 @@ msgstr "Patriarkaalinen sukulinja (miespuoliset esivanhemmat)"
 
 msgid "Matriarchal Line (Female ancestor)"
 msgstr "Matriarkaalilinja (naispuoliset esivanhemmat)"
+
+msgid "Dark theme"
+msgstr "Tumma teema"
+
+msgid "Light theme"
+msgstr "Vaalea teema"
 
 msgid "Continue Descendant Tree"
 msgstr "Jälkeläispuun jatko"
@@ -71,6 +77,13 @@ msgstr "Jälkeläiset"
 
 msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr "DescendantSpaceTree-katseluohjelman käyttö"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"Parhaan katselukokemuksen saavuttamiseksi suurenna selainikkunasi koko "
+"näyttöön ja lataa uudelleen. Keskushenkilö sijoittuu keskelle kaaviota."
 
 msgid "Click on a node to focus on a descendant and expand any children."
 msgstr "Napsauta solmua keskittyäksesi jälkeläiseen lapsineen."
@@ -168,6 +181,12 @@ msgstr "Suurin mahdollinen syntymävuosi"
 msgid "Birth/date dates will not be displayed after this year"
 msgstr "Syntymäaikoja ei näytetä tämän vuoden jälkeen"
 
+msgid "Theme preference"
+msgstr "Teeman valinta"
+
+msgid "Theme color preference for Space Tree"
+msgstr "Avaruuspuun teeman värien valinta"
+
 msgid "The destination path for generated files."
 msgstr "Kohdehakemisto uusille tiedostoille."
 
@@ -176,6 +195,9 @@ msgstr "Kohdetiedosto"
 
 msgid "The destination file name for the report."
 msgstr "Raporttitiedoston nimi."
+
+msgid "Open generated HTML file with default browser."
+msgstr "Avaa luotu HTML-tiedosto oletusselaimella."
 
 msgid "Descendant Space Tree"
 msgstr "Jälkeläisten avaruussukupuu"

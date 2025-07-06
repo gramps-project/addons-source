@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"PO-Revision-Date: 2025-06-28 18:50+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,11 +12,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Middle Name Handling"
+msgstr "Toisen nimen käsittely"
+
+msgid "Leave alone"
+msgstr "Jätä rauhaan"
 
 msgid "Separate"
 msgstr "Erilliset"
+
+msgid "URL Compactness Level"
+msgstr "URL-osoitteen tiiviystaso"
+
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Lyhin - ei etuliitettä eikä avaimia"
 
 msgid "Compact - No Prefix, Keys Without Attributes"
 msgstr "Kompakti - Ei etuliitettä, avaimet ilman ominaisuuksia"
@@ -63,14 +75,20 @@ msgstr "Näytä linkit välilehdeltä 'Internet'"
 msgid "Show Links From the Notes"
 msgstr "Näytä lisätietojen linkit"
 
+msgid "Enable AI-generated historical place data"
+msgstr "Hyödynnä tekoälyn luomia historiallisia paikkatietoja"
+
+msgid "Custom country code for AI notes (optional)"
+msgstr "Mukautettu maakoodi tekoälylisätietoja verten (valinnainen)"
+
 msgid "Enable CSV Files"
-msgstr "CSV-tiedostot käyttöön"
+msgstr "Hyödynnä CSV-tiedostoja"
 
 msgid "Display Columns"
 msgstr "Näytä sarakkeet"
 
 msgid "Display Icons"
-msgstr "Näytön kuvakkeet"
+msgstr "Näytä kuvakkeet"
 
 msgid "WebSearch"
 msgstr "Nettihaku"
@@ -103,11 +121,29 @@ msgstr "Kuvio: %s"
 msgid "Object Gramps ID: %s"
 msgstr "Kohteen Gramps ID: %s"
 
+msgid "Link visited"
+msgstr "Vierailtu linkki"
+
+msgid "Link saved to Note"
+msgstr "Linkki tallennettu lisätietoihin"
+
 msgid "Link saved to Attribute"
 msgstr "Linkki tallennettu ominaisuutena"
 
 msgid "Place history loaded"
 msgstr "Paikkahistoria ladattu"
+
+msgid "Domain skipped"
+msgstr "Verkkotunnus ohitettu"
+
+msgid "Link hidden for object"
+msgstr "Linkki piilotettu kohteelta"
+
+msgid "Link hidden for all objects"
+msgstr "Linkki piilotettu kaikilta kohteilta"
+
+msgid "Attribute updated"
+msgstr "Ominaisuus päivitetty"
 
 msgid "Note updated"
 msgstr "Lisätieto päivitetty"
@@ -115,11 +151,209 @@ msgstr "Lisätieto päivitetty"
 msgid "Note Link (parsed)"
 msgstr "Linkki lisätietoihin (jäsennetty)"
 
+msgid "Note Link (internal)"
+msgstr "Linkki lisätietoihin (sisäinen)"
+
+msgid "Note Link (external)"
+msgstr "Linkki lisätietoihin (ulkoinen)"
+
 msgid "No title"
 msgstr "Ei nimeä"
 
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Tietoja WebSearchistä"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch on Grampsin Gramplet, joka auttaa sinua hakemaan sukututkimukseen "
+"liittyviä verkkosivustoja."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Se tukee CSV-pohjaisia linkkipohjia, tekoälyavusteista sivustojen etsintää "
+"ja suoraa integrointia muistiinpanoihin ja ominaisuuksiin."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Järjestelmätiedot"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Puuttuu:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Tätä Python-kirjastoa ei ole saatavilla järjestelmässäsi."
+
+msgid "Without it, QR code generation will not work."
+msgstr "QR-koodien luonti ei toimi ilman sitä."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Yleensä asennetaan komennolla: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Huomaa: Joissakin käyttöjärjestelmissä tai ympäristössä on käytetävä "
+"vaihtoehtoisia asennustapoja.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Puuttuu:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Tämä kirjasto on tarpeen OpenAI-pohjaisten ominaisuuksien käyttämiseksi."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Ilman sitä ei tekoälyn luomat sivustoehdotukset ja paikkahistoria ole "
+"käytettävissä."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Asennetaan yleensä komennolla: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Puuttuu:** `pyynnöt`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Tätä kirjastoa käytetään kommunikointiin web-rajapintojen kanssa."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "Ilman sitä ulkoiset tietolähteet eivät välttämättä ole käytettävissä."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Tavallisesti asennetaan komennolla: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Tiedostojen sijainnit"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Alla on polut WebSearchin käyttämiin järjestelmän ja käyttäjän määrittämiin "
+"datatiedostoihin."
+
+msgid "#### CSV File Paths"
+msgstr "#### CSV-tiedostopolut"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr ""
+"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetut CSV-tiedostot"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukautettuja CSV-"
+"tiedostoja varten"
+
+msgid "#### JSON File Paths"
+msgstr "#### JSON tiedostopolut"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetun "
+"attribute_mapping.json-tiedoston"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukauttamille "
+"attribute_mapping.json-tiedostolle"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Vinkki: avaa tiedostonhallinnassa napsauttamalla valitsemaasi polkua "
+"yllä*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 Katso yksityiskohtainen ohje: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 Tuki"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Luonut ja ylläpitänyt Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Jos tarvitset apua tai palautetta, mainitse `@Urchello` Gramps-foorumilla:"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Virheilmoitukset ja ominaisuuspyynnöt ovat täysin **ilmaisia**."
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 WebSearch Gramplet versio: `%s`"
+
+msgid "Column - Icons"
+msgstr "Sarake - Kuvakkeet"
+
+msgid "Column - Source Types (flags)"
+msgstr "Sarake - Lähdetyypit (liput)"
+
+msgid "Column - Keys"
+msgstr "Sarake - Avaimet"
+
+msgid "Column - Title"
+msgstr "Sarake - Otsikko"
+
+msgid "Column - Website Url"
+msgstr "Sarake - Verkkosivuston URL-osoite"
+
+msgid "Column - Comment"
+msgstr "Sarake - Kommentti"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Kuvake - Vieraillut URL-osoitteet (valintamerkki)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Kuvake - Tallennetut URL-osoitteet (levyke)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Kuvake - UID-attribuutteihin (UID-merkki) linkitetyt URL-osoitteet"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Kuvake - URL-osoitteet alueen CSV-tiedostoista (lippu)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Kuvake - URL-osoitteet kiinteistä CSV-tiedostoista (punainen neula)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Kuvake - URL-osoitteet yleisistä CSV-tiedostoista (maapallo)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Kuvake - URL-osoitteet CSV-tiedostojen kesken (sekoitusnuolet)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Kuvake - URL-osoitteet käyttäjän mukautetusta hakemistosta (laskentataulukon "
+"kuvake)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Kuvake – Ominaisuudet-välilehden URL-osoitteet ('A'-kuvake)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Kuvake – Internet-välilehden URL-osoitteet ('I'-kuvake)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Kuvake – Lisätiedot-välilehden URL-osoitteet ('N'-kuvake)"
+
 msgid "No data available."
 msgstr "Ei tietoja saatavilla."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "HISTORIALLISET HALLINNOLLISET OSAT"
 
 msgid "Foundation date:"
 msgstr "Perustamispäivä:"
@@ -127,11 +361,33 @@ msgstr "Perustamispäivä:"
 msgid "Coordinates:"
 msgstr "Koordinaatit:"
 
+msgid "Administrative history"
+msgstr "Hallinnollinen historia"
+
+msgid "Data provided to AI:"
+msgstr "Tekoälylle toimitetut tiedot:"
+
 msgid "Full hierarchy"
 msgstr "Koko hierarkia"
 
 msgid "Place Type:"
 msgstr "Paikan tyyppi:"
+
+msgid "Last Retrieved At:"
+msgstr "Viimeksi noudettu:"
+
+msgid "QR-code"
+msgstr "QR-koodi"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Riippuvuus \"qrcode\" puuttuu"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Virhe QR-koodissa:\n"
+"Alkuperäinen virhe: “{}”"
 
 msgid "Save Coordinates to the Place"
 msgstr "Tallenna paikan koordinaatit"
@@ -153,7 +409,7 @@ msgstr "Näytä QR-koodi"
 
 #, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "Lisätieto #%(id)s on onnistuneesti lisätty."
+msgstr "Lisätieto #%(id)s on onnistuneesti lisätty"
 
 msgid "WebSearch Link"
 msgstr "Verkkohaku Linkki"

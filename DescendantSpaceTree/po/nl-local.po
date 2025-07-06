@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-16 17:49-0600\n"
-"PO-Revision-Date: 2025-06-11 04:56+0000\n"
+"PO-Revision-Date: 2025-06-20 16:46+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,13 +12,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Patriarchal Line (Male ancestor)"
 msgstr "Patriarchale lijn (mannelijke voorouder)"
 
 msgid "Matriarchal Line (Female ancestor)"
 msgstr "Matriarchale lijn (vrouwelijke voorouder)"
+
+msgid "Dark theme"
+msgstr "Donker hema"
+
+msgid "Light theme"
+msgstr "Licht thema"
 
 msgid "Continue Descendant Tree"
 msgstr "Afstammelingsboom voortzetten"
@@ -70,6 +76,13 @@ msgstr "Afstammelingen van"
 
 msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr "De DescendantSpaceTree Viewer gebruiken"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"Voor het beste resultaat maximaliseert u uw browservenster tot het volledige "
+"scherm.  Formaat wijzigen zal de grafiek terugzetten naar de hoofdpersoon."
 
 msgid "Click on a node to focus on a descendant and expand any children."
 msgstr ""
@@ -171,6 +184,12 @@ msgstr "Maximaal weer te geven geboortejaar"
 msgid "Birth/date dates will not be displayed after this year"
 msgstr "Geboorte-/sterfdatums na dit jaar niet meer weergegeven"
 
+msgid "Theme preference"
+msgstr "Thema-voorkeur"
+
+msgid "Theme color preference for Space Tree"
+msgstr "Voorkeur van themakleur voor ruimteboom"
+
 msgid "The destination path for generated files."
 msgstr "Het bestemmingspad voor gegenereerde bestanden."
 
@@ -179,6 +198,9 @@ msgstr "Bestemming bestand"
 
 msgid "The destination file name for the report."
 msgstr "De naam van het doelbestand voor het rapport."
+
+msgid "Open generated HTML file with default browser."
+msgstr "Gegenereerd HTML-bestand openen met standaardbrowser."
 
 msgid "Descendant Space Tree"
 msgstr "Afstammelings-ruimteboom"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-16 17:49-0600\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
-"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"PO-Revision-Date: 2025-06-20 05:24+0000\n"
+"Last-Translator: Максим Горпиніч <maksimgorpinic4@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -20,6 +20,12 @@ msgstr "Патріархальна лінія (предок чоловічої �
 
 msgid "Matriarchal Line (Female ancestor)"
 msgstr "Матріархальна лінія (жіноча предкиня)"
+
+msgid "Dark theme"
+msgstr "Темна тема"
+
+msgid "Light theme"
+msgstr "Світла тема"
 
 msgid "Continue Descendant Tree"
 msgstr "Продовжити дерево нащадків"
@@ -71,6 +77,13 @@ msgstr "Нащадків"
 
 msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr "Як використовувати переглядач DescendantSpaceTree"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"Для найкращого перегляду розгорніть вікно браузера, щоб використовувати весь "
+"екран. Зміна розміру поверне графік до центрального положення людини."
 
 msgid "Click on a node to focus on a descendant and expand any children."
 msgstr ""
@@ -171,6 +184,12 @@ msgstr "Максимальний рік народження, що відобр�
 msgid "Birth/date dates will not be displayed after this year"
 msgstr "Дати народження/дати не відображатимуться після цього року"
 
+msgid "Theme preference"
+msgstr "Налаштування теми"
+
+msgid "Theme color preference for Space Tree"
+msgstr "Параметри кольору теми для Space Tree"
+
 msgid "The destination path for generated files."
 msgstr "Шлях призначення для згенерованих файлів."
 
@@ -179,6 +198,9 @@ msgstr "Файл призначення"
 
 msgid "The destination file name for the report."
 msgstr "Ім'я файлу призначення для звіту."
+
+msgid "Open generated HTML file with default browser."
+msgstr "Відкрийте згенерований HTML-файл у браузері за замовчуванням."
 
 msgid "Descendant Space Tree"
 msgstr "Дерево космосу нащадків"

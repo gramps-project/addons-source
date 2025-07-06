@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-07-05 23:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #, python-format
 msgid "Family Tree for %s"
@@ -23,8 +23,8 @@ msgstr "Papier zu klein"
 
 msgid "Some elements may not appear or be badly rendered."
 msgstr ""
-"Einige Elemente werden möglicherweise nicht angezeigt oder sind schlecht "
-"gerendert."
+"Einige Elemente werden möglicherweise nicht angezeigt oder schlecht "
+"dargestellt."
 
 msgid "Anonymous"
 msgstr "Anonym"
@@ -36,7 +36,7 @@ msgid "baptised"
 msgstr "getauft"
 
 msgid "died"
-msgstr "gestorben"
+msgstr "verstorben"
 
 msgid "buried"
 msgstr "begraben"
@@ -45,7 +45,7 @@ msgid "cremated"
 msgstr "eingeäschert"
 
 msgid "married"
-msgstr "geheiratet"
+msgstr "verheiratet"
 
 msgid "divorced"
 msgstr "geschieden"
@@ -82,38 +82,39 @@ msgid "(%(description)s)"
 msgstr "(%(description)s)"
 
 msgid "The center family for the tree"
-msgstr "Die zentrale Familie für den Stammbaum"
+msgstr "Die zentrale Familie für den Baum"
 
 msgid "Ancestor Generations"
 msgstr "Vorfahrengenerationen"
 
 msgid "The number of ancestor generations to include in the tree"
 msgstr ""
-"Die Anzahl der Vorfahrengenerationen, die in den Stammbaum aufgenommen werden"
+"Die Anzahl der Vorfahren-Generationen, die in den Stammbaum aufgenommen "
+"werden sollen"
 
 msgid "Descendant Generations"
 msgstr "Nachkommengenerationen"
 
 msgid "The number of descendant generations to include in the tree"
 msgstr ""
-"Die Anzahl der Nachkommen-Generationen, die in den Stammbaum aufgenommen "
-"werden sollen"
+"Die Anzahl der Nachkommengenerationen, die in den Baum aufgenommen werden "
+"sollen"
 
 msgid "Kekule number of husband"
-msgstr "Kekule-Nummer des Mann"
+msgstr "Keulé-Nummer des Ehemanns"
 
 msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
 msgstr ""
-"Die Kekule-Nummer des Mann (zentrale Familie). Setze sie auf 0 um keine "
-"Kekule_Nummern anzuzeigen"
+"Die Kekulé-Nummer des Ehemanns (zentrale Familie). Setzen Sie den Wert auf "
+"0, um die Kekulé-Nummern nicht anzuzeigen"
 
 msgid "Scale to fit on a single page"
-msgstr "Skalieren, um auf eine einzelne Seite zu passen"
+msgstr "Auf eine Seite skalieren"
 
 msgid "Whether to scale to fit on a single page."
-msgstr "Ob die Größe auf eine Seite angepasst ist."
+msgstr "Ob auf eine Seite angepasst werden soll."
 
 msgid "No color"
 msgstr "Keine Farbe"
@@ -131,7 +132,7 @@ msgid "Male line"
 msgstr "Männliche Linie"
 
 msgid "Male line and illegitimate children"
-msgstr "Mänliche Linie und illigitime Kinder"
+msgstr "Männliche Linie und uneheliche Kinder"
 
 msgid "Female line"
 msgstr "Weibliche Linie"
@@ -141,19 +142,19 @@ msgstr "Farben mischen"
 
 msgid "Whether to shuffle colors or order them in rainbow fashion."
 msgstr ""
-"Ob die Farben durchmischt werden sollen oder nach Regenbogenart geordnet."
+"Ob die Farben gemischt oder in Regenbogenfarben angeordnet werden sollen."
 
 msgid "Replace first name with call name"
-msgstr "Vornamen durch Rufname ersetzen"
+msgstr "Vorname durch Rufname ersetzen"
 
 msgid "Underline call name in first name / add call name to first name"
-msgstr "Rufname im Vornamen unterstreichen / zum Vornamen hinzufügen"
+msgstr "Rufnamen im Vornamen unterstreichen / Rufnamen zum Vornamen hinzufügen"
 
 msgid "Include Occupation"
-msgstr "Beruf aufnehmen"
+msgstr "Beruf angeben"
 
 msgid "Include Residence"
-msgstr "Wohnort aufnehmen"
+msgstr "Wohnort angeben"
 
 msgid "Print event data (dead person)"
 msgstr "Drucke Ereignisdaten (tote Person)"
@@ -192,4 +193,4 @@ msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr "Der für die Daten verwendete Stil (Geburt, Tod, Heirat, Scheidung)."
 
 msgid "Produces a graphical family tree."
-msgstr "Erzeugt einen grafischen Stammbaum."
+msgstr "Erstellt einen grafischen Stammbaum."

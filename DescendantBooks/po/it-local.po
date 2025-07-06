@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"PO-Revision-Date: 2025-07-05 23:01+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Descendant Book"
 msgstr "Libro discendenza"
@@ -37,7 +37,7 @@ msgstr "sp. vedi %(reference)s : %(spouse)s"
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 msgstr ""
-"vedi resoconto: %(report)s, rif: %(reference)s : %(person)s & %(spouse)s"
+"vedi resoconto: %(report)s, rif: %(reference)s : %(person)s e %(spouse)s"
 
 msgid "Descendants Report"
 msgstr "Resoconto dei discendenti"
@@ -76,7 +76,7 @@ msgstr "Generazione di %s riferimenti del resoconto..."
 
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
-msgstr "%(report_count)s. resoconto discendenza di %(person_name)s"
+msgstr "%(report_count)s. Resoconto discendenza di %(person_name)s"
 
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"

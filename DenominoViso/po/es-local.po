@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"PO-Revision-Date: 2025-06-21 17:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "description"
 msgstr "descripción"
@@ -44,23 +44,56 @@ msgstr "Altura máxima del gráfico (px)"
 msgid "Height of the tree in pixels."
 msgstr "La altura del árbol en píxeles."
 
+msgid "Whether to leave out private data."
+msgstr "Indica si se deben excluir los datos privados."
+
+msgid "Whether to include a person's events."
+msgstr "Indica si se deben incluir los eventos de una persona."
+
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
+msgstr ""
+"Indica si se deben incluir los fallecimientos de parientes durante la vida "
+"de la persona."
+
+msgid "Whether to include a person's attributes"
+msgstr "Indica si se deben incluir los atributos de una persona"
+
 msgid "Include Addresses"
 msgstr "Incluir direcciones"
+
+msgid "Whether to include a person's addresses."
+msgstr "Indica si se deben incluir las direcciones de una persona."
 
 msgid "Include Note"
 msgstr "Incluir nota"
 
+msgid "Whether to include a person's note."
+msgstr "Indica si se debe incluir la nota de una persona."
+
 msgid "Include URL"
 msgstr "Incluir URL"
+
+msgid "Whether to include a person's internet address."
+msgstr "Indica si se debe incluir la dirección en internet de una persona."
 
 msgid "Include URL description"
 msgstr "Incluir descripción de URL"
 
+msgid "Whether to include the description of the first URL"
+msgstr "Indica si se debe incluir la descripción del primer URL"
+
 msgid "Include Sources"
 msgstr "Incluir fuentes"
 
+msgid "Whether to include a person's sources."
+msgstr "Indica si se deben incluir las fuentes de una persona."
+
 msgid "Image Options"
 msgstr "Opciones de imágenes"
+
+msgid "Whether to include images"
+msgstr "Indica si se deben incluir imágenes"
 
 msgid "Copy Image"
 msgstr "Copiar imagen"

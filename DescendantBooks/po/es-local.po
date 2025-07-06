@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"PO-Revision-Date: 2025-06-21 17:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -12,8 +12,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
 "Seleccionar filtro para restringir las personas que figuran en el informe"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr ""
+"Indica si se deben mostrar los árboles genealógicos duplicados en el informe."
+
+msgid "Include Index of Names"
+msgstr "Incluir índice de nombres"
+
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "Indica si se debe incluir el índice de nombres al final del informe."
+
+msgid "Include index of Dates"
+msgstr "Incluir índice de fechas"
+
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr "Indica si se debe incluir el índice de fechas al final del informe."
+
+msgid "Include index of Places"
+msgstr "Incluir índice de lugares"
+
+msgid "Whether to include the index of Places at the end of the report."
+msgstr "Indica si se debe incluir el índice de lugares al final del informe."
+
+msgid "The style used for the date in the Index of Dates."
+msgstr "El estilo usado para la fecha en el índice de fechas."
+
+msgid "The style used for the events in the Index of Dates."
+msgstr "El estilo usado para los eventos en el índice de fechas."
+
+msgid "The style used for the header in the Index of Names."
+msgstr "El estilo usado para la cabecera en el índice de nombres."
+
+msgid "The style used for the references in the Index of Names."
+msgstr "El estilo usado para las referencias en el índice de nombres."
+
+msgid "The style used for the header in the Index of Places."
+msgstr "El estilo usado para la cabecera en el índice de lugares."
+
+msgid "The style used for the references in the Index of Places."
+msgstr "El estilo usado para las referencias en el índice de lugares."

@@ -1,0 +1,58 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-06-27 12:04+0000\n"
+"Last-Translator: WaldiS <sto@tutanota.de>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.13-dev\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Błąd zapisu {target_path}: {message}"
+
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "Nie udało się utworzyć struktury katalogów: %s"
+
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "Nie udało się skopiować plików sieciowych: %s"
+
+msgid "Ancestral Collapsible Tree Options"
+msgstr "Opcje drzewa genealogicznego z możliwością zwijania"
+
+msgid "Include Generations"
+msgstr "Uwzględnij pokolenia"
+
+msgid "Male Background Color"
+msgstr "Kolor tła dla mężczyzn"
+
+msgid "RGB-color for male box background."
+msgstr "Kolor RGB tła dla pola mężczyzny."
+
+msgid "Male Expandable Background Color"
+msgstr "Kolor tła z możliwością rozwijania dla mężczyzn"
+
+msgid "Ancestral Collapsible Tree"
+msgstr "Drzewo genealogiczne z możliwością zwijania"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Generuje stronę internetową z graficzną reprezentacją przodków (SVG), "
+"przedstawioną jako zwijalny układ drzewa (Collapsible Tree Layout) za pomocą "
+"biblioteki JavaScript D3.js."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-16 17:49-0600\n"
-"PO-Revision-Date: 2025-06-11 04:56+0000\n"
+"PO-Revision-Date: 2025-06-20 05:24+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,13 +12,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.12.1\n"
 
 msgid "Patriarchal Line (Male ancestor)"
 msgstr "Linha patriarcal (ascendente masculino)"
 
 msgid "Matriarchal Line (Female ancestor)"
 msgstr "Linha matriarcal (ascendente feminino)"
+
+msgid "Dark theme"
+msgstr "Tema escuro"
+
+msgid "Light theme"
+msgstr "Tema claro"
 
 msgid "Continue Descendant Tree"
 msgstr "Continuar árvore de descendentes"
@@ -70,6 +76,13 @@ msgstr "Descendentes de"
 
 msgid "How to Use the DescendantSpaceTree Viewer"
 msgstr "Como utilizar o DescendantSpaceTree"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"Para uma melhor experiência de utilização, ponha o navegador em ecrã "
+"completo. O redimensionameto centra o gráfico no indivíduo principal."
 
 msgid "Click on a node to focus on a descendant and expand any children."
 msgstr "Clique num nó para focar um descendente e expandir quaisquer filhos."
@@ -168,6 +181,12 @@ msgstr "Ano de nascimento máximo mostrado"
 msgid "Birth/date dates will not be displayed after this year"
 msgstr "As datas de nascimento/data não serão mostradas a partir deste ano"
 
+msgid "Theme preference"
+msgstr "Preferência de tema"
+
+msgid "Theme color preference for Space Tree"
+msgstr "Preferência de tema para a árvore espacial"
+
 msgid "The destination path for generated files."
 msgstr "O caminho destino para os ficheiros gerados."
 
@@ -176,6 +195,9 @@ msgstr "Ficheiro destino"
 
 msgid "The destination file name for the report."
 msgstr "O nome de ficheiro destino para o relatório."
+
+msgid "Open generated HTML file with default browser."
+msgstr "Abrir o ficheiro HTML gerado no navegador pré-definido."
 
 msgid "Descendant Space Tree"
 msgstr "Árvore de descendentes espacial"

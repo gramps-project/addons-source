@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"PO-Revision-Date: 2025-06-21 17:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Gradient"
 msgstr "Degradado"
@@ -47,12 +47,42 @@ msgstr "Buscar:"
 msgid "all"
 msgstr "todo"
 
+msgid ""
+"Whether to create an archive file (in ZIP or TGZ format) containing the web "
+"site"
+msgstr ""
+"Indica si se debe crear un archivador (en formato ZIP o TGZ) que contenga el "
+"sitio web"
+
 msgid "Select filter to restrict people that appear on web site"
 msgstr ""
 "Seleccionar filtro para restringir las personas que figuran en el sitio web"
 
 msgid "Include records marked private"
 msgstr "Incluir registros marcados como privados"
+
+msgid "Whether to include private objects"
+msgstr "Indica si se deben incluir los objetos privados"
+
+msgid "Whether to export notes in the web pages"
+msgstr "Indica si se deben exportar las notas en las páginas web"
+
+msgid "Whether to export sources and citations in the web pages"
+msgstr "Indica si se deben exportar las fuentes y las citas en las páginas web"
+
+msgid "Whether to export addresses in the web pages"
+msgstr "Indica si se deben exportar las direcciones en las páginas web"
+
+msgid "Whether or not to include the Repository Pages."
+msgstr "Indica si se deben incluir las páginas del repositorio."
+
+msgid "Whether to include images and media in the web pages"
+msgstr ""
+"Indica si se deben incluir imágenes y objetos audiovisuales en las páginas "
+"web"
+
+msgid "Whether to make a copy of the media"
+msgstr "Indica si se deben hacer copias de los objetos audiovisuales"
 
 msgid "List"
 msgstr "Lista"
