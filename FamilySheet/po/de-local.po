@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-11 09:13+0000\n"
+"PO-Revision-Date: 2025-07-05 23:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Family Sheet"
 msgstr "Familienblatt"
@@ -21,8 +21,8 @@ msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
 msgstr ""
-"Erstellt ein Familienblatt, das vollständige Informationen über eine Person "
-"und ihre Partner und Kinder enthält."
+"Erstellt ein Familienblatt mit vollständigen Informationen über eine Person "
+"und ihre Partner und Kinder."
 
 #, python-format
 msgid "\\u2192 %s"
@@ -78,10 +78,10 @@ msgid "Center person"
 msgstr "Zentrale Person"
 
 msgid "The person whose partners and children are printed"
-msgstr "Die Person, deren Partner und Kinder gedruckt werden"
+msgstr "Die Person, deren Partner und Kinder angezeigt werden"
 
 msgid "Print sheets for"
-msgstr "Blätter drucken für"
+msgstr "Drucke Blätter für"
 
 msgid "Center person only"
 msgstr "Nur zentrale Person"
@@ -93,31 +93,31 @@ msgid "Center person and all descendants"
 msgstr "Zentrale Person und alle Nachkommen"
 
 msgid "Whether to include descendants, and which ones."
-msgstr "Ob Nachkommen enthalten sind und welche."
+msgstr "Ob Nachkommen einbezogen werden sollen und welche."
 
 msgid "Replace first name with call name"
-msgstr "Vornamen durch Rufname ersetzen"
+msgstr "Vorname durch Rufname ersetzen"
 
 msgid "Underline call name in first name / add call name to first name"
-msgstr "Rufname im Vornamen unterstreichen / zum Vornamen hinzufügen"
+msgstr "Rufnamen im Vornamen unterstreichen / Rufnamen zum Vornamen hinzufügen"
 
 msgid "Whether to include call name, and how."
-msgstr "Ob Rufnamen enthalten sind und wie."
+msgstr "Ob der Rufername angegeben werden soll und wie."
 
 msgid "Print placeholders for missing information"
 msgstr "Platzhalter für fehlende Informationen drucken"
 
 msgid "The basic style used for the text display"
-msgstr "Der Grundstil, der für Text verwendet wird"
+msgstr "Der für die Textanzeige verwendete Grundstil"
 
 msgid "The style used for the page key on the top"
 msgstr "Der Stil für die Seitentaste im oberen Bereich"
 
 msgid "The style used for names"
-msgstr "Der Stil der für Namen verwendet wird"
+msgstr "Der für Namen verwendete Stil"
 
 msgid "The style used for numbers"
-msgstr "Der Stil der für Nummern verwendet wird"
+msgstr "Der für Zahlen verwendete Stil"
 
 msgid "The style used for footnotes (notes and source references)"
-msgstr "Der Stil der für Fußnoten (Notizen und Quellenangaben) verwendet wird"
+msgstr "Der für Fußnoten (Notizen und Quellenangaben) verwendete Stil"

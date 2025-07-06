@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"PO-Revision-Date: 2025-07-03 08:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Select Form"
 msgstr "Välj formulär"
@@ -858,17 +858,133 @@ msgstr "25. Går i skolan: Kvinna"
 msgid "Birth1851Male"
 msgstr "Födelse1851Man"
 
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. Födslar under år 1851: Man"
+
+msgid "Birth1851Female"
+msgstr "Födelse1851Kvinna"
+
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. Födslar under år 1851: Kvinna"
+
+msgid "Death1851Male"
+msgstr "Dödsfall1851Män"
+
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. Dödsfall under året 1851: Man"
+
+msgid "Death1851Female"
+msgstr "Dödsfall1851Kvinna"
+
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. Dödsfall under året 1851: Kvinnor"
+
+msgid "DeathAgeCause"
+msgstr "DödsfallsÅlderOrsak"
+
+msgid "30. Age and Cause of Deaths"
+msgstr "30. Ålder och dödsorsak"
+
+msgid "Houses"
+msgstr "Hus"
+
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr ""
+"31. Hus: Tegel, sten, stomme, timmer, skjul eller andra typer av bostäder"
+
 msgid "HousesStories"
 msgstr "HusBerättelser"
+
+msgid "32. Houses: No. of Stories"
+msgstr "32. Hus: Antal våningar"
 
 msgid "HousesFamilies"
 msgstr "HusFamiljer"
 
+msgid "33. No. of Families Occupying"
+msgstr "33. Antal familjer som bor"
+
+msgid "HousesVacant"
+msgstr "HusLediga"
+
+msgid "34. Houses: Vacant"
+msgstr "34. Hus: Lediga"
+
 msgid "HousesBuilding"
 msgstr "HusByggnad"
 
+msgid "35. Houses: Building"
+msgstr "35. Hus: Byggnad"
+
+msgid "Shops"
+msgstr "Butiker"
+
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. Butiker, affärer, värdshus, krogar etc."
+
+msgid "PublicBuildings"
+msgstr "Offentliga byggnader"
+
+msgid "37. Public Buildings"
+msgstr "37. Offentliga byggnader"
+
+msgid "WorshipPlaces"
+msgstr "ReligiösaPlatser"
+
+msgid "38. Places of Worship"
+msgstr "38. Religiösa platser"
+
+msgid "BuisnessInfo"
+msgstr "Företagsinformation"
+
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr ""
+"39. Information om kvarnar, fabriker etc., deras kostnader, energi, "
+"produktion etc."
+
+msgid "NumEmployees"
+msgstr "AntalAnställda"
+
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr "40. Antal personer som vanligtvis är anställda där"
+
+msgid "41. General Remarks of the Enumerator"
+msgstr "41. Räknarens allmänna anmärkningar"
+
+msgid "1. Name of Occupier"
+msgstr "1. Namn på boende"
+
+msgid "Concession"
+msgstr "Koncession"
+
+msgid "2. Concession or Range"
+msgstr "2. Koncession eller omfattning"
+
+msgid "Lot"
+msgstr "Tomt"
+
+msgid "3. Lot or part of Lot"
+msgstr "3. Tomt eller del av tomt"
+
+msgid "AcresHeld"
+msgstr "Tunnland hållna"
+
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr "4. Antal tunnland mark: Innehas av varje person eller familj"
+
 msgid "AcresCultivation"
 msgstr "ÅkerOdling"
+
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr "5. Antal tunnland mark: Med odling"
+
+msgid "AcresCrops"
+msgstr "TunnlandGrödor"
+
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr "6. Antal tunnland mark: Med grödor år 1851"
 
 msgid "Column37"
 msgstr "Kolumn37"

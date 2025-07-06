@@ -14,17 +14,26 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.13-dev\n"
 
-msgid "Event Description Editor"
-msgstr "Editor de descripciones de eventos"
+msgid "Generate hierarchy"
+msgstr "Generar jerarquía"
 
-msgid "Search substring..."
-msgstr "Buscar subcadena…"
+msgid "reverse hierarchy"
+msgstr "invertir jerarquía"
 
-msgid "INFO"
-msgstr "INF."
+msgid "Replace text"
+msgstr "Reemplazar texto"
 
-msgid "Find"
-msgstr "Buscar"
+msgid "Use regex"
+msgstr "Usar expresiones regulares"
 
-msgid "Replace"
-msgstr "Reemplazar"
+msgid "Old text:"
+msgstr "Texto anterior:"
+
+msgid "New text:"
+msgstr "Texto nuevo:"
+
+msgid "Clear selections"
+msgstr "Vaciar selecciones"
+
+msgid "Apply to selected places"
+msgstr "Aplicar a lugares seleccionados"

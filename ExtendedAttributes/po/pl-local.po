@@ -19,8 +19,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
-msgid "RGB-color for male box background."
-msgstr "Kolor RGB tła dla pola mężczyzny."
-
-msgid "Direct"
-msgstr "Proste"
+msgid ""
+"Double-click on a row to edit the object containing the selected attribute."
+msgstr ""
+"Kliknij dwukrotnie wiersz, aby edytować obiekt zawierający wybrany atrybut."

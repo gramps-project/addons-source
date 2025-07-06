@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"PO-Revision-Date: 2025-06-21 17:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Forms"
 msgstr "Formularios"
@@ -38,6 +38,15 @@ msgstr "Referencia:"
 
 msgid "Headings"
 msgstr "Títulos"
+
+msgid "NARA publication"
+msgstr "Publicación de la NARA"
+
+msgid "Roll No."
+msgstr "N.º de censo"
+
+msgid "Page No."
+msgstr "N.º de página"
 
 msgid "Sheet No."
 msgstr "N.º de foja"
@@ -81,17 +90,56 @@ msgstr "Queso"
 msgid "Hay"
 msgstr "Heno"
 
+msgid "Farm or house"
+msgstr "Granja o inmueble"
+
 msgid "Industry"
 msgstr "Industria"
 
+msgid "Is this house on a place of three or more acres?"
+msgstr "¿Este inmueble se ubica en un lugar de tres o más acres?"
+
+msgid "Street Name"
+msgstr "Nombre de calle"
+
+msgid "House No."
+msgstr "N.º de inmueble"
+
 msgid "Section"
 msgstr "Sección"
+
+msgid "House Number"
+msgstr "Número de inmueble"
 
 msgid "of"
 msgstr "de"
 
 msgid "Hair Color"
 msgstr "Color de cabello"
+
+msgid "Volume"
+msgstr "Volumen"
+
+msgid "Nationality"
+msgstr "Nacionalidad"
+
+msgid "Road, Street, etc, and No. or Name of House"
+msgstr "Vía, calle, etc., y número o nombre de inmueble"
+
+msgid "Parliamentary Division"
+msgstr "División parlamentaria"
+
+msgid "Island"
+msgstr "Isla"
+
+msgid "Profession or Occupation"
+msgstr "Profesión u ocupación"
+
+msgid "Urban District"
+msgstr "Distrito urbano"
+
+msgid "Houses"
+msgstr "Inmuebles"
 
 msgid "Bulls"
 msgstr "Toros"
@@ -105,8 +153,23 @@ msgstr "Cerdos"
 msgid "13. Origin"
 msgstr "13. Origen"
 
+msgid "3. Houses in construction"
+msgstr "3. Inmuebles en construcción"
+
+msgid "2. Houses in construction"
+msgstr "2. Inmuebles en construcción"
+
+msgid "House"
+msgstr "Inmueble"
+
 msgid "Colour"
 msgstr "Color"
 
 msgid "5. Colour"
 msgstr "5. Color"
+
+msgid "Reason"
+msgstr "Razón"
+
+msgid "1. House"
+msgstr "1. Inmueble"

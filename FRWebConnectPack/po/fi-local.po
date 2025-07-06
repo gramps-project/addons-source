@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"PO-Revision-Date: 2025-06-28 18:50+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,17 +12,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Cultural ministry (France)"
 msgstr "Kulttuuriministeriö (Ranska)"
+
+msgid "Genealogical bank"
+msgstr "Genealogical bank"
+
+msgid "OrigineFile (Quebec)"
+msgstr "Alkuperäistiedosto (Quebec)"
+
+msgid "Cyber genealogy"
+msgstr "Cyber-genealogia"
+
+msgid "RetroNews (Bnf)"
+msgstr "RetroNews (Bnf)"
 
 msgid "Hathi Trust Digital Library (fr)"
 msgstr "Hathi Trust Digital kirjasto (ranska)"
 
 msgid "Open Library (fr)"
 msgstr "Open Library, Ranska"
+
+msgid "Belgium's Archives"
+msgstr "Belgian arkistot"
 
 msgid "FR Web Connect Pack"
 msgstr "FR Web Connect Pack"

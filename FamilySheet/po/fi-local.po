@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"PO-Revision-Date: 2025-06-28 18:50+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,12 +12,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Family Sheet"
+msgstr "Perhelehti"
+
+msgid ""
+"Produces a family sheet showing full information about a person and his/her "
+"partners and children."
+msgstr ""
+"Tuottaa perhelomakkeen, joka näyttää täydelliset tiedot henkilöstä, "
+"puolisoistaan ja lapsistaan."
+
+#, python-format
+msgid "\\u2192 %s"
+msgstr "\\u2192 %s"
 
 #, python-format
 msgid "Address (%(date)s): %(location)s"
 msgstr "Osoite (%(date)s): %(location)s"
+
+#, python-format
+msgid "Address: %(location)s"
+msgstr "Osoite: %(location)s"
 
 #, python-format
 msgid "; %(type)s: %(value)s"
@@ -25,6 +43,17 @@ msgstr "; %(type)s: %(value)s"
 
 msgid "Source references:"
 msgstr "Lähdeviitteet:"
+
+#, python-format
+msgid ", page %s"
+msgstr ", sivu %s"
+
+msgid "Notes:"
+msgstr "Lisätiedot:"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "%(ymd_date)s"
 
 #, python-format
 msgid "in %(ym_date)s"

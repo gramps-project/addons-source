@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
+"PO-Revision-Date: 2025-06-21 17:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Filtering"
 msgstr "Filtrado"
@@ -26,5 +26,20 @@ msgstr "Volcado CSV de Wikipedia"
 msgid "All Places"
 msgstr "Todos los lugares"
 
+msgid "Apply all suggested changes"
+msgstr "Aplicar todos los cambios sugeridos"
+
+msgid "Selection of the Places you want to complete:"
+msgstr "Selección de los lugares que quiere completar:"
+
+msgid "Parish:"
+msgstr "Parroquia:"
+
 msgid "Height:"
 msgstr "Altura:"
+
+msgid "Search in:"
+msgstr "Buscar en:"
+
+msgid "Select A File"
+msgstr "Seleccione un archivo"

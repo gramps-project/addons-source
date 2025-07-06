@@ -3,19 +3,64 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2009-10-05 21:15+0100\n"
-"Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
-"Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-06-27 12:04+0000\n"
+"Last-Translator: WaldiS <sto@tutanota.de>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+msgid "Avatar Generator Tool"
+msgstr "Narzędzie generatora awatarów"
+
+msgid "A tool to add avatar pictures to your family tree"
+msgstr ""
+"Narzędzie do dodawania obrazów awatarów do Twojego drzewa genealogicznego"
+
+msgid "single image mode"
+msgstr "tryb pojedynczego obrazu"
+
+msgid "Choose how many images you'd like to use."
+msgstr "Wybierz, ile obrazów chcesz użyć."
+
+msgid "Image for people with unknown gender."
+msgstr "Obraz dla osób o nieznanej płci."
+
+msgid "Image for males."
+msgstr "Obraz reprezentujący mężczyzn."
+
+msgid "Image for females"
+msgstr "Obraz reprezentujący kobiety"
 
 msgid "Select filter to restrict people"
 msgstr "Wybierz filtr, aby ograniczyć listę osób"
+
+msgid "Remove images from people"
+msgstr "Usuń obrazy przypisane do osób"
+
+msgid "Remove selected image(s)."
+msgstr "Usuń wybrany(-e) obraz(y)."
+
+msgid "Avatar Generator"
+msgstr "Generator awatarów"
+
+msgid "Remove avatar images..."
+msgstr "Usuwanie obrazów awatarów..."
+
+msgid "INFO"
+msgstr "Informacje"
+
+msgid "No media was removed."
+msgstr "Żaden nośnik nie został usunięty."
+
+msgid "{} media references were removed from {} persons."
+msgstr "usunięto {} odwołań do mediów od {} osób."

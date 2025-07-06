@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Order"
 msgstr "Poradie"
@@ -28,6 +28,21 @@ msgstr "Kraj"
 
 msgid "All other free persons"
 msgstr "Všetky ostatné slobodné osoby"
+
+msgid "Slave males under 14"
+msgstr "Otroci mužského pohlavia do 14 rokov"
+
+msgid "Slave females under 14"
+msgstr "Otroci ženského pohlavia do 14 rokov"
+
+msgid "Slave males under 10"
+msgstr "Otroci mužského pohlavia do 10 rokov"
+
+msgid "Slave females under 10"
+msgstr "Otroci ženského pohlavia do 10 rokov"
+
+msgid "Colored persons blind"
+msgstr "Farebné osoby slepé"
 
 msgid "Family No."
 msgstr "Rodina č."
@@ -92,8 +107,26 @@ msgstr "Detí celkom"
 msgid "Parish Ward"
 msgstr "Farský obvod"
 
+msgid "8. Sex"
+msgstr "8. Pohlavie"
+
 msgid "13. Origin"
 msgstr "13. Pôvod"
 
+msgid "7. Sex"
+msgstr "7. Pohlavie"
+
+msgid "4. Sex"
+msgstr "4. Pohlavie"
+
+msgid "Seating"
+msgstr "Sedenie"
+
+msgid "5. Sex"
+msgstr "5. Pohlavie"
+
 msgid "2. Family"
 msgstr "2. Rodina"
+
+msgid "10. Sex"
+msgstr "10. Pohlavie"

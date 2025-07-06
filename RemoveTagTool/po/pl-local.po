@@ -19,8 +19,5 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
-msgid "RGB-color for male box background."
-msgstr "Kolor RGB tła dla pola mężczyzny."
-
-msgid "Direct"
-msgstr "Proste"
+msgid "INFO"
+msgstr "Informacje"

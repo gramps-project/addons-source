@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-06-21 17:01+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+msgid "The place was not found."
+msgstr "No se encontró el lugar."
+
+msgid "The place was not identified."
+msgstr "No se identificó el lugar."
+
+msgid "Coordinates were not given."
+msgstr "No se proporcionaron coordenadas."
+
+msgid "Failed to interpret the input format."
+msgstr "No se pudo interpretar el formato de entrada."
+
+msgid "Place and Coordinates"
+msgstr "Lugar y coordenadas"
+
+msgid "Place Coordinates"
+msgstr "Coordenadas del lugar"
+
+msgid "Add city as place"
+msgstr "Añadir ciudad como lugar"
+
+msgid "Add addess as place"
+msgstr "Añadir dirección como lugar"
+
+msgid "Search for:"
+msgstr "Buscar:"
+
+msgid "Go"
+msgstr "Ir"
+
+msgid "Show help"
+msgstr "Mostrar ayuda"

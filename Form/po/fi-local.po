@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"PO-Revision-Date: 2025-06-28 18:50+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Select Form"
@@ -20,6 +20,16 @@ msgstr "Valintalomake"
 
 msgid "Order"
 msgstr "Järjestys"
+
+msgid "Form"
+msgstr "Lomake"
+
+#, python-format
+msgid "Form: %s"
+msgstr "Lomake: %s"
+
+msgid "New Form"
+msgstr "Uusi lomake"
 
 msgid "Edit Form"
 msgstr "Muokkaussivu"
@@ -129,6 +139,9 @@ msgstr "Oppilaiden määrä"
 msgid "Number of cattle sold"
 msgstr "Myydyn karjan määrä"
 
+msgid "Township"
+msgstr "Kaupunkikunta"
+
 msgid "Section"
 msgstr "Osa"
 
@@ -149,6 +162,9 @@ msgstr "Talon numero"
 
 msgid "Condition"
 msgstr "Ehto"
+
+msgid "Schedule"
+msgstr "Ajoitus"
 
 msgid "Name of Village"
 msgstr "Kylän nimi"
@@ -228,11 +244,38 @@ msgstr "Suhde päähenkilöön"
 msgid "Head of Family"
 msgstr "Perheenpää"
 
+msgid "EnumDistrict"
+msgstr "EnumDistrict"
+
+msgid "Comprising"
+msgstr "Koostuen"
+
+msgid "OfTheSaid"
+msgstr "OfTheSaid"
+
 msgid "Enumerator"
 msgstr "Luetelma"
 
+msgid "1. Names of Inmates"
+msgstr "1. Vankien nimet"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Ammatti tai elinkeino"
+
 msgid "BirthPlace"
 msgstr "Syntymäpaikka"
+
+msgid "3. Place of Birth"
+msgstr "3. Syntymäpaikka"
+
+msgid "4. Religion"
+msgstr "4. Uskonto"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. Asuinpaikka ulkomailla"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. Ikä seuraavana syntymäpäivänä"
 
 msgid "9. Married or Single"
 msgstr "9. Naimisissa tai naimaton"

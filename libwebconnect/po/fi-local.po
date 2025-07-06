@@ -15,17 +15,5 @@ msgstr ""
 "X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
-msgid "Face Detection"
-msgstr "Kasvojentunnistus"
-
-msgid "Gramplet for detecting and assigning faces"
-msgstr "Gramplet kasvojen tunnistamiseen ja asettamiseen"
-
-msgid "Faces"
-msgstr "Kasvot"
-
-msgid "OpenCV-Python is not installed"
-msgstr "OpenCV-Python ei ole asennettu"
-
-msgid "Detect New Faces"
-msgstr "Tunnista uusia kasvoja"
+msgid "Library for web site collections"
+msgstr "Verkkosivustojen kokoelmakirjasto"
