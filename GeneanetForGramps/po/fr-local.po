@@ -1,0 +1,933 @@
+# French translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2017 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+# ancestor : ascendant
+# descendant : descendant
+# person, individual, people : individu(s)
+# remove (context) : enlever une référence ou supprimer de la base
+# home : souche
+# active person : individu actif
+# media : media (pas de 's' ou accent) : un medium
+# les médias : journaux, tv
+# call name : prénom usuel
+# unknown (context) : inconnu ou non-connu (individu)
+# log : journal
+# addon : greffon
+# regular expressions : expressions rationnelles
+# Gramps ID = Identifiant Gramps
+# Please... = Veuillez...
+# bug : bogue
+# afficher / masquer
+# sélectionner
+#
+# Traits d'union:
+# non-substantif
+# non adjectif
+#
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Christophe <khrys63@gmail.com>, 2018.
+# Gil da Costa <gdacosta@sommier-colas.fr>, 2019.
+# Patrick Gerlier <patrick.gerlier@gmx.fr>, 2020.
+# geryonesime <gery.onesime@orange.fr>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: 5.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-05 19:04+0100\n"
+"PO-Revision-Date: 2020-04-30 07:10+0100\n"
+"Last-Translator: \n"
+"Language-Team: français <>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: GeneanetForGramps/GeneanetForGramps.gpr.py:22
+msgid "Import Geneanet data for Gramps"
+msgstr "Import des données Geneanet dans Gramps"
+
+#: GeneanetForGramps/GeneanetForGramps.gpr.py:24
+msgid "Extension to import data from Geneanet into Gramps."
+msgstr "Extension pour importer les données de Geneanet dans Gramps"
+
+#: GeneanetForGramps/GeneanetForGramps.py:91
+msgid "manual|GeneanetForGramps"
+msgstr "manuel|GeneanetForGramps"
+
+#: GeneanetForGramps/GeneanetForGramps.py:135
+#: GeneanetForGramps/GeneanetForGramps.py:192
+#: GeneanetForGramps/GeneanetForGramps.py:576
+#: GeneanetForGramps/GeneanetForGramps.py:692
+msgid "about"
+msgstr "vers"
+
+#: GeneanetForGramps/GeneanetForGramps.py:180
+msgid "datetab received:"
+msgstr "datetab reçue:"
+
+#: GeneanetForGramps/GeneanetForGramps.py:192
+#: GeneanetForGramps/GeneanetForGramps.py:582
+#: GeneanetForGramps/GeneanetForGramps.py:690
+msgid "after"
+msgstr "après"
+
+#: GeneanetForGramps/GeneanetForGramps.py:192
+#: GeneanetForGramps/GeneanetForGramps.py:579
+#: GeneanetForGramps/GeneanetForGramps.py:688
+msgid "before"
+msgstr "avant"
+
+#: GeneanetForGramps/GeneanetForGramps.py:212
+msgid "Init Plugin Options"
+msgstr "Initialisation du greffon - Options"
+
+#: GeneanetForGramps/GeneanetForGramps.py:220
+msgid "Add Plugin Menu Options"
+msgstr "Ajout des options du menu du greffon"
+
+#: GeneanetForGramps/GeneanetForGramps.py:222
+#: GeneanetForGramps/GeneanetForGramps.py:320
+msgid "Geneanet Import Options"
+msgstr "Options de l'import Geneanet"
+
+#: GeneanetForGramps/GeneanetForGramps.py:224
+msgid "Center Person"
+msgstr "Centrer sur l'individu"
+
+#: GeneanetForGramps/GeneanetForGramps.py:225
+msgid "The center person for the filter"
+msgstr "Individu central pour ce filtre"
+
+#: GeneanetForGramps/GeneanetForGramps.py:229
+msgid "Before URL"
+msgstr "Avant URL"
+
+#: GeneanetForGramps/GeneanetForGramps.py:230
+msgid "Geneanet URL for the selected person"
+msgstr "URL Geneanet pour l'individu sélectionné"
+
+#: GeneanetForGramps/GeneanetForGramps.py:231
+msgid ""
+"URL on Geneanet of the person you have selected which will be used as an "
+"import base such as https://gw.geneanet.org/agnesy?"
+"lang=fr&n=queffelec&oc=17&p=marie+anne"
+msgstr ""
+"URL sur Geneanet de l'individu que vous avez sélectionnée et qui sera "
+"utilisée comme base d'importation telle que https://gw.geneanet.org/agnesy?"
+"lang=fr&n=queffelec&oc=17&p=marie+anne"
+
+#: GeneanetForGramps/GeneanetForGramps.py:235
+msgid "Before ASC"
+msgstr "Avant ASC"
+
+#: GeneanetForGramps/GeneanetForGramps.py:239
+#: GeneanetForGramps/GeneanetForGramps.py:369
+msgid "ASC True"
+msgstr "ASC vrai"
+
+#: GeneanetForGramps/GeneanetForGramps.py:241
+#: GeneanetForGramps/GeneanetForGramps.py:371
+msgid "ASC False"
+msgstr "ASC faux"
+
+#: GeneanetForGramps/GeneanetForGramps.py:242
+msgid "Import ascendants"
+msgstr "Importation des ascendants"
+
+#: GeneanetForGramps/GeneanetForGramps.py:243
+msgid "Import ascendants of the selected person up to level number"
+msgstr ""
+"Importation des ascendants de l'individu sélectioné jusqu'au niveau indiqué"
+
+#: GeneanetForGramps/GeneanetForGramps.py:247
+msgid "Before DSC"
+msgstr "Avant DSC"
+
+#: GeneanetForGramps/GeneanetForGramps.py:251
+msgid "DSC True"
+msgstr "DSC vrai"
+
+#: GeneanetForGramps/GeneanetForGramps.py:253
+msgid "DSC False"
+msgstr "DSC faux"
+
+#: GeneanetForGramps/GeneanetForGramps.py:254
+msgid "Import descendants"
+msgstr "Importation des descendants"
+
+#: GeneanetForGramps/GeneanetForGramps.py:255
+msgid "Import descendants of the selected person up to level number"
+msgstr ""
+"Importation des descendants de l'individu sélectioné jusqu'au niveau indiqué"
+
+#: GeneanetForGramps/GeneanetForGramps.py:259
+msgid "Before SPO"
+msgstr "Avant SPO"
+
+#: GeneanetForGramps/GeneanetForGramps.py:263
+msgid "SPO True"
+msgstr "SPO vrai"
+
+#: GeneanetForGramps/GeneanetForGramps.py:265
+msgid "SPO False"
+msgstr "SPO faux"
+
+#: GeneanetForGramps/GeneanetForGramps.py:266
+msgid "Import spouses"
+msgstr "Importation des conjoints"
+
+#: GeneanetForGramps/GeneanetForGramps.py:267
+msgid "Import all spouses of the selected person"
+msgstr "Importation de tous les conjoints de l'individu sélectionné"
+
+#: GeneanetForGramps/GeneanetForGramps.py:271
+msgid "Before LVL"
+msgstr "Avant LVL"
+
+#: GeneanetForGramps/GeneanetForGramps.py:274
+#: GeneanetForGramps/GeneanetForGramps.py:377
+msgid "LVL:"
+msgstr "LVL:"
+
+#: GeneanetForGramps/GeneanetForGramps.py:275
+msgid "Level of Import"
+msgstr "Niveau de l'import"
+
+#: GeneanetForGramps/GeneanetForGramps.py:276
+msgid ""
+"Maximum of upper or lower search done in the family tree - keep it small"
+msgstr ""
+"Niveau maximum de recherche effectuée dans l'arbre familial sur les "
+"ascendants et descendants - gardez le petit"
+
+#: GeneanetForGramps/GeneanetForGramps.py:280
+msgid "Before FORCE"
+msgstr "Avant FORCE"
+
+#: GeneanetForGramps/GeneanetForGramps.py:284
+msgid "FORCE True"
+msgstr "FORCE vrai"
+
+#: GeneanetForGramps/GeneanetForGramps.py:286
+msgid "FORCE False"
+msgstr "FORCE faux"
+
+#: GeneanetForGramps/GeneanetForGramps.py:287
+msgid "Force Import"
+msgstr "Force l'importation"
+
+#: GeneanetForGramps/GeneanetForGramps.py:288
+msgid "Force import of existing persons"
+msgstr "Force l'importation d'individus existants"
+
+#: GeneanetForGramps/GeneanetForGramps.py:292
+msgid "Before VRB"
+msgstr "Avant VRB"
+
+#: GeneanetForGramps/GeneanetForGramps.py:295
+msgid "VRB:"
+msgstr "VRB:"
+
+#: GeneanetForGramps/GeneanetForGramps.py:296
+msgid "Verbosity"
+msgstr "Verbosité"
+
+#: GeneanetForGramps/GeneanetForGramps.py:297
+msgid "Verbosity level from 0 (minimal) to 3 (very verbose)"
+msgstr "Niveau de verbosité de 0 (minimum) à 3 (maximum)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:301
+msgid "Menu Added"
+msgstr "Menu ajouté"
+
+#: GeneanetForGramps/GeneanetForGramps.py:309
+msgid "Init Plugin itself"
+msgstr "Initialisation du greffon lui-même"
+
+#: GeneanetForGramps/GeneanetForGramps.py:314
+msgid "Plugin get_title"
+msgstr "Greffon get_title"
+
+#: GeneanetForGramps/GeneanetForGramps.py:315
+msgid "Geneanet Import Tool"
+msgstr "Outil d'import de Geneanet"
+
+#: GeneanetForGramps/GeneanetForGramps.py:319
+msgid "Plugin initial_frame"
+msgstr "Greffon initial_frame"
+
+#: GeneanetForGramps/GeneanetForGramps.py:331
+msgid "Plugin run"
+msgstr "Exécution du greffon"
+
+#: GeneanetForGramps/GeneanetForGramps.py:334
+#, python-format
+msgid "Importing from %s for user %s"
+msgstr "Import de %s pour l'utilisateur %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:335
+msgid "Geneanet Import into Gramps"
+msgstr "Import de Geneanet dans Gramps"
+
+#: GeneanetForGramps/GeneanetForGramps.py:355
+msgid "Plugin __get_menu_options"
+msgstr "Greffon __get_menu_options"
+
+#: GeneanetForGramps/GeneanetForGramps.py:361
+msgid "GID:"
+msgstr "GID:"
+
+#: GeneanetForGramps/GeneanetForGramps.py:364
+msgid "URL:"
+msgstr "URL :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:391
+msgid "Smart Copying Attributes"
+msgstr "Copy futée d'attributs"
+
+#: GeneanetForGramps/GeneanetForGramps.py:416
+#, python-format
+msgid ""
+"WARNING: Gender conflict between Geneanet (%s) and Gramps (%s), keeping "
+"Gramps value"
+msgstr ""
+
+#: GeneanetForGramps/GeneanetForGramps.py:421
+#, python-format
+msgid ""
+"WARNING: Lastname conflict between Geneanet (%s) and Gramps (%s), keeping "
+"Gramps value"
+msgstr ""
+
+#: GeneanetForGramps/GeneanetForGramps.py:427
+#, python-format
+msgid ""
+"WARNING: Firstname conflict between Geneanet (%s) and Gramps (%s), keeping "
+"Gramps value"
+msgstr ""
+
+#: GeneanetForGramps/GeneanetForGramps.py:459
+#, python-format
+msgid "Copying Person attribute %s (former value %s newer value %s)"
+msgstr ""
+"Copie de l'attribut %s de l'individu (valeur précédente : %s, nouvelle "
+"valeur : %s)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:464
+#, python-format
+msgid "Not Copying Person attribute (%s, value %s) onto %s"
+msgstr "Pas de copie de l'attribut (%s, valeur %s) sur %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:481
+msgid "Reuse Place from Event:"
+msgstr "Réutilise le lieu de l'événement:"
+
+#: GeneanetForGramps/GeneanetForGramps.py:494
+msgid "DEBUG: search for "
+msgstr "DEBUG: Recherche de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:494
+msgid " in "
+msgstr " dans "
+
+#: GeneanetForGramps/GeneanetForGramps.py:500
+msgid "Create Place:"
+msgstr "Creation d'un lieu:"
+
+#: GeneanetForGramps/GeneanetForGramps.py:504
+msgid "Reuse existing Place:"
+msgstr "Réutilisation d'un lieu existant:"
+
+#: GeneanetForGramps/GeneanetForGramps.py:525
+#: GeneanetForGramps/GeneanetForGramps.py:539
+msgid "Existing "
+msgstr "Existant "
+
+#: GeneanetForGramps/GeneanetForGramps.py:525
+#: GeneanetForGramps/GeneanetForGramps.py:539
+msgid " Event"
+msgstr " Événement"
+
+#: GeneanetForGramps/GeneanetForGramps.py:541
+#, python-format
+msgid "ERROR: Unable to handle class %s in get_or_create_all_event"
+msgstr "ERREUR: Impossible de gérer la classe %s dans get_or_create_all_event"
+
+#: GeneanetForGramps/GeneanetForGramps.py:566
+msgid "Creating "
+msgstr "Création de "
+
+# L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
+# /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: GeneanetForGramps/GeneanetForGramps.py:566
+#: GeneanetForGramps/GeneanetForGramps.py:674
+msgid "Event"
+msgstr "Événement"
+
+#: GeneanetForGramps/GeneanetForGramps.py:586
+msgid "in"
+msgstr "dans"
+
+#: GeneanetForGramps/GeneanetForGramps.py:604
+msgid "WARNING: Trying to affect an empty date"
+msgstr "ATTENTION: Tentative d'affectation d'une date vide"
+
+#: GeneanetForGramps/GeneanetForGramps.py:607
+msgid "WARNING: Trying to affect an extra numbered date"
+msgstr "ATTENTION: Tentative d'affectation d'une date supplémentaire"
+
+#: GeneanetForGramps/GeneanetForGramps.py:612
+msgid "Update "
+msgstr "Mise à jour "
+
+#: GeneanetForGramps/GeneanetForGramps.py:612
+msgid " Date to "
+msgstr "Date pour "
+
+#: GeneanetForGramps/GeneanetForGramps.py:642
+#, python-format
+msgid "EventType: %d"
+msgstr ""
+
+#: GeneanetForGramps/GeneanetForGramps.py:661
+msgid "Didn't find a known EventType: "
+msgstr "Impossible de trouver un EventType connu: "
+
+#: GeneanetForGramps/GeneanetForGramps.py:666
+msgid "Ref:"
+msgstr ""
+
+#: GeneanetForGramps/GeneanetForGramps.py:670
+msgid "Didn't find a known ref for this ref date: "
+msgstr ""
+"Impossible de trouver une référence connue pour cette référence de date: "
+
+#: GeneanetForGramps/GeneanetForGramps.py:679
+msgid "Found date: "
+msgstr "Date trouvée: "
+
+#: GeneanetForGramps/GeneanetForGramps.py:683
+msgid "Found date2: "
+msgstr "Date trouvée (2):"
+
+#: GeneanetForGramps/GeneanetForGramps.py:696
+msgid "Returned date: "
+msgstr "Date retournée"
+
+#: GeneanetForGramps/GeneanetForGramps.py:725
+msgid "Creating GFamily: "
+msgstr "Creation d'une GFamily: "
+
+#: GeneanetForGramps/GeneanetForGramps.py:743
+msgid "Create new Gramps Family: "
+msgstr "Création d'une nouvelle Famille Gramps: "
+
+#: GeneanetForGramps/GeneanetForGramps.py:750
+msgid "Look for a Gramps Family"
+msgstr "Recherche d'une Famille Gramps"
+
+#: GeneanetForGramps/GeneanetForGramps.py:756
+msgid "Analysing Gramps Family "
+msgstr "Analyze d'une famille Gramps "
+
+#: GeneanetForGramps/GeneanetForGramps.py:776
+msgid "Check father ids: "
+msgstr "Vérification de l'id du père : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:776
+#: GeneanetForGramps/GeneanetForGramps.py:786
+msgid " vs "
+msgstr " en comparaison de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:786
+msgid "Check mother ids: "
+msgstr "Vérification de l'id de la mère : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:801
+#, python-format
+msgid "Comparing sr %s to %s (idx: %d)"
+msgstr "Comparaison de la ref conjoint %s vis à vis de %s (idx: %d)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:804
+#, python-format
+msgid "Spouse %s found (idx: %d)"
+msgstr "Épou(x|se) %s trouvé(e) (idx: %d)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:818
+#, python-format
+msgid "Geneanet Marriage found the %s at %s (%s)"
+msgstr "Mariage Geneanet trouvé à la date du %s à %s (%s)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:826
+#: GeneanetForGramps/GeneanetForGramps.py:1467
+#, python-format
+msgid "Calling from_gramps with gid: %s"
+msgstr "Appel de from_gramps avec le gid: %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:833
+#: GeneanetForGramps/GeneanetForGramps.py:1474
+#, python-format
+msgid "Now gid is: %s"
+msgstr "Le gid est maintenant: %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:841
+#, python-format
+msgid "Existing gid of a Gramps Family: %s"
+msgstr "gid existant d'une Famille Gramps: %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:844
+#: GeneanetForGramps/GeneanetForGramps.py:1485
+#, python-format
+msgid "WARNING: Unable to retrieve id %s from the gramps db %s"
+msgstr "ATTENTION: Impossible de trouver l'id %s dans la base gramps %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:852
+msgid "Found an existing Gramps family "
+msgstr "Famille Gramps existante trouvée "
+
+#: GeneanetForGramps/GeneanetForGramps.py:874
+#, python-format
+msgid "Gramps Marriage found the %s at %s (%s)"
+msgstr "Mariage Gramps trouvé le %s à %s (%s)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:891
+msgid "No father for this family"
+msgstr "Pas de père pour cette famille"
+
+#: GeneanetForGramps/GeneanetForGramps.py:899
+msgid "Can't affect father to the family"
+msgstr "Impossible de positionner un père pour cette famille"
+
+#: GeneanetForGramps/GeneanetForGramps.py:909
+msgid "No mother for this family"
+msgstr "Pas de mère pour cette famille"
+
+#: GeneanetForGramps/GeneanetForGramps.py:917
+msgid "Can't affect mother to the family"
+msgstr "Impossible de positionner une mère pour cette famille"
+
+#: GeneanetForGramps/GeneanetForGramps.py:931
+msgid "Smart Copying Family"
+msgstr "Copie futée de Famille"
+
+#: GeneanetForGramps/GeneanetForGramps.py:948
+msgid "Child already existing : "
+msgstr "Enfant existant déjà : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:955
+msgid "Adding child: "
+msgstr "Ajout de l'enfant : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:962
+msgid "No handle for this child"
+msgstr "Pas d'entrée pour cet enfant"
+
+#: GeneanetForGramps/GeneanetForGramps.py:977
+msgid "Stopping exploration as there are no more children for family "
+msgstr "Arrêt de l'exploration car il n'y a plus d'enfants pour cette famille"
+
+#: GeneanetForGramps/GeneanetForGramps.py:986
+msgid "WARNING: No family found whereas there should be one :-("
+msgstr ""
+"ATTENTION: Aucune famille trouvée alors qu'il aurait dû y en avoir une :-("
+
+#: GeneanetForGramps/GeneanetForGramps.py:993
+msgid "=> Recursion on the child of "
+msgstr "=> Récursivité sur l'enfant de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1010
+msgid "=> End of recursion on the child of "
+msgstr "=> Fin de récursivité sur l'enfant de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1015
+#: GeneanetForGramps/GeneanetForGramps.py:1020
+msgid "Stopping exploration for family "
+msgstr "Arrêt de l'exploration pour la famille "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1015
+msgid " as there are no more children"
+msgstr " car il n'y a plus d'enfants"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1020
+msgid " as we reached level "
+msgstr " après atteinte du niveau "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1029
+#, python-format
+msgid "Initialize Person at level %d"
+msgstr "Créé l'individu au niveau %d"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1074
+msgid "Smart Copying Person"
+msgstr "Copie futée d'un individu"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1099
+msgid "Purl:"
+msgstr "Purl :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1105
+msgid "Page considered:"
+msgstr "Page considérée :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1108
+msgid "Return code:"
+msgstr "Code de retour :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1110
+msgid "We failed to reach the server at"
+msgstr "Impossible d'atteindre le serveur à"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1116
+msgid "Unable to perform HTML analysis"
+msgstr "Impossible d'effectuer l'analyze HTML"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1139
+#, python-format
+msgid "==> GENEANET Name (L%d): %s %s"
+msgstr "==> Nom GENEANET (L%d): %s %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1141
+msgid "Sex:"
+msgstr "Sexe :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1143
+msgid "Born"
+msgstr "Né"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1150
+msgid "birth"
+msgstr ""
+
+#: GeneanetForGramps/GeneanetForGramps.py:1152
+msgid "Deceased"
+msgstr "Décédé"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1159
+msgid "death"
+msgstr "décès"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1172
+#: GeneanetForGramps/GeneanetForGramps.py:1516
+msgid "Birth:"
+msgstr "Naissance :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1179
+msgid "Birth place:"
+msgstr "Lieu de naissance :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1189
+msgid "Birth place code:"
+msgstr "Code du lieu de naissance"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1195
+#: GeneanetForGramps/GeneanetForGramps.py:1529
+msgid "Death:"
+msgstr "Décès :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1202
+msgid "Death place:"
+msgstr "Lieu de décès :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1212
+msgid "Death place code:"
+msgstr "Code du lieu de décès :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1224
+msgid "Spouse name:"
+msgstr "Nom du conjoint"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1231
+msgid "Spouse ref:"
+msgstr "Référence du conjoint :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1243
+msgid "Married:"
+msgstr "Marié"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1250
+msgid "Married place:"
+msgstr "Lieu de mariage :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1260
+msgid "Married place code:"
+msgstr "Code du lieu de mariage :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1271
+#, python-format
+msgid "Child %d name: %s"
+msgstr "Enfant %d nom : %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1277
+#, python-format
+msgid "Child %d ref: %s"
+msgstr "Enfant %d référence : %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1303
+#, python-format
+msgid "Parent name: %s (%s)"
+msgstr "Nom du parent : %s (%s)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1317
+msgid "We failed to be ok with the server"
+msgstr "Echec de l'entente avec le serveur"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1330
+msgid "Create new Gramps Person: "
+msgstr "Création dun nouvel individu Gramps : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1342
+msgid "DEBUG: Looking after "
+msgstr "DEBUG: Recherche "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1368
+msgid "DEBUG: firstname: "
+msgstr "DEBUG : prénom : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1368
+msgid " vs g_firstname: "
+msgstr " comparé au prénom Gramps : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1369
+msgid "DEBUG: lastname: "
+msgstr "DEBUG : nom : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1369
+msgid " vs g_lastname: "
+msgstr " comparé au nom Gramps : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1386
+msgid "DEBUG: bd: "
+msgstr "DEBUG : bd : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1386
+msgid " vs g_bd: "
+msgstr " comparé à g_bd : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1387
+msgid "DEBUG: dd: "
+msgstr ""
+
+#: GeneanetForGramps/GeneanetForGramps.py:1387
+msgid " vs g_dd: "
+msgstr ""
+
+#: GeneanetForGramps/GeneanetForGramps.py:1400
+msgid "Found a Gramps Person: "
+msgstr "Individu Gramps trouvé : "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1420
+msgid "ERROR: Unable sync unknown Gramps Person"
+msgstr "ERREUR : Synchronisation impossible, individu Gramps inconnu"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1482
+#, python-format
+msgid "Existing Gramps Person: %s"
+msgstr "Individu Gramps existant : %s"
+
+# trunk
+#: GeneanetForGramps/GeneanetForGramps.py:1498
+msgid "Gender:"
+msgstr "Sexe :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1510
+#, python-format
+msgid "===> Gramps Name of %s: %s %s"
+msgstr "===> Nom Gramps de %s : %s %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1520
+msgid "No Birth date"
+msgstr "Pas de date de naissance"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1523
+#, python-format
+msgid "WARNING: Unable to retrieve birth date for id %s"
+msgstr "ATTENTION : impossible de récupérer la date de naissance pour l'id %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1533
+msgid "No Death date"
+msgstr "Pas de date de décès"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1536
+#, python-format
+msgid "WARNING: Unable to retrieve death date for id %s"
+msgstr "ATTENTION : impossible de récupérer la date de décès pour l'id %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1545
+#: GeneanetForGramps/GeneanetForGramps.py:1549
+msgid "Family:"
+msgstr "Famille :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1555
+msgid "Father H:"
+msgstr "Lien du père :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1559
+msgid "Father name:"
+msgstr "Nom du père :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1566
+msgid "Mother H:"
+msgstr "Lien de la mère :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1570
+msgid "Mother name:"
+msgstr "Nom de la mère :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1575
+#, python-format
+msgid "NOTE: Unable to retrieve family for id %s"
+msgstr "NOTE: Impossible de trouver une famille d'id %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1598
+msgid "=> Initialize Family of "
+msgstr "=> Création d'une famille de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1605
+msgid "Unable to Initialize Family of "
+msgstr "Impossible de créer une famille de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1605
+msgid " sex unknown"
+msgstr " sexe inconnu"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1634
+msgid "=> Recursing on the parents of "
+msgstr "=> Récursivité sur les parents de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1638
+msgid "=> End of recursion on the parents of "
+msgstr "=> Fin de récursivité sur les parents de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1645
+msgid "=> Recursing on the mother of "
+msgstr "=> Récursivité sur la mère de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1649
+msgid "=> End of recursing on the mother of "
+msgstr "=> Fin de récursivité sur la mère de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1653
+msgid "=> Initialize Parents Family of "
+msgstr "Création de la famille des parents de "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1694
+msgid "Stopping exploration as we reached level "
+msgstr "Arrêt de l'exploration, en raison de l'atteinte du niveau "
+
+#: GeneanetForGramps/GeneanetForGramps.py:1697
+msgid "Stopping exploration as there are no more parents"
+msgstr "Arrêt de l'exploration, car il n'y a plus de parents"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1719
+#, python-format
+msgid "Gramps   person: %s %s"
+msgstr "Individu Gramps   : %s %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1720
+#, python-format
+msgid "Geneanet person: %s %s"
+msgstr "Individu Geneanet : %s %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1723
+#: GeneanetForGramps/GeneanetForGramps.py:1744
+msgid "Do not continue without force"
+msgstr "Impossible de continuer sans forcer l'importation"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1740
+#, python-format
+msgid "Gramps   person birth/death: %s / %s"
+msgstr "Individu Gramps    naissance/décès : %s / %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1741
+#, python-format
+msgid "Geneanet person birth/death: %s / %s"
+msgstr "Individu Geneanets naissance/décès : %s / %s"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1746
+msgid "Please fix the person in gramps"
+msgstr ""
+
+#: GeneanetForGramps/GeneanetForGramps.py:1752
+#, python-format
+msgid "Adding Gramps Person %s %s (%s | %s)"
+msgstr ""
+
+#: GeneanetForGramps/GeneanetForGramps.py:1792
+msgid "Import Geneanet subtrees into Gramps"
+msgstr "Importation des sous-arbres Genanet dans Gramps"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1793
+msgid "Increase verbosity"
+msgstr "Augmenter la verbosité"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1794
+msgid "Includes ascendants (off by default)"
+msgstr "Inclure les ascendants (désactivé par défaut)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1795
+msgid "Includes descendants (off by default)"
+msgstr "Inclure les descendants (désactivé par défaut)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1796
+msgid "Includes all spouses (off by default)"
+msgstr "Inclure les conjoints (désactivé par défaut)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1797
+msgid "Number of level to explore (2 by default)"
+msgstr "Nombre de niveaux à explorer (2 par défaut)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1798
+msgid "Full path of the Gramps database (under $HOME/.gramps/grampsdb)"
+msgstr ""
+"Chemin complet de la base de données Gramps (sous $HOME/.gramps/grampsdb)"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1799
+msgid "ID of the person to start from in Gramps"
+msgstr "Id de l'individu de départ dans Gramps"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1800
+msgid "Force processing"
+msgstr "Forcer le traitement"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1801
+msgid "Url of the person to search in Geneanet"
+msgstr "URL de l'individu à rechercher sur Geneanet"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1807
+msgid "Please provide a person to search for"
+msgstr "Merci de fournir un individu à rechercher"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1825
+msgid "Please provide a grampsfile to search into"
+msgstr "Merci de fournir une base Gramps pour la recherche"
+
+# master
+#: GeneanetForGramps/GeneanetForGramps.py:1833
+#, python-format
+msgid "Opening the '%s' database"
+msgstr "Ouverture de la base de données « %s »"
+
+# master
+#: GeneanetForGramps/GeneanetForGramps.py:1834
+msgid "An attempt to convert the database failed. Perhaps it needs updating."
+msgstr ""
+"La tentative de conversion de la base de donnée a échoué. Une mise à jour "
+"est peut-être nécessaire."
+
+#: GeneanetForGramps/GeneanetForGramps.py:1846
+msgid "DEBUG: existing gramps id:"
+msgstr "DEBUG : Id Gramps existant :"
+
+#: GeneanetForGramps/GeneanetForGramps.py:1849
+msgid "WARNING: Force mode activated"
+msgstr "ATTENTION : Mode forcé activé"
