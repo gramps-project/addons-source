@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2009-2015 Nick Hall
+# Copyright (C) 2019-2020 Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -44,6 +45,7 @@ from gramps.gen.datehandler import get_date
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import Citation
 from editform import EditForm
+from formactions import FormActions
 from selectform import SelectForm
 from form import get_form_citation
 
@@ -130,6 +132,10 @@ class FormGramplet(Gramplet, DbGUIElement):
         edit.connect("clicked", self.__edit_form, view.get_selection())
         button_box.add(edit)
 
+        actions = Gtk.Button(label=_('_Actions'), use_underline=True)
+        actions.connect("clicked", self.__form_actions, view.get_selection())
+        button_box.add(actions)
+
         vbox.pack_start(view, expand=True, fill=True, padding=0)
         vbox.pack_end(button_box, expand=False, fill=True, padding=4)
 
@@ -167,6 +173,18 @@ class FormGramplet(Gramplet, DbGUIElement):
             try:
                 EditForm(self.gui.dbstate, self.gui.uistate, [], citation,
                          self.update)
+            except WindowActiveError:
+                pass
+
+    def __form_actions(self, widget, selection):
+        """
+        Display actions for the selected form.
+        """
+        model, iter_ = selection.get_selected()
+        if iter_:
+            citation = model.get_value(iter_, 0)
+            try:
+                FormActions(self.gui.dbstate, self.gui.uistate, [], citation)
             except WindowActiveError:
                 pass
 

@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2009-2015 Nick Hall
+# Copyright (C) 2019      Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -83,6 +84,11 @@ CONFIG.register('interface.form-width', 600)
 CONFIG.register('interface.form-height', 400)
 CONFIG.register('interface.form-horiz-position', -1)
 CONFIG.register('interface.form-vert-position', -1)
+
+CONFIG.register('interface.form-actions-width', 600)
+CONFIG.register('interface.form-actions-height', 400)
+CONFIG.register('interface.form-actions-horiz-position', -1)
+CONFIG.register('interface.form-actions-vert-position', -1)
 
 CONFIG.init()
 
