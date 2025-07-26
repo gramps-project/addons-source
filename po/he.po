@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-23 14:01+0000\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
 "Language: he\n"
@@ -590,10 +590,13 @@ msgid ""
 "changes.  If you wish to adjust the order, select the child you wish to "
 "move, and use 'Up' or 'Down' buttons below to move them."
 msgstr ""
+"כאשר הסדר משביע רצון, ניתן להשתמש בלחצן 'אישור' שממוקם מטה כדי לאשר את "
+"השינויים. אם נדרש לשנות את הסדר, יש לבחורו את הצאצא להעברה, ולהשתמש בלחצנים "
+"'מעלה' או 'מטה'  כדי להזיזו."
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
-msgstr ""
+msgstr "מיון צאצאים לפי סדר לידתם"
 
 #: BirthOrder/birthorder.gpr.py:12
 msgid ""
@@ -602,6 +605,9 @@ msgid ""
 "manually, accept all those families that have all children with proper birth "
 "dates, or accept all."
 msgstr ""
+"מעבר על משפחות, וחיפוש צאצאים שלא מוצגים לפי סדר לידתם. בידי המשתמש היכולת "
+"לקבל הצעות בודדות לתיקון, לערוך את סדר הלידה באופן ידני, לקבל את אותן "
+"המשפחות בהן צאצאים מוצגים בסדר תאריכי לידה תקינים, או לקבל את הכול."
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
@@ -609,15 +615,15 @@ msgstr "אין משפחות שדורשות מיון"
 
 #: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
-msgstr ""
+msgstr "אין צאצאים שלא מוינו על פי סדר לידתם."
 
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
-msgstr ""
+msgstr "עריכת משפחות"
 
 #: BirthOrder/birthorder.py:275
 msgid "Looking for children birth order"
-msgstr ""
+msgstr "חיפוש סדר לידת צאצאים"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
@@ -18939,7 +18945,7 @@ msgstr "חבילת Gtkspell מאפשרת בדיקת־איות בשדות 'הער
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
-msgstr "נדרשת ספריית פייתון (PIL) לחיתוך תמונות ופלט LaTeX."
+msgstr "נדרשת ספריית פיתון (PIL) לחיתוך תמונות ופלט LaTeX."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
 msgid ""
@@ -19381,11 +19387,11 @@ msgstr ""
 
 #: PythonGramplet/PythonGramplet.gpr.py:5
 msgid "Interactive Python interpreter"
-msgstr "מפענחת פייתון הדודית"
+msgstr "מפענחת פיתון הדודית"
 
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
-msgstr "הזנת ביטוי פייתון"
+msgstr "הזנת ביטוי פיתון"
 
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
