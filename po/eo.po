@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-29 22:01+0000\n"
+"PO-Revision-Date: 2025-07-26 15:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
 "addons/eo/>\n"
@@ -44,40 +44,40 @@ msgstr "Ĉefa nomo"
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "Sumo de nomoj %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
-msgstr ""
+msgstr "ArboPlenigo"
 
 #: AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
-msgstr ""
+msgstr "Raporto pri Arboplenigado"
 
 #: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr ""
+msgstr "ArboPlenigo por %s"
 
 #: AncestorFill/AncestorFill.py:205
 msgid "Generation "
-msgstr ""
+msgstr "Generacio "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr ""
+msgstr "Nombro da Prapatroj trovita "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
-msgstr ""
+msgstr "Procente da Prapatroj trovita "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr ""
+msgstr "Nombro da unikaj Prapatroj trovita "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
-msgstr ""
+msgstr "Nombro da teoriaj Prapatroj "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
@@ -85,11 +85,11 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
-msgstr ""
+msgstr "Totala Nombro da Prapatroj trovita "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
-msgstr ""
+msgstr "Totala Nombro da unikaj Prapatroj trovita "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -98,16 +98,22 @@ msgid ""
 "Note: This report only counts ancestors with a parent-child relationship of "
 "birth."
 msgstr ""
+"\n"
+"\n"
+"Noto: Tiu raporto nur nombras prapatrojn kun gepatro-infana rilato de "
+"naskiĝo."
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
-msgstr ""
+msgstr "Decimaloj"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
+"La nombro da ciferoj post komo inkludi en la raporto por la procento de "
+"prapatro trovita ĉe antaŭfiksita generacio"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
@@ -121,11 +127,11 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
-msgstr ""
+msgstr "Montru teorian nombron"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "Ĉu montri la teorian nombron de prapatroj laŭ generacio"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
@@ -138,7 +144,7 @@ msgstr "La stilo uzata por la titolo de la paĝo."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr ""
+msgstr "Kontroli Asociojn datumoj"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
@@ -171,23 +177,23 @@ msgstr ""
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: SetAttributeTool/SetAttributeTool.py:71 SetPrivacyTool/SetPrivacyTool.py:312
 msgid "Select filter to restrict people"
-msgstr ""
+msgstr "Elektu filtrilon por limigi personojn"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
-msgstr ""
+msgstr "Fonto tipo"
 
 #: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
-msgstr ""
+msgstr "Nova fonto"
 
 #: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
-msgstr ""
+msgstr "Ekzistanta fonton"
 
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
-msgstr ""
+msgstr "Elekti la tipon de fonto por alkroĉi"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"

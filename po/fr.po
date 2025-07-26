@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-29 22:01+0000\n"
+"PO-Revision-Date: 2025-07-26 15:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -126,7 +126,7 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
-msgstr "Chiffres pour le remplissage"
+msgstr "Décimales"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
@@ -3029,41 +3029,31 @@ msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:102
 msgid "Patriarchal Line (Male ancestor)"
-msgstr ""
+msgstr "Ligne patriarcale (ancêtre masculin)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:103
 msgid "Matriarchal Line (Female ancestor)"
-msgstr ""
+msgstr "Ligne matriarcale (ancêtre féminin)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
-#, fuzzy
-#| msgid "Person theme"
 msgid "Dark theme"
-msgstr "Thème d’individu"
+msgstr "Thème sombre"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Light"
 msgid "Light theme"
-msgstr "Clair"
+msgstr "Thème clair"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
-#, fuzzy
-#| msgid "Life Line Descendant Chart"
 msgid "Continue Descendant Tree"
-msgstr "Ligne de Vie des descendants"
+msgstr "Continuer l'Arbre Descendant"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:427
-#, fuzzy
-#| msgid "Alternate name"
 msgid "Alternate Descendant Tree"
-msgstr "Non alternatif"
+msgstr "Arbre Descendant alternatif"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:455
-#, fuzzy
-#| msgid "Descendant Indented Tree"
 msgid "Descendant SpaceTree"
-msgstr "Arbre descendant en retrait"
+msgstr "Arbre descendant spatial"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:635
 msgid "Total descendants"
@@ -3074,16 +3064,13 @@ msgid "Marriages/Families:<ul>"
 msgstr "Mariages/Familles:<ul>"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:773
-#, fuzzy, python-format
-#| msgid ""
-#| "Destinaton diretory %s does not exist\n"
-#| "Do you want to attempt to create it?"
+#, python-format
 msgid ""
 "Destination Directory %s does not exist\n"
 "Do you want to attempt to create it."
 msgstr ""
 "Le dossier de destination %s n'existe pas.\n"
-"Voulez-vous le créer ?"
+"Voulez-vous essayer de le créer ?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:787
 #, python-format
@@ -3091,16 +3078,12 @@ msgid "Failed to create %s: %s"
 msgstr "Échec à a création de %s : %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:816
-#, fuzzy, python-format
-#| msgid "Failed to copy web files : %s"
+#, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr "Impossible de copier les fichiers web : %s"
+msgstr "Impossible de lire le fichier proto %s : %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:827
-#, fuzzy, python-format
-#| msgid ""
-#| "Destination file %s already exists.\n"
-#| "Do you want to overwrite it?"
+#, python-format
 msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite?"
@@ -3109,10 +3092,8 @@ msgstr ""
 "Voulez-vous le remplacer ?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:854
-#, fuzzy
-#| msgid "Failed writing "
 msgid "Failed writing file: "
-msgstr "Échec d'écriture "
+msgstr "Échec d'écriture du fichier : "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:875
 msgid "Descendants of"
@@ -3120,27 +3101,36 @@ msgstr "Descendants de"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:879
 msgid "How to Use the DescendantSpaceTree Viewer"
-msgstr ""
+msgstr "Comment utiliser l'Arbre Spatial Descendant"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:885
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
+"Pour la meilleure expérience de visualisation, maximisez la fenêtre de votre "
+"navigateur pour utiliser l'écran entier.   Un redimensionnement "
+"réinitialisera le graphique à la personne centrale."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
 msgstr ""
+"Cliquez sur un noeud pour se concentrer sur un descendant et afficher les "
+"enfants."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:904
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
 msgstr ""
+"Cliquez et faites glisser n'importe où sur le graphe pour positionner "
+"l'arbre descendant."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:913
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
 msgstr ""
+"Cliquez sur le bouton de réinitialisation ___HELP_RESET_BUTTON___ pour "
+"revenir au descendant de départ."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:922
 msgid ""
@@ -3150,6 +3140,11 @@ msgid ""
 "search, a plus sign (+) after the name indicates that person appears as a "
 "spouse."
 msgstr ""
+"Rechercher une personne en tapant dans la boîte de recherche.  Au moins "
+"trois caractères sont nécessaires pour rechercher.  Cliquez sur l'une des "
+"suggestions pour naviguer rapidement vers cette personne.  Une personne peut "
+"apparaître plus d'une fois dans une recherche, un signe plus (+) après le "
+"nom indique que cette personne apparaît comme conjoint."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:935
 msgid ""
@@ -3212,51 +3207,43 @@ msgstr "Rechercher. . ."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1089
 msgid "Branch to expand when duplicated"
-msgstr ""
+msgstr "Branche à développer quand il y a doublon"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1100
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
 msgstr ""
+"Lorsqu'un descendant apparaît plus d'une fois, préférer la ligne choisie "
+"pour étendre la ligne de descendance"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1108
 msgid "Maximum display birth year"
-msgstr ""
+msgstr "Année de naissance maximale à afficher"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1111
 msgid "Birth/date dates will not be displayed after this year"
-msgstr ""
+msgstr "Les dates ne seront pas affichées après cette année de naissance"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1116
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "Préférences de thème"
+msgstr "Préférence de thème"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1123
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "Theme color preference for Space Tree"
-msgstr "L'individu central pour cet arbre"
+msgstr "Couleur de thème pour l'arbre"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1136
-#, fuzzy
-#| msgid "Destination directory"
 msgid "Destination File"
-msgstr "Répertoire de destination"
+msgstr "Fichier de destination"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
-#, fuzzy
-#| msgid "The destination file name for html content."
 msgid "The destination file name for the report."
-msgstr "Le fichier de destination pour le contenu HTML."
+msgstr "Le fichier de destination pour le rapport."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
-#, fuzzy
-#| msgid "Opens an interactive tree in the browser"
 msgid "Open generated HTML file with default browser."
-msgstr "Ouvre un arbre interactif dans le navigateur"
+msgstr "Ouvrir le fichier HTML généré avec le navigateur par défaut."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -5347,6 +5334,8 @@ msgstr "Exportation Prolog"
 #: ExportProlog/ExportProlog.gpr.py:6
 msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
 msgstr ""
+"Exporte les données sous forme de faits Prolog. Les données sont en Unicode "
+"(utf-8)"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
@@ -6461,7 +6450,7 @@ msgstr "16. Membres absent : homme"
 
 #: Form/form_ca.xml.h:42
 msgid "AbsentMembersFemale"
-msgstr ""
+msgstr "Membres féminins absents"
 
 #: Form/form_ca.xml.h:43
 msgid "17. Members Absent: Female"
@@ -6469,19 +6458,19 @@ msgstr "17. Membres absents : femmes"
 
 #: Form/form_ca.xml.h:44
 msgid "DeafDumbMale"
-msgstr ""
+msgstr "Homme sourd-muet"
 
 #: Form/form_ca.xml.h:45
 msgid "18. Deaf and Dumb: Male"
-msgstr ""
+msgstr "18. Sourd et muet : Homme"
 
 #: Form/form_ca.xml.h:46
 msgid "DeafDumbFemale"
-msgstr ""
+msgstr "Femme sourde-muette"
 
 #: Form/form_ca.xml.h:47
 msgid "19. Deaf and Dumb: Female"
-msgstr ""
+msgstr "19. Sourd et muet : féminin"
 
 #: Form/form_ca.xml.h:48
 msgid "BlindMale"
@@ -6501,19 +6490,19 @@ msgstr "21. Aveugle : femme"
 
 #: Form/form_ca.xml.h:52
 msgid "LunaticMale"
-msgstr ""
+msgstr "Homme fou"
 
 #: Form/form_ca.xml.h:53
 msgid "22. Lunatics: Male"
-msgstr ""
+msgstr "22. Fous : Homme"
 
 #: Form/form_ca.xml.h:54
 msgid "LunaticFemale"
-msgstr ""
+msgstr "Femme folle"
 
 #: Form/form_ca.xml.h:55
 msgid "23. Lunatics: Female"
-msgstr ""
+msgstr "23. Fous : Femme"
 
 #: Form/form_ca.xml.h:56 Form/form_ca.xml.h:260
 msgid "ScholarMale"
@@ -14894,16 +14883,18 @@ msgstr "Affichage de tous les lieux"
 #: GeoTimeLines/GeoTimeLines.gpr.py:25 GeoTimeLines/GeoTimeLines.py:233
 #: GeoTimeLines/GeoTimeLines.py:339
 msgid "TimeLines Map"
-msgstr "Carte des chronologies"
+msgstr "Carte Chronologique"
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
 "A view showing all the places visited by a person or persons on various date."
 msgstr ""
+"Une vue montrant tous les lieux visités par une personne ou des personnes à "
+"différentes dates."
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:39
 msgid "TimeLines map"
-msgstr "Carte des chronologies"
+msgstr "Carte chronologique"
 
 #: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
@@ -14929,8 +14920,8 @@ msgid ""
 "markers at the same location"
 msgstr ""
 "Décalez les marqueurs de la carte\n"
-"pour différencier les différents\n"
-"marqueurs situés au même endroit"
+"pour différencier les marqueurs\n"
+"situés au même endroit"
 
 #: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
@@ -14938,6 +14929,9 @@ msgid ""
 "as measured along the equator\n"
 "(includes latitude distortion)"
 msgstr ""
+"Rayon de décalage (hectomètres)\n"
+"tel que mesuré à l'équateur\n"
+"(inclus la distorsion de latitude)"
 
 #: GeoTimeLines/GeoTimeLines.py:1794
 msgid ""
@@ -14952,22 +14946,30 @@ msgid ""
 "Days to keep lines on the map after\n"
 "an event"
 msgstr ""
+"Nombre de jours pendant lesquels les lignes\n"
+"sont affichées après un évènement"
 
 #: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
 msgstr ""
+"Utiliser des icônes personnalisées\n"
+"selon le type d'évènement"
 
 #: GeoTimeLines/GeoTimeLines.py:1829
 msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
 msgstr ""
+"S'il n'y a pas de naissance enregistrée pour une personne, son âge\n"
+"est supposé être celui-ci lors de son premier événement"
 
 #: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
 "If there is no death event for a person, they will\n"
 "be assumed dead at this age"
 msgstr ""
+"Si aucun décès n'est enregistré pour une personne,\n"
+"elle sera considérée comme décédée à cet âge"
 
 #: GeoTimeLines/GeoTimeLines.py:1875
 msgid "Number of steps"
@@ -14979,17 +14981,19 @@ msgstr "Type d'étapes"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
-msgstr ""
+msgstr "Étapes par milliseconde"
 
 #: GeoTimeLines/GeoTimeLines.py:1915
 msgid "Initial map view on Gramps startup"
-msgstr ""
+msgstr "Vue initiale cartographique au démarrage de Gramps"
 
 #: GeoTimeLines/GeoTimeLines.py:1927
 msgid ""
 "Initial map view after startup and\n"
 "after changing the active person"
 msgstr ""
+"Vue initiale de la carte après le démarrage\n"
+"et après avoir changé la personne active"
 
 #: GeoTimeLines/GeoTimeLines.py:1936
 msgid "Show map travel lines on startup"
@@ -14997,11 +15001,11 @@ msgstr "Afficher les lignes de voyage sur la carte au démarrage"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
-msgstr ""
+msgstr "Afficher des graduations dans la barre de navigation"
 
 #: GeoTimeLines/GeoTimeLines.py:1974
 msgid "TimeLines Map options"
-msgstr ""
+msgstr "Options de la Carte Chronologique"
 
 #: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
@@ -15143,11 +15147,11 @@ msgstr "Téléchargement réussi de %s fichiers media."
 #: GrampsWebSync/grampswebsync.py:343
 #, python-format
 msgid "Encountered %s errors during upload."
-msgstr ""
+msgstr "%s erreurs lors du téléchargement."
 
 #: GrampsWebSync/grampswebsync.py:389 GrampsWebSync/grampswebsync.py:410
 msgid "Error accessing media object."
-msgstr ""
+msgstr "Erreur en accédant à un objet medium."
 
 #: GrampsWebSync/grampswebsync.py:451
 msgid "Failed importing downloaded XML file."
@@ -15172,23 +15176,25 @@ msgstr "Erreur : URL non trouvée."
 #: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
+"Impossible de synchroniser les changements au serveur : les objets ont été "
+"modifiés."
 
 #: GrampsWebSync/grampswebsync.py:503
 #, python-format
 msgid "Error %s while connecting to server."
-msgstr ""
+msgstr "Erreur %s en se connectant au serveur."
 
 #: GrampsWebSync/grampswebsync.py:506
 msgid "URL error while connecting to server."
-msgstr ""
+msgstr "Erreur d'URL en se connectant au serveur."
 
 #: GrampsWebSync/grampswebsync.py:509
 msgid "Error while parsing response from server."
-msgstr ""
+msgstr "Erreur d'analyse de la réponse du serveur."
 
 #: GrampsWebSync/grampswebsync.py:537
 msgid "Continue without transport encryption?"
-msgstr ""
+msgstr "Continuer sans chiffrement ?"
 
 #: GrampsWebSync/grampswebsync.py:539
 msgid ""
@@ -15246,7 +15252,7 @@ msgstr "Synchronisation bidirectionnelle"
 
 #: GrampsWebSync/grampswebsync.py:783
 msgid "Reset remote to local"
-msgstr ""
+msgstr "Réinitialiser du distant vers le local"
 
 #: GrampsWebSync/grampswebsync.py:791
 msgid "Reset local to remote"
@@ -16087,13 +16093,15 @@ msgstr ""
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:34
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:47
 msgid "H-Tree Pedigree"
-msgstr ""
+msgstr "Pedigree en arbre H"
 
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:37
 msgid ""
 "The view shows a space-efficient pedigree with ancestors of the selected "
 "person"
 msgstr ""
+"La vue montre un pedigree économe en espace avec les ancêtres de l'individu "
+"sélectionné"
 
 #: HtreePedigreeView/HtreePedigreeView.py:93
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
@@ -16127,11 +16135,11 @@ msgstr "inci."
 
 #: HtreePedigreeView/HtreePedigreeView.py:543
 msgid "H-tree Pedigree View"
-msgstr ""
+msgstr "Vue généalogique en arbre H"
 
 #: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
-msgstr ""
+msgstr "À propos de l'Arbre H"
 
 #: ImportGramplet/ImportGramplet.gpr.py:11
 msgid "Gramplet for importing text"
@@ -17269,7 +17277,7 @@ msgstr "Inclure les données des media"
 
 #: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
-msgstr ""
+msgstr "Étiquettes, notes et attributs seront inclus"
 
 #: MediaReport/media_report.py:450
 msgid "Media width"
@@ -17635,7 +17643,7 @@ msgstr "Le nom de fichier pour le graphique réseau svg généré."
 
 #: NetworkChart/NetworkChart.py:1002
 msgid "Different node shapes/edges for gender."
-msgstr ""
+msgstr "Différentes formes/angles pour les noeuds selon le sexe."
 
 #: NetworkChart/NetworkChart.py:1003
 msgid "Node differences for gender."
@@ -17647,7 +17655,7 @@ msgstr "Arrière-plan masculin"
 
 #: NetworkChart/NetworkChart.py:1012
 msgid "Male Background Alpha"
-msgstr ""
+msgstr "Alpha d'arrière-plan masculin"
 
 #: NetworkChart/NetworkChart.py:1014
 msgid "Alpha for Male box background (transparent=0, solid=255)."
@@ -17657,7 +17665,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
-msgstr ""
+msgstr "Angle de cadre masculin"
 
 #: NetworkChart/NetworkChart.py:1019
 msgid "RGB-color for Male box edge."
@@ -17669,7 +17677,7 @@ msgstr "Couleur RVB pour le fond du cadre féminin."
 
 #: NetworkChart/NetworkChart.py:1026
 msgid "Female Background Alpha"
-msgstr ""
+msgstr "Alpha d'arrière-plan féminin"
 
 #: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
@@ -17679,7 +17687,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
-msgstr ""
+msgstr "Angle de cadre féminin"
 
 #: NetworkChart/NetworkChart.py:1034
 msgid "RGB-color for Female box edge."
@@ -17695,37 +17703,40 @@ msgstr "Couleur RGB pour les autres arrière-plans."
 
 #: NetworkChart/NetworkChart.py:1041
 msgid "Other Background Alpha"
-msgstr ""
+msgstr "Alpha d'arrière-plan autres"
 
 #: NetworkChart/NetworkChart.py:1043
 msgid "Alpha for Other box background (transparent=0, solid=255)."
-msgstr ""
+msgstr "Alpha pour arrière-pllan des autres cadres (transparent=0, solide=255)."
 
 #: NetworkChart/NetworkChart.py:1047
 msgid "Family Connector Line"
-msgstr ""
+msgstr "Ligne de connexion familiale"
 
 #: NetworkChart/NetworkChart.py:1048
 msgid "RGB-color for family connector line."
-msgstr ""
+msgstr "couleur RVB pour la ligne de connexion familiale."
 
 #: NetworkChart/NetworkChart.py:1051
 msgid "Marriage Connector Line"
-msgstr ""
+msgstr "Ligne de connexion de mariage"
 
 #: NetworkChart/NetworkChart.py:1052
 msgid "RGB-color for marriage connector line."
-msgstr ""
+msgstr "couleur RVB pour la ligne de connexion de mariage."
 
 #: NetworkChart/NetworkChart.py:1055
 msgid "Highlight Connector Line"
-msgstr ""
+msgstr "Ligne de raccordement en évidence"
 
 #: NetworkChart/NetworkChart.py:1056
+#, fuzzy
 msgid ""
 "RGB-color for the highlighted path between two individuals.  If the graph."
 "inverts, reverse the order to change."
 msgstr ""
+"Couleur RVB pour le chemin mis en évidence entre deux individus. If the "
+"graph.inverts, reverse the order to change."
 
 #: NetworkChart/NetworkChart.py:1061
 msgid "Trim Box Edge"
@@ -17733,11 +17744,11 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1062
 msgid "RGB-color for box edge that has been trimmed."
-msgstr ""
+msgstr "Couleur RVB pour le bord de cadre qui a été coupé."
 
 #: NetworkChart/NetworkChart.py:1066
 msgid "Remove color background on all nodes."
-msgstr ""
+msgstr "Retirer la couleur de fond sur tous les noeuds."
 
 #: NetworkChart/NetworkChart.py:1068
 msgid "Removes color background for individuals (nodes) on chart."
@@ -17757,10 +17768,12 @@ msgid ""
 "Birthdays after this year are represented by the year only.  Invalid entries "
 "will be ignored."
 msgstr ""
+"Les dates de naissance après cette année sont représentés par l'année seule. "
+"Les entrées invalides seront ignorées."
 
 #: NetworkChart/NetworkChart.py:1080
 msgid "Round birthday to year after year entered (above)."
-msgstr ""
+msgstr "Date de naissance tronquée à l'année après celle entrée (au-dessus)."
 
 #: NetworkChart/NetworkChart.py:1082
 msgid "Represent birthday by year only."
@@ -17772,12 +17785,17 @@ msgid ""
 "rounding marriage\n"
 "date to year only"
 msgstr ""
+"Entrer l'année à partir de\n"
+"laquelle la date de mariage\n"
+"est tronquée à l ' année seule"
 
 #: NetworkChart/NetworkChart.py:1087
 msgid ""
 "Marriages after this year are represented bythe year only. Invalid entries "
 "will be ignored."
 msgstr ""
+"Les mariages après cette année sont représentés par l'année seule. Les "
+"entrées invalides seront ignorées."
 
 #: NetworkChart/NetworkChart.py:1092
 msgid "Round marriage to year after year entered (above)."
@@ -17825,7 +17843,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1134
 msgid "Trim ancestors"
-msgstr ""
+msgstr "Masquer les ancêtres"
 
 #: NetworkChart/NetworkChart.py:1135
 msgid "All ancestors (parents) of selected individuals will not be shown."
@@ -17835,11 +17853,11 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1141
 msgid "Enable trimming of ancestors."
-msgstr ""
+msgstr "Activer le masquage des ancêtres."
 
 #: NetworkChart/NetworkChart.py:1143
 msgid "Enable trimming of ancestors from tree."
-msgstr ""
+msgstr "Activer le masquage des ancêtres dans l'arbre."
 
 #: NetworkChart/NetworkChart.py:1147
 msgid "Enable trim groups."
@@ -17926,6 +17944,8 @@ msgid ""
 "Enter the maximum number of connections allowed from\n"
 "the center person.  Value may be 1 or greater."
 msgstr ""
+"Entrez le nombre maximal de connexions autorisées depuis\n"
+"la personne centrale. La valeur peut être 1 ou plus."
 
 #: NetworkChart/NetworkChart.py:1211
 msgid "Limit graph to max connections from center."
@@ -19490,7 +19510,7 @@ msgstr "Appliquer aux lieux sélectionnés"
 
 #: PlaceUpdate/PlaceUpdate.py:266
 msgid "Setting place properties"
-msgstr ""
+msgstr "Définir les propriétés du lieu"
 
 #: PlaceUpdate/PlaceUpdate.py:304
 msgid "Regex operation failed: {}"
@@ -20051,9 +20071,8 @@ msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
 msgstr "Standard. Passé : programme installé - sur OS Win 32bit sur 64bit."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
-#, fuzzy
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
-msgstr ") ( Nécessite le greffon gramps listé sous 'Plugin lib')"
+msgstr ") ( Nécessite le greffon gramps listé sous 'Bibliothèque d'extensions')"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
 msgid "DBF installed"
@@ -20194,7 +20213,7 @@ msgstr "Entrez un requête SQL"
 #: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
 #, python-brace-format
 msgid "{rows:d} rows processed in {secs} seconds.\n"
-msgstr ""
+msgstr "{rows:d} lignes traitées en {secs} secondes.\n"
 
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
@@ -20294,15 +20313,15 @@ msgstr "Collection de sites internet pour la Russie (nécessite libwebconnect)"
 
 #: RUWebConnectPack/RUWebPack.py:40
 msgid "OBD \"Memorial\""
-msgstr ""
+msgstr "\"Mémorial\" OBD"
 
 #: RUWebConnectPack/RUWebPack.py:41
 msgid "People memory"
-msgstr ""
+msgstr "Mémoire du peuple"
 
 #: RUWebConnectPack/RUWebPack.py:42
 msgid "Winners"
-msgstr ""
+msgstr "Gagnants"
 
 #: RUWebConnectPack/RUWebPack.py:43
 msgid "Lived"
@@ -20314,7 +20333,7 @@ msgstr "Ouvrir la liste"
 
 #: RUWebConnectPack/RUWebPack.py:45
 msgid "Wait for me"
-msgstr ""
+msgstr "Attends-moi"
 
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
@@ -20322,11 +20341,11 @@ msgstr "All Russia Family Tree (forum)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
-msgstr ""
+msgstr "Yandex"
 
 #: RUWebConnectPack/RUWebPack.py:49
 msgid "RIA Officers"
-msgstr ""
+msgstr "Officiers RIA 1914"
 
 #: RUWebConnectPack/RUWebPack.py:50
 msgid "FamilySpace"
@@ -20450,7 +20469,7 @@ msgstr "FIN"
 #: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
 #: RemoveTagTool/RemoveTagTool.py:246
 msgid "Add/Remove Tag Tool"
-msgstr ""
+msgstr "Outil d'Ajout/Suppression d'Étiquette"
 
 #: RemoveTagTool/RemoveTagTool.gpr.py:26
 msgid "Add or remove a tag from groups of people, events, etc."
@@ -20459,7 +20478,7 @@ msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
-msgstr ""
+msgstr "L'outil nécessite au moins une étiquette pour fonctionner."
 
 #: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
@@ -23094,22 +23113,19 @@ msgid "Title: {title}"
 msgstr "Titre : {title}"
 
 #: WebSearch.py:2146
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "Remplacé : {keys}\n"
+msgstr "Remplacé : {keys}"
 
 #: WebSearch.py:2149
-#, fuzzy, python-brace-format
-#| msgid "Empty: {keys}\n"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "Vide : {keys}\n"
+msgstr "Vide : {keys}"
 
 #: WebSearch.py:2151
-#, fuzzy, python-brace-format
-#| msgid "Comment: {comment}\n"
+#, python-brace-format
 msgid "Comment: {comment}"
-msgstr "Commentaire : {comment}\n"
+msgstr "Commentaire : {comment}"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -23897,31 +23913,21 @@ msgstr ""
 " dans votre navigateur internet préféré ..."
 
 #: markdown_place_history_formatter.py:52
-#, fuzzy
-#| msgid "No data available in table"
 msgid "No data available."
-msgstr "Pas de données disponible dans la table"
+msgstr "Pas de données disponible."
 
 #: markdown_place_history_formatter.py:57
 msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
 msgstr ""
 
 #: markdown_place_history_formatter.py:58
-#, fuzzy
-#| msgid ""
-#| "Found relation #%d: \n"
-#| "   "
 msgid "Foundation date:"
-msgstr ""
-"Relation #%d : \n"
-"   "
+msgstr "Date de fondation :"
 
 # Substantif (GNOME fr)
 #: markdown_place_history_formatter.py:60
-#, fuzzy
-#| msgid "Fix Coordinates"
 msgid "Coordinates:"
-msgstr "Fixer les coordonnées"
+msgstr "Coordonnées :"
 
 #: markdown_place_history_formatter.py:61
 msgid "Administrative history"
@@ -23938,22 +23944,16 @@ msgid "Full hierarchy"
 msgstr "hiérarchie inversée"
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Place Types"
 msgid "Place Type:"
-msgstr "Types de lieu"
+msgstr "Type de lieu :"
 
 #: markdown_place_history_formatter.py:69
-#, fuzzy
-#| msgid "Last Resident"
 msgid "Last Retrieved At:"
-msgstr "Dernier résident"
+msgstr "Dernière récupération À :"
 
 #: note_links_loader.py:69
-#, fuzzy
-#| msgid "No file parsed..."
 msgid "Note Link (parsed)"
-msgstr "Aucun fichier analysé ..."
+msgstr "Lien de note (analysé)"
 
 #: note_links_loader.py:124
 msgid "Note Link (internal)"
