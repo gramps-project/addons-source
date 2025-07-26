@@ -67,8 +67,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-09 12:17+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2025-07-23 14:01+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -170,23 +170,23 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
-msgstr ""
+msgstr "Numero Collapse"
 
 #: AncestorFill/AncestorFill.py:313
-#, fuzzy
-#| msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
-msgstr "Il numero di generazioni da includere nel grafico. (0 per illimitato)"
+msgstr ""
+"Il numero di cifre dopo la virgola da includere nel report per il pedigree "
+"Collapse"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
-msgstr ""
+msgstr "Mostra teorico"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "Visualizzare o meno il numero teorico di antenati per generazione"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
@@ -215,17 +215,17 @@ msgstr ""
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
-msgstr ""
+msgstr "Di"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
-msgstr ""
+msgstr "Allega fonte"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
-msgstr ""
+msgstr "Allega una fonte condivisa a oggetti multipli."
 
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
@@ -236,7 +236,7 @@ msgstr "Seleziona filtro per restringere le persone"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
-msgstr ""
+msgstr "Tipo di fonte"
 
 #: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
@@ -244,27 +244,27 @@ msgstr "Nuova fonte"
 
 #: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
-msgstr ""
+msgstr "Fonte esistente"
 
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
-msgstr ""
+msgstr "Seleziona il tipo di fonte da allegare"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
-msgstr ""
+msgstr "Titolo nuova fonte"
 
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
-msgstr ""
+msgstr "Testo della fonte da allegare"
 
 #: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
-msgstr ""
+msgstr "ID della fonte esistente"
 
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr ""
+msgstr "ID della fonte da allegare"
 
 #: AttachSourceTool/AttachSourceTool.py:157
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
@@ -275,11 +275,11 @@ msgstr "Elaborazione in corso...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
-msgstr ""
+msgstr "Allegando fonti...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
-msgstr ""
+msgstr "Allegando fonti..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
@@ -399,11 +399,11 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
-msgstr ""
+msgstr " 👣 Prossimi passi:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
 msgid "  •  From the \"Family Trees\" menu,"
-msgstr ""
+msgstr "  •  Dal menu \"Alberi genealogici\" ,"
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
@@ -415,13 +415,15 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr ""
+msgstr "  •  Clicca su \"Carica albero genealogico\" per iniziare"
 
 #: Betawhatsnext/Betawhatsnext.py:54
 msgid ""
 " working with the selected genealogical tree.\n"
 "\n"
 msgstr ""
+" lavora con l'albero genealogico selezionato.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:55
 msgid "Create and load an empty new tree to import a backup (or"
