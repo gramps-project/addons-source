@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-03 08:01+0000\n"
+"PO-Revision-Date: 2025-07-24 19:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -3067,8 +3067,8 @@ msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
 msgstr ""
-"Klicka på återställningsknappen ___HJÄLP_ÅTERSTÄLLNINGS_KNAPP___ för att "
-"återställa till startättlingen."
+"Klicka på återställningsknappen ___HELP_RESET_BUTTON___ för att återställa "
+"till startättlingen."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:922
 msgid ""
@@ -6497,139 +6497,139 @@ msgstr "6. Antal tunnland mark: Med grödor år 1851"
 
 #: Form/form_ca.xml.h:110
 msgid "AcresPasture"
-msgstr ""
+msgstr "TunnlandBetesmark"
 
 #: Form/form_ca.xml.h:111
 msgid "7. Number of Acres of Land: Under Pasture in 1851"
-msgstr ""
+msgstr "7. Antal tunnland mark: Betesmark år 1851"
 
 #: Form/form_ca.xml.h:112
 msgid "AcresGardens"
-msgstr ""
+msgstr "TunnlandTrädgårdsmark"
 
 #: Form/form_ca.xml.h:113
 msgid "8. Number of Acres of Land: Gardens or Orchards"
-msgstr ""
+msgstr "8. Antal tunnland mark: Trädgårdar eller fruktträdgårdar"
 
 #: Form/form_ca.xml.h:114
 msgid "AcresWood"
-msgstr ""
+msgstr "TunnlandSkog"
 
 #: Form/form_ca.xml.h:115
 msgid "9. Number of Acres of Land: Under Wood or Wild"
-msgstr ""
+msgstr "9. Antal tunnland mark: Skog eller vildmark"
 
 #: Form/form_ca.xml.h:116
 msgid "WheatAcres"
-msgstr ""
+msgstr "TunnlandVete"
 
 #: Form/form_ca.xml.h:117
 msgid "10. Wheat: Acres"
-msgstr ""
+msgstr "10. Vete: Tunnland"
 
 #: Form/form_ca.xml.h:118
 msgid "WheatBsh"
-msgstr ""
+msgstr "BushelVete"
 
 #: Form/form_ca.xml.h:119
 msgid "11. Wheat: Produce Bsh."
-msgstr ""
+msgstr "11. Vete: Bushel produktion."
 
 #: Form/form_ca.xml.h:120
 msgid "BarleyAcres"
-msgstr ""
+msgstr "TunnlandKorn"
 
 #: Form/form_ca.xml.h:121
 msgid "12. Barley: Acres"
-msgstr ""
+msgstr "12. Korn: Tunnland"
 
 #: Form/form_ca.xml.h:122
 msgid "BarleyBsh"
-msgstr ""
+msgstr "BushelKorn"
 
 #: Form/form_ca.xml.h:123
 msgid "13. Barley: Produce Bsh."
-msgstr ""
+msgstr "13. Korn: Bushel produktion."
 
 #: Form/form_ca.xml.h:124
 msgid "RyeAcres"
-msgstr ""
+msgstr "TunnlandRåg"
 
 #: Form/form_ca.xml.h:125
 msgid "14. Rye: Acres"
-msgstr ""
+msgstr "14. Råg: Tunnland"
 
 #: Form/form_ca.xml.h:126
 msgid "RyeBsh"
-msgstr ""
+msgstr "BushelRåg"
 
 #: Form/form_ca.xml.h:127
 msgid "15. Rye: Produce Bsh."
-msgstr ""
+msgstr "15. Råg: Bushel produktion."
 
 #: Form/form_ca.xml.h:128
 msgid "PeasAcres"
-msgstr ""
+msgstr "TunnlandÄrtor"
 
 #: Form/form_ca.xml.h:129
 msgid "16. Peas: Acres"
-msgstr ""
+msgstr "16. Ärtor: Tunnland"
 
 #: Form/form_ca.xml.h:130
 msgid "PeasBush"
-msgstr ""
+msgstr "BushelÄrtor"
 
 #: Form/form_ca.xml.h:131
 msgid "17. Peas: Produce Bsh."
-msgstr ""
+msgstr "17. Ärtor: Bushel produktion."
 
 #: Form/form_ca.xml.h:132
 msgid "OatsAcres"
-msgstr ""
+msgstr "TunnlandHavre"
 
 #: Form/form_ca.xml.h:133
 msgid "18. Oats: Acres"
-msgstr ""
+msgstr "18. Havre: Tunnland"
 
 #: Form/form_ca.xml.h:134
 msgid "OatsBush"
-msgstr ""
+msgstr "BushelHavre"
 
 #: Form/form_ca.xml.h:135
 msgid "19. Oats: Produce Bsh."
-msgstr ""
+msgstr "19. Havre: Bushel produktion."
 
 #: Form/form_ca.xml.h:136
 msgid "BWheatAcres"
-msgstr ""
+msgstr "TunnlandB-vete"
 
 #: Form/form_ca.xml.h:137
 msgid "20. B.Wheat: Acres"
-msgstr ""
+msgstr "20. B-vete: Tunnland"
 
 #: Form/form_ca.xml.h:138
 msgid "BWheatBush"
-msgstr ""
+msgstr "B-veteBushel"
 
 #: Form/form_ca.xml.h:139
 msgid "21. B.Wheat: Produce Bsh."
-msgstr ""
+msgstr "21. B-vete: Bushel produktion."
 
 #: Form/form_ca.xml.h:140
 msgid "CornAcres"
-msgstr ""
+msgstr "TunnlandMajs"
 
 #: Form/form_ca.xml.h:141
 msgid "22. Corn: Acres"
-msgstr ""
+msgstr "22. Majs: Tunnland"
 
 #: Form/form_ca.xml.h:142
 msgid "CornBush"
-msgstr ""
+msgstr "BushelMajs"
 
 #: Form/form_ca.xml.h:143
 msgid "23. Corn: Produce Bsh."
-msgstr ""
+msgstr "23. Majs: Bushel produktion."
 
 #: Form/form_ca.xml.h:144
 msgid "PotatoesAcres"
