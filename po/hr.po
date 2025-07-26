@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-07-24 19:04+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -397,10 +397,8 @@ msgid "Completed Person"
 msgstr "Središnja osoba"
 
 #: Betawhatsnext/Betawhatsnext.py:112
-#, fuzzy
-#| msgid "Heads of Families"
 msgid " Completed offspring Families"
-msgstr "Glave obitelji"
+msgstr " Dovršene obitelji potomaka"
 
 #: Betawhatsnext/Betawhatsnext.py:118
 msgid "Ignore Person or Family"
@@ -5198,7 +5196,7 @@ msgstr "Dupli klik na redak za obradu objekta, koji sadrži odabrano svojstvo."
 
 #: ExtractCity/changenames.glade:94
 msgid "_Toggle Selected"
-msgstr "_Uklj/Isklj odabrano"
+msgstr "_Uključi/Isključi odabrano"
 
 #: ExtractCity/changenames.glade:98
 msgid ""
@@ -5207,7 +5205,7 @@ msgid ""
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
 "Uključuje i isključuje kvačice odabranih redaka. Retci se mogu odabrati "
-"tipkama <ctrl> (dodavanje grupi) ili <shift> (širenje grupu), tipkama <ctrl> "
+"tipkama <ctrl> (dodavanje grupi) ili <shift> (širenje grupe), tipkama <ctrl> "
 "ili <shift> sa strelicama i razmaknica. Ili <ctrl>a za biranje svih."
 
 #: ExtractCity/extractcity.gpr.py:34
@@ -18380,7 +18378,7 @@ msgstr "Dohvaćanje zapisa …"
 
 #: PhpGedView/phpgedviewconnector.py:327
 msgid "Logging in..."
-msgstr "Prijavljivanje u …"
+msgstr "Prijavljivanje …"
 
 #: PhpGedView/phpgedviewconnector.py:330
 msgid "Fetching GEDCOM..."
@@ -18392,7 +18390,7 @@ msgstr "Uvoz GEDCOM-a …"
 
 #: PhpGedView/phpgedviewconnector.py:341
 msgid "Error: login failed"
-msgstr "Greška: prijava nije uspjela"
+msgstr "Greška: neuspjela prijava"
 
 #: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
 msgid "done."
@@ -23769,30 +23767,20 @@ msgstr ""
 "u tvom omiljenom web pregledniku …"
 
 #: markdown_place_history_formatter.py:52
-#, fuzzy
-#| msgid "No data available in table"
 msgid "No data available."
-msgstr "Nema podataka u tablici"
+msgstr "Nema podataka."
 
 #: markdown_place_history_formatter.py:57
 msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
 msgstr ""
 
 #: markdown_place_history_formatter.py:58
-#, fuzzy
-#| msgid ""
-#| "Found relation #%d: \n"
-#| "   "
 msgid "Foundation date:"
-msgstr ""
-"Pronađena je veza broj%d: \n"
-"   "
+msgstr "Datum osnutka:"
 
 #: markdown_place_history_formatter.py:60
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Coordinates:"
-msgstr "Koordinate mjesta"
+msgstr "Koordinate:"
 
 #: markdown_place_history_formatter.py:61
 msgid "Administrative history"
@@ -23803,16 +23791,12 @@ msgid "Data provided to AI:"
 msgstr ""
 
 #: markdown_place_history_formatter.py:64
-#, fuzzy
-#| msgid "reverse hierarchy"
 msgid "Full hierarchy"
-msgstr "preokreni hijerarhiju"
+msgstr "Potupuna hijerarhija"
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Place Types"
 msgid "Place Type:"
-msgstr "Vrste mjesta"
+msgstr "Vrsta mjesta:"
 
 #: markdown_place_history_formatter.py:69
 #, fuzzy
@@ -23836,11 +23820,11 @@ msgstr ""
 
 #: qr_window.py:88
 msgid "QR-code"
-msgstr ""
+msgstr "QR kod"
 
 #: qr_window.py:119 qr_window.py:122
 msgid "⚠ Missing dependency \"qrcode\""
-msgstr ""
+msgstr "⚠ Nedostaje ovisnost \"qrcode\""
 
 #: qr_window.py:133
 msgid ""
