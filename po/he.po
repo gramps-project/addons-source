@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-14 09:02+0000\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"PO-Revision-Date: 2025-07-22 13:03+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
 "Language: he\n"
@@ -362,21 +362,25 @@ msgid ""
 " working with the selected genealogical tree.\n"
 "\n"
 msgstr ""
+" עבודה עם אילן־יוחסין שנבחר.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:55
 msgid "Create and load an empty new tree to import a backup (or"
-msgstr ""
+msgstr "ליצור ולטעון אילן־יוחסין חדש ריק כדי לייבא קובץ גיבוי (או"
 
 #: Betawhatsnext/Betawhatsnext.py:56
 msgid ""
 " GEDCOM file) from another genealogical tool.\n"
 "\n"
 msgstr ""
+" קובץ GEDCOM) מכלי חקר־יוחסין אחר.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:70
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
-msgstr ""
+msgstr "נא להשתמש באפשרות 'תצור' בתפריט 'מצג' כדי לשנות את אפשרויות Gramplet."
 
 #: Betawhatsnext/Betawhatsnext.py:86
 msgid "Search Quota "
@@ -384,11 +388,11 @@ msgstr "מכסת חיפוש "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
-msgstr ""
+msgstr "עומק לכל לולאה"
 
 #: Betawhatsnext/Betawhatsnext.py:98
 msgid "Pause search expansion"
-msgstr ""
+msgstr "השהיית הרחבת חיפוש"
 
 #: Betawhatsnext/Betawhatsnext.py:105
 msgid "Completed Person"
@@ -396,7 +400,7 @@ msgstr "אדם שהושלם"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
-msgstr ""
+msgstr " משפחות צאצאים שהושלמו"
 
 #: Betawhatsnext/Betawhatsnext.py:118
 msgid "Ignore Person or Family"
@@ -407,6 +411,8 @@ msgid ""
 "\n"
 " ⛔ The current Tree database contains no people.\n"
 msgstr ""
+"\n"
+" ⛔ מסד נתוני אילן־היוחסין הנוכחי לא מכיל אנשים.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:226
 msgid ""
@@ -421,12 +427,24 @@ msgid ""
 "  • An external file may be used to populate the tree via \"Import...\" in "
 "the \"Family Trees\" menu."
 msgstr ""
+"\n"
+" 👣 השלבים הבאים:\n"
+"הוספת משפחה ואדם במשפחה זו:\n"
+"• ניתן להוסיף משפחה מתפריט \"הוספה\"\n"
+"• ניתן להוסיף אדם על ידי לחיצה על ה-\"+\" (סימן חיבור) בלוח הזוגאי ("
+"\"אב/הורה1\" או \"אם/הורה2\") או בלשונית \"צאצאים\".\n"
+"\n"
+"או על ידי ייבוא אנשים מקובץ חיצוני:\n"
+"• ניתן להשתמש בקובץ חיצוני כדי לאכלס את אילן־היוחסין מאפשרות \"ייבוא...\" "
+"בתפריט \"אילנות־יוחסין\"."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
 "\n"
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
+"\n"
+" ⛔ לא נבחר כל אדם שישמש כ\"אדם הבית\".\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -439,60 +457,68 @@ msgid ""
 "\n"
 " This sets them as the focal \"Home Person\"."
 msgstr ""
+"\n"
+" 👣 השלבים הבאים:\n"
+"• נא לבחור את סמל תצוגת 'אנשים' בסרגל ניווט הצד.\n"
+"• נא לבחור אדם כלשהו כדי להפוך אותו ל\"אדם פעיל\".\n"
+"• נא לבחור באפשרות \"הגדרת אדם בית\" מתפריט עריכה או מתפריט ההקשר (הקשה "
+"ימנית).\n"
+"\n"
+"פעולה זו מגדירה אותם כ\"אדם בית\" במוקד."
 
 #: Betawhatsnext/Betawhatsnext.py:268
 msgid "Double-click color text to edit details"
-msgstr ""
+msgstr "הקשה כפולה על צבע מלל לעריכת פרטים"
 
 #: Betawhatsnext/Betawhatsnext.py:504
 msgid "Birth event missing."
-msgstr ""
+msgstr "חסר אירוע לידה."
 
 #: Betawhatsnext/Betawhatsnext.py:505
 msgid "Add via the Events tab of the Edit Person dialog."
-msgstr ""
+msgstr "הוספה באנצעות דו־שיח 'עריכת אדם' בלשונית אירועים."
 
 #: Betawhatsnext/Betawhatsnext.py:582
 msgid "relationship type unknown"
-msgstr ""
+msgstr "סוג קשר־קרבה לא ידוע"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
-msgstr ""
+msgstr "הוספה באמצעות דו־שיח עריכצ משפחה בלשונית אירועים."
 
 #: Betawhatsnext/Betawhatsnext.py:621
 msgid "591 family not complete"
-msgstr ""
+msgstr "591 משפחה לא הושלמה"
 
 #: Betawhatsnext/Betawhatsnext.py:642
 msgid "place unknown for the Event"
-msgstr ""
+msgstr "מקום לא ידוע לאירוע"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
-msgstr ""
+msgstr "קיים קשר־קרבה מסוג זוגיות אך זוגאי חסר"
 
 #: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
 #: Betawhatsnext/Betawhatsnext.py:665
 msgid "Add missing partner using the Edit Family dialog."
-msgstr ""
+msgstr "הוספת זוגאי חסר באמצעות דו־שיח עריכת משפחה."
 
 #: Betawhatsnext/Betawhatsnext.py:660
 msgid "Father missing from the parent family"
-msgstr ""
+msgstr "במשפחת ההורים האב חסר"
 
 #: Betawhatsnext/Betawhatsnext.py:664
 msgid "Mother missing from the parent family"
-msgstr ""
+msgstr "במשפחת ההורים האם חסרה"
 
 #: Betawhatsnext/Betawhatsnext.py:668
 msgid "Parent family is unknown."
-msgstr ""
+msgstr "משפחת ההורים לא ידועה."
 
 #: Betawhatsnext/Betawhatsnext.py:670
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
-msgstr ""
+msgstr "'הוספת הורה קיים/חדש' מתפריט 'עריכה' במצג קשרי־קרבה."
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
@@ -509,7 +535,7 @@ msgstr "תולדות חיים של %s"
 
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
-msgstr ""
+msgstr "נא לבחור משפחה לבחינה."
 
 #: BirthOrder/birthorder.glade:155
 msgid "Accept All"
@@ -517,31 +543,34 @@ msgstr "קבלת הכול"
 
 #: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
-msgstr ""
+msgstr "לחצן זה ימיין את המשפחות שברשימה."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
-msgstr ""
+msgstr "בחירת הכול *"
 
 #: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
 msgstr ""
+"לחצן זה ימיין את כל המשפחות עם '*'.  במשפחות אלה, לכל הצאצאים יש תאריכים "
+"תקפים, כך שהמיון הוא חד־משמעי."
 
 #: BirthOrder/birthorder.glade:185
 msgid "Accept"
-msgstr ""
+msgstr "לקבל"
 
 #: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
 msgstr ""
+"לחצן זה יקבל רק את המשפחה שנבחרה וישור אותה כפי שמוצג בחלונית התחתונה מימין."
 
 #: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
 msgid "Done"
-msgstr ""
+msgstr "הפעולה בוצעה"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
@@ -576,7 +605,7 @@ msgstr ""
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
-msgstr ""
+msgstr "אין משפחות שדורשות מיון"
 
 #: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
@@ -597,15 +626,15 @@ msgstr ""
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
-msgstr ""
+msgstr "גרמפלט שמציג את ימי ההולדת של האנשים החיים"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
-msgstr ""
+msgstr "להתעלם מימי הולדת מתוייגים בתג"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
-msgstr ""
+msgstr "להציג רק ימי הולדת מתוייגים בתג"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
@@ -873,17 +902,17 @@ msgstr "תאריך משוער"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
-msgstr ""
+msgstr "תיקון רישיות בשמות פרטיים"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
-msgstr ""
+msgstr "חיפוש בכל מסד הנתונים בנסיון לתקן רישיות בשמות פרטיים."
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
-msgstr ""
+msgstr "manual|Fix_Capitalization_of_Given_Names..."
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
@@ -891,11 +920,11 @@ msgstr "בדיקת שמות פרטיים"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
-msgstr ""
+msgstr "חיפוש שמות פרטיים"
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
-msgstr ""
+msgstr "שמות מושפעים"
 
 #: ChangeGivenNames/changenames.glade:32
 msgid ""
@@ -903,6 +932,9 @@ msgid ""
 "Gramps can convert to correct capitalization. \n"
 "Select the names you wish Gramps to convert. "
 msgstr ""
+"להלן רשימהשמות פרטיים שניתנו\n"
+"גרמפס יכול להמיר אותם לשמות עם רישיות תיקניות.\n"
+"נא לבחור את השמות שעל גרמפס להמיר. "
 
 #: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
@@ -926,31 +958,31 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
-msgstr ""
+msgstr "בדיקת כותרות מקום"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
-msgstr ""
+msgstr "בדיקת כותרות מקום"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "בדיקת כותרות מקום"
 
 #: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
-msgstr ""
+msgstr "מתבצעת בדיקת כותרות מקום"
 
 #: CheckPlaceTitles/checkplacetitles.py:88 ExtractCity/extractcity.py:456
 msgid "Looking for place fields"
-msgstr ""
+msgstr "חיפוש שדות מקום"
 
 #: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade:264
 msgid "Differences"
-msgstr ""
+msgstr "הבדלים"
 
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
-msgstr ""
+msgstr "לא נדרשות הסגלות"
 
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
@@ -958,19 +990,19 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
-msgstr ""
+msgstr "מקום מהעבר"
 
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
-msgstr ""
+msgstr "הסגלת כותרות מקום"
 
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
-msgstr ""
+msgstr "כותרות מקום"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "משופר"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
@@ -998,7 +1030,7 @@ msgstr ""
 #: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format
 msgid "Clipboard Gramplet: %s"
-msgstr ""
+msgstr "גרמפלט לוח־גזירים:%s"
 
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
@@ -1011,16 +1043,16 @@ msgstr "גראמפלט להדגמת עצמי Cairo"
 #: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
-msgstr ""
+msgstr "%(abbrev)s %(date)s ב־%(place)s"
 
 #: CombinedView/basepage.py:495
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
-msgstr ""
+msgstr "%(abbrev)s %(date)s%(place)s"
 
 #: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
-msgstr ""
+msgstr "משולב"
 
 #: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
@@ -1052,7 +1084,7 @@ msgstr ""
 #: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr ""
+msgstr "%(event_type)s: %(date)s ב־ %(place)s"
 
 #: CombinedView/personpage.py:601
 #, python-format
@@ -1062,19 +1094,19 @@ msgstr ""
 #: CombinedView/personpage.py:604
 #, python-format
 msgid "%(event_type)s: %(place)s"
-msgstr ""
+msgstr "%(event_type)s: %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
-msgstr ""
+msgstr "הקשה להפיכת אירוע זה לפעיל"
 
 #: CombinedView/personpage.py:743
 msgid "Click to visit this link"
-msgstr ""
+msgstr "הקשה לביקור בקישור זה"
 
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
-msgstr ""
+msgstr ": "
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -1397,11 +1429,11 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1940
 msgid "Replace whitespace with dash(-)."
-msgstr ""
+msgstr "להחליף רווח לבן במקף (-)."
 
 #: D3Charts/DescendantIndentedTree.py:1941
 msgid "Replace whitespace with underscore(_)"
-msgstr ""
+msgstr "להחליף רווח לבן בקו תחתון (_)"
 
 #: D3Charts/DescendantIndentedTree.py:1942
 msgid "What to use as file name delimiter replacing whitespace."
@@ -2679,7 +2711,7 @@ msgstr ""
 #: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
-msgstr ""
+msgstr "%(date)s, %(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
@@ -2693,7 +2725,7 @@ msgstr ""
 #: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
-msgstr ""
+msgstr "%(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:821
 #, python-format
@@ -2759,7 +2791,7 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1492
 msgid "Include index of Places"
-msgstr ""
+msgstr "הכללת מפתח מקומות"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1493
 msgid "Whether to include the index of Places at the end of the report."
@@ -5166,7 +5198,7 @@ msgstr ""
 
 #: FamilySheet/FamilySheet.py:880 FamilyTree/FamilyTree.py:1084
 msgid "Replace first name with call name"
-msgstr ""
+msgstr "החלפת שם פרטי בשם מקובל"
 
 #: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
@@ -5178,7 +5210,7 @@ msgstr ""
 
 #: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
-msgstr ""
+msgstr "הצגת שומרי־מקום למידע חסר"
 
 #: FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"
@@ -5773,7 +5805,7 @@ msgstr "תיקון נקודות־ציון מקום"
 #: FixCoords/fixcoords.gpr.py:33
 msgid ""
 "Tool to correct the place coordinates for extra spaces or comma characters."
-msgstr ""
+msgstr "כלי לתקון נקודות־ציון של מקום עם רווחים נוספים או או תוי פסיקים."
 
 #: FixCoords/fixcoords.py:53
 msgid "Fix Coordinates"
@@ -5865,7 +5897,7 @@ msgstr "מקום לידה"
 
 #: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
 msgid "3. Place of Birth"
-msgstr ""
+msgstr "3. מקום לידה"
 
 #: Form/form_ca.xml.h:17
 msgid "4. Religion"
@@ -6134,11 +6166,11 @@ msgstr ""
 
 #: Form/form_ca.xml.h:84
 msgid "WorshipPlaces"
-msgstr ""
+msgstr "מקום פולחן"
 
 #: Form/form_ca.xml.h:85
 msgid "38. Places of Worship"
-msgstr ""
+msgstr "38. מקום פולחן"
 
 #: Form/form_ca.xml.h:86
 msgid "BuisnessInfo"
@@ -7090,11 +7122,11 @@ msgstr ""
 
 #: Form/form_ca.xml.h:423
 msgid "BirthPlaceFather"
-msgstr ""
+msgstr "מקום לידת אב"
 
 #: Form/form_ca.xml.h:424
 msgid "13. Birth Place of Father"
-msgstr ""
+msgstr "13. מקום לידת אב"
 
 #: Form/form_ca.xml.h:425
 msgid "BirthPlaceMother"
@@ -7789,7 +7821,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:678
 msgid "4. Place of habitation"
-msgstr ""
+msgstr "4. מקום לידת אם"
 
 #: Form/form_ca.xml.h:680
 msgid "5. Sex"
@@ -7977,7 +8009,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:778
 msgid "9. Country or place of birth"
-msgstr ""
+msgstr "9. מדינה או מקום לידה"
 
 #: Form/form_ca.xml.h:780
 msgid "10. Racial or tribal origin"
@@ -8031,19 +8063,19 @@ msgstr ""
 
 #: Form/form_ca.xml.h:813
 msgid "5. Place of Habitation: Township"
-msgstr ""
+msgstr "5. מקום מגוקים: עיירה"
 
 #: Form/form_ca.xml.h:815
 msgid "6. Place of Habitation: Range"
-msgstr ""
+msgstr "6. מקום מגורים: תחום"
 
 #: Form/form_ca.xml.h:817
 msgid "7. Place of Habitation: Meridian"
-msgstr ""
+msgstr "7. מקום מגורים: קו־אורך"
 
 #: Form/form_ca.xml.h:819
 msgid "8. Place of Habitation: Municipality"
-msgstr ""
+msgstr "8. מקום מגורים: עירייה"
 
 #: Form/form_ca.xml.h:821
 msgid "9. Relationship to head of family or household"
@@ -8063,7 +8095,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:829
 msgid "13. Country or place of birth"
-msgstr ""
+msgstr "13. מדינה או מקום לידה"
 
 #: Form/form_ca.xml.h:831
 msgid "14. Religion"
@@ -8119,7 +8151,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:854
 msgid "EmploymentPlace"
-msgstr ""
+msgstr "מקום תעסוקה"
 
 #: Form/form_ca.xml.h:855
 msgid "26. State where person is employed"
@@ -8895,7 +8927,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:225 Form/form_gb.xml.h:358
 msgid "BIRTHPLACE of every Person."
-msgstr ""
+msgstr "מקום לידה של כל אדם."
 
 #: Form/form_gb.xml.h:227 Form/form_gb.xml.h:360
 msgid "NATIONALITY of every Person born in a Foreign Country."
@@ -8941,7 +8973,7 @@ msgstr ""
 #: Form/form_us.xml.h:2419 Form/form_us.xml.h:2423 Form/form_us.xml.h:2448
 #: Form/form_us.xml.h:2470
 msgid "Birthplace"
-msgstr ""
+msgstr "מקום לידה"
 
 #: Form/form_gb.xml.h:249 Form/form_gb.xml.h:384
 msgid ""
@@ -8968,7 +9000,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:257 Form/form_gb.xml.h:392
 msgid "For each child place a X in the column corresponding to its age."
-msgstr ""
+msgstr "לכל ילד יש סימון X בעמודה בהתאם לגילו."
 
 #: Form/form_gb.xml.h:258
 msgid "E.D. Letter Code"
@@ -9227,7 +9259,7 @@ msgstr ""
 
 #: Form/form_pl.xml.h:5
 msgid "Event Place (Original)"
-msgstr ""
+msgstr "מקום אירוע (מקור)"
 
 #: Form/form_pl.xml.h:8 Form/form_pl.xml.h:36
 msgid "Birth Year (Estimated)"
@@ -10372,14 +10404,14 @@ msgstr ""
 #: Form/form_us.xml.h:870 Form/form_us.xml.h:936 Form/form_us.xml.h:1090
 #: Form/form_us.xml.h:1128 Form/form_us.xml.h:1871
 msgid "Place of birth of father"
-msgstr ""
+msgstr "מקום לידת אב"
 
 #: Form/form_us.xml.h:489 Form/form_us.xml.h:627 Form/form_us.xml.h:685
 #: Form/form_us.xml.h:724 Form/form_us.xml.h:774 Form/form_us.xml.h:811
 #: Form/form_us.xml.h:871 Form/form_us.xml.h:938 Form/form_us.xml.h:1091
 #: Form/form_us.xml.h:1129 Form/form_us.xml.h:1872
 msgid "Place of birth of mother"
-msgstr ""
+msgstr "מקום לידת אם"
 
 #: Form/form_us.xml.h:502
 msgid "Owner"
@@ -11038,7 +11070,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:786 Form/form_us.xml.h:829
 msgid "Incorporated place"
-msgstr ""
+msgstr "מקום משולב"
 
 #: Form/form_us.xml.h:788 Form/form_us.xml.h:831
 msgid "Unincorporated place"
@@ -11229,7 +11261,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:889
 msgid "Incorporated place or township"
-msgstr ""
+msgstr "מקום משולב או העירייה"
 
 #: Form/form_us.xml.h:890
 msgid "E. D. Number"
@@ -11249,7 +11281,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:901
 msgid "Is this house on a place of three or more acres?"
-msgstr ""
+msgstr "האם בית זה נמצע על שלושה אקרים או יותר?"
 
 #: Form/form_us.xml.h:902
 msgid "Agricultural Questionnaire Number"
