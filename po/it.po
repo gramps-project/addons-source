@@ -61,13 +61,14 @@
 # Sebastiano Pistore <SebastianoPistore.info@protonmail.ch>, 2025.
 # Vincenzo Alfano <vinc.alfano@gmail.com>, 2016.
 # Fabio Restante <frestante@gmail.com>, 2025.
+# Paolo Zamponi <feus73@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-05 23:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2025-07-09 12:17+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -125,7 +126,7 @@ msgstr "Percentuale di antenati trovati "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr ""
+msgstr "Numero di antenati unici trovati "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
@@ -141,7 +142,7 @@ msgstr "Numero totale di antenati trovato "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
-msgstr ""
+msgstr "Numero totale di antenati unici trovati "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -157,13 +158,15 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
-msgstr ""
+msgstr "Numeri riempiti"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
+"Il numero di cifre dopo virgola da includere nel rapporto per la percentuale "
+"di antenati trovati in una data generazione"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
