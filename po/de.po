@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"PO-Revision-Date: 2025-07-26 08:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -1043,7 +1043,7 @@ msgstr "Keine Änderungen notwendig."
 
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
-msgstr "Veraltete Ort"
+msgstr "Historischer Ort"
 
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
@@ -5758,7 +5758,7 @@ msgstr "Wohnort angeben"
 
 #: FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
-msgstr "Drucke Ereignisdaten (tote Person)"
+msgstr "Ereignisdaten drucken (verstorbene Person)"
 
 #: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
 msgid "Year only"
@@ -5766,31 +5766,33 @@ msgstr "Nur Jahr"
 
 #: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
 msgid "Full date"
-msgstr "Volles Datum"
+msgstr "Vollständiges Datum"
 
 #: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
 msgid "Full date and place"
-msgstr "Volles Datum und Ort"
+msgstr "Vollständiges Datum und Ort"
 
 #: FamilyTree/FamilyTree.py:1108
 msgid "Print event data (living person)"
-msgstr "Drucke Ereignisdaten (lebende Person)"
+msgstr "Ereignisdaten drucken (lebende Person)"
 
 #: FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
-msgstr "Taufe verwenden, falls Geburt unbekannt"
+msgstr "Wenn das Geburtsereignis fehlt, auf die Taufe zurückgreifen"
 
 #: FamilyTree/FamilyTree.py:1119
 msgid "Fall back to burial or cremation if death event missing"
-msgstr "Begräbnis oder Einäscherung verwenden, falls Tod unbekannt"
+msgstr ""
+"Wenn kein Todeereignis vorliegt, auf Beerdigung oder Einäscherung "
+"zurückgreifen"
 
 #: FamilyTree/FamilyTree.py:1122
 msgid "Protect private items"
-msgstr "Vertrauliche Elemente schützen"
+msgstr "Vertrauliche Daten schützen"
 
 #: FamilyTree/FamilyTree.py:1131
 msgid "Include event description"
-msgstr "Ereignisbeschreibung aufnehmen"
+msgstr "Ereignisbeschreibung hinzufügen"
 
 #: FamilyTree/FamilyTree.py:1134
 msgid "Text Options"
@@ -6100,12 +6102,12 @@ msgstr ""
 #: FilterRules2/matrilinealprogenitrix.gpr.py:25
 #: FilterRules2/matrilinealprogenitrix.py:45
 msgid "Matrilineal progenitrix of <person>"
-msgstr "Matrilineal Vorfahrin von <Person>"
+msgstr "Mütterliche Vorfahrin von <Person>"
 
 #: FilterRules2/matrilinealprogenitrix.gpr.py:26
 #: FilterRules2/matrilinealprogenitrix.py:47
 msgid "Matches the earliest recorded matrilineal ancestor mother."
-msgstr "Entspricht der frühesten aufgezeichneten matrilinearen Ahnenmutter."
+msgstr "Entspricht der frühesten bekannten matrilinearen Vorfahrin."
 
 #: FilterRules2/mtinheritance.gpr.py:25 FilterRules2/mtinheritance.py:45
 msgid "Mitochondrial inheritance of <person>"
@@ -6116,8 +6118,8 @@ msgid ""
 "Matches recorded descendants of person following mitochondrial inheritance "
 "patterns."
 msgstr ""
-"Entspricht den aufgezeichneten Nachkommen einer Person nach mitochondrialen "
-"Vererbungsmustern."
+"Entspricht den Nachkommen einer Person, die den mitochondrialen "
+"Vererbungsmustern folgen."
 
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
 #: FilterRules2/mtinheritanceoffiltermatch.py:46
@@ -6130,19 +6132,18 @@ msgid ""
 "Matches recorded descendants of a filter result following mitochondrial "
 "inheritance patterns."
 msgstr ""
-"Entspricht den aufgezeichneten Nachkommen eines Filterergebnisses nach "
-"mitochondrialen Vererbungsmustern."
+"Entspricht den Nachkommen eines Filterergebnisses gemäß den mitochondrialen "
+"Vererbungsmustern."
 
 #: FilterRules2/patrilinealprogenitor.gpr.py:25
 #: FilterRules2/patrilinealprogenitor.py:45
 msgid "Patrilineal progenitor of <person>"
-msgstr "Patrilinealer Stammvater von <Person>"
+msgstr "Väterlicher Vorfahr von <Person>"
 
 #: FilterRules2/patrilinealprogenitor.gpr.py:26
 #: FilterRules2/patrilinealprogenitor.py:47
 msgid "Matches the earliest recorded patrilineal ancestor father."
-msgstr ""
-"Entspricht dem frühesten aufgezeichneten Vater eines patrilinealen Vorfahren."
+msgstr "Entspricht dem frühesten bekannten Vorfahren väterlicherseits."
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
@@ -6152,7 +6153,7 @@ msgstr "X-chromosomale Vorfahren von <Person>"
 msgid ""
 "Matches ancestors of <person> following a X-chromosomal inheritance pattern."
 msgstr ""
-"Entspricht den Vorfahren von <person> nach einem X-chromosomalen "
+"Entspricht den Vorfahren von <Person> gemäß einem X-chromosomalen "
 "Vererbungsmuster."
 
 #: FilterRules2/xchromdescendants.gpr.py:25
@@ -6165,7 +6166,7 @@ msgid ""
 "Matches descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
-"Entspricht Nachkommen von <Person> nach einem X-chromosomalen "
+"Entspricht den Nachkommen von <Person> nach einem X-chromosomalen "
 "Vererbungsmuster."
 
 #: FilterRules2/xchromdescendants.py:50
@@ -6173,8 +6174,8 @@ msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
-"Entspricht allen Nachkommen von <Person> nach einem X-chromosomalen "
-"Vererbungsmuster."
+"Entspricht allen Nachkommen von <Person>, die einem X-chromosomalen "
+"Vererbungsmuster folgen."
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:45
 msgid "Y-chromosomal inheritance of <person>"
@@ -6185,8 +6186,8 @@ msgid ""
 "Matches recorded descendants of person following Y-chromosomal inheritance "
 "patterns."
 msgstr ""
-"Entspricht den aufgezeichneten Nachkommen einer Person nach Y-chromosomalen "
-"Vererbungsmustern."
+"Entspricht den Nachkommen einer Person, die den Vererbungsmustern des Y-"
+"Chromosoms folgt."
 
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
 #: FilterRules2/yinheritanceoffiltermatch.py:46
@@ -6199,31 +6200,31 @@ msgid ""
 "Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
 msgstr ""
-"Entspricht den aufgezeichneten Nachkommen eines Filterergebnisses nach Y-"
-"chromosomalen Vererbungsmustern."
+"Entspricht den Nachkommen eines Filterergebnisses gemäß den "
+"Vererbungsmustern des Y-Chromosoms."
 
 #: FixCoords/fixcoords.gpr.py:31
 msgid "Fix Place Coordinates"
-msgstr "Ortskoordinaten reparieren"
+msgstr "Koordinaten des Ortes korrigieren"
 
 #: FixCoords/fixcoords.gpr.py:33
 msgid ""
 "Tool to correct the place coordinates for extra spaces or comma characters."
 msgstr ""
-"Werkzeug zur Korrektur der Ortskoordinaten um zusätzliche Leer- oder "
-"Kommazeichen."
+"Werkzeug zum Korrigieren der Ortskoordinaten für zusätzliche Leerzeichen "
+"oder Kommazeichen."
 
 #: FixCoords/fixcoords.py:53
 msgid "Fix Coordinates"
-msgstr "Koordinaten reparieren"
+msgstr "Koordinaten korrigieren"
 
 #: FixCoords/fixcoords.py:58
 msgid "Looking for possible coords with \",\" characters"
-msgstr "Suchen nach möglichen Koordinaten mit \",\"-Zeichen"
+msgstr "Suche nach möglichen Koordinaten mit „,“-Zeichen"
 
 #: FixCoords/fixcoords.py:60
 msgid "Fix coords"
-msgstr "Koordinaten reparieren"
+msgstr "Koordinaten korrigieren"
 
 #: Form/editform.py:181
 #, python-format
@@ -6258,12 +6259,12 @@ msgstr "Formular"
 #: Form/form_ca.xml.h:661 Form/form_ca.xml.h:754 Form/form_ca.xml.h:794
 #: Form/form_us.xml.h:1633 Form/form_us.xml.h:1648
 msgid "Schedule"
-msgstr "Verzeichnis"
+msgstr "Zeitplan"
 
 #: Form/form_ca.xml.h:2 Form/form_ca.xml.h:93 Form/form_ca.xml.h:211
 #: Form/form_ca.xml.h:798
 msgid "EnumDistrict"
-msgstr "ZählungsBezirk"
+msgstr "Zählbezirk"
 
 #: Form/form_ca.xml.h:3 Form/form_ca.xml.h:94 Form/form_ca.xml.h:212
 #: Form/form_ca.xml.h:644 Form/form_ca.xml.h:812 Form/form_us.xml.h:1250
@@ -6273,18 +6274,18 @@ msgstr "Gemeinde"
 
 #: Form/form_ca.xml.h:5
 msgid "Comprising"
-msgstr "Einschließend"
+msgstr "Bestehend aus"
 
 #: Form/form_ca.xml.h:6
 msgid "OfTheSaid"
-msgstr "desGesagten"
+msgstr "Von dem Gesagten"
 
 #: Form/form_ca.xml.h:7 Form/form_ca.xml.h:293 Form/form_ca.xml.h:347
 #: Form/form_ca.xml.h:396 Form/form_ca.xml.h:457 Form/form_ca.xml.h:536
 #: Form/form_ca.xml.h:621 Form/form_ca.xml.h:668 Form/form_ca.xml.h:758
 #: Form/form_ca.xml.h:801
 msgid "Enumerator"
-msgstr "Zähler"
+msgstr "Erheber"
 
 #: Form/form_ca.xml.h:11 Form/form_ca.xml.h:217
 msgid "1. Names of Inmates"
@@ -6292,7 +6293,7 @@ msgstr "1. Namen der Insassen"
 
 #: Form/form_ca.xml.h:13
 msgid "2. Profession, Trade or Occupation"
-msgstr "2. Beruf, Gewerbe oder Beruf"
+msgstr "2. Beruf, Gewerbe oder Tätigkeit"
 
 #: Form/form_ca.xml.h:14 Form/form_ca.xml.h:220 Form/form_ca.xml.h:316
 #: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
@@ -6319,7 +6320,7 @@ msgstr "6. Alter am nächsten Geburtstag"
 
 #: Form/form_ca.xml.h:22 Form/form_ca.xml.h:230
 msgid "SexMale"
-msgstr "Männlich"
+msgstr "Geschlecht: Männlich"
 
 #: Form/form_ca.xml.h:23
 msgid "7. Sex: Male"
@@ -6327,18 +6328,18 @@ msgstr "7. Geschlecht: Männlich"
 
 #: Form/form_ca.xml.h:24
 msgid "SexFemale"
-msgstr "Weiblich"
+msgstr "Geschlecht: weiblich"
 
 #: Form/form_ca.xml.h:25
 msgid "8. Sex: Female"
-msgstr "8. Geschlecht: Weiblich"
+msgstr "8. Geschlecht: weiblich"
 
 #: Form/form_ca.xml.h:26 Form/form_ca.xml.h:234 Form/form_ca.xml.h:324
 #: Form/form_ca.xml.h:378 Form/form_ca.xml.h:415 Form/form_ca.xml.h:472
 #: Form/form_ca.xml.h:632 Form/form_ca.xml.h:683 Form/form_ca.xml.h:771
 #: Form/form_ca.xml.h:824
 msgid "MaritalStatus"
-msgstr "Personenstand"
+msgstr "Familienstand"
 
 #: Form/form_ca.xml.h:27
 msgid "9. Married or Single"
@@ -6350,15 +6351,15 @@ msgstr "Farbig"
 
 #: Form/form_ca.xml.h:29
 msgid "10. Coloured Persons - Negroes"
-msgstr "10. Farbige Person - Negroes"
+msgstr "10. Farbige Personen – Afroamerikaner"
 
 #: Form/form_ca.xml.h:30
 msgid "Indians"
-msgstr "Indios"
+msgstr "Indianer"
 
 #: Form/form_ca.xml.h:31
 msgid "11. Indians, if any"
-msgstr "11. Indios, gegebenenfalls"
+msgstr "11. Indianer, falls vorhanden"
 
 #: Form/form_ca.xml.h:32
 msgid "ResidentsMale"
@@ -6366,7 +6367,7 @@ msgstr "BewohnerMännlich"
 
 #: Form/form_ca.xml.h:33
 msgid "12. Residents: Members, Male"
-msgstr "12. Bewohner: Angehörigen, Männlich"
+msgstr "12. Bewohner: Mitglieder, männlich"
 
 #: Form/form_ca.xml.h:34
 msgid "ResidentsFemale"
@@ -6374,39 +6375,39 @@ msgstr "BewohnerWeiblich"
 
 #: Form/form_ca.xml.h:35
 msgid "13. Residents: Members, Female"
-msgstr "13. Bewohner: Angehörigen, Weiblich"
+msgstr "13. Bewohner: Mitglieder, weiblich"
 
 #: Form/form_ca.xml.h:36
 msgid "NonMembersMale"
-msgstr "KeineAngehörigenMännlich"
+msgstr "NichtmitgliederMännlich"
 
 #: Form/form_ca.xml.h:37
 msgid "14. Residents: Not Members: Male"
-msgstr "14. Bewohner: Keine Angehörigen: Männlich"
+msgstr "14. Bewohner: Nichtmitglieder: Männlich"
 
 #: Form/form_ca.xml.h:38
 msgid "NonMembersFemale"
-msgstr "KeineAngehörigenWeiblich"
+msgstr "NichtmitgliederWeiblich"
 
 #: Form/form_ca.xml.h:39
 msgid "15. Residents: Not Members: Female"
-msgstr "15. Bewohner: Keine Angehörigen: Weiblich"
+msgstr "15. Bewohner: Nichtmitglieder: Weiblich"
 
 #: Form/form_ca.xml.h:40
 msgid "AbsentMembersMale"
-msgstr "AngehörigeabwesendMännlich"
+msgstr "Abwesende Mitglieder männlich"
 
 #: Form/form_ca.xml.h:41
 msgid "16. Members Absent: Male"
-msgstr "16. Angehörige abwesend: Männlich"
+msgstr "16. Abwesende Mitglieder: Männlich"
 
 #: Form/form_ca.xml.h:42
 msgid "AbsentMembersFemale"
-msgstr "AngehörigeabwesendWeiblich"
+msgstr "Abwesende Mitglieder weiblich"
 
 #: Form/form_ca.xml.h:43
 msgid "17. Members Absent: Female"
-msgstr "17. Angehörige abwesend: Weiblich"
+msgstr "17. Abwesende Mitglieder: Weiblich"
 
 #: Form/form_ca.xml.h:44
 msgid "DeafDumbMale"
@@ -6442,7 +6443,7 @@ msgstr "21. Blind: Weiblich"
 
 #: Form/form_ca.xml.h:52
 msgid "LunaticMale"
-msgstr "Geisteskranker"
+msgstr "GeisteskrankMännlich"
 
 #: Form/form_ca.xml.h:53
 msgid "22. Lunatics: Male"
@@ -6450,7 +6451,7 @@ msgstr "22. Geisteskranke: Männlich"
 
 #: Form/form_ca.xml.h:54
 msgid "LunaticFemale"
-msgstr "Geisteskranke"
+msgstr "GeisteskrankWeiblich"
 
 #: Form/form_ca.xml.h:55
 msgid "23. Lunatics: Female"
@@ -6470,7 +6471,7 @@ msgstr "SchülerWeiblich"
 
 #: Form/form_ca.xml.h:59
 msgid "25. Attending School: Female"
-msgstr "24. Schulbesuch: Weiblich"
+msgstr "25. Schulbesuch: Weiblich"
 
 #: Form/form_ca.xml.h:60
 msgid "Birth1851Male"
@@ -6478,7 +6479,7 @@ msgstr "Geburt1851Männlich"
 
 #: Form/form_ca.xml.h:61
 msgid "26. Births During the Year 1851: Male"
-msgstr "26. Geburten im Jahr 1851: männlich"
+msgstr "26. Geburten im Jahr 1851: Männlich"
 
 #: Form/form_ca.xml.h:62
 msgid "Birth1851Female"
@@ -6486,7 +6487,7 @@ msgstr "Geburt1851Weiblich"
 
 #: Form/form_ca.xml.h:63
 msgid "27. Births During the Year 1851: Female"
-msgstr "27. Geburten im Jahr 1851: weiblich"
+msgstr "27. Geburten im Jahr 1851: Weiblich"
 
 #: Form/form_ca.xml.h:64
 msgid "Death1851Male"
@@ -6502,7 +6503,7 @@ msgstr "Tod1851Weiblich"
 
 #: Form/form_ca.xml.h:67
 msgid "29. Deaths During the Year 1851: Female"
-msgstr "29. Todesfälle im Jahr 1851: weiblich"
+msgstr "29. Todesfälle im Jahr 1851: Weiblich"
 
 #: Form/form_ca.xml.h:68 Form/form_ca.xml.h:276
 msgid "DeathAgeCause"
@@ -6510,7 +6511,7 @@ msgstr "TodAlterUrsache"
 
 #: Form/form_ca.xml.h:69
 msgid "30. Age and Cause of Deaths"
-msgstr "30. Alter und Todesursache"
+msgstr "30. Alter und Todesursachen"
 
 #: Form/form_ca.xml.h:70 Form/form_ca.xml.h:278
 msgid "Houses"
@@ -6520,16 +6521,16 @@ msgstr "Häuser"
 msgid ""
 "31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
 msgstr ""
-"31. Häuser: Ziegel, Stein, Tragwerk, Baumstamm, Hütte oder andere Arten von "
-"Wohnsitz"
+"31. Häuser: Backstein, Stein, Fachwerk, Blockhaus, Hütte oder andere Arten "
+"von Wohngebäuden"
 
 #: Form/form_ca.xml.h:72 Form/form_ca.xml.h:280
 msgid "HousesStories"
-msgstr "HäuserGeschosse"
+msgstr "HäuserStockwerke"
 
 #: Form/form_ca.xml.h:73
 msgid "32. Houses: No. of Stories"
-msgstr "32. Häuser: Anzahl der Geschosse"
+msgstr "32. Häuser: Anzahl der Stockwerke"
 
 #: Form/form_ca.xml.h:74 Form/form_ca.xml.h:282
 msgid "HousesFamilies"
@@ -6537,16 +6538,16 @@ msgstr "HäuserFamilien"
 
 #: Form/form_ca.xml.h:75
 msgid "33. No. of Families Occupying"
-msgstr "33. Anzahl Familien belegt"
+msgstr "33. Anzahl der Familien, die dort wohnen"
 
 #: Form/form_ca.xml.h:76 Form/form_ca.xml.h:284 Form/form_ca.xml.h:302
 #: Form/form_ca.xml.h:356 Form/form_ca.xml.h:403 Form/form_ca.xml.h:549
 msgid "HousesVacant"
-msgstr "HäuserFrei"
+msgstr "Leerstehende Häuser"
 
 #: Form/form_ca.xml.h:77
 msgid "34. Houses: Vacant"
-msgstr "34. Häuser: Frei"
+msgstr "34. Häuser: Leerstehend"
 
 #: Form/form_ca.xml.h:78
 msgid "HousesBuilding"
@@ -6574,11 +6575,11 @@ msgstr "37. Öffentliche Gebäude"
 
 #: Form/form_ca.xml.h:84
 msgid "WorshipPlaces"
-msgstr "KultOrte"
+msgstr "Gotteshäuser"
 
 #: Form/form_ca.xml.h:85
 msgid "38. Places of Worship"
-msgstr "38. Kultstätten"
+msgstr "38. Gotteshäuser"
 
 #: Form/form_ca.xml.h:86
 msgid "BuisnessInfo"
@@ -6588,7 +6589,7 @@ msgstr "Geschäftsinformationen"
 msgid ""
 "39. Information on Mills, Factories etc., their cost, power, produce, etc."
 msgstr ""
-"39. Informationen über Mühlen, Fabriken usw., deren Kosten, Strom, "
+"39. Informationen über Mühlen, Fabriken usw., ihre Kosten, Leistung, "
 "Produktion usw."
 
 #: Form/form_ca.xml.h:88
@@ -6597,15 +6598,15 @@ msgstr "AnzahlMittarbeiter"
 
 #: Form/form_ca.xml.h:89
 msgid "40. Number of Persons Usually Employed Therein"
-msgstr "40. Anzahl der normalerweise dort beschäftigten Personen"
+msgstr "40. Anzahl der dort üblicherweise beschäftigten Personen"
 
 #: Form/form_ca.xml.h:91
 msgid "41. General Remarks of the Enumerator"
-msgstr "41. Allgemeine Bemerkungen des Zählers"
+msgstr "41. Allgemeine Bemerkungen des Erfassers"
 
 #: Form/form_ca.xml.h:99
 msgid "1. Name of Occupier"
-msgstr "1. Name des Besitzers"
+msgstr "1. Name des Nutzers"
 
 #: Form/form_ca.xml.h:100
 msgid "Concession"
@@ -6617,11 +6618,11 @@ msgstr "2. Konzession oder Bereich"
 
 #: Form/form_ca.xml.h:102
 msgid "Lot"
-msgstr "Grundstück"
+msgstr "Los"
 
 #: Form/form_ca.xml.h:103
 msgid "3. Lot or part of Lot"
-msgstr "3. Grundstück oder Teil eines Grundstück"
+msgstr "3. Los oder Teil eines Loses"
 
 #: Form/form_ca.xml.h:104
 msgid "AcresHeld"
@@ -6629,103 +6630,103 @@ msgstr "AcreGehalten"
 
 #: Form/form_ca.xml.h:105
 msgid "4. Number of Acres of Land: Held by each person or family"
-msgstr "4. Anzahl der Acre Land: von jeder Person oder Familie gehalten"
+msgstr "4. Anzahl der Acre Land: In Besitz von jeder Person oder Familie"
 
 #: Form/form_ca.xml.h:106
 msgid "AcresCultivation"
-msgstr "AcreBearbeitet"
+msgstr "AcresAnbau"
 
 #: Form/form_ca.xml.h:107
 msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr "5. Anzahl der Acre Land: In Bearbeitung"
+msgstr "5. Anzahl der Acres von Land: Anbaufläche"
 
 #: Form/form_ca.xml.h:108
 msgid "AcresCrops"
-msgstr "AcreGeerntet"
+msgstr "AcresKulturpflanzen"
 
 #: Form/form_ca.xml.h:109
 msgid "6. Number of Acres of Land: Under Crops in 1851"
-msgstr "6. Anzahl der Acre Land: 1851 unter Ernte"
+msgstr "6. Anzahl der Acre Land: 1851 unter Kulturpflanzen"
 
 #: Form/form_ca.xml.h:110
 msgid "AcresPasture"
-msgstr "AcreWeideland"
+msgstr "AcresWeide"
 
 #: Form/form_ca.xml.h:111
 msgid "7. Number of Acres of Land: Under Pasture in 1851"
-msgstr "7. Anzahl der Acre Land: 1851 unter Weideland"
+msgstr "7. Anzahl der Acres Land: Weidefläche im Jahr 1851"
 
 #: Form/form_ca.xml.h:112
 msgid "AcresGardens"
-msgstr "AcreGärten"
+msgstr "AcresGärten"
 
 #: Form/form_ca.xml.h:113
 msgid "8. Number of Acres of Land: Gardens or Orchards"
-msgstr "8. Anzahl der Acre Land: Gärten oder Obstgärten"
+msgstr "8. Anzahl der Acres an Land: Gärten oder Obstplantagen"
 
 #: Form/form_ca.xml.h:114
 msgid "AcresWood"
-msgstr "AcreHolz"
+msgstr "AcresWald"
 
 #: Form/form_ca.xml.h:115
 msgid "9. Number of Acres of Land: Under Wood or Wild"
-msgstr "9. Anzahl der Acre Land: Unter Holz oder Wild"
+msgstr "9. Anzahl der Acres an Land: Unter Wald oder Wild"
 
 #: Form/form_ca.xml.h:116
 msgid "WheatAcres"
-msgstr "WeizenAcre"
+msgstr "WeizenAcres"
 
 #: Form/form_ca.xml.h:117
 msgid "10. Wheat: Acres"
-msgstr "10. Weizen: Acre"
+msgstr "10. Weizen: Acres"
 
 #: Form/form_ca.xml.h:118
 msgid "WheatBsh"
-msgstr "WeizenScheffel"
+msgstr "WeizenBushel"
 
 #: Form/form_ca.xml.h:119
 msgid "11. Wheat: Produce Bsh."
-msgstr "11. Weizen: Ertrag Scheffel"
+msgstr "11. Weizen: Ertrag Bushel"
 
 #: Form/form_ca.xml.h:120
 msgid "BarleyAcres"
-msgstr "GersteAcre"
+msgstr "GersteAcres"
 
 #: Form/form_ca.xml.h:121
 msgid "12. Barley: Acres"
-msgstr "12. Gerste: Acre"
+msgstr "12. Gerste: Acres"
 
 #: Form/form_ca.xml.h:122
 msgid "BarleyBsh"
-msgstr "GersteScheffel"
+msgstr "GersteBushel"
 
 #: Form/form_ca.xml.h:123
 msgid "13. Barley: Produce Bsh."
-msgstr "13. Gerste: Ertrag Scheffel"
+msgstr "13. Gerste: Ertrag Bushel"
 
 #: Form/form_ca.xml.h:124
 msgid "RyeAcres"
-msgstr "RoggenAcre"
+msgstr "RoggenAcres"
 
 #: Form/form_ca.xml.h:125
 msgid "14. Rye: Acres"
-msgstr "14. Roggen: Acre"
+msgstr "14. Roggen: Acres"
 
 #: Form/form_ca.xml.h:126
 msgid "RyeBsh"
-msgstr "RoggenScheffel"
+msgstr "RoggenBushel"
 
 #: Form/form_ca.xml.h:127
 msgid "15. Rye: Produce Bsh."
-msgstr "15. Roggen: Ertrag Scheffel"
+msgstr "15. Roggen: Ertrag Bushel"
 
 #: Form/form_ca.xml.h:128
 msgid "PeasAcres"
-msgstr "ErbsenAcre"
+msgstr "ErbsenAcres"
 
 #: Form/form_ca.xml.h:129
 msgid "16. Peas: Acres"
-msgstr "16. Erbsen: Acre"
+msgstr "16. Erbsen: Acres"
 
 #: Form/form_ca.xml.h:130
 msgid "PeasBush"
@@ -6733,15 +6734,15 @@ msgstr "ErbsenBushel"
 
 #: Form/form_ca.xml.h:131
 msgid "17. Peas: Produce Bsh."
-msgstr "17. Erbsen: Ertrag Scheffel"
+msgstr "17. Erbsen: Ertrag Bushel"
 
 #: Form/form_ca.xml.h:132
 msgid "OatsAcres"
-msgstr "HaferAcre"
+msgstr "HaferAcres"
 
 #: Form/form_ca.xml.h:133
 msgid "18. Oats: Acres"
-msgstr "18. Hafer: Acre"
+msgstr "18. Hafer: Acres"
 
 #: Form/form_ca.xml.h:134
 msgid "OatsBush"
@@ -6749,15 +6750,15 @@ msgstr "HaferBushel"
 
 #: Form/form_ca.xml.h:135
 msgid "19. Oats: Produce Bsh."
-msgstr "19. Hafer: Ertrag Scheffel"
+msgstr "19. Hafer: Ertrag Bushel"
 
 #: Form/form_ca.xml.h:136
 msgid "BWheatAcres"
-msgstr "BWeizenAcre"
+msgstr "BWeizenAcres"
 
 #: Form/form_ca.xml.h:137
 msgid "20. B.Wheat: Acres"
-msgstr "20. B.Weizen: Acre"
+msgstr "20. B.Weizen: Acres"
 
 #: Form/form_ca.xml.h:138
 msgid "BWheatBush"
@@ -6765,15 +6766,15 @@ msgstr "BWeizenBushel"
 
 #: Form/form_ca.xml.h:139
 msgid "21. B.Wheat: Produce Bsh."
-msgstr "21. B.Weizen: Ertrag Scheffel"
+msgstr "21. B.Weizen: Ertrag Bushel"
 
 #: Form/form_ca.xml.h:140
 msgid "CornAcres"
-msgstr "MaisAcre"
+msgstr "MaisAcres"
 
 #: Form/form_ca.xml.h:141
 msgid "22. Corn: Acres"
-msgstr "22. Mais: Acre"
+msgstr "22. Mais: Acres"
 
 #: Form/form_ca.xml.h:142
 msgid "CornBush"
@@ -6781,15 +6782,15 @@ msgstr "MaisBushel"
 
 #: Form/form_ca.xml.h:143
 msgid "23. Corn: Produce Bsh."
-msgstr "23. Mais: Ertrag Scheffel"
+msgstr "23. Mais: Ertrag Bushel"
 
 #: Form/form_ca.xml.h:144
 msgid "PotatoesAcres"
-msgstr "KartoffelnAcre"
+msgstr "KartoffelnAcres"
 
 #: Form/form_ca.xml.h:145
 msgid "24. Potatoes: Acres"
-msgstr "24. Kartoffeln: Acre"
+msgstr "24. Kartoffeln: Acres"
 
 #: Form/form_ca.xml.h:146
 msgid "PotatoesBush"
@@ -6797,15 +6798,15 @@ msgstr "KartoffelnBushel"
 
 #: Form/form_ca.xml.h:147
 msgid "25. Potatoes: Produce Bsh."
-msgstr "25. Kartoffeln: Ertrag Scheffel"
+msgstr "25. Kartoffeln: Ertrag Bushel"
 
 #: Form/form_ca.xml.h:148
 msgid "TurnipsAcres"
-msgstr "RübenAcre"
+msgstr "RübenAcres"
 
 #: Form/form_ca.xml.h:149
 msgid "26. Turnips: Acres"
-msgstr "26. Rüben: Acre"
+msgstr "26. Rüben: Acres"
 
 #: Form/form_ca.xml.h:150
 msgid "TurnipsBush"
@@ -6813,7 +6814,7 @@ msgstr "RübenBushel"
 
 #: Form/form_ca.xml.h:151
 msgid "27. Turnips: Produce Bsh."
-msgstr "27. Rüben: Ertrag Scheffel"
+msgstr "27. Rüben: Ertrag Bushel"
 
 #: Form/form_ca.xml.h:152
 msgid "CloverBush"
@@ -6822,15 +6823,15 @@ msgstr "KleeBushel"
 #: Form/form_ca.xml.h:153
 msgid "28. Clover, Timothy or other grass seed - Bsh."
 msgstr ""
-"28. Klee-, Wiesen-Lieschgras/Timotheegras- oder andere Grassamen - Scheffel"
+"28. Klee-, Wiesen-Lieschgras/Timotheegras- oder andere Grassamen - Bushel"
 
 #: Form/form_ca.xml.h:154
 msgid "CarrotsBush"
-msgstr "MöhreBushel"
+msgstr "MöhrenBushel"
 
 #: Form/form_ca.xml.h:155
 msgid "29. Carrots - Bsh."
-msgstr "29. Möhren - Scheffel"
+msgstr "29. Möhren - Bushel"
 
 #: Form/form_ca.xml.h:156
 msgid "MangleWurtzel"
@@ -7040,7 +7041,7 @@ msgstr "Fisch"
 
 #: Form/form_ca.xml.h:207
 msgid "55. Quantity of Fish Cured"
-msgstr "55. Stückzahl Fisch geräuchert"
+msgstr "55. Menge der gepökelten Fische"
 
 #: Form/form_ca.xml.h:209
 msgid "56. Remarks"
@@ -7048,7 +7049,7 @@ msgstr "56. Bemerkungen"
 
 #: Form/form_ca.xml.h:219
 msgid "2. Profession, trade or occupation"
-msgstr "2. Beruf, Gewerbe oder Beruf"
+msgstr "2. Beruf, Gewerbe oder Beschäftigung"
 
 #: Form/form_ca.xml.h:222
 msgid "Married1851"
@@ -7056,7 +7057,7 @@ msgstr "Verheiratet1851"
 
 #: Form/form_ca.xml.h:223
 msgid "4. Married during the year"
-msgstr "4. Im Laufe des Jahres verheiratet"
+msgstr "4. Im Laufe des Jahres geheiratet"
 
 #: Form/form_ca.xml.h:225
 msgid "5. Religion"
@@ -7064,7 +7065,7 @@ msgstr "5. Religion"
 
 #: Form/form_ca.xml.h:227
 msgid "6. Residence, if out of limits"
-msgstr "6. Wohnsitz außerhalb der Grenzen"
+msgstr "6. Wohnsitz, falls außerhalb der Grenzen"
 
 #: Form/form_ca.xml.h:229
 msgid "7. Age next Birthday"
@@ -7084,7 +7085,7 @@ msgstr "9. Geschlecht:Weiblich"
 
 #: Form/form_ca.xml.h:235
 msgid "10. Married or Single"
-msgstr "10. Verheiratet oder Single"
+msgstr "10. Verheiratet oder Ledig"
 
 #: Form/form_ca.xml.h:236
 msgid "Widowers"
@@ -7108,51 +7109,51 @@ msgstr "13. Farbige Personen, Mulatten oder Indianer"
 
 #: Form/form_ca.xml.h:242
 msgid "MemberMale"
-msgstr "AngehörigerMännlich"
+msgstr "MitgliedMännlich"
 
 #: Form/form_ca.xml.h:243
 msgid "14. Members: Male"
-msgstr "14. Angehörige: Männlich"
+msgstr "14. Mitglieder: Männlich"
 
 #: Form/form_ca.xml.h:244
 msgid "MemberFemale"
-msgstr "AngehörigeWeiblich"
+msgstr "MitgliedWeiblich"
 
 #: Form/form_ca.xml.h:245
 msgid "15. Members: Female"
-msgstr "15. Angehörige: Weiblich"
+msgstr "15. Mitglieder: Weiblich"
 
 #: Form/form_ca.xml.h:246
 msgid "NotMemberMale"
-msgstr "NichtAngehörigerMänlich"
+msgstr "NichtMitgliedMännlich"
 
 #: Form/form_ca.xml.h:247
 msgid "16. Not Members: Male"
-msgstr "16. Nicht Angehörige: Männlich"
+msgstr "16. Keine Mitglieder: Männlich"
 
 #: Form/form_ca.xml.h:248
 msgid "NotMemberFemale"
-msgstr "KeineAngehörigeWeiblich"
+msgstr "NichtMitgliedWeiblich"
 
 #: Form/form_ca.xml.h:249
 msgid "17. Not Members: Female"
-msgstr "17. Keine Angehörigen: Weiblich"
+msgstr "17. Keine Mitglieder: Weiblich"
 
 #: Form/form_ca.xml.h:250
 msgid "MemberAbsentMale"
-msgstr "AngehörigerAbwesendMännlich"
+msgstr "MitgliedAbwesendMännlich"
 
 #: Form/form_ca.xml.h:251
 msgid "18. Members Absent: Male"
-msgstr "18. Angehöriger Abwesend: Männlich"
+msgstr "18. Abwesende Mitglieder: Männlich"
 
 #: Form/form_ca.xml.h:252
 msgid "MemberAbsentFemale"
-msgstr "AngehörigeAbwesendWeiblich"
+msgstr "MitgliedAbwesendWeiblich"
 
 #: Form/form_ca.xml.h:253
 msgid "19. Members Absent: Female"
-msgstr "19. Angehöriger Abwesend: Weiblich"
+msgstr "19. Abwesende Mitglieder: Weiblich"
 
 #: Form/form_ca.xml.h:254 Form/form_ca.xml.h:334 Form/form_ca.xml.h:382
 #: Form/form_ca.xml.h:443 Form/form_ca.xml.h:747
@@ -7161,7 +7162,7 @@ msgstr "TaubStumm"
 
 #: Form/form_ca.xml.h:255 Form/form_ca.xml.h:335
 msgid "20. Deaf and Dumb"
-msgstr "20. Taub und Stumm: Männlich"
+msgstr "20. Taubstumm"
 
 #: Form/form_ca.xml.h:256 Form/form_ca.xml.h:336 Form/form_ca.xml.h:384
 #: Form/form_ca.xml.h:445 Form/form_ca.xml.h:745 Form/form_us.xml.h:479
@@ -7180,7 +7181,7 @@ msgstr "21. Blind"
 #: Form/form_ca.xml.h:258 Form/form_ca.xml.h:338 Form/form_ca.xml.h:386
 #: Form/form_ca.xml.h:447 Form/form_ca.xml.h:749
 msgid "Lunatic"
-msgstr "Geisteskranke"
+msgstr "Geisteskrank"
 
 #: Form/form_ca.xml.h:259
 msgid "22. Lunatics or Idiots"
@@ -7248,23 +7249,23 @@ msgstr "31. Alter und Todesursache"
 
 #: Form/form_ca.xml.h:279
 msgid "32. Houses: Brick, Stone, Frame, Log, etc."
-msgstr "32. Häuser: Ziegel, Stein, Tragwerk, Baumstamm, usw."
+msgstr "32. Häuser: Ziegel, Stein, Holzrahmen, Blockbauweise usw."
 
 #: Form/form_ca.xml.h:281
 msgid "33. Houses: No. of Stories"
-msgstr "33. Häuser: Anzahl der Geschosse"
+msgstr "33. Häuser: Anzahl der Stockwerke"
 
 #: Form/form_ca.xml.h:283
 msgid "34. Houses: No. of families living in the house"
-msgstr "34. Häuser: Anzahl der im Haus lebenden Familien"
+msgstr "34. Häuser: Anzahl der Familien, die in dem Haus leben"
 
 #: Form/form_ca.xml.h:285
 msgid "35. Houses: Vacant"
-msgstr "35. Häuser: Frei"
+msgstr "35. Häuser: Leerstehend"
 
 #: Form/form_ca.xml.h:286
 msgid "HouseBeingBuilt"
-msgstr "HäuserWerdenGebaut"
+msgstr "Haus im Bau"
 
 #: Form/form_ca.xml.h:287
 msgid "36. Houses: Being built"
@@ -7278,23 +7279,23 @@ msgstr "Unterbezirk"
 
 #: Form/form_ca.xml.h:296 Form/form_ca.xml.h:350 Form/form_ca.xml.h:399
 msgid "Vessels"
-msgstr "Wasserfahrzeuge"
+msgstr "Boote"
 
 #: Form/form_ca.xml.h:297 Form/form_ca.xml.h:351
 msgid "1. Vessels"
-msgstr "1. Wasserfahrzeuge"
+msgstr "1. Boote"
 
 #: Form/form_ca.xml.h:298 Form/form_ca.xml.h:352
 msgid "Shanties"
-msgstr "Baracken"
+msgstr "Hütten"
 
 #: Form/form_ca.xml.h:299 Form/form_ca.xml.h:353
 msgid "2. Shanties"
-msgstr "2. Baracken"
+msgstr "2. Hütten"
 
 #: Form/form_ca.xml.h:300 Form/form_ca.xml.h:354 Form/form_ca.xml.h:401
 msgid "HousesBeingBuilt"
-msgstr "HäuserWerdenGebaut"
+msgstr "Häuser im Bau"
 
 #: Form/form_ca.xml.h:301
 msgid "3. Dwelling houses in construction"
@@ -7302,7 +7303,7 @@ msgstr "3. Wohnhäuser im Bau"
 
 #: Form/form_ca.xml.h:303
 msgid "4. Dwelling houses unoccupied"
-msgstr "4. Wohnhäuser unbewohnt"
+msgstr "4. Leerstehende Wohnhäuser"
 
 #: Form/form_ca.xml.h:304 Form/form_ca.xml.h:358 Form/form_ca.xml.h:405
 #: Form/form_ca.xml.h:551
@@ -7359,11 +7360,11 @@ msgstr "Geburt1871"
 
 #: Form/form_ca.xml.h:315 Form/form_ca.xml.h:369
 msgid "10. Born within last twelve months"
-msgstr "10. Innerhalb der letzten zwölf Monaten geboren"
+msgstr "10. Geboren innerhalb der letzten zwölf Monate"
 
 #: Form/form_ca.xml.h:317 Form/form_ca.xml.h:371 Form/form_ca.xml.h:420
 msgid "11. Country or Province of Birth"
-msgstr "11. Land oder Provinz der Geburt"
+msgstr "11. Geburtsland oder -provinz"
 
 #: Form/form_ca.xml.h:319 Form/form_ca.xml.h:373
 msgid "12. Religion"
@@ -7383,11 +7384,11 @@ msgstr "15. Verheiratet oder verwitwet"
 
 #: Form/form_ca.xml.h:326
 msgid "Maried1871"
-msgstr "Verheiratet1871"
+msgstr "Heiratete 1871"
 
 #: Form/form_ca.xml.h:327
 msgid "16. Married within last twelve months"
-msgstr "16. Verheiratet innerhalb der letzten zwölf Monate"
+msgstr "16. Innerhalb der letzten zwölf Monate geheiratet"
 
 #: Form/form_ca.xml.h:328 Form/form_ca.xml.h:380
 msgid "Scholar"
@@ -7415,11 +7416,11 @@ msgstr "19. Über 20 kann nicht schreiben"
 
 #: Form/form_ca.xml.h:339
 msgid "22. Unsound mind"
-msgstr "22. ungesunder Geist"
+msgstr "22. Geisteskrankheit"
 
 #: Form/form_ca.xml.h:341
 msgid "23. Date of Operations and Remarks"
-msgstr "23. Betriebsdatum und Bemerkungen"
+msgstr "23. Datum der Operationen und Bemerkungen"
 
 #: Form/form_ca.xml.h:355
 msgid "3. Houses in construction"
@@ -7427,11 +7428,11 @@ msgstr "3. Häuser im Bau"
 
 #: Form/form_ca.xml.h:357
 msgid "4. Houses unoccupied"
-msgstr "4. Häuser unbewohnt"
+msgstr "4. Leerstehende Häuser"
 
 #: Form/form_ca.xml.h:359
 msgid "5. Houses inhabited"
-msgstr "5. Häuser bewohnt"
+msgstr "5. Bewohnte Häuser"
 
 #: Form/form_ca.xml.h:361
 msgid "6. Families"
@@ -7447,7 +7448,7 @@ msgstr "16. Geht zur Schule"
 
 #: Form/form_ca.xml.h:383
 msgid "17. Deaf and Dumb"
-msgstr "17. Taub und stumm: Männlich"
+msgstr "17. Taubstumm"
 
 #: Form/form_ca.xml.h:385
 msgid "18. Blind"
@@ -7459,11 +7460,11 @@ msgstr "19. ungesunder Geist"
 
 #: Form/form_ca.xml.h:389
 msgid "20. Date of Operations and Remarks"
-msgstr "20. Betriebsdatum und Bemerkungen"
+msgstr "20. Datum der Operationen und Bemerkungen"
 
 #: Form/form_ca.xml.h:400
 msgid "1. Vessels and Shanties"
-msgstr "1. Wasserfahrzeuge und Baracken"
+msgstr "1. Boote und Hütten"
 
 #: Form/form_ca.xml.h:402
 msgid "2. Houses in construction"
@@ -7471,11 +7472,11 @@ msgstr "2. Häuser im Bau"
 
 #: Form/form_ca.xml.h:404
 msgid "3. Houses unoccupied"
-msgstr "3. Häuser unbewohnt"
+msgstr "3. Leerstehende Häuser"
 
 #: Form/form_ca.xml.h:406
 msgid "4. Houses inhabited"
-msgstr "4. Häuser bewohnt"
+msgstr "4. Bewohnte Häuser"
 
 #: Form/form_ca.xml.h:408
 msgid "5. Families"
@@ -7525,7 +7526,7 @@ msgstr "Beziehung"
 
 #: Form/form_ca.xml.h:418
 msgid "10. Relationship to Head of Family"
-msgstr "10. Beziehung zum Kopf des Hauses"
+msgstr "10. Beziehung zum Familienoberhaupt"
 
 #: Form/form_ca.xml.h:422
 msgid "12. FrenchCanadian"
@@ -7570,7 +7571,7 @@ msgstr "Angestellter"
 
 #: Form/form_ca.xml.h:434
 msgid "18. Wage Earner"
-msgstr "18. Lohnabhängiger"
+msgstr "18. Lohnempfänger"
 
 #: Form/form_ca.xml.h:435
 msgid "Unemployed"
@@ -7582,13 +7583,13 @@ msgstr "19. Arbeitslos in der Woche vor der Volkszählung"
 
 #: Form/form_ca.xml.h:437
 msgid "Employees"
-msgstr "Arbeitnehmer"
+msgstr "Mitarbeiter"
 
 #: Form/form_ca.xml.h:438
 msgid "20. Employer to state average number of hands employed during year"
 msgstr ""
-"20. Arbeitgeber, um die durchschnittliche Anzahl der im Jahr beschäftigten "
-"Hände anzugeben"
+"20. Der Arbeitgeber hat die durchschnittliche Anzahl der im Laufe des Jahres "
+"beschäftigten Arbeitskräfte anzugeben"
 
 #: Form/form_ca.xml.h:439 Form/form_ca.xml.h:846
 msgid "CanRead"
@@ -7596,7 +7597,7 @@ msgstr "KannLesen"
 
 #: Form/form_ca.xml.h:440
 msgid "21. Instruction: Read"
-msgstr "21. Anleitung: Lesen"
+msgstr "21. Anweisung: Lesen"
 
 #: Form/form_ca.xml.h:441 Form/form_ca.xml.h:848
 msgid "CanWrite"
@@ -7608,7 +7609,7 @@ msgstr "22. Anweisung: Schreiben"
 
 #: Form/form_ca.xml.h:444
 msgid "23. Deaf and Dumb"
-msgstr "23. Taub und stumm: Männlich"
+msgstr "23. Taubstumm"
 
 #: Form/form_ca.xml.h:446
 msgid "24. Blind"
@@ -7616,7 +7617,7 @@ msgstr "24. Blind"
 
 #: Form/form_ca.xml.h:448
 msgid "25. Unsound mind"
-msgstr "25. ungesunder Geist"
+msgstr "25. Geisteskrankheit"
 
 #: Form/form_ca.xml.h:449 Form/form_ca.xml.h:528 Form/form_ca.xml.h:660
 #: Form/form_ca.xml.h:753 Form/form_ca.xml.h:793
@@ -7649,11 +7650,11 @@ msgstr "4. Geschlecht"
 
 #: Form/form_ca.xml.h:468
 msgid "Colour"
-msgstr "Hautfarbe"
+msgstr "Farbe"
 
 #: Form/form_ca.xml.h:469
 msgid "5. Colour"
-msgstr "5. Hautfarbe"
+msgstr "5. Farbe"
 
 #: Form/form_ca.xml.h:471 Form/form_ca.xml.h:682
 msgid "6. Relation to head of family"
@@ -7661,7 +7662,8 @@ msgstr "6. Beziehung zum Familienoberhaupt"
 
 #: Form/form_ca.xml.h:473 Form/form_ca.xml.h:684
 msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr "7. Single, verheiratet, verwitwet, geschieden oder rechtlich getrennt"
+msgstr ""
+"7. Ledig, verheiratet, verwitwet, geschieden oder rechtlich getrennt lebend"
 
 #: Form/form_ca.xml.h:474 Form/form_ca.xml.h:685 Form/form_ca.xml.h:773
 msgid "BirthMonth"
@@ -7669,7 +7671,7 @@ msgstr "Geburtsmonat"
 
 #: Form/form_ca.xml.h:475
 msgid "8. Month and Date of Birth"
-msgstr "8. Monat und Geburtsdatum"
+msgstr "8. Geburtsmonat und -tag"
 
 #: Form/form_ca.xml.h:476 Form/form_ca.xml.h:687
 msgid "BirthYear"
@@ -7685,15 +7687,17 @@ msgstr "10. Alter am letzten Geburtstag"
 
 #: Form/form_ca.xml.h:481 Form/form_ca.xml.h:692
 msgid "11. Country or place of birth"
-msgstr "11. Land oder Ort der Geburt"
+msgstr "11. Geburtsland oder -ort"
 
 #: Form/form_ca.xml.h:483 Form/form_ca.xml.h:694
 msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr "12. Jahr der Einwanderung nach Kanada, wenn Einwanderer"
+msgstr ""
+"12. Jahr der Einwanderung nach Kanada, falls es sich um einen Einwanderer "
+"handelt"
 
 #: Form/form_ca.xml.h:485 Form/form_ca.xml.h:696
 msgid "13. Year of naturalization, if formerly an alien"
-msgstr "13. Jahr der Einbürgerung, wenn vorher Ausländer"
+msgstr "13. Jahr der Einbürgerung, falls zuvor Ausländer"
 
 #: Form/form_ca.xml.h:486 Form/form_ca.xml.h:697 Form/form_ca.xml.h:779
 #: Form/form_ca.xml.h:838 Form/form_us.xml.h:904 Form/form_us.xml.h:979
@@ -7705,7 +7709,7 @@ msgstr "Rasse"
 
 #: Form/form_ca.xml.h:487 Form/form_ca.xml.h:698
 msgid "14. Racial or tribal origin"
-msgstr "14. Herkunfts Rasse oder Stamm"
+msgstr "14. Rasse oder Stammeszugehörigkeit"
 
 #: Form/form_ca.xml.h:488 Form/form_ca.xml.h:699 Form/form_ca.xml.h:836
 #: Form/form_fr.xml.h:7 Form/form_fr.xml.h:15 Form/form_fr.xml.h:23
@@ -7737,7 +7741,7 @@ msgstr "EigeneMittel"
 
 #: Form/form_ca.xml.h:495
 msgid "18. Living on own means"
-msgstr "18. Aus eigenen Mitteln leben"
+msgstr "18. Von eigenen Mitteln leben"
 
 #: Form/form_ca.xml.h:497 Form/form_ca.xml.h:708
 msgid "19. Employer"
@@ -7745,7 +7749,7 @@ msgstr "19. Arbeitgeber"
 
 #: Form/form_ca.xml.h:499 Form/form_ca.xml.h:710
 msgid "20. Employee"
-msgstr "20. Angestellter"
+msgstr "20. Mitarbeiter"
 
 #: Form/form_ca.xml.h:500 Form/form_ca.xml.h:711
 msgid "SelfEmployed"
@@ -7757,11 +7761,11 @@ msgstr "21. Auf eigene Rechnung arbeiten"
 
 #: Form/form_ca.xml.h:502 Form/form_ca.xml.h:713
 msgid "WhereEmployed"
-msgstr "WoBeschäftigt"
+msgstr "Beschäftigungsort"
 
 #: Form/form_ca.xml.h:503
 msgid "22. Working at trade in factory or in home"
-msgstr "22. Arbeiten im Handel in der Fabrik oder zu Hause"
+msgstr "22. Arbeit in der Industrie oder zu Hause"
 
 #: Form/form_ca.xml.h:504
 msgid "MonthsFactory"
@@ -7769,11 +7773,11 @@ msgstr "MonateFabrik"
 
 #: Form/form_ca.xml.h:505
 msgid "23. Months employed at trade in factory"
-msgstr "23. Monate im Handel in der Fabrik beschäftigt"
+msgstr "23. Monate, in denen in der Fabrik gearbeitet wurde"
 
 #: Form/form_ca.xml.h:506
 msgid "MonthsHome"
-msgstr "MonateZuHause"
+msgstr "MonateZuhause"
 
 #: Form/form_ca.xml.h:507
 msgid "24. Months employed at trade in home"
@@ -7781,29 +7785,31 @@ msgstr "24. Monate im Handel zu Hause beschäftigt"
 
 #: Form/form_ca.xml.h:508
 msgid "MonthsOther"
-msgstr "MonateAndrers"
+msgstr "MonateAndrere"
 
 #: Form/form_ca.xml.h:509
 msgid "25. Months employed in other occupation than trace in factory or home"
 msgstr ""
-"25. Monate, die in einem anderen Beruf als der Aufzeichnung in der Fabrik "
-"oder zu Hause beschäftigt sind"
+"25. Monate, in denen eine andere Tätigkeit als die Arbeit in der Fabrik oder "
+"zu Hause ausgeübt wurde"
 
 #: Form/form_ca.xml.h:510 Form/form_ca.xml.h:723
 msgid "EarningsOccupation"
-msgstr "EinnahmenBeruf"
+msgstr "EinkommenBeruf"
 
 #: Form/form_ca.xml.h:511
 msgid "26. Earnings from occupation or trade"
-msgstr "26. Einnahmen aus Beruf oder Handel"
+msgstr "26. Einkünfte aus Beruf oder Gewerbe"
 
 #: Form/form_ca.xml.h:512 Form/form_ca.xml.h:725
 msgid "EarningsOther"
-msgstr "EinnahmenAndere"
+msgstr "ErträgeSonstige"
 
 #: Form/form_ca.xml.h:513
 msgid "27. Extra earning (From other than chief occupation or trade)"
-msgstr "27. Zusätzliches Einkommen (aus anderen als Hauptberuf oder Gewerbe)"
+msgstr ""
+"27. Zusatzeinkommen (aus anderen Tätigkeiten als der Hauptbeschäftigung oder "
+"dem Hauptberuf)"
 
 #: Form/form_ca.xml.h:514 Form/form_ca.xml.h:735 Form/form_ca.xml.h:783
 msgid "SchoolMonths"
@@ -7855,35 +7861,35 @@ msgstr "33. Muttersprache (falls gesprochen)"
 
 #: Form/form_ca.xml.h:526 Form/form_ca.xml.h:791
 msgid "Infirmities"
-msgstr "Schwächen"
+msgstr "Gebrechen"
 
 #: Form/form_ca.xml.h:527
 msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr "34. Gebrechen: a. Taub und Stumm; b. Blind; c. Ungesunder Geist"
+msgstr "34. Gebrechen: a. Taubstumm; b. Blind; c. Geisteskrank"
 
 #: Form/form_ca.xml.h:538
 msgid "Name from Schedule 1"
-msgstr "Name aus Verzeichnis 1"
+msgstr "Name aus Liste 1"
 
 #: Form/form_ca.xml.h:540
 msgid "Line on Schedule 2"
-msgstr "Zeile in Verzeichnis 2"
+msgstr "Zeile in Liste 2"
 
 #: Form/form_ca.xml.h:541
 msgid "PageRef"
-msgstr "Seitenangabe"
+msgstr "Seitenverweis"
 
 #: Form/form_ca.xml.h:542
 msgid "2. Page from Schedule 1"
-msgstr "2. Seite von Verzeichnis 1"
+msgstr "2. Seite von Liste 1"
 
 #: Form/form_ca.xml.h:543
 msgid "LineRef"
-msgstr "Zeilenangabe"
+msgstr "Zeilenreferenz"
 
 #: Form/form_ca.xml.h:544
 msgid "3. Line from Schedule 1"
-msgstr "3. Zeile von Verzeichnis 1"
+msgstr "3. Zeile von Liste 1"
 
 #: Form/form_ca.xml.h:546
 msgid "3. Place of Habitation"
@@ -7899,7 +7905,7 @@ msgstr "4. Häuser: Im Bau"
 
 #: Form/form_ca.xml.h:550
 msgid "5. Houses: Vacant"
-msgstr "5. Häuser: Frei"
+msgstr "5. Häuser: Leerstehend"
 
 #: Form/form_ca.xml.h:552
 msgid "6. Houses: Inhabited"
@@ -7912,7 +7918,7 @@ msgstr "Einrichtung"
 
 #: Form/form_ca.xml.h:554
 msgid "7. Institution: Special or legal name"
-msgstr "7. Einrichtung: Spezieller oder gesetzlicher Name"
+msgstr "7. Einrichtung: Spezielle oder rechtliche Bezeichnung"
 
 #: Form/form_ca.xml.h:555
 msgid "Buildings"
@@ -7932,7 +7938,7 @@ msgstr "Räume"
 
 #: Form/form_ca.xml.h:560
 msgid "10. Number of rooms in house or institution for each famiy"
-msgstr "10. Anzahl der Räume im Haus oder Einrichtung für jede Familie"
+msgstr "10. Anzahl der Zimmer im Haus oder in der Einrichtung für jede Familie"
 
 #: Form/form_ca.xml.h:561
 msgid "Inmates"
@@ -7952,11 +7958,11 @@ msgstr "12. Eigene Grundbesitz: Gesamtzahl der Acre"
 
 #: Form/form_ca.xml.h:565
 msgid "OwnedLots"
-msgstr "EigentumAnteile"
+msgstr "EigentumGrundstücke"
 
 #: Form/form_ca.xml.h:566
 msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr "13. Immobilienbesitz: Anzahl der Stadt- oder Dorfgrundstücke"
+msgstr "13. Immobilienbesitz: Anzahl der Grundstücke in Städten oder Dörfern"
 
 #: Form/form_ca.xml.h:567
 msgid "OwnedHouses"
@@ -7964,7 +7970,7 @@ msgstr "EigentumHäuser"
 
 #: Form/form_ca.xml.h:568
 msgid "14. Real Estate Owned: Number of dwelling houses"
-msgstr "1. Immobilienbesitz: Anzahl der Wohnhäuser"
+msgstr "14. Immobilienbesitz: Anzahl der Wohnhäuser"
 
 #: Form/form_ca.xml.h:569
 msgid "OwnedStores"
@@ -7972,7 +7978,7 @@ msgstr "EigentumGeschäfte"
 
 #: Form/form_ca.xml.h:570
 msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr "Immobilien Eigentum: Anzahl der Geschäfte, Lager usw."
+msgstr "15. Immobilienbesitz: Anzahl der Geschäfte, Lagerhäuser usw."
 
 #: Form/form_ca.xml.h:571
 msgid "OwnedBars"
@@ -7981,7 +7987,7 @@ msgstr "EigentumScheunen"
 #: Form/form_ca.xml.h:572
 msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
 msgstr ""
-"16. Immobilienbesitz: Anzahl der Scheunen, Ställe und anderen Nebengebäude"
+"16. Immobilienbesitz: Anzahl der Scheunen, Ställe und anderer Nebengebäude"
 
 #: Form/form_ca.xml.h:573
 msgid "OwnedSilos"
@@ -7989,7 +7995,7 @@ msgstr "EigentumSilos"
 
 #: Form/form_ca.xml.h:574
 msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr "17. Immobilienbesitz: Anzahl der Silos und Kapazität in Kubikfuß"
+msgstr "17. Immobilienbesitz: Anzahl der Silos und Fassungsvermögen in Kubikfuß"
 
 #: Form/form_ca.xml.h:575
 msgid "OwnedFactories"
@@ -8009,11 +8015,12 @@ msgstr "19. Gepachteter Grundbesitz: Gesamtzahl der Acre"
 
 #: Form/form_ca.xml.h:579
 msgid "LeasedLots"
-msgstr "GepachtetAnteile"
+msgstr "GepachtetGrundstücke"
 
 #: Form/form_ca.xml.h:580
 msgid "20. Real Estate Leased: Number of town or village lots"
-msgstr "20. Immobilien Gepachtet: Anzahl der Stadt- oder Dorfgrundstücke"
+msgstr ""
+"20. Gepachtete Immobilien: Anzahl der Grundstücke in Städten oder Dörfern"
 
 #: Form/form_ca.xml.h:581
 msgid "LeasedHouses"
@@ -8021,7 +8028,7 @@ msgstr "GepachtetHäuser"
 
 #: Form/form_ca.xml.h:582
 msgid "21. Real Estate Leased: Number of dwelling houses"
-msgstr "21. Immobilien Gemietet: Anzahl der Wohnhäuser"
+msgstr "21. Gepachtete Immobilien: Anzahl der Wohnhäuser"
 
 #: Form/form_ca.xml.h:583
 msgid "LeasedStores"
@@ -8029,7 +8036,7 @@ msgstr "GepachtetGeschäfte"
 
 #: Form/form_ca.xml.h:584
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr "Immobilien Gepachtet: Anzahl der Geschäfte, Lager usw."
+msgstr "22. Gepachtete Immobilien: Anzahl der Geschäfte, Lagerhäuser usw."
 
 #: Form/form_ca.xml.h:585
 msgid "LeasedBarns"
@@ -8038,16 +8045,17 @@ msgstr "GepachtetScheunen"
 #: Form/form_ca.xml.h:586
 msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
 msgstr ""
-"23. Immobilien Gepachtet: Anzahl der Scheunen, Ställe und anderen "
+"23. Gepachtete Immobilien: Anzahl der Scheunen, Ställe und sonstigen "
 "Nebengebäude"
 
 #: Form/form_ca.xml.h:587
 msgid "LeasedSilos"
-msgstr "GepachteteSpeicher"
+msgstr "GepachteteSilos"
 
 #: Form/form_ca.xml.h:588
 msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
-msgstr "24. Immobilien Gepachtet: Anzahl der Silos und Kapazität in Kubikfuß"
+msgstr ""
+"24. Gepachtete Immobilien: Anzahl der Silos und Fassungsvermögen in Kubikfuß"
 
 #: Form/form_ca.xml.h:589
 msgid "LeasedFactories"
@@ -8055,7 +8063,7 @@ msgstr "GepachtetFabriken"
 
 #: Form/form_ca.xml.h:590
 msgid "25. Real Estate Leased: Number of manufacturing establishments"
-msgstr "25. Immobilien Gepachtet: Anzahl der Produktionsstätten"
+msgstr "25. Gepachtete Immobilien: Anzahl der Produktionsstätten"
 
 #: Form/form_ca.xml.h:591
 msgid "Denomination"
@@ -8063,23 +8071,23 @@ msgstr "Konfession"
 
 #: Form/form_ca.xml.h:592
 msgid "26. Church or place of worship: Religious denomination"
-msgstr "26. Kirche oder Kultstätte: Religiöse Konfession"
+msgstr "26. Kirche oder Gebetsstätte: Religionszugehörigkeit"
 
 #: Form/form_ca.xml.h:593
 msgid "Communicants"
-msgstr "Abendmahlsgänger"
+msgstr "Gemeindemitglieder"
 
 #: Form/form_ca.xml.h:594
 msgid "27. Church or place of worship: Number of communicants"
-msgstr "27. Kirche oder Kultstätte: Anzahl der Abendmahlsgänger"
+msgstr "27. Kirche oder Gebetsstätte: Anzahl der Gemeindemitglieder"
 
 #: Form/form_ca.xml.h:595
 msgid "Seating"
-msgstr "Bestuhlung"
+msgstr "Sitzplätze"
 
 #: Form/form_ca.xml.h:596
 msgid "28. Church or place of worship: Seating capacity"
-msgstr "28. Kirche oder Kultstätte: Sitzplatzkapazität"
+msgstr "28. Kirche oder Gebetsstätte: Sitzplatzkapazität"
 
 #: Form/form_ca.xml.h:597
 msgid "SSDenomination"
@@ -8087,7 +8095,7 @@ msgstr "SoScKonfession"
 
 #: Form/form_ca.xml.h:598
 msgid "29. Sunday School: Religious Denomination"
-msgstr "29. Sonntagsschule: Religiöse Konfession"
+msgstr "29. Sonntagsschule: Konfession"
 
 #: Form/form_ca.xml.h:599
 msgid "SSTeachers"
@@ -8095,11 +8103,11 @@ msgstr "SoScLehrer"
 
 #: Form/form_ca.xml.h:600
 msgid "30. Sunday School: Number of officers and teachers"
-msgstr "30. Sonntagsschule: Anzahl der Vorstände und Lehrer"
+msgstr "30. Sonntagsschule: Anzahl der Amtsträger und Lehrer"
 
 #: Form/form_ca.xml.h:601
 msgid "SSScholars"
-msgstr "SSSchüler"
+msgstr "SoScSchüler"
 
 #: Form/form_ca.xml.h:602
 msgid "31. Sunday School: Number of Scholars"
@@ -8143,7 +8151,7 @@ msgstr "Grund"
 
 #: Form/form_ca.xml.h:612
 msgid "36. The reason, if not enumerated on first visit"
-msgstr "36. Der Grund, falls nicht beim ersten Besuch aufgezählt"
+msgstr "36. Der Grund, falls er beim ersten Besuch nicht aufgeführt wurde"
 
 #: Form/form_ca.xml.h:613
 msgid "DateEnum"
@@ -8175,7 +8183,7 @@ msgstr "6. Alter"
 
 #: Form/form_ca.xml.h:637
 msgid "7. Country or place of birth"
-msgstr "7. Land oder Geburtsort"
+msgstr "7. Geburtsland oder -ort"
 
 #: Form/form_ca.xml.h:639
 msgid "8. Year of immigration to Canada"
@@ -8187,7 +8195,7 @@ msgstr "Postamt"
 
 #: Form/form_ca.xml.h:641
 msgid "9. Post office address"
-msgstr "9. Postanschrift"
+msgstr "9. Anschrift der Poststelle"
 
 #: Form/form_ca.xml.h:642 Form/form_us.xml.h:1252
 msgid "Section"
@@ -8215,7 +8223,7 @@ msgstr "13. Ort: Meridian"
 
 #: Form/form_ca.xml.h:651
 msgid "14. Livestock: Horses, all ages"
-msgstr "14. Nutztiere: Pferde, jeden Alters"
+msgstr "14. Nutztiere: Pferde, jedes Alter"
 
 #: Form/form_ca.xml.h:652
 msgid "Cows"
@@ -8227,15 +8235,15 @@ msgstr "15. Nutztiere: Milchkühe"
 
 #: Form/form_ca.xml.h:655
 msgid "16. Other horned or meat cattle, all ages"
-msgstr "16. Andere gehörnte oder Fleischrinder jeden Alters"
+msgstr "16. Sonstige Horn- oder Fleischrinder, jedes Alter"
 
 #: Form/form_ca.xml.h:657
 msgid "17. Sheep and lambs, all ages"
-msgstr "17. Schafe und Lämmer, jeden Alters"
+msgstr "17. Schafe und Lämmer, jedes Alter"
 
 #: Form/form_ca.xml.h:659
 msgid "18. Hogs and pigs, all ages"
-msgstr "18. Ferkel und Schweine, jeden Alters"
+msgstr "18. Schweine und Ferkel, jedes Alter"
 
 #: Form/form_ca.xml.h:678
 msgid "4. Place of habitation"
@@ -8251,75 +8259,79 @@ msgstr "8. Geburtsmonat"
 
 #: Form/form_ca.xml.h:704
 msgid "16. Chief occupation or trade"
-msgstr "16. Hauptbeschäftigung oder Handel"
+msgstr "16. Hauptberuf oder Haupttätigkeit"
 
 #: Form/form_ca.xml.h:705
 msgid "OtherEmployment"
-msgstr "AndereBeschäftigung"
+msgstr "SonstigeBeschäftigung"
 
 #: Form/form_ca.xml.h:706
 msgid "18. Employment other than at chief trade or occupation, if any"
 msgstr ""
-"18. Andere Beschäftigung als bei Hauptbeschäftigung oder Gewerbe, falls "
+"18. Sonstige Beschäftigung neben der hauptberuflichen Tätigkeit, falls "
 "vorhanden"
 
 #: Form/form_ca.xml.h:714
 msgid "22. State where person employed"
-msgstr "22. Staat wo die Person beschäftigt ist"
+msgstr "22. Staat, in dem die Person beschäftigt ist"
 
 #: Form/form_ca.xml.h:715
 msgid "WeeksOccupation"
-msgstr "WochenBeschäftigt"
+msgstr "Arbeitwochen"
 
 #: Form/form_ca.xml.h:716
 msgid "23. Weeks employed in 1910 at chief occupation or trade"
-msgstr "23. Wochen 1910 bei Hauptbeschäftigung oder Gewerbe beschäftigt"
+msgstr ""
+"23. Wochen, die 1910 in der Hauptbeschäftigung oder im Hauptberuf gearbeitet "
+"wurden"
 
 #: Form/form_ca.xml.h:717
 msgid "WeeksOther"
-msgstr "WochenAndere"
+msgstr "WochenSonstige"
 
 #: Form/form_ca.xml.h:718
 msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
-msgstr "24. Wochen 1910 nicht in der Hauptbeschäftigung oder im Handel tätig"
+msgstr ""
+"24. Wochen, die 1910 in anderen Berufen als dem Hauptberuf oder Gewerbe "
+"gearbeitet wurden"
 
 #: Form/form_ca.xml.h:719
 msgid "HoursOccupation"
-msgstr "StundenBeschäftigt"
+msgstr "StundenBeschäftigung"
 
 #: Form/form_ca.xml.h:720
 msgid "25. Hours of working time per week at chief occupation"
-msgstr "25. Arbeitsstunden pro Woche bei Hauptbeschäftigung"
+msgstr "25. Wochenarbeitszeit in der Hauptbeschäftigung"
 
 #: Form/form_ca.xml.h:721
 msgid "HoursOther"
-msgstr "StundenAndere"
+msgstr "StundenSonstiges"
 
 #: Form/form_ca.xml.h:722
 msgid "26. Hours of working time per week at other occupation, if any"
-msgstr "26. Arbeitsstunden pro Woche in einem anderen Beruf, falls vorhanden"
+msgstr "26. Wochenarbeitszeit in einer anderen Beschäftigung, falls vorhanden"
 
 #: Form/form_ca.xml.h:724
 msgid "27. Total earnings in 1910 from chief occupation or trade"
-msgstr "27. Gesamteinkommen 1910 aus Hauptbeschäftigung oder Gewerbe"
+msgstr "27. Gesamteinkünfte im Jahr 1910 aus Hauptberuf oder Gewerbe"
 
 #: Form/form_ca.xml.h:726
 msgid "28. Total earnings in 1910 from other than chief occupation or trade"
 msgstr ""
-"28. Gesamteinkommen im Jahr 1910 aus anderen als Hauptbeschäftigung oder "
-"Handel"
+"28. Gesamteinkünfte im Jahr 1910 aus anderen Tätigkeiten als der "
+"Hauptbeschäftigung oder dem Hauptberuf"
 
 #: Form/form_ca.xml.h:727
 msgid "Wages"
-msgstr "Lohn"
+msgstr "Löhne"
 
 #: Form/form_ca.xml.h:728
 msgid "29. Rate of earnings per hour when employed by the hour-Cents"
-msgstr "29. Verdienst pro Stunde bei Anstellung bei den Stunden-Cent"
+msgstr "29. Stundenlohn bei stundenweiser Beschäftigung – Cent"
 
 #: Form/form_ca.xml.h:729
 msgid "InsuranceLife"
-msgstr "Lebensversichwerung"
+msgstr "Lebensversicherung"
 
 #: Form/form_ca.xml.h:730
 msgid "30. Insurance: Upon life"
@@ -8339,7 +8351,7 @@ msgstr "Versicherungskosten"
 
 #: Form/form_ca.xml.h:734
 msgid "32. Insurance: Cost of insurance in census year"
-msgstr "32. Versicherung: Versicherungskosten im Volkszählungsjahr"
+msgstr "32. Versicherung: Versicherungskosten im Erhebungsjahr"
 
 #: Form/form_ca.xml.h:736
 msgid "33. Months at school in 1910"
@@ -8366,8 +8378,8 @@ msgid ""
 "37. Cost of education in 1910 for persons over 16 years of age at College, "
 "Convent or University"
 msgstr ""
-"37. Bildungskosten im Jahr 1910 für Personen über 16 Jahre am College, "
-"Kloster oder an der Universität"
+"37. Kosten für die Ausbildung im Jahr 1910 für Personen über 16 Jahre an "
+"Hochschulen, Klosterschulen oder Universitäten"
 
 #: Form/form_ca.xml.h:746
 msgid "38. Blind"
@@ -8375,21 +8387,21 @@ msgstr "38. Blind"
 
 #: Form/form_ca.xml.h:748
 msgid "39. Deaf and dumb"
-msgstr "39. Taub und stumm: Männlich"
+msgstr "39. Taubstumm"
 
 #: Form/form_ca.xml.h:750
 msgid "40. Crazy or lunatic"
-msgstr "40. Verrückt oder Wahnsinnig"
+msgstr "40. Verrückt oder wahnsinnig"
 
 #: Form/form_ca.xml.h:751 Form/form_us.xml.h:481 Form/form_us.xml.h:1083
 #: Form/form_us.xml.h:1121 Form/form_us.xml.h:1216 Form/form_us.xml.h:1864
 #: Form/form_us.xml.h:2073
 msgid "Idiotic"
-msgstr "Idiotisch"
+msgstr "Schwachsinnig"
 
 #: Form/form_ca.xml.h:752
 msgid "41. Idiotic or silly"
-msgstr "41. Idiotisch oder Dumm"
+msgstr "41. Schwachsinnig oder dumm"
 
 #: Form/form_ca.xml.h:761
 msgid "1. House"
@@ -8421,7 +8433,8 @@ msgstr "5. Beziehung zum Familienoberhaupt"
 
 #: Form/form_ca.xml.h:772
 msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr "6. Single, verheiratet, verwitwet, geschieden oder rechtlich getrennt"
+msgstr ""
+"6. Ledig, verheiratet, verwitwet, geschieden oder rechtlich getrennt lebend"
 
 #: Form/form_ca.xml.h:774
 msgid "7. Month of birth"
@@ -8433,11 +8446,11 @@ msgstr "8. Alter am letzten Geburtstag"
 
 #: Form/form_ca.xml.h:778
 msgid "9. Country or place of birth"
-msgstr "9. Land oder Geburtsort"
+msgstr "9. Geburtsland oder -ort"
 
 #: Form/form_ca.xml.h:780
 msgid "10. Racial or tribal origin"
-msgstr "10. Herkunfts Rasse oder Stamm"
+msgstr "10. Rasse oder Stammeszugehörigkeit"
 
 #: Form/form_ca.xml.h:782
 msgid "11. Religion"
@@ -8445,7 +8458,7 @@ msgstr "11. Religion"
 
 #: Form/form_ca.xml.h:784
 msgid "12. Months at school in 1910"
-msgstr "12. Monate in der Schule in 1910"
+msgstr "12. Monate in der Schule im Jahr 1910"
 
 #: Form/form_ca.xml.h:786
 msgid "13. Can Read"
@@ -8457,15 +8470,15 @@ msgstr "14. Kann schreiben"
 
 #: Form/form_ca.xml.h:790
 msgid "15. Language commonly spoken"
-msgstr "15. Gewöhnlich gesprochene Sprache"
+msgstr "15. Allgemein gesprochene Sprache"
 
 #: Form/form_ca.xml.h:792
 msgid ""
 "16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
 "lunatic"
 msgstr ""
-"16. Gebrechen: a. blind; b. Taub und Stumm; c. idotisch oder albern; d. "
-"verrückt oderWahnsinnige"
+"16. Gebrechen: a. blind; b. taubstumm; c. schwachsinnig oder dumm; d. "
+"verrückt oder wahnsinnig"
 
 #: Form/form_ca.xml.h:805
 msgid "1. Dwelling House"
@@ -8477,7 +8490,8 @@ msgstr "2. Familie, Haushalt oder Einrichtung"
 
 #: Form/form_ca.xml.h:809
 msgid "3. Name of each person in family, household or institution"
-msgstr "3. Name jeder Person in Familie, Haushalt oder Einrichtung"
+msgstr ""
+"3. Name jeder Person in der Familie, im Haushalt oder in der Einrichtung"
 
 #: Form/form_ca.xml.h:810
 msgid "MilitaryService"
@@ -8513,7 +8527,8 @@ msgstr "10. Geschlecht"
 
 #: Form/form_ca.xml.h:825
 msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr "11. Ledig, verheiratet, verwitwet, geschieden oder juristisch getrennt"
+msgstr ""
+"11. Ledig, verheiratet, verwitwet, geschieden oder rechtlich getrennt lebend"
 
 #: Form/form_ca.xml.h:827
 msgid "12. Age at last birthday"
@@ -8521,7 +8536,7 @@ msgstr "12. Alter am letzten Geburtstag"
 
 #: Form/form_ca.xml.h:829
 msgid "13. Country or place of birth"
-msgstr "13. Land oder Ort der Geburt"
+msgstr "13. Geburtsland oder -ort"
 
 #: Form/form_ca.xml.h:831
 msgid "14. Religion"
@@ -8541,15 +8556,15 @@ msgstr "17. Nationalität"
 
 #: Form/form_ca.xml.h:839
 msgid "18. Race or tribal origin"
-msgstr "18. Rasse oder Stammesherkunft"
+msgstr "18. Rasse oder Stammeszugehörigkeit"
 
 #: Form/form_ca.xml.h:841
 msgid "19. Can speak English"
-msgstr "1. Kann Englisch sprechen"
+msgstr "19. Kann Englisch sprechen"
 
 #: Form/form_ca.xml.h:843
 msgid "20. Can speak French"
-msgstr "2. Kann Französisch sprechen"
+msgstr "20. Kann Französisch sprechen"
 
 #: Form/form_ca.xml.h:844
 msgid "OtherLanguage"
@@ -8569,19 +8584,19 @@ msgstr "23. Kann schreiben"
 
 #: Form/form_ca.xml.h:851
 msgid "24. Chief occupation or trade"
-msgstr "24. Hauptbeschäftigung oder Handel"
+msgstr "24. Hauptberuf oder Haupttätigkeit"
 
 #: Form/form_ca.xml.h:853
 msgid "25. Employer, \"E\", Employee, \"W\""
-msgstr "25. Arbeitgeber, \"E\", Arbeitnehmer, \"W\""
+msgstr "25. Arbeitgeber, „E“, Arbeitnehmer, „W“"
 
 #: Form/form_ca.xml.h:854
 msgid "EmploymentPlace"
-msgstr "Arbeitsort"
+msgstr "Arbeitsplatz"
 
 #: Form/form_ca.xml.h:855
 msgid "26. State where person is employed"
-msgstr "26. Staat wo die Person beschäftigt ist"
+msgstr "26. Bundesland, in dem die Person beschäftigt ist"
 
 #: Form/form_dk.xml.h:2 Form/form_dk.xml.h:19 Form/form_dk.xml.h:36
 #: Form/form_dk.xml.h:51 Form/form_dk.xml.h:68 Form/form_dk.xml.h:85
@@ -8601,7 +8616,7 @@ msgstr "Amt"
 #: Form/form_dk.xml.h:314 Form/form_dk.xml.h:338 Form/form_dk.xml.h:364
 #: Form/form_dk.xml.h:388 Form/form_dk.xml.h:408 Form/form_dk.xml.h:428
 msgid "Town or City"
-msgstr "Gemeinde oder Stadt"
+msgstr "Stadt oder Gemeinde"
 
 #: Form/form_dk.xml.h:4 Form/form_dk.xml.h:21 Form/form_dk.xml.h:38
 #: Form/form_dk.xml.h:53 Form/form_dk.xml.h:70 Form/form_dk.xml.h:87
@@ -8611,7 +8626,7 @@ msgstr "Gemeinde oder Stadt"
 #: Form/form_dk.xml.h:315 Form/form_dk.xml.h:339 Form/form_dk.xml.h:365
 #: Form/form_dk.xml.h:389 Form/form_dk.xml.h:409 Form/form_dk.xml.h:429
 msgid "Herred eller By"
-msgstr "Kreis oder Stadt, Dorf"
+msgstr "Gemeinde oder Stadt"
 
 #: Form/form_dk.xml.h:6 Form/form_dk.xml.h:23 Form/form_dk.xml.h:40
 #: Form/form_dk.xml.h:55 Form/form_dk.xml.h:72 Form/form_dk.xml.h:89
@@ -8681,11 +8696,11 @@ msgstr "Position in der Familie"
 
 #: Form/form_dk.xml.h:17
 msgid "Titel, Embed, Forretning, Håndværk"
-msgstr "Titel, Amt. Geschäft, Handwerk"
+msgstr "Titel, Amt, Geschäft, Handwerk"
 
 #: Form/form_dk.xml.h:34
 msgid "Stilling, embede eller erhverv"
-msgstr "Stellung, Amt oder Beruf"
+msgstr "Position, Amt oder Beruf"
 
 #: Form/form_dk.xml.h:63 Form/form_dk.xml.h:80 Form/form_dk.xml.h:97
 #: Form/form_dk.xml.h:116 Form/form_dk.xml.h:135 Form/form_dk.xml.h:152
@@ -8705,7 +8720,7 @@ msgstr "Stellung, Amt oder Beruf"
 #: Form/form_gb.xml.h:529 Form/form_gb.xml.h:566 Form/form_gb.xml.h:589
 #: Form/form_gb.xml.h:621 Overview/Overview.py:78 Overview/Overview.py:112
 msgid "Where Born"
-msgstr "Wo Geboren"
+msgstr "Geburtsort"
 
 #: Form/form_dk.xml.h:64 Form/form_dk.xml.h:81 Form/form_dk.xml.h:98
 #: Form/form_dk.xml.h:117 Form/form_dk.xml.h:136 Form/form_dk.xml.h:153
@@ -8724,7 +8739,7 @@ msgstr "Beruf"
 #: Form/form_dk.xml.h:220 Form/form_dk.xml.h:241 Form/form_dk.xml.h:269
 #: Form/form_dk.xml.h:304 Form/form_dk.xml.h:326
 msgid "Trossamfund"
-msgstr "Glaubensgemeinschaft"
+msgstr "Religionsgemeinschaft"
 
 #: Form/form_dk.xml.h:167 Form/form_dk.xml.h:190
 msgid "Sted"
@@ -8749,20 +8764,20 @@ msgstr "Kommentare"
 #: Form/form_dk.xml.h:180 Form/form_dk.xml.h:203 Form/form_dk.xml.h:224
 #: Form/form_dk.xml.h:248 Form/form_dk.xml.h:282 Form/form_dk.xml.h:311
 msgid "Bemærkninger"
-msgstr "Bemerkungen"
+msgstr "Anmerkungen"
 
 #: Form/form_dk.xml.h:245 Form/form_dk.xml.h:273 Form/form_dk.xml.h:308
 #: Form/form_dk.xml.h:334 Form/form_dk.xml.h:350 Form/form_dk.xml.h:382
 #: Form/form_dk.xml.h:424 Form/form_dk.xml.h:444 Form/form_gb.xml.h:253
 #: Form/form_gb.xml.h:388
 msgid "Place of Work"
-msgstr "Arbeitsplatz"
+msgstr "Arbeitsort"
 
 #: Form/form_dk.xml.h:246 Form/form_dk.xml.h:274 Form/form_dk.xml.h:309
 #: Form/form_dk.xml.h:335 Form/form_dk.xml.h:351 Form/form_dk.xml.h:383
 #: Form/form_dk.xml.h:425 Form/form_dk.xml.h:445
 msgid "Arbejdssted"
-msgstr "Arbeitsplatz"
+msgstr "Arbeitsort"
 
 #: Form/form_dk.xml.h:260 Form/form_dk.xml.h:295 Form/form_dk.xml.h:321
 #: Form/form_dk.xml.h:345 Form/form_dk.xml.h:371 Form/form_dk.xml.h:395
@@ -8780,24 +8795,24 @@ msgstr "Geburtsdatum"
 
 #: Form/form_dk.xml.h:264 Form/form_dk.xml.h:299 Form/form_dk.xml.h:375
 msgid "Years at current residence"
-msgstr "Jahre am jetzigen Wohnsitz"
+msgstr "Jahre am aktuellen Wohnort"
 
 #: Form/form_dk.xml.h:265 Form/form_dk.xml.h:300 Form/form_dk.xml.h:376
 msgid "År tilflyttet"
-msgstr "Jahre nach Umzug"
+msgstr "Jahr des Zuzugs"
 
 #: Form/form_dk.xml.h:266 Form/form_dk.xml.h:301 Form/form_dk.xml.h:377
 msgid "Previous residence"
-msgstr "Vorheriger Wohnsitz"
+msgstr "Vorheriger Wohnort"
 
 #: Form/form_dk.xml.h:267 Form/form_dk.xml.h:302 Form/form_dk.xml.h:378
 msgid "Tilflyttet fra"
-msgstr "Zugezogen von"
+msgstr "Zugezogen aus"
 
 #: Form/form_dk.xml.h:275 Form/form_us.xml.h:2095 Form/form_us.xml.h:2133
 #: Form/form_us.xml.h:2171 Form/form_us.xml.h:2209
 msgid "Year married"
-msgstr "Jahr verheiratet"
+msgstr "Heiratsjahr"
 
 #: Form/form_dk.xml.h:276
 msgid "År gift"
@@ -8826,23 +8841,23 @@ msgstr "Geschlecht"
 
 #: Form/form_dk.xml.h:327
 msgid "Year stayed in parish"
-msgstr "Jahr in der Gemeinde geblieben"
+msgstr "Jahr des Aufenthalts in der Gemeinde"
 
 #: Form/form_dk.xml.h:328
 msgid "Hvilket aar taget ophold i sognet"
-msgstr "Welches Jahr des Wohnsitzes in der Gemeinde"
+msgstr "In welchem Jahr hat er sich in der Gemeinde niedergelassen"
 
 #: Form/form_dk.xml.h:329
 msgid "Previous Residence"
-msgstr "Vorheriger Wohnsitz"
+msgstr "Vorheriger Wohnort"
 
 #: Form/form_dk.xml.h:330
 msgid "Sidste bopæl inden tilflytning"
-msgstr "Letzter Wohnsitz vor dem Umzug"
+msgstr "Letzter Wohnort vor dem Umzug"
 
 #: Form/form_dk.xml.h:353 Form/form_dk.xml.h:385 Form/form_dk.xml.h:405
 msgid "Bemærkning"
-msgstr "Bemerkung"
+msgstr "Anmerkung"
 
 #: Form/form_dk.xml.h:354
 msgid "Income"
@@ -8858,7 +8873,7 @@ msgstr "Vermögenswerte"
 
 #: Form/form_dk.xml.h:357
 msgid "Formue"
-msgstr "Vermögenswerte"
+msgstr "Vermögen"
 
 #: Form/form_dk.xml.h:358
 msgid "State Tax"
@@ -8874,11 +8889,11 @@ msgstr "Rat"
 
 #: Form/form_dk.xml.h:361
 msgid "Kommuneskat"
-msgstr "Gemeindesteuer"
+msgstr "Kommunalsteuer"
 
 #: Form/form_dk.xml.h:402
 msgid "Residence on 5 Nov 1924"
-msgstr "Wohnort am 5. November 1924"
+msgstr "Wohnsitz am 5. November 1924"
 
 #: Form/form_dk.xml.h:403
 msgid "Bopæl 5 nov 1924"
@@ -8886,11 +8901,11 @@ msgstr "Wohnort 5. November 1924"
 
 #: Form/form_dk.xml.h:415
 msgid "Stay on 5 Nov 1929"
-msgstr "Aufenthalt am 5 Nov 1929"
+msgstr "Aufenthalt am 5. November 1929"
 
 #: Form/form_dk.xml.h:416
 msgid "Ophold 5 nov 1929"
-msgstr "Aufenthalt am 5 Nov 1929"
+msgstr "Aufenthalt 5. November 1929"
 
 #: Form/form_dk.xml.h:439
 msgid "Date Married"
@@ -8898,7 +8913,7 @@ msgstr "Heiratsdatum"
 
 #: Form/form_dk.xml.h:440
 msgid "Dato gift"
-msgstr "Heiratsdatum"
+msgstr "Datum der Heirat"
 
 #: Form/form_fr.xml.h:2 Form/form_fr.xml.h:10 Form/form_fr.xml.h:18
 #: Form/form_fr.xml.h:26 Form/form_fr.xml.h:138 Form/form_fr.xml.h:210
@@ -8950,12 +8965,12 @@ msgstr "Zertifikatsnummer"
 #: Form/form_us.xml.h:2344 Form/form_us.xml.h:2402 Form/form_us.xml.h:2428
 #: Form/form_us.xml.h:2460
 msgid "Entry Number"
-msgstr "Buchungsnummer"
+msgstr "Eintragungsnummer"
 
 #: Form/form_gb.xml.h:3 Form/form_gb.xml.h:40 Form/form_gb.xml.h:196
 #: Form/form_gb.xml.h:230 Form/form_gb.xml.h:329 Form/form_gb.xml.h:365
 msgid "Registration District"
-msgstr "Zählbezirk"
+msgstr "Registrierungsbezirk"
 
 #: Form/form_gb.xml.h:4 Form/form_gb.xml.h:21 Form/form_gb.xml.h:41
 msgid "Administrative Area"
@@ -8968,7 +8983,7 @@ msgstr "Landkreis/Verwaltungsgebiet"
 #: Form/form_gb.xml.h:6 Form/form_gb.xml.h:43 Form/form_us.xml.h:2345
 #: Form/form_us.xml.h:2429 Form/form_us.xml.h:2461
 msgid "Date Registered"
-msgstr "Registrierungsdatum"
+msgstr "Datum der Registrierung"
 
 #: Form/form_gb.xml.h:7 Form/form_gb.xml.h:44 Form/form_us.xml.h:2346
 #: Form/form_us.xml.h:2430 Form/form_us.xml.h:2462
@@ -8982,11 +8997,11 @@ msgstr "Mädchenname"
 #: Form/form_gb.xml.h:16 Form/form_gb.xml.h:25 Form/form_gb.xml.h:37
 #: Form/form_gb.xml.h:56 Form/form_us.xml.h:1055
 msgid "Signed"
-msgstr "Gezeichnet"
+msgstr "Unterzeichnet"
 
 #: Form/form_gb.xml.h:23
 msgid "Banns/Licence"
-msgstr "Aufgebot/Genehmigung"
+msgstr "Aufgebot/Heiratsurkunde"
 
 #: Form/form_gb.xml.h:31 Form/form_gb.xml.h:34
 msgid "Deceased"
@@ -9009,60 +9024,61 @@ msgstr "Übliche Adresse"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
-msgstr "Stadt oder Bezirk"
+msgstr "Stadt oder Stadtteil"
 
 #: Form/form_gb.xml.h:60 Form/form_gb.xml.h:69 Form/form_gb.xml.h:85
 msgid "Parish or Township"
-msgstr "Gemeinde oder Stadtgebiet"
+msgstr "Gemeinde oder Gemeindebezirk"
 
 #: Form/form_gb.xml.h:62
 msgid "NAMES of each Person who abode therein the preceding Night."
-msgstr "NAMEN jeder Person, die in der vorhergehenden Nacht darin gewohnt hat."
+msgstr ""
+"NAMEN aller Personen, die in der vergangenen Nacht dort übernachtet haben."
 
 #: Form/form_gb.xml.h:64
 msgid ""
 "AGE, rounded down to the nearest five years for those aged fifteen or over."
 msgstr ""
-"ALTER, abgerundet auf die nächsten fünf Jahre für Personen ab fünfzehn "
-"Jahren."
+"ALTER, bei Personen ab fünfzehn Jahren auf die nächsten fünf Jahre "
+"abgerundet."
 
 #: Form/form_gb.xml.h:66
 msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
-msgstr "BERUF, HANDEL, BESCHÄFTIGUNG oder UNABHÄNGIGE MITTEL."
+msgstr "BERUF, HANDWERK, BESCHÄFTIGUNG oder SELBSTSTÄNDIGKEIT."
 
 #: Form/form_gb.xml.h:68
 msgid ""
 "Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
 "Parts (P)."
 msgstr ""
-"Ob in derselben Grafschaft (Y oder N), Schottland (S), Irland (I) oder "
-"fremden Teilen (P) geboren."
+"Ob im selben Landkreis geboren (J oder N), in Schottland (S), Irland (I) "
+"oder im Ausland (P)."
 
 #: Form/form_gb.xml.h:70 Form/form_gb.xml.h:91 Form/form_gb.xml.h:110
 msgid "Ecclesiastical District"
-msgstr "Kirchenbezirk"
+msgstr "Kirchlicher Bezirk"
 
 #: Form/form_gb.xml.h:75
 msgid ""
 "Name and Surname of each Person who abode in the house, on the Night of the "
 "30th March, 1851"
 msgstr ""
-"Vor- und Nachname jeder Person, die in der Nacht des 30. März 1851 im Haus "
-"wohnte"
+"Vor- und Nachname jeder Person, die in der Nacht des 30. März 1851 in dem "
+"Haus untergebracht war"
 
 #: Form/form_gb.xml.h:77 Form/form_gb.xml.h:95 Form/form_gb.xml.h:433
 #: Form/form_gb.xml.h:460 Form/form_gb.xml.h:488 Form/form_gb.xml.h:520
 #: Form/form_gb.xml.h:559 Form/form_gb.xml.h:581 Form/form_gb.xml.h:610
 msgid "Relation to Head of Family"
-msgstr "Beziehung zum Kopf der Familie"
+msgstr "Verhältnis zum Familienoberhaupt"
 
 #: Form/form_gb.xml.h:81
 msgid "Rank, Profession or Occupation"
-msgstr "Stellung, Beruf oder Beschäftigung"
+msgstr "Rang, Beruf oder Tätigkeit"
 
 #: Form/form_gb.xml.h:84
 msgid "Whether Blind or Deaf and Dumb"
-msgstr "Ob Blind oder Taub und Stumm"
+msgstr "Ob Blind oder Taubstumm"
 
 #: Form/form_gb.xml.h:86 Form/form_gb.xml.h:104 Form/form_gb.xml.h:125
 msgid "City or Municipal Borough"
@@ -9071,7 +9087,7 @@ msgstr "Stadt oder Stadtbezirk"
 #: Form/form_gb.xml.h:87 Form/form_gb.xml.h:105 Form/form_gb.xml.h:126
 #: Form/form_gb.xml.h:148 Form/form_gb.xml.h:277
 msgid "Municipal Ward"
-msgstr "Gemeindebezirk"
+msgstr "Stadtbezirk"
 
 #: Form/form_gb.xml.h:88 Form/form_gb.xml.h:106 Form/form_gb.xml.h:127
 #: Form/form_gb.xml.h:601
@@ -9092,7 +9108,7 @@ msgstr "Stellung, Erklärung zu Beschäftigung"
 
 #: Form/form_gb.xml.h:102
 msgid "Whether Blind, or Deaf-and-Dumb"
-msgstr "Ob Blind oder Taub und Stumm"
+msgstr "Ob Blind oder Taubstumm"
 
 #: Form/form_gb.xml.h:103 Form/form_gb.xml.h:124
 msgid "Civil Parish or Township"
@@ -9127,7 +9143,7 @@ msgstr "Alter von"
 
 #: Form/form_gb.xml.h:120 Form/form_gb.xml.h:141
 msgid "Rank, Profession or OCCUPATION"
-msgstr "Stellung, Beruf oder Beschäftigung"
+msgstr "Rang, Beruf oder Tätigkeit"
 
 #: Form/form_gb.xml.h:123
 msgid ""
@@ -9194,7 +9210,7 @@ msgstr "Zivilgemeinde"
 
 #: Form/form_gb.xml.h:147 Form/form_gb.xml.h:276
 msgid "Municipal Borough"
-msgstr "Stadtbezirk"
+msgstr "Stadtgemeinde"
 
 #: Form/form_gb.xml.h:152 Form/form_gb.xml.h:177 Form/form_gb.xml.h:281
 #: Form/form_gb.xml.h:308
@@ -9433,8 +9449,8 @@ msgid ""
 "If attending a School or any kind of Educational Institution for the purpose "
 "of receiving Instruction"
 msgstr ""
-"Wenn eine Schule oder eine andere Bildungseinrichtung besucht wird, um "
-"Unterricht zu erhalten"
+"Wenn Besuch einer Schule oder einer anderen Bildungseinrichtung zum Zweck "
+"des Unterrichts"
 
 #: Form/form_gb.xml.h:251 Form/form_gb.xml.h:386
 msgid ""
@@ -9580,7 +9596,7 @@ msgstr "Haus U oder B"
 #: Form/form_gb.xml.h:437 Form/form_gb.xml.h:464 Form/form_gb.xml.h:492
 #: Form/form_gb.xml.h:524
 msgid "Rank, Profession, or Occupation"
-msgstr "Stellung, Beruf oder Beschäftigung"
+msgstr "Rang, Beruf oder Tätigkeit"
 
 #: Form/form_gb.xml.h:439 Form/form_gb.xml.h:466 Form/form_gb.xml.h:494
 #: Form/form_gb.xml.h:531 Form/form_gb.xml.h:568 Form/form_us.xml.h:1497
@@ -9589,7 +9605,7 @@ msgstr "Behindert"
 
 #: Form/form_gb.xml.h:440
 msgid "Whether Blind, or Deaf and Dumb"
-msgstr "Ob Blind oder Taub und Stumm"
+msgstr "Ob Blind oder Taubstumm"
 
 #: Form/form_gb.xml.h:442 Form/form_gb.xml.h:469 Form/form_gb.xml.h:497
 #: Form/form_gb.xml.h:534 Form/form_gb.xml.h:571
@@ -9635,7 +9651,7 @@ msgstr "Kommunal freie Stadt"
 
 #: Form/form_gb.xml.h:508 Form/form_gb.xml.h:547
 msgid "Burgh Ward"
-msgstr "Stadtbezirk"
+msgstr "Burgh-Bezirk"
 
 #: Form/form_gb.xml.h:511 Form/form_gb.xml.h:550
 msgid "Island"
@@ -10856,7 +10872,7 @@ msgstr "Taub und Stumm"
 #: Form/form_us.xml.h:2183 Form/form_us.xml.h:2221 Form/form_us.xml.h:2243
 #: Form/form_us.xml.h:2255 Form/form_us.xml.h:2267
 msgid "Insane"
-msgstr "Geisteskrank"
+msgstr "Geistig verwirrt"
 
 #: Form/form_us.xml.h:483 Form/form_us.xml.h:1123 Form/form_us.xml.h:1866
 msgid "Maimed, crippled, bedridden, or otherwise disabled"
@@ -11738,7 +11754,7 @@ msgstr "E. D. Nummer"
 
 #: Form/form_us.xml.h:892
 msgid "Hotel, large rooming house, institution, military installation, etc."
-msgstr "Hotel, großes Wohnheim, Institution, Militäreinrichtung usw."
+msgstr "Hotel, große Pension, Einrichtung, militärische Anlage usw."
 
 #: Form/form_us.xml.h:899
 msgid "Is this house on a farm (or ranch)?"
@@ -13599,7 +13615,7 @@ msgstr "Wohnsitz im Bezirk - Monate"
 
 #: Form/form_us.xml.h:1694
 msgid "Army service"
-msgstr "Militärdienst"
+msgstr "Wehrdienst"
 
 #: Form/form_us.xml.h:1695
 msgid "Wars"
@@ -13952,7 +13968,7 @@ msgstr "Anzahl der Eheschließungen"
 
 #: Form/form_us.xml.h:1914
 msgid "Place of Occupation"
-msgstr "Beschäftigungsort"
+msgstr "Arbeitsort"
 
 #: Form/form_us.xml.h:1919
 msgid "Land owner"
@@ -14667,7 +14683,7 @@ msgstr "Arbeitsort oder Geschäft"
 
 #: Form/form_us.xml.h:2564 Form/form_us.xml.h:2582
 msgid "Complexion"
-msgstr "Hautfarbe"
+msgstr "Teint"
 
 #: Form/form_us.xml.h:2565
 msgid "Eyes"
@@ -19487,7 +19503,7 @@ msgstr "Koordinaten in die Datenbank übernehmen"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:269
 msgid "Go"
-msgstr "Los"
+msgstr "Gehe"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
