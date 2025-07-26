@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-04 05:30+0000\n"
+"PO-Revision-Date: 2025-07-16 20:01+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -1641,12 +1641,13 @@ msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship to Father"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Vztah k otci"
+msgstr ""
+"\n"
+"Vztah: {0} "
 
 #: DNA/dnasegmentmap.py:1091
 #, python-brace-format
@@ -1756,10 +1757,8 @@ msgid "Family:"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Sources?"
-msgstr "Rejtřík pramenů"
+msgstr "Prameny?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
@@ -5059,14 +5058,10 @@ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 nebo -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr "POZOR! Chystáte se úplně odstranit Exif metadata z tohoto obrázku?"
+msgstr "POZOR! Chystáte se úplně odstranit Exif metadata z tohoto obrázku."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
@@ -5074,14 +5069,10 @@ msgid "Delete?"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
-msgstr "POZOR! Chystáte se úplně odstranit Exif metadata z tohoto obrázku?"
+msgstr "POZOR! Chystáte se úplně odstranit GPS metadata z tohoto obrázku."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
