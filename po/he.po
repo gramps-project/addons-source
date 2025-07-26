@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-05-16 05:37+0000\n"
+"PO-Revision-Date: 2025-07-14 09:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,19 +19,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "כל השמות של כל האנשים"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "להציג את כל השמות של כל האנשים"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
-msgstr ""
+msgstr "שם סוג"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
@@ -40,15 +40,15 @@ msgstr "שם עיקרי"
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "סך־כל שמות %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
-msgstr ""
+msgstr "AncestorFill"
 
 #: AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
-msgstr ""
+msgstr "דיווח על מילוי העץ"
 
 #: AncestorFill/AncestorFill.py:189
 #, python-format
@@ -61,31 +61,31 @@ msgstr "חילול "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr ""
+msgstr "מספר אָבוֹת קַדמוֹנִיםשנמצאו "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
-msgstr ""
+msgstr "אחוז אבות קדמונים ש נמצאו "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr ""
+msgstr "מספר אָבוֹת קַדמוֹנִים ייחודיים שנמצאו "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
-msgstr ""
+msgstr "מספר אבות קדמונים תאורטיים "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
-msgstr ""
+msgstr "כיווץ אילן־יוחסין "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
-msgstr ""
+msgstr "מספר כולל של אבות קדמונים שנמצאו "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
-msgstr ""
+msgstr "מספר כולל של אבות קדמונים ייחודיים שנמצאו "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -94,26 +94,30 @@ msgid ""
 "Note: This report only counts ancestors with a parent-child relationship of "
 "birth."
 msgstr ""
+"\n"
+"\n"
+"הערה: דו\"ח זה סופר רק אבות קדמונים עם קשרי־קרבה של הורה-צאצא."
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
-msgstr ""
+msgstr "סיפרת מילוי"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
+"מספר הספרות לאחר הפסיק שיכללו בדוח עבור אחוז אבות קדמונים שנמצאו בדור מסוים"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
-msgstr ""
+msgstr "סיפרת כיווץ"
 
 #: AncestorFill/AncestorFill.py:313
 msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
-msgstr ""
+msgstr "מספר הספרות לאחר הפסיק שיכללו בדוח עבור כיווץ אילן־היוחסין"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
@@ -121,7 +125,7 @@ msgstr "להציג עיוני"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "האם להציג את המספר התיאורטי של אבות קדמונים לפי דור"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
@@ -156,11 +160,11 @@ msgstr "מתוך"
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
-msgstr ""
+msgstr "לצרף מקור"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
-msgstr ""
+msgstr "צרוף מקור משותף לעצמים מרובים."
 
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
@@ -179,27 +183,27 @@ msgstr "מקור חדש"
 
 #: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
-msgstr ""
+msgstr "מקור קיים"
 
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
-msgstr ""
+msgstr "בחירת סוג המקור לצרוף"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
-msgstr ""
+msgstr "כותרת מקור חדש"
 
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
-msgstr ""
+msgstr "מלל המקור לצרוף"
 
 #: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
-msgstr ""
+msgstr "מזהה מקור קיים"
 
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr ""
+msgstr "מזהה מקור לצרוף"
 
 #: AttachSourceTool/AttachSourceTool.py:157
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
@@ -223,35 +227,35 @@ msgstr "בוצע!\n"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
-msgstr ""
+msgstr "כלי חילול יצגנים"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
-msgstr ""
+msgstr "כלי להוספת תמונות יצגן לאילן־היוחסין"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
-msgstr ""
+msgstr "מצב תמונה יחידה"
 
 #: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
-msgstr ""
+msgstr "בחירת מספר התמונות לשימוש."
 
 #: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
-msgstr ""
+msgstr "תמונה לייצוג אנשים במגדר לא ידוע."
 
 #: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
-msgstr ""
+msgstr "תמונה למגדר זכרי."
 
 #: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
-msgstr ""
+msgstr "תמונה למגדר נקבי"
 
 #: AvatarGenerator/AvatarGenerator.py:95
 msgid "Remove images from people"
-msgstr ""
+msgstr "להסיר תמונות מאנשים"
 
 #: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
@@ -261,11 +265,11 @@ msgstr "הסרת תמונות שנבחרו."
 #: AvatarGenerator/AvatarGenerator.py:183
 #: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
-msgstr ""
+msgstr "מחולל יצגים"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
-msgstr ""
+msgstr "להסיר תמונות יצגן..."
 
 #: AvatarGenerator/AvatarGenerator.py:211
 #: AvatarGenerator/AvatarGenerator.py:219
@@ -284,42 +288,44 @@ msgstr "לא הוסרה מדיה."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
-msgstr ""
+msgstr "{} אזכורי מדיה הוסרו מ־{} אנשים."
 
 #: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
 msgstr ""
+"\n"
+"{} שגיאות טיפול התרחשו, אך המערכת התעלמה מהן."
 
 #: AvatarGenerator/AvatarGenerator.py:263
 #: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
-msgstr ""
+msgstr "הוספת תמונת יצגן..."
 
 #: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
-msgstr ""
+msgstr "{} תמונות יצגן נוספו בהצלחה."
 
 #: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
-msgstr ""
+msgstr "לא נמצאה תמונת יצגן להוספה. "
 
 #: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
-msgstr ""
+msgstr "לכל האנשים כבר היה אחד."
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
-msgstr ""
+msgstr "בטא מה הלאה"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:49
 msgid "Beta Gramplet suggesting items to research"
-msgstr ""
+msgstr "גראמפלט בטא להצעות פריטים למחקר"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:60
 msgid "Beta What's Next?"
-msgstr ""
+msgstr "בטא מה הלאה?"
 
 #: Betawhatsnext/Betawhatsnext.py:46
 msgid ""
@@ -327,26 +333,29 @@ msgid ""
 " ⛔ A local Genealogical Tree database has not yet been loaded.\n"
 "\n"
 msgstr ""
+"\n"
+" ⛔ מסד ־נתוני אילן־יוחסין מקומי עדיין לא טעון.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
-msgstr ""
+msgstr " 👣 השלבים הבעים:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
 msgid "  •  From the \"Family Trees\" menu,"
-msgstr ""
+msgstr "  •  מתפריט 'אילן־יוחסין',"
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
-msgstr ""
+msgstr " שימוש באפשרות 'ניהול אילנות־יוחסין...' כדי"
 
 #: Betawhatsnext/Betawhatsnext.py:52
 msgid " create a New (or to select an existing) Tree database.\n"
-msgstr ""
+msgstr " ליצור מסד נתוני אילן חדש (או לבחור אחד קיים).\n"
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr ""
+msgstr "  •  הקשה על לחצן 'טעינת אילן־יוחסין' כדי להתחיל"
 
 #: Betawhatsnext/Betawhatsnext.py:54
 msgid ""
@@ -2829,10 +2838,8 @@ msgid "Gramplet for showing people and descendant counts"
 msgstr "גראמפלט להצגת אנשים ומספר דורות המשך"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
-#, fuzzy
-#| msgid "Descendants Report"
 msgid "Descendant Space Tree"
-msgstr "דוח צאצאים"
+msgstr "אילן מרווח צאצאים"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
 msgid ""
@@ -2854,26 +2861,20 @@ msgid "Dark theme"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Light"
 msgid "Light theme"
-msgstr "קל"
+msgstr "ערכת־ נושא בהירה"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
 msgid "Continue Descendant Tree"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:427
-#, fuzzy
-#| msgid "Alternate Location"
 msgid "Alternate Descendant Tree"
-msgstr "חלף מקום"
+msgstr "חילוף אילן צאצאים"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:455
-#, fuzzy
-#| msgid "Descendants Report"
 msgid "Descendant SpaceTree"
-msgstr "דוח צאצאים"
+msgstr "אילן מרווח צאצאים"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:635
 msgid "Total descendants"
@@ -2891,16 +2892,14 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:787
-#, fuzzy, python-format
-#| msgid "Failed to create {target_path}: {message}"
+#, python-format
 msgid "Failed to create %s: %s"
-msgstr "כשל ביצירת{target_path}: {message}"
+msgstr "כשל ביצירת %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:816
-#, fuzzy, python-format
-#| msgid "Select from files"
+#, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr "בחירה מקבצים"
+msgstr "כשל בקריאת קובץ תחילי %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:827
 #, python-format
@@ -2910,16 +2909,12 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:854
-#, fuzzy
-#| msgid "Finding files"
 msgid "Failed writing file: "
-msgstr "איתור קבצים"
+msgstr "כשל בכתיבת קובץ: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:875
-#, fuzzy
-#| msgid "Descendants Report"
 msgid "Descendants of"
-msgstr "דוח צאצאים"
+msgstr "צאצאים של"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:879
 msgid "How to Use the DescendantSpaceTree Viewer"
@@ -2994,10 +2989,8 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1014
-#, fuzzy
-#| msgid "Search..."
 msgid "Search. . ."
-msgstr "חיפוש..."
+msgstr "חיפוש. . ."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1089
 msgid "Branch to expand when duplicated"
@@ -3018,32 +3011,24 @@ msgid "Birth/date dates will not be displayed after this year"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1116
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "העדפות ערכת נושא"
+msgstr "העדפת ערכת נושא"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1123
 msgid "Theme color preference for Space Tree"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1136
-#, fuzzy
-#| msgid "Description: "
 msgid "Destination File"
-msgstr "תיאור: "
+msgstr "קובץ יעד"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
-#, fuzzy
-#| msgid "The center family for the report"
 msgid "The destination file name for the report."
-msgstr "המשפחה שבמרכז הדוח"
+msgstr "שם קקובץ יעדז לדוח."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
-#, fuzzy
-#| msgid "Opens an interactive tree in the browser"
 msgid "Open generated HTML file with default browser."
-msgstr "פתיחת אילן־יוחסין הדודי בדפדפן"
+msgstr "פתיחת קובץ HTML שחולל בדפדפן ברירת־מחדל."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -22059,10 +22044,8 @@ msgid ""
 msgstr ""
 
 #: WebSearch.py:468
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Save Coordinates to the Place"
-msgstr "נקודות־ציון מקום"
+msgstr "שמירת נקודות־ציון במקום"
 
 #: WebSearch.py:609
 msgid "AI provider is disabled"
@@ -22097,10 +22080,8 @@ msgid "Add link to note"
 msgstr "הוספת קישור להערה"
 
 #: WebSearch.py:1528
-#, fuzzy
-#| msgid "Add link to note"
 msgid "Add link to attribute"
-msgstr "הוספת קישור להערה"
+msgstr "הוספת קישור לתכונה"
 
 #: WebSearch.py:1530
 msgid "Show QR-code"
@@ -22172,16 +22153,14 @@ msgid "Attribute has been successfully added"
 msgstr ""
 
 #: WebSearch.py:2142
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "כותרת: {title}\n"
+msgstr "כותרת: {title}"
 
 #: WebSearch.py:2146
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "חילוף: {keys}\n"
+msgstr "חילוף: {keys}"
 
 #: WebSearch.py:2149
 #, fuzzy, python-brace-format
@@ -22236,34 +22215,29 @@ msgid "Value: %s"
 msgstr ""
 
 #: activity_row_generator.py:123
-#, fuzzy, python-format
-#| msgid "Select from files"
+#, python-format
 msgid "Loaded from file: %s"
-msgstr "בחירה מקבצים"
+msgstr "טינה מקובץ: %s"
 
 #: activity_row_generator.py:126
-#, fuzzy, python-format
-#| msgid "found: %s"
+#, python-format
 msgid "Domain: %s"
-msgstr "נמצא: %s"
+msgstr "תחום: %s"
 
 #: activity_row_generator.py:131
-#, fuzzy, python-format
-#| msgid "Death: %s"
+#, python-format
 msgid "Object: %s"
-msgstr "תאריך: %s"
+msgstr "עצם: %s"
 
 #: activity_row_generator.py:135
-#, fuzzy, python-format
-#| msgid "Death: %s"
+#, python-format
 msgid "Pattern: %s"
-msgstr "תאריך: %s"
+msgstr "דגם: %s"
 
 #: activity_row_generator.py:138
-#, fuzzy, python-format
-#| msgid "The Gramps ID.."
+#, python-format
 msgid "Object Gramps ID: %s"
-msgstr "מזהה גרמפס.."
+msgstr "מזהה עצם גרמפס:%s"
 
 #: activity_row_generator.py:142
 #, python-format
@@ -22279,16 +22253,12 @@ msgid "Link saved to Note"
 msgstr ""
 
 #: activity_row_generator.py:154
-#, fuzzy
-#| msgid "Add link to note"
 msgid "Link saved to Attribute"
-msgstr "הוספת קישור להערה"
+msgstr "קישור נשמר לתכונה"
 
 #: activity_row_generator.py:155
-#, fuzzy
-#| msgid "Place title"
 msgid "Place history loaded"
-msgstr "כותרת מקום"
+msgstr "היסטוריית מקום נטענה"
 
 #: activity_row_generator.py:156
 msgid "Domain skipped"
@@ -22307,10 +22277,8 @@ msgid "Attribute updated"
 msgstr ""
 
 #: activity_row_generator.py:160
-#, fuzzy
-#| msgid "Note type"
 msgid "Note updated"
-msgstr "סוג הערה"
+msgstr "הערה עודכנה"
 
 #: constants.py:390
 msgid "Column - Icons"
@@ -22528,10 +22496,8 @@ msgid "🧩 WebSearch Gramplet version: `%s`"
 msgstr ""
 
 #: internet_links_loader.py:70 internet_links_loader.py:71
-#, fuzzy
-#| msgid "Place title"
 msgid "No title"
-msgstr "כותרת מקום"
+msgstr "ללא כותרת"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -22967,30 +22933,20 @@ msgstr ""
 "בדפדפן המועדף..."
 
 #: markdown_place_history_formatter.py:52
-#, fuzzy
-#| msgid "Update Available"
 msgid "No data available."
-msgstr "עדכון זמין"
+msgstr "נתונים לא זמינים."
 
 #: markdown_place_history_formatter.py:57
 msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
 msgstr ""
 
 #: markdown_place_history_formatter.py:58
-#, fuzzy
-#| msgid ""
-#| "Found relation #%d: \n"
-#| "   "
 msgid "Foundation date:"
-msgstr ""
-"נמצא #%d:  קשר משפחה \n"
-"   "
+msgstr "תאריך יסוד:"
 
 #: markdown_place_history_formatter.py:60
-#, fuzzy
-#| msgid "Fix Coordinates"
 msgid "Coordinates:"
-msgstr "תיקון נקודות־ציון"
+msgstr "נקודות־ציון:"
 
 #: markdown_place_history_formatter.py:61
 msgid "Administrative history"
@@ -23001,26 +22957,20 @@ msgid "Data provided to AI:"
 msgstr ""
 
 #: markdown_place_history_formatter.py:64
-#, fuzzy
-#| msgid "reverse hierarchy"
 msgid "Full hierarchy"
-msgstr "היפוך היררכיה"
+msgstr "מדרג מלא"
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Place Types"
 msgid "Place Type:"
-msgstr "סוגי מקום"
+msgstr "סוג מקום:"
 
 #: markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"
 msgstr ""
 
 #: note_links_loader.py:69
-#, fuzzy
-#| msgid "No file parsed..."
 msgid "Note Link (parsed)"
-msgstr "לא נותח קובץ..."
+msgstr "קישור הערה ( נותח)"
 
 #: note_links_loader.py:124
 msgid "Note Link (internal)"
@@ -23121,10 +23071,8 @@ msgid "Show Links From the 'Internet' tab"
 msgstr ""
 
 #: settings_ui_manager.py:201
-#, fuzzy
-#| msgid "Show info text"
 msgid "Show Links From the Notes"
-msgstr "הצגת מלל מידע"
+msgstr "הצגת קישורי הערות"
 
 #: settings_ui_manager.py:209
 msgid "Enable AI-generated historical place data"
