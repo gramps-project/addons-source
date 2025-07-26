@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
 "PO-Revision-Date: 2025-07-14 09:02+0000\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
 "Language: he\n"
@@ -22163,10 +22163,9 @@ msgid "Replaced: {keys}"
 msgstr "חילוף: {keys}"
 
 #: WebSearch.py:2149
-#, fuzzy, python-brace-format
-#| msgid "Replaced: {keys}\n"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "חילוף: {keys}\n"
+msgstr "ריק: {keys}"
 
 #: WebSearch.py:2151
 #, python-brace-format
