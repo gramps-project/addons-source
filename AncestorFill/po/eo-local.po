@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-06-29 22:01+0000\n"
+"PO-Revision-Date: 2025-07-26 15:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
 "addons/eo/>\n"
@@ -14,6 +14,64 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "AncestorFill"
+msgstr "ArboPlenigo"
+
+msgid "Report on the filling of the tree"
+msgstr "Raporto pri Arboplenigado"
+
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "ArboPlenigo por %s"
+
+msgid "Generation "
+msgstr "Generacio "
+
+msgid "Number of Ancestors found "
+msgstr "Nombro da Prapatroj trovita "
+
+msgid "Percent of Ancestors found "
+msgstr "Procente da Prapatroj trovita "
+
+msgid "Number of unique Ancestors found "
+msgstr "Nombro da unikaj Prapatroj trovita "
+
+msgid "Number of theoretical Ancestors "
+msgstr "Nombro da teoriaj Prapatroj "
+
+msgid "Total Number of Ancestors found "
+msgstr "Totala Nombro da Prapatroj trovita "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "Totala Nombro da unikaj Prapatroj trovita "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"Noto: Tiu raporto nur nombras prapatrojn kun gepatro-infana rilato de "
+"naskiĝo."
+
+msgid "Filled digit"
+msgstr "Decimaloj"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"La nombro da ciferoj post komo inkludi en la raporto por la procento de "
+"prapatro trovita ĉe antaŭfiksita generacio"
+
+msgid "Display theoretical"
+msgstr "Montru teorian nombron"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Ĉu montri la teorian nombron de prapatroj laŭ generacio"
 
 msgid "The style used for the title of the page."
 msgstr "La stilo uzata por la titolo de la paĝo."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-07-26 08:04+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+msgid "AncestorFill"
+msgstr "AncestorFill"
+
+msgid "Report on the filling of the tree"
+msgstr "דיווח על מילוי העץ"
 
 msgid "Generation "
 msgstr "חילול "
 
+msgid "Number of Ancestors found "
+msgstr "מספר אָבוֹת קַדמוֹנִיםשנמצאו "
+
+msgid "Percent of Ancestors found "
+msgstr "אחוז אבות קדמונים ש נמצאו "
+
+msgid "Number of unique Ancestors found "
+msgstr "מספר אָבוֹת קַדמוֹנִים ייחודיים שנמצאו "
+
+msgid "Number of theoretical Ancestors "
+msgstr "מספר אבות קדמונים תאורטיים "
+
+msgid "Pedigree Collapse "
+msgstr "כיווץ אילן־יוחסין "
+
+msgid "Total Number of Ancestors found "
+msgstr "מספר כולל של אבות קדמונים שנמצאו "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "מספר כולל של אבות קדמונים ייחודיים שנמצאו "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"הערה: דו\"ח זה סופר רק אבות קדמונים עם קשרי־קרבה של הורה-צאצא."
+
+msgid "Filled digit"
+msgstr "סיפרת מילוי"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"מספר הספרות לאחר הפסיק שיכללו בדוח עבור אחוז אבות קדמונים שנמצאו בדור מסוים"
+
+msgid "Collapsed digit"
+msgstr "סיפרת כיווץ"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr "מספר הספרות לאחר הפסיק שיכללו בדוח עבור כיווץ אילן־היוחסין"
+
 msgid "Display theoretical"
 msgstr "להציג עיוני"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "האם להציג את המספר התיאורטי של אבות קדמונים לפי דור"
 
 msgid "The style used for the title of the page."
 msgstr "הסגנון שמשמש בכותרת העמוד."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"PO-Revision-Date: 2025-07-26 08:04+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,16 +13,68 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+msgid "Avatar Generator Tool"
+msgstr "כלי חילול יצגנים"
+
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "כלי להוספת תמונות יצגן לאילן־היוחסין"
+
+msgid "single image mode"
+msgstr "מצב תמונה יחידה"
+
+msgid "Choose how many images you'd like to use."
+msgstr "בחירת מספר התמונות לשימוש."
+
+msgid "Image for people with unknown gender."
+msgstr "תמונה לייצוג אנשים במגדר לא ידוע."
+
+msgid "Image for males."
+msgstr "תמונה למגדר זכרי."
+
+msgid "Image for females"
+msgstr "תמונה למגדר נקבי"
 
 msgid "Select filter to restrict people"
 msgstr "בחירת מסנן להגבלת האנשים"
 
+msgid "Remove images from people"
+msgstr "להסיר תמונות מאנשים"
+
 msgid "Remove selected image(s)."
 msgstr "הסרת תמונות שנבחרו."
+
+msgid "Avatar Generator"
+msgstr "מחולל יצגים"
+
+msgid "Remove avatar images..."
+msgstr "להסיר תמונות יצגן..."
 
 msgid "INFO"
 msgstr "מידע"
 
 msgid "No media was removed."
 msgstr "לא הוסרה מדיה."
+
+msgid "{} media references were removed from {} persons."
+msgstr "{} אזכורי מדיה הוסרו מ־{} אנשים."
+
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"{} שגיאות טיפול התרחשו, אך המערכת התעלמה מהן."
+
+msgid "Add avatar images..."
+msgstr "הוספת תמונת יצגן..."
+
+msgid "{} avatar images were sucessfully added."
+msgstr "{} תמונות יצגן נוספו בהצלחה."
+
+msgid "There was no avatar image to add. "
+msgstr "לא נמצאה תמונת יצגן להוספה. "
+
+msgid "All persons already had one."
+msgstr "לכל האנשים כבר היה אחד."

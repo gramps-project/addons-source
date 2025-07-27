@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-07-05 23:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2025-07-23 14:01+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -26,11 +26,17 @@ msgstr "Numero di antenati trovati "
 msgid "Percent of Ancestors found "
 msgstr "Percentuale di antenati trovati "
 
+msgid "Number of unique Ancestors found "
+msgstr "Numero di antenati unici trovati "
+
 msgid "Number of theoretical Ancestors "
 msgstr "Numero teorico degli antenati "
 
 msgid "Total Number of Ancestors found "
 msgstr "Numero totale di antenati trovato "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "Numero totale di antenati unici trovati "
 
 msgid ""
 "\n"
@@ -42,6 +48,32 @@ msgstr ""
 "\n"
 "Nota: Questo resoconto conta solo gli antenati che hanno una relazione "
 "genitore-figlio alla nascita."
+
+msgid "Filled digit"
+msgstr "Numeri riempiti"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"Il numero di cifre dopo virgola da includere nel rapporto per la percentuale "
+"di antenati trovati in una data generazione"
+
+msgid "Collapsed digit"
+msgstr "Numero Collapse"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr ""
+"Il numero di cifre dopo la virgola da includere nel report per il pedigree "
+"Collapse"
+
+msgid "Display theoretical"
+msgstr "Mostra teorico"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Visualizzare o meno il numero teorico di antenati per generazione"
 
 msgid "The style used for the title of the page."
 msgstr "Lo stile usato per il titolo della pagina."

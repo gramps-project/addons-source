@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-19 15:37+0000\n"
+"PO-Revision-Date: 2025-07-26 15:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Synchronisation Gramps Web"
@@ -46,6 +46,13 @@ msgstr "%s erreurs rencontrées lors du téléchargement."
 msgid "Successfully uploaded %s media files."
 msgstr "Téléchargement réussi de %s fichiers media."
 
+#, python-format
+msgid "Encountered %s errors during upload."
+msgstr "%s erreurs lors du téléchargement."
+
+msgid "Error accessing media object."
+msgstr "Erreur en accédant à un objet medium."
+
 msgid "Failed importing downloaded XML file."
 msgstr "Échec du téléchargement du fichier XML."
 
@@ -60,6 +67,24 @@ msgstr "Erreur d'autorisation du serveur : autorisations insuffisantes."
 
 msgid "Error: URL not found."
 msgstr "Erreur : URL non trouvée."
+
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr ""
+"Impossible de synchroniser les changements au serveur : les objets ont été "
+"modifiés."
+
+#, python-format
+msgid "Error %s while connecting to server."
+msgstr "Erreur %s en se connectant au serveur."
+
+msgid "URL error while connecting to server."
+msgstr "Erreur d'URL en se connectant au serveur."
+
+msgid "Error while parsing response from server."
+msgstr "Erreur d'analyse de la réponse du serveur."
+
+msgid "Continue without transport encryption?"
+msgstr "Continuer sans chiffrement ?"
 
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
@@ -108,6 +133,9 @@ msgstr "URL du serveur : "
 
 msgid "Bidirectional Synchronization"
 msgstr "Synchronisation bidirectionnelle"
+
+msgid "Reset remote to local"
+msgstr "Réinitialiser du distant vers le local"
 
 msgid "Reset local to remote"
 msgstr "Réinitialiser l'arbre local depuis l'arbre distant"

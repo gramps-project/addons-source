@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2025-03-13 22:50+0000\n"
+"PO-Revision-Date: 2025-07-26 08:04+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Descendants Report"
 msgstr "דוח צאצאים"
@@ -30,8 +30,19 @@ msgstr "מפתח מקומות"
 msgid "Index of Names"
 msgstr "מפתח שמות"
 
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
 msgid "Include index of Dates"
 msgstr "הכללת מפתח תאריכים"
+
+msgid "Include index of Places"
+msgstr "הכללת מפתח מקומות"
 
 msgid "The style used for the children list."
 msgstr "הסגנון שמשמש לרשימת צאצאים."

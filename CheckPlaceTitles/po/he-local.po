@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
 "PO-Revision-Date: 2025-07-26 08:04+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
@@ -15,8 +15,14 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Weblate 5.13-dev\n"
 
-msgid "Place title"
-msgstr "כותרת מקום"
+msgid "Check Place Titles"
+msgstr "בדיקת כותרות מקום"
+
+msgid "Check place titles"
+msgstr "בדיקת כותרות מקום"
+
+msgid "Check Place title"
+msgstr "בדיקת כותרות מקום"
 
 msgid "Checking Place Titles"
 msgstr "מתבצעת בדיקת כותרות מקום"
@@ -24,5 +30,17 @@ msgstr "מתבצעת בדיקת כותרות מקום"
 msgid "Looking for place fields"
 msgstr "חיפוש שדות מקום"
 
-msgid "_Toggle Selected"
-msgstr "_מיתוג פריטים שנבחרו"
+msgid "Differences"
+msgstr "הבדלים"
+
+msgid "No need modifications"
+msgstr "לא נדרשות הסגלות"
+
+msgid "Legacy place"
+msgstr "מקום מהעבר"
+
+msgid "Modify Place titles"
+msgstr "הסגלת כותרות מקום"
+
+msgid "Place titles"
+msgstr "כותרות מקום"

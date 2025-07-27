@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-23 22:01+0000\n"
+"PO-Revision-Date: 2025-07-26 15:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "birth abbreviation|b."
 msgstr "n."
@@ -149,6 +149,9 @@ msgstr "réseau"
 msgid "The filename for the generated svg network chart."
 msgstr "Le nom de fichier pour le graphique réseau svg généré."
 
+msgid "Different node shapes/edges for gender."
+msgstr "Différentes formes/angles pour les noeuds selon le sexe."
+
 msgid "Node differences for gender."
 msgstr "Différences du nœud pour le genre."
 
@@ -158,10 +161,16 @@ msgstr "Arrière-plan masculin"
 msgid "RGB-color for male box background."
 msgstr "Couleur RGB pour l'arrière-plan masculin."
 
+msgid "Male Background Alpha"
+msgstr "Alpha d'arrière-plan masculin"
+
 msgid "Alpha for Male box background (transparent=0, solid=255)."
 msgstr ""
 "Canal alpha pour l'arrière-plan de la boîte masculine (transparent = 0, "
 "solide = 255)."
+
+msgid "Male Box Edge"
+msgstr "Angle de cadre masculin"
 
 msgid "RGB-color for Male box edge."
 msgstr "Couleur RVB pour le bord du cadre masculin."
@@ -172,10 +181,16 @@ msgstr "Arrière-plan féminin"
 msgid "RGB-color for Female box background."
 msgstr "Couleur RVB pour le fond du cadre féminin."
 
+msgid "Female Background Alpha"
+msgstr "Alpha d'arrière-plan féminin"
+
 msgid "Alpha for Female box background (transparent=0, solid=255)."
 msgstr ""
 "Canal alpha pour l'arrière-plan du cadre féminin (transparent = 0, solide = "
 "255)."
+
+msgid "Female Box Edge"
+msgstr "Angle de cadre féminin"
 
 msgid "RGB-color for Female box edge."
 msgstr "Couleur RGB pour le cadre féminin."
@@ -186,13 +201,67 @@ msgstr "Autre arrière-plan"
 msgid "RGB-color for other box background."
 msgstr "Couleur RGB pour les autres arrière-plans."
 
+msgid "Other Background Alpha"
+msgstr "Alpha d'arrière-plan autres"
+
+msgid "Alpha for Other box background (transparent=0, solid=255)."
+msgstr ""
+"Alpha pour arrière-pllan des autres cadres (transparent=0, solide=255)."
+
+msgid "Family Connector Line"
+msgstr "Ligne de connexion familiale"
+
+msgid "RGB-color for family connector line."
+msgstr "couleur RVB pour la ligne de connexion familiale."
+
+msgid "Marriage Connector Line"
+msgstr "Ligne de connexion de mariage"
+
+msgid "RGB-color for marriage connector line."
+msgstr "couleur RVB pour la ligne de connexion de mariage."
+
+msgid "Highlight Connector Line"
+msgstr "Ligne de raccordement en évidence"
+
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "Couleur RVB pour le bord de cadre qui a été coupé."
+
+msgid "Remove color background on all nodes."
+msgstr "Retirer la couleur de fond sur tous les noeuds."
+
 msgid "Removes color background for individuals (nodes) on chart."
 msgstr ""
 "Supprime la couleur d'arrière-plan pour les individus (nœuds) sur le "
 "graphique."
 
+msgid ""
+"Birthdays after this year are represented by the year only.  Invalid entries "
+"will be ignored."
+msgstr ""
+"Les dates de naissance après cette année sont représentés par l'année seule. "
+"Les entrées invalides seront ignorées."
+
+msgid "Round birthday to year after year entered (above)."
+msgstr "Date de naissance tronquée à l'année après celle entrée (au-dessus)."
+
 msgid "Represent birthday by year only."
 msgstr "Représenter la date de naissance par l'année uniquement."
+
+msgid ""
+"Enter year to start\n"
+"rounding marriage\n"
+"date to year only"
+msgstr ""
+"Entrer l'année à partir de\n"
+"laquelle la date de mariage\n"
+"est tronquée à l ' année seule"
+
+msgid ""
+"Marriages after this year are represented bythe year only. Invalid entries "
+"will be ignored."
+msgstr ""
+"Les mariages après cette année sont représentés par l'année seule. Les "
+"entrées invalides seront ignorées."
 
 msgid "Represent marriage by year only."
 msgstr "Représenter le mariage par l'année seulement."
@@ -203,10 +272,19 @@ msgstr "Permettre d'inclure les enregistrements privés dans le graphique."
 msgid "Trim"
 msgstr "Raccourcir"
 
+msgid "Trim ancestors"
+msgstr "Masquer les ancêtres"
+
 msgid "All ancestors (parents) of selected individuals will not be shown."
 msgstr ""
 "Tous les ancêtres (parents) des individus sélectionnés ne seront pas "
 "affichés."
+
+msgid "Enable trimming of ancestors."
+msgstr "Activer le masquage des ancêtres."
+
+msgid "Enable trimming of ancestors from tree."
+msgstr "Activer le masquage des ancêtres dans l'arbre."
 
 msgid "Highlight path(s)"
 msgstr "Mise en relief des chemins"
@@ -232,6 +310,13 @@ msgid ""
 msgstr ""
 "Connections max\n"
 "depuis le centre"
+
+msgid ""
+"Enter the maximum number of connections allowed from\n"
+"the center person.  Value may be 1 or greater."
+msgstr ""
+"Entrez le nombre maximal de connexions autorisées depuis\n"
+"la personne centrale. La valeur peut être 1 ou plus."
 
 msgid "Limit graph to max connections from center."
 msgstr "Limiter le graphique aux connections maximum depuis le centre."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"PO-Revision-Date: 2025-07-26 08:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -157,31 +157,33 @@ msgid "Include Residence"
 msgstr "Wohnort angeben"
 
 msgid "Print event data (dead person)"
-msgstr "Drucke Ereignisdaten (tote Person)"
+msgstr "Ereignisdaten drucken (verstorbene Person)"
 
 msgid "Year only"
 msgstr "Nur Jahr"
 
 msgid "Full date"
-msgstr "Volles Datum"
+msgstr "Vollständiges Datum"
 
 msgid "Full date and place"
-msgstr "Volles Datum und Ort"
+msgstr "Vollständiges Datum und Ort"
 
 msgid "Print event data (living person)"
-msgstr "Drucke Ereignisdaten (lebende Person)"
+msgstr "Ereignisdaten drucken (lebende Person)"
 
 msgid "Fall back to baptism if birth event missing"
-msgstr "Taufe verwenden, falls Geburt unbekannt"
+msgstr "Wenn das Geburtsereignis fehlt, auf die Taufe zurückgreifen"
 
 msgid "Fall back to burial or cremation if death event missing"
-msgstr "Begräbnis oder Einäscherung verwenden, falls Tod unbekannt"
+msgstr ""
+"Wenn kein Todeereignis vorliegt, auf Beerdigung oder Einäscherung "
+"zurückgreifen"
 
 msgid "Protect private items"
-msgstr "Vertrauliche Elemente schützen"
+msgstr "Vertrauliche Daten schützen"
 
 msgid "Include event description"
-msgstr "Ereignisbeschreibung aufnehmen"
+msgstr "Ereignisbeschreibung hinzufügen"
 
 msgid "Text Options"
 msgstr "Textoptionen"

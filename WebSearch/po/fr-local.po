@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-06-19 15:37+0000\n"
+"PO-Revision-Date: 2025-07-26 15:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Middle Name Handling"
 msgstr "Gestion du deuxième prénom"
@@ -102,6 +102,9 @@ msgstr "Chargé du fichier : %s"
 msgid "Object Gramps ID: %s"
 msgstr "ID d'objet Gramps : %s"
 
+msgid "Note Link (parsed)"
+msgstr "Lien de note (analysé)"
+
 msgid "Column - Icons"
 msgstr "Colonne - Icônes"
 
@@ -144,8 +147,23 @@ msgstr "Icône - URL d'un fichier CSV croisé (flèches croisées)"
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr "Icône - URL du répertoire utilisateur (icône de feuille de calcul)"
 
+msgid "No data available."
+msgstr "Pas de données disponible."
+
+msgid "Foundation date:"
+msgstr "Date de fondation :"
+
 msgid "Note:"
 msgstr "Note :"
+
+msgid "Coordinates:"
+msgstr "Coordonnées :"
+
+msgid "Place Type:"
+msgstr "Type de lieu :"
+
+msgid "Last Retrieved At:"
+msgstr "Dernière récupération À :"
 
 msgid "QR-code"
 msgstr "QR-code"
@@ -227,3 +245,15 @@ msgstr "L'attribut a été ajouté avec succès"
 #, python-brace-format
 msgid "Title: {title}"
 msgstr "Titre : {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Remplacé : {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Vide : {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Commentaire : {comment}"

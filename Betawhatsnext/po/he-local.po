@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-17 15:05+0000\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-07-26 08:04+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,172 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+msgid "Beta What's Next"
+msgstr "בטא מה הלאה"
+
+msgid "Beta Gramplet suggesting items to research"
+msgstr "גראמפלט בטא להצעות פריטים למחקר"
+
+msgid "Beta What's Next?"
+msgstr "בטא מה הלאה?"
+
+msgid ""
+"\n"
+" ⛔ A local Genealogical Tree database has not yet been loaded.\n"
+"\n"
+msgstr ""
+"\n"
+" ⛔ מסד ־נתוני אילן־יוחסין מקומי עדיין לא טעון.\n"
+"\n"
+
+msgid " 👣 Next Steps:\n"
+msgstr " 👣 השלבים הבעים:\n"
+
+msgid "  •  From the \"Family Trees\" menu,"
+msgstr "  •  מתפריט 'אילן־יוחסין',"
+
+msgid " use the \"Manage Family Trees...\" option to"
+msgstr " שימוש באפשרות 'ניהול אילנות־יוחסין...' כדי"
+
+msgid " create a New (or to select an existing) Tree database.\n"
+msgstr " ליצור מסד נתוני אילן חדש (או לבחור אחד קיים).\n"
+
+msgid "  •  Click the \"Load Family Tree\" button to begin"
+msgstr "  •  הקשה על לחצן 'טעינת אילן־יוחסין' כדי להתחיל"
+
+msgid ""
+" working with the selected genealogical tree.\n"
+"\n"
+msgstr ""
+" עבודה עם אילן־יוחסין שנבחר.\n"
+"\n"
+
+msgid "Create and load an empty new tree to import a backup (or"
+msgstr "ליצור ולטעון אילן־יוחסין חדש ריק כדי לייבא קובץ גיבוי (או"
+
+msgid ""
+" GEDCOM file) from another genealogical tool.\n"
+"\n"
+msgstr ""
+" קובץ GEDCOM) מכלי חקר־יוחסין אחר.\n"
+"\n"
+
+msgid ""
+"Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
+msgstr "נא להשתמש באפשרות 'תצור' בתפריט 'מצג' כדי לשנות את אפשרויות Gramplet."
 
 msgid "Search Quota "
 msgstr "מכסת חיפוש "
 
+msgid "Depth per loop"
+msgstr "עומק לכל לולאה"
+
+msgid "Pause search expansion"
+msgstr "השהיית הרחבת חיפוש"
+
 msgid "Completed Person"
 msgstr "אדם שהושלם"
 
+msgid " Completed offspring Families"
+msgstr " משפחות צאצאים שהושלמו"
+
 msgid "Ignore Person or Family"
 msgstr "להתעלם מאדם או משפחה"
+
+msgid ""
+"\n"
+" ⛔ The current Tree database contains no people.\n"
+msgstr ""
+"\n"
+" ⛔ מסד נתוני אילן־היוחסין הנוכחי לא מכיל אנשים.\n"
+
+msgid ""
+"\n"
+" 👣 Next Steps:\n"
+" Add a Family and a person in that family:\n"
+"  • A Family may be added via the \"Add\" menu\n"
+"  • A person may be added by pressing the \"+\" (plus) in the spouse "
+"(\"Father/partner1\" or \"Mother/partner2\") panels or \"Children\" tab.\n"
+"\n"
+"Or Import People from an external file:\n"
+"  • An external file may be used to populate the tree via \"Import...\" in "
+"the \"Family Trees\" menu."
+msgstr ""
+"\n"
+" 👣 השלבים הבאים:\n"
+"הוספת משפחה ואדם במשפחה זו:\n"
+"• ניתן להוסיף משפחה מתפריט \"הוספה\"\n"
+"• ניתן להוסיף אדם על ידי לחיצה על ה-\"+\" (סימן חיבור) בלוח הזוגאי "
+"(\"אב/הורה1\" או \"אם/הורה2\") או בלשונית \"צאצאים\".\n"
+"\n"
+"או על ידי ייבוא אנשים מקובץ חיצוני:\n"
+"• ניתן להשתמש בקובץ חיצוני כדי לאכלס את אילן־היוחסין מאפשרות \"ייבוא...\" "
+"בתפריט \"אילנות־יוחסין\"."
+
+msgid ""
+"\n"
+" ⛔ No Person has been chosen as the focal \"Home Person\".\n"
+msgstr ""
+"\n"
+" ⛔ לא נבחר כל אדם שישמש כ\"אדם הבית\".\n"
+
+msgid ""
+"\n"
+" 👣 Next Steps:\n"
+"  •  Select the People view icon in the Navigator sidebar.\n"
+"  •  Select someone to make them the \"Active Person\".\n"
+"  •  Choose \"Set Home Person\" from the Edit menu or from the (right-click) "
+"context menu.\n"
+"\n"
+" This sets them as the focal \"Home Person\"."
+msgstr ""
+"\n"
+" 👣 השלבים הבאים:\n"
+"• נא לבחור את סמל תצוגת 'אנשים' בסרגל ניווט הצד.\n"
+"• נא לבחור אדם כלשהו כדי להפוך אותו ל\"אדם פעיל\".\n"
+"• נא לבחור באפשרות \"הגדרת אדם בית\" מתפריט עריכה או מתפריט ההקשר (הקשה "
+"ימנית).\n"
+"\n"
+"פעולה זו מגדירה אותם כ\"אדם בית\" במוקד."
+
+msgid "Double-click color text to edit details"
+msgstr "הקשה כפולה על צבע מלל לעריכת פרטים"
+
+msgid "Birth event missing."
+msgstr "חסר אירוע לידה."
+
+msgid "Add via the Events tab of the Edit Person dialog."
+msgstr "הוספה באנצעות דו־שיח 'עריכת אדם' בלשונית אירועים."
+
+msgid "relationship type unknown"
+msgstr "סוג קשר־קרבה לא ידוע"
+
+msgid "Add via the Events tab of the Edit Family dialog."
+msgstr "הוספה באמצעות דו־שיח עריכצ משפחה בלשונית אירועים."
+
+msgid "591 family not complete"
+msgstr "591 משפחה לא הושלמה"
+
+msgid "place unknown for the Event"
+msgstr "מקום לא ידוע לאירוע"
+
+msgid "A partner relationship exists but the spouse is missing"
+msgstr "קיים קשר־קרבה מסוג זוגיות אך זוגאי חסר"
+
+msgid "Add missing partner using the Edit Family dialog."
+msgstr "הוספת זוגאי חסר באמצעות דו־שיח עריכת משפחה."
+
+msgid "Father missing from the parent family"
+msgstr "במשפחת ההורים האב חסר"
+
+msgid "Mother missing from the parent family"
+msgstr "במשפחת ההורים האם חסרה"
+
+msgid "Parent family is unknown."
+msgstr "משפחת ההורים לא ידועה."
+
+msgid ""
+"\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
+msgstr "'הוספת הורה קיים/חדש' מתפריט 'עריכה' במצג קשרי־קרבה."

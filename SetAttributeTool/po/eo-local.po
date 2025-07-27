@@ -17,21 +17,3 @@ msgstr ""
 
 msgid "Select filter to restrict people"
 msgstr "Elektu filtrilon por limigi personojn"
-
-msgid "Add death events without dates"
-msgstr "Aldoni mortokazaĵojn sen datoj"
-
-msgid "Add death events with dates"
-msgstr "Aldoni mortokazaĵojn kun datoj"
-
-msgid "Add death events with or without estimated dates"
-msgstr "Aldoni mortokazaĵojn kun aŭ sen laŭtaksaj datoj"
-
-msgid "Maximum age"
-msgstr "Maksimuma aĝo"
-
-msgid "Maximum age that one can live to"
-msgstr "Maksimuma aĝo ke unu povas vivi al"
-
-msgid "Maximum age difference between siblings"
-msgstr "Maksimuma aĝdiferenco inter gefratoj"

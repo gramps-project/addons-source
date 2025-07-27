@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"PO-Revision-Date: 2025-07-26 08:04+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Select Form"
 msgstr "בחירת טופס"
@@ -39,14 +39,29 @@ msgstr "מספר משפחה"
 msgid "Place of birth"
 msgstr "מקום הלידה"
 
+msgid "Place of birth of father"
+msgstr "מקום לידת אב"
+
+msgid "Place of birth of mother"
+msgstr "מקום לידת אם"
+
 msgid "Date Discharged"
 msgstr "תאריך שחרור"
+
+msgid "Incorporated place"
+msgstr "מקום משולב"
 
 msgid "Unincorporated place"
 msgstr "מקום לא מאוגד"
 
 msgid "Radio set"
 msgstr "מערכת רדיו"
+
+msgid "Incorporated place or township"
+msgstr "מקום משולב או העירייה"
+
+msgid "Is this house on a place of three or more acres?"
+msgstr "האם בית זה נמצע על שלושה אקרים או יותר?"
 
 msgid "Type of work"
 msgstr "סוג עבודה"
@@ -92,6 +107,9 @@ msgstr "מקום לידה – אבי האדם"
 
 msgid "Place of birth, Father"
 msgstr "מקום לידת האב"
+
+msgid "Birthplace"
+msgstr "מקום לידה"
 
 msgid "Relation"
 msgstr "יוחסה"
@@ -156,6 +174,9 @@ msgstr "תקופת שרות צבאי"
 msgid "Place discharged"
 msgstr "מקום השחרור"
 
+msgid "Event Place (Original)"
+msgstr "מקום אירוע (מקור)"
+
 msgid "Place of Work"
 msgstr "מקום עבודה"
 
@@ -168,6 +189,12 @@ msgstr "קרבה לראש המשפחה"
 msgid "Civil Parish"
 msgstr "מועצה מקומית"
 
+msgid "BIRTHPLACE of every Person."
+msgstr "מקום לידה של כל אדם."
+
+msgid "For each child place a X in the column corresponding to its age."
+msgstr "לכל ילד יש סימון X בעמודה בהתאם לגילו."
+
 msgid "Parish Ward"
 msgstr "ועד מועצה מקומית"
 
@@ -177,11 +204,26 @@ msgstr "ראש משפחה"
 msgid "BirthPlace"
 msgstr "מקום לידה"
 
+msgid "3. Place of Birth"
+msgstr "3. מקום לידה"
+
+msgid "WorshipPlaces"
+msgstr "מקום פולחן"
+
+msgid "38. Places of Worship"
+msgstr "38. מקום פולחן"
+
 msgid "AcresCultivation"
 msgstr "AcresCultivation"
 
 msgid "13. Origin"
 msgstr "13. מוצא"
+
+msgid "BirthPlaceFather"
+msgstr "מקום לידת אב"
+
+msgid "13. Birth Place of Father"
+msgstr "13. מקום לידת אב"
 
 msgid "Buildings"
 msgstr "מבנים"
@@ -189,8 +231,32 @@ msgstr "מבנים"
 msgid "Seating"
 msgstr "תושבת"
 
+msgid "4. Place of habitation"
+msgstr "4. מקום לידת אם"
+
 msgid "2. Family"
 msgstr "2. משפחה"
+
+msgid "9. Country or place of birth"
+msgstr "9. מדינה או מקום לידה"
+
+msgid "5. Place of Habitation: Township"
+msgstr "5. מקום מגוקים: עיירה"
+
+msgid "6. Place of Habitation: Range"
+msgstr "6. מקום מגורים: תחום"
+
+msgid "7. Place of Habitation: Meridian"
+msgstr "7. מקום מגורים: קו־אורך"
+
+msgid "8. Place of Habitation: Municipality"
+msgstr "8. מקום מגורים: עירייה"
+
+msgid "13. Country or place of birth"
+msgstr "13. מדינה או מקום לידה"
+
+msgid "EmploymentPlace"
+msgstr "מקום תעסוקה"
 
 msgid "Type of roof"
 msgstr "סוג גג"

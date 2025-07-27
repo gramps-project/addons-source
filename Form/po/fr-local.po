@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
+"PO-Revision-Date: 2025-07-26 15:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Select Form"
 msgstr "Sélectionner le formulaire"
@@ -1288,8 +1288,23 @@ msgstr "15. Résidentes : non-membres : femme"
 msgid "16. Members Absent: Male"
 msgstr "16. Membres absent : homme"
 
+msgid "AbsentMembersFemale"
+msgstr "Membres féminins absents"
+
 msgid "17. Members Absent: Female"
 msgstr "17. Membres absents : femmes"
+
+msgid "DeafDumbMale"
+msgstr "Homme sourd-muet"
+
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. Sourd et muet : Homme"
+
+msgid "DeafDumbFemale"
+msgstr "Femme sourde-muette"
+
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. Sourd et muet : féminin"
 
 msgid "BlindMale"
 msgstr "HommeAveugle"
@@ -1302,6 +1317,18 @@ msgstr "FemmeAveugle"
 
 msgid "21. Blind: Female"
 msgstr "21. Aveugle : femme"
+
+msgid "LunaticMale"
+msgstr "Homme fou"
+
+msgid "22. Lunatics: Male"
+msgstr "22. Fous : Homme"
+
+msgid "LunaticFemale"
+msgstr "Femme folle"
+
+msgid "23. Lunatics: Female"
+msgstr "23. Fous : Femme"
 
 msgid "24. Attending School: Male"
 msgstr "24. École fréquentée : homme"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-18 20:52+0000\n"
+"PO-Revision-Date: 2025-07-26 08:04+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Select Form"
 msgstr "Formular wählen"
@@ -790,10 +790,10 @@ msgid "Deaf and dumb"
 msgstr "Taub und Stumm"
 
 msgid "Idiotic"
-msgstr "Idiotisch"
+msgstr "Schwachsinnig"
 
 msgid "Insane"
-msgstr "Geisteskrank"
+msgstr "Geistig verwirrt"
 
 msgid "Maimed, crippled, bedridden, or otherwise disabled"
 msgstr "Verstümmelt, verkrüppelt, bettlägerig oder anderweitig behindert"
@@ -1446,7 +1446,7 @@ msgid "E. D. Number"
 msgstr "E. D. Nummer"
 
 msgid "Hotel, large rooming house, institution, military installation, etc."
-msgstr "Hotel, großes Wohnheim, Institution, Militäreinrichtung usw."
+msgstr "Hotel, große Pension, Einrichtung, militärische Anlage usw."
 
 msgid "Is this house on a farm (or ranch)?"
 msgstr "Befindet sich dieses Haus auf einem Bauernhof (oder einer Ranch)?"
@@ -1897,7 +1897,7 @@ msgid "If No give information regarding the same"
 msgstr "Wenn nein, geben Sie diesbezüglich Informationen an"
 
 msgid "Signed"
-msgstr "Gezeichnet"
+msgstr "Unterzeichnet"
 
 msgid "Witness name and P.O Address"
 msgstr "Name des Zeugen und Postanschrift"
@@ -2821,7 +2821,7 @@ msgid "Condition"
 msgstr "Zustand"
 
 msgid "Schedule"
-msgstr "Verzeichnis"
+msgstr "Zeitplan"
 
 msgid "Inhabitants in"
 msgstr "Einwohner in"
@@ -2893,7 +2893,7 @@ msgid "Residence in District - months"
 msgstr "Wohnsitz im Bezirk - Monate"
 
 msgid "Army service"
-msgstr "Militärdienst"
+msgstr "Wehrdienst"
 
 msgid "Wars"
 msgstr "Kriege"
@@ -3157,7 +3157,7 @@ msgid "Number of times married"
 msgstr "Anzahl der Eheschließungen"
 
 msgid "Place of Occupation"
-msgstr "Beschäftigungsort"
+msgstr "Arbeitsort"
 
 msgid "Land owner"
 msgstr "Landbesitzer"
@@ -3358,7 +3358,7 @@ msgid "Maiden name of wife"
 msgstr "Mädchenname der Frau"
 
 msgid "Year married"
-msgstr "Jahr verheiratet"
+msgstr "Heiratsjahr"
 
 msgid "Church affiliation"
 msgstr "Kirchen Zugehörigkeit"
@@ -3472,10 +3472,10 @@ msgid "Certificate Number"
 msgstr "Zertifikatsnummer"
 
 msgid "Entry Number"
-msgstr "Buchungsnummer"
+msgstr "Eintragungsnummer"
 
 msgid "Date Registered"
-msgstr "Registrierungsdatum"
+msgstr "Datum der Registrierung"
 
 msgid "Registrar"
 msgstr "Registrierstelle"
@@ -3711,7 +3711,7 @@ msgid "Place of employment or business"
 msgstr "Arbeitsort oder Geschäft"
 
 msgid "Complexion"
-msgstr "Hautfarbe"
+msgstr "Teint"
 
 msgid "Eyes"
 msgstr "Augen"
@@ -3804,10 +3804,10 @@ msgid "Amt"
 msgstr "Amt"
 
 msgid "Town or City"
-msgstr "Gemeinde oder Stadt"
+msgstr "Stadt oder Gemeinde"
 
 msgid "Herred eller By"
-msgstr "Kreis oder Stadt, Dorf"
+msgstr "Gemeinde oder Stadt"
 
 msgid "Sogn"
 msgstr "Gemeinde"
@@ -3825,13 +3825,13 @@ msgid "Stilling i familien"
 msgstr "Position in der Familie"
 
 msgid "Titel, Embed, Forretning, Håndværk"
-msgstr "Titel, Amt. Geschäft, Handwerk"
+msgstr "Titel, Amt, Geschäft, Handwerk"
 
 msgid "Stilling, embede eller erhverv"
-msgstr "Stellung, Amt oder Beruf"
+msgstr "Position, Amt oder Beruf"
 
 msgid "Where Born"
-msgstr "Wo Geboren"
+msgstr "Geburtsort"
 
 msgid "Fødested"
 msgstr "Geburtsort"
@@ -3840,7 +3840,7 @@ msgid "Erhverv"
 msgstr "Beruf"
 
 msgid "Trossamfund"
-msgstr "Glaubensgemeinschaft"
+msgstr "Religionsgemeinschaft"
 
 msgid "Sted"
 msgstr "Ort"
@@ -3849,28 +3849,28 @@ msgid "Comments"
 msgstr "Kommentare"
 
 msgid "Bemærkninger"
-msgstr "Bemerkungen"
+msgstr "Anmerkungen"
 
 msgid "Place of Work"
-msgstr "Arbeitsplatz"
+msgstr "Arbeitsort"
 
 msgid "Arbejdssted"
-msgstr "Arbeitsplatz"
+msgstr "Arbeitsort"
 
 msgid "Fødselsdato"
 msgstr "Geburtsdatum"
 
 msgid "Years at current residence"
-msgstr "Jahre am jetzigen Wohnsitz"
+msgstr "Jahre am aktuellen Wohnort"
 
 msgid "År tilflyttet"
-msgstr "Jahre nach Umzug"
+msgstr "Jahr des Zuzugs"
 
 msgid "Previous residence"
-msgstr "Vorheriger Wohnsitz"
+msgstr "Vorheriger Wohnort"
 
 msgid "Tilflyttet fra"
-msgstr "Zugezogen von"
+msgstr "Zugezogen aus"
 
 msgid "År gift"
 msgstr "Jahr verheiratet"
@@ -3891,19 +3891,19 @@ msgid "Køn"
 msgstr "Geschlecht"
 
 msgid "Year stayed in parish"
-msgstr "Jahr in der Gemeinde geblieben"
+msgstr "Jahr des Aufenthalts in der Gemeinde"
 
 msgid "Hvilket aar taget ophold i sognet"
-msgstr "Welches Jahr des Wohnsitzes in der Gemeinde"
+msgstr "In welchem Jahr hat er sich in der Gemeinde niedergelassen"
 
 msgid "Previous Residence"
-msgstr "Vorheriger Wohnsitz"
+msgstr "Vorheriger Wohnort"
 
 msgid "Sidste bopæl inden tilflytning"
-msgstr "Letzter Wohnsitz vor dem Umzug"
+msgstr "Letzter Wohnort vor dem Umzug"
 
 msgid "Bemærkning"
-msgstr "Bemerkung"
+msgstr "Anmerkung"
 
 msgid "Income"
 msgstr "Einkommen"
@@ -3915,7 +3915,7 @@ msgid "Assets"
 msgstr "Vermögenswerte"
 
 msgid "Formue"
-msgstr "Vermögenswerte"
+msgstr "Vermögen"
 
 msgid "State Tax"
 msgstr "Staatliche Steuer"
@@ -3927,28 +3927,28 @@ msgid "Council"
 msgstr "Rat"
 
 msgid "Kommuneskat"
-msgstr "Gemeindesteuer"
+msgstr "Kommunalsteuer"
 
 msgid "Residence on 5 Nov 1924"
-msgstr "Wohnort am 5. November 1924"
+msgstr "Wohnsitz am 5. November 1924"
 
 msgid "Bopæl 5 nov 1924"
 msgstr "Wohnort 5. November 1924"
 
 msgid "Stay on 5 Nov 1929"
-msgstr "Aufenthalt am 5 Nov 1929"
+msgstr "Aufenthalt am 5. November 1929"
 
 msgid "Ophold 5 nov 1929"
-msgstr "Aufenthalt am 5 Nov 1929"
+msgstr "Aufenthalt 5. November 1929"
 
 msgid "Date Married"
 msgstr "Heiratsdatum"
 
 msgid "Dato gift"
-msgstr "Heiratsdatum"
+msgstr "Datum der Heirat"
 
 msgid "Registration District"
-msgstr "Zählbezirk"
+msgstr "Registrierungsbezirk"
 
 msgid "Administrative Area"
 msgstr "Verwaltungsgebiet"
@@ -3960,7 +3960,7 @@ msgid "Maiden Surname"
 msgstr "Mädchenname"
 
 msgid "Banns/Licence"
-msgstr "Aufgebot/Genehmigung"
+msgstr "Aufgebot/Heiratsurkunde"
 
 msgid "Deceased"
 msgstr "Verstorben"
@@ -3972,54 +3972,55 @@ msgid "Usual Address"
 msgstr "Übliche Adresse"
 
 msgid "City or Borough"
-msgstr "Stadt oder Bezirk"
+msgstr "Stadt oder Stadtteil"
 
 msgid "Parish or Township"
-msgstr "Gemeinde oder Stadtgebiet"
+msgstr "Gemeinde oder Gemeindebezirk"
 
 msgid "NAMES of each Person who abode therein the preceding Night."
-msgstr "NAMEN jeder Person, die in der vorhergehenden Nacht darin gewohnt hat."
+msgstr ""
+"NAMEN aller Personen, die in der vergangenen Nacht dort übernachtet haben."
 
 msgid ""
 "AGE, rounded down to the nearest five years for those aged fifteen or over."
 msgstr ""
-"ALTER, abgerundet auf die nächsten fünf Jahre für Personen ab fünfzehn "
-"Jahren."
+"ALTER, bei Personen ab fünfzehn Jahren auf die nächsten fünf Jahre "
+"abgerundet."
 
 msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
-msgstr "BERUF, HANDEL, BESCHÄFTIGUNG oder UNABHÄNGIGE MITTEL."
+msgstr "BERUF, HANDWERK, BESCHÄFTIGUNG oder SELBSTSTÄNDIGKEIT."
 
 msgid ""
 "Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
 "Parts (P)."
 msgstr ""
-"Ob in derselben Grafschaft (Y oder N), Schottland (S), Irland (I) oder "
-"fremden Teilen (P) geboren."
+"Ob im selben Landkreis geboren (J oder N), in Schottland (S), Irland (I) "
+"oder im Ausland (P)."
 
 msgid "Ecclesiastical District"
-msgstr "Kirchenbezirk"
+msgstr "Kirchlicher Bezirk"
 
 msgid ""
 "Name and Surname of each Person who abode in the house, on the Night of the "
 "30th March, 1851"
 msgstr ""
-"Vor- und Nachname jeder Person, die in der Nacht des 30. März 1851 im Haus "
-"wohnte"
+"Vor- und Nachname jeder Person, die in der Nacht des 30. März 1851 in dem "
+"Haus untergebracht war"
 
 msgid "Relation to Head of Family"
-msgstr "Beziehung zum Kopf der Familie"
+msgstr "Verhältnis zum Familienoberhaupt"
 
 msgid "Rank, Profession or Occupation"
-msgstr "Stellung, Beruf oder Beschäftigung"
+msgstr "Rang, Beruf oder Tätigkeit"
 
 msgid "Whether Blind or Deaf and Dumb"
-msgstr "Ob Blind oder Taub und Stumm"
+msgstr "Ob Blind oder Taubstumm"
 
 msgid "City or Municipal Borough"
 msgstr "Stadt oder Stadtbezirk"
 
 msgid "Municipal Ward"
-msgstr "Gemeindebezirk"
+msgstr "Stadtbezirk"
 
 msgid "Parliamentary Borough"
 msgstr "Parlamentsbezirk"
@@ -4034,7 +4035,7 @@ msgid "Rank, Profession of Occupation"
 msgstr "Stellung, Erklärung zu Beschäftigung"
 
 msgid "Whether Blind, or Deaf-and-Dumb"
-msgstr "Ob Blind oder Taub und Stumm"
+msgstr "Ob Blind oder Taubstumm"
 
 msgid "Civil Parish or Township"
 msgstr "Gemeinde oder Stadtgebiet"
@@ -4058,7 +4059,7 @@ msgid "AGE of"
 msgstr "Alter von"
 
 msgid "Rank, Profession or OCCUPATION"
-msgstr "Stellung, Beruf oder Beschäftigung"
+msgstr "Rang, Beruf oder Tätigkeit"
 
 msgid ""
 "Whether\n"
@@ -4111,7 +4112,7 @@ msgid "Civil Parish"
 msgstr "Zivilgemeinde"
 
 msgid "Municipal Borough"
-msgstr "Stadtbezirk"
+msgstr "Stadtgemeinde"
 
 msgid "Parliamentary Borough or Division"
 msgstr "Parlamentsbezirk oder Gliederung"
@@ -4283,8 +4284,8 @@ msgid ""
 "If attending a School or any kind of Educational Institution for the purpose "
 "of receiving Instruction"
 msgstr ""
-"Wenn eine Schule oder eine andere Bildungseinrichtung besucht wird, um "
-"Unterricht zu erhalten"
+"Wenn Besuch einer Schule oder einer anderen Bildungseinrichtung zum Zweck "
+"des Unterrichts"
 
 msgid ""
 "State here the precise branch of Profession, Trade, Manufacture, Service, &c."
@@ -4387,10 +4388,10 @@ msgid "House U or B"
 msgstr "Haus U oder B"
 
 msgid "Rank, Profession, or Occupation"
-msgstr "Stellung, Beruf oder Beschäftigung"
+msgstr "Rang, Beruf oder Tätigkeit"
 
 msgid "Whether Blind, or Deaf and Dumb"
-msgstr "Ob Blind oder Taub und Stumm"
+msgstr "Ob Blind oder Taubstumm"
 
 msgid "No. of Children from 5 to 13 attending School"
 msgstr "Anzahl der Kinder von 5 bis 13 Jahren, die eine Schule besuchen"
@@ -4421,7 +4422,7 @@ msgid "Municipal Burgh"
 msgstr "Kommunal freie Stadt"
 
 msgid "Burgh Ward"
-msgstr "Stadtbezirk"
+msgstr "Burgh-Bezirk"
 
 msgid "Island"
 msgstr "Insel"
@@ -4488,22 +4489,22 @@ msgid "Children born alive to present Marriage"
 msgstr "Kinder, die lebend geboren wurden in gegenwärtiger Ehe"
 
 msgid "EnumDistrict"
-msgstr "ZählungsBezirk"
+msgstr "Zählbezirk"
 
 msgid "Comprising"
-msgstr "Einschließend"
+msgstr "Bestehend aus"
 
 msgid "OfTheSaid"
-msgstr "desGesagten"
+msgstr "Von dem Gesagten"
 
 msgid "Enumerator"
-msgstr "Zähler"
+msgstr "Erheber"
 
 msgid "1. Names of Inmates"
 msgstr "1. Namen der Insassen"
 
 msgid "2. Profession, Trade or Occupation"
-msgstr "2. Beruf, Gewerbe oder Beruf"
+msgstr "2. Beruf, Gewerbe oder Tätigkeit"
 
 msgid "BirthPlace"
 msgstr "Geburtsort"
@@ -4521,19 +4522,19 @@ msgid "6. Age at Next Birthday"
 msgstr "6. Alter am nächsten Geburtstag"
 
 msgid "SexMale"
-msgstr "Männlich"
+msgstr "Geschlecht: Männlich"
 
 msgid "7. Sex: Male"
 msgstr "7. Geschlecht: Männlich"
 
 msgid "SexFemale"
-msgstr "Weiblich"
+msgstr "Geschlecht: weiblich"
 
 msgid "8. Sex: Female"
-msgstr "8. Geschlecht: Weiblich"
+msgstr "8. Geschlecht: weiblich"
 
 msgid "MaritalStatus"
-msgstr "Personenstand"
+msgstr "Familienstand"
 
 msgid "9. Married or Single"
 msgstr "9. Verheiratet oder ledig"
@@ -4542,49 +4543,49 @@ msgid "Coloured"
 msgstr "Farbig"
 
 msgid "10. Coloured Persons - Negroes"
-msgstr "10. Farbige Person - Negroes"
+msgstr "10. Farbige Personen – Afroamerikaner"
 
 msgid "Indians"
-msgstr "Indios"
+msgstr "Indianer"
 
 msgid "11. Indians, if any"
-msgstr "11. Indios, gegebenenfalls"
+msgstr "11. Indianer, falls vorhanden"
 
 msgid "ResidentsMale"
 msgstr "BewohnerMännlich"
 
 msgid "12. Residents: Members, Male"
-msgstr "12. Bewohner: Angehörigen, Männlich"
+msgstr "12. Bewohner: Mitglieder, männlich"
 
 msgid "ResidentsFemale"
 msgstr "BewohnerWeiblich"
 
 msgid "13. Residents: Members, Female"
-msgstr "13. Bewohner: Angehörigen, Weiblich"
+msgstr "13. Bewohner: Mitglieder, weiblich"
 
 msgid "NonMembersMale"
-msgstr "KeineAngehörigenMännlich"
+msgstr "NichtmitgliederMännlich"
 
 msgid "14. Residents: Not Members: Male"
-msgstr "14. Bewohner: Keine Angehörigen: Männlich"
+msgstr "14. Bewohner: Nichtmitglieder: Männlich"
 
 msgid "NonMembersFemale"
-msgstr "KeineAngehörigenWeiblich"
+msgstr "NichtmitgliederWeiblich"
 
 msgid "15. Residents: Not Members: Female"
-msgstr "15. Bewohner: Keine Angehörigen: Weiblich"
+msgstr "15. Bewohner: Nichtmitglieder: Weiblich"
 
 msgid "AbsentMembersMale"
-msgstr "AngehörigeabwesendMännlich"
+msgstr "Abwesende Mitglieder männlich"
 
 msgid "16. Members Absent: Male"
-msgstr "16. Angehörige abwesend: Männlich"
+msgstr "16. Abwesende Mitglieder: Männlich"
 
 msgid "AbsentMembersFemale"
-msgstr "AngehörigeabwesendWeiblich"
+msgstr "Abwesende Mitglieder weiblich"
 
 msgid "17. Members Absent: Female"
-msgstr "17. Angehörige abwesend: Weiblich"
+msgstr "17. Abwesende Mitglieder: Weiblich"
 
 msgid "DeafDumbMale"
 msgstr "TaubStummMännlich"
@@ -4611,13 +4612,13 @@ msgid "21. Blind: Female"
 msgstr "21. Blind: Weiblich"
 
 msgid "LunaticMale"
-msgstr "Geisteskranker"
+msgstr "GeisteskrankMännlich"
 
 msgid "22. Lunatics: Male"
 msgstr "22. Geisteskranke: Männlich"
 
 msgid "LunaticFemale"
-msgstr "Geisteskranke"
+msgstr "GeisteskrankWeiblich"
 
 msgid "23. Lunatics: Female"
 msgstr "23. Geisteskranke: Weiblich"
@@ -4632,19 +4633,19 @@ msgid "ScholarFemale"
 msgstr "SchülerWeiblich"
 
 msgid "25. Attending School: Female"
-msgstr "24. Schulbesuch: Weiblich"
+msgstr "25. Schulbesuch: Weiblich"
 
 msgid "Birth1851Male"
 msgstr "Geburt1851Männlich"
 
 msgid "26. Births During the Year 1851: Male"
-msgstr "26. Geburten im Jahr 1851: männlich"
+msgstr "26. Geburten im Jahr 1851: Männlich"
 
 msgid "Birth1851Female"
 msgstr "Geburt1851Weiblich"
 
 msgid "27. Births During the Year 1851: Female"
-msgstr "27. Geburten im Jahr 1851: weiblich"
+msgstr "27. Geburten im Jahr 1851: Weiblich"
 
 msgid "Death1851Male"
 msgstr "Tod1851Männlich"
@@ -4656,13 +4657,13 @@ msgid "Death1851Female"
 msgstr "Tod1851Weiblich"
 
 msgid "29. Deaths During the Year 1851: Female"
-msgstr "29. Todesfälle im Jahr 1851: weiblich"
+msgstr "29. Todesfälle im Jahr 1851: Weiblich"
 
 msgid "DeathAgeCause"
 msgstr "TodAlterUrsache"
 
 msgid "30. Age and Cause of Deaths"
-msgstr "30. Alter und Todesursache"
+msgstr "30. Alter und Todesursachen"
 
 msgid "Houses"
 msgstr "Häuser"
@@ -4670,26 +4671,26 @@ msgstr "Häuser"
 msgid ""
 "31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
 msgstr ""
-"31. Häuser: Ziegel, Stein, Tragwerk, Baumstamm, Hütte oder andere Arten von "
-"Wohnsitz"
+"31. Häuser: Backstein, Stein, Fachwerk, Blockhaus, Hütte oder andere Arten "
+"von Wohngebäuden"
 
 msgid "HousesStories"
-msgstr "HäuserGeschosse"
+msgstr "HäuserStockwerke"
 
 msgid "32. Houses: No. of Stories"
-msgstr "32. Häuser: Anzahl der Geschosse"
+msgstr "32. Häuser: Anzahl der Stockwerke"
 
 msgid "HousesFamilies"
 msgstr "HäuserFamilien"
 
 msgid "33. No. of Families Occupying"
-msgstr "33. Anzahl Familien belegt"
+msgstr "33. Anzahl der Familien, die dort wohnen"
 
 msgid "HousesVacant"
-msgstr "HäuserFrei"
+msgstr "Leerstehende Häuser"
 
 msgid "34. Houses: Vacant"
-msgstr "34. Häuser: Frei"
+msgstr "34. Häuser: Leerstehend"
 
 msgid "HousesBuilding"
 msgstr "HäuserBau"
@@ -4710,10 +4711,10 @@ msgid "37. Public Buildings"
 msgstr "37. Öffentliche Gebäude"
 
 msgid "WorshipPlaces"
-msgstr "KultOrte"
+msgstr "Gotteshäuser"
 
 msgid "38. Places of Worship"
-msgstr "38. Kultstätten"
+msgstr "38. Gotteshäuser"
 
 msgid "BuisnessInfo"
 msgstr "Geschäftsinformationen"
@@ -4721,20 +4722,20 @@ msgstr "Geschäftsinformationen"
 msgid ""
 "39. Information on Mills, Factories etc., their cost, power, produce, etc."
 msgstr ""
-"39. Informationen über Mühlen, Fabriken usw., deren Kosten, Strom, "
+"39. Informationen über Mühlen, Fabriken usw., ihre Kosten, Leistung, "
 "Produktion usw."
 
 msgid "NumEmployees"
 msgstr "AnzahlMittarbeiter"
 
 msgid "40. Number of Persons Usually Employed Therein"
-msgstr "40. Anzahl der normalerweise dort beschäftigten Personen"
+msgstr "40. Anzahl der dort üblicherweise beschäftigten Personen"
 
 msgid "41. General Remarks of the Enumerator"
-msgstr "41. Allgemeine Bemerkungen des Zählers"
+msgstr "41. Allgemeine Bemerkungen des Erfassers"
 
 msgid "1. Name of Occupier"
-msgstr "1. Name des Besitzers"
+msgstr "1. Name des Nutzers"
 
 msgid "Concession"
 msgstr "Konzession"
@@ -4743,167 +4744,167 @@ msgid "2. Concession or Range"
 msgstr "2. Konzession oder Bereich"
 
 msgid "Lot"
-msgstr "Grundstück"
+msgstr "Los"
 
 msgid "3. Lot or part of Lot"
-msgstr "3. Grundstück oder Teil eines Grundstück"
+msgstr "3. Los oder Teil eines Loses"
 
 msgid "AcresHeld"
 msgstr "AcreGehalten"
 
 msgid "4. Number of Acres of Land: Held by each person or family"
-msgstr "4. Anzahl der Acre Land: von jeder Person oder Familie gehalten"
+msgstr "4. Anzahl der Acre Land: In Besitz von jeder Person oder Familie"
 
 msgid "AcresCultivation"
-msgstr "AcreBearbeitet"
+msgstr "AcresAnbau"
 
 msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr "5. Anzahl der Acre Land: In Bearbeitung"
+msgstr "5. Anzahl der Acres von Land: Anbaufläche"
 
 msgid "AcresCrops"
-msgstr "AcreGeerntet"
+msgstr "AcresKulturpflanzen"
 
 msgid "6. Number of Acres of Land: Under Crops in 1851"
-msgstr "6. Anzahl der Acre Land: 1851 unter Ernte"
+msgstr "6. Anzahl der Acre Land: 1851 unter Kulturpflanzen"
 
 msgid "AcresPasture"
-msgstr "AcreWeideland"
+msgstr "AcresWeide"
 
 msgid "7. Number of Acres of Land: Under Pasture in 1851"
-msgstr "7. Anzahl der Acre Land: 1851 unter Weideland"
+msgstr "7. Anzahl der Acres Land: Weidefläche im Jahr 1851"
 
 msgid "AcresGardens"
-msgstr "AcreGärten"
+msgstr "AcresGärten"
 
 msgid "8. Number of Acres of Land: Gardens or Orchards"
-msgstr "8. Anzahl der Acre Land: Gärten oder Obstgärten"
+msgstr "8. Anzahl der Acres an Land: Gärten oder Obstplantagen"
 
 msgid "AcresWood"
-msgstr "AcreHolz"
+msgstr "AcresWald"
 
 msgid "9. Number of Acres of Land: Under Wood or Wild"
-msgstr "9. Anzahl der Acre Land: Unter Holz oder Wild"
+msgstr "9. Anzahl der Acres an Land: Unter Wald oder Wild"
 
 msgid "WheatAcres"
-msgstr "WeizenAcre"
+msgstr "WeizenAcres"
 
 msgid "10. Wheat: Acres"
-msgstr "10. Weizen: Acre"
+msgstr "10. Weizen: Acres"
 
 msgid "WheatBsh"
-msgstr "WeizenScheffel"
+msgstr "WeizenBushel"
 
 msgid "11. Wheat: Produce Bsh."
-msgstr "11. Weizen: Ertrag Scheffel"
+msgstr "11. Weizen: Ertrag Bushel"
 
 msgid "BarleyAcres"
-msgstr "GersteAcre"
+msgstr "GersteAcres"
 
 msgid "12. Barley: Acres"
-msgstr "12. Gerste: Acre"
+msgstr "12. Gerste: Acres"
 
 msgid "BarleyBsh"
-msgstr "GersteScheffel"
+msgstr "GersteBushel"
 
 msgid "13. Barley: Produce Bsh."
-msgstr "13. Gerste: Ertrag Scheffel"
+msgstr "13. Gerste: Ertrag Bushel"
 
 msgid "RyeAcres"
-msgstr "RoggenAcre"
+msgstr "RoggenAcres"
 
 msgid "14. Rye: Acres"
-msgstr "14. Roggen: Acre"
+msgstr "14. Roggen: Acres"
 
 msgid "RyeBsh"
-msgstr "RoggenScheffel"
+msgstr "RoggenBushel"
 
 msgid "15. Rye: Produce Bsh."
-msgstr "15. Roggen: Ertrag Scheffel"
+msgstr "15. Roggen: Ertrag Bushel"
 
 msgid "PeasAcres"
-msgstr "ErbsenAcre"
+msgstr "ErbsenAcres"
 
 msgid "16. Peas: Acres"
-msgstr "16. Erbsen: Acre"
+msgstr "16. Erbsen: Acres"
 
 msgid "PeasBush"
 msgstr "ErbsenBushel"
 
 msgid "17. Peas: Produce Bsh."
-msgstr "17. Erbsen: Ertrag Scheffel"
+msgstr "17. Erbsen: Ertrag Bushel"
 
 msgid "OatsAcres"
-msgstr "HaferAcre"
+msgstr "HaferAcres"
 
 msgid "18. Oats: Acres"
-msgstr "18. Hafer: Acre"
+msgstr "18. Hafer: Acres"
 
 msgid "OatsBush"
 msgstr "HaferBushel"
 
 msgid "19. Oats: Produce Bsh."
-msgstr "19. Hafer: Ertrag Scheffel"
+msgstr "19. Hafer: Ertrag Bushel"
 
 msgid "BWheatAcres"
-msgstr "BWeizenAcre"
+msgstr "BWeizenAcres"
 
 msgid "20. B.Wheat: Acres"
-msgstr "20. B.Weizen: Acre"
+msgstr "20. B.Weizen: Acres"
 
 msgid "BWheatBush"
 msgstr "BWeizenBushel"
 
 msgid "21. B.Wheat: Produce Bsh."
-msgstr "21. B.Weizen: Ertrag Scheffel"
+msgstr "21. B.Weizen: Ertrag Bushel"
 
 msgid "CornAcres"
-msgstr "MaisAcre"
+msgstr "MaisAcres"
 
 msgid "22. Corn: Acres"
-msgstr "22. Mais: Acre"
+msgstr "22. Mais: Acres"
 
 msgid "CornBush"
 msgstr "MaisBushel"
 
 msgid "23. Corn: Produce Bsh."
-msgstr "23. Mais: Ertrag Scheffel"
+msgstr "23. Mais: Ertrag Bushel"
 
 msgid "PotatoesAcres"
-msgstr "KartoffelnAcre"
+msgstr "KartoffelnAcres"
 
 msgid "24. Potatoes: Acres"
-msgstr "24. Kartoffeln: Acre"
+msgstr "24. Kartoffeln: Acres"
 
 msgid "PotatoesBush"
 msgstr "KartoffelnBushel"
 
 msgid "25. Potatoes: Produce Bsh."
-msgstr "25. Kartoffeln: Ertrag Scheffel"
+msgstr "25. Kartoffeln: Ertrag Bushel"
 
 msgid "TurnipsAcres"
-msgstr "RübenAcre"
+msgstr "RübenAcres"
 
 msgid "26. Turnips: Acres"
-msgstr "26. Rüben: Acre"
+msgstr "26. Rüben: Acres"
 
 msgid "TurnipsBush"
 msgstr "RübenBushel"
 
 msgid "27. Turnips: Produce Bsh."
-msgstr "27. Rüben: Ertrag Scheffel"
+msgstr "27. Rüben: Ertrag Bushel"
 
 msgid "CloverBush"
 msgstr "KleeBushel"
 
 msgid "28. Clover, Timothy or other grass seed - Bsh."
 msgstr ""
-"28. Klee-, Wiesen-Lieschgras/Timotheegras- oder andere Grassamen - Scheffel"
+"28. Klee-, Wiesen-Lieschgras/Timotheegras- oder andere Grassamen - Bushel"
 
 msgid "CarrotsBush"
-msgstr "MöhreBushel"
+msgstr "MöhrenBushel"
 
 msgid "29. Carrots - Bsh."
-msgstr "29. Möhren - Scheffel"
+msgstr "29. Möhren - Bushel"
 
 msgid "MangleWurtzel"
 msgstr "Futterrübe"
@@ -5050,25 +5051,25 @@ msgid "Fish"
 msgstr "Fisch"
 
 msgid "55. Quantity of Fish Cured"
-msgstr "55. Stückzahl Fisch geräuchert"
+msgstr "55. Menge der gepökelten Fische"
 
 msgid "56. Remarks"
 msgstr "56. Bemerkungen"
 
 msgid "2. Profession, trade or occupation"
-msgstr "2. Beruf, Gewerbe oder Beruf"
+msgstr "2. Beruf, Gewerbe oder Beschäftigung"
 
 msgid "Married1851"
 msgstr "Verheiratet1851"
 
 msgid "4. Married during the year"
-msgstr "4. Im Laufe des Jahres verheiratet"
+msgstr "4. Im Laufe des Jahres geheiratet"
 
 msgid "5. Religion"
 msgstr "5. Religion"
 
 msgid "6. Residence, if out of limits"
-msgstr "6. Wohnsitz außerhalb der Grenzen"
+msgstr "6. Wohnsitz, falls außerhalb der Grenzen"
 
 msgid "7. Age next Birthday"
 msgstr "7. Alter am nächsten Geburtstag"
@@ -5083,7 +5084,7 @@ msgid "9. Sex:Female"
 msgstr "9. Geschlecht:Weiblich"
 
 msgid "10. Married or Single"
-msgstr "10. Verheiratet oder Single"
+msgstr "10. Verheiratet oder Ledig"
 
 msgid "Widowers"
 msgstr "Witwer"
@@ -5101,52 +5102,52 @@ msgid "13. Coloured Persons, Mulato or Indians"
 msgstr "13. Farbige Personen, Mulatten oder Indianer"
 
 msgid "MemberMale"
-msgstr "AngehörigerMännlich"
+msgstr "MitgliedMännlich"
 
 msgid "14. Members: Male"
-msgstr "14. Angehörige: Männlich"
+msgstr "14. Mitglieder: Männlich"
 
 msgid "MemberFemale"
-msgstr "AngehörigeWeiblich"
+msgstr "MitgliedWeiblich"
 
 msgid "15. Members: Female"
-msgstr "15. Angehörige: Weiblich"
+msgstr "15. Mitglieder: Weiblich"
 
 msgid "NotMemberMale"
-msgstr "NichtAngehörigerMänlich"
+msgstr "NichtMitgliedMännlich"
 
 msgid "16. Not Members: Male"
-msgstr "16. Nicht Angehörige: Männlich"
+msgstr "16. Keine Mitglieder: Männlich"
 
 msgid "NotMemberFemale"
-msgstr "KeineAngehörigeWeiblich"
+msgstr "NichtMitgliedWeiblich"
 
 msgid "17. Not Members: Female"
-msgstr "17. Keine Angehörigen: Weiblich"
+msgstr "17. Keine Mitglieder: Weiblich"
 
 msgid "MemberAbsentMale"
-msgstr "AngehörigerAbwesendMännlich"
+msgstr "MitgliedAbwesendMännlich"
 
 msgid "18. Members Absent: Male"
-msgstr "18. Angehöriger Abwesend: Männlich"
+msgstr "18. Abwesende Mitglieder: Männlich"
 
 msgid "MemberAbsentFemale"
-msgstr "AngehörigeAbwesendWeiblich"
+msgstr "MitgliedAbwesendWeiblich"
 
 msgid "19. Members Absent: Female"
-msgstr "19. Angehöriger Abwesend: Weiblich"
+msgstr "19. Abwesende Mitglieder: Weiblich"
 
 msgid "DeafDumb"
 msgstr "TaubStumm"
 
 msgid "20. Deaf and Dumb"
-msgstr "20. Taub und Stumm: Männlich"
+msgstr "20. Taubstumm"
 
 msgid "21. Blind"
 msgstr "21. Blind"
 
 msgid "Lunatic"
-msgstr "Geisteskranke"
+msgstr "Geisteskrank"
 
 msgid "22. Lunatics or Idiots"
 msgstr "22. Geisteskranke oder Idioten"
@@ -5197,19 +5198,19 @@ msgid "31. Age and cause of death"
 msgstr "31. Alter und Todesursache"
 
 msgid "32. Houses: Brick, Stone, Frame, Log, etc."
-msgstr "32. Häuser: Ziegel, Stein, Tragwerk, Baumstamm, usw."
+msgstr "32. Häuser: Ziegel, Stein, Holzrahmen, Blockbauweise usw."
 
 msgid "33. Houses: No. of Stories"
-msgstr "33. Häuser: Anzahl der Geschosse"
+msgstr "33. Häuser: Anzahl der Stockwerke"
 
 msgid "34. Houses: No. of families living in the house"
-msgstr "34. Häuser: Anzahl der im Haus lebenden Familien"
+msgstr "34. Häuser: Anzahl der Familien, die in dem Haus leben"
 
 msgid "35. Houses: Vacant"
-msgstr "35. Häuser: Frei"
+msgstr "35. Häuser: Leerstehend"
 
 msgid "HouseBeingBuilt"
-msgstr "HäuserWerdenGebaut"
+msgstr "Haus im Bau"
 
 msgid "36. Houses: Being built"
 msgstr "36. Häuser: Im Bau"
@@ -5218,25 +5219,25 @@ msgid "SubDistrict"
 msgstr "Unterbezirk"
 
 msgid "Vessels"
-msgstr "Wasserfahrzeuge"
+msgstr "Boote"
 
 msgid "1. Vessels"
-msgstr "1. Wasserfahrzeuge"
+msgstr "1. Boote"
 
 msgid "Shanties"
-msgstr "Baracken"
+msgstr "Hütten"
 
 msgid "2. Shanties"
-msgstr "2. Baracken"
+msgstr "2. Hütten"
 
 msgid "HousesBeingBuilt"
-msgstr "HäuserWerdenGebaut"
+msgstr "Häuser im Bau"
 
 msgid "3. Dwelling houses in construction"
 msgstr "3. Wohnhäuser im Bau"
 
 msgid "4. Dwelling houses unoccupied"
-msgstr "4. Wohnhäuser unbewohnt"
+msgstr "4. Leerstehende Wohnhäuser"
 
 msgid "HousesInhabited"
 msgstr "HäuserBewohnt"
@@ -5260,10 +5261,10 @@ msgid "Birth1871"
 msgstr "Geburt1871"
 
 msgid "10. Born within last twelve months"
-msgstr "10. Innerhalb der letzten zwölf Monaten geboren"
+msgstr "10. Geboren innerhalb der letzten zwölf Monate"
 
 msgid "11. Country or Province of Birth"
-msgstr "11. Land oder Provinz der Geburt"
+msgstr "11. Geburtsland oder -provinz"
 
 msgid "12. Religion"
 msgstr "12. Religion"
@@ -5278,10 +5279,10 @@ msgid "15. Married or Widowed"
 msgstr "15. Verheiratet oder verwitwet"
 
 msgid "Maried1871"
-msgstr "Verheiratet1871"
+msgstr "Heiratete 1871"
 
 msgid "16. Married within last twelve months"
-msgstr "16. Verheiratet innerhalb der letzten zwölf Monate"
+msgstr "16. Innerhalb der letzten zwölf Monate geheiratet"
 
 msgid "Scholar"
 msgstr "Schüler"
@@ -5302,19 +5303,19 @@ msgid "19. Over 20 unable to write"
 msgstr "19. Über 20 kann nicht schreiben"
 
 msgid "22. Unsound mind"
-msgstr "22. ungesunder Geist"
+msgstr "22. Geisteskrankheit"
 
 msgid "23. Date of Operations and Remarks"
-msgstr "23. Betriebsdatum und Bemerkungen"
+msgstr "23. Datum der Operationen und Bemerkungen"
 
 msgid "3. Houses in construction"
 msgstr "3. Häuser im Bau"
 
 msgid "4. Houses unoccupied"
-msgstr "4. Häuser unbewohnt"
+msgstr "4. Leerstehende Häuser"
 
 msgid "5. Houses inhabited"
-msgstr "5. Häuser bewohnt"
+msgstr "5. Bewohnte Häuser"
 
 msgid "6. Families"
 msgstr "6. Familien"
@@ -5326,7 +5327,7 @@ msgid "16. Going to school"
 msgstr "16. Geht zur Schule"
 
 msgid "17. Deaf and Dumb"
-msgstr "17. Taub und stumm: Männlich"
+msgstr "17. Taubstumm"
 
 msgid "18. Blind"
 msgstr "18. Blind"
@@ -5335,19 +5336,19 @@ msgid "19. Unsound mind"
 msgstr "19. ungesunder Geist"
 
 msgid "20. Date of Operations and Remarks"
-msgstr "20. Betriebsdatum und Bemerkungen"
+msgstr "20. Datum der Operationen und Bemerkungen"
 
 msgid "1. Vessels and Shanties"
-msgstr "1. Wasserfahrzeuge und Baracken"
+msgstr "1. Boote und Hütten"
 
 msgid "2. Houses in construction"
 msgstr "2. Häuser im Bau"
 
 msgid "3. Houses unoccupied"
-msgstr "3. Häuser unbewohnt"
+msgstr "3. Leerstehende Häuser"
 
 msgid "4. Houses inhabited"
-msgstr "4. Häuser bewohnt"
+msgstr "4. Bewohnte Häuser"
 
 msgid "5. Families"
 msgstr "5. Familien"
@@ -5365,7 +5366,7 @@ msgid "9. Married or Widowed"
 msgstr "9. Verheiratet oder verwitwet"
 
 msgid "10. Relationship to Head of Family"
-msgstr "10. Beziehung zum Kopf des Hauses"
+msgstr "10. Beziehung zum Familienoberhaupt"
 
 msgid "12. FrenchCanadian"
 msgstr "12. Frankokanadier(in)"
@@ -5395,7 +5396,7 @@ msgid "Employee"
 msgstr "Angestellter"
 
 msgid "18. Wage Earner"
-msgstr "18. Lohnabhängiger"
+msgstr "18. Lohnempfänger"
 
 msgid "Unemployed"
 msgstr "Arbeitslos"
@@ -5404,18 +5405,18 @@ msgid "19. Unemployed during week preceding Census"
 msgstr "19. Arbeitslos in der Woche vor der Volkszählung"
 
 msgid "Employees"
-msgstr "Arbeitnehmer"
+msgstr "Mitarbeiter"
 
 msgid "20. Employer to state average number of hands employed during year"
 msgstr ""
-"20. Arbeitgeber, um die durchschnittliche Anzahl der im Jahr beschäftigten "
-"Hände anzugeben"
+"20. Der Arbeitgeber hat die durchschnittliche Anzahl der im Laufe des Jahres "
+"beschäftigten Arbeitskräfte anzugeben"
 
 msgid "CanRead"
 msgstr "KannLesen"
 
 msgid "21. Instruction: Read"
-msgstr "21. Anleitung: Lesen"
+msgstr "21. Anweisung: Lesen"
 
 msgid "CanWrite"
 msgstr "KannSchreiben"
@@ -5424,13 +5425,13 @@ msgid "22. Instruction: Write"
 msgstr "22. Anweisung: Schreiben"
 
 msgid "23. Deaf and Dumb"
-msgstr "23. Taub und stumm: Männlich"
+msgstr "23. Taubstumm"
 
 msgid "24. Blind"
 msgstr "24. Blind"
 
 msgid "25. Unsound mind"
-msgstr "25. ungesunder Geist"
+msgstr "25. Geisteskrankheit"
 
 msgid "SubTitle"
 msgstr "Untertitel"
@@ -5454,22 +5455,23 @@ msgid "4. Sex"
 msgstr "4. Geschlecht"
 
 msgid "Colour"
-msgstr "Hautfarbe"
+msgstr "Farbe"
 
 msgid "5. Colour"
-msgstr "5. Hautfarbe"
+msgstr "5. Farbe"
 
 msgid "6. Relation to head of family"
 msgstr "6. Beziehung zum Familienoberhaupt"
 
 msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr "7. Single, verheiratet, verwitwet, geschieden oder rechtlich getrennt"
+msgstr ""
+"7. Ledig, verheiratet, verwitwet, geschieden oder rechtlich getrennt lebend"
 
 msgid "BirthMonth"
 msgstr "Geburtsmonat"
 
 msgid "8. Month and Date of Birth"
-msgstr "8. Monat und Geburtsdatum"
+msgstr "8. Geburtsmonat und -tag"
 
 msgid "BirthYear"
 msgstr "Geburtsjahr"
@@ -5481,16 +5483,18 @@ msgid "10. Age at last birthday"
 msgstr "10. Alter am letzten Geburtstag"
 
 msgid "11. Country or place of birth"
-msgstr "11. Land oder Ort der Geburt"
+msgstr "11. Geburtsland oder -ort"
 
 msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr "12. Jahr der Einwanderung nach Kanada, wenn Einwanderer"
+msgstr ""
+"12. Jahr der Einwanderung nach Kanada, falls es sich um einen Einwanderer "
+"handelt"
 
 msgid "13. Year of naturalization, if formerly an alien"
-msgstr "13. Jahr der Einbürgerung, wenn vorher Ausländer"
+msgstr "13. Jahr der Einbürgerung, falls zuvor Ausländer"
 
 msgid "14. Racial or tribal origin"
-msgstr "14. Herkunfts Rasse oder Stamm"
+msgstr "14. Rasse oder Stammeszugehörigkeit"
 
 msgid "15. Nationality"
 msgstr "15. Nationalität"
@@ -5505,13 +5509,13 @@ msgid "OwnMeans"
 msgstr "EigeneMittel"
 
 msgid "18. Living on own means"
-msgstr "18. Aus eigenen Mitteln leben"
+msgstr "18. Von eigenen Mitteln leben"
 
 msgid "19. Employer"
 msgstr "19. Arbeitgeber"
 
 msgid "20. Employee"
-msgstr "20. Angestellter"
+msgstr "20. Mitarbeiter"
 
 msgid "SelfEmployed"
 msgstr "Selbstständig"
@@ -5520,42 +5524,44 @@ msgid "21. Working on own account"
 msgstr "21. Auf eigene Rechnung arbeiten"
 
 msgid "WhereEmployed"
-msgstr "WoBeschäftigt"
+msgstr "Beschäftigungsort"
 
 msgid "22. Working at trade in factory or in home"
-msgstr "22. Arbeiten im Handel in der Fabrik oder zu Hause"
+msgstr "22. Arbeit in der Industrie oder zu Hause"
 
 msgid "MonthsFactory"
 msgstr "MonateFabrik"
 
 msgid "23. Months employed at trade in factory"
-msgstr "23. Monate im Handel in der Fabrik beschäftigt"
+msgstr "23. Monate, in denen in der Fabrik gearbeitet wurde"
 
 msgid "MonthsHome"
-msgstr "MonateZuHause"
+msgstr "MonateZuhause"
 
 msgid "24. Months employed at trade in home"
 msgstr "24. Monate im Handel zu Hause beschäftigt"
 
 msgid "MonthsOther"
-msgstr "MonateAndrers"
+msgstr "MonateAndrere"
 
 msgid "25. Months employed in other occupation than trace in factory or home"
 msgstr ""
-"25. Monate, die in einem anderen Beruf als der Aufzeichnung in der Fabrik "
-"oder zu Hause beschäftigt sind"
+"25. Monate, in denen eine andere Tätigkeit als die Arbeit in der Fabrik oder "
+"zu Hause ausgeübt wurde"
 
 msgid "EarningsOccupation"
-msgstr "EinnahmenBeruf"
+msgstr "EinkommenBeruf"
 
 msgid "26. Earnings from occupation or trade"
-msgstr "26. Einnahmen aus Beruf oder Handel"
+msgstr "26. Einkünfte aus Beruf oder Gewerbe"
 
 msgid "EarningsOther"
-msgstr "EinnahmenAndere"
+msgstr "ErträgeSonstige"
 
 msgid "27. Extra earning (From other than chief occupation or trade)"
-msgstr "27. Zusätzliches Einkommen (aus anderen als Hauptberuf oder Gewerbe)"
+msgstr ""
+"27. Zusatzeinkommen (aus anderen Tätigkeiten als der Hauptbeschäftigung oder "
+"dem Hauptberuf)"
 
 msgid "SchoolMonths"
 msgstr "SchuleMonate"
@@ -5585,28 +5591,28 @@ msgid "33. Mother tongue (If spoken)"
 msgstr "33. Muttersprache (falls gesprochen)"
 
 msgid "Infirmities"
-msgstr "Schwächen"
+msgstr "Gebrechen"
 
 msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr "34. Gebrechen: a. Taub und Stumm; b. Blind; c. Ungesunder Geist"
+msgstr "34. Gebrechen: a. Taubstumm; b. Blind; c. Geisteskrank"
 
 msgid "Name from Schedule 1"
-msgstr "Name aus Verzeichnis 1"
+msgstr "Name aus Liste 1"
 
 msgid "Line on Schedule 2"
-msgstr "Zeile in Verzeichnis 2"
+msgstr "Zeile in Liste 2"
 
 msgid "PageRef"
-msgstr "Seitenangabe"
+msgstr "Seitenverweis"
 
 msgid "2. Page from Schedule 1"
-msgstr "2. Seite von Verzeichnis 1"
+msgstr "2. Seite von Liste 1"
 
 msgid "LineRef"
-msgstr "Zeilenangabe"
+msgstr "Zeilenreferenz"
 
 msgid "3. Line from Schedule 1"
-msgstr "3. Zeile von Verzeichnis 1"
+msgstr "3. Zeile von Liste 1"
 
 msgid "3. Place of Habitation"
 msgstr "3. Wohnort"
@@ -5618,13 +5624,13 @@ msgid "4. Houses: In construction"
 msgstr "4. Häuser: Im Bau"
 
 msgid "5. Houses: Vacant"
-msgstr "5. Häuser: Frei"
+msgstr "5. Häuser: Leerstehend"
 
 msgid "6. Houses: Inhabited"
 msgstr "6. Häuser: Bewohnt"
 
 msgid "7. Institution: Special or legal name"
-msgstr "7. Einrichtung: Spezieller oder gesetzlicher Name"
+msgstr "7. Einrichtung: Spezielle oder rechtliche Bezeichnung"
 
 msgid "Buildings"
 msgstr "Gebäude"
@@ -5639,7 +5645,7 @@ msgid "Rooms"
 msgstr "Räume"
 
 msgid "10. Number of rooms in house or institution for each famiy"
-msgstr "10. Anzahl der Räume im Haus oder Einrichtung für jede Familie"
+msgstr "10. Anzahl der Zimmer im Haus oder in der Einrichtung für jede Familie"
 
 msgid "Inmates"
 msgstr "Insassen"
@@ -5654,35 +5660,36 @@ msgid "12. Real Estate Owned: Grand total of acres"
 msgstr "12. Eigene Grundbesitz: Gesamtzahl der Acre"
 
 msgid "OwnedLots"
-msgstr "EigentumAnteile"
+msgstr "EigentumGrundstücke"
 
 msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr "13. Immobilienbesitz: Anzahl der Stadt- oder Dorfgrundstücke"
+msgstr "13. Immobilienbesitz: Anzahl der Grundstücke in Städten oder Dörfern"
 
 msgid "OwnedHouses"
 msgstr "EigentumHäuser"
 
 msgid "14. Real Estate Owned: Number of dwelling houses"
-msgstr "1. Immobilienbesitz: Anzahl der Wohnhäuser"
+msgstr "14. Immobilienbesitz: Anzahl der Wohnhäuser"
 
 msgid "OwnedStores"
 msgstr "EigentumGeschäfte"
 
 msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr "Immobilien Eigentum: Anzahl der Geschäfte, Lager usw."
+msgstr "15. Immobilienbesitz: Anzahl der Geschäfte, Lagerhäuser usw."
 
 msgid "OwnedBars"
 msgstr "EigentumScheunen"
 
 msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
 msgstr ""
-"16. Immobilienbesitz: Anzahl der Scheunen, Ställe und anderen Nebengebäude"
+"16. Immobilienbesitz: Anzahl der Scheunen, Ställe und anderer Nebengebäude"
 
 msgid "OwnedSilos"
 msgstr "EigentumSilos"
 
 msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr "17. Immobilienbesitz: Anzahl der Silos und Kapazität in Kubikfuß"
+msgstr ""
+"17. Immobilienbesitz: Anzahl der Silos und Fassungsvermögen in Kubikfuß"
 
 msgid "OwnedFactories"
 msgstr "EigentumFabriken"
@@ -5697,75 +5704,77 @@ msgid "19. Real Estate Leased: Grand total of acres"
 msgstr "19. Gepachteter Grundbesitz: Gesamtzahl der Acre"
 
 msgid "LeasedLots"
-msgstr "GepachtetAnteile"
+msgstr "GepachtetGrundstücke"
 
 msgid "20. Real Estate Leased: Number of town or village lots"
-msgstr "20. Immobilien Gepachtet: Anzahl der Stadt- oder Dorfgrundstücke"
+msgstr ""
+"20. Gepachtete Immobilien: Anzahl der Grundstücke in Städten oder Dörfern"
 
 msgid "LeasedHouses"
 msgstr "GepachtetHäuser"
 
 msgid "21. Real Estate Leased: Number of dwelling houses"
-msgstr "21. Immobilien Gemietet: Anzahl der Wohnhäuser"
+msgstr "21. Gepachtete Immobilien: Anzahl der Wohnhäuser"
 
 msgid "LeasedStores"
 msgstr "GepachtetGeschäfte"
 
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr "Immobilien Gepachtet: Anzahl der Geschäfte, Lager usw."
+msgstr "22. Gepachtete Immobilien: Anzahl der Geschäfte, Lagerhäuser usw."
 
 msgid "LeasedBarns"
 msgstr "GepachtetScheunen"
 
 msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
 msgstr ""
-"23. Immobilien Gepachtet: Anzahl der Scheunen, Ställe und anderen "
+"23. Gepachtete Immobilien: Anzahl der Scheunen, Ställe und sonstigen "
 "Nebengebäude"
 
 msgid "LeasedSilos"
-msgstr "GepachteteSpeicher"
+msgstr "GepachteteSilos"
 
 msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
-msgstr "24. Immobilien Gepachtet: Anzahl der Silos und Kapazität in Kubikfuß"
+msgstr ""
+"24. Gepachtete Immobilien: Anzahl der Silos und Fassungsvermögen in Kubikfuß"
 
 msgid "LeasedFactories"
 msgstr "GepachtetFabriken"
 
 msgid "25. Real Estate Leased: Number of manufacturing establishments"
-msgstr "25. Immobilien Gepachtet: Anzahl der Produktionsstätten"
+msgstr "25. Gepachtete Immobilien: Anzahl der Produktionsstätten"
 
 msgid "Denomination"
 msgstr "Konfession"
 
 msgid "26. Church or place of worship: Religious denomination"
-msgstr "26. Kirche oder Kultstätte: Religiöse Konfession"
+msgstr "26. Kirche oder Gebetsstätte: Religionszugehörigkeit"
 
 msgid "Communicants"
-msgstr "Abendmahlsgänger"
+msgstr "Gemeindemitglieder"
 
 msgid "27. Church or place of worship: Number of communicants"
-msgstr "27. Kirche oder Kultstätte: Anzahl der Abendmahlsgänger"
+msgstr "27. Kirche oder Gebetsstätte: Anzahl der Gemeindemitglieder"
 
 msgid "Seating"
-msgstr "Bestuhlung"
+msgstr "Sitzplätze"
 
 msgid "28. Church or place of worship: Seating capacity"
-msgstr "28. Kirche oder Kultstätte: Sitzplatzkapazität"
+msgstr "28. Kirche oder Gebetsstätte: Sitzplatzkapazität"
 
 msgid "SSDenomination"
 msgstr "SoScKonfession"
 
 msgid "29. Sunday School: Religious Denomination"
-msgstr "29. Sonntagsschule: Religiöse Konfession"
+msgstr "29. Sonntagsschule: Konfession"
 
 msgid "SSTeachers"
 msgstr "SoScLehrer"
 
 msgid "30. Sunday School: Number of officers and teachers"
-msgstr "30. Sonntagsschule: Anzahl der Vorstände und Lehrer"
+msgstr "30. Sonntagsschule: Anzahl der Amtsträger und Lehrer"
 
 msgid "SSScholars"
-msgstr "SSSchüler"
+msgstr "SoScSchüler"
 
 msgid "31. Sunday School: Number of Scholars"
 msgstr "31. Sonntagsschule: Anzahl der Schüler"
@@ -5798,7 +5807,7 @@ msgid "Reason"
 msgstr "Grund"
 
 msgid "36. The reason, if not enumerated on first visit"
-msgstr "36. Der Grund, falls nicht beim ersten Besuch aufgezählt"
+msgstr "36. Der Grund, falls er beim ersten Besuch nicht aufgeführt wurde"
 
 msgid "DateEnum"
 msgstr "DatumZählung"
@@ -5822,7 +5831,7 @@ msgid "6. Age"
 msgstr "6. Alter"
 
 msgid "7. Country or place of birth"
-msgstr "7. Land oder Geburtsort"
+msgstr "7. Geburtsland oder -ort"
 
 msgid "8. Year of immigration to Canada"
 msgstr "8. Jahr der Einwanderung nach Kanada"
@@ -5831,7 +5840,7 @@ msgid "PostOffice"
 msgstr "Postamt"
 
 msgid "9. Post office address"
-msgstr "9. Postanschrift"
+msgstr "9. Anschrift der Poststelle"
 
 msgid "10. Location: Section"
 msgstr "10. Ort: Abschnitt"
@@ -5849,7 +5858,7 @@ msgid "13. Location: Meridian"
 msgstr "13. Ort: Meridian"
 
 msgid "14. Livestock: Horses, all ages"
-msgstr "14. Nutztiere: Pferde, jeden Alters"
+msgstr "14. Nutztiere: Pferde, jedes Alter"
 
 msgid "Cows"
 msgstr "Kühe"
@@ -5858,13 +5867,13 @@ msgid "15. Livestock: Milch cows"
 msgstr "15. Nutztiere: Milchkühe"
 
 msgid "16. Other horned or meat cattle, all ages"
-msgstr "16. Andere gehörnte oder Fleischrinder jeden Alters"
+msgstr "16. Sonstige Horn- oder Fleischrinder, jedes Alter"
 
 msgid "17. Sheep and lambs, all ages"
-msgstr "17. Schafe und Lämmer, jeden Alters"
+msgstr "17. Schafe und Lämmer, jedes Alter"
 
 msgid "18. Hogs and pigs, all ages"
-msgstr "18. Ferkel und Schweine, jeden Alters"
+msgstr "18. Schweine und Ferkel, jedes Alter"
 
 msgid "4. Place of habitation"
 msgstr "4. Wohnort"
@@ -5876,59 +5885,63 @@ msgid "8. Month of birth"
 msgstr "8. Geburtsmonat"
 
 msgid "16. Chief occupation or trade"
-msgstr "16. Hauptbeschäftigung oder Handel"
+msgstr "16. Hauptberuf oder Haupttätigkeit"
 
 msgid "OtherEmployment"
-msgstr "AndereBeschäftigung"
+msgstr "SonstigeBeschäftigung"
 
 msgid "18. Employment other than at chief trade or occupation, if any"
 msgstr ""
-"18. Andere Beschäftigung als bei Hauptbeschäftigung oder Gewerbe, falls "
+"18. Sonstige Beschäftigung neben der hauptberuflichen Tätigkeit, falls "
 "vorhanden"
 
 msgid "22. State where person employed"
-msgstr "22. Staat wo die Person beschäftigt ist"
+msgstr "22. Staat, in dem die Person beschäftigt ist"
 
 msgid "WeeksOccupation"
-msgstr "WochenBeschäftigt"
+msgstr "Arbeitwochen"
 
 msgid "23. Weeks employed in 1910 at chief occupation or trade"
-msgstr "23. Wochen 1910 bei Hauptbeschäftigung oder Gewerbe beschäftigt"
+msgstr ""
+"23. Wochen, die 1910 in der Hauptbeschäftigung oder im Hauptberuf gearbeitet "
+"wurden"
 
 msgid "WeeksOther"
-msgstr "WochenAndere"
+msgstr "WochenSonstige"
 
 msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
-msgstr "24. Wochen 1910 nicht in der Hauptbeschäftigung oder im Handel tätig"
+msgstr ""
+"24. Wochen, die 1910 in anderen Berufen als dem Hauptberuf oder Gewerbe "
+"gearbeitet wurden"
 
 msgid "HoursOccupation"
-msgstr "StundenBeschäftigt"
+msgstr "StundenBeschäftigung"
 
 msgid "25. Hours of working time per week at chief occupation"
-msgstr "25. Arbeitsstunden pro Woche bei Hauptbeschäftigung"
+msgstr "25. Wochenarbeitszeit in der Hauptbeschäftigung"
 
 msgid "HoursOther"
-msgstr "StundenAndere"
+msgstr "StundenSonstiges"
 
 msgid "26. Hours of working time per week at other occupation, if any"
-msgstr "26. Arbeitsstunden pro Woche in einem anderen Beruf, falls vorhanden"
+msgstr "26. Wochenarbeitszeit in einer anderen Beschäftigung, falls vorhanden"
 
 msgid "27. Total earnings in 1910 from chief occupation or trade"
-msgstr "27. Gesamteinkommen 1910 aus Hauptbeschäftigung oder Gewerbe"
+msgstr "27. Gesamteinkünfte im Jahr 1910 aus Hauptberuf oder Gewerbe"
 
 msgid "28. Total earnings in 1910 from other than chief occupation or trade"
 msgstr ""
-"28. Gesamteinkommen im Jahr 1910 aus anderen als Hauptbeschäftigung oder "
-"Handel"
+"28. Gesamteinkünfte im Jahr 1910 aus anderen Tätigkeiten als der "
+"Hauptbeschäftigung oder dem Hauptberuf"
 
 msgid "Wages"
-msgstr "Lohn"
+msgstr "Löhne"
 
 msgid "29. Rate of earnings per hour when employed by the hour-Cents"
-msgstr "29. Verdienst pro Stunde bei Anstellung bei den Stunden-Cent"
+msgstr "29. Stundenlohn bei stundenweiser Beschäftigung – Cent"
 
 msgid "InsuranceLife"
-msgstr "Lebensversichwerung"
+msgstr "Lebensversicherung"
 
 msgid "30. Insurance: Upon life"
 msgstr "30. Versicherung: Lebensversicherung"
@@ -5943,7 +5956,7 @@ msgid "InsuranceCost"
 msgstr "Versicherungskosten"
 
 msgid "32. Insurance: Cost of insurance in census year"
-msgstr "32. Versicherung: Versicherungskosten im Volkszählungsjahr"
+msgstr "32. Versicherung: Versicherungskosten im Erhebungsjahr"
 
 msgid "33. Months at school in 1910"
 msgstr "33. Monate in der Schule im Jahr 1910"
@@ -5964,20 +5977,20 @@ msgid ""
 "37. Cost of education in 1910 for persons over 16 years of age at College, "
 "Convent or University"
 msgstr ""
-"37. Bildungskosten im Jahr 1910 für Personen über 16 Jahre am College, "
-"Kloster oder an der Universität"
+"37. Kosten für die Ausbildung im Jahr 1910 für Personen über 16 Jahre an "
+"Hochschulen, Klosterschulen oder Universitäten"
 
 msgid "38. Blind"
 msgstr "38. Blind"
 
 msgid "39. Deaf and dumb"
-msgstr "39. Taub und stumm: Männlich"
+msgstr "39. Taubstumm"
 
 msgid "40. Crazy or lunatic"
-msgstr "40. Verrückt oder Wahnsinnig"
+msgstr "40. Verrückt oder wahnsinnig"
 
 msgid "41. Idiotic or silly"
-msgstr "41. Idiotisch oder Dumm"
+msgstr "41. Schwachsinnig oder dumm"
 
 msgid "1. House"
 msgstr "1. Haus"
@@ -6001,7 +6014,8 @@ msgid "5. Relation to head of family"
 msgstr "5. Beziehung zum Familienoberhaupt"
 
 msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr "6. Single, verheiratet, verwitwet, geschieden oder rechtlich getrennt"
+msgstr ""
+"6. Ledig, verheiratet, verwitwet, geschieden oder rechtlich getrennt lebend"
 
 msgid "7. Month of birth"
 msgstr "7. Geburtsmonat"
@@ -6010,16 +6024,16 @@ msgid "8. Age at last birthday"
 msgstr "8. Alter am letzten Geburtstag"
 
 msgid "9. Country or place of birth"
-msgstr "9. Land oder Geburtsort"
+msgstr "9. Geburtsland oder -ort"
 
 msgid "10. Racial or tribal origin"
-msgstr "10. Herkunfts Rasse oder Stamm"
+msgstr "10. Rasse oder Stammeszugehörigkeit"
 
 msgid "11. Religion"
 msgstr "11. Religion"
 
 msgid "12. Months at school in 1910"
-msgstr "12. Monate in der Schule in 1910"
+msgstr "12. Monate in der Schule im Jahr 1910"
 
 msgid "13. Can Read"
 msgstr "13. Kann lesen"
@@ -6028,14 +6042,14 @@ msgid "14. Can Write"
 msgstr "14. Kann schreiben"
 
 msgid "15. Language commonly spoken"
-msgstr "15. Gewöhnlich gesprochene Sprache"
+msgstr "15. Allgemein gesprochene Sprache"
 
 msgid ""
 "16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
 "lunatic"
 msgstr ""
-"16. Gebrechen: a. blind; b. Taub und Stumm; c. idotisch oder albern; d. "
-"verrückt oderWahnsinnige"
+"16. Gebrechen: a. blind; b. taubstumm; c. schwachsinnig oder dumm; d. "
+"verrückt oder wahnsinnig"
 
 msgid "1. Dwelling House"
 msgstr "1. Wohnhaus"
@@ -6044,7 +6058,8 @@ msgid "2. Family, Household or Institution"
 msgstr "2. Familie, Haushalt oder Einrichtung"
 
 msgid "3. Name of each person in family, household or institution"
-msgstr "3. Name jeder Person in Familie, Haushalt oder Einrichtung"
+msgstr ""
+"3. Name jeder Person in der Familie, im Haushalt oder in der Einrichtung"
 
 msgid "MilitaryService"
 msgstr "Militärdienst"
@@ -6071,13 +6086,14 @@ msgid "10. Sex"
 msgstr "10. Geschlecht"
 
 msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr "11. Ledig, verheiratet, verwitwet, geschieden oder juristisch getrennt"
+msgstr ""
+"11. Ledig, verheiratet, verwitwet, geschieden oder rechtlich getrennt lebend"
 
 msgid "12. Age at last birthday"
 msgstr "12. Alter am letzten Geburtstag"
 
 msgid "13. Country or place of birth"
-msgstr "13. Land oder Ort der Geburt"
+msgstr "13. Geburtsland oder -ort"
 
 msgid "14. Religion"
 msgstr "14. Religion"
@@ -6092,13 +6108,13 @@ msgid "17. Nationality"
 msgstr "17. Nationalität"
 
 msgid "18. Race or tribal origin"
-msgstr "18. Rasse oder Stammesherkunft"
+msgstr "18. Rasse oder Stammeszugehörigkeit"
 
 msgid "19. Can speak English"
-msgstr "1. Kann Englisch sprechen"
+msgstr "19. Kann Englisch sprechen"
 
 msgid "20. Can speak French"
-msgstr "2. Kann Französisch sprechen"
+msgstr "20. Kann Französisch sprechen"
 
 msgid "OtherLanguage"
 msgstr "AndereSprache"
@@ -6113,16 +6129,16 @@ msgid "23. Can Write"
 msgstr "23. Kann schreiben"
 
 msgid "24. Chief occupation or trade"
-msgstr "24. Hauptbeschäftigung oder Handel"
+msgstr "24. Hauptberuf oder Haupttätigkeit"
 
 msgid "25. Employer, \"E\", Employee, \"W\""
-msgstr "25. Arbeitgeber, \"E\", Arbeitnehmer, \"W\""
+msgstr "25. Arbeitgeber, „E“, Arbeitnehmer, „W“"
 
 msgid "EmploymentPlace"
-msgstr "Arbeitsort"
+msgstr "Arbeitsplatz"
 
 msgid "26. State where person is employed"
-msgstr "26. Staat wo die Person beschäftigt ist"
+msgstr "26. Bundesland, in dem die Person beschäftigt ist"
 
 msgid "Can read and write"
 msgstr "Kann lesen und schreiben"

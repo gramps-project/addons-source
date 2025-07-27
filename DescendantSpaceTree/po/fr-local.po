@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-16 17:49-0600\n"
-"PO-Revision-Date: 2025-06-19 15:37+0000\n"
+"PO-Revision-Date: 2025-07-26 15:44+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "Ligne patriarcale (ancêtre masculin)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "Ligne matriarcale (ancêtre féminin)"
+
+msgid "Dark theme"
+msgstr "Thème sombre"
+
+msgid "Light theme"
+msgstr "Thème clair"
+
+msgid "Continue Descendant Tree"
+msgstr "Continuer l'Arbre Descendant"
+
+msgid "Alternate Descendant Tree"
+msgstr "Arbre Descendant alternatif"
+
+msgid "Descendant SpaceTree"
+msgstr "Arbre descendant spatial"
 
 msgid "Total descendants"
 msgstr "Total de descendants"
@@ -24,11 +45,75 @@ msgid "Invalid Destination Directory"
 msgstr "Dossier de destination invalide"
 
 #, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"Le dossier de destination %s n'existe pas.\n"
+"Voulez-vous essayer de le créer ?"
+
+#, python-format
 msgid "Failed to create %s: %s"
 msgstr "Échec à a création de %s : %s"
 
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "Impossible de lire le fichier proto %s : %s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"Le fichier de destination %s existe déjà.\n"
+"Voulez-vous le remplacer ?"
+
+msgid "Failed writing file: "
+msgstr "Échec d'écriture du fichier : "
+
 msgid "Descendants of"
 msgstr "Descendants de"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "Comment utiliser l'Arbre Spatial Descendant"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"Pour la meilleure expérience de visualisation, maximisez la fenêtre de votre "
+"navigateur pour utiliser l'écran entier.   Un redimensionnement "
+"réinitialisera le graphique à la personne centrale."
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr ""
+"Cliquez sur un noeud pour se concentrer sur un descendant et afficher les "
+"enfants."
+
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr ""
+"Cliquez et faites glisser n'importe où sur le graphe pour positionner "
+"l'arbre descendant."
+
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr ""
+"Cliquez sur le bouton de réinitialisation ___HELP_RESET_BUTTON___ pour "
+"revenir au descendant de départ."
+
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+"Rechercher une personne en tapant dans la boîte de recherche.  Au moins "
+"trois caractères sont nécessaires pour rechercher.  Cliquez sur l'une des "
+"suggestions pour naviguer rapidement vers cette personne.  Une personne peut "
+"apparaître plus d'une fois dans une recherche, un signe plus (+) après le "
+"nom indique que cette personne apparaît comme conjoint."
 
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
@@ -85,8 +170,39 @@ msgstr "Rechercher. . ."
 msgid "Include Generations"
 msgstr "Inclure les générations"
 
+msgid "Branch to expand when duplicated"
+msgstr "Branche à développer quand il y a doublon"
+
+msgid ""
+"When a descendant appears more than once, prefer the selected lineage to "
+"expand descendancy line"
+msgstr ""
+"Lorsqu'un descendant apparaît plus d'une fois, préférer la ligne choisie "
+"pour étendre la ligne de descendance"
+
+msgid "Maximum display birth year"
+msgstr "Année de naissance maximale à afficher"
+
+msgid "Birth/date dates will not be displayed after this year"
+msgstr "Les dates ne seront pas affichées après cette année de naissance"
+
+msgid "Theme preference"
+msgstr "Préférence de thème"
+
+msgid "Theme color preference for Space Tree"
+msgstr "Couleur de thème pour l'arbre"
+
 msgid "The destination path for generated files."
 msgstr "Le chemin de destination pour les fichiers générés."
+
+msgid "Destination File"
+msgstr "Fichier de destination"
+
+msgid "The destination file name for the report."
+msgstr "Le fichier de destination pour le rapport."
+
+msgid "Open generated HTML file with default browser."
+msgstr "Ouvrir le fichier HTML généré avec le navigateur par défaut."
 
 msgid "Descendant Space Tree"
 msgstr "Arbre spatial descendant"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-07-03 08:01+0000\n"
+"PO-Revision-Date: 2025-07-24 19:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -985,6 +985,108 @@ msgstr "TunnlandGrödor"
 
 msgid "6. Number of Acres of Land: Under Crops in 1851"
 msgstr "6. Antal tunnland mark: Med grödor år 1851"
+
+msgid "AcresPasture"
+msgstr "TunnlandBetesmark"
+
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr "7. Antal tunnland mark: Betesmark år 1851"
+
+msgid "AcresGardens"
+msgstr "TunnlandTrädgårdsmark"
+
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "8. Antal tunnland mark: Trädgårdar eller fruktträdgårdar"
+
+msgid "AcresWood"
+msgstr "TunnlandSkog"
+
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr "9. Antal tunnland mark: Skog eller vildmark"
+
+msgid "WheatAcres"
+msgstr "TunnlandVete"
+
+msgid "10. Wheat: Acres"
+msgstr "10. Vete: Tunnland"
+
+msgid "WheatBsh"
+msgstr "BushelVete"
+
+msgid "11. Wheat: Produce Bsh."
+msgstr "11. Vete: Bushel produktion."
+
+msgid "BarleyAcres"
+msgstr "TunnlandKorn"
+
+msgid "12. Barley: Acres"
+msgstr "12. Korn: Tunnland"
+
+msgid "BarleyBsh"
+msgstr "BushelKorn"
+
+msgid "13. Barley: Produce Bsh."
+msgstr "13. Korn: Bushel produktion."
+
+msgid "RyeAcres"
+msgstr "TunnlandRåg"
+
+msgid "14. Rye: Acres"
+msgstr "14. Råg: Tunnland"
+
+msgid "RyeBsh"
+msgstr "BushelRåg"
+
+msgid "15. Rye: Produce Bsh."
+msgstr "15. Råg: Bushel produktion."
+
+msgid "PeasAcres"
+msgstr "TunnlandÄrtor"
+
+msgid "16. Peas: Acres"
+msgstr "16. Ärtor: Tunnland"
+
+msgid "PeasBush"
+msgstr "BushelÄrtor"
+
+msgid "17. Peas: Produce Bsh."
+msgstr "17. Ärtor: Bushel produktion."
+
+msgid "OatsAcres"
+msgstr "TunnlandHavre"
+
+msgid "18. Oats: Acres"
+msgstr "18. Havre: Tunnland"
+
+msgid "OatsBush"
+msgstr "BushelHavre"
+
+msgid "19. Oats: Produce Bsh."
+msgstr "19. Havre: Bushel produktion."
+
+msgid "BWheatAcres"
+msgstr "TunnlandB-vete"
+
+msgid "20. B.Wheat: Acres"
+msgstr "20. B-vete: Tunnland"
+
+msgid "BWheatBush"
+msgstr "B-veteBushel"
+
+msgid "21. B.Wheat: Produce Bsh."
+msgstr "21. B-vete: Bushel produktion."
+
+msgid "CornAcres"
+msgstr "TunnlandMajs"
+
+msgid "22. Corn: Acres"
+msgstr "22. Majs: Tunnland"
+
+msgid "CornBush"
+msgstr "BushelMajs"
+
+msgid "23. Corn: Produce Bsh."
+msgstr "23. Majs: Bushel produktion."
 
 msgid "Column37"
 msgstr "Kolumn37"

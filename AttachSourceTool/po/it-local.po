@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"PO-Revision-Date: 2025-07-23 14:01+0000\n"
 "Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -12,16 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Select filter to restrict people"
 msgstr "Seleziona filtro per restringere le persone"
 
+msgid "Source type"
+msgstr "Tipo di fonte"
+
 msgid "New source"
 msgstr "Nuova fonte"
+
+msgid "Existing source"
+msgstr "Fonte esistente"
+
+msgid "Select the type of source to attach"
+msgstr "Seleziona il tipo di fonte da allegare"
+
+msgid "New Source Title"
+msgstr "Titolo nuova fonte"
+
+msgid "Text of source to attach"
+msgstr "Testo della fonte da allegare"
+
+msgid "Existing Source ID"
+msgstr "ID della fonte esistente"
+
+msgid "ID of source to attach"
+msgstr "ID della fonte da allegare"
+
+msgid "Attach Source"
+msgstr "Allega fonte"
 
 msgid "Processing...\n"
 msgstr "Elaborazione in corso...\n"
 
+msgid "Attaching sources...\n"
+msgstr "Allegando fonti...\n"
+
+msgid "Attaching sources..."
+msgstr "Allegando fonti..."
+
 msgid "Done!\n"
 msgstr "Fatto!\n"
+
+msgid "Attaches a shared source to multiple objects."
+msgstr "Allega una fonte condivisa a oggetti multipli."

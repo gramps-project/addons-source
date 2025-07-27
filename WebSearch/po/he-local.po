@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-05-16 05:37+0000\n"
+"PO-Revision-Date: 2025-07-26 08:04+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Leave alone"
 msgstr "להניח לזה"
 
 msgid "Separate"
 msgstr "הפרדה"
+
+msgid "Show Links From the Notes"
+msgstr "הצגת קישורי הערות"
 
 msgid "Display Columns"
 msgstr "הצגת עמודות"
@@ -30,11 +33,79 @@ msgstr "הצגת סמלים"
 msgid "WebSearch"
 msgstr "חיפוש מרשתת"
 
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "טינה מקובץ: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "תחום: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "עצם: %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "דגם: %s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "מזהה עצם גרמפס:%s"
+
+msgid "Link saved to Attribute"
+msgstr "קישור נשמר לתכונה"
+
+msgid "Place history loaded"
+msgstr "היסטוריית מקום נטענה"
+
+msgid "Note updated"
+msgstr "הערה עודכנה"
+
+msgid "Note Link (parsed)"
+msgstr "קישור הערה ( נותח)"
+
+msgid "No title"
+msgstr "ללא כותרת"
+
+msgid "No data available."
+msgstr "נתונים לא זמינים."
+
+msgid "Foundation date:"
+msgstr "תאריך יסוד:"
+
+msgid "Coordinates:"
+msgstr "נקודות־ציון:"
+
+msgid "Full hierarchy"
+msgstr "מדרג מלא"
+
+msgid "Place Type:"
+msgstr "סוג מקום:"
+
+msgid "Save Coordinates to the Place"
+msgstr "שמירת נקודות־ציון במקום"
+
 msgid "Add link to note"
 msgstr "הוספת קישור להערה"
+
+msgid "Add link to attribute"
+msgstr "הוספת קישור לתכונה"
 
 msgid "Show QR-code"
 msgstr "הצגת קוד־QR"
 
 msgid "WebSearch Link"
 msgstr "קישור חיפוש מרשתת"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "כותרת: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "חילוף: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "ריק: {keys}"
