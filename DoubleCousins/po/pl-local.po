@@ -1,0 +1,26 @@
+# Polish translation for DoubleCousins plugin (GRAMPS genealogy)
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-28 10:00+0200\n"
+"PO-Revision-Date: 2025-07-28 10:00+0200\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"Language-Team: Polish <ksafjan@gmail.com>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Birth"
+msgstr "Narodziny"
+
+msgid "Double Cousins Report"
+msgstr "Raport o podwójnych kuzynach"
+
+msgid "Double (first) cousins occur when two siblings of family A marry two siblings of family B. Their children are double cousins to each other and share the same four grandparents instead of six like normal first cousins. Therefore they are genetically closer than normal first cousins and share 25% of their DNA similar to half-siblings instead of 12.5% like normal first cousins.\n"
+msgstr "Podwójni (pierwsi) kuzyni pojawiają się, gdy dwójka rodzeństwa z rodziny A poślubia dwójkę rodzeństwa z rodziny B. Ich dzieci są podwójnymi kuzynami i mają tych samych czterech dziadków zamiast sześciu jak zwykli pierwsi kuzyni. Są więc genetycznie bliżsi niż zwykli pierwsi kuzyni i dzielą 25% DNA, podobnie jak półrodzeństwo, zamiast 12,5% jak zwykli pierwsi kuzyni.\n"
+
+msgid "No double cousins were found in your database."
+msgstr "Nie znaleziono podwójnych kuzynów w Twojej bazie danych."

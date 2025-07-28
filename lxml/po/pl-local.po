@@ -35,7 +35,7 @@ msgid "Invalid timestamp"
 msgstr "Nieprawidłowy znacznik czasu"
 
 msgid "No file parsed..."
-msgstr "Nie przetworzono pliku..."
+msgstr "Nie przetworzono żadnego pliku..."
 
 msgid "Number of editions back"
 msgstr "Liczba wydań wstecz"

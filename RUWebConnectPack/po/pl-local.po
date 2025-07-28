@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-28 10:00+0200\n"
+"PO-Revision-Date: 2025-07-28 10:00+0200\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"Language-Team: Polish <ksafjan@gmail.com>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "RU Web Connect Pack"
+msgstr "Pakiet połączeń internetowych RU"
+
+msgid "Collection of Web sites for the RU (requires libwebconnect)"
+msgstr "Zbiór stron internetowych dla RU (wymaga libwebconnect)"
+
+msgid "OBD \"Memorial\""
+msgstr "OBD \"Memoriał\""
+
+msgid "People memory"
+msgstr "Pamięć ludzi"
+
+msgid "Winners"
+msgstr "Zwycięzcy"
+
+msgid "Lived"
+msgstr "Żyli"
+
+msgid "Open list"
+msgstr "Otwórz listę"
+
+msgid "Wait for me"
+msgstr "Czekaj na mnie"

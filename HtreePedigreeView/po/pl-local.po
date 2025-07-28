@@ -1,0 +1,3946 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-28 10:00+0200\n"
+"PO-Revision-Date: 2025-07-28 10:00+0200\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"Language-Team: Polish <ksafjan@gmail.com>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "H-Tree Pedigree"
+msgstr "Drzewo rodowe H-Tree"
+
+msgid "Charts"
+msgstr "Wykresy"
+
+msgid "The view shows a space-efficient pedigree with ancestors of the selected person"
+msgstr "Widok pokazuje oszczędne miejsce drzewo rodowe z przodkami wybranej osoby"
+
+msgid "short for born|b."
+msgstr "skrót dla urodzony|ur."
+
+msgid "short for died|d."
+msgstr "skrót dla zmarły|zm."
+
+msgid "H-Tree Pedigree View"
+msgstr "Widok drzewa rodowego H-Tree"
+
+msgid "This view displays the H-Tree pedigree of the selected individual."
+msgstr "Ten widok wyświetla drzewo rodowe H-Tree wybranej osoby."
+
+msgid "Ancestors"
+msgstr "Przodkowie"
+
+msgid "Descendants"
+msgstr "Potomkowie"
+
+msgid "Relatives"
+msgstr "Krewni"
+
+msgid "Family Group"
+msgstr "Grupa rodzinna"
+
+msgid "Individual Details"
+msgstr "Szczegóły osoby"
+
+msgid "Birth"
+msgstr "Urodziny"
+
+msgid "Death"
+msgstr "Śmierć"
+
+msgid "Marriage"
+msgstr "Małżeństwo"
+
+msgid "Divorce"
+msgstr "Rozwód"
+
+msgid "Partner"
+msgstr "Partner"
+
+msgid "Child"
+msgstr "Dziecko"
+
+msgid "Parent"
+msgstr "Rodzic"
+
+msgid "Sibling"
+msgstr "Rodzeństwo"
+
+msgid "Cousin"
+msgstr "Kuzyn"
+
+msgid "Aunt"
+msgstr "Ciotka"
+
+msgid "Uncle"
+msgstr "Wujek"
+
+msgid "Grandparent"
+msgstr "Dziadek/ Babcia"
+
+msgid "Grandchild"
+msgstr "Wnuk/ Wnuczka"
+
+msgid "Great-grandparent"
+msgstr "Pradziadek/ Prababcia"
+
+msgid "Great-grandchild"
+msgstr "Prawnuk/ Prawnuczka"
+
+msgid "Step-parent"
+msgstr "Rodzic przybrany"
+
+msgid "Step-child"
+msgstr "Dziecko przybrane"
+
+msgid "Half-sibling"
+msgstr "Przyrodnie rodzeństwo"
+
+msgid "Foster parent"
+msgstr "Rodzic zastępczy"
+
+msgid "Foster child"
+msgstr "Dziecko zastępcze"
+
+msgid "Guardian"
+msgstr "Opiekun"
+
+msgid "Ward"
+msgstr "Podopieczny"
+
+msgid "Marriage date"
+msgstr "Data małżeństwa"
+
+msgid "Divorce date"
+msgstr "Data rozwodu"
+
+msgid "Birthplace"
+msgstr "Miejsce urodzenia"
+
+msgid "Deathplace"
+msgstr "Miejsce śmierci"
+
+msgid "Occupation"
+msgstr "Zawód"
+
+msgid "Education"
+msgstr "Wykształcenie"
+
+msgid "Religion"
+msgstr "Religia"
+
+msgid "Ethnicity"
+msgstr "Etniczność"
+
+msgid "Language"
+msgstr "Język"
+
+msgid "Notes"
+msgstr "Uwagi"
+
+msgid "Sources"
+msgstr "Źródła"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Print"
+msgstr "Drukuj"
+
+msgid "Export"
+msgstr "Eksportuj"
+
+msgid "Import"
+msgstr "Importuj"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "Close"
+msgstr "Zamknij"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "New"
+msgstr "Nowy"
+
+msgid "Open"
+msgstr "Otwórz"
+
+msgid "Undo"
+msgstr "Cofnij"
+
+msgid "Redo"
+msgstr "Ponów"
+
+msgid "Cut"
+msgstr "Wytnij"
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Paste"
+msgstr "Wklej"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+msgid "Invert selection"
+msgstr "Odwróć zaznaczenie"
+
+msgid "Zoom in"
+msgstr "Powiększ"
+
+msgid "Zoom out"
+msgstr "Pomniejsz"
+
+msgid "Pan"
+msgstr "Przesuń"
+
+msgid "Reset"
+msgstr "Resetuj"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "Find"
+msgstr "Znajdź"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Go to"
+msgstr "Idź do"
+
+msgid "First"
+msgstr "Pierwszy"
+
+msgid "Previous"
+msgstr "Poprzedni"
+
+msgid "Next"
+msgstr "Następny"
+
+msgid "Last"
+msgstr "Ostatni"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Show"
+msgstr "Pokaż"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "Enable"
+msgstr "Włącz"
+
+msgid "Disable"
+msgstr "Wyłącz"
+
+msgid "Add"
+msgstr "Dodaj"
+
+msgid "Remove"
+msgstr "Usuń"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Window"
+msgstr "Okno"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "About"
+msgstr "O programie"
+
+msgid "File"
+msgstr "Plik"
+
+msgid "Edit"
+msgstr "Edytuj"
+
+msgid "View"
+msgstr "Widok"
+
+msgid "Go"
+msgstr "Idź"
+
+msgid "Tools"
+msgstr "Narzędzia"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "Help"
+msg

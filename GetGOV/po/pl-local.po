@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-28 10:00+0200\n"
+"PO-Revision-Date: 2025-07-28 10:00+0200\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"Language-Team: Polish <ksafjan@gmail.com>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Place ID to import from GOV (Historical Gazetteer):"
+msgstr "Identyfikator miejsca do importu z GOV (Historyczny Słownik Geograficzny):"
+
+msgid "Get Place"
+msgstr "Pobierz miejsce"
+
+msgid "Add GOV-id place %s"
+msgstr "Dodaj miejsce z GOV-id %s"
+
+msgid "GetGOV error: %s"
+msgstr "Błąd GetGOV: %s"
+
+msgid "GOV error on id %s with code: "
+msgstr "Błąd GOV dla id %s z kodem: "
