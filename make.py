@@ -50,6 +50,7 @@ Examples:
        Extracts strings from the aggregated `po/{lang}.po` files into the
        `{lang}-local.po` files for each addon.
 """
+import configparser
 import shutil
 import glob
 import sys
@@ -59,17 +60,8 @@ import json
 from xml.etree import ElementTree
 from subprocess import call, Popen, PIPE
 
-if "GRAMPSPATH" in os.environ:
-    GRAMPSPATH = os.environ["GRAMPSPATH"]
-else:
-    GRAMPSPATH = "../../.."
-
-gramps_version = sys.argv[1]
-
-command = sys.argv[2]
-if len(sys.argv) >= 4:
-    addon = sys.argv[3]
-
+CONFIG_FILE = "make.ini"
+config = {}                         # configuration file content
 
 def system(scmd, **kwargs):
     """
@@ -109,6 +101,74 @@ def mkdir(dirname):
         return
     os.makedirs(dirname)
 
+def get_config():
+    global config
+
+    try:
+        if not config:
+            config = configparser.ConfigParser()
+            config.read(CONFIG_FILE)
+    except configparser.Error as ce:
+        print(f"? {ce}")
+        exit(1)
+
+def get_user_info():
+    global config
+
+    dflt = config["DEFAULT"]
+    user = os.environ["USER"]
+    user_name = f"{user}"
+    user_email = f"{user}@example.com"
+    if not dflt:
+        dflt = {}
+        dflt["user"] = user
+        dflt["user_name"] = user_name
+        dflt["user_email"] = user_email
+    else:
+        user = dflt["user"] if "user" in dflt else user
+        user_name = dflt["user_name"] if "user_name" in dflt else user_name
+        user_email = dflt["user_email"] if "user_email" in dflt else user_email
+    
+    config["DEFAULT"]["user"] = user
+    config["DEFAULT"]["user_name"] = user_name
+    config["DEFAULT"]["user_email"] = user_email
+    return user, user_name, user_email
+
+def get_maintainer_info():
+    global config
+
+    dflt = config["DEFAULT"]
+    maint = os.environ["USER"]
+    maint_name = f"{maint}"
+    maint_email = f"{maint}@example.com"
+    if not dflt:
+        dflt = {}
+        dflt["maintainer"] = maint
+        dflt["maintainer_name"] = maint_name
+        dflt["maintainer_email"] = maint_email
+    else:
+        maint = dflt["maintainer"] if "maintainer" in dflt else maint
+        maint_name = dflt["maintainer_name"] if "maintainer_name" in dflt else maint_name
+        maint_email = dflt["maintainer_email"] if "maintainer_email" in dflt else maint_email
+
+    config["DEFAULT"]["maintainer"] = maint
+    config["DEFAULT"]["maintainer_name"] = maint_name
+    config["DEFAULT"]["maintainer_email"] = maint_email
+    return maint, maint_name, maint_email
+
+def check_installation():
+    cmds = {"gh": "See https://githib.com/cli/cli for installation",
+            "git": "Please install git with your package manager.",
+    }
+    missing = False
+    for ii in cmds.keys():
+        if shutil.which(ii):
+            continue
+        missing = True
+        print(f"? Could not find the '{ii}' command")
+        print(f"  {cmds[ii]}")
+    if missing:
+        exit(1)
 
 def increment_target(filenames):
     """increment the version number in the gpr file"""
@@ -340,25 +400,87 @@ def extract_po(addon):
                 args = ["git", "restore", po]
                 call(args)
 
+def usage():
+    """
+    what are my options?
+    """
+    print(f"usage: {sys.argv[0]} <version> <command> [<options>]")
+    print("where:")
+    print("    <version>    => Gramps maintenance branch name: one of")
+    print("                    {gramps42 | gramps50 } gramps51 | gramps52 | gramps60}" )
+    print("    <command>    => one of the following, with their <options>:")
+    print()
+    print("        as-needed:")
+    print("            build packages (tgz files) for only those addons that have")
+    print("            changed, then rebuild listings files, and do some cleanup.")
+    print()
+    print("        aggregate-pot:")
+    print("            aggregates all 'template.pot' files into a single 'po/addons.pot'")
+    print("            file. Strings already in 'gramps.pot' are excluded.")
+    print()
+    print("        build {<addon> | all}:")
+    print("            build a specific adddon package if named and put it in")
+    print("            addons/Addon/Addon.addon.tgz; or, if 'all' used, build")
+    print("            a package for all existing addons.")
+    print()
+    print("        clean [<addon>]:")
+    print("            remove unneeded local files, typically used before")
+    print("            making commits; if <addon> is used, clean that specific")
+    print("            addon, otherwise clean all addons.")
+    print()
+    print("        compile {<addon> | all}:")
+    print("            compile AddOn/po/*-local.po files for the named addon")
+    print("            and put the output .mo file in AddOn/locale/*/LC_MESSAGES/addon.mo;")
+    print("            or, if 'all' is used, do the same thing for all addons.")
+    print()
+    print("        extract-po:")
+    print("            extract strings from the aggregated 'po/<lang>.po' files")
+    print("            into the '<lang>-local.po' files for each addon.")
+    print()
+    print("        {-h | --help | help}:")
+    print("            print out this help message")
+    print()
+    print("        init <addon> [<lang>]:")
+    print("            create a new addon working directory (use a name in")
+    print("            in camel case); if <lang> is given, create an empty")
+    print("            translation file (e.g., for 'fr', AddOn/po/fr-local.po)")
+    print()
+    print("        listing {<addon> | all}:")
+    print("            create or update the <version>/listings/*.json files for")
+    print("            the languages supported by the named addonput; or, if 'all'")
+    print("            is used, do the same thing for all addons.")
+    print()
+    print("        manifest-check:")
+    print("            verify that the manifest files for all addons are correct.")
+    print()
+    print("        unlist <addon>:")
+    print("            remove the named addon from all language listings files.")
+    print()
+    print("        update <addon> <lang>:")
+    print("            update the adddon with the latest translations for that")
+    print("            language (e.g., for 'fr', AddOn/po/fr-local.po)")
+    print("            in camel case); if <lang> is given, create an empty")
+    print()
+    print("        workspace <addon> <path>:")
+    print("            create a directory tree at <path> with all gramps")
+    print("            development source trees (gramps, addons-source, addons)")
+    print("            needed to develop a new addon; additionally, create the")
+    print("            AddOn source directory called <addon>, and add to it the")
+    print("            basic AddOn.py, AddOn.grp.py, MANIFEST, and localization")
+    print("            files that are required.")
 
-if command == "clean":
-    if len(sys.argv) == 3:
-        for addon in [
-            name
-            for name in os.listdir(".")
-            if os.path.isdir(name) and not name.startswith(".")
-        ]:
-            cleanup(addon)
-    else:
-        cleanup(addon)
 
-elif command == "init":
-    # # Get all of the strings from the addon and create template.po:
-    if addon == "all":
+def init_command(command, path, target_addon):
+    # Get all of the strings from the addon and create template.po:
+    pwd = os.environ["PWD"]
+    os.chdir(path)
+    if target_addon == "all":
         dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
     else:
-        dirs = [addon]
-    if len(sys.argv) == 4:
+        dirs = [os.path.join(path, target_addon)]
+    if (command == "init" and len(sys.argv) == 4) or \
+       (command == "workspace" and len(sys.argv) == 5):
+        plugins = []
         try:
             sys.path.insert(0, GRAMPSPATH)
             os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
@@ -369,14 +491,13 @@ elif command == "init":
                 "'GRAMPSPATH=path python3 make.py %s init'"
                 % (os.path.abspath(GRAMPSPATH), gramps_version)
             )
-            exit()
 
         def register(ptype, **kwargs):
-            global plugins
             kwargs["ptype"] = ptype
             plugins.append(kwargs)
 
-        for addon in dirs:
+        for addonpath in dirs:
+            addon = os.path.basename(addonpath)
             fnames = glob.glob("%s/*.py" % addon)
             if not fnames:
                 continue
@@ -399,7 +520,8 @@ elif command == "init":
             if not listed:
                 continue  # skip this one if not listed
 
-            mkdir(f"{addon}/po")
+            where = os.path.join(addon, "po")
+            os.makedirs(where, exist_ok=True)
             fnames = " ".join(glob.glob(f"{addon}/*.py"))
             system(
                 f"xgettext --language=Python --keyword=_ --keyword=N_"
@@ -444,7 +566,7 @@ elif command == "init":
                 "%s/po/template.pot" % addon, "w", encoding="utf-8", newline="\n"
             ) as file:
                 file.write(contents)
-    elif len(sys.argv) > 4:
+    elif command == "init" and len(sys.argv) > 4:
         locale = sys.argv[4]
         # make a copy for locale
         if os.path.isfile(f"{addon}/po/{locale}-local.po"):
@@ -456,7 +578,60 @@ elif command == "init":
         )
         echo(f'You can now edit "{addon}/po/{locale}-local.po"')
     else:
-        raise AttributeError("init what?")
+        print(f"? do not know what to init in {addon}")
+        exit(1)
+
+    os.chdir(pwd)
+    return
+
+#--- main ------------------------------------------------------------
+if "GRAMPSPATH" in os.environ:
+    GRAMPSPATH = os.environ["GRAMPSPATH"]
+else:
+    GRAMPSPATH = "../../.."
+
+#-- should probably convert to parseargs some day ....
+if len(sys.argv) < 2:           # no parameters provided
+    usage()
+    exit(0)
+elif len(sys.argv) == 2 and \
+     (sys.argv[1] == "help" or sys.argv[1] == "-h" or sys.argv[1] == "--help"):
+    usage()
+    exit(0)
+
+KNOWN_GRAMPS_VERSIONS = [
+    "gramps42",
+    "gramps50",
+    "gramps51",
+    "gramps52",
+    "gramps60",
+]
+
+gramps_version = sys.argv[1]
+if gramps_version not in KNOWN_GRAMPS_VERSIONS:
+    print(f"? '{gramps_version}' is not a supported version of gramps")
+    sys.exit(1)
+
+command = sys.argv[2]
+if len(sys.argv) >= 4:
+    addon = sys.argv[3]
+
+get_config()
+
+if command == "clean":
+    if len(sys.argv) == 3:
+        for addon in [
+            name
+            for name in os.listdir(".")
+            if os.path.isdir(name) and not name.startswith(".")
+        ]:
+            cleanup(addon)
+    else:
+        cleanup(addon)
+
+elif command == "init":
+    # Get all of the strings from the addon and create template.po:
+    init_command(command, os.environ["PWD"], addon)
 
 elif command == "update":
     locale = sys.argv[4]
@@ -1038,5 +1213,191 @@ elif command == "extract-po":
         print(addon)
         extract_po(addon)
 
+elif command == "workspace":
+    import subprocess
+
+    def is_camel_case(s):
+        return s != s.lower() and s != s.upper() and "_" not in s
+
+    def addon_template(path, addon):
+        addonpy = os.path.join(path, f"{addon}.py")
+        if os.path.exists(addonpy):
+            print(f"? {addon}.py exists, skipping step...")
+        else:
+            with open(addonpy, "w+") as fd:
+                print(f"#/usr/bin/env python3", file=fd)
+                print(f"#", file=fd)
+                print(f"#   Add your code here", file=fd)
+                print(f"#", file=fd)
+            fd.close()
+
+    def gpr_template(path, addon):
+        global config
+
+        addongpr = os.path.join(path, f"{addon}.gpr.py")
+        if os.path.exists(addongpr):
+            print(f"? {addon}.gpr.py exists, skipping step...")
+        else:
+            user, user_name, user_email = get_user_info()
+            maint_user, maint_name, maint_email = get_maintainer_info()
+            with open(addongpr, "w+") as fd:
+                print(f"#", file=fd)
+                print(f"#   Registration file for addon {addon}", file=fd)
+                print(f"#", file=fd)
+                fd.write(f"""
+#
+# This file has been generated for you as a starting point.
+#
+# You MUST edit it for it to be useful.
+#
+
+register(TOOL,                                     # change to the proper type
+    id    = '{addon}',
+    name  = _("{addon}"),
+    description =  _("describe {addon} here."),
+    version = '1.0.0',
+    gramps_target_version = '6.0',
+    status = STABLE,
+    fname = '{addon}.py',
+    # your name and email here ...
+    authors = ["{user_name}"],
+    authors_email = ["{user_email}"],
+    # the maintainer's name and email here (can be you, of course) ...
+    maintainers = ["{maint_name}"],
+    maintainers_email = ["{maint_email}"],
+    # change the following as needed
+    category = TOOL_DBPROC,
+    toolclass = '{addon}Window',
+    optionclass = '{addon}Options',
+    tool_modes = [TOOL_MODE_GUI],
+    help_url = "Addon:{addon}Tool"
+)
+""")
+            fd.close()
+
+    def fork_exists(user, name):
+        exists = False
+        res = subprocess.run(["gh", "repo", "list"],
+                             capture_output=True,
+                             text=True)
+        expected = user + "/" + name
+        if res.stdout.find(expected):
+            exists = True
+        return exists
+
+    if gramps_version < "gramps60":
+        print(f"? workspace command not supported for '{gramps_version}'")
+        exit(1)
+    check_installation()
+    user, user_name, user_email = get_user_info()
+    maint, maint_name, maint_email = get_maintainer_info()
+
+    # build the directory structure
+    if len(sys.argv) < 5:
+        print("? workspace requires an <addon> and a <path> name.")
+        exit(1)
+    path = os.path.expandvars(os.path.expanduser(sys.argv[4]))
+    if os.path.exists(path):
+        if os.path.isdir(path):
+            print(f"workspace path '{sys.argv[4]}' already exists, reusing...")
+        else:
+            print(f"? workspace path '{sys.argv[4]}' already exists, but not a directory")
+            exit(1)
+    else:
+        os.makedirs(path)
+
+    # get the addon name; we'll need to make a directory for it later
+    addon = sys.argv[3]
+    if not is_camel_case(addon):
+        print(f"? addon name must be camel case, not '{addon}'")
+        exit(1)
+
+    # collect a copy of the gramps source tree
+    print("gather up gramps source tree...")
+    where = os.path.join(path, "gramps")
+    gitcmd = []
+    cwd = path
+    if os.path.exists(where):
+        gitcmd = [
+            "gh", "repo", "sync",
+            "--branch", f"maintenance/{gramps_version}",
+        ]
+        cwd = os.path.join(cwd, "gramps")
+    else:
+        if fork_exists(user, "gramps"):
+            gitcmd = ["gh", "repo", "clone", "gramps"]
+        else:
+            gitcmd = [
+                "gh", "repo", "fork",
+                "https://github.com/gramps-project/gramps.git",
+                "--", "-b", f"maintenance/{gramps_version}",
+            ]
+    res = subprocess.run(gitcmd, cwd=cwd, text=True)
+
+    # collect a copy of the addons-source source tree
+    print("gather up addons-source tree...")
+    where = os.path.join(path, "addons-source")
+    gitcmd = []
+    cwd = path
+    if os.path.exists(where):
+        gitcmd = [
+            "gh", "repo", "sync",
+            "--branch", f"maintenance/{gramps_version}",
+        ]
+        cwd = os.path.join(cwd, "addons-source")
+    else:
+        if fork_exists(user, "addons-source"):
+            gitcmd = ["gh", "repo", "clone", "addons-source"]
+        else:
+            gitcmd = [
+                "gh", "repo", "fork",
+                "https://github.com/gramps-project/addons-source.git",
+                "--", "-b", f"maintenance/{gramps_version}",
+            ]
+    res = subprocess.run(gitcmd, cwd=cwd, text=True)
+
+    # collect a copy of the addons source tree
+    print("gather up addons tree...")
+    where = os.path.join(path, "addons")
+    gitcmd = []
+    cwd = path
+    if os.path.exists(where):
+        gitcmd = [
+            "gh", "repo", "sync",
+        ]
+        cwd = os.path.join(cwd, "addons")
+    else:
+        if fork_exists(user, "addons"):
+            gitcmd = ["gh", "repo", "clone", "addons"]
+        else:
+            gitcmd = [
+                "gh", "repo", "fork",
+                "https://github.com/gramps-project/addons.git",
+            ]
+    res = subprocess.run(gitcmd, cwd=cwd, text=True)
+
+    # now we can make the addon directory
+    addonpath = os.path.join(path, "addons-source", addon)
+    if os.path.exists(addonpath):
+        if os.path.isdir(addonpath):
+            print(f"addon directory '{addon}' already exists, reusing...")
+        else:
+            print(f"? addon file '{addon}' exists, but not a directory")
+            exit(1)
+    else:
+        print(f"creating addon directory for '{addon}'...")
+        os.makedirs(addonpath)
+
+    # add in some templates if needed
+    addon_template(addonpath, addon)
+    gpr_template(addonpath, addon)
+    init_command(command, os.path.join(path, "addons-source"), addon)
+
+    # write out the config file
+    with open(os.path.join(path, "addons-source", CONFIG_FILE), "w+") as cfd:
+        config.write(cfd)
+
 else:
-    raise AttributeError("unknown command")
+    print(f"? unknown command: {command}")
+    exit(1)
+
