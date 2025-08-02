@@ -238,6 +238,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.assistant.set_page_title(page, title)
         self.assistant.set_page_type(page, page_type)
 
+
     def handle_done_syncing_dbs(self):
         """Handle the completion of syncing the databases."""
         self.save_timestamp()
@@ -245,30 +246,29 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.files_missing_local = self.get_missing_files_local()
         self.assistant.next_page()
 
+
     def prepare(self, assistant, page):
         """Run page preparation code."""
         page.update_complete()
         if page == self.diff_progress_page:
             # Clear any previous login error when starting fresh
             self.loginpage.clear_error()
-            
+
             # Try to connect and authenticate
+            self.save_credentials()
             url, username, password = self.get_credentials()
             if not self.test_connection(url, username, password):
                 # Connection failed, go back to login page
                 self.assistant.set_current_page(1)  # Login page index
                 return None
-                
-            # Connection successful, save credentials and continue
-            self.save_credentials()
-            
+
             if "ViewPrivate" not in self.api.get_permissions():
                 self.loginpage.show_error(
                     _("Your user does not have sufficient server permissions to use sync.")
                 )
                 self.assistant.set_current_page(1)  # Go back to login page
                 return None
-                
+
             self.diff_progress_page.label.set_text(_("Fetching remote data..."))
             t = threading.Thread(target=self.async_compare_dbs)
             t.start()
@@ -357,14 +357,14 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             if url is None:
                 self.loginpage.show_error(_("Invalid URL provided."))
                 return False
-            
+
             # Try to create API handler
             self._api = WebApiHandler(url, username, password, None)
-            
+
             # Test the connection by making a simple API call
             self.api.get_permissions()
             return True
-            
+
         except HTTPError as exc:
             if exc.code == 401:
                 self.loginpage.show_error(_("Authentication failed. Please check your username and password."))
@@ -592,8 +592,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def get_credentials(self):
         """Get a tuple of URL, username, and password."""
         return (
-            self.loginpage.url.get_text(),
-            self.loginpage.username.get_text(),
+            self.config.get("credentials.url"),
+            self.config.get("credentials.username"),
             self.loginpage.password.get_text(),
         )
 
@@ -722,13 +722,11 @@ class LoginPage(Page):
         super().__init__(assistant)
         self.set_spacing(12)
 
-        # Create main grid for form elements
         grid = Gtk.Grid()
         grid.set_row_spacing(6)
         grid.set_column_spacing(6)
         self.add(grid)
 
-        # Server URL field
         label = Gtk.Label(label=_("Server URL: "))
         grid.attach(label, 0, 0, 1, 1)
         self.url = Gtk.Entry()
@@ -738,7 +736,6 @@ class LoginPage(Page):
         self.url.set_input_purpose(Gtk.InputPurpose.URL)
         grid.attach(self.url, 1, 0, 1, 1)
 
-        # Username field
         label = Gtk.Label(label=_("Username: "))
         grid.attach(label, 0, 1, 1, 1)
         self.username = Gtk.Entry()
@@ -747,7 +744,6 @@ class LoginPage(Page):
         self.username.set_hexpand(True)
         grid.attach(self.username, 1, 1, 1, 1)
 
-        # Password field
         label = Gtk.Label(label=_("Password: "))
         grid.attach(label, 0, 2, 1, 1)
         self.password = Gtk.Entry()
@@ -983,6 +979,7 @@ class SyncProgressPage(Page):
         # force updating progress bar
         while Gtk.events_pending():
             Gtk.main_iteration()
+
 
     def prepare(self, actions: Actions):
         if len(actions) == 0:
