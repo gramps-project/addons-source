@@ -84,7 +84,6 @@ def get_password(service: str, username: str) -> str | None:
         return None
     return keyring.get_password(service, username)
 
-
 def set_password(service: str, username: str, password: str) -> None:
     """If keyring is installed, store the user's password."""
     try:
@@ -287,7 +286,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                     self.handle_error(
                         _("Unexpected error while applying changes.") + f" {e}"
                     )
-                
+
             # now, get missing media files
         elif page == self.file_confirmation:
             if self.files_missing_local:
@@ -361,18 +360,28 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
         except HTTPError as exc:
             if exc.code == 401:
-                self.loginpage.show_error(_("Authentication failed. Please check your username and password."))
+                self.loginpage.show_error(
+                    _("Authentication failed. Please check your username and password.")
+                )
             elif exc.code == 403:
-                self.loginpage.show_error(_("Access forbidden. Please check username and password."))
+                self.loginpage.show_error(
+                    _("Access forbidden. Please check username and password.")
+                )
             elif exc.code == 404:
-                self.loginpage.show_error(_("GrampsWeb service not found. Please check the URL."))
+                self.loginpage.show_error(
+                    _("GrampsWeb service not found. Please check the URL.")
+                )
             else:
-                self.loginpage.show_error(_("Server error %s. Please check your connection.") % exc.code)
+                self.loginpage.show_error(
+                    _("Server error %s. Please check your connection.") % exc.code
+                )
             return False
         except URLError:
-            self.loginpage.show_error(_("Connection failed. Please check the URL and your internet connection."))
+            self.loginpage.show_error(
+                _("Connection failed. Please check the URL and your internet connection.")
+            )
             return False
-        except ValueError as e:
+        except ValueError:
             self.loginpage.show_error(_("Invalid server response. Please check the URL."))
             return False
         except Exception as e:
@@ -484,8 +493,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         if db2 is None:
             self.handle_error(_("Failed importing downloaded XML file."))
             return
-        else:
-            LOG.debug("Successfully imported Gramps XML file.")
+        LOG.debug("Successfully imported Gramps XML file.")
         path.unlink()  # delete temporary file
         self.db2 = db2
         self.diff_progress_page.label.set_text(_("Comparing local and remote data..."))
