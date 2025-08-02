@@ -363,9 +363,9 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             if exc.code == 401:
                 self.loginpage.show_error(_("Authentication failed. Please check your username and password."))
             elif exc.code == 403:
-                self.loginpage.show_error(_("Access forbidden. Please check your server permissions."))
+                self.loginpage.show_error(_("Access forbidden. Please check username and password."))
             elif exc.code == 404:
-                self.loginpage.show_error(_("Server not found. Please check the URL."))
+                self.loginpage.show_error(_("GrampsWeb service not found. Please check the URL."))
             else:
                 self.loginpage.show_error(_("Server error %s. Please check your connection.") % exc.code)
             return False
@@ -761,15 +761,6 @@ class LoginPage(Page):
         self.url.connect("changed", self.on_entry_changed)
         self.username.connect("changed", self.on_entry_changed)
         self.password.connect("changed", self.on_entry_changed)
-
-        # Connect Enter key to advance page
-        self.password.connect("activate", self.on_password_activate)
-
-    def on_password_activate(self, widget):
-        """Handle Enter key press in password field."""
-        if self.complete:
-            # Try to advance to next page
-            self.assistant.next_page()
 
     def show_error(self, message: str):
         """Display an error message on the login page."""
