@@ -352,12 +352,6 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def test_connection(self, url: str, username: str, password: str) -> bool:
         """Test the connection and authentication. Return True if successful."""
         try:
-            # Sanitize URL first
-            url = self.sanitize_url(url)
-            if url is None:
-                self.loginpage.show_error(_("Invalid URL provided."))
-                return False
-
             # Try to create API handler
             self._api = WebApiHandler(url, username, password, None)
 
