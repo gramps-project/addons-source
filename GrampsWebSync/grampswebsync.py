@@ -767,48 +767,29 @@ class LoginPage(Page):
         self.error_label.hide()
         grid.attach(self.error_label, 0, 3, 2, 1)
 
-        # Retry button - initially hidden
-        self.retry_button = Gtk.Button(label=_("Test Connection"))
-        self.retry_button.connect("clicked", self.on_retry_clicked)
-        self.retry_button.set_no_show_all(True)  # Don't show when show_all() is called
-        self.retry_button.hide()
-        grid.attach(self.retry_button, 1, 4, 1, 1)
-
         # Connect entry change events
         self.url.connect("changed", self.on_entry_changed)
         self.username.connect("changed", self.on_entry_changed)
         self.password.connect("changed", self.on_entry_changed)
 
-        # Connect Enter key to test connection
+        # Connect Enter key to advance page
         self.password.connect("activate", self.on_password_activate)
 
     def on_password_activate(self, widget):
         """Handle Enter key press in password field."""
         if self.complete:
-            # Simulate clicking "Test Connection" or moving to next page
-            if self.retry_button.get_visible():
-                self.on_retry_clicked(None)
-            else:
-                # Try to advance to next page
-                self.assistant.next_page()
-
-    def on_retry_clicked(self, button):
-        """Handle retry button click."""
-        self.clear_error()
-        # Trigger moving to the next page, which will test the connection
-        self.assistant.next_page()
+            # Try to advance to next page
+            self.assistant.next_page()
 
     def show_error(self, message: str):
         """Display an error message on the login page."""
         self.error_label.set_markup(f'<span color="red"><b>Error:</b> {message}</span>')
         self.error_label.show()
-        self.retry_button.show()
         self.update_complete()
 
     def clear_error(self):
         """Clear any displayed error message."""
         self.error_label.hide()
-        self.retry_button.hide()
         self.update_complete()
 
     @property
