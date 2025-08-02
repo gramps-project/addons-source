@@ -238,7 +238,6 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.assistant.set_page_title(page, title)
         self.assistant.set_page_type(page, page_type)
 
-
     def handle_done_syncing_dbs(self):
         """Handle the completion of syncing the databases."""
         self.save_timestamp()
@@ -246,25 +245,30 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.files_missing_local = self.get_missing_files_local()
         self.assistant.next_page()
 
-
     def prepare(self, assistant, page):
         """Run page preparation code."""
         page.update_complete()
         if page == self.diff_progress_page:
-            self.save_credentials()
+            # Clear any previous login error when starting fresh
+            self.loginpage.clear_error()
+            
+            # Try to connect and authenticate
             url, username, password = self.get_credentials()
-            self._api: WebApiHandler | None = self.handle_server_errors(
-                WebApiHandler, url, username, password, None
-            )
-            if self._api is None:
+            if not self.test_connection(url, username, password):
+                # Connection failed, go back to login page
+                self.assistant.set_current_page(1)  # Login page index
                 return None
+                
+            # Connection successful, save credentials and continue
+            self.save_credentials()
+            
             if "ViewPrivate" not in self.api.get_permissions():
-                self.handle_error(
-                    _(
-                        f"Your user does not have sufficient server permissions to use sync."
-                    )
+                self.loginpage.show_error(
+                    _("Your user does not have sufficient server permissions to use sync.")
                 )
+                self.assistant.set_current_page(1)  # Go back to login page
                 return None
+                
             self.diff_progress_page.label.set_text(_("Fetching remote data..."))
             t = threading.Thread(target=self.async_compare_dbs)
             t.start()
@@ -344,6 +348,42 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                 self.conclusion.label.set_text(text)
 
             self.conclusion.set_complete()
+
+    def test_connection(self, url: str, username: str, password: str) -> bool:
+        """Test the connection and authentication. Return True if successful."""
+        try:
+            # Sanitize URL first
+            url = self.sanitize_url(url)
+            if url is None:
+                self.loginpage.show_error(_("Invalid URL provided."))
+                return False
+            
+            # Try to create API handler
+            self._api = WebApiHandler(url, username, password, None)
+            
+            # Test the connection by making a simple API call
+            self.api.get_permissions()
+            return True
+            
+        except HTTPError as exc:
+            if exc.code == 401:
+                self.loginpage.show_error(_("Authentication failed. Please check your username and password."))
+            elif exc.code == 403:
+                self.loginpage.show_error(_("Access forbidden. Please check your server permissions."))
+            elif exc.code == 404:
+                self.loginpage.show_error(_("Server not found. Please check the URL."))
+            else:
+                self.loginpage.show_error(_("Server error %s. Please check your connection.") % exc.code)
+            return False
+        except URLError:
+            self.loginpage.show_error(_("Connection failed. Please check the URL and your internet connection."))
+            return False
+        except ValueError as e:
+            self.loginpage.show_error(_("Invalid server response. Please check the URL."))
+            return False
+        except Exception as e:
+            self.loginpage.show_error(_("Unexpected error: %s") % str(e))
+            return False
 
     def handle_files_unchanged(self):
         self.conclusion.unchanged = True
@@ -552,8 +592,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def get_credentials(self):
         """Get a tuple of URL, username, and password."""
         return (
-            self.config.get("credentials.url"),
-            self.config.get("credentials.username"),
+            self.loginpage.url.get_text(),
+            self.loginpage.username.get_text(),
             self.loginpage.password.get_text(),
         )
 
@@ -682,11 +722,13 @@ class LoginPage(Page):
         super().__init__(assistant)
         self.set_spacing(12)
 
+        # Create main grid for form elements
         grid = Gtk.Grid()
         grid.set_row_spacing(6)
         grid.set_column_spacing(6)
         self.add(grid)
 
+        # Server URL field
         label = Gtk.Label(label=_("Server URL: "))
         grid.attach(label, 0, 0, 1, 1)
         self.url = Gtk.Entry()
@@ -696,6 +738,7 @@ class LoginPage(Page):
         self.url.set_input_purpose(Gtk.InputPurpose.URL)
         grid.attach(self.url, 1, 0, 1, 1)
 
+        # Username field
         label = Gtk.Label(label=_("Username: "))
         grid.attach(label, 0, 1, 1, 1)
         self.username = Gtk.Entry()
@@ -704,6 +747,7 @@ class LoginPage(Page):
         self.username.set_hexpand(True)
         grid.attach(self.username, 1, 1, 1, 1)
 
+        # Password field
         label = Gtk.Label(label=_("Password: "))
         grid.attach(label, 0, 2, 1, 1)
         self.password = Gtk.Entry()
@@ -714,9 +758,58 @@ class LoginPage(Page):
         self.password.set_input_purpose(Gtk.InputPurpose.PASSWORD)
         grid.attach(self.password, 1, 2, 1, 1)
 
+        # Error message label - initially hidden
+        self.error_label = Gtk.Label()
+        self.error_label.set_line_wrap(True)
+        self.error_label.set_max_width_chars(60)
+        self.error_label.set_markup('<span color="red"><b>Error:</b> </span>')
+        self.error_label.set_no_show_all(True)  # Don't show when show_all() is called
+        self.error_label.hide()
+        grid.attach(self.error_label, 0, 3, 2, 1)
+
+        # Retry button - initially hidden
+        self.retry_button = Gtk.Button(label=_("Test Connection"))
+        self.retry_button.connect("clicked", self.on_retry_clicked)
+        self.retry_button.set_no_show_all(True)  # Don't show when show_all() is called
+        self.retry_button.hide()
+        grid.attach(self.retry_button, 1, 4, 1, 1)
+
+        # Connect entry change events
         self.url.connect("changed", self.on_entry_changed)
         self.username.connect("changed", self.on_entry_changed)
         self.password.connect("changed", self.on_entry_changed)
+
+        # Connect Enter key to test connection
+        self.password.connect("activate", self.on_password_activate)
+
+    def on_password_activate(self, widget):
+        """Handle Enter key press in password field."""
+        if self.complete:
+            # Simulate clicking "Test Connection" or moving to next page
+            if self.retry_button.get_visible():
+                self.on_retry_clicked(None)
+            else:
+                # Try to advance to next page
+                self.assistant.next_page()
+
+    def on_retry_clicked(self, button):
+        """Handle retry button click."""
+        self.clear_error()
+        # Trigger moving to the next page, which will test the connection
+        self.assistant.next_page()
+
+    def show_error(self, message: str):
+        """Display an error message on the login page."""
+        self.error_label.set_markup(f'<span color="red"><b>Error:</b> {message}</span>')
+        self.error_label.show()
+        self.retry_button.show()
+        self.update_complete()
+
+    def clear_error(self):
+        """Clear any displayed error message."""
+        self.error_label.hide()
+        self.retry_button.hide()
+        self.update_complete()
 
     @property
     def complete(self):
@@ -728,6 +821,10 @@ class LoginPage(Page):
         return False
 
     def on_entry_changed(self, widget):
+        """Handle changes to entry fields."""
+        # Clear error when user starts typing
+        if self.error_label.get_visible():
+            self.clear_error()
         self.update_complete()
 
 
@@ -905,7 +1002,6 @@ class SyncProgressPage(Page):
         # force updating progress bar
         while Gtk.events_pending():
             Gtk.main_iteration()
-
 
     def prepare(self, actions: Actions):
         if len(actions) == 0:
