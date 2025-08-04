@@ -237,14 +237,12 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.assistant.set_page_title(page, title)
         self.assistant.set_page_type(page, page_type)
 
-
     def handle_done_syncing_dbs(self):
         """Handle the completion of syncing the databases."""
         self.save_timestamp()
         self.sync_progress_page.handle_done_syncing_dbs()
         self.files_missing_local = self.get_missing_files_local()
         self.assistant.next_page()
-
 
     def prepare(self, assistant, page):
         """Run page preparation code."""
@@ -468,7 +466,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         LOG.error(message)
         self.conclusion.error = True
         self.assistant.next_page()
-        self.conclusion.label.set_text(message)  #
+        self.conclusion.label.set_text(message)
         self.conclusion.set_complete()
 
     def handle_unchanged(self):
@@ -493,8 +491,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         if db2 is None:
             self.handle_error(_("Failed importing downloaded XML file."))
             return
-        else:
-            LOG.debug("Successfully imported Gramps XML file.")
+        LOG.debug("Successfully imported Gramps XML file.")
         path.unlink()  # delete temporary file
         self.db2 = db2
         self.diff_progress_page.label.set_text(_("Comparing local and remote data..."))
