@@ -493,7 +493,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         if db2 is None:
             self.handle_error(_("Failed importing downloaded XML file."))
             return
-        LOG.debug("Successfully imported Gramps XML file.")
+        else:
+            LOG.debug("Successfully imported Gramps XML file.")
         path.unlink()  # delete temporary file
         self.db2 = db2
         self.diff_progress_page.label.set_text(_("Comparing local and remote data..."))
@@ -760,7 +761,7 @@ class LoginPage(Page):
         self.error_label = Gtk.Label()
         self.error_label.set_line_wrap(True)
         self.error_label.set_max_width_chars(60)
-        self.error_label.set_markup('<span color="red"><b>Error:</b> </span>')
+        self.error_label.get_style_context().add_class('error')
         self.error_label.set_no_show_all(True)  # Don't show when show_all() is called
         self.error_label.hide()
         grid.attach(self.error_label, 0, 3, 2, 1)
@@ -772,7 +773,7 @@ class LoginPage(Page):
 
     def show_error(self, message: str):
         """Display an error message on the login page."""
-        self.error_label.set_markup(f'<span color="red"><b>Error:</b> {message}</span>')
+        self.error_label.set_markup(f'<b>Error:</b> {message}')
         self.error_label.show()
         self.update_complete()
 
