@@ -369,6 +369,14 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                 self.loginpage.show_error(
                     _("GrampsWeb service not found. Please check the URL.")
                 )
+            elif exc.code == 429:
+                self.loginpage.show_error(
+                    _("Too many requests, please try again in a few seconds.")
+                )
+            elif exc.code == 503:
+                self.loginpage.show_error(
+                    _("GrampsWeb tree is disabled.")
+                )
             else:
                 self.loginpage.show_error(
                     _("Server error %s. Please check your connection.") % exc.code
