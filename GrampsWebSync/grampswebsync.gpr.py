@@ -28,7 +28,7 @@ register(
     id="gramps_web_sync",
     name=_("Gramps Web Sync"),
     description=_("Synchronizes a local database with a Gramps Web instance."),
-    version = '1.3.3',
+    version = '1.3.4',
     gramps_target_version="6.0",
     status=STABLE,
     fname="grampswebsync.py",
