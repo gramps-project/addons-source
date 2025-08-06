@@ -124,9 +124,6 @@ msgstr ""
 msgid "Migration completed!"
 msgstr ""
 
-#: migration.py:302
-msgid "Starting upgrade..."
-msgstr ""
 
 #: migration.py:320
 #, python-format
@@ -156,8 +153,4 @@ msgstr ""
 
 #: schema.py:246
 msgid "PostgreSQL Enhanced schema created successfully"
-msgstr ""
-
-#: connection.py:113
-msgid "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip install 'psycopg[binary]'"
 msgstr ""
