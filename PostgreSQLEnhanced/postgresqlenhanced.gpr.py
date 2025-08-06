@@ -38,7 +38,7 @@ register(
         "and support for large databases. Thoroughly tested but still experimental. "
         "Requires PostgreSQL 15+ and psycopg>=3."
     ),
-    version = '0.1.0',
+    version = '0.1.1',
     gramps_target_version="6.0",
     status=STABLE,
     audience=DEVELOPER,

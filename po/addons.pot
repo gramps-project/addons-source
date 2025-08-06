@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-19 08:52-0700\n"
+"POT-Creation-Date: 2025-08-06 12:26-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15213,8 +15213,8 @@ msgstr ""
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
-"has to start and end with an alphanumeric character.The file extention '."
-"html' is added by the report."
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
 msgstr ""
 
 #: Heatmap/heatmap.py:103
@@ -16974,8 +16974,8 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1056
 msgid ""
-"RGB-color for the highlighted path between two individuals.  If the graph."
-"inverts, reverse the order to change."
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:1061
@@ -18797,9 +18797,9 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
 msgid ""
-"<i>Prerequistes required for the following <a href=\"https://gramps-project."
-"org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
-"work</i>:\n"
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
@@ -20728,20 +20728,20 @@ msgstr ""
 #: TMGimporter/importtmg.py:110
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer Addon."
-"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
-"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
-"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"Directly importing from TMG files is not supportedby the TMG Importer "
+"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
+"TMG project was created by:TMG version 5.x or greater.Your file:*.TMG - "
+"Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 
 #: TMGimporter/importtmg.py:131
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer Addon."
-"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
-"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
-"Control File for TMG 1.2 and earlierPlease refer to:"
+"Directly importing from TMG files is not supportedby the TMG Importer "
+"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
+"TMG project was created by:TMG version 5.x or greater.Your file:*.VER - "
+"Version Control File for TMG 1.2 and earlierPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 
@@ -22112,6 +22112,12 @@ msgstr ""
 msgid "Note updated"
 msgstr ""
 
+#: connection.py:113 postgresqlenhanced.py:112
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+
 #: constants.py:390
 msgid "Column - Icons"
 msgstr ""
@@ -22756,6 +22762,41 @@ msgstr ""
 msgid "Last Retrieved At:"
 msgstr ""
 
+#: migration.py:133
+msgid "Starting migration..."
+msgstr ""
+
+#: migration.py:145
+#, python-format
+msgid "Migrating %(type)s objects..."
+msgstr ""
+
+#: migration.py:154
+#, python-format
+msgid "Migrated %(count)d %(type)s objects"
+msgstr ""
+
+#: migration.py:171
+msgid "Migration completed!"
+msgstr ""
+
+#: migration.py:302 postgresqlenhanced.py:287
+msgid "Starting upgrade..."
+msgstr ""
+
+#: migration.py:320
+#, python-format
+msgid "Upgrading %(type)s objects..."
+msgstr ""
+
+#: migration.py:331
+msgid "Creating indexes..."
+msgstr ""
+
+#: migration.py:342
+msgid "Upgrade completed!"
+msgstr ""
+
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
 msgstr ""
@@ -22766,6 +22807,75 @@ msgstr ""
 
 #: note_links_loader.py:127
 msgid "Note Link (external)"
+msgstr ""
+
+#: postgresqlenhanced.gpr.py:27
+msgid "PostgreSQL Enhanced"
+msgstr ""
+
+#: postgresqlenhanced.gpr.py:28
+msgid "PostgreSQL _Enhanced Database"
+msgstr ""
+
+#: postgresqlenhanced.gpr.py:29
+msgid ""
+"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
+"and migration support. Uses psycopg3 for modern PostgreSQL features while "
+"maintaining full compatibility."
+msgstr ""
+
+#: postgresqlenhanced.py:118
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+
+#: postgresqlenhanced.py:167
+msgid "Database Backend"
+msgstr ""
+
+#: postgresqlenhanced.py:168
+msgid "Database module"
+msgstr ""
+
+#: postgresqlenhanced.py:170
+msgid "JSONB support"
+msgstr ""
+
+#: postgresqlenhanced.py:191
+#, python-format
+msgid "Version warning"
+msgstr ""
+
+#: postgresqlenhanced.py:193
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+
+#: postgresqlenhanced.py:206
+msgid "Extensions"
+msgstr ""
+
+#: postgresqlenhanced.py:224
+msgid "Database size"
+msgstr ""
+
+#: postgresqlenhanced.py:229
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr ""
+
+#: postgresqlenhanced.py:300
+msgid "Upgrading to PostgreSQL Enhanced"
+msgstr ""
+
+#: postgresqlenhanced.py:315
+msgid "Migration manager not initialized"
+msgstr ""
+
+#: postgresqlenhanced.py:327
+msgid "Enhanced queries require JSONB support"
 msgstr ""
 
 #: qr_window.py:88
@@ -22780,6 +22890,23 @@ msgstr ""
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
+msgstr ""
+
+#: queries.py:354
+msgid "pg_trgm extension required for duplicate detection"
+msgstr ""
+
+#: schema.py:156
+msgid "Creating new PostgreSQL Enhanced schema"
+msgstr ""
+
+#: schema.py:162
+#, python-format
+msgid "Upgrading schema from v%(current)s to v%(new)s"
+msgstr ""
+
+#: schema.py:246
+msgid "PostgreSQL Enhanced schema created successfully"
 msgstr ""
 
 #: settings_ui_manager.py:112
