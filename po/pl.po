@@ -7,13 +7,14 @@
 # Przemek Wiech <pwiech@gmail.com>, 2019.
 # Michał Stojek <stojex@gmail.com>, 2021, 2025.
 # WaldiS <sto@tutanota.de>, 2025.
+# Krystian Safjan <ksafjan@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-27 12:04+0000\n"
-"Last-Translator: WaldiS <sto@tutanota.de>\n"
+"POT-Creation-Date: 2025-08-06 12:26-0700\n"
+"PO-Revision-Date: 2025-07-30 08:11+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -83,9 +84,8 @@ msgid "Number of theoretical Ancestors "
 msgstr "Liczba teoretycznych przodków "
 
 #: AncestorFill/AncestorFill.py:210
-#, fuzzy
 msgid "Pedigree Collapse "
-msgstr "Upadek rodowodów "
+msgstr "Zwinięcie rodowodów "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
@@ -121,7 +121,7 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
-msgstr ""
+msgstr "Uproszczona liczba"
 
 #: AncestorFill/AncestorFill.py:313
 msgid ""
@@ -154,9 +154,8 @@ msgid "Check Associations data"
 msgstr "Sprawdzanie danych powiązań"
 
 #: AssociationsTool/associationstool.gpr.py:37
-#, fuzzy
 msgid "Will check the data on Association for people."
-msgstr "Sprawdzę dane dotyczące Stowarzyszenia dla ludzi."
+msgstr "Sprawdzi dane dotyczące powiązań dla osób."
 
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
@@ -217,7 +216,7 @@ msgstr "ID istniejącego źródła"
 
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr ""
+msgstr "ID źródła do załączenia"
 
 #: AttachSourceTool/AttachSourceTool.py:157
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
@@ -228,11 +227,11 @@ msgstr "Przetwarzanie...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
-msgstr ""
+msgstr "Dołączanie źródeł...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
-msgstr ""
+msgstr "Dołączanie źródeł..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
@@ -310,6 +309,8 @@ msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
 msgstr ""
+"\n"
+"{} HandleError wystąpił ale został zignorowany."
 
 #: AvatarGenerator/AvatarGenerator.py:263
 #: AvatarGenerator/AvatarGenerator.py:280
@@ -465,8 +466,8 @@ msgstr ""
 " Następne kroki:\n"
 "  - Wybierz ikonę widoku Osoby na pasku bocznym Nawigatora.\n"
 "  - Wybierz kogoś, aby ustawić go jako „Aktywną osobę”.\n"
-"  - Wybierz opcję „Set Home Person” (Ustaw osobę główną) z menu Edit (Edycja)"
-" lub z menu kontekstowego (po kliknięciu prawym przyciskiem myszy).\n"
+"  - Wybierz opcję „Set Home Person” (Ustaw osobę główną) z menu Edit "
+"(Edycja) lub z menu kontekstowego (po kliknięciu prawym przyciskiem myszy).\n"
 "\n"
 " Spowoduje to ustawienie tej osoby jako głównej „Home Person”."
 
@@ -483,10 +484,8 @@ msgid "Add via the Events tab of the Edit Person dialog."
 msgstr "Dodaj za pomocą karty Zdarzenia w oknie dialogowym Edytuj osobę."
 
 #: Betawhatsnext/Betawhatsnext.py:582
-#, fuzzy
-#| msgid "Relation type"
 msgid "relationship type unknown"
-msgstr "Typ relacji"
+msgstr "Typ relacji nieznany"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
@@ -544,15 +543,12 @@ msgid "Select the family you wish to examine."
 msgstr ""
 
 #: BirthOrder/birthorder.glade:155
-#, fuzzy
 msgid "Accept All"
-msgstr "Wybierz plik"
+msgstr "Zaakceptuj wszystko"
 
 #: BirthOrder/birthorder.glade:159
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
 msgid "This button will sort all of the families listed."
-msgstr "Ten przycisk wyczyści wszystkie dane z pól tutaj pokazanych."
+msgstr "Ten przycisk posortuje wszystkie wyświetlone rodziny."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
@@ -915,10 +911,8 @@ msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking Given Names"
-msgstr "Sprawdzanie nazw miejsc"
+msgstr "Sprawdzanie imion"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
@@ -1062,10 +1056,8 @@ msgid "Edit the active event"
 msgstr "Edytuj aktywne zdarzenie"
 
 #: CombinedView/combinedview.py:630
-#, fuzzy
-#| msgid "Show places"
 msgid "Show Tags"
-msgstr "Pokaż miejsca"
+msgstr "Pokaż tagi"
 
 #: CombinedView/combinedview.py:656
 msgid "Vertical Details"
@@ -1308,10 +1300,8 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1847
 #: DescendantBooks/DescendantBookReport.py:552
-#, fuzzy
-#| msgid "Whether to include addresses on repository."
 msgid "Whether to show duplicate family trees in the report."
-msgstr "Określa, czy dołączać adresy w magazynach."
+msgstr "Określa, czy dołączać zduplikowane drzewa rodzinne do raportu."
 
 #: D3Charts/DescendantIndentedTree.py:1851
 msgid "Expanded Row Background Color"
@@ -1338,16 +1328,12 @@ msgid "RGB-color for non-expandable row background."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
-#, fuzzy
-#| msgid "Include repository's address"
 msgid "Include records marked private"
-msgstr "Dołącz adresy magazynów"
+msgstr "Dołącz rekordy oznaczone jako prywatne"
 
 #: D3Charts/DescendantIndentedTree.py:1868
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include private objects."
-msgstr "Określa, czy dołączać zdjęcia."
+msgstr "Określa, czy dołączać obiekty prywatne."
 
 #: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
@@ -1366,10 +1352,8 @@ msgid "Whether or not to include people who may have recently died."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1895
-#, fuzzy
-#| msgid "abbreviation"
 msgid "Navigation"
-msgstr "skrót"
+msgstr "Nawigacja"
 
 #: D3Charts/DescendantIndentedTree.py:1897
 msgid "Contraction/Expansion mechanism"
@@ -1478,20 +1462,16 @@ msgid ""
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1964
-#, fuzzy
-#| msgid "Add active person"
 msgid "Exclude center person"
-msgstr "Dodaj aktywną osobę"
+msgstr "Wyklucz osobę centralną"
 
 #: D3Charts/DescendantIndentedTree.py:1965
 msgid "Whether or not to generate links for center person."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1970
-#, fuzzy
-#| msgid "Include Sources"
 msgid "Exclude Spouses"
-msgstr "Dołącz źródła"
+msgstr "Wyklucz partnerów"
 
 #: D3Charts/DescendantIndentedTree.py:1971
 msgid "Whether or not to generate links for spouses."
@@ -1646,10 +1626,9 @@ msgid ""
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestor"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Przodek"
+msgstr " Przodek: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -1704,10 +1683,8 @@ msgid "Largest Segment"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:159
-#, fuzzy
-#| msgid "No Source"
 msgid "Source(s)"
-msgstr "Brak źródła"
+msgstr "Źródło(a)"
 
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
@@ -1752,10 +1729,8 @@ msgid "Family:"
 msgstr "Rodzina:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
-#, fuzzy
-#| msgid "No Source"
 msgid "Sources?"
-msgstr "Brak źródła"
+msgstr "Źródła?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
@@ -1788,32 +1763,24 @@ msgid "Add as a Parent"
 msgstr "Dodaj jako rodzica"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
-#, fuzzy
-#| msgid "Add as a Spouse"
 msgid "Add as a Mother"
-msgstr "Dodaj jako małżonka"
+msgstr "Dodaj jako matkę"
 
 #: DataEntryGramplet/DataEntryGramplet.py:102
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Father"
-msgstr "Dodaj jako rodzica"
+msgstr "Dodaj jako ojca"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
 msgstr "Dodaj jako małżonka"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
-#, fuzzy
-#| msgid "Add as a Child"
 msgid "Add as a Wife"
-msgstr "Dodaj jako dziecko"
+msgstr "Dodaj jako żonę"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Husband"
-msgstr "Dodaj jako rodzica"
+msgstr "Dodaj jako męża"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
@@ -1870,16 +1837,12 @@ msgid "Please set the new person's gender."
 msgstr "Proszę ustawić płeć dla nowej osoby."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a mother."
-msgstr "Nie można dodać nowej osoby jako małżonka."
+msgstr "Nie można dodać nowej osoby jako matkę."
 
 #: DataEntryGramplet/DataEntryGramplet.py:536
-#, fuzzy
-#| msgid "Can't add new person as a parent."
 msgid "Can't add new person as a father."
-msgstr "Nie można dodać nowej osoby jako rodzica."
+msgstr "Nie można dodać nowej osoby jako ojca."
 
 #: DataEntryGramplet/DataEntryGramplet.py:541
 #: DataEntryGramplet/DataEntryGramplet.py:545
@@ -1890,16 +1853,12 @@ msgid "Can't add new person as a spouse."
 msgstr "Nie można dodać nowej osoby jako małżonka."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
-#, fuzzy
-#| msgid "Can't add new person as a child."
 msgid "Can't add new person as a wife."
-msgstr "Nie można dodać nowej osoby jako dziecka."
+msgstr "Nie można dodać nowej osoby jako żonę."
 
 #: DataEntryGramplet/DataEntryGramplet.py:555
-#, fuzzy
-#| msgid "Can't add new person as a sibling."
 msgid "Can't add new person as a husband."
-msgstr "Nie można dodać nowej osoby jako rodzeństwa."
+msgstr "Nie można dodać nowej osoby jako męża."
 
 #: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
@@ -1917,10 +1876,8 @@ msgid "Please set Active person."
 msgstr "Proszę wskazać aktywną osobę."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a spouse to no one."
-msgstr "Nie można dodać nowej osoby jako małżonka."
+msgstr "Nie można dodać nowej osoby jako małżonka do nikogo."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
@@ -2019,10 +1976,8 @@ msgid "Note on Family"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
-#, fuzzy
-#| msgid "Add as a Sibling"
 msgid "sibling"
-msgstr "Dodaj jako rodzeństwo"
+msgstr "rodzeństwo"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
 msgid "Note on Parent Family"
@@ -2034,10 +1989,8 @@ msgid "%s (association)"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "New person"
 msgid "Note on Person"
-msgstr "Nowa Osoba"
+msgstr "Notatka o osobie"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
@@ -2172,10 +2125,8 @@ msgid "witnesses"
 msgstr "Świadkowie"
 
 #: DenominoViso/DenominoViso.py:395
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "No central person selected"
-msgstr "Centralna osoba dla drzewa"
+msgstr "Nie wybrano osoby centralnej"
 
 #: DenominoViso/DenominoViso.py:769
 msgid "Unknown time direction"
@@ -2238,10 +2189,8 @@ msgid "Any string you wish."
 msgstr "Dowolny tekst który chcesz wpisać."
 
 #: DenominoViso/DenominoViso.py:2567
-#, fuzzy
-#| msgid "Display type"
 msgid "Display mode"
-msgstr "Typ wyświetlania"
+msgstr "Tryb wyświetlania"
 
 #: DenominoViso/DenominoViso.py:2568
 msgid "Either plot ancestor or descendants graph."
@@ -2301,20 +2250,16 @@ msgid "Include private records"
 msgstr "Dołącz rekordy prywatne"
 
 #: DenominoViso/DenominoViso.py:2608
-#, fuzzy
-#| msgid "Whether to include author."
 msgid "Whether to leave out private data."
-msgstr "Określa, czy dołączać autora."
+msgstr "Określa, czy wykluczyć dane prywatne."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
 msgstr "Dołącz zdarzenia"
 
 #: DenominoViso/DenominoViso.py:2613
-#, fuzzy
-#| msgid "Whether to include a person's note."
 msgid "Whether to include a person's events."
-msgstr "Określa, czy dołączać indywidualną notatkę osoby."
+msgstr "Określa, czy dołączać wydarzenia związane z osobą."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
@@ -2590,10 +2535,8 @@ msgid "should be"
 msgstr "powinien być"
 
 #: DenominoViso/DenominoViso.py:2913
-#, fuzzy
-#| msgid "Include media"
 msgid "Included"
-msgstr "Dołącz obiekty medialne"
+msgstr "Uwzględnione"
 
 #: DenominoViso/DenominoViso.py:2914
 msgid "Excluded"
@@ -2674,10 +2617,8 @@ msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:374
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendants Report"
-msgstr "Potomek"
+msgstr "Raport potomków"
 
 #: DescendantBooks/DescendantBookReport.py:423
 #: DescendantBooks/DetailedDescendantBookReport.py:421
@@ -2698,28 +2639,20 @@ msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict people that appear in the report"
-msgstr "Wybierz filtr, aby ograniczyć listę osób"
+msgstr "Wybierz filtr, aby ograniczyć ilość osób, które pojawią się w raporcie"
 
 #: DescendantBooks/DescendantBookReport.py:585
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the table of contents header."
-msgstr "Styl używany do tytułu strony."
+msgstr "Styl używany do nagłówka spisu treści."
 
 #: DescendantBooks/DescendantBookReport.py:595
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the table of contents detail."
-msgstr "Styl używany do tytułu raportu."
+msgstr "Styl używany do szczegółów spisu treści."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendant Book"
-msgstr "Potomek"
+msgstr "Księga potomków"
 
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
@@ -2814,10 +2747,9 @@ msgstr ""
 #: DescendantBooks/DetailedDescendantBookReport.py:819
 #: DescendantBooks/DetailedDescendantBookReport.py:863
 #: DetDescendantReport-images/detdescendantreporti.py:459
-#, fuzzy, python-format
-#| msgid "place: "
+#, python-format
 msgid "%(place)s"
-msgstr "miejsce: "
+msgstr "%(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:821
 #, python-format
@@ -2857,10 +2789,8 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1401
 #: DetDescendantReport-images/detdescendantreporti.py:1147
-#, fuzzy
-#| msgid "Include birth children"
 msgid "List children"
-msgstr "Dołącz urodziny dzieci"
+msgstr "Wypisz dzieci"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1418
 #: DetDescendantReport-images/detdescendantreporti.py:1164
@@ -2868,17 +2798,12 @@ msgid "Add descendant reference in child list"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1482
-#, fuzzy
-#| msgid "Include death relatives"
 msgid "Include Index of Names"
-msgstr "Dołącz zmarłych krewnych"
+msgstr "Dołącz indeks nazwisk"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1483
-#, fuzzy
-#| msgid ""
-#| "Whether to include the death of relatives during the lifetime of person."
 msgid "Whether to include the index of Names at the end of the report."
-msgstr "Określa, czy dołączać krewnych zmarłych podczas życia danej osoby."
+msgstr "Określa, czy dołączać indeks nazwisk na końcu raportu."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1487
 #, fuzzy
@@ -4164,10 +4089,8 @@ msgid "Repositories Index"
 msgstr "Raport repozytoriów"
 
 #: DynamicWeb/dynamicweb.py:3066
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Restore"
-msgstr "Przodek"
+msgstr "Przywróć"
 
 #: DynamicWeb/dynamicweb.py:3067
 msgid "Restore default settings"
@@ -4230,10 +4153,8 @@ msgid "Select the shape of graph"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3097
-#, fuzzy
-#| msgid "The type of graph to create."
 msgid "Select the type of graph"
-msgstr "Typ grafu do utworzenia"
+msgstr "Wybierz typ wykresu"
 
 #: DynamicWeb/dynamicweb.py:3101
 msgid "Several matches.<br>Precise your search or choose in the lists below."
@@ -4244,10 +4165,8 @@ msgid "Show _MENU_ entries"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3105 DynamicWeb/dynamicweb.py:5170
-#, fuzzy
-#| msgid "Show places"
 msgid "Show duplicates"
-msgstr "Pokaż miejsca"
+msgstr "Pokaż duplikaty"
 
 #: DynamicWeb/dynamicweb.py:3106
 msgid "Showing 0 to 0 of 0 entries"
@@ -4272,10 +4191,8 @@ msgid "Suppress Gramps ID"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3119
-#, fuzzy
-#| msgid "Surname, Given"
 msgid "Surnames Index"
-msgstr "Nadane nazwisko"
+msgstr "Indeks nazwisk"
 
 #: DynamicWeb/dynamicweb.py:3123
 msgid "U"
@@ -23374,6 +23291,12 @@ msgstr "Obrazy z atrybutami"
 msgid "Note updated"
 msgstr "Gramplet Notatki"
 
+#: connection.py:113 postgresqlenhanced.py:112
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+
 #: constants.py:390
 msgid "Column - Icons"
 msgstr ""
@@ -24069,6 +23992,45 @@ msgstr "Typ nazwiska"
 msgid "Last Retrieved At:"
 msgstr ""
 
+#: migration.py:133
+msgid "Starting migration..."
+msgstr ""
+
+#: migration.py:145
+#, python-format
+msgid "Migrating %(type)s objects..."
+msgstr ""
+
+#: migration.py:154
+#, python-format
+msgid "Migrated %(count)d %(type)s objects"
+msgstr ""
+
+#: migration.py:171
+msgid "Migration completed!"
+msgstr ""
+
+#: migration.py:302 postgresqlenhanced.py:287
+#, fuzzy
+#| msgid "Attaching sources..."
+msgid "Starting upgrade..."
+msgstr "Dołączanie źródeł..."
+
+#: migration.py:320
+#, python-format
+msgid "Upgrading %(type)s objects..."
+msgstr ""
+
+#: migration.py:331
+#, fuzzy
+#| msgid "Problem reading file"
+msgid "Creating indexes..."
+msgstr "Problem z odczytem pliku"
+
+#: migration.py:342
+msgid "Upgrade completed!"
+msgstr ""
+
 #: note_links_loader.py:69
 #, fuzzy
 #| msgid "No file parsed..."
@@ -24083,6 +24045,75 @@ msgstr ""
 msgid "Note Link (external)"
 msgstr ""
 
+#: postgresqlenhanced.gpr.py:27
+msgid "PostgreSQL Enhanced"
+msgstr ""
+
+#: postgresqlenhanced.gpr.py:28
+msgid "PostgreSQL _Enhanced Database"
+msgstr ""
+
+#: postgresqlenhanced.gpr.py:29
+msgid ""
+"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
+"and migration support. Uses psycopg3 for modern PostgreSQL features while "
+"maintaining full compatibility."
+msgstr ""
+
+#: postgresqlenhanced.py:118
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+
+#: postgresqlenhanced.py:167
+msgid "Database Backend"
+msgstr ""
+
+#: postgresqlenhanced.py:168
+msgid "Database module"
+msgstr ""
+
+#: postgresqlenhanced.py:170
+msgid "JSONB support"
+msgstr ""
+
+#: postgresqlenhanced.py:191
+#, python-format
+msgid "Version warning"
+msgstr ""
+
+#: postgresqlenhanced.py:193
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+
+#: postgresqlenhanced.py:206
+msgid "Extensions"
+msgstr ""
+
+#: postgresqlenhanced.py:224
+msgid "Database size"
+msgstr ""
+
+#: postgresqlenhanced.py:229
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr ""
+
+#: postgresqlenhanced.py:300
+msgid "Upgrading to PostgreSQL Enhanced"
+msgstr ""
+
+#: postgresqlenhanced.py:315
+msgid "Migration manager not initialized"
+msgstr ""
+
+#: postgresqlenhanced.py:327
+msgid "Enhanced queries require JSONB support"
+msgstr ""
+
 #: qr_window.py:88
 msgid "QR-code"
 msgstr ""
@@ -24095,6 +24126,23 @@ msgstr ""
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
+msgstr ""
+
+#: queries.py:354
+msgid "pg_trgm extension required for duplicate detection"
+msgstr ""
+
+#: schema.py:156
+msgid "Creating new PostgreSQL Enhanced schema"
+msgstr ""
+
+#: schema.py:162
+#, python-format
+msgid "Upgrading schema from v%(current)s to v%(new)s"
+msgstr ""
+
+#: schema.py:246
+msgid "PostgreSQL Enhanced schema created successfully"
 msgstr ""
 
 #: settings_ui_manager.py:112

@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"POT-Creation-Date: 2025-08-06 12:26-0700\n"
+"PO-Revision-Date: 2025-07-31 09:09+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -5011,7 +5011,8 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:648
 msgid "Click Close to close this Thumbnail View Area."
-msgstr "Klicke auf „Schließen“, um diesen Miniaturansichtsbereich zu schließen."
+msgstr ""
+"Klicke auf „Schließen“, um diesen Miniaturansichtsbereich zu schließen."
 
 #: EditExifMetadata/editexifmetadata.py:654
 msgid "Thumbnail View Area"
@@ -5435,7 +5436,8 @@ msgstr "Beziehungswerkzeug für Familien"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
-msgstr "Massenbearbeitung des Verwandtschaftstyps für eine Gruppe von Familien."
+msgstr ""
+"Massenbearbeitung des Verwandtschaftstyps für eine Gruppe von Familien."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
 msgid "All Families"
@@ -7995,7 +7997,8 @@ msgstr "EigentumSilos"
 
 #: Form/form_ca.xml.h:574
 msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr "17. Immobilienbesitz: Anzahl der Silos und Fassungsvermögen in Kubikfuß"
+msgstr ""
+"17. Immobilienbesitz: Anzahl der Silos und Fassungsvermögen in Kubikfuß"
 
 #: Form/form_ca.xml.h:575
 msgid "OwnedFactories"
@@ -9096,7 +9099,7 @@ msgstr "Parlamentsbezirk"
 
 #: Form/form_gb.xml.h:90
 msgid "Hamlet or Tything"
-msgstr "Weiler oder Zehnt"
+msgstr "Weiler oder Tything"
 
 #: Form/form_gb.xml.h:93 Form/form_gb.xml.h:180 Form/form_gb.xml.h:311
 msgid "Name and Surname of each Person"
@@ -9104,7 +9107,7 @@ msgstr "Vor- und Nachname jeder Person"
 
 #: Form/form_gb.xml.h:99
 msgid "Rank, Profession of Occupation"
-msgstr "Stellung, Erklärung zu Beschäftigung"
+msgstr "Rang, Beruf oder Tätigkeit"
 
 #: Form/form_gb.xml.h:102
 msgid "Whether Blind, or Deaf-and-Dumb"
@@ -9112,7 +9115,7 @@ msgstr "Ob Blind oder Taubstumm"
 
 #: Form/form_gb.xml.h:103 Form/form_gb.xml.h:124
 msgid "Civil Parish or Township"
-msgstr "Gemeinde oder Stadtgebiet"
+msgstr "Zivilgemeinde oder Stadtgemeinde"
 
 #: Form/form_gb.xml.h:108 Form/form_gb.xml.h:451 Form/form_gb.xml.h:479
 #: Form/form_gb.xml.h:510 Form/form_gb.xml.h:549
@@ -9121,7 +9124,7 @@ msgstr "Dorf oder Weiler"
 
 #: Form/form_gb.xml.h:109
 msgid "Local Board or Improvement Commissioners District"
-msgstr "Lokaler Vorstand oder Verbesserungsbeauftragter Bezirk"
+msgstr "Lokaler Ausschuss oder Ausschuss für Verbesserungsmaßnahmen Bezirk"
 
 #: Form/form_gb.xml.h:112 Form/form_gb.xml.h:133 Form/form_gb.xml.h:155
 #: Form/form_gb.xml.h:284
@@ -9139,7 +9142,7 @@ msgstr "ZUSTAND"
 
 #: Form/form_gb.xml.h:118
 msgid "AGE of"
-msgstr "Alter von"
+msgstr "ALTER von"
 
 #: Form/form_gb.xml.h:120 Form/form_gb.xml.h:141
 msgid "Rank, Profession or OCCUPATION"
@@ -9154,10 +9157,10 @@ msgid ""
 "4. Lunatic"
 msgstr ""
 "Ob\n"
-"1. Taub und stumm\n"
+"1. Taubstumm\n"
 "2. Blind\n"
-"3. Schwachsinnig oder Idiot\n"
-"4. Wahnsinnig"
+"3. Schwachsinnig oder zurückgeblieben\n"
+"4. Geisteskrank"
 
 #: Form/form_gb.xml.h:128 Form/form_gb.xml.h:150 Form/form_gb.xml.h:279
 msgid "Town, Village or Hamlet"
@@ -9169,7 +9172,7 @@ msgstr "Städtischer Gesundheitsbezirk"
 
 #: Form/form_gb.xml.h:130 Form/form_gb.xml.h:151 Form/form_gb.xml.h:280
 msgid "Rural Sanitary District"
-msgstr "Ländlicherer Gesundheitsbezirk"
+msgstr "Ländlicher Gesundheitsbezirk"
 
 #: Form/form_gb.xml.h:131 Form/form_gb.xml.h:153 Form/form_gb.xml.h:282
 msgid "Ecclesiastical Parish or District"
@@ -9177,11 +9180,11 @@ msgstr "Kirchliche Gemeinde oder Bezirk"
 
 #: Form/form_gb.xml.h:137 Form/form_gb.xml.h:159 Form/form_gb.xml.h:288
 msgid "CONDITION as to Marriage"
-msgstr "Bedingung für die Ehe"
+msgstr "BEDINGUNG für die Eheschließung"
 
 #: Form/form_gb.xml.h:139 Form/form_gb.xml.h:161 Form/form_gb.xml.h:290
 msgid "AGE last Birthday of"
-msgstr "ALTER letzter Geburtstag von"
+msgstr "ALTER beim letzten Geburtstag von"
 
 #: Form/form_gb.xml.h:144
 msgid ""
@@ -9192,10 +9195,10 @@ msgid ""
 "(4) Lunatic"
 msgstr ""
 "Wenn\n"
-"(1) Taub und stumm\n"
+"(1) Taubstumm\n"
 "(2) Blind\n"
-"(3) Schwachsinnig oder Idiot\n"
-"(4) Wahnsinnig"
+"(3) Schwachsinnig oder zurückgeblieben\n"
+"(4) Geisteskrank"
 
 #: Form/form_gb.xml.h:145 Form/form_gb.xml.h:171 Form/form_gb.xml.h:274
 #: Form/form_gb.xml.h:302
@@ -9215,11 +9218,11 @@ msgstr "Stadtgemeinde"
 #: Form/form_gb.xml.h:152 Form/form_gb.xml.h:177 Form/form_gb.xml.h:281
 #: Form/form_gb.xml.h:308
 msgid "Parliamentary Borough or Division"
-msgstr "Parlamentsbezirk oder Gliederung"
+msgstr "Parlamentsbezirk oder Unterbezirk"
 
 #: Form/form_gb.xml.h:163 Form/form_gb.xml.h:292
 msgid "PROFESSION or OCCUPATION"
-msgstr "Beruf oder Beschäftigung"
+msgstr "BERUF oder TÄTIGKEIT"
 
 #: Form/form_gb.xml.h:165 Form/form_gb.xml.h:294 Form/form_gb.xml.h:526
 #: Form/form_us.xml.h:819
@@ -9228,11 +9231,11 @@ msgstr "Angestellt"
 
 #: Form/form_gb.xml.h:166 Form/form_gb.xml.h:295 Form/form_gb.xml.h:527
 msgid "Neither"
-msgstr "Keines von beiden"
+msgstr "Weder noch"
 
 #: Form/form_gb.xml.h:167 Form/form_gb.xml.h:296 Form/form_gb.xml.h:528
 msgid "Neither Employer nor Employed"
-msgstr "Weder Arbeitgeber noch Angestellt"
+msgstr "Weder Arbeitgeber noch Arbeitnehmer"
 
 #: Form/form_gb.xml.h:170 Form/form_gb.xml.h:299
 msgid ""
@@ -9241,22 +9244,22 @@ msgid ""
 "(2) Blind\n"
 "(3) Lunatic, Imbecile or Idiot"
 msgstr ""
-"Wenn\n"
-"(1) Taub und Blind\n"
-"(2) Blind\n"
-"(3) Wahnsinnig, Schwachsinnig oder Idiot"
+"Wenn \n"
+"(1) Taubblind \n"
+"(2) Blind \n"
+"(3) Geisteskrank, schwachsinnig oder zurückgeblieben"
 
 #: Form/form_gb.xml.h:173 Form/form_gb.xml.h:304 Form/form_gb.xml.h:539
 msgid "Ecclesiastical Parish"
-msgstr "Kirchengemeinde"
+msgstr "Kirchliche Gemeinde"
 
 #: Form/form_gb.xml.h:174 Form/form_gb.xml.h:305
 msgid "County Borough, Municipal Borough, or Urban District"
-msgstr "Grafschaftsbezirk, Stadtbezirk oder Stadtteil"
+msgstr "Landkreiskreis, Stadtkreis oder Stadtbezirk"
 
 #: Form/form_gb.xml.h:175 Form/form_gb.xml.h:306
 msgid "Ward of Municipal Borough or of Urban District"
-msgstr "Gemeinde des Stadtbezirk oder des Stadtteil"
+msgstr "Stadtbezirk oder Stadtgemeinde"
 
 #: Form/form_gb.xml.h:176 Form/form_gb.xml.h:307
 msgid "Rural District"
@@ -9268,15 +9271,15 @@ msgstr "Stadt oder Dorf oder Weiler"
 
 #: Form/form_gb.xml.h:184 Form/form_gb.xml.h:315 Form/form_gb.xml.h:561
 msgid "Condition as to Marriage"
-msgstr "Bedingung für die Ehe"
+msgstr "Bedingung für die Eheschließung"
 
 #: Form/form_gb.xml.h:186 Form/form_gb.xml.h:317
 msgid "Age last Birthday of"
-msgstr "Alter letzter Geburtstag von"
+msgstr "Alter beim letzten Geburtstag von"
 
 #: Form/form_gb.xml.h:188 Form/form_gb.xml.h:319
 msgid "PROFESSION OR OCCUPATION"
-msgstr "Beruf oder Beschäftigung"
+msgstr "BERUF oder TÄTIGKEIT"
 
 #: Form/form_gb.xml.h:189 Form/form_gb.xml.h:220 Form/form_gb.xml.h:320
 #: Form/form_gb.xml.h:353
@@ -9285,7 +9288,7 @@ msgstr "Arbeitsart"
 
 #: Form/form_gb.xml.h:190 Form/form_gb.xml.h:321
 msgid "Employer, Worker or Own Account"
-msgstr "Arbeitgeber, Arbeitnehmer oder eigene Rechnung"
+msgstr "Arbeitgeber, Arbeitnehmer oder Selbstständiger"
 
 #: Form/form_gb.xml.h:191 Form/form_gb.xml.h:222 Form/form_gb.xml.h:322
 #: Form/form_gb.xml.h:355
@@ -9305,10 +9308,10 @@ msgid ""
 "(4) Imbecile, feeble-minded"
 msgstr ""
 "Wenn\n"
-"(1) Taub und Stumm\n"
+"(1) Taubstumm\n"
 "(2) Blind\n"
 "(3) Geisteskrank\n"
-"(4) Schwachsinnig, Geistesschwach"
+"(4) Schwachsinnig, geistig zurückgeblieben"
 
 #: Form/form_gb.xml.h:197 Form/form_gb.xml.h:231 Form/form_gb.xml.h:330
 #: Form/form_gb.xml.h:366
@@ -9342,8 +9345,7 @@ msgid ""
 "\"Single,\" \"Married,\" \"Widower,\" or \"Widow,\" for all persons aged 15 "
 "years and upwards."
 msgstr ""
-"\"Single\", \"Verheiratet\", \"Witwer\" oder \"Witwe\" für alle Personen ab "
-"15 Jahren."
+"„Ledig“, „Verheiratet“, Witwer“ oder „Witwe“ für alle Personen ab 15 Jahren."
 
 #: Form/form_gb.xml.h:208 Form/form_gb.xml.h:341 Form/form_gb.xml.h:617
 msgid "Years Married"
@@ -9351,7 +9353,7 @@ msgstr "Jahre Verheiratet"
 
 #: Form/form_gb.xml.h:209 Form/form_gb.xml.h:342
 msgid "Completed Years the present Marriage has lasted."
-msgstr "Dauer gegenwärtige Ehe in abgeschlossene Jahren."
+msgstr "Die Dauer der bestehenden Ehe in Jahren."
 
 #: Form/form_gb.xml.h:210 Form/form_gb.xml.h:343
 msgid "Children Total"
@@ -9359,11 +9361,11 @@ msgstr "Kinder insgesamt"
 
 #: Form/form_gb.xml.h:211 Form/form_gb.xml.h:344
 msgid "Total Children Born Alive."
-msgstr "Insgesamt lebend geborene Kinder."
+msgstr "Gesamtzahl der lebend geborenen Kinder."
 
 #: Form/form_gb.xml.h:213 Form/form_gb.xml.h:346
 msgid "Children still Living."
-msgstr "Kinder leben noch."
+msgstr "Kinder, die noch leben."
 
 #: Form/form_gb.xml.h:214 Form/form_gb.xml.h:347
 msgid "Children Died"
@@ -9375,12 +9377,12 @@ msgstr "Kinder, die gestorben sind."
 
 #: Form/form_gb.xml.h:217 Form/form_gb.xml.h:350
 msgid "Personal Occupation"
-msgstr "Persönlicher Beruf"
+msgstr "Persönliche Beschäftigung"
 
 #: Form/form_gb.xml.h:218 Form/form_gb.xml.h:351 Form/form_us.xml.h:778
 #: Form/form_us.xml.h:817 Form/form_us.xml.h:864 Form/form_us.xml.h:1617
 msgid "Industry"
-msgstr "Branche"
+msgstr "Industrie"
 
 #: Form/form_gb.xml.h:219 Form/form_gb.xml.h:352
 msgid "Industry or Service with which worker is connected."
@@ -9392,7 +9394,7 @@ msgstr "Arbeitgeber, Arbeitnehmer oder auf eigene Rechnung arbeitend"
 
 #: Form/form_gb.xml.h:223 Form/form_gb.xml.h:356
 msgid "Whether Working at Home"
-msgstr "Ob zu Hause arbeiten"
+msgstr "Ob Sie zu Hause arbeiten"
 
 #: Form/form_gb.xml.h:225 Form/form_gb.xml.h:358
 msgid "BIRTHPLACE of every Person."
@@ -9400,7 +9402,7 @@ msgstr "GEBURTSORT jeder Person."
 
 #: Form/form_gb.xml.h:227 Form/form_gb.xml.h:360
 msgid "NATIONALITY of every Person born in a Foreign Country."
-msgstr "NATIONALITÄT jeder im Ausland geborenen Person."
+msgstr "STAATSANGEHÖRIGKEIT jeder Person, die im Ausland geboren wurde."
 
 #: Form/form_gb.xml.h:229 Form/form_gb.xml.h:362
 msgid "INFIRMITY"
@@ -9510,7 +9512,7 @@ msgstr "S, M, W oder D."
 
 #: Form/form_gb.xml.h:271
 msgid "PERSONAL OCCUPATION"
-msgstr "Persönlicher Beruf"
+msgstr "PERSÖNLICHE BESCHÄFTIGUNG"
 
 #: Form/form_gb.xml.h:272
 msgid "Instructions"
@@ -9550,12 +9552,12 @@ msgstr "Quoad Sacra Kirchengemeinde"
 #: Form/form_gb.xml.h:405 Form/form_gb.xml.h:420 Form/form_gb.xml.h:447
 #: Form/form_gb.xml.h:475 Form/form_gb.xml.h:503 Form/form_gb.xml.h:542
 msgid "Parliamentary Burgh"
-msgstr "Parlamentarische freie Stadt"
+msgstr "Parlamentarische Stadtgemeinde"
 
 #: Form/form_gb.xml.h:406 Form/form_gb.xml.h:421 Form/form_gb.xml.h:448
 #: Form/form_gb.xml.h:476 Form/form_gb.xml.h:505 Form/form_gb.xml.h:544
 msgid "Royal Burgh"
-msgstr "königliche Freistadt"
+msgstr "Königliche Stadt"
 
 #: Form/form_gb.xml.h:407 Form/form_gb.xml.h:604
 msgid "Town or Village"
@@ -9571,22 +9573,22 @@ msgstr "Beziehung zum Oberhaupt"
 
 #: Form/form_gb.xml.h:417
 msgid "Blind, or Deaf and Dumb"
-msgstr "Blind oder Taub und Stumm"
+msgstr "Blind oder Taubstumm"
 
 #: Form/form_gb.xml.h:427 Form/form_gb.xml.h:454 Form/form_gb.xml.h:482
 #: Form/form_gb.xml.h:514 Form/form_gb.xml.h:553
 msgid "No. Of Schedule"
-msgstr "Nr. der Liste"
+msgstr "Nr. des Verzeichnisses"
 
 #: Form/form_gb.xml.h:429 Form/form_gb.xml.h:456 Form/form_gb.xml.h:484
 #: Form/form_gb.xml.h:516 Form/form_gb.xml.h:555
 msgid "Road, Street, etc, and No. or Name of House"
-msgstr "Weg, Straße usw. und Nr. oder Name des Hauses"
+msgstr "Straße, Weg usw. und Hausnummer oder Name des Hauses"
 
 #: Form/form_gb.xml.h:430 Form/form_gb.xml.h:457 Form/form_gb.xml.h:485
 #: Form/form_gb.xml.h:517 Form/form_gb.xml.h:556
 msgid "House Inhabited"
-msgstr "Haus bewohnt"
+msgstr "Bewohntes Haus"
 
 #: Form/form_gb.xml.h:431 Form/form_gb.xml.h:458 Form/form_gb.xml.h:486
 #: Form/form_gb.xml.h:518 Form/form_gb.xml.h:557
@@ -9615,17 +9617,17 @@ msgstr "Anzahl der Kinder von 5 bis 13 Jahren, die eine Schule besuchen"
 #: Form/form_gb.xml.h:443 Form/form_gb.xml.h:470 Form/form_gb.xml.h:498
 #: Form/form_gb.xml.h:535 Form/form_gb.xml.h:572
 msgid "WindowRooms"
-msgstr "Räume mit Fenstern"
+msgstr "Fensterräume"
 
 #: Form/form_gb.xml.h:444 Form/form_gb.xml.h:471 Form/form_gb.xml.h:499
 #: Form/form_gb.xml.h:536 Form/form_gb.xml.h:573
 msgid "No. of Rooms with one or more Windows"
-msgstr "Anzahl der Räume mit einem oder mehr Fenster"
+msgstr "Anzahl der Räume mit einem oder mehreren Fenstern"
 
 #: Form/form_gb.xml.h:449 Form/form_gb.xml.h:477 Form/form_gb.xml.h:507
 #: Form/form_gb.xml.h:546
 msgid "Police Burgh"
-msgstr "Polizeilich freie Stadt"
+msgstr "Polizeistadt"
 
 #: Form/form_gb.xml.h:467 Form/form_gb.xml.h:495 Form/form_gb.xml.h:532
 #: Form/form_gb.xml.h:569
@@ -9635,19 +9637,19 @@ msgstr ""
 
 #: Form/form_gb.xml.h:474
 msgid "School Board District"
-msgstr "Schulbehörde Bezirk"
+msgstr "Schulbezirk"
 
 #: Form/form_gb.xml.h:502 Form/form_gb.xml.h:541
 msgid "School board District"
-msgstr "Schulbehörde Bezirk"
+msgstr "Schulbezirk"
 
 #: Form/form_gb.xml.h:504 Form/form_gb.xml.h:543 Form/form_gb.xml.h:602
 msgid "Parliamentary Division"
-msgstr "Paramilitärische Einheit"
+msgstr "Parlamentarische Abteilung"
 
 #: Form/form_gb.xml.h:506 Form/form_gb.xml.h:545
 msgid "Municipal Burgh"
-msgstr "Kommunal freie Stadt"
+msgstr "Stadtgemeinde"
 
 #: Form/form_gb.xml.h:508 Form/form_gb.xml.h:547
 msgid "Burgh Ward"
@@ -9667,11 +9669,11 @@ msgstr "Gemeindebezirk"
 
 #: Form/form_gb.xml.h:563
 msgid "Profession or Occupation"
-msgstr "Beruf oder Beschäftigung"
+msgstr "Beruf oder Tätigkeit"
 
 #: Form/form_gb.xml.h:564
 msgid "Employer, Worker or on Own Account"
-msgstr "Arbeitgeber, Arbeitnehmer oder auf eigene Rechnung"
+msgstr "Arbeitgeber, Arbeitnehmer oder Selbstständiger"
 
 #: Form/form_gb.xml.h:565
 msgid "Working at Home"
@@ -9730,7 +9732,7 @@ msgstr "Familienoberhaupt"
 
 #: Form/form_gb.xml.h:618
 msgid "Total Children"
-msgstr "Kinder insgesamt"
+msgstr "Gesamtzahl der Kinder"
 
 #: Form/form_gb.xml.h:619
 msgid "Children born alive to present Marriage"
@@ -17283,8 +17285,8 @@ msgid ""
 "You have to select a custom note or uncheck the option 'include custom note' "
 "to generate this report."
 msgstr ""
-"Du musst eine benutzerdefinierte Notiz auswählen oder die Option „"
-"Benutzerdefinierte Notiz einbeziehen” deaktivieren, um diesen Bericht zu "
+"Du musst eine benutzerdefinierte Notiz auswählen oder die Option "
+"„Benutzerdefinierte Notiz einbeziehen” deaktivieren, um diesen Bericht zu "
 "erstellen."
 
 #: MediaReport/media_report.py:125
@@ -23335,6 +23337,12 @@ msgstr "Attribut aktualisiert"
 msgid "Note updated"
 msgstr "Notiz aktualisiert"
 
+#: connection.py:113 postgresqlenhanced.py:112
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+
 #: constants.py:390
 msgid "Column - Icons"
 msgstr "Spalte - Symbole"
@@ -24051,6 +24059,52 @@ msgstr "Ortstart:"
 msgid "Last Retrieved At:"
 msgstr "Zuletzt abgerufen am:"
 
+#: migration.py:133
+#, fuzzy
+#| msgid "Generating relation map..."
+msgid "Starting migration..."
+msgstr "Beziehungskarte erzeugen..."
+
+#: migration.py:145
+#, fuzzy, python-format
+#| msgid "Writing %s reports..."
+msgid "Migrating %(type)s objects..."
+msgstr "Schreibe %s Berichte..."
+
+#: migration.py:154
+#, python-format
+msgid "Migrated %(count)d %(type)s objects"
+msgstr ""
+
+#: migration.py:171
+#, fuzzy
+#| msgid "Highest grade completed"
+msgid "Migration completed!"
+msgstr "Höchster Abschluss"
+
+#: migration.py:302 postgresqlenhanced.py:287
+#, fuzzy
+#| msgid "Attaching sources..."
+msgid "Starting upgrade..."
+msgstr "Quellen anhängen..."
+
+#: migration.py:320
+#, python-format
+msgid "Upgrading %(type)s objects..."
+msgstr ""
+
+#: migration.py:331
+#, fuzzy
+#| msgid "Fetching index list..."
+msgid "Creating indexes..."
+msgstr "Indexliste abrufen..."
+
+#: migration.py:342
+#, fuzzy
+#| msgid "Highest grade completed"
+msgid "Upgrade completed!"
+msgstr "Höchster Abschluss"
+
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
 msgstr "Notizverknüpfung (analysiert)"
@@ -24062,6 +24116,86 @@ msgstr "Notiz-Link (intern)"
 #: note_links_loader.py:127
 msgid "Note Link (external)"
 msgstr "Notiz-Link (extern)"
+
+#: postgresqlenhanced.gpr.py:27
+#, fuzzy
+#| msgid "PostgreSQL"
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL"
+
+#: postgresqlenhanced.gpr.py:28
+#, fuzzy
+#| msgid "PostgreSQL Database"
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL Datenbank"
+
+#: postgresqlenhanced.gpr.py:29
+msgid ""
+"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
+"and migration support. Uses psycopg3 for modern PostgreSQL features while "
+"maintaining full compatibility."
+msgstr ""
+
+#: postgresqlenhanced.py:118
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+
+#: postgresqlenhanced.py:167
+msgid "Database Backend"
+msgstr ""
+
+#: postgresqlenhanced.py:168
+msgid "Database module"
+msgstr ""
+
+#: postgresqlenhanced.py:170
+#, fuzzy
+#| msgid "JSON Export"
+msgid "JSONB support"
+msgstr "JSON-Export"
+
+#: postgresqlenhanced.py:191
+#, fuzzy, python-format
+#| msgid "Version %s"
+msgid "Version warning"
+msgstr "Version %s"
+
+#: postgresqlenhanced.py:193
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+
+#: postgresqlenhanced.py:206
+#, fuzzy
+#| msgid "Version %s"
+msgid "Extensions"
+msgstr "Version %s"
+
+#: postgresqlenhanced.py:224
+msgid "Database size"
+msgstr ""
+
+#: postgresqlenhanced.py:229
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr ""
+
+#: postgresqlenhanced.py:300
+msgid "Upgrading to PostgreSQL Enhanced"
+msgstr ""
+
+#: postgresqlenhanced.py:315
+#, fuzzy
+#| msgid "Foreigners not naturalized"
+msgid "Migration manager not initialized"
+msgstr "Ausländer nicht eingebürgert"
+
+#: postgresqlenhanced.py:327
+msgid "Enhanced queries require JSONB support"
+msgstr ""
 
 #: qr_window.py:88
 msgid "QR-code"
@@ -24078,6 +24212,23 @@ msgid ""
 msgstr ""
 "⚠ Fehler beim Generieren des QR-Codes:\n"
 "Ursprünglicher Fehler: „{}“"
+
+#: queries.py:354
+msgid "pg_trgm extension required for duplicate detection"
+msgstr ""
+
+#: schema.py:156
+msgid "Creating new PostgreSQL Enhanced schema"
+msgstr ""
+
+#: schema.py:162
+#, python-format
+msgid "Upgrading schema from v%(current)s to v%(new)s"
+msgstr ""
+
+#: schema.py:246
+msgid "PostgreSQL Enhanced schema created successfully"
+msgstr ""
 
 #: settings_ui_manager.py:112
 msgid "Middle Name Handling"

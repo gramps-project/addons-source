@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-06-20 05:24+0000\n"
+"POT-Creation-Date: 2025-08-06 12:26-0700\n"
+"PO-Revision-Date: 2025-08-07 08:58+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -23079,6 +23079,14 @@ msgstr "Atributo actualizado"
 msgid "Note updated"
 msgstr "Nota actualizada"
 
+#: connection.py:113 postgresqlenhanced.py:112
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"psycopg3 é necessário para supoete a PostgreSQL Enhance. Instale com: pip "
+"install 'psycopg[binary]'"
+
 #: constants.py:390
 msgid "Column - Icons"
 msgstr "Coluna - Ícones"
@@ -23790,6 +23798,41 @@ msgstr "Tipo de local:"
 msgid "Last Retrieved At:"
 msgstr "Última actualização em:"
 
+#: migration.py:133
+msgid "Starting migration..."
+msgstr "A iniciar a migração..."
+
+#: migration.py:145
+#, python-format
+msgid "Migrating %(type)s objects..."
+msgstr "A migrar %(type)s objectos..."
+
+#: migration.py:154
+#, python-format
+msgid "Migrated %(count)d %(type)s objects"
+msgstr "Migrados %(count)d %(type)s objectos"
+
+#: migration.py:171
+msgid "Migration completed!"
+msgstr "Migração concluída!"
+
+#: migration.py:302 postgresqlenhanced.py:287
+msgid "Starting upgrade..."
+msgstr "A iniciar a actualização..."
+
+#: migration.py:320
+#, python-format
+msgid "Upgrading %(type)s objects..."
+msgstr "A actualizar %(type)s objectos..."
+
+#: migration.py:331
+msgid "Creating indexes..."
+msgstr "A criar índices..."
+
+#: migration.py:342
+msgid "Upgrade completed!"
+msgstr "Actualização concluída!"
+
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
 msgstr "Ligação de nota(analisada)"
@@ -23801,6 +23844,81 @@ msgstr "Ligação de nota (interna)"
 #: note_links_loader.py:127
 msgid "Note Link (external)"
 msgstr "Ligação de nota (externa)"
+
+#: postgresqlenhanced.gpr.py:27
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL Enhanced"
+
+#: postgresqlenhanced.gpr.py:28
+msgid "PostgreSQL _Enhanced Database"
+msgstr "Base de dados PostgreSQL _Enhanced Database"
+
+#: postgresqlenhanced.gpr.py:29
+msgid ""
+"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
+"and migration support. Uses psycopg3 for modern PostgreSQL features while "
+"maintaining full compatibility."
+msgstr ""
+"Motor de base de dados PostgreSQL Enhanced com armazenamento JSONB, "
+"consultas avançadas e suporte a migração. Usa psycopg3 para funcionalidades "
+"modernas do PostgreSQL, mantendo compatibilidade total."
+
+#: postgresqlenhanced.py:118
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"versão do psycopg3 %(installed)s demasiado antiga. É necessária a versão "
+"%(required)s ou mais recente."
+
+#: postgresqlenhanced.py:167
+msgid "Database Backend"
+msgstr "Motor de base de dados"
+
+#: postgresqlenhanced.py:168
+msgid "Database module"
+msgstr "Módulo de base de dados"
+
+#: postgresqlenhanced.py:170
+msgid "JSONB support"
+msgstr "Suporte a JSONB"
+
+#: postgresqlenhanced.py:191
+#, python-format
+msgid "Version warning"
+msgstr "Aviso de versão"
+
+#: postgresqlenhanced.py:193
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+"PostgreSQL %(version)s está abaixo da versão %(recommended)s recomendada"
+
+#: postgresqlenhanced.py:206
+msgid "Extensions"
+msgstr "Extensões"
+
+#: postgresqlenhanced.py:224
+msgid "Database size"
+msgstr "Tamanho da base de dados"
+
+#: postgresqlenhanced.py:229
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d indivíduos, %(families)d famílias, %(events)d eventos"
+
+#: postgresqlenhanced.py:300
+msgid "Upgrading to PostgreSQL Enhanced"
+msgstr "Actualizar para PostgreSQL Enhanced"
+
+#: postgresqlenhanced.py:315
+msgid "Migration manager not initialized"
+msgstr "Gestor de migração não inicializado"
+
+#: postgresqlenhanced.py:327
+msgid "Enhanced queries require JSONB support"
+msgstr "Consultas avançadas requerem suporte a JSONB"
 
 #: qr_window.py:88
 msgid "QR-code"
@@ -23817,6 +23935,23 @@ msgid ""
 msgstr ""
 "⚠ Erro ao gerar código QR:\n"
 "Erro original: “{}”"
+
+#: queries.py:354
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "extensão pg_trgm requerida para detecção duplicada"
+
+#: schema.py:156
+msgid "Creating new PostgreSQL Enhanced schema"
+msgstr "A criar novo esquema de PostgreSQL Enhanced"
+
+#: schema.py:162
+#, python-format
+msgid "Upgrading schema from v%(current)s to v%(new)s"
+msgstr "A actualizar esquema de v%(current)s para v%(new)s"
+
+#: schema.py:246
+msgid "PostgreSQL Enhanced schema created successfully"
+msgstr "Esquema PostgreSQL Enhanced criado com sucesso"
 
 #: settings_ui_manager.py:112
 msgid "Middle Name Handling"

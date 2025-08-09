@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-24 19:04+0000\n"
+"POT-Creation-Date: 2025-08-06 12:26-0700\n"
+"PO-Revision-Date: 2025-08-08 09:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -6633,107 +6633,107 @@ msgstr "23. Majs: Bushel produktion."
 
 #: Form/form_ca.xml.h:144
 msgid "PotatoesAcres"
-msgstr ""
+msgstr "TunnlandPotatis"
 
 #: Form/form_ca.xml.h:145
 msgid "24. Potatoes: Acres"
-msgstr ""
+msgstr "24. Potatis: Tunnland"
 
 #: Form/form_ca.xml.h:146
 msgid "PotatoesBush"
-msgstr ""
+msgstr "BushelPotatis"
 
 #: Form/form_ca.xml.h:147
 msgid "25. Potatoes: Produce Bsh."
-msgstr ""
+msgstr "25. Potatis: Bushel produktion."
 
 #: Form/form_ca.xml.h:148
 msgid "TurnipsAcres"
-msgstr ""
+msgstr "TunnlandRovor"
 
 #: Form/form_ca.xml.h:149
 msgid "26. Turnips: Acres"
-msgstr ""
+msgstr "26. Rovor: Tunnland"
 
 #: Form/form_ca.xml.h:150
 msgid "TurnipsBush"
-msgstr ""
+msgstr "BushelRovor"
 
 #: Form/form_ca.xml.h:151
 msgid "27. Turnips: Produce Bsh."
-msgstr ""
+msgstr "27. Rovor: Bushel produktion."
 
 #: Form/form_ca.xml.h:152
 msgid "CloverBush"
-msgstr ""
+msgstr "BushelKlöver"
 
 #: Form/form_ca.xml.h:153
 msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr ""
+msgstr "28. Klöver, Timotej eller andra gräsfrön - Bushel."
 
 #: Form/form_ca.xml.h:154
 msgid "CarrotsBush"
-msgstr ""
+msgstr "BushelMorötter"
 
 #: Form/form_ca.xml.h:155
 msgid "29. Carrots - Bsh."
-msgstr ""
+msgstr "29. Morötter - Bushel."
 
 #: Form/form_ca.xml.h:156
 msgid "MangleWurtzel"
-msgstr ""
+msgstr "Foderbeta"
 
 #: Form/form_ca.xml.h:157
 msgid "30. Mangle Wurtzel"
-msgstr ""
+msgstr "30. Foderbeta"
 
 #: Form/form_ca.xml.h:158
 msgid "BeansBush"
-msgstr ""
+msgstr "BushelBönor"
 
 #: Form/form_ca.xml.h:159
 msgid "31. Beans Bush"
-msgstr ""
+msgstr "31. Bönor Bushel"
 
 #: Form/form_ca.xml.h:160
 msgid "HopsLbs"
-msgstr ""
+msgstr "PundHumle"
 
 #: Form/form_ca.xml.h:161
 msgid "32. Hops Lbs."
-msgstr ""
+msgstr "32. Humle Pund."
 
 #: Form/form_ca.xml.h:162
 msgid "HayQty"
-msgstr ""
+msgstr "MängdHö"
 
 #: Form/form_ca.xml.h:163
 msgid "33. Hay, Bundles or Tons"
-msgstr ""
+msgstr "33. Hö, Buntar eller ton"
 
 #: Form/form_ca.xml.h:164
 msgid "FlaxLbs"
-msgstr ""
+msgstr "PundLinfrö"
 
 #: Form/form_ca.xml.h:165
 msgid "34. Flax or Hemp, Lbs."
-msgstr ""
+msgstr "34. Linfrö eller Hampa, pund."
 
 #: Form/form_ca.xml.h:166
 msgid "TobaccoLbs"
-msgstr ""
+msgstr "PundTobak"
 
 #: Form/form_ca.xml.h:167
 msgid "35. Tobacco Lbs."
-msgstr ""
+msgstr "35. Tobak Pund."
 
 #: Form/form_ca.xml.h:168
 msgid "WoolLbs."
-msgstr ""
+msgstr "PundUll."
 
 #: Form/form_ca.xml.h:169
 msgid "36. Wool Lbs."
-msgstr ""
+msgstr "36. Ull Pund."
 
 #: Form/form_ca.xml.h:170
 msgid "Column37"
@@ -6741,7 +6741,7 @@ msgstr "Kolumn37"
 
 #: Form/form_ca.xml.h:171
 msgid "37."
-msgstr ""
+msgstr "37."
 
 #: Form/form_ca.xml.h:172
 msgid "Column38"
@@ -6749,7 +6749,7 @@ msgstr "Kolumn38"
 
 #: Form/form_ca.xml.h:173
 msgid "38."
-msgstr ""
+msgstr "38."
 
 #: Form/form_ca.xml.h:174
 msgid "Column39"
@@ -6757,23 +6757,23 @@ msgstr "Kolumn39"
 
 #: Form/form_ca.xml.h:175
 msgid "39."
-msgstr ""
+msgstr "39."
 
 #: Form/form_ca.xml.h:176
 msgid "MapleSugarLbs"
-msgstr ""
+msgstr "LönnsirapPund"
 
 #: Form/form_ca.xml.h:177
 msgid "40. Maple Sugar Lbs."
-msgstr ""
+msgstr "40. Lönnsirap Pund."
 
 #: Form/form_ca.xml.h:178
 msgid "CiderGalls"
-msgstr ""
+msgstr "GallonsCider"
 
 #: Form/form_ca.xml.h:179
 msgid "41. Cider Galls."
-msgstr ""
+msgstr "41. Cider Gallons."
 
 #: Form/form_ca.xml.h:180
 msgid "ClothYards"
@@ -22844,6 +22844,12 @@ msgstr "Attribut uppdaterat"
 msgid "Note updated"
 msgstr "Anteckning uppdaterad"
 
+#: connection.py:113 postgresqlenhanced.py:112
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+
 #: constants.py:390
 msgid "Column - Icons"
 msgstr ""
@@ -23533,6 +23539,48 @@ msgstr "Platstyp:"
 msgid "Last Retrieved At:"
 msgstr "Senast hämtad vid:"
 
+#: migration.py:133
+#, fuzzy
+#| msgid "Generating relation map..."
+msgid "Starting migration..."
+msgstr "Skapar relationskarta..."
+
+#: migration.py:145
+#, fuzzy, python-format
+#| msgid "Writing %s reports..."
+msgid "Migrating %(type)s objects..."
+msgstr "Skriver %s rapporter..."
+
+#: migration.py:154
+#, python-format
+msgid "Migrated %(count)d %(type)s objects"
+msgstr ""
+
+#: migration.py:171
+msgid "Migration completed!"
+msgstr ""
+
+#: migration.py:302 postgresqlenhanced.py:287
+#, fuzzy
+#| msgid "Attaching sources..."
+msgid "Starting upgrade..."
+msgstr "Kopplar källor..."
+
+#: migration.py:320
+#, python-format
+msgid "Upgrading %(type)s objects..."
+msgstr ""
+
+#: migration.py:331
+#, fuzzy
+#| msgid "Fetching index list..."
+msgid "Creating indexes..."
+msgstr "Hämtar indexlistan..."
+
+#: migration.py:342
+msgid "Upgrade completed!"
+msgstr ""
+
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
 msgstr "Anteckningslänk (tolkades)"
@@ -23543,6 +23591,84 @@ msgstr ""
 
 #: note_links_loader.py:127
 msgid "Note Link (external)"
+msgstr ""
+
+#: postgresqlenhanced.gpr.py:27
+#, fuzzy
+#| msgid "PostgreSQL"
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL"
+
+#: postgresqlenhanced.gpr.py:28
+#, fuzzy
+#| msgid "PostgreSQL Database"
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL-databas"
+
+#: postgresqlenhanced.gpr.py:29
+msgid ""
+"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
+"and migration support. Uses psycopg3 for modern PostgreSQL features while "
+"maintaining full compatibility."
+msgstr ""
+
+#: postgresqlenhanced.py:118
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+
+#: postgresqlenhanced.py:167
+msgid "Database Backend"
+msgstr ""
+
+#: postgresqlenhanced.py:168
+msgid "Database module"
+msgstr ""
+
+#: postgresqlenhanced.py:170
+#, fuzzy
+#| msgid "JSON Export"
+msgid "JSONB support"
+msgstr "JSON-export"
+
+#: postgresqlenhanced.py:191
+#, fuzzy, python-format
+#| msgid "Version %s"
+msgid "Version warning"
+msgstr "Version %s"
+
+#: postgresqlenhanced.py:193
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+
+#: postgresqlenhanced.py:206
+#, fuzzy
+#| msgid "Version %s"
+msgid "Extensions"
+msgstr "Version %s"
+
+#: postgresqlenhanced.py:224
+msgid "Database size"
+msgstr ""
+
+#: postgresqlenhanced.py:229
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr ""
+
+#: postgresqlenhanced.py:300
+msgid "Upgrading to PostgreSQL Enhanced"
+msgstr ""
+
+#: postgresqlenhanced.py:315
+msgid "Migration manager not initialized"
+msgstr ""
+
+#: postgresqlenhanced.py:327
+msgid "Enhanced queries require JSONB support"
 msgstr ""
 
 #: qr_window.py:88
@@ -23557,6 +23683,23 @@ msgstr ""
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
+msgstr ""
+
+#: queries.py:354
+msgid "pg_trgm extension required for duplicate detection"
+msgstr ""
+
+#: schema.py:156
+msgid "Creating new PostgreSQL Enhanced schema"
+msgstr ""
+
+#: schema.py:162
+#, python-format
+msgid "Upgrading schema from v%(current)s to v%(new)s"
+msgstr ""
+
+#: schema.py:246
+msgid "PostgreSQL Enhanced schema created successfully"
 msgstr ""
 
 #: settings_ui_manager.py:112

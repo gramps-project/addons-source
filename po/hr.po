@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-24 19:04+0000\n"
+"POT-Creation-Date: 2025-08-06 12:26-0700\n"
+"PO-Revision-Date: 2025-08-09 10:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -1122,7 +1122,7 @@ msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
-"Stvara web-stranicu s grafičkim prikazom predaka (SVG) u sklopivom "
+"Generira web-stranicu s grafičkim prikazom predaka (SVG) u sklopivom "
 "stablastom obliku pomoću D3.js JavaScript biblioteke."
 
 #: D3Charts/AncestralCollapsibleTree.py:326
@@ -1135,10 +1135,9 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing to %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Greška prilikom zapisivanja u „%s”"
+msgstr "Greška prilikom zapisivanja {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
@@ -1198,7 +1197,7 @@ msgstr "RGB-boja za žensku boju pozadine u rasklopljenom stanju."
 #: D3Charts/DescendantIndentedTree.py:1825
 #: DescendantSpaceTree/DescendantSpaceTree.py:1130
 msgid "The destination path for generated files."
-msgstr "Odredište za stvorene datoteke."
+msgstr "Odredište za generirane datoteke."
 
 #: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
 #: D3Charts/DescendantIndentedTree.py:1830
@@ -1215,7 +1214,7 @@ msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
-"Stvara web-stranicu s grafičkim prikazom predaka (SVG) u lepezastom "
+"Generira web-stranicu s grafičkim prikazom predaka (SVG) u lepezastom "
 "dijagramu pomoću D3.js JavaScript biblioteke."
 
 #: D3Charts/AncestralFanChart.py:707
@@ -1249,7 +1248,7 @@ msgid ""
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
 "library."
 msgstr ""
-"Stvara web-stranicu s grafičkim prikazom potomaka (SVG) u sklopivom "
+"Generira web-stranicu s grafičkim prikazom potomaka (SVG) u sklopivom "
 "stablastom obliku s uvlakama pomoću D3.js JavaScript biblioteke."
 
 #: D3Charts/DescendantIndentedTree.py:673
@@ -1259,7 +1258,7 @@ msgstr "Pogledaj %(reference)s : %(spouse)s"
 
 #: D3Charts/DescendantIndentedTree.py:764
 msgid "Generating report..."
-msgstr "Izrada izvještaja …"
+msgstr "Generiranje izvještaja …"
 
 #: D3Charts/DescendantIndentedTree.py:1364
 #: DescendantSpaceTree/DescendantSpaceTree.py:771
@@ -1276,16 +1275,12 @@ msgstr ""
 "Želiš li je pokušati stvoriti?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-brace-format
-#| msgid "Failed to create %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "Greška prilikom stvaranja %s: %s"
+msgstr "Greška prilikom stvaranja {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
-#, fuzzy, python-format
-#| msgid ""
-#| "Destination file %s already exists.\n"
-#| "Do you want to overwrite."
+#, python-format
 msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite it?"
@@ -1320,27 +1315,27 @@ msgstr "Da li prikazati duple rodoslove u izvještaju."
 
 #: D3Charts/DescendantIndentedTree.py:1851
 msgid "Expanded Row Background Color"
-msgstr "Boja pozadine proširenih redova"
+msgstr "Boja pozadine proširenog retka"
 
 #: D3Charts/DescendantIndentedTree.py:1852
 msgid "RGB-color for expanded row background."
-msgstr "RGB-boje za pozadine proširenih redova."
+msgstr "RGB boja za pozadinu proširenog retka."
 
 #: D3Charts/DescendantIndentedTree.py:1855
 msgid "Expandable Background Color"
-msgstr "Proširiva boja pozadine"
+msgstr "Boja pozadine proširivog retka"
 
 #: D3Charts/DescendantIndentedTree.py:1857
 msgid "RGB-color for expandable row background."
-msgstr "RGB-boje za proširive boje pozadine."
+msgstr "RGB boja za pozadinu proširivog retka."
 
 #: D3Charts/DescendantIndentedTree.py:1860
 msgid "Non-Expandable Background Color"
-msgstr "Ne-proširiva boja pozadine"
+msgstr "Boja pozadine neproširivog retka"
 
 #: D3Charts/DescendantIndentedTree.py:1862
 msgid "RGB-color for non-expandable row background."
-msgstr "RGB-boje za ne-proširive boje pozadine."
+msgstr "RGB boja za pozadinu neproširivog retka."
 
 #: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
@@ -1364,7 +1359,7 @@ msgstr "Kako postupati sa živim osobama."
 
 #: D3Charts/DescendantIndentedTree.py:1887
 msgid "Whether or not to include people who may have recently died."
-msgstr "Da li uključiti osobe, koje su vjerojatno nedavno umrle."
+msgstr "Da li uključiti osobe, koje su možda nedavno umrle."
 
 #: D3Charts/DescendantIndentedTree.py:1895
 msgid "Navigation"
@@ -1393,11 +1388,12 @@ msgstr "Gdje pritisnuti za rasklapanje/sklapljanje čvorišta."
 
 #: D3Charts/DescendantIndentedTree.py:1907
 msgid "Auto-generate HREF links for nodes"
-msgstr "Automastko stvaranje HREF-poveznica za čvorište"
+msgstr "Automastki generiraj HREF-poveznice za čvorišta"
 
 #: D3Charts/DescendantIndentedTree.py:1909
 msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr "Da li automatski stvoriti HTML-poveznice za sva čvorišta u izvještaju."
+msgstr ""
+"Da li automatski generirati HTML-poveznice za svako čvorište u izvještaju."
 
 #: D3Charts/DescendantIndentedTree.py:1915
 msgid "URL prefix path."
@@ -1406,7 +1402,7 @@ msgstr "URL-staza."
 #: D3Charts/DescendantIndentedTree.py:1917
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
-"URL-staza, koja se primijenjuje na svaku automatski stvorenu HREF-poveznicu."
+"URL-staza koja se primijenjuje na svaku automatski generiranu HREF-poveznicu."
 
 #: D3Charts/DescendantIndentedTree.py:1923
 msgid "URL file extension"
@@ -1462,11 +1458,11 @@ msgstr "Što koristiti kao razdvojnik umjesto razmaka."
 
 #: D3Charts/DescendantIndentedTree.py:1947
 msgid "Generations to generate HREF links"
-msgstr "Generacije za stvaranje HREF-poveznica"
+msgstr "Generacije za generiranje HREF-poveznica"
 
 #: D3Charts/DescendantIndentedTree.py:1949
 msgid "The number of generations to generate HREF links."
-msgstr "Broj generacija, za koje se stvaraju HREF-poveznice."
+msgstr "Broj generacija za generiranje HREF-poveznica."
 
 #: D3Charts/DescendantIndentedTree.py:1955
 msgid "Exclude persons who died before (years)"
@@ -1476,8 +1472,8 @@ msgstr "Isključi osobe koje su umrle prije (godina)"
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
 msgstr ""
-"Da li stvoriti poveznice za osobe koje su umrle pri porodu. −1 ne isključuje "
-"nikoga."
+"Da li generirati poveznice za osobe koje su umrle kao dojenče. −1 ne "
+"isključuje nikoga."
 
 #: D3Charts/DescendantIndentedTree.py:1964
 msgid "Exclude center person"
@@ -1485,7 +1481,7 @@ msgstr "Isključi središnju osobu"
 
 #: D3Charts/DescendantIndentedTree.py:1965
 msgid "Whether or not to generate links for center person."
-msgstr "Da li stvoriti poveznice za središnju osobu."
+msgstr "Da li generirati poveznice za središnju osobu."
 
 #: D3Charts/DescendantIndentedTree.py:1970
 msgid "Exclude Spouses"
@@ -1493,7 +1489,7 @@ msgstr "Isključi supružnike"
 
 #: D3Charts/DescendantIndentedTree.py:1971
 msgid "Whether or not to generate links for spouses."
-msgstr "Da li stvoriti poveznice za supružnike."
+msgstr "Da li generirati poveznice za supružnike."
 
 #: D3Charts/DescendantIndentedTree.py:1978
 msgid "Biography Content"
@@ -2075,7 +2071,7 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Stvara web stranicu (HTML) s grafičkim prikazom predaka/potomaka (SVG), u "
+"Generira web-stranicu (HTML) s grafičkim prikazom predaka/potomaka (SVG), u "
 "kojemu se detalji prikazuju prilikom prelaženja mišem preko pojedinca."
 
 #: DenominoViso/DenominoViso.py:179
@@ -2655,16 +2651,15 @@ msgid "Writing %s reports..."
 msgstr "Ispis izvještaja (%s) …"
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-brace-format
-#| msgid "%(report_count)s. Descendant Report for %(person_name)s"
+#, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr "%(report_count)s. Izvještaj o potomcima za %(person_name)s"
+msgstr "{report_count}. Potomci od {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
 #, python-brace-format
 msgid "{report_count:d}. {name}"
-msgstr ""
+msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
@@ -2707,7 +2702,7 @@ msgstr "Detaljni izvještaj o potomcima"
 #: DescendantBooks/DetailedDescendantBookReport.py:359
 #, python-format
 msgid "Generating %s report references..."
-msgstr "Stvaranje %s referenca izvještaja …"
+msgstr "Generiranje %s referenca izvještaja …"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:453
 #, python-format
@@ -2731,10 +2726,9 @@ msgid "Report, Generation, Person, Name"
 msgstr "Izvještaj, generacija, osoba, ime"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr "Vidi izvještaj: %s, %s. generacija, osoba: %s"
+msgstr "Vidi Izvještaj: {report}, Generacija: {generation}, Osoba: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
@@ -2743,16 +2737,15 @@ msgid "Report appearances for %s"
 msgstr "Izvjesti pojavljivanja za %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
-#, fuzzy, python-brace-format
-#| msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Supružnik od: Izvještaj: %s, Generacija: %s, Osoba: %s"
+msgstr ""
+"Supružnik od: Izvještaj: {report}, Generacija: {generation}, Osoba: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
-#, fuzzy, python-brace-format
-#| msgid "Report: %s, Generation: %s, Person: %s"
+#, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Izvještaj: %s, Generacija: %s, Osoba: %s"
+msgstr "Izvještaj: {report}, Generacija: {generation}, Osoba: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
@@ -2788,7 +2781,7 @@ msgstr "%(place)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:821
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
-msgstr ". Ref: %(repno)s %(gen)s %(per)s "
+msgstr ". Referenca: %(repno)s %(gen)s %(per)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:850
 #, python-format
@@ -2803,7 +2796,7 @@ msgstr " %(event_text)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:993
 #, python-brace-format
 msgid "Ref: {number}. {name}"
-msgstr ""
+msgstr "Referenca: {number}. {name}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
@@ -2930,10 +2923,8 @@ msgid "Gramplet for showing people and descendant counts"
 msgstr "Gramplet za prikaz broja osoba i potomaka"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
-#, fuzzy
-#| msgid "Descendant Indented Tree"
 msgid "Descendant Space Tree"
-msgstr "Stablo potomaka s uvlakama"
+msgstr "Prostorno stablo potomaka"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
 msgid ""
@@ -2941,86 +2932,67 @@ msgid ""
 "a Space Tree for efficient viewing, even with many descendants or "
 "generations."
 msgstr ""
+"Generira web stranicu s interaktivnim dijagramom potomaka u obliku "
+"prostornog stabla za učinkovit prikaz čak i pri velikom broju potomaka ili "
+"generacija."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:102
 msgid "Patriarchal Line (Male ancestor)"
-msgstr ""
+msgstr "Patrijarhalna linija (muški predak)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:103
 msgid "Matriarchal Line (Female ancestor)"
-msgstr ""
+msgstr "Matrijarhalna linija (ženski predak)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
-#, fuzzy
-#| msgid "Person theme"
 msgid "Dark theme"
-msgstr "Tema za osobe"
+msgstr "Tamna tema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Light"
 msgid "Light theme"
-msgstr "Svjetlo"
+msgstr "Svijetla tema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
-#, fuzzy
-#| msgid "Life Line Descendant Chart"
 msgid "Continue Descendant Tree"
-msgstr "Linijski dijagram života potomaka"
+msgstr "Nastavi stablo potomaka"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:427
-#, fuzzy
-#| msgid "Alternate name"
 msgid "Alternate Descendant Tree"
-msgstr "Alternativno ime"
+msgstr "Alternativno stablo potomaka"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:455
-#, fuzzy
-#| msgid "Descendant Indented Tree"
 msgid "Descendant SpaceTree"
-msgstr "Stablo potomaka s uvlakama"
+msgstr "Prostorno stablo potomaka"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:635
-#, fuzzy
-#| msgid "Trim descendants"
 msgid "Total descendants"
-msgstr "Odreži potomke"
+msgstr "Ukupni broj potomaka"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:659
-#, fuzzy
-#| msgid "Marriages/Families"
 msgid "Marriages/Families:<ul>"
-msgstr "Brakovi/Obitelji"
+msgstr "Brakovi/Obitelji:<ul>"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:773
-#, fuzzy, python-format
-#| msgid ""
-#| "Destinaton diretory %s does not exist\n"
-#| "Do you want to attempt to create it?"
+#, python-format
 msgid ""
 "Destination Directory %s does not exist\n"
 "Do you want to attempt to create it."
 msgstr ""
-"Odredišna mapa %s ne postoji\n"
+"Odredišna mapa %s ne postoji.\n"
 "Želiš li je pokušati stvoriti?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:787
-#, fuzzy, python-format
-#| msgid "Failed writing %s: %s"
+#, python-format
 msgid "Failed to create %s: %s"
-msgstr "Greška u pisanju %s: %s"
+msgstr "Greška u stvaranju %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:816
-#, fuzzy, python-format
-#| msgid "Failed to copy web files : %s"
+#, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr "Greška u kopiranju web datoteka: %s"
+msgstr "Greška u čitanju proto datoteke %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:827
-#, fuzzy, python-format
-#| msgid ""
-#| "Destination file %s already exists.\n"
-#| "Do you want to overwrite."
+#, python-format
 msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite?"
@@ -3029,40 +3001,42 @@ msgstr ""
 "Želiš li je prepisati?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:854
-#, fuzzy
-#| msgid "Failed writing "
 msgid "Failed writing file: "
-msgstr "Neuspjelo pisanje "
+msgstr "Greška u pisanju datoteke: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:875
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendants of"
-msgstr "Potomak"
+msgstr "Potomci od"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:879
 msgid "How to Use the DescendantSpaceTree Viewer"
-msgstr ""
+msgstr "Kako koristiti preglednik za prostorno stablo potomaka"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:885
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
+"Za optimalni prikaz otvori prozor preglednika kako bi se iskoristio cijeli "
+"ekran. Nakon mijenjanja veličine prozora dijagram će se ponovo postaviti na "
+"središnju osobu."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
-msgstr ""
+msgstr "Klikni na čvor željenog potomka za prikaz njegove djece."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:904
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
 msgstr ""
+"Za pomicanje stabla potomaka, klikni i povuci bilo gdje unutar preglednika."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:913
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
 msgstr ""
+"Klikni gumb za resetiranje ___HELP_RESET_BUTTON___ za vraćanje na početnog "
+"potomka."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:922
 msgid ""
@@ -3072,30 +3046,42 @@ msgid ""
 "search, a plus sign (+) after the name indicates that person appears as a "
 "spouse."
 msgstr ""
+"Traži osobu unosom imena u okvir za pretraživanje. Utipkaj barem tri znaka "
+"za pokretanje pretrage. Klikni na bilo koji od ponuđenih prijedloga za brzu "
+"navigaciju do te osobe. Imaj na umu da se osoba može pojaviti više puta u "
+"rezultatima. Znak plus (+) nakon imena označava da se ta osoba pojavljuje "
+"kao supružnik."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:935
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
 msgstr ""
+"Potomak i svi supružnici se prikazuju unutar istog čvora. Djeca svih "
+"obitelji tog potomka se grupiraju zajedno."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:945
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
 msgstr ""
+"Osobama koje su rođene nakon određenog datuma se datumi rođenja ili smrti ne "
+"prikazuju."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:954
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
 msgstr ""
+"Čvorovi osoba su obojana kako bi označila broj djece – što je boja tamnija, "
+"to je veći broj djece."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:964
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
 msgstr ""
+"Trenutačno odabrani potomak i svi njegovi preci označeni su žutom bojom."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:973
 msgid ""
@@ -3105,66 +3091,64 @@ msgid ""
 "___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
 "expand descendants of this person. "
 msgstr ""
+"Osoba se može pojaviti u različitim granama stabla. To je obično rezultat "
+"brakova unutar obitelji (npr. brak rođaka). U tom će se slučaju uz tu osobu "
+"pojaviti i gumb ___NAV_BUTTON_CONTINUE___ ili ___NAV_BUTTON_ALT___ za "
+"navigaciju prema drugoj grani. Samo jedna grana će prikazati potomke te "
+"osobe. "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:987
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
 msgstr ""
+"Pri izradi ovog preglednika korišteni su sljedeći projekti otvorenog koda. "
+"Za potpune licence i potrebne napomene pogledaj njihove datoteke LICENSE*."
+"txt."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1014
-#, fuzzy
-#| msgid "Search..."
 msgid "Search. . ."
 msgstr "Traži …"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1089
 msgid "Branch to expand when duplicated"
-msgstr ""
+msgstr "Grana koja se rasklapa prilikom dupliciranja"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1100
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
 msgstr ""
+"Kada se potomak pojavi više puta, prednost se daje odabranoj lozi za prikaz "
+"linije potomaka"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1108
 msgid "Maximum display birth year"
-msgstr ""
+msgstr "Najkasnija prikazana godina rođenja"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1111
 msgid "Birth/date dates will not be displayed after this year"
-msgstr ""
+msgstr "Datumi rođenja se neće prikazivati nakon ove godine"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1116
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "Postavke za dizajn sučelja"
+msgstr "Postavke teme"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1123
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "Theme color preference for Space Tree"
-msgstr "Središnja osoba stabla"
+msgstr "Postavka boje teme za prostorno stablo"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1136
-#, fuzzy
-#| msgid "Destination directory"
 msgid "Destination File"
-msgstr "Odredišna mapa"
+msgstr "Odredišna datotka"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
-#, fuzzy
-#| msgid "The destination file name for html content."
 msgid "The destination file name for the report."
-msgstr "Ime datoteke za html sadržaj."
+msgstr "Ime odredišne datoteke za izvještaj."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1144
-#, fuzzy
-#| msgid "Opens an interactive tree in the browser"
 msgid "Open generated HTML file with default browser."
-msgstr "Otvara interaktivno stablo u pregledniku"
+msgstr "Otvori generiranu HTML datoteku sa zadanim preglednikom."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
@@ -3402,7 +3386,7 @@ msgid ""
 "See Wiki Manual > Reports > part 2\n"
 "formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
 msgstr ""
-"[event, list]$e(formatiranje)\n"
+"[događaj, popis]$e(formatiranje)\n"
 "Pogledaj Wiki priručnik > Izvještaji > 2. dio\n"
 "formatiranje: datumi=d(ymdMo) mjesta=D(elcuspnoitxy) zabilješke=n "
 "skraćena_vrsta=t"
@@ -3575,7 +3559,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1799
 msgid "Privacy text"
-msgstr "Tekst o privatnosti"
+msgstr "Tekst za privatne"
 
 #: DescendantsLines/DescendantsLines.py:1800
 msgid "Text to display in block, when a Person is marked private"
@@ -4571,11 +4555,11 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5063
 msgid "Generate a families index page"
-msgstr "Stvori stranicu indeksa za obitelji"
+msgstr "Generiraj stranicu indeksa za obitelji"
 
 #: DynamicWeb/dynamicweb.py:5066
 msgid "Whether to generate an index page for families"
-msgstr "Da li stvoriti stranicu indeksa za obitelji"
+msgstr "Da li generirati stranicu indeksa za obitelji"
 
 #: DynamicWeb/dynamicweb.py:5073
 msgid "Whether to include a column showing the media path"
@@ -4830,8 +4814,8 @@ msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
-"Ukoliko tvoja slika ne podržava čitanje/pisanje u/iz Efix metapodataka, "
-"konvertiraj sliku u format, koji to podržava!?"
+"Ukoliko tvoja slika ne podržava čitanje/pisanje Efix metapodataka, da li "
+"sliku konvertirati u format koji to podržava?"
 
 #: EditExifMetadata/editexifmetadata.py:209
 msgid ""
@@ -5025,49 +5009,37 @@ msgid "Bad Date/Time"
 msgstr "Neispravni datum/vrijeme"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "Invalid latitude (syntax: 18\\u00b09'"
 msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Neispravna zemljopisna širina (sintaksa: 18\\u00b09'"
+msgstr "Neispravna zemljopisna širina (sintaksa: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21″S, −18.2412 ili −18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
-#| msgid "Invalid longitude (syntax: 18\\u00b09'"
 msgid "Invalid longitude (syntax: 18°9'"
-msgstr "Neispravna zemljopisna dužina (sintaksa: 18\\u00b09'"
+msgstr "Neispravna zemljopisna dužina (sintaksa: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21″E, −18.2412 ili −18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr "UPOZORENJE! Kompletno ćeš obrisati Exif metapodatke iz ove slike!?"
+msgstr "UPOZORENJE! Kompletno ćeš izbrisati Exif metapodatke iz ove slike."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
 msgid "Delete?"
-msgstr ""
+msgstr "Izbrisati?"
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the GPS metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
-msgstr "UPOZORENJE! Kompletno ćeš obrisati GPS metapodatke iz ove slike!?"
+msgstr "UPOZORENJE! Kompletno ćeš izbrisati GPS metapodatke iz ove slike."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
@@ -5128,33 +5100,27 @@ msgstr ""
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:151
 msgid "Allow regex"
-msgstr ""
+msgstr "Dozvoli regularne izraze"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
-msgstr ""
+msgstr "Dozvoli regularne izraze."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
-#, fuzzy
-#| msgid "Persons"
 msgid "Person GEXF"
-msgstr "Osobe"
+msgstr "Osoba GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:31
-#, fuzzy
-#| msgid "Persons"
 msgid "_Person GEXF"
-msgstr "Osobe"
+msgstr "_Osoba GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
-msgstr ""
+msgstr "GEXF se koristi u mnogim programima za mrežne dijagrame."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
-#, fuzzy
-#| msgid "Filter options"
 msgid "GEXF export options"
-msgstr "Opcije filtra"
+msgstr "Opcije GEXF izvoza"
 
 #: ExportProlog/ExportProlog.gpr.py:4
 msgid "Prolog Export"
@@ -14538,7 +14504,7 @@ msgstr "Branša/Poslodavac"
 
 #: Form/form_us.xml.h:2600
 msgid "Residents Status"
-msgstr ""
+msgstr "Status stanovnika"
 
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
@@ -14546,7 +14512,7 @@ msgstr "Gramplet za obrazac"
 
 #: Form/formgramplet.gpr.py:32
 msgid "Gramplet interface for Forms"
-msgstr "Gramplet sučelje za obrazac"
+msgstr "Gramplet sučelje za obrasce"
 
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
@@ -14647,11 +14613,11 @@ msgstr "Središnja obitelj u izvještaju"
 
 #: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
-msgstr "Generacija prema gore"
+msgstr "Generacije gore"
 
 #: GenealogyTree/gt_sandclock.py:242
 msgid "Generations down"
-msgstr "Generacija prema dolje"
+msgstr "Generacije dolje"
 
 #: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
@@ -15387,13 +15353,15 @@ msgstr "Razmaci"
 
 #: GraphView/graphview.py:1193
 msgid "All connected"
-msgstr ""
+msgstr "Sve povezane"
 
 #: GraphView/graphview.py:1195
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
 msgstr ""
+"Prikaži sve povezane osobe ograničene generacijskim ograničenjima.\n"
+"Radi sporo, stoga nemoj postavljati veliki broj generacija."
 
 #: GraphView/graphview.py:1337
 msgid "Add active person"
@@ -15639,25 +15607,23 @@ msgstr "Čitaj Grampsove novosti"
 
 #: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
-msgstr ""
+msgstr "Stvori web-izvještaj toplinske karte."
 
 #: Heatmap/heatmap.py:85
-#, fuzzy
-#| msgid "Extra Files"
 msgid "Map tiles"
-msgstr "Dodatne datoteke"
+msgstr "Odsječci karte"
 
 #: Heatmap/heatmap.py:90
 msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
 msgstr ""
+"Postavi veličinu točki toplinske karte.\n"
+"Standardno: 15"
 
 #: Heatmap/heatmap.py:93
-#, fuzzy
-#| msgid "File parsed with"
 msgid "File path"
-msgstr "Datoteka je analizirana sa"
+msgstr "Staza datoteke"
 
 #: Heatmap/heatmap.py:98
 msgid ""
@@ -15666,6 +15632,10 @@ msgid ""
 "has to start and end with an alphanumeric character.The file extention '."
 "html' is added by the report."
 msgstr ""
+"Ime datoteke smije sadržati samo engleska slova A–Z, a–z i brojke 0–9, kao i "
+"znakove razmaka, podvlake (_) i crtice (-). Ime datoteke mora pored toga "
+"započeti i završiti s alfanumeričkim znakom. Sufiks datoteke „.html” "
+"izvještaj dodaje automatski."
 
 #: Heatmap/heatmap.py:103
 msgid "File name"
@@ -15679,6 +15649,8 @@ msgstr "Aktiviraj prilagođenu početnu poziciju"
 msgid ""
 "Enabling will force the map open at your custom start position and zoom."
 msgstr ""
+"Aktiviranjem ove opcije će se karta otvoriti na tvom prilagođenom početnom "
+"položaju i razini zumiranja."
 
 #: Heatmap/heatmap.py:124
 msgid "Start latitude"
@@ -15689,7 +15661,7 @@ msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
 msgstr ""
-"Postavi početnu zemljopisnu širinu\n"
+"Postavi prilagođenu početnu zemljopisnu širinu\n"
 "Zadano: 50,0"
 
 #: Heatmap/heatmap.py:129
@@ -15701,7 +15673,7 @@ msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
 msgstr ""
-"Postavi početnu zemljopisnu dužinu\n"
+"Postavi prilagođenu početnu zemljopisnu dužinu\n"
 "Zadano: 10,0"
 
 #: Heatmap/heatmap.py:134
@@ -15726,56 +15698,47 @@ msgstr "Neispravno ime datoteke."
 
 #: Heatmap/utils.py:55
 msgid "Stamen Terrain"
-msgstr ""
+msgstr "Stamen reljefna karta"
 
 #: Heatmap/utils.py:58
-#, fuzzy
-#| msgid "Paternal Background Color"
 msgid "Stamen Terrain (Background only)"
-msgstr "Očeva boja pozadine"
+msgstr "Stamen reljefna karta (samo pozadina)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
-msgstr ""
+msgstr "Stamen kontrastna karta"
 
 #: Heatmap/utils.py:64
 msgid "Stamen Watercolor"
-msgstr ""
+msgstr "Stamen akvarel karta"
 
 #: Heatmap/utils.py:67
 msgid "CartoDB Positron"
-msgstr ""
+msgstr "CartoDB Positron (svijetla karta)"
 
 #: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
-msgstr ""
+msgstr "CartoDB DarkMatter (tamna karta)"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
-#, fuzzy
-#| msgid "Biography Content"
 msgid "Historical Context"
-msgstr "Sadržaj biografije"
+msgstr "Povijesni sadržaj"
 
 #: HistContext/HistContext.gpr.py:5
-#, fuzzy
-#| msgid ""
-#| "Whether to include the death of relatives during the lifetime of person."
 msgid "Lists relevant historical events during the lifetime of a Person"
-msgstr "Da li uključiti smrt rodbine, umrle za života osobe."
+msgstr "Navodi relevantne povijesne događaje tijekom života osobe"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
-msgstr ""
+msgstr "Retci koji u stupcu teksta počinju s ovim znakom bit će skriveni "
 
 #: HistContext/HistContext.py:126
 msgid "Use filter "
 msgstr "Koristi filtar "
 
 #: HistContext/HistContext.py:129
-#, fuzzy
-#| msgid "Show lifespan"
 msgid "Show outside life span "
-msgstr "Prikaži starosti"
+msgstr "Prikaži izvan životnog vijeka "
 
 #: HistContext/HistContext.py:132
 msgid "Use full dates"
@@ -15783,19 +15746,19 @@ msgstr "Koristi potpune datume"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
-msgstr ""
+msgstr "Prednja boja stavki unutar životnog vijeka"
 
 #: HistContext/HistContext.py:138
 msgid "Background color items in lifespan"
-msgstr ""
+msgstr "Boja pozadine stavki unutar životnog vijeka"
 
 #: HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
-msgstr ""
+msgstr "Prednja boja stavki izvan životnog vijeka"
 
 #: HistContext/HistContext.py:144
 msgid "Background color items outside lifespan"
-msgstr ""
+msgstr "Boja pozadine stavki izvan životnog vijeka"
 
 #: HistContext/HistContext.py:149
 msgid "Select from files"
@@ -15816,7 +15779,7 @@ msgstr "Greška:"
 
 #: HistContext/HistContext.py:327
 msgid ": line does not contain four sections separated by semicolons in : \""
-msgstr ""
+msgstr ": redak ne sadrži četiri odjeljka odvojena točka-zarezom u : \""
 
 #: HistContext/HistContext.py:419
 msgid "Cannot open URL: "
@@ -17035,19 +16998,19 @@ msgstr "Izvještaj o medijima"
 
 #: MediaReport/media_report.gpr.py:25
 msgid "Generates report including images, image data and notes."
-msgstr "Izrađuje izvještaj koji uključuje slike, podatke slika i zabilješke."
+msgstr "Generira izvještaj koji uključuje slike, podatke slika i zabilješke."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
-msgstr "Za stvaranje ovog izvještaja moraš odabrati jednu sliku."
+msgstr "Za generiranje ovog izvještaja moraš odabrati jednu sliku."
 
 #: MediaReport/media_report.py:112
 msgid ""
 "You have to select a custom note or uncheck the option 'include custom note' "
 "to generate this report."
 msgstr ""
-"Za stvaranje ovog izvještaja moraš odabrati jednu prilagođenu zabilješku ili "
-"odznači opciju „Uključi prilagođenu zabilješku”."
+"Za generiranje ovog izvještaja moraš odabrati jednu prilagođenu zabilješku "
+"ili odznači opciju „Uključi prilagođenu zabilješku”."
 
 #: MediaReport/media_report.py:125
 msgid "This report only supports PDF as output file format."
@@ -17153,7 +17116,7 @@ msgstr "Greške"
 
 #: MediaVerify/MediaVerify.py:85
 msgid "No md5 Generated"
-msgstr "Nije stvoren md5"
+msgstr "Nijedan md5 nije generiran"
 
 #: MediaVerify/MediaVerify.py:101
 msgid "Close the Media Verify Tool"
@@ -17161,11 +17124,11 @@ msgstr "Zatvori alat za provjeru medija"
 
 #: MediaVerify/MediaVerify.py:103
 msgid "Generate"
-msgstr "Izradi"
+msgstr "Generiraj"
 
 #: MediaVerify/MediaVerify.py:104
 msgid "Generate md5 hashes for media objects"
-msgstr "Izradi md5 hash-tablice za medijske objekte"
+msgstr "Generiraj md5 hash-tablice za medijske objekte"
 
 #: MediaVerify/MediaVerify.py:106
 msgid "Verify"
@@ -17212,7 +17175,7 @@ msgstr "Greška prilikom pisanja izvještaja: %s"
 
 #: MediaVerify/MediaVerify.py:259
 msgid "Generating media hashes"
-msgstr "Izrada hash-tablica za medije"
+msgstr "Generiranje hash-tablica za medije"
 
 #: MediaVerify/MediaVerify.py:261
 msgid "Set media hashes"
@@ -17280,7 +17243,7 @@ msgstr "Mrežni dijagram"
 
 #: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
-msgstr "Stvara mrežni dijagram obitelji."
+msgstr "Generira mrežni dijagram obitelji."
 
 #: NetworkChart/NetworkChart.py:133
 msgid "birth abbreviation|b."
@@ -17393,7 +17356,7 @@ msgid ""
 "URL = Prefix + GrampsID + Suffix."
 msgstr ""
 "Unesi prefiks, sufiks (razdijeljeni zarezom)\n"
-"za dinamično stvarane URL-ova.\n"
+"za dinamično generiranje URL-ova.\n"
 "URL = prefiks + GrampsID + sufiks."
 
 #: NetworkChart/NetworkChart.py:957
@@ -17419,7 +17382,7 @@ msgstr "Razmak (u inčima)"
 #: NetworkChart/NetworkChart.py:965
 msgid ""
 "Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
-msgstr "Dodaj daljinu razmaka između generecija u inčima (0.1 – 5.0)."
+msgstr "Dodaj razmak između generecija u inčima (0.1 do 5.0)."
 
 #: NetworkChart/NetworkChart.py:969
 msgid "Enter Chart Title"
@@ -17443,7 +17406,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:986
 msgid "The destination folder for generated files."
-msgstr "Odredišna mapa za spremanje datoteka."
+msgstr "Odredišna mapa za generirane datoteke."
 
 #: NetworkChart/NetworkChart.py:990 NetworkChart/NetworkChart.py:1280
 #: NetworkChart/NetworkChart.py:1288
@@ -17452,7 +17415,7 @@ msgstr "mreža"
 
 #: NetworkChart/NetworkChart.py:995
 msgid "The filename for the generated svg network chart."
-msgstr "Ime datoteke za stvoreni mrežni dijagram u svg formatu."
+msgstr "Ime datoteke za generirani mrežni dijagram u svg formatu."
 
 #: NetworkChart/NetworkChart.py:1002
 msgid "Different node shapes/edges for gender."
@@ -17856,7 +17819,7 @@ msgstr "Traži nepočišćene zabilješke"
 
 #: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
-msgstr "Stvori testne zabilješke"
+msgstr "Generiraj testne zabilješke"
 
 #: NoteCleanup/NoteCleanup.py:131
 msgid ""
@@ -17864,9 +17827,9 @@ msgid ""
 "These are added to your database, so you may want to work with a test "
 "database or delete them later."
 msgstr ""
-"Stvori testne zabilješke u rasponu N99996-N99999.\n"
-"Te zabilješke će biti dodane u tvoju bazu podataka. Stoga bi možda bilo "
-"dobro da radiš s testnom bazom podataka ili ih izbriši kasnije."
+"Generiraj testne zabilješke u rasponu N99996-N99999.\n"
+"Te će se zabilješke dodati u tvoju bazu podataka. Stoga bi možda bilo dobro "
+"da radiš s testnom bazom podataka ili ih kasnije izbriši."
 
 #: NoteCleanup/NoteCleanup.py:181
 msgid ""
@@ -19306,10 +19269,8 @@ msgid "Clear tags"
 msgstr "Izbriši oznake"
 
 #: PlaceUpdate/PlaceUpdate.py:165
-#, fuzzy
-#| msgid "Generate"
 msgid "Generate hierarchy"
-msgstr "Izradi"
+msgstr "Generiraj hijerarhiju"
 
 #: PlaceUpdate/PlaceUpdate.py:171
 msgid "use spaces as separator"
@@ -20019,10 +19980,9 @@ msgid "Enter SQL query"
 msgstr "Unesi SQL upit"
 
 #: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
-#, fuzzy, python-brace-format
-#| msgid "%d rows processed in %s seconds.\n"
+#, python-brace-format
 msgid "{rows:d} rows processed in {secs} seconds.\n"
-msgstr "Broj obrađenih redova: %d; Vrijeme obrade u sekundama %s.\n"
+msgstr "{rows:d} retka obrađeno u {secs} s.\n"
 
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
@@ -20226,7 +20186,7 @@ msgstr "Nema zadane osobe"
 
 #: RelID/relation_tab.py:174
 msgid "Generating relation map..."
-msgstr "Stvaranje karte srodstva …"
+msgstr "Generiranje karte srodstva …"
 
 #: RelID/relation_tab.py:190
 #, python-format
@@ -21518,7 +21478,7 @@ msgstr "Grupiranje prezimena"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:4
 msgid "Gramplet for editing the grouping of surnames"
-msgstr "Grmplet za uređivanje grupa prezimena"
+msgstr "Gramplet za uređivanje grupa prezimena"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:67
 msgid "Add Mapping"
@@ -21566,36 +21526,30 @@ msgid "Add %s reciprocal association"
 msgstr "Dodaj %s recipročnu vezu"
 
 #: SyncAssociations/syncAssociations.py:131
-#, fuzzy
-#| msgid "Add %s reciprocal association"
 msgid "{} Reciprocal associations created"
-msgstr "Dodaj %s recipročnu vezu"
+msgstr "{} Recipročna veza stvorena"
 
 #: SyncAssociations/syncAssociations.py:135
-#, fuzzy
-#| msgid "Add %s reciprocal association"
 msgid "All reciprocal associations exist, none created"
-msgstr "Dodaj %s recipročnu vezu"
+msgstr "Sve recipročne veze postoje, nijedna nije stvorena"
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
-msgstr ""
+msgstr "Nema postojećih veza, stoga recipročne veze nisu potrebne"
 
 #: TMGimporter/importtmg.gpr.py:49
 msgid "TMG Project Backup"
-msgstr ""
+msgstr "Sigurnosna kopija TMG projekta"
 
 #: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
 #: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
-#, fuzzy
-#| msgid "Import file"
 msgid "Import TMG project files"
-msgstr "Uvezi datoteku"
+msgstr "Uvezi datoteku TMG projekta"
 
 #: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
 #: TMGimporter/importtmg.gpr.py:95
 msgid "TMG Unsupported"
-msgstr ""
+msgstr "TMG nepodržan"
 
 #: TMGimporter/importtmg.py:89
 #, python-format
@@ -21614,6 +21568,19 @@ msgid ""
 "Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
+"Dodatak „TGM uvoznik” ne podržava izravni\n"
+"uvoz iz TMG datoteka.\n"
+"\n"
+"Moraš koristiti sigurnosnu kopiju TMG projekta (*.sqz).\n"
+"\n"
+"Provjeri je li tvoj TMG projekt stvoren pomoću:\n"
+"TMG verzije 5.x ili novije.\n"
+"\n"
+"Tvoja datoteka:\n"
+"*.PJC – Konfiguracijska datoteka projekta za TMG 5.0 do TMG 9.05\n"
+"\n"
+"Pogledaj:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:110
 #, python-format
@@ -21624,6 +21591,11 @@ msgid ""
 "Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
+"Dodatak „TGM uvoznik” ne podržava izravni uvoz iz TMG datoteka. Moraš "
+"koristiti sigurnosnu kopiju TMG projekta (*.sqz). Provjeri je li tvoj TMG "
+"projekt stvoren pomoću: TMG verzije 5.x ili novije. Tvoja datoteka: *.TMG – "
+"Datoteka za upravljanje verzijama za TMG 2.0 do TMG 4.0d. Pogledaj: "
+"%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:131
 #, python-format
@@ -21634,12 +21606,15 @@ msgid ""
 "Control File for TMG 1.2 and earlierPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
+"Dodatak „TGM uvoznik” ne podržava izravni uvoz iz TMG datoteka. Moraš "
+"koristiti sigurnosnu kopiju TMG projekta (*.sqz). Provjeri je li tvoj TMG "
+"projekt stvoren pomoću: TMG verzije 5.x ili novije. Tvoja datoteka: *.VER – "
+"Datoteka za upravljanje verzijama za TMG 1.2 i starije. Pogledaj: "
+"%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/libtmg.glade:15
-#, fuzzy
-#| msgid "Imported"
 msgid "TMG Importer"
-msgstr "Uvezeno"
+msgstr "TMG uvoznik"
 
 #: TMGimporter/libtmg.glade:31
 msgid "Unreleased Addon - Work In Progress"
@@ -22216,31 +22191,31 @@ msgstr "Generator sličica"
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:32
 msgid "Generates thumbnails for media files"
-msgstr "Stvara sličice za medijske datoteke"
+msgstr "Generira sličice za medijske datoteke"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:56
 msgid "Generating media thumbnails"
-msgstr "Stvaranje sličica za medije"
+msgstr "Generiranje sličica za medije"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:67
 msgid "Generating thumbnails for person references"
-msgstr "Stvaranje sličica za reference osobe"
+msgstr "Generiranje sličica za reference osobe"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:76
 msgid "Generating thumbnails for family references"
-msgstr "Stvaranje sličica za reference obitelji"
+msgstr "Generiranje sličica za reference obitelji"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:85
 msgid "Generating thumbnails for event references"
-msgstr "Stvaranje sličica za reference događaja"
+msgstr "Generiranje sličica za reference događaja"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:94
 msgid "Generating thumbnails for place references"
-msgstr "Stvaranje sličica za reference mjesta"
+msgstr "Generiranje sličica za reference mjesta"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:103
 msgid "Generating thumbnails for source references"
-msgstr "Stvaranje sličica za reference izvora"
+msgstr "Generiranje sličica za reference izvora"
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
 #, fuzzy
@@ -22272,7 +22247,7 @@ msgstr "Odredišna mapa"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Path for generated files"
-msgstr "Staza za stvorene datoteke"
+msgstr "Staza za generirane datoteke"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:868
 #, fuzzy
@@ -22349,30 +22324,24 @@ msgid "How many pixel are unused above first box?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
-#, fuzzy
-#| msgid "Height of the tree in pixels."
 msgid "Width of a box in pixel"
-msgstr "Visina stabla u pikselima."
+msgstr "Širina polja u pikselima"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:922
-#, fuzzy
-#| msgid "Height of the tree in pixels."
 msgid "Width of the box of a person in pixel"
-msgstr "Visina stabla u pikselima."
+msgstr "Širina polja osobe u pikselima"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:925
-#, fuzzy
-#| msgid "Horizontal spacing between generations"
 msgid "Horizontal space between boxes in pixel"
-msgstr "Vodoravni razmak između generacija"
+msgstr "Vodoravni razmak između polja u pikselima"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
-msgstr ""
+msgstr "Najmanji vodoravni razmak između dva polja u pikselima"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:934
 msgid "Length of vertical part of a line in pixel"
-msgstr ""
+msgstr "Duljina okomitog dijela linije u pikselima"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:936
 msgid ""
@@ -22727,67 +22696,56 @@ msgstr ""
 "Ako je želiš promijeniti u referenciranim objektima, koristi „Preimenuj”."
 
 #: UAWebConnectPack/UAWebPack.gpr.py:11
-#, fuzzy
-#| msgid "UK Web Connect Pack"
 msgid "UA Web Connect Pack"
-msgstr "UK Web Connect zbirka"
+msgstr "UA Web Connect zbirka"
 
 #: UAWebConnectPack/UAWebPack.gpr.py:12
-#, fuzzy
-#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgid "Collection of Web sites for the UA (requires libwebconnect)"
-msgstr ""
-"Zbirka web stranica za Ujedinjeno Kraljevstvo (zahtijeva libwebconnect)"
+msgstr "Zbirka web stranica za Ukrajinu (zahtijeva libwebconnect)"
 
 #: UAWebConnectPack/UAWebPack.py:39
 msgid "Forum: ukrgenealogy.com.ua"
-msgstr ""
+msgstr "Forum: ukrgenealogy.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:40
 msgid "Forum: genoua.name"
-msgstr ""
+msgstr "Forum: genoua.name"
 
 #: UAWebConnectPack/UAWebPack.py:43
 msgid "Encyclopedia: esu.com.ua"
-msgstr ""
+msgstr "Enciklopedija: esu.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:44
 msgid "Wikipedia: uk.wikipedia.org"
-msgstr ""
+msgstr "Wikipedija: uk.wikipedia.org"
 
 #: UAWebConnectPack/UAWebPack.py:47
 msgid "Repressed DB: reabit.org.ua"
-msgstr ""
+msgstr "Povijesna baza podataka: reabit.org.ua"
 
 #: UAWebConnectPack/UAWebPack.py:50
-#, fuzzy
-#| msgid "FamilySearch.org"
 msgid "Genealogy DB: familysearch.org"
-msgstr "FamilySearch.org"
+msgstr "Genealoška baza podataka: familysearch.org"
 
 #: UAWebConnectPack/UAWebPack.py:51
 msgid "Genealogy DB: myheritage.com.ua"
-msgstr ""
+msgstr "Genealoška baza podataka: myheritage.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:53
-#, fuzzy
-#| msgid "Genealogy Online"
 msgid "Genealogy DB: pra.in.ua"
-msgstr "Genealogija online"
+msgstr "Genealoška baza podataka: pra.in.ua"
 
 #: UAWebConnectPack/UAWebPack.py:56
 msgid "Map: Ridni.org"
-msgstr ""
+msgstr "Karta: Ridni.org"
 
 #: UAWebConnectPack/UAWebPack.py:59
 msgid "Search: google.com.ua"
-msgstr ""
+msgstr "Pretraga: google.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:60
-#, fuzzy
-#| msgid "Search Quota "
 msgid "Search: roots.in.ua"
-msgstr "Kvota traženja "
+msgstr "Pretraga: roots.in.ua"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:11
 msgid "UK Web Connect Pack"
@@ -22855,6 +22813,8 @@ msgstr ""
 #: WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
 msgstr ""
+"Generiranje povijesnih podataka mjesta pomoću umjetne inteligencije je "
+"trenutačno deaktivirano"
 
 #: WebSearch.py:629
 msgid "AI provider is unknown. Please check your AI provider settings."
@@ -22862,7 +22822,7 @@ msgstr ""
 
 #: WebSearch.py:649
 msgid "⏳ Generating historical place data, please wait..."
-msgstr ""
+msgstr "⏳ Generiraju se povijesni podaci mjesta. Pričekaj …"
 
 #: WebSearch.py:1521
 msgid "Keys"
@@ -22939,10 +22899,9 @@ msgid ""
 msgstr ""
 
 #: WebSearch.py:1926
-#, fuzzy, python-format
-#| msgid "{} avatar images were sucessfully added."
+#, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "Broj uspješno dodanih avatara: {}."
+msgstr "Zabilješka #%(id)s je uspješno dodana"
 
 #: WebSearch.py:1929
 #, fuzzy
@@ -22967,27 +22926,24 @@ msgid "Attribute has been successfully added"
 msgstr "Broj uspješno dodanih avatara: {}."
 
 #: WebSearch.py:2142
-#, fuzzy, python-brace-format
-#| msgid "Web site title"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Naslov web-stranice"
+msgstr "Naslov: {title}"
 
 #: WebSearch.py:2146
-#, fuzzy, python-brace-format
-#| msgid "Replace to {0}"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "Zamijeni na {0}"
+msgstr "Zamijenjeno: {keys}"
 
 #: WebSearch.py:2149
-#, fuzzy, python-brace-format
-#| msgid "Replace to {0}"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "Zamijeni na {0}"
+msgstr "Prazno: {keys}"
 
 #: WebSearch.py:2151
 #, python-brace-format
 msgid "Comment: {comment}"
-msgstr ""
+msgstr "Komentar: {comment}"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -23011,174 +22967,166 @@ msgid "Select filter to restrict list"
 msgstr "Odaberi filtar za ograničavanje popisa"
 
 #: activity_row_generator.py:110
-#, fuzzy, python-format
-#| msgid "Birth: %s"
+#, python-format
 msgid "Visited: %s"
-msgstr "Rođenje: %s"
+msgstr "Posjećeno: %s"
 
 #: activity_row_generator.py:114 activity_row_generator.py:129
 #, python-format
 msgid "Link: %s"
-msgstr ""
+msgstr "Poveznica: %s"
 
 #: activity_row_generator.py:116
-#, fuzzy, python-format
-#| msgid "Set Attribute"
+#, python-format
 msgid "Attribute: %s"
-msgstr "Postavi svojstvo"
+msgstr "Svojstvo: %s"
 
 #: activity_row_generator.py:118
-#, fuzzy, python-format
-#| msgid "Key: %s"
+#, python-format
 msgid "Value: %s"
-msgstr "Ključ: %s"
+msgstr "Vrijednost: %s"
 
 #: activity_row_generator.py:123
-#, fuzzy, python-format
-#| msgid "Select from files"
+#, python-format
 msgid "Loaded from file: %s"
-msgstr "Odaberi iz datoteka"
+msgstr "Učitano iz datoteke: %s"
 
 #: activity_row_generator.py:126
-#, fuzzy, python-format
-#| msgid "Form: %s"
+#, python-format
 msgid "Domain: %s"
-msgstr "Obrazac: %s"
+msgstr "Domena: %s"
 
 #: activity_row_generator.py:131
-#, fuzzy, python-format
-#| msgid "Death: %s"
+#, python-format
 msgid "Object: %s"
-msgstr "Smrt: %s"
+msgstr "Objekt: %s"
 
 #: activity_row_generator.py:135
-#, fuzzy, python-format
-#| msgid "Death: %s"
+#, python-format
 msgid "Pattern: %s"
-msgstr "Smrt: %s"
+msgstr "Uzorak: %s"
 
 #: activity_row_generator.py:138
-#, fuzzy, python-format
-#| msgid "The Gramps ID.."
+#, python-format
 msgid "Object Gramps ID: %s"
-msgstr "Gramps ID …"
+msgstr "Gramps ID objekta: %s"
 
 #: activity_row_generator.py:142
 #, python-format
 msgid "%s: %s → %s: %s"
-msgstr ""
+msgstr "%s: %s → %s: %s"
 
 #: activity_row_generator.py:152
 msgid "Link visited"
-msgstr ""
+msgstr "Poveznica posjećena"
 
 #: activity_row_generator.py:153
 msgid "Link saved to Note"
-msgstr ""
+msgstr "Poveznica spremljena u zabilješku"
 
 #: activity_row_generator.py:154
-#, fuzzy
-#| msgid "Add Test Note"
 msgid "Link saved to Attribute"
-msgstr "Dodaj testnu zabilješku"
+msgstr "Poveznica spremljena u svojstvo"
 
 #: activity_row_generator.py:155
-#, fuzzy
-#| msgid "Place title"
 msgid "Place history loaded"
-msgstr "Naslov mjesta"
+msgstr "Povijest mjesta učitana"
 
 #: activity_row_generator.py:156
 msgid "Domain skipped"
-msgstr ""
+msgstr "Domena preskočena"
 
 #: activity_row_generator.py:157
 msgid "Link hidden for object"
-msgstr ""
+msgstr "Poveznica skrivena za objekt"
 
 #: activity_row_generator.py:158
 msgid "Link hidden for all objects"
-msgstr ""
+msgstr "Poveznica skrivena za sve objekte"
 
 #: activity_row_generator.py:159
-#, fuzzy
-#| msgid "Attribute type to add or edit"
 msgid "Attribute updated"
-msgstr "Vrsta svojstva za dodavanje ili uređivanje"
+msgstr "Svojstvo aktualizirano"
 
 #: activity_row_generator.py:160
-#, fuzzy
-#| msgid "Note type"
 msgid "Note updated"
-msgstr "Vrsta zabilješke"
+msgstr "Zabilješka aktualizirana"
+
+#: connection.py:113 postgresqlenhanced.py:112
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
 
 #: constants.py:390
 msgid "Column - Icons"
-msgstr ""
+msgstr "Stupac – Ikone"
 
 #: constants.py:391
 msgid "Column - Source Types (flags)"
-msgstr ""
+msgstr "Stupac – Vrste izvora (zastavice)"
 
 #: constants.py:392
 msgid "Column - Keys"
-msgstr ""
+msgstr "Stupac – Ključevi"
 
 #: constants.py:393
 msgid "Column - Title"
-msgstr ""
+msgstr "Stupac – Naslov"
 
 #: constants.py:394
 msgid "Column - Website Url"
-msgstr ""
+msgstr "Stupac – URL web stranice"
 
 #: constants.py:395
 msgid "Column - Comment"
-msgstr ""
+msgstr "Stupac – Komentar"
 
 #: constants.py:424
 msgid "Icon - Visited URLs (checkmark)"
-msgstr ""
+msgstr "Ikona – Posjećeni URL-ovi (kvačica)"
 
 #: constants.py:425
 msgid "Icon - Saved URLs (floppy disk)"
-msgstr ""
+msgstr "Ikona – Spremljeni URL-ovi (disketa)"
 
 #: constants.py:426
 msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr ""
+msgstr "Ikona – URL-ovi povezani s UID svojstvima (UID značka)"
 
 #: constants.py:427
 msgid "Icon - URLs from regional CSV files (flag)"
-msgstr ""
+msgstr "Ikona – URL-ovi iz regionalnih CSV datoteka (zastavica)"
 
 #: constants.py:428
 msgid "Icon - URLs from static CSV files (red pin)"
-msgstr ""
+msgstr "Ikona – URL-ovi iz statičnih CSV datoteka (crvena pribadača)"
 
 #: constants.py:429
 msgid "Icon - URLs from common CSV files (earth)"
-msgstr ""
+msgstr "Ikona – URL-ovi iz uobičajenih CSV datoteka (zemlja)"
 
 #: constants.py:430
 msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr ""
+msgstr "Ikona – URL-ovi iz unakrsnih CSV datoteka (strelice za miješanje)"
 
 #: constants.py:431
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr ""
+"Ikona – URL-ovi iz prilagođenog korisničkog direktorija (ikona proračunske "
+"tablice)"
 
 #: constants.py:432
 msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr ""
+msgstr "Ikona – URL-ovi iz kartice „Svojstva” (ikona „S”)"
 
 #: constants.py:433
 msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr ""
+msgstr "Ikona – URL-ovi iz kartice „Internet” (ikona „I”)"
 
 #: constants.py:434
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr ""
+msgstr "Ikona – URL-ovi iz kartice „Zabilješke” (ikona „Z”)"
 
 #: info_panel.py:108
 msgid "## 🧩 About WebSearch"
@@ -23339,11 +23287,11 @@ msgstr "Dostavlja biblioteku za opći pristup bazi podataka i gen.lib."
 
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
-msgstr "libaccess uredi ime"
+msgstr "uredi ime s libaccess bibliotekom"
 
 #: libaccess/libaccess.py:260
 msgid "libaccess edit person"
-msgstr "libaccess uredi osobu"
+msgstr "uredi osobu s libaccess bibliotekom"
 
 #: libwebconnect/libwebconnect.gpr.py:11
 msgid "Library for web site collections"
@@ -23657,7 +23605,7 @@ msgstr ""
 "Nije važeći .gramps.\n"
 "Nije moguće polkrenuti gramplet …\n"
 "Pokušaj upotrijebiti .gramps\n"
-"stvoren s Gramps 4.x."
+"koji je generiran s Gramps 4.x."
 
 #: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
 #: lxml/lxmlGramplet.py:484
@@ -23674,7 +23622,7 @@ msgstr " pomoću Gramps-a "
 
 #: lxml/lxmlGramplet.py:498
 msgid "File was generated on "
-msgstr "Datoteka je stvorena "
+msgstr "Datoteka je generirana "
 
 #: lxml/lxmlGramplet.py:500
 msgid "Period: "
@@ -23703,7 +23651,7 @@ msgstr "Galerija.html"
 #: lxml/lxmlGramplet.py:522
 #, python-format
 msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Stvorio/la je indeks medija za „%(file)s”.\n"
+msgstr "2. Generirao/la je indeks medija za „%(file)s”.\n"
 
 #: lxml/lxmlGramplet.py:525
 #, python-format
@@ -23724,7 +23672,7 @@ msgstr "Gledam na …"
 
 #: lxml/lxmlGramplet.py:590
 msgid "Content generated by Gramps"
-msgstr "Sadržaj je stvoren pomoću Gramps-a"
+msgstr "Od Grampsa generirani sadržaj"
 
 #: lxml/lxmlGramplet.py:593
 msgid "List of sources"
@@ -23753,7 +23701,7 @@ msgstr "Portugal"
 #: lxml/lxmlGramplet.py:695
 #, python-format
 msgid "1. Has generated \"%s\".\n"
-msgstr "1. Stvorio/la je „%s”.\n"
+msgstr "1. Generirao/la je „%s”.\n"
 
 #: lxml/lxmlGramplet.py:696
 #, python-format
@@ -23772,7 +23720,7 @@ msgstr "Nema podataka."
 
 #: markdown_place_history_formatter.py:57
 msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr ""
+msgstr "POVIJESNE ADMINISTRATIVNE JEDINICE OD"
 
 #: markdown_place_history_formatter.py:58
 msgid "Foundation date:"
@@ -23784,11 +23732,11 @@ msgstr "Koordinate:"
 
 #: markdown_place_history_formatter.py:61
 msgid "Administrative history"
-msgstr ""
+msgstr "Administrativna povijest"
 
 #: markdown_place_history_formatter.py:62
 msgid "Data provided to AI:"
-msgstr ""
+msgstr "UI-u dostavljeni podaci:"
 
 #: markdown_place_history_formatter.py:64
 msgid "Full hierarchy"
@@ -23799,23 +23747,129 @@ msgid "Place Type:"
 msgstr "Vrsta mjesta:"
 
 #: markdown_place_history_formatter.py:69
-#, fuzzy
-#| msgid "Last Resident"
 msgid "Last Retrieved At:"
-msgstr "Zadnji stanovnik"
+msgstr "Zadnje put dohvaćeno:"
+
+#: migration.py:133
+msgid "Starting migration..."
+msgstr "Pokretanje migracije …"
+
+#: migration.py:145
+#, python-format
+msgid "Migrating %(type)s objects..."
+msgstr "Migriraju se objekti vrste %(type)s …"
+
+#: migration.py:154
+#, python-format
+msgid "Migrated %(count)d %(type)s objects"
+msgstr "Broj migriranih objekata vrste %(type)s: %(count)d"
+
+#: migration.py:171
+msgid "Migration completed!"
+msgstr "Migracija završena!"
+
+#: migration.py:302 postgresqlenhanced.py:287
+msgid "Starting upgrade..."
+msgstr "Pokretanje nadogradnje …"
+
+#: migration.py:320
+#, python-format
+msgid "Upgrading %(type)s objects..."
+msgstr "Nadograđuju se objekti vrste %(type)s …"
+
+#: migration.py:331
+msgid "Creating indexes..."
+msgstr "Stvaranje indeksa …"
+
+#: migration.py:342
+msgid "Upgrade completed!"
+msgstr "Nadogradnja završena!"
 
 #: note_links_loader.py:69
-#, fuzzy
-#| msgid "No file parsed..."
 msgid "Note Link (parsed)"
-msgstr "Nijedna datoteka nije analizirana …"
+msgstr "Poveznica zabilješke (obrađena)"
 
 #: note_links_loader.py:124
 msgid "Note Link (internal)"
-msgstr ""
+msgstr "Poveznica zabilješke (interna)"
 
 #: note_links_loader.py:127
 msgid "Note Link (external)"
+msgstr "Poveznica zabilješke (eksterna)"
+
+#: postgresqlenhanced.gpr.py:27
+#, fuzzy
+#| msgid "PostgreSQL"
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL"
+
+#: postgresqlenhanced.gpr.py:28
+#, fuzzy
+#| msgid "PostgreSQL Database"
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL baza podataka"
+
+#: postgresqlenhanced.gpr.py:29
+msgid ""
+"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
+"and migration support. Uses psycopg3 for modern PostgreSQL features while "
+"maintaining full compatibility."
+msgstr ""
+
+#: postgresqlenhanced.py:118
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+
+#: postgresqlenhanced.py:167
+msgid "Database Backend"
+msgstr "Pozadinski sustav baze podataka"
+
+#: postgresqlenhanced.py:168
+msgid "Database module"
+msgstr "Modul baze podataka"
+
+#: postgresqlenhanced.py:170
+msgid "JSONB support"
+msgstr "JSONB podrška"
+
+#: postgresqlenhanced.py:191
+#, python-format
+msgid "Version warning"
+msgstr "Upozorenje o verziji"
+
+#: postgresqlenhanced.py:193
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr "PostgreSQL %(version)s je manja od preporučene verzije %(recommended)s"
+
+#: postgresqlenhanced.py:206
+#, fuzzy
+#| msgid "Version %s"
+msgid "Extensions"
+msgstr "Verzija %s"
+
+#: postgresqlenhanced.py:224
+msgid "Database size"
+msgstr ""
+
+#: postgresqlenhanced.py:229
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr ""
+
+#: postgresqlenhanced.py:300
+msgid "Upgrading to PostgreSQL Enhanced"
+msgstr ""
+
+#: postgresqlenhanced.py:315
+msgid "Migration manager not initialized"
+msgstr ""
+
+#: postgresqlenhanced.py:327
+msgid "Enhanced queries require JSONB support"
 msgstr ""
 
 #: qr_window.py:88
@@ -23824,29 +23878,44 @@ msgstr "QR kod"
 
 #: qr_window.py:119 qr_window.py:122
 msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Nedostaje ovisnost \"qrcode\""
+msgstr "⚠ Nedostaje ovisnost „qrcode”"
 
 #: qr_window.py:133
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
 msgstr ""
+"⚠ Greška prilikom generiranja QR koda:\n"
+"Izvorna greška: „{}”"
+
+#: queries.py:354
+msgid "pg_trgm extension required for duplicate detection"
+msgstr ""
+
+#: schema.py:156
+msgid "Creating new PostgreSQL Enhanced schema"
+msgstr ""
+
+#: schema.py:162
+#, python-format
+msgid "Upgrading schema from v%(current)s to v%(new)s"
+msgstr ""
+
+#: schema.py:246
+msgid "PostgreSQL Enhanced schema created successfully"
+msgstr ""
 
 #: settings_ui_manager.py:112
 msgid "Middle Name Handling"
-msgstr ""
+msgstr "Baratanje srednjim imenom"
 
 #: settings_ui_manager.py:117
-#, fuzzy
-#| msgid "Save Note"
 msgid "Leave alone"
-msgstr "Spremi zabilješku"
+msgstr "Ostavi nepromijenjeno"
 
 #: settings_ui_manager.py:118
-#, fuzzy
-#| msgid "Generate"
 msgid "Separate"
-msgstr "Izradi"
+msgstr "Izdvoji"
 
 #: settings_ui_manager.py:128
 msgid "URL Compactness Level"
@@ -23876,75 +23945,67 @@ msgstr "URL-staza."
 
 #: settings_ui_manager.py:157
 msgid "AI Provider"
-msgstr ""
+msgstr "Pružatelj UI-a"
 
 #: settings_ui_manager.py:162
-#, fuzzy
-#| msgid "Disabled"
 msgid "(Disabled)"
-msgstr "Invaliditet"
+msgstr "(Deaktivirano)"
 
 #: settings_ui_manager.py:163
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: settings_ui_manager.py:164
 msgid "Mistral AI"
-msgstr ""
+msgstr "Mistral AI"
 
 #: settings_ui_manager.py:171
 msgid "OpenAI API Key"
-msgstr ""
+msgstr "OpenAI API ključ"
 
 #: settings_ui_manager.py:176
 msgid "OpenAI Model"
-msgstr ""
+msgstr "OpenAI model"
 
 #: settings_ui_manager.py:181
 msgid "Mistral API Key"
-msgstr ""
+msgstr "Mistral API ključ"
 
 #: settings_ui_manager.py:186
 msgid "Mistral Model"
-msgstr ""
+msgstr "Mistral model"
 
 #: settings_ui_manager.py:191
 msgid "Show Links From the 'Attributes' tab"
-msgstr ""
+msgstr "Prikaži poveznice iz kartice „Svojstva”"
 
 #: settings_ui_manager.py:196
 msgid "Show Links From the 'Internet' tab"
-msgstr ""
+msgstr "Prikaži poveznice iz kartice „Internet”"
 
 #: settings_ui_manager.py:201
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show Links From the Notes"
-msgstr "Prikaži skrivene stavke"
+msgstr "Prikaži poveznice iz zabilješki"
 
 #: settings_ui_manager.py:209
 msgid "Enable AI-generated historical place data"
-msgstr ""
+msgstr "Aktiviraj UI-generirane povijesne podatke mjesta"
 
 #: settings_ui_manager.py:215
 msgid "Custom country code for AI notes (optional)"
-msgstr ""
+msgstr "Prilagođeni kod zemlje za UI-zabilješke (opcionalno)"
 
 #: settings_ui_manager.py:244
 msgid "Enable CSV Files"
-msgstr ""
+msgstr "Aktiviraj CSV datoteke"
 
 #: settings_ui_manager.py:251
-#, fuzzy
-#| msgid "Display all"
 msgid "Display Columns"
-msgstr "Prikaži sve"
+msgstr "Prikaži stupce"
 
 #: settings_ui_manager.py:265
-#, fuzzy
-#| msgid "Display mode"
 msgid "Display Icons"
-msgstr "Modus prikaza"
+msgstr "Prikaži ikone"
 
 #, fuzzy
 #~| msgid "Add Test Note"
