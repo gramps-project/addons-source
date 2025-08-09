@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-19 08:52-0700\n"
+"POT-Creation-Date: 2025-08-06 12:26-0700\n"
 "PO-Revision-Date: 2025-07-28 21:19+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
@@ -22125,6 +22125,12 @@ msgstr ""
 msgid "Note updated"
 msgstr ""
 
+#: connection.py:113 postgresqlenhanced.py:112
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+
 #: constants.py:390
 msgid "Column - Icons"
 msgstr ""
@@ -22769,6 +22775,41 @@ msgstr "Loktipo:"
 msgid "Last Retrieved At:"
 msgstr ""
 
+#: migration.py:133
+msgid "Starting migration..."
+msgstr ""
+
+#: migration.py:145
+#, python-format
+msgid "Migrating %(type)s objects..."
+msgstr ""
+
+#: migration.py:154
+#, python-format
+msgid "Migrated %(count)d %(type)s objects"
+msgstr ""
+
+#: migration.py:171
+msgid "Migration completed!"
+msgstr ""
+
+#: migration.py:302 postgresqlenhanced.py:287
+msgid "Starting upgrade..."
+msgstr ""
+
+#: migration.py:320
+#, python-format
+msgid "Upgrading %(type)s objects..."
+msgstr ""
+
+#: migration.py:331
+msgid "Creating indexes..."
+msgstr ""
+
+#: migration.py:342
+msgid "Upgrade completed!"
+msgstr ""
+
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
 msgstr ""
@@ -22779,6 +22820,75 @@ msgstr ""
 
 #: note_links_loader.py:127
 msgid "Note Link (external)"
+msgstr ""
+
+#: postgresqlenhanced.gpr.py:27
+msgid "PostgreSQL Enhanced"
+msgstr ""
+
+#: postgresqlenhanced.gpr.py:28
+msgid "PostgreSQL _Enhanced Database"
+msgstr ""
+
+#: postgresqlenhanced.gpr.py:29
+msgid ""
+"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
+"and migration support. Uses psycopg3 for modern PostgreSQL features while "
+"maintaining full compatibility."
+msgstr ""
+
+#: postgresqlenhanced.py:118
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+
+#: postgresqlenhanced.py:167
+msgid "Database Backend"
+msgstr ""
+
+#: postgresqlenhanced.py:168
+msgid "Database module"
+msgstr ""
+
+#: postgresqlenhanced.py:170
+msgid "JSONB support"
+msgstr ""
+
+#: postgresqlenhanced.py:191
+#, python-format
+msgid "Version warning"
+msgstr ""
+
+#: postgresqlenhanced.py:193
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+
+#: postgresqlenhanced.py:206
+msgid "Extensions"
+msgstr ""
+
+#: postgresqlenhanced.py:224
+msgid "Database size"
+msgstr ""
+
+#: postgresqlenhanced.py:229
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr ""
+
+#: postgresqlenhanced.py:300
+msgid "Upgrading to PostgreSQL Enhanced"
+msgstr ""
+
+#: postgresqlenhanced.py:315
+msgid "Migration manager not initialized"
+msgstr ""
+
+#: postgresqlenhanced.py:327
+msgid "Enhanced queries require JSONB support"
 msgstr ""
 
 #: qr_window.py:88
@@ -22793,6 +22903,23 @@ msgstr ""
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
+msgstr ""
+
+#: queries.py:354
+msgid "pg_trgm extension required for duplicate detection"
+msgstr ""
+
+#: schema.py:156
+msgid "Creating new PostgreSQL Enhanced schema"
+msgstr ""
+
+#: schema.py:162
+#, python-format
+msgid "Upgrading schema from v%(current)s to v%(new)s"
+msgstr ""
+
+#: schema.py:246
+msgid "PostgreSQL Enhanced schema created successfully"
 msgstr ""
 
 #: settings_ui_manager.py:112
