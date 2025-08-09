@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-06 12:26-0700\n"
-"PO-Revision-Date: 2025-06-20 16:46+0000\n"
+"PO-Revision-Date: 2025-08-07 08:58+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -23273,6 +23273,8 @@ msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
 "install 'psycopg[binary]'"
 msgstr ""
+"psycopg3 is vereist voor PostgreSQL Enhanced-ondersteuning. Installeren met: "
+"pip install 'psycopg[binary]'"
 
 #: constants.py:390
 msgid "Column - Icons"
@@ -23983,50 +23985,39 @@ msgid "Last Retrieved At:"
 msgstr "Laatst opgehaald op:"
 
 #: migration.py:133
-#, fuzzy
-#| msgid "Generating relation map..."
 msgid "Starting migration..."
-msgstr "Relatiekaart genereren..."
+msgstr "Migratie starten…"
 
 #: migration.py:145
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Migrating %(type)s objects..."
-msgstr "%s verslagen schrijven..."
+msgstr "%(type)s objecten migreren…"
 
 #: migration.py:154
 #, python-format
 msgid "Migrated %(count)d %(type)s objects"
-msgstr ""
+msgstr "%(count)d %(type)s objecten gemigreerd"
 
 #: migration.py:171
-#, fuzzy
-#| msgid "Highest grade completed"
 msgid "Migration completed!"
-msgstr "Hoogste voltooide leerjaar"
+msgstr "Migratie voltooid!"
 
 #: migration.py:302 postgresqlenhanced.py:287
-#, fuzzy
-#| msgid "Attaching sources..."
 msgid "Starting upgrade..."
-msgstr "Bronnen worden toegevoegd..."
+msgstr "Bijwerking starten…"
 
 #: migration.py:320
 #, python-format
 msgid "Upgrading %(type)s objects..."
-msgstr ""
+msgstr "%(type)s objecten bijwerken…"
 
 #: migration.py:331
-#, fuzzy
-#| msgid "Fetching index list..."
 msgid "Creating indexes..."
-msgstr "Indexlijst ophalen..."
+msgstr "Indexen aanmaken…"
 
 #: migration.py:342
-#, fuzzy
-#| msgid "Highest grade completed"
 msgid "Upgrade completed!"
-msgstr "Hoogste voltooide leerjaar"
+msgstr "Bijwerking voltooid!"
 
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
@@ -24041,16 +24032,12 @@ msgid "Note Link (external)"
 msgstr "Notitiekoppeling (extern)"
 
 #: postgresqlenhanced.gpr.py:27
-#, fuzzy
-#| msgid "PostgreSQL"
 msgid "PostgreSQL Enhanced"
-msgstr "PostgreSQL"
+msgstr "PostgreSQL Enhanced"
 
 #: postgresqlenhanced.gpr.py:28
-#, fuzzy
-#| msgid "PostgreSQL Database"
 msgid "PostgreSQL _Enhanced Database"
-msgstr "PostgreSQL-database"
+msgstr "PostgreSQL _Enhanced database"
 
 #: postgresqlenhanced.gpr.py:29
 msgid ""
@@ -24058,6 +24045,9 @@ msgid ""
 "and migration support. Uses psycopg3 for modern PostgreSQL features while "
 "maintaining full compatibility."
 msgstr ""
+"PostgreSQL Enhanced databasebackend met JSONB-opslag, geavanceerde "
+"zoekopdrachten en migratieondersteuning. Gebruikt psycopg3 voor moderne "
+"PostgreSQL-functies met behoud van volledige compatibiliteit."
 
 #: postgresqlenhanced.py:118
 #, python-format
@@ -24065,60 +24055,55 @@ msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
+"psycopg3 versie %(installed)s is te oud. Versie %(required)s of nieuwer is "
+"vereist."
 
 #: postgresqlenhanced.py:167
 msgid "Database Backend"
-msgstr ""
+msgstr "Database-backend"
 
 #: postgresqlenhanced.py:168
 msgid "Database module"
-msgstr ""
+msgstr "Database-module"
 
 #: postgresqlenhanced.py:170
-#, fuzzy
-#| msgid "JSON Export"
 msgid "JSONB support"
-msgstr "JSON export"
+msgstr "JSONB-ondersteuning"
 
 #: postgresqlenhanced.py:191
-#, fuzzy, python-format
-#| msgid "Version %s"
+#, python-format
 msgid "Version warning"
-msgstr "Versie %s"
+msgstr "Versiewaarschuwing"
 
 #: postgresqlenhanced.py:193
 #, python-format
 msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
-msgstr ""
+msgstr "PostgreSQL %(version)s is lager dan aanbevolen versie %(recommended)s"
 
 #: postgresqlenhanced.py:206
-#, fuzzy
-#| msgid "Version %s"
 msgid "Extensions"
-msgstr "Versie %s"
+msgstr "Extensies"
 
 #: postgresqlenhanced.py:224
 msgid "Database size"
-msgstr ""
+msgstr "Databasegrootte"
 
 #: postgresqlenhanced.py:229
 #, python-format
 msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr ""
+msgstr "%(persons)d personen, %(families)d gezinnen, %(events)d gebeurtenissen"
 
 #: postgresqlenhanced.py:300
 msgid "Upgrading to PostgreSQL Enhanced"
-msgstr ""
+msgstr "Bijwerken naar PostgreSQL Enhanced"
 
 #: postgresqlenhanced.py:315
-#, fuzzy
-#| msgid "Foreigners not naturalized"
 msgid "Migration manager not initialized"
-msgstr "Buitenlanders, niet genaturaliseerd"
+msgstr "Migratiebheer niet geïnitialiseerd"
 
 #: postgresqlenhanced.py:327
 msgid "Enhanced queries require JSONB support"
-msgstr ""
+msgstr "Verbeterde zoekopdrachten vereisen JSONB-ondersteuning"
 
 #: qr_window.py:88
 msgid "QR-code"
@@ -24138,20 +24123,20 @@ msgstr ""
 
 #: queries.py:354
 msgid "pg_trgm extension required for duplicate detection"
-msgstr ""
+msgstr "pg_trgm-extensie vereist voor detectie van duplicaten"
 
 #: schema.py:156
 msgid "Creating new PostgreSQL Enhanced schema"
-msgstr ""
+msgstr "Nieuw PostgreSQL Enhanced-schema aanmaken"
 
 #: schema.py:162
 #, python-format
 msgid "Upgrading schema from v%(current)s to v%(new)s"
-msgstr ""
+msgstr "Schema bijwerken van v%(current)s naar v%(new)s"
 
 #: schema.py:246
 msgid "PostgreSQL Enhanced schema created successfully"
-msgstr ""
+msgstr "PostgreSQL Enhanced-schema met succes aangemaakt"
 
 #: settings_ui_manager.py:112
 msgid "Middle Name Handling"
