@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-06 12:26-0700\n"
-"PO-Revision-Date: 2025-08-01 16:02+0000\n"
+"PO-Revision-Date: 2025-08-08 09:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -574,15 +574,15 @@ msgstr "הפעולה בוצעה"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
-msgstr ""
+msgstr "הלחצן יגרום ליציאה, עם משפחות שנותרו ללא שינוי."
 
 #: BirthOrder/birthorder.glade:256
 msgid "Current sort"
-msgstr ""
+msgstr "מיון נוכחי"
 
 #: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
-msgstr ""
+msgstr "מיון מוצע"
 
 #: BirthOrder/birthorder.glade:333
 msgid ""
@@ -628,7 +628,7 @@ msgstr "חיפוש סדר לידת צאצאים"
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
-msgstr ""
+msgstr "ימי הולדת"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
@@ -948,19 +948,19 @@ msgstr "עריכת בחירה"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "נא להסיר תוכן שדה כותרת מקום אם הוא אינו תואם"
 
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr ""
+msgstr "העתקת תוכן שדה כותרת מקוםלהערה חדשה."
 
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "צרוף תג למקומות שנבחרו."
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
-msgstr ""
+msgstr "עמודה"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
@@ -992,7 +992,7 @@ msgstr "לא נדרשות הסגלות"
 
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
-msgstr ""
+msgstr "לא נדרשים שינויים."
 
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
@@ -1014,24 +1014,24 @@ msgstr "משופר"
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
-msgstr ""
+msgstr "מתסדר מובאות משופר שמוסיף מאגר ומספר שם מקובל לפונקציונליות התקניות."
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
-msgstr ""
+msgstr "מיזוג משורת פקודה"
 
 #: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
-msgstr ""
+msgstr "מיזוג עצמים עיקריים מפקודת שורה."
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:18
 msgid "Collections Clipboard"
-msgstr ""
+msgstr "לוח־גזירים אוספים"
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:11
 msgid "Gramplet for grouping collections of items to aid in data entry."
-msgstr ""
+msgstr "גרמפלט לקיבוץ אוספי פריטים לסיוע בהזנת נתונים."
 
 #: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format
@@ -1040,7 +1040,7 @@ msgstr "גרמפלט לוח־גזירים:%s"
 
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
-msgstr ""
+msgstr "שעון"
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
 msgid "Gramplet for demonstrating Cairo graphics"
@@ -1062,7 +1062,7 @@ msgstr "משולב"
 
 #: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
-msgstr ""
+msgstr "מצג שמציג קשרי־קרבה ואירועים של אדם"
 
 #: CombinedView/combinedview.py:528
 msgid "Edit the active event"
@@ -1074,11 +1074,11 @@ msgstr "הצגת תגים"
 
 #: CombinedView/combinedview.py:656
 msgid "Vertical Details"
-msgstr ""
+msgstr "פרטים אנכיים"
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
 msgid "Order"
-msgstr ""
+msgstr "סדר"
 
 #: CombinedView/navigationview.py:346
 msgid ""
@@ -1086,6 +1086,8 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
+"יש להגדיר 'אדם ברירת־מחדל' שאליו ניתן לעבור. לבחור את מצג 'אנשים', לבחור את "
+"האדם הרצוי כ'אדם הבית', ולאשר את הבחירה מתפריט עריכה ← קבע אדם הבית."
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -1095,7 +1097,7 @@ msgstr "%(event_type)s: %(date)s ב־ %(place)s"
 #: CombinedView/personpage.py:601
 #, python-format
 msgid "%(event_type)s: %(date)s"
-msgstr ""
+msgstr "%(event_type)s: %(date)s"
 
 #: CombinedView/personpage.py:604
 #, python-format
@@ -1116,13 +1118,15 @@ msgstr ": "
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
-msgstr ""
+msgstr "אילן אבות־קדמונים מתכווץ"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
+"חילול עמוד מרשתת עם ייצוג חזותי של אבות קדמונים (SVG) המיוצג כפריסת אילן "
+"מתכווץ מספריית ה-JavaScript D3.js."
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -1136,19 +1140,19 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr ""
+msgstr "כתיבת {target_path}:{message} כשלה"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
 #, python-format
 msgid "Failed to create directory structure : %s"
-msgstr ""
+msgstr "כשל ביצירת מבנה מחיצות: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
 #: D3Charts/DescendantIndentedTree.py:1554
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr ""
+msgstr "כשל בהעתקת קבצימרשתת: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
@@ -1228,16 +1232,16 @@ msgstr ""
 
 #: D3Charts/AncestralFanChart.py:733
 msgid "Maternal Background"
-msgstr ""
+msgstr "רקע שושלת אם"
 
 #: D3Charts/AncestralFanChart.py:734
 msgid "RGB-color for maternal box background."
-msgstr ""
+msgstr "צבעי RBG לרקע תיבת שושלת אם."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:909
 msgid "Descendant Indented Tree"
-msgstr ""
+msgstr "אילן צאצאים מוזח"
 
 #: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
@@ -1245,20 +1249,22 @@ msgid ""
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
 "library."
 msgstr ""
+"חילול עמוד מרשתת עם ייצוג חזותי של צאצאים (SVG) מיוצגת כאילן מתכווץ מוזח "
+"מספריית D3.js JavaScript."
 
 #: D3Charts/DescendantIndentedTree.py:673
 #, python-format
 msgid "See %(reference)s : %(spouse)s"
-msgstr ""
+msgstr "למידע נוסף %(reference)s : %(spouse)s"
 
 #: D3Charts/DescendantIndentedTree.py:764
 msgid "Generating report..."
-msgstr ""
+msgstr "מתבצע חילל דוח..."
 
 #: D3Charts/DescendantIndentedTree.py:1364
 #: DescendantSpaceTree/DescendantSpaceTree.py:771
 msgid "Invalid Destination Directory"
-msgstr ""
+msgstr "מחיצת יעד לא תקינה"
 
 #: D3Charts/DescendantIndentedTree.py:1365
 #, python-format
@@ -1266,6 +1272,8 @@ msgid ""
 "Destinaton diretory %s does not exist\n"
 "Do you want to attempt to create it?"
 msgstr ""
+"מחיצת יעד %s לא קיימת\n"
+"האם לנסות ליצור אותה?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-brace-format
@@ -1278,63 +1286,65 @@ msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
+"קובץ יעד %s כבר קיים.\n"
+"האם לכתוב על קובץ זה?"
 
 #: D3Charts/DescendantIndentedTree.py:1445
 msgid "Default View"
-msgstr ""
+msgstr "מצג ברירת־מחדל"
 
 #: D3Charts/DescendantIndentedTree.py:1448
 msgid "Expand All"
-msgstr ""
+msgstr "הרחבת הכול"
 
 #: D3Charts/DescendantIndentedTree.py:1810
 msgid "Include contraction level"
-msgstr ""
+msgstr "לכלול רמת כיווץ"
 
 #: D3Charts/DescendantIndentedTree.py:1812
 msgid "The number of descendant levels to contract on initial display."
-msgstr ""
+msgstr "מספר רמות צאצאים לכיווץ במצג התחלתי."
 
 #: D3Charts/DescendantIndentedTree.py:1819
 msgid "The font size in pixels for each node."
-msgstr ""
+msgstr "גודל גופן בפיקסלים לכל צומת."
 
 #: D3Charts/DescendantIndentedTree.py:1847
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
-msgstr ""
+msgstr "האם להציג בדוחות משפחות כפולות."
 
 #: D3Charts/DescendantIndentedTree.py:1851
 msgid "Expanded Row Background Color"
-msgstr ""
+msgstr "צבע רקע שורה מורחבת"
 
 #: D3Charts/DescendantIndentedTree.py:1852
 msgid "RGB-color for expanded row background."
-msgstr ""
+msgstr "צבעי BRG לרקע שורה מורחבת."
 
 #: D3Charts/DescendantIndentedTree.py:1855
 msgid "Expandable Background Color"
-msgstr ""
+msgstr "צבע רקע מתרחב"
 
 #: D3Charts/DescendantIndentedTree.py:1857
 msgid "RGB-color for expandable row background."
-msgstr ""
+msgstr "צבעי RBG לרקע שורה מתרחבת."
 
 #: D3Charts/DescendantIndentedTree.py:1860
 msgid "Non-Expandable Background Color"
-msgstr ""
+msgstr "צבע רקע לשורה שלא מתרחבת"
 
 #: D3Charts/DescendantIndentedTree.py:1862
 msgid "RGB-color for non-expandable row background."
-msgstr ""
+msgstr "צבעי RBG לרע שורה שלא מתרחבת."
 
 #: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
-msgstr ""
+msgstr "לכלול רשומות שמסימנות כפרטיות"
 
 #: D3Charts/DescendantIndentedTree.py:1868
 msgid "Whether to include private objects."
-msgstr ""
+msgstr "האם לכלול רשומות פרטיות."
 
 #: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
@@ -1342,96 +1352,96 @@ msgstr "הכללת שם משפחה בלבד"
 
 #: D3Charts/DescendantIndentedTree.py:1878 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
-msgstr ""
+msgstr "לכלול שם מלא בלבד"
 
 #: D3Charts/DescendantIndentedTree.py:1880
 msgid "How to handle living people."
-msgstr ""
+msgstr "אופן הטיפול ב'אנשים חיים'."
 
 #: D3Charts/DescendantIndentedTree.py:1887
 msgid "Whether or not to include people who may have recently died."
-msgstr ""
+msgstr "האם לכלול אנשים שיתכן שנפטרו לאחרונה."
 
 #: D3Charts/DescendantIndentedTree.py:1895
 msgid "Navigation"
-msgstr ""
+msgstr "ניווט"
 
 #: D3Charts/DescendantIndentedTree.py:1897
 msgid "Contraction/Expansion mechanism"
-msgstr ""
+msgstr "מנגנון התכווצות/התרחבות"
 
 #: D3Charts/DescendantIndentedTree.py:1900
 msgid "Entire node."
-msgstr ""
+msgstr "הצומת כולו."
 
 #: D3Charts/DescendantIndentedTree.py:1901
 msgid "Arrow images at start of node."
-msgstr ""
+msgstr "תמונות חץ בתחילת צומת."
 
 #: D3Charts/DescendantIndentedTree.py:1902
 msgid "Plus/Minus images at start of node."
-msgstr ""
+msgstr "תמונות חיבור/חיסור בתחילת צומת."
 
 #: D3Charts/DescendantIndentedTree.py:1903
 #: D3Charts/DescendantIndentedTree.py:1932
 msgid "Where to click to expand/contract nodes."
-msgstr ""
+msgstr "האם להקיש כדי להרחיב.לכווץ צמתים."
 
 #: D3Charts/DescendantIndentedTree.py:1907
 msgid "Auto-generate HREF links for nodes"
-msgstr ""
+msgstr "חילול קשרי HREF באופן אוטומטי לצמתים"
 
 #: D3Charts/DescendantIndentedTree.py:1909
 msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr ""
+msgstr "האם לחלול קשרי HREF באופן אוטומטי לצמתים בדוחות."
 
 #: D3Charts/DescendantIndentedTree.py:1915
 msgid "URL prefix path."
-msgstr ""
+msgstr "נתיב קידומת כתובת URL."
 
 #: D3Charts/DescendantIndentedTree.py:1917
 msgid "URL prefix to apply to each auto-generated HREF link."
-msgstr ""
+msgstr "קידומת URL שתחול על כל קישור HREF שנוצר באופן אוטומטי."
 
 #: D3Charts/DescendantIndentedTree.py:1923
 msgid "URL file extension"
-msgstr ""
+msgstr "סיומת קובץ URL"
 
 #: D3Charts/DescendantIndentedTree.py:1925
 msgid "No file extension."
-msgstr ""
+msgstr "אין סיומת קובץ."
 
 #: D3Charts/DescendantIndentedTree.py:1926
 msgid ".html"
-msgstr ""
+msgstr ".html"
 
 #: D3Charts/DescendantIndentedTree.py:1927
 msgid ".htm"
-msgstr ""
+msgstr ".htm"
 
 #: D3Charts/DescendantIndentedTree.py:1928
 msgid ".shtml"
-msgstr ""
+msgstr ".shtml"
 
 #: D3Charts/DescendantIndentedTree.py:1929
 msgid ".php"
-msgstr ""
+msgstr ".php"
 
 #: D3Charts/DescendantIndentedTree.py:1930
 msgid ".php3"
-msgstr ""
+msgstr ".php3"
 
 #: D3Charts/DescendantIndentedTree.py:1931
 msgid ".cgi"
-msgstr ""
+msgstr ".cgi"
 
 #: D3Charts/DescendantIndentedTree.py:1937
 msgid "URL file name delimeter"
-msgstr ""
+msgstr "מפריד שם קובץ כתובת URL"
 
 #: D3Charts/DescendantIndentedTree.py:1939
 msgid "Remove all whitespace."
-msgstr ""
+msgstr "הסרת הרווחים הלבנים."
 
 #: D3Charts/DescendantIndentedTree.py:1940
 msgid "Replace whitespace with dash(-)."
@@ -1443,36 +1453,36 @@ msgstr "להחליף רווח לבן בקו תחתון (_)"
 
 #: D3Charts/DescendantIndentedTree.py:1942
 msgid "What to use as file name delimiter replacing whitespace."
-msgstr ""
+msgstr "במה להשתמש כמפריד שם קובץ במקום רווח לבן."
 
 #: D3Charts/DescendantIndentedTree.py:1947
 msgid "Generations to generate HREF links"
-msgstr ""
+msgstr "דורות לחילול קישורי HREF"
 
 #: D3Charts/DescendantIndentedTree.py:1949
 msgid "The number of generations to generate HREF links."
-msgstr ""
+msgstr "מספר דורות לחילול קישורי .HREF"
 
 #: D3Charts/DescendantIndentedTree.py:1955
 msgid "Exclude persons who died before (years)"
-msgstr ""
+msgstr "החרגת אנשים שנפטרו לפני (שנים)"
 
 #: D3Charts/DescendantIndentedTree.py:1958
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
-msgstr ""
+msgstr "האם לחולל קישורים לאנשים שמתו בינקותם, 1- לא מחריג אף אחד."
 
 #: D3Charts/DescendantIndentedTree.py:1964
 msgid "Exclude center person"
-msgstr ""
+msgstr "החרגת אדם מרכזי"
 
 #: D3Charts/DescendantIndentedTree.py:1965
 msgid "Whether or not to generate links for center person."
-msgstr ""
+msgstr "האם לחולל קישורים לאדם המרכזי."
 
 #: D3Charts/DescendantIndentedTree.py:1970
 msgid "Exclude Spouses"
-msgstr ""
+msgstr "החרגת אנשים"
 
 #: D3Charts/DescendantIndentedTree.py:1971
 msgid "Whether or not to generate links for spouses."
