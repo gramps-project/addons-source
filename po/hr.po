@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-06 12:26-0700\n"
-"PO-Revision-Date: 2025-08-06 09:52+0000\n"
+"PO-Revision-Date: 2025-08-09 10:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -23287,11 +23287,11 @@ msgstr "Dostavlja biblioteku za opći pristup bazi podataka i gen.lib."
 
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
-msgstr "libaccess uredi ime"
+msgstr "uredi ime s libaccess bibliotekom"
 
 #: libaccess/libaccess.py:260
 msgid "libaccess edit person"
-msgstr "libaccess uredi osobu"
+msgstr "uredi osobu s libaccess bibliotekom"
 
 #: libwebconnect/libwebconnect.gpr.py:11
 msgid "Library for web site collections"
@@ -23751,46 +23751,39 @@ msgid "Last Retrieved At:"
 msgstr "Zadnje put dohvaćeno:"
 
 #: migration.py:133
-#, fuzzy
-#| msgid "Generating relation map..."
 msgid "Starting migration..."
-msgstr "Generiranje karte srodstva …"
+msgstr "Pokretanje migracije …"
 
 #: migration.py:145
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Migrating %(type)s objects..."
-msgstr "Ispis izvještaja (%s) …"
+msgstr "Migriraju se objekti vrste %(type)s …"
 
 #: migration.py:154
 #, python-format
 msgid "Migrated %(count)d %(type)s objects"
-msgstr ""
+msgstr "Broj migriranih objekata vrste %(type)s: %(count)d"
 
 #: migration.py:171
 msgid "Migration completed!"
-msgstr ""
+msgstr "Migracija završena!"
 
 #: migration.py:302 postgresqlenhanced.py:287
-#, fuzzy
-#| msgid "Attaching sources..."
 msgid "Starting upgrade..."
-msgstr "Dodavanje izvora …"
+msgstr "Pokretanje nadogradnje …"
 
 #: migration.py:320
 #, python-format
 msgid "Upgrading %(type)s objects..."
-msgstr ""
+msgstr "Nadograđuju se objekti vrste %(type)s …"
 
 #: migration.py:331
-#, fuzzy
-#| msgid "Fetching index list..."
 msgid "Creating indexes..."
-msgstr "Dohvaćanje popisa indeksa …"
+msgstr "Stvaranje indeksa …"
 
 #: migration.py:342
 msgid "Upgrade completed!"
-msgstr ""
+msgstr "Nadogradnja završena!"
 
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
@@ -23832,28 +23825,25 @@ msgstr ""
 
 #: postgresqlenhanced.py:167
 msgid "Database Backend"
-msgstr ""
+msgstr "Pozadinski sustav baze podataka"
 
 #: postgresqlenhanced.py:168
 msgid "Database module"
-msgstr ""
+msgstr "Modul baze podataka"
 
 #: postgresqlenhanced.py:170
-#, fuzzy
-#| msgid "JSON Export"
 msgid "JSONB support"
-msgstr "JSON izvoz"
+msgstr "JSONB podrška"
 
 #: postgresqlenhanced.py:191
-#, fuzzy, python-format
-#| msgid "Version %s"
+#, python-format
 msgid "Version warning"
-msgstr "Verzija %s"
+msgstr "Upozorenje o verziji"
 
 #: postgresqlenhanced.py:193
 #, python-format
 msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
-msgstr ""
+msgstr "PostgreSQL %(version)s je manja od preporučene verzije %(recommended)s"
 
 #: postgresqlenhanced.py:206
 #, fuzzy
