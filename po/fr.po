@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-26 15:44+0000\n"
+"PO-Revision-Date: 2025-08-04 21:02+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -3591,7 +3591,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1739
 msgid "Vertical edge spouse-bar to child-bar"
-msgstr ""
+msgstr "ligne verticale de la barre des conjoints vers la barre des enfants"
 
 #: DescendantsLines/DescendantsLines.py:1740
 msgid "The length of the vertical edge from spouse-bar to child-bar."
@@ -3608,7 +3608,7 @@ msgstr "La distance horizontale entre deux enfants de la même famille."
 
 #: DescendantsLines/DescendantsLines.py:1751
 msgid "Vertical edge child to child-bar"
-msgstr ""
+msgstr "ligne verticale enfant vers barre des enfants"
 
 #: DescendantsLines/DescendantsLines.py:1753
 msgid "The length of the vertical edge from child to child-bar."
@@ -3726,20 +3726,22 @@ msgstr "Un style utilisé pour les légendes d'image."
 
 #: DetId/DetId.gpr.py:31
 msgid "Deterministic ID"
-msgstr ""
+msgstr "ID déterministe"
 
 #: DetId/DetId.gpr.py:32
 msgid "Set/reset Gramps to use a Deterministic ID"
-msgstr ""
+msgstr "Définir si Gramps utilise un ID déterministe"
 
 #: DetId/DetId.py:74
 msgid "Deterministic ID Tool"
-msgstr ""
+msgstr "Outil d'ID déterministe"
 
 #: DetId/DetId.py:80
 msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
 msgstr ""
+"L'ID et les handles commencent désormais à 0x00000000, et s'incrémentent de "
+"0x100000001"
 
 #: Differences/differences.gpr.py:4 Differences/differences.py:95
 msgid "Database Differences Report"
@@ -17799,7 +17801,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1092
 msgid "Round marriage to year after year entered (above)."
-msgstr ""
+msgstr "Arrondit la date de mariage à l'année d'après (au-dessus)."
 
 #: NetworkChart/NetworkChart.py:1094
 msgid "Represent marriage by year only."
@@ -17810,10 +17812,12 @@ msgid ""
 "Attempts to remove middle names.  Only works for entries with birth year in "
 "the record."
 msgstr ""
+"Essaie de supprimer les deuxièmes prénoms. Ne fonctionne que pour les "
+"entrées avec une année de naissance."
 
 #: NetworkChart/NetworkChart.py:1107
 msgid "Remove middle names."
-msgstr ""
+msgstr "Supprimer les deuxièmes prénoms."
 
 #: NetworkChart/NetworkChart.py:1112
 msgid "Allow inclusion of private records in chart."
@@ -17825,21 +17829,25 @@ msgstr "Raccourcir"
 
 #: NetworkChart/NetworkChart.py:1119
 msgid "Trim descendants"
-msgstr ""
+msgstr "Masquer les descendants"
 
 #: NetworkChart/NetworkChart.py:1121
 msgid "All descendants (children) of selected individuals will not be shown."
 msgstr ""
+"Tous les descendants (enfants) des individus sélectionnés ne seront pas "
+"montrés."
 
 #: NetworkChart/NetworkChart.py:1127
 msgid "Enable trimming of descendants."
-msgstr ""
+msgstr "Activer le masquage des descendants."
 
 #: NetworkChart/NetworkChart.py:1129
 msgid ""
 "You must enter valid person(s) before \n"
 "enabling trimming of descendants from tree."
 msgstr ""
+"Vous devez entrer au moins une personne valide avant\n"
+"de permettre le masquage des descendants de l'arbre."
 
 #: NetworkChart/NetworkChart.py:1134
 msgid "Trim ancestors"
@@ -18423,7 +18431,7 @@ msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
 msgid "Sensitivity (1 min .. 20 max)"
-msgstr ""
+msgstr "Sensibilité (1 min … 20 max)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:291
 msgid "Add Person"
@@ -18455,7 +18463,7 @@ msgstr "Détection des visages"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:301
 msgid "Detect faces (OpenCV module required)"
-msgstr ""
+msgstr "Détecter les visages (le module OpenCV est requis)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
 msgid "XMP Region Name"
@@ -21096,7 +21104,7 @@ msgstr "Profession :"
 #: SourceIndex/marriage.glade:1408 SourceIndex/marriage.glade:1455
 #: SourceIndex/witness.glade:158
 msgid "Live:"
-msgstr ""
+msgstr "Vivant :"
 
 #: SourceIndex/birth.glade:833
 msgid ""
@@ -21122,15 +21130,15 @@ msgstr "<b><i>Données de l'individu</i></b>"
 
 #: SourceIndex/birth.glade:949
 msgid "<b><i>Data margin</i></b>"
-msgstr ""
+msgstr "<b><i>Marge de données</i></b>"
 
 #: SourceIndex/birth.glade:973
 msgid "<b><i>Data father</i></b>"
-msgstr ""
+msgstr "<b><i>Données père</i></b>"
 
 #: SourceIndex/birth.glade:985
 msgid "<b><i>Data mother</i></b>"
-msgstr ""
+msgstr "<b><i>Données mère</i></b>"
 
 #: SourceIndex/birth.glade:1021
 msgid ""
@@ -21139,12 +21147,18 @@ msgid ""
 "godfather, name, given, age, occupation;\n"
 "etc ..."
 msgstr ""
+"témoin1, nom, âge, profession;\n"
+"témoin2, nom, âge, profession;\n"
+"parrain, nom, âge, profession;\n"
+"etc ..."
 
 #: SourceIndex/birth.glade:1549
 msgid ""
 "Marriage\n"
 "place:"
 msgstr ""
+"Mariage\n"
+"lieu :"
 
 #: SourceIndex/birth.glade:1568
 msgid ""
@@ -21443,7 +21457,7 @@ msgstr "lieu m. :"
 
 #: SourceIndex/marriage.glade:113
 msgid "d.contract:"
-msgstr ""
+msgstr "d. contrat :"
 
 #: SourceIndex/marriage.glade:131
 msgid "dates banns:"
@@ -21451,7 +21465,7 @@ msgstr "Date des bans de mariage :"
 
 #: SourceIndex/marriage.glade:149
 msgid "p.contract:"
-msgstr ""
+msgstr "l. contrat :"
 
 #: SourceIndex/marriage.glade:167
 msgid "places banns:"
@@ -21459,7 +21473,7 @@ msgstr "lieux bans :"
 
 #: SourceIndex/marriage.glade:198
 msgid "<b>Data union</b>"
-msgstr ""
+msgstr "<b>Données union</b>"
 
 #: SourceIndex/marriage.glade:318
 msgid "<b>Marriage act</b>"
@@ -21470,32 +21484,40 @@ msgid ""
 "<b>Data father\n"
 "spouse1</b>"
 msgstr ""
+"<b>Données père\n"
+"conjoint1</b>"
 
 #: SourceIndex/marriage.glade:351
 msgid ""
 "<b>Data mother\n"
 "spouse1</b>"
 msgstr ""
+"<b>Données mère\n"
+"conjoint1</b>"
 
 #: SourceIndex/marriage.glade:369
 msgid ""
 "<b>Data mother\n"
 "spouse2</b>"
 msgstr ""
+"<b>Données mère\n"
+"conjoint2</b>"
 
 #: SourceIndex/marriage.glade:387
 msgid ""
 "<b>Data father\n"
 "spouse2</b>"
 msgstr ""
+"<b>Données père\n"
+"conjoint2</b>"
 
 #: SourceIndex/marriage.glade:1185
 msgid "<b>Data spouse1</b>"
-msgstr ""
+msgstr "<b>Données conjoint1</b>"
 
 #: SourceIndex/marriage.glade:1202
 msgid "<b>Data spouse2</b>"
-msgstr ""
+msgstr "<b>Données conjoint2</b>"
 
 #: SourceIndex/witness.glade:7
 msgid "witness"
