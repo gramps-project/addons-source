@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-06 12:26-0700\n"
-"PO-Revision-Date: 2025-07-14 09:02+0000\n"
+"PO-Revision-Date: 2025-08-06 22:30+0000\n"
 "Last-Translator: Максим Горпиніч <gorpinicmaksim5@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
@@ -23087,6 +23087,8 @@ msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
 "install 'psycopg[binary]'"
 msgstr ""
+"Для підтримки PostgreSQL Enhanced потрібен psycopg3. Встановіть за допомогою:"
+" pip install 'psycopg[binary]'"
 
 #: constants.py:390
 msgid "Column - Icons"
@@ -23800,50 +23802,39 @@ msgid "Last Retrieved At:"
 msgstr "Останнє отримання:"
 
 #: migration.py:133
-#, fuzzy
-#| msgid "Generating relation map..."
 msgid "Starting migration..."
-msgstr "Генерується карта зв’язків..."
+msgstr "Розпочато міграцію..."
 
 #: migration.py:145
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Migrating %(type)s objects..."
-msgstr "Записування %s звітів..."
+msgstr "Міграція об'єктів %(type)s..."
 
 #: migration.py:154
 #, python-format
 msgid "Migrated %(count)d %(type)s objects"
-msgstr ""
+msgstr "Перенесено %(count)d об'єктів %(type)s"
 
 #: migration.py:171
-#, fuzzy
-#| msgid "Highest grade completed"
 msgid "Migration completed!"
-msgstr "Найвищий закінчений клас"
+msgstr "Міграцію завершено!"
 
 #: migration.py:302 postgresqlenhanced.py:287
-#, fuzzy
-#| msgid "Attaching sources..."
 msgid "Starting upgrade..."
-msgstr "Прикріплення джерел..."
+msgstr "Розпочато оновлення..."
 
 #: migration.py:320
 #, python-format
 msgid "Upgrading %(type)s objects..."
-msgstr ""
+msgstr "Оновлення об'єктів %(type)s..."
 
 #: migration.py:331
-#, fuzzy
-#| msgid "Fetching index list..."
 msgid "Creating indexes..."
-msgstr "Отримання списку індексів..."
+msgstr "Створення індексів..."
 
 #: migration.py:342
-#, fuzzy
-#| msgid "Highest grade completed"
 msgid "Upgrade completed!"
-msgstr "Найвищий закінчений клас"
+msgstr "Оновлення завершено!"
 
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
@@ -23858,16 +23849,12 @@ msgid "Note Link (external)"
 msgstr "Посилання на примітку (зовнішнє)"
 
 #: postgresqlenhanced.gpr.py:27
-#, fuzzy
-#| msgid "PostgreSQL"
 msgid "PostgreSQL Enhanced"
-msgstr "PostgreSQL"
+msgstr "Покращений PostgreSQL"
 
 #: postgresqlenhanced.gpr.py:28
-#, fuzzy
-#| msgid "PostgreSQL Database"
 msgid "PostgreSQL _Enhanced Database"
-msgstr "База даних PostgreSQL"
+msgstr "Розширена база даних PostgreSQL"
 
 #: postgresqlenhanced.gpr.py:29
 msgid ""
@@ -23875,6 +23862,9 @@ msgid ""
 "and migration support. Uses psycopg3 for modern PostgreSQL features while "
 "maintaining full compatibility."
 msgstr ""
+"Розширений сервер бази даних PostgreSQL зі сховищем JSONB, розширеними "
+"запитами та підтримкою міграції. Використовує psycopg3 для сучасних функцій "
+"PostgreSQL, зберігаючи при цьому повну сумісність."
 
 #: postgresqlenhanced.py:118
 #, python-format
@@ -23882,60 +23872,55 @@ msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
+"Версія psycopg3 %(installed)s занадто стара. Потрібна версія %(required)s "
+"або новіша."
 
 #: postgresqlenhanced.py:167
 msgid "Database Backend"
-msgstr ""
+msgstr "Бекенд бази даних"
 
 #: postgresqlenhanced.py:168
 msgid "Database module"
-msgstr ""
+msgstr "Модуль бази даних"
 
 #: postgresqlenhanced.py:170
-#, fuzzy
-#| msgid "JSON Export"
 msgid "JSONB support"
-msgstr "Експорт JSON"
+msgstr "Підтримка JSONB"
 
 #: postgresqlenhanced.py:191
-#, fuzzy, python-format
-#| msgid "Version %s"
+#, python-format
 msgid "Version warning"
-msgstr "Версія %s"
+msgstr "Попередження про версію"
 
 #: postgresqlenhanced.py:193
 #, python-format
 msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
-msgstr ""
+msgstr "PostgreSQL %(version)s нижча за рекомендовану версію %(recommended)s"
 
 #: postgresqlenhanced.py:206
-#, fuzzy
-#| msgid "Version %s"
 msgid "Extensions"
-msgstr "Версія %s"
+msgstr "Розширення"
 
 #: postgresqlenhanced.py:224
 msgid "Database size"
-msgstr ""
+msgstr "Розмір бази даних"
 
 #: postgresqlenhanced.py:229
 #, python-format
 msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr ""
+msgstr "%(persons)d осіб, %(families)d сімей, %(events)d подій"
 
 #: postgresqlenhanced.py:300
 msgid "Upgrading to PostgreSQL Enhanced"
-msgstr ""
+msgstr "Оновлення до PostgreSQL Enhanced"
 
 #: postgresqlenhanced.py:315
-#, fuzzy
-#| msgid "Foreigners not naturalized"
 msgid "Migration manager not initialized"
-msgstr "Іноземці, які не натуралізовані"
+msgstr "Менеджер міграції не ініціалізовано"
 
 #: postgresqlenhanced.py:327
 msgid "Enhanced queries require JSONB support"
-msgstr ""
+msgstr "Розширені запити потребують підтримки JSONB"
 
 #: qr_window.py:88
 msgid "QR-code"
@@ -23955,20 +23940,20 @@ msgstr ""
 
 #: queries.py:354
 msgid "pg_trgm extension required for duplicate detection"
-msgstr ""
+msgstr "Розширення pg_trgm, необхідне для виявлення дублікатів"
 
 #: schema.py:156
 msgid "Creating new PostgreSQL Enhanced schema"
-msgstr ""
+msgstr "Створення нової розширеної схеми PostgreSQL"
 
 #: schema.py:162
 #, python-format
 msgid "Upgrading schema from v%(current)s to v%(new)s"
-msgstr ""
+msgstr "Оновлення схеми з v%(current)s до v%(new)s"
 
 #: schema.py:246
 msgid "PostgreSQL Enhanced schema created successfully"
-msgstr ""
+msgstr "Схема розширеної PostgreSQL успішно створена"
 
 #: settings_ui_manager.py:112
 msgid "Middle Name Handling"
