@@ -101,6 +101,7 @@ class AncestralCollapsibleTreeReport(Report):
         """
         Report.__init__(self, database, options, user)
 
+        self.user = user
         self.map = {}
 
         menu = options.menu
