@@ -252,13 +252,23 @@ class PostgreSQLConnection:
             """
             )
 
-            # Set search_path if schema was specified
+            # Set search_path if schema was specified (with retry for concurrent updates)
             if hasattr(self, "schema") and self.schema != "public":
-                cur.execute(
-                    sql.SQL("SET search_path TO {}, public").format(
-                        sql.Identifier(self.schema)
-                    )
-                )
+                import time
+                max_retries = 3
+                for attempt in range(max_retries):
+                    try:
+                        cur.execute(
+                            sql.SQL("SET search_path TO {}, public").format(
+                                sql.Identifier(self.schema)
+                            )
+                        )
+                        break  # Success, exit retry loop
+                    except psycopg.errors.InternalError as e:
+                        if "tuple concurrently updated" in str(e) and attempt < max_retries - 1:
+                            time.sleep(0.1 * (attempt + 1))  # Exponential backoff
+                            continue
+                        raise
 
             self._commit()
 

@@ -33,23 +33,25 @@ register(
     name=_("PostgreSQL Enhanced"),
     name_accell=_("PostgreSQL _Enhanced Database"),
     description=_(
-        "EXPERIMENTAL: Advanced PostgreSQL database backend using modern psycopg (v3). "
-        "Features dual storage (pickle + JSONB), advanced queries, "
-        "and support for large databases. Thoroughly tested but still experimental. "
-        "Requires PostgreSQL 15+ and psycopg>=3."
+        "EXPERIMENTAL: Advanced PostgreSQL backend with JSONB storage, "
+        "graph database support (Apache AGE), vector similarity (pgvector), "
+        "and AI/ML capabilities. For developers and advanced users only. "
+        "Requires PostgreSQL 15+ with extensions. Gramps Web compatible."
     ),
-    version = '0.1.1',
+    version = '1.5.1',
     gramps_target_version="6.0",
     status=STABLE,
-    audience=DEVELOPER,
+    audience=DEVELOPER,  # Developer-level experimental features
     fname="postgresqlenhanced.py",
     databaseclass="PostgreSQLEnhanced",
     authors=["Greg Lamberson"],
-    authors_email=["greg@aigenealogyinsights.com"],
+    authors_email=["lamberson@yahoo.com"],
     maintainers=["Greg Lamberson"],
-    maintainers_email=["greg@aigenealogyinsights.com"],
+    maintainers_email=["lamberson@yahoo.com"],
     requires_mod=[],  # psycopg3 requirement handled separately
     requires_exe=[],  # No external executables required
     depends_on=[],  # No dependencies on other Gramps plugins
     help_url="https://github.com/gramps-project/addons-source/wiki/PostgreSQLEnhanced",
+    # Note: features attribute may not be supported in all Gramps versions
+    # Capabilities: monolithic-mode, separate-mode, grampsweb-compatible, jsonb-storage
 )

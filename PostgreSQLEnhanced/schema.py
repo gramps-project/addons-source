@@ -33,6 +33,7 @@ from psycopg.types.json import Jsonb
 
 # Import local modules using relative imports
 from schema_columns import REQUIRED_COLUMNS, REQUIRED_INDEXES
+from schema_migrations import SchemaMigrator
 
 # -------------------------------------------------------------------------
 #
@@ -126,6 +127,10 @@ class PostgreSQLSchema:
                     "Upgrading schema from v%s to v%s", current_version, SCHEMA_VERSION
                 )
                 self._upgrade_schema(current_version)
+            
+            # Also check for internal schema migrations (VARCHAR to TEXT, etc.)
+            migrator = SchemaMigrator(self.conn, self.table_prefix)
+            migrator.check_and_migrate()
 
     def _create_schema(self):
         """
@@ -141,7 +146,7 @@ class PostgreSQLSchema:
             self.conn.execute(
                 f"""
                 CREATE TABLE IF NOT EXISTS {self._table_name('metadata')} (
-                    setting VARCHAR(255) PRIMARY KEY,
+                    setting TEXT PRIMARY KEY,
                     value BYTEA,  -- Keep for compatibility
                     json_data JSONB,  -- JSONSerializer uses this
                     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -153,7 +158,7 @@ class PostgreSQLSchema:
             self.conn.execute(
                 f"""
                 CREATE TABLE IF NOT EXISTS {self._table_name('metadata')} (
-                    setting VARCHAR(255) PRIMARY KEY,
+                    setting TEXT PRIMARY KEY,
                     value BYTEA
                 )
             """
@@ -168,9 +173,9 @@ class PostgreSQLSchema:
             f"""
             CREATE TABLE IF NOT EXISTS {self._table_name('reference')} (
                 obj_handle VARCHAR(50),
-                obj_class VARCHAR(50),
+                obj_class TEXT,
                 ref_handle VARCHAR(50),
-                ref_class VARCHAR(50),
+                ref_class TEXT,
                 PRIMARY KEY (obj_handle, obj_class, ref_handle, ref_class)
             )
         """
@@ -195,7 +200,7 @@ class PostgreSQLSchema:
         self.conn.execute(
             f"""
             CREATE TABLE IF NOT EXISTS {self._table_name('gender_stats')} (
-                given_name VARCHAR(255) PRIMARY KEY,
+                given_name TEXT PRIMARY KEY,
                 male INTEGER DEFAULT 0,
                 female INTEGER DEFAULT 0,
                 unknown INTEGER DEFAULT 0
@@ -207,7 +212,7 @@ class PostgreSQLSchema:
         self.conn.execute(
             """
             CREATE TABLE IF NOT EXISTS surname (
-                surname VARCHAR(255) PRIMARY KEY,
+                surname TEXT PRIMARY KEY,
                 count INTEGER DEFAULT 0
             )
         """
@@ -218,8 +223,8 @@ class PostgreSQLSchema:
         self.conn.execute(
             """
             CREATE TABLE IF NOT EXISTS name_group (
-                name VARCHAR(255) PRIMARY KEY,
-                grouping VARCHAR(255)
+                name TEXT PRIMARY KEY,
+                grouping TEXT
             )
         """
         )
@@ -230,6 +235,10 @@ class PostgreSQLSchema:
 
         # Set initial schema version
         self._set_schema_version(SCHEMA_VERSION)
+        
+        # Set initial internal schema version (for our own migrations)
+        migrator = SchemaMigrator(self.conn, self.table_prefix)
+        migrator.set_internal_version((1, 1, 0))  # Current version with TEXT fields
 
         self.conn.commit()
         self.log.info("PostgreSQL Enhanced schema created successfully")
@@ -242,33 +251,24 @@ class PostgreSQLSchema:
             if obj_type in REQUIRED_COLUMNS:
                 for col_name, json_path in REQUIRED_COLUMNS[obj_type].items():
                     # Determine column type
-                    col_type = "VARCHAR(255)"
+                    # Default to TEXT for all strings (matches SQLite behavior)
+                    col_type = "TEXT"
+                    
+                    # Special cases for specific types
                     if "INTEGER" in json_path:
                         col_type = "INTEGER"
                     elif "BOOLEAN" in json_path:
                         col_type = "BOOLEAN"
                     elif col_name in [
-                        "title",
-                        "desc_",
-                        "description",
-                        "author",
-                        "pubinfo",
-                        "abbrev",
-                        "page",
-                        "name",
-                        "path",
-                        "given_name",
-                        "surname",
-                    ]:
-                        col_type = "TEXT"
-                    elif col_name in [
+                        "handle",
+                        "gramps_id",
                         "father_handle",
                         "mother_handle",
                         "source_handle",
                         "place",
                         "enclosed_by",
                     ]:
-                        col_type = "VARCHAR(50)"
+                        col_type = "VARCHAR(50)"  # Handles are always 50 chars
 
                     # Regular columns that will be updated by _update_secondary_values
                     regular_columns.append(f"{col_name} {col_type}")
