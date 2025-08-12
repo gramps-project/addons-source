@@ -1,13 +1,14 @@
 # PostgreSQL Enhanced Database Backend for Gramps
 # Copyright (C) 2025 Greg Lamberson
 # This file is distributed under the same license as the gramps package.
+# Greg Lamberson <lamberson@yahoo.com>, 2025.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 60\n"
-"Report-Msgid-Bugs-To: greg@aigenealogyinsights.com\n"
-"POT-Creation-Date: 2025-01-01 00:00+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-12 19:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,149 +16,147 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: postgresqlenhanced.gpr.py:27
+#: PostgreSQLEnhanced/concurrency.py:479
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:168
+msgid "Starting migration..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:182
+#, python-format
+msgid "Migrating %s objects..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:193
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:209
+msgid "Migration completed!"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:438
+msgid "Starting upgrade..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:470
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:478
+msgid "Creating indexes..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:489
+msgid "Upgrade completed!"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
 msgid "PostgreSQL Enhanced"
 msgstr ""
 
-#: postgresqlenhanced.gpr.py:28
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
 msgid "PostgreSQL _Enhanced Database"
 msgstr ""
 
-#: postgresqlenhanced.gpr.py:29
-msgid "PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, and migration support. Uses psycopg3 for modern PostgreSQL features while maintaining full compatibility."
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
 msgstr ""
 
-#: postgresqlenhanced.py:112
-msgid "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip install 'psycopg[binary]'"
+#: PostgreSQLEnhanced/postgresqlenhanced.py:154
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
 msgstr ""
 
-#: postgresqlenhanced.py:118
+#: PostgreSQLEnhanced/postgresqlenhanced.py:163
 #, python-format
-msgid "psycopg3 version %(installed)s is too old. Version %(required)s or newer is required."
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
 msgstr ""
 
-#: postgresqlenhanced.py:167
+#: PostgreSQLEnhanced/postgresqlenhanced.py:211
 msgid "Database Backend"
 msgstr ""
 
-#: postgresqlenhanced.py:168
+#: PostgreSQLEnhanced/postgresqlenhanced.py:212
 msgid "Database module"
 msgstr ""
 
-#: postgresqlenhanced.py:170
+#: PostgreSQLEnhanced/postgresqlenhanced.py:213
+msgid "Database module location"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:214
 msgid "JSONB support"
 msgstr ""
 
-#: postgresqlenhanced.py:170
+#: PostgreSQLEnhanced/postgresqlenhanced.py:214
 msgid "Yes"
 msgstr ""
 
-#: postgresqlenhanced.py:170
+#: PostgreSQLEnhanced/postgresqlenhanced.py:214
 msgid "No"
 msgstr ""
 
-#: postgresqlenhanced.py:186
+#: PostgreSQLEnhanced/postgresqlenhanced.py:232
 msgid "Database version"
 msgstr ""
 
-#: postgresqlenhanced.py:191
-#, python-format
+#: PostgreSQLEnhanced/postgresqlenhanced.py:236
 msgid "Version warning"
 msgstr ""
 
-#: postgresqlenhanced.py:193
+#: PostgreSQLEnhanced/postgresqlenhanced.py:237
 #, python-format
 msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
 msgstr ""
 
-#: postgresqlenhanced.py:206
+#: PostgreSQLEnhanced/postgresqlenhanced.py:252
 msgid "Extensions"
 msgstr ""
 
-#: postgresqlenhanced.py:224
+#: PostgreSQLEnhanced/postgresqlenhanced.py:273
 msgid "Database size"
 msgstr ""
 
-#: postgresqlenhanced.py:227
-#, python-format
+#: PostgreSQLEnhanced/postgresqlenhanced.py:275
 msgid "Statistics"
 msgstr ""
 
-#: postgresqlenhanced.py:229
+#: PostgreSQLEnhanced/postgresqlenhanced.py:276
 #, python-format
 msgid "%(persons)d persons, %(families)d families, %(events)d events"
 msgstr ""
 
-#: postgresqlenhanced.py:287
-msgid "Starting upgrade..."
-msgstr ""
-
-#: postgresqlenhanced.py:300
-msgid "Upgrading to PostgreSQL Enhanced"
-msgstr ""
-
-#: postgresqlenhanced.py:315
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1126
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1141
 msgid "Migration manager not initialized"
 msgstr ""
 
-#: postgresqlenhanced.py:327
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1159
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1177
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1239
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1255
 msgid "Enhanced queries require JSONB support"
 msgstr ""
 
-#: migration.py:133
-msgid "Starting migration..."
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1206
+msgid "Full-text search requires JSONB support or search capabilities"
 msgstr ""
 
-#: migration.py:145
-#, python-format
-msgid "Migrating %(type)s objects..."
-msgstr ""
-
-#: migration.py:154
-#, python-format
-msgid "Migrated %(count)d %(type)s objects"
-msgstr ""
-
-#: migration.py:171
-msgid "Migration completed!"
-msgstr ""
-
-#: migration.py:302
-msgid "Starting database upgrade..."
-msgstr ""
-
-#: migration.py:320
-#, python-format
-msgid "Upgrading %(type)s objects..."
-msgstr ""
-
-#: migration.py:331
-msgid "Creating indexes..."
-msgstr ""
-
-#: migration.py:342
-msgid "Upgrade completed!"
-msgstr ""
-
-#: queries.py:354
+#: PostgreSQLEnhanced/queries.py:364
 msgid "pg_trgm extension required for duplicate detection"
 msgstr ""
 
-#: schema.py:156
-msgid "Creating new PostgreSQL Enhanced schema"
-msgstr ""
-
-#: schema.py:162
-#, python-format
-msgid "Upgrading schema from v%(current)s to v%(new)s"
-msgstr ""
-
-#: schema.py:246
-msgid "PostgreSQL Enhanced schema created successfully"
-msgstr ""
-
-#: connection.py:113
-msgid "psycopg3 driver is required for PostgreSQL Enhanced. Install with: pip install 'psycopg[binary]'"
-msgstr ""
