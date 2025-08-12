@@ -560,4 +560,4 @@ class GetGOV(Gramplet):
         else:
             date_str = ""
 
-        return parser.parse(date_str) if date_str else None
+        return parser.parse(date_str)
