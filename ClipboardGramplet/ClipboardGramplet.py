@@ -39,7 +39,7 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 from gramps.gen.plug import Gramplet
-from gramps.gui.clipboard import (MultiTreeView, ClipboardListModel,
+from gramps.gui.clipboard import (ClipboardMultiTreeView, ClipboardListModel,
                                   ClipboardListView, ClipText)
 
 #-------------------------------------------------------------------------
@@ -79,7 +79,7 @@ class ClipboardGramplet(Gramplet):
     """
     def init(self):
         self.object_list = ClipboardListView(self.dbstate,
-                 MultiTreeView(self.uistate, "clipboard_gramplet"))
+                 ClipboardMultiTreeView(self.dbstate, self.uistate, "clipboard_gramplet"))
         self.otree = ClipboardListModel()
         self.object_list.set_model(self.otree)
         self.gui.get_container_widget().remove(self.gui.textview)
