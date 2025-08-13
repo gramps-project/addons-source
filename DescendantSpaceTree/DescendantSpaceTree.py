@@ -910,6 +910,7 @@ class DescendantSpaceTreeReport(Report):
                 "___HELP_TEXT4___",
                 html.escape(
                     _(
+                        # Translators: Please do not translate ___HELP_RESET_BUTTON___.
                         "Click on the reset button ___HELP_RESET_BUTTON___ to "
                         "reset back to the starting descendant."
                     )
@@ -970,6 +971,7 @@ class DescendantSpaceTreeReport(Report):
                 "___HELP_TEXT10___",
                 html.escape(
                     _(
+                        # Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
                         "A person may occur in different branches.  This is "
                         "usually because of inter-family marriages (such as "
                         "that of cousins.)  In this case, a button will also "

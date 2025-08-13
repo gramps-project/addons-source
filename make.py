@@ -403,7 +403,7 @@ elif command == "init":
             fnames = " ".join(glob.glob(f"{addon}/*.py"))
             system(
                 f"xgettext --language=Python --keyword=_ --keyword=N_"
-                f" --from-code=UTF-8"
+                f" --from-code=UTF-8 --add-comments=Translators"
                 f' -o "{addon}/po/template.pot" {fnames} '
             )
             fnames = " ".join(glob.glob("%s/*.glade" % addon))
