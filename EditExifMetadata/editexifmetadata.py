@@ -874,7 +874,7 @@ class EditExifMetadata(Gramplet):
         """
         if buttonlist == ["All"]:
             buttonlist = [(buttonname) for buttonname in
-                          list(_BUTTONTIPS.keys()) if buttonname is not "Help"]
+                          list(_BUTTONTIPS.keys()) if buttonname != "Help"]
 
         for widget in buttonlist:
             self.exif_widgets[widget].set_sensitive(False)
@@ -1329,7 +1329,7 @@ class EditExifMetadata(Gramplet):
                 # this will only affect the Media object wthin the database...
                 if widgetname == "MediaTitle":
                     if(self.media_title and
-                       self.media_title is not mediatitle):
+                       self.media_title != mediatitle):
                         with DbTxn(_("Media Title Update"), db) as trans:
                             self.orig_image.set_description(mediatitle)
 
