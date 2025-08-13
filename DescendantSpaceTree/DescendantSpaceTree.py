@@ -1108,7 +1108,7 @@ class DescendantSpaceTreeOptions(MenuReportOptions):
             _("Maximum display birth year"), DEF_BIRTH_YEAR, 0, 2400
         )
         birth_year_limit.set_help(
-            _("Birth/date dates will not be displayed after this year")
+            _("Birth/death dates will not be displayed after this year")
         )
         add_option("birth_year_limit", birth_year_limit)
 
