@@ -1119,13 +1119,13 @@ class EditExifMetadata(Gramplet):
         """
         # validate the Latitude field...
         if field == "Latitude" and not conv_lat_lon(data, "0", "ISO-D"):
-            return ValidationError(_("Invalid latitude (syntax: 18\u00b09'") +
-                                   _('48.21"S, -18.2412 or -18:9:48.21)'))
+            return ValidationError(_("Invalid latitude (syntax: 18°9′48.21″S, "
+                                     "-18.2412 or -18:9:48.21)"))
 
         # validate the Longitude field...
         if field == "Longitude" and not conv_lat_lon("0", data, "ISO-D"):
-            return ValidationError(_("Invalid longitude (syntax: 18\u00b09'") +
-                                   _('48.21"E, -18.2412 or -18:9:48.21)'))
+            return ValidationError(_("Invalid longitude (syntax: 18°9′48.21″E, "
+                                     "-18.2412 or -18:9:48.21)"))
 
     def _wipe_dialog(self, _object):
         """
