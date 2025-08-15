@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-19 08:52-0700\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"PO-Revision-Date: 2025-08-01 16:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -2976,8 +2976,7 @@ msgstr ""
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
-msgstr ""
-"יש ללחוץ על כפתור האיפוס ___HELP_RESET_BUTTON___ כדי לאפס בחזרה לצאצא הפותח."
+msgstr "להקיש על לחצן השיצוב ___HELP_RESET_BUTTON___ כדי לשצב לצאצא ההתחלתי."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:922
 msgid ""
@@ -3801,7 +3800,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2972
 msgid "DynamicWeb_report#Help"
-msgstr ""
+msgstr "DynamicWeb_report/he#עזרה"
 
 #: DynamicWeb/dynamicweb.py:2977
 msgid "Examples"
@@ -5475,7 +5474,7 @@ msgstr "בחירת הכלי לאיתור משפחות"
 
 #: FamilyTreeDNA/ftdna_import.py:173
 msgid "Read Help manual"
-msgstr ""
+msgstr "עיון במדריך העזרה"
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
@@ -5682,7 +5681,7 @@ msgstr ""
 #: FilterRules/isfamilyfiltermatchevent.py:63
 #: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
-msgstr "אירועים של משפחות שתואמות ל<מסנן משפחה>"
+msgstr "אירועים של משפחות שתואמות למסנן <מסנן משפחה>"
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 #: FilterRules/isrelatedwithfiltermatch.py:53
