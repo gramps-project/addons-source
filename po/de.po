@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-06 12:26-0700\n"
-"PO-Revision-Date: 2025-07-31 09:09+0000\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -15137,8 +15137,8 @@ msgid ""
 "Create kmz/kml file ''%s''\n"
 "in user directory ''%s''?"
 msgstr ""
-"kmz/kml-Datei ''%s'' erstellen\n"
-"im Benutzerverzeichnis ''%s''?"
+"kmz/KML-Datei „%s“ erstellen\n"
+"im Benutzerverzeichnis „%s“?"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
 #, python-format
@@ -15159,8 +15159,8 @@ msgid ""
 "Overwrite kmz/kml file ''%s''\n"
 "in user home directory ''%s''?"
 msgstr ""
-"Kmz/kml-Datei ''%s'' überschreiben\n"
-"im Benutzer-Home-Verzeichnis ''%s''?"
+"kmz/KML-Datei „%s“\n"
+"im Benutzerverzeichnis „%s“ überschreiben?"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
@@ -23342,6 +23342,8 @@ msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
 "install 'psycopg[binary]'"
 msgstr ""
+"psycopg3 ist für die erweiterte PostgreSQL-Unterstützung erforderlich. "
+"Installiere es mit: pip install 'psycopg[binary]'"
 
 #: constants.py:390
 msgid "Column - Icons"
@@ -24060,50 +24062,39 @@ msgid "Last Retrieved At:"
 msgstr "Zuletzt abgerufen am:"
 
 #: migration.py:133
-#, fuzzy
-#| msgid "Generating relation map..."
 msgid "Starting migration..."
-msgstr "Beziehungskarte erzeugen..."
+msgstr "Migration wird gestartet..."
 
 #: migration.py:145
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Migrating %(type)s objects..."
-msgstr "Schreibe %s Berichte..."
+msgstr "Migrieren von %(type)s Objekten..."
 
 #: migration.py:154
 #, python-format
 msgid "Migrated %(count)d %(type)s objects"
-msgstr ""
+msgstr "%(count)d %(type)s Objekte migriert"
 
 #: migration.py:171
-#, fuzzy
-#| msgid "Highest grade completed"
 msgid "Migration completed!"
-msgstr "Höchster Abschluss"
+msgstr "Migration abgeschlossen!"
 
 #: migration.py:302 postgresqlenhanced.py:287
-#, fuzzy
-#| msgid "Attaching sources..."
 msgid "Starting upgrade..."
-msgstr "Quellen anhängen..."
+msgstr "Aktualisierung wird gestartet..."
 
 #: migration.py:320
 #, python-format
 msgid "Upgrading %(type)s objects..."
-msgstr ""
+msgstr "Aktualisierung von %(type)s-Objekten..."
 
 #: migration.py:331
-#, fuzzy
-#| msgid "Fetching index list..."
 msgid "Creating indexes..."
-msgstr "Indexliste abrufen..."
+msgstr "Indizes erstellen..."
 
 #: migration.py:342
-#, fuzzy
-#| msgid "Highest grade completed"
 msgid "Upgrade completed!"
-msgstr "Höchster Abschluss"
+msgstr "Aktualisierung abgeschlossen!"
 
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
@@ -24118,16 +24109,12 @@ msgid "Note Link (external)"
 msgstr "Notiz-Link (extern)"
 
 #: postgresqlenhanced.gpr.py:27
-#, fuzzy
-#| msgid "PostgreSQL"
 msgid "PostgreSQL Enhanced"
-msgstr "PostgreSQL"
+msgstr "PostgreSQL erweitert"
 
 #: postgresqlenhanced.gpr.py:28
-#, fuzzy
-#| msgid "PostgreSQL Database"
 msgid "PostgreSQL _Enhanced Database"
-msgstr "PostgreSQL Datenbank"
+msgstr "PostgreSQL _Erweiterte Datenbank"
 
 #: postgresqlenhanced.gpr.py:29
 msgid ""
@@ -24135,6 +24122,9 @@ msgid ""
 "and migration support. Uses psycopg3 for modern PostgreSQL features while "
 "maintaining full compatibility."
 msgstr ""
+"Erweitertes PostgreSQL-Datenbank-Backend mit JSONB-Speicherung, erweiterten "
+"Abfragen und Migrationsunterstützung. Nutzt psycopg3 für moderne PostgreSQL-"
+"Funktionen bei voller Kompatibilität."
 
 #: postgresqlenhanced.py:118
 #, python-format
@@ -24142,60 +24132,56 @@ msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
+"Die Version %(installed)s von psycopg3 ist zu alt. Die Version %(required)s "
+"oder neuer ist erforderlich."
 
 #: postgresqlenhanced.py:167
 msgid "Database Backend"
-msgstr ""
+msgstr "Datenbank-Backend"
 
 #: postgresqlenhanced.py:168
 msgid "Database module"
-msgstr ""
+msgstr "Datenbankmodul"
 
 #: postgresqlenhanced.py:170
-#, fuzzy
-#| msgid "JSON Export"
 msgid "JSONB support"
-msgstr "JSON-Export"
+msgstr "JSONB-Unterstützung"
 
 #: postgresqlenhanced.py:191
-#, fuzzy, python-format
-#| msgid "Version %s"
+#, python-format
 msgid "Version warning"
-msgstr "Version %s"
+msgstr "Versionswarnung"
 
 #: postgresqlenhanced.py:193
 #, python-format
 msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
 msgstr ""
+"PostgreSQL %(version)s liegt unter der empfohlenen Version %(recommended)s"
 
 #: postgresqlenhanced.py:206
-#, fuzzy
-#| msgid "Version %s"
 msgid "Extensions"
-msgstr "Version %s"
+msgstr "Erweiterungen"
 
 #: postgresqlenhanced.py:224
 msgid "Database size"
-msgstr ""
+msgstr "Datenbankgröße"
 
 #: postgresqlenhanced.py:229
 #, python-format
 msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr ""
+msgstr "%(persons)d Personen, %(families)d Familien, %(events)d Ereignisse"
 
 #: postgresqlenhanced.py:300
 msgid "Upgrading to PostgreSQL Enhanced"
-msgstr ""
+msgstr "Aktualisieren auf PostgreSQL Erweitert"
 
 #: postgresqlenhanced.py:315
-#, fuzzy
-#| msgid "Foreigners not naturalized"
 msgid "Migration manager not initialized"
-msgstr "Ausländer nicht eingebürgert"
+msgstr "Migrationsverwaltung nicht initialisiert"
 
 #: postgresqlenhanced.py:327
 msgid "Enhanced queries require JSONB support"
-msgstr ""
+msgstr "Erweiterte Abfragen erfordern JSONB-Unterstützung"
 
 #: qr_window.py:88
 msgid "QR-code"
@@ -24215,20 +24201,20 @@ msgstr ""
 
 #: queries.py:354
 msgid "pg_trgm extension required for duplicate detection"
-msgstr ""
+msgstr "pg_trgm-Erweiterung für die Duplikaterkennung erforderlich"
 
 #: schema.py:156
 msgid "Creating new PostgreSQL Enhanced schema"
-msgstr ""
+msgstr "Erstellen eines neuen erweiterten PostgreSQL-Schemas"
 
 #: schema.py:162
 #, python-format
 msgid "Upgrading schema from v%(current)s to v%(new)s"
-msgstr ""
+msgstr "Aktualisierung des Schemas von v%(current)s auf v%(new)s"
 
 #: schema.py:246
 msgid "PostgreSQL Enhanced schema created successfully"
-msgstr ""
+msgstr "Erweitertes PostgreSQL-Schema erfolgreich erstellt"
 
 #: settings_ui_manager.py:112
 msgid "Middle Name Handling"
