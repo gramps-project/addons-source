@@ -22,11 +22,6 @@
 PostgreSQL Enhanced Database Backend Registration
 """
 
-from gramps.gen.plug._pluginreg import register, STABLE, DATABASE, EXPERT
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-
-_ = glocale.translation.gettext
-
 register(
     DATABASE,
     id="postgresqlenhanced",
@@ -38,7 +33,7 @@ register(
         "and AI/ML capabilities. For advanced users. "
         "Requires PostgreSQL 15+ with extensions. Gramps Web compatible."
     ),
-    version = '1.5.1',
+    version = '1.5.2',
     gramps_target_version="6.0",
     status=STABLE,
     audience=EXPERT,  # For advanced users who can configure PostgreSQL
