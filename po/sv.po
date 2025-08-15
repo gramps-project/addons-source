@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-06 12:26-0700\n"
-"PO-Revision-Date: 2025-07-24 19:04+0000\n"
+"PO-Revision-Date: 2025-08-08 09:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -6633,107 +6633,107 @@ msgstr "23. Majs: Bushel produktion."
 
 #: Form/form_ca.xml.h:144
 msgid "PotatoesAcres"
-msgstr ""
+msgstr "TunnlandPotatis"
 
 #: Form/form_ca.xml.h:145
 msgid "24. Potatoes: Acres"
-msgstr ""
+msgstr "24. Potatis: Tunnland"
 
 #: Form/form_ca.xml.h:146
 msgid "PotatoesBush"
-msgstr ""
+msgstr "BushelPotatis"
 
 #: Form/form_ca.xml.h:147
 msgid "25. Potatoes: Produce Bsh."
-msgstr ""
+msgstr "25. Potatis: Bushel produktion."
 
 #: Form/form_ca.xml.h:148
 msgid "TurnipsAcres"
-msgstr ""
+msgstr "TunnlandRovor"
 
 #: Form/form_ca.xml.h:149
 msgid "26. Turnips: Acres"
-msgstr ""
+msgstr "26. Rovor: Tunnland"
 
 #: Form/form_ca.xml.h:150
 msgid "TurnipsBush"
-msgstr ""
+msgstr "BushelRovor"
 
 #: Form/form_ca.xml.h:151
 msgid "27. Turnips: Produce Bsh."
-msgstr ""
+msgstr "27. Rovor: Bushel produktion."
 
 #: Form/form_ca.xml.h:152
 msgid "CloverBush"
-msgstr ""
+msgstr "BushelKlöver"
 
 #: Form/form_ca.xml.h:153
 msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr ""
+msgstr "28. Klöver, Timotej eller andra gräsfrön - Bushel."
 
 #: Form/form_ca.xml.h:154
 msgid "CarrotsBush"
-msgstr ""
+msgstr "BushelMorötter"
 
 #: Form/form_ca.xml.h:155
 msgid "29. Carrots - Bsh."
-msgstr ""
+msgstr "29. Morötter - Bushel."
 
 #: Form/form_ca.xml.h:156
 msgid "MangleWurtzel"
-msgstr ""
+msgstr "Foderbeta"
 
 #: Form/form_ca.xml.h:157
 msgid "30. Mangle Wurtzel"
-msgstr ""
+msgstr "30. Foderbeta"
 
 #: Form/form_ca.xml.h:158
 msgid "BeansBush"
-msgstr ""
+msgstr "BushelBönor"
 
 #: Form/form_ca.xml.h:159
 msgid "31. Beans Bush"
-msgstr ""
+msgstr "31. Bönor Bushel"
 
 #: Form/form_ca.xml.h:160
 msgid "HopsLbs"
-msgstr ""
+msgstr "PundHumle"
 
 #: Form/form_ca.xml.h:161
 msgid "32. Hops Lbs."
-msgstr ""
+msgstr "32. Humle Pund."
 
 #: Form/form_ca.xml.h:162
 msgid "HayQty"
-msgstr ""
+msgstr "MängdHö"
 
 #: Form/form_ca.xml.h:163
 msgid "33. Hay, Bundles or Tons"
-msgstr ""
+msgstr "33. Hö, Buntar eller ton"
 
 #: Form/form_ca.xml.h:164
 msgid "FlaxLbs"
-msgstr ""
+msgstr "PundLinfrö"
 
 #: Form/form_ca.xml.h:165
 msgid "34. Flax or Hemp, Lbs."
-msgstr ""
+msgstr "34. Linfrö eller Hampa, pund."
 
 #: Form/form_ca.xml.h:166
 msgid "TobaccoLbs"
-msgstr ""
+msgstr "PundTobak"
 
 #: Form/form_ca.xml.h:167
 msgid "35. Tobacco Lbs."
-msgstr ""
+msgstr "35. Tobak Pund."
 
 #: Form/form_ca.xml.h:168
 msgid "WoolLbs."
-msgstr ""
+msgstr "PundUll."
 
 #: Form/form_ca.xml.h:169
 msgid "36. Wool Lbs."
-msgstr ""
+msgstr "36. Ull Pund."
 
 #: Form/form_ca.xml.h:170
 msgid "Column37"
@@ -6741,7 +6741,7 @@ msgstr "Kolumn37"
 
 #: Form/form_ca.xml.h:171
 msgid "37."
-msgstr ""
+msgstr "37."
 
 #: Form/form_ca.xml.h:172
 msgid "Column38"
@@ -6749,7 +6749,7 @@ msgstr "Kolumn38"
 
 #: Form/form_ca.xml.h:173
 msgid "38."
-msgstr ""
+msgstr "38."
 
 #: Form/form_ca.xml.h:174
 msgid "Column39"
@@ -6757,23 +6757,23 @@ msgstr "Kolumn39"
 
 #: Form/form_ca.xml.h:175
 msgid "39."
-msgstr ""
+msgstr "39."
 
 #: Form/form_ca.xml.h:176
 msgid "MapleSugarLbs"
-msgstr ""
+msgstr "LönnsirapPund"
 
 #: Form/form_ca.xml.h:177
 msgid "40. Maple Sugar Lbs."
-msgstr ""
+msgstr "40. Lönnsirap Pund."
 
 #: Form/form_ca.xml.h:178
 msgid "CiderGalls"
-msgstr ""
+msgstr "GallonsCider"
 
 #: Form/form_ca.xml.h:179
 msgid "41. Cider Galls."
-msgstr ""
+msgstr "41. Cider Gallons."
 
 #: Form/form_ca.xml.h:180
 msgid "ClothYards"
