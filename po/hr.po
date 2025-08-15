@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-06 12:26-0700\n"
-"PO-Revision-Date: 2025-08-06 09:52+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -494,10 +494,8 @@ msgid "Mother missing from the parent family"
 msgstr "Prikaži elemente koji nedostaju u datoteci"
 
 #: Betawhatsnext/Betawhatsnext.py:668
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Parent family is unknown."
-msgstr "Obitelj roditelja"
+msgstr "Obitelj roditelja je nepoznata."
 
 #: Betawhatsnext/Betawhatsnext.py:670
 msgid ""
@@ -1578,11 +1576,11 @@ msgstr "Njemačka digitalna biblioteka"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
-msgstr "Karta DNA segmenata"
+msgstr "Karta DNK segmenata"
 
 #: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
-msgstr "Gramplet za prikaz karte poklapajućih DNA segmenata"
+msgstr "Gramplet za prikaz karte poklapajućih DNK segmenata"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
@@ -1658,7 +1656,7 @@ msgstr ""
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
-msgstr "DNA poklapanja"
+msgstr "DNK poklapanja"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
@@ -1666,7 +1664,7 @@ msgstr "Gramplet za prikaz popisa DNK poklapanja"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr "N. seg."
+msgstr "Najveći seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
@@ -1678,11 +1676,11 @@ msgstr "Srod."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr "Z. DNK"
+msgstr "Zajednički DNK"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
-msgstr "Z. seg."
+msgstr "Zajednički seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
@@ -3830,7 +3828,7 @@ msgstr "Gradijent na osnovi starosti"
 
 #: DynamicWeb/dynamicweb.py:431
 msgid "Gradient"
-msgstr "Gradient"
+msgstr "Gradijent"
 
 #: DynamicWeb/dynamicweb.py:780 DynamicWeb/dynamicweb.py:786
 #, python-format
@@ -4703,7 +4701,7 @@ msgstr "Uredi Exif metapodatke slike"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
-msgstr "Dodatak za pregled, uređivanje i spremanje Exif metapodataka slike"
+msgstr "Gramplet za pregled, uređivanje i spremanje Exif metapodataka slike"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
@@ -12139,7 +12137,7 @@ msgstr "Ime ulice"
 
 #: Form/form_us.xml.h:1104
 msgid "House No."
-msgstr "Kuća broj"
+msgstr "Kućni broj"
 
 #: Form/form_us.xml.h:1130 Form/form_us.xml.h:1145
 msgid "Precinct No."
@@ -14834,17 +14832,17 @@ msgstr "Dodaj GOV-ID mjesto %s"
 #: GetGOV/getgov.py:388
 #, python-format
 msgid "GetGOV error: %s"
-msgstr ""
+msgstr "Greška u dohvaćanju GOV-podataka: %s"
 
 #: GetGOV/getgov.py:421
 #, python-format
 msgid "GOV error on id %s with code: "
-msgstr ""
+msgstr "GOV greška pri id-u %s s kodom: "
 
 #: GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
-msgstr "od%s do %s"
+msgstr "od %s do %s"
 
 #: GetGOV/getgov.py:557
 #, python-format
@@ -14862,7 +14860,7 @@ msgstr "GoogleEarth"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
 msgid "Creates data file for GoogleEarth and opens it"
-msgstr "Stvara datoteku s podacima potrebnima za GoogleEarth, te je otvara"
+msgstr "Stvara datoteku s podacima za GoogleEarth te je otvara"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
 msgid "No place description"
@@ -14884,7 +14882,7 @@ msgstr ""
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
 #, python-format
 msgid "Failure writing to %s"
-msgstr "Greška prilikom zapisivanja u „%s”"
+msgstr "Greška prilikom pisanja u „%s”"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
 msgid "Directory does not exist"
@@ -14906,15 +14904,16 @@ msgstr ""
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
 msgid "Gramps Web Sync"
-msgstr "Gramps web sinkronizacija"
+msgstr "Gramps Web sinkronizacija"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
-msgstr ""
+msgstr "Sinkronizira lokalnu bazu podataka s Gramps Web instancom."
 
 #: GrampsWebSync/grampswebsync.py:264
 msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
+"Tvoj korisnik nema dovoljne dozvole na serveru za korištenje sinkronizacije."
 
 #: GrampsWebSync/grampswebsync.py:268
 #, fuzzy
@@ -14924,7 +14923,7 @@ msgstr "Dohvaćanje zapisa …"
 
 #: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
-msgstr ""
+msgstr "Neočekivana greška prilikom primjene promjena."
 
 #: GrampsWebSync/grampswebsync.py:322
 msgid "Media files are in sync."
@@ -14952,35 +14951,32 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:389 GrampsWebSync/grampswebsync.py:410
 msgid "Error accessing media object."
-msgstr ""
+msgstr "Greška pri pristupu medijskom objektu."
 
 #: GrampsWebSync/grampswebsync.py:451
 msgid "Failed importing downloaded XML file."
-msgstr ""
+msgstr "Uvoz preuzete XML datoteke nije uspio."
 
 #: GrampsWebSync/grampswebsync.py:457
-#, fuzzy
-#| msgid "Exporting family tree data ..."
 msgid "Comparing local and remote data..."
-msgstr "Izvoz podataka rodoslova …"
+msgstr "Uspoređivanje lokalnih i udaljenih podataka …"
 
 #: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
-msgstr ""
+msgstr "Greška autorizacije servera."
 
 #: GrampsWebSync/grampswebsync.py:492
 msgid "Server authorization error: insufficient permissions."
-msgstr ""
+msgstr "Greška autorizacije servera: nedovoljne dozvole."
 
 #: GrampsWebSync/grampswebsync.py:495
-#, fuzzy
-#| msgid "not found."
 msgid "Error: URL not found."
-msgstr "nije pronađeno."
+msgstr "Greška: URL nije pronađen."
 
 #: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
+"Nije moguće sinkronizirati promjene sa serverom: objekti su promijenjeni."
 
 #: GrampsWebSync/grampswebsync.py:503
 #, python-format
@@ -14993,25 +14989,27 @@ msgstr "URL greška tijekom povezivanja na server."
 
 #: GrampsWebSync/grampswebsync.py:509
 msgid "Error while parsing response from server."
-msgstr ""
+msgstr "Greška tijekom obrade odgovora od servera."
 
 #: GrampsWebSync/grampswebsync.py:537
 msgid "Continue without transport encryption?"
-msgstr ""
+msgstr "Nastaviti bez šifriranja prijenosa?"
 
 #: GrampsWebSync/grampswebsync.py:539
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
+"Zadan je URL s http shemom. Ako nastaviš, tvoja će se lozinka poslati u "
+"nešifriranom obliku putem mreže. Koristi samo za lokalno testiranje!"
 
 #: GrampsWebSync/grampswebsync.py:544
 msgid "Continue with HTTP"
-msgstr ""
+msgstr "Nastavi s HTTP-om"
 
 #: GrampsWebSync/grampswebsync.py:545
 msgid "Use HTTPS"
-msgstr ""
+msgstr "Koristi HTTPS"
 
 #: GrampsWebSync/grampswebsync.py:663
 msgid ""
@@ -15031,7 +15029,7 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:690
 msgid "Server URL: "
-msgstr ""
+msgstr "URL servera: "
 
 #: GrampsWebSync/grampswebsync.py:774
 msgid "Bidirectional Synchronization"
@@ -16354,26 +16352,24 @@ msgid "Triangular shape"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:15
-#, fuzzy
-#| msgid "Show persons"
 msgid "Show photos"
-msgstr "Prikaži osobe"
+msgstr "Prikaži fotografije"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:16
 msgid "Photos of the individual are shown."
-msgstr ""
+msgstr "Fotografije osobe se prikazuju."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:17
-#, fuzzy
-#| msgid "Photo Tagging"
 msgid "Photo size"
-msgstr "Označivanje slika"
+msgstr "Velična fotografije"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:18
 msgid ""
 "Photos which are shown are fitted into a square of this extent. The size is "
 "given relative to the line thickness."
 msgstr ""
+"Fotografije koje su prikazane uklopljene su u kvadrat ove veličine. Veličina "
+"je relativna u odnosu na debljinu linije."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
 #, fuzzy
@@ -16411,13 +16407,11 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
 msgid "Show birth label"
-msgstr ""
+msgstr "Prikaži etiketu rođenja"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
-#, fuzzy
-#| msgid "Estimated birth date"
 msgid "Activate the birth label."
-msgstr "Procijenjeni datum rođenja"
+msgstr "Aktiviraj etiketu rođenja."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 #, fuzzy
@@ -16447,10 +16441,8 @@ msgid "Label Configuration"
 msgstr "Konfiguracija etiketa"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
-#, fuzzy
-#| msgid "birth abbreviation|b."
 msgid "Birth label rotation"
-msgstr "r."
+msgstr "Rotacija etikete rođenja"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:31
 msgid "The birth label is written in a text frame rotated by this value."
@@ -16508,16 +16500,12 @@ msgid "Show death label"
 msgstr "Prikaži više detalja"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
-#, fuzzy
-#| msgid "Estimated death date"
 msgid "Activate the death label."
-msgstr "Procijenjeni datum smrti"
+msgstr "Aktiviraj etiketu smrti."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:50
-#, fuzzy
-#| msgid "death abbreviation|d."
 msgid "Death label rotation"
-msgstr "u."
+msgstr "Rotacija etikete smrti"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
@@ -19120,10 +19108,8 @@ msgid "View for the place coordinate gramplet."
 msgstr "Prikaz grampleta za koordinate mjesta."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Place and Coordinates"
-msgstr "Koordinate mjesta"
+msgstr "Mjesto i koordinate"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
@@ -19144,10 +19130,8 @@ msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
-#, fuzzy
-#| msgid "The place was not identified."
 msgid "The place was not found."
-msgstr "Mjesto nije identificirano."
+msgstr "Mjesto nije pronađeno."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
@@ -19156,10 +19140,8 @@ msgstr "Mjesto nije identificirano."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
-#, fuzzy
-#| msgid "Consent given by"
 msgid "Coordinates were not given."
-msgstr "Odobrenje od"
+msgstr "Koordinate nisu zadane."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
 msgid "Failed to interpret the input format."
@@ -19351,8 +19333,8 @@ msgstr ""
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
-"Greška prilikom uklanjanja direktorija „%s”. Desintaliranje možda nije bilo "
-"usješno"
+"Greška prilikom uklanjanja direktorija „%s”. Deinstaliranje možda nije "
+"uspjelo"
 
 #: PluginManager\PluginManager.py:402
 msgid ""
@@ -22250,18 +22232,16 @@ msgid "Path for generated files"
 msgstr "Staza za generirane datoteke"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:868
-#, fuzzy
-#| msgid "Default View"
 msgid "Default Age"
-msgstr "Standardni prikaz"
+msgstr "Zadana dob"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
-msgstr ""
+msgstr "Zadana dob roditelja kada se dijete rodi s nepoznatom godinom rođenja"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
-msgstr ""
+msgstr "Što prikazati"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Show GrampsID"
@@ -22269,11 +22249,11 @@ msgstr "Prikaži Gramps ID"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
-msgstr ""
+msgstr "Prikaži Gramps ID gore desno u okviru"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
-msgstr "Optimiziraj"
+msgstr "Optimiraj"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
@@ -22914,16 +22894,12 @@ msgid "URL is copied to the Clipboard"
 msgstr ""
 
 #: WebSearch.py:2068
-#, fuzzy
-#| msgid "Search in:"
 msgid "WebSearch Link"
-msgstr "Traži u:"
+msgstr "WebSearch poveznica"
 
 #: WebSearch.py:2110
-#, fuzzy
-#| msgid "{} avatar images were sucessfully added."
 msgid "Attribute has been successfully added"
-msgstr "Broj uspješno dodanih avatara: {}."
+msgstr "Atribut je uspješno dodan"
 
 #: WebSearch.py:2142
 #, python-brace-format
@@ -23287,11 +23263,11 @@ msgstr "Dostavlja biblioteku za opći pristup bazi podataka i gen.lib."
 
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
-msgstr "libaccess uredi ime"
+msgstr "uredi ime s libaccess bibliotekom"
 
 #: libaccess/libaccess.py:260
 msgid "libaccess edit person"
-msgstr "libaccess uredi osobu"
+msgstr "uredi osobu s libaccess bibliotekom"
 
 #: libwebconnect/libwebconnect.gpr.py:11
 msgid "Library for web site collections"
@@ -23751,46 +23727,39 @@ msgid "Last Retrieved At:"
 msgstr "Zadnje put dohvaćeno:"
 
 #: migration.py:133
-#, fuzzy
-#| msgid "Generating relation map..."
 msgid "Starting migration..."
-msgstr "Generiranje karte srodstva …"
+msgstr "Pokretanje migracije …"
 
 #: migration.py:145
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Migrating %(type)s objects..."
-msgstr "Ispis izvještaja (%s) …"
+msgstr "Migriraju se objekti vrste %(type)s …"
 
 #: migration.py:154
 #, python-format
 msgid "Migrated %(count)d %(type)s objects"
-msgstr ""
+msgstr "Broj migriranih objekata vrste %(type)s: %(count)d"
 
 #: migration.py:171
 msgid "Migration completed!"
-msgstr ""
+msgstr "Migracija završena!"
 
 #: migration.py:302 postgresqlenhanced.py:287
-#, fuzzy
-#| msgid "Attaching sources..."
 msgid "Starting upgrade..."
-msgstr "Dodavanje izvora …"
+msgstr "Pokretanje nadogradnje …"
 
 #: migration.py:320
 #, python-format
 msgid "Upgrading %(type)s objects..."
-msgstr ""
+msgstr "Nadograđuju se objekti vrste %(type)s …"
 
 #: migration.py:331
-#, fuzzy
-#| msgid "Fetching index list..."
 msgid "Creating indexes..."
-msgstr "Dohvaćanje popisa indeksa …"
+msgstr "Stvaranje indeksa …"
 
 #: migration.py:342
 msgid "Upgrade completed!"
-msgstr ""
+msgstr "Nadogradnja završena!"
 
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
@@ -23832,28 +23801,25 @@ msgstr ""
 
 #: postgresqlenhanced.py:167
 msgid "Database Backend"
-msgstr ""
+msgstr "Pozadinski sustav baze podataka"
 
 #: postgresqlenhanced.py:168
 msgid "Database module"
-msgstr ""
+msgstr "Modul baze podataka"
 
 #: postgresqlenhanced.py:170
-#, fuzzy
-#| msgid "JSON Export"
 msgid "JSONB support"
-msgstr "JSON izvoz"
+msgstr "JSONB podrška"
 
 #: postgresqlenhanced.py:191
-#, fuzzy, python-format
-#| msgid "Version %s"
+#, python-format
 msgid "Version warning"
-msgstr "Verzija %s"
+msgstr "Upozorenje o verziji"
 
 #: postgresqlenhanced.py:193
 #, python-format
 msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
-msgstr ""
+msgstr "PostgreSQL %(version)s je manja od preporučene verzije %(recommended)s"
 
 #: postgresqlenhanced.py:206
 #, fuzzy
@@ -23929,29 +23895,27 @@ msgstr "Izdvoji"
 
 #: settings_ui_manager.py:128
 msgid "URL Compactness Level"
-msgstr ""
+msgstr "Razina kompaktnosti URL-a"
 
 #: settings_ui_manager.py:134
 msgid "Shortest - No Prefix, No Keys"
-msgstr ""
+msgstr "Najkraće – Bez prefiksa, bez ključeva"
 
 #: settings_ui_manager.py:137
 msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr ""
+msgstr "Kompaktno – Bez prefiksa, ključevi bez atributa"
 
 #: settings_ui_manager.py:140
 msgid "Compact - No Prefix, Keys With Attributes"
-msgstr ""
+msgstr "Kompaktno – Bez prefiksa, ključevi s atributima"
 
 #: settings_ui_manager.py:143
 msgid "Long - Without Prefix on the Left"
-msgstr ""
+msgstr "Dugačko – bez prefiksa na lijevoj strani"
 
 #: settings_ui_manager.py:150
-#, fuzzy
-#| msgid "URL prefix path."
 msgid "URL Prefix Replacement"
-msgstr "URL-staza."
+msgstr "Zamjena prefiksa URL-a"
 
 #: settings_ui_manager.py:157
 msgid "AI Provider"
