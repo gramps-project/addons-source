@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 23:21+0000\n"
+"POT-Creation-Date: 2025-08-13 17:12+0100\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -236,12 +236,6 @@ msgstr "Высота :"
 
 msgid "Bad Date/Time"
 msgstr "Неверная дата/время"
-
-msgid "48.21\"S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 или -18:9:48.21)"
-
-msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 или -18:9:48.21)"
 
 msgid "Media Title Update"
 msgstr "Смена названия документа"

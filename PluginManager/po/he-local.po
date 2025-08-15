@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 12:35-0600\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Plugin Manager Enhanced"
 msgstr "מנהל מתקעים משופר"
 
 msgid "An Addon/Plugin Manager with several additional capabilities"
-msgstr "מנהל מתקעים/תוספים עם יכולות רבות נוספות"
+msgstr "מנהל תוספים/מתקעים עם יכולות רבות נוספות"
 
 msgid "Plugin Manager - Enhanced"
 msgstr "מנהל מתקעים - משופר"
@@ -43,7 +43,7 @@ msgstr "אתחול..."
 
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
-msgstr "נא לאתחל את גראמפס כדי שהשינויים במתקעים יושלמו בבטחה."
+msgstr "נא לשתחל את גראמפס כדי שהשינויים בתוספים יושלמו בבטחה."
 
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
@@ -66,7 +66,7 @@ msgid "Show Built-in items"
 msgstr "הצג פריטים מובנים"
 
 msgid "* indicates 3rd party addon"
-msgstr "*מציין מתקע צג שלישי"
+msgstr "*מציין תוסף צד־שלישי"
 
 msgid "Plugins"
 msgstr "מתקעים"

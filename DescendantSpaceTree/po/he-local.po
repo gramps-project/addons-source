@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-16 17:49-0600\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"POT-Creation-Date: 2025-08-13 18:19+0100\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -15,6 +15,9 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Weblate 5.13-dev\n"
 
+msgid "Descendant Space Tree"
+msgstr "אילן מרווח צאצאים"
+
 msgid "Light theme"
 msgstr "ערכת־ נושא בהירה"
 
@@ -23,6 +26,9 @@ msgstr "חילוף אילן צאצאים"
 
 msgid "Descendant SpaceTree"
 msgstr "אילן מרווח צאצאים"
+
+msgid "Invalid Destination Directory"
+msgstr "מחיצת יעד לא תקינה"
 
 #, python-format
 msgid "Failed to create %s: %s"
@@ -38,17 +44,23 @@ msgstr "כשל בכתיבת קובץ: "
 msgid "Descendants of"
 msgstr "צאצאים של"
 
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
-msgstr ""
-"יש ללחוץ על כפתור האיפוס ___HELP_RESET_BUTTON___ כדי לאפס בחזרה לצאצא הפותח."
+msgstr "להקיש על לחצן השיצוב ___HELP_RESET_BUTTON___ כדי לשצב לצאצא ההתחלתי."
 
 msgid "Search. . ."
 msgstr "חיפוש. . ."
 
+msgid "Include Generations"
+msgstr "הכללת דורות"
+
 msgid "Theme preference"
 msgstr "העדפת ערכת נושא"
+
+msgid "The destination path for generated files."
+msgstr "נתיב היעד לקבצים שחוללו."
 
 msgid "Destination File"
 msgstr "קובץ יעד"
@@ -58,6 +70,3 @@ msgstr "שם קקובץ יעדז לדוח."
 
 msgid "Open generated HTML file with default browser."
 msgstr "פתיחת קובץ HTML שחולל בדפדפן ברירת־מחדל."
-
-msgid "Descendant Space Tree"
-msgstr "אילן מרווח צאצאים"

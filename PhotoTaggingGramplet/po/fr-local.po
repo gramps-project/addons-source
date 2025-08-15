@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
@@ -22,6 +22,9 @@ msgstr "Détection de visage"
 
 msgid "Minimum face height (px)"
 msgstr "Hauteur minimale du visage (px)"
+
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "Sensibilité (1 min … 20 max)"
 
 msgid "Add Person"
 msgstr "Ajouter un individu"
@@ -43,6 +46,9 @@ msgstr "Zoom arrière"
 
 msgid "Detect faces"
 msgstr "Détection des visages"
+
+msgid "Detect faces (OpenCV module required)"
+msgstr "Détecter les visages (le module OpenCV est requis)"
 
 msgid "Set as active person"
 msgstr "Définir comme l’individu actif"

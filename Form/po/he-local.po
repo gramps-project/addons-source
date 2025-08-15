@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -20,6 +20,9 @@ msgstr "בחירת טופס"
 
 msgid "Form Gramplet"
 msgstr "גרמפלט טפסים"
+
+msgid "Order"
+msgstr "סדר"
 
 msgid "Reference:"
 msgstr "אזכור:"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-16 17:49-0600\n"
+"POT-Creation-Date: 2025-08-13 18:19+0100\n"
 "PO-Revision-Date: 2025-06-28 18:50+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -14,6 +14,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Descendant Space Tree"
+msgstr "Jälkeläisten avaruussukupuu"
+
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"Luo verkkosivun, jolla on interaktiivinen jälkeläispuu kätevänä avaruuspuuna "
+"soveltuen suureen määrään jälkeläisiä tai sukupolvia."
 
 msgid "Patriarchal Line (Male ancestor)"
 msgstr "Patriarkaalinen sukulinja (miespuoliset esivanhemmat)"
@@ -93,6 +104,7 @@ msgstr ""
 "Napsauta ja vedä mitä tahansa kohtaa katseluohjelmassa sijoittaaksesi "
 "jälkeläispuun."
 
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
@@ -138,6 +150,7 @@ msgid ""
 "are highlighted in yellow."
 msgstr "Valittu jälkeläinen esivanhempineen on korostettu keltaisella."
 
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
 msgid ""
 "A person may occur in different branches.  This is usually because of inter-"
 "family marriages (such as that of cousins.)  In this case, a button will "
@@ -178,9 +191,6 @@ msgstr ""
 msgid "Maximum display birth year"
 msgstr "Suurin mahdollinen syntymävuosi"
 
-msgid "Birth/date dates will not be displayed after this year"
-msgstr "Syntymäaikoja ei näytetä tämän vuoden jälkeen"
-
 msgid "Theme preference"
 msgstr "Teeman valinta"
 
@@ -198,14 +208,3 @@ msgstr "Raporttitiedoston nimi."
 
 msgid "Open generated HTML file with default browser."
 msgstr "Avaa luotu HTML-tiedosto oletusselaimella."
-
-msgid "Descendant Space Tree"
-msgstr "Jälkeläisten avaruussukupuu"
-
-msgid ""
-"Generates a web page with an interactive graph of descendants represented as "
-"a Space Tree for efficient viewing, even with many descendants or "
-"generations."
-msgstr ""
-"Luo verkkosivun, jolla on interaktiivinen jälkeläispuu kätevänä avaruuspuuna "
-"soveltuen suureen määrään jälkeläisiä tai sukupolvia."

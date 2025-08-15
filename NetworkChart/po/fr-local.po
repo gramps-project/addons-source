@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-26 15:44+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -263,14 +263,45 @@ msgstr ""
 "Les mariages après cette année sont représentés par l'année seule. Les "
 "entrées invalides seront ignorées."
 
+msgid "Round marriage to year after year entered (above)."
+msgstr "Arrondit la date de mariage à l'année d'après (au-dessus)."
+
 msgid "Represent marriage by year only."
 msgstr "Représenter le mariage par l'année seulement."
+
+msgid ""
+"Attempts to remove middle names.  Only works for entries with birth year in "
+"the record."
+msgstr ""
+"Essaie de supprimer les deuxièmes prénoms. Ne fonctionne que pour les "
+"entrées avec une année de naissance."
+
+msgid "Remove middle names."
+msgstr "Supprimer les deuxièmes prénoms."
 
 msgid "Allow inclusion of private records in chart."
 msgstr "Permettre d'inclure les enregistrements privés dans le graphique."
 
 msgid "Trim"
 msgstr "Raccourcir"
+
+msgid "Trim descendants"
+msgstr "Masquer les descendants"
+
+msgid "All descendants (children) of selected individuals will not be shown."
+msgstr ""
+"Tous les descendants (enfants) des individus sélectionnés ne seront pas "
+"montrés."
+
+msgid "Enable trimming of descendants."
+msgstr "Activer le masquage des descendants."
+
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"Vous devez entrer au moins une personne valide avant\n"
+"de permettre le masquage des descendants de l'arbre."
 
 msgid "Trim ancestors"
 msgstr "Masquer les ancêtres"

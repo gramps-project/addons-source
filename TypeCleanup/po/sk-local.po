@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-06 09:03+0000\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,10 +12,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+msgid "Event Roles"
+msgstr "Úlohy udalostí"
 
 msgid "Event Types"
 msgstr "Typy udalostí"
 
 msgid "Family Relation Types"
 msgstr "Typy rodinného vzťahu"
+
+msgid "Child reference Types"
+msgstr "Typy odkazov na deti"
+
+msgid "Name Origin Types"
+msgstr "Typy pôvodu mien"
+
+msgid "Name Types"
+msgstr "Typy mien"
+
+msgid "Note Types"
+msgstr "Typy poznámok"
+
+msgid "Place Types"
+msgstr "Typy miest"
+
+msgid "Repository Types"
+msgstr "Typy archívov"
+
+msgid "Source Media Types"
+msgstr "Typy zdrojových médií"
+
+msgid "Rename"
+msgstr "Premenovať"
+
+msgid "Rename the selected type in all referenced objects."
+msgstr "Premenovať vybraný typ vo všetkých odkazovaných objektoch."
+
+msgid "Close the Type Cleanup Tool"
+msgstr "Zatvoriť nástroj na čistenie typov"
+
+msgid "Types"
+msgstr "Typy"
+
+msgid "Type Cleanup Tool"
+msgstr "Nástroj na čistenie typov"
+
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "Zmena typu z %(old_type)s na %(new_type)s."
+
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"Odstránenie tohto vlastného typu ho vymaže z roletových zoznamov výberu "
+"typov\n"
+"a ďalších spustení tohto nástroja.\n"
+"\n"
+"Neodstráni ho však z odkazovaných položiek v databáze.\n"
+"Ak ho chcete zmeniť v odkazovaných položkách, použite funkciu 'Premenovať'."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -20,6 +20,9 @@ msgstr "דוח צאצאים"
 
 msgid "Select filter to restrict people that appear in the report"
 msgstr "בחירת מסנן להגבלת האנשים שמופיעים בדוח"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "האם להציג בדוחות משפחות כפולות."
 
 msgid "The style used for the title of the page."
 msgstr "הסגנון שמשמש בכותרת העמוד."

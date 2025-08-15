@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Report only living tree members"
 msgstr "Lister uniquement les membres vivants de l'arbre"
@@ -119,12 +119,24 @@ msgid "%(female_name)s was baptized in %(year)s at %(place)s."
 msgstr "%(female_name)s a été baptisée en %(year)s à %(place)s."
 
 #, python-format
+msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr "%(female_name)s est devenue une bat mitzvah en %(year)s à %(place)s."
+
+#, python-format
 msgid "%(male_name)s was born in %(year)s at %(place)s."
 msgstr "%(male_name)s est né en %(year)s à %(place)s."
 
 #, python-format
 msgid "%(female_name)s was born in %(year)s at %(place)s."
 msgstr "%(female_name)s est née en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(male_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(male_name)s a été béni en %(year)s à %(place)s."
+
+#, python-format
+msgid "%(female_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(female_name)s a été bénie en %(year)s à %(place)s."
 
 #, python-format
 msgid "%(male_name)s was buried in %(year)s at %(place)s."

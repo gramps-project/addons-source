@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,10 +12,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13\n"
 
 msgid "Sources Index"
 msgstr "Index zdrojov"
+
+msgid "index"
+msgstr "index"
+
+msgid "Display all"
+msgstr "Zobraziť všetko"
+
+msgid "Display only deaths"
+msgstr "Zobraziť len úmrtia"
+
+msgid "Display only censuses"
+msgstr "Zobraziť len sčítania ľudu"
+
+msgid "add birth act"
+msgstr "pridať rodný list"
+
+msgid "add death act"
+msgstr "pridať úmrtný list"
+
+msgid "New census"
+msgstr "Nové sčítanie ľudu"
 
 msgid "Select a birth source"
 msgstr "Vyberte zdroj narodenia"
@@ -26,8 +47,14 @@ msgstr "Vyberte zdroj pre manželstvo"
 msgid "Select a death source"
 msgstr "Vyberte zdroj pre úmrtie"
 
+msgid "repositories"
+msgstr "archívy"
+
 msgid "Selected view"
 msgstr "Vybrané zobrazenie"
+
+msgid "Reference:"
+msgstr "Odkaz:"
 
 msgid "Volume:"
 msgstr "Zväzok:"
@@ -38,11 +65,23 @@ msgstr "Prvé meno:"
 msgid "Age:"
 msgstr "Vek:"
 
+msgid "<b>Image</b>"
+msgstr "<b>Obrázok</b>"
+
+msgid "<b>Data person</b>"
+msgstr "b>Údaje o osobe</b>"
+
 msgid "Origin:"
 msgstr "Pôvod:"
 
+msgid "<b>Witness:</b>"
+msgstr "<b>Svedok:</b>"
+
 msgid "Birth place:"
 msgstr "Miesto narodenia:"
+
+msgid "Note:"
+msgstr "Poznámka:"
 
 msgid "Marriage place:"
 msgstr "Miesto sobáša:"
@@ -50,14 +89,32 @@ msgstr "Miesto sobáša:"
 msgid "<b>Spouse</b> "
 msgstr "<b>Manžel/manželka</b> "
 
+msgid "witness"
+msgstr "svedok"
+
+msgid "<b>Witness</b>"
+msgstr "<b>Svedok</b>"
+
+msgid "<b>Census</b>"
+msgstr "<b>Sčítanie ľudu</b>"
+
 msgid "Death date:"
 msgstr "Dátum úmrtia:"
 
 msgid "Death place:"
 msgstr "Miesto úmrtia:"
 
+msgid "Family status:"
+msgstr "Rodinný stav:"
+
+msgid "The source title"
+msgstr "Názov zdroja"
+
 msgid "select the gender/sex"
 msgstr "vybrať pohlavie"
+
+msgid "Repository title"
+msgstr "Názov archívu"
 
 msgid ""
 "Death\n"

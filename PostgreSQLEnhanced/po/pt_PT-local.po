@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-12 19:09+0300\n"
+"PO-Revision-Date: 2025-08-07 08:58+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+msgid "Starting migration..."
+msgstr "A iniciar a migração..."
+
+msgid "Migration completed!"
+msgstr "Migração concluída!"
+
+msgid "Starting upgrade..."
+msgstr "A iniciar a actualização..."
+
+msgid "Creating indexes..."
+msgstr "A criar índices..."
+
+msgid "Upgrade completed!"
+msgstr "Actualização concluída!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL Enhanced"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "Base de dados PostgreSQL _Enhanced Database"
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"psycopg3 é necessário para supoete a PostgreSQL Enhance. Instale com: pip "
+"install 'psycopg[binary]'"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"versão do psycopg3 %(installed)s demasiado antiga. É necessária a versão "
+"%(required)s ou mais recente."
+
+msgid "Database Backend"
+msgstr "Motor de base de dados"
+
+msgid "Database module"
+msgstr "Módulo de base de dados"
+
+msgid "JSONB support"
+msgstr "Suporte a JSONB"
+
+msgid "Version warning"
+msgstr "Aviso de versão"
+
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+"PostgreSQL %(version)s está abaixo da versão %(recommended)s recomendada"
+
+msgid "Extensions"
+msgstr "Extensões"
+
+msgid "Database size"
+msgstr "Tamanho da base de dados"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d indivíduos, %(families)d famílias, %(events)d eventos"
+
+msgid "Migration manager not initialized"
+msgstr "Gestor de migração não inicializado"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "Consultas avançadas requerem suporte a JSONB"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "extensão pg_trgm requerida para detecção duplicada"

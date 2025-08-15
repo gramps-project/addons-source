@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-07-24 19:04+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -15,8 +15,215 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.13-dev\n"
 
+msgid "Middle Name Handling"
+msgstr "Baratanje srednjim imenom"
+
+msgid "Leave alone"
+msgstr "Ostavi nepromijenjeno"
+
+msgid "Separate"
+msgstr "Izdvoji"
+
+msgid "URL Compactness Level"
+msgstr "Razina kompaktnosti URL-a"
+
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Najkraće – Bez prefiksa, bez ključeva"
+
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Kompaktno – Bez prefiksa, ključevi bez atributa"
+
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Kompaktno – Bez prefiksa, ključevi s atributima"
+
+msgid "Long - Without Prefix on the Left"
+msgstr "Dugačko – bez prefiksa na lijevoj strani"
+
+msgid "URL Prefix Replacement"
+msgstr "Zamjena prefiksa URL-a"
+
+msgid "AI Provider"
+msgstr "Pružatelj UI-a"
+
+msgid "(Disabled)"
+msgstr "(Deaktivirano)"
+
+msgid "OpenAI"
+msgstr "OpenAI"
+
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+msgid "OpenAI API Key"
+msgstr "OpenAI API ključ"
+
+msgid "OpenAI Model"
+msgstr "OpenAI model"
+
+msgid "Mistral API Key"
+msgstr "Mistral API ključ"
+
+msgid "Mistral Model"
+msgstr "Mistral model"
+
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Prikaži poveznice iz kartice „Svojstva”"
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "Prikaži poveznice iz kartice „Internet”"
+
+msgid "Show Links From the Notes"
+msgstr "Prikaži poveznice iz zabilješki"
+
+msgid "Enable AI-generated historical place data"
+msgstr "Aktiviraj UI-generirane povijesne podatke mjesta"
+
+msgid "Custom country code for AI notes (optional)"
+msgstr "Prilagođeni kod zemlje za UI-zabilješke (opcionalno)"
+
+msgid "Enable CSV Files"
+msgstr "Aktiviraj CSV datoteke"
+
+msgid "Display Columns"
+msgstr "Prikaži stupce"
+
+msgid "Display Icons"
+msgstr "Prikaži ikone"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "Posjećeno: %s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "Poveznica: %s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "Svojstvo: %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "Vrijednost: %s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Učitano iz datoteke: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "Domena: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "Objekt: %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "Uzorak: %s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Gramps ID objekta: %s"
+
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+msgid "Link visited"
+msgstr "Poveznica posjećena"
+
+msgid "Link saved to Note"
+msgstr "Poveznica spremljena u zabilješku"
+
+msgid "Link saved to Attribute"
+msgstr "Poveznica spremljena u svojstvo"
+
+msgid "Place history loaded"
+msgstr "Povijest mjesta učitana"
+
+msgid "Domain skipped"
+msgstr "Domena preskočena"
+
+msgid "Link hidden for object"
+msgstr "Poveznica skrivena za objekt"
+
+msgid "Link hidden for all objects"
+msgstr "Poveznica skrivena za sve objekte"
+
+msgid "Attribute updated"
+msgstr "Svojstvo aktualizirano"
+
+msgid "Note updated"
+msgstr "Zabilješka aktualizirana"
+
+msgid "Note Link (parsed)"
+msgstr "Poveznica zabilješke (obrađena)"
+
+msgid "Note Link (internal)"
+msgstr "Poveznica zabilješke (interna)"
+
+msgid "Note Link (external)"
+msgstr "Poveznica zabilješke (eksterna)"
+
+msgid "Column - Icons"
+msgstr "Stupac – Ikone"
+
+msgid "Column - Source Types (flags)"
+msgstr "Stupac – Vrste izvora (zastavice)"
+
+msgid "Column - Keys"
+msgstr "Stupac – Ključevi"
+
+msgid "Column - Title"
+msgstr "Stupac – Naslov"
+
+msgid "Column - Website Url"
+msgstr "Stupac – URL web stranice"
+
+msgid "Column - Comment"
+msgstr "Stupac – Komentar"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Ikona – Posjećeni URL-ovi (kvačica)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Ikona – Spremljeni URL-ovi (disketa)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Ikona – URL-ovi povezani s UID svojstvima (UID značka)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Ikona – URL-ovi iz regionalnih CSV datoteka (zastavica)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Ikona – URL-ovi iz statičnih CSV datoteka (crvena pribadača)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Ikona – URL-ovi iz uobičajenih CSV datoteka (zemlja)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Ikona – URL-ovi iz unakrsnih CSV datoteka (strelice za miješanje)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Ikona – URL-ovi iz prilagođenog korisničkog direktorija (ikona proračunske "
+"tablice)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Ikona – URL-ovi iz kartice „Svojstva” (ikona „S”)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Ikona – URL-ovi iz kartice „Internet” (ikona „I”)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Ikona – URL-ovi iz kartice „Zabilješke” (ikona „Z”)"
+
 msgid "No data available."
 msgstr "Nema podataka."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "POVIJESNE ADMINISTRATIVNE JEDINICE OD"
 
 msgid "Foundation date:"
 msgstr "Datum osnutka:"
@@ -27,14 +234,64 @@ msgstr "Zabilješka:"
 msgid "Coordinates:"
 msgstr "Koordinate:"
 
+msgid "Administrative history"
+msgstr "Administrativna povijest"
+
+msgid "Data provided to AI:"
+msgstr "UI-u dostavljeni podaci:"
+
 msgid "Full hierarchy"
 msgstr "Potupuna hijerarhija"
 
 msgid "Place Type:"
 msgstr "Vrsta mjesta:"
 
+msgid "Last Retrieved At:"
+msgstr "Zadnje put dohvaćeno:"
+
 msgid "QR-code"
 msgstr "QR kod"
 
 msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Nedostaje ovisnost \"qrcode\""
+msgstr "⚠ Nedostaje ovisnost „qrcode”"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Greška prilikom generiranja QR koda:\n"
+"Izvorna greška: „{}”"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr ""
+"Generiranje povijesnih podataka mjesta pomoću umjetne inteligencije je "
+"trenutačno deaktivirano"
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Generiraju se povijesni podaci mjesta. Pričekaj …"
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "Zabilješka #%(id)s je uspješno dodana"
+
+msgid "WebSearch Link"
+msgstr "WebSearch poveznica"
+
+msgid "Attribute has been successfully added"
+msgstr "Atribut je uspješno dodan"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Naslov: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Zamijenjeno: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Prazno: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Komentar: {comment}"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 23:21+0000\n"
+"POT-Creation-Date: 2025-08-13 17:12+0100\n"
 "PO-Revision-Date: 2014-12-22 21:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -233,12 +233,6 @@ msgstr "Høgde :"
 
 msgid "Bad Date/Time"
 msgstr "Feil Dato/ Tid"
-
-msgid "48.21\"S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 eller -18:9:48.21)"
-
-msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 eller -18:9:48.21)"
 
 msgid "Media Title Update"
 msgstr "Oppdatering  av Medie-tittel"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+msgid "Reference Date or Date Range"
+msgstr "Referenčný dátum alebo rozsah dátumov"
+
+msgid "a valid Gramps date"
+msgstr "platný dátum Gramps"
+
+msgid "Date or offset ±y or ±y, m, d"
+msgstr "Dátum alebo posun ±R alebo ±R, M, D"
+
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+"1. dátum\n"
+"2. kladné alebo záporné číslo, ktoré predstavuje roky\n"
+"3. kladný alebo záporný zoznam hodnôt, ktoré predstavujú roky, mesiace, dni"
+
+msgid "Result"
+msgstr "Výsledok"
+
+msgid "Calculate"
+msgstr "Vypočítať"
 
 msgid "Copy"
 msgstr "Kopírovať"
+
+msgid "Error: invalid date for first expression"
+msgstr "Chyba: neplatný dátum pre prvý výraz"
+
+msgid "Error: invalid offset for second expression"
+msgstr "Chyba: neplatný posun pre druhý výraz"
+
+msgid "Error: at least one expression must be a date"
+msgstr "Chyba: aspoň jeden výraz musí byť dátum"
+
+msgid "Enter an expression in the entries above and click Calculate."
+msgstr "Zadajte výraz do polí vyššie a kliknite na Vypočítať."
+
+msgid "Date Calculator"
+msgstr "Dátumový kalkulátor"
+
+msgid "Perform date math calculations"
+msgstr "Vykonáva matematické výpočty s dátumami"

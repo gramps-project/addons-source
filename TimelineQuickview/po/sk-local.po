@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,10 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+msgid "Inlaw Parents"
+msgstr "Svokrovci"
+
+msgid "Grandparents"
+msgstr "Prarodičia"
+
+msgid "Inlaw Grandparents"
+msgstr "Prarodičia partnera"
 
 msgid "Great grandparents"
 msgstr "Prastarí rodičia"
 
+msgid "Inlaw Great grandparents"
+msgstr "Prastarí rodičia partnera"
+
+msgid "Great, "
+msgstr "Pra, "
+
+msgid "great, "
+msgstr "pra, "
+
 msgid "great grandparents"
 msgstr "prastarí rodičia"
+
+msgid "Inlaw Great, "
+msgstr "Partnerov pra, "
+
+msgid "Partner's spouse"
+msgstr "Manžel/-ka partnera"
+
+#, python-format
+msgid "Timeline for %s"
+msgstr "Časová os pre %s"
+
+msgid "People involved"
+msgstr "Zapojení ľudia"
+
+msgid "Display a person's events on a timeline"
+msgstr "Zobrazí udalosti osoby na časovej osi"

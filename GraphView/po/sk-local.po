@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,10 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13\n"
 
 msgid "Graph View"
 msgstr "Grafický pohľad"
+
+msgid "Show IDs"
+msgstr "Zobraziť ID"
+
+msgid "Show avatars"
+msgstr "Zobraziť avatary"
 
 msgid "Highlight the home person"
 msgstr "Zvýrazniť východziu osobu"
@@ -26,8 +32,29 @@ msgstr "Zobraziť celé dátumy"
 msgid "Show places"
 msgstr "Zobraziť miesta"
 
+msgid "Vertical: Top to Bottom"
+msgstr "Zvisle: zhora nadol"
+
+msgid "Vertical: Bottom to Top"
+msgstr "Zvisle: zdola nahor"
+
+msgid "Horizontal: Left to Right"
+msgstr "Vodorovne: zľava doprava"
+
+msgid "Horizontal: Right to Left"
+msgstr "Vodorovne: sprava doľava"
+
+msgid "Time Direction"
+msgstr "Časový smer"
+
+msgid "Person theme"
+msgstr "Téma osoby"
+
 msgid "Path color to home person"
 msgstr "Farba cesty k domovskej osobe"
+
+msgid "Active person border size"
+msgstr "Veľkosť ohraničenia aktívnej osoby"
 
 msgid "Show animation"
 msgstr "Zobraziť animáciu"
@@ -37,6 +64,9 @@ msgstr "Rýchlosť animácie (1..5 a 5 je najpomalšia)"
 
 msgid "Animation"
 msgstr "Animácia"
+
+msgid "Show person images"
+msgstr "Zobraziť osobné obrázky"
 
 msgid "Search"
 msgstr "Hľadať"
@@ -62,11 +92,23 @@ msgstr "Prejsť na aktívnu osobu"
 msgid "Go to bookmark"
 msgstr "Prejsť na záložku"
 
+msgid "Other Bookmarks"
+msgstr "Ďalšie záložky"
+
 msgid "Ancestor generations"
 msgstr "Generácie predkov"
 
 msgid "Descendant generations"
 msgstr "Generácie potomkov"
+
+msgid "Vertical spacing between generations"
+msgstr "Vertikálne rozostupy medzi generáciami"
+
+msgid "Horizontal spacing between generations"
+msgstr "Horizontálne rozostupy medzi generáciami"
+
+msgid "Add active person"
+msgstr "Pridať aktívnu osobu"
 
 msgid "No other bookmarks..."
 msgstr "Žiadne iné záložky..."
@@ -81,14 +123,50 @@ msgstr "%s "
 msgid "<b>Tags:</b>"
 msgstr "<b>Značky:</b>"
 
+msgid "Lines type"
+msgstr "Typ čiar"
+
 msgid "Copy"
 msgstr "Kopírovať"
+
+msgid "No Events for this person"
+msgstr "Žiadne udalosti pre túto osobu"
 
 msgid "Select tags for person"
 msgstr "Vyberte štítky pre osobu"
 
+msgid "Add new family"
+msgstr "Pridať novú rodinu"
+
+msgid "Add parents"
+msgstr "Pridať rodičov"
+
 msgid "Set as home person"
-msgstr "Nastaviť ako domácu osobu"
+msgstr "Nastaviť ako domovskú osobu"
+
+msgid "Show path to home person"
+msgstr "Zobraziť cestu k domovskej osobe"
+
+msgid "Remove from bookmarks"
+msgstr "Odstrániť zo záložiek"
+
+msgid "Add to bookmarks"
+msgstr "Pridať do záložiek"
+
+msgid "No Events for this family"
+msgstr "Žiadne udalosti pre túto rodinu"
+
+msgid "Select tags for family"
+msgstr "Vybrať značky pre rodinu"
+
+msgid "Add father"
+msgstr "Pridať otca"
+
+msgid "Add mother"
+msgstr "Pridať matku"
+
+msgid "About Graph View"
+msgstr "O Grafickom pohľade"
 
 #, python-format
 msgid "Adding Tags to person (%s)"

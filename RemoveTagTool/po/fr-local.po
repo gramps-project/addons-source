@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-26 15:44+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -23,6 +23,9 @@ msgstr "ERREUR"
 msgid "Add/Remove"
 msgstr "Ajouter/Enlever"
 
+msgid "Add or remove tags from objects."
+msgstr "Ajouter ou supprimer les étiquettes des objets."
+
 msgid "Add Tags"
 msgstr "Ajouter des étiquettes"
 
@@ -37,6 +40,9 @@ msgstr "Choisir une catégorie."
 
 msgid "Choose Tag"
 msgstr "Choisir l'étiquette"
+
+msgid "Choose a tag to remove."
+msgstr "Choisissez une étiquette à enlever."
 
 msgid "Persons"
 msgstr "Personnes"

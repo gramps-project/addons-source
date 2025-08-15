@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 20:12-0600\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"POT-Creation-Date: 2025-08-13 18:19+0100\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,13 +13,201 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+msgid "Descendant Space Tree"
+msgstr "Prostorno stablo potomaka"
+
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"Generira web stranicu s interaktivnim dijagramom potomaka u obliku "
+"prostornog stabla za učinkovit prikaz čak i pri velikom broju potomaka ili "
+"generacija."
+
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "Patrijarhalna linija (muški predak)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "Matrijarhalna linija (ženski predak)"
+
+msgid "Dark theme"
+msgstr "Tamna tema"
+
+msgid "Light theme"
+msgstr "Svijetla tema"
+
+msgid "Continue Descendant Tree"
+msgstr "Nastavi stablo potomaka"
+
+msgid "Alternate Descendant Tree"
+msgstr "Alternativno stablo potomaka"
+
+msgid "Descendant SpaceTree"
+msgstr "Prostorno stablo potomaka"
+
+msgid "Total descendants"
+msgstr "Ukupni broj potomaka"
+
+msgid "Marriages/Families:<ul>"
+msgstr "Brakovi/Obitelji:<ul>"
 
 msgid "Invalid Destination Directory"
 msgstr "Nevažeća odredišna mapa"
 
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"Odredišna mapa %s ne postoji.\n"
+"Želiš li je pokušati stvoriti?"
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "Greška u stvaranju %s: %s"
+
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "Greška u čitanju proto datoteke %s: %s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"Odredišna datoteka %s već postoji.\n"
+"Želiš li je prepisati?"
+
+msgid "Failed writing file: "
+msgstr "Greška u pisanju datoteke: "
+
+msgid "Descendants of"
+msgstr "Potomci od"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "Kako koristiti preglednik za prostorno stablo potomaka"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"Za optimalni prikaz otvori prozor preglednika kako bi se iskoristio cijeli "
+"ekran. Nakon mijenjanja veličine prozora dijagram će se ponovo postaviti na "
+"središnju osobu."
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr "Klikni na čvor željenog potomka za prikaz njegove djece."
+
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr ""
+"Za pomicanje stabla potomaka, klikni i povuci bilo gdje unutar preglednika."
+
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr ""
+"Klikni gumb za resetiranje ___HELP_RESET_BUTTON___ za vraćanje na početnog "
+"potomka."
+
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+"Traži osobu unosom imena u okvir za pretraživanje. Utipkaj barem tri znaka "
+"za pokretanje pretrage. Klikni na bilo koji od ponuđenih prijedloga za brzu "
+"navigaciju do te osobe. Imaj na umu da se osoba može pojaviti više puta u "
+"rezultatima. Znak plus (+) nakon imena označava da se ta osoba pojavljuje "
+"kao supružnik."
+
+msgid ""
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
+msgstr ""
+"Potomak i svi supružnici se prikazuju unutar istog čvora. Djeca svih "
+"obitelji tog potomka se grupiraju zajedno."
+
+msgid ""
+"Persons born after a specified date may not display their birth or death "
+"dates."
+msgstr ""
+"Osobama koje su rođene nakon određenog datuma se datumi rođenja ili smrti ne "
+"prikazuju."
+
+msgid ""
+"Person nodes are colored to indicate the number of children, the deeper tint "
+"of the coloring, the greater number of children."
+msgstr ""
+"Čvorovi osoba su obojana kako bi označila broj djece – što je boja tamnija, "
+"to je veći broj djece."
+
+msgid ""
+"The currently selected descendant and all of the ancestors of that person "
+"are highlighted in yellow."
+msgstr ""
+"Trenutačno odabrani potomak i svi njegovi preci označeni su žutom bojom."
+
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
+msgid ""
+"A person may occur in different branches.  This is usually because of inter-"
+"family marriages (such as that of cousins.)  In this case, a button will "
+"also appear for that person,  ___NAV_BUTTON_CONTINUE___ or "
+"___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
+"expand descendants of this person. "
+msgstr ""
+"Osoba se može pojaviti u različitim granama stabla. To je obično rezultat "
+"brakova unutar obitelji (npr. brak rođaka). U tom će se slučaju uz tu osobu "
+"pojaviti i gumb ___NAV_BUTTON_CONTINUE___ ili ___NAV_BUTTON_ALT___ za "
+"navigaciju prema drugoj grani. Samo jedna grana će prikazati potomke te "
+"osobe. "
+
+msgid ""
+"The following open source projects are used in building this viewer, see "
+"source code LICENSE*.txt files for complete licenses and required notices."
+msgstr ""
+"Pri izradi ovog preglednika korišteni su sljedeći projekti otvorenog koda. "
+"Za potpune licence i potrebne napomene pogledaj njihove datoteke "
+"LICENSE*.txt."
+
+msgid "Search. . ."
+msgstr "Traži …"
+
 msgid "Include Generations"
 msgstr "Uključi generacije"
 
+msgid "Branch to expand when duplicated"
+msgstr "Grana koja se rasklapa prilikom dupliciranja"
+
+msgid ""
+"When a descendant appears more than once, prefer the selected lineage to "
+"expand descendancy line"
+msgstr ""
+"Kada se potomak pojavi više puta, prednost se daje odabranoj lozi za prikaz "
+"linije potomaka"
+
+msgid "Maximum display birth year"
+msgstr "Najkasnija prikazana godina rođenja"
+
+msgid "Theme preference"
+msgstr "Postavke teme"
+
+msgid "Theme color preference for Space Tree"
+msgstr "Postavka boje teme za prostorno stablo"
+
 msgid "The destination path for generated files."
-msgstr "Odredište za stvorene datoteke."
+msgstr "Odredište za generirane datoteke."
+
+msgid "Destination File"
+msgstr "Odredišna datotka"
+
+msgid "The destination file name for the report."
+msgstr "Ime odredišne datoteke za izvještaj."
+
+msgid "Open generated HTML file with default browser."
+msgstr "Otvori generiranu HTML datoteku sa zadanim preglednikom."

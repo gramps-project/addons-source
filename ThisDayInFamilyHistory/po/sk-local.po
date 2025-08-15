@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-16 11:34+0000\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,274 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+msgid "Show these events"
+msgstr "Zobraziť tieto udalosti"
 
 msgid "Sort by "
 msgstr "Zoradiť podľa "
+
+msgid "January"
+msgstr "Január"
+
+msgid "February"
+msgstr "Február"
+
+msgid "March"
+msgstr "Marec"
+
+msgid "April"
+msgstr "Apríl"
+
+msgid "May"
+msgstr "Máj"
+
+msgid "June"
+msgstr "Jún"
+
+msgid "July"
+msgstr "Júl"
+
+msgid "August"
+msgstr "August"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "Október"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "December"
+
+msgid "Person Name"
+msgstr "Meno osoby"
+
+msgid "Event Year"
+msgstr "Rok udalosti"
+
+msgid "gregorian"
+msgstr "gregoriánský"
+
+msgid "Unknown father/partner"
+msgstr "Neznámy otec/partner"
+
+msgid "Unknown mother/partner"
+msgstr "Neznáma matka/partnerka"
+
+msgid " and "
+msgstr " a "
+
+msgid "unknown participant"
+msgstr "neznámy účastník"
+
+msgid "unknown location"
+msgstr "neznáme miesto"
+
+#, python-format
+msgid "%(male_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(male_name)s bol adoptovaný v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(female_name)s bola adoptovaná v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was christened in %(year)s at %(place)s."
+msgstr "%(male_name)s bol pokrstený v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was christened in %(year)s at %(place)s."
+msgstr "%(female_name)s bola pokrstená v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s died in %(year)s at %(place)s."
+msgstr "%(male_name)s zomrel v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s died in %(year)s at %(place)s."
+msgstr "%(female_name)s zomrela v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr "%(male_name)s získal titul v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr "%(female_name)s získala titul v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr "%(male_name)s bol rozvedený v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr "%(female_name)s bola rozvedená v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s filed for divorce in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s podal žiadosť o rozvod v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s filed for divorce in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s podala žiadosť o rozvod v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was elected in %(year)s at %(place)s."
+msgstr "%(male_name)s bol zvolený v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was elected in %(year)s at %(place)s."
+msgstr "%(female_name)s bola zvolená v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s emigroval v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s emigrovala v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(male_name)s sa zasnúbil v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(female_name)s sa zasnúbila v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s received first communion in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s prijal prvé sväté prijímanie v roku %(year)s v mieste "
+"%(place)s."
+
+#, python-format
+msgid "%(female_name)s received first communion in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s prijala prvé sväté prijímanie v roku %(year)s v mieste "
+"%(place)s."
+
+#, python-format
+msgid "%(male_name)s graduated in %(year)s at %(place)s."
+msgstr "%(male_name)s promoval v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s graduated in %(year)s at %(place)s."
+msgstr "%(female_name)s promovala v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s imigroval v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s imigrovala v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s got married in %(year)s at %(place)s."
+msgstr "%(male_name)s sa oženil v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s got married in %(year)s at %(place)s."
+msgstr "%(female_name)s sa vydala v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
+msgstr "%(male_name)s sa pripojil k rodine v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s sa pripojila k rodine v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s entered a civil union in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s uzavrel civilný zväzok v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s uzavrela civilný zväzok v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s announced a marriage banns in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s oznámil sobášne ohlášky v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s announced a marriage banns in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s oznámila sobášne ohlášky v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s entered a marriage contract in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s uzavrel manželskú zmluvu v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s entered a marriage contract in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s uzavrela manželskú zmluvu v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s obtained a marriage license in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s dostal povolenie k sobášu v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s obtained a marriage license in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s dostala povolenie k sobášu v roku %(year)s v mieste "
+"%(place)s."
+
+#, python-format
+msgid "%(male_name)s entered military service in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s nastúpil do vojenskej služby v roku %(year)s v mieste "
+"%(place)s."
+
+#, python-format
+msgid "%(female_name)s entered military service in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s nastúpila do vojenskej služby v roku %(year)s v mieste "
+"%(place)s."
+
+#, python-format
+msgid "%(male_name)s became naturalized in %(year)s at %(place)s."
+msgstr "%(male_name)s získal občianstvo v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s became naturalized in %(year)s at %(place)s."
+msgstr "%(female_name)s získala občianstvo v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr "%(male_name)s mal udelený titul v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr "%(female_name)s mala udelený titul v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was ordained in %(year)s at %(place)s."
+msgstr "%(male_name)s bol vysvätený v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was ordained in %(year)s at %(place)s."
+msgstr "%(female_name)s bola vysvätená v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s retired in %(year)s at %(place)s."
+msgstr "%(male_name)s odišiel do dôchodku v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s retired in %(year)s at %(place)s."
+msgstr "%(female_name)s odišla do dôchodku v roku %(year)s v mieste %(place)s."

@@ -1,0 +1,86 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-12 19:09+0300\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+msgid "Starting migration..."
+msgstr "Migratie starten…"
+
+msgid "Migration completed!"
+msgstr "Migratie voltooid!"
+
+msgid "Starting upgrade..."
+msgstr "Bijwerking starten…"
+
+msgid "Creating indexes..."
+msgstr "Indexen aanmaken…"
+
+msgid "Upgrade completed!"
+msgstr "Bijwerking voltooid!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL Enhanced"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL _Enhanced database"
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"psycopg3 is vereist voor PostgreSQL Enhanced-ondersteuning. Installeren met: "
+"pip install 'psycopg[binary]'"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"psycopg3 versie %(installed)s is te oud. Versie %(required)s of nieuwer is "
+"vereist."
+
+msgid "Database Backend"
+msgstr "Database-backend"
+
+msgid "Database module"
+msgstr "Database-module"
+
+msgid "JSONB support"
+msgstr "JSONB-ondersteuning"
+
+msgid "Version warning"
+msgstr "Versiewaarschuwing"
+
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr "PostgreSQL %(version)s is lager dan aanbevolen versie %(recommended)s"
+
+msgid "Extensions"
+msgstr "Extensies"
+
+msgid "Database size"
+msgstr "Databasegrootte"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d personen, %(families)d gezinnen, %(events)d gebeurtenissen"
+
+msgid "Migration manager not initialized"
+msgstr "Migratiebheer niet geïnitialiseerd"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "Verbeterde zoekopdrachten vereisen JSONB-ondersteuning"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "pg_trgm-extensie vereist voor detectie van duplicaten"

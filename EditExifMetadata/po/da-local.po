@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 23:21+0000\n"
+"POT-Creation-Date: 2025-08-13 17:12+0100\n"
 "PO-Revision-Date: 2025-02-25 16:12+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
@@ -268,18 +268,6 @@ msgstr "Højde :"
 
 msgid "Bad Date/Time"
 msgstr "Ugyldig Dato/Tid"
-
-msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Ugyldig breddegrad (syntaks: 18°9'"
-
-msgid "48.21\"S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 eller -18:9:48.21)"
-
-msgid "Invalid longitude (syntax: 18°9'"
-msgstr "Ugyldig længdegrad (syntaks: 18°9'"
-
-msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 eller -18:9:48.21)"
 
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "

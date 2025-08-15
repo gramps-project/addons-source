@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-12 19:09+0300\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+msgid "Starting migration..."
+msgstr "Migration wird gestartet..."
+
+msgid "Migration completed!"
+msgstr "Migration abgeschlossen!"
+
+msgid "Starting upgrade..."
+msgstr "Aktualisierung wird gestartet..."
+
+msgid "Creating indexes..."
+msgstr "Indizes erstellen..."
+
+msgid "Upgrade completed!"
+msgstr "Aktualisierung abgeschlossen!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL erweitert"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL _Erweiterte Datenbank"
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"psycopg3 ist für die erweiterte PostgreSQL-Unterstützung erforderlich. "
+"Installiere es mit: pip install 'psycopg[binary]'"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"Die Version %(installed)s von psycopg3 ist zu alt. Die Version %(required)s "
+"oder neuer ist erforderlich."
+
+msgid "Database Backend"
+msgstr "Datenbank-Backend"
+
+msgid "Database module"
+msgstr "Datenbankmodul"
+
+msgid "JSONB support"
+msgstr "JSONB-Unterstützung"
+
+msgid "Version warning"
+msgstr "Versionswarnung"
+
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+"PostgreSQL %(version)s liegt unter der empfohlenen Version %(recommended)s"
+
+msgid "Extensions"
+msgstr "Erweiterungen"
+
+msgid "Database size"
+msgstr "Datenbankgröße"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d Personen, %(families)d Familien, %(events)d Ereignisse"
+
+msgid "Migration manager not initialized"
+msgstr "Migrationsverwaltung nicht initialisiert"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "Erweiterte Abfragen erfordern JSONB-Unterstützung"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "pg_trgm-Erweiterung für die Duplikaterkennung erforderlich"

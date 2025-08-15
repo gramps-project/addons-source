@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 23:21+0000\n"
+"POT-Creation-Date: 2025-08-13 17:12+0100\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -244,12 +244,6 @@ msgstr "Altitude:"
 
 msgid "Bad Date/Time"
 msgstr "Data/Hora incorreta"
-
-msgid "48.21\"S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 ou -18:9:48.21)"
-
-msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 ou -18:9:48.21)"
 
 msgid "Media Title Update"
 msgstr "Atualização do título da mídia"

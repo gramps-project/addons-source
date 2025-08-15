@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -36,6 +36,9 @@ msgstr "הבדלים"
 msgid "No need modifications"
 msgstr "לא נדרשות הסגלות"
 
+msgid "No changes need."
+msgstr "לא נדרשים שינויים."
+
 msgid "Legacy place"
 msgstr "מקום מהעבר"
 
@@ -44,3 +47,15 @@ msgstr "הסגלת כותרות מקום"
 
 msgid "Place titles"
 msgstr "כותרות מקום"
+
+msgid "Remove content of place title field if it does not match"
+msgstr "נא להסיר תוכן שדה כותרת מקום אם הוא אינו תואם"
+
+msgid "Copy content of place title field to a new note."
+msgstr "העתקת תוכן שדה כותרת מקוםלהערה חדשה."
+
+msgid "Attach a tag on selected places."
+msgstr "צרוף תג למקומות שנבחרו."
+
+msgid "column"
+msgstr "עמודה"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:38+0000\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,7 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13\n"
+
+msgid "Media Report"
+msgstr "Mediálna správa"
 
 msgid "INFO"
 msgstr "INFO"
@@ -20,8 +23,29 @@ msgstr "INFO"
 msgid "General:"
 msgstr "Všeobecné:"
 
+msgid "Heading"
+msgstr "Nadpis"
+
 msgid "Select a media file for this report"
 msgstr "Vyberte mediálny súbor pre túto zostavu"
 
+msgid "Custom note"
+msgstr "Vlastná poznámka"
+
 msgid "Select a note for this report"
 msgstr "Vyberte poznámku pre túto zostavu"
+
+msgid "Include custom note"
+msgstr "Zahrnúť vlastnú poznámku"
+
+msgid "Include referenced people"
+msgstr "Zahrnúť odkazovaných ľudí"
+
+msgid "Include media data"
+msgstr "Zahrnúť mediálne údaje"
+
+msgid "Media width"
+msgstr "Šírka médií"
+
+msgid "Media height"
+msgstr "Výška médií"

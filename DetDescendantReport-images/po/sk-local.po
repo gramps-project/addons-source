@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+msgid "Detailed Descendant Report With All Images"
+msgstr "Podrobná správa o potomkoch so všetkými obrázkami"
+
+msgid ""
+"Produces a detailed descendant report with all images and optional todo list."
+msgstr ""
+"Vytvorí podrobnú správu o potomkoch so všetkými obrázkami a voliteľným "
+"zoznamom úloh."
 
 #, python-format
 msgid "%(date)s, %(place)s"
@@ -25,6 +34,10 @@ msgstr "%(date)s"
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
+
+#, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr "%(event_name)s: %(event_text)s"
 
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
@@ -40,6 +53,12 @@ msgstr "Uviesť deti"
 msgid "Add descendant reference in child list"
 msgstr "Pridať odkaz na potomka do zoznamu detí"
 
+msgid "Include TODO notes"
+msgstr "Zahrnúť poznámky Zoznamu úloh"
+
+msgid "Whether to include TODO notes."
+msgstr "Či zahrnúť poznámky Zoznamu úloh."
+
 msgid "The style used for the title of the page."
 msgstr "Štýl použitý pre titul strany."
 
@@ -54,3 +73,9 @@ msgstr "Štýl použitý pre záhlavie Viac informácií a pre záhlavie partner
 
 msgid "The style used for additional detail data."
 msgstr "Štýl použitý pre doplňujúce detailné údaje."
+
+msgid "The style used for image labels."
+msgstr "Štýl použitý pre označenia obrázkov."
+
+msgid "A style used for image captions."
+msgstr "Štýl použitý pre nadpisy obrázkov."

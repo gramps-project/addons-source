@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-22 23:21+0000\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2025-08-13 17:12+0100\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Edit Image Exif Metadata"
 msgstr "עריכת נתוני־על Exif לתמונה"
@@ -121,18 +121,6 @@ msgstr "רום:"
 
 msgid "Bad Date/Time"
 msgstr "תאריך/זמן שגוי"
-
-msgid "Invalid latitude (syntax: 18°9'"
-msgstr "קו רוחב לא תקין (תחביר: 18°9'"
-
-msgid "48.21\"S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 או -18:9:48.21)"
-
-msgid "Invalid longitude (syntax: 18°9'"
-msgstr "קו אורך לא תקין (תחביר: 18°9'"
-
-msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 או -18:9:48.21)"
 
 msgid "Media Title Update"
 msgstr "עדכון כותרת מדיה"

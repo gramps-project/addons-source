@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,10 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+msgid "Hide person"
+msgstr "Skryť osobu"
+
+msgid "Show person"
+msgstr "Zobraziť osobu"
+
+msgid "Show siblings"
+msgstr "Zobraziť súrodencov"
+
+msgid "Hide siblings"
+msgstr "Skryť súrodencov"
+
+msgid "General Layout"
+msgstr "Všeobecné rozloženie"
 
 msgid "Zoom in"
 msgstr "Priblížiť"
+
+msgid "Mouse wheel"
+msgstr "Koliesko myši"
 
 msgid "Zoom out"
 msgstr "Oddialiť"
@@ -29,11 +47,38 @@ msgstr "Prispôsobiť priblíženie obsahu"
 msgid "Export View as SVG"
 msgstr "Exportovať zobrazenie ako SVG"
 
+msgid "Label Configuration"
+msgstr "Konfigurácia štítkov"
+
+msgid "Reset all settings"
+msgstr "Obnoviť všetky nastavenia"
+
+msgid "Show photos"
+msgstr "Zobraziť fotografie"
+
 msgid "Activate the birth label."
 msgstr "Aktivovať štítok narodenia."
 
+msgid "Center"
+msgstr "Na stred"
+
 msgid "Activate the death label."
 msgstr "Aktivovať štítok úmrtia."
+
+msgid "Font name"
+msgstr "Názov písma"
+
+msgid "Relative font size"
+msgstr "Relatívna veľkosť písma"
+
+msgid "Family shape"
+msgstr "Tvar rodiny"
+
+msgid "Visualize connections"
+msgstr "Vizualizovať prepojenia"
+
+msgid "Based on surname"
+msgstr "Na základe priezviska"
 
 msgid "none"
 msgstr "žiadne"
@@ -41,5 +86,26 @@ msgstr "žiadne"
 msgid "Maximum number of generations"
 msgstr "Maximálny počet generácií"
 
+msgid "Maximum number of compression steps"
+msgstr "Maximálny počet krokov kompresie"
+
+msgid "Maximum number of flipping steps"
+msgstr "Maximálny počet krokov prevrátenia"
+
+msgid ""
+"By default every individual has a unique horizontal slot. This can be "
+"inefficient with many generations. This algorithm lets several people share "
+"a horizontal slot, if they do not overlap."
+msgstr ""
+"V predvolenom nastavení má každý jednotlivec jedinečný horizontálny slot. "
+"Pri mnohých generáciách to môže byť neefektívne. Tento algoritmus umožňuje "
+"viacerým ľuďom zdieľať horizontálny slot, ak sa neprekrývajú."
+
 msgid "Highlight the persons which are descendants."
 msgstr "Zvýrazniť osoby, ktoré sú potomkami."
+
+msgid "Number of descendants"
+msgstr "Počet potomkov"
+
+msgid "General chart layout"
+msgstr "Všeobecné rozloženie grafu"

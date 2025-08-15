@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -28,6 +28,10 @@ msgid "%(event_type)s: %(date)s in %(place)s"
 msgstr "%(event_type)s: %(date)s ב־ %(place)s"
 
 #, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#, python-format
 msgid "%(event_type)s: %(place)s"
 msgstr "%(event_type)s: %(place)s"
 
@@ -43,8 +47,25 @@ msgstr ": "
 msgid "Combined"
 msgstr "משולב"
 
+msgid "A view showing relationships and events for a person"
+msgstr "מצג שמציג קשרי־קרבה ואירועים של אדם"
+
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"יש להגדיר 'אדם ברירת־מחדל' שאליו ניתן לעבור. לבחור את מצג 'אנשים', לבחור את "
+"האדם הרצוי כ'אדם הבית', ולאשר את הבחירה מתפריט עריכה ← קבע אדם הבית."
+
+msgid "Order"
+msgstr "סדר"
+
 msgid "Edit the active event"
 msgstr "עריכת באירוע הפעיל"
 
 msgid "Show Tags"
 msgstr "הצגת תגים"
+
+msgid "Vertical Details"
+msgstr "פרטים אנכיים"

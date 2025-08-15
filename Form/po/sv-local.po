@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-07-24 19:04+0000\n"
+"PO-Revision-Date: 2025-08-08 09:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -1088,14 +1088,113 @@ msgstr "BushelMajs"
 msgid "23. Corn: Produce Bsh."
 msgstr "23. Majs: Bushel produktion."
 
+msgid "PotatoesAcres"
+msgstr "TunnlandPotatis"
+
+msgid "24. Potatoes: Acres"
+msgstr "24. Potatis: Tunnland"
+
+msgid "PotatoesBush"
+msgstr "BushelPotatis"
+
+msgid "25. Potatoes: Produce Bsh."
+msgstr "25. Potatis: Bushel produktion."
+
+msgid "TurnipsAcres"
+msgstr "TunnlandRovor"
+
+msgid "26. Turnips: Acres"
+msgstr "26. Rovor: Tunnland"
+
+msgid "TurnipsBush"
+msgstr "BushelRovor"
+
+msgid "27. Turnips: Produce Bsh."
+msgstr "27. Rovor: Bushel produktion."
+
+msgid "CloverBush"
+msgstr "BushelKlöver"
+
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr "28. Klöver, Timotej eller andra gräsfrön - Bushel."
+
+msgid "CarrotsBush"
+msgstr "BushelMorötter"
+
+msgid "29. Carrots - Bsh."
+msgstr "29. Morötter - Bushel."
+
+msgid "MangleWurtzel"
+msgstr "Foderbeta"
+
+msgid "30. Mangle Wurtzel"
+msgstr "30. Foderbeta"
+
+msgid "BeansBush"
+msgstr "BushelBönor"
+
+msgid "31. Beans Bush"
+msgstr "31. Bönor Bushel"
+
+msgid "HopsLbs"
+msgstr "PundHumle"
+
+msgid "32. Hops Lbs."
+msgstr "32. Humle Pund."
+
+msgid "HayQty"
+msgstr "MängdHö"
+
+msgid "33. Hay, Bundles or Tons"
+msgstr "33. Hö, Buntar eller ton"
+
+msgid "FlaxLbs"
+msgstr "PundLinfrö"
+
+msgid "34. Flax or Hemp, Lbs."
+msgstr "34. Linfrö eller Hampa, pund."
+
+msgid "TobaccoLbs"
+msgstr "PundTobak"
+
+msgid "35. Tobacco Lbs."
+msgstr "35. Tobak Pund."
+
+msgid "WoolLbs."
+msgstr "PundUll."
+
+msgid "36. Wool Lbs."
+msgstr "36. Ull Pund."
+
 msgid "Column37"
 msgstr "Kolumn37"
+
+msgid "37."
+msgstr "37."
 
 msgid "Column38"
 msgstr "Kolumn38"
 
+msgid "38."
+msgstr "38."
+
 msgid "Column39"
 msgstr "Kolumn39"
+
+msgid "39."
+msgstr "39."
+
+msgid "MapleSugarLbs"
+msgstr "LönnsirapPund"
+
+msgid "40. Maple Sugar Lbs."
+msgstr "40. Lönnsirap Pund."
+
+msgid "CiderGalls"
+msgstr "GallonsCider"
+
+msgid "41. Cider Galls."
+msgstr "41. Cider Gallons."
 
 msgid "Married1851"
 msgstr "Gifta1851"

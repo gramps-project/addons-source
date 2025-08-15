@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+msgid "Chromosome "
+msgstr "Chromozóm "
+
+msgid " Map for "
+msgstr " Mapa pre "
+
+msgid "Chr"
+msgstr "Chr"
+
+msgid "Legend"
+msgstr "Legenda"
+
+msgid ": Grandparent"
+msgstr ": Starý rodič"
+
+#, python-brace-format
+msgid ""
+"\n"
+"{0}\n"
+"{1} cMs"
+msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
+
+msgid " SNPs"
+msgstr " SNP-y"
+
+msgid " : Starts at "
+msgstr " : Začína na "
+
+msgid " and ends at "
+msgstr " a končí na "
+
+#, python-brace-format
+msgid "{0}"
+msgstr "{0}"
+
+#, python-format
+msgid "%(ancestor1)s and %(ancestor2)s"
+msgstr "%(ancestor1)s a %(ancestor2)s"
 
 #, python-brace-format
 msgid ""
@@ -25,3 +67,16 @@ msgstr ""
 #, python-brace-format
 msgid " Ancestor: {0}"
 msgstr " Predok: {0}"
+
+msgid ""
+"Click to make this person active\n"
+"Right-click to edit this person"
+msgstr ""
+"Kliknutím urobíte túto osobu aktívnou\n"
+"Pravým kliknutím môžete túto osobu upraviť"
+
+msgid "DNA Segment Map"
+msgstr "Mapa segmentov DNA"
+
+msgid "Gramplet showing a matching DNA segment map"
+msgstr "Gramplet zobrazujúci mapu zodpovedajúceho segmentu DNA"

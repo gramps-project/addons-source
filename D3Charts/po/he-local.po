@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -16,11 +16,233 @@ msgstr ""
 "X-Generator: Weblate 5.13-dev\n"
 
 #, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "כתיבת {target_path}:{message} כשלה"
+
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "כשל ביצירת מבנה מחיצות: %s"
+
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "כשל בהעתקת קבצימרשתת: %s"
+
+msgid "Include Generations"
+msgstr "הכללת דורות"
+
+msgid "Male Background Color"
+msgstr "צבע רקע מגדר זכר"
+
+msgid "RGB-color for male box background."
+msgstr "צבעי RGB לרקע תיבת מגדר זכר."
+
+msgid "Male Expandable Background Color"
+msgstr "צבע רקע לעצם מתרחב למגדר זכר"
+
+msgid "RGB-color for male expandable box background."
+msgstr "צבעי RGB לרקע תיבה מתרחבת למגדר זכר."
+
+msgid "Female Background"
+msgstr "רקע מגדר נקבה"
+
+msgid "RGB-color for female box background."
+msgstr "צבעי RGB לרקע תיבת מגדר נקבה."
+
+msgid "Female Expandable Background"
+msgstr "צבע רקע לעצם מתרחב למגדר נקבה"
+
+msgid "RGB-color for female expandable box background."
+msgstr "צבעי RGB לרקע תיבה מתרחבת למגדר נקבה."
+
+msgid "The destination path for generated files."
+msgstr "נתיב היעד לקבצים שחוללו."
+
+msgid "The destination file name for html content."
+msgstr "שם קובץ יעד לתוכן .html"
+
+msgid "Ancestral Collapsible Tree"
+msgstr "אילן אבות־קדמונים מתכווץ"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"חילול עמוד מרשתת עם ייצוג חזותי של אבות קדמונים (SVG) המיוצג כפריסת אילן "
+"מתכווץ מספריית ה-JavaScript D3.js."
+
+msgid "Descendant Indented Tree"
+msgstr "אילן צאצאים מוזח"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"חילול עמוד מרשתת עם ייצוג חזותי של צאצאים (SVG) מיוצגת כאילן מתכווץ מוזח "
+"מספריית D3.js JavaScript."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "אפשרויות תרשים מניפה אבות־קדמונים"
+
+msgid "Maternal Background"
+msgstr "רקע שושלת אם"
+
+msgid "RGB-color for maternal box background."
+msgstr "צבעי RBG לרקע תיבת שושלת אם."
+
+msgid "Ancestral Fan Chart"
+msgstr "תרשים מניפה אבות־קדמונים"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"חילול עמוד מרשתת שמציג ייצוג חזותי של אבות־קדמונים (ב־SVG) כתרשים מניפה, "
+"המבוסס על ספריית JavaScript D3.js."
+
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "למידע נוסף %(reference)s : %(spouse)s"
+
+msgid "Generating report..."
+msgstr "מתבצע חילל דוח..."
+
+msgid "Invalid Destination Directory"
+msgstr "מחיצת יעד לא תקינה"
+
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"מחיצת יעד %s לא קיימת\n"
+"האם לנסות ליצור אותה?"
+
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
 msgstr "כשל ביצירת{target_path}: {message}"
 
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"קובץ יעד %s כבר קיים.\n"
+"האם לכתוב על קובץ זה?"
+
+msgid "Default View"
+msgstr "מצג ברירת־מחדל"
+
+msgid "Expand All"
+msgstr "הרחבת הכול"
+
+msgid "Include contraction level"
+msgstr "לכלול רמת כיווץ"
+
+msgid "The number of descendant levels to contract on initial display."
+msgstr "מספר רמות צאצאים לכיווץ במצג התחלתי."
+
+msgid "The font size in pixels for each node."
+msgstr "גודל גופן בפיקסלים לכל צומת."
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "האם להציג בדוחות משפחות כפולות."
+
+msgid "Expanded Row Background Color"
+msgstr "צבע רקע שורה מורחבת"
+
+msgid "RGB-color for expanded row background."
+msgstr "צבעי BRG לרקע שורה מורחבת."
+
+msgid "Expandable Background Color"
+msgstr "צבע רקע מתרחב"
+
+msgid "RGB-color for expandable row background."
+msgstr "צבעי RBG לרקע שורה מתרחבת."
+
+msgid "Non-Expandable Background Color"
+msgstr "צבע רקע לשורה שלא מתרחבת"
+
+msgid "RGB-color for non-expandable row background."
+msgstr "צבעי RBG לרע שורה שלא מתרחבת."
+
+msgid "Include records marked private"
+msgstr "לכלול רשומות שמסימנות כפרטיות"
+
+msgid "Whether to include private objects."
+msgstr "האם לכלול רשומות פרטיות."
+
 msgid "Include Last Name Only"
 msgstr "הכללת שם משפחה בלבד"
+
+msgid "Include Full Name Only"
+msgstr "לכלול שם מלא בלבד"
+
+msgid "How to handle living people."
+msgstr "אופן הטיפול ב'אנשים חיים'."
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "האם לכלול אנשים שיתכן שנפטרו לאחרונה."
+
+msgid "Navigation"
+msgstr "ניווט"
+
+msgid "Contraction/Expansion mechanism"
+msgstr "מנגנון התכווצות/התרחבות"
+
+msgid "Entire node."
+msgstr "הצומת כולו."
+
+msgid "Arrow images at start of node."
+msgstr "תמונות חץ בתחילת צומת."
+
+msgid "Plus/Minus images at start of node."
+msgstr "תמונות חיבור/חיסור בתחילת צומת."
+
+msgid "Where to click to expand/contract nodes."
+msgstr "האם להקיש כדי להרחיב.לכווץ צמתים."
+
+msgid "Auto-generate HREF links for nodes"
+msgstr "חילול קשרי HREF באופן אוטומטי לצמתים"
+
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr "האם לחלול קשרי HREF באופן אוטומטי לצמתים בדוחות."
+
+msgid "URL prefix path."
+msgstr "נתיב קידומת כתובת URL."
+
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr "קידומת URL שתחול על כל קישור HREF שנוצר באופן אוטומטי."
+
+msgid "URL file extension"
+msgstr "סיומת קובץ URL"
+
+msgid "No file extension."
+msgstr "אין סיומת קובץ."
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "URL file name delimeter"
+msgstr "מפריד שם קובץ כתובת URL"
+
+msgid "Remove all whitespace."
+msgstr "הסרת הרווחים הלבנים."
 
 msgid "Replace whitespace with dash(-)."
 msgstr "להחליף רווח לבן במקף (-)."
@@ -28,5 +250,36 @@ msgstr "להחליף רווח לבן במקף (-)."
 msgid "Replace whitespace with underscore(_)"
 msgstr "להחליף רווח לבן בקו תחתון (_)"
 
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "במה להשתמש כמפריד שם קובץ במקום רווח לבן."
+
+msgid "Generations to generate HREF links"
+msgstr "דורות לחילול קישורי HREF"
+
+msgid "The number of generations to generate HREF links."
+msgstr "מספר דורות לחילול קישורי .HREF"
+
+msgid "Exclude persons who died before (years)"
+msgstr "החרגת אנשים שנפטרו לפני (שנים)"
+
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr "האם לחולל קישורים לאנשים שמתו בינקותם, 1- לא מחריג אף אחד."
+
+msgid "Exclude center person"
+msgstr "החרגת אדם מרכזי"
+
+msgid "Whether or not to generate links for center person."
+msgstr "האם לחולל קישורים לאדם המרכזי."
+
+msgid "Exclude Spouses"
+msgstr "החרגת אנשים"
+
 msgid "Biography Content"
 msgstr "תוכן תולדות חיים"
+
+msgid "Text Color"
+msgstr "צבע מלל"
+
+msgid "Header Font size"
+msgstr "גודל גופן כותרת"

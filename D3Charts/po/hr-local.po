@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Greška prilikom zapisivanja {target_path}: {message}"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -54,7 +58,7 @@ msgid "RGB-color for female expandable box background."
 msgstr "RGB-boja za žensku boju pozadine u rasklopljenom stanju."
 
 msgid "The destination path for generated files."
-msgstr "Odredište za stvorene datoteke."
+msgstr "Odredište za generirane datoteke."
 
 msgid "The destination file name for html content."
 msgstr "Ime datoteke za html sadržaj."
@@ -66,7 +70,7 @@ msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
-"Stvara web-stranicu s grafičkim prikazom predaka (SVG) u sklopivom "
+"Generira web-stranicu s grafičkim prikazom predaka (SVG) u sklopivom "
 "stablastom obliku pomoću D3.js JavaScript biblioteke."
 
 msgid "Descendant Indented Tree"
@@ -77,7 +81,7 @@ msgid ""
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
 "library."
 msgstr ""
-"Stvara web-stranicu s grafičkim prikazom potomaka (SVG) u sklopivom "
+"Generira web-stranicu s grafičkim prikazom potomaka (SVG) u sklopivom "
 "stablastom obliku s uvlakama pomoću D3.js JavaScript biblioteke."
 
 msgid "Ancestral Fan Chart Options"
@@ -102,7 +106,7 @@ msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
-"Stvara web-stranicu s grafičkim prikazom predaka (SVG) u lepezastom "
+"Generira web-stranicu s grafičkim prikazom predaka (SVG) u lepezastom "
 "dijagramu pomoću D3.js JavaScript biblioteke."
 
 #, python-format
@@ -110,7 +114,7 @@ msgid "See %(reference)s : %(spouse)s"
 msgstr "Pogledaj %(reference)s : %(spouse)s"
 
 msgid "Generating report..."
-msgstr "Izrada izvještaja …"
+msgstr "Generiranje izvještaja …"
 
 msgid "Invalid Destination Directory"
 msgstr "Nevažeća odredišna mapa"
@@ -122,6 +126,18 @@ msgid ""
 msgstr ""
 "Odredišna mapa %s ne postoji\n"
 "Želiš li je pokušati stvoriti?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "Greška prilikom stvaranja {target_path}: {message}"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Odredišna datoteka %s već postoji.\n"
+"Želiš li je prepisati?"
 
 msgid "Default View"
 msgstr "Standardni prikaz"
@@ -142,22 +158,22 @@ msgid "Whether to show duplicate family trees in the report."
 msgstr "Da li prikazati duple rodoslove u izvještaju."
 
 msgid "Expanded Row Background Color"
-msgstr "Boja pozadine proširenih redova"
+msgstr "Boja pozadine proširenog retka"
 
 msgid "RGB-color for expanded row background."
-msgstr "RGB-boje za pozadine proširenih redova."
+msgstr "RGB boja za pozadinu proširenog retka."
 
 msgid "Expandable Background Color"
-msgstr "Proširiva boja pozadine"
+msgstr "Boja pozadine proširivog retka"
 
 msgid "RGB-color for expandable row background."
-msgstr "RGB-boje za proširive boje pozadine."
+msgstr "RGB boja za pozadinu proširivog retka."
 
 msgid "Non-Expandable Background Color"
-msgstr "Ne-proširiva boja pozadine"
+msgstr "Boja pozadine neproširivog retka"
 
 msgid "RGB-color for non-expandable row background."
-msgstr "RGB-boje za ne-proširive boje pozadine."
+msgstr "RGB boja za pozadinu neproširivog retka."
 
 msgid "Include records marked private"
 msgstr "Uključi zapise, označene kao privatne"
@@ -175,7 +191,7 @@ msgid "How to handle living people."
 msgstr "Kako postupati sa živim osobama."
 
 msgid "Whether or not to include people who may have recently died."
-msgstr "Da li uključiti osobe, koje su vjerojatno nedavno umrle."
+msgstr "Da li uključiti osobe, koje su možda nedavno umrle."
 
 msgid "Navigation"
 msgstr "Navigacija"
@@ -196,17 +212,18 @@ msgid "Where to click to expand/contract nodes."
 msgstr "Gdje pritisnuti za rasklapanje/sklapljanje čvorišta."
 
 msgid "Auto-generate HREF links for nodes"
-msgstr "Automastko stvaranje HREF-poveznica za čvorište"
+msgstr "Automastki generiraj HREF-poveznice za čvorišta"
 
 msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr "Da li automatski stvoriti HTML-poveznice za sva čvorišta u izvještaju."
+msgstr ""
+"Da li automatski generirati HTML-poveznice za svako čvorište u izvještaju."
 
 msgid "URL prefix path."
 msgstr "URL-staza."
 
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
-"URL-staza, koja se primijenjuje na svaku automatski stvorenu HREF-poveznicu."
+"URL-staza koja se primijenjuje na svaku automatski generiranu HREF-poveznicu."
 
 msgid "URL file extension"
 msgstr "Datotečni nastavak URL-a"
@@ -248,10 +265,10 @@ msgid "What to use as file name delimiter replacing whitespace."
 msgstr "Što koristiti kao razdvojnik umjesto razmaka."
 
 msgid "Generations to generate HREF links"
-msgstr "Generacije za stvaranje HREF-poveznica"
+msgstr "Generacije za generiranje HREF-poveznica"
 
 msgid "The number of generations to generate HREF links."
-msgstr "Broj generacija, za koje se stvaraju HREF-poveznice."
+msgstr "Broj generacija za generiranje HREF-poveznica."
 
 msgid "Exclude persons who died before (years)"
 msgstr "Isključi osobe koje su umrle prije (godina)"
@@ -259,20 +276,20 @@ msgstr "Isključi osobe koje su umrle prije (godina)"
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
 msgstr ""
-"Da li stvoriti poveznice za osobe koje su umrle pri porodu. −1 ne isključuje "
-"nikoga."
+"Da li generirati poveznice za osobe koje su umrle kao dojenče. −1 ne "
+"isključuje nikoga."
 
 msgid "Exclude center person"
 msgstr "Isključi središnju osobu"
 
 msgid "Whether or not to generate links for center person."
-msgstr "Da li stvoriti poveznice za središnju osobu."
+msgstr "Da li generirati poveznice za središnju osobu."
 
 msgid "Exclude Spouses"
 msgstr "Isključi supružnike"
 
 msgid "Whether or not to generate links for spouses."
-msgstr "Da li stvoriti poveznice za supružnike."
+msgstr "Da li generirati poveznice za supružnike."
 
 msgid "Biography Content"
 msgstr "Sadržaj biografije"

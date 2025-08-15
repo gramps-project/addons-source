@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-06-27 12:04+0000\n"
-"Last-Translator: WaldiS <sto@tutanota.de>\n"
+"PO-Revision-Date: 2025-07-30 08:11+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -19,10 +19,41 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
+msgid "Descendant Book"
+msgstr "Księga potomków"
+
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
 "Tworzy jeden lub więcej raportów potomków na podstawie dostarczonego "
 "zapytania."
 
+msgid "Descendants Report"
+msgstr "Raport potomków"
+
+msgid "Select filter to restrict people that appear in the report"
+msgstr "Wybierz filtr, aby ograniczyć ilość osób, które pojawią się w raporcie"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Określa, czy dołączać zduplikowane drzewa rodzinne do raportu."
+
 msgid "The style used for the title of the page."
 msgstr "Styl używany do tytułu strony."
+
+msgid "The style used for the table of contents header."
+msgstr "Styl używany do nagłówka spisu treści."
+
+msgid "The style used for the table of contents detail."
+msgstr "Styl używany do szczegółów spisu treści."
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+msgid "List children"
+msgstr "Wypisz dzieci"
+
+msgid "Include Index of Names"
+msgstr "Dołącz indeks nazwisk"
+
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "Określa, czy dołączać indeks nazwisk na końcu raportu."

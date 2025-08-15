@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-07-26 15:44+0000\n"
+"PO-Revision-Date: 2025-07-28 21:19+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
 "addons/eo/>\n"
@@ -15,5 +15,32 @@ msgstr ""
 "X-Generator: Weblate 5.13-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "Avatar Generator Tool"
+msgstr "Generatora Ilo de Avataro"
+
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "Ilo por aldoni avatarajn bildojn al via familia arbo"
+
+msgid "single image mode"
+msgstr "ununura bildoreĝimo"
+
+msgid "Choose how many images you'd like to use."
+msgstr "Elektu kiom da bildoj vi ŝatus uzi."
+
+msgid "Image for people with unknown gender."
+msgstr "Bildo por homoj kun nekonata sekso."
+
+msgid "Image for males."
+msgstr "Bildo por viroj."
+
+msgid "Image for females"
+msgstr "Bildo por virinoj"
+
 msgid "Select filter to restrict people"
 msgstr "Elektu filtrilon por limigi personojn"
+
+msgid "Remove images from people"
+msgstr "Forigas bildojn de homoj"
+
+msgid "Remove selected image(s)."
+msgstr "Forigas elektita(j)n bildo(j)n."

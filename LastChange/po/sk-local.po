@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,10 +12,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.13\n"
 
 msgid "You must select at least one type of record."
 msgstr "Musíte vybrať aspoň jeden typ záznamu."
+
+msgid "Changed On"
+msgstr "Zmenené na"
+
+msgid "Families Changed"
+msgstr "Zmenené rodiny"
+
+msgid "Family Surname"
+msgstr "Priezvisko rodiny"
+
+msgid "Places Changed"
+msgstr "Zmenené miesta"
+
+msgid "Media Changed"
+msgstr "Zmenené médiá"
+
+msgid "Sources Changed"
+msgstr "Zmenené zdroje"
+
+msgid "Notes Changed"
+msgstr "Zmenené poznámky"
 
 msgid "Select From"
 msgstr "Vybrať z"
@@ -25,3 +46,6 @@ msgstr "Štýl použitý pre titul strany."
 
 msgid "The style used for normal text"
 msgstr "Štýl používaný pre normálny text"
+
+msgid "changed on"
+msgstr "zmenené na"

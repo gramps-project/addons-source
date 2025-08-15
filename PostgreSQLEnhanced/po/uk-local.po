@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-12 19:09+0300\n"
+"PO-Revision-Date: 2025-08-06 22:30+0000\n"
+"Last-Translator: Максим Горпиніч <gorpinicmaksim5@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.13-dev\n"
+
+msgid "Starting migration..."
+msgstr "Розпочато міграцію..."
+
+msgid "Migration completed!"
+msgstr "Міграцію завершено!"
+
+msgid "Starting upgrade..."
+msgstr "Розпочато оновлення..."
+
+msgid "Creating indexes..."
+msgstr "Створення індексів..."
+
+msgid "Upgrade completed!"
+msgstr "Оновлення завершено!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "Покращений PostgreSQL"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "Розширена база даних PostgreSQL"
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"Для підтримки PostgreSQL Enhanced потрібен psycopg3. Встановіть за "
+"допомогою: pip install 'psycopg[binary]'"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"Версія psycopg3 %(installed)s занадто стара. Потрібна версія %(required)s "
+"або новіша."
+
+msgid "Database Backend"
+msgstr "Бекенд бази даних"
+
+msgid "Database module"
+msgstr "Модуль бази даних"
+
+msgid "JSONB support"
+msgstr "Підтримка JSONB"
+
+msgid "Version warning"
+msgstr "Попередження про версію"
+
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr "PostgreSQL %(version)s нижча за рекомендовану версію %(recommended)s"
+
+msgid "Extensions"
+msgstr "Розширення"
+
+msgid "Database size"
+msgstr "Розмір бази даних"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d осіб, %(families)d сімей, %(events)d подій"
+
+msgid "Migration manager not initialized"
+msgstr "Менеджер міграції не ініціалізовано"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "Розширені запити потребують підтримки JSONB"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "Розширення pg_trgm, необхідне для виявлення дублікатів"

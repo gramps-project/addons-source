@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -18,3 +18,9 @@ msgstr ""
 #, python-format
 msgid "Clipboard Gramplet: %s"
 msgstr "גרמפלט לוח־גזירים:%s"
+
+msgid "Collections Clipboard"
+msgstr "לוח־גזירים אוספים"
+
+msgid "Gramplet for grouping collections of items to aid in data entry."
+msgstr "גרמפלט לקיבוץ אוספי פריטים לסיוע בהזנת נתונים."

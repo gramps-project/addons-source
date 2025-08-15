@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-19 23:05+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,7 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+#, python-format
+msgid "Family Tree for %s"
+msgstr "Rodinný strom pre %s"
+
+msgid "Paper too small"
+msgstr "Papier je príliš malý"
+
+msgid "Some elements may not appear or be badly rendered."
+msgstr "Niektoré prvky sa nemusia zobraziť alebo môžu byť zle vykreslené."
+
+msgid "Anonymous"
+msgstr "Anonymný"
 
 #, python-format
 msgid "on %(ymd_date)s"
@@ -42,8 +55,39 @@ msgstr "v/vo %(place)s"
 msgid "(%(description)s)"
 msgstr "(%(description)s)"
 
+msgid "The center family for the tree"
+msgstr "Ústredná rodina pre strom"
+
+msgid "Ancestor Generations"
+msgstr "Generácie predkov"
+
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Počet generácií predkov, ktoré sa majú zahrnúť do stromu"
+
+msgid "Descendant Generations"
+msgstr "Generácie potomkov"
+
+msgid "The number of descendant generations to include in the tree"
+msgstr "Počet generácií potomkov, ktoré sa majú zahrnúť do stromu"
+
+msgid "Kekule number of husband"
+msgstr "Kekuléovo číslo manžela"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"Kekuléovo číslo manžela (ústredná rodina). Nastavte hodnotu 0, aby sa "
+"Kekuléove čísla nezobrazovali"
+
+msgid "Scale to fit on a single page"
+msgstr "Prispôsobiť na jednu stranu"
+
 msgid "Whether to scale to fit on a single page."
 msgstr "Či sa má zmenšiť tak, aby sa zmestilo na jednu stránku."
+
+msgid "No color"
+msgstr "Bez farby"
 
 msgid "First generation"
 msgstr "Prvá generácia"
@@ -54,6 +98,21 @@ msgstr "Druhá generácia"
 msgid "Third generation"
 msgstr "Tretia generácia"
 
+msgid "Male line"
+msgstr "Mužská línia"
+
+msgid "Male line and illegitimate children"
+msgstr "Mužská línia a nemanželské deti"
+
+msgid "Female line"
+msgstr "Ženská línia"
+
+msgid "Shuffle colors"
+msgstr "Zmiešať farby"
+
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Či zmiešať farby alebo ich usporiadať podľa dúhy."
+
 msgid "Replace first name with call name"
 msgstr "Nahradiť krstné meno bežným menom"
 
@@ -63,3 +122,45 @@ msgstr ""
 
 msgid "Include Occupation"
 msgstr "Zahrnúť povolanie"
+
+msgid "Include Residence"
+msgstr "Zahrnúť bydlisko"
+
+msgid "Print event data (dead person)"
+msgstr "Tlačiť údaje o udalosti (mŕtva osoba)"
+
+msgid "Year only"
+msgstr "Iba rok"
+
+msgid "Full date"
+msgstr "Celý dátum"
+
+msgid "Full date and place"
+msgstr "Úplný dátum a miesto"
+
+msgid "Print event data (living person)"
+msgstr "Tlačiť údaje o udalosti (žijúca osoba)"
+
+msgid "Fall back to baptism if birth event missing"
+msgstr "Ak chýba udalosť narodenia, použiť krst"
+
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Ak chýba udalosť úmrtia, použiť pohreb alebo kremáciu"
+
+msgid "Protect private items"
+msgstr "Chrániť súkromné položky"
+
+msgid "Include event description"
+msgstr "Zahrnúť popis udalosti"
+
+msgid "Text Options"
+msgstr "Možnosti textu"
+
+msgid "The style used for names."
+msgstr "Štýl použitý pre mená."
+
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "Štýl použitý pre údaje (narodenie, úmrtie, sobáš, rozvod)."
+
+msgid "Produces a graphical family tree."
+msgstr "Vytvorí grafický rodinný strom."

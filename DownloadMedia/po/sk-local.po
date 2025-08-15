@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-06 09:03+0000\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,10 +12,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+msgid "Download media"
+msgstr "Stiahnuť médiá"
 
 msgid "Media downloaded"
 msgstr "Médiá stiahnuté"
 
+#, python-format
+msgid "%d media files downloaded"
+msgstr "%d mediálnych súborov stiahnutých"
+
+msgid "Download media tool"
+msgstr "Nástroj na sťahovanie médií"
+
+msgid "Make sure you are connected to the internet before starting this tool."
+msgstr ""
+"Pred spustením tohto nástroja sa uistite, že ste pripojení k internetu."
+
 msgid "Downloading files"
 msgstr "Sťahovanie súborov"
+
+msgid "Media download errors detected"
+msgstr "Zistené chyby pri sťahovaní médií"
+
+msgid "Download media files from the internet"
+msgstr "Sťahovanie mediálnych súborov z internetu"
+
+msgid "This tool downloads media files from the internet"
+msgstr "Tento nástroj sťahuje mediálne súbory z internetu"

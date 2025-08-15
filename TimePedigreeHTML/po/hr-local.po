@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Failed writing "
 msgstr "Neuspjelo pisanje "
@@ -28,16 +28,28 @@ msgid "Destination directory"
 msgstr "Odredišna mapa"
 
 msgid "Path for generated files"
-msgstr "Staza za stvorene datoteke"
+msgstr "Staza za generirane datoteke"
 
 msgid "The destination file name for html content."
 msgstr "Ime datoteke za html sadržaj."
 
+msgid "Default Age"
+msgstr "Zadana dob"
+
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr "Zadana dob roditelja kada se dijete rodi s nepoznatom godinom rođenja"
+
+msgid "What to show"
+msgstr "Što prikazati"
+
 msgid "Show GrampsID"
 msgstr "Prikaži Gramps ID"
 
+msgid "Show GrampsID on top right of the box"
+msgstr "Prikaži Gramps ID gore desno u okviru"
+
 msgid "Optimize"
-msgstr "Optimiziraj"
+msgstr "Optimiraj"
 
 msgid "Use as little space in horizontal direction as possible"
 msgstr "Koristi što manje prostora u vodoravnom smjeru"
@@ -59,3 +71,18 @@ msgstr "Broj piksela po godini"
 
 msgid "How many pixel height is one year?"
 msgstr "Kolika visina piksela predstavlja jednu godinu?"
+
+msgid "Width of a box in pixel"
+msgstr "Širina polja u pikselima"
+
+msgid "Width of the box of a person in pixel"
+msgstr "Širina polja osobe u pikselima"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "Vodoravni razmak između polja u pikselima"
+
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "Najmanji vodoravni razmak između dva polja u pikselima"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "Duljina okomitog dijela linije u pikselima"

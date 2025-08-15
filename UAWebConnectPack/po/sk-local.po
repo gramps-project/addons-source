@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-06 20:38+0200\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,7 +12,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+msgid "UA Web Connect Pack"
+msgstr "UA Web Connect Pack"
+
+msgid "Collection of Web sites for the UA (requires libwebconnect)"
+msgstr "Zbierka webových stránok pre UA (vyžaduje libwebconnect)"
+
+msgid "Forum: ukrgenealogy.com.ua"
+msgstr "Fórum: ukrgenealogy.com.ua"
+
+msgid "Forum: genoua.name"
+msgstr "Fórum: genoua.name"
+
+msgid "Encyclopedia: esu.com.ua"
+msgstr "Encyklopédia: esu.com.ua"
+
+msgid "Wikipedia: uk.wikipedia.org"
+msgstr "Wikipedia: uk.wikipedia.org"
+
+msgid "Repressed DB: reabit.org.ua"
+msgstr "Potláčaná databáza: reabit.org.ua"
+
+msgid "Genealogy DB: familysearch.org"
+msgstr "Genealogická databáza: familysearch.org"
+
+msgid "Genealogy DB: myheritage.com.ua"
+msgstr "Genealogická databáza: myheritage.com.ua"
+
+msgid "Genealogy DB: pra.in.ua"
+msgstr "Genealogická databáza: pra.in.ua"
+
+msgid "Map: Ridni.org"
+msgstr "Mapa: Ridni.org"
+
+msgid "Search: google.com.ua"
+msgstr "Vyhľadávanie: google.com.ua"
 
 msgid "Search: roots.in.ua"
 msgstr "Hľadať: roots.in.ua"

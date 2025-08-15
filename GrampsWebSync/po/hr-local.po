@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,13 +13,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Gramps Web Sync"
-msgstr "Gramps web sinkronizacija"
+msgstr "Gramps Web sinkronizacija"
+
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "Sinkronizira lokalnu bazu podataka s Gramps Web instancom."
+
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Tvoj korisnik nema dovoljne dozvole na serveru za korištenje sinkronizacije."
+
+msgid "Unexpected error while applying changes."
+msgstr "Neočekivana greška prilikom primjene promjena."
 
 msgid "Media files are in sync."
 msgstr "Medijske datoteke su sinkronizirane."
+
+msgid "Error accessing media object."
+msgstr "Greška pri pristupu medijskom objektu."
+
+msgid "Failed importing downloaded XML file."
+msgstr "Uvoz preuzete XML datoteke nije uspio."
+
+msgid "Comparing local and remote data..."
+msgstr "Uspoređivanje lokalnih i udaljenih podataka …"
+
+msgid "Server authorization error."
+msgstr "Greška autorizacije servera."
+
+msgid "Server authorization error: insufficient permissions."
+msgstr "Greška autorizacije servera: nedovoljne dozvole."
+
+msgid "Error: URL not found."
+msgstr "Greška: URL nije pronađen."
+
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr ""
+"Nije moguće sinkronizirati promjene sa serverom: objekti su promijenjeni."
 
 #, python-format
 msgid "Error %s while connecting to server."
@@ -27,6 +59,28 @@ msgstr "Greška %s tijekom povezivanja na server."
 
 msgid "URL error while connecting to server."
 msgstr "URL greška tijekom povezivanja na server."
+
+msgid "Error while parsing response from server."
+msgstr "Greška tijekom obrade odgovora od servera."
+
+msgid "Continue without transport encryption?"
+msgstr "Nastaviti bez šifriranja prijenosa?"
+
+msgid ""
+"You have specified a URL with http scheme. If you continue, your password "
+"will be sent in clear text over the network. Use only for local testing!"
+msgstr ""
+"Zadan je URL s http shemom. Ako nastaviš, tvoja će se lozinka poslati u "
+"nešifriranom obliku putem mreže. Koristi samo za lokalno testiranje!"
+
+msgid "Continue with HTTP"
+msgstr "Nastavi s HTTP-om"
+
+msgid "Use HTTPS"
+msgstr "Koristi HTTPS"
+
+msgid "Server URL: "
+msgstr "URL servera: "
 
 msgid "Bidirectional Synchronization"
 msgstr "Dvosmjerna sinkronizacija"
