@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-06 12:26-0700\n"
-"PO-Revision-Date: 2025-08-04 21:02+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -20500,7 +20500,7 @@ msgstr "Ajouter/Enlever"
 
 #: RemoveTagTool/RemoveTagTool.py:87
 msgid "Add or remove tags from objects."
-msgstr ""
+msgstr "Ajouter ou supprimer les étiquettes des objets."
 
 #: RemoveTagTool/RemoveTagTool.py:88
 msgid "Add Tags"
@@ -20520,7 +20520,7 @@ msgstr "Choisir l'étiquette"
 
 #: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
-msgstr ""
+msgstr "Choisissez une étiquette à enlever."
 
 #: RemoveTagTool/RemoveTagTool.py:140
 msgid "Filter options"
@@ -22087,7 +22087,7 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:514
 #, python-format
 msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s est devenue une bat mitzvah en %(year)s à %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:517
 #, python-format
@@ -22102,12 +22102,12 @@ msgstr "%(female_name)s est née en %(year)s à %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:522
 #, python-format
 msgid "%(male_name)s was blessed in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s a été béni en %(year)s à %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:524
 #, python-format
 msgid "%(female_name)s was blessed in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s a été bénie en %(year)s à %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:527
 #, python-format
