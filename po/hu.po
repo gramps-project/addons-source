@@ -8,12 +8,13 @@
 # Jancsi <gyj@centrum.sk>, 2020.
 # Kolesár András <translation@kolesar.hu>, 2009.
 # Nemeséri Lajos <nemeseril@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Lajos Nemeséri <nemeseril@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-06 12:26-0700\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
+"PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: Lajos Nemeséri <nemeseril@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hu/>\n"
@@ -22,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -61,10 +62,8 @@ msgid "AncestorFill for %s"
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:205
-#, fuzzy
-#| msgid "General Data"
 msgid "Generation "
-msgstr "Általános adatok"
+msgstr "Generációk "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
@@ -87,10 +86,8 @@ msgid "Pedigree Collapse "
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:253
-#, fuzzy
-#| msgid "Size proportional to number of ancestors"
 msgid "Total Number of Ancestors found "
-msgstr "Méretarányos az ősök számával"
+msgstr "A megtalált ősök összes száma "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
@@ -393,10 +390,8 @@ msgid ""
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:86
-#, fuzzy
-#| msgid "Search results"
 msgid "Search Quota "
-msgstr "Keresési eredmények"
+msgstr "Kvóta keresés "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
@@ -875,7 +870,7 @@ msgstr "Becsült születési dátum"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr "Halálozási esemény hozzáadva %(evidence)s alapján %(name)s-tó(ő)l"
+msgstr "Halálozási esemény hozzáadva %(evidence)s alapján %(person)s-tó(ő)l"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
@@ -1086,22 +1081,19 @@ msgid ""
 msgstr ""
 
 #: CombinedView/personpage.py:597
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(event_type)s: %(date)s %(place)s-ba(e)n"
 
 #: CombinedView/personpage.py:601
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(date)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(event_type)s: %(date)s"
 
 #: CombinedView/personpage.py:604
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(place)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(event_type)s: %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
@@ -1141,18 +1133,15 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Failed to create directory structure : %s"
-msgstr "%(path)s mappa létrhozésa sikertelen"
+msgstr "Sikertelen könyvtár struktúra létrehozása: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
 #: D3Charts/DescendantIndentedTree.py:1554
-#, fuzzy, python-format
-#| msgid "Unable to copy web site template files from \"%(path)s\""
+#, python-format
 msgid "Failed to copy web files : %s"
-msgstr ""
-"Nem sikerült másolni a webhely sablon fájljait a(z) \"%(path)s\" helyről"
+msgstr "Nem sikerült másolni a web-fájlokat:%s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
@@ -1642,12 +1631,13 @@ msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship to Father"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Kapcsolat az apával"
+msgstr ""
+"\n"
+"Kapcsolat:{0} "
 
 #: DNA/dnasegmentmap.py:1091
 #, python-brace-format
@@ -1757,10 +1747,8 @@ msgid "Family:"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Sources?"
-msgstr "Források jegyzéke"
+msgstr "Források?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
@@ -2155,10 +2143,8 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
 #: DenominoViso/DenominoViso.py:2752
-#, fuzzy
-#| msgid "Description: "
 msgid "description"
-msgstr "Leírás: "
+msgstr "leírás"
 
 #: DenominoViso/DenominoViso.py:310 DenominoViso/DenominoViso.py:976
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
@@ -2204,10 +2190,8 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:968
 #: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
 #: SearchGramplet/SearchGramplet.gpr.py:19
-#, fuzzy
-#| msgid "Search:"
 msgid "Search"
-msgstr "Keresés:"
+msgstr "Keresés"
 
 #: DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
@@ -2715,16 +2699,12 @@ msgid "Select filter to restrict people that appear in the report"
 msgstr "Válasszon szűrőt a weboldalon megjelenő személyekhez"
 
 #: DescendantBooks/DescendantBookReport.py:585
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the table of contents header."
-msgstr "Megjegyzés az egyedi oldaltartalomhoz.\n"
+msgstr "A tartalomjegyzék fejlécéhez használt stílus."
 
 #: DescendantBooks/DescendantBookReport.py:595
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the table of contents detail."
-msgstr "Megjegyzés az egyedi oldaltartalomhoz.\n"
+msgstr "A tartalomjegyzék részleteihez használt stílus."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
 #, fuzzy
@@ -2860,10 +2840,9 @@ msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1294
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(type)s:"
-msgstr "%(type)s: %(value)s"
+msgstr "%(type)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1299
 #, python-format
@@ -2933,10 +2912,8 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1593
 #: DetDescendantReport-images/detdescendantreporti.py:1305
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the first personal entry."
-msgstr "Megjegyzés az egyedi oldaltartalomhoz.\n"
+msgstr "Az első személybemenethez használt stílus."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1603
 #: DetDescendantReport-images/detdescendantreporti.py:1315
@@ -3055,18 +3032,14 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:787
-#, fuzzy, python-format
-#| msgid "Unable to copy web site template files from \"%(path)s\""
+#, python-format
 msgid "Failed to create %s: %s"
-msgstr ""
-"Nem sikerült másolni a webhely sablon fájljait a(z) \"%(path)s\" helyről"
+msgstr "Nem sikerült %s-t létrehozni: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:816
-#, fuzzy, python-format
-#| msgid "Unable to copy web site template files from \"%(path)s\""
+#, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr ""
-"Nem sikerült másolni a webhely sablon fájljait a(z) \"%(path)s\" helyről"
+msgstr "Nem sikerült a %s proto-fájlokat olvasni: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:827
 #, python-format
@@ -3076,11 +3049,8 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:854
-#, fuzzy
-#| msgid "Unable to copy web site template files from \"%(path)s\""
 msgid "Failed writing file: "
-msgstr ""
-"Nem sikerült másolni a webhely sablon fájljait a(z) \"%(path)s\" helyről"
+msgstr "Sikertelen fájl írás: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:875
 #, fuzzy
@@ -3161,10 +3131,8 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1014
-#, fuzzy
-#| msgid "Search:"
 msgid "Search. . ."
-msgstr "Keresés:"
+msgstr "Keresés..."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1089
 msgid "Branch to expand when duplicated"
@@ -3195,10 +3163,8 @@ msgid "Theme color preference for Space Tree"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1136
-#, fuzzy
-#| msgid "Description: "
 msgid "Destination File"
-msgstr "Leírás: "
+msgstr "Kimeneti fájl"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
 #, fuzzy
@@ -3709,10 +3675,9 @@ msgid "Added items in File that are missing in Database"
 msgstr ""
 
 #: Differences/differences.py:191
-#, fuzzy, python-format
-#| msgid "Added %d events."
+#, python-format
 msgid "Added %s: %s "
-msgstr "%d esemény hozzáadva."
+msgstr "%s hozzáadva: %s "
 
 #: Differences/differences.py:195
 #, fuzzy
@@ -5073,15 +5038,10 @@ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"K, -18.2412 vagy -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr ""
-"FIGYELEM!  Biztosan le akarja törölni ennek a képnek az Exif metaadatait?"
+msgstr "FIGYELEM!  Ön éppen le akarja teljesen törölni a kép Exif metaadatait."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
@@ -5089,15 +5049,10 @@ msgid "Delete?"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
-msgstr ""
-"FIGYELEM!  Biztosan le akarja törölni ennek a képnek az Exif metaadatait?"
+msgstr "FIGYELEM!  Ön éppen le akarja teljesen törölni a kép GPS metaadatait."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
@@ -5122,10 +5077,8 @@ msgstr "A kép metaadatainak kinyerésekor hiba történt..."
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
-#, fuzzy
-#| msgid "Description: "
 msgid "Event Description Editor"
-msgstr "Leírás: "
+msgstr "Esemény Leírás Szerkesztő"
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
@@ -5133,10 +5086,8 @@ msgid ""
 msgstr ""
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Search substring..."
-msgstr "Kiválasztás... "
+msgstr "Részfüzér keresése..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
@@ -5365,10 +5316,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process relationships..."
-msgstr "Végrehajtás...\n"
+msgstr "Kapcsolatok futtatása..."
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
@@ -5402,10 +5351,8 @@ msgid "; %(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
 #: FamilySheet/FamilySheet.py:557
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Source references:"
-msgstr "Téma beállítások"
+msgstr "Forrás hivatkozások:"
 
 #: FamilySheet/FamilySheet.py:575
 #, python-format
@@ -5443,10 +5390,9 @@ msgstr ""
 
 #: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #: FamilyTree/FamilyTree.py:960
-#, fuzzy, python-format
-#| msgid "Print place pages"
+#, python-format
 msgid "in %(place)s"
-msgstr "Helyoldalak nyomtatása"
+msgstr "%(place)s-ba(e)n"
 
 #: FamilySheet/FamilySheet.py:864
 #, fuzzy
@@ -5507,10 +5453,8 @@ msgid "The basic style used for the text display"
 msgstr "A Google térképhez használt API kulcs"
 
 #: FamilySheet/FamilySheet.py:919
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the page key on the top"
-msgstr "Megjegyzés az egyedi oldaltartalomhoz.\n"
+msgstr "A felül lévő oldalkulcshoz használt stílus"
 
 #: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
@@ -5578,10 +5522,9 @@ msgid "resident"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:971
-#, fuzzy, python-format
-#| msgid "Description: "
+#, python-format
 msgid "(%(description)s)"
-msgstr "Leírás: "
+msgstr "(%(description)s)"
 
 #: FamilyTree/FamilyTree.py:1044
 #, fuzzy
@@ -5984,10 +5927,8 @@ msgid "Include the parents in the matching families."
 msgstr "Oszlop a dátumnak a tárgymutatóban"
 
 #: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
-#, fuzzy
-#| msgid "Family Nick Name"
 msgid "Family Filter name:"
-msgstr "Családi becenév"
+msgstr "Család-szűrő név:"
 
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:26
@@ -7287,10 +7228,8 @@ msgid "12. Religion"
 msgstr ""
 
 #: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
-#, fuzzy
-#| msgid "Original: "
 msgid "13. Origin"
-msgstr "Eredeti: "
+msgstr "13. Eredet"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
@@ -8001,10 +7940,8 @@ msgid "27. Church or place of worship: Number of communicants"
 msgstr ""
 
 #: Form/form_ca.xml.h:595
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Seating"
-msgstr "Kiválasztás... "
+msgstr "Ültetés"
 
 #: Form/form_ca.xml.h:596
 msgid "28. Church or place of worship: Seating capacity"
@@ -14902,10 +14839,9 @@ msgid "Gathering data"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr "Oldalak száma"
+msgstr "Személyek száma:%s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -15040,10 +14976,8 @@ msgid "Creates data file for GoogleEarth and opens it"
 msgstr ""
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
-#, fuzzy
-#| msgid "Description: "
 msgid "No place description"
-msgstr "Leírás: "
+msgstr "Nincs hely leírás"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
 msgid "GoogleEarth not installed!"
@@ -15226,10 +15160,8 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
 #: GrampsWebSync/grampswebsync.py:834
-#, fuzzy
-#| msgid "Modified: "
 msgid "Modified"
-msgstr "Módosított: "
+msgstr "Módosított"
 
 #: GrampsWebSync/grampswebsync.py:829
 msgid "Remote changes"
@@ -15370,10 +15302,8 @@ msgid "Path color to home person"
 msgstr ""
 
 #: GraphView/graphview.py:821
-#, fuzzy
-#| msgid "Font"
 msgid "Font:"
-msgstr "Betű"
+msgstr "Betű:"
 
 #: GraphView/graphview.py:835
 msgid "Avatars style"
@@ -15759,10 +15689,8 @@ msgstr ""
 
 #: GraphView/search_widget.py:400 PluginManager\PluginManager.py:169
 #: SearchGramplet/SearchGramplet.py:391
-#, fuzzy
-#| msgid "Search:"
 msgid "Search..."
-msgstr "Keresés:"
+msgstr "Keresés..."
 
 #: GraphView/search_widget.py:592
 #, python-format
@@ -15840,10 +15768,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:129
-#, fuzzy
-#| msgid "Longitude :"
 msgid "Start longitude"
-msgstr "Hosszúsági fok:"
+msgstr "Hosszúsági fok kezdete"
 
 #: Heatmap/heatmap.py:131
 msgid ""
@@ -16152,10 +16078,8 @@ msgid "Select the difference you wish to examine."
 msgstr ""
 
 #: ImportMerge/importmerge.glade:180
-#, fuzzy
-#| msgid "Description: "
 msgid "Object Name/Description"
-msgstr "Leírás: "
+msgstr "Objektum neve/leírása"
 
 #: ImportMerge/importmerge.glade:227
 msgid ""
@@ -16198,10 +16122,8 @@ msgid ""
 msgstr ""
 
 #: ImportMerge/importmerge.glade:392
-#, fuzzy
-#| msgid "Original: "
 msgid "Merge Original"
-msgstr "Eredeti: "
+msgstr "Eredeti összefűzése"
 
 #: ImportMerge/importmerge.glade:396
 msgid ""
@@ -16291,10 +16213,8 @@ msgid "Replace with import"
 msgstr ""
 
 #: ImportMerge/importmerge.py:115
-#, fuzzy
-#| msgid "Original: "
 msgid "Keep original"
-msgstr "Eredeti: "
+msgstr "Tartsa meg az eredetit"
 
 #: ImportMerge/importmerge.py:119
 msgid ""
@@ -16358,10 +16278,8 @@ msgstr ""
 
 #: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
 #: ImportMerge/importmerge.py:982
-#, fuzzy
-#| msgid "Original: "
 msgid "Original"
-msgstr "Eredeti: "
+msgstr "Eredeti"
 
 #: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
 #: ImportMerge/importmerge.py:983
@@ -17173,16 +17091,12 @@ msgid "This report only supports PDF as output file format."
 msgstr ""
 
 #: MediaReport/media_report.py:229
-#, fuzzy
-#| msgid "General Data"
 msgid "General:"
-msgstr "Általános adatok"
+msgstr "Általános:"
 
 #: MediaReport/media_report.py:250
-#, fuzzy
-#| msgid "<-- Image Types -->"
 msgid "Image type:"
-msgstr "<-- Kép típus -->"
+msgstr "Kép típus:"
 
 #: MediaReport/media_report.py:426
 msgid "Heading"
@@ -18041,10 +17955,9 @@ msgid "Shows the number of ancestors of the current person"
 msgstr ""
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of %s's ancestors"
-msgstr "Oldalak száma"
+msgstr "%s őseinek száma"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
@@ -18151,10 +18064,9 @@ msgid "Pedigree Chart for %s"
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:528
-#, fuzzy, python-format
-#| msgid "Pages"
+#, python-format
 msgid "Page %d"
-msgstr "Oldalak"
+msgstr "Oldal %d"
 
 #: PedigreeChart/PedigreeChart.py:640
 msgid "Show Mother/Father captions"
@@ -18202,9 +18114,8 @@ msgid " This is the primary birth event."
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:199
-#, fuzzy
 msgid " This is the primary death event."
-msgstr "Új esemény hozzáadása"
+msgstr " Ez az elsődleges halál esemény."
 
 #: PersonEverything/PersonEverything.py:238
 msgid "Parent Family"
@@ -18240,10 +18151,8 @@ msgstr "Téma beállítások"
 
 #: PersonEverything/PersonEverything.py:455
 #: PersonEverything/PersonEverything.py:732
-#, fuzzy
-#| msgid "Description: "
 msgid "Description and Path"
-msgstr "Leírás: "
+msgstr "Leírás és útvonal"
 
 #: PersonEverything/PersonEverything.py:484
 msgid "Referenced Region"
@@ -18282,10 +18191,8 @@ msgid "Alternative Name"
 msgstr "Egyébb név"
 
 #: PersonEverything/PersonEverything.py:618
-#, fuzzy
-#| msgid "Latitude :"
 msgid "Latitude, Longitude"
-msgstr "Szélességi fok:"
+msgstr "Szélességi, Hosszúsági fok"
 
 #: PersonEverything/PersonEverything.py:648
 #, fuzzy
@@ -18306,10 +18213,8 @@ msgid "Media type"
 msgstr "Médiatípus"
 
 #: PersonEverything/PersonEverything.py:679
-#, fuzzy
-#| msgid "Original: "
 msgid "Origin type"
-msgstr "Eredeti: "
+msgstr "Eredet típus"
 
 #: PersonEverything/PersonEverything.py:686
 msgid "Prefix, surname, connector"
@@ -18430,10 +18335,8 @@ msgid "Replace to {0}"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Detecting faces..."
-msgstr "Kiválasztás... "
+msgstr "Arcok észlelése..."
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
 msgid "Detection finished"
@@ -18520,16 +18423,12 @@ msgid "Error: login failed"
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
-#, fuzzy
-#| msgid "done!\n"
 msgid "done."
-msgstr "befejezve!\n"
+msgstr "befejezve."
 
 #: PhpGedView/phpgedviewconnector.py:347
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Connecting..."
-msgstr "Kiválasztás... "
+msgstr "Kapcsolódás..."
 
 #: PhpGedView/phpgedviewconnector.py:349
 msgid "Get version..."
@@ -18831,10 +18730,9 @@ msgid ""
 msgstr ""
 
 #: PlaceCleanup/placecleanup.py:353
-#, fuzzy, python-format
-#| msgid "No matching records found"
+#, python-format
 msgid "%s matches were found"
-msgstr "Nem található megfelelő bejegyzés"
+msgstr "%s egyezés található"
 
 #: PlaceCleanup/placecleanup.py:354
 msgid ""
@@ -20359,10 +20257,8 @@ msgid "No %s objects were found in database."
 msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:249
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process tags..."
-msgstr "Végrehajtás...\n"
+msgstr "Címkék feldolgozása..."
 
 #: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
@@ -20421,10 +20317,8 @@ msgid "Data:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:378
-#, fuzzy
-#| msgid "Pages"
 msgid "Page:"
-msgstr "Oldalak"
+msgstr "Oldal:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:419
 msgid "Selection with a filter"
@@ -20663,10 +20557,9 @@ msgid "Birth: %s"
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Death: %s"
-msgstr "Média útvonal frissítés"
+msgstr "Halálozás:%s"
 
 #: SearchGramplet/SearchGramplet.py:918
 #, fuzzy
@@ -21014,10 +20907,8 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
-#, fuzzy
-#| msgid "Original: "
 msgid "Origine:"
-msgstr "Eredeti: "
+msgstr "Eredeti:"
 
 #: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
@@ -21045,20 +20936,16 @@ msgstr ""
 #: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
 #: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
 #: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
-#, fuzzy
-#| msgid "Without name"
 msgid "First name:"
-msgstr "Név nélkül"
+msgstr "Keresztnév:"
 
 #: SourceIndex/census.glade:319 SourceIndex/death.glade:1003
 msgid "Birth date:"
 msgstr ""
 
 #: SourceIndex/census.glade:364
-#, fuzzy
-#| msgid "Media Path Update"
 msgid "Death date:"
-msgstr "Média útvonal frissítés"
+msgstr "Halálozás dátuma:"
 
 #: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
 msgid "Birth place:"
@@ -21081,10 +20968,8 @@ msgstr ""
 #: SourceIndex/marriage.glade:846 SourceIndex/marriage.glade:865
 #: SourceIndex/marriage.glade:884 SourceIndex/marriage.glade:1526
 #: SourceIndex/marriage.glade:1654 SourceIndex/witness.glade:124
-#, fuzzy
-#| msgid "Original: "
 msgid "Origin:"
-msgstr "Eredeti: "
+msgstr "Eredeti:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
 #: markdown_place_history_formatter.py:59
@@ -21097,10 +20982,8 @@ msgstr ""
 
 #: SourceIndex/census.glade:904 SourceIndex/death.glade:217
 #: SourceIndex/marriage.glade:1296
-#, fuzzy
-#| msgid "column"
 msgid "Volume:"
-msgstr "oszlop"
+msgstr "Kötet:"
 
 #: SourceIndex/census.glade:1046
 msgid "order, person, surname, given, age, status, occupation, etc ..."
@@ -21443,10 +21326,9 @@ msgid "and %s "
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:349
-#, fuzzy, python-format
-#| msgid "(m. %s)"
+#, python-format
 msgid " %s"
-msgstr "(ház. %s)"
+msgstr " %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:413
 #, fuzzy
@@ -21748,10 +21630,8 @@ msgid "Show these events"
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:113
-#, fuzzy
-#| msgid "Sort by:"
 msgid "Sort by "
-msgstr "Rendezés:"
+msgstr "Rendezés "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:114
 msgid "Sort in ascending order?"
@@ -21766,10 +21646,8 @@ msgid "January"
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
-#, fuzzy
-#| msgid "Search:"
 msgid "March"
-msgstr "Keresés:"
+msgstr "Március"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "April"
@@ -22829,10 +22707,8 @@ msgid "US Google"
 msgstr ""
 
 #: WebSearch.gpr.py:34 WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search:"
 msgid "WebSearch"
-msgstr "Keresés:"
+msgstr "Web-Kereső"
 
 #: WebSearch.gpr.py:36
 msgid ""
@@ -22948,20 +22824,17 @@ msgid "URL is copied to the Clipboard"
 msgstr ""
 
 #: WebSearch.py:2068
-#, fuzzy
-#| msgid "Search:"
 msgid "WebSearch Link"
-msgstr "Keresés:"
+msgstr "Web-Kereső hivatkozás"
 
 #: WebSearch.py:2110
 msgid "Attribute has been successfully added"
 msgstr ""
 
 #: WebSearch.py:2142
-#, fuzzy, python-brace-format
-#| msgid "Web site title"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Web-oldal cím"
+msgstr "Cím: {title}"
 
 #: WebSearch.py:2146
 #, python-brace-format
@@ -23024,33 +22897,29 @@ msgid "Value: %s"
 msgstr ""
 
 #: activity_row_generator.py:123
-#, fuzzy, python-format
+#, python-format
 msgid "Loaded from file: %s"
-msgstr "Anya kiválasztása"
+msgstr "Fájlból betöltve:%s"
 
 #: activity_row_generator.py:126
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Domain: %s"
-msgstr "Média útvonal frissítés"
+msgstr "Tartomány:%s"
 
 #: activity_row_generator.py:131
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Object: %s"
-msgstr "Média útvonal frissítés"
+msgstr "Objektum:%s"
 
 #: activity_row_generator.py:135
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Pattern: %s"
-msgstr "Média útvonal frissítés"
+msgstr "Minta:%s"
 
 #: activity_row_generator.py:138
-#, fuzzy, python-format
-#| msgid "Suppress Gramps ID"
+#, python-format
 msgid "Object Gramps ID: %s"
-msgstr "GRAMPS azonosító letiltása"
+msgstr "GRAMPS azonosító objektum:%s"
 
 #: activity_row_generator.py:142
 #, python-format
@@ -23420,12 +23289,13 @@ msgid ""
 msgstr ""
 
 #: lxml/etreeGramplet.py:476
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
-msgstr "Oldalak száma"
+msgstr ""
+"Oldalak száma: \n"
+"\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
 #, python-format
@@ -23644,22 +23514,16 @@ msgid " entries for surname(s); no frequency yet"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:503
-#, fuzzy
-#| msgid "Used for place"
 msgid " entries for place(s)"
-msgstr "Helyszínnél használt"
+msgstr " helyszín(ek) bemenet(ei)"
 
 #: lxml/lxmlGramplet.py:504
-#, fuzzy
-#| msgid "Export notes"
 msgid " note(s)"
-msgstr "Jegyzetek exportálása"
+msgstr " jegyzet(ek)"
 
 #: lxml/lxmlGramplet.py:505
-#, fuzzy
-#| msgid "Export sources"
 msgid " source(s)"
-msgstr "Források exportálása"
+msgstr " forrás(ok)"
 
 #: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
 msgid "Gallery.html"
@@ -23761,10 +23625,8 @@ msgid "Full hierarchy"
 msgstr ""
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Print place pages"
 msgid "Place Type:"
-msgstr "Helyoldalak nyomtatása"
+msgstr "Hely típus:"
 
 #: markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"
