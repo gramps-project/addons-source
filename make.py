@@ -363,7 +363,8 @@ elif command == "init":
             sys.path.insert(0, GRAMPSPATH)
             os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
             from gramps.gen.plug import make_environment
-        except ImportError:
+        except ImportError as e:
+            print(f"ImportError: {e}") # This will give the real error
             print(
                 "Where is Gramps: '%s'? Use "
                 "'GRAMPSPATH=path python3 make.py %s init'"
