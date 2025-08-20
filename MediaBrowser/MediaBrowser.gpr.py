@@ -38,5 +38,5 @@ register(
     gramplet="MediaBrowser",
     gramplet_title=_("Browser"),
     navtypes=["Person"],
-    help_url="Addon:MediaMerge",
+    help_url="Addon:MediaBrowserGramplet",
 )
