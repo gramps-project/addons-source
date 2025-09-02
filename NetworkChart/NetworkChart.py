@@ -336,7 +336,7 @@ class NetworkChartReport(Report):
                                 p_privacy, p_url]]
 
         for handle, family in self.database.get_family_cursor():
-            family_gref = str(family[1])
+            family_gref = str(family.gramps_id)
             f_family = self.database.get_family_from_handle(handle)
 
             f_hndl = f_family.get_father_handle()
