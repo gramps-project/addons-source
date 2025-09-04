@@ -353,6 +353,11 @@ class DetailedDescendantBookReport(Report):
         self.ca = CollectAscendants(self.database, self.user, self.title)
         self.ascendants = self.ca.collect_data(self.filter, self.center_person)
 
+        # Initialize attributes used for indexing and references
+        self.report_app_ref = {}
+        self.index_of_dates = {}
+        self.index_of_places = {}
+
         if self.dubperson:
             if len(self.ascendants) > 1:
                 self.user.begin_progress(self.title,
@@ -362,10 +367,7 @@ class DetailedDescendantBookReport(Report):
             # Need to do two runs of generations,
             # 1st run gets references for all people/mates in report
             # 2nd run actually generates the report and includes the references
-            self.report_app_ref = {}
             self.report_count = 0
-            self.index_of_dates = {}
-            self.index_of_places = {}
             self.phandle = 0 # person handle used by append_event to retrieve name and references to the current person
             for asc_handle in self.ascendants:
                 if len(self.ascendants) > 1:
