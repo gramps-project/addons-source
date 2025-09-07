@@ -6,6 +6,7 @@
 # Santi cluke <santicluke@gmail.com>, 2025.
 # gioboto <giomaussi@hotmail.com>, 2025.
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2025.
+# Hugo Vidal <69076992+hugoovf@users.noreply.github.com>, 2025.
 #
 # $Id: es.po 14573 2010-03-02 11:07:18Z romjerome $
 #
@@ -14,8 +15,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-06-21 17:01+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2025-08-31 06:05+0000\n"
+"Last-Translator: Hugo Vidal <69076992+hugoovf@users.noreply.github.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -23,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -765,9 +766,8 @@ msgid "Are you sure you want to reselect data?"
 msgstr "¿Confirma que quiere reseleccionar los datos?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:216
-#, fuzzy
 msgid "Run Select Again"
-msgstr "Seleccionar Reporte"
+msgstr "Volver a ejecutar la selección"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
