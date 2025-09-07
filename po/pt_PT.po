@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-07 08:58+0000\n"
+"PO-Revision-Date: 2025-08-16 05:47+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -3155,10 +3155,8 @@ msgid "Maximum display birth year"
 msgstr "Ano de nascimento máximo mostrado"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1113
-#, fuzzy
-#| msgid "Birth/date dates will not be displayed after this year"
 msgid "Birth/death dates will not be displayed after this year"
-msgstr "As datas de nascimento/data não serão mostradas a partir deste ano"
+msgstr "As datas de nascimento/óbito não serão mostradas após este ano"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1118
 msgid "Theme preference"
@@ -5044,16 +5042,12 @@ msgid "Bad Date/Time"
 msgstr "Data/Hora incorrectas"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 ou -18:9:48.21)"
+msgstr "Latitude inválida (sintaxe: 18°9′48.21″S, -18.2412 ou -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
-#| msgid "Invalid longitude (syntax: 18°9'"
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr "Longitude inválida (sintaxe: 18º9'"
+msgstr "Longitude inválida (sintaxe: 18°9′48.21″E, -18.2412 ou -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -19459,23 +19453,21 @@ msgstr "Base de dados PostgreSQL"
 #: PostgreSQLEnhanced/concurrency.py:479
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
-msgstr ""
+msgstr "Objecto {obj_type}:{handle} modificado por outro utilizador"
 
 #: PostgreSQLEnhanced/migration.py:168
 msgid "Starting migration..."
 msgstr "A iniciar a migração..."
 
 #: PostgreSQLEnhanced/migration.py:182
-#, fuzzy, python-format
-#| msgid "Migrating %(type)s objects..."
+#, python-format
 msgid "Migrating %s objects..."
-msgstr "A migrar %(type)s objectos..."
+msgstr "A migrar %s objectos..."
 
 #: PostgreSQLEnhanced/migration.py:193
-#, fuzzy, python-format, python-brace-format
-#| msgid "Migrated %(count)d %(type)s objects"
+#, python-brace-format, python-format
 msgid "Migrated %s {obj_type} objects"
-msgstr "Migrados %(count)d %(type)s objectos"
+msgstr "Migrados %s(obj_type) objectos"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
@@ -19486,10 +19478,9 @@ msgid "Starting upgrade..."
 msgstr "A iniciar a actualização..."
 
 #: PostgreSQLEnhanced/migration.py:470
-#, fuzzy, python-format
-#| msgid "Upgrading %(type)s objects..."
+#, python-format
 msgid "Upgrading %s objects..."
-msgstr "A actualizar %(type)s objectos..."
+msgstr "A actualizar %s objectos..."
 
 #: PostgreSQLEnhanced/migration.py:478
 msgid "Creating indexes..."
@@ -19514,6 +19505,10 @@ msgid ""
 "advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
 "compatible."
 msgstr ""
+"Motor Advanced PostgreSQL com armazenamento JSONB, suporte a base de dados "
+"gráfica (Apache AGE), similaridade de vector (pgvector), e capacidade AI/ML. "
+"Para utilizadores avançados. Requer PostgreSQL 15+ com extensões. Compatível "
+"com Gramps Web."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:154
 msgid ""
@@ -19582,6 +19577,7 @@ msgstr "Consultas avançadas requerem suporte a JSONB"
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1206
 msgid "Full-text search requires JSONB support or search capabilities"
 msgstr ""
+"Procura completa de texto requer suporte a JSONB ou capacidade de procura"
 
 #: PostgreSQLEnhanced/queries.py:364
 msgid "pg_trgm extension required for duplicate detection"
