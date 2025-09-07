@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"PO-Revision-Date: 2025-09-05 10:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -144,7 +144,7 @@ msgstr "Štýl použitý pre titul strany."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr "Skontrolovať údaje o asociáciách"
+msgstr "Kontrola údajov o asociáciách"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
@@ -166,7 +166,7 @@ msgstr "Z"
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
-msgstr "Pripojiť zdroj"
+msgstr "Pripojenie zdroja"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
@@ -606,7 +606,7 @@ msgstr ""
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
-msgstr "Zoradiť deti podľa poradia narodenia"
+msgstr "Zoradenie detí podľa poradia narodenia"
 
 #: BirthOrder/birthorder.gpr.py:12
 msgid ""
@@ -656,7 +656,7 @@ msgstr "Zobraziť iba narodeniny so značkou"
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 msgid "Calculate Estimated Dates"
-msgstr "Vypočítať odhadované dátumy"
+msgstr "Výpočet odhadovaných dátumov"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
@@ -927,7 +927,7 @@ msgstr "Odhadovaný dátum"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
-msgstr "Opraviť kapitálky v daných (krstných) menách"
+msgstr "Oprava kapitálok v daných (krstných) menách"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
@@ -2001,7 +2001,7 @@ msgstr "Zadajte výraz do polí vyššie a kliknite na Vypočítať."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
-msgstr "Gramplet Hlbšie vzťahy"
+msgstr "Gramplet Hlboké vzťahy"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
@@ -2051,7 +2051,7 @@ msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
-msgstr "Nie je označená aktívna osoba."
+msgstr "Nie je nastavená aktívna osoba."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
@@ -2214,7 +2214,7 @@ msgstr "typ grafu prekračuje hranice"
 #: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
 #: SearchGramplet/SearchGramplet.gpr.py:19
 msgid "Search"
-msgstr "Hľadať"
+msgstr "Hľadanie"
 
 #: DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
@@ -2945,11 +2945,11 @@ msgstr "Štýl použitý pre referencie v indexe miest."
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
 msgid "Descendant Count"
-msgstr "Počítanie potomkov"
+msgstr "Počty potomkov"
 
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
-msgstr "Gramplet na zobrazenie ľudí a počty potomkov"
+msgstr "Gramplet na zobrazenie ľudí a počtov potomkov"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
 msgid "Descendant Space Tree"
@@ -3159,10 +3159,8 @@ msgid "Maximum display birth year"
 msgstr "Maximálny rok narodenia na zobrazenie"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1113
-#, fuzzy
-#| msgid "Birth/date dates will not be displayed after this year"
 msgid "Birth/death dates will not be displayed after this year"
-msgstr "Dátumy narodenia/dátumy sa po tomto roku nebudú zobrazovať"
+msgstr "Dátumy narodenia/úmrtia nebudú zobrazené po tomto roku"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1118
 msgid "Theme preference"
@@ -4718,7 +4716,7 @@ msgstr "Obsah stránky"
 #: EditExifMetadata/editexifmetadata.py:1135
 #: EditExifMetadata/editexifmetadata.py:1147
 msgid "Edit Image Exif Metadata"
-msgstr "Upraviť Exif metadáta obrázku"
+msgstr "Úprava Exif metadát obrázku"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
@@ -4804,7 +4802,7 @@ msgid ""
 "web browser."
 msgstr ""
 "Vo vašom webovom prehliadači zobrazí stránku pomocníka Gramps Wiki s témou "
-"'Upraviť Exif metadáta obrázku'."
+"'Úprava Exif metadát obrázku'."
 
 #: EditExifMetadata/editexifmetadata.py:194
 msgid ""
@@ -5028,16 +5026,14 @@ msgid "Bad Date/Time"
 msgstr "Nesprávny dátum/čas"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"J, -18.2412 alebo -18:9:48.21)"
+msgstr ""
+"Neplatná zemepisná šírka (syntax: 18°9′48.21″J, -18.2412 alebo -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
-#| msgid "Invalid longitude (syntax: 18°9'"
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr "Neplatná zemepisná dĺžka (syntax: 18°9'"
+msgstr ""
+"Neplatná zemepisná dĺžka (syntax: 18°9′48.21″V, -18.2412 or -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -5196,11 +5192,11 @@ msgstr ""
 
 #: ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
-msgstr "Extrahovať údaje o mieste z názvu miesta"
+msgstr "Extrakcia údajov o mieste z názvu miesta"
 
 #: ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
-msgstr "Pokusy o extrakciu mesta a štátu/provincie z názvu miesta"
+msgstr "Pokúsi sa o extrakciu mesta a štátu/provincie z názvu miesta"
 
 #: ExtractCity/extractcity.py:402
 msgid "Place title"
@@ -5830,7 +5826,7 @@ msgstr "Nájde rodiny, ktoré vyhovujú filtru udalostí"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
-msgstr ""
+msgstr "Zodpovedá rodinám, ktoré sa zhodujú s filtrom udalostí"
 
 #: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
@@ -5926,7 +5922,7 @@ msgstr ""
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
-msgstr "Filter pre viacnásobných rodičov"
+msgstr "Filter viacnásobných rodičov"
 
 #: FilterRules/multipleparents.py:42
 msgid "People with multiple parent records"
@@ -6117,82 +6113,81 @@ msgstr "Obec"
 
 #: Form/form_ca.xml.h:5
 msgid "Comprising"
-msgstr ""
+msgstr "Obsahujúci"
 
 #: Form/form_ca.xml.h:6
 msgid "OfTheSaid"
-msgstr ""
+msgstr "Z uvedeného"
 
 #: Form/form_ca.xml.h:7 Form/form_ca.xml.h:293 Form/form_ca.xml.h:347
 #: Form/form_ca.xml.h:396 Form/form_ca.xml.h:457 Form/form_ca.xml.h:536
 #: Form/form_ca.xml.h:621 Form/form_ca.xml.h:668 Form/form_ca.xml.h:758
 #: Form/form_ca.xml.h:801
 msgid "Enumerator"
-msgstr ""
+msgstr "Sčítací komisár"
 
 #: Form/form_ca.xml.h:11 Form/form_ca.xml.h:217
 msgid "1. Names of Inmates"
-msgstr ""
+msgstr "1. Mená väzňov"
 
 #: Form/form_ca.xml.h:13
 msgid "2. Profession, Trade or Occupation"
-msgstr ""
+msgstr "2. Profesia, obchod alebo zamestnanie"
 
 #: Form/form_ca.xml.h:14 Form/form_ca.xml.h:220 Form/form_ca.xml.h:316
 #: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
 #: Form/form_ca.xml.h:636 Form/form_ca.xml.h:691 Form/form_ca.xml.h:777
 #: Form/form_ca.xml.h:828
 msgid "BirthPlace"
-msgstr ""
+msgstr "Miesto narodenia"
 
 #: Form/form_ca.xml.h:15 Form/form_ca.xml.h:221
 msgid "3. Place of Birth"
-msgstr ""
+msgstr "3. Miesto narodenia"
 
 #: Form/form_ca.xml.h:17
 msgid "4. Religion"
-msgstr ""
+msgstr "4. Náboženstvo"
 
 #: Form/form_ca.xml.h:19
+#, fuzzy
 msgid "5. Residence if Outside of Limits"
-msgstr ""
+msgstr "5. Bydlisko, ak je mimo hraníc"
 
 #: Form/form_ca.xml.h:21
 msgid "6. Age at Next Birthday"
-msgstr ""
+msgstr "6. Vek pri ďalších narodeninách"
 
 #: Form/form_ca.xml.h:22 Form/form_ca.xml.h:230
 msgid "SexMale"
-msgstr ""
+msgstr "Pohlavie mužské"
 
 #: Form/form_ca.xml.h:23
 msgid "7. Sex: Male"
-msgstr ""
+msgstr "7. Pohlavie: mužské"
 
 #: Form/form_ca.xml.h:24
 msgid "SexFemale"
-msgstr ""
+msgstr "Pohlavie ženské"
 
 #: Form/form_ca.xml.h:25
 msgid "8. Sex: Female"
-msgstr ""
+msgstr "8. Pohlavie: ženské"
 
 #: Form/form_ca.xml.h:26 Form/form_ca.xml.h:234 Form/form_ca.xml.h:324
 #: Form/form_ca.xml.h:378 Form/form_ca.xml.h:415 Form/form_ca.xml.h:472
 #: Form/form_ca.xml.h:632 Form/form_ca.xml.h:683 Form/form_ca.xml.h:771
 #: Form/form_ca.xml.h:824
 msgid "MaritalStatus"
-msgstr ""
+msgstr "Rodinný stav"
 
 #: Form/form_ca.xml.h:27
 msgid "9. Married or Single"
-msgstr ""
+msgstr "9. Ženatý (vydatá) alebo slobodný (-á)"
 
 #: Form/form_ca.xml.h:28 Form/form_ca.xml.h:240
-#, fuzzy
-#| msgid "Colors"
 msgid "Coloured"
-msgstr "Farby"
+msgstr "Farební"
 
 #: Form/form_ca.xml.h:29
 msgid "10. Coloured Persons - Negroes"
@@ -6208,7 +6203,7 @@ msgstr "11. Indiáni, ak sú"
 
 #: Form/form_ca.xml.h:32
 msgid "ResidentsMale"
-msgstr ""
+msgstr "Obyvatelia muži"
 
 #: Form/form_ca.xml.h:33
 msgid "12. Residents: Members, Male"
@@ -6216,7 +6211,7 @@ msgstr "12. Obyvatelia: členovia, muži"
 
 #: Form/form_ca.xml.h:34
 msgid "ResidentsFemale"
-msgstr ""
+msgstr "Obyvatelia ženy"
 
 #: Form/form_ca.xml.h:35
 msgid "13. Residents: Members, Female"
@@ -6224,7 +6219,7 @@ msgstr "13. Obyvatelia: členovia, ženy"
 
 #: Form/form_ca.xml.h:36
 msgid "NonMembersMale"
-msgstr ""
+msgstr "Nečlenovia muži"
 
 #: Form/form_ca.xml.h:37
 msgid "14. Residents: Not Members: Male"
@@ -6232,7 +6227,7 @@ msgstr "14. Obyvatelia: nečlenovia: muži"
 
 #: Form/form_ca.xml.h:38
 msgid "NonMembersFemale"
-msgstr ""
+msgstr "Nečlenovia ženy"
 
 #: Form/form_ca.xml.h:39
 msgid "15. Residents: Not Members: Female"
@@ -6240,19 +6235,19 @@ msgstr "15. Obyvatelia: nečlenovia: ženy"
 
 #: Form/form_ca.xml.h:40
 msgid "AbsentMembersMale"
-msgstr ""
+msgstr "Chýbajúci členovia muži"
 
 #: Form/form_ca.xml.h:41
 msgid "16. Members Absent: Male"
-msgstr ""
+msgstr "16. Členovia chýbajúci: muži"
 
 #: Form/form_ca.xml.h:42
 msgid "AbsentMembersFemale"
-msgstr ""
+msgstr "Chýbajúci členovia ženy"
 
 #: Form/form_ca.xml.h:43
 msgid "17. Members Absent: Female"
-msgstr ""
+msgstr "17. Členovia chýbajúci: ženy"
 
 #: Form/form_ca.xml.h:44
 msgid "DeafDumbMale"
@@ -7324,10 +7319,8 @@ msgid "4. Houses inhabited"
 msgstr ""
 
 #: Form/form_ca.xml.h:408
-#, fuzzy
-#| msgid "Families Index"
 msgid "5. Families"
-msgstr "Index rodín"
+msgstr "5. Rodiny"
 
 #: Form/form_ca.xml.h:410
 msgid "6. Names"
@@ -7372,10 +7365,8 @@ msgid "Relation"
 msgstr "Vzťah"
 
 #: Form/form_ca.xml.h:418
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "10. Relationship to Head of Family"
-msgstr "Vzťah k otcovi"
+msgstr "10. Vzťah k hlave rodiny"
 
 #: Form/form_ca.xml.h:422
 msgid "12. FrenchCanadian"
@@ -7468,10 +7459,8 @@ msgstr ""
 
 #: Form/form_ca.xml.h:449 Form/form_ca.xml.h:528 Form/form_ca.xml.h:660
 #: Form/form_ca.xml.h:753 Form/form_ca.xml.h:793
-#, fuzzy
-#| msgid "TR-Title"
 msgid "SubTitle"
-msgstr "TR-nadpis"
+msgstr "Podtitul"
 
 #: Form/form_ca.xml.h:454 Form/form_ca.xml.h:533 Form/form_ca.xml.h:665
 msgid "PollSub"
@@ -7498,16 +7487,12 @@ msgid "4. Sex"
 msgstr "4. Pohlavie"
 
 #: Form/form_ca.xml.h:468
-#, fuzzy
-#| msgid "Colors"
 msgid "Colour"
-msgstr "Farby"
+msgstr "Farba"
 
 #: Form/form_ca.xml.h:469
-#, fuzzy
-#| msgid "Colors"
 msgid "5. Colour"
-msgstr "Farby"
+msgstr "5. Farba"
 
 #: Form/form_ca.xml.h:471 Form/form_ca.xml.h:682
 msgid "6. Relation to head of family"
@@ -7688,7 +7673,7 @@ msgstr "30. Vie písať"
 
 #: Form/form_ca.xml.h:520 Form/form_ca.xml.h:840
 msgid "SpeakEnglish"
-msgstr ""
+msgstr "Hovorí anglicky"
 
 #: Form/form_ca.xml.h:521
 msgid "31. Can speak English"
@@ -7696,7 +7681,7 @@ msgstr "31. Vie hovoriť anglicky"
 
 #: Form/form_ca.xml.h:522 Form/form_ca.xml.h:842
 msgid "SpeakFrench"
-msgstr ""
+msgstr "Hovorí francúzsky"
 
 #: Form/form_ca.xml.h:523
 msgid "32. Can speak French"
@@ -7762,30 +7747,28 @@ msgstr "6. Domy: obývané"
 
 #: Form/form_ca.xml.h:553 Form/form_us.xml.h:789 Form/form_us.xml.h:832
 #: Form/form_us.xml.h:891
-#, fuzzy
-#| msgid "Animation"
 msgid "Institution"
-msgstr "Animácia"
+msgstr "Inštitúcia"
 
 #: Form/form_ca.xml.h:554
 msgid "7. Institution: Special or legal name"
-msgstr ""
+msgstr "7. Inštitúcia: Špecifický alebo právny názov"
 
 #: Form/form_ca.xml.h:555
 msgid "Buildings"
-msgstr ""
+msgstr "Budovy"
 
 #: Form/form_ca.xml.h:556
 msgid "8. Institution: Number of buildings"
-msgstr ""
+msgstr "8. Inštitúcia: Počet budov"
 
 #: Form/form_ca.xml.h:558
 msgid "9. Number of families in house or institution"
-msgstr ""
+msgstr "9. Počet rodín v dome alebo inštitúcii"
 
 #: Form/form_ca.xml.h:559
 msgid "Rooms"
-msgstr ""
+msgstr "Izby"
 
 #: Form/form_ca.xml.h:560
 msgid "10. Number of rooms in house or institution for each famiy"
@@ -7914,10 +7897,8 @@ msgid "25. Real Estate Leased: Number of manufacturing establishments"
 msgstr ""
 
 #: Form/form_ca.xml.h:591
-#, fuzzy
-#| msgid "DenominoViso"
 msgid "Denomination"
-msgstr "DenominoViso"
+msgstr "Denominácia"
 
 #: Form/form_ca.xml.h:592
 msgid "26. Church or place of worship: Religious denomination"
@@ -7940,10 +7921,8 @@ msgid "28. Church or place of worship: Seating capacity"
 msgstr ""
 
 #: Form/form_ca.xml.h:597
-#, fuzzy
-#| msgid "DenominoViso"
 msgid "SSDenomination"
-msgstr "DenominoViso"
+msgstr "Denominácia nedeľnej školy"
 
 #: Form/form_ca.xml.h:598
 msgid "29. Sunday School: Religious Denomination"
@@ -8050,10 +8029,8 @@ msgid "9. Post office address"
 msgstr ""
 
 #: Form/form_ca.xml.h:642 Form/form_us.xml.h:1252
-#, fuzzy
-#| msgid "description"
 msgid "Section"
-msgstr "popis"
+msgstr "Sekcia"
 
 #: Form/form_ca.xml.h:643
 msgid "10. Location: Section"
@@ -8506,10 +8483,8 @@ msgstr ""
 #: Form/form_gb.xml.h:560 Form/form_gb.xml.h:588 Form/form_gb.xml.h:616
 #: Form/form_us.xml.h:1631 Form/form_us.xml.h:1645 Form/form_us.xml.h:2406
 #: Overview/Overview.py:79 Overview/Overview.py:114
-#, fuzzy
-#| msgid "Animation"
 msgid "Condition"
-msgstr "Animácia"
+msgstr "Stav"
 
 #: Form/form_dk.xml.h:11 Form/form_dk.xml.h:28 Form/form_dk.xml.h:45
 #: Form/form_dk.xml.h:60 Form/form_dk.xml.h:77 Form/form_dk.xml.h:94
@@ -8802,105 +8777,110 @@ msgstr ""
 #: Form/form_us.xml.h:2343 Form/form_us.xml.h:2401 Form/form_us.xml.h:2427
 #: Form/form_us.xml.h:2459
 msgid "Certificate Number"
-msgstr ""
+msgstr "Číslo osvedčenia"
 
 #: Form/form_gb.xml.h:2 Form/form_gb.xml.h:20 Form/form_gb.xml.h:39
 #: Form/form_us.xml.h:2344 Form/form_us.xml.h:2402 Form/form_us.xml.h:2428
 #: Form/form_us.xml.h:2460
 msgid "Entry Number"
-msgstr ""
+msgstr "Číslo záznamu"
 
 #: Form/form_gb.xml.h:3 Form/form_gb.xml.h:40 Form/form_gb.xml.h:196
 #: Form/form_gb.xml.h:230 Form/form_gb.xml.h:329 Form/form_gb.xml.h:365
 msgid "Registration District"
-msgstr ""
+msgstr "Registračný obvod"
 
 #: Form/form_gb.xml.h:4 Form/form_gb.xml.h:21 Form/form_gb.xml.h:41
 msgid "Administrative Area"
-msgstr ""
+msgstr "Administratívna oblasť"
 
 #: Form/form_gb.xml.h:5 Form/form_gb.xml.h:22 Form/form_gb.xml.h:42
 msgid "County/Administrative Area"
-msgstr ""
+msgstr "Kraj/Administratívna oblasť"
 
 #: Form/form_gb.xml.h:6 Form/form_gb.xml.h:43 Form/form_us.xml.h:2345
 #: Form/form_us.xml.h:2429 Form/form_us.xml.h:2461
 msgid "Date Registered"
-msgstr ""
+msgstr "Dátum registrácie"
 
 #: Form/form_gb.xml.h:7 Form/form_gb.xml.h:44 Form/form_us.xml.h:2346
 #: Form/form_us.xml.h:2430 Form/form_us.xml.h:2462
 msgid "Registrar"
-msgstr ""
+msgstr "Registrátor"
 
 #: Form/form_gb.xml.h:13 Form/form_gb.xml.h:47
 msgid "Maiden Surname"
-msgstr ""
+msgstr "Dievčenské priezvisko"
 
 #: Form/form_gb.xml.h:16 Form/form_gb.xml.h:25 Form/form_gb.xml.h:37
 #: Form/form_gb.xml.h:56 Form/form_us.xml.h:1055
 msgid "Signed"
-msgstr ""
+msgstr "Podpísané"
 
 #: Form/form_gb.xml.h:23
 msgid "Banns/Licence"
-msgstr ""
+msgstr "Ohlášky/Povolenie"
 
 #: Form/form_gb.xml.h:31 Form/form_gb.xml.h:34
 msgid "Deceased"
-msgstr ""
+msgstr "Zosnulý"
 
 #: Form/form_gb.xml.h:48
 msgid "Maiden surname of woman who was married"
-msgstr ""
+msgstr "Dievčenské priezvisko ženy, ktorá bola vydatá"
 
 #: Form/form_gb.xml.h:51 Form/form_us.xml.h:986 Form/form_us.xml.h:1008
 #: Form/form_us.xml.h:1141 Form/form_us.xml.h:1155 Form/form_us.xml.h:1452
 #: Form/form_us.xml.h:2375 Form/form_us.xml.h:2488 Form/form_us.xml.h:2513
 #: Form/form_us.xml.h:2557
 msgid "Place of Birth"
-msgstr ""
+msgstr "Miesto narodenia"
 
 #: Form/form_gb.xml.h:53
 msgid "Usual Address"
-msgstr "Zvyčajná adresa"
+msgstr "Obvyklá adresa"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
-msgstr ""
+msgstr "Mesto alebo štvrť"
 
 #: Form/form_gb.xml.h:60 Form/form_gb.xml.h:69 Form/form_gb.xml.h:85
 msgid "Parish or Township"
-msgstr ""
+msgstr "Farnosť alebo obec"
 
 #: Form/form_gb.xml.h:62
 msgid "NAMES of each Person who abode therein the preceding Night."
-msgstr ""
+msgstr "MENÁ každej osoby, ktorá tam predchádzajúcu noc bývala."
 
 #: Form/form_gb.xml.h:64
 msgid ""
 "AGE, rounded down to the nearest five years for those aged fifteen or over."
 msgstr ""
+"VEK, zaokrúhlený nadol na najbližších päť rokov pre osoby vo veku pätnásť "
+"rokov a viac."
 
 #: Form/form_gb.xml.h:66
 msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
-msgstr ""
+msgstr "POVOLANIE, OBCHOD, ZAMESTNANIE alebo NEZÁVISLÉ PROSTRIEDKY."
 
 #: Form/form_gb.xml.h:68
 msgid ""
 "Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
 "Parts (P)."
 msgstr ""
+"Či sa narodil v tom istom kraji (A alebo N), Škótsku (S), Írsku (I) alebo v "
+"zahraničných častiach (P)."
 
 #: Form/form_gb.xml.h:70 Form/form_gb.xml.h:91 Form/form_gb.xml.h:110
 msgid "Ecclesiastical District"
-msgstr ""
+msgstr "Cirkevný obvod"
 
 #: Form/form_gb.xml.h:75
 msgid ""
 "Name and Surname of each Person who abode in the house, on the Night of the "
 "30th March, 1851"
 msgstr ""
+"Meno a priezvisko každej osoby, ktorá bývala v dome v noci 30. marca 1851"
 
 #: Form/form_gb.xml.h:77 Form/form_gb.xml.h:95 Form/form_gb.xml.h:433
 #: Form/form_gb.xml.h:460 Form/form_gb.xml.h:488 Form/form_gb.xml.h:520
@@ -8910,59 +8890,59 @@ msgstr "Vzťah k hlave rodiny"
 
 #: Form/form_gb.xml.h:81
 msgid "Rank, Profession or Occupation"
-msgstr ""
+msgstr "Hodnosť, povolanie alebo zamestnanie"
 
 #: Form/form_gb.xml.h:84
 msgid "Whether Blind or Deaf and Dumb"
-msgstr ""
+msgstr "Či je slepý alebo hluchý a nemý"
 
 #: Form/form_gb.xml.h:86 Form/form_gb.xml.h:104 Form/form_gb.xml.h:125
 msgid "City or Municipal Borough"
-msgstr ""
+msgstr "Mesto alebo mestská časť"
 
 #: Form/form_gb.xml.h:87 Form/form_gb.xml.h:105 Form/form_gb.xml.h:126
 #: Form/form_gb.xml.h:148 Form/form_gb.xml.h:277
 msgid "Municipal Ward"
-msgstr ""
+msgstr "Mestský obvod"
 
 #: Form/form_gb.xml.h:88 Form/form_gb.xml.h:106 Form/form_gb.xml.h:127
 #: Form/form_gb.xml.h:601
 msgid "Parliamentary Borough"
-msgstr ""
+msgstr "Parlamentná štvrť"
 
 #: Form/form_gb.xml.h:90
 msgid "Hamlet or Tything"
-msgstr ""
+msgstr "Osada alebo desiatková obec"
 
 #: Form/form_gb.xml.h:93 Form/form_gb.xml.h:180 Form/form_gb.xml.h:311
 msgid "Name and Surname of each Person"
-msgstr ""
+msgstr "Meno a priezvisko každej osoby"
 
 #: Form/form_gb.xml.h:99
 msgid "Rank, Profession of Occupation"
-msgstr ""
+msgstr "Hodnosť, povolanie alebo zamestnanie"
 
 #: Form/form_gb.xml.h:102
 msgid "Whether Blind, or Deaf-and-Dumb"
-msgstr ""
+msgstr "Či je slepý, alebo hluchý-a-nemý"
 
 #: Form/form_gb.xml.h:103 Form/form_gb.xml.h:124
 msgid "Civil Parish or Township"
-msgstr ""
+msgstr "Civilná farnosť alebo obec"
 
 #: Form/form_gb.xml.h:108 Form/form_gb.xml.h:451 Form/form_gb.xml.h:479
 #: Form/form_gb.xml.h:510 Form/form_gb.xml.h:549
 msgid "Village or Hamlet"
-msgstr ""
+msgstr "Dedina alebo osada"
 
 #: Form/form_gb.xml.h:109
 msgid "Local Board or Improvement Commissioners District"
-msgstr ""
+msgstr "Miestna rada alebo obvod komisárov pre rozvoj"
 
 #: Form/form_gb.xml.h:112 Form/form_gb.xml.h:133 Form/form_gb.xml.h:155
 #: Form/form_gb.xml.h:284
 msgid "NAME and Surname of each Person"
-msgstr ""
+msgstr "MENO a priezvisko každej osoby"
 
 #: Form/form_gb.xml.h:114 Form/form_gb.xml.h:135 Form/form_gb.xml.h:157
 #: Form/form_gb.xml.h:182 Form/form_gb.xml.h:286 Form/form_gb.xml.h:313
@@ -9330,7 +9310,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:273
 msgid "See INSTRUCTIONS"
-msgstr ""
+msgstr "Pozri INŠTRUKCIE"
 
 #: Form/form_gb.xml.h:301 Form/form_gb.xml.h:328 Form/form_gb.xml.h:364
 msgid "Language Spoken"
@@ -9412,10 +9392,8 @@ msgstr ""
 
 #: Form/form_gb.xml.h:439 Form/form_gb.xml.h:466 Form/form_gb.xml.h:494
 #: Form/form_gb.xml.h:531 Form/form_gb.xml.h:568 Form/form_us.xml.h:1497
-#, fuzzy
-#| msgid "Table"
 msgid "Disabled"
-msgstr "Tabuľka"
+msgstr "Invalid"
 
 #: Form/form_gb.xml.h:440
 msgid "Whether Blind, or Deaf and Dumb"
@@ -12056,10 +12034,8 @@ msgid "Birthplace of wife"
 msgstr ""
 
 #: Form/form_us.xml.h:1042
-#, fuzzy
-#| msgid "Date/ Time"
 msgid "Date married"
-msgstr "Dátum/ Čas"
+msgstr "Dátum sobáša"
 
 #: Form/form_us.xml.h:1043
 msgid "Place married"
@@ -12302,16 +12278,12 @@ msgid "Pounds of Wool"
 msgstr ""
 
 #: Form/form_us.xml.h:1188
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Colleges"
-msgstr "Počet stránok"
+msgstr "Počet vysokých škôl"
 
 #: Form/form_us.xml.h:1189 Form/form_us.xml.h:1191
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of Pupils"
-msgstr "Počet stránok"
+msgstr "Počet žiakov"
 
 #: Form/form_us.xml.h:1190
 msgid "Number of Common Schools"
@@ -12340,10 +12312,8 @@ msgid "Years resident in the state"
 msgstr ""
 
 #: Form/form_us.xml.h:1209
-#, fuzzy
-#| msgid "Active person"
 msgid "Native voters"
-msgstr "Aktívna osoba"
+msgstr "Rodní voliči"
 
 #: Form/form_us.xml.h:1210
 msgid "Naturalized voters"
@@ -12418,20 +12388,16 @@ msgid "Bushels harvested (potatoes)"
 msgstr ""
 
 #: Form/form_us.xml.h:1234
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of hogs sold"
-msgstr "Počet stránok"
+msgstr "Počet predaných ošípaných"
 
 #: Form/form_us.xml.h:1235
 msgid "Value of hogs sold"
 msgstr ""
 
 #: Form/form_us.xml.h:1236
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of cattle sold"
-msgstr "Počet stránok"
+msgstr "Počet predaných kusov dobytka"
 
 #: Form/form_us.xml.h:1237
 msgid "Value of cattle sold"
@@ -12540,10 +12506,8 @@ msgid "White Male"
 msgstr ""
 
 #: Form/form_us.xml.h:1282
-#, fuzzy
-#| msgid "Web site template"
 msgid "White Female"
-msgstr "Šablóna web stránky"
+msgstr "Biela žena"
 
 #: Form/form_us.xml.h:1283
 msgid "Colored Male"
@@ -13021,10 +12985,8 @@ msgid "Able to Read"
 msgstr ""
 
 #: Form/form_us.xml.h:1451
-#, fuzzy
-#| msgid "left to right"
 msgid "Able to Write"
-msgstr "zľava doprava"
+msgstr "Dokáže písať"
 
 #: Form/form_us.xml.h:1454
 msgid "Father's Place of Birth"
@@ -13035,10 +12997,8 @@ msgid "Mother's Place of Birth"
 msgstr ""
 
 #: Form/form_us.xml.h:1459
-#, fuzzy
-#| msgid "Print place pages"
 msgid "Parents Place of Marriage"
-msgstr "Zahrnúť stránky s miestami"
+msgstr "Miesto svadby rodičov"
 
 #: Form/form_us.xml.h:1460
 msgid "Civil War Veteran"
@@ -13126,10 +13086,8 @@ msgid "Real Estate"
 msgstr ""
 
 #: Form/form_us.xml.h:1492
-#, fuzzy
-#| msgid "Person page"
 msgid "Personal Estate"
-msgstr "Stránka osoby"
+msgstr "Osobný nehnuteľný majetok"
 
 #: Form/form_us.xml.h:1495
 msgid "Attended School"
@@ -13140,10 +13098,8 @@ msgid "Illiterate"
 msgstr ""
 
 #: Form/form_us.xml.h:1504
-#, fuzzy
-#| msgid "Person page"
 msgid "Personal Property"
-msgstr "Stránka osoby"
+msgstr "Osobný majetok"
 
 #: Form/form_us.xml.h:1506 Form/form_us.xml.h:1526
 msgid "Where From"
@@ -13290,10 +13246,8 @@ msgid "Number of volumes in home library"
 msgstr ""
 
 #: Form/form_us.xml.h:1603
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of house"
-msgstr "Počet stránok"
+msgstr "Číslo domu"
 
 #: Form/form_us.xml.h:1613
 msgid "Year of immigration to the United States"
@@ -13369,10 +13323,8 @@ msgid "Unorganized Township"
 msgstr ""
 
 #: Form/form_us.xml.h:1671
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Name of Village"
-msgstr "Počet stránok"
+msgstr "Názov obce"
 
 #: Form/form_us.xml.h:1672
 msgid "Name of City"
@@ -13387,16 +13339,12 @@ msgid "Precincts"
 msgstr ""
 
 #: Form/form_us.xml.h:1676
-#, fuzzy
-#| msgid "Estimated date"
 msgid "Enumerated date from"
-msgstr "odhadovaný dátum"
+msgstr "Dátum sčítania od"
 
 #: Form/form_us.xml.h:1677
-#, fuzzy
-#| msgid "Estimated date"
 msgid "Enumerated date to"
-msgstr "odhadovaný dátum"
+msgstr "Dátum sčítania do"
 
 #: Form/form_us.xml.h:1680
 msgid "Enumeration number"
@@ -13724,93 +13672,89 @@ msgstr ""
 
 #: Form/form_us.xml.h:1885 Form/form_us.xml.h:1907 Form/form_us.xml.h:1936
 msgid "Birthplace (NY County or other)"
-msgstr ""
+msgstr "Miesto narodenia (NY County alebo iné)"
 
 #: Form/form_us.xml.h:1888
 msgid "Years resident in this city or town"
-msgstr ""
+msgstr "Počet rokov pobytu v tomto meste alebo obci"
 
 #: Form/form_us.xml.h:1890 Form/form_us.xml.h:1915 Form/form_us.xml.h:1942
 msgid "Native Voter"
-msgstr ""
+msgstr "Domáci volič"
 
 #: Form/form_us.xml.h:1891 Form/form_us.xml.h:1916 Form/form_us.xml.h:1943
 msgid "Naturalized Voter"
-msgstr ""
+msgstr "Naturalizovaný volič"
 
 #: Form/form_us.xml.h:1892 Form/form_us.xml.h:1917 Form/form_us.xml.h:1944
 msgid "Alien"
-msgstr ""
+msgstr "Cudzinec"
 
 #: Form/form_us.xml.h:1893 Form/form_us.xml.h:1918
 msgid "Persons of color not taxed"
-msgstr ""
+msgstr "Osoby farebnej pleti nezdanené"
 
 #: Form/form_us.xml.h:1894 Form/form_us.xml.h:1920 Form/form_us.xml.h:1946
 msgid "Over 21/Illiterate"
-msgstr ""
+msgstr "Nad 21 rokov/Negramotní"
 
 #: Form/form_us.xml.h:1895 Form/form_us.xml.h:1945
-#, fuzzy
-#| msgid "Abandon"
 msgid "Landowner"
-msgstr "Zrušiť"
+msgstr "Vlastník pôdy"
 
 #: Form/form_us.xml.h:1896 Form/form_us.xml.h:1921 Form/form_us.xml.h:1947
 msgid "Deaf, Dumb, Blind, Insane, Idiotic"
-msgstr ""
+msgstr "Hluchí, nemí, slepí, duševne chorí, mentálne postihnutí"
 
 #: Form/form_us.xml.h:1897 Form/form_us.xml.h:1926 Form/form_us.xml.h:1948
 #: Form/form_us.xml.h:2269 Form/form_us.xml.h:2298 Form/form_us.xml.h:2326
 msgid "Inhabitants in the"
-msgstr ""
+msgstr "Obyvatelia v"
 
 #: Form/form_us.xml.h:1908
 msgid "Parent of how many children"
-msgstr ""
+msgstr "Rodič koľkých detí"
 
 #: Form/form_us.xml.h:1909
-#, fuzzy
-#| msgid "Number of pages"
 msgid "Number of times married"
-msgstr "Počet stránok"
+msgstr "Počet manželstiev"
 
 #: Form/form_us.xml.h:1914
 msgid "Place of Occupation"
-msgstr ""
+msgstr "Miesto zamestnania"
 
 #: Form/form_us.xml.h:1919
 msgid "Land owner"
-msgstr ""
+msgstr "Vlastník pôdy"
 
 #: Form/form_us.xml.h:1922
 msgid "Now in army"
-msgstr ""
+msgstr "Teraz v armáde"
 
 #: Form/form_us.xml.h:1923
 msgid "Now in navy"
-msgstr ""
+msgstr "Teraz v námorníctve"
 
 #: Form/form_us.xml.h:1924
 msgid "Formerly in army"
-msgstr ""
+msgstr "Predtým v armáde"
 
 #: Form/form_us.xml.h:1925
 msgid "Formerly in navy"
-msgstr ""
+msgstr "Predtým v námorníctve"
 
 #: Form/form_us.xml.h:1941
 msgid "Usual place of employment (if not same city/town)"
-msgstr ""
+msgstr "Obvyklé miesto zamestnania (ak nie je v tom istom meste/obci)"
 
 #: Form/form_us.xml.h:1949
 msgid "Election District of the Town of"
-msgstr ""
+msgstr "Volebný obvod mesta"
 
 #: Form/form_us.xml.h:1950 Form/form_us.xml.h:1962 Form/form_us.xml.h:2271
 #: Form/form_us.xml.h:2300 Form/form_us.xml.h:2328
 msgid "the County of"
-msgstr ""
+msgstr "Okres (the County of)"
 
 #: Form/form_us.xml.h:1956
 msgid "Birth Country"
@@ -13819,308 +13763,298 @@ msgstr "Krajina narodenia"
 #: Form/form_us.xml.h:1957 Form/form_us.xml.h:1971 Form/form_us.xml.h:1990
 #: Form/form_us.xml.h:2010
 msgid "Citizen or Alien"
-msgstr ""
+msgstr "Občan alebo cudzinec"
 
 #: Form/form_us.xml.h:1959
 msgid "Inhabitants living in"
-msgstr ""
+msgstr "Obyvatelia žijúci v"
 
 #: Form/form_us.xml.h:1960
 msgid "Election District, Ward"
-msgstr ""
+msgstr "Volebný obvod, okrsok"
 
 #: Form/form_us.xml.h:1970 Form/form_us.xml.h:1989 Form/form_us.xml.h:2009
-#, fuzzy
-#| msgid "Default number of entries in the indexes"
 msgid "Number of years in the US"
-msgstr "Základný počet záznamov v indexoch"
+msgstr "Počet rokov v USA"
 
 #: Form/form_us.xml.h:1973 Form/form_us.xml.h:1992 Form/form_us.xml.h:2013
 msgid "Class"
-msgstr ""
+msgstr "Trieda"
 
 #: Form/form_us.xml.h:1974 Form/form_us.xml.h:1993 Form/form_us.xml.h:2014
 msgid "Inmate: Residence given when admitted"
-msgstr ""
+msgstr "Väzeň: Bydlisko uvedené pri prijatí"
 
 #: Form/form_us.xml.h:1975 Form/form_us.xml.h:1996
 msgid "Inhabitants of Block No."
-msgstr ""
+msgstr "Obyvatelia bloku č."
 
 #: Form/form_us.xml.h:1976 Form/form_us.xml.h:1997
 msgid "Election District No."
-msgstr ""
+msgstr "Volebný obvod č."
 
 #: Form/form_us.xml.h:1977 Form/form_us.xml.h:1998
 msgid "Ward No."
-msgstr ""
+msgstr "Okrsok č."
 
 #: Form/form_us.xml.h:1978 Form/form_us.xml.h:1999
 msgid "City or Village"
-msgstr ""
+msgstr "Mesto alebo dedina"
 
 #: Form/form_us.xml.h:1980 Form/form_us.xml.h:2001
 msgid "Assembly District No."
-msgstr ""
+msgstr "Volebný obvod do snemovne č."
 
 #: Form/form_us.xml.h:2011
 msgid "Where and When Naturalized"
-msgstr ""
+msgstr "Kde a kedy naturalizovaný"
 
 #: Form/form_us.xml.h:2017
 msgid "WM 21-60"
-msgstr ""
+msgstr "Bieli muži 21–60 rokov"
 
 #: Form/form_us.xml.h:2018
 msgid "WM under 21 above 60 "
-msgstr ""
+msgstr "Bieli muži pod 21 alebo nad 60 rokov "
 
 #: Form/form_us.xml.h:2019
 msgid "WF all ages"
-msgstr ""
+msgstr "Biele ženy všetkých vekových kategórií"
 
 #: Form/form_us.xml.h:2020
 msgid "Blacks 12-50"
-msgstr ""
+msgstr "Černosi 12–50 rokov"
 
 #: Form/form_us.xml.h:2021
 msgid "Blacks under 12 above 50"
-msgstr ""
+msgstr "Černosi pod 12 alebo nad 50 rokov"
 
 #: Form/form_us.xml.h:2023
 msgid "Native White Males"
-msgstr ""
+msgstr "Domáci bieli muži"
 
 #: Form/form_us.xml.h:2024
 msgid "Native White Females"
-msgstr ""
+msgstr "Domáce biele ženy"
 
 #: Form/form_us.xml.h:2025
 msgid "Native Colored Males"
-msgstr ""
+msgstr "Domáci farební muži"
 
 #: Form/form_us.xml.h:2026
 msgid "Native Colored Females"
-msgstr ""
+msgstr "Domáce farebné ženy"
 
 #: Form/form_us.xml.h:2027
 msgid "Foreign Males"
-msgstr ""
+msgstr "Muži cudzinci"
 
 #: Form/form_us.xml.h:2028
 msgid "Foreign Females"
-msgstr ""
+msgstr "Ženy cudzinky"
 
 #: Form/form_us.xml.h:2029
 msgid "Male Children 5 and Under"
-msgstr ""
+msgstr "Chlapci do 5 rokov"
 
 #: Form/form_us.xml.h:2030
 msgid "Female Children 5 and Under"
-msgstr ""
+msgstr "Dievčatá do 5 rokov"
 
 #: Form/form_us.xml.h:2031
 msgid "Males 5 to 20 Years of Age"
-msgstr ""
+msgstr "Muži od 5 do 20 rokov"
 
 #: Form/form_us.xml.h:2032
 msgid "Females 5 to 20 Years of Age"
-msgstr ""
+msgstr "Ženy od 5 do 20 rokov"
 
 #: Form/form_us.xml.h:2033
 msgid "Males 20 to 60 Years of Age"
-msgstr ""
+msgstr "Muži od 20 do 60 rokov"
 
 #: Form/form_us.xml.h:2034
 msgid "Females 20 to 60 Years of Age"
-msgstr ""
+msgstr "Ženy od 20 do 60 rokov"
 
 #: Form/form_us.xml.h:2035
 msgid "Males Over 60 Years of Age"
-msgstr ""
+msgstr "Muži nad 60 rokov"
 
 #: Form/form_us.xml.h:2036
 msgid "Females Over 60 Years of Age"
-msgstr ""
+msgstr "Ženy nad 60 rokov"
 
 #: Form/form_us.xml.h:2040 Form/form_us.xml.h:2079 Form/form_us.xml.h:2116
 #: Form/form_us.xml.h:2154 Form/form_us.xml.h:2192
 msgid "P.O."
-msgstr ""
+msgstr "Pošta"
 
 #: Form/form_us.xml.h:2042
 msgid "Sec."
-msgstr ""
+msgstr "Sek."
 
 #: Form/form_us.xml.h:2043
 msgid "T."
-msgstr ""
+msgstr "M."
 
 #: Form/form_us.xml.h:2044
-#, fuzzy
-#| msgid "Rel."
 msgid "R."
-msgstr "Vzťh."
+msgstr "R."
 
 #: Form/form_us.xml.h:2047 Form/form_us.xml.h:2520
 msgid "No."
-msgstr ""
+msgstr "Č."
 
 #: Form/form_us.xml.h:2048
 msgid "St./Ave "
-msgstr ""
+msgstr "St./Ave "
 
 #: Form/form_us.xml.h:2049
 msgid "Hotel or Institution"
-msgstr ""
+msgstr "Hotel alebo inštitúcia"
 
 #: Form/form_us.xml.h:2053
 msgid "Years in South Dakota"
-msgstr ""
+msgstr "Počet rokov v Južnej Dakote"
 
 #: Form/form_us.xml.h:2054
 msgid "Years in United States"
-msgstr ""
+msgstr "Počet rokov v Spojených štátoch"
 
 #: Form/form_us.xml.h:2055
 msgid "Birthplace of Father"
-msgstr ""
+msgstr "Miesto narodenia otca"
 
 #: Form/form_us.xml.h:2056
 msgid "Birthplace of Mother"
-msgstr ""
+msgstr "Miesto narodenia matky"
 
 #: Form/form_us.xml.h:2060
 msgid "Black"
-msgstr ""
+msgstr "Čierny"
 
 #: Form/form_us.xml.h:2061
 msgid "Red"
-msgstr ""
+msgstr "Červený"
 
 #: Form/form_us.xml.h:2062
 msgid "Yellow"
-msgstr ""
+msgstr "Žltý"
 
 #: Form/form_us.xml.h:2066 Form/form_us.xml.h:2102 Form/form_us.xml.h:2140
 #: Form/form_us.xml.h:2178 Form/form_us.xml.h:2216
 msgid "Divorced"
-msgstr ""
+msgstr "Rozvedený"
 
 #: Form/form_us.xml.h:2067
 msgid "Can Read"
-msgstr ""
+msgstr "Vie čítať"
 
 #: Form/form_us.xml.h:2068
 msgid "Can't Read"
-msgstr ""
+msgstr "Nevie čítať"
 
 #: Form/form_us.xml.h:2069
 msgid "Can Write"
-msgstr ""
+msgstr "Vie písať"
 
 #: Form/form_us.xml.h:2070
 msgid "Can't Write"
-msgstr ""
+msgstr "Nevie písať"
 
 #: Form/form_us.xml.h:2083 Form/form_us.xml.h:2120 Form/form_us.xml.h:2158
 #: Form/form_us.xml.h:2196
 msgid "Do you own your home or farm"
-msgstr ""
+msgstr "Vlastníte svoj dom alebo farmu"
 
 #: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
 #: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Ancestry"
-msgstr "Predok"
+msgstr "Predkovia"
 
 #: Form/form_us.xml.h:2086 Form/form_us.xml.h:2123 Form/form_us.xml.h:2161
 #: Form/form_us.xml.h:2199
 msgid "Father's birthplace"
-msgstr ""
+msgstr "Rodisko otca"
 
 #: Form/form_us.xml.h:2087 Form/form_us.xml.h:2124 Form/form_us.xml.h:2162
 #: Form/form_us.xml.h:2200
 msgid "Mother's birthplace"
-msgstr ""
+msgstr "Rodisko matky"
 
 #: Form/form_us.xml.h:2088 Form/form_us.xml.h:2125 Form/form_us.xml.h:2163
 #: Form/form_us.xml.h:2201
 msgid "Extent of Education"
-msgstr ""
+msgstr "Rozsah vzdelania"
 
 #: Form/form_us.xml.h:2089 Form/form_us.xml.h:2126 Form/form_us.xml.h:2164
 #: Form/form_us.xml.h:2202
 msgid "Graduate of"
-msgstr ""
+msgstr "Absolvent školy"
 
 #: Form/form_us.xml.h:2094 Form/form_us.xml.h:2132 Form/form_us.xml.h:2170
 #: Form/form_us.xml.h:2208
 msgid "Maiden name of wife"
-msgstr ""
+msgstr "Dievčenské priezvisko manželky"
 
 #: Form/form_us.xml.h:2096 Form/form_us.xml.h:2134 Form/form_us.xml.h:2172
 #: Form/form_us.xml.h:2210
 msgid "Church affiliation"
-msgstr ""
+msgstr "Cirkevná príslušnosť"
 
 #: Form/form_us.xml.h:2109 Form/form_us.xml.h:2147 Form/form_us.xml.h:2185
 #: Form/form_us.xml.h:2223
 msgid "If Foreign Born, are you Naturalized"
-msgstr ""
+msgstr "Ak ste narodený v zahraničí, ste naturalizovaný"
 
 #: Form/form_us.xml.h:2111 Form/form_us.xml.h:2149 Form/form_us.xml.h:2187
 #: Form/form_us.xml.h:2225
 msgid "Years in S.D."
-msgstr ""
+msgstr "Počet rokov v Juž. Dak."
 
 #: Form/form_us.xml.h:2131 Form/form_us.xml.h:2169 Form/form_us.xml.h:2207
 msgid "Division"
-msgstr ""
+msgstr "Vojenský útvar"
 
 #: Form/form_us.xml.h:2228
 msgid "Male under 21"
-msgstr ""
+msgstr "Muž pod 21 rokov"
 
 #: Form/form_us.xml.h:2229
 msgid "Male over 21"
-msgstr ""
+msgstr "Muž nad 21 rokov"
 
 #: Form/form_us.xml.h:2230
 msgid "Female under 21"
-msgstr ""
+msgstr "Žena pod 21 rokov"
 
 #: Form/form_us.xml.h:2231
 msgid "Female over 21"
-msgstr ""
+msgstr "Žena nad 21 rokov"
 
 #: Form/form_us.xml.h:2234 Form/form_us.xml.h:2246
 msgid "Town/City"
-msgstr ""
+msgstr "Mesto/Obec"
 
 #: Form/form_us.xml.h:2236 Form/form_us.xml.h:2248 Form/form_us.xml.h:2260
 msgid "Heads of Families"
-msgstr ""
+msgstr "Hlavy rodín"
 
 #: Form/form_us.xml.h:2237 Form/form_us.xml.h:2249 Form/form_us.xml.h:2261
 #: Form/form_us.xml.h:2273 Form/form_us.xml.h:2302
 msgid "White males"
-msgstr ""
+msgstr "Bieli muži"
 
 #: Form/form_us.xml.h:2238 Form/form_us.xml.h:2250 Form/form_us.xml.h:2262
 #: Form/form_us.xml.h:2274 Form/form_us.xml.h:2303
-#, fuzzy
-#| msgid "Web site template"
 msgid "White females"
-msgstr "Šablóna web stránky"
+msgstr "Biele ženy"
 
 #: Form/form_us.xml.h:2239 Form/form_us.xml.h:2251 Form/form_us.xml.h:2263
 #: Form/form_us.xml.h:2275 Form/form_us.xml.h:2304
-#, fuzzy
-#| msgid "Colors"
 msgid "Colored males"
-msgstr "Farby"
+msgstr "Farební muži"
 
 #: Form/form_us.xml.h:2240 Form/form_us.xml.h:2252 Form/form_us.xml.h:2264
 #: Form/form_us.xml.h:2276 Form/form_us.xml.h:2305
@@ -14129,180 +14063,175 @@ msgstr "Farebné ženy"
 
 #: Form/form_us.xml.h:2241 Form/form_us.xml.h:2253 Form/form_us.xml.h:2265
 msgid "Deaf & Dumb"
-msgstr ""
+msgstr "Hluchý a nemý"
 
 #: Form/form_us.xml.h:2244 Form/form_us.xml.h:2256
 msgid "Foreign Birth"
-msgstr ""
+msgstr "Narodenie v zahraničí"
 
 #: Form/form_us.xml.h:2258
 msgid "Inhabitants of"
-msgstr ""
+msgstr "Obyvatelia"
 
 #: Form/form_us.xml.h:2277 Form/form_us.xml.h:2306
 msgid "Nativity - United States"
-msgstr ""
+msgstr "Pôvod - Spojené štáty"
 
 #: Form/form_us.xml.h:2278 Form/form_us.xml.h:2307
 msgid "Nativity - Germany"
-msgstr ""
+msgstr "Pôvod - Nemecko"
 
 #: Form/form_us.xml.h:2279 Form/form_us.xml.h:2308
 msgid "Nativity - Great Britain"
-msgstr ""
+msgstr "Pôvod - Veľká Británia"
 
 #: Form/form_us.xml.h:2280 Form/form_us.xml.h:2309
 msgid "Nativity - Ireland"
-msgstr ""
+msgstr "Pôvod - Írsko"
 
 #: Form/form_us.xml.h:2281 Form/form_us.xml.h:2310
 msgid "Nativity - France"
-msgstr ""
+msgstr "Pôvod - Francúzsko"
 
 #: Form/form_us.xml.h:2282 Form/form_us.xml.h:2311
 msgid "Nativity - British America"
-msgstr ""
+msgstr "Pôvod - Britská Amerika"
 
 #: Form/form_us.xml.h:2283 Form/form_us.xml.h:2312
 msgid "Nativity - Scandinavian"
-msgstr ""
+msgstr "Pôvod - Škandinávia"
 
 #: Form/form_us.xml.h:2284 Form/form_us.xml.h:2313
 msgid "Nativity - Holland"
-msgstr ""
+msgstr "Pôvod - Holandsko"
 
 #: Form/form_us.xml.h:2285 Form/form_us.xml.h:2314
 msgid "Nativity - All other countries"
-msgstr ""
+msgstr "Pôvod - Všetky ostatné krajiny"
 
 #: Form/form_us.xml.h:2287 Form/form_us.xml.h:2316
-#, fuzzy
-#| msgid "Descending tree"
 msgid "Residing in the"
-msgstr "Strom potomkov"
+msgstr "Bydlisko v"
 
 #: Form/form_us.xml.h:2292 Form/form_us.xml.h:2321
 msgid "Co."
-msgstr ""
+msgstr "Rota"
 
 #: Form/form_us.xml.h:2293 Form/form_us.xml.h:2322
 msgid "Reg't."
-msgstr ""
+msgstr "Pluk"
 
 #: Form/form_us.xml.h:2294 Form/form_us.xml.h:2323
 msgid "State or Vessel"
-msgstr ""
+msgstr "Štát alebo plavidlo"
 
 #: Form/form_us.xml.h:2337
 msgid "Parents place of birth"
-msgstr ""
+msgstr "Miesto narodenia rodičov"
 
 #: Form/form_us.xml.h:2340
 msgid "Owned/Rented"
-msgstr ""
+msgstr "Vlastnené/Nájomné"
 
 #: Form/form_us.xml.h:2341
 msgid "Free/Mortgaged"
-msgstr ""
+msgstr "Voľné/Zaťažené hypotékou"
 
 #: Form/form_us.xml.h:2342
 msgid "Farm/House"
-msgstr ""
+msgstr "Farma/Dom"
 
 #: Form/form_us.xml.h:2349
 msgid "Twin, triplet or other"
-msgstr ""
+msgstr "Dvojča, trojča alebo iné"
 
 #: Form/form_us.xml.h:2350
 msgid "No. in order of birth"
-msgstr ""
+msgstr "Číslo v poradí narodenia"
 
 #: Form/form_us.xml.h:2351
 msgid "Legitimate"
-msgstr ""
+msgstr "Legitímne"
 
 #: Form/form_us.xml.h:2369 Form/form_us.xml.h:2390 Form/form_us.xml.h:2483
 #: Form/form_us.xml.h:2570
-#, fuzzy
-#| msgid "Places tool"
 msgid "Place of Record"
-msgstr "Nástroj Lokality"
+msgstr "Miesto zápisu"
 
 #: Form/form_us.xml.h:2370 Form/form_us.xml.h:2391 Form/form_us.xml.h:2484
 #: Form/form_us.xml.h:2571
 msgid "Book/Volume"
-msgstr ""
+msgstr "Kniha/Zväzok"
 
 #: Form/form_us.xml.h:2377 Form/form_us.xml.h:2493
-#, fuzzy
-#| msgid "Colors"
 msgid "Race/Color"
-msgstr "Farby"
+msgstr "Rasa/Farba"
 
 #: Form/form_us.xml.h:2380
 msgid ""
 "STOP! If you want this record to be attached to the Parents move to Father."
 msgstr ""
+"STOP! Ak chcete, aby tento záznam bol priradený k rodičom, prejdite na otca."
 
 #: Form/form_us.xml.h:2381
 msgid "Mother (Maiden Name)"
-msgstr ""
+msgstr "Matka (dievčenské priezvisko)"
 
 #: Form/form_us.xml.h:2382
 msgid "Residence of Parents"
-msgstr ""
+msgstr "Bydlisko rodičov"
 
 #: Form/form_us.xml.h:2383
 msgid "By Whom Reported"
-msgstr ""
+msgstr "Kým nahlásené"
 
 #: Form/form_us.xml.h:2384 Form/form_us.xml.h:2501
 msgid "Date Recorded"
-msgstr ""
+msgstr "Dátum záznamu"
 
 #: Form/form_us.xml.h:2393
 msgid "License No."
-msgstr ""
+msgstr "Povolenie č."
 
 #: Form/form_us.xml.h:2395
 msgid "Date of Marriage"
-msgstr ""
+msgstr "Dátum sobáša"
 
 #: Form/form_us.xml.h:2396
 msgid "Married by"
-msgstr ""
+msgstr "Sobáš vykonal"
 
 #: Form/form_us.xml.h:2398
 msgid "Place of Marriage"
-msgstr ""
+msgstr "Miesto sobáša"
 
 #: Form/form_us.xml.h:2400
 msgid "Consent given by"
-msgstr ""
+msgstr "Súhlas udelil"
 
 #: Form/form_us.xml.h:2403
 msgid "Bond/Licence"
-msgstr ""
+msgstr "Zmluva/Povolenie"
 
 #: Form/form_us.xml.h:2432 Form/form_us.xml.h:2495
 msgid "Place of Death"
-msgstr ""
+msgstr "Miesto úmrtia"
 
 #: Form/form_us.xml.h:2434
 msgid "Length of Residence"
-msgstr ""
+msgstr "Dĺžka pobytu"
 
 #: Form/form_us.xml.h:2435
 msgid "Served in U.S. Military"
-msgstr ""
+msgstr "Slúžil v armáde USA"
 
 #: Form/form_us.xml.h:2440
 msgid "Birth date of deceased"
-msgstr ""
+msgstr "Dátum narodenia zosnulého"
 
 #: Form/form_us.xml.h:2443
 msgid "Industry or Business"
-msgstr ""
+msgstr "Priemysel alebo podnikanie"
 
 #: Form/form_us.xml.h:2444
 msgid "Name of employer"
@@ -14310,23 +14239,23 @@ msgstr "Meno zamestnávateľa"
 
 #: Form/form_us.xml.h:2445
 msgid "Date last worked"
-msgstr ""
+msgstr "Dátum, kedy naposledy pracoval"
 
 #: Form/form_us.xml.h:2446
 msgid "Years in this occupation"
-msgstr ""
+msgstr "Počet rokov v tomto zamestnaní"
 
 #: Form/form_us.xml.h:2447
 msgid "Education Level"
-msgstr ""
+msgstr "Úroveň vzdelania"
 
 #: Form/form_us.xml.h:2453
 msgid "Social Security No."
-msgstr ""
+msgstr "Sociálne zabezpečenie č."
 
 #: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
 msgid "Date of Death"
-msgstr ""
+msgstr "Dátum úmrtia"
 
 #: Form/form_us.xml.h:2457
 msgid "Place of Burial"
@@ -14334,11 +14263,11 @@ msgstr "Miesto pochovania"
 
 #: Form/form_us.xml.h:2458
 msgid "Date of Burial"
-msgstr ""
+msgstr "Dátum pochovania"
 
 #: Form/form_us.xml.h:2478
 msgid "Residence Place"
-msgstr ""
+msgstr "Miesto bydliska"
 
 #: Form/form_us.xml.h:2480
 msgid "Burial Date"
@@ -14350,7 +14279,7 @@ msgstr "Miesto pochovania"
 
 #: Form/form_us.xml.h:2503
 msgid "Congressional District"
-msgstr ""
+msgstr "Kongresový obvod"
 
 #: Form/form_us.xml.h:2504
 #, fuzzy
@@ -14360,47 +14289,47 @@ msgstr "Zahrnúť typ poznámok"
 
 #: Form/form_us.xml.h:2506
 msgid "in the month of"
-msgstr ""
+msgstr "v mesiaci"
 
 #: Form/form_us.xml.h:2510
 msgid "Age 1 July 1863"
-msgstr ""
+msgstr "Vek k 1. júlu 1863"
 
 #: Form/form_us.xml.h:2511
 msgid "White or Colored"
-msgstr ""
+msgstr "Biely alebo farebný"
 
 #: Form/form_us.xml.h:2514
 msgid "Former Military Service"
-msgstr ""
+msgstr "Predchádzajúca vojenská služba"
 
 #: Form/form_us.xml.h:2516
 msgid "Station Headquarters"
-msgstr ""
+msgstr "Veliteľstvo stanice"
 
 #: Form/form_us.xml.h:2517
 msgid "Congr. Dist. of"
-msgstr ""
+msgstr "Kongresový obvod"
 
 #: Form/form_us.xml.h:2519
 msgid "Card (A, B, or C)"
-msgstr ""
+msgstr "Karta (A, B alebo C)"
 
 #: Form/form_us.xml.h:2521
 msgid "Serial No."
-msgstr ""
+msgstr "Sériové č."
 
 #: Form/form_us.xml.h:2522
 msgid "Registration No."
-msgstr ""
+msgstr "Registračné č."
 
 #: Form/form_us.xml.h:2523
 msgid "Order No."
-msgstr ""
+msgstr "Nariadenie č."
 
 #: Form/form_us.xml.h:2525
 msgid "Age in yrs."
-msgstr ""
+msgstr "Vek v rokoch"
 
 #: Form/form_us.xml.h:2526
 msgid "Home Address"
@@ -14408,19 +14337,20 @@ msgstr "Domáca adresa"
 
 #: Form/form_us.xml.h:2529
 msgid "Citizenship"
-msgstr ""
+msgstr "Občianstvo"
 
 #: Form/form_us.xml.h:2530
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
 msgstr ""
+"Rodený občan, Naturalizovaný občan, Cudzinec, Neobčan alebo občan Indián"
 
 #: Form/form_us.xml.h:2531
 msgid "If not a citizen, of what nation are you a citizen or subject?"
-msgstr ""
+msgstr "Ak nie ste občanom, ktorej krajiny ste občanom alebo poddaným?"
 
 #: Form/form_us.xml.h:2533 Form/form_us.xml.h:2559
 msgid "Employer's Name & address"
-msgstr ""
+msgstr "Meno a adresa zamestnávateľa"
 
 #: Form/form_us.xml.h:2534
 msgid "Nearest Relative"
@@ -14582,7 +14512,7 @@ msgstr "Gramplet Formulár"
 
 #: Form/formgramplet.gpr.py:32
 msgid "Gramplet interface for Forms"
-msgstr ""
+msgstr "Gramplet rozhranie pre formuláre"
 
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
@@ -14961,15 +14891,17 @@ msgstr ""
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
 msgid "Gramps Web Sync"
-msgstr ""
+msgstr "Gramps Web Sync"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
-msgstr ""
+msgstr "Synchronizuje lokálnu databázu s inštanciou Gramps Web."
 
 #: GrampsWebSync/grampswebsync.py:264
 msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
+"Váš používateľ nemá dostatočné oprávnenia na serveri na používanie "
+"synchronizácie."
 
 #: GrampsWebSync/grampswebsync.py:268
 msgid "Fetching remote data..."
@@ -14981,7 +14913,7 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:322
 msgid "Media files are in sync."
-msgstr ""
+msgstr "Mediálne súbory sú synchronizované."
 
 #: GrampsWebSync/grampswebsync.py:331
 #, python-format
@@ -15029,7 +14961,7 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
-msgstr ""
+msgstr "Zmeny sa nedajú synchronizovať so serverom: objekty boli upravené."
 
 #: GrampsWebSync/grampswebsync.py:503
 #, python-format
@@ -15088,7 +15020,7 @@ msgstr ""
 "vzdialenom strome budete vyzvaní na potvrdenie.\n"
 "\n"
 "Ak chcete namiesto toho zlúčiť dva výrazne odlišné stromy s možnosťou "
-"vykonať ručné úpravy, použite namiesto toho nástroj Import Merge Tool."
+"vykonať ručné úpravy, použite namiesto toho nástroj na import a zlúčenie."
 
 #: GrampsWebSync/grampswebsync.py:690
 msgid "Server URL: "
@@ -15096,7 +15028,7 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:774
 msgid "Bidirectional Synchronization"
-msgstr ""
+msgstr "Obojsmerná synchronizácia"
 
 #: GrampsWebSync/grampswebsync.py:783
 msgid "Reset remote to local"
@@ -15196,7 +15128,7 @@ msgstr "Grafický pohľad"
 
 #: GraphView/graphview.gpr.py:6
 msgid "Dynamic and interactive graph of relations"
-msgstr ""
+msgstr "Dynamický a interaktívny graf vzťahov"
 
 #: GraphView/graphview.py:754
 msgid "Show IDs"
@@ -15626,19 +15558,19 @@ msgstr ""
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
 msgid "Headline News"
-msgstr "Novinky"
+msgstr "Hlavné správy"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
 msgid "Gramplet that shows the latest Gramps news"
-msgstr ""
+msgstr "Gramplet, ktorý zobrazuje najnovšie správy Gramps"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
 msgid "Read Gramps headline news"
-msgstr "Čítať novinky GRAMPSu"
+msgstr "Prečítajte si hlavné správy Gramps"
 
 #: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
-msgstr ""
+msgstr "Vytvorte webovú správu s teplotnou mapou."
 
 #: Heatmap/heatmap.py:85
 msgid "Map tiles"
@@ -15649,6 +15581,8 @@ msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
 msgstr ""
+"Nastavte veľkosť bodov teplotnej mapy.\n"
+"Predvolené nastavenie: 15"
 
 #: Heatmap/heatmap.py:93
 msgid "File path"
@@ -15739,11 +15673,11 @@ msgstr ""
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
-msgstr ""
+msgstr "Historický kontext"
 
 #: HistContext/HistContext.gpr.py:5
 msgid "Lists relevant historical events during the lifetime of a Person"
-msgstr "Zoznam relevantných historických udalostí počas života osoby"
+msgstr "Uvádza relevantné historické udalosti počas života osoby"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
@@ -15809,11 +15743,11 @@ msgstr ""
 #: HouseTimelineGramplet/housetimeline.gpr.py:4
 #: HouseTimelineGramplet/housetimeline.gpr.py:15
 msgid "House Timeline"
-msgstr ""
+msgstr "Časová os domu"
 
 #: HouseTimelineGramplet/housetimeline.gpr.py:5
 msgid "Lists the Residents of an Address by Timeline"
-msgstr ""
+msgstr "Uvádza obyvateľov na adrese podľa časovej osi"
 
 #: HouseTimelineGramplet/housetimeline.py:51
 #: HouseTimelineGramplet/housetimeline.py:58
@@ -15897,13 +15831,13 @@ msgstr ""
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:34
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:47
 msgid "H-Tree Pedigree"
-msgstr ""
+msgstr "Rodokmeň H-Tree"
 
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:37
 msgid ""
 "The view shows a space-efficient pedigree with ancestors of the selected "
 "person"
-msgstr ""
+msgstr "Pohľad zobrazí priestorovo úsporný rodokmeň s predkami vybranej osoby"
 
 #: HtreePedigreeView/HtreePedigreeView.py:93
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
@@ -15937,11 +15871,11 @@ msgstr ""
 
 #: HtreePedigreeView/HtreePedigreeView.py:543
 msgid "H-tree Pedigree View"
-msgstr ""
+msgstr "Pohľad Rodokmeň H-tree"
 
 #: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
-msgstr ""
+msgstr "O H-Tree"
 
 #: ImportGramplet/ImportGramplet.gpr.py:11
 msgid "Gramplet for importing text"
@@ -16047,6 +15981,8 @@ msgid ""
 "This button will merge the imported data into your tree with your tree data "
 "as a base."
 msgstr ""
+"Toto tlačidlo zlúči importované údaje do vášho stromu s údajmi vášho stromu "
+"ako základom."
 
 #: ImportMerge/importmerge.glade:411
 msgid "This button will replace your tree data with the imported data."
@@ -16061,6 +15997,8 @@ msgid ""
 "This button will merge the imported data into your tree with the imported "
 "data as a base."
 msgstr ""
+"Toto tlačidlo zlúči importované údaje do vášho stromu s importovanými údajmi "
+"ako základom."
 
 #: ImportMerge/importmerge.glade:437
 msgid "Edit Import"
@@ -16071,6 +16009,8 @@ msgid ""
 "This button will edit the imported data.  The data will still need to be "
 "merged, added or replaced."
 msgstr ""
+"Toto tlačidlo upraví importované údaje.  Údaje bude stále potrebné zlúčiť, "
+"pridať alebo nahradiť."
 
 #: ImportMerge/importmerge.glade:464
 msgid "Show more details"
@@ -16087,7 +16027,7 @@ msgstr "Automaticky označiť rodičovské rodiny"
 #: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
 msgid "Import and Merge tool"
-msgstr ""
+msgstr "Nástroj na import a zlúčenie"
 
 #: ImportMerge/importmerge.gpr.py:33
 msgid ""
@@ -16097,7 +16037,7 @@ msgstr ""
 
 #: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
-msgstr ""
+msgstr "Importovať a zlúčiť Gramps XML"
 
 #: ImportMerge/importmerge.py:90
 msgid "Missing"
@@ -16121,7 +16061,7 @@ msgstr "Zlúčiť do originálu"
 
 #: ImportMerge/importmerge.py:113
 msgid "Merge into import"
-msgstr ""
+msgstr "Zlúčiť do importu"
 
 #: ImportMerge/importmerge.py:114
 msgid "Replace with import"
@@ -16160,6 +16100,8 @@ msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
 msgstr ""
+"Táto položka bude zlúčená s použitím údajov z importu. Všetky odkazované "
+"položky boli tiež označené na zlúčenie alebo pridanie."
 
 #: ImportMerge/importmerge.py:129
 msgid ""
@@ -16208,7 +16150,7 @@ msgstr ""
 
 #: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
-msgstr ""
+msgstr "Import a zlúčenie"
 
 #: JSON/JSON.gpr.py:4
 msgid "JSON Export"
@@ -16228,7 +16170,7 @@ msgstr "Import JSON"
 
 #: JSON/JSON.gpr.py:21
 msgid "This is a JSON import"
-msgstr ""
+msgstr "Toto je import vo formáte JSON"
 
 #: JSON/JSONImport.py:56
 msgid "JSON import"
@@ -16236,7 +16178,7 @@ msgstr ""
 
 #: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
-msgstr ""
+msgstr "Uvádza posledných desať záznamov osôb, ktoré boli zmenené"
 
 #: LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
@@ -16245,11 +16187,11 @@ msgstr ""
 #: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
 #: LastChange/LastChangeReport.py:113
 msgid "Last Change Report"
-msgstr ""
+msgstr "Správa o posledných zmenách"
 
 #: LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
-msgstr ""
+msgstr "Správa o posledných záznamoch, ktoré boli zmenené"
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
@@ -16937,7 +16879,7 @@ msgstr "Mediálna správa"
 
 #: MediaReport/media_report.gpr.py:25
 msgid "Generates report including images, image data and notes."
-msgstr ""
+msgstr "Generuje správu vrátane obrázkov, údajov o obrázkoch a poznámok."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
@@ -17025,7 +16967,7 @@ msgstr "Overenie médií"
 
 #: MediaVerify/MediaVerify.gpr.py:32
 msgid "Verify that media is present in the correct path"
-msgstr "Overiť, či sú médiá prítomné v správnej ceste"
+msgstr "Overte, či sú médiá prítomné v správnej ceste"
 
 #: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
@@ -17143,7 +17085,7 @@ msgstr "Opraviť cesty k médiám"
 
 #: MongoDB/mongodb.gpr.py:23
 msgid "MongoDB"
-msgstr ""
+msgstr "MongoDB"
 
 #: MongoDB/mongodb.gpr.py:24
 msgid "_MongoDB Database"
@@ -17155,7 +17097,7 @@ msgstr ""
 
 #: NLWebConnectPack/NLWebPack.gpr.py:13
 msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
-msgstr ""
+msgstr "Kolekcia webových stránok pre Holandsko (vyžaduje libwebconnect)"
 
 #: NLWebConnectPack/NLWebPack.py:34
 msgid "Open Archives"
@@ -17465,6 +17407,8 @@ msgid ""
 "Birthdays after this year are represented by the year only.  Invalid entries "
 "will be ignored."
 msgstr ""
+"Narodeniny po tomto roku sú reprezentované iba rokom.  Neplatné záznamy budú "
+"ignorované."
 
 #: NetworkChart/NetworkChart.py:1080
 msgid "Round birthday to year after year entered (above)."
@@ -17696,7 +17640,7 @@ msgstr "Čistenie poznámok"
 
 #: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
-msgstr "Vyčistiť poznámky, ktoré obsahujú HTML značky"
+msgstr "Vyčistite poznámky, ktoré obsahujú HTML značky"
 
 #: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
@@ -17823,7 +17767,7 @@ msgstr "Počet predkov"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:5
 msgid "Shows the number of ancestors of the current person"
-msgstr ""
+msgstr "Zobrazí počet predkov aktuálnej osoby"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
 #, python-format
@@ -17889,11 +17833,11 @@ msgstr ""
 
 #: Overview/Overview.gpr.py:29
 msgid "Person Overview"
-msgstr "Prehľad osoby"
+msgstr "Osobný prehľad"
 
 #: Overview/Overview.gpr.py:30
 msgid "Gramplet showing an overview of events for a person"
-msgstr ""
+msgstr "Gramplet zobrazujúci prehľad udalostí pre osobu"
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
 msgid "Overview"
@@ -17901,11 +17845,11 @@ msgstr ""
 
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
-msgstr ""
+msgstr "Rodinný prehľad"
 
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
-msgstr ""
+msgstr "Gramplet zobrazujúci prehľad udalostí pre rodinu"
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
@@ -18091,11 +18035,11 @@ msgstr "Neboli nájdené žiadne informácie o zdroji"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
 msgid "Photo Tagging"
-msgstr ""
+msgstr "Označovanie fotografií"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
 msgid "Gramplet for tagging people in photos"
-msgstr ""
+msgstr "Gramplet na označenie ľudí na fotografiách"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
@@ -19111,10 +19055,8 @@ msgid "Show help"
 msgstr "Zobraziť pomoc"
 
 #: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
-#, fuzzy
-#| msgid "Places Index"
 msgid "PlaceUpdate"
-msgstr "Index miest"
+msgstr "Aktualizácia miesta"
 
 #: PlaceUpdate/PlaceUpdate.gpr.py:5
 msgid "Gramplet to manipulate multiple places"
@@ -19179,7 +19121,7 @@ msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:209
 msgid "Clear selections"
-msgstr "Vyčistiť výbery"
+msgstr "Vymazať výbery"
 
 #: PlaceUpdate/PlaceUpdate.py:213
 msgid "Apply to selected places"
@@ -19309,16 +19251,14 @@ msgid "Starting migration..."
 msgstr "Začiatok migrácie..."
 
 #: PostgreSQLEnhanced/migration.py:182
-#, fuzzy, python-format
-#| msgid "Migrating %(type)s objects..."
+#, python-format
 msgid "Migrating %s objects..."
-msgstr "Migrovanie %(type)s objektov..."
+msgstr "Migrovanie %s objektov..."
 
 #: PostgreSQLEnhanced/migration.py:193
-#, fuzzy, python-format, python-brace-format
-#| msgid "Migrated %(count)d %(type)s objects"
+#, python-brace-format, python-format
 msgid "Migrated %s {obj_type} objects"
-msgstr "Premigrované %(count)d %(type)s objektov"
+msgstr "Premigrované %s {obj_type} objektov"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
@@ -19329,10 +19269,9 @@ msgid "Starting upgrade..."
 msgstr "Začiatok aktualizácie..."
 
 #: PostgreSQLEnhanced/migration.py:470
-#, fuzzy, python-format
-#| msgid "Upgrading %(type)s objects..."
+#, python-format
 msgid "Upgrading %s objects..."
-msgstr "Aktualizovanie %(type)s objektov..."
+msgstr "Aktualizovanie %s objektov..."
 
 #: PostgreSQLEnhanced/migration.py:478
 msgid "Creating indexes..."
@@ -19424,6 +19363,7 @@ msgstr "Zdokonalené dotazy vyžadujú podporu JSONB"
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1206
 msgid "Full-text search requires JSONB support or search capabilities"
 msgstr ""
+"Fulltextové vyhľadávanie vyžaduje podporu JSONB alebo schopnosti vyhľadávania"
 
 #: PostgreSQLEnhanced/queries.py:364
 msgid "pg_trgm extension required for duplicate detection"
@@ -19891,9 +19831,9 @@ msgid " installed.)(Passed: version "
 msgstr " nainštalovaný.)(Prešlo verzia "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
-#, fuzzy, python-format
+#, python-format
 msgid "(OpenCV facedetection: %s)"
-msgstr "(OpenCV facedetection:%s)"
+msgstr "(OpenCV detekcia tváre: %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
 msgid " (lxml: not found. Requires version "
@@ -20022,7 +19962,7 @@ msgstr ""
 
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
-msgstr ""
+msgstr "Dnes"
 
 #: QuiltView/QuiltView.gpr.py:23 QuiltView/QuiltView.gpr.py:34
 msgid "Quilt Chart"
@@ -20110,11 +20050,11 @@ msgstr "Všeobecné možnosti"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:11
 msgid "RU Web Connect Pack"
-msgstr ""
+msgstr "RU Web Connect Pack"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:12
 msgid "Collection of Web sites for the RU (requires libwebconnect)"
-msgstr ""
+msgstr "Kolekcia webových stránok pre RU (vyžaduje libwebconnect)"
 
 #: RUWebConnectPack/RUWebPack.py:40
 msgid "OBD \"Memorial\""
@@ -20250,15 +20190,15 @@ msgstr "Súvisiaci príbuzní"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
 msgid "Gramplet showing relatives in a relation"
-msgstr ""
+msgstr "Gramplet zobrazujúci príbuzných vo vzťahu"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
 msgid "Relations of related people in your database:"
-msgstr ""
+msgstr "Vzťahy medzi príbuznými osobami vo vašej databáze:"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
 msgid "are partners and"
-msgstr ""
+msgstr "sú partneri a"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
 msgid "Common ancestor"
@@ -20275,23 +20215,23 @@ msgstr "KONIEC"
 #: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
 #: RemoveTagTool/RemoveTagTool.py:246
 msgid "Add/Remove Tag Tool"
-msgstr ""
+msgstr "Nástroj na pridanie/odstránenie značiek"
 
 #: RemoveTagTool/RemoveTagTool.gpr.py:26
 msgid "Add or remove a tag from groups of people, events, etc."
-msgstr ""
+msgstr "Pridajte alebo odstráňte značku zo skupín ľudí, udalostí atď."
 
 #: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
-msgstr ""
+msgstr "Nástroj vyžaduje na spustenie aspoň jednu značku."
 
 #: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
-msgstr ""
+msgstr "CHYBA"
 
 #: RemoveTagTool/RemoveTagTool.py:86
 msgid "Add/Remove"
-msgstr ""
+msgstr "Pridať/Odstrániť"
 
 #: RemoveTagTool/RemoveTagTool.py:87
 msgid "Add or remove tags from objects."
@@ -20311,11 +20251,11 @@ msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:103
 msgid "Choose Tag"
-msgstr ""
+msgstr "Vybrať značku"
 
 #: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
-msgstr ""
+msgstr "Vyberte značku na odstránenie."
 
 #: RemoveTagTool/RemoveTagTool.py:140
 msgid "Filter options"
@@ -20334,7 +20274,7 @@ msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
 msgid "WARNING"
-msgstr ""
+msgstr "UPOZORNENIE"
 
 #: RemoveTagTool/RemoveTagTool.py:234
 #, python-format
@@ -20347,11 +20287,11 @@ msgstr "Spracovať štítky..."
 
 #: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
-msgstr ""
+msgstr "pridané"
 
 #: RemoveTagTool/RemoveTagTool.py:268
 msgid "removed"
-msgstr ""
+msgstr "odstránené"
 
 #: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
@@ -20359,7 +20299,7 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 msgid "Repositories Report Options"
-msgstr ""
+msgstr "Možnosti správy o archívoch"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:27
 #: RepositoriesReport/RepositoriesReport.gpr.py:46
@@ -20391,11 +20331,11 @@ msgstr "Štýl použitý pre každú sekciu."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:273
 msgid "Publication information:"
-msgstr ""
+msgstr "Informácie o publikácii:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:278
 msgid "Data:"
-msgstr ""
+msgstr "Údaje:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:378
 msgid "Page:"
@@ -20407,55 +20347,55 @@ msgstr "Výber pomocou filtra"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
-msgstr ""
+msgstr "Zahrnúť URL adresy archívu"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
-msgstr ""
+msgstr "Či zahrnúť URL adresy archívu."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
-msgstr ""
+msgstr "Zahrnúť adresu archívu"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
-msgstr ""
+msgstr "Či zahrnúť adresy archívu."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
-msgstr ""
+msgstr "Zahrnúť autora zdroja"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
-msgstr ""
+msgstr "Či zahrnúť autora."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
-msgstr ""
+msgstr "Zahrnúť skratku zdroja"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
-msgstr ""
+msgstr "Či zahrnúť skratku."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
-msgstr ""
+msgstr "Zahrnúť informácie o publikácii zdroja"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
-msgstr ""
+msgstr "Či zahrnúť informácie o publikácii."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
-msgstr ""
+msgstr "Zahrnúť údaje zdroja"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
-msgstr ""
+msgstr "Či zahrnúť kľúče a hodnoty."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
-msgstr ""
+msgstr "Či zahrnúť poznámky k archívom a zdrojom."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:460
 msgid "Whether to include media."
@@ -20471,7 +20411,7 @@ msgstr "Či zahrnúť citácie zo zdrojov."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Whether to include repositories and sources marked as private."
-msgstr ""
+msgstr "Či zahrnúť archívy a zdroje označené ako súkromné."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:471
 msgid "Display empty values"
@@ -20483,7 +20423,7 @@ msgstr "Či zahrnúť kľúčové záznamy s prázdnymi hodnotami."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
-msgstr ""
+msgstr "Štýl použitý pre sekciu detí."
 
 #: RestoreHist/restorehist.gpr.py:30
 msgid "Restart where you were last working"
@@ -20594,18 +20534,20 @@ msgstr "Žiadne zhody..."
 
 #: SearchGramplet/SearchGramplet.py:353
 msgid "Start type to search"
-msgstr ""
+msgstr "Začnite typom čo vyhľadať"
 
 #: SearchGramplet/SearchGramplet.py:389
 msgid ""
 "Start type to search objects.\n"
 "To show all objects enter only «*» symbol."
 msgstr ""
+"Začnite typom na vyhľadávanie objektov.\n"
+"Na zobrazenie všetkých objektov zadajte iba symbol «*»."
 
 #: SearchGramplet/SearchGramplet.py:743
 #, python-format
 msgid "Birth: %s"
-msgstr ""
+msgstr "Narodenie: %s"
 
 #: SearchGramplet/SearchGramplet.py:747
 #, python-format
@@ -20624,27 +20566,27 @@ msgstr "Nastaviť ako Domovskú osobu"
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
 msgid "Set Attribute"
-msgstr "Nastaviť atribút"
+msgstr "Nastavenie atribútu"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
-msgstr ""
+msgstr "Nastavte atribút k zadanej hodnote."
 
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
-msgstr ""
+msgstr "Typ atribútu na pridanie alebo úpravu"
 
 #: SetAttributeTool/SetAttributeTool.py:84
 msgid "Attribute value to add or edit"
-msgstr ""
+msgstr "Hodnota atribútu na pridanie alebo úpravu"
 
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
-msgstr ""
+msgstr "Odstrániť typ atribútu a nastavenú hodnotu"
 
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
-msgstr ""
+msgstr "Nastavenie atribútov..."
 
 #: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
@@ -20652,6 +20594,8 @@ msgid ""
 "Setting '%s' attributes to '%s'...\n"
 "\n"
 msgstr ""
+"Nastavenie atribútov '%s' na '%s'...\n"
+"\n"
 
 #: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
@@ -20659,6 +20603,8 @@ msgid ""
 "\n"
 "Set %d '%s' attributes to '%s'\n"
 msgstr ""
+"\n"
+"Nastaviť %d atribútov '%s' na '%s'\n"
 
 #: SetAttributeTool/SetAttributeTool.py:191
 msgid "Remove Attribute"
@@ -20674,61 +20620,68 @@ msgid ""
 "\n"
 "Removing %d '%s' attributes to '%s'\n"
 msgstr ""
+"\n"
+"Odstraňovanie %d atribútov '%s' na '%s'\n"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
 #: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
 #: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
 #: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
 msgid "Set Privacy Tool"
-msgstr ""
+msgstr "Nástroj pre nastavenie súkromia"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
-msgstr ""
+msgstr "Nastavte všetky objekty za posledných <number> rokov ako súkromné."
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
 msgid "Set private: %d %s\n"
-msgstr ""
+msgstr "Nastaviť ako súkromné: %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:92
 #, python-format
 msgid "Not private: %d %s\n"
-msgstr ""
+msgstr "Nie súkromné: %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:107
 msgid "Set persons private.."
-msgstr ""
+msgstr "Nastaviť osoby ako súkromné..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set events private.."
-msgstr ""
+msgstr "Nastaviť udalosti ako súkromné..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:197
 msgid "Set media private.."
-msgstr ""
+msgstr "Nastaviť médiá ako súkromné..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
 msgid "Set adresses private.."
-msgstr ""
+msgstr "Nastaviť adresy ako súkromné..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
 msgid "Set internet objects private.."
-msgstr ""
+msgstr "Nastaviť internetové objekty ako súkromné..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
 "The time range in years from today you want to set objects private.\n"
 "'0 years' = remove privacy from all objects."
 msgstr ""
+"Časový rozsah v rokoch od dnešného dňa, za ktorý chcete nastaviť objekty ako "
+"súkromné.\n"
+"'0 rokov' = odstrániť súkromie zo všetkých objektov."
 
 #: SetPrivacyTool/SetPrivacyTool.py:306
 msgid "Always private if no date."
-msgstr ""
+msgstr "Vždy súkromné, ak chýba dátum."
 
 #: SetPrivacyTool/SetPrivacyTool.py:307
 msgid "If checked, all objects without a date will also be set private."
 msgstr ""
+"Ak je začiarknuté, všetky objekty bez dátumu budú tiež nastavené ako "
+"súkromné."
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
 msgid "Select filter to restrict events"
@@ -20744,7 +20697,7 @@ msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
-msgstr ""
+msgstr "E-mail"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
 #, fuzzy
@@ -20764,16 +20717,12 @@ msgid "BirthIndex"
 msgstr ""
 
 #: SourceIndex/SourceIndex.gpr.py:40 SourceIndex/SourceIndex.gpr.py:41
-#, fuzzy
-#| msgid "Media Index"
 msgid "MarriageIndex"
-msgstr "Index médií"
+msgstr "Index manželstiev"
 
 #: SourceIndex/SourceIndex.gpr.py:56 SourceIndex/SourceIndex.gpr.py:57
-#, fuzzy
-#| msgid "Media Index"
 msgid "DeathIndex"
-msgstr "Index médií"
+msgstr "Index úmrtí"
 
 #: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
 #, fuzzy
@@ -20817,7 +20766,7 @@ msgstr ""
 #: SourceIndex/birth.glade:195 SourceIndex/birth.glade:297
 #: SourceIndex/birth.glade:644 SourceIndex/witness.glade:73
 msgid "Names:"
-msgstr ""
+msgstr "Mená:"
 
 #: SourceIndex/birth.glade:214
 msgid "select the gender/sex"
@@ -21495,13 +21444,15 @@ msgstr "Vytvoriť mapovanie"
 #: SyncAssociations/syncAssociations.py:134
 #: SyncAssociations/syncAssociations.py:138
 msgid "Sync Associations"
-msgstr ""
+msgstr "Synchronizácia asociácií"
 
 #: SyncAssociations/syncAssociations.gpr.py:6
 msgid ""
 "Traverses the Person list for all Associations that are bi-directional and "
 "adds any which are missing to the Associated Person."
 msgstr ""
+"Prechádza zoznam osôb a hľadá všetky obojsmerné asociácie a pridáva tie, "
+"ktoré chýbajú, k asociovanej osobe."
 
 #: SyncAssociations/syncAssociations.py:124
 #, python-format
@@ -21652,7 +21603,7 @@ msgstr "Pevný posuvník (vyžaduje reštart)"
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:16
 msgid "This Day in Family History"
-msgstr ""
+msgstr "Tento deň v rodinnej histórii"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:9
 msgid ""
@@ -21667,7 +21618,7 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:106
 #, python-format
 msgid "On %(date)s in family history ...\n"
-msgstr ""
+msgstr "Deň %(date)s v rodinnej histórii ...\n"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:107
 msgid "... nothing happened!  Check again tomorrow!"
@@ -22562,11 +22513,11 @@ msgstr "Otvára interaktívny strom v prehliadači"
 
 #: TypeCleanup/type_cleanup.gpr.py:30
 msgid "Type Cleanup"
-msgstr ""
+msgstr "Čistenie tyoov"
 
 #: TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
-msgstr ""
+msgstr "Vyčistiť (odstrániť) vlastné typy"
 
 #: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
@@ -22610,23 +22561,28 @@ msgstr "Typy zdrojových médií"
 
 #: TypeCleanup/type_cleanup.py:112
 msgid "URL Types"
-msgstr ""
+msgstr "URL typy"
 
 #: TypeCleanup/type_cleanup.py:124
+#, fuzzy
 msgid "Types Cleanup Tool"
-msgstr ""
+msgstr "Nástroj na čistenie typov"
 
 #: TypeCleanup/type_cleanup.py:166
 msgid ""
 "Remove the selected type from the db.\n"
 "This does not change any referenced objects."
 msgstr ""
+"Odstráňte vybraný typ z databázy.\n"
+"Tým sa nezmenia žiadne odkazované objekty."
 
 #: TypeCleanup/type_cleanup.py:174
 msgid ""
 "Select a new name for the current type, prior to renaming the type in the "
 "referenced objects."
 msgstr ""
+"Vyberte nový názov pre aktuálny typ pred premenovaním typu v odkazovaných "
+"objektoch."
 
 #: TypeCleanup/type_cleanup.py:182
 msgid "Rename"
