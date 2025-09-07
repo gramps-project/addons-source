@@ -9,13 +9,14 @@
 # Arnau Llovet Vidal <arnaullv@gmail.com>, 2025.
 # leo-jmateo <jmateo.sanchez@tinet.cat>, 2025.
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2025.
+# Hugo Vidal <hugo@lovi.casa>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
 "PO-Revision-Date: 2025-08-28 09:02+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Last-Translator: Hugo Vidal <hugo@lovi.casa>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
 "Language: ca\n"
@@ -27,11 +28,11 @@ msgstr ""
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Tots els noms de tothom"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Mostra els noms de tothom"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -44,7 +45,7 @@ msgstr "Nom principal"
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "Noms totals: %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
