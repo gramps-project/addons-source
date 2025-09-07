@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
 "PO-Revision-Date: 2025-08-31 06:05+0000\n"
-"Last-Translator: Hugo Vidal <69076992+hugoovf@users.noreply.github.com>\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
 "Language: ca\n"
@@ -22939,7 +22939,7 @@ msgstr ""
 
 #: info_panel.py:125
 msgid "## ⚙️ System Information"
-msgstr ""
+msgstr "## ⚙️ Informació del sistema"
 
 #: info_panel.py:128
 msgid "🔻 **Missing:** `qrcode`"
@@ -22947,7 +22947,7 @@ msgstr ""
 
 #: info_panel.py:130
 msgid "ℹ️ This Python library is not available in your system."
-msgstr ""
+msgstr "ℹ️ Aquesta biblioteca Python no està disponible al vostre sistema."
 
 #: info_panel.py:133
 msgid "Without it, QR code generation will not work."
@@ -22970,6 +22970,8 @@ msgstr ""
 #: info_panel.py:149
 msgid "ℹ️ This library is required for accessing OpenAI-based features."
 msgstr ""
+"ℹ️ Aquesta biblioteca es requereix per a accedir a les funcionalitats basades "
+"en OpenAI."
 
 #: info_panel.py:153
 msgid ""
@@ -22986,7 +22988,7 @@ msgstr ""
 
 #: info_panel.py:171
 msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr ""
+msgstr "ℹ️ Aquesta biblioteca s'usa per a comunicar-se amb les API web."
 
 #: info_panel.py:174
 msgid "Without it, external data sources may not be accessible."
@@ -23007,7 +23009,7 @@ msgstr ""
 
 #: info_panel.py:195
 msgid "#### CSV File Paths"
-msgstr ""
+msgstr "#### Camins de fitxers CSV"
 
 #: info_panel.py:197
 #, python-format
@@ -23021,7 +23023,7 @@ msgstr ""
 
 #: info_panel.py:205
 msgid "#### JSON File Paths"
-msgstr ""
+msgstr "#### Camins de fitxers JSON"
 
 #: info_panel.py:208
 #, python-format
@@ -23040,6 +23042,8 @@ msgstr ""
 #: info_panel.py:221
 msgid "  💡 *Tip: click any path above to open it in your file manager.*"
 msgstr ""
+"  💡 *Consell: feu clic a un camí a sobre per a obrir-lo al gestor de "
+"fitxers.*"
 
 #: info_panel.py:224
 msgid "📖 View detailed usage in: "
@@ -23047,7 +23051,7 @@ msgstr ""
 
 #: info_panel.py:233
 msgid "## 💬 Support"
-msgstr ""
+msgstr "## 💬 Assistència"
 
 #: info_panel.py:234
 msgid "👤 Created and maintained by Yurii Liubymyi"
@@ -23069,10 +23073,8 @@ msgid "🧩 WebSearch Gramplet version: `%s`"
 msgstr ""
 
 #: internet_links_loader.py:70 internet_links_loader.py:71
-#, fuzzy
-#| msgid "Places tool"
 msgid "No title"
-msgstr "Eina de llocs"
+msgstr "Sense títol"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -23113,7 +23115,7 @@ msgstr "Número d'edicions enrere"
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr "Si us plau, arregla l'espai a \"%s\""
+msgstr "Arregleu l'espai a «%s»"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 msgid "Space character on filename"
@@ -23126,7 +23128,7 @@ msgstr "Ho sento, encara no hi ha suport pel teu sistema operatiu!"
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr "No es pot descomprimir \"%s\""
+msgstr "No es pot descomprimir «%s»"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
@@ -23142,14 +23144,14 @@ msgid ""
 " \"%(file2)s\".\n"
 msgstr ""
 "De:\n"
-" \"%(file1)s\"\n"
+" «%(file1)s»\n"
 " a:\n"
-" \"%(file2)s\".\n"
+" «%(file2)s».\n"
 
 #: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
 msgid "Cannot copy \"%s\""
-msgstr "No es pot copiar \"%s\""
+msgstr "No s'ha pogut copiar «%s»"
 
 #: lxml/etreeGramplet.py:418
 #, python-format
@@ -23173,7 +23175,7 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
-"Nombre de marques : \n"
+"Nombre d'etiquetes : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
@@ -23182,7 +23184,7 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
-"Nombre de marques : \n"
+"Nombre d'etiquetes: \n"
 "\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
@@ -23263,7 +23265,7 @@ msgid ""
 "Number of repositories : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
-"Nombre de repositoris : \n"
+"Nombre de dipòsits: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:493
@@ -23303,7 +23305,7 @@ msgstr "Gramplet de prova lxml i XSLT"
 
 #: lxml/lxmlGramplet.py:67
 msgid "\"gzip\" is missing"
-msgstr "falta el \"gzip\""
+msgstr "falta el «gzip»"
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
@@ -23315,7 +23317,7 @@ msgstr "Falta el python3 lxml"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
-msgstr "Si us plau, prova d'instal·lar el paquet \"python3 lxml\"."
+msgstr "Proveu d'instal·lar el paquet «python3 lxml»."
 
 #: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
@@ -23324,7 +23326,7 @@ msgstr "No hi ha cap fitxer carregat..."
 #: lxml/lxmlGramplet.py:298
 #, python-format
 msgid "Cannot validate \"%(file)s\" !"
-msgstr "No es pot validar \"%(file)s\"!"
+msgstr "No s'ha pogut validar «%(file)s»."
 
 #: lxml/lxmlGramplet.py:298
 msgid "XSD validation (lxml)"
@@ -23343,7 +23345,7 @@ msgstr "xmllint: omet la validació de RelaxNG per a \"%(file)s\""
 #: lxml/lxmlGramplet.py:329
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
-msgstr "No es pot analitzar el contingut de \"%(file)s\""
+msgstr "No s'ha pogut analitzar el contingut de «%(file)s»"
 
 #: lxml/lxmlGramplet.py:329
 msgid "Parsing issue"
@@ -23351,7 +23353,7 @@ msgstr "Problema d'anàlisi"
 
 #: lxml/lxmlGramplet.py:333
 msgid "Gramps version"
-msgstr "Versió de Gramps"
+msgstr "Versió del Gramps"
 
 #: lxml/lxmlGramplet.py:333
 #, python-format
