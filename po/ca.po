@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-09-01 17:01+0000\n"
-"Last-Translator: Hugo Vidal <69076992+hugoovf@users.noreply.github.com>\n"
+"PO-Revision-Date: 2025-09-03 03:01+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
 "Language: ca\n"
@@ -181,7 +181,7 @@ msgstr "Tipus d'origen"
 
 #: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
-msgstr "Nova font"
+msgstr "Font nova"
 
 #: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
@@ -245,7 +245,7 @@ msgstr ""
 
 #: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
-msgstr ""
+msgstr "Imatge per a les persones de gènere desconegut."
 
 #: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
@@ -282,7 +282,7 @@ msgstr ""
 #: MediaReport/media_report.py:112 MediaReport/media_report.py:119
 #: MediaReport/media_report.py:125 RemoveTagTool/RemoveTagTool.py:271
 msgid "INFO"
-msgstr ""
+msgstr "INFORMACIÓ"
 
 #: AvatarGenerator/AvatarGenerator.py:211
 #, fuzzy
@@ -499,7 +499,7 @@ msgstr "Biografia"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
-msgstr ""
+msgstr "Mostra una biografia de text"
 
 #: BiographyQuickview/BiographyQuickview.py:48
 #, python-format
@@ -508,11 +508,11 @@ msgstr ""
 
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
-msgstr ""
+msgstr "Seleccioneu la família que voleu examinar."
 
 #: BirthOrder/birthorder.glade:155
 msgid "Accept All"
-msgstr "Acceptar tot"
+msgstr "Accepta-ho tot"
 
 #: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
@@ -520,7 +520,7 @@ msgstr ""
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
-msgstr ""
+msgstr "Accepta-ho tot *"
 
 #: BirthOrder/birthorder.glade:174
 msgid ""
@@ -530,7 +530,7 @@ msgstr ""
 
 #: BirthOrder/birthorder.glade:185
 msgid "Accept"
-msgstr "Acceptar"
+msgstr "Accepta"
 
 #: BirthOrder/birthorder.glade:189
 msgid ""
@@ -548,11 +548,11 @@ msgstr ""
 
 #: BirthOrder/birthorder.glade:256
 msgid "Current sort"
-msgstr ""
+msgstr "Ordre actual"
 
 #: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
-msgstr ""
+msgstr "Ordre proposat"
 
 #: BirthOrder/birthorder.glade:333
 msgid ""
@@ -583,7 +583,7 @@ msgstr ""
 
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
-msgstr ""
+msgstr "Edita les famílies"
 
 #: BirthOrder/birthorder.py:275
 #, fuzzy
@@ -932,7 +932,7 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
-msgstr ""
+msgstr "columna"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
@@ -956,7 +956,7 @@ msgstr "Buscant camps de lloc"
 
 #: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade:264
 msgid "Differences"
-msgstr ""
+msgstr "Diferències"
 
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
@@ -999,7 +999,7 @@ msgstr ""
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:18
 msgid "Collections Clipboard"
-msgstr ""
+msgstr "Porta-retalls de col·leccions"
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:11
 msgid "Gramplet for grouping collections of items to aid in data entry."
@@ -1052,7 +1052,7 @@ msgstr ""
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
 msgid "Order"
-msgstr ""
+msgstr "Ordre"
 
 #: CombinedView/navigationview.py:346
 msgid ""
@@ -1086,7 +1086,7 @@ msgstr ""
 
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
-msgstr ""
+msgstr ": "
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -1381,27 +1381,27 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1926
 msgid ".html"
-msgstr ""
+msgstr ".html"
 
 #: D3Charts/DescendantIndentedTree.py:1927
 msgid ".htm"
-msgstr ""
+msgstr ".htm"
 
 #: D3Charts/DescendantIndentedTree.py:1928
 msgid ".shtml"
-msgstr ""
+msgstr ".shtml"
 
 #: D3Charts/DescendantIndentedTree.py:1929
 msgid ".php"
-msgstr ""
+msgstr ".php"
 
 #: D3Charts/DescendantIndentedTree.py:1930
 msgid ".php3"
-msgstr ""
+msgstr ".php3"
 
 #: D3Charts/DescendantIndentedTree.py:1931
 msgid ".cgi"
-msgstr ""
+msgstr ".cgi"
 
 #: D3Charts/DescendantIndentedTree.py:1937
 msgid "URL file name delimeter"
@@ -1790,7 +1790,7 @@ msgstr "No es pot afegir una nova persona."
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
-msgstr "Si us plau, introdueixi un nom."
+msgstr "Introduïu un nom."
 
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:526
@@ -1806,20 +1806,20 @@ msgstr "No es pot afegir persona nova com a progenitor."
 #: DataEntryGramplet/DataEntryGramplet.py:560
 #: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
-msgstr "Fixi si us plau una persona activa."
+msgstr "Definiu una persona activa."
 
 #: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
-msgstr "Si us plau, estableix el gènere de la nova persona."
+msgstr "Definiu el gènere de la persona nova."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
 msgid "Can't add new person as a mother."
-msgstr "No es pot afegir persona nova com a mare."
+msgstr "No s'ha pogut afegir la persona nova com a mare."
 
 #: DataEntryGramplet/DataEntryGramplet.py:536
 msgid "Can't add new person as a father."
-msgstr "No es pot afegir persona nova com a pare."
+msgstr "No s'ha pogut afegir la persona nova com a pare."
 
 #: DataEntryGramplet/DataEntryGramplet.py:541
 #: DataEntryGramplet/DataEntryGramplet.py:545
@@ -1827,30 +1827,28 @@ msgstr "No es pot afegir persona nova com a pare."
 #: DataEntryGramplet/DataEntryGramplet.py:805
 #: DataEntryGramplet/DataEntryGramplet.py:838
 msgid "Can't add new person as a spouse."
-msgstr "No es pot afegir persona nova com a cònjuge."
+msgstr "No s'ha pogut afegir la persona nova com a cònjuge."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
 msgid "Can't add new person as a wife."
-msgstr "No es pot afegir persona nova com a dona."
+msgstr "No s'ha pogut afegir la persona nova com a muller."
 
 #: DataEntryGramplet/DataEntryGramplet.py:555
 msgid "Can't add new person as a husband."
-msgstr "No es pot afegir persona nova com a marit."
+msgstr "No s'ha pogut afegir la persona nova com a marit."
 
 #: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
-msgstr "No es pot afegir persona nova com a germà."
+msgstr "No s'ha pogut afegir la persona nova com a germà."
 
 #: DataEntryGramplet/DataEntryGramplet.py:565
 #: DataEntryGramplet/DataEntryGramplet.py:938
 msgid "Can't add new person as a child."
-msgstr "No es pot afegir persona nova com a fill."
+msgstr "No s'ha pogut afegir la persona nova com a fill."
 
 #: DataEntryGramplet/DataEntryGramplet.py:763
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Please set Active person."
-msgstr "Fixi si us plau una persona activa."
+msgstr "Definiu una persona activa."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
@@ -1858,7 +1856,7 @@ msgstr "No es pot afegir una persona nova com a cònjuge a ningú."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr "Si us plau, estableix el gènere de la persona Activa o nova."
+msgstr "Definiu el gènere de la persona activa o nova."
 
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837
@@ -1867,12 +1865,12 @@ msgstr "Gèneres iguals a la persona nova i activa."
 
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
-msgstr "Si us plau, estableix el gènere de la persona Activa."
+msgstr "Definiu el gènere de la persona activa."
 
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
-msgstr ""
+msgstr "Calculadora de dates"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
@@ -1899,11 +1897,11 @@ msgstr ""
 
 #: DateCalculator/DateCalculator.py:96
 msgid "Result"
-msgstr ""
+msgstr "Resultat"
 
 #: DateCalculator/DateCalculator.py:104
 msgid "Calculate"
-msgstr ""
+msgstr "Calcula"
 
 #: DateCalculator/DateCalculator.py:107
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
@@ -1940,7 +1938,7 @@ msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
-msgstr "Connexions Profundes"
+msgstr "Connexions profundes"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
@@ -2143,7 +2141,7 @@ msgstr ""
 #: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
 #: SearchGramplet/SearchGramplet.gpr.py:19
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
 #: DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
@@ -3786,7 +3784,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:431
 msgid "Gradient"
-msgstr ""
+msgstr "Degradat"
 
 #: DynamicWeb/dynamicweb.py:780 DynamicWeb/dynamicweb.py:786
 #, python-format
@@ -3818,7 +3816,7 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:2375 DynamicWeb/dynamicweb.py:2442
 #: DynamicWeb/dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2456
 msgid "Tree"
-msgstr ""
+msgstr "Arbre"
 
 #: DynamicWeb/dynamicweb.py:2435
 msgid "Search results"
@@ -3827,7 +3825,7 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:2595 DynamicWeb/dynamicweb.py:3014
 #: DynamicWeb/dynamicweb.py:4997
 msgid "Indexes"
-msgstr ""
+msgstr "Índexs"
 
 #: DynamicWeb/dynamicweb.py:2918
 msgid "(filtered from _MAX_ total entries)"
@@ -3871,7 +3869,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2965
 msgid "Configure"
-msgstr ""
+msgstr "Configura"
 
 #: DynamicWeb/dynamicweb.py:2972
 msgid "DynamicWeb_report#Help"
@@ -3968,7 +3966,7 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:3052 RemoveTagTool/RemoveTagTool.py:124
 #: SearchGramplet/SearchGramplet.py:109 SetPrivacyTool/SetPrivacyTool.py:320
 msgid "Persons"
-msgstr ""
+msgstr "Persones"
 
 #: DynamicWeb/dynamicweb.py:3054
 msgid "Places Index"
@@ -3996,7 +3994,7 @@ msgstr "Informe de Repositoris"
 
 #: DynamicWeb/dynamicweb.py:3066
 msgid "Restore"
-msgstr ""
+msgstr "Restaura"
 
 #: DynamicWeb/dynamicweb.py:3067
 msgid "Restore default settings"
@@ -4032,7 +4030,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3075
 msgid "Search:"
-msgstr ""
+msgstr "Cerca:"
 
 #: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
@@ -4194,7 +4192,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3172
 msgid "all"
-msgstr ""
+msgstr "tot"
 
 #: DynamicWeb/dynamicweb.py:3585
 #, python-format
@@ -4451,13 +4449,11 @@ msgstr "Si s'ha d'amagar l'ID de Gramps"
 
 #: DynamicWeb/dynamicweb.py:5001
 msgid "List"
-msgstr ""
+msgstr "Llista"
 
 #: DynamicWeb/dynamicweb.py:5002
-#, fuzzy
-#| msgid "TR-Table"
 msgid "Table"
-msgstr "TR-Table"
+msgstr "Taula"
 
 #: DynamicWeb/dynamicweb.py:5008
 msgid "Default format for the surnames index"
@@ -4565,11 +4561,11 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: DynamicWeb/dynamicweb.py:5190
 msgid "Pages"
-msgstr ""
+msgstr "Pàgines"
 
 #: DynamicWeb/dynamicweb.py:5194
 msgid "A note to be used as the page header"
@@ -4755,9 +4751,8 @@ msgid "Clear GPS"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:214
-#, fuzzy
 msgid "Thumbnail"
-msgstr "Ubicació de les imatges en miniatura"
+msgstr "Miniatura"
 
 #: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
@@ -5971,7 +5966,7 @@ msgstr ""
 
 #: FixCoords/fixcoords.py:53
 msgid "Fix Coordinates"
-msgstr ""
+msgstr "Corrigeix les coordenades"
 
 #: FixCoords/fixcoords.py:58
 msgid "Looking for possible coords with \",\" characters"
@@ -5988,29 +5983,25 @@ msgstr ""
 
 #: Form/editform.py:183
 msgid "New Form"
-msgstr "Nou formulari"
+msgstr "Formulari nou"
 
 #: Form/editform.py:190
-#, fuzzy
-#| msgid "Edit Note"
 msgid "Edit Form"
-msgstr "Edició de Nota"
+msgstr "Edita el formulari"
 
 #: Form/editform.py:225 SourceIndex/birth.glade:113
 #: SourceIndex/census.glade:873 SourceIndex/death.glade:182
 #: SourceIndex/marriage.glade:1263
 msgid "Reference:"
-msgstr ""
+msgstr "Referència:"
 
 #: Form/editform.py:421
-#, fuzzy
-#| msgid "TR-Heading"
 msgid "Headings"
-msgstr "TR-Capçalera"
+msgstr "Encapçalaments"
 
 #: Form/form.py:65
 msgid "Form"
-msgstr ""
+msgstr "Formulari"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -15525,7 +15516,7 @@ msgstr ""
 #: GraphView/search_widget.py:400 PluginManager\PluginManager.py:169
 #: SearchGramplet/SearchGramplet.py:391
 msgid "Search..."
-msgstr ""
+msgstr "Cerca…"
 
 #: GraphView/search_widget.py:592
 #, python-format
@@ -16988,23 +16979,23 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Missing Files"
-msgstr ""
+msgstr "Fitxers mancants"
 
 #: MediaVerify/MediaVerify.py:83
 msgid "Moved/Renamed Files"
-msgstr ""
+msgstr "Fitxers moguts o reanomenats"
 
 #: MediaVerify/MediaVerify.py:84
 msgid "Duplicate Files"
-msgstr ""
+msgstr "Fitxers duplicats"
 
 #: MediaVerify/MediaVerify.py:84
 msgid "Extra Files"
-msgstr ""
+msgstr "Fitxers addicionals"
 
 #: MediaVerify/MediaVerify.py:85
 msgid "Errors"
-msgstr ""
+msgstr "Errors"
 
 #: MediaVerify/MediaVerify.py:85
 msgid "No md5 Generated"
@@ -17024,7 +17015,7 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:106
 msgid "Verify"
-msgstr ""
+msgstr "Verifica"
 
 #: MediaVerify/MediaVerify.py:107
 msgid "Check media paths and report missing, duplicate and extra files"
@@ -17032,19 +17023,19 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
 msgid "Export"
-msgstr ""
+msgstr "Exporta"
 
 #: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
-msgstr ""
+msgstr "Exporta els resultats a un fitxer de text"
 
 #: MediaVerify/MediaVerify.py:113
 msgid "Fix"
-msgstr ""
+msgstr "Corrigeix"
 
 #: MediaVerify/MediaVerify.py:114
 msgid "Fix media paths of moved and renamed files"
-msgstr ""
+msgstr "Arregla els camins dels fitxers moguts i reanomenats"
 
 #: MediaVerify/MediaVerify.py:132
 msgid "Verify Gramps media using md5 hashes"
@@ -17052,11 +17043,11 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:143
 msgid "Files"
-msgstr ""
+msgstr "Fitxers"
 
 #: MediaVerify/MediaVerify.py:195 NoteCleanup/NoteCleanup.py:323
 msgid "Export results to a text file"
-msgstr ""
+msgstr "Exporta els resultats a un fitxer de text"
 
 #: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
 #, python-format
@@ -18106,10 +18097,8 @@ msgid "Set as active person"
 msgstr "Estableix com a persona activa"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:97
-#, fuzzy
-#| msgid "Select All"
 msgid "_Select"
-msgstr "Seleccionar-ho Tot"
+msgstr "_Selecciona"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
 #, python-brace-format
@@ -18164,11 +18153,11 @@ msgstr ""
 
 #: PhpGedView/phpgedview.glade:170
 msgid "Username:"
-msgstr ""
+msgstr "Nom d'usuari:"
 
 #: PhpGedView/phpgedview.glade:182
 msgid "Password:"
-msgstr ""
+msgstr "Contrasenya:"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
@@ -18521,7 +18510,7 @@ msgstr "Cal establir l'ID de GeoNames"
 
 #: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
-msgstr "Utilitza el botó Ajuda per obtenir més informació"
+msgstr "Utilitzeu el botó Ajuda per a obtenir més informació"
 
 #: PlaceCleanup/placecleanup.py:337
 msgid ""
@@ -18574,8 +18563,8 @@ msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
 msgstr ""
-"Un dels llocs que estàs fusionant tanca l'altre!\n"
-"Si us plau, trieu un altre lloc."
+"Un dels llocs que esteu fusionant tanca l'altre!\n"
+"Trieu un altre lloc."
 
 #: PlaceCleanup/placecleanup.py:759
 msgid ""
@@ -18630,7 +18619,7 @@ msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
-msgstr ""
+msgstr "Compleció de llocs"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
@@ -18685,7 +18674,7 @@ msgstr "Trobant Llocs i els canvis apropiats"
 
 #: PlaceCompletion/PlaceCompletion.py:481
 msgid "Filtering"
-msgstr ""
+msgstr "Filtratge"
 
 #: PlaceCompletion/PlaceCompletion.py:491
 msgid "Loading lat/lon file in Memory..."
@@ -19154,7 +19143,7 @@ msgstr ""
 
 #: PluginManager\PluginManager.py:229
 msgid "Restart..."
-msgstr ""
+msgstr "Reinicia…"
 
 #: PluginManager\PluginManager.py:231
 msgid ""
@@ -19198,11 +19187,11 @@ msgstr "Mostrar"
 
 #: PluginManager\PluginManager.py:575
 msgid "Uninstall"
-msgstr ""
+msgstr "Desinstal·la"
 
 #: PluginManager\PluginManager.py:753
 msgid "*Available"
-msgstr ""
+msgstr "*Disponible"
 
 #: PluginManager\PluginManager.py:773
 msgid "Built-in"
@@ -19869,7 +19858,7 @@ msgstr ""
 
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
-msgstr ""
+msgstr "Avui"
 
 #: QuiltView/QuiltView.gpr.py:23 QuiltView/QuiltView.gpr.py:34
 msgid "Quilt Chart"
@@ -20237,7 +20226,7 @@ msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:278
 msgid "Data:"
-msgstr ""
+msgstr "Dades:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:378
 msgid "Page:"
@@ -21015,11 +21004,11 @@ msgstr "Afegir esdeveniment de defunció"
 
 #: SourceIndex/index.glade:495
 msgid "New census"
-msgstr "Nou cens"
+msgstr "Cens nou"
 
 #: SourceIndex/index.glade:524
 msgid "add census"
-msgstr ""
+msgstr "afegeix un cens"
 
 #: SourceIndex/index.glade:556
 msgid "Select a birth source"
@@ -21031,27 +21020,23 @@ msgstr "Selecciona una font de matrimoni"
 
 #: SourceIndex/index.glade:678
 msgid "Select a death source"
-msgstr ""
+msgstr "Seleccioneu una font de defunció"
 
 #: SourceIndex/index.glade:739
 msgid "Select a census source"
-msgstr ""
+msgstr "Seleccioneu una font de cens"
 
 #: SourceIndex/index.glade:800
 msgid "Select a repository storing a source"
-msgstr ""
+msgstr "Seleccioneu un dipòsit amb una font"
 
 #: SourceIndex/index.glade:829
-#, fuzzy
-#| msgid "Repositories Report"
 msgid "repositories"
-msgstr "Informe de Repositoris"
+msgstr "dipòsits"
 
 #: SourceIndex/index.glade:869
-#, fuzzy
-#| msgid "Select A File"
 msgid "Selected view"
-msgstr "Seleccionar fitxer"
+msgstr "Visualització seleccionada"
 
 #: SourceIndex/index.glade:889
 msgid ""
@@ -21483,7 +21468,7 @@ msgstr ""
 
 #: Themes/themes.py:198
 msgid "Font"
-msgstr ""
+msgstr "Lletra tipogràfica"
 
 #: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
@@ -22393,10 +22378,8 @@ msgid "Event Roles"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:102
-#, fuzzy
-#| msgid "Name Type"
 msgid "Event Types"
-msgstr "Tipus de nom"
+msgstr "Tipus d'esdeveniment"
 
 #: TypeCleanup/type_cleanup.py:103
 msgid "Family Relation Types"
@@ -22421,22 +22404,16 @@ msgid "Name Types"
 msgstr "Tipus de nom"
 
 #: TypeCleanup/type_cleanup.py:107
-#, fuzzy
-#| msgid "Name Type"
 msgid "Note Types"
-msgstr "Tipus de nom"
+msgstr "Tipus de nota"
 
 #: TypeCleanup/type_cleanup.py:108
-#, fuzzy
-#| msgid "Name Type"
 msgid "Place Types"
-msgstr "Tipus de nom"
+msgstr "Tipus de lloc"
 
 #: TypeCleanup/type_cleanup.py:109
-#, fuzzy
-#| msgid "Repositories Report"
 msgid "Repository Types"
-msgstr "Informe de Repositoris"
+msgstr "Tipus de dipòsit"
 
 #: TypeCleanup/type_cleanup.py:111
 msgid "Source Media Types"
@@ -22444,7 +22421,7 @@ msgstr ""
 
 #: TypeCleanup/type_cleanup.py:112
 msgid "URL Types"
-msgstr ""
+msgstr "Tipus d'URL"
 
 #: TypeCleanup/type_cleanup.py:124
 msgid "Types Cleanup Tool"
@@ -22464,7 +22441,7 @@ msgstr ""
 
 #: TypeCleanup/type_cleanup.py:182
 msgid "Rename"
-msgstr ""
+msgstr "Canvia el nom"
 
 #: TypeCleanup/type_cleanup.py:185
 msgid "Rename the selected type in all referenced objects."
@@ -22476,7 +22453,7 @@ msgstr ""
 
 #: TypeCleanup/type_cleanup.py:195
 msgid "Types"
-msgstr ""
+msgstr "Tipus"
 
 #: TypeCleanup/type_cleanup.py:242
 msgid "Type Cleanup Tool"
@@ -23394,8 +23371,8 @@ msgid ""
 msgstr ""
 "No és un .gramps vàlid.\n"
 "No es pot executar el gramplet...\n"
-"Si us plau, prova d'utilitzar un .gramps\n"
-"generat per Gramps 4.x."
+"Proveu d'utilitzar un .gramps\n"
+"generat per al Gramps 4.x."
 
 #: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
 #: lxml/lxmlGramplet.py:484
