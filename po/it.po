@@ -67,8 +67,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-28 09:02+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2025-08-28 20:50+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -76,7 +76,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -1554,24 +1554,20 @@ msgid ""
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1964
-#, fuzzy
-#| msgid "Include event description"
 msgid "Exclude center person"
-msgstr "Includi descrizione dell'evento"
+msgstr "Escludi persona centrale"
 
 #: D3Charts/DescendantIndentedTree.py:1965
 msgid "Whether or not to generate links for center person."
-msgstr ""
+msgstr "Generare o non generare collegamenti per la persona centrale."
 
 #: D3Charts/DescendantIndentedTree.py:1970
-#, fuzzy
-#| msgid "Include Sources"
 msgid "Exclude Spouses"
-msgstr "Includere le fonti"
+msgstr "Esclude i coniugi"
 
 #: D3Charts/DescendantIndentedTree.py:1971
 msgid "Whether or not to generate links for spouses."
-msgstr ""
+msgstr "Generare o non generare collegamenti per i coniugi."
 
 #: D3Charts/DescendantIndentedTree.py:1978
 msgid "Biography Content"
@@ -1586,14 +1582,12 @@ msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:2025
-#, fuzzy
-#| msgid "Colors"
 msgid "Text Color"
-msgstr "Colori"
+msgstr "Colore del testo"
 
 #: D3Charts/DescendantIndentedTree.py:2027
 msgid "RGB-color for biography text."
-msgstr ""
+msgstr "Colore RGB per il testo della biografia."
 
 #: D3Charts/DescendantIndentedTree.py:2032
 msgid "RGB-color for biography tooltip."
@@ -1601,11 +1595,11 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:2035
 msgid "Header Font size"
-msgstr ""
+msgstr "Grandezza font dell'intestazione"
 
 #: D3Charts/DescendantIndentedTree.py:2037
 msgid "The font size in pixels for biography header text."
-msgstr ""
+msgstr "La grandezza in pixel del testo dell'intestazione della biografia."
 
 #: D3Charts/DescendantIndentedTree.py:2043
 msgid "Body Font size"
@@ -1672,7 +1666,7 @@ msgstr ""
 
 #: DNA/dnasegmentmap.py:552
 msgid " Map for "
-msgstr ""
+msgstr " Mappa di "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
@@ -1680,11 +1674,11 @@ msgstr ""
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 #: DNA/dnasegmentmap.py:761
 msgid ": Grandparent"
-msgstr ""
+msgstr ": Nonno"
 
 #: DNA/dnasegmentmap.py:1056
 #, python-brace-format
@@ -1700,21 +1694,21 @@ msgstr ""
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : Inizia a "
 
 #: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
-msgstr ""
+msgstr " e finisce a "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s e %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
 #, python-brace-format
@@ -1722,11 +1716,13 @@ msgid ""
 "\n"
 "Relationship: {0} "
 msgstr ""
+"\n"
+"Relazione: {0} "
 
 #: DNA/dnasegmentmap.py:1091
 #, python-brace-format
 msgid " Ancestor: {0}"
-msgstr ""
+msgstr " Antenato: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -1746,43 +1742,44 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr ""
+msgstr "L. Seg"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
-msgstr ""
+msgstr "Pers."
 
 #: DNAMatches/dnamatches.py:153
+#, fuzzy
 msgid "Rel."
-msgstr ""
+msgstr "Rel."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "DNA cond."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
-msgstr ""
+msgstr "Seg. cond."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Fon"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "DNA condiviso"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "Segmenti condivisi"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "Segmento più lungo"
 
 #: DNAMatches/dnamatches.py:159
 msgid "Source(s)"
-msgstr ""
+msgstr "Fonte"
 
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
@@ -1794,20 +1791,20 @@ msgstr "Clic col pulsante destro per modificare l'associazione selezionata."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
-msgstr ""
+msgstr "LEGENDA"
 
 #: DNAMatches/dnamatches.py:228
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "Non specificato"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
 msgid "cM"
-msgstr ""
+msgstr "cM"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
@@ -1819,9 +1816,8 @@ msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
 #: NoteGramplet/NoteGramplet.py:65
-#, fuzzy
 msgid "Active person"
-msgstr "Persona attiva: <b>%s</b>"
+msgstr "Persona attiva"
 
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
@@ -1839,11 +1835,11 @@ msgstr "Cognome, Nome"
 #: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
 #: RelID/relation_tab.py:126
 msgid "Save"
-msgstr ""
+msgstr "Salva"
 
 #: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
-msgstr ""
+msgstr "Abbandona"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
@@ -1851,37 +1847,35 @@ msgstr "Nuova persona"
 
 #: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
-msgstr ""
+msgstr "Aggiungi relazione"
 
 #: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "No relation to active person"
-msgstr ""
+msgstr "Nessuna relazione con la persona attiva"
 
 #: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
-msgstr ""
+msgstr "Aggiungi come genitore"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
-#, fuzzy
-#| msgid "Add Note"
 msgid "Add as a Mother"
-msgstr "Aggiunge nota"
+msgstr "Aggiungi come madre"
 
 #: DataEntryGramplet/DataEntryGramplet.py:102
 msgid "Add as a Father"
-msgstr ""
+msgstr "Aggiungi come padre"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
-msgstr ""
+msgstr "Aggiungi come coniuge"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
 msgid "Add as a Wife"
-msgstr ""
+msgstr "Aggiungi come moglie"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
 msgid "Add as a Husband"
-msgstr ""
+msgstr "Aggiungi come marito"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
@@ -1889,18 +1883,18 @@ msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
-msgstr ""
+msgstr "Aggiungi come figlio"
 
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
-msgstr ""
+msgstr "Copia dati attivi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
 #: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 #: Form/form_us.xml.h:2259
 msgid "in"
-msgstr ""
+msgstr "in"
 
 #: DataEntryGramplet/DataEntryGramplet.py:441
 #: DataEntryGramplet/DataEntryGramplet.py:569
@@ -1910,7 +1904,7 @@ msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
-msgstr ""
+msgstr "Non puoi aggiungere una nuova persona."
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
@@ -23827,10 +23821,8 @@ msgid "Enable CSV Files"
 msgstr ""
 
 #: settings_ui_manager.py:251
-#, fuzzy
-#| msgid "Name Display Format"
 msgid "Display Columns"
-msgstr "Formato di visualizzazione del nome"
+msgstr "Mostra colonne"
 
 #: settings_ui_manager.py:265
 msgid "Display Icons"
