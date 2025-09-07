@@ -67,8 +67,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-26 07:01+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-08-28 09:02+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -211,7 +211,7 @@ msgstr ""
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
-msgstr "Tipo di link"
+msgstr "Tipo di collegamento"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
@@ -418,7 +418,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr "  •  Clicca su \"Carica albero genealogico\" per iniziare"
+msgstr "  •  Fai clic su \"Carica albero genealogico\" per iniziare"
 
 #: Betawhatsnext/Betawhatsnext.py:54
 msgid ""
@@ -523,7 +523,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:268
 msgid "Double-click color text to edit details"
-msgstr "Doppio click sul testo colorato per modificare i dettagli"
+msgstr "Doppio clic sul testo colorato per modificare i dettagli"
 
 #: Betawhatsnext/Betawhatsnext.py:504
 msgid "Birth event missing."
@@ -551,12 +551,13 @@ msgstr "luogo sconosciuto per l'evento"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
-msgstr "Esiste la relazione con un partner ma manca la sposa"
+msgstr "Esiste la relazione con un/a compagno/a ma manca il coniuge"
 
 #: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
 #: Betawhatsnext/Betawhatsnext.py:665
 msgid "Add missing partner using the Edit Family dialog."
-msgstr "Aggiungi il partner mancante usando la finestra Modifica Famiglia."
+msgstr ""
+"Aggiungi il/la compagno/a mancante usando la finestra \"Modifica famiglia\"."
 
 #: Betawhatsnext/Betawhatsnext.py:660
 msgid "Father missing from the parent family"
@@ -598,7 +599,7 @@ msgstr "Accetta tutto"
 
 #: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
-msgstr "Questo tasto ordinerà l'elenco di tutte le famiglie."
+msgstr "Questo pulsante ordinerà l'elenco di tutte le famiglie."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
@@ -609,8 +610,8 @@ msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
 msgstr ""
-"Questo tasto ordinerà tutte le famiglie con '*'.  In queste famiglie, tutti "
-"i figli hanno date valide quindi l'ordine non è ambiguo."
+"Questo pulsante ordinerà tutte le famiglie con '*'.  In queste famiglie "
+"tutti i figli hanno date valide, quindi l'ordine non è ambiguo."
 
 #: BirthOrder/birthorder.glade:185
 msgid "Accept"
@@ -621,7 +622,7 @@ msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
 msgstr ""
-"Questo tasto accetterà solo la famiglia selezionata e la salverà come "
+"Questo pulsante accetterà solo la famiglia selezionata e la salverà come "
 "mostrato nel riquadro in basso a destra."
 
 #: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
@@ -630,7 +631,7 @@ msgstr "Fatto"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
-msgstr "Questo tasto ti farà uscire lasciando invariate le altre famiglie."
+msgstr "Questo pulsante farà uscire, lasciando invariate le altre famiglie."
 
 #: BirthOrder/birthorder.glade:256
 msgid "Current sort"
@@ -646,9 +647,10 @@ msgid ""
 "changes.  If you wish to adjust the order, select the child you wish to "
 "move, and use 'Up' or 'Down' buttons below to move them."
 msgstr ""
-"Quando sei soddisfatto dell'ordine premi sul tasto 'Accetta' per confermare "
-"le modifiche.  Se invece vuoi modificare l'ordine, seleziona il figlio che "
-"vuoi spostare e usa i tasti 'Su' o 'Giù' per spostarlo."
+"Quando si è soddisfatti dell'ordine premere sul pulsante 'Accetta' per "
+"confermare le modifiche.  Se invece si vuole modificare l'ordine, "
+"selezionare il figlio che si vuole spostare e usare i tasti 'Su' o 'Giù' per "
+"spostarlo."
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
@@ -693,11 +695,11 @@ msgstr "un gramplet che mostra i compleanni delle persone in vita"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
-msgstr "Ignora compleanni con tag"
+msgstr "Ignora compleanni con etichetta"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
-msgstr "Mostra solo compleanni con tag"
+msgstr "Mostra solo compleanni con etichetta"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
@@ -974,15 +976,13 @@ msgstr "Data stimata"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
-msgstr "Correggere le maiuscole dei Nomi di battesimo"
+msgstr "Correggere le maiuscole dei nomi"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
-msgstr ""
-"Cerca in tutto il database e prova a correggere le maiuscole dei nomi di "
-"battesimo."
+msgstr "Cerca in tutto il database e prova a correggere le maiuscole dei nomi."
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
@@ -990,11 +990,11 @@ msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
-msgstr "Controllo Nomi di battesimo"
+msgstr "Controllo nomi"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
-msgstr "Cercando i nomi di battesimo"
+msgstr "Ricerca dei nomi"
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
@@ -1006,8 +1006,8 @@ msgid ""
 "Gramps can convert to correct capitalization. \n"
 "Select the names you wish Gramps to convert. "
 msgstr ""
-"Questa è la lista dei nomi che \n"
-"Gramps può modificare con le maiuscole corrette. \n"
+"Questo è l'elenco dei nomi per cui \n"
+"Gramps può correggere le maiuscole. \n"
 "Seleziona i nomi che vuoi che vengano modificati. "
 
 #: ChangeGivenNames/changenames.glade:107
@@ -1083,7 +1083,7 @@ msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
-"Un formattatore avanzato di citazioni che aggiunge un repository e un numero "
+"Un formattatore avanzato di citazioni che aggiunge un deposito e un numero "
 "di chiamata alla funzionalità standard."
 
 #: CliMerge/CliMerge.gpr.py:9
@@ -1114,7 +1114,7 @@ msgstr "Orologio"
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
 msgid "Gramplet for demonstrating Cairo graphics"
-msgstr "Gramplet per la spiegazione dei grafici Cairo"
+msgstr "Gramplet che dimostra il funzionamento dei grafici basati su Cairo"
 
 #: CombinedView/basepage.py:493
 #, python-format
@@ -1174,11 +1174,11 @@ msgstr "%(event_type)s: %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
-msgstr "Clicca per rendere attivo questo evento"
+msgstr "Fai clic per rendere attivo questo evento"
 
 #: CombinedView/personpage.py:743
 msgid "Click to visit this link"
-msgstr "Clicca per visitare questo link"
+msgstr "Fai clic per visitare questo collegamento"
 
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
@@ -1218,7 +1218,7 @@ msgstr "Impossibile creare la struttura della directory: %s"
 #: D3Charts/DescendantIndentedTree.py:1554
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr "Impossibile copiare i files web: %s"
+msgstr "Impossibile copiare i file web: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
@@ -1228,7 +1228,7 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1803
 #: DescendantSpaceTree/DescendantSpaceTree.py:1082
 msgid "Include Generations"
-msgstr "Includi Generazioni"
+msgstr "Includi generazioni"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
 msgid "Male Background Color"
@@ -1466,13 +1466,13 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1907
 msgid "Auto-generate HREF links for nodes"
-msgstr ""
+msgstr "Genera automaticamente collegamenti HREF per i nodi"
 
 #: D3Charts/DescendantIndentedTree.py:1909
-#, fuzzy
-#| msgid "Whether to include the index of Names at the end of the report."
 msgid "Whether to auto-generate HTML links for each node on the report."
-msgstr "Indica se includere o meno l'indice dei nomi alla fine del resoconto."
+msgstr ""
+"Indica se generare automaticamente collegamenti HTML per ogni nodo del "
+"resoconto."
 
 #: D3Charts/DescendantIndentedTree.py:1915
 msgid "URL prefix path."
@@ -1481,6 +1481,8 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1917
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
+"Prefisso dell'URL da applicare ad ogni collegamento HREF generato "
+"automaticamente."
 
 #: D3Charts/DescendantIndentedTree.py:1923
 msgid "URL file extension"
@@ -1536,7 +1538,7 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1947
 msgid "Generations to generate HREF links"
-msgstr ""
+msgstr "Generazioni per cui generare collegamenti HREF"
 
 #: D3Charts/DescendantIndentedTree.py:1949
 msgid "The number of generations to generate HREF links."
@@ -1731,6 +1733,8 @@ msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
 msgstr ""
+"Fai click per rendere questa persona attiva.\n"
+"Clic col pulsante destro per modificare questa persona"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
@@ -1782,11 +1786,11 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
-msgstr ""
+msgstr "Doppio clic su una riga per spostarsi sulla persona corrispondente."
 
 #: DNAMatches/dnamatches.py:195
 msgid "Right click to edit selected association."
-msgstr ""
+msgstr "Clic col pulsante destro per modificare l'associazione selezionata."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
@@ -1829,9 +1833,8 @@ msgstr "Fonti?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
-#, fuzzy
 msgid "Surname, Given"
-msgstr "Cognome"
+msgstr "Cognome, Nome"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
 #: RelID/relation_tab.py:126
@@ -2045,7 +2048,7 @@ msgstr ""
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
+msgstr "Inserisci un'espressione nel campo sopra e fai clic su Calcola."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -2693,7 +2696,7 @@ msgstr "Recupero dei discendenti mancanti da %s persone..."
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
-msgstr "sp. vedi %(reference)s : %(spouse)s"
+msgstr "coniug. vedi  %(reference)s : %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:249
 #, python-format
@@ -3104,6 +3107,8 @@ msgstr ""
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
 msgstr ""
+"Fai clic su un nodo per evidenziare un discendente ed espanderne i/le figli/"
+"e."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:904
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
@@ -3420,7 +3425,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1639
 msgid "Spouse block colour intensity"
-msgstr "Intensità di colore del blocco coniuge"
+msgstr "Intensità di colore del blocco del coniuge"
 
 #: DescendantsLines/DescendantsLines.py:1640
 msgid ""
@@ -3445,7 +3450,7 @@ msgid ""
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
 "See Wiki Manual > Reports > part 2"
 msgstr ""
-"f=primo nome & secondo nome, l=cognome, n=soprannome,\n"
+"f=primo nome e secondo nome, l=cognome, n=soprannome,\n"
 "c=pseudonimo, t=titolo, s=suffisso, g=soprannome famiglia\n"
 "Consultare il manuale Wiki > Resoconti > parte 2"
 
@@ -3987,7 +3992,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2961
 msgid "Click on the map to show it full-screen"
-msgstr ""
+msgstr "Fai clic sulla mappa per mostrarla a schermo intero"
 
 #: DynamicWeb/dynamicweb.py:2965
 msgid "Configure"
@@ -4284,7 +4289,7 @@ msgstr "Nuova fonte"
 
 #: DynamicWeb/dynamicweb.py:3159
 msgid "Web Link"
-msgstr ""
+msgstr "Collegamento web"
 
 #: DynamicWeb/dynamicweb.py:3164 DynamicWeb/dynamicweb.py:5173
 msgid ""
@@ -4331,7 +4336,7 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:3632
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
-msgstr ""
+msgstr "Impossibile copiare i file di tipo modello di sito web da \"%(path)s\""
 
 #: DynamicWeb/dynamicweb.py:3681
 #, python-format
@@ -4986,6 +4991,8 @@ msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
 msgstr ""
+"Fai clic sul pulsante di chiusura al termine delle modifiche dei metadati "
+"Exif di questa immagine."
 
 #: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
@@ -5224,6 +5231,8 @@ msgstr ""
 msgid ""
 "Double-click on a row to edit the object containing the selected attribute."
 msgstr ""
+"Doppio clic su una riga per modificare l'oggetto contenente l'attributo "
+"selezionato."
 
 #: ExtractCity/changenames.glade:94
 #, fuzzy
@@ -8081,7 +8090,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:640
 msgid "PostOffice"
-msgstr ""
+msgstr "Ufficio postale"
 
 #: Form/form_ca.xml.h:641
 msgid "9. Post office address"
@@ -8694,10 +8703,8 @@ msgstr ""
 
 #: Form/form_dk.xml.h:275 Form/form_us.xml.h:2095 Form/form_us.xml.h:2133
 #: Form/form_us.xml.h:2171 Form/form_us.xml.h:2209
-#, fuzzy
-#| msgid "married"
 msgid "Year married"
-msgstr "sposato"
+msgstr "Anno di matrimonio"
 
 #: Form/form_dk.xml.h:276
 msgid "År gift"
@@ -9207,10 +9214,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_gb.xml.h:208 Form/form_gb.xml.h:341 Form/form_gb.xml.h:617
-#, fuzzy
-#| msgid "married"
 msgid "Years Married"
-msgstr "sposato"
+msgstr "Anni di matrimonio"
 
 #: Form/form_gb.xml.h:209 Form/form_gb.xml.h:342
 msgid "Completed Years the present Marriage has lasted."
@@ -11910,10 +11915,8 @@ msgid "District of"
 msgstr ""
 
 #: Form/form_us.xml.h:977
-#, fuzzy
-#| msgid "married"
 msgid "Married Y/N"
-msgstr "sposato"
+msgstr "Sposato/a s/n"
 
 #: Form/form_us.xml.h:978
 msgid "Spouses Age"
@@ -12102,10 +12105,8 @@ msgid "Length of service"
 msgstr ""
 
 #: Form/form_us.xml.h:1039
-#, fuzzy
-#| msgid "married"
 msgid "Are you married"
-msgstr "sposato"
+msgstr "Sei sposato/a"
 
 #: Form/form_us.xml.h:1040
 msgid "Age of wife"
@@ -12116,16 +12117,12 @@ msgid "Birthplace of wife"
 msgstr ""
 
 #: Form/form_us.xml.h:1042
-#, fuzzy
-#| msgid "married"
 msgid "Date married"
-msgstr "sposato"
+msgstr "Data di matrimonio"
 
 #: Form/form_us.xml.h:1043
-#, fuzzy
-#| msgid "married"
 msgid "Place married"
-msgstr "sposato"
+msgstr "Luogo del matrimonio"
 
 #: Form/form_us.xml.h:1044
 msgid "When, where and circumstances you quit the service"
@@ -14321,7 +14318,7 @@ msgstr "Data di matrimonio"
 
 #: Form/form_us.xml.h:2396
 msgid "Married by"
-msgstr "Sposato con"
+msgstr "Sposato/a da"
 
 #: Form/form_us.xml.h:2398
 msgid "Place of Marriage"
@@ -14687,7 +14684,7 @@ msgstr ""
 
 #: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
-msgstr ""
+msgstr "Aggiungi patronimico dopo il nome"
 
 #: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
@@ -15898,7 +15895,7 @@ msgstr ""
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
-msgstr ""
+msgstr "Doppio clic su una riga per seguire il collegamento"
 
 #: HouseTimelineGramplet/housetimeline.gpr.py:4
 #: HouseTimelineGramplet/housetimeline.gpr.py:15
@@ -16059,6 +16056,8 @@ msgid ""
 "Enter text to import and then click\n"
 "the Import button at bottom"
 msgstr ""
+"Inserire il testo da importare e quindi\n"
+"fare clic sul pulsante Importa in basso"
 
 #: ImportGramplet/ImportGramplet.py:198
 msgid "_Import"
@@ -18040,7 +18039,7 @@ msgstr ""
 
 #: Participants/Participants.py:75
 msgid "Double-click on a row to edit the selected participant."
-msgstr ""
+msgstr "Doppio clic su una riga per modificare il partecipante selezionato."
 
 #: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
@@ -18156,6 +18155,7 @@ msgstr ""
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
 msgstr ""
+"Nome/i: titolo, nome, suffisso, pseudonimo, soprannome, soprannome familiare"
 
 #: PersonEverything/PersonEverything.py:542
 msgid "Note type"
@@ -19392,7 +19392,7 @@ msgstr "Migrazione di %s oggetti..."
 #: PostgreSQLEnhanced/migration.py:193
 #, python-brace-format, python-format
 msgid "Migrated %s {obj_type} objects"
-msgstr "%s {obj_type} oggetti migrati"
+msgstr "%s oggetti di tipo {obj_type} migrati"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
@@ -19483,7 +19483,7 @@ msgstr "%(persons)d persone, %(families)d famiglie, %(events)d eventi"
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1126
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1141
 msgid "Migration manager not initialized"
-msgstr "Manager della migrazione non inizializzato"
+msgstr "Gestore della migrazione non inizializzato"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1159
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1177
@@ -20771,10 +20771,8 @@ msgid "BirthIndex"
 msgstr ""
 
 #: SourceIndex/SourceIndex.gpr.py:40 SourceIndex/SourceIndex.gpr.py:41
-#, fuzzy
-#| msgid "married"
 msgid "MarriageIndex"
-msgstr "sposato"
+msgstr "indice di matrimonio"
 
 #: SourceIndex/SourceIndex.gpr.py:56 SourceIndex/SourceIndex.gpr.py:57
 msgid "DeathIndex"
@@ -20930,6 +20928,10 @@ msgid ""
 "godfather, name, given, age, occupation;\n"
 "etc ..."
 msgstr ""
+"testimone1,nome,età,professione;\n"
+"testimone2,nome,età,professione;\n"
+"padrino,nome,età,professione;\n"
+"ecc..."
 
 #: SourceIndex/birth.glade:1549
 msgid ""
@@ -21036,7 +21038,7 @@ msgstr ""
 
 #: SourceIndex/census.glade:1046
 msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr ""
+msgstr "ordine, persona, cognome, nome, età, stato, professione, ecc..."
 
 #: SourceIndex/death.glade:165
 msgid "Death act:"
@@ -21152,10 +21154,8 @@ msgid "add birth act"
 msgstr "Aggiunge un evento di tipo nascita"
 
 #: SourceIndex/index.glade:373
-#, fuzzy
-#| msgid "married"
 msgid "New marriage"
-msgstr "sposato"
+msgstr "Nuovo matrimonio"
 
 #: SourceIndex/index.glade:402
 msgid "add marriage act"
@@ -22517,7 +22517,7 @@ msgstr "data: "
 
 #: ToDoReport/TodoReport.py:417
 msgid "place: "
-msgstr "posto: "
+msgstr "luogo: "
 
 #: ToDoReport/TodoReport.py:877
 #, fuzzy
@@ -23207,6 +23207,8 @@ msgstr ""
 #: info_panel.py:221
 msgid "  💡 *Tip: click any path above to open it in your file manager.*"
 msgstr ""
+"  💡 *Suggerimento: clic su un qualsiasi percorso qui sopra per aprirlo nel "
+"gestore di file.*"
 
 #: info_panel.py:224
 msgid "📖 View detailed usage in: "
@@ -23695,7 +23697,7 @@ msgstr ""
 
 #: markdown_place_history_formatter.py:68
 msgid "Place Type:"
-msgstr "Tipo posto:"
+msgstr "Tipo luogo:"
 
 #: markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"
