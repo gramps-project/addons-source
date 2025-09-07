@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-06-28 18:50+0000\n"
+"PO-Revision-Date: 2025-08-23 15:02+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -3164,8 +3164,6 @@ msgid "Maximum display birth year"
 msgstr "Suurin mahdollinen syntymävuosi"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1113
-#, fuzzy
-#| msgid "Birth/date dates will not be displayed after this year"
 msgid "Birth/death dates will not be displayed after this year"
 msgstr "Syntymäaikoja ei näytetä tämän vuoden jälkeen"
 
@@ -5033,16 +5031,14 @@ msgid "Bad Date/Time"
 msgstr "Virheellinen päivä tai aika"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 tai -18:9:48.21)"
+msgstr ""
+"Virheellinen leveysaste (syntaksi: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
-#| msgid "Invalid longitude (syntax: 18°9'"
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr "Kelvoton pituusaste (muotoa: 18°9'"
+msgstr ""
+"Virhellinen pituusaste (syntaksi: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -19240,61 +19236,50 @@ msgstr ""
 #: PostgreSQLEnhanced/concurrency.py:479
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
-msgstr ""
+msgstr "Toinen käyttäjä muokkasi objektia {obj_type}:{handle}"
 
 #: PostgreSQLEnhanced/migration.py:168
-#, fuzzy
-#| msgid "Setting attributes..."
 msgid "Starting migration..."
-msgstr "Asetetaan ominaisuuksia…"
+msgstr "Aloitetaan siirto..."
 
 #: PostgreSQLEnhanced/migration.py:182
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Migrating %s objects..."
-msgstr "Kirjoitetaan %s raporttia..."
+msgstr "Siirretään %s objektia..."
 
 #: PostgreSQLEnhanced/migration.py:193
-#, fuzzy, python-format, python-brace-format
-#| msgid "Writing %s reports..."
+#, python-brace-format, python-format
 msgid "Migrated %s {obj_type} objects"
-msgstr "Kirjoitetaan %s raporttia..."
+msgstr "Siirretty %s {obj_type} objektia"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
-msgstr ""
+msgstr "Siirto valmis!"
 
 #: PostgreSQLEnhanced/migration.py:438
-#, fuzzy
-#| msgid "Attaching sources..."
 msgid "Starting upgrade..."
-msgstr "Lähteitä liitetään..."
+msgstr "Aloitetaan päivitys..."
 
 #: PostgreSQLEnhanced/migration.py:470
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Upgrading %s objects..."
-msgstr "Kirjoitetaan %s raporttia..."
+msgstr "Päivitetään %s objektia..."
 
 #: PostgreSQLEnhanced/migration.py:478
-#, fuzzy
-#| msgid "Fetching index list..."
 msgid "Creating indexes..."
-msgstr "Haetaan indeksiluetteloa..."
+msgstr "Luodaan indeksejä..."
 
 #: PostgreSQLEnhanced/migration.py:489
 msgid "Upgrade completed!"
-msgstr ""
+msgstr "Päivitys valmistunut!"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
 msgid "PostgreSQL Enhanced"
-msgstr ""
+msgstr "PostgreSQL Enhanced"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
-#, fuzzy
-#| msgid "Shared PostgreSQL Database"
 msgid "PostgreSQL _Enhanced Database"
-msgstr "Shared PostgreSQL tietokanta"
+msgstr "PostgreSQL _Enhanced tietokanta"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
 msgid ""
@@ -19303,12 +19288,18 @@ msgid ""
 "advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
 "compatible."
 msgstr ""
+"Edistynyt PostgreSQL-taustajärjestelmä JSONB-tallennuksella, "
+"graafitietokannan tuella (Apache AGE), vektorien samankaltaisuudella "
+"(pgvector) ja tekoäly-/koneoppimisominaisuuksilla. Edistyneille käyttäjille. "
+"Vaatii PostgreSQL 15+ laajennuksen. Gramps Web -yhteensopiva."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:154
 msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
 "install 'psycopg[binary]'"
 msgstr ""
+"psycopg3 vaaditaan PostgreSQL Enhanced -tukea varten. Asenna komennolla: pip "
+"install 'psycopg[binary]'"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:163
 #, python-format
@@ -19316,63 +19307,63 @@ msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
+"psycopg3-versio %(installed)s on liian vanha. Versio %(required)s tai "
+"uudempi vaaditaan."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:211
 msgid "Database Backend"
-msgstr ""
+msgstr "Tietokannan taustajärjestelmä"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:212
 msgid "Database module"
-msgstr ""
+msgstr "Tietokantamoduuli"
 
 # Lisää tuonti
 #: PostgreSQLEnhanced/postgresqlenhanced.py:214
-#, fuzzy
-#| msgid "JSON Import"
 msgid "JSONB support"
-msgstr "JSON-tuonti"
+msgstr "JSONB tuki"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:236
 msgid "Version warning"
-msgstr ""
+msgstr "Versiovaroitus"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:237
 #, python-format
 msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
-msgstr ""
+msgstr "PostgreSQL %(version)s on alle suositellun version %(recommended)s"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:252
 msgid "Extensions"
-msgstr ""
+msgstr "Laajennukset"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:273
 msgid "Database size"
-msgstr ""
+msgstr "Tietokannan koko"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:276
 #, python-format
 msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr ""
+msgstr "%(persons)d henkilöä, %(families)d perhettä, %(events)d tapahtumaa"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1126
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1141
 msgid "Migration manager not initialized"
-msgstr ""
+msgstr "Siirronhallintaa ei ole alustettu"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1159
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1177
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1239
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1255
 msgid "Enhanced queries require JSONB support"
-msgstr ""
+msgstr "Laajennetut kyselyt vaativat JSONB-tuen"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1206
 msgid "Full-text search requires JSONB support or search capabilities"
-msgstr ""
+msgstr "Kokotekstihaku vaatii JSONB-tuen tai hakuominaisuudet"
 
 #: PostgreSQLEnhanced/queries.py:364
 msgid "pg_trgm extension required for duplicate detection"
-msgstr ""
+msgstr "pg_trgm-laajennus tarvitaan kaksoiskappaleiden tunnistamiseen"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
@@ -19887,7 +19878,7 @@ msgstr ""
 #: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
 #, python-brace-format
 msgid "{rows:d} rows processed in {secs} seconds.\n"
-msgstr ""
+msgstr "{rows:d} riviä käsitelty {secs} sekunnissa.\n"
 
 #: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
@@ -19986,15 +19977,15 @@ msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
 
 #: RUWebConnectPack/RUWebPack.py:40
 msgid "OBD \"Memorial\""
-msgstr ""
+msgstr "OBD \"Memorial\""
 
 #: RUWebConnectPack/RUWebPack.py:41
 msgid "People memory"
-msgstr ""
+msgstr "Kansan muisti"
 
 #: RUWebConnectPack/RUWebPack.py:42
 msgid "Winners"
-msgstr ""
+msgstr "Voittajat"
 
 #: RUWebConnectPack/RUWebPack.py:43
 msgid "Lived"
@@ -20002,7 +19993,7 @@ msgstr "Elänyt"
 
 #: RUWebConnectPack/RUWebPack.py:44
 msgid "Open list"
-msgstr ""
+msgstr "Avoin lista"
 
 #: RUWebConnectPack/RUWebPack.py:45
 msgid "Wait for me"
@@ -20010,7 +20001,7 @@ msgstr "Wait for me"
 
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
-msgstr ""
+msgstr "VGD Yleisvenäläinen sukupuufoorumi"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
@@ -20026,72 +20017,72 @@ msgstr "FamilySpace"
 
 #: RebuildTypes/RebuildTypes.gpr.py:26
 msgid "Rebuild Gramps Types"
-msgstr ""
+msgstr "Rakenetaan Gramps-tyypit uudelleen"
 
 #: RebuildTypes/RebuildTypes.gpr.py:27
 msgid "Rebuilds Gramps Types"
-msgstr ""
+msgstr "Rakenna Gramps-tyypit uudelleen"
 
 #: RebuildTypes/RebuildTypes.py:75
 msgid "Gramps Types rebuilt"
-msgstr ""
+msgstr "Gramps-tyypit rakennettu uudelleen"
 
 #: RebuildTypes/RebuildTypes.py:76
 #, python-format
 msgid "Found %d custom event types"
-msgstr ""
+msgstr "Löytyi %d mukautettua tapahtumatyyppiä"
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
-msgstr ""
+msgstr "Näyttää suhdetiedot kotihenkilöön"
 
 #: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
-msgstr ""
+msgstr "Näyttetään suhdetiedot kotihenkilöön"
 
 #: RelID/relation_tab.py:75
 msgid "Relation and distances with root"
-msgstr ""
+msgstr "Suhde ja etäisyydet juureen"
 
 #: RelID/relation_tab.py:92
 msgid "Folder Chooser"
-msgstr ""
+msgstr "Kansion valinta"
 
 #: RelID/relation_tab.py:99
 msgid "Please, select a folder"
-msgstr ""
+msgstr "Valitsepa kansio"
 
 #: RelID/relation_tab.py:110
 msgid "Rel_id"
-msgstr ""
+msgstr "Rel_id"
 
 #: RelID/relation_tab.py:113
 msgid "up"
-msgstr ""
+msgstr "ylös"
 
 #: RelID/relation_tab.py:114
 msgid "down"
-msgstr ""
+msgstr "alas"
 
 #: RelID/relation_tab.py:115
 msgid "Common MRA"
-msgstr ""
+msgstr "Viimeisin yhteinen esi-isä"
 
 #: RelID/relation_tab.py:117
 msgid "Period"
-msgstr ""
+msgstr "Aikakausi"
 
 #: RelID/relation_tab.py:164
 msgid "Please wait, filtering..."
-msgstr ""
+msgstr "Odota, suodatetus käynnissä..."
 
 #: RelID/relation_tab.py:169
 msgid "No default_person"
-msgstr ""
+msgstr "Ei kohdehenkilöä"
 
 #: RelID/relation_tab.py:174
 msgid "Generating relation map..."
-msgstr ""
+msgstr "Luodaan suhdekarttaa..."
 
 #: RelID/relation_tab.py:190
 #, python-format
@@ -20101,10 +20092,14 @@ msgid ""
 " %d/%d \n"
 "%f|\t%f"
 msgstr ""
+"%d/%d \n"
+" %d/%d sekuntia \n"
+" %d/%d \n"
+"%f|\t%f"
 
 #: RelID/relation_tab.py:308
 msgid "You do not have write rights on this folder"
-msgstr ""
+msgstr "Sinulla ei ole kirjoitusoikeuksia tähän kansioon"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
@@ -20113,15 +20108,15 @@ msgstr "Liittyvät sukulaiset"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
 msgid "Gramplet showing relatives in a relation"
-msgstr ""
+msgstr "Gramplet näyttää suhteessa olevia sukulaisia"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
 msgid "Relations of related people in your database:"
-msgstr ""
+msgstr "Tietokannassasi olevien sukulaisten suhteet:"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
 msgid "are partners and"
-msgstr ""
+msgstr "ovat kumppaneita ja"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
 msgid "Common ancestor"
@@ -20129,11 +20124,11 @@ msgstr "Yhteinen esivanhempi"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:253
 msgid "No relatives in a relation found"
-msgstr ""
+msgstr "Sukulaisia ei suhteeseen löytynyt"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:254
 msgid "END"
-msgstr ""
+msgstr "LOPPU"
 
 #: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
 #: RemoveTagTool/RemoveTagTool.py:246
@@ -20229,7 +20224,7 @@ msgstr "Arkistoraportin valinnat"
 #: RepositoriesReport/RepositoriesReport.gpr.py:27
 #: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
-msgstr ""
+msgstr "Tuottaa tekstimuotoisen arkistoluettelon"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:45
 #: RepositoriesReport/RepositoriesReport.py:80
@@ -20246,7 +20241,7 @@ msgstr "Raportin otsikon tyyli."
 #: RepositoriesReport/RepositoriesReport.py:189
 #: RepositoriesReport/RepositoriesReportAlt.py:518
 msgid "The style used for repository title."
-msgstr ""
+msgstr "Arkiston nimikkeessä käytetty tyyli."
 
 #: RepositoriesReport/RepositoriesReport.py:203
 #: RepositoriesReport/RepositoriesReportAlt.py:533
@@ -20256,11 +20251,11 @@ msgstr "Osioiden tyyli."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:273
 msgid "Publication information:"
-msgstr ""
+msgstr "Julkaisutiedot:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:278
 msgid "Data:"
-msgstr ""
+msgstr "Data:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:378
 msgid "Page:"
@@ -20268,11 +20263,11 @@ msgstr "Sivu:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:419
 msgid "Selection with a filter"
-msgstr ""
+msgstr "Valinta suodatinta käyttäen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
-msgstr ""
+msgstr "Sisällytä arkiston URL-osoitteet"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
@@ -20288,7 +20283,7 @@ msgstr "Sisällytetäänkö arkistoon osoitteet."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
-msgstr ""
+msgstr "Sisällytä lähteen tekijä"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
@@ -20304,7 +20299,7 @@ msgstr "Sisällytetäänkö lähteen lyhenne."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
-msgstr ""
+msgstr "Sisällytä lähteen julkaisutiedot"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
@@ -20340,7 +20335,7 @@ msgstr "Sisällytetäänkö yksityisiksi merkityt arkistot ja lähteet."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:471
 msgid "Display empty values"
-msgstr ""
+msgstr "Näytä tyhjät arvot"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:472
 msgid "Whether to include key records with empty values."
@@ -20348,7 +20343,7 @@ msgstr "Sisällytetäänkö avaintietueet, joissa on tyhjä arvo."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
-msgstr ""
+msgstr "Lapsiosiossa käytetty tyyli."
 
 #: RestoreHist/restorehist.gpr.py:30
 msgid "Restart where you were last working"
@@ -20367,13 +20362,15 @@ msgstr ""
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:28
 msgid "S3 Media Uploader"
-msgstr ""
+msgstr "S3-median latausohjelma"
 
 #: S3MediaUploader/S3MediaUploader.gpr.py:38
 msgid ""
 "Upload media files to S3 (or compatible) object-based storage via the "
 "command line."
 msgstr ""
+"Lataa mediatiedostoja objektipohjaiseen S3- (tai yhteensopivaan) "
+"tallennustilaan komentorivin kautta."
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
 msgid "SV Web Connect Pack"
@@ -20458,13 +20455,15 @@ msgstr "Ei osumia..."
 
 #: SearchGramplet/SearchGramplet.py:353
 msgid "Start type to search"
-msgstr ""
+msgstr "Ala kirjoittaa hakusanaa"
 
 #: SearchGramplet/SearchGramplet.py:389
 msgid ""
 "Start type to search objects.\n"
 "To show all objects enter only «*» symbol."
 msgstr ""
+"Ala kirjoittaa etsittäviä kohteita.\n"
+"Saat kaikki kohteet hakemalla tähdellä \"*\"."
 
 #: SearchGramplet/SearchGramplet.py:743
 #, python-format
@@ -20488,27 +20487,27 @@ msgstr "Aseta kotihenkilö"
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
 msgid "Set Attribute"
-msgstr ""
+msgstr "Aseta attribuutti"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
-msgstr ""
+msgstr "Aseta attribuutille tietty arvo."
 
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
-msgstr ""
+msgstr "Lisättävän tai muokattavan attribuutin tyyppi"
 
 #: SetAttributeTool/SetAttributeTool.py:84
 msgid "Attribute value to add or edit"
-msgstr ""
+msgstr "Lisättävä tai muokattava attribuutin arvo"
 
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
-msgstr ""
+msgstr "Poista attribuutin tyyppi ja arvojoukko"
 
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
-msgstr "Asetetaan ominaisuuksia…"
+msgstr "Asetetaan attribuutteja…"
 
 #: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
@@ -20516,6 +20515,8 @@ msgid ""
 "Setting '%s' attributes to '%s'...\n"
 "\n"
 msgstr ""
+"Asetetaan '%s'-attribuuteille '%s'...\n"
+"\n"
 
 #: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
@@ -20523,14 +20524,16 @@ msgid ""
 "\n"
 "Set %d '%s' attributes to '%s'\n"
 msgstr ""
+"\n"
+"Aseta %d '%s'-attribuutit arvoon '%s'\n"
 
 #: SetAttributeTool/SetAttributeTool.py:191
 msgid "Remove Attribute"
-msgstr ""
+msgstr "Poista attribuutti"
 
 #: SetAttributeTool/SetAttributeTool.py:194
 msgid "Removing attributes..."
-msgstr "Poistetaan ominaisuuksia..."
+msgstr "Poistetaan attribuutteja.."
 
 #: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
@@ -20538,27 +20541,29 @@ msgid ""
 "\n"
 "Removing %d '%s' attributes to '%s'\n"
 msgstr ""
+"\n"
+"Poistetaan %d '%s'-attribuuttia kohteesta '%s'\n"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
 #: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
 #: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
 #: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
 msgid "Set Privacy Tool"
-msgstr ""
+msgstr "Yksityisyysasetusten työkalu"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
-msgstr ""
+msgstr "Aseta kaikki viimeisen <number> vuoden kohteet yksityisiksi."
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
 msgid "Set private: %d %s\n"
-msgstr ""
+msgstr "Aseta yksityiseksi: %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:92
 #, python-format
 msgid "Not private: %d %s\n"
-msgstr ""
+msgstr "Ei yksityisiä: %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:107
 msgid "Set persons private.."
@@ -20566,33 +20571,36 @@ msgstr "Aseta henkilöt yksityisiksi."
 
 #: SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set events private.."
-msgstr ""
+msgstr "Aseta tapahtumat yksityisiksi."
 
 #: SetPrivacyTool/SetPrivacyTool.py:197
 msgid "Set media private.."
-msgstr ""
+msgstr "Aseta mediat yksityiseksi."
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
 msgid "Set adresses private.."
-msgstr ""
+msgstr "Aseta osoitteet yksityiseksi."
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
 msgid "Set internet objects private.."
-msgstr ""
+msgstr "Aseta internet-objektit yksityisiksi."
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
 "The time range in years from today you want to set objects private.\n"
 "'0 years' = remove privacy from all objects."
 msgstr ""
+"Aikaväli vuosissa nykyhetkestä alkaen, mitkä kohteet haluat asettaa "
+"yksityisiksi.\n"
+"'0 vuotta' = poista yksityisyys kaikista kohteista."
 
 #: SetPrivacyTool/SetPrivacyTool.py:306
 msgid "Always private if no date."
-msgstr ""
+msgstr "Aina yksityinen, jos päivämäärää ei ole."
 
 #: SetPrivacyTool/SetPrivacyTool.py:307
 msgid "If checked, all objects without a date will also be set private."
-msgstr ""
+msgstr "Valinta asettaa kaikki kohteet ilman päivämäärää myös yksityisiksi."
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
 msgid "Select filter to restrict events"
@@ -20604,11 +20612,11 @@ msgstr "Valitse medioita käyttämällä suodinta"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
 msgid "Internet type filter"
-msgstr ""
+msgstr "Internet-palvelun suodatin"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
-msgstr ""
+msgstr "Sähköposti"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
 msgid "SharedPostgreSQL"
@@ -20686,16 +20694,16 @@ msgstr "Päähenkilön nimet lähteen mukaisena"
 
 #: SourceIndex/birth.glade:262
 msgid "The first names of the main person written into the source"
-msgstr ""
+msgstr "Lähteessä mainittujen päähenkilöiden etunimet"
 
 #: SourceIndex/birth.glade:278 SourceIndex/birth.glade:511
 #: SourceIndex/birth.glade:729 SourceIndex/witness.glade:90
 msgid "First names:"
-msgstr ""
+msgstr "Etunimet:"
 
 #: SourceIndex/birth.glade:334 SourceIndex/birth.glade:493
 msgid "Other:"
-msgstr ""
+msgstr "Muuta:"
 
 #: SourceIndex/birth.glade:351
 msgid "Repository title"
@@ -20708,25 +20716,31 @@ msgstr "<b>Kuva</b>"
 
 #: SourceIndex/birth.glade:406
 msgid "<b><i>Repository</i></b>"
-msgstr ""
+msgstr "<b><i>Arkisto</i></b>"
 
 #: SourceIndex/birth.glade:421
 msgid ""
 "Spouse\n"
 "names:"
 msgstr ""
+"Puolison\n"
+"nimet:"
 
 #: SourceIndex/birth.glade:441
 msgid ""
 "Marriage\n"
 "date:"
 msgstr ""
+"Vihki-\n"
+"päivä:"
 
 #: SourceIndex/birth.glade:460
 msgid ""
 "Death\n"
 "date:"
 msgstr ""
+"Kuolin-\n"
+"päivä:"
 
 #: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
 #: SourceIndex/census.glade:543 SourceIndex/death.glade:722
@@ -20735,7 +20749,7 @@ msgstr ""
 #: SourceIndex/marriage.glade:941 SourceIndex/marriage.glade:1361
 #: SourceIndex/marriage.glade:1474 SourceIndex/witness.glade:141
 msgid "Occupation:"
-msgstr ""
+msgstr "Ammatti:"
 
 #: SourceIndex/birth.glade:597 SourceIndex/birth.glade:710
 #: SourceIndex/death.glade:741 SourceIndex/death.glade:854
@@ -20744,7 +20758,7 @@ msgstr ""
 #: SourceIndex/marriage.glade:1408 SourceIndex/marriage.glade:1455
 #: SourceIndex/witness.glade:158
 msgid "Live:"
-msgstr ""
+msgstr "Elää:"
 
 #: SourceIndex/birth.glade:833
 msgid ""
@@ -20752,30 +20766,33 @@ msgid ""
 "Godfather\n"
 "Godmother:</b>"
 msgstr ""
+"<b>Todistajat\n"
+"Kummisetä\n"
+"Kummitäti:</b>"
 
 #: SourceIndex/birth.glade:870
 msgid "Call number:"
-msgstr ""
+msgstr "Arkistonumero:"
 
 #: SourceIndex/birth.glade:887
 msgid "The call number into the repository"
-msgstr ""
+msgstr "Arkistonumero arkistossa"
 
 #: SourceIndex/birth.glade:925
 msgid "<b><i>Data person</i></b>"
-msgstr ""
+msgstr "<b><i>Henkilön tiedot</i></b>"
 
 #: SourceIndex/birth.glade:949
 msgid "<b><i>Data margin</i></b>"
-msgstr ""
+msgstr "<b><i>Datamarginaali</i></b>"
 
 #: SourceIndex/birth.glade:973
 msgid "<b><i>Data father</i></b>"
-msgstr ""
+msgstr "<b><i>Isän tiedot</i></b>"
 
 #: SourceIndex/birth.glade:985
 msgid "<b><i>Data mother</i></b>"
-msgstr ""
+msgstr "<b><i>Äidin tiedot</i></b>"
 
 #: SourceIndex/birth.glade:1021
 msgid ""
@@ -20784,12 +20801,18 @@ msgid ""
 "godfather, name, given, age, occupation;\n"
 "etc ..."
 msgstr ""
+"todistaja1, nimi, etunimi, ikä, ammatti;\n"
+"todistaja2, nimi, etunimi, ikä, ammatti;\n"
+"kummisetä, nimi, etunimi, ikä, ammatti;\n"
+"jne. ..."
 
 #: SourceIndex/birth.glade:1549
 msgid ""
 "Marriage\n"
 "place:"
 msgstr ""
+"Vihki-\n"
+"paikka:"
 
 #: SourceIndex/birth.glade:1568
 msgid ""
@@ -20804,6 +20827,8 @@ msgid ""
 "Birth\n"
 "place:"
 msgstr ""
+"Syntymä-\n"
+"paikka:"
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
 msgid "Origine:"
@@ -20811,15 +20836,15 @@ msgstr "Alkuperä:"
 
 #: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
-msgstr ""
+msgstr "<b><i>Lainaus</i></b>"
 
 #: SourceIndex/birth.glade:2287
 msgid "<b><i>Source</i></b>"
-msgstr ""
+msgstr "<b><i>Lähde</i></b>"
 
 #: SourceIndex/census.glade:7 SourceIndex/index.glade:768
 msgid "census"
-msgstr ""
+msgstr "väestönlaskenta"
 
 #: SourceIndex/census.glade:160
 msgid "<b>Census</b>"
@@ -20828,7 +20853,7 @@ msgstr "<b>Väestönlaskenta</b>"
 #: SourceIndex/census.glade:176 SourceIndex/death.glade:607
 #: SourceIndex/marriage.glade:185
 msgid "<b>Repository</b>"
-msgstr ""
+msgstr "<b>Arkisto</b>"
 
 #: SourceIndex/census.glade:221 SourceIndex/death.glade:432
 #: SourceIndex/death.glade:636 SourceIndex/death.glade:873
@@ -20856,11 +20881,11 @@ msgstr "Kuolinpaikka:"
 
 #: SourceIndex/census.glade:447
 msgid "Family status:"
-msgstr ""
+msgstr "Perhetilanne:"
 
 #: SourceIndex/census.glade:466 SourceIndex/death.glade:1099
 msgid "Spouse name:"
-msgstr ""
+msgstr "Puolison nimi:"
 
 #: SourceIndex/census.glade:510 SourceIndex/death.glade:703
 #: SourceIndex/death.glade:892 SourceIndex/marriage.glade:498
@@ -20873,7 +20898,7 @@ msgstr "Alkuperä:"
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
 #: markdown_place_history_formatter.py:59
 msgid "Note:"
-msgstr ""
+msgstr "Lisätieto:"
 
 #: SourceIndex/census.glade:712 SourceIndex/death.glade:621
 msgid "<b>Data person</b>"
@@ -20882,19 +20907,19 @@ msgstr "<b>Henkilötiedot</b>"
 #: SourceIndex/census.glade:904 SourceIndex/death.glade:217
 #: SourceIndex/marriage.glade:1296
 msgid "Volume:"
-msgstr ""
+msgstr "Vuosikerta:"
 
 #: SourceIndex/census.glade:1046
 msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr ""
+msgstr "järjestys, henkilö, sukunimi, etunimi, ikä, asema, ammatti jne. ..."
 
 #: SourceIndex/death.glade:165
 msgid "Death act:"
-msgstr ""
+msgstr "Kuolintodistus:"
 
 #: SourceIndex/death.glade:282
 msgid "<b>Death act</b>"
-msgstr ""
+msgstr "<b>Kuolintodistus</b>"
 
 #: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
 msgid "<b>Witness:</b>"
@@ -20902,19 +20927,19 @@ msgstr "<b>Todistajat:</b>"
 
 #: SourceIndex/death.glade:1131
 msgid "Marriage date:"
-msgstr ""
+msgstr "Vihkipäivä:"
 
 #: SourceIndex/death.glade:1163
 msgid "Marriage place:"
-msgstr ""
+msgstr "Avioliiton solmimispaikka:"
 
 #: SourceIndex/death.glade:1195
 msgid "<b>Data mother</b>"
-msgstr ""
+msgstr "<b>Äidin tiedot</b>"
 
 #: SourceIndex/death.glade:1210
 msgid "<b>Data father</b>"
-msgstr ""
+msgstr "<b>Isän tiedot</b>"
 
 #: SourceIndex/death.glade:1225
 msgid "<b>Spouse</b> "
@@ -20932,6 +20957,8 @@ msgid ""
 "witness1, name, given, age, occupation; witness2, name, given, age, "
 "occupation, etc ..."
 msgstr ""
+"todistaja1, nimi, etunimi, ikä, ammatti; todistaja2, nimi,etunimi, ikä, "
+"ammatti, jne. ..."
 
 #: SourceIndex/index.glade:7
 msgid "index"
@@ -20939,7 +20966,7 @@ msgstr "hakemisto"
 
 #: SourceIndex/index.glade:50
 msgid "_File"
-msgstr ""
+msgstr "_Tiedosto"
 
 #: SourceIndex/index.glade:79
 msgid "Import CSV"
@@ -20947,51 +20974,51 @@ msgstr "Tuo CSV-tiedosto"
 
 #: SourceIndex/index.glade:209
 msgid "Display all"
-msgstr ""
+msgstr "Näytä kaikki"
 
 #: SourceIndex/index.glade:220
 msgid "Display only births"
-msgstr ""
+msgstr "Näytä vain syntymät"
 
 #: SourceIndex/index.glade:221
 msgid "Births/Baptisms"
-msgstr ""
+msgstr "Syntymät/kasteet"
 
 #: SourceIndex/index.glade:231
 msgid "Display only marriages"
-msgstr ""
+msgstr "Näytä vain avioliitot"
 
 #: SourceIndex/index.glade:232
 msgid "Marriages/Families"
-msgstr ""
+msgstr "Avioliitot/perheet"
 
 #: SourceIndex/index.glade:242
 msgid "Display only deaths"
-msgstr ""
+msgstr "Näytä vain kuolemat"
 
 #: SourceIndex/index.glade:243
 msgid "Deaths/Burials"
-msgstr ""
+msgstr "Kuolemat/hautaukset"
 
 #: SourceIndex/index.glade:253
 msgid "Display only censuses"
-msgstr ""
+msgstr "Näytä vain väestönlaskennat"
 
 #: SourceIndex/index.glade:254
 msgid "Censuses"
-msgstr ""
+msgstr "Väestönlaskennat"
 
 #: SourceIndex/index.glade:278
 msgid "About this utility."
-msgstr ""
+msgstr "Tietoja tästä työkalusta."
 
 #: SourceIndex/index.glade:279
 msgid "About dialog"
-msgstr ""
+msgstr "Tietoja-valintaikkunasta"
 
 #: SourceIndex/index.glade:312
 msgid "New birth or baptism"
-msgstr ""
+msgstr "Uusi syntymä tai kaste"
 
 #: SourceIndex/index.glade:341
 msgid "add birth act"
@@ -20999,15 +21026,15 @@ msgstr "näytä syntymä"
 
 #: SourceIndex/index.glade:373
 msgid "New marriage"
-msgstr ""
+msgstr "Uusi avioliitto"
 
 #: SourceIndex/index.glade:402
 msgid "add marriage act"
-msgstr ""
+msgstr "lisää avioliittotodistus"
 
 #: SourceIndex/index.glade:434
 msgid "New death or burial"
-msgstr ""
+msgstr "Uusi kuolema tai hautaus"
 
 #: SourceIndex/index.glade:463
 msgid "add death act"
@@ -21015,11 +21042,11 @@ msgstr "näytä kuolema"
 
 #: SourceIndex/index.glade:495
 msgid "New census"
-msgstr ""
+msgstr "uusi väestönlaskenta"
 
 #: SourceIndex/index.glade:524
 msgid "add census"
-msgstr ""
+msgstr "lisää väestönlaskenta"
 
 #: SourceIndex/index.glade:556
 msgid "Select a birth source"
@@ -21035,11 +21062,11 @@ msgstr "Valitse kuoleman lähde"
 
 #: SourceIndex/index.glade:739
 msgid "Select a census source"
-msgstr ""
+msgstr "Valitse väestönlaskennan lähde"
 
 #: SourceIndex/index.glade:800
 msgid "Select a repository storing a source"
-msgstr ""
+msgstr "Valitse lähteen sisältävä arkisto"
 
 #: SourceIndex/index.glade:829
 msgid "repositories"
@@ -21054,14 +21081,17 @@ msgid ""
 "Records transcriptions ... births/deaths/marriages/censuses with common "
 "fields: id, repository, person name, birth date and place, parents."
 msgstr ""
+"Tallentaa transkriptioita ... syntymät / kuolemat / avioliitot / "
+"väestölaskenta yhteisillä kentillä: id, tietovarasto, henkilön nimi, "
+"syntymäaika ja -paikka, vanhemmat."
 
 #: SourceIndex/index.py:407
 msgid "*** Error: Must install either ElementTree or lxml."
-msgstr ""
+msgstr "*** Virhe: Joko ElementTree tai lxml on asennettava."
 
 #: SourceIndex/index.py:409
 msgid "must install either ElementTree or lxml"
-msgstr ""
+msgstr "on asennettava joko ElementTree tai lxml"
 
 #: SourceIndex/marriage.glade:49
 msgid "Marriage act:"
@@ -21069,19 +21099,20 @@ msgstr "Vihkiminen:"
 
 #: SourceIndex/marriage.glade:81
 msgid "m. date:"
-msgstr ""
+msgstr "vihkipäivä:"
 
 #: SourceIndex/marriage.glade:97
 msgid "m. place:"
 msgstr "vihkipaikka:"
 
 #: SourceIndex/marriage.glade:113
+#, fuzzy
 msgid "d.contract:"
-msgstr ""
+msgstr "Vihkipäivä:"
 
 #: SourceIndex/marriage.glade:131
 msgid "dates banns:"
-msgstr ""
+msgstr "Avioliiton solmimispäivä:"
 
 #: SourceIndex/marriage.glade:149
 msgid "p.contract:"
@@ -21089,51 +21120,59 @@ msgstr ""
 
 #: SourceIndex/marriage.glade:167
 msgid "places banns:"
-msgstr ""
+msgstr "kuulutusten paikat:"
 
 #: SourceIndex/marriage.glade:198
 msgid "<b>Data union</b>"
-msgstr ""
+msgstr "<b>Liiton tiedot</b>"
 
 #: SourceIndex/marriage.glade:318
 msgid "<b>Marriage act</b>"
-msgstr ""
+msgstr "<b>Vihkiminen</b>"
 
 #: SourceIndex/marriage.glade:333
 msgid ""
 "<b>Data father\n"
 "spouse1</b>"
 msgstr ""
+"<b>Puoliso1:n\n"
+"isän tiedot</b>"
 
 #: SourceIndex/marriage.glade:351
 msgid ""
 "<b>Data mother\n"
 "spouse1</b>"
 msgstr ""
+"<b>Puoliso1:n\n"
+"äidin tiedot</b>"
 
 #: SourceIndex/marriage.glade:369
 msgid ""
 "<b>Data mother\n"
 "spouse2</b>"
 msgstr ""
+"<b>Puoliso2:n\n"
+"äidin tiedot</b>"
 
 #: SourceIndex/marriage.glade:387
 msgid ""
 "<b>Data father\n"
 "spouse2</b>"
 msgstr ""
+"<b>Puoliso2:n\n"
+"isän tiedot</b>"
 
 #: SourceIndex/marriage.glade:1185
 msgid "<b>Data spouse1</b>"
-msgstr ""
+msgstr "<b>Puolison1 tiedot</b>"
 
 #: SourceIndex/marriage.glade:1202
 msgid "<b>Data spouse2</b>"
-msgstr ""
+msgstr "<b>Puolison2 tiedot</b>"
 
 #: SourceIndex/witness.glade:7
 msgid "witness"
-msgstr ""
+msgstr "todistaja"
 
 #: SourceIndex/witness.glade:60
 msgid "<b>Witness</b>"
@@ -21141,7 +21180,7 @@ msgstr "<b>Todistajat</b>"
 
 #: SourceReferences/SourceReferences.gpr.py:33
 msgid "Gramplet showing the references for a source"
-msgstr ""
+msgstr "Gramplet, joka näyttää viittaukset lähteeseen"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
@@ -21183,7 +21222,7 @@ msgstr "   Tyyppi: %s"
 #: SourcesCitationsReport/SourcesCitationsReport.py:302
 #, python-format
 msgid "   N-ID: %s"
-msgstr ""
+msgstr "   N-ID: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:310
 #, python-format
@@ -21333,11 +21372,11 @@ msgstr "Poista kartat"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:78
 msgid "Group Name"
-msgstr ""
+msgstr "Ryhmän nimi"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:112
 msgid "Group"
-msgstr ""
+msgstr "Ryhmä"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:140
 msgid "Create Mapping"
@@ -21355,27 +21394,29 @@ msgid ""
 "Traverses the Person list for all Associations that are bi-directional and "
 "adds any which are missing to the Associated Person."
 msgstr ""
+"Etsii henkilöluettelosta kaksisuuntaiset yhteydet ja lisää puuttuvat "
+"yhteydet liitettyyn henkilöön."
 
 #: SyncAssociations/syncAssociations.py:124
 #, python-format
 msgid "Add %s reciprocal association"
-msgstr "Lisää %s yhteinen liitos"
+msgstr "Lisää %s keskinäinen liitos"
 
 #: SyncAssociations/syncAssociations.py:131
 msgid "{} Reciprocal associations created"
-msgstr ""
+msgstr "{} Keskinäiset yhteydet luotu"
 
 #: SyncAssociations/syncAssociations.py:135
 msgid "All reciprocal associations exist, none created"
-msgstr ""
+msgstr "Kaikki keskinäiset yhteydet on jo olemassa, uusia ei luotu"
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
-msgstr ""
+msgstr "Yhteyksiä ei ollut, joten keskinäisiä yhteyksiä ei tarvittu"
 
 #: TMGimporter/importtmg.gpr.py:49
 msgid "TMG Project Backup"
-msgstr ""
+msgstr "TMG-projektin varmuuskopiointi"
 
 #: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
 #: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
@@ -21385,7 +21426,7 @@ msgstr "Tuo TMG-projektitiedostoja"
 #: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
 #: TMGimporter/importtmg.gpr.py:95
 msgid "TMG Unsupported"
-msgstr ""
+msgstr "TMG:tä ei tueta"
 
 #: TMGimporter/importtmg.py:89
 #, python-format
@@ -21404,6 +21445,19 @@ msgid ""
 "Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
+"Tuontia suoraan TMG-tiedostoista ei tueta\n"
+"TMG Importer -lisäosassa.\n"
+"\n"
+"Sinun on käytettävä TMG-projektin varmuuskopiota (*.sqz).\n"
+"\n"
+"Varmista, että TMG-projektisi on luotu:\n"
+"TMG-versiolla 5.x tai uudemmalla.\n"
+"\n"
+"Tiedostosi:\n"
+"*.PJC - Projektin määritystiedosto on versiolle TMG 5.0 – TMG 9.05\n"
+"\n"
+"Katso:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:110
 #, python-format
@@ -21414,6 +21468,10 @@ msgid ""
 "Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
+"TMG-tiedostojen suora tuonti ei ole tuettu vaan sinun on käytettävä TMG-"
+"projektin varmuuskopiota (*.sqz). Varmista, että projektisi on luotu TMG-"
+"versiolla 5.x tai uudemmalla. Tiedostosi: *.TMG - sopii vain versioille TMG "
+"2.0 – 4.0. Katso: %(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:131
 #, python-format
@@ -21424,6 +21482,11 @@ msgid ""
 "Control File for TMG 1.2 and earlierPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
+"TMG-tiedostojen suora tuonti ei ole tuettu suoraan TMG-tiedostoista, vaan on "
+"käytettävä TMG-projektin varmuuskopiota (*.sqz). Varmista, että projektisi "
+"on luotu TMG-versiolla 5.x tai uudemmalla. Tiedostosi: *.VER - "
+"Versiotiedosto TMG 1.2:lle ja aiemmille. Katso: "
+"%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"
@@ -21431,7 +21494,7 @@ msgstr "TMG-tuoja"
 
 #: TMGimporter/libtmg.glade:31
 msgid "Unreleased Addon - Work In Progress"
-msgstr ""
+msgstr "Julkaisematon lisäosa - Työn alla"
 
 #: TMGimporter/libtmg.glade:51
 msgid ""
@@ -21439,14 +21502,17 @@ msgid ""
 "\n"
 "Select the TMG Data Set you wish to import."
 msgstr ""
+"Wholly Genes - Pääsukututkijan (TMG, The Master Genealogist) tuontityökalu\n"
+"\n"
+"Valitse tuotava TMG-tietojoukko."
 
 #: TMGimporter/libtmg.glade:88
 msgid "Data Set Name"
-msgstr ""
+msgstr "Tietojoukon nimi"
 
 #: TMGimporter/libtmg.glade:148
 msgid "_Import TMG Data Set"
-msgstr ""
+msgstr "_Tuo TMG-tietojoukko"
 
 #: Themes/themes.gpr.py:29
 msgid "Theme preferences"
@@ -21479,34 +21545,36 @@ msgstr "Kiinteä vierityspalkki (edellyttää uudelleenkäynnistystä)"
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:16
 msgid "This Day in Family History"
-msgstr ""
+msgstr "Tämä päivä sukuhistoriassa"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:9
 msgid ""
 "A configurable program that shows you the connected events from your family "
 "tree that match today's day and month."
 msgstr ""
+"Konfiguroitava ohjelma, joka näyttää sukupuusi tähän päivään ja kuukauteen "
+"osuvat tapahtumat."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:105
 msgid "Database is not open, can't check history right now."
-msgstr ""
+msgstr "Tietokanta ei ole auki, historiaa ei voi tarkistaa juuri nyt."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:106
 #, python-format
 msgid "On %(date)s in family history ...\n"
-msgstr ""
+msgstr "Sukuhistoriassa päivänä %(date)s ...\n"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:107
 msgid "... nothing happened!  Check again tomorrow!"
-msgstr ""
+msgstr "... mitään ei tapahtunut! Tarkista huomenna uudelleen!"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:111
 msgid "Report only living tree members"
-msgstr ""
+msgstr "Näytä vain elävät puun jäsenet"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:112
 msgid "Show these events"
-msgstr ""
+msgstr "Näytä nämä tapahtumat"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:113
 msgid "Sort by "
@@ -21514,55 +21582,74 @@ msgstr "Lajitteluperuste "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:114
 msgid "Sort in ascending order?"
-msgstr ""
+msgstr "Lajittele nousevaan järjestykseen?"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
 msgid "February"
 msgstr ""
+"N=helmikuu|G=helmikuun|IN=helmikuussa|P=helmikuuta|IL=helmikuuhun|E=helmikuusta"
+""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
 msgid "January"
 msgstr ""
+"N=tammikuu|G=tammikuun|IN=tammikuussa|P=tammikuuta|IL=tammikuuhun|E=tammikuusta"
+""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
 msgid "March"
-msgstr "Maaliskuu"
+msgstr ""
+"N=maaliskuu|G=maaliskuun|IN=maaliskuussa|P=maaliskuuta|IL=maaliskuuhun|E=maaliskuusta"
+""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "April"
 msgstr ""
+"N=huhtikuu|G=huhtikuun|IN=huhtikuussa|P=huhtikuuta|IL=huhtikuuhun|E=huhtikuusta"
+""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "July"
 msgstr ""
+"N=heinäkuu|G=heinäkuun|IN=heinäkuussa|P=heinäkuuta|IL=heinäkuuhun|E=heinäkuusta"
+""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "June"
 msgstr ""
+"N=kesäkuu|G=kesäkuun|IN=kesäkuussa|P=kesäkuuta|IL=kesäkuuhun|E=kesäkuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "May"
 msgstr ""
+"N=toukokuu|G=toukokuun|IN=toukokuussa|P=toukokuuta|IL=toukokuuhun|E=toukokuusta"
+""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:129
 msgid "August"
-msgstr ""
+msgstr "N=elokuu|G=elokuun|IN=elokuussa|P=elokuuta|IL=elokuuhun|E=elokuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:129
 msgid "October"
 msgstr ""
+"N=lokakuu|G=lokakuun|IN=lokakuussa|P=lokakuuta|IL=lokakuuhun|E=lokakuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:129
 msgid "September"
 msgstr ""
+"N=syyskuu|G=syyskuun|IN=syyskuussa|P=syyskuuta|IL=syyskuuhun|E=syyskuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:130
 msgid "December"
 msgstr ""
+"N=joulukuu|G=joulukuun|IN=joulukuussa|P=joulukuuta|IL=joulukuuhun|E=joulukuusta"
+""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:130
 msgid "November"
 msgstr ""
+"N=marraskuu|G=marraskuun|IN=marraskuussa|P=marraskuuta|IL=marraskuuhun|E=marraskuusta"
+""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:247
 msgid "Person Name"
@@ -21574,20 +21661,20 @@ msgstr "Tapahtumavuosi"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:328
 msgid "gregorian"
-msgstr ""
+msgstr "gregoriaaninen"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:383
 msgid "Unknown father/partner"
-msgstr ""
+msgstr "Tuntematon isä/kumppani"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:398
 msgid "Unknown mother/partner"
-msgstr ""
+msgstr "Tuntematon äiti/kumppani"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:427
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:429
 msgid " and "
-msgstr ""
+msgstr " ja "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:431
 msgid "unknown participant"
@@ -21595,49 +21682,53 @@ msgstr "tuntematon osallistuja"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:438
 msgid "unknown location"
-msgstr ""
+msgstr "tuntematon paikka"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:481
 #, python-format
 msgid "%(male_name)s was adopted in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s adoptoitiin vuonna %(year)s paikassa %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:483
 #, python-format
 msgid "%(female_name)s was adopted in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s adoptoitiin vuonna %(year)s paikassa %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:486
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:539
 #, python-format
 msgid "%(male_name)s was christened in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s kastettiin %(year)s paikassa %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:488
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:541
 #, python-format
 msgid "%(female_name)s was christened in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s kastettiin %(year)s paikassa %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:491
 #, python-format
 msgid "%(male_name)s was married in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s meni naimisiin vuonna %(year)s paikassa %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:493
 #, python-format
 msgid "%(female_name)s was married in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s meni naimisiin vuonna %(year)s paikassa %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:496
 #, python-format
 msgid "%(male_name)s received an annulment in %(year)s at %(place)s."
 msgstr ""
+"henkilön %(male_name)s avioliitto mitätöitiin vuonna %(year)s paikassa "
+"%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:498
 #, python-format
 msgid "%(female_name)s received an annulment in %(year)s at %(place)s."
 msgstr ""
+"henkilön %(female_name)s avioliitto mitätöitiin vuonna %(year)s paikassa "
+"%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:502
 #, python-format
@@ -21979,31 +22070,31 @@ msgstr "Pikkukuvageneraattori"
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:32
 msgid "Generates thumbnails for media files"
-msgstr ""
+msgstr "Luo mediatiedostojen pikkukuvia"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:56
 msgid "Generating media thumbnails"
-msgstr ""
+msgstr "Median pikkukuvien luominen"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:67
 msgid "Generating thumbnails for person references"
-msgstr ""
+msgstr "Henkilöviittausten pikkukuvien luominen"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:76
 msgid "Generating thumbnails for family references"
-msgstr ""
+msgstr "Perheviittausten pikkukuvien luominen"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:85
 msgid "Generating thumbnails for event references"
-msgstr ""
+msgstr "Tapahtumaviittausten pikkukuvien luominen"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:94
 msgid "Generating thumbnails for place references"
-msgstr ""
+msgstr "Paikkaviittausten pikkukuvien luominen"
 
 #: ThumbnailGenerator/ThumbnailGenerator.py:103
 msgid "Generating thumbnails for source references"
-msgstr ""
+msgstr "Lähdeviittausten pikkukuvien luominen"
 
 #: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
 msgid "Timeline Pedigree Report"
@@ -22014,6 +22105,8 @@ msgid ""
 "Creates an HTML webpage that uses JavaScript to show a pedigree block "
 "diagram arranged vertically by birth date"
 msgstr ""
+"Luo HTML-verkkosivun JavaScriptillä, näyttämään syntymäajan mukaan "
+"pystysuuntaisen sukupuun lohkokaavion"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
 msgid "Failed writing "
@@ -22021,15 +22114,15 @@ msgstr "Kirjoitus epäonnistui "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
-msgstr ""
+msgstr "Keskushenkilön syntymävuosi"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
-msgstr ""
+msgstr "Keskushenkilön syntymävuosi. Arvioi vuosi, jos se ei ole tiedossa"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
 msgid "Destination directory"
-msgstr ""
+msgstr "Kohdehakemisto"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Path for generated files"
@@ -22041,11 +22134,11 @@ msgstr "Oletusikä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
-msgstr ""
+msgstr "Vanhemman oletusikä, kun lapsella ei ole syntymävuotta"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
-msgstr ""
+msgstr "Mitä näytetään"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Show GrampsID"
@@ -22053,7 +22146,7 @@ msgstr "Näytä gramps ID"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
-msgstr ""
+msgstr "Näytä GrampsID laatikon oikeassa yläkulmassa"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
@@ -22061,7 +22154,7 @@ msgstr "Optimoi"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
-msgstr ""
+msgstr "Käytä mahdollisimman vähän tilaa vaakasuunnassa"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
 msgid "Male Box Color"
@@ -22085,31 +22178,33 @@ msgstr "Vuoden pikselien määrä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
-msgstr ""
+msgstr "Kuinka monta pikseliä korkea on yksi vuosi?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:910
 msgid "Offset X Coordinate"
-msgstr ""
+msgstr "X-koordinaatin siirtymä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
+"Montako pikseliä jätetään tyhjäksi vasemmalla ja oikealla laatikkojen "
+"vieressä?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:917
 msgid "Offset Y Coordinate"
-msgstr ""
+msgstr "Y-koordinaatin siirtymä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
-msgstr ""
+msgstr "Montako pikseliä jätetään tyhjäksi ensimmäisen laatikon yläpuolella?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
 msgid "Width of a box in pixel"
-msgstr ""
+msgstr "Laatikon leveys pikseleinä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:922
 msgid "Width of the box of a person in pixel"
-msgstr ""
+msgstr "Henkilölaatikon leveys pikseleinä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:925
 msgid "Horizontal space between boxes in pixel"
@@ -22117,22 +22212,24 @@ msgstr "Ruutujen välinen vaakasuora tila pikseleinä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
-msgstr ""
+msgstr "Vierekkäisten laatikkojen vähimmäisväli pikseleinä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:934
 msgid "Length of vertical part of a line in pixel"
-msgstr ""
+msgstr "Viivan pystyosan pituus pikseleinä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:936
 msgid ""
 "Parent and child boxes are connected with lines. This is the length of the "
 "vertical part of the lines in pixel"
 msgstr ""
+"Vanhempi- ja lapsilaatikot on yhdistetty viivoilla. Tämä on pystysuuntainen "
+"välin korkeus pikseleinä"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:943
 #: TimePedigreeHTML/TimePedigreeHtml.py:945
 msgid "Number of pixel between left border and scale"
-msgstr ""
+msgstr "Vasemman reunan ja asteikon väli pikseleinä"
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
@@ -22228,26 +22325,29 @@ msgstr "Mukana olevat henkilöt"
 
 #: ToDoReport/TodoReport.gpr.py:25
 msgid "Todo Report"
-msgstr ""
+msgstr "Tehtävälistaus"
 
 #: ToDoReport/TodoReport.gpr.py:27
 msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
+"Tuottaa luettelon kaikista tietyn tunnisteen sisältävistä muistiinpanoista "
+"sekä niihin viittaavista kohteista, kuten henkilöstä, perheestä, "
+"tapahtumasta jne."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
-msgstr ""
+msgstr "TR-nimike"
 
 #: ToDoReport/TodoReport.py:111
 #, python-format
 msgid "Report on Notes Tagged '%s'"
-msgstr ""
+msgstr "Raportti tunnisteella '%s' merkityistä muistiinpanoista"
 
 #: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
 msgid "TR-Heading"
-msgstr ""
+msgstr "TR-otsikko"
 
 #: ToDoReport/TodoReport.py:243
 msgid "NoteTable"
@@ -22280,12 +22380,12 @@ msgstr "TR-taulukko"
 #: ToDoReport/TodoReport.py:678 ToDoReport/TodoReport.py:683
 #: ToDoReport/TodoReport.py:689 ToDoReport/TodoReport.py:947
 msgid "TR-TableCell"
-msgstr ""
+msgstr "TR-taulukkosolu"
 
 #: ToDoReport/TodoReport.py:248 ToDoReport/TodoReport.py:254
 #: ToDoReport/TodoReport.py:935
 msgid "TR-Normal-Bold"
-msgstr ""
+msgstr "TR-lihavoitu-tavallinen"
 
 #: ToDoReport/TodoReport.py:268 ToDoReport/TodoReport.py:285
 #: ToDoReport/TodoReport.py:303 ToDoReport/TodoReport.py:311
@@ -22309,19 +22409,19 @@ msgstr ""
 #: ToDoReport/TodoReport.py:684 ToDoReport/TodoReport.py:690
 #: ToDoReport/TodoReport.py:924
 msgid "TR-Normal"
-msgstr ""
+msgstr "TR-tavallinen"
 
 #: ToDoReport/TodoReport.py:275 ToDoReport/TodoReport.py:942
 msgid "TR-Note"
-msgstr ""
+msgstr "TR-lisätieto"
 
 #: ToDoReport/TodoReport.py:284 ToDoReport/TodoReport.py:952
 msgid "TR-BorderCell"
-msgstr ""
+msgstr "TR-reunasolu"
 
 #: ToDoReport/TodoReport.py:405
 msgid "date: "
-msgstr ""
+msgstr "päivämäärä: "
 
 #: ToDoReport/TodoReport.py:417
 msgid "place: "
@@ -22333,11 +22433,11 @@ msgstr "Lisätietotyyppi"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
-msgstr ""
+msgstr "Ryhmittele viittaustyypin mukaan"
 
 #: ToDoReport/TodoReport.py:886
 msgid "Group notes by Family, Person, Place, etc."
-msgstr ""
+msgstr "Ryhmittele muistiinpanoja perheen, henkilön, paikan jne. mukaan."
 
 #: ToDoReport/TodoReport.py:946
 msgid "The basic style used for the table cell display."
@@ -22345,7 +22445,7 @@ msgstr "Taulukon solunäytön perustyyli."
 
 #: ToDoReport/TodoReport.py:951
 msgid "The basic style used for the table border cell display."
-msgstr ""
+msgstr "Taulukon reunasolujen esittämisen perustyyli."
 
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
@@ -22365,19 +22465,19 @@ msgstr "Tyypin puhdistus"
 
 #: TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
-msgstr ""
+msgstr "Poista mukautetut tyypit"
 
 #: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
-msgstr ""
+msgstr "Tapahtumaroolit"
 
 #: TypeCleanup/type_cleanup.py:102
 msgid "Event Types"
-msgstr ""
+msgstr "Tapahhtumatyypit"
 
 #: TypeCleanup/type_cleanup.py:103
 msgid "Family Relation Types"
-msgstr ""
+msgstr "Perhesuhteiden tyypit"
 
 #: TypeCleanup/type_cleanup.py:104
 msgid "Child reference Types"
@@ -22385,7 +22485,7 @@ msgstr "Lapsen viitetyypit"
 
 #: TypeCleanup/type_cleanup.py:105
 msgid "Name Origin Types"
-msgstr ""
+msgstr "Nimen alkuperän tyypit"
 
 #: TypeCleanup/type_cleanup.py:106
 msgid "Name Types"
@@ -22413,35 +22513,39 @@ msgstr "URL tyypit"
 
 #: TypeCleanup/type_cleanup.py:124
 msgid "Types Cleanup Tool"
-msgstr ""
+msgstr "Tyyppien puhdistustyökalu"
 
 #: TypeCleanup/type_cleanup.py:166
 msgid ""
 "Remove the selected type from the db.\n"
 "This does not change any referenced objects."
 msgstr ""
+"Poista valittu tyyppi tietokannasta.\n"
+"Tämä ei muuta viitattuja objekteja."
 
 #: TypeCleanup/type_cleanup.py:174
 msgid ""
 "Select a new name for the current type, prior to renaming the type in the "
 "referenced objects."
 msgstr ""
+"Valitse nykyiselle tyypille uusi nimi ennen kuin nimeät tyypin uudelleen "
+"viitatuissa objekteissa."
 
 #: TypeCleanup/type_cleanup.py:182
 msgid "Rename"
-msgstr ""
+msgstr "Nimeä uudelleen"
 
 #: TypeCleanup/type_cleanup.py:185
 msgid "Rename the selected type in all referenced objects."
-msgstr ""
+msgstr "Nimeä valittu tyyppi uudelleen kaikissa viitatuissa objekteissa."
 
 #: TypeCleanup/type_cleanup.py:189
 msgid "Close the Type Cleanup Tool"
-msgstr ""
+msgstr "Sulje tyypin puhdistustyökalu"
 
 #: TypeCleanup/type_cleanup.py:195
 msgid "Types"
-msgstr ""
+msgstr "Tyypit"
 
 #: TypeCleanup/type_cleanup.py:242
 msgid "Type Cleanup Tool"
@@ -22450,7 +22554,7 @@ msgstr "Tyypin puhdistustyökalu"
 #: TypeCleanup/type_cleanup.py:387
 #, python-format
 msgid "Changing type from %(old_type)s to %(new_type)s."
-msgstr ""
+msgstr "Tyypin %(old_type)s vaihtaminen tyypiksi %(new_type)s."
 
 #: TypeCleanup/type_cleanup.py:432
 msgid ""
@@ -22461,6 +22565,12 @@ msgid ""
 "However, it will not remove it from the referenced items in the database.\n"
 "If you want to change it in referenced items, use 'Rename'."
 msgstr ""
+"Tämän mukautetun tyypin poistaminen poistaa tyypin valintavalikoista ja "
+"työkalun jatkokäytöistä.\n"
+"\n"
+"Se ei kuitenkaan poista sitä tietokannan viitatuista kohteista.\n"
+"Jos haluat muuttaa sitä viitatuissa kohteissa, käytä toimintoa 'Nimeä "
+"uudelleen'."
 
 #: UAWebConnectPack/UAWebPack.gpr.py:11
 msgid "UA Web Connect Pack"
@@ -22472,23 +22582,23 @@ msgstr "Nettisivustojen kokoelma UA (vaatii libwebconnectin)"
 
 #: UAWebConnectPack/UAWebPack.py:39
 msgid "Forum: ukrgenealogy.com.ua"
-msgstr ""
+msgstr "Forum: ukrgenealogy.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:40
 msgid "Forum: genoua.name"
-msgstr ""
+msgstr "Forum: genoua.name"
 
 #: UAWebConnectPack/UAWebPack.py:43
 msgid "Encyclopedia: esu.com.ua"
-msgstr ""
+msgstr "Encyclopedia: esu.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:44
 msgid "Wikipedia: uk.wikipedia.org"
-msgstr ""
+msgstr "Wikipedia: uk.wikipedia.org"
 
 #: UAWebConnectPack/UAWebPack.py:47
 msgid "Repressed DB: reabit.org.ua"
-msgstr ""
+msgstr "Torjuttu tietokanta: reabit.org.ua"
 
 #: UAWebConnectPack/UAWebPack.py:50
 msgid "Genealogy DB: familysearch.org"
@@ -22496,19 +22606,19 @@ msgstr "Sukututkimus DB: familysearch.org"
 
 #: UAWebConnectPack/UAWebPack.py:51
 msgid "Genealogy DB: myheritage.com.ua"
-msgstr ""
+msgstr "Sukututkimustietokanta: myheritage.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:53
 msgid "Genealogy DB: pra.in.ua"
-msgstr ""
+msgstr "Sukututkimustietokanta: pra.in.ua"
 
 #: UAWebConnectPack/UAWebPack.py:56
 msgid "Map: Ridni.org"
-msgstr ""
+msgstr "Kartta: Ridni.org"
 
 #: UAWebConnectPack/UAWebPack.py:59
 msgid "Search: google.com.ua"
-msgstr ""
+msgstr "Haku: google.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:60
 msgid "Search: roots.in.ua"
@@ -22559,6 +22669,8 @@ msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
 msgstr ""
+"Mukautetut kyselyt verkkopalveluille perustuen aktiivisen henkilö-, paikka-, "
+"perhe- tai lähdetietoihin"
 
 #: WebSearch.py:468
 msgid "Save Coordinates to the Place"
@@ -22566,7 +22678,7 @@ msgstr "Tallenna paikan koordinaatit"
 
 #: WebSearch.py:609
 msgid "AI provider is disabled"
-msgstr ""
+msgstr "Tekoälypalvelua ei ole tarjolla"
 
 #: WebSearch.py:613
 msgid "No AI API key provided"
@@ -22575,18 +22687,21 @@ msgstr "Yhtään AI API :n avainta ei ole annettu"
 #: WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
 msgstr ""
+"Tekoälyn luomat historialliset paikkatiedot eivät ole tällä hetkellä käytössä"
 
 #: WebSearch.py:629
 msgid "AI provider is unknown. Please check your AI provider settings."
 msgstr ""
+"Tekoälypalveluntarjoaja ei ole tiedossa. Tarkista tekoälypalveluntarjoajasi "
+"asetukset."
 
 #: WebSearch.py:649
 msgid "⏳ Generating historical place data, please wait..."
-msgstr ""
+msgstr "⏳ Luodaan historiallista paikkatietoa, odota hetki..."
 
 #: WebSearch.py:1521
 msgid "Keys"
-msgstr ""
+msgstr "Avaimet"
 
 #: WebSearch.py:1523
 msgid "Website URL"
@@ -22606,35 +22721,35 @@ msgstr "Näytä QR-koodi"
 
 #: WebSearch.py:1532
 msgid "Copy link to clipboard"
-msgstr ""
+msgstr "Kopioi linkki leikepöydälle"
 
 #: WebSearch.py:1535
 msgid "Hide link for selected item"
-msgstr ""
+msgstr "Piilota linkki valitusta kohteesta"
 
 #: WebSearch.py:1538
 msgid "Hide link for all items"
-msgstr ""
+msgstr "Piilota linkki kaikista kohteista"
 
 #: WebSearch.py:1542
 msgid "Edit Attribute with the Link"
-msgstr ""
+msgstr "Muokkaa ominaisuutta linkin avulla"
 
 #: WebSearch.py:1546
 msgid "Edit Note with the Link"
-msgstr ""
+msgstr "Muokkaa lisätietoa linkin avulla"
 
 #: WebSearch.py:1549
 msgid "🔍 AI Suggestions"
-msgstr ""
+msgstr "🔍 Tekoälyn ehdotukset"
 
 #: WebSearch.py:1769
 msgid "Attribute no longer exists. The extra icon is removed"
-msgstr ""
+msgstr "Ominaisuutta ei enää ole. Ylimääräinen kuvake on poistettu"
 
 #: WebSearch.py:1815
 msgid "Note no longer exists. The extra icon is removed"
-msgstr ""
+msgstr "Lisätietoa ei enää ole. Ylimääräinen kuvake on poistettu"
 
 #: WebSearch.py:1840
 #, python-brace-format
@@ -22647,6 +22762,12 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this entity."
 msgstr ""
+"📌 WebSearch-gramplet (v. {version}) on arkistoinut tämän verkkolinkin "
+"'{title}' myöhempää tarvetta varten:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Voit palata lähteeseen tällä linkillä tarkistaaksesi liittyvät tiedot."
 
 #: WebSearch.py:1926
 #, python-format
@@ -22655,11 +22776,11 @@ msgstr "Lisätieto #%(id)s on onnistuneesti lisätty"
 
 #: WebSearch.py:1929
 msgid "Error creating note"
-msgstr ""
+msgstr "Virhe luotaessa lisätietoa"
 
 #: WebSearch.py:1949
 msgid "URL is copied to the Clipboard"
-msgstr ""
+msgstr "URL-osoite kopioidaan leikepöydälle"
 
 #: WebSearch.py:2068
 msgid "WebSearch Link"
@@ -22687,16 +22808,17 @@ msgstr "Tyhjä: {keys}"
 #: WebSearch.py:2151
 #, python-brace-format
 msgid "Comment: {comment}"
-msgstr ""
+msgstr "Kommentti: {comment}"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
 msgid "Wordle"
-msgstr ""
+msgstr "Wordle"
 
 #: WordleGramplet/WordleGramplet.gpr.py:13
 msgid "Gramplet used to make word clouds with wordle.net"
 msgstr ""
+"Grampletti, jota on käytetty sanapilvien tekemiseen wordle.net-sivustolla"
 
 #: WordleGramplet/WordleGramplet.py:126
 msgid "[Missing]"
@@ -22718,12 +22840,12 @@ msgstr "Katsottu: %s"
 #: activity_row_generator.py:114 activity_row_generator.py:129
 #, python-format
 msgid "Link: %s"
-msgstr ""
+msgstr "Linkki: %s"
 
 #: activity_row_generator.py:116
 #, python-format
 msgid "Attribute: %s"
-msgstr ""
+msgstr "Ominaisuus: %s"
 
 #: activity_row_generator.py:118
 #, python-format
@@ -22758,7 +22880,7 @@ msgstr "Kohteen Gramps ID: %s"
 #: activity_row_generator.py:142
 #, python-format
 msgid "%s: %s → %s: %s"
-msgstr ""
+msgstr "%s: %s → %s: %s"
 
 #: activity_row_generator.py:152
 msgid "Link visited"
