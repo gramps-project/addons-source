@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-06 12:26-0700\n"
+"POT-Creation-Date: 2025-08-15 11:06-0700\n"
 "PO-Revision-Date: 2025-03-24 10:31+0000\n"
 "Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
@@ -1164,7 +1164,7 @@ msgstr "祖先折りたたみツリーオプション"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
-#: DescendantSpaceTree/DescendantSpaceTree.py:1080
+#: DescendantSpaceTree/DescendantSpaceTree.py:1082
 msgid "Include Generations"
 msgstr "世代を含める"
 
@@ -1202,7 +1202,7 @@ msgstr "女性の拡張ボックスの背景のRGBカラー。"
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
-#: DescendantSpaceTree/DescendantSpaceTree.py:1130
+#: DescendantSpaceTree/DescendantSpaceTree.py:1132
 msgid "The destination path for generated files."
 msgstr "生成されたファイルの保存先パス。"
 
@@ -3032,13 +3032,14 @@ msgstr ""
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:913
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
+#: DescendantSpaceTree/DescendantSpaceTree.py:914
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:922
+#: DescendantSpaceTree/DescendantSpaceTree.py:923
 msgid ""
 "Search for a person by typing into the search box.  At least three "
 "characters are required to search.  Click on any of the suggestions to "
@@ -3047,31 +3048,32 @@ msgid ""
 "spouse."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:935
+#: DescendantSpaceTree/DescendantSpaceTree.py:936
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:945
+#: DescendantSpaceTree/DescendantSpaceTree.py:946
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:954
+#: DescendantSpaceTree/DescendantSpaceTree.py:955
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:964
+#: DescendantSpaceTree/DescendantSpaceTree.py:965
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:973
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
+#: DescendantSpaceTree/DescendantSpaceTree.py:975
 msgid ""
 "A person may occur in different branches.  This is usually because of inter-"
 "family marriages (such as that of cousins.)  In this case, a button will "
@@ -3080,61 +3082,61 @@ msgid ""
 "expand descendants of this person. "
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:987
+#: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1014
+#: DescendantSpaceTree/DescendantSpaceTree.py:1016
 #, fuzzy
 #| msgid "Search..."
 msgid "Search. . ."
 msgstr "検索..."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1089
+#: DescendantSpaceTree/DescendantSpaceTree.py:1091
 msgid "Branch to expand when duplicated"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1100
+#: DescendantSpaceTree/DescendantSpaceTree.py:1102
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1108
+#: DescendantSpaceTree/DescendantSpaceTree.py:1110
 msgid "Maximum display birth year"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1111
-msgid "Birth/date dates will not be displayed after this year"
+#: DescendantSpaceTree/DescendantSpaceTree.py:1113
+msgid "Birth/death dates will not be displayed after this year"
 msgstr ""
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1116
+#: DescendantSpaceTree/DescendantSpaceTree.py:1118
 #, fuzzy
 #| msgid "Theme preferences"
 msgid "Theme preference"
 msgstr "テーマの設定"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1123
+#: DescendantSpaceTree/DescendantSpaceTree.py:1125
 #, fuzzy
 #| msgid "The central person for the tree"
 msgid "Theme color preference for Space Tree"
 msgstr "ツリーの中心人物"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1136
+#: DescendantSpaceTree/DescendantSpaceTree.py:1138
 #, fuzzy
 #| msgid "Invalid Destination Directory"
 msgid "Destination File"
 msgstr "無効な宛先ディレクトリ"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1138
+#: DescendantSpaceTree/DescendantSpaceTree.py:1140
 #, fuzzy
 #| msgid "The destination file name for html content."
 msgid "The destination file name for the report."
 msgstr "HTML コンテンツの保存先ファイル名。"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1144
+#: DescendantSpaceTree/DescendantSpaceTree.py:1146
 #, fuzzy
 #| msgid "Opens an interactive tree in the browser"
 msgid "Open generated HTML file with default browser."
@@ -4929,21 +4931,14 @@ msgstr "点滅時間"
 
 #: EditExifMetadata/editexifmetadata.py:1122
 #, fuzzy
-msgid "Invalid latitude (syntax: 18°9'"
-msgstr "無効な緯度 (入力形式: 18°9'"
-
-#: EditExifMetadata/editexifmetadata.py:1123
-msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 or -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
 #, fuzzy
-msgid "Invalid longitude (syntax: 18°9'"
+msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 msgstr "無効な経度 (入力形式: 18°9'"
-
-#: EditExifMetadata/editexifmetadata.py:1128
-msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 or -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -19008,6 +19003,136 @@ msgstr ""
 msgid "PostgreSQL Database"
 msgstr ""
 
+#: PostgreSQLEnhanced/concurrency.py:479
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:168
+#, fuzzy
+#| msgid "Generating relation map..."
+msgid "Starting migration..."
+msgstr "関係マップを生成中..."
+
+#: PostgreSQLEnhanced/migration.py:182
+#, python-format
+msgid "Migrating %s objects..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:193
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:209
+msgid "Migration completed!"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:438
+#, fuzzy
+#| msgid "Attaching sources..."
+msgid "Starting upgrade..."
+msgstr "ソースを添付中..."
+
+#: PostgreSQLEnhanced/migration.py:470
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:478
+#, fuzzy
+#| msgid "Preparing file ..."
+msgid "Creating indexes..."
+msgstr "ファイルの準備中..."
+
+#: PostgreSQLEnhanced/migration.py:489
+msgid "Upgrade completed!"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
+msgid "PostgreSQL Enhanced"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
+#, fuzzy
+msgid "PostgreSQL _Enhanced Database"
+msgstr "Shared PostgreSQL Database"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:154
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:163
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:211
+msgid "Database Backend"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:212
+msgid "Database module"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:214
+msgid "JSONB support"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:236
+msgid "Version warning"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:237
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:252
+msgid "Extensions"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:273
+msgid "Database size"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:276
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1126
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1141
+msgid "Migration manager not initialized"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1159
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1177
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1239
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1255
+msgid "Enhanced queries require JSONB support"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1206
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr ""
+
+#: PostgreSQLEnhanced/queries.py:364
+msgid "pg_trgm extension required for duplicate detection"
+msgstr ""
+
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
 msgid "Prerequisites Checker"
@@ -22447,12 +22572,6 @@ msgstr ""
 msgid "Note updated"
 msgstr ""
 
-#: connection.py:113 postgresqlenhanced.py:112
-msgid ""
-"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
-"install 'psycopg[binary]'"
-msgstr ""
-
 #: constants.py:390
 msgid "Column - Icons"
 msgstr ""
@@ -23141,47 +23260,6 @@ msgstr "場所のタイトルをチェック"
 msgid "Last Retrieved At:"
 msgstr ""
 
-#: migration.py:133
-#, fuzzy
-#| msgid "Generating relation map..."
-msgid "Starting migration..."
-msgstr "関係マップを生成中..."
-
-#: migration.py:145
-#, python-format
-msgid "Migrating %(type)s objects..."
-msgstr ""
-
-#: migration.py:154
-#, python-format
-msgid "Migrated %(count)d %(type)s objects"
-msgstr ""
-
-#: migration.py:171
-msgid "Migration completed!"
-msgstr ""
-
-#: migration.py:302 postgresqlenhanced.py:287
-#, fuzzy
-#| msgid "Attaching sources..."
-msgid "Starting upgrade..."
-msgstr "ソースを添付中..."
-
-#: migration.py:320
-#, python-format
-msgid "Upgrading %(type)s objects..."
-msgstr ""
-
-#: migration.py:331
-#, fuzzy
-#| msgid "Preparing file ..."
-msgid "Creating indexes..."
-msgstr "ファイルの準備中..."
-
-#: migration.py:342
-msgid "Upgrade completed!"
-msgstr ""
-
 #: note_links_loader.py:69
 #, fuzzy
 #| msgid "No file parsed..."
@@ -23196,76 +23274,6 @@ msgstr ""
 msgid "Note Link (external)"
 msgstr ""
 
-#: postgresqlenhanced.gpr.py:27
-msgid "PostgreSQL Enhanced"
-msgstr ""
-
-#: postgresqlenhanced.gpr.py:28
-#, fuzzy
-msgid "PostgreSQL _Enhanced Database"
-msgstr "Shared PostgreSQL Database"
-
-#: postgresqlenhanced.gpr.py:29
-msgid ""
-"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
-"and migration support. Uses psycopg3 for modern PostgreSQL features while "
-"maintaining full compatibility."
-msgstr ""
-
-#: postgresqlenhanced.py:118
-#, python-format
-msgid ""
-"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
-"required."
-msgstr ""
-
-#: postgresqlenhanced.py:167
-msgid "Database Backend"
-msgstr ""
-
-#: postgresqlenhanced.py:168
-msgid "Database module"
-msgstr ""
-
-#: postgresqlenhanced.py:170
-msgid "JSONB support"
-msgstr ""
-
-#: postgresqlenhanced.py:191
-#, python-format
-msgid "Version warning"
-msgstr ""
-
-#: postgresqlenhanced.py:193
-#, python-format
-msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
-msgstr ""
-
-#: postgresqlenhanced.py:206
-msgid "Extensions"
-msgstr ""
-
-#: postgresqlenhanced.py:224
-msgid "Database size"
-msgstr ""
-
-#: postgresqlenhanced.py:229
-#, python-format
-msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr ""
-
-#: postgresqlenhanced.py:300
-msgid "Upgrading to PostgreSQL Enhanced"
-msgstr ""
-
-#: postgresqlenhanced.py:315
-msgid "Migration manager not initialized"
-msgstr ""
-
-#: postgresqlenhanced.py:327
-msgid "Enhanced queries require JSONB support"
-msgstr ""
-
 #: qr_window.py:88
 msgid "QR-code"
 msgstr ""
@@ -23278,23 +23286,6 @@ msgstr ""
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
-msgstr ""
-
-#: queries.py:354
-msgid "pg_trgm extension required for duplicate detection"
-msgstr ""
-
-#: schema.py:156
-msgid "Creating new PostgreSQL Enhanced schema"
-msgstr ""
-
-#: schema.py:162
-#, python-format
-msgid "Upgrading schema from v%(current)s to v%(new)s"
-msgstr ""
-
-#: schema.py:246
-msgid "PostgreSQL Enhanced schema created successfully"
 msgstr ""
 
 #: settings_ui_manager.py:112
@@ -23404,6 +23395,13 @@ msgstr "表示モード"
 #| msgid "Display mode"
 msgid "Display Icons"
 msgstr "表示モード"
+
+#, fuzzy
+#~ msgid "Invalid latitude (syntax: 18°9'"
+#~ msgstr "無効な緯度 (入力形式: 18°9'"
+
+#~ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+#~ msgstr "48.21\"E, -18.2412 or -18:9:48.21)"
 
 #, fuzzy
 #~| msgid "Web Link"

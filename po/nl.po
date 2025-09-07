@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-06 12:26-0700\n"
+"POT-Creation-Date: 2025-08-15 11:06-0700\n"
 "PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
@@ -1202,7 +1202,7 @@ msgstr "Inklapbare voorouderboom opties"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
-#: DescendantSpaceTree/DescendantSpaceTree.py:1080
+#: DescendantSpaceTree/DescendantSpaceTree.py:1082
 msgid "Include Generations"
 msgstr "Generaties opnemen"
 
@@ -1240,7 +1240,7 @@ msgstr "RGB-kleur voor vrouwelijke uitbreidbare kaderachtergrond."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
-#: DescendantSpaceTree/DescendantSpaceTree.py:1130
+#: DescendantSpaceTree/DescendantSpaceTree.py:1132
 msgid "The destination path for generated files."
 msgstr "Het bestemmingspad voor gegenereerde bestanden."
 
@@ -3100,7 +3100,8 @@ msgstr ""
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
 msgstr "Klik en sleep in het weergavevenster om de stamboom te positioneren."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:913
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
+#: DescendantSpaceTree/DescendantSpaceTree.py:914
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
@@ -3108,7 +3109,7 @@ msgstr ""
 "Klik op de resetknop ___HELP_RESET_BUTTON___ om terug te keren naar de "
 "beginnende afstammeling."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:922
+#: DescendantSpaceTree/DescendantSpaceTree.py:923
 msgid ""
 "Search for a person by typing into the search box.  At least three "
 "characters are required to search.  Click on any of the suggestions to "
@@ -3122,7 +3123,7 @@ msgstr ""
 "een plusteken (+) achter de naam geeft aan dat die persoon voorkomt als "
 "partner."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:935
+#: DescendantSpaceTree/DescendantSpaceTree.py:936
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
@@ -3131,7 +3132,7 @@ msgstr ""
 "knooppunt.  Kinderen van alle gezinnen van de afstammeling worden "
 "gegroepeerd."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:945
+#: DescendantSpaceTree/DescendantSpaceTree.py:946
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
@@ -3139,7 +3140,7 @@ msgstr ""
 "Personen die na een gespecificeerde datum zijn geboren, worden mogelijk "
 "zonder geboorte- of overlijdensdatum weergeven."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:954
+#: DescendantSpaceTree/DescendantSpaceTree.py:955
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
@@ -3147,7 +3148,7 @@ msgstr ""
 "Knooppunten zijn gekleurd om het aantal kinderen aan te geven, hoe intenser "
 "de kleur, hoe groter het aantal kinderen."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:964
+#: DescendantSpaceTree/DescendantSpaceTree.py:965
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
@@ -3155,7 +3156,8 @@ msgstr ""
 "De momenteel geselecteerde afstammeling en alle voorouders van die persoon "
 "zijn geel gemarkeerd."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:973
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
+#: DescendantSpaceTree/DescendantSpaceTree.py:975
 msgid ""
 "A person may occur in different branches.  This is usually because of inter-"
 "family marriages (such as that of cousins.)  In this case, a button will "
@@ -3169,7 +3171,7 @@ msgstr ""
 "___NAV_BUTTON_ALT___  om door de andere tak te navigeren.  Van slechts één "
 "tak van deze persoon worden de afstammelingen uitgevouwen. "
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:987
+#: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
@@ -3178,15 +3180,15 @@ msgstr ""
 "viewer, zie broncode LICENSE*.txt-bestanden voor volledige licenties en "
 "vereiste kennisgevingen."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1014
+#: DescendantSpaceTree/DescendantSpaceTree.py:1016
 msgid "Search. . ."
 msgstr "Zoeken..."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1089
+#: DescendantSpaceTree/DescendantSpaceTree.py:1091
 msgid "Branch to expand when duplicated"
 msgstr "Vertakking om uit te vouwen wanneer gedupliceerd"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1100
+#: DescendantSpaceTree/DescendantSpaceTree.py:1102
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
@@ -3194,31 +3196,33 @@ msgstr ""
 "Wanneer een afstammeling meer dan eens voorkomt, geef dan de voorkeur aan de "
 "geselecteerde afstamming om de afstammingslijn uit te breiden"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1108
+#: DescendantSpaceTree/DescendantSpaceTree.py:1110
 msgid "Maximum display birth year"
 msgstr "Maximaal weer te geven geboortejaar"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1111
-msgid "Birth/date dates will not be displayed after this year"
+#: DescendantSpaceTree/DescendantSpaceTree.py:1113
+#, fuzzy
+#| msgid "Birth/date dates will not be displayed after this year"
+msgid "Birth/death dates will not be displayed after this year"
 msgstr "Geboorte-/sterfdatums na dit jaar niet meer weergegeven"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1116
+#: DescendantSpaceTree/DescendantSpaceTree.py:1118
 msgid "Theme preference"
 msgstr "Thema-voorkeur"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1123
+#: DescendantSpaceTree/DescendantSpaceTree.py:1125
 msgid "Theme color preference for Space Tree"
 msgstr "Voorkeur van themakleur voor ruimteboom"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1136
+#: DescendantSpaceTree/DescendantSpaceTree.py:1138
 msgid "Destination File"
 msgstr "Bestemming bestand"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1138
+#: DescendantSpaceTree/DescendantSpaceTree.py:1140
 msgid "The destination file name for the report."
 msgstr "De naam van het doelbestand voor het rapport."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1144
+#: DescendantSpaceTree/DescendantSpaceTree.py:1146
 msgid "Open generated HTML file with default browser."
 msgstr "Gegenereerd HTML-bestand openen met standaardbrowser."
 
@@ -5128,20 +5132,16 @@ msgid "Bad Date/Time"
 msgstr "Slechte datum / tijd"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Ongeldige breedtegraad (syntaxis: 18°9'"
-
-#: EditExifMetadata/editexifmetadata.py:1123
-msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+#, fuzzy
+#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 of -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-msgid "Invalid longitude (syntax: 18°9'"
+#, fuzzy
+#| msgid "Invalid longitude (syntax: 18°9'"
+msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 msgstr "Ongeldige lengtegraad (syntaxis: 18°9'"
-
-#: EditExifMetadata/editexifmetadata.py:1128
-msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 of -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -19630,6 +19630,136 @@ msgstr "_PostgreSQL Database"
 msgid "PostgreSQL Database"
 msgstr "PostgreSQL-database"
 
+#: PostgreSQLEnhanced/concurrency.py:479
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:168
+msgid "Starting migration..."
+msgstr "Migratie starten…"
+
+#: PostgreSQLEnhanced/migration.py:182
+#, fuzzy, python-format
+#| msgid "Migrating %(type)s objects..."
+msgid "Migrating %s objects..."
+msgstr "%(type)s objecten migreren…"
+
+#: PostgreSQLEnhanced/migration.py:193
+#, fuzzy, python-format, python-brace-format
+#| msgid "Migrated %(count)d %(type)s objects"
+msgid "Migrated %s {obj_type} objects"
+msgstr "%(count)d %(type)s objecten gemigreerd"
+
+#: PostgreSQLEnhanced/migration.py:209
+msgid "Migration completed!"
+msgstr "Migratie voltooid!"
+
+#: PostgreSQLEnhanced/migration.py:438
+msgid "Starting upgrade..."
+msgstr "Bijwerking starten…"
+
+#: PostgreSQLEnhanced/migration.py:470
+#, fuzzy, python-format
+#| msgid "Upgrading %(type)s objects..."
+msgid "Upgrading %s objects..."
+msgstr "%(type)s objecten bijwerken…"
+
+#: PostgreSQLEnhanced/migration.py:478
+msgid "Creating indexes..."
+msgstr "Indexen aanmaken…"
+
+#: PostgreSQLEnhanced/migration.py:489
+msgid "Upgrade completed!"
+msgstr "Bijwerking voltooid!"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL Enhanced"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL _Enhanced database"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:154
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"psycopg3 is vereist voor PostgreSQL Enhanced-ondersteuning. Installeren met: "
+"pip install 'psycopg[binary]'"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:163
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"psycopg3 versie %(installed)s is te oud. Versie %(required)s of nieuwer is "
+"vereist."
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:211
+msgid "Database Backend"
+msgstr "Database-backend"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:212
+msgid "Database module"
+msgstr "Database-module"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:214
+msgid "JSONB support"
+msgstr "JSONB-ondersteuning"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:236
+msgid "Version warning"
+msgstr "Versiewaarschuwing"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:237
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr "PostgreSQL %(version)s is lager dan aanbevolen versie %(recommended)s"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:252
+msgid "Extensions"
+msgstr "Extensies"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:273
+msgid "Database size"
+msgstr "Databasegrootte"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:276
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d personen, %(families)d gezinnen, %(events)d gebeurtenissen"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1126
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1141
+msgid "Migration manager not initialized"
+msgstr "Migratiebheer niet geïnitialiseerd"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1159
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1177
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1239
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1255
+msgid "Enhanced queries require JSONB support"
+msgstr "Verbeterde zoekopdrachten vereisen JSONB-ondersteuning"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1206
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr ""
+
+#: PostgreSQLEnhanced/queries.py:364
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "pg_trgm-extensie vereist voor detectie van duplicaten"
+
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
 msgid "Prerequisites Checker"
@@ -23268,14 +23398,6 @@ msgstr "Kenmerk bijgewerkt"
 msgid "Note updated"
 msgstr "Notitie bijgewerkt"
 
-#: connection.py:113 postgresqlenhanced.py:112
-msgid ""
-"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
-"install 'psycopg[binary]'"
-msgstr ""
-"psycopg3 is vereist voor PostgreSQL Enhanced-ondersteuning. Installeren met: "
-"pip install 'psycopg[binary]'"
-
 #: constants.py:390
 msgid "Column - Icons"
 msgstr "Kolom - Pictogrammen"
@@ -23984,41 +24106,6 @@ msgstr "Locatietype:"
 msgid "Last Retrieved At:"
 msgstr "Laatst opgehaald op:"
 
-#: migration.py:133
-msgid "Starting migration..."
-msgstr "Migratie starten…"
-
-#: migration.py:145
-#, python-format
-msgid "Migrating %(type)s objects..."
-msgstr "%(type)s objecten migreren…"
-
-#: migration.py:154
-#, python-format
-msgid "Migrated %(count)d %(type)s objects"
-msgstr "%(count)d %(type)s objecten gemigreerd"
-
-#: migration.py:171
-msgid "Migration completed!"
-msgstr "Migratie voltooid!"
-
-#: migration.py:302 postgresqlenhanced.py:287
-msgid "Starting upgrade..."
-msgstr "Bijwerking starten…"
-
-#: migration.py:320
-#, python-format
-msgid "Upgrading %(type)s objects..."
-msgstr "%(type)s objecten bijwerken…"
-
-#: migration.py:331
-msgid "Creating indexes..."
-msgstr "Indexen aanmaken…"
-
-#: migration.py:342
-msgid "Upgrade completed!"
-msgstr "Bijwerking voltooid!"
-
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
 msgstr "Notitiekoppeling (verwerkt)"
@@ -24030,80 +24117,6 @@ msgstr "Notitiekoppeling (intern)"
 #: note_links_loader.py:127
 msgid "Note Link (external)"
 msgstr "Notitiekoppeling (extern)"
-
-#: postgresqlenhanced.gpr.py:27
-msgid "PostgreSQL Enhanced"
-msgstr "PostgreSQL Enhanced"
-
-#: postgresqlenhanced.gpr.py:28
-msgid "PostgreSQL _Enhanced Database"
-msgstr "PostgreSQL _Enhanced database"
-
-#: postgresqlenhanced.gpr.py:29
-msgid ""
-"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
-"and migration support. Uses psycopg3 for modern PostgreSQL features while "
-"maintaining full compatibility."
-msgstr ""
-"PostgreSQL Enhanced databasebackend met JSONB-opslag, geavanceerde "
-"zoekopdrachten en migratieondersteuning. Gebruikt psycopg3 voor moderne "
-"PostgreSQL-functies met behoud van volledige compatibiliteit."
-
-#: postgresqlenhanced.py:118
-#, python-format
-msgid ""
-"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
-"required."
-msgstr ""
-"psycopg3 versie %(installed)s is te oud. Versie %(required)s of nieuwer is "
-"vereist."
-
-#: postgresqlenhanced.py:167
-msgid "Database Backend"
-msgstr "Database-backend"
-
-#: postgresqlenhanced.py:168
-msgid "Database module"
-msgstr "Database-module"
-
-#: postgresqlenhanced.py:170
-msgid "JSONB support"
-msgstr "JSONB-ondersteuning"
-
-#: postgresqlenhanced.py:191
-#, python-format
-msgid "Version warning"
-msgstr "Versiewaarschuwing"
-
-#: postgresqlenhanced.py:193
-#, python-format
-msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
-msgstr "PostgreSQL %(version)s is lager dan aanbevolen versie %(recommended)s"
-
-#: postgresqlenhanced.py:206
-msgid "Extensions"
-msgstr "Extensies"
-
-#: postgresqlenhanced.py:224
-msgid "Database size"
-msgstr "Databasegrootte"
-
-#: postgresqlenhanced.py:229
-#, python-format
-msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr "%(persons)d personen, %(families)d gezinnen, %(events)d gebeurtenissen"
-
-#: postgresqlenhanced.py:300
-msgid "Upgrading to PostgreSQL Enhanced"
-msgstr "Bijwerken naar PostgreSQL Enhanced"
-
-#: postgresqlenhanced.py:315
-msgid "Migration manager not initialized"
-msgstr "Migratiebheer niet geïnitialiseerd"
-
-#: postgresqlenhanced.py:327
-msgid "Enhanced queries require JSONB support"
-msgstr "Verbeterde zoekopdrachten vereisen JSONB-ondersteuning"
 
 #: qr_window.py:88
 msgid "QR-code"
@@ -24120,23 +24133,6 @@ msgid ""
 msgstr ""
 "⚠ Fout bij genereren QR-code:\n"
 "Originele fout: “{}”"
-
-#: queries.py:354
-msgid "pg_trgm extension required for duplicate detection"
-msgstr "pg_trgm-extensie vereist voor detectie van duplicaten"
-
-#: schema.py:156
-msgid "Creating new PostgreSQL Enhanced schema"
-msgstr "Nieuw PostgreSQL Enhanced-schema aanmaken"
-
-#: schema.py:162
-#, python-format
-msgid "Upgrading schema from v%(current)s to v%(new)s"
-msgstr "Schema bijwerken van v%(current)s naar v%(new)s"
-
-#: schema.py:246
-msgid "PostgreSQL Enhanced schema created successfully"
-msgstr "PostgreSQL Enhanced-schema met succes aangemaakt"
 
 #: settings_ui_manager.py:112
 msgid "Middle Name Handling"
@@ -24237,6 +24233,34 @@ msgstr "Kolomen weergeven"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Pictogrammen weergeven"
+
+#~ msgid "Invalid latitude (syntax: 18°9'"
+#~ msgstr "Ongeldige breedtegraad (syntaxis: 18°9'"
+
+#~ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+#~ msgstr "48.21\"E, -18.2412 of -18:9:48.21)"
+
+#~ msgid ""
+#~ "PostgreSQL Enhanced Database Backend with JSONB storage, advanced "
+#~ "queries, and migration support. Uses psycopg3 for modern PostgreSQL "
+#~ "features while maintaining full compatibility."
+#~ msgstr ""
+#~ "PostgreSQL Enhanced databasebackend met JSONB-opslag, geavanceerde "
+#~ "zoekopdrachten en migratieondersteuning. Gebruikt psycopg3 voor moderne "
+#~ "PostgreSQL-functies met behoud van volledige compatibiliteit."
+
+#~ msgid "Upgrading to PostgreSQL Enhanced"
+#~ msgstr "Bijwerken naar PostgreSQL Enhanced"
+
+#~ msgid "Creating new PostgreSQL Enhanced schema"
+#~ msgstr "Nieuw PostgreSQL Enhanced-schema aanmaken"
+
+#, python-format
+#~ msgid "Upgrading schema from v%(current)s to v%(new)s"
+#~ msgstr "Schema bijwerken van v%(current)s naar v%(new)s"
+
+#~ msgid "PostgreSQL Enhanced schema created successfully"
+#~ msgstr "PostgreSQL Enhanced-schema met succes aangemaakt"
 
 #~ msgid "Add Web Link Note"
 #~ msgstr "Weblink-notitie toevoegen"

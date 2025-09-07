@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-06 12:26-0700\n"
+"POT-Creation-Date: 2025-08-15 11:06-0700\n"
 "PO-Revision-Date: 2025-06-28 18:50+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -1192,7 +1192,7 @@ msgstr "Esivanhempien tiivistettävän puun valinnat"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
-#: DescendantSpaceTree/DescendantSpaceTree.py:1080
+#: DescendantSpaceTree/DescendantSpaceTree.py:1082
 msgid "Include Generations"
 msgstr "Näytettävät sukupolvet"
 
@@ -1230,7 +1230,7 @@ msgstr "Naisen laajennettavan laatikon RGB-taustaväri."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
-#: DescendantSpaceTree/DescendantSpaceTree.py:1130
+#: DescendantSpaceTree/DescendantSpaceTree.py:1132
 msgid "The destination path for generated files."
 msgstr "Kohdehakemisto uusille tiedostoille."
 
@@ -3067,7 +3067,8 @@ msgstr ""
 "Napsauta ja vedä mitä tahansa kohtaa katseluohjelmassa sijoittaaksesi "
 "jälkeläispuun."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:913
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
+#: DescendantSpaceTree/DescendantSpaceTree.py:914
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
@@ -3075,7 +3076,7 @@ msgstr ""
 "Palauta alkuperäiseen jälkeläiseen napsauttamalla nollauspainiketta "
 "___HELP_RESET_BUTTON___."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:922
+#: DescendantSpaceTree/DescendantSpaceTree.py:923
 msgid ""
 "Search for a person by typing into the search box.  At least three "
 "characters are required to search.  Click on any of the suggestions to "
@@ -3088,7 +3089,7 @@ msgstr ""
 "toistuvasti haussa. Nimen perässä oleva plusmerkki (+) osoittaa, että "
 "kysessä on puoliso."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:935
+#: DescendantSpaceTree/DescendantSpaceTree.py:936
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
@@ -3096,7 +3097,7 @@ msgstr ""
 "Jälkeläinen ja mahdolliset puolisot luetellaan samassa solmussa. Kaikkien "
 "perheiden lapset ryhmitellään yhteen."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:945
+#: DescendantSpaceTree/DescendantSpaceTree.py:946
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
@@ -3104,7 +3105,7 @@ msgstr ""
 "Tuoreimmille tietyn ajankohdan jälkeen syntyneille henkilöille ei "
 "välttämättä näytetä syntymä- tai kuolinaikaa."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:954
+#: DescendantSpaceTree/DescendantSpaceTree.py:955
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
@@ -3112,13 +3113,14 @@ msgstr ""
 "Henkilösolmujen väri kuvaa lasten määrää: vahvempi väri tarkoittaa enemmän "
 "lapsia."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:964
+#: DescendantSpaceTree/DescendantSpaceTree.py:965
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
 msgstr "Valittu jälkeläinen esivanhempineen on korostettu keltaisella."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:973
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
+#: DescendantSpaceTree/DescendantSpaceTree.py:975
 msgid ""
 "A person may occur in different branches.  This is usually because of inter-"
 "family marriages (such as that of cousins.)  In this case, a button will "
@@ -3132,7 +3134,7 @@ msgstr ""
 "___NAV_BUTTON_ALT___, jolla voi navigoida toiseen haaraan. Jälkeläiset "
 "esitetään vuorollaan vain yhdessä haarassa. "
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:987
+#: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
@@ -3141,15 +3143,15 @@ msgstr ""
 "rakentamisessa. Katso täydelliset lisenssit ja tarvittavat ilmoitukset "
 "lähdekoodin LICENSE*.txt-tiedostoista."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1014
+#: DescendantSpaceTree/DescendantSpaceTree.py:1016
 msgid "Search. . ."
 msgstr "Etsi..."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1089
+#: DescendantSpaceTree/DescendantSpaceTree.py:1091
 msgid "Branch to expand when duplicated"
 msgstr "Haara, joka laajenee kopioitaessa"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1100
+#: DescendantSpaceTree/DescendantSpaceTree.py:1102
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
@@ -3157,31 +3159,33 @@ msgstr ""
 "Kun jälkeläinen esiintyy useammin kuin kerran, valitse sukulinja "
 "jälkeläislinjan laajennukseen"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1108
+#: DescendantSpaceTree/DescendantSpaceTree.py:1110
 msgid "Maximum display birth year"
 msgstr "Suurin mahdollinen syntymävuosi"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1111
-msgid "Birth/date dates will not be displayed after this year"
+#: DescendantSpaceTree/DescendantSpaceTree.py:1113
+#, fuzzy
+#| msgid "Birth/date dates will not be displayed after this year"
+msgid "Birth/death dates will not be displayed after this year"
 msgstr "Syntymäaikoja ei näytetä tämän vuoden jälkeen"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1116
+#: DescendantSpaceTree/DescendantSpaceTree.py:1118
 msgid "Theme preference"
 msgstr "Teeman valinta"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1123
+#: DescendantSpaceTree/DescendantSpaceTree.py:1125
 msgid "Theme color preference for Space Tree"
 msgstr "Avaruuspuun teeman värien valinta"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1136
+#: DescendantSpaceTree/DescendantSpaceTree.py:1138
 msgid "Destination File"
 msgstr "Kohdetiedosto"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1138
+#: DescendantSpaceTree/DescendantSpaceTree.py:1140
 msgid "The destination file name for the report."
 msgstr "Raporttitiedoston nimi."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1144
+#: DescendantSpaceTree/DescendantSpaceTree.py:1146
 msgid "Open generated HTML file with default browser."
 msgstr "Avaa luotu HTML-tiedosto oletusselaimella."
 
@@ -5029,20 +5033,16 @@ msgid "Bad Date/Time"
 msgstr "Virheellinen päivä tai aika"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Kelvoton leveysaste (muotoa: 18°9'"
-
-#: EditExifMetadata/editexifmetadata.py:1123
-msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+#, fuzzy
+#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 tai -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-msgid "Invalid longitude (syntax: 18°9'"
+#, fuzzy
+#| msgid "Invalid longitude (syntax: 18°9'"
+msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 msgstr "Kelvoton pituusaste (muotoa: 18°9'"
-
-#: EditExifMetadata/editexifmetadata.py:1128
-msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"I, -18.2412 or -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -19237,6 +19237,143 @@ msgstr ""
 msgid "PostgreSQL Database"
 msgstr ""
 
+#: PostgreSQLEnhanced/concurrency.py:479
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:168
+#, fuzzy
+#| msgid "Setting attributes..."
+msgid "Starting migration..."
+msgstr "Asetetaan ominaisuuksia…"
+
+#: PostgreSQLEnhanced/migration.py:182
+#, fuzzy, python-format
+#| msgid "Writing %s reports..."
+msgid "Migrating %s objects..."
+msgstr "Kirjoitetaan %s raporttia..."
+
+#: PostgreSQLEnhanced/migration.py:193
+#, fuzzy, python-format, python-brace-format
+#| msgid "Writing %s reports..."
+msgid "Migrated %s {obj_type} objects"
+msgstr "Kirjoitetaan %s raporttia..."
+
+#: PostgreSQLEnhanced/migration.py:209
+msgid "Migration completed!"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:438
+#, fuzzy
+#| msgid "Attaching sources..."
+msgid "Starting upgrade..."
+msgstr "Lähteitä liitetään..."
+
+#: PostgreSQLEnhanced/migration.py:470
+#, fuzzy, python-format
+#| msgid "Writing %s reports..."
+msgid "Upgrading %s objects..."
+msgstr "Kirjoitetaan %s raporttia..."
+
+#: PostgreSQLEnhanced/migration.py:478
+#, fuzzy
+#| msgid "Fetching index list..."
+msgid "Creating indexes..."
+msgstr "Haetaan indeksiluetteloa..."
+
+#: PostgreSQLEnhanced/migration.py:489
+msgid "Upgrade completed!"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
+msgid "PostgreSQL Enhanced"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
+#, fuzzy
+#| msgid "Shared PostgreSQL Database"
+msgid "PostgreSQL _Enhanced Database"
+msgstr "Shared PostgreSQL tietokanta"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:154
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:163
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:211
+msgid "Database Backend"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:212
+msgid "Database module"
+msgstr ""
+
+# Lisää tuonti
+#: PostgreSQLEnhanced/postgresqlenhanced.py:214
+#, fuzzy
+#| msgid "JSON Import"
+msgid "JSONB support"
+msgstr "JSON-tuonti"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:236
+msgid "Version warning"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:237
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:252
+msgid "Extensions"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:273
+msgid "Database size"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:276
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1126
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1141
+msgid "Migration manager not initialized"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1159
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1177
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1239
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1255
+msgid "Enhanced queries require JSONB support"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1206
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr ""
+
+#: PostgreSQLEnhanced/queries.py:364
+msgid "pg_trgm extension required for duplicate detection"
+msgstr ""
+
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
 msgid "Prerequisites Checker"
@@ -22659,12 +22796,6 @@ msgstr "Ominaisuus päivitetty"
 msgid "Note updated"
 msgstr "Lisätieto päivitetty"
 
-#: connection.py:113 postgresqlenhanced.py:112
-msgid ""
-"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
-"install 'psycopg[binary]'"
-msgstr ""
-
 #: constants.py:390
 msgid "Column - Icons"
 msgstr "Sarake - Kuvakkeet"
@@ -23376,48 +23507,6 @@ msgstr "Paikan tyyppi:"
 msgid "Last Retrieved At:"
 msgstr "Viimeksi noudettu:"
 
-#: migration.py:133
-#, fuzzy
-#| msgid "Setting attributes..."
-msgid "Starting migration..."
-msgstr "Asetetaan ominaisuuksia…"
-
-#: migration.py:145
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
-msgid "Migrating %(type)s objects..."
-msgstr "Kirjoitetaan %s raporttia..."
-
-#: migration.py:154
-#, python-format
-msgid "Migrated %(count)d %(type)s objects"
-msgstr ""
-
-#: migration.py:171
-msgid "Migration completed!"
-msgstr ""
-
-#: migration.py:302 postgresqlenhanced.py:287
-#, fuzzy
-#| msgid "Attaching sources..."
-msgid "Starting upgrade..."
-msgstr "Lähteitä liitetään..."
-
-#: migration.py:320
-#, python-format
-msgid "Upgrading %(type)s objects..."
-msgstr ""
-
-#: migration.py:331
-#, fuzzy
-#| msgid "Fetching index list..."
-msgid "Creating indexes..."
-msgstr "Haetaan indeksiluetteloa..."
-
-#: migration.py:342
-msgid "Upgrade completed!"
-msgstr ""
-
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
 msgstr "Linkki lisätietoihin (jäsennetty)"
@@ -23429,80 +23518,6 @@ msgstr "Linkki lisätietoihin (sisäinen)"
 #: note_links_loader.py:127
 msgid "Note Link (external)"
 msgstr "Linkki lisätietoihin (ulkoinen)"
-
-#: postgresqlenhanced.gpr.py:27
-msgid "PostgreSQL Enhanced"
-msgstr ""
-
-#: postgresqlenhanced.gpr.py:28
-#, fuzzy
-#| msgid "Shared PostgreSQL Database"
-msgid "PostgreSQL _Enhanced Database"
-msgstr "Shared PostgreSQL tietokanta"
-
-#: postgresqlenhanced.gpr.py:29
-msgid ""
-"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
-"and migration support. Uses psycopg3 for modern PostgreSQL features while "
-"maintaining full compatibility."
-msgstr ""
-
-#: postgresqlenhanced.py:118
-#, python-format
-msgid ""
-"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
-"required."
-msgstr ""
-
-#: postgresqlenhanced.py:167
-msgid "Database Backend"
-msgstr ""
-
-#: postgresqlenhanced.py:168
-msgid "Database module"
-msgstr ""
-
-# Lisää tuonti
-#: postgresqlenhanced.py:170
-#, fuzzy
-#| msgid "JSON Import"
-msgid "JSONB support"
-msgstr "JSON-tuonti"
-
-#: postgresqlenhanced.py:191
-#, python-format
-msgid "Version warning"
-msgstr ""
-
-#: postgresqlenhanced.py:193
-#, python-format
-msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
-msgstr ""
-
-#: postgresqlenhanced.py:206
-msgid "Extensions"
-msgstr ""
-
-#: postgresqlenhanced.py:224
-msgid "Database size"
-msgstr ""
-
-#: postgresqlenhanced.py:229
-#, python-format
-msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr ""
-
-#: postgresqlenhanced.py:300
-msgid "Upgrading to PostgreSQL Enhanced"
-msgstr ""
-
-#: postgresqlenhanced.py:315
-msgid "Migration manager not initialized"
-msgstr ""
-
-#: postgresqlenhanced.py:327
-msgid "Enhanced queries require JSONB support"
-msgstr ""
 
 #: qr_window.py:88
 msgid "QR-code"
@@ -23519,23 +23534,6 @@ msgid ""
 msgstr ""
 "⚠ Virhe QR-koodissa:\n"
 "Alkuperäinen virhe: “{}”"
-
-#: queries.py:354
-msgid "pg_trgm extension required for duplicate detection"
-msgstr ""
-
-#: schema.py:156
-msgid "Creating new PostgreSQL Enhanced schema"
-msgstr ""
-
-#: schema.py:162
-#, python-format
-msgid "Upgrading schema from v%(current)s to v%(new)s"
-msgstr ""
-
-#: schema.py:246
-msgid "PostgreSQL Enhanced schema created successfully"
-msgstr ""
 
 #: settings_ui_manager.py:112
 msgid "Middle Name Handling"
@@ -23636,6 +23634,12 @@ msgstr "Näytä sarakkeet"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Näytä kuvakkeet"
+
+#~ msgid "Invalid latitude (syntax: 18°9'"
+#~ msgstr "Kelvoton leveysaste (muotoa: 18°9'"
+
+#~ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+#~ msgstr "48.21\"I, -18.2412 or -18:9:48.21)"
 
 #, fuzzy
 #~| msgid "Add Person"
