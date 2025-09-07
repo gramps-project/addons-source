@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-31 06:05+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2025-09-01 17:01+0000\n"
+"Last-Translator: Hugo Vidal <69076992+hugoovf@users.noreply.github.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
 "Language: ca\n"
@@ -1116,17 +1116,17 @@ msgstr "Error en escriure {target_path}: {message}"
 #: D3Charts/DescendantIndentedTree.py:1518
 #, python-format
 msgid "Failed to create directory structure : %s"
-msgstr "No s’ha pogut crear l’estructura de directoris: %s"
+msgstr "No s'ha pogut crear l'estructura de directoris: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
 #: D3Charts/DescendantIndentedTree.py:1554
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr "No s’ha pogut copiar els fitxers web: %s"
+msgstr "No s'ha pogut copiar els fitxers web: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
-msgstr "Opcions de l’arbre plegable d’avantpassats"
+msgstr "Opcions de l'arbre plegable d'avantpassats"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
@@ -1180,7 +1180,7 @@ msgstr "El nom del fitxer de destinació per al contingut HTML."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
-msgstr "Diagrama en ventall d’avantpassats"
+msgstr "Diagrama en ventall d'avantpassats"
 
 #: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
@@ -1248,7 +1248,7 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "No s’ha pogut crear {target_path}: {message}"
+msgstr "No s'ha pogut crear {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -2821,10 +2821,8 @@ msgid "The style used for the children list."
 msgstr "L'estil que es fa servir per cada secció."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1576
-#, fuzzy
-#| msgid "The basic style used for the table display."
 msgid "The basic style used for Note header."
-msgstr "L’estil bàsic utilitzat per a la visualització de la taula."
+msgstr "L'estil bàsic utilitzat per a la capçalera de la nota."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1593
 #: DetDescendantReport-images/detdescendantreporti.py:1305
@@ -2977,10 +2975,9 @@ msgid "Failed to create %s: %s"
 msgstr "Error en escriure %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:816
-#, fuzzy, python-format
-#| msgid "Failed to copy web files : %s"
+#, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr "No s’ha pogut copiar els fitxers web: %s"
+msgstr "No s'ha pogut llegir el fitxer proto %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:827
 #, fuzzy, python-format
@@ -5046,11 +5043,11 @@ msgstr "_Persona GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
-msgstr "GEXF s’utilitza en moltes aplicacions de gràfics de xarxa."
+msgstr "GEXF s'utilitza en moltes aplicacions de gràfics de xarxa."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
 msgid "GEXF export options"
-msgstr "Opcions d’exportació GEXF"
+msgstr "Opcions d'exportació GEXF"
 
 #: ExportProlog/ExportProlog.gpr.py:4
 msgid "Prolog Export"
@@ -5748,11 +5745,11 @@ msgstr "Famílies que coincideixen amb <event filter>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
-msgstr "Coincideix amb les famílies que compleixen un filtre d’esdeveniments"
+msgstr "Coincideix amb les famílies que compleixen un filtre d'esdeveniments"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
-msgstr "Coincideix amb les famílies que compleixen un filtre d’esdeveniments"
+msgstr "Coincideix amb les famílies que compleixen un filtre d'esdeveniments"
 
 #: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
@@ -5779,7 +5776,7 @@ msgstr "NO coincideix amb el rol seleccionat"
 #: FilterRules/hasrolerule.py:56
 msgid "Finds the items that don't have event Roles of the selected type."
 msgstr ""
-"Troba els elements que no tenen rols d’esdeveniment del tipus seleccionat."
+"Troba els elements que no tenen rols d'esdeveniment del tipus seleccionat."
 
 #: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
 msgid "Inverse"
@@ -5861,7 +5858,7 @@ msgstr "Persones amb múltiples registres de progenitors"
 
 #: FilterRules/multipleparents.py:43
 msgid "Matches people who have more than one set of parents"
-msgstr "Coincideix amb persones que tenen més d’un conjunt de progenitors"
+msgstr "Coincideix amb persones que tenen més d'un conjunt de progenitors"
 
 #: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
 msgid "People with <count> of <event>"
@@ -5870,7 +5867,7 @@ msgstr "Persones amb <count> de <event>"
 #: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
 msgid "Matches persons which have events of given type and number."
 msgstr ""
-"Coincideix amb persones que tenen esdeveniments d’un tipus i nombre "
+"Coincideix amb persones que tenen esdeveniments d'un tipus i nombre "
 "determinats."
 
 #: FilterRules2/matrilinealprogenitrix.gpr.py:25
@@ -14543,14 +14540,14 @@ msgstr "Inclou imatges de les persones als nodes."
 
 #: GenealogyTree/gt_descendant.py:191
 msgid "First spouse left"
-msgstr "Primer cònjuge a l’esquerra"
+msgstr "Primer cònjuge a l'esquerra"
 
 #: GenealogyTree/gt_descendant.py:192
 msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
-"Col·loca sempre el primer dels múltiples cònjuges a l’esquerra. Això pot "
+"Col·loca sempre el primer dels múltiples cònjuges a l'esquerra. Això pot "
 "ajudar a reduir els encreuaments de línies en cas de múltiples matrimonis."
 
 #: GenealogyTree/gt_grandparent.py:119
@@ -14588,7 +14585,7 @@ msgstr "Inclou els germans dels avantpassats."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
-msgstr "Arbre d’avantpassats utilitzant LaTeX genealogytree"
+msgstr "Arbre d'avantpassats utilitzant LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
@@ -14596,11 +14593,11 @@ msgstr "Arbre de descendents utilitzant LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
-msgstr "Arbre d’avis"
+msgstr "Arbre d'avis"
 
 #: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
-msgstr "Arbre d’avis utilitzant LaTeX genealogytree"
+msgstr "Arbre d'avis utilitzant LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
@@ -17872,10 +17869,8 @@ msgid "Show the title of mother or father beside each ancestor's box."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662
-#, fuzzy
-#| msgid "The basic style used for the table display."
 msgid "The basic style used for the title display."
-msgstr "L’estil bàsic utilitzat per a la visualització de la taula."
+msgstr "L'estil bàsic utilitzat per a la visualització del títol."
 
 #: PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
@@ -18381,9 +18376,9 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
-"Quan es neteja un lloc que ja està delimitat, això afecta l’acció que es "
+"Quan es neteja un lloc que ja està delimitat, això afecta l'acció que es "
 "realitza.\n"
-"Si '<b>Mantenir l’actual delimitació</b>' està seleccionat, no es fa cap "
+"Si '<b>Mantenir l'actual delimitació</b>' està seleccionat, no es fa cap "
 "canvi al lloc delimitador.\n"
 "Si '<b>Substituir per la delimitació de GeoNames</b>' està seleccionat, el "
 "lloc delimitat es canvia pel lloc de nivell següent de GeoNames. Això pot "
@@ -18391,7 +18386,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
-msgstr "Mantenir l’actual delimitació"
+msgstr "Mantenir l'actual delimitació"
 
 #: PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
@@ -18442,7 +18437,7 @@ msgstr "Estableix preferències"
 
 #: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
-msgstr "Selecciona un d’aquests llocs per continuar el procés de neteja."
+msgstr "Selecciona un d'aquests llocs per continuar el procés de neteja."
 
 #: PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
@@ -18483,7 +18478,7 @@ msgid ""
 "etc.)."
 msgstr ""
 "Marcar la casella “Punt” fa que la cerca a GeoNames inclogui una àmplia "
-"varietat d’altres llocs (esglésies, cementiris, edificis, etc.)."
+"varietat d'altres llocs (esglésies, cementiris, edificis, etc.)."
 
 #: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
@@ -21240,11 +21235,11 @@ msgstr "Cadena de títol per a l'informe."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
-msgstr "Subtítol de l’informe"
+msgstr "Subtítol de l'informe"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
-msgstr "Cadena de subtítol per a l’informe."
+msgstr "Cadena de subtítol per a l'informe."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
@@ -22256,7 +22251,7 @@ msgid ""
 msgstr ""
 "Elabora una llista de totes les notes amb una etiqueta determinada juntament "
 "amb els registres a què fa referència, la persona, la família, "
-"l’esdeveniment, etc."
+"l'esdeveniment, etc."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -22375,7 +22370,7 @@ msgstr ""
 
 #: ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
-msgstr "L’estil bàsic utilitzat per a la visualització de la taula."
+msgstr "L'estil bàsic utilitzat per a la visualització de la taula."
 
 #: Topola/Topola.gpr.py:4
 msgid "Interactive Family Tree"
