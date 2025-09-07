@@ -5,13 +5,14 @@
 # Stephen Adams, Gramps Reddit, 2018.
 # Milo Ivir <mail@milotype.de>, 2025.
 # Nick Hall <nick-h@gramps-project.org>, 2025.
+# Juha Mäkeläinen <juha.makelainen@iki.fi>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-22 13:02+0000\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"PO-Revision-Date: 2025-08-23 15:02+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
 "Language: hr\n"
@@ -20298,7 +20299,7 @@ msgstr "dolje"
 
 #: RelID/relation_tab.py:115
 msgid "Common MRA"
-msgstr "Zajednički zadnje umrli predak"
+msgstr "Yhteinen esi-isä"
 
 #: RelID/relation_tab.py:117
 msgid "Period"
