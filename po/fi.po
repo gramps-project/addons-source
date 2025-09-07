@@ -19,13 +19,14 @@
 # Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Kieli Puoli <kielipuoli@gmail.com>, 2025.
 # Juha Mäkeläinen <juha.makelainen@iki.fi>, 2025.
+# Matti Niemelä <matti.u.niemela@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-29 20:30+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-09-03 21:58+0000\n"
+"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -33,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.1-dev\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -92,7 +93,7 @@ msgstr "Teoreettisten esi-isien lukumäärä "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
-msgstr "Esivanhempien menetys "
+msgstr "Esivanhempainkato "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
@@ -135,8 +136,8 @@ msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
 msgstr ""
-"Pilkun jälkeisten numeroiden määrä, joka sisällytetään esivanhempien "
-"menetysraporttiin"
+"Pilkun jälkeisten numeroiden määrä, joka sisällytetään "
+"esivanhempainkatoraporttiin"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
@@ -5805,11 +5806,11 @@ msgstr "Ihmiset, jotka poikkeavat <N>:llä henkilöstä <person>"
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
 msgid "Filter rule that matches relatives by degrees of separation"
-msgstr "Suodatussääntö, sukulaisten löytämiseksi sukupolvieron avulla"
+msgstr "Suodatussääntö, joka yhdistää sukulaiset sukupolvien mukaan"
 
 #: FilterRules/degreesofseparation.py:47
 msgid "Number of degrees of separation from person."
-msgstr "Etäisyyden asteiden lukumäärä henkilöstä."
+msgstr "Henkilöä erottavien sukupolvien lukumäärä."
 
 #: FilterRules/degreesofseparation.py:59
 msgid "Degrees:"
@@ -6165,7 +6166,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:23
 msgid "7. Sex: Male"
-msgstr ""
+msgstr "7. Sukupuoli: Mies"
 
 #: Form/form_ca.xml.h:24
 msgid "SexFemale"
@@ -6173,14 +6174,14 @@ msgstr ""
 
 #: Form/form_ca.xml.h:25
 msgid "8. Sex: Female"
-msgstr ""
+msgstr "8. Sukupuoli: Nainen"
 
 #: Form/form_ca.xml.h:26 Form/form_ca.xml.h:234 Form/form_ca.xml.h:324
 #: Form/form_ca.xml.h:378 Form/form_ca.xml.h:415 Form/form_ca.xml.h:472
 #: Form/form_ca.xml.h:632 Form/form_ca.xml.h:683 Form/form_ca.xml.h:771
 #: Form/form_ca.xml.h:824
 msgid "MaritalStatus"
-msgstr ""
+msgstr "Siviilisääty"
 
 #: Form/form_ca.xml.h:27
 msgid "9. Married or Single"
@@ -6204,19 +6205,20 @@ msgstr ""
 
 #: Form/form_ca.xml.h:32
 msgid "ResidentsMale"
-msgstr ""
+msgstr "Miesasukkaita"
 
 #: Form/form_ca.xml.h:33
 msgid "12. Residents: Members, Male"
-msgstr ""
+msgstr "12. Asukkaat: Miehet"
 
 #: Form/form_ca.xml.h:34
 msgid "ResidentsFemale"
-msgstr ""
+msgstr "Naisasukkaat"
 
 #: Form/form_ca.xml.h:35
+#, fuzzy
 msgid "13. Residents: Members, Female"
-msgstr ""
+msgstr "13. Asukkaat: Naiset"
 
 #: Form/form_ca.xml.h:36
 msgid "NonMembersMale"
@@ -16506,25 +16508,25 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:81
 msgid "Softer"
-msgstr ""
+msgstr "Pehmeämpi"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:82
 msgid "Upper year minimum margin"
-msgstr ""
+msgstr "Ylemmän vuoden vähimmäismarginaali"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:83
 msgid ""
 "The upper bound of the chart is extended by at least this number of years."
-msgstr ""
+msgstr "Kaavion yläraja laajennetaan vähintään tämän vuosimäärän verran."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:84
 msgid "Lower year minimum margin"
-msgstr ""
+msgstr "Alemman vuoden vähimmäismarginaali"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:85
 msgid ""
 "The lower bound of the chart is extended by at least this number of years."
-msgstr ""
+msgstr "Kaavion alarajaa laajennetaan vähintään tällä vuosimäärällä."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:86
 msgid "Visualize connections"
@@ -16535,14 +16537,16 @@ msgid ""
 "Visualize the connections between families and individuals. This is for "
 "debugging purposes."
 msgstr ""
+"Visualisoi perheiden ja yksilöiden väliset yhteydet. Tämä on "
+"virheenkorjausta varten."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:88
 msgid "Visualize ambiguous placement"
-msgstr ""
+msgstr "Visualisoi epäselvä sijoitus"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:89
 msgid "Visualize automatically detected errors in the placement algorithm."
-msgstr ""
+msgstr "Visualisoi sijoitusalgoritmin automaattisesti havaitsemat virheet."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:90
 msgid "Coloring of individuals"
@@ -16550,11 +16554,11 @@ msgstr "Henkilöiden väritys"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:91
 msgid "There are different ways to determine the color of an individual."
-msgstr ""
+msgstr "Yksilön värin määrittämiseen on erilaisia tapoja."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:92
 msgid "Unique"
-msgstr ""
+msgstr "Yksilöllinen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:93
 msgid "Based on surname"
@@ -16562,19 +16566,19 @@ msgstr "Perustuu sukunimeen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:94
 msgid "Flip vertically"
-msgstr ""
+msgstr "Käännä pystysuunnassa"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:95
 msgid "If active, the chart is flipped vertically."
-msgstr ""
+msgstr "Jos se on aktiivinen, kaavio käännetään pystysuunnassa."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:96
 msgid "Line weighting"
-msgstr ""
+msgstr "Viivan koko"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
-msgstr ""
+msgstr "Viivan leveyttä voidaan muuttaa."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:98
 msgid "none"
@@ -16582,7 +16586,7 @@ msgstr "ei mitään"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
-msgstr "Näytä esivanhempien menetys"
+msgstr "Näytä esivanhempainkato"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:100
 msgid ""
@@ -16590,7 +16594,7 @@ msgid ""
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
-"Esivanhempien menetyksen vuoksi yksi yksilö saattaa esiintyä useita kertoja "
+"Esivanhempainkadon vuoksi yksi yksilö saattaa esiintyä useita kertoja "
 "yksinkertaisessa esivanhempien kartassa. Jos tämä on aktiivinen, jokainen "
 "yksilö esiintyy vain kerran."
 
@@ -16655,8 +16659,8 @@ msgid ""
 msgstr ""
 "Vaihda äidin ja isän paikat perheessä vähentääksesi yleisiä horisontaalisia "
 "ristiinkytkentöjä suuremmissa kaavioissa. Näin tapahtuu, jos yksi henkilö "
-"esiintyy useammassa kuin yhdessä perheessä tai jos se johtuu esivanhempien "
-"menetyksestä."
+"esiintyy useammassa kuin yhdessä perheessä tai jos se johtuu "
+"esivanhempainkadosta."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -17836,7 +17840,7 @@ msgid ""
 "collapse were ignored."
 msgstr ""
 "Löydettiin {} / {} esivanhempaa ({}).\n"
-"Vain yksittäiset esivanhemmat laskettiin. Esivanhempien menetys aiheuttamat "
+"Vain yksittäiset esivanhemmat laskettiin. Esivanhempainkadon aiheuttamat "
 "kaksoiskappaleet jätettiin huomiotta."
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
@@ -18143,9 +18147,8 @@ msgid "Detect faces (OpenCV module required)"
 msgstr "Tunnista kasvot (OpenCV-moduuli vaaditaan)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
-#, fuzzy
 msgid "XMP Region Name"
-msgstr "XMP-alueen nimi"
+msgstr "XMP alunimi"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
@@ -21237,9 +21240,8 @@ msgid "m. place:"
 msgstr "vihkipaikka:"
 
 #: SourceIndex/marriage.glade:113
-#, fuzzy
 msgid "d.contract:"
-msgstr "Vihkipäivä:"
+msgstr "avio. sopimus:"
 
 #: SourceIndex/marriage.glade:131
 msgid "dates banns:"
@@ -21510,9 +21512,8 @@ msgid "Group"
 msgstr "Ryhmä"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:140
-#, fuzzy
 msgid "Create Mapping"
-msgstr "Luo kartoitus"
+msgstr "Luo kartta"
 
 #: SyncAssociations/syncAssociations.gpr.py:4
 #: SyncAssociations/syncAssociations.py:130
