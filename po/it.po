@@ -67,8 +67,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-28 20:50+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -76,7 +76,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.1-dev\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -1285,10 +1285,8 @@ msgid ""
 msgstr ""
 
 #: D3Charts/AncestralFanChart.py:707
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Ancestral Fan Chart Options"
-msgstr "Generazioni ascendenti"
+msgstr "Opzioni Fan Chart antenati"
 
 #: D3Charts/AncestralFanChart.py:729
 msgid "Paternal Background Color"
@@ -1308,10 +1306,8 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:909
-#, fuzzy
-#| msgid "Descendant Generations"
 msgid "Descendant Indented Tree"
-msgstr "Generazioni discendenti"
+msgstr "Albero indentato dei discendenti"
 
 #: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
@@ -1321,16 +1317,13 @@ msgid ""
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:673
-#, fuzzy, python-format
-#| msgid "sp. see  %(reference)s : %(spouse)s"
+#, python-format
 msgid "See %(reference)s : %(spouse)s"
-msgstr "sp. vedi %(reference)s : %(spouse)s"
+msgstr "Vedi %(reference)s : %(spouse)s"
 
 #: D3Charts/DescendantIndentedTree.py:764
-#, fuzzy
-#| msgid "Generating %s report references..."
 msgid "Generating report..."
-msgstr "Generazione di %s riferimenti del resoconto..."
+msgstr "Generazione resoconto..."
 
 #: D3Charts/DescendantIndentedTree.py:1364
 #: DescendantSpaceTree/DescendantSpaceTree.py:771
@@ -1365,10 +1358,8 @@ msgid "Expand All"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1810
-#, fuzzy
-#| msgid "Include Occupation"
 msgid "Include contraction level"
-msgstr "Includi occupazione"
+msgstr "Includi livello di contrazione"
 
 #: D3Charts/DescendantIndentedTree.py:1812
 msgid "The number of descendant levels to contract on initial display."
@@ -1415,16 +1406,12 @@ msgid "Include records marked private"
 msgstr "Includere informazioni marcate come private"
 
 #: D3Charts/DescendantIndentedTree.py:1868
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include private objects."
-msgstr "Indica se includere le immagini."
+msgstr "Indica se includere oggett privati."
 
 #: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
-#, fuzzy
-#| msgid "Include an image"
 msgid "Include Last Name Only"
-msgstr "Includi un'immagine"
+msgstr "Includi solo il cognome"
 
 #: D3Charts/DescendantIndentedTree.py:1878 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
@@ -1439,9 +1426,8 @@ msgid "Whether or not to include people who may have recently died."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1895
-#, fuzzy
 msgid "Navigation"
-msgstr "Abbreviazione"
+msgstr "Navigazione"
 
 #: D3Charts/DescendantIndentedTree.py:1897
 msgid "Contraction/Expansion mechanism"
@@ -1745,14 +1731,13 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr "L. Seg"
+msgstr "Seg. Lar"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
 msgstr "Pers."
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
 msgid "Rel."
 msgstr "Rel."
 
@@ -2085,10 +2070,8 @@ msgid "%s (association)"
 msgstr "%s (associazione)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "New person"
 msgid "Note on Person"
-msgstr "Nuova persona"
+msgstr "Note sulla persona"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
@@ -2204,9 +2187,8 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:306 DenominoViso/DenominoViso.py:974
 #: DenominoViso/DenominoViso.py:1034 DenominoViso/DenominoViso.py:1259
 #: DenominoViso/DenominoViso.py:2750
-#, fuzzy
 msgid "role"
-msgstr "Ruolo"
+msgstr "ruolo"
 
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
@@ -2228,18 +2210,16 @@ msgid "Unknown time direction"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:1508 DenominoViso/DenominoViso.py:1562
-#, fuzzy
 msgid "author"
-msgstr "Autore"
+msgstr "autore"
 
 #: DenominoViso/DenominoViso.py:1513 DenominoViso/DenominoViso.py:1563
 msgid "publication_info"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:1518 DenominoViso/DenominoViso.py:1564
-#, fuzzy
 msgid "abbreviation"
-msgstr "Abbreviazione"
+msgstr "abbreviazione"
 
 #: DenominoViso/DenominoViso.py:1562
 msgid "volume"
@@ -2350,13 +2330,11 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
-msgstr "Includere gli eventi"
+msgstr "Includere eventi"
 
 #: DenominoViso/DenominoViso.py:2613
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include a person's events."
-msgstr "Indica se includere le immagini."
+msgstr "Indica se includere gli eventi di una persona."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
@@ -2617,10 +2595,8 @@ msgid "should be"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2913
-#, fuzzy
-#| msgid "Include Addresses"
 msgid "Included"
-msgstr "Includere gli indirizzi"
+msgstr "Inclusi"
 
 #: DenominoViso/DenominoViso.py:2914
 msgid "Excluded"
@@ -2771,28 +2747,20 @@ msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr "%(report_count)s. Resoconto discendenza di %(person_name)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:519
-#, fuzzy
-#| msgid "Include index of Places"
 msgid "Index of Places"
-msgstr "Includi l'indice dei luoghi"
+msgstr "Indice dei luoghi"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:542
-#, fuzzy
-#| msgid "Include index of Dates"
 msgid "Index of Dates"
-msgstr "Includi l'indice delle date"
+msgstr "Indice delle date"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:565
-#, fuzzy
-#| msgid "Include Index of Names"
 msgid "Index of Names"
-msgstr "Includi l'indice dei nomi"
+msgstr "Indice dei nomi"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:571
-#, fuzzy
-#| msgid "See Report : %s, Generation : %s, Person : %s"
 msgid "Report, Generation, Person, Name"
-msgstr "Vedi resoconto: %s, generazione: %s, persona: %s"
+msgstr "Resoconto, Generazione, Persona, Nome"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
 #, python-brace-format
@@ -2985,20 +2953,16 @@ msgstr "Lo stile usato per i riferimenti nell'indice dei luoghi."
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
-#, fuzzy
-#| msgid "Descendant Book"
 msgid "Descendant Count"
-msgstr "Libro discendenza"
+msgstr "Conto dei discendenti"
 
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
-#, fuzzy
-#| msgid "Descendant Generations"
 msgid "Descendant Space Tree"
-msgstr "Generazioni discendenti"
+msgstr "Albero spaziale dei discendenti"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
 msgid ""
@@ -3020,34 +2984,24 @@ msgid "Dark theme"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Light"
 msgid "Light theme"
-msgstr "Chiaro"
+msgstr "Tema chiaro"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
-#, fuzzy
-#| msgid "Detailed Descendants Report"
 msgid "Continue Descendant Tree"
-msgstr "Resoconto dettagliato dei discendenti"
+msgstr "Albero continuo dei discendenti"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:427
-#, fuzzy
-#| msgid "Detailed Descendants Report"
 msgid "Alternate Descendant Tree"
-msgstr "Resoconto dettagliato dei discendenti"
+msgstr "Albero alternativo dei discendenti"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:455
-#, fuzzy
-#| msgid "Descendant Generations"
 msgid "Descendant SpaceTree"
-msgstr "Generazioni discendenti"
+msgstr "Albero spaziale discendenti"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:635
-#, fuzzy
-#| msgid "Descendants Lines"
 msgid "Total descendants"
-msgstr "Linee dei discendenti"
+msgstr "Totale discendenti"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:659
 msgid "Marriages/Families:<ul>"
@@ -3061,16 +3015,14 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:787
-#, fuzzy, python-format
-#| msgid "Failed writing %s: %s"
+#, python-format
 msgid "Failed to create %s: %s"
-msgstr "Scrittura di %s non riuscita: %s"
+msgstr "Creazione di %s non riuscita: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:816
-#, fuzzy, python-format
-#| msgid "Failed writing %s: %s"
+#, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr "Scrittura di %s non riuscita: %s"
+msgstr "Lettura del file proto %s non riuscita: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:827
 #, python-format
@@ -3080,16 +3032,12 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:854
-#, fuzzy
-#| msgid "Failed writing "
 msgid "Failed writing file: "
-msgstr "Errore durante la scrittura di "
+msgstr "Errore durante la scrittura del file: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:875
-#, fuzzy
-#| msgid "Descendant Book"
 msgid "Descendants of"
-msgstr "Libro discendenza"
+msgstr "Discendenti di"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:879
 msgid "How to Use the DescendantSpaceTree Viewer"
@@ -3168,10 +3116,8 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1016
-#, fuzzy
-#| msgid "Search..."
 msgid "Search. . ."
-msgstr "Ricerca..."
+msgstr "Ricerca. . ."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1091
 msgid "Branch to expand when duplicated"
@@ -3319,17 +3265,16 @@ msgid "Use alternate events, if Primary event is not found"
 msgstr "Usa eventi alternativi se il primo evento non viene trovato"
 
 #: DescendantsLines/DescendantsLines.py:1586
-#, fuzzy
 msgid ""
 "For Birth (baptism, christen)\n"
 "   Marriage (marr_lic, engagement)\n"
 "   Divorce (annulment, div_filing),\n"
 "   Death (burial, cremation, probate)."
 msgstr ""
-"Per nascita (battesimo, christen)\n"
-"  Matrimonio (marr_lic, fidanzamento)\n"
-"  Divorzio (annullamento, div_filing),\n"
-"  Morte (sepoltura, cremazione, omologazione testamento)."
+"Per Nascita (battesimo, christen)\n"
+"   Matrimonio (marr_lic, fidanzamento)\n"
+"   Divorzio (annullamento, div_filing),\n"
+"   Morte (sepoltura, cremazione, omologazione testamento)."
 
 #: DescendantsLines/DescendantsLines.py:1592
 msgid "Sort Events by Date"
@@ -3432,10 +3377,8 @@ msgstr ""
 "255=colore intenso"
 
 #: DescendantsLines/DescendantsLines.py:1645
-#, fuzzy
-#| msgid "Name Display Format"
 msgid "Display Formats"
-msgstr "Formato di visualizzazione del nome"
+msgstr "Mostra formati"
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
@@ -3635,21 +3578,15 @@ msgid "The default style."
 msgstr "Lo stile di default."
 
 #: DetDescendantReport-images/detdescendantreport.gpr.py:4
-#, fuzzy
-#| msgid "Detailed Descendants Report"
 msgid "Detailed Descendant Report With All Images"
-msgstr "Resoconto dettagliato dei discendenti"
+msgstr "Resoconto dettagliato dei discendenti con tutte le immagini"
 
 #: DetDescendantReport-images/detdescendantreport.gpr.py:6
-#, fuzzy
-#| msgid ""
-#| "Produces one or more detailed descendant reports based on a supplied "
-#| "query."
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
 msgstr ""
-"Produce uno o più resoconti dettagliati dei discendenti basati sulla "
-"richiesta indicata."
+"Produce un resoconto dettagliato dei discendenti con tutte le immagini e la "
+"lista opzionale delle cose da fare."
 
 #: DetDescendantReport-images/detdescendantreporti.py:471
 #, python-format
@@ -3663,16 +3600,12 @@ msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1177
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include TODO notes"
-msgstr "Includere gli eventi"
+msgstr "Include le note sulle cose da fare"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1178
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include TODO notes."
-msgstr "Indica se includere le immagini."
+msgstr "Indica se includere le cose da fare."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1351
 msgid "The style used for image labels."
@@ -3700,10 +3633,8 @@ msgid ""
 msgstr ""
 
 #: Differences/differences.gpr.py:4 Differences/differences.py:95
-#, fuzzy
-#| msgid "Detailed Descendants Report"
 msgid "Database Differences Report"
-msgstr "Resoconto dettagliato dei discendenti"
+msgstr "Resoconto sulle differenze tra gli archivi"
 
 #: Differences/differences.gpr.py:5
 msgid "Compares an external database with the current one."
@@ -3744,10 +3675,8 @@ msgid "Nothing added"
 msgstr ""
 
 #: Differences/differences.py:308
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "Family Tree file"
-msgstr "Albero genealogico per %s"
+msgstr "File dell'Albero genealogico"
 
 #: Differences/differences.py:310
 msgid "Select a .gpkg or .gramps file"
@@ -3873,10 +3802,8 @@ msgid "Ascending tree"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:359
-#, fuzzy
-#| msgid "Descendants Lines"
 msgid "Descending tree"
-msgstr "Linee dei discendenti"
+msgstr "Albero dei discendenti"
 
 #: DynamicWeb/dynamicweb.py:360
 msgid "Descending tree with spouses"
@@ -4054,9 +3981,8 @@ msgid "Media Index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3032
-#, fuzzy
 msgid "Media Type"
-msgstr "Filtro oggetti multimediali"
+msgstr "Tipo oggetti multimediali"
 
 #: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
@@ -4128,10 +4054,8 @@ msgid "SVG tree children distribution"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3070
-#, fuzzy
-#| msgid "Second generation"
 msgid "SVG tree configuration"
-msgstr "Seconda generazione"
+msgstr "Configurazione albero SVG"
 
 #: DynamicWeb/dynamicweb.py:3071 DynamicWeb/dynamicweb.py:5115
 msgid "SVG tree graph shape"
@@ -4162,16 +4086,12 @@ msgid "Select the children distribution (fan charts only)"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3086
-#, fuzzy
-#| msgid "The number of descendant generations to include in the tree"
 msgid "Select the number of ascending generations"
-msgstr "Il numero di generazioni di discendenti da includere nell'albero"
+msgstr "Seleziona Il numero di generazioni di antenati"
 
 #: DynamicWeb/dynamicweb.py:3090
-#, fuzzy
-#| msgid "The number of descendant generations to include in the tree"
 msgid "Select the number of descending generations"
-msgstr "Il numero di generazioni di discendenti da includere nell'albero"
+msgstr "Seleziona il numero di generazioni di discendenti"
 
 #: DynamicWeb/dynamicweb.py:3094
 msgid "Select the parents distribution (fan charts only)"
@@ -4220,9 +4140,8 @@ msgid "Suppress Gramps ID"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3119
-#, fuzzy
 msgid "Surnames Index"
-msgstr "Cognome"
+msgstr "Indice dei cognomi"
 
 #: DynamicWeb/dynamicweb.py:3123
 msgid "U"
@@ -4405,10 +4324,8 @@ msgid "Web site title"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4736
-#, fuzzy
-#| msgid "The file does not exist."
 msgid "The title of the web site"
-msgstr "Il file non esiste"
+msgstr "Titolo del sito web"
 
 #: DynamicWeb/dynamicweb.py:4741
 msgid "Select filter to restrict people that appear on web site"
@@ -4446,10 +4363,8 @@ msgid "Export notes"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4840
-#, fuzzy
-#| msgid "Whether to scale to fit on a single page."
 msgid "Whether to export notes in the web pages"
-msgstr "Se ridimensionare per farlo entrare in una sola pagina"
+msgstr "Indica se esportare le note nelle pagine web"
 
 #: DynamicWeb/dynamicweb.py:4843
 msgid "Export sources"
@@ -4468,16 +4383,12 @@ msgid "Whether to export addresses in the web pages"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4858
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether or not to include the Repository Pages."
-msgstr "Indica se includere le immagini."
+msgstr "Indica se includere le pagine degli archivi delle fonti."
 
 #: DynamicWeb/dynamicweb.py:4861
-#, fuzzy
-#| msgid "Include an image"
 msgid "Include images and media"
-msgstr "Includi un'immagine"
+msgstr "Includi immagini e media"
 
 #: DynamicWeb/dynamicweb.py:4862
 msgid "Whether to include images and media in the web pages"
@@ -4512,10 +4423,8 @@ msgid "Whether to print the notes type in the notes text"
 msgstr "Indica se stampare o meno il tipo di note nel testo delle note"
 
 #: DynamicWeb/dynamicweb.py:4885
-#, fuzzy
-#| msgid "in %(place)s"
 msgid "Print place pages"
-msgstr "in %(place)s"
+msgstr "Stampa le pagine dei luoghi"
 
 #: DynamicWeb/dynamicweb.py:4886
 msgid "Whether to show pages for the places"
@@ -4526,10 +4435,8 @@ msgid "Choose your choice of map service for creating the Place Map Pages"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4926
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "Google map API key"
-msgstr "_Google Maps"
+msgstr "Chiavi API di Google Maps"
 
 #: DynamicWeb/dynamicweb.py:4927
 msgid "The API key used for the Google map"
@@ -4577,20 +4484,16 @@ msgid "List"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5002
-#, fuzzy
-#| msgid "TR-Table"
 msgid "Table"
-msgstr "TR-Tabella"
+msgstr "Tabella"
 
 #: DynamicWeb/dynamicweb.py:5008
 msgid "Default format for the surnames index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5009
-#, fuzzy
-#| msgid "The output format to be used"
 msgid "The default format for the surnames index"
-msgstr "Il formato di output da usare"
+msgstr "Il formato standard per l'indice dei cognomi"
 
 #: DynamicWeb/dynamicweb.py:5014
 msgid "Default format for the persons index"
@@ -4613,10 +4516,8 @@ msgid "Default format for the sources index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5027
-#, fuzzy
-#| msgid "The output format to be used"
 msgid "The default format for the sources index"
-msgstr "Il formato di output da usare"
+msgstr "Il formato standard per l'indice delle fonti"
 
 #: DynamicWeb/dynamicweb.py:5032
 msgid "Default format for the places index"
@@ -4666,12 +4567,12 @@ msgid "Maximum number of generations"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5101
-#, fuzzy
-#| msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
-msgstr "Il numero di generazioni da includere nel grafico. (0 per illimitato)"
+msgstr ""
+"Il numero massimo di generazioni da includere nell'albero e nei grafici di "
+"antenati e discendenti"
 
 #: DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
@@ -4747,9 +4648,8 @@ msgid "Whether to print a menu for the custom page"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5236
-#, fuzzy
 msgid "Pages selection"
-msgstr "Invertire la selezione"
+msgstr "Seleziona pagine"
 
 #: DynamicWeb/dynamicweb.py:5240
 msgid "Number of pages"
@@ -4796,7 +4696,6 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:161
-#, fuzzy
 msgid "Provide a short description for this image."
 msgstr "Fornire una breve descrizione per questa immagine."
 
@@ -4883,22 +4782,20 @@ msgid "Clear GPS"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:214
-#, fuzzy
 msgid "Thumbnail"
-msgstr "Posizione miniature"
+msgstr "Miniatura"
 
 #: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
 msgstr "Selezionare un'immagine per iniziare..."
 
 #: EditExifMetadata/editexifmetadata.py:421
-#, fuzzy
 msgid ""
 "Image is NOT readable,\n"
 "Please choose a different image..."
 msgstr ""
 "L'immagine NON è leggibile,\n"
-"Scegliere un'immagine differente..."
+"Scegli un'immagine differente..."
 
 #: EditExifMetadata/editexifmetadata.py:441
 msgid "Please convert this image to an Exiv2- compatible image type..."
@@ -4933,7 +4830,6 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:726
-#, fuzzy
 msgid "Convert and Delete"
 msgstr "Converti ed elimina"
 
@@ -4958,16 +4854,12 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:834
-#, fuzzy
 msgid "There was an error in converting your image file."
-msgstr ""
-"Si è verificato un errore nella rimozione dei metadati Exif da questa "
-"immagine..."
+msgstr "Si è verificato un errore nella conversione della tua immagine."
 
 #: EditExifMetadata/editexifmetadata.py:844
-#, fuzzy
 msgid "Media Path Update"
-msgstr "data del decesso"
+msgstr "Aggiornamento del percorso degli oggetti multimediali"
 
 #: EditExifMetadata/editexifmetadata.py:853
 msgid "There has been an error in updating the image file's path!"
@@ -5007,18 +4899,16 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:969
-#, fuzzy
 msgid "Media Object Title"
-msgstr "Filtri oggetti multimediali"
+msgstr "Titolo oggetto multimediale"
 
 #: EditExifMetadata/editexifmetadata.py:978
 msgid "media Title: "
 msgstr "Titolo oggetto multimediale: "
 
 #: EditExifMetadata/editexifmetadata.py:993
-#, fuzzy
 msgid "General Data"
-msgstr "Generale"
+msgstr "Dati generali"
 
 #: EditExifMetadata/editexifmetadata.py:1003
 msgid "Description: "
@@ -5049,34 +4939,30 @@ msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1069
-#, fuzzy
 msgid "Latitude :"
-msgstr "Latitudine:"
+msgstr "Latitudine :"
 
 #: EditExifMetadata/editexifmetadata.py:1070
-#, fuzzy
 msgid "Longitude :"
-msgstr "Longitudine:"
+msgstr "Longitudine :"
 
 #: EditExifMetadata/editexifmetadata.py:1071
 msgid "Altitude :"
 msgstr "Altitudine :"
 
 #: EditExifMetadata/editexifmetadata.py:1114
-#, fuzzy
 msgid "Bad Date/Time"
-msgstr "Data/ Ora"
+msgstr "Data/ Ora errata"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 o -18:9:48.21)"
+msgstr ""
+"Latitudine non valida (sintassi: 18°9′48.21″S, -18.2412 oppure -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr "Longitudine non valida (sintassi: 18°9'"
+msgstr ""
+"Longitudine non valida (sintassi: 18°9′48.21″E, -18.2412 oppure -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -5096,9 +4982,8 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1333
-#, fuzzy
 msgid "Media Title Update"
-msgstr "Filtro oggetti multimediali"
+msgstr "Aggiornamento titolo oggetti multimediali"
 
 #: EditExifMetadata/editexifmetadata.py:1357
 #, fuzzy
@@ -5106,9 +4991,8 @@ msgid "Media Object Date Created"
 msgstr "Oggetti multimediali marcati come privati"
 
 #: EditExifMetadata/editexifmetadata.py:1422
-#, fuzzy
 msgid "Saving Exif metadata to this image..."
-msgstr "Salvataggio dei metadati Exif nell'immagine..."
+msgstr "Salvataggio dei metadati Exif in questa immagine..."
 
 #: EditExifMetadata/editexifmetadata.py:1465
 msgid "All Exif metadata has been deleted from this image..."
@@ -5132,10 +5016,8 @@ msgid ""
 msgstr ""
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
-#, fuzzy
-#| msgid "Search..."
 msgid "Search substring..."
-msgstr "Ricerca..."
+msgstr "Ricerca sottostringa..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
@@ -5178,10 +5060,8 @@ msgid "GEXF is used in many network graph applications."
 msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
-#, fuzzy
-#| msgid "Text Options"
 msgid "GEXF export options"
-msgstr "Opzioni di testo"
+msgstr "Opzioni di esportazione GEXF"
 
 #: ExportProlog/ExportProlog.gpr.py:4
 msgid "Prolog Export"
@@ -5244,10 +5124,8 @@ msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
 
 #: ExtractCity/extractcity.py:402
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Place title"
-msgstr "Controllo titoli luoghi"
+msgstr "Titolo dei luoghi"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
@@ -5304,9 +5182,8 @@ msgid "Belgium's Archives"
 msgstr ""
 
 #: FaceDetection/FaceDetection.gpr.py:4
-#, fuzzy
 msgid "Face Detection"
-msgstr "Invertire la selezione"
+msgstr "Riconoscimento facciale"
 
 #: FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
@@ -5335,10 +5212,8 @@ msgid "Mass-edit the family relationship type for a group of families."
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
-#, fuzzy
-#| msgid "All Places"
 msgid "All Families"
-msgstr "Tutti i luoghi"
+msgstr "Tutte le famiglie"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:64
 msgid ""
@@ -5435,10 +5310,8 @@ msgid "in %(place)s"
 msgstr "in %(place)s"
 
 #: FamilySheet/FamilySheet.py:864
-#, fuzzy
-#| msgid "New person"
 msgid "Center person"
-msgstr "Nuova persona"
+msgstr "Persona centrale"
 
 #: FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
@@ -5461,10 +5334,8 @@ msgid "Center person and all descendants"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:874
-#, fuzzy
-#| msgid "Whether to include an image if one is available."
 msgid "Whether to include descendants, and which ones."
-msgstr "Se includere un'immagine se una è disponibile."
+msgstr "Indica se includere discendenti e quali includere."
 
 #: FamilySheet/FamilySheet.py:880 FamilyTree/FamilyTree.py:1084
 msgid "Replace first name with call name"
@@ -5696,10 +5567,8 @@ msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr "Lo stile usato per i dati (nascita, decesso, matrimonio, divorzio)."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "FamilyTree DNA"
-msgstr "Albero genealogico per %s"
+msgstr "DNA dell'albero genealogico"
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:5
 msgid "Tool to import FamilyFinder DNA data from Family Tree"
@@ -5747,10 +5616,8 @@ msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
 #: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "FamilyTree DNA Import"
-msgstr "Albero genealogico per %s"
+msgstr "Importa DNA dell'albero genealogico"
 
 #: FamilyTreeDNA/ftdna_import.py:224
 msgid ""
@@ -5806,9 +5673,8 @@ msgstr ""
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
-#, fuzzy
 msgid "The active Person"
-msgstr "Persona attiva: <b>%s</b>"
+msgstr "La persona attiva"
 
 #: FilterRules/activepersonrule.py:47
 #, fuzzy
@@ -5930,20 +5796,16 @@ msgid "People who are part of families matching <filter>"
 msgstr ""
 
 #: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
-#, fuzzy
-#| msgid "Include Residence"
 msgid "Include Children"
-msgstr "Includi residenza"
+msgstr "Includi figli"
 
 #: FilterRules/infamilyrule.py:49
 msgid "Include the children in the matching families."
 msgstr ""
 
 #: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include Parents"
-msgstr "Includere gli eventi"
+msgstr "Includere genitori"
 
 #: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
@@ -6125,10 +5987,8 @@ msgid "Reference:"
 msgstr ""
 
 #: Form/editform.py:421
-#, fuzzy
-#| msgid "TR-Heading"
 msgid "Headings"
-msgstr "TR-voce"
+msgstr "Intestazioni"
 
 #: Form/form.py:65
 msgid "Form"
@@ -6208,10 +6068,8 @@ msgid "7. Sex: Male"
 msgstr ""
 
 #: Form/form_ca.xml.h:24
-#, fuzzy
-#| msgid "Female line"
 msgid "SexFemale"
-msgstr "Linea femminile"
+msgstr "Sesso femminile"
 
 #: Form/form_ca.xml.h:25
 msgid "8. Sex: Female"
@@ -6229,10 +6087,8 @@ msgid "9. Married or Single"
 msgstr ""
 
 #: Form/form_ca.xml.h:28 Form/form_ca.xml.h:240
-#, fuzzy
-#| msgid "Colors"
 msgid "Coloured"
-msgstr "Colori"
+msgstr "Colorato"
 
 #: Form/form_ca.xml.h:29
 msgid "10. Coloured Persons - Negroes"
