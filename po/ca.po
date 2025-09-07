@@ -10,13 +10,14 @@
 # leo-jmateo <jmateo.sanchez@tinet.cat>, 2025.
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2025.
 # Hugo Vidal <hugo@lovi.casa>, 2025.
+# Hugo Vidal <69076992+hugoovf@users.noreply.github.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-28 09:02+0000\n"
-"Last-Translator: Hugo Vidal <hugo@lovi.casa>\n"
+"PO-Revision-Date: 2025-08-31 06:05+0000\n"
+"Last-Translator: Hugo Vidal <69076992+hugoovf@users.noreply.github.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
 "Language: ca\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -155,7 +156,7 @@ msgstr ""
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
-msgstr ""
+msgstr "De"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -176,23 +177,23 @@ msgstr "Selecciona el filtre per restringir les persones"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
-msgstr ""
+msgstr "Tipus d'origen"
 
 #: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
-msgstr "Nova Font"
+msgstr "Nova font"
 
 #: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
-msgstr ""
+msgstr "Font existent"
 
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
-msgstr ""
+msgstr "Selecciona el tipus d'origen a adjuntar"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
-msgstr ""
+msgstr "Nou títol d'origen"
 
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
@@ -444,7 +445,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:504
 msgid "Birth event missing."
-msgstr ""
+msgstr "Falta l'esdeveniment de naixement."
 
 #: Betawhatsnext/Betawhatsnext.py:505
 msgid "Add via the Events tab of the Edit Person dialog."
@@ -452,7 +453,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:582
 msgid "relationship type unknown"
-msgstr ""
+msgstr "tipus de relació desconegut"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
@@ -494,7 +495,7 @@ msgstr ""
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
-msgstr ""
+msgstr "Biografia"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
@@ -510,10 +511,8 @@ msgid "Select the family you wish to examine."
 msgstr ""
 
 #: BirthOrder/birthorder.glade:155
-#, fuzzy
-#| msgid "Select All"
 msgid "Accept All"
-msgstr "Seleccionar-ho Tot"
+msgstr "Acceptar tot"
 
 #: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
@@ -531,7 +530,7 @@ msgstr ""
 
 #: BirthOrder/birthorder.glade:185
 msgid "Accept"
-msgstr ""
+msgstr "Acceptar"
 
 #: BirthOrder/birthorder.glade:189
 msgid ""
@@ -595,7 +594,7 @@ msgstr "Buscant camps de lloc"
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
-msgstr ""
+msgstr "Aniversaris"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
@@ -612,7 +611,7 @@ msgstr ""
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 msgid "Calculate Estimated Dates"
-msgstr "Calcular Dates Estimades"
+msgstr "Calcular dates estimades"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
@@ -620,7 +619,7 @@ msgstr "Calcula les dates estimades de naixement i defunció."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
-msgstr "Estimacions de Data Calculades"
+msgstr "Estimacions de dates calculades"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
@@ -687,7 +686,7 @@ msgstr "Els anys entre dues generacions, en mitjana"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:136
 msgid "Estimated Dates"
-msgstr "Dates Estimades"
+msgstr "Dates estimades"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
@@ -742,23 +741,24 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
-msgstr "Seleccionar-ho Tot"
+msgstr "Seleccionar tot"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
-msgstr "No Seleccionar-ne cCap"
+msgstr "No seleccionar cap"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
-msgstr "Commutar Selecció"
+msgstr "Commutar selecció"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
-msgstr "Afegir Esdeveniments Seleccionats"
+msgstr "Afegir esdeveniments seleccionats"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr "Esborrar Esdeveniments, Notes, i Font i Tornar a Seleccionar Dades"
+msgstr ""
+"Elimina els esdeveniments, les notes i l'origen i torna a seleccionar dades"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
@@ -774,7 +774,7 @@ msgstr "Esborrar i Executar la Selecció un Altre Cop"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
-msgstr "Tornar a Seleccionar Dades"
+msgstr "Torna a seleccionar les dades"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
@@ -782,7 +782,7 @@ msgstr "Segur que vol tornar a seleccionar les dades?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:216
 msgid "Run Select Again"
-msgstr "Executar la Selecció un Altre Cop"
+msgstr "Tornar a executar la selecció"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
@@ -896,14 +896,12 @@ msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking Given Names"
-msgstr "Comprovant Títols de Lloc"
+msgstr "Comprovant els noms de pila"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
-msgstr ""
+msgstr "S'estan cercant els noms de pila"
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
@@ -917,10 +915,8 @@ msgid ""
 msgstr ""
 
 #: ChangeGivenNames/changenames.glade:107
-#, fuzzy
-#| msgid "Add relation"
 msgid "Edit selection"
-msgstr "Afegir relació"
+msgstr "Edita la selecció"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -1263,11 +1259,11 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1445
 msgid "Default View"
-msgstr ""
+msgstr "Vista per defecte"
 
 #: D3Charts/DescendantIndentedTree.py:1448
 msgid "Expand All"
-msgstr ""
+msgstr "Expandir tot"
 
 #: D3Charts/DescendantIndentedTree.py:1810
 msgid "Include contraction level"
@@ -1729,7 +1725,7 @@ msgstr "Abandonar"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
-msgstr "Persona nova"
+msgstr "Nova persona"
 
 #: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
@@ -1741,47 +1737,39 @@ msgstr "No hi ha relació amb la persona activa"
 
 #: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
-msgstr "Afegir com a Pare"
+msgstr "Afegir com a progenitor"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
-#, fuzzy
-#| msgid "Add as a Spouse"
 msgid "Add as a Mother"
-msgstr "Afegir com a Cònjuge"
+msgstr "Afegir com a mare"
 
 #: DataEntryGramplet/DataEntryGramplet.py:102
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Father"
-msgstr "Afegir com a Pare"
+msgstr "Afegir com a pare"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
-msgstr "Afegir com a Cònjuge"
+msgstr "Afegir com a cònjuge"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
-#, fuzzy
-#| msgid "Add as a Child"
 msgid "Add as a Wife"
-msgstr "Afegir com a Fill"
+msgstr "Afegir com a dona"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Husband"
-msgstr "Afegir com a Pare"
+msgstr "Afegir com a marit"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
-msgstr "Afegir com a Germà"
+msgstr "Afegir com a germà"
 
 #: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
-msgstr "Afegir com a Fill"
+msgstr "Afegir com a fill"
 
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
-msgstr "Copiar Dades Actives"
+msgstr "Copiar dades actives"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
@@ -1798,11 +1786,11 @@ msgstr "Edició de Dades en Gramplet: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
-msgstr "No es pot afegir una persona nova."
+msgstr "No es pot afegir una nova persona."
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
-msgstr "Si us plau introdueixi un nom."
+msgstr "Si us plau, introdueixi un nom."
 
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:526
@@ -1823,19 +1811,15 @@ msgstr "Fixi si us plau una persona activa."
 #: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
-msgstr "Digui si us plau el gènere de la persona nova."
+msgstr "Si us plau, estableix el gènere de la nova persona."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a mother."
-msgstr "No es pot afegir persona nova com a cònjuge."
+msgstr "No es pot afegir persona nova com a mare."
 
 #: DataEntryGramplet/DataEntryGramplet.py:536
-#, fuzzy
-#| msgid "Can't add new person as a parent."
 msgid "Can't add new person as a father."
-msgstr "No es pot afegir persona nova com a progenitor."
+msgstr "No es pot afegir persona nova com a pare."
 
 #: DataEntryGramplet/DataEntryGramplet.py:541
 #: DataEntryGramplet/DataEntryGramplet.py:545
@@ -1846,16 +1830,12 @@ msgid "Can't add new person as a spouse."
 msgstr "No es pot afegir persona nova com a cònjuge."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
-#, fuzzy
-#| msgid "Can't add new person as a child."
 msgid "Can't add new person as a wife."
-msgstr "No es pot afegir persona nova com a fill."
+msgstr "No es pot afegir persona nova com a dona."
 
 #: DataEntryGramplet/DataEntryGramplet.py:555
-#, fuzzy
-#| msgid "Can't add new person as a sibling."
 msgid "Can't add new person as a husband."
-msgstr "No es pot afegir persona nova com a germà."
+msgstr "No es pot afegir persona nova com a marit."
 
 #: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
@@ -1873,14 +1853,12 @@ msgid "Please set Active person."
 msgstr "Fixi si us plau una persona activa."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a spouse to no one."
-msgstr "No es pot afegir persona nova com a cònjuge."
+msgstr "No es pot afegir una persona nova com a cònjuge a ningú."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr "Si us plau, fixi el gènere de la persona Activa o nova."
+msgstr "Si us plau, estableix el gènere de la persona Activa o nova."
 
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837
@@ -1889,7 +1867,7 @@ msgstr "Gèneres iguals a la persona nova i activa."
 
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
-msgstr "Si us plau fixi el gènere de la persona Activa."
+msgstr "Si us plau, estableix el gènere de la persona Activa."
 
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
@@ -1982,7 +1960,7 @@ msgstr "germà"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
 msgid "Note on Parent Family"
-msgstr "Nota sobre la familia dels pares"
+msgstr "Nota sobre la família dels pares"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
@@ -2096,32 +2074,31 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:221
 msgid "right to left"
-msgstr ""
+msgstr "dreta a esquerra"
 
 #: DenominoViso/DenominoViso.py:222
 msgid "left to right"
-msgstr ""
+msgstr "esquerra a dreta"
 
 #: DenominoViso/DenominoViso.py:223
 msgid "top to bottom"
-msgstr ""
+msgstr "dalt a baix"
 
 #: DenominoViso/DenominoViso.py:224
 msgid "bottom to top"
-msgstr ""
+msgstr "baix a dalt"
 
 #: DenominoViso/DenominoViso.py:306 DenominoViso/DenominoViso.py:974
 #: DenominoViso/DenominoViso.py:1034 DenominoViso/DenominoViso.py:1259
 #: DenominoViso/DenominoViso.py:2750
-#, fuzzy
 msgid "role"
-msgstr "Paper"
+msgstr "paper"
 
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
 #: DenominoViso/DenominoViso.py:2752
 msgid "description"
-msgstr "Descripció"
+msgstr "descripció"
 
 #: DenominoViso/DenominoViso.py:310 DenominoViso/DenominoViso.py:976
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
@@ -5214,7 +5191,7 @@ msgstr ""
 
 #: FaceDetection/FaceDetection.py:72
 msgid "Detect New Faces"
-msgstr ""
+msgstr "Detecta noves cares"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
@@ -5845,7 +5822,7 @@ msgstr "Inclou els fills en les famílies coincidents."
 
 #: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
 msgid "Include Parents"
-msgstr "Inclou els pares"
+msgstr "Inclou progenitors"
 
 #: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
@@ -6013,10 +5990,8 @@ msgid "Form: %s"
 msgstr ""
 
 #: Form/editform.py:183
-#, fuzzy
-#| msgid "New source"
 msgid "New Form"
-msgstr "Nova Font"
+msgstr "Nou formulari"
 
 #: Form/editform.py:190
 #, fuzzy
@@ -12961,7 +12936,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1459
 msgid "Parents Place of Marriage"
-msgstr ""
+msgstr "Lloc de matrimoni dels pares"
 
 #: Form/form_us.xml.h:1460
 msgid "Civil War Veteran"
@@ -14096,7 +14071,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2337
 msgid "Parents place of birth"
-msgstr ""
+msgstr "Lloc de naixement dels pares"
 
 #: Form/form_us.xml.h:2340
 msgid "Owned/Rented"
@@ -15452,10 +15427,8 @@ msgid "Add new family"
 msgstr ""
 
 #: GraphView/graphview.py:4025
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add parents"
-msgstr "Afegir com a Pare"
+msgstr "Afegir progenitors"
 
 #: GraphView/graphview.py:4048 QuiltView/QuiltView.py:1500
 msgid "Set as home person"
@@ -15569,7 +15542,7 @@ msgstr ""
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
 msgid "Headline News"
-msgstr "Capçaleres de Notícies"
+msgstr "Capçaleres de notícies"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
 msgid "Gramplet that shows the latest Gramps news"
@@ -16027,13 +16000,11 @@ msgstr ""
 
 #: ImportMerge/importmerge.glade:481
 msgid "Automark Families"
-msgstr ""
+msgstr "Marca automàticament les famílies"
 
 #: ImportMerge/importmerge.glade:498
-#, fuzzy
-#| msgid "Note on Parent Family"
 msgid "Automark Parent Families"
-msgstr "Nota sobre la familia dels pares"
+msgstr "Marca automàticament les famílies dels pares"
 
 #: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
@@ -16714,16 +16685,12 @@ msgid "cursor position at {date}"
 msgstr ""
 
 #: LifeLineChartView/lifelinechart.py:2591
-#, fuzzy
-#| msgid "New person"
 msgid "Hide person"
-msgstr "Persona nova"
+msgstr "Amagar persona"
 
 #: LifeLineChartView/lifelinechart.py:2597
-#, fuzzy
-#| msgid "New person"
 msgid "Show person"
-msgstr "Persona nova"
+msgstr "Mostrar persona"
 
 #: LifeLineChartView/lifelinechart.py:2622
 #, fuzzy
@@ -16732,10 +16699,8 @@ msgid "Show siblings"
 msgstr "germà"
 
 #: LifeLineChartView/lifelinechart.py:2627
-#, fuzzy
-#| msgid "sibling"
 msgid "Hide siblings"
-msgstr "germà"
+msgstr "Amagar germans"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
@@ -17946,10 +17911,8 @@ msgid " This is the primary death event."
 msgstr " Aquest és l'esdeveniment de mort principal."
 
 #: PersonEverything/PersonEverything.py:238
-#, fuzzy
-#| msgid "Note on Parent Family"
 msgid "Parent Family"
-msgstr "Nota sobre la familia dels pares"
+msgstr "Família dels pares"
 
 #: PersonEverything/PersonEverything.py:240
 msgid ""
@@ -18003,7 +17966,7 @@ msgstr "Gramplet de Notes"
 
 #: PersonEverything/PersonEverything.py:553
 msgid "Parent Place"
-msgstr ""
+msgstr "Lloc del progenitor"
 
 #: PersonEverything/PersonEverything.py:568
 #: PersonEverything/PersonEverything.py:572
@@ -19154,7 +19117,7 @@ msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:197
 msgid "New text:"
-msgstr ""
+msgstr "Nou text:"
 
 #: PlaceUpdate/PlaceUpdate.py:209
 #, fuzzy
@@ -19216,11 +19179,11 @@ msgstr ""
 
 #: PluginManager\PluginManager.py:441 PluginManager\PluginManager.py:558
 msgid "Hide"
-msgstr ""
+msgstr "Amagar"
 
 #: PluginManager\PluginManager.py:460
 msgid "Show hidden items"
-msgstr ""
+msgstr "Mostrar els elements ocults"
 
 #: PluginManager\PluginManager.py:467
 msgid "Show Built-in items"
@@ -19236,7 +19199,7 @@ msgstr ""
 
 #: PluginManager\PluginManager.py:556
 msgid "Unhide"
-msgstr ""
+msgstr "Mostrar"
 
 #: PluginManager\PluginManager.py:575
 msgid "Uninstall"
@@ -20640,7 +20603,7 @@ msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
-msgstr ""
+msgstr "Correu electrònic"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
 msgid "SharedPostgreSQL"
@@ -21029,7 +20992,7 @@ msgstr ""
 
 #: SourceIndex/index.glade:312
 msgid "New birth or baptism"
-msgstr ""
+msgstr "Nou naixement o baptisme"
 
 #: SourceIndex/index.glade:341
 #, fuzzy
@@ -21039,7 +21002,7 @@ msgstr "Afegir esdeveniment de naixement"
 
 #: SourceIndex/index.glade:373
 msgid "New marriage"
-msgstr ""
+msgstr "Nou matrimoni"
 
 #: SourceIndex/index.glade:402
 msgid "add marriage act"
@@ -21047,7 +21010,7 @@ msgstr ""
 
 #: SourceIndex/index.glade:434
 msgid "New death or burial"
-msgstr ""
+msgstr "Nova mort o enterrament"
 
 #: SourceIndex/index.glade:463
 #, fuzzy
@@ -21056,10 +21019,8 @@ msgid "add death act"
 msgstr "Afegir esdeveniment de defunció"
 
 #: SourceIndex/index.glade:495
-#, fuzzy
-#| msgid "New person"
 msgid "New census"
-msgstr "Persona nova"
+msgstr "Nou cens"
 
 #: SourceIndex/index.glade:524
 msgid "add census"
@@ -22100,6 +22061,8 @@ msgstr ""
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
 msgstr ""
+"Edat predeterminada del progenitor quan el fill neix amb un any de naixement "
+"desconegut"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
@@ -22233,23 +22196,23 @@ msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
-msgstr ""
+msgstr "Pares polítics"
 
 #: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
-msgstr ""
+msgstr "Avis"
 
 #: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
-msgstr ""
+msgstr "Avis polítics"
 
 #: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
-msgstr ""
+msgstr "Besavis"
 
 #: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
-msgstr ""
+msgstr "Besavis polítics"
 
 #: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
@@ -22670,22 +22633,16 @@ msgid "Website URL"
 msgstr ""
 
 #: WebSearch.py:1526
-#, fuzzy
-#| msgid "Add Note"
 msgid "Add link to note"
-msgstr "Afegir Nota"
+msgstr "Afegir enllaç a la nota"
 
 #: WebSearch.py:1528
-#, fuzzy
-#| msgid "Add Note"
 msgid "Add link to attribute"
-msgstr "Afegir Nota"
+msgstr "Afegir enllaç a l'atribut"
 
 #: WebSearch.py:1530
-#, fuzzy
-#| msgid "Change places"
 msgid "Show QR-code"
-msgstr "Canviar llocs"
+msgstr "Mostrar codi QR"
 
 #: WebSearch.py:1532
 msgid "Copy link to clipboard"
@@ -22693,11 +22650,11 @@ msgstr ""
 
 #: WebSearch.py:1535
 msgid "Hide link for selected item"
-msgstr ""
+msgstr "Amagar l'enllaç per a l'element seleccionat"
 
 #: WebSearch.py:1538
 msgid "Hide link for all items"
-msgstr ""
+msgstr "Amagar l'enllaç per a tots els elements"
 
 #: WebSearch.py:1542
 msgid "Edit Attribute with the Link"
