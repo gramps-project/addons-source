@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-08-22 13:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -1395,20 +1395,21 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1915
 msgid "URL prefix path."
-msgstr "URL-staza."
+msgstr "Staza URL prefiksa."
 
 #: D3Charts/DescendantIndentedTree.py:1917
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
-"URL-staza koja se primijenjuje na svaku automatski generiranu HREF-poveznicu."
+"Staza URL prefiksa koji se primijenjuje na svaku automatski generiranu HREF "
+"poveznicu."
 
 #: D3Charts/DescendantIndentedTree.py:1923
 msgid "URL file extension"
-msgstr "Datotečni nastavak URL-a"
+msgstr "Datotečni sufiks URL-a"
 
 #: D3Charts/DescendantIndentedTree.py:1925
 msgid "No file extension."
-msgstr "Bez datotečnog nastavka."
+msgstr "Bez datotečnog sufiksa."
 
 #: D3Charts/DescendantIndentedTree.py:1926
 msgid ".html"
@@ -1444,15 +1445,15 @@ msgstr "Ukloni sve razmake."
 
 #: D3Charts/DescendantIndentedTree.py:1940
 msgid "Replace whitespace with dash(-)."
-msgstr "Ukloni sve razmake sa crticom (-)."
+msgstr "Zamijeni sve razmake sa crticom (-)."
 
 #: D3Charts/DescendantIndentedTree.py:1941
 msgid "Replace whitespace with underscore(_)"
-msgstr "Ukloni sve razmake s podvlakom (_)"
+msgstr "Zamijeni sve razmake s podvlakom (_)"
 
 #: D3Charts/DescendantIndentedTree.py:1942
 msgid "What to use as file name delimiter replacing whitespace."
-msgstr "Što koristiti kao razdvojnik umjesto razmaka."
+msgstr "Što koristiti kao razdvojnik imena datoteke koji zamijenjuje razmake."
 
 #: D3Charts/DescendantIndentedTree.py:1947
 msgid "Generations to generate HREF links"
@@ -1500,8 +1501,8 @@ msgstr "Prikaži natuknice za alat biografije"
 #: D3Charts/DescendantIndentedTree.py:1981
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
-"Da li prikazati natuknice za alat biografije, prilikom prelaženja mišem "
-"preko čvorišta."
+"Da li prikazati natuknice za alat biografije prilikom prelaženja mišem preko "
+"čvorišta."
 
 #: D3Charts/DescendantIndentedTree.py:2025
 msgid "Text Color"
@@ -1513,7 +1514,7 @@ msgstr "RGB-boja za tekst biografije."
 
 #: D3Charts/DescendantIndentedTree.py:2032
 msgid "RGB-color for biography tooltip."
-msgstr "RGB-boje za natuknice biografije."
+msgstr "RGB-boja za natuknice biografije."
 
 #: D3Charts/DescendantIndentedTree.py:2035
 msgid "Header Font size"
@@ -1609,18 +1610,21 @@ msgid ""
 "{0}\n"
 "{1} cMs"
 msgstr ""
+"\n"
+"{0}\n"
+"{1} cM"
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
-msgstr ""
+msgstr " SNP"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr " : Počinje "
+msgstr " : Počinje pri "
 
 #: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
-msgstr " i završava "
+msgstr " i završava pri "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
@@ -1651,7 +1655,7 @@ msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
 msgstr ""
-"Pritisni za potavljanje ove osobe aktivnom\n"
+"Pritisni za potsavljanje ove osobe aktivnom\n"
 "Pritisni desni gumb miša za uređivanje ove osobe"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
@@ -4340,7 +4344,7 @@ msgstr "Arhivna datoteka"
 
 #: DynamicWeb/dynamicweb.py:4728
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
-msgstr "Ime arhivne datoteke (s dodacima „.zip” ili „.tgz”)"
+msgstr "Ime datoteke arhive (sa sufiksom „.zip” ili „.tgz”)"
 
 #: DynamicWeb/dynamicweb.py:4735
 msgid "Web site title"
@@ -19358,7 +19362,7 @@ msgstr "Prikaži ugrađene stavke"
 
 #: PluginManager\PluginManager.py:474
 msgid "* indicates 3rd party addon"
-msgstr "„*” ukazuju na dodatak treće strane"
+msgstr "* ukazuje na dodatak treće strane"
 
 #: PluginManager\PluginManager.py:479
 msgid "Plugins"
@@ -19403,23 +19407,21 @@ msgstr "PostgreSQL baza podataka"
 #: PostgreSQLEnhanced/concurrency.py:479
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
-msgstr ""
+msgstr "Jedan drugi korisnik je pormijenio objekt vrste {obj_type}:{handle}"
 
 #: PostgreSQLEnhanced/migration.py:168
 msgid "Starting migration..."
 msgstr "Pokretanje migracije …"
 
 #: PostgreSQLEnhanced/migration.py:182
-#, fuzzy, python-format
-#| msgid "Migrating %(type)s objects..."
+#, python-format
 msgid "Migrating %s objects..."
-msgstr "Migriraju se objekti vrste %(type)s …"
+msgstr "Migriraju se %s objekta …"
 
 #: PostgreSQLEnhanced/migration.py:193
-#, fuzzy, python-format, python-brace-format
-#| msgid "Migrated %(count)d %(type)s objects"
+#, python-brace-format, python-format
 msgid "Migrated %s {obj_type} objects"
-msgstr "Broj migriranih objekata vrste %(type)s: %(count)d"
+msgstr "%s objekta vrste {obj_type} su migrirani"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
@@ -19430,10 +19432,9 @@ msgid "Starting upgrade..."
 msgstr "Pokretanje nadogradnje …"
 
 #: PostgreSQLEnhanced/migration.py:470
-#, fuzzy, python-format
-#| msgid "Upgrading %(type)s objects..."
+#, python-format
 msgid "Upgrading %s objects..."
-msgstr "Nadograđuju se objekti vrste %(type)s …"
+msgstr "Nadograđuju se %s objekta …"
 
 #: PostgreSQLEnhanced/migration.py:478
 msgid "Creating indexes..."
@@ -19444,16 +19445,12 @@ msgid "Upgrade completed!"
 msgstr "Nadogradnja završena!"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
-#, fuzzy
-#| msgid "PostgreSQL"
 msgid "PostgreSQL Enhanced"
-msgstr "PostgreSQL"
+msgstr "Prošireni PostgreSQL"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
-#, fuzzy
-#| msgid "PostgreSQL Database"
 msgid "PostgreSQL _Enhanced Database"
-msgstr "PostgreSQL baza podataka"
+msgstr "_Proširena PostgreSQL baza podataka"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
 msgid ""
@@ -19462,12 +19459,19 @@ msgid ""
 "advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
 "compatible."
 msgstr ""
+"Napredni PostgreSQL pozadinski sustav sa spremanjem u JSONB formatu, "
+"podrškom za dijagram baze podataka (Apache AGE), sličnost vektora (pgvector) "
+"i funkcijama umjetne inteligencije/strojnog učenja. Namijenjeno za napredne "
+"korisnike. Zahtijeva PostgreSQL 15+ s proširenjima. Kompatibilno s Gramps "
+"Web-om."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:154
 msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
 "install 'psycopg[binary]'"
 msgstr ""
+"Za podršku za prošireni PostgreSQL potreban je psycopg3. Instaliraj ga "
+"pomoću: pip install 'psycopg[binary]'"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:163
 #, python-format
@@ -19475,6 +19479,8 @@ msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
+"psycopg3 verzija %(installed)s je pre stara. Potrebna je verzija %(required)"
+"s ili novija."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:211
 msgid "Database Backend"
@@ -19498,39 +19504,39 @@ msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
 msgstr "PostgreSQL %(version)s je manja od preporučene verzije %(recommended)s"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:252
-#, fuzzy
-#| msgid "Version %s"
 msgid "Extensions"
-msgstr "Verzija %s"
+msgstr "Proširenja"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:273
 msgid "Database size"
-msgstr ""
+msgstr "Veličina baze podataka"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:276
 #, python-format
 msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr ""
+msgstr "%(persons)d osoba, %(families)d obitelji, %(events)d događaja"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1126
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1141
 msgid "Migration manager not initialized"
-msgstr ""
+msgstr "Upravljač migracije nije inicijaliziran"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1159
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1177
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1239
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1255
 msgid "Enhanced queries require JSONB support"
-msgstr ""
+msgstr "Prošireni upiti zahtijevaju JSONB podršku"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1206
 msgid "Full-text search requires JSONB support or search capabilities"
 msgstr ""
+"Pretraživanje cijelog teksta zahtijeva podršku za JSONB ili mogućnosti "
+"pretraživanja"
 
 #: PostgreSQLEnhanced/queries.py:364
 msgid "pg_trgm extension required for duplicate detection"
-msgstr ""
+msgstr "Za otkrivanje duplikata potrebno je proširenje pg_trgm"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
@@ -19576,6 +19582,8 @@ msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
 msgstr ""
+"<i>Instalacije sljedećih paketa su <b>APSOLUTNO POTREBNE</b>\n"
+" (Zahtijeva najmanju verziju ili noviju.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
 #, fuzzy
@@ -19594,6 +19602,8 @@ msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
 msgstr ""
+"<i>Instalacije sljedećih paketa se <b>STROGO PREPORUČUJU</b> jer su potrebni "
+"za kartografju i dijagrame</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
 msgid ""
@@ -19605,7 +19615,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr ""
+msgstr "<i>Instalacije sljedećih paketa su <b>opcionalne</b></i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
@@ -19631,6 +19641,8 @@ msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
+"<i>Instalacije sljedećih paketa se <b>PREPORUČUJU</b> ako namjeravaš "
+"prevoditi ili programirati (dodaci itd.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
@@ -19831,6 +19843,8 @@ msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
+" • language-pack-gnome-xx (Za ručnu provjeru pogledaj poveznicu s uputama) "
+"za tvoj jezik <ovdje prikaži jezik koji još nje određen>"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
@@ -20591,10 +20605,8 @@ msgid ""
 msgstr ""
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
-#, fuzzy
-#| msgid "US Web Connect Pack"
 msgid "SV Web Connect Pack"
-msgstr "SAD Web Connect zbirka"
+msgstr "SV Web Connect zbirka"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:12
 #, fuzzy
@@ -23439,7 +23451,7 @@ msgstr "Nije moguće otpakirati „%s”"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr "Da li se radi o komprimiranoj .gramps datoteci?"
+msgstr "Je li to komprimirana .gramps datoteka?"
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -23624,7 +23636,7 @@ msgstr "Nedstaje Python3 lxml"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
-msgstr "Pokušaj instalirati „python3 lxml” Paket."
+msgstr "Pokušaj instalirati „python3 lxml” paket."
 
 #: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
