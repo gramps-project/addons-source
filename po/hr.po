@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-06 12:26-0700\n"
+"POT-Creation-Date: 2025-08-15 11:06-0700\n"
 "PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -1155,7 +1155,7 @@ msgstr "Opcije za sklopivo stablo predaka"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
-#: DescendantSpaceTree/DescendantSpaceTree.py:1080
+#: DescendantSpaceTree/DescendantSpaceTree.py:1082
 msgid "Include Generations"
 msgstr "Uključi generacije"
 
@@ -1193,7 +1193,7 @@ msgstr "RGB-boja za žensku boju pozadine u rasklopljenom stanju."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
-#: DescendantSpaceTree/DescendantSpaceTree.py:1130
+#: DescendantSpaceTree/DescendantSpaceTree.py:1132
 msgid "The destination path for generated files."
 msgstr "Odredište za generirane datoteke."
 
@@ -3028,7 +3028,8 @@ msgid "Click and drag anywhere on the viewer to position the descendant tree."
 msgstr ""
 "Za pomicanje stabla potomaka, klikni i povuci bilo gdje unutar preglednika."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:913
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
+#: DescendantSpaceTree/DescendantSpaceTree.py:914
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
@@ -3036,7 +3037,7 @@ msgstr ""
 "Klikni gumb za resetiranje ___HELP_RESET_BUTTON___ za vraćanje na početnog "
 "potomka."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:922
+#: DescendantSpaceTree/DescendantSpaceTree.py:923
 msgid ""
 "Search for a person by typing into the search box.  At least three "
 "characters are required to search.  Click on any of the suggestions to "
@@ -3050,7 +3051,7 @@ msgstr ""
 "rezultatima. Znak plus (+) nakon imena označava da se ta osoba pojavljuje "
 "kao supružnik."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:935
+#: DescendantSpaceTree/DescendantSpaceTree.py:936
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
@@ -3058,7 +3059,7 @@ msgstr ""
 "Potomak i svi supružnici se prikazuju unutar istog čvora. Djeca svih "
 "obitelji tog potomka se grupiraju zajedno."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:945
+#: DescendantSpaceTree/DescendantSpaceTree.py:946
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
@@ -3066,7 +3067,7 @@ msgstr ""
 "Osobama koje su rođene nakon određenog datuma se datumi rođenja ili smrti ne "
 "prikazuju."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:954
+#: DescendantSpaceTree/DescendantSpaceTree.py:955
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
@@ -3074,14 +3075,15 @@ msgstr ""
 "Čvorovi osoba su obojana kako bi označila broj djece – što je boja tamnija, "
 "to je veći broj djece."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:964
+#: DescendantSpaceTree/DescendantSpaceTree.py:965
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
 msgstr ""
 "Trenutačno odabrani potomak i svi njegovi preci označeni su žutom bojom."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:973
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
+#: DescendantSpaceTree/DescendantSpaceTree.py:975
 msgid ""
 "A person may occur in different branches.  This is usually because of inter-"
 "family marriages (such as that of cousins.)  In this case, a button will "
@@ -3095,7 +3097,7 @@ msgstr ""
 "navigaciju prema drugoj grani. Samo jedna grana će prikazati potomke te "
 "osobe. "
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:987
+#: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
@@ -3104,15 +3106,15 @@ msgstr ""
 "Za potpune licence i potrebne napomene pogledaj njihove datoteke LICENSE*."
 "txt."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1014
+#: DescendantSpaceTree/DescendantSpaceTree.py:1016
 msgid "Search. . ."
 msgstr "Traži …"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1089
+#: DescendantSpaceTree/DescendantSpaceTree.py:1091
 msgid "Branch to expand when duplicated"
 msgstr "Grana koja se rasklapa prilikom dupliciranja"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1100
+#: DescendantSpaceTree/DescendantSpaceTree.py:1102
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
@@ -3120,31 +3122,33 @@ msgstr ""
 "Kada se potomak pojavi više puta, prednost se daje odabranoj lozi za prikaz "
 "linije potomaka"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1108
+#: DescendantSpaceTree/DescendantSpaceTree.py:1110
 msgid "Maximum display birth year"
 msgstr "Najkasnija prikazana godina rođenja"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1111
-msgid "Birth/date dates will not be displayed after this year"
+#: DescendantSpaceTree/DescendantSpaceTree.py:1113
+#, fuzzy
+#| msgid "Birth/date dates will not be displayed after this year"
+msgid "Birth/death dates will not be displayed after this year"
 msgstr "Datumi rođenja se neće prikazivati nakon ove godine"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1116
+#: DescendantSpaceTree/DescendantSpaceTree.py:1118
 msgid "Theme preference"
 msgstr "Postavke teme"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1123
+#: DescendantSpaceTree/DescendantSpaceTree.py:1125
 msgid "Theme color preference for Space Tree"
 msgstr "Postavka boje teme za prostorno stablo"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1136
+#: DescendantSpaceTree/DescendantSpaceTree.py:1138
 msgid "Destination File"
 msgstr "Odredišna datotka"
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1138
+#: DescendantSpaceTree/DescendantSpaceTree.py:1140
 msgid "The destination file name for the report."
 msgstr "Ime odredišne datoteke za izvještaj."
 
-#: DescendantSpaceTree/DescendantSpaceTree.py:1144
+#: DescendantSpaceTree/DescendantSpaceTree.py:1146
 msgid "Open generated HTML file with default browser."
 msgstr "Otvori generiranu HTML datoteku sa zadanim preglednikom."
 
@@ -5007,20 +5011,16 @@ msgid "Bad Date/Time"
 msgstr "Neispravni datum/vrijeme"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Neispravna zemljopisna širina (sintaksa: 18°9'"
-
-#: EditExifMetadata/editexifmetadata.py:1123
-msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+#, fuzzy
+#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
 msgstr "48.21″S, −18.2412 ili −18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-msgid "Invalid longitude (syntax: 18°9'"
+#, fuzzy
+#| msgid "Invalid longitude (syntax: 18°9'"
+msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 msgstr "Neispravna zemljopisna dužina (sintaksa: 18°9'"
-
-#: EditExifMetadata/editexifmetadata.py:1128
-msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21″E, −18.2412 ili −18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -19400,6 +19400,138 @@ msgstr "_PostgreSQL baza podataka"
 msgid "PostgreSQL Database"
 msgstr "PostgreSQL baza podataka"
 
+#: PostgreSQLEnhanced/concurrency.py:479
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:168
+msgid "Starting migration..."
+msgstr "Pokretanje migracije …"
+
+#: PostgreSQLEnhanced/migration.py:182
+#, fuzzy, python-format
+#| msgid "Migrating %(type)s objects..."
+msgid "Migrating %s objects..."
+msgstr "Migriraju se objekti vrste %(type)s …"
+
+#: PostgreSQLEnhanced/migration.py:193
+#, fuzzy, python-format, python-brace-format
+#| msgid "Migrated %(count)d %(type)s objects"
+msgid "Migrated %s {obj_type} objects"
+msgstr "Broj migriranih objekata vrste %(type)s: %(count)d"
+
+#: PostgreSQLEnhanced/migration.py:209
+msgid "Migration completed!"
+msgstr "Migracija završena!"
+
+#: PostgreSQLEnhanced/migration.py:438
+msgid "Starting upgrade..."
+msgstr "Pokretanje nadogradnje …"
+
+#: PostgreSQLEnhanced/migration.py:470
+#, fuzzy, python-format
+#| msgid "Upgrading %(type)s objects..."
+msgid "Upgrading %s objects..."
+msgstr "Nadograđuju se objekti vrste %(type)s …"
+
+#: PostgreSQLEnhanced/migration.py:478
+msgid "Creating indexes..."
+msgstr "Stvaranje indeksa …"
+
+#: PostgreSQLEnhanced/migration.py:489
+msgid "Upgrade completed!"
+msgstr "Nadogradnja završena!"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
+#, fuzzy
+#| msgid "PostgreSQL"
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
+#, fuzzy
+#| msgid "PostgreSQL Database"
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL baza podataka"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:154
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:163
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:211
+msgid "Database Backend"
+msgstr "Pozadinski sustav baze podataka"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:212
+msgid "Database module"
+msgstr "Modul baze podataka"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:214
+msgid "JSONB support"
+msgstr "JSONB podrška"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:236
+msgid "Version warning"
+msgstr "Upozorenje o verziji"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:237
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr "PostgreSQL %(version)s je manja od preporučene verzije %(recommended)s"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:252
+#, fuzzy
+#| msgid "Version %s"
+msgid "Extensions"
+msgstr "Verzija %s"
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:273
+msgid "Database size"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:276
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1126
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1141
+msgid "Migration manager not initialized"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1159
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1177
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1239
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1255
+msgid "Enhanced queries require JSONB support"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1206
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr ""
+
+#: PostgreSQLEnhanced/queries.py:364
+msgid "pg_trgm extension required for duplicate detection"
+msgstr ""
+
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
 msgid "Prerequisites Checker"
@@ -23028,12 +23160,6 @@ msgstr "Svojstvo aktualizirano"
 msgid "Note updated"
 msgstr "Zabilješka aktualizirana"
 
-#: connection.py:113 postgresqlenhanced.py:112
-msgid ""
-"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
-"install 'psycopg[binary]'"
-msgstr ""
-
 #: constants.py:390
 msgid "Column - Icons"
 msgstr "Stupac – Ikone"
@@ -23726,41 +23852,6 @@ msgstr "Vrsta mjesta:"
 msgid "Last Retrieved At:"
 msgstr "Zadnje put dohvaćeno:"
 
-#: migration.py:133
-msgid "Starting migration..."
-msgstr "Pokretanje migracije …"
-
-#: migration.py:145
-#, python-format
-msgid "Migrating %(type)s objects..."
-msgstr "Migriraju se objekti vrste %(type)s …"
-
-#: migration.py:154
-#, python-format
-msgid "Migrated %(count)d %(type)s objects"
-msgstr "Broj migriranih objekata vrste %(type)s: %(count)d"
-
-#: migration.py:171
-msgid "Migration completed!"
-msgstr "Migracija završena!"
-
-#: migration.py:302 postgresqlenhanced.py:287
-msgid "Starting upgrade..."
-msgstr "Pokretanje nadogradnje …"
-
-#: migration.py:320
-#, python-format
-msgid "Upgrading %(type)s objects..."
-msgstr "Nadograđuju se objekti vrste %(type)s …"
-
-#: migration.py:331
-msgid "Creating indexes..."
-msgstr "Stvaranje indeksa …"
-
-#: migration.py:342
-msgid "Upgrade completed!"
-msgstr "Nadogradnja završena!"
-
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
 msgstr "Poveznica zabilješke (obrađena)"
@@ -23772,81 +23863,6 @@ msgstr "Poveznica zabilješke (interna)"
 #: note_links_loader.py:127
 msgid "Note Link (external)"
 msgstr "Poveznica zabilješke (eksterna)"
-
-#: postgresqlenhanced.gpr.py:27
-#, fuzzy
-#| msgid "PostgreSQL"
-msgid "PostgreSQL Enhanced"
-msgstr "PostgreSQL"
-
-#: postgresqlenhanced.gpr.py:28
-#, fuzzy
-#| msgid "PostgreSQL Database"
-msgid "PostgreSQL _Enhanced Database"
-msgstr "PostgreSQL baza podataka"
-
-#: postgresqlenhanced.gpr.py:29
-msgid ""
-"PostgreSQL Enhanced Database Backend with JSONB storage, advanced queries, "
-"and migration support. Uses psycopg3 for modern PostgreSQL features while "
-"maintaining full compatibility."
-msgstr ""
-
-#: postgresqlenhanced.py:118
-#, python-format
-msgid ""
-"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
-"required."
-msgstr ""
-
-#: postgresqlenhanced.py:167
-msgid "Database Backend"
-msgstr "Pozadinski sustav baze podataka"
-
-#: postgresqlenhanced.py:168
-msgid "Database module"
-msgstr "Modul baze podataka"
-
-#: postgresqlenhanced.py:170
-msgid "JSONB support"
-msgstr "JSONB podrška"
-
-#: postgresqlenhanced.py:191
-#, python-format
-msgid "Version warning"
-msgstr "Upozorenje o verziji"
-
-#: postgresqlenhanced.py:193
-#, python-format
-msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
-msgstr "PostgreSQL %(version)s je manja od preporučene verzije %(recommended)s"
-
-#: postgresqlenhanced.py:206
-#, fuzzy
-#| msgid "Version %s"
-msgid "Extensions"
-msgstr "Verzija %s"
-
-#: postgresqlenhanced.py:224
-msgid "Database size"
-msgstr ""
-
-#: postgresqlenhanced.py:229
-#, python-format
-msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr ""
-
-#: postgresqlenhanced.py:300
-msgid "Upgrading to PostgreSQL Enhanced"
-msgstr ""
-
-#: postgresqlenhanced.py:315
-msgid "Migration manager not initialized"
-msgstr ""
-
-#: postgresqlenhanced.py:327
-msgid "Enhanced queries require JSONB support"
-msgstr ""
 
 #: qr_window.py:88
 msgid "QR-code"
@@ -23863,23 +23879,6 @@ msgid ""
 msgstr ""
 "⚠ Greška prilikom generiranja QR koda:\n"
 "Izvorna greška: „{}”"
-
-#: queries.py:354
-msgid "pg_trgm extension required for duplicate detection"
-msgstr ""
-
-#: schema.py:156
-msgid "Creating new PostgreSQL Enhanced schema"
-msgstr ""
-
-#: schema.py:162
-#, python-format
-msgid "Upgrading schema from v%(current)s to v%(new)s"
-msgstr ""
-
-#: schema.py:246
-msgid "PostgreSQL Enhanced schema created successfully"
-msgstr ""
 
 #: settings_ui_manager.py:112
 msgid "Middle Name Handling"
@@ -23980,6 +23979,12 @@ msgstr "Prikaži stupce"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Prikaži ikone"
+
+#~ msgid "Invalid latitude (syntax: 18°9'"
+#~ msgstr "Neispravna zemljopisna širina (sintaksa: 18°9'"
+
+#~ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+#~ msgstr "48.21″E, −18.2412 ili −18:9:48.21)"
 
 #, fuzzy
 #~| msgid "Add Test Note"
