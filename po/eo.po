@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-07-28 21:19+0000\n"
+"PO-Revision-Date: 2025-08-29 20:30+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
 "addons/eo/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -340,11 +340,11 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
-msgstr ""
+msgstr " 👣 Sekvantaj Paŝoj:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
 msgid "  •  From the \"Family Trees\" menu,"
-msgstr ""
+msgstr "  •  De la \"Genealogiaj Arboj\" menuo,"
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"

@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-08-31 06:05+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -3224,10 +3224,8 @@ msgid "Maximum display birth year"
 msgstr "Année de naissance maximale à afficher"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1113
-#, fuzzy
-#| msgid "Birth/date dates will not be displayed after this year"
 msgid "Birth/death dates will not be displayed after this year"
-msgstr "Les dates ne seront pas affichées après cette année de naissance"
+msgstr "Les dates de naissance/décès ne seront pas affichées après cette année"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1118
 msgid "Theme preference"
@@ -5205,17 +5203,13 @@ msgid "Bad Date/Time"
 msgstr "Mauvaise date / heure"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 ou -18:9:48.21)"
+msgstr "latitude invalide (syntaxe : 18°9′48.21″S, -18.2412 ou -18:9:48.21)"
 
 # trunk
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
-#| msgid "Invalid longitude (syntax: 18°9'"
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr "Longitude invalide (syntaxe : 18°9'"
+msgstr "Longitude invalide (syntaxe : 18°9′48.21″E, -18.2412 ou -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -15953,7 +15947,7 @@ msgstr ""
 
 #: HistContext/HistContext.py:132
 msgid "Use full dates"
-msgstr ""
+msgstr "Utiliser les dates complètes"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
@@ -17764,6 +17758,9 @@ msgid ""
 "rounding birthday\n"
 "to year only"
 msgstr ""
+"Entrer l'année à partir de\n"
+"laquelle on arrondit la\n"
+"date de naissance à l'année"
 
 #: NetworkChart/NetworkChart.py:1076
 msgid ""
@@ -17876,10 +17873,12 @@ msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
 msgstr ""
+"Retirer les groupes inférieurs à la «Taille de groupe Min». Automatique\n"
+"pour les bases de données avec plus de 1500 personnes."
 
 #: NetworkChart/NetworkChart.py:1154
 msgid "Min Group Size"
-msgstr ""
+msgstr "Taille de Groupe Min"
 
 #: NetworkChart/NetworkChart.py:1156
 msgid ""
@@ -24136,7 +24135,7 @@ msgstr "QR-code"
 
 #: qr_window.py:119 qr_window.py:122
 msgid "⚠ Missing dependency \"qrcode\""
-msgstr ""
+msgstr "⚠ Dépendances manquante \"qrcode\""
 
 #: qr_window.py:133
 msgid ""
@@ -24215,10 +24214,8 @@ msgid "Mistral Model"
 msgstr "Modèle Mistral"
 
 #: settings_ui_manager.py:191
-#, fuzzy
-#| msgid "Show Links From Attributes"
 msgid "Show Links From the 'Attributes' tab"
-msgstr "Afficher les liens des attributs"
+msgstr "Afficher les liens de l'onglet «Attributs»"
 
 #: settings_ui_manager.py:196
 msgid "Show Links From the 'Internet' tab"
@@ -24230,11 +24227,11 @@ msgstr "Afficher les liens des notes"
 
 #: settings_ui_manager.py:209
 msgid "Enable AI-generated historical place data"
-msgstr ""
+msgstr "Activer les données historiques de lieux générés par IA"
 
 #: settings_ui_manager.py:215
 msgid "Custom country code for AI notes (optional)"
-msgstr ""
+msgstr "Code de pays personnalisé pour les notes IA (facultatif)"
 
 #: settings_ui_manager.py:244
 msgid "Enable CSV Files"
