@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-11 18:01+0000\n"
+"PO-Revision-Date: 2025-09-07 12:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -3222,10 +3222,8 @@ msgid "Maximum display birth year"
 msgstr "Maximales Geburtsjahr für die Anzeige"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1113
-#, fuzzy
-#| msgid "Birth/date dates will not be displayed after this year"
 msgid "Birth/death dates will not be displayed after this year"
-msgstr "Geburtsdaten werden nach diesem Jahr nicht mehr angezeigt"
+msgstr "Geburts-/Sterbedaten werden nach diesem Jahr nicht mehr angezeigt"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1118
 msgid "Theme preference"
@@ -5164,16 +5162,14 @@ msgid "Bad Date/Time"
 msgstr "Ungültiges Datum/Zeit"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 oder -18:9:48.21)"
+msgstr ""
+"Ungültige Breitengradangabe (Syntax: 18°9′48.21″S, -18.2412 oder -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
-#| msgid "Invalid longitude (syntax: 18°9'"
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr "Ungültiger Längengrad (Syntax: 18°9'"
+msgstr ""
+"Ungültige Längengradangabe (Syntax: 18°9′48.21″E, -18.2412 oder -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -9681,11 +9677,11 @@ msgstr "Arbeitet Zuhause"
 
 #: Form/form_gb.xml.h:575 Form/form_gb.xml.h:596
 msgid "District Electoral Division"
-msgstr "Wahlbezirksabteilung"
+msgstr "Wahlkreisbezirk"
 
 #: Form/form_gb.xml.h:576 Form/form_gb.xml.h:599
 msgid "Townland"
-msgstr "Landgut"
+msgstr "Gemeindegebiet"
 
 #: Form/form_gb.xml.h:578 Form/form_gb.xml.h:607
 msgid "No. on Form B"
@@ -9716,7 +9712,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:595
 msgid "Poor Law Union"
-msgstr "Armenrecht Gewerkschaft"
+msgstr "Armenfürsorgeverband"
 
 #: Form/form_gb.xml.h:597
 msgid "Barony"
@@ -9724,7 +9720,7 @@ msgstr "Herrschaft"
 
 #: Form/form_gb.xml.h:603
 msgid "Urban District"
-msgstr "Kreisfreie Stadt"
+msgstr "Stadtbezirk"
 
 #: Form/form_gb.xml.h:606
 msgid "Head of Family"
@@ -9736,7 +9732,7 @@ msgstr "Gesamtzahl der Kinder"
 
 #: Form/form_gb.xml.h:619
 msgid "Children born alive to present Marriage"
-msgstr "Kinder, die lebend geboren wurden in gegenwärtiger Ehe"
+msgstr "Lebend geborene Kinder in gegenwärtiger Ehe"
 
 #: Form/form_pl.xml.h:5
 msgid "Event Place (Original)"
@@ -9801,7 +9797,7 @@ msgstr "Band Anfangsjahr"
 
 #: Form/form_pl.xml.h:29
 msgid "Volume Ending Year"
-msgstr "Band Endejahr"
+msgstr "Band Endjahr"
 
 #: Form/form_us.xml.h:1 Form/form_us.xml.h:14 Form/form_us.xml.h:35
 #: Form/form_us.xml.h:56 Form/form_us.xml.h:96 Form/form_us.xml.h:165
@@ -9859,7 +9855,7 @@ msgstr "Blatt Nr."
 #: Form/form_us.xml.h:460 Form/form_us.xml.h:496 Form/form_us.xml.h:608
 #: Form/form_us.xml.h:645 Form/form_us.xml.h:1098 Form/form_us.xml.h:1844
 msgid "Minor Civil Division"
-msgstr "Kleinere zivile Abteilung"
+msgstr "Amtsgericht"
 
 #: Form/form_us.xml.h:6 Form/form_us.xml.h:19 Form/form_us.xml.h:40
 #: Form/form_us.xml.h:61 Form/form_us.xml.h:101 Form/form_us.xml.h:170
@@ -9887,11 +9883,11 @@ msgstr "Frei weiß männlich ab 16 Jahren"
 
 #: Form/form_us.xml.h:10
 msgid "Free white males under 16"
-msgstr "Frei weiß männlich unter 16"
+msgstr "Freie weiße männliche unter 16"
 
 #: Form/form_us.xml.h:11
 msgid "Free white females"
-msgstr "Frei weiß weiblich"
+msgstr "Freie weiße weibliche"
 
 #: Form/form_us.xml.h:12 Form/form_us.xml.h:33 Form/form_us.xml.h:54
 msgid "All other free persons"
@@ -9911,51 +9907,51 @@ msgstr "Sklaven"
 #: Form/form_us.xml.h:1636 Form/form_us.xml.h:1651 Form/form_us.xml.h:1846
 #: Form/form_us.xml.h:1899 Form/form_us.xml.h:1928 Form/form_us.xml.h:2329
 msgid "Enumeration Date"
-msgstr "Zähldatum"
+msgstr "Erhebungsdatum"
 
 #: Form/form_us.xml.h:23 Form/form_us.xml.h:44 Form/form_us.xml.h:65
 msgid "Free white males under 10"
-msgstr "Frei weiß männlich unter 10"
+msgstr "Freie weiße männliche unter 10"
 
 #: Form/form_us.xml.h:24 Form/form_us.xml.h:45 Form/form_us.xml.h:66
 msgid "Free white males 10-15"
-msgstr "Frei weiß männlich 10-15"
+msgstr "Freie weiße männliche 10-15"
 
 #: Form/form_us.xml.h:25 Form/form_us.xml.h:46 Form/form_us.xml.h:68
 msgid "Free white males 16-25"
-msgstr "Frei weiß männlich 16-25"
+msgstr "Freie weiße männliche 16-25"
 
 #: Form/form_us.xml.h:26 Form/form_us.xml.h:47 Form/form_us.xml.h:69
 msgid "Free white males 26-44"
-msgstr "Frei weiß männlich 26-44"
+msgstr "Freie weiße männliche 26-44"
 
 #: Form/form_us.xml.h:27 Form/form_us.xml.h:48 Form/form_us.xml.h:70
 msgid "Free white males 45 and over"
-msgstr "Frei weiß männlich 45 und älter"
+msgstr "Freie weiße männliche 45 und älter"
 
 #: Form/form_us.xml.h:28 Form/form_us.xml.h:49 Form/form_us.xml.h:71
 msgid "Free white females under 10"
-msgstr "Frei weiß weiblich unter 10"
+msgstr "Freie weiße weibliche unter 10"
 
 #: Form/form_us.xml.h:29 Form/form_us.xml.h:50 Form/form_us.xml.h:72
 msgid "Free white females 10-15"
-msgstr "Frei weiß weiblich 10-15"
+msgstr "Freie weiße weibliche 10-15"
 
 #: Form/form_us.xml.h:30 Form/form_us.xml.h:51 Form/form_us.xml.h:73
 msgid "Free white females 16-25"
-msgstr "Frei weiß weiblich 16-25"
+msgstr "Freie weiße weibliche 16-25"
 
 #: Form/form_us.xml.h:31 Form/form_us.xml.h:52 Form/form_us.xml.h:74
 msgid "Free white females 26-44"
-msgstr "Frei weiß weiblich 26-44"
+msgstr "Freie weiße weibliche 26-44"
 
 #: Form/form_us.xml.h:32 Form/form_us.xml.h:53 Form/form_us.xml.h:75
 msgid "Free white females 45 and over"
-msgstr "Frei weiß weiblich 45 und älter"
+msgstr "Freie weiße weibliche 45 und älter"
 
 #: Form/form_us.xml.h:67
 msgid "Free white males 16-18"
-msgstr "Frei weiß männlich 16-18"
+msgstr "Freie weiße männliche 16-18"
 
 #: Form/form_us.xml.h:76 Form/form_us.xml.h:1297
 msgid "Foreigners not naturalized"
@@ -9971,195 +9967,195 @@ msgstr "Personen, die im Handel tätig sind"
 
 #: Form/form_us.xml.h:79
 msgid "Persons engaged in Manufactures"
-msgstr "Personen, die in der Herstellung tätig sind"
+msgstr "Personen, die in der Fertigung tätig sind"
 
 #: Form/form_us.xml.h:80
 msgid "Slave males under 14"
-msgstr "Sklaven Männer unter 14"
+msgstr "Sklaven männlich unter 14"
 
 #: Form/form_us.xml.h:81
 msgid "Slave males 14-25"
-msgstr "Sklaven Männer 14-25"
+msgstr "Sklaven männlich 14-25"
 
 #: Form/form_us.xml.h:82
 msgid "Slave males 26-44"
-msgstr "Sklaven Männer 26-44"
+msgstr "Sklaven männlich 26-44"
 
 #: Form/form_us.xml.h:83
 msgid "Slave males 45 and over"
-msgstr "Sklaven Männer 45 und älter"
+msgstr "Sklaven männlich 45 und älter"
 
 #: Form/form_us.xml.h:84
 msgid "Slave females under 14"
-msgstr "Sklaven Frauen unter 14"
+msgstr "Sklavinnen unter 14"
 
 #: Form/form_us.xml.h:85
 msgid "Slave females 14-25"
-msgstr "Sklaven Frauen 14-25"
+msgstr "Sklavinnen 14-25"
 
 #: Form/form_us.xml.h:86
 msgid "Slave females 26-44"
-msgstr "Sklaven Frauen 26-44"
+msgstr "Sklavinnen 26-44"
 
 #: Form/form_us.xml.h:87
 msgid "Slave females 45 and over"
-msgstr "Sklaven Frauen 45 und älter"
+msgstr "Sklavinnen 45 und älter"
 
 #: Form/form_us.xml.h:88
 msgid "Free colored males under 14"
-msgstr "Frei farbig männlich unter 14"
+msgstr "Freie dunkelhäutig männlich unter 14"
 
 #: Form/form_us.xml.h:89
 msgid "Free colored males 14-25"
-msgstr "Frei farbig männlich 14-25"
+msgstr "Freie dunkelhäutig männlich 14-25"
 
 #: Form/form_us.xml.h:90
 msgid "Free colored males 26-44"
-msgstr "Frei farbig männlich 26-44"
+msgstr "Freie dunkelhäutig männlich 26-44"
 
 #: Form/form_us.xml.h:91
 msgid "Free colored males 45 and over"
-msgstr "Frei farbig männlich 45 und älter"
+msgstr "Freie dunkelhäutig männlich 45 und älter"
 
 #: Form/form_us.xml.h:92
 msgid "Free colored females under 14"
-msgstr "Frei farbig weiblich unter 14"
+msgstr "Freie dunkelhäutig weiblich unter 14"
 
 #: Form/form_us.xml.h:93
 msgid "Free colored females 14-25"
-msgstr "Frei farbig weiblich 14-25"
+msgstr "Freie dunkelhäutig weiblich 14-25"
 
 #: Form/form_us.xml.h:94
 msgid "Free colored females 26-44"
-msgstr "Frei farbig weiblich 26-44"
+msgstr "Freie dunkelhäutig weiblich 26-44"
 
 #: Form/form_us.xml.h:95
 msgid "Free colored females 45 and over"
-msgstr "Frei farbig weiblich 45 und älter"
+msgstr "Freie dunkelhäutig weiblich 45 und älter"
 
 #: Form/form_us.xml.h:105 Form/form_us.xml.h:174
 msgid "Free white males under 5"
-msgstr "Frei weiß männlich unter 5"
+msgstr "Freie weiß männlich unter 5"
 
 #: Form/form_us.xml.h:106 Form/form_us.xml.h:175
 msgid "Free white males 5-9"
-msgstr "Frei weiß männlich 5-9"
+msgstr "Freie weiß männlich 5-9"
 
 #: Form/form_us.xml.h:107 Form/form_us.xml.h:176
 msgid "Free white males 10-14"
-msgstr "Frei weiß männlich 10-14"
+msgstr "Freie weiß männlich 10-14"
 
 #: Form/form_us.xml.h:108 Form/form_us.xml.h:177
 msgid "Free white males 15-20"
-msgstr "Frei weiß männlich 15-20"
+msgstr "Freie weiß männlich 15-20"
 
 #: Form/form_us.xml.h:109 Form/form_us.xml.h:178
 msgid "Free white males 20-29"
-msgstr "Frei weiß männlich 20-29"
+msgstr "Freie weiß männlich 20-29"
 
 #: Form/form_us.xml.h:110 Form/form_us.xml.h:179
 msgid "Free white males 30-39"
-msgstr "Frei weiß männlich 30-39"
+msgstr "Freie weiß männlich 30-39"
 
 #: Form/form_us.xml.h:111 Form/form_us.xml.h:180
 msgid "Free white males 40-49"
-msgstr "Frei weiß männlich 40-49"
+msgstr "Freie weiß männlich 40-49"
 
 #: Form/form_us.xml.h:112 Form/form_us.xml.h:181
 msgid "Free white males 50-59"
-msgstr "Frei weiß männlich 50-59"
+msgstr "Freie weiß männlich 50-59"
 
 #: Form/form_us.xml.h:113 Form/form_us.xml.h:182
 msgid "Free white males 60-69"
-msgstr "Frei weiß männlich 60-69"
+msgstr "Freie weiß männlich 60-69"
 
 #: Form/form_us.xml.h:114 Form/form_us.xml.h:183
 msgid "Free white males 70-79"
-msgstr "Frei weiß männlich 70-79"
+msgstr "Freie weiß männlich 70-79"
 
 #: Form/form_us.xml.h:115 Form/form_us.xml.h:184
 msgid "Free white males 80-89"
-msgstr "Frei weiß männlich 80-89"
+msgstr "Freie weiß männlich 80-89"
 
 #: Form/form_us.xml.h:116 Form/form_us.xml.h:185
 msgid "Free white males 90-99"
-msgstr "Frei weiß männlich 90-99"
+msgstr "Freie weiß männlich 90-99"
 
 #: Form/form_us.xml.h:117 Form/form_us.xml.h:186
 msgid "Free white males 100 and over"
-msgstr "Frei weiß männlich 100 und älter"
+msgstr "Freie weiß männlich 100 und älter"
 
 #: Form/form_us.xml.h:118 Form/form_us.xml.h:187
 msgid "Free white females under 5"
-msgstr "Frei weiß weiblich unter 5"
+msgstr "Freie weiß weiblich unter 5"
 
 #: Form/form_us.xml.h:119 Form/form_us.xml.h:188
 msgid "Free white females 5-9"
-msgstr "Frei weiß weiblich 5-9"
+msgstr "Freie weiß weiblich 5-9"
 
 #: Form/form_us.xml.h:120 Form/form_us.xml.h:189
 msgid "Free white females 10-14"
-msgstr "Frei weiß weiblich 10-14"
+msgstr "Freie weiß weiblich 10-14"
 
 #: Form/form_us.xml.h:121 Form/form_us.xml.h:190
 msgid "Free white females 15-20"
-msgstr "Frei weiß weiblich 15-20"
+msgstr "Freie weiß weiblich 15-20"
 
 #: Form/form_us.xml.h:122 Form/form_us.xml.h:191
 msgid "Free white females 20-29"
-msgstr "Frei weiß weiblich 20-29"
+msgstr "Freie weiß weiblich 20-29"
 
 #: Form/form_us.xml.h:123 Form/form_us.xml.h:192
 msgid "Free white females 30-39"
-msgstr "Frei weiß weiblich 30-39"
+msgstr "Freie weiß weiblich 30-39"
 
 #: Form/form_us.xml.h:124 Form/form_us.xml.h:193
 msgid "Free white females 40-49"
-msgstr "Frei weiß weiblich 40-49"
+msgstr "Freie weiß weiblich 40-49"
 
 #: Form/form_us.xml.h:125 Form/form_us.xml.h:194
 msgid "Free white females 50-59"
-msgstr "Frei weiß weiblich 50-59"
+msgstr "Freie weiß weiblich 50-59"
 
 #: Form/form_us.xml.h:126 Form/form_us.xml.h:195
 msgid "Free white females 60-69"
-msgstr "Frei weiß weiblich 60-69"
+msgstr "Freie weiß weiblich 60-69"
 
 #: Form/form_us.xml.h:127 Form/form_us.xml.h:196
 msgid "Free white females 70-79"
-msgstr "Frei weiß weiblich 70-79"
+msgstr "Freie weiß weiblich 70-79"
 
 #: Form/form_us.xml.h:128 Form/form_us.xml.h:197
 msgid "Free white females 80-89"
-msgstr "Frei weiß weiblich 80-89"
+msgstr "Freie weiß weiblich 80-89"
 
 #: Form/form_us.xml.h:129 Form/form_us.xml.h:198
 msgid "Free white females 90-99"
-msgstr "Frei weiß weiblich 90-99"
+msgstr "Freie weiß weiblich 90-99"
 
 #: Form/form_us.xml.h:130 Form/form_us.xml.h:199
 msgid "Free white females 100 and over"
-msgstr "Frei weiß weiblich 100 und älter"
+msgstr "Freie weiß weiblich 100 und älter"
 
 #: Form/form_us.xml.h:131 Form/form_us.xml.h:212
 msgid "Slave males under 10"
-msgstr "Sklaven Männer unter 10"
+msgstr "Sklaven männlich unter 10"
 
 #: Form/form_us.xml.h:132 Form/form_us.xml.h:213
 msgid "Slave males 10-23"
-msgstr "Sklave Männer 10-23"
+msgstr "Sklaven männlich 10-23"
 
 #: Form/form_us.xml.h:133 Form/form_us.xml.h:214
 msgid "Slave males 24-35"
-msgstr "Sklaven Männer 24-35"
+msgstr "Sklaven männlich 24-35"
 
 #: Form/form_us.xml.h:134 Form/form_us.xml.h:215
 msgid "Slave males 36-54"
-msgstr "Sklaven Männer 36-54"
+msgstr "Sklaven männlich 36-54"
 
 #: Form/form_us.xml.h:135 Form/form_us.xml.h:216
 msgid "Slave males 55-99"
-msgstr "Sklaven Männer 55-99"
+msgstr "Sklaven männlich 55-99"
 
 #: Form/form_us.xml.h:136 Form/form_us.xml.h:217
 msgid "Slave males 100 and over"
@@ -10167,75 +10163,75 @@ msgstr "Sklaven männlich 100 und älter"
 
 #: Form/form_us.xml.h:137 Form/form_us.xml.h:218
 msgid "Slave females under 10"
-msgstr "Sklaven Frauen unter 10"
+msgstr "Sklavinnen unter 10"
 
 #: Form/form_us.xml.h:138 Form/form_us.xml.h:219
 msgid "Slave females 10-23"
-msgstr "Sklaven Frauen 10-23"
+msgstr "Sklavinnen 10-23"
 
 #: Form/form_us.xml.h:139 Form/form_us.xml.h:220
 msgid "Slave females 24-35"
-msgstr "Sklaven Frauen 24-35"
+msgstr "Sklavinnen 24-35"
 
 #: Form/form_us.xml.h:140 Form/form_us.xml.h:221
 msgid "Slave females 36-54"
-msgstr "Sklaven Frauen 36-54"
+msgstr "Sklavinnen 36-54"
 
 #: Form/form_us.xml.h:141 Form/form_us.xml.h:222
 msgid "Slave females 55-99"
-msgstr "Sklaven Frauen 55-99"
+msgstr "Sklavinnen 55-99"
 
 #: Form/form_us.xml.h:142 Form/form_us.xml.h:223
 msgid "Slave females 100 and over"
-msgstr "Sklaven Frauen 100 und älter"
+msgstr "Sklavinnen 100 und älter"
 
 #: Form/form_us.xml.h:143 Form/form_us.xml.h:200
 msgid "Free colored males under 10"
-msgstr "Frei farbig männlich unter 10"
+msgstr "Freie dunkelhäutig männlich unter 10"
 
 #: Form/form_us.xml.h:144 Form/form_us.xml.h:201
 msgid "Free colored males 10-23"
-msgstr "Frei farbig männlich 10-23"
+msgstr "Freie dunkelhäutig männlich 10-23"
 
 #: Form/form_us.xml.h:145 Form/form_us.xml.h:202
 msgid "Free colored males 24-35"
-msgstr "Frei farbig männlich 24-35"
+msgstr "Freie dunkelhäutig männlich 24-35"
 
 #: Form/form_us.xml.h:146 Form/form_us.xml.h:203
 msgid "Free colored males 36-54"
-msgstr "Frei farbig männlich 36-54"
+msgstr "Freie dunkelhäutig männlich 36-54"
 
 #: Form/form_us.xml.h:147 Form/form_us.xml.h:204
 msgid "Free colored males 55-99"
-msgstr "Frei farbig männlich -55-99"
+msgstr "Freie dunkelhäutig männlich -55-99"
 
 #: Form/form_us.xml.h:148 Form/form_us.xml.h:205
 msgid "Free colored males 100 and over"
-msgstr "Frei farbig männlich 100 und älter"
+msgstr "Freie dunkelhäutig männlich 100 und älter"
 
 #: Form/form_us.xml.h:149 Form/form_us.xml.h:206
 msgid "Free colored females under 10"
-msgstr "Frei farbig weiblich unter 10"
+msgstr "Freie dunkelhäutig weiblich unter 10"
 
 #: Form/form_us.xml.h:150 Form/form_us.xml.h:207
 msgid "Free colored females 10-23"
-msgstr "Frei farbig weiblich 10-23"
+msgstr "Freie dunkelhäutig weiblich 10-23"
 
 #: Form/form_us.xml.h:151 Form/form_us.xml.h:208
 msgid "Free colored females 24-35"
-msgstr "Frei farbig weiblich 24-35"
+msgstr "Freie dunkelhäutig weiblich 24-35"
 
 #: Form/form_us.xml.h:152 Form/form_us.xml.h:209
 msgid "Free colored females 36-54"
-msgstr "Frei farbig weiblich 36-54"
+msgstr "Freie dunkelhäutig weiblich 36-54"
 
 #: Form/form_us.xml.h:153 Form/form_us.xml.h:210
 msgid "Free colored females 55-99"
-msgstr "Frei farbig weiblich -55-99"
+msgstr "Freie dunkelhäutig weiblich -55-99"
 
 #: Form/form_us.xml.h:154 Form/form_us.xml.h:211
 msgid "Free colored females 100 and over"
-msgstr "Frei farbig weiblich 100 und älter"
+msgstr "Freie dunkelhäutig weiblich 100 und älter"
 
 #: Form/form_us.xml.h:156 Form/form_us.xml.h:234
 msgid "White persons deaf/dumb under 14"
@@ -10251,7 +10247,7 @@ msgstr "Weiße Personen taub/stumm 25 und älter"
 
 #: Form/form_us.xml.h:159 Form/form_us.xml.h:237
 msgid "White persons blind"
-msgstr "Weiße Person blind"
+msgstr "Weiße Personen blind"
 
 #: Form/form_us.xml.h:160 Form/form_us.xml.h:1211
 msgid "Aliens"
@@ -10259,53 +10255,53 @@ msgstr "Ausländer"
 
 #: Form/form_us.xml.h:161
 msgid "Slaves and colored persons deaf/dumb under 14"
-msgstr "Sklaven und Farbige Personen taub/stumm unter 14 Jahren"
+msgstr "Sklaven und dunkelhäutige Personen taub/stumm unter 14 Jahren"
 
 #: Form/form_us.xml.h:162
 msgid "Slaves and colored persons deaf/dumb 14-24"
-msgstr "Sklaven und Farbige Personen taub/stumm 14-24"
+msgstr "Sklaven und dunkelhäutige Personen taub/stumm 14-24"
 
 #: Form/form_us.xml.h:163
 msgid "Slaves and colored persons deaf/dumb 25 and over"
-msgstr "Sklaven und Farbige Personen taub/stumm 25 und älter"
+msgstr "Sklaven und dunkelhäutige Personen taub/stumm 25 und älter"
 
 #: Form/form_us.xml.h:164
 msgid "Slaves and colored persons blind"
-msgstr "Sklaven und Farbige blind"
+msgstr "Sklaven und dunkelhäutige Personen blind"
 
 #: Form/form_us.xml.h:225
 msgid "Persons employed in Mining"
-msgstr "Personen beschäftigt im Bergbau"
+msgstr "Im Bergbau beschäftigte Personen"
 
 #: Form/form_us.xml.h:226
 msgid "Persons employed in Agriculture"
-msgstr "Personen beschäftigt in der Landwirtschaft"
+msgstr "In der Landwirtschaft beschäftigte Personen"
 
 #: Form/form_us.xml.h:227
 msgid "Persons employed in Commerce"
-msgstr "Im Handel beschäftigte Personen"
+msgstr "Im Gewerbe beschäftigte Personen"
 
 #: Form/form_us.xml.h:228
 msgid "Persons employed in Manufacture and trade"
-msgstr "Personen, die in der Herstellung und im Handel beschäftigt sind"
+msgstr "Personen, die in der Fertigung und im Handel beschäftigt sind"
 
 #: Form/form_us.xml.h:229
 msgid "Persons employed in Navigation of the ocean"
-msgstr "Personen, die in der Navigation des Ozeans beschäftigt sind"
+msgstr "Personen, die in der Seeschifffahrt beschäftigt sind"
 
 #: Form/form_us.xml.h:230
 msgid "Persons employed in Navigation of canals, lakes, rivers"
 msgstr ""
-"Personen, die in der Schifffahrt von Kanälen, Seen und Flüssen beschäftigt "
+"Personen, die in der Schifffahrt auf Kanälen, Seen und Flüssen beschäftigt "
 "sind"
 
 #: Form/form_us.xml.h:231
 msgid "Learned professional engineers"
-msgstr "Gelernte professionelle Ingenieure"
+msgstr "Ausgebildete Ingenieure"
 
 #: Form/form_us.xml.h:232
 msgid "Names of pensioners for Revolutionary or military services"
-msgstr "Namen von Rentnern für Revolutions- oder Militärdienste"
+msgstr "Namen von Pensionären für revolutionäre oder militärische Dienste"
 
 #: Form/form_us.xml.h:233
 msgid "Ages"
@@ -10313,31 +10309,37 @@ msgstr "Alter"
 
 #: Form/form_us.xml.h:238
 msgid "White persons insane and idiots at public charge"
-msgstr "Weiße Personen Wahnsinnige und Idioten unter öffentlicher Aufsicht"
+msgstr ""
+"Weiße Personen, die geisteskrank und schwachsinnig sind und zu Lasten der "
+"öffentlichen Hand leben"
 
 #: Form/form_us.xml.h:239
 msgid "White persons insane and idiots at private charge"
-msgstr "Weiße Personen Wahnsinnige und Idioten unter privater Aufsicht"
+msgstr ""
+"Weiße Personen, die geisteskrank oder schwachsinnig sind, auf eigene Kosten"
 
 #: Form/form_us.xml.h:240
 msgid "Colored persons deaf/dumb"
-msgstr "Farbige Personen taub/stumm"
+msgstr "Dunkelhäutige Personen, taubstumm"
 
 #: Form/form_us.xml.h:241
 msgid "Colored persons blind"
-msgstr "Farbige Personen blind"
+msgstr "Dunkelhäutige Personen blind"
 
 #: Form/form_us.xml.h:242
 msgid "Colored persons insane and idiots at private charge"
-msgstr "Farbige Personen Wahnsinnige und Idioten unter privater Aufsicht"
+msgstr ""
+"Dunkelhäutige Personen, Geisteskranke und Schwachsinnige auf private Kosten"
 
 #: Form/form_us.xml.h:243
 msgid "Colored persons insane and idiots at public charge"
-msgstr "Farbige Personen Wahnsinnige und Idioten unter öffentlicher Aufsicht"
+msgstr ""
+"Dunkelhäutige Personen, die geisteskrank sind, und Schwachsinnige, die zu "
+"Lasten der öffentlichen Hand leben"
 
 #: Form/form_us.xml.h:244
 msgid "Universities or college"
-msgstr "Universitäten oder Hochschule"
+msgstr "Universitäten oder Colleges"
 
 #: Form/form_us.xml.h:245
 msgid "Number of students"
@@ -10345,23 +10347,23 @@ msgstr "Anzahl der Studenten"
 
 #: Form/form_us.xml.h:246
 msgid "Academies and Grammar Schools"
-msgstr "Akademien und Mittelschulen"
+msgstr "Akademien und Grammar Schools"
 
 #: Form/form_us.xml.h:247
 msgid "No. of scholars"
-msgstr "Anzahl der Schüler"
+msgstr "Anzahl der Stipendiaten"
 
 #: Form/form_us.xml.h:248
 msgid "Primary and Common Schools"
-msgstr "Grund- und Gemeinschaftsschulen"
+msgstr "Grundschulen und Common Schools"
 
 #: Form/form_us.xml.h:249
 msgid "No. of scholars at public charge"
-msgstr "Anzahl der Wissenschaftler öffentlich bezahlt"
+msgstr "Anzahl der Stipendiaten auf öffentliche Kosten"
 
 #: Form/form_us.xml.h:250
 msgid "White persons illiterate over 20"
-msgstr "Weiße Personen Analphabeten über 20 Jahre"
+msgstr "Weiße Menschen mit Analphabetismus über 20"
 
 #: Form/form_us.xml.h:257 Form/form_us.xml.h:278 Form/form_us.xml.h:332
 #: Form/form_us.xml.h:354 Form/form_us.xml.h:412 Form/form_us.xml.h:431
@@ -10369,7 +10371,7 @@ msgstr "Weiße Personen Analphabeten über 20 Jahre"
 #: Form/form_us.xml.h:647 Form/form_us.xml.h:783 Form/form_us.xml.h:826
 #: Form/form_us.xml.h:1067 Form/form_us.xml.h:1100 Form/form_us.xml.h:2505
 msgid "State of"
-msgstr "Staat von"
+msgstr "Staat"
 
 #: Form/form_us.xml.h:259 Form/form_us.xml.h:280 Form/form_us.xml.h:335
 #: Form/form_us.xml.h:356 Form/form_us.xml.h:413 Form/form_us.xml.h:434
@@ -10384,11 +10386,11 @@ msgstr "Zeilennr."
 #: Form/form_us.xml.h:465 Form/form_us.xml.h:615 Form/form_us.xml.h:1105
 #: Form/form_us.xml.h:1848
 msgid "Family No."
-msgstr "FamilieNr."
+msgstr "Familie Nr."
 
 #: Form/form_us.xml.h:266 Form/form_us.xml.h:342 Form/form_us.xml.h:441
 msgid "Value of real estate"
-msgstr "Wert der Immobilien"
+msgstr "Wert von Immobilien"
 
 #: Form/form_us.xml.h:267 Form/form_us.xml.h:344 Form/form_us.xml.h:420
 #: Form/form_us.xml.h:443 Form/form_us.xml.h:487 Form/form_us.xml.h:625
@@ -10405,44 +10407,45 @@ msgstr "Geburtsort"
 
 #: Form/form_us.xml.h:268 Form/form_us.xml.h:345
 msgid "Married within the year"
-msgstr "Innerhalb des Jahres verheiratet"
+msgstr "Innerhalb des Jahres geheiratet"
 
 #: Form/form_us.xml.h:269 Form/form_us.xml.h:346 Form/form_us.xml.h:448
 #: Form/form_us.xml.h:1546 Form/form_us.xml.h:1568 Form/form_us.xml.h:1590
 msgid "Attended school within the year"
-msgstr "Schulbesuch innerhalb des Jahres"
+msgstr "Im Laufe des Jahres die Schule besucht"
 
 #: Form/form_us.xml.h:270 Form/form_us.xml.h:347
 msgid "Illiterate and over 20"
-msgstr "Analphabeten und über 20"
+msgstr "Analphabet und über 20"
 
 #: Form/form_us.xml.h:271 Form/form_us.xml.h:348
 msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
-msgstr "Taub, stumm, blind, verrückt, idiotisch, arm oder verurteilt"
+msgstr ""
+"Taub, stumm, blind, geisteskrank, schwachsinnig, mittellos oder vorbestraft"
 
 #: Form/form_us.xml.h:276 Form/form_us.xml.h:352
 msgid "Production of Agriculture in"
-msgstr "Produktion der Landwirtschaft in"
+msgstr "Landwirtschaftliche Produktion in"
 
 #: Form/form_us.xml.h:277 Form/form_us.xml.h:353 Form/form_us.xml.h:411
 msgid "in the County of"
-msgstr "in dem Landkreis von"
+msgstr "im Landkreis"
 
 #: Form/form_us.xml.h:281 Form/form_us.xml.h:358
 msgid "Owner, Agent, or Manager"
-msgstr "Eigentümer, Agent oder Manager"
+msgstr "Eigentümer, Vertreter oder Verwalter"
 
 #: Form/form_us.xml.h:282 Form/form_us.xml.h:359
 msgid "Acres Improved"
-msgstr "Acres Kultiviert"
+msgstr "Acres bewirtschaftet"
 
 #: Form/form_us.xml.h:283 Form/form_us.xml.h:360
 msgid "Acres Unimproved"
-msgstr "Acres Unerschlossen"
+msgstr "Acres unbewirtschaftet"
 
 #: Form/form_us.xml.h:284 Form/form_us.xml.h:361
 msgid "Cash Value of Farm"
-msgstr "Barwert der Farm"
+msgstr "Barwert des landwirtschaftlichen Betriebs"
 
 #: Form/form_us.xml.h:285 Form/form_us.xml.h:362
 msgid "Value of Farming Implements and Machinery"
@@ -10458,7 +10461,7 @@ msgstr "Arbeitsochsen"
 
 #: Form/form_us.xml.h:290 Form/form_us.xml.h:368
 msgid "Other Cattle"
-msgstr "Anderes Vieh"
+msgstr "Andere Rinder"
 
 #: Form/form_us.xml.h:292 Form/form_us.xml.h:370
 msgid "Swine"
@@ -10467,7 +10470,7 @@ msgstr "Schweine"
 #: Form/form_us.xml.h:293 Form/form_us.xml.h:371 Form/form_us.xml.h:511
 #: Form/form_us.xml.h:1186
 msgid "Value of Live Stock"
-msgstr "Wert des Viehbestand"
+msgstr "Wert des Viehbestands"
 
 #: Form/form_us.xml.h:294
 msgid "Wheat"
@@ -10527,7 +10530,7 @@ msgstr "Wein"
 
 #: Form/form_us.xml.h:308
 msgid "Value of Market Gardens"
-msgstr "Wert des Gemüseanbaus"
+msgstr "Wert von Gemüsegärten"
 
 #: Form/form_us.xml.h:309
 msgid "Butter"
@@ -10555,7 +10558,7 @@ msgstr "Hopfen"
 
 #: Form/form_us.xml.h:315
 msgid "Hemp Dew Rotted"
-msgstr "Hanf Tau verrottet"
+msgstr "Hanftau verfault"
 
 #: Form/form_us.xml.h:316
 msgid "Hemp Water Rotted"
@@ -10591,7 +10594,7 @@ msgstr "Bienenwachs"
 
 #: Form/form_us.xml.h:324
 msgid "Value of Homemade Manufactures"
-msgstr "Wert der hausgemachte Fabrikationen"
+msgstr "Wert hausgemachter Erzeugnisse"
 
 #: Form/form_us.xml.h:325 Form/form_us.xml.h:406
 msgid "Value of Animals Slaughtered"
@@ -10602,43 +10605,43 @@ msgstr "Wert der geschlachteten Tiere"
 #: Form/form_us.xml.h:1637 Form/form_us.xml.h:1652 Form/form_us.xml.h:2295
 #: Form/form_us.xml.h:2324
 msgid "Post Office"
-msgstr "Post"
+msgstr "Postamt"
 
 #: Form/form_us.xml.h:343 Form/form_us.xml.h:442
 msgid "Value of personal estate"
-msgstr "Wert des persönlichen Besitz"
+msgstr "Wert des persönlichen Vermögens"
 
 #: Form/form_us.xml.h:363
 msgid "Live Stock June 1, 1860"
-msgstr "Viehbestand 1. Juni 1860"
+msgstr "Lebendviehbestand 1. Juni 1860"
 
 #: Form/form_us.xml.h:372
 msgid "Produce during the year ending June 1, 1860"
-msgstr "Produziert im Jahr bis zum 1. Juni 1860"
+msgstr "Produktion im Geschäftsjahr bis zum 1. Juni 1860"
 
 #: Form/form_us.xml.h:373
 msgid "Wheat, bushels of"
-msgstr "Weizen, bushels von"
+msgstr "Weizen, Bushel"
 
 #: Form/form_us.xml.h:374
 msgid "Rye, bushels of"
-msgstr "Roggen, bushels von"
+msgstr "Roggen, Bushel"
 
 #: Form/form_us.xml.h:375
 msgid "Indian Corn, bushels of"
-msgstr "Mais, bushels von"
+msgstr "Mais, Bushel"
 
 #: Form/form_us.xml.h:376
 msgid "Oats, bushels of"
-msgstr "Hafer, bushels von"
+msgstr "Hafer, Bushel"
 
 #: Form/form_us.xml.h:377
 msgid "Rice, pounds of"
-msgstr "Reis, pounds von"
+msgstr "Reis, Pound"
 
 #: Form/form_us.xml.h:378
 msgid "Tobacco, pounds of"
-msgstr "Tabak, pounds von"
+msgstr "Tabak, Pound"
 
 #: Form/form_us.xml.h:379
 msgid "Ginned Cotton, bales of 400 lbs."
@@ -10646,27 +10649,27 @@ msgstr "Entkörnte Baumwolle, Ballen zu 400 englische Pfund"
 
 #: Form/form_us.xml.h:380
 msgid "Wool, pounds of"
-msgstr "Wolle, pounds von"
+msgstr "Wolle, Pound"
 
 #: Form/form_us.xml.h:381
 msgid "Peas and Beans, bushels of"
-msgstr "Erbsen und Bohnen, bushels von"
+msgstr "Erbsen und Bohnen, Bushel"
 
 #: Form/form_us.xml.h:382
 msgid "Irish Potatoes, bushels of"
-msgstr "Irische Kartoffeln, bushels von"
+msgstr "Irische Kartoffeln, Bushel"
 
 #: Form/form_us.xml.h:383
 msgid "Sweet Potatoes, bushels of"
-msgstr "Süßkartoffeln, bushels von"
+msgstr "Süßkartoffeln, Bushel"
 
 #: Form/form_us.xml.h:384
 msgid "Barley, bushels of"
-msgstr "Gerste, bushels von"
+msgstr "Gerste, Bushel"
 
 #: Form/form_us.xml.h:385
 msgid "Buckwheat, bushels of"
-msgstr "Buchweizen, bushels von"
+msgstr "Buchweizen, Bushel"
 
 #: Form/form_us.xml.h:386
 msgid "Value of Orchard Products in $"
@@ -10674,39 +10677,39 @@ msgstr "Wert der Obstgartenprodukte in $"
 
 #: Form/form_us.xml.h:387
 msgid "Wine, gallons of"
-msgstr "Wein, Gallonen von"
+msgstr "Wein, Gallonen"
 
 #: Form/form_us.xml.h:388
 msgid "Value of products of market gardens"
-msgstr "Wert der Produkte von Gärtnereien"
+msgstr "Wert der Produkte aus Gemüsegärten"
 
 #: Form/form_us.xml.h:389
 msgid "Butter, pounds of"
-msgstr "Butter, pounds von"
+msgstr "Butter, Pound"
 
 #: Form/form_us.xml.h:390
 msgid "Cheese, pounds of"
-msgstr "Käse, pounds von"
+msgstr "Käse, Pound"
 
 #: Form/form_us.xml.h:391
 msgid "Hay, tons of"
-msgstr "Heu, Short tons von"
+msgstr "Heu, Short ton"
 
 #: Form/form_us.xml.h:392
 msgid "Clover Seed, bushels of"
-msgstr "Kleessamen, bushels von"
+msgstr "Kleessamen, Bushel"
 
 #: Form/form_us.xml.h:393
 msgid "Other Grass Seeds, bushels of"
-msgstr "Andere Grassamen. bushels von"
+msgstr "Andere Grassamen. Bushel"
 
 #: Form/form_us.xml.h:394
 msgid "Hops, pounds of"
-msgstr "Hopfen, pounds von"
+msgstr "Hopfen, Pound"
 
 #: Form/form_us.xml.h:395
 msgid "Hemp Dew Rotted, tons of"
-msgstr "Hanf Tau verrottet, Short tons von"
+msgstr "Hanftau verfault, Short ton"
 
 #: Form/form_us.xml.h:396
 msgid "Hemp Water Rotted, tons of"
@@ -10714,43 +10717,43 @@ msgstr "Hanf Nass verottet, Short tons von"
 
 #: Form/form_us.xml.h:397
 msgid "Flax, pounds of"
-msgstr "Flachs, pounds von"
+msgstr "Flachs, Pound"
 
 #: Form/form_us.xml.h:398
 msgid "Flaxseed, bushels of"
-msgstr "Flachssamen, bushels von"
+msgstr "Flachssamen, Bushel"
 
 #: Form/form_us.xml.h:399
 msgid "Silk Cocoons, pounds of"
-msgstr "Seidenkokons, pounds von"
+msgstr "Seidenkokons, Pound"
 
 #: Form/form_us.xml.h:400
 msgid "Maple Sugar, pounds of"
-msgstr "Ahornzucker, pounds von"
+msgstr "Ahornzucker, Pound"
 
 #: Form/form_us.xml.h:401
 msgid "Cane sugar, hogshead of 1,000 pounds"
-msgstr "Rohrzucker, Tonne von 1.000 pounds"
+msgstr "Rohrzucker, Fass zu 1.000 Pound"
 
 #: Form/form_us.xml.h:402
 msgid "Molasses, gallons of"
-msgstr "Melasse, Gallonen von"
+msgstr "Melasse, Gallonen"
 
 #: Form/form_us.xml.h:403
 msgid "Beeswax, pounds of"
-msgstr "Bienenwachs, pounds von"
+msgstr "Bienenwachs, Pound"
 
 #: Form/form_us.xml.h:404
 msgid "Honey, pounds of"
-msgstr "Honig, pounds von"
+msgstr "Honig, Pound"
 
 #: Form/form_us.xml.h:405
 msgid "Value of home-made manufactures"
-msgstr "Wert der hausgemachte Fabrikationen"
+msgstr "Wert von selbst hergestellten Erzeugnissen"
 
 #: Form/form_us.xml.h:410
 msgid "Persons who Died during the Year ending 1 June 1860 in"
-msgstr "Personen, die während des am 1. Juni 1860 endenden Jahres starben"
+msgstr "Personen, die im Jahr bis zum 1. Juni 1860 verstorben sind in"
 
 #: Form/form_us.xml.h:418
 msgid "Free or slave"
@@ -10762,7 +10765,7 @@ msgstr "Verheiratet oder verwitwet"
 
 #: Form/form_us.xml.h:421
 msgid "Month in which person died"
-msgstr "Monat in dem die Person starb"
+msgstr "Monat, in dem die Person verstorben ist"
 
 #: Form/form_us.xml.h:423
 msgid "Cause of death"
@@ -10770,15 +10773,15 @@ msgstr "Todesursache"
 
 #: Form/form_us.xml.h:424
 msgid "Number of days ill"
-msgstr "Anzahl Tage krank"
+msgstr "Anzahl der Krankheitstage"
 
 #: Form/form_us.xml.h:444 Form/form_us.xml.h:1643
 msgid "Father of foreign birth"
-msgstr "Vater ausländischer Geburt"
+msgstr "Vater ausländischer Herkunft"
 
 #: Form/form_us.xml.h:445 Form/form_us.xml.h:1644
 msgid "Mother of foreign birth"
-msgstr "Mutter ausländischer Geburt"
+msgstr "Mutter ausländischer Herkunft"
 
 #: Form/form_us.xml.h:446
 msgid "Month, if born within the year"
@@ -10786,7 +10789,7 @@ msgstr "Monat, wenn innerhalb des Jahres geboren"
 
 #: Form/form_us.xml.h:447
 msgid "Month, if married within the year"
-msgstr "Monat, wenn innerhalb des Jahres verheiratet"
+msgstr "Monat, wenn innerhalb des Jahres geheiratet wurde"
 
 #: Form/form_us.xml.h:449 Form/form_us.xml.h:485 Form/form_us.xml.h:1125
 #: Form/form_us.xml.h:1868
@@ -10800,25 +10803,25 @@ msgstr "Kann nicht schreiben"
 
 #: Form/form_us.xml.h:451
 msgid "Deaf, dumb, blind, insane or idiotic"
-msgstr "Taub, stumm, blind, verrückt oder idiotisch"
+msgstr "Taub, stumm, blind, geisteskrank oder schwachsinnig"
 
 #: Form/form_us.xml.h:452
 msgid "Male citizen 21 and over"
-msgstr "Männliche Staatsbürger 21 und älter"
+msgstr "Männliche Staatsbürger über 21 Jahre"
 
 #: Form/form_us.xml.h:453
 msgid ""
 "Male citizen 21 and over where right to vote is denied on grounds other than "
 "rebellion or other crime"
 msgstr ""
-"Männlicher Staatsbürger ab 21 Jahren, bei denen das Wahlrecht aus anderen "
+"Männliche Staatsbürger über 21 Jahre, denen das Wahlrecht aus anderen "
 "Gründen als Rebellion oder anderen Straftaten verweigert wird"
 
 #: Form/form_us.xml.h:458 Form/form_us.xml.h:494 Form/form_us.xml.h:606
 #: Form/form_us.xml.h:662 Form/form_us.xml.h:704 Form/form_us.xml.h:747
 #: Form/form_us.xml.h:790 Form/form_us.xml.h:833 Form/form_us.xml.h:1096
 msgid "Supervisor's Dist. No."
-msgstr "Supervisor's Bezirk Nr."
+msgstr "Distriktnummer des Vorgesetzten"
 
 #: Form/form_us.xml.h:459 Form/form_us.xml.h:495 Form/form_us.xml.h:607
 #: Form/form_us.xml.h:663 Form/form_us.xml.h:705 Form/form_us.xml.h:748
@@ -10829,7 +10832,7 @@ msgstr "Zählbezirk Nr."
 
 #: Form/form_us.xml.h:470 Form/form_us.xml.h:1110 Form/form_us.xml.h:1853
 msgid "Month, if born within the census year"
-msgstr "Monat, wenn innerhalb des Volkszählungsjahres geboren"
+msgstr "Monat, wenn innerhalb des Erhebungsjahres geboren"
 
 #: Form/form_us.xml.h:471 Form/form_us.xml.h:618 Form/form_us.xml.h:714
 #: Form/form_us.xml.h:757 Form/form_us.xml.h:797 Form/form_us.xml.h:1075
@@ -10852,21 +10855,21 @@ msgstr "Verwitwet, geschieden"
 #: Form/form_us.xml.h:475 Form/form_us.xml.h:623 Form/form_us.xml.h:1115
 #: Form/form_us.xml.h:1858
 msgid "Married during the census year"
-msgstr "Verheiratet während des Volkszählungsjahres"
+msgstr "Im Jahr der Volkszählung geheiratet"
 
 #: Form/form_us.xml.h:477 Form/form_us.xml.h:632 Form/form_us.xml.h:1117
 #: Form/form_us.xml.h:1860
 msgid "Number of months unemployed during the census year"
-msgstr "Monate arbeitslos während des Volkszählungsjahres"
+msgstr "Anzahl der Monate, in denen die Person im Erhebungsjahr arbeitslos war"
 
 #: Form/form_us.xml.h:478 Form/form_us.xml.h:1118 Form/form_us.xml.h:1861
 msgid "Illness on day of enumeration"
-msgstr "Krank am Tag der Aufzählung"
+msgstr "Krankheit am Tag der Erhebung"
 
 #: Form/form_us.xml.h:480 Form/form_us.xml.h:742 Form/form_us.xml.h:1120
 #: Form/form_us.xml.h:1863
 msgid "Deaf and dumb"
-msgstr "Taub und Stumm"
+msgstr "Taubstumm"
 
 #: Form/form_us.xml.h:482 Form/form_us.xml.h:1084 Form/form_us.xml.h:1122
 #: Form/form_us.xml.h:1215 Form/form_us.xml.h:1418 Form/form_us.xml.h:1865
@@ -10882,7 +10885,7 @@ msgstr "Verstümmelt, verkrüppelt, bettlägerig oder anderweitig behindert"
 
 #: Form/form_us.xml.h:484 Form/form_us.xml.h:1124 Form/form_us.xml.h:1867
 msgid "Attended school within the census year"
-msgstr "Schulbesuch innerhalb des Volkszählungsjahres"
+msgstr "Im Erhebungsjahr die Schule besucht"
 
 #: Form/form_us.xml.h:488 Form/form_us.xml.h:626 Form/form_us.xml.h:684
 #: Form/form_us.xml.h:723 Form/form_us.xml.h:772 Form/form_us.xml.h:810
@@ -10904,7 +10907,7 @@ msgstr "Eigentümer"
 
 #: Form/form_us.xml.h:503
 msgid "Rents for fixed money"
-msgstr "Mieten für festes Geld"
+msgstr "Zinsen für Festgelder"
 
 #: Form/form_us.xml.h:504
 msgid "Rents for share of products"
@@ -10920,7 +10923,7 @@ msgstr "Acres Ständige Wiesen, Weiden, Obstgärten, Weinberge"
 
 #: Form/form_us.xml.h:507
 msgid "Acres Woodland and forest"
-msgstr "Acres Waldgelände und Wald"
+msgstr "Acres Gehölz und Wald"
 
 #: Form/form_us.xml.h:508
 msgid "Acres Other unimproved land"
@@ -10948,11 +10951,11 @@ msgstr "Einstellung von Landarbeitern 1879"
 
 #: Form/form_us.xml.h:515
 msgid "Weeks hired labor in 1879"
-msgstr "Wochen beschäftigte Arbeitskräfte 1879"
+msgstr "Wochen angestellte Arbeitskräfte im Jahr 1879"
 
 #: Form/form_us.xml.h:516
 msgid "Estimated value of all farm productions for 1879"
-msgstr "Geschätzter Wert aller landwirtschaftlichen Produktionen für 1879"
+msgstr "Geschätzter Wert aller landwirtschaftlichen Erzeugnisse für 1879"
 
 #: Form/form_us.xml.h:517
 msgid "Acreage Grass Lands Mown in 1879"
@@ -12087,7 +12090,7 @@ msgstr "Verheiratet J/N"
 
 #: Form/form_us.xml.h:978
 msgid "Spouses Age"
-msgstr "Alter des Ehepartners"
+msgstr "Alter der Ehepartner"
 
 #: Form/form_us.xml.h:982
 msgid "File No."
@@ -12352,7 +12355,7 @@ msgstr "Geborten im Volkszählungsjahr"
 
 #: Form/form_us.xml.h:1077
 msgid "Married during census year"
-msgstr "Verheiratet während des Volkszählungsjahres"
+msgstr "Im Jahr der Volkszählung geheiratet"
 
 #: Form/form_us.xml.h:1079
 msgid "Months unemployed during census year"
@@ -12364,7 +12367,7 @@ msgstr "(Tag des Besuchs der Zählers) krank oder vorübergehend verhindert"
 
 #: Form/form_us.xml.h:1082 Form/form_us.xml.h:1213
 msgid "Deaf and Dumb"
-msgstr "Taub und Stumm"
+msgstr "Taubstumm"
 
 #: Form/form_us.xml.h:1085
 msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
@@ -19704,23 +19707,21 @@ msgstr "PostgreSQL Datenbank"
 #: PostgreSQLEnhanced/concurrency.py:479
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
-msgstr ""
+msgstr "Objekt {obj_type}:{handle} wurde von einem anderen Benutzer geändert"
 
 #: PostgreSQLEnhanced/migration.py:168
 msgid "Starting migration..."
 msgstr "Migration wird gestartet..."
 
 #: PostgreSQLEnhanced/migration.py:182
-#, fuzzy, python-format
-#| msgid "Migrating %(type)s objects..."
+#, python-format
 msgid "Migrating %s objects..."
-msgstr "Migrieren von %(type)s Objekten..."
+msgstr "Migrieren von %s Objekten..."
 
 #: PostgreSQLEnhanced/migration.py:193
-#, fuzzy, python-format, python-brace-format
-#| msgid "Migrated %(count)d %(type)s objects"
+#, python-brace-format, python-format
 msgid "Migrated %s {obj_type} objects"
-msgstr "%(count)d %(type)s Objekte migriert"
+msgstr "%s {obj_type} Objekte migriert"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
@@ -19731,10 +19732,9 @@ msgid "Starting upgrade..."
 msgstr "Aktualisierung wird gestartet..."
 
 #: PostgreSQLEnhanced/migration.py:470
-#, fuzzy, python-format
-#| msgid "Upgrading %(type)s objects..."
+#, python-format
 msgid "Upgrading %s objects..."
-msgstr "Aktualisierung von %(type)s-Objekten..."
+msgstr "Aktualisierung von %s-Objekten..."
 
 #: PostgreSQLEnhanced/migration.py:478
 msgid "Creating indexes..."
@@ -19759,6 +19759,10 @@ msgid ""
 "advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
 "compatible."
 msgstr ""
+"Erweitertes PostgreSQL-Backend mit JSONB-Speicher, Unterstützung für "
+"Graphdatenbanken (Apache AGE), Vektorähnlichkeit (pgvector) und KI/ML-"
+"Funktionen. Für fortgeschrittene Benutzer. Erfordert PostgreSQL 15+ mit "
+"Erweiterungen. Kompatibel mit Gramps Web."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:154
 msgid ""
@@ -19826,7 +19830,7 @@ msgstr "Erweiterte Abfragen erfordern JSONB-Unterstützung"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1206
 msgid "Full-text search requires JSONB support or search capabilities"
-msgstr ""
+msgstr "Die Volltextsuche erfordert JSONB-Unterstützung oder Suchfunktionalität"
 
 #: PostgreSQLEnhanced/queries.py:364
 msgid "pg_trgm extension required for duplicate detection"
