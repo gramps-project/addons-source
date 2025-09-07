@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-23 15:02+0000\n"
+"PO-Revision-Date: 2025-08-29 20:30+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -92,7 +92,7 @@ msgstr "Teoreettisten esi-isien lukumäärä "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
-msgstr "Sukutaulun romahdus "
+msgstr "Esivanhempien menetys "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
@@ -135,8 +135,8 @@ msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
 msgstr ""
-"Pilkun jälkeisten numeroiden määrä, joka sisällytetään sukutaulun "
-"tiivistysraporttiin"
+"Pilkun jälkeisten numeroiden määrä, joka sisällytetään esivanhempien "
+"menetysraporttiin"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
@@ -976,11 +976,11 @@ msgstr "Muokkaa valintaa"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr "Tyhjennä paikan nimi, jos se ei täsmää"
+msgstr "Tyhjennä paikan nimike, jos se ei täsmää"
 
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr "Kopioi paikan nimi uuteen lisätietoon."
+msgstr "Kopioi paikan nimike uuteen lisätietoon."
 
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
@@ -992,19 +992,19 @@ msgstr "sarake"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
-msgstr "Tarkasta paikkojen nimet"
+msgstr "Tarkasta paikkojen nimikkeet"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
-msgstr "Tarkasta paikkojen nimet"
+msgstr "Tarkasta paikkojen nimekkeet"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr "Tarkasta paikan nimi"
+msgstr "Tarkasta paikan nimike"
 
 #: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
-msgstr "Tarkistetaan paikkojen nimiä"
+msgstr "Tarkistetaan paikkojen nimikkeitä"
 
 #: CheckPlaceTitles/checkplacetitles.py:88 ExtractCity/extractcity.py:456
 msgid "Looking for place fields"
@@ -1028,11 +1028,11 @@ msgstr "Vanhempi paikka"
 
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
-msgstr "Moukkaa paikannimiä"
+msgstr "Muokkaa paikkojen nimikkeitä"
 
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
-msgstr "Paikannimet"
+msgstr "Paikkojen nimikkeitä"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
@@ -5196,15 +5196,15 @@ msgstr ""
 
 #: ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
-msgstr "Paikkatietojen poimiminen paikan nimestä"
+msgstr "Hierarkian poimiminen paikan nimikeestä"
 
 #: ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
-msgstr "Yritetään poimia kaupunki ja osavaltio/maakunta paikan nimestä"
+msgstr "Yritetään poimia kaupunki ja osavaltio/maakunta paikan nimikkeestä"
 
 #: ExtractCity/extractcity.py:402
 msgid "Place title"
-msgstr "Paikan nimi"
+msgstr "Paikan nimike"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
@@ -5219,8 +5219,8 @@ msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
 msgstr ""
-"Alla on luettelo paikoista ja niistä mahdollisesti erotettavista tiedoista. "
-"Valitse paikat, jotka haluat Grampsin muuntavan."
+"Alla on luettelo paikoista ja niiden nimikkestä mahdollisesti saatavista "
+"tiedoista. Valitse paikat, jotka haluat Grampsin muuntavan."
 
 #: FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
@@ -16582,7 +16582,7 @@ msgstr "ei mitään"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
-msgstr ""
+msgstr "Näytä esivanhempien menetys"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:100
 msgid ""
@@ -16590,22 +16590,28 @@ msgid ""
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
+"Esivanhempien menetyksen vuoksi yksi yksilö saattaa esiintyä useita kertoja "
+"yksinkertaisessa esivanhempien kartassa. Jos tämä on aktiivinen, jokainen "
+"yksilö esiintyy vain kerran."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
 "if this number of generations has been reached, the algorithm doesn't go any "
 "deeper"
 msgstr ""
+"Jos tämä sukupolvien määrä on saavutettu, algoritmi ei mene enää syvemmälle"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:103
 msgid "Fathers have the same color"
-msgstr ""
+msgstr "Isät on samanvärisiä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:104
 msgid ""
 "Starting from the root person, each father of an added individual has the "
 "same color as that individual."
 msgstr ""
+"Juurihenkilöstä alkaen jokaisella lisätyn yksilön isällä on sama väri kuin "
+"kyseisellä yksilöllä."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
 msgid "Maximum number of compression steps"
@@ -16613,7 +16619,7 @@ msgstr "Pakkausvaiheiden enimmäismäärä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:106
 msgid "Debugging of the compression algorithm. Abort after x steps."
-msgstr ""
+msgstr "Tiivistysalgoritmin vianetsintä. Keskeytä x askeleen jälkeen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:107
 msgid "Maximum number of flipping steps"
@@ -16621,11 +16627,11 @@ msgstr "Kääntövaiheiden enimmäismäärä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:108
 msgid "Debugging of the flipping algorithm. Abort after x steps."
-msgstr ""
+msgstr "Kääntöalgoritmin vianetsintä. Keskeytä x askeleen jälkeen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:109
 msgid "Compress the chart horizontally"
-msgstr ""
+msgstr "Tiivistä kaavio vaakasuunnassa"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:110
 msgid ""
@@ -16633,10 +16639,13 @@ msgid ""
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
 msgstr ""
+"Oletusarvoisesti jokaisella yksilöllä on oma vaakasuora paikkansa. Tämä voi "
+"olla tehotonta useiden sukupolvien kanssa. Tämä algoritmi antaa useiden "
+"ihmisten jakaa vaakasuoran paikan, jos he eivät ole päällekkäisiä."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
-msgstr ""
+msgstr "Käännä perheet vaakasuutaisien yhteyksien vähentämiseksi"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:112
 msgid ""
@@ -16644,6 +16653,10 @@ msgid ""
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
 msgstr ""
+"Vaihda äidin ja isän paikat perheessä vähentääksesi yleisiä horisontaalisia "
+"ristiinkytkentöjä suuremmissa kaavioissa. Näin tapahtuu, jos yksi henkilö "
+"esiintyy useammassa kuin yhdessä perheessä tai jos se johtuu esivanhempien "
+"menetyksestä."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -16660,7 +16673,7 @@ msgstr "Jälkeläisten määrä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:116
 msgid "Very soft"
-msgstr ""
+msgstr "Hyvin pehmeä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:117
 msgid "General chart layout"
@@ -16668,26 +16681,28 @@ msgstr "Kaavion yleinen asettelu"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:118
 msgid "There are different layouts for descendant charts."
-msgstr ""
+msgstr "Jälkeläiskaavioille on erilaisia asetteluja."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:119
 msgid "Parents enclose children"
-msgstr ""
+msgstr "Vanhempien mukana on lapsia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:120
 msgid "Cactus"
-msgstr ""
+msgstr "Kaktus"
 
 #: LifeLineChartView/lifelinechart.py:75
 msgid ""
 "LifeLineChartView dependencies are missing. It is not possible to use this "
 "plugin without them."
 msgstr ""
+"LifeLineChart-näkymän riippuvuuksia puuttuu Tätä liitännäistä ei voi käyttää "
+"ilman niitä."
 
 #: LifeLineChartView/lifelinechart.py:1183
 #, python-brace-format
 msgid "cursor position at {date}"
-msgstr ""
+msgstr "kohdistimen sijainti kohdassa {date}"
 
 #: LifeLineChartView/lifelinechart.py:2591
 msgid "Hide person"
@@ -16707,26 +16722,26 @@ msgstr "Piilota sisarukset"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
-msgstr ""
+msgstr "Näytä esivanhemmat yllä "
 
 #: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"
-msgstr ""
+msgstr "Elämänlinjan esi-isäkaavio"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:26
 #: LifeLineChartView/lifelinechartview.gpr.py:44
 msgid "Persons and their relation in a time based chart"
-msgstr ""
+msgstr "Henkilöt ja heidän suhteensa aikapohjaisessa kaaviossa"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:34
 #: LifeLineChartView/lifelinechartview.gpr.py:52
 #: LifeLineChartView/lifelinechartview.py:399
 msgid "Life Line Chart"
-msgstr ""
+msgstr "Elämänlinjakaavio"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:42
 msgid "Life Line Descendant Chart"
-msgstr ""
+msgstr "Elämänlinjan jälkeläiskaavio"
 
 #: LifeLineChartView/lifelinechartview.py:386
 #: LifeLineChartView/lifelinechartview.py:883
@@ -16738,24 +16753,24 @@ msgstr "Yleinen asettelu"
 #: LifeLineChartView/lifelinechartview.py:519
 #: LifeLineChartView/lifelinechartview.py:520
 msgid "Ctrl"
-msgstr ""
+msgstr "Ctrl"
 
 #: LifeLineChartView/lifelinechartview.py:510
 #: LifeLineChartView/lifelinechartview.py:520
 msgid "Mouse wheel"
-msgstr ""
+msgstr "Hiiren rulla"
 
 #: LifeLineChartView/lifelinechartview.py:541
 msgid "Rebuild data cache"
-msgstr ""
+msgstr "Rakenna datavälimuisti uudelleen"
 
 #: LifeLineChartView/lifelinechartview.py:548
 msgid "Revert the placement and person selection"
-msgstr ""
+msgstr "Palauta sijoittelu ja henkilövalinta"
 
 #: LifeLineChartView/lifelinechartview.py:564
 msgid "Open Life Line Chart help"
-msgstr ""
+msgstr "Elämänlinjakaavion opastus"
 
 #: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
@@ -16767,17 +16782,19 @@ msgstr "Palauta kaikki asetukset"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
-msgstr ""
+msgstr "Jäleläislinjojen raportti"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:33
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."
 msgstr ""
+"Tulostaa kaikki jälkeläislinjat tietystä esi-isästä tiettyyn jälkeläiseen "
+"tekstinä."
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
-msgstr ""
+msgstr "Esi-isä, josta linja aloitetaan"
 
 #: LinesOfDescendency/lines-of-descendency.py:59
 msgid "Descendent"
@@ -16785,7 +16802,7 @@ msgstr "Jälkeläinen"
 
 #: LinesOfDescendency/lines-of-descendency.py:60
 msgid "The descendent to which to build the line"
-msgstr ""
+msgstr "Jälkeläinen, johon linja rakennetaan"
 
 #: LinesOfDescendency/lines-of-descendency.py:82
 msgid "The style used for the title of a line."
@@ -16794,12 +16811,12 @@ msgstr "Viivan nimessä käytetty tyyli."
 #: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format
 msgid "%(line)s. line:"
-msgstr ""
+msgstr "%(line)s. linja:"
 
 #: LinesOfDescendency/lines-of-descendency.py:176
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
-msgstr ""
+msgstr "Polveutumislinjat henkilöiden %(ancestor)s ja %(descendent)s välillä"
 
 #: ListeEclair/ListeEclair.gpr.py:4 ListeEclair/ListeEclair.py:97
 #: ListeEclair/ListeEclair.py:104
@@ -16877,21 +16894,23 @@ msgstr "Mediaraportti"
 
 #: MediaReport/media_report.gpr.py:25
 msgid "Generates report including images, image data and notes."
-msgstr ""
+msgstr "Luo raportin, joka sisältää kuvia, kuvadataa ja muistiinpanoja."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
-msgstr ""
+msgstr "Sinun on valittava kuva luodaksesi tämän raportin."
 
 #: MediaReport/media_report.py:112
 msgid ""
 "You have to select a custom note or uncheck the option 'include custom note' "
 "to generate this report."
 msgstr ""
+"Tulostaaksesi tämän raportin sinun on valittava mukautettu lisätieto tai "
+"poistettava valinta \"sisällytä mukautettu huomautus\"."
 
 #: MediaReport/media_report.py:125
 msgid "This report only supports PDF as output file format."
-msgstr ""
+msgstr "Tämä PDF-muotoa voi käyttää vain raportin tulostamiseen."
 
 #: MediaReport/media_report.py:229
 msgid "General:"
@@ -16899,15 +16918,15 @@ msgstr "Yleistä:"
 
 #: MediaReport/media_report.py:250
 msgid "Image type:"
-msgstr ""
+msgstr "Kuvan tyyppi:"
 
 #: MediaReport/media_report.py:426
 msgid "Heading"
-msgstr ""
+msgstr "Otsikko"
 
 #: MediaReport/media_report.py:430
 msgid "Select a media file for this report"
-msgstr ""
+msgstr "Valitse tämän raportin mediatiedosto"
 
 #: MediaReport/media_report.py:433
 msgid "Custom note"
@@ -16923,7 +16942,7 @@ msgstr "Sisällytä mukautettu lisätieto"
 
 #: MediaReport/media_report.py:438
 msgid "The custom note will be included"
-msgstr ""
+msgstr "Mukautettu lisätieto tulee mukaan"
 
 #: MediaReport/media_report.py:442
 msgid "Include referenced people"
@@ -16931,7 +16950,7 @@ msgstr "Sisällytä viitatut henkilöt"
 
 #: MediaReport/media_report.py:443
 msgid "Referenced people will be included"
-msgstr ""
+msgstr "Viitatut henkilöt otetaan mukaan"
 
 #: MediaReport/media_report.py:446
 msgid "Include media data"
@@ -16939,7 +16958,7 @@ msgstr "Sisällytä mediatiedot"
 
 #: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
-msgstr ""
+msgstr "Tagit, muistiinpanot ja attribuutit sisällytetään"
 
 #: MediaReport/media_report.py:450
 msgid "Media width"
@@ -16948,7 +16967,7 @@ msgstr "Median leveys"
 #: MediaReport/media_report.py:452
 #, no-python-format
 msgid "Maximum media width in % of available page width."
-msgstr ""
+msgstr "Median enimmäiskorkeus % käytettävissä olevasta sivun leveydestä."
 
 #: MediaReport/media_report.py:456
 msgid "Media height"
@@ -16957,7 +16976,7 @@ msgstr "Median korkeus"
 #: MediaReport/media_report.py:458
 #, no-python-format
 msgid "Maximum media height in % of available page height."
-msgstr ""
+msgstr "Median enimmäiskorkeus % käytettävissä olevasta sivun korkeudesta."
 
 #: MediaVerify/MediaVerify.gpr.py:31
 msgid "Media Verify"
@@ -17084,15 +17103,15 @@ msgstr "Mediapolkujen korjaaminen"
 
 #: MongoDB/mongodb.gpr.py:23
 msgid "MongoDB"
-msgstr ""
+msgstr "MongoDB"
 
 #: MongoDB/mongodb.gpr.py:24
 msgid "_MongoDB Database"
-msgstr ""
+msgstr "_MongoDB-tietokanta"
 
 #: MongoDB/mongodb.gpr.py:25
 msgid "MongoDB Database"
-msgstr ""
+msgstr "MongoDB-tietokanta"
 
 #: NLWebConnectPack/NLWebPack.gpr.py:13
 msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
@@ -17112,7 +17131,7 @@ msgstr "Kansallinen arkisto"
 
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
-msgstr ""
+msgstr "Kuka tutkii ketä?"
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
@@ -17683,15 +17702,15 @@ msgstr "Tallenna kaikki"
 
 #: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
-msgstr ""
+msgstr "Tallenna kaikki muutokset"
 
 #: NoteCleanup/NoteCleanup.py:127
 msgid "Search for Untidy Notes"
-msgstr ""
+msgstr "Hae siivottavia lisätietoja"
 
 #: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
-msgstr ""
+msgstr "Luo testilisätietoja"
 
 #: NoteCleanup/NoteCleanup.py:131
 msgid ""
@@ -17699,6 +17718,9 @@ msgid ""
 "These are added to your database, so you may want to work with a test "
 "database or delete them later."
 msgstr ""
+"Luo testimuistiinpanoja väliltä N99996–N99999.\n"
+"Nämä lisätään tietokantaasi, joten saatat haluta käyttää testitietokantaa "
+"tai poistaa ne myöhemmin."
 
 #: NoteCleanup/NoteCleanup.py:181
 msgid ""
@@ -17709,14 +17731,19 @@ msgid ""
 "You may export a summary list of the notes that were found using the "
 "'Export' button."
 msgstr ""
+"Varmuuskopioi tietokanta ennen tämän työkalun suorittamista.\n"
+"\n"
+"Käynnistä työkalu 'Haku'-painikkeella ja tarkista sitten tulokset.\n"
+"Kun olet tyytyväinen, tallenna työsi 'Tallenna kaikki' -painikkeella.\n"
+"Voit viedä yhteenvedon löydetyistä lisätiedoista 'Vie'-painikkeella."
 
 #: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
-msgstr ""
+msgstr "Puhdista lisätiedot"
 
 #: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
-msgstr ""
+msgstr "Puhdistustestin lisätiedot"
 
 #: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
@@ -17728,6 +17755,9 @@ msgid ""
 "\n"
 "Notes selected on the left pane are shown Before cleanup in this box."
 msgstr ""
+"\n"
+"\n"
+"Vasemman ruudun muistiinpanot näkyvät tässä ruudussa ennen siivousta."
 
 #: NoteCleanup/NoteCleanup.py:386
 msgid ""
@@ -17737,22 +17767,28 @@ msgid ""
 "If you wish to make changes, you can make them here and use the style "
 "controls in the toolbar above."
 msgstr ""
+"\n"
+"\n"
+"Vasemmassa ruudussa valitut muistiinpanot näkyvät tässä ruudussa siivottuna."
+"\n"
+"Voit tässä tehdä muutoksia ja käyttää yllä olevan työkalupalkin "
+"tyylisäätimiä."
 
 #: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
-msgstr ""
+msgstr "Lisätietojen tallentaminen"
 
 #: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
-msgstr ""
+msgstr "Puhdistettujen lisätietojen tallentaminen"
 
 #: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
-msgstr ""
+msgstr "Lisätietojen skannaus"
 
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
-msgstr ""
+msgstr "Lisätieto-Gramplet"
 
 #: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
@@ -17760,7 +17796,7 @@ msgstr "Gramplet aktiivisen henkilön lisätietojen muokkaamiseen"
 
 #: NoteGramplet/NoteGramplet.py:255
 msgid "Save Note"
-msgstr ""
+msgstr "Tallenna lisätieto"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
 msgid "Number of ancestors"
@@ -17783,15 +17819,15 @@ msgstr "Sukupolvi"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:55
 msgid "Found"
-msgstr ""
+msgstr "Löydetty"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:56
 msgid "Theoretical"
-msgstr ""
+msgstr "Teoreettinen"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:57
 msgid "Percent"
-msgstr ""
+msgstr "Prosenttia"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:65
 msgid ""
@@ -17799,6 +17835,9 @@ msgid ""
 "Only individual ancestors were counted. Duplicates caused by pedigree "
 "collapse were ignored."
 msgstr ""
+"Löydettiin {} / {} esivanhempaa ({}).\n"
+"Vain yksittäiset esivanhemmat laskettiin. Esivanhempien menetys aiheuttamat "
+"kaksoiskappaleet jätettiin huomiotta."
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 msgid "Shows the number of descendants of the current person"
@@ -17844,7 +17883,7 @@ msgstr "Gramplet näyttää yleiskatsauksen henkilön tapahtumista"
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
 msgid "Overview"
-msgstr ""
+msgstr "Yleiskatsaus"
 
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -17852,15 +17891,15 @@ msgstr "Perheen yleiskatsaus"
 
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
-msgstr ""
+msgstr "Gramplet näyttää yleiskatsauksen perheen tapahtumista"
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
-msgstr ""
+msgstr "Grampletti näyttää tapahtuman osallistujat"
 
 #: Participants/Participants.py:75
 msgid "Double-click on a row to edit the selected participant."
-msgstr ""
+msgstr "Voit muokata osallistujaa kaksoisnapsauttamalla sen riviä."
 
 #: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
@@ -17898,16 +17937,16 @@ msgstr "Otsikoissa ja kuvateksteissä käytetty tyyli"
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
-msgstr ""
+msgstr "Henkilön yleisraportti"
 
 #: PersonEverything/PersonEverything.gpr.py:33
 msgid "Produces a report containing everything about the active person"
-msgstr ""
+msgstr "Tuottaa raportin kaikista aktiivisen henkilön tiedoista"
 
 #: PersonEverything/PersonEverything.py:133
 #, python-format
 msgid "All information about %s"
-msgstr ""
+msgstr "Kaikki tiedot henkilöstä %s"
 
 #: PersonEverything/PersonEverything.py:173
 msgid "Primary name"
@@ -17919,7 +17958,7 @@ msgstr "Vaihtoehtoinen nimi"
 
 #: PersonEverything/PersonEverything.py:196
 msgid " This is the primary birth event."
-msgstr ""
+msgstr " Tämä on ensisijainen syntymätapahtuma."
 
 #: PersonEverything/PersonEverything.py:199
 msgid " This is the primary death event."
@@ -17934,18 +17973,20 @@ msgid ""
 "Details of any children and events etc. would be in a similar report for the "
 "father or mother."
 msgstr ""
+"Tiedot lapsista ja tapahtumista ym. olisivat vastaavassa isän tai äidin "
+"raportissa."
 
 #: PersonEverything/PersonEverything.py:403
 msgid "Temple and status"
-msgstr ""
+msgstr "Temppeli ja status"
 
 #: PersonEverything/PersonEverything.py:414
 msgid "LDS Ordinance family"
-msgstr ""
+msgstr "Mormonikirkon toimitusperhe"
 
 #: PersonEverything/PersonEverything.py:418
 msgid "LDS "
-msgstr ""
+msgstr "Mormonikirkko "
 
 #: PersonEverything/PersonEverything.py:434
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
@@ -17972,6 +18013,8 @@ msgstr "Mime-tyyppi"
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
 msgstr ""
+"Etunimi(et): Puhuttelusana, Etunimi, Loppuliite, Kutsumanimi, Lempinimi, "
+"Sukunimi"
 
 #: PersonEverything/PersonEverything.py:542
 msgid "Note type"
@@ -18012,23 +18055,23 @@ msgstr "Alkuperän tyyppi"
 
 #: PersonEverything/PersonEverything.py:686
 msgid "Prefix, surname, connector"
-msgstr ""
+msgstr "Etuliite, sukunimi, yhdistin"
 
 #: PersonEverything/PersonEverything.py:691
 msgid "{This is the primary surname}"
-msgstr ""
+msgstr "{Tämä on ensisijainen sukunimi}"
 
 #: PersonEverything/PersonEverything.py:704
 msgid "Tag name"
-msgstr ""
+msgstr "Tagin nimi"
 
 #: PersonEverything/PersonEverything.py:715
 msgid "Tag colour and priority"
-msgstr ""
+msgstr "Tagin väri ja prioriteetti"
 
 #: PersonEverything/PersonEverything.py:960
 msgid "No source information found"
-msgstr ""
+msgstr "Ei lähdetietoja"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -18041,7 +18084,7 @@ msgstr "Gramplet henkilöiden merkintään valokuvissa"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
-msgstr ""
+msgstr "https://www.gramps-project.org/wiki/index.php/Kuvien_merkintä_Gramplet"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Replace existing references to the person being assigned without asking"
@@ -18100,8 +18143,9 @@ msgid "Detect faces (OpenCV module required)"
 msgstr "Tunnista kasvot (OpenCV-moduuli vaaditaan)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
+#, fuzzy
 msgid "XMP Region Name"
-msgstr ""
+msgstr "XMP-alueen nimi"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
@@ -18138,17 +18182,17 @@ msgstr "{count} muun kuvan alueet liittyvät kuvaan {name}. Poistetaanko ne?"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1110
 #, python-format
 msgid "Male person|Dead at %s"
-msgstr ""
+msgstr "Mies|Kuollut %s"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1112
 #, python-format
 msgid "Female person|Dead at %s"
-msgstr ""
+msgstr "Nainen | Kuollut %s"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1114
 #, python-format
 msgid "Unknown gender person|Dead at %s"
-msgstr ""
+msgstr "Tuntematon sukupuoli henkilö|Kuollut kohdassa %s"
 
 #: PhpGedView/phpgedview.glade:12
 msgid "- default -"
@@ -18156,27 +18200,27 @@ msgstr "- oletus -"
 
 #: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
 msgid "phpGedView import"
-msgstr ""
+msgstr "phpGedView tuonti"
 
 #: PhpGedView/phpgedview.glade:103
 msgid "http://"
-msgstr ""
+msgstr "http://"
 
 #: PhpGedView/phpgedview.glade:170
 msgid "Username:"
-msgstr ""
+msgstr "Käyttäjätunnus:"
 
 #: PhpGedView/phpgedview.glade:182
 msgid "Password:"
-msgstr ""
+msgstr "Salasana:"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
-msgstr ""
+msgstr "PhpGedView"
 
 #: PhpGedView/phpgedview.gpr.py:25
 msgid "Download a GEDCOM file from a phpGedView server."
-msgstr ""
+msgstr "Lataa GEDCOM-tiedosto phpGedView-palvelimelta."
 
 #: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
 msgid "Fetching index list..."
@@ -18188,15 +18232,15 @@ msgstr "Noudetaan tietueita…"
 
 #: PhpGedView/phpgedviewconnector.py:327
 msgid "Logging in..."
-msgstr ""
+msgstr "Kirjaudutaan..."
 
 #: PhpGedView/phpgedviewconnector.py:330
 msgid "Fetching GEDCOM..."
-msgstr ""
+msgstr "Noudetaan GEDCOM..."
 
 #: PhpGedView/phpgedviewconnector.py:334
 msgid "Importing GEDCOM..."
-msgstr ""
+msgstr "Tuodaan GEDCOM..."
 
 #: PhpGedView/phpgedviewconnector.py:341
 msgid "Error: login failed"
@@ -18212,12 +18256,12 @@ msgstr "Yhdistetään..."
 
 #: PhpGedView/phpgedviewconnector.py:349
 msgid "Get version..."
-msgstr ""
+msgstr "Hae versio..."
 
 #: PhpGedView/phpgedviewconnector.py:352
 #, python-format
 msgid "Version %s"
-msgstr ""
+msgstr "Versio %s"
 
 #: PhpGedView/phpgedviewconnector.py:353
 msgid "Reading file list..."
@@ -18225,7 +18269,7 @@ msgstr "Luetaan tiedostoluetteloa..."
 
 #: PhpGedView/phpgedviewconnector.py:366
 msgid "Error: Invalid URL"
-msgstr ""
+msgstr "Virhe: Virheellinen URL-osoite"
 
 #: PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
@@ -18397,7 +18441,7 @@ msgid ""
 "You can edit this to help find other places, particularly to reduce the "
 "number of results."
 msgstr ""
-"Nykyinen paikan nimi.\n"
+"Nykyinen paikan nimike.\n"
 "Voit muokata tätä löytääksesi muita paikkoja, erityisesti tulosten määrän "
 "vähentämiseksi."
 
@@ -18636,6 +18680,8 @@ msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
 msgstr ""
+"Tarjoaa selattavan luettelon valituista paikoista sekä mahdollisuuden "
+"täyttää/jäsentää/asettaa ominaisuuskenttiä."
 
 #: PlaceCompletion/PlaceCompletion.py:95
 msgid ""
@@ -18647,16 +18693,16 @@ msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:258
 msgid "Error in PlaceCompletion.py"
-msgstr ""
+msgstr "PlaceCompletion.py päätyy virheeseen"
 
 #: PlaceCompletion/PlaceCompletion.py:259
 msgid "Non existing group used in get"
-msgstr ""
+msgstr "Hakutoiminnossa yritetään käytetään ei-olemassa olevaa ryhmää"
 
 #: PlaceCompletion/PlaceCompletion.py:282
 #, python-format
 msgid "PlaceCompletion is unable to create %s %s"
-msgstr ""
+msgstr "Ei voi luoda PlaceCompletion %s %s"
 
 #: PlaceCompletion/PlaceCompletion.py:340
 msgid "Places tool"
@@ -18664,25 +18710,27 @@ msgstr "Paikat-työkalu"
 
 #: PlaceCompletion/PlaceCompletion.py:408
 msgid "Missing regex groups in match lat/lon"
-msgstr ""
+msgstr "Säännölliset lausekeryhmät puuttuvat leveys/pituus-hausta"
 
 #: PlaceCompletion/PlaceCompletion.py:409
 #, python-format
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
-msgstr ""
+msgstr "Regex-ryhmät %(lat)s ja %(lon)s puuttuvat leveys- ja pituushausta"
 
 #: PlaceCompletion/PlaceCompletion.py:419
 msgid "Non valid regex for match lat/lon"
-msgstr ""
+msgstr "Virheellinen säännöllinen lauseke leveys- ja pituusasteille"
 
 #: PlaceCompletion/PlaceCompletion.py:420
 msgid "Non valid regular expression given to find lat/lon. Quiting."
 msgstr ""
+"Annettu säännöllinen lauseke (regex) leveys- ja pituusasteen laskemiseksi on "
+"virheellinen. Lopetetaan."
 
 #: PlaceCompletion/PlaceCompletion.py:479
 msgid "Finding Places and appropriate changes"
-msgstr ""
+msgstr "Paikkojen ja tarvittavien muutosten etsiminen"
 
 #: PlaceCompletion/PlaceCompletion.py:481
 msgid "Filtering"
@@ -18690,7 +18738,7 @@ msgstr "Suodatus"
 
 #: PlaceCompletion/PlaceCompletion.py:491
 msgid "Loading lat/lon file in Memory..."
-msgstr ""
+msgstr "Ladataan leveys-/pituusaste -tiedostoa muistiin..."
 
 #: PlaceCompletion/PlaceCompletion.py:497
 msgid "Examining places"
@@ -18710,12 +18758,12 @@ msgstr "Yhtään paikkatietuetta ei muokattu."
 
 #: PlaceCompletion/PlaceCompletion.py:733
 msgid "1 place record was modified."
-msgstr ""
+msgstr "1 paikkatietue muutettu."
 
 #: PlaceCompletion/PlaceCompletion.py:735
 #, python-format
 msgid "%d place records were modified."
-msgstr ""
+msgstr "%d paikkatietuetta muutettu."
 
 #: PlaceCompletion/PlaceCompletion.py:736
 msgid "Change places"
@@ -18723,11 +18771,11 @@ msgstr "Muuta paikkoja"
 
 #: PlaceCompletion/PlaceCompletion.py:809
 msgid "The selected file is a directory, not a file."
-msgstr ""
+msgstr "Valittu tiedosto on hakemisto eikä tiedosto."
 
 #: PlaceCompletion/PlaceCompletion.py:820
 msgid "The file you want to access is not a regular file."
-msgstr ""
+msgstr "Haluamasi tiedosto ei ole tavallinen tiedosto."
 
 #: PlaceCompletion/PlaceCompletion.py:826
 msgid "The file does not exist."
@@ -18741,23 +18789,23 @@ msgstr "Ongelma tiedoston lukemisessa"
 #: PlaceCompletion/PlaceCompletion.py:982
 #, python-format
 msgid "invalid lat or lon value, %(lat)s, %(lon)s"
-msgstr ""
+msgstr "virheellinen leveys- tai pituusasteen arvo, %(lat)s, %(lon)s"
 
 #: PlaceCompletion/PlaceCompletion.py:1135
 msgid "No lat/lon conversion"
-msgstr ""
+msgstr "Ei leveys-/pituusasteiden muunnosta"
 
 #: PlaceCompletion/PlaceCompletion.py:1136
 msgid "All in degree notation"
-msgstr ""
+msgstr "Kokonaan astelukuina"
 
 #: PlaceCompletion/PlaceCompletion.py:1137
 msgid "All in decimal notation"
-msgstr ""
+msgstr "Kokonaan desimaalimuodossa"
 
 #: PlaceCompletion/PlaceCompletion.py:1138
 msgid "Correct -50° in 50°S"
-msgstr ""
+msgstr "Korjaa -50° muotoon 50°S"
 
 #: PlaceCompletion/PlaceCompletion.py:1142
 msgid "No changes"
@@ -18765,7 +18813,7 @@ msgstr "Ei muutoksia"
 
 #: PlaceCompletion/PlaceCompletion.py:1143
 msgid "City[, State]"
-msgstr ""
+msgstr "Kaupunki[, Osavaltio]"
 
 #: PlaceCompletion/PlaceCompletion.py:1145
 msgid "City,PostalCode,Country"
@@ -18773,11 +18821,11 @@ msgstr "Kaupunki, postinumero, maa"
 
 #: PlaceCompletion/PlaceCompletion.py:1147
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
-msgstr ""
+msgstr "Kaupunki[(katuosoite;paikkakunta;seurakunta)],Postinumero,Maa"
 
 #: PlaceCompletion/PlaceCompletion.py:1149
 msgid "TitleStart [, City] [, State]"
-msgstr ""
+msgstr "Otsikon alku [, kaupunki] [, osavaltio]"
 
 #: PlaceCompletion/PlaceCompletion.py:1151
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
@@ -18794,39 +18842,39 @@ msgstr "Älä etsi"
 
 #: PlaceCompletion/PlaceCompletion.py:1180
 msgid "GeoNames country file, city search"
-msgstr ""
+msgstr "GeoNames-maatiedosto, kaupunkihaku"
 
 #: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city localized variants search"
-msgstr ""
+msgstr "GeoNames-maatiedosto, kaupunkien paikallisten muunnelmien haku"
 
 #: PlaceCompletion/PlaceCompletion.py:1190
 msgid "GeoNames country file, county/city search"
-msgstr ""
+msgstr "GeoNames maatiedosto, maakunta/kaupunkihaku"
 
 #: PlaceCompletion/PlaceCompletion.py:1202
 msgid "GeoNames country file, title begin, general search"
-msgstr ""
+msgstr "GeoNames -maatiedosto, otsikon alku, yleinen haku"
 
 #: PlaceCompletion/PlaceCompletion.py:1207
 msgid "GeoNames USA state file, city search"
-msgstr ""
+msgstr "GeoNames USA:n osavaltiotiedosto, kaupunkihaku"
 
 #: PlaceCompletion/PlaceCompletion.py:1221
 msgid "GNS Geonet country file, city search"
-msgstr ""
+msgstr "GNS Geonet -maatiedosto, kaupunkihaku"
 
 #: PlaceCompletion/PlaceCompletion.py:1228
 msgid "GNS Geonet country file, county/city search"
-msgstr ""
+msgstr "GNS Geonet -maatiedosto, maakunta-/kaupunkihaku"
 
 #: PlaceCompletion/PlaceCompletion.py:1236
 msgid "GNS Geonet country file, title begin, general search"
-msgstr ""
+msgstr "GNS Geonet -maatiedosto, otsikon alku, yleinen haku"
 
 #: PlaceCompletion/PlaceCompletion.py:1244
 msgid "Wikipedia CSV Dump"
-msgstr ""
+msgstr "Wikipedia CSV Dumppi"
 
 #: PlaceCompletion/PlaceCompletion.py:1332
 msgid "All Places"
@@ -18834,7 +18882,7 @@ msgstr "Kaikki paikat"
 
 #: PlaceCompletion/PlaceCompletion.py:1335
 msgid "No Latitude/Longitude given"
-msgstr ""
+msgstr "Leveys- ja pituusastetta ei annettu"
 
 #: PlaceCompletion/placecompletion.glade:85
 msgid "_Google Maps"
@@ -18850,19 +18898,19 @@ msgstr "Valitse täydennettävät paikat:"
 
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
-msgstr ""
+msgstr "Seurakunta:"
 
 #: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
-msgstr ""
+msgstr "Paikka _filter:"
 
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
-msgstr ""
+msgstr "Maa:"
 
 #: PlaceCompletion/placecompletion.glade:366
 msgid "C_enter latitude:"
-msgstr ""
+msgstr "C_syötä leveysaste:"
 
 #: PlaceCompletion/placecompletion.glade:383
 msgid "Center longitude:"
@@ -18870,7 +18918,7 @@ msgstr "Keskipisteen pituusaste:"
 
 #: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
-msgstr ""
+msgstr "Paikat suorakulmion sisällä:"
 
 #: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"
@@ -18878,7 +18926,7 @@ msgstr "Korkeus:"
 
 #: PlaceCompletion/placecompletion.glade:527
 msgid "1. Look up latitude and longitude:"
-msgstr ""
+msgstr "1. Hae leveys- ja pituusasteita:"
 
 #: PlaceCompletion/placecompletion.glade:554
 msgid "Search in:"
@@ -18890,11 +18938,11 @@ msgstr "Valitse tiedosto"
 
 #: PlaceCompletion/placecompletion.glade:579
 msgid "Parse as:"
-msgstr ""
+msgstr "Jäsennä seuraavasti:"
 
 #: PlaceCompletion/placecompletion.glade:619
 msgid "2. Conversion of existing title or position:"
-msgstr ""
+msgstr "2. Nykyisen tittelin tai aseman muuntaminen:"
 
 #: PlaceCompletion/placecompletion.glade:649
 msgid "Change title into:"
@@ -18902,19 +18950,23 @@ msgstr "Uusi otsikko:"
 
 #: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
-msgstr ""
+msgstr "Muunna leveys- ja pituusasteet seuraavasti:"
 
 #: PlaceCompletion/placecompletion.glade:701
 msgid ""
 "Or define a simple\n"
 "title format:"
 msgstr ""
+"Tai aseta yksinkertainen\n"
+"otsikkomuoto:"
 
 #: PlaceCompletion/placecompletion.glade:730
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
 msgstr ""
+"Käytettävissä olevat muuttujat: kaupunki, katu, paikkakunta, kunta, lääni, "
+"osavaltio, maa, postinumero"
 
 #: PlaceCompletion/placecompletion.glade:820
 msgid ""
@@ -18923,6 +18975,10 @@ msgid ""
 "Press Tab on a row or Google Maps button to see place on a map. Press Apply "
 "to do all changes automatically"
 msgstr ""
+"Paina delete poistaaksesi rivin, Kaksoisnapsauta riviä täydentääksesi "
+"paikkaa valmiiksi syötetyillä muutoksilla, \n"
+"Paina rivin kohdalla Tab-näppäintä tai Google Maps -painiketta nähdäksesi "
+"paikan kartalla. Paina Käytä tehdäksesi kaikki muutokset automaattisesti"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
 msgid "Place Coordinate Gramplet"
@@ -19125,7 +19181,7 @@ msgstr "Paikkojen ominaisuuksien asettaminen"
 
 #: PlaceUpdate/PlaceUpdate.py:304
 msgid "Regex operation failed: {}"
-msgstr ""
+msgstr "Regex-toiminto epäonnistui: {}"
 
 #: PluginManager\PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
@@ -19223,15 +19279,15 @@ msgstr "Päivitys saatavilla"
 
 #: PostgreSQL/postgresql.gpr.py:23
 msgid "PostgreSQL"
-msgstr ""
+msgstr "PostgreSQL"
 
 #: PostgreSQL/postgresql.gpr.py:24
 msgid "_PostgreSQL Database"
-msgstr ""
+msgstr "_PostgreSQL-tietokanta"
 
 #: PostgreSQL/postgresql.gpr.py:25
 msgid "PostgreSQL Database"
-msgstr ""
+msgstr "PostgreSQL-tietokanta"
 
 #: PostgreSQLEnhanced/concurrency.py:479
 #, python-brace-format
@@ -19368,11 +19424,11 @@ msgstr "pg_trgm-laajennus tarvitaan kaksoiskappaleiden tunnistamiseen"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
 msgid "Prerequisites Checker"
-msgstr ""
+msgstr "Edellytysten tarkistus"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:30
 msgid "Prerequisites Checker Gramplet"
-msgstr ""
+msgstr "Edellytykset Checker Grampletille"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:143
 msgid ""
@@ -19380,73 +19436,97 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
+"Diagnostinen Gramplet, joka auttaa arvioimaan, onko <a href="
+"\"https://gramps-project.org/\">Grampsissa</a> kaikki <a href="
+"\"https://github.com/gramps-project/gramps/blob/master/README.md\""
+">tarpeellinen</a> asennettu.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
 "Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
 "installed."
 msgstr ""
+"Diagnostinen Gramplet, joka auttaa arvioimaan, onko Grampsissa kaikki "
+"vaaditut asennusvaatimukset asennettu."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>VAADITAAN</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
 msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
 msgstr ""
+"<i>Seuraavien pakettien asennukset ovat <b>TÄYSIN PAKOLLISIA</b>\n"
+"(Vaatii vähintään vähimmäisversion.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>SUOSITELLAAN</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
 msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
 msgstr ""
+"<i>Seuraavien pakettien asentamista <b>SUOSITELLAAN</b> tarvittaessa "
+"karttojen ja kaavioiden käyttöön</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
 msgid ""
 "\n"
 "<u><b>Optional</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Valinnainen</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr ""
+msgstr "<i>Seuraavien pakettien asentaminen on <b>valinnaista</b></i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
-msgstr ""
+msgstr "Gtkspell mahdollistaa lisätietojen oikeinkirjoituksen tarkistuksen.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
 msgstr ""
+"Kuvien rajaamiseen ja LaTeX-tulostukseen tarvitaan Python Image Library "
+"(PIL)."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
 msgid ""
 "\n"
 "<u><b>Development & Translation Requirements</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Kehitys- ja käännösvaatimukset</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:241
 msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
+"<i>Seuraavien pakettien asentamista <b>SUOSITELLAAN</b>, jos aiot kääntää "
+"tai tehdä kehitystyötä (lisäosia jne.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
 "\n"
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Kolmannen osapuolen lisäosien vaatimat valinnaiset paketit</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
 msgid ""
@@ -19454,12 +19534,17 @@ msgid ""
 "org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
 "work</i>:\n"
 msgstr ""
+"<i>Seuraavien <a href="
+"\"https://gramps-project.org/wiki/index.php?title=Third-party_Addons\""
+">kolmannen osapuolen lisäosien</a> toiminnan edellytykset</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
 "\n"
 "<u><b>Diagnostic checks</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Diagnostiset tarkastukset</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
 msgid "Check for potential issues.\n"
@@ -19470,6 +19555,8 @@ msgid ""
 "\n"
 "Environment settings:\n"
 msgstr ""
+"\n"
+"Ympäristöasetukset:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
 msgid ""
@@ -19477,12 +19564,17 @@ msgid ""
 "\n"
 "<u><b>Locales available:</b></u>\n"
 msgstr ""
+"\n"
+"\n"
+"<u><b>Saatavilla olevat kielet:</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
 msgid ""
 "\n"
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
 msgstr ""
+"\n"
+"<u><b>Varmuuskopioi sukututkimustiedostosi.</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:288
 msgid ""
@@ -19490,6 +19582,9 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
+"Jos sinulla on syy tarkistaa Esivaatimuksia, nyt on oikea aika "
+"varmuuskopioida sukututkimustiedostosi ja testata sitten varmuuskopiosi!\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
 msgid ""
@@ -19500,28 +19595,42 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
+"<i><a href="
+"\"https://gramps-project.org/wiki/index.php?title=How_to_make_a_backup\""
+">Varmuuskopiointi Gramps XML:ään</a> Löydät \"Tee varmuuskopio...\" -"
+"vaihtoehdon uudempien Gramps-versioiden Sukupuu-valikosta. Muussa "
+"tapauksessa käytä \"Vie...\" -vaihtoehtoa samassa valikossa, mutta poista "
+"yksityisyysasetusten valinta vientiavustajassa kaikkien tietojen "
+"viemiseksi.</i>\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
 msgid ""
 " • Backups can be made at any time and, at a minimum, on the first day of "
 "every month. But preferrably more often.\n"
 msgstr ""
+" • Voit tehdä varmuuskopion milloin tahansa ja vähintään joka kuukauden "
+"ensimmäisenä päivänä. Mieluiten kuitenkin useammin.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
 msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
 msgstr ""
+" • On erittäin suositeltavaa varmuuskopioida jokainen sukupuusi ennen "
+"päivitystä..\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
 msgstr ""
+" • Testaa varmuuskopiosi luomalla uusi sukupuu ja tuomalla sitten "
+"varmuuskopio."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ", is the most current version.\n"
-msgstr ""
+msgstr ", on uusin versio.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:339
 #, python-format
@@ -19529,6 +19638,8 @@ msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
 "%s"
 msgstr ""
+"Sinulla on Gramps %s. Ole hyvä ja tee varmuuskopio ja päivitä sitten.\n"
+"%s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
 #, python-format
@@ -19544,7 +19655,7 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:351
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
-msgstr ""
+msgstr "Sinulla on Gramps %s. Onnittelut, sinulla on nykyinen versio!\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:378
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:452
@@ -19555,7 +19666,7 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1160
 msgid " (Requires version "
-msgstr ""
+msgstr " (Vaatii version "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:379
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
@@ -19577,7 +19688,7 @@ msgstr " tai uudempi asennettuna.)\n"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:948
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1156
 msgid " (Passed: version "
-msgstr ""
+msgstr " (Hyväksytty: versio "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:414
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:479
@@ -19589,11 +19700,11 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:798
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1107
 msgid "unknown version"
-msgstr ""
+msgstr "tuntematon versio"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:422
 msgid "DISPLAY not set"
-msgstr ""
+msgstr "DISPLAY on asettamatta"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:453
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:505
@@ -19601,33 +19712,35 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:561
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:598
 msgid " or greater.)\n"
-msgstr ""
+msgstr " tai suurempi.)\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:560
 msgid " (Requires "
-msgstr ""
+msgstr " (Vaatii "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
 msgid " • Berkeley Database library (bsddb3: "
-msgstr ""
+msgstr " • Berkeley tietokantakirjasto (bsddb3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:675
 msgid " • SQLite Database library (sqlite3: "
-msgstr ""
+msgstr " • SQLite tietokantakirjasto (sqlite3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:689
 msgid " • xdg-utils (Manual check see instructions link)"
-msgstr ""
+msgstr " • xdg-utils (tarkasta, katso ohjelinkki)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:702
 msgid " • librsvg2 (Manual check see instructions link)"
-msgstr ""
+msgstr " • librsvg2 (tarkasta, katso ohjelinkki)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:713
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
+" • language-pack-gnome-xx (tarkasta, katso ohjelinkki) kielellesi <show "
+"locale here TBD>"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
@@ -19640,36 +19753,36 @@ msgstr " tai uudempi asennettuna.)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:749
 msgid " or greater)"
-msgstr ""
+msgstr " tai suurempi)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:780
 msgid "Graphviz not in system PATH"
-msgstr ""
+msgstr "Graphviz puuttuu järjestelmän PATH:ista"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:848
 msgid "Ghostscript not in system PATH"
-msgstr ""
+msgstr "Ghostscript puuttuu järjestelmän PATH:ista"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:863
 msgid " (Passed: version 0.5.x is installed.)"
-msgstr ""
+msgstr " (Hyväksytty, versio 0.5.x on asennettu.)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:866
 msgid " (Requires version 0.5.x)"
-msgstr ""
+msgstr " (Vaatii version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr ""
+msgstr " • python-fontconfig -tiedostoa ei löydy, (Vaatii version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
-msgstr ""
+msgstr " • python-fontconfig asennettu, versiotietoa ei ole saatavilla"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
 msgid " or greater installed.) (enchant module: "
-msgstr ""
+msgstr " tai uudempi asennettuna.) (parannusmoduuli: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1011
 #, python-format
@@ -19677,6 +19790,8 @@ msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (Hyväksytään, jos versio %s tai uudempi on asennettuna tai jos "
+"sisältyy Microsoft Windowsiin)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1015
 #, python-format
@@ -19684,29 +19799,34 @@ msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (Vaatii version %s tai uudemman, ellei jo sisälly Microsoft "
+"Windowsiin)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1129
 msgid "can't found it because exiv2 not installed"
-msgstr ""
+msgstr "ei löydy, koska exiv2:ta ei ole asennettu"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
-msgstr ""
+msgstr "GExiv2 : %s (Exiv2-kirjasto : %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1197
 msgid "found another font"
-msgstr ""
+msgstr "löytyi toinen fontti"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1205
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
+"Networkchart-lisäosalle <a href="
+"\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> -fontti "
+"tarjoaa erittäin luettavan tuloksen.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
-msgstr ""
+msgstr "Miksi, kun sama koodi toimii Graphview'ssa"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1246
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
@@ -19717,15 +19837,15 @@ msgstr "ei asennettu"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
 msgid "     and one of either: (pydotplus: "
-msgstr ""
+msgstr "     ja yksi seuraavista: (pydotplus: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
 msgid ") or (pygraphviz: "
-msgstr ""
+msgstr ") tai (pygraphviz: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
 msgid "Installed(MS-Windows)"
-msgstr ""
+msgstr "Asennettu (MS-Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
 msgid "Installed(Linux/Mac)"
@@ -19742,15 +19862,16 @@ msgstr "ei asennettu "
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1702
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1708
 msgid "not found."
-msgstr ""
+msgstr "ei löytynyt."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1466
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
 msgstr ""
+"Vakio. Läpäisty, ohjelma asennettu - 32-bittinen 64-bittisessä Windowsissa."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
-msgstr ""
+msgstr ") (Vaatii 'Plugin lib' -kohdassa luetellun Gramps-lisäosan)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
 msgid "DBF installed"
@@ -19758,11 +19879,11 @@ msgstr "DBF-kirjasto asennettu"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1559
 msgid ".)(Requires version "
-msgstr ""
+msgstr ".)(Vaatii version "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1564
 msgid " installed.)(Passed: version "
-msgstr ""
+msgstr " asennettu.)(Hyväksytty versio "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
 #, python-format
@@ -19771,16 +19892,16 @@ msgstr "(OpenCV kasvojen tunnistus: %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
 msgid " (lxml: not found. Requires version "
-msgstr ""
+msgstr " (lxml: ei löydy. Vaatii version "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1776
 msgid " • Requires: MongoDB TBD / pymongo TBD"
-msgstr ""
+msgstr " • Vaaditaan MongoDB TBD / pymongo TBD"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1790
 #, python-format
 msgid " • Operating System: %s"
-msgstr ""
+msgstr " • Käyttöjärjestelmä: %s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
 msgid ""
@@ -19789,6 +19910,9 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=Gramps_5.0_Wiki_Manual_-_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE."
+"2C_LC_TIME\">Kieliasetukset:</a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
@@ -19799,7 +19923,7 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1872
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1874
 msgid "not set"
-msgstr ""
+msgstr "ei asetettu"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1822
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1823
@@ -19810,7 +19934,7 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1878
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1879
 msgid "not tested"
-msgstr ""
+msgstr "ei testattu"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1845
 msgid ""
@@ -19819,12 +19943,18 @@ msgid ""
 "Gramps again and make sure to select all the Translations and Dictionaries)\n"
 "\n"
 msgstr ""
+"\n"
+"Asennetut kielet\\Käännökset (Jos luettelossa on vain englanti, asenna "
+"Gramps uudelleen ja muista valita kaikki käännökset ja sanakirjat)\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1882
 msgid ""
 "\n"
 "Gramps Environment variables:\n"
 msgstr ""
+"\n"
+"Gramps-ympäristömuuttujat:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1921
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1983
@@ -19837,6 +19967,7 @@ msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"
 msgstr ""
+"Sphinx on työkalu, joka rakentaa Gramps-kehitysdokumentaation ja man-sivut\n"
 
 #: PythonGramplet/PythonGramplet.gpr.py:4
 #: PythonGramplet/PythonGramplet.gpr.py:11
@@ -19853,27 +19984,27 @@ msgstr "Syötä Python-lausekkeita"
 
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
-msgstr ""
+msgstr "Kysely-Gramplet"
 
 #: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
-msgstr ""
+msgstr "Gramplet SQL-tyyppisien kyselyiden suorittamiseksi"
 
 #: Query/Query.gpr.py:19
 msgid "Query"
-msgstr ""
+msgstr "Kysely"
 
 #: Query/Query.gpr.py:33
 msgid "Query Quickview"
-msgstr ""
+msgstr "Kyselyn pikanäkymä"
 
 #: Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
-msgstr ""
+msgstr "Pikanäkymä SQL-tyyppisiin käynnissä oleviin kyselyihin"
 
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
-msgstr ""
+msgstr "Syötä SQL-lause"
 
 #: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
 #, python-brace-format
@@ -20005,11 +20136,11 @@ msgstr "VGD Yleisvenäläinen sukupuufoorumi"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
-msgstr ""
+msgstr "Yandex-ihmiset"
 
 #: RUWebConnectPack/RUWebPack.py:49
 msgid "RIA Officers"
-msgstr ""
+msgstr "RIA-virkailijat"
 
 #: RUWebConnectPack/RUWebPack.py:50
 msgid "FamilySpace"
@@ -21379,8 +21510,9 @@ msgid "Group"
 msgstr "Ryhmä"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:140
+#, fuzzy
 msgid "Create Mapping"
-msgstr ""
+msgstr "Luo kartoitus"
 
 #: SyncAssociations/syncAssociations.gpr.py:4
 #: SyncAssociations/syncAssociations.py:130
