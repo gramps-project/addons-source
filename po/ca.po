@@ -8,13 +8,14 @@
 # Arnau <arnaullv at gmail dot com>, 2017.
 # Arnau Llovet Vidal <arnaullv@gmail.com>, 2025.
 # leo-jmateo <jmateo.sanchez@tinet.cat>, 2025.
+# Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-05-03 15:40+0000\n"
-"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"PO-Revision-Date: 2025-08-28 09:02+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
 "Language: ca\n"
@@ -22,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -19182,7 +19183,7 @@ msgstr ""
 
 #: PluginManager\PluginManager.py:91
 msgid "Plugin Manager - Enhanced"
-msgstr ""
+msgstr "Gestor de connectors millorat"
 
 #: PluginManager\PluginManager.py:163
 msgid ""
@@ -19376,7 +19377,7 @@ msgstr ""
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1126
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1141
 msgid "Migration manager not initialized"
-msgstr ""
+msgstr "No s'ha inicialitzat el gestor de migracions"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1159
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1177
