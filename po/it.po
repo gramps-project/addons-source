@@ -68,7 +68,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
 "PO-Revision-Date: 2025-08-28 20:50+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -716,18 +716,18 @@ msgstr "Stima delle date calcolate"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
-msgstr "Fonti da rimuovere o aggiungere"
+msgstr "Fonti da rimuovere e/o aggiungere"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
-msgstr "Rimuove eventi, note e fonti aggiunti precedentemente"
+msgstr "Rimuovi eventi, note e fonti aggiunti precedentemente"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
-"Rimuove eventi calcolati, note e fonti; viene fatto immediatamente cliccando "
-"su Esegui"
+"Rimuove eventi, note e fonti calcolate; viene fatto immediatamente facendo "
+"clic su Esegui"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
@@ -851,15 +851,15 @@ msgstr "Aggiunge eventi selezionati"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr "Rimuove eventi, note e fonti e riseleziona i dati"
+msgstr "Rimuovi eventi, note e fonti e riseleziona i dati"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
-"Si desidera davvero rimuovere i precedenti eventi, note e fonti e "
-"selezionare nuovamente i dati?"
+"Si desidera davvero rimuovere eventi, note e fonti precedenti e selezionare "
+"nuovamente i dati?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
@@ -1378,7 +1378,7 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1819
 msgid "The font size in pixels for each node."
-msgstr ""
+msgstr "La grandezza in pixel dei caratteri per ogni nodo."
 
 #: D3Charts/DescendantIndentedTree.py:1847
 #: DescendantBooks/DescendantBookReport.py:552
@@ -1595,19 +1595,22 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:2035
 msgid "Header Font size"
-msgstr "Grandezza font dell'intestazione"
+msgstr "Grandezza carattere dell'intestazione"
 
 #: D3Charts/DescendantIndentedTree.py:2037
 msgid "The font size in pixels for biography header text."
-msgstr "La grandezza in pixel del testo dell'intestazione della biografia."
+msgstr ""
+"La grandezza in pixel dei caratteri del testo dell'intestazione della "
+"biografia."
 
 #: D3Charts/DescendantIndentedTree.py:2043
 msgid "Body Font size"
-msgstr ""
+msgstr "Dimensione dei caratteri del corpo del testo"
 
 #: D3Charts/DescendantIndentedTree.py:2045
 msgid "The font size in pixels for biography body text."
 msgstr ""
+"La dimensione in pixel dei caratteri del testo del corpo della biografia."
 
 #: DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "DE Web Connect Pack"
@@ -1779,7 +1782,7 @@ msgstr "Segmento più lungo"
 
 #: DNAMatches/dnamatches.py:159
 msgid "Source(s)"
-msgstr "Fonte"
+msgstr "Fonte/i"
 
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
@@ -2928,7 +2931,7 @@ msgstr ""
 #: DescendantBooks/DetailedDescendantBookReport.py:1566
 #: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
-msgstr "Lo stile usato per la elenco dei figli."
+msgstr "Lo stile usato per l'elenco dei figli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1576
 msgid "The basic style used for Note header."
@@ -3672,16 +3675,12 @@ msgid "Whether to include TODO notes."
 msgstr "Indica se includere le immagini."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1351
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for image labels."
-msgstr "Lo stile usato per i nomi."
+msgstr "Lo stile usato per le etichette delle immagini."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1364
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "A style used for image captions."
-msgstr "Lo stile usato per ogni sezione."
+msgstr "Uno stile usato per le didascalie delle immagini."
 
 #: DetId/DetId.gpr.py:31
 msgid "Deterministic ID"
@@ -4259,27 +4258,23 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3153
 msgid "Used for family"
-msgstr ""
+msgstr "Usato per famiglia"
 
 #: DynamicWeb/dynamicweb.py:3154
 msgid "Used for media"
-msgstr ""
+msgstr "Usato per oggetto multimediale"
 
 #: DynamicWeb/dynamicweb.py:3155
-#, fuzzy
-#| msgid "New person"
 msgid "Used for person"
-msgstr "Nuova persona"
+msgstr "Usato per persona"
 
 #: DynamicWeb/dynamicweb.py:3156
 msgid "Used for place"
-msgstr ""
+msgstr "Usato per luogo"
 
 #: DynamicWeb/dynamicweb.py:3157
-#, fuzzy
-#| msgid "New source"
 msgid "Used for source"
-msgstr "Nuova fonte"
+msgstr "Usato per fonte"
 
 #: DynamicWeb/dynamicweb.py:3159
 msgid "Web Link"
@@ -5698,7 +5693,7 @@ msgstr "Lo stile usato per i nomi."
 
 #: FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "Lo stile usato per i dati (nascita, morte, matrimonio, divorzio)."
+msgstr "Lo stile usato per i dati (nascita, decesso, matrimonio, divorzio)."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
 #, fuzzy
@@ -6114,10 +6109,8 @@ msgid "Form: %s"
 msgstr ""
 
 #: Form/editform.py:183
-#, fuzzy
-#| msgid "New source"
 msgid "New Form"
-msgstr "Nuova fonte"
+msgstr ""
 
 #: Form/editform.py:190
 #, fuzzy
@@ -15314,7 +15307,7 @@ msgstr ""
 
 #: GraphView/graphview.py:821
 msgid "Font:"
-msgstr "Carattere:"
+msgstr "Tipo di carattere:"
 
 #: GraphView/graphview.py:835
 #, fuzzy
@@ -16531,6 +16524,8 @@ msgid ""
 "The birth label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
+"L'etichetta di nascita viene spostata orizzontalmente in base a questo "
+"valore, che è considerato come valore relativo alla dimensione del carattere."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:36
 msgid "Vertical offset of birth label"
@@ -16541,6 +16536,8 @@ msgid ""
 "The birth label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
+"L'etichetta di nascita viene spostata verticalmente in base a questo valore, "
+"che è considerato come valore relativo alla dimensione del carattere."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:39
 msgid "Wrap words in birth label"
@@ -16588,6 +16585,8 @@ msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
+"L'etichetta di decesso viene spostata orizzontalmente in base a questo "
+"valore, che è considerato come valore relativo alla dimensione del carattere."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:56
 msgid "Vertical offset of death label"
@@ -16598,6 +16597,8 @@ msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
+"L'etichetta di decesso viene spostata verticalmente in base a questo valore, "
+"che è considerato come valore relativo alla dimensione del carattere."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:59
 msgid "Wrap words in death label"
@@ -16632,22 +16633,22 @@ msgid "The color of the individuals is faded to black with increasing age."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
-#, fuzzy
-#| msgid "Font"
 msgid "Font name"
-msgstr "Carattere"
+msgstr "Nome del tipo di carattere"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:73
 msgid "Name of the font family used for labels."
-msgstr ""
+msgstr "Nome della famiglia del carattere usato per le etichette."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:75
 msgid "Relative font size"
-msgstr ""
+msgstr "Dimensione del carattere relativa"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:76
 msgid "The font size is given relatively to the line thickness."
 msgstr ""
+"La dimensione del carattere è considerata come relativa allo spessore della "
+"linea."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
 msgid "Family shape"
@@ -17433,7 +17434,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:957
 msgid "Enter Font Name"
-msgstr ""
+msgstr "Inserisci il nome del tipo di carattere"
 
 #: NetworkChart/NetworkChart.py:959
 msgid ""
@@ -17442,6 +17443,10 @@ msgid ""
 "White Rabbit can be obtained from\n"
 "https://www.fontsquirrel.com/fonts/white-rabbit"
 msgstr ""
+"Inserisci lo stile di carattere primario per il grafico.\n"
+"Deve essere già installato.\n"
+"\"White Rabbit\" può essere ottenuto da\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
 
 #: NetworkChart/NetworkChart.py:964
 msgid "Spacing (inch)"
@@ -19786,11 +19791,11 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr ""
+msgstr " • python-fontconfig not trovato, (richiesta versione 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
 msgid " • python-fontconfig installed, version unavailable"
-msgstr ""
+msgstr " • python-fontconfig installato, versione non disponibile"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
@@ -19822,13 +19827,16 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1197
 msgid "found another font"
-msgstr ""
+msgstr "trovato un altro tipo di carattere"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1205
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
+"Per il componente aggiuntivo Networkchart, il tipo di carattere <a href="
+"\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> "
+"fornisce un risultato molto leggibile.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
@@ -20800,10 +20808,8 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:149
-#, fuzzy
-#| msgid "New source"
 msgid "The source title"
-msgstr "Nuova fonte"
+msgstr "Il titolo della fonte"
 
 #: SourceIndex/birth.glade:164
 msgid "The volume or page of this source"
@@ -21641,8 +21647,8 @@ msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
 msgstr ""
-"Un'aggiunta alle preferenze per la semplice correzione di temi e caratteri. "
-"Particolarmente utile per gli utenti di Windows."
+"Un'aggiunta alle preferenze per la semplice correzione di temi e di tipi di "
+"carattere. Particolarmente utile per gli utenti di Windows."
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
@@ -21654,7 +21660,7 @@ msgstr "Variante scura"
 
 #: Themes/themes.py:198
 msgid "Font"
-msgstr "Carattere"
+msgstr "Tipo di carattere"
 
 #: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
@@ -22913,7 +22919,7 @@ msgstr ""
 
 #: WordleGramplet/WordleGramplet.py:140
 msgid "Number of font sizes"
-msgstr ""
+msgstr "Totale dimensioni dei caratteri"
 
 #: WordleGramplet/WordleGramplet.py:144
 msgid "Select filter to restrict list"
