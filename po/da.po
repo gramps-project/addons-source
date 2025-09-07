@@ -5,13 +5,14 @@
 # Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
 # FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 # Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
+# Rasmus Cornelius Nielsen <rcn70@outlook.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
-"Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
+"PO-Revision-Date: 2025-09-01 17:02+0000\n"
+"Last-Translator: Rasmus Cornelius Nielsen <rcn70@outlook.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
 "Language: da\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -1019,7 +1020,7 @@ msgstr "Sted titler"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Forbedret"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
@@ -1807,7 +1808,7 @@ msgstr "Ingen slægtskab med aktiv person"
 
 #: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
-msgstr "Tilføj som en forælder "
+msgstr "Tilføj som en forælder"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
 msgid "Add as a Mother"
@@ -1856,7 +1857,7 @@ msgstr "Gramplet Data rettelse: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
-msgstr "Kan ikke tilføje en ny person"
+msgstr "Kan ikke tilføje en ny person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
@@ -1876,7 +1877,7 @@ msgstr "Kan ikke tilføje en ny person som forælder."
 #: DataEntryGramplet/DataEntryGramplet.py:560
 #: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
-msgstr "Vælg venligst en aktiv person"
+msgstr "Vælg venligst en aktiv person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:545
@@ -1922,16 +1923,16 @@ msgstr "Vælg venligst en aktiv person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
-msgstr "Kan ikke tilføje en ny person som ægtefælle til ingen"
+msgstr "Kan ikke tilføje en ny person som ægtefælle til ingen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr "Angive venligst køn for den aktive eller nye persons ."
+msgstr "Angive venligst køn for den aktive eller nye person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
-msgstr "Samme køn på den aktive og den nye person"
+msgstr "Samme køn på den aktive og den nye person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
