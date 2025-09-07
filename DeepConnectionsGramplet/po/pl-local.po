@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-07-30 08:11+0000\n"
+"PO-Revision-Date: 2025-08-23 15:02+0000\n"
 "Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
@@ -21,6 +21,9 @@ msgstr ""
 
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet głębokich połączeń"
+
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr "Gramplet pokazujący głębokie powiązania między osobą aktywną a domową"
 
 msgid "Deep Connections"
 msgstr "Głębokie połączenia"
@@ -31,14 +34,42 @@ msgstr "Pauza"
 msgid "Copy"
 msgstr "Kopiuj"
 
+msgid "mentioned in note"
+msgstr "wspomniane w notatce"
+
+msgid "Note on Family"
+msgstr "Notatka o rodzinie"
+
 msgid "sibling"
 msgstr "rodzeństwo"
+
+msgid "Note on Parent Family"
+msgstr "Notatka o rodzinie rodziców"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (powiązanie)"
 
 msgid "Note on Person"
 msgstr "Notatka o osobie"
 
+#, python-format
+msgid ""
+"\n"
+"   %s of "
+msgstr ""
+"\n"
+"   %s z "
+
 msgid "No Active Person set."
 msgstr "Nie wybrano aktywnej osoby."
+
+msgid "Looking for relationship between\n"
+msgstr "Szukam relacji między\n"
+
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (Osoba domowa) i\n"
 
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"

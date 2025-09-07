@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -219,17 +219,18 @@ msgstr ""
 "Da li automatski generirati HTML-poveznice za svako čvorište u izvještaju."
 
 msgid "URL prefix path."
-msgstr "URL-staza."
+msgstr "Staza URL prefiksa."
 
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
-"URL-staza koja se primijenjuje na svaku automatski generiranu HREF-poveznicu."
+"Staza URL prefiksa koji se primijenjuje na svaku automatski generiranu HREF "
+"poveznicu."
 
 msgid "URL file extension"
-msgstr "Datotečni nastavak URL-a"
+msgstr "Datotečni sufiks URL-a"
 
 msgid "No file extension."
-msgstr "Bez datotečnog nastavka."
+msgstr "Bez datotečnog sufiksa."
 
 msgid ".html"
 msgstr ".html"
@@ -256,13 +257,13 @@ msgid "Remove all whitespace."
 msgstr "Ukloni sve razmake."
 
 msgid "Replace whitespace with dash(-)."
-msgstr "Ukloni sve razmake sa crticom (-)."
+msgstr "Zamijeni sve razmake sa crticom (-)."
 
 msgid "Replace whitespace with underscore(_)"
-msgstr "Ukloni sve razmake s podvlakom (_)"
+msgstr "Zamijeni sve razmake s podvlakom (_)"
 
 msgid "What to use as file name delimiter replacing whitespace."
-msgstr "Što koristiti kao razdvojnik umjesto razmaka."
+msgstr "Što koristiti kao razdvojnik imena datoteke koji zamijenjuje razmake."
 
 msgid "Generations to generate HREF links"
 msgstr "Generacije za generiranje HREF-poveznica"
@@ -299,8 +300,8 @@ msgstr "Prikaži natuknice za alat biografije"
 
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
-"Da li prikazati natuknice za alat biografije, prilikom prelaženja mišem "
-"preko čvorišta."
+"Da li prikazati natuknice za alat biografije prilikom prelaženja mišem preko "
+"čvorišta."
 
 msgid "Text Color"
 msgstr "Boja teksta"
@@ -309,7 +310,7 @@ msgid "RGB-color for biography text."
 msgstr "RGB-boja za tekst biografije."
 
 msgid "RGB-color for biography tooltip."
-msgstr "RGB-boje za natuknice biografije."
+msgstr "RGB-boja za natuknice biografije."
 
 msgid "Header Font size"
 msgstr "Veličina fonta zaglavlja"

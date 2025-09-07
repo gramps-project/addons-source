@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-28 18:50+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-09-03 21:58+0000\n"
+"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,11 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Failed writing "
 msgstr "Kirjoitus epäonnistui "
+
+msgid "Year of Birth of Center Person"
+msgstr "Keskushenkilön syntymävuosi"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr "Keskushenkilön syntymävuosi. Arvioi vuosi, jos se ei ole tiedossa"
+
+msgid "Destination directory"
+msgstr "Kohdehakemisto"
 
 msgid "Path for generated files"
 msgstr "Kohdehakemisto uusille tiedostoille"
@@ -27,11 +36,23 @@ msgstr "HTML-tiedoston nimi."
 msgid "Default Age"
 msgstr "Oletusikä"
 
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr "Vanhemman oletusikä, kun lapsella ei ole syntymävuotta"
+
+msgid "What to show"
+msgstr "Mitä näytetään"
+
 msgid "Show GrampsID"
 msgstr "Näytä gramps ID"
 
+msgid "Show GrampsID on top right of the box"
+msgstr "Näytä GrampsID laatikon oikeassa yläkulmassa"
+
 msgid "Optimize"
 msgstr "Optimoi"
+
+msgid "Use as little space in horizontal direction as possible"
+msgstr "Käytä mahdollisimman vähän tilaa vaakasuunnassa"
 
 msgid "Male Box Color"
 msgstr "Laatikon väri miehelle"
@@ -48,8 +69,54 @@ msgstr "Laatikon taustaväri naiselle"
 msgid "Number of pixel per year"
 msgstr "Vuoden pikselien määrä"
 
+msgid "How many pixel height is one year?"
+msgstr "Kuinka monta pikseliä korkea on yksi vuosi?"
+
+msgid "Offset X Coordinate"
+msgstr "X-koordinaatin siirtymä"
+
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr ""
+"Montako pikseliä jätetään tyhjäksi vasemmalla ja oikealla laatikkojen "
+"vieressä?"
+
+msgid "Offset Y Coordinate"
+msgstr "Y-koordinaatin siirtymä"
+
+msgid "How many pixel are unused above first box?"
+msgstr "Montako pikseliä jätetään tyhjäksi ensimmäisen laatikon yläpuolella?"
+
+msgid "Width of a box in pixel"
+msgstr "Laatikon leveys pikseleinä"
+
+msgid "Width of the box of a person in pixel"
+msgstr "Henkilölaatikon leveys pikseleinä"
+
 msgid "Horizontal space between boxes in pixel"
 msgstr "Ruutujen välinen vaakasuora tila pikseleinä"
 
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "Vierekkäisten laatikkojen vähimmäisväli pikseleinä"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "Viivan pystyosan pituus pikseleinä"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"Vanhempi- ja lapsilaatikot on yhdistetty viivoilla. Tämä on pystysuuntainen "
+"välin korkeus pikseleinä"
+
+msgid "Number of pixel between left border and scale"
+msgstr "Vasemman reunan ja asteikon väli pikseleinä"
+
 msgid "Timeline Pedigree Report"
 msgstr "Sukupuun aikajanaraportti"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+"Luo HTML-verkkosivun JavaScriptillä, näyttämään syntymäajan mukaan "
+"pystysuuntaisen sukupuun lohkokaavion"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -12,7 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Active person"
+msgstr "Persona attiva"
 
 msgid "Family:"
 msgstr "Famiglia:"
@@ -20,8 +23,53 @@ msgstr "Famiglia:"
 msgid "Sources?"
 msgstr "Fonti?"
 
+msgid "Surname, Given"
+msgstr "Cognome, Nome"
+
+msgid "Save"
+msgstr "Salva"
+
+msgid "Abandon"
+msgstr "Abbandona"
+
 msgid "New person"
 msgstr "Nuova persona"
+
+msgid "Add relation"
+msgstr "Aggiungi relazione"
+
+msgid "No relation to active person"
+msgstr "Nessuna relazione con la persona attiva"
+
+msgid "Add as a Parent"
+msgstr "Aggiungi come genitore"
+
+msgid "Add as a Mother"
+msgstr "Aggiungi come madre"
+
+msgid "Add as a Father"
+msgstr "Aggiungi come padre"
+
+msgid "Add as a Spouse"
+msgstr "Aggiungi come coniuge"
+
+msgid "Add as a Wife"
+msgstr "Aggiungi come moglie"
+
+msgid "Add as a Husband"
+msgstr "Aggiungi come marito"
+
+msgid "Add as a Child"
+msgstr "Aggiungi come figlio"
+
+msgid "Copy Active Data"
+msgstr "Copia dati attivi"
+
+msgid "in"
+msgstr "in"
+
+msgid "Can't add new person."
+msgstr "Non puoi aggiungere una nuova persona."
 
 msgid "Please set the new person's gender."
 msgstr "Impostare il genere della nuova persona."

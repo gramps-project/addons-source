@@ -1,0 +1,192 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-08-23 15:02+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.13\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+#, python-format
+msgid "Family Tree for %s"
+msgstr "Drzewo genealogiczne dla %s"
+
+msgid "Paper too small"
+msgstr "Zbyt mały rozmiar papieru"
+
+msgid "Some elements may not appear or be badly rendered."
+msgstr ""
+"Niektóre elementy mogą nie być widoczne lub być nieprawidłowo wyświetlane."
+
+msgid "Anonymous"
+msgstr "Anonimowy"
+
+msgid "born"
+msgstr "urodzony/a"
+
+msgid "baptised"
+msgstr "ochrzczony/a"
+
+msgid "died"
+msgstr "zmarł/a"
+
+msgid "buried"
+msgstr "pochowany/a"
+
+msgid "cremated"
+msgstr "skremowany/a"
+
+msgid "married"
+msgstr "zawarł/a związek małżeński"
+
+msgid "divorced"
+msgstr "rozwiedziony/a"
+
+msgid "resident"
+msgstr "zamieszkały/a"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "dnia %(ymd_date)s"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "w %(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "w %(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "dnia %(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "dnia %(placeholder)s (%(partial)s)"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "w %(place)s"
+
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+msgid "The center family for the tree"
+msgstr "Rodzina centralna dla drzewa"
+
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Liczba pokoleń przodków do uwzględnienia w drzewie"
+
+msgid "Descendant Generations"
+msgstr "Pokolenia potomków"
+
+msgid "The number of descendant generations to include in the tree"
+msgstr "Liczba pokoleń potomków do uwzględnienia w drzewie"
+
+msgid "Kekule number of husband"
+msgstr "Numer Kekulego dla męża"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"Numer Kekulego dla męża (rodzina centralna). Ustaw 0, aby nie pokazywać "
+"numerów Kekulego"
+
+msgid "Scale to fit on a single page"
+msgstr "Dopasuj do jednej strony"
+
+msgid "Whether to scale to fit on a single page."
+msgstr "Czy dopasować do jednej strony."
+
+msgid "No color"
+msgstr "Bez koloru"
+
+msgid "First generation"
+msgstr "Pierwsze pokolenie"
+
+msgid "Second generation"
+msgstr "Drugie pokolenie"
+
+msgid "Third generation"
+msgstr "Trzecie pokolenie"
+
+msgid "Male line"
+msgstr "Linia męska"
+
+msgid "Male line and illegitimate children"
+msgstr "Linia męska i dzieci pozamałżeńskie"
+
+msgid "Female line"
+msgstr "Linia żeńska"
+
+msgid "Shuffle colors"
+msgstr "Losuj kolory"
+
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Czy losowo przydzielać kolory czy uporządkować je według tęczy."
+
+msgid "Replace first name with call name"
+msgstr "Zastąp imię imieniem zwyczajowym"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Podkreśl imię zwyczajowe w imieniu / dodaj imię zwyczajowe do imienia"
+
+msgid "Include Occupation"
+msgstr "Uwzględnij zawód"
+
+msgid "Include Residence"
+msgstr "Uwzględnij miejsce zamieszkania"
+
+msgid "Print event data (dead person)"
+msgstr "Drukuj dane wydarzeń (osoba zmarła)"
+
+msgid "Year only"
+msgstr "Tylko rok"
+
+msgid "Full date"
+msgstr "Pełna data"
+
+msgid "Full date and place"
+msgstr "Pełna data i miejsce"
+
+msgid "Print event data (living person)"
+msgstr "Drukuj dane wydarzeń (osoba żyjąca)"
+
+msgid "Fall back to baptism if birth event missing"
+msgstr "Użyj chrztu, jeśli brak daty urodzenia"
+
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Użyj pogrzebu lub kremacji, jeśli brak daty śmierci"
+
+msgid "Protect private items"
+msgstr "Chroń prywatne dane"
+
+msgid "Include event description"
+msgstr "Uwzględnij opis wydarzenia"
+
+msgid "Text Options"
+msgstr "Opcje tekstu"
+
+msgid "The style used for names."
+msgstr "Styl używany dla imion i nazwisk."
+
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "Styl używany dla danych (urodzenie, śmierć, małżeństwo, rozwód)."
+
+msgid "Produces a graphical family tree."
+msgstr "Tworzy graficzne drzewo genealogiczne."

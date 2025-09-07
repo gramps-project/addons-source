@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -12,11 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
 msgstr "Errore durante la scrittura di {target_path}: {message}"
+
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "Impossibile creare la struttura della directory: %s"
+
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "Impossibile copiare i file web: %s"
+
+msgid "Include Generations"
+msgstr "Includi generazioni"
+
+msgid "Male Background Color"
+msgstr "Colore di fondo degli uomini"
+
+msgid "Female Background"
+msgstr "Colore di fondo delle donne"
 
 msgid "The destination path for generated files."
 msgstr "Il percorso di destinazione per i file generati."
@@ -24,10 +41,29 @@ msgstr "Il percorso di destinazione per i file generati."
 msgid "The destination file name for html content."
 msgstr "Il nome di file di destinazione per il contenuto HTML."
 
+msgid "Descendant Indented Tree"
+msgstr "Albero indentato dei discendenti"
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Opzioni grafico a ventaglio ascendenza"
+
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Vedi %(reference)s : %(spouse)s"
+
+msgid "Generating report..."
+msgstr "Generazione resoconto..."
+
+msgid "Include contraction level"
+msgstr "Includi livello di contrazione"
+
 msgid "The number of descendant levels to contract on initial display."
 msgstr ""
 "Il numero di generazioni di discendenti da contrarre nella visualizzazione "
 "iniziale."
+
+msgid "The font size in pixels for each node."
+msgstr "La grandezza in pixel dei caratteri per ogni nodo."
 
 msgid "Whether to show duplicate family trees in the report."
 msgstr ""
@@ -36,5 +72,63 @@ msgstr ""
 msgid "Include records marked private"
 msgstr "Includere informazioni marcate come private"
 
+msgid "Whether to include private objects."
+msgstr "Indica se includere oggetti privati."
+
+msgid "Include Last Name Only"
+msgstr "Includi solo il cognome"
+
+msgid "Navigation"
+msgstr "Navigazione"
+
+msgid "Auto-generate HREF links for nodes"
+msgstr "Genera automaticamente collegamenti HREF per i nodi"
+
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr ""
+"Indica se generare automaticamente collegamenti HTML per ogni nodo del "
+"resoconto."
+
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr ""
+"Prefisso dell'URL da applicare ad ogni collegamento HREF generato "
+"automaticamente."
+
+msgid "Generations to generate HREF links"
+msgstr "Generazioni per cui generare collegamenti HREF"
+
 msgid "The number of generations to generate HREF links."
 msgstr "Il numero di generazioni per cui generare collegamenti HREF."
+
+msgid "Exclude center person"
+msgstr "Escludi persona centrale"
+
+msgid "Whether or not to generate links for center person."
+msgstr "Generare o non generare collegamenti per la persona centrale."
+
+msgid "Exclude Spouses"
+msgstr "Esclude i coniugi"
+
+msgid "Whether or not to generate links for spouses."
+msgstr "Generare o non generare collegamenti per i coniugi."
+
+msgid "Text Color"
+msgstr "Colore del testo"
+
+msgid "RGB-color for biography text."
+msgstr "Colore RGB per il testo della biografia."
+
+msgid "Header Font size"
+msgstr "Grandezza carattere dell'intestazione"
+
+msgid "The font size in pixels for biography header text."
+msgstr ""
+"La grandezza in pixel dei caratteri del testo dell'intestazione della "
+"biografia."
+
+msgid "Body Font size"
+msgstr "Dimensione dei caratteri del corpo del testo"
+
+msgid "The font size in pixels for biography body text."
+msgstr ""
+"La dimensione in pixel dei caratteri del testo del corpo della biografia."

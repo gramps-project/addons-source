@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-13 17:12+0100\n"
-"PO-Revision-Date: 2025-07-23 14:01+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Edit Image Exif Metadata"
 msgstr "Modifica i metadati Exif dell'immagine"
@@ -25,6 +25,9 @@ msgstr ""
 msgid "Edit Exif Metadata"
 msgstr "Modifica metadati Exif"
 
+msgid "Provide a short description for this image."
+msgstr "Fornire una breve descrizione per questa immagine."
+
 msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
@@ -35,8 +38,18 @@ msgstr ""
 msgid "Enter the copyright information for this image. \n"
 msgstr "Inserire le informazioni di copyright per questa immagine. \n"
 
+msgid "Thumbnail"
+msgstr "Miniatura"
+
 msgid "Select an image to begin..."
 msgstr "Selezionare un'immagine per iniziare..."
+
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+"L'immagine NON è leggibile,\n"
+"scegliere un'immagine differente..."
 
 msgid ""
 "Image is NOT writable,\n"
@@ -45,6 +58,9 @@ msgstr ""
 "L'immagine NON è scrivibile,\n"
 "NON sarà possibile salvare i metadati Exif..."
 
+msgid "Convert and Delete"
+msgstr "Converti ed elimina"
+
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
@@ -52,13 +68,32 @@ msgstr ""
 "L'immagine è stata convertita ed il file originale è stato eliminato, e il "
 "percorso completo è stato aggiornato!"
 
+msgid "There was an error in converting your image file."
+msgstr "Si è verificato un errore nella conversione dell'immagine."
+
+msgid "Media Path Update"
+msgstr "Aggiornamento del percorso degli oggetti multimediali"
+
 msgid "There has been an error in updating the image file's path!"
 msgstr ""
 "Si è verificato un errore nell'aggiornamento del percorso del file "
 "dell'immagine!"
 
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr ""
+"Fai clic sul pulsante di chiusura al termine delle modifiche dei metadati "
+"Exif di questa immagine."
+
+msgid "Media Object Title"
+msgstr "Titolo oggetto multimediale"
+
 msgid "media Title: "
 msgstr "Titolo oggetto multimediale: "
+
+msgid "General Data"
+msgstr "Dati generali"
 
 msgid "Description: "
 msgstr "Descrizione: "
@@ -78,8 +113,31 @@ msgstr "Originale: "
 msgid "Modified: "
 msgstr "Ultima modifica: "
 
+msgid "Latitude :"
+msgstr "Latitudine :"
+
+msgid "Longitude :"
+msgstr "Longitudine :"
+
 msgid "Altitude :"
 msgstr "Altitudine :"
+
+msgid "Bad Date/Time"
+msgstr "Data/Ora errata"
+
+msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
+msgstr ""
+"Latitudine non valida (sintassi: 18°9′48.21″S, -18.2412 oppure -18:9:48.21)"
+
+msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
+msgstr ""
+"Longitudine non valida (sintassi: 18°9′48.21″E, -18.2412 oppure -18:9:48.21)"
+
+msgid "Media Title Update"
+msgstr "Aggiornamento titolo oggetti multimediali"
+
+msgid "Saving Exif metadata to this image..."
+msgstr "Salvataggio dei metadati Exif in questa immagine..."
 
 msgid "All Exif metadata has been deleted from this image..."
 msgstr "Tutti i metadati Exif sono stati eliminati da questa immagine..."

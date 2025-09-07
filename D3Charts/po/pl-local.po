@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-07-30 08:11+0000\n"
+"PO-Revision-Date: 2025-08-23 15:02+0000\n"
 "Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
@@ -57,8 +57,99 @@ msgstr ""
 "przedstawioną jako zwijalny układ drzewa (Collapsible Tree Layout) za pomocą "
 "biblioteki JavaScript D3.js."
 
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Generuje stronę internetową z graficzną reprezentacją potomków (SVG) w "
+"formie zwijalnego, wcięciowego układu drzewa, wykorzystując bibliotekę "
+"JavaScript D3.js."
+
+msgid "Paternal Background Color"
+msgstr "Kolor tła dla linii ojcowskiej"
+
+msgid "RGB-color for paternal box background."
+msgstr "Kolor RGB dla tła pola linii ojcowskiej."
+
+msgid "Maternal Background"
+msgstr "Tło dla linii macierzystej"
+
+msgid "RGB-color for maternal box background."
+msgstr "Kolor RGB dla tła pola linii macierzystej."
+
+msgid "Ancestral Fan Chart"
+msgstr "Wachlarzowy wykres przodków"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"Generuje stronę internetową z graficzną reprezentacją przodków (SVG) w "
+"formie wykresu wachlarzowego, wykorzystując bibliotekę JavaScript D3.js."
+
+#, python-format
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Zobacz %(reference)s : %(spouse)s"
+
+msgid "Generating report..."
+msgstr "Generowanie raportu..."
+
+msgid "Invalid Destination Directory"
+msgstr "Nieprawidłowy katalog docelowy"
+
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"Katalog docelowy %s nie istnieje\n"
+"Czy chcesz spróbować go utworzyć?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "Nie udało się utworzyć {target_path}: {message}"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Plik docelowy %s już istnieje.\n"
+"Czy chcesz go nadpisać?"
+
+msgid "Default View"
+msgstr "Widok domyślny"
+
+msgid "Expand All"
+msgstr "Rozwiń wszystko"
+
+msgid "The number of descendant levels to contract on initial display."
+msgstr "Liczba pokoleń potomków do zwinięcia przy początkowym wyświetleniu."
+
+msgid "The font size in pixels for each node."
+msgstr "Rozmiar czcionki w pikselach dla każdego węzła."
+
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Określa, czy dołączać zduplikowane drzewa rodzinne do raportu."
+
+msgid "Expanded Row Background Color"
+msgstr "Kolor tła rozwiniętego wiersza"
+
+msgid "RGB-color for expanded row background."
+msgstr "Kolor RGB dla tła rozwiniętego wiersza."
+
+msgid "Expandable Background Color"
+msgstr "Kolor tła elementu rozwijalnego"
+
+msgid "RGB-color for expandable row background."
+msgstr "Kolor RGB dla tła wiersza rozwijalnego."
+
+msgid "Non-Expandable Background Color"
+msgstr "Kolor tła elementu nierozwijalnego"
+
+msgid "RGB-color for non-expandable row background."
+msgstr "Kolor RGB dla tła wiersza nierozwijalnego."
 
 msgid "Include records marked private"
 msgstr "Dołącz rekordy oznaczone jako prywatne"
@@ -66,11 +157,143 @@ msgstr "Dołącz rekordy oznaczone jako prywatne"
 msgid "Whether to include private objects."
 msgstr "Określa, czy dołączać obiekty prywatne."
 
+msgid "Include Last Name Only"
+msgstr "Dołącz tylko nazwisko"
+
+msgid "Include Full Name Only"
+msgstr "Dołącz tylko pełne imię i nazwisko"
+
+msgid "How to handle living people."
+msgstr "Jak obsługiwać osoby żyjące."
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "Określa, czy uwzględniać osoby, które mogły niedawno umrzeć."
+
 msgid "Navigation"
 msgstr "Nawigacja"
+
+msgid "Contraction/Expansion mechanism"
+msgstr "Mechanizm zwijania/rozwijania"
+
+msgid "Entire node."
+msgstr "Cały węzeł."
+
+msgid "Arrow images at start of node."
+msgstr "Obrazki strzałek na początku węzła."
+
+msgid "Plus/Minus images at start of node."
+msgstr "Obrazki plus/minus na początku węzła."
+
+msgid "Where to click to expand/contract nodes."
+msgstr "Gdzie kliknąć, aby rozwinąć/zwinąć węzły."
+
+msgid "Auto-generate HREF links for nodes"
+msgstr "Automatycznie generuj linki HREF dla węzłów"
+
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr ""
+"Określa, czy automatycznie generować linki HTML dla każdego węzła w raporcie."
+
+msgid "URL prefix path."
+msgstr "Prefiks ścieżki URL."
+
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr ""
+"Prefiks URL do zastosowania dla każdego automatycznie wygenerowanego linku "
+"HREF."
+
+msgid "URL file extension"
+msgstr "Rozszerzenie pliku URL"
+
+msgid "No file extension."
+msgstr "Bez rozszerzenia pliku."
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "URL file name delimeter"
+msgstr "Separator w nazwie pliku URL"
+
+msgid "Remove all whitespace."
+msgstr "Usuń wszystkie spacje."
+
+msgid "Replace whitespace with dash(-)."
+msgstr "Zastąp spacje myślnikiem (-)."
+
+msgid "Replace whitespace with underscore(_)"
+msgstr "Zastąp spacje podkreśleniem (_)"
+
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "Co użyć jako separator w nazwie pliku zastępujący spacje."
+
+msgid "Generations to generate HREF links"
+msgstr "Pokolenia, dla których generować linki HREF"
+
+msgid "The number of generations to generate HREF links."
+msgstr "Liczba pokoleń, dla których generować linki HREF."
+
+msgid "Exclude persons who died before (years)"
+msgstr "Wyklucz osoby zmarłe przed (lata)"
+
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr ""
+"Określa, czy generować linki dla osób, które zmarły w niemowlęctwie, -1 "
+"oznacza brak wykluczeń."
 
 msgid "Exclude center person"
 msgstr "Wyklucz osobę centralną"
 
+msgid "Whether or not to generate links for center person."
+msgstr "Czy tworzyć odnośniki dla osoby centralnej."
+
 msgid "Exclude Spouses"
 msgstr "Wyklucz partnerów"
+
+msgid "Whether or not to generate links for spouses."
+msgstr "Czy tworzyć odnośniki dla partnerów."
+
+msgid "Biography Content"
+msgstr "Zawartość biografii"
+
+msgid "Show biography tooltips"
+msgstr "Pokaż podpowiedzi biografii"
+
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "Czy pokazywać podpowiedzi biografii po najechaniu kursorem na węzeł."
+
+msgid "Text Color"
+msgstr "Kolor tekstu"
+
+msgid "RGB-color for biography text."
+msgstr "Kolor RGB tekstu biografii."
+
+msgid "RGB-color for biography tooltip."
+msgstr "Kolor RGB dymka biografii."
+
+msgid "Header Font size"
+msgstr "Rozmiar czcionki nagłówka"
+
+msgid "The font size in pixels for biography header text."
+msgstr "Rozmiar czcionki nagłówka biografii w pikselach."
+
+msgid "Body Font size"
+msgstr "Rozmiar czcionki treści"
+
+msgid "The font size in pixels for biography body text."
+msgstr "Rozmiar czcionki treści biografii w pikselach."

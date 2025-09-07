@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-12 19:09+0300\n"
+"PO-Revision-Date: 2025-08-31 06:05+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13.1-dev\n"
+
+msgid "Starting migration..."
+msgstr "Startar migrering..."
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "Migrerar %s objekt..."
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "Migrerade %s {obj_type} objekt"
+
+msgid "Starting upgrade..."
+msgstr "Startar uppgradering..."
+
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "Uppgraderar %s objekt..."
+
+msgid "Creating indexes..."
+msgstr "Skapar index..."
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL enhanced"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL _Enhanced-databas"
+
+msgid "JSONB support"
+msgstr "JSONB-stöd"
+
+msgid "Version warning"
+msgstr "Versionsvarning"
+
+msgid "Extensions"
+msgstr "Tilläggsprogram"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-20 13:28+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-09-03 21:58+0000\n"
+"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,8 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.1-dev\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+msgstr "https://www.gramps-project.org/wiki/index.php/Kuvien_merkintä_Gramplet"
 
 msgid "Replace existing references to the person being assigned without asking"
 msgstr "Korvaa nykyiset viittaukset määrittämääsi henkilöön kysymättä"
@@ -57,6 +60,9 @@ msgstr "Tunnista kasvot"
 msgid "Detect faces (OpenCV module required)"
 msgstr "Tunnista kasvot (OpenCV-moduuli vaaditaan)"
 
+msgid "XMP Region Name"
+msgstr "XMP alunimi"
+
 msgid "Set as active person"
 msgstr "Aseta aktiiviseksi henkilöksi"
 
@@ -81,6 +87,18 @@ msgstr "Tämän kuvan alue liittyy kuvaan {name}. Poistetaanko se?"
 msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr "{count} muun kuvan alueet liittyvät kuvaan {name}. Poistetaanko ne?"
+
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr "Mies|Kuollut %s"
+
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "Nainen | Kuollut %s"
+
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "Tuntematon sukupuoli henkilö|Kuollut kohdassa %s"
 
 msgid "Photo Tagging"
 msgstr "Valokuvien merkintä"

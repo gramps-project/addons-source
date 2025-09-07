@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Birthdays"
+msgstr "Compleanni"
+
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "un gramplet che mostra i compleanni delle persone in vita"
+
+msgid "Ignore birthdays with tag"
+msgstr "Ignora compleanni con etichetta"
+
+msgid "Only show birthdays with tag"
+msgstr "Mostra solo compleanni con etichetta"

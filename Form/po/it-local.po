@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -12,7 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Order"
+msgstr "Ordine"
+
+msgid "Headings"
+msgstr "Intestazioni"
 
 msgid "Sheet No."
 msgstr "Foglio n."
@@ -23,14 +29,32 @@ msgstr "Contea/provincia di"
 msgid "Family No."
 msgstr "Famiglia n."
 
+msgid "Married Y/N"
+msgstr "Sposato/a s/n"
+
+msgid "Are you married"
+msgstr "Sei sposato/a"
+
+msgid "Date married"
+msgstr "Data di matrimonio"
+
+msgid "Place married"
+msgstr "Luogo del matrimonio"
+
 msgid "City of"
 msgstr "Città di"
 
 msgid "Birth Country"
 msgstr "Nazione di nascita"
 
+msgid "Year married"
+msgstr "Anno di matrimonio"
+
 msgid "Inhabitants of"
 msgstr "Abitanti di"
+
+msgid "in"
+msgstr "in"
 
 msgid "Residing in the"
 msgstr "Residente in"
@@ -69,7 +93,7 @@ msgid "Date of Marriage"
 msgstr "Data di matrimonio"
 
 msgid "Married by"
-msgstr "Sposato con"
+msgstr "Sposato/a da"
 
 msgid "Place of Marriage"
 msgstr "Luogo di matrimonio"
@@ -425,11 +449,29 @@ msgstr "Villaggio o frazione"
 msgid "Civil Parish"
 msgstr "Parrocchia civile"
 
+msgid "Years Married"
+msgstr "Anni di matrimonio"
+
 msgid "Parish Ward"
 msgstr "Distretto (ward) della parrocchia"
 
+msgid "SexFemale"
+msgstr "Sesso femminile"
+
+msgid "Coloured"
+msgstr "Di colore"
+
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Persone di colore - origini africane"
+
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. Persone di colore, mulatte o indiane (native)"
+
 msgid "Seating"
 msgstr "Posti a sedere"
+
+msgid "PostOffice"
+msgstr "Ufficio postale"
 
 msgid "2. Family"
 msgstr "2. Famiglia"

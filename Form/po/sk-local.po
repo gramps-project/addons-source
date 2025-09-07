@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"PO-Revision-Date: 2025-09-05 10:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,13 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 
 msgid "Select Form"
 msgstr "Vybrať formulár"
 
 msgid "Form Gramplet"
 msgstr "Gramplet Formulár"
+
+msgid "Gramplet interface for Forms"
+msgstr "Gramplet rozhranie pre formuláre"
 
 msgid "Order"
 msgstr "Poradie"
@@ -132,6 +135,9 @@ msgstr "Vzťah k hlave"
 msgid "Number of farm schedule"
 msgstr "Počet poľnohospodárskych plánov"
 
+msgid "Institution"
+msgstr "Inštitúcia"
+
 msgid "Color/Race"
 msgstr "Farba/Rasa"
 
@@ -140,6 +146,9 @@ msgstr "Počet plánov farmy"
 
 msgid "District of"
 msgstr "Okres"
+
+msgid "Place of Birth"
+msgstr "Miesto narodenia"
 
 msgid "On date"
 msgstr "Dňa"
@@ -150,17 +159,44 @@ msgstr "Ostatné služby, ak existujú"
 msgid "Number of Regiment"
 msgstr "Číslo pluku"
 
+msgid "Date married"
+msgstr "Dátum sobáša"
+
+msgid "Signed"
+msgstr "Podpísané"
+
 msgid "Street Name"
 msgstr "Názov ulice"
 
 msgid "Relation to Family"
 msgstr "Vzťah k rodine"
 
+msgid "Number of Colleges"
+msgstr "Počet vysokých škôl"
+
+msgid "Number of Pupils"
+msgstr "Počet žiakov"
+
+msgid "Native voters"
+msgstr "Rodní voliči"
+
+msgid "Number of hogs sold"
+msgstr "Počet predaných ošípaných"
+
+msgid "Number of cattle sold"
+msgstr "Počet predaných kusov dobytka"
+
 msgid "City of"
 msgstr "Mesto"
 
 msgid "Township"
 msgstr "Obec"
+
+msgid "Section"
+msgstr "Sekcia"
+
+msgid "White Female"
+msgstr "Biela žena"
 
 msgid "P.O. Address"
 msgstr "Pošt. adresa"
@@ -267,20 +303,332 @@ msgstr "Vzťah"
 msgid "Color or Race"
 msgstr "Farba alebo rasa"
 
+msgid "Able to Write"
+msgstr "Dokáže písať"
+
 msgid "Mother's Name"
 msgstr "Meno matky"
+
+msgid "Parents Place of Marriage"
+msgstr "Miesto svadby rodičov"
+
+msgid "Personal Estate"
+msgstr "Osobný nehnuteľný majetok"
+
+msgid "Disabled"
+msgstr "Invalid"
+
+msgid "Personal Property"
+msgstr "Osobný majetok"
+
+msgid "Number of house"
+msgstr "Číslo domu"
+
+msgid "Condition"
+msgstr "Stav"
 
 msgid "Schedule"
 msgstr "Rozvrh"
 
+msgid "Name of Village"
+msgstr "Názov obce"
+
+msgid "Enumerated date from"
+msgstr "Dátum sčítania od"
+
+msgid "Enumerated date to"
+msgstr "Dátum sčítania do"
+
 msgid "Colored females under 10"
 msgstr "Farebné ženy do 10 rokov"
+
+msgid "Birthplace (NY County or other)"
+msgstr "Miesto narodenia (NY County alebo iné)"
+
+msgid "Years resident in this city or town"
+msgstr "Počet rokov pobytu v tomto meste alebo obci"
+
+msgid "Native Voter"
+msgstr "Domáci volič"
+
+msgid "Naturalized Voter"
+msgstr "Naturalizovaný volič"
+
+msgid "Alien"
+msgstr "Cudzinec"
+
+msgid "Persons of color not taxed"
+msgstr "Osoby farebnej pleti nezdanené"
+
+msgid "Over 21/Illiterate"
+msgstr "Nad 21 rokov/Negramotní"
+
+msgid "Landowner"
+msgstr "Vlastník pôdy"
+
+msgid "Deaf, Dumb, Blind, Insane, Idiotic"
+msgstr "Hluchí, nemí, slepí, duševne chorí, mentálne postihnutí"
+
+msgid "Inhabitants in the"
+msgstr "Obyvatelia v"
+
+msgid "Parent of how many children"
+msgstr "Rodič koľkých detí"
+
+msgid "Number of times married"
+msgstr "Počet manželstiev"
+
+msgid "Place of Occupation"
+msgstr "Miesto zamestnania"
+
+msgid "Land owner"
+msgstr "Vlastník pôdy"
+
+msgid "Now in army"
+msgstr "Teraz v armáde"
+
+msgid "Now in navy"
+msgstr "Teraz v námorníctve"
+
+msgid "Formerly in army"
+msgstr "Predtým v armáde"
+
+msgid "Formerly in navy"
+msgstr "Predtým v námorníctve"
+
+msgid "Usual place of employment (if not same city/town)"
+msgstr "Obvyklé miesto zamestnania (ak nie je v tom istom meste/obci)"
+
+msgid "Election District of the Town of"
+msgstr "Volebný obvod mesta"
+
+msgid "the County of"
+msgstr "Okres (the County of)"
 
 msgid "Birth Country"
 msgstr "Krajina narodenia"
 
+msgid "Citizen or Alien"
+msgstr "Občan alebo cudzinec"
+
+msgid "Inhabitants living in"
+msgstr "Obyvatelia žijúci v"
+
+msgid "Election District, Ward"
+msgstr "Volebný obvod, okrsok"
+
+msgid "Number of years in the US"
+msgstr "Počet rokov v USA"
+
+msgid "Class"
+msgstr "Trieda"
+
+msgid "Inmate: Residence given when admitted"
+msgstr "Väzeň: Bydlisko uvedené pri prijatí"
+
+msgid "Inhabitants of Block No."
+msgstr "Obyvatelia bloku č."
+
+msgid "Election District No."
+msgstr "Volebný obvod č."
+
+msgid "Ward No."
+msgstr "Okrsok č."
+
+msgid "City or Village"
+msgstr "Mesto alebo dedina"
+
+msgid "Assembly District No."
+msgstr "Volebný obvod do snemovne č."
+
+msgid "Where and When Naturalized"
+msgstr "Kde a kedy naturalizovaný"
+
+msgid "WM 21-60"
+msgstr "Bieli muži 21–60 rokov"
+
+msgid "WM under 21 above 60 "
+msgstr "Bieli muži pod 21 alebo nad 60 rokov "
+
+msgid "WF all ages"
+msgstr "Biele ženy všetkých vekových kategórií"
+
+msgid "Blacks 12-50"
+msgstr "Černosi 12–50 rokov"
+
+msgid "Blacks under 12 above 50"
+msgstr "Černosi pod 12 alebo nad 50 rokov"
+
+msgid "Native White Males"
+msgstr "Domáci bieli muži"
+
+msgid "Native White Females"
+msgstr "Domáce biele ženy"
+
+msgid "Native Colored Males"
+msgstr "Domáci farební muži"
+
+msgid "Native Colored Females"
+msgstr "Domáce farebné ženy"
+
+msgid "Foreign Males"
+msgstr "Muži cudzinci"
+
+msgid "Foreign Females"
+msgstr "Ženy cudzinky"
+
+msgid "Male Children 5 and Under"
+msgstr "Chlapci do 5 rokov"
+
+msgid "Female Children 5 and Under"
+msgstr "Dievčatá do 5 rokov"
+
+msgid "Males 5 to 20 Years of Age"
+msgstr "Muži od 5 do 20 rokov"
+
+msgid "Females 5 to 20 Years of Age"
+msgstr "Ženy od 5 do 20 rokov"
+
+msgid "Males 20 to 60 Years of Age"
+msgstr "Muži od 20 do 60 rokov"
+
+msgid "Females 20 to 60 Years of Age"
+msgstr "Ženy od 20 do 60 rokov"
+
+msgid "Males Over 60 Years of Age"
+msgstr "Muži nad 60 rokov"
+
+msgid "Females Over 60 Years of Age"
+msgstr "Ženy nad 60 rokov"
+
+msgid "P.O."
+msgstr "Pošta"
+
+msgid "Sec."
+msgstr "Sek."
+
+msgid "T."
+msgstr "M."
+
+msgid "R."
+msgstr "R."
+
+msgid "No."
+msgstr "Č."
+
+msgid "St./Ave "
+msgstr "St./Ave "
+
+msgid "Hotel or Institution"
+msgstr "Hotel alebo inštitúcia"
+
+msgid "Years in South Dakota"
+msgstr "Počet rokov v Južnej Dakote"
+
+msgid "Years in United States"
+msgstr "Počet rokov v Spojených štátoch"
+
+msgid "Birthplace of Father"
+msgstr "Miesto narodenia otca"
+
+msgid "Birthplace of Mother"
+msgstr "Miesto narodenia matky"
+
+msgid "Black"
+msgstr "Čierny"
+
+msgid "Red"
+msgstr "Červený"
+
+msgid "Yellow"
+msgstr "Žltý"
+
+msgid "Divorced"
+msgstr "Rozvedený"
+
+msgid "Can Read"
+msgstr "Vie čítať"
+
+msgid "Can't Read"
+msgstr "Nevie čítať"
+
+msgid "Can Write"
+msgstr "Vie písať"
+
+msgid "Can't Write"
+msgstr "Nevie písať"
+
+msgid "Do you own your home or farm"
+msgstr "Vlastníte svoj dom alebo farmu"
+
+msgid "Ancestry"
+msgstr "Predkovia"
+
+msgid "Father's birthplace"
+msgstr "Rodisko otca"
+
+msgid "Mother's birthplace"
+msgstr "Rodisko matky"
+
+msgid "Extent of Education"
+msgstr "Rozsah vzdelania"
+
+msgid "Graduate of"
+msgstr "Absolvent školy"
+
+msgid "Maiden name of wife"
+msgstr "Dievčenské priezvisko manželky"
+
+msgid "Church affiliation"
+msgstr "Cirkevná príslušnosť"
+
+msgid "If Foreign Born, are you Naturalized"
+msgstr "Ak ste narodený v zahraničí, ste naturalizovaný"
+
+msgid "Years in S.D."
+msgstr "Počet rokov v Juž. Dak."
+
+msgid "Division"
+msgstr "Vojenský útvar"
+
+msgid "Male under 21"
+msgstr "Muž pod 21 rokov"
+
+msgid "Male over 21"
+msgstr "Muž nad 21 rokov"
+
+msgid "Female under 21"
+msgstr "Žena pod 21 rokov"
+
+msgid "Female over 21"
+msgstr "Žena nad 21 rokov"
+
+msgid "Town/City"
+msgstr "Mesto/Obec"
+
+msgid "Heads of Families"
+msgstr "Hlavy rodín"
+
+msgid "White males"
+msgstr "Bieli muži"
+
+msgid "White females"
+msgstr "Biele ženy"
+
+msgid "Colored males"
+msgstr "Farební muži"
+
 msgid "Colored females"
 msgstr "Farebné ženy"
+
+msgid "Deaf & Dumb"
+msgstr "Hluchý a nemý"
+
+msgid "Foreign Birth"
+msgstr "Narodenie v zahraničí"
+
+msgid "Inhabitants of"
+msgstr "Obyvatelia"
 
 msgid "in"
 msgstr "na"
@@ -288,11 +636,163 @@ msgstr "na"
 msgid "of"
 msgstr "z"
 
+msgid "Nativity - United States"
+msgstr "Pôvod - Spojené štáty"
+
+msgid "Nativity - Germany"
+msgstr "Pôvod - Nemecko"
+
+msgid "Nativity - Great Britain"
+msgstr "Pôvod - Veľká Británia"
+
+msgid "Nativity - Ireland"
+msgstr "Pôvod - Írsko"
+
+msgid "Nativity - France"
+msgstr "Pôvod - Francúzsko"
+
+msgid "Nativity - British America"
+msgstr "Pôvod - Britská Amerika"
+
+msgid "Nativity - Scandinavian"
+msgstr "Pôvod - Škandinávia"
+
+msgid "Nativity - Holland"
+msgstr "Pôvod - Holandsko"
+
+msgid "Nativity - All other countries"
+msgstr "Pôvod - Všetky ostatné krajiny"
+
+msgid "Residing in the"
+msgstr "Bydlisko v"
+
+msgid "Co."
+msgstr "Rota"
+
+msgid "Reg't."
+msgstr "Pluk"
+
+msgid "State or Vessel"
+msgstr "Štát alebo plavidlo"
+
+msgid "Parents place of birth"
+msgstr "Miesto narodenia rodičov"
+
+msgid "Owned/Rented"
+msgstr "Vlastnené/Nájomné"
+
+msgid "Free/Mortgaged"
+msgstr "Voľné/Zaťažené hypotékou"
+
+msgid "Farm/House"
+msgstr "Farma/Dom"
+
+msgid "Certificate Number"
+msgstr "Číslo osvedčenia"
+
+msgid "Entry Number"
+msgstr "Číslo záznamu"
+
+msgid "Date Registered"
+msgstr "Dátum registrácie"
+
+msgid "Registrar"
+msgstr "Registrátor"
+
+msgid "Twin, triplet or other"
+msgstr "Dvojča, trojča alebo iné"
+
+msgid "No. in order of birth"
+msgstr "Číslo v poradí narodenia"
+
+msgid "Legitimate"
+msgstr "Legitímne"
+
+msgid "Place of Record"
+msgstr "Miesto zápisu"
+
+msgid "Book/Volume"
+msgstr "Kniha/Zväzok"
+
+msgid "Race/Color"
+msgstr "Rasa/Farba"
+
+msgid ""
+"STOP! If you want this record to be attached to the Parents move to Father."
+msgstr ""
+"STOP! Ak chcete, aby tento záznam bol priradený k rodičom, prejdite na otca."
+
+msgid "Mother (Maiden Name)"
+msgstr "Matka (dievčenské priezvisko)"
+
+msgid "Residence of Parents"
+msgstr "Bydlisko rodičov"
+
+msgid "By Whom Reported"
+msgstr "Kým nahlásené"
+
+msgid "Date Recorded"
+msgstr "Dátum záznamu"
+
+msgid "License No."
+msgstr "Povolenie č."
+
+msgid "Date of Marriage"
+msgstr "Dátum sobáša"
+
+msgid "Married by"
+msgstr "Sobáš vykonal"
+
+msgid "Place of Marriage"
+msgstr "Miesto sobáša"
+
+msgid "Consent given by"
+msgstr "Súhlas udelil"
+
+msgid "Bond/Licence"
+msgstr "Zmluva/Povolenie"
+
+msgid "Place of Death"
+msgstr "Miesto úmrtia"
+
+msgid "Length of Residence"
+msgstr "Dĺžka pobytu"
+
+msgid "Served in U.S. Military"
+msgstr "Slúžil v armáde USA"
+
+msgid "Birth date of deceased"
+msgstr "Dátum narodenia zosnulého"
+
+msgid "Industry or Business"
+msgstr "Priemysel alebo podnikanie"
+
 msgid "Name of employer"
 msgstr "Meno zamestnávateľa"
 
+msgid "Date last worked"
+msgstr "Dátum, kedy naposledy pracoval"
+
+msgid "Years in this occupation"
+msgstr "Počet rokov v tomto zamestnaní"
+
+msgid "Education Level"
+msgstr "Úroveň vzdelania"
+
+msgid "Social Security No."
+msgstr "Sociálne zabezpečenie č."
+
+msgid "Date of Death"
+msgstr "Dátum úmrtia"
+
 msgid "Place of Burial"
 msgstr "Miesto pochovania"
+
+msgid "Date of Burial"
+msgstr "Dátum pochovania"
+
+msgid "Residence Place"
+msgstr "Miesto bydliska"
 
 msgid "Burial Date"
 msgstr "Dátum pochovania"
@@ -300,8 +800,57 @@ msgstr "Dátum pochovania"
 msgid "Burial Place"
 msgstr "Miesto pochovania"
 
+msgid "Congressional District"
+msgstr "Kongresový obvod"
+
+msgid "in the month of"
+msgstr "v mesiaci"
+
+msgid "Age 1 July 1863"
+msgstr "Vek k 1. júlu 1863"
+
+msgid "White or Colored"
+msgstr "Biely alebo farebný"
+
+msgid "Former Military Service"
+msgstr "Predchádzajúca vojenská služba"
+
+msgid "Station Headquarters"
+msgstr "Veliteľstvo stanice"
+
+msgid "Congr. Dist. of"
+msgstr "Kongresový obvod"
+
+msgid "Card (A, B, or C)"
+msgstr "Karta (A, B alebo C)"
+
+msgid "Serial No."
+msgstr "Sériové č."
+
+msgid "Registration No."
+msgstr "Registračné č."
+
+msgid "Order No."
+msgstr "Nariadenie č."
+
+msgid "Age in yrs."
+msgstr "Vek v rokoch"
+
 msgid "Home Address"
 msgstr "Domáca adresa"
+
+msgid "Citizenship"
+msgstr "Občianstvo"
+
+msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
+msgstr ""
+"Rodený občan, Naturalizovaný občan, Cudzinec, Neobčan alebo občan Indián"
+
+msgid "If not a citizen, of what nation are you a citizen or subject?"
+msgstr "Ak nie ste občanom, ktorej krajiny ste občanom alebo poddaným?"
+
+msgid "Employer's Name & address"
+msgstr "Meno a adresa zamestnávateľa"
 
 msgid "Nearest Relative"
 msgstr "Najbližší príbuzný"
@@ -330,11 +879,105 @@ msgstr "Miesto práce"
 msgid "Date Married"
 msgstr "Dátum sobáša"
 
+msgid "Registration District"
+msgstr "Registračný obvod"
+
+msgid "Administrative Area"
+msgstr "Administratívna oblasť"
+
+msgid "County/Administrative Area"
+msgstr "Kraj/Administratívna oblasť"
+
+msgid "Maiden Surname"
+msgstr "Dievčenské priezvisko"
+
+msgid "Banns/Licence"
+msgstr "Ohlášky/Povolenie"
+
+msgid "Deceased"
+msgstr "Zosnulý"
+
+msgid "Maiden surname of woman who was married"
+msgstr "Dievčenské priezvisko ženy, ktorá bola vydatá"
+
 msgid "Usual Address"
-msgstr "Zvyčajná adresa"
+msgstr "Obvyklá adresa"
+
+msgid "City or Borough"
+msgstr "Mesto alebo štvrť"
+
+msgid "Parish or Township"
+msgstr "Farnosť alebo obec"
+
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr "MENÁ každej osoby, ktorá tam predchádzajúcu noc bývala."
+
+msgid ""
+"AGE, rounded down to the nearest five years for those aged fifteen or over."
+msgstr ""
+"VEK, zaokrúhlený nadol na najbližších päť rokov pre osoby vo veku pätnásť "
+"rokov a viac."
+
+msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
+msgstr "POVOLANIE, OBCHOD, ZAMESTNANIE alebo NEZÁVISLÉ PROSTRIEDKY."
+
+msgid ""
+"Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
+"Parts (P)."
+msgstr ""
+"Či sa narodil v tom istom kraji (A alebo N), Škótsku (S), Írsku (I) alebo v "
+"zahraničných častiach (P)."
+
+msgid "Ecclesiastical District"
+msgstr "Cirkevný obvod"
+
+msgid ""
+"Name and Surname of each Person who abode in the house, on the Night of the "
+"30th March, 1851"
+msgstr ""
+"Meno a priezvisko každej osoby, ktorá bývala v dome v noci 30. marca 1851"
 
 msgid "Relation to Head of Family"
 msgstr "Vzťah k hlave rodiny"
+
+msgid "Rank, Profession or Occupation"
+msgstr "Hodnosť, povolanie alebo zamestnanie"
+
+msgid "Whether Blind or Deaf and Dumb"
+msgstr "Či je slepý alebo hluchý a nemý"
+
+msgid "City or Municipal Borough"
+msgstr "Mesto alebo mestská časť"
+
+msgid "Municipal Ward"
+msgstr "Mestský obvod"
+
+msgid "Parliamentary Borough"
+msgstr "Parlamentná štvrť"
+
+msgid "Hamlet or Tything"
+msgstr "Osada alebo desiatková obec"
+
+msgid "Name and Surname of each Person"
+msgstr "Meno a priezvisko každej osoby"
+
+msgid "Rank, Profession of Occupation"
+msgstr "Hodnosť, povolanie alebo zamestnanie"
+
+msgid "Whether Blind, or Deaf-and-Dumb"
+msgstr "Či je slepý, alebo hluchý-a-nemý"
+
+msgid "Civil Parish or Township"
+msgstr "Civilná farnosť alebo obec"
+
+msgid "Village or Hamlet"
+msgstr "Dedina alebo osada"
+
+msgid "Local Board or Improvement Commissioners District"
+msgstr "Miestna rada alebo obvod komisárov pre rozvoj"
+
+msgid "NAME and Surname of each Person"
+msgstr "MENO a priezvisko každej osoby"
 
 msgid "RELATION to Head of Family"
 msgstr "VZŤAH k hlave rodiny"
@@ -354,6 +997,9 @@ msgstr "POHLAVIE"
 msgid "Number of living children"
 msgstr "Počet žijúcich detí"
 
+msgid "See INSTRUCTIONS"
+msgstr "Pozri INŠTRUKCIE"
+
 msgid "Relation to Head"
 msgstr "Vzťah k Hlave"
 
@@ -369,6 +1015,54 @@ msgstr "Detí celkom"
 msgid "EnumDistrict"
 msgstr "EnumDistrict"
 
+msgid "Comprising"
+msgstr "Obsahujúci"
+
+msgid "OfTheSaid"
+msgstr "Z uvedeného"
+
+msgid "Enumerator"
+msgstr "Sčítací komisár"
+
+msgid "1. Names of Inmates"
+msgstr "1. Mená väzňov"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Profesia, obchod alebo zamestnanie"
+
+msgid "BirthPlace"
+msgstr "Miesto narodenia"
+
+msgid "3. Place of Birth"
+msgstr "3. Miesto narodenia"
+
+msgid "4. Religion"
+msgstr "4. Náboženstvo"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. Vek pri ďalších narodeninách"
+
+msgid "SexMale"
+msgstr "Pohlavie mužské"
+
+msgid "7. Sex: Male"
+msgstr "7. Pohlavie: mužské"
+
+msgid "SexFemale"
+msgstr "Pohlavie ženské"
+
+msgid "8. Sex: Female"
+msgstr "8. Pohlavie: ženské"
+
+msgid "MaritalStatus"
+msgstr "Rodinný stav"
+
+msgid "9. Married or Single"
+msgstr "9. Ženatý (vydatá) alebo slobodný (-á)"
+
+msgid "Coloured"
+msgstr "Farební"
+
 msgid "10. Coloured Persons - Negroes"
 msgstr "10. Farebné osoby - černosi"
 
@@ -378,17 +1072,41 @@ msgstr "Indiáni"
 msgid "11. Indians, if any"
 msgstr "11. Indiáni, ak sú"
 
+msgid "ResidentsMale"
+msgstr "Obyvatelia muži"
+
 msgid "12. Residents: Members, Male"
 msgstr "12. Obyvatelia: členovia, muži"
+
+msgid "ResidentsFemale"
+msgstr "Obyvatelia ženy"
 
 msgid "13. Residents: Members, Female"
 msgstr "13. Obyvatelia: členovia, ženy"
 
+msgid "NonMembersMale"
+msgstr "Nečlenovia muži"
+
 msgid "14. Residents: Not Members: Male"
 msgstr "14. Obyvatelia: nečlenovia: muži"
 
+msgid "NonMembersFemale"
+msgstr "Nečlenovia ženy"
+
 msgid "15. Residents: Not Members: Female"
 msgstr "15. Obyvatelia: nečlenovia: ženy"
+
+msgid "AbsentMembersMale"
+msgstr "Chýbajúci členovia muži"
+
+msgid "16. Members Absent: Male"
+msgstr "16. Členovia chýbajúci: muži"
+
+msgid "AbsentMembersFemale"
+msgstr "Chýbajúci členovia ženy"
+
+msgid "17. Members Absent: Female"
+msgstr "17. Členovia chýbajúci: ženy"
 
 msgid "18. Deaf and Dumb: Male"
 msgstr "18. Nepočujúci a nemí: muži"
@@ -836,11 +1554,26 @@ msgstr "16. Chodiaci do školy"
 msgid "1. Vessels and Shanties"
 msgstr "1. Plavidlá a chatrče"
 
+msgid "5. Families"
+msgstr "5. Rodiny"
+
 msgid "7. Sex"
 msgstr "7. Pohlavie"
 
+msgid "10. Relationship to Head of Family"
+msgstr "10. Vzťah k hlave rodiny"
+
+msgid "SubTitle"
+msgstr "Podtitul"
+
 msgid "4. Sex"
 msgstr "4. Pohlavie"
+
+msgid "Colour"
+msgstr "Farba"
+
+msgid "5. Colour"
+msgstr "5. Farba"
 
 msgid "27. Extra earning (From other than chief occupation or trade)"
 msgstr ""
@@ -855,8 +1588,14 @@ msgstr "29. Vie čítať"
 msgid "30. Can write"
 msgstr "30. Vie písať"
 
+msgid "SpeakEnglish"
+msgstr "Hovorí anglicky"
+
 msgid "31. Can speak English"
 msgstr "31. Vie hovoriť anglicky"
+
+msgid "SpeakFrench"
+msgstr "Hovorí francúzsky"
 
 msgid "32. Can speak French"
 msgstr "32. Vie hovoriť francúzsky"
@@ -882,8 +1621,29 @@ msgstr "5. Domy: neobývané"
 msgid "6. Houses: Inhabited"
 msgstr "6. Domy: obývané"
 
+msgid "7. Institution: Special or legal name"
+msgstr "7. Inštitúcia: Špecifický alebo právny názov"
+
+msgid "Buildings"
+msgstr "Budovy"
+
+msgid "8. Institution: Number of buildings"
+msgstr "8. Inštitúcia: Počet budov"
+
+msgid "9. Number of families in house or institution"
+msgstr "9. Počet rodín v dome alebo inštitúcii"
+
+msgid "Rooms"
+msgstr "Izby"
+
+msgid "Denomination"
+msgstr "Denominácia"
+
 msgid "Seating"
 msgstr "Sedenie"
+
+msgid "SSDenomination"
+msgstr "Denominácia nedeľnej školy"
 
 msgid "5. Sex"
 msgstr "5. Pohlavie"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-09-03 21:58+0000\n"
+"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,11 +12,197 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Prerequisites Checker"
+msgstr "Edellytysten tarkistus"
+
+msgid "Prerequisites Checker Gramplet"
+msgstr "Edellytykset Checker Grampletille"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
+"\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
+"blob/master/README.md\">prerequisites</a> installed.\n"
+msgstr ""
+"Diagnostinen Gramplet, joka auttaa arvioimaan, onko <a href=\"https://gramps-"
+"project.org/\">Grampsissa</a> kaikki <a href=\"https://github.com/gramps-"
+"project/gramps/blob/master/README.md\">tarpeellinen</a> asennettu.\n"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
+"installed."
+msgstr ""
+"Diagnostinen Gramplet, joka auttaa arvioimaan, onko Grampsissa kaikki "
+"vaaditut asennusvaatimukset asennettu."
+
+msgid ""
+"\n"
+"<u><b>REQUIRED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>VAADITAAN</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
+" (Requires the minimum version or greater.)</i>:\n"
+msgstr ""
+"<i>Seuraavien pakettien asennukset ovat <b>TÄYSIN PAKOLLISIA</b>\n"
+"(Vaatii vähintään vähimmäisversion.)</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>RECOMMENDED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>SUOSITELLAAN</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
+"as necessary for Geography and Charts</i>:\n"
+msgstr ""
+"<i>Seuraavien pakettien asentamista <b>SUOSITELLAAN</b> tarvittaessa "
+"karttojen ja kaavioiden käyttöön</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Optional</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Valinnainen</b></u>\n"
+
+msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
+msgstr "<i>Seuraavien pakettien asentaminen on <b>valinnaista</b></i>:\n"
+
+msgid "Gtkspell enables spell checking in the notes.\n"
+msgstr "Gtkspell mahdollistaa lisätietojen oikeinkirjoituksen tarkistuksen.\n"
+
+msgid ""
+"Python Image Library (PIL) is needed for cropping images and LaTeX output."
+msgstr ""
+"Kuvien rajaamiseen ja LaTeX-tulostukseen tarvitaan Python Image Library "
+"(PIL)."
+
+msgid ""
+"\n"
+"<u><b>Development & Translation Requirements</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Kehitys- ja käännösvaatimukset</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
+"intend to translate or do any development (addons etc.)</i>:\n"
+msgstr ""
+"<i>Seuraavien pakettien asentamista <b>SUOSITELLAAN</b>, jos aiot kääntää "
+"tai tehdä kehitystyötä (lisäosia jne.)</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Optional packages required by Third-party Addons</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Kolmannen osapuolen lisäosien vaatimat valinnaiset paketit</b></u>\n"
+
+msgid ""
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
+msgstr ""
+"<i>Seuraavien <a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Third-party_Addons\">kolmannen osapuolen lisäosien</a> toiminnan "
+"edellytykset</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Diagnostic checks</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Diagnostiset tarkastukset</b></u>\n"
 
 msgid "Check for potential issues.\n"
 msgstr "Tarkista mahdolliset ongelmat.\n"
+
+msgid ""
+"\n"
+"Environment settings:\n"
+msgstr ""
+"\n"
+"Ympäristöasetukset:\n"
+
+msgid ""
+"\n"
+"\n"
+"<u><b>Locales available:</b></u>\n"
+msgstr ""
+"\n"
+"\n"
+"<u><b>Saatavilla olevat kielet:</b></u>\n"
+
+msgid ""
+"\n"
+"<u><b>Back Up Your Genealogy Files.</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Varmuuskopioi sukututkimustiedostosi.</b></u>\n"
+
+msgid ""
+"If you have a reason to be checking Prerequisites, it is the right time to "
+"back up your genealogy files, and then test your backups!\n"
+"\n"
+msgstr ""
+"Jos sinulla on syy tarkistaa Esivaatimuksia, nyt on oikea aika "
+"varmuuskopioida sukututkimustiedostosi ja testata sitten varmuuskopiosi!\n"
+"\n"
+
+msgid ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find \"Make "
+"Backup...\" in the Family Tree menu of recent Gramps versions, otherwise use "
+"\"Export...\" in the same menu but uncheck privacy options in the Exporter "
+"Assistant in order to export all data.</i>\n"
+"\n"
+msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Varmuuskopiointi Gramps XML:ään</a> Löydät "
+"\"Tee varmuuskopio...\" -vaihtoehdon uudempien Gramps-versioiden Sukupuu-"
+"valikosta. Muussa tapauksessa käytä \"Vie...\" -vaihtoehtoa samassa "
+"valikossa, mutta poista yksityisyysasetusten valinta vientiavustajassa "
+"kaikkien tietojen viemiseksi.</i>\n"
+"\n"
+
+msgid ""
+" • Backups can be made at any time and, at a minimum, on the first day of "
+"every month. But preferrably more often.\n"
+msgstr ""
+" • Voit tehdä varmuuskopion milloin tahansa ja vähintään joka kuukauden "
+"ensimmäisenä päivänä. Mieluiten kuitenkin useammin.\n"
+
+msgid ""
+" • It is strongly recommended to backup each of your Family Trees before any "
+"upgrade.\n"
+msgstr ""
+" • On erittäin suositeltavaa varmuuskopioida jokainen sukupuusi ennen "
+"päivitystä..\n"
+
+msgid ""
+" • Test your backups by creating a new Family Tree and then importing the "
+"backup."
+msgstr ""
+" • Testaa varmuuskopiosi luomalla uusi sukupuu ja tuomalla sitten "
+"varmuuskopio."
+
+msgid ", is the most current version.\n"
+msgstr ", on uusin versio.\n"
+
+#, python-format
+msgid ""
+"You have Gramps %s. Please make a backup and then upgrade.\n"
+"%s"
+msgstr ""
+"Sinulla on Gramps %s. Ole hyvä ja tee varmuuskopio ja päivitä sitten.\n"
+"%s"
 
 #, python-format
 msgid ""
@@ -28,14 +214,124 @@ msgstr ""
 "osallistumisestasi ja testaamisestasi; ilmoita mahdollisista ongelmista. "
 "Varmuuskopiot ovat ystäväsi.\n"
 
+#, python-format
+msgid "You have Gramps %s. Congratulations, you have the current version.\n"
+msgstr "Sinulla on Gramps %s. Onnittelut, sinulla on nykyinen versio!\n"
+
+msgid " (Requires version "
+msgstr " (Vaatii version "
+
 msgid " or greater installed.)\n"
 msgstr " tai uudempi asennettuna.)\n"
+
+msgid " (Passed: version "
+msgstr " (Hyväksytty: versio "
+
+msgid "unknown version"
+msgstr "tuntematon versio"
+
+msgid "DISPLAY not set"
+msgstr "DISPLAY on asettamatta"
+
+msgid " or greater.)\n"
+msgstr " tai suurempi.)\n"
+
+msgid " (Requires "
+msgstr " (Vaatii "
+
+msgid " • Berkeley Database library (bsddb3: "
+msgstr " • Berkeley tietokantakirjasto (bsddb3: "
+
+msgid " • SQLite Database library (sqlite3: "
+msgstr " • SQLite tietokantakirjasto (sqlite3: "
+
+msgid " • xdg-utils (Manual check see instructions link)"
+msgstr " • xdg-utils (tarkasta, katso ohjelinkki)"
+
+msgid " • librsvg2 (Manual check see instructions link)"
+msgstr " • librsvg2 (tarkasta, katso ohjelinkki)"
+
+msgid ""
+" • language-pack-gnome-xx (Manual check see instructions link) for your "
+"Language <show locale here TBD>"
+msgstr ""
+" • language-pack-gnome-xx (tarkasta, katso ohjelinkki) kielellesi <show "
+"locale here TBD>"
 
 msgid " or greater installed.)"
 msgstr " tai uudempi asennettuna.)"
 
+msgid " or greater)"
+msgstr " tai suurempi)"
+
+msgid "Graphviz not in system PATH"
+msgstr "Graphviz puuttuu järjestelmän PATH:ista"
+
+msgid "Ghostscript not in system PATH"
+msgstr "Ghostscript puuttuu järjestelmän PATH:ista"
+
+msgid " (Passed: version 0.5.x is installed.)"
+msgstr " (Hyväksytty, versio 0.5.x on asennettu.)"
+
+msgid " (Requires version 0.5.x)"
+msgstr " (Vaatii version 0.5.x)"
+
+msgid " • python-fontconfig not found, (Requires version 0.5.x)"
+msgstr " • python-fontconfig -tiedostoa ei löydy, (Vaatii version 0.5.x)"
+
+msgid " • python-fontconfig installed, version unavailable"
+msgstr " • python-fontconfig asennettu, versiotietoa ei ole saatavilla"
+
+msgid " or greater installed.) (enchant module: "
+msgstr " tai uudempi asennettuna.) (parannusmoduuli: "
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (Hyväksytään, jos versio %s tai uudempi on asennettuna tai jos "
+"sisältyy Microsoft Windowsiin)"
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (Vaatii version %s tai uudemman, ellei jo sisälly Microsoft "
+"Windowsiin)"
+
+msgid "can't found it because exiv2 not installed"
+msgstr "ei löydy, koska exiv2:ta ei ole asennettu"
+
+#, python-format
+msgid "GExiv2 : %s (Exiv2 library : %s)"
+msgstr "GExiv2 : %s (Exiv2-kirjasto : %s)"
+
+msgid "found another font"
+msgstr "löytyi toinen fontti"
+
+msgid ""
+"For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
+msgstr ""
+"Networkchart-lisäosalle <a href=\"https://www.fontsquirrel.com/fonts/white-"
+"rabbit\">White Rabbit</a> -fontti tarjoaa erittäin luettavan tuloksen.\n"
+
+msgid "Why, when same code works in Graphview"
+msgstr "Miksi, kun sama koodi toimii Graphview'ssa"
+
 msgid "not installed"
 msgstr "ei asennettu"
+
+msgid "     and one of either: (pydotplus: "
+msgstr "     ja yksi seuraavista: (pydotplus: "
+
+msgid ") or (pygraphviz: "
+msgstr ") tai (pygraphviz: "
+
+msgid "Installed(MS-Windows)"
+msgstr "Asennettu (MS-Windows)"
 
 msgid "Installed(Linux/Mac)"
 msgstr "Asennettu(Linux/Mac)"
@@ -43,12 +339,79 @@ msgstr "Asennettu(Linux/Mac)"
 msgid "not installed "
 msgstr "ei asennettu "
 
+msgid "not found."
+msgstr "ei löytynyt."
+
+msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
+msgstr ""
+"Vakio. Läpäisty, ohjelma asennettu - 32-bittinen 64-bittisessä Windowsissa."
+
+msgid ") (Requires the gramps addon listed under 'Plugin lib')"
+msgstr ") (Vaatii 'Plugin lib' -kohdassa luetellun Gramps-lisäosan)"
+
 msgid "DBF installed"
 msgstr "DBF-kirjasto asennettu"
+
+msgid ".)(Requires version "
+msgstr ".)(Vaatii version "
+
+msgid " installed.)(Passed: version "
+msgstr " asennettu.)(Hyväksytty versio "
 
 #, python-format
 msgid "(OpenCV facedetection: %s)"
 msgstr "(OpenCV kasvojen tunnistus: %s)"
 
+msgid " (lxml: not found. Requires version "
+msgstr " (lxml: ei löydy. Vaatii version "
+
+msgid " • Requires: MongoDB TBD / pymongo TBD"
+msgstr " • Vaaditaan MongoDB TBD / pymongo TBD"
+
+#, python-format
+msgid " • Operating System: %s"
+msgstr " • Käyttöjärjestelmä: %s"
+
+msgid ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
+"a></b></u>\n"
+msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Kieliasetukset:</"
+"a></b></u>\n"
+
+msgid "not set"
+msgstr "ei asetettu"
+
+msgid "not tested"
+msgstr "ei testattu"
+
+msgid ""
+"\n"
+"Installed Locales\\Translations (If only English is listed please re-install "
+"Gramps again and make sure to select all the Translations and Dictionaries)\n"
+"\n"
+msgstr ""
+"\n"
+"Asennetut kielet\\Käännökset (Jos luettelossa on vain englanti, asenna "
+"Gramps uudelleen ja muista valita kaikki käännökset ja sanakirjat)\n"
+"\n"
+
+msgid ""
+"\n"
+"Gramps Environment variables:\n"
+msgstr ""
+"\n"
+"Gramps-ympäristömuuttujat:\n"
+
 msgid "found"
 msgstr "löytyi"
+
+msgid ""
+"Sphinx is a tool that builds the Gramps development documentation and man "
+"pages\n"
+msgstr ""
+"Sphinx on työkalu, joka rakentaa Gramps-kehitysdokumentaation ja man-sivut\n"

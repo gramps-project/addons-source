@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
-"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"PO-Revision-Date: 2025-09-03 03:01+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
 "Language: ca\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 msgid "Data Entry Gramplet"
 msgstr "Gramplet d'Introducció de Dades"
@@ -36,7 +36,7 @@ msgid "Abandon"
 msgstr "Abandonar"
 
 msgid "New person"
-msgstr "Persona nova"
+msgstr "Nova persona"
 
 msgid "Add relation"
 msgstr "Afegir relació"
@@ -45,19 +45,31 @@ msgid "No relation to active person"
 msgstr "No hi ha relació amb la persona activa"
 
 msgid "Add as a Parent"
-msgstr "Afegir com a Pare"
+msgstr "Afegir com a progenitor"
+
+msgid "Add as a Mother"
+msgstr "Afegir com a mare"
+
+msgid "Add as a Father"
+msgstr "Afegir com a pare"
 
 msgid "Add as a Spouse"
-msgstr "Afegir com a Cònjuge"
+msgstr "Afegir com a cònjuge"
+
+msgid "Add as a Wife"
+msgstr "Afegir com a dona"
+
+msgid "Add as a Husband"
+msgstr "Afegir com a marit"
 
 msgid "Add as a Sibling"
-msgstr "Afegir com a Germà"
+msgstr "Afegir com a germà"
 
 msgid "Add as a Child"
-msgstr "Afegir com a Fill"
+msgstr "Afegir com a fill"
 
 msgid "Copy Active Data"
-msgstr "Copiar Dades Actives"
+msgstr "Copiar dades actives"
 
 msgid "in"
 msgstr "a"
@@ -67,34 +79,52 @@ msgid "Gramplet Data Edit: %s"
 msgstr "Edició de Dades en Gramplet: %s"
 
 msgid "Please provide a name."
-msgstr "Si us plau introdueixi un nom."
+msgstr "Introduïu un nom."
 
 msgid "Can't add new person."
-msgstr "No es pot afegir una persona nova."
+msgstr "No es pot afegir una nova persona."
 
 msgid "Please set an active person."
-msgstr "Fixi si us plau una persona activa."
+msgstr "Definiu una persona activa."
 
 msgid "Can't add new person as a parent."
 msgstr "No es pot afegir persona nova com a progenitor."
 
 msgid "Please set the new person's gender."
-msgstr "Digui si us plau el gènere de la persona nova."
+msgstr "Definiu el gènere de la persona nova."
+
+msgid "Can't add new person as a mother."
+msgstr "No s'ha pogut afegir la persona nova com a mare."
+
+msgid "Can't add new person as a father."
+msgstr "No s'ha pogut afegir la persona nova com a pare."
 
 msgid "Can't add new person as a spouse."
-msgstr "No es pot afegir persona nova com a cònjuge."
+msgstr "No s'ha pogut afegir la persona nova com a cònjuge."
+
+msgid "Can't add new person as a wife."
+msgstr "No s'ha pogut afegir la persona nova com a muller."
+
+msgid "Can't add new person as a husband."
+msgstr "No s'ha pogut afegir la persona nova com a marit."
 
 msgid "Can't add new person as a sibling."
-msgstr "No es pot afegir persona nova com a germà."
+msgstr "No s'ha pogut afegir la persona nova com a germà."
 
 msgid "Can't add new person as a child."
-msgstr "No es pot afegir persona nova com a fill."
+msgstr "No s'ha pogut afegir la persona nova com a fill."
+
+msgid "Please set Active person."
+msgstr "Definiu una persona activa."
+
+msgid "Can't add new person as a spouse to no one."
+msgstr "No es pot afegir una persona nova com a cònjuge a ningú."
 
 msgid "Please set gender on Active or new person."
-msgstr "Si us plau, fixi el gènere de la persona Activa o nova."
+msgstr "Definiu el gènere de la persona activa o nova."
 
 msgid "Same genders on Active and new person."
 msgstr "Gèneres iguals a la persona nova i activa."
 
 msgid "Please set gender on Active person."
-msgstr "Si us plau fixi el gènere de la persona Activa."
+msgstr "Definiu el gènere de la persona activa."

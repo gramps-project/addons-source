@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 22:01+0000\n"
-"Last-Translator: Michał Stojek <stojex@gmail.com>\n"
+"PO-Revision-Date: 2025-08-23 15:02+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -13,12 +13,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
+msgid "Database Differences Report"
+msgstr "Raport różnic w bazie danych"
+
+msgid "Differences between Database and File"
+msgstr "Różnice między bazą danych a plikiem"
+
+msgid "No differences"
+msgstr "Brak różnic"
+
+msgid "Missing items in File that are added in Database"
+msgstr "Elementy brakujące w pliku, które zostały dodane w bazie danych"
+
+#, python-format
+msgid "Missing %s: %s"
+msgstr "Brakuje %s: %s"
+
+msgid "Nothing missing"
+msgstr "Nic nie brakuje"
+
+msgid "Added items in File that are missing in Database"
+msgstr "Elementy dodane w pliku, które brakują w bazie danych"
+
 #, python-format
 msgid "Added %s: %s "
 msgstr "Dodano %s: %s "
+
+msgid "Nothing added"
+msgstr "Nic nie dodano"
+
+msgid "Family Tree file"
+msgstr "Plik drzewa genealogicznego"
+
+msgid "Select a .gpkg or .gramps file"
+msgstr "Wybierz plik .gpkg lub .gramps"
+
+msgid "Show items that are different"
+msgstr "Pokaż elementy, które są różne"
+
+msgid "Include items that are different"
+msgstr "Uwzględnij elementy, które są różne"
+
+msgid "Show items missing from file"
+msgstr "Pokaż elementy brakujące w pliku"
+
+msgid "Include items not in file but in database"
+msgstr "Uwzględnij elementy, które nie ma w pliku, ale są w bazie danych"
+
+msgid "Show items added in file"
+msgstr "Pokaż elementy dodane w pliku"
+
+msgid "Include items in file but not in database"
+msgstr "Uwzględnij elementy, które są w pliku, ale nie ma ich w bazie danych"
+
+msgid "Compares an external database with the current one."
+msgstr "Porównuje zewnętrzną bazę danych z bieżącą."

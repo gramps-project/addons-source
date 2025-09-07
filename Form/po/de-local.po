@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-08-11 18:01+0000\n"
+"PO-Revision-Date: 2025-09-07 12:16+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Select Form"
 msgstr "Formular wählen"
@@ -61,7 +61,7 @@ msgid "Sheet No."
 msgstr "Blatt Nr."
 
 msgid "Minor Civil Division"
-msgstr "Kleinere zivile Abteilung"
+msgstr "Amtsgericht"
 
 msgid "County of"
 msgstr "Landkreis von"
@@ -73,10 +73,10 @@ msgid "Free white males 16 & up"
 msgstr "Frei weiß männlich ab 16 Jahren"
 
 msgid "Free white males under 16"
-msgstr "Frei weiß männlich unter 16"
+msgstr "Freie weiße männliche unter 16"
 
 msgid "Free white females"
-msgstr "Frei weiß weiblich"
+msgstr "Freie weiße weibliche"
 
 msgid "All other free persons"
 msgstr "Alle anderen freien Personen"
@@ -85,40 +85,40 @@ msgid "Slaves"
 msgstr "Sklaven"
 
 msgid "Enumeration Date"
-msgstr "Zähldatum"
+msgstr "Erhebungsdatum"
 
 msgid "Free white males under 10"
-msgstr "Frei weiß männlich unter 10"
+msgstr "Freie weiße männliche unter 10"
 
 msgid "Free white males 10-15"
-msgstr "Frei weiß männlich 10-15"
+msgstr "Freie weiße männliche 10-15"
 
 msgid "Free white males 16-25"
-msgstr "Frei weiß männlich 16-25"
+msgstr "Freie weiße männliche 16-25"
 
 msgid "Free white males 26-44"
-msgstr "Frei weiß männlich 26-44"
+msgstr "Freie weiße männliche 26-44"
 
 msgid "Free white males 45 and over"
-msgstr "Frei weiß männlich 45 und älter"
+msgstr "Freie weiße männliche 45 und älter"
 
 msgid "Free white females under 10"
-msgstr "Frei weiß weiblich unter 10"
+msgstr "Freie weiße weibliche unter 10"
 
 msgid "Free white females 10-15"
-msgstr "Frei weiß weiblich 10-15"
+msgstr "Freie weiße weibliche 10-15"
 
 msgid "Free white females 16-25"
-msgstr "Frei weiß weiblich 16-25"
+msgstr "Freie weiße weibliche 16-25"
 
 msgid "Free white females 26-44"
-msgstr "Frei weiß weiblich 26-44"
+msgstr "Freie weiße weibliche 26-44"
 
 msgid "Free white females 45 and over"
-msgstr "Frei weiß weiblich 45 und älter"
+msgstr "Freie weiße weibliche 45 und älter"
 
 msgid "Free white males 16-18"
-msgstr "Frei weiß männlich 16-18"
+msgstr "Freie weiße männliche 16-18"
 
 msgid "Foreigners not naturalized"
 msgstr "Ausländer nicht eingebürgert"
@@ -130,205 +130,205 @@ msgid "Persons engaged in Commerce"
 msgstr "Personen, die im Handel tätig sind"
 
 msgid "Persons engaged in Manufactures"
-msgstr "Personen, die in der Herstellung tätig sind"
+msgstr "Personen, die in der Fertigung tätig sind"
 
 msgid "Slave males under 14"
-msgstr "Sklaven Männer unter 14"
+msgstr "Sklaven männlich unter 14"
 
 msgid "Slave males 14-25"
-msgstr "Sklaven Männer 14-25"
+msgstr "Sklaven männlich 14-25"
 
 msgid "Slave males 26-44"
-msgstr "Sklaven Männer 26-44"
+msgstr "Sklaven männlich 26-44"
 
 msgid "Slave males 45 and over"
-msgstr "Sklaven Männer 45 und älter"
+msgstr "Sklaven männlich 45 und älter"
 
 msgid "Slave females under 14"
-msgstr "Sklaven Frauen unter 14"
+msgstr "Sklavinnen unter 14"
 
 msgid "Slave females 14-25"
-msgstr "Sklaven Frauen 14-25"
+msgstr "Sklavinnen 14-25"
 
 msgid "Slave females 26-44"
-msgstr "Sklaven Frauen 26-44"
+msgstr "Sklavinnen 26-44"
 
 msgid "Slave females 45 and over"
-msgstr "Sklaven Frauen 45 und älter"
+msgstr "Sklavinnen 45 und älter"
 
 msgid "Free colored males under 14"
-msgstr "Frei farbig männlich unter 14"
+msgstr "Freie dunkelhäutig männlich unter 14"
 
 msgid "Free colored males 14-25"
-msgstr "Frei farbig männlich 14-25"
+msgstr "Freie dunkelhäutig männlich 14-25"
 
 msgid "Free colored males 26-44"
-msgstr "Frei farbig männlich 26-44"
+msgstr "Freie dunkelhäutig männlich 26-44"
 
 msgid "Free colored males 45 and over"
-msgstr "Frei farbig männlich 45 und älter"
+msgstr "Freie dunkelhäutig männlich 45 und älter"
 
 msgid "Free colored females under 14"
-msgstr "Frei farbig weiblich unter 14"
+msgstr "Freie dunkelhäutig weiblich unter 14"
 
 msgid "Free colored females 14-25"
-msgstr "Frei farbig weiblich 14-25"
+msgstr "Freie dunkelhäutig weiblich 14-25"
 
 msgid "Free colored females 26-44"
-msgstr "Frei farbig weiblich 26-44"
+msgstr "Freie dunkelhäutig weiblich 26-44"
 
 msgid "Free colored females 45 and over"
-msgstr "Frei farbig weiblich 45 und älter"
+msgstr "Freie dunkelhäutig weiblich 45 und älter"
 
 msgid "Free white males under 5"
-msgstr "Frei weiß männlich unter 5"
+msgstr "Freie weiß männlich unter 5"
 
 msgid "Free white males 5-9"
-msgstr "Frei weiß männlich 5-9"
+msgstr "Freie weiß männlich 5-9"
 
 msgid "Free white males 10-14"
-msgstr "Frei weiß männlich 10-14"
+msgstr "Freie weiß männlich 10-14"
 
 msgid "Free white males 15-20"
-msgstr "Frei weiß männlich 15-20"
+msgstr "Freie weiß männlich 15-20"
 
 msgid "Free white males 20-29"
-msgstr "Frei weiß männlich 20-29"
+msgstr "Freie weiß männlich 20-29"
 
 msgid "Free white males 30-39"
-msgstr "Frei weiß männlich 30-39"
+msgstr "Freie weiß männlich 30-39"
 
 msgid "Free white males 40-49"
-msgstr "Frei weiß männlich 40-49"
+msgstr "Freie weiß männlich 40-49"
 
 msgid "Free white males 50-59"
-msgstr "Frei weiß männlich 50-59"
+msgstr "Freie weiß männlich 50-59"
 
 msgid "Free white males 60-69"
-msgstr "Frei weiß männlich 60-69"
+msgstr "Freie weiß männlich 60-69"
 
 msgid "Free white males 70-79"
-msgstr "Frei weiß männlich 70-79"
+msgstr "Freie weiß männlich 70-79"
 
 msgid "Free white males 80-89"
-msgstr "Frei weiß männlich 80-89"
+msgstr "Freie weiß männlich 80-89"
 
 msgid "Free white males 90-99"
-msgstr "Frei weiß männlich 90-99"
+msgstr "Freie weiß männlich 90-99"
 
 msgid "Free white males 100 and over"
-msgstr "Frei weiß männlich 100 und älter"
+msgstr "Freie weiß männlich 100 und älter"
 
 msgid "Free white females under 5"
-msgstr "Frei weiß weiblich unter 5"
+msgstr "Freie weiß weiblich unter 5"
 
 msgid "Free white females 5-9"
-msgstr "Frei weiß weiblich 5-9"
+msgstr "Freie weiß weiblich 5-9"
 
 msgid "Free white females 10-14"
-msgstr "Frei weiß weiblich 10-14"
+msgstr "Freie weiß weiblich 10-14"
 
 msgid "Free white females 15-20"
-msgstr "Frei weiß weiblich 15-20"
+msgstr "Freie weiß weiblich 15-20"
 
 msgid "Free white females 20-29"
-msgstr "Frei weiß weiblich 20-29"
+msgstr "Freie weiß weiblich 20-29"
 
 msgid "Free white females 30-39"
-msgstr "Frei weiß weiblich 30-39"
+msgstr "Freie weiß weiblich 30-39"
 
 msgid "Free white females 40-49"
-msgstr "Frei weiß weiblich 40-49"
+msgstr "Freie weiß weiblich 40-49"
 
 msgid "Free white females 50-59"
-msgstr "Frei weiß weiblich 50-59"
+msgstr "Freie weiß weiblich 50-59"
 
 msgid "Free white females 60-69"
-msgstr "Frei weiß weiblich 60-69"
+msgstr "Freie weiß weiblich 60-69"
 
 msgid "Free white females 70-79"
-msgstr "Frei weiß weiblich 70-79"
+msgstr "Freie weiß weiblich 70-79"
 
 msgid "Free white females 80-89"
-msgstr "Frei weiß weiblich 80-89"
+msgstr "Freie weiß weiblich 80-89"
 
 msgid "Free white females 90-99"
-msgstr "Frei weiß weiblich 90-99"
+msgstr "Freie weiß weiblich 90-99"
 
 msgid "Free white females 100 and over"
-msgstr "Frei weiß weiblich 100 und älter"
+msgstr "Freie weiß weiblich 100 und älter"
 
 msgid "Slave males under 10"
-msgstr "Sklaven Männer unter 10"
+msgstr "Sklaven männlich unter 10"
 
 msgid "Slave males 10-23"
-msgstr "Sklave Männer 10-23"
+msgstr "Sklaven männlich 10-23"
 
 msgid "Slave males 24-35"
-msgstr "Sklaven Männer 24-35"
+msgstr "Sklaven männlich 24-35"
 
 msgid "Slave males 36-54"
-msgstr "Sklaven Männer 36-54"
+msgstr "Sklaven männlich 36-54"
 
 msgid "Slave males 55-99"
-msgstr "Sklaven Männer 55-99"
+msgstr "Sklaven männlich 55-99"
 
 msgid "Slave males 100 and over"
 msgstr "Sklaven männlich 100 und älter"
 
 msgid "Slave females under 10"
-msgstr "Sklaven Frauen unter 10"
+msgstr "Sklavinnen unter 10"
 
 msgid "Slave females 10-23"
-msgstr "Sklaven Frauen 10-23"
+msgstr "Sklavinnen 10-23"
 
 msgid "Slave females 24-35"
-msgstr "Sklaven Frauen 24-35"
+msgstr "Sklavinnen 24-35"
 
 msgid "Slave females 36-54"
-msgstr "Sklaven Frauen 36-54"
+msgstr "Sklavinnen 36-54"
 
 msgid "Slave females 55-99"
-msgstr "Sklaven Frauen 55-99"
+msgstr "Sklavinnen 55-99"
 
 msgid "Slave females 100 and over"
-msgstr "Sklaven Frauen 100 und älter"
+msgstr "Sklavinnen 100 und älter"
 
 msgid "Free colored males under 10"
-msgstr "Frei farbig männlich unter 10"
+msgstr "Freie dunkelhäutig männlich unter 10"
 
 msgid "Free colored males 10-23"
-msgstr "Frei farbig männlich 10-23"
+msgstr "Freie dunkelhäutig männlich 10-23"
 
 msgid "Free colored males 24-35"
-msgstr "Frei farbig männlich 24-35"
+msgstr "Freie dunkelhäutig männlich 24-35"
 
 msgid "Free colored males 36-54"
-msgstr "Frei farbig männlich 36-54"
+msgstr "Freie dunkelhäutig männlich 36-54"
 
 msgid "Free colored males 55-99"
-msgstr "Frei farbig männlich -55-99"
+msgstr "Freie dunkelhäutig männlich -55-99"
 
 msgid "Free colored males 100 and over"
-msgstr "Frei farbig männlich 100 und älter"
+msgstr "Freie dunkelhäutig männlich 100 und älter"
 
 msgid "Free colored females under 10"
-msgstr "Frei farbig weiblich unter 10"
+msgstr "Freie dunkelhäutig weiblich unter 10"
 
 msgid "Free colored females 10-23"
-msgstr "Frei farbig weiblich 10-23"
+msgstr "Freie dunkelhäutig weiblich 10-23"
 
 msgid "Free colored females 24-35"
-msgstr "Frei farbig weiblich 24-35"
+msgstr "Freie dunkelhäutig weiblich 24-35"
 
 msgid "Free colored females 36-54"
-msgstr "Frei farbig weiblich 36-54"
+msgstr "Freie dunkelhäutig weiblich 36-54"
 
 msgid "Free colored females 55-99"
-msgstr "Frei farbig weiblich -55-99"
+msgstr "Freie dunkelhäutig weiblich -55-99"
 
 msgid "Free colored females 100 and over"
-msgstr "Frei farbig weiblich 100 und älter"
+msgstr "Freie dunkelhäutig weiblich 100 und älter"
 
 msgid "White persons deaf/dumb under 14"
 msgstr "Weiße Personen taub/stumm unter 14 Jahren"
@@ -340,138 +340,145 @@ msgid "White persons deaf/dumb 25 and over"
 msgstr "Weiße Personen taub/stumm 25 und älter"
 
 msgid "White persons blind"
-msgstr "Weiße Person blind"
+msgstr "Weiße Personen blind"
 
 msgid "Aliens"
 msgstr "Ausländer"
 
 msgid "Slaves and colored persons deaf/dumb under 14"
-msgstr "Sklaven und Farbige Personen taub/stumm unter 14 Jahren"
+msgstr "Sklaven und dunkelhäutige Personen taub/stumm unter 14 Jahren"
 
 msgid "Slaves and colored persons deaf/dumb 14-24"
-msgstr "Sklaven und Farbige Personen taub/stumm 14-24"
+msgstr "Sklaven und dunkelhäutige Personen taub/stumm 14-24"
 
 msgid "Slaves and colored persons deaf/dumb 25 and over"
-msgstr "Sklaven und Farbige Personen taub/stumm 25 und älter"
+msgstr "Sklaven und dunkelhäutige Personen taub/stumm 25 und älter"
 
 msgid "Slaves and colored persons blind"
-msgstr "Sklaven und Farbige blind"
+msgstr "Sklaven und dunkelhäutige Personen blind"
 
 msgid "Persons employed in Mining"
-msgstr "Personen beschäftigt im Bergbau"
+msgstr "Im Bergbau beschäftigte Personen"
 
 msgid "Persons employed in Agriculture"
-msgstr "Personen beschäftigt in der Landwirtschaft"
+msgstr "In der Landwirtschaft beschäftigte Personen"
 
 msgid "Persons employed in Commerce"
-msgstr "Im Handel beschäftigte Personen"
+msgstr "Im Gewerbe beschäftigte Personen"
 
 msgid "Persons employed in Manufacture and trade"
-msgstr "Personen, die in der Herstellung und im Handel beschäftigt sind"
+msgstr "Personen, die in der Fertigung und im Handel beschäftigt sind"
 
 msgid "Persons employed in Navigation of the ocean"
-msgstr "Personen, die in der Navigation des Ozeans beschäftigt sind"
+msgstr "Personen, die in der Seeschifffahrt beschäftigt sind"
 
 msgid "Persons employed in Navigation of canals, lakes, rivers"
 msgstr ""
-"Personen, die in der Schifffahrt von Kanälen, Seen und Flüssen beschäftigt "
+"Personen, die in der Schifffahrt auf Kanälen, Seen und Flüssen beschäftigt "
 "sind"
 
 msgid "Learned professional engineers"
-msgstr "Gelernte professionelle Ingenieure"
+msgstr "Ausgebildete Ingenieure"
 
 msgid "Names of pensioners for Revolutionary or military services"
-msgstr "Namen von Rentnern für Revolutions- oder Militärdienste"
+msgstr "Namen von Pensionären für revolutionäre oder militärische Dienste"
 
 msgid "Ages"
 msgstr "Alter"
 
 msgid "White persons insane and idiots at public charge"
-msgstr "Weiße Personen Wahnsinnige und Idioten unter öffentlicher Aufsicht"
+msgstr ""
+"Weiße Personen, die geisteskrank und schwachsinnig sind und zu Lasten der "
+"öffentlichen Hand leben"
 
 msgid "White persons insane and idiots at private charge"
-msgstr "Weiße Personen Wahnsinnige und Idioten unter privater Aufsicht"
+msgstr ""
+"Weiße Personen, die geisteskrank oder schwachsinnig sind, auf eigene Kosten"
 
 msgid "Colored persons deaf/dumb"
-msgstr "Farbige Personen taub/stumm"
+msgstr "Dunkelhäutige Personen, taubstumm"
 
 msgid "Colored persons blind"
-msgstr "Farbige Personen blind"
+msgstr "Dunkelhäutige Personen blind"
 
 msgid "Colored persons insane and idiots at private charge"
-msgstr "Farbige Personen Wahnsinnige und Idioten unter privater Aufsicht"
+msgstr ""
+"Dunkelhäutige Personen, Geisteskranke und Schwachsinnige auf private Kosten"
 
 msgid "Colored persons insane and idiots at public charge"
-msgstr "Farbige Personen Wahnsinnige und Idioten unter öffentlicher Aufsicht"
+msgstr ""
+"Dunkelhäutige Personen, die geisteskrank sind, und Schwachsinnige, die zu "
+"Lasten der öffentlichen Hand leben"
 
 msgid "Universities or college"
-msgstr "Universitäten oder Hochschule"
+msgstr "Universitäten oder Colleges"
 
 msgid "Number of students"
 msgstr "Anzahl der Studenten"
 
 msgid "Academies and Grammar Schools"
-msgstr "Akademien und Mittelschulen"
+msgstr "Akademien und Grammar Schools"
 
 msgid "No. of scholars"
-msgstr "Anzahl der Schüler"
+msgstr "Anzahl der Stipendiaten"
 
 msgid "Primary and Common Schools"
-msgstr "Grund- und Gemeinschaftsschulen"
+msgstr "Grundschulen und Common Schools"
 
 msgid "No. of scholars at public charge"
-msgstr "Anzahl der Wissenschaftler öffentlich bezahlt"
+msgstr "Anzahl der Stipendiaten auf öffentliche Kosten"
 
 msgid "White persons illiterate over 20"
-msgstr "Weiße Personen Analphabeten über 20 Jahre"
+msgstr "Weiße Menschen mit Analphabetismus über 20"
 
 msgid "State of"
-msgstr "Staat von"
+msgstr "Staat"
 
 msgid "Line No."
 msgstr "Zeilennr."
 
 msgid "Family No."
-msgstr "FamilieNr."
+msgstr "Familie Nr."
 
 msgid "Sex"
 msgstr "Geschlecht"
 
 msgid "Value of real estate"
-msgstr "Wert der Immobilien"
+msgstr "Wert von Immobilien"
 
 msgid "Place of birth"
 msgstr "Geburtsort"
 
 msgid "Married within the year"
-msgstr "Innerhalb des Jahres verheiratet"
+msgstr "Innerhalb des Jahres geheiratet"
 
 msgid "Attended school within the year"
-msgstr "Schulbesuch innerhalb des Jahres"
+msgstr "Im Laufe des Jahres die Schule besucht"
 
 msgid "Illiterate and over 20"
-msgstr "Analphabeten und über 20"
+msgstr "Analphabet und über 20"
 
 msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
-msgstr "Taub, stumm, blind, verrückt, idiotisch, arm oder verurteilt"
+msgstr ""
+"Taub, stumm, blind, geisteskrank, schwachsinnig, mittellos oder vorbestraft"
 
 msgid "Production of Agriculture in"
-msgstr "Produktion der Landwirtschaft in"
+msgstr "Landwirtschaftliche Produktion in"
 
 msgid "in the County of"
-msgstr "in dem Landkreis von"
+msgstr "im Landkreis"
 
 msgid "Owner, Agent, or Manager"
-msgstr "Eigentümer, Agent oder Manager"
+msgstr "Eigentümer, Vertreter oder Verwalter"
 
 msgid "Acres Improved"
-msgstr "Acres Kultiviert"
+msgstr "Acres bewirtschaftet"
 
 msgid "Acres Unimproved"
-msgstr "Acres Unerschlossen"
+msgstr "Acres unbewirtschaftet"
 
 msgid "Cash Value of Farm"
-msgstr "Barwert der Farm"
+msgstr "Barwert des landwirtschaftlichen Betriebs"
 
 msgid "Value of Farming Implements and Machinery"
 msgstr "Wert von landwirtschaftlichen Geräten und Maschinen"
@@ -489,7 +496,7 @@ msgid "Working Oxen"
 msgstr "Arbeitsochsen"
 
 msgid "Other Cattle"
-msgstr "Anderes Vieh"
+msgstr "Andere Rinder"
 
 msgid "Sheep"
 msgstr "Schafe"
@@ -498,7 +505,7 @@ msgid "Swine"
 msgstr "Schweine"
 
 msgid "Value of Live Stock"
-msgstr "Wert des Viehbestand"
+msgstr "Wert des Viehbestands"
 
 msgid "Wheat"
 msgstr "Weizen"
@@ -543,7 +550,7 @@ msgid "Wine"
 msgstr "Wein"
 
 msgid "Value of Market Gardens"
-msgstr "Wert des Gemüseanbaus"
+msgstr "Wert von Gemüsegärten"
 
 msgid "Butter"
 msgstr "Butter"
@@ -564,7 +571,7 @@ msgid "Hops"
 msgstr "Hopfen"
 
 msgid "Hemp Dew Rotted"
-msgstr "Hanf Tau verrottet"
+msgstr "Hanftau verfault"
 
 msgid "Hemp Water Rotted"
 msgstr "Hanf Nass verottet"
@@ -591,124 +598,124 @@ msgid "Beeswax"
 msgstr "Bienenwachs"
 
 msgid "Value of Homemade Manufactures"
-msgstr "Wert der hausgemachte Fabrikationen"
+msgstr "Wert hausgemachter Erzeugnisse"
 
 msgid "Value of Animals Slaughtered"
 msgstr "Wert der geschlachteten Tiere"
 
 msgid "Post Office"
-msgstr "Post"
+msgstr "Postamt"
 
 msgid "Value of personal estate"
-msgstr "Wert des persönlichen Besitz"
+msgstr "Wert des persönlichen Vermögens"
 
 msgid "Live Stock June 1, 1860"
-msgstr "Viehbestand 1. Juni 1860"
+msgstr "Lebendviehbestand 1. Juni 1860"
 
 msgid "Produce during the year ending June 1, 1860"
-msgstr "Produziert im Jahr bis zum 1. Juni 1860"
+msgstr "Produktion im Geschäftsjahr bis zum 1. Juni 1860"
 
 msgid "Wheat, bushels of"
-msgstr "Weizen, bushels von"
+msgstr "Weizen, Bushel"
 
 msgid "Rye, bushels of"
-msgstr "Roggen, bushels von"
+msgstr "Roggen, Bushel"
 
 msgid "Indian Corn, bushels of"
-msgstr "Mais, bushels von"
+msgstr "Mais, Bushel"
 
 msgid "Oats, bushels of"
-msgstr "Hafer, bushels von"
+msgstr "Hafer, Bushel"
 
 msgid "Rice, pounds of"
-msgstr "Reis, pounds von"
+msgstr "Reis, Pound"
 
 msgid "Tobacco, pounds of"
-msgstr "Tabak, pounds von"
+msgstr "Tabak, Pound"
 
 msgid "Ginned Cotton, bales of 400 lbs."
 msgstr "Entkörnte Baumwolle, Ballen zu 400 englische Pfund"
 
 msgid "Wool, pounds of"
-msgstr "Wolle, pounds von"
+msgstr "Wolle, Pound"
 
 msgid "Peas and Beans, bushels of"
-msgstr "Erbsen und Bohnen, bushels von"
+msgstr "Erbsen und Bohnen, Bushel"
 
 msgid "Irish Potatoes, bushels of"
-msgstr "Irische Kartoffeln, bushels von"
+msgstr "Irische Kartoffeln, Bushel"
 
 msgid "Sweet Potatoes, bushels of"
-msgstr "Süßkartoffeln, bushels von"
+msgstr "Süßkartoffeln, Bushel"
 
 msgid "Barley, bushels of"
-msgstr "Gerste, bushels von"
+msgstr "Gerste, Bushel"
 
 msgid "Buckwheat, bushels of"
-msgstr "Buchweizen, bushels von"
+msgstr "Buchweizen, Bushel"
 
 msgid "Value of Orchard Products in $"
 msgstr "Wert der Obstgartenprodukte in $"
 
 msgid "Wine, gallons of"
-msgstr "Wein, Gallonen von"
+msgstr "Wein, Gallonen"
 
 msgid "Value of products of market gardens"
-msgstr "Wert der Produkte von Gärtnereien"
+msgstr "Wert der Produkte aus Gemüsegärten"
 
 msgid "Butter, pounds of"
-msgstr "Butter, pounds von"
+msgstr "Butter, Pound"
 
 msgid "Cheese, pounds of"
-msgstr "Käse, pounds von"
+msgstr "Käse, Pound"
 
 msgid "Hay, tons of"
-msgstr "Heu, Short tons von"
+msgstr "Heu, Short ton"
 
 msgid "Clover Seed, bushels of"
-msgstr "Kleessamen, bushels von"
+msgstr "Kleessamen, Bushel"
 
 msgid "Other Grass Seeds, bushels of"
-msgstr "Andere Grassamen. bushels von"
+msgstr "Andere Grassamen. Bushel"
 
 msgid "Hops, pounds of"
-msgstr "Hopfen, pounds von"
+msgstr "Hopfen, Pound"
 
 msgid "Hemp Dew Rotted, tons of"
-msgstr "Hanf Tau verrottet, Short tons von"
+msgstr "Hanftau verfault, Short ton"
 
 msgid "Hemp Water Rotted, tons of"
 msgstr "Hanf Nass verottet, Short tons von"
 
 msgid "Flax, pounds of"
-msgstr "Flachs, pounds von"
+msgstr "Flachs, Pound"
 
 msgid "Flaxseed, bushels of"
-msgstr "Flachssamen, bushels von"
+msgstr "Flachssamen, Bushel"
 
 msgid "Silk Cocoons, pounds of"
-msgstr "Seidenkokons, pounds von"
+msgstr "Seidenkokons, Pound"
 
 msgid "Maple Sugar, pounds of"
-msgstr "Ahornzucker, pounds von"
+msgstr "Ahornzucker, Pound"
 
 msgid "Cane sugar, hogshead of 1,000 pounds"
-msgstr "Rohrzucker, Tonne von 1.000 pounds"
+msgstr "Rohrzucker, Fass zu 1.000 Pound"
 
 msgid "Molasses, gallons of"
-msgstr "Melasse, Gallonen von"
+msgstr "Melasse, Gallonen"
 
 msgid "Beeswax, pounds of"
-msgstr "Bienenwachs, pounds von"
+msgstr "Bienenwachs, Pound"
 
 msgid "Honey, pounds of"
-msgstr "Honig, pounds von"
+msgstr "Honig, Pound"
 
 msgid "Value of home-made manufactures"
-msgstr "Wert der hausgemachte Fabrikationen"
+msgstr "Wert von selbst hergestellten Erzeugnissen"
 
 msgid "Persons who Died during the Year ending 1 June 1860 in"
-msgstr "Personen, die während des am 1. Juni 1860 endenden Jahres starben"
+msgstr "Personen, die im Jahr bis zum 1. Juni 1860 verstorben sind in"
 
 msgid "Free or slave"
 msgstr "Frei oder Sklave"
@@ -717,25 +724,25 @@ msgid "Married or widowed"
 msgstr "Verheiratet oder verwitwet"
 
 msgid "Month in which person died"
-msgstr "Monat in dem die Person starb"
+msgstr "Monat, in dem die Person verstorben ist"
 
 msgid "Cause of death"
 msgstr "Todesursache"
 
 msgid "Number of days ill"
-msgstr "Anzahl Tage krank"
+msgstr "Anzahl der Krankheitstage"
 
 msgid "Father of foreign birth"
-msgstr "Vater ausländischer Geburt"
+msgstr "Vater ausländischer Herkunft"
 
 msgid "Mother of foreign birth"
-msgstr "Mutter ausländischer Geburt"
+msgstr "Mutter ausländischer Herkunft"
 
 msgid "Month, if born within the year"
 msgstr "Monat, wenn innerhalb des Jahres geboren"
 
 msgid "Month, if married within the year"
-msgstr "Monat, wenn innerhalb des Jahres verheiratet"
+msgstr "Monat, wenn innerhalb des Jahres geheiratet wurde"
 
 msgid "Cannot read"
 msgstr "Kann nicht lesen"
@@ -744,26 +751,26 @@ msgid "Cannot write"
 msgstr "Kann nicht schreiben"
 
 msgid "Deaf, dumb, blind, insane or idiotic"
-msgstr "Taub, stumm, blind, verrückt oder idiotisch"
+msgstr "Taub, stumm, blind, geisteskrank oder schwachsinnig"
 
 msgid "Male citizen 21 and over"
-msgstr "Männliche Staatsbürger 21 und älter"
+msgstr "Männliche Staatsbürger über 21 Jahre"
 
 msgid ""
 "Male citizen 21 and over where right to vote is denied on grounds other than "
 "rebellion or other crime"
 msgstr ""
-"Männlicher Staatsbürger ab 21 Jahren, bei denen das Wahlrecht aus anderen "
+"Männliche Staatsbürger über 21 Jahre, denen das Wahlrecht aus anderen "
 "Gründen als Rebellion oder anderen Straftaten verweigert wird"
 
 msgid "Supervisor's Dist. No."
-msgstr "Supervisor's Bezirk Nr."
+msgstr "Distriktnummer des Vorgesetzten"
 
 msgid "Enumeration Dist. No."
 msgstr "Zählbezirk Nr."
 
 msgid "Month, if born within the census year"
-msgstr "Monat, wenn innerhalb des Volkszählungsjahres geboren"
+msgstr "Monat, wenn innerhalb des Erhebungsjahres geboren"
 
 msgid "Relationship to head"
 msgstr "Beziehung zum Oberhaupt"
@@ -775,19 +782,19 @@ msgid "Widowed, divorced"
 msgstr "Verwitwet, geschieden"
 
 msgid "Married during the census year"
-msgstr "Verheiratet während des Volkszählungsjahres"
+msgstr "Im Jahr der Volkszählung geheiratet"
 
 msgid "Number of months unemployed during the census year"
-msgstr "Monate arbeitslos während des Volkszählungsjahres"
+msgstr "Anzahl der Monate, in denen die Person im Erhebungsjahr arbeitslos war"
 
 msgid "Illness on day of enumeration"
-msgstr "Krank am Tag der Aufzählung"
+msgstr "Krankheit am Tag der Erhebung"
 
 msgid "Blind"
 msgstr "Blind"
 
 msgid "Deaf and dumb"
-msgstr "Taub und Stumm"
+msgstr "Taubstumm"
 
 msgid "Idiotic"
 msgstr "Schwachsinnig"
@@ -799,7 +806,7 @@ msgid "Maimed, crippled, bedridden, or otherwise disabled"
 msgstr "Verstümmelt, verkrüppelt, bettlägerig oder anderweitig behindert"
 
 msgid "Attended school within the census year"
-msgstr "Schulbesuch innerhalb des Volkszählungsjahres"
+msgstr "Im Erhebungsjahr die Schule besucht"
 
 msgid "Place of birth of father"
 msgstr "Geburtsort des Vater"
@@ -811,7 +818,7 @@ msgid "Owner"
 msgstr "Eigentümer"
 
 msgid "Rents for fixed money"
-msgstr "Mieten für festes Geld"
+msgstr "Zinsen für Festgelder"
 
 msgid "Rents for share of products"
 msgstr "Mieten für Anteil der Produkte"
@@ -823,7 +830,7 @@ msgid "Acres Permanent Meadows, Pastures, Orchards, Vineyards"
 msgstr "Acres Ständige Wiesen, Weiden, Obstgärten, Weinberge"
 
 msgid "Acres Woodland and forest"
-msgstr "Acres Waldgelände und Wald"
+msgstr "Acres Gehölz und Wald"
 
 msgid "Acres Other unimproved land"
 msgstr "Acres Anderes unkultiviertes Land"
@@ -844,10 +851,10 @@ msgid "Farm Labor Hiring 1879"
 msgstr "Einstellung von Landarbeitern 1879"
 
 msgid "Weeks hired labor in 1879"
-msgstr "Wochen beschäftigte Arbeitskräfte 1879"
+msgstr "Wochen angestellte Arbeitskräfte im Jahr 1879"
 
 msgid "Estimated value of all farm productions for 1879"
-msgstr "Geschätzter Wert aller landwirtschaftlichen Produktionen für 1879"
+msgstr "Geschätzter Wert aller landwirtschaftlichen Erzeugnisse für 1879"
 
 msgid "Acreage Grass Lands Mown in 1879"
 msgstr "Grasland 1879 gemäht"
@@ -1710,7 +1717,7 @@ msgid "Married Y/N"
 msgstr "Verheiratet J/N"
 
 msgid "Spouses Age"
-msgstr "Alter des Ehepartners"
+msgstr "Alter der Ehepartner"
 
 msgid "File No."
 msgstr "Aktennr."
@@ -1918,7 +1925,7 @@ msgid "Born within census year"
 msgstr "Geborten im Volkszählungsjahr"
 
 msgid "Married during census year"
-msgstr "Verheiratet während des Volkszählungsjahres"
+msgstr "Im Jahr der Volkszählung geheiratet"
 
 msgid "Months unemployed during census year"
 msgstr "Anzahl der Monate arbeitslos während des Volkszählungsjahres"
@@ -1927,7 +1934,7 @@ msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
 msgstr "(Tag des Besuchs der Zählers) krank oder vorübergehend verhindert"
 
 msgid "Deaf and Dumb"
-msgstr "Taub und Stumm"
+msgstr "Taubstumm"
 
 msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
 msgstr "Verstümmelt, verkrüppelt, bettlägerig oder anderweitig behindert."
@@ -3798,7 +3805,7 @@ msgid "Volume Beginning Year"
 msgstr "Band Anfangsjahr"
 
 msgid "Volume Ending Year"
-msgstr "Band Endejahr"
+msgstr "Band Endjahr"
 
 msgid "Amt"
 msgstr "Amt"
@@ -4442,10 +4449,10 @@ msgid "Working at Home"
 msgstr "Arbeitet Zuhause"
 
 msgid "District Electoral Division"
-msgstr "Wahlbezirksabteilung"
+msgstr "Wahlkreisbezirk"
 
 msgid "Townland"
-msgstr "Landgut"
+msgstr "Gemeindegebiet"
 
 msgid "No. on Form B"
 msgstr "Nummer auf Formular B"
@@ -4470,13 +4477,13 @@ msgstr ""
 "\"Geisteskranker\""
 
 msgid "Poor Law Union"
-msgstr "Armenrecht Gewerkschaft"
+msgstr "Armenfürsorgeverband"
 
 msgid "Barony"
 msgstr "Herrschaft"
 
 msgid "Urban District"
-msgstr "Kreisfreie Stadt"
+msgstr "Stadtbezirk"
 
 msgid "Head of Family"
 msgstr "Familienoberhaupt"
@@ -4485,7 +4492,7 @@ msgid "Total Children"
 msgstr "Gesamtzahl der Kinder"
 
 msgid "Children born alive to present Marriage"
-msgstr "Kinder, die lebend geboren wurden in gegenwärtiger Ehe"
+msgstr "Lebend geborene Kinder in gegenwärtiger Ehe"
 
 msgid "EnumDistrict"
 msgstr "Zählbezirk"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Descendant Book"
 msgstr "Libro discendenza"
@@ -32,7 +32,7 @@ msgstr ""
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
-msgstr "sp. vedi %(reference)s : %(spouse)s"
+msgstr "coniug. vedi  %(reference)s : %(spouse)s"
 
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
@@ -77,6 +77,18 @@ msgstr "Generazione di %s riferimenti del resoconto..."
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr "%(report_count)s. Resoconto discendenza di %(person_name)s"
+
+msgid "Index of Places"
+msgstr "Indice dei luoghi"
+
+msgid "Index of Dates"
+msgstr "Indice delle date"
+
+msgid "Index of Names"
+msgstr "Indice dei nomi"
+
+msgid "Report, Generation, Person, Name"
+msgstr "Resoconto, Generazione, Persona, Nome"
 
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
@@ -165,7 +177,7 @@ msgstr ""
 "Indica se includere o meno l'Indice dei luoghi alla fine del resoconto."
 
 msgid "The style used for the children list."
-msgstr "Lo stile usato per la elenco dei figli."
+msgstr "Lo stile usato per l'elenco dei figli."
 
 msgid "The basic style used for Note header."
 msgstr "Lo stile di base usato per l'intestazione delle note."

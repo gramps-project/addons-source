@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-07-30 08:11+0000\n"
+"PO-Revision-Date: 2025-08-23 15:02+0000\n"
 "Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -13,18 +13,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
+msgid "Detailed Descendant Report With All Images"
+msgstr "Szczegółowy raport potomków ze wszystkimi obrazami"
+
+msgid ""
+"Produces a detailed descendant report with all images and optional todo list."
+msgstr ""
+"Tworzy szczegółowy raport potomków ze wszystkimi obrazami i opcjonalną listą "
+"zadań do wykonania."
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
 
+#, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr "%(event_name)s: %(event_text)s"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
 msgid "List children"
 msgstr "Wypisz dzieci"
 
+msgid "Add descendant reference in child list"
+msgstr "Dodaj odniesienia do potomków w liście dzieci"
+
+msgid "Include TODO notes"
+msgstr "Dołącz notatki zadań do wykonania"
+
+msgid "Whether to include TODO notes."
+msgstr "Określa, czy dołączać notatki zadań do wykonania."
+
 msgid "The style used for the title of the page."
 msgstr "Styl używany do tytułu strony."
+
+msgid "The style used for the children list."
+msgstr "Styl używany do listy dzieci."
+
+msgid "The style used for the first personal entry."
+msgstr "Styl używany do pierwszego wpisu osobowego."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "Styl używany do nagłówka 'Więcej informacji' i nagłówków małżonków."
+
+msgid "The style used for additional detail data."
+msgstr "Styl używany do dodatkowych danych szczegółowych."
+
+msgid "The style used for image labels."
+msgstr "Styl używany do etykiet obrazów."
+
+msgid "A style used for image captions."
+msgstr "Styl używany do podpisów obrazów."

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Detailed Descendant Report With All Images"
+msgstr "Resoconto dettagliato dei discendenti con tutte le immagini"
+
+msgid ""
+"Produces a detailed descendant report with all images and optional todo list."
+msgstr ""
+"Produce un resoconto dettagliato dei discendenti con tutte le immagini e la "
+"lista opzionale delle cose da fare."
 
 #, python-format
 msgid "%(date)s, %(place)s"
@@ -44,11 +53,17 @@ msgstr "Elenca i figli"
 msgid "Add descendant reference in child list"
 msgstr "Aggiungi riferimento all'antenato nella elenco dei figli"
 
+msgid "Include TODO notes"
+msgstr "Include le note sulle cose da fare"
+
+msgid "Whether to include TODO notes."
+msgstr "Indica se includere le cose da fare."
+
 msgid "The style used for the title of the page."
 msgstr "Lo stile usato per il titolo della pagina."
 
 msgid "The style used for the children list."
-msgstr "Lo stile usato per la elenco dei figli."
+msgstr "Lo stile usato per l'elenco dei figli."
 
 msgid "The style used for the first personal entry."
 msgstr "Lo stile usato la prima registrazione personale."
@@ -60,3 +75,9 @@ msgstr ""
 
 msgid "The style used for additional detail data."
 msgstr "Lo stile usato per i dettagli addizionali."
+
+msgid "The style used for image labels."
+msgstr "Lo stile usato per le etichette delle immagini."
+
+msgid "A style used for image captions."
+msgstr "Uno stile usato per le didascalie delle immagini."

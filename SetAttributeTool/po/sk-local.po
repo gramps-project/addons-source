@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"PO-Revision-Date: 2025-09-05 10:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,16 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 
 msgid "Select filter to restrict people"
 msgstr "Vyberte filter na obmedzenie osôb"
 
+msgid "Attribute type to add or edit"
+msgstr "Typ atribútu na pridanie alebo úpravu"
+
+msgid "Attribute value to add or edit"
+msgstr "Hodnota atribútu na pridanie alebo úpravu"
+
+msgid "Remove attribute type and value set"
+msgstr "Odstrániť typ atribútu a nastavenú hodnotu"
+
 msgid "Set Attribute"
-msgstr "Nastaviť atribút"
+msgstr "Nastavenie atribútu"
 
 msgid "Processing...\n"
 msgstr "Spracovávanie...\n"
+
+msgid "Setting attributes..."
+msgstr "Nastavenie atribútov..."
+
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr ""
+"Nastavenie atribútov '%s' na '%s'...\n"
+"\n"
+
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Nastaviť %d atribútov '%s' na '%s'\n"
 
 msgid "Remove Attribute"
 msgstr "Odstrániť atribút"
@@ -29,5 +57,16 @@ msgstr "Odstrániť atribút"
 msgid "Removing attributes..."
 msgstr "Odstraňovanie atribútov..."
 
+#, python-format
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Odstraňovanie %d atribútov '%s' na '%s'\n"
+
 msgid "Done!\n"
 msgstr "Hotovo!\n"
+
+msgid "Set an attribute to a given value."
+msgstr "Nastavte atribút k zadanej hodnote."

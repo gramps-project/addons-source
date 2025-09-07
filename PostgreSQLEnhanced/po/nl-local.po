@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-12 19:09+0300\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-08-16 05:47+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,16 +12,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
+
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr "Object {obj_type}:{handle} is gewijzigd door een andere gebruiker"
 
 msgid "Starting migration..."
 msgstr "Migratie starten…"
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "%s objecten migreren…"
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "%s {obj_type} objecten gemigreerd"
 
 msgid "Migration completed!"
 msgstr "Migratie voltooid!"
 
 msgid "Starting upgrade..."
 msgstr "Bijwerking starten…"
+
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "%s objecten bijwerken…"
 
 msgid "Creating indexes..."
 msgstr "Indexen aanmaken…"
@@ -34,6 +50,17 @@ msgstr "PostgreSQL Enhanced"
 
 msgid "PostgreSQL _Enhanced Database"
 msgstr "PostgreSQL _Enhanced database"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"Geavanceerde PostgreSQL-backend met JSONB-opslag, ondersteuning voor "
+"grafiekdatabases (Apache AGE), vectorovereenkomst (pgvector) en AI/ML-"
+"mogelijkheden. Voor gevorderde gebruikers. Vereist PostgreSQL 15+ met "
+"extensies. Compatibel met Gramps Web."
 
 msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
@@ -81,6 +108,11 @@ msgstr "Migratiebheer niet geïnitialiseerd"
 
 msgid "Enhanced queries require JSONB support"
 msgstr "Verbeterde zoekopdrachten vereisen JSONB-ondersteuning"
+
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr ""
+"Voor zoeken in volledige tekst zijn JSONB-ondersteuning of "
+"-zoekmogelijkheden vereist"
 
 msgid "pg_trgm extension required for duplicate detection"
 msgstr "pg_trgm-extensie vereist voor detectie van duplicaten"

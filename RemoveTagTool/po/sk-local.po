@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"PO-Revision-Date: 2025-09-05 10:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,10 +12,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.13.1-rc\n"
+
+msgid "The Tool requires at least one tag to execute."
+msgstr "Nástroj vyžaduje na spustenie aspoň jednu značku."
+
+msgid "ERROR"
+msgstr "CHYBA"
+
+msgid "Add/Remove"
+msgstr "Pridať/Odstrániť"
 
 msgid "General options"
 msgstr "Všeobecné možnosti"
+
+msgid "Choose Tag"
+msgstr "Vybrať značku"
+
+msgid "Choose a tag to remove."
+msgstr "Vyberte značku na odstránenie."
 
 msgid "Persons"
 msgstr "Osoby"
@@ -27,8 +42,23 @@ msgstr "Možnosti filtra"
 msgid "All %s"
 msgstr "Všetky %s"
 
+msgid "Add/Remove Tag Tool"
+msgstr "Nástroj na pridanie/odstránenie značiek"
+
+msgid "WARNING"
+msgstr "UPOZORNENIE"
+
 msgid "Process tags..."
 msgstr "Spracovať štítky..."
 
+msgid "added"
+msgstr "pridané"
+
+msgid "removed"
+msgstr "odstránené"
+
 msgid "INFO"
 msgstr "INFO"
+
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "Pridajte alebo odstráňte značku zo skupín ľudí, udalostí atď."

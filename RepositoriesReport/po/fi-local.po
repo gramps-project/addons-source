@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-09-03 21:58+0000\n"
+"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,17 +12,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Repositories Report Options"
 msgstr "Arkistoraportin valinnat"
 
+msgid "Produces a textual repositories report"
+msgstr "Tuottaa tekstimuotoisen arkistoluettelon"
+
 msgid "Repositories Report"
 msgstr "Arkistoraportti"
 
+msgid "Publication information:"
+msgstr "Julkaisutiedot:"
+
+msgid "Data:"
+msgstr "Data:"
+
 msgid "Page:"
 msgstr "Sivu:"
+
+msgid "Selection with a filter"
+msgstr "Valinta suodatinta käyttäen"
+
+msgid "Include repository's urls"
+msgstr "Sisällytä arkiston URL-osoitteet"
 
 msgid "Whether to include urls on repository."
 msgstr "Näytetäänkö arkiston URL-osoitteet."
@@ -33,6 +48,9 @@ msgstr "Näytä arkiston osoite"
 msgid "Whether to include addresses on repository."
 msgstr "Sisällytetäänkö arkistoon osoitteet."
 
+msgid "Include source's author"
+msgstr "Sisällytä lähteen tekijä"
+
 msgid "Whether to include author."
 msgstr "Sisällytetäänkö tekijä."
 
@@ -41,6 +59,9 @@ msgstr "Sisällytä lähteen lyhenne"
 
 msgid "Whether to include abbreviation."
 msgstr "Sisällytetäänkö lähteen lyhenne."
+
+msgid "Include source's publication information"
+msgstr "Sisällytä lähteen julkaisutiedot"
 
 msgid "Whether to include publication information."
 msgstr "Sisällytetäänkö julkaisutiedot."
@@ -72,11 +93,20 @@ msgstr "Näytä yksityiset tiedot"
 msgid "Whether to include repositories and sources marked as private."
 msgstr "Sisällytetäänkö yksityisiksi merkityt arkistot ja lähteet."
 
+msgid "Display empty values"
+msgstr "Näytä tyhjät arvot"
+
 msgid "Whether to include key records with empty values."
 msgstr "Sisällytetäänkö avaintietueet, joissa on tyhjä arvo."
 
 msgid "The style used for the title of the report."
 msgstr "Raportin otsikon tyyli."
 
+msgid "The style used for repository title."
+msgstr "Arkiston nimikkeessä käytetty tyyli."
+
 msgid "The style used for each section."
 msgstr "Osioiden tyyli."
+
+msgid "The style used for child section."
+msgstr "Lapsiosiossa käytetty tyyli."

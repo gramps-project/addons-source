@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
@@ -22,7 +22,7 @@ msgid "Replace existing references to the person being assigned without asking"
 msgstr "Zamijeni postojeće reference s određenom osobom, bez pitanja"
 
 msgid "Face detection"
-msgstr "Pronalaženje lica"
+msgstr "Otkrivanje lica"
 
 msgid "Minimum face width (px)"
 msgstr "Minimala širina lica (px)"
@@ -31,7 +31,7 @@ msgid "Minimum face height (px)"
 msgstr "Minimala visina lica (px)"
 
 msgid "Detect faces inside existing boxes"
-msgstr "Pronađi lica unutar postojećih okvira"
+msgstr "Otkrij lica unutar postojećih okvira"
 
 msgid "Sensitivity (1 min .. 20 max)"
 msgstr "Osjetljivost (1 min. … 20 maks.)"
@@ -55,10 +55,13 @@ msgid "Zoom Out"
 msgstr "Umanji"
 
 msgid "Detect faces"
-msgstr "Pronađi lica"
+msgstr "Otkrij lica"
 
 msgid "Detect faces (OpenCV module required)"
-msgstr "Pronađi lica (potreban je OpenCV modul)"
+msgstr "Otkrij lica (potreban je OpenCV modul)"
+
+msgid "XMP Region Name"
+msgstr "XMP ime regije"
 
 msgid "Set as active person"
 msgstr "Postavi kao aktivnu osobu"
@@ -71,10 +74,10 @@ msgid "Replace to {0}"
 msgstr "Zamijeni na {0}"
 
 msgid "Detecting faces..."
-msgstr "Pronalaženje lica …"
+msgstr "Otkrivanje lica …"
 
 msgid "Detection finished"
-msgstr "Pronalaženje je završeno"
+msgstr "Otkrivanje je završeno"
 
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"

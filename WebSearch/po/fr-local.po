@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-07-26 15:44+0000\n"
+"PO-Revision-Date: 2025-08-31 06:05+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 msgid "Middle Name Handling"
 msgstr "Gestion du deuxième prénom"
@@ -65,11 +65,20 @@ msgstr "Clé de l'API Mistral"
 msgid "Mistral Model"
 msgstr "Modèle Mistral"
 
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Afficher les liens de l'onglet «Attributs»"
+
 msgid "Show Links From the 'Internet' tab"
 msgstr "Afficher les liens de l'onglet \"Internet»"
 
 msgid "Show Links From the Notes"
 msgstr "Afficher les liens des notes"
+
+msgid "Enable AI-generated historical place data"
+msgstr "Activer les données historiques de lieux générés par IA"
+
+msgid "Custom country code for AI notes (optional)"
+msgstr "Code de pays personnalisé pour les notes IA (facultatif)"
 
 msgid "Enable CSV Files"
 msgstr "Activer les fichiers CSV"
@@ -167,6 +176,9 @@ msgstr "Dernière récupération À :"
 
 msgid "QR-code"
 msgstr "QR-code"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Dépendances manquante \"qrcode\""
 
 msgid ""
 "⚠ Error generating QR code:\n"

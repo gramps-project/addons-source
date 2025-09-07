@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"PO-Revision-Date: 2025-09-05 10:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.13.1-rc\n"
+
+msgid "Repositories Report Options"
+msgstr "Možnosti správy o archívoch"
 
 msgid "Produces a textual repositories report"
 msgstr "Poskytuje textovú správu o archívoch"
@@ -20,11 +23,56 @@ msgstr "Poskytuje textovú správu o archívoch"
 msgid "Repositories Report"
 msgstr "Správa o archívoch"
 
+msgid "Publication information:"
+msgstr "Informácie o publikácii:"
+
+msgid "Data:"
+msgstr "Údaje:"
+
 msgid "Page:"
 msgstr "Strana:"
 
 msgid "Selection with a filter"
 msgstr "Výber pomocou filtra"
+
+msgid "Include repository's urls"
+msgstr "Zahrnúť URL adresy archívu"
+
+msgid "Whether to include urls on repository."
+msgstr "Či zahrnúť URL adresy archívu."
+
+msgid "Include repository's address"
+msgstr "Zahrnúť adresu archívu"
+
+msgid "Whether to include addresses on repository."
+msgstr "Či zahrnúť adresy archívu."
+
+msgid "Include source's author"
+msgstr "Zahrnúť autora zdroja"
+
+msgid "Whether to include author."
+msgstr "Či zahrnúť autora."
+
+msgid "Include source's abbreviation"
+msgstr "Zahrnúť skratku zdroja"
+
+msgid "Whether to include abbreviation."
+msgstr "Či zahrnúť skratku."
+
+msgid "Include source's publication information"
+msgstr "Zahrnúť informácie o publikácii zdroja"
+
+msgid "Whether to include publication information."
+msgstr "Či zahrnúť informácie o publikácii."
+
+msgid "Include source's data"
+msgstr "Zahrnúť údaje zdroja"
+
+msgid "Whether to include keys and values."
+msgstr "Či zahrnúť kľúče a hodnoty."
+
+msgid "Whether to include notes on repositories and sources."
+msgstr "Či zahrnúť poznámky k archívom a zdrojom."
 
 msgid "Whether to include media."
 msgstr "Či zahrnúť médiá."
@@ -37,6 +85,9 @@ msgstr "Či zahrnúť citácie zo zdrojov."
 
 msgid "Include private records"
 msgstr "Zahrnúť súkromné záznamy"
+
+msgid "Whether to include repositories and sources marked as private."
+msgstr "Či zahrnúť archívy a zdroje označené ako súkromné."
 
 msgid "Display empty values"
 msgstr "Zobraziť prázdne hodnoty"
@@ -52,3 +103,6 @@ msgstr "Štýl použitý pre názov archívu."
 
 msgid "The style used for each section."
 msgstr "Štýl použitý pre každú sekciu."
+
+msgid "The style used for child section."
+msgstr "Štýl použitý pre sekciu detí."

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,81 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Sort Children in Birth order"
+msgstr "Ordina i figli in ordine di nascita"
+
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"Controlla le famiglie cercando i figli che non sono in ordine di nascita. "
+"L'utente può correggere l'ordine accettando i suggerimenti uno alla volta, "
+"ordinare manualmente i figli, accettare tutte le famiglie che hanno tutti i "
+"figli con date corrette oppure accettare tutto."
+
+msgid "No families need sorting"
+msgstr "Nessuna famiglia ha bisogno di un riordino"
+
+msgid "No children were out of birth order."
+msgstr "Nessun figlio è fuori posizione."
+
+msgid "Edit Families"
+msgstr "Modifica famiglie"
+
+msgid "Looking for children birth order"
+msgstr "Ricerca ordine di nascita dei figli"
+
+msgid "Select the family you wish to examine."
+msgstr "Seleziona la famiglia che vuoi esaminare."
+
+msgid "Accept All"
+msgstr "Accetta tutto"
+
+msgid "This button will sort all of the families listed."
+msgstr "Questo pulsante ordinerà l'elenco di tutte le famiglie."
+
+msgid "Accept All *"
+msgstr "Accetta tutto *"
+
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"Questo pulsante ordinerà tutte le famiglie con '*'.  In queste famiglie "
+"tutti i figli hanno date valide, quindi l'ordine non è ambiguo."
+
+msgid "Accept"
+msgstr "Accetta"
+
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"Questo pulsante accetterà solo la famiglia selezionata e la salverà come "
+"mostrato nel riquadro in basso a destra."
 
 msgid "Done"
 msgstr "Fatto"
+
+msgid "This button will exit, with remaining families unchanged."
+msgstr "Questo pulsante farà uscire, lasciando invariate le altre famiglie."
+
+msgid "Current sort"
+msgstr "Ordine attuale"
+
+msgid "Proposed sort"
+msgstr "Ordine proposto"
+
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"Quando si è soddisfatti dell'ordine premere sul pulsante 'Accetta' per "
+"confermare le modifiche.  Se invece si vuole modificare l'ordine, "
+"selezionare il figlio che si vuole spostare e usare i tasti 'Su' o 'Giù' per "
+"spostarlo."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"PO-Revision-Date: 2025-09-05 10:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,13 +12,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.13.1-rc\n"
+
+msgid "Gramps Web Sync"
+msgstr "Gramps Web Sync"
+
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "Synchronizuje lokálnu databázu s inštanciou Gramps Web."
+
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Váš používateľ nemá dostatočné oprávnenia na serveri na používanie "
+"synchronizácie."
 
 msgid "Fetching remote data..."
 msgstr "Získavanie vzdialených údajov..."
 
+msgid "Media files are in sync."
+msgstr "Mediálne súbory sú synchronizované."
+
 msgid "Comparing local and remote data..."
 msgstr "Porovnávanie miestnych a vzdialených údajov..."
+
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr "Zmeny sa nedajú synchronizovať so serverom: objekty boli upravené."
 
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
@@ -45,7 +62,10 @@ msgstr ""
 "vzdialenom strome budete vyzvaní na potvrdenie.\n"
 "\n"
 "Ak chcete namiesto toho zlúčiť dva výrazne odlišné stromy s možnosťou "
-"vykonať ručné úpravy, použite namiesto toho nástroj Import Merge Tool."
+"vykonať ručné úpravy, použite namiesto toho nástroj na import a zlúčenie."
+
+msgid "Bidirectional Synchronization"
+msgstr "Obojsmerná synchronizácia"
 
 msgid "Local changes"
 msgstr "Lokálne zmeny"

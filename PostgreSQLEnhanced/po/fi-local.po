@@ -1,0 +1,117 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-12 19:09+0300\n"
+"PO-Revision-Date: 2025-09-03 21:58+0000\n"
+"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13.1-rc\n"
+"Generated-By: pygettext.py 1.4\n"
+
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr "Toinen käyttäjä muokkasi objektia {obj_type}:{handle}"
+
+msgid "Starting migration..."
+msgstr "Aloitetaan siirto..."
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "Siirretään %s objektia..."
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "Siirretty %s {obj_type} objektia"
+
+msgid "Migration completed!"
+msgstr "Siirto valmis!"
+
+msgid "Starting upgrade..."
+msgstr "Aloitetaan päivitys..."
+
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "Päivitetään %s objektia..."
+
+msgid "Creating indexes..."
+msgstr "Luodaan indeksejä..."
+
+msgid "Upgrade completed!"
+msgstr "Päivitys valmistunut!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL Enhanced"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL _Enhanced tietokanta"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"Edistynyt PostgreSQL-taustajärjestelmä JSONB-tallennuksella, "
+"graafitietokannan tuella (Apache AGE), vektorien samankaltaisuudella "
+"(pgvector) ja tekoäly-/koneoppimisominaisuuksilla. Edistyneille käyttäjille. "
+"Vaatii PostgreSQL 15+ laajennuksen. Gramps Web -yhteensopiva."
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"psycopg3 vaaditaan PostgreSQL Enhanced -tukea varten. Asenna komennolla: pip "
+"install 'psycopg[binary]'"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"psycopg3-versio %(installed)s on liian vanha. Versio %(required)s tai "
+"uudempi vaaditaan."
+
+msgid "Database Backend"
+msgstr "Tietokannan taustajärjestelmä"
+
+msgid "Database module"
+msgstr "Tietokantamoduuli"
+
+msgid "JSONB support"
+msgstr "JSONB tuki"
+
+msgid "Version warning"
+msgstr "Versiovaroitus"
+
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr "PostgreSQL %(version)s on alle suositellun version %(recommended)s"
+
+msgid "Extensions"
+msgstr "Laajennukset"
+
+msgid "Database size"
+msgstr "Tietokannan koko"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d henkilöä, %(families)d perhettä, %(events)d tapahtumaa"
+
+msgid "Migration manager not initialized"
+msgstr "Siirronhallintaa ei ole alustettu"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "Laajennetut kyselyt vaativat JSONB-tuen"
+
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr "Kokotekstihaku vaatii JSONB-tuen tai hakuominaisuudet"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "pg_trgm-laajennus tarvitaan kaksoiskappaleiden tunnistamiseen"

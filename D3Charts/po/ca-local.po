@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-05-03 15:40+0000\n"
-"Last-Translator: Arnau Llovet Vidal <arnaullv@gmail.com>\n"
+"PO-Revision-Date: 2025-09-03 03:01+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ca/>\n"
 "Language: ca\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -20,14 +20,14 @@ msgstr "Error en escriure {target_path}: {message}"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
-msgstr "No s’ha pogut crear l’estructura de directoris: %s"
+msgstr "No s'ha pogut crear l'estructura de directoris: %s"
 
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr "No s’ha pogut copiar els fitxers web: %s"
+msgstr "No s'ha pogut copiar els fitxers web: %s"
 
 msgid "Ancestral Collapsible Tree Options"
-msgstr "Opcions de l’arbre plegable d’avantpassats"
+msgstr "Opcions de l'arbre plegable d'avantpassats"
 
 msgid "Include Generations"
 msgstr "Inclou generacions"
@@ -69,7 +69,7 @@ msgid "Descendant Indented Tree"
 msgstr "Arbre de descendents amb sagnat"
 
 msgid "Ancestral Fan Chart"
-msgstr "Diagrama en ventall d’avantpassats"
+msgstr "Diagrama en ventall d'avantpassats"
 
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
@@ -98,7 +98,13 @@ msgstr ""
 
 #, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "No s’ha pogut crear {target_path}: {message}"
+msgstr "No s'ha pogut crear {target_path}: {message}"
+
+msgid "Default View"
+msgstr "Vista per defecte"
+
+msgid "Expand All"
+msgstr "Expandir tot"
 
 msgid "Include contraction level"
 msgstr "Inclou el nivell de contracció"
@@ -108,6 +114,24 @@ msgstr "Si incloure objectes privats."
 
 msgid "Navigation"
 msgstr "Navegació"
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
 
 msgid "Exclude Spouses"
 msgstr "Exclou els cònjuges"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-12 19:09+0300\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,10 +13,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
+
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr "Jedan drugi korisnik je pormijenio objekt vrste {obj_type}:{handle}"
 
 msgid "Starting migration..."
 msgstr "Pokretanje migracije …"
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "Migriraju se %s objekta …"
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "%s objekta vrste {obj_type} su migrirani"
 
 msgid "Migration completed!"
 msgstr "Migracija završena!"
@@ -24,11 +36,48 @@ msgstr "Migracija završena!"
 msgid "Starting upgrade..."
 msgstr "Pokretanje nadogradnje …"
 
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "Nadograđuju se %s objekta …"
+
 msgid "Creating indexes..."
 msgstr "Stvaranje indeksa …"
 
 msgid "Upgrade completed!"
 msgstr "Nadogradnja završena!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "Prošireni PostgreSQL"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "_Proširena PostgreSQL baza podataka"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"Napredni PostgreSQL pozadinski sustav sa spremanjem u JSONB formatu, "
+"podrškom za dijagram baze podataka (Apache AGE), sličnost vektora (pgvector) "
+"i funkcijama umjetne inteligencije/strojnog učenja. Namijenjeno za napredne "
+"korisnike. Zahtijeva PostgreSQL 15+ s proširenjima. Kompatibilno s Gramps "
+"Web-om."
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"Za podršku za prošireni PostgreSQL potreban je psycopg3. Instaliraj ga "
+"pomoću: pip install 'psycopg[binary]'"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"psycopg3 verzija %(installed)s je pre stara. Potrebna je verzija "
+"%(required)s ili novija."
 
 msgid "Database Backend"
 msgstr "Pozadinski sustav baze podataka"
@@ -45,3 +94,27 @@ msgstr "Upozorenje o verziji"
 #, python-format
 msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
 msgstr "PostgreSQL %(version)s je manja od preporučene verzije %(recommended)s"
+
+msgid "Extensions"
+msgstr "Proširenja"
+
+msgid "Database size"
+msgstr "Veličina baze podataka"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d osoba, %(families)d obitelji, %(events)d događaja"
+
+msgid "Migration manager not initialized"
+msgstr "Upravljač migracije nije inicijaliziran"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "Prošireni upiti zahtijevaju JSONB podršku"
+
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr ""
+"Pretraživanje cijelog teksta zahtijeva podršku za JSONB ili mogućnosti "
+"pretraživanja"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "Za otkrivanje duplikata potrebno je proširenje pg_trgm"

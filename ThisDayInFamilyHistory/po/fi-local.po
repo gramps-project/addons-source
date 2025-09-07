@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-09-03 21:58+0000\n"
+"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,14 +12,95 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "This Day in Family History"
+msgstr "Tämä päivä sukuhistoriassa"
+
+msgid ""
+"A configurable program that shows you the connected events from your family "
+"tree that match today's day and month."
+msgstr ""
+"Konfiguroitava ohjelma, joka näyttää sukupuusi tähän päivään ja kuukauteen "
+"osuvat tapahtumat."
+
+msgid "Database is not open, can't check history right now."
+msgstr "Tietokanta ei ole auki, historiaa ei voi tarkistaa juuri nyt."
+
+#, python-format
+msgid "On %(date)s in family history ...\n"
+msgstr "Sukuhistoriassa päivänä %(date)s ...\n"
+
+msgid "... nothing happened!  Check again tomorrow!"
+msgstr "... mitään ei tapahtunut! Tarkista huomenna uudelleen!"
+
+msgid "Report only living tree members"
+msgstr "Näytä vain elävät puun jäsenet"
+
+msgid "Show these events"
+msgstr "Näytä nämä tapahtumat"
 
 msgid "Sort by "
 msgstr "Lajitteluperuste "
 
+msgid "Sort in ascending order?"
+msgstr "Lajittele nousevaan järjestykseen?"
+
+msgid "January"
+msgstr ""
+"N=tammikuu|G=tammikuun|IN=tammikuussa|P=tammikuuta|IL=tammikuuhun|"
+"E=tammikuusta"
+
+msgid "February"
+msgstr ""
+"N=helmikuu|G=helmikuun|IN=helmikuussa|P=helmikuuta|IL=helmikuuhun|"
+"E=helmikuusta"
+
 msgid "March"
-msgstr "Maaliskuu"
+msgstr ""
+"N=maaliskuu|G=maaliskuun|IN=maaliskuussa|P=maaliskuuta|IL=maaliskuuhun|"
+"E=maaliskuusta"
+
+msgid "April"
+msgstr ""
+"N=huhtikuu|G=huhtikuun|IN=huhtikuussa|P=huhtikuuta|IL=huhtikuuhun|"
+"E=huhtikuusta"
+
+msgid "May"
+msgstr ""
+"N=toukokuu|G=toukokuun|IN=toukokuussa|P=toukokuuta|IL=toukokuuhun|"
+"E=toukokuusta"
+
+msgid "June"
+msgstr ""
+"N=kesäkuu|G=kesäkuun|IN=kesäkuussa|P=kesäkuuta|IL=kesäkuuhun|E=kesäkuusta"
+
+msgid "July"
+msgstr ""
+"N=heinäkuu|G=heinäkuun|IN=heinäkuussa|P=heinäkuuta|IL=heinäkuuhun|"
+"E=heinäkuusta"
+
+msgid "August"
+msgstr "N=elokuu|G=elokuun|IN=elokuussa|P=elokuuta|IL=elokuuhun|E=elokuusta"
+
+msgid "September"
+msgstr ""
+"N=syyskuu|G=syyskuun|IN=syyskuussa|P=syyskuuta|IL=syyskuuhun|E=syyskuusta"
+
+msgid "October"
+msgstr ""
+"N=lokakuu|G=lokakuun|IN=lokakuussa|P=lokakuuta|IL=lokakuuhun|E=lokakuusta"
+
+msgid "November"
+msgstr ""
+"N=marraskuu|G=marraskuun|IN=marraskuussa|P=marraskuuta|IL=marraskuuhun|"
+"E=marraskuusta"
+
+msgid "December"
+msgstr ""
+"N=joulukuu|G=joulukuun|IN=joulukuussa|P=joulukuuta|IL=joulukuuhun|"
+"E=joulukuusta"
 
 msgid "Person Name"
 msgstr "Henkilön nimi"
@@ -27,8 +108,59 @@ msgstr "Henkilön nimi"
 msgid "Event Year"
 msgstr "Tapahtumavuosi"
 
+msgid "gregorian"
+msgstr "gregoriaaninen"
+
+msgid "Unknown father/partner"
+msgstr "Tuntematon isä/kumppani"
+
+msgid "Unknown mother/partner"
+msgstr "Tuntematon äiti/kumppani"
+
+msgid " and "
+msgstr " ja "
+
 msgid "unknown participant"
 msgstr "tuntematon osallistuja"
+
+msgid "unknown location"
+msgstr "tuntematon paikka"
+
+#, python-format
+msgid "%(male_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(male_name)s adoptoitiin vuonna %(year)s paikassa %(place)s."
+
+#, python-format
+msgid "%(female_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(female_name)s adoptoitiin vuonna %(year)s paikassa %(place)s."
+
+#, python-format
+msgid "%(male_name)s was christened in %(year)s at %(place)s."
+msgstr "%(male_name)s kastettiin %(year)s paikassa %(place)s."
+
+#, python-format
+msgid "%(female_name)s was christened in %(year)s at %(place)s."
+msgstr "%(female_name)s kastettiin %(year)s paikassa %(place)s."
+
+#, python-format
+msgid "%(male_name)s was married in %(year)s at %(place)s."
+msgstr "%(male_name)s meni naimisiin vuonna %(year)s paikassa %(place)s."
+
+#, python-format
+msgid "%(female_name)s was married in %(year)s at %(place)s."
+msgstr "%(female_name)s meni naimisiin vuonna %(year)s paikassa %(place)s."
+
+#, python-format
+msgid "%(male_name)s received an annulment in %(year)s at %(place)s."
+msgstr ""
+"henkilön %(male_name)s avioliitto mitätöitiin vuonna %(year)s paikassa "
+"%(place)s."
+
+#, python-format
+msgid "%(female_name)s received an annulment in %(year)s at %(place)s."
+msgstr ""
+"henkilön %(female_name)s avioliitto mitätöitiin vuonna %(year)s paikassa "
+"%(place)s."
 
 #, python-format
 msgid "%(male_name)s was baptized in %(year)s at %(place)s."

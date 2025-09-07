@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-16 17:49-0600\n"
-"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"POT-Creation-Date: 2025-08-13 18:19+0100\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -12,7 +12,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Descendant Space Tree"
+msgstr "Albero spaziale dei discendenti"
+
+msgid "Light theme"
+msgstr "Tema chiaro"
+
+msgid "Continue Descendant Tree"
+msgstr "Albero continuo dei discendenti"
+
+msgid "Alternate Descendant Tree"
+msgstr "Albero alternativo dei discendenti"
+
+msgid "Descendant SpaceTree"
+msgstr "Albero spaziale discendenti"
+
+msgid "Total descendants"
+msgstr "Totale discendenti"
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "Creazione di %s non riuscita: %s"
+
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "Lettura del file proto %s non riuscita: %s"
+
+msgid "Failed writing file: "
+msgstr "Errore durante la scrittura del file: "
+
+msgid "Descendants of"
+msgstr "Discendenti di"
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr ""
+"Fai clic su un nodo per evidenziare un discendente ed espanderne i/le figli/"
+"e."
+
+msgid "Search. . ."
+msgstr "Ricerca. . ."
+
+msgid "Include Generations"
+msgstr "Includi generazioni"
 
 msgid "Theme preference"
 msgstr "Preferenza tematica"
@@ -21,7 +64,7 @@ msgid "The destination path for generated files."
 msgstr "Il percorso di destinazione per i file generati."
 
 msgid "Destination File"
-msgstr "File di destinazione:"
+msgstr "File di destinazione"
 
 msgid "The destination file name for the report."
 msgstr "Il nome di file di destinazione per il resoconto."

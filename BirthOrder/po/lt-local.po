@@ -1,0 +1,96 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-08-27 08:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.13\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "Sort Children in Birth order"
+msgstr "Rūšiuoti vaikus gimimo tvarka"
+
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"Peržiūri šeimas, ieškodamas vaikų, kurie nėra gimimo eilėje. Vartotojas gali "
+"priimti asmeninius taisymo pasiūlymus, keisti gimimo eiliškumą rankiniu "
+"būdu, priimti visas šeimas, kuriose visi vaikai turi teisingas gimimo datas, "
+"arba priimti visus."
+
+msgid "No families need sorting"
+msgstr "Jokių šeimų nereikia rūšiuoti"
+
+msgid "No children were out of birth order."
+msgstr "Nė vienas vaikas nebuvo gimęs ne pagal gimimo tvarką."
+
+msgid "Edit Families"
+msgstr "Taisyti šeimas"
+
+msgid "Looking for children birth order"
+msgstr "Ieškoma vaikų gimimo eilės tvarkos"
+
+msgid "Select the family you wish to examine."
+msgstr "Pasirinkite šeimą, kurią norite ištirti."
+
+msgid "Accept All"
+msgstr "Priimti viską"
+
+msgid "This button will sort all of the families listed."
+msgstr "Šis mygtukas surūšiuos visas išvardytas šeimas."
+
+msgid "Accept All *"
+msgstr "Priimti viską *"
+
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"Šis mygtukas surūšiuos visas šeimas su „*“. Šiose šeimose visi vaikai turi "
+"galiojančias datas, todėl rūšiavimas yra nedviprasmiškas."
+
+msgid "Accept"
+msgstr "Priimti"
+
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"Šis mygtukas priims tik pasirinktą šeimą ir išsaugos ją, kaip parodyta "
+"apatiniame dešiniajame lange."
+
+msgid "Done"
+msgstr "Atlikta"
+
+msgid "This button will exit, with remaining families unchanged."
+msgstr "Paspaudus šį mygtuką, išeisite be pakeitimų šeimoje."
+
+msgid "Current sort"
+msgstr "Dabartinis rūšiavimas"
+
+msgid "Proposed sort"
+msgstr "Siūlomas rūšiavimas"
+
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"Kai būsite patenkinti rūšiavimu, patvirtinkite pakeitimus paspausdami "
+"mygtuką „Priimti“. Jei norite pakoreguoti tvarką, pasirinkite vaiką, kurį "
+"norite perkelti, ir perkelkite jį paspausdami mygtukus „Aukštyn“ arba "
+"„Žemyn“."

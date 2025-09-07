@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-09-03 21:58+0000\n"
+"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,8 +12,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+"LifeLineChart-näkymän riippuvuuksia puuttuu Tätä liitännäistä ei voi käyttää "
+"ilman niitä."
+
+#, python-brace-format
+msgid "cursor position at {date}"
+msgstr "kohdistimen sijainti kohdassa {date}"
 
 msgid "Hide person"
 msgstr "Piilota henkilö"
@@ -27,11 +38,23 @@ msgstr "Näytä sisarukset"
 msgid "Hide siblings"
 msgstr "Piilota sisarukset"
 
+msgid "Show ancestors above "
+msgstr "Näytä esivanhemmat yllä "
+
 msgid "General Layout"
 msgstr "Yleinen asettelu"
 
+msgid "Life Line Chart"
+msgstr "Elämänlinjakaavio"
+
 msgid "Zoom in"
 msgstr "Lähennä"
+
+msgid "Ctrl"
+msgstr "Ctrl"
+
+msgid "Mouse wheel"
+msgstr "Hiiren rulla"
 
 msgid "Zoom out"
 msgstr "Loitonna"
@@ -42,6 +65,15 @@ msgstr "Alkuperäinen koko"
 msgid "Zoom to best fit"
 msgstr "Ikkunaan sopivaksi"
 
+msgid "Rebuild data cache"
+msgstr "Rakenna datavälimuisti uudelleen"
+
+msgid "Revert the placement and person selection"
+msgstr "Palauta sijoittelu ja henkilövalinta"
+
+msgid "Open Life Line Chart help"
+msgstr "Elämänlinjakaavion opastus"
+
 msgid "Export View as SVG"
 msgstr "Vie näkymä SVG-muodossa"
 
@@ -50,6 +82,15 @@ msgstr "Tietoruudun määritykset"
 
 msgid "Reset all settings"
 msgstr "Palauta kaikki asetukset"
+
+msgid "Life Line Ancestor Chart"
+msgstr "Elämänlinjan esi-isäkaavio"
+
+msgid "Persons and their relation in a time based chart"
+msgstr "Henkilöt ja heidän suhteensa aikapohjaisessa kaaviossa"
+
+msgid "Life Line Descendant Chart"
+msgstr "Elämänlinjan jälkeläiskaavio"
 
 msgid "Show photos"
 msgstr "Näytä kuvat"
@@ -198,26 +239,133 @@ msgstr "Suhteellinen fonttikoko"
 msgid "Family shape"
 msgstr "Perheen muoto"
 
+msgid "Softer"
+msgstr "Pehmeämpi"
+
+msgid "Upper year minimum margin"
+msgstr "Ylemmän vuoden vähimmäismarginaali"
+
+msgid ""
+"The upper bound of the chart is extended by at least this number of years."
+msgstr "Kaavion yläraja laajennetaan vähintään tämän vuosimäärän verran."
+
+msgid "Lower year minimum margin"
+msgstr "Alemman vuoden vähimmäismarginaali"
+
+msgid ""
+"The lower bound of the chart is extended by at least this number of years."
+msgstr "Kaavion alarajaa laajennetaan vähintään tällä vuosimäärällä."
+
 msgid "Visualize connections"
 msgstr "Visualisoi yhteydet"
+
+msgid ""
+"Visualize the connections between families and individuals. This is for "
+"debugging purposes."
+msgstr ""
+"Visualisoi perheiden ja yksilöiden väliset yhteydet. Tämä on "
+"virheenkorjausta varten."
+
+msgid "Visualize ambiguous placement"
+msgstr "Visualisoi epäselvä sijoitus"
+
+msgid "Visualize automatically detected errors in the placement algorithm."
+msgstr "Visualisoi sijoitusalgoritmin automaattisesti havaitsemat virheet."
 
 msgid "Coloring of individuals"
 msgstr "Henkilöiden väritys"
 
+msgid "There are different ways to determine the color of an individual."
+msgstr "Yksilön värin määrittämiseen on erilaisia tapoja."
+
+msgid "Unique"
+msgstr "Yksilöllinen"
+
 msgid "Based on surname"
 msgstr "Perustuu sukunimeen"
+
+msgid "Flip vertically"
+msgstr "Käännä pystysuunnassa"
+
+msgid "If active, the chart is flipped vertically."
+msgstr "Jos se on aktiivinen, kaavio käännetään pystysuunnassa."
+
+msgid "Line weighting"
+msgstr "Viivan koko"
+
+msgid "The line width can be configured."
+msgstr "Viivan leveyttä voidaan muuttaa."
 
 msgid "none"
 msgstr "ei mitään"
 
+msgid "Show pedigree collapse"
+msgstr "Näytä esivanhempainkato"
+
+msgid ""
+"Due to pedigree collapse one individual might appear several times in a "
+"simple ancestor chart. If this is active, then every individual only appears "
+"once."
+msgstr ""
+"Esivanhempainkadon vuoksi yksi yksilö saattaa esiintyä useita kertoja "
+"yksinkertaisessa esivanhempien kartassa. Jos tämä on aktiivinen, jokainen "
+"yksilö esiintyy vain kerran."
+
 msgid "Maximum number of generations"
 msgstr "Sukupolvien enimmäismäärä"
+
+msgid ""
+"if this number of generations has been reached, the algorithm doesn't go any "
+"deeper"
+msgstr ""
+"Jos tämä sukupolvien määrä on saavutettu, algoritmi ei mene enää syvemmälle"
+
+msgid "Fathers have the same color"
+msgstr "Isät on samanvärisiä"
+
+msgid ""
+"Starting from the root person, each father of an added individual has the "
+"same color as that individual."
+msgstr ""
+"Juurihenkilöstä alkaen jokaisella lisätyn yksilön isällä on sama väri kuin "
+"kyseisellä yksilöllä."
 
 msgid "Maximum number of compression steps"
 msgstr "Pakkausvaiheiden enimmäismäärä"
 
+msgid "Debugging of the compression algorithm. Abort after x steps."
+msgstr "Tiivistysalgoritmin vianetsintä. Keskeytä x askeleen jälkeen."
+
 msgid "Maximum number of flipping steps"
 msgstr "Kääntövaiheiden enimmäismäärä"
+
+msgid "Debugging of the flipping algorithm. Abort after x steps."
+msgstr "Kääntöalgoritmin vianetsintä. Keskeytä x askeleen jälkeen."
+
+msgid "Compress the chart horizontally"
+msgstr "Tiivistä kaavio vaakasuunnassa"
+
+msgid ""
+"By default every individual has a unique horizontal slot. This can be "
+"inefficient with many generations. This algorithm lets several people share "
+"a horizontal slot, if they do not overlap."
+msgstr ""
+"Oletusarvoisesti jokaisella yksilöllä on oma vaakasuora paikkansa. Tämä voi "
+"olla tehotonta useiden sukupolvien kanssa. Tämä algoritmi antaa useiden "
+"ihmisten jakaa vaakasuoran paikan, jos he eivät ole päällekkäisiä."
+
+msgid "Flip families to reduce horizontal connections"
+msgstr "Käännä perheet vaakasuutaisien yhteyksien vähentämiseksi"
+
+msgid ""
+"Switch the position of mother and father in a family, to reduce the overall "
+"horizontal cross connections in larger graphs. This is happens if one person "
+"is shown in more than one family or it is caused by pedigree collapse."
+msgstr ""
+"Vaihda äidin ja isän paikat perheessä vähentääksesi yleisiä horisontaalisia "
+"ristiinkytkentöjä suuremmissa kaavioissa. Näin tapahtuu, jos yksi henkilö "
+"esiintyy useammassa kuin yhdessä perheessä tai jos se johtuu "
+"esivanhempainkadosta."
 
 msgid "Highlight descandants"
 msgstr "Korosta jälkeläiset"
@@ -228,5 +376,17 @@ msgstr "Korosta henkilöt, jotka ovat jälkeläisiä."
 msgid "Number of descendants"
 msgstr "Jälkeläisten määrä"
 
+msgid "Very soft"
+msgstr "Hyvin pehmeä"
+
 msgid "General chart layout"
 msgstr "Kaavion yleinen asettelu"
+
+msgid "There are different layouts for descendant charts."
+msgstr "Jälkeläiskaavioille on erilaisia asetteluja."
+
+msgid "Parents enclose children"
+msgstr "Vanhempien mukana on lapsia"
+
+msgid "Cactus"
+msgstr "Kaktus"

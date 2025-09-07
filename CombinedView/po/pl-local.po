@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-30 08:11+0000\n"
+"PO-Revision-Date: 2025-08-23 15:02+0000\n"
 "Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -13,14 +13,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s w %(place)s"
+
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
+
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s w %(place)s"
+
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
+
+msgid "Click to make this event active"
+msgstr "Kliknij, aby aktywować to wydarzenie"
+
+msgid "Click to visit this link"
+msgstr "Kliknij, aby odwiedzić ten link"
+
 msgid ": "
 msgstr ": "
+
+msgid "Combined"
+msgstr "Połączony"
+
+msgid "A view showing relationships and events for a person"
+msgstr "Widok pokazujący związki i wydarzenia dla osoby"
 
 msgid ""
 "You need to set a 'default person' to go to. Select the People View, select "
@@ -31,8 +63,14 @@ msgstr ""
 "widok osób, wybierz osobę, która ma być „osobą domową”, a następnie "
 "potwierdź swój wybór za pomocą menu Edytuj -> Ustaw osobę domową."
 
+msgid "Order"
+msgstr "Kolejność"
+
 msgid "Edit the active event"
 msgstr "Edytuj aktywne zdarzenie"
 
 msgid "Show Tags"
 msgstr "Pokaż tagi"
+
+msgid "Vertical Details"
+msgstr "Szczegóły pionowe"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-09-03 21:58+0000\n"
+"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,11 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13.1-rc\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Relations of related people in your database:"
+msgstr "Tietokannassasi olevien sukulaisten suhteet:"
+
+msgid "are partners and"
+msgstr "ovat kumppaneita ja"
 
 msgid "Common ancestor"
 msgstr "Yhteinen esivanhempi"
 
+msgid "No relatives in a relation found"
+msgstr "Sukulaisia ei suhteeseen löytynyt"
+
+msgid "END"
+msgstr "LOPPU"
+
 msgid "Related Relatives"
 msgstr "Liittyvät sukulaiset"
+
+msgid "Gramplet showing relatives in a relation"
+msgstr "Gramplet näyttää suhteessa olevia sukulaisia"

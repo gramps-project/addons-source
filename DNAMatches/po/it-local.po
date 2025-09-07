@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 14:28+0000\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Pers."
+msgstr "Pers."
+
+msgid "Rel."
+msgstr "Rel."
+
+msgid "S. DNA"
+msgstr "DNA cond."
+
+msgid "S. Seg."
+msgstr "Seg. cond."
+
+msgid "L. Seg"
+msgstr "Seg. Lar"
+
+msgid "Src(s)"
+msgstr "Fon"
+
+msgid "Shared DNA"
+msgstr "DNA condiviso"
+
+msgid "Shared Segments"
+msgstr "Segmenti condivisi"
+
+msgid "Largest Segment"
+msgstr "Segmento più lungo"
+
+msgid "Source(s)"
+msgstr "Fonte/i"
+
+msgid "Double-click on a row to navigate to the matched person."
+msgstr "Doppio clic su una riga per spostarsi sulla persona corrispondente."
+
+msgid "Right click to edit selected association."
+msgstr "Clic col pulsante destro per modificare l'associazione selezionata."
+
+msgid "LEGEND"
+msgstr "LEGENDA"
+
+msgid "="
+msgstr "="
+
+msgid "Not specified"
+msgstr "Non specificato"
+
+msgid "cM"
+msgstr "cM"

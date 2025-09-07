@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"PO-Revision-Date: 2025-09-05 10:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.13.1-rc\n"
+
+msgid "Set Privacy Tool"
+msgstr "Nástroj pre nastavenie súkromia"
+
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "Nastaviť ako súkromné: %d %s\n"
+
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "Nie súkromné: %d %s\n"
+
+msgid "Set persons private.."
+msgstr "Nastaviť osoby ako súkromné..."
+
+msgid "Set events private.."
+msgstr "Nastaviť udalosti ako súkromné..."
+
+msgid "Set media private.."
+msgstr "Nastaviť médiá ako súkromné..."
+
+msgid "Set adresses private.."
+msgstr "Nastaviť adresy ako súkromné..."
+
+msgid "Set internet objects private.."
+msgstr "Nastaviť internetové objekty ako súkromné..."
+
+msgid ""
+"The time range in years from today you want to set objects private.\n"
+"'0 years' = remove privacy from all objects."
+msgstr ""
+"Časový rozsah v rokoch od dnešného dňa, za ktorý chcete nastaviť objekty ako "
+"súkromné.\n"
+"'0 rokov' = odstrániť súkromie zo všetkých objektov."
+
+msgid "Always private if no date."
+msgstr "Vždy súkromné, ak chýba dátum."
+
+msgid "If checked, all objects without a date will also be set private."
+msgstr ""
+"Ak je začiarknuté, všetky objekty bez dátumu budú tiež nastavené ako "
+"súkromné."
 
 msgid "Select filter to restrict people"
 msgstr "Vyberte filter na obmedzenie osôb"
@@ -25,3 +67,9 @@ msgstr "Vyberte filter na obmedzenie udalostí"
 
 msgid "Select filter to restrict medias"
 msgstr "Zvoliť filter na obmedzenie médií"
+
+msgid "E-Mail"
+msgstr "E-mail"
+
+msgid "Set all objects of the last <number> of years private."
+msgstr "Nastavte všetky objekty za posledných <number> rokov ako súkromné."

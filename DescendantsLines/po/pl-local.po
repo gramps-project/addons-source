@@ -1,0 +1,349 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-08-23 15:02+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.13\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+msgid "Descendants Lines"
+msgstr "Linie potomków"
+
+msgid "Produces descendants lines of a person"
+msgstr "Generuje linie potomków osoby"
+
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "Używanie typu SVG dla dokumentu uzupełniającego nie jest obsługiwane!"
+
+msgid "Output format"
+msgstr "Format wyjściowy"
+
+msgid "PNG format"
+msgstr "Format PNG"
+
+msgid "SVG format"
+msgstr "Format SVG"
+
+msgid "PDF format"
+msgstr "Format PDF"
+
+msgid "PS format"
+msgstr "Format PS"
+
+msgid "The output format to be used"
+msgstr "Format wyjściowy do użycia"
+
+msgid "The destination file for the content."
+msgstr "Plik docelowy dla zawartości."
+
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "Liczba pokoleń do uwzględnienia w grafie. (0 oznacza bez ograniczeń)"
+
+msgid "Use d'Aboville descendant numbering system"
+msgstr "Użyj systemu numeracji potomków d'Aboville"
+
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "Poprzedź imię numerem potomka d'Aboville na wykresie."
+
+msgid "Include an image"
+msgstr "Dołącz obraz"
+
+msgid "Whether to include an image if one is available."
+msgstr "Czy dołączyć obraz, jeśli jest dostępny."
+
+msgid "Max Image height"
+msgstr "Maksymalna wysokość obrazu"
+
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr "Maksymalna wysokość obrazu w pikselach, 0=nie skaluj wysokości."
+
+msgid "Max Image width"
+msgstr "Maksymalna szerokość obrazu"
+
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "Maksymalna szerokość obrazu w pikselach, 0=nie skaluj szerokości."
+
+msgid "Image Location"
+msgstr "Lokalizacja obrazu"
+
+msgid "Above text"
+msgstr "Nad tekstem"
+
+msgid "Left of text"
+msgstr "Na lewo od tekstu"
+
+msgid "Position of image relative to text"
+msgstr "Pozycja obrazu względem tekstu"
+
+msgid "Colour Name by Gender"
+msgstr "Kolor nazwy według płci"
+
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "Pokoloruj imię, aby wskazać płeć osoby na wykresie."
+
+msgid "Use alternate events, if Primary event is not found"
+msgstr ""
+"Użyj alternatywnych wydarzeń, jeśli wydarzenie główne nie zostanie znalezione"
+
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"Dla narodzin (chrzest, bierzmowanie)\n"
+"   Małżeństwo (pozwolenie na małżeństwo, zaręczyny)\n"
+"   Rozwód (unieważnienie, pozew o rozwód),\n"
+"   Śmierć (pogrzeb, kremacja, testament)."
+
+msgid "Sort Events by Date"
+msgstr "Sortuj wydarzenia według daty"
+
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr ""
+"Sortuj wydarzenia według daty (w przeciwnym razie użyj kolejności z 'Formatu "
+"wyświetlania' powyżej)."
+
+msgid "Text style"
+msgstr "Styl tekstu"
+
+msgid "Center-aligned text"
+msgstr "Tekst wyśrodkowany"
+
+msgid "Left-aligned text"
+msgstr "Tekst wyrównany do lewej"
+
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "Wyrównanie tekstu w bloku dla każdej osoby na wykresie"
+
+msgid "Max Note Length"
+msgstr "Maksymalna długość notatki"
+
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"Maksymalna długość pola notatki wydarzenia w bloku tekstowym, '$e(n)'\n"
+" 0=bez ograniczeń "
+
+msgid "Box around Person's block"
+msgstr "Ramka wokół bloku osoby"
+
+msgid "Draw a thin black box around each person' text block."
+msgstr "Narysuj cienką czarną ramkę wokół bloku tekstowego każdej osoby."
+
+msgid "All Person's blocks have the same height"
+msgstr "Wszystkie bloki osób mają tę samą wysokość"
+
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr ""
+"Wszystkie bloki wszystkich osób mają tę samą wysokość, która jest wysokością "
+"najwyższego bloku."
+
+msgid "All Person's blocks have the same width"
+msgstr "Wszystkie bloki osób mają tę samą szerokość"
+
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr ""
+"Wszystkie bloki wszystkich osób mają tę samą szerokość, która jest "
+"szerokością najszerszego bloku."
+
+msgid "Colour blocks by Generation"
+msgstr "Koloruj bloki według pokolenia"
+
+msgid "Colour the background of text blocks by generation."
+msgstr "Koloruj tło bloków tekstowych według pokolenia."
+
+msgid "Descend block colour intensity"
+msgstr "Intensywność koloru bloku potomka"
+
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr "Intensywność koloru tła w bloku potomka, 0=blady, 255=intensywny kolor"
+
+msgid "Spouse block colour intensity"
+msgstr "Intensywność koloru bloku małżonka"
+
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr "Intensywność koloru tła w bloku małżonka, 0=blady 255=intensywny kolor"
+
+msgid "Display Formats"
+msgstr "Formaty wyświetlania"
+
+msgid "Name Display Format"
+msgstr "Format wyświetlania nazw"
+
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f=imiona i drugie imiona, l=nazwisko, n=przezwisko,\n"
+"c=powszechnie używane imię, t=tytuł, s=przyrostek, g=pseudonim rodzinny\n"
+"Zobacz Wiki Manual > Reports > część 2"
+
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+"[wydarzenie, lista]$e(formatowanie)\n"
+"Zobacz Wiki Manual > Reports > część 2\n"
+"formatowanie: daty=d(ymdMo) miejsca=D(elcuspnoitxy) notatki=n skrócony_typ=t"
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"np.\n"
+"Stany Zjednoczone Ameryki/USA"
+
+msgid "Spouse and Family"
+msgstr "Małżonek i rodzina"
+
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "Pionowa krawędź potomka do paska małżonka"
+
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr "Długość pionowej krawędzi od potomka do paska małżonka."
+
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "Pionowa krawędź paska małżonka do małżonka"
+
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "Długość pionowej krawędzi od paska małżonka do małżonka."
+
+msgid "Vertical space spouse-bar to other spouse"
+msgstr "Pionowa przestrzeń paska małżonka do innego małżonka"
+
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr ""
+"Przestrzeń do dodania między jednym paskiem małżonka a innym małżonkiem w "
+"przypadku wielu rodzin z tym samym potomkiem."
+
+msgid "Horizontal space descendant to spouse"
+msgstr "Pozioma przestrzeń potomka do małżonka"
+
+msgid "The space to add between the descendant and the spouse."
+msgstr "Przestrzeń do dodania między potomkiem a małżonkiem."
+
+msgid "Horizonal space family to family"
+msgstr "Pozioma przestrzeń między rodzinami"
+
+msgid ""
+"The space to add between the more extern descendant (or spouse) of a family "
+"and the more extern descendant (or spouse) of the next family."
+msgstr ""
+"Przestrzeń do dodania między najbardziej zewnętrznym potomkiem (lub "
+"małżonkiem) rodziny a najbardziej zewnętrznym potomkiem (lub małżonkiem) "
+"następnej rodziny."
+
+msgid "Horizontal distance spouse to family edge"
+msgstr "Pozioma odległość małżonka do krawędzi rodziny"
+
+msgid ""
+"If this value is 0, the children bar is centered under the spouse. The "
+"bigger the value, more the center is moved to the left towards the "
+"descendant."
+msgstr ""
+"Jeśli ta wartość wynosi 0, pasek dzieci jest wyśrodkowany pod małżonkiem. Im "
+"większa wartość, tym bardziej środek jest przesunięty w lewo w kierunku "
+"potomka."
+
+msgid "OL_PAD"
+msgstr "OL_PAD"
+
+msgid "The number of ??? pad"
+msgstr "Liczba ??? odstępu"
+
+msgid "Vertical edge spouse-bar to child-bar"
+msgstr "Pionowa krawędź paska małżonka do paska dziecka"
+
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "Długość pionowej krawędzi od paska małżonka do paska dziecka."
+
+msgid "Children distance"
+msgstr "Odległość między dziećmi"
+
+msgid "The horizontal distance between two children of the same family."
+msgstr "Pozioma odległość między dwójką dzieci z tej samej rodziny."
+
+msgid "Vertical edge child to child-bar"
+msgstr "Pionowa krawędź dziecka do paska dziecka"
+
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "Długość pionowej krawędzi od dziecka do paska dziecka."
+
+msgid "MIN_C_WIDTH"
+msgstr "MIN_C_WIDTH"
+
+msgid "The number of ??? min width"
+msgstr "Liczba ??? minimalna szerokość"
+
+msgid "Space around text"
+msgstr "Przestrzeń wokół tekstu"
+
+msgid "The space to add around the text block of a person."
+msgstr "Przestrzeń do dodania wokół bloku tekstowego osoby."
+
+msgid "Space between lines of text"
+msgstr "Przestrzeń między liniami tekstu"
+
+msgid "The space to add between a line and the next in a person text block."
+msgstr "Przestrzeń do dodania między linią a następną w bloku tekstowym osoby."
+
+msgid "Header and Footer"
+msgstr "Nagłówek i stopka"
+
+msgid "The text that will be written in the header of the document"
+msgstr "Tekst, który zostanie napisany w nagłówku dokumentu"
+
+msgid "The text that will be written in the footer of the document"
+msgstr "Tekst, który zostanie napisany w stopce dokumentu"
+
+msgid "Title and footer coefficient"
+msgstr "Współczynnik tytułu i stopki"
+
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr "Liczba, która mnoży podstawowy rozmiar tekstu w tytule i w stopce"
+
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "Chroń osoby, obrazy lub wydarzenia oznaczone jako prywatne"
+
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr "Ustawienia prywatności tylko tych typów obiektów Gramps są sprawdzane"
+
+msgid "Privacy text"
+msgstr "Tekst prywatności"
+
+msgid "Text to display in block, when a Person is marked private"
+msgstr "Tekst do wyświetlenia w bloku, gdy osoba jest oznaczona jako prywatna"
+
+msgid "The default style."
+msgstr "Domyślny styl."

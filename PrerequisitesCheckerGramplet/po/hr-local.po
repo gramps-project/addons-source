@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13.1-dev\n"
 
 msgid "Prerequisites Checker"
 msgstr "Provjera preduvjeta"
@@ -40,10 +40,41 @@ msgstr ""
 
 msgid ""
 "\n"
+"<u><b>REQUIRED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>POTREBNO</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
+" (Requires the minimum version or greater.)</i>:\n"
+msgstr ""
+"<i>Instalacije sljedećih paketa su <b>APSOLUTNO POTREBNE</b>\n"
+" (Zahtijeva najmanju verziju ili noviju.)</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>RECOMMENDED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>PREPORUČENO</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
+"as necessary for Geography and Charts</i>:\n"
+msgstr ""
+"<i>Instalacije sljedećih paketa se <b>IZRIČITO PREPORUČUJU</b> jer su "
+"potrebni za kartografju i dijagrame</i>:\n"
+
+msgid ""
+"\n"
 "<u><b>Optional</b></u>\n"
 msgstr ""
 "\n"
 "<u><b>Opcionalno</b></u>\n"
+
+msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
+msgstr "<i>Instalacije sljedećih paketa su <b>opcionalne</b></i>:\n"
 
 msgid "Gtkspell enables spell checking in the notes.\n"
 msgstr "Gtkspell omogućava provjeru pravopisa u bilješkama.\n"
@@ -62,11 +93,26 @@ msgstr ""
 "<u><b>Preduvjeti za razvoj i prevođenje</b></u>\n"
 
 msgid ""
+"<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
+"intend to translate or do any development (addons etc.)</i>:\n"
+msgstr ""
+"<i>Instalacije sljedećih paketa se <b>PREPORUČUJU</b> ako namjeravaš "
+"prevoditi ili programirati (dodaci itd.)</i>:\n"
+
+msgid ""
 "\n"
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
 msgstr ""
 "\n"
 "<u><b>Opcionalni paketi koji su potrebni za dodatke trećih strana</b></u>\n"
+
+msgid ""
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
+msgstr ""
+"<i>Potrebni preduvjeti za rad sljedećih <a href=\"https://gramps-project.org/"
+"wiki/index.php?title=Third-party_Addons\">dodataka trećih strana</a></i>.\n"
 
 msgid ""
 "\n"
@@ -76,7 +122,7 @@ msgstr ""
 "<u><b>Dijagnostičke provjere</b></u>\n"
 
 msgid "Check for potential issues.\n"
-msgstr "Provjeri, postoje li potencijalni problemi.\n"
+msgstr "Provjeri postoje li potencijalni problemi.\n"
 
 msgid ""
 "\n"
@@ -101,6 +147,52 @@ msgstr ""
 "\n"
 "<u><b>Spremi sigurnosnu kopiju tvojih genealoških datoteka.</b></u>\n"
 
+msgid ""
+"If you have a reason to be checking Prerequisites, it is the right time to "
+"back up your genealogy files, and then test your backups!\n"
+"\n"
+msgstr ""
+"Ako imaš razlog za provjeru preduvjeta, pravo je vrijeme da izradiš "
+"sigurnosnu kopiju svojih genealogijskih datoteka te ih zatim testiraj!\n"
+"\n"
+
+msgid ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find \"Make "
+"Backup...\" in the Family Tree menu of recent Gramps versions, otherwise use "
+"\"Export...\" in the same menu but uncheck privacy options in the Exporter "
+"Assistant in order to export all data.</i>\n"
+"\n"
+msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Sigurnosna kopija u Gramps XML</a>U novijim "
+"verzijama Gramps-a u izborniku odaberi „Rodoslov”, zatim „Izradi zaštitnu "
+"kopiju ...”., inače koristi opciju „Izvezi …” u istom izborniku, ali "
+"deaktiviraj opcije privatnosti u „Pomoćniku za izvoz” kako bi se izvezli svi "
+"podaci.</i>\n"
+"\n"
+
+msgid ""
+" • Backups can be made at any time and, at a minimum, on the first day of "
+"every month. But preferrably more often.\n"
+msgstr ""
+" • Sigurnosne kopije se mogu izraditi u bilo kojem trenutku, u optimalnom "
+"slučaju na prvi dan svakog mjeseca. Poželjno je to raditi češće.\n"
+
+msgid ""
+" • It is strongly recommended to backup each of your Family Trees before any "
+"upgrade.\n"
+msgstr ""
+" • Izričito se preporučuje da izradiš sigurnosnu kopiju svih rodoslova prije "
+"svake nadogradnje..\n"
+
+msgid ""
+" • Test your backups by creating a new Family Tree and then importing the "
+"backup."
+msgstr ""
+" • Testiraj svoje sigurnosne kopije na sljedeći način: izradi novi rodoslov "
+"i zatim uvezi sigurnosnu kopiju."
+
 msgid ", is the most current version.\n"
 msgstr ", je najnovija verzija.\n"
 
@@ -118,9 +210,8 @@ msgid ""
 "for contributing and testing; please report any issues. Backups are your "
 "friend.\n"
 msgstr ""
-"Imaš Gramps %s; to je neobjavljena razvojna verzija. Hvala ti na "
-"doprinošenju i testiranju; prijavi bilo koji problem. Sigurnosne kopije su "
-"tvoj prijatelj.\n"
+"Imaš Gramps %s – neobjavljena razvojna verzija. Hvala ti na doprinošenju i "
+"testiranju; prijavi bilo koji problem. Sigurnosne kopije su tvoj prijatelj.\n"
 
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
@@ -130,7 +221,7 @@ msgid " (Requires version "
 msgstr " (Zahtijeva verziju "
 
 msgid " or greater installed.)\n"
-msgstr " ili novija instalirana.)\n"
+msgstr " ili noviju instaliranu.)\n"
 
 msgid " (Passed: version "
 msgstr " (Prošlo: verzija "
@@ -147,6 +238,25 @@ msgstr " ili novija.)\n"
 msgid " (Requires "
 msgstr " (Zahtijeva "
 
+msgid " • Berkeley Database library (bsddb3: "
+msgstr " • Berkeley Database biblioteka (bsddb3: "
+
+msgid " • SQLite Database library (sqlite3: "
+msgstr " • SQLite Database biblioteka (sqlite3: "
+
+msgid " • xdg-utils (Manual check see instructions link)"
+msgstr " • xdg-utils (ručna provjera, pogledaj poveznicu s uputama)"
+
+msgid " • librsvg2 (Manual check see instructions link)"
+msgstr " • librsvg2 (ručna provjera, pogledaj poveznicu s uputama)"
+
+msgid ""
+" • language-pack-gnome-xx (Manual check see instructions link) for your "
+"Language <show locale here TBD>"
+msgstr ""
+" • language-pack-gnome-xx (Za ručnu provjeru pogledaj poveznicu s uputama) "
+"za tvoj jezik <ovdje prikaži jezik koji još nje određen>"
+
 msgid " or greater installed.)"
 msgstr " ili novija instalirana.)"
 
@@ -154,22 +264,44 @@ msgid " or greater)"
 msgstr " ili novija)"
 
 msgid "Graphviz not in system PATH"
-msgstr "Graphviz nije u STAZI sustava"
+msgstr "Graphviz nije u STAZI sustava (PATH)"
 
 msgid "Ghostscript not in system PATH"
-msgstr "Ghostscript nije u STAZI sustava"
+msgstr "Ghostscript nije u STAZI sustava (PATH)"
 
 msgid " (Passed: version 0.5.x is installed.)"
-msgstr " (Prošlo: instalirana je verzija 0.5.x.)"
+msgstr " (Prošlo: verzija 0.5.x. je instalirana)"
 
 msgid " (Requires version 0.5.x)"
 msgstr " (Zahtijeva verziju 0.5.x)"
 
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
-msgstr " • python-fontconfig nije pronađen, (zahtijeva verziju 0.5.x)"
+msgstr " • python-fontconfig nije pronađena, (zahtijeva verziju 0.5.x)"
+
+msgid " • python-fontconfig installed, version unavailable"
+msgstr " • python-fontconfig instalirana, verzija nije dostupna"
 
 msgid " or greater installed.) (enchant module: "
-msgstr " ili novija je instalirana.) (modul enchant: "
+msgstr " ili novija instalirana.) (modul enchant: "
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s još nije određeno (Prošlo: instalirana je verzija %s ili novija. "
+"Ako se ne koristi Microsoft Windows)"
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s još nije određeno (Zahtijeva instaliranu verziju %s ili noviju. "
+"Ako se ne koristi Microsoft Windows)"
+
+msgid "can't found it because exiv2 not installed"
+msgstr "ne može se pronaći jer exiv2 nije instaliran"
 
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
@@ -189,29 +321,32 @@ msgid "Why, when same code works in Graphview"
 msgstr "Zašto, kad isti kod radi u Graphviewu"
 
 msgid "not installed"
-msgstr "nije instalirano"
+msgstr "nije instaliran"
+
+msgid "     and one of either: (pydotplus: "
+msgstr "     i jedno od sljedećih: (pydotplus: "
 
 msgid ") or (pygraphviz: "
 msgstr ") ili (pygraphviz: "
 
 msgid "Installed(MS-Windows)"
-msgstr "Instalirani (MS-Windows)"
+msgstr "Instaliran(MS-Windows)"
 
 msgid "Installed(Linux/Mac)"
-msgstr "Instalirani (Linux / Mac)"
+msgstr "Instaliran(Linux / Mac)"
 
 msgid "not installed "
-msgstr "nije instalirano "
+msgstr "nije instaliran "
 
 msgid "not found."
-msgstr "nije pronađeno."
+msgstr "nije pronađen."
 
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
 msgstr ""
 "Standardno. Prošlo: instalirani program – 32-bitni na 64-bitnom Win OS-u."
 
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
-msgstr ") (Zahtijeva dodatak za gramps, navedene u „Plugin lib”)"
+msgstr ") (Zahtijeva dodatak za gramps, naveden u „Plugin lib”)"
 
 msgid "DBF installed"
 msgstr "DBF instaliran"
@@ -220,7 +355,7 @@ msgid ".)(Requires version "
 msgstr ".) (Zahtijeva verziju "
 
 msgid " installed.)(Passed: version "
-msgstr " instalirana.) (Prošlo: verzija "
+msgstr " instaliran.) (Prošlo: verzija "
 
 #, python-format
 msgid "(OpenCV facedetection: %s)"
@@ -228,6 +363,13 @@ msgstr "(Otkrivanje lica pomoću OpenCV: %s)"
 
 msgid " (lxml: not found. Requires version "
 msgstr " (lxml: nije pronađen. Zahtijeva verziju "
+
+msgid " • Requires: MongoDB TBD / pymongo TBD"
+msgstr " • Zahtijeva: MongoDB TBD / pymongo TBD"
+
+#, python-format
+msgid " • Operating System: %s"
+msgstr " • Operacijski sustav: %s"
 
 msgid ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-17 15:05+0000\n"
-"PO-Revision-Date: 2025-07-23 14:01+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-09-06 11:01+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Beta What's Next"
+msgstr "Beta What's Next"
+
+msgid ""
+"\n"
+" ⛔ A local Genealogical Tree database has not yet been loaded.\n"
+"\n"
+msgstr ""
+"\n"
+" ⛔ Non è ancora stato caricato nessun albero genealogico.\n"
+"\n"
 
 msgid " 👣 Next Steps:\n"
 msgstr " 👣 Prossimi passi:\n"
@@ -21,13 +33,23 @@ msgid "  •  From the \"Family Trees\" menu,"
 msgstr "  •  Dal menu \"Alberi genealogici\" ,"
 
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr "  •  Clicca su \"Carica albero genealogico\" per iniziare"
+msgstr "  •  Fai clic su \"Carica albero genealogico\" per iniziare"
 
 msgid ""
 " working with the selected genealogical tree.\n"
 "\n"
 msgstr ""
 " lavora con l'albero genealogico selezionato.\n"
+"\n"
+
+msgid "Create and load an empty new tree to import a backup (or"
+msgstr "Crea e carica un nuovo albero vuoto per importare un backup (o"
+
+msgid ""
+" GEDCOM file) from another genealogical tool.\n"
+"\n"
+msgstr ""
+" un file GEDCOM) da un altro programma genealogico.\n"
 "\n"
 
 msgid "Search Quota "
@@ -79,6 +101,9 @@ msgstr ""
 "\n"
 " ⛔ Nessuna persona è stata scelta come \"Home Person\".\n"
 
+msgid "Double-click color text to edit details"
+msgstr "Doppio clic sul testo colorato per modificare i dettagli"
+
 msgid "Birth event missing."
 msgstr "Evento Nascita assente."
 
@@ -96,3 +121,19 @@ msgstr "591 famiglia non completa"
 
 msgid "place unknown for the Event"
 msgstr "luogo sconosciuto per l'evento"
+
+msgid "A partner relationship exists but the spouse is missing"
+msgstr "Esiste la relazione con un/a compagno/a ma manca il coniuge"
+
+msgid "Add missing partner using the Edit Family dialog."
+msgstr ""
+"Aggiungi il/la compagno/a mancante usando la finestra \"Modifica famiglia\"."
+
+msgid "Father missing from the parent family"
+msgstr "Nella famiglia dei genitori manca il padre"
+
+msgid "Mother missing from the parent family"
+msgstr "Nella famiglia dei genitori manca la madre"
+
+msgid "Parent family is unknown."
+msgstr "Famiglia dei genitori sconosciuta."
