@@ -67,7 +67,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-07-23 14:01+0000\n"
+"PO-Revision-Date: 2025-08-26 07:01+0000\n"
 "Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -76,7 +76,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -211,7 +211,7 @@ msgstr ""
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
-msgstr ""
+msgstr "Tipo di link"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
@@ -380,7 +380,7 @@ msgstr "Tutte le persone ne hanno già uno."
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
-msgstr ""
+msgstr "Beta What's Next"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:49
 msgid "Beta Gramplet suggesting items to research"
@@ -396,6 +396,9 @@ msgid ""
 " ⛔ A local Genealogical Tree database has not yet been loaded.\n"
 "\n"
 msgstr ""
+"\n"
+" ⛔ Non è ancora stato caricato nessun albero genealogico.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
@@ -427,13 +430,15 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:55
 msgid "Create and load an empty new tree to import a backup (or"
-msgstr ""
+msgstr "Crea e carica un nuovo albero vuoto per importare un backup (o"
 
 #: Betawhatsnext/Betawhatsnext.py:56
 msgid ""
 " GEDCOM file) from another genealogical tool.\n"
 "\n"
 msgstr ""
+" un file GEDCOM) da un altro programma genealogico.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:70
 msgid ""
@@ -518,7 +523,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:268
 msgid "Double-click color text to edit details"
-msgstr ""
+msgstr "Doppio click sul testo colorato per modificare i dettagli"
 
 #: Betawhatsnext/Betawhatsnext.py:504
 msgid "Birth event missing."
@@ -546,24 +551,24 @@ msgstr "luogo sconosciuto per l'evento"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
-msgstr ""
+msgstr "Esiste la relazione con un partner ma manca la sposa"
 
 #: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
 #: Betawhatsnext/Betawhatsnext.py:665
 msgid "Add missing partner using the Edit Family dialog."
-msgstr ""
+msgstr "Aggiungi il partner mancante usando la finestra Modifica Famiglia."
 
 #: Betawhatsnext/Betawhatsnext.py:660
 msgid "Father missing from the parent family"
-msgstr ""
+msgstr "Nella famiglia dei genitori manca il padre"
 
 #: Betawhatsnext/Betawhatsnext.py:664
 msgid "Mother missing from the parent family"
-msgstr ""
+msgstr "Nella famiglia dei genitori manca la madre"
 
 #: Betawhatsnext/Betawhatsnext.py:668
 msgid "Parent family is unknown."
-msgstr ""
+msgstr "Famiglia dei genitori sconosciuta."
 
 #: Betawhatsnext/Betawhatsnext.py:670
 msgid ""
@@ -572,50 +577,52 @@ msgstr ""
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
-msgstr ""
+msgstr "Biografia"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
-msgstr ""
+msgstr "Mostra il testo della biografia"
 
 #: BiographyQuickview/BiographyQuickview.py:48
 #, python-format
 msgid "Biography for %s"
-msgstr ""
+msgstr "Biografia di %s"
 
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
-msgstr ""
+msgstr "Seleziona la famiglia che vuoi esaminare."
 
 #: BirthOrder/birthorder.glade:155
-#, fuzzy
-#| msgid "Select All"
 msgid "Accept All"
-msgstr "Selezionare tutto"
+msgstr "Accetta tutto"
 
 #: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
-msgstr ""
+msgstr "Questo tasto ordinerà l'elenco di tutte le famiglie."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
-msgstr ""
+msgstr "Accetta tutto *"
 
 #: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
 msgstr ""
+"Questo tasto ordinerà tutte le famiglie con '*'.  In queste famiglie, tutti "
+"i figli hanno date valide quindi l'ordine non è ambiguo."
 
 #: BirthOrder/birthorder.glade:185
 msgid "Accept"
-msgstr ""
+msgstr "Accetta"
 
 #: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
 msgstr ""
+"Questo tasto accetterà solo la famiglia selezionata e la salverà come "
+"mostrato nel riquadro in basso a destra."
 
 #: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
 msgid "Done"
@@ -623,15 +630,15 @@ msgstr "Fatto"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
-msgstr ""
+msgstr "Questo tasto ti farà uscire lasciando invariate le altre famiglie."
 
 #: BirthOrder/birthorder.glade:256
 msgid "Current sort"
-msgstr ""
+msgstr "Ordine attuale"
 
 #: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
-msgstr ""
+msgstr "Ordine proposto"
 
 #: BirthOrder/birthorder.glade:333
 msgid ""
@@ -639,10 +646,13 @@ msgid ""
 "changes.  If you wish to adjust the order, select the child you wish to "
 "move, and use 'Up' or 'Down' buttons below to move them."
 msgstr ""
+"Quando sei soddisfatto dell'ordine premi sul tasto 'Accetta' per confermare "
+"le modifiche.  Se invece vuoi modificare l'ordine, seleziona il figlio che "
+"vuoi spostare e usa i tasti 'Su' o 'Giù' per spostarlo."
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
-msgstr ""
+msgstr "Ordina i figli in ordine di nascita"
 
 #: BirthOrder/birthorder.gpr.py:12
 msgid ""
@@ -651,41 +661,43 @@ msgid ""
 "manually, accept all those families that have all children with proper birth "
 "dates, or accept all."
 msgstr ""
+"Controlla le famiglie cercando i figli che non sono in ordine di nascita. "
+"L'utente può correggere l'ordine accettando i suggerimenti uno alla volta, "
+"ordinare manualmente i figli, accettare tutte le famiglie che hanno tutti i "
+"figli con date corrette oppure accettare tutto."
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
-msgstr ""
+msgstr "Nessuna famiglia ha bisogno di un riordino"
 
 #: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
-msgstr ""
+msgstr "Nessun figlio è fuori posizione."
 
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
-msgstr ""
+msgstr "Modifica famiglie"
 
 #: BirthOrder/birthorder.py:275
-#, fuzzy
-#| msgid "Looking for place fields"
 msgid "Looking for children birth order"
-msgstr "Ricerca campi dei luoghi"
+msgstr "Ricerca ordine di nascita dei figli"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
-msgstr ""
+msgstr "Compleanni"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
-msgstr ""
+msgstr "un gramplet che mostra i compleanni delle persone in vita"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
-msgstr ""
+msgstr "Ignora compleanni con tag"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
-msgstr ""
+msgstr "Mostra solo compleanni con tag"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
@@ -962,27 +974,27 @@ msgstr "Data stimata"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
-msgstr ""
+msgstr "Correggere le maiuscole dei Nomi di battesimo"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
 msgstr ""
+"Cerca in tutto il database e prova a correggere le maiuscole dei nomi di "
+"battesimo."
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking Given Names"
-msgstr "Controllo titoli luoghi"
+msgstr "Controllo Nomi di battesimo"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
-msgstr ""
+msgstr "Cercando i nomi di battesimo"
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
@@ -994,11 +1006,13 @@ msgid ""
 "Gramps can convert to correct capitalization. \n"
 "Select the names you wish Gramps to convert. "
 msgstr ""
+"Questa è la lista dei nomi che \n"
+"Gramps può modificare con le maiuscole corrette. \n"
+"Seleziona i nomi che vuoi che vengano modificati. "
 
 #: ChangeGivenNames/changenames.glade:107
-#, fuzzy
 msgid "Edit selection"
-msgstr "Invertire la selezione"
+msgstr "Modifica la selezione"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -1014,7 +1028,7 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
-msgstr ""
+msgstr "colonna"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
@@ -1038,15 +1052,15 @@ msgstr "Ricerca campi dei luoghi"
 
 #: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade:264
 msgid "Differences"
-msgstr ""
+msgstr "Differenze"
 
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
-msgstr ""
+msgstr "Nessuna modifica necessaria"
 
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
-msgstr ""
+msgstr "Nessuna modifica necessaria."
 
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
@@ -1062,13 +1076,15 @@ msgstr ""
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Migliorato"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"Un formattatore avanzato di citazioni che aggiunge un repository e un numero "
+"di chiamata alla funzionalità standard."
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
@@ -1094,11 +1110,11 @@ msgstr ""
 
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
-msgstr ""
+msgstr "Orologio"
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
 msgid "Gramplet for demonstrating Cairo graphics"
-msgstr ""
+msgstr "Gramplet per la spiegazione dei grafici Cairo"
 
 #: CombinedView/basepage.py:493
 #, python-format
@@ -1112,17 +1128,15 @@ msgstr "%(abbrev)s %(date)s%(place)s"
 
 #: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
-msgstr ""
+msgstr "Combinato"
 
 #: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
-msgstr ""
+msgstr "Una vista che mostra le relazioni e gli eventi di una persona"
 
 #: CombinedView/combinedview.py:528
-#, fuzzy
-#| msgid "Add death event"
 msgid "Edit the active event"
-msgstr "Aggiunge un evento di tipo decesso"
+msgstr "Modifica l'evento attivo"
 
 #: CombinedView/combinedview.py:630
 msgid "Show Tags"
@@ -1130,11 +1144,11 @@ msgstr "Mostra etichette"
 
 #: CombinedView/combinedview.py:656
 msgid "Vertical Details"
-msgstr ""
+msgstr "Dettagli verticali"
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
 msgid "Order"
-msgstr ""
+msgstr "Ordine"
 
 #: CombinedView/navigationview.py:346
 msgid ""
@@ -1160,15 +1174,15 @@ msgstr "%(event_type)s: %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
-msgstr ""
+msgstr "Clicca per rendere attivo questo evento"
 
 #: CombinedView/personpage.py:743
 msgid "Click to visit this link"
-msgstr ""
+msgstr "Clicca per visitare questo link"
 
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
-msgstr ""
+msgstr ": "
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -1198,13 +1212,13 @@ msgstr "Errore durante la scrittura di {target_path}: {message}"
 #: D3Charts/DescendantIndentedTree.py:1518
 #, python-format
 msgid "Failed to create directory structure : %s"
-msgstr ""
+msgstr "Impossibile creare la struttura della directory: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
 #: D3Charts/DescendantIndentedTree.py:1554
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr ""
+msgstr "Impossibile copiare i files web: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
@@ -1213,14 +1227,12 @@ msgstr ""
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
 #: DescendantSpaceTree/DescendantSpaceTree.py:1082
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Include Generations"
-msgstr "Generazioni ascendenti"
+msgstr "Includi Generazioni"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
 msgid "Male Background Color"
-msgstr ""
+msgstr "Colore di fondo degli uomini"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
@@ -1236,7 +1248,7 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
-msgstr ""
+msgstr "Colore di fondo delle donne"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
@@ -3187,7 +3199,7 @@ msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
 msgid "Destination File"
-msgstr "File di destinazione:"
+msgstr "File di destinazione"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1140
 msgid "The destination file name for the report."
@@ -19246,7 +19258,7 @@ msgstr "Invertire la selezione"
 
 #: PlaceUpdate/PlaceUpdate.py:213
 msgid "Apply to selected places"
-msgstr ""
+msgstr "Applica ai luoghi selezionati"
 
 #: PlaceUpdate/PlaceUpdate.py:266
 msgid "Setting place properties"
@@ -19353,70 +19365,63 @@ msgstr "Aggiornamento disponibile"
 
 #: PostgreSQL/postgresql.gpr.py:23
 msgid "PostgreSQL"
-msgstr ""
+msgstr "PostgreSQL"
 
 #: PostgreSQL/postgresql.gpr.py:24
 msgid "_PostgreSQL Database"
-msgstr ""
+msgstr "Database _PostgreSQL"
 
 #: PostgreSQL/postgresql.gpr.py:25
 msgid "PostgreSQL Database"
-msgstr ""
+msgstr "Database PostgreSQL"
 
 #: PostgreSQLEnhanced/concurrency.py:479
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
-msgstr ""
+msgstr "L'oggetto {obj_type}:{handle} è stato modificato da un altro utente"
 
 #: PostgreSQLEnhanced/migration.py:168
-#, fuzzy
-#| msgid "Generating %s report references..."
 msgid "Starting migration..."
-msgstr "Generazione di %s riferimenti del resoconto..."
+msgstr "Inizio della migrazione..."
 
 #: PostgreSQLEnhanced/migration.py:182
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Migrating %s objects..."
-msgstr "Scrittura di %s resoconti..."
+msgstr "Migrazione di %s oggetti..."
 
 #: PostgreSQLEnhanced/migration.py:193
-#, fuzzy, python-format, python-brace-format
-#| msgid "Writing %s reports..."
+#, python-brace-format, python-format
 msgid "Migrated %s {obj_type} objects"
-msgstr "Scrittura di %s resoconti..."
+msgstr "%s {obj_type} oggetti migrati"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
-msgstr ""
+msgstr "Migrazione completata!"
 
 #: PostgreSQLEnhanced/migration.py:438
-#, fuzzy
-#| msgid "Attaching sources..."
 msgid "Starting upgrade..."
-msgstr "Allegando fonti..."
+msgstr "Inizio dell'aggiornamento..."
 
 #: PostgreSQLEnhanced/migration.py:470
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Upgrading %s objects..."
-msgstr "Scrittura di %s resoconti..."
+msgstr "Aggiornamento di %s oggetti..."
 
 #: PostgreSQLEnhanced/migration.py:478
 msgid "Creating indexes..."
-msgstr ""
+msgstr "Creazione degli indici..."
 
 #: PostgreSQLEnhanced/migration.py:489
 msgid "Upgrade completed!"
-msgstr ""
+msgstr "Aggiornamento completato!"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
 msgid "PostgreSQL Enhanced"
-msgstr ""
+msgstr "PostgreSQL migliorato"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
 msgid "PostgreSQL _Enhanced Database"
-msgstr ""
+msgstr "Database PostgreSQL _Enhanced"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
 msgid ""
@@ -19438,6 +19443,8 @@ msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
+"La versione psycopg3 %(installed)s è troppo vecchia. E' necessaria la "
+"versione %(required)s o più recente."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:211
 msgid "Database Backend"
@@ -19449,11 +19456,11 @@ msgstr ""
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:214
 msgid "JSONB support"
-msgstr ""
+msgstr "Supporto JSONB"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:236
 msgid "Version warning"
-msgstr ""
+msgstr "Avviso versione"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:237
 #, python-format
@@ -19462,21 +19469,21 @@ msgstr ""
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:252
 msgid "Extensions"
-msgstr ""
+msgstr "Estensioni"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:273
 msgid "Database size"
-msgstr ""
+msgstr "Grandezza del database"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:276
 #, python-format
 msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr ""
+msgstr "%(persons)d persone, %(families)d famiglie, %(events)d eventi"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1126
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1141
 msgid "Migration manager not initialized"
-msgstr ""
+msgstr "Manager della migrazione non inizializzato"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1159
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1177
@@ -22857,10 +22864,9 @@ msgid ""
 msgstr ""
 
 #: WebSearch.py:1926
-#, fuzzy, python-format
-#| msgid "{} avatar images were sucessfully added."
+#, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "Sono stati aggiunti {} avatar."
+msgstr "La nota #%(id)s è stata aggiunta"
 
 #: WebSearch.py:1929
 msgid "Error creating note"
@@ -22875,28 +22881,23 @@ msgid "WebSearch Link"
 msgstr ""
 
 #: WebSearch.py:2110
-#, fuzzy
-#| msgid "{} avatar images were sucessfully added."
 msgid "Attribute has been successfully added"
-msgstr "Sono stati aggiunti {} avatar."
+msgstr "L'attributo è stato aggiunto"
 
 #: WebSearch.py:2142
-#, fuzzy, python-brace-format
-#| msgid "Title: {title}\n"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Titolo: {title}\n"
+msgstr "Titolo: {title}"
 
 #: WebSearch.py:2146
-#, fuzzy, python-brace-format
-#| msgid "Replace to {0}"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "Sostituisci con {0}"
+msgstr "Sostituito: {keys}"
 
 #: WebSearch.py:2149
-#, fuzzy, python-brace-format
-#| msgid "Replace to {0}"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "Sostituisci con {0}"
+msgstr "Vuoto: {keys}"
 
 #: WebSearch.py:2151
 #, python-brace-format
@@ -22945,10 +22946,9 @@ msgid "Value: %s"
 msgstr ""
 
 #: activity_row_generator.py:123
-#, fuzzy, python-format
-#| msgid "Select A File"
+#, python-format
 msgid "Loaded from file: %s"
-msgstr "Selezione file"
+msgstr "Caricato dal file: %s"
 
 #: activity_row_generator.py:126
 #, fuzzy, python-format
@@ -23662,10 +23662,8 @@ msgid ""
 msgstr ""
 
 #: markdown_place_history_formatter.py:52
-#, fuzzy
-#| msgid "Update Available"
 msgid "No data available."
-msgstr "Aggiornamento disponibile"
+msgstr "Nessun dato disponibile."
 
 #: markdown_place_history_formatter.py:57
 msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
@@ -23696,16 +23694,12 @@ msgid "Full hierarchy"
 msgstr ""
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Name Type"
 msgid "Place Type:"
-msgstr "Tipo nome"
+msgstr "Tipo posto:"
 
 #: markdown_place_history_formatter.py:69
-#, fuzzy
-#| msgid "resident"
 msgid "Last Retrieved At:"
-msgstr "residente"
+msgstr "Ultimo recupero:"
 
 #: note_links_loader.py:69
 msgid "Note Link (parsed)"
@@ -23837,10 +23831,8 @@ msgid "Display Columns"
 msgstr "Formato di visualizzazione del nome"
 
 #: settings_ui_manager.py:265
-#, fuzzy
-#| msgid "Name Display Format"
 msgid "Display Icons"
-msgstr "Formato di visualizzazione del nome"
+msgstr "Mostra icone"
 
 #, fuzzy
 #~ msgid "Invalid latitude (syntax: 18°9'"
