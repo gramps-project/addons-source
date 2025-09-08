@@ -164,6 +164,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             t_filter = Thread(target=self.t_filter_rules(related, plist))
             t_filter.start()
             t_filter.join()
+            _LOG.debug("===t_filter is still alive? : %s" % t_filter.is_alive())
 
             self.relationship = get_relationship_calculator()
         else: # TODO: provide selection widget for CLI and GUI
@@ -279,8 +280,14 @@ class RelationTab(tool.Tool, ManagedWindow):
                 #else:
                     #line = (iterator, array('b', new_list))
 
+
                 self.stats_list.append((int(kekule), self.rel, name, int(Ga),
                                         int(Gb), int(mra), int(self.rank), str(period)))
+
+                _LOG.debug("===t2 is still alive? : %s" % t2.is_alive())
+                _LOG.debug("===t3 is still alive? : %s" % t3.is_alive())
+                _LOG.debug("===t4 is still alive? : %s" % t4.is_alive())
+
         self.progress.close()
 
         from itertools import groupby
