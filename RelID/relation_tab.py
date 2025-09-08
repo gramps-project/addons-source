@@ -268,7 +268,7 @@ class RelationTab(tool.Tool, ManagedWindow):
 
                 period = get_timeperiod(self.dbstate.db, handle)
 
-                # sometimes 'iterator' (generator) is more faster
+                # sometimes 'iterator' (generator) is faster
                 #handle_list = map(handle, self.filtered_list)
                 iterator = (handle for handle in self.filtered_list)
 
