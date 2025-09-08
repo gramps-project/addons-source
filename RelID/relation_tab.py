@@ -208,6 +208,8 @@ class RelationTab(tool.Tool, ManagedWindow):
             t1 = Thread(target=self.t_rank(dist, max_level))
             t1.start()
             t1.join()
+            if self.rank == -1 or self.rank > max_level: # not related and ignored people
+                continue
 
             limit = timeout_two - timeout_one
             expect = (limit - var) / max_level
@@ -319,8 +321,6 @@ class RelationTab(tool.Tool, ManagedWindow):
         """
         """
         self.rank = dist[0][0]
-        if self.rank == -1 or self.rank > max_level: # not related and ignored people
-            return
 
 
     def t_one(self, default_person, person):
