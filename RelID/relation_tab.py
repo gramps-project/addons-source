@@ -77,13 +77,13 @@ class RelationTab(tool.Tool, ManagedWindow):
         self.dbstate = dbstate
         FilterClass = GenericFilterFactory('Person')
         self.path = '.'
-        filter = FilterClass()
+        self.filter = FilterClass()
 
         tool.Tool.__init__(self, dbstate, options_class, name)
         if uistate:
 
             window = Gtk.Window()
-            window.set_default_size(880, 600)
+            window.set_default_size(1000, 600)
 
             box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
             window.add(box)
@@ -161,9 +161,9 @@ class RelationTab(tool.Tool, ManagedWindow):
             # counter on filtering pass was not efficient
             # Not the proper solution, but a lazy one providing expected message
 
-            filter.add_rule(related)
-            self.progress.set_pass(_('Please wait, filtering...'))
-            filtered_list = filter.apply(self.dbstate.db, plist)
+            t_filter = Thread(target=self.t_filter_rules(related, plist))
+            t_filter.start()
+            t_filter.join()
 
             self.relationship = get_relationship_calculator()
         else: # TODO: provide selection widget for CLI and GUI
@@ -171,13 +171,13 @@ class RelationTab(tool.Tool, ManagedWindow):
             return
 
         count = 0
-        filtered_people = len(filtered_list)
+        filtered_people = len(self.filtered_list)
         self.progress.set_pass(_('Generating relation map...'), filtered_people)
         if self.progress.get_cancelled():
             self.progress.close()
             return
         step_one = time.clock() # init for counters
-        for handle in filtered_list:
+        for handle in self.filtered_list:
             nb = len(self.stats_list)
             count += 1
             self.progress.step()
@@ -269,8 +269,8 @@ class RelationTab(tool.Tool, ManagedWindow):
                 period = get_timeperiod(self.dbstate.db, handle)
 
                 # sometimes 'iterator' (generator) is more faster
-                #handle_list = map(handle, filtered_list)
-                iterator = (handle for handle in filtered_list)
+                #handle_list = map(handle, self.filtered_list)
+                iterator = (handle for handle in self.filtered_list)
 
                 # experimentations; not used yet
                 #new_list=[int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
@@ -298,6 +298,14 @@ class RelationTab(tool.Tool, ManagedWindow):
             window.show()
             self.set_window(window, None, self.label)
             self.show()
+
+
+    def t_filter_rules(self, related, plist):
+        """
+        """
+        self.filter.add_rule(related)
+        self.progress.set_pass(_('Please wait, filtering...'))
+        self.filtered_list = self.filter.apply(self.dbstate.db, plist)
 
 
     def t_rank(self, dist, max_level):
