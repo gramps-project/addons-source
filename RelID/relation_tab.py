@@ -26,6 +26,7 @@ Relations tab.
 
 """
 import time
+from threading import Thread
 import logging
 import platform
 import os
@@ -164,7 +165,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             self.progress.set_pass(_('Please wait, filtering...'))
             filtered_list = filter.apply(self.dbstate.db, plist)
 
-            relationship = get_relationship_calculator()
+            self.relationship = get_relationship_calculator()
         else: # TODO: provide selection widget for CLI and GUI
             WarningDialog(_("No default_person"))
             return
@@ -198,13 +199,14 @@ class RelationTab(tool.Tool, ManagedWindow):
             person = dbstate.db.get_person_from_handle(handle)
 
             timeout_one = time.clock() # for delta and timeout estimations
-            dist = relationship.get_relationship_distance_new(
+            dist = self.relationship.get_relationship_distance_new(
                 dbstate.db, default_person, person, only_birth=True)
             timeout_two = time.clock()
 
-            rank = dist[0][0]
-            if rank == -1 or rank > max_level: # not related and ignored people
-                continue
+            self.rank = 0
+            t1 = Thread(target=self.t_rank(dist, max_level))
+            t1.start()
+            t1.join()
 
             limit = timeout_two - timeout_one
             expect = (limit - var) / max_level
@@ -219,23 +221,28 @@ class RelationTab(tool.Tool, ManagedWindow):
                 continue
             else:
                 _LOG.debug("variation = '{}'".format(limit)) # delta, see above max_level 'wall' section
-                rel = relationship.get_one_relationship(
-                    dbstate.db, default_person, person)
-                rel_a = dist[0][2]
-                Ga = len(rel_a)
-                rel_b = dist[0][4]
-                Gb = len(rel_b)
+                t2 = Thread(target=self.t_one(default_person, person))
+                t2.start()
+                t2.join()
+                t3 = Thread(target=self.t_rela(dist))
+                t3.start()
+                t3.join()
+                Ga = len(self.rel_a)
+                t4 = Thread(target=self.t_relb(dist))
+                t4.start()
+                t4.join()
+                Gb = len(self.rel_b)
                 mra = 1
 
                 # m: mother; f: father
                 if Ga > 0:
-                    for letter in rel_a:
+                    for letter in self.rel_a:
                         if letter == 'm':
                             mra = mra * 2 + 1
                         if letter == 'f':
                             mra = mra * 2
                     # design: mra gender will be often female (m: mother)
-                    if rel_a[-1] == "f" and Gb != 0: # male gender, look at spouse
+                    if self.rel_a[-1] == "f" and Gb != 0: # male gender, look at spouse
                         mra = mra + 1
 
                 name = name_displayer.display(person)
@@ -244,7 +251,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                 no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
                 _LOG.info(no_name) # own internal password via handle
 
-                kekule = number.get_number(Ga, Gb, rel_a, rel_b)
+                kekule = number.get_number(Ga, Gb, self.rel_a, self.rel_b)
 
                 # workaround - possible unique ID and common numbers
                 uuid = str(uuid4())
@@ -266,14 +273,14 @@ class RelationTab(tool.Tool, ManagedWindow):
                 iterator = (handle for handle in filtered_list)
 
                 # experimentations; not used yet
-                new_list=[int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
-                if max_level > 7:
-                    line = (iterator, array('l', new_list))
-                else:
-                    line = (iterator, array('b', new_list))
+                #new_list=[int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
+                #if max_level > 7:
+                    #line = (iterator, array('l', new_list))
+                #else:
+                    #line = (iterator, array('b', new_list))
 
-                self.stats_list.append((int(kekule), rel, name, int(Ga),
-                                        int(Gb), int(mra), int(rank), str(period)))
+                self.stats_list.append((int(kekule), self.rel, name, int(Ga),
+                                        int(Gb), int(mra), int(self.rank), str(period)))
         self.progress.close()
 
         from itertools import groupby
@@ -291,6 +298,34 @@ class RelationTab(tool.Tool, ManagedWindow):
             window.show()
             self.set_window(window, None, self.label)
             self.show()
+
+
+    def t_rank(self, dist, max_level):
+        """
+        """
+        self.rank = dist[0][0]
+        if self.rank == -1 or self.rank > max_level: # not related and ignored people
+            return
+
+
+    def t_one(self, default_person, person):
+        """
+        """
+        self.rel = self.relationship.get_one_relationship(
+                    self.dbstate.db, default_person, person)
+
+
+    def t_rela(self, dist):
+        """
+        """
+        self.rel_a = dist[0][2]
+
+
+    def t_relb(self, dist):
+        """
+        """
+        self.rel_b = dist[0][4]
+
 
     def save(self):
         """
