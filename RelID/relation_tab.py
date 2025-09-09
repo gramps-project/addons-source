@@ -101,6 +101,8 @@ class RelationTab(tool.Tool, ManagedWindow):
             chooser.destroy()
 
             ManagedWindow.__init__(self, uistate, [], self.__class__)
+            self.set_window(window, None, self.label)
+            window.show_all()
 
             # Configuration du TreeView
             self.titles = [
@@ -165,9 +167,6 @@ class RelationTab(tool.Tool, ManagedWindow):
         filtered_people = len(self.filtered_list)
         self.progress.set_pass(_('Generating relation map...'), filtered_people)
         _LOG.debug(f"Processing {filtered_people} people.")
-        if self.progress.get_cancelled():
-            self.progress.close()
-            return
 
         step_one = time.perf_counter()  # Remplace time.clock()
 
@@ -294,6 +293,19 @@ class RelationTab(tool.Tool, ManagedWindow):
     #-------------------------------------------------------------------------
     def build_menu_names(self, obj):
         return (self.label, None)
+
+    #-------------------------------------------------------------------------
+    def close_progress_meter(self):
+        """Ferme le ProgressMeter s'il est ouvert."""
+        if hasattr(self, 'progress') and self.progress:
+            self.progress.close()
+
+    #-------------------------------------------------------------------------
+    def on_delete_event(self, window, event):
+        """Gère l'événement de fermeture de la fenêtre."""
+        self.close_progress_meter()  # Ferme le ProgressMeter
+        self.close()  # Ferme la fenêtre
+        return True  # Indique que l'événement a été géré
 
 #-------------------------------------------------------------------------
 class TableReport:
