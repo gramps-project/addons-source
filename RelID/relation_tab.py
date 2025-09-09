@@ -262,14 +262,14 @@ class RelationTab(tool.Tool, ManagedWindow):
                     #line = (iterator, array('b', new_list))
 
                 # workaround - possible unique ID and common numbers
-                uuid = str(uuid4())
-                _LOG.info("Random UUID: {}".format(uuid))
+                #uuid = str(uuid4())
+                #_LOG.info("Random UUID: {}".format(uuid))
 
                 name = name_displayer.display(person)
                 # pseudo privacy; sample for DNA stuff and mapping
-                import hashlib
-                no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
-                _LOG.info(no_name) # own internal password via handle
+                #import hashlib
+                #no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
+                #_LOG.info(no_name) # own internal password via handle
 
                 t2 = Thread(target=self.t_one(default_person, person))
                 t2.start()
