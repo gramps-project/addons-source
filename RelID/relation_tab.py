@@ -11,29 +11,19 @@
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-#
 
 """
 Relations tab.
-
 """
+
 import time
-from threading import Thread
 import logging
 import platform
 import os
 from array import array
 from uuid import uuid4
+from threading import Thread
 from gi.repository import Gtk
-
 from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter
@@ -45,32 +35,30 @@ from gramps.gen.filters import GenericFilterFactory, rules
 from gramps.gen.config import config
 from gramps.gen.utils.docgen import ODSTab
 from gramps.gen.utils.db import get_timeperiod
-#from gramps.plugins.lib.librecurse import AscendPerson
 import number
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-
 _LOG = logging.getLogger(__name__)
 _LOG.info(platform.uname())
 logging.basicConfig(filename='debug.log', level=logging.DEBUG)
-#_LOG.info("Number of CPU available: %s" % len(os.sched_getaffinity(0)))
-#_LOG.info("Scheduling policy for CPU-intensive processes: %s" % os.SCHED_BATCH)
-#try:
-    #_LOG.info(os.system('lscpu'))
-#except:
-    #pass
 
 #-------------------------------------------------------------------------
-#
-#
-#
+def t_one(dbstate, relationship, default_person, person):
+    """
+    Récupère une relation entre deux personnes.
+    """
+    _LOG.debug(f"Calculating relationship for {name_displayer.display(person)}")
+    rel = relationship.get_one_relationship(dbstate.db, default_person, person)
+    _LOG.debug(f"Relationship result: {rel}")
+    return rel
+
 #-------------------------------------------------------------------------
 class RelationTab(tool.Tool, ManagedWindow):
-
     def __init__(self, dbstate, user, options_class, name, callback=None):
         uistate = user.uistate
         self.label = _("Relation and distances with root")
@@ -78,37 +66,37 @@ class RelationTab(tool.Tool, ManagedWindow):
         FilterClass = GenericFilterFactory('Person')
         self.path = '.'
         self.filter = FilterClass()
-
         tool.Tool.__init__(self, dbstate, options_class, name)
-        if uistate:
+        self.relationship = get_relationship_calculator()
+        self.stats_list = []
 
+        if uistate:
             window = Gtk.Window()
             window.set_default_size(1000, 600)
-
             box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
             window.add(box)
 
-            # dirty work-around for Gtk.HeaderBar() and FolderChooser
-
-            chooser = Gtk.FileChooserDialog(_("Folder Chooser"),
-                                            parent=uistate.window,
-                                            action=Gtk.FileChooserAction.SELECT_FOLDER,
-                                            buttons=(_('_Cancel'),
-                                                     Gtk.ResponseType.CANCEL,
-                                                     _('_Select'),
-                                                     Gtk.ResponseType.OK))
+            # Sélection du dossier de sauvegarde
+            chooser = Gtk.FileChooserDialog(
+                _("Folder Chooser"),
+                parent=uistate.window,
+                action=Gtk.FileChooserAction.SELECT_FOLDER,
+                buttons=(
+                    _('_Cancel'), Gtk.ResponseType.CANCEL,
+                    _('_Select'), Gtk.ResponseType.OK
+                )
+            )
             chooser.set_tooltip_text(_("Please, select a folder"))
             status = chooser.run()
             if status == Gtk.ResponseType.OK:
-                # work-around 'IsADirectoryError' with self()
-                # TypeError: invalid file: gi.FunctionInfo()
                 self.path = chooser.get_current_folder()
             chooser.destroy()
 
-            ManagedWindow.__init__(self, uistate, [],
-                                   self.__class__)
+            ManagedWindow.__init__(self, uistate, [], self.__class__)
+
+            # Configuration du TreeView
             self.titles = [
-                (_('Rel_id'), 0, 40, INTEGER), # would be INTEGER
+                (_('Rel_id'), 0, 40, INTEGER),
                 (_('Relation'), 1, 300, str),
                 (_('Name'), 2, 200, str),
                 (_('up'), 3, 35, INTEGER),
@@ -116,335 +104,221 @@ class RelationTab(tool.Tool, ManagedWindow):
                 (_('Common MRA'), 5, 40, INTEGER),
                 (_('Rank'), 6, 40, INTEGER),
                 (_('Period'), 7, 40, str),
-                ]
-
+            ]
             treeview = Gtk.TreeView()
-            model = ListModel(treeview, self.titles)
+            self.model = ListModel(treeview, self.titles)
             s = Gtk.ScrolledWindow()
             s.add(treeview)
             box.pack_start(s, True, True, 0)
 
+            # Bouton de sauvegarde
             button = Gtk.Button(label=_("Save"))
             button.connect("clicked", self.button_clicked)
             box.pack_end(button, False, True, 0)
 
-        self.stats_list = []
-
-        # behavior can be different according to CPU and generation depth
-
+        # Récupération des personnes filtrées
         max_level = config.get('behavior.generation-depth')
-        # compact and interlinked tree
-        # single core 2.80 Ghz needs +/- 0.1 second per person
-        if max_level >= 15:
-            var = max_level * 0.01
-        elif 10 <= max_level < 15:
-            var = max_level * 0.02
-        else:
-            var = max_level * 0.025
-
         plist = self.dbstate.db.iter_person_handles()
         length = self.dbstate.db.get_number_of_people()
         default_person = self.dbstate.db.get_default_person()
+
         if uistate:
-            self.progress = ProgressMeter(self.label, can_cancel=True,
-                                          parent=window)
+            self.progress = ProgressMeter(self.label, can_cancel=True, parent=window)
         else:
             self.progress = ProgressMeter(self.label)
 
-        if default_person: # rather designed for run via GUI...
+        if default_person:
             root_id = default_person.get_gramps_id()
-            ancestors = rules.person.IsAncestorOf([str(root_id), True])
-            descendants = rules.person.IsDescendantOf([str(root_id), True])
             related = rules.person.IsRelatedWith([str(root_id)])
-
-            # filtering people can be useful on some large data set
-            # counter on filtering pass was not efficient
-            # Not the proper solution, but a lazy one providing expected message
-
             self.filter.add_rule(related)
+            _LOG.info("Filtering people related to the root person...")
             self.progress.set_pass(_('Please wait, filtering...'))
             self.filtered_list = self.filter.apply(self.dbstate.db, plist)
-
-            self.relationship = get_relationship_calculator()
-        else: # TODO: provide selection widget for CLI and GUI
+            _LOG.info(f"Found {len(self.filtered_list)} related people.")
+        else:
+            _LOG.error("No default person set.")
             WarningDialog(_("No default_person"))
             return
 
-        count = 0
-        filtered_people = len(self.filtered_list)
-        self.progress.set_pass(_('Generating relation map...'), filtered_people)
-        if self.progress.get_cancelled():
-            self.progress.close()
-            return
-        step_one = time.clock() # init for counters
-        for handle in self.filtered_list:
-            nb = len(self.stats_list)
-            count += 1
-            self.progress.step()
-            step_two = time.clock()
-            need = (step_two - step_one) / count
-            wait = need * filtered_people
-            remain = int(wait) - int(step_two - step_one)
-            # sorry, lazy
-            header = _("%d/%d \n %d/%d seconds \n %d/%d \n%f|\t%f"
-                    % (count, filtered_people, remain, int(wait),
-                    nb, length, float(need), float(var))
-                    )
-            self.progress.set_header(header) 
-            person = dbstate.db.get_person_from_handle(handle)
+        # Traitement des personnes
+        _LOG.info("Starting to process people...")
+        self.process_people(max_level, uistate, window, default_person, length)
+        _LOG.info("Finished processing people.")
 
-            timeout_one = time.clock() # for delta and timeout estimations
-            dist = self.relationship.get_relationship_distance_new(
-                dbstate.db, default_person, person, only_birth=True)
-            timeout_two = time.clock()
-
-            self.rank = 0
-            t1 = Thread(target=self.t_rank(dist, max_level))
-            t1.start()
-            t1.join()
-            if self.rank == -1 or self.rank > max_level: # not related and ignored people
-                continue
-
-            limit = timeout_two - timeout_one
-            expect = (limit - var) / max_level
-            if limit > var:
-                n = name_displayer.display(person)
-                _LOG.debug("Sorry! '{0}' needs {1} second, \
-                            variation = '{2}'".format(n,
-                                                      limit,
-                                                      expect
-                                                     )
-                          )
-                continue
-            else:
-                _LOG.debug("variation = '{}'".format(limit)) # delta, see above max_level 'wall' section
-                mra = 1
-                t3 = Thread(target=self.t_rela(dist))
-                t3.start()
-                t3.join()
-                Ga = len(self.rel_a)
-                t4 = Thread(target=self.t_relb(dist))
-                t4.start()
-                t4.join()
-                Gb = len(self.rel_b)  
-
-                # m: mother; f: father
-                if Ga > 0:
-                    for letter in self.rel_a:
-                        if letter == 'm':
-                            mra = mra * 2 + 1
-                        if letter == 'f':
-                            mra = mra * 2
-                    # design: mra gender will be often female (m: mother)
-                    if self.rel_a[-1] == "f" and Gb != 0: # male gender, look at spouse
-                        mra = mra + 1
-
-                kekule = number.get_number(Ga, Gb, self.rel_a, self.rel_b)
-
-                if kekule == "u": # TODO: cousin(e)s need a key
-                    kekule = 0
-                if kekule == "nb": # non-birth
-                    kekule = -1
-                try:
-                    test = int(kekule)
-                except: # 1: related to mother; 0.x : no more girls lineage
-                    kekule = 1
-
-                # sometimes 'iterator' (generator) is faster
-                #handle_list = map(handle, self.filtered_list)
-                #iterator = (handle for handle in self.filtered_list)
-
-                # experimentations; not used yet
-                #new_list=[int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
-                #if max_level > 7:
-                    #line = (iterator, array('l', new_list))
-                #else:
-                    #line = (iterator, array('b', new_list))
-
-                # workaround - possible unique ID and common numbers
-                #uuid = str(uuid4())
-                #_LOG.info("Random UUID: {}".format(uuid))
-
-                name = name_displayer.display(person)
-                # pseudo privacy; sample for DNA stuff and mapping
-                #import hashlib
-                #no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
-                #_LOG.info(no_name) # own internal password via handle
-
-                t2 = Thread(target=self.t_one(default_person, person))
-                t2.start()
-                t2.join()
-                t5 = Thread(target=self.t_period(handle))
-                t5.start()
-                t5.join()
-
-                self.stats_list.append((int(kekule), self.rel, name, int(Ga),
-                                        int(Gb), int(mra), int(self.rank), str(self.period)))
-            if self.progress.get_cancelled():
-                self.progress.close()
-                return
-
-        time.sleep(0.5) # pseudo-pause for the display
-        self.progress.close()
-
-        from itertools import groupby
-        for key, items in groupby(self.stats_list, lambda x: x[0]):
-            for subitem in items:
-                _LOG.info(subitem)
-
-        _LOG.debug("total: {}".format(nb))
-        _LOG.info(step_two - step_one)
-        for entry in self.stats_list:
-            if uistate:
-                model.add(entry, entry[0])
-            else:
-                print(entry)
         if uistate:
             window.show()
             self.set_window(window, None, self.label)
             self.show()
 
+    #-------------------------------------------------------------------------
+    def process_people(self, max_level, uistate, window, default_person, length):
+        """Traite la liste des personnes filtrées."""
+        count = 0
+        filtered_people = len(self.filtered_list)
+        self.progress.set_pass(_('Generating relation map...'), filtered_people)
+        _LOG.debug(f"Processing {filtered_people} people.")
 
-    def t_rank(self, dist, max_level):
-        """
-        """
-        self.rank = dist[0][0]
+        step_one = time.perf_counter()  # Remplace time.clock()
 
+        for handle in self.filtered_list:
+            count += 1
+            self.progress.step()
+            person = self.dbstate.db.get_person_from_handle(handle)
+            _LOG.debug(f"Processing person: {name_displayer.display(person)}")
 
-    def t_one(self, default_person, person):
-        """
-        """
-        self.rel = self.relationship.get_one_relationship(
-                    self.dbstate.db, default_person, person)
+            dist = self.relationship.get_relationship_distance_new(
+                self.dbstate.db, default_person, person, only_birth=True)
 
+            # Récupère les infos de la relation
+            rank = dist[0][0]
+            _LOG.debug(f"Rank for this person: {rank}")
+            if rank == -1 or rank > max_level:
+                _LOG.debug("Skipping person (not related or too distant).")
+                continue
 
-    def t_rela(self, dist):
-        """
-        """
-        self.rel_a = dist[0][2]
+            rel_a = dist[0][2]
+            rel_b = dist[0][4]
+            Ga = len(rel_a)
+            Gb = len(rel_b)
 
+            # Calcule mra
+            mra = 1
+            for letter in rel_a:
+                if letter == 'm':
+                    mra = mra * 2 + 1
+                elif letter == 'f':
+                    mra = mra * 2
 
-    def t_relb(self, dist):
-        """
-        """
-        self.rel_b = dist[0][4]
+            if rel_a and rel_a[-1] == "f" and Gb != 0:
+                mra += 1
 
+            # Calcule kekule
+            kekule = number.get_number(Ga, Gb, rel_a, rel_b)
+            if kekule == "u":
+                kekule = 0
+            elif kekule == "nb":
+                kekule = -1
+            try:
+                kekule = int(kekule)
+            except:
+                kekule = 1
 
-    def t_period(self, handle):
-        """
-        """
-        self.period = get_timeperiod(self.dbstate.db, handle)
+            # uuid = str(uuid4())
+            # _LOG.info(f"Random UUID: {uuid}")
 
+            # new_list = [int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
+            # if max_level > 7:
+            #     line = (handle, array('l', new_list))
+            # else:
+            #     line = (handle, array('b', new_list))
 
+            # Récupère la relation et la période
+            rel = t_one(self.dbstate, self.relationship, default_person, person)
+            period = get_timeperiod(self.dbstate.db, handle)
+            name = name_displayer.display(person)
+
+            # Header du ProgressMeter
+            step_two = time.perf_counter()
+            need = (step_two - step_one) / count
+            wait = need * filtered_people
+            remain = int(wait) - int(step_two - step_one)
+            header = _("%d/%d \n %d/%d seconds \n %d/%d \n%f|\t%f"
+                    % (count, filtered_people, remain, int(wait),
+                    len(self.stats_list), length, float(need), float(0.025)))
+            self.progress.set_header(header)
+
+            # Ajoute les résultats
+            self.stats_list.append((
+                int(kekule), rel, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
+            ))
+
+            if uistate:
+                self.model.add((int(kekule), rel, name, int(Ga), int(Gb), int(mra), int(rank), str(period)), int(kekule))
+
+            _LOG.debug(f"Added entry for {name} to stats_list.")
+
+        self.progress.close()
+        _LOG.info(f"Total processing time: {time.perf_counter() - step_one} seconds.")
+
+    #-------------------------------------------------------------------------
     def save(self):
-        """
-        save action
-        """
+        """Enregistre les résultats dans un fichier ODS."""
+        if not self.stats_list:
+            _LOG.warning("No data to save.")
+            return
+
+        _LOG.info("Starting to save data to ODS file.")
         doc = ODSTab(len(self.stats_list))
-        doc.creator(self.db.get_researcher().get_name())
-        name = self.dbstate.db.get_default_person().get_handle() + '.ods'
+        doc.creator(self.dbstate.db.get_researcher().get_name())
+        filename = self.dbstate.db.get_default_person().get_handle() + '.ods'
         if self.path != '.':
-            name = os.path.join(self.path, name)
+            filename = os.path.join(self.path, filename)
+
         try:
-            import io
-            io.open(name, "w", encoding='utf8')
-        except PermissionError or IsADirectoryError:
+            with open(filename, "w", encoding='utf8') as f:
+                pass  # Le fichier sera rempli par ODSTab
+        except (PermissionError, IsADirectoryError) as e:
+            _LOG.error(f"Failed to create file: {e}")
             WarningDialog(_("You do not have write rights on this folder"))
             return
 
-        spreadsheet = TableReport(name, doc)
-
-        new_titles = []
-        skip_columns = []
-        index = 0
-        for title in self.titles:
-            if title == 'sort':
-                skip_columns.append(index)
-            else:
-                new_titles.append(title)
-            index += 1
+        spreadsheet = TableReport(filename, doc)
+        new_titles = [title for title in self.titles if title[0] != 'sort']
         spreadsheet.initialize(len(new_titles))
-
         spreadsheet.write_table_head(new_titles)
 
-        index = 0
-        for top in self.stats_list:
-            spreadsheet.set_row(index%2)
-            index += 1
-            spreadsheet.write_table_data(top, skip_columns)
+        for index, entry in enumerate(self.stats_list):
+            spreadsheet.set_row(index % 2)
+            spreadsheet.write_table_data(entry)
 
         spreadsheet.finalize()
+        _LOG.info(f"Data successfully saved to {filename}.")
 
+    #-------------------------------------------------------------------------
+    def button_clicked(self, button):
+        """Appelé quand le bouton 'Save' est cliqué."""
+        _LOG.info("Save button clicked.")
+        self.save()
+
+    #-------------------------------------------------------------------------
     def build_menu_names(self, obj):
         return (self.label, None)
 
-    def button_clicked(self, button):
-        self.save()
-
+#-------------------------------------------------------------------------
 class TableReport:
-    """
-    This class provides an interface for the spreadsheet table
-    used to save the data into the file.
-    """
-
+    """Classe pour gérer l'export des données dans un tableau ODS."""
     def __init__(self, filename, doc):
-        """
-        init
-        """
         self.filename = filename
         self.doc = doc
 
     def initialize(self, cols):
+        _LOG.debug(f"Initializing ODS file: {self.filename}")
         self.doc.open(self.filename)
         self.doc.start_page()
 
     def finalize(self):
-        """
-        close
-        """
+        _LOG.debug("Finalizing ODS file.")
         self.doc.end_page()
         self.doc.close()
 
-    def write_table_data(self, data, skip_columns=None):
-        """
-        write data for table
-        """
-        skip_columns = []
+    def write_table_data(self, data):
         self.doc.start_row()
-        index = -1
         for item in data:
-            index += 1
-            if index not in skip_columns:
-                self.doc.write_cell(str(item))
+            self.doc.write_cell(str(item))
         self.doc.end_row()
 
     def set_row(self, val):
-        """
-        the row
-        """
         self.row = val + 2
 
     def write_table_head(self, data):
-        """
-        the header
-        """
-        head = []
-        for column in data:
-            (header, ID, length, TYPE) = column
-            head.append(header)
+        headers = [header[0] for header in data]
         self.doc.start_row()
-        list(map(self.doc.write_cell, head))
+        for header in headers:
+            self.doc.write_cell(header)
         self.doc.end_row()
 
-#------------------------------------------------------------------------
-#
-#
-#
-#------------------------------------------------------------------------
+#-------------------------------------------------------------------------
 class RelationTabOptions(tool.ToolOptions):
-    """
-    Defines options and provides handling interface.
-    """
-
+    """Options pour l'outil RelationTab."""
     def __init__(self, name, person_id=None):
         tool.ToolOptions.__init__(self, name, person_id)
