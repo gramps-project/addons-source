@@ -26,7 +26,7 @@ Relations tab.
 
 """
 import time
-from threading import Thread, Timer
+from threading import Thread
 import logging
 import platform
 import os
@@ -190,6 +190,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                     % (count, filtered_people, remain, int(wait),
                     nb, length, float(need), float(var))
                     )
+            self.progress.set_header(header) 
             person = dbstate.db.get_person_from_handle(handle)
 
             timeout_one = time.clock() # for delta and timeout estimations
@@ -217,18 +218,15 @@ class RelationTab(tool.Tool, ManagedWindow):
                 continue
             else:
                 _LOG.debug("variation = '{}'".format(limit)) # delta, see above max_level 'wall' section
-                t2 = Thread(target=self.t_one(default_person, person))
+                mra = 1
                 t3 = Thread(target=self.t_rela(dist))
-                t4 = Thread(target=self.t_relb(dist))
-                t2.start()
-                t2.join()
                 t3.start()
                 t3.join()
+                Ga = len(self.rel_a)
+                t4 = Thread(target=self.t_relb(dist))
                 t4.start()
                 t4.join()
-                Ga = len(self.rel_a)
-                Gb = len(self.rel_b)
-                mra = 1
+                Gb = len(self.rel_b)  
 
                 # m: mother; f: father
                 if Ga > 0:
@@ -241,17 +239,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                     if self.rel_a[-1] == "f" and Gb != 0: # male gender, look at spouse
                         mra = mra + 1
 
-                name = name_displayer.display(person)
-                # pseudo privacy; sample for DNA stuff and mapping
-                import hashlib
-                no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
-                _LOG.info(no_name) # own internal password via handle
-
                 kekule = number.get_number(Ga, Gb, self.rel_a, self.rel_b)
-
-                # workaround - possible unique ID and common numbers
-                uuid = str(uuid4())
-                _LOG.info("Random UUID: {}".format(uuid))
 
                 if kekule == "u": # TODO: cousin(e)s need a key
                     kekule = 0
@@ -262,11 +250,9 @@ class RelationTab(tool.Tool, ManagedWindow):
                 except: # 1: related to mother; 0.x : no more girls lineage
                     kekule = 1
 
-                period = get_timeperiod(self.dbstate.db, handle)
-
                 # sometimes 'iterator' (generator) is faster
                 #handle_list = map(handle, self.filtered_list)
-                iterator = (handle for handle in self.filtered_list)
+                #iterator = (handle for handle in self.filtered_list)
 
                 # experimentations; not used yet
                 #new_list=[int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
@@ -275,13 +261,30 @@ class RelationTab(tool.Tool, ManagedWindow):
                 #else:
                     #line = (iterator, array('b', new_list))
 
+                # workaround - possible unique ID and common numbers
+                uuid = str(uuid4())
+                _LOG.info("Random UUID: {}".format(uuid))
+
+                name = name_displayer.display(person)
+                # pseudo privacy; sample for DNA stuff and mapping
+                import hashlib
+                no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
+                _LOG.info(no_name) # own internal password via handle
+
+                t2 = Thread(target=self.t_one(default_person, person))
+                t2.start()
+                t2.join()
+                t5 = Thread(target=self.t_period(handle))
+                t5.start()
+                t5.join()
 
                 self.stats_list.append((int(kekule), self.rel, name, int(Ga),
-                                        int(Gb), int(mra), int(self.rank), str(period)))
-            Timer(1.0, self.progress.set_header(header))
+                                        int(Gb), int(mra), int(self.rank), str(self.period)))
             if self.progress.get_cancelled():
                 self.progress.close()
                 return
+
+        time.sleep(0.5) # pseudo-pause for the display
         self.progress.close()
 
         from itertools import groupby
@@ -325,6 +328,12 @@ class RelationTab(tool.Tool, ManagedWindow):
         """
         """
         self.rel_b = dist[0][4]
+
+
+    def t_period(self, handle):
+        """
+        """
+        self.period = get_timeperiod(self.dbstate.db, handle)
 
 
     def save(self):
