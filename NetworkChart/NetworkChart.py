@@ -130,9 +130,9 @@ class NetworkChartReport(Report):
 
         stdoptions.run_name_format_option(self, menu)
 
-        self._born = self._("birth abbreviation|b.") + ' '
-        self._died = self._("death abbreviation|d.") + ' '
-        self._marr = self._("marriage abbreviation|m.") + ' '
+        self._born = self._("b.", "birth abbreviation") + ' '
+        self._died = self._("d.", "death abbreviation") + ' '
+        self._marr = self._("m.", "marriage abbreviation") + ' '
         self._unk = self._('Unknown')
 
         self.font_chart = menu.get_option_by_name(
