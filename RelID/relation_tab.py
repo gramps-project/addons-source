@@ -161,10 +161,9 @@ class RelationTab(tool.Tool, ManagedWindow):
             # counter on filtering pass was not efficient
             # Not the proper solution, but a lazy one providing expected message
 
-            t_filter = Thread(target=self.t_filter_rules(related, plist))
-            t_filter.start()
-            t_filter.join()
-            _LOG.debug("===t_filter is still alive? : %s" % t_filter.is_alive())
+            self.filter.add_rule(related)
+            self.progress.set_pass(_('Please wait, filtering...'))
+            self.filtered_list = self.filter.apply(self.dbstate.db, plist)
 
             self.relationship = get_relationship_calculator()
         else: # TODO: provide selection widget for CLI and GUI
@@ -225,15 +224,15 @@ class RelationTab(tool.Tool, ManagedWindow):
             else:
                 _LOG.debug("variation = '{}'".format(limit)) # delta, see above max_level 'wall' section
                 t2 = Thread(target=self.t_one(default_person, person))
+                t3 = Thread(target=self.t_rela(dist))
+                t4 = Thread(target=self.t_relb(dist))
                 t2.start()
                 t2.join()
-                t3 = Thread(target=self.t_rela(dist))
                 t3.start()
                 t3.join()
-                Ga = len(self.rel_a)
-                t4 = Thread(target=self.t_relb(dist))
                 t4.start()
                 t4.join()
+                Ga = len(self.rel_a)
                 Gb = len(self.rel_b)
                 mra = 1
 
@@ -285,11 +284,6 @@ class RelationTab(tool.Tool, ManagedWindow):
 
                 self.stats_list.append((int(kekule), self.rel, name, int(Ga),
                                         int(Gb), int(mra), int(self.rank), str(period)))
-
-                _LOG.debug("===t2 is still alive? : %s" % t2.is_alive())
-                _LOG.debug("===t3 is still alive? : %s" % t3.is_alive())
-                _LOG.debug("===t4 is still alive? : %s" % t4.is_alive())
-
         self.progress.close()
 
         from itertools import groupby
@@ -298,6 +292,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                 _LOG.info(subitem)
 
         _LOG.debug("total: {}".format(nb))
+        _LOG.info(step_two - step_one)
         for entry in self.stats_list:
             if uistate:
                 model.add(entry, entry[0])
@@ -307,14 +302,6 @@ class RelationTab(tool.Tool, ManagedWindow):
             window.show()
             self.set_window(window, None, self.label)
             self.show()
-
-
-    def t_filter_rules(self, related, plist):
-        """
-        """
-        self.filter.add_rule(related)
-        self.progress.set_pass(_('Please wait, filtering...'))
-        self.filtered_list = self.filter.apply(self.dbstate.db, plist)
 
 
     def t_rank(self, dist, max_level):
