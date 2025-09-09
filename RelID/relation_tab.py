@@ -26,7 +26,7 @@ Relations tab.
 
 """
 import time
-from threading import Thread
+from threading import Thread, Timer
 import logging
 import platform
 import os
@@ -182,20 +182,14 @@ class RelationTab(tool.Tool, ManagedWindow):
             count += 1
             self.progress.step()
             step_two = time.clock()
-            start = 99
-            if count > start: # provide a basic interface for counters
-                need = (step_two - step_one) / count
-                wait = need * filtered_people
-                remain = int(wait) - int(step_two - step_one)
-                # sorry, lazy
-                header = _("%d/%d \n %d/%d seconds \n %d/%d \n%f|\t%f"
-                           % (count, filtered_people, remain, int(wait),
-                              nb, length, float(need), float(var))
-                          )
-                self.progress.set_header(header)
-                if self.progress.get_cancelled():
-                    self.progress.close()
-                    return
+            need = (step_two - step_one) / count
+            wait = need * filtered_people
+            remain = int(wait) - int(step_two - step_one)
+            # sorry, lazy
+            header = _("%d/%d \n %d/%d seconds \n %d/%d \n%f|\t%f"
+                    % (count, filtered_people, remain, int(wait),
+                    nb, length, float(need), float(var))
+                    )
             person = dbstate.db.get_person_from_handle(handle)
 
             timeout_one = time.clock() # for delta and timeout estimations
@@ -284,6 +278,10 @@ class RelationTab(tool.Tool, ManagedWindow):
 
                 self.stats_list.append((int(kekule), self.rel, name, int(Ga),
                                         int(Gb), int(mra), int(self.rank), str(period)))
+            Timer(1.0, self.progress.set_header(header))
+            if self.progress.get_cancelled():
+                self.progress.close()
+                return
         self.progress.close()
 
         from itertools import groupby
