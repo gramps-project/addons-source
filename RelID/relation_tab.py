@@ -56,14 +56,28 @@ _LOG.info(platform.uname())
 logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
 #-------------------------------------------------------------------------
-def t_one(dbstate, relationship, default_person, person):
+def get_relationship_between_people(dbstate, relationship_calculator, root_person, target_person):
     """
-    Récupère une relation entre deux personnes.
+    Retrieves and logs the relationship between the root person and the target person.
+
+    Args:
+        dbstate: The database state.
+        relationship_calculator: The relationship calculator instance.
+        root_person: The root person (default person) in the database.
+        target_person: The person to find the relationship with.
+
+    Returns:
+        The relationship string between the root and target person.
     """
-    _LOG.debug(f"Calculating relationship for {name_displayer.display(person)}")
-    rel = relationship.get_one_relationship(dbstate.db, default_person, person)
-    _LOG.debug(f"Relationship result: {rel}")
-    return rel
+    target_person_name = name_displayer.display(target_person)
+    _LOG.debug(f"Calculating relationship for {target_person_name}")
+
+    relationship = relationship_calculator.get_one_relationship(
+        dbstate.db, root_person, target_person
+    )
+    _LOG.debug(f"Relationship result for {target_person_name}: {relationship}")
+
+    return relationship
 
 #-------------------------------------------------------------------------
 class RelationTab(tool.Tool, ManagedWindow):
@@ -223,7 +237,9 @@ class RelationTab(tool.Tool, ManagedWindow):
             #     line = (handle, array('b', new_list))
 
             # Récupère la relation et la période
-            rel = t_one(self.dbstate, self.relationship, default_person, person)
+            relationship = get_relationship_between_people(
+                          self.dbstate, self.relationship, default_person, person
+                          )
             period = get_timeperiod(self.dbstate.db, handle)
             name = name_displayer.display(person)
 
@@ -239,11 +255,11 @@ class RelationTab(tool.Tool, ManagedWindow):
 
             # Ajoute les résultats
             self.stats_list.append((
-                int(kekule), rel, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
+                int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
             ))
 
             if uistate:
-                self.model.add((int(kekule), rel, name, int(Ga), int(Gb), int(mra), int(rank), str(period)), int(kekule))
+                self.model.add((int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)), int(kekule))
 
             _LOG.debug(f"Added entry for {name} to stats_list.")
 
