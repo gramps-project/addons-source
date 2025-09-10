@@ -80,113 +80,79 @@ def get_relationship_between_people(dbstate, relationship_calculator, root_perso
     return relationship
 
 #-------------------------------------------------------------------------
-def extract_relationship_paths(relationship_distance_result):
-    """
-    Extrait les chemins de relation (rel_a et rel_b) à partir du résultat de la distance de relation.
+def test_family_path_metrics():
+    # Test extract_relationship_paths
+    mock_result = [[0, 1, "mfm", 2, "ffm", 3]]
+    rel_a, rel_b = FamilyPathMetrics.extract_relationship_paths(mock_result)
+    assert rel_a == "mfm"
+    assert rel_b == "ffm"
 
-    Args:
-        relationship_distance_result: Résultat de get_relationship_distance_new,
-                                      sous la forme d'une liste de listes.
+    # Test calculate_relationship_path_lengths
+    Ga, Gb = FamilyPathMetrics.calculate_relationship_path_lengths("mfm", "ffm")
+    assert Ga == 3
+    assert Gb == 3
 
-    Returns:
-        tuple: (rel_a, rel_b) où rel_a et rel_b sont les chemins de relation extraits.
+    # Test calculate_mra
+    assert FamilyPathMetrics.calculate_mra("mfm") == 15
+    assert FamilyPathMetrics.calculate_mra("ff") == 5
 
-    def test_extract_relationship_paths():
-        mock_result = [[0, 1, "mfm", 2, "ffm", 3]]
-        rel_a, rel_b = extract_relationship_paths(mock_result)
-        assert rel_a == "mfm"
-        assert rel_b == "ffm"
-    """
-    rel_a = relationship_distance_result[0][2]
-    rel_b = relationship_distance_result[0][4]
-    return rel_a, rel_b
+    # Test calculate_kekule_number
+    assert FamilyPathMetrics.calculate_kekule_number(2, 2, "mm", "ff") == 0  # Exemple hypothétique
 
 #-------------------------------------------------------------------------
-def calculate_relationship_path_lengths(rel_a, rel_b):
+class FamilyPathMetrics:
     """
-    Calcule les longueurs des chemins de relation (Ga et Gb).
-
-    Args:
-        rel_a (str): Chemin de relation pour la première branche.
-        rel_b (str): Chemin de relation pour la deuxième branche.
-
-    Returns:
-        tuple: (Ga, Gb) où Ga et Gb sont les longueurs des chemins rel_a et rel_b.
-
-    def test_calculate_relationship_path_lengths():
-        rel_a = "mfm"
-        rel_b = "ffm"
-        Ga, Gb = calculate_relationship_path_lengths(rel_a, rel_b)
-        assert Ga == 3
-        assert Gb == 3
+    Classe dédiée au calcul des métriques de relation entre individus dans un arbre généalogique.
     """
-    Ga = len(rel_a)
-    Gb = len(rel_b)
-    return Ga, Gb
 
-#-------------------------------------------------------------------------
-def calculate_mra(rel_a):
-    """
-    Calcule le "Most Recent Ancestor" (MRA) en fonction du chemin de relation rel_a.
+    @staticmethod
+    def extract_relationship_paths(relationship_distance_result):
+        """
+        Extrait les chemins de relation (rel_a et rel_b) à partir du résultat de la distance de relation.
+        """
+        rel_a = relationship_distance_result[0][2]
+        rel_b = relationship_distance_result[0][4]
+        return rel_a, rel_b
 
-    Args:
-        rel_a (str): Chemin de relation (ex: "mfm", "ffm").
+    @staticmethod
+    def calculate_relationship_path_lengths(rel_a, rel_b):
+        """
+        Calcule les longueurs des chemins de relation (Ga et Gb).
+        """
+        Ga = len(rel_a)
+        Gb = len(rel_b)
+        return Ga, Gb
 
-    Returns:
-        int: Valeur calculée de MRA.
+    @staticmethod
+    def calculate_mra(rel_a):
+        """
+        Calcule le "Most Recent Ancestor" (MRA) en fonction du chemin de relation rel_a.
+        """
+        mra = 1
+        for letter in rel_a:
+            if letter == 'm':
+                mra = mra * 2 + 1
+            elif letter == 'f':
+                mra = mra * 2
+        if rel_a and rel_a[-1] == "f":
+            mra += 1
+        return mra
 
-    def test_calculate_mra():
-        # Test avec un chemin simple
-        assert calculate_mra("m") == 3
-        # Test avec un chemin plus complexe
-        assert calculate_mra("mfm") == 15
-        # Test avec un chemin se terminant par 'f'
-        assert calculate_mra("ff") == 5
-    """
-    mra = 1
-    for letter in rel_a:
-        if letter == 'm':
-            mra = mra * 2 + 1
-        elif letter == 'f':
-            mra = mra * 2
-    if rel_a and rel_a[-1] == "f":
-        mra += 1
-    return mra
-
-#-------------------------------------------------------------------------
-def calculate_kekule_number(Ga, Gb, rel_a, rel_b):
-    """
-    Calcule le nombre de Kekulé en fonction des longueurs des chemins de relation et des chemins eux-mêmes.
-
-    Args:
-        Ga (int): Longueur du chemin de relation rel_a.
-        Gb (int): Longueur du chemin de relation rel_b.
-        rel_a (str): Chemin de relation pour la première branche.
-        rel_b (str): Chemin de relation pour la deuxième branche.
-
-    Returns:
-        int: Valeur calculée du nombre de Kekulé.
-
-    def test_calculate_kekule_number():
-        # Test avec des valeurs valides
-        assert calculate_kekule_number(2, 2, "mm", "ff") == 0  # Exemple hypothétique
-        # Test avec une valeur "u"
-        assert calculate_kekule_number(0, 0, "", "") == 0
-        # Test avec une valeur "nb"
-        assert calculate_kekule_number(-1, -1, "", "") == -1
-        # Test avec une valeur non convertible en entier
-        assert calculate_kekule_number(1, 1, "m", "f") == 1
-    """
-    kekule = number.get_number(Ga, Gb, rel_a, rel_b)
-    if kekule == "u":
-        kekule = 0
-    elif kekule == "nb":
-        kekule = -1
-    try:
-        kekule = int(kekule)
-    except (ValueError, TypeError):
-        kekule = 1
-    return kekule
+    @staticmethod
+    def calculate_kekule_number(Ga, Gb, rel_a, rel_b):
+        """
+        Calcule le nombre de Kekulé en fonction des longueurs des chemins de relation et des chemins eux-mêmes.
+        """
+        kekule = number.get_number(Ga, Gb, rel_a, rel_b)
+        if kekule == "u":
+            kekule = 0
+        elif kekule == "nb":
+            kekule = -1
+        try:
+            kekule = int(kekule)
+        except (ValueError, TypeError):
+            kekule = 1
+        return kekule
 
 #-------------------------------------------------------------------------
 class RelationTab(tool.Tool, ManagedWindow):
@@ -309,14 +275,10 @@ class RelationTab(tool.Tool, ManagedWindow):
                 _LOG.debug("Skipping person (not related or too distant).")
                 continue
 
-            rel_a, rel_b = extract_relationship_paths(dist)
-            Ga, Gb = calculate_relationship_path_lengths(rel_a, rel_b)
-
-            # Calcule mra
-            mra = calculate_mra(rel_a)
-
-            # Calcule kekule
-            kekule = calculate_kekule_number(Ga, Gb, rel_a, rel_b)
+            rel_a, rel_b = FamilyPathMetrics.extract_relationship_paths(dist)
+            Ga, Gb = FamilyPathMetrics.calculate_relationship_path_lengths(rel_a, rel_b)
+            mra = FamilyPathMetrics.calculate_mra(rel_a)
+            kekule = FamilyPathMetrics.calculate_kekule_number(Ga, Gb, rel_a, rel_b)
 
             # uuid = str(uuid4())
             # _LOG.info(f"Random UUID: {uuid}")
