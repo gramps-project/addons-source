@@ -154,16 +154,97 @@ class FamilyPathMetrics:
             kekule = 1
         return kekule
 
+    @staticmethod
+    def calculate_shared_subtree_size(db, person1_handle, person2_handle):
+        """
+        Calcule le nombre d'individus dans le sous-arbre commun à deux personnes.
+        """
+        person1 = db.get_person_from_handle(person1_handle)
+        person2 = db.get_person_from_handle(person2_handle)
+
+        relationship_calculator = get_relationship_calculator()
+        dist = relationship_calculator.get_relationship_distance_new(db, person1, person2)
+        if not dist or dist[0][0] == -1:
+            return 0  # Pas de relation trouvée
+
+        common_ancestor_handle = dist[0][1]
+        common_ancestor = db.get_person_from_handle(common_ancestor_handle)
+
+        descendants = set()
+        stack = [common_ancestor]
+
+        while stack:
+            current_person = stack.pop()
+            descendants.add(current_person.get_handle())
+
+            for family_handle in current_person.get_family_handle_list():
+                family = db.get_family_from_handle(family_handle)
+                for child_ref in family.get_child_ref_list():
+                    child = db.get_person_from_handle(child_ref.get_reference_handle())
+                    stack.append(child)
+
+        return len(descendants)
+
+    @staticmethod
+    def calculate_family_network_centrality(db, person_handle):
+        """
+        Calcule un score de centralité pour un individu dans le réseau familial.
+        """
+        person = db.get_person_from_handle(person_handle)
+
+        # Compter les descendants
+        descendants = set()
+        stack = [person]
+
+        while stack:
+            current_person = stack.pop()
+            descendants.add(current_person.get_handle())
+
+            for family_handle in current_person.get_family_handle_list():
+                family = db.get_family_from_handle(family_handle)
+                for child_ref in family.get_child_ref_list():
+                    child = db.get_person_from_handle(child_ref.get_reference_handle())
+                    stack.append(child)
+
+        num_descendants = len(descendants) - 1
+
+        # Compter les ancêtres
+        ancestors = set()
+        stack = [person]
+
+        while stack:
+            current_person = stack.pop()
+            ancestors.add(current_person.get_handle())
+
+            for family_handle in current_person.get_parent_family_handle_list():
+                family = db.get_family_from_handle(family_handle)
+                for parent_ref in [family.get_father_handle(), family.get_mother_handle()]:
+                    if parent_ref:
+                        parent = db.get_person_from_handle(parent_ref)
+                        stack.append(parent)
+
+        num_ancestors = len(ancestors) - 1
+
+        # Compter les liens matrimoniaux
+        num_marriages = len(person.get_family_handle_list())
+
+        return num_descendants + num_ancestors + num_marriages
+
 #-------------------------------------------------------------------------
 class RelationTab(tool.Tool, ManagedWindow):
+    # Variable de classe pour activer/désactiver les métriques de réseau familial
+    ENABLE_NETWORK_METRICS = True
+
     def __init__(self, dbstate, user, options_class, name, callback=None):
+        # Initialiser la classe parente tool.Tool
+        tool.Tool.__init__(self, dbstate, options_class, name)
+
         uistate = user.uistate
         self.label = _("Relation and distances with root")
         self.dbstate = dbstate
         FilterClass = GenericFilterFactory('Person')
         self.path = '.'
         self.filter = FilterClass()
-        tool.Tool.__init__(self, dbstate, options_class, name)
         self.relationship = get_relationship_calculator()
         self.stats_list = []
 
@@ -204,6 +285,13 @@ class RelationTab(tool.Tool, ManagedWindow):
                 (_('Rank'), 6, 40, INTEGER),
                 (_('Period'), 7, 40, str),
             ]
+
+            if RelationTab.ENABLE_NETWORK_METRICS:
+                self.titles.extend([
+                    (_('Shared Subtree'), 8, 80, INTEGER),
+                    (_('Centrality'), 9, 60, INTEGER),
+                ])
+
             treeview = Gtk.TreeView()
             self.model = ListModel(treeview, self.titles)
             s = Gtk.ScrolledWindow()
@@ -249,6 +337,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             self.set_window(window, None, self.label)
             self.show()
 
+
     #-------------------------------------------------------------------------
     def process_people(self, max_level, uistate, window, default_person, length):
         """Traite la liste des personnes filtrées."""
@@ -256,8 +345,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         filtered_people = len(self.filtered_list)
         self.progress.set_pass(_('Generating relation map...'), filtered_people)
         _LOG.debug(f"Processing {filtered_people} people.")
-
-        step_one = time.perf_counter()  # Remplace time.clock()
+        step_one = time.perf_counter()
 
         for handle in self.filtered_list:
             count += 1
@@ -268,9 +356,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             dist = self.relationship.get_relationship_distance_new(
                 self.dbstate.db, default_person, person, only_birth=True)
 
-            # Récupère les infos de la relation
             rank = dist[0][0]
-            _LOG.debug(f"Rank for this person: {rank}")
             if rank == -1 or rank > max_level:
                 _LOG.debug("Skipping person (not related or too distant).")
                 continue
@@ -280,23 +366,21 @@ class RelationTab(tool.Tool, ManagedWindow):
             mra = FamilyPathMetrics.calculate_mra(rel_a)
             kekule = FamilyPathMetrics.calculate_kekule_number(Ga, Gb, rel_a, rel_b)
 
-            # uuid = str(uuid4())
-            # _LOG.info(f"Random UUID: {uuid}")
+            # Calcul des nouvelles métriques si activé
+            shared_subtree_size = 0
+            centrality = 0
+            if RelationTab.ENABLE_NETWORK_METRICS:
+                shared_subtree_size = FamilyPathMetrics.calculate_shared_subtree_size(
+                    self.dbstate.db, default_person.get_handle(), person.get_handle())
+                centrality = FamilyPathMetrics.calculate_family_network_centrality(
+                    self.dbstate.db, person.get_handle())
 
-            # new_list = [int(kekule), int(Ga), int(Gb), int(mra), int(rank)]
-            # if max_level > 7:
-            #     line = (handle, array('l', new_list))
-            # else:
-            #     line = (handle, array('b', new_list))
-
-            # Récupère la relation et la période
             relationship = get_relationship_between_people(
-                          self.dbstate, self.relationship, default_person, person
-                          )
+                self.dbstate, self.relationship, default_person, person)
             period = get_timeperiod(self.dbstate.db, handle)
             name = name_displayer.display(person)
 
-            # Header du ProgressMeter
+            # Mise à jour du header du ProgressMeter
             step_two = time.perf_counter()
             need = (step_two - step_one) / count
             wait = need * filtered_people
@@ -306,18 +390,29 @@ class RelationTab(tool.Tool, ManagedWindow):
                     len(self.stats_list), length, float(need), float(0.025)))
             self.progress.set_header(header)
 
-            # Ajoute les résultats
-            self.stats_list.append((
+            # Ajoute les résultats avec les nouvelles métriques
+            result_entry = (
                 int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
-            ))
+            )
+            if RelationTab.ENABLE_NETWORK_METRICS:
+                result_entry += (shared_subtree_size, centrality)
+
+            self.stats_list.append(result_entry)
 
             if uistate:
-                self.model.add((int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)), int(kekule))
+                model_entry = (
+                    int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
+                )
+                if RelationTab.ENABLE_NETWORK_METRICS:
+                    model_entry += (shared_subtree_size, centrality)
+                self.model.add(model_entry, int(kekule))
 
             _LOG.debug(f"Added entry for {name} to stats_list.")
 
         self.progress.close()
         _LOG.info(f"Total processing time: {time.perf_counter() - step_one} seconds.")
+
+
 
     #-------------------------------------------------------------------------
     def save(self):
@@ -325,33 +420,29 @@ class RelationTab(tool.Tool, ManagedWindow):
         if not self.stats_list:
             _LOG.warning("No data to save.")
             return
-
         _LOG.info("Starting to save data to ODS file.")
         doc = ODSTab(len(self.stats_list))
         doc.creator(self.dbstate.db.get_researcher().get_name())
         filename = self.dbstate.db.get_default_person().get_handle() + '.ods'
         if self.path != '.':
             filename = os.path.join(self.path, filename)
-
         try:
             with open(filename, "w", encoding='utf8') as f:
-                pass  # Le fichier sera rempli par ODSTab
+                pass
         except (PermissionError, IsADirectoryError) as e:
             _LOG.error(f"Failed to create file: {e}")
             WarningDialog(_("You do not have write rights on this folder"))
             return
-
         spreadsheet = TableReport(filename, doc)
         new_titles = [title for title in self.titles if title[0] != 'sort']
         spreadsheet.initialize(len(new_titles))
         spreadsheet.write_table_head(new_titles)
-
         for index, entry in enumerate(self.stats_list):
             spreadsheet.set_row(index % 2)
             spreadsheet.write_table_data(entry)
-
         spreadsheet.finalize()
         _LOG.info(f"Data successfully saved to {filename}.")
+
 
     #-------------------------------------------------------------------------
     def button_clicked(self, button):
@@ -414,3 +505,16 @@ class RelationTabOptions(tool.ToolOptions):
     """Options pour l'outil RelationTab."""
     def __init__(self, name, person_id=None):
         tool.ToolOptions.__init__(self, name, person_id)
+        self.options_dict = {
+            'enable_network_metrics': False,  # Option pour activer les métriques de réseau
+        }
+        self.options_help = {
+            'enable_network_metrics': (
+                _("Enable family network metrics"),
+                "bool",
+                _("Whether to calculate and display family network metrics."),
+                None,
+                True
+            ),
+        }
+
