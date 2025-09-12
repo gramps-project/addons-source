@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16718,18 +16718,6 @@ msgstr ""
 msgid "Generates a family network chart."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr ""
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr ""
@@ -16913,7 +16901,6 @@ msgstr ""
 msgid "RGB-color for Female box background."
 msgstr ""
 
-# added:
 #: NetworkChart/NetworkChart.py:1026
 msgid "Female Background Alpha"
 msgstr ""
