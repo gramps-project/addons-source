@@ -277,7 +277,7 @@ class FamilyPathMetrics:
             generations: Nombre de générations à considérer.
 
         Returns:
-            float: Indice de diversité des noms de famille (entre 0 et 1).
+            float: Indice de diversité des noms de famille.
         """
         person = db.get_person_from_handle(person_handle)
         surnames = set()
@@ -502,8 +502,6 @@ class RelationTab(tool.Tool, ManagedWindow):
             )
             if RelationTab.ENABLE_NETWORK_METRICS:
                 result_entry += (int(shared_subtree_size), int(centrality), int(unique_ancestors), float(surname_diversity))
-            self.stats_list.append(result_entry)
-
             self.stats_list.append(result_entry)
 
             if uistate:
