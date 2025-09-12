@@ -5,6 +5,8 @@
 # Copyright (C) 2008       Brian G. Matherly
 # Copyright (C) 2010       Jakim Friant
 # Copyright (C) 2012       Doug Blank
+# Copyright (C) 2017       Jerome Rapinat
+# Copyright (C) 2025       Jerome Rapinat with Mistral AI (Codestral 25.08)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,9 +30,8 @@ import time
 import logging
 import platform
 import os
-from array import array
 from uuid import uuid4
-from threading import Thread
+#from threading import Thread
 from gi.repository import Gtk
 from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
@@ -128,13 +129,14 @@ class FamilyPathMetrics:
         """
         Calcule le "Most Recent Ancestor" (MRA) en fonction du chemin de relation rel_a.
         """
+        # design: mra gender will be often female (m: mother) ; f: father
         mra = 1
         for letter in rel_a:
             if letter == 'm':
                 mra = mra * 2 + 1
             elif letter == 'f':
                 mra = mra * 2
-        if rel_a and rel_a[-1] == "f":
+        if rel_a and rel_a[-1] == "f": # male gender, look at spouse
             mra += 1
         return mra
 
@@ -144,9 +146,9 @@ class FamilyPathMetrics:
         Calcule le nombre de Kekulé en fonction des longueurs des chemins de relation et des chemins eux-mêmes.
         """
         kekule = number.get_number(Ga, Gb, rel_a, rel_b)
-        if kekule == "u":
+        if kekule == "u": # TODO: cousin(e)s need a key
             kekule = 0
-        elif kekule == "nb":
+        elif kekule == "nb": # non-birth
             kekule = -1
         try:
             kekule = int(kekule)
@@ -394,6 +396,8 @@ class RelationTab(tool.Tool, ManagedWindow):
 
         if default_person:
             root_id = default_person.get_gramps_id()
+            #ancestors = rules.person.IsAncestorOf([str(root_id), True])
+            #descendants = rules.person.IsDescendantOf([str(root_id), True])
             related = rules.person.IsRelatedWith([str(root_id)])
             self.filter.add_rule(related)
             _LOG.info("Filtering people related to the root person...")
@@ -437,12 +441,12 @@ class RelationTab(tool.Tool, ManagedWindow):
             count += 1
             self.progress.step()
             person = self.dbstate.db.get_person_from_handle(handle)
-            thread = Thread(target=self.long_running_task, args=(default_person, person,))
-            thread.start()
+            #thread = Thread(target=self.long_running_task, args=(default_person, person,))
+            #thread.start()
             _LOG.debug(f"Processing person: {name_displayer.display(person)}")
 
             dist = self.relationship.get_relationship_distance_new(
-                self.dbstate.db, default_person, person, only_birth=True)
+                    self.dbstate.db, default_person, person, only_birth=True)
 
             rank = dist[0][0]
             if rank == -1 or rank > max_level:
