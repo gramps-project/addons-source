@@ -130,6 +130,7 @@ class FamilyPathMetrics:
         Calcule le "Most Recent Ancestor" (MRA) en fonction du chemin de relation rel_a.
         """
         # design: mra gender will be often female (m: mother) ; f: father
+        # mra will be also always an unpair number
         mra = 1
         for letter in rel_a:
             if letter == 'm':
@@ -145,6 +146,7 @@ class FamilyPathMetrics:
         """
         Calcule le nombre de Kekulé en fonction des longueurs des chemins de relation et des chemins eux-mêmes.
         """
+        # male ancestors will be pair ; female ancestors will be unpair ; see number.py
         kekule = number.get_number(Ga, Gb, rel_a, rel_b)
         if kekule == "u": # TODO: cousin(e)s need a key
             kekule = 0
@@ -469,9 +471,9 @@ class RelationTab(tool.Tool, ManagedWindow):
                 centrality = FamilyPathMetrics.calculate_family_network_centrality(
                     self.dbstate.db, person.get_handle())
                 unique_ancestors = FamilyPathMetrics.count_unique_ancestors(
-                    self.dbstate.db, person.get_handle(), generations=5)
+                    self.dbstate.db, person.get_handle(), generations=max_level)
                 surname_diversity = FamilyPathMetrics.calculate_surname_diversity(
-                    self.dbstate.db, person.get_handle(), generations=5)
+                    self.dbstate.db, person.get_handle(), generations=max_level)
 
             relationship = get_relationship_between_people(
                 self.dbstate, self.relationship, default_person, person)
@@ -521,13 +523,13 @@ class RelationTab(tool.Tool, ManagedWindow):
         # Afficher un aperçu des résultats dans la console
         print("\nAperçu des résultats :")
         print("-" * 100)
-        print(f"{'ID Kekulé':<10} | {'Relation':<20} | {'Nom':<30} | {'Ga':<5} | {'Gb':<5} | {'MRA':<5} | {'Rang':<5} | {'Période':<15}")
+        print(f"{_('ID Kekulé'):<10} | {_('Relation'):<20} | {_('Nom'):<30} | {'Ga':<5} | {'Gb':<5} | {'MRA':<5} | {_('Rang'):<5} | {_('Période'):<15}")
         if RelationTab.ENABLE_NETWORK_METRICS:
-            print(f" | {'Sous-arbre partagé':<15} | {'Centralité':<10} | {'Ancêtres uniques':<15} | {'Diversité noms':<15}")
+            print(f" | {_('Sous-arbre partagé'):<15} | {_('Centralité'):<10} | {_('Ancêtres uniques'):<15} | {_('Diversité noms'):<15}")
         print()  # Saut de ligne
         print("-" * 150)
 
-        for entry in self.stats_list[:10]:  # Afficher les 10 premières entrées
+        for entry in self.stats_list[:max_level * 2]:  # Afficher les premières entrées
             kekule, relation, name, Ga, Gb, mra, rank, period = entry[:8]
             print(f"{kekule:<10} | {relation[:18]:<20} | {name[:28]:<30} | {Ga:<5} | {Gb:<5} | {mra:<5} | {rank:<5} | {period[:13]:<15}", end="")
             if RelationTab.ENABLE_NETWORK_METRICS and len(entry) > 8:
