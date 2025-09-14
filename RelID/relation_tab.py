@@ -229,10 +229,10 @@ class FamilyPathMetrics:
 
         num_ancestors = len(ancestors) - 1
 
-        # Compter les liens matrimoniaux
-        num_marriages = len(person.get_family_handle_list())
+        # Compter les liens de couple
+        num_unions = len(person.get_family_handle_list())
 
-        return num_descendants + num_ancestors + num_marriages
+        return num_descendants + num_ancestors + num_unions
 
     @staticmethod
     def count_unique_ancestors(db, person_handle, generations=5):
