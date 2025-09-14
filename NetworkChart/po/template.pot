@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2025-09-09 18:33+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: NetworkChart/NetworkChart.gpr.py:24
+msgid "Network Chart"
+msgstr ""
+
+#: NetworkChart/NetworkChart.gpr.py:35
+msgid "Generates a family network chart."
+msgstr ""
+
 #: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
+msgctxt "birth abbreviation"
+msgid "b."
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
+msgctxt "death abbreviation"
+msgid "d."
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
+msgctxt "marriage abbreviation"
+msgid "m."
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:136
@@ -256,7 +267,6 @@ msgstr ""
 msgid "RGB-color for Female box background."
 msgstr ""
 
-# added:
 #: NetworkChart/NetworkChart.py:1026
 msgid "Female Background Alpha"
 msgstr ""
@@ -311,8 +321,8 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1056
 msgid ""
-"RGB-color for the highlighted path between two individuals.  If the graph."
-"inverts, reverse the order to change."
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:1061
@@ -569,12 +579,4 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
-msgstr ""
-
-#: NetworkChart/NetworkChart.gpr.py:24
-msgid "Network Chart"
-msgstr ""
-
-#: NetworkChart/NetworkChart.gpr.py:35
-msgid "Generates a family network chart."
 msgstr ""

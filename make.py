@@ -402,7 +402,7 @@ elif command == "init":
             mkdir(f"{addon}/po")
             fnames = " ".join(glob.glob(f"{addon}/*.py"))
             system(
-                f"xgettext --language=Python --keyword=_ --keyword=N_"
+                f"xgettext --language=Python --keyword=_ --keyword=_:1,2c --keyword=N_"
                 f" --from-code=UTF-8 --add-comments=Translators"
                 f' -o "{addon}/po/template.pot" {fnames} '
             )
@@ -732,8 +732,8 @@ elif command == "as-needed":
             mkdir("%(addon)s/po")
             fnames = " ".join(glob.glob(f"{addon}/*.py"))
             system(
-                "xgettext --language=Python --keyword=_ --keyword=N_"
-                " --from-code=UTF-8"
+                "xgettext --language=Python --keyword=_ --keyword=_:1,2c --keyword=N_"
+                " --from-code=UTF-8 --add-comments=Translators"
                 f' -o "{addon}/po/temp.pot" {fnames} '
             )
             fnames = " ".join(glob.glob(f"{addon}/*.glade"))
