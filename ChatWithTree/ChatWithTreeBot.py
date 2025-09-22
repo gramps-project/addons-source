@@ -20,14 +20,15 @@
 import logging
 LOG = logging.getLogger(".")
 
+
+from typing import Dict, Any, List, Optional, Tuple, Pattern, Iterator
+import os
+import json
+import sys
+import time
+import re
+import inspect
 try:
-    from typing import Dict, Any, List, Optional, Tuple, Pattern, Iterator
-    import os
-    import json
-    import sys
-    import time
-    import re
-    import inspect
     import litellm
 except ImportError as e:
     LOG.warning(e)
@@ -96,6 +97,7 @@ Commands:
 /help - show this help text
 /history - show the full chat history in JSON format
 /setmodel <model_name> - set the model name to use for the LLM
+/setlimit <number> - set the tool-calling loop limit (6-20)
 
 The <model_name> depends on the LLM provider you are using.
 Usually the model name can be found on the provider's website.
@@ -141,10 +143,9 @@ class ChatBot(IChatLogic):
         self.dbstate = gramplet_instance.dbstate
         self.db = self.dbstate.db
         self.sa = SimpleAccess(self.db)
+        self.limit_loop = 6  # Default tool-calling loop limit
         
-        self.messages = []
-        self.messages.append({"role": "system", "content": SYSTEM_PROMPT})
-        LOG.debug("Chatbot init and SimpleAccess created successfully")
+        self.reset_chat_history()
         self.tool_map = {
             "start_point": self.start_point,
             "get_person": self.get_person,
@@ -171,7 +172,13 @@ class ChatBot(IChatLogic):
             "/help": self.command_handle_help,
             "/history": self.command_handle_history,
             "/setmodel": self.command_handle_setmodel,
+            "/setlimit": self.command_handle_setlimit,
         }
+
+    def reset_chat_history(self) -> None:
+        """Resets the chat message history to its initial state."""
+        self.messages: List[Dict[str, Any]] = [
+            {"role": "system", "content": SYSTEM_PROMPT}]
 
     def command_handle_help(self, message: str) -> Iterator[Tuple[YieldType, str]]:
         '''
@@ -201,7 +208,28 @@ class ChatBot(IChatLogic):
             return
         new_model_name = parts[1].strip()
         GRAMPS_AI_MODEL_NAME = new_model_name
+        self.reset_chat_history() # Reset history when model changes
         yield (YieldType.FINAL, f"Model name set to: {GRAMPS_AI_MODEL_NAME}")
+
+    def command_handle_setlimit(self, message: str) -> Iterator[Tuple[YieldType, str]]:
+        '''
+        sets the tool-calling loop limit.
+        usage: /setlimit <number>
+        Example: /setlimit 10
+        '''
+        parts = message.split(' ', 1)
+        if len(parts) != 2 or not parts[1].strip():
+            yield (YieldType.FINAL, "Usage: /setlimit <number between 6 and 20>")
+            return
+        try:
+            new_limit = int(parts[1].strip())
+            if 6 <= new_limit <= 20:
+                self.limit_loop = new_limit
+                yield (YieldType.FINAL, f"Tool-calling loop limit set to: {self.limit_loop}")
+            else:
+                yield (YieldType.FINAL, "Error: Limit must be an integer between 6 and 20.")
+        except ValueError:
+            yield (YieldType.FINAL, "Error: Invalid number provided. Please enter an integer.")
 
     # The implementation of the IChatLogic interface
     def get_reply(self, message: str) -> Iterator[Tuple[YieldType, str]]:
@@ -248,10 +276,8 @@ class ChatBot(IChatLogic):
             tool_choice="auto" if tool_definitions is not None else None,
         )
 
-        # logger.debug("\033[92mResponse from AI Model:\033[0m")
         # Convert response to a dictionary if possible
         response_dict = response.to_dict() if hasattr(response, 'to_dict') else str(response)
-        # logger.debug(json.dumps(response_dict, indent=2))
         return response
 
     def get_chatbot_response(
@@ -286,11 +312,7 @@ class ChatBot(IChatLogic):
             else:
                 content_for_llm = str(tool_result)
 
-            #logger.debug("\033[93mTool call result:\033[0m")
-            #logger.debug(content_for_llm)
-
         except Exception as exc:
-            #logger.debug(exc)
             content_for_llm = f"Error in calling tool `{tool_name}`: {exc}"  # Include exception for LLM clarity
 
         self.messages.append(
@@ -304,13 +326,11 @@ class ChatBot(IChatLogic):
     def _llm_loop(self, seed: int) -> Iterator[Tuple[YieldType, str]]:
         # Tool-calling loop
         final_response = "I was unable to find the desired information."
-        limit_loop = 6
-        # logger.debug("   Thinking...")
         sys.stdout.flush()
 
         found_final_result = False
 
-        for count in range(limit_loop): # Iterates from 0 to 5
+        for count in range(self.limit_loop): # Iterates up to the configured limit
             time.sleep(1)  # Add a one-second delay to prevent overwhelming the AI remote
 
             messages_for_llm = list(self.messages)
@@ -367,9 +387,19 @@ class ChatBot(IChatLogic):
     # Tools:
     def get_person(self, person_handle: str) -> Dict[str, Any]:
         """
-        Given a person's handle, get the data dictionary of that person.
+        Given a person's handle, get the data dictionary of that person,
+        including notes.
         """
+        person_obj = self.db.get_person_from_handle(person_handle)
         data = dict(self.db.get_raw_person_data(person_handle))
+        notes = []
+        for note_handle in person_obj.get_note_list():
+            note_obj = self.db.get_note_from_handle(note_handle)
+            notes.append(note_obj.get())
+
+        if notes:
+            data['notes'] = notes
+        
         return data
         
 
@@ -398,8 +428,19 @@ class ChatBot(IChatLogic):
         each item in the "child_ref_list" has a "ref" which is the person_handle of children of the family.
         Details of the persons can be retrieved using the "get_person" tool
         """
-        data = dict(self.db.get_raw_family_data(family_handle))
-        return data
+        family_data = dict(self.db.get_raw_family_data(family_handle))
+
+         # Add a field for notes 📝
+        family_obj = self.db.get_family_from_handle(family_handle)
+        notes = []
+        for note_handle in family_obj.get_note_list():
+            note_obj = self.db.get_note_from_handle(note_handle)
+            notes.append(note_obj.get())
+
+        if notes:
+            family_data['notes'] = notes
+
+        return family_data
 
     def start_point(self) -> Dict[str, Any]:
         """
