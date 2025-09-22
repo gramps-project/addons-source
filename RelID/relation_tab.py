@@ -4,6 +4,7 @@
 # Copyright (C) 2000-2006  Donald N. Allingham
 # Copyright (C) 2008       Brian G. Matherly
 # Copyright (C) 2010       Jakim Friant
+# Copyright (C) 2011       Robert Cheramy
 # Copyright (C) 2012       Doug Blank
 # Copyright (C) 2017       Jerome Rapinat
 # Copyright (C) 2025       Jerome Rapinat with Mistral AI (Codestral 25.08)
@@ -30,7 +31,7 @@ import time
 import logging
 import platform
 import os
-from uuid import uuid4
+#from uuid import uuid4
 #from threading import Thread
 from gi.repository import Gtk
 from gramps.gui.listmodel import ListModel, INTEGER
@@ -408,7 +409,6 @@ class RelationTab(tool.Tool, ManagedWindow):
             _LOG.info(f"Found {len(self.filtered_list)} related people.")
         else:
             _LOG.error("No default person set.")
-            WarningDialog(_("No default_person"))
             return
 
         # Traitement des personnes
@@ -491,10 +491,12 @@ class RelationTab(tool.Tool, ManagedWindow):
             need = (step_two - step_one) / count
             wait = need * filtered_people
             remain = int(wait) - int(step_two - step_one)
-            header = _("%d/%d \n %d/%d seconds \n %d/%d \n%f|\t%f"
+            #lazy tooltip
+            documentation = _("\nFiltering\tTime process\tCurrent match\tTime per entry\n")
+            header = _("%d/%d \t %d/%d seconds \t %d/%d \t%f|\t%f"
                     % (count, filtered_people, remain, int(wait),
                     len(self.stats_list), length, float(need), float(0.025)))
-            self.progress.set_header(header)
+            self.progress.set_header(documentation + header)
 
             # Ajoute les résultats avec les nouvelles métriques
             result_entry = (
@@ -549,7 +551,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         doc = ODSTab(len(self.stats_list))
         doc.creator(self.dbstate.db.get_researcher().get_name())
         filename = self.dbstate.db.get_default_person().get_handle() + '.ods'
-        if self.path != '.':
+        if self.path is not None:
             filename = os.path.join(self.path, filename)
         try:
             with open(filename, "w", encoding='utf8') as f:
