@@ -493,9 +493,9 @@ class RelationTab(tool.Tool, ManagedWindow):
             remain = int(wait) - int(step_two - step_one)
             #lazy tooltip
             documentation = _("\nFiltering\tTime process\tCurrent match\tTime per entry\n")
-            header = _("%d/%d \t %d/%d seconds \t %d/%d \t%f|\t%f"
+            header = _("%d/%d \t %d/%d seconds \t %d/%d \t\t%f"
                     % (count, filtered_people, remain, int(wait),
-                    len(self.stats_list), length, float(need), float(0.025)))
+                    len(self.stats_list), length, float(need)))
             self.progress.set_header(documentation + header)
 
             # Ajoute les résultats avec les nouvelles métriques
