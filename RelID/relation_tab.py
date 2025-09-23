@@ -542,6 +542,9 @@ class RelationTab(tool.Tool, ManagedWindow):
         status = chooser.run()
         if status == Gtk.ResponseType.OK:
             self.path = chooser.get_current_folder()
+        if status == Gtk.ResponseType.CANCEL:
+            _LOG.debug(f"Skip folder selection?")
+            WarningDialog(_("Foldername need"), _("Foldername will be used for saving the content."))
         chooser.destroy()
         if not self.stats_list:
             _LOG.warning("No data to save.")
