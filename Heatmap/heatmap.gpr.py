@@ -24,7 +24,7 @@ register(
     id="Heatmap",
     name=_("Heatmap"),
     description=_("Create a heatmap web report."),
-    version = '1.2.7',
+    version = '1.2.8',
     gramps_target_version="6.0",
     status=STABLE,
     fname="heatmap.py",
@@ -33,6 +33,6 @@ register(
     category=CATEGORY_WEB,
     reportclass="ReportClass",
     optionclass="ReportOptions",
-    report_modes=[REPORT_MODE_GUI],
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
     help_url="Addon:HeatmapWebReport",
 )
