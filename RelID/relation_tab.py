@@ -285,29 +285,25 @@ class FamilyPathMetrics:
         """
         person = db.get_person_from_handle(person_handle)
         surnames = set()
+        total_ancestors = 0
         stack = [(person, 0)]
 
         while stack:
             current_person, generation = stack.pop()
             if generation > generations:
                 continue
-
+            total_ancestors += 1
             surname = current_person.get_primary_name().get_surname()
             if surname:
                 surnames.add(surname)
-
             for family_handle in current_person.get_parent_family_handle_list():
                 family = db.get_family_from_handle(family_handle)
                 for parent_ref in [family.get_father_handle(), family.get_mother_handle()]:
                     if parent_ref:
                         parent = db.get_person_from_handle(parent_ref)
                         stack.append((parent, generation + 1))
-
         if not surnames:
             return 0.0
-
-        # Indice de diversité : ratio entre le nombre de noms uniques et le nombre total d'ancêtres
-        total_ancestors = len([p for p, g in stack if g <= generations]) + 1  # +1 pour inclure la personne elle-même
         return len(surnames) / total_ancestors
 
 
@@ -319,6 +315,14 @@ class RelationTab(tool.Tool, ManagedWindow):
     def __init__(self, dbstate, user, options_class, name, callback=None):
         # Initialiser la classe parente tool.Tool
         tool.Tool.__init__(self, dbstate, options_class, name)
+        # Récupère les options depuis options_class
+        self.options = options_class
+
+        # Vérifie que self.options est bien une instance et non la classe
+        if hasattr(self.options, 'options_dict'):
+            RelationTab.ENABLE_NETWORK_METRICS = self.options.options_dict.get('enable_network_metrics', True)
+        else:
+            _LOG.warning("options_class n'est pas une instance de RelationTabOptions. Utilisation de la valeur par défaut.")
 
         uistate = user.uistate
         self.label = _("Relation and distances with root")
@@ -418,22 +422,17 @@ class RelationTab(tool.Tool, ManagedWindow):
         return _("Options")
 
     def add_menu_options(self, menu):
-
-        """ Add the options """
+        """Add the options."""
         category_name = _("Options")
-
         self.__filter = FilterOption(_("Person Filter"), 0)
         self.__filter.set_help(_("Select filter to restrict people"))
         menu.add_option(category_name, "filter", self.__filter)
         self.__filter.connect('value-changed', self.__filter_changed)
-
         self.__fid = PersonOption(_("Filter Person"))
         self.__fid.set_help(_("The center person for the filter"))
         menu.add_option(category_name, "fid", self.__fid)
         self.__fid.connect('value-changed', self.__update_filters)
-
         self.__update_filters()
-
         filter_rule = EnumeratedListOption(_("Filter rule"), 0)
         filter_rule.add_item(0, _("Ancestors"))
         filter_rule.add_item(1, _("Descendants"))
@@ -442,13 +441,24 @@ class RelationTab(tool.Tool, ManagedWindow):
         menu.add_option(category_name, "filter_rule", filter_rule)
         filter_rule.connect('value-changed', self.__update_filter_rule)
         self.__filter_rule = filter_rule
-
         deep_gen_text = StringOption(_("Deep generations"), "")
         deep_gen_text.set_help(_("How deep should we go?"))
         menu.add_option(category_name, "deep_gen_text", deep_gen_text)
         self.__deep_gen_text = deep_gen_text
-
+        # Ajoute une option pour activer/désactiver les métriques réseau
+        network_metrics_option = EnumeratedListOption(_("Network Metrics"), RelationTab.ENABLE_NETWORK_METRICS)
+        network_metrics_option.add_item(True, _("Enabled"))
+        network_metrics_option.add_item(False, _("Disabled"))
+        network_metrics_option.set_help(_("Enable or disable family network metrics"))
+        menu.add_option(category_name, "network_metrics", network_metrics_option)
+        network_metrics_option.connect('value-changed', self.__update_network_metrics_option)
         self.__update_filter_rule()
+
+    def __update_network_metrics_option(self):
+        """Mets à jour ENABLE_NETWORK_METRICS en fonction de l'option sélectionnée."""
+        network_metrics_option = self.options.menu.get_option_by_name('network_metrics')
+        RelationTab.ENABLE_NETWORK_METRICS = network_metrics_option.get_value()
+        _LOG.info(f"Network metrics option updated: {RelationTab.ENABLE_NETWORK_METRICS}")
 
     def __update_filter_rule(self):
         """
@@ -464,8 +474,12 @@ class RelationTab(tool.Tool, ManagedWindow):
         """
         Update the filter list based on the selected person
         """
-        #filter_list = ReportUtils.get_person_filters(person, False)
-        self.__filter.set_filters(0)
+        person = self.__fid.get_value()
+        if person:
+            filter_list = ReportUtils.get_person_filters(person, False)
+            self.__filter.set_filters(filter_list)
+        else:
+            self.__filter.set_filters(0)
 
     def __filter_changed(self):
         """
@@ -499,9 +513,16 @@ class RelationTab(tool.Tool, ManagedWindow):
         step_one = time.perf_counter()
 
         for handle in self.filtered_list:
+            try:
+                person = self.dbstate.db.get_person_from_handle(handle)
+                if not person:
+                    _LOG.warning(f"Person with handle {handle} not found.")
+                    continue
+            except Exception as e:
+                _LOG.error(f"Error processing person with handle {handle}: {e}")
+                continue
             count += 1
             self.progress.step()
-            person = self.dbstate.db.get_person_from_handle(handle)
             #thread = Thread(target=self.long_running_task, args=(default_person, person,))
             #thread.start()
             _LOG.debug(f"Processing person: {name_displayer.display(person)}")
@@ -541,7 +562,9 @@ class RelationTab(tool.Tool, ManagedWindow):
             # Affichage du nom et pseudo-anonymisation
             name = name_displayer.display(person)
             # Pseudo privacy; sample for DNA stuff and mapping
-            import hashlib
+            import hashlib, re
+            # cleanup ; special characters
+            handle = re.sub(r'[^\w\-_]', '_', handle)
             no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
             _LOG.info(no_name)  # Log du hachage pour un usage interne
 
@@ -567,36 +590,37 @@ class RelationTab(tool.Tool, ManagedWindow):
 
             if uistate:
                 model_entry = (
-                    int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
+                int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
                 )
                 if RelationTab.ENABLE_NETWORK_METRICS:
-                    model_entry += (int(shared_subtree_size), int(centrality), int(unique_ancestors),   f"{surname_diversity:.2f}")
+                    model_entry += (int(shared_subtree_size), int(centrality), int(unique_ancestors), 
+f"{surname_diversity:.2f}")
                 self.model.add(model_entry, int(kekule))
-            else:
-                # Afficher un aperçu des résultats dans la console
-                print("\nAperçu des résultats :")
-                print("-" * 100)
-                print(f"{_('ID Kekulé'):<10} | {_('Relation'):<20} | {_('Nom'):<30} | {'Ga':<5} | {'Gb':<5} | {'MRA':<5} | {_('Rang'):<5} | {_('Période'):<15}")
-                if RelationTab.ENABLE_NETWORK_METRICS:
-                    print(f" | {_('Sous-arbre partagé'):<15} | {_('Centralité'):<10} | {_('Ancêtres uniques'):<15} | {_('Diversité noms'):<15}")
-                print()  # Saut de ligne
-                print("-" * 150)
 
-                for entry in self.stats_list[:max_level * 2]:  # Afficher les premières entrées
-                    kekule, relation, name, Ga, Gb, mra, rank, period = entry[:8]
-                    print(f"{kekule:<10} | {relation[:18]:<20} | {name[:28]:<30} | {Ga:<5} | {Gb:<5} | {mra:<5} | {rank:<5} | {period[:13]:<15}", end="")
-                    if RelationTab.ENABLE_NETWORK_METRICS and len(entry) > 8:
-                        shared_subtree_size, centrality, unique_ancestors, surname_diversity = entry[8:12]
-                        print(f" | {shared_subtree_size:<15} | {centrality:<10} | {unique_ancestors:<15} | {surname_diversity:.2f}")
-                    else:
-                        print()
-                print("-" * 150)
-                print(f"Total des entrées traitées : {len(self.stats_list)}\n")
-
-
-            _LOG.debug(f"Added entry for {name} to stats_list.")
+        _LOG.debug(f"Added entry for {name} to stats_list.")
 
         self.progress.close()
+
+        if not uistate:
+            # Afficher un aperçu des résultats dans la console
+            print("\nAperçu des résultats :")
+            print("-" * 100)
+            print(f"{_('ID Kekulé'):<10} | {_('Relation'):<20} | {_('Nom'):<30} | {'Ga':<5} | {'Gb':<5} | {'MRA':<5} | {_('Rang'):<5} | {_('Période'):<15}")
+            if RelationTab.ENABLE_NETWORK_METRICS:
+                print(f" | {_('Sous-arbre partagé'):<15} | {_('Centralité'):<10} | {_('Ancêtres uniques'):<15} | {_('Diversité noms'):<15}")
+            print()  # Saut de ligne
+            print("-" * 150)
+
+            for entry in self.stats_list[:max_level * 2]:  # Afficher les premières entrées
+                kekule, relation, name, Ga, Gb, mra, rank, period = entry[:8]
+                print(f"{kekule:<10} | {relation[:18]:<20} | {name[:28]:<30} | {Ga:<5} | {Gb:<5} | {mra:<5} | {rank:<5} | {period[:13]:<15}", end="")
+                if RelationTab.ENABLE_NETWORK_METRICS and len(entry) > 8:
+                    shared_subtree_size, centrality, unique_ancestors, surname_diversity = entry[8:12]
+                    print(f" | {shared_subtree_size:<15} | {centrality:<10} | {unique_ancestors:<15} | {surname_diversity:.2f}")
+                else:
+                    print()
+            print("-" * 150)
+            print(f"Total des entrées traitées : {len(self.stats_list)}\n")
         _LOG.info(f"Total processing time: {time.perf_counter() - step_one} seconds.")
 
 
