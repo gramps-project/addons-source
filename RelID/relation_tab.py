@@ -38,6 +38,9 @@ from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter
 from gramps.gui.plug import tool
+from gramps.gen.plug.menu import StringOption, FilterOption, PersonOption, \
+    EnumeratedListOption
+import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gui.dialog import WarningDialog
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.relationship import get_relationship_calculator
@@ -329,6 +332,9 @@ class RelationTab(tool.Tool, ManagedWindow):
         # Initialiser window et progress avant de les utiliser
         window = None
 
+        #self.filter_option =  self.options.menu.get_option_by_name('filter')
+        #self.filter = self.filter_option.get_filter() # the actual filter
+
         if uistate:
             window = Gtk.Window()
             window.set_default_size(1200, 600)
@@ -404,6 +410,75 @@ class RelationTab(tool.Tool, ManagedWindow):
             window.show()
             self.set_window(window, None, self.label)
             self.show()
+
+    def get_title(self):
+        return _("Relationships Map and Tab")
+
+    def initial_frame(self):
+        return _("Options")
+
+    def add_menu_options(self, menu):
+
+        """ Add the options """
+        category_name = _("Options")
+
+        self.__filter = FilterOption(_("Person Filter"), 0)
+        self.__filter.set_help(_("Select filter to restrict people"))
+        menu.add_option(category_name, "filter", self.__filter)
+        self.__filter.connect('value-changed', self.__filter_changed)
+
+        self.__fid = PersonOption(_("Filter Person"))
+        self.__fid.set_help(_("The center person for the filter"))
+        menu.add_option(category_name, "fid", self.__fid)
+        self.__fid.connect('value-changed', self.__update_filters)
+
+        self.__update_filters()
+
+        filter_rule = EnumeratedListOption(_("Filter rule"), 0)
+        filter_rule.add_item(0, _("Ancestors"))
+        filter_rule.add_item(1, _("Descendants"))
+        filter_rule.add_item(2, _("Related"))
+        filter_rule.set_help(_("Select the filter rule"))
+        menu.add_option(category_name, "filter_rule", filter_rule)
+        filter_rule.connect('value-changed', self.__update_filter_rule)
+        self.__filter_rule = filter_rule
+
+        deep_gen_text = StringOption(_("Deep generations"), "")
+        deep_gen_text.set_help(_("How deep should we go?"))
+        menu.add_option(category_name, "deep_gen_text", deep_gen_text)
+        self.__deep_gen_text = deep_gen_text
+
+        self.__update_filter_rule()
+
+    def __update_filter_rule(self):
+        """
+        Update the options based on the selected filter rule
+        """
+        fid = self.__filter_rule.get_value()
+        if fid == 0:
+            self.__filter_rule.set_available(True)
+        else:
+            self.__filter_rule.set_available(False)
+
+    def __update_filters(self):
+        """
+        Update the filter list based on the selected person
+        """
+        #filter_list = ReportUtils.get_person_filters(person, False)
+        self.__filter.set_filters(0)
+
+    def __filter_changed(self):
+        """
+        Handle filter change. If the filter is not specific to a person,
+        disable the person option
+        """
+        filter_value = self.__filter.get_value()
+        if filter_value in [1, 2, 3, 4]:
+            # Filters 0, 2, 3, 4 and 5 rely on the center person
+            self.__fid.set_available(True)
+        else:
+            # The rest don't
+            self.__fid.set_available(False)
 
 
     #-------------------------------------------------------------------------
@@ -553,12 +628,12 @@ class RelationTab(tool.Tool, ManagedWindow):
         doc = ODSTab(len(self.stats_list))
         doc.creator(self.dbstate.db.get_researcher().get_name())
         filename = self.dbstate.db.get_default_person().get_handle() + '.ods'
-        if self.path is not None:
-            filename = os.path.join(self.path, filename)
-        else:
+        if self.path is None:
             _LOG.debug(f"Failed to get the foldername, maybe you did not set one?")
             WarningDialog(_("Did you set a foldername?"), _("Cannot set a valid location."))
             return
+        else:
+            filename = os.path.join(self.path, filename)
         try:
             with open(filename, "w", encoding='utf8') as f:
                 pass
@@ -639,7 +714,7 @@ class TableReport:
 #-------------------------------------------------------------------------
 class RelationTabOptions(tool.ToolOptions):
     """Options pour l'outil RelationTab."""
-    def __init__(self, name, person_id=None):
+    def __init__(self, name, person_id=None, dbstate=None):
         tool.ToolOptions.__init__(self, name, person_id)
         self.options_dict = {
             'enable_network_metrics': True,  # Option pour activer les métriques de réseau
