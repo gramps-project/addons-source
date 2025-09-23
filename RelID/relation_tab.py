@@ -335,22 +335,6 @@ class RelationTab(tool.Tool, ManagedWindow):
             box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
             window.add(box)
 
-            # Sélection du dossier de sauvegarde
-            chooser = Gtk.FileChooserDialog(
-                _("Folder Chooser"),
-                parent=uistate.window,
-                action=Gtk.FileChooserAction.SELECT_FOLDER,
-                buttons=(
-                    _('_Cancel'), Gtk.ResponseType.CANCEL,
-                    _('_Select'), Gtk.ResponseType.OK
-                )
-            )
-            chooser.set_tooltip_text(_("Please, select a folder"))
-            status = chooser.run()
-            if status == Gtk.ResponseType.OK:
-                self.path = chooser.get_current_folder()
-            chooser.destroy()
-
             ManagedWindow.__init__(self, uistate, [], self.__class__)
             self.set_window(window, None, self.label)
             window.show_all()
@@ -544,6 +528,21 @@ class RelationTab(tool.Tool, ManagedWindow):
     #-------------------------------------------------------------------------
     def save(self):
         """Enregistre les résultats dans un fichier ODS."""
+        # Sélection du dossier de sauvegarde
+        chooser = Gtk.FileChooserDialog(
+            _("Folder Chooser"),
+            parent=None,
+            action=Gtk.FileChooserAction.SELECT_FOLDER,
+            buttons=(
+                _('_Cancel'), Gtk.ResponseType.CANCEL,
+                _('_Select'), Gtk.ResponseType.OK
+            )
+        )
+        chooser.set_tooltip_text(_("Please, select a folder"))
+        status = chooser.run()
+        if status == Gtk.ResponseType.OK:
+            self.path = chooser.get_current_folder()
+        chooser.destroy()
         if not self.stats_list:
             _LOG.warning("No data to save.")
             return
