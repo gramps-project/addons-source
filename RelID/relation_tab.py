@@ -34,6 +34,7 @@ import os
 #from uuid import uuid4
 #from threading import Thread
 from gi.repository import Gtk
+from gramps.gui.filters import build_filter_model
 from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter
@@ -396,7 +397,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             ancestors = rules.person.IsAncestorOf([str(root_id), True])
             descendants = rules.person.IsDescendantOf([str(root_id), True])
             related = rules.person.IsRelatedWith([str(root_id)])
-            self.filter.add_rule(ancestors)
+            self.filter.add_rule(related)
             _LOG.info("Filtering people related to the root person...")
             self.progress.set_pass(_('Please wait, filtering...'))
             self.filtered_list = self.filter.apply(self.dbstate.db, plist)
@@ -428,11 +429,13 @@ class RelationTab(tool.Tool, ManagedWindow):
         self.__filter.set_help(_("Select filter to restrict people"))
         menu.add_option(category_name, "filter", self.__filter)
         self.__filter.connect('value-changed', self.__filter_changed)
+
         self.__fid = PersonOption(_("Filter Person"))
         self.__fid.set_help(_("The center person for the filter"))
         menu.add_option(category_name, "fid", self.__fid)
         self.__fid.connect('value-changed', self.__update_filters)
         self.__update_filters()
+
         filter_rule = EnumeratedListOption(_("Filter rule"), 0)
         filter_rule.add_item(0, _("Ancestors"))
         filter_rule.add_item(1, _("Descendants"))
@@ -441,10 +444,12 @@ class RelationTab(tool.Tool, ManagedWindow):
         menu.add_option(category_name, "filter_rule", filter_rule)
         filter_rule.connect('value-changed', self.__update_filter_rule)
         self.__filter_rule = filter_rule
+
         deep_gen_text = StringOption(_("Deep generations"), "")
         deep_gen_text.set_help(_("How deep should we go?"))
         menu.add_option(category_name, "deep_gen_text", deep_gen_text)
         self.__deep_gen_text = deep_gen_text
+
         # Ajoute une option pour activer/désactiver les métriques réseau
         network_metrics_option = EnumeratedListOption(_("Network Metrics"), RelationTab.ENABLE_NETWORK_METRICS)
         network_metrics_option.add_item(True, _("Enabled"))
@@ -486,6 +491,9 @@ class RelationTab(tool.Tool, ManagedWindow):
         Handle filter change. If the filter is not specific to a person,
         disable the person option
         """
+        #self.filter_model = build_filter_model("Person", [all_filter])
+        #self.filters.set_model(self.filter_model)
+        #self.filters.set_active(0)
         filter_value = self.__filter.get_value()
         if filter_value in [1, 2, 3, 4]:
             # Filters 0, 2, 3, 4 and 5 rely on the center person
@@ -741,6 +749,10 @@ class RelationTabOptions(tool.ToolOptions):
     def __init__(self, name, person_id=None, dbstate=None):
         tool.ToolOptions.__init__(self, name, person_id)
         self.options_dict = {
+            'filter': 0,
+            #'fid': ,
+            'filter_rule': 0,
+            'deep_gen_text': 15,
             'enable_network_metrics': True,  # Option pour activer les métriques de réseau
         }
         self.options_help = {
