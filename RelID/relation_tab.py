@@ -553,6 +553,10 @@ class RelationTab(tool.Tool, ManagedWindow):
         filename = self.dbstate.db.get_default_person().get_handle() + '.ods'
         if self.path is not None:
             filename = os.path.join(self.path, filename)
+        else:
+            _LOG.debug(f"Failed to get the foldername, maybe you did not set one?")
+            WarningDialog(_("Did you set a foldername?"), _("Cannot set a valid location."))
+            return
         try:
             with open(filename, "w", encoding='utf8') as f:
                 pass
