@@ -321,7 +321,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         self.label = _("Relation and distances with root")
         self.dbstate = dbstate
         FilterClass = GenericFilterFactory('Person')
-        self.path = '.'
+        self.path = None
         self.filter = FilterClass()
         self.relationship = get_relationship_calculator()
         self.stats_list = []
@@ -399,10 +399,10 @@ class RelationTab(tool.Tool, ManagedWindow):
 
         if default_person:
             root_id = default_person.get_gramps_id()
-            #ancestors = rules.person.IsAncestorOf([str(root_id), True])
-            #descendants = rules.person.IsDescendantOf([str(root_id), True])
+            ancestors = rules.person.IsAncestorOf([str(root_id), True])
+            descendants = rules.person.IsDescendantOf([str(root_id), True])
             related = rules.person.IsRelatedWith([str(root_id)])
-            self.filter.add_rule(related)
+            self.filter.add_rule(ancestors)
             _LOG.info("Filtering people related to the root person...")
             self.progress.set_pass(_('Please wait, filtering...'))
             self.filtered_list = self.filter.apply(self.dbstate.db, plist)
