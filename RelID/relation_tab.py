@@ -408,7 +408,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             self.filtered_list = self.filter.apply(self.dbstate.db, plist)
             _LOG.info(f"Found {len(self.filtered_list)} related people.")
         else:
-            _LOG.error("No default person set.")
+            _LOG.debug("No default person set.")
             return
 
         # Traitement des personnes
