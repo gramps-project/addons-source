@@ -497,32 +497,32 @@ class RelationTab(tool.Tool, ManagedWindow):
                 if RelationTab.ENABLE_NETWORK_METRICS:
                     model_entry += (int(shared_subtree_size), int(centrality), int(unique_ancestors),   f"{surname_diversity:.2f}")
                 self.model.add(model_entry, int(kekule))
+            else:
+                # Afficher un aperçu des résultats dans la console
+                print("\nAperçu des résultats :")
+                print("-" * 100)
+                print(f"{_('ID Kekulé'):<10} | {_('Relation'):<20} | {_('Nom'):<30} | {'Ga':<5} | {'Gb':<5} | {'MRA':<5} | {_('Rang'):<5} | {_('Période'):<15}")
+                if RelationTab.ENABLE_NETWORK_METRICS:
+                    print(f" | {_('Sous-arbre partagé'):<15} | {_('Centralité'):<10} | {_('Ancêtres uniques'):<15} | {_('Diversité noms'):<15}")
+                print()  # Saut de ligne
+                print("-" * 150)
+
+                for entry in self.stats_list[:max_level * 2]:  # Afficher les premières entrées
+                    kekule, relation, name, Ga, Gb, mra, rank, period = entry[:8]
+                    print(f"{kekule:<10} | {relation[:18]:<20} | {name[:28]:<30} | {Ga:<5} | {Gb:<5} | {mra:<5} | {rank:<5} | {period[:13]:<15}", end="")
+                    if RelationTab.ENABLE_NETWORK_METRICS and len(entry) > 8:
+                        shared_subtree_size, centrality, unique_ancestors, surname_diversity = entry[8:12]
+                        print(f" | {shared_subtree_size:<15} | {centrality:<10} | {unique_ancestors:<15} | {surname_diversity:.2f}")
+                    else:
+                        print()
+                print("-" * 150)
+                print(f"Total des entrées traitées : {len(self.stats_list)}\n")
 
 
             _LOG.debug(f"Added entry for {name} to stats_list.")
 
         self.progress.close()
         _LOG.info(f"Total processing time: {time.perf_counter() - step_one} seconds.")
-
-        # Afficher un aperçu des résultats dans la console
-        print("\nAperçu des résultats :")
-        print("-" * 100)
-        print(f"{_('ID Kekulé'):<10} | {_('Relation'):<20} | {_('Nom'):<30} | {'Ga':<5} | {'Gb':<5} | {'MRA':<5} | {_('Rang'):<5} | {_('Période'):<15}")
-        if RelationTab.ENABLE_NETWORK_METRICS:
-            print(f" | {_('Sous-arbre partagé'):<15} | {_('Centralité'):<10} | {_('Ancêtres uniques'):<15} | {_('Diversité noms'):<15}")
-        print()  # Saut de ligne
-        print("-" * 150)
-
-        for entry in self.stats_list[:max_level * 2]:  # Afficher les premières entrées
-            kekule, relation, name, Ga, Gb, mra, rank, period = entry[:8]
-            print(f"{kekule:<10} | {relation[:18]:<20} | {name[:28]:<30} | {Ga:<5} | {Gb:<5} | {mra:<5} | {rank:<5} | {period[:13]:<15}", end="")
-            if RelationTab.ENABLE_NETWORK_METRICS and len(entry) > 8:
-                shared_subtree_size, centrality, unique_ancestors, surname_diversity = entry[8:12]
-                print(f" | {shared_subtree_size:<15} | {centrality:<10} | {unique_ancestors:<15} | {surname_diversity:.2f}")
-            else:
-                print()
-        print("-" * 150)
-        print(f"Total des entrées traitées : {len(self.stats_list)}\n")
 
 
     #-------------------------------------------------------------------------
