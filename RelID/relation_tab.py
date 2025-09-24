@@ -31,6 +31,7 @@ import time
 import logging
 import platform
 import os
+from functools import lru_cache
 #from uuid import uuid4
 #from threading import Thread
 from gi.repository import Gtk
@@ -164,6 +165,7 @@ class FamilyPathMetrics:
         return kekule
 
     @staticmethod
+    @lru_cache(maxsize=128)
     def calculate_shared_subtree_size(db, person1_handle, person2_handle):
         """
         Calcule le nombre d'individus dans le sous-arbre commun à deux personnes.
@@ -195,6 +197,7 @@ class FamilyPathMetrics:
         return len(descendants)
 
     @staticmethod
+    @lru_cache(maxsize=128)
     def calculate_family_network_centrality(db, person_handle):
         """
         Calcule un score de centralité pour un individu dans le réseau familial.
@@ -240,6 +243,7 @@ class FamilyPathMetrics:
         return num_descendants + num_ancestors + num_unions
 
     @staticmethod
+    @lru_cache(maxsize=128)
     def count_unique_ancestors(db, person_handle, generations=5):
         """
         Compte le nombre d'ancêtres uniques dans un nombre donné de générations.
@@ -272,6 +276,7 @@ class FamilyPathMetrics:
         return len(ancestors)
 
     @staticmethod
+    @lru_cache(maxsize=128)
     def calculate_surname_diversity(db, person_handle, generations=5):
         """
         Calcule la diversité des noms de famille dans les ancêtres d'un individu.
@@ -428,12 +433,12 @@ class RelationTab(tool.Tool, ManagedWindow):
         self.__filter = FilterOption(_("Person Filter"), 0)
         self.__filter.set_help(_("Select filter to restrict people"))
         menu.add_option(category_name, "filter", self.__filter)
-        self.__filter.connect('value-changed', self.__filter_changed)
+        self.__filter.connect('value-changed', self.update_filter_logic)
 
         self.__fid = PersonOption(_("Filter Person"))
         self.__fid.set_help(_("The center person for the filter"))
         menu.add_option(category_name, "fid", self.__fid)
-        self.__fid.connect('value-changed', self.__update_filters)
+        self.__fid.connect('value-changed', self.update_filter_logic)
         self.__update_filters()
 
         filter_rule = EnumeratedListOption(_("Filter rule"), 0)
@@ -442,7 +447,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         filter_rule.add_item(2, _("Related"))
         filter_rule.set_help(_("Select the filter rule"))
         menu.add_option(category_name, "filter_rule", filter_rule)
-        filter_rule.connect('value-changed', self.__update_filter_rule)
+        filter_rule.connect('value-changed', self.update_filter_logic)
         self.__filter_rule = filter_rule
 
         deep_gen_text = StringOption(_("Deep generations"), "")
@@ -465,20 +470,18 @@ class RelationTab(tool.Tool, ManagedWindow):
         RelationTab.ENABLE_NETWORK_METRICS = network_metrics_option.get_value()
         _LOG.info(f"Network metrics option updated: {RelationTab.ENABLE_NETWORK_METRICS}")
 
-    def __update_filter_rule(self):
-        """
-        Update the options based on the selected filter rule
-        """
-        fid = self.__filter_rule.get_value()
-        if fid == 0:
-            self.__filter_rule.set_available(True)
-        else:
-            self.__filter_rule.set_available(False)
+    def update_filter_logic(self):
+        """Centralise la logique de mise à jour des filtres."""
+        filter_rule = self.__filter_rule.get_value()
+        filter_value = self.__filter.get_value()
 
-    def __update_filters(self):
-        """
-        Update the filter list based on the selected person
-        """
+        # Mise à jour de la disponibilité des options en fonction des règles de filtre
+        if filter_rule == 0:  # Ancestors
+            self.__fid.set_available(True)
+        else:
+            self.__fid.set_available(False)
+
+        # Mise à jour de la liste des filtres en fonction de la personne sélectionnée
         person = self.__fid.get_value()
         if person:
             filter_list = ReportUtils.get_person_filters(person, False)
@@ -486,20 +489,10 @@ class RelationTab(tool.Tool, ManagedWindow):
         else:
             self.__filter.set_filters(0)
 
-    def __filter_changed(self):
-        """
-        Handle filter change. If the filter is not specific to a person,
-        disable the person option
-        """
-        #self.filter_model = build_filter_model("Person", [all_filter])
-        #self.filters.set_model(self.filter_model)
-        #self.filters.set_active(0)
-        filter_value = self.__filter.get_value()
+        # Gestion des filtres spécifiques à une personne
         if filter_value in [1, 2, 3, 4]:
-            # Filters 0, 2, 3, 4 and 5 rely on the center person
             self.__fid.set_available(True)
         else:
-            # The rest don't
             self.__fid.set_available(False)
 
 
@@ -520,63 +513,84 @@ class RelationTab(tool.Tool, ManagedWindow):
         _LOG.debug(f"Processing {filtered_people} people.")
         step_one = time.perf_counter()
 
-        for handle in self.filtered_list:
-            try:
-                person = self.dbstate.db.get_person_from_handle(handle)
-                if not person:
-                    _LOG.warning(f"Person with handle {handle} not found.")
+        # Utilisation d'un générateur pour traiter les personnes
+        def generate_results():
+            for handle in self.filtered_list:
+                self.progress.step()
+                try:
+                    # 1. Récupération de la personne une seule fois
+                    person = self.dbstate.db.get_person_from_handle(handle)
+                    if not person:
+                        _LOG.warning(f"Person with handle {handle} not found.")
+                        continue
+
+                    #thread = Thread(target=self.long_running_task, args=(default_person, person,))
+                    #thread.start()
+
+                    # 2. Calcul de la distance de relation (une seule fois)
+                    dist = self.relationship.get_relationship_distance_new(
+                            self.dbstate.db, default_person, person, only_birth=True)
+                    rank = dist[0][0]
+                    if rank == -1 or rank > max_level:
+                        _LOG.debug("Skipping person (not related or too distant).")
+                        continue
+
+                    # 3. Extraction et calcul des métriques de base
+                    rel_a, rel_b = FamilyPathMetrics.extract_relationship_paths(dist)
+                    Ga, Gb = FamilyPathMetrics.calculate_relationship_path_lengths(rel_a, rel_b)
+                    mra = FamilyPathMetrics.calculate_mra(rel_a)
+                    kekule = FamilyPathMetrics.calculate_kekule_number(Ga, Gb, rel_a, rel_b)
+
+                    # 4. Calcul des métriques réseau uniquement si activé
+                    if RelationTab.ENABLE_NETWORK_METRICS:
+                        shared_subtree_size = FamilyPathMetrics.calculate_shared_subtree_size(
+                            self.dbstate.db, default_person.get_handle(), person.get_handle())
+                        centrality = FamilyPathMetrics.calculate_family_network_centrality(
+                            self.dbstate.db, person.get_handle())
+                        unique_ancestors = FamilyPathMetrics.count_unique_ancestors(
+                            self.dbstate.db, person.get_handle(), generations=max_level)
+                        surname_diversity = FamilyPathMetrics.calculate_surname_diversity(
+                            self.dbstate.db, person.get_handle(), generations=max_level)
+
+                    # 5. Récupération de la relation et de la période (une seule fois)
+                    relationship = get_relationship_between_people(
+                        self.dbstate, self.relationship, default_person, person)
+                    period = get_timeperiod(self.dbstate.db, handle)
+                    # Affichage du nom et pseudo-anonymisation
+                    name = name_displayer.display(person)
+                    # Pseudo privacy; sample for DNA stuff and mapping
+                    import hashlib, re
+                    # cleanup ; special characters
+                    handle = re.sub(r'[^\w\-_]', '_', handle)
+                    no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
+                    _LOG.info(no_name)
+
+                    # 6. Construction de l'entrée de résultat
+                    result_entry = (
+                        int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
+                    )
+                    if RelationTab.ENABLE_NETWORK_METRICS:
+                        result_entry += (
+                            int(shared_subtree_size),
+                            int(centrality),
+                            int(unique_ancestors),
+                            f"{surname_diversity:.2f}"  # Convertir en chaîne de caractères
+                        )
+                    yield result_entry, name  # On retourne le résultat et le nom pour les logs
+                except Exception as e:
+                    _LOG.error(f"Error processing person with handle {handle}: {e}")
                     continue
-            except Exception as e:
-                _LOG.error(f"Error processing person with handle {handle}: {e}")
-                continue
+
+        # Traitement des résultats avec le générateur
+        for result_entry, name in generate_results():
+            # Ajoute le résultat à la liste et au modèle
             count += 1
-            self.progress.step()
-            #thread = Thread(target=self.long_running_task, args=(default_person, person,))
-            #thread.start()
-            _LOG.debug(f"Processing person: {name_displayer.display(person)}")
+            self.stats_list.append(result_entry)
+            if uistate:
+                self.model.add(result_entry, int(result_entry[0]))
 
-            dist = self.relationship.get_relationship_distance_new(
-                    self.dbstate.db, default_person, person, only_birth=True)
-
-            rank = dist[0][0]
-            if rank == -1 or rank > max_level:
-                _LOG.debug("Skipping person (not related or too distant).")
-                continue
-
-            rel_a, rel_b = FamilyPathMetrics.extract_relationship_paths(dist)
-            Ga, Gb = FamilyPathMetrics.calculate_relationship_path_lengths(rel_a, rel_b)
-            mra = FamilyPathMetrics.calculate_mra(rel_a)
-            kekule = FamilyPathMetrics.calculate_kekule_number(Ga, Gb, rel_a, rel_b)
-
-            # Calcul des nouvelles métriques si activé
-            shared_subtree_size = 0
-            centrality = 0
-            unique_ancestors = 0
-            surname_diversity = 0.0
-            if RelationTab.ENABLE_NETWORK_METRICS:
-                shared_subtree_size = FamilyPathMetrics.calculate_shared_subtree_size(
-                    self.dbstate.db, default_person.get_handle(), person.get_handle())
-                centrality = FamilyPathMetrics.calculate_family_network_centrality(
-                    self.dbstate.db, person.get_handle())
-                unique_ancestors = FamilyPathMetrics.count_unique_ancestors(
-                    self.dbstate.db, person.get_handle(), generations=max_level)
-                surname_diversity = FamilyPathMetrics.calculate_surname_diversity(
-                    self.dbstate.db, person.get_handle(), generations=max_level)
-
-            relationship = get_relationship_between_people(
-                self.dbstate, self.relationship, default_person, person)
-            period = get_timeperiod(self.dbstate.db, handle)
-
-            # Affichage du nom et pseudo-anonymisation
-            name = name_displayer.display(person)
-            # Pseudo privacy; sample for DNA stuff and mapping
-            import hashlib, re
-            # cleanup ; special characters
-            handle = re.sub(r'[^\w\-_]', '_', handle)
-            no_name = hashlib.sha384(name.encode() + handle.encode()).hexdigest()
-            _LOG.info(no_name)  # Log du hachage pour un usage interne
-
-            # Mise à jour du header du ProgressMeter
+        # Log toutes les 100 personnes pour éviter de surcharger les logs
+        if count % 100 == 0:
             step_two = time.perf_counter()
             need = (step_two - step_one) / count
             wait = need * filtered_people
@@ -584,28 +598,10 @@ class RelationTab(tool.Tool, ManagedWindow):
             #lazy tooltip
             documentation = _("\nFiltering\tTime process\tCurrent match\tTime per entry\n")
             header = _("%d/%d \t %d/%d seconds \t %d/%d \t\t%f"
-                    % (count, filtered_people, remain, int(wait),
-                    len(self.stats_list), length, float(need)))
-            self.progress.set_header(documentation + header)
-
-            # Ajoute les résultats avec les nouvelles métriques
-            result_entry = (
-                int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
-            )
-            if RelationTab.ENABLE_NETWORK_METRICS:
-                result_entry += (int(shared_subtree_size), int(centrality), int(unique_ancestors), float(surname_diversity))
-            self.stats_list.append(result_entry)
-
-            if uistate:
-                model_entry = (
-                int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
-                )
-                if RelationTab.ENABLE_NETWORK_METRICS:
-                    model_entry += (int(shared_subtree_size), int(centrality), int(unique_ancestors), 
-f"{surname_diversity:.2f}")
-                self.model.add(model_entry, int(kekule))
-
-        _LOG.debug(f"Added entry for {name} to stats_list.")
+                  % (count, filtered_people, remain, int(wait),
+                  len(self.stats_list), length, float(need)))
+            self.progress.set_header(header)
+            _LOG.debug(f"Processed {count}/{filtered_people} people.")
 
         self.progress.close()
 
@@ -624,7 +620,7 @@ f"{surname_diversity:.2f}")
                 print(f"{kekule:<10} | {relation[:18]:<20} | {name[:28]:<30} | {Ga:<5} | {Gb:<5} | {mra:<5} | {rank:<5} | {period[:13]:<15}", end="")
                 if RelationTab.ENABLE_NETWORK_METRICS and len(entry) > 8:
                     shared_subtree_size, centrality, unique_ancestors, surname_diversity = entry[8:12]
-                    print(f" | {shared_subtree_size:<15} | {centrality:<10} | {unique_ancestors:<15} | {surname_diversity:.2f}")
+                    print(f" | {shared_subtree_size:<15} | {centrality:<10} | {unique_ancestors:<15} | {surname_diversity}")
                 else:
                     print()
             print("-" * 150)
