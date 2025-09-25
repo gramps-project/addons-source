@@ -39,7 +39,8 @@ register(
     version = '1.1.0',
     gramps_target_version=MODULE_VERSION,
     include_in_listing=True,
-    status=STABLE,
+    status=EXPERIMENTAL,
+    audience = DEVELOPER,
     fname="relation_tab.py",
     authors=["Jerome Rapinat"],
     authors_email=["romjerome@yahoo.fr"],
@@ -47,4 +48,5 @@ register(
     toolclass="RelationTab",
     optionclass="RelationTabOptions",
     tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
+    help_url="https://www.gramps-project.org/wiki/index.php/Addon:Display_relations_and_distances_with_the_home_person",
 )
