@@ -62,6 +62,8 @@ _LOG = logging.getLogger(__name__)
 _LOG.info(platform.uname())
 logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
+MAX_LEVEL = config.get('behavior.generation-depth')
+
 #-------------------------------------------------------------------------
 def get_relationship_between_people(dbstate, relationship_calculator, root_person, target_person):
     """
@@ -391,7 +393,6 @@ class RelationTab(tool.Tool, ManagedWindow):
             box.pack_end(quit, False, False, 0)
 
         # Récupération des personnes filtrées
-        max_level = config.get('behavior.generation-depth')
         plist = self.dbstate.db.iter_person_handles()
         length = self.dbstate.db.get_number_of_people()
         default_person = self.dbstate.db.get_default_person()
@@ -419,7 +420,7 @@ class RelationTab(tool.Tool, ManagedWindow):
 
         # Traitement des personnes
         _LOG.info("Starting to process people...")
-        self.process_people(max_level, uistate, window, default_person, length)
+        self.process_people(MAX_LEVEL, uistate, window, default_person, length)
         _LOG.info("Finished processing people.")
 
         if uistate and default_person:
@@ -760,7 +761,7 @@ class RelationTabOptions(tool.ToolOptions):
             'filter': 0,
             #'fid': ,
             'filter_rule': 0,
-            'deep_gen_text': 15,
+            'deep_gen_text': MAX_LEVEL,
             'enable_network_metrics': True,  # Option pour activer les métriques de réseau
         }
         self.options_help = {
