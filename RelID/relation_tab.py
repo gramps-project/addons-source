@@ -357,13 +357,6 @@ class RelationTab(tool.Tool, ManagedWindow):
             quit_button.connect("clicked", self.quit_clicked)
             box.pack_end(quit_button, False, False, 0)
 
-        if uistate:
-            self.progress = ProgressMeter(self.label, can_cancel=False, parent=uistate.window)
-            #window.show_all()
-            self.set_window(window, None, self.label)
-        else:
-            self.progress = ProgressMeter(self.label)
-
         # Récupération de la personne par défaut
         default_person = self.dbstate.db.get_default_person()
         if default_person is None:
@@ -371,6 +364,14 @@ class RelationTab(tool.Tool, ManagedWindow):
             if uistate:
                 WarningDialog(_("No default person set."), parent=uistate.window)
             return
+
+        if uistate:
+            self.progress = ProgressMeter(self.label, can_cancel=False, parent=uistate.window)
+            #window.show_all()
+            self.set_window(window, None, self.label)
+        else:
+            self.progress = ProgressMeter(self.label)
+
 
         # Initialisation du filtre par défaut
         root_id = default_person.get_gramps_id()
