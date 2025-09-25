@@ -524,6 +524,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         def generate_results():
             for handle in self.filtered_list:
                 self.progress.step()
+                self.progress.set_header("%d/%d" % (count, len(self.filtered_list)))
                 try:
                     # 1. Récupération de la personne une seule fois
                     person = self.dbstate.db.get_person_from_handle(handle)
