@@ -322,7 +322,6 @@ class RelationTab(tool.Tool, ManagedWindow):
             box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
             window.add(box)
             ManagedWindow.__init__(self, uistate, [], self.__class__)
-            self.set_window(window, None, self.label)
 
             # Configuration du TreeView
             self.titles = [
