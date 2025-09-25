@@ -353,7 +353,6 @@ class RelationTab(tool.Tool, ManagedWindow):
 
             ManagedWindow.__init__(self, uistate, [], self.__class__)
             self.set_window(window, None, self.label)
-            window.show_all()
 
             # Configuration du TreeView
             self.titles = [
@@ -386,38 +385,45 @@ class RelationTab(tool.Tool, ManagedWindow):
             button.connect("clicked", self.button_clicked)
             box.pack_end(button, False, True, 0)
 
+            # Bouton pour quitter
+            quit = Gtk.Button(label=_("Quit"))
+            quit.connect("clicked",self.quit_clicked)
+            box.pack_end(quit, False, False, 0)
+
         # Récupération des personnes filtrées
         max_level = config.get('behavior.generation-depth')
         plist = self.dbstate.db.iter_person_handles()
         length = self.dbstate.db.get_number_of_people()
         default_person = self.dbstate.db.get_default_person()
 
-        if uistate:
-            self.progress = ProgressMeter(self.label, can_cancel=True, parent=window)
-        else:
-            self.progress = ProgressMeter(self.label)
-
-        if default_person:
+        if default_person is not None:
             root_id = default_person.get_gramps_id()
             ancestors = rules.person.IsAncestorOf([str(root_id), True])
             descendants = rules.person.IsDescendantOf([str(root_id), True])
             related = rules.person.IsRelatedWith([str(root_id)])
             self.filter.add_rule(related)
             _LOG.info("Filtering people related to the root person...")
-            self.progress.set_pass(_('Please wait, filtering...'))
             self.filtered_list = self.filter.apply(self.dbstate.db, plist)
             _LOG.info(f"Found {len(self.filtered_list)} related people.")
         else:
             _LOG.debug("No default person set.")
+            if uistate:
+                WarningDialog(_("No default person set."), parent=uistate.window)
             return
+
+        if uistate:
+            self.progress = ProgressMeter(self.label, can_cancel=False, parent=uistate.window)
+        else:
+            self.progress = ProgressMeter(self.label)
+        self.progress.set_pass(_('Please wait, filtering...'))
 
         # Traitement des personnes
         _LOG.info("Starting to process people...")
         self.process_people(max_level, uistate, window, default_person, length)
         _LOG.info("Finished processing people.")
 
-        if uistate:
-            window.show()
+        if uistate and default_person:
+            window.show_all()
             self.set_window(window, None, self.label)
             self.show()
 
@@ -605,7 +611,7 @@ class RelationTab(tool.Tool, ManagedWindow):
 
         self.progress.close()
 
-        if not uistate:
+        if uistate is None:
             # Afficher un aperçu des résultats dans la console
             print("\nAperçu des résultats :")
             print("-" * 100)
@@ -688,6 +694,12 @@ class RelationTab(tool.Tool, ManagedWindow):
         """Appelé quand le bouton 'Save' est cliqué."""
         _LOG.info("Save button clicked.")
         self.save()
+
+    #-------------------------------------------------------------------------
+    def quit_clicked(self, quit):
+        """Appelé quand le bouton 'Quit' est cliqué."""
+        _LOG.info("Quit button clicked.")
+        self.close()
 
     #-------------------------------------------------------------------------
     def build_menu_names(self, obj):
