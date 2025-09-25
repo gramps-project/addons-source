@@ -48,5 +48,4 @@ register(
     toolclass="RelationTab",
     optionclass="RelationTabOptions",
     tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
-    help_url="https://www.gramps-project.org/wiki/index.php/Addon:Display_relations_and_distances_with_the_home_person",
 )
