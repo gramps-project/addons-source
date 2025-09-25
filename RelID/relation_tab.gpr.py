@@ -38,7 +38,7 @@ register(
     help_url="Addon:RelID",
     version = '1.1.0',
     gramps_target_version=MODULE_VERSION,
-    include_in_listing=False,
+    include_in_listing=True,
     status=STABLE,
     fname="relation_tab.py",
     authors=["Jerome Rapinat"],
