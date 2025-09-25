@@ -524,7 +524,21 @@ class RelationTab(tool.Tool, ManagedWindow):
         def generate_results():
             for handle in self.filtered_list:
                 self.progress.step()
-                self.progress.set_header("%d/%d" % (count, len(self.filtered_list)))
+                # Log après 10 personnes pour éviter de surcharger les logs
+                if count % 100 == 10:
+                    step_two = time.perf_counter()
+                    need = (step_two - step_one) / count
+                    wait = need * filtered_people
+                    #lazy tooltip
+                    documentation = _("\nFiltering\tTime process\tCurrent match\tTime per entry\n")
+                    header = _("%d/%d \t %d seconds \t %d/%d \t\t%f"
+                          % (count, filtered_people, int(wait),
+                          len(self.stats_list), length, float(need)))
+                    self.progress.set_header(documentation + header)
+                    _LOG.debug(f"Processed {count}/{filtered_people} people.")
+                # Log uniquement les 10 personnes pour éviter de surcharger les logs
+                elif count % 100 < 10:
+                    self.progress.set_header("%d/%d" % (count, len(self.filtered_list)))
                 try:
                     # 1. Récupération de la personne une seule fois
                     person = self.dbstate.db.get_person_from_handle(handle)
@@ -596,20 +610,6 @@ class RelationTab(tool.Tool, ManagedWindow):
             self.stats_list.append(result_entry)
             if uistate:
                 self.model.add(result_entry, int(result_entry[0]))
-
-        # Log toutes les 100 personnes pour éviter de surcharger les logs
-        if count % 100 == 0:
-            step_two = time.perf_counter()
-            need = (step_two - step_one) / count
-            wait = need * filtered_people
-            remain = int(wait) - int(step_two - step_one)
-            #lazy tooltip
-            documentation = _("\nFiltering\tTime process\tCurrent match\tTime per entry\n")
-            header = _("%d/%d \t %d/%d seconds \t %d/%d \t\t%f"
-                  % (count, filtered_people, remain, int(wait),
-                  len(self.stats_list), length, float(need)))
-            self.progress.set_header(header)
-            _LOG.debug(f"Processed {count}/{filtered_people} people.")
 
         self.progress.close()
 
