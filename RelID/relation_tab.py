@@ -22,7 +22,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-#
+
 """
 Relations tab.
 """
@@ -32,16 +32,15 @@ import logging
 import platform
 import os
 from functools import lru_cache
-#from uuid import uuid4
-#from threading import Thread
-from gi.repository import Gtk
+from collections import deque
+from gi.repository import Gtk, GLib
+
 from gramps.gui.filters import build_filter_model
 from gramps.gui.listmodel import ListModel, INTEGER
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter
 from gramps.gui.plug import tool
-from gramps.gen.plug.menu import StringOption, FilterOption, PersonOption, \
-    EnumeratedListOption
+from gramps.gen.plug.menu import StringOption, FilterOption, PersonOption, EnumeratedListOption
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gui.dialog import WarningDialog
 from gramps.gen.display.name import displayer as name_displayer
@@ -58,34 +57,23 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
 _LOG = logging.getLogger(__name__)
 _LOG.info(platform.uname())
 logging.basicConfig(filename='debug.log', level=logging.DEBUG)
-
 MAX_LEVEL = config.get('behavior.generation-depth')
 
 #-------------------------------------------------------------------------
 def get_relationship_between_people(dbstate, relationship_calculator, root_person, target_person):
     """
     Retrieves and logs the relationship between the root person and the target person.
-
-    Args:
-        dbstate: The database state.
-        relationship_calculator: The relationship calculator instance.
-        root_person: The root person (default person) in the database.
-        target_person: The person to find the relationship with.
-
-    Returns:
-        The relationship string between the root and target person.
     """
     target_person_name = name_displayer.display(target_person)
     _LOG.debug(f"Calculating relationship for {target_person_name}")
-
     relationship = relationship_calculator.get_one_relationship(
         dbstate.db, root_person, target_person
     )
     _LOG.debug(f"Relationship result for {target_person_name}: {relationship}")
-
     return relationship
 
 #-------------------------------------------------------------------------
@@ -95,16 +83,13 @@ def test_family_path_metrics():
     rel_a, rel_b = FamilyPathMetrics.extract_relationship_paths(mock_result)
     assert rel_a == "mfm"
     assert rel_b == "ffm"
-
     # Test calculate_relationship_path_lengths
     Ga, Gb = FamilyPathMetrics.calculate_relationship_path_lengths("mfm", "ffm")
     assert Ga == 3
     assert Gb == 3
-
     # Test calculate_mra
     assert FamilyPathMetrics.calculate_mra("mfm") == 15
     assert FamilyPathMetrics.calculate_mra("ff") == 5
-
     # Test calculate_kekule_number
     assert FamilyPathMetrics.calculate_kekule_number(2, 2, "mm", "ff") == 0  # Exemple hypothétique
 
@@ -113,32 +98,20 @@ class FamilyPathMetrics:
     """
     Classe dédiée au calcul des métriques de relation entre individus dans un arbre généalogique.
     """
-
     @staticmethod
     def extract_relationship_paths(relationship_distance_result):
-        """
-        Extrait les chemins de relation (rel_a et rel_b) à partir du résultat de la distance de relation.
-        """
         rel_a = relationship_distance_result[0][2]
         rel_b = relationship_distance_result[0][4]
         return rel_a, rel_b
 
     @staticmethod
     def calculate_relationship_path_lengths(rel_a, rel_b):
-        """
-        Calcule les longueurs des chemins de relation (Ga et Gb).
-        """
         Ga = len(rel_a)
         Gb = len(rel_b)
         return Ga, Gb
 
     @staticmethod
     def calculate_mra(rel_a):
-        """
-        Calcule le "Most Recent Ancestor" (MRA) en fonction du chemin de relation rel_a.
-        """
-        # design: mra gender will be often female (m: mother) ; f: father
-        # mra will be also always an unpair number
         mra = 1
         for letter in rel_a:
             if letter == 'm':
@@ -151,9 +124,6 @@ class FamilyPathMetrics:
 
     @staticmethod
     def calculate_kekule_number(Ga, Gb, rel_a, rel_b):
-        """
-        Calcule le nombre de Kekulé en fonction des longueurs des chemins de relation et des chemins eux-mêmes.
-        """
         # male ancestors will be pair ; female ancestors will be unpair ; see number.py
         kekule = number.get_number(Ga, Gb, rel_a, rel_b)
         if kekule == "u": # TODO: cousin(e)s need a key
@@ -169,135 +139,87 @@ class FamilyPathMetrics:
     @staticmethod
     @lru_cache(maxsize=128)
     def calculate_shared_subtree_size(db, person1_handle, person2_handle):
-        """
-        Calcule le nombre d'individus dans le sous-arbre commun à deux personnes.
-        """
         person1 = db.get_person_from_handle(person1_handle)
         person2 = db.get_person_from_handle(person2_handle)
-
         relationship_calculator = get_relationship_calculator()
         dist = relationship_calculator.get_relationship_distance_new(db, person1, person2)
         if not dist or dist[0][0] == -1:
-            return 0  # Pas de relation trouvée
-
+            return 0 # Pas de relation trouvée
         common_ancestor_handle = dist[0][1]
         common_ancestor = db.get_person_from_handle(common_ancestor_handle)
-
         descendants = set()
-        stack = [common_ancestor]
-
+        stack = deque([common_ancestor])
         while stack:
-            current_person = stack.pop()
+            current_person = stack.popleft()
             descendants.add(current_person.get_handle())
-
             for family_handle in current_person.get_family_handle_list():
                 family = db.get_family_from_handle(family_handle)
                 for child_ref in family.get_child_ref_list():
                     child = db.get_person_from_handle(child_ref.get_reference_handle())
                     stack.append(child)
-
         return len(descendants)
 
     @staticmethod
     @lru_cache(maxsize=128)
     def calculate_family_network_centrality(db, person_handle):
-        """
-        Calcule un score de centralité pour un individu dans le réseau familial.
-        """
         person = db.get_person_from_handle(person_handle)
-
         # Compter les descendants
         descendants = set()
-        stack = [person]
-
+        stack = deque([person])
         while stack:
-            current_person = stack.pop()
+            current_person = stack.popleft()
             descendants.add(current_person.get_handle())
-
             for family_handle in current_person.get_family_handle_list():
                 family = db.get_family_from_handle(family_handle)
                 for child_ref in family.get_child_ref_list():
                     child = db.get_person_from_handle(child_ref.get_reference_handle())
                     stack.append(child)
-
         num_descendants = len(descendants) - 1
-
         # Compter les ancêtres
         ancestors = set()
-        stack = [person]
-
+        stack = deque([person])
         while stack:
-            current_person = stack.pop()
+            current_person = stack.popleft()
             ancestors.add(current_person.get_handle())
-
             for family_handle in current_person.get_parent_family_handle_list():
                 family = db.get_family_from_handle(family_handle)
                 for parent_ref in [family.get_father_handle(), family.get_mother_handle()]:
                     if parent_ref:
                         parent = db.get_person_from_handle(parent_ref)
                         stack.append(parent)
-
         num_ancestors = len(ancestors) - 1
-
         # Compter les liens de couple
         num_unions = len(person.get_family_handle_list())
-
         return num_descendants + num_ancestors + num_unions
 
     @staticmethod
     @lru_cache(maxsize=128)
     def count_unique_ancestors(db, person_handle, generations=5):
-        """
-        Compte le nombre d'ancêtres uniques dans un nombre donné de générations.
-
-        Args:
-            db: Base de données Gramps.
-            person_handle: Handle de la personne.
-            generations: Nombre de générations à considérer.
-
-        Returns:
-            int: Nombre d'ancêtres uniques.
-        """
         person = db.get_person_from_handle(person_handle)
         ancestors = set()
-        stack = [(person, 0)]
-
+        stack = deque([(person, 0)])
         while stack:
-            current_person, generation = stack.pop()
+            current_person, generation = stack.popleft()
             if generation > generations:
                 continue
             ancestors.add(current_person.get_handle())
-
             for family_handle in current_person.get_parent_family_handle_list():
                 family = db.get_family_from_handle(family_handle)
                 for parent_ref in [family.get_father_handle(), family.get_mother_handle()]:
                     if parent_ref:
                         parent = db.get_person_from_handle(parent_ref)
                         stack.append((parent, generation + 1))
-
         return len(ancestors)
 
     @staticmethod
     @lru_cache(maxsize=128)
     def calculate_surname_diversity(db, person_handle, generations=5):
-        """
-        Calcule la diversité des noms de famille dans les ancêtres d'un individu.
-
-        Args:
-            db: Base de données Gramps.
-            person_handle: Handle de la personne.
-            generations: Nombre de générations à considérer.
-
-        Returns:
-            float: Indice de diversité des noms de famille.
-        """
         person = db.get_person_from_handle(person_handle)
         surnames = set()
         total_ancestors = 0
-        stack = [(person, 0)]
-
+        stack = deque([(person, 0)])
         while stack:
-            current_person, generation = stack.pop()
+            current_person, generation = stack.popleft()
             if generation > generations:
                 continue
             total_ancestors += 1
@@ -314,6 +236,45 @@ class FamilyPathMetrics:
             return 0.0
         return len(surnames) / total_ancestors
 
+#-------------------------------------------------------------------------
+class RelationFilterManager:
+    """Gère la création, la mise à jour et l'application des filtres."""
+    RULE_BUILDERS = {
+        0: lambda person: rules.person.IsAncestorOf([str(person.get_gramps_id()), True]),
+        1: lambda person: rules.person.IsDescendantOf([str(person.get_gramps_id()), True]),
+        2: lambda person: rules.person.IsRelatedWith([str(person.get_gramps_id())]),
+    }
+
+    def __init__(self, dbstate):
+        self.dbstate = dbstate
+        self.filter = GenericFilterFactory('Person')()
+        self.current_rules = []
+        self.last_applied_handles = None
+        self.last_applied_rules = None
+        self.last_filtered_list = []
+
+    def update_rules(self, filter_rule, person_handle=None):
+        """Met à jour les règles du filtre."""
+        self.filter.clear()
+        self.current_rules = []
+        if person_handle and filter_rule in self.RULE_BUILDERS:
+            person = self.dbstate.db.get_person_from_handle(person_handle)
+            rule = self.RULE_BUILDERS[filter_rule](person)
+            self.filter.add_rule(rule)
+            self.current_rules.append(rule)
+
+    def apply_filter(self, person_handles):
+        """Applique le filtre et met en cache le résultat si possible."""
+        rules_hash = hash(tuple(str(rule) for rule in self.current_rules))
+        if (self.last_applied_handles == person_handles and
+            self.last_applied_rules == rules_hash):
+            _LOG.debug("Using cached filter result.")
+            return self.last_filtered_list
+        _LOG.debug("Applying filter...")
+        self.last_filtered_list = self.filter.apply(self.dbstate.db, person_handles)
+        self.last_applied_handles = person_handles
+        self.last_applied_rules = rules_hash
+        return self.last_filtered_list
 
 #-------------------------------------------------------------------------
 class RelationTab(tool.Tool, ManagedWindow):
@@ -326,33 +287,40 @@ class RelationTab(tool.Tool, ManagedWindow):
         # Récupère les options depuis options_class
         self.options = options_class
 
-        # Vérifie que self.options est bien une instance et non la classe
-        if hasattr(self.options, 'options_dict'):
-            RelationTab.ENABLE_NETWORK_METRICS = self.options.options_dict.get('enable_network_metrics', True)
-        else:
-            _LOG.warning("options_class n'est pas une instance de RelationTabOptions. Utilisation de la valeur par défaut.")
-
         uistate = user.uistate
         self.label = _("Relation and distances with root")
         self.dbstate = dbstate
-        FilterClass = GenericFilterFactory('Person')
         self.path = None
-        self.filter = FilterClass()
         self.relationship = get_relationship_calculator()
         self.stats_list = []
 
-        # Initialiser window et progress avant de les utiliser
+        # Initialisation des options de menu
+        category_name = _("Options")
+        self.__filter = FilterOption(_("Person Filter"), 0)
+        self.__filter.set_help(_("Select filter to restrict people"))
+
+        self.__fid = PersonOption(_("Filter Person"))
+        self.__fid.set_help(_("The center person for the filter"))
+
+        self.__filter_rule = EnumeratedListOption(_("Filter rule"), 0)
+        self.__filter_rule.add_item(0, _("Ancestors"))
+        self.__filter_rule.add_item(1, _("Descendants"))
+        self.__filter_rule.add_item(2, _("Related"))
+        self.__filter_rule.set_help(_("Select the filter rule"))
+
+        self.__deep_gen_text = StringOption(_("Deep generations"), "")
+        self.__deep_gen_text.set_help(_("How deep should we go?"))
+
+        # Initialisation du gestionnaire de filtres
+        self.filter_manager = RelationFilterManager(dbstate)
+
+        # Initialisation de la fenêtre et des widgets GTK
         window = None
-
-        #self.filter_option =  self.options.menu.get_option_by_name('filter')
-        #self.filter = self.filter_option.get_filter() # the actual filter
-
         if uistate:
             window = Gtk.Window()
             window.set_default_size(1200, 600)
             box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
             window.add(box)
-
             ManagedWindow.__init__(self, uistate, [], self.__class__)
             self.set_window(window, None, self.label)
 
@@ -367,13 +335,12 @@ class RelationTab(tool.Tool, ManagedWindow):
                 (_('Rank'), 6, 40, INTEGER),
                 (_('Period'), 7, 40, str),
             ]
-
             if RelationTab.ENABLE_NETWORK_METRICS:
                 self.titles.extend([
-                    (_('Shared Subtree'), 8, 80, INTEGER),
-                    (_('Centrality'), 9, 60, INTEGER),
-                    (_('Unique Ancestors'), 10, 80, INTEGER),
-                    (_('Surname Diversity'), 11, 80, str),  # Affiché comme pourcentage ou ratio
+                    (_('Shared Subtree'), 8, 80, INTEGER), # Taille du sous-arbre commun
+                    (_('Centrality'), 9, 60, INTEGER), # Score de centralité
+                    (_('Unique Ancestors'), 10, 80, INTEGER), # Nombre d'ancêtres uniques
+                    (_('Surname Diversity'), 11, 80, str), # Affiché comme pourcentage ou ratio
                 ])
 
             treeview = Gtk.TreeView()
@@ -382,40 +349,44 @@ class RelationTab(tool.Tool, ManagedWindow):
             s.add(treeview)
             box.pack_start(s, True, True, 0)
 
-            # Bouton de sauvegarde
-            button = Gtk.Button(label=_("Save"))
-            button.connect("clicked", self.button_clicked)
-            box.pack_end(button, False, True, 0)
+            # Boutons
+            save_button = Gtk.Button(label=_("Save"))
+            save_button.connect("clicked", self.button_clicked)
+            box.pack_end(save_button, False, True, 0)
 
-            # Bouton pour quitter
-            quit = Gtk.Button(label=_("Quit"))
-            quit.connect("clicked",self.quit_clicked)
-            box.pack_end(quit, False, False, 0)
+            quit_button = Gtk.Button(label=_("Quit"))
+            quit_button.connect("clicked", self.quit_clicked)
+            box.pack_end(quit_button, False, False, 0)
 
-        # Récupération des personnes filtrées
-        plist = self.dbstate.db.iter_person_handles()
-        length = self.dbstate.db.get_number_of_people()
-        default_person = self.dbstate.db.get_default_person()
-
-        if default_person is not None:
-            root_id = default_person.get_gramps_id()
-            ancestors = rules.person.IsAncestorOf([str(root_id), True])
-            descendants = rules.person.IsDescendantOf([str(root_id), True])
-            related = rules.person.IsRelatedWith([str(root_id)])
-            self.filter.add_rule(related)
-            _LOG.info("Filtering people related to the root person...")
-            self.filtered_list = self.filter.apply(self.dbstate.db, plist)
-            _LOG.info(f"Found {len(self.filtered_list)} related people.")
+        if uistate:
+            self.progress = ProgressMeter(self.label, can_cancel=False, parent=uistate.window)
+            #window.show_all()
+            self.set_window(window, None, self.label)
         else:
+            self.progress = ProgressMeter(self.label)
+
+        # Récupération de la personne par défaut
+        default_person = self.dbstate.db.get_default_person()
+        if default_person is None:
             _LOG.debug("No default person set.")
             if uistate:
                 WarningDialog(_("No default person set."), parent=uistate.window)
             return
 
-        if uistate:
-            self.progress = ProgressMeter(self.label, can_cancel=False, parent=uistate.window)
-        else:
-            self.progress = ProgressMeter(self.label)
+        # Initialisation du filtre par défaut
+        root_id = default_person.get_gramps_id()
+        related = rules.person.IsRelatedWith([str(root_id)])
+        self.filter_manager.filter.add_rule(related)
+
+        # Récupération des personnes filtrées
+        plist = list(self.dbstate.db.iter_person_handles())
+        length = len(plist)
+
+        # Application du filtre initial
+        self.filtered_list = self.filter_manager.apply_filter(plist)
+        _LOG.info(f"Found {len(self.filtered_list)} related people.")
+
+        # Initialiser le ProgressMeter dans tous les cas
         self.progress.set_pass(_('Please wait, filtering...'))
 
         # Traitement des personnes
@@ -423,104 +394,84 @@ class RelationTab(tool.Tool, ManagedWindow):
         self.process_people(MAX_LEVEL, uistate, window, default_person, length)
         _LOG.info("Finished processing people.")
 
-        if uistate and default_person:
-            window.show_all()
-            self.set_window(window, None, self.label)
-            self.show()
+    #--- Méthodes de gestion des filtres ---
+    def on_filter_rule_changed(self, *args):
+        """Met à jour les règles du filtre lorsque la règle change."""
+        filter_rule = self.__filter_rule.get_value()
+        person_handle = self.__fid.get_value()
+        self.filter_manager.update_rules(filter_rule, person_handle)
+        self.apply_and_update_filter()
 
-    def get_title(self):
-        return _("Relationships Map and Tab")
+    def on_filter_person_changed(self, *args):
+        """Met à jour les règles du filtre lorsque la personne change."""
+        self.on_filter_rule_changed()
 
-    def initial_frame(self):
-        return _("Options")
+    def apply_and_update_filter(self):
+        """Applique le filtre et met à jour l'UI."""
+        plist = list(self.dbstate.db.iter_person_handles())
+        self.filtered_list = self.filter_manager.apply_filter(plist)
+        _LOG.info(f"Found {len(self.filtered_list)} related people.")
+        default_person = self.dbstate.db.get_default_person()
+        if default_person:
+            self.process_people(MAX_LEVEL, self.uistate, self.window, default_person, len(plist))
 
+    #--- Autres méthodes ---
     def add_menu_options(self, menu):
-        """Add the options."""
+        """Ajoute les options de menu."""
         category_name = _("Options")
-        self.__filter = FilterOption(_("Person Filter"), 0)
-        self.__filter.set_help(_("Select filter to restrict people"))
         menu.add_option(category_name, "filter", self.__filter)
         self.__filter.connect('value-changed', self.update_filter_logic)
 
-        self.__fid = PersonOption(_("Filter Person"))
-        self.__fid.set_help(_("The center person for the filter"))
         menu.add_option(category_name, "fid", self.__fid)
-        self.__fid.connect('value-changed', self.update_filter_logic)
-        self.__update_filters()
+        self.__fid.connect('value-changed', self.on_filter_person_changed)
 
-        filter_rule = EnumeratedListOption(_("Filter rule"), 0)
-        filter_rule.add_item(0, _("Ancestors"))
-        filter_rule.add_item(1, _("Descendants"))
-        filter_rule.add_item(2, _("Related"))
-        filter_rule.set_help(_("Select the filter rule"))
-        menu.add_option(category_name, "filter_rule", filter_rule)
-        filter_rule.connect('value-changed', self.update_filter_logic)
-        self.__filter_rule = filter_rule
+        menu.add_option(category_name, "filter_rule", self.__filter_rule)
+        self.__filter_rule.connect('value-changed', self.on_filter_rule_changed)
 
-        deep_gen_text = StringOption(_("Deep generations"), "")
-        deep_gen_text.set_help(_("How deep should we go?"))
-        menu.add_option(category_name, "deep_gen_text", deep_gen_text)
-        self.__deep_gen_text = deep_gen_text
+        menu.add_option(category_name, "deep_gen_text", self.__deep_gen_text)
 
-        # Ajoute une option pour activer/désactiver les métriques réseau
         network_metrics_option = EnumeratedListOption(_("Network Metrics"), RelationTab.ENABLE_NETWORK_METRICS)
         network_metrics_option.add_item(True, _("Enabled"))
         network_metrics_option.add_item(False, _("Disabled"))
         network_metrics_option.set_help(_("Enable or disable family network metrics"))
         menu.add_option(category_name, "network_metrics", network_metrics_option)
         network_metrics_option.connect('value-changed', self.__update_network_metrics_option)
-        self.__update_filter_rule()
 
-    def __update_network_metrics_option(self):
-        """Mets à jour ENABLE_NETWORK_METRICS en fonction de l'option sélectionnée."""
+    def __update_network_metrics_option(self, *args):
+        """Met à jour ENABLE_NETWORK_METRICS en fonction de l'option sélectionnée."""
         network_metrics_option = self.options.menu.get_option_by_name('network_metrics')
         RelationTab.ENABLE_NETWORK_METRICS = network_metrics_option.get_value()
         _LOG.info(f"Network metrics option updated: {RelationTab.ENABLE_NETWORK_METRICS}")
 
-    def update_filter_logic(self):
-        """Centralise la logique de mise à jour des filtres."""
+    def update_filter_logic(self, *args):
+        """Met à jour la logique des filtres."""
         filter_rule = self.__filter_rule.get_value()
-        filter_value = self.__filter.get_value()
-
-        # Mise à jour de la disponibilité des options en fonction des règles de filtre
-        if filter_rule == 0:  # Ancestors
+        if filter_rule in (0, 1, 2):
             self.__fid.set_available(True)
         else:
             self.__fid.set_available(False)
 
-        # Mise à jour de la liste des filtres en fonction de la personne sélectionnée
-        person = self.__fid.get_value()
-        if person:
-            filter_list = ReportUtils.get_person_filters(person, False)
-            self.__filter.set_filters(filter_list)
-        else:
-            self.__filter.set_filters(0)
-
-        # Gestion des filtres spécifiques à une personne
-        if filter_value in [1, 2, 3, 4]:
-            self.__fid.set_available(True)
-        else:
-            self.__fid.set_available(False)
-
-
-    #-------------------------------------------------------------------------
-    def long_running_task(self, default_person, person):
-        # Exemple de tâche longue
-        dist = self.relationship.get_relationship_distance_new(
-            self.dbstate.db, default_person, person, only_birth=True)
-        # Traitement des résultats...
-
-
-    #-------------------------------------------------------------------------
     def process_people(self, max_level, uistate, window, default_person, length):
-        """Traite la liste des personnes filtrées."""
+        """Traite la liste des personnes filtrées et calcule les métriques de relation.
+        Args:
+            max_level: Nombre maximum de générations à considérer.
+            uistate: État de l'interface utilisateur (pour les mises à jour GTK).
+            window: Fenêtre GTK principale.
+            default_person: Personne racine pour les calculs de relation.
+            length: Nombre total de personnes dans la base.
+        """
+        # Vérification que ProgressMeter est initialisé (sécurité)
+        if not hasattr(self, 'progress'):
+            _LOG.error("ProgressMeter not initialized.")
+            return
         count = 0
         filtered_people = len(self.filtered_list)
         self.progress.set_pass(_('Generating relation map...'), filtered_people)
         _LOG.debug(f"Processing {filtered_people} people.")
+
         step_one = time.perf_counter()
 
-        # Utilisation d'un générateur pour traiter les personnes
+        # Utilisation d'un générateur pour traiter les personnes une par une
         def generate_results():
             for handle in self.filtered_list:
                 self.progress.step()
@@ -531,14 +482,14 @@ class RelationTab(tool.Tool, ManagedWindow):
                     wait = need * filtered_people
                     #lazy tooltip
                     documentation = _("\nFiltering\tTime process\tCurrent match\tTime per entry\n")
-                    header = _("%d/%d \t %d seconds \t %d/%d \t\t%f"
-                          % (count, filtered_people, int(wait),
-                          len(self.stats_list), length, float(need)))
+                    header = _("%d/%d \t %d seconds \t %d/%d \t\t%f") % (
+                        count, filtered_people, int(wait), len(self.stats_list), length, float(need))
                     self.progress.set_header(documentation + header)
                     _LOG.debug(f"Processed {count}/{filtered_people} people.")
                 # Log uniquement les 10 personnes pour éviter de surcharger les logs
                 elif count % 100 < 10:
                     self.progress.set_header("%d/%d" % (count, len(self.filtered_list)))
+
                 try:
                     # 1. Récupération de la personne une seule fois
                     person = self.dbstate.db.get_person_from_handle(handle)
@@ -546,12 +497,9 @@ class RelationTab(tool.Tool, ManagedWindow):
                         _LOG.warning(f"Person with handle {handle} not found.")
                         continue
 
-                    #thread = Thread(target=self.long_running_task, args=(default_person, person,))
-                    #thread.start()
-
                     # 2. Calcul de la distance de relation (une seule fois)
                     dist = self.relationship.get_relationship_distance_new(
-                            self.dbstate.db, default_person, person, only_birth=True)
+                        self.dbstate.db, default_person, person, only_birth=True)
                     rank = dist[0][0]
                     if rank == -1 or rank > max_level:
                         _LOG.debug("Skipping person (not related or too distant).")
@@ -588,6 +536,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                     _LOG.info(no_name)
 
                     # 6. Construction de l'entrée de résultat
+
                     result_entry = (
                         int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
                     )
@@ -596,20 +545,39 @@ class RelationTab(tool.Tool, ManagedWindow):
                             int(shared_subtree_size),
                             int(centrality),
                             int(unique_ancestors),
-                            f"{surname_diversity:.2f}"  # Convertir en chaîne de caractères
+                            f"{surname_diversity:.2f}" # Convertir en chaîne de caractères
                         )
-                    yield result_entry, name  # On retourne le résultat et le nom pour les logs
+                    yield result_entry, name # On retourne le résultat et le nom pour les logs
                 except Exception as e:
                     _LOG.error(f"Error processing person with handle {handle}: {e}")
                     continue
+
+        # Traitement des résultats avec le générateur
+        count = 0
+        batch_size = 50  # Taille du lot pour les mises à jour par batch
+        batch_entries = []
 
         # Traitement des résultats avec le générateur
         for result_entry, name in generate_results():
             # Ajoute le résultat à la liste et au modèle
             count += 1
             self.stats_list.append(result_entry)
+
             if uistate:
-                self.model.add(result_entry, int(result_entry[0]))
+                batch_entries.append((result_entry, int(result_entry[0])))
+                # Mise à jour par lots pour améliorer les performances
+                if len(batch_entries) >= batch_size:
+                    GLib.idle_add(self._add_batch_to_model, batch_entries)
+                    batch_entries = []
+
+                # Mise à jour de la progression
+                if count % 100 == 0:
+                    self.progress.set_header("%d/%d" % (count, len(self.filtered_list)))
+
+        # Ajouter les entrées restantes (si le batch n'est pas plein)
+        if uistate and batch_entries:
+            GLib.idle_add(self._add_batch_to_model, batch_entries)
+            self.show()
 
         self.progress.close()
 
@@ -622,7 +590,6 @@ class RelationTab(tool.Tool, ManagedWindow):
                 print(f" | {_('Sous-arbre partagé'):<15} | {_('Centralité'):<10} | {_('Ancêtres uniques'):<15} | {_('Diversité noms'):<15}")
             print()  # Saut de ligne
             print("-" * 150)
-
             for entry in self.stats_list[:max_level * 2]:  # Afficher les premières entrées
                 kekule, relation, name, Ga, Gb, mra, rank, period = entry[:8]
                 print(f"{kekule:<10} | {relation[:18]:<20} | {name[:28]:<30} | {Ga:<5} | {Gb:<5} | {mra:<5} | {rank:<5} | {period[:13]:<15}", end="")
@@ -635,9 +602,13 @@ class RelationTab(tool.Tool, ManagedWindow):
             print(f"Total des entrées traitées : {len(self.stats_list)}\n")
         _LOG.info(f"Total processing time: {time.perf_counter() - step_one} seconds.")
 
+    def _add_batch_to_model(self, batch):
+        """Ajoute un lot d'entrées au modèle GTK."""
+        for entry, sort_key in batch:
+            self.model.add(entry, sort_key)
+        return False  # Indique que le callback ne doit pas être rappelé
 
-    #-------------------------------------------------------------------------
-    def save(self):
+    def save(self, *args):
         """Enregistre les résultats dans un fichier ODS."""
         # Sélection du dossier de sauvegarde
         chooser = Gtk.FileChooserDialog(
@@ -657,68 +628,65 @@ class RelationTab(tool.Tool, ManagedWindow):
             _LOG.debug(f"Skip folder selection?")
             WarningDialog(_("Foldername need"), _("Foldername will be used for saving the content."))
         chooser.destroy()
+
         if not self.stats_list:
             _LOG.warning("No data to save.")
             return
-        _LOG.info("Starting to save data to ODS file.")
-        doc = ODSTab(len(self.stats_list))
-        doc.creator(self.dbstate.db.get_researcher().get_name())
-        filename = self.dbstate.db.get_default_person().get_handle() + '.ods'
-        if self.path is None:
-            _LOG.debug(f"Failed to get the foldername, maybe you did not set one?")
+
+        default_person = self.dbstate.db.get_default_person()
+        if not default_person or not self.path:
+            _LOG.debug("Failed to get the foldername or default person.")
             WarningDialog(_("Did you set a foldername?"), _("Cannot set a valid location."))
             return
-        else:
-            filename = os.path.join(self.path, filename)
+
+        filename = os.path.join(self.path, default_person.get_handle() + '.ods')
         try:
-            with open(filename, "w", encoding='utf8') as f:
-                pass
-        except (PermissionError, IsADirectoryError) as e:
-            _LOG.error(f"Failed to create file: {e}")
-            WarningDialog(_("You do not have write rights on this folder"))
-            return
-        spreadsheet = TableReport(filename, doc)
-        new_titles = [title for title in self.titles if title[0] != 'sort']
-        spreadsheet.initialize(len(new_titles))
-        spreadsheet.write_table_head(new_titles)
-        for index, entry in enumerate(self.stats_list):
-            spreadsheet.set_row(index % 2)
-            spreadsheet.write_table_data(entry)
-        spreadsheet.finalize()
+            doc = ODSTab(len(self.stats_list))
+            doc.creator(self.dbstate.db.get_researcher().get_name())
+            spreadsheet = TableReport(filename, doc)
+            new_titles = [title for title in self.titles if title[0] != 'sort']
+            spreadsheet.initialize(len(new_titles))
+            spreadsheet.write_table_head(new_titles)
+            for index, entry in enumerate(self.stats_list):
+                spreadsheet.set_row(index % 2)
+                spreadsheet.write_table_data(entry)
+            spreadsheet.finalize()
+            # Afficher un message indiquant où le fichier a été enregistré
+            print(f"Le fichier a été enregistré sous : {filename}")
+            _LOG.info(f"Data successfully saved to {filename}.")
+        except Exception as e:
+            _LOG.error(f"Failed to save data: {e}")
+            WarningDialog(_("Failed to save data."), str(e))
 
-        # Afficher un message indiquant où le fichier a été enregistré
-        print(f"Le fichier a été enregistré sous : {filename}")
-        _LOG.info(f"Data successfully saved to {filename}.")
-
-
-    #-------------------------------------------------------------------------
     def button_clicked(self, button):
         """Appelé quand le bouton 'Save' est cliqué."""
         _LOG.info("Save button clicked.")
         self.save()
 
-    #-------------------------------------------------------------------------
     def quit_clicked(self, quit):
         """Appelé quand le bouton 'Quit' est cliqué."""
         _LOG.info("Quit button clicked.")
         self.close()
 
-    #-------------------------------------------------------------------------
+    def get_title(self):
+        return _("Relationships Map and Tab")
+
+    def initial_frame(self):
+        return _("Options")
+
     def build_menu_names(self, obj):
         return (self.label, None)
 
-    #-------------------------------------------------------------------------
     def close_progress_meter(self):
         """Ferme le ProgressMeter s'il est ouvert."""
         if hasattr(self, 'progress') and self.progress:
             self.progress.close()
 
-    #-------------------------------------------------------------------------
     def on_delete_event(self, window, event):
         """Gère l'événement de fermeture de la fenêtre."""
-        self.close_progress_meter()  # Ferme le ProgressMeter
-        self.close()  # Ferme la fenêtre
-        return True  # Indique que l'événement a été géré
+        self.close_progress_meter() # Ferme le ProgressMeter
+        self.close() # Ferme la fenêtre
+        return True # Indique que l'événement a été géré
 
 #-------------------------------------------------------------------------
 class TableReport:
@@ -763,7 +731,7 @@ class RelationTabOptions(tool.ToolOptions):
             #'fid': ,
             'filter_rule': 0,
             'deep_gen_text': MAX_LEVEL,
-            'enable_network_metrics': True,  # Option pour activer les métriques de réseau
+            'enable_network_metrics': True, # Option pour activer les métriques de réseau
         }
         self.options_help = {
             'enable_network_metrics': (
