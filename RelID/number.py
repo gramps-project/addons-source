@@ -41,40 +41,57 @@ Utilities to number identifiers
 #-------------------------------------------------------------------------
 
 def get_number(Ga, Gb, rel_a, rel_b):
-    number = 0
-    if Ga<0 or Gb<0:
-        number = get_number_down(rel_b)
-    elif Ga==Gb:
-        number = search_number(Ga)
-    elif Ga==0: # the other_person (B) is a direct descendant of A
-        number = get_number_down(rel_b)
-    elif Gb==0: # the other_person (B) is a direct ancestor of A
-        number = get_number_up(rel_a)
-    return str(number)
+    if Ga is None or Gb is None or rel_a is None or rel_b is None:
+        return "u"  # Return "u" for undefined or invalid inputs
+
+    if Ga < 0 or Gb < 0:
+        return get_number_down(rel_b)
+    elif Ga == Gb:
+        return search_number(Ga)
+    elif Ga == 0:  # the other_person (B) is a direct descendant of A
+        return get_number_down(rel_b)
+    elif Gb == 0:  # the other_person (B) is a direct ancestor of A
+        return get_number_up(rel_a)
+    else:
+        return "u"  # Return "u" for undefined or invalid inputs
 
 def get_number_up(rel_a):
+    if not rel_a or not isinstance(rel_a, str):
+        return "nb"  # Return "nb" for invalid inputs
+
     rel_num = 1
     for i in range(0, len(rel_a)):
         c = rel_a[i]
-        if c=='f':
+        if c == 'f':
             rel_num = rel_num * 2
-        elif c=='m':
+        elif c == 'm':
             rel_num = (rel_num * 2) + 1
-        else:   # we do not care about non-birth relationship (or we forgot to capture one character above)
-            rel_num = "nb"
+        else:  # we do not care about non-birth relationship (or we forgot to capture one character above)
+            return "nb"  # Return "nb" for non-birth relationships or invalid characters
+
     return rel_num
 
 def get_number_down(rel_b): #experimental sosa miror
-    rel_num = 1
+    if not rel_b or not isinstance(rel_b, str):
+        return "nb"  # Return "nb" for invalid inputs
+
+    # Start with the root person's number (1)
+    rel_num = 1.0
+
+    # Iterate through the relationship path to build the descendant number
     for i in range(0, len(rel_b)):
         c = rel_b[i]
-        if c=='f':
-            rel_num = 1 - (rel_num / 2)
-        elif c=='m':
-            rel_num = 1 - rel_num
-        else:   # we do not care about non-birth relationship (or we forgot to capture one character above)
-            rel_num = "nb"
+        if c == 'f' or c == 'm':
+            # Divide the parent's number by 2 for each child
+            rel_num = rel_num / 2
+        else:
+            return "nb"  # Return "nb" for non-birth relationships or invalid characters
+
     return rel_num
 
-def search_number(Ga): #TODO
-    return "u"
+def search_number(Ga): # TODO: Implement logic for numbering cousins or other relationships
+    if Ga <= 0:
+        return "u"  # Return "u" for undefined or invalid inputs
+
+    # Example: Return a unique identifier for cousins based on Ga
+    return f"cousin_{Ga}"  # Placeholder: Replace with actual logic
