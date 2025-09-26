@@ -127,13 +127,13 @@ class FamilyPathMetrics:
         # male ancestors will be pair ; female ancestors will be unpair ; see number.py
         kekule = number.get_number(Ga, Gb, rel_a, rel_b)
         if kekule == "u": # TODO: cousin(e)s need a key
-            kekule = 0
+            kekule = f"cousin_{Ga}_{Gb}_{rel_a}_{rel_b}"
         elif kekule == "nb": # non-birth
             kekule = -1
-        try:
-            kekule = int(kekule)
-        except (ValueError, TypeError):
-            kekule = 1
+        #try:
+            #kekule = int(kekule)
+        #except (ValueError, TypeError):
+            #kekule = 1
         return kekule
 
     @staticmethod
@@ -480,8 +480,8 @@ class RelationTab(tool.Tool, ManagedWindow):
                     step_two = time.perf_counter()
                     need = step_two - step_one
                     #lazy tooltip
-                    documentation = _("\nFiltering\tCurrent match\tTime of pass\n")
-                    header = _("%d/%d \t %d/%d \t\t%f") % (
+                    documentation = _("\nFiltering\tCurrent match\t\tTime of pass\n")
+                    header = _("%d/%d \t\t %d/%d \t\t%f") % (
                         count, filtered_people, len(self.stats_list), length, float(need))
                     self.progress.set_header(documentation + header)
                     _LOG.debug(f"Processed {count}/{filtered_people} people.")
@@ -537,7 +537,7 @@ class RelationTab(tool.Tool, ManagedWindow):
 
                     # 6. Construction de l'entrée de résultat
                     result_entry = (
-                        int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
+                        str(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
                     )
                     if RelationTab.ENABLE_NETWORK_METRICS:
                         result_entry += (
