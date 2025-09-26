@@ -308,7 +308,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         self.__filter_rule.add_item(2, _("Related"))
         self.__filter_rule.set_help(_("Select the filter rule"))
 
-        self.__deep_gen_text = StringOption(_("Deep generations"), "")
+        self.__deep_gen_text = StringOption(_("Deep generations"), str(MAX_LEVEL))
         self.__deep_gen_text.set_help(_("How deep should we go?"))
 
         # Initialisation du gestionnaire de filtres
@@ -478,12 +478,11 @@ class RelationTab(tool.Tool, ManagedWindow):
                 # Log après 10 personnes pour éviter de surcharger les logs
                 if count % 100 == 10:
                     step_two = time.perf_counter()
-                    need = (step_two - step_one) / count
-                    wait = need * filtered_people
+                    need = step_two - step_one
                     #lazy tooltip
-                    documentation = _("\nFiltering\tTime process\tCurrent match\tTime per entry\n")
-                    header = _("%d/%d \t %d seconds \t %d/%d \t\t%f") % (
-                        count, filtered_people, int(wait), len(self.stats_list), length, float(need))
+                    documentation = _("\nFiltering\tCurrent match\tTime of pass\n")
+                    header = _("%d/%d \t %d/%d \t\t%f") % (
+                        count, filtered_people, len(self.stats_list), length, float(need))
                     self.progress.set_header(documentation + header)
                     _LOG.debug(f"Processed {count}/{filtered_people} people.")
                 # Log uniquement les 10 personnes pour éviter de surcharger les logs
@@ -500,6 +499,7 @@ class RelationTab(tool.Tool, ManagedWindow):
                     # 2. Calcul de la distance de relation (une seule fois)
                     dist = self.relationship.get_relationship_distance_new(
                         self.dbstate.db, default_person, person, only_birth=True)
+                    _LOG.debug(f"Relationship distance result for {person.get_handle()}: {dist}")
                     rank = dist[0][0]
                     if rank == -1 or rank > max_level:
                         _LOG.debug("Skipping person (not related or too distant).")
@@ -536,7 +536,6 @@ class RelationTab(tool.Tool, ManagedWindow):
                     _LOG.info(no_name)
 
                     # 6. Construction de l'entrée de résultat
-
                     result_entry = (
                         int(kekule), relationship, name, int(Ga), int(Gb), int(mra), int(rank), str(period)
                     )
