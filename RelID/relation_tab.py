@@ -313,6 +313,7 @@ class RelationTab(tool.Tool, ManagedWindow):
 
         # Initialisation du gestionnaire de filtres
         self.filter_manager = RelationFilterManager(dbstate)
+        self.filter_pass = 0
 
         # Initialisation de la fenêtre et des widgets GTK
         window = None
@@ -372,22 +373,20 @@ class RelationTab(tool.Tool, ManagedWindow):
         else:
             self.progress = ProgressMeter(self.label)
 
+        # Initialiser le ProgressMeter dans tous les cas ; MODE_ACTIVITY = 1
+        self.progress.set_pass(_('Please wait, filtering...'), mode=1 )
 
         # Initialisation du filtre par défaut
         root_id = default_person.get_gramps_id()
         related = rules.person.IsRelatedWith([str(root_id)])
         self.filter_manager.filter.add_rule(related)
 
-        # Récupération des personnes filtrées
+        # Récupération des personnes à filtrer
         plist = list(self.dbstate.db.iter_person_handles())
         length = len(plist)
 
         # Application du filtre initial
         self.filtered_list = self.filter_manager.apply_filter(plist)
-        _LOG.info(f"Found {len(self.filtered_list)} related people.")
-
-        # Initialiser le ProgressMeter dans tous les cas
-        self.progress.set_pass(_('Please wait, filtering...'))
 
         # Traitement des personnes
         _LOG.info("Starting to process people...")
@@ -408,9 +407,13 @@ class RelationTab(tool.Tool, ManagedWindow):
 
     def apply_and_update_filter(self):
         """Applique le filtre et met à jour l'UI."""
+        filter_start = time.perf_counter()
         plist = list(self.dbstate.db.iter_person_handles())
         self.filtered_list = self.filter_manager.apply_filter(plist)
-        _LOG.info(f"Found {len(self.filtered_list)} related people.")
+        filter_end = time.perf_counter()
+        self.filter_pass = filter_end - filter_start
+        self.progress.set_header(f"{self.filter_pass}")
+        _LOG.info(f"Found {len(self.filtered_list)} related people in {self.filter_pass} seconds.")
         default_person = self.dbstate.db.get_default_person()
         if default_person:
             self.process_people(MAX_LEVEL, self.uistate, self.window, default_person, len(plist))
@@ -466,7 +469,8 @@ class RelationTab(tool.Tool, ManagedWindow):
             return
         count = 0
         filtered_people = len(self.filtered_list)
-        self.progress.set_pass(_('Generating relation map...'), filtered_people)
+        # (MODE_FRACTION = 0) by default
+        self.progress.set_pass(_('Generating relation map...'), filtered_people, 0)
         _LOG.debug(f"Processing {filtered_people} people.")
 
         step_one = time.perf_counter()
@@ -727,7 +731,7 @@ class RelationTabOptions(tool.ToolOptions):
         tool.ToolOptions.__init__(self, name, person_id)
         self.options_dict = {
             'filter': 0,
-            #'fid': ,
+            'fid': 2,
             'filter_rule': 0,
             'deep_gen_text': MAX_LEVEL,
             'enable_network_metrics': True, # Option pour activer les métriques de réseau
