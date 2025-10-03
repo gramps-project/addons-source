@@ -44,7 +44,7 @@ register(
     fname="relation_tab.py",
     authors=["Jerome Rapinat"],
     authors_email=["romjerome@yahoo.fr"],
-    category=TOOL_ANAL,TOOL_DEBUG,
+    category=TOOL_ANAL, # TOOL_DEBUG,
     toolclass="RelationTab",
     optionclass="RelationTabOptions",
     tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
