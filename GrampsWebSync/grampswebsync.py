@@ -553,8 +553,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         except URLError:
             self.handle_error(_("URL error while connecting to server."))
             return None
-        except ValueError:
-            self.handle_error(_("Error while parsing response from server."))
+        except ValueError as exc:
+            self.handle_error(_("Unable to synchronize changes to server: {exc}"))
             return None
 
     def save_credentials(self) -> None:
