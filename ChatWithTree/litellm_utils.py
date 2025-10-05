@@ -1,7 +1,6 @@
-from typing import Callable, Dict, Any, Optional, List
-
 import inspect
 import typing
+from typing import Any, Callable, Dict, List, Optional
 
 
 def function_to_litellm_definition(
@@ -43,6 +42,7 @@ def function_to_litellm_definition(
         "type": "function",
         "function": function_def,
     }
+
 
 def python_type_to_json_type(python_type: type) -> str:
     # Basic type mapping

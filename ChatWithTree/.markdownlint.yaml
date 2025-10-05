@@ -1,0 +1,9 @@
+{
+  "default": true,
+  "MD007": { "indent": 4 },
+  "MD013": false,
+  "MD033": { "allowed_elements": [ "a", "p", "image" ] },
+  "MD051": false,
+  "no-hard-tabs": false,
+  "whitespace": false
+}
