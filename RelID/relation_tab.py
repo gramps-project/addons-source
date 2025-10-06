@@ -715,7 +715,24 @@ class TableReport:
     def finalize(self):
         _LOG.debug("Finalizing ODS file.")
         self.doc.end_page()
-        self.doc.close()
+        try:
+            self.doc.close()
+        except:
+            # check whether the dir has rwx permissions
+            if not os.access(os.getcwd(), os.R_OK | os.W_OK | os.X_OK):
+                ErrorDialog(
+                    _("Permission problem"),
+                    _(
+                        "You do not have permission to write "
+                        "under the directory %s\n\n"
+                        "Please select another directory or correct "
+                        "the permissions."
+                    )
+                    % self.path,
+                    parent=None,
+                )
+            else: 
+                return
 
     def write_table_data(self, data):
         self.doc.start_row()
