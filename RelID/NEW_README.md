@@ -39,7 +39,7 @@
 ---
 ## Installation
 
-1. Clone the repository (if available) or copy the `relation_tab.py` file to the Gramps plugins directory:
+1. Clone the repository (if available) or copy the `relation_tab.py`, `relation_tab.gpr.py` and `number.py` files to the Gramps plugins directory:
    ```bash
    mkdir -p ~/.gramps/gramps60/plugins/RelationTab
    cp relation_tab.py ~/.gramps/gramps60/plugins/RelationTab/
