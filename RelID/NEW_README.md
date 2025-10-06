@@ -69,8 +69,8 @@
 ```plaintext
 Kekulé ID  | Relationship       | Name                     | Up   | Down | MRA  | Rank  | Period
 -----------------------------------------------------------------------------------------------------------
-12         | First Cousin       | John DOE                 | 3    | 3    | 7    | 4     | 1850-1920
-15         | Uncle              | Peter SMITH              | 2    | 1    | 3    | 2     | 1820-1890
+12         | First Cousin       | John DOE                 | 3    | 3    | 7    | 4     | 1850
+15         | Uncle              | Peter SMITH              | 2    | 1    | 3    | 2     | 1820
 ...
 ```
 
