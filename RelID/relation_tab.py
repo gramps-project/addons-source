@@ -666,7 +666,7 @@ class RelationTab(tool.Tool, ManagedWindow):
             # Afficher un message indiquant où le fichier a été enregistré
             print(f"Le fichier a été enregistré sous : {filename}")
             _LOG.info(f"Data successfully saved to {filename}.")
-        except Exception as e:
+        except (FileNotFoundError or IsADirectoryError) as e:
             _LOG.error(f"Failed to save data: {e}")
             WarningDialog(_("Failed to save data."), str(e))
 
