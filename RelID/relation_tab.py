@@ -42,7 +42,7 @@ from gramps.gui.utils import ProgressMeter
 from gramps.gui.plug import tool
 from gramps.gen.plug.menu import StringOption, FilterOption, PersonOption, EnumeratedListOption
 import gramps.gen.plug.report.utils as ReportUtils
-from gramps.gui.dialog import WarningDialog
+from gramps.gui.dialog import WarningDialog, OkDialog
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.relationship import get_relationship_calculator
 from gramps.gen.filters import GenericFilterFactory, rules
@@ -61,6 +61,13 @@ _ = _trans.gettext
 _LOG = logging.getLogger(__name__)
 _LOG.info(platform.uname())
 logging.basicConfig(filename='debug.log', level=logging.DEBUG)
+
+# -------------------------------------------------------------------------
+#
+# Constants
+#
+# -------------------------------------------------------------------------
+
 MAX_LEVEL = config.get('behavior.generation-depth')
 
 #-------------------------------------------------------------------------
@@ -290,7 +297,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         uistate = user.uistate
         self.label = _("Relation and distances with root")
         self.dbstate = dbstate
-        self.path = None
+        self.path = os.getcwd()
         self.relationship = get_relationship_calculator()
         self.stats_list = []
 
@@ -629,7 +636,9 @@ class RelationTab(tool.Tool, ManagedWindow):
             self.path = chooser.get_current_folder()
         if status == Gtk.ResponseType.CANCEL:
             _LOG.debug(f"Skip folder selection?")
-            WarningDialog(_("Foldername need"), _("Foldername will be used for saving the content."))
+            OkDialog(_("Foldername need"), _("Foldername will be used for saving the content."))
+            chooser.destroy()
+            return
         chooser.destroy()
 
         if not self.stats_list:
