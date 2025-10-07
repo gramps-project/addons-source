@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-09-07 12:16+0000\n"
+"PO-Revision-Date: 2025-09-11 10:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -10959,100 +10959,101 @@ msgstr "Geschätzter Wert aller landwirtschaftlichen Erzeugnisse für 1879"
 
 #: Form/form_us.xml.h:517
 msgid "Acreage Grass Lands Mown in 1879"
-msgstr "Grasland 1879 gemäht"
+msgstr "Fläche der 1879 gemähten Grasflächen"
 
 #: Form/form_us.xml.h:518
 msgid "Acreage Grass Lands Not Mown in 1879"
-msgstr "Grasland 1879 nicht gemäht"
+msgstr "Fläche Grasland, das 1879 nicht gemäht wurde"
 
 #: Form/form_us.xml.h:519
 msgid "Tons Hay Harvested in 1879"
-msgstr "Tons Heu 1879 geerntet"
+msgstr "1879 geerntete Short ton Heu"
 
 #: Form/form_us.xml.h:520
 msgid "Bushels Clover Seed Harvested in 1879"
-msgstr "Bushels Kleesamen 1879 geerntet"
+msgstr "Bushel Kleesamen, geerntet im Jahr 1879"
 
 #: Form/form_us.xml.h:521
 msgid "Bushels Grass Seed Harvested in 1879"
-msgstr "Bushels Grassamen 1879 geerntet"
+msgstr "Bushel Grassamen, geerntet im Jahr 1879"
 
 #: Form/form_us.xml.h:522
 msgid "Horses on hand"
-msgstr "Pferde zur Verfügung"
+msgstr "Pferde im Bestand"
 
 #: Form/form_us.xml.h:523
 msgid "Mules and Asses on hand"
-msgstr "Maultiere und Esel zur Verfügung"
+msgstr "Maultiere und Esel im Bestand"
 
 #: Form/form_us.xml.h:524
 msgid "Working Oxen on hand"
-msgstr "Arbeitsochsen zur Verfügung"
+msgstr "Arbeitsochsen im Bestand"
 
 #: Form/form_us.xml.h:525
 msgid "Milch Cows on hand"
-msgstr "Milchkühe zur Verfügung"
+msgstr "Milchkühe im Bestand"
 
 #: Form/form_us.xml.h:526
 msgid "Other Cattle on hand"
-msgstr "Anderes Vieh zur Verfügung"
+msgstr "Sonstige Rinder im Bestand"
 
 #: Form/form_us.xml.h:527
 msgid "Calves Dropped in 1879"
-msgstr "Kälber geboren in 1879"
+msgstr "Kälber, die 1879 geboren wurden"
 
 #: Form/form_us.xml.h:528
 msgid "Cattle Purchased in 1879"
-msgstr "Vieh gekauft in 1879"
+msgstr "1879 gekaufte Rinder"
 
 #: Form/form_us.xml.h:529
 msgid "Cattle Sold living in 1879"
-msgstr "Vieh lebend verkauft in 1879"
+msgstr "1879 verkaufte lebende Rinder"
 
 #: Form/form_us.xml.h:530
 msgid "Cattle Slaughtered in 1879"
-msgstr "Vieh geschlachtet in 1879"
+msgstr "1879 geschlachtete Rinder"
 
 #: Form/form_us.xml.h:531
 msgid "Cattle Died, strayed, or stolen in 1879"
-msgstr "Vieh starb, verirrt oder gestohlen in 1879"
+msgstr "Rinder, die 1879 starben, verloren gingen oder gestohlen wurden"
 
 #: Form/form_us.xml.h:532
 msgid "Gallons Milk Sold or sent to butter or cheese factories in 1879"
 msgstr ""
-"Galonen Milch Verkauft oder an Butter- oder Käsereien geschickt in 1879"
+"Gallonen Milch, die 1879 verkauft oder an Butter- oder Käsefabriken "
+"geliefert wurden"
 
 #: Form/form_us.xml.h:533
 msgid "Pounds Butter made on farm in 1879"
-msgstr "Pounds Butter auf der Farm produziert in 1879"
+msgstr "Pound Butter, hergestellt auf dem Bauernhof im Jahr 1879"
 
 #: Form/form_us.xml.h:534
 msgid "Pounds Cheese made on farm in 1879"
-msgstr "Pounds Käse auf der Farm produziert in 1879"
+msgstr "Pound Käse, hergestellt auf dem Bauernhof im Jahr 1879"
 
 #: Form/form_us.xml.h:535
 msgid "Sheep on hand"
-msgstr "Schafe zur Verfügung"
+msgstr "Schafe im Bestand"
 
 #: Form/form_us.xml.h:536
 msgid "Lambs Dropped in 1879"
-msgstr "Lämmer geboren in 1879"
+msgstr "Lämmer, die 1879 geboren wurden"
 
 #: Form/form_us.xml.h:537
 msgid "Sheep and Lambs Purchased in 1879"
-msgstr "Gekaufte Schafe und Lämmer in 1879"
+msgstr "1879 gekaufte Schafe und Lämmer"
 
 #: Form/form_us.xml.h:538
 msgid "Sheep and Lambs Sold living in 1879"
-msgstr "Schafe und Lämmer lebend verkauft in 1879"
+msgstr "1879 verkaufte Schafe und Lämmer"
 
 #: Form/form_us.xml.h:539
 msgid "Sheep and Lambs Slaughtered in 1879"
-msgstr "Schafe und Lämmer geschlachtet in 1879"
+msgstr "1879 geschlachtete Schafe und Lämmer"
 
 #: Form/form_us.xml.h:540
 msgid "Sheep and Lambs Killed by dogs in 1879"
-msgstr "Schafe und Lämmer getötet durch Hunde in 1879"
+msgstr "1879 von Hunden getötete Schafe und Lämmer"
 
 #: Form/form_us.xml.h:541
 msgid "Sheep and Lambs Died of Disease in 1879"
@@ -11060,7 +11061,9 @@ msgstr "Schafe und Lämmer an Krankheit gestorben in 1879"
 
 #: Form/form_us.xml.h:542
 msgid "Sheep and Lambs Died of stress or weather in 1879"
-msgstr "Schafe und Lämmer gestorben an Stress oder durchs Wetter in 1879"
+msgstr ""
+"Schafe und Lämmer gestorben an Stress oder aufgrund der Wetterbedingungen in "
+"1879"
 
 #: Form/form_us.xml.h:543
 msgid "Number of Fleece, Spring 1880"
@@ -11068,87 +11071,87 @@ msgstr "Anzahl der Vliese, Frühjahr 1880"
 
 #: Form/form_us.xml.h:544
 msgid "Pounds Wool, Spring 1880"
-msgstr "Pounds Wolle, Frühjahr 1880"
+msgstr "Pound Wolle, Frühjahr 1880"
 
 #: Form/form_us.xml.h:545
 msgid "Swine on hand"
-msgstr "Schweine zur Verfügung"
+msgstr "Schweine im Bestand"
 
 #: Form/form_us.xml.h:546 Form/form_us.xml.h:549
 msgid "Barnyard Poultry on hand"
-msgstr "Scheunenhof Geflügel zur Verfügung"
+msgstr "Geflügel auf dem Hof im Bestand"
 
 #: Form/form_us.xml.h:547
 msgid "Other Poultry on hand"
-msgstr "Anderes Geflügel zur Verfügung"
+msgstr "Anderes Geflügel im Bestand"
 
 #: Form/form_us.xml.h:548
 msgid "Dozen eggs produced in 1879"
-msgstr "Dutzend Eier produziert in 1879"
+msgstr "Dutzend Eier, produziert 1879"
 
 #: Form/form_us.xml.h:550
 msgid "Acres Barley in 1879"
-msgstr "Acres Gerste in 1879"
+msgstr "Acre Gerste in 1879"
 
 #: Form/form_us.xml.h:551
 msgid "Bushels Barley in 1879"
-msgstr "Bushels Gerste in 1879"
+msgstr "Bushel Gerste in 1879"
 
 #: Form/form_us.xml.h:552
 msgid "Acres Buckwheat in 1879"
-msgstr "Acres Buchweizen in 1879"
+msgstr "Acre Buchweizen in 1879"
 
 #: Form/form_us.xml.h:553
 msgid "Bushels Buckwheat in 1879"
-msgstr "Bushels Buchweizen in 1879"
+msgstr "Bushel Buchweizen in 1879"
 
 #: Form/form_us.xml.h:554
 msgid "Acres Indian Corn in 1879"
-msgstr "Acres Mais in 1879"
+msgstr "Acre Mais in 1879"
 
 #: Form/form_us.xml.h:555
 msgid "Bushels Indian Corn in 1879"
-msgstr "Bushels Mais in 1879"
+msgstr "Bushel Mais in 1879"
 
 #: Form/form_us.xml.h:556
 msgid "Acres Oats in 1879"
-msgstr "Acres Hafer in 1879"
+msgstr "Acre Hafer in 1879"
 
 #: Form/form_us.xml.h:557
 msgid "Bushels Oats in 1879"
-msgstr "Bushels Hafer in 1879"
+msgstr "Bushel Hafer in 1879"
 
 #: Form/form_us.xml.h:558
 msgid "Acres Rye in 1879"
-msgstr "Acres Roggen in 1879"
+msgstr "Acre Roggen in 1879"
 
 #: Form/form_us.xml.h:559
 msgid "Bushels Rye in 1879"
-msgstr "Bushels Roggen in 1879"
+msgstr "Bushel Roggen in 1879"
 
 #: Form/form_us.xml.h:560
 msgid "Acres Wheat in 1879"
-msgstr "Acres Weizen in 1879"
+msgstr "Acre Weizen in 1879"
 
 #: Form/form_us.xml.h:561
 msgid "Bushels Wheat in 1879"
-msgstr "Bushels Weizen in 1879"
+msgstr "Bushel Weizen in 1879"
 
 #: Form/form_us.xml.h:562
 msgid "Bushels Canadian Peas in 1879"
-msgstr "Bushels kanadische Erbsen in 1879"
+msgstr "Bushel kanadische Erbsen in 1879"
 
 #: Form/form_us.xml.h:563
 msgid "Bushels Beans in 1879"
-msgstr "Bushels Bohnen in 1879"
+msgstr "Bushel Bohnen in 1879"
 
 #: Form/form_us.xml.h:564
 msgid "Acres Flax in 1879"
-msgstr "Acres Flachs in 1879"
+msgstr "Acre Flachs in 1879"
 
 #: Form/form_us.xml.h:565
 msgid "Bushels Flax Sued in 1879"
-msgstr "Bushels Flachssamen in 1879"
+msgstr "Bushel Flachssamen in 1879"
 
 #: Form/form_us.xml.h:566
 msgid "Tons Flax Straw in 1879"
@@ -11156,11 +11159,11 @@ msgstr "Tons Flachsstroh in 1879"
 
 #: Form/form_us.xml.h:567
 msgid "Pounds Flax Fiber in 1879"
-msgstr "Pounds Flachsfasern in 1879"
+msgstr "Pound Flachsfasern in 1879"
 
 #: Form/form_us.xml.h:568
 msgid "Acres Hemp in 1879"
-msgstr "Acres Hanf in 1879"
+msgstr "Acre Hanf in 1879"
 
 #: Form/form_us.xml.h:569
 msgid "Tons Hemp in 1879"
@@ -11168,87 +11171,87 @@ msgstr "Tons Hanf in 1879"
 
 #: Form/form_us.xml.h:570
 msgid "Acres Sorghum in 1879"
-msgstr "Acres Sorghumhirse in 1879"
+msgstr "Acre Sorghumhirse in 1879"
 
 #: Form/form_us.xml.h:571
 msgid "Pounds Sorghum Sugar in 1879"
-msgstr "Pounds Sorghumhirse Zucker in 1879"
+msgstr "Pound Zuckerhirse in 1879"
 
 #: Form/form_us.xml.h:572
 msgid "Gallons Sorghum Molasses in 1879"
-msgstr "Gallons Sorghumhirse Melasse in 1879"
+msgstr "Gallonen Zuckerhirse-Melasse im Jahr 1879"
 
 #: Form/form_us.xml.h:573
 msgid "Pounds Maple Sugar in 1879"
-msgstr "Pounds Ahornzucker in 1879"
+msgstr "Pound Ahornzucker in 1879"
 
 #: Form/form_us.xml.h:574
 msgid "Gallons Maple Molasses in 1879"
-msgstr "Gallons Ahorn Melasse in 1879"
+msgstr "Gallonen Ahorn Melasse in 1879"
 
 #: Form/form_us.xml.h:575
 msgid "Acres Broom Corn in 1879"
-msgstr "Acres Rispenhirse in 1879"
+msgstr "Acre Rispenhirse in 1879"
 
 #: Form/form_us.xml.h:576
 msgid "Pounds Broom Corn in 1879"
-msgstr "Pounds Rispenhirse in 1879"
+msgstr "Pound Rispenhirse in 1879"
 
 #: Form/form_us.xml.h:577
 msgid "Acres Hops in 1879"
-msgstr "Acres Hopfen in 1879"
+msgstr "Acre Hopfen in 1879"
 
 #: Form/form_us.xml.h:578
 msgid "Pounds Hops in 1879"
-msgstr "Pounds Hopfen in 1879"
+msgstr "Pound Hopfen in 1879"
 
 #: Form/form_us.xml.h:579
 msgid "Acres Potatoes (Irish) in 1879"
-msgstr "Acres irische Kartoffeln in 1879"
+msgstr "Acre irische Kartoffeln in 1879"
 
 #: Form/form_us.xml.h:580
 msgid "Bushels Potatoes (Irish) in 1879"
-msgstr "Bushels irische Kartoffeln in 1879"
+msgstr "Bushel irische Kartoffeln in 1879"
 
 #: Form/form_us.xml.h:581
 msgid "Acres Potatoes (Sweet) in 1879"
-msgstr "Acres Süßkartoffeln in 1879"
+msgstr "Acre Süßkartoffeln in 1879"
 
 #: Form/form_us.xml.h:582
 msgid "Bushels Potatoes (Sweet) in 1879"
-msgstr "Bushels Süßkartoffeln in 1879"
+msgstr "Bushel Süßkartoffeln in 1879"
 
 #: Form/form_us.xml.h:583
 msgid "Acres Tobacco in 1879"
-msgstr "Acres Tabak in 1879"
+msgstr "Acre Tabak in 1879"
 
 #: Form/form_us.xml.h:584
 msgid "Pounds Tobacco in 1879"
-msgstr "Pounds Tabak in 1879"
+msgstr "Pound Tabak in 1879"
 
 #: Form/form_us.xml.h:585
 msgid "Acres Apple Orchards in 1879"
-msgstr "Acres Apfelplantagen in 1879"
+msgstr "Acre Apfelplantagen in 1879"
 
 #: Form/form_us.xml.h:586
 msgid "Number of Bearing Apple Trees in 1879"
-msgstr "Anzahl tragender Apfelbäume in 1879"
+msgstr "Anzahl der fruchttragenden Apfelbäume im Jahr 1879"
 
 #: Form/form_us.xml.h:587
 msgid "Bushels Apples in 1879"
-msgstr "Bushels Äpfel in 1879"
+msgstr "Bushel Äpfel in 1879"
 
 #: Form/form_us.xml.h:588
 msgid "Acres Peach Orchards in 1879"
-msgstr "Acres Pfirsichplantagen in 1879"
+msgstr "Acre Pfirsichplantagen in 1879"
 
 #: Form/form_us.xml.h:589
 msgid "Number of Bearing Peach Trees in 1879"
-msgstr "Anzahl tragender Pfirsichbäume in 1879"
+msgstr "Anzahl der fruchtbaren Pfirsichbäume im Jahr 1879"
 
 #: Form/form_us.xml.h:590
 msgid "Bushels Peaches in 1879"
-msgstr "Bushels Pfirsiche in 1879"
+msgstr "Bushel Pfirsiche in 1879"
 
 #: Form/form_us.xml.h:591
 msgid "Total value of Orchard Products Sold or Consumed in 1879"
@@ -11256,15 +11259,15 @@ msgstr "Gesamtwert der 1879 verkauften oder konsumierten Obstgartenprodukte"
 
 #: Form/form_us.xml.h:592
 msgid "Acres Nurseries"
-msgstr "Acres Gärtnerei"
+msgstr "Acre Baumschulen"
 
 #: Form/form_us.xml.h:593
 msgid "Value of Nursery Products Sold"
-msgstr "Wert verkaufter Gärtnereiprodukte"
+msgstr "Wert der verkauften Baumschulprodukte"
 
 #: Form/form_us.xml.h:594
 msgid "Acres Vineyards"
-msgstr "Acres Weinberge"
+msgstr "Acre Weinberge"
 
 #: Form/form_us.xml.h:595
 msgid "Grapes sold in 1879"
@@ -11272,27 +11275,27 @@ msgstr "Weintrauben verkauft in 1879"
 
 #: Form/form_us.xml.h:596
 msgid "Wine made in 1879"
-msgstr "Wein produziert in 1879"
+msgstr "1879 hergestellter Wein"
 
 #: Form/form_us.xml.h:597
 msgid "Value of Market Garden Produce Sold in 1879"
-msgstr "Wert der Gärtnereiprodukte 1879 verkauft"
+msgstr "Wert der 1879 verkauften Gartenbauprodukte"
 
 #: Form/form_us.xml.h:598
 msgid "Pounds Honey in 1879"
-msgstr "Pounds Honig in 1879"
+msgstr "Pound Honig in 1879"
 
 #: Form/form_us.xml.h:599
 msgid "Pounds Beeswax in 1879"
-msgstr "Pounds Bienenwachs in 1879"
+msgstr "Pound Bienenwachs in 1879"
 
 #: Form/form_us.xml.h:600
 msgid "Cords of Wood cut in 1879"
-msgstr "Klafter Holz gefällt in 1879"
+msgstr "Klafter Holz geschlagen in 1879"
 
 #: Form/form_us.xml.h:601
 msgid "Value of forest products sold or consumed in 1879"
-msgstr "Wert der 1879 verkauften oder konsumierten Forstprodukte"
+msgstr "Wert der 1879 verkauften oder verbrauchten Forstprodukte"
 
 #: Form/form_us.xml.h:611
 msgid "Street and No."
@@ -11317,11 +11320,11 @@ msgstr "Ledig, verheiratet, verwitwet oder geschieden"
 
 #: Form/form_us.xml.h:624
 msgid "Mother of how many children and number of children living"
-msgstr "Mutter wie vieler Kinder und Anzahl der lebenden Kinder"
+msgstr "Mutter von wie vielen Kindern und Anzahl der lebenden Kinder"
 
 #: Form/form_us.xml.h:628 Form/form_us.xml.h:687
 msgid "Number of years in US"
-msgstr "Anzahl von Jahren in USA"
+msgstr "Anzahl der Jahre in den USA"
 
 #: Form/form_us.xml.h:629 Form/form_us.xml.h:1438
 msgid "Naturalized"
@@ -14027,7 +14030,7 @@ msgstr "Wahlbezirk, Bezirk"
 
 #: Form/form_us.xml.h:1970 Form/form_us.xml.h:1989 Form/form_us.xml.h:2009
 msgid "Number of years in the US"
-msgstr "Anzahl von Jahren in USA"
+msgstr "Anzahl der Jahre in den USA"
 
 #: Form/form_us.xml.h:1973 Form/form_us.xml.h:1992 Form/form_us.xml.h:2013
 msgid "Class"
