@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-08-31 06:05+0000\n"
+"PO-Revision-Date: 2025-09-10 08:03+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.13.1-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -19635,60 +19635,47 @@ msgid "Object {obj_type}:{handle} was modified by another user"
 msgstr ""
 
 #: PostgreSQLEnhanced/migration.py:168
-#, fuzzy
-#| msgid "Generating relation map..."
 msgid "Starting migration..."
-msgstr "Génération de la table de relation..."
+msgstr "Démarrage de la migration..."
 
 #: PostgreSQLEnhanced/migration.py:182
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Migrating %s objects..."
-msgstr "Rédaction de %s rapports…"
+msgstr "Migration de %s objets…"
 
 #: PostgreSQLEnhanced/migration.py:193
-#, fuzzy, python-format, python-brace-format
-#| msgid "Writing %s reports..."
+#, python-brace-format, python-format
 msgid "Migrated %s {obj_type} objects"
-msgstr "Rédaction de %s rapports…"
+msgstr "%s objets migrés…"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
 msgstr ""
 
 #: PostgreSQLEnhanced/migration.py:438
-#, fuzzy
-#| msgid "Attaching sources..."
 msgid "Starting upgrade..."
-msgstr "Attachement des sources..."
+msgstr "Démarrage de la mise à jour..."
 
 #: PostgreSQLEnhanced/migration.py:470
-#, fuzzy, python-format
-#| msgid "Writing %s reports..."
+#, python-format
 msgid "Upgrading %s objects..."
-msgstr "Rédaction de %s rapports…"
+msgstr "Mise à jour de %s objets…"
 
 #: PostgreSQLEnhanced/migration.py:478
-#, fuzzy
-#| msgid "Fetching index list..."
 msgid "Creating indexes..."
-msgstr "Récupération de la liste d'index…"
+msgstr "Création des indexs…"
 
 #: PostgreSQLEnhanced/migration.py:489
 msgid "Upgrade completed!"
 msgstr ""
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
-#, fuzzy
-#| msgid "PostgreSQL"
 msgid "PostgreSQL Enhanced"
-msgstr "PostgreSQL"
+msgstr "PostgreSQL Avancé"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
-#, fuzzy
-#| msgid "PostgreSQL Database"
 msgid "PostgreSQL _Enhanced Database"
-msgstr "Base de données PostgreSQL"
+msgstr "Base de données PostgreSQL _Avancée"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
 msgid ""
@@ -19720,16 +19707,12 @@ msgid "Database module"
 msgstr ""
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:214
-#, fuzzy
-#| msgid "JSON Export"
 msgid "JSONB support"
-msgstr "Exportation JSON"
+msgstr "Support JSONB"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:236
-#, fuzzy
-#| msgid "Version %s"
 msgid "Version warning"
-msgstr "Version %s"
+msgstr "Avertissement de version"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:237
 #, python-format
@@ -19737,10 +19720,8 @@ msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
 msgstr ""
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:252
-#, fuzzy
-#| msgid "Version %s"
 msgid "Extensions"
-msgstr "Version %s"
+msgstr "Extensions"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:273
 msgid "Database size"
@@ -19753,10 +19734,8 @@ msgstr ""
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1126
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1141
-#, fuzzy
-#| msgid "Foreigners not naturalized"
 msgid "Migration manager not initialized"
-msgstr "Étranger(ère) non-naturalisé(e)"
+msgstr "Gestionnaire de migration pas initialisé"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1159
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1177
@@ -23315,10 +23294,9 @@ msgid "Select filter to restrict list"
 msgstr "Sélectionnez un filtre pour restreindre la liste"
 
 #: activity_row_generator.py:110
-#, fuzzy, python-format
-#| msgid "Birth: %s"
+#, python-format
 msgid "Visited: %s"
-msgstr "Naissance : %s"
+msgstr "Visité : %s"
 
 #: activity_row_generator.py:114 activity_row_generator.py:129
 #, python-format
@@ -23331,10 +23309,9 @@ msgid "Attribute: %s"
 msgstr "Attribut : %s"
 
 #: activity_row_generator.py:118
-#, fuzzy, python-format
-#| msgid "Key: %s"
+#, python-format
 msgid "Value: %s"
-msgstr "Clé : %s"
+msgstr "Valeur : %s"
 
 #: activity_row_generator.py:123
 #, python-format
@@ -23342,22 +23319,19 @@ msgid "Loaded from file: %s"
 msgstr "Chargé du fichier : %s"
 
 #: activity_row_generator.py:126
-#, fuzzy, python-format
-#| msgid "Form: %s"
+#, python-format
 msgid "Domain: %s"
-msgstr "Formulaire : %s"
+msgstr "Domaine : %s"
 
 #: activity_row_generator.py:131
-#, fuzzy, python-format
-#| msgid "Death: %s"
+#, python-format
 msgid "Object: %s"
-msgstr "Décès : %s"
+msgstr "Objet : %s"
 
 #: activity_row_generator.py:135
-#, fuzzy, python-format
-#| msgid "Death: %s"
+#, python-format
 msgid "Pattern: %s"
-msgstr "Décès : %s"
+msgstr "Motif : %s"
 
 #: activity_row_generator.py:138
 #, python-format
@@ -23378,16 +23352,12 @@ msgid "Link saved to Note"
 msgstr ""
 
 #: activity_row_generator.py:154
-#, fuzzy
-#| msgid "Add link to note"
 msgid "Link saved to Attribute"
-msgstr "Ajouter un lien à la note"
+msgstr "Lien enregistré dans l'Attribut"
 
 #: activity_row_generator.py:155
-#, fuzzy
-#| msgid "Place title"
 msgid "Place history loaded"
-msgstr "Titre du lieu"
+msgstr "Historique du lieu chargé"
 
 #: activity_row_generator.py:156
 msgid "Domain skipped"
@@ -23398,22 +23368,16 @@ msgid "Link hidden for object"
 msgstr ""
 
 #: activity_row_generator.py:158
-#, fuzzy
-#| msgid "Hide link for all items"
 msgid "Link hidden for all objects"
-msgstr "Masquer le lien pour tous les éléments"
+msgstr "Lien masqué pour tous les objets"
 
 #: activity_row_generator.py:159
-#, fuzzy
-#| msgid "Attribute type to add or edit"
 msgid "Attribute updated"
-msgstr "Type d'attribut à ajouter ou éditer"
+msgstr "Attribut mis à jour"
 
 #: activity_row_generator.py:160
-#, fuzzy
-#| msgid "Note type"
 msgid "Note updated"
-msgstr "Type de note"
+msgstr "Note mise à jour"
 
 #: constants.py:390
 msgid "Column - Icons"
@@ -23472,22 +23436,16 @@ msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr "Icône - URL du répertoire utilisateur (icône de feuille de calcul)"
 
 #: constants.py:432
-#, fuzzy
-#| msgid "Icon - Direct URLs from attributes (link chain)"
 msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Icône - URL directes des attributs (chaîne de connexion)"
+msgstr "Icône - URLs de l'onglet «Attributs» (icône «A»)"
 
 #: constants.py:433
-#, fuzzy
-#| msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Icône - URL du répertoire utilisateur (icône de feuille de calcul)"
+msgstr "Icône - URLs de l'onglet «Internet» (icône «I»)"
 
 #: constants.py:434
-#, fuzzy
-#| msgid "Icon - URLs from static CSV files (red pin)"
 msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Icône - URL d'un CSV statique (épingle rouge)"
+msgstr "Icône - URLs de l'onglet «Notes» (icône «N»)"
 
 #: info_panel.py:108
 msgid "## 🧩 About WebSearch"
@@ -23550,46 +23508,51 @@ msgstr ""
 
 #: info_panel.py:169
 msgid "🔻 **Missing:** `requests`"
-msgstr ""
+msgstr "🔻 **Manquant :** `requests`"
 
 #: info_panel.py:171
 msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr ""
+msgstr "ℹ️ Cette bibliothèque est utilisée pour communiquer avec les API Web."
 
 #: info_panel.py:174
 msgid "Without it, external data sources may not be accessible."
 msgstr ""
+"Sans elle, les sources de données externes peuvent ne pas être accessibles."
 
 #: info_panel.py:177
 msgid "💡 Usually installed with: `pip install requests`"
-msgstr ""
+msgstr "💡 installé habituellement avec : `pip install requests`"
 
 #: info_panel.py:188
 msgid "## 📂 Data File Locations"
-msgstr ""
+msgstr "## 📂 Localisation des fichiers de données"
 
 #: info_panel.py:191
 msgid ""
 "Below are the paths to system and user-defined data files used by WebSearch."
 msgstr ""
+"Voici les chemins vers les fichiers système et définis par l'utilisateur "
+"utilisés par WebSearch."
 
 #: info_panel.py:195
 msgid "#### CSV File Paths"
-msgstr ""
+msgstr "#### Chemin des fichiers CSV"
 
 #: info_panel.py:197
 #, python-format
 msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr ""
+msgstr "- **Dossier système :** `{dir|%s}` – contient les fichiers CSV internes"
 
 #: info_panel.py:201
 #, python-format
 msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
 msgstr ""
+"- **Dossier choisi par l'utilisateur :** `{dir|%s}` – pour les fichiers CSV "
+"de l'utilisateur"
 
 #: info_panel.py:205
 msgid "#### JSON File Paths"
-msgstr ""
+msgstr "#### Dossier des fichieres JSON"
 
 #: info_panel.py:208
 #, python-format
@@ -23637,10 +23600,8 @@ msgid "🧩 WebSearch Gramplet version: `%s`"
 msgstr ""
 
 #: internet_links_loader.py:70 internet_links_loader.py:71
-#, fuzzy
-#| msgid "Without title"
 msgid "No title"
-msgstr "Sans titre"
+msgstr "Pas de titre"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -24104,10 +24065,8 @@ msgid "Data provided to AI:"
 msgstr ""
 
 #: markdown_place_history_formatter.py:64
-#, fuzzy
-#| msgid "reverse hierarchy"
 msgid "Full hierarchy"
-msgstr "hiérarchie inversée"
+msgstr "Hiérarchie complète"
 
 #: markdown_place_history_formatter.py:68
 msgid "Place Type:"
@@ -24127,7 +24086,7 @@ msgstr ""
 
 #: note_links_loader.py:127
 msgid "Note Link (external)"
-msgstr ""
+msgstr "Lien de note (externe)"
 
 #: qr_window.py:88
 msgid "QR-code"
