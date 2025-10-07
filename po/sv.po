@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-08-31 06:05+0000\n"
+"PO-Revision-Date: 2025-09-22 19:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.1-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -14494,7 +14494,7 @@ msgstr "Gramplet-gränssnitt för formulär"
 
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
-msgstr ""
+msgstr "Formulär"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"
@@ -14675,6 +14675,8 @@ msgstr "GeoTimeLines-karta"
 msgid ""
 "A view showing all the places visited by a person or persons on various date."
 msgstr ""
+"En vy som visar alla platser som en eller flera personer besökt vid olika "
+"datum."
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:39
 msgid "TimeLines map"
@@ -14682,7 +14684,7 @@ msgstr "GeoTimeLines-karta"
 
 #: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
-msgstr ""
+msgstr "Välj visningsformat"
 
 #: GeoTimeLines/GeoTimeLines.py:800
 msgid "Almost done"
@@ -14703,6 +14705,9 @@ msgid ""
 "to differentiate different\n"
 "markers at the same location"
 msgstr ""
+"Förskjut kartmarkörerna\n"
+"för att skilja olika\n"
+"markörer på samma plats"
 
 #: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
@@ -14710,34 +14715,45 @@ msgid ""
 "as measured along the equator\n"
 "(includes latitude distortion)"
 msgstr ""
+"Spridningsradie (hektometer)\n"
+"mätt längs ekvatorn\n"
+"(inkluderar latitudförvrängning)"
 
 #: GeoTimeLines/GeoTimeLines.py:1794
 msgid ""
 "Display markers for unknown ancestors\n"
 "based on earliest descendant location"
 msgstr ""
+"Visa markörer för okända förfäder\n"
+"baserat på tidigaste ättlingsort"
 
 #: GeoTimeLines/GeoTimeLines.py:1803
 msgid ""
 "Days to keep lines on the map after\n"
 "an event"
 msgstr ""
+"Dagar att behålla linjerna på kartan efter\n"
+"en händelse"
 
 #: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
-msgstr ""
+msgstr "Använd anpassade kartikoner"
 
 #: GeoTimeLines/GeoTimeLines.py:1829
 msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
 msgstr ""
+"Om det inte finns någon födelsehändelse för en person, antas deras ålder\n"
+"vara detta vid deras första händelse"
 
 #: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
 "If there is no death event for a person, they will\n"
 "be assumed dead at this age"
 msgstr ""
+"Om det inte inträffar någon dödsfallshändelse för en person, kommer de att\n"
+"antas vara döda vid denna ålder"
 
 #: GeoTimeLines/GeoTimeLines.py:1875
 msgid "Number of steps"
@@ -14749,25 +14765,27 @@ msgstr "Typ av steg"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
-msgstr ""
+msgstr "Steg per millisekund"
 
 #: GeoTimeLines/GeoTimeLines.py:1915
 msgid "Initial map view on Gramps startup"
-msgstr ""
+msgstr "Första kartvy vid start av Gramps"
 
 #: GeoTimeLines/GeoTimeLines.py:1927
 msgid ""
 "Initial map view after startup and\n"
 "after changing the active person"
 msgstr ""
+"Första kartvy efter start och\n"
+"efter att ha bytt aktiv person"
 
 #: GeoTimeLines/GeoTimeLines.py:1936
 msgid "Show map travel lines on startup"
-msgstr ""
+msgstr "Visa reselinjer på kartan vid uppstart"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
-msgstr ""
+msgstr "Visa tidstick i navigeringsfältet vid start"
 
 #: GeoTimeLines/GeoTimeLines.py:1974
 msgid "TimeLines Map options"
