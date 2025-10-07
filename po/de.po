@@ -24,8 +24,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-09-28 12:02+0000\n"
-"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -4362,7 +4362,7 @@ msgstr "Heranzoomen"
 #: DynamicWeb/dynamicweb.py:3171 GraphView/graphview.py:1102
 #: LifeLineChartView/lifelinechartview.py:518
 msgid "Zoom out"
-msgstr "Herauszoomen"
+msgstr "Verkleinern"
 
 #: DynamicWeb/dynamicweb.py:3172
 msgid "all"
@@ -16835,23 +16835,23 @@ msgstr "Der Inhalt des Todesetiketts wird nach Möglichkeit umbrochen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:62
 msgid "Death label anchor"
-msgstr "Textausrichtung des Sterbe-Textfeld"
+msgstr "Todesetikett-Anker"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:63
 msgid "Text alignment of the death label."
-msgstr "Textausrichtung im Sterbe-Textfeld."
+msgstr "Textausrichtung des Todesetiketts."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:68
 msgid "Show marriage label"
-msgstr "Ehe-Textfeld anzeigen"
+msgstr "Eheetikett anzeigen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:69
 msgid "Activate the marriage label."
-msgstr "Aktiviert einen kurzen Infotextes zur Hochzeit."
+msgstr "Aktiviert das Eheetikett."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:70
 msgid "Fade individual color"
-msgstr "Individueller Farbgradient"
+msgstr "Personen Farbe ausblenden"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:71
 msgid "The color of the individuals is faded to black with increasing age."
@@ -16859,11 +16859,11 @@ msgstr "Die Farbe der Individuen geht mit zunehmendem Alter in Schwarz über."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
 msgid "Font name"
-msgstr "Schriftname"
+msgstr "Schriftartname"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:73
 msgid "Name of the font family used for labels."
-msgstr "Der Name der Schriftfamilie, die für Textfelder verwendet wird."
+msgstr "Name der für Etiketten verwendeten Schriftfamilie."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:75
 msgid "Relative font size"
@@ -16871,7 +16871,7 @@ msgstr "Relative Schriftgröße"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:76
 msgid "The font size is given relatively to the line thickness."
-msgstr "Die Schriftgröße ist relativ zu der Breite der Lebenslinien angegeben."
+msgstr "Die Schriftgröße wird relativ zur Strichstärke angegeben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
 msgid "Family shape"
@@ -16891,25 +16891,25 @@ msgstr "Weicher"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:82
 msgid "Upper year minimum margin"
-msgstr "Obere Begrenzung minimum Jahre"
+msgstr "Mindestspanne für höhere Jahrgänge"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:83
 msgid ""
 "The upper bound of the chart is extended by at least this number of years."
 msgstr ""
-"Die obere Grenze des Diagramms wird mindestens um diese Anzahl an Jahre "
-"vergrößert."
+"Die Obergrenze des Diagramms wird um mindestens diese Anzahl von Jahren "
+"erweitert."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:84
 msgid "Lower year minimum margin"
-msgstr "Untere Begrenzung minimum Jahre"
+msgstr "Mindestspanne für das untere Jahr"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:85
 msgid ""
 "The lower bound of the chart is extended by at least this number of years."
 msgstr ""
-"Die untere Grenze des Diagramms wird mindestens um diese Anzahl an Jahre "
-"vergrößert."
+"Die Untergrenze des Diagramms wird um mindestens diese Anzahl von Jahren "
+"erweitert."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:86
 msgid "Visualize connections"
@@ -16920,25 +16920,25 @@ msgid ""
 "Visualize the connections between families and individuals. This is for "
 "debugging purposes."
 msgstr ""
-"Visualisiert die Verbindungen zwischen Familien und Einzelpersonen. Das ist "
-"für Fehlerbehebung-Zwecke."
+"Visualisierung der Verbindungen zwischen Familien und Einzelpersonen. Dies "
+"dient zu Fehlersuchzwecken."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:88
 msgid "Visualize ambiguous placement"
-msgstr "Mehrdeutig Platzierung visualisierungen"
+msgstr "Mehrdeutige Platzierung visualisieren"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:89
 msgid "Visualize automatically detected errors in the placement algorithm."
-msgstr "Visualisiert automatisch erkannte Fehler des Platzierungsalgorithmus."
+msgstr "Automatisch erkannte Fehler im Platzierungsalgorithmus visualisieren."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:90
 msgid "Coloring of individuals"
-msgstr "Einfärben von Individuen"
+msgstr "Färbung von Individuen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:91
 msgid "There are different ways to determine the color of an individual."
 msgstr ""
-"Es gibt verschiedene Möglichkeiten die Farbe eines Individuums zu bestimmen."
+"Es gibt verschiedene Möglichkeiten, die Farbe einer Person zu definieren."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:92
 msgid "Unique"
@@ -16954,7 +16954,7 @@ msgstr "Vertikal spiegeln"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:95
 msgid "If active, the chart is flipped vertically."
-msgstr "Falls aktiv, wird das Diagramm vertikal gespiegelt."
+msgstr "Wenn diese Option aktiviert ist, wird das Diagramm vertikal gespiegelt."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:96
 msgid "Line weighting"
@@ -16966,7 +16966,7 @@ msgstr "Die Linienbreite kann konfiguriert werden."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:98
 msgid "none"
-msgstr "kein"
+msgstr "keiner"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
@@ -16978,9 +16978,9 @@ msgid ""
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
-"Aufgrund des Ahnenschwundes könnte eine Person mehrmals in einem einfachen "
-"Vorfahren Diagramm gezeigt werden. Wenn dies aktiv ist, dann erscheint jede "
-"Person nur einmal."
+"Aufgrund des Ahnenschwundes kann eine Person in einem einfachen "
+"Stammbaumdiagramm mehrmals aufgeführt sein. Wenn diese Option aktiviert ist, "
+"wird jede Person nur einmal angezeigt."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
@@ -16992,35 +16992,35 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:103
 msgid "Fathers have the same color"
-msgstr "Väter haben die selbe Farbe"
+msgstr "Väter haben dieselbe Farbe"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:104
 msgid ""
 "Starting from the root person, each father of an added individual has the "
 "same color as that individual."
 msgstr ""
-"Ausgehend von der Hauptperson hat jeder Vater einer hinzugefügten Person "
+"Ausgehend von der Stammperson hat jeder Vater einer hinzugefügten Person "
 "dieselbe Farbe wie diese Person."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
 msgid "Maximum number of compression steps"
-msgstr "Maximale Anzahl an Komprimierungsschritten"
+msgstr "Maximale Anzahl von Kompressionsschritten"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:106
 msgid "Debugging of the compression algorithm. Abort after x steps."
-msgstr "Austesten des Komprimierungsalgorithmus. Abbruch nach x Schritten."
+msgstr "Fehlersuche im Komprimierungsalgorithmus. Nach x Schritten abbrechen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:107
 msgid "Maximum number of flipping steps"
-msgstr "Maximale Anzahl an Spiegelungs Schritten"
+msgstr "Maximale Anzahl von Umkehrschritten"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:108
 msgid "Debugging of the flipping algorithm. Abort after x steps."
-msgstr "Austesten des Spiegel-Algorithmus. Abbruch nach x Schritten."
+msgstr "Fehlersuche im Umkehralgorithmus. Nach x Schritten abbrechen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:109
 msgid "Compress the chart horizontally"
-msgstr "Horizontal komprimieren"
+msgstr "Diagramm horizontal komprimieren"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:110
 msgid ""
@@ -17035,7 +17035,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
-msgstr "Spiegeln von Familien zur Reduzierung horizontaler Verbindungen"
+msgstr "Familien umdrehen, um horizontale Verbindungen zu reduzieren"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:112
 msgid ""
@@ -17043,10 +17043,10 @@ msgid ""
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
 msgstr ""
-"Wechselt die Position von Mutter und Vater in einer Familie, um die "
-"horizontalen Querverbindungen in größeren Diagrammen zu verringern. Dies ist "
-"der Fall, wenn eine Person in mehr als einer Familie gezeigt wird oder bei "
-"eingeklappten Stammbaum."
+"Vertauscht die Position von Mutter und Vater in einer Familie, um die "
+"horizontalen Querverbindungen in größeren Graphen insgesamt zu reduzieren. "
+"Dies geschieht, wenn eine Person in mehr als einer Familie aufgeführt ist, "
+"oder es wird durch einen Ahnenschwund verursacht."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -17054,7 +17054,7 @@ msgstr "Nachkommen hervorheben"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:114
 msgid "Highlight the persons which are descendants."
-msgstr "Hebt die Personen, die Nachkommen sind hervor."
+msgstr "Hervorhebung der Personen, die Nachkommen sind."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:115
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
@@ -17067,15 +17067,15 @@ msgstr "Sehr weich"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:117
 msgid "General chart layout"
-msgstr "Allgemeines Diagramm-Layout"
+msgstr "Allgemeines Diagrammlayout"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:118
 msgid "There are different layouts for descendant charts."
-msgstr "Es gibt verschiedene Layouts für Nachkommen Grafiken."
+msgstr "Es gibt verschiedene Layouts für Nachkommen-Diagramme."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:119
 msgid "Parents enclose children"
-msgstr "Eltern umschließen Kinder"
+msgstr "Eltern umgeben ihre Kinder"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:120
 msgid "Cactus"
@@ -17086,8 +17086,8 @@ msgid ""
 "LifeLineChartView dependencies are missing. It is not possible to use this "
 "plugin without them."
 msgstr ""
-"LifeLineChartView Abhängigkeiten fehlen. Ohne diese ist es nicht möglich das "
-"Plugin zu nutzen."
+"LebenslinienDiagrammAnsicht-Abhängigkeiten fehlen. Ohne diese ist es nicht "
+"möglich, diese Erweiterung zu verwenden."
 
 #: LifeLineChartView/lifelinechart.py:1183
 #, python-brace-format
@@ -17096,7 +17096,7 @@ msgstr "Cursorposition bei {date}"
 
 #: LifeLineChartView/lifelinechart.py:2591
 msgid "Hide person"
-msgstr "Person verbergen"
+msgstr "Person ausblenden"
 
 #: LifeLineChartView/lifelinechart.py:2597
 msgid "Show person"
@@ -17108,35 +17108,35 @@ msgstr "Geschwister zeigen"
 
 #: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
-msgstr "Geschwister veerbergen"
+msgstr "Geschwister ausblenden"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
-msgstr "Platziere Vorfahren über "
+msgstr "Vorfahren oben anzeigen "
 
 #: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"
-msgstr "Lebenslinien Vorfahren Diagramm"
+msgstr "Lebenslinie- Vorfahrendiagramm"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:26
 #: LifeLineChartView/lifelinechartview.gpr.py:44
 msgid "Persons and their relation in a time based chart"
-msgstr "Personen und ihre Beziehung in einem Zeit basierten Diagramm"
+msgstr "Personen und ihre Beziehungen in einem zeitbasierten Diagramm"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:34
 #: LifeLineChartView/lifelinechartview.gpr.py:52
 #: LifeLineChartView/lifelinechartview.py:399
 msgid "Life Line Chart"
-msgstr "Lebenslinien Diagramm"
+msgstr "Lebenslinie Diagramm"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:42
 msgid "Life Line Descendant Chart"
-msgstr "Lebenslinien Nachfahren Diagramm"
+msgstr "Lebenslinie-Nachkommendiagramm"
 
 #: LifeLineChartView/lifelinechartview.py:386
 #: LifeLineChartView/lifelinechartview.py:883
 msgid "General Layout"
-msgstr "Allgemeines Layout"
+msgstr "Allgemeiner Aufbau"
 
 #: LifeLineChartView/lifelinechartview.py:509
 #: LifeLineChartView/lifelinechartview.py:510
@@ -17156,11 +17156,11 @@ msgstr "Datencache neu erstellen"
 
 #: LifeLineChartView/lifelinechartview.py:548
 msgid "Revert the placement and person selection"
-msgstr "Platzierung und Personenauswahl zurücksetzen"
+msgstr "Die Platzierung und Personenauswahl zurücksetzen"
 
 #: LifeLineChartView/lifelinechartview.py:564
 msgid "Open Life Line Chart help"
-msgstr "Lebenslinien Diagramm Hilfe öffnen"
+msgstr "Lebenslinie Diagramm Hilfe öffnen"
 
 #: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
@@ -17172,31 +17172,31 @@ msgstr "Alle Einstellungen zurücksetzen"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
-msgstr "Nachkommen Linien Bericht"
+msgstr "Abstammungslinienbericht"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:33
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."
 msgstr ""
-"Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem "
-"gegebenen Nachkommen in Textform."
+"Druckt alle Abstammungslinien von einem bestimmten Vorfahren zu einem "
+"bestimmten Nachkommen in Textform aus."
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
-msgstr "Der Vorfahre von dem die Linie startet"
+msgstr "Der Vorfahr, von dem aus die Linie beginnt"
 
 #: LinesOfDescendency/lines-of-descendency.py:59
 msgid "Descendent"
-msgstr "Nachfahre"
+msgstr "Nachkomme"
 
 #: LinesOfDescendency/lines-of-descendency.py:60
 msgid "The descendent to which to build the line"
-msgstr "Der Nachkomme zu dem die Linie erstellt wird"
+msgstr "Der Nachkomme, zu dem die Linie aufgebaut werden soll"
 
 #: LinesOfDescendency/lines-of-descendency.py:82
 msgid "The style used for the title of a line."
-msgstr "Der Stil, der für den Titel der Linie verwendet wird."
+msgstr "Der Stil, der für den Titel einer Linie verwendet wird."
 
 #: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format
@@ -17206,7 +17206,7 @@ msgstr "%(line)s. Linie:"
 #: LinesOfDescendency/lines-of-descendency.py:176
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
-msgstr "Nachkommen Linien von %(ancestor)s zu %(descendent)s"
+msgstr "Abstammungslinien von %(ancestor)s zu %(descendent)s"
 
 #: ListeEclair/ListeEclair.gpr.py:4 ListeEclair/ListeEclair.py:97
 #: ListeEclair/ListeEclair.py:104
@@ -17290,7 +17290,7 @@ msgstr "Erstellt einen Bericht mit Bildern, Bilddaten und Notizen."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
-msgstr "Um diesen Bericht zu erstellen, muss ein Bild ausgewählt werden."
+msgstr "Du musst ein Bild auswählen, um diesen Bericht zu erstellen."
 
 #: MediaReport/media_report.py:112
 msgid ""
@@ -17303,7 +17303,7 @@ msgstr ""
 
 #: MediaReport/media_report.py:125
 msgid "This report only supports PDF as output file format."
-msgstr "Dieser Bericht unterstützt nur PDF als Ausgangsformat."
+msgstr "Dieser Bericht unterstützt nur PDF als Ausgabeformat."
 
 #: MediaReport/media_report.py:229
 msgid "General:"
@@ -17311,7 +17311,7 @@ msgstr "Allgemeines:"
 
 #: MediaReport/media_report.py:250
 msgid "Image type:"
-msgstr "Art der Bilder:"
+msgstr "Bildtyp:"
 
 #: MediaReport/media_report.py:426
 msgid "Heading"
@@ -17319,7 +17319,7 @@ msgstr "Überschrift"
 
 #: MediaReport/media_report.py:430
 msgid "Select a media file for this report"
-msgstr "Mediendatei für diesen Bericht wählen"
+msgstr "Wähle eine Mediendatei für diesen Bericht aus"
 
 #: MediaReport/media_report.py:433
 msgid "Custom note"
@@ -17551,15 +17551,15 @@ msgstr "Haupt"
 
 #: NetworkChart/NetworkChart.py:916
 msgid "Orthogonal (right angles in connectors)"
-msgstr "Orthogonal (rechte Winkel in den Verbindern)"
+msgstr "Orthogonal (rechte Winkel in Verbindungen)"
 
 #: NetworkChart/NetworkChart.py:917
 msgid "Straight (no right angles in connectors)"
-msgstr "Gerade (keine rechten Winkel in den Verbindern)"
+msgstr "Gerade (keine rechten Winkel in den Verbindungen)"
 
 #: NetworkChart/NetworkChart.py:918
 msgid "Curved (curved and straight connectors)"
-msgstr "Geschwungen (gebogene und gerade Verbinder)"
+msgstr "Gebogen (gebogene und gerade Verbindungen)"
 
 #: NetworkChart/NetworkChart.py:920
 msgid "Default (Orthogonal)"
@@ -17567,19 +17567,19 @@ msgstr "Standard (orthogonal)"
 
 #: NetworkChart/NetworkChart.py:925
 msgid "Select the graph line connector format."
-msgstr "Wählen Sie das Diagrammlinienverbinderformat."
+msgstr "Wähle das Format für die Verbindungslinie des Diagramms aus."
 
 #: NetworkChart/NetworkChart.py:930
 msgid "Left to Right"
-msgstr "Links nach Rechts"
+msgstr "Von links nach rechts"
 
 #: NetworkChart/NetworkChart.py:930
 msgid "Top to Bottom"
-msgstr "Oben nach Unten"
+msgstr "Von oben nach unten"
 
 #: NetworkChart/NetworkChart.py:931
 msgid "Bottom to Top"
-msgstr "Unten nach Oben"
+msgstr "Von unten nach oben"
 
 #: NetworkChart/NetworkChart.py:931
 msgid "Right to Left"
@@ -17591,15 +17591,15 @@ msgstr "Standard (von oben nach unten)"
 
 #: NetworkChart/NetworkChart.py:936
 msgid "Select the graph direction."
-msgstr "Wähle die Grafikrichtung."
+msgstr "Wähle die Richtung des Diagramms aus."
 
 #: NetworkChart/NetworkChart.py:939
 msgid "URL Style"
-msgstr "URL Stil"
+msgstr "URL-Stil"
 
 #: NetworkChart/NetworkChart.py:941
 msgid "Include URLs from database."
-msgstr "URLs aus der Datenbank einschließen."
+msgstr "URLs aus der Datenbank einfügen."
 
 #: NetworkChart/NetworkChart.py:942
 msgid "Dynamic URL = Prefix + GrampID + Suffix"
@@ -17619,7 +17619,7 @@ msgstr "Standard (einschließen)"
 
 #: NetworkChart/NetworkChart.py:948
 msgid "Select URL style."
-msgstr "Wähle URL Stil."
+msgstr "URL-Stil auswählen."
 
 #: NetworkChart/NetworkChart.py:951
 msgid "URL Prefix,Suffix"
@@ -17631,13 +17631,13 @@ msgid ""
 "for dynamically generated URLs.\n"
 "URL = Prefix + GrampsID + Suffix."
 msgstr ""
-"Gib das Präfix, Suffix (Komma verwenden) \n"
-"für dynamisch generierte URLs ein. \n"
+"Gib das Präfix und Suffix (mit Komma)\n"
+"für dynamisch generierte URLs ein.\n"
 "URL = Präfix + GrampsID + Suffix."
 
 #: NetworkChart/NetworkChart.py:957
 msgid "Enter Font Name"
-msgstr "Schriftnamen eingeben"
+msgstr "Schriftartname eingeben"
 
 #: NetworkChart/NetworkChart.py:959
 msgid ""
@@ -17646,27 +17646,27 @@ msgid ""
 "White Rabbit can be obtained from\n"
 "https://www.fontsquirrel.com/fonts/white-rabbit"
 msgstr ""
-"Gib den primären Stil für das Diagramm ein.\n"
+"Gib den primären Schriftstil für das Diagramm ein.\n"
 "Muss bereits installiert sein.\n"
-"White Rabbit kann über erhalten werden\n"
+"White Rabbit kann unter folgender Adresse heruntergeladen werden:\n"
 "https://www.fontsquirrel.com/fonts/white-rabbit"
 
 #: NetworkChart/NetworkChart.py:964
 msgid "Spacing (inch)"
-msgstr "Abstand (inch)"
+msgstr "Abstand (Zoll)"
 
 #: NetworkChart/NetworkChart.py:965
 msgid ""
 "Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
-msgstr "Gib den Abstand zwischen \"Generationen\" in inch (0.1-5.0) ein."
+msgstr "Gib den Abstand zwischen den „Generationen” in Zoll (0,1–5,0) ein."
 
 #: NetworkChart/NetworkChart.py:969
 msgid "Enter Chart Title"
-msgstr "Gib Diagrammtitel ein"
+msgstr "Diagrammtitel eingeben"
 
 #: NetworkChart/NetworkChart.py:971
 msgid "Set the title of the chart."
-msgstr "Legt den Titel des Diagramms fest."
+msgstr "Lege den Titel des Diagramms fest."
 
 #: NetworkChart/NetworkChart.py:976
 msgid "Default (svg)"
@@ -17677,7 +17677,7 @@ msgid ""
 "svg - Scalable Vector Graphics file.\n"
 "pdf - Adobe Portable Document Format.\n"
 msgstr ""
-"svg - Scalable Vector Graphics Datei.\n"
+"svg - Scalable Vector Graphics file.\n"
 "pdf - Adobe Portable Document Format.\n"
 
 #: NetworkChart/NetworkChart.py:986
@@ -17695,19 +17695,19 @@ msgstr "Der Dateiname für das generierte svg-Netzdiagramm."
 
 #: NetworkChart/NetworkChart.py:1002
 msgid "Different node shapes/edges for gender."
-msgstr "Verschiedene Knotenformen/Kanten für Geschlecht."
+msgstr "Unterschiedliche Knotenformen/Kanten für Geschlecht."
 
 #: NetworkChart/NetworkChart.py:1003
 msgid "Node differences for gender."
-msgstr "Knotenunterschiede für Geschlechter."
+msgstr "Knotenunterschiede für die Geschlechter."
 
 #: NetworkChart/NetworkChart.py:1008
 msgid "Male Background"
-msgstr "Hintergrund männlich"
+msgstr "Männlicher Hintergrund"
 
 #: NetworkChart/NetworkChart.py:1012
 msgid "Male Background Alpha"
-msgstr "Hintergrund männlich Alpha"
+msgstr "Männlicher Hintergrund Alpha"
 
 #: NetworkChart/NetworkChart.py:1014
 msgid "Alpha for Male box background (transparent=0, solid=255)."
@@ -17716,7 +17716,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
-msgstr "Männliche Boxrand"
+msgstr "Männliche Boxkante"
 
 #: NetworkChart/NetworkChart.py:1019
 msgid "RGB-color for Male box edge."
@@ -17746,7 +17746,7 @@ msgstr "RGB-Farbe für den Rand der weiblichen Box."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
-msgstr "Anderer Hintergrund"
+msgstr "Andere Hintergrund"
 
 #: NetworkChart/NetworkChart.py:1038
 msgid "RGB-color for other box background."
@@ -17754,7 +17754,7 @@ msgstr "RGB-Hintergrundfarbe für andere Box."
 
 #: NetworkChart/NetworkChart.py:1041
 msgid "Other Background Alpha"
-msgstr "Anderer Hintergrund Alpha"
+msgstr "Andere Hintergrund Alpha"
 
 #: NetworkChart/NetworkChart.py:1043
 msgid "Alpha for Other box background (transparent=0, solid=255)."
@@ -17787,12 +17787,12 @@ msgid ""
 "RGB-color for the highlighted path between two individuals.  If the graph."
 "inverts, reverse the order to change."
 msgstr ""
-"RGB-Farbe für den hervorgehobenen Pfad zwischen zwei Personen. Wenn das "
-"Diagramm invertiert, kehre die Reihenfolge um, um zu ändern."
+"RGB-Farbe für den hervorgehobenen Pfad zwischen zwei Personen.  Wenn sich "
+"das Diagramm umkehrt, kehre die Reihenfolge um, um die Änderung vorzunehmen."
 
 #: NetworkChart/NetworkChart.py:1061
 msgid "Trim Box Edge"
-msgstr "Boxenrand kürzen"
+msgstr "Kastenrand beschneiden"
 
 #: NetworkChart/NetworkChart.py:1062
 msgid "RGB-color for box edge that has been trimmed."
@@ -17800,11 +17800,12 @@ msgstr "RGB-Farbe für Boxenrand, der gekürzt wurde."
 
 #: NetworkChart/NetworkChart.py:1066
 msgid "Remove color background on all nodes."
-msgstr "Entfernen den farbigen Hintergrund in allen Knoten."
+msgstr "Hintergrundfarbe aller Knoten entfernen."
 
 #: NetworkChart/NetworkChart.py:1068
 msgid "Removes color background for individuals (nodes) on chart."
-msgstr "Entfernt den Farbhintergrund für Personen (Knoten) im Diagramm."
+msgstr ""
+"Entfernt den farbigen Hintergrund für einzelne Elemente (Knoten) im Diagramm."
 
 #: NetworkChart/NetworkChart.py:1073
 msgid ""
@@ -17812,25 +17813,25 @@ msgid ""
 "rounding birthday\n"
 "to year only"
 msgstr ""
-"Gib Startjahr zum\n"
-"Runden des Geburtstags nur\n"
-"auf das Jahr ein"
+"Gib das Startjahr ein,\n"
+"um den Geburtstag \n"
+"auf das Jahr zu runden"
 
 #: NetworkChart/NetworkChart.py:1076
 msgid ""
 "Birthdays after this year are represented by the year only.  Invalid entries "
 "will be ignored."
 msgstr ""
-"Geburtstage nach diesem Jahr werden nur durch das Jahr dargestellt. "
-"Ungültige Einträge werden ignoriert."
+"Geburtstage nach diesem Jahr werden nur mit der Jahreszahl angegeben.  "
+"Ungültige Eingaben werden ignoriert."
 
 #: NetworkChart/NetworkChart.py:1080
 msgid "Round birthday to year after year entered (above)."
-msgstr "Runder Geburtstag auf Jahr nach dem eingegebenen Jahr (oberhalb)."
+msgstr "Runde Geburtstag zu Jahr nach eingegebenem Jahr (oben)."
 
 #: NetworkChart/NetworkChart.py:1082
 msgid "Represent birthday by year only."
-msgstr "Stellt Geburtstag nur für das Jahr dar."
+msgstr "Geburtstag nur nach Jahr angeben."
 
 #: NetworkChart/NetworkChart.py:1086
 msgid ""
@@ -17838,9 +17839,9 @@ msgid ""
 "rounding marriage\n"
 "date to year only"
 msgstr ""
-"Gib Startjahr zum\n"
-"Runden des Hochzeitsdatums\n"
-"auf nur das Jahr ein"
+"Gib das Jahr ein, ab dem\n"
+"das Heiratsdatum auf das \n"
+"Jahr gerundet werden soll"
 
 #: NetworkChart/NetworkChart.py:1087
 msgid ""
@@ -17852,90 +17853,90 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1092
 msgid "Round marriage to year after year entered (above)."
-msgstr "Runde Hochzeitstag auf Jahr nach dem eingegebenen Jahr (oberhalb)."
+msgstr "Runde Ehe zu Jahr nach eingegebenem Jahr (oben)."
 
 #: NetworkChart/NetworkChart.py:1094
 msgid "Represent marriage by year only."
-msgstr "Stellt Hochzeitstage nur für Jahr da."
+msgstr "Darstellung der Ehen nur nach Jahr."
 
 #: NetworkChart/NetworkChart.py:1099
 msgid ""
 "Attempts to remove middle names.  Only works for entries with birth year in "
 "the record."
 msgstr ""
-"Versucht, zweite Vornamen zu entfernen. Funktioniert nur für Einträge mit "
-"Geburtsjahr im Datensatz."
+"Versuche, Mittelnamen zu entfernen.  Funktioniert nur bei Einträgen, bei "
+"denen das Geburtsjahr in der Aufzeichnung angegeben ist."
 
 #: NetworkChart/NetworkChart.py:1107
 msgid "Remove middle names."
-msgstr "Zweiten Vornamen entfernen."
+msgstr "Mittlere Namen entfernen."
 
 #: NetworkChart/NetworkChart.py:1112
 msgid "Allow inclusion of private records in chart."
-msgstr "Vertrauliche Datensätze in Diagramm zulassen."
+msgstr "Erlaubt die Aufnahme vertraulicher Daten in das Diagramm."
 
 #: NetworkChart/NetworkChart.py:1117
 msgid "Trim"
-msgstr "Kürzen"
+msgstr "Beschneiden"
 
 #: NetworkChart/NetworkChart.py:1119
 msgid "Trim descendants"
-msgstr "Nachkommen kürzen"
+msgstr "Nachkommen beschneiden"
 
 #: NetworkChart/NetworkChart.py:1121
 msgid "All descendants (children) of selected individuals will not be shown."
-msgstr "Alle Nachkommen (Kinder) der gewählten Personen werden nicht gezeigt."
+msgstr "Alle Nachkommen (Kinder) ausgewählter Personen werden nicht angezeigt."
 
 #: NetworkChart/NetworkChart.py:1127
 msgid "Enable trimming of descendants."
-msgstr "Aktiviert Kürzung von Nachkommen."
+msgstr "Beschneiden von Nachkommen aktivieren."
 
 #: NetworkChart/NetworkChart.py:1129
 msgid ""
 "You must enter valid person(s) before \n"
 "enabling trimming of descendants from tree."
 msgstr ""
-"Du must erst gültige Personen wählen\n"
-"vor dem Kürzen von Nachkommen aus dem Baum."
+"Du musst gültige Personen eingeben, bevor du das Entfernen \n"
+"von Nachkommen aus dem Stammbaum aktivieren kannst."
 
 #: NetworkChart/NetworkChart.py:1134
 msgid "Trim ancestors"
-msgstr "Vorfahren kürzen"
+msgstr "Vorfahren beschneiden"
 
 #: NetworkChart/NetworkChart.py:1135
 msgid "All ancestors (parents) of selected individuals will not be shown."
-msgstr "Alle Vorfahren (Eltern) der gewählten Personen werden nicht gezeigt."
+msgstr "Alle Vorfahren (Eltern) ausgewählter Personen werden nicht angezeigt."
 
 #: NetworkChart/NetworkChart.py:1141
 msgid "Enable trimming of ancestors."
-msgstr "Aktiviert Kürzung von Vorfahren."
+msgstr "Beschneiden von Vorfahren aktivieren."
 
 #: NetworkChart/NetworkChart.py:1143
 msgid "Enable trimming of ancestors from tree."
-msgstr "Aktiviere Kürzung von Vorfahren aus dem Baum."
+msgstr "Beschneiden von Vorfahren aus dem Stammbaum aktivieren."
 
 #: NetworkChart/NetworkChart.py:1147
 msgid "Enable trim groups."
-msgstr "Aktiviere Kürzung von Gruppen."
+msgstr "Beschnittgruppen aktivieren."
 
 #: NetworkChart/NetworkChart.py:1149
 msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
 msgstr ""
-"Entfernt Gruppen, die kleiner als Min. Gruppengröße sind.\n"
+"Gruppen entfernen, die kleiner als die Mindestgruppengröße sind.  \n"
 "Automatisch für Datenbanken mit mehr als 1500 Personen."
 
 #: NetworkChart/NetworkChart.py:1154
 msgid "Min Group Size"
-msgstr "Min Gruppengröße"
+msgstr "Mindestgruppengröße"
 
 #: NetworkChart/NetworkChart.py:1156
 msgid ""
 "Enter the minimum size group to display.\n"
 "Value may be 2 or greater."
 msgstr ""
-"Gib die minimale Gruppengröße ein, die angezeigt werden soll.\n"
+"Gib die Mindestgröße der anzuzeigenden Gruppe ein.\n"
 "Der Wert kann 2 oder größer sein."
 
 #: NetworkChart/NetworkChart.py:1164
@@ -17945,18 +17946,18 @@ msgid ""
 "displayed path(s).\n"
 "Select two"
 msgstr ""
-"Wählen Start und\n"
-"End Person in\n"
-"angezeigtem Pfad(e).\n"
-"Wähle zwei aus"
+"Wähle Start und\n"
+"Endpersonen in\n"
+"angezeigten Pfad(en).\n"
+"Wähle zwei"
 
 #: NetworkChart/NetworkChart.py:1167
 msgid ""
 "Starting and ending person for displayed path(s).\n"
 "Select two people"
 msgstr ""
-"Start- und Endperson für angezeigten Pfad(e).\n"
-"Wähle zwei Leute aus"
+"Start- und Endperson für angezeigte(n) Pfad(e).\n"
+"Wähle zwei Personen aus"
 
 #: NetworkChart/NetworkChart.py:1171
 msgid "Highlight path(s)"
@@ -17964,7 +17965,7 @@ msgstr "Pfad(e) hervorheben"
 
 #: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
 msgid "Any"
-msgstr "Beliebige"
+msgstr "Beliebig"
 
 #: NetworkChart/NetworkChart.py:1176
 msgid "Default (None)"
@@ -17982,7 +17983,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1186
 msgid "Show only path(s)"
-msgstr "Zeige nur Pfad(e)"
+msgstr "Nur Pfad(e) anzeigen"
 
 #: NetworkChart/NetworkChart.py:1189
 msgid "Default (none)"
@@ -18000,15 +18001,15 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1200
 msgid "Select person at center of selection radius in graph."
-msgstr "Wählen die Person in der Mitte des Auswahlradius in der Grafik aus."
+msgstr "Wähle die Person im Zentrum des Auswahlradius im Diagramm aus."
 
 #: NetworkChart/NetworkChart.py:1203
 msgid ""
 "Max connections\n"
 "from center"
 msgstr ""
-"Max Verbindungen\n"
-"vom Zentrum"
+"Maximale Verbindungen\n"
+"vom Zentrum aus"
 
 #: NetworkChart/NetworkChart.py:1206
 msgid ""
@@ -18020,39 +18021,39 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1211
 msgid "Limit graph to max connections from center."
-msgstr "Den Graphen auf maximale Verbindungen von der Mitte begrenzen."
+msgstr "Diagramm auf maximale Verbindungen vom Zentrum aus beschränken."
 
 #: NetworkChart/NetworkChart.py:1213
 msgid "Display up to max connections from central person."
-msgstr "Zeig bis zu den maximalen Verbindungen von der zentralen Person an."
+msgstr "Anzeige der maximalen Verbindungen einer zentralen Person."
 
 #: NetworkChart/NetworkChart.py:1217
 msgid "Highlight central person in graph."
-msgstr "Hebe Hauptperson im Diagramm hervor."
+msgstr "Zentrale Person im Diagramm hervorheben."
 
 #: NetworkChart/NetworkChart.py:1219
 msgid "Add yellow color background to central person."
-msgstr "Gelben Hintergrund zu Hauptperson hinzufügen."
+msgstr "Gelben Hintergrund zur zentralen Person hinzufügen."
 
 #: NetworkChart/NetworkChart.py:1234
 msgid "Use database handle instead of GrampID id in URLs."
-msgstr "Verwende Datenbankhandle anstelle von Gramps-ID in URLs."
+msgstr "Verwende in URLs anstelle der GrampID-ID einen Datenbank-Handle."
 
 #: NetworkChart/NetworkChart.py:1236
 msgid ""
 "Use database handle instead of the gramps id for URLs.\n"
 "The handle should never change whereas gramps ids can."
 msgstr ""
-"Verwendet Datenbankhandle anstelle der Gramps-ID für URLs. \n"
-"Der Handle sollte sich niemals ändern, während Gramps-IDs es können."
+"Verwende für URLs den Datenbank-Handle anstelle der Gramps-ID.\n"
+"Der Handle sollte sich niemals ändern, während Gramps-IDs sich ändern können."
 
 #: NetworkChart/NetworkChart.py:1240
 msgid "Confirm overwrite file."
-msgstr "Überschreiben der Datei bestätigen."
+msgstr "Datei überschreiben bestätigen."
 
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
-msgstr "Aktivieren/deaktivieren der Bestätigung der Dateiüberschreibung."
+msgstr "Bestätigung beim Überschreiben von Dateien aktivieren/deaktivieren."
 
 #: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
@@ -18084,7 +18085,7 @@ msgstr "Das Werkzeug zum Bereinigen von Notizen schließen"
 
 #: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
-msgstr "Alles Speichern"
+msgstr "Alle speichern"
 
 #: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
@@ -18226,8 +18227,8 @@ msgid ""
 "collapse were ignored."
 msgstr ""
 "Es wurden {} von {} Vorfahren ({}) gefunden.\n"
-".Es wurden nur einzelne Vorfahren gezählt. Duplikate, die durch den "
-"Zusammenbruch des Stammbaums verursacht wurden, wurden ignoriert."
+"Es wurden nur einzelne Vorfahren gezählt. Durch Stammbaumkollision "
+"verursachte Duplikate wurden ignoriert."
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 msgid "Shows the number of descendants of the current person"
@@ -18240,7 +18241,7 @@ msgstr "Anzahl der Nachkommen von %s"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
 msgid "Seen"
-msgstr "Erlebt"
+msgstr "Gesehen"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
 msgid "Outlived"
@@ -18249,19 +18250,17 @@ msgstr "Überlebt"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
 msgid "Now alive"
-msgstr "Jetzt lebend"
+msgstr "Jetzt am Leben"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr "Erlebt = Anzahl der Nachkommen, deren Geburt %s erlebt hat"
+msgstr "Gesehen = Anzahl der Nachkommen, deren Geburt %s erlebt hat"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
-msgstr ""
-"Überlebt = Anzahl der Nachkommen, die schon zu Lebzeiten von %s gestorben "
-"sind"
+msgstr "Überlebt = Anzahl der Nachkommen, die starben, während %s noch lebte"
 
 #: Overview/Overview.gpr.py:29
 msgid "Person Overview"
@@ -18269,7 +18268,7 @@ msgstr "Personenübersicht"
 
 #: Overview/Overview.gpr.py:30
 msgid "Gramplet showing an overview of events for a person"
-msgstr "Gramplet zeigt eine Übersicht über Ereignisse für eine Person"
+msgstr "Gramplet zeigt eine Übersicht der Ereignisse für eine Person"
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
 msgid "Overview"
@@ -18285,24 +18284,25 @@ msgstr "Gramplet zeigt eine Übersicht über Ereignisse für eine Familie"
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
-msgstr "Gramplet zeigt die Beteiligten eines Ereignis"
+msgstr "Gramplet, zeigt die Beteiligten an einem Ereignis"
 
 #: Participants/Participants.py:75
 msgid "Double-click on a row to edit the selected participant."
-msgstr "Doppelklick auf eine Zeile um den gewählten Beteiligten zu bearbeiten."
+msgstr ""
+"Doppelklicke auf eine Zeile, um den ausgewählten Beteiligten zu bearbeiten."
 
 #: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
-msgstr "Ahnentafelgrafik"
+msgstr "Ahnentafeldiagramm"
 
 #: PedigreeChart/PedigreeChart.gpr.py:26
 msgid "Alternate version of the traditional pedigree chart."
-msgstr "Alternative Version zur traditionellen Ahnentafelgrafik."
+msgstr "Alternative Version der traditionellen Ahnentafel."
 
 #: PedigreeChart/PedigreeChart.py:379
 #, python-format
 msgid "Pedigree Chart for %s"
-msgstr "Ahnentafelgrafik für %s"
+msgstr "Ahnentafeldiagramm für %s"
 
 #: PedigreeChart/PedigreeChart.py:528
 #, python-format
@@ -18311,19 +18311,19 @@ msgstr "Seite %d"
 
 #: PedigreeChart/PedigreeChart.py:640
 msgid "Show Mother/Father captions"
-msgstr "Zeige Mutter/Vater-Überschriften"
+msgstr "Beschriftungen für Mutter/Vater anzeigen"
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
-msgstr "Zeige den Titel von Mutter oder Vater neben jedem Ahnenkästchen."
+msgstr "Zeigee den Titel von Mutter oder Vater neben jedem Vorfahrenfeld an."
 
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
-msgstr "Der Basisstil, der für die Titelanzeige verwendet wird."
+msgstr "Der für die Titelanzeige verwendete Grundstil."
 
 #: PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
-msgstr "Der Stil der für Etiketten und Überschriften verwendet wird"
+msgstr "Stil für Beschriftungen und Bildunterschriften"
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -18466,11 +18466,11 @@ msgstr "Keine Quelleninformation gefunden"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
 msgid "Photo Tagging"
-msgstr "Foto markieren"
+msgstr "Fotoetikettierung"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
 msgid "Gramplet for tagging people in photos"
-msgstr "Gramplet zum markieren von Personen auf Fotos"
+msgstr "Gramplet zum Kennzeichnen von Personen auf Fotos"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
@@ -18478,9 +18478,7 @@ msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Replace existing references to the person being assigned without asking"
-msgstr ""
-"Ersetze existierende Referenzen zu der Person die ohne Nachfragen zugeordnet "
-"wurden"
+msgstr "Bestehende Verweise auf die zuweisende Person ersetzen, ohne zu fragen"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:141
 msgid "Face detection"
@@ -18488,11 +18486,11 @@ msgstr "Gesichtserkennung"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
 msgid "Minimum face width (px)"
-msgstr "Minimale Gesichtshöhe (Pkt)"
+msgstr "Minimale Gesichtsbreite (px)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:146
 msgid "Minimum face height (px)"
-msgstr "Minimale Gesichtshöhe (Pkt)"
+msgstr "Mindestgesichtshöhe (px)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:149
 msgid "Detect faces inside existing boxes"
@@ -18500,7 +18498,7 @@ msgstr "Gesichter innerhalb bestehender Boxen erkennen"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
 msgid "Sensitivity (1 min .. 20 max)"
-msgstr "Empfindlichkeit (1 min … 20 max)"
+msgstr "Empfindlichkeit (1 min .. 20 max)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:291
 msgid "Add Person"
@@ -18528,11 +18526,11 @@ msgstr "Verkleinern"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:299
 msgid "Detect faces"
-msgstr "Erkannte Gesichter"
+msgstr "Gesichter erkennen"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:301
 msgid "Detect faces (OpenCV module required)"
-msgstr "Entdeckt Gesichter (OpenCV Modul benötigt)"
+msgstr "Gesichter erkennen (OpenCV-Modul erforderlich)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
 msgid "XMP Region Name"
@@ -18540,7 +18538,7 @@ msgstr "XMP-Regionsname"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
-msgstr "Als aktive Person wählen"
+msgstr "Als aktive Person festlegen"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:97
 msgid "_Select"
@@ -18549,11 +18547,11 @@ msgstr "_Auswählen"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
 #, python-brace-format
 msgid "Replace to {0}"
-msgstr "Ersetze nach {0}"
+msgstr "Ersetzen durch {0}"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
 msgid "Detecting faces..."
-msgstr "Suche nach Gesichtern …"
+msgstr "Gesichter erkennen..."
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
 msgid "Detection finished"
@@ -18562,7 +18560,7 @@ msgstr "Erkennung abgeschlossen"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:955
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
-msgstr "Eine andere Region dieses Bildes ist mit {name}. verknüpft. Entfernen?"
+msgstr "Ein anderer Bereich dieses Bildes ist mit {name} verknüpft. Entfernen?"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:958
 #, python-brace-format
@@ -18574,17 +18572,17 @@ msgstr ""
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1110
 #, python-format
 msgid "Male person|Dead at %s"
-msgstr "Tod am %s"
+msgstr "Gestorben am %s"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1112
 #, python-format
 msgid "Female person|Dead at %s"
-msgstr "Tod am %s"
+msgstr "Gestorben am %s"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1114
 #, python-format
 msgid "Unknown gender person|Dead at %s"
-msgstr "Tod am %s"
+msgstr "Gestorben am %s"
 
 #: PhpGedView/phpgedview.glade:12
 msgid "- default -"
@@ -19079,23 +19077,23 @@ msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
-msgstr "OrteVervollständigung"
+msgstr "OrtVervollständigung"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
 msgstr ""
-"Liefert eine durchsuchbare Liste ausgewählter Orte mit der Möglichkeit die "
-"Attributefelder zu vervollständigen/Syntaxanalyse/setzen."
+"Bietet eine durchsuchbare Liste ausgewählter Orte mit der Möglichkeit, die "
+"Attributfelder zu vervollständigen/zu analysieren/festzulegen."
 
 #: PlaceCompletion/PlaceCompletion.py:95
 msgid ""
 "Place Completion by parsing, file lookup and batch setting of place "
 "attributes"
 msgstr ""
-"Ortsvervollständigung durch Syntaxanalyse, nachsehen in Datei und setzen der "
-"Ortsattribute"
+"Ortsvervollständigung durch Analysieren, Dateisuche und Stapeleinstellung "
+"von Ortsattributen"
 
 #: PlaceCompletion/PlaceCompletion.py:258
 msgid "Error in PlaceCompletion.py"
@@ -19103,20 +19101,20 @@ msgstr "Fehler in PlaceCompletion.py"
 
 #: PlaceCompletion/PlaceCompletion.py:259
 msgid "Non existing group used in get"
-msgstr "Keine existierende Gruppe verwendet in holen"
+msgstr "Nicht vorhandene Gruppe in get verwendet"
 
 #: PlaceCompletion/PlaceCompletion.py:282
 #, python-format
 msgid "PlaceCompletion is unable to create %s %s"
-msgstr "OrteVervollständigung kann %s %s nicht erstellen"
+msgstr "OrtVervollständigung kann %s %s nicht erstellen"
 
 #: PlaceCompletion/PlaceCompletion.py:340
 msgid "Places tool"
-msgstr "Ortswerkzeug"
+msgstr "Ortewerkzeug"
 
 #: PlaceCompletion/PlaceCompletion.py:408
 msgid "Missing regex groups in match lat/lon"
-msgstr "Fehlender regulärer Ausdruck in passende Breite/Länge"
+msgstr "Fehlende reguläre Ausdrücke-Gruppen in Übereinstimmung Breite/Länge"
 
 #: PlaceCompletion/PlaceCompletion.py:409
 #, python-format
@@ -19124,11 +19122,13 @@ msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
 msgstr ""
 "Regulärer Ausdruck Gruppen %(lat)s und %(lon)s müssen in Länge/Breite "
-"Gegenstück vorhanden sein. Ende"
+"Gegenstück vorhanden sein. Abbruch"
 
 #: PlaceCompletion/PlaceCompletion.py:419
 msgid "Non valid regex for match lat/lon"
-msgstr "Keine gültiger Regulärer Ausdruck für Länge/Breite"
+msgstr ""
+"Ungültiger regulärer Ausdruck für die Übereinstimmung von Breiten- und "
+"Längengrad"
 
 #: PlaceCompletion/PlaceCompletion.py:420
 msgid "Non valid regular expression given to find lat/lon. Quiting."
