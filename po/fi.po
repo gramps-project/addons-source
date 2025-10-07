@@ -26,7 +26,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
 "PO-Revision-Date: 2025-09-08 20:02+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -16506,11 +16506,11 @@ msgstr "Perheen muoto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:79
 msgid "The shape of the families can be varied."
-msgstr ""
+msgstr "Perheiden muoto voi vaihdella."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:80
 msgid "Rectangular"
-msgstr ""
+msgstr "Suorakulmainen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:81
 msgid "Softer"
