@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-08-16 05:47+0000\n"
+"PO-Revision-Date: 2025-09-13 09:49+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -5717,7 +5717,7 @@ msgstr "Beroep bijsluiten"
 
 #: FamilyTree/FamilyTree.py:1097
 msgid "Include Residence"
-msgstr "Woonplaats bijsluiten"
+msgstr "Verblijfplaats bijvoegen"
 
 #: FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
@@ -6270,7 +6270,7 @@ msgstr "1. Namen van huisgenoten"
 
 #: Form/form_ca.xml.h:13
 msgid "2. Profession, Trade or Occupation"
-msgstr "2. Broodwinning, handel of beroep"
+msgstr "2. Beroep, vak of bezigheid"
 
 #: Form/form_ca.xml.h:14 Form/form_ca.xml.h:220 Form/form_ca.xml.h:316
 #: Form/form_ca.xml.h:370 Form/form_ca.xml.h:419 Form/form_ca.xml.h:480
@@ -6289,7 +6289,7 @@ msgstr "4. Religie"
 
 #: Form/form_ca.xml.h:19
 msgid "5. Residence if Outside of Limits"
-msgstr "5. Verblijf indien buiten de limieten"
+msgstr "5. Verblijfplaats indien buiten stadsgrenzen"
 
 #: Form/form_ca.xml.h:21
 msgid "6. Age at Next Birthday"
@@ -6305,7 +6305,7 @@ msgstr "7. Geslacht: man"
 
 #: Form/form_ca.xml.h:24
 msgid "SexFemale"
-msgstr "GeslachtVrouw"
+msgstr "Geslacht vrouw"
 
 #: Form/form_ca.xml.h:25
 msgid "8. Sex: Female"
@@ -6498,7 +6498,8 @@ msgstr "Huizen"
 msgid ""
 "31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
 msgstr ""
-"31. Huizen: baksteen, steen, lijst, blokhut, barak of andere soorten woningen"
+"31. Huizen: baksteen, steen, skelet, blokhut, barak of andere "
+"verblijfplaatsen"
 
 #: Form/form_ca.xml.h:72 Form/form_ca.xml.h:280
 msgid "HousesStories"
@@ -6834,7 +6835,7 @@ msgstr "32. Hop Kg."
 
 #: Form/form_ca.xml.h:162
 msgid "HayQty"
-msgstr "Hooi"
+msgstr "Hooistapel"
 
 #: Form/form_ca.xml.h:163
 msgid "33. Hay, Bundles or Tons"
@@ -7024,7 +7025,7 @@ msgstr "56. Opmerkingen"
 
 #: Form/form_ca.xml.h:219
 msgid "2. Profession, trade or occupation"
-msgstr "2. Broodwinning, handel of beroep"
+msgstr "2. Beroep, vak of bezigheid"
 
 #: Form/form_ca.xml.h:222
 msgid "Married1851"
@@ -7040,7 +7041,7 @@ msgstr "5. Religie"
 
 #: Form/form_ca.xml.h:227
 msgid "6. Residence, if out of limits"
-msgstr "6. Woonplaats, indien buiten de limieten"
+msgstr "6. Verblijfplaats, indien buiten de stadsgrenzen"
 
 #: Form/form_ca.xml.h:229
 msgid "7. Age next Birthday"
@@ -7052,7 +7053,7 @@ msgstr "8. Geslacht: man"
 
 #: Form/form_ca.xml.h:232
 msgid "SexFemail"
-msgstr "GeslachtVrouw"
+msgstr "Geslacht vrouw"
 
 #: Form/form_ca.xml.h:233
 msgid "9. Sex:Female"
@@ -8171,7 +8172,7 @@ msgstr "10. Locatie: sectie"
 
 #: Form/form_ca.xml.h:645
 msgid "11. Location: Township"
-msgstr "11. Locatie: gemeente"
+msgstr "11. Plaats: gemeente"
 
 #: Form/form_ca.xml.h:647
 msgid "12. Location: Range"
@@ -8356,7 +8357,7 @@ msgstr "40. Gek of krankzinnig"
 #: Form/form_us.xml.h:1121 Form/form_us.xml.h:1216 Form/form_us.xml.h:1864
 #: Form/form_us.xml.h:2073
 msgid "Idiotic"
-msgstr "Idioot"
+msgstr "Zwakzinnig"
 
 #: Form/form_ca.xml.h:752
 msgid "41. Idiotic or silly"
@@ -8460,7 +8461,7 @@ msgstr "4. Militaire dienst"
 
 #: Form/form_ca.xml.h:813
 msgid "5. Place of Habitation: Township"
-msgstr "5. Woonplaats: gehucht"
+msgstr "5. Woonplaats: gemeente"
 
 #: Form/form_ca.xml.h:815
 msgid "6. Place of Habitation: Range"
@@ -8695,7 +8696,7 @@ msgstr "Beroep"
 #: Form/form_dk.xml.h:220 Form/form_dk.xml.h:241 Form/form_dk.xml.h:269
 #: Form/form_dk.xml.h:304 Form/form_dk.xml.h:326
 msgid "Trossamfund"
-msgstr "Religieus"
+msgstr "Geloofsgemeenschap"
 
 #: Form/form_dk.xml.h:167 Form/form_dk.xml.h:190
 msgid "Sted"
@@ -8751,7 +8752,7 @@ msgstr "Geboortedatum"
 
 #: Form/form_dk.xml.h:264 Form/form_dk.xml.h:299 Form/form_dk.xml.h:375
 msgid "Years at current residence"
-msgstr "Jaren in huidige residentie"
+msgstr "Jaren in huidige woonlpaats"
 
 #: Form/form_dk.xml.h:265 Form/form_dk.xml.h:300 Form/form_dk.xml.h:376
 msgid "År tilflyttet"
@@ -8805,7 +8806,7 @@ msgstr "Welk jaar woonde in de parochie"
 
 #: Form/form_dk.xml.h:329
 msgid "Previous Residence"
-msgstr "Vorige residentie"
+msgstr "Vorige woonplaats"
 
 #: Form/form_dk.xml.h:330
 msgid "Sidste bopæl inden tilflytning"
@@ -8980,7 +8981,7 @@ msgstr "Gebruikelijk adres"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
-msgstr "Stad of gemeente"
+msgstr "Stad of stadsdeel"
 
 #: Form/form_gb.xml.h:60 Form/form_gb.xml.h:69 Form/form_gb.xml.h:85
 msgid "Parish or Township"
@@ -9037,7 +9038,7 @@ msgstr "Of blind of doof en dom"
 
 #: Form/form_gb.xml.h:86 Form/form_gb.xml.h:104 Form/form_gb.xml.h:125
 msgid "City or Municipal Borough"
-msgstr "Stad of gemeente"
+msgstr "Stad of stadsdeel"
 
 #: Form/form_gb.xml.h:87 Form/form_gb.xml.h:105 Form/form_gb.xml.h:126
 #: Form/form_gb.xml.h:148 Form/form_gb.xml.h:277
@@ -9587,11 +9588,11 @@ msgstr "Of 1. doof en stom, 2. blind, 3. imbeciel of idioot 4. krankzinnig"
 
 #: Form/form_gb.xml.h:474
 msgid "School Board District"
-msgstr "Schoolbestuur district"
+msgstr "Schooldistrict"
 
 #: Form/form_gb.xml.h:502 Form/form_gb.xml.h:541
 msgid "School board District"
-msgstr "Schoolbestuur district"
+msgstr "Schooldistrict"
 
 #: Form/form_gb.xml.h:504 Form/form_gb.xml.h:543 Form/form_gb.xml.h:602
 msgid "Parliamentary Division"
@@ -9615,7 +9616,7 @@ msgstr "Gaelic of G. & E."
 
 #: Form/form_gb.xml.h:538
 msgid "Parish Ward"
-msgstr "Parochie"
+msgstr "Parochiewijk"
 
 #: Form/form_gb.xml.h:563
 msgid "Profession or Occupation"
@@ -11278,12 +11279,12 @@ msgstr "Naturalisatiepapieren verwijderd"
 #: Form/form_us.xml.h:633 Form/form_us.xml.h:733 Form/form_us.xml.h:768
 #: Form/form_us.xml.h:1619
 msgid "Able to read"
-msgstr "In staat om te lezen"
+msgstr "Kan lezen"
 
 #: Form/form_us.xml.h:634 Form/form_us.xml.h:734 Form/form_us.xml.h:769
 #: Form/form_us.xml.h:1620
 msgid "Able to write"
-msgstr "In staat om te schrijven"
+msgstr "Kan schrijven"
 
 #: Form/form_us.xml.h:635
 msgid "Able to speak English; if not, the language spoken"
@@ -11403,7 +11404,7 @@ msgstr "Maanden niet werkzaam"
 
 #: Form/form_us.xml.h:692 Form/form_us.xml.h:1086
 msgid "Attended school"
-msgstr "Ging naar school"
+msgstr "Schoolgaand"
 
 #: Form/form_us.xml.h:693 Form/form_us.xml.h:1320
 msgid "Can read"
@@ -11811,7 +11812,7 @@ msgstr "Bedrijf of industrie"
 
 #: Form/form_us.xml.h:926
 msgid "What kind of business or industry was he working in?"
-msgstr "In wat voor soort bedrijf of industrie werkte hij?"
+msgstr "In wat voor soort bedrijf of vakgebied werkte hij?"
 
 #: Form/form_us.xml.h:928
 msgid "Same house in Apr 1949?"
@@ -11988,7 +11989,7 @@ msgstr "Wat voor werk deed deze persoon in zijn laatste baan?"
 
 #: Form/form_us.xml.h:967
 msgid "What kind of business or industry did he work in?"
-msgstr "In wat voor soort bedrijf of industrie werkte hij?"
+msgstr "In wat voor soort bedrijf of vakgebied werkte hij?"
 
 #: Form/form_us.xml.h:968
 msgid "Class of worker [last job]"
@@ -12362,7 +12363,7 @@ msgstr "In of uit"
 
 #: Form/form_us.xml.h:1159
 msgid "White Males Under 10"
-msgstr "Witte mannen onder de 10"
+msgstr "Blanke mannen onder de 10"
 
 #: Form/form_us.xml.h:1160
 msgid "White Males 10 to 20"
@@ -12402,7 +12403,7 @@ msgstr "Witte mannen ouder dan 90"
 
 #: Form/form_us.xml.h:1169
 msgid "White Females Under 10"
-msgstr "Witte vrouwen onder de 10"
+msgstr "Blanke vrouwen onder de 10"
 
 #: Form/form_us.xml.h:1170
 msgid "White Females 10 to 20"
@@ -12626,7 +12627,7 @@ msgstr "Stad van"
 
 #: Form/form_us.xml.h:1247 Form/form_us.xml.h:1275 Form/form_us.xml.h:1876
 msgid "Township of"
-msgstr "Township van"
+msgstr "Stadsdeel van"
 
 #: Form/form_us.xml.h:1253
 msgid "Street and Number"
@@ -12789,11 +12790,11 @@ msgstr "Kaart nr."
 
 #: Form/form_us.xml.h:1316
 msgid "P.O. Address"
-msgstr "P.O. Adres"
+msgstr "Postbus"
 
 #: Form/form_us.xml.h:1317
 msgid "P. O. Address"
-msgstr "P.O. Adres"
+msgstr "Postbus"
 
 #: Form/form_us.xml.h:1321
 msgid "Can you read?"
@@ -12857,7 +12858,7 @@ msgstr "Hoeveel belasting op uw huis of boerderij?"
 
 #: Form/form_us.xml.h:1340
 msgid "If foreign born, are you naturalized"
-msgstr "Als in het buitenland geboren, bent u genaturaliseerd"
+msgstr "Als u in het buitenland geboren bent, bent u dan genaturaliseerd"
 
 #: Form/form_us.xml.h:1341
 msgid "If you are foreign born, are you naturalized?"
@@ -13116,7 +13117,7 @@ msgstr "Huis in eigendom of gehuurd"
 
 #: Form/form_us.xml.h:1433
 msgid "Home Owned Free or Mortgaged"
-msgstr "Eigen huis gratis of hypotheek"
+msgstr "Huis in eigendom of onder hypotheek"
 
 #: Form/form_us.xml.h:1434
 msgid "Home Value"
@@ -13176,11 +13177,11 @@ msgstr "Maanden op school in 1924"
 
 #: Form/form_us.xml.h:1450
 msgid "Able to Read"
-msgstr "In staat om te lezen"
+msgstr "Kan lezen"
 
 #: Form/form_us.xml.h:1451
 msgid "Able to Write"
-msgstr "In staat om te schrijven"
+msgstr "Kan schrijven"
 
 #: Form/form_us.xml.h:1454
 msgid "Father's Place of Birth"
@@ -13421,7 +13422,7 @@ msgstr "Gevangenis waarin opgesloten als krijgsgevangene"
 
 #: Form/form_us.xml.h:1558 Form/form_us.xml.h:1580 Form/form_us.xml.h:1606
 msgid "Home owned free or mortgaged"
-msgstr "Eigen huis gratis of hypotheek"
+msgstr "Huis in eigendom of onder hypotheek"
 
 #: Form/form_us.xml.h:1564 Form/form_us.xml.h:1586 Form/form_us.xml.h:1612
 msgid "Where from to Kansas"
@@ -13478,19 +13479,19 @@ msgstr "Diende in het federale leger tijdens rebellie"
 
 #: Form/form_us.xml.h:1658 Form/form_us.xml.h:1689
 msgid "Residence in State - Years"
-msgstr "Woonplaats in staat - jaren"
+msgstr "Woonachtig in staat - jaren"
 
 #: Form/form_us.xml.h:1659 Form/form_us.xml.h:1690
 msgid "Residence in State - Months"
-msgstr "Woonplaats in staat - maanden"
+msgstr "Woonachtig in staat - maanden"
 
 #: Form/form_us.xml.h:1660
 msgid "Residence in District - Years"
-msgstr "Woonplaats in district - jaren"
+msgstr "Woonachtig in district - jaren"
 
 #: Form/form_us.xml.h:1661
 msgid "Residence in District - Months"
-msgstr "Woonplaats in district - maanden"
+msgstr "Woonachtig in district - maanden"
 
 #: Form/form_us.xml.h:1663 Form/form_us.xml.h:2339
 msgid "Months Employed"
@@ -13510,11 +13511,11 @@ msgstr "Buitenlandse moeder"
 
 #: Form/form_us.xml.h:1669
 msgid "Organized Township"
-msgstr "Georganiseerde township"
+msgstr "Formeel stadsdeel"
 
 #: Form/form_us.xml.h:1670
 msgid "Unorganized Township"
-msgstr "Ongeorganiseerde township"
+msgstr "Informeel stadsdeel"
 
 #: Form/form_us.xml.h:1671
 msgid "Name of Village"
@@ -13554,11 +13555,11 @@ msgstr "Moeder's geboorteplaats"
 
 #: Form/form_us.xml.h:1691
 msgid "Residence in District - years"
-msgstr "Woonplaats in district - jaren"
+msgstr "Woonachtig in district - jaren"
 
 #: Form/form_us.xml.h:1692
 msgid "Residence in District - months"
-msgstr "Woonplaats in district - maanden"
+msgstr "Woonachtig in district - maanden"
 
 #: Form/form_us.xml.h:1694
 msgid "Army service"
@@ -13977,7 +13978,7 @@ msgstr "Klas"
 
 #: Form/form_us.xml.h:1974 Form/form_us.xml.h:1993 Form/form_us.xml.h:2014
 msgid "Inmate: Residence given when admitted"
-msgstr "Gedetineerde: verblijfplaats gegeven bij opname"
+msgstr "Gedetineerde: verblijfplaats gegeven bij arrestatie"
 
 #: Form/form_us.xml.h:1975 Form/form_us.xml.h:1996
 msgid "Inhabitants of Block No."
@@ -14209,7 +14210,7 @@ msgstr "Jaren in S.D."
 
 #: Form/form_us.xml.h:2131 Form/form_us.xml.h:2169 Form/form_us.xml.h:2207
 msgid "Division"
-msgstr "Onderafdeling"
+msgstr "Afdeling"
 
 #: Form/form_us.xml.h:2228
 msgid "Male under 21"
@@ -14238,12 +14239,12 @@ msgstr "Gezinshoofden"
 #: Form/form_us.xml.h:2237 Form/form_us.xml.h:2249 Form/form_us.xml.h:2261
 #: Form/form_us.xml.h:2273 Form/form_us.xml.h:2302
 msgid "White males"
-msgstr "Witte vrouwen"
+msgstr "Blanke mannen"
 
 #: Form/form_us.xml.h:2238 Form/form_us.xml.h:2250 Form/form_us.xml.h:2262
 #: Form/form_us.xml.h:2274 Form/form_us.xml.h:2303
 msgid "White females"
-msgstr "Witte vrouwen"
+msgstr "Blanke vrouwen"
 
 #: Form/form_us.xml.h:2239 Form/form_us.xml.h:2251 Form/form_us.xml.h:2263
 #: Form/form_us.xml.h:2275 Form/form_us.xml.h:2304
@@ -14374,7 +14375,7 @@ msgstr "Moeder (meisjesnaam)"
 
 #: Form/form_us.xml.h:2382
 msgid "Residence of Parents"
-msgstr "Residentie van ouders"
+msgstr "Woonplaats van ouders"
 
 #: Form/form_us.xml.h:2383
 msgid "By Whom Reported"
@@ -14462,7 +14463,7 @@ msgstr "Begraafdatum"
 
 #: Form/form_us.xml.h:2478
 msgid "Residence Place"
-msgstr "Residentie locatie"
+msgstr "Woonplaats"
 
 #: Form/form_us.xml.h:2480
 msgid "Burial Date"
@@ -14606,7 +14607,7 @@ msgstr "Bestelnummer"
 
 #: Form/form_us.xml.h:2552
 msgid "Place of Residence"
-msgstr "Residentie locatie"
+msgstr "Woonplaats"
 
 #: Form/form_us.xml.h:2553
 msgid "Mailing Address"
