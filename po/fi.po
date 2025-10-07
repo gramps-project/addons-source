@@ -25,8 +25,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-09-03 21:58+0000\n"
-"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
+"PO-Revision-Date: 2025-09-08 20:02+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 5.14-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -1626,7 +1626,7 @@ msgstr " Kartta henkilöstä "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
-msgstr ""
+msgstr "Chr"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
@@ -6162,7 +6162,7 @@ msgstr "6. Ikä seuraavana syntymäpäivänä"
 
 #: Form/form_ca.xml.h:22 Form/form_ca.xml.h:230
 msgid "SexMale"
-msgstr ""
+msgstr "Miespuolinen"
 
 #: Form/form_ca.xml.h:23
 msgid "7. Sex: Male"
@@ -6170,7 +6170,7 @@ msgstr "7. Sukupuoli: Mies"
 
 #: Form/form_ca.xml.h:24
 msgid "SexFemale"
-msgstr ""
+msgstr "Naispuolinen"
 
 #: Form/form_ca.xml.h:25
 msgid "8. Sex: Female"
@@ -15615,47 +15615,47 @@ msgstr "Hakemistoa ei ole olemassa."
 
 #: Heatmap/heatmap.py:210
 msgid "Invalid filename."
-msgstr ""
+msgstr "Kelvoton tiedostonimi."
 
 #: Heatmap/utils.py:55
 msgid "Stamen Terrain"
-msgstr ""
+msgstr "Stamen-maastokartta"
 
 #: Heatmap/utils.py:58
 msgid "Stamen Terrain (Background only)"
-msgstr ""
+msgstr "Stamen Terrain (vain taustana)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
-msgstr ""
+msgstr "Stamen-väritys"
 
 #: Heatmap/utils.py:64
 msgid "Stamen Watercolor"
-msgstr ""
+msgstr "Stamen-akvarelli"
 
 #: Heatmap/utils.py:67
 msgid "CartoDB Positron"
-msgstr ""
+msgstr "CartoDB Positron"
 
 #: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
-msgstr ""
+msgstr "CartoDB DarkMatter"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
-msgstr ""
+msgstr "Historiallinen yhteys"
 
 #: HistContext/HistContext.gpr.py:5
 msgid "Lists relevant historical events during the lifetime of a Person"
-msgstr ""
+msgstr "Näytä tärkeät historialliset tapahtumat henkilön elinaikana"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
-msgstr ""
+msgstr "Piilotetaan rivit, joiden tekstisarake alkaa tällä tekstillä "
 
 #: HistContext/HistContext.py:126
 msgid "Use filter "
-msgstr ""
+msgstr "Käytä suodinta "
 
 #: HistContext/HistContext.py:129
 msgid "Show outside life span "
@@ -15667,19 +15667,19 @@ msgstr "Käytä koko päivämääriä"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
-msgstr ""
+msgstr "Kohteiden edustaväri elinkaaren sisällä"
 
 #: HistContext/HistContext.py:138
 msgid "Background color items in lifespan"
-msgstr ""
+msgstr "Kohteiden taustaväri elinkaaren sisällä"
 
 #: HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
-msgstr ""
+msgstr "Kohteiden edustaväri elinkaaren ulkopuolella"
 
 #: HistContext/HistContext.py:144
 msgid "Background color items outside lifespan"
-msgstr ""
+msgstr "Kohteiden taustaväri elinkaaren ulkopuolella"
 
 #: HistContext/HistContext.py:149
 msgid "Select from files"
@@ -15687,52 +15687,53 @@ msgstr "Valitse tiedostoista"
 
 #: HistContext/HistContext.py:287
 msgid "Invalid date "
-msgstr ""
+msgstr "Virheellinen päivämäärä "
 
 #: HistContext/HistContext.py:288
 msgid " in line: "
-msgstr ""
+msgstr " rivillä: "
 
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
 msgid "Error:"
-msgstr ""
+msgstr "Virhe:"
 
 #: HistContext/HistContext.py:327
 msgid ": line does not contain four sections separated by semicolons in : \""
-msgstr ""
+msgstr ": rivi ei sisällä neljää puolipisteillä erotettua osaa kohdassa: \""
 
 #: HistContext/HistContext.py:419
 msgid "Cannot open URL: "
-msgstr ""
+msgstr "URL-osoitetta ei voi avata: "
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
-msgstr ""
+msgstr "Seuraa linkkiä kaksoisnapsauttamalla riviä"
 
 #: HouseTimelineGramplet/housetimeline.gpr.py:4
 #: HouseTimelineGramplet/housetimeline.gpr.py:15
 msgid "House Timeline"
-msgstr ""
+msgstr "Talon aikajana"
 
 #: HouseTimelineGramplet/housetimeline.gpr.py:5
 msgid "Lists the Residents of an Address by Timeline"
-msgstr ""
+msgstr "Näytä osoitteen asukkaat aikajanalla"
 
 #: HouseTimelineGramplet/housetimeline.py:51
 #: HouseTimelineGramplet/housetimeline.py:58
 msgid "House Icon Style"
-msgstr ""
+msgstr "Talokuvakkeen tyyli"
 
 #: HouseTimelineGramplet/housetimeline.py:61
 msgid "Unicode"
-msgstr ""
+msgstr "Unicode"
 
 #: HouseTimelineGramplet/housetimeline.py:90
 msgid ""
 "There are no individuals with Address data. Please add Address data to "
 "people."
 msgstr ""
+"Kenelläkään henkilöllä ei ole osoitetietoja. Lisää osoitetiedot henkilöihin."
 
 #: HouseTimelineGramplet/housetimeline.py:129
 msgid "Time In Family"
@@ -15740,15 +15741,15 @@ msgstr "Aika perheessä"
 
 #: HouseTimelineGramplet/housetimeline.py:130
 msgid "First Resident"
-msgstr ""
+msgstr "Ensimäinen asukas"
 
 #: HouseTimelineGramplet/housetimeline.py:131
 msgid "Last Resident"
-msgstr ""
+msgstr "Viimeinen asukas"
 
 #: HouseTimelineGramplet/housetimeline.py:134
 msgid "Total Known Residents"
-msgstr ""
+msgstr "Tunnettuja asukkaita yhteensä"
 
 #: HtmlView/htmlview.gpr.py:31
 msgid "Html View"
@@ -15864,12 +15865,17 @@ msgid ""
 "Copy the files to a correct directory or change the media path in the "
 "Preferences."
 msgstr ""
+"Avatun tiedoston mediapolku %s on ristiriidassa tuomasi sukupuun mediapolun "
+"kanssa. Alkuperäinen mediapolku on säilytetty. Kopioi tiedostot oikeaan "
+"hakemistoon tai muuta mediapolkua asetuksissa."
 
 #: ImportGramplet/ImportGramplet.py:172
 msgid ""
 "Enter text to import and then click\n"
 "the Import button at bottom"
 msgstr ""
+"Kirjoita tuotava teksti ja napsauta sitten\n"
+"alareunan Tuo-painiketta"
 
 #: ImportGramplet/ImportGramplet.py:198
 msgid "_Import"
@@ -15881,11 +15887,11 @@ msgstr "Tuotu"
 
 #: ImportGramplet/ImportGramplet.py:228
 msgid "Importing Text..."
-msgstr ""
+msgstr "Tekstiä tuodaan..."
 
 #: ImportGramplet/ImportGramplet.py:259
 msgid "Can't determine type of import"
-msgstr ""
+msgstr "Tuonnin tyyppiä ei voi tunnistaa"
 
 #: ImportMerge/importmerge.glade:8
 msgid ""
@@ -16147,11 +16153,11 @@ msgstr "Tuo ja yhdistä"
 
 #: JSON/JSON.gpr.py:4
 msgid "JSON Export"
-msgstr ""
+msgstr "JSON-vienti"
 
 #: JSON/JSON.gpr.py:5
 msgid "This is a JSON export"
-msgstr ""
+msgstr "Tämä on JSON-vienti"
 
 #: JSON/JSON.gpr.py:12
 msgid "JSON options"
@@ -16164,7 +16170,7 @@ msgstr "JSON-tuonti"
 
 #: JSON/JSON.gpr.py:21
 msgid "This is a JSON import"
-msgstr ""
+msgstr "Tämä on JSON-tuonti"
 
 # tuotu
 #: JSON/JSONImport.py:56
@@ -16254,23 +16260,23 @@ msgstr "Normaalissa tekstissä käytetty tyyli"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
-msgstr ""
+msgstr "Väännä kaavion muotoa"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:11
 msgid "The overall shape of the chart can be warped."
-msgstr ""
+msgstr "Kaavion yleinen muoto voi vääristyä."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:12
 msgid "Normal grid shape"
-msgstr ""
+msgstr "Normaali ruudukon muoto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:13
 msgid "Sine shape"
-msgstr ""
+msgstr "Sinimuoto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:14
 msgid "Triangular shape"
-msgstr ""
+msgstr "Kolmiomuoto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:15
 msgid "Show photos"
@@ -16406,7 +16412,7 @@ msgstr "Syntymätiedon tekstin tasaus."
 #: LifeLineChartView/_dummy_translation_string_po.py:45
 #: LifeLineChartView/_dummy_translation_string_po.py:65
 msgid "Center"
-msgstr ""
+msgstr "Keskitä"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:48
 msgid "Show death label"
@@ -16468,7 +16474,7 @@ msgstr "Näytä avioliittotieto"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:69
 msgid "Activate the marriage label."
-msgstr ""
+msgstr "Aktivoi avioliittoteksti."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:70
 msgid "Fade individual color"
@@ -16476,7 +16482,7 @@ msgstr "Yksittäisen värin häivytys"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:71
 msgid "The color of the individuals is faded to black with increasing age."
-msgstr ""
+msgstr "Yksilöiden väri haalistuu mustaksi iän myötä."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
 msgid "Font name"
@@ -16484,7 +16490,7 @@ msgstr "Fontin nimi"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:73
 msgid "Name of the font family used for labels."
-msgstr ""
+msgstr "Tekstikentissä käytetyn fonttiperheen nimi."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:75
 msgid "Relative font size"
@@ -16492,7 +16498,7 @@ msgstr "Suhteellinen fonttikoko"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:76
 msgid "The font size is given relatively to the line thickness."
-msgstr ""
+msgstr "Kirjasinkoko on annettu suhteessa viivan paksuuteen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
 msgid "Family shape"
@@ -21249,7 +21255,7 @@ msgstr "Avioliiton solmimispäivä:"
 
 #: SourceIndex/marriage.glade:149
 msgid "p.contract:"
-msgstr ""
+msgstr "sopimuspaikka:"
 
 #: SourceIndex/marriage.glade:167
 msgid "places banns:"
