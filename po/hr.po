@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -17238,18 +17238,6 @@ msgstr "Mrežni dijagram"
 msgid "Generates a family network chart."
 msgstr "Generira mrežni dijagram obitelji."
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr "r."
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr "u."
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr "vj."
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr "Datoteka već postoji. Želiš li je prepisati?"
@@ -19418,7 +19406,7 @@ msgid "Migrating %s objects..."
 msgstr "Migriraju se %s objekta …"
 
 #: PostgreSQLEnhanced/migration.py:193
-#, python-brace-format, python-format
+#, python-format, python-brace-format
 msgid "Migrated %s {obj_type} objects"
 msgstr "%s objekta vrste {obj_type} su migrirani"
 
@@ -19478,8 +19466,8 @@ msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
-"psycopg3 verzija %(installed)s je pre stara. Potrebna je verzija %(required)"
-"s ili novija."
+"psycopg3 verzija %(installed)s je pre stara. Potrebna je verzija "
+"%(required)s ili novija."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:211
 msgid "Database Backend"
@@ -19649,9 +19637,8 @@ msgid ""
 "org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
 "work</i>:\n"
 msgstr ""
-"<i>Potrebni preduvjeti za rad sljedećih <a href="
-"\"https://gramps-project.org/wiki/index.php?title=Third-party_Addons\""
-">dodataka trećih strana</a></i>.\n"
+"<i>Potrebni preduvjeti za rad sljedećih <a href=\"https://gramps-project.org/"
+"wiki/index.php?title=Third-party_Addons\">dodataka trećih strana</a></i>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
@@ -19710,12 +19697,12 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href="
-"\"https://gramps-project.org/wiki/index.php?title=How_to_make_a_backup\""
-">Sigurnosna kopija u Gramps XML</a>U novijim verzijama Gramps-a u izborniku "
-"odaberi „Rodoslov”, zatim „Izradi zaštitnu kopiju ...”., inače koristi "
-"opciju „Izvezi …” u istom izborniku, ali deaktiviraj opcije privatnosti u „"
-"Pomoćniku za izvoz” kako bi se izvezli svi podaci.</i>\n"
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Sigurnosna kopija u Gramps XML</a>U novijim "
+"verzijama Gramps-a u izborniku odaberi „Rodoslov”, zatim „Izradi zaštitnu "
+"kopiju ...”., inače koristi opciju „Izvezi …” u istom izborniku, ali "
+"deaktiviraj opcije privatnosti u „Pomoćniku za izvoz” kako bi se izvezli svi "
+"podaci.</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
@@ -19933,9 +19920,8 @@ msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
-"Za dodatak „Mrežni dijagram”, font <a href="
-"\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> daje "
-"izuzetno čitljiv rezultat.\n"
+"Za dodatak „Mrežni dijagram”, font <a href=\"https://www.fontsquirrel.com/"
+"fonts/white-rabbit\">White Rabbit</a> daje izuzetno čitljiv rezultat.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
@@ -20023,9 +20009,10 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=Gramps_5.0_Wiki_Manual_-_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE."
-"2C_LC_TIME\">Postavke jezika:</a></b></u>\n"
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Postavke jezika:</"
+"a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
@@ -24004,6 +23991,15 @@ msgstr "Prikaži stupce"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Prikaži ikone"
+
+#~ msgid "birth abbreviation|b."
+#~ msgstr "r."
+
+#~ msgid "death abbreviation|d."
+#~ msgstr "u."
+
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "vj."
 
 #~ msgid "Invalid latitude (syntax: 18°9'"
 #~ msgstr "Neispravna zemljopisna širina (sintaksa: 18°9'"

@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-09-11 10:02+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -17181,18 +17181,6 @@ msgstr "Nettikaavio"
 msgid "Generates a family network chart."
 msgstr "Tuottaa perheiden nettikaavion."
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr "s."
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr "kuolinajan lyhenne|k."
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr "∞"
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr "Tiedosto on jo olemassa. Korvataanko?"
@@ -17809,8 +17797,8 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Vasemmassa ruudussa valitut muistiinpanot näkyvät tässä ruudussa siivottuna."
-"\n"
+"Vasemmassa ruudussa valitut muistiinpanot näkyvät tässä ruudussa "
+"siivottuna.\n"
 "Voit tässä tehdä muutoksia ja käyttää yllä olevan työkalupalkin "
 "tyylisäätimiä."
 
@@ -19343,7 +19331,7 @@ msgid "Migrating %s objects..."
 msgstr "Siirretään %s objektia..."
 
 #: PostgreSQLEnhanced/migration.py:193
-#, python-brace-format, python-format
+#, python-format, python-brace-format
 msgid "Migrated %s {obj_type} objects"
 msgstr "Siirretty %s {obj_type} objektia"
 
@@ -19475,10 +19463,9 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
-"Diagnostinen Gramplet, joka auttaa arvioimaan, onko <a href="
-"\"https://gramps-project.org/\">Grampsissa</a> kaikki <a href="
-"\"https://github.com/gramps-project/gramps/blob/master/README.md\""
-">tarpeellinen</a> asennettu.\n"
+"Diagnostinen Gramplet, joka auttaa arvioimaan, onko <a href=\"https://gramps-"
+"project.org/\">Grampsissa</a> kaikki <a href=\"https://github.com/gramps-"
+"project/gramps/blob/master/README.md\">tarpeellinen</a> asennettu.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
@@ -19573,9 +19560,9 @@ msgid ""
 "org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
 "work</i>:\n"
 msgstr ""
-"<i>Seuraavien <a href="
-"\"https://gramps-project.org/wiki/index.php?title=Third-party_Addons\""
-">kolmannen osapuolen lisäosien</a> toiminnan edellytykset</i>:\n"
+"<i>Seuraavien <a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Third-party_Addons\">kolmannen osapuolen lisäosien</a> toiminnan "
+"edellytykset</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
@@ -19634,13 +19621,12 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href="
-"\"https://gramps-project.org/wiki/index.php?title=How_to_make_a_backup\""
-">Varmuuskopiointi Gramps XML:ään</a> Löydät \"Tee varmuuskopio...\" -"
-"vaihtoehdon uudempien Gramps-versioiden Sukupuu-valikosta. Muussa "
-"tapauksessa käytä \"Vie...\" -vaihtoehtoa samassa valikossa, mutta poista "
-"yksityisyysasetusten valinta vientiavustajassa kaikkien tietojen "
-"viemiseksi.</i>\n"
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Varmuuskopiointi Gramps XML:ään</a> Löydät "
+"\"Tee varmuuskopio...\" -vaihtoehdon uudempien Gramps-versioiden Sukupuu-"
+"valikosta. Muussa tapauksessa käytä \"Vie...\" -vaihtoehtoa samassa "
+"valikossa, mutta poista yksityisyysasetusten valinta vientiavustajassa "
+"kaikkien tietojen viemiseksi.</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
@@ -19859,9 +19845,8 @@ msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
-"Networkchart-lisäosalle <a href="
-"\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> -fontti "
-"tarjoaa erittäin luettavan tuloksen.\n"
+"Networkchart-lisäosalle <a href=\"https://www.fontsquirrel.com/fonts/white-"
+"rabbit\">White Rabbit</a> -fontti tarjoaa erittäin luettavan tuloksen.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
@@ -19949,9 +19934,10 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=Gramps_5.0_Wiki_Manual_-_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE."
-"2C_LC_TIME\">Kieliasetukset:</a></b></u>\n"
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Kieliasetukset:</"
+"a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
@@ -21756,32 +21742,32 @@ msgstr "Lajittele nousevaan järjestykseen?"
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
 msgid "February"
 msgstr ""
-"N=helmikuu|G=helmikuun|IN=helmikuussa|P=helmikuuta|IL=helmikuuhun|E=helmikuusta"
-""
+"N=helmikuu|G=helmikuun|IN=helmikuussa|P=helmikuuta|IL=helmikuuhun|"
+"E=helmikuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
 msgid "January"
 msgstr ""
-"N=tammikuu|G=tammikuun|IN=tammikuussa|P=tammikuuta|IL=tammikuuhun|E=tammikuusta"
-""
+"N=tammikuu|G=tammikuun|IN=tammikuussa|P=tammikuuta|IL=tammikuuhun|"
+"E=tammikuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
 msgid "March"
 msgstr ""
-"N=maaliskuu|G=maaliskuun|IN=maaliskuussa|P=maaliskuuta|IL=maaliskuuhun|E=maaliskuusta"
-""
+"N=maaliskuu|G=maaliskuun|IN=maaliskuussa|P=maaliskuuta|IL=maaliskuuhun|"
+"E=maaliskuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "April"
 msgstr ""
-"N=huhtikuu|G=huhtikuun|IN=huhtikuussa|P=huhtikuuta|IL=huhtikuuhun|E=huhtikuusta"
-""
+"N=huhtikuu|G=huhtikuun|IN=huhtikuussa|P=huhtikuuta|IL=huhtikuuhun|"
+"E=huhtikuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "July"
 msgstr ""
-"N=heinäkuu|G=heinäkuun|IN=heinäkuussa|P=heinäkuuta|IL=heinäkuuhun|E=heinäkuusta"
-""
+"N=heinäkuu|G=heinäkuun|IN=heinäkuussa|P=heinäkuuta|IL=heinäkuuhun|"
+"E=heinäkuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "June"
@@ -21791,8 +21777,8 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:128
 msgid "May"
 msgstr ""
-"N=toukokuu|G=toukokuun|IN=toukokuussa|P=toukokuuta|IL=toukokuuhun|E=toukokuusta"
-""
+"N=toukokuu|G=toukokuun|IN=toukokuussa|P=toukokuuta|IL=toukokuuhun|"
+"E=toukokuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:129
 msgid "August"
@@ -21811,14 +21797,14 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:130
 msgid "December"
 msgstr ""
-"N=joulukuu|G=joulukuun|IN=joulukuussa|P=joulukuuta|IL=joulukuuhun|E=joulukuusta"
-""
+"N=joulukuu|G=joulukuun|IN=joulukuussa|P=joulukuuta|IL=joulukuuhun|"
+"E=joulukuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:130
 msgid "November"
 msgstr ""
-"N=marraskuu|G=marraskuun|IN=marraskuussa|P=marraskuuta|IL=marraskuuhun|E=marraskuusta"
-""
+"N=marraskuu|G=marraskuun|IN=marraskuussa|P=marraskuuta|IL=marraskuuhun|"
+"E=marraskuusta"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:247
 msgid "Person Name"
@@ -23925,6 +23911,15 @@ msgstr "Näytä sarakkeet"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Näytä kuvakkeet"
+
+#~ msgid "birth abbreviation|b."
+#~ msgstr "s."
+
+#~ msgid "death abbreviation|d."
+#~ msgstr "kuolinajan lyhenne|k."
+
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "∞"
 
 #~ msgid "Invalid latitude (syntax: 18°9'"
 #~ msgstr "Kelvoton leveysaste (muotoa: 18°9'"

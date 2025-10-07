@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-09-11 10:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
@@ -17527,18 +17527,6 @@ msgstr "Netzwerkdiagramm"
 msgid "Generates a family network chart."
 msgstr "Erzeugt ein Familiennetzwerkdiagramm."
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr "geb."
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr "gest."
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr "verh."
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr "Datei existiert. Überschreiben?"
@@ -19722,7 +19710,7 @@ msgid "Migrating %s objects..."
 msgstr "Migrieren von %s Objekten..."
 
 #: PostgreSQLEnhanced/migration.py:193
-#, python-brace-format, python-format
+#, python-format, python-brace-format
 msgid "Migrated %s {obj_type} objects"
 msgstr "%s {obj_type} Objekte migriert"
 
@@ -19833,7 +19821,8 @@ msgstr "Erweiterte Abfragen erfordern JSONB-Unterstützung"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1206
 msgid "Full-text search requires JSONB support or search capabilities"
-msgstr "Die Volltextsuche erfordert JSONB-Unterstützung oder Suchfunktionalität"
+msgstr ""
+"Die Volltextsuche erfordert JSONB-Unterstützung oder Suchfunktionalität"
 
 #: PostgreSQLEnhanced/queries.py:364
 msgid "pg_trgm extension required for duplicate detection"
@@ -24318,6 +24307,15 @@ msgstr "Spalten anzeigen"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Symbole anzeigen"
+
+#~ msgid "birth abbreviation|b."
+#~ msgstr "geb."
+
+#~ msgid "death abbreviation|d."
+#~ msgstr "gest."
+
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "verh."
 
 #~ msgid "Invalid latitude (syntax: 18°9'"
 #~ msgstr "Ungültiger Breitengrad (Syntax: 18°9'"

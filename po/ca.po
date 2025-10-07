@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
@@ -17124,18 +17124,6 @@ msgstr ""
 msgid "Generates a family network chart."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr "abreviatura de naixement|n."
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr "abreviatura de mort|d."
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr "abreviatura de matrimoni|m."
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr ""
@@ -23656,6 +23644,15 @@ msgstr ""
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr ""
+
+#~ msgid "birth abbreviation|b."
+#~ msgstr "abreviatura de naixement|n."
+
+#~ msgid "death abbreviation|d."
+#~ msgstr "abreviatura de mort|d."
+
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "abreviatura de matrimoni|m."
 
 #, fuzzy
 #~ msgid "Invalid latitude (syntax: 18°9'"

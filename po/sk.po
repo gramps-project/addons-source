@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-09-05 10:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
@@ -17123,18 +17123,6 @@ msgstr ""
 msgid "Generates a family network chart."
 msgstr "Vygeneruje diagram rodinnej siete."
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr "skratka pre narodenie|n."
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr "skratka pre smrť|z."
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr "skratka pre manželstvo|m."
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr ""
@@ -19256,7 +19244,7 @@ msgid "Migrating %s objects..."
 msgstr "Migrovanie %s objektov..."
 
 #: PostgreSQLEnhanced/migration.py:193
-#, python-brace-format, python-format
+#, python-format, python-brace-format
 msgid "Migrated %s {obj_type} objects"
 msgstr "Premigrované %s {obj_type} objektov"
 
@@ -23806,6 +23794,15 @@ msgstr "Zobraziť stĺpce"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Zobraziť ikony"
+
+#~ msgid "birth abbreviation|b."
+#~ msgstr "skratka pre narodenie|n."
+
+#~ msgid "death abbreviation|d."
+#~ msgstr "skratka pre smrť|z."
+
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "skratka pre manželstvo|m."
 
 #~ msgid "Invalid latitude (syntax: 18°9'"
 #~ msgstr "Neplatná zemepisná šírka (syntax: 18°9'"

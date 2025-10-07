@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-09-01 17:02+0000\n"
 "Last-Translator: Rasmus Cornelius Nielsen <rcn70@outlook.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
@@ -17245,18 +17245,6 @@ msgstr "Netværksdiagram"
 msgid "Generates a family network chart."
 msgstr "Danner et familie netværksdiagram."
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr "f."
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr "d."
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr "g."
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr "Filen findes. Overskriv?"
@@ -24103,6 +24091,15 @@ msgstr "Vis alt"
 #| msgid "Display mode"
 msgid "Display Icons"
 msgstr "Visningstilstand"
+
+#~ msgid "birth abbreviation|b."
+#~ msgstr "f."
+
+#~ msgid "death abbreviation|d."
+#~ msgstr "d."
+
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "g."
 
 #~ msgid "Invalid latitude (syntax: 18°9'"
 #~ msgstr "Ugyldig breddegrad (syntaks: 18°9'"

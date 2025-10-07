@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-09-12 11:02+0000\n"
 "Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
@@ -2117,8 +2117,9 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Generuje stronę WWW (HTML) z graficzną reprezentacją przodków/potomków (SVG)"
-", gdzie szczegóły dotyczące osób stają się widoczne przy zdarzeniach myszy."
+"Generuje stronę WWW (HTML) z graficzną reprezentacją przodków/potomków "
+"(SVG), gdzie szczegóły dotyczące osób stają się widoczne przy zdarzeniach "
+"myszy."
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -2682,7 +2683,8 @@ msgstr "małż. zobacz %(reference)s : %(spouse)s"
 #: DescendantBooks/DescendantBookReport.py:249
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
-msgstr "zobacz raport: %(report)s, ref: %(reference)s : %(person)s i %(spouse)s"
+msgstr ""
+"zobacz raport: %(report)s, ref: %(reference)s : %(person)s i %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:374
 msgid "Descendants Report"
@@ -3919,7 +3921,8 @@ msgstr "Niemożliwa konwersja \"%(path)s\" na ścieżkę względną."
 #: DynamicWeb/dynamicweb.py:2353
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
-msgstr "Konfiguracja stron jest nieprawidłowa: kilka stron ma tę samą zawartość"
+msgstr ""
+"Konfiguracja stron jest nieprawidłowa: kilka stron ma tę samą zawartość"
 
 #: DynamicWeb/dynamicweb.py:2368
 msgid "DynWeb|Home"
@@ -16141,7 +16144,8 @@ msgstr "Narzędzie importu i scalania"
 msgid ""
 "Compares a Gramps XML database with the current one, and allows merging of "
 "the differences."
-msgstr "Porównuje bazę danych XML Gramps z bieżącą i umożliwia scalanie różnic."
+msgstr ""
+"Porównuje bazę danych XML Gramps z bieżącą i umożliwia scalanie różnic."
 
 #: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
@@ -16751,7 +16755,8 @@ msgstr ""
 msgid ""
 "if this number of generations has been reached, the algorithm doesn't go any "
 "deeper"
-msgstr "jeśli ta liczba pokoleń zostanie osiągnięta, algorytm nie idzie głębiej"
+msgstr ""
+"jeśli ta liczba pokoleń zostanie osiągnięta, algorytm nie idzie głębiej"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:103
 msgid "Fathers have the same color"
@@ -17241,8 +17246,8 @@ msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
 msgstr ""
-"Ścieżka multimediów nie została ustawiona. Musisz ustawić "
-"\"Ścieżkę bazową dla względnych ścieżek multimediów\" w Preferencjach."
+"Ścieżka multimediów nie została ustawiona. Musisz ustawić \"Ścieżkę bazową "
+"dla względnych ścieżek multimediów\" w Preferencjach."
 
 #: MediaVerify/MediaVerify.py:307
 #, fuzzy
@@ -17303,24 +17308,6 @@ msgstr ""
 #: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
 msgstr ""
-
-#: NetworkChart/NetworkChart.py:133
-#, fuzzy
-#| msgid "abbreviation"
-msgid "birth abbreviation|b."
-msgstr "skrót"
-
-#: NetworkChart/NetworkChart.py:134
-#, fuzzy
-#| msgid "abbreviation"
-msgid "death abbreviation|d."
-msgstr "skrót"
-
-#: NetworkChart/NetworkChart.py:135
-#, fuzzy
-#| msgid "abbreviation"
-msgid "marriage abbreviation|m."
-msgstr "skrót"
 
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
@@ -24047,6 +24034,21 @@ msgstr "Typ wyświetlania"
 #| msgid "Display type"
 msgid "Display Icons"
 msgstr "Typ wyświetlania"
+
+#, fuzzy
+#~| msgid "abbreviation"
+#~ msgid "birth abbreviation|b."
+#~ msgstr "skrót"
+
+#, fuzzy
+#~| msgid "abbreviation"
+#~ msgid "death abbreviation|d."
+#~ msgstr "skrót"
+
+#, fuzzy
+#~| msgid "abbreviation"
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "skrót"
 
 #, fuzzy
 #~ msgid "Invalid latitude (syntax: 18°9'"

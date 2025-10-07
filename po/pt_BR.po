@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -17408,18 +17408,6 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:244

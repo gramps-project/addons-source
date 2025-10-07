@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -17480,18 +17480,6 @@ msgstr "Сетевой график"
 msgid "Generates a family network chart."
 msgstr "Создаёт семейный график в виде сети."
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr "р."
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr "у."
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr "св."
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr "Файл существует. Перезаписать?"
@@ -24499,6 +24487,15 @@ msgstr "Режим отображения"
 #| msgid "Display mode"
 msgid "Display Icons"
 msgstr "Режим отображения"
+
+#~ msgid "birth abbreviation|b."
+#~ msgstr "р."
+
+#~ msgid "death abbreviation|d."
+#~ msgstr "у."
+
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "св."
 
 #, fuzzy
 #~| msgid "Invalid latitude (syntax: 18\\u00b09'"

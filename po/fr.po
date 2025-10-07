@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-09-10 08:03+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
@@ -17462,18 +17462,6 @@ msgstr "Graphique réseau"
 msgid "Generates a family network chart."
 msgstr "Génère un graphique du réseau familial."
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr "n."
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr "d."
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr "m."
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr "Le fichier existe. L'écraser ?"
@@ -19644,7 +19632,7 @@ msgid "Migrating %s objects..."
 msgstr "Migration de %s objets…"
 
 #: PostgreSQLEnhanced/migration.py:193
-#, python-brace-format, python-format
+#, python-format, python-brace-format
 msgid "Migrated %s {obj_type} objects"
 msgstr "%s objets migrés…"
 
@@ -23541,7 +23529,8 @@ msgstr "#### Chemin des fichiers CSV"
 #: info_panel.py:197
 #, python-format
 msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr "- **Dossier système :** `{dir|%s}` – contient les fichiers CSV internes"
+msgstr ""
+"- **Dossier système :** `{dir|%s}` – contient les fichiers CSV internes"
 
 #: info_panel.py:201
 #, python-format
@@ -24203,6 +24192,15 @@ msgstr "Afficher les colonnes"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Afficher les icônes"
+
+#~ msgid "birth abbreviation|b."
+#~ msgstr "n."
+
+#~ msgid "death abbreviation|d."
+#~ msgstr "d."
+
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "m."
 
 # trunk
 #~ msgid "Invalid latitude (syntax: 18°9'"
