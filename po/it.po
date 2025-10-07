@@ -67,8 +67,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 11:06-0700\n"
-"PO-Revision-Date: 2025-09-12 11:02+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-09-12 17:22+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -199,15 +199,15 @@ msgstr "Lo stile usato per il titolo della pagina."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr "Controlla dati di Associazione"
+msgstr "Controlla dati delle associazioni"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
-msgstr ""
+msgstr "Verifica i dati delle associazioni per gli individui."
 
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
-msgstr ""
+msgstr "Strumento per lo stato delle associazioni"
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
@@ -380,7 +380,7 @@ msgstr "Tutte le persone ne hanno già uno."
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
-msgstr "Beta What's Next"
+msgstr "Che c'è da fare (versione beta)"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:49
 msgid "Beta Gramplet suggesting items to research"
@@ -414,7 +414,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:52
 msgid " create a New (or to select an existing) Tree database.\n"
-msgstr " crea un Nuovo(o scegli un esistente) Albero.\n"
+msgstr " crea un database nuovo albero (o scegli uno esistente).\n"
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
@@ -3600,7 +3600,7 @@ msgstr "%(type)s: %(value)s"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1177
 msgid "Include TODO notes"
-msgstr "Include le note sulle cose da fare"
+msgstr "Includere le note sulle cose da fare"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1178
 msgid "Whether to include TODO notes."
@@ -14276,15 +14276,15 @@ msgstr "Carta (A, B, o C)"
 
 #: Form/form_us.xml.h:2521
 msgid "Serial No."
-msgstr "N. di serie"
+msgstr "Num. di serie"
 
 #: Form/form_us.xml.h:2522
 msgid "Registration No."
-msgstr "N. di registrazione"
+msgstr "Num. di registrazione"
 
 #: Form/form_us.xml.h:2523
 msgid "Order No."
-msgstr "N. ordine"
+msgstr "Num. ordine"
 
 #: Form/form_us.xml.h:2525
 msgid "Age in yrs."
@@ -22632,19 +22632,21 @@ msgstr ""
 
 #: WebSearch.py:609
 msgid "AI provider is disabled"
-msgstr ""
+msgstr "Il fornitore di IA è disabilitato"
 
 #: WebSearch.py:613
 msgid "No AI API key provided"
-msgstr ""
+msgstr "Nessuna chiave API per IA fornita"
 
 #: WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
-msgstr ""
+msgstr "I dati storici di luoghi generati da IA sono attualmente disabilitati"
 
 #: WebSearch.py:629
 msgid "AI provider is unknown. Please check your AI provider settings."
 msgstr ""
+"Il fornitore di IA è sconosciuto. Verificare le impostazioni del fornitore "
+"di IA."
 
 #: WebSearch.py:649
 msgid "⏳ Generating historical place data, please wait..."
@@ -22671,10 +22673,8 @@ msgid "Add link to attribute"
 msgstr "Aggiunge nota"
 
 #: WebSearch.py:1530
-#, fuzzy
-#| msgid "in %(place)s"
 msgid "Show QR-code"
-msgstr "in %(place)s"
+msgstr "Mostra codice QR"
 
 #: WebSearch.py:1532
 msgid "Copy link to clipboard"
@@ -22698,7 +22698,7 @@ msgstr ""
 
 #: WebSearch.py:1549
 msgid "🔍 AI Suggestions"
-msgstr ""
+msgstr "🔍 Suggerimenti tramite IA"
 
 #: WebSearch.py:1769
 msgid "Attribute no longer exists. The extra icon is removed"
@@ -22975,7 +22975,7 @@ msgstr ""
 
 #: info_panel.py:133
 msgid "Without it, QR code generation will not work."
-msgstr ""
+msgstr "Senza di essa, la generazione del codice QR non funziona."
 
 #: info_panel.py:136
 msgid "💡 Usually installed with: `pip install qrcode[pil]`"
@@ -22994,11 +22994,15 @@ msgstr ""
 #: info_panel.py:149
 msgid "ℹ️ This library is required for accessing OpenAI-based features."
 msgstr ""
+"ℹ️ Questa libreria è richiesta per accedere le funzionalità che si basano su "
+"OpenAI."
 
 #: info_panel.py:153
 msgid ""
 "Without it, AI-generated site suggestions and place history will be disabled."
 msgstr ""
+"Senza di essa, i suggerimenti del sito e la storia dei luoghi generati "
+"tramite IA saranno disabilitati."
 
 #: info_panel.py:158
 msgid "💡 Usually installed with: `pip install openai`"
@@ -23139,7 +23143,7 @@ msgstr ""
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr "Per favore controlla gli spazi in \"%s\""
+msgstr "Controlla gli spazi in \"%s\""
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 msgid "Space character on filename"
@@ -23337,7 +23341,7 @@ msgstr "Manca python3 lxml"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
-msgstr "Per favore, prova a installare il pacchetto \"python3 lxml\"."
+msgstr "Prova a installare il pacchetto \"python3 lxml\"."
 
 #: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
@@ -23417,7 +23421,7 @@ msgid ""
 msgstr ""
 "Non è un file .gramps valido.\n"
 "Non è possibile eseguire il gramplet...\n"
-"Per favore, prova a usare un file .gramps\n"
+"Prova a usare un file .gramps\n"
 "generato da Gramps 4.x."
 
 #: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
@@ -23451,7 +23455,7 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:504
 msgid " note(s)"
-msgstr " note"
+msgstr " nota/e"
 
 #: lxml/lxmlGramplet.py:505
 msgid " source(s)"
@@ -23464,12 +23468,13 @@ msgstr "Gallery.html"
 #: lxml/lxmlGramplet.py:522
 #, python-format
 msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. E' stato generato un indice dei media in \"%(file)s\".\n"
+msgstr ""
+"2. È stato generato un indice degli oggetti multimediali in \"%(file)s\".\n"
 
 #: lxml/lxmlGramplet.py:525
 #, python-format
 msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr ""
+msgstr "3. Sono state scritte delle voci in \"%(file)s\".\n"
 
 #: lxml/lxmlGramplet.py:544
 msgid "Matches XSD schema."
@@ -23514,7 +23519,7 @@ msgstr "Portogallo"
 #: lxml/lxmlGramplet.py:695
 #, python-format
 msgid "1. Has generated \"%s\".\n"
-msgstr "1. E' stato generato \"%s\".\n"
+msgstr "1. È stato generato \"%s\".\n"
 
 #: lxml/lxmlGramplet.py:696
 #, python-format
@@ -23549,7 +23554,7 @@ msgstr "Storia amministrativa"
 
 #: markdown_place_history_formatter.py:62
 msgid "Data provided to AI:"
-msgstr "Dati forniti all'AI:"
+msgstr "Dati forniti all'IA:"
 
 #: markdown_place_history_formatter.py:64
 msgid "Full hierarchy"
@@ -23577,7 +23582,7 @@ msgstr ""
 
 #: qr_window.py:88
 msgid "QR-code"
-msgstr "QR-code"
+msgstr "Codice QR"
 
 #: qr_window.py:119 qr_window.py:122
 msgid "⚠ Missing dependency \"qrcode\""
@@ -23588,7 +23593,7 @@ msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
 msgstr ""
-"⚠ Errore generando il QR code:\n"
+"⚠ Errore durante la generazione del codice QR:\n"
 "Errore originale: “{}”"
 
 #: settings_ui_manager.py:112
@@ -23629,7 +23634,7 @@ msgstr "Sostituzione prefisso URL"
 
 #: settings_ui_manager.py:157
 msgid "AI Provider"
-msgstr "Provider AI"
+msgstr "Fornitore di IA"
 
 #: settings_ui_manager.py:162
 msgid "(Disabled)"
@@ -23645,7 +23650,7 @@ msgstr "Mistral AI"
 
 #: settings_ui_manager.py:171
 msgid "OpenAI API Key"
-msgstr ""
+msgstr "Chiave API di OpenAI"
 
 #: settings_ui_manager.py:176
 msgid "OpenAI Model"
@@ -23669,19 +23674,19 @@ msgstr ""
 
 #: settings_ui_manager.py:201
 msgid "Show Links From the Notes"
-msgstr "Mostra collegamenti dalle Note"
+msgstr "Mostra collegamenti dalle note"
 
 #: settings_ui_manager.py:209
 msgid "Enable AI-generated historical place data"
-msgstr ""
+msgstr "Abilita dati storici dei luoghi generati da IA"
 
 #: settings_ui_manager.py:215
 msgid "Custom country code for AI notes (optional)"
-msgstr ""
+msgstr "Codice della nazione personalizzato per note via IA (opzionale)"
 
 #: settings_ui_manager.py:244
 msgid "Enable CSV Files"
-msgstr "Abilita files CSV"
+msgstr "Abilita file CSV"
 
 #: settings_ui_manager.py:251
 msgid "Display Columns"
