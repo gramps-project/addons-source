@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2025-09-30 08:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -11159,7 +11159,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:651
 msgid "Regiment/Vessel"
-msgstr ""
+msgstr "Pluk/Plavidlo"
 
 #: Form/form_us.xml.h:652 Form/form_us.xml.h:1011
 #, fuzzy
@@ -15507,39 +15507,41 @@ msgstr "Pridávanie značiek k rodine (%s)"
 #: GraphView/graphview.py:4669
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
-msgstr ""
+msgstr "Vymazanie osoby [%s] ju odstráni z databázy."
 
 #: GraphView/graphview.py:4698
 #, python-format
 msgid "Delete family [%s]?"
-msgstr ""
+msgstr "Vymazať rodinu [%s]?"
 
 #: GraphView/graphview.py:4699
 msgid "Deleting the family will remove it from the database."
-msgstr ""
+msgstr "Vymazanie rodiny ju odstráni z databázy."
 
 #: GraphView/graphview.py:4710
 #, python-format
 msgid "Delete Family [%s]"
-msgstr ""
+msgstr "Vymazať rodinu [%s]"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
-msgstr ""
+msgstr "Osoby z aktuálneho grafu"
 
 #: GraphView/search_widget.py:83
 msgid "Other persons from database"
-msgstr ""
+msgstr "Ostatné osoby z databázy"
 
 #: GraphView/search_widget.py:235
 msgid "No persons found..."
-msgstr ""
+msgstr "Žiadne osoby nenájdené..."
 
 #: GraphView/search_widget.py:398
 msgid ""
 "Search people in the current visible graph and database.\n"
 "Use <Ctrl+F> to make search entry active."
 msgstr ""
+"Vyhľadajte osoby v aktuálne viditeľnom grafe a databáze.\n"
+"Pomocou <Ctrl+F> aktivujte položku vyhľadávania."
 
 #: GraphView/search_widget.py:400 PluginManager\PluginManager.py:169
 #: SearchGramplet/SearchGramplet.py:391
@@ -15553,7 +15555,7 @@ msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
 msgid "Partners"
-msgstr ""
+msgstr "Partneri"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
@@ -15574,7 +15576,7 @@ msgstr "Vytvorte webovú správu s teplotnou mapou."
 
 #: Heatmap/heatmap.py:85
 msgid "Map tiles"
-msgstr ""
+msgstr "Dlaždice mapy"
 
 #: Heatmap/heatmap.py:90
 msgid ""
@@ -15595,6 +15597,10 @@ msgid ""
 "has to start and end with an alphanumeric character.The file extention '."
 "html' is added by the report."
 msgstr ""
+"Pre názov súboru sú povolené len anglické písmená A-Z, a-z a čísla 0-9, ako "
+"aj znaky medzera, podčiarkovník a pomlčka. Názov súboru sa tiež musí začínať "
+"a končiť alfanumerickým znakom. Prípona súboru \".html\" sa pridáva pri "
+"správe."
 
 #: Heatmap/heatmap.py:103
 msgid "File name"
@@ -15602,22 +15608,26 @@ msgstr "Názov súboru"
 
 #: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
-msgstr ""
+msgstr "Povoliť vlastnú počiatočnú polohu"
 
 #: Heatmap/heatmap.py:119
 msgid ""
 "Enabling will force the map open at your custom start position and zoom."
 msgstr ""
+"Povolenie vynúti otvorenie mapy na vašej vlastnej počiatočnej polohe a "
+"úrovni priblíženia."
 
 #: Heatmap/heatmap.py:124
 msgid "Start latitude"
-msgstr ""
+msgstr "Počiatočná zemepisná šírka"
 
 #: Heatmap/heatmap.py:126
 msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
 msgstr ""
+"Nastavte vlastnú počiatočnú polohu zemepisnej šírky\n"
+"Predvolené nastavenie: 50.0"
 
 #: Heatmap/heatmap.py:129
 msgid "Start longitude"
@@ -15628,16 +15638,20 @@ msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
 msgstr ""
+"Nastavte vlastnú počiatočnú polohu zemepisnej dĺžky\n"
+"Predvolené nastavenie: 10.0"
 
 #: Heatmap/heatmap.py:134
 msgid "Start zoom"
-msgstr ""
+msgstr "Počiatočné priblíženie"
 
 #: Heatmap/heatmap.py:136
 msgid ""
 "Set the value for the starting zoom\n"
 "Default: 5"
 msgstr ""
+"Nastavte hodnotu pre počiatočné priblíženie.\n"
+"Predvolené nastavenie: 5"
 
 #: Heatmap/heatmap.py:209
 msgid "Path does not exist."
@@ -15649,27 +15663,27 @@ msgstr "Neplatný súborový názov."
 
 #: Heatmap/utils.py:55
 msgid "Stamen Terrain"
-msgstr ""
+msgstr "Stamen Terrain"
 
 #: Heatmap/utils.py:58
 msgid "Stamen Terrain (Background only)"
-msgstr ""
+msgstr "Stamen Terrain (iba pozadie)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
-msgstr ""
+msgstr "Stamen Toner"
 
 #: Heatmap/utils.py:64
 msgid "Stamen Watercolor"
-msgstr ""
+msgstr "Stamen Watercolor"
 
 #: Heatmap/utils.py:67
 msgid "CartoDB Positron"
-msgstr ""
+msgstr "CartoDB Positron"
 
 #: Heatmap/utils.py:70
 msgid "CartoDB DarkMatter"
-msgstr ""
+msgstr "CartoDB DarkMatter"
 
 #: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
@@ -15681,11 +15695,11 @@ msgstr "Uvádza relevantné historické udalosti počas života osoby"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
-msgstr ""
+msgstr "Riadky začínajúce týmto v textovom stĺpci budú skryté "
 
 #: HistContext/HistContext.py:126
 msgid "Use filter "
-msgstr ""
+msgstr "Použiť filter "
 
 #: HistContext/HistContext.py:129
 msgid "Show outside life span "
@@ -15717,28 +15731,28 @@ msgstr "Vybrať zo súborov"
 
 #: HistContext/HistContext.py:287
 msgid "Invalid date "
-msgstr ""
+msgstr "Neplatný dátum "
 
 #: HistContext/HistContext.py:288
 msgid " in line: "
-msgstr ""
+msgstr " v riadku: "
 
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
 msgid "Error:"
-msgstr ""
+msgstr "Chyba:"
 
 #: HistContext/HistContext.py:327
 msgid ": line does not contain four sections separated by semicolons in : \""
-msgstr ""
+msgstr ": riadok neobsahuje štyri časti oddelené bodkočiarkami v : \""
 
 #: HistContext/HistContext.py:419
 msgid "Cannot open URL: "
-msgstr ""
+msgstr "URL adresa sa nedá otvoriť: "
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
-msgstr ""
+msgstr "Dvojkliknutím na riadok prejsť na odkaz"
 
 #: HouseTimelineGramplet/housetimeline.gpr.py:4
 #: HouseTimelineGramplet/housetimeline.gpr.py:15
@@ -15752,17 +15766,19 @@ msgstr "Uvádza obyvateľov na adrese podľa časovej osi"
 #: HouseTimelineGramplet/housetimeline.py:51
 #: HouseTimelineGramplet/housetimeline.py:58
 msgid "House Icon Style"
-msgstr ""
+msgstr "Štýl ikony domu"
 
 #: HouseTimelineGramplet/housetimeline.py:61
 msgid "Unicode"
-msgstr ""
+msgstr "Unicode"
 
 #: HouseTimelineGramplet/housetimeline.py:90
 msgid ""
 "There are no individuals with Address data. Please add Address data to "
 "people."
 msgstr ""
+"Neexistujú žiadne osoby s údajmi o adrese. Prosím, pridajte údaje o adrese k "
+"osobám."
 
 #: HouseTimelineGramplet/housetimeline.py:129
 msgid "Time In Family"
@@ -15770,15 +15786,15 @@ msgstr "Čas v rodine"
 
 #: HouseTimelineGramplet/housetimeline.py:130
 msgid "First Resident"
-msgstr ""
+msgstr "Prvý obyvateľ"
 
 #: HouseTimelineGramplet/housetimeline.py:131
 msgid "Last Resident"
-msgstr ""
+msgstr "Posledný obyvateľ"
 
 #: HouseTimelineGramplet/housetimeline.py:134
 msgid "Total Known Residents"
-msgstr ""
+msgstr "Celkový počet známych obyvateľov"
 
 #: HtmlView/htmlview.gpr.py:31
 msgid "Html View"
@@ -16174,7 +16190,7 @@ msgstr "Toto je import vo formáte JSON"
 
 #: JSON/JSONImport.py:56
 msgid "JSON import"
-msgstr ""
+msgstr "importovať JSON"
 
 #: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
@@ -16182,7 +16198,7 @@ msgstr "Uvádza posledných desať záznamov osôb, ktoré boli zmenené"
 
 #: LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
-msgstr ""
+msgstr "Posledné zmeny"
 
 #: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
 #: LastChange/LastChangeReport.py:113
@@ -16203,7 +16219,7 @@ msgstr "Musíte vybrať aspoň jeden typ záznamu."
 
 #: LastChange/LastChangeReport.py:180
 msgid "People Changed"
-msgstr ""
+msgstr "Zmenené osoby"
 
 #: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
 #: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
@@ -16223,11 +16239,11 @@ msgstr "Priezvisko rodiny"
 #: LastChange/LastChangeReport.py:215
 #, python-format
 msgid "%s and %s"
-msgstr ""
+msgstr "%s a %s"
 
 #: LastChange/LastChangeReport.py:228
 msgid "Events Changed"
-msgstr ""
+msgstr "Zmenené udalosti"
 
 #: LastChange/LastChangeReport.py:251
 msgid "Places Changed"
@@ -16247,7 +16263,7 @@ msgstr "Zmenené poznámky"
 
 #: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
-msgstr ""
+msgstr "Zmenené citácie"
 
 #: LastChange/LastChangeReport.py:344
 msgid "Select From"
