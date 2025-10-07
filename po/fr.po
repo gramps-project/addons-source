@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-09-10 08:03+0000\n"
+"PO-Revision-Date: 2025-09-20 19:02+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -19634,7 +19634,7 @@ msgstr "Migration de %s objets…"
 #: PostgreSQLEnhanced/migration.py:193
 #, python-format, python-brace-format
 msgid "Migrated %s {obj_type} objects"
-msgstr "%s objets migrés…"
+msgstr "%s objets {obj_type} migrés"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
