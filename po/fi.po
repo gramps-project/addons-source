@@ -25,8 +25,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-09-20 19:02+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-09-22 19:02+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -5935,7 +5935,7 @@ msgstr "Poimii henkilöt, joilla on useampia vanhempia"
 
 #: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
 msgid "People with <count> of <event>"
-msgstr "Ihmiset, joilla on <count> <event>-tapahtumaa"
+msgstr "Henkilöt, joilla on <lukumäärä> <tapahtumaa>"
 
 #: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
 msgid "Matches persons which have events of given type and number."
