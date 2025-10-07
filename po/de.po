@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-09-11 10:01+0000\n"
+"PO-Revision-Date: 2025-09-27 11:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -11381,7 +11381,7 @@ msgstr "Rang"
 #: Form/form_us.xml.h:2093 Form/form_us.xml.h:2129 Form/form_us.xml.h:2167
 #: Form/form_us.xml.h:2205 Form/form_us.xml.h:2587
 msgid "Company"
-msgstr "Kompanie"
+msgstr "Unternehmen"
 
 #: Form/form_us.xml.h:651
 msgid "Regiment/Vessel"
@@ -11510,7 +11510,7 @@ msgstr "Art der Branche"
 
 #: Form/form_us.xml.h:730
 msgid "Employer, employee or working on own account"
-msgstr "Arbeitgeber, Arbeitnehmer oder auf eigene Rechnung arbeiten"
+msgstr "Arbeitgeber, Arbeitnehmer oder Selbstständiger"
 
 #: Form/form_us.xml.h:731
 msgid "Out of work"
@@ -11558,7 +11558,7 @@ msgstr "Kann Englisch sprechen"
 
 #: Form/form_us.xml.h:779
 msgid "Employer, worker or working on own account"
-msgstr "Arbeitgeber, Arbeitnehmer oder auf eigene Rechnung arbeiten"
+msgstr "Arbeitgeber, Arbeitnehmer oder Selbstständiger"
 
 #: Form/form_us.xml.h:786 Form/form_us.xml.h:829
 msgid "Incorporated place"
@@ -12530,7 +12530,7 @@ msgstr "Wert der Produkte von Kohleminen"
 
 #: Form/form_us.xml.h:1187
 msgid "Pounds of Wool"
-msgstr "Pounds Wolle"
+msgstr "Pound Wolle"
 
 #: Form/form_us.xml.h:1188
 msgid "Number of Colleges"
@@ -12668,7 +12668,7 @@ msgstr "Pounds Käse"
 
 #: Form/form_us.xml.h:1240
 msgid "Pounds of wool"
-msgstr "Pounds Wolle"
+msgstr "Pound Wolle"
 
 #: Form/form_us.xml.h:1241
 msgid "Value of domestic manufactures"
@@ -12876,7 +12876,7 @@ msgstr "Geburtsort-Selbst"
 
 #: Form/form_us.xml.h:1329
 msgid "Place of birth, Self"
-msgstr "Geburtsort-Selbst"
+msgstr "Geburtsort,Selbst"
 
 #: Form/form_us.xml.h:1330
 msgid "Place of Birth-Mother"
@@ -13127,7 +13127,7 @@ msgstr "Militärdienst: Kompanie"
 
 #: Form/form_us.xml.h:1404
 msgid "Church Affiliation"
-msgstr "Kirchen Zugehörigkeit"
+msgstr "Kirchenzugehörigkeit"
 
 #: Form/form_us.xml.h:1405 Form/form_us.xml.h:2450 Form/form_us.xml.h:2473
 msgid "Father's Birthplace"
@@ -13177,7 +13177,7 @@ msgstr "Eigenheim oder gemietet"
 
 #: Form/form_us.xml.h:1433
 msgid "Home Owned Free or Mortgaged"
-msgstr "Eigenheim frei oder hypothekarisch belastet"
+msgstr "Eigenheim, frei oder mit Hypothek belastet"
 
 #: Form/form_us.xml.h:1434
 msgid "Home Value"
@@ -14226,7 +14226,7 @@ msgstr "Besitzen Sie Ihr Haus oder Farm"
 #: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
 #: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
-msgstr "Vorfahren"
+msgstr "Abstammung"
 
 #: Form/form_us.xml.h:2086 Form/form_us.xml.h:2123 Form/form_us.xml.h:2161
 #: Form/form_us.xml.h:2199
@@ -14659,7 +14659,7 @@ msgstr "Datum der Registrierung"
 
 #: Form/form_us.xml.h:2549
 msgid "Serial Number"
-msgstr "Seriennummer"
+msgstr "Laufende Nummer"
 
 #: Form/form_us.xml.h:2550
 msgid "Order Number"
@@ -14779,11 +14779,11 @@ msgstr "Formulare"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"
-msgstr "Formular wählen"
+msgstr "Formular auswählen"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
-msgstr "GEDCOM Export Erweiterungen (GED2)"
+msgstr "GEDCOM- Export-Erweiterungen (GED2)"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:33
 msgid "GEDCOM Extensions (GED2)"
@@ -14799,7 +14799,7 @@ msgstr "GEDCOM Erweiterungen Optionen"
 
 #: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
-msgstr "Mit Zeugen"
+msgstr "Zeugen aufnehmen"
 
 #: GedcomExtensions/GedcomExtensions.py:198
 #: RepositoriesReport/RepositoriesReportAlt.py:459
@@ -14817,7 +14817,7 @@ msgstr "Nicht ändern"
 
 #: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
-msgstr "Patronym nach Vorname hinzufügen"
+msgstr "Patronym nach Vornamen hinzufügen"
 
 #: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
@@ -15041,7 +15041,7 @@ msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1875
 msgid "Number of steps"
-msgstr "Zahl der Schritte"
+msgstr "Anzahl der Schritte"
 
 #: GeoTimeLines/GeoTimeLines.py:1883
 msgid "Type of steps"
@@ -15069,7 +15069,7 @@ msgstr "Beim Start der Karte Reiserouten anzeigen"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
-msgstr "Zeitticks in der Navigationsleiste beim Starten anzeigen"
+msgstr "Die Zeitangaben werden beim Start in der Navigationsleiste angezeigt"
 
 #: GeoTimeLines/GeoTimeLines.py:1974
 msgid "TimeLines Map options"
@@ -15175,15 +15175,17 @@ msgstr "Gramps-Web-Synchronisierung"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
-msgstr "Synchronisiert eine lokale Datenbank mit einer Gramps-Web-Instanz."
+msgstr "Synchronisiert eine lokale Datenbank mit einer Gramps-Webinstanz."
 
 #: GrampsWebSync/grampswebsync.py:264
 msgid "Your user does not have sufficient server permissions to use sync."
-msgstr "Dein Benutzer hat keine ausreichende Berechtigung, um Sync zu nutzen."
+msgstr ""
+"Dein Benutzer hat nicht die nötigen Server-Rechte, um die Synchronisierung "
+"zu nutzen."
 
 #: GrampsWebSync/grampswebsync.py:268
 msgid "Fetching remote data..."
-msgstr "Lade Daten vom Server herunter..."
+msgstr "Ferndaten werden abgerufen..."
 
 #: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
@@ -15191,7 +15193,7 @@ msgstr "Unerwarteter Fehler beim Anwenden der Änderungen."
 
 #: GrampsWebSync/grampswebsync.py:322
 msgid "Media files are in sync."
-msgstr "Mediendateien sind bereits synchron."
+msgstr "Die Mediendateien sind synchronisiert."
 
 #: GrampsWebSync/grampswebsync.py:331
 #, python-format
@@ -15206,7 +15208,7 @@ msgstr "Beim Herunterladen sind %s Fehler aufgetreten."
 #: GrampsWebSync/grampswebsync.py:340
 #, python-format
 msgid "Successfully uploaded %s media files."
-msgstr "%s Mediendateien erfolgreich hochgeladen."
+msgstr "%s Mediendateien wurden erfolgreich hochgeladen."
 
 #: GrampsWebSync/grampswebsync.py:343
 #, python-format
@@ -15219,19 +15221,19 @@ msgstr "Fehler beim Zugriff auf das Medienobjekt."
 
 #: GrampsWebSync/grampswebsync.py:451
 msgid "Failed importing downloaded XML file."
-msgstr "Der Import der heruntergeladenen XML-Datei ist fehlgeschlagen."
+msgstr "Das Importieren der heruntergeladenen XML-Datei ist fehlgeschlagen."
 
 #: GrampsWebSync/grampswebsync.py:457
 msgid "Comparing local and remote data..."
-msgstr "Vergleiche lokale und entfernte Daten..."
+msgstr "Vergleich von lokalen und externen Daten..."
 
 #: GrampsWebSync/grampswebsync.py:489
 msgid "Server authorization error."
-msgstr "Server-Authorisierungsfehler."
+msgstr "Server-Autorisierungsfehler."
 
 #: GrampsWebSync/grampswebsync.py:492
 msgid "Server authorization error: insufficient permissions."
-msgstr "Server-Authorisierungsfehler: unzureichende Berechtigungen."
+msgstr "Server-Autorisierungsfehler: unzureichende Berechtigungen."
 
 #: GrampsWebSync/grampswebsync.py:495
 msgid "Error: URL not found."
@@ -15240,37 +15242,38 @@ msgstr "Fehler: URL nicht gefunden."
 #: GrampsWebSync/grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
-"Kann Änderungen nicht zum Server synchronisieren: Objekte wurden verändert."
+"Änderungen können nicht mit dem Server synchronisiert werden: Objekte wurden "
+"geändert."
 
 #: GrampsWebSync/grampswebsync.py:503
 #, python-format
 msgid "Error %s while connecting to server."
-msgstr "Fehler %s beim Zugriff auf den Server."
+msgstr "Fehler %s beim Herstellen der Verbindung zum Server."
 
 #: GrampsWebSync/grampswebsync.py:506
 msgid "URL error while connecting to server."
-msgstr "URL-Fehler beim Verbinden zum Server."
+msgstr "URL-Fehler bei der Verbindung zum Server."
 
 #: GrampsWebSync/grampswebsync.py:509
 msgid "Error while parsing response from server."
-msgstr "Fehler beim Verarbeiten der Serverantwort."
+msgstr "Fehler beim Auswerten der Antwort vom Server."
 
 #: GrampsWebSync/grampswebsync.py:537
 msgid "Continue without transport encryption?"
-msgstr "Mit unverschlüsselter Datenübertragung fortsetzen?"
+msgstr "Ohne Transportverschlüsselung fortfahren?"
 
 #: GrampsWebSync/grampswebsync.py:539
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
-"Du hast eine URL im http-Schema angegeben. Wenn du fortsetzt, wird dein "
-"Passwort unverschlüsselt über das Netzwerk übertragen. Nur für lokales "
-"Testen geeignet!"
+"Du hast eine URL mit dem http-Schema angegeben. Wenn du fortfährst, wird "
+"dein Passwort im Klartext über das Netzwerk gesendet. Nur für lokale Tests "
+"verwenden!"
 
 #: GrampsWebSync/grampswebsync.py:544
 msgid "Continue with HTTP"
-msgstr "Mit HTTP weitermachen"
+msgstr "Weiter mit HTTP"
 
 #: GrampsWebSync/grampswebsync.py:545
 msgid "Use HTTPS"
@@ -15291,22 +15294,22 @@ msgid ""
 "If you instead want to merge two significantly different trees with the "
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
-"Dieses Werkzeug ermöglicht es, den aktuell geöffneten Stammbaum mit einem "
-"Online-Stammbaum, der von Gramps Web bereitgestellt wird, zu "
-"synchronisieren.\n"
+"Dieses Werkzeug ermöglicht die Synchronisierung des aktuell geöffneten "
+"Stammbaums mit einem Remote-Stammbaum, der von Gramps Web bereitgestellt "
+"wird.\n"
 "\n"
-"Das Werkzeug geht davon aus, dass die beiden Stammbäume Ableitungen "
-"voneinander sind, d. h. einer der beiden wurde aus einem Gramps-XML-Export "
-"(nicht GEDCOM!) des anderen erstellt.\n"
+"Das Werkzeug geht davon aus, dass die beiden Stammbäume voneinander "
+"abgeleitet sind, d. h. einer der beiden wurde aus einem Gramps-XML-Export ("
+"nicht GEDCOM!) des anderen erstellt.\n"
 "\n"
-"Nach erfolgreicher Synchronisation werden die beiden Stammbäume identisch "
-"sein. Änderungen werden basierend auf Zeitstempeln übertragen. Bevor "
-"tatsächliche Änderungen an den lokalen oder entfernten Stammbäumen "
-"angewendent werden, ist eine Bestätigung nötig.\n"
+"Nach erfolgreicher Synchronisierung sind die beiden Stammbäume identisch. "
+"Änderungen werden anhand von Zeitstempeln übertragen. Bevor Änderungen an "
+"den lokalen oder entfernten Stammbäumen vorgenommen werden, wirst du zur "
+"Bestätigung aufgefordert. \n"
 "\n"
-"Falls du stattdessen zwei wesentlich unterschiedliche Stammbäume mit der "
-"Option, manuelle Änderungen vorzunehmen, zusammenführen möchtest, verwende "
-"stattdessen das Import-und-Zusammenführungs-Werkzeug."
+"Wenn du stattdessen zwei deutlich unterschiedliche Stammbäume mit der Option "
+"manueller Änderungen zusammenführen möchtest, verwende das Import- und "
+"Zusammenführungs-Werkzeug."
 
 #: GrampsWebSync/grampswebsync.py:690
 msgid "Server URL: "
@@ -15318,11 +15321,11 @@ msgstr "Bidirektionale Synchronisation"
 
 #: GrampsWebSync/grampswebsync.py:783
 msgid "Reset remote to local"
-msgstr "Remote auf lokal zurücksetzen"
+msgstr "Zurücksetzen von entfernt auf lokal"
 
 #: GrampsWebSync/grampswebsync.py:791
 msgid "Reset local to remote"
-msgstr "Lokal auf remote zurücksetzen"
+msgstr "Lokal auf entfernt zurücksetzen"
 
 #: GrampsWebSync/grampswebsync.py:799
 msgid "Merge"
@@ -15339,7 +15342,7 @@ msgstr "Verändert"
 
 #: GrampsWebSync/grampswebsync.py:829
 msgid "Remote changes"
-msgstr "Remote-Änderungen"
+msgstr "Entfernte Änderungen"
 
 #: GrampsWebSync/grampswebsync.py:834
 msgid "Simultaneous changes"
@@ -15347,49 +15350,49 @@ msgstr "Gleichzeitige Änderungen"
 
 #: GrampsWebSync/grampswebsync.py:891
 msgid "Fetching information about media files..."
-msgstr "Abrufen von Informationen über Mediendateien..."
+msgstr "Informationen zu Mediendateien abrufen..."
 
 #: GrampsWebSync/grampswebsync.py:912
 msgid "Both trees are the same."
-msgstr "Beide Stammbäume sind identisch."
+msgstr "Beide Bäume sind gleich."
 
 #: GrampsWebSync/grampswebsync.py:918
 msgid "Applying changes to local database ..."
-msgstr "Wende Änderungen auf die lokale Datenbank an ..."
+msgstr "Änderungen auf lokale Datenbank anwenden ..."
 
 #: GrampsWebSync/grampswebsync.py:920
 msgid "No changes to apply to local database."
-msgstr "Keine Änderungen an der lokalen Datenbank nötig."
+msgstr "Keine Änderungen an der lokalen Datenbank durchzuführen."
 
 #: GrampsWebSync/grampswebsync.py:923
 msgid "Applying changes to remote database ..."
-msgstr "Wende Änderungen auf die Remote-Datenbank an ..."
+msgstr "Änderungen auf entfernte Datenbank anwenden ..."
 
 #: GrampsWebSync/grampswebsync.py:926
 msgid "No changes to apply to remote database."
-msgstr "Keine Änderungen an der Remote-Datenbank nötig."
+msgstr "Keine Änderungen an der entfernten Datenbank durchzuführen."
 
 #: GrampsWebSync/grampswebsync.py:933
 msgid "Successfully applied changes to local database."
-msgstr "Änderungen an der lokalen Datenbank erfolgreich angewendet."
+msgstr "Änderungen erfolgreich in der lokalen Datenbank übernommen."
 
 #: GrampsWebSync/grampswebsync.py:962
 msgid "Missing locally"
-msgstr "Fehlt lokal"
+msgstr "Lokal nicht vorhanden"
 
 #: GrampsWebSync/grampswebsync.py:965
 msgid "Missing remotely"
-msgstr "Fehlt auf dem Server"
+msgstr "Fehlt entfernt"
 
 #: GrampsWebSync/grampswebsync.py:1003
 #, python-format
 msgid "Downloading %s media file(s)"
-msgstr "Lade %s Mediendatei(en) herunter"
+msgstr "Herunterladen von %s Mediendatei(en)"
 
 #: GrampsWebSync/grampswebsync.py:1011
 #, python-format
 msgid "Uploading %s media file(s)"
-msgstr "Lade %s Mediendatei(en) hoch"
+msgstr "Hochladen von %s Mediendatei(en)"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -15410,7 +15413,7 @@ msgstr "Modern"
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
 msgid "Graph View"
-msgstr "Graphenansicht"
+msgstr "Diagrammansicht"
 
 #: GraphView/graphview.gpr.py:6
 msgid "Dynamic and interactive graph of relations"
@@ -15426,11 +15429,11 @@ msgstr "Avatare anzeigen"
 
 #: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
-msgstr "Hauptperson hervorheben"
+msgstr "Die Hausperson hervorheben"
 
 #: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
-msgstr "Volles Datum anzeigen"
+msgstr "Vollständige Daten anzeigen"
 
 #: GraphView/graphview.py:768 GraphView/graphview.py:3752
 msgid "Show places"
@@ -15458,7 +15461,7 @@ msgstr "Zeitrichtung"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr "Begrenze Anzahl der angezeigten Personen (verwende 0 für unbegrenzt)"
+msgstr "Anzahl der angezeigten Personen begrenzen (für unbegrenzt 0 verwenden)"
 
 #: GraphView/graphview.py:812
 msgid "Person theme"
@@ -15526,15 +15529,15 @@ msgstr "Themen"
 
 #: GraphView/graphview.py:921 GraphView/graphview.py:3770
 msgid "Show animation"
-msgstr "Zeige Animation"
+msgstr "Animation anzeigen"
 
 #: GraphView/graphview.py:925
 msgid "Animation speed (1..5 and 5 is the slower)"
-msgstr "Animationsgeschwindigkeit (1..5 und 5 ist am langsamsten)"
+msgstr "Animationsgeschwindigkeit (1..5, wobei 5 die langsamste ist)"
 
 #: GraphView/graphview.py:929
 msgid "Animation count (0..8 use 0 to turn off)"
-msgstr "Anzahl der Animationen (0..8 zum Ausschalten 0 verwenden)"
+msgstr "Anzahl der Animationen (0..8, 0 zum Ausschalten verwenden)"
 
 #: GraphView/graphview.py:938
 msgid "Animation"
@@ -15546,7 +15549,7 @@ msgstr "Suche in allen Datenbanken"
 
 #: GraphView/graphview.py:954
 msgid "Also apply search by all database."
-msgstr "Wenden die Suche auch nach allen Datenbanken an."
+msgstr "Wende die Suche auch auf alle Datenbanken an."
 
 #: GraphView/graphview.py:957
 msgid "Show person images"
@@ -15558,24 +15561,23 @@ msgstr "Zeige Personen-Miniaturansichten in der Suchergebnisliste an."
 
 #: GraphView/graphview.py:963 SearchGramplet/SearchGramplet.py:102
 msgid "Show bookmarked first"
-msgstr "Zeige zuerst mit Lesezeichen versehende"
+msgstr "Zuerst mit Lesezeichen versehene anzeigen"
 
 #: GraphView/graphview.py:966
 msgid "Show bookmarked persons first in search result list."
-msgstr ""
-"Zeige mit Lesezeichen versehene Personen zuerst in der Suchergebnisliste an."
+msgstr "Personen mit Lesezeichen zuerst in der Suchergebnisliste anzeigen."
 
 #: GraphView/graphview.py:999
 msgid "Select a dot file name"
-msgstr "Wähle einen dot Dateinamen"
+msgstr "Wähle einen dot-Dateinamen"
 
 #: GraphView/graphview.py:1109 LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
-msgstr "Auf original Größe zoomen"
+msgstr "Auf Originalgröße vergrößern"
 
 #: GraphView/graphview.py:1116 LifeLineChartView/lifelinechartview.py:534
 msgid "Zoom to best fit"
-msgstr "Zoom auf die beste Größte"
+msgstr "Zoomen, um bestmöglich anzupassen"
 
 #: GraphView/graphview.py:1123
 msgid "Go to active person"
@@ -15619,16 +15621,16 @@ msgstr "Abstände"
 
 #: GraphView/graphview.py:1193
 msgid "All connected"
-msgstr "Alle verbundene"
+msgstr "Alle verbunden"
 
 #: GraphView/graphview.py:1195
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
 msgstr ""
-"Zeigt alle verbundene Personen an, begrenzt durch "
-"Generationsbeschränkungen.\n"
-"Arbeitet langsam, daher solltest du keine hohen Generationswerte einstellen."
+"Alle verbundenen Personen anzeigen, die durch Generationsbeschränkungen "
+"eingeschränkt sind.\n"
+"Funktioniert langsam, daher keine großen Generationswerte einstellen."
 
 #: GraphView/graphview.py:1337
 msgid "Add active person"
@@ -15636,16 +15638,16 @@ msgstr "Aktive Person hinzufügen"
 
 #: GraphView/graphview.py:1342
 msgid "Call the bookmark editor"
-msgstr "Lesezeicheneditor aufrufen"
+msgstr "Den Lesezeicheneditor aufrufen"
 
 #: GraphView/graphview.py:1399
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
 msgstr ""
-"Du hast noch keine Lesezeichen ... \n"
-"Versuche, einige häufig verwendete Personen hinzuzufügen, um die Navigation "
-"zu beschleunigen."
+"Du hast noch keine Lesezeichen...\n"
+"Füge einige häufig verwendete Personen hinzu, um die Navigation zu "
+"beschleunigen."
 
 #: GraphView/graphview.py:1407
 msgid "No bookmarks for this graph..."
@@ -15677,8 +15679,8 @@ msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
 "Do you want to set it active and rebuild view?"
 msgstr ""
-"Person <b><i>%s</i></b> ist nicht in der aktuellen Ansicht.\n"
-"Möchtest du sie aktivieren und die Ansicht neu aufbauen?"
+"Person <b><i>%s</i></b> ist nicht in der aktuellen Ansicht enthalten.\n"
+"Möchtest du sie aktivieren und die Ansicht neu erstellen?"
 
 #: GraphView/graphview.py:1519
 msgid "Change active person?"
@@ -15718,7 +15720,7 @@ msgstr "%s "
 
 #: GraphView/graphview.py:3399
 msgid "<b>Tags:</b>"
-msgstr "<b>Markierungen:</b>"
+msgstr "<b>Etiketten::</b>"
 
 #: GraphView/graphview.py:3779
 msgid "Lines type"
@@ -15727,7 +15729,7 @@ msgstr "Linienart"
 #: GraphView/graphview.py:3783 NetworkChart/NetworkChart.py:1174
 #: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
-msgstr "Gerade"
+msgstr "Direkt"
 
 #: GraphView/graphview.py:3791
 msgid "Curves"
@@ -15743,7 +15745,7 @@ msgstr "Keine Ereignisse für diese Person"
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
-msgstr "Markierungen für Person wählen"
+msgstr "Etiketten für Person auswählen"
 
 #: GraphView/graphview.py:3907
 msgid "Add new family"
@@ -15759,19 +15761,19 @@ msgstr "Als Hauptperson festlegen"
 
 #: GraphView/graphview.py:4051
 msgid "Show path to home person"
-msgstr "Zeige Pfad zur Hauptperson"
+msgstr "Weg zur Hauptperson anzeigen"
 
 #: GraphView/graphview.py:4057 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364 SearchGramplet/SearchGramplet.py:637
 #: SearchGramplet/SearchGramplet.py:769
 msgid "Remove from bookmarks"
-msgstr "Aus Lesezeichen entfernen"
+msgstr "Aus den Lesezeichen entfernen"
 
 #: GraphView/graphview.py:4060 GraphView/search_widget.py:294
 #: GraphView/search_widget.py:377 SearchGramplet/SearchGramplet.py:645
 #: SearchGramplet/SearchGramplet.py:782
 msgid "Add to bookmarks"
-msgstr "Zu Lesezeichen hinzufügen"
+msgstr "Zu den Lesezeichen hinzufügen"
 
 #: GraphView/graphview.py:4161
 msgid "No Events for this family"
@@ -15779,7 +15781,7 @@ msgstr "Keine Ereignisse für diese Familie"
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
-msgstr "Markierungen für Familie wählen"
+msgstr "Etiketten für Familie auswählen"
 
 #: GraphView/graphview.py:4201
 msgid "Add father"
@@ -15791,7 +15793,7 @@ msgstr "Mutter hinzufügen"
 
 #: GraphView/graphview.py:4313
 msgid "About Graph View"
-msgstr "Über Graphenansicht"
+msgstr "Über die Diagrammansicht"
 
 #: GraphView/graphview.py:4538 GraphView/graphview.py:4584
 #: QuiltView/QuiltView.py:1656
@@ -15808,25 +15810,26 @@ msgstr "Hinzufügen von Etiketten zur Familie (%s)"
 #: GraphView/graphview.py:4669
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
-msgstr "Durch Löschen der Person [%s] wird diese aus der Datenbank entfernt."
+msgstr ""
+"Durch das Löschen der Person [%s] wird diese aus der Datenbank entfernt."
 
 #: GraphView/graphview.py:4698
 #, python-format
 msgid "Delete family [%s]?"
-msgstr "Familie löschen [%s]?"
+msgstr "Familie [%s] löschen?"
 
 #: GraphView/graphview.py:4699
 msgid "Deleting the family will remove it from the database."
-msgstr "Durch Löschen der Familie wird sie aus der Datenbank entfernt."
+msgstr "Durch das Löschen der Familie wird diese aus der Datenbank entfernt."
 
 #: GraphView/graphview.py:4710
 #, python-format
 msgid "Delete Family [%s]"
-msgstr "Lösche Familie [%s]"
+msgstr "Familie [%s] löschen"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
-msgstr "Personen aus der aktuellen Grafik"
+msgstr "Personen aus dem aktuellen Diagramm"
 
 #: GraphView/search_widget.py:83
 msgid "Other persons from database"
@@ -15841,8 +15844,8 @@ msgid ""
 "Search people in the current visible graph and database.\n"
 "Use <Ctrl+F> to make search entry active."
 msgstr ""
-"Suche nach Personen in der aktuell sichtbaren Grafik und Datenbank.\n"
-".Verwende <Strg+F>, um den Sucheintrag zu aktivieren."
+"Suche Personen im aktuell angezeigten Diagramm und in der Datenbank.\n"
+"Verwende <Strg+F>, um die Suche zu aktivieren."
 
 #: GraphView/search_widget.py:400 PluginManager\PluginManager.py:169
 #: SearchGramplet/SearchGramplet.py:391
@@ -15856,7 +15859,7 @@ msgstr "<b>%s:</b>"
 
 #: GraphView/search_widget.py:783
 msgid "Partners"
-msgstr "Partner/-in/-nen"
+msgstr "Partner"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
@@ -15865,11 +15868,11 @@ msgstr "Schlagzeilen"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
 msgid "Gramplet that shows the latest Gramps news"
-msgstr "Gramplet das die neuesten Gramps Nachrichten zeigt"
+msgstr "Gramplet, das die neuesten Gramps-Nachrichten anzeigt"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
 msgid "Read Gramps headline news"
-msgstr "Lese Gramps Schlagzeilen"
+msgstr "Lies die Schlagzeilen von Gramps"
 
 #: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
@@ -16009,11 +16012,11 @@ msgstr "Filter anwenden "
 
 #: HistContext/HistContext.py:129
 msgid "Show outside life span "
-msgstr "Zeige außerhalb der Lebensspanne "
+msgstr "Lebensdauer außerhalb anzeigen "
 
 #: HistContext/HistContext.py:132
 msgid "Use full dates"
-msgstr "Vollständiges Datum verwenden"
+msgstr "Vollständige Datumsangaben verwenden"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
@@ -16041,7 +16044,7 @@ msgstr "Ungültiges Datum "
 
 #: HistContext/HistContext.py:288
 msgid " in line: "
-msgstr " in einer Reihe: "
+msgstr " in der Reihe: "
 
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
@@ -16059,12 +16062,12 @@ msgstr "Kann URL nicht öffnen: "
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
-msgstr "Auf Zeile doppelklicken um Link zu folgen"
+msgstr "Doppelklicke auf die Zeile, um dem Link zu folgen"
 
 #: HouseTimelineGramplet/housetimeline.gpr.py:4
 #: HouseTimelineGramplet/housetimeline.gpr.py:15
 msgid "House Timeline"
-msgstr "Haus Zeitleiste"
+msgstr "Haus-Zeitleiste"
 
 #: HouseTimelineGramplet/housetimeline.gpr.py:5
 msgid "Lists the Residents of an Address by Timeline"
@@ -16084,7 +16087,7 @@ msgid ""
 "There are no individuals with Address data. Please add Address data to "
 "people."
 msgstr ""
-"Es gibt keine Personen mit Adressdaten. Bitte füge Personen Adressdaten "
+"Es gibt keine Personen mit Adressdaten. Bitte füge Adressdaten zu Personen "
 "hinzu."
 
 #: HouseTimelineGramplet/housetimeline.py:129
@@ -16101,7 +16104,7 @@ msgstr "Letzter Bewohner"
 
 #: HouseTimelineGramplet/housetimeline.py:134
 msgid "Total Known Residents"
-msgstr "Insgesamt bekannte Bewohner"
+msgstr "Gesamtzahl der bekannten Bewohner"
 
 #: HtmlView/htmlview.gpr.py:31
 msgid "Html View"
@@ -16161,8 +16164,8 @@ msgid ""
 "The view shows a space-efficient pedigree with ancestors of the selected "
 "person"
 msgstr ""
-"Die Ansicht zeigt eine platzsparende Ahnentafel mit Vorfahren der gewählten "
-"Person"
+"Die Ansicht zeigt eine platzsparende Ahnentafel mit den Vorfahren der "
+"ausgewählten Person"
 
 #: HtreePedigreeView/HtreePedigreeView.py:93
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
@@ -16204,11 +16207,11 @@ msgstr "Über H-Baum"
 
 #: ImportGramplet/ImportGramplet.gpr.py:11
 msgid "Gramplet for importing text"
-msgstr "Gramplet zum Textimport"
+msgstr "Gramplet zum Importieren von Text"
 
 #: ImportGramplet/ImportGramplet.py:94
 msgid "VCard import"
-msgstr "VCard Import"
+msgstr "VCard-Import"
 
 #: ImportGramplet/ImportGramplet.py:144
 #, python-format
@@ -16218,18 +16221,18 @@ msgid ""
 "Copy the files to a correct directory or change the media path in the "
 "Preferences."
 msgstr ""
-"Die geöffnete Datei hat den Medienpfad %s welcher mit dem Medienpfad des "
-"geöffneten Stammbaums kollidiert. Der Medienpfad des Stammbaums wurde "
-"behalten. Kopiere die Dateien in das richtige Verzeichnis oder ändere den "
-"Medienpfad in den Präferenzen."
+"Die geöffnete Datei hat den Medienpfad %s, der mit dem Medienpfad des "
+"Stammbaums, in den du importierst, in Konflikt steht. Der ursprüngliche "
+"Medienpfad wurde beibehalten. Kopiere die Dateien in ein korrektes "
+"Verzeichnis oder ändere den Medienpfad in den Einstellungen."
 
 #: ImportGramplet/ImportGramplet.py:172
 msgid ""
 "Enter text to import and then click\n"
 "the Import button at bottom"
 msgstr ""
-"Zu importierenden Text eingeben und dann\n"
-"unten auf die Importschaltfläche klicken"
+"Gib den zu importierenden Text ein und klicke dann\n"
+"unten auf die Schaltfläche Importieren"
 
 #: ImportGramplet/ImportGramplet.py:198
 msgid "_Import"
@@ -16241,19 +16244,19 @@ msgstr "Import abgeschlossen"
 
 #: ImportGramplet/ImportGramplet.py:228
 msgid "Importing Text..."
-msgstr "Importiere Text …"
+msgstr "Text wird importiert..."
 
 #: ImportGramplet/ImportGramplet.py:259
 msgid "Can't determine type of import"
-msgstr "Kann Importart nicht bestimmen"
+msgstr "Importtyp kann nicht bestimmt werden"
 
 #: ImportMerge/importmerge.glade:8
 msgid ""
 "A '*' indicates that the action was automarked, a '?' indicates a conflict "
 "between automarks."
 msgstr ""
-"Ein '*' zeigt das die Aktion automatisch markiert wurde, ein '?' zeigt einen "
-"Konflikt zwischen automatischen Markierungen."
+"Ein „*“ zeigt an, dass die Aktion automatisch markiert wurde, ein „?“ zeigt "
+"einen Konflikt zwischen automatischen Markierungen an."
 
 #: ImportMerge/importmerge.glade:39
 msgid "Import file"
@@ -16261,7 +16264,7 @@ msgstr "Datei importieren"
 
 #: ImportMerge/importmerge.glade:124
 msgid "Select the difference you wish to examine."
-msgstr "Wähle die Unterschiede, die du untersuchen willst."
+msgstr "Wähle den Unterschied aus, den du untersuchen möchtest."
 
 #: ImportMerge/importmerge.glade:180
 msgid "Object Name/Description"
@@ -16272,8 +16275,8 @@ msgid ""
 "Data item details, showing the current treeitem, imported tree item, and "
 "result (when chosen)."
 msgstr ""
-"Datenelementdetails, zeigen das aktuelle Baumelement, das importierte "
-"Baumelement und das Ergebnis (wenn gewählt)."
+"Details zum Datenelement, mit Anzeige des aktuellen Baumelements, des "
+"importierten Baumelements und des Ergebnisses (sofern ausgewählt)."
 
 #: ImportMerge/importmerge.glade:248
 msgid "Object and item"
@@ -16284,9 +16287,9 @@ msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
 msgstr ""
-"Verwenden die Schaltflächen unten, um die 'Aktion' für jeden Unterschied "
-"festzulegen. Es werden keine Änderungen an deinem Baum durchgeführt, bis du "
-"\"Fertig\" drückst und bestätigst."
+"Verwende die Schaltflächen unten, um die „Aktion“ für jeden Unterschied "
+"festzulegen.  Es werden keine Änderungen an deinem Stammbaum vorgenommen, "
+"bis du auf „Fertig“ klickst und bestätigst."
 
 #: ImportMerge/importmerge.glade:334 ImportMerge/importmerge.py:110
 msgid "Ignore"
@@ -16295,70 +16298,71 @@ msgstr "Ignorieren"
 #: ImportMerge/importmerge.glade:338
 msgid "This button will ignore the difference, no changes to your tree."
 msgstr ""
-"Diese Schaltfläche ignoriert den Unterschied, keine Änderungen an deinem "
-"Baum."
+"Diese Schaltfläche ignoriert den Unterschied, es werden keine Änderungen an "
+"deinem Stammbaum vorgenommen."
 
 #: ImportMerge/importmerge.glade:349
 msgid "Unmark"
-msgstr "Markierung löschen"
+msgstr "Markierung aufheben"
 
 #: ImportMerge/importmerge.glade:353
 msgid "This button will add the imported data as a new object to your tree."
 msgstr ""
-"Diese Schaltfläche fügt die importierten Daten als neue Objekte deinem "
-"Stammbaum hinzu."
+"Mit dieser Schaltfläche werden die importierten Daten als neues Objekt zu "
+"deinem Baum hinzugefügt."
 
 #: ImportMerge/importmerge.glade:368
 msgid ""
 "This button will bring up a dialog allowing you to finalize your changes, or "
 "abandon them."
 msgstr ""
-"Diese Schaltfläche öffnet einen Dialog, in dem du deine Änderungen "
-"abschließen, oder sie verwerfen kannst."
+"Über diese Schaltfläche wird ein Dialogfeld geöffnet, in dem du deine "
+"Änderungen abschließen oder verwerfen kannst."
 
 #: ImportMerge/importmerge.glade:392
 msgid "Merge Original"
-msgstr "Original verschmelzen"
+msgstr "Original zusammenführen"
 
 #: ImportMerge/importmerge.glade:396
 msgid ""
 "This button will merge the imported data into your tree with your tree data "
 "as a base."
 msgstr ""
-"Diese Schaltfläche verschmilzt die importierten Daten mit deinem Stammbaum "
-"mit deinen Baum Daten als Basis."
+"Mit dieser Schaltfläche werden die importierten Daten mit deinen "
+"Stammbaumdaten als Grundlage in deinen Stammbaum zusammengeführt."
 
 #: ImportMerge/importmerge.glade:411
 msgid "This button will replace your tree data with the imported data."
-msgstr "Diese Schaltfläche ersetzt deine Baum Daten durch die importierten."
+msgstr ""
+"Diese Schaltfläche ersetzt deine Baumdaten durch die importierten Daten."
 
 #: ImportMerge/importmerge.glade:422
 msgid "Merge Import"
-msgstr "Import verschmelzen"
+msgstr "Import zusammenführen"
 
 #: ImportMerge/importmerge.glade:426
 msgid ""
 "This button will merge the imported data into your tree with the imported "
 "data as a base."
 msgstr ""
-"Diese Schaltfläche verschmilzt die importierten Daten mit deinem Stammbaum "
-"mit den importierten Daten als Basis."
+"Mit dieser Schaltfläche werden die importierten Daten mit den importierten "
+"Daten als Basis in deinen Stammbaum zusammengeführt."
 
 #: ImportMerge/importmerge.glade:437
 msgid "Edit Import"
-msgstr "Import editieren"
+msgstr "Import bearbeiten"
 
 #: ImportMerge/importmerge.glade:441
 msgid ""
 "This button will edit the imported data.  The data will still need to be "
 "merged, added or replaced."
 msgstr ""
-"Diese Schaltfläche editiert die importierten Daten. Die Daten bedürfen noch "
-"des Verschmelzen, Hinzufügen oder Ersetzen."
+"Mit dieser Schaltfläche werden die importierten Daten bearbeitet.  Die Daten "
+"müssen weiterhin zusammengeführt, hinzugefügt oder ersetzt werden."
 
 #: ImportMerge/importmerge.glade:464
 msgid "Show more details"
-msgstr "Mehr Details zeigen"
+msgstr "Weitere Details anzeigen"
 
 #: ImportMerge/importmerge.glade:481
 msgid "Automark Families"
@@ -16366,7 +16370,7 @@ msgstr "Familien automatisch markieren"
 
 #: ImportMerge/importmerge.glade:498
 msgid "Automark Parent Families"
-msgstr "Elternfamilien automatisch markieren"
+msgstr "Auto markieren Elternfamilien"
 
 #: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
@@ -16378,12 +16382,12 @@ msgid ""
 "Compares a Gramps XML database with the current one, and allows merging of "
 "the differences."
 msgstr ""
-"Vergleicht eine Gramps XML Datenbank mit der aktuellen und ermöglicht das "
+"Vergleicht eine Gramps-XML-Datenbank mit der aktuellen und ermöglicht das "
 "Zusammenführen der Unterschiede."
 
 #: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
-msgstr "Importiert und verschmilzt eine Gramps XML"
+msgstr "Gramps XML importieren und zusammenführen"
 
 #: ImportMerge/importmerge.py:90
 msgid "Missing"
@@ -16403,11 +16407,11 @@ msgstr "Import hinzufügen"
 
 #: ImportMerge/importmerge.py:112
 msgid "Merge into original"
-msgstr "In Original verschmelzen"
+msgstr "Mit Original zusammenführen"
 
 #: ImportMerge/importmerge.py:113
 msgid "Merge into import"
-msgstr "In Import verschmelzen"
+msgstr "In Import zusammenführen"
 
 #: ImportMerge/importmerge.py:114
 msgid "Replace with import"
@@ -16415,65 +16419,66 @@ msgstr "Durch Import ersetzen"
 
 #: ImportMerge/importmerge.py:115
 msgid "Keep original"
-msgstr "Original behalten"
+msgstr "Original beibehalten"
 
 #: ImportMerge/importmerge.py:119
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
 msgstr ""
-"Dieses Element wird aus deinem Baum gelöscht. Alle referenzierten Elemente "
-"werden auch für die Löschung markiert."
+"Dieser Eintrag wird aus deinem Stammbaum gelöscht.  Alle referenzierten "
+"Einträge wurden ebenfalls zum Löschen markiert."
 
 #: ImportMerge/importmerge.py:121
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
 msgstr ""
-"Dieses Element wird in deinem Baum nicht geändert. Alle referenzierten "
-"Elemente werden auch als zu ignorieren markiert."
+"Dieser Eintrag wird in deinem Stammbaum nicht geändert. Alle referenzierten "
+"Einträge wurden ebenfalls als „Ignorieren“ markiert."
 
 #: ImportMerge/importmerge.py:123
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
 msgstr ""
-"Dieses Element wird zu deinem Baum hinzugefügt. Alle referenzierten Elemente "
-"werden auch zum Hinzufügen markiert."
+"Dieses Element wird deinem Baum hinzugefügt. Alle referenzierten Elemente "
+"wurden ebenfalls zum Hinzufügen markiert."
 
 #: ImportMerge/importmerge.py:125
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
 msgstr ""
-"Dieses Element wird zusammengeführt und speichert Daten aus deiner "
-"Baumstruktur. Alle referenzierten Elemente wurden auch zum Zusammenführen "
-"oder Hinzufügen markiert."
+"Dieses Element wird zusammengeführt, wobei die Daten aus deinem Stammbaum "
+"gespeichert werden. Alle referenzierten Elemente wurden ebenfalls zum "
+"Zusammenführen oder Hinzufügen markiert."
 
 #: ImportMerge/importmerge.py:127
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
 msgstr ""
-"Dieses Element wird zusammengeführt, wobei Daten aus dem Import verwendet "
-"werden. Alle referenzierten Elemente wurden auch zum Zusammenführen oder "
-"Hinzufügen markiert."
+"Dieses Element wird unter Verwendung der Importdaten zusammengeführt. Alle "
+"referenzierten Elemente wurden ebenfalls zum Zusammenführen oder Hinzufügen "
+"markiert."
 
 #: ImportMerge/importmerge.py:129
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
 msgstr ""
-"Die Importdaten werden die Daten in deinem Baum vollständig ersetzen. Alle "
-"referenzierten Elemente wurden auch für Ersatz oder Entfernung markiert."
+"Die Importdaten ersetzen die Daten in deinem Stammbaum vollständig.  Alle "
+"referenzierten Elemente wurden ebenfalls zum Ersetzen oder Entfernen "
+"markiert."
 
 #: ImportMerge/importmerge.py:131
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
 msgstr ""
-"Dieses Element wird in deinem Baum nicht geändert. Alle referenzierten "
-"Elemente wurden auch markiert zu behalten."
+"Dieser Eintrag wird in deinem Stammbaum nicht geändert. Alle referenzierten "
+"Einträge wurden ebenfalls zum Beibehalten markiert."
 
 #: ImportMerge/importmerge.py:339
 msgid "Import Failure"
@@ -16481,7 +16486,7 @@ msgstr "Importfehler"
 
 #: ImportMerge/importmerge.py:407
 msgid "Your Tree and import are the same."
-msgstr "Dein Baum und der Import sind identisch."
+msgstr "Dein Baum und dein Import sind identisch."
 
 #: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
 #: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
@@ -16510,7 +16515,7 @@ msgstr "Ergebnis  "
 
 #: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
-msgstr "Importieren und Verschmelzen"
+msgstr "Importieren und Zusammenführen"
 
 #: JSON/JSON.gpr.py:4
 msgid "JSON Export"
@@ -16518,7 +16523,7 @@ msgstr "JSON-Export"
 
 #: JSON/JSON.gpr.py:5
 msgid "This is a JSON export"
-msgstr "Dies ist ein JSON Export"
+msgstr "Dies ist ein JSON-Export"
 
 #: JSON/JSON.gpr.py:12
 msgid "JSON options"
@@ -16530,7 +16535,7 @@ msgstr "JSON-Import"
 
 #: JSON/JSON.gpr.py:21
 msgid "This is a JSON import"
-msgstr "Dies ist ein JSON Import"
+msgstr "Dies ist ein JSON-Import"
 
 #: JSON/JSONImport.py:56
 msgid "JSON import"
@@ -16538,7 +16543,7 @@ msgstr "JSON-Import"
 
 #: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
-msgstr "Listet die letzten zehn geänderten Personendatensätze auf"
+msgstr "Liste der letzten zehn geänderten Personendatensätze"
 
 #: LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
@@ -16547,11 +16552,11 @@ msgstr "Letzte Änderungen"
 #: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
 #: LastChange/LastChangeReport.py:113
 msgid "Last Change Report"
-msgstr "Letzte Änderungen-Bericht"
+msgstr "Letzte Änderungenbericht"
 
 #: LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
-msgstr "Bericht der letzten Datensätze, die geändert wurden"
+msgstr "Bericht über die zuletzt geänderten Datensätze"
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
@@ -16559,7 +16564,7 @@ msgstr "geändert am"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
-msgstr "Du musst mindestens eine Art von Datensatz wählen."
+msgstr "Du musst mindestens eine Datensatzart auswählen."
 
 #: LastChange/LastChangeReport.py:180
 msgid "People Changed"
@@ -16611,19 +16616,19 @@ msgstr "Geänderte Fundstellen"
 
 #: LastChange/LastChangeReport.py:344
 msgid "Select From"
-msgstr "Ab wählen"
+msgstr "Auswählen aus"
 
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
-msgstr "Der Stil, der für normalen Text verwendet wird"
+msgstr "Der für normalen Text verwendete Stil"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
-msgstr "Diagramm verzerren"
+msgstr "Die Diagrammform verzerren"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:11
 msgid "The overall shape of the chart can be warped."
-msgstr "Die gesamte Form des Diagramms kann verzerrt werden."
+msgstr "Die Gesamtform des Diagramms kann verzerrt sein."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:12
 msgid "Normal grid shape"
@@ -16647,15 +16652,15 @@ msgstr "Fotos der Person werden gezeigt."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:17
 msgid "Photo size"
-msgstr "Größe der Fotos"
+msgstr "Fotogröße"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:18
 msgid ""
 "Photos which are shown are fitted into a square of this extent. The size is "
 "given relative to the line thickness."
 msgstr ""
-"Die Bilder werden in eine Quadrat dieser Kantenlänge eingepasst. Die Länge "
-"wird relativ zur Linienbreite angegeben."
+"Die angezeigten Fotos werden in ein Quadrat dieser Größe eingefügt. Die "
+"Größe wird relativ zur Linienstärke angegeben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
 msgid "Total height"
@@ -16663,19 +16668,19 @@ msgstr "Gesamthöhe"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:20
 msgid "Total height of the whole chart."
-msgstr "Höhe des gesamten Diagramms."
+msgstr "Gesamthöhe des gesamten Diagramms."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:21
 msgid "Relative line thickness"
-msgstr "Relative Linienbreite"
+msgstr "Relative Linienstärke"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:22
 msgid ""
 "The line thickness of an individual is given relatively to the horizontal "
 "step size."
 msgstr ""
-"Die Breite eine Lebenslinie wird relativ zur horizontalen Schrittweite "
-"angegeben."
+"Die Linienstärke einer einzelnen Linie wird relativ zur horizontalen "
+"Schrittweite angegeben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:23
 msgid "Horizontal step size"
@@ -16686,24 +16691,24 @@ msgid ""
 "This is the distance from one line to another. This value is also used for "
 "scaling of other items."
 msgstr ""
-"Dies ist der Abstand zwischen zwei Lebenslinien. Dieser Wert wird häufig zur "
-"Skalierung anderer Objekte verwendet."
+"Dies ist der Abstand zwischen zwei Linien. Dieser Wert wird auch für die "
+"Skalierung anderer Elemente verwendet."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
 msgid "Show birth label"
-msgstr "Geburts-Textfeld anzeigen"
+msgstr "Geburtsetikett anzeigen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
 msgid "Activate the birth label."
-msgstr "Aktiviert einen kurzen Infotextes zur Geburt."
+msgstr "Aktiviere das Geburtsetikett."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 msgid "Birth label along path"
-msgstr "Geburts-Textfeld auf der Linie"
+msgstr "Geburtsetikett entlang des Weges"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:28
 msgid "The birth label is aligned to the individual line."
-msgstr "Das Geburts-Textfeld wird entlang der Linie dargestellt."
+msgstr "Das Geburtsetikett ist an der einzelnen Linie ausgerichtet."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:29
 #: LifeLineChartView/_dummy_translation_string_po.py:32
@@ -16720,112 +16725,112 @@ msgstr "Das Geburts-Textfeld wird entlang der Linie dargestellt."
 #: LifeLineChartView/_dummy_translation_string_po.py:77
 #: LifeLineChartView/lifelinechartview.py:884
 msgid "Label Configuration"
-msgstr "Textfeld Konfiguration"
+msgstr "Etikettenkonfiguration"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 msgid "Birth label rotation"
-msgstr "Geburts-Textfeld Drehung"
+msgstr "Rotation der Geburtsetiketten"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:31
 msgid "The birth label is written in a text frame rotated by this value."
 msgstr ""
-"Das Geburts-Textfeld wird in einen Textrahmen geschrieben, der um diesen "
-"Wert gedreht wird."
+"Das Geburtsetikett wird in einem um diesen Wert gedrehten Textrahmen "
+"geschrieben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:33
 msgid "Horizontal offset of birth label"
-msgstr "Horizontale Verschiebung des Geburts-Textfeldes"
+msgstr "Horizontaler Versatz des Geburtsetiketts"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:34
 msgid ""
 "The birth label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
-"Das Geburts-Textfeld wird um diesen Wert horizontal verschoben. Die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+"Das Geburtsetikett wird um diesen Wert, der relativ zur Schriftgröße "
+"angegeben wird, horizontal verschoben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:36
 msgid "Vertical offset of birth label"
-msgstr "Vertikale Verschiebung des Geburts-Textfeldes"
+msgstr "Vertikaler Versatz des Geburtsetiketts"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:37
 msgid ""
 "The birth label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
-"Das Geburts-Textfeld wird um diesen Wert vertikal verschoben. Die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+"Das Geburtsetikett wird um diesen Wert vertikal verschoben, der relativ zur "
+"Schriftgröße angegeben wird."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:39
 msgid "Wrap words in birth label"
-msgstr "Zeilenumbruch im Geburts-Textfeld"
+msgstr "Wörter in Geburtsetikett umbrechen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:40
 msgid "The birth label content is wrapped where possible."
-msgstr "Wo es möglich ist, wird der Text im Geburts-Textfeld umgebrochen."
+msgstr "Der Inhalt des Geburtsetiketts wird nach Möglichkeit umgebrochen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:42
 msgid "Birth label anchor"
-msgstr "Textausrichtung des Geburts-Textfeld"
+msgstr "Geburtsetikett-Anker"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:43
 msgid "Text alignment of the birth label."
-msgstr "Textausrichtung im Geburts-Textfeld."
+msgstr "Textausrichtung des Geburtsetiketts."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:45
 #: LifeLineChartView/_dummy_translation_string_po.py:65
 msgid "Center"
-msgstr "Zentriert"
+msgstr "Zentrum"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:48
 msgid "Show death label"
-msgstr "Sterbe-Textfeld anzeigen"
+msgstr "Todesetikett anzeigen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
 msgid "Activate the death label."
-msgstr "Aktiviert Sterbe-Textfeld."
+msgstr "Aktiviert das Todesetikett."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:50
 msgid "Death label rotation"
-msgstr "Sterbe-Textfeld Drehung"
+msgstr "Rotation des Todesetiketts"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
 msgstr ""
-"Das Sterbe-Textfeld wird in einen Textrahmen geschrieben, der um diesen Wert "
-"gedreht wird."
+"Das Todesetikett wird in einem um diesen Wert gedrehten Textrahmen "
+"geschrieben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
-msgstr "Horizontale Verschiebung des Sterbe-Textfeldes"
+msgstr "Horizontaler Versatz des Todesetiketts"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:54
 msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
-"Das Sterbe-Textfeld wird um diesen Wert horizontal verschoben. Die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+"Das Todesetikett wird um diesen Wert, der relativ zur Schriftgröße angegeben "
+"wird, horizontal verschoben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:56
 msgid "Vertical offset of death label"
-msgstr "Vertikale Verschiebung des Sterbe-Textfeldes"
+msgstr "Vertikaler Versatz des Todesetiketts"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:57
 msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
-"Das Sterbe-Textfeld wird um diesen Wert vertikal verschoben. Die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+"Das Todesetikett wird um diesen Wert vertikal verschoben, der relativ zur "
+"Schriftgröße angegeben wird."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:59
 msgid "Wrap words in death label"
-msgstr "Zeilenumbruch im Sterbe-Textfeld"
+msgstr "Worte in Todesetiketten umbrechen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:60
 msgid "The death label content is wrapped where possible."
-msgstr "Wo es möglich ist, wird der Text im Sterbe-Textfeld umgebrochen."
+msgstr "Der Inhalt des Todesetiketts wird nach Möglichkeit umbrochen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:62
 msgid "Death label anchor"
