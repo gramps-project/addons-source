@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-09-11 10:02+0000\n"
+"PO-Revision-Date: 2025-09-20 19:02+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -6193,11 +6193,11 @@ msgstr "Värillinen"
 
 #: Form/form_ca.xml.h:29
 msgid "10. Coloured Persons - Negroes"
-msgstr ""
+msgstr "10. Rodullistettuja - tummaihoisia"
 
 #: Form/form_ca.xml.h:30
 msgid "Indians"
-msgstr ""
+msgstr "Amerikan alkuperäisasukkaita"
 
 #: Form/form_ca.xml.h:31
 msgid "11. Indians, if any"
@@ -6226,7 +6226,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:37
 msgid "14. Residents: Not Members: Male"
-msgstr ""
+msgstr "13. Asukkaat: miehet"
 
 #: Form/form_ca.xml.h:38
 msgid "NonMembersFemale"
@@ -8425,7 +8425,7 @@ msgstr ""
 #: Form/form_dk.xml.h:314 Form/form_dk.xml.h:338 Form/form_dk.xml.h:364
 #: Form/form_dk.xml.h:388 Form/form_dk.xml.h:408 Form/form_dk.xml.h:428
 msgid "Town or City"
-msgstr ""
+msgstr "Kaupunki"
 
 #: Form/form_dk.xml.h:4 Form/form_dk.xml.h:21 Form/form_dk.xml.h:38
 #: Form/form_dk.xml.h:53 Form/form_dk.xml.h:70 Form/form_dk.xml.h:87
@@ -8529,7 +8529,7 @@ msgstr ""
 #: Form/form_gb.xml.h:529 Form/form_gb.xml.h:566 Form/form_gb.xml.h:589
 #: Form/form_gb.xml.h:621 Overview/Overview.py:78 Overview/Overview.py:112
 msgid "Where Born"
-msgstr ""
+msgstr "Missä syntynyt"
 
 #: Form/form_dk.xml.h:64 Form/form_dk.xml.h:81 Form/form_dk.xml.h:98
 #: Form/form_dk.xml.h:117 Form/form_dk.xml.h:136 Form/form_dk.xml.h:153
@@ -8580,7 +8580,7 @@ msgstr ""
 #: Form/form_dk.xml.h:424 Form/form_dk.xml.h:444 Form/form_gb.xml.h:253
 #: Form/form_gb.xml.h:388
 msgid "Place of Work"
-msgstr ""
+msgstr "Työpikka"
 
 #: Form/form_dk.xml.h:246 Form/form_dk.xml.h:274 Form/form_dk.xml.h:309
 #: Form/form_dk.xml.h:335 Form/form_dk.xml.h:351 Form/form_dk.xml.h:383
@@ -8621,7 +8621,7 @@ msgstr ""
 #: Form/form_dk.xml.h:275 Form/form_us.xml.h:2095 Form/form_us.xml.h:2133
 #: Form/form_us.xml.h:2171 Form/form_us.xml.h:2209
 msgid "Year married"
-msgstr ""
+msgstr "Avioitumisvuosi"
 
 #: Form/form_dk.xml.h:276
 msgid "År gift"
@@ -8630,7 +8630,7 @@ msgstr ""
 #: Form/form_dk.xml.h:277 Form/form_gb.xml.h:212 Form/form_gb.xml.h:345
 #: Form/form_gb.xml.h:620
 msgid "Children Living"
-msgstr ""
+msgstr "Lapsia elossa"
 
 #: Form/form_dk.xml.h:278
 msgid "Levende børn"
@@ -8638,7 +8638,7 @@ msgstr ""
 
 #: Form/form_dk.xml.h:279
 msgid "Children Dead"
-msgstr ""
+msgstr "Kuolleita lapsia"
 
 #: Form/form_dk.xml.h:280
 msgid "Døde børn"
@@ -8658,7 +8658,7 @@ msgstr ""
 
 #: Form/form_dk.xml.h:329
 msgid "Previous Residence"
-msgstr ""
+msgstr "Aiempi asuinpaikka"
 
 #: Form/form_dk.xml.h:330
 msgid "Sidste bopæl inden tilflytning"
@@ -8718,7 +8718,7 @@ msgstr ""
 
 #: Form/form_dk.xml.h:439
 msgid "Date Married"
-msgstr ""
+msgstr "Avioliiton solmimispäivä"
 
 #: Form/form_dk.xml.h:440
 msgid "Dato gift"
@@ -8732,11 +8732,11 @@ msgstr "Syntymäpäivä"
 
 #: Form/form_fr.xml.h:38 Form/form_fr.xml.h:55 Form/form_fr.xml.h:220
 msgid "Can read and write"
-msgstr ""
+msgstr "Luku- ja kirjoitustaito"
 
 #: Form/form_fr.xml.h:42 Form/form_fr.xml.h:47
 msgid "Military"
-msgstr ""
+msgstr "Sotilaallinen"
 
 #: Form/form_fr.xml.h:51 Form/form_fr.xml.h:156 Form/form_fr.xml.h:173
 #: Form/form_fr.xml.h:182 Form/form_fr.xml.h:191 Form/form_fr.xml.h:200
@@ -8746,7 +8746,7 @@ msgstr ""
 
 #: Form/form_fr.xml.h:56 Form/form_fr.xml.h:221
 msgid "Taxes"
-msgstr ""
+msgstr "Verot"
 
 #: Form/form_fr.xml.h:57 Form/form_fr.xml.h:67 Form/form_fr.xml.h:222
 msgid "Type of roof"
@@ -8762,7 +8762,7 @@ msgstr ""
 
 #: Form/form_fr.xml.h:144
 msgid "Arrived since"
-msgstr ""
+msgstr "Saapunut tästä lähtien"
 
 #: Form/form_gb.xml.h:1 Form/form_gb.xml.h:19 Form/form_gb.xml.h:38
 #: Form/form_us.xml.h:2343 Form/form_us.xml.h:2401 Form/form_us.xml.h:2427
@@ -8783,7 +8783,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:4 Form/form_gb.xml.h:21 Form/form_gb.xml.h:41
 msgid "Administrative Area"
-msgstr ""
+msgstr "Hallintoalue"
 
 #: Form/form_gb.xml.h:5 Form/form_gb.xml.h:22 Form/form_gb.xml.h:42
 msgid "County/Administrative Area"
@@ -8801,7 +8801,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:13 Form/form_gb.xml.h:47
 msgid "Maiden Surname"
-msgstr ""
+msgstr "Tyttönimi"
 
 #: Form/form_gb.xml.h:16 Form/form_gb.xml.h:25 Form/form_gb.xml.h:37
 #: Form/form_gb.xml.h:56 Form/form_us.xml.h:1055
@@ -8825,11 +8825,11 @@ msgstr ""
 #: Form/form_us.xml.h:2375 Form/form_us.xml.h:2488 Form/form_us.xml.h:2513
 #: Form/form_us.xml.h:2557
 msgid "Place of Birth"
-msgstr ""
+msgstr "Syntymäpaikka"
 
 #: Form/form_gb.xml.h:53
 msgid "Usual Address"
-msgstr ""
+msgstr "Tavallinen osoite"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
@@ -9513,7 +9513,7 @@ msgstr "Tapahtumapaikka (alkuperäinen)"
 
 #: Form/form_pl.xml.h:8 Form/form_pl.xml.h:36
 msgid "Birth Year (Estimated)"
-msgstr ""
+msgstr "Syntymävuosi (arvio)"
 
 #: Form/form_pl.xml.h:9 Form/form_pl.xml.h:26 Form/form_pl.xml.h:37
 #: Form/form_us.xml.h:1453 Form/form_us.xml.h:2449 Form/form_us.xml.h:2472
@@ -9534,31 +9534,31 @@ msgstr ""
 
 #: Form/form_pl.xml.h:12 Form/form_pl.xml.h:40
 msgid "Spouse's Gender"
-msgstr ""
+msgstr "Puolison sukupuoli"
 
 #: Form/form_pl.xml.h:13 Form/form_pl.xml.h:41
 msgid "Spouse's Age"
-msgstr ""
+msgstr "Puolison ikä"
 
 #: Form/form_pl.xml.h:14 Form/form_pl.xml.h:42
 msgid "Spouse's Birth Year (Estimated)"
-msgstr ""
+msgstr "Puolison syntymävuosi (arvio)"
 
 #: Form/form_pl.xml.h:15 Form/form_pl.xml.h:43
 msgid "Spouse's Father's Name"
-msgstr ""
+msgstr "Puolison isän nimi"
 
 #: Form/form_pl.xml.h:16 Form/form_pl.xml.h:44
 msgid "Spouse's Mother's Name"
-msgstr ""
+msgstr "Puolison äidin nimi"
 
 #: Form/form_pl.xml.h:18
 msgid "Record Number"
-msgstr ""
+msgstr "Tietueen numero"
 
 #: Form/form_pl.xml.h:19
 msgid "Volume"
-msgstr ""
+msgstr "Volyymi"
 
 #: Form/form_pl.xml.h:24 Form/form_us.xml.h:1426
 msgid "House Number"
@@ -9566,11 +9566,11 @@ msgstr ""
 
 #: Form/form_pl.xml.h:28
 msgid "Volume Beginning Year"
-msgstr ""
+msgstr "Volyymin alkuvuosi"
 
 #: Form/form_pl.xml.h:29
 msgid "Volume Ending Year"
-msgstr ""
+msgstr "Volyymin päättymisvuosi"
 
 #: Form/form_us.xml.h:1 Form/form_us.xml.h:14 Form/form_us.xml.h:35
 #: Form/form_us.xml.h:56 Form/form_us.xml.h:96 Form/form_us.xml.h:165
@@ -14484,15 +14484,15 @@ msgstr ""
 
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
-msgstr ""
+msgstr "Lomake-Gramplet"
 
 #: Form/formgramplet.gpr.py:32
 msgid "Gramplet interface for Forms"
-msgstr ""
+msgstr "Lomakkeiden Gramplet-käyttöliittymä"
 
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
-msgstr ""
+msgstr "Lomakkeet"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"
@@ -14641,24 +14641,24 @@ msgstr "Esivanhempien kaavio"
 
 #: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
-msgstr ""
+msgstr "Näkymä esivanhempien paikkoihin kartalla."
 
 #: GeoAncestor/GeoAncestor.py:207
 msgid "Ancestors places on the map"
-msgstr ""
+msgstr "Esivanhempien paikat kartalla"
 
 #: GeoAncestor/GeoAncestor.py:235
 msgid "GeoAncestor"
-msgstr ""
+msgstr "GeoAncestor"
 
 #: GeoAncestor/GeoAncestor.py:304
 #, python-format
 msgid "Ancestors places for %s"
-msgstr ""
+msgstr "Henkilön %s esivanhempien paikat"
 
 #: GeoAncestor/GeoAncestor.py:311
 msgid "Counting all places"
-msgstr ""
+msgstr "Laske kaikki paikat"
 
 #: GeoAncestor/GeoAncestor.py:314
 msgid "Showing all places"
@@ -14672,7 +14672,7 @@ msgstr "GeoTimeLines-kartta"
 #: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
 "A view showing all the places visited by a person or persons on various date."
-msgstr ""
+msgstr "Näyttää paikat, joissa henkilö/henkilöt on jokus käyneet."
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:39
 msgid "TimeLines map"
@@ -14684,7 +14684,7 @@ msgstr "Valitse näkymämuoto"
 
 #: GeoTimeLines/GeoTimeLines.py:800
 msgid "Almost done"
-msgstr ""
+msgstr "Melkein valmis"
 
 #: GeoTimeLines/GeoTimeLines.py:916
 msgid "Gathering data"
@@ -14701,6 +14701,9 @@ msgid ""
 "to differentiate different\n"
 "markers at the same location"
 msgstr ""
+"Porrasta karttamerkit\n"
+"jotta saman paikan\n"
+"merkit erottuvat"
 
 #: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
@@ -14708,34 +14711,45 @@ msgid ""
 "as measured along the equator\n"
 "(includes latitude distortion)"
 msgstr ""
+"Porrasta säde (hektometriä)\n"
+"mitattuna päiväntasaajaa pitkin\n"
+"(sisältäen leveysasteen vääristymän)"
 
 #: GeoTimeLines/GeoTimeLines.py:1794
 msgid ""
 "Display markers for unknown ancestors\n"
 "based on earliest descendant location"
 msgstr ""
+"Näytä tuntemattomien esivanhempien merkit\n"
+"varhaisimman jälkeläisen sijainnissa"
 
 #: GeoTimeLines/GeoTimeLines.py:1803
 msgid ""
 "Days to keep lines on the map after\n"
 "an event"
 msgstr ""
+"Montako päivää viivat pysyvät kartalla\n"
+"tapahtuman jälkeen"
 
 #: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
-msgstr ""
+msgstr "Käytä omia karttamerkkejä"
 
 #: GeoTimeLines/GeoTimeLines.py:1829
 msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
 msgstr ""
+"Jos henkilöllä ei ole syntymää, hänen ikänsä\n"
+"oletetaan olevan tämä ensimmäisessä tapahtuma"
 
 #: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
 "If there is no death event for a person, they will\n"
 "be assumed dead at this age"
 msgstr ""
+"Jos henkilölle ei ole kuolematapahtumaa, hänen\n"
+"oletetaan kuolleen tässä iässä"
 
 #: GeoTimeLines/GeoTimeLines.py:1875
 msgid "Number of steps"
@@ -14747,25 +14761,28 @@ msgstr "Askenten tyyppi"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
-msgstr ""
+msgstr "Askelta millisekunnissa"
 
 #: GeoTimeLines/GeoTimeLines.py:1915
 msgid "Initial map view on Gramps startup"
-msgstr ""
+msgstr "Ensimmäinen karttanäkymä Grampsin käynnistyessä"
 
 #: GeoTimeLines/GeoTimeLines.py:1927
 msgid ""
 "Initial map view after startup and\n"
 "after changing the active person"
 msgstr ""
+"Ensimmäinen karttanäkymä\n"
+"uudella henkilöllä"
 
 #: GeoTimeLines/GeoTimeLines.py:1936
+#, fuzzy
 msgid "Show map travel lines on startup"
-msgstr ""
+msgstr "Näytä kartan matkaviivat käynnistyksessä"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
-msgstr ""
+msgstr "Näytä aika-asteikko navigointipalkissa käynnistettäessä"
 
 #: GeoTimeLines/GeoTimeLines.py:1974
 msgid "TimeLines Map options"
@@ -14773,15 +14790,15 @@ msgstr "GeoTimeLines-kartan valinnat"
 
 #: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
-msgstr ""
+msgstr "GetGOV"
 
 #: GetGOV/getgov.gpr.py:33
 msgid "Gramplet to get places from the GOV database"
-msgstr ""
+msgstr "Gramplet paikkojen hakuun GOV-tietokannasta"
 
 #: GetGOV/getgov.py:315
 msgid "Place ID to import from GOV (Historical Gazetteer):"
-msgstr ""
+msgstr "Paikkatunnus tuodaan GOV:sta (Historical Gazetteer):"
 
 #: GetGOV/getgov.py:323
 msgid "Get Place"
@@ -14790,32 +14807,32 @@ msgstr "Hae paikka"
 #: GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
-msgstr ""
+msgstr "Lisää paikka GOV-id %s"
 
 #: GetGOV/getgov.py:388
 #, python-format
 msgid "GetGOV error: %s"
-msgstr ""
+msgstr "GetGOV-virhe: %s"
 
 #: GetGOV/getgov.py:421
 #, python-format
 msgid "GOV error on id %s with code: "
-msgstr ""
+msgstr "GOV-virhe tunnuksella %s, koodi: "
 
 #: GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
-msgstr ""
+msgstr "välillä %s – %s"
 
 #: GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
-msgstr ""
+msgstr "%s jälkeen"
 
 #: GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
-msgstr ""
+msgstr "ennen %s"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
 msgid "GoogleEarth"
@@ -14867,15 +14884,15 @@ msgstr ""
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
 #: GrampsWebSync/grampswebsync.py:210
 msgid "Gramps Web Sync"
-msgstr ""
+msgstr "Gramps Web -synkronointi"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
-msgstr ""
+msgstr "Synkronoi paikallisen tietokannan Gramps Web -instanssin kanssa."
 
 #: GrampsWebSync/grampswebsync.py:264
 msgid "Your user does not have sufficient server permissions to use sync."
-msgstr ""
+msgstr "Käyttäjätunuksellasi ei ole riittäviä palvelinoikeuksia synkronointiin."
 
 #: GrampsWebSync/grampswebsync.py:268
 msgid "Fetching remote data..."
@@ -14883,21 +14900,21 @@ msgstr "Haetaan etätietoja..."
 
 #: GrampsWebSync/grampswebsync.py:284
 msgid "Unexpected error while applying changes."
-msgstr ""
+msgstr "Odottamaton virhe muutoksien toteuttamiseen."
 
 #: GrampsWebSync/grampswebsync.py:322
 msgid "Media files are in sync."
-msgstr ""
+msgstr "Mediatiedostoissa ei synkronoitavaa."
 
 #: GrampsWebSync/grampswebsync.py:331
 #, python-format
 msgid "Successfully downloaded %s media files."
-msgstr ""
+msgstr "%s mediatiedostoa tuotiin onnistuneesti."
 
 #: GrampsWebSync/grampswebsync.py:334
 #, python-format
 msgid "Encountered %s errors during download."
-msgstr ""
+msgstr "Latauksessa ilmeni %s virhettä."
 
 #: GrampsWebSync/grampswebsync.py:340
 #, python-format
@@ -15072,7 +15089,7 @@ msgid "Missing remotely"
 msgstr "Puuttuu etätiedoista"
 
 #: GrampsWebSync/grampswebsync.py:1003
-#, fuzzy, python-format
+#, python-format
 msgid "Downloading %s media file(s)"
 msgstr "Tuodaan Grampsista %s mediatiedostoa"
 
@@ -15566,7 +15583,6 @@ msgid "Map tiles"
 msgstr "Kartan laatat"
 
 #: Heatmap/heatmap.py:90
-#, fuzzy
 msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
@@ -15848,12 +15864,12 @@ msgstr "s."
 #: HtreePedigreeView/HtreePedigreeView.py:94
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for died|d."
-msgstr "k."
+msgstr "kuolinajan lyhenne|k."
 
 #: HtreePedigreeView/HtreePedigreeView.py:95
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for baptized|bap."
-msgstr "kast."
+msgstr "lyhenne: kaste|kast."
 
 #: HtreePedigreeView/HtreePedigreeView.py:96
 #: TimelinePedigreeView/TimelinePedigreeView.py:85
