@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-08-16 05:47+0000\n"
 "Last-Translator: Максим Горпиніч <gorpinicmaksim0@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -17317,18 +17317,6 @@ msgstr "Мережева діаграма"
 msgid "Generates a family network chart."
 msgstr "Генерує мережеву діаграму родини."
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr "скорочення для народження|н."
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr "скорочення для смерті|п."
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr "скорочення для шлюбу|ш."
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr "Файл існує. Перезаписати?"
@@ -19481,7 +19469,7 @@ msgid "Migrating %s objects..."
 msgstr "Міграція %s об'єктів..."
 
 #: PostgreSQLEnhanced/migration.py:193
-#, python-brace-format, python-format
+#, python-format, python-brace-format
 msgid "Migrated %s {obj_type} objects"
 msgstr "Перенесено %s об'єктів {obj_type}"
 
@@ -24047,6 +24035,15 @@ msgstr "Показати стовпці"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Значки дисплея"
+
+#~ msgid "birth abbreviation|b."
+#~ msgstr "скорочення для народження|н."
+
+#~ msgid "death abbreviation|d."
+#~ msgstr "скорочення для смерті|п."
+
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "скорочення для шлюбу|ш."
 
 #~ msgid "Invalid latitude (syntax: 18°9'"
 #~ msgstr "Помилкова широта (приклад: 18°9'"

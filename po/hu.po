@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-08-14 13:01+0000\n"
 "Last-Translator: Lajos Nemeséri <nemeseril@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
@@ -17333,18 +17333,6 @@ msgstr ""
 #| msgid "Generate a families index page"
 msgid "Generates a family network chart."
 msgstr "Családjegyzék oldal létrehozása"
-
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr ""
 
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"

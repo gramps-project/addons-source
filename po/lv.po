@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15206,8 +15206,8 @@ msgstr ""
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
-"has to start and end with an alphanumeric character.The file extention "
-"'.html' is added by the report."
+"has to start and end with an alphanumeric character.The file extention '."
+"html' is added by the report."
 msgstr ""
 
 #: Heatmap/heatmap.py:103
@@ -16717,18 +16717,6 @@ msgstr ""
 msgid "Generates a family network chart."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr ""
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr ""
@@ -16967,8 +16955,8 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1056
 msgid ""
-"RGB-color for the highlighted path between two individuals.  If the "
-"graph.inverts, reverse the order to change."
+"RGB-color for the highlighted path between two individuals.  If the graph."
+"inverts, reverse the order to change."
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:1061
@@ -18913,9 +18901,9 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
 msgid ""
-"<i>Prerequistes required for the following <a href=\"https://gramps-"
-"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
-"to work</i>:\n"
+"<i>Prerequistes required for the following <a href=\"https://gramps-project."
+"org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
+"work</i>:\n"
 msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
@@ -20844,20 +20832,20 @@ msgstr ""
 #: TMGimporter/importtmg.py:110
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer "
-"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
-"TMG project was created by:TMG version 5.x or greater.Your file:*.TMG - "
-"Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
+"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 
 #: TMGimporter/importtmg.py:131
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer "
-"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
-"TMG project was created by:TMG version 5.x or greater.Your file:*.VER - "
-"Version Control File for TMG 1.2 and earlierPlease refer to:"
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
+"Control File for TMG 1.2 and earlierPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 

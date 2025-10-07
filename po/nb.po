@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-03-23 20:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -17528,24 +17528,6 @@ msgstr ""
 msgid "Generates a family network chart."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:133
-#, fuzzy
-#| msgid "abbreviation"
-msgid "birth abbreviation|b."
-msgstr "forkortelse"
-
-#: NetworkChart/NetworkChart.py:134
-#, fuzzy
-#| msgid "abbreviation"
-msgid "death abbreviation|d."
-msgstr "forkortelse"
-
-#: NetworkChart/NetworkChart.py:135
-#, fuzzy
-#| msgid "abbreviation"
-msgid "marriage abbreviation|m."
-msgstr "forkortelse"
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr ""
@@ -24214,6 +24196,21 @@ msgstr "Visningstype"
 #| msgid "Display type"
 msgid "Display Icons"
 msgstr "Visningstype"
+
+#, fuzzy
+#~| msgid "abbreviation"
+#~ msgid "birth abbreviation|b."
+#~ msgstr "forkortelse"
+
+#, fuzzy
+#~| msgid "abbreviation"
+#~ msgid "death abbreviation|d."
+#~ msgstr "forkortelse"
+
+#, fuzzy
+#~| msgid "abbreviation"
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "forkortelse"
 
 #, fuzzy
 #~ msgid "Invalid latitude (syntax: 18°9'"

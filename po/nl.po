@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-15 11:06-0700\n"
+"POT-Creation-Date: 2025-09-12 10:22-0700\n"
 "PO-Revision-Date: 2025-08-16 05:47+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
@@ -5136,7 +5136,8 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1127
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr "Ongeldige lengtegraad (syntaxis: 18°9′48.21″E, -18.2412 of -18:9:48.21)"
+msgstr ""
+"Ongeldige lengtegraad (syntaxis: 18°9′48.21″E, -18.2412 of -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -17454,18 +17455,6 @@ msgstr "Netwerk Grafiek"
 msgid "Generates a family network chart."
 msgstr "Genereert een familienetwerkgrafiek."
 
-#: NetworkChart/NetworkChart.py:133
-msgid "birth abbreviation|b."
-msgstr "afkorting geboorte|b."
-
-#: NetworkChart/NetworkChart.py:134
-msgid "death abbreviation|d."
-msgstr "afkorting overlijden|d."
-
-#: NetworkChart/NetworkChart.py:135
-msgid "marriage abbreviation|m."
-msgstr "afkorting huwelijk|m."
-
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
 msgstr "Bestand bestaat. Overschrijven?"
@@ -19640,7 +19629,7 @@ msgid "Migrating %s objects..."
 msgstr "%s objecten migreren…"
 
 #: PostgreSQLEnhanced/migration.py:193
-#, python-brace-format, python-format
+#, python-format, python-brace-format
 msgid "Migrated %s {obj_type} objects"
 msgstr "%s {obj_type} objecten gemigreerd"
 
@@ -24231,6 +24220,15 @@ msgstr "Kolomen weergeven"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Pictogrammen weergeven"
+
+#~ msgid "birth abbreviation|b."
+#~ msgstr "afkorting geboorte|b."
+
+#~ msgid "death abbreviation|d."
+#~ msgstr "afkorting overlijden|d."
+
+#~ msgid "marriage abbreviation|m."
+#~ msgstr "afkorting huwelijk|m."
 
 #~ msgid "Invalid latitude (syntax: 18°9'"
 #~ msgstr "Ongeldige breedtegraad (syntaxis: 18°9'"
