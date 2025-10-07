@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -17,9 +17,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
-"n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : "
+"((n > 10 && n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -918,7 +918,7 @@ msgstr "חיפוש בכל מסד הנתונים בנסיון לתקן רישיו
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
-msgstr "manual|Fix_Capitalization_of_Given_Names..."
+msgstr "manual|תקון_אותיות_רישיות_בשמות_פרטלים..."
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
@@ -1156,7 +1156,7 @@ msgstr "כשל בהעתקת קבצימרשתת: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
-msgstr ""
+msgstr "אפשרויות אילן־יוחסים אבות קדמונים מתרחב"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
@@ -1206,7 +1206,7 @@ msgstr "נתיב היעד לקבצים שחוללו."
 #: D3Charts/DescendantIndentedTree.py:1830
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
-msgstr "שם קובץ יעד לתוכן .html"
+msgstr "שם קובץ היעד לתוכן html"
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
@@ -1226,11 +1226,11 @@ msgstr "אפשרויות תרשים מניפה אבות־קדמונים"
 
 #: D3Charts/AncestralFanChart.py:729
 msgid "Paternal Background Color"
-msgstr ""
+msgstr "צבע רקע לדור אבות"
 
 #: D3Charts/AncestralFanChart.py:730
 msgid "RGB-color for paternal box background."
-msgstr ""
+msgstr "צבעי RBG לרקע תיבת דור אבות."
 
 #: D3Charts/AncestralFanChart.py:733
 msgid "Maternal Background"
@@ -1463,7 +1463,7 @@ msgstr "דורות לחילול קישורי HREF"
 
 #: D3Charts/DescendantIndentedTree.py:1949
 msgid "The number of generations to generate HREF links."
-msgstr "מספר דורות לחילול קישורי .HREF"
+msgstr "מספר הדורות לחילול קישורי HREF"
 
 #: D3Charts/DescendantIndentedTree.py:1955
 msgid "Exclude persons who died before (years)"
@@ -1488,7 +1488,7 @@ msgstr "החרגת אנשים"
 
 #: D3Charts/DescendantIndentedTree.py:1971
 msgid "Whether or not to generate links for spouses."
-msgstr ""
+msgstr "האם לייצר קישורים לזוגאים."
 
 #: D3Charts/DescendantIndentedTree.py:1978
 msgid "Biography Content"
@@ -1496,11 +1496,11 @@ msgstr "תוכן תולדות חיים"
 
 #: D3Charts/DescendantIndentedTree.py:1980
 msgid "Show biography tooltips"
-msgstr ""
+msgstr "הצגת רמזים צצים לביוגרפיה"
 
 #: D3Charts/DescendantIndentedTree.py:1981
 msgid "Whether to show biography tooltips when hovering over a node."
-msgstr ""
+msgstr "האם להציג רמז צץ לביוגרפיה בעת ריחוף מעל צומת."
 
 #: D3Charts/DescendantIndentedTree.py:2025
 msgid "Text Color"
@@ -1508,11 +1508,11 @@ msgstr "צבע מלל"
 
 #: D3Charts/DescendantIndentedTree.py:2027
 msgid "RGB-color for biography text."
-msgstr ""
+msgstr "צבע RBG למלל ביוגרפיה."
 
 #: D3Charts/DescendantIndentedTree.py:2032
 msgid "RGB-color for biography tooltip."
-msgstr ""
+msgstr "צבע RBG לרמז צץ ביוגרפיה."
 
 #: D3Charts/DescendantIndentedTree.py:2035
 msgid "Header Font size"
@@ -1520,62 +1520,62 @@ msgstr "גודל גופן כותרת"
 
 #: D3Charts/DescendantIndentedTree.py:2037
 msgid "The font size in pixels for biography header text."
-msgstr ""
+msgstr "גודל הגופן למלל כותרת ביוגרפיה בפיקסלים."
 
 #: D3Charts/DescendantIndentedTree.py:2043
 msgid "Body Font size"
-msgstr ""
+msgstr "גודל גופן גוף המלל"
 
 #: D3Charts/DescendantIndentedTree.py:2045
 msgid "The font size in pixels for biography body text."
-msgstr ""
+msgstr "גודל הגופן למלל גוף ביוגרפיה בפיקסלים."
 
 #: DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "DE Web Connect Pack"
-msgstr ""
+msgstr "חבילת תוכן מרשתת DE"
 
 #: DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr ""
+msgstr "אוסף אתרי מרשתת עבור DE (נדרש libweblink)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
-msgstr ""
+msgstr "חיפוש אקדמי Bielefel"
 
 #: DEWebConnectPack/DEWebPack.py:39 SVWebconnectPack/SVWebPack.py:34
 #: UKWebConnectPack/UKWebPack.py:35 USWebConnectPack/USWebPack.py:34
 #: USWebConnectPack/USWebPack.py:46
 msgid "FamilySearch.org"
-msgstr ""
+msgstr "FamilySearch.org"
 
 #: DEWebConnectPack/DEWebPack.py:42
 msgid "Google Archives"
-msgstr ""
+msgstr "ארכיוני גוגל"
 
 #: DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
-msgstr ""
+msgstr "DE Google"
 
 #: DEWebConnectPack/DEWebPack.py:44 UKWebConnectPack/UKWebPack.py:39
 #: USWebConnectPack/USWebPack.py:42
 msgid "Open Library"
-msgstr ""
+msgstr "Open Library"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
-msgstr ""
+msgstr "מפת שמות משפחה (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
-msgstr ""
+msgstr "GenWiki"
 
 #: DEWebConnectPack/DEWebPack.py:47
 msgid "German digital library"
-msgstr ""
+msgstr "ספרייה דיגיטלית גרמנית"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
-msgstr ""
+msgstr "מפת מקטעי DNA"
 
 #: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
@@ -1583,23 +1583,23 @@ msgstr "גרמפלט להצגת מפת מקטע DNA תואם"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
-msgstr ""
+msgstr "כרומוזום "
 
 #: DNA/dnasegmentmap.py:552
 msgid " Map for "
-msgstr ""
+msgstr " מפה עבור "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
-msgstr ""
+msgstr "תו"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "מקרא"
 
 #: DNA/dnasegmentmap.py:761
 msgid ": Grandparent"
-msgstr ""
+msgstr ": סב"
 
 #: DNA/dnasegmentmap.py:1056
 #, python-brace-format
@@ -1608,28 +1608,31 @@ msgid ""
 "{0}\n"
 "{1} cMs"
 msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
-msgstr ""
+msgstr " SNPs"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : התחלה ב־ "
 
 #: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
-msgstr ""
+msgstr " וסיום ב־ "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s ו־ %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
 #, python-brace-format
@@ -1643,13 +1646,15 @@ msgstr ""
 #: DNA/dnasegmentmap.py:1091
 #, python-brace-format
 msgid " Ancestor: {0}"
-msgstr ""
+msgstr " אב קדמון: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
 msgstr ""
+"הקשה כדי להפוך אדם זה לפעיל\n"
+"הקשת עכבר ימנית כדי לערוך אדם זה"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
@@ -1661,39 +1666,39 @@ msgstr "גרמפלט להצגת רשימת איתורי DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr ""
+msgstr "L. Seg"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
-msgstr ""
+msgstr "Pers."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
-msgstr ""
+msgstr "Rel."
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "S. DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
-msgstr ""
+msgstr "S. Seg."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Src(s)"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "DNA משותף"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "מקטעים משותפים"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "המקטע הגדול ביותר"
 
 #: DNAMatches/dnamatches.py:159
 msgid "Source(s)"
@@ -1701,28 +1706,28 @@ msgstr "מקורות"
 
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
-msgstr ""
+msgstr "הקשת עכבר כפולה על שורה כדי לנווט לאדם המתאים."
 
 #: DNAMatches/dnamatches.py:195
 msgid "Right click to edit selected association."
-msgstr ""
+msgstr "הקשת עכבר ימנית לעריכת תסמיך."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
-msgstr ""
+msgstr "מקרא"
 
 #: DNAMatches/dnamatches.py:228
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "לא צוין"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
 msgid "cM"
-msgstr ""
+msgstr "cM"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
@@ -1910,19 +1915,19 @@ msgstr "מחשבון תאריכים"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
-msgstr ""
+msgstr "ביצוע חישובי תאריך מתמטיים"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "תאריך אזכור או טווח תאריכים"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "a valid Gramps date"
-msgstr ""
+msgstr "תאריך גרמפס תקין"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "תאריך או קיזוז ±y או ±y, m, d"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -1930,6 +1935,9 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. תאריך\n"
+"2. מספר חיובי או שלילי, שמייצג שנים\n"
+"3. רשימת ערכים חיובית או שלילית, שמייצגת שנים, חודשים, ימים"
 
 #: DateCalculator/DateCalculator.py:96
 msgid "Result"
@@ -1947,11 +1955,11 @@ msgstr "העתקה"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "שגיאה: תאריך לא תקין בביטוי ראשון"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "שגיאה: קיזוז לא תקין בביטוי שני"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
@@ -1960,7 +1968,7 @@ msgstr "שגיאה: לפחות אחד מהביטוים חייב להיות תא�
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
+msgstr "נא להזין ביטוי ברשומות לעיל ולהקיש על 'לחשב'."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -2058,7 +2066,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
-msgstr ""
+msgstr "DenominoViso"
 
 #: DenominoViso/DenominoViso.gpr.py:19
 msgid ""
@@ -2066,6 +2074,8 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
+"יצירת עמוד (HTML) מרשתת עם ייצוג חזותי של אבות קדמונים / צאצאים (SVG) שבו "
+"פרטי האנשים הופכים גלויים באירועי עכבר."
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -2073,11 +2083,11 @@ msgstr "אין מקור"
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
 msgid "onclick"
-msgstr ""
+msgstr "בהקשת עכבר"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onmouseover"
-msgstr ""
+msgstr "ברחוף סמן עכבר מעל"
 
 #: DenominoViso/DenominoViso.py:208
 #: LinesOfDescendency/lines-of-descendency.py:55
@@ -2086,45 +2096,45 @@ msgstr "אב קדמון"
 
 #: DenominoViso/DenominoViso.py:209
 msgid "Descendant"
-msgstr ""
+msgstr "צאצא"
 
 #: DenominoViso/DenominoViso.py:214
 msgid "Fan"
-msgstr ""
+msgstr "מניפה"
 
 #: DenominoViso/DenominoViso.py:215
 msgid "Growth Spiral"
-msgstr ""
+msgstr "לוליין צמיחה"
 
 #: DenominoViso/DenominoViso.py:216
 msgid "Mandelbrot Tree"
-msgstr ""
+msgstr "עץ מנדלברוט"
 
 #: DenominoViso/DenominoViso.py:217
 msgid "Pythagoras Tree"
-msgstr ""
+msgstr "עץ פיתגורס"
 
 #: DenominoViso/DenominoViso.py:221
 msgid "right to left"
-msgstr ""
+msgstr "מימין לשמאל"
 
 #: DenominoViso/DenominoViso.py:222
 msgid "left to right"
-msgstr ""
+msgstr "משמאל לימין"
 
 #: DenominoViso/DenominoViso.py:223
 msgid "top to bottom"
-msgstr ""
+msgstr "צלמעלה למטה"
 
 #: DenominoViso/DenominoViso.py:224
 msgid "bottom to top"
-msgstr ""
+msgstr "מלמטה למעלה"
 
 #: DenominoViso/DenominoViso.py:306 DenominoViso/DenominoViso.py:974
 #: DenominoViso/DenominoViso.py:1034 DenominoViso/DenominoViso.py:1259
 #: DenominoViso/DenominoViso.py:2750
 msgid "role"
-msgstr ""
+msgstr "תפקיד"
 
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
@@ -2135,7 +2145,7 @@ msgstr "תיאור"
 #: DenominoViso/DenominoViso.py:310 DenominoViso/DenominoViso.py:976
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
 msgid "witnesses"
-msgstr ""
+msgstr "עדים"
 
 #: DenominoViso/DenominoViso.py:395
 msgid "No central person selected"
@@ -2147,19 +2157,19 @@ msgstr "כיוון ציר זמן לא ידוע"
 
 #: DenominoViso/DenominoViso.py:1508 DenominoViso/DenominoViso.py:1562
 msgid "author"
-msgstr ""
+msgstr "נוצר על ידי"
 
 #: DenominoViso/DenominoViso.py:1513 DenominoViso/DenominoViso.py:1563
 msgid "publication_info"
-msgstr ""
+msgstr "מידע פרסום"
 
 #: DenominoViso/DenominoViso.py:1518 DenominoViso/DenominoViso.py:1564
 msgid "abbreviation"
-msgstr ""
+msgstr "קיצור"
 
 #: DenominoViso/DenominoViso.py:1562
 msgid "volume"
-msgstr ""
+msgstr "כרך"
 
 #: DenominoViso/DenominoViso.py:1754 Form/form_us.xml.h:2270
 #: Form/form_us.xml.h:2288 Form/form_us.xml.h:2299 Form/form_us.xml.h:2317
@@ -2169,7 +2179,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:1959
 msgid "the chart type runs out of bounds"
-msgstr ""
+msgstr "סוג התרשים חורג מהגבולות"
 
 #: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:968
 #: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
@@ -2179,11 +2189,11 @@ msgstr "חיפוש"
 
 #: DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
-msgstr ""
+msgstr "אפשרויות DenominoViso"
 
 #: DenominoViso/DenominoViso.py:2556
 msgid "The destination file for the html-content."
-msgstr ""
+msgstr "קובץ היעד לתוכן ה־html."
 
 #: DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
@@ -2191,31 +2201,31 @@ msgstr "אדם מרכזי"
 
 #: DenominoViso/DenominoViso.py:2560
 msgid "The central person for the tree"
-msgstr ""
+msgstr "האדם המרכזי באילן־היוחסין"
 
 #: DenominoViso/DenominoViso.py:2563
 msgid "Title of the webpage"
-msgstr ""
+msgstr "כותרת עמוד המרשתת"
 
 #: DenominoViso/DenominoViso.py:2564
 msgid "Any string you wish."
-msgstr ""
+msgstr "כל מחרוזת שהיא."
 
 #: DenominoViso/DenominoViso.py:2567
 msgid "Display mode"
-msgstr ""
+msgstr "מצב תצוגה"
 
 #: DenominoViso/DenominoViso.py:2568
 msgid "Either plot ancestor or descendants graph."
-msgstr ""
+msgstr "שרטוט תרשים אב קדמון או צאצאים."
 
 #: DenominoViso/DenominoViso.py:2573
 msgid "Display type"
-msgstr ""
+msgstr "סוג מצג"
 
 #: DenominoViso/DenominoViso.py:2574
 msgid "The type of graph to create."
-msgstr ""
+msgstr "סוג התרשים ליצירה."
 
 #: DenominoViso/DenominoViso.py:2582
 msgid "Direction of time"
@@ -2223,11 +2233,11 @@ msgstr "כיוון ציר הזמן"
 
 #: DenominoViso/DenominoViso.py:2583
 msgid "Direction in which time increases."
-msgstr ""
+msgstr "הכיוון שבו הזמן עולה."
 
 #: DenominoViso/DenominoViso.py:2592
 msgid "Max chart width (%)"
-msgstr ""
+msgstr "רוחב תרשים מירבי (%)"
 
 #: DenominoViso/DenominoViso.py:2593
 msgid "Width of the tree as fraction of the browser window"
@@ -4834,16 +4844,12 @@ msgid "Bad Date/Time"
 msgstr "תאריך/זמן שגוי"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 או -18:9:48.21)"
+msgstr "קו רוחב לא תקין (תחביר: 18°9′48.21″S, -18.2412 או -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
-#| msgid "Invalid longitude (syntax: 18°9'"
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr "קו אורך לא תקין (תחביר: 18°9'"
+msgstr "קו אורך לא תקין (תחביר: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -5821,7 +5827,7 @@ msgstr "תיקון נקודות־ציון מקום"
 #: FixCoords/fixcoords.gpr.py:33
 msgid ""
 "Tool to correct the place coordinates for extra spaces or comma characters."
-msgstr "כלי לתקון נקודות־ציון של מקום עם רווחים נוספים או או תוי פסיקים."
+msgstr "כלי לתקון נקודות־ציון של מקום עם רווחים נוספים או תוי פסיקים."
 
 #: FixCoords/fixcoords.py:53
 msgid "Fix Coordinates"
