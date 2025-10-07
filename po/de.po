@@ -18,13 +18,14 @@
 # Andreas Abraham <andreas.abraham@gmx.de>, 2021.
 # RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 # Christoph Eder <christoph.eder@phsalzburg.at>, 2025.
+# jmichault <jmt.2000@free.fr>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-09-27 11:02+0000\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"PO-Revision-Date: 2025-09-28 12:02+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -3127,7 +3128,7 @@ msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
 msgstr ""
-"Klicke auf die Schaltfläche „Zurücksetzen“ ___HILFE_RESET_TASTE___, um zum "
+"Klicke auf die Schaltfläche „Zurücksetzen“ ___HELP_RESET_BUTTON___, um zum "
 "ersten Nachkommen zurückzukehren."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:923
