@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,21 +12,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid ""
 "LifeLineChartView dependencies are missing. It is not possible to use this "
 "plugin without them."
 msgstr ""
-"LifeLineChartView Abhängigkeiten fehlen. Ohne diese ist es nicht möglich das "
-"Plugin zu nutzen."
+"LebenslinienDiagrammAnsicht-Abhängigkeiten fehlen. Ohne diese ist es nicht "
+"möglich, diese Erweiterung zu verwenden."
 
 #, python-brace-format
 msgid "cursor position at {date}"
 msgstr "Cursorposition bei {date}"
 
 msgid "Hide person"
-msgstr "Person verbergen"
+msgstr "Person ausblenden"
 
 msgid "Show person"
 msgstr "Person zeigen"
@@ -35,16 +35,16 @@ msgid "Show siblings"
 msgstr "Geschwister zeigen"
 
 msgid "Hide siblings"
-msgstr "Geschwister veerbergen"
+msgstr "Geschwister ausblenden"
 
 msgid "Show ancestors above "
-msgstr "Platziere Vorfahren über "
+msgstr "Vorfahren oben anzeigen "
 
 msgid "General Layout"
-msgstr "Allgemeines Layout"
+msgstr "Allgemeiner Aufbau"
 
 msgid "Life Line Chart"
-msgstr "Lebenslinien Diagramm"
+msgstr "Lebenslinie Diagramm"
 
 msgid "Zoom in"
 msgstr "Heranzoomen"
@@ -56,46 +56,46 @@ msgid "Mouse wheel"
 msgstr "Mausrad"
 
 msgid "Zoom out"
-msgstr "Herauszoomen"
+msgstr "Verkleinern"
 
 msgid "Zoom to original"
-msgstr "Auf original Größe zoomen"
+msgstr "Auf Originalgröße vergrößern"
 
 msgid "Zoom to best fit"
-msgstr "Zoom auf die beste Größte"
+msgstr "Zoomen, um bestmöglich anzupassen"
 
 msgid "Rebuild data cache"
 msgstr "Datencache neu erstellen"
 
 msgid "Revert the placement and person selection"
-msgstr "Platzierung und Personenauswahl zurücksetzen"
+msgstr "Die Platzierung und Personenauswahl zurücksetzen"
 
 msgid "Open Life Line Chart help"
-msgstr "Lebenslinien Diagramm Hilfe öffnen"
+msgstr "Lebenslinie Diagramm Hilfe öffnen"
 
 msgid "Export View as SVG"
 msgstr "Ansicht als SVG exportieren"
 
 msgid "Label Configuration"
-msgstr "Textfeld Konfiguration"
+msgstr "Etikettenkonfiguration"
 
 msgid "Reset all settings"
 msgstr "Alle Einstellungen zurücksetzen"
 
 msgid "Life Line Ancestor Chart"
-msgstr "Lebenslinien Vorfahren Diagramm"
+msgstr "Lebenslinie- Vorfahrendiagramm"
 
 msgid "Persons and their relation in a time based chart"
-msgstr "Personen und ihre Beziehung in einem Zeit basierten Diagramm"
+msgstr "Personen und ihre Beziehungen in einem zeitbasierten Diagramm"
 
 msgid "Life Line Descendant Chart"
-msgstr "Lebenslinien Nachfahren Diagramm"
+msgstr "Lebenslinie-Nachkommendiagramm"
 
 msgid "Warp the chart shape"
-msgstr "Diagramm verzerren"
+msgstr "Die Diagrammform verzerren"
 
 msgid "The overall shape of the chart can be warped."
-msgstr "Die gesamte Form des Diagramms kann verzerrt werden."
+msgstr "Die Gesamtform des Diagramms kann verzerrt sein."
 
 msgid "Normal grid shape"
 msgstr "Normale Gitterform"
@@ -113,30 +113,30 @@ msgid "Photos of the individual are shown."
 msgstr "Fotos der Person werden gezeigt."
 
 msgid "Photo size"
-msgstr "Größe der Fotos"
+msgstr "Fotogröße"
 
 msgid ""
 "Photos which are shown are fitted into a square of this extent. The size is "
 "given relative to the line thickness."
 msgstr ""
-"Die Bilder werden in eine Quadrat dieser Kantenlänge eingepasst. Die Länge "
-"wird relativ zur Linienbreite angegeben."
+"Die angezeigten Fotos werden in ein Quadrat dieser Größe eingefügt. Die "
+"Größe wird relativ zur Linienstärke angegeben."
 
 msgid "Total height"
 msgstr "Gesamthöhe"
 
 msgid "Total height of the whole chart."
-msgstr "Höhe des gesamten Diagramms."
+msgstr "Gesamthöhe des gesamten Diagramms."
 
 msgid "Relative line thickness"
-msgstr "Relative Linienbreite"
+msgstr "Relative Linienstärke"
 
 msgid ""
 "The line thickness of an individual is given relatively to the horizontal "
 "step size."
 msgstr ""
-"Die Breite eine Lebenslinie wird relativ zur horizontalen Schrittweite "
-"angegeben."
+"Die Linienstärke einer einzelnen Linie wird relativ zur horizontalen "
+"Schrittweite angegeben."
 
 msgid "Horizontal step size"
 msgstr "Horizontale Schrittweite"
@@ -145,133 +145,133 @@ msgid ""
 "This is the distance from one line to another. This value is also used for "
 "scaling of other items."
 msgstr ""
-"Dies ist der Abstand zwischen zwei Lebenslinien. Dieser Wert wird häufig zur "
-"Skalierung anderer Objekte verwendet."
+"Dies ist der Abstand zwischen zwei Linien. Dieser Wert wird auch für die "
+"Skalierung anderer Elemente verwendet."
 
 msgid "Show birth label"
-msgstr "Geburts-Textfeld anzeigen"
+msgstr "Geburtsetikett anzeigen"
 
 msgid "Activate the birth label."
-msgstr "Aktiviert einen kurzen Infotextes zur Geburt."
+msgstr "Aktiviere das Geburtsetikett."
 
 msgid "Birth label along path"
-msgstr "Geburts-Textfeld auf der Linie"
+msgstr "Geburtsetikett entlang des Weges"
 
 msgid "The birth label is aligned to the individual line."
-msgstr "Das Geburts-Textfeld wird entlang der Linie dargestellt."
+msgstr "Das Geburtsetikett ist an der einzelnen Linie ausgerichtet."
 
 msgid "Birth label rotation"
-msgstr "Geburts-Textfeld Drehung"
+msgstr "Rotation der Geburtsetiketten"
 
 msgid "The birth label is written in a text frame rotated by this value."
 msgstr ""
-"Das Geburts-Textfeld wird in einen Textrahmen geschrieben, der um diesen "
-"Wert gedreht wird."
+"Das Geburtsetikett wird in einem um diesen Wert gedrehten Textrahmen "
+"geschrieben."
 
 msgid "Horizontal offset of birth label"
-msgstr "Horizontale Verschiebung des Geburts-Textfeldes"
+msgstr "Horizontaler Versatz des Geburtsetiketts"
 
 msgid ""
 "The birth label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
-"Das Geburts-Textfeld wird um diesen Wert horizontal verschoben. Die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+"Das Geburtsetikett wird um diesen Wert, der relativ zur Schriftgröße "
+"angegeben wird, horizontal verschoben."
 
 msgid "Vertical offset of birth label"
-msgstr "Vertikale Verschiebung des Geburts-Textfeldes"
+msgstr "Vertikaler Versatz des Geburtsetiketts"
 
 msgid ""
 "The birth label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
-"Das Geburts-Textfeld wird um diesen Wert vertikal verschoben. Die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+"Das Geburtsetikett wird um diesen Wert vertikal verschoben, der relativ zur "
+"Schriftgröße angegeben wird."
 
 msgid "Wrap words in birth label"
-msgstr "Zeilenumbruch im Geburts-Textfeld"
+msgstr "Wörter in Geburtsetikett umbrechen"
 
 msgid "The birth label content is wrapped where possible."
-msgstr "Wo es möglich ist, wird der Text im Geburts-Textfeld umgebrochen."
+msgstr "Der Inhalt des Geburtsetiketts wird nach Möglichkeit umgebrochen."
 
 msgid "Birth label anchor"
-msgstr "Textausrichtung des Geburts-Textfeld"
+msgstr "Geburtsetikett-Anker"
 
 msgid "Text alignment of the birth label."
-msgstr "Textausrichtung im Geburts-Textfeld."
+msgstr "Textausrichtung des Geburtsetiketts."
 
 msgid "Center"
-msgstr "Zentriert"
+msgstr "Zentrum"
 
 msgid "Show death label"
-msgstr "Sterbe-Textfeld anzeigen"
+msgstr "Todesetikett anzeigen"
 
 msgid "Activate the death label."
-msgstr "Aktiviert Sterbe-Textfeld."
+msgstr "Aktiviert das Todesetikett."
 
 msgid "Death label rotation"
-msgstr "Sterbe-Textfeld Drehung"
+msgstr "Rotation des Todesetiketts"
 
 msgid "The death label is written in a text frame rotated by this value."
 msgstr ""
-"Das Sterbe-Textfeld wird in einen Textrahmen geschrieben, der um diesen Wert "
-"gedreht wird."
+"Das Todesetikett wird in einem um diesen Wert gedrehten Textrahmen "
+"geschrieben."
 
 msgid "Horizontal offset of death label"
-msgstr "Horizontale Verschiebung des Sterbe-Textfeldes"
+msgstr "Horizontaler Versatz des Todesetiketts"
 
 msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
-"Das Sterbe-Textfeld wird um diesen Wert horizontal verschoben. Die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+"Das Todesetikett wird um diesen Wert, der relativ zur Schriftgröße angegeben "
+"wird, horizontal verschoben."
 
 msgid "Vertical offset of death label"
-msgstr "Vertikale Verschiebung des Sterbe-Textfeldes"
+msgstr "Vertikaler Versatz des Todesetiketts"
 
 msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
-"Das Sterbe-Textfeld wird um diesen Wert vertikal verschoben. Die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+"Das Todesetikett wird um diesen Wert vertikal verschoben, der relativ zur "
+"Schriftgröße angegeben wird."
 
 msgid "Wrap words in death label"
-msgstr "Zeilenumbruch im Sterbe-Textfeld"
+msgstr "Worte in Todesetiketten umbrechen"
 
 msgid "The death label content is wrapped where possible."
-msgstr "Wo es möglich ist, wird der Text im Sterbe-Textfeld umgebrochen."
+msgstr "Der Inhalt des Todesetiketts wird nach Möglichkeit umbrochen."
 
 msgid "Death label anchor"
-msgstr "Textausrichtung des Sterbe-Textfeld"
+msgstr "Todesetikett-Anker"
 
 msgid "Text alignment of the death label."
-msgstr "Textausrichtung im Sterbe-Textfeld."
+msgstr "Textausrichtung des Todesetiketts."
 
 msgid "Show marriage label"
-msgstr "Ehe-Textfeld anzeigen"
+msgstr "Eheetikett anzeigen"
 
 msgid "Activate the marriage label."
-msgstr "Aktiviert einen kurzen Infotextes zur Hochzeit."
+msgstr "Aktiviert das Eheetikett."
 
 msgid "Fade individual color"
-msgstr "Individueller Farbgradient"
+msgstr "Personen Farbe ausblenden"
 
 msgid "The color of the individuals is faded to black with increasing age."
 msgstr "Die Farbe der Individuen geht mit zunehmendem Alter in Schwarz über."
 
 msgid "Font name"
-msgstr "Schriftname"
+msgstr "Schriftartname"
 
 msgid "Name of the font family used for labels."
-msgstr "Der Name der Schriftfamilie, die für Textfelder verwendet wird."
+msgstr "Name der für Etiketten verwendeten Schriftfamilie."
 
 msgid "Relative font size"
 msgstr "Relative Schriftgröße"
 
 msgid "The font size is given relatively to the line thickness."
-msgstr "Die Schriftgröße ist relativ zu der Breite der Lebenslinien angegeben."
+msgstr "Die Schriftgröße wird relativ zur Strichstärke angegeben."
 
 msgid "Family shape"
 msgstr "Familienform"
@@ -286,22 +286,22 @@ msgid "Softer"
 msgstr "Weicher"
 
 msgid "Upper year minimum margin"
-msgstr "Obere Begrenzung minimum Jahre"
+msgstr "Mindestspanne für höhere Jahrgänge"
 
 msgid ""
 "The upper bound of the chart is extended by at least this number of years."
 msgstr ""
-"Die obere Grenze des Diagramms wird mindestens um diese Anzahl an Jahre "
-"vergrößert."
+"Die Obergrenze des Diagramms wird um mindestens diese Anzahl von Jahren "
+"erweitert."
 
 msgid "Lower year minimum margin"
-msgstr "Untere Begrenzung minimum Jahre"
+msgstr "Mindestspanne für das untere Jahr"
 
 msgid ""
 "The lower bound of the chart is extended by at least this number of years."
 msgstr ""
-"Die untere Grenze des Diagramms wird mindestens um diese Anzahl an Jahre "
-"vergrößert."
+"Die Untergrenze des Diagramms wird um mindestens diese Anzahl von Jahren "
+"erweitert."
 
 msgid "Visualize connections"
 msgstr "Verbindungen visualisieren"
@@ -310,21 +310,21 @@ msgid ""
 "Visualize the connections between families and individuals. This is for "
 "debugging purposes."
 msgstr ""
-"Visualisiert die Verbindungen zwischen Familien und Einzelpersonen. Das ist "
-"für Fehlerbehebung-Zwecke."
+"Visualisierung der Verbindungen zwischen Familien und Einzelpersonen. Dies "
+"dient zu Fehlersuchzwecken."
 
 msgid "Visualize ambiguous placement"
-msgstr "Mehrdeutig Platzierung visualisierungen"
+msgstr "Mehrdeutige Platzierung visualisieren"
 
 msgid "Visualize automatically detected errors in the placement algorithm."
-msgstr "Visualisiert automatisch erkannte Fehler des Platzierungsalgorithmus."
+msgstr "Automatisch erkannte Fehler im Platzierungsalgorithmus visualisieren."
 
 msgid "Coloring of individuals"
-msgstr "Einfärben von Individuen"
+msgstr "Färbung von Individuen"
 
 msgid "There are different ways to determine the color of an individual."
 msgstr ""
-"Es gibt verschiedene Möglichkeiten die Farbe eines Individuums zu bestimmen."
+"Es gibt verschiedene Möglichkeiten, die Farbe einer Person zu definieren."
 
 msgid "Unique"
 msgstr "Einzigartig"
@@ -336,7 +336,8 @@ msgid "Flip vertically"
 msgstr "Vertikal spiegeln"
 
 msgid "If active, the chart is flipped vertically."
-msgstr "Falls aktiv, wird das Diagramm vertikal gespiegelt."
+msgstr ""
+"Wenn diese Option aktiviert ist, wird das Diagramm vertikal gespiegelt."
 
 msgid "Line weighting"
 msgstr "Liniengewichtung"
@@ -345,7 +346,7 @@ msgid "The line width can be configured."
 msgstr "Die Linienbreite kann konfiguriert werden."
 
 msgid "none"
-msgstr "kein"
+msgstr "keiner"
 
 msgid "Show pedigree collapse"
 msgstr "Ahnenschwund darstellen"
@@ -355,9 +356,9 @@ msgid ""
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
-"Aufgrund des Ahnenschwundes könnte eine Person mehrmals in einem einfachen "
-"Vorfahren Diagramm gezeigt werden. Wenn dies aktiv ist, dann erscheint jede "
-"Person nur einmal."
+"Aufgrund des Ahnenschwundes kann eine Person in einem einfachen "
+"Stammbaumdiagramm mehrmals aufgeführt sein. Wenn diese Option aktiviert ist, "
+"wird jede Person nur einmal angezeigt."
 
 msgid "Maximum number of generations"
 msgstr "Maximale Anzahl von Generationen"
@@ -370,29 +371,29 @@ msgstr ""
 "weiter"
 
 msgid "Fathers have the same color"
-msgstr "Väter haben die selbe Farbe"
+msgstr "Väter haben dieselbe Farbe"
 
 msgid ""
 "Starting from the root person, each father of an added individual has the "
 "same color as that individual."
 msgstr ""
-"Ausgehend von der Hauptperson hat jeder Vater einer hinzugefügten Person "
+"Ausgehend von der Stammperson hat jeder Vater einer hinzugefügten Person "
 "dieselbe Farbe wie diese Person."
 
 msgid "Maximum number of compression steps"
-msgstr "Maximale Anzahl an Komprimierungsschritten"
+msgstr "Maximale Anzahl von Kompressionsschritten"
 
 msgid "Debugging of the compression algorithm. Abort after x steps."
-msgstr "Austesten des Komprimierungsalgorithmus. Abbruch nach x Schritten."
+msgstr "Fehlersuche im Komprimierungsalgorithmus. Nach x Schritten abbrechen."
 
 msgid "Maximum number of flipping steps"
-msgstr "Maximale Anzahl an Spiegelungs Schritten"
+msgstr "Maximale Anzahl von Umkehrschritten"
 
 msgid "Debugging of the flipping algorithm. Abort after x steps."
-msgstr "Austesten des Spiegel-Algorithmus. Abbruch nach x Schritten."
+msgstr "Fehlersuche im Umkehralgorithmus. Nach x Schritten abbrechen."
 
 msgid "Compress the chart horizontally"
-msgstr "Horizontal komprimieren"
+msgstr "Diagramm horizontal komprimieren"
 
 msgid ""
 "By default every individual has a unique horizontal slot. This can be "
@@ -405,23 +406,23 @@ msgstr ""
 "überschneiden."
 
 msgid "Flip families to reduce horizontal connections"
-msgstr "Spiegeln von Familien zur Reduzierung horizontaler Verbindungen"
+msgstr "Familien umdrehen, um horizontale Verbindungen zu reduzieren"
 
 msgid ""
 "Switch the position of mother and father in a family, to reduce the overall "
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
 msgstr ""
-"Wechselt die Position von Mutter und Vater in einer Familie, um die "
-"horizontalen Querverbindungen in größeren Diagrammen zu verringern. Dies ist "
-"der Fall, wenn eine Person in mehr als einer Familie gezeigt wird oder bei "
-"eingeklappten Stammbaum."
+"Vertauscht die Position von Mutter und Vater in einer Familie, um die "
+"horizontalen Querverbindungen in größeren Graphen insgesamt zu reduzieren. "
+"Dies geschieht, wenn eine Person in mehr als einer Familie aufgeführt ist, "
+"oder es wird durch einen Ahnenschwund verursacht."
 
 msgid "Highlight descandants"
 msgstr "Nachkommen hervorheben"
 
 msgid "Highlight the persons which are descendants."
-msgstr "Hebt die Personen, die Nachkommen sind hervor."
+msgstr "Hervorhebung der Personen, die Nachkommen sind."
 
 msgid "Number of descendants"
 msgstr "Anzahl der Nachkommen"
@@ -430,13 +431,13 @@ msgid "Very soft"
 msgstr "Sehr weich"
 
 msgid "General chart layout"
-msgstr "Allgemeines Diagramm-Layout"
+msgstr "Allgemeines Diagrammlayout"
 
 msgid "There are different layouts for descendant charts."
-msgstr "Es gibt verschiedene Layouts für Nachkommen Grafiken."
+msgstr "Es gibt verschiedene Layouts für Nachkommen-Diagramme."
 
 msgid "Parents enclose children"
-msgstr "Eltern umschließen Kinder"
+msgstr "Eltern umgeben ihre Kinder"
 
 msgid "Cactus"
 msgstr "Kaktus"

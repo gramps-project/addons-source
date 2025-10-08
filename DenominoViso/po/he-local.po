@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-08-11 18:01+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,16 +13,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "No Source"
 msgstr "אין מקור"
 
+msgid "onclick"
+msgstr "בהקשת עכבר"
+
+msgid "onmouseover"
+msgstr "ברחוף סמן עכבר מעל"
+
 msgid "Ancestor"
 msgstr "אב קדמון"
 
+msgid "Descendant"
+msgstr "צאצא"
+
+msgid "Fan"
+msgstr "מניפה"
+
+msgid "Growth Spiral"
+msgstr "לוליין צמיחה"
+
+msgid "Mandelbrot Tree"
+msgstr "עץ מנדלברוט"
+
+msgid "Pythagoras Tree"
+msgstr "עץ פיתגורס"
+
+msgid "right to left"
+msgstr "מימין לשמאל"
+
+msgid "left to right"
+msgstr "משמאל לימין"
+
+msgid "top to bottom"
+msgstr "צלמעלה למטה"
+
+msgid "bottom to top"
+msgstr "מלמטה למעלה"
+
+msgid "role"
+msgstr "תפקיד"
+
 msgid "description"
 msgstr "תיאור"
+
+msgid "witnesses"
+msgstr "עדים"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -34,17 +73,65 @@ msgstr "לא נבחר אדם מרכזי"
 msgid "Unknown time direction"
 msgstr "כיוון ציר זמן לא ידוע"
 
+msgid "author"
+msgstr "נוצר על ידי"
+
+msgid "publication_info"
+msgstr "מידע פרסום"
+
+msgid "abbreviation"
+msgstr "קיצור"
+
+msgid "volume"
+msgstr "כרך"
+
+msgid "the chart type runs out of bounds"
+msgstr "סוג התרשים חורג מהגבולות"
+
 msgid "Search"
 msgstr "חיפוש"
 
 msgid "in"
 msgstr "ב"
 
+msgid "DenominoViso Options"
+msgstr "אפשרויות DenominoViso"
+
+msgid "The destination file for the html-content."
+msgstr "קובץ היעד לתוכן ה־html."
+
 msgid "Central Person"
 msgstr "אדם מרכזי"
 
+msgid "The central person for the tree"
+msgstr "האדם המרכזי באילן־היוחסין"
+
+msgid "Title of the webpage"
+msgstr "כותרת עמוד המרשתת"
+
+msgid "Any string you wish."
+msgstr "כל מחרוזת שהיא."
+
+msgid "Display mode"
+msgstr "מצב תצוגה"
+
+msgid "Either plot ancestor or descendants graph."
+msgstr "שרטוט תרשים אב קדמון או צאצאים."
+
+msgid "Display type"
+msgstr "סוג מצג"
+
+msgid "The type of graph to create."
+msgstr "סוג התרשים ליצירה."
+
 msgid "Direction of time"
 msgstr "כיוון ציר הזמן"
+
+msgid "Direction in which time increases."
+msgstr "הכיוון שבו הזמן עולה."
+
+msgid "Max chart width (%)"
+msgstr "רוחב תרשים מירבי (%)"
 
 msgid "Max chart height (px)"
 msgstr "גובה תרשים מירבי (פיקסל)"
@@ -87,3 +174,14 @@ msgstr "הכללה"
 
 msgid "Relation type"
 msgstr "סוג יוחסה"
+
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"יצירת עמוד (HTML) מרשתת עם ייצוג חזותי של אבות קדמונים / צאצאים (SVG) שבו "
+"פרטי האנשים הופכים גלויים באירועי עכבר."

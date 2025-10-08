@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
+"PO-Revision-Date: 2025-09-12 17:22+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -126,6 +126,9 @@ msgstr "Selezionare tutto"
 
 msgid "Select None"
 msgstr "Non selezionare nulla"
+
+msgid "Toggle Selection"
+msgstr "Invertire la selezione"
 
 msgid "Add Selected Events"
 msgstr "Aggiunge eventi selezionati"

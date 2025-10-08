@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2025-09-30 08:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Graph View"
 msgstr "Grafický pohľad"
@@ -176,11 +176,42 @@ msgstr "Pridávanie značiek k osobe (%s)"
 msgid "Adding Tags to family (%s)"
 msgstr "Pridávanie značiek k rodine (%s)"
 
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "Vymazanie osoby [%s] ju odstráni z databázy."
+
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "Vymazať rodinu [%s]?"
+
+msgid "Deleting the family will remove it from the database."
+msgstr "Vymazanie rodiny ju odstráni z databázy."
+
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "Vymazať rodinu [%s]"
+
 msgid "Dynamic and interactive graph of relations"
 msgstr "Dynamický a interaktívny graf vzťahov"
 
 msgid "Light"
 msgstr "Svetlá"
+
+msgid "Persons from current graph"
+msgstr "Osoby z aktuálneho grafu"
+
+msgid "Other persons from database"
+msgstr "Ostatné osoby z databázy"
+
+msgid "No persons found..."
+msgstr "Žiadne osoby nenájdené..."
+
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+"Vyhľadajte osoby v aktuálne viditeľnom grafe a databáze.\n"
+"Pomocou <Ctrl+F> aktivujte položku vyhľadávania."
 
 msgid "Search..."
 msgstr "Hľadať..."
@@ -188,3 +219,6 @@ msgstr "Hľadať..."
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
+
+msgid "Partners"
+msgstr "Partneri"

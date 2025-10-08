@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
+"PO-Revision-Date: 2025-09-12 17:22+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -13,6 +13,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.14-dev\n"
+
+msgid "Separate"
+msgstr "Separato"
+
+msgid "Long - Without Prefix on the Left"
+msgstr "Lungo - Senza prefisso a sinistra"
+
+msgid "URL Prefix Replacement"
+msgstr "Sostituzione prefisso URL"
+
+msgid "AI Provider"
+msgstr "Fornitore di IA"
+
+msgid "(Disabled)"
+msgstr "(Disabilitato)"
+
+msgid "OpenAI"
+msgstr "OpenAI"
+
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+msgid "OpenAI API Key"
+msgstr "Chiave API di OpenAI"
+
+msgid "OpenAI Model"
+msgstr "Modello OpenAI"
+
+msgid "Mistral API Key"
+msgstr "Chiave API Mistral"
+
+msgid "Mistral Model"
+msgstr "Modello Mistral"
+
+msgid "Show Links From the Notes"
+msgstr "Mostra collegamenti dalle note"
+
+msgid "Enable AI-generated historical place data"
+msgstr "Abilita dati storici dei luoghi generati da IA"
+
+msgid "Custom country code for AI notes (optional)"
+msgstr "Codice della nazione personalizzato per note via IA (opzionale)"
+
+msgid "Enable CSV Files"
+msgstr "Abilita file CSV"
 
 msgid "Display Columns"
 msgstr "Mostra colonne"
@@ -27,6 +72,20 @@ msgstr "Ricerca web"
 msgid "Loaded from file: %s"
 msgstr "Caricato dal file: %s"
 
+msgid "Without it, QR code generation will not work."
+msgstr "Senza di essa, la generazione del codice QR non funziona."
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Questa libreria è richiesta per accedere le funzionalità che si basano su "
+"OpenAI."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Senza di essa, i suggerimenti del sito e la storia dei luoghi generati "
+"tramite IA saranno disabilitati."
+
 msgid "  💡 *Tip: click any path above to open it in your file manager.*"
 msgstr ""
 "  💡 *Suggerimento: clic su un qualsiasi percorso qui sopra per aprirlo nel "
@@ -35,14 +94,62 @@ msgstr ""
 msgid "No data available."
 msgstr "Nessun dato disponibile."
 
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "DIVISIONE AMMINISTRATIVA STORICA DI"
+
+msgid "Foundation date:"
+msgstr "Data di fondazione:"
+
 msgid "Note:"
 msgstr "Nota:"
+
+msgid "Coordinates:"
+msgstr "Coordinate:"
+
+msgid "Administrative history"
+msgstr "Storia amministrativa"
+
+msgid "Data provided to AI:"
+msgstr "Dati forniti all'IA:"
+
+msgid "Full hierarchy"
+msgstr "Gerarchia completa"
 
 msgid "Place Type:"
 msgstr "Tipo luogo:"
 
 msgid "Last Retrieved At:"
 msgstr "Ultimo recupero:"
+
+msgid "QR-code"
+msgstr "Codice QR"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Errore durante la generazione del codice QR:\n"
+"Errore originale: “{}”"
+
+msgid "AI provider is disabled"
+msgstr "Il fornitore di IA è disabilitato"
+
+msgid "No AI API key provided"
+msgstr "Nessuna chiave API per IA fornita"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr "I dati storici di luoghi generati da IA sono attualmente disabilitati"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"Il fornitore di IA è sconosciuto. Verificare le impostazioni del fornitore "
+"di IA."
+
+msgid "Show QR-code"
+msgstr "Mostra codice QR"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 Suggerimenti tramite IA"
 
 #, python-format
 msgid "Note #%(id)s has been successfully added"

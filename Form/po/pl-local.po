@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-08-23 15:02+0000\n"
+"PO-Revision-Date: 2025-09-12 11:02+0000\n"
 "Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -13,20 +13,1309 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
+msgid "Select Form"
+msgstr "Wybierz notatkę"
+
+msgid "Form Gramplet"
+msgstr "Gramplet Notatki"
+
 msgid "Order"
 msgstr "Kolejność"
 
+msgid "Form"
+msgstr "Formularz"
+
+#, python-format
+msgid "Form: %s"
+msgstr "Formularz: %s"
+
+msgid "New Form"
+msgstr "Nowy formularz"
+
 msgid "Edit Form"
 msgstr "Edytuj formularz"
+
+msgid "Reference:"
+msgstr "Odniesienie:"
+
+msgid "Headings"
+msgstr "Nagłówki"
+
+msgid "NARA publication"
+msgstr "info publikacji"
+
+msgid "Sheet No."
+msgstr "Wybierz notatkę"
+
+msgid "County of"
+msgstr "Kraj:"
+
+msgid "All other free persons"
+msgstr "Kolor osoby płci żeńskiej:"
+
+msgid "Enumeration Date"
+msgstr "Typ relacji"
+
+msgid "Slave males under 14"
+msgstr "Zapisz obrazki w ..."
+
+msgid "Slave females under 14"
+msgstr "Zapisz obrazki w ..."
+
+msgid "Slave males under 10"
+msgstr "Zapisz obrazki w ..."
+
+msgid "Slave females under 10"
+msgstr "Zapisz obrazki w ..."
+
+msgid "Colored persons blind"
+msgstr "Kolor osoby płci męskiej:"
+
+msgid "Academies and Grammar Schools"
+msgstr "Academies and Grammar Szkołys"
+
+msgid "Primary and Common Schools"
+msgstr "Primary and Common Szkołys"
+
+msgid "Family No."
+msgstr "Rodzina:"
+
+msgid "Place of birth"
+msgstr "_Filtr miejsc:"
+
+msgid "Owner, Agent, or Manager"
+msgstr "Owner, Wieknt, or Manager"
+
+msgid "Relationship to head"
+msgstr "Typ relacji"
+
+msgid "Single"
+msgstr "Kawaler/Panna"
+
+msgid "Blind"
+msgstr "Ślepy/Ślepa"
+
+msgid "Idiotic"
+msgstr "Idiota/Idiotka"
+
+msgid "Insane"
+msgstr "Obłąkany/Obłąkana"
+
+msgid "Horses on hand"
+msgstr "Uchwyt zdarzenia myszy"
+
+msgid "Ward"
+msgstr "Okręg"
+
+msgid "Naturalized"
+msgstr "Znaturalizowany"
+
+msgid "Able to write"
+msgstr "Poziomo (z lewa na prawo)"
+
+msgid "Date Enlisted"
+msgstr "Data/ Czas"
+
+msgid "Relation to head"
+msgstr "Typ relacji"
+
+msgid "Institution"
+msgstr "Animacja"
+
+msgid "Veteran"
+msgstr "Weteran"
+
+msgid "Age at Last Birthday"
+msgstr "Wiek at Last Urodzeniaday"
+
+msgid "District of"
+msgstr "ograniczony do:"
+
+msgid "Spouses Age"
+msgstr "Spouses Wiek"
+
+msgid "Date of Birth"
+msgstr "Date of Urodzenia"
+
+msgid "Place of Birth"
+msgstr "_Filtr miejsc:"
+
+msgid "Place of Enlistment"
+msgstr "_Filtr miejsc:"
+
+msgid "On date"
+msgstr "data:"
+
+msgid "Date married"
+msgstr "Data/ Czas"
+
+msgid "Deaf and Dumb"
+msgstr "Głuchoniemy/Głuchoniema"
+
+msgid "House No."
+msgstr "Domy No."
+
+msgid "Age Male"
+msgstr "Wiek Mężczyźni"
+
+msgid "Age Female"
+msgstr "Wiek Kobiety"
+
+msgid "Relation to Family"
+msgstr "Typ relacji"
+
+msgid "White Males Under 10"
+msgstr "White Mężczyźnis Under 10"
+
+msgid "White Males 10 to 20"
+msgstr "White Mężczyźnis 10 to 20"
+
+msgid "White Males 20 to 30"
+msgstr "White Mężczyźnis 20 to 30"
+
+msgid "White Males 30 to 40"
+msgstr "White Mężczyźnis 30 to 40"
+
+msgid "White Males 40 to 50"
+msgstr "White Mężczyźnis 40 to 50"
+
+msgid "White Males 50 to 60"
+msgstr "White Mężczyźnis 50 to 60"
+
+msgid "White Males 60 to 70"
+msgstr "White Mężczyźnis 60 to 70"
+
+msgid "White Males 70 to 80"
+msgstr "White Mężczyźnis 70 to 80"
+
+msgid "White Males 80 to 90"
+msgstr "White Mężczyźnis 80 to 90"
+
+msgid "White Males Over 90"
+msgstr "White Mężczyźnis Over 90"
+
+msgid "White Females Under 10"
+msgstr "White Kobietys Under 10"
+
+msgid "White Females 10 to 20"
+msgstr "White Kobietys 10 to 20"
+
+msgid "White Females 20 to 30"
+msgstr "White Kobietys 20 to 30"
+
+msgid "White Females 30 to 40"
+msgstr "White Kobietys 30 to 40"
+
+msgid "White Females 40 to 50"
+msgstr "White Kobietys 40 to 50"
+
+msgid "White Females 50 to 60"
+msgstr "White Kobietys 50 to 60"
+
+msgid "White Females 60 to 70"
+msgstr "White Kobietys 60 to 70"
+
+msgid "White Females 70 to 80"
+msgstr "White Kobietys 70 to 80"
+
+msgid "White Females 80 to 90"
+msgstr "White Kobietys 80 to 90"
+
+msgid "White Females Over 90"
+msgstr "White Kobietys Over 90"
+
+msgid "Male Negroes and Mulattoes"
+msgstr "Mężczyźni Negroes and Mulattoes"
+
+msgid "Female Negroes and Mulattoes"
+msgstr "Kobiety Negroes and Mulattoes"
+
+msgid "Number of Common Schools"
+msgstr "Number of Common Szkołys"
+
+msgid "Total number"
+msgstr "Liczba imion %d"
+
+msgid "Widowed"
+msgstr "Wdowiec/Wdowa"
+
+msgid "Native voters"
+msgstr "Aktywna osoba"
+
+msgid "Paupers"
+msgstr "Ubodzy"
+
+msgid "City of"
+msgstr "Miasto:"
+
+msgid "Township"
+msgstr "Gmina"
+
+msgid "Section"
+msgstr "opis"
+
+msgid "White Male"
+msgstr "White Mężczyźni"
+
+msgid "White Female"
+msgstr "White Kobiety"
+
+msgid "Colored Male"
+msgstr "Colored Mężczyźni"
+
+msgid "Colored Female"
+msgstr "Colored Kobiety"
+
+msgid "Deaf and dumb not in State School for Deaf"
+msgstr "Deaf and dumb not in State Szkoły for Deaf"
+
+msgid "Place of Birth-Self"
+msgstr "_Filtr miejsc:"
+
+msgid "Place of Birth-Mother"
+msgstr "_Filtr miejsc:"
+
+msgid "Place of birth, Mother"
+msgstr "_Filtr miejsc:"
+
+msgid "Place of Birth-Father"
+msgstr "_Filtr miejsc:"
+
+msgid "Place of birth, Father"
+msgstr "_Filtr miejsc:"
+
+msgid "Extent of Education High School"
+msgstr "Extent of Education High Szkoły"
+
+msgid "Birthplace"
+msgstr "Miejsce urodzenia"
+
+msgid "Father's Birthplace"
+msgstr "Father's Urodzeniaplace"
+
+msgid "Mother's Birthplace"
+msgstr "Mother's Urodzeniaplace"
+
+msgid "Months in School 1914: Public"
+msgstr "Months in Szkoły 1914: Public"
+
+msgid "Months in School 1914: High"
+msgstr "Months in Szkoły 1914: High"
+
+msgid "Months in School 1914: Private"
+msgstr "Months in Szkoły 1914: Private"
+
+msgid "Months in School 1914: College"
+msgstr "Months in Szkoły 1914: College"
+
+msgid "Deaf"
+msgstr "Głuchy/Głucha"
+
+msgid "House Number"
+msgstr "Domy Number"
+
+msgid "Relation"
+msgstr "Typ relacji"
+
+msgid "Color or Race"
+msgstr "Kolor aktywnej osoby:"
+
+msgid "Attended Rural School"
+msgstr "Attended Rural Szkoły"
+
+msgid "Attended Grade School"
+msgstr "Attended Grade Szkoły"
+
+msgid "Attended High School"
+msgstr "Attended High Szkoły"
+
+msgid "Highest Grade Rural School"
+msgstr "Highest Grade Rural Szkoły"
+
+msgid "Highest Grade Grammar School"
+msgstr "Highest Grade Grammar Szkoły"
+
+msgid "Highest Grade High School"
+msgstr "Highest Grade High Szkoły"
+
+msgid "Months in School 1924"
+msgstr "Months in Szkoły 1924"
+
+msgid "Able to Write"
+msgstr "Poziomo (z lewa na prawo)"
+
+msgid "Father's Place of Birth"
+msgstr "Father's Place of Urodzenia"
+
+msgid "Mother's Place of Birth"
+msgstr "Mother's Place of Urodzenia"
+
+msgid "Parents Place of Marriage"
+msgstr "Parents Place of Małżeństwa"
+
+msgid "Personal Estate"
+msgstr "Motyw osoby"
+
+msgid "Attended School"
+msgstr "Attended Szkoły"
+
+msgid "Illiterate"
+msgstr "Niepiśmienny"
+
+msgid "School"
+msgstr "Szkoła"
+
+msgid "Condition"
+msgstr "Animacja"
+
+msgid "Schedule"
+msgstr "Spis"
+
+msgid "Enumerated date from"
+msgstr "Szacowana data"
+
+msgid "Enumerated date to"
+msgstr "Szacowana data"
+
+msgid "Total White Males"
+msgstr "Total White Mężczyźnis"
+
+msgid "Total White Females"
+msgstr "Total White Kobietys"
+
+msgid "Colored males 45 and over"
+msgstr "Wybierz awatar dla mężczyzny"
+
+msgid "Total Colored Males"
+msgstr "Total Colored Mężczyźnis"
+
+msgid "Colored females under 10"
+msgstr "Kolor osoby płci żeńskiej:"
+
+msgid "Colored females 45 and over"
+msgstr "Wybierz kobiecy awatar"
+
+msgid "Total Colored Females"
+msgstr "Total Colored Kobietys"
+
+msgid "Deaf and Dumb Males"
+msgstr "Deaf and Dumb Mężczyźnis"
+
+msgid "Deaf and Dumb Males Age"
+msgstr "Deaf and Dumb Mężczyźnis Wiek"
+
+msgid "Deaf and Dumb Females"
+msgstr "Deaf and Dumb Kobietys"
+
+msgid "Deaf and Dumb Females Age"
+msgstr "Deaf and Dumb Kobietys Wiek"
+
+msgid "Blind Males"
+msgstr "Blind Mężczyźnis"
+
+msgid "Blind Males Age"
+msgstr "Blind Mężczyźnis Wiek"
+
+msgid "Blind Females"
+msgstr "Blind Kobietys"
+
+msgid "Blind Females Age"
+msgstr "Blind Kobietys Wiek"
+
+msgid "Insane Males"
+msgstr "Insane Mężczyźnis"
+
+msgid "Insane Males Age"
+msgstr "Insane Mężczyźnis Wiek"
+
+msgid "Insane Females"
+msgstr "Insane Kobietys"
+
+msgid "Insane Females Age"
+msgstr "Insane Kobietys Wiek"
+
+msgid "Birthplace (NY County or other)"
+msgstr "Urodzeniaplace (NY County or other)"
+
+msgid "Alien"
+msgstr "Cudzoziemiec"
+
+msgid "Persons of color not taxed"
+msgstr "Osoby z aktualnego wykresu"
+
+msgid "Landowner"
+msgstr "Porzuć"
+
+msgid "Birth Country"
+msgstr "Kraj:"
+
+msgid "Native White Males"
+msgstr "Native White Mężczyźnis"
+
+msgid "Native White Females"
+msgstr "Native White Kobietys"
+
+msgid "Native Colored Males"
+msgstr "Native Colored Mężczyźnis"
+
+msgid "Native Colored Females"
+msgstr "Native Colored Kobietys"
+
+msgid "Foreign Males"
+msgstr "Foreign Mężczyźnis"
+
+msgid "Foreign Females"
+msgstr "Foreign Kobietys"
+
+msgid "Male Children 5 and Under"
+msgstr "Mężczyźni Children 5 and Under"
+
+msgid "Female Children 5 and Under"
+msgstr "Kobiety Children 5 and Under"
+
+msgid "Males 5 to 20 Years of Age"
+msgstr "Mężczyźnis 5 to 20 Years of Wiek"
+
+msgid "Females 5 to 20 Years of Age"
+msgstr "Kobietys 5 to 20 Years of Wiek"
+
+msgid "Males 20 to 60 Years of Age"
+msgstr "Mężczyźnis 20 to 60 Years of Wiek"
+
+msgid "Females 20 to 60 Years of Age"
+msgstr "Kobietys 20 to 60 Years of Wiek"
+
+msgid "Males Over 60 Years of Age"
+msgstr "Mężczyźnis Over 60 Years of Wiek"
+
+msgid "Females Over 60 Years of Age"
+msgstr "Kobietys Over 60 Years of Wiek"
+
+msgid "Birthplace of Father"
+msgstr "Urodzeniaplace of Father"
+
+msgid "Birthplace of Mother"
+msgstr "Urodzeniaplace of Mother"
+
+msgid "Black"
+msgstr "Czarny"
+
+msgid "Divorced"
+msgstr "Rozwiedziony/Rozwiedziona"
+
+msgid "Ancestry"
+msgstr "Przodek"
+
+msgid "Female over 21"
+msgstr "Awatar dla kobiety:"
+
+msgid "Colored males"
+msgstr "Kolor osoby płci męskiej:"
+
+msgid "Colored females"
+msgstr "Kolor osoby płci żeńskiej:"
+
+msgid "Foreign Birth"
+msgstr "Foreign Urodzenia"
 
 msgid "in"
 msgstr "w"
 
 msgid "of"
 msgstr "z"
+
+msgid "Farm/House"
+msgstr "Farm/Domy"
+
+msgid "Place of Record"
+msgstr "_Filtr miejsc:"
+
+msgid "Date of Marriage"
+msgstr "Date of Małżeństwa"
+
+msgid "Place of Marriage"
+msgstr "Miejsca w danym prostokącie:"
+
+msgid "Place of Death"
+msgstr "Place of Śmierci"
+
+msgid "Name of employer"
+msgstr "Wszystkie imiona wszystkich osób"
+
+msgid "Date of Death"
+msgstr "Date of Śmierci"
+
+msgid "Place of Burial"
+msgstr "_Filtr miejsc:"
+
+msgid "Burial Date"
+msgstr "Dane ogólne"
+
+msgid "Burial Place"
+msgstr "Wszystkie miejsca"
+
+msgid "Age 1 July 1863"
+msgstr "Wiek 1 July 1863"
+
+msgid "Home Address"
+msgstr "Dołącz adresy"
+
+msgid "Nearest Relative"
+msgstr "Krewni"
+
+msgid "Place entered"
+msgstr "_Filtr miejsc:"
+
+msgid "Place discharged"
+msgstr "Wykonywanie zmian miejsc"
+
+msgid "Birth Year (Estimated)"
+msgstr "Urodzenia Year (Estimated)"
+
+msgid "Spouse's Age"
+msgstr "Spouse's Wiek"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "Spouse's Urodzenia Year (Estimated)"
+
+msgid "Volume"
+msgstr "głośność"
+
+msgid "Place of Work"
+msgstr "Narzędzie miejsc"
+
+msgid "Date Married"
+msgstr "Data/ Czas"
+
+msgid "Deceased"
+msgstr "Zmarły"
+
+msgid "Usual Address"
+msgstr "Dołącz adresy"
+
+msgid "CONDITION as to Marriage"
+msgstr "CONDITION as to Małżeństwa"
+
+msgid "AGE last Birthday of"
+msgstr "AGE last Urodzeniaday of"
+
+msgid "Civil Parish"
+msgstr "Parafia:"
+
+msgid "Employer"
+msgstr "Pracodawca"
+
+msgid "Condition as to Marriage"
+msgstr "Condition as to Małżeństwa"
+
+msgid "Age last Birthday of"
+msgstr "Wiek last Urodzeniaday of"
+
+msgid "AGE (last Birthday)"
+msgstr "AGE (last Urodzeniaday)"
+
+msgid "Completed Years the present Marriage has lasted."
+msgstr "Completed Years the present Małżeństwa has lasted."
+
+msgid "Whether Working at Home"
+msgstr "Określa, czy dołączać autora."
+
+msgid "RELATIONSHIP to Head of Household"
+msgstr "RELATIONSHIP to Head of Domyhold"
+
+msgid "Age Months"
+msgstr "Wiek Months"
+
+msgid "House Schedule No"
+msgstr "Domy Schedule No"
+
+msgid "Relation to Head"
+msgstr "Typ relacji"
+
+msgid "Road, Street, etc, and No. or Name of House"
+msgstr "Road, Street, etc, and No. or Name of Domy"
+
+msgid "House Inhabited"
+msgstr "Domy Inhabited"
+
+msgid "House U or B"
+msgstr "Domy U or B"
+
+msgid "No. of Children from 5 to 13 attending School"
+msgstr "No. of Children from 5 to 13 attending Szkoły"
+
+msgid "School Board District"
+msgstr "Szkoły Board District"
+
+msgid "School board District"
+msgstr "Szkoły board District"
+
+msgid "Parish Ward"
+msgstr "Parafia:"
+
+msgid "Children born alive to present Marriage"
+msgstr "Children born alive to present Małżeństwa"
+
+msgid "EnumDistrict"
+msgstr "Okręg spisu"
+
+msgid "Comprising"
+msgstr "Obejmująca"
+
+msgid "OfTheSaid"
+msgstr "Wspomnianej"
+
+msgid "Enumerator"
+msgstr "Rachmistrz"
+
+msgid "1. Names of Inmates"
+msgstr "1. Imiona i nazwiska mieszkańców"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Zawód, fach lub zajęcie"
+
+msgid "BirthPlace"
+msgstr "Miejsce urodzenia"
+
+msgid "3. Place of Birth"
+msgstr "3. Miejsce urodzenia"
+
+msgid "4. Religion"
+msgstr "4. Religia"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. Miejsce zamieszkania jeśli poza granicami"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. Wiek w najbliższe urodziny"
+
+msgid "SexMale"
+msgstr "Płeć mężczyzna"
+
+msgid "7. Sex: Male"
+msgstr "7. Płeć: Mężczyzna"
+
+msgid "SexFemale"
+msgstr "Płeć kobieta"
+
+msgid "8. Sex: Female"
+msgstr "8. Płeć: Kobieta"
+
+msgid "MaritalStatus"
+msgstr "Stan cywilny"
+
+msgid "9. Married or Single"
+msgstr "9. Żonaty lub kawaler"
+
+msgid "Coloured"
+msgstr "Kolorowi"
+
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Osoby kolorowe - Murzyni"
+
+msgid "Indians"
+msgstr "Indianie"
+
+msgid "11. Indians, if any"
+msgstr "11. Indianie, jeśli są"
+
+msgid "ResidentsMale"
+msgstr "Mieszkańcy mężczyźni"
+
+msgid "12. Residents: Members, Male"
+msgstr "12. Mieszkańcy: Członkowie, Mężczyźni"
+
+msgid "ResidentsFemale"
+msgstr "Mieszkanki kobiety"
+
+msgid "13. Residents: Members, Female"
+msgstr "13. Mieszkańcy: Członkowie, Kobiety"
+
+msgid "NonMembersMale"
+msgstr "Nie członkowie mężczyźni"
+
+msgid "14. Residents: Not Members: Male"
+msgstr "14. Mieszkańcy: Nie członkowie: Mężczyźni"
+
+msgid "NonMembersFemale"
+msgstr "Nie członkinie kobiety"
+
+msgid "15. Residents: Not Members: Female"
+msgstr "15. Mieszkańcy: Nie członkowie: Kobiety"
+
+msgid "AbsentMembersMale"
+msgstr "Nieobecni członkowie mężczyźni"
+
+msgid "16. Members Absent: Male"
+msgstr "16. Nieobecni członkowie: Mężczyźni"
+
+msgid "AbsentMembersFemale"
+msgstr "Nieobecne członkinie kobiety"
+
+msgid "17. Members Absent: Female"
+msgstr "17. Nieobecni członkowie: Kobiety"
+
+msgid "DeafDumbMale"
+msgstr "Głuchoniemi mężczyźni"
+
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. Głuchoniemi: Mężczyźni"
+
+msgid "DeafDumbFemale"
+msgstr "Głuchonieme kobiety"
+
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. Głuchoniemi: Kobiety"
+
+msgid "BlindMale"
+msgstr "Ślepi mężczyźni"
+
+msgid "20. Blind: Male"
+msgstr "20. Ślepi: Mężczyźni"
+
+msgid "BlindFemale"
+msgstr "Ślepe kobiety"
+
+msgid "21. Blind: Female"
+msgstr "21. Ślepe: Kobiety"
+
+msgid "LunaticMale"
+msgstr "Obłąkani mężczyźni"
+
+msgid "22. Lunatics: Male"
+msgstr "22. Obłąkani: Mężczyźni"
+
+msgid "LunaticFemale"
+msgstr "Obłąkane kobiety"
+
+msgid "23. Lunatics: Female"
+msgstr "23. Obłąkane: Kobiety"
+
+msgid "ScholarMale"
+msgstr "Uczniowie mężczyźni"
+
+msgid "24. Attending School: Male"
+msgstr "24. Uczęszczający do szkoły: Mężczyźni"
+
+msgid "ScholarFemale"
+msgstr "Uczennice kobiety"
+
+msgid "25. Attending School: Female"
+msgstr "25. Uczęszczające do szkoły: Kobiety"
+
+msgid "Birth1851Male"
+msgstr "Urodzenia 1851 mężczyźni"
+
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. Urodzenia w ciągu roku 1851: Mężczyźni"
+
+msgid "Birth1851Female"
+msgstr "Urodzenia 1851 kobiety"
+
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. Urodzenia w ciągu roku 1851: Kobiety"
+
+msgid "Death1851Male"
+msgstr "Śmierci 1851 mężczyźni"
+
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. Śmierci w ciągu roku 1851: Mężczyźni"
+
+msgid "Death1851Female"
+msgstr "Śmierci 1851 kobiety"
+
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. Śmierci w ciągu roku 1851: Kobiety"
+
+msgid "DeathAgeCause"
+msgstr "Wiek i przyczyna śmierci"
+
+msgid "30. Age and Cause of Deaths"
+msgstr "30. Wiek i przyczyna śmierci"
+
+msgid "Houses"
+msgstr "Domy"
+
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr ""
+"31. Domy: Cegła, kamień, szkielet, drewno, szałas lub inne rodzaje mieszkań"
+
+msgid "HousesStories"
+msgstr "Piętra domów"
+
+msgid "32. Houses: No. of Stories"
+msgstr "32. Domy: Liczba pięter"
+
+msgid "HousesFamilies"
+msgstr "Rodziny w domach"
+
+msgid "33. No. of Families Occupying"
+msgstr "33. Liczba rodzin zajmujących"
+
+msgid "HousesVacant"
+msgstr "Domy puste"
+
+msgid "34. Houses: Vacant"
+msgstr "34. Domy: Puste"
+
+msgid "HousesBuilding"
+msgstr "Domy w budowie"
+
+msgid "35. Houses: Building"
+msgstr "35. Domy: W budowie"
+
+msgid "Shops"
+msgstr "Sklepy"
+
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. Sklepy, magazyny, gospody, karczmy itp."
+
+msgid "PublicBuildings"
+msgstr "Budynki publiczne"
+
+msgid "37. Public Buildings"
+msgstr "37. Budynki publiczne"
+
+msgid "WorshipPlaces"
+msgstr "Miejsca kultu"
+
+msgid "38. Places of Worship"
+msgstr "38. Miejsca kultu"
+
+msgid "BuisnessInfo"
+msgstr "Informacje o działalności"
+
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr ""
+"39. Informacje o młynach, fabrykach itp., ich koszcie, mocy, produkcji itp."
+
+msgid "NumEmployees"
+msgstr "Liczba pracowników"
+
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr "40. Liczba osób zwykle tam zatrudnionych"
+
+msgid "41. General Remarks of the Enumerator"
+msgstr "41. Ogólne uwagi spisu"
+
+msgid "1. Name of Occupier"
+msgstr "1. Nazwisko mieszkańca"
+
+msgid "Concession"
+msgstr "Koncesja"
+
+msgid "2. Concession or Range"
+msgstr "2. Koncesja lub zakres"
+
+msgid "Lot"
+msgstr "Działka"
+
+msgid "3. Lot or part of Lot"
+msgstr "3. Działka lub część działki"
+
+msgid "AcresHeld"
+msgstr "Akry Posiadane"
+
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr "4. Liczba akrów ziemi: posiadanych przez każdą osobę lub rodzinę"
+
+msgid "AcresCultivation"
+msgstr "Akry Uprawy"
+
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr "5. Liczba akrów ziemi: pod uprawą"
+
+msgid "AcresCrops"
+msgstr "Akry Plony"
+
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr "6. Liczba akrów ziemi: pod plonami w 1851 roku"
+
+msgid "AcresPasture"
+msgstr "Akry Pastwiska"
+
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr "7. Liczba akrów ziemi: pod pastwiskami w 1851 roku"
+
+msgid "AcresGardens"
+msgstr "Akry Ogrody"
+
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "8. Liczba akrów ziemi: ogrody lub sady"
+
+msgid "AcresWood"
+msgstr "Akry Las"
+
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr "9. Liczba akrów ziemi: pod lasem lub dzika"
+
+msgid "WheatAcres"
+msgstr "Akry Pszenica"
+
+msgid "10. Wheat: Acres"
+msgstr "10. Pszenica: akry"
+
+msgid "WheatBsh"
+msgstr "PszenicaBsz"
+
+msgid "11. Wheat: Produce Bsh."
+msgstr "11. Pszenica: produkcja bsz."
+
+msgid "BarleyAcres"
+msgstr "Akry Jęczmień"
+
+msgid "12. Barley: Acres"
+msgstr "12. Jęczmień: akry"
+
+msgid "BarleyBsh"
+msgstr "JęczmieńBsz"
+
+msgid "13. Barley: Produce Bsh."
+msgstr "13. Jęczmień: produkcja bsz."
+
+msgid "RyeAcres"
+msgstr "Akry Żyto"
+
+msgid "14. Rye: Acres"
+msgstr "14. Żyto: akry"
+
+msgid "RyeBsh"
+msgstr "ŻytoBsz"
+
+msgid "15. Rye: Produce Bsh."
+msgstr "15. Żyto: produkcja bsz."
+
+msgid "PeasAcres"
+msgstr "Akry Groch"
+
+msgid "16. Peas: Acres"
+msgstr "16. Groch: akry"
+
+msgid "PeasBush"
+msgstr "GrochBsz"
+
+msgid "17. Peas: Produce Bsh."
+msgstr "17. Groch: produkcja bsz."
+
+msgid "OatsAcres"
+msgstr "Akry Owies"
+
+msgid "18. Oats: Acres"
+msgstr "18. Owies: akry"
+
+msgid "OatsBush"
+msgstr "OwiesBsz"
+
+msgid "19. Oats: Produce Bsh."
+msgstr "19. Owies: produkcja bsz."
+
+msgid "BWheatAcres"
+msgstr "Akry PszenicaCz"
+
+msgid "20. B.Wheat: Acres"
+msgstr "20. Pszenica czarna: akry"
+
+msgid "BWheatBush"
+msgstr "PszenicaCzBsz"
+
+msgid "21. B.Wheat: Produce Bsh."
+msgstr "21. Pszenica czarna: produkcja bsz."
+
+msgid "CornAcres"
+msgstr "Akry Kukurydza"
+
+msgid "22. Corn: Acres"
+msgstr "22. Kukurydza: akry"
+
+msgid "CornBush"
+msgstr "KukurydzaBsz"
+
+msgid "23. Corn: Produce Bsh."
+msgstr "23. Kukurydza: produkcja bsz."
+
+msgid "PotatoesAcres"
+msgstr "Akry Ziemniaki"
+
+msgid "24. Potatoes: Acres"
+msgstr "24. Ziemniaki: akry"
+
+msgid "PotatoesBush"
+msgstr "ZiemniakiBsz"
+
+msgid "25. Potatoes: Produce Bsh."
+msgstr "25. Ziemniaki: produkcja bsz."
+
+msgid "TurnipsAcres"
+msgstr "Akry Rzepa"
+
+msgid "26. Turnips: Acres"
+msgstr "26. Rzepa: akry"
+
+msgid "TurnipsBush"
+msgstr "RzepaBsz"
+
+msgid "27. Turnips: Produce Bsh."
+msgstr "27. Rzepa: produkcja bsz."
+
+msgid "CloverBush"
+msgstr "KoniczynaBsz"
+
+msgid "5. Religion"
+msgstr "5. Religia"
+
+msgid "MemberMale"
+msgstr "MemberMężczyźni"
+
+msgid "MemberFemale"
+msgstr "MemberKobiety"
+
+msgid "NotMemberMale"
+msgstr "NotMemberMężczyźni"
+
+msgid "NotMemberFemale"
+msgstr "NotMemberKobiety"
+
+msgid "MemberAbsentMale"
+msgstr "MemberAbsentMężczyźni"
+
+msgid "MemberAbsentFemale"
+msgstr "MemberAbsentKobiety"
+
+msgid "DeafDumb"
+msgstr "Głuchoniemy/Głuchoniema"
+
+msgid "20. Deaf and Dumb"
+msgstr "20. Głuchoniemy/Głuchoniema"
+
+msgid "21. Blind"
+msgstr "21. Ślepy/Ślepa"
+
+msgid "Lunatic"
+msgstr "Obłąkany/Obłąkana"
+
+msgid "CantReadMale"
+msgstr "CantReadMężczyźni"
+
+msgid "CantReadFemale"
+msgstr "CantReadKobiety"
+
+msgid "Birth1860Male"
+msgstr "Urodzenia1860Mężczyźni"
+
+msgid "Birth1860Female"
+msgstr "Urodzenia1860Kobiety"
+
+msgid "Death1860Male"
+msgstr "Śmierci1860Mężczyźni"
+
+msgid "Death1860Female"
+msgstr "Śmierci1860Kobiety"
+
+msgid "31. Age and cause of death"
+msgstr "31. Wiek i cause of death"
+
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr "32. Domy: Brick, Stone, Frame, Log, etc."
+
+msgid "33. Houses: No. of Stories"
+msgstr "33. Domy: No. of Stories"
+
+msgid "34. Houses: No. of families living in the house"
+msgstr "34. Domy: No. of families living in the house"
+
+msgid "35. Houses: Vacant"
+msgstr "35. Domy: Vacant"
+
+msgid "HouseBeingBuilt"
+msgstr "DomyBeingBuilt"
+
+msgid "36. Houses: Being built"
+msgstr "36. Domy: Being built"
+
+msgid "Vessels"
+msgstr "Świadkowie"
+
+msgid "HousesBeingBuilt"
+msgstr "DomysBeingBuilt"
+
+msgid "HousesInhabited"
+msgstr "DomysInhabited"
+
+msgid "8. Sex"
+msgstr "8. Płeć"
+
+msgid "9. Age"
+msgstr "9. Wiek"
+
+msgid "12. Religion"
+msgstr "12. Religia"
+
+msgid "13. Origin"
+msgstr "Originalny:"
+
+msgid "17. Deaf and Dumb"
+msgstr "17. Głuchoniemy/Głuchoniema"
+
+msgid "18. Blind"
+msgstr "18. Ślepy/Ślepa"
+
+msgid "7. Sex"
+msgstr "7. Płeć"
+
+msgid "8. Age"
+msgstr "8. Wiek"
+
+msgid "BirthPlaceFather"
+msgstr "UrodzeniaPlaceFather"
+
+msgid "BirthPlaceMother"
+msgstr "UrodzeniaPlaceMother"
+
+msgid "15. Religion"
+msgstr "15. Religia"
+
+msgid "Employee"
+msgstr "Pracownik"
+
+msgid "Unemployed"
+msgstr "Bezrobotny"
+
+msgid "CanRead"
+msgstr "Umie czytać"
+
+msgid "CanWrite"
+msgstr "Umie pisać"
+
+msgid "23. Deaf and Dumb"
+msgstr "23. Głuchoniemy/Głuchoniema"
+
+msgid "24. Blind"
+msgstr "24. Ślepy/Ślepa"
+
+msgid "SubTitle"
+msgstr "TR-Tytuł"
+
+msgid "4. Sex"
+msgstr "4. Płeć"
+
+msgid "BirthMonth"
+msgstr "Miesiąc urodzenia"
+
+msgid "BirthYear"
+msgstr "Rok urodzenia"
+
+msgid "16. Religion"
+msgstr "16. Religia"
+
+msgid "19. Employer"
+msgstr "19. Pracodawca"
+
+msgid "20. Employee"
+msgstr "20. Pracownik"
+
+msgid "SelfEmployed"
+msgstr "Samozatrudniony"
+
+msgid "SchoolMonths"
+msgstr "SzkołyMonths"
+
+msgid "Name from Schedule 1"
+msgstr "Imię ze Spisu 1"
+
+msgid "Line on Schedule 2"
+msgstr "Linia w Spisie 2"
+
+msgid "2. Page from Schedule 1"
+msgstr "2. Strona ze Spisu 1"
+
+msgid "3. Line from Schedule 1"
+msgstr "3. Line ze Spisu 1"
+
+msgid "HousesConst"
+msgstr "DomysConst"
+
+msgid "4. Houses: In construction"
+msgstr "4. Domy: In construction"
+
+msgid "5. Houses: Vacant"
+msgstr "5. Domy: Vacant"
+
+msgid "6. Houses: Inhabited"
+msgstr "6. Domy: Inhabited"
+
+msgid "Inmates"
+msgstr "Mieszkańcy"
+
+msgid "OwnedHouses"
+msgstr "OwnedDomys"
+
+msgid "LeasedHouses"
+msgstr "LeasedDomys"
+
+msgid "Denomination"
+msgstr "DenominoViso"
+
+msgid "Seating"
+msgstr "Wybierz..."
+
+msgid "SSDenomination"
+msgstr "DenominoViso"
+
+msgid "SchoolRooms"
+msgstr "SzkołyRooms"
+
+msgid "SchoolTeachers"
+msgstr "SzkołyTeachers"
+
+msgid "SchoolStudents"
+msgstr "SzkołyStudents"
+
+msgid "1. No. of family in order of visitation"
+msgstr "1. Liczba family in order of visitation"
+
+msgid "3.Relation to head of family"
+msgstr "Wybierz tagi dla rodziny"
+
+msgid "6. Age"
+msgstr "6. Wiek"
+
+msgid "5. Sex"
+msgstr "5. Płeć"
+
+msgid "WeeksOccupation"
+msgstr "opis"
+
+msgid "Wages"
+msgstr "Płace"
+
+msgid "SchoolCost"
+msgstr "SzkołyCost"
+
+msgid "38. Blind"
+msgstr "38. Ślepy/Ślepa"
+
+msgid "2. Family"
+msgstr "Rodzina:"
+
+msgid "3. Name"
+msgstr "3. Imię"
+
+msgid "11. Religion"
+msgstr "11. Religia"
+
+msgid "MilitaryService"
+msgstr "Służba wojskowa"
+
+msgid "10. Sex"
+msgstr "10. Płeć"
+
+msgid "14. Religion"
+msgstr "14. Religia"

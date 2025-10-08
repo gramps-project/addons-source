@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-08-11 18:01+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -26,6 +26,9 @@ msgstr "כשל ביצירת מבנה מחיצות: %s"
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "כשל בהעתקת קבצימרשתת: %s"
+
+msgid "Ancestral Collapsible Tree Options"
+msgstr "אפשרויות אילן־יוחסים אבות קדמונים מתרחב"
 
 msgid "Include Generations"
 msgstr "הכללת דורות"
@@ -58,7 +61,7 @@ msgid "The destination path for generated files."
 msgstr "נתיב היעד לקבצים שחוללו."
 
 msgid "The destination file name for html content."
-msgstr "שם קובץ יעד לתוכן .html"
+msgstr "שם קובץ היעד לתוכן html"
 
 msgid "Ancestral Collapsible Tree"
 msgstr "אילן אבות־קדמונים מתכווץ"
@@ -83,6 +86,12 @@ msgstr ""
 
 msgid "Ancestral Fan Chart Options"
 msgstr "אפשרויות תרשים מניפה אבות־קדמונים"
+
+msgid "Paternal Background Color"
+msgstr "צבע רקע לדור אבות"
+
+msgid "RGB-color for paternal box background."
+msgstr "צבעי RBG לרקע תיבת דור אבות."
 
 msgid "Maternal Background"
 msgstr "רקע שושלת אם"
@@ -257,7 +266,7 @@ msgid "Generations to generate HREF links"
 msgstr "דורות לחילול קישורי HREF"
 
 msgid "The number of generations to generate HREF links."
-msgstr "מספר דורות לחילול קישורי .HREF"
+msgstr "מספר הדורות לחילול קישורי HREF"
 
 msgid "Exclude persons who died before (years)"
 msgstr "החרגת אנשים שנפטרו לפני (שנים)"
@@ -275,11 +284,35 @@ msgstr "האם לחולל קישורים לאדם המרכזי."
 msgid "Exclude Spouses"
 msgstr "החרגת אנשים"
 
+msgid "Whether or not to generate links for spouses."
+msgstr "האם לייצר קישורים לזוגאים."
+
 msgid "Biography Content"
 msgstr "תוכן תולדות חיים"
+
+msgid "Show biography tooltips"
+msgstr "הצגת רמזים צצים לביוגרפיה"
+
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "האם להציג רמז צץ לביוגרפיה בעת ריחוף מעל צומת."
 
 msgid "Text Color"
 msgstr "צבע מלל"
 
+msgid "RGB-color for biography text."
+msgstr "צבע RBG למלל ביוגרפיה."
+
+msgid "RGB-color for biography tooltip."
+msgstr "צבע RBG לרמז צץ ביוגרפיה."
+
 msgid "Header Font size"
 msgstr "גודל גופן כותרת"
+
+msgid "The font size in pixels for biography header text."
+msgstr "גודל הגופן למלל כותרת ביוגרפיה בפיקסלים."
+
+msgid "Body Font size"
+msgstr "גודל גופן גוף המלל"
+
+msgid "The font size in pixels for biography body text."
+msgstr "גודל הגופן למלל גוף ביוגרפיה בפיקסלים."

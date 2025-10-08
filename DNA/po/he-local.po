@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Chromosome "
+msgstr "כרומוזום "
+
+msgid " Map for "
+msgstr " מפה עבור "
+
+msgid "Chr"
+msgstr "תו"
+
+msgid "Legend"
+msgstr "מקרא"
+
+msgid ": Grandparent"
+msgstr ": סב"
+
+#, python-brace-format
+msgid ""
+"\n"
+"{0}\n"
+"{1} cMs"
+msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
+
+msgid " SNPs"
+msgstr " SNPs"
+
+msgid " : Starts at "
+msgstr " : התחלה ב־ "
+
+msgid " and ends at "
+msgstr " וסיום ב־ "
+
+#, python-brace-format
+msgid "{0}"
+msgstr "{0}"
+
+#, python-format
+msgid "%(ancestor1)s and %(ancestor2)s"
+msgstr "%(ancestor1)s ו־ %(ancestor2)s"
 
 #, python-brace-format
 msgid ""
@@ -22,6 +64,20 @@ msgid ""
 msgstr ""
 "\n"
 "קשר־קרבה: {0} "
+
+#, python-brace-format
+msgid " Ancestor: {0}"
+msgstr " אב קדמון: {0}"
+
+msgid ""
+"Click to make this person active\n"
+"Right-click to edit this person"
+msgstr ""
+"הקשה כדי להפוך אדם זה לפעיל\n"
+"הקשת עכבר ימנית כדי לערוך אדם זה"
+
+msgid "DNA Segment Map"
+msgstr "מפת מקטעי DNA"
 
 msgid "Gramplet showing a matching DNA segment map"
 msgstr "גרמפלט להצגת מפת מקטע DNA תואם"

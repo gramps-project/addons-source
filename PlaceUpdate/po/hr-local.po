@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-09-28 12:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,16 +13,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Set properties for multiple places"
-msgstr "Postavi svojstva za višestruka mjesta"
+msgstr "Postavi svojstva za više mjesta"
+
+msgid ""
+"This gramplet allows setting properties for multiple places at the same time"
+msgstr ""
+"Ovaj gramplet omogućuje postavljanje svojstava za više mjesta istovremeno"
+
+msgid "New enclosing place"
+msgstr "Novo obuhvaćajuće mjesto"
+
+msgid "Timespan:"
+msgstr "Vremenska oznaka:"
+
+msgid "Set timespan for enclosing places"
+msgstr "Postavi vremensku oznaku za obuhvaćajuća mjesta"
+
+msgid "Clear original enclosing places"
+msgstr "Ukloni izvorna obuhvaćajuća mjesta"
 
 msgid "Clear tags"
 msgstr "Izbriši oznake"
 
 msgid "Generate hierarchy"
 msgstr "Generiraj hijerarhiju"
+
+msgid "use spaces as separator"
+msgstr "koristi razmake kao znak odvajanja"
 
 msgid "reverse hierarchy"
 msgstr "preokreni hijerarhiju"
@@ -47,3 +67,12 @@ msgstr "Primijeni na odabrana mjesta"
 
 msgid "Setting place properties"
 msgstr "Postavljanje svojstva mjesta"
+
+msgid "Regex operation failed: {}"
+msgstr "Operacija s regularnim izrazom nije uspjela: {}"
+
+msgid "PlaceUpdate"
+msgstr "Aktualiziranje mjesta"
+
+msgid "Gramplet to manipulate multiple places"
+msgstr "Gramplet za mijenje više mjesta"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,30 +12,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Pedigree Chart"
-msgstr "Ahnentafelgrafik"
+msgstr "Ahnentafeldiagramm"
 
 msgid "Alternate version of the traditional pedigree chart."
-msgstr "Alternative Version zur traditionellen Ahnentafelgrafik."
+msgstr "Alternative Version der traditionellen Ahnentafel."
 
 #, python-format
 msgid "Pedigree Chart for %s"
-msgstr "Ahnentafelgrafik für %s"
+msgstr "Ahnentafeldiagramm für %s"
 
 #, python-format
 msgid "Page %d"
 msgstr "Seite %d"
 
 msgid "Show Mother/Father captions"
-msgstr "Zeige Mutter/Vater-Überschriften"
+msgstr "Beschriftungen für Mutter/Vater anzeigen"
 
 msgid "Show the title of mother or father beside each ancestor's box."
-msgstr "Zeige den Titel von Mutter oder Vater neben jedem Ahnenkästchen."
+msgstr "Zeigee den Titel von Mutter oder Vater neben jedem Vorfahrenfeld an."
 
 msgid "The basic style used for the title display."
-msgstr "Der Basisstil, der für die Titelanzeige verwendet wird."
+msgstr "Der für die Titelanzeige verwendete Grundstil."
 
 msgid "Style used for labels and captions"
-msgstr "Der Stil der für Etiketten und Überschriften verwendet wird"
+msgstr "Stil für Beschriftungen und Bildunterschriften"

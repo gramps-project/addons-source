@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2025-09-30 08:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,13 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Last Change Report"
 msgstr "Správa o posledných zmenách"
 
 msgid "You must select at least one type of record."
 msgstr "Musíte vybrať aspoň jeden typ záznamu."
+
+msgid "People Changed"
+msgstr "Zmenené osoby"
 
 msgid "Changed On"
 msgstr "Zmenené na"
@@ -28,6 +31,13 @@ msgstr "Zmenené rodiny"
 
 msgid "Family Surname"
 msgstr "Priezvisko rodiny"
+
+#, python-format
+msgid "%s and %s"
+msgstr "%s a %s"
+
+msgid "Events Changed"
+msgstr "Zmenené udalosti"
 
 msgid "Places Changed"
 msgstr "Zmenené miesta"
@@ -40,6 +50,9 @@ msgstr "Zmenené zdroje"
 
 msgid "Notes Changed"
 msgstr "Zmenené poznámky"
+
+msgid "Citations Changed"
+msgstr "Zmenené citácie"
 
 msgid "Select From"
 msgstr "Vybrať z"
@@ -55,6 +68,9 @@ msgstr "zmenené na"
 
 msgid "List the last ten person records that have been changed"
 msgstr "Uvádza posledných desať záznamov osôb, ktoré boli zmenené"
+
+msgid "Latest Changes"
+msgstr "Posledné zmeny"
 
 msgid "Report of the last records that have been changed"
 msgstr "Správa o posledných záznamoch, ktoré boli zmenené"

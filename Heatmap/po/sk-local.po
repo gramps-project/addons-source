@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2025-09-30 08:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Map tiles"
+msgstr "Dlaždice mapy"
 
 msgid ""
 "Set the size of the heatmap points.\n"
@@ -24,11 +27,58 @@ msgstr ""
 msgid "File path"
 msgstr "Cesta k súboru"
 
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention '."
+"html' is added by the report."
+msgstr ""
+"Pre názov súboru sú povolené len anglické písmená A-Z, a-z a čísla 0-9, ako "
+"aj znaky medzera, podčiarkovník a pomlčka. Názov súboru sa tiež musí začínať "
+"a končiť alfanumerickým znakom. Prípona súboru \".html\" sa pridáva pri "
+"správe."
+
 msgid "File name"
 msgstr "Názov súboru"
 
+msgid "Enable custom start position"
+msgstr "Povoliť vlastnú počiatočnú polohu"
+
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr ""
+"Povolenie vynúti otvorenie mapy na vašej vlastnej počiatočnej polohe a "
+"úrovni priblíženia."
+
+msgid "Start latitude"
+msgstr "Počiatočná zemepisná šírka"
+
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"Nastavte vlastnú počiatočnú polohu zemepisnej šírky\n"
+"Predvolené nastavenie: 50.0"
+
 msgid "Start longitude"
 msgstr "Počiatočná zemepisná dĺžka"
+
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"Nastavte vlastnú počiatočnú polohu zemepisnej dĺžky\n"
+"Predvolené nastavenie: 10.0"
+
+msgid "Start zoom"
+msgstr "Počiatočné priblíženie"
+
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"Nastavte hodnotu pre počiatočné priblíženie.\n"
+"Predvolené nastavenie: 5"
 
 msgid "Path does not exist."
 msgstr "Cesta neexistuje."
@@ -41,3 +91,21 @@ msgstr "INFO"
 
 msgid "Create a heatmap web report."
 msgstr "Vytvorte webovú správu s teplotnou mapou."
+
+msgid "Stamen Terrain"
+msgstr "Stamen Terrain"
+
+msgid "Stamen Terrain (Background only)"
+msgstr "Stamen Terrain (iba pozadie)"
+
+msgid "Stamen Toner"
+msgstr "Stamen Toner"
+
+msgid "Stamen Watercolor"
+msgstr "Stamen Watercolor"
+
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"

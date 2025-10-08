@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-09-28 12:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,10 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Graph View"
-msgstr "Dijagram srodstva"
+msgstr "Prikaz dijagrama"
+
+msgid "Show IDs"
+msgstr "Prikaži ID-ove"
 
 msgid "Show avatars"
 msgstr "Prikaži avatare"
@@ -30,11 +33,29 @@ msgstr "Prikaži potpune datume"
 msgid "Show places"
 msgstr "Prikaži mjesta"
 
+msgid "Vertical: Top to Bottom"
+msgstr "Okomito: gore prema dolje"
+
+msgid "Vertical: Bottom to Top"
+msgstr "Okomito: dolje prema gore"
+
+msgid "Horizontal: Left to Right"
+msgstr "Vodoravno: lijevo na desno"
+
+msgid "Horizontal: Right to Left"
+msgstr "Okomito: desno na lijevo"
+
+msgid "Time Direction"
+msgstr "Smjer vremena"
+
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr "Ograniči broj prikazanih osoba (koristi 0 za neograničen broj)"
+
 msgid "Person theme"
-msgstr "Tema za osobe"
+msgstr "Tema osobe"
 
 msgid "Path color to home person"
-msgstr "Boja linije prema početnoj osobi"
+msgstr "Boja staze na početnu osobu"
 
 msgid "Font:"
 msgstr "Font:"
@@ -46,34 +67,34 @@ msgid "PNG files"
 msgstr "PNG datoteke"
 
 msgid "Male avatar:"
-msgstr "Avatar za muške osobe:"
+msgstr "Muški avatar:"
 
 msgid "Choose male avatar"
-msgstr "Odaberi avatar za mušku osobu"
+msgstr "Odaberi muški avatar"
 
 msgid "Female avatar:"
-msgstr "Avatar za ženske osobe:"
+msgstr "Ženski avatar:"
 
 msgid "Choose female avatar"
-msgstr "Odaberi avatar za žensku osobu"
+msgstr "Odaberi ženski avatar"
 
 msgid "Unknown avatar:"
-msgstr "Avatar za osobe nepoznatog spola:"
+msgstr "Nepoznat avatar:"
 
 msgid "Choose Unknown avatar"
-msgstr "Odaberi avatar za osobe nepoznatog spola"
+msgstr "Odaberi nepoznati avatar"
 
 msgid "Other avatar:"
 msgstr "Drugi avatari:"
 
 msgid "Choose Other avatar"
-msgstr "Odaberi avatar za druge osobe"
+msgstr "Odaberi drugi avatar"
 
 msgid "Active person border size"
 msgstr "Veličina ruba aktivne osobe"
 
 msgid "Person border size"
-msgstr "Veličina ruba za osobe"
+msgstr "Veličina ruba osobe"
 
 msgid "Themes"
 msgstr "Teme"
@@ -85,7 +106,7 @@ msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "Brzina animacije (1 … 5, 5 je sporija)"
 
 msgid "Animation count (0..8 use 0 to turn off)"
-msgstr "Broj animacije (0 … 8, koristi 0 za isključivanje)"
+msgstr "Broj animacija (0 … 8, koristi 0 za isključivanje)"
 
 msgid "Animation"
 msgstr "Animacija"
@@ -106,13 +127,13 @@ msgid "Show bookmarked first"
 msgstr "Prikaži najprije označene"
 
 msgid "Show bookmarked persons first in search result list."
-msgstr "Prikaži najprije označene u popisu rezultata pretrage."
+msgstr "Prikaži najprije označene osobe u popisu rezultata pretrage."
 
 msgid "Search"
 msgstr "Traži"
 
 msgid "Select a dot file name"
-msgstr "Odaberi dot datoteku"
+msgstr "Odaberi dot ime datoteke"
 
 msgid "Zoom in"
 msgstr "Uvećaj"
@@ -124,7 +145,7 @@ msgid "Zoom to original"
 msgstr "Zumiraj na originalnu veličinu"
 
 msgid "Zoom to best fit"
-msgstr "Zumiraj za najbolji prikaz"
+msgstr "Zumiraj na najbolju prilagodbu"
 
 msgid "Go to active person"
 msgstr "Idi na aktivnu osobu"
@@ -139,7 +160,7 @@ msgid "Bookmarks for current graph"
 msgstr "Knjižne oznake za trenutačni dijagram"
 
 msgid "Other Bookmarks"
-msgstr "Ostale knjižne oznake"
+msgstr "Druge knjižne oznake"
 
 msgid "Ancestor generations"
 msgstr "Generacije predaka"
@@ -148,7 +169,7 @@ msgid "Descendant generations"
 msgstr "Generacije potomaka"
 
 msgid "Vertical spacing between generations"
-msgstr "Uspravni razmak između generacija"
+msgstr "Okomiti razmak između generacija"
 
 msgid "Horizontal spacing between generations"
 msgstr "Vodoravni razmak između generacija"
@@ -157,20 +178,20 @@ msgid "Spacings"
 msgstr "Razmaci"
 
 msgid "All connected"
-msgstr "Sve povezane"
+msgstr "Sve povezane osobe"
 
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
 msgstr ""
 "Prikaži sve povezane osobe ograničene generacijskim ograničenjima.\n"
-"Radi sporo, stoga nemoj postavljati veliki broj generacija."
+"Radi sporo, stoga nemoj postavljati velik broj generacija."
 
 msgid "Add active person"
 msgstr "Dodaj aktivnu osobu"
 
 msgid "Call the bookmark editor"
-msgstr "Otvori uređivača knjižnih oznaka"
+msgstr "Otvori uređivač knjižnih oznaka"
 
 msgid ""
 "You don't have any bookmarks yet...\n"

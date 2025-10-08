@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-09-22 19:02+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,8 +12,41 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Place ID to import from GOV (Historical Gazetteer):"
+msgstr "Paikkatunnus tuodaan GOV:sta (Historical Gazetteer):"
 
 msgid "Get Place"
 msgstr "Hae paikka"
+
+#, python-format
+msgid "Add GOV-id place %s"
+msgstr "Lisää paikka GOV-id %s"
+
+#, python-format
+msgid "GetGOV error: %s"
+msgstr "GetGOV-virhe: %s"
+
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr "GOV-virhe tunnuksella %s, koodi: "
+
+#, python-format
+msgid "from %s to %s"
+msgstr "välillä %s – %s"
+
+#, python-format
+msgid "after %s"
+msgstr "%s jälkeen"
+
+#, python-format
+msgid "before %s"
+msgstr "ennen %s"
+
+msgid "GetGOV"
+msgstr "GetGOV"
+
+msgid "Gramplet to get places from the GOV database"
+msgstr "Gramplet paikkojen hakuun GOV-tietokannasta"

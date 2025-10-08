@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-03 21:58+0000\n"
-"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
+"PO-Revision-Date: 2025-09-22 19:02+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 5.14-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid ""
@@ -91,6 +91,21 @@ msgstr "Henkilöt ja heidän suhteensa aikapohjaisessa kaaviossa"
 
 msgid "Life Line Descendant Chart"
 msgstr "Elämänlinjan jälkeläiskaavio"
+
+msgid "Warp the chart shape"
+msgstr "Väännä kaavion muotoa"
+
+msgid "The overall shape of the chart can be warped."
+msgstr "Kaavion yleinen muoto voi vääristyä."
+
+msgid "Normal grid shape"
+msgstr "Normaali ruudukon muoto"
+
+msgid "Sine shape"
+msgstr "Sinimuoto"
+
+msgid "Triangular shape"
+msgstr "Kolmiomuoto"
 
 msgid "Show photos"
 msgstr "Näytä kuvat"
@@ -182,6 +197,9 @@ msgstr "Syntymätiedon ankkuri"
 msgid "Text alignment of the birth label."
 msgstr "Syntymätiedon tekstin tasaus."
 
+msgid "Center"
+msgstr "Keskitä"
+
 msgid "Show death label"
 msgstr "Näytä kuolintieto"
 
@@ -227,17 +245,35 @@ msgstr "Kuolintiedon tasaus."
 msgid "Show marriage label"
 msgstr "Näytä avioliittotieto"
 
+msgid "Activate the marriage label."
+msgstr "Aktivoi avioliittoteksti."
+
 msgid "Fade individual color"
 msgstr "Yksittäisen värin häivytys"
+
+msgid "The color of the individuals is faded to black with increasing age."
+msgstr "Yksilöiden väri haalistuu mustaksi iän myötä."
 
 msgid "Font name"
 msgstr "Fontin nimi"
 
+msgid "Name of the font family used for labels."
+msgstr "Tekstikentissä käytetyn fonttiperheen nimi."
+
 msgid "Relative font size"
 msgstr "Suhteellinen fonttikoko"
 
+msgid "The font size is given relatively to the line thickness."
+msgstr "Kirjasinkoko on annettu suhteessa viivan paksuuteen."
+
 msgid "Family shape"
 msgstr "Perheen muoto"
+
+msgid "The shape of the families can be varied."
+msgstr "Perheiden muoto voi vaihdella."
+
+msgid "Rectangular"
+msgstr "Suorakulmainen"
 
 msgid "Softer"
 msgstr "Pehmeämpi"

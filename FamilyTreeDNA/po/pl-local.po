@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-27 12:04+0000\n"
-"Last-Translator: WaldiS <sto@tutanota.de>\n"
+"PO-Revision-Date: 2025-09-12 11:02+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -13,11 +13,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
+msgid "FamilyTree DNA"
+msgstr "FamilyTree DNA"
+
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr "Narzędzie do importu danych DNA z FamilyFinder z Family Tree"
+
+msgid "Family Finder Tool"
+msgstr "Narzędzie Family Finder"
+
+msgid "Enter FTDNA Family Finder Filename:"
+msgstr "Podaj nazwę pliku FTDNA Family Finder:"
+
+msgid "Enter FTDNA Chromosome Segment Filename:"
+msgstr "Podaj nazwę pliku segmentów chromosomowych FTDNA:"
+
+msgid "Import Haplogroups"
+msgstr "Importuj haplogrupy"
+
+msgid "FTDNA Note string :"
+msgstr "Tekst notatki FTDNA:"
+
+msgid "Shared Citation ID :"
+msgstr "ID współdzielonego cytatu:"
+
+msgid "Active Person : "
+msgstr "Aktywna osoba: "
+
+msgid "Import data from Family Finder files"
+msgstr "Importuj dane z plików Family Finder"
+
+msgid "Close the Family Finder Tool"
+msgstr "Zamknij narzędzie Family Finder"
+
 msgid "Read Help manual"
 msgstr "Przeczytaj podręcznik pomocy"
+
+msgid "FamilyTree DNA Import"
+msgstr "Import FamilyTree DNA"
+
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr ""
+"Utworzono {} powiązań z danymi DNA. Utworzono {} atrybutów haplogrupy \n"
+
+msgid "No Family Finder File specified"
+msgstr "Nie określono pliku Family Finder"
+
+msgid "No Segment File specified"
+msgstr "Nie określono pliku segmentów"
+
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr ""
+"Nie znaleziono powiązań w notatkach FTdna. Nie utworzono atrybutów "
+"haplogrupy."
+
+#, python-format
+msgid "Add %s haplogroup attribute"
+msgstr "Dodaj atrybut haplogrupy %s"
+
+#, python-format
+msgid "Add %s DNA Association"
+msgstr "Dodaj powiązanie DNA %s"
+
+#, python-format
+msgid "Create Note for %s DNA Association"
+msgstr "Utwórz notatkę dla powiązania DNA %s"
+
+#, python-format
+msgid "Add Note to %s DNA Association"
+msgstr "Dodaj notatkę do powiązania DNA %s"
+
+#, python-format
+msgid "Create Source Citation for %s DNA Association"
+msgstr "Utwórz cytowanie źródła dla powiązania DNA %s"
+
+#, python-format
+msgid "Create Citation for %s DNA Association"
+msgstr "Utwórz cytowanie dla powiązania DNA %s"
+
+#, python-format
+msgid "Add Citation to %s DNA Association"
+msgstr "Dodaj cytowanie do powiązania DNA %s"

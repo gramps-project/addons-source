@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "Paper too small"
+msgstr "Popierius per mažas"
+
+msgid "Some elements may not appear or be badly rendered."
+msgstr "Kai kurie elementai gali būti neatvaizduoti arba pateikti prastai."
+
+msgid "Anonymous"
+msgstr "Anoniminis"
+
+msgid "born"
+msgstr "gimė"
+
+msgid "baptised"
+msgstr "pakrikštytas"
+
+msgid "died"
+msgstr "mirė"
+
+msgid "buried"
+msgstr "palaidotas"
+
+msgid "cremated"
+msgstr "kremuotas"
+
+msgid "married"
+msgstr "susituokė"
+
+msgid "divorced"
+msgstr "išsiskyrė"
+
+msgid "resident"
+msgstr "apsigyveno"
+
+msgid "The center family for the tree"
+msgstr "Centrinė medžio šeima"
+
+msgid "Ancestor Generations"
+msgstr "Protėvių kartos"
+
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Į medį įtraukiamų protėvių kartų skaičius"
+
+msgid "Descendant Generations"
+msgstr "Palikuonių kartos"
+
+msgid "The number of descendant generations to include in the tree"
+msgstr "Į medį įtraukiamų palikuonių kartų skaičius"
+
+msgid "First generation"
+msgstr "Pirmoji karta"
+
+msgid "Second generation"
+msgstr "Antroji karta"
+
+msgid "Third generation"
+msgstr "Trečioji karta"
+
+msgid "Male line"
+msgstr "Vyriškoji linija"
+
+msgid "Male line and illegitimate children"
+msgstr "Vyriškoji linija ir nesantuokiniai vaikai"
+
+msgid "Female line"
+msgstr "Moteriškoji linija"
+
+msgid "Shuffle colors"
+msgstr "Maišyti spalvas"
+
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Ar maišyti spalvas, ar jas išdėstyti vaivorykštės tvarka."
+
+msgid "Include Occupation"
+msgstr "Įtraukti profesiją"
+
+msgid "Include Residence"
+msgstr "Įtraukti gyvenamąją vietą"
+
+msgid "Year only"
+msgstr "Tik metai"
+
+msgid "Full date"
+msgstr "Visa data"
+
+msgid "Full date and place"
+msgstr "Visa data ir vietovė"
+
+msgid "Protect private items"
+msgstr "Apsaugoti asmeninius elementus"
+
+msgid "Include event description"
+msgstr "Įtraukti įvykio aprašą"
+
+msgid "Text Options"
+msgstr "Teksto parinktys"
+
+msgid "The style used for names."
+msgstr "Vardams naudojamas stilius."

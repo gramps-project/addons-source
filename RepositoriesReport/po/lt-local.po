@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "Repositories Report Options"
+msgstr "Saugyklų ataskaitos parinktys"
+
+msgid "Repositories Report"
+msgstr "Saugyklų ataskaita"
+
+msgid "Publication information:"
+msgstr "Leidinio informacija:"
+
+msgid "Data:"
+msgstr "Duomenys:"
+
+msgid "Page:"
+msgstr "Puslapis:"
+
+msgid "Include source's author"
+msgstr "Įtraukti šaltinio autorių"
+
+msgid "Whether to include author."
+msgstr "Ar įtraukti autorių."
+
+msgid "Include source's abbreviation"
+msgstr "Įtraukti šaltinio santrumpą"
+
+msgid "Whether to include abbreviation."
+msgstr "Ar įtraukti santrumpą."
+
+msgid "Include source's publication information"
+msgstr "Įtraukti šaltinio leidinio informaciją"
+
+msgid "Whether to include publication information."
+msgstr "Ar įtraukti leidinio informaciją."
+
+msgid "Include source's data"
+msgstr "Įtraukti šaltinio duomenis"
+
+msgid "Include citations"
+msgstr "Įtraukti citatas"
+
+msgid "Whether to include citations on sources."
+msgstr "Ar įtraukti citatas šaltiniuose."
+
+msgid "Include private records"
+msgstr "Įtraukti asmeninius įrašus"
+
+msgid "Whether to include repositories and sources marked as private."
+msgstr "Ar įtraukti saugyklas ir šaltinius pažymėtus asmeniniais."
+
+msgid "Display empty values"
+msgstr "Rodyti tuščias reikšmes"

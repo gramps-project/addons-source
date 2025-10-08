@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-09-03 03:01+0000\n"
+"PO-Revision-Date: 2025-09-28 12:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Dynamic Web Report"
 msgstr "Dinamični web izvještaj"
@@ -220,7 +220,7 @@ msgid "Restore"
 msgstr "Obnovi"
 
 msgid "Restore default settings"
-msgstr "Vrati standardne postavke"
+msgstr "Obnovi zadane postavke"
 
 msgid "Show last modification time"
 msgstr "Prikaži vrijeme zadnje promjene"
@@ -590,34 +590,34 @@ msgid "Table"
 msgstr "Tablica"
 
 msgid "Default format for the surnames index"
-msgstr "Standardni format za indeks prezimena"
+msgstr "Zadani format za indeks prezimena"
 
 msgid "The default format for the surnames index"
-msgstr "Ovo je standardni format za indeks prezimena"
+msgstr "Ovo je zadani format za indeks prezimena"
 
 msgid "Default format for the persons index"
-msgstr "Standardni format za indeks osoba"
+msgstr "Zadani format za indeks osoba"
 
 msgid "The default format for the persons index"
-msgstr "Ovo je standardni format za indeks osoba"
+msgstr "Ovo je zadani format za indeks osoba"
 
 msgid "Default format for the families index"
-msgstr "Standardni format za indeks obitelji"
+msgstr "Zadani format za indeks obitelji"
 
 msgid "The default format for the families index"
-msgstr "Ovo je standardni format za indeks obitelji"
+msgstr "Ovo je zadani format za indeks obitelji"
 
 msgid "Default format for the sources index"
-msgstr "Standardni format za indeks izvora"
+msgstr "Zadani format za indeks izvora"
 
 msgid "The default format for the sources index"
-msgstr "Ovo je standardni format za indeks izvora"
+msgstr "Ovo je zadani format za indeks izvora"
 
 msgid "Default format for the places index"
-msgstr "Standardni format za indeks mjesta"
+msgstr "Zadani format za indeks mjesta"
 
 msgid "The default format for the places index"
-msgstr "Ovo je standardni format za indeks mjesta"
+msgstr "Ovo je zadani format za indeks mjesta"
 
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
@@ -646,7 +646,7 @@ msgid "Default number of entries in the indexes"
 msgstr "Zadani broj unosa u indeksu"
 
 msgid "The default number of entries shown in one index page"
-msgstr "Standardni broj unosa, prikazanih na jednoj stranici indeksa"
+msgstr "Zadani broj unosa, prikazanih na jednoj stranici indeksa"
 
 msgid "Maximum number of generations"
 msgstr "Maksimalni broj generacija"
@@ -659,20 +659,19 @@ msgstr ""
 "dijagramima"
 
 msgid "Choose the default SVG tree graph type"
-msgstr "Odaberi standardnu vrstu dijagrama SVG stabla"
+msgstr "Odaberi zadanu vrstu dijagrama SVG stabla"
 
 msgid "Choose the default SVG tree graph shape"
-msgstr "Odaberi standardni oblik dijagrama SVG stabla"
+msgstr "Odaberi zadani oblik dijagrama SVG stabla"
 
 msgid "Choose the default SVG tree parents distribution (for fan charts only)"
 msgstr ""
-"Odaberi standardnu distribuciju roditelja u SVG stablu (samo za lepezaste "
+"Odaberi zadanu distribuciju roditelja u SVG stablu (samo za lepezaste "
 "dijagrame)"
 
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
 msgstr ""
-"Odaberi standardnu distribuciju djece u SVG stablu (samo za lepezaste "
-"dijagrame)"
+"Odaberi zadanu distribuciju djece u SVG stablu (samo za lepezaste dijagrame)"
 
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"

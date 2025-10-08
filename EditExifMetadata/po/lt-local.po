@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-13 17:12+0100\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "Edit Exif Metadata"
+msgstr "Keisti Exif metaduomenis"
+
+msgid "Enter the copyright information for this image. \n"
+msgstr "Įveskite šio atvaizdo autorių teisių informaciją. \n"
+
+msgid "Thumbnail"
+msgstr "Miniatiūra"
+
+msgid "Copy"
+msgstr "Kopijuoti"
+
+#, python-brace-format
+msgid "Image Size : {width} x {height} pixels"
+msgstr "Atvaizdo dydis : {width} x {height} taškai"
+
+msgid "Thumbnail View Area"
+msgstr "Miniatiūrų rodinio sritis"
+
+msgid "This button will clear all of the data fields shown here."
+msgstr "Šis mygtukas išvalys visus čia rodomus duomenų laukus."
+
+msgid "This button will clear all of the GPS fields shown here."
+msgstr "Šis mygtukas išvalys visus čia rodomus GPS laukus."
+
+msgid "Description: "
+msgstr "Aprašymas: "
+
+msgid "Artist: "
+msgstr "Autorius: "
+
+msgid "Copyright: "
+msgstr "Autoriaus teisės: "
+
+msgid "Date/ Time"
+msgstr "Data / Laikas"
+
+msgid "Modified: "
+msgstr "Keista: "
+
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr "Platumos / ilgumos / aukščio GPS koordinatės"
+
+msgid "Altitude :"
+msgstr "Aukštingumas:"
+
+msgid "Bad Date/Time"
+msgstr "Bloga Data / Laikas"
+
+msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
+msgstr "Neteisinga platuma (sintaksė: 18°9′48.21″S, -18.2412 arba -18:9:48.21)"
+
+msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
+msgstr "Neteisinga ilguma (sintaksė: 18°9′48.21″E, -18.2412 arba -18:9:48.21)"
+
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image."
+msgstr ""
+"ĮSPĖJIMAS! Jūs ruošiatės visiškai ištrinti šio atvaizdo Exif metaduomenis."
+
+msgid "Delete?"
+msgstr "Ištrinti?"
+
+msgid ""
+"WARNING!  You are about to completely delete the GPS metadata from this "
+"image."
+msgstr ""
+"ĮSPĖJIMAS! Jūs ruošiatės visiškai ištrinti GPS metaduomenis iš šio atvaizdo."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-09-28 12:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,10 +13,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Reference Date or Date Range"
+msgstr "Referentni datum ili raspon datuma"
 
 msgid "a valid Gramps date"
 msgstr "valjani Gramps datum"
+
+msgid "Date or offset ±y or ±y, m, d"
+msgstr "Datum ili pomak ±y (godna) ili ±y, m, d (godina, mjesec, dan)"
+
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+"1. datum\n"
+"2. pozitivan ili negativan broj koji predstavlja godine\n"
+"3. pozitivan ili negativan niz vrijednosti koji predstavlja godine, mjesece "
+"i dane"
 
 msgid "Result"
 msgstr "Rezultat"
@@ -27,8 +43,20 @@ msgstr "Izračunaj"
 msgid "Copy"
 msgstr "Kopiraj"
 
+msgid "Error: invalid date for first expression"
+msgstr "Greška: nevaljan datum za prvi izraz"
+
+msgid "Error: invalid offset for second expression"
+msgstr "Greška: nevaljan datum za drugi izraz"
+
 msgid "Error: at least one expression must be a date"
-msgstr "Greška: Barem jedan izraz mora biti datum"
+msgstr "Greška: barem jedan izraz mora biti datum"
+
+msgid "Enter an expression in the entries above and click Calculate."
+msgstr "Unesi izraz u gornja polja i klikni „Izračunaj”."
 
 msgid "Date Calculator"
 msgstr "Kalkulator datuma"
+
+msgid "Perform date math calculations"
+msgstr "Izvrši matematičke izračune datuma"

@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-12 19:09+0300\n"
+"PO-Revision-Date: 2025-09-20 19:02+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Starting migration..."
+msgstr "Démarrage de la migration..."
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "Migration de %s objets…"
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "%s objets {obj_type} migrés"
+
+msgid "Starting upgrade..."
+msgstr "Démarrage de la mise à jour..."
+
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "Mise à jour de %s objets…"
+
+msgid "Creating indexes..."
+msgstr "Création des indexs…"
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL Avancé"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "Base de données PostgreSQL _Avancée"
+
+msgid "JSONB support"
+msgstr "Support JSONB"
+
+msgid "Version warning"
+msgstr "Avertissement de version"
+
+msgid "Extensions"
+msgstr "Extensions"
+
+msgid "Migration manager not initialized"
+msgstr "Gestionnaire de migration pas initialisé"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-09 18:33+0100\n"
-"PO-Revision-Date: 2025-09-03 03:01+0000\n"
+"PO-Revision-Date: 2025-09-28 12:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Network Chart"
 msgstr "Mrežni dijagram"
@@ -43,31 +43,31 @@ msgid "Curved (curved and straight connectors)"
 msgstr "Krivuljasto (krivuljaste i ravne poveznice)"
 
 msgid "Default (Orthogonal)"
-msgstr "Standardno (okomito)"
+msgstr "Zadano (okomito)"
 
 msgid "Select the graph line connector format."
 msgstr "Odaberi format za linije povezivanja u dijagramu."
 
 msgid "Top to Bottom"
-msgstr "Gore-dolje"
+msgstr "Odozgo prema dolje"
 
 msgid "Left to Right"
-msgstr "Lijevo-desno"
+msgstr "Slijeva na desno"
 
 msgid "Bottom to Top"
-msgstr "Dolje-gore"
+msgstr "Odozdo prema gore"
 
 msgid "Right to Left"
-msgstr "Desno-lijevo"
+msgstr "Sdesna na lijevo"
 
 msgid "Default (Top to Bottom)"
-msgstr "Standardno (gore-dolje)"
+msgstr "Zadano (odozgo prema dolje)"
 
 msgid "Select the graph direction."
 msgstr "Odaberi smjer dijagrama."
 
 msgid "URL Style"
-msgstr "Vrsta URL-a"
+msgstr "Stil URL-a"
 
 msgid "Include URLs from database."
 msgstr "Uključi URL-ove iz baze podataka."
@@ -76,13 +76,13 @@ msgid "Dynamic URL = Prefix + GrampID + Suffix"
 msgstr "Dinamičan URL = prefiks + GrampID + sufiks"
 
 msgid "Static URL = Prefix"
-msgstr "Statični URL = prefiks"
+msgstr "Statičan URL = prefiks"
 
 msgid "Don't include URLs"
 msgstr "Ne uključuj URL-ove"
 
 msgid "Default (include)"
-msgstr "Standardno (uključi)"
+msgstr "Zadano (uključi)"
 
 msgid "Select URL style."
 msgstr "Odaberi vrstu URL-a."
@@ -127,7 +127,7 @@ msgid "Set the title of the chart."
 msgstr "Postavi naslov dijagrama."
 
 msgid "Default (svg)"
-msgstr "Standardno (svg)"
+msgstr "Zadano (svg)"
 
 msgid ""
 "svg - Scalable Vector Graphics file.\n"
@@ -213,8 +213,8 @@ msgid "Highlight Connector Line"
 msgstr "Istakni poveznicu"
 
 msgid ""
-"RGB-color for the highlighted path between two individuals.  If the "
-"graph.inverts, reverse the order to change."
+"RGB-color for the highlighted path between two individuals.  If the graph."
+"inverts, reverse the order to change."
 msgstr ""
 "RGB-boja za istaknutu liniju između dviju osoba. Ako se dijagram invertira, "
 "preokreni redoslijed da se promijeni."
@@ -367,7 +367,7 @@ msgid "Any"
 msgstr "Bilo koje"
 
 msgid "Default (None)"
-msgstr "Standardno (Bez)"
+msgstr "Zadano (Bez)"
 
 msgid ""
 "None - Don't highlight paths.\n"
@@ -382,7 +382,7 @@ msgid "Show only path(s)"
 msgstr "Prikaži samo linije"
 
 msgid "Default (none)"
-msgstr "Standardno (bez)"
+msgstr "Zadano (bez)"
 
 msgid ""
 "None - Don't show paths only.\n"

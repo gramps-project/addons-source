@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 23:06+0000\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "No Source"
+msgstr "Nėra šaltinio"
+
+msgid "Fan"
+msgstr "Vėduoklė"
+
+msgid "Growth Spiral"
+msgstr "Auganti spiralė"
+
+msgid "Mandelbrot Tree"
+msgstr "Mandelbroto medis"
+
+msgid "Pythagoras Tree"
+msgstr "Pitagoro medis"
+
+msgid "description"
+msgstr "aprašas"
+
+msgid "witnesses"
+msgstr "liudininkai"
+
+msgid "author"
+msgstr "autorius"
+
+msgid "abbreviation"
+msgstr "santrumpa"
+
+msgid "Search"
+msgstr "Paieška"
+
+msgid "Central Person"
+msgstr "Centrinis asmuo"
+
+msgid "Title of the webpage"
+msgstr "Tinklapio antraštė"
+
+msgid "Direction of time"
+msgstr "Laiko kryptis"
+
+msgid "Direction in which time increases."
+msgstr "Kryptis, kuria laikas didėja."
+
+msgid "Include Options"
+msgstr "Įtraukti parinktis"
+
+msgid "Include private records"
+msgstr "Įtraukti asmeninius įrašus"
+
+msgid "Include Events"
+msgstr "Įtraukti įvykius"
+
+msgid "Include Addresses"
+msgstr "Įtraukti adresus"
+
+msgid "Whether to include a person's addresses."
+msgstr "Ar įtraukti asmens adresus."
+
+msgid "Include Note"
+msgstr "Įtraukti pastabą"
+
+msgid "Include Sources"
+msgstr "Įtraukti šaltinius"
+
+msgid "Image Options"
+msgstr "Atvaizdo parinktys"
+
+msgid "Whether to include images"
+msgstr "Ar įtraukti atvaizdus"
+
+msgid "Copy Image"
+msgstr "Kopijuoti atvaizdą"
+
+msgid "Copy the images to a designated directory."
+msgstr "Nukopijuoti atvaizdus į nurodytą aplanką."
+
+msgid "Images with Attribute"
+msgstr "Atvaizdai su požymiais"
+
+msgid "Style Options"
+msgstr "Stiliaus parinktys"
+
+msgid "Color of active person:"
+msgstr "Aktyvaus asmens spalva:"
+
+msgid "RGB-color of geometric shape of the activated person."
+msgstr "RGB spalva pagrindinio asmens geometrinės formos spalva."
+
+msgid "Color of found persons:"
+msgstr "Rastų asmenų spalva:"
+
+msgid "Color of male persons:"
+msgstr "Vyriškų asmenų spalva:"
+
+msgid "Colour of female persons:"
+msgstr "Moterų spalva:"
+
+msgid "Extra style settings:"
+msgstr "Papildomi stiliaus nustatymai:"
+
+msgid "Event format"
+msgstr "Įvykio formatas"
+
+msgid "Source format"
+msgstr "Šaltinio formatas"
+
+msgid "Included"
+msgstr "Įtraukti"
+
+msgid "Excluded"
+msgstr "Neįtraukti"
+
+msgid "Relation type"
+msgstr "Ryšio rūšis"
+
+msgid "Use dashed linestyle"
+msgstr "Naudoti punktyrinį linijos stilių"
+
+msgid "Dash length"
+msgstr "Brūkšnio ilgis"

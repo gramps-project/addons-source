@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,30 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 
 msgid "Replace existing references to the person being assigned without asking"
-msgstr ""
-"Ersetze existierende Referenzen zu der Person die ohne Nachfragen zugeordnet "
-"wurden"
+msgstr "Bestehende Verweise auf die zuweisende Person ersetzen, ohne zu fragen"
 
 msgid "Face detection"
 msgstr "Gesichtserkennung"
 
 msgid "Minimum face width (px)"
-msgstr "Minimale Gesichtshöhe (Pkt)"
+msgstr "Minimale Gesichtsbreite (px)"
 
 msgid "Minimum face height (px)"
-msgstr "Minimale Gesichtshöhe (Pkt)"
+msgstr "Mindestgesichtshöhe (px)"
 
 msgid "Detect faces inside existing boxes"
 msgstr "Gesichter innerhalb bestehender Boxen erkennen"
 
 msgid "Sensitivity (1 min .. 20 max)"
-msgstr "Empfindlichkeit (1 min … 20 max)"
+msgstr "Empfindlichkeit (1 min .. 20 max)"
 
 msgid "Add Person"
 msgstr "Person hinzufügen"
@@ -56,33 +54,33 @@ msgid "Zoom Out"
 msgstr "Verkleinern"
 
 msgid "Detect faces"
-msgstr "Erkannte Gesichter"
+msgstr "Gesichter erkennen"
 
 msgid "Detect faces (OpenCV module required)"
-msgstr "Entdeckt Gesichter (OpenCV Modul benötigt)"
+msgstr "Gesichter erkennen (OpenCV-Modul erforderlich)"
 
 msgid "XMP Region Name"
 msgstr "XMP-Regionsname"
 
 msgid "Set as active person"
-msgstr "Als aktive Person wählen"
+msgstr "Als aktive Person festlegen"
 
 msgid "_Select"
 msgstr "_Auswählen"
 
 #, python-brace-format
 msgid "Replace to {0}"
-msgstr "Ersetze nach {0}"
+msgstr "Ersetzen durch {0}"
 
 msgid "Detecting faces..."
-msgstr "Suche nach Gesichtern …"
+msgstr "Gesichter erkennen..."
 
 msgid "Detection finished"
 msgstr "Erkennung abgeschlossen"
 
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
-msgstr "Eine andere Region dieses Bildes ist mit {name}. verknüpft. Entfernen?"
+msgstr "Ein anderer Bereich dieses Bildes ist mit {name} verknüpft. Entfernen?"
 
 #, python-brace-format
 msgid ""
@@ -92,18 +90,18 @@ msgstr ""
 
 #, python-format
 msgid "Male person|Dead at %s"
-msgstr "Tod am %s"
+msgstr "Gestorben am %s"
 
 #, python-format
 msgid "Female person|Dead at %s"
-msgstr "Tod am %s"
+msgstr "Gestorben am %s"
 
 #, python-format
 msgid "Unknown gender person|Dead at %s"
-msgstr "Tod am %s"
+msgstr "Gestorben am %s"
 
 msgid "Photo Tagging"
-msgstr "Foto markieren"
+msgstr "Fotoetikettierung"
 
 msgid "Gramplet for tagging people in photos"
-msgstr "Gramplet zum markieren von Personen auf Fotos"
+msgstr "Gramplet zum Kennzeichnen von Personen auf Fotos"

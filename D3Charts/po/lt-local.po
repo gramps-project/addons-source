@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "Nepavyko nukopijuoti tinklapio rinkmenas : %s"
+
+msgid "Ancestral Collapsible Tree Options"
+msgstr "Sulankstomo protėvių medžio parinktys"
+
+msgid "Include Generations"
+msgstr "Įtraukti kartas"
+
+msgid "Male Background Color"
+msgstr "Vyriška fono spalva"
+
+msgid "Female Background"
+msgstr "Moteriškas fonas"
+
+msgid "RGB-color for female box background."
+msgstr "RGB spalva moteriškos dėžutės fonui."
+
+msgid "Ancestral Fan Chart"
+msgstr "Protėvių vėduoklinė diagrama"
+
+msgid "Generating report..."
+msgstr "Kuriama ataskaita..."
+
+msgid "Invalid Destination Directory"
+msgstr "Neteisingas paskirties aplankas"
+
+msgid "Default View"
+msgstr "Numatytasis vaizdas"
+
+msgid "Expand All"
+msgstr "Išskleisti viską"
+
+msgid "Expandable Background Color"
+msgstr "Išskleidžiamo fono spalva"
+
+msgid "Include records marked private"
+msgstr "Įtraukti įrašus pažymėtus asmeniniais"
+
+msgid "Include Last Name Only"
+msgstr "Įtraukti tik pavardes"
+
+msgid "Include Full Name Only"
+msgstr "Įtraukti tik vardus ir pavardes"
+
+msgid "How to handle living people."
+msgstr "Kaip elgtis su gyvais žmonėmis."
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "Ar įtraukti žmones, kurie galėjo būti neseniai mirę."
+
+msgid "Navigation"
+msgstr "Navigacija"
+
+msgid "Contraction/Expansion mechanism"
+msgstr "Sutraukimo ir išplėtimo mechanizmas"
+
+msgid "Entire node."
+msgstr "Visas mazgas."
+
+msgid "Arrow images at start of node."
+msgstr "Rodyklių vaizdai mazgo pradžioje."
+
+msgid "Plus/Minus images at start of node."
+msgstr "Pliuso ir minuso atvaizdai mazgo pradžioje."
+
+msgid "Remove all whitespace."
+msgstr "Pašalinti visus tarpus."
+
+msgid "Replace whitespace with dash(-)."
+msgstr "Pakeisti tarpus brūkšniu (-)."
+
+msgid "Replace whitespace with underscore(_)"
+msgstr "Pakeisti tarpus pabraukimu (_)"
+
+msgid "Exclude Spouses"
+msgstr "Neįtraukti sutuoktinių"
+
+msgid "Whether or not to generate links for spouses."
+msgstr "Ar kurti nuorodas sutuoktiniams, ar ne."
+
+msgid "Biography Content"
+msgstr "Biografijos turinys"
+
+msgid "Show biography tooltips"
+msgstr "Rodyti biografijos patarimus"
+
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "Ar rodyti biografijos patarimus užvedus pelės žymeklį ant mazgo."
+
+msgid "Text Color"
+msgstr "Teksto spalva"
+
+msgid "RGB-color for biography text."
+msgstr "RGB spalva biografijos tekstui."
+
+msgid "RGB-color for biography tooltip."
+msgstr "RGB spalva biografijos užuominoms."
+
+msgid "Header Font size"
+msgstr "Antraštės šrifto dydis"
+
+msgid "The font size in pixels for biography header text."
+msgstr "Biografijos antraštės teksto šrifto dydis taškais."
+
+msgid "Body Font size"
+msgstr "Pagrindinio teksto šrifto dydis"

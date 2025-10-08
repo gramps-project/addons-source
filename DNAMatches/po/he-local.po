@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 14:28+0000\n"
-"PO-Revision-Date: 2025-05-16 05:37+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "DNA Matches"
 msgstr "איתור DNA"
@@ -21,5 +21,50 @@ msgstr "איתור DNA"
 msgid "Gramplet to display a list of DNA matches"
 msgstr "גרמפלט להצגת רשימת איתורי DNA"
 
+msgid "Pers."
+msgstr "Pers."
+
+msgid "Rel."
+msgstr "Rel."
+
+msgid "S. DNA"
+msgstr "S. DNA"
+
+msgid "S. Seg."
+msgstr "S. Seg."
+
+msgid "L. Seg"
+msgstr "L. Seg"
+
+msgid "Src(s)"
+msgstr "Src(s)"
+
+msgid "Shared DNA"
+msgstr "DNA משותף"
+
+msgid "Shared Segments"
+msgstr "מקטעים משותפים"
+
+msgid "Largest Segment"
+msgstr "המקטע הגדול ביותר"
+
 msgid "Source(s)"
 msgstr "מקורות"
+
+msgid "Double-click on a row to navigate to the matched person."
+msgstr "הקשת עכבר כפולה על שורה כדי לנווט לאדם המתאים."
+
+msgid "Right click to edit selected association."
+msgstr "הקשת עכבר ימנית לעריכת תסמיך."
+
+msgid "LEGEND"
+msgstr "מקרא"
+
+msgid "="
+msgstr "="
+
+msgid "Not specified"
+msgstr "לא צוין"
+
+msgid "cM"
+msgstr "cM"

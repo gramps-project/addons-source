@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,13 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Last Change Report"
-msgstr "Letzte Änderungen-Bericht"
+msgstr "Letzte Änderungenbericht"
 
 msgid "You must select at least one type of record."
-msgstr "Du musst mindestens eine Art von Datensatz wählen."
+msgstr "Du musst mindestens eine Datensatzart auswählen."
 
 msgid "People Changed"
 msgstr "Geänderte Personen"
@@ -55,22 +55,22 @@ msgid "Citations Changed"
 msgstr "Geänderte Fundstellen"
 
 msgid "Select From"
-msgstr "Ab wählen"
+msgstr "Auswählen aus"
 
 msgid "The style used for the title of the page."
 msgstr "Der für den Titel der Seite verwendete Stil."
 
 msgid "The style used for normal text"
-msgstr "Der Stil, der für normalen Text verwendet wird"
+msgstr "Der für normalen Text verwendete Stil"
 
 msgid "changed on"
 msgstr "geändert am"
 
 msgid "List the last ten person records that have been changed"
-msgstr "Listet die letzten zehn geänderten Personendatensätze auf"
+msgstr "Liste der letzten zehn geänderten Personendatensätze"
 
 msgid "Latest Changes"
 msgstr "Letzte Änderungen"
 
 msgid "Report of the last records that have been changed"
-msgstr "Bericht der letzten Datensätze, die geändert wurden"
+msgstr "Bericht über die zuletzt geänderten Datensätze"

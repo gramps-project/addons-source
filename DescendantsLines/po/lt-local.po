@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "Descendants Lines"
+msgstr "Palikuonių linijos"
+
+msgid "Produces descendants lines of a person"
+msgstr "Sukuria asmens palikuonių linijas"
+
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "SVG naudojimas papildomame dokumente nepalaikomas!"
+
+msgid "Output format"
+msgstr "Išvesties formatas"
+
+msgid "PNG format"
+msgstr "PNG formatas"
+
+msgid "SVG format"
+msgstr "SVG formatas"
+
+msgid "PDF format"
+msgstr "PDF formatas"
+
+msgid "PS format"
+msgstr "PS formatas"
+
+msgid "The output format to be used"
+msgstr "Naudojamas išvesties formatas"
+
+msgid "Include an image"
+msgstr "Įtraukti atvaizdą"
+
+msgid "Whether to include an image if one is available."
+msgstr "Ar įtraukti atvaizdą, jei toks yra."
+
+msgid "Max Image height"
+msgstr "Didž. atvaizdo aukštis"
+
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr ""
+"Didžiausias atvaizdo aukštis taškais, 0=nekeičia mastelio pagal aukštį."
+
+msgid "Max Image width"
+msgstr "Didž. atvaizdo plotis"
+
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "Didžiausias atvaizdo plotis taškais, 0=nekeičia mastelio pagal plotį."
+
+msgid "Image Location"
+msgstr "Atvaizdo vieta"
+
+msgid "Above text"
+msgstr "Virš teksto"
+
+msgid "Left of text"
+msgstr "Kairėje teksto"
+
+msgid "Text style"
+msgstr "Teksto stilius"
+
+msgid "Center-aligned text"
+msgstr "Centre lygiuotas tekstas"
+
+msgid "Left-aligned text"
+msgstr "Kairėje lygiuotas tekstas"
+
+msgid "Max Note Length"
+msgstr "Didž. pastabos ilgis"
+
+msgid "Box around Person's block"
+msgstr "Dėžutė aplink asmens bloką"
+
+msgid "Spouse block colour intensity"
+msgstr "Sutuoktinio bloko spalvos intensyvumas"
+
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr ""
+"Fono spalvos intensyvumas sutuoktinio bloke, 0=blanki ir 255=intensyvi spalva"
+
+msgid "Name Display Format"
+msgstr "Vardų atvaizdavimo formatas"
+
+msgid "Replace"
+msgstr "Pakeisti"
+
+msgid "Space around text"
+msgstr "Erdvė aplink tekstą"
+
+msgid "Header and Footer"
+msgstr "Antraštė ir poraštė"
+
+msgid "The default style."
+msgstr "Numatytasis stilius."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-09 08:45+0000\n"
+"PO-Revision-Date: 2025-09-13 09:49+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Select Form"
 msgstr "Selecteer formulier"
@@ -788,7 +788,7 @@ msgid "Deaf and dumb"
 msgstr "Doof en stom"
 
 msgid "Idiotic"
-msgstr "Idioot"
+msgstr "Zwakzinnig"
 
 msgid "Insane"
 msgstr "Krankzinnig"
@@ -1125,10 +1125,10 @@ msgid "Naturalization papers taken out"
 msgstr "Naturalisatiepapieren verwijderd"
 
 msgid "Able to read"
-msgstr "In staat om te lezen"
+msgstr "Kan lezen"
 
 msgid "Able to write"
-msgstr "In staat om te schrijven"
+msgstr "Kan schrijven"
 
 msgid "Able to speak English; if not, the language spoken"
 msgstr "In staat om Engels te spreken; zo niet, de gesproken taal"
@@ -1215,7 +1215,7 @@ msgid "Months not employed"
 msgstr "Maanden niet werkzaam"
 
 msgid "Attended school"
-msgstr "Ging naar school"
+msgstr "Schoolgaand"
 
 msgid "Can read"
 msgstr "Kan lezen"
@@ -1531,7 +1531,7 @@ msgid "Business or industry"
 msgstr "Bedrijf of industrie"
 
 msgid "What kind of business or industry was he working in?"
-msgstr "In wat voor soort bedrijf of industrie werkte hij?"
+msgstr "In wat voor soort bedrijf of vakgebied werkte hij?"
 
 msgid "Same house in Apr 1949?"
 msgstr "Hetzelfde huis in april 1949?"
@@ -1671,7 +1671,7 @@ msgid "What kind of work did this person do in his last job?"
 msgstr "Wat voor werk deed deze persoon in zijn laatste baan?"
 
 msgid "What kind of business or industry did he work in?"
-msgstr "In wat voor soort bedrijf of industrie werkte hij?"
+msgstr "In wat voor soort bedrijf of vakgebied werkte hij?"
 
 msgid "Class of worker [last job]"
 msgstr "Klasse van de werknemer [laatste baan]"
@@ -1962,7 +1962,7 @@ msgid "In or Out"
 msgstr "In of uit"
 
 msgid "White Males Under 10"
-msgstr "Witte mannen onder de 10"
+msgstr "Blanke mannen onder de 10"
 
 msgid "White Males 10 to 20"
 msgstr "Witte mannen 10 tot 20"
@@ -1992,7 +1992,7 @@ msgid "White Males Over 90"
 msgstr "Witte mannen ouder dan 90"
 
 msgid "White Females Under 10"
-msgstr "Witte vrouwen onder de 10"
+msgstr "Blanke vrouwen onder de 10"
 
 msgid "White Females 10 to 20"
 msgstr "Witte vrouwen 10 tot 20"
@@ -2157,7 +2157,7 @@ msgid "City of"
 msgstr "Stad van"
 
 msgid "Township of"
-msgstr "Township van"
+msgstr "Stadsdeel van"
 
 msgid "Township"
 msgstr "Gemeente"
@@ -2284,10 +2284,10 @@ msgid "Card No."
 msgstr "Kaart nr."
 
 msgid "P.O. Address"
-msgstr "P.O. Adres"
+msgstr "Postbus"
 
 msgid "P. O. Address"
-msgstr "P.O. Adres"
+msgstr "Postbus"
 
 msgid "Can you read?"
 msgstr "Kunt u lezen?"
@@ -2335,7 +2335,7 @@ msgid "How much incumberance on your home or farm?"
 msgstr "Hoeveel belasting op uw huis of boerderij?"
 
 msgid "If foreign born, are you naturalized"
-msgstr "Als in het buitenland geboren, bent u genaturaliseerd"
+msgstr "Als u in het buitenland geboren bent, bent u dan genaturaliseerd"
 
 msgid "If you are foreign born, are you naturalized?"
 msgstr "Als u in het buitenland bent geboren, bent u genaturaliseerd?"
@@ -2541,7 +2541,7 @@ msgid "Home Owned or Rented"
 msgstr "Huis in eigendom of gehuurd"
 
 msgid "Home Owned Free or Mortgaged"
-msgstr "Eigen huis gratis of hypotheek"
+msgstr "Huis in eigendom of onder hypotheek"
 
 msgid "Home Value"
 msgstr "Huiswaarde"
@@ -2586,10 +2586,10 @@ msgid "Months in School 1924"
 msgstr "Maanden op school in 1924"
 
 msgid "Able to Read"
-msgstr "In staat om te lezen"
+msgstr "Kan lezen"
 
 msgid "Able to Write"
-msgstr "In staat om te schrijven"
+msgstr "Kan schrijven"
 
 msgid "Father's Name"
 msgstr "Naam van de vader"
@@ -2778,7 +2778,7 @@ msgid "Prison in which confined as a prisoner of war"
 msgstr "Gevangenis waarin opgesloten als krijgsgevangene"
 
 msgid "Home owned free or mortgaged"
-msgstr "Eigen huis gratis of hypotheek"
+msgstr "Huis in eigendom of onder hypotheek"
 
 msgid "Where from to Kansas"
 msgstr "Waar vandaan naar Kansas"
@@ -2826,16 +2826,16 @@ msgid "Served in Federal army during rebellion"
 msgstr "Diende in het federale leger tijdens rebellie"
 
 msgid "Residence in State - Years"
-msgstr "Woonplaats in staat - jaren"
+msgstr "Woonachtig in staat - jaren"
 
 msgid "Residence in State - Months"
-msgstr "Woonplaats in staat - maanden"
+msgstr "Woonachtig in staat - maanden"
 
 msgid "Residence in District - Years"
-msgstr "Woonplaats in district - jaren"
+msgstr "Woonachtig in district - jaren"
 
 msgid "Residence in District - Months"
-msgstr "Woonplaats in district - maanden"
+msgstr "Woonachtig in district - maanden"
 
 msgid "Months Employed"
 msgstr "Maanden werkzaam"
@@ -2850,10 +2850,10 @@ msgid "Foreign mother"
 msgstr "Buitenlandse moeder"
 
 msgid "Organized Township"
-msgstr "Georganiseerde township"
+msgstr "Formeel stadsdeel"
 
 msgid "Unorganized Township"
-msgstr "Ongeorganiseerde township"
+msgstr "Informeel stadsdeel"
 
 msgid "Name of Village"
 msgstr "Dorpsnaam"
@@ -2883,10 +2883,10 @@ msgid "Mothers birthplace"
 msgstr "Moeder's geboorteplaats"
 
 msgid "Residence in District - years"
-msgstr "Woonplaats in district - jaren"
+msgstr "Woonachtig in district - jaren"
 
 msgid "Residence in District - months"
-msgstr "Woonplaats in district - maanden"
+msgstr "Woonachtig in district - maanden"
 
 msgid "Army service"
 msgstr "Legerdienst"
@@ -3198,7 +3198,7 @@ msgid "Class"
 msgstr "Klas"
 
 msgid "Inmate: Residence given when admitted"
-msgstr "Gedetineerde: verblijfplaats gegeven bij opname"
+msgstr "Gedetineerde: verblijfplaats gegeven bij arrestatie"
 
 msgid "Inhabitants of Block No."
 msgstr "Inwoners van blok nr."
@@ -3366,7 +3366,7 @@ msgid "Years in S.D."
 msgstr "Jaren in S.D."
 
 msgid "Division"
-msgstr "Onderafdeling"
+msgstr "Afdeling"
 
 msgid "Male under 21"
 msgstr "Man onder 21"
@@ -3387,10 +3387,10 @@ msgid "Heads of Families"
 msgstr "Gezinshoofden"
 
 msgid "White males"
-msgstr "Witte vrouwen"
+msgstr "Blanke mannen"
 
 msgid "White females"
-msgstr "Witte vrouwen"
+msgstr "Blanke vrouwen"
 
 msgid "Colored males"
 msgstr "Gekleurde mannen"
@@ -3507,7 +3507,7 @@ msgid "Mother (Maiden Name)"
 msgstr "Moeder (meisjesnaam)"
 
 msgid "Residence of Parents"
-msgstr "Residentie van ouders"
+msgstr "Woonplaats van ouders"
 
 msgid "By Whom Reported"
 msgstr "Door wie gerapporteerd"
@@ -3576,7 +3576,7 @@ msgid "Date of Burial"
 msgstr "Begraafdatum"
 
 msgid "Residence Place"
-msgstr "Residentie locatie"
+msgstr "Woonplaats"
 
 msgid "Burial Date"
 msgstr "Begrafenisdatum"
@@ -3689,7 +3689,7 @@ msgid "Order Number"
 msgstr "Bestelnummer"
 
 msgid "Place of Residence"
-msgstr "Residentie locatie"
+msgstr "Woonplaats"
 
 msgid "Mailing Address"
 msgstr "Postadres"
@@ -3836,7 +3836,7 @@ msgid "Erhverv"
 msgstr "Beroep"
 
 msgid "Trossamfund"
-msgstr "Religieus"
+msgstr "Geloofsgemeenschap"
 
 msgid "Sted"
 msgstr "Plaats"
@@ -3857,7 +3857,7 @@ msgid "Fødselsdato"
 msgstr "Geboortedatum"
 
 msgid "Years at current residence"
-msgstr "Jaren in huidige residentie"
+msgstr "Jaren in huidige woonlpaats"
 
 msgid "År tilflyttet"
 msgstr "Jaren bewogen"
@@ -3893,7 +3893,7 @@ msgid "Hvilket aar taget ophold i sognet"
 msgstr "Welk jaar woonde in de parochie"
 
 msgid "Previous Residence"
-msgstr "Vorige residentie"
+msgstr "Vorige woonplaats"
 
 msgid "Sidste bopæl inden tilflytning"
 msgstr "Laatste verblijf voor verhuizing"
@@ -3968,7 +3968,7 @@ msgid "Usual Address"
 msgstr "Gebruikelijk adres"
 
 msgid "City or Borough"
-msgstr "Stad of gemeente"
+msgstr "Stad of stadsdeel"
 
 msgid "Parish or Township"
 msgstr "Parochie of gemeente"
@@ -4012,7 +4012,7 @@ msgid "Whether Blind or Deaf and Dumb"
 msgstr "Of blind of doof en dom"
 
 msgid "City or Municipal Borough"
-msgstr "Stad of gemeente"
+msgstr "Stad of stadsdeel"
 
 msgid "Municipal Ward"
 msgstr "Gemeentelijke wijk"
@@ -4402,10 +4402,10 @@ msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
 msgstr "Of 1. doof en stom, 2. blind, 3. imbeciel of idioot 4. krankzinnig"
 
 msgid "School Board District"
-msgstr "Schoolbestuur district"
+msgstr "Schooldistrict"
 
 msgid "School board District"
-msgstr "Schoolbestuur district"
+msgstr "Schooldistrict"
 
 msgid "Parliamentary Division"
 msgstr "Parlementaire afdeling"
@@ -4423,7 +4423,7 @@ msgid "Gaellic or G. & E."
 msgstr "Gaelic of G. & E."
 
 msgid "Parish Ward"
-msgstr "Parochie"
+msgstr "Parochiewijk"
 
 msgid "Profession or Occupation"
 msgstr "Beroep of werk"
@@ -4495,7 +4495,7 @@ msgid "1. Names of Inmates"
 msgstr "1. Namen van huisgenoten"
 
 msgid "2. Profession, Trade or Occupation"
-msgstr "2. Broodwinning, handel of beroep"
+msgstr "2. Beroep, vak of bezigheid"
 
 msgid "BirthPlace"
 msgstr "Geboorteplaats"
@@ -4507,7 +4507,7 @@ msgid "4. Religion"
 msgstr "4. Religie"
 
 msgid "5. Residence if Outside of Limits"
-msgstr "5. Verblijf indien buiten de limieten"
+msgstr "5. Verblijfplaats indien buiten stadsgrenzen"
 
 msgid "6. Age at Next Birthday"
 msgstr "6. Leeftijd bij volgende verjaardag"
@@ -4519,7 +4519,7 @@ msgid "7. Sex: Male"
 msgstr "7. Geslacht: man"
 
 msgid "SexFemale"
-msgstr "GeslachtVrouw"
+msgstr "Geslacht vrouw"
 
 msgid "8. Sex: Female"
 msgstr "8. Geslacht: vrouw"
@@ -4662,7 +4662,8 @@ msgstr "Huizen"
 msgid ""
 "31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
 msgstr ""
-"31. Huizen: baksteen, steen, lijst, blokhut, barak of andere soorten woningen"
+"31. Huizen: baksteen, steen, skelet, blokhut, barak of andere "
+"verblijfplaatsen"
 
 msgid "HousesStories"
 msgstr "Huizenverhalen"
@@ -4914,7 +4915,7 @@ msgid "32. Hops Lbs."
 msgstr "32. Hop Kg."
 
 msgid "HayQty"
-msgstr "Hooi"
+msgstr "Hooistapel"
 
 msgid "33. Hay, Bundles or Tons"
 msgstr "33. Hooi, bundels of ton"
@@ -5046,7 +5047,7 @@ msgid "56. Remarks"
 msgstr "56. Opmerkingen"
 
 msgid "2. Profession, trade or occupation"
-msgstr "2. Broodwinning, handel of beroep"
+msgstr "2. Beroep, vak of bezigheid"
 
 msgid "Married1851"
 msgstr "Getrouwd1851"
@@ -5058,7 +5059,7 @@ msgid "5. Religion"
 msgstr "5. Religie"
 
 msgid "6. Residence, if out of limits"
-msgstr "6. Woonplaats, indien buiten de limieten"
+msgstr "6. Verblijfplaats, indien buiten de stadsgrenzen"
 
 msgid "7. Age next Birthday"
 msgstr "7. Leeftijd volgende verjaardag"
@@ -5067,7 +5068,7 @@ msgid "8. Sex: Male"
 msgstr "8. Geslacht: man"
 
 msgid "SexFemail"
-msgstr "GeslachtVrouw"
+msgstr "Geslacht vrouw"
 
 msgid "9. Sex:Female"
 msgstr "9. Geslacht: vrouw"
@@ -5823,7 +5824,7 @@ msgid "10. Location: Section"
 msgstr "10. Locatie: sectie"
 
 msgid "11. Location: Township"
-msgstr "11. Locatie: gemeente"
+msgstr "11. Plaats: gemeente"
 
 msgid "12. Location: Range"
 msgstr "12. Locatie: bereik"
@@ -6038,7 +6039,7 @@ msgid "4. Military Service"
 msgstr "4. Militaire dienst"
 
 msgid "5. Place of Habitation: Township"
-msgstr "5. Woonplaats: gehucht"
+msgstr "5. Woonplaats: gemeente"
 
 msgid "6. Place of Habitation: Range"
 msgstr "6. Woonplaats: bereik"

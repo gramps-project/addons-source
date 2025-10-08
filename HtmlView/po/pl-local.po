@@ -1,0 +1,58 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-09-12 11:02+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+msgid "HtmlView"
+msgstr "Widok HTML"
+
+msgid "Go to the previous page in the history"
+msgstr "Przejdź do poprzedniej strony w historii"
+
+msgid "Go to the next page in the history"
+msgstr "Przejdź do następnej strony w historii"
+
+msgid "_Refresh"
+msgstr "_Odśwież"
+
+msgid "Stop and reload the page."
+msgstr "Zatrzymaj i przeładuj stronę."
+
+msgid "Start page for the Html View"
+msgstr "Strona startowa dla Widoku HTML"
+
+msgid ""
+"Type a webpage address at the top, and hit the execute button to load a "
+"webpage in this page\n"
+"<br>\n"
+"For example: "
+msgstr ""
+"Wpisz adres strony internetowej na górze i naciśnij przycisk wykonaj, aby "
+"załadować stronę internetową na tej stronie\n"
+"<br>\n"
+"Na przykład: "
+
+msgid "Html View"
+msgstr "Widok HTML"
+
+msgid "A view showing html pages embedded in Gramps"
+msgstr "Widok pokazujący strony HTML osadzone w Gramps"
+
+msgid "Web"
+msgstr "Sieć"

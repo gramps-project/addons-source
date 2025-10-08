@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-08-31 06:05+0000\n"
+"PO-Revision-Date: 2025-09-20 19:02+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.13.1-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Middle Name Handling"
 msgstr "Gestion du deuxième prénom"
@@ -100,19 +100,99 @@ msgstr ""
 "l'enregistrement actif : individu, lieu, famille ou source"
 
 #, python-format
+msgid "Visited: %s"
+msgstr "Visité : %s"
+
+#, python-format
 msgid "Attribute: %s"
 msgstr "Attribut : %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "Valeur : %s"
 
 #, python-format
 msgid "Loaded from file: %s"
 msgstr "Chargé du fichier : %s"
 
 #, python-format
+msgid "Domain: %s"
+msgstr "Domaine : %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "Objet : %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "Motif : %s"
+
+#, python-format
 msgid "Object Gramps ID: %s"
 msgstr "ID d'objet Gramps : %s"
 
+msgid "Link saved to Attribute"
+msgstr "Lien enregistré dans l'Attribut"
+
+msgid "Place history loaded"
+msgstr "Historique du lieu chargé"
+
+msgid "Link hidden for all objects"
+msgstr "Lien masqué pour tous les objets"
+
+msgid "Attribute updated"
+msgstr "Attribut mis à jour"
+
+msgid "Note updated"
+msgstr "Note mise à jour"
+
 msgid "Note Link (parsed)"
 msgstr "Lien de note (analysé)"
+
+msgid "Note Link (external)"
+msgstr "Lien de note (externe)"
+
+msgid "No title"
+msgstr "Pas de titre"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Manquant :** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Cette bibliothèque est utilisée pour communiquer avec les API Web."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr ""
+"Sans elle, les sources de données externes peuvent ne pas être accessibles."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 installé habituellement avec : `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Localisation des fichiers de données"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Voici les chemins vers les fichiers système et définis par l'utilisateur "
+"utilisés par WebSearch."
+
+msgid "#### CSV File Paths"
+msgstr "#### Chemin des fichiers CSV"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr ""
+"- **Dossier système :** `{dir|%s}` – contient les fichiers CSV internes"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Dossier choisi par l'utilisateur :** `{dir|%s}` – pour les fichiers CSV "
+"de l'utilisateur"
+
+msgid "#### JSON File Paths"
+msgstr "#### Dossier des fichieres JSON"
 
 msgid "Column - Icons"
 msgstr "Colonne - Icônes"
@@ -156,6 +236,15 @@ msgstr "Icône - URL d'un fichier CSV croisé (flèches croisées)"
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
 msgstr "Icône - URL du répertoire utilisateur (icône de feuille de calcul)"
 
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Icône - URLs de l'onglet «Attributs» (icône «A»)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Icône - URLs de l'onglet «Internet» (icône «I»)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Icône - URLs de l'onglet «Notes» (icône «N»)"
+
 msgid "No data available."
 msgstr "Pas de données disponible."
 
@@ -167,6 +256,9 @@ msgstr "Note :"
 
 msgid "Coordinates:"
 msgstr "Coordonnées :"
+
+msgid "Full hierarchy"
+msgstr "Hiérarchie complète"
 
 msgid "Place Type:"
 msgstr "Type de lieu :"

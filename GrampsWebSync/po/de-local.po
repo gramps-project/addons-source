@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-18 20:52+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,25 +12,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps-Web-Synchronisierung"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
-msgstr "Synchronisiert eine lokale Datenbank mit einer Gramps-Web-Instanz."
+msgstr "Synchronisiert eine lokale Datenbank mit einer Gramps-Webinstanz."
 
 msgid "Your user does not have sufficient server permissions to use sync."
-msgstr "Dein Benutzer hat keine ausreichende Berechtigung, um Sync zu nutzen."
+msgstr ""
+"Dein Benutzer hat nicht die nötigen Server-Rechte, um die Synchronisierung "
+"zu nutzen."
 
 msgid "Fetching remote data..."
-msgstr "Lade Daten vom Server herunter..."
+msgstr "Ferndaten werden abgerufen..."
 
 msgid "Unexpected error while applying changes."
 msgstr "Unerwarteter Fehler beim Anwenden der Änderungen."
 
 msgid "Media files are in sync."
-msgstr "Mediendateien sind bereits synchron."
+msgstr "Die Mediendateien sind synchronisiert."
 
 #, python-format
 msgid "Successfully downloaded %s media files."
@@ -42,7 +44,7 @@ msgstr "Beim Herunterladen sind %s Fehler aufgetreten."
 
 #, python-format
 msgid "Successfully uploaded %s media files."
-msgstr "%s Mediendateien erfolgreich hochgeladen."
+msgstr "%s Mediendateien wurden erfolgreich hochgeladen."
 
 #, python-format
 msgid "Encountered %s errors during upload."
@@ -52,47 +54,48 @@ msgid "Error accessing media object."
 msgstr "Fehler beim Zugriff auf das Medienobjekt."
 
 msgid "Failed importing downloaded XML file."
-msgstr "Der Import der heruntergeladenen XML-Datei ist fehlgeschlagen."
+msgstr "Das Importieren der heruntergeladenen XML-Datei ist fehlgeschlagen."
 
 msgid "Comparing local and remote data..."
-msgstr "Vergleiche lokale und entfernte Daten..."
+msgstr "Vergleich von lokalen und externen Daten..."
 
 msgid "Server authorization error."
-msgstr "Server-Authorisierungsfehler."
+msgstr "Server-Autorisierungsfehler."
 
 msgid "Server authorization error: insufficient permissions."
-msgstr "Server-Authorisierungsfehler: unzureichende Berechtigungen."
+msgstr "Server-Autorisierungsfehler: unzureichende Berechtigungen."
 
 msgid "Error: URL not found."
 msgstr "Fehler: URL nicht gefunden."
 
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
-"Kann Änderungen nicht zum Server synchronisieren: Objekte wurden verändert."
+"Änderungen können nicht mit dem Server synchronisiert werden: Objekte wurden "
+"geändert."
 
 #, python-format
 msgid "Error %s while connecting to server."
-msgstr "Fehler %s beim Zugriff auf den Server."
+msgstr "Fehler %s beim Herstellen der Verbindung zum Server."
 
 msgid "URL error while connecting to server."
-msgstr "URL-Fehler beim Verbinden zum Server."
+msgstr "URL-Fehler bei der Verbindung zum Server."
 
 msgid "Error while parsing response from server."
-msgstr "Fehler beim Verarbeiten der Serverantwort."
+msgstr "Fehler beim Auswerten der Antwort vom Server."
 
 msgid "Continue without transport encryption?"
-msgstr "Mit unverschlüsselter Datenübertragung fortsetzen?"
+msgstr "Ohne Transportverschlüsselung fortfahren?"
 
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
-"Du hast eine URL im http-Schema angegeben. Wenn du fortsetzt, wird dein "
-"Passwort unverschlüsselt über das Netzwerk übertragen. Nur für lokales "
-"Testen geeignet!"
+"Du hast eine URL mit dem http-Schema angegeben. Wenn du fortfährst, wird "
+"dein Passwort im Klartext über das Netzwerk gesendet. Nur für lokale Tests "
+"verwenden!"
 
 msgid "Continue with HTTP"
-msgstr "Mit HTTP weitermachen"
+msgstr "Weiter mit HTTP"
 
 msgid "Use HTTPS"
 msgstr "HTTPS verwenden"
@@ -111,22 +114,22 @@ msgid ""
 "If you instead want to merge two significantly different trees with the "
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
-"Dieses Werkzeug ermöglicht es, den aktuell geöffneten Stammbaum mit einem "
-"Online-Stammbaum, der von Gramps Web bereitgestellt wird, zu "
-"synchronisieren.\n"
+"Dieses Werkzeug ermöglicht die Synchronisierung des aktuell geöffneten "
+"Stammbaums mit einem Remote-Stammbaum, der von Gramps Web bereitgestellt "
+"wird.\n"
 "\n"
-"Das Werkzeug geht davon aus, dass die beiden Stammbäume Ableitungen "
-"voneinander sind, d. h. einer der beiden wurde aus einem Gramps-XML-Export "
+"Das Werkzeug geht davon aus, dass die beiden Stammbäume voneinander "
+"abgeleitet sind, d. h. einer der beiden wurde aus einem Gramps-XML-Export "
 "(nicht GEDCOM!) des anderen erstellt.\n"
 "\n"
-"Nach erfolgreicher Synchronisation werden die beiden Stammbäume identisch "
-"sein. Änderungen werden basierend auf Zeitstempeln übertragen. Bevor "
-"tatsächliche Änderungen an den lokalen oder entfernten Stammbäumen "
-"angewendent werden, ist eine Bestätigung nötig.\n"
+"Nach erfolgreicher Synchronisierung sind die beiden Stammbäume identisch. "
+"Änderungen werden anhand von Zeitstempeln übertragen. Bevor Änderungen an "
+"den lokalen oder entfernten Stammbäumen vorgenommen werden, wirst du zur "
+"Bestätigung aufgefordert. \n"
 "\n"
-"Falls du stattdessen zwei wesentlich unterschiedliche Stammbäume mit der "
-"Option, manuelle Änderungen vorzunehmen, zusammenführen möchtest, verwende "
-"stattdessen das Import-und-Zusammenführungs-Werkzeug."
+"Wenn du stattdessen zwei deutlich unterschiedliche Stammbäume mit der Option "
+"manueller Änderungen zusammenführen möchtest, verwende das Import- und "
+"Zusammenführungs-Werkzeug."
 
 msgid "Server URL: "
 msgstr "Server-URL: "
@@ -135,10 +138,10 @@ msgid "Bidirectional Synchronization"
 msgstr "Bidirektionale Synchronisation"
 
 msgid "Reset remote to local"
-msgstr "Remote auf lokal zurücksetzen"
+msgstr "Zurücksetzen von entfernt auf lokal"
 
 msgid "Reset local to remote"
-msgstr "Lokal auf remote zurücksetzen"
+msgstr "Lokal auf entfernt zurücksetzen"
 
 msgid "Merge"
 msgstr "Zusammenführen"
@@ -150,42 +153,42 @@ msgid "Modified"
 msgstr "Verändert"
 
 msgid "Remote changes"
-msgstr "Remote-Änderungen"
+msgstr "Entfernte Änderungen"
 
 msgid "Simultaneous changes"
 msgstr "Gleichzeitige Änderungen"
 
 msgid "Fetching information about media files..."
-msgstr "Abrufen von Informationen über Mediendateien..."
+msgstr "Informationen zu Mediendateien abrufen..."
 
 msgid "Both trees are the same."
-msgstr "Beide Stammbäume sind identisch."
+msgstr "Beide Bäume sind gleich."
 
 msgid "Applying changes to local database ..."
-msgstr "Wende Änderungen auf die lokale Datenbank an ..."
+msgstr "Änderungen auf lokale Datenbank anwenden ..."
 
 msgid "No changes to apply to local database."
-msgstr "Keine Änderungen an der lokalen Datenbank nötig."
+msgstr "Keine Änderungen an der lokalen Datenbank durchzuführen."
 
 msgid "Applying changes to remote database ..."
-msgstr "Wende Änderungen auf die Remote-Datenbank an ..."
+msgstr "Änderungen auf entfernte Datenbank anwenden ..."
 
 msgid "No changes to apply to remote database."
-msgstr "Keine Änderungen an der Remote-Datenbank nötig."
+msgstr "Keine Änderungen an der entfernten Datenbank durchzuführen."
 
 msgid "Successfully applied changes to local database."
-msgstr "Änderungen an der lokalen Datenbank erfolgreich angewendet."
+msgstr "Änderungen erfolgreich in der lokalen Datenbank übernommen."
 
 msgid "Missing locally"
-msgstr "Fehlt lokal"
+msgstr "Lokal nicht vorhanden"
 
 msgid "Missing remotely"
-msgstr "Fehlt auf dem Server"
+msgstr "Fehlt entfernt"
 
 #, python-format
 msgid "Downloading %s media file(s)"
-msgstr "Lade %s Mediendatei(en) herunter"
+msgstr "Herunterladen von %s Mediendatei(en)"
 
 #, python-format
 msgid "Uploading %s media file(s)"
-msgstr "Lade %s Mediendatei(en) hoch"
+msgstr "Hochladen von %s Mediendatei(en)"

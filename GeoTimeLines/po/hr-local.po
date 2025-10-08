@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-09-28 12:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,8 +13,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "TimeLines Map"
+msgstr "Karta vremenskih crta"
+
+msgid "Choose View Format"
+msgstr "Odaberi format prikaza"
+
+msgid "Almost done"
+msgstr "Skoro gotovo"
+
+msgid "Gathering data"
+msgstr "Prikupljanje podataka"
 
 #, python-format
 msgid "Number of Persons: %s"
 msgstr "Broj osoba: %s"
+
+msgid "Use custom map icons"
+msgstr "Koristi prilagođene ikone za karte"
+
+msgid ""
+"If there is no birth event for a person, their age\n"
+"is assumed to be this at their first event"
+msgstr ""
+"Ako nema događaja rođenja osobe, njena pretpostavljena dob \n"
+"će bit ova pri prvom zabilježenom događaju"
+
+msgid ""
+"If there is no death event for a person, they will\n"
+"be assumed dead at this age"
+msgstr ""
+"Ako nema događaja smrti osobe, \n"
+"smatrat će se da je preminula u ovoj dobi"
+
+msgid "Number of steps"
+msgstr "Broj koraka"
+
+msgid "Type of steps"
+msgstr "Vrsta koraka"
+
+msgid "Steps per millisecond"
+msgstr "Broj koraka u milisekundi"
+
+msgid "Initial map view on Gramps startup"
+msgstr "Početni prikaz karte pri pokretanju Grampsa"
+
+msgid ""
+"Initial map view after startup and\n"
+"after changing the active person"
+msgstr ""
+"Početni prikaz karte nakon pokretanja Grampsa\n"
+"i nakon mijenjanja aktivne osobe"
+
+msgid "Show map travel lines on startup"
+msgstr "Prikaži linije putovanja na karti pri pokretanju"
+
+msgid "Show time ticks on navigation bar on startup"
+msgstr "Prikaži vremenske oznake u navigacijskoj traci pri pokretanju Grampsa"
+
+msgid "TimeLines Map options"
+msgstr "Opcije karte vremenskih crta"
+
+msgid ""
+"A view showing all the places visited by a person or persons on various date."
+msgstr ""
+"Prikaz svih mjesta koja je jedna ili više osoba posjetila na različite "
+"datume."
+
+msgid "TimeLines map"
+msgstr "Karta vremenskih crta"

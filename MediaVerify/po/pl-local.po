@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-09-12 11:02+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+msgid "Media Verify Tool"
+msgstr "Narzędzie weryfikacji multimediów"
+
+msgid "Moved/Renamed Files"
+msgstr "Przeniesione/przemianowane pliki"
+
+msgid "Missing Files"
+msgstr "Brakujące pliki"
+
+msgid "Duplicate Files"
+msgstr "Duplikaty plików"
+
+msgid "Extra Files"
+msgstr "Dodatkowe pliki"
+
+msgid "No md5 Generated"
+msgstr "Nie wygenerowano sumy md5"
+
+msgid "Errors"
+msgstr "Błędy"
+
+msgid "Close the Media Verify Tool"
+msgstr "Zamknij narzędzie weryfikacji multimediów"
+
+msgid "Generate md5 hashes for media objects"
+msgstr "Generuj sumy kontrolne md5 dla obiektów multimedialnych"
+
+msgid "Verify"
+msgstr "Weryfikuj"
+
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr ""
+"Sprawdź ścieżki multimediów i zgłoś brakujące, zduplikowane i dodatkowe pliki"
+
+msgid "Export"
+msgstr "Eksportuj"
+
+msgid "Export the results to a text file"
+msgstr "Eksportuj wyniki do pliku tekstowego"
+
+msgid "Fix"
+msgstr "Napraw"
+
+msgid "Fix media paths of moved and renamed files"
+msgstr "Napraw ścieżki multimediów dla przeniesionych i przemianowanych plików"
+
+msgid "Verify Gramps media using md5 hashes"
+msgstr "Weryfikuj multimedia Gramps używając sum kontrolnych md5"
+
+msgid "Files"
+msgstr "Pliki"
+
+msgid "Export results to a text file"
+msgstr "Eksportuj wyniki do pliku tekstowego"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Błąd podczas zapisywania raportu: %s"
+
+msgid "Generating media hashes"
+msgstr "Generowanie sum kontrolnych multimediów"
+
+msgid "Set media hashes"
+msgstr "Ustaw sumy kontrolne multimediów"
+
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"Ścieżka multimediów nie została ustawiona. Musisz ustawić \"Ścieżkę bazową "
+"dla względnych ścieżek multimediów\" w Preferencjach."
+
+msgid "Fixing file paths"
+msgstr "Naprawianie ścieżek plików"
+
+msgid "Fix media paths"
+msgstr "Napraw ścieżki multimediów"
+
+msgid "Media Verify"
+msgstr "Weryfikacja multimediów"
+
+msgid "Verify that media is present in the correct path"
+msgstr "Sprawdź, czy multimedia znajdują się we właściwej ścieżce"

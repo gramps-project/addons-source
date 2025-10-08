@@ -1,0 +1,172 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-08 17:04+0000\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "Select Form"
+msgstr "Pasirinkite formą"
+
+msgid "Form Gramplet"
+msgstr "Forma Gramplet"
+
+msgid "Forms"
+msgstr "Formos"
+
+msgid "Form"
+msgstr "Forma"
+
+msgid "New Form"
+msgstr "Nauja forma"
+
+msgid "Edit Form"
+msgstr "Keisti formą"
+
+msgid "Reference:"
+msgstr "Nuoroda:"
+
+msgid "Headings"
+msgstr "Antraštės"
+
+msgid "Birthplace"
+msgstr "Gimimovieta"
+
+msgid "Father's Name"
+msgstr "Tėvo vardas"
+
+msgid "Mother's Name"
+msgstr "Motinos vardas"
+
+msgid "Disabled"
+msgstr "Išjungta"
+
+msgid "Black"
+msgstr "Juoda"
+
+msgid "Red"
+msgstr "Raudona"
+
+msgid "Yellow"
+msgstr "Geltona"
+
+msgid "Divorced"
+msgstr "Išsiskyrę"
+
+msgid "Can Read"
+msgstr "Gali skaityti"
+
+msgid "Can't Read"
+msgstr "Negali skaityti"
+
+msgid "Can Write"
+msgstr "Gali rašyti"
+
+msgid "Can't Write"
+msgstr "Negali rašyti"
+
+msgid "Date of Marriage"
+msgstr "Santuokos data"
+
+msgid "Place of Marriage"
+msgstr "Santuokos vieta"
+
+msgid "Place of Death"
+msgstr "Mirimo vieta"
+
+msgid "Spouse's Name"
+msgstr "Sutuoktinio vardas"
+
+msgid "Date of Death"
+msgstr "Mirimo data"
+
+msgid "Place of Burial"
+msgstr "Palaidojimo vieta"
+
+msgid "Residence Place"
+msgstr "Gyvenamoji vieta"
+
+msgid "Home Address"
+msgstr "Namų adresas"
+
+msgid "Nearest Relative"
+msgstr "Artimiausi giminaičiai"
+
+msgid "Race "
+msgstr "Rasė "
+
+msgid "Build / Weight"
+msgstr "Sudėjimas / svoris"
+
+msgid "Hair Color"
+msgstr "Plaukų spalva"
+
+msgid "Bald"
+msgstr "Plikas"
+
+msgid "Place of Residence"
+msgstr "Gyvenamoji vieta"
+
+msgid "Telephone"
+msgstr "Telefonas"
+
+msgid "Eyes"
+msgstr "Akys"
+
+msgid "Hair"
+msgstr "Plaukai"
+
+msgid "Other characteristics"
+msgstr "Kitos savybės"
+
+msgid "Eye color"
+msgstr "Akių spalva"
+
+msgid "Hair color"
+msgstr "Plaukų spalva"
+
+msgid "Branch"
+msgstr "Šaka"
+
+msgid "Spouse's Gender"
+msgstr "Sutuoktinio lytis"
+
+msgid "Spouse's Age"
+msgstr "Sutuoktinio amžius"
+
+msgid "Record Number"
+msgstr "Įrašo numeris"
+
+msgid "M or F"
+msgstr "V ar M"
+
+msgid "Born in County"
+msgstr "Gimė šalyje"
+
+msgid "Town or Village"
+msgstr "Miestelis ar kaimas"
+
+msgid "Working at Home"
+msgstr "Darbas namuose"
+
+msgid "Barony"
+msgstr "Baronija"
+
+msgid "Head of Family"
+msgstr "Šeimos galva"
+
+msgid "Total Children"
+msgstr "Iš viso vaikų"

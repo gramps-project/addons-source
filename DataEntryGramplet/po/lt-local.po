@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "Active person"
+msgstr "Aktyvus asmuo"
+
+msgid "Family:"
+msgstr "Šeima:"
+
+msgid "Sources?"
+msgstr "Šaltiniai?"
+
+msgid "Save"
+msgstr "Išsaugoti"
+
+msgid "New person"
+msgstr "Naujas asmuo"
+
+msgid "Add relation"
+msgstr "Pridėti ryšį"
+
+msgid "No relation to active person"
+msgstr "Nėra ryšio su aktyviu asmeniu"
+
+msgid "Add as a Parent"
+msgstr "Pridėti kaip vieną iš tėvų"
+
+msgid "Add as a Mother"
+msgstr "Pridėti kaip motiną"
+
+msgid "Add as a Father"
+msgstr "Pridėti kaip tėvą"
+
+msgid "Add as a Spouse"
+msgstr "Pridėti kaip sutuoktinį"
+
+msgid "Add as a Wife"
+msgstr "Pridėti kaip žmoną"
+
+msgid "Add as a Husband"
+msgstr "Pridėti kaip vyrą"
+
+msgid "Add as a Sibling"
+msgstr "Pridėti kaip brolį ar seserį"
+
+msgid "Add as a Child"
+msgstr "Pridėti kaip vaiką"
+
+msgid "Copy Active Data"
+msgstr "Kopijuoti aktyvius duomenis"
+
+msgid "Can't add new person."
+msgstr "Neįmanoma pridėti naujo asmens."
+
+msgid "Can't add new person as a parent."
+msgstr "Negalima pridėti naujo asmens kaip vieno iš tėvų."
+
+msgid "Please set the new person's gender."
+msgstr "Nustatykite naujo asmens lytį."
+
+msgid "Can't add new person as a mother."
+msgstr "Negalima pridėti naujo asmens kaip motinos."
+
+msgid "Can't add new person as a father."
+msgstr "Negalima pridėti naujo asmens kaip tėvo."
+
+msgid "Can't add new person as a spouse."
+msgstr "Negalima pridėti naujo asmens kaip sutuoktinio."
+
+msgid "Can't add new person as a wife."
+msgstr "Negalima pridėti naujo asmens kaip žmonos."
+
+msgid "Can't add new person as a husband."
+msgstr "Negalima pridėti naujo asmens kaip vyro."
+
+msgid "Can't add new person as a sibling."
+msgstr "Negalima pridėti naujo asmens kaip brolio ar sesers."
+
+msgid "Can't add new person as a child."
+msgstr "Negalima pridėti naujo asmens kaip vaiko."
+
+msgid "Please set Active person."
+msgstr "Nustatyti aktyvų asmenį."
+
+msgid "Can't add new person as a spouse to no one."
+msgstr "Negalima niekam pridėti naujo asmens kaip sutuoktinio."
+
+msgid "Please set gender on Active or new person."
+msgstr "Nustatykite lytį aktyvaus arba naujo asmens."
+
+msgid "Same genders on Active and new person."
+msgstr "Tos pačios lyties asmenys aktyviame ir naujame asmenyje."
+
+msgid "Please set gender on Active person."
+msgstr "Nustatykite aktyvaus asmens lytį."

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-09-22 19:02+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,20 +12,99 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Map tiles"
+msgstr "Kartan laatat"
+
+msgid ""
+"Set the size of the heatmap points.\n"
+"Default: 15"
+msgstr ""
+"Lämpökartan pisteiden koko.\n"
+"Oletusarvo: 15"
 
 msgid "File path"
 msgstr "Tiedostopolku"
 
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention '."
+"html' is added by the report."
+msgstr ""
+"Tiedostonimessä sallitaan vain kirjaimet A-Z, a-z, numerot 0-9 sekä "
+"välilyönti, alaviiva ja yhdysmerkki. Tiedostonimen pitää alkaa ja päättyä "
+"aakkosnumeerisella merkillä. Pääte '.html' lisätään automaattisesti."
+
 msgid "File name"
 msgstr "Tiedostonimi"
 
+msgid "Enable custom start position"
+msgstr "Valitse toivottu aloitussijainti"
+
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr ""
+"Valitse kartta avautumaan vastedes toivotussa aloitussijainnissa zoomattuna."
+
+msgid "Start latitude"
+msgstr "Leveysaste aloituksessa"
+
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"Aseta toivottu aloituksen leveysaste\n"
+"Oletus: 10.0"
+
 msgid "Start longitude"
-msgstr "Alun pituusaste"
+msgstr "Pituusaste aloituksessa"
+
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"Aseta toivottu aloituksen pituusaste\n"
+"Oletus: 10.0"
+
+msgid "Start zoom"
+msgstr "Zoomaus aloituksessa"
+
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"Aseta aloituszoomaus\n"
+"Oletus: 5"
 
 msgid "Path does not exist."
 msgstr "Hakemistoa ei ole olemassa."
 
+msgid "Invalid filename."
+msgstr "Kelvoton tiedostonimi."
+
 msgid "INFO"
 msgstr "INFO"
+
+msgid "Create a heatmap web report."
+msgstr "Luo lämpökartan web-raportti."
+
+msgid "Stamen Terrain"
+msgstr "Stamen-maastokartta"
+
+msgid "Stamen Terrain (Background only)"
+msgstr "Stamen Terrain (vain taustana)"
+
+msgid "Stamen Toner"
+msgstr "Stamen-väritys"
+
+msgid "Stamen Watercolor"
+msgstr "Stamen-akvarelli"
+
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"

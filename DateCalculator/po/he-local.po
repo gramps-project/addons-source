@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
+
+msgid "Reference Date or Date Range"
+msgstr "תאריך אזכור או טווח תאריכים"
+
+msgid "a valid Gramps date"
+msgstr "תאריך גרמפס תקין"
+
+msgid "Date or offset ±y or ±y, m, d"
+msgstr "תאריך או קיזוז ±y או ±y, m, d"
+
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+"1. תאריך\n"
+"2. מספר חיובי או שלילי, שמייצג שנים\n"
+"3. רשימת ערכים חיובית או שלילית, שמייצגת שנים, חודשים, ימים"
 
 msgid "Result"
 msgstr "תוצאה"
@@ -24,8 +42,20 @@ msgstr "חישוב"
 msgid "Copy"
 msgstr "העתקה"
 
+msgid "Error: invalid date for first expression"
+msgstr "שגיאה: תאריך לא תקין בביטוי ראשון"
+
+msgid "Error: invalid offset for second expression"
+msgstr "שגיאה: קיזוז לא תקין בביטוי שני"
+
 msgid "Error: at least one expression must be a date"
 msgstr "שגיאה: לפחות אחד מהביטוים חייב להיות תאריך"
 
+msgid "Enter an expression in the entries above and click Calculate."
+msgstr "נא להזין ביטוי ברשומות לעיל ולהקיש על 'לחשב'."
+
 msgid "Date Calculator"
 msgstr "מחשבון תאריכים"
+
+msgid "Perform date math calculations"
+msgstr "ביצוע חישובי תאריך מתמטיים"

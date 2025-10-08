@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,25 +12,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Ancestor"
 msgstr "Vorfahre"
 
 msgid "The ancestor from which to start the line"
-msgstr "Der Vorfahre von dem die Linie startet"
+msgstr "Der Vorfahr, von dem aus die Linie beginnt"
 
 msgid "Descendent"
-msgstr "Nachfahre"
+msgstr "Nachkomme"
 
 msgid "The descendent to which to build the line"
-msgstr "Der Nachkomme zu dem die Linie erstellt wird"
+msgstr "Der Nachkomme, zu dem die Linie aufgebaut werden soll"
 
 msgid "The style used for the title of the page."
 msgstr "Der für den Titel der Seite verwendete Stil."
 
 msgid "The style used for the title of a line."
-msgstr "Der Stil, der für den Titel der Linie verwendet wird."
+msgstr "Der Stil, der für den Titel einer Linie verwendet wird."
 
 #, python-format
 msgid "%(line)s. line:"
@@ -38,14 +38,14 @@ msgstr "%(line)s. Linie:"
 
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
-msgstr "Nachkommen Linien von %(ancestor)s zu %(descendent)s"
+msgstr "Abstammungslinien von %(ancestor)s zu %(descendent)s"
 
 msgid "Lines of Descendency Report"
-msgstr "Nachkommen Linien Bericht"
+msgstr "Abstammungslinienbericht"
 
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."
 msgstr ""
-"Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem "
-"gegebenen Nachkommen in Textform."
+"Druckt alle Abstammungslinien von einem bestimmten Vorfahren zu einem "
+"bestimmten Nachkommen in Textform aus."

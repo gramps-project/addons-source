@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "Tree"
+msgstr "Medis"
+
+msgid "Search results"
+msgstr "Paieškos rezultatai"
+
+msgid "Configure"
+msgstr "Nustatyti"
+
+msgid "Examples"
+msgstr "Pavyzdžiai"
+
+msgid "F"
+msgstr "M"
+
+msgid "Family Nick Name"
+msgstr "Šeimos slapyvardis"
+
+msgid "File ready"
+msgstr "Rinkmena paruošta"
+
+msgid "M"
+msgstr "V"
+
+msgid "No matching surname."
+msgstr "Nėra sutampančių pavardžių."
+
+msgid "Other participants"
+msgstr "Kiti dalyviai"
+
+msgid "Person page"
+msgstr "Asmens puslapis"
+
+msgid "Persons"
+msgstr "Asmenys"
+
+msgid "Restore"
+msgstr "Atkurti"
+
+msgid "Restore default settings"
+msgstr "Atkurti numatytuosius nustatymus"
+
+msgid "Show last modification time"
+msgstr "Rodyti paskutinio keitimo laiką"
+
+msgid "Search:"
+msgstr "Ieškoti:"
+
+msgid "Select the background color scheme"
+msgstr "Pasirinkite fono spalvų gamą"
+
+msgid "Sort by:"
+msgstr "Rūšiuoti pagal:"
+
+msgid "Without name"
+msgstr "Nėra vardo"
+
+msgid "Without surname"
+msgstr "Nėra pavardės"
+
+msgid "Without title"
+msgstr "Nėra pavadinimo"
+
+msgid "Zoom in"
+msgstr "ARTINTI"
+
+msgid "Zoom out"
+msgstr "TOLINTI"
+
+msgid "all"
+msgstr "visi"
+
+#, python-format
+msgid "Copying error: %(error)s"
+msgstr "Kopijavimo klaida: %(error)s"
+
+#, python-format
+msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+msgstr "Neįmanoma nukopijuoti \"%(src)s\" į \"%(dst)s\""
+
+msgid "Archive file"
+msgstr "Archyvo rinkmena"
+
+msgid "Include records marked private"
+msgstr "Įtraukti įrašus pažymėtus asmeniniais"
+
+msgid "Include Last Name Only"
+msgstr "Įtraukti tik pavardes"
+
+msgid "Include Full Name Only"
+msgstr "Įtraukti tik vardus ir pavardes"
+
+msgid "Export notes"
+msgstr "Iškelti pastabas"
+
+msgid "Export sources"
+msgstr "Iškelti šaltinius"
+
+msgid "Export addresses"
+msgstr "Iškelti adresus"
+
+msgid "Google map API key"
+msgstr "Google žemėlapio API raktas"
+
+msgid "The API key used for the Google map"
+msgstr "API raktas naudojamas Google žemėlapyje"
+
+msgid "List"
+msgstr "Sąrašas"
+
+msgid "Table"
+msgstr "Lentelė"
+
+msgid "Theme"
+msgstr "Išvaizda"
+
+msgid "Pages"
+msgstr "Puslapiai"
+
+msgid "Pages selection"
+msgstr "Puslapių pasirinkimas"
+
+msgid "Number of pages"
+msgstr "Puslapių skaičius"

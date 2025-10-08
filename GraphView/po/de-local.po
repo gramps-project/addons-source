@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-17 08:47+0000\n"
+"PO-Revision-Date: 2025-10-07 09:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,10 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Graph View"
-msgstr "Graphenansicht"
+msgstr "Diagrammansicht"
 
 msgid "Show IDs"
 msgstr "IDs anzeigen"
@@ -24,10 +24,10 @@ msgid "Show avatars"
 msgstr "Avatare anzeigen"
 
 msgid "Highlight the home person"
-msgstr "Hauptperson hervorheben"
+msgstr "Die Hausperson hervorheben"
 
 msgid "Show full dates"
-msgstr "Volles Datum anzeigen"
+msgstr "Vollständige Daten anzeigen"
 
 msgid "Show places"
 msgstr "Orte zeigen"
@@ -48,7 +48,7 @@ msgid "Time Direction"
 msgstr "Zeitrichtung"
 
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr "Begrenze Anzahl der angezeigten Personen (verwende 0 für unbegrenzt)"
+msgstr "Anzahl der angezeigten Personen begrenzen (für unbegrenzt 0 verwenden)"
 
 msgid "Person theme"
 msgstr "Personenthema"
@@ -99,13 +99,13 @@ msgid "Themes"
 msgstr "Themen"
 
 msgid "Show animation"
-msgstr "Zeige Animation"
+msgstr "Animation anzeigen"
 
 msgid "Animation speed (1..5 and 5 is the slower)"
-msgstr "Animationsgeschwindigkeit (1..5 und 5 ist am langsamsten)"
+msgstr "Animationsgeschwindigkeit (1..5, wobei 5 die langsamste ist)"
 
 msgid "Animation count (0..8 use 0 to turn off)"
-msgstr "Anzahl der Animationen (0..8 zum Ausschalten 0 verwenden)"
+msgstr "Anzahl der Animationen (0..8, 0 zum Ausschalten verwenden)"
 
 msgid "Animation"
 msgstr "Animation"
@@ -114,7 +114,7 @@ msgid "Search in all database"
 msgstr "Suche in allen Datenbanken"
 
 msgid "Also apply search by all database."
-msgstr "Wenden die Suche auch nach allen Datenbanken an."
+msgstr "Wende die Suche auch auf alle Datenbanken an."
 
 msgid "Show person images"
 msgstr "Personenbilder anzeigen"
@@ -123,29 +123,28 @@ msgid "Show persons thumbnails in search result list."
 msgstr "Zeige Personen-Miniaturansichten in der Suchergebnisliste an."
 
 msgid "Show bookmarked first"
-msgstr "Zeige zuerst mit Lesezeichen versehende"
+msgstr "Zuerst mit Lesezeichen versehene anzeigen"
 
 msgid "Show bookmarked persons first in search result list."
-msgstr ""
-"Zeige mit Lesezeichen versehene Personen zuerst in der Suchergebnisliste an."
+msgstr "Personen mit Lesezeichen zuerst in der Suchergebnisliste anzeigen."
 
 msgid "Search"
 msgstr "Suche"
 
 msgid "Select a dot file name"
-msgstr "Wähle einen dot Dateinamen"
+msgstr "Wähle einen dot-Dateinamen"
 
 msgid "Zoom in"
 msgstr "Heranzoomen"
 
 msgid "Zoom out"
-msgstr "Herauszoomen"
+msgstr "Verkleinern"
 
 msgid "Zoom to original"
-msgstr "Auf original Größe zoomen"
+msgstr "Auf Originalgröße vergrößern"
 
 msgid "Zoom to best fit"
-msgstr "Zoom auf die beste Größte"
+msgstr "Zoomen, um bestmöglich anzupassen"
 
 msgid "Go to active person"
 msgstr "Gehe zur aktiven Person"
@@ -178,29 +177,29 @@ msgid "Spacings"
 msgstr "Abstände"
 
 msgid "All connected"
-msgstr "Alle verbundene"
+msgstr "Alle verbunden"
 
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
 msgstr ""
-"Zeigt alle verbundene Personen an, begrenzt durch "
-"Generationsbeschränkungen.\n"
-"Arbeitet langsam, daher solltest du keine hohen Generationswerte einstellen."
+"Alle verbundenen Personen anzeigen, die durch Generationsbeschränkungen "
+"eingeschränkt sind.\n"
+"Funktioniert langsam, daher keine großen Generationswerte einstellen."
 
 msgid "Add active person"
 msgstr "Aktive Person hinzufügen"
 
 msgid "Call the bookmark editor"
-msgstr "Lesezeicheneditor aufrufen"
+msgstr "Den Lesezeicheneditor aufrufen"
 
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
 msgstr ""
-"Du hast noch keine Lesezeichen ... \n"
-"Versuche, einige häufig verwendete Personen hinzuzufügen, um die Navigation "
-"zu beschleunigen."
+"Du hast noch keine Lesezeichen...\n"
+"Füge einige häufig verwendete Personen hinzu, um die Navigation zu "
+"beschleunigen."
 
 msgid "No bookmarks for this graph..."
 msgstr "Keine Lesezeichen für dieses Diagramm..."
@@ -225,8 +224,8 @@ msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
 "Do you want to set it active and rebuild view?"
 msgstr ""
-"Person <b><i>%s</i></b> ist nicht in der aktuellen Ansicht.\n"
-"Möchtest du sie aktivieren und die Ansicht neu aufbauen?"
+"Person <b><i>%s</i></b> ist nicht in der aktuellen Ansicht enthalten.\n"
+"Möchtest du sie aktivieren und die Ansicht neu erstellen?"
 
 msgid "Change active person?"
 msgstr "Aktive Person ändern?"
@@ -257,13 +256,13 @@ msgid "%s "
 msgstr "%s "
 
 msgid "<b>Tags:</b>"
-msgstr "<b>Markierungen:</b>"
+msgstr "<b>Etiketten::</b>"
 
 msgid "Lines type"
 msgstr "Linienart"
 
 msgid "Direct"
-msgstr "Gerade"
+msgstr "Direkt"
 
 msgid "Curves"
 msgstr "Kurven"
@@ -278,7 +277,7 @@ msgid "No Events for this person"
 msgstr "Keine Ereignisse für diese Person"
 
 msgid "Select tags for person"
-msgstr "Markierungen für Person wählen"
+msgstr "Etiketten für Person auswählen"
 
 msgid "Add new family"
 msgstr "Neue Familie hinzufügen"
@@ -290,19 +289,19 @@ msgid "Set as home person"
 msgstr "Als Hauptperson festlegen"
 
 msgid "Show path to home person"
-msgstr "Zeige Pfad zur Hauptperson"
+msgstr "Weg zur Hauptperson anzeigen"
 
 msgid "Remove from bookmarks"
-msgstr "Aus Lesezeichen entfernen"
+msgstr "Aus den Lesezeichen entfernen"
 
 msgid "Add to bookmarks"
-msgstr "Zu Lesezeichen hinzufügen"
+msgstr "Zu den Lesezeichen hinzufügen"
 
 msgid "No Events for this family"
 msgstr "Keine Ereignisse für diese Familie"
 
 msgid "Select tags for family"
-msgstr "Markierungen für Familie wählen"
+msgstr "Etiketten für Familie auswählen"
 
 msgid "Add father"
 msgstr "Vater hinzufügen"
@@ -311,7 +310,7 @@ msgid "Add mother"
 msgstr "Mutter hinzufügen"
 
 msgid "About Graph View"
-msgstr "Über Graphenansicht"
+msgstr "Über die Diagrammansicht"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
@@ -323,18 +322,19 @@ msgstr "Hinzufügen von Etiketten zur Familie (%s)"
 
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
-msgstr "Durch Löschen der Person [%s] wird diese aus der Datenbank entfernt."
+msgstr ""
+"Durch das Löschen der Person [%s] wird diese aus der Datenbank entfernt."
 
 #, python-format
 msgid "Delete family [%s]?"
-msgstr "Familie löschen [%s]?"
+msgstr "Familie [%s] löschen?"
 
 msgid "Deleting the family will remove it from the database."
-msgstr "Durch Löschen der Familie wird sie aus der Datenbank entfernt."
+msgstr "Durch das Löschen der Familie wird diese aus der Datenbank entfernt."
 
 #, python-format
 msgid "Delete Family [%s]"
-msgstr "Lösche Familie [%s]"
+msgstr "Familie [%s] löschen"
 
 msgid "Dynamic and interactive graph of relations"
 msgstr "Dynamisches und interaktives Beziehungsdiagramm"
@@ -352,7 +352,7 @@ msgid "Modern"
 msgstr "Modern"
 
 msgid "Persons from current graph"
-msgstr "Personen aus der aktuellen Grafik"
+msgstr "Personen aus dem aktuellen Diagramm"
 
 msgid "Other persons from database"
 msgstr "Andere Personen aus der Datenbank"
@@ -364,8 +364,8 @@ msgid ""
 "Search people in the current visible graph and database.\n"
 "Use <Ctrl+F> to make search entry active."
 msgstr ""
-"Suche nach Personen in der aktuell sichtbaren Grafik und Datenbank.\n"
-".Verwende <Strg+F>, um den Sucheintrag zu aktivieren."
+"Suche Personen im aktuell angezeigten Diagramm und in der Datenbank.\n"
+"Verwende <Strg+F>, um die Suche zu aktivieren."
 
 msgid "Search..."
 msgstr "Suchen …"
@@ -375,4 +375,4 @@ msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
 
 msgid "Partners"
-msgstr "Partner/-in/-nen"
+msgstr "Partner"

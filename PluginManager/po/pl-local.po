@@ -3,19 +3,90 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 12:35-0600\n"
-"PO-Revision-Date: 2009-10-05 21:15+0100\n"
-"Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
-"Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-09-12 11:02+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+msgid "Plugin Manager Enhanced"
+msgstr "Menedżer wtyczek rozszerzony"
+
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "Menedżer dodatków/wtyczek z kilkoma dodatkowymi możliwościami"
+
+msgid "Plugin Manager - Enhanced"
+msgstr "Menedżer wtyczek - rozszerzony"
+
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"Wprowadź słowa wyszukiwania aby odfiltrować dodatki.\n"
+"Wszystkie słowa muszą być obecne gdzieś w wierszu lub\n"
+"nazwie pliku dodatku aby zostały uwzględnione w wyszukiwaniu.\n"
+"Wielkość liter i kolejność jest ignorowana."
 
 msgid "Search..."
 msgstr "Szukaj..."
+
+msgid "Restart..."
+msgstr "Uruchom ponownie..."
+
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr ""
+"Proszę uruchomić ponownie program Gramps aby zmiany w dodatkach mogły zostać "
+"bezpiecznie zakończone."
+
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr ""
+"Błąd usuwania katalogu '%s', odinstalowanie mogło zakończyć się "
+"niepowodzeniem"
+
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"Elementy '*' są dostarczone przez autorów zewnętrznych,\n"
+"elementy <s>przekreślone</s> są ukryte"
+
+msgid "Hide"
+msgstr "Ukryj"
+
+msgid "* indicates 3rd party addon"
+msgstr "* oznacza dodatek zewnętrzny"
+
+msgid "Plugins"
+msgstr "Wtyczki"
+
+msgid "Unhide"
+msgstr "Odkryj"
+
+msgid "Uninstall"
+msgstr "Odinstaluj"
+
+msgid "*Available"
+msgstr "*Dostępne"
+
+msgid "Built-in"
+msgstr "Wbudowane"
+
+msgid "*Installed"
+msgstr "*Zainstalowane"
+
+msgid "Update Available"
+msgstr "Dostępna aktualizacja"

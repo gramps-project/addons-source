@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-23 15:02+0000\n"
+"PO-Revision-Date: 2025-09-12 11:02+0000\n"
 "Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -13,17 +13,219 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
+msgid "Import and Merge tool"
+msgstr "Narzędzie importu i scalania"
+
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr ""
+"Porównuje bazę danych XML Gramps z bieżącą i umożliwia scalanie różnic."
+
+msgid "Import and merge a Gramps XML"
+msgstr "Importuj i scal plik XML Gramps"
+
+msgid "Missing"
+msgstr "Brakujące"
+
+msgid "Different"
+msgstr "Różne"
+
+msgid "Delete original"
+msgstr "Usuń oryginał"
+
+msgid "Ignore"
+msgstr "Ignoruj"
+
+msgid "Add Import"
+msgstr "Dodaj import"
+
+msgid "Merge into original"
+msgstr "Scal z oryginałem"
+
+msgid "Merge into import"
+msgstr "Scal z importem"
+
+msgid "Replace with import"
+msgstr "Zastąp importem"
+
+msgid "Keep original"
+msgstr "Zachowaj oryginał"
+
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"Użyj przycisków poniżej, aby ustawić 'Akcję' dla każdej różnicy. Żadne "
+"zmiany nie zostaną wprowadzone do twojego drzewa, dopóki nie naciśniesz "
+"'Gotowe' i nie potwierdzisz."
+
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"Ten element zostanie usunięty z twojego drzewa. Wszystkie powiązane elementy "
+"zostały również oznaczone do usunięcia."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"Ten element nie zostanie zmieniony w twoim drzewie. Wszystkie powiązane "
+"elementy zostały również oznaczone do ignorowania."
+
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"Ten element zostanie dodany do twojego drzewa. Wszystkie powiązane elementy "
+"zostały również oznaczone do dodania."
+
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Ten element zostanie scalony, zachowując dane z twojego drzewa. Wszystkie "
+"powiązane elementy zostały również oznaczone do scalenia lub dodania."
+
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Ten element zostanie scalony, używając danych z importu. Wszystkie powiązane "
+"elementy zostały również oznaczone do scalenia lub dodania."
+
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"Importowane dane całkowicie zastąpią dane w Twoim drzewie. Wszystkie "
+"powiązane elementy zostały również oznaczone do zastąpienia lub usunięcia."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"Ten element nie zostanie zmieniony w Twoim drzewie. Wszystkie powiązane "
+"elementy zostały również oznaczone do zachowania."
+
+msgid "Import Failure"
+msgstr "Błąd importu"
+
+msgid "Your Tree and import are the same."
+msgstr "Twoje drzewo i importowane dane są identyczne."
+
+msgid "your tree "
+msgstr "twoje drzewo "
+
+msgid "imported "
+msgstr "importowane "
+
+msgid "Imported"
+msgstr "Importowane"
+
+msgid "Result  "
+msgstr "Wynik  "
+
+msgid "Import and Merge"
+msgstr "Import i scalanie"
+
 msgid "Replace"
 msgstr "Zamień"
+
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"Znak '*' oznacza, że akcja została automatycznie zaznaczona, znak '?' "
+"oznacza konflikt między automatycznymi oznaczeniami."
+
+msgid "Import file"
+msgstr "Importuj plik"
+
+msgid "Select the difference you wish to examine."
+msgstr "Wybierz różnicę, którą chcesz zbadać."
+
+msgid "Object Name/Description"
+msgstr "Nazwa obiektu/Opis"
+
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"Szczegóły elementu danych, pokazujące bieżący element drzewa, importowany "
+"element drzewa i wynik (gdy wybrano)."
+
+msgid "Object and item"
+msgstr "Obiekt i element"
 
 msgid "Differences"
 msgstr "Różnice"
 
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr ""
+"Ten przycisk zignoruje różnicę, bez wprowadzania zmian do twojego drzewa."
+
+msgid "Unmark"
+msgstr "Odznacz"
+
+msgid "This button will add the imported data as a new object to your tree."
+msgstr "Ten przycisk doda importowane dane jako nowy obiekt do twojego drzewa."
+
 msgid "Done"
 msgstr "Gotowe"
+
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr ""
+"Ten przycisk wyświetli okno dialogowe pozwalające na sfinalizowanie zmian "
+"lub ich porzucenie."
+
+msgid "Merge Original"
+msgstr "Scal z oryginałem"
+
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr ""
+"Ten przycisk scali importowane dane z twoim drzewem, używając twoich danych "
+"drzewa jako podstawy."
+
+msgid "This button will replace your tree data with the imported data."
+msgstr "Ten przycisk zastąpi dane twojego drzewa importowanymi danymi."
+
+msgid "Merge Import"
+msgstr "Scal import"
+
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr ""
+"Ten przycisk scali importowane dane z twoim drzewem, używając importowanych "
+"danych jako podstawy."
+
+msgid "Edit Import"
+msgstr "Edytuj import"
+
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"Ten przycisk pozwoli na edycję importowanych danych. Dane nadal będą musiały "
+"zostać scalone, dodane lub zastąpione."
+
+msgid "Show more details"
+msgstr "Pokaż więcej szczegółów"
+
+msgid "Automark Families"
+msgstr "Automatycznie oznacz rodziny"
+
+msgid "Automark Parent Families"
+msgstr "Automatycznie oznacz rodziny rodziców"

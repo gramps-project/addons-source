@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-17 15:05+0000\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
+"PO-Revision-Date: 2025-09-12 17:22+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 5.14-dev\n"
 
 msgid "Beta What's Next"
-msgstr "Beta What's Next"
+msgstr "Che c'è da fare (versione beta)"
 
 msgid ""
 "\n"
@@ -31,6 +31,9 @@ msgstr " 👣 Prossimi passi:\n"
 
 msgid "  •  From the \"Family Trees\" menu,"
 msgstr "  •  Dal menu \"Alberi genealogici\" ,"
+
+msgid " create a New (or to select an existing) Tree database.\n"
+msgstr " crea un database nuovo albero (o scegli uno esistente).\n"
 
 msgid "  •  Click the \"Load Family Tree\" button to begin"
 msgstr "  •  Fai clic su \"Carica albero genealogico\" per iniziare"
@@ -54,6 +57,9 @@ msgstr ""
 
 msgid "Search Quota "
 msgstr "Quota di ricerca "
+
+msgid "Depth per loop"
+msgstr "Profondità per ciclo"
 
 msgid "Completed Person"
 msgstr "Persona completata"

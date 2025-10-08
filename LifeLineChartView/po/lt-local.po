@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "Show person"
+msgstr "Rodyti asmenį"
+
+msgid "Show siblings"
+msgstr "Rodyti brolius ir seseris"
+
+msgid "Hide siblings"
+msgstr "Slėpti brolius ir seseris"
+
+msgid "Show ancestors above "
+msgstr "Rodyti protėvius aukščiau "
+
+msgid "Zoom in"
+msgstr "ARTINTI"
+
+msgid "Mouse wheel"
+msgstr "Pelės ratukas"
+
+msgid "Zoom out"
+msgstr "TOLINTI"
+
+msgid "Show photos"
+msgstr "Rodyti nuotraukas"
+
+msgid "Photo size"
+msgstr "Nuotraukos dydis"
+
+msgid "Total height"
+msgstr "Bendras aukštis"
+
+msgid "Horizontal step size"
+msgstr "Horizontalus žingsnio dydis"
+
+msgid "Show birth label"
+msgstr "Rodyti gimimo etiketę"
+
+msgid "Activate the birth label."
+msgstr "Įjungti gimimo etiketę."
+
+msgid "Birth label rotation"
+msgstr "Gimimo etiketės sukimas"
+
+msgid "Center"
+msgstr "Centras"
+
+msgid "Show marriage label"
+msgstr "Rodyti santuokos etiketę"
+
+msgid "Activate the marriage label."
+msgstr "Įjungti santuokos etiketę."
+
+msgid "Font name"
+msgstr "Šrifto pavadinimas"
+
+msgid "Flip vertically"
+msgstr "Apversti vertikaliai"
+
+msgid "Line weighting"
+msgstr "Linijos storis"
+
+msgid "Fathers have the same color"
+msgstr "Tėčiai turi tą pačią spalvą"
+
+msgid "Highlight descandants"
+msgstr "Paryškinti palikuonis"
+
+msgid "Highlight the persons which are descendants."
+msgstr "Paryškinti asmenis, kurie yra palikuonys."
+
+msgid "Number of descendants"
+msgstr "Palikuonių skaičius"

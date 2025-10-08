@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-09-22 19:02+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,8 +12,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "House Timeline"
+msgstr "Talon aikajana"
+
+msgid "Lists the Residents of an Address by Timeline"
+msgstr "Näytä osoitteen asukkaat aikajanalla"
+
+msgid "House Icon Style"
+msgstr "Talokuvakkeen tyyli"
+
+msgid "Unicode"
+msgstr "Unicode"
+
+msgid ""
+"There are no individuals with Address data. Please add Address data to "
+"people."
+msgstr ""
+"Kenelläkään henkilöllä ei ole osoitetietoja. Lisää osoitetiedot henkilöihin."
 
 msgid "Time In Family"
 msgstr "Aika perheessä"
+
+msgid "First Resident"
+msgstr "Ensimäinen asukas"
+
+msgid "Last Resident"
+msgstr "Viimeinen asukas"
+
+msgid "Total Known Residents"
+msgstr "Tunnettuja asukkaita yhteensä"

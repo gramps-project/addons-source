@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"PO-Revision-Date: 2025-09-22 19:02+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,17 +12,132 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Gramps Web Sync"
+msgstr "Gramps Web -synkronointi"
+
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "Synkronoi paikallisen tietokannan Gramps Web -instanssin kanssa."
+
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Käyttäjätunuksellasi ei ole riittäviä palvelinoikeuksia synkronointiin."
 
 msgid "Fetching remote data..."
 msgstr "Haetaan etätietoja..."
 
+msgid "Unexpected error while applying changes."
+msgstr "Odottamaton virhe muutoksien toteuttamiseen."
+
+msgid "Media files are in sync."
+msgstr "Mediatiedostoissa ei synkronoitavaa."
+
+#, python-format
+msgid "Successfully downloaded %s media files."
+msgstr "%s mediatiedostoa tuotiin onnistuneesti."
+
+#, python-format
+msgid "Encountered %s errors during download."
+msgstr "Latauksessa ilmeni %s virhettä."
+
+#, python-format
+msgid "Successfully uploaded %s media files."
+msgstr "%s mediatiedostoa ladattiin onnistuneesti."
+
+#, python-format
+msgid "Encountered %s errors during upload."
+msgstr "Latauksen aikana ilmeni %s virhettä."
+
+msgid "Error accessing media object."
+msgstr "Mediaobjektin lukeminen ei onnistunut."
+
+msgid "Failed importing downloaded XML file."
+msgstr "Ladatun XML-tiedoston tuonti tietokantaan ei onnistunut."
+
 msgid "Comparing local and remote data..."
 msgstr "Verrataan paikallisia ja etätietoja..."
 
+msgid "Server authorization error."
+msgstr "Palvelimen valtuutusvirhe."
+
+msgid "Server authorization error: insufficient permissions."
+msgstr "Palvelimen valtuutusvirhe: riittämättömät käyttöoikeudet."
+
+msgid "Error: URL not found."
+msgstr "Virhe: URL-osoitetta ei löytynyt."
+
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr "Muutosten synkronointi palvelimelle epäonnistui: kohteita on muokattu."
+
+#, python-format
+msgid "Error %s while connecting to server."
+msgstr "Virhe %s yhdistettäessä palvelimeen."
+
+msgid "URL error while connecting to server."
+msgstr "URL-virhe palvelimelle yhdistettäessä."
+
 msgid "Error while parsing response from server."
 msgstr "Virhe palvelimen vastauksen jäsentämisessä."
+
+msgid "Continue without transport encryption?"
+msgstr "Jatketaanko ilman tiedonsiirron salausta?"
+
+msgid ""
+"You have specified a URL with http scheme. If you continue, your password "
+"will be sent in clear text over the network. Use only for local testing!"
+msgstr ""
+"Olet määrittänyt URL-osoitteen http-yhteydellä. Jos jatkat, salasanasi "
+"lähetetään selkotekstinä verkon kautta. Käytä vain paikalliseen testaukseen!"
+
+msgid "Continue with HTTP"
+msgstr "Jatka HTTP:llä"
+
+msgid "Use HTTPS"
+msgstr "Käytä HTTPS:ää"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"Tämän työkalun avulla voidaan synkronoida tällä hetkellä avattu sukupuu "
+"Gramps Webin palveleman etäsukupuun kanssa.\n"
+"\n"
+"Työkalu olettaa, että kaksi sukupuuta ovat toistensa johdannaisia, eli "
+"toinen niistä on luotu toisen Gramps XML-viennistä (ei GEDCOMista!).\n"
+"\n"
+"Onnistuneen synkronoinnin jälkeen kaksi sukupuuta ovat identtisiä. Muutokset "
+"tehdään aikaleimojen perusteella. Sinulta pyydetään vahvistus ennen kuin "
+"muutoksia tehdään paikallisiin tai etäpuihin.\n"
+"\n"
+"Jos haluat sen sijaan yhdistää kaksi merkittävästi erilaista puuta ja tehdä "
+"manuaalisia muutoksia, käytä sen sijaan Tuo yhdistäminen -työkalua."
+
+msgid "Server URL: "
+msgstr "Palvelimen URL: "
+
+msgid "Bidirectional Synchronization"
+msgstr "Kaksisuuntainen synkronointi"
+
+msgid "Reset remote to local"
+msgstr "Palauta etätiedot paikallisen mukaiseksi"
+
+msgid "Reset local to remote"
+msgstr "Palauta paikailliset tiedot etätietojen mukaisiksi"
+
+msgid "Merge"
+msgstr "Yhdistä"
 
 msgid "Local changes"
 msgstr "Paikalliset muutokset"
@@ -33,6 +148,12 @@ msgstr "Muutettu"
 msgid "Remote changes"
 msgstr "Etämuutokset"
 
+msgid "Simultaneous changes"
+msgstr "Yhtäaikaisia muutoksia"
+
+msgid "Fetching information about media files..."
+msgstr "Haetaan tietoja mediatiedostoista..."
+
 msgid "Both trees are the same."
 msgstr "Puut ovat samoja."
 
@@ -42,8 +163,25 @@ msgstr "Muutoksia toteutaan paikalliseen tietokantaan..."
 msgid "No changes to apply to local database."
 msgstr "Ei muutoksia paikalliseen tietokantaan."
 
+msgid "Applying changes to remote database ..."
+msgstr "Muutoksia viedään etätietokantaan..."
+
+msgid "No changes to apply to remote database."
+msgstr "Ei muutoksia etätietokantaan."
+
+msgid "Successfully applied changes to local database."
+msgstr "Muutokset toteutettu paikalliseen tietokantaan."
+
 msgid "Missing locally"
-msgstr "Puuttuu paikallisesti"
+msgstr "Puuttuu paikallisista tiedoista"
 
 msgid "Missing remotely"
-msgstr "Puuttuu etäältä"
+msgstr "Puuttuu etätiedoista"
+
+#, python-format
+msgid "Downloading %s media file(s)"
+msgstr "Tuodaan Grampsista %s mediatiedostoa"
+
+#, python-format
+msgid "Uploading %s media file(s)"
+msgstr "Viedään Grampsiin %s mediatiedostoa"

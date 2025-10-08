@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-09-28 12:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web sinkronizacija"
@@ -25,11 +25,30 @@ msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
 "Tvoj korisnik nema dovoljne dozvole na serveru za korištenje sinkronizacije."
 
+msgid "Fetching remote data..."
+msgstr "Dohvaćanje ne-lokalnih zapisa …"
+
 msgid "Unexpected error while applying changes."
 msgstr "Neočekivana greška prilikom primjene promjena."
 
 msgid "Media files are in sync."
 msgstr "Medijske datoteke su sinkronizirane."
+
+#, python-format
+msgid "Successfully downloaded %s media files."
+msgstr "Broj uspješno preuzetih medijskih datoteka: %s."
+
+#, python-format
+msgid "Encountered %s errors during download."
+msgstr "Broj grešaka tijekom preuzimanja medijskih datoteka: %s."
+
+#, python-format
+msgid "Successfully uploaded %s media files."
+msgstr "Broj uspješno prenesenih medijskih datoteka: %s."
+
+#, python-format
+msgid "Encountered %s errors during upload."
+msgstr "Broj grešaka tijekom prijenosa medijskih datoteka: %s."
 
 msgid "Error accessing media object."
 msgstr "Greška pri pristupu medijskom objektu."
@@ -38,7 +57,7 @@ msgid "Failed importing downloaded XML file."
 msgstr "Uvoz preuzete XML datoteke nije uspio."
 
 msgid "Comparing local and remote data..."
-msgstr "Uspoređivanje lokalnih i udaljenih podataka …"
+msgstr "Uspoređivanje lokalnih i ne-lokalnih podataka …"
 
 msgid "Server authorization error."
 msgstr "Greška autorizacije servera."
@@ -85,14 +104,23 @@ msgstr "URL servera: "
 msgid "Bidirectional Synchronization"
 msgstr "Dvosmjerna sinkronizacija"
 
+msgid "Reset remote to local"
+msgstr "Resetiraj ne-lokalne u lokalne podatke"
+
+msgid "Reset local to remote"
+msgstr "Resetiraj lokalne u ne-lokalne podatke"
+
 msgid "Merge"
-msgstr "Sjedini"
+msgstr "Spoji"
 
 msgid "Local changes"
 msgstr "Lokalne promjene"
 
 msgid "Modified"
 msgstr "Promijenjeno"
+
+msgid "Remote changes"
+msgstr "Ne-lokalne promjene"
 
 msgid "Simultaneous changes"
 msgstr "Istovremene promjene"
@@ -107,13 +135,13 @@ msgid "Applying changes to local database ..."
 msgstr "Primjena promjena na lokalnu bazu podataka …"
 
 msgid "No changes to apply to local database."
-msgstr "Nema promjena za lokalnu bazu podataka."
+msgstr "Nema primijenjivih promjena na lokalnu bazu podataka."
 
 msgid "Applying changes to remote database ..."
-msgstr "Primjena promjena na eksternu bazu podataka …"
+msgstr "Primjena promjena na ne-lokalnu bazu podataka …"
 
 msgid "No changes to apply to remote database."
-msgstr "Nema promjena za eksternu bazu podataka."
+msgstr "Nema promjena za ne-lokalnu bazu podataka."
 
 msgid "Successfully applied changes to local database."
 msgstr "Promjene na lokalnoj bazi podataka su uspješno primijenjene."
@@ -122,12 +150,12 @@ msgid "Missing locally"
 msgstr "Nedostaje lokalno"
 
 msgid "Missing remotely"
-msgstr "Nedostaje eksterno"
+msgstr "Nedostaje ne-lokalno"
 
 #, python-format
 msgid "Downloading %s media file(s)"
-msgstr "Preuzimanje medijskih datoteka (%s)"
+msgstr "Broj preuzimanja medijskih datoteka: %s"
 
 #, python-format
 msgid "Uploading %s media file(s)"
-msgstr "Prijenos medijskih datoteka (%s)"
+msgstr "Broj prijenosa medijskih datoteka: %s"

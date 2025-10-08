@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-23 15:02+0000\n"
+"PO-Revision-Date: 2025-09-12 11:02+0000\n"
 "Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
@@ -13,11 +13,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
+msgid "short for born|b."
+msgstr "skrót od urodzony|ur."
+
+msgid "short for died|d."
+msgstr "skrót od zmarły|zm."
+
+msgid "short for baptized|bap."
+msgstr "skrót od ochrzczony|chr."
+
+msgid "short for christened|chr."
+msgstr "skrót od chrzczony|chr."
+
+msgid "short for buried|bur."
+msgstr "skrót od pochowany|poch."
+
+msgid "short for cremated|crem."
+msgstr "skrót od skremowany|skrem."
+
 msgid "Descendant Generations"
 msgstr "Pokolenia potomków"
+
+msgid "Ancestry"
+msgstr "Przodek"

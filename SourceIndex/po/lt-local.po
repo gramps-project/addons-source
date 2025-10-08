@@ -1,0 +1,166 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 23:40+0000\n"
+"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
+"project/addons/lt/>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+
+msgid "_File"
+msgstr "_Rinkmena"
+
+msgid "Import CSV"
+msgstr "Įkelti CSV"
+
+msgid "Display all"
+msgstr "Rodyti viską"
+
+msgid "Display only births"
+msgstr "Rodyti tik gimimus"
+
+msgid "Births/Baptisms"
+msgstr "Gimimai / Krikštai"
+
+msgid "Display only marriages"
+msgstr "Rodyti tik santuokas"
+
+msgid "Marriages/Families"
+msgstr "Santuokos / Šeimos"
+
+msgid "Display only deaths"
+msgstr "Rodyti tik mirtis"
+
+msgid "Deaths/Burials"
+msgstr "Mirtys / Palaidojimai"
+
+msgid "repositories"
+msgstr "saugyklos"
+
+msgid "Reference:"
+msgstr "Nuoroda:"
+
+msgid "First name:"
+msgstr "Vardas:"
+
+msgid "Age:"
+msgstr "Amžius:"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Saugykla</b>"
+
+msgid "Origin:"
+msgstr "Kilmė:"
+
+msgid "Occupation:"
+msgstr "Profesija:"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Liudininkas:</b>"
+
+msgid "Birth date:"
+msgstr "Gimimo data:"
+
+msgid "Birth place:"
+msgstr "Gimimo vieta:"
+
+msgid "Note:"
+msgstr "Pastaba:"
+
+msgid "Spouse name:"
+msgstr "Sutuoktinio vardas:"
+
+msgid "Marriage date:"
+msgstr "Santuokos data:"
+
+msgid "Marriage place:"
+msgstr "Santuokos vieta:"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Sutuoktinis(-ė)</b> "
+
+msgid "alive"
+msgstr "gyvas"
+
+msgid "witness"
+msgstr "liudininkas"
+
+msgid "<b>Witness</b>"
+msgstr "<b>Liudininkas</b>"
+
+msgid "Names:"
+msgstr "Vardai:"
+
+msgid "Death date:"
+msgstr "Mirties data:"
+
+msgid "Death place:"
+msgstr "Mirties vieta:"
+
+msgid "Family status:"
+msgstr "Šeimos būsena:"
+
+msgid "The source title"
+msgstr "Šaltinio antraštė"
+
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>Saugykla</i></b>"
+
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"Sutuoktinių\n"
+"vardai:"
+
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"Santuokos\n"
+"data:"
+
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"Mirties\n"
+"data:"
+
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"Santuokos\n"
+"vieta:"
+
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Mirties\n"
+"vieta:"
+
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Gimimo\n"
+"vieta:"
+
+msgid "m. date:"
+msgstr "s. data:"
+
+msgid "m. place:"
+msgstr "s. vieta:"

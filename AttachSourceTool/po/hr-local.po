@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-09-28 12:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Select filter to restrict people"
 msgstr "Odaberi filtar za ograničavanje osoba"
@@ -28,34 +28,34 @@ msgid "Existing source"
 msgstr "Postojeći izvor"
 
 msgid "Select the type of source to attach"
-msgstr "Odaberi vrstu izvora kao dodatak"
+msgstr "Odaberi vrstu izvora za prilaganje"
 
 msgid "New Source Title"
 msgstr "Naslov novog izvora"
 
 msgid "Text of source to attach"
-msgstr "Tekst izvora za dodavanje"
+msgstr "Tekst izvora za prilaganje"
 
 msgid "Existing Source ID"
 msgstr "Postojeći ID izvora"
 
 msgid "ID of source to attach"
-msgstr "ID dodajućeg izvora"
+msgstr "ID izvora za prilaganje"
 
 msgid "Attach Source"
-msgstr "Dodaj izvor"
+msgstr "Priloži izvor"
 
 msgid "Processing...\n"
 msgstr "Obrada u tijeku …\n"
 
 msgid "Attaching sources...\n"
-msgstr "Dodavanje izvora …\n"
+msgstr "Prilaganje izvora …\n"
 
 msgid "Attaching sources..."
-msgstr "Dodavanje izvora …"
+msgstr "Prilaganje izvora …"
 
 msgid "Done!\n"
 msgstr "Gotovo!\n"
 
 msgid "Attaches a shared source to multiple objects."
-msgstr "Dodaje dijeljeni izvor objektima."
+msgstr "Dodaje dijeljeni izvor višestrukim objektima."

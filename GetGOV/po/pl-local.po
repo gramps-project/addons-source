@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2025-09-12 11:02+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/pl/>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ~/.poedit/a\n"
+
+msgid "Place ID to import from GOV (Historical Gazetteer):"
+msgstr "ID miejsca do importu z GOV (Słownik Geograficzno-Historyczny):"
+
+#, python-format
+msgid "Add GOV-id place %s"
+msgstr "Dodaj miejsce z GOV-id %s"
+
+#, python-format
+msgid "GetGOV error: %s"
+msgstr "Błąd GetGOV: %s"
+
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr "Błąd GOV dla id %s z kodem: "
+
+#, python-format
+msgid "from %s to %s"
+msgstr "od %s do %s"
+
+#, python-format
+msgid "after %s"
+msgstr "po %s"
+
+#, python-format
+msgid "before %s"
+msgstr "przed %s"
+
+msgid "GetGOV"
+msgstr "GetGOV"
+
+msgid "Gramplet to get places from the GOV database"
+msgstr "Gramplet do pobierania miejsc z bazy danych GOV"

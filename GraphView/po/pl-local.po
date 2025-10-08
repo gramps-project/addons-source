@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-12 11:47+0000\n"
-"Last-Translator: Michał Stojek <stojex@gmail.com>\n"
+"PO-Revision-Date: 2025-09-12 11:02+0000\n"
+"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -13,14 +13,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
 msgid "Graph View"
-msgstr "Graph View"
+msgstr "Widok graficzny"
 
 msgid "Show IDs"
 msgstr "Pokaż identyfikatory"
@@ -118,10 +118,10 @@ msgid "Animation"
 msgstr "Animacja"
 
 msgid "Search in all database"
-msgstr "Szukaj we wszystkich bazach"
+msgstr "Przeszukaj całą bazę danych"
 
 msgid "Also apply search by all database."
-msgstr "Zastosuj również wyszukiwanie według wszystkich baz."
+msgstr "Zastosuj również wyszukiwanie w całej bazie danych."
 
 msgid "Show person images"
 msgstr "Pokaż zdjęcia osób"
@@ -130,10 +130,10 @@ msgid "Show persons thumbnails in search result list."
 msgstr "Pokaż miniatury osób na liście wyników wyszukiwania."
 
 msgid "Show bookmarked first"
-msgstr "Pokaż najpierw dodane do zakładek"
+msgstr "Pokaż najpierw dodane do ulubionych"
 
 msgid "Show bookmarked persons first in search result list."
-msgstr "Pokaż zaznaczone osoby jako pierwsze na liście wyników wyszukiwania."
+msgstr "Pokaż ulubione osoby jako pierwsze na liście wyników wyszukiwania."
 
 msgid "Search"
 msgstr "Szukaj"
@@ -157,10 +157,10 @@ msgid "Go to active person"
 msgstr "Przejdź do osoby aktywnej"
 
 msgid "Go to bookmark"
-msgstr "Przejdź do zakładki"
+msgstr "Przejdź do ulubionych"
 
 msgid "Center view on selected bookmark"
-msgstr "Wyśrodkuj widok na wybranej zakładce"
+msgstr "Wyśrodkuj widok na wybranych ulubionych"
 
 msgid "Bookmarks for current graph"
 msgstr "Zakładki dla bieżącego wykresu"
@@ -197,7 +197,7 @@ msgid "Add active person"
 msgstr "Dodaj aktywną osobę"
 
 msgid "Call the bookmark editor"
-msgstr "Przejdź do edytora zakładek"
+msgstr "Otwórz edytor zakładek"
 
 msgid ""
 "You don't have any bookmarks yet...\n"
@@ -315,7 +315,7 @@ msgid "Add mother"
 msgstr "Dodaj matkę"
 
 msgid "About Graph View"
-msgstr "O Graph View"
+msgstr "O widoku wykresu"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
@@ -327,14 +327,14 @@ msgstr "Dodawanie tagów do rodziny (%s)"
 
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
-msgstr "Usunięcie osoby [%s] usunie ją z bazy."
+msgstr "Usunięcie osoby [%s] spowoduje usunięcie jej z bazy danych."
 
 #, python-format
 msgid "Delete family [%s]?"
 msgstr "Usunąć rodzinę [%s]?"
 
 msgid "Deleting the family will remove it from the database."
-msgstr "Usunięcie rodziny spowoduje usunięcie jej z bazy."
+msgstr "Usunięcie rodziny spowoduje usunięcie jej z bazy danych."
 
 #, python-format
 msgid "Delete Family [%s]"
@@ -350,7 +350,7 @@ msgid "Light"
 msgstr "Jasny"
 
 msgid "Cartoon"
-msgstr "Rysunek"
+msgstr "Kreskówkowy"
 
 msgid "Modern"
 msgstr "Nowoczesny"
@@ -359,7 +359,7 @@ msgid "Persons from current graph"
 msgstr "Osoby z aktualnego wykresu"
 
 msgid "Other persons from database"
-msgstr "Pozostałe osoby z bazy"
+msgstr "Inne osoby z bazy danych"
 
 msgid "No persons found..."
 msgstr "Nie znaleziono osób..."
@@ -368,8 +368,8 @@ msgid ""
 "Search people in the current visible graph and database.\n"
 "Use <Ctrl+F> to make search entry active."
 msgstr ""
-"Szukaj osób w aktualnym widocznym wykresie i bazie.\n"
-"Użyj <Ctrl+F> aby aktywować pozycję wyszukiwania."
+"Wyszukaj osoby w aktualnie widocznym wykresie i bazie danych.\n"
+"Użyj <Ctrl+F>, aby aktywować pole wyszukiwania."
 
 msgid "Search..."
 msgstr "Szukaj..."
