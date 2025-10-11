@@ -68,23 +68,31 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:332
 #, python-format
-msgid "Successfully downloaded %s media files."
-msgstr ""
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] ""
+msgstr[1] ""
 
 #: GrampsWebSync/grampswebsync.py:335
 #, python-format
-msgid "Encountered %s errors during download."
-msgstr ""
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] ""
+msgstr[1] ""
 
 #: GrampsWebSync/grampswebsync.py:341
 #, python-format
-msgid "Successfully uploaded %s media files."
-msgstr ""
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] ""
+msgstr[1] ""
 
 #: GrampsWebSync/grampswebsync.py:344
 #, python-format
-msgid "Encountered %s errors during upload."
-msgstr ""
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] ""
+msgstr[1] ""
 
 #: GrampsWebSync/grampswebsync.py:362
 msgid "Authentication failed. Please check your username and password."
@@ -290,10 +298,14 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:1076
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr ""
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] ""
+msgstr[1] ""
 
 #: GrampsWebSync/grampswebsync.py:1084
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr ""
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] ""
+msgstr[1] ""
