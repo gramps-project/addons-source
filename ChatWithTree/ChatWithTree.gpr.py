@@ -22,4 +22,5 @@ register(
      # addon needs litellm python module
     requires_mod=['litellm'],
     navtypes=["Dashboard"],
+    help_url="Addon:ChatWithTree",
 )

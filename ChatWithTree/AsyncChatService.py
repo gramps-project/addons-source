@@ -1,5 +1,6 @@
 import logging
 import queue
+import traceback
 from concurrent.futures import ThreadPoolExecutor
 from typing import Iterator, Optional, Tuple
 
@@ -55,7 +56,7 @@ class AsyncChatService:
         try:
             return self.result_queue.get_nowait()
         except queue.Empty:
-            return None
+            return None          # used as Sentinel for "no result available"
 
     def start_query(self, query: str) -> None:
         """
@@ -84,9 +85,11 @@ class AsyncChatService:
                 self.result_queue.put(reply)
 
         except Exception as e:
-            self.result_queue.put(YieldType.FINAL,
-                                  f"ERROR: {type(e).__name__} during processing.")
-
+            tb = traceback.format_exc()
+            self.result_queue.put((
+                YieldType.FINAL,
+                f"ERROR: {type(e).__name__}: {e}\n{tb}"
+            ))
         finally:
             # Always put the sentinel and set status to finished
             self.result_queue.put(None)  # Sentinel: None signals job completion
