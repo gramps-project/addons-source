@@ -6,8 +6,7 @@
 # Copyright (C) 2010       Jakim Friant
 # Copyright (C) 2011       Robert Cheramy
 # Copyright (C) 2012       Doug Blank
-# Copyright (C) 2017       Jerome Rapinat
-# Copyright (C) 2025       Jerome Rapinat with Mistral AI (Codestral 25.08)
+# Copyright (C) 2017-2025  Jerome Rapinat
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +23,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 """
-Relations tab.
+Relations tab ; refactored with help of Mistral AI (Codestral 25.08)
 """
 
 import time
