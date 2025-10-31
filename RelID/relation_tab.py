@@ -296,7 +296,11 @@ class RelationTab(tool.Tool, ManagedWindow):
         uistate = user.uistate
         self.label = _("Relation and distances with root")
         self.dbstate = dbstate
-        self.path = os.getcwd()
+        try:
+            self.path = os.path.dirname(__file__)
+        except:
+            self.path = os.getcwd()
+        _LOG.info(self.path)
         self.relationship = get_relationship_calculator()
         self.stats_list = []
 
@@ -633,6 +637,7 @@ class RelationTab(tool.Tool, ManagedWindow):
         status = chooser.run()
         if status == Gtk.ResponseType.OK:
             self.path = chooser.get_current_folder()
+            _LOG.info(self.path)
         if status == Gtk.ResponseType.CANCEL:
             _LOG.debug(f"Skip folder selection?")
             OkDialog(_("Foldername need"), _("Foldername will be used for saving the content."))
