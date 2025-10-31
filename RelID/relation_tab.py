@@ -634,10 +634,10 @@ class RelationTab(tool.Tool, ManagedWindow):
             )
         )
         chooser.set_tooltip_text(_("Please, select a folder"))
+        chooser.set_current_folder(self.path)
         status = chooser.run()
         if status == Gtk.ResponseType.OK:
             self.path = chooser.get_current_folder()
-            _LOG.info(self.path)
         if status == Gtk.ResponseType.CANCEL:
             _LOG.debug(f"Skip folder selection?")
             OkDialog(_("Foldername need"), _("Foldername will be used for saving the content."))
