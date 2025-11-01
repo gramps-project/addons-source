@@ -667,9 +667,9 @@ class RelationTab(tool.Tool, ManagedWindow):
                 spreadsheet.set_row(index % 2)
                 spreadsheet.write_table_data(entry)
             spreadsheet.finalize()
-            if os.access(self.path, os.R_OK | os.W_OK | os.X_OK):
+            if os.access(self.path, os.R_OK | os.W_OK | os.X_OK) and self.uistate:
                 # Afficher un message indiquant où le fichier a été enregistré
-                print(f"Le fichier a été enregistré sous : {filename}")
+                OkDialog(_(f"Data saved to : {filename}"))
                 _LOG.info(f"Data successfully saved to {filename}.")
         except (FileNotFoundError or IsADirectoryError) as e:
             _LOG.error(f"Failed to save data: {e}")
