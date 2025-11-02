@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-09-28 12:02+0000\n"
+"PO-Revision-Date: 2025-11-01 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -19,9 +19,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"Plural-Forms: nplurals=3; plural="
+"(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? "
+"1 : 2);\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -3142,7 +3143,7 @@ msgstr "Datumi rođenja se neće prikazivati nakon ove godine"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1118
 msgid "Theme preference"
-msgstr "Postavke teme"
+msgstr "Postavka teme"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1125
 msgid "Theme color preference for Space Tree"
@@ -4632,7 +4633,7 @@ msgstr "Odaberi sistem boje pozadine za osobe u dijagramu SVG stabla"
 
 #: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
-msgstr "Dizajn sučelja"
+msgstr "Tema"
 
 #: DynamicWeb/dynamicweb.py:5190
 msgid "Pages"
@@ -14929,8 +14930,7 @@ msgid "Media files are in sync."
 msgstr "Medijske datoteke su sinkronizirane."
 
 #: GrampsWebSync/grampswebsync.py:332
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
 msgstr[0] "Broj uspješno preuzetih medijskih datoteka: %s."
@@ -14938,8 +14938,7 @@ msgstr[1] "Broj uspješno preuzetih medijskih datoteka: %s."
 msgstr[2] "Broj uspješno preuzetih medijskih datoteka: %s."
 
 #: GrampsWebSync/grampswebsync.py:335
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
 msgstr[0] "Broj grešaka tijekom preuzimanja medijskih datoteka: %s."
@@ -14947,8 +14946,7 @@ msgstr[1] "Broj grešaka tijekom preuzimanja medijskih datoteka: %s."
 msgstr[2] "Broj grešaka tijekom preuzimanja medijskih datoteka: %s."
 
 #: GrampsWebSync/grampswebsync.py:341
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
 msgstr[0] "Broj uspješno prenesenih medijskih datoteka: %s."
@@ -14956,8 +14954,7 @@ msgstr[1] "Broj uspješno prenesenih medijskih datoteka: %s."
 msgstr[2] "Broj uspješno prenesenih medijskih datoteka: %s."
 
 #: GrampsWebSync/grampswebsync.py:344
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
 msgstr[0] "Broj grešaka tijekom prijenosa medijskih datoteka: %s."
@@ -15158,30 +15155,28 @@ msgid "Missing remotely"
 msgstr "Nedostaje ne-lokalno"
 
 #: GrampsWebSync/grampswebsync.py:1076
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "Broj preuzimanja medijskih datoteka: %s"
-msgstr[1] "Broj preuzimanja medijskih datoteka: %s"
-msgstr[2] "Broj preuzimanja medijskih datoteka: %s"
+msgstr[0] "Preuzima se %s medijska datoteka"
+msgstr[1] "Preuzimaju se %s medijske datoteke"
+msgstr[2] "Preuzimaju se %s medijske datoteke"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "Broj prijenosa medijskih datoteka: %s"
-msgstr[1] "Broj prijenosa medijskih datoteka: %s"
-msgstr[2] "Broj prijenosa medijskih datoteka: %s"
+msgstr[0] "Prenosi se %s medijska datoteka"
+msgstr[1] "Prenose se %s medijske datoteke"
+msgstr[2] "Prenosi se %s medijskih datoteka"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
-msgstr "Tamno (zadano)"
+msgstr "Tamna (zadano)"
 
 #: GraphView/avatars.py:61
 msgid "Light"
-msgstr "Svjetlo"
+msgstr "Svijetla"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
@@ -21812,19 +21807,19 @@ msgstr ""
 
 #: Themes/themes.gpr.py:29
 msgid "Theme preferences"
-msgstr "Postavke za dizajn sučelja"
+msgstr "Postavke teme"
 
 #: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
 msgstr ""
-"Dodatak u postavkama za jednostavno podešavanje dizajna sučelja i fontova. "
-"Naročito korisno za korisnike Windows sustava."
+"Dodatak u postavkama za jednostavno podešavanje teme i fontova. Naročito "
+"korisno za korisnike Windows sustava."
 
 #: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
-msgstr "Dizajn sučelja je fiksno kodiran s GTK_THEME"
+msgstr "Tema je fiksno kodirana s GTK_THEME"
 
 #: Themes/themes.py:180
 msgid "Dark Variant"
