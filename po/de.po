@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-10-11 20:07+0000\n"
+"PO-Revision-Date: 2025-10-26 23:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -15197,77 +15197,75 @@ msgid "Media files are in sync."
 msgstr "Die Mediendateien sind synchronisiert."
 
 #: GrampsWebSync/grampswebsync.py:332
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "%s Mediendateien erfolgreich heruntergeladen."
+msgstr[0] "%s Mediendatei erfolgreich heruntergeladen."
 msgstr[1] "%s Mediendateien erfolgreich heruntergeladen."
 
 #: GrampsWebSync/grampswebsync.py:335
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
-msgstr[0] "Beim Herunterladen sind %s Fehler aufgetreten."
+msgstr[0] "Beim Herunterladen ist %s Fehler aufgetreten."
 msgstr[1] "Beim Herunterladen sind %s Fehler aufgetreten."
 
 #: GrampsWebSync/grampswebsync.py:341
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "%s Mediendateien wurden erfolgreich hochgeladen."
+msgstr[0] "%s Mediendatei wurden erfolgreich hochgeladen."
 msgstr[1] "%s Mediendateien wurden erfolgreich hochgeladen."
 
 #: GrampsWebSync/grampswebsync.py:344
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
-msgstr[0] "Beim Hochladen sind %s Fehler aufgetreten."
+msgstr[0] "Beim Hochladen ist %s Fehler aufgetreten."
 msgstr[1] "Beim Hochladen sind %s Fehler aufgetreten."
 
 #: GrampsWebSync/grampswebsync.py:362
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
+"Die Authentifizierung ist fehlgeschlagen. Bitte überprüfe deinen "
+"Benutzernamen und dein Kennwort."
 
 #: GrampsWebSync/grampswebsync.py:366
 msgid "Access forbidden. Please check username and password."
 msgstr ""
+"Zugriff verboten. Bitte prüfe mal deinen Benutzernamen und dein Kennwort."
 
 #: GrampsWebSync/grampswebsync.py:370
 msgid "GrampsWeb service not found. Please check the URL."
-msgstr ""
+msgstr "GrampsWeb-Dienst nicht gefunden. Bitte überprüfe die URL."
 
 #: GrampsWebSync/grampswebsync.py:374
 msgid "Too many requests, please try again in a few seconds."
-msgstr ""
+msgstr "Zu viele Anfragen, bitte versuche es in wenigen Sekunden erneut."
 
 #: GrampsWebSync/grampswebsync.py:378
-#, fuzzy
-#| msgid "AI provider is disabled"
 msgid "GrampsWeb tree is disabled."
-msgstr "Der KI-Anbieter ist deaktiviert"
+msgstr "Der GrampsWeb-Baum ist deaktiviert."
 
 #: GrampsWebSync/grampswebsync.py:382
 #, python-format
 msgid "Server error %s. Please check your connection."
-msgstr ""
+msgstr "Serverfehler %s. Bitte überprüfe deine Verbindung."
 
 #: GrampsWebSync/grampswebsync.py:387
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
+"Verbindung fehlgeschlagen. Bitte überprüfe die URL und deine "
+"Internetverbindung."
 
 #: GrampsWebSync/grampswebsync.py:391
 msgid "Invalid server response. Please check the URL."
-msgstr ""
+msgstr "Ungültige Serverantwort. Bitte überprüfe die URL."
 
 #: GrampsWebSync/grampswebsync.py:394
-#, fuzzy, python-format
-#| msgid "GetGOV error: %s"
+#, python-format
 msgid "Unexpected error: %s"
-msgstr "GetGOV-Fehler: %s"
+msgstr "Unerwarteter Fehler: %s"
 
 #: GrampsWebSync/grampswebsync.py:438 GrampsWebSync/grampswebsync.py:459
 msgid "Error accessing media object."
@@ -15309,12 +15307,8 @@ msgid "URL error while connecting to server."
 msgstr "URL-Fehler bei der Verbindung zum Server."
 
 #: GrampsWebSync/grampswebsync.py:557
-#, fuzzy
-#| msgid "Unable to synchronize changes to server: objects have been modified."
 msgid "Unable to synchronize changes to server."
-msgstr ""
-"Änderungen können nicht mit dem Server synchronisiert werden: Objekte wurden "
-"geändert."
+msgstr "Änderungen können nicht mit dem Server synchronisiert werden."
 
 #: GrampsWebSync/grampswebsync.py:585
 msgid "Continue without transport encryption?"
@@ -15443,20 +15437,18 @@ msgid "Missing remotely"
 msgstr "Fehlt entfernt"
 
 #: GrampsWebSync/grampswebsync.py:1076
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "Herunterladen von %s Mediendatei(en)"
-msgstr[1] "Herunterladen von %s Mediendatei(en)"
+msgstr[0] "Herunterladen von %s Mediendatei"
+msgstr[1] "Herunterladen von %s Mediendateien"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "Hochladen von %s Mediendatei(en)"
-msgstr[1] "Hochladen von %s Mediendatei(en)"
+msgstr[0] "Hochladen von %s Mediendatei"
+msgstr[1] "Hochladen von %s Mediendateien"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -15464,7 +15456,7 @@ msgstr "Dunkel (Standard)"
 
 #: GraphView/avatars.py:61
 msgid "Light"
-msgstr "Licht"
+msgstr "Hell"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
@@ -20476,15 +20468,15 @@ msgstr "Abfrage"
 
 #: Query/Query.gpr.py:33
 msgid "Query Quickview"
-msgstr "Abfrage Schnellansicht"
+msgstr "Abfrage-Schnellansicht"
 
 #: Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
-msgstr "Schnellansicht für SQL-ähnlich laufende Abfragen"
+msgstr "Schnellansicht für SQL-ähnliche Abfragen"
 
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
-msgstr "SQL Abfrage eingeben"
+msgstr "SQL-Abfrage eingeben"
 
 #: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
 #, python-brace-format
@@ -20628,20 +20620,20 @@ msgstr "FamilySpace"
 
 #: RebuildTypes/RebuildTypes.gpr.py:26
 msgid "Rebuild Gramps Types"
-msgstr "Gramps-Arten neu erstellen"
+msgstr "Gramps-Typen neu erstellen"
 
 #: RebuildTypes/RebuildTypes.gpr.py:27
 msgid "Rebuilds Gramps Types"
-msgstr "Erstellt Gramps-Arten neu"
+msgstr "Erneuert Gramps-Typen"
 
 #: RebuildTypes/RebuildTypes.py:75
 msgid "Gramps Types rebuilt"
-msgstr "Gramps-Arten neu erstellt"
+msgstr "Gramps-Typen neu erstellt"
 
 #: RebuildTypes/RebuildTypes.py:76
 #, python-format
 msgid "Found %d custom event types"
-msgstr "%d Anwender definierte Ereignisarten gefunden"
+msgstr "%d benutzerdefinierte Ereignisarten gefunden"
 
 #: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
@@ -20719,11 +20711,11 @@ msgstr "Verbundene Verwandte"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
 msgid "Gramplet showing relatives in a relation"
-msgstr "Gramplet zeigt die Beziehung zwischen Verwandten"
+msgstr "Gramplet, das Verwandte in einer Beziehung anzeigt"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
 msgid "Relations of related people in your database:"
-msgstr "Beziehungen verbundener Personen in deiner Datenbank:"
+msgstr "Beziehungen zwischen verwandten Personen in deiner Datenbank:"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
 msgid "are partners and"
@@ -20731,7 +20723,7 @@ msgstr "sind Partner und"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
 msgid "Common ancestor"
-msgstr "Gemeinsamer Vorfahre"
+msgstr "Gemeinsamer Vorfahr"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:253
 msgid "No relatives in a relation found"
@@ -20744,18 +20736,17 @@ msgstr "ENDE"
 #: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
 #: RemoveTagTool/RemoveTagTool.py:246
 msgid "Add/Remove Tag Tool"
-msgstr "Markierungen Hinzufügen/Entfernen Werkzeug"
+msgstr "Hinzufügen/Entfernen von Etiketten-Werkzeug"
 
 #: RemoveTagTool/RemoveTagTool.gpr.py:26
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr ""
-"Hinzufügen oder Entfernen einer Markierung zu Gruppen von Personen, "
-"Ereignissen usw."
+"Ein Etikett zu Gruppen von Personen, Ereignissen usw. hinzufügen oder daraus "
+"entfernen."
 
 #: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
-msgstr ""
-"Für die Ausführung des Werkzeug ist mindestens eine Markierung erforderlich."
+msgstr "Das Werkzeug benötigt mindestens ein Etikett, um ausgeführt zu werden."
 
 #: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
@@ -20767,27 +20758,27 @@ msgstr "Hinzufügen/Entfernen"
 
 #: RemoveTagTool/RemoveTagTool.py:87
 msgid "Add or remove tags from objects."
-msgstr "Markierungen zu Objekten hinzufügen oder daraus entfernen."
+msgstr "Etiketten zu Objekten hinzufügen oder entfernen."
 
 #: RemoveTagTool/RemoveTagTool.py:88
 msgid "Add Tags"
-msgstr "Markierungen Hinzufügen"
+msgstr "Etiketten hinzufügen"
 
 #: RemoveTagTool/RemoveTagTool.py:88
 msgid "Remove Tags"
-msgstr "Markierungen Entfernen"
+msgstr "Etiketten entfernen"
 
 #: RemoveTagTool/RemoveTagTool.py:96
 msgid "Choose a category."
-msgstr "Wähle eine Kategorie."
+msgstr "Wähle eine Kategorie aus."
 
 #: RemoveTagTool/RemoveTagTool.py:103
 msgid "Choose Tag"
-msgstr "Markierungen wählen"
+msgstr "Etikett auswählen"
 
 #: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
-msgstr "Wähle eine Markierung zum entfernen."
+msgstr "Wähle ein Etikett zum Entfernen aus."
 
 #: RemoveTagTool/RemoveTagTool.py:140
 msgid "Filter options"
@@ -20804,7 +20795,7 @@ msgid ""
 "and objects."
 msgstr ""
 "Das Werkzeug kann nicht ausgeführt werden. Bitte überprüfe, ob deine "
-"Datenbank Markierungen, Filter und Objekte enthält."
+"Datenbank Etiketten, Filter und Objekte enthält."
 
 #: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
 msgid "WARNING"
@@ -20813,11 +20804,11 @@ msgstr "WARNUNG"
 #: RemoveTagTool/RemoveTagTool.py:234
 #, python-format
 msgid "No %s objects were found in database."
-msgstr "In der Datenbank wurden keine %s Objekte gefunden."
+msgstr "Es wurden keine %s-Objekte in der Datenbank gefunden."
 
 #: RemoveTagTool/RemoveTagTool.py:249
 msgid "Process tags..."
-msgstr "Bearbeite Markierungen..."
+msgstr "Verarbeite Etiketten..."
 
 #: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
@@ -20829,11 +20820,11 @@ msgstr "entfernt"
 
 #: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
-msgstr "Markierung '{}' wurde {} zu {} {} Objekten.\n"
+msgstr "Das Etikett „{}“ war {} zu {} {} Objekten.\n"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 msgid "Repositories Report Options"
-msgstr "Aufbewahrungsorte-Berichtsoptionen"
+msgstr "Aufbewahrungsorte Bericht Optionen"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:27
 #: RepositoriesReport/RepositoriesReport.gpr.py:46
@@ -20855,7 +20846,7 @@ msgstr "Der für den Titel des Berichts verwendete Stil."
 #: RepositoriesReport/RepositoriesReport.py:189
 #: RepositoriesReport/RepositoriesReportAlt.py:518
 msgid "The style used for repository title."
-msgstr "Der Stil, der für Aufbewahrungsorttitel verwendet wird."
+msgstr "Der für den Titel des Aufbewahrungsorttitel verwendete Stil."
 
 #: RepositoriesReport/RepositoriesReport.py:203
 #: RepositoriesReport/RepositoriesReportAlt.py:533
@@ -20881,11 +20872,11 @@ msgstr "Auswahl mit einem Filter"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
-msgstr "Aufbewahrungsort-URLs aufnehmen"
+msgstr "URLs des Aufbewahrungsorts einfügen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
-msgstr "Ob URLs im Aufbewahrungsort aufgenommen werden."
+msgstr "Ob URLs in das Aufbewahrungsort aufgenommen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
@@ -20893,39 +20884,39 @@ msgstr "Aufbewahrungsortadressen aufnehmen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
-msgstr "Ob Adressen im Aufbewahrungsort aufgenommen werden."
+msgstr "Ob Adressen in den Aufbewahrungsort aufgenommen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
-msgstr "Quellen einbeziehen"
+msgstr "Autor der Quelle angeben"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
-msgstr "Ob Autor aufgenommen wird."
+msgstr "Autor angeben oder nicht."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
-msgstr "Quellinformationen aufnehmen"
+msgstr "Abkürzung der Quelle angeben"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
-msgstr "Ob Abkürzungen aufgenommen werden."
+msgstr "Ob Abkürzungen aufgenommen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
-msgstr "Quellen Veröffentlichungsinformationen aufnehmen"
+msgstr "Angaben zur Veröffentlichung der Quelle hinzufügen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
-msgstr "Ob Veröffentlichungsinformationen enthalten sind."
+msgstr "Ob Veröffentlichungsinformationen aufgenommen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
-msgstr "Quellendaten einbeziehen"
+msgstr "Daten der Quelle einbeziehen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
-msgstr "Ob Schlüssel und Werte aufgenommen werden."
+msgstr "Ob Schlüssel und Werte einbezogen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
@@ -20933,21 +20924,21 @@ msgstr "Ob Notizen zu Aufbewahrungsorte und Quellen aufgenommen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:460
 msgid "Whether to include media."
-msgstr "Ob Medien aufgenommen werden."
+msgstr "Ob Medien einbezogen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:463
 msgid "Include citations"
-msgstr "Fundstellen aufnehmen"
+msgstr "Fundstellen einfügen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:464
 msgid "Whether to include citations on sources."
-msgstr "Ob Fundstellen bei Quellen aufgenommen werden."
+msgstr "Ob Quellenangaben aufgenommen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Whether to include repositories and sources marked as private."
 msgstr ""
-"Ob Aufbewahrungsorte und Quellen, die als vertraulich markiert sind, "
-"enthalten sind."
+"Ob Aufbewahrungsorte und Quellen, die als vertraulich gekennzeichnet sind, "
+"einbezogen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:471
 msgid "Display empty values"
@@ -20955,11 +20946,11 @@ msgstr "Leere Werte anzeigen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:472
 msgid "Whether to include key records with empty values."
-msgstr "Ob Schlüsseldatensätze mit leeren Werten enthalten sein sollen."
+msgstr "Ob Schlüsseldatensätze mit leeren Werten einbezogen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
-msgstr "Der Stil, der für Kinder Absatz verwendet wird."
+msgstr "Der für den Kinderabschnitt verwendete Stil."
 
 #: RestoreHist/restorehist.gpr.py:30
 msgid "Restart where you were last working"
@@ -21050,19 +21041,19 @@ msgstr "Gramplet für Suche nach Objekten in der Datenbank."
 
 #: SearchGramplet/SearchGramplet.py:104
 msgid "Sort by object type"
-msgstr "Sortiere nach Objektart"
+msgstr "Nach Objektart sortieren"
 
 #: SearchGramplet/SearchGramplet.py:138
 msgid "Menu to set search objects"
-msgstr "Menü um Suchobjekte festzulegen"
+msgstr "Menü zum Festlegen von Suchobjekten"
 
 #: SearchGramplet/SearchGramplet.py:140
 msgid "Select objects to search"
-msgstr "Suchobjekte auswählen"
+msgstr "Objekte für die Suche auswählen"
 
 #: SearchGramplet/SearchGramplet.py:154
 msgid "SearchGramplet configuration menu"
-msgstr "SearchGramplet-Konfigurationsmenü"
+msgstr "Such-Gramplet-Konfigurationsmenü"
 
 #: SearchGramplet/SearchGramplet.py:261
 msgid "No matches..."
@@ -21070,7 +21061,7 @@ msgstr "Keine Übereinstimmungen..."
 
 #: SearchGramplet/SearchGramplet.py:353
 msgid "Start type to search"
-msgstr "Anfangsart für die Suche"
+msgstr "Tippe zum Starten der Suche"
 
 #: SearchGramplet/SearchGramplet.py:389
 msgid ""
@@ -21102,15 +21093,15 @@ msgstr "Als Hauptperson festlegen"
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
 msgid "Set Attribute"
-msgstr "Attribut setzen"
+msgstr "Attribut festlegen"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
-msgstr "Setzt ein Attribut auf einen gegebenen Wert."
+msgstr "Ein Attribut auf einen bestimmten Wert setzen."
 
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
-msgstr "Attributart zum Hinzufügen oder Bearbeiten"
+msgstr "Attributtyp zum Hinzufügen oder Bearbeiten"
 
 #: SetAttributeTool/SetAttributeTool.py:84
 msgid "Attribute value to add or edit"
@@ -21118,11 +21109,11 @@ msgstr "Attributwert zum Hinzufügen oder Bearbeiten"
 
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
-msgstr "Attributart und Wertepaar entfernen"
+msgstr "Attributtyp und Wertesatz entfernen"
 
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
-msgstr "Setze Attribute..."
+msgstr "Attribute festlegen..."
 
 #: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
@@ -21130,7 +21121,7 @@ msgid ""
 "Setting '%s' attributes to '%s'...\n"
 "\n"
 msgstr ""
-"Setze '%s' Attribute auf '%s'...\n"
+"Festlegen der Attribute „%s“ auf „%s“...\n"
 "\n"
 
 #: SetAttributeTool/SetAttributeTool.py:188
@@ -21140,7 +21131,7 @@ msgid ""
 "Set %d '%s' attributes to '%s'\n"
 msgstr ""
 "\n"
-"Setze %d '%s' Attribute auf '%s'\n"
+"Setze %d ‚%s‘-Attribute auf '%s'\n"
 
 #: SetAttributeTool/SetAttributeTool.py:191
 msgid "Remove Attribute"
@@ -21164,11 +21155,11 @@ msgstr ""
 #: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
 #: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
 msgid "Set Privacy Tool"
-msgstr "Datenschutz einstellen Werkzeug"
+msgstr "Werkzeug zum Einrichten des Datenschutzes"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
-msgstr "All Objekte der letzten <number> Jahre als vertraulich markieren."
+msgstr "Alle Objekte der letzten <Anzahl> Jahre als vertraulich markieren."
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
@@ -21194,30 +21185,30 @@ msgstr "Medium als vertraulich markieren.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
 msgid "Set adresses private.."
-msgstr "Adressen auf vertraulich setzen.."
+msgstr "Markiere Adressen als vertraulich.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
 msgid "Set internet objects private.."
-msgstr "Internetobjekte auf vertraulich setzen.."
+msgstr "Markiere Internetobjekte als vertraulich.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
 "The time range in years from today you want to set objects private.\n"
 "'0 years' = remove privacy from all objects."
 msgstr ""
-"Zeitspanne in Jahren ab heute, in der Objekte als vertraulich markiert "
-"werden.\n"
-"\"0 Jahre\" = entferne die Vertraulichkeit von allen Objekten."
+"Der Zeitraum in Jahren ab heute, für den du Objekte als vertraulich "
+"einstufen möchten.\n"
+"„0 Jahre“ = Vertraulichkeit von allen Objekten entfernen."
 
 #: SetPrivacyTool/SetPrivacyTool.py:306
 msgid "Always private if no date."
-msgstr "Immer vertraulich, wenn keine Datumsangabe."
+msgstr "Immer vertraulich, wenn kein Datum angegeben ist."
 
 #: SetPrivacyTool/SetPrivacyTool.py:307
 msgid "If checked, all objects without a date will also be set private."
 msgstr ""
-"Wenn aktiviert, werden alle Objekte ohne Datum ebenfalls als vertraulich "
-"markiert."
+"Wenn diese Option aktiviert ist, werden alle Objekte ohne Datum ebenfalls "
+"als vertraulich gekennzeichnet."
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
 msgid "Select filter to restrict events"
@@ -21249,19 +21240,19 @@ msgstr "Gemeinsame PostgreSQL-Datenbank"
 
 #: SourceIndex/SourceIndex.gpr.py:24 SourceIndex/SourceIndex.gpr.py:25
 msgid "BirthIndex"
-msgstr "Geburtsindex"
+msgstr "Geburtsregister"
 
 #: SourceIndex/SourceIndex.gpr.py:40 SourceIndex/SourceIndex.gpr.py:41
 msgid "MarriageIndex"
-msgstr "Hochzeitsindex"
+msgstr "Heiratsregister"
 
 #: SourceIndex/SourceIndex.gpr.py:56 SourceIndex/SourceIndex.gpr.py:57
 msgid "DeathIndex"
-msgstr "Sterbeindex"
+msgstr "Sterberegister"
 
 #: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
 msgid "CensusIndex"
-msgstr "Volkszählungindex"
+msgstr "Volkszählungsindex"
 
 #: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
 msgid "SourceIndex"
@@ -21286,7 +21277,7 @@ msgid ""
 "    Page:"
 msgstr ""
 "Band\n"
-"  Seite:"
+"    Seite:"
 
 #: SourceIndex/birth.glade:149
 msgid "The source title"
@@ -21307,11 +21298,11 @@ msgstr "wähle das Geschlecht"
 
 #: SourceIndex/birth.glade:247
 msgid "The names of the main person written into the source"
-msgstr "Namen der Hauptperson wie sie in der Quelle stehen"
+msgstr "Die Namen der Hauptperson, die in der Quelle aufgeführt sind"
 
 #: SourceIndex/birth.glade:262
 msgid "The first names of the main person written into the source"
-msgstr "Die Vornamen der Hauptperson wie sie in der Quelle stehen"
+msgstr "Die Vornamen der Hauptperson, die in der Quelle angegeben sind"
 
 #: SourceIndex/birth.glade:278 SourceIndex/birth.glade:511
 #: SourceIndex/birth.glade:729 SourceIndex/witness.glade:90
@@ -21340,7 +21331,7 @@ msgid ""
 "Spouse\n"
 "names:"
 msgstr ""
-"Partner\n"
+"Ehepartner\n"
 "Namen:"
 
 #: SourceIndex/birth.glade:441
@@ -21348,7 +21339,7 @@ msgid ""
 "Marriage\n"
 "date:"
 msgstr ""
-"Hochzeit\n"
+"Ehe\n"
 "Datum:"
 
 #: SourceIndex/birth.glade:460
@@ -21383,7 +21374,7 @@ msgid ""
 "Godfather\n"
 "Godmother:</b>"
 msgstr ""
-"<b>Zeugen\n"
+"<b>Zeuge\n"
 "Patenonkel\n"
 "Patentante:</b>"
 
@@ -21401,7 +21392,7 @@ msgstr "<b><i>Daten Person</i></b>"
 
 #: SourceIndex/birth.glade:949
 msgid "<b><i>Data margin</i></b>"
-msgstr "<b><i>Daten Rand</i></b>"
+msgstr "<b><i>Datenrand</i></b>"
 
 #: SourceIndex/birth.glade:973
 msgid "<b><i>Data father</i></b>"
@@ -21428,7 +21419,7 @@ msgid ""
 "Marriage\n"
 "place:"
 msgstr ""
-"Hochzeit\n"
+"Heirat\n"
 "Ort:"
 
 #: SourceIndex/birth.glade:1568
@@ -21449,7 +21440,7 @@ msgstr ""
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
 msgid "Origine:"
-msgstr "Anfang:"
+msgstr "Herkunft:"
 
 #: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
@@ -21486,7 +21477,7 @@ msgstr "Geburtsdatum:"
 
 #: SourceIndex/census.glade:364
 msgid "Death date:"
-msgstr "Sterbedatum:"
+msgstr "Todesdatum:"
 
 #: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
 msgid "Birth place:"
@@ -21528,7 +21519,7 @@ msgstr "Band:"
 
 #: SourceIndex/census.glade:1046
 msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr "Reihenfolge, Person, Nachname, Vorname, Alter, Status, Beruf, etc ..."
+msgstr "Reihenfolge, Person, Nachname, Vorname, Alter, Status, Beruf usw. ..."
 
 #: SourceIndex/death.glade:165
 msgid "Death act:"
