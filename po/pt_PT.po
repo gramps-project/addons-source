@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-08-16 05:47+0000\n"
+"PO-Revision-Date: 2025-10-13 04:07+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -14994,77 +14994,71 @@ msgid "Media files are in sync."
 msgstr "Multimédia sincronizada."
 
 #: GrampsWebSync/grampswebsync.py:332
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Transferiu com êxito %s ficheiros multimédia."
+msgstr[0] "Transferiu com êxito %s ficheiro multimédia."
 msgstr[1] "Transferiu com êxito %s ficheiros multimédia."
 
 #: GrampsWebSync/grampswebsync.py:335
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
-msgstr[0] "Encontrou erros %s durante a transferência."
-msgstr[1] "Encontrou erros %s durante a transferência."
+msgstr[0] "Encontrou %s erro durante a transferência."
+msgstr[1] "Encontrou %s erros durante a transferência."
 
 #: GrampsWebSync/grampswebsync.py:341
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Envio bem sucedido de %s ficheiros multimédia."
+msgstr[0] "Envio bem sucedido de %s ficheiro multimédia."
 msgstr[1] "Envio bem sucedido de %s ficheiros multimédia."
 
 #: GrampsWebSync/grampswebsync.py:344
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
-msgstr[0] "%s erros encontrados durante o envio."
+msgstr[0] "%s erro encontrado durante o envio."
 msgstr[1] "%s erros encontrados durante o envio."
 
 #: GrampsWebSync/grampswebsync.py:362
 msgid "Authentication failed. Please check your username and password."
-msgstr ""
+msgstr "Falha ao autenticar. Por favor, verifique os dados de acesso."
 
 #: GrampsWebSync/grampswebsync.py:366
 msgid "Access forbidden. Please check username and password."
-msgstr ""
+msgstr "Acesso proibido. Por favor, verifique o utilizador e a senha."
 
 #: GrampsWebSync/grampswebsync.py:370
 msgid "GrampsWeb service not found. Please check the URL."
-msgstr ""
+msgstr "Serviço GrampsWeb não encontrado. Por favor, verifique o URL."
 
 #: GrampsWebSync/grampswebsync.py:374
 msgid "Too many requests, please try again in a few seconds."
-msgstr ""
+msgstr "Demasiados pedidos, por favor, tente mais tarde."
 
 #: GrampsWebSync/grampswebsync.py:378
-#, fuzzy
-#| msgid "AI provider is disabled"
 msgid "GrampsWeb tree is disabled."
-msgstr "Fornecedor de IA desactivado"
+msgstr "A árvore GrampsWeb está desactivada."
 
 #: GrampsWebSync/grampswebsync.py:382
 #, python-format
 msgid "Server error %s. Please check your connection."
-msgstr ""
+msgstr "Erro de servidor %s. Por favor, verifique a ligação."
 
 #: GrampsWebSync/grampswebsync.py:387
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
+"Falha de ligação. Por favor, verifique o URL e a sua ligação à Internet."
 
 #: GrampsWebSync/grampswebsync.py:391
 msgid "Invalid server response. Please check the URL."
-msgstr ""
+msgstr "Resposta do servidor inválida. Por favor, verifique o URL."
 
 #: GrampsWebSync/grampswebsync.py:394
-#, fuzzy, python-format
-#| msgid "GetGOV error: %s"
+#, python-format
 msgid "Unexpected error: %s"
-msgstr "Erro GetGOV: %s"
+msgstr "Erro inesperado: %s"
 
 #: GrampsWebSync/grampswebsync.py:438 GrampsWebSync/grampswebsync.py:459
 msgid "Error accessing media object."
@@ -15106,12 +15100,8 @@ msgid "URL error while connecting to server."
 msgstr "Erro de URL durante a ligação ao servidor."
 
 #: GrampsWebSync/grampswebsync.py:557
-#, fuzzy
-#| msgid "Unable to synchronize changes to server: objects have been modified."
 msgid "Unable to synchronize changes to server."
-msgstr ""
-"Impossível sincronizar alterações com o servidor: os objectos foram "
-"modificados."
+msgstr "Impossível sincronizar alterações com o servidor."
 
 #: GrampsWebSync/grampswebsync.py:585
 msgid "Continue without transport encryption?"
@@ -15238,20 +15228,18 @@ msgid "Missing remotely"
 msgstr "Remotos em falta"
 
 #: GrampsWebSync/grampswebsync.py:1076
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "A transferir %s ficheiro(s) multimédia"
-msgstr[1] "A transferir %s ficheiro(s) multimédia"
+msgstr[0] "A transferir %s ficheiro multimédia"
+msgstr[1] "A transferir %s ficheiros multimédia"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "A enviar %s ficheiro(s) multimédia"
-msgstr[1] "A enviar %s ficheiro(s) multimédia"
+msgstr[0] "A enviar %s ficheiro multimédia"
+msgstr[1] "A enviar %s ficheiros multimédia"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -19518,7 +19506,7 @@ msgstr "A migrar %s objectos..."
 #: PostgreSQLEnhanced/migration.py:193
 #, python-format, python-brace-format
 msgid "Migrated %s {obj_type} objects"
-msgstr "Migrados %s(obj_type) objectos"
+msgstr "Migrados %s{obj_type} objectos"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
