@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-09-30 08:02+0000\n"
+"PO-Revision-Date: 2025-10-14 05:07+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -118,6 +118,7 @@ msgid "Collapsed digit"
 msgstr "Zbalená číslica"
 
 #: AncestorFill/AncestorFill.py:313
+#, fuzzy
 msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
@@ -6472,10 +6473,8 @@ msgid "4. Number of Acres of Land: Held by each person or family"
 msgstr "4. Počet akrov pôdy: vo vlastníctve každej osoby alebo rodiny"
 
 #: Form/form_ca.xml.h:106
-#, fuzzy
-#| msgid "Add relation"
 msgid "AcresCultivation"
-msgstr "Pridať vzťah"
+msgstr "Obrábané akre"
 
 #: Form/form_ca.xml.h:107
 msgid "5. Number of Acres of Land: Under Cultivation"
@@ -7708,10 +7707,8 @@ msgid "Line on Schedule 2"
 msgstr ""
 
 #: Form/form_ca.xml.h:541
-#, fuzzy
-#| msgid "Pages"
 msgid "PageRef"
-msgstr "Stránky"
+msgstr "Odkaz na stránku"
 
 #: Form/form_ca.xml.h:542
 msgid "2. Page from Schedule 1"
@@ -7863,10 +7860,8 @@ msgid "21. Real Estate Leased: Number of dwelling houses"
 msgstr ""
 
 #: Form/form_ca.xml.h:583
-#, fuzzy
-#| msgid "Restore"
 msgid "LeasedStores"
-msgstr "Obnoviť"
+msgstr "Prenajaté obchody"
 
 #: Form/form_ca.xml.h:584
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
@@ -14282,10 +14277,8 @@ msgid "Congressional District"
 msgstr "Kongresový obvod"
 
 #: Form/form_us.xml.h:2504
-#, fuzzy
-#| msgid "Print the notes type"
 msgid "in the Counties of"
-msgstr "Zahrnúť typ poznámok"
+msgstr "V krajoch (Counties)"
 
 #: Form/form_us.xml.h:2506
 msgid "in the month of"
@@ -14919,82 +14912,81 @@ msgstr "Mediálne súbory sú synchronizované."
 #, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Úspešne stiahnutý %s mediálny súbor."
+msgstr[1] "Úspešne stiahnuté %s mediálne súbory."
+msgstr[2] "Úspešne stiahnutých %s mediálnych súborov."
 
 #: GrampsWebSync/grampswebsync.py:335
 #, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Počas sťahovania sa vyskytla %s chyba."
+msgstr[1] "Počas sťahovania sa vyskytly %s chyby."
+msgstr[2] "Počas sťahovania sa vyskytlo %s chýb."
 
 #: GrampsWebSync/grampswebsync.py:341
 #, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Úspešne nahratý %s mediálny súbor."
+msgstr[1] "Úspešne nahraté %s mediálne súbory."
+msgstr[2] "Úspešne nahratých %s mediálnych súborov."
 
 #: GrampsWebSync/grampswebsync.py:344
 #, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Počas nahrávania sa vyskytla %s chyba."
+msgstr[1] "Počas nahrávania sa vyskytly %s chyby."
+msgstr[2] "Počas nahrávania sa vyskytlo %s chýb."
 
 #: GrampsWebSync/grampswebsync.py:362
 msgid "Authentication failed. Please check your username and password."
-msgstr ""
+msgstr "Autorizácia zlyhala. Skontrolujte svoje používateľské meno a heslo."
 
 #: GrampsWebSync/grampswebsync.py:366
 msgid "Access forbidden. Please check username and password."
-msgstr ""
+msgstr "Prístup zakázaný. Skontrolujte prosím používateľské meno a heslo."
 
 #: GrampsWebSync/grampswebsync.py:370
 msgid "GrampsWeb service not found. Please check the URL."
-msgstr ""
+msgstr "Služba GrampsWeb nebola nájdená. Skontrolujte prosím URL adresu."
 
 #: GrampsWebSync/grampswebsync.py:374
 msgid "Too many requests, please try again in a few seconds."
-msgstr ""
+msgstr "Príliš veľa požiadaviek, skúste to prosím o niekoľko sekúnd neskôr."
 
 #: GrampsWebSync/grampswebsync.py:378
-#, fuzzy
-#| msgid "AI provider is disabled"
 msgid "GrampsWeb tree is disabled."
-msgstr "Poskytovateľ AI je deaktivovaný"
+msgstr "GrampsWeb tree je deaktivovaný."
 
 #: GrampsWebSync/grampswebsync.py:382
 #, python-format
 msgid "Server error %s. Please check your connection."
-msgstr ""
+msgstr "Chyba servera %s. Skontrolujte svoje pripojenie."
 
 #: GrampsWebSync/grampswebsync.py:387
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
+"Spojenie sa nepodarilo. Skontrolujte adresu URL a vaše pripojenie k "
+"internetu."
 
 #: GrampsWebSync/grampswebsync.py:391
 msgid "Invalid server response. Please check the URL."
-msgstr ""
+msgstr "Neplatná odpoveď servera. Skontrolujte adresu URL."
 
 #: GrampsWebSync/grampswebsync.py:394
-#, fuzzy, python-format
-#| msgid "GetGOV error: %s"
+#, python-format
 msgid "Unexpected error: %s"
-msgstr "Chyba GetGOV: %s"
+msgstr "Neočakávaná chyba: %s"
 
 #: GrampsWebSync/grampswebsync.py:438 GrampsWebSync/grampswebsync.py:459
 msgid "Error accessing media object."
-msgstr ""
+msgstr "Chyba prístupu k mediálnemu objektu."
 
 #: GrampsWebSync/grampswebsync.py:500
 msgid "Failed importing downloaded XML file."
-msgstr ""
+msgstr "Stiahnutý súbor XML sa nepodarilo importovať."
 
 #: GrampsWebSync/grampswebsync.py:505
 msgid "Comparing local and remote data..."
@@ -15026,10 +15018,8 @@ msgid "URL error while connecting to server."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:557
-#, fuzzy
-#| msgid "Unable to synchronize changes to server: objects have been modified."
 msgid "Unable to synchronize changes to server."
-msgstr "Zmeny sa nedajú synchronizovať so serverom: objekty boli upravené."
+msgstr "Zmeny sa nedajú synchronizovať so serverom."
 
 #: GrampsWebSync/grampswebsync.py:585
 msgid "Continue without transport encryption?"
@@ -15151,22 +15141,20 @@ msgid "Missing remotely"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:1076
-#, fuzzy, python-format
-#| msgid "Downloading files"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "Sťahovanie súborov"
-msgstr[1] "Sťahovanie súborov"
-msgstr[2] "Sťahovanie súborov"
+msgstr[0] "Sťahovanie %s súboru"
+msgstr[1] "Sťahovanie %s súborov"
+msgstr[2] "Sťahovanie %s súborov"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy, python-format
-#| msgid "Downloading files"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "Sťahovanie súborov"
-msgstr[1] "Sťahovanie súborov"
-msgstr[2] "Sťahovanie súborov"
+msgstr[0] "Nahrávanie %s súboru"
+msgstr[1] "Nahrávanie %s súborov"
+msgstr[2] "Nahrávanie %s súborov"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -20792,10 +20780,8 @@ msgid "DeathIndex"
 msgstr "Index úmrtí"
 
 #: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
-#, fuzzy
-#| msgid "Persons Index"
 msgid "CensusIndex"
-msgstr "Index osôb"
+msgstr "Register sčítania ľudu"
 
 #: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
 #, fuzzy
@@ -21038,7 +21024,7 @@ msgstr "Poznámka:"
 
 #: SourceIndex/census.glade:712 SourceIndex/death.glade:621
 msgid "<b>Data person</b>"
-msgstr "b>Údaje o osobe</b>"
+msgstr "<b>Údaje osoby</b>"
 
 #: SourceIndex/census.glade:904 SourceIndex/death.glade:217
 #: SourceIndex/marriage.glade:1296
