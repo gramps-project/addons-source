@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2025-09-22 19:02+0000\n"
+"PO-Revision-Date: 2025-10-10 19:07+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -13432,7 +13432,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1716 Form/form_us.xml.h:1789
 msgid "Colored males 45 and over"
-msgstr ""
+msgstr "Värilliset miehet, 45 v. täyttäneet"
 
 #: Form/form_us.xml.h:1717 Form/form_us.xml.h:1790
 msgid "Total Colored Males"
@@ -14440,7 +14440,7 @@ msgstr "Silmien väri"
 
 #: Form/form_us.xml.h:2581
 msgid "Hair color"
-msgstr ""
+msgstr "Hiusten väri"
 
 #: Form/form_us.xml.h:2584
 msgid "Rank in"
@@ -14480,7 +14480,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2600
 msgid "Residents Status"
-msgstr ""
+msgstr "Asukkaiden asema"
 
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
