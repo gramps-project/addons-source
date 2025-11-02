@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-09-22 19:02+0000\n"
+"PO-Revision-Date: 2025-10-13 04:07+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -14801,7 +14801,7 @@ msgstr "Gramplet för att hämta platser från GOV-databasen"
 
 #: GetGOV/getgov.py:315
 msgid "Place ID to import from GOV (Historical Gazetteer):"
-msgstr ""
+msgstr "Plats-ID att importera från GOV (Historical Gazetteer):"
 
 #: GetGOV/getgov.py:323
 msgid "Get Place"
@@ -14815,12 +14815,12 @@ msgstr "Lägg till GOV-id plats %s"
 #: GetGOV/getgov.py:388
 #, python-format
 msgid "GetGOV error: %s"
-msgstr ""
+msgstr "GetGOV-fel: %s"
 
 #: GetGOV/getgov.py:421
 #, python-format
 msgid "GOV error on id %s with code: "
-msgstr ""
+msgstr "GOV-fel med id %s med koden: "
 
 #: GetGOV/getgov.py:555
 #, python-format
@@ -14891,11 +14891,13 @@ msgstr "Gramps Webb-synkronisering"
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
-msgstr ""
+msgstr "Synkroniserar en lokal databas med en Gramps Webbinstans."
 
 #: GrampsWebSync/grampswebsync.py:264
 msgid "Your user does not have sufficient server permissions to use sync."
 msgstr ""
+"Din användare har inte tillräckliga serverbehörigheter för att använda "
+"synkronisering."
 
 #: GrampsWebSync/grampswebsync.py:269
 msgid "Fetching remote data..."
@@ -14903,87 +14905,87 @@ msgstr "Hämtar fjärrdata..."
 
 #: GrampsWebSync/grampswebsync.py:285
 msgid "Unexpected error while applying changes."
-msgstr ""
+msgstr "Oväntat fel vid tillämpning av ändringar."
 
 #: GrampsWebSync/grampswebsync.py:323
 msgid "Media files are in sync."
 msgstr "Mediefiler är synkroniserade."
 
 #: GrampsWebSync/grampswebsync.py:332
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Laddar ner mediefil(er) %s"
-msgstr[1] "Laddar ner mediefil(er) %s"
+msgstr[0] "Laddar ner %s mediefil med lyckat resultat."
+msgstr[1] "Laddar ner %s mediefiler med lyckat resultat."
 
 #: GrampsWebSync/grampswebsync.py:335
 #, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mötte %s fel vid nedladdning."
+msgstr[1] "Mötte %s fel vid nedladdning."
 
 #: GrampsWebSync/grampswebsync.py:341
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Laddar upp mediefil(er) %s"
-msgstr[1] "Laddar upp mediefil(er) %s"
+msgstr[0] "Laddar upp %s mediefil med lyckat resultat."
+msgstr[1] "Laddar upp %s mediefiler med lyckat resultat."
 
 #: GrampsWebSync/grampswebsync.py:344
 #, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mötte %s fel vid uppladdning."
+msgstr[1] "Mötte %s fel vid uppladdning."
 
 #: GrampsWebSync/grampswebsync.py:362
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
+"Autentiseringen misslyckades. Kontrollera ditt användarnamn och lösenord."
 
 #: GrampsWebSync/grampswebsync.py:366
 msgid "Access forbidden. Please check username and password."
-msgstr ""
+msgstr "Åtkomst förbjuden. Kontrollera användarnamn och lösenord."
 
 #: GrampsWebSync/grampswebsync.py:370
 msgid "GrampsWeb service not found. Please check the URL."
-msgstr ""
+msgstr "GrampsWeb-tjänsten hittades inte. Kontrollera URL:en."
 
 #: GrampsWebSync/grampswebsync.py:374
 msgid "Too many requests, please try again in a few seconds."
-msgstr ""
+msgstr "För många förfrågningar, försök igen om några sekunder."
 
 #: GrampsWebSync/grampswebsync.py:378
 msgid "GrampsWeb tree is disabled."
-msgstr ""
+msgstr "GrampsWeb-trädet är inaktiverat."
 
 #: GrampsWebSync/grampswebsync.py:382
 #, python-format
 msgid "Server error %s. Please check your connection."
-msgstr ""
+msgstr "Server-fel %s. Kontrollera din anslutning."
 
 #: GrampsWebSync/grampswebsync.py:387
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
+"Anslutningen misslyckades. Kontrollera URL:en och din internetanslutning."
 
 #: GrampsWebSync/grampswebsync.py:391
 msgid "Invalid server response. Please check the URL."
-msgstr ""
+msgstr "Ogiltigt serversvar. Kontrollera URL:en."
 
 #: GrampsWebSync/grampswebsync.py:394
 #, python-format
 msgid "Unexpected error: %s"
-msgstr ""
+msgstr "Oväntat fel: %s"
 
 #: GrampsWebSync/grampswebsync.py:438 GrampsWebSync/grampswebsync.py:459
 msgid "Error accessing media object."
-msgstr ""
+msgstr "Fel vid åtkomst till medieobjektet."
 
 #: GrampsWebSync/grampswebsync.py:500
 msgid "Failed importing downloaded XML file."
-msgstr ""
+msgstr "Misslyckades med att importera den nedladdade XML-filen."
 
 #: GrampsWebSync/grampswebsync.py:505
 msgid "Comparing local and remote data..."
@@ -14991,11 +14993,11 @@ msgstr "Jämför lokala- och fjärrdata..."
 
 #: GrampsWebSync/grampswebsync.py:537
 msgid "Server authorization error."
-msgstr ""
+msgstr "Serverauktoriseringsfel."
 
 #: GrampsWebSync/grampswebsync.py:540
 msgid "Server authorization error: insufficient permissions."
-msgstr ""
+msgstr "Serverauktoriseringsfel: otillräckliga behörigheter."
 
 #: GrampsWebSync/grampswebsync.py:543
 msgid "Error: URL not found."
@@ -15004,37 +15006,40 @@ msgstr "Fel: URL inte hittad."
 #: GrampsWebSync/grampswebsync.py:547
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
+"Det gick inte att synkronisera ändringar till servern: objekt har ändrats."
 
 #: GrampsWebSync/grampswebsync.py:551
 #, python-format
 msgid "Error %s while connecting to server."
-msgstr ""
+msgstr "Fel %s vid anslutning till servern."
 
 #: GrampsWebSync/grampswebsync.py:554
 msgid "URL error while connecting to server."
-msgstr ""
+msgstr "URL-fel vid anslutning till servern."
 
 #: GrampsWebSync/grampswebsync.py:557
 msgid "Unable to synchronize changes to server."
-msgstr ""
+msgstr "Det gick inte att synkronisera ändringarna med servern."
 
 #: GrampsWebSync/grampswebsync.py:585
 msgid "Continue without transport encryption?"
-msgstr ""
+msgstr "Fortsätta utan transportkryptering?"
 
 #: GrampsWebSync/grampswebsync.py:587
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
+"Du har angett en URL med http-schema. Om du fortsätter skickas ditt lösenord "
+"i klartext över nätverket. Använd endast för lokal testning!"
 
 #: GrampsWebSync/grampswebsync.py:592
 msgid "Continue with HTTP"
-msgstr ""
+msgstr "Fortsätt med HTTP"
 
 #: GrampsWebSync/grampswebsync.py:593
 msgid "Use HTTPS"
-msgstr ""
+msgstr "Använd HTTPS"
 
 #: GrampsWebSync/grampswebsync.py:711
 msgid ""
@@ -15051,6 +15056,19 @@ msgid ""
 "If you instead want to merge two significantly different trees with the "
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
+"Det här verktyget gör det möjligt att synkronisera det för närvarande öppna "
+"släktträdet med ett fjärrsläktträd som hanteras av Gramps Web.\n"
+"\n"
+"Verktyget antar att de två träden är derivat av varandra, d.v.s. ett av de "
+"två skapades från en Gramps XML-export (inte GEDCOM!) av det andra.\n"
+"\n"
+"Efter lyckad synkronisering kommer de två träden att vara identiska. "
+"Ändringar kommer att spridas baserat på tidsstämplar. Du kommer att bli "
+"ombedd att bekräfta innan några ändringar görs i de lokala eller "
+"fjärranslutna träden.\n"
+"\n"
+"Om du istället vill sammanfoga två signifikant olika träd med möjlighet att "
+"göra manuella ändringar, använd verktyget Importera sammanfogning istället."
 
 #: GrampsWebSync/grampswebsync.py:738
 msgid "Server URL: "
@@ -15126,20 +15144,18 @@ msgid "Missing remotely"
 msgstr "Saknas på distans"
 
 #: GrampsWebSync/grampswebsync.py:1076
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "Laddar ner mediefil(er) %s"
-msgstr[1] "Laddar ner mediefil(er) %s"
+msgstr[0] "Laddar ner %s mediefil"
+msgstr[1] "Laddar ner %s mediefiler"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "Laddar upp mediefil(er) %s"
-msgstr[1] "Laddar upp mediefil(er) %s"
+msgstr[0] "Laddar upp %s mediefil"
+msgstr[1] "Laddar upp %s mediefiler"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
