@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-09-14 11:02+0000\n"
+"PO-Revision-Date: 2025-10-31 18:03+0000\n"
 "Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
-"Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
-"project/addons/lt/>\n"
+"Language-Team: Lithuanian <https://hosted.weblate.org/projects/"
+"gramps-project/addons/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"Plural-Forms: nplurals=3; plural="
+"(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-Country: LITHUANIA\n"
@@ -29,7 +29,7 @@ msgstr ""
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Rodyti visų žmonių vardus"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -99,31 +99,34 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
-msgstr ""
+msgstr "Užpildytas skaitmuo"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
+"Skaitmenų po kablelio skaičius, kurį reikia įtraukti į ataskaitą, nurodant "
+"protėvių, rastų tam tikroje kartoje, procentinę dalį"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
-msgstr ""
+msgstr "Sutrauktas skaitmuo"
 
 #: AncestorFill/AncestorFill.py:313
 msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
 msgstr ""
+"Skaičius po kablelio, kurį reikia įtraukti į giminės sutrauktą ataskaitą"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
-msgstr ""
+msgstr "Rodyti teorinį"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "Ar rodyti teorinį protėvių skaičių pagal kartas"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
