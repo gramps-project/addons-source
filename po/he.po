@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-10-07 09:02+0000\n"
+"PO-Revision-Date: 2025-10-31 18:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -17,9 +17,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
-"n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.14-dev\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : "
+"((n > 10 && n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -566,7 +566,7 @@ msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
 msgstr ""
-"לחצן זה יקבל רק את המשפחה שנבחרה וישור אותה כפי שמוצג בחלונית התחתונה מימין."
+"לחצן זה יקבל רק את המשפחה שנבחרה וישמור אותה כפי שמוצג בחלונית התחתונה מימין."
 
 #: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
 msgid "Done"
@@ -2241,7 +2241,7 @@ msgstr "רוחב תרשים מירבי (%)"
 
 #: DenominoViso/DenominoViso.py:2593
 msgid "Width of the tree as fraction of the browser window"
-msgstr ""
+msgstr "רוחב אילן־היוחסין כשבר של חלון הדפדפן"
 
 #: DenominoViso/DenominoViso.py:2596
 msgid "Max chart height (px)"
@@ -2249,17 +2249,19 @@ msgstr "גובה תרשים מירבי (פיקסל)"
 
 #: DenominoViso/DenominoViso.py:2597
 msgid "Height of the tree in pixels."
-msgstr ""
+msgstr "גובה אילן־היוחסין בפיקסלים."
 
 #: DenominoViso/DenominoViso.py:2600
 msgid "Closing remarks"
-msgstr ""
+msgstr "סגירת הערות"
 
 #: DenominoViso/DenominoViso.py:2601
 msgid ""
 "List of strings, free text added at the bottom, for example for a copyright "
 "notice."
 msgstr ""
+"רשימת מחרוזות, מלל חופשי שמתווסף בתחתית העמוד, לדוגמה עבור הצהרת זכויות "
+"יוצרים."
 
 #: DenominoViso/DenominoViso.py:2604
 msgid "Include Options"
@@ -2268,11 +2270,11 @@ msgstr "הכללת אפשרויות"
 #: DenominoViso/DenominoViso.py:2607
 #: RepositoriesReport/RepositoriesReportAlt.py:467
 msgid "Include private records"
-msgstr ""
+msgstr "לכלול רשומות פרטיות"
 
 #: DenominoViso/DenominoViso.py:2608
 msgid "Whether to leave out private data."
-msgstr ""
+msgstr "האם להחריג נתונים פרטיים."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
@@ -2280,15 +2282,15 @@ msgstr "הכללת אירועים"
 
 #: DenominoViso/DenominoViso.py:2613
 msgid "Whether to include a person's events."
-msgstr ""
+msgstr "האם לכלול אירועי אדם."
 
 #: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
-msgstr ""
+msgstr "לכלול צאצאים מלידה"
 
 #: DenominoViso/DenominoViso.py:2622
 msgid "Whether to include the birth of children in the list of events."
-msgstr ""
+msgstr "האם לכלול לידת צאצים ברשימת האירועים."
 
 #: DenominoViso/DenominoViso.py:2625
 msgid "Include death relatives"
@@ -2297,7 +2299,7 @@ msgstr "הכללת קרובי משפחת נפטר"
 #: DenominoViso/DenominoViso.py:2626
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
-msgstr ""
+msgstr "האם לכלול את מותם של קרובי משפחה במהלך חייו של אדם."
 
 #: DenominoViso/DenominoViso.py:2629
 msgid "Include witness note"
@@ -2307,19 +2309,19 @@ msgstr "הכללת הערת עדים"
 msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
 "contains <witnesses>)"
-msgstr ""
+msgstr "האם לכלול הערה השייכת לעד (אם event_format מכיל <עד>)"
 
 #: DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
-msgstr ""
+msgstr "האם לכלול תכונות אדם"
 
 #: DenominoViso/DenominoViso.py:2638
 msgid "Include Addresses"
-msgstr ""
+msgstr "לכלול כתובות"
 
 #: DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
-msgstr ""
+msgstr "האם לכלול את כתובתו של אדם."
 
 #: DenominoViso/DenominoViso.py:2642
 msgid "Include Note"
@@ -2327,23 +2329,23 @@ msgstr "הכללת הערה"
 
 #: DenominoViso/DenominoViso.py:2643
 msgid "Whether to include a person's note."
-msgstr ""
+msgstr "האם לכלול הערה של אדם."
 
 #: DenominoViso/DenominoViso.py:2646
 msgid "Include URL"
-msgstr ""
+msgstr "לכלולל כתובת URL"
 
 #: DenominoViso/DenominoViso.py:2647
 msgid "Whether to include a person's internet address."
-msgstr ""
+msgstr "האם לכלול כתובת מרשתת של אדם."
 
 #: DenominoViso/DenominoViso.py:2650
 msgid "Include URL description"
-msgstr ""
+msgstr "לכלולל תאור כתובת URL"
 
 #: DenominoViso/DenominoViso.py:2651
 msgid "Whether to include the description of the first URL"
-msgstr ""
+msgstr "האם לכלול את תיאור כתובת ה־URL הראשון"
 
 #: DenominoViso/DenominoViso.py:2656
 msgid "Include Sources"
@@ -2351,35 +2353,35 @@ msgstr "הכללת מקורות"
 
 #: DenominoViso/DenominoViso.py:2657
 msgid "Whether to include a person's sources."
-msgstr ""
+msgstr "האם לכלול מקורות של אדם."
 
 #: DenominoViso/DenominoViso.py:2660
 msgid "Image Options"
-msgstr ""
+msgstr "אפשרויות תמונה"
 
 #: DenominoViso/DenominoViso.py:2662
 msgid "Include Photos/Images from Gallery"
-msgstr ""
+msgstr "לכלול תמונה/תצלום מהגלריה"
 
 #: DenominoViso/DenominoViso.py:2663
 msgid "Whether to include images"
-msgstr ""
+msgstr "האם לכלול תמונות."
 
 #: DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
-msgstr ""
+msgstr "העתקת תמונה"
 
 #: DenominoViso/DenominoViso.py:2667
 msgid "Copy the images to a designated directory."
-msgstr ""
+msgstr "העתקת התמונות למחיצת היעד."
 
 #: DenominoViso/DenominoViso.py:2674
 msgid "Images with Attribute"
-msgstr ""
+msgstr "תמונות עם מאפיינים"
 
 #: DenominoViso/DenominoViso.py:2675
 msgid "Determine images with which attributes to in/exclude"
-msgstr ""
+msgstr "קביעת אילו מאפייני תמונה לכלול או לנחריג"
 
 #: DenominoViso/DenominoViso.py:2678
 msgid "Include Image source references"
@@ -2387,19 +2389,19 @@ msgstr "הכללת איזכורי מקור תמונה"
 
 #: DenominoViso/DenominoViso.py:2679
 msgid "Whether to include references for images"
-msgstr ""
+msgstr "האם לכלול אזכורים לתמונות"
 
 #: DenominoViso/DenominoViso.py:2682
 msgid "Source reference attribute"
-msgstr ""
+msgstr "תכונות אזכורי מקור"
 
 #: DenominoViso/DenominoViso.py:2683
 msgid "Image attribute that should be used as source reference"
-msgstr ""
+msgstr "תכונות תמונה בהן יש להשתמש באזכור מקור"
 
 #: DenominoViso/DenominoViso.py:2689
 msgid "Style Options"
-msgstr ""
+msgstr "אפשרויות סגנון"
 
 #: DenominoViso/DenominoViso.py:2691
 msgid "Color of active person:"
@@ -2407,15 +2409,15 @@ msgstr "צבע האדם הפעיל:"
 
 #: DenominoViso/DenominoViso.py:2692
 msgid "RGB-color of geometric shape of the activated person."
-msgstr ""
+msgstr "צבע RGB של הצורה הגיאומטרית של האדם הפעיל."
 
 #: DenominoViso/DenominoViso.py:2695
 msgid "Color of found persons:"
-msgstr ""
+msgstr "צבע לאנשים שנמצאו:"
 
 #: DenominoViso/DenominoViso.py:2696
 msgid "RGB-color of geometric shape of the persons found."
-msgstr ""
+msgstr "צבע RGB של צורה גיאומטרית של האנשים שנמצאו."
 
 #: DenominoViso/DenominoViso.py:2699
 msgid "Color of male persons:"
@@ -2423,29 +2425,29 @@ msgstr "צבע אדם במגדר זכר:"
 
 #: DenominoViso/DenominoViso.py:2700
 msgid "RGB-color of geometric shape of the male persons."
-msgstr ""
+msgstr "צבע RGB של צורה גיאומטרית של אנשים במגדר זכר."
 
 #: DenominoViso/DenominoViso.py:2703
 msgid "Colour of female persons:"
-msgstr ""
+msgstr "צבע של אנשים במגדר נקבה:"
 
 #: DenominoViso/DenominoViso.py:2704
 msgid "RGB-color of geometric shape of the female persons."
-msgstr ""
+msgstr "צבע RGB של צורה גיאומטרית של אנשים במגדר נקבה."
 
 #: DenominoViso/DenominoViso.py:2707
 msgid "Width of rectangle (hrd):"
-msgstr ""
+msgstr "רוחב מלבן (hrd):"
 
 #: DenominoViso/DenominoViso.py:2708
 msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
-msgstr ""
+msgstr "רוחב מלבן אדם של סוג תרשים רגיל מוצג כחלק מהמרחק המלבני האופקי."
 
 #: DenominoViso/DenominoViso.py:2711
 msgid "Height of rectangle (hrd):"
-msgstr ""
+msgstr "גובה מלבן (hrd):"
 
 #: DenominoViso/DenominoViso.py:2712
 msgid ""
@@ -2746,7 +2748,7 @@ msgstr "%(date)s, %(place)s"
 #: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
-msgstr ""
+msgstr "%(date)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:819
 #: DescendantBooks/DetailedDescendantBookReport.py:863
@@ -2758,52 +2760,52 @@ msgstr "%(place)s"
 #: DescendantBooks/DetailedDescendantBookReport.py:821
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
-msgstr ""
+msgstr ". תסמיך: %(repno)s %(gen)s %(per)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:850
 #, python-format
 msgid "%(event_name)s:"
-msgstr ""
+msgstr "%(event_name)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:875
 #, python-format
 msgid " %(event_text)s"
-msgstr ""
+msgstr " %(event_text)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:993
 #, python-brace-format
 msgid "Ref: {number}. {name}"
-msgstr ""
+msgstr "תסמיך: {number}. {name}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1233
 #: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
-msgstr ""
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1294
 #, python-format
 msgid "%(type)s:"
-msgstr ""
+msgstr "%(type)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1299
 #, python-format
 msgid " %(value)s%(endnotes)s"
-msgstr ""
+msgstr " %(value)s%(endnotes)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1401
 #: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
-msgstr ""
+msgstr "רשימת צאצאים"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1418
 #: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
-msgstr ""
+msgstr "הוספת אזכור צאצא ברשימת צאצאים"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1482
 msgid "Include Index of Names"
-msgstr ""
+msgstr "לכלול מפתח שמות"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1483
 msgid "Whether to include the index of Names at the end of the report."
@@ -14656,14 +14658,13 @@ msgid "Media files are in sync."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:332
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "מתבצעת הורדת %s קבצי מדיה"
-msgstr[1] "מתבצעת הורדת %s קבצי מדיה"
-msgstr[2] "מתבצעת הורדת %s קבצי מדיה"
-msgstr[3] "מתבצעת הורדת %s קבצי מדיה"
+msgstr[0] "ירד בהצלחה קבצי מדיה %s"
+msgstr[1] "ירדו בהצלחה %s קבצי מדיה"
+msgstr[2] "ירדו בהצלחה %s קבצי מדיה"
+msgstr[3] "ירדו בהצלחה %s קבצי מדיה"
 
 #: GrampsWebSync/grampswebsync.py:335
 #, python-format
@@ -14675,14 +14676,13 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: GrampsWebSync/grampswebsync.py:341
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "מתבצעת האלעת %s קבצי מדיה"
-msgstr[1] "מתבצעת האלעת %s קבצי מדיה"
-msgstr[2] "מתבצעת האלעת %s קבצי מדיה"
-msgstr[3] "מתבצעת האלעת %s קבצי מדיה"
+msgstr[0] "מתבצעת האלעת %s קבצי מדיה."
+msgstr[1] "מתבצעת האלעת %s קבצי מדיה."
+msgstr[2] "מתבצעת האלעת %s קבצי מדיה."
+msgstr[3] "מתבצעת האלעת %s קבצי מדיה."
 
 #: GrampsWebSync/grampswebsync.py:344
 #, python-format
@@ -14880,21 +14880,19 @@ msgid "Missing remotely"
 msgstr "חסרים באופן מרוחק"
 
 #: GrampsWebSync/grampswebsync.py:1076
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "מתבצעת הורדת %s קבצי מדיה"
+msgstr[0] "מתבצעת הורדת קבץ מדיה  %s"
 msgstr[1] "מתבצעת הורדת %s קבצי מדיה"
 msgstr[2] "מתבצעת הורדת %s קבצי מדיה"
 msgstr[3] "מתבצעת הורדת %s קבצי מדיה"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "מתבצעת האלעת %s קבצי מדיה"
+msgstr[0] "מתבצעת האלעת קובץ מדיה %s"
 msgstr[1] "מתבצעת האלעת %s קבצי מדיה"
 msgstr[2] "מתבצעת האלעת %s קבצי מדיה"
 msgstr[3] "מתבצעת האלעת %s קבצי מדיה"
@@ -15074,7 +15072,7 @@ msgstr ""
 
 #: GraphView/graphview.py:999
 msgid "Select a dot file name"
-msgstr "בחר שם קובץ נקודה"
+msgstr "בחירת שם לקובץ dot"
 
 #: GraphView/graphview.py:1109 LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
