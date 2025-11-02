@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"POT-Creation-Date: 2025-10-11 21:37+0200\n"
+"PO-Revision-Date: 2025-10-14 05:07+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web-synchronisatie"
@@ -36,20 +36,57 @@ msgid "Media files are in sync."
 msgstr "Mediabestanden zijn gesynchroniseerd."
 
 #, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "%s mediabestanden succesvol gedownload."
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "%s mediabestand succesvol gedownload."
+msgstr[1] "%s mediabestanden succesvol gedownload."
 
 #, python-format
-msgid "Encountered %s errors during download."
-msgstr "%s fouten opgetreden tijdens het downloaden."
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "%s fout opgetreden tijdens het downloaden."
+msgstr[1] "%s fouten opgetreden tijdens het downloaden."
 
 #, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "%s mediabestanden met succes geüploadet."
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "%s mediabestand met succes geüploadet."
+msgstr[1] "%s mediabestanden met succes geüploadet."
 
 #, python-format
-msgid "Encountered %s errors during upload."
-msgstr "%s fouten opgetreden tijdens het uploaden."
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "%s fout opgetreden tijdens het uploaden."
+msgstr[1] "%s fouten opgetreden tijdens het uploaden."
+
+msgid "Authentication failed. Please check your username and password."
+msgstr "Authenticatie mislukt. Controleer uw gebruikersnaam en wachtwoord."
+
+msgid "Access forbidden. Please check username and password."
+msgstr "Toegang verboden. Controleer gebruikersnaam en wachtwoord."
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "GrampsWeb-service niet gevonden. Controleer de URL."
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "Te veel verzoeken, probeer het over een paar seconden opnieuw."
+
+msgid "GrampsWeb tree is disabled."
+msgstr "GrampsWeb stamboom is uitgeschakeld."
+
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Serverfout %s. Controleer uw verbinding."
+
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr "Verbinding mislukt. Controleer de URL en uw internetverbinding."
+
+msgid "Invalid server response. Please check the URL."
+msgstr "Ongeldige serverreactie. Controleer de URL."
+
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Onverwachte fout: %s"
 
 msgid "Error accessing media object."
 msgstr "Fout bij het openen van het media-object."
@@ -80,8 +117,8 @@ msgstr "Fout %s tijdens het verbinden met de server."
 msgid "URL error while connecting to server."
 msgstr "URL-fout tijdens het verbinden met de server."
 
-msgid "Error while parsing response from server."
-msgstr "Fout tijdens het verwerken van de reactie van de server."
+msgid "Unable to synchronize changes to server."
+msgstr "Kan wijzigingen naar de server niet synchroniseren."
 
 msgid "Continue without transport encryption?"
 msgstr "Doorgaan zonder transportversleuteling?"
@@ -185,9 +222,13 @@ msgid "Missing remotely"
 msgstr "Extern vermist"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "%s media-bestand(en) downloaden"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "%s mediabestand downloaden"
+msgstr[1] "%s mediabestanden downloaden"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "%s media-bestand(en) uploaden"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "%s mediabestand uploaden"
+msgstr[1] "%s mediabestanden uploaden"

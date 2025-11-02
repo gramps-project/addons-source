@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-09-22 19:02+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"POT-Creation-Date: 2025-10-11 21:37+0200\n"
+"PO-Revision-Date: 2025-10-14 05:07+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -35,20 +35,35 @@ msgid "Media files are in sync."
 msgstr "Mediatiedostoissa ei synkronoitavaa."
 
 #, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "%s mediatiedostoa tuotiin onnistuneesti."
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "%s mediatiedosto tuotiin onnistuneesti."
+msgstr[1] "%s mediatiedostoa tuotiin onnistuneesti."
 
 #, python-format
-msgid "Encountered %s errors during download."
-msgstr "Latauksessa ilmeni %s virhettä."
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "Latauksessa ilmeni %s virhe."
+msgstr[1] "Latauksessa ilmeni %s virhettä."
 
 #, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "%s mediatiedostoa ladattiin onnistuneesti."
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "%s mediatiedosto ladattiin onnistuneesti."
+msgstr[1] "%s mediatiedostoa ladattiin onnistuneesti."
 
 #, python-format
-msgid "Encountered %s errors during upload."
-msgstr "Latauksen aikana ilmeni %s virhettä."
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "Latauksen aikana ilmeni %s virhe."
+msgstr[1] "Latauksen aikana ilmeni %s virhettä."
+
+msgid "GrampsWeb tree is disabled."
+msgstr "GrampsWeb ei ole tarjolla."
+
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Odottamaton virhe: %s"
 
 msgid "Error accessing media object."
 msgstr "Mediaobjektin lukeminen ei onnistunut."
@@ -78,8 +93,8 @@ msgstr "Virhe %s yhdistettäessä palvelimeen."
 msgid "URL error while connecting to server."
 msgstr "URL-virhe palvelimelle yhdistettäessä."
 
-msgid "Error while parsing response from server."
-msgstr "Virhe palvelimen vastauksen jäsentämisessä."
+msgid "Unable to synchronize changes to server."
+msgstr "Muutosten synkronointi palvelimelle ei onnistunut."
 
 msgid "Continue without transport encryption?"
 msgstr "Jatketaanko ilman tiedonsiirron salausta?"
@@ -179,9 +194,13 @@ msgid "Missing remotely"
 msgstr "Puuttuu etätiedoista"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "Tuodaan Grampsista %s mediatiedostoa"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "Tuodaan Grampsista %s mediatiedosto"
+msgstr[1] "Tuodaan Grampsista %s mediatiedostoa"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "Viedään Grampsiin %s mediatiedostoa"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "Viedään Grampsiin %s mediatiedosto"
+msgstr[1] "Viedään Grampsiin %s mediatiedostoa"

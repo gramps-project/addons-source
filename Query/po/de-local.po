@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:17+0000\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"PO-Revision-Date: 2025-10-26 23:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,28 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 msgid "Query Gramplet"
 msgstr "Abfrage Gramplet"
 
 msgid "Gramplet for running SQL-like queries"
-msgstr "Gramplet zum Ausführen SQL-ähnlicher Abfragen"
+msgstr "Gramplet zum Ausführen von SQL-ähnlichen Abfragen"
 
 msgid "Query"
 msgstr "Abfrage"
 
 msgid "Query Quickview"
-msgstr "Abfrage Schnellansicht"
+msgstr "Abfrage-Schnellansicht"
 
 msgid "Quick view for SQL-like running queries"
-msgstr "Schnellansicht für SQL-ähnlich laufende Abfragen"
+msgstr "Schnellansicht für SQL-ähnliche Abfragen"
 
 msgid "Enter Python expressions"
 msgstr "Pythonausdrücke eingeben"
 
 msgid "Enter SQL query"
-msgstr "SQL Abfrage eingeben"
+msgstr "SQL-Abfrage eingeben"
 
 #, python-brace-format
 msgid "{rows:d} rows processed in {secs} seconds.\n"

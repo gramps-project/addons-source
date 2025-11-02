@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-05-12 06:01+0000\n"
+"POT-Creation-Date: 2025-10-11 21:37+0200\n"
+"PO-Revision-Date: 2025-10-13 04:07+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,22 +12,158 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Webb-synkronisering"
 
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "Synkroniserar en lokal databas med en Gramps Webbinstans."
+
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Din användare har inte tillräckliga serverbehörigheter för att använda "
+"synkronisering."
+
 msgid "Fetching remote data..."
 msgstr "Hämtar fjärrdata..."
+
+msgid "Unexpected error while applying changes."
+msgstr "Oväntat fel vid tillämpning av ändringar."
 
 msgid "Media files are in sync."
 msgstr "Mediefiler är synkroniserade."
 
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "Laddar ner %s mediefil med lyckat resultat."
+msgstr[1] "Laddar ner %s mediefiler med lyckat resultat."
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "Mötte %s fel vid nedladdning."
+msgstr[1] "Mötte %s fel vid nedladdning."
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "Laddar upp %s mediefil med lyckat resultat."
+msgstr[1] "Laddar upp %s mediefiler med lyckat resultat."
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "Mötte %s fel vid uppladdning."
+msgstr[1] "Mötte %s fel vid uppladdning."
+
+msgid "Authentication failed. Please check your username and password."
+msgstr ""
+"Autentiseringen misslyckades. Kontrollera ditt användarnamn och lösenord."
+
+msgid "Access forbidden. Please check username and password."
+msgstr "Åtkomst förbjuden. Kontrollera användarnamn och lösenord."
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "GrampsWeb-tjänsten hittades inte. Kontrollera URL:en."
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "För många förfrågningar, försök igen om några sekunder."
+
+msgid "GrampsWeb tree is disabled."
+msgstr "GrampsWeb-trädet är inaktiverat."
+
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Server-fel %s. Kontrollera din anslutning."
+
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr ""
+"Anslutningen misslyckades. Kontrollera URL:en och din internetanslutning."
+
+msgid "Invalid server response. Please check the URL."
+msgstr "Ogiltigt serversvar. Kontrollera URL:en."
+
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Oväntat fel: %s"
+
+msgid "Error accessing media object."
+msgstr "Fel vid åtkomst till medieobjektet."
+
+msgid "Failed importing downloaded XML file."
+msgstr "Misslyckades med att importera den nedladdade XML-filen."
+
 msgid "Comparing local and remote data..."
 msgstr "Jämför lokala- och fjärrdata..."
 
+msgid "Server authorization error."
+msgstr "Serverauktoriseringsfel."
+
+msgid "Server authorization error: insufficient permissions."
+msgstr "Serverauktoriseringsfel: otillräckliga behörigheter."
+
 msgid "Error: URL not found."
 msgstr "Fel: URL inte hittad."
+
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr ""
+"Det gick inte att synkronisera ändringar till servern: objekt har ändrats."
+
+#, python-format
+msgid "Error %s while connecting to server."
+msgstr "Fel %s vid anslutning till servern."
+
+msgid "URL error while connecting to server."
+msgstr "URL-fel vid anslutning till servern."
+
+msgid "Unable to synchronize changes to server."
+msgstr "Det gick inte att synkronisera ändringarna med servern."
+
+msgid "Continue without transport encryption?"
+msgstr "Fortsätta utan transportkryptering?"
+
+msgid ""
+"You have specified a URL with http scheme. If you continue, your password "
+"will be sent in clear text over the network. Use only for local testing!"
+msgstr ""
+"Du har angett en URL med http-schema. Om du fortsätter skickas ditt lösenord "
+"i klartext över nätverket. Använd endast för lokal testning!"
+
+msgid "Continue with HTTP"
+msgstr "Fortsätt med HTTP"
+
+msgid "Use HTTPS"
+msgstr "Använd HTTPS"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"Det här verktyget gör det möjligt att synkronisera det för närvarande öppna "
+"släktträdet med ett fjärrsläktträd som hanteras av Gramps Web.\n"
+"\n"
+"Verktyget antar att de två träden är derivat av varandra, d.v.s. ett av de "
+"två skapades från en Gramps XML-export (inte GEDCOM!) av det andra.\n"
+"\n"
+"Efter lyckad synkronisering kommer de två träden att vara identiska. "
+"Ändringar kommer att spridas baserat på tidsstämplar. Du kommer att bli "
+"ombedd att bekräfta innan några ändringar görs i de lokala eller "
+"fjärranslutna träden.\n"
+"\n"
+"Om du istället vill sammanfoga två signifikant olika träd med möjlighet att "
+"göra manuella ändringar, använd verktyget Importera sammanfogning istället."
 
 msgid "Merge"
 msgstr "Slå samman"
@@ -63,9 +199,13 @@ msgid "Missing remotely"
 msgstr "Saknas på distans"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "Laddar ner mediefil(er) %s"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "Laddar ner %s mediefil"
+msgstr[1] "Laddar ner %s mediefiler"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "Laddar upp mediefil(er) %s"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "Laddar upp %s mediefil"
+msgstr[1] "Laddar upp %s mediefiler"

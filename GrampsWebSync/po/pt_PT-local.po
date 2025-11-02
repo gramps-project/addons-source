@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-14 07:11+0000\n"
+"POT-Creation-Date: 2025-10-11 21:37+0200\n"
+"PO-Revision-Date: 2025-10-13 04:07+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Sincronização \"web\" do Gramps"
@@ -35,20 +35,58 @@ msgid "Media files are in sync."
 msgstr "Multimédia sincronizada."
 
 #, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "Transferiu com êxito %s ficheiros multimédia."
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "Transferiu com êxito %s ficheiro multimédia."
+msgstr[1] "Transferiu com êxito %s ficheiros multimédia."
 
 #, python-format
-msgid "Encountered %s errors during download."
-msgstr "Encontrou erros %s durante a transferência."
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "Encontrou %s erro durante a transferência."
+msgstr[1] "Encontrou %s erros durante a transferência."
 
 #, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "Envio bem sucedido de %s ficheiros multimédia."
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "Envio bem sucedido de %s ficheiro multimédia."
+msgstr[1] "Envio bem sucedido de %s ficheiros multimédia."
 
 #, python-format
-msgid "Encountered %s errors during upload."
-msgstr "%s erros encontrados durante o envio."
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "%s erro encontrado durante o envio."
+msgstr[1] "%s erros encontrados durante o envio."
+
+msgid "Authentication failed. Please check your username and password."
+msgstr "Falha ao autenticar. Por favor, verifique os dados de acesso."
+
+msgid "Access forbidden. Please check username and password."
+msgstr "Acesso proibido. Por favor, verifique o utilizador e a senha."
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "Serviço GrampsWeb não encontrado. Por favor, verifique o URL."
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "Demasiados pedidos, por favor, tente mais tarde."
+
+msgid "GrampsWeb tree is disabled."
+msgstr "A árvore GrampsWeb está desactivada."
+
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Erro de servidor %s. Por favor, verifique a ligação."
+
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr ""
+"Falha de ligação. Por favor, verifique o URL e a sua ligação à Internet."
+
+msgid "Invalid server response. Please check the URL."
+msgstr "Resposta do servidor inválida. Por favor, verifique o URL."
+
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Erro inesperado: %s"
 
 msgid "Error accessing media object."
 msgstr "Erro ao aceder ao objecto multimédia."
@@ -80,8 +118,8 @@ msgstr "Erro %s durante a ligação ao servidor."
 msgid "URL error while connecting to server."
 msgstr "Erro de URL durante a ligação ao servidor."
 
-msgid "Error while parsing response from server."
-msgstr "Erro ao analisar a resposta do servidor."
+msgid "Unable to synchronize changes to server."
+msgstr "Impossível sincronizar alterações com o servidor."
 
 msgid "Continue without transport encryption?"
 msgstr "Continuar sem a encriptação de transporte?"
@@ -184,9 +222,13 @@ msgid "Missing remotely"
 msgstr "Remotos em falta"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "A transferir %s ficheiro(s) multimédia"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "A transferir %s ficheiro multimédia"
+msgstr[1] "A transferir %s ficheiros multimédia"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "A enviar %s ficheiro(s) multimédia"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "A enviar %s ficheiro multimédia"
+msgstr[1] "A enviar %s ficheiros multimédia"

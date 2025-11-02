@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-10-07 09:02+0000\n"
+"POT-Creation-Date: 2025-10-11 21:37+0200\n"
+"PO-Revision-Date: 2025-10-26 23:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps-Web-Synchronisierung"
@@ -35,20 +35,62 @@ msgid "Media files are in sync."
 msgstr "Die Mediendateien sind synchronisiert."
 
 #, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "%s Mediendateien erfolgreich heruntergeladen."
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "%s Mediendatei erfolgreich heruntergeladen."
+msgstr[1] "%s Mediendateien erfolgreich heruntergeladen."
 
 #, python-format
-msgid "Encountered %s errors during download."
-msgstr "Beim Herunterladen sind %s Fehler aufgetreten."
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "Beim Herunterladen ist %s Fehler aufgetreten."
+msgstr[1] "Beim Herunterladen sind %s Fehler aufgetreten."
 
 #, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "%s Mediendateien wurden erfolgreich hochgeladen."
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "%s Mediendatei wurden erfolgreich hochgeladen."
+msgstr[1] "%s Mediendateien wurden erfolgreich hochgeladen."
 
 #, python-format
-msgid "Encountered %s errors during upload."
-msgstr "Beim Hochladen sind %s Fehler aufgetreten."
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "Beim Hochladen ist %s Fehler aufgetreten."
+msgstr[1] "Beim Hochladen sind %s Fehler aufgetreten."
+
+msgid "Authentication failed. Please check your username and password."
+msgstr ""
+"Die Authentifizierung ist fehlgeschlagen. Bitte überprüfe deinen "
+"Benutzernamen und dein Kennwort."
+
+msgid "Access forbidden. Please check username and password."
+msgstr ""
+"Zugriff verboten. Bitte prüfe mal deinen Benutzernamen und dein Kennwort."
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "GrampsWeb-Dienst nicht gefunden. Bitte überprüfe die URL."
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "Zu viele Anfragen, bitte versuche es in wenigen Sekunden erneut."
+
+msgid "GrampsWeb tree is disabled."
+msgstr "Der GrampsWeb-Baum ist deaktiviert."
+
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Serverfehler %s. Bitte überprüfe deine Verbindung."
+
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr ""
+"Verbindung fehlgeschlagen. Bitte überprüfe die URL und deine "
+"Internetverbindung."
+
+msgid "Invalid server response. Please check the URL."
+msgstr "Ungültige Serverantwort. Bitte überprüfe die URL."
+
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Unerwarteter Fehler: %s"
 
 msgid "Error accessing media object."
 msgstr "Fehler beim Zugriff auf das Medienobjekt."
@@ -80,8 +122,8 @@ msgstr "Fehler %s beim Herstellen der Verbindung zum Server."
 msgid "URL error while connecting to server."
 msgstr "URL-Fehler bei der Verbindung zum Server."
 
-msgid "Error while parsing response from server."
-msgstr "Fehler beim Auswerten der Antwort vom Server."
+msgid "Unable to synchronize changes to server."
+msgstr "Änderungen können nicht mit dem Server synchronisiert werden."
 
 msgid "Continue without transport encryption?"
 msgstr "Ohne Transportverschlüsselung fortfahren?"
@@ -186,9 +228,13 @@ msgid "Missing remotely"
 msgstr "Fehlt entfernt"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "Herunterladen von %s Mediendatei(en)"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "Herunterladen von %s Mediendatei"
+msgstr[1] "Herunterladen von %s Mediendateien"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "Hochladen von %s Mediendatei(en)"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "Hochladen von %s Mediendatei"
+msgstr[1] "Hochladen von %s Mediendateien"

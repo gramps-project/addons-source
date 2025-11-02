@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-09-22 19:02+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2025-10-14 05:07+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -181,6 +181,9 @@ msgstr "Ajoitus"
 msgid "Name of Village"
 msgstr "Kylän nimi"
 
+msgid "Colored males 45 and over"
+msgstr "Värilliset miehet, 45 v. täyttäneet"
+
 msgid "Number of times married"
 msgstr "Avioliittojen lukumäärä"
 
@@ -231,6 +234,12 @@ msgstr "Annettu paikka"
 
 msgid "Eye color"
 msgstr "Silmien väri"
+
+msgid "Hair color"
+msgstr "Hiusten väri"
+
+msgid "Residents Status"
+msgstr "Asukkaiden asema"
 
 msgid "Event Place (Original)"
 msgstr "Tapahtumapaikka (alkuperäinen)"
@@ -387,6 +396,9 @@ msgstr "12. Asukkaat: Miehet"
 
 msgid "ResidentsFemale"
 msgstr "Naisasukkaat"
+
+msgid "13. Residents: Members, Female"
+msgstr "13. Asukkaat: Naiset"
 
 msgid "14. Residents: Not Members: Male"
 msgstr "13. Asukkaat: miehet"

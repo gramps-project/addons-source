@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-12 19:09+0300\n"
-"PO-Revision-Date: 2025-09-20 19:02+0000\n"
+"PO-Revision-Date: 2025-10-13 04:07+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -13,6 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Weblate 5.14-dev\n"
+
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr "L'objet {obj_type}:{handle} a été modifié par un autre utilisateur"
 
 msgid "Starting migration..."
 msgstr "Démarrage de la migration..."
@@ -25,6 +29,9 @@ msgstr "Migration de %s objets…"
 msgid "Migrated %s {obj_type} objects"
 msgstr "%s objets {obj_type} migrés"
 
+msgid "Migration completed!"
+msgstr "Migration terminée !"
+
 msgid "Starting upgrade..."
 msgstr "Démarrage de la mise à jour..."
 
@@ -34,6 +41,9 @@ msgstr "Mise à jour de %s objets…"
 
 msgid "Creating indexes..."
 msgstr "Création des indexs…"
+
+msgid "Upgrade completed!"
+msgstr "Mise à niveau terminée !"
 
 msgid "PostgreSQL Enhanced"
 msgstr "PostgreSQL Avancé"

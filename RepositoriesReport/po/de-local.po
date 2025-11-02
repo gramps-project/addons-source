@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"PO-Revision-Date: 2025-10-26 23:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,10 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 msgid "Repositories Report Options"
-msgstr "Aufbewahrungsorte-Berichtsoptionen"
+msgstr "Aufbewahrungsorte Bericht Optionen"
 
 msgid "Produces a textual repositories report"
 msgstr "Erstellt einen schriftlichen Aufbewahrungsortebericht"
@@ -36,40 +36,40 @@ msgid "Selection with a filter"
 msgstr "Auswahl mit einem Filter"
 
 msgid "Include repository's urls"
-msgstr "Aufbewahrungsort-URLs aufnehmen"
+msgstr "URLs des Aufbewahrungsorts einfügen"
 
 msgid "Whether to include urls on repository."
-msgstr "Ob URLs im Aufbewahrungsort aufgenommen werden."
+msgstr "Ob URLs in das Aufbewahrungsort aufgenommen werden sollen."
 
 msgid "Include repository's address"
 msgstr "Aufbewahrungsortadressen aufnehmen"
 
 msgid "Whether to include addresses on repository."
-msgstr "Ob Adressen im Aufbewahrungsort aufgenommen werden."
+msgstr "Ob Adressen in den Aufbewahrungsort aufgenommen werden sollen."
 
 msgid "Include source's author"
-msgstr "Quellen einbeziehen"
+msgstr "Autor der Quelle angeben"
 
 msgid "Whether to include author."
-msgstr "Ob Autor aufgenommen wird."
+msgstr "Autor angeben oder nicht."
 
 msgid "Include source's abbreviation"
-msgstr "Quellinformationen aufnehmen"
+msgstr "Abkürzung der Quelle angeben"
 
 msgid "Whether to include abbreviation."
-msgstr "Ob Abkürzungen aufgenommen werden."
+msgstr "Ob Abkürzungen aufgenommen werden sollen."
 
 msgid "Include source's publication information"
-msgstr "Quellen Veröffentlichungsinformationen aufnehmen"
+msgstr "Angaben zur Veröffentlichung der Quelle hinzufügen"
 
 msgid "Whether to include publication information."
-msgstr "Ob Veröffentlichungsinformationen enthalten sind."
+msgstr "Ob Veröffentlichungsinformationen aufgenommen werden sollen."
 
 msgid "Include source's data"
-msgstr "Quellendaten einbeziehen"
+msgstr "Daten der Quelle einbeziehen"
 
 msgid "Whether to include keys and values."
-msgstr "Ob Schlüssel und Werte aufgenommen werden."
+msgstr "Ob Schlüssel und Werte einbezogen werden sollen."
 
 msgid "Whether to include notes on repositories and sources."
 msgstr "Ob Notizen zu Aufbewahrungsorte und Quellen aufgenommen werden sollen."
@@ -78,36 +78,36 @@ msgid "Include media"
 msgstr "Medien aufnehmen"
 
 msgid "Whether to include media."
-msgstr "Ob Medien aufgenommen werden."
+msgstr "Ob Medien einbezogen werden sollen."
 
 msgid "Include citations"
-msgstr "Fundstellen aufnehmen"
+msgstr "Fundstellen einfügen"
 
 msgid "Whether to include citations on sources."
-msgstr "Ob Fundstellen bei Quellen aufgenommen werden."
+msgstr "Ob Quellenangaben aufgenommen werden sollen."
 
 msgid "Include private records"
 msgstr "Vertrauliche Aufzeichnungen einbeziehen"
 
 msgid "Whether to include repositories and sources marked as private."
 msgstr ""
-"Ob Aufbewahrungsorte und Quellen, die als vertraulich markiert sind, "
-"enthalten sind."
+"Ob Aufbewahrungsorte und Quellen, die als vertraulich gekennzeichnet sind, "
+"einbezogen werden sollen."
 
 msgid "Display empty values"
 msgstr "Leere Werte anzeigen"
 
 msgid "Whether to include key records with empty values."
-msgstr "Ob Schlüsseldatensätze mit leeren Werten enthalten sein sollen."
+msgstr "Ob Schlüsseldatensätze mit leeren Werten einbezogen werden sollen."
 
 msgid "The style used for the title of the report."
 msgstr "Der für den Titel des Berichts verwendete Stil."
 
 msgid "The style used for repository title."
-msgstr "Der Stil, der für Aufbewahrungsorttitel verwendet wird."
+msgstr "Der für den Titel des Aufbewahrungsorttitel verwendete Stil."
 
 msgid "The style used for each section."
 msgstr "Der für jeden Abschnitt verwendete Stil."
 
 msgid "The style used for child section."
-msgstr "Der Stil, der für Kinder Absatz verwendet wird."
+msgstr "Der für den Kinderabschnitt verwendete Stil."

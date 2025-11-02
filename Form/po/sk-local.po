@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-09-30 08:02+0000\n"
+"PO-Revision-Date: 2025-10-14 05:07+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -806,6 +806,9 @@ msgstr "Miesto pochovania"
 msgid "Congressional District"
 msgstr "Kongresový obvod"
 
+msgid "in the Counties of"
+msgstr "V krajoch (Counties)"
+
 msgid "in the month of"
 msgstr "v mesiaci"
 
@@ -1205,6 +1208,9 @@ msgstr "3. Pozemok alebo časť pozemku"
 
 msgid "4. Number of Acres of Land: Held by each person or family"
 msgstr "4. Počet akrov pôdy: vo vlastníctve každej osoby alebo rodiny"
+
+msgid "AcresCultivation"
+msgstr "Obrábané akre"
 
 msgid "5. Number of Acres of Land: Under Cultivation"
 msgstr "5. Počet akrov pôdy: obrábaná"
@@ -1612,6 +1618,9 @@ msgstr "Postihnutia"
 msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
 msgstr "34. Postihnutia: a. Nepočujúci a nemý; b. Nevidiaci; c. Duševne chorý"
 
+msgid "PageRef"
+msgstr "Odkaz na stránku"
+
 msgid "3. Place of Habitation"
 msgstr "3. Miesto bydliska"
 
@@ -1638,6 +1647,9 @@ msgstr "9. Počet rodín v dome alebo inštitúcii"
 
 msgid "Rooms"
 msgstr "Izby"
+
+msgid "LeasedStores"
+msgstr "Prenajaté obchody"
 
 msgid "Denomination"
 msgstr "Denominácia"

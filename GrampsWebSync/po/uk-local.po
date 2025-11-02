@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-11 19:37+0000\n"
-"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"POT-Creation-Date: 2025-10-11 21:37+0200\n"
+"PO-Revision-Date: 2025-10-20 04:58+0000\n"
+"Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Веб-синхронізація Gramps"
@@ -36,20 +36,65 @@ msgid "Media files are in sync."
 msgstr "Медіафайли синхронізовані."
 
 #, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "Успішно завантажено %s медіафайлів."
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "Успішно завантажено %s медіафайл."
+msgstr[1] "Успішно завантажено %s медіафайли."
+msgstr[2] "Успішно завантажено %s медіафайлів."
 
 #, python-format
-msgid "Encountered %s errors during download."
-msgstr "Виявлено %s помилок під час завантаження."
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "Виявлено %s помилка під час завантаження."
+msgstr[1] "Виявлено %s помилки під час завантаження."
+msgstr[2] "Виявлено %s помилок під час завантаження."
 
 #, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "Успішно завантажено %s медіафайлів."
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "Успішно завантажено %s медіафайл."
+msgstr[1] "Успішно завантажено %s медіафайли."
+msgstr[2] "Успішно завантажено %s медіафайлів."
 
 #, python-format
-msgid "Encountered %s errors during upload."
-msgstr "Виявлено %s помилок під час завантаження."
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "Виявлено %s помилка під час завантаження."
+msgstr[1] "Виявлено %s помилки під час завантаження."
+msgstr[2] "Виявлено %s помилок під час завантаження."
+
+msgid "Authentication failed. Please check your username and password."
+msgstr ""
+"Не вдалося виконати автентифікацію. Будь ласка, перевірте своє ім'я "
+"користувача та пароль."
+
+msgid "Access forbidden. Please check username and password."
+msgstr "Доступ заборонено. Будь ласка, перевірте ім'я користувача та пароль."
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "Сервіс GrampsWeb не знайдено. Будь ласка, перевірте URL-адресу."
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "Забагато запитів, спробуйте ще раз через кілька секунд."
+
+msgid "GrampsWeb tree is disabled."
+msgstr "Дерево GrampsWeb вимкнено."
+
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Помилка сервера %s. Будь ласка, перевірте ваше з’єднання."
+
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr ""
+"Помилка з’єднання. Будь ласка, перевірте URL-адресу та ваше інтернет-"
+"з’єднання."
+
+msgid "Invalid server response. Please check the URL."
+msgstr "Недійсна відповідь сервера. Будь ласка, перевірте URL-адресу."
+
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Неочікувана помилка: %s"
 
 msgid "Error accessing media object."
 msgstr "Помилка доступу до медіаобʼєкта."
@@ -79,8 +124,8 @@ msgstr "Помилка %s під час підключення до сервер
 msgid "URL error while connecting to server."
 msgstr "Помилка URL під час підключення до сервера."
 
-msgid "Error while parsing response from server."
-msgstr "Помилка під час розбору(парсингу) відповіді від сервера."
+msgid "Unable to synchronize changes to server."
+msgstr "Не вдалося синхронізувати зміни із сервером."
 
 msgid "Continue without transport encryption?"
 msgstr "Продовжити без транспортного шифрування?"
@@ -180,9 +225,15 @@ msgid "Missing remotely"
 msgstr "Відсутнє віддалено"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "Завантаження %s медіафайлу(ів)"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "Завантаження %s медіафайл"
+msgstr[1] "Завантаження %s медіафайли"
+msgstr[2] "Завантаження %s медіафайлів"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "Завантаження %s медіафайлу(ів)"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "Відвантаження %s медіафайлу"
+msgstr[1] "Відвантаження %s медіафайлів"
+msgstr[2] "Відвантаження %s медіафайлів"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"PO-Revision-Date: 2025-10-26 23:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,14 +12,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 msgid "The place was not found. You may clarify the search keywords."
-msgstr "Der Ort wurde nicht gefunden. Du kannst die Stichworte verdeutlichen."
+msgstr "Der Ort wurde nicht gefunden. Bitte präzisiere die Suchbegriffe."
 
 msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr ""
-"Suche nach Koordinaten ist aufgrund eines unerwarteten Fehlers "
+"Die Suche nach den Koordinaten ist aufgrund eines unerwarteten Fehlers "
 "fehlgeschlagen."
 
 msgid "The place was not found."
@@ -42,13 +42,13 @@ msgid "Nothing has been searched yet"
 msgstr "Es wurde noch nichts gesucht"
 
 msgid "No place is active"
-msgstr "Kein Ort ist ausgewählt"
+msgstr "Kein Ort ist aktiv"
 
 msgid "Place Coordinate Gramplet view"
 msgstr "Ortskoordinaten Gramplet Ansicht"
 
 msgid "View for the place coordinate gramplet."
-msgstr "Ansicht für Ortskoordinaten Gramplet."
+msgstr "Ansicht für das Ortskoordinaten Gramplet."
 
 msgid "Place and Coordinates"
 msgstr "Ort und Koordinaten"
@@ -72,32 +72,32 @@ msgid "Add addess as place"
 msgstr "Adresse als Ort hinzufügen"
 
 msgid "Search for:"
-msgstr "Suche nach:"
+msgstr "Suchen nach:"
 
 msgid "Found place:"
 msgstr "Gefundener Ort:"
 
 msgid "No DB entry is selected"
-msgstr "Kein DB Eintrag ist ausgewählt"
+msgstr "Es ist kein DB-Eintrag ausgewählt"
 
 msgid "Postal-Code:"
 msgstr "Postleitzahl:"
 
 msgid "Show found place externally in Google Maps"
-msgstr "Gefundenen Ort extern bei Google Maps anzeigen"
+msgstr "Gefundenen Ort extern in Google Maps anzeigen"
 
 msgid ""
 "Take last clicked position\n"
 "from Geography map"
 msgstr ""
-"Nimm die zuletzt angeklickte\n"
-"Position aus der Geografiekarte"
+"Letzte angeklickte Position übernehmen\n"
+"aus der Geografiekarte"
 
 msgid "Search location from DB"
-msgstr "Suchort aus DB"
+msgstr "Standort aus Datenbank suchen"
 
 msgid "Apply geo location to Database"
-msgstr "Koordinaten in die Datenbank übernehmen"
+msgstr "Geolokalisierung auf Datenbank anwenden"
 
 msgid "Go"
 msgstr "Gehe"

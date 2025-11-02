@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"PO-Revision-Date: 2025-10-31 18:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
@@ -24,8 +24,22 @@ msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
 #, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+msgid "List children"
+msgstr "רשימת צאצאים"
+
+msgid "Add descendant reference in child list"
+msgstr "הוספת אזכור צאצא ברשימת צאצאים"
 
 msgid "Include TODO notes"
 msgstr "הכללת הערה משימוש לביצוע"

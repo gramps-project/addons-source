@@ -3,24 +3,25 @@ msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2018-12-04 16:36+0300\n"
-"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
-"Language-Team: Russian\n"
+"PO-Revision-Date: 2025-10-31 18:03+0000\n"
+"Last-Translator: Mikhail Burkasov <mburkasov@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 msgid "People related to <filter>"
-msgstr "Люди связанные с <фильтром>"
+msgstr "Люди, связанные с <фильтром>"
 
 msgid "Matches people who are related to anybody matched by a person filter"
-msgstr "Выбирает людей связанных с кем-либо из результата фильтра лиц"
+msgstr "Выбирает людей, связанных с кем-либо из результата фильтра лиц"
 
 msgid "People separated less than <N> degrees of <person>"
 msgstr "Люди разделённые <N> поколениями с <лицом>"
@@ -33,6 +34,9 @@ msgstr "Источник с параметрами"
 
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr "Выбирает источники содержищие значения указанных параметров"
+
+msgid "Matches people who have more than one set of parents"
+msgstr "Выбирает людей, которые имеют более одного набора родителей"
 
 msgid "Does NOT match with selected Role"
 msgstr "Не совпадает с выбранной ролью"
@@ -56,22 +60,28 @@ msgid "Matches families with an event with a selected role"
 msgstr "Выбирает семьи с событиями с указанной ролью"
 
 msgid "Events of families matching a <family filter>"
-msgstr "События семей подходящие под <фильтр семей>"
+msgstr "События семей, подходящие под <фильтр семей>"
 
 msgid "Families matching <event filter>"
 msgstr "Семьи подходящие под <фильтр событий>"
 
 msgid "Matches families that are matched by an event filter"
-msgstr "Выбирает семьи, которые подходят под фильтр событий."
+msgstr "Выбирает семьи, которые подходят под фильтр событий"
 
 msgid "Matches families matched by an event filter"
-msgstr "Выбирает семьи, которые подходят под фильтр событий"
+msgstr "Выбирает семьи, подходящие под фильтр событий"
 
 msgid "Number of degrees of separation from person."
 msgstr "Количество поколений между лицами."
 
 msgid "Degrees:"
 msgstr "Поколение:"
+
+msgid "People with <count> of <event>"
+msgstr "Люди с <количеством> <событий>"
+
+msgid "Matches persons which have events of given type and number."
+msgstr "Выбирает людей, которые имеют события определенного типа и количества."
 
 msgid "Include Children"
 msgstr "Включать детей"
@@ -86,7 +96,7 @@ msgid "Include the parents in the matching families."
 msgstr "Включать родителей из найденных семей."
 
 msgid "Family Filter name:"
-msgstr "Название фильтра семей"
+msgstr "Название фильтра семей:"
 
 msgid "People who are part of families matching <filter>"
 msgstr "Люди из семьи выбранные <фильтром>"
@@ -96,6 +106,9 @@ msgstr "Люди с событиями и выбранной ролью"
 
 msgid "Families with events with a selected role"
 msgstr "Семьи с событиями и выбранной ролью"
+
+msgid "The active Person"
+msgstr "Активное лицо"
 
 msgid "Matches sources with a particular value"
 msgstr "Выбирает источники с указанным значением"

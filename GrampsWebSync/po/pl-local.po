@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-09-12 11:02+0000\n"
-"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"POT-Creation-Date: 2025-10-11 21:37+0200\n"
+"PO-Revision-Date: 2025-11-01 19:51+0000\n"
+"Last-Translator: Marcin Stefański <m_stefanski@icloud.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
@@ -40,20 +40,63 @@ msgid "Media files are in sync."
 msgstr "Pliki multimedialne są zsynchronizowane."
 
 #, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "Pomyślnie pobrano %s plików multimedialnych."
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "Pomyślnie pobrano %s plik multimedialny."
+msgstr[1] "Pomyślnie pobrano %s plików multimedialnych."
+msgstr[2] "Pomyślnie pobrano %s plików multimedialnych."
 
 #, python-format
-msgid "Encountered %s errors during download."
-msgstr "Napotkano %s błędów podczas pobierania."
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "Napotkano %s błąd podczas pobierania."
+msgstr[1] "Napotkano %s błędów podczas pobierania."
+msgstr[2] "Napotkano %s błędów podczas pobierania."
 
 #, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "Pomyślnie przesłano %s plików multimedialnych."
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "Pomyślnie przesłano %s plik multimedialny."
+msgstr[1] "Pomyślnie przesłano %s plików multimedialnych."
+msgstr[2] "Pomyślnie przesłano %s plików multimedialnych."
 
 #, python-format
-msgid "Encountered %s errors during upload."
-msgstr "Napotkano %s błędów podczas przesyłania."
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "Napotkano %s błąd podczas przesyłania."
+msgstr[1] "Napotkano %s błędów podczas przesyłania."
+msgstr[2] "Napotkano %s błędów podczas przesyłania."
+
+msgid "Authentication failed. Please check your username and password."
+msgstr ""
+"Uwierzytelnianie nie powiodło się. Sprawdź swoją nazwę użytkownika i hasło."
+
+msgid "Access forbidden. Please check username and password."
+msgstr "Dostęp zabroniony. Sprawdź nazwę użytkownika i hasło."
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "Nie znaleziono usługi GrampsWeb. Sprawdź adres URL."
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "Zbyt wiele żądań, spróbuj ponownie za kilka sekund."
+
+msgid "GrampsWeb tree is disabled."
+msgstr "Drzewo GrampsWeb jest wyłączone."
+
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Błąd serwera %s. Sprawdź połączenie."
+
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr ""
+"Połączenie nie powiodło się. Sprawdź adres URL i połączenie internetowe."
+
+msgid "Invalid server response. Please check the URL."
+msgstr "Nieprawidłowa odpowiedź serwera. Sprawdź adres URL."
+
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Nieoczekiwany błąd: %s"
 
 msgid "Error accessing media object."
 msgstr "Błąd dostępu do obiektu multimedialnego."
@@ -83,9 +126,6 @@ msgstr "Błąd %s podczas łączenia z serwerem."
 
 msgid "URL error while connecting to server."
 msgstr "Błąd adresu URL podczas łączenia z serwerem."
-
-msgid "Error while parsing response from server."
-msgstr "Błąd podczas analizowania odpowiedzi z serwera."
 
 msgid "Continue without transport encryption?"
 msgstr "Kontynuować bez szyfrowania transmisji?"
@@ -170,9 +210,15 @@ msgid "Missing remotely"
 msgstr "Brakuje zdalnie"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "Pobieranie %s plików multimedialnych"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "Pobieranie %s plików multimedialnych"
+msgstr[1] "Pobieranie %s plików multimedialnych"
+msgstr[2] "Pobieranie %s plików multimedialnych"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "Przesyłanie %s plików multimedialnych"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "Przesyłanie %s plików multimedialnych"
+msgstr[1] "Przesyłanie %s plików multimedialnych"
+msgstr[2] "Przesyłanie %s plików multimedialnych"

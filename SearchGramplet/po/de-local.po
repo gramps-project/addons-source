@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 09:41-0800\n"
-"PO-Revision-Date: 2025-10-07 09:02+0000\n"
+"PO-Revision-Date: 2025-10-26 23:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 msgid "Search"
 msgstr "Suche"
@@ -24,19 +24,19 @@ msgid "Show bookmarked first"
 msgstr "Zuerst mit Lesezeichen versehene anzeigen"
 
 msgid "Sort by object type"
-msgstr "Sortiere nach Objektart"
+msgstr "Nach Objektart sortieren"
 
 msgid "Persons"
 msgstr "Personen"
 
 msgid "Menu to set search objects"
-msgstr "Menü um Suchobjekte festzulegen"
+msgstr "Menü zum Festlegen von Suchobjekten"
 
 msgid "Select objects to search"
-msgstr "Suchobjekte auswählen"
+msgstr "Objekte für die Suche auswählen"
 
 msgid "SearchGramplet configuration menu"
-msgstr "SearchGramplet-Konfigurationsmenü"
+msgstr "Such-Gramplet-Konfigurationsmenü"
 
 #, python-format
 msgid "found: %s"
@@ -46,7 +46,7 @@ msgid "No matches..."
 msgstr "Keine Übereinstimmungen..."
 
 msgid "Start type to search"
-msgstr "Anfangsart für die Suche"
+msgstr "Tippe zum Starten der Suche"
 
 msgid ""
 "Start type to search objects.\n"

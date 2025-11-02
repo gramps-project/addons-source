@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"POT-Creation-Date: 2025-10-11 21:37+0200\n"
+"PO-Revision-Date: 2025-09-30 08:02+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
@@ -28,22 +28,6 @@ msgstr "Uventet fejl ved anvendelse af ændringer."
 
 msgid "Media files are in sync."
 msgstr "Mediefiler er synkrone."
-
-#, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "Hentede %s mediefiler problemfrit."
-
-#, python-format
-msgid "Encountered %s errors during download."
-msgstr "Fik %s fejl ved hentning."
-
-#, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "Overførte %s mediefiler problemfrit."
-
-#, python-format
-msgid "Encountered %s errors during upload."
-msgstr "Fik %s fejl ved overførsel."
 
 msgid "Error accessing media object."
 msgstr "Fejl ved tilgang til medieobjekt."
@@ -67,9 +51,6 @@ msgstr ""
 #, python-format
 msgid "Error %s while connecting to server."
 msgstr "Fejl %s ved forbindelse til server."
-
-msgid "Error while parsing response from server."
-msgstr "Fejl ved fortolkning af svar fra server."
 
 msgid "Continue without transport encryption?"
 msgstr "Fortsæt uden transport kryptering?"
@@ -137,11 +118,3 @@ msgstr "Mangler lokalt"
 
 msgid "Missing remotely"
 msgstr "Mangler eksternt"
-
-#, python-format
-msgid "Downloading %s media file(s)"
-msgstr "Henter %s mediefil(er)"
-
-#, python-format
-msgid "Uploading %s media file(s)"
-msgstr "Uploader %s mediefil(er)"

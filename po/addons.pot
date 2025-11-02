@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 19:25-0700\n"
+"POT-Creation-Date: 2025-11-02 08:48-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,7 +162,8 @@ msgstr ""
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetAttributeTool/SetAttributeTool.py:71 SetPrivacyTool/SetPrivacyTool.py:312
+#: RelID/relation_tab.py:310 SetAttributeTool/SetAttributeTool.py:71
+#: SetPrivacyTool/SetPrivacyTool.py:312
 msgid "Select filter to restrict people"
 msgstr ""
 
@@ -876,6 +877,45 @@ msgstr ""
 
 #: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.gpr.py:9
+msgid "Chat With Tree Interactive Addon"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.gpr.py:10
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.gpr.py:18
+msgid "Chat With Tree"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:103
+msgid "Database change detected"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:148
+msgid "Type a message..."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:152
+msgid "Send"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:159
+msgid "Chat with Tree initialized. Type /help for help."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:314
+msgid ""
+"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+"select a database."
+msgstr ""
+
+#: ChatWithTree/chatwithllm.py:78
+msgid "Tree: '{}'"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
@@ -1669,7 +1709,7 @@ msgid "Surname, Given"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
-#: RelID/relation_tab.py:126
+#: RelID/relation_tab.py:363
 msgid "Save"
 msgstr ""
 
@@ -7019,7 +7059,7 @@ msgstr ""
 #: Form/form_gb.xml.h:459 Form/form_gb.xml.h:487 Form/form_gb.xml.h:519
 #: Form/form_gb.xml.h:558 Form/form_gb.xml.h:580 Form/form_gb.xml.h:609
 #: Form/form_us.xml.h:1427 Form/form_us.xml.h:1965 Form/form_us.xml.h:1984
-#: Form/form_us.xml.h:2004 RelID/relation_tab.py:111
+#: Form/form_us.xml.h:2004 RelID/relation_tab.py:340
 msgid "Relation"
 msgstr ""
 
@@ -9037,6 +9077,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:439 Form/form_gb.xml.h:466 Form/form_gb.xml.h:494
 #: Form/form_gb.xml.h:531 Form/form_gb.xml.h:568 Form/form_us.xml.h:1497
+#: RelID/relation_tab.py:448
 msgid "Disabled"
 msgstr ""
 
@@ -10792,7 +10833,7 @@ msgid "Enumeration District No."
 msgstr ""
 
 #: Form/form_us.xml.h:649 Form/form_us.xml.h:1013 Form/form_us.xml.h:2291
-#: Form/form_us.xml.h:2320 RelID/relation_tab.py:116
+#: Form/form_us.xml.h:2320 RelID/relation_tab.py:345
 msgid "Rank"
 msgstr ""
 
@@ -17693,7 +17734,7 @@ msgstr ""
 msgid "Set as active person"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:97
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:633
 msgid "_Select"
 msgstr ""
 
@@ -19526,69 +19567,156 @@ msgstr ""
 msgid "Found %d custom event types"
 msgstr ""
 
-#: RelID/relation_tab.gpr.py:36
+#: RelID/relation_tab.gpr.py:35
 msgid "Display relations and distances with the home person"
 msgstr ""
 
-#: RelID/relation_tab.gpr.py:37
+#: RelID/relation_tab.gpr.py:36
 msgid "Will display relational informations with the home person"
 msgstr ""
 
-#: RelID/relation_tab.py:75
+#: RelID/relation_tab.py:297
 msgid "Relation and distances with root"
 msgstr ""
 
-#: RelID/relation_tab.py:92
-msgid "Folder Chooser"
+#: RelID/relation_tab.py:315
+msgid "Filter rule"
 msgstr ""
 
-#: RelID/relation_tab.py:99
-msgid "Please, select a folder"
+#: RelID/relation_tab.py:319
+msgid "Select the filter rule"
 msgstr ""
 
-#: RelID/relation_tab.py:110
+#: RelID/relation_tab.py:321
+msgid "Deep generations"
+msgstr ""
+
+#: RelID/relation_tab.py:322
+msgid "How deep should we go?"
+msgstr ""
+
+#: RelID/relation_tab.py:339
 msgid "Rel_id"
 msgstr ""
 
-#: RelID/relation_tab.py:113
+#: RelID/relation_tab.py:342
 msgid "up"
 msgstr ""
 
-#: RelID/relation_tab.py:114
+#: RelID/relation_tab.py:343
 msgid "down"
 msgstr ""
 
-#: RelID/relation_tab.py:115
+#: RelID/relation_tab.py:344
 msgid "Common MRA"
 msgstr ""
 
-#: RelID/relation_tab.py:117
+#: RelID/relation_tab.py:346
 msgid "Period"
 msgstr ""
 
-#: RelID/relation_tab.py:164
+#: RelID/relation_tab.py:350
+msgid "Shared Subtree"
+msgstr ""
+
+#: RelID/relation_tab.py:351
+msgid "Centrality"
+msgstr ""
+
+#: RelID/relation_tab.py:352
+msgid "Unique Ancestors"
+msgstr ""
+
+#: RelID/relation_tab.py:353
+msgid "Surname Diversity"
+msgstr ""
+
+#: RelID/relation_tab.py:367
+msgid "Quit"
+msgstr ""
+
+#: RelID/relation_tab.py:376
+msgid "No default person set."
+msgstr ""
+
+#: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
 msgstr ""
 
-#: RelID/relation_tab.py:169
-msgid "No default_person"
+#: RelID/relation_tab.py:446
+msgid "Network Metrics"
 msgstr ""
 
-#: RelID/relation_tab.py:174
+#: RelID/relation_tab.py:447
+msgid "Enabled"
+msgstr ""
+
+#: RelID/relation_tab.py:449
+msgid "Enable or disable family network metrics"
+msgstr ""
+
+#: RelID/relation_tab.py:483
 msgid "Generating relation map..."
 msgstr ""
 
-#: RelID/relation_tab.py:190
-#, python-format
+#: RelID/relation_tab.py:497
 msgid ""
-"%d/%d \n"
-" %d/%d seconds \n"
-" %d/%d \n"
-"%f|\t%f"
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
 msgstr ""
 
-#: RelID/relation_tab.py:308
-msgid "You do not have write rights on this folder"
+#: RelID/relation_tab.py:498
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr ""
+
+#: RelID/relation_tab.py:615
+msgid "Total of handled entries : {len(self.stats_list)}\n"
+msgstr ""
+
+#: RelID/relation_tab.py:628
+msgid "Folder Chooser"
+msgstr ""
+
+#: RelID/relation_tab.py:636
+msgid "Please, select a folder"
+msgstr ""
+
+#: RelID/relation_tab.py:643
+msgid "Foldername need"
+msgstr ""
+
+#: RelID/relation_tab.py:643
+msgid "Foldername will be used for saving the content."
+msgstr ""
+
+#: RelID/relation_tab.py:655
+msgid "Cannot set a valid location."
+msgstr ""
+
+#: RelID/relation_tab.py:655
+msgid "Did you set a foldername?"
+msgstr ""
+
+#: RelID/relation_tab.py:672
+#, python-brace-format
+msgid "Data saved to : {filename}"
+msgstr ""
+
+#: RelID/relation_tab.py:676
+msgid "Failed to save data."
+msgstr ""
+
+#: RelID/relation_tab.py:689
+msgid "Relationships Map and Tab"
+msgstr ""
+
+#: RelID/relation_tab.py:772
+msgid "Enable family network metrics"
+msgstr ""
+
+#: RelID/relation_tab.py:774
+msgid "Whether to calculate and display family network metrics."
 msgstr ""
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-10-13 04:07+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
@@ -50,6 +50,9 @@ msgstr "Détection des visages"
 msgid "Detect faces (OpenCV module required)"
 msgstr "Détecter les visages (le module OpenCV est requis)"
 
+msgid "XMP Region Name"
+msgstr "Nom de la région XMP"
+
 msgid "Set as active person"
 msgstr "Définir comme l’individu actif"
 
@@ -66,9 +69,28 @@ msgstr "Détection des visages…"
 msgid "Detection finished"
 msgstr "Détection terminée"
 
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "Une autre région de cette image est associée à {name}. La supprimer ?"
+
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr ""
+"{count} autres régions de cette image sont associées à {name}. Les "
+"supprimer ?"
+
 #, python-format
 msgid "Male person|Dead at %s"
 msgstr "Individu masculin|Décédé le %s"
+
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "Femme|Décédée le %s"
+
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "Individu|Décédé le %s"
 
 msgid "Photo Tagging"
 msgstr "Cartographie photographique"

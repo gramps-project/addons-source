@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-10-07 09:02+0000\n"
+"PO-Revision-Date: 2025-10-31 18:02+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 msgid "No Source"
 msgstr "אין מקור"
@@ -133,35 +133,164 @@ msgstr "הכיוון שבו הזמן עולה."
 msgid "Max chart width (%)"
 msgstr "רוחב תרשים מירבי (%)"
 
+msgid "Width of the tree as fraction of the browser window"
+msgstr "רוחב אילן־היוחסין כשבר של חלון הדפדפן"
+
 msgid "Max chart height (px)"
 msgstr "גובה תרשים מירבי (פיקסל)"
+
+msgid "Height of the tree in pixels."
+msgstr "גובה אילן־היוחסין בפיקסלים."
+
+msgid "Closing remarks"
+msgstr "סגירת הערות"
+
+msgid ""
+"List of strings, free text added at the bottom, for example for a copyright "
+"notice."
+msgstr ""
+"רשימת מחרוזות, מלל חופשי שמתווסף בתחתית העמוד, לדוגמה עבור הצהרת זכויות "
+"יוצרים."
 
 msgid "Include Options"
 msgstr "הכללת אפשרויות"
 
+msgid "Include private records"
+msgstr "לכלול רשומות פרטיות"
+
+msgid "Whether to leave out private data."
+msgstr "האם להחריג נתונים פרטיים."
+
 msgid "Include Events"
 msgstr "הכללת אירועים"
+
+msgid "Whether to include a person's events."
+msgstr "האם לכלול אירועי אדם."
+
+msgid "Include birth children"
+msgstr "לכלול צאצאים מלידה"
+
+msgid "Whether to include the birth of children in the list of events."
+msgstr "האם לכלול לידת צאצים ברשימת האירועים."
 
 msgid "Include death relatives"
 msgstr "הכללת קרובי משפחת נפטר"
 
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
+msgstr "האם לכלול את מותם של קרובי משפחה במהלך חייו של אדם."
+
 msgid "Include witness note"
 msgstr "הכללת הערת עדים"
+
+msgid ""
+"Whether to include the note belonging to a witness (if the event_format "
+"contains <witnesses>)"
+msgstr "האם לכלול הערה השייכת לעד (אם event_format מכיל <עד>)"
+
+msgid "Whether to include a person's attributes"
+msgstr "האם לכלול תכונות אדם"
+
+msgid "Include Addresses"
+msgstr "לכלול כתובות"
+
+msgid "Whether to include a person's addresses."
+msgstr "האם לכלול את כתובתו של אדם."
 
 msgid "Include Note"
 msgstr "הכללת הערה"
 
+msgid "Whether to include a person's note."
+msgstr "האם לכלול הערה של אדם."
+
+msgid "Include URL"
+msgstr "לכלולל כתובת URL"
+
+msgid "Whether to include a person's internet address."
+msgstr "האם לכלול כתובת מרשתת של אדם."
+
+msgid "Include URL description"
+msgstr "לכלולל תאור כתובת URL"
+
+msgid "Whether to include the description of the first URL"
+msgstr "האם לכלול את תיאור כתובת ה־URL הראשון"
+
 msgid "Include Sources"
 msgstr "הכללת מקורות"
+
+msgid "Whether to include a person's sources."
+msgstr "האם לכלול מקורות של אדם."
+
+msgid "Image Options"
+msgstr "אפשרויות תמונה"
+
+msgid "Include Photos/Images from Gallery"
+msgstr "לכלול תמונה/תצלום מהגלריה"
+
+msgid "Whether to include images"
+msgstr "האם לכלול תמונות."
+
+msgid "Copy Image"
+msgstr "העתקת תמונה"
+
+msgid "Copy the images to a designated directory."
+msgstr "העתקת התמונות למחיצת היעד."
+
+msgid "Images with Attribute"
+msgstr "תמונות עם מאפיינים"
+
+msgid "Determine images with which attributes to in/exclude"
+msgstr "קביעת אילו מאפייני תמונה לכלול או לנחריג"
 
 msgid "Include Image source references"
 msgstr "הכללת איזכורי מקור תמונה"
 
+msgid "Whether to include references for images"
+msgstr "האם לכלול אזכורים לתמונות"
+
+msgid "Source reference attribute"
+msgstr "תכונות אזכורי מקור"
+
+msgid "Image attribute that should be used as source reference"
+msgstr "תכונות תמונה בהן יש להשתמש באזכור מקור"
+
+msgid "Style Options"
+msgstr "אפשרויות סגנון"
+
 msgid "Color of active person:"
 msgstr "צבע האדם הפעיל:"
 
+msgid "RGB-color of geometric shape of the activated person."
+msgstr "צבע RGB של הצורה הגיאומטרית של האדם הפעיל."
+
+msgid "Color of found persons:"
+msgstr "צבע לאנשים שנמצאו:"
+
+msgid "RGB-color of geometric shape of the persons found."
+msgstr "צבע RGB של צורה גיאומטרית של האנשים שנמצאו."
+
 msgid "Color of male persons:"
 msgstr "צבע אדם במגדר זכר:"
+
+msgid "RGB-color of geometric shape of the male persons."
+msgstr "צבע RGB של צורה גיאומטרית של אנשים במגדר זכר."
+
+msgid "Colour of female persons:"
+msgstr "צבע של אנשים במגדר נקבה:"
+
+msgid "RGB-color of geometric shape of the female persons."
+msgstr "צבע RGB של צורה גיאומטרית של אנשים במגדר נקבה."
+
+msgid "Width of rectangle (hrd):"
+msgstr "רוחב מלבן (hrd):"
+
+msgid ""
+"The width of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr "רוחב מלבן אדם של סוג תרשים רגיל מוצג כחלק מהמרחק המלבני האופקי."
+
+msgid "Height of rectangle (hrd):"
+msgstr "גובה מלבן (hrd):"
 
 msgid "Birth relationship linestyle"
 msgstr "סגנון קו קשרי קירבה מסוג לידה"

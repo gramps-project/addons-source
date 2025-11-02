@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-10-26 23:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,11 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 msgid "The Tool requires at least one tag to execute."
-msgstr ""
-"Für die Ausführung des Werkzeug ist mindestens eine Markierung erforderlich."
+msgstr "Das Werkzeug benötigt mindestens ein Etikett, um ausgeführt zu werden."
 
 msgid "ERROR"
 msgstr "FEHLER"
@@ -25,25 +24,25 @@ msgid "Add/Remove"
 msgstr "Hinzufügen/Entfernen"
 
 msgid "Add or remove tags from objects."
-msgstr "Markierungen zu Objekten hinzufügen oder daraus entfernen."
+msgstr "Etiketten zu Objekten hinzufügen oder entfernen."
 
 msgid "Add Tags"
-msgstr "Markierungen Hinzufügen"
+msgstr "Etiketten hinzufügen"
 
 msgid "Remove Tags"
-msgstr "Markierungen Entfernen"
+msgstr "Etiketten entfernen"
 
 msgid "General options"
 msgstr "Allgemeine Optionen"
 
 msgid "Choose a category."
-msgstr "Wähle eine Kategorie."
+msgstr "Wähle eine Kategorie aus."
 
 msgid "Choose Tag"
-msgstr "Markierungen wählen"
+msgstr "Etikett auswählen"
 
 msgid "Choose a tag to remove."
-msgstr "Wähle eine Markierung zum entfernen."
+msgstr "Wähle ein Etikett zum Entfernen aus."
 
 msgid "Persons"
 msgstr "Personen"
@@ -56,24 +55,24 @@ msgid "All %s"
 msgstr "Alle %s"
 
 msgid "Add/Remove Tag Tool"
-msgstr "Markierungen Hinzufügen/Entfernen Werkzeug"
+msgstr "Hinzufügen/Entfernen von Etiketten-Werkzeug"
 
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
 "and objects."
 msgstr ""
 "Das Werkzeug kann nicht ausgeführt werden. Bitte überprüfe, ob deine "
-"Datenbank Markierungen, Filter und Objekte enthält."
+"Datenbank Etiketten, Filter und Objekte enthält."
 
 msgid "WARNING"
 msgstr "WARNUNG"
 
 #, python-format
 msgid "No %s objects were found in database."
-msgstr "In der Datenbank wurden keine %s Objekte gefunden."
+msgstr "Es wurden keine %s-Objekte in der Datenbank gefunden."
 
 msgid "Process tags..."
-msgstr "Bearbeite Markierungen..."
+msgstr "Verarbeite Etiketten..."
 
 msgid "added"
 msgstr "hinzugefügt"
@@ -82,12 +81,12 @@ msgid "removed"
 msgstr "entfernt"
 
 msgid "Tag '{}' was {} to {} {} objects.\n"
-msgstr "Markierung '{}' wurde {} zu {} {} Objekten.\n"
+msgstr "Das Etikett „{}“ war {} zu {} {} Objekten.\n"
 
 msgid "INFO"
 msgstr "INFO"
 
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr ""
-"Hinzufügen oder Entfernen einer Markierung zu Gruppen von Personen, "
-"Ereignissen usw."
+"Ein Etikett zu Gruppen von Personen, Ereignissen usw. hinzufügen oder daraus "
+"entfernen."

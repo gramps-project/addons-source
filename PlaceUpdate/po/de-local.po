@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-10-26 23:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,40 +12,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 msgid "Set properties for multiple places"
-msgstr "Setzt die Eigenschaften für mehrere Orte"
+msgstr "Eigenschaften für mehrere Orte festlegen"
 
 msgid ""
 "This gramplet allows setting properties for multiple places at the same time"
 msgstr ""
-"Mit diesem Gramplet kannst du Eigenschaften für mehrere Orte gleichzeitig "
-"festlegen"
+"Mit diesem Gramplet können Eigenschaften für mehrere Orte gleichzeitig "
+"festgelegt werden"
 
 msgid "New enclosing place"
-msgstr "Neuer einschließender Ort"
+msgstr "Neuer umschließender Ort"
 
 msgid "Timespan:"
-msgstr "Zeitspanne:"
+msgstr "Zeitraum:"
 
 msgid "Set timespan for enclosing places"
-msgstr "Stellen die Zeitspanne für das Einschließen von Orten ein"
+msgstr "Zeitraum für umschließende Orte festlegen"
 
 msgid "Clear original enclosing places"
-msgstr "Original einschließende Orte entfernen"
+msgstr "Ursprüngliche Umschließungsorte löschen"
 
 msgid "Clear tags"
-msgstr "Markierungen entfernen"
+msgstr "Etiketten löschen"
 
 msgid "Generate hierarchy"
-msgstr "Hierarchie generieren"
+msgstr "Hierarchie erstellen"
 
 msgid "use spaces as separator"
 msgstr "Leerzeichen als Trennzeichen verwenden"
 
 msgid "reverse hierarchy"
-msgstr "Hierarchie umkehren"
+msgstr "umgekehrte Hierarchie"
 
 msgid "Replace text"
 msgstr "Text ersetzen"
@@ -60,13 +60,13 @@ msgid "New text:"
 msgstr "Neuer Text:"
 
 msgid "Clear selections"
-msgstr "Auswahl aufheben"
+msgstr "Auswahl löschen"
 
 msgid "Apply to selected places"
 msgstr "Auf ausgewählte Orte anwenden"
 
 msgid "Setting place properties"
-msgstr "Ortseigenschaften festlegen"
+msgstr "Eigenschaften des Ortes festlegen"
 
 msgid "Regex operation failed: {}"
 msgstr "Regulärer-Ausdruck Operation fehlgeschlagen: {}"
@@ -75,4 +75,4 @@ msgid "PlaceUpdate"
 msgstr "OrtAktualisierung"
 
 msgid "Gramplet to manipulate multiple places"
-msgstr "Gramplet zum Ändern mehrerer Orte"
+msgstr "Gramplet zum Bearbeiten mehrerer Orte"
