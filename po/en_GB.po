@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-06-16 22:01+0000\n"
+"PO-Revision-Date: 2025-11-02 16:41+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -37,7 +37,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12.1\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -62,16 +62,16 @@ msgstr "Total names %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
-msgstr ""
+msgstr "AncestorFill"
 
 #: AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
-msgstr ""
+msgstr "Report on the filling of the tree"
 
 #: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr ""
+msgstr "AncestorFill for %s"
 
 #: AncestorFill/AncestorFill.py:205
 #, fuzzy
@@ -554,7 +554,7 @@ msgstr ""
 
 #: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
 msgid "Done"
-msgstr ""
+msgstr "Done"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
@@ -1635,15 +1635,15 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "Shared DNA"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "Shared Segments"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "Largest Segment"
 
 #: DNAMatches/dnamatches.py:159
 msgid "Source(s)"
@@ -1762,7 +1762,7 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 #: Form/form_us.xml.h:2259
 msgid "in"
-msgstr ""
+msgstr "in"
 
 #: DataEntryGramplet/DataEntryGramplet.py:441
 #: DataEntryGramplet/DataEntryGramplet.py:569
@@ -2121,7 +2121,7 @@ msgstr ""
 #: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
 #: SearchGramplet/SearchGramplet.gpr.py:19
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 #: DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
@@ -3241,7 +3241,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
-msgstr ""
+msgstr "Name Display Format"
 
 #: DescendantsLines/DescendantsLines.py:1650
 msgid ""
@@ -4835,16 +4835,12 @@ msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 msgstr "Invalid longitude (syntax: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
 msgstr ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
+"image."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
@@ -4852,16 +4848,12 @@ msgid "Delete?"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
 msgstr ""
-"WARNING!  You are about to completely delete the Exif metadata from this "
-"image?"
+"WARNING!  You are about to completely delete the GPS metadata from this "
+"image."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
@@ -10458,7 +10450,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:502
 msgid "Owner"
-msgstr ""
+msgstr "Owner"
 
 #: Form/form_us.xml.h:503
 msgid "Rents for fixed money"
@@ -16857,7 +16849,7 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
 msgid "Export"
-msgstr ""
+msgstr "Export"
 
 #: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
@@ -18085,7 +18077,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:548
 msgid "Discard"
-msgstr ""
+msgstr "Discard"
 
 #: PlaceCleanup/placecleanup.glade:552
 msgid ""
@@ -21294,7 +21286,7 @@ msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:249
 msgid "Event Year"
-msgstr ""
+msgstr "Event Year"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:328
 msgid "gregorian"
@@ -22398,22 +22390,19 @@ msgid "Attribute has been successfully added"
 msgstr ""
 
 #: WebSearch.py:2142
-#, fuzzy, python-brace-format
-#| msgid "Place titles"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Place titles"
+msgstr "Title: {title}"
 
 #: WebSearch.py:2146
-#, fuzzy, python-brace-format
-#| msgid "Check place titles"
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "Check place titles"
+msgstr "Replaced: {keys}"
 
 #: WebSearch.py:2149
-#, fuzzy, python-brace-format
-#| msgid "Check place titles"
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "Check place titles"
+msgstr "Empty: {keys}"
 
 #: WebSearch.py:2151
 #, python-brace-format
