@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-12 10:22-0700\n"
+"POT-Creation-Date: 2025-10-11 19:25-0700\n"
 "PO-Revision-Date: 2025-09-30 08:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
@@ -14888,8 +14888,8 @@ msgstr ""
 "Prepísať kmz/kml súbor ''%s''\n"
 "v domovskom adresári užívateľa ''%s''?"
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:117
-#: GrampsWebSync/grampswebsync.py:210
+#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:116
+#: GrampsWebSync/grampswebsync.py:209
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
 
@@ -14903,98 +14903,153 @@ msgstr ""
 "Váš používateľ nemá dostatočné oprávnenia na serveri na používanie "
 "synchronizácie."
 
-#: GrampsWebSync/grampswebsync.py:268
+#: GrampsWebSync/grampswebsync.py:269
 msgid "Fetching remote data..."
 msgstr "Získavanie vzdialených údajov..."
 
-#: GrampsWebSync/grampswebsync.py:284
+#: GrampsWebSync/grampswebsync.py:285
 msgid "Unexpected error while applying changes."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:322
+#: GrampsWebSync/grampswebsync.py:323
 msgid "Media files are in sync."
 msgstr "Mediálne súbory sú synchronizované."
 
-#: GrampsWebSync/grampswebsync.py:331
+#: GrampsWebSync/grampswebsync.py:332
 #, python-format
-msgid "Successfully downloaded %s media files."
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: GrampsWebSync/grampswebsync.py:335
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: GrampsWebSync/grampswebsync.py:341
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: GrampsWebSync/grampswebsync.py:344
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: GrampsWebSync/grampswebsync.py:362
+msgid "Authentication failed. Please check your username and password."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:334
-#, python-format
-msgid "Encountered %s errors during download."
+#: GrampsWebSync/grampswebsync.py:366
+msgid "Access forbidden. Please check username and password."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:340
-#, python-format
-msgid "Successfully uploaded %s media files."
+#: GrampsWebSync/grampswebsync.py:370
+msgid "GrampsWeb service not found. Please check the URL."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:343
-#, python-format
-msgid "Encountered %s errors during upload."
+#: GrampsWebSync/grampswebsync.py:374
+msgid "Too many requests, please try again in a few seconds."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:389 GrampsWebSync/grampswebsync.py:410
+#: GrampsWebSync/grampswebsync.py:378
+#, fuzzy
+#| msgid "AI provider is disabled"
+msgid "GrampsWeb tree is disabled."
+msgstr "Poskytovateľ AI je deaktivovaný"
+
+#: GrampsWebSync/grampswebsync.py:382
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:387
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:391
+msgid "Invalid server response. Please check the URL."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:394
+#, fuzzy, python-format
+#| msgid "GetGOV error: %s"
+msgid "Unexpected error: %s"
+msgstr "Chyba GetGOV: %s"
+
+#: GrampsWebSync/grampswebsync.py:438 GrampsWebSync/grampswebsync.py:459
 msgid "Error accessing media object."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:451
+#: GrampsWebSync/grampswebsync.py:500
 msgid "Failed importing downloaded XML file."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:457
+#: GrampsWebSync/grampswebsync.py:505
 msgid "Comparing local and remote data..."
 msgstr "Porovnávanie miestnych a vzdialených údajov..."
 
-#: GrampsWebSync/grampswebsync.py:489
+#: GrampsWebSync/grampswebsync.py:537
 msgid "Server authorization error."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:492
+#: GrampsWebSync/grampswebsync.py:540
 msgid "Server authorization error: insufficient permissions."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:495
+#: GrampsWebSync/grampswebsync.py:543
 msgid "Error: URL not found."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:499
+#: GrampsWebSync/grampswebsync.py:547
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr "Zmeny sa nedajú synchronizovať so serverom: objekty boli upravené."
 
-#: GrampsWebSync/grampswebsync.py:503
+#: GrampsWebSync/grampswebsync.py:551
 #, python-format
 msgid "Error %s while connecting to server."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:506
+#: GrampsWebSync/grampswebsync.py:554
 msgid "URL error while connecting to server."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:509
-msgid "Error while parsing response from server."
-msgstr ""
+#: GrampsWebSync/grampswebsync.py:557
+#, fuzzy
+#| msgid "Unable to synchronize changes to server: objects have been modified."
+msgid "Unable to synchronize changes to server."
+msgstr "Zmeny sa nedajú synchronizovať so serverom: objekty boli upravené."
 
-#: GrampsWebSync/grampswebsync.py:537
+#: GrampsWebSync/grampswebsync.py:585
 msgid "Continue without transport encryption?"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:539
+#: GrampsWebSync/grampswebsync.py:587
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:544
+#: GrampsWebSync/grampswebsync.py:592
 msgid "Continue with HTTP"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:545
+#: GrampsWebSync/grampswebsync.py:593
 msgid "Use HTTPS"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:663
+#: GrampsWebSync/grampswebsync.py:711
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -15022,88 +15077,96 @@ msgstr ""
 "Ak chcete namiesto toho zlúčiť dva výrazne odlišné stromy s možnosťou "
 "vykonať ručné úpravy, použite namiesto toho nástroj na import a zlúčenie."
 
-#: GrampsWebSync/grampswebsync.py:690
+#: GrampsWebSync/grampswebsync.py:738
 msgid "Server URL: "
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:774
+#: GrampsWebSync/grampswebsync.py:847
 msgid "Bidirectional Synchronization"
 msgstr "Obojsmerná synchronizácia"
 
-#: GrampsWebSync/grampswebsync.py:783
+#: GrampsWebSync/grampswebsync.py:856
 msgid "Reset remote to local"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:791
+#: GrampsWebSync/grampswebsync.py:864
 msgid "Reset local to remote"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:799
+#: GrampsWebSync/grampswebsync.py:872
 msgid "Merge"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:824
+#: GrampsWebSync/grampswebsync.py:897
 msgid "Local changes"
 msgstr "Lokálne zmeny"
 
-#: GrampsWebSync/grampswebsync.py:827 GrampsWebSync/grampswebsync.py:832
-#: GrampsWebSync/grampswebsync.py:834
+#: GrampsWebSync/grampswebsync.py:900 GrampsWebSync/grampswebsync.py:905
+#: GrampsWebSync/grampswebsync.py:907
 msgid "Modified"
 msgstr "Zmenené"
 
-#: GrampsWebSync/grampswebsync.py:829
+#: GrampsWebSync/grampswebsync.py:902
 msgid "Remote changes"
 msgstr "Vzdialené zmeny"
 
-#: GrampsWebSync/grampswebsync.py:834
+#: GrampsWebSync/grampswebsync.py:907
 msgid "Simultaneous changes"
 msgstr "Súbežné zmeny"
 
-#: GrampsWebSync/grampswebsync.py:891
+#: GrampsWebSync/grampswebsync.py:964
 msgid "Fetching information about media files..."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:912
+#: GrampsWebSync/grampswebsync.py:985
 msgid "Both trees are the same."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:918
+#: GrampsWebSync/grampswebsync.py:991
 msgid "Applying changes to local database ..."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:920
+#: GrampsWebSync/grampswebsync.py:993
 msgid "No changes to apply to local database."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:923
+#: GrampsWebSync/grampswebsync.py:996
 msgid "Applying changes to remote database ..."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:926
+#: GrampsWebSync/grampswebsync.py:999
 msgid "No changes to apply to remote database."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:933
+#: GrampsWebSync/grampswebsync.py:1006
 msgid "Successfully applied changes to local database."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:962
+#: GrampsWebSync/grampswebsync.py:1035
 msgid "Missing locally"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:965
+#: GrampsWebSync/grampswebsync.py:1038
 msgid "Missing remotely"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1003
-#, python-format
-msgid "Downloading %s media file(s)"
-msgstr ""
+#: GrampsWebSync/grampswebsync.py:1076
+#, fuzzy, python-format
+#| msgid "Downloading files"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "Sťahovanie súborov"
+msgstr[1] "Sťahovanie súborov"
+msgstr[2] "Sťahovanie súborov"
 
-#: GrampsWebSync/grampswebsync.py:1011
-#, python-format
-msgid "Uploading %s media file(s)"
-msgstr ""
+#: GrampsWebSync/grampswebsync.py:1084
+#, fuzzy, python-format
+#| msgid "Downloading files"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "Sťahovanie súborov"
+msgstr[1] "Sťahovanie súborov"
+msgstr[2] "Sťahovanie súborov"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
