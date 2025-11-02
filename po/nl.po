@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-09-13 09:49+0000\n"
+"PO-Revision-Date: 2025-10-14 05:07+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -15136,77 +15136,70 @@ msgid "Media files are in sync."
 msgstr "Mediabestanden zijn gesynchroniseerd."
 
 #: GrampsWebSync/grampswebsync.py:332
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "%s mediabestanden succesvol gedownload."
+msgstr[0] "%s mediabestand succesvol gedownload."
 msgstr[1] "%s mediabestanden succesvol gedownload."
 
 #: GrampsWebSync/grampswebsync.py:335
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
-msgstr[0] "%s fouten opgetreden tijdens het downloaden."
+msgstr[0] "%s fout opgetreden tijdens het downloaden."
 msgstr[1] "%s fouten opgetreden tijdens het downloaden."
 
 #: GrampsWebSync/grampswebsync.py:341
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "%s mediabestanden met succes geüploadet."
+msgstr[0] "%s mediabestand met succes geüploadet."
 msgstr[1] "%s mediabestanden met succes geüploadet."
 
 #: GrampsWebSync/grampswebsync.py:344
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
-msgstr[0] "%s fouten opgetreden tijdens het uploaden."
+msgstr[0] "%s fout opgetreden tijdens het uploaden."
 msgstr[1] "%s fouten opgetreden tijdens het uploaden."
 
 #: GrampsWebSync/grampswebsync.py:362
 msgid "Authentication failed. Please check your username and password."
-msgstr ""
+msgstr "Authenticatie mislukt. Controleer uw gebruikersnaam en wachtwoord."
 
 #: GrampsWebSync/grampswebsync.py:366
 msgid "Access forbidden. Please check username and password."
-msgstr ""
+msgstr "Toegang verboden. Controleer gebruikersnaam en wachtwoord."
 
 #: GrampsWebSync/grampswebsync.py:370
 msgid "GrampsWeb service not found. Please check the URL."
-msgstr ""
+msgstr "GrampsWeb-service niet gevonden. Controleer de URL."
 
 #: GrampsWebSync/grampswebsync.py:374
 msgid "Too many requests, please try again in a few seconds."
-msgstr ""
+msgstr "Te veel verzoeken, probeer het over een paar seconden opnieuw."
 
 #: GrampsWebSync/grampswebsync.py:378
-#, fuzzy
-#| msgid "AI provider is disabled"
 msgid "GrampsWeb tree is disabled."
-msgstr "AI-leverancier is uitgeschakeld"
+msgstr "GrampsWeb stamboom is uitgeschakeld."
 
 #: GrampsWebSync/grampswebsync.py:382
 #, python-format
 msgid "Server error %s. Please check your connection."
-msgstr ""
+msgstr "Serverfout %s. Controleer uw verbinding."
 
 #: GrampsWebSync/grampswebsync.py:387
 msgid "Connection failed. Please check the URL and your internet connection."
-msgstr ""
+msgstr "Verbinding mislukt. Controleer de URL en uw internetverbinding."
 
 #: GrampsWebSync/grampswebsync.py:391
 msgid "Invalid server response. Please check the URL."
-msgstr ""
+msgstr "Ongeldige serverreactie. Controleer de URL."
 
 #: GrampsWebSync/grampswebsync.py:394
-#, fuzzy, python-format
-#| msgid "GetGOV error: %s"
+#, python-format
 msgid "Unexpected error: %s"
-msgstr "GetGOV-fout: %s"
+msgstr "Onverwachte fout: %s"
 
 #: GrampsWebSync/grampswebsync.py:438 GrampsWebSync/grampswebsync.py:459
 msgid "Error accessing media object."
@@ -15247,11 +15240,8 @@ msgid "URL error while connecting to server."
 msgstr "URL-fout tijdens het verbinden met de server."
 
 #: GrampsWebSync/grampswebsync.py:557
-#, fuzzy
-#| msgid "Unable to synchronize changes to server: objects have been modified."
 msgid "Unable to synchronize changes to server."
-msgstr ""
-"Kan wijzigingen naar de server niet synchroniseren: objecten zijn gewijzigd."
+msgstr "Kan wijzigingen naar de server niet synchroniseren."
 
 #: GrampsWebSync/grampswebsync.py:585
 msgid "Continue without transport encryption?"
@@ -15379,20 +15369,18 @@ msgid "Missing remotely"
 msgstr "Extern vermist"
 
 #: GrampsWebSync/grampswebsync.py:1076
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "%s media-bestand(en) downloaden"
-msgstr[1] "%s media-bestand(en) downloaden"
+msgstr[0] "%s mediabestand downloaden"
+msgstr[1] "%s mediabestanden downloaden"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "%s media-bestand(en) uploaden"
-msgstr[1] "%s media-bestand(en) uploaden"
+msgstr[0] "%s mediabestand uploaden"
+msgstr[1] "%s mediabestanden uploaden"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
