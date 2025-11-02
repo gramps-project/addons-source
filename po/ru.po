@@ -12,24 +12,26 @@
 # Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
 # Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
 # Artem Glebov <artem.glebov@gmail.com>, 2013.
-#
+# Stanislav <bsv999@mail.ru>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-12 10:22-0700\n"
-"PO-Revision-Date: 2018-12-04 16:36+0300\n"
-"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
-"Language-Team: Russian\n"
+"PO-Revision-Date: 2025-10-10 19:07+0000\n"
+"Last-Translator: Stanislav <bsv999@mail.ru>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"Plural-Forms: nplurals=3; plural="
+"(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? "
+"1 : 2);\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -45,7 +47,7 @@ msgstr "Тип имени"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr "Основное название"
+msgstr "Основное имя"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -71,7 +73,7 @@ msgstr "Поколение "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr "Количество найденных предков"
+msgstr "Количество найденных предков "
 
 #: AncestorFill/AncestorFill.py:207
 #, fuzzy
@@ -87,7 +89,7 @@ msgstr "Количество найденных предков"
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
-msgstr "Количество предков (теоретическое) "
+msgstr "Количество теоретических предков "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
@@ -263,7 +265,7 @@ msgstr "Изображение для людей мужского пола."
 
 #: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
-msgstr "Изображение для людей женского пола."
+msgstr "Изображение для людей женского пола"
 
 #: AvatarGenerator/AvatarGenerator.py:95
 msgid "Remove images from people"
@@ -321,7 +323,7 @@ msgstr "Было добавлено {} аватар."
 
 #: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
-msgstr "Нет необходимости добавлять аватары."
+msgstr "Нет необходимости добавлять аватары. "
 
 #: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
@@ -348,11 +350,12 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
-msgstr ""
+msgstr " 👣 Следующие шаги:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
+#, fuzzy
 msgid "  •  From the \"Family Trees\" menu,"
-msgstr ""
+msgstr "  • Из меню \"Семейные Деревья\","
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
@@ -1144,10 +1147,9 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1676
 #: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing to %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Ошибка завписи в %s"
+msgstr "Ошибка завписи в {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
@@ -1289,10 +1291,9 @@ msgstr ""
 "Хотите создать его?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-brace-format
-#| msgid "Failed to create %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "Не удалось создать %s: %s"
+msgstr "Не удалось создать {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, fuzzy, python-format
@@ -1608,10 +1609,8 @@ msgid "Chromosome "
 msgstr ""
 
 #: DNA/dnasegmentmap.py:552
-#, fuzzy
-#| msgid "Wait for me"
 msgid " Map for "
-msgstr "Жди меня"
+msgstr " Карта для меня "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
@@ -1644,10 +1643,8 @@ msgid " : Starts at "
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1063
-#, fuzzy
-#| msgid "and %s "
 msgid " and ends at "
-msgstr "и %s "
+msgstr " и окончания для "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
@@ -1660,18 +1657,18 @@ msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship to Father"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Отношение к отцу"
+msgstr ""
+"\n"
+"Отношение: {0} "
 
 #: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestor"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Предок"
+msgstr " Предок: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -1738,10 +1735,8 @@ msgid "Largest Segment"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:159
-#, fuzzy
-#| msgid " source(s)"
 msgid "Source(s)"
-msgstr " источник(и)"
+msgstr "Источник(и)"
 
 #: DNAMatches/dnamatches.py:194
 #, fuzzy
@@ -1967,10 +1962,8 @@ msgid "Reference Date or Date Range"
 msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
-#, fuzzy
-#| msgid " by Gramps "
 msgid "a valid Gramps date"
-msgstr " Gramps "
+msgstr "действительная для Gramps дата"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
@@ -2715,10 +2708,9 @@ msgid "Writing %s reports..."
 msgstr "Запись %s отчётов..."
 
 #: DescendantBooks/DescendantBookReport.py:442
-#, fuzzy, python-brace-format
-#| msgid "%(report_count)s. Descendant Report for %(person_name)s"
+#, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr "%(report_count)s. Отчёт о потомках для %(person_name)s"
+msgstr "{report_count}. Потомки для {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
@@ -2795,10 +2787,9 @@ msgid "Report, Generation, Person, Name"
 msgstr "Смотри отчёт : %s, Поколение : %s, Лицо : %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr "Смотри отчёт : %s, Поколение : %s, Лицо : %s"
+msgstr "Смотри отчёт : {report}, Поколение : {generation}, Лицо : {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
@@ -2807,16 +2798,14 @@ msgid "Report appearances for %s"
 msgstr "Отчёт о появлении %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Смотри отчёт : %s, Поколение : %s, Лицо : %s"
+msgstr "Супруг(а): Отчёт: {report}, Поколение: {generation}, Лицо: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
-#, fuzzy, python-brace-format
-#| msgid "See Report : %s, Generation : %s, Person : %s"
+#, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr "Смотри отчёт : %s, Поколение : %s, Лицо : %s"
+msgstr "Отчёт: {report}, Поколение: {generation}, Лицо: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
@@ -4994,8 +4983,8 @@ msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
 msgstr ""
-"Ваше изображение успешно преобразовано. Исходный файл удалён, база данных "
-"теперь указывает на новое изображение."
+"Ваше изображение успешно преобразовано, исходный файл удалён, полный путь "
+"обновлён!"
 
 #: EditExifMetadata/editexifmetadata.py:812
 msgid ""
@@ -5124,15 +5113,10 @@ msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 msgstr "Неверная долгота (пример: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr ""
-"ВНИМАНИЕ!  Произвести полное удаление данных Exif для этого изображения?"
+msgstr "ВНИМАНИЕ!  Вы полностью удалите данных Exif для этого изображения."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
@@ -5140,15 +5124,10 @@ msgid "Delete?"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
-msgstr ""
-"ВНИМАНИЕ!  Произвести полное удаление данных Exif для этого изображения?"
+msgstr "ВНИМАНИЕ!  Вы полностью удалите данные GPS для этого изображения."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
@@ -5886,10 +5865,8 @@ msgstr ""
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
-#, fuzzy
-#| msgid "Change active person?"
 msgid "The active Person"
-msgstr "Изменить активное лицо?"
+msgstr "Активное лицо"
 
 #: FilterRules/activepersonrule.py:47
 #, fuzzy
@@ -5954,11 +5931,11 @@ msgstr "Семьи подходящие под <фильтр событий>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
-msgstr "Выбирает семьи, которые подходят под фильтр событий."
+msgstr "Выбирает семьи, которые подходят под фильтр событий"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
-msgstr "Выбирает семьи, которые подходят под фильтр событий"
+msgstr "Выбирает семьи, подходящие под фильтр событий"
 
 #: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
@@ -6031,46 +6008,46 @@ msgstr "Включать родителей из найденных семей."
 
 #: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
 msgid "Family Filter name:"
-msgstr "Название фильтра семей"
+msgstr "Название фильтра семей:"
 
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:26
 #: FilterRules/isfamilyfiltermatchevent.py:63
 #: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
-msgstr "События семей подходящие под <фильтр семей>"
+msgstr "События семей, подходящие под <фильтр семей>"
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 #: FilterRules/isrelatedwithfiltermatch.py:53
 msgid "People related to <filter>"
-msgstr "Люди связанные с <фильтром>"
+msgstr "Люди, связанные с <фильтром>"
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
 #: FilterRules/isrelatedwithfiltermatch.py:55
 msgid "Matches people who are related to anybody matched by a person filter"
-msgstr "Выбирает людей связанных с кем-либо из результата фильтра лиц"
+msgstr "Выбирает людей, связанных с кем-либо из результата фильтра лиц"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
+#, fuzzy
 msgid "Multiple Parents Filter"
-msgstr ""
+msgstr "Фильтр нескольких родителей"
 
 #: FilterRules/multipleparents.py:42
+#, fuzzy
 msgid "People with multiple parent records"
-msgstr ""
+msgstr "Люди с несколькими родительскими записями"
 
 #: FilterRules/multipleparents.py:43
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches people who have more than one set of parents"
-msgstr "Выбирает людей с событиями с указанной ролью"
+msgstr "Выбирает людей, которые имеют более одного набора родителей"
 
 #: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
 msgid "People with <count> of <event>"
-msgstr ""
+msgstr "Люди с <количеством> <событий>"
 
 #: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
 msgid "Matches persons which have events of given type and number."
-msgstr ""
+msgstr "Выбирает людей, которые имеют события определенного типа и количества."
 
 #: FilterRules2/matrilinealprogenitrix.gpr.py:25
 #: FilterRules2/matrilinealprogenitrix.py:45
@@ -19354,10 +19331,8 @@ msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
-#, fuzzy
-#| msgid "This Place is not used!"
 msgid "The place was not found."
-msgstr "Это место не используется!"
+msgstr "Место не найдено."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
@@ -19726,10 +19701,8 @@ msgid "JSONB support"
 msgstr "Экспорт JSON"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:236
-#, fuzzy
-#| msgid "Version %s"
 msgid "Version warning"
-msgstr "Версия %s"
+msgstr "Предупреждение версии"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:237
 #, python-format
@@ -22344,7 +22317,7 @@ msgstr "%(male_name)s усыновлён в %(year)s в %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:483
 #, python-format
 msgid "%(female_name)s was adopted in %(year)s at %(place)s."
-msgstr "%(female_name)s усыновлена  %(year)s в %(place)s."
+msgstr "%(female_name)s усыновлен(а) в %(year)s в %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:486
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:539
@@ -24307,14 +24280,8 @@ msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
 msgstr ""
 
 #: markdown_place_history_formatter.py:58
-#, fuzzy
-#| msgid ""
-#| "Found relation #%d: \n"
-#| "   "
 msgid "Foundation date:"
-msgstr ""
-"Найдена связь #%d: \n"
-"   "
+msgstr "Дата основания:"
 
 #: markdown_place_history_formatter.py:60
 #, fuzzy
