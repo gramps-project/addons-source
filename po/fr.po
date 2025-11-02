@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-09-20 19:02+0000\n"
+"PO-Revision-Date: 2025-10-13 04:07+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -15125,35 +15125,31 @@ msgid "Media files are in sync."
 msgstr "Les fichiers media sont synchronisés."
 
 #: GrampsWebSync/grampswebsync.py:332
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Téléchargement réussi de %s fichiers media."
+msgstr[0] "Téléchargement réussi de %s fichier medium."
 msgstr[1] "Téléchargement réussi de %s fichiers media."
 
 #: GrampsWebSync/grampswebsync.py:335
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
-msgstr[0] "%s erreurs rencontrées lors du téléchargement."
+msgstr[0] "%s erreur rencontrée lors du téléchargement."
 msgstr[1] "%s erreurs rencontrées lors du téléchargement."
 
 #: GrampsWebSync/grampswebsync.py:341
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Téléchargement réussi de %s fichiers media."
+msgstr[0] "Téléchargement réussi de %s fichier medium."
 msgstr[1] "Téléchargement réussi de %s fichiers media."
 
 #: GrampsWebSync/grampswebsync.py:344
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
-msgstr[0] "%s erreurs lors du téléchargement."
+msgstr[0] "%s erreur lors du téléchargement."
 msgstr[1] "%s erreurs lors du téléchargement."
 
 #: GrampsWebSync/grampswebsync.py:362
@@ -15235,12 +15231,8 @@ msgid "URL error while connecting to server."
 msgstr "Erreur d'URL en se connectant au serveur."
 
 #: GrampsWebSync/grampswebsync.py:557
-#, fuzzy
-#| msgid "Unable to synchronize changes to server: objects have been modified."
 msgid "Unable to synchronize changes to server."
-msgstr ""
-"Impossible de synchroniser les changements au serveur : les objets ont été "
-"modifiés."
+msgstr "Impossible de synchroniser les changements au serveur."
 
 #: GrampsWebSync/grampswebsync.py:585
 msgid "Continue without transport encryption?"
@@ -15367,20 +15359,18 @@ msgid "Missing remotely"
 msgstr "Manque sur le serveur distant"
 
 #: GrampsWebSync/grampswebsync.py:1076
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "Téléchargement de %s fichier(s) media"
-msgstr[1] "Téléchargement de %s fichier(s) media"
+msgstr[0] "Téléchargement de %s fichier medium"
+msgstr[1] "Téléchargement de %s fichiers media"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "Téléchargement du(es) fichier(s) medium(a) %s"
-msgstr[1] "Téléchargement du(es) fichier(s) medium(a) %s"
+msgstr[0] "Téléchargement de %s fichier medium"
+msgstr[1] "Téléchargement de %s fichiers media"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -18515,7 +18505,7 @@ msgstr "Détecter les visages (le module OpenCV est requis)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
 msgid "XMP Region Name"
-msgstr ""
+msgstr "Nom de la région XMP"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
@@ -18541,13 +18531,15 @@ msgstr "Détection terminée"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:955
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
-msgstr ""
+msgstr "Une autre région de cette image est associée à {name}. La supprimer ?"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:958
 #, python-brace-format
 msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr ""
+"{count} autres régions de cette image sont associées à {name}. Les supprimer "
+"?"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1110
 #, python-format
@@ -18557,12 +18549,12 @@ msgstr "Individu masculin|Décédé le %s"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1112
 #, python-format
 msgid "Female person|Dead at %s"
-msgstr ""
+msgstr "Femme|Décédée le %s"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1114
 #, python-format
 msgid "Unknown gender person|Dead at %s"
-msgstr ""
+msgstr "Individu|Décédé le %s"
 
 #: PhpGedView/phpgedview.glade:12
 msgid "- default -"
@@ -19681,7 +19673,7 @@ msgstr "Base de données PostgreSQL"
 #: PostgreSQLEnhanced/concurrency.py:479
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
-msgstr ""
+msgstr "L'objet {obj_type}:{handle} a été modifié par un autre utilisateur"
 
 #: PostgreSQLEnhanced/migration.py:168
 msgid "Starting migration..."
@@ -19699,7 +19691,7 @@ msgstr "%s objets {obj_type} migrés"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
-msgstr ""
+msgstr "Migration terminée !"
 
 #: PostgreSQLEnhanced/migration.py:438
 msgid "Starting upgrade..."
@@ -19716,7 +19708,7 @@ msgstr "Création des indexs…"
 
 #: PostgreSQLEnhanced/migration.py:489
 msgid "Upgrade completed!"
-msgstr ""
+msgstr "Mise à niveau terminée !"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
 msgid "PostgreSQL Enhanced"
