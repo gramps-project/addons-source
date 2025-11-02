@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Gramps package.
 #
 # Illia Maier <illia@maier.page>, 2024.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2025.
 # Oleh Petriv, 2013.
 # Максим Горпиніч <maksimgorpinic2005a@gmail.com>, 2025.
 # Illia Maier <Illia-M@users.noreply.hosted.weblate.org>, 2025.
@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-10-13 04:07+0000\n"
-"Last-Translator: Максим Горпиніч <gorpinicmaksim0@gmail.com>\n"
+"PO-Revision-Date: 2025-10-20 04:58+0000\n"
+"Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -15270,9 +15270,9 @@ msgstr[2] "Завантаження %s медіафайлів"
 #, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "Завантаження %s медіафайл"
-msgstr[1] "Завантаження %s медіафайли"
-msgstr[2] "Завантаження %s медіафайлів"
+msgstr[0] "Відвантаження %s медіафайлу"
+msgstr[1] "Відвантаження %s медіафайлів"
+msgstr[2] "Відвантаження %s медіафайлів"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
