@@ -138,8 +138,7 @@ You can get the start point of the genealogy tree using the `start_point` tool.
 """
 
 GRAMPS_AI_MODEL_NAME = os.environ.get("GRAMPS_AI_MODEL_NAME")
-GRAMPS_AI_MODEL_URL = os.environ.get("GRAMPS_AI_MODEL_URL")
-
+GRAMPS_AI_MODEL_URL = os.environ.get("GRAMPS_AI_MODEL_URL", "http://localhost:11434")
 
 # ===
 # ChatBot class gets initialized when a Gramps database
@@ -417,6 +416,9 @@ class ChatBot(IChatLogic):
         including notes.
         """
         person_obj = self.db.get_person_from_handle(person_handle)
+        # Check if the person is marked as private
+        if person_obj.get_privacy():
+            return {"error": "Person data is private and cannot be accessed."}
         data = dict(self.db.get_raw_person_data(person_handle))
         notes = []
         for note_handle in person_obj.get_note_list():
