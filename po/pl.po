@@ -9,13 +9,14 @@
 # WaldiS <sto@tutanota.de>, 2025.
 # Krystian Safjan <ksafjan@gmail.com>, 2025.
 # Artur <wy66m6xm@anonaddy.me>, 2025.
+# Marcin Stefański <m_stefanski@icloud.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-10-14 05:07+0000\n"
-"Last-Translator: Artur <wy66m6xm@anonaddy.me>\n"
+"PO-Revision-Date: 2025-11-01 19:51+0000\n"
+"Last-Translator: Marcin Stefański <m_stefanski@icloud.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural="
 "(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
@@ -1208,15 +1209,15 @@ msgstr "Kolor tła z możliwością rozwijania dla mężczyzn"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
 msgid "RGB-color for male expandable box background."
-msgstr ""
+msgstr "Kolor RGB dla męskich rozszerzalnych kafelków."
 
 #: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
-msgstr ""
+msgstr "Kobiece tło"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr ""
+msgstr "Kolor RGB dla kobiecych kafelków."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
@@ -1224,7 +1225,7 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:861
 msgid "RGB-color for female expandable box background."
-msgstr ""
+msgstr "Kolor RGB dla kobiecych rozszerzalnych kafelków."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
