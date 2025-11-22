@@ -49,6 +49,7 @@ from gramps.gen.lib import (
 )
 from gramps.gen.lib.json_utils import string_to_object
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.utils.libformatting import ImportInfo
 
 _ = glocale.translation.sgettext
 
@@ -95,6 +96,10 @@ def importData(db, filename, user):
                     line = fp.readline()
     except EnvironmentError as err:
         user.notify_error(_("%s could not be opened\n") % filename, str(err))
+        return None
+    finally:
+        db.enable_signals()
 
-    db.enable_signals()
     db.request_rebuild()
+
+    return ImportInfo({_("Results"): _("done")})
