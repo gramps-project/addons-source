@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 19:25-0700\n"
+"POT-Creation-Date: 2025-11-02 08:48-0800\n"
 "PO-Revision-Date: 2025-10-14 05:07+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
@@ -177,7 +177,8 @@ msgstr "Koppelt een gedeelde bron aan meerdere objecten."
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetAttributeTool/SetAttributeTool.py:71 SetPrivacyTool/SetPrivacyTool.py:312
+#: RelID/relation_tab.py:310 SetAttributeTool/SetAttributeTool.py:71
+#: SetPrivacyTool/SetPrivacyTool.py:312
 msgid "Select filter to restrict people"
 msgstr "Selecteer filter om aantal mensen te beperken"
 
@@ -981,6 +982,47 @@ msgstr ""
 #: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
 msgstr "Selectie bewerken"
+
+#: ChatWithTree/ChatWithTree.gpr.py:9
+msgid "Chat With Tree Interactive Addon"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.gpr.py:10
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.gpr.py:18
+msgid "Chat With Tree"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:103
+#, fuzzy
+#| msgid "Database Backend"
+msgid "Database change detected"
+msgstr "Database-backend"
+
+#: ChatWithTree/ChatWithTree.py:148
+msgid "Type a message..."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:152
+msgid "Send"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:159
+msgid "Chat with Tree initialized. Type /help for help."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:314
+msgid ""
+"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+"select a database."
+msgstr ""
+
+#: ChatWithTree/chatwithllm.py:78
+msgid "Tree: '{}'"
+msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -1813,7 +1855,7 @@ msgid "Surname, Given"
 msgstr "Achternaam, voornaam"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
-#: RelID/relation_tab.py:126
+#: RelID/relation_tab.py:363
 msgid "Save"
 msgstr "Opslaan"
 
@@ -4990,8 +5032,8 @@ msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
 msgstr ""
-"WAARSCHUWING: U staat op het punt deze afbeelding te converteren naar een ."
-"jpeg-afbeelding. Weet u zeker dat u dit wilt doen?"
+"WAARSCHUWING: U staat op het punt deze afbeelding te converteren naar "
+"een .jpeg-afbeelding. Weet u zeker dat u dit wilt doen?"
 
 #: EditExifMetadata/editexifmetadata.py:726
 msgid "Convert and Delete"
@@ -7498,7 +7540,7 @@ msgstr "9. Gehuwd of weduwe"
 #: Form/form_gb.xml.h:459 Form/form_gb.xml.h:487 Form/form_gb.xml.h:519
 #: Form/form_gb.xml.h:558 Form/form_gb.xml.h:580 Form/form_gb.xml.h:609
 #: Form/form_us.xml.h:1427 Form/form_us.xml.h:1965 Form/form_us.xml.h:1984
-#: Form/form_us.xml.h:2004 RelID/relation_tab.py:111
+#: Form/form_us.xml.h:2004 RelID/relation_tab.py:340
 msgid "Relation"
 msgstr "Relatie"
 
@@ -9554,6 +9596,7 @@ msgstr "Rang, beroep of werk"
 
 #: Form/form_gb.xml.h:439 Form/form_gb.xml.h:466 Form/form_gb.xml.h:494
 #: Form/form_gb.xml.h:531 Form/form_gb.xml.h:568 Form/form_us.xml.h:1497
+#: RelID/relation_tab.py:448
 msgid "Disabled"
 msgstr "Gehandicapt"
 
@@ -11315,7 +11358,7 @@ msgid "Enumeration District No."
 msgstr "Opsomming district nr."
 
 #: Form/form_us.xml.h:649 Form/form_us.xml.h:1013 Form/form_us.xml.h:2291
-#: Form/form_us.xml.h:2320 RelID/relation_tab.py:116
+#: Form/form_us.xml.h:2320 RelID/relation_tab.py:345
 msgid "Rank"
 msgstr "Rang"
 
@@ -15886,8 +15929,8 @@ msgstr "Bestandspad"
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
-"has to start and end with an alphanumeric character.The file extention '."
-"html' is added by the report."
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
 msgstr ""
 "Voor de bestandsnaam zijn alleen Engelse letters A-Z, a-z en cijfers 0-9 "
 "toegestaan, evenals de spatie, onderstreping en koppelteken. De bestandsnaam "
@@ -17754,8 +17797,8 @@ msgstr "Markeringsverbindingslijn"
 
 #: NetworkChart/NetworkChart.py:1056
 msgid ""
-"RGB-color for the highlighted path between two individuals.  If the graph."
-"inverts, reverse the order to change."
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
 msgstr ""
 "RGB-kleur voor het gemarkeerde pad tussen twee personen.Als de grafiek "
 "omkeert, keer dan de volgorde om."
@@ -18515,7 +18558,7 @@ msgstr "XMP Regionaam"
 msgid "Set as active person"
 msgstr "Stel in als actieve persoon"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:97
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:633
 msgid "_Select"
 msgstr "_Selecteer"
 
@@ -19791,8 +19834,8 @@ msgstr "Verbeterde zoekopdrachten vereisen JSONB-ondersteuning"
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1206
 msgid "Full-text search requires JSONB support or search capabilities"
 msgstr ""
-"Voor zoeken in volledige tekst zijn JSONB-ondersteuning of -"
-"zoekmogelijkheden vereist"
+"Voor zoeken in volledige tekst zijn JSONB-ondersteuning of "
+"-zoekmogelijkheden vereist"
 
 #: PostgreSQLEnhanced/queries.py:364
 msgid "pg_trgm extension required for duplicate detection"
@@ -19907,13 +19950,13 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
 msgid ""
-"<i>Prerequistes required for the following <a href=\"https://gramps-project."
-"org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
-"work</i>:\n"
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
 msgstr ""
-"<i>Noodzakelijke vereisten om de volgende <a href=\"https://gramps-project."
-"org/wiki/index.php?title=Third-party_Addons\">Uitbreidingen van derden</a> "
-"te laten functioneren</i>:\n"
+"<i>Noodzakelijke vereisten om de volgende <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Uitbreidingen van "
+"derden</a> te laten functioneren</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
@@ -20196,9 +20239,9 @@ msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
-"Voor add-on Networkchart biedt lettertype <a href=\"https://www.fontsquirrel."
-"com/fonts/white-rabbit\"> White Rabbit </a> een buitengewoon leesbaar "
-"resultaat.\n"
+"Voor add-on Networkchart biedt lettertype <a href=\"https://"
+"www.fontsquirrel.com/fonts/white-rabbit\"> White Rabbit </a> een "
+"buitengewoon leesbaar resultaat.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
@@ -20542,74 +20585,189 @@ msgstr "Herbouwde Gramps-typen"
 msgid "Found %d custom event types"
 msgstr "%d aangepaste gebeurtenistypen gevonden"
 
-#: RelID/relation_tab.gpr.py:36
+#: RelID/relation_tab.gpr.py:35
 msgid "Display relations and distances with the home person"
 msgstr "Toon relaties en afstanden met de centrale persoon"
 
-#: RelID/relation_tab.gpr.py:37
+#: RelID/relation_tab.gpr.py:36
 msgid "Will display relational informations with the home person"
 msgstr "Geeft relationele informatie weer met de centrale persoon"
 
-#: RelID/relation_tab.py:75
+#: RelID/relation_tab.py:297
 msgid "Relation and distances with root"
 msgstr "Relatie en afstanden met begin"
 
-#: RelID/relation_tab.py:92
-msgid "Folder Chooser"
-msgstr "Mapkiezer"
+#: RelID/relation_tab.py:315
+#, fuzzy
+#| msgid "Filtering"
+msgid "Filter rule"
+msgstr "Filteren"
 
-#: RelID/relation_tab.py:99
-msgid "Please, select a folder"
-msgstr "Selecteer een map"
+#: RelID/relation_tab.py:319
+#, fuzzy
+#| msgid "Selection with a filter"
+msgid "Select the filter rule"
+msgstr "Selectie met een filter"
 
-#: RelID/relation_tab.py:110
+#: RelID/relation_tab.py:321
+#, fuzzy
+#| msgid "Descendant generations"
+msgid "Deep generations"
+msgstr "Afstammelingsgeneraties"
+
+#: RelID/relation_tab.py:322
+msgid "How deep should we go?"
+msgstr ""
+
+#: RelID/relation_tab.py:339
 msgid "Rel_id"
 msgstr "Rel_id"
 
-#: RelID/relation_tab.py:113
+#: RelID/relation_tab.py:342
 msgid "up"
 msgstr "omhoog"
 
-#: RelID/relation_tab.py:114
+#: RelID/relation_tab.py:343
 msgid "down"
 msgstr "omlaag"
 
-#: RelID/relation_tab.py:115
+#: RelID/relation_tab.py:344
 msgid "Common MRA"
 msgstr "Gemeenschappelijke MRA"
 
-#: RelID/relation_tab.py:117
+#: RelID/relation_tab.py:346
 msgid "Period"
 msgstr "Periode"
 
-#: RelID/relation_tab.py:164
+#: RelID/relation_tab.py:350
+#, fuzzy
+#| msgid "Shared Segments"
+msgid "Shared Subtree"
+msgstr "Gedeelde segmenten"
+
+#: RelID/relation_tab.py:351
+#, fuzzy
+#| msgid "Center"
+msgid "Centrality"
+msgstr "Midden"
+
+#: RelID/relation_tab.py:352
+#, fuzzy
+#| msgid "Ancestor"
+msgid "Unique Ancestors"
+msgstr "Voorouder"
+
+#: RelID/relation_tab.py:353
+#, fuzzy
+#| msgid "Surname, Given"
+msgid "Surname Diversity"
+msgstr "Achternaam, voornaam"
+
+#: RelID/relation_tab.py:367
+msgid "Quit"
+msgstr ""
+
+#: RelID/relation_tab.py:376
+#, fuzzy
+#| msgid "No default_person"
+msgid "No default person set."
+msgstr "Geen begin_persoon"
+
+#: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
 msgstr "Een ogenblik geduld, filteren..."
 
-#: RelID/relation_tab.py:169
-msgid "No default_person"
-msgstr "Geen begin_persoon"
+#: RelID/relation_tab.py:446
+#, fuzzy
+#| msgid "Network Chart"
+msgid "Network Metrics"
+msgstr "Netwerk Grafiek"
 
-#: RelID/relation_tab.py:174
+#: RelID/relation_tab.py:447
+#, fuzzy
+#| msgid "Disabled"
+msgid "Enabled"
+msgstr "Gehandicapt"
+
+#: RelID/relation_tab.py:449
+#, fuzzy
+#| msgid "Generates a family network chart."
+msgid "Enable or disable family network metrics"
+msgstr "Genereert een familienetwerkgrafiek."
+
+#: RelID/relation_tab.py:483
 msgid "Generating relation map..."
 msgstr "Relatiekaart genereren..."
 
-#: RelID/relation_tab.py:190
-#, python-format
+#: RelID/relation_tab.py:497
 msgid ""
-"%d/%d \n"
-" %d/%d seconds \n"
-" %d/%d \n"
-"%f|\t%f"
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
 msgstr ""
-"%d/%d \n"
-" %d/%d seconden \n"
-" %d/%d \n"
-"%f|\t%f"
 
-#: RelID/relation_tab.py:308
-msgid "You do not have write rights on this folder"
-msgstr "U heeft geen schrijfrechten op deze map"
+#: RelID/relation_tab.py:498
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr ""
+
+#: RelID/relation_tab.py:615
+msgid "Total of handled entries : {len(self.stats_list)}\n"
+msgstr ""
+
+#: RelID/relation_tab.py:628
+msgid "Folder Chooser"
+msgstr "Mapkiezer"
+
+#: RelID/relation_tab.py:636
+msgid "Please, select a folder"
+msgstr "Selecteer een map"
+
+#: RelID/relation_tab.py:643
+#, fuzzy
+#| msgid "Alternate name"
+msgid "Foldername need"
+msgstr "Alternatieve naam"
+
+#: RelID/relation_tab.py:643
+#, fuzzy
+#| msgid "A note to be used for the custom page content.\n"
+msgid "Foldername will be used for saving the content."
+msgstr "Een notitie voor de aangepaste pagina-inhoud.\n"
+
+#: RelID/relation_tab.py:655
+msgid "Cannot set a valid location."
+msgstr ""
+
+#: RelID/relation_tab.py:655
+msgid "Did you set a foldername?"
+msgstr ""
+
+#: RelID/relation_tab.py:672
+#, python-brace-format
+msgid "Data saved to : {filename}"
+msgstr ""
+
+#: RelID/relation_tab.py:676
+#, fuzzy
+#| msgid "Failed to create %s: %s"
+msgid "Failed to save data."
+msgstr "Kan %s: %s niet aanmaken"
+
+#: RelID/relation_tab.py:689
+#, fuzzy
+#| msgid "Relationship to head"
+msgid "Relationships Map and Tab"
+msgstr "Relatie met het hoofd"
+
+#: RelID/relation_tab.py:772
+#, fuzzy
+#| msgid "Generates a family network chart."
+msgid "Enable family network metrics"
+msgstr "Genereert een familienetwerkgrafiek."
+
+#: RelID/relation_tab.py:774
+msgid "Whether to calculate and display family network metrics."
+msgstr ""
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
@@ -21979,10 +22137,10 @@ msgstr ""
 #: TMGimporter/importtmg.py:110
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer Addon."
-"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
-"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
-"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"Directly importing from TMG files is not supportedby the TMG Importer "
+"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
+"TMG project was created by:TMG version 5.x or greater.Your file:*.TMG - "
+"Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Direct importeren vanuit TMG-bestanden wordt niet ondersteund door de TMG-"
@@ -21994,10 +22152,10 @@ msgstr ""
 #: TMGimporter/importtmg.py:131
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer Addon."
-"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
-"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
-"Control File for TMG 1.2 and earlierPlease refer to:"
+"Directly importing from TMG files is not supportedby the TMG Importer "
+"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
+"TMG project was created by:TMG version 5.x or greater.Your file:*.VER - "
+"Version Control File for TMG 1.2 and earlierPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Direct importeren vanuit TMG-bestanden wordt niet ondersteund door de TMG-"
@@ -24271,6 +24429,21 @@ msgstr "Kolomen weergeven"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Pictogrammen weergeven"
+
+#, python-format
+#~ msgid ""
+#~ "%d/%d \n"
+#~ " %d/%d seconds \n"
+#~ " %d/%d \n"
+#~ "%f|\t%f"
+#~ msgstr ""
+#~ "%d/%d \n"
+#~ " %d/%d seconden \n"
+#~ " %d/%d \n"
+#~ "%f|\t%f"
+
+#~ msgid "You do not have write rights on this folder"
+#~ msgstr "U heeft geen schrijfrechten op deze map"
 
 #~ msgid "Error while parsing response from server."
 #~ msgstr "Fout tijdens het verwerken van de reactie van de server."

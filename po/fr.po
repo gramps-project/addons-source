@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 19:25-0700\n"
+"POT-Creation-Date: 2025-11-02 08:48-0800\n"
 "PO-Revision-Date: 2025-10-13 04:07+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
@@ -196,7 +196,8 @@ msgstr "Attache une source partagée à plusieurs objets."
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetAttributeTool/SetAttributeTool.py:71 SetPrivacyTool/SetPrivacyTool.py:312
+#: RelID/relation_tab.py:310 SetAttributeTool/SetAttributeTool.py:71
+#: SetPrivacyTool/SetPrivacyTool.py:312
 msgid "Select filter to restrict people"
 msgstr "Sélectionne un filtre pour restreindre les individus"
 
@@ -996,6 +997,45 @@ msgstr ""
 #: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
 msgstr "Édition de la sélection"
+
+#: ChatWithTree/ChatWithTree.gpr.py:9
+msgid "Chat With Tree Interactive Addon"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.gpr.py:10
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.gpr.py:18
+msgid "Chat With Tree"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:103
+msgid "Database change detected"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:148
+msgid "Type a message..."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:152
+msgid "Send"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:159
+msgid "Chat with Tree initialized. Type /help for help."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:314
+msgid ""
+"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+"select a database."
+msgstr ""
+
+#: ChatWithTree/chatwithllm.py:78
+msgid "Tree: '{}'"
+msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -1827,7 +1867,7 @@ msgid "Surname, Given"
 msgstr "Nom de famille, Prénom"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
-#: RelID/relation_tab.py:126
+#: RelID/relation_tab.py:363
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -7558,7 +7598,7 @@ msgstr "9. Marié(e) ou veuf(ve)"
 #: Form/form_gb.xml.h:459 Form/form_gb.xml.h:487 Form/form_gb.xml.h:519
 #: Form/form_gb.xml.h:558 Form/form_gb.xml.h:580 Form/form_gb.xml.h:609
 #: Form/form_us.xml.h:1427 Form/form_us.xml.h:1965 Form/form_us.xml.h:1984
-#: Form/form_us.xml.h:2004 RelID/relation_tab.py:111
+#: Form/form_us.xml.h:2004 RelID/relation_tab.py:340
 msgid "Relation"
 msgstr "Relation"
 
@@ -9581,6 +9621,7 @@ msgstr "Rang, profession, ou métier"
 
 #: Form/form_gb.xml.h:439 Form/form_gb.xml.h:466 Form/form_gb.xml.h:494
 #: Form/form_gb.xml.h:531 Form/form_gb.xml.h:568 Form/form_us.xml.h:1497
+#: RelID/relation_tab.py:448
 msgid "Disabled"
 msgstr "Non-actif"
 
@@ -11339,7 +11380,7 @@ msgid "Enumeration District No."
 msgstr "Numéro de district de recensement"
 
 #: Form/form_us.xml.h:649 Form/form_us.xml.h:1013 Form/form_us.xml.h:2291
-#: Form/form_us.xml.h:2320 RelID/relation_tab.py:116
+#: Form/form_us.xml.h:2320 RelID/relation_tab.py:345
 msgid "Rank"
 msgstr "Rang"
 
@@ -15882,8 +15923,8 @@ msgstr "Chemin du fichier"
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
-"has to start and end with an alphanumeric character.The file extention '."
-"html' is added by the report."
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
 msgstr ""
 "Pour le nom de fichier, seules les lettres A à Z, a à z et les chiffres de 0 "
 "à 9, ainsi que les espaces, le soulignement et le trait d'union sont "
@@ -17767,8 +17808,8 @@ msgstr "Ligne de raccordement en évidence"
 #: NetworkChart/NetworkChart.py:1056
 #, fuzzy
 msgid ""
-"RGB-color for the highlighted path between two individuals.  If the graph."
-"inverts, reverse the order to change."
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
 msgstr ""
 "Couleur RVB pour le chemin mis en évidence entre deux individus. If the "
 "graph.inverts, reverse the order to change."
@@ -18511,7 +18552,7 @@ msgstr "Nom de la région XMP"
 msgid "Set as active person"
 msgstr "Définir comme l’individu actif"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:97
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:633
 msgid "_Select"
 msgstr "_Sélectionner"
 
@@ -18538,8 +18579,8 @@ msgstr "Une autre région de cette image est associée à {name}. La supprimer�
 msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr ""
-"{count} autres régions de cette image sont associées à {name}. Les supprimer "
-"?"
+"{count} autres régions de cette image sont associées à {name}. Les "
+"supprimer ?"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1110
 #, python-format
@@ -19902,9 +19943,9 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
 msgid ""
-"<i>Prerequistes required for the following <a href=\"https://gramps-project."
-"org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
-"work</i>:\n"
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
 msgstr ""
 "<i>Prérequis nécessaires pour que les <a href=\"https://gramps-project.org/"
 "wiki/index.php?title=Third-party_Addons\">Extensions tierces suivantes</a> "
@@ -19968,10 +20009,11 @@ msgid ""
 "\n"
 msgstr ""
 "<i><a href=\"https://gramps-project.org/wiki/index.php/"
-"Comment_faire_une_sauvegarde\">Sauvegarde Gramps XML</a> Vous trouverez « "
-"Sauvegarder... » dans le menu « Arbres familiaux » de Gramps, sinon utiliser "
-"\"Exporter...\" dans le même menu, mais décochez l'option de confidentialité "
-"dans l'Assistant d'export afin d'exporter toutes les données.</i>\n"
+"Comment_faire_une_sauvegarde\">Sauvegarde Gramps XML</a> Vous trouverez "
+"« Sauvegarder... » dans le menu « Arbres familiaux » de Gramps, sinon "
+"utiliser \"Exporter...\" dans le même menu, mais décochez l'option de "
+"confidentialité dans l'Assistant d'export afin d'exporter toutes les données."
+"</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
@@ -20193,8 +20235,8 @@ msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
-"Pour le greffon « Networkchart », la police <a href=\"https://www."
-"fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> donne un résultat "
+"Pour le greffon « Networkchart », la police <a href=\"https://"
+"www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> donne un résultat "
 "extrêmement lisible.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
@@ -20540,74 +20582,189 @@ msgstr "Les types Gramps reconstruits"
 msgid "Found %d custom event types"
 msgstr "Trouvé %d type(s) d'événement personnalisé(s)"
 
-#: RelID/relation_tab.gpr.py:36
+#: RelID/relation_tab.gpr.py:35
 msgid "Display relations and distances with the home person"
 msgstr "Afficher les relations et distances avec la souche"
 
-#: RelID/relation_tab.gpr.py:37
+#: RelID/relation_tab.gpr.py:36
 msgid "Will display relational informations with the home person"
 msgstr "Affichera les informations relationnelles avec la souche"
 
-#: RelID/relation_tab.py:75
+#: RelID/relation_tab.py:297
 msgid "Relation and distances with root"
 msgstr "Relation et distances avec la racine"
 
-#: RelID/relation_tab.py:92
-msgid "Folder Chooser"
-msgstr "Sélection d'un répertoire"
+#: RelID/relation_tab.py:315
+#, fuzzy
+#| msgid "Filtering"
+msgid "Filter rule"
+msgstr "Filtrage"
 
-#: RelID/relation_tab.py:99
-msgid "Please, select a folder"
-msgstr "S'il vous plaît, sélectionnez un répertoire"
+#: RelID/relation_tab.py:319
+#, fuzzy
+#| msgid "Selection with a filter"
+msgid "Select the filter rule"
+msgstr "Sélection avec un filtre"
 
-#: RelID/relation_tab.py:110
+#: RelID/relation_tab.py:321
+#, fuzzy
+#| msgid "Descendant generations"
+msgid "Deep generations"
+msgstr "Générations de descendants"
+
+#: RelID/relation_tab.py:322
+msgid "How deep should we go?"
+msgstr ""
+
+#: RelID/relation_tab.py:339
 msgid "Rel_id"
 msgstr "Id_Rel"
 
-#: RelID/relation_tab.py:113
+#: RelID/relation_tab.py:342
 msgid "up"
 msgstr "haut"
 
-#: RelID/relation_tab.py:114
+#: RelID/relation_tab.py:343
 msgid "down"
 msgstr "bas"
 
-#: RelID/relation_tab.py:115
+#: RelID/relation_tab.py:344
 msgid "Common MRA"
 msgstr "Ancêtre commun"
 
-#: RelID/relation_tab.py:117
+#: RelID/relation_tab.py:346
 msgid "Period"
 msgstr "Période"
 
-#: RelID/relation_tab.py:164
+#: RelID/relation_tab.py:350
+#, fuzzy
+#| msgid "Shared Segments"
+msgid "Shared Subtree"
+msgstr "Segments partagés"
+
+#: RelID/relation_tab.py:351
+#, fuzzy
+#| msgid "Center"
+msgid "Centrality"
+msgstr "Centre"
+
+#: RelID/relation_tab.py:352
+#, fuzzy
+#| msgid "Ancestor"
+msgid "Unique Ancestors"
+msgstr "Ascendant"
+
+#: RelID/relation_tab.py:353
+#, fuzzy
+#| msgid "Surname, Given"
+msgid "Surname Diversity"
+msgstr "Nom de famille, Prénom"
+
+#: RelID/relation_tab.py:367
+msgid "Quit"
+msgstr ""
+
+#: RelID/relation_tab.py:376
+#, fuzzy
+#| msgid "No default_person"
+msgid "No default person set."
+msgstr "Pas de personne de départ (défaut)"
+
+#: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
 msgstr "Attendez, s'il vous plaît ..."
 
-#: RelID/relation_tab.py:169
-msgid "No default_person"
-msgstr "Pas de personne de départ (défaut)"
+#: RelID/relation_tab.py:446
+#, fuzzy
+#| msgid "Network Chart"
+msgid "Network Metrics"
+msgstr "Graphique réseau"
 
-#: RelID/relation_tab.py:174
+#: RelID/relation_tab.py:447
+#, fuzzy
+#| msgid "Disabled"
+msgid "Enabled"
+msgstr "Non-actif"
+
+#: RelID/relation_tab.py:449
+#, fuzzy
+#| msgid "Generates a family network chart."
+msgid "Enable or disable family network metrics"
+msgstr "Génère un graphique du réseau familial."
+
+#: RelID/relation_tab.py:483
 msgid "Generating relation map..."
 msgstr "Génération de la table de relation..."
 
-#: RelID/relation_tab.py:190
-#, python-format
+#: RelID/relation_tab.py:497
 msgid ""
-"%d/%d \n"
-" %d/%d seconds \n"
-" %d/%d \n"
-"%f|\t%f"
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
 msgstr ""
-"%d/%d \n"
-" %d/%d secondes \n"
-" %d/%d \n"
-"%f|\t%f"
 
-#: RelID/relation_tab.py:308
-msgid "You do not have write rights on this folder"
-msgstr "Vous n'avez pas les droits en écriture sur ce répertoire"
+#: RelID/relation_tab.py:498
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr ""
+
+#: RelID/relation_tab.py:615
+msgid "Total of handled entries : {len(self.stats_list)}\n"
+msgstr ""
+
+#: RelID/relation_tab.py:628
+msgid "Folder Chooser"
+msgstr "Sélection d'un répertoire"
+
+#: RelID/relation_tab.py:636
+msgid "Please, select a folder"
+msgstr "S'il vous plaît, sélectionnez un répertoire"
+
+#: RelID/relation_tab.py:643
+#, fuzzy
+#| msgid "Alternate name"
+msgid "Foldername need"
+msgstr "Non alternatif"
+
+#: RelID/relation_tab.py:643
+#, fuzzy
+#| msgid "A note to be used for the custom page content.\n"
+msgid "Foldername will be used for saving the content."
+msgstr "Une note à utiliser pour le contenu de la page personnalisée.\n"
+
+#: RelID/relation_tab.py:655
+msgid "Cannot set a valid location."
+msgstr ""
+
+#: RelID/relation_tab.py:655
+msgid "Did you set a foldername?"
+msgstr ""
+
+#: RelID/relation_tab.py:672
+#, python-brace-format
+msgid "Data saved to : {filename}"
+msgstr ""
+
+#: RelID/relation_tab.py:676
+#, fuzzy
+#| msgid "Failed to create %s: %s"
+msgid "Failed to save data."
+msgstr "Échec à a création de %s : %s"
+
+#: RelID/relation_tab.py:689
+#, fuzzy
+#| msgid "Relationship to head"
+msgid "Relationships Map and Tab"
+msgstr "Relation avec le chef"
+
+#: RelID/relation_tab.py:772
+#, fuzzy
+#| msgid "Generates a family network chart."
+msgid "Enable family network metrics"
+msgstr "Génère un graphique du réseau familial."
+
+#: RelID/relation_tab.py:774
+msgid "Whether to calculate and display family network metrics."
+msgstr ""
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
@@ -21976,10 +22133,10 @@ msgstr ""
 #: TMGimporter/importtmg.py:110
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer Addon."
-"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
-"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
-"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"Directly importing from TMG files is not supportedby the TMG Importer "
+"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
+"TMG project was created by:TMG version 5.x or greater.Your file:*.TMG - "
+"Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "L'import direct de fichiers TMG n'est pas pris en charge par le greffon TMG "
@@ -21991,15 +22148,15 @@ msgstr ""
 #: TMGimporter/importtmg.py:131
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer Addon."
-"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
-"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
-"Control File for TMG 1.2 and earlierPlease refer to:"
+"Directly importing from TMG files is not supportedby the TMG Importer "
+"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
+"TMG project was created by:TMG version 5.x or greater.Your file:*.VER - "
+"Version Control File for TMG 1.2 and earlierPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "L'import direct de fichiers TMG n'est pas pris en charge par le greffon "
-"d'import TMG. Vous devez utiliser une copie de sauvegarde du projet TMG (*."
-"sqz). Assurez-vous que votre projet TMG a été créé par TMG version 5.x ou "
+"d'import TMG. Vous devez utiliser une copie de sauvegarde du projet TMG "
+"(*.sqz). Assurez-vous que votre projet TMG a été créé par TMG version 5.x ou "
 "supérieure. Votre fichier : *.VER - Fichier de contrôle de version pour TMG "
 "1.2 et versions antérieures. Veuillez vous référer à : "
 "%(gramps_wiki_import_pjc_direct_url)s"
@@ -23648,8 +23805,8 @@ msgstr "Pas de titre"
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
 msgstr ""
-"Fournit une bibliothèque pour un accès générique à la base de données et gen."
-"lib."
+"Fournit une bibliothèque pour un accès générique à la base de données et "
+"gen.lib."
 
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
@@ -24245,6 +24402,21 @@ msgstr "Afficher les colonnes"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Afficher les icônes"
+
+#, python-format
+#~ msgid ""
+#~ "%d/%d \n"
+#~ " %d/%d seconds \n"
+#~ " %d/%d \n"
+#~ "%f|\t%f"
+#~ msgstr ""
+#~ "%d/%d \n"
+#~ " %d/%d secondes \n"
+#~ " %d/%d \n"
+#~ "%f|\t%f"
+
+#~ msgid "You do not have write rights on this folder"
+#~ msgstr "Vous n'avez pas les droits en écriture sur ce répertoire"
 
 #~ msgid "Error while parsing response from server."
 #~ msgstr "Erreur d'analyse de la réponse du serveur."

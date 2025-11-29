@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 19:25-0700\n"
+"POT-Creation-Date: 2025-11-02 08:48-0800\n"
 "PO-Revision-Date: 2025-10-26 23:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
@@ -188,7 +188,8 @@ msgstr "Hängt eine gemeinsame Quelle an mehrere Objekte an."
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetAttributeTool/SetAttributeTool.py:71 SetPrivacyTool/SetPrivacyTool.py:312
+#: RelID/relation_tab.py:310 SetAttributeTool/SetAttributeTool.py:71
+#: SetPrivacyTool/SetPrivacyTool.py:312
 msgid "Select filter to restrict people"
 msgstr "Filter wählen, um Personen einzugrenzen"
 
@@ -993,6 +994,47 @@ msgstr ""
 #: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
 msgstr "Auswahl bearbeiten"
+
+#: ChatWithTree/ChatWithTree.gpr.py:9
+msgid "Chat With Tree Interactive Addon"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.gpr.py:10
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.gpr.py:18
+msgid "Chat With Tree"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:103
+#, fuzzy
+#| msgid "Database Backend"
+msgid "Database change detected"
+msgstr "Datenbank-Backend"
+
+#: ChatWithTree/ChatWithTree.py:148
+msgid "Type a message..."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:152
+msgid "Send"
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:159
+msgid "Chat with Tree initialized. Type /help for help."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:314
+msgid ""
+"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+"select a database."
+msgstr ""
+
+#: ChatWithTree/chatwithllm.py:78
+msgid "Tree: '{}'"
+msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -1828,7 +1870,7 @@ msgid "Surname, Given"
 msgstr "Nachname, Vorname"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
-#: RelID/relation_tab.py:126
+#: RelID/relation_tab.py:363
 msgid "Save"
 msgstr "Speichern"
 
@@ -7519,7 +7561,7 @@ msgstr "9. Verheiratet oder verwitwet"
 #: Form/form_gb.xml.h:459 Form/form_gb.xml.h:487 Form/form_gb.xml.h:519
 #: Form/form_gb.xml.h:558 Form/form_gb.xml.h:580 Form/form_gb.xml.h:609
 #: Form/form_us.xml.h:1427 Form/form_us.xml.h:1965 Form/form_us.xml.h:1984
-#: Form/form_us.xml.h:2004 RelID/relation_tab.py:111
+#: Form/form_us.xml.h:2004 RelID/relation_tab.py:340
 msgid "Relation"
 msgstr "Beziehung"
 
@@ -9599,6 +9641,7 @@ msgstr "Rang, Beruf oder Tätigkeit"
 
 #: Form/form_gb.xml.h:439 Form/form_gb.xml.h:466 Form/form_gb.xml.h:494
 #: Form/form_gb.xml.h:531 Form/form_gb.xml.h:568 Form/form_us.xml.h:1497
+#: RelID/relation_tab.py:448
 msgid "Disabled"
 msgstr "Behindert"
 
@@ -11374,7 +11417,7 @@ msgid "Enumeration District No."
 msgstr "Zählbezirk Nr."
 
 #: Form/form_us.xml.h:649 Form/form_us.xml.h:1013 Form/form_us.xml.h:2291
-#: Form/form_us.xml.h:2320 RelID/relation_tab.py:116
+#: Form/form_us.xml.h:2320 RelID/relation_tab.py:345
 msgid "Rank"
 msgstr "Rang"
 
@@ -15954,8 +15997,8 @@ msgstr "Dateipfad"
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
-"has to start and end with an alphanumeric character.The file extention '."
-"html' is added by the report."
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
 msgstr ""
 "Für den Dateinamen sind nur die englischen Buchstaben A-Z, a-z und die "
 "Zahlen 0-9 sowie die Zeichen Leerzeichen, Unterstrich und Bindestrich "
@@ -17840,8 +17883,8 @@ msgstr "Verbindungslinie hervorheben"
 
 #: NetworkChart/NetworkChart.py:1056
 msgid ""
-"RGB-color for the highlighted path between two individuals.  If the graph."
-"inverts, reverse the order to change."
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
 msgstr ""
 "RGB-Farbe für den hervorgehobenen Pfad zwischen zwei Personen.  Wenn sich "
 "das Diagramm umkehrt, kehre die Reihenfolge um, um die Änderung vorzunehmen."
@@ -18596,7 +18639,7 @@ msgstr "XMP-Regionsname"
 msgid "Set as active person"
 msgstr "Als aktive Person festlegen"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:97
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:633
 msgid "_Select"
 msgstr "_Auswählen"
 
@@ -19999,9 +20042,9 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
 msgid ""
-"<i>Prerequistes required for the following <a href=\"https://gramps-project."
-"org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to "
-"work</i>:\n"
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
 msgstr ""
 "<i>Für die folgenden <a href=\"https://gramps-project.org/wiki/index.php?"
 "title=Third-party_Addons\">Drittanbieter-Erweiterungen</a> sind "
@@ -20065,8 +20108,8 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/index.php/De:"
-"Wie_erstelle_ich_eine_Sicherung\">Sicherung in Gramps-XML</a> Du findest "
+"<i><a href=\"https://gramps-project.org/wiki/index.php/"
+"De:Wie_erstelle_ich_eine_Sicherung\">Sicherung in Gramps-XML</a> Du findest "
 "„Sicherung erstellen...“ im Stammbaum-Menü neuerer Gramps-Versionen, "
 "andernfalls verwende „Exportieren...“ im selben Menü, aber deaktiviere die "
 "Datenschutzoptionen im Export-Assistenten, um alle Daten zu exportieren.</"
@@ -20379,8 +20422,8 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/index.php/De:"
-"Gramps_6.0_Wiki_Handbuch_-"
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php/"
+"De:Gramps_6.0_Wiki_Handbuch_-"
 "_Kommandozeilen_Referenz#LANG.2C_LANGUAGE.2C_LC_MESSAGES.2C_LC_TIME\">Gebietsschemaeinstellungen:"
 "</a></b></u>\n"
 
@@ -20635,74 +20678,191 @@ msgstr "Gramps-Typen neu erstellt"
 msgid "Found %d custom event types"
 msgstr "%d benutzerdefinierte Ereignisarten gefunden"
 
-#: RelID/relation_tab.gpr.py:36
+#: RelID/relation_tab.gpr.py:35
 msgid "Display relations and distances with the home person"
 msgstr "Anzeige von Beziehungen und Entfernungen zur Hauptperson"
 
-#: RelID/relation_tab.gpr.py:37
+#: RelID/relation_tab.gpr.py:36
 msgid "Will display relational informations with the home person"
 msgstr "Zeigt Informationen über die Beziehung zur Hauptperson an"
 
-#: RelID/relation_tab.py:75
+#: RelID/relation_tab.py:297
 msgid "Relation and distances with root"
 msgstr "Beziehung und Abstände zur Wurzel"
 
-#: RelID/relation_tab.py:92
-msgid "Folder Chooser"
-msgstr "Ordnerauswahl"
+#: RelID/relation_tab.py:315
+#, fuzzy
+#| msgid "Filtering"
+msgid "Filter rule"
+msgstr "Filtern"
 
-#: RelID/relation_tab.py:99
-msgid "Please, select a folder"
-msgstr "Bitte wähle einen Ordner"
+#: RelID/relation_tab.py:319
+#, fuzzy
+#| msgid "Selection with a filter"
+msgid "Select the filter rule"
+msgstr "Auswahl mit einem Filter"
 
-#: RelID/relation_tab.py:110
+#: RelID/relation_tab.py:321
+#, fuzzy
+#| msgid "Descendant generations"
+msgid "Deep generations"
+msgstr "Nachkommengenerationen"
+
+#: RelID/relation_tab.py:322
+msgid "How deep should we go?"
+msgstr ""
+
+#: RelID/relation_tab.py:339
 msgid "Rel_id"
 msgstr "Bez_id"
 
-#: RelID/relation_tab.py:113
+#: RelID/relation_tab.py:342
 msgid "up"
 msgstr "hoch"
 
-#: RelID/relation_tab.py:114
+#: RelID/relation_tab.py:343
 msgid "down"
 msgstr "runter"
 
-#: RelID/relation_tab.py:115
+#: RelID/relation_tab.py:344
 msgid "Common MRA"
 msgstr "Gemeinsame MRA"
 
-#: RelID/relation_tab.py:117
+#: RelID/relation_tab.py:346
 msgid "Period"
 msgstr "Zeitraum"
 
-#: RelID/relation_tab.py:164
+#: RelID/relation_tab.py:350
+#, fuzzy
+#| msgid "Shared Segments"
+msgid "Shared Subtree"
+msgstr "Gemeinsame Segmente"
+
+#: RelID/relation_tab.py:351
+#, fuzzy
+#| msgid "Center"
+msgid "Centrality"
+msgstr "Zentrum"
+
+#: RelID/relation_tab.py:352
+#, fuzzy
+#| msgid "Ancestor"
+msgid "Unique Ancestors"
+msgstr "Vorfahre"
+
+#: RelID/relation_tab.py:353
+#, fuzzy
+#| msgid "Surname, Given"
+msgid "Surname Diversity"
+msgstr "Nachname, Vorname"
+
+#: RelID/relation_tab.py:367
+msgid "Quit"
+msgstr ""
+
+#: RelID/relation_tab.py:376
+#, fuzzy
+#| msgid "No default_person"
+msgid "No default person set."
+msgstr "Keine Standard_person"
+
+#: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
 msgstr "Bitte warten, filtern..."
 
-#: RelID/relation_tab.py:169
-msgid "No default_person"
-msgstr "Keine Standard_person"
+#: RelID/relation_tab.py:446
+#, fuzzy
+#| msgid "Network Chart"
+msgid "Network Metrics"
+msgstr "Netzwerkdiagramm"
 
-#: RelID/relation_tab.py:174
+#: RelID/relation_tab.py:447
+#, fuzzy
+#| msgid "Disabled"
+msgid "Enabled"
+msgstr "Behindert"
+
+#: RelID/relation_tab.py:449
+#, fuzzy
+#| msgid "Generates a family network chart."
+msgid "Enable or disable family network metrics"
+msgstr "Erzeugt ein Familiennetzwerkdiagramm."
+
+#: RelID/relation_tab.py:483
 msgid "Generating relation map..."
 msgstr "Beziehungskarte erzeugen..."
 
-#: RelID/relation_tab.py:190
-#, python-format
+#: RelID/relation_tab.py:497
 msgid ""
-"%d/%d \n"
-" %d/%d seconds \n"
-" %d/%d \n"
-"%f|\t%f"
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
 msgstr ""
-"%d/%d \n"
-" %d/%d Sekunden \n"
-" %d/%d \n"
-"%f|\t%f"
 
-#: RelID/relation_tab.py:308
-msgid "You do not have write rights on this folder"
-msgstr "Du hast keine Schreibrechte für diesen Ordner"
+#: RelID/relation_tab.py:498
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr ""
+
+#: RelID/relation_tab.py:615
+msgid "Total of handled entries : {len(self.stats_list)}\n"
+msgstr ""
+
+#: RelID/relation_tab.py:628
+msgid "Folder Chooser"
+msgstr "Ordnerauswahl"
+
+#: RelID/relation_tab.py:636
+msgid "Please, select a folder"
+msgstr "Bitte wähle einen Ordner"
+
+#: RelID/relation_tab.py:643
+#, fuzzy
+#| msgid "Alternate name"
+msgid "Foldername need"
+msgstr "Alternativer Name"
+
+#: RelID/relation_tab.py:643
+#, fuzzy
+#| msgid "A note to be used for the custom page content.\n"
+msgid "Foldername will be used for saving the content."
+msgstr ""
+"Eine Notiz, die für den Inhalt der benutzerdefinierten Seite verwendet "
+"wird.\n"
+
+#: RelID/relation_tab.py:655
+msgid "Cannot set a valid location."
+msgstr ""
+
+#: RelID/relation_tab.py:655
+msgid "Did you set a foldername?"
+msgstr ""
+
+#: RelID/relation_tab.py:672
+#, python-brace-format
+msgid "Data saved to : {filename}"
+msgstr ""
+
+#: RelID/relation_tab.py:676
+#, fuzzy
+#| msgid "Failed to create %s: %s"
+msgid "Failed to save data."
+msgstr "Erstellen von %s fehlgeschlagen: %s"
+
+#: RelID/relation_tab.py:689
+#, fuzzy
+#| msgid "Relationship to head"
+msgid "Relationships Map and Tab"
+msgstr "Beziehung zum Oberhaupt"
+
+#: RelID/relation_tab.py:772
+#, fuzzy
+#| msgid "Generates a family network chart."
+msgid "Enable family network metrics"
+msgstr "Erzeugt ein Familiennetzwerkdiagramm."
+
+#: RelID/relation_tab.py:774
+msgid "Whether to calculate and display family network metrics."
+msgstr ""
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
@@ -22072,10 +22232,10 @@ msgstr ""
 #: TMGimporter/importtmg.py:110
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer Addon."
-"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
-"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
-"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"Directly importing from TMG files is not supportedby the TMG Importer "
+"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
+"TMG project was created by:TMG version 5.x or greater.Your file:*.TMG - "
+"Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Der direkte Import aus TMG-Dateien wird von TMG Importeur Erweiterung nicht "
@@ -22087,10 +22247,10 @@ msgstr ""
 #: TMGimporter/importtmg.py:131
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer Addon."
-"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
-"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
-"Control File for TMG 1.2 and earlierPlease refer to:"
+"Directly importing from TMG files is not supportedby the TMG Importer "
+"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
+"TMG project was created by:TMG version 5.x or greater.Your file:*.VER - "
+"Version Control File for TMG 1.2 and earlierPlease refer to:"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Der direkte Import aus TMG-Dateien wird von TMG Importeur Erweiterung nicht "
@@ -23773,8 +23933,8 @@ msgstr "Kein Titel"
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
 msgstr ""
-"Bietet eine Bibliothek für den generischen Zugriff auf die Datenbank und gen."
-"lib."
+"Bietet eine Bibliothek für den generischen Zugriff auf die Datenbank und "
+"gen.lib."
 
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
@@ -24368,6 +24528,21 @@ msgstr "Spalten anzeigen"
 #: settings_ui_manager.py:265
 msgid "Display Icons"
 msgstr "Symbole anzeigen"
+
+#, python-format
+#~ msgid ""
+#~ "%d/%d \n"
+#~ " %d/%d seconds \n"
+#~ " %d/%d \n"
+#~ "%f|\t%f"
+#~ msgstr ""
+#~ "%d/%d \n"
+#~ " %d/%d Sekunden \n"
+#~ " %d/%d \n"
+#~ "%f|\t%f"
+
+#~ msgid "You do not have write rights on this folder"
+#~ msgstr "Du hast keine Schreibrechte für diesen Ordner"
 
 #~ msgid "Error while parsing response from server."
 #~ msgstr "Fehler beim Auswerten der Antwort vom Server."
