@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 19:25-0700\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
+"PO-Revision-Date: 2025-11-02 17:36+0000\n"
 "Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -1049,7 +1049,7 @@ msgstr ""
 #: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr ""
+msgstr "%(event_type)s: %(date)s en %(place)s"
 
 #: CombinedView/personpage.py:601
 #, python-format
@@ -1539,7 +1539,7 @@ msgstr ""
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
-msgstr ""
+msgstr "Cromosoma "
 
 #: DNA/dnasegmentmap.py:552
 msgid " Map for "
@@ -1585,7 +1585,7 @@ msgstr ""
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s y %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
 #, python-brace-format
@@ -22393,10 +22393,9 @@ msgid "Attribute has been successfully added"
 msgstr ""
 
 #: WebSearch.py:2142
-#, fuzzy, python-brace-format
-#| msgid "Checking Place Titles"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Comprobando los nombres de los sitios"
+msgstr "Título: {title}"
 
 #: WebSearch.py:2146
 #, python-brace-format
