@@ -36,8 +36,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-11-25 11:51+0000\n"
-"Last-Translator: \"S-G.\" <grimaitres@gmail.com>\n"
+"PO-Revision-Date: 2025-11-28 18:00+0000\n"
+"Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -1047,7 +1047,7 @@ msgstr ""
 
 #: ChatWithTree/chatwithllm.py:78
 msgid "Tree: '{}'"
-msgstr ""
+msgstr "Arbre : '{}'"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -16927,7 +16927,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:84
 msgid "Lower year minimum margin"
-msgstr ""
+msgstr "Marge minimale de l ' année inférieure"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:85
 msgid ""
