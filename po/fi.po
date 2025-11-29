@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-10-14 05:07+0000\n"
+"PO-Revision-Date: 2025-11-04 06:51+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -978,44 +978,47 @@ msgstr "Muokkaa valintaa"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
 msgid "Chat With Tree Interactive Addon"
-msgstr ""
+msgstr "Keskustele Interaktiivinen puu -lisäosan kanssa"
 
 #: ChatWithTree/ChatWithTree.gpr.py:10
 msgid ""
 "Chat With Tree with the help of AI Large Language Model, needs litellm module"
 msgstr ""
+"Keskustele sukupuun kanssa suuren kielimallin tekoälyn avustamana "
+"(vaatii litellm-moduulin)"
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
 msgid "Chat With Tree"
-msgstr ""
+msgstr "Keskustele sukupuun kanssa"
 
 #: ChatWithTree/ChatWithTree.py:103
-#, fuzzy
-#| msgid "Database Backend"
 msgid "Database change detected"
-msgstr "Tietokannan taustajärjestelmä"
+msgstr "Tietokannan muutos havaittu"
 
 #: ChatWithTree/ChatWithTree.py:148
 msgid "Type a message..."
-msgstr ""
+msgstr "Kirjoita viesti..."
 
 #: ChatWithTree/ChatWithTree.py:152
 msgid "Send"
-msgstr ""
+msgstr "Lähetä"
 
 #: ChatWithTree/ChatWithTree.py:159
 msgid "Chat with Tree initialized. Type /help for help."
 msgstr ""
+"Keskustelu sukupuun kanssa on aloitettu. Kirjoita /help saadaksesi apua."
 
 #: ChatWithTree/ChatWithTree.py:314
 msgid ""
 "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
 "select a database."
 msgstr ""
+"ChatWithTree-lisäosaa ei ole vielä alustettu. Lataa Gramps uudelleen tai "
+"valitse tietokanta."
 
 #: ChatWithTree/chatwithllm.py:78
 msgid "Tree: '{}'"
-msgstr ""
+msgstr "Sukupuu: '{}'"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -8820,7 +8823,7 @@ msgstr ""
 #: Form/form_gb.xml.h:3 Form/form_gb.xml.h:40 Form/form_gb.xml.h:196
 #: Form/form_gb.xml.h:230 Form/form_gb.xml.h:329 Form/form_gb.xml.h:365
 msgid "Registration District"
-msgstr ""
+msgstr "Alue jonne rekisteröity"
 
 #: Form/form_gb.xml.h:4 Form/form_gb.xml.h:21 Form/form_gb.xml.h:41
 msgid "Administrative Area"
@@ -8828,7 +8831,7 @@ msgstr "Hallintoalue"
 
 #: Form/form_gb.xml.h:5 Form/form_gb.xml.h:22 Form/form_gb.xml.h:42
 msgid "County/Administrative Area"
-msgstr ""
+msgstr "Maakunta/hallintoalue"
 
 #: Form/form_gb.xml.h:6 Form/form_gb.xml.h:43 Form/form_us.xml.h:2345
 #: Form/form_us.xml.h:2429 Form/form_us.xml.h:2461
@@ -8851,15 +8854,15 @@ msgstr ""
 
 #: Form/form_gb.xml.h:23
 msgid "Banns/Licence"
-msgstr ""
+msgstr "Kuulutukset/Luvat"
 
 #: Form/form_gb.xml.h:31 Form/form_gb.xml.h:34
 msgid "Deceased"
-msgstr ""
+msgstr "Kuollut"
 
 #: Form/form_gb.xml.h:48
 msgid "Maiden surname of woman who was married"
-msgstr ""
+msgstr "Naimisissa olleen naisen tyttönimi"
 
 #: Form/form_gb.xml.h:51 Form/form_us.xml.h:986 Form/form_us.xml.h:1008
 #: Form/form_us.xml.h:1141 Form/form_us.xml.h:1155 Form/form_us.xml.h:1452
@@ -8874,15 +8877,15 @@ msgstr "Tavallinen osoite"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
-msgstr ""
+msgstr "Kaupunki tai kaupunginosa"
 
 #: Form/form_gb.xml.h:60 Form/form_gb.xml.h:69 Form/form_gb.xml.h:85
 msgid "Parish or Township"
-msgstr ""
+msgstr "Seurakunta tai kunta"
 
 #: Form/form_gb.xml.h:62
 msgid "NAMES of each Person who abode therein the preceding Night."
-msgstr ""
+msgstr "Kaikkien edellisenä yönä siellä asuneen henkilön NIMET."
 
 #: Form/form_gb.xml.h:64
 msgid ""
@@ -14818,7 +14821,6 @@ msgstr ""
 "uudella henkilöllä"
 
 #: GeoTimeLines/GeoTimeLines.py:1936
-#, fuzzy
 msgid "Show map travel lines on startup"
 msgstr "Näytä kartan matkaviivat käynnistyksessä"
 
@@ -14979,19 +14981,19 @@ msgstr[1] "Latauksen aikana ilmeni %s virhettä."
 
 #: GrampsWebSync/grampswebsync.py:362
 msgid "Authentication failed. Please check your username and password."
-msgstr ""
+msgstr "Todennus epäonnistui. Tarkista käyttäjänimesi ja salasanasi."
 
 #: GrampsWebSync/grampswebsync.py:366
 msgid "Access forbidden. Please check username and password."
-msgstr ""
+msgstr "Pääsy kielletty. Tarkista käyttäjätunnus ja salasana."
 
 #: GrampsWebSync/grampswebsync.py:370
 msgid "GrampsWeb service not found. Please check the URL."
-msgstr ""
+msgstr "GrampsWeb-palvelua ei löytynyt. Tarkista URL."
 
 #: GrampsWebSync/grampswebsync.py:374
 msgid "Too many requests, please try again in a few seconds."
-msgstr ""
+msgstr "Liikaa pyyntöjä, yritä uudelleen muutaman sekunnin kuluttua."
 
 #: GrampsWebSync/grampswebsync.py:378
 msgid "GrampsWeb tree is disabled."
@@ -15000,15 +15002,15 @@ msgstr "GrampsWeb ei ole tarjolla."
 #: GrampsWebSync/grampswebsync.py:382
 #, python-format
 msgid "Server error %s. Please check your connection."
-msgstr ""
+msgstr "Palvelinvirhe %s. Tarkasta yhteytesi."
 
 #: GrampsWebSync/grampswebsync.py:387
 msgid "Connection failed. Please check the URL and your internet connection."
-msgstr ""
+msgstr "Yhteysvirhe. Tarkasta URL-osoite ja yhteytesi."
 
 #: GrampsWebSync/grampswebsync.py:391
 msgid "Invalid server response. Please check the URL."
-msgstr ""
+msgstr "Virheellinen palvelimen vastaus. Tarkasta URL-osoitteesi."
 
 #: GrampsWebSync/grampswebsync.py:394
 #, python-format
@@ -20310,26 +20312,20 @@ msgid "Relation and distances with root"
 msgstr "Suhde ja etäisyydet juureen"
 
 #: RelID/relation_tab.py:315
-#, fuzzy
-#| msgid "Filtering"
 msgid "Filter rule"
-msgstr "Suodatus"
+msgstr "Suodatussääntö"
 
 #: RelID/relation_tab.py:319
-#, fuzzy
-#| msgid "Selection with a filter"
 msgid "Select the filter rule"
-msgstr "Valinta suodatinta käyttäen"
+msgstr "Valitse suodatussääntö"
 
 #: RelID/relation_tab.py:321
-#, fuzzy
-#| msgid "Descendant generations"
 msgid "Deep generations"
-msgstr "Jälkeläissukupolvien enimmäismäärä"
+msgstr "Syvät sukupolvet"
 
 #: RelID/relation_tab.py:322
 msgid "How deep should we go?"
-msgstr ""
+msgstr "Kuinka syvälle mennään?"
 
 #: RelID/relation_tab.py:339
 msgid "Rel_id"
@@ -20352,60 +20348,44 @@ msgid "Period"
 msgstr "Aikakausi"
 
 #: RelID/relation_tab.py:350
-#, fuzzy
-#| msgid "Shared Segments"
 msgid "Shared Subtree"
-msgstr "Jaetut segmentit"
+msgstr "Jaettu alipuu"
 
 #: RelID/relation_tab.py:351
-#, fuzzy
-#| msgid "Center"
 msgid "Centrality"
-msgstr "Keskitä"
+msgstr "Keskeisyys"
 
 #: RelID/relation_tab.py:352
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Unique Ancestors"
-msgstr "Esivanhempi"
+msgstr "Ainutlaatuiset esi-isät"
 
 #: RelID/relation_tab.py:353
-#, fuzzy
-#| msgid "Surname, Given"
 msgid "Surname Diversity"
-msgstr "Sukunimi, Etunimi"
+msgstr "Sukunimien vaihtelu"
 
 #: RelID/relation_tab.py:367
 msgid "Quit"
-msgstr ""
+msgstr "Lopeta"
 
 #: RelID/relation_tab.py:376
-#, fuzzy
-#| msgid "No default_person"
 msgid "No default person set."
-msgstr "Ei kohdehenkilöä"
+msgstr "Oletushenkilöä ei ole asetettu."
 
 #: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
 msgstr "Odota, suodatetus käynnissä..."
 
 #: RelID/relation_tab.py:446
-#, fuzzy
-#| msgid "Network Chart"
 msgid "Network Metrics"
-msgstr "Nettikaavio"
+msgstr "Verkkomittarit"
 
 #: RelID/relation_tab.py:447
-#, fuzzy
-#| msgid "Table"
 msgid "Enabled"
-msgstr "Taulukko"
+msgstr "Käytettävissä"
 
 #: RelID/relation_tab.py:449
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable or disable family network metrics"
-msgstr "Tuottaa perheiden nettikaavion."
+msgstr "Perheverkoston mittareiden ottaminen käyttöön tai poistaminen"
 
 #: RelID/relation_tab.py:483
 msgid "Generating relation map..."
@@ -20416,15 +20396,17 @@ msgid ""
 "\n"
 "Filtering\tCurrent match\t\tTime of pass\n"
 msgstr ""
+"\n"
+"Suodatus\tOsuma\t\tSuoritusaika\n"
 
 #: RelID/relation_tab.py:498
 #, python-format
 msgid "%d/%d \t\t %d/%d \t\t%f"
-msgstr ""
+msgstr "%d/%d \t\t %d/%d \t\t%f"
 
 #: RelID/relation_tab.py:615
 msgid "Total of handled entries : {len(self.stats_list)}\n"
-msgstr ""
+msgstr "Käsitellyt tapahtumat: {len(self.stats_list)}\n"
 
 #: RelID/relation_tab.py:628
 msgid "Folder Chooser"
@@ -20435,51 +20417,41 @@ msgid "Please, select a folder"
 msgstr "Valitsepa kansio"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "Alternate name"
 msgid "Foldername need"
-msgstr "Vaihtoehtoinen nimi"
+msgstr "Kansion nimi tarvitaan"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "Foldername will be used for saving the content."
-msgstr "Mukautetun sivun sisältöä koskeva lisätieto.\n"
+msgstr "Kansion nimi sisällön tallentamiseksi."
 
 #: RelID/relation_tab.py:655
 msgid "Cannot set a valid location."
-msgstr ""
+msgstr "Kelvollista sijaintia ei voida asettaa."
 
 #: RelID/relation_tab.py:655
 msgid "Did you set a foldername?"
-msgstr ""
+msgstr "Asetitko kansion nimen?"
 
 #: RelID/relation_tab.py:672
 #, python-brace-format
 msgid "Data saved to : {filename}"
-msgstr ""
+msgstr "Talletettu tiedostoon: {filename}"
 
 #: RelID/relation_tab.py:676
-#, fuzzy
-#| msgid "Failed to create %s: %s"
 msgid "Failed to save data."
-msgstr "Kohteen %s luonti ei onnistu: %s"
+msgstr "Tietojen tallennus ei onnistunut."
 
 #: RelID/relation_tab.py:689
-#, fuzzy
-#| msgid "Relationship to head"
 msgid "Relationships Map and Tab"
-msgstr "Suhde päähenkilöön"
+msgstr "Suhdekartta ja -välilehti"
 
 #: RelID/relation_tab.py:772
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable family network metrics"
-msgstr "Tuottaa perheiden nettikaavion."
+msgstr "Ota käyttöön perheverkoston mittarit"
 
 #: RelID/relation_tab.py:774
 msgid "Whether to calculate and display family network metrics."
-msgstr ""
+msgstr "Lasketaanko ja näytetäänkö sukuverkoston mittarit."
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
