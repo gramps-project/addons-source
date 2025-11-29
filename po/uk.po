@@ -15,17 +15,18 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-10-20 04:58+0000\n"
-"Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
+"PO-Revision-Date: 2025-11-04 06:51+0000\n"
+"Last-Translator: Максим Горпиніч <gorpinicmaksim0@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"Plural-Forms: nplurals=3; plural="
+"(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? "
+"1 : 2);\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -969,44 +970,46 @@ msgstr "Редагувати вибір"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
 msgid "Chat With Tree Interactive Addon"
-msgstr ""
+msgstr "Інтерактивний додаток «Чат із деревом»"
 
 #: ChatWithTree/ChatWithTree.gpr.py:10
 msgid ""
 "Chat With Tree with the help of AI Large Language Model, needs litellm module"
 msgstr ""
+"Спілкуйтеся з деревом за допомогою великої мовної моделі штучного інтелекту, "
+"потрібен модуль litellm"
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
 msgid "Chat With Tree"
-msgstr ""
+msgstr "Спілкування з деревом"
 
 #: ChatWithTree/ChatWithTree.py:103
-#, fuzzy
-#| msgid "Database Backend"
 msgid "Database change detected"
-msgstr "Бекенд бази даних"
+msgstr "Виявлено зміну бази даних"
 
 #: ChatWithTree/ChatWithTree.py:148
 msgid "Type a message..."
-msgstr ""
+msgstr "Введіть повідомлення..."
 
 #: ChatWithTree/ChatWithTree.py:152
 msgid "Send"
-msgstr ""
+msgstr "Надіслати"
 
 #: ChatWithTree/ChatWithTree.py:159
 msgid "Chat with Tree initialized. Type /help for help."
-msgstr ""
+msgstr "Чат з деревом ініціалізовано. Введіть /help для отримання довідки."
 
 #: ChatWithTree/ChatWithTree.py:314
 msgid ""
 "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
 "select a database."
 msgstr ""
+"Додаток ChatWithTree ще не ініціалізовано. Будь ласка, перезавантажте Gramps "
+"або виберіть базу даних."
 
 #: ChatWithTree/chatwithllm.py:78
 msgid "Tree: '{}'"
-msgstr ""
+msgstr "Дерево: '{}'"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -20445,26 +20448,20 @@ msgid "Relation and distances with root"
 msgstr "Зв’язки та відстані з коренем"
 
 #: RelID/relation_tab.py:315
-#, fuzzy
-#| msgid "Filtering"
 msgid "Filter rule"
-msgstr "Фільтрація"
+msgstr "Правило фільтра"
 
 #: RelID/relation_tab.py:319
-#, fuzzy
-#| msgid "Selection with a filter"
 msgid "Select the filter rule"
-msgstr "Вибір із фільтром"
+msgstr "Виберіть правило фільтра"
 
 #: RelID/relation_tab.py:321
-#, fuzzy
-#| msgid "Descendant generations"
 msgid "Deep generations"
-msgstr "Покоління нащадків"
+msgstr "Глибокі покоління"
 
 #: RelID/relation_tab.py:322
 msgid "How deep should we go?"
-msgstr ""
+msgstr "Як глибоко нам слід зайти?"
 
 #: RelID/relation_tab.py:339
 msgid "Rel_id"
@@ -20487,60 +20484,44 @@ msgid "Period"
 msgstr "Період"
 
 #: RelID/relation_tab.py:350
-#, fuzzy
-#| msgid "Shared Segments"
 msgid "Shared Subtree"
-msgstr "Спільні сегменти"
+msgstr "Спільне піддерево"
 
 #: RelID/relation_tab.py:351
-#, fuzzy
-#| msgid "Center"
 msgid "Centrality"
-msgstr "Середина"
+msgstr "Центральність"
 
 #: RelID/relation_tab.py:352
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Unique Ancestors"
-msgstr "Предок"
+msgstr "Унікальні предки"
 
 #: RelID/relation_tab.py:353
-#, fuzzy
-#| msgid "Surname, Given"
 msgid "Surname Diversity"
-msgstr "Прізвище, Ім'я"
+msgstr "Різноманітність прізвищ"
 
 #: RelID/relation_tab.py:367
 msgid "Quit"
-msgstr ""
+msgstr "Вийти"
 
 #: RelID/relation_tab.py:376
-#, fuzzy
-#| msgid "No default_person"
 msgid "No default person set."
-msgstr "Відсутня особа за замовчуванням"
+msgstr "Особу за замовчуванням не встановлено."
 
 #: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
 msgstr "Зачекайте, відбувається фільтрація..."
 
 #: RelID/relation_tab.py:446
-#, fuzzy
-#| msgid "Network Chart"
 msgid "Network Metrics"
-msgstr "Мережева діаграма"
+msgstr "Метрики мережі"
 
 #: RelID/relation_tab.py:447
-#, fuzzy
-#| msgid "Disabled"
 msgid "Enabled"
-msgstr "Інвалід"
+msgstr "Увімкнено"
 
 #: RelID/relation_tab.py:449
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable or disable family network metrics"
-msgstr "Генерує мережеву діаграму родини."
+msgstr "Увімкнення або вимкнення показників сімейної мережі"
 
 #: RelID/relation_tab.py:483
 msgid "Generating relation map..."
@@ -20551,15 +20532,17 @@ msgid ""
 "\n"
 "Filtering\tCurrent match\t\tTime of pass\n"
 msgstr ""
+"\n"
+"Фільтрація\tПоточний матч\t\tЧас проходження\n"
 
 #: RelID/relation_tab.py:498
 #, python-format
 msgid "%d/%d \t\t %d/%d \t\t%f"
-msgstr ""
+msgstr "%d/%d \t\t %d/%d \t\t%f"
 
 #: RelID/relation_tab.py:615
 msgid "Total of handled entries : {len(self.stats_list)}\n"
-msgstr ""
+msgstr "Загальна кількість оброблених записів : {len(self.stats_list)}\n"
 
 #: RelID/relation_tab.py:628
 msgid "Folder Chooser"
@@ -20570,51 +20553,41 @@ msgid "Please, select a folder"
 msgstr "Будь ласка, виберіть папку"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "Alternate name"
 msgid "Foldername need"
-msgstr "Альтернативне ім'я"
+msgstr "Потрібна назва папки"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "Foldername will be used for saving the content."
-msgstr "Примітка для використання у вмісті користувацької сторінки.\n"
+msgstr "Ім'я папки буде використано для збереження вмісту."
 
 #: RelID/relation_tab.py:655
 msgid "Cannot set a valid location."
-msgstr ""
+msgstr "Не вдається встановити дійсне місцезнаходження."
 
 #: RelID/relation_tab.py:655
 msgid "Did you set a foldername?"
-msgstr ""
+msgstr "Ви встановили назву папки?"
 
 #: RelID/relation_tab.py:672
 #, python-brace-format
 msgid "Data saved to : {filename}"
-msgstr ""
+msgstr "Дані збережено в : {filename}"
 
 #: RelID/relation_tab.py:676
-#, fuzzy
-#| msgid "Failed to create %s: %s"
 msgid "Failed to save data."
-msgstr "Не вдалося створити %s: %s"
+msgstr "Не вдалося зберегти дані."
 
 #: RelID/relation_tab.py:689
-#, fuzzy
-#| msgid "Relationship to head"
 msgid "Relationships Map and Tab"
-msgstr "Ступінь спорідненості з головою сім’ї"
+msgstr "Карта та вкладка «Взаємовідносини»"
 
 #: RelID/relation_tab.py:772
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable family network metrics"
-msgstr "Генерує мережеву діаграму родини."
+msgstr "Увімкнути показники сімейної мережі"
 
 #: RelID/relation_tab.py:774
 msgid "Whether to calculate and display family network metrics."
-msgstr ""
+msgstr "Чи потрібно розраховувати та відображати показники сімейної мережі."
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
