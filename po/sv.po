@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-10-13 04:07+0000\n"
+"PO-Revision-Date: 2025-11-11 10:51+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -973,42 +973,45 @@ msgstr "Redigera val"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
 msgid "Chat With Tree Interactive Addon"
-msgstr ""
+msgstr "Chatta med Tree Interactive-tillägget"
 
 #: ChatWithTree/ChatWithTree.gpr.py:10
 msgid ""
 "Chat With Tree with the help of AI Large Language Model, needs litellm module"
 msgstr ""
+"Chatta med träd med hjälp av AI Large Language Model, behöver Litellm-modulen"
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
 msgid "Chat With Tree"
-msgstr ""
+msgstr "Chatta med träd"
 
 #: ChatWithTree/ChatWithTree.py:103
 msgid "Database change detected"
-msgstr ""
+msgstr "Databasändring upptäckt"
 
 #: ChatWithTree/ChatWithTree.py:148
 msgid "Type a message..."
-msgstr ""
+msgstr "Skriv ett meddelande..."
 
 #: ChatWithTree/ChatWithTree.py:152
 msgid "Send"
-msgstr ""
+msgstr "Skicka"
 
 #: ChatWithTree/ChatWithTree.py:159
 msgid "Chat with Tree initialized. Type /help for help."
-msgstr ""
+msgstr "Chatt med träd har initierats. Skriv /help för hjälp."
 
 #: ChatWithTree/ChatWithTree.py:314
 msgid ""
 "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
 "select a database."
 msgstr ""
+"ChatWithTree-tillägget har ännu inte initialiserats. Vänligen ladda om "
+"Gramps eller välj en databas."
 
 #: ChatWithTree/chatwithllm.py:78
 msgid "Tree: '{}'"
-msgstr ""
+msgstr "Träd: '{}'"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -15113,19 +15116,19 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:738
 msgid "Server URL: "
-msgstr ""
+msgstr "Server URL: "
 
 #: GrampsWebSync/grampswebsync.py:847
 msgid "Bidirectional Synchronization"
-msgstr ""
+msgstr "Dubbelriktad synkronisering"
 
 #: GrampsWebSync/grampswebsync.py:856
 msgid "Reset remote to local"
-msgstr ""
+msgstr "Återställ fjärr till lokalt läge"
 
 #: GrampsWebSync/grampswebsync.py:864
 msgid "Reset local to remote"
-msgstr ""
+msgstr "Återställ lokalt till fjärrläge"
 
 #: GrampsWebSync/grampswebsync.py:872
 msgid "Merge"
@@ -15162,7 +15165,7 @@ msgstr "Tillämpar ändringar i den lokala databasen ..."
 
 #: GrampsWebSync/grampswebsync.py:993
 msgid "No changes to apply to local database."
-msgstr ""
+msgstr "Inga ändringar som ska tillämpas på den lokala databasen."
 
 #: GrampsWebSync/grampswebsync.py:996
 msgid "Applying changes to remote database ..."
@@ -15170,11 +15173,11 @@ msgstr "Tillämpar ändringar i fjärrdatabasen ..."
 
 #: GrampsWebSync/grampswebsync.py:999
 msgid "No changes to apply to remote database."
-msgstr ""
+msgstr "Inga ändringar som ska tillämpas på fjärrdatabasen."
 
 #: GrampsWebSync/grampswebsync.py:1006
 msgid "Successfully applied changes to local database."
-msgstr ""
+msgstr "Ändringarna har tillämpats i den lokala databasen."
 
 #: GrampsWebSync/grampswebsync.py:1035
 msgid "Missing locally"
@@ -15212,7 +15215,7 @@ msgstr "Tecknad film"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
-msgstr ""
+msgstr "Modern"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -15221,7 +15224,7 @@ msgstr "Diagramvy"
 
 #: GraphView/graphview.gpr.py:6
 msgid "Dynamic and interactive graph of relations"
-msgstr ""
+msgstr "Dynamisk och interaktiv graf över relationer"
 
 #: GraphView/graphview.py:754
 msgid "Show IDs"
@@ -15265,7 +15268,7 @@ msgstr "Tidsriktning"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr ""
+msgstr "Begränsa antalet personer som visas (använd 0 för obegränsat antal)"
 
 #: GraphView/graphview.py:812
 msgid "Person theme"
@@ -15285,11 +15288,11 @@ msgstr "Stil på avatarer"
 
 #: GraphView/graphview.py:841
 msgid "PNG files"
-msgstr ""
+msgstr "PNG-filer"
 
 #: GraphView/graphview.py:846
 msgid "Male avatar:"
-msgstr ""
+msgstr "Manlig avatar:"
 
 #: GraphView/graphview.py:847
 msgid "Choose male avatar"
@@ -15297,7 +15300,7 @@ msgstr "Välj mansavatar"
 
 #: GraphView/graphview.py:859
 msgid "Female avatar:"
-msgstr ""
+msgstr "Kvinnlig avatar:"
 
 #: GraphView/graphview.py:860
 msgid "Choose female avatar"
@@ -15309,7 +15312,7 @@ msgstr "Okänd avatar:"
 
 #: GraphView/graphview.py:873
 msgid "Choose Unknown avatar"
-msgstr ""
+msgstr "Välj okänd avatar"
 
 #: GraphView/graphview.py:885
 msgid "Other avatar:"
@@ -15317,7 +15320,7 @@ msgstr "Annan avatar:"
 
 #: GraphView/graphview.py:886
 msgid "Choose Other avatar"
-msgstr ""
+msgstr "Välj annan avatar"
 
 #: GraphView/graphview.py:900
 msgid "Active person border size"
@@ -15337,11 +15340,11 @@ msgstr "Visa animation"
 
 #: GraphView/graphview.py:925
 msgid "Animation speed (1..5 and 5 is the slower)"
-msgstr ""
+msgstr "Animationshastighet (1..5 och 5 är långsammare)"
 
 #: GraphView/graphview.py:929
 msgid "Animation count (0..8 use 0 to turn off)"
-msgstr ""
+msgstr "Animeringsantal (0..8, använd 0 för att stänga av)"
 
 #: GraphView/graphview.py:938
 msgid "Animation"
@@ -15349,11 +15352,11 @@ msgstr "Animation"
 
 #: GraphView/graphview.py:952
 msgid "Search in all database"
-msgstr ""
+msgstr "Sök i hela databasen"
 
 #: GraphView/graphview.py:954
 msgid "Also apply search by all database."
-msgstr ""
+msgstr "Använd även sökning i hela databasen."
 
 #: GraphView/graphview.py:957
 msgid "Show person images"
@@ -15361,11 +15364,11 @@ msgstr "Visa personbilder"
 
 #: GraphView/graphview.py:960
 msgid "Show persons thumbnails in search result list."
-msgstr ""
+msgstr "Visa miniatyrbilder av personer i sökresultatlistan."
 
 #: GraphView/graphview.py:963 SearchGramplet/SearchGramplet.py:102
 msgid "Show bookmarked first"
-msgstr ""
+msgstr "Visa bokmärkt först"
 
 #: GraphView/graphview.py:966
 msgid "Show bookmarked persons first in search result list."
