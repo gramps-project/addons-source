@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-07-16 20:01+0000\n"
+"PO-Revision-Date: 2025-11-17 06:51+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -62,10 +62,8 @@ msgid "AncestorFill for %s"
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:205
-#, fuzzy
-#| msgid "General Data"
 msgid "Generation "
-msgstr "Obecná data"
+msgstr "Generace "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
@@ -88,10 +86,8 @@ msgid "Pedigree Collapse "
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:253
-#, fuzzy
-#| msgid "Size proportional to number of ancestors"
 msgid "Total Number of Ancestors found "
-msgstr "Velikost úměrná počtu předků"
+msgstr "Celkový počet nalezených předků "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
@@ -395,10 +391,8 @@ msgid ""
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:86
-#, fuzzy
-#| msgid "Search results"
 msgid "Search Quota "
-msgstr "Výsledky hledání"
+msgstr "Kvóta pro vyhledávání "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
@@ -826,11 +820,12 @@ msgid "done!\n"
 msgstr "Hotovo!\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:323
-#, fuzzy
 msgid ""
 "Selecting... \n"
 "\n"
-msgstr "Vybrat..."
+msgstr ""
+"Výběr... \n"
+"\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 #, fuzzy
@@ -853,9 +848,8 @@ msgid "No events to be added."
 msgstr "Nebyl přidán žádný popis události."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
-#, fuzzy
 msgid "Selecting... "
-msgstr "Vybrat..."
+msgstr "Výběr... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, fuzzy, python-format
@@ -2193,10 +2187,8 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
 #: DenominoViso/DenominoViso.py:2752
-#, fuzzy
-#| msgid "Description: "
 msgid "description"
-msgstr "Description: "
+msgstr "popis"
 
 #: DenominoViso/DenominoViso.py:310 DenominoViso/DenominoViso.py:976
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
@@ -2745,16 +2737,12 @@ msgstr ""
 "Vyberte filtr pro omezení osob, které se objeví v na webových stránkách"
 
 #: DescendantBooks/DescendantBookReport.py:585
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the table of contents header."
-msgstr "Záznam použitý pro obsah vlastní stránky.\n"
+msgstr "Styl použitý pro záhlaví obsahu."
 
 #: DescendantBooks/DescendantBookReport.py:595
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the table of contents detail."
-msgstr "Záznam použitý pro obsah vlastní stránky.\n"
+msgstr "Styl použitý pro detaily obsahu."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
 #, fuzzy
@@ -2961,10 +2949,8 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1593
 #: DetDescendantReport-images/detdescendantreporti.py:1305
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the first personal entry."
-msgstr "Záznam použitý pro obsah vlastní stránky.\n"
+msgstr "Styl použitý pro první osobní záznam."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1603
 #: DetDescendantReport-images/detdescendantreporti.py:1315
@@ -3104,10 +3090,8 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:854
-#, fuzzy
-#| msgid "Unable to copy web site template files from \"%(path)s\""
 msgid "Failed writing file: "
-msgstr "Nelze zkopírovat soubory šablony WWW stránek z \"%(path)s\""
+msgstr "Selhalo zapisování souboru: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:875
 #, fuzzy
@@ -3224,10 +3208,8 @@ msgid "Theme color preference for Space Tree"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
-#, fuzzy
-#| msgid "Description: "
 msgid "Destination File"
-msgstr "Description: "
+msgstr "Cílový soubor"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1140
 msgid "The destination file name for the report."
@@ -5041,7 +5023,7 @@ msgstr "Obecná data"
 
 #: EditExifMetadata/editexifmetadata.py:1003
 msgid "Description: "
-msgstr "Description: "
+msgstr "Popis: "
 
 #: EditExifMetadata/editexifmetadata.py:1004
 msgid "Artist: "
@@ -5065,7 +5047,7 @@ msgstr "Poslední změna: "
 
 #: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
-msgstr " GPS koordináty, zem. šířka/délka/nadm. výška"
+msgstr "GPS souřadnice zeměpisné šířky/délky/nadmořské výšky"
 
 #: EditExifMetadata/editexifmetadata.py:1069
 msgid "Latitude :"
@@ -5077,11 +5059,11 @@ msgstr "Zeměpisná délka :"
 
 #: EditExifMetadata/editexifmetadata.py:1071
 msgid "Altitude :"
-msgstr "Výška:"
+msgstr "Nadmořská výška:"
 
 #: EditExifMetadata/editexifmetadata.py:1114
 msgid "Bad Date/Time"
-msgstr "Nesprávné Datum/čas"
+msgstr "Nesprávné datum/čas"
 
 #: EditExifMetadata/editexifmetadata.py:1122
 #, fuzzy
@@ -5377,10 +5359,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process relationships..."
-msgstr "Zpracovávání...\n"
+msgstr "Zpracovat vztahy..."
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
@@ -17087,10 +17067,8 @@ msgid "The descendent to which to build the line"
 msgstr ""
 
 #: LinesOfDescendency/lines-of-descendency.py:82
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the title of a line."
-msgstr "Záznam použitý pro obsah vlastní stránky.\n"
+msgstr "Styl použitý pro název linie."
 
 #: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format
@@ -18528,9 +18506,8 @@ msgid "Error: login failed"
 msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
-#, fuzzy
 msgid "done."
-msgstr "Hotovo!\n"
+msgstr "hotovo."
 
 #: PhpGedView/phpgedviewconnector.py:347
 #, fuzzy
@@ -20448,10 +20425,8 @@ msgid "Foldername need"
 msgstr "Alternativní jméno"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "Foldername will be used for saving the content."
-msgstr "Záznam použitý pro obsah vlastní stránky.\n"
+msgstr "Název složky bude použit pro uložení obsahu."
 
 #: RelID/relation_tab.py:655
 msgid "Cannot set a valid location."
@@ -20586,10 +20561,8 @@ msgid "No %s objects were found in database."
 msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:249
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process tags..."
-msgstr "Zpracovávání...\n"
+msgstr "Zpracovat štítky..."
 
 #: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
@@ -21689,7 +21662,7 @@ msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
-msgstr ""
+msgstr "jméno badatele"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:436
 msgid "Select sources using a filter"
@@ -23624,12 +23597,13 @@ msgid ""
 msgstr ""
 
 #: lxml/etreeGramplet.py:476
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
-msgstr "Počet stránek"
+msgstr ""
+"Počet štítků: \n"
+"            %s\n"
 
 #: lxml/etreeGramplet.py:478
 #, python-format
