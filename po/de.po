@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
 "PO-Revision-Date: 2025-11-04 06:51+0000\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Last-Translator: Christoph Eder <christoph.eder@phsalzburg.at>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
 "Language: de\n"
@@ -12033,7 +12033,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:955
 msgid "Relatives in household wages/salary in 1949"
-msgstr "Verwandte im Haushalt Löhne/Gehälter 1949"
+msgstr "Verwandte im Haushalt Löhne/Gehälter im Jahr 1949"
 
 #: Form/form_us.xml.h:956
 msgid ""
