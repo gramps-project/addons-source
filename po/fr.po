@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-10-13 04:07+0000\n"
+"PO-Revision-Date: 2025-11-07 14:50+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -15227,10 +15227,9 @@ msgid "Invalid server response. Please check the URL."
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:394
-#, fuzzy, python-format
-#| msgid "GetGOV error: %s"
+#, python-format
 msgid "Unexpected error: %s"
-msgstr "erreur GetGOV : %s"
+msgstr "erreur innatendue : %s"
 
 #: GrampsWebSync/grampswebsync.py:438 GrampsWebSync/grampswebsync.py:459
 msgid "Error accessing media object."
@@ -20595,22 +20594,16 @@ msgid "Relation and distances with root"
 msgstr "Relation et distances avec la racine"
 
 #: RelID/relation_tab.py:315
-#, fuzzy
-#| msgid "Filtering"
 msgid "Filter rule"
-msgstr "Filtrage"
+msgstr "Règle du filtre"
 
 #: RelID/relation_tab.py:319
-#, fuzzy
-#| msgid "Selection with a filter"
 msgid "Select the filter rule"
-msgstr "Sélection avec un filtre"
+msgstr "Sélectionner la règle de filtre"
 
 #: RelID/relation_tab.py:321
-#, fuzzy
-#| msgid "Descendant generations"
 msgid "Deep generations"
-msgstr "Générations de descendants"
+msgstr "Générations profondes"
 
 #: RelID/relation_tab.py:322
 msgid "How deep should we go?"
@@ -20637,60 +20630,44 @@ msgid "Period"
 msgstr "Période"
 
 #: RelID/relation_tab.py:350
-#, fuzzy
-#| msgid "Shared Segments"
 msgid "Shared Subtree"
-msgstr "Segments partagés"
+msgstr "Sous-arbre partagé"
 
 #: RelID/relation_tab.py:351
-#, fuzzy
-#| msgid "Center"
 msgid "Centrality"
-msgstr "Centre"
+msgstr "Centralité"
 
 #: RelID/relation_tab.py:352
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Unique Ancestors"
-msgstr "Ascendant"
+msgstr "Ancêtres uniques"
 
 #: RelID/relation_tab.py:353
-#, fuzzy
-#| msgid "Surname, Given"
 msgid "Surname Diversity"
-msgstr "Nom de famille, Prénom"
+msgstr "Diversité du nom de famille"
 
 #: RelID/relation_tab.py:367
 msgid "Quit"
 msgstr ""
 
 #: RelID/relation_tab.py:376
-#, fuzzy
-#| msgid "No default_person"
 msgid "No default person set."
-msgstr "Pas de personne de départ (défaut)"
+msgstr "Aucune personne par défaut n'est définie."
 
 #: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
 msgstr "Attendez, s'il vous plaît ..."
 
 #: RelID/relation_tab.py:446
-#, fuzzy
-#| msgid "Network Chart"
 msgid "Network Metrics"
-msgstr "Graphique réseau"
+msgstr "Métriques du réseau"
 
 #: RelID/relation_tab.py:447
-#, fuzzy
-#| msgid "Disabled"
 msgid "Enabled"
-msgstr "Non-actif"
+msgstr "Actif"
 
 #: RelID/relation_tab.py:449
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable or disable family network metrics"
-msgstr "Génère un graphique du réseau familial."
+msgstr "Activer ou désactiver les indicateurs du réseau familial"
 
 #: RelID/relation_tab.py:483
 msgid "Generating relation map..."
@@ -20720,10 +20697,8 @@ msgid "Please, select a folder"
 msgstr "S'il vous plaît, sélectionnez un répertoire"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "Alternate name"
 msgid "Foldername need"
-msgstr "Non alternatif"
+msgstr "Nom du dossier nécessaire"
 
 #: RelID/relation_tab.py:643
 #, fuzzy
