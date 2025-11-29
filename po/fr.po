@@ -30,13 +30,14 @@
 # Frédéric Schwartz <frederic@online404.com>, 2025.
 # Jean-Marc <m.balthazar@posteo.net>, 2025.
 # geoglorus <pierre+github@laminette.net>, 2025.
+# "S-G." <grimaitres@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-11-07 14:50+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"PO-Revision-Date: 2025-11-25 11:51+0000\n"
+"Last-Translator: \"S-G.\" <grimaitres@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -999,39 +1000,50 @@ msgid "Edit selection"
 msgstr "Édition de la sélection"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
+#, fuzzy
 msgid "Chat With Tree Interactive Addon"
-msgstr ""
+msgstr "Chat avec l'extension interactive de l'arbre généalogique"
 
 #: ChatWithTree/ChatWithTree.gpr.py:10
+#, fuzzy
 msgid ""
 "Chat With Tree with the help of AI Large Language Model, needs litellm module"
 msgstr ""
+"Chat avec l'arbre généalogique à l'aide d'un grand modèle de langage (LLM) "
+"par IA, nécessitant le module litellm"
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
+#, fuzzy
 msgid "Chat With Tree"
-msgstr ""
+msgstr "Chat avec l'arbre généalogique"
 
 #: ChatWithTree/ChatWithTree.py:103
 msgid "Database change detected"
-msgstr ""
+msgstr "Modification de la base de donnée détectée"
 
 #: ChatWithTree/ChatWithTree.py:148
+#, fuzzy
 msgid "Type a message..."
-msgstr ""
+msgstr "Écrivez un message..."
 
 #: ChatWithTree/ChatWithTree.py:152
+#, fuzzy
 msgid "Send"
-msgstr ""
+msgstr "Envoyer"
 
 #: ChatWithTree/ChatWithTree.py:159
+#, fuzzy
 msgid "Chat with Tree initialized. Type /help for help."
-msgstr ""
+msgstr "Chat avec l'arbre généalogique initialisé. Taper /help pour l'aide."
 
 #: ChatWithTree/ChatWithTree.py:314
+#, fuzzy
 msgid ""
 "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
 "select a database."
 msgstr ""
+"L'extension ChatWithTree n'est pas encore initialisée. Veuillez relancer "
+"Gramps ou sélectionner une base de données."
 
 #: ChatWithTree/chatwithllm.py:78
 msgid "Tree: '{}'"
