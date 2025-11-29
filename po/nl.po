@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-10-14 05:07+0000\n"
+"PO-Revision-Date: 2025-11-08 17:51+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -146,15 +146,15 @@ msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr "Controleer associatiegegevens"
+msgstr "Connectiegegevens controleren"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
-msgstr "Controleert de associatiegegevens voor mensen."
+msgstr "Controleert de connectiegegevens van personen."
 
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
-msgstr "Associatiegegevens status tool"
+msgstr "Connectiegegevens status-hulpmiddel"
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
@@ -985,44 +985,44 @@ msgstr "Selectie bewerken"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
 msgid "Chat With Tree Interactive Addon"
-msgstr ""
+msgstr "Chatten met Tree Interactive-uitbreiding"
 
 #: ChatWithTree/ChatWithTree.gpr.py:10
 msgid ""
 "Chat With Tree with the help of AI Large Language Model, needs litellm module"
-msgstr ""
+msgstr "Chatten met Tree m.b.v. AI Large Language Model, vereist litellm-module"
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
 msgid "Chat With Tree"
-msgstr ""
+msgstr "Chatten met Tree"
 
 #: ChatWithTree/ChatWithTree.py:103
-#, fuzzy
-#| msgid "Database Backend"
 msgid "Database change detected"
-msgstr "Database-backend"
+msgstr "Wijziging in database gedetecteerd"
 
 #: ChatWithTree/ChatWithTree.py:148
 msgid "Type a message..."
-msgstr ""
+msgstr "Schrijf een bericht…"
 
 #: ChatWithTree/ChatWithTree.py:152
 msgid "Send"
-msgstr ""
+msgstr "Versturen"
 
 #: ChatWithTree/ChatWithTree.py:159
 msgid "Chat with Tree initialized. Type /help for help."
-msgstr ""
+msgstr "Chatten met Tree geïnitialiseerd. Typ /help voor hulp."
 
 #: ChatWithTree/ChatWithTree.py:314
 msgid ""
 "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
 "select a database."
 msgstr ""
+"De uitbreiding ChatWithTree is nog niet geïnitialiseerd. Laad Gramps opnieuw "
+"of kies een database."
 
 #: ChatWithTree/chatwithllm.py:78
 msgid "Tree: '{}'"
-msgstr ""
+msgstr "Tree: '{}'"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -1808,8 +1808,7 @@ msgstr "Dubbelklik op een rij om naar de overeenkomstige persoon te navigeren."
 
 #: DNAMatches/dnamatches.py:195
 msgid "Right click to edit selected association."
-msgstr ""
-"Klik met de rechtermuisknop om de geselecteerde associatie te bewerken."
+msgstr "Klik met de rechtermuisknop om de geselecteerde connectie te bewerken."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
@@ -2106,7 +2105,7 @@ msgstr "Opmerking over ouders"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
 msgid "%s (association)"
-msgstr "%s (verbinding)"
+msgstr "%s (convectie)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 msgid "Note on Person"
@@ -5869,8 +5868,7 @@ msgstr "Stamboom DNA importeren"
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
-"{} Associaties met gecreëerde DNA-gegevens. {} haplogroep-attributen "
-"aangemaakt \n"
+"{} Connecties gemaakt met DNA-gegevens. {} haplogroep-kenmerken aangemaakt \n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
@@ -5883,7 +5881,7 @@ msgstr "Geen segmentbestand opgegeven"
 #: FamilyTreeDNA/ftdna_import.py:236
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
 msgstr ""
-"Geen associaties gevonden in FTdna-notities. Geen haplogroep-attributen "
+"Geen connecties gevonden in FTdna-notities. Geen haplogroep-kenmerken "
 "aangemaakt."
 
 #: FamilyTreeDNA/ftdna_import.py:307
@@ -5894,32 +5892,32 @@ msgstr "%s haplogroep-attribuut toevoegen"
 #: FamilyTreeDNA/ftdna_import.py:350
 #, python-format
 msgid "Add %s DNA Association"
-msgstr "%s DNA-associatie toevoegen"
+msgstr "%s DNA-connectie toevoegen"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr "Notitie voor %s DNA-associatie aanmaken"
+msgstr "Notitie voor %s DNA-connectie aanmaken"
 
 #: FamilyTreeDNA/ftdna_import.py:369
 #, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "Opmerking toevoegen aan %s DNA-associatie"
+msgstr "Opmerking toevoegen aan %s DNA-connectie"
 
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Bronvermelding voor %s DNA-associatie aanmaken"
+msgstr "Bronvermelding voor %s DNA-connectie aanmaken"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Citaat voor %s DNA-associatie aanmaken"
+msgstr "Citaat voor %s DNA-connectie aanmaken"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Citaat aan %s DNA-associatie toevoegen"
+msgstr "Citaat aan %s DNA-connectie toevoegen"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
@@ -5960,7 +5958,7 @@ msgstr "Leeftijd:"
 #: FilterRules/associationsofpersonmatch.py:46
 #: FilterRules/associationsofpersonmatch.py:47
 msgid "Match associations of <person filter>"
-msgstr "Match associaties van <person filter>"
+msgstr "Overeenkomsten zoeken in connecties van <person filter>"
 
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
@@ -20598,26 +20596,20 @@ msgid "Relation and distances with root"
 msgstr "Relatie en afstanden met begin"
 
 #: RelID/relation_tab.py:315
-#, fuzzy
-#| msgid "Filtering"
 msgid "Filter rule"
-msgstr "Filteren"
+msgstr "Filterregel"
 
 #: RelID/relation_tab.py:319
-#, fuzzy
-#| msgid "Selection with a filter"
 msgid "Select the filter rule"
-msgstr "Selectie met een filter"
+msgstr "Seleceer de filterregel"
 
 #: RelID/relation_tab.py:321
-#, fuzzy
-#| msgid "Descendant generations"
 msgid "Deep generations"
-msgstr "Afstammelingsgeneraties"
+msgstr "Verre generaties"
 
 #: RelID/relation_tab.py:322
 msgid "How deep should we go?"
-msgstr ""
+msgstr "Hoe ver moeten we gaan?"
 
 #: RelID/relation_tab.py:339
 msgid "Rel_id"
@@ -20640,60 +20632,44 @@ msgid "Period"
 msgstr "Periode"
 
 #: RelID/relation_tab.py:350
-#, fuzzy
-#| msgid "Shared Segments"
 msgid "Shared Subtree"
-msgstr "Gedeelde segmenten"
+msgstr "Gedeelde aftakking"
 
 #: RelID/relation_tab.py:351
-#, fuzzy
-#| msgid "Center"
 msgid "Centrality"
-msgstr "Midden"
+msgstr "Centraliteit"
 
 #: RelID/relation_tab.py:352
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Unique Ancestors"
-msgstr "Voorouder"
+msgstr "Unieke voorouders"
 
 #: RelID/relation_tab.py:353
-#, fuzzy
-#| msgid "Surname, Given"
 msgid "Surname Diversity"
-msgstr "Achternaam, voornaam"
+msgstr "Diversiteit in achternaam"
 
 #: RelID/relation_tab.py:367
 msgid "Quit"
-msgstr ""
+msgstr "Afsluiten"
 
 #: RelID/relation_tab.py:376
-#, fuzzy
-#| msgid "No default_person"
 msgid "No default person set."
-msgstr "Geen begin_persoon"
+msgstr "Geen beginpersoon ingesteld."
 
 #: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
 msgstr "Een ogenblik geduld, filteren..."
 
 #: RelID/relation_tab.py:446
-#, fuzzy
-#| msgid "Network Chart"
 msgid "Network Metrics"
-msgstr "Netwerk Grafiek"
+msgstr "Netwerkstatistieken"
 
 #: RelID/relation_tab.py:447
-#, fuzzy
-#| msgid "Disabled"
 msgid "Enabled"
-msgstr "Gehandicapt"
+msgstr "Ingeschakeld"
 
 #: RelID/relation_tab.py:449
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable or disable family network metrics"
-msgstr "Genereert een familienetwerkgrafiek."
+msgstr "Familienetwerkstatistieken in-/uitschakelen"
 
 #: RelID/relation_tab.py:483
 msgid "Generating relation map..."
@@ -20704,15 +20680,17 @@ msgid ""
 "\n"
 "Filtering\tCurrent match\t\tTime of pass\n"
 msgstr ""
+"\n"
+"Filteren\tHuidige overeenkomst\t\tTijdsverloop\n"
 
 #: RelID/relation_tab.py:498
 #, python-format
 msgid "%d/%d \t\t %d/%d \t\t%f"
-msgstr ""
+msgstr "%d/%d \t\t %d/%d \t\t%f"
 
 #: RelID/relation_tab.py:615
 msgid "Total of handled entries : {len(self.stats_list)}\n"
-msgstr ""
+msgstr "Totaal van behandelde items : {len(self.stats_list)}\n"
 
 #: RelID/relation_tab.py:628
 msgid "Folder Chooser"
@@ -20723,51 +20701,41 @@ msgid "Please, select a folder"
 msgstr "Selecteer een map"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "Alternate name"
 msgid "Foldername need"
-msgstr "Alternatieve naam"
+msgstr "Mapnaam vereist"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "Foldername will be used for saving the content."
-msgstr "Een notitie voor de aangepaste pagina-inhoud.\n"
+msgstr "Mapnaam wordt gebruikt voor het opslaan van de inhoud."
 
 #: RelID/relation_tab.py:655
 msgid "Cannot set a valid location."
-msgstr ""
+msgstr "Instellen van geldige locatie mislukt."
 
 #: RelID/relation_tab.py:655
 msgid "Did you set a foldername?"
-msgstr ""
+msgstr "Heeft u een mapnaam ingesteld?"
 
 #: RelID/relation_tab.py:672
 #, python-brace-format
 msgid "Data saved to : {filename}"
-msgstr ""
+msgstr "Gegevens opgeslagen naar : {filename}"
 
 #: RelID/relation_tab.py:676
-#, fuzzy
-#| msgid "Failed to create %s: %s"
 msgid "Failed to save data."
-msgstr "Kan %s: %s niet aanmaken"
+msgstr "Gegevens opslaan is mislukt."
 
 #: RelID/relation_tab.py:689
-#, fuzzy
-#| msgid "Relationship to head"
 msgid "Relationships Map and Tab"
-msgstr "Relatie met het hoofd"
+msgstr "Relaties Kaart en Tab"
 
 #: RelID/relation_tab.py:772
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable family network metrics"
-msgstr "Genereert een familienetwerkgrafiek."
+msgstr "Familienetwerkstatistieken inschakelen"
 
 #: RelID/relation_tab.py:774
 msgid "Whether to calculate and display family network metrics."
-msgstr ""
+msgstr "Of familienetwerkstatistieken moeten worden berekend en weergegeven."
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
@@ -22062,32 +22030,32 @@ msgstr "Creëer toewijzing"
 #: SyncAssociations/syncAssociations.py:134
 #: SyncAssociations/syncAssociations.py:138
 msgid "Sync Associations"
-msgstr "Synchroniseer associaties"
+msgstr "Connecties synchroniseren"
 
 #: SyncAssociations/syncAssociations.gpr.py:6
 msgid ""
 "Traverses the Person list for all Associations that are bi-directional and "
 "adds any which are missing to the Associated Person."
 msgstr ""
-"Doorloopt de lijst met personen voor alle associaties die bidirectioneel "
-"zijn en voegt alle ontbrekende toe aan de geassocieerde persoon."
+"Doorloopt de lijst met personen voor alle connecties die bidirectioneel zijn "
+"en voegt alle ontbrekende toe aan de geassocieerde persoon."
 
 #: SyncAssociations/syncAssociations.py:124
 #, python-format
 msgid "Add %s reciprocal association"
-msgstr "Voeg %s wederzijdse associatie toe"
+msgstr "%s wederzijdse connectie toevoegen"
 
 #: SyncAssociations/syncAssociations.py:131
 msgid "{} Reciprocal associations created"
-msgstr "{} Wederzijdse associaties gecreëerd"
+msgstr "{} Wederzijdse connecties aangemaakt"
 
 #: SyncAssociations/syncAssociations.py:135
 msgid "All reciprocal associations exist, none created"
-msgstr "Alle wederzijdse associaties bestaan, geen enkele gecreëerd"
+msgstr "Alle wederzijdse connecties bestaan, geen aangemaakt"
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
-msgstr "Geen bestaande associaties, dus geen wederzijdse nodig"
+msgstr "Geen bestaande connecties, dus geen wederzijdse nodig"
 
 #: TMGimporter/importtmg.gpr.py:49
 msgid "TMG Project Backup"
@@ -23498,7 +23466,7 @@ msgstr "Gramplet gebruikt om woordwolken te maken met wordle.net"
 
 #: WordleGramplet/WordleGramplet.py:126
 msgid "[Missing]"
-msgstr "[Missend]"
+msgstr "[Ontbreekt]"
 
 #: WordleGramplet/WordleGramplet.py:140
 msgid "Number of font sizes"
