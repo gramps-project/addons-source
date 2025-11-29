@@ -7,13 +7,14 @@
 # Bora Atıcı <boratici.acc@gmail.com>, 2025.
 # Muhammed YILMAZ <yilmazmu15@itu.edu.tr>, 2025.
 # mahmutozcan <mahmutozcan@protonmail.com>, 2025.
+# Eren Ekşi <ereneksi2012@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-04-16 18:03+0000\n"
-"Last-Translator: Bora Atıcı <boratici.acc@gmail.com>\n"
+"PO-Revision-Date: 2025-11-29 15:50+0000\n"
+"Last-Translator: Eren Ekşi <ereneksi2012@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
 "Language: tr\n"
@@ -21,22 +22,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11.1-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Herkesin Bütün İsimleri"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Herkesin Bütün İsimlerini Göster"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
-msgstr ""
+msgstr "İsim Tipi"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
