@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-10-14 05:07+0000\n"
+"PO-Revision-Date: 2025-11-17 06:51+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -5050,7 +5050,7 @@ msgstr "Upravený: "
 
 #: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
-msgstr "Zemepisná šírka/ Zemepisná dĺžka/ GPS súradnice nadmorskej výšky"
+msgstr "GPS súradnice zemepisnej šírky/ dĺžky/ nadmorskej výšky"
 
 #: EditExifMetadata/editexifmetadata.py:1069
 msgid "Latitude :"
@@ -9431,7 +9431,7 @@ msgstr ""
 #: Form/form_gb.xml.h:531 Form/form_gb.xml.h:568 Form/form_us.xml.h:1497
 #: RelID/relation_tab.py:448
 msgid "Disabled"
-msgstr "Invalid"
+msgstr "Vypnuté"
 
 #: Form/form_gb.xml.h:440
 msgid "Whether Blind, or Deaf and Dumb"
@@ -10680,12 +10680,12 @@ msgstr ""
 
 #: Form/form_us.xml.h:478 Form/form_us.xml.h:1118 Form/form_us.xml.h:1861
 msgid "Illness on day of enumeration"
-msgstr ""
+msgstr "Choroba v dni sčítania"
 
 #: Form/form_us.xml.h:480 Form/form_us.xml.h:742 Form/form_us.xml.h:1120
 #: Form/form_us.xml.h:1863
 msgid "Deaf and dumb"
-msgstr ""
+msgstr "Hluchonemý"
 
 #: Form/form_us.xml.h:482 Form/form_us.xml.h:1084 Form/form_us.xml.h:1122
 #: Form/form_us.xml.h:1215 Form/form_us.xml.h:1418 Form/form_us.xml.h:1865
@@ -10693,11 +10693,11 @@ msgstr ""
 #: Form/form_us.xml.h:2183 Form/form_us.xml.h:2221 Form/form_us.xml.h:2243
 #: Form/form_us.xml.h:2255 Form/form_us.xml.h:2267
 msgid "Insane"
-msgstr ""
+msgstr "Nesvojprávny"
 
 #: Form/form_us.xml.h:483 Form/form_us.xml.h:1123 Form/form_us.xml.h:1866
 msgid "Maimed, crippled, bedridden, or otherwise disabled"
-msgstr ""
+msgstr "Zmrzačený, invalidný, pripútaný na lôžko, alebo inak neschopný"
 
 #: Form/form_us.xml.h:484 Form/form_us.xml.h:1124 Form/form_us.xml.h:1867
 msgid "Attended school within the census year"
@@ -12149,23 +12149,23 @@ msgstr ""
 
 #: Form/form_us.xml.h:1080
 msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
-msgstr ""
+msgstr "(Deň návštevy sčítacieho komisára) chorý alebo dočasne neschopný."
 
 #: Form/form_us.xml.h:1082 Form/form_us.xml.h:1213
 msgid "Deaf and Dumb"
-msgstr ""
+msgstr "Hluchý a nemý"
 
 #: Form/form_us.xml.h:1085
 msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
-msgstr ""
+msgstr "Zmrzačený, invalidný, pripútaný na lôžko alebo inak neschopný."
 
 #: Form/form_us.xml.h:1087
 msgid "Can not read"
-msgstr ""
+msgstr "Nemôže čítať"
 
 #: Form/form_us.xml.h:1088
 msgid "Can not write"
-msgstr ""
+msgstr "Nemôže písať"
 
 #: Form/form_us.xml.h:1103
 msgid "Street Name"
@@ -12173,11 +12173,11 @@ msgstr "Názov ulice"
 
 #: Form/form_us.xml.h:1104
 msgid "House No."
-msgstr ""
+msgstr "Dom č."
 
 #: Form/form_us.xml.h:1130 Form/form_us.xml.h:1145
 msgid "Precinct No."
-msgstr ""
+msgstr "Okrsok č."
 
 #: Form/form_us.xml.h:1136
 msgid "Inside or Outside City Limits"
@@ -13366,15 +13366,15 @@ msgstr "Názov obce"
 
 #: Form/form_us.xml.h:1672
 msgid "Name of City"
-msgstr ""
+msgstr "Názov mesta"
 
 #: Form/form_us.xml.h:1674
 msgid "Sub-division"
-msgstr ""
+msgstr "Pododdelenie"
 
 #: Form/form_us.xml.h:1675
 msgid "Precincts"
-msgstr ""
+msgstr "Okrsky"
 
 #: Form/form_us.xml.h:1676
 msgid "Enumerated date from"
@@ -13386,115 +13386,115 @@ msgstr "Dátum sčítania do"
 
 #: Form/form_us.xml.h:1680
 msgid "Enumeration number"
-msgstr ""
+msgstr "Sčítacie číslo"
 
 #: Form/form_us.xml.h:1687
 msgid "Fathers birthplace"
-msgstr ""
+msgstr "Rodisko otcov"
 
 #: Form/form_us.xml.h:1688
 msgid "Mothers birthplace"
-msgstr ""
+msgstr "Rodisko matiek"
 
 #: Form/form_us.xml.h:1691
 msgid "Residence in District - years"
-msgstr ""
+msgstr "Bydlisko v obvode - roky"
 
 #: Form/form_us.xml.h:1692
 msgid "Residence in District - months"
-msgstr ""
+msgstr "Bydlisko v obvode - mesiace"
 
 #: Form/form_us.xml.h:1694
 msgid "Army service"
-msgstr ""
+msgstr "Služba v armáde"
 
 #: Form/form_us.xml.h:1695
 msgid "Wars"
-msgstr ""
+msgstr "Vojny"
 
 #: Form/form_us.xml.h:1697 Form/form_us.xml.h:1770
 msgid "White males under 10"
-msgstr ""
+msgstr "Bieli muži do 10"
 
 #: Form/form_us.xml.h:1698 Form/form_us.xml.h:1771
 msgid "White males 10-17"
-msgstr ""
+msgstr "Bieli muži 10-17"
 
 #: Form/form_us.xml.h:1699 Form/form_us.xml.h:1772
 msgid "White males 18-20"
-msgstr ""
+msgstr "Bieli muži 18-20"
 
 #: Form/form_us.xml.h:1700 Form/form_us.xml.h:1773
 msgid "White males 21-44"
-msgstr ""
+msgstr "Bieli muži 21-44"
 
 #: Form/form_us.xml.h:1701 Form/form_us.xml.h:1774
 msgid "White males 45 and over"
-msgstr ""
+msgstr "Bieli muži 45 a nad"
 
 #: Form/form_us.xml.h:1702 Form/form_us.xml.h:1775
 msgid "Total White Males"
-msgstr ""
+msgstr "Celkom bieli muži"
 
 #: Form/form_us.xml.h:1703 Form/form_us.xml.h:1776
 msgid "White females under 10"
-msgstr ""
+msgstr "Biele ženy do 10"
 
 #: Form/form_us.xml.h:1704 Form/form_us.xml.h:1777
 msgid "White females 10-17"
-msgstr ""
+msgstr "Biele ženy 10-17"
 
 #: Form/form_us.xml.h:1705 Form/form_us.xml.h:1778
 msgid "White females 18-20"
-msgstr ""
+msgstr "Biele ženy 18-20"
 
 #: Form/form_us.xml.h:1706 Form/form_us.xml.h:1779
 msgid "White females 21-44"
-msgstr ""
+msgstr "Biele ženy 21-44"
 
 #: Form/form_us.xml.h:1707 Form/form_us.xml.h:1780
 msgid "White females 45 and over"
-msgstr ""
+msgstr "Biele ženy 45 a nad"
 
 #: Form/form_us.xml.h:1708 Form/form_us.xml.h:1781
 msgid "Total White Females"
-msgstr ""
+msgstr "Celkom biele ženy"
 
 #: Form/form_us.xml.h:1709 Form/form_us.xml.h:1782
 msgid "Total White Population"
-msgstr ""
+msgstr "Celkom biela populácia"
 
 #: Form/form_us.xml.h:1710 Form/form_us.xml.h:1783
 msgid "White persons between 6 and 18"
-msgstr ""
+msgstr "Biele osoby medzi 6 a 18"
 
 #: Form/form_us.xml.h:1711 Form/form_us.xml.h:1784
 msgid "No. White persons who can read and write"
-msgstr ""
+msgstr "Počet bielych osôb, ktoré vedia čítať a písať"
 
 #: Form/form_us.xml.h:1712 Form/form_us.xml.h:1785
 msgid "Colored males under 10"
-msgstr ""
+msgstr "Farební muži do 10"
 
 #: Form/form_us.xml.h:1713 Form/form_us.xml.h:1786
 msgid "Colored males 10-17"
-msgstr ""
+msgstr "Farební muži 10-17"
 
 #: Form/form_us.xml.h:1714 Form/form_us.xml.h:1787
 msgid "Colored males 18-20"
-msgstr ""
+msgstr "Farební muži 18-20"
 
 #: Form/form_us.xml.h:1715 Form/form_us.xml.h:1788
 msgid "Colored males 21-44"
-msgstr ""
+msgstr "Farební muži 21-44"
 
 #: Form/form_us.xml.h:1716 Form/form_us.xml.h:1789
 msgid "Colored males 45 and over"
-msgstr ""
+msgstr "Farební muži 45 a nad"
 
 #: Form/form_us.xml.h:1717 Form/form_us.xml.h:1790
 msgid "Total Colored Males"
-msgstr ""
+msgstr "Celkom farební muži"
 
 #: Form/form_us.xml.h:1718 Form/form_us.xml.h:1791
 msgid "Colored females under 10"
@@ -13502,35 +13502,35 @@ msgstr "Farebné ženy do 10 rokov"
 
 #: Form/form_us.xml.h:1719 Form/form_us.xml.h:1792
 msgid "Colored females 10-17"
-msgstr ""
+msgstr "Farebné ženy 10-17"
 
 #: Form/form_us.xml.h:1720 Form/form_us.xml.h:1793
 msgid "Colored females 18-20"
-msgstr ""
+msgstr "Farebné ženy 18-20"
 
 #: Form/form_us.xml.h:1721 Form/form_us.xml.h:1794
 msgid "Colored females 21-44"
-msgstr ""
+msgstr "Farebné ženy 21-44"
 
 #: Form/form_us.xml.h:1722 Form/form_us.xml.h:1795
 msgid "Colored females 45 and over"
-msgstr ""
+msgstr "Farebné ženy 45 a nad"
 
 #: Form/form_us.xml.h:1723 Form/form_us.xml.h:1796
 msgid "Total Colored Females"
-msgstr ""
+msgstr "Celkom farebné ženy"
 
 #: Form/form_us.xml.h:1724 Form/form_us.xml.h:1797
 msgid "Total Colored Population"
-msgstr ""
+msgstr "Celkom farebná populácia"
 
 #: Form/form_us.xml.h:1725 Form/form_us.xml.h:1798
 msgid "Colored persons between 6 and 18"
-msgstr ""
+msgstr "Farebné osoby medzi 6 a 18"
 
 #: Form/form_us.xml.h:1726 Form/form_us.xml.h:1799
 msgid "No. Colored persons who can read and write"
-msgstr ""
+msgstr "Počet farebných osôb, ktoré vedia čítať a písať"
 
 #: Form/form_us.xml.h:1727 Form/form_us.xml.h:1800
 msgid "Deaf and Dumb Males"
@@ -13833,7 +13833,7 @@ msgstr "Volebný obvod č."
 
 #: Form/form_us.xml.h:1977 Form/form_us.xml.h:1998
 msgid "Ward No."
-msgstr "Okrsok č."
+msgstr "Obvod č."
 
 #: Form/form_us.xml.h:1978 Form/form_us.xml.h:1999
 msgid "City or Village"
@@ -14101,7 +14101,7 @@ msgstr "Farebné ženy"
 
 #: Form/form_us.xml.h:2241 Form/form_us.xml.h:2253 Form/form_us.xml.h:2265
 msgid "Deaf & Dumb"
-msgstr "Hluchý a nemý"
+msgstr "Hluchý & nemý"
 
 #: Form/form_us.xml.h:2244 Form/form_us.xml.h:2256
 msgid "Foreign Birth"
@@ -14412,7 +14412,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2540
 msgid "Race "
-msgstr ""
+msgstr "Rasa "
 
 #: Form/form_us.xml.h:2542
 msgid "Build / Weight"
@@ -14432,7 +14432,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2548 Form/form_us.xml.h:2568
 msgid "Date of Registration"
-msgstr ""
+msgstr "Dátum registrácie"
 
 #: Form/form_us.xml.h:2549
 msgid "Serial Number"
@@ -14444,19 +14444,19 @@ msgstr ""
 
 #: Form/form_us.xml.h:2552
 msgid "Place of Residence"
-msgstr ""
+msgstr "Miesto bydliska"
 
 #: Form/form_us.xml.h:2553
 msgid "Mailing Address"
-msgstr ""
+msgstr "Poštová adresa"
 
 #: Form/form_us.xml.h:2554
 msgid "Telephone"
-msgstr ""
+msgstr "Telefón"
 
 #: Form/form_us.xml.h:2555
 msgid "Age in years"
-msgstr ""
+msgstr "Vek v rokoch"
 
 #: Form/form_us.xml.h:2558
 msgid "Who will always know your address (Name & Address)"
@@ -14468,15 +14468,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:2564 Form/form_us.xml.h:2582
 msgid "Complexion"
-msgstr ""
+msgstr "Pleť"
 
 #: Form/form_us.xml.h:2565
 msgid "Eyes"
-msgstr ""
+msgstr "Oči"
 
 #: Form/form_us.xml.h:2566
 msgid "Hair"
-msgstr ""
+msgstr "Vlasy"
 
 #: Form/form_us.xml.h:2567
 msgid "Other characteristics"
@@ -14496,11 +14496,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:2580
 msgid "Eye color"
-msgstr ""
+msgstr "Farba očí"
 
 #: Form/form_us.xml.h:2581
 msgid "Hair color"
-msgstr ""
+msgstr "Farba vlasov"
 
 #: Form/form_us.xml.h:2584
 msgid "Rank in"
@@ -14516,7 +14516,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2588
 msgid "Service Number"
-msgstr ""
+msgstr "Služobné číslo"
 
 #: Form/form_us.xml.h:2589
 msgid "No. of enlistment"
@@ -20309,10 +20309,8 @@ msgid "Network Metrics"
 msgstr ""
 
 #: RelID/relation_tab.py:447
-#, fuzzy
-#| msgid "Disabled"
 msgid "Enabled"
-msgstr "Invalid"
+msgstr "Zapnuté"
 
 #: RelID/relation_tab.py:449
 #, fuzzy
@@ -20354,10 +20352,8 @@ msgid "Foldername need"
 msgstr "Alternatívne meno"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "Foldername will be used for saving the content."
-msgstr "Poznámka použitá pre obsah vlastnej stránky.\n"
+msgstr "Názov priečinka bude použitý pre ukladanie obsahu."
 
 #: RelID/relation_tab.py:655
 msgid "Cannot set a valid location."
