@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-22 21:36+0200\n"
+"PO-Revision-Date: 2025-11-08 17:51+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15-dev\n"
+
+msgid "Database change detected"
+msgstr "Wijziging in database gedetecteerd"
+
+msgid "Type a message..."
+msgstr "Schrijf een bericht…"
+
+msgid "Send"
+msgstr "Versturen"
+
+msgid "Chat with Tree initialized. Type /help for help."
+msgstr "Chatten met Tree geïnitialiseerd. Typ /help voor hulp."
+
+msgid ""
+"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+"select a database."
+msgstr ""
+"De uitbreiding ChatWithTree is nog niet geïnitialiseerd. Laad Gramps opnieuw "
+"of kies een database."
+
+msgid "Tree: '{}'"
+msgstr "Tree: '{}'"
+
+msgid "Chat With Tree Interactive Addon"
+msgstr "Chatten met Tree Interactive-uitbreiding"
+
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+"Chatten met Tree m.b.v. AI Large Language Model, vereist litellm-module"
+
+msgid "Chat With Tree"
+msgstr "Chatten met Tree"

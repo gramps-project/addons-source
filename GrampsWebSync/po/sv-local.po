@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2025-10-13 04:07+0000\n"
+"PO-Revision-Date: 2025-11-11 10:51+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Webb-synkronisering"
@@ -165,6 +165,18 @@ msgstr ""
 "Om du istället vill sammanfoga två signifikant olika träd med möjlighet att "
 "göra manuella ändringar, använd verktyget Importera sammanfogning istället."
 
+msgid "Server URL: "
+msgstr "Server URL: "
+
+msgid "Bidirectional Synchronization"
+msgstr "Dubbelriktad synkronisering"
+
+msgid "Reset remote to local"
+msgstr "Återställ fjärr till lokalt läge"
+
+msgid "Reset local to remote"
+msgstr "Återställ lokalt till fjärrläge"
+
 msgid "Merge"
 msgstr "Slå samman"
 
@@ -189,8 +201,17 @@ msgstr "Båda träden är likadana."
 msgid "Applying changes to local database ..."
 msgstr "Tillämpar ändringar i den lokala databasen ..."
 
+msgid "No changes to apply to local database."
+msgstr "Inga ändringar som ska tillämpas på den lokala databasen."
+
 msgid "Applying changes to remote database ..."
 msgstr "Tillämpar ändringar i fjärrdatabasen ..."
+
+msgid "No changes to apply to remote database."
+msgstr "Inga ändringar som ska tillämpas på fjärrdatabasen."
+
+msgid "Successfully applied changes to local database."
+msgstr "Ändringarna har tillämpats i den lokala databasen."
 
 msgid "Missing locally"
 msgstr "Saknas lokalt"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2025-10-14 05:07+0000\n"
+"PO-Revision-Date: 2025-11-04 06:51+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Gramps Web Sync"
@@ -58,8 +58,30 @@ msgid_plural "Encountered %s errors during upload."
 msgstr[0] "Latauksen aikana ilmeni %s virhe."
 msgstr[1] "Latauksen aikana ilmeni %s virhettä."
 
+msgid "Authentication failed. Please check your username and password."
+msgstr "Todennus epäonnistui. Tarkista käyttäjänimesi ja salasanasi."
+
+msgid "Access forbidden. Please check username and password."
+msgstr "Pääsy kielletty. Tarkista käyttäjätunnus ja salasana."
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "GrampsWeb-palvelua ei löytynyt. Tarkista URL."
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "Liikaa pyyntöjä, yritä uudelleen muutaman sekunnin kuluttua."
+
 msgid "GrampsWeb tree is disabled."
 msgstr "GrampsWeb ei ole tarjolla."
+
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Palvelinvirhe %s. Tarkasta yhteytesi."
+
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr "Yhteysvirhe. Tarkasta URL-osoite ja yhteytesi."
+
+msgid "Invalid server response. Please check the URL."
+msgstr "Virheellinen palvelimen vastaus. Tarkasta URL-osoitteesi."
 
 #, python-format
 msgid "Unexpected error: %s"

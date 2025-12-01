@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-09-28 12:02+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -21,11 +21,11 @@ msgstr "Greška prilikom zapisivanja {target_path}: {message}"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
-msgstr "Greška u stvaranju strukture mapa: %s"
+msgstr "Neuspjelo stvaranje strukture mapa: %s"
 
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr "Greška u kopiranju web datoteka: %s"
+msgstr "Neuspjelo kopiranje web datoteka: %s"
 
 msgid "Ancestral Collapsible Tree Options"
 msgstr "Opcije za sklopivo stablo predaka"
@@ -34,28 +34,28 @@ msgid "Include Generations"
 msgstr "Uključi generacije"
 
 msgid "Male Background Color"
-msgstr "Muška boja pozadine"
+msgstr "Boja pozadine muških osoba"
 
 msgid "RGB-color for male box background."
-msgstr "RGB-boja za mušku boju pozadine."
+msgstr "RGB-boja pozadine polja muških osoba."
 
 msgid "Male Expandable Background Color"
-msgstr "Muška boja pozadine, rasklopljeno"
+msgstr "Boja pozadine proširivih polja muških osoba"
 
 msgid "RGB-color for male expandable box background."
-msgstr "RGB-boja za mušku boju pozadine u rasklopljenom stanju."
+msgstr "RGB-boja pozadine proširivih polja muških osoba."
 
 msgid "Female Background"
-msgstr "Ženska boja pozadine"
+msgstr "Boja pozadine ženskih osoba"
 
 msgid "RGB-color for female box background."
-msgstr "RGB-boja za žensku boju pozadine."
+msgstr "RGB-boja pozadine polja ženskih osoba."
 
 msgid "Female Expandable Background"
-msgstr "Ženska boja pozadine, rasklopljeno"
+msgstr "Boja pozadine proširivih polja ženskih osoba"
 
 msgid "RGB-color for female expandable box background."
-msgstr "RGB-boja za žensku boju pozadine u rasklopljenom stanju."
+msgstr "RGB-boja pozadine proširivih polja ženskih osoba."
 
 msgid "The destination path for generated files."
 msgstr "Odredište za generirane datoteke."

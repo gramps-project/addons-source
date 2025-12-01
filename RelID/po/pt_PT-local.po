@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-10-13 04:07+0000\n"
+"PO-Revision-Date: 2025-11-04 06:51+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 msgid "Display relations and distances with the home person"
 msgstr "Mostrar relações e distâncias com o indivíduo inicial"
@@ -25,6 +25,18 @@ msgstr "Relação e distância com a raiz"
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione um filtro para limitar os indivíduos"
+
+msgid "Filter rule"
+msgstr "Regra de filtragem"
+
+msgid "Select the filter rule"
+msgstr "Seleccione a regra"
+
+msgid "Deep generations"
+msgstr "Gerações profundas"
+
+msgid "How deep should we go?"
+msgstr "Até onde devemos ir?"
 
 msgid "Rel_id"
 msgstr "Id_Rel"
@@ -47,17 +59,58 @@ msgstr "Posição"
 msgid "Period"
 msgstr "Período"
 
+msgid "Shared Subtree"
+msgstr "Sub-árvore partilhada"
+
+msgid "Centrality"
+msgstr "Centralidade"
+
+msgid "Unique Ancestors"
+msgstr "Ascendentes únicos"
+
+msgid "Surname Diversity"
+msgstr "Diversidade de apelidos"
+
 msgid "Save"
 msgstr "Gravar"
+
+msgid "Quit"
+msgstr "Sair"
+
+msgid "No default person set."
+msgstr "Sem indivíduo pré-definido."
 
 msgid "Please wait, filtering..."
 msgstr "Por favor, aguarde, a filtrar..."
 
+msgid "Network Metrics"
+msgstr "Medições de rede"
+
+msgid "Enabled"
+msgstr "Activado"
+
 msgid "Disabled"
 msgstr "Deficiente"
 
+msgid "Enable or disable family network metrics"
+msgstr "Activar/Desactivar medições da rede familiar"
+
 msgid "Generating relation map..."
 msgstr "A gerar mapa de relações..."
+
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"Filtragem\tResultado actual\t\tHora\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
+msgid "Total of handled entries : {len(self.stats_list)}\n"
+msgstr "Total de entradas geridas: {len(self.stats_list)}\n"
 
 msgid "Folder Chooser"
 msgstr "Selector de pasta"
@@ -67,3 +120,31 @@ msgstr "_Seleccionar"
 
 msgid "Please, select a folder"
 msgstr "Por favor, seleccione uma pasta"
+
+msgid "Foldername need"
+msgstr "Nome de pasta necessário"
+
+msgid "Foldername will be used for saving the content."
+msgstr "O nome de pasta será usado para gravar o conteúdo."
+
+msgid "Did you set a foldername?"
+msgstr "Definiu um nome de pasta?"
+
+msgid "Cannot set a valid location."
+msgstr "Impossível definir uma localização válida."
+
+#, python-brace-format
+msgid "Data saved to : {filename}"
+msgstr "Dados gravados em: {filename}"
+
+msgid "Failed to save data."
+msgstr "Falha ao gravar os dados."
+
+msgid "Relationships Map and Tab"
+msgstr "Separador e mapa de parentescos"
+
+msgid "Enable family network metrics"
+msgstr "Activar medições da rede familiar"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "Se deve calcular e mostrar medições da rede familiar."

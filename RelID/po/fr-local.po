@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-10-13 04:07+0000\n"
+"PO-Revision-Date: 2025-11-28 18:00+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Display relations and distances with the home person"
 msgstr "Afficher les relations et distances avec la souche"
@@ -25,6 +25,15 @@ msgstr "Relation et distances avec la racine"
 
 msgid "Select filter to restrict people"
 msgstr "Sélectionne un filtre pour restreindre les individus"
+
+msgid "Filter rule"
+msgstr "Règle du filtre"
+
+msgid "Select the filter rule"
+msgstr "Sélectionner la règle de filtre"
+
+msgid "Deep generations"
+msgstr "Générations profondes"
 
 msgid "Rel_id"
 msgstr "Id_Rel"
@@ -47,14 +56,38 @@ msgstr "Rang"
 msgid "Period"
 msgstr "Période"
 
+msgid "Shared Subtree"
+msgstr "Sous-arbre partagé"
+
+msgid "Centrality"
+msgstr "Centralité"
+
+msgid "Unique Ancestors"
+msgstr "Ancêtres uniques"
+
+msgid "Surname Diversity"
+msgstr "Diversité du nom de famille"
+
 msgid "Save"
 msgstr "Enregistrer"
+
+msgid "No default person set."
+msgstr "Aucune personne par défaut n'est définie."
 
 msgid "Please wait, filtering..."
 msgstr "Attendez, s'il vous plaît ..."
 
+msgid "Network Metrics"
+msgstr "Métriques du réseau"
+
+msgid "Enabled"
+msgstr "Actif"
+
 msgid "Disabled"
 msgstr "Non-actif"
+
+msgid "Enable or disable family network metrics"
+msgstr "Activer ou désactiver les indicateurs du réseau familial"
 
 msgid "Generating relation map..."
 msgstr "Génération de la table de relation..."
@@ -67,3 +100,6 @@ msgstr "_Sélectionner"
 
 msgid "Please, select a folder"
 msgstr "S'il vous plaît, sélectionnez un répertoire"
+
+msgid "Foldername need"
+msgstr "Nom du dossier nécessaire"

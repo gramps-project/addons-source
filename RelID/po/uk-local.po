@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-10-20 04:58+0000\n"
+"PO-Revision-Date: 2025-11-17 06:51+0000\n"
 "Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Display relations and distances with the home person"
 msgstr "Показати зв’язки та відстані з головною особою"
@@ -26,6 +26,18 @@ msgstr "Зв’язки та відстані з коренем"
 
 msgid "Select filter to restrict people"
 msgstr "Виберіть фільтр для обмеження людей"
+
+msgid "Filter rule"
+msgstr "Правило фільтра"
+
+msgid "Select the filter rule"
+msgstr "Виберіть правило фільтра"
+
+msgid "Deep generations"
+msgstr "Глибокі покоління"
+
+msgid "How deep should we go?"
+msgstr "Як глибоко нам слід зайти?"
 
 msgid "Rel_id"
 msgstr "Rel_id"
@@ -48,17 +60,58 @@ msgstr "Ранг"
 msgid "Period"
 msgstr "Період"
 
+msgid "Shared Subtree"
+msgstr "Спільне піддерево"
+
+msgid "Centrality"
+msgstr "Центральність"
+
+msgid "Unique Ancestors"
+msgstr "Унікальні предки"
+
+msgid "Surname Diversity"
+msgstr "Різноманітність прізвищ"
+
 msgid "Save"
 msgstr "Зберегти"
+
+msgid "Quit"
+msgstr "Вийти"
+
+msgid "No default person set."
+msgstr "Особу за замовчуванням не встановлено."
 
 msgid "Please wait, filtering..."
 msgstr "Зачекайте, відбувається фільтрація..."
 
+msgid "Network Metrics"
+msgstr "Метрики мережі"
+
+msgid "Enabled"
+msgstr "Увімкнено"
+
 msgid "Disabled"
 msgstr "Інвалід"
 
+msgid "Enable or disable family network metrics"
+msgstr "Увімкнення або вимкнення показників сімейної мережі"
+
 msgid "Generating relation map..."
 msgstr "Генерується карта зв’язків..."
+
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"Фільтрація\tПоточний збіг\t\tЧас проходження\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
+msgid "Total of handled entries : {len(self.stats_list)}\n"
+msgstr "Загальна кількість оброблених записів : {len(self.stats_list)}\n"
 
 msgid "Folder Chooser"
 msgstr "Вибір папки"
@@ -68,3 +121,31 @@ msgstr "_Вибрати"
 
 msgid "Please, select a folder"
 msgstr "Будь ласка, виберіть папку"
+
+msgid "Foldername need"
+msgstr "Потрібна назва папки"
+
+msgid "Foldername will be used for saving the content."
+msgstr "Ім'я папки буде використано для збереження вмісту."
+
+msgid "Did you set a foldername?"
+msgstr "Ви встановили назву папки?"
+
+msgid "Cannot set a valid location."
+msgstr "Не вдається встановити дійсне місцезнаходження."
+
+#, python-brace-format
+msgid "Data saved to : {filename}"
+msgstr "Дані збережено в : {filename}"
+
+msgid "Failed to save data."
+msgstr "Не вдалося зберегти дані."
+
+msgid "Relationships Map and Tab"
+msgstr "Карта та вкладка «Взаємовідносини»"
+
+msgid "Enable family network metrics"
+msgstr "Увімкнути показники сімейної мережі"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "Чи потрібно розраховувати та відображати показники сімейної мережі."

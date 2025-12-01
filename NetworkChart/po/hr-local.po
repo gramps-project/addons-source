@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-09 18:33+0100\n"
-"PO-Revision-Date: 2025-11-01 19:51+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Network Chart"
 msgstr "Mrežni dijagram"
@@ -31,22 +31,22 @@ msgid "last_written"
 msgstr "zadnji_zapis"
 
 msgid "Main"
-msgstr "Osnovno"
+msgstr "Glavno"
 
 msgid "Orthogonal (right angles in connectors)"
-msgstr "Pravokutno (pravokutne poveznice)"
+msgstr "Pravokutno (spojnice pod pravim kutom)"
 
 msgid "Straight (no right angles in connectors)"
-msgstr "Ravno (ravne poveznice)"
+msgstr "Ravno (spojnice bez pravih kutova)"
 
 msgid "Curved (curved and straight connectors)"
-msgstr "Krivuljasto (krivuljaste i ravne poveznice)"
+msgstr "Krivuljasto (krivuljaste i ravne spojnice)"
 
 msgid "Default (Orthogonal)"
-msgstr "Zadano (okomito)"
+msgstr "Zadano (pravokutno)"
 
 msgid "Select the graph line connector format."
-msgstr "Odaberi format za linije povezivanja u dijagramu."
+msgstr "Odaberi format linija spojnica u dijagramu."
 
 msgid "Top to Bottom"
 msgstr "Odozgo prema dolje"
@@ -133,8 +133,8 @@ msgid ""
 "svg - Scalable Vector Graphics file.\n"
 "pdf - Adobe Portable Document Format.\n"
 msgstr ""
-"svg - Scalable Vector Graphics datoteka.\n"
-"pdf - Adobe Portable Document Format.\n"
+"svg – Scalable Vector Graphics datoteka.\n"
+"pdf – Adobe Portable Document Format.\n"
 
 msgid "The destination folder for generated files."
 msgstr "Odredišna mapa za generirane datoteke."
@@ -155,62 +155,64 @@ msgid "Male Background"
 msgstr "Pozadina muških osoba"
 
 msgid "RGB-color for male box background."
-msgstr "RGB-boja za mušku boju pozadine."
+msgstr "RGB-boja pozadine polja muških osoba."
 
 msgid "Male Background Alpha"
 msgstr "Prozirnost pozadine muških osoba"
 
 msgid "Alpha for Male box background (transparent=0, solid=255)."
-msgstr "Prozirnost pozadine okvira muških osoba (prozirno=0, neprozirno=255)."
+msgstr "Prozirnost pozadine polja muških osoba (prozirno=0, neprozirno=255)."
 
 msgid "Male Box Edge"
-msgstr "Rubovi okvira muških osoba"
+msgstr "Rub polja muške osobe"
 
 msgid "RGB-color for Male box edge."
-msgstr "RGB-boja za rubove okvira muških osoba."
+msgstr "RGB-boja za rubove polja muških osoba."
 
 msgid "Female Background"
-msgstr "Ženska boja pozadine"
+msgstr "Boja pozadine ženskih osoba"
 
 msgid "RGB-color for Female box background."
-msgstr "RGB-boja pozadine okvira ženskih osoba."
+msgstr "RGB-boja pozadine polja ženskih osoba."
 
 msgid "Female Background Alpha"
 msgstr "Prozirnost pozadine ženskih osoba"
 
 msgid "Alpha for Female box background (transparent=0, solid=255)."
-msgstr "Prozirnost pozadine okvira ženskih osoba (prozirno=0, neprozirno=255)."
+msgstr "Prozirnost pozadine polja ženskih osoba (prozirno=0, neprozirno=255)."
 
 msgid "Female Box Edge"
-msgstr "Rubovi okvira ženskih osoba"
+msgstr "Rub polja ženske osobe"
+
+msgid "RGB-color for Female box edge."
+msgstr "RGB-boja za rubove polja ženskih osoba."
 
 msgid "Other Background"
-msgstr "Boja pozadine ostalih osoba"
+msgstr "Pozadina za druge osobe"
 
 msgid "RGB-color for other box background."
-msgstr "RGB-boja pozadine okvira ostalih osoba."
+msgstr "RGB-boja pozadine za polja drugih osoba."
 
 msgid "Other Background Alpha"
 msgstr "Prozirnost pozadine ostalih osoba"
 
 msgid "Alpha for Other box background (transparent=0, solid=255)."
-msgstr ""
-"Prozirnost boje pozadine okvira ostalih osoba (prozirno=0, neprozirno=255)."
+msgstr "Prozirnost pozadine polja ostalih osoba (prozirno=0, neprozirno=255)."
 
 msgid "Family Connector Line"
-msgstr "Obiteljska poveznica"
+msgstr "Povezna linija obitelji"
 
 msgid "RGB-color for family connector line."
-msgstr "RGB-boja za obiteljske poveznice."
+msgstr "RGB-boja za poveznu liniju obitelji."
 
 msgid "Marriage Connector Line"
-msgstr "Bračna poveznica"
+msgstr "Povezna linija braka"
 
 msgid "RGB-color for marriage connector line."
-msgstr "RGB-boja za bračne poveznice."
+msgstr "RGB-boja za poveznu liniju braka."
 
 msgid "Highlight Connector Line"
-msgstr "Istakni poveznicu"
+msgstr "Istakni poveznu liniju"
 
 msgid ""
 "RGB-color for the highlighted path between two individuals.  If the "
@@ -220,16 +222,16 @@ msgstr ""
 "preokreni redoslijed da se promijeni."
 
 msgid "Trim Box Edge"
-msgstr "Rub odrezanih okvira"
+msgstr "Odreži rub polja"
 
 msgid "RGB-color for box edge that has been trimmed."
-msgstr "RGB-boja za rubove okvira koji su odrezani."
+msgstr "RGB-boja za rubove polja koji su odrezani."
 
 msgid "Remove color background on all nodes."
-msgstr "Ukloni boju pozadine u svim čvorištima."
+msgstr "Ukloni boju pozadine svih čvorišta."
 
 msgid "Removes color background for individuals (nodes) on chart."
-msgstr "Uklanja boju pozadine svih pojedinaca (čvorišta) u dijagramu."
+msgstr "Uklanja boju pozadine osoba (čvorišta) u dijagramu."
 
 msgid ""
 "Enter year to start\n"
@@ -295,7 +297,7 @@ msgid "Trim descendants"
 msgstr "Odreži potomke"
 
 msgid "All descendants (children) of selected individuals will not be shown."
-msgstr "Svi potomci (djeca) odabranog pojedinca neće biti prikazani."
+msgstr "Svi potomci (djeca) odabrane osobe se neće prikazati."
 
 msgid "Enable trimming of descendants."
 msgstr "Omogući odrezivanje potomaka."
@@ -311,7 +313,7 @@ msgid "Trim ancestors"
 msgstr "Odreži pretke"
 
 msgid "All ancestors (parents) of selected individuals will not be shown."
-msgstr "Svi preci (roditelji) odabranog pojedinca neće biti prikazani."
+msgstr "Svi preci (roditelji) odabrane osobe se neće prikazati."
 
 msgid "Enable trimming of ancestors."
 msgstr "Omogući odrezivanje predaka."
@@ -326,8 +328,8 @@ msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
 msgstr ""
-"Ukloni grupe, koje su manje od min. veličine grupe.\n"
-"Automatski za baze podataka s više od 1500 pojedinaca."
+"Ukloni grupe, koje su manje od minimalne veličine grupe.\n"
+"Automatski za baze podataka s više od 1.500 osoba."
 
 msgid "Min Group Size"
 msgstr "Min. veličina grupe"
@@ -354,7 +356,7 @@ msgid ""
 "Starting and ending person for displayed path(s).\n"
 "Select two people"
 msgstr ""
-"Početna i krajnja osoba u prikazanim linijama.\n"
+"Početna i krajnja osoba za prikazane linije.\n"
 "Odaberi dvije osobe"
 
 msgid "Highlight path(s)"
@@ -367,7 +369,7 @@ msgid "Any"
 msgstr "Bilo koje"
 
 msgid "Default (None)"
-msgstr "Zadano (Bez)"
+msgstr "Zadano (bez)"
 
 msgid ""
 "None - Don't highlight paths.\n"
@@ -376,7 +378,7 @@ msgid ""
 msgstr ""
 "Bez – Nemoj istaknuti linije.\n"
 "Izravne – Istakni linije izravnih potomaka/predaka.\n"
-"Bilo koje – Istakni sve linije, bile one izravne ili neizravne."
+"Bilo koje – Istakni bilo koje linije uključujući izravne ili neizravne."
 
 msgid "Show only path(s)"
 msgstr "Prikaži samo linije"
@@ -391,10 +393,10 @@ msgid ""
 msgstr ""
 "Bez – Nemoj prikazati samo linije.\n"
 "Izravne – Prikaži samo linije izravnih potomaka/predaka.\n"
-"Bilo koje – Prikaži samo linije izravnih ili neizravnih."
+"Bilo koje – Prikaži samo izravne ili neizravne linije."
 
 msgid "Select person at center of selection radius in graph."
-msgstr "Odaberi osobu u centru polumjera odabira u dijagramu."
+msgstr "Odaberi osobu u centru radijusa odabira u dijagramu."
 
 msgid ""
 "Max connections\n"
@@ -407,20 +409,20 @@ msgid ""
 "Enter the maximum number of connections allowed from\n"
 "the center person.  Value may be 1 or greater."
 msgstr ""
-"Unesi maksimalan broj veza, dozvoljenih od\n"
+"Unesi maksimalni broj veza, dozvoljenih od\n"
 "središnje osobe. Vrijednost mora biti veća od 1."
 
 msgid "Limit graph to max connections from center."
 msgstr "Ograniči dijagram s maksimalnim brojem veza iz centra."
 
 msgid "Display up to max connections from central person."
-msgstr "Prikaži sve do maksimalnog broja veza središnje osobe."
+msgstr "Prikaži maksimalni broja veza središnje osobe."
 
 msgid "Highlight central person in graph."
 msgstr "Istakni središnju osobu u dijagramu."
 
 msgid "Add yellow color background to central person."
-msgstr "Dodaj žutu pozadinu središnjoj osobi."
+msgstr "Dodaj žutu pozadinu za središnju osobu."
 
 msgid "Use database handle instead of GrampID id in URLs."
 msgstr "Koristi upravljače baze podataka umjesto GrampID oznaka u URL-ovima."

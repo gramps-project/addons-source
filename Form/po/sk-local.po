@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-10-14 05:07+0000\n"
+"PO-Revision-Date: 2025-11-17 06:51+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Select Form"
 msgstr "Vybrať formulár"
@@ -108,8 +108,20 @@ msgstr "Počet dní choroby"
 msgid "Relationship to head"
 msgstr "Vzťah k hlave"
 
+msgid "Illness on day of enumeration"
+msgstr "Choroba v dni sčítania"
+
 msgid "Blind"
 msgstr "Nevidiaci"
+
+msgid "Deaf and dumb"
+msgstr "Hluchonemý"
+
+msgid "Insane"
+msgstr "Nesvojprávny"
+
+msgid "Maimed, crippled, bedridden, or otherwise disabled"
+msgstr "Zmrzačený, invalidný, pripútaný na lôžko, alebo inak neschopný"
 
 msgid "Horses on hand"
 msgstr "Dostupné kone"
@@ -168,8 +180,29 @@ msgstr "Dátum sobáša"
 msgid "Signed"
 msgstr "Podpísané"
 
+msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
+msgstr "(Deň návštevy sčítacieho komisára) chorý alebo dočasne neschopný."
+
+msgid "Deaf and Dumb"
+msgstr "Hluchý a nemý"
+
+msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
+msgstr "Zmrzačený, invalidný, pripútaný na lôžko alebo inak neschopný."
+
+msgid "Can not read"
+msgstr "Nemôže čítať"
+
+msgid "Can not write"
+msgstr "Nemôže písať"
+
 msgid "Street Name"
 msgstr "Názov ulice"
+
+msgid "House No."
+msgstr "Dom č."
+
+msgid "Precinct No."
+msgstr "Okrsok č."
 
 msgid "Relation to Family"
 msgstr "Vzťah k rodine"
@@ -319,7 +352,7 @@ msgid "Personal Estate"
 msgstr "Osobný nehnuteľný majetok"
 
 msgid "Disabled"
-msgstr "Invalid"
+msgstr "Vypnuté"
 
 msgid "Personal Property"
 msgstr "Osobný majetok"
@@ -336,14 +369,131 @@ msgstr "Rozvrh"
 msgid "Name of Village"
 msgstr "Názov obce"
 
+msgid "Name of City"
+msgstr "Názov mesta"
+
+msgid "Sub-division"
+msgstr "Pododdelenie"
+
+msgid "Precincts"
+msgstr "Okrsky"
+
 msgid "Enumerated date from"
 msgstr "Dátum sčítania od"
 
 msgid "Enumerated date to"
 msgstr "Dátum sčítania do"
 
+msgid "Enumeration number"
+msgstr "Sčítacie číslo"
+
+msgid "Fathers birthplace"
+msgstr "Rodisko otcov"
+
+msgid "Mothers birthplace"
+msgstr "Rodisko matiek"
+
+msgid "Residence in District - years"
+msgstr "Bydlisko v obvode - roky"
+
+msgid "Residence in District - months"
+msgstr "Bydlisko v obvode - mesiace"
+
+msgid "Army service"
+msgstr "Služba v armáde"
+
+msgid "Wars"
+msgstr "Vojny"
+
+msgid "White males under 10"
+msgstr "Bieli muži do 10"
+
+msgid "White males 10-17"
+msgstr "Bieli muži 10-17"
+
+msgid "White males 18-20"
+msgstr "Bieli muži 18-20"
+
+msgid "White males 21-44"
+msgstr "Bieli muži 21-44"
+
+msgid "White males 45 and over"
+msgstr "Bieli muži 45 a nad"
+
+msgid "Total White Males"
+msgstr "Celkom bieli muži"
+
+msgid "White females under 10"
+msgstr "Biele ženy do 10"
+
+msgid "White females 10-17"
+msgstr "Biele ženy 10-17"
+
+msgid "White females 18-20"
+msgstr "Biele ženy 18-20"
+
+msgid "White females 21-44"
+msgstr "Biele ženy 21-44"
+
+msgid "White females 45 and over"
+msgstr "Biele ženy 45 a nad"
+
+msgid "Total White Females"
+msgstr "Celkom biele ženy"
+
+msgid "Total White Population"
+msgstr "Celkom biela populácia"
+
+msgid "White persons between 6 and 18"
+msgstr "Biele osoby medzi 6 a 18"
+
+msgid "No. White persons who can read and write"
+msgstr "Počet bielych osôb, ktoré vedia čítať a písať"
+
+msgid "Colored males under 10"
+msgstr "Farební muži do 10"
+
+msgid "Colored males 10-17"
+msgstr "Farební muži 10-17"
+
+msgid "Colored males 18-20"
+msgstr "Farební muži 18-20"
+
+msgid "Colored males 21-44"
+msgstr "Farební muži 21-44"
+
+msgid "Colored males 45 and over"
+msgstr "Farební muži 45 a nad"
+
+msgid "Total Colored Males"
+msgstr "Celkom farební muži"
+
 msgid "Colored females under 10"
 msgstr "Farebné ženy do 10 rokov"
+
+msgid "Colored females 10-17"
+msgstr "Farebné ženy 10-17"
+
+msgid "Colored females 18-20"
+msgstr "Farebné ženy 18-20"
+
+msgid "Colored females 21-44"
+msgstr "Farebné ženy 21-44"
+
+msgid "Colored females 45 and over"
+msgstr "Farebné ženy 45 a nad"
+
+msgid "Total Colored Females"
+msgstr "Celkom farebné ženy"
+
+msgid "Total Colored Population"
+msgstr "Celkom farebná populácia"
+
+msgid "Colored persons between 6 and 18"
+msgstr "Farebné osoby medzi 6 a 18"
+
+msgid "No. Colored persons who can read and write"
+msgstr "Počet farebných osôb, ktoré vedia čítať a písať"
 
 msgid "Birthplace (NY County or other)"
 msgstr "Miesto narodenia (NY County alebo iné)"
@@ -436,7 +586,7 @@ msgid "Election District No."
 msgstr "Volebný obvod č."
 
 msgid "Ward No."
-msgstr "Okrsok č."
+msgstr "Obvod č."
 
 msgid "City or Village"
 msgstr "Mesto alebo dedina"
@@ -625,7 +775,7 @@ msgid "Colored females"
 msgstr "Farebné ženy"
 
 msgid "Deaf & Dumb"
-msgstr "Hluchý a nemý"
+msgstr "Hluchý & nemý"
 
 msgid "Foreign Birth"
 msgstr "Narodenie v zahraničí"
@@ -861,14 +1011,50 @@ msgstr "Meno a adresa zamestnávateľa"
 msgid "Nearest Relative"
 msgstr "Najbližší príbuzný"
 
+msgid "Race "
+msgstr "Rasa "
+
 msgid "Hair Color"
 msgstr "Farba vlasov"
+
+msgid "Date of Registration"
+msgstr "Dátum registrácie"
+
+msgid "Place of Residence"
+msgstr "Miesto bydliska"
+
+msgid "Mailing Address"
+msgstr "Poštová adresa"
+
+msgid "Telephone"
+msgstr "Telefón"
+
+msgid "Age in years"
+msgstr "Vek v rokoch"
+
+msgid "Complexion"
+msgstr "Pleť"
+
+msgid "Eyes"
+msgstr "Oči"
+
+msgid "Hair"
+msgstr "Vlasy"
 
 msgid "Other characteristics"
 msgstr "Ďalšie charakteristiky"
 
 msgid "Place entered"
 msgstr "Miesto vstupu"
+
+msgid "Eye color"
+msgstr "Farba očí"
+
+msgid "Hair color"
+msgstr "Farba vlasov"
+
+msgid "Service Number"
+msgstr "Služobné číslo"
 
 msgid "Place discharged"
 msgstr "Miesto prepustenia"

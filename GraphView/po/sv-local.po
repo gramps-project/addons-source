@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-12 06:01+0000\n"
+"PO-Revision-Date: 2025-11-11 10:51+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Graph View"
 msgstr "Diagramvy"
@@ -47,6 +47,9 @@ msgstr "Horisontell: Höger till vänster"
 msgid "Time Direction"
 msgstr "Tidsriktning"
 
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr "Begränsa antalet personer som visas (använd 0 för obegränsat antal)"
+
 msgid "Person theme"
 msgstr "Persontema"
 
@@ -59,8 +62,17 @@ msgstr "Typsnitt:"
 msgid "Avatars style"
 msgstr "Stil på avatarer"
 
+msgid "PNG files"
+msgstr "PNG-filer"
+
+msgid "Male avatar:"
+msgstr "Manlig avatar:"
+
 msgid "Choose male avatar"
 msgstr "Välj mansavatar"
+
+msgid "Female avatar:"
+msgstr "Kvinnlig avatar:"
 
 msgid "Choose female avatar"
 msgstr "Välj kvinnoavatar"
@@ -68,8 +80,14 @@ msgstr "Välj kvinnoavatar"
 msgid "Unknown avatar:"
 msgstr "Okänd avatar:"
 
+msgid "Choose Unknown avatar"
+msgstr "Välj okänd avatar"
+
 msgid "Other avatar:"
 msgstr "Annan avatar:"
+
+msgid "Choose Other avatar"
+msgstr "Välj annan avatar"
 
 msgid "Active person border size"
 msgstr "Kantstorlek för aktiv person"
@@ -83,11 +101,29 @@ msgstr "Teman"
 msgid "Show animation"
 msgstr "Visa animation"
 
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "Animationshastighet (1..5 och 5 är långsammare)"
+
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr "Animeringsantal (0..8, använd 0 för att stänga av)"
+
 msgid "Animation"
 msgstr "Animation"
 
+msgid "Search in all database"
+msgstr "Sök i hela databasen"
+
+msgid "Also apply search by all database."
+msgstr "Använd även sökning i hela databasen."
+
 msgid "Show person images"
 msgstr "Visa personbilder"
+
+msgid "Show persons thumbnails in search result list."
+msgstr "Visa miniatyrbilder av personer i sökresultatlistan."
+
+msgid "Show bookmarked first"
+msgstr "Visa bokmärkt först"
 
 msgid "Search"
 msgstr "Sök"
@@ -198,6 +234,9 @@ msgstr "Lägger till taggar till person (%s)"
 msgid "Adding Tags to family (%s)"
 msgstr "Lägger till taggar till familjen (%s)"
 
+msgid "Dynamic and interactive graph of relations"
+msgstr "Dynamisk och interaktiv graf över relationer"
+
 msgid "Dark (default)"
 msgstr "Mörk (standard)"
 
@@ -206,6 +245,9 @@ msgstr "Ljus"
 
 msgid "Cartoon"
 msgstr "Tecknad film"
+
+msgid "Modern"
+msgstr "Modern"
 
 msgid "Other persons from database"
 msgstr "Andra personer från databasen"

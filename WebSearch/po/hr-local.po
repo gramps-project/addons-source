@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Middle Name Handling"
 msgstr "Baratanje srednjim imenom"
@@ -31,10 +31,10 @@ msgid "Shortest - No Prefix, No Keys"
 msgstr "Najkraće – Bez prefiksa, bez ključeva"
 
 msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Kompaktno – Bez prefiksa, ključevi bez atributa"
+msgstr "Kompaktno – Bez prefiksa, ključevi bez svojstva"
 
 msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Kompaktno – Bez prefiksa, ključevi s atributima"
+msgstr "Kompaktno – Bez prefiksa, ključevi sa svojstima"
 
 msgid "Long - Without Prefix on the Left"
 msgstr "Dugačko – bez prefiksa na lijevoj strani"
@@ -89,6 +89,16 @@ msgstr "Prikaži stupce"
 
 msgid "Display Icons"
 msgstr "Prikaži ikone"
+
+msgid "WebSearch"
+msgstr "Web pretraga"
+
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+"Prilagođeni upiti za internetske usluge na osnovi zapisa aktivne osobe, "
+"mjesta, obitelji ili izvora"
 
 #, python-format
 msgid "Visited: %s"
@@ -165,6 +175,29 @@ msgstr "Poveznica zabilješke (interna)"
 
 msgid "Note Link (external)"
 msgstr "Poveznica zabilješke (eksterna)"
+
+msgid "No title"
+msgstr "Nema naslova"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Informacije o grampletu „Web pretraga”"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"„Web pretraga” je gramplet za Gramps koji pomaže pri pretraživanju "
+"genealoških web-stranica."
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"U nastavku su staze do sustavskih i korisnički definiranih podatkovnih "
+"datoteka koje koristi „Web pretraga”."
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 Verzija grampleta „Web pretraga”: `%s`"
 
 msgid "Column - Icons"
 msgstr "Stupac – Ikone"
@@ -262,23 +295,100 @@ msgstr ""
 "⚠ Greška prilikom generiranja QR koda:\n"
 "Izvorna greška: „{}”"
 
+msgid "Save Coordinates to the Place"
+msgstr "Spremi koordinate za mjesto"
+
+msgid "AI provider is disabled"
+msgstr "Pružatelj usluge umjetne inteligencije je deaktiviran"
+
+msgid "No AI API key provided"
+msgstr "Nije naveden API ključ umjetne inteligencije"
+
 msgid "AI-generated historical place data is currently disabled"
 msgstr ""
 "Generiranje povijesnih podataka mjesta pomoću umjetne inteligencije je "
 "trenutačno deaktivirano"
 
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"Pružatelj usluge umjetne inteligencije je nepoznat. Provjeri postavke tvog "
+"prušatelja usluge umjetne inteligencije."
+
 msgid "⏳ Generating historical place data, please wait..."
 msgstr "⏳ Generiraju se povijesni podaci mjesta. Pričekaj …"
+
+msgid "Keys"
+msgstr "Ključevi"
+
+msgid "Website URL"
+msgstr "URL web-stranice"
+
+msgid "Add link to note"
+msgstr "Dodaj poveznicu zabilješci"
+
+msgid "Add link to attribute"
+msgstr "Dodaj poveznicu svojstvu"
+
+msgid "Show QR-code"
+msgstr "Prikaži QR kod"
+
+msgid "Copy link to clipboard"
+msgstr "Kopiraj poveznicu u međuspremnik"
+
+msgid "Hide link for selected item"
+msgstr "Sakrij poveznicu za odabranu stavku"
+
+msgid "Hide link for all items"
+msgstr "Sakrij poveznice za sve odabrane stavke"
+
+msgid "Edit Attribute with the Link"
+msgstr "Uredi svojstvo s poveznicom"
+
+msgid "Edit Note with the Link"
+msgstr "Uredi zabilješku s poveznicom"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 Prijedlozi umjetne inteligencije"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "Svojstvo više ne postoji. Dodatna ikona je uklonjena"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "Zabilješka više ne postoji. Dodatna ikona je uklonjena"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Ovu web poveznicu „{title}” je gramplet „Web pretraga” (v. {version}) "
+"arhivirao za buduće reference:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Ovu se poveznica može koristiti za ponovno pregledavanje izvora i provjeru "
+"informacija povezanih s ovom entitetom."
 
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Zabilješka #%(id)s je uspješno dodana"
 
+msgid "Error creating note"
+msgstr "Greška pri stvaranju zabilješke"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL je kopiran u međuspremnik"
+
 msgid "WebSearch Link"
-msgstr "WebSearch poveznica"
+msgstr "Poveznica za „Web pretraga”"
 
 msgid "Attribute has been successfully added"
-msgstr "Atribut je uspješno dodan"
+msgstr "Svojstvo je uspješno dodano"
 
 #, python-brace-format
 msgid "Title: {title}"

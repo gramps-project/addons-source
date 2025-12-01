@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-22 21:36+0200\n"
+"PO-Revision-Date: 2025-11-28 18:00+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.15-dev\n"
+
+msgid "Database change detected"
+msgstr "זוהה שינוי מסד־נתונים"
+
+msgid "Type a message..."
+msgstr "להקליד הודעה..."
+
+msgid "Send"
+msgstr "לשלוח"
+
+msgid "Chat with Tree initialized. Type /help for help."
+msgstr "צ'שיחוח עם אילן ראשוני הקלדת /help לעזרה."
+
+msgid ""
+"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+"select a database."
+msgstr ""
+"תוסף ChatWithTree עדיין לא תוחל. נא לטעון את גרמפס מחדש או לבחור מסד־נתונים."
+
+msgid "Tree: '{}'"
+msgstr "אילן: '{}'"
+
+msgid "Chat With Tree Interactive Addon"
+msgstr "שיחוח עם תוסף אילן־יוחסין הידודי"
+
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+"שיחוח עם אילן־יוחסין בעזרת פרקן שפה גדול (LLM) של בינה מלאכותית, דורש פרקן "
+"litellm"
+
+msgid "Chat With Tree"
+msgstr "שיחוח עם אילן"

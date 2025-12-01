@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-22 21:36+0200\n"
+"PO-Revision-Date: 2025-11-04 06:51+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fi/>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14.1-dev\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "Database change detected"
+msgstr "Tietokannan muutos havaittu"
+
+msgid "Type a message..."
+msgstr "Kirjoita viesti..."
+
+msgid "Send"
+msgstr "Lähetä"
+
+msgid "Chat with Tree initialized. Type /help for help."
+msgstr ""
+"Keskustelu sukupuun kanssa on aloitettu. Kirjoita /help saadaksesi apua."
+
+msgid ""
+"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+"select a database."
+msgstr ""
+"ChatWithTree-lisäosaa ei ole vielä alustettu. Lataa Gramps uudelleen tai "
+"valitse tietokanta."
+
+msgid "Tree: '{}'"
+msgstr "Sukupuu: '{}'"
+
+msgid "Chat With Tree Interactive Addon"
+msgstr "Keskustele Interaktiivinen puu -lisäosan kanssa"
+
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+"Keskustele sukupuun kanssa suuren kielimallin tekoälyn avustamana (vaatii "
+"litellm-moduulin)"
+
+msgid "Chat With Tree"
+msgstr "Keskustele sukupuun kanssa"

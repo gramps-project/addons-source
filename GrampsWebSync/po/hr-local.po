@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2025-11-01 19:51+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web sinkronizacija"
@@ -62,6 +62,10 @@ msgstr[0] "Broj grešaka tijekom prijenosa medijskih datoteka: %s."
 msgstr[1] "Broj grešaka tijekom prijenosa medijskih datoteka: %s."
 msgstr[2] "Broj grešaka tijekom prijenosa medijskih datoteka: %s."
 
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Neočekivana greška: %s"
+
 msgid "Error accessing media object."
 msgstr "Greška pri pristupu medijskom objektu."
 
@@ -90,6 +94,9 @@ msgstr "Greška %s tijekom povezivanja na server."
 
 msgid "URL error while connecting to server."
 msgstr "URL greška tijekom povezivanja na server."
+
+msgid "Unable to synchronize changes to server."
+msgstr "Nije moguće sinkronizirati promjene sa serverom."
 
 msgid "Continue without transport encryption?"
 msgstr "Nastaviti bez šifriranja prijenosa?"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 09:41-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Search"
 msgstr "Traži"
@@ -31,10 +31,13 @@ msgid "Persons"
 msgstr "Osobe"
 
 msgid "Menu to set search objects"
-msgstr "Izbornik za traženje objekata"
+msgstr "Izbornik za postavljanje traženih objekata"
 
 msgid "Select objects to search"
 msgstr "Odaberi objekte za pretragu"
+
+msgid "SearchGramplet configuration menu"
+msgstr "Izbornik konfiguracije grampleta za pretraživanje"
 
 #, python-format
 msgid "found: %s"
@@ -42,6 +45,16 @@ msgstr "pronađeno: %s"
 
 msgid "No matches..."
 msgstr "Nema podudaranja …"
+
+msgid "Start type to search"
+msgstr "Počni tipkati za pokretanje pretrage"
+
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+"Počni tipkati za pretraživanje objekata.\n"
+"Za prikaz svih objekata upiši samo zvijezdicu (*)."
 
 msgid "Search..."
 msgstr "Traži …"

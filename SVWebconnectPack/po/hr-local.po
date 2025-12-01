@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-09-03 03:01+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,13 +13,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "SV Web Connect Pack"
 msgstr "SV Web Connect zbirka"
 
+msgid "Collection of Web sites for Sweden (requires libwebconnect)"
+msgstr "Zbirka web stranica za Švedsku (zahtijeva libwebconnect)"
+
 msgid "Find A Grave"
-msgstr "Nađi grob"
+msgstr "Pronađi grob"
 
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
+
+msgid "Google SV"
+msgstr "Google SV"
+
+msgid "FamilySearch.org Tree"
+msgstr "FamilySearch.org stablo"
+
+msgid "National archives of Sweden personsearch"
+msgstr "Nacionalni arhiv Švedske za traženje osoba"
+
+msgid "National archives of Sweden free search"
+msgstr "Nacionalni arhiv Švedske, besplatna pretraga"
+
+msgid "Arkiv Digital estate records for Skåne"
+msgstr "Arkiv Digital ostavinski zapisi za Skåne"
+
+msgid "Ancestry Search"
+msgstr "Pretraga predaka"
+
+msgid "Find swedish portraits - Rötter.se"
+msgstr "Pronađi portrete šveđana – Rötter.se"
+
+msgid "Gravar.se - find swedish graves"
+msgstr "Gravar.se – pronaći švedske grobove"
+
+msgid "National archives of Sweden search censuses"
+msgstr "Nacionalni arhiv Švedske, pretraga popisa stanovništva"
+
+msgid "Arkiv Digital released prisoners"
+msgstr "Arkiv Digital oslobođeni zatvorenici"
+
+msgid "Gravestone inventory - rötter.se"
+msgstr "Inventar nadgrobnih ploča – rötter.se"

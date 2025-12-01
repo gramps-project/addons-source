@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-10-14 05:07+0000\n"
+"PO-Revision-Date: 2025-11-08 17:51+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Display relations and distances with the home person"
 msgstr "Toon relaties en afstanden met de centrale persoon"
@@ -25,6 +25,18 @@ msgstr "Relatie en afstanden met begin"
 
 msgid "Select filter to restrict people"
 msgstr "Selecteer filter om aantal mensen te beperken"
+
+msgid "Filter rule"
+msgstr "Filterregel"
+
+msgid "Select the filter rule"
+msgstr "Seleceer de filterregel"
+
+msgid "Deep generations"
+msgstr "Verre generaties"
+
+msgid "How deep should we go?"
+msgstr "Hoe ver moeten we gaan?"
 
 msgid "Rel_id"
 msgstr "Rel_id"
@@ -47,17 +59,58 @@ msgstr "Rang"
 msgid "Period"
 msgstr "Periode"
 
+msgid "Shared Subtree"
+msgstr "Gedeelde aftakking"
+
+msgid "Centrality"
+msgstr "Centraliteit"
+
+msgid "Unique Ancestors"
+msgstr "Unieke voorouders"
+
+msgid "Surname Diversity"
+msgstr "Diversiteit in achternaam"
+
 msgid "Save"
 msgstr "Opslaan"
+
+msgid "Quit"
+msgstr "Afsluiten"
+
+msgid "No default person set."
+msgstr "Geen beginpersoon ingesteld."
 
 msgid "Please wait, filtering..."
 msgstr "Een ogenblik geduld, filteren..."
 
+msgid "Network Metrics"
+msgstr "Netwerkstatistieken"
+
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
 msgid "Disabled"
 msgstr "Gehandicapt"
 
+msgid "Enable or disable family network metrics"
+msgstr "Familienetwerkstatistieken in-/uitschakelen"
+
 msgid "Generating relation map..."
 msgstr "Relatiekaart genereren..."
+
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"Filteren\tHuidige overeenkomst\t\tTijdsverloop\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
+msgid "Total of handled entries : {len(self.stats_list)}\n"
+msgstr "Totaal van behandelde items : {len(self.stats_list)}\n"
 
 msgid "Folder Chooser"
 msgstr "Mapkiezer"
@@ -67,3 +120,31 @@ msgstr "_Selecteer"
 
 msgid "Please, select a folder"
 msgstr "Selecteer een map"
+
+msgid "Foldername need"
+msgstr "Mapnaam vereist"
+
+msgid "Foldername will be used for saving the content."
+msgstr "Mapnaam wordt gebruikt voor het opslaan van de inhoud."
+
+msgid "Did you set a foldername?"
+msgstr "Heeft u een mapnaam ingesteld?"
+
+msgid "Cannot set a valid location."
+msgstr "Instellen van geldige locatie mislukt."
+
+#, python-brace-format
+msgid "Data saved to : {filename}"
+msgstr "Gegevens opgeslagen naar : {filename}"
+
+msgid "Failed to save data."
+msgstr "Gegevens opslaan is mislukt."
+
+msgid "Relationships Map and Tab"
+msgstr "Relaties Kaart en Tab"
+
+msgid "Enable family network metrics"
+msgstr "Familienetwerkstatistieken inschakelen"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "Of familienetwerkstatistieken moeten worden berekend en weergegeven."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-10-14 05:07+0000\n"
+"PO-Revision-Date: 2025-11-04 06:51+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Select Form"
@@ -295,14 +295,38 @@ msgstr "Aiempi asuinpaikka"
 msgid "Date Married"
 msgstr "Avioliiton solmimispäivä"
 
+msgid "Registration District"
+msgstr "Alue jonne rekisteröity"
+
 msgid "Administrative Area"
 msgstr "Hallintoalue"
+
+msgid "County/Administrative Area"
+msgstr "Maakunta/hallintoalue"
 
 msgid "Maiden Surname"
 msgstr "Tyttönimi"
 
+msgid "Banns/Licence"
+msgstr "Kuulutukset/Luvat"
+
+msgid "Deceased"
+msgstr "Kuollut"
+
+msgid "Maiden surname of woman who was married"
+msgstr "Naimisissa olleen naisen tyttönimi"
+
 msgid "Usual Address"
 msgstr "Tavallinen osoite"
+
+msgid "City or Borough"
+msgstr "Kaupunki tai kaupunginosa"
+
+msgid "Parish or Township"
+msgstr "Seurakunta tai kunta"
+
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr "Kaikkien edellisenä yönä siellä asuneen henkilön NIMET."
 
 msgid "Relation to Head of Family"
 msgstr "Suhde perheenpäähän"

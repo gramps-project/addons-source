@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2025-11-22 18:51+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "This Day in Family History"
 msgstr "Dieser Tag in der Familiengeschichte"
@@ -22,25 +22,25 @@ msgid ""
 "tree that match today's day and month."
 msgstr ""
 "Ein konfigurierbares Programm, das dir die verbundenen Ereignisse aus deinem "
-"Stammbaum anzeigt, die dem heutigen Tag und Monat entsprechen."
+"Stammbaum anzeigt, die mit dem heutigen Tag und Monat übereinstimmen."
 
 msgid "Database is not open, can't check history right now."
 msgstr ""
-"Die Datenbank ist nicht geöffnet. Die Geschichte kann derzeit nicht "
+"Die Datenbank ist nicht geöffnet, daher kann die Geschichte derzeit nicht "
 "überprüft werden."
 
 #, python-format
 msgid "On %(date)s in family history ...\n"
-msgstr "Am %(date)s in der Familiengeschichte ... \n"
+msgstr "Am %(date)s in der Familiengeschichte ...\n"
 
 msgid "... nothing happened!  Check again tomorrow!"
-msgstr "... nichts ist passiert! Schau morgen wieder nach!"
+msgstr "... passierte nichts!  Schau morgen nochmal nach!"
 
 msgid "Report only living tree members"
-msgstr "Melde nur lebende Baummitglieder"
+msgstr "Nur lebende Baummitglieder melden"
 
 msgid "Show these events"
-msgstr "Diese Ereignisse zeigen"
+msgstr "Diese Ereignisse anzeigen"
 
 msgid "Sort by "
 msgstr "Sortieren nach "
@@ -85,7 +85,7 @@ msgid "December"
 msgstr "Dezember"
 
 msgid "Person Name"
-msgstr "Name der Person"
+msgstr "Personenname"
 
 msgid "Event Year"
 msgstr "Ereignisjahr"
@@ -103,7 +103,7 @@ msgid " and "
 msgstr " und "
 
 msgid "unknown participant"
-msgstr "unbekannter Teilnehmer"
+msgstr "unbekannter Beteiligter"
 
 msgid "unknown location"
 msgstr "unbekannter Ort"
@@ -198,7 +198,7 @@ msgstr "%(female_name)s nahm %(year)s in %(place)s an einer Volkszählung teil."
 
 #, python-format
 msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
-msgstr "%(male_name)s wurde %(year)s in %(place)s konfirmiert."
+msgstr "%(male_name)s wurde im Jahr %(year)s in %(place)s konfirmiert."
 
 #, python-format
 msgid "%(female_name)s was confirmed in %(year)s at %(place)s."

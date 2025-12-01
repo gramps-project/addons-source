@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
+"PO-Revision-Date: 2025-11-28 18:00+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "No Source"
 msgstr "אין מקור"
@@ -291,6 +291,14 @@ msgstr "רוחב מלבן אדם של סוג תרשים רגיל מוצג כחל
 
 msgid "Height of rectangle (hrd):"
 msgstr "גובה מלבן (hrd):"
+
+msgid ""
+"The height of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr "גובה מלבן־אדם מסוג תרשים רגיל, מבוטא כשבר ממרחק המלבן האופקי."
+
+msgid "Vertical distance of rectangles (hrd):"
+msgstr "מרחק אופקי של מלבנים (hrd):"
 
 msgid "Birth relationship linestyle"
 msgstr "סגנון קו קשרי קירבה מסוג לידה"

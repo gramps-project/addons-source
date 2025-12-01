@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-22 21:36+0200\n"
+"PO-Revision-Date: 2025-11-11 10:51+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15-dev\n"
+
+msgid "Database change detected"
+msgstr "Databasändring upptäckt"
+
+msgid "Type a message..."
+msgstr "Skriv ett meddelande..."
+
+msgid "Send"
+msgstr "Skicka"
+
+msgid "Chat with Tree initialized. Type /help for help."
+msgstr "Chatt med träd har initierats. Skriv /help för hjälp."
+
+msgid ""
+"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+"select a database."
+msgstr ""
+"ChatWithTree-tillägget har ännu inte initialiserats. Vänligen ladda om "
+"Gramps eller välj en databas."
+
+msgid "Tree: '{}'"
+msgstr "Träd: '{}'"
+
+msgid "Chat With Tree Interactive Addon"
+msgstr "Chatta med Tree Interactive-tillägget"
+
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+"Chatta med träd med hjälp av AI Large Language Model, behöver Litellm-modulen"
+
+msgid "Chat With Tree"
+msgstr "Chatta med träd"

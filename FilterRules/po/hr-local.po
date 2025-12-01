@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "People related to <filter>"
 msgstr "Osobe u srodstvu s <filtrom>"
@@ -34,6 +34,9 @@ msgstr "Izvor odgovara parametrima"
 
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr "Pronalazi izvore s vrijednostima koje sadrže odabrane parametre"
+
+msgid "Matches people who have more than one set of parents"
+msgstr "Odgovara osobama koje imaju više od jednog para roditelja"
 
 msgid "Does NOT match with selected Role"
 msgstr "NE podudara se s odabranom ulogom"
@@ -74,6 +77,9 @@ msgstr "Broj stupnjeva razdvajanja od osobe."
 msgid "Degrees:"
 msgstr "Stupnjevi:"
 
+msgid "People with <count> of <event>"
+msgstr "Osobe s <brojem> <događaja>"
+
 msgid "Include Children"
 msgstr "Uključi djecu"
 
@@ -92,6 +98,15 @@ msgstr "Ime filtra za obitelji:"
 msgid "People who are part of families matching <filter>"
 msgstr "Osobe koje su dio obitelji koje odgovaraju <filtru>"
 
+msgid "Filter people by their age at death"
+msgstr "Filtriraj ljude prema dobi u trenutku smrti"
+
+msgid "Filter rule that matches people by their age at death"
+msgstr "Pravilo filtriranja koje uspoređuje ljude prema dobi u trenutku smrti"
+
+msgid "Multiple Parents Filter"
+msgstr "Filtar višebrojnih roditelja"
+
 msgid "People with events with a selected role"
 msgstr "Osobe s događajima s odabranom ulogom"
 
@@ -107,5 +122,11 @@ msgstr "Pronalazi izvore s određenom vrijednosti"
 msgid "Active person"
 msgstr "Aktivna osoba"
 
+msgid "Matches the active person"
+msgstr "Poklapa se s aktivnom osobom"
+
+msgid "Age in years at person's death."
+msgstr "Dob u godinama u trenutku smrti osobe."
+
 msgid "Age:"
-msgstr "Starost:"
+msgstr "Dob:"

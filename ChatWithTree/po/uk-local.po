@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-22 21:36+0200\n"
+"PO-Revision-Date: 2025-11-17 06:51+0000\n"
+"Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.15-dev\n"
+
+msgid "Database change detected"
+msgstr "Виявлено зміну бази даних"
+
+msgid "Type a message..."
+msgstr "Введіть повідомлення..."
+
+msgid "Send"
+msgstr "Надіслати"
+
+msgid "Chat with Tree initialized. Type /help for help."
+msgstr "Чат з деревом ініціалізовано. Введіть /help для отримання довідки."
+
+msgid ""
+"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+"select a database."
+msgstr ""
+"Додаток ChatWithTree ще не ініціалізовано. Будь ласка, перезавантажте Gramps "
+"або виберіть базу даних."
+
+msgid "Tree: '{}'"
+msgstr "Дерево: '{}'"
+
+msgid "Chat With Tree Interactive Addon"
+msgstr "Інтерактивний додаток «Чат із деревом»"
+
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+"Спілкуйтеся з деревом за допомогою великої мовної моделі штучного інтелекту, "
+"потрібен модуль litellm"
+
+msgid "Chat With Tree"
+msgstr "Спілкування з деревом"

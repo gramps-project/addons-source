@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-11-01 19:51+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,10 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Display relations and distances with the home person"
-msgstr "Prikaži srodstvo s početnom osobom"
+msgstr "Prikaži srodstvo i udaljenost s početnom osobom"
 
 msgid "Will display relational informations with the home person"
 msgstr "Prikazat će informacije o srodstvu s početnom osobom"
@@ -27,11 +27,23 @@ msgstr "Srodstvo i udaljenost s korijenom"
 msgid "Select filter to restrict people"
 msgstr "Odaberi filtar za ograničavanje osoba"
 
+msgid "Filter rule"
+msgstr "Pravilo filtra"
+
+msgid "Select the filter rule"
+msgstr "Odaberi pravilo filtra"
+
+msgid "Deep generations"
+msgstr "Daleke generacije"
+
+msgid "How deep should we go?"
+msgstr "Koliko daleko želiš ići?"
+
 msgid "Rel_id"
-msgstr "_ID srodstva"
+msgstr "ID srodstva"
 
 msgid "Relation"
-msgstr "Odno"
+msgstr "Srodstvo"
 
 msgid "up"
 msgstr "gore"
@@ -40,7 +52,7 @@ msgid "down"
 msgstr "dolje"
 
 msgid "Common MRA"
-msgstr "Yhteinen esi-isä"
+msgstr "Prvi zajednički predak"
 
 msgid "Rank"
 msgstr "Položaj"
@@ -48,23 +60,92 @@ msgstr "Položaj"
 msgid "Period"
 msgstr "Razdoblje"
 
+msgid "Shared Subtree"
+msgstr "Dijeljeno podstablo"
+
+msgid "Centrality"
+msgstr "Centriranost"
+
+msgid "Unique Ancestors"
+msgstr "Jedinstveni preci"
+
+msgid "Surname Diversity"
+msgstr "Raznolikost prezimena"
+
 msgid "Save"
 msgstr "Spremi"
+
+msgid "Quit"
+msgstr "Prekid"
+
+msgid "No default person set."
+msgstr "Nije postavljena nijedna zadana osoba."
 
 msgid "Please wait, filtering..."
 msgstr "Pričekaj, izvršava se filtriranje …"
 
+msgid "Network Metrics"
+msgstr "Metrike mreže"
+
+msgid "Enabled"
+msgstr "Aktivirano"
+
 msgid "Disabled"
-msgstr "Invaliditet"
+msgstr "Invalid"
+
+msgid "Enable or disable family network metrics"
+msgstr "Aktiviraj ili deaktivieraj metrike obiteljske mreže"
 
 msgid "Generating relation map..."
 msgstr "Generiranje karte srodstva …"
 
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"Filtriranje\tTrenutačno poklapanje\t\tVrijeme prolaska\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
+msgid "Total of handled entries : {len(self.stats_list)}\n"
+msgstr "Ukupno obrađenih unosa: {len(self.stats_list)}\n"
+
 msgid "Folder Chooser"
-msgstr "Izbornik za mape"
+msgstr "Biranje mapa"
 
 msgid "_Select"
 msgstr "_Odaberi"
 
 msgid "Please, select a folder"
-msgstr "Odaberi mapu"
+msgstr "Odaberi jednu mapu"
+
+msgid "Foldername need"
+msgstr "Potrebno je ime mape"
+
+msgid "Foldername will be used for saving the content."
+msgstr "Ime mape će se koristiti za spremanje sadržaja."
+
+msgid "Did you set a foldername?"
+msgstr "Jesi li postavio/la ime mape?"
+
+msgid "Cannot set a valid location."
+msgstr "Nije moguće postaviti valjano mjesto za spremanje."
+
+#, python-brace-format
+msgid "Data saved to : {filename}"
+msgstr "Podaci su spremljeni u: {filename}"
+
+msgid "Failed to save data."
+msgstr "Neuspjelo spremanje podataka."
+
+msgid "Relationships Map and Tab"
+msgstr "Karta srodstva i kartica"
+
+msgid "Enable family network metrics"
+msgstr "Aktiviraj metrike obiteljske mreže"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "Da li izračunati i prikazati metrike obiteljske mreže."

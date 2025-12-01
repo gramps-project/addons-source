@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-09-28 12:02+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Select Form"
 msgstr "Odaberi obrazac"
@@ -119,7 +119,7 @@ msgid "Hay, tons of"
 msgstr "Sjeno, tone od"
 
 msgid "Married or widowed"
-msgstr "Vjenčani ili obudovljeni"
+msgstr "Vjenčani ili obudovjeli"
 
 msgid "Father of foreign birth"
 msgstr "Otac rođen u inozemstvu"
@@ -140,7 +140,7 @@ msgid "Single"
 msgstr "Singl"
 
 msgid "Widowed, divorced"
-msgstr "Obudovljeni, razvedeni"
+msgstr "Obudovjeli, razvedeni"
 
 msgid "Idiotic"
 msgstr "Idiot"
@@ -152,7 +152,7 @@ msgid "Veteran of Civil War or widow of a veteran"
 msgstr "Veteran građanskog rata ili udovica veterana"
 
 msgid "Single, married, widowed or divorced"
-msgstr "Singl, vjenčani, obudovljeni ili razvedeni"
+msgstr "Singl, vjenčani, obudovjeli ili razvedeni"
 
 msgid "Rank"
 msgstr "Položaj"
@@ -218,8 +218,7 @@ msgid "State (Territory/Country)"
 msgstr "Država (teritorij/zemlja)"
 
 msgid "Is he now married, widowed, divorced, separated, or never married?"
-msgstr ""
-"Je li sada oženjen, obudovljen, razveden, rastavljen ili nikada oženjen?"
+msgstr "Je li sada oženjen, udovac, razveden, rastavljen ili nikada oženjen?"
 
 msgid "What State (or foreign country) was he born in?"
 msgstr "U kojoj je državi (ili stranoj zemlji) rođen?"
@@ -240,7 +239,7 @@ msgid ""
 "How many years since this person was married, widowed, divorced, or "
 "separated?"
 msgstr ""
-"Koliko je godina prošlo od kada je osoba bila vjenčana, obudovljena, "
+"Koliko je godina prošlo od kada je osoba bila vjenčana, obudovjela, "
 "razvedena ili rastavljena?"
 
 msgid "District of"
@@ -254,6 +253,9 @@ msgstr "Druge države u kojima je osoba živjela i kada"
 
 msgid "If not, give name of state"
 msgstr "Ako ne, navedi ime države"
+
+msgid "When, where and circumstances you quit the service"
+msgstr "Kada, gdje i pod kojim okolnostima si napustii/la službu"
 
 msgid "Signed"
 msgstr "Potpisano"
@@ -322,7 +324,7 @@ msgid "Total number"
 msgstr "Ukupni broj"
 
 msgid "Widowed"
-msgstr "Obudovljeni"
+msgstr "Obudovjeli"
 
 msgid "Years resident in the state"
 msgstr "Godine prebivališta u državi"
@@ -352,7 +354,7 @@ msgid "Place of birth, country"
 msgstr "Mjesto rođenja, zemlja"
 
 msgid "Single, Widowed, or Divorced"
-msgstr "Singl, obudovljeni ili razvedeni"
+msgstr "Singl, obudovjeli ili razvedeni"
 
 msgid "Can read but not write, over 10 years old"
 msgstr "Zna čitati ali ne pisati, osoba starija od 10 godina"
@@ -409,7 +411,7 @@ msgid "If you are foreign born, are you naturalized?"
 msgstr "Ako si rođen/a u inozemstvu, jesi li naturaliziran/a?"
 
 msgid "Conjugal condition; Single-Married-Widowed-Divorced-Separated"
-msgstr "Bračno stanje; singl-vjenčani-obudovljeni-razvedeni-rastavljeni"
+msgstr "Bračno stanje; singl-vjenčani-obudovjeli-razvedeni-rastavljeni"
 
 msgid "Town or Township"
 msgstr "Grad ili naselje"
@@ -427,7 +429,7 @@ msgid "House Number"
 msgstr "Kućni broj"
 
 msgid "Relation"
-msgstr "Odno"
+msgstr "Srodstvo"
 
 msgid "Able to Read"
 msgstr "Ne zna pisati"
@@ -451,7 +453,7 @@ msgid "Parents Place of Marriage"
 msgstr "Mjesto sklapanja braka roditelja"
 
 msgid "Disabled"
-msgstr "Invaliditet"
+msgstr "Invalid"
 
 msgid "Cannot Read 10-15"
 msgstr "Ne zna čitati 10-15"
@@ -1248,7 +1250,7 @@ msgid "14. Profession, Occupation or Trade"
 msgstr "14. Profesija, zanimanje ili obrt"
 
 msgid "15. Married or Widowed"
-msgstr "15. Vjenčani ili obudovljeni"
+msgstr "15. Vjenčani ili obudovjeli"
 
 msgid "CantRead"
 msgstr "Ne zna čitati"
@@ -1281,7 +1283,7 @@ msgid "8. Age"
 msgstr "8. Starost"
 
 msgid "9. Married or Widowed"
-msgstr "9. Vjenčani ili obudovljeni"
+msgstr "9. Vjenčani ili obudovjeli"
 
 msgid "10. Relationship to Head of Family"
 msgstr "10. Veza prema glavi obitelji"
@@ -1356,7 +1358,7 @@ msgid "5. Colour"
 msgstr "5. Boja"
 
 msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr "7. Singl, vjenčani, obudovljeni, razvedeni ili zakonski rastavljeni"
+msgstr "7. Singl, vjenčani, obudovjeli, razvedeni ili zakonski rastavljeni"
 
 msgid "BirthMonth"
 msgstr "Mjesec rođenja"
@@ -1410,7 +1412,7 @@ msgid "32. Can speak French"
 msgstr "32. Govori francuski"
 
 msgid "5. Married, single, widowed or divorced"
-msgstr "5. Vjenčani, singl, obudovljeni ili razvedeni"
+msgstr "5. Vjenčani, singl, obudovjeli ili razvedeni"
 
 msgid "7. Country or place of birth"
 msgstr "7. Zemlja ili mjesto rođenja"
@@ -1437,7 +1439,7 @@ msgid "Family or household"
 msgstr "Obitelj ili kućanstvo"
 
 msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr "6. Singl, vjenčani, obudovljeni, razvedeni ili zakonski rastavljeni"
+msgstr "6. Singl, vjenčani, obudovjeli, razvedeni ili zakonski rastavljeni"
 
 msgid "8. Age at last birthday"
 msgstr "8. Dob pri zadnjem rođendanu"
@@ -1470,7 +1472,7 @@ msgid "10. Sex"
 msgstr "10. Spol"
 
 msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr "11. Singl, vjenčani, obudovljeni, razvedeni ili zakonski rastavljeni"
+msgstr "11. Singl, vjenčani, obudovjeli, razvedeni ili zakonski rastavljeni"
 
 msgid "12. Age at last birthday"
 msgstr "12. Dob pri zadnjem rođendanu"

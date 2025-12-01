@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-11-01 19:51+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Graph View"
 msgstr "Prikaz dijagrama"
@@ -260,6 +260,9 @@ msgstr "Pravokutne"
 msgid "Copy"
 msgstr "Kopiraj"
 
+msgid "No Events for this person"
+msgstr "Nema događaja za ovu osobu"
+
 msgid "Select tags for person"
 msgstr "Odaberi oznake za osobu"
 
@@ -272,11 +275,17 @@ msgstr "Dodaj roditelje"
 msgid "Set as home person"
 msgstr "Postavi kao početnu osobu"
 
+msgid "Show path to home person"
+msgstr "Prikaži stazu do glavne osobe"
+
 msgid "Remove from bookmarks"
 msgstr "Ukloni iz knjižnih oznaka"
 
 msgid "Add to bookmarks"
 msgstr "Dodaj u knjižne oznake"
+
+msgid "No Events for this family"
+msgstr "Nema događaja za ovu obitelj"
 
 msgid "Select tags for family"
 msgstr "Odaberi oznake za obitelj"

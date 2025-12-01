@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-05 23:01+0000\n"
+"PO-Revision-Date: 2025-11-22 18:51+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,38 +12,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "TR-Title"
-msgstr "ZeB-Titel"
+msgstr "AB-Titel"
 
 #, python-format
 msgid "Report on Notes Tagged '%s'"
 msgstr "Bericht über Notizen mit dem Etikett „%s“"
 
 msgid "TR-Heading"
-msgstr "ZeB-Überschrift"
+msgstr "AB-Überschrift"
 
 msgid "NoteTable"
 msgstr "NotizTabelle"
 
 msgid "TR-Table"
-msgstr "ZeB-Tabelle"
+msgstr "AB-Tabelle"
 
 msgid "TR-TableCell"
-msgstr "ZeB-TabellenZelle"
+msgstr "AB-Tabellenzelle"
 
 msgid "TR-Normal-Bold"
-msgstr "ZeB-Normal-Fett"
+msgstr "AB-Normal-Fett"
 
 msgid "TR-Normal"
-msgstr "ZeB-Normal"
+msgstr "AB-Normal"
 
 msgid "TR-Note"
 msgstr "ZeB-Notiz"
 
 msgid "TR-BorderCell"
-msgstr "ZeB-RandZelle"
+msgstr "AB-RandZelle"
 
 msgid "date: "
 msgstr "Datum: "
@@ -55,7 +55,7 @@ msgid "Note Type"
 msgstr "Notizart"
 
 msgid "Group by reference type"
-msgstr "Gruppiere nach Referenzart"
+msgstr "Nach Referenztyp gruppieren"
 
 msgid "Group notes by Family, Person, Place, etc."
 msgstr "Notizen nach Familie, Person, Ort usw. gruppieren."
@@ -64,15 +64,13 @@ msgid "The style used for the title of the page."
 msgstr "Der für den Titel der Seite verwendete Stil."
 
 msgid "The basic style used for the table cell display."
-msgstr "Der grundlegende Stil für die Anzeige von Tabellenzellen."
+msgstr "Der für die Anzeige der Tabellenzellen verwendete Grundstil."
 
 msgid "The basic style used for the table border cell display."
-msgstr ""
-"Der grundlegende Stil, der für die Anzeige von Tabellenrandzellen verwendet "
-"wird."
+msgstr "Der für die Anzeige der Tabellenrandzellen verwendete Grundstil."
 
 msgid "The basic style used for the table display."
-msgstr "Der grundlegende Stil für die Tabellenanzeige."
+msgstr "Der für die Tabellenanzeige verwendete Grundstil."
 
 msgid "Todo Report"
 msgstr "Aufgabenbericht"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-28 12:02+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Hide person"
 msgstr "Sakrij osobu"
@@ -97,6 +97,15 @@ msgstr ""
 "Fotografije koje su prikazane uklopljene su u kvadrat ove veličine. Veličina "
 "je relativna u odnosu na debljinu linije."
 
+msgid "Total height"
+msgstr "Ukupna visina"
+
+msgid "Total height of the whole chart."
+msgstr "Ukupna visina cijelog dijagrama."
+
+msgid "Relative line thickness"
+msgstr "Relativna debljina linije"
+
 msgid "Show birth label"
 msgstr "Prikaži etiketu rođenja"
 
@@ -105,6 +114,15 @@ msgstr "Aktiviraj etiketu rođenja."
 
 msgid "Birth label rotation"
 msgstr "Rotacija etikete rođenja"
+
+msgid "Text alignment of the birth label."
+msgstr "Poravnanje teksta etikete rođenja."
+
+msgid "Center"
+msgstr "Centrirano"
+
+msgid "Show death label"
+msgstr "Prikaži etiketu smrti"
 
 msgid "Activate the death label."
 msgstr "Aktiviraj etiketu smrti."
@@ -124,11 +142,73 @@ msgstr "Prikaži etiketu braka"
 msgid "Activate the marriage label."
 msgstr "Aktiviraj etiketu braka."
 
+msgid "Fade individual color"
+msgstr "Postupno mijenjaj boju osobe"
+
+msgid "The color of the individuals is faded to black with increasing age."
+msgstr "Boja osoba s godinama postupno tamni, prelazeći u crnu."
+
 msgid "Font name"
 msgstr "Ime fonta"
 
+msgid "Name of the font family used for labels."
+msgstr "Ime obitelji fontova korišteno za etikete."
+
+msgid "Relative font size"
+msgstr "Relativna veličina fonta"
+
+msgid "The font size is given relatively to the line thickness."
+msgstr "Veličina fonta je zadana relativno u odnosu na debljinu linije."
+
+msgid "Family shape"
+msgstr "Oblik obitelji"
+
+msgid "The shape of the families can be varied."
+msgstr "Oblik obitelji se može mijenjati."
+
+msgid "Rectangular"
+msgstr "Pravokutno"
+
+msgid "Softer"
+msgstr "Mekše"
+
+msgid "Upper year minimum margin"
+msgstr "Minimalna gornja granica godina"
+
+msgid ""
+"The upper bound of the chart is extended by at least this number of years."
+msgstr "Gornja granica dijagrama se proširuje za barem ovoliko godina."
+
+msgid "Lower year minimum margin"
+msgstr "Minimalna donja granica godina"
+
+msgid ""
+"The lower bound of the chart is extended by at least this number of years."
+msgstr "Donja granica dijagrama se proširuje za barem ovoliko godina."
+
+msgid "Visualize connections"
+msgstr "Vizualiziraj veze"
+
+msgid ""
+"Visualize the connections between families and individuals. This is for "
+"debugging purposes."
+msgstr ""
+"Vizualiziraj veze između obitelji i osoba. Ovo služi za otklanjanje grešaka."
+
+msgid "Visualize ambiguous placement"
+msgstr "Vizualiziraj nejednoznačni položaj"
+
 msgid "Visualize automatically detected errors in the placement algorithm."
 msgstr "Automatski vizualiziraj otkrivene greške u algoritmu za postavljanje."
+
+msgid "Coloring of individuals"
+msgstr "Boje osoba"
+
+msgid "There are different ways to determine the color of an individual."
+msgstr "Postoje različiti načini za određivanje boje osoba."
+
+msgid "Unique"
+msgstr "Jedinstveno"
 
 msgid "Based on surname"
 msgstr "Na osnovi prezimena"
@@ -178,10 +258,10 @@ msgstr ""
 "Polazeći od glavne osobe, svaki otac dodane osobe ima istu boju kao ta osoba."
 
 msgid "Maximum number of compression steps"
-msgstr "Maksimalni broj koraka sužavanja"
+msgstr "Maksimalni broj koraka sažimanja"
 
 msgid "Debugging of the compression algorithm. Abort after x steps."
-msgstr "Uklanjanje grešaka algoritma za sužavanje. Prekini nakon x koraka."
+msgstr "Uklanjanje grešaka algoritma za sažimanje. Prekini nakon x koraka."
 
 msgid "Maximum number of flipping steps"
 msgstr "Maksimalni broj koraka preokretanja"
@@ -190,14 +270,14 @@ msgid "Debugging of the flipping algorithm. Abort after x steps."
 msgstr "Uklanjanje grešaka algoritma za preokretanje. Prekini nakon x koraka."
 
 msgid "Compress the chart horizontally"
-msgstr "Suzi dijagram vodoravno"
+msgstr "Sažmi dijagram vodoravno"
 
 msgid ""
 "By default every individual has a unique horizontal slot. This can be "
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
 msgstr ""
-"Zadano je da svaka osoba ima jedinstveno vodoravno mjesto. To može biti "
+"Svaka osoba standardno ima jedinstveno vodoravno mjesto. To može biti "
 "nedostatno pri velikom broju generacija. Ovaj algoritam omogućuje da "
 "nekoliko ljudi dijele vodoravno mjesto, ako se ne preklapaju."
 

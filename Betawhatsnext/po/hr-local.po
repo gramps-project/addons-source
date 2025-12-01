@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-17 15:05+0000\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,10 +13,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
+
+msgid "Beta What's Next"
+msgstr "Beta – Što slijedi"
+
+msgid "Beta Gramplet suggesting items to research"
+msgstr "Beta Gramplet predlaže predmete za istraživanje"
+
+msgid "Beta What's Next?"
+msgstr "Beta – Što slijedi?"
+
+msgid ""
+"\n"
+" ⛔ A local Genealogical Tree database has not yet been loaded.\n"
+"\n"
+msgstr ""
+"\n"
+" ⛔ Lokalna baza podataka rodoslovnog stabla još nije učitana.\n"
+"\n"
+
+msgid " 👣 Next Steps:\n"
+msgstr " 👣 Sljedeći koraci:\n"
+
+msgid "  •  From the \"Family Trees\" menu,"
+msgstr "  •  U izborniku „Rodoslovi”,"
+
+msgid " use the \"Manage Family Trees...\" option to"
+msgstr " koristi opciju „Upravljaj rodoslovima …\" te"
+
+msgid " create a New (or to select an existing) Tree database.\n"
+msgstr " stvori novu (ili odaberi postojeću) bazu podataka rodoslova.\n"
+
+msgid "  •  Click the \"Load Family Tree\" button to begin"
+msgstr "  •  Klikni gumb „Učitaj rodoslov” za"
+
+msgid ""
+" working with the selected genealogical tree.\n"
+"\n"
+msgstr ""
+" korištenje odabranog genealoškog rodoslova.\n"
+"\n"
 
 msgid "Search Quota "
 msgstr "Kvota traženja "
+
+msgid "Completed Person"
+msgstr "Završena osoba"
 
 msgid " Completed offspring Families"
 msgstr " Dovršene obitelji potomaka"
@@ -33,6 +76,15 @@ msgstr ""
 
 msgid "Birth event missing."
 msgstr "Nedostaje događaj rođenja."
+
+msgid "relationship type unknown"
+msgstr "nepoznata vrsta veze"
+
+msgid "Father missing from the parent family"
+msgstr "Otac nedostaje u roditeljskoj obitelji"
+
+msgid "Mother missing from the parent family"
+msgstr "Majka nedostaje u roditeljskoj obitelji"
 
 msgid "Parent family is unknown."
 msgstr "Obitelj roditelja je nepoznata."

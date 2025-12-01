@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2025-11-15 19:51+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #, python-format
 msgid "Family Tree for %s"
@@ -44,7 +44,7 @@ msgid "cremated"
 msgstr "kremiran/a"
 
 msgid "married"
-msgstr "vjenčan/a"
+msgstr "oženjen/vjenčana"
 
 msgid "divorced"
 msgstr "rastavljen/a"
@@ -54,7 +54,7 @@ msgstr "stanovnik/stanovnica"
 
 #, python-format
 msgid "on %(ymd_date)s"
-msgstr "na dan %(ymd_date)s"
+msgstr "%(ymd_date)s"
 
 #, python-format
 msgid "in %(ym_date)s"
@@ -66,11 +66,11 @@ msgstr "%(y_date)s"
 
 #, python-format
 msgid "on %(placeholder)s"
-msgstr "na %(placeholder)s"
+msgstr "%(placeholder)s"
 
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
-msgstr "na %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s (%(partial)s)"
 
 #, python-format
 msgid "in %(place)s"
@@ -81,19 +81,19 @@ msgid "(%(description)s)"
 msgstr "(%(description)s)"
 
 msgid "The center family for the tree"
-msgstr "Središnja obitelj u rodoslovu"
+msgstr "Središnja obitelj za rodoslov"
 
 msgid "Ancestor Generations"
 msgstr "Generacije predaka"
 
 msgid "The number of ancestor generations to include in the tree"
-msgstr "Broj generacija predaka, uključenih u rodoslov"
+msgstr "Broj generacija predaka za uključivanje u rodoslov"
 
 msgid "Descendant Generations"
 msgstr "Generacije potomaka"
 
 msgid "The number of descendant generations to include in the tree"
-msgstr "Broj generacija potomaka, uključenih u rodoslov"
+msgstr "Broj generacija potomaka za uključivanje u rodoslov"
 
 msgid "Kekule number of husband"
 msgstr "Kekule broj muža"
@@ -133,17 +133,16 @@ msgid "Female line"
 msgstr "Ženska loza"
 
 msgid "Shuffle colors"
-msgstr "Naizmjenične boje"
+msgstr "Promiješaj boje"
 
 msgid "Whether to shuffle colors or order them in rainbow fashion."
-msgstr "Da li koristiti boje naizmjenično ili redoslijedom duginih boja."
+msgstr "Da li koristiti promiješane boje ili redoslijedom duginih boja."
 
 msgid "Replace first name with call name"
 msgstr "Zamijeni cjelokupno ime upotrebnim imenom"
 
 msgid "Underline call name in first name / add call name to first name"
-msgstr ""
-"Podcrtaj upotrebno ime u cjelokupnom imenu / dodaj upotrebno ime cjelokupnom"
+msgstr "Podcrtaj upotrebno ime u cjelokupnom imenu / dodaj upotrebno ime imenu"
 
 msgid "Include Occupation"
 msgstr "Uključi zanimanje"
@@ -152,19 +151,19 @@ msgid "Include Residence"
 msgstr "Uključi prebivalište"
 
 msgid "Print event data (dead person)"
-msgstr "Ispiši podatke događaja (umrle osobe)"
+msgstr "Ispiši podatke događaja (umrla osoba)"
 
 msgid "Year only"
 msgstr "Samo godina"
 
 msgid "Full date"
-msgstr "Cjeloviti datum"
+msgstr "Potpuni datum"
 
 msgid "Full date and place"
-msgstr "Cjeloviti datum i mjesto"
+msgstr "Potpuni datum i mjesto"
 
 msgid "Print event data (living person)"
-msgstr "Ispiši podatke događaja (žive osobe)"
+msgstr "Ispiši podatke događaja (živa osoba)"
 
 msgid "Fall back to baptism if birth event missing"
 msgstr "Preuzmi datum krštenja, ako nedostaje događaj rođenja"
