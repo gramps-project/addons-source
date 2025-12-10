@@ -50,9 +50,10 @@ from gramps.gen.lib import ChildRefType
 from gramps.gen.lib.date import Date
 from gramps.gen.plug import docgen
 from gramps.gen.plug.report import Report, MenuReportOptions
-from gramps.gen.plug.docgen import fontscale
+from gramps.gen.plug.docgen import fontscale, IndexMark, INDEX_TYPE_TOC
 from gramps.gen.plug.menu import BooleanOption, NumberOption, PersonOption
 from gramps.gen.plug.report.utils import pt2cm, cm2pt
+from gramps.gen.errors import ReportError
 #from gen.plug.menu import TextOption
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -368,12 +369,14 @@ class PedigreeChart(Report):
 
         pid = menu.get_option_by_name('pid').get_value()
         self.center_person = database.get_person_from_gramps_id(pid)
-        if (self.center_person == None) :
+        if self.center_person is None:
             raise ReportError(_("Person %s is not in the Database") % pid )
 
         self.show_parent_tags = menu.get_option_by_name('showcaptions').get_value()
-        self.parent_tag_len = pt2cm(self.doc.string_width(self.get_font('PC-box'), _("Mother")))
-        self.parent_tag_height = self.get_font_height('PC-box')
+
+        # These now get calculated when the report is generated
+        self.parent_tag_len = 0
+        self.parent_tag_height = 0
 
         name = name_displayer.display_formal(self.center_person)
         self.title = _("Pedigree Chart for %s") % name
@@ -445,6 +448,10 @@ class PedigreeChart(Report):
           3) continue with each subsequent page and generate lists there too
 
         """
+        # Calculate the base size for locating each set of parents on the page
+        self.parent_tag_len = pt2cm(self.doc.string_width(self.get_font('PC-box'), _("Mother")))
+        self.parent_tag_height = self.get_font_height('PC-box')
+
         page_queue = deque([])
         # Generate the first page
         page_links = self._fill_page(self.center_person.get_handle())
@@ -479,8 +486,13 @@ class PedigreeChart(Report):
                         page_links.add(self.map[i].person_handle, current_page, next(self.page_link_counter))
             # generate the page
             self.doc.start_page()
-            self.doc.center_text('PC-title', self.title,
-                                 self.doc.get_usable_width() / 2, 0)
+            if current_page == 1:
+                mark = IndexMark(self.title, INDEX_TYPE_TOC, 1)
+                self.doc.center_text('PC-title', self.title,
+                                     self.doc.get_usable_width() / 2, 0, mark=mark)
+            else:
+                self.doc.center_text('PC-title', self.title,
+                                     self.doc.get_usable_width() / 2, 0)
 
             # print a link back to the source page (if any)
             if source_page is not None:
@@ -620,18 +632,32 @@ class PedigreeChart(Report):
 #
 #------------------------------------------------------------------------
 class PedigreeChartOptions(MenuReportOptions):
-
     """
     Defines options and provides handling interface.
     """
+
+    def __init__(self, name, dbase):
+        self.__db = dbase
+        self.__pid = None
+        MenuReportOptions.__init__(self, name, dbase)
+
+    def get_subject(self):
+        """Return a string that describes the subject of the report."""
+        if self.__pid is not None:
+            gid = self.__pid.get_value()
+            person = self.__db.get_person_from_gramps_id(gid)
+            return name_displayer.display(person)
+        else:
+            return ""
+
     def add_menu_options(self, menu):
         """Add the menu options to the report dialog"""
 
         category_name = _("Tree Options")
 
-        pid = PersonOption(_("Center Person"))
-        pid.set_help(_("The center person for the tree"))
-        menu.add_option(category_name, "pid", pid)
+        self.__pid = PersonOption(_("Center Person"))
+        self.__pid.set_help(_("The center person for the tree"))
+        menu.add_option(category_name, "pid", self.__pid)
 
         max_gen = NumberOption(_("Generations"), 10, 1, 50)
         max_gen.set_help(_("The number of generations to include in the tree"))
