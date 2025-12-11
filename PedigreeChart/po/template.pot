@@ -80,6 +80,14 @@ msgstr ""
 msgid "The basic style used for the text display."
 msgstr ""
 
+#: PedigreeChart/PedigreeChart.py:657
+msgid "Show page numbers"
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
+
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
 msgstr ""
