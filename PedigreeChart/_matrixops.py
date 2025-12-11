@@ -22,26 +22,25 @@
 """
 Pure python implementation of matrix addition and multiplication.
 
-This module will only be used by PedigreeChart if the numpy package
-cannot be imported.
+This module replaces the matrix functions originally used from the numpy package.
 
 """
 
-class DimentionError(Exception):
+class DimensionError(Exception):
     """
-    Exception raised if the dimentions do not match between two matrices.
+    Exception raised if the dimensions do not match between two matrices.
     """
     pass
 
 class matrix:
     """
-    Store one or two-dimentional arrays and provide the ability to add or
+    Store one or two-dimensional arrays and provide the ability to add or
     multiply them as matrices.
 
     """
     def __init__(self, values):
         """
-        Create the class with the values and dimentions.  A 1-dimention list
+        Create the class with the values and dimensions.  A 1-dimension list
         will be converted to a matrix.
 
         A = matrix([[1, 0], [1, 3], [2, 0]])
@@ -73,7 +72,7 @@ class matrix:
 
         """
         if B.m != self.n:
-            raise DimentionError()
+            raise DimensionError()
 
         p = B.n
         C = []
@@ -91,13 +90,13 @@ class matrix:
 
         Note: adding a 1x2 matrix to this one will result in the other
         matrix being added to each row individually, otherwise the
-        matrices must be the same dimentions.
+        matrices must be the same dimensions.
 
         """
         C = []
         if B.n > 1:
             if B.m != self.m:
-                raise DimentionError()
+                raise DimensionError()
             for i in range(self.m):
                 C.append([self.A[i][j] + B.A[i][j] for j in range(B.n)])
         else:
@@ -106,7 +105,7 @@ class matrix:
         return matrix(C)
 
     def __getitem__(self, x):
-        """Return the requsted row as a list."""
+        """Return the requested row as a list."""
         return self.A[x]
 
 def test():
