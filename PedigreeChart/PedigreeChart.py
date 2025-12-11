@@ -655,7 +655,7 @@ class PedigreeChartOptions(MenuReportOptions):
         menu.add_option(category_name, "showcaptions", show_captions)
 
         show_footer = BooleanOption(_("Show page numbers"), True)
-        show_footer.set_help(_("Add a footer on every page with the page number and the date this was printed."))
+        show_footer.set_help(_("Add a footer on every page with the page number and date printed."))
         menu.add_option(category_name, "showfooter", show_footer)
 
     def make_default_style(self, default_style):
