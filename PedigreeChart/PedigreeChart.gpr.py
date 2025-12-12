@@ -19,23 +19,30 @@
 #
 # $Id$
 #
+from gramps.version import major_version, VERSION_TUPLE
+
+if VERSION_TUPLE < (5, 2, 0):
+    additional_args = {}
+else:
+    additional_args = {"help_url": "Addon:PedigreeChart"}
+
 register(
     REPORT,
     id="PedigreeChart",
     name=_("Pedigree Chart"),
     description=_("Alternate version of the traditional pedigree chart."),
-    status=STABLE,
-    version = '1.0.40',
+    status = STABLE,
+    version = '1.0.41',
     fname="PedigreeChart.py",
-    gramps_target_version="6.0",
+    gramps_target_version=major_version,
     authors=["Jakim Friant"],
-    authors_email=["jmodule@friant.org"],
+    authors_email=["jakim@friant.org"],
     category=CATEGORY_DRAW,
     reportclass="PedigreeChart",
     optionclass="PedigreeChartOptions",
-    report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
     require_active=False,
-    help_url="Addon:PedigreeChart",
+    **additional_args
 )
 
 __author__ = "jfriant"

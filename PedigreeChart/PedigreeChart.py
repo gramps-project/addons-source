@@ -31,13 +31,8 @@
 # standard python modules
 #
 #------------------------------------------------------------------------
-try:
-    import numpy as np
-except ImportError:
-    import _matrixops as np
 from collections import deque
 import time
-#from xml.sax.saxutils import escape
 
 #------------------------------------------------------------------------
 #
@@ -50,9 +45,10 @@ from gramps.gen.lib import ChildRefType
 from gramps.gen.lib.date import Date
 from gramps.gen.plug import docgen
 from gramps.gen.plug.report import Report, MenuReportOptions
-from gramps.gen.plug.docgen import fontscale
+from gramps.gen.plug.docgen import fontscale, IndexMark, INDEX_TYPE_TOC
 from gramps.gen.plug.menu import BooleanOption, NumberOption, PersonOption
 from gramps.gen.plug.report.utils import pt2cm, cm2pt
+from gramps.gen.errors import ReportError
 #from gen.plug.menu import TextOption
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -60,6 +56,8 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
+import _matrixops as np
 
 _LINKS_BEGIN = 8
 _PEOPLE_PER_PAGE = 15
@@ -130,7 +128,7 @@ class PageLinks:
 
     def empty(self):
         """Return true if the length of the primary index is 0."""
-        return (len(self._index_by_handle) > 0)
+        return len(self._index_by_handle) > 0
 
     def handlesByPage(self):
         """Return a list of person handles in the order of their page number."""
@@ -197,7 +195,7 @@ class PersonBox:
         """Return true if this person has a primary family"""
         person = self.report.database.get_person_from_handle(self.person_handle)
         family_handle = person.get_main_parents_family_handle()
-        return (family_handle is not None)
+        return family_handle is not None
 
     def _getPersonRecord(self):
         """Return the person record if we have a valid handle"""
@@ -207,7 +205,7 @@ class PersonBox:
     def getName(self):
         """Return the name formatted according to the user preferences.
 
-        The length of the name is checked and it will be trimmed if necessary.
+        The length of the name is checked, and it will be trimmed if necessary.
 
         """
         self._getPersonRecord()
@@ -268,23 +266,13 @@ class PersonBox:
 
         return self.line
 
-    def getLongestLine(self):
-        """return the length of the longest line in the text.
-
-        *DEPRICATED*
-        """
-        which = 0
-        parts = self.getLines().split('\n')
-        for i in range(len(parts)):
-            if len(parts[i]) >= len(parts[which]):
-                which = i
-        return parts[which]
-
     def getPos(self):
         """Return precalculated coordinates that are determined by the person's index"""
         # person's index determines which box they occupy on the page
         if self.index in self.report.coordinates:
             coord = self.report.coordinates[self.index]
+        else:
+            coord = None
         return coord
 
     def getSize(self):
@@ -368,12 +356,15 @@ class PedigreeChart(Report):
 
         pid = menu.get_option_by_name('pid').get_value()
         self.center_person = database.get_person_from_gramps_id(pid)
-        if (self.center_person == None) :
+        if self.center_person is None:
             raise ReportError(_("Person %s is not in the Database") % pid )
 
         self.show_parent_tags = menu.get_option_by_name('showcaptions').get_value()
-        self.parent_tag_len = pt2cm(self.doc.string_width(self.get_font('PC-box'), _("Mother")))
-        self.parent_tag_height = self.get_font_height('PC-box')
+        self.show_footer = menu.get_option_by_name('showfooter').get_value()
+
+        # These now get calculated when the report is generated
+        self.parent_tag_len = 0
+        self.parent_tag_height = 0
 
         name = name_displayer.display_formal(self.center_person)
         self.title = _("Pedigree Chart for %s") % name
@@ -445,6 +436,10 @@ class PedigreeChart(Report):
           3) continue with each subsequent page and generate lists there too
 
         """
+        # Calculate the base size for locating each set of parents on the page
+        self.parent_tag_len = pt2cm(self.doc.string_width(self.get_font('PC-box'), _("Mother")))
+        self.parent_tag_height = self.get_font_height('PC-box')
+
         page_queue = deque([])
         # Generate the first page
         page_links = self._fill_page(self.center_person.get_handle())
@@ -467,7 +462,7 @@ class PedigreeChart(Report):
         self.map = {}
         gen_limit = self.max_generations - (depth * _GENERATIONS_PER_PAGE)
         self._get_parents(person_handle, 1, gen_limit)
-        # create links to subsequent pages, if we haven't reached the genearation limit
+        # create links to subsequent pages, if we haven't reached the generation limit
         # TODO: need to check the generation limit before creating the links!
         #print '[DEBUG] depth = %2d, gen_limit = %2d, max_gen = %2d' % (depth, gen_limit, self.max_generations)
         page_links = PageLinks(depth + 1, self.max_generations)
@@ -479,8 +474,13 @@ class PedigreeChart(Report):
                         page_links.add(self.map[i].person_handle, current_page, next(self.page_link_counter))
             # generate the page
             self.doc.start_page()
-            self.doc.center_text('PC-title', self.title,
-                                 self.doc.get_usable_width() / 2, 0)
+            if current_page == 1:
+                mark = IndexMark(self.title, INDEX_TYPE_TOC, 1)
+                self.doc.center_text('PC-title', self.title,
+                                     self.doc.get_usable_width() / 2, 0, mark=mark)
+            else:
+                self.doc.center_text('PC-title', self.title,
+                                     self.doc.get_usable_width() / 2, 0)
 
             # print a link back to the source page (if any)
             if source_page is not None:
@@ -525,12 +525,11 @@ class PedigreeChart(Report):
                             tx = x - self.parent_tag_len
                             self.doc.draw_text('PC-caption', _('Father'), tx, y)
             # write out the footer
-            footer = self.footer + "\n" + _("Page %d" % current_page)
-            footer_top = self.doc.get_usable_height() - (self.get_font_height('PC-box') * 1.2 * len(footer.split("\n")))
-            self.doc.draw_text('PC-box', footer, 0, footer_top)
-#            self.doc.center_text('PC-box', _("Page %d" % current_page),
-#                                 self.doc.get_usable_width() / 2,
-#                                 self.doc.get_usable_height() - self.get_font_height('PC-box') * 1.2)
+            if self.show_footer:
+                footer = self.footer + "\n" + _("Page %d" % current_page)
+                footer_top = self.doc.get_usable_height() - (self.get_font_height('PC-box') * 1.2 * len(footer.split("\n")))
+                self.doc.draw_text('PC-box', footer, 0, footer_top)
+
             self.doc.end_page()
         # return the list of links
         return page_links
@@ -620,18 +619,32 @@ class PedigreeChart(Report):
 #
 #------------------------------------------------------------------------
 class PedigreeChartOptions(MenuReportOptions):
-
     """
     Defines options and provides handling interface.
     """
+
+    def __init__(self, name, dbase):
+        self.__db = dbase
+        self.__pid = None
+        MenuReportOptions.__init__(self, name, dbase)
+
+    def get_subject(self):
+        """Return a string that describes the subject of the report."""
+        if self.__pid is not None:
+            gid = self.__pid.get_value()
+            person = self.__db.get_person_from_gramps_id(gid)
+            return name_displayer.display(person)
+        else:
+            return ""
+
     def add_menu_options(self, menu):
         """Add the menu options to the report dialog"""
 
         category_name = _("Tree Options")
 
-        pid = PersonOption(_("Center Person"))
-        pid.set_help(_("The center person for the tree"))
-        menu.add_option(category_name, "pid", pid)
+        self.__pid = PersonOption(_("Center Person"))
+        self.__pid.set_help(_("The center person for the tree"))
+        menu.add_option(category_name, "pid", self.__pid)
 
         max_gen = NumberOption(_("Generations"), 10, 1, 50)
         max_gen.set_help(_("The number of generations to include in the tree"))
@@ -640,6 +653,10 @@ class PedigreeChartOptions(MenuReportOptions):
         show_captions = BooleanOption(_("Show Mother/Father captions"), False)
         show_captions.set_help(_("Show the title of mother or father beside each ancestor's box."))
         menu.add_option(category_name, "showcaptions", show_captions)
+
+        show_footer = BooleanOption(_("Show page numbers"), True)
+        show_footer.set_help(_("Add a footer on every page with the page number and date printed."))
+        menu.add_option(category_name, "showfooter", show_footer)
 
     def make_default_style(self, default_style):
         """Make the default output style for the Ancestor Tree."""
