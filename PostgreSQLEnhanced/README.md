@@ -2,10 +2,16 @@
 
 A high-performance PostgreSQL database backend for Gramps genealogy software that provides advanced database capabilities and superior performance for genealogical data management while maintaining full compatibility with the Gramps data model.
 
-**Version:** 1.5.1  
+**Version:** 1.6.0  
 **Project Status:** Experimental - Rigorous testing completed | [GitHub Repository](https://github.com/glamberson/gramps-postgresql-enhanced) | [Submit Issues](https://github.com/glamberson/gramps-postgresql-enhanced/issues)
 
 ## Recent Updates
+
+### Version 1.6.0 (2025-12-19)
+- **Gramps 6.0.6 compatibility** - Added required json_extract_expression() method
+- **Import guard** - Prevents registration when psycopg not available
+- **Performance index** - Added person_name_composite index for faster name searches
+- **Better error messages** - Clear guidance when dependencies missing
 
 ### Version 1.5.1 (2025-08-11)
 - **Fixed VARCHAR(255) truncation issue** - All string fields now use TEXT type to match SQLite behavior
@@ -22,9 +28,9 @@ The PostgreSQL Enhanced addon provides a professional-grade database backend for
 
 - **Modern psycopg3** - Uses the latest PostgreSQL adapter (psycopg 3, not psycopg2)
 - **Dual Storage Format** - Maintains both pickle blobs (for Gramps compatibility) and JSONB (for advanced queries)
-- **Two Database Modes** - Both fully tested and working:
-  - **Monolithic Mode** - All family trees in one database with table prefixes
-  - **Separate Mode** - Each family tree gets its own PostgreSQL database
+- **Two Backend Options** - Select mode at tree creation:
+  - **Monolithic** - All family trees in one database with table prefixes (recommended)
+  - **Separate** - Each family tree gets its own PostgreSQL database
 - **Full Gramps Compatibility** - Works with all existing Gramps tools and reports
 - **Transaction Safety** - Proper savepoint handling and rollback capabilities
 - **Data Preservation** - Intelligent design that preserves data when trees are removed from Gramps 
@@ -197,66 +203,69 @@ Create or edit `connection_info.txt` with the following format:
 
 ```ini
 # PostgreSQL Enhanced Connection Configuration
-# This file controls how the addon connects to PostgreSQL
 
 # Connection details
-host = 192.168.10.90    # PostgreSQL server address
+host = localhost         # PostgreSQL server address
 port = 5432              # PostgreSQL port
 user = genealogy_user    # Database username
 password = YourPassword  # Database password
 
-# Database mode: 'separate' or 'monolithic'
-database_mode = monolithic
+# For Monolithic mode: name of the shared database
+shared_database_name = gramps_shared
 
-# For monolithic mode only: name of the shared database
-shared_database_name = gramps_monolithic
-
-# Optional settings (uncomment to use)
+# Optional settings
 # pool_size = 10         # Connection pool size
 # sslmode = prefer       # SSL connection mode
-# connect_timeout = 10   # Connection timeout in seconds
 ```
 
-### Database Modes - Both Fully Tested and Working
+**Note**: Mode selection (Monolithic vs Separate) is now done by choosing the backend in the tree creation dialog, not in this file.
 
-#### Monolithic Mode
+### Database Modes
+
+**Mode selection is now part of backend choice** - you pick the mode when creating a tree.
+
+#### Monolithic Mode (Recommended)
+
+**Select**: "PostgreSQL Enhanced (Monolithic)" in backend dropdown
 
 - **How it works**: All family trees share one PostgreSQL database
 - **Table naming**: Each tree's tables are prefixed with `tree_<treeid>_`
 - **Example**: Tree "68932301" creates tables like `tree_68932301_person`
-- **Configuration**: Uses central `connection_info.txt` in plugin directory
 - **Advantages**:
   - Single database to manage and backup
   - Can query across multiple trees
   - Works without CREATEDB privilege
   - Simplified administration
-- **Best for**: Organizations managing multiple related trees
+- **Best for**: Most users, organizations managing multiple related trees
 
-#### Separate Mode
+#### Separate Mode (Advanced)
+
+**Select**: "PostgreSQL Enhanced (Separate)" in backend dropdown
 
 - **How it works**: Each family tree gets its own PostgreSQL database
 - **Database naming**: Creates database named after the tree ID
 - **Table naming**: Direct names without prefixes
-- **Configuration**: Uses central `connection_info.txt` in plugin directory
 - **Advantages**:
   - Complete isolation between trees
   - Simpler table structure
   - Per-tree backup/restore
   - Better for multi-user scenarios
   - Independent database tuning per tree
-  - Lightning fast
 - **Best for**: Large independent trees or multi-tenant environments
+- **Requires**: PostgreSQL user with CREATEDB privilege
 
 ## Creating a Family Tree
 
 ### Step 1: Configure the Connection
 
-Before creating a tree, ensure your `connection_info.txt` is properly configured:
+Ensure your `connection_info.txt` is configured in the plugin directory:
 
 ```bash
 # Edit the configuration file
 nano ~/.local/share/gramps/gramps60/plugins/PostgreSQLEnhanced/connection_info.txt
 ```
+
+Set at minimum: host, port, user, password, and shared_database_name (for Monolithic mode)
 
 ### Step 2: Create Tree in Gramps
 
@@ -264,8 +273,12 @@ nano ~/.local/share/gramps/gramps60/plugins/PostgreSQLEnhanced/connection_info.t
 2. Go to **Family Trees → Manage Family Trees**
 3. Click **New**
 4. Enter a name for your tree
-5. For **Database backend**, select "PostgreSQL Enhanced"
+5. For **Database backend**, select:
+   - **PostgreSQL Enhanced (Monolithic)** - Recommended: shared database
+   - **PostgreSQL Enhanced (Separate)** - Advanced: individual databases
 6. Click **Load Family Tree**
+
+**The mode you select determines how your tree is stored.** No additional configuration needed.
 
 ### What Happens Behind the Scenes
 
@@ -302,12 +315,13 @@ After registration, restart Gramps and the tree will appear in the Family Tree M
 
 ### Switching Between Modes
 
-To switch from monolithic to separate mode (or vice versa):
+To switch a tree from one mode to another:
 
 1. Export your tree as GEDCOM or Gramps XML
-2. Edit `connection_info.txt` to change `database_mode`
-3. Create a new tree in Gramps
-4. Import your exported data
+2. Create a new tree selecting the desired backend:
+   - PostgreSQL Enhanced (Monolithic), or
+   - PostgreSQL Enhanced (Separate)
+3. Import your exported data
 
 ## Design Features
 

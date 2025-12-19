@@ -78,6 +78,7 @@ class PostgreSQLConnection:
         self._pool = None
         self._connection = None
         self._savepoints = []
+        self._in_transaction = False
         self._persistent_cursor = None
         self._persistent_conn = None
         self._last_cursor = None
@@ -100,8 +101,16 @@ class PostgreSQLConnection:
         else:
             self._create_connection(conninfo)
 
-        # Set up the connection
-        self._setup_connection()
+        # Set up the connection (create helper functions)
+        # This may fail if user lacks CREATE FUNCTION privilege
+        try:
+            self._setup_connection()
+        except Exception as e:
+            self.log.warning(
+                "Could not create helper functions (regexp): %s. "
+                "Some search features may be limited.", e
+            )
+            # Continue without helper functions - core functionality still works
 
         # Configure JSONB handling for Gramps compatibility
         self._setup_jsonb_handling()
@@ -495,6 +504,8 @@ class PostgreSQLConnection:
             pass
         else:
             self._connection.commit()
+        self._in_transaction = False
+        self._savepoints = []
 
     def _commit(self):
         """Internal commit method."""
@@ -508,19 +519,20 @@ class PostgreSQLConnection:
             pass
         else:
             self._connection.rollback()
-        self._savepoints.clear()
+        self._in_transaction = False
+        self._savepoints = []
 
     def begin(self):
         """
         Begin a transaction.
 
-        PostgreSQL starts transactions automatically, but we
-        track this for savepoint support.
+        With autocommit=False, PostgreSQL requires explicit BEGIN
+        to start a transaction. Without it, each statement auto-commits.
         """
-        # Create a savepoint for nested transaction support
-        savepoint_name = "sp_%s" % len(self._savepoints)
-        self.execute("SAVEPOINT %s" % savepoint_name)
-        self._savepoints.append(savepoint_name)
+        if not self._in_transaction:
+            self.execute("BEGIN")
+            self._in_transaction = True
+            self._savepoints = []
 
     def begin_savepoint(self, name=None):
         """Create a named savepoint."""

@@ -22,31 +22,65 @@
 PostgreSQL Enhanced Database Backend Registration
 """
 
-register(
-    DATABASE,
-    id="postgresqlenhanced",
-    name=_("PostgreSQL Enhanced"),
-    name_accell=_("PostgreSQL _Enhanced Database"),
-    description=_(
-        "Advanced PostgreSQL backend with JSONB storage, "
-        "graph database support (Apache AGE), vector similarity (pgvector), "
-        "and AI/ML capabilities. For advanced users. "
-        "Requires PostgreSQL 15+ with extensions. Gramps Web compatible."
-    ),
-    version = '1.5.2',
-    gramps_target_version="6.0",
-    status=STABLE,
-    audience=EXPERT,  # For advanced users who can configure PostgreSQL
-    fname="postgresqlenhanced.py",
-    databaseclass="PostgreSQLEnhanced",
-    authors=["Greg Lamberson"],
-    authors_email=["lamberson@yahoo.com"],
-    maintainers=["Greg Lamberson"],
-    maintainers_email=["lamberson@yahoo.com"],
-    requires_mod=['psycopg'],  # psycopg3 (checks before installation)
-    requires_exe=[],  # No external executables required
-    depends_on=[],  # No dependencies on other Gramps plugins
-    help_url="https://github.com/gramps-project/addons-source/wiki/PostgreSQLEnhanced",
-    # Note: features attribute may not be supported in all Gramps versions
-    # Capabilities: monolithic-mode, separate-mode, grampsweb-compatible, jsonb-storage
-)
+import importlib
+
+from gramps.gen.plug._pluginreg import register, STABLE, DATABASE, DEVELOPER
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+_ = glocale.translation.gettext
+
+# Check for psycopg3 availability before registering
+try:
+    import importlib.util
+
+    PSYCOPG_AVAILABLE = importlib.util.find_spec("psycopg") is not None
+except (ImportError, ValueError, AttributeError):
+    PSYCOPG_AVAILABLE = False
+
+# Only register if dependency available or building addon
+if PSYCOPG_AVAILABLE or locals().get("build_script"):
+    # Register Monolithic mode - all trees share one database
+    register(
+        DATABASE,
+        id="postgresqlenhanced-monolithic",
+        name=_("PostgreSQL Enhanced (Monolithic)"),
+        name_accell=_("PostgreSQL Enhanced (_Monolithic)"),
+        description=_(
+            "PostgreSQL backend with all trees in shared database. "
+            "Recommended for most users. Uses table prefixes for multi-tree support. "
+            "Requires PostgreSQL 15+ and psycopg 3+."
+        ),
+        version = '1.7.3',
+        gramps_target_version="6.0",
+        status=STABLE,
+        fname="postgresqlenhanced.py",
+        databaseclass="PostgreSQLEnhancedMonolithic",
+        authors=["Greg Lamberson"],
+        authors_email=["lamberson@yahoo.com"],
+        maintainers=["Greg Lamberson"],
+        maintainers_email=["lamberson@yahoo.com"],
+        help_url="https://github.com/glamberson/gramps-postgresql-enhanced",
+    )
+
+    # Register Separate mode - one database per tree
+    register(
+        DATABASE,
+        id="postgresqlenhanced-separate",
+        name=_("PostgreSQL Enhanced (Separate)"),
+        name_accell=_("PostgreSQL Enhanced (_Separate)"),
+        description=_(
+            "PostgreSQL backend with individual database per tree. "
+            "For advanced users requiring complete tree isolation. "
+            "Requires PostgreSQL 15+ with CREATEDB privilege and psycopg 3+."
+        ),
+        version = '1.7.3',
+        gramps_target_version="6.0",
+        status=STABLE,
+        fname="postgresqlenhanced.py",
+        databaseclass="PostgreSQLEnhancedSeparate",
+        authors=["Greg Lamberson"],
+        authors_email=["lamberson@yahoo.com"],
+        maintainers=["Greg Lamberson"],
+        maintainers_email=["lamberson@yahoo.com"],
+        help_url="https://github.com/glamberson/gramps-postgresql-enhanced",
+    )

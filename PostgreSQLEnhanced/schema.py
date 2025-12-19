@@ -127,7 +127,7 @@ class PostgreSQLSchema:
                     "Upgrading schema from v%s to v%s", current_version, SCHEMA_VERSION
                 )
                 self._upgrade_schema(current_version)
-            
+
             # Also check for internal schema migrations (VARCHAR to TEXT, etc.)
             migrator = SchemaMigrator(self.conn, self.table_prefix)
             migrator.check_and_migrate()
@@ -235,7 +235,7 @@ class PostgreSQLSchema:
 
         # Set initial schema version
         self._set_schema_version(SCHEMA_VERSION)
-        
+
         # Set initial internal schema version (for our own migrations)
         migrator = SchemaMigrator(self.conn, self.table_prefix)
         migrator.set_internal_version((1, 1, 0))  # Current version with TEXT fields
@@ -253,7 +253,7 @@ class PostgreSQLSchema:
                     # Determine column type
                     # Default to TEXT for all strings (matches SQLite behavior)
                     col_type = "TEXT"
-                    
+
                     # Special cases for specific types
                     if "INTEGER" in json_path:
                         col_type = "INTEGER"
@@ -329,7 +329,15 @@ class PostgreSQLSchema:
 
         # Then add our enhanced indexes for better performance
         if obj_type == "person":
-            # Name searches
+            # Composite index for name searches (required by Gramps 6.0.6+)
+            self.conn.execute(
+                f"""
+                CREATE INDEX IF NOT EXISTS idx_{self.table_prefix}person_name_composite
+                    ON {self._table_name('person')} (surname, given_name)
+            """
+            )
+
+            # Name searches (JSONB)
             self.conn.execute(
                 f"""
                 CREATE INDEX IF NOT EXISTS idx_{self.table_prefix}person_names

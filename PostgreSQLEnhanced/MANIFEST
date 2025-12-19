@@ -10,3 +10,5 @@ schema_columns.py
 schema_migrations.py
 undo_postgresql.py
 README.md
+INSTALL.md
+CHANGELOG.md
