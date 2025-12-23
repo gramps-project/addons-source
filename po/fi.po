@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-11-04 06:51+0000\n"
+"PO-Revision-Date: 2025-12-12 18:02+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -1671,7 +1671,7 @@ msgstr " Kartta henkilöstä "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
-msgstr "Chr"
+msgstr "Kr"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
@@ -13557,7 +13557,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1736 Form/form_us.xml.h:1809
 msgid "Blind Females"
-msgstr ""
+msgstr "Sokeita naisia"
 
 #: Form/form_us.xml.h:1737 Form/form_us.xml.h:1810
 msgid "Blind Females Age"
