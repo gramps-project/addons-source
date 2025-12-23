@@ -31,13 +31,14 @@
 # Jean-Marc <m.balthazar@posteo.net>, 2025.
 # geoglorus <pierre+github@laminette.net>, 2025.
 # "S-G." <grimaitres@gmail.com>, 2025.
+# Baptiste de Coulon <baptiste.decoulon@ik.me>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-12-02 14:00+0000\n"
-"Last-Translator: \"S-G.\" <grimaitres@gmail.com>\n"
+"PO-Revision-Date: 2025-12-10 22:00+0000\n"
+"Last-Translator: Baptiste de Coulon <baptiste.decoulon@ik.me>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -15209,18 +15210,22 @@ msgstr[1] "%s erreurs lors du téléchargement."
 #: GrampsWebSync/grampswebsync.py:362
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
+"L'authentification a échoué. Merci de vérifier votre nom d'utilisateur/trice "
+"et votre mot de passe."
 
 #: GrampsWebSync/grampswebsync.py:366
 msgid "Access forbidden. Please check username and password."
 msgstr ""
+"L'accès est refusé. Merci de vérifier votre nom d'utilisateur/trice et votre "
+"mot de passe."
 
 #: GrampsWebSync/grampswebsync.py:370
 msgid "GrampsWeb service not found. Please check the URL."
-msgstr ""
+msgstr "L'installation GrampsWeb n'a pu être trouvée. Merci de vérifier l'URL."
 
 #: GrampsWebSync/grampswebsync.py:374
 msgid "Too many requests, please try again in a few seconds."
-msgstr ""
+msgstr "Il y trop de requêtes, merci d'essayer à nouveau dans un instant."
 
 #: GrampsWebSync/grampswebsync.py:378
 msgid "GrampsWeb tree is disabled."
@@ -15234,6 +15239,8 @@ msgstr ""
 #: GrampsWebSync/grampswebsync.py:387
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
+"Problème de connexion. Merci de vérifier l'adresse URL et votre connexion à "
+"Internet."
 
 #: GrampsWebSync/grampswebsync.py:391
 msgid "Invalid server response. Please check the URL."
