@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-11-28 18:00+0000\n"
+"PO-Revision-Date: 2025-12-22 14:00+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -17,9 +17,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : "
-"((n > 10 && n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.15-dev\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -1249,7 +1249,7 @@ msgstr "נתיב היעד לקבצים שחוללו."
 #: D3Charts/DescendantIndentedTree.py:1830
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
-msgstr "שם קובץ היעד לתוכן html"
+msgstr "שם קובץ היעד לתוכן .html"
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
@@ -1506,7 +1506,7 @@ msgstr "דורות לחילול קישורי HREF"
 
 #: D3Charts/DescendantIndentedTree.py:1949
 msgid "The number of generations to generate HREF links."
-msgstr "מספר הדורות לחילול קישורי HREF"
+msgstr "מספר הדורות לחילול קישורי .HREF"
 
 #: D3Charts/DescendantIndentedTree.py:1955
 msgid "Exclude persons who died before (years)"
@@ -2408,7 +2408,7 @@ msgstr "לכלול תמונה/תצלום מהגלריה"
 
 #: DenominoViso/DenominoViso.py:2663
 msgid "Whether to include images"
-msgstr "האם לכלול תמונות."
+msgstr "האם לכלול תמונות"
 
 #: DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
@@ -2507,10 +2507,12 @@ msgid ""
 "The vertical distance of person rectangles of the regular chart type "
 "expressed as fraction of the horizontal rectangle distance."
 msgstr ""
+"המרחק האנכי של מלבני האדם של סוג התרשים הרגיל המובא כחלק מהמרחק המלבני "
+"האופקי."
 
 #: DenominoViso/DenominoViso.py:2719
 msgid "Extra style settings:"
-msgstr ""
+msgstr "הגדרות סגנון נוספות:"
 
 #: DenominoViso/DenominoViso.py:2720
 msgid "Whatever css style settings are needed."
@@ -2546,7 +2548,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2749
 msgid "Event format"
-msgstr ""
+msgstr "תסדיר אירועים"
 
 #: DenominoViso/DenominoViso.py:2750
 msgid "at"
@@ -2561,7 +2563,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2757
 msgid "Source format"
-msgstr ""
+msgstr "תסדיר מקור"
 
 #: DenominoViso/DenominoViso.py:2758
 msgid ""
@@ -2575,7 +2577,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2859
 msgid "to directory:"
-msgstr ""
+msgstr "למחיצה:"
 
 #: DenominoViso/DenominoViso.py:2861
 msgid "Save images in ..."
@@ -2583,7 +2585,7 @@ msgstr "שמירת תמונות בתוך ..."
 
 #: DenominoViso/DenominoViso.py:2911
 msgid "should be"
-msgstr ""
+msgstr "צריך להיות"
 
 #: DenominoViso/DenominoViso.py:2913
 msgid "Included"
@@ -2591,7 +2593,7 @@ msgstr "הכללה"
 
 #: DenominoViso/DenominoViso.py:2914
 msgid "Excluded"
-msgstr ""
+msgstr "מוחרג"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
@@ -2603,7 +2605,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2980
 msgid "Give a filename ..."
-msgstr ""
+msgstr "מתן שם לקובץ..."
 
 #: DenominoViso/DenominoViso.py:3114
 msgid "Relation type"
@@ -2611,15 +2613,15 @@ msgstr "סוג יוחסה"
 
 #: DenominoViso/DenominoViso.py:3119
 msgid "Use dashed linestyle"
-msgstr ""
+msgstr "שימוש בסגנון קו מקווקו"
 
 #: DenominoViso/DenominoViso.py:3124
 msgid "Dash length"
-msgstr ""
+msgstr "אורך מקף"
 
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
-msgstr ""
+msgstr "אורך בין מקפים"
 
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
@@ -2660,12 +2662,13 @@ msgstr ""
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
-msgstr ""
+msgstr "למידע נוסף  %(reference)s: %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:249
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 msgstr ""
+"מידע נוסף בדוח: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:374
 msgid "Descendants Report"
@@ -2675,7 +2678,7 @@ msgstr "דוח צאצאים"
 #: DescendantBooks/DetailedDescendantBookReport.py:421
 #, python-format
 msgid "Writing %s reports..."
-msgstr ""
+msgstr "כתיבת %s דוחות..."
 
 #: DescendantBooks/DescendantBookReport.py:442
 #, python-brace-format
@@ -14705,10 +14708,10 @@ msgstr ""
 #, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "ירד בהצלחה קבצי מדיה %s"
-msgstr[1] "ירדו בהצלחה %s קבצי מדיה"
-msgstr[2] "ירדו בהצלחה %s קבצי מדיה"
-msgstr[3] "ירדו בהצלחה %s קבצי מדיה"
+msgstr[0] "ירד בהצלחה קובץ מדיה %s."
+msgstr[1] "ירדו בהצלחה %s קבצי מדיה."
+msgstr[2] "ירדו בהצלחה %s קבצי מדיה."
+msgstr[3] "ירדו בהצלחה %s קבצי מדיה."
 
 #: GrampsWebSync/grampswebsync.py:335
 #, python-format
@@ -14723,7 +14726,7 @@ msgstr[3] ""
 #, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "מתבצעת האלעת %s קבצי מדיה."
+msgstr[0] "מתבצעת האלעת קובץ מדיה %s."
 msgstr[1] "מתבצעת האלעת %s קבצי מדיה."
 msgstr[2] "מתבצעת האלעת %s קבצי מדיה."
 msgstr[3] "מתבצעת האלעת %s קבצי מדיה."
@@ -14927,7 +14930,7 @@ msgstr "חסרים באופן מרוחק"
 #, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "מתבצעת הורדת קבץ מדיה  %s"
+msgstr[0] "מתבצעת הורדת קבץ מדיה %s"
 msgstr[1] "מתבצעת הורדת %s קבצי מדיה"
 msgstr[2] "מתבצעת הורדת %s קבצי מדיה"
 msgstr[3] "מתבצעת הורדת %s קבצי מדיה"
@@ -19817,23 +19820,16 @@ msgid "Relation and distances with root"
 msgstr ""
 
 #: RelID/relation_tab.py:315
-#, fuzzy
-#| msgid "Filtering"
 msgid "Filter rule"
-msgstr "סינון"
+msgstr "כלל סינון"
 
 #: RelID/relation_tab.py:319
-#, fuzzy
-#| msgid "Selection with a filter"
 msgid "Select the filter rule"
-msgstr "בחירה באמצעות מסנן"
+msgstr "בחירת כלל סינון"
 
 #: RelID/relation_tab.py:321
-#, fuzzy
-#| msgid "%d generation"
-#| msgid_plural "%d generations"
 msgid "Deep generations"
-msgstr "דור %d"
+msgstr "דורות עמוקים"
 
 #: RelID/relation_tab.py:322
 msgid "How deep should we go?"
@@ -19860,56 +19856,44 @@ msgid "Period"
 msgstr ""
 
 #: RelID/relation_tab.py:350
-#, fuzzy
-#| msgid "Shared Segments"
 msgid "Shared Subtree"
-msgstr "מקטעים משותפים"
+msgstr "אילן משנה משותף"
 
 #: RelID/relation_tab.py:351
 msgid "Centrality"
 msgstr ""
 
 #: RelID/relation_tab.py:352
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Unique Ancestors"
-msgstr "אב קדמון"
+msgstr "אבות קדמונים ייחודיים"
 
 #: RelID/relation_tab.py:353
-#, fuzzy
-#| msgid "Surname, Given"
 msgid "Surname Diversity"
-msgstr "שם משפחה, שם פרטי"
+msgstr "הגוון שמות משפחה"
 
 #: RelID/relation_tab.py:367
 msgid "Quit"
 msgstr ""
 
 #: RelID/relation_tab.py:376
-#, fuzzy
-#| msgid "No central person selected"
 msgid "No default person set."
-msgstr "לא נבחר אדם מרכזי"
+msgstr "לא הוגדא אדם ברירת מחדל."
 
 #: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
 msgstr ""
 
 #: RelID/relation_tab.py:446
-#, fuzzy
-#| msgid "Network Chart"
 msgid "Network Metrics"
-msgstr "תרשים רשת"
+msgstr "מדדי רשת"
 
 #: RelID/relation_tab.py:447
 msgid "Enabled"
 msgstr ""
 
 #: RelID/relation_tab.py:449
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable or disable family network metrics"
-msgstr "מייצר תרשים קשרי משפחה."
+msgstr "אפשור או השבתת מדדי רשת משפחתית"
 
 #: RelID/relation_tab.py:483
 msgid "Generating relation map..."
@@ -19960,22 +19944,16 @@ msgid "Data saved to : {filename}"
 msgstr ""
 
 #: RelID/relation_tab.py:676
-#, fuzzy
-#| msgid "Failed to create %s: %s"
 msgid "Failed to save data."
-msgstr "כשל ביצירת %s: %s"
+msgstr "שמירת נתונים כשלה."
 
 #: RelID/relation_tab.py:689
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationships Map and Tab"
-msgstr "יוחסה לאב"
+msgstr "לשונית ומפת קשרי־קרבה"
 
 #: RelID/relation_tab.py:772
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable family network metrics"
-msgstr "מייצר תרשים קשרי משפחה."
+msgstr "אפשור מדדי רשת משפחתית"
 
 #: RelID/relation_tab.py:774
 msgid "Whether to calculate and display family network metrics."
