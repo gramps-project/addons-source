@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-11-19 13:51+0000\n"
+"PO-Revision-Date: 2025-12-03 20:00+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -74,10 +74,8 @@ msgid "AncestorFill for %s"
 msgstr "AncestorFill for %s"
 
 #: AncestorFill/AncestorFill.py:205
-#, fuzzy
-#| msgid "General Data"
 msgid "Generation "
-msgstr "General Data"
+msgstr "Generation "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
@@ -140,14 +138,16 @@ msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
 msgstr ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
-msgstr ""
+msgstr "Display theoretical"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "Whether to display the theoretical number of ancestor by generation"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
@@ -156,27 +156,27 @@ msgstr ""
 #: LinesOfDescendency/lines-of-descendency.py:72
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
-msgstr ""
+msgstr "The style used for the title of the page."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr ""
+msgstr "Check Associations data"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
-msgstr ""
+msgstr "Will check the data on Association for people."
 
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
-msgstr ""
+msgstr "Associations state tool"
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
-msgstr ""
+msgstr "Type of link"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
-msgstr ""
+msgstr "Of"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -1364,7 +1364,7 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1895
 msgid "Navigation"
-msgstr ""
+msgstr "Navigation"
 
 #: D3Charts/DescendantIndentedTree.py:1897
 msgid "Contraction/Expansion mechanism"
@@ -2117,10 +2117,8 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
 #: DenominoViso/DenominoViso.py:2752
-#, fuzzy
-#| msgid "Description: "
 msgid "description"
-msgstr "Description: "
+msgstr "description"
 
 #: DenominoViso/DenominoViso.py:310 DenominoViso/DenominoViso.py:976
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
@@ -3067,10 +3065,8 @@ msgid "Theme color preference for Space Tree"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
-#, fuzzy
-#| msgid "Description: "
 msgid "Destination File"
-msgstr "Description: "
+msgstr "Destination File"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1140
 msgid "The destination file name for the report."
@@ -4486,7 +4482,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
-msgstr ""
+msgstr "Theme"
 
 #: DynamicWeb/dynamicweb.py:5190
 msgid "Pages"
@@ -4924,10 +4920,8 @@ msgstr "There was an error in stripping the Exif metadata from this image..."
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
-#, fuzzy
-#| msgid "Description: "
 msgid "Event Description Editor"
-msgstr "Description: "
+msgstr "Event Description Editor"
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
@@ -5345,10 +5339,9 @@ msgid "resident"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:971
-#, fuzzy, python-format
-#| msgid "Description: "
+#, python-format
 msgid "(%(description)s)"
-msgstr "Description: "
+msgstr "(%(description)s)"
 
 #: FamilyTree/FamilyTree.py:1044
 msgid "The center family for the tree"
@@ -7028,10 +7021,8 @@ msgid "12. Religion"
 msgstr ""
 
 #: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
-#, fuzzy
-#| msgid "Original: "
 msgid "13. Origin"
-msgstr "Original: "
+msgstr "13. Origin"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
@@ -7843,10 +7834,8 @@ msgid "9. Post office address"
 msgstr ""
 
 #: Form/form_ca.xml.h:642 Form/form_us.xml.h:1252
-#, fuzzy
-#| msgid "Description: "
 msgid "Section"
-msgstr "Description: "
+msgstr "Section"
 
 #: Form/form_ca.xml.h:643
 msgid "10. Location: Section"
@@ -14666,10 +14655,8 @@ msgid "Creates data file for GoogleEarth and opens it"
 msgstr ""
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
-#, fuzzy
-#| msgid "Description: "
 msgid "No place description"
-msgstr "Description: "
+msgstr "No place description"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
 msgid "GoogleEarth not installed!"
@@ -14896,10 +14883,8 @@ msgstr "No changes need."
 
 #: GrampsWebSync/grampswebsync.py:900 GrampsWebSync/grampswebsync.py:905
 #: GrampsWebSync/grampswebsync.py:907
-#, fuzzy
-#| msgid "Modified: "
 msgid "Modified"
-msgstr "Modified: "
+msgstr "Modified"
 
 #: GrampsWebSync/grampswebsync.py:902
 #, fuzzy
@@ -14967,7 +14952,7 @@ msgstr ""
 
 #: GraphView/avatars.py:61
 msgid "Light"
-msgstr ""
+msgstr "Light"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
@@ -15783,10 +15768,8 @@ msgid "Select the difference you wish to examine."
 msgstr ""
 
 #: ImportMerge/importmerge.glade:180
-#, fuzzy
-#| msgid "Description: "
 msgid "Object Name/Description"
-msgstr "Description: "
+msgstr "Object Name/Description"
 
 #: ImportMerge/importmerge.glade:227
 msgid ""
@@ -15829,10 +15812,8 @@ msgid ""
 msgstr ""
 
 #: ImportMerge/importmerge.glade:392
-#, fuzzy
-#| msgid "Original: "
 msgid "Merge Original"
-msgstr "Original: "
+msgstr "Merge Original"
 
 #: ImportMerge/importmerge.glade:396
 msgid ""
@@ -15924,10 +15905,8 @@ msgid "Replace with import"
 msgstr ""
 
 #: ImportMerge/importmerge.py:115
-#, fuzzy
-#| msgid "Original: "
 msgid "Keep original"
-msgstr "Original: "
+msgstr "Keep original"
 
 #: ImportMerge/importmerge.py:119
 msgid ""
@@ -15991,10 +15970,8 @@ msgstr ""
 
 #: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
 #: ImportMerge/importmerge.py:982
-#, fuzzy
-#| msgid "Original: "
 msgid "Original"
-msgstr "Original: "
+msgstr "Original"
 
 #: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
 #: ImportMerge/importmerge.py:983
@@ -17779,10 +17756,8 @@ msgstr "Differences"
 
 #: PersonEverything/PersonEverything.py:455
 #: PersonEverything/PersonEverything.py:732
-#, fuzzy
-#| msgid "Description: "
 msgid "Description and Path"
-msgstr "Description: "
+msgstr "Description and Path"
 
 #: PersonEverything/PersonEverything.py:484
 msgid "Referenced Region"
@@ -17835,10 +17810,8 @@ msgid "Media type"
 msgstr "Media Path Update"
 
 #: PersonEverything/PersonEverything.py:679
-#, fuzzy
-#| msgid "Original: "
 msgid "Origin type"
-msgstr "Original: "
+msgstr "Origin type"
 
 #: PersonEverything/PersonEverything.py:686
 msgid "Prefix, surname, connector"
@@ -20317,10 +20290,9 @@ msgid "Birth: %s"
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Death: %s"
-msgstr "Media Path Update"
+msgstr "Death: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
 msgid "Set as Active person"
@@ -20650,10 +20622,8 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
-#, fuzzy
-#| msgid "Original: "
 msgid "Origine:"
-msgstr "Original: "
+msgstr "Origin:"
 
 #: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
@@ -20717,10 +20687,8 @@ msgstr ""
 #: SourceIndex/marriage.glade:846 SourceIndex/marriage.glade:865
 #: SourceIndex/marriage.glade:884 SourceIndex/marriage.glade:1526
 #: SourceIndex/marriage.glade:1654 SourceIndex/witness.glade:124
-#, fuzzy
-#| msgid "Original: "
 msgid "Origin:"
-msgstr "Original: "
+msgstr "Origin:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
 #: markdown_place_history_formatter.py:59
@@ -22596,22 +22564,19 @@ msgid "Loaded from file: %s"
 msgstr ""
 
 #: activity_row_generator.py:126
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Domain: %s"
-msgstr "Media Path Update"
+msgstr "Domain: %s"
 
 #: activity_row_generator.py:131
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Object: %s"
-msgstr "Media Path Update"
+msgstr "Object: %s"
 
 #: activity_row_generator.py:135
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Pattern: %s"
-msgstr "Media Path Update"
+msgstr "Pattern: %s"
 
 #: activity_row_generator.py:138
 #, python-format
