@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-11-17 06:51+0000\n"
+"PO-Revision-Date: 2025-12-05 07:00+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -852,9 +852,9 @@ msgid "Selecting... "
 msgstr "Výběr... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
-#, fuzzy, python-format
+#, python-format
 msgid "Adding events '%s'..."
-msgstr "Vybrat existující rodiče..."
+msgstr "Přidání událostí '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
@@ -889,9 +889,9 @@ msgid " Done! Committing..."
 msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
-#, fuzzy, python-format
+#, python-format
 msgid "Added %d events."
-msgstr "Přidat novou událost"
+msgstr "Počet přidaných událostí: %d."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
@@ -1122,22 +1122,19 @@ msgid ""
 msgstr ""
 
 #: CombinedView/personpage.py:597
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(event_type)s: %(date)s v %(place)s"
 
 #: CombinedView/personpage.py:601
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(date)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(event_type)s: %(date)s"
 
 #: CombinedView/personpage.py:604
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(event_type)s: %(place)s"
-msgstr "%(type)s: %(value)s"
+msgstr "%(event_type)s: %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
@@ -1177,10 +1174,9 @@ msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
 #: D3Charts/DescendantIndentedTree.py:1518
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Failed to create directory structure : %s"
-msgstr "Nezdařilo se vytvořit adresář: %(path)s"
+msgstr "Nezdařilo se vytvořit strukturu adresáře: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
 #: D3Charts/DescendantIndentedTree.py:1554
@@ -23602,8 +23598,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
-"Počet štítků: \n"
-"            %s\n"
+"Počet štítků : \n"
+"\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
 #, python-format

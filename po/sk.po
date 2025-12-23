@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-11-17 06:51+0000\n"
+"PO-Revision-Date: 2025-12-14 21:00+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -1161,7 +1161,7 @@ msgstr ""
 #: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s v %(place)s"
 
 #: CombinedView/personpage.py:601
 #, python-format
@@ -3665,7 +3665,7 @@ msgstr "Či zahrnúť poznámky Zoznamu úloh."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1351
 msgid "The style used for image labels."
-msgstr "Štýl použitý pre označenia obrázkov."
+msgstr "Štýl použitý pre obrázkové značky."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1364
 msgid "A style used for image captions."
@@ -12149,7 +12149,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1080
 msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
-msgstr "(Deň návštevy sčítacieho komisára) chorý alebo dočasne neschopný."
+msgstr "(Deň návštevy sčítacieho komisára) chorý alebo dočasne neschopný"
 
 #: Form/form_us.xml.h:1082 Form/form_us.xml.h:1213
 msgid "Deaf and Dumb"
@@ -16435,11 +16435,11 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
 msgid "Show birth label"
-msgstr ""
+msgstr "Zobraziť značku narodenia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
 msgid "Activate the birth label."
-msgstr "Aktivovať štítok narodenia."
+msgstr "Aktivovať značku narodenia."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 msgid "Birth label along path"
@@ -16464,51 +16464,56 @@ msgstr ""
 #: LifeLineChartView/_dummy_translation_string_po.py:77
 #: LifeLineChartView/lifelinechartview.py:884
 msgid "Label Configuration"
-msgstr "Konfigurácia štítkov"
+msgstr "Konfigurácia značiek"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 msgid "Birth label rotation"
-msgstr ""
+msgstr "Otočenie značky narodenia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:31
 msgid "The birth label is written in a text frame rotated by this value."
 msgstr ""
+"Značka narodenia je napísaná v textovom rámčeku otočenom o túto hodnotu."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:33
 msgid "Horizontal offset of birth label"
-msgstr ""
+msgstr "Vodorovný posun značky narodenia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:34
 msgid ""
 "The birth label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
+"Značka narodenia je posunutá vodorovne o túto hodnotu, ktorá je uvedená "
+"relatívne k veľkosti písma."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:36
 msgid "Vertical offset of birth label"
-msgstr ""
+msgstr "Zvislý posun značky narodenia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:37
 msgid ""
 "The birth label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
+"Značka narodenia je posunutá zvislo o túto hodnotu, ktorá je uvedená "
+"relatívne k veľkosti písma."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:39
 msgid "Wrap words in birth label"
-msgstr ""
+msgstr "Zalamovať slová v značke narodenia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:40
 msgid "The birth label content is wrapped where possible."
-msgstr ""
+msgstr "Obsah značky narodenia je zalamovaný, kde je to možné."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:42
 msgid "Birth label anchor"
-msgstr ""
+msgstr "Kotva značky narodenia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:43
 msgid "Text alignment of the birth label."
-msgstr ""
+msgstr "Zarovnanie textu na značke narodenia."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:45
 #: LifeLineChartView/_dummy_translation_string_po.py:65
@@ -16517,63 +16522,67 @@ msgstr "Na stred"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:48
 msgid "Show death label"
-msgstr ""
+msgstr "Zobraziť značku úmrtia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
 msgid "Activate the death label."
-msgstr "Aktivovať štítok úmrtia."
+msgstr "Aktivovať značku úmrtia."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:50
 msgid "Death label rotation"
-msgstr ""
+msgstr "Otočenie značky úmrtia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
-msgstr ""
+msgstr "Značka úmrtia je napísaná v textovom rámčeku otočenom o túto hodnotu."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
-msgstr ""
+msgstr "Vodorovný posun značky úmrtia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:54
 msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
+"Značka úmrtia je posunutá vodorovne o túto hodnotu, ktorá je uvedená "
+"relatívne k veľkosti písma."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:56
 msgid "Vertical offset of death label"
-msgstr ""
+msgstr "Zvislý posun značky úmrtia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:57
 msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
+"Značka úmrtia je posunutá zvislo o túto hodnotu, ktorá je uvedená relatívne "
+"k veľkosti písma."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:59
 msgid "Wrap words in death label"
-msgstr ""
+msgstr "Zalomiť slová v značke úmrtia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:60
 msgid "The death label content is wrapped where possible."
-msgstr ""
+msgstr "Obsah značky úmrtia je zalamovaný, kde je to možné."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:62
 msgid "Death label anchor"
-msgstr ""
+msgstr "Kotva značky úmrtia"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:63
 msgid "Text alignment of the death label."
-msgstr ""
+msgstr "Zarovnanie textu značky narodenia."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:68
 msgid "Show marriage label"
-msgstr ""
+msgstr "Zobraziť značku sobáša"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:69
 msgid "Activate the marriage label."
-msgstr ""
+msgstr "Aktivovať značku sobáša."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:70
 msgid "Fade individual color"
@@ -16589,7 +16598,7 @@ msgstr "Názov písma"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:73
 msgid "Name of the font family used for labels."
-msgstr ""
+msgstr "Názov typu písma použitého pre značky."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:75
 msgid "Relative font size"
@@ -17989,7 +17998,7 @@ msgstr "Základný štýl používaný pre zobrazenie názvu."
 
 #: PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
-msgstr "Štýl použitý pre štítky a popisy"
+msgstr "Štýl použitý pre značky a nadpisy"
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -20295,10 +20304,8 @@ msgid "Quit"
 msgstr ""
 
 #: RelID/relation_tab.py:376
-#, fuzzy
-#| msgid "No default_person"
 msgid "No default person set."
-msgstr "Žiadna východzia_osoba"
+msgstr "Nie je nastavená žiadna východzia osoba."
 
 #: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
@@ -20313,10 +20320,8 @@ msgid "Enabled"
 msgstr "Zapnuté"
 
 #: RelID/relation_tab.py:449
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable or disable family network metrics"
-msgstr "Vygeneruje diagram rodinnej siete."
+msgstr "Zapnúť alebo vypnúť  metriky rodinnej siete"
 
 #: RelID/relation_tab.py:483
 msgid "Generating relation map..."
@@ -20369,10 +20374,8 @@ msgid "Data saved to : {filename}"
 msgstr ""
 
 #: RelID/relation_tab.py:676
-#, fuzzy
-#| msgid "Failed to create %s: %s"
 msgid "Failed to save data."
-msgstr "Nepodarilo sa vytvoriť %s: %s"
+msgstr "Údaje sa nepodarilo uložiť."
 
 #: RelID/relation_tab.py:689
 #, fuzzy
@@ -20381,10 +20384,8 @@ msgid "Relationships Map and Tab"
 msgstr "Vzťah k hlave"
 
 #: RelID/relation_tab.py:772
-#, fuzzy
-#| msgid "Generates a family network chart."
 msgid "Enable family network metrics"
-msgstr "Vygeneruje diagram rodinnej siete."
+msgstr "Zapnúť metriky rodinnej siete"
 
 #: RelID/relation_tab.py:774
 msgid "Whether to calculate and display family network metrics."
