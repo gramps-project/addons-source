@@ -2,35 +2,35 @@
 # $Id$
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# klak kloyk <klakkloyk@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.0.3.\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2015-10-01 19:02+0200\n"
-"Last-Translator: Ζήσης Παπαδόπουλος <zissisp@gmail.com>\n"
-"Language-Team: Greek <zissis@mail.com>\n"
+"PO-Revision-Date: 2025-12-23 02:37+0000\n"
+"Last-Translator: klak kloyk <klakkloyk@gmail.com>\n"
+"Language-Team: Greek <https://hosted.weblate.org/projects/gramps-project/"
+"addons/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Weblate 5.15.1\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,-1,-1,-1,-1,-1,5751\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Όλα τα ονόματα όλων των ανθρώπων"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Εμφάνιση όλων των ονομάτων όλων των ατόμων"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
-msgstr ""
+msgstr "Τύπος ονόματος"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
