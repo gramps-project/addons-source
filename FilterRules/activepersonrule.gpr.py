@@ -26,7 +26,7 @@ register(
     id="ActivePerson",
     name=_("The active Person"),
     description=_("The active Person"),
-    version = '0.0.14',
+    version = '0.0.15',
     authors=["Paul Culley"],
     authors_email=["paulr2787@gmail.com"],
     gramps_target_version="6.0",
