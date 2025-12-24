@@ -10,8 +10,8 @@ register(
     description=_("Chat With Tree with the help of AI Large Language Model, needs litellm module"),
     version = '0.0.26',
     gramps_target_version="6.0",  # Specify the Gramps version you are targeting
-    status=EXPERIMENTAL,
-    audience = DEVELOPER,
+    status=STABLE,
+    audience = EVERYONE,
     fname="ChatWithTree.py",  # The main Python file for your Gramplet
     # The 'gramplet' argument points to the class name in your main file
     gramplet="ChatWithTreeClass",
