@@ -17,8 +17,6 @@ you can use the stronger remote cloud LLMs, for exampe via OpenRouter, Anthrophi
 
 type `/help` in the chat to get rudimentary help
 
-TODO: Update documentation and create online documentation at Gramps Project websit
-
 ### Development documentation
 
 `ChatWithTree.py` — The gramplet UI class for Gramps that embeds the chat panel, connects signals, and manages UI updates while interacting with the chat service.

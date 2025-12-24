@@ -140,6 +140,7 @@ You can get the start point of the genealogy tree using the `start_point` tool.
 GRAMPS_AI_MODEL_NAME = os.environ.get("GRAMPS_AI_MODEL_NAME")
 GRAMPS_AI_MODEL_URL = os.environ.get("GRAMPS_AI_MODEL_URL", "http://localhost:11434")
 
+
 # ===
 # ChatBot class gets initialized when a Gramps database
 # is selected (on db change)
