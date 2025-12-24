@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2025-11-28 18:00+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"PO-Revision-Date: 2025-12-10 22:00+0000\n"
+"Last-Translator: Baptiste de Coulon <baptiste.decoulon@ik.me>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -57,6 +57,27 @@ msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
 msgstr[0] "%s erreur lors du téléchargement."
 msgstr[1] "%s erreurs lors du téléchargement."
+
+msgid "Authentication failed. Please check your username and password."
+msgstr ""
+"L'authentification a échoué. Merci de vérifier votre nom d'utilisateur/trice "
+"et votre mot de passe."
+
+msgid "Access forbidden. Please check username and password."
+msgstr ""
+"L'accès est refusé. Merci de vérifier votre nom d'utilisateur/trice et votre "
+"mot de passe."
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "L'installation GrampsWeb n'a pu être trouvée. Merci de vérifier l'URL."
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "Il y trop de requêtes, merci d'essayer à nouveau dans un instant."
+
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr ""
+"Problème de connexion. Merci de vérifier l'adresse URL et votre connexion à "
+"Internet."
 
 #, python-format
 msgid "Unexpected error: %s"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
+"PO-Revision-Date: 2025-12-22 14:00+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,10 +13,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15.1\n"
+
+#, python-format
+msgid "sp. see  %(reference)s : %(spouse)s"
+msgstr "למידע נוסף  %(reference)s: %(spouse)s"
+
+#, python-format
+msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
+msgstr ""
+"מידע נוסף בדוח: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 
 msgid "Descendants Report"
 msgstr "דוח צאצאים"
+
+#, python-format
+msgid "Writing %s reports..."
+msgstr "כתיבת %s דוחות..."
 
 msgid "Select filter to restrict people that appear in the report"
 msgstr "בחירת מסנן להגבלת האנשים שמופיעים בדוח"

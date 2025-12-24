@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-11-28 18:00+0000\n"
+"PO-Revision-Date: 2025-12-22 14:00+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 msgid "No Source"
 msgstr "אין מקור"
@@ -228,7 +228,7 @@ msgid "Include Photos/Images from Gallery"
 msgstr "לכלול תמונה/תצלום מהגלריה"
 
 msgid "Whether to include images"
-msgstr "האם לכלול תמונות."
+msgstr "האם לכלול תמונות"
 
 msgid "Copy Image"
 msgstr "העתקת תמונה"
@@ -300,17 +300,54 @@ msgstr "גובה מלבן־אדם מסוג תרשים רגיל, מבוטא כש�
 msgid "Vertical distance of rectangles (hrd):"
 msgstr "מרחק אופקי של מלבנים (hrd):"
 
+msgid ""
+"The vertical distance of person rectangles of the regular chart type "
+"expressed as fraction of the horizontal rectangle distance."
+msgstr ""
+"המרחק האנכי של מלבני האדם של סוג התרשים הרגיל המובא כחלק מהמרחק המלבני "
+"האופקי."
+
+msgid "Extra style settings:"
+msgstr "הגדרות סגנון נוספות:"
+
 msgid "Birth relationship linestyle"
 msgstr "סגנון קו קשרי קירבה מסוג לידה"
+
+msgid "Event format"
+msgstr "תסדיר אירועים"
+
+msgid "Source format"
+msgstr "תסדיר מקור"
+
+msgid "to directory:"
+msgstr "למחיצה:"
 
 msgid "Save images in ..."
 msgstr "שמירת תמונות בתוך ..."
 
+msgid "should be"
+msgstr "צריך להיות"
+
 msgid "Included"
 msgstr "הכללה"
 
+msgid "Excluded"
+msgstr "מוחרג"
+
+msgid "Give a filename ..."
+msgstr "מתן שם לקובץ..."
+
 msgid "Relation type"
 msgstr "סוג יוחסה"
+
+msgid "Use dashed linestyle"
+msgstr "שימוש בסגנון קו מקווקו"
+
+msgid "Dash length"
+msgstr "אורך מקף"
+
+msgid "Inter-dash length"
+msgstr "אורך בין מקפים"
 
 msgid "DenominoViso"
 msgstr "DenominoViso"

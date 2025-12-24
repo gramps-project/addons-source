@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-11-19 13:51+0000\n"
+"PO-Revision-Date: 2025-12-03 20:00+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -23,6 +23,9 @@ msgstr "Report on the filling of the tree"
 #, python-format
 msgid "AncestorFill for %s"
 msgstr "AncestorFill for %s"
+
+msgid "Generation "
+msgstr "Generation "
 
 msgid "Number of Ancestors found "
 msgstr "Number of Ancestors found "
@@ -68,3 +71,19 @@ msgstr ""
 
 msgid "Collapsed digit"
 msgstr "Collapsed digit"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+
+msgid "Display theoretical"
+msgstr "Display theoretical"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Whether to display the theoretical number of ancestor by generation"
+
+msgid "The style used for the title of the page."
+msgstr "The style used for the title of the page."

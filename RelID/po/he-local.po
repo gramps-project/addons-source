@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
+"PO-Revision-Date: 2025-12-22 14:00+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,19 +13,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 msgid "Select filter to restrict people"
 msgstr "בחירת מסנן להגבלת האנשים"
 
+msgid "Filter rule"
+msgstr "כלל סינון"
+
+msgid "Select the filter rule"
+msgstr "בחירת כלל סינון"
+
+msgid "Deep generations"
+msgstr "דורות עמוקים"
+
 msgid "Relation"
 msgstr "יוחסה"
 
+msgid "Shared Subtree"
+msgstr "אילן משנה משותף"
+
+msgid "Unique Ancestors"
+msgstr "אבות קדמונים ייחודיים"
+
+msgid "Surname Diversity"
+msgstr "הגוון שמות משפחה"
+
 msgid "Save"
 msgstr "שמירה"
+
+msgid "No default person set."
+msgstr "לא הוגדא אדם ברירת מחדל."
+
+msgid "Network Metrics"
+msgstr "מדדי רשת"
+
+msgid "Enable or disable family network metrics"
+msgstr "אפשור או השבתת מדדי רשת משפחתית"
 
 msgid "Generating relation map..."
 msgstr "חילול מפת יוחסה..."
 
 msgid "_Select"
 msgstr "_בחירה"
+
+msgid "Failed to save data."
+msgstr "שמירת נתונים כשלה."
+
+msgid "Relationships Map and Tab"
+msgstr "לשונית ומפת קשרי־קרבה"
+
+msgid "Enable family network metrics"
+msgstr "אפשור מדדי רשת משפחתית"

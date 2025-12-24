@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-11-17 06:51+0000\n"
+"PO-Revision-Date: 2025-12-14 21:00+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -47,6 +47,9 @@ msgstr "Obdobie"
 msgid "Save"
 msgstr "Uložiť"
 
+msgid "No default person set."
+msgstr "Nie je nastavená žiadna východzia osoba."
+
 msgid "Please wait, filtering..."
 msgstr "Prosím, počkajte, filtrujem..."
 
@@ -55,6 +58,9 @@ msgstr "Zapnuté"
 
 msgid "Disabled"
 msgstr "Vypnuté"
+
+msgid "Enable or disable family network metrics"
+msgstr "Zapnúť alebo vypnúť  metriky rodinnej siete"
 
 msgid "Generating relation map..."
 msgstr "Generovanie mapy vzťahov..."
@@ -70,3 +76,9 @@ msgstr "Prosím, vyberte priečinok"
 
 msgid "Foldername will be used for saving the content."
 msgstr "Názov priečinka bude použitý pre ukladanie obsahu."
+
+msgid "Failed to save data."
+msgstr "Údaje sa nepodarilo uložiť."
+
+msgid "Enable family network metrics"
+msgstr "Zapnúť metriky rodinnej siete"

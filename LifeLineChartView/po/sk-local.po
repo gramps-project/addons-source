@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"PO-Revision-Date: 2025-12-14 21:00+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "Hide person"
 msgstr "Skryť osobu"
@@ -48,7 +48,7 @@ msgid "Export View as SVG"
 msgstr "Exportovať zobrazenie ako SVG"
 
 msgid "Label Configuration"
-msgstr "Konfigurácia štítkov"
+msgstr "Konfigurácia značiek"
 
 msgid "Reset all settings"
 msgstr "Obnoviť všetky nastavenia"
@@ -56,17 +56,109 @@ msgstr "Obnoviť všetky nastavenia"
 msgid "Show photos"
 msgstr "Zobraziť fotografie"
 
+msgid "Show birth label"
+msgstr "Zobraziť značku narodenia"
+
 msgid "Activate the birth label."
-msgstr "Aktivovať štítok narodenia."
+msgstr "Aktivovať značku narodenia."
+
+msgid "Birth label rotation"
+msgstr "Otočenie značky narodenia"
+
+msgid "The birth label is written in a text frame rotated by this value."
+msgstr ""
+"Značka narodenia je napísaná v textovom rámčeku otočenom o túto hodnotu."
+
+msgid "Horizontal offset of birth label"
+msgstr "Vodorovný posun značky narodenia"
+
+msgid ""
+"The birth label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Značka narodenia je posunutá vodorovne o túto hodnotu, ktorá je uvedená "
+"relatívne k veľkosti písma."
+
+msgid "Vertical offset of birth label"
+msgstr "Zvislý posun značky narodenia"
+
+msgid ""
+"The birth label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Značka narodenia je posunutá zvislo o túto hodnotu, ktorá je uvedená "
+"relatívne k veľkosti písma."
+
+msgid "Wrap words in birth label"
+msgstr "Zalamovať slová v značke narodenia"
+
+msgid "The birth label content is wrapped where possible."
+msgstr "Obsah značky narodenia je zalamovaný, kde je to možné."
+
+msgid "Birth label anchor"
+msgstr "Kotva značky narodenia"
+
+msgid "Text alignment of the birth label."
+msgstr "Zarovnanie textu na značke narodenia."
 
 msgid "Center"
 msgstr "Na stred"
 
+msgid "Show death label"
+msgstr "Zobraziť značku úmrtia"
+
 msgid "Activate the death label."
-msgstr "Aktivovať štítok úmrtia."
+msgstr "Aktivovať značku úmrtia."
+
+msgid "Death label rotation"
+msgstr "Otočenie značky úmrtia"
+
+msgid "The death label is written in a text frame rotated by this value."
+msgstr "Značka úmrtia je napísaná v textovom rámčeku otočenom o túto hodnotu."
+
+msgid "Horizontal offset of death label"
+msgstr "Vodorovný posun značky úmrtia"
+
+msgid ""
+"The death label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Značka úmrtia je posunutá vodorovne o túto hodnotu, ktorá je uvedená "
+"relatívne k veľkosti písma."
+
+msgid "Vertical offset of death label"
+msgstr "Zvislý posun značky úmrtia"
+
+msgid ""
+"The death label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Značka úmrtia je posunutá zvislo o túto hodnotu, ktorá je uvedená relatívne "
+"k veľkosti písma."
+
+msgid "Wrap words in death label"
+msgstr "Zalomiť slová v značke úmrtia"
+
+msgid "The death label content is wrapped where possible."
+msgstr "Obsah značky úmrtia je zalamovaný, kde je to možné."
+
+msgid "Death label anchor"
+msgstr "Kotva značky úmrtia"
+
+msgid "Text alignment of the death label."
+msgstr "Zarovnanie textu značky narodenia."
+
+msgid "Show marriage label"
+msgstr "Zobraziť značku sobáša"
+
+msgid "Activate the marriage label."
+msgstr "Aktivovať značku sobáša."
 
 msgid "Font name"
 msgstr "Názov písma"
+
+msgid "Name of the font family used for labels."
+msgstr "Názov typu písma použitého pre značky."
 
 msgid "Relative font size"
 msgstr "Relatívna veľkosť písma"
