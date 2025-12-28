@@ -19,6 +19,7 @@
 #
 # ChatWithTree.py
 import logging
+import re
 
 import gi
 from AsyncChatService import AsyncChatService
@@ -195,6 +196,40 @@ class ChatWithTreeClass(Gramplet):
         style_context = self.chat_listbox.get_style_context()
         style_context.add_class("message-box")
 
+    def _markdown_to_pango(self, text):
+        """
+        Converts basic Markdown to Pango Markup.
+        The LLM's replies may contain simple Markdown formatting.
+        """
+        # Escape special characters (crucial for Pango)
+        text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+        # Render Headers (### Header)
+        text = re.sub(r'^####\s+(.*?)$', r'\n<b>\1</b>',
+                      text, flags=re.MULTILINE)
+        text = re.sub(r'^###\s+(.*?)$', r'\n<b><big>\1</big></b>',
+                      text, flags=re.MULTILINE)
+        text = re.sub(r'^##\s+(.*?)$', r'\n<b><span size="large">\1</span></b>',
+                      text, flags=re.MULTILINE)
+        text = re.sub(r'^#\s+(.*?)$', r'\n<b><span size="x-large">\1</span></b>',
+                      text, flags=re.MULTILINE)
+
+        # Bold: **text** -> <b>text</b>
+        text = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', text)
+
+        # Italics: *text* -> <i>text</i>
+        text = re.sub(r'\*(.*?)\*', r'<i>\1</i>', text)
+
+        # Inline Code: `text` -> monospace with subtle background
+        text = re.sub(r'`(.*?)`',
+                      r'<span font_family="monospace" background="#eeeeee">\1</span>',
+                      text)
+
+        # Lists: Replace leading dashes/asterisks with bullet points
+        text = re.sub(r'^(\s*)[\-\*]\s+', r'\1• ', text, flags=re.MULTILINE)
+
+        return text
+
     def _add_message_row(self, text: str, reply_type: YieldType):
         """
         Creates a new message "balloon" widget and adds it to the listbox.
@@ -208,10 +243,19 @@ class ChatWithTreeClass(Gramplet):
         message_box.get_style_context().add_class("message-box")
 
         # Create the label for the text.
-        message_label = Gtk.Label(label=text)
+        message_label = Gtk.Label()
+
+        # Decide whether to render Markdown
+        if reply_type in (YieldType.USER, YieldType.PARTIAL, YieldType.FINAL):
+            message_label.set_markup(self._markdown_to_pango(text))
+        else:
+            # Tool calls remain plain text
+            message_label.set_text(text)
+
         message_label.set_halign(Gtk.Align.START)
         message_label.set_line_wrap(True)
         message_label.set_max_width_chars(80)
+        message_label.set_selectable(True)
         message_box.pack_start(message_label, True, True, 0)
 
         if reply_type == YieldType.USER:
@@ -255,7 +299,7 @@ class ChatWithTreeClass(Gramplet):
 
         This method runs repeatedly via GLib.idle_add until the job is done.
         """
-        # 1. Safety check
+        # Safety check
         if self.chat_service is None:
             LOG.error("Chat service is unexpectedly None in _check_queue_for_reply.")
             return GLib.SOURCE_REMOVE
@@ -275,7 +319,6 @@ class ChatWithTreeClass(Gramplet):
                     # after job completion). Stop the idle handler.
                     return GLib.SOURCE_REMOVE
 
-            # --- 2. Process and Update UI ---
             # If we reached here, 'reply' is a valid (type, content) tuple
             reply_type, content = reply
 

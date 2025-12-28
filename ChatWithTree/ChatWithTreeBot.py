@@ -114,7 +114,7 @@ source genealogy program.
 Your primary goal is to assist the user by providing accurate and relevant
 genealogical information.
 
-**Crucial Guidelines for Tool Usage and Output:**
+**Guidelines for Tool Usage and Output:**
 
 1.  **Prioritize User Response:** Always aim to provide a direct answer to the
 user's query as soon as you have sufficient information.
@@ -128,13 +128,10 @@ user's query as soon as you have sufficient information.
     * **Assess Tool Results:** After each tool call, carefully evaluate its output.
       Did it provide the expected information?
       Is it sufficient to progress towards the user's goal?
-    * **Tool use** Use many tool calls in one try as you can, but do not call the
+    * **Tool use** Use as many tool calls in one try as you can, but do not call the
     same tool with the same arguments more than once.
-5.  **Graceful Exit with Partial Results:**
-    * **Summarize Findings:** Synthesize all the information you have gathered
+5.  **Summarize Findings:** Respond in markdown format all information you have gathered
     and clearly state what you found and what information you were unable to obtain.
-
-You can get the start point of the genealogy tree using the `start_point` tool.
 """
 
 GRAMPS_AI_MODEL_NAME = os.environ.get("GRAMPS_AI_MODEL_NAME")
@@ -288,7 +285,7 @@ class ChatBot(IChatLogic):
         seed: int,
     ) -> Any:
         response = litellm.completion(
-            model=GRAMPS_AI_MODEL_NAME,  # self.model,
+            model=GRAMPS_AI_MODEL_NAME,
             messages=all_messages,
             seed=seed,
             tools=tool_definitions,
