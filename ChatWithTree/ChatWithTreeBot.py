@@ -26,10 +26,13 @@ import sys
 import time
 from typing import Any, Dict, Iterator, List, Optional, Pattern, Tuple
 
-from chatwithllm import IChatLogic, YieldType
+from chatwithllm import (ChatResponse, EntityMetadata, IChatLogic, ReplyItem,
+                         YieldType)
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db.utils import open_database
+from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.display.place import displayer as place_displayer
+from gramps.gen.lib import Person
 from gramps.gen.simple import SimpleAccess
 from litellm_utils import function_to_litellm_definition
 
@@ -114,7 +117,7 @@ source genealogy program.
 Your primary goal is to assist the user by providing accurate and relevant
 genealogical information.
 
-**Crucial Guidelines for Tool Usage and Output:**
+**Guidelines for Tool Usage and Output:**
 
 1.  **Prioritize User Response:** Always aim to provide a direct answer to the
 user's query as soon as you have sufficient information.
@@ -128,13 +131,11 @@ user's query as soon as you have sufficient information.
     * **Assess Tool Results:** After each tool call, carefully evaluate its output.
       Did it provide the expected information?
       Is it sufficient to progress towards the user's goal?
-    * **Tool use** Use many tool calls in one try as you can, but do not call the
+    * **Tool use** Use as many tool calls in one try as you can, but do not call the
     same tool with the same arguments more than once.
-5.  **Graceful Exit with Partial Results:**
-    * **Summarize Findings:** Synthesize all the information you have gathered
+5.  **Summarize Findings:** Respond in markdown format prefer lists above tables to
+    display all information you have gathered
     and clearly state what you found and what information you were unable to obtain.
-
-You can get the start point of the genealogy tree using the `start_point` tool.
 """
 
 GRAMPS_AI_MODEL_NAME = os.environ.get("GRAMPS_AI_MODEL_NAME")
@@ -149,6 +150,8 @@ class ChatBot(IChatLogic):
     def __init__(self, database_name: str):
         self.database_name = database_name
         self.limit_loop = 6  # Default tool-calling loop limit
+        # The collector for the current conversation turn
+        self.current_entities: dict[str, EntityMetadata] = {}
         self.reset_chat_history()
         self.tool_map = {
             "start_point": self.start_point,
@@ -185,27 +188,45 @@ class ChatBot(IChatLogic):
             raise Exception(f"Unable to open database {self.database_name}")
         self.sa = SimpleAccess(self.db)
 
+    def _reply(self, y_type: YieldType, text: str, metadata=None) -> ReplyItem:
+        """Helper to ensure we always yield a valid NamedTuple ReplyItem."""
+        return ReplyItem(type=y_type,
+                         data=ChatResponse(text=text, metadata=metadata or []))
+
+    def _register_entity(self, handle: str, name: str, etype: str):
+        """Adds an entity to the current session if not already present."""
+        if handle not in self.current_entities:
+            self.current_entities[handle] = EntityMetadata(
+                handle=handle,
+                name=name,
+                entity_type=etype
+            )
+
     def reset_chat_history(self) -> None:
         """Resets the chat message history to its initial state."""
         self.messages: List[Dict[str, Any]] = [
             {"role": "system", "content": SYSTEM_PROMPT}]
 
-    def command_handle_help(self, message: str) -> Iterator[Tuple[YieldType, str]]:
+    def command_handle_help(self, message: str) -> Iterator[ReplyItem]:
         '''
         returns the helptext to the user including
         the current model name and model url
         '''
-        yield (YieldType.FINAL, f"{HELP_TEXT}"
-               f"\nGRAMPS_AI_MODEL_NAME: {GRAMPS_AI_MODEL_NAME}"
-               f"\nGRAMPS_AI_MODEL_URL: {GRAMPS_AI_MODEL_URL}")
+        yield self._reply(
+            YieldType.FINAL,
+            f"{HELP_TEXT}"
+            f"\nGRAMPS_AI_MODEL_NAME: {GRAMPS_AI_MODEL_NAME}"
+            f"\nGRAMPS_AI_MODEL_URL: {GRAMPS_AI_MODEL_URL}")
 
-    def command_handle_history(self, message: str) -> Iterator[Tuple[YieldType, str]]:
+    def command_handle_history(self, message: str) -> Iterator[ReplyItem]:
         '''
         returns the full chat history to the user
         '''
-        yield (YieldType.FINAL, json.dumps(self.messages, indent=4, sort_keys=True))
+        yield self._reply(
+            YieldType.FINAL,
+            json.dumps(self.messages, indent=4, sort_keys=True))
 
-    def command_handle_setmodel(self, message: str) -> Iterator[Tuple[YieldType, str]]:
+    def command_handle_setmodel(self, message: str) -> Iterator[ReplyItem]:
         '''
         sets the model name to use for the LLM
         usage: /setmodel <model_name>
@@ -214,14 +235,14 @@ class ChatBot(IChatLogic):
         global GRAMPS_AI_MODEL_NAME
         parts = message.split(' ', 1)
         if len(parts) != 2 or not parts[1].strip():
-            yield (YieldType.FINAL, "Usage: /setmodel <model_name>")
+            yield self._reply(YieldType.FINAL, "Usage: /setmodel <model_name>")
             return
         new_model_name = parts[1].strip()
         GRAMPS_AI_MODEL_NAME = new_model_name
         self.reset_chat_history()   # Reset history when model changes
-        yield (YieldType.FINAL, f"Model name set to: {GRAMPS_AI_MODEL_NAME}")
+        yield self._reply(YieldType.FINAL, f"Model name set to: {GRAMPS_AI_MODEL_NAME}")
 
-    def command_handle_setlimit(self, message: str) -> Iterator[Tuple[YieldType, str]]:
+    def command_handle_setlimit(self, message: str) -> Iterator[ReplyItem]:
         '''
         sets the tool-calling loop limit.
         usage: /setlimit <number>
@@ -229,34 +250,38 @@ class ChatBot(IChatLogic):
         '''
         parts = message.split(' ', 1)
         if len(parts) != 2 or not parts[1].strip():
-            yield (YieldType.FINAL, "Usage: /setlimit <number between 6 and 20>")
+            yield self._reply(
+                YieldType.FINAL,
+                "Usage: /setlimit <number between 6 and 20>")
             return
         try:
             new_limit = int(parts[1].strip())
             if 6 <= new_limit <= 20:
                 self.limit_loop = new_limit
-                yield (
+                yield self._reply(
                         YieldType.FINAL,
                         f"Tool-calling loop limit set to: {self.limit_loop}"
                       )
             else:
-                yield (
-                        YieldType.FINAL,
+                yield self._reply(
+                        YieldType.ERROR,
                         "Error: Limit must be an integer between 6 and 20."
                       )
         except ValueError:
-            yield (
-                    YieldType.FINAL,
+            yield self._reply(
+                    YieldType.ERROR,
                     "Error: Invalid number provided. Please enter an integer."
                   )
 
     # The implementation of the IChatLogic interface
-    def get_reply(self, message: str) -> Iterator[Tuple[YieldType, str]]:
+    def get_reply(self, message: str) -> Iterator[ReplyItem]:
         """
         Processes the message and returns a reply.
         """
         # Strip leading/trailing whitespace
         message = message.strip()
+        # Reset the collector for the new prompt
+        self.current_entities = {}
 
         if message.startswith('/'):
             # Split the message into command and arguments (if any)
@@ -270,16 +295,16 @@ class ChatBot(IChatLogic):
                 yield from commandhandler(message)
             else:
                 # Handle unknown command
-                yield (YieldType.FINAL, f"Unknown command: {command_key}")
+                yield self._reply(YieldType.ERROR, f"Unknown command: {command_key}")
             return    # prevent command to be sent to LLM
         if GRAMPS_AI_MODEL_NAME:
             # yield from returns all yields from the calling func
             yield from self.get_chatbot_response(message)
         else:
-            yield (YieldType.FINAL,
-                   "Error: ensure to set GRAMPS_AI_MODEL_NAME\
-                    and GRAMPS_AI_MODEL_URL environment variables.\
-                    or use the /setmodel <model_name> command.")
+            yield self._reply(YieldType.ERROR,
+                              "Error: ensure to set GRAMPS_AI_MODEL_NAME\
+                              and GRAMPS_AI_MODEL_URL environment variables.\
+                              or use the /setmodel <model_name> command.")
 
     def _llm_complete(
         self,
@@ -288,7 +313,7 @@ class ChatBot(IChatLogic):
         seed: int,
     ) -> Any:
         response = litellm.completion(
-            model=GRAMPS_AI_MODEL_NAME,  # self.model,
+            model=GRAMPS_AI_MODEL_NAME,
             messages=all_messages,
             seed=seed,
             tools=tool_definitions,
@@ -300,7 +325,7 @@ class ChatBot(IChatLogic):
         self,
         user_input: str,
         seed: int = 42,
-    ) -> Iterator[Tuple[YieldType, str]]:
+    ) -> Iterator[ReplyItem]:
         self.messages.append({"role": "user", "content": user_input})
         yield from self._llm_loop(seed)
 
@@ -339,7 +364,7 @@ class ChatBot(IChatLogic):
             }
         )
 
-    def _llm_loop(self, seed: int) -> Iterator[Tuple[YieldType, str]]:
+    def _llm_loop(self, seed: int) -> Iterator[ReplyItem]:
         # Tool-calling loop
         final_response = "I was unable to find the desired information."
         sys.stdout.flush()
@@ -370,11 +395,11 @@ class ChatBot(IChatLogic):
                 if (hasattr(msg, 'reasoning_content') and
                         msg.reasoning_content and
                         len(msg.reasoning_content) > 3):
-                    yield (YieldType.PARTIAL, msg.reasoning_content)
+                    yield self._reply(YieldType.PARTIAL, msg.reasoning_content)
                 elif msg.content and len(msg.content) > 3:
-                    yield (YieldType.PARTIAL, msg.content)
+                    yield self._reply(YieldType.PARTIAL, msg.content)
                 for tool_call in msg["tool_calls"]:
-                    yield (YieldType.TOOL_CALL, tool_call['function']['name'])
+                    yield self._reply(YieldType.TOOL_CALL, tool_call['function']['name'])
                     self.execute_tool(tool_call)
             else:
                 final_response = response.choices[0].message.content
@@ -408,7 +433,9 @@ class ChatBot(IChatLogic):
            ):
             final_response = self.messages[-1]["content"]
 
-        yield (YieldType.FINAL, final_response)
+        # Convert collected dict values to a list for the metadata field
+        metadata_list = list(self.current_entities.values())
+        yield self._reply(YieldType.FINAL, final_response, metadata=metadata_list)
 
     # Tools:
     def get_person(self, person_handle: str) -> Dict[str, Any]:
@@ -421,6 +448,15 @@ class ChatBot(IChatLogic):
         if person_obj.get_privacy():
             return {"error": "Person data is private and cannot be accessed."}
         data = dict(self.db.get_raw_person_data(person_handle))
+        # The idea is that the LLM can use the 'full_name' field
+        # to refer to the person in answers
+        name1 = name_displayer.display(person_obj)
+        data['full_name'] = name1
+        self._register_entity(
+            handle=person_handle,
+            name=name1,
+            etype=Person.__name__    # "Person"
+        )
         notes = []
         for note_handle in person_obj.get_note_list():
             note_obj = self.db.get_note_from_handle(note_handle)
@@ -439,9 +475,8 @@ class ChatBot(IChatLogic):
         whose mother you want to find.
         """
         person_obj = self.db.get_person_from_handle(person_handle)
-        obj = self.sa.mother(person_obj)
-        data = dict(self.db.get_raw_person_data(obj.handle))
-        return data
+        mother_obj = self.sa.mother(person_obj)
+        return self.get_person(mother_obj.handle)
 
     def get_family(self, family_handle: str) -> Dict[str, Any]:
         """
@@ -480,8 +515,7 @@ class ChatBot(IChatLogic):
         * Use this tool to get the first person in the genealogy tree.
 
         The result of start_point contains values for:
-        * The "first_name" contains the first name of this person.
-        * The "surname_list" and then "surname" contains the last name(s) of this person.
+        * The "full_name" contains the name of this person.
         * The "handle" is the key that looks like a hash string for this person
         to use for other tool calls.
         * "family_list" is a list of handles where this person is a parent.
@@ -490,8 +524,8 @@ class ChatBot(IChatLogic):
         """
         obj = self.db.get_default_person()
         if obj:
-            data = dict(self.db.get_raw_person_data(obj.handle))
-            return data
+            return self.get_person(obj.handle)
+
         return None
 
     def get_children_of_person(
@@ -528,9 +562,8 @@ class ChatBot(IChatLogic):
         for the person whose father you want to find.
         """
         person_obj = self.db.get_person_from_handle(person_handle)
-        obj = self.sa.father(person_obj)
-        data = dict(self.db.get_raw_person_data(obj.handle))
-        return data
+        father_obj = self.sa.father(person_obj)
+        return self.get_person(father_obj.handle)
 
     def get_person_birth_date(self, person_handle: str) -> str:
         """
