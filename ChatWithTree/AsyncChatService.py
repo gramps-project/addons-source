@@ -21,15 +21,12 @@ import logging
 import queue
 import traceback
 from concurrent.futures import ThreadPoolExecutor
-from typing import Iterator, Optional, Tuple
+from typing import Iterator, Optional
 
-from chatwithllm import YieldType
+from chatwithllm import ChatResponse, ReplyItem, YieldType
 from ChatWithTreeBot import ChatBot
 
 logger = logging.getLogger("AsyncChatService")
-
-# Alias for the yielded items from the ChatBot generator
-ReplyItem = Tuple[YieldType, str]
 
 
 class AsyncChatService:
@@ -105,10 +102,11 @@ class AsyncChatService:
 
         except Exception as e:
             tb = traceback.format_exc()
-            self.result_queue.put((
-                YieldType.FINAL,
-                f"ERROR: {type(e).__name__}: {e}\n{tb}"
-            ))
+            error_text = f"ERROR: {type(e).__name__}: {e}\n{tb}"
+            error_response = ChatResponse(text=error_text)
+
+            # Use the NamedTuple constructor
+            self.result_queue.put(ReplyItem(type=YieldType.FINAL, data=error_response))
         finally:
             # Always put the sentinel and set status to finished
             self.result_queue.put(None)  # Sentinel: None signals job completion

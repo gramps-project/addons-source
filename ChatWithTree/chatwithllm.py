@@ -19,8 +19,9 @@
 #
 import abc
 import time
+from dataclasses import dataclass, field
 from enum import Enum, auto
-from typing import Iterator, Tuple
+from typing import Iterator, List, NamedTuple
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 
@@ -32,10 +33,40 @@ _ = glocale.get_addon_translator(__file__).gettext
 
 
 class YieldType(Enum):
-    PARTIAL = auto()
-    TOOL_CALL = auto()
-    FINAL = auto()
-    USER = auto()
+    USER = auto()        # Prompt from the user
+    PARTIAL = auto()     # Streaming chunks from the LLM
+    TOOL_CALL = auto()   # Indicator of a gramps tool call
+    FINAL = auto()       # The complete response
+    ERROR = auto()       # For structured error reporting
+
+
+@dataclass
+class EntityMetadata:
+    handle: str
+    name: str
+    entity_type: str  # "Person" or "Family"
+
+
+@dataclass
+class ChatResponse:
+    """
+    The primary data container for all chatbot yields.
+    """
+    text: str
+    metadata: List[EntityMetadata] = field(default_factory=list)
+
+    # Helper property for partial and final yields
+    @property
+    def has_links(self) -> bool:
+        return len(self.metadata) > 0
+
+
+# The ReplyItem NamedTuple defines
+# the contract between the ChatWithTree GUI class
+# and the ChatWithTreeBot class for the yielded responses.
+class ReplyItem(NamedTuple):
+    type: YieldType
+    data: ChatResponse
 
 
 # ==============================================================================
@@ -47,7 +78,7 @@ class IChatLogic(abc.ABC):
     Any class that processes a message and returns a reply must implement this.
     """
     @abc.abstractmethod
-    def get_reply(self, message: str) -> Iterator[Tuple[YieldType, str]]:
+    def get_reply(self, message: str) -> Iterator[ReplyItem]:
         """
         Processes a user message and returns a reply string.
         """
@@ -74,7 +105,7 @@ class ChatWithLLM(IChatLogic):
         """
         pass
 
-    def get_reply(self, message: str) -> Iterator[Tuple[YieldType, str]]:
+    def get_reply(self, message: str) -> Iterator[ReplyItem]:
         """
         Processes the message and yields parts of the reply.
 
@@ -88,6 +119,6 @@ class ChatWithLLM(IChatLogic):
         reversed_message = _("Tree: '{}'").format(message[::-1])
 
         for char in reversed_message:
-            yield (YieldType.PARTIAL, char)
+            yield (YieldType.PARTIAL, ChatResponse(text=char))
             time.sleep(0.05)    # Simulate a slight delay, like a real-time stream
-        yield (YieldType.FINAL, reversed_message)
+        yield (YieldType.FINAL, ChatResponse(text=reversed_message))

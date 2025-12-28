@@ -19,13 +19,16 @@
 #
 # ChatWithTree.py
 import logging
+import re
+from typing import Optional
 
 import gi
 from AsyncChatService import AsyncChatService
-from chatwithllm import YieldType
+from chatwithllm import ChatResponse, ReplyItem, YieldType
 from gi.repository import Gdk, GLib, Gtk
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.plug import Gramplet
+from gramps.gui.editors import EditFamily, EditPerson
 
 LOG = logging.getLogger(".")
 LOG.debug("loading chatwithtree")
@@ -94,9 +97,11 @@ class ChatWithTreeClass(Gramplet):
             try:
                 active_db_name = self.dbstate.db.get_dbname()
                 if active_db_name:
-                    self._add_message_row(_(f"Database change detected\
-                                            Database {active_db_name}."
-                                            ""), YieldType.PARTIAL)
+                    dbChangeMessage = ReplyItem(
+                        type=YieldType.PARTIAL,
+                        data=ChatResponse(
+                            text=_(f"Database change detected {active_db_name}.")))
+                    self._add_message_row(dbChangeMessage)
                     self.chat_service = AsyncChatService(active_db_name)
             except Exception as e:
                 # Catch the likely TypeError or any other startup error
@@ -152,11 +157,12 @@ class ChatWithTreeClass(Gramplet):
         vbox.pack_start(input_hbox, False, False, 0)
 
         # Add the initial message to the list box.
-        self._add_message_row(_(
-            "Chat with Tree initialized. \
-                Type /help for help."),
-            YieldType.PARTIAL
-            )
+        initMessage = ReplyItem(
+            type=YieldType.PARTIAL,
+            data=ChatResponse(text=_(
+                "Chat with Tree initialized. \
+                Type /help for help.")))
+        self._add_message_row(initMessage)
 
         return vbox
 
@@ -181,9 +187,13 @@ class ChatWithTreeClass(Gramplet):
         .tree-reply-box {
             background-color: #d1e2f4; /* Light blue for replies */
         }
+        .error-reply-box {
+            background-color: #f4e2d1; /* Light red for errors */
+        }
         .tree-toolcall-box {
             background-color: #fce8b2; /* Light yellow for tool calls */
         }
+
         """
         css_provider.load_from_data(css.encode('utf-8'))
         screen = Gdk.Screen.get_default()
@@ -195,7 +205,82 @@ class ChatWithTreeClass(Gramplet):
         style_context = self.chat_listbox.get_style_context()
         style_context.add_class("message-box")
 
-    def _add_message_row(self, text: str, reply_type: YieldType):
+    def _markdown_to_pango(self, text, entities=None):
+        """
+        Converts Markdown to Pango and safely injects entity links
+        without nesting tags.
+        """
+        # 1. Normalize and Escape (Must be first)
+        text = text.replace('\u202f', ' ').replace('\u00a0', ' ')
+        text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+        placeholders = {}
+        linked_handles = set()
+
+        if entities:
+            # Sort by name length descending to handle "John Smith" before "John"
+            sorted_entities = sorted(entities, key=lambda x: len(x.name), reverse=True)
+
+            for i, entity in enumerate(sorted_entities):
+                link_uri = f"{entity.entity_type}:{entity.handle}"
+
+                # Create unique keys for this specific entity
+                name_key = f"##NAME_{i}##"
+                handle_key = f"##HNDL_{i}##"
+
+                # --- Pass 1: Replace raw text with placeholders ---
+                # We replace the literal handle and literal name in the text
+                if entity.handle in text:
+                    text = text.replace(entity.handle, handle_key)
+                    # Store the final Pango version for later
+                    linkref = (
+                        f'<a href="{link_uri}">'
+                        f'<span font_family="monospace">{entity.handle}</span>'
+                        '</a>')
+                    placeholders[handle_key] = linkref
+                    linked_handles.add(entity.handle)
+
+                if entity.name in text:
+                    text = text.replace(entity.name, name_key)
+                    placeholders[name_key] = (
+                         f'<a href="{link_uri}"><b>{entity.name}</b></a>'
+                    )
+                    linked_handles.add(entity.handle)
+
+        # 2. Render Markdown (Bold, Italics, etc.)
+        # Because we use placeholders like ##NAME_0##, Markdown regex won't
+        # find names/handles and accidentally break them.
+        text = re.sub(r'^####\s+(.*?)$', r'\n<b>\1</b>', text, flags=re.MULTILINE)
+        text = re.sub(r'^###\s+(.*?)$',
+                      r'\n<b><big>\1</big></b>', text, flags=re.MULTILINE)
+        text = re.sub(r'^##\s+(.*?)$',
+                      r'\n<b><span size="large">\1</span></b>',
+                      text, flags=re.MULTILINE)
+        text = re.sub(r'^#\s+(.*?)$',
+                      r'\n<b><span size="x-large">\1</span></b>',
+                      text, flags=re.MULTILINE)
+        text = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', text)
+        text = re.sub(r'\*(.*?)\*', r'<i>\1</i>', text)
+        text = re.sub(r'`(.*?)`',
+                      r'<span font_family="monospace" background="#eeeeee">\1</span>',
+                      text)
+        text = re.sub(r'^(\s*)[\-\*]\s+', r'\1• ', text, flags=re.MULTILINE)
+
+        # 3. Final Pass: Swap placeholders back for real Pango Links
+        for key, pango_html in placeholders.items():
+            text = text.replace(key, pango_html)
+
+        unlinked = [e for e in entities if e.handle not in linked_handles]
+
+        if unlinked:
+            text += "\n---\n<i>Related Records:</i>"
+            for e in unlinked:
+                link_uri = f"{e.entity_type}:{e.handle}"
+                text += f'\n• <a href="{link_uri}"><b>{e.name}</b></a>'
+
+        return text
+
+    def _add_message_row(self, reply: ReplyItem) -> Gtk.Label:
         """
         Creates a new message "balloon" widget and adds it to the listbox.
         """
@@ -208,23 +293,40 @@ class ChatWithTreeClass(Gramplet):
         message_box.get_style_context().add_class("message-box")
 
         # Create the label for the text.
-        message_label = Gtk.Label(label=text)
+        message_label = Gtk.Label()
+
+        # Decide whether to render Markdown
+        if reply.type in (YieldType.USER, YieldType.PARTIAL, YieldType.FINAL):
+            message_label.set_markup(
+                self._markdown_to_pango(reply.data.text, reply.data.metadata)
+                )
+            if reply.data.has_links:
+                message_label.connect("activate-link", self.on_handle_clicked)
+        else:
+            # Tool calls and errors remain plain text
+            message_label.set_text(reply.data.text)
+
         message_label.set_halign(Gtk.Align.START)
         message_label.set_line_wrap(True)
         message_label.set_max_width_chars(80)
+        message_label.set_selectable(True)
         message_box.pack_start(message_label, True, True, 0)
 
-        if reply_type == YieldType.USER:
+        if reply.type == YieldType.USER:
             message_box.get_style_context().add_class("user-message-box")
             # Align the message balloon to the right.
             hbox.set_halign(Gtk.Align.END)
-        elif reply_type in (YieldType.PARTIAL, YieldType.TOOL_CALL):
+        elif reply.type in (YieldType.PARTIAL, YieldType.TOOL_CALL):
             message_box.get_style_context().add_class("tree-toolcall-box")
             # Align the message balloon to the left.
             hbox.set_halign(Gtk.Align.CENTER)
 
-        elif reply_type == YieldType.FINAL:
+        elif reply.type == YieldType.FINAL:
             message_box.get_style_context().add_class("tree-reply-box")
+            # Align the message balloon to the left.
+            hbox.set_halign(Gtk.Align.START)
+        elif reply.type == YieldType.ERROR:
+            message_box.get_style_context().add_class("error-reply-box")
             # Align the message balloon to the left.
             hbox.set_halign(Gtk.Align.START)
 
@@ -236,6 +338,30 @@ class ChatWithTreeClass(Gramplet):
         self.chat_listbox.show_all()
 
         return message_label
+
+    def on_handle_clicked(self, label, uri):
+        try:
+            # uri is "Person:f51cfe..." or "Family:f51cfe..."
+            etype, handle = uri.split(":", 1)
+            db = self.dbstate.db
+
+            if etype == "Person":
+                person = db.get_person_from_handle(handle)
+                if person:
+                    # Open the Person Editor
+                    EditPerson(self.dbstate, self.uistate, [], person)
+
+            elif etype == "Family":
+                family = db.get_family_from_handle(handle)
+                if family:
+                    # Open the Family Editor
+                    EditFamily(self.dbstate, self.uistate, [], family)
+
+        except Exception as e:
+            # We use LOG.error as per your existing pattern
+            LOG.error(f"Failed to open editor for {uri}: {e}")
+
+        return True
 
     def scroll_to_bottom(self):
         """
@@ -255,7 +381,7 @@ class ChatWithTreeClass(Gramplet):
 
         This method runs repeatedly via GLib.idle_add until the job is done.
         """
-        # 1. Safety check
+        # Safety check
         if self.chat_service is None:
             LOG.error("Chat service is unexpectedly None in _check_queue_for_reply.")
             return GLib.SOURCE_REMOVE
@@ -263,7 +389,7 @@ class ChatWithTreeClass(Gramplet):
         try:
             # Non-blocking attempt to get the next result from the worker thread's queue.
             # This result will be ReplyItem or None (the sentinel).
-            reply = self.chat_service.get_next_result_from_queue()
+            reply: Optional[ReplyItem] = self.chat_service.get_next_result_from_queue()
 
             if reply is None:
                 # Queue is empty. Check the status of the background job.
@@ -275,28 +401,24 @@ class ChatWithTreeClass(Gramplet):
                     # after job completion). Stop the idle handler.
                     return GLib.SOURCE_REMOVE
 
-            # --- 2. Process and Update UI ---
-            # If we reached here, 'reply' is a valid (type, content) tuple
-            reply_type, content = reply
+            # If we reached here, 'reply' is of type ReplyItem tuple
+            if reply.type == YieldType.PARTIAL:
+                self._add_message_row(reply)
 
-            if reply_type == YieldType.PARTIAL:
-                self._add_message_row(content, reply_type)
-
-            elif reply_type == YieldType.TOOL_CALL:
+            elif reply.type == YieldType.TOOL_CALL:
                 # Append to an existing label for streaming effect, or create a new one
                 if self.current_tool_call_label is None:
                     self.current_tool_call_label = self._add_message_row(
-                        content,
-                        reply_type
+                        reply
                     )
-                else:
+                else:   # This is a subsequent tool call. Update the existing label.
                     existing_text = self.current_tool_call_label.get_text()
-                    # Append new content
-                    self.current_tool_call_label.set_text(existing_text + " " + content)
+                    self.current_tool_call_label.set_text(
+                        existing_text + " " + reply.data.text)
 
-            elif reply_type == YieldType.FINAL:
+            elif reply.type == YieldType.FINAL or reply.type == YieldType.ERROR:
                 # Final reply from the chatbot.
-                self._add_message_row(content, reply_type)
+                self._add_message_row(reply)
 
             # Since we successfully retrieved and processed an item,
             # we immediately check the queue again for the next item.
@@ -306,7 +428,10 @@ class ChatWithTreeClass(Gramplet):
             # Handle unexpected errors on the main GTK thread
             error_message = f"Critical UI Error: {type(e).__name__} - {e}"
             LOG.error(error_message, exc_info=True)
-            self._add_message_row(f"Application Error. {error_message}", YieldType.FINAL)
+            exceptionReply = ReplyItem(
+                type=YieldType.ERROR,
+                data=ChatResponse(text=f"Application Error. {error_message}"))
+            self._add_message_row(exceptionReply)
 
             return GLib.SOURCE_REMOVE    # Stop the process on error
 
@@ -318,26 +443,29 @@ class ChatWithTreeClass(Gramplet):
         # This handles the case where the addon is loaded for the first time
         # on an already running Gramps session.
         if self.chat_service is None:
-            self._add_message_row(
-                _("The ChatWithTree addon is not yet initialized. \
-                  Please reload Gramps or select a database."),
-                YieldType.FINAL
-            )
+            notInitializedMessage = ReplyItem(
+                type=YieldType.FINAL,
+                data=ChatResponse(text=_(
+                  "The ChatWithTree addon is not yet initialized. \
+                    Please reload Gramps or select a database.")))
+            self._add_message_row(notInitializedMessage)
             return
 
         if self.chat_service.is_processing():
-            self._add_message_row(
-                _("The chatbot is currently processing a query. Please wait."),
-                YieldType.PARTIAL
-            )
+            processingMessage = ReplyItem(
+                type=YieldType.PARTIAL,
+                data=ChatResponse(text=_(
+                  "The chatbot is currently processing a query. Please wait.")))
+            self._add_message_row(processingMessage)
             return
         # Normal handling of user input
         user_input = self.input_entry.get_text()
         self.input_entry.set_text("")
         if user_input.strip():
-            # Add the user's message to the chat.
-            self._add_message_row(f"{user_input}", YieldType.USER)
-
+            userMessage = ReplyItem(
+                type=YieldType.USER,
+                data=ChatResponse(text=f"{user_input}"))
+            self._add_message_row(userMessage)
             # Now, schedule the reply-getting logic to run when the main loop is idle.
             # Run the asynchronous processing for this single query
             try:
@@ -351,40 +479,12 @@ class ChatWithTreeClass(Gramplet):
 
             except Exception as e:
                 LOG.error(f"Error running async query: {e}")
-                self._add_message_row(
-                     _("An error occurred while processing your query."),
-                     YieldType.FINAL
-                )
+                exceptionMsg = ReplyItem(
+                    type=YieldType.ERROR,
+                    data=ChatResponse(
+                        text=_("An error occurred while processing your query.")))
+                self._add_message_row(exceptionMsg)
                 return
-
-    async def process_query_async(self, query):
-        """
-        Asynchronously processes a single query and prints the replies as they come in.
-        """
-        # The ChatThreading service handles all the threading and queues.
-        # We just iterate over the async generator it returns.
-        async for reply in self.chat_service.get_reply_stream(query):
-            reply_type, content = reply
-            if reply_type == YieldType.PARTIAL:
-                # sometimes there is no content in the partial yield
-                # if there is, it is usually an explained strategy what the
-                # model will do to achieve the final result
-                self._add_message_row(content, reply_type)
-            if reply_type == YieldType.TOOL_CALL:
-                if self.current_tool_call_label is None:
-                    self.current_tool_call_label = self._add_message_row(
-                        content,
-                        reply_type
-                        )
-                else:
-                    # This is a subsequent tool call. Update the existing label.
-                    # We append the new content to the existing label.
-                    existing_text = self.current_tool_call_label.get_text()
-                    self.current_tool_call_label.set_text(existing_text + " " + content)
-            elif reply_type == YieldType.FINAL:
-                # Final reply from the chatbot
-                # We let the iterator SENTINEL take care of returning Glib.SOURCE_REMOVE
-                self._add_message_row(content, reply_type)
 
     def main(self):
         """
