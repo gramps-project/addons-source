@@ -35,15 +35,15 @@ register(
     version = '1.0.41',
     fname="PedigreeChart.py",
     gramps_target_version=major_version,
-    authors=['Jakim Friant'],
+    authors=["Jakim Friant"],
     authors_email=["jakim@friant.org"],
     category=CATEGORY_DRAW,
-    reportclass='PedigreeChart',
-    optionclass='PedigreeChartOptions',
+    reportclass="PedigreeChart",
+    optionclass="PedigreeChartOptions",
     report_modes=[REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
     require_active=False,
     **additional_args
 )
 
-__author__="jfriant"
-__date__ ="$May 13, 2010 10:48:00 AM$"
+__author__ = "jfriant"
+__date__ = "$May 13, 2010 10:48:00 AM$"
