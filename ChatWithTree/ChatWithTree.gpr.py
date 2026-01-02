@@ -8,7 +8,7 @@ register(
     id="ChatWithTree",  # Unique ID for your addon
     name=_("Chat With Tree Interactive Addon"),  # Display name in Gramps, translatable
     description=_("Chat With Tree with the help of AI Large Language Model, needs litellm module"),
-    version = '0.0.27',
+    version = '0.0.28',
     gramps_target_version="6.0",  # Specify the Gramps version you are targeting
     status=STABLE,
     audience=EVERYONE,
