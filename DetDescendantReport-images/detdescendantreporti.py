@@ -69,6 +69,7 @@ from gramps.gen.plug.report import stdoptions
 from gramps.plugins.lib.libnarrate import Narrator
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.lib import Citation
+from gramps.gen.utils.string import conf_strings
 #------------------------------------------------------------------------
 #
 # Constants
