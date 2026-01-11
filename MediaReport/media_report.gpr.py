@@ -1,7 +1,8 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2019  Matthias Kemmer <matt.familienforschung@gmail.com>
+# Copyright (C) 2019-2021 Matthias Kemmer
+# Copyright (C) 2021 George Baynes
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,14 +24,14 @@ register(REPORT,
          name = _("Media Report"),
          description = _("Generates report including images, image data"
                          " and notes."),
-         version = '1.1.7',
+         version = '1.2.0',
          gramps_target_version = "5.1",
          status = STABLE,
          fname = "media_report.py",
-         authors = ["Matthias Kemmer"],
-         authors_email = ["matt.familienforschung@gmail.com"],
+         authors = ["Matthias Kemmer", "George Baynes"],
+         authors_email = ["matt.familienforschung@gmail.com", "baynes@ntlworld.com"],
          category = CATEGORY_TEXT,
          reportclass = 'MediaReport',
          optionclass = 'ReportOptions',
-         report_modes = [REPORT_MODE_CLI, REPORT_MODE_GUI],
+         report_modes = [REPORT_MODE_GUI],
          )
