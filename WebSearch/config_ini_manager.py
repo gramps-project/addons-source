@@ -28,20 +28,26 @@ a configuration file using Gramps' config system.
 """
 
 import os
+
 from gramps.gen.config import config as configman
+
 from constants import (
     CONFIG_FILE_PATH,
     CONFIGS_DIR,
-    DEFAULT_ENABLED_FILES,
-    DEFAULT_MIDDLE_NAME_HANDLING,
-    DEFAULT_URL_PREFIX_REPLACEMENT,
-    DEFAULT_SHOW_SHORT_URL,
-    DEFAULT_URL_COMPACTNESS_LEVEL,
-    DEFAULT_COLUMNS_ORDER,
-    DEFAULT_SHOW_ATTRIBUTE_LINKS,
     DEFAULT_AI_PROVIDER,
+    DEFAULT_COLUMNS_ORDER,
     DEFAULT_DISPLAY_COLUMNS,
     DEFAULT_DISPLAY_ICONS,
+    DEFAULT_ENABLED_FILES,
+    DEFAULT_MIDDLE_NAME_HANDLING,
+    DEFAULT_SHOW_ATTRIBUTE_LINKS,
+    DEFAULT_SHOW_INTERNET_LINKS,
+    DEFAULT_SHOW_NOTE_LINKS,
+    DEFAULT_SHOW_SHORT_URL,
+    DEFAULT_URL_COMPACTNESS_LEVEL,
+    DEFAULT_URL_PREFIX_REPLACEMENT,
+    DEFAULT_ENABLED_PLACE_HISTORY,
+    DEFAULT_CUSTOM_COUNTRY_CODE_FOR_AI_NOTES,
 )
 
 
@@ -81,8 +87,20 @@ class ConfigINIManager:
         self.config.register(
             "websearch.show_attribute_links", DEFAULT_SHOW_ATTRIBUTE_LINKS
         )
+        self.config.register(
+            "websearch.show_internet_links", DEFAULT_SHOW_INTERNET_LINKS
+        )
+        self.config.register("websearch.show_note_links", DEFAULT_SHOW_NOTE_LINKS)
         self.config.register("websearch.display_columns", DEFAULT_DISPLAY_COLUMNS)
         self.config.register("websearch.display_icons", DEFAULT_DISPLAY_ICONS)
+
+        self.config.register(
+            "websearch.enabled_place_history", DEFAULT_ENABLED_PLACE_HISTORY
+        )
+        self.config.register(
+            "websearch.custom_country_code_for_ai_notes",
+            DEFAULT_CUSTOM_COUNTRY_CODE_FOR_AI_NOTES,
+        )
 
         self.config.load()
 
@@ -127,7 +145,7 @@ class ConfigINIManager:
             self.config.set(key, order)
             self.save()
         else:
-            print("❌ Invalid data format. Must be a list.")
+            print("❌ Error. Invalid data format. Must be a list.")
 
     def get_list(self, key, default=None):
         """Returns a list from the config, or a default list if the value is invalid."""
@@ -148,4 +166,4 @@ class ConfigINIManager:
             self.config.set(key, values)
             self.save()
         else:
-            print(f"❌ ERROR: {key}: {type(values)}")
+            print(f"❌ Error. {key}: {type(values)}")

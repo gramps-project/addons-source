@@ -30,9 +30,11 @@ import json
 import os
 import re
 import sys
+
 from constants import (
-    USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH,
     DEFAULT_ATTRIBUTE_MAPPING_FILE_PATH,
+    USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH,
+    UIDAttributeContext,
 )
 
 
@@ -45,12 +47,7 @@ class AttributeMappingLoader:
     """
 
     def __init__(self):
-        """
-        Initializes the AttributeMappingLoader.
-
-        It chooses between a user-defined or default JSON mapping file and loads its content
-        into memory for further processing.
-        """
+        """Initializes the AttributeMappingLoader."""
         if os.path.exists(USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH):
             self.mapping_file = USER_DATA_ATTRIBUTE_MAPPING_FILE_PATH
         else:
@@ -58,12 +55,7 @@ class AttributeMappingLoader:
         self.mappings = self.load_mappings()
 
     def load_mappings(self):
-        """
-        Loads attribute mappings from the selected JSON file.
-
-        Returns:
-            list: A list of mapping dictionaries, or an empty list if loading fails.
-        """
+        """Loads attribute mappings from the selected JSON file."""
         try:
             with open(self.mapping_file, "r", encoding="utf-8") as file:
                 return json.load(file)
@@ -71,17 +63,8 @@ class AttributeMappingLoader:
             print(f"❌ Error loading attribute mappings: {e}", file=sys.stderr)
             return []
 
-    def get_attributes_for_nav_type(self, nav_type, entity):
-        """
-        Retrieves attribute mappings relevant to a given navigation type and entity.
-
-        Args:
-            nav_type (str): The navigation type (e.g., "People", "Places").
-            entity: The Gramps object (e.g., a Person) containing attributes.
-
-        Returns:
-            list: A list of dictionaries with matched mappings and attribute values.
-        """
+    def get_attributes_for_nav_type_with_context(self, nav_type, entity, context_name):
+        """Retrieves attribute mappings relevant to a given navigation type and entity."""
         uids_data = []
 
         try:
@@ -96,6 +79,7 @@ class AttributeMappingLoader:
                     ):
                         uids_data.append(
                             {
+                                "context": context_name,
                                 "nav_type": mapping["nav_type"],
                                 "attribute_name": mapping["attribute_name"],
                                 "url_regex": mapping["url_regex"],
@@ -103,28 +87,34 @@ class AttributeMappingLoader:
                                 "value": attr_value,
                             }
                         )
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             print(f"❌ Error processing {nav_type} attributes: {e}", file=sys.stderr)
 
         return uids_data
 
     def add_matching_keys_to_data(self, uids_data, url_pattern):
         """
-        Filters and extracts only those keys whose regex matches the given URL.
-
-        Args:
-            uids_data (list): List of attribute data with mapping information.
-            url_pattern (str): The target URL pattern to match.
-
-        Returns:
-            dict: Dictionary of key names and values to be inserted into the URL.
+        Filters and extracts keys for substitution based on the URL and context prefix in the key.
+        Supports context-prefixed keys like 'HomePerson.WikiTree.ID'.
         """
         filtered_uids_data = {}
         try:
             for uid_entry in uids_data:
-                if re.match(uid_entry["url_regex"], url_pattern, re.IGNORECASE):
-                    filtered_uids_data[uid_entry["key_name"]] = uid_entry["value"]
-        except Exception as e:
+                if not re.match(uid_entry["url_regex"], url_pattern, re.IGNORECASE):
+                    continue
+
+                context = uid_entry.get(
+                    "context", UIDAttributeContext.ACTIVE_PERSON.value
+                )
+                key_name = uid_entry["key_name"]
+
+                # Create both base and context-prefixed keys
+                if context == UIDAttributeContext.ACTIVE_PERSON.value:
+                    filtered_uids_data[key_name] = uid_entry["value"]
+
+                filtered_uids_data[f"{context}.{key_name}"] = uid_entry["value"]
+
+        except Exception as e:  # pylint: disable=broad-exception-caught
             print(f"❌ Error adding matching keys: {e}", file=sys.stderr)
 
         return filtered_uids_data

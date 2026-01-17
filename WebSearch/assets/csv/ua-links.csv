@@ -9,4 +9,11 @@ People,Pra,1,https://pra.in.ua/en/search/filter?lastname=%(surname)s&firstname=%
 People,Ridni (maps),1,https://ridni.org/karta/%(surname)s,
 People,Google,1,https://www.google.com.ua/search?q=%(surname)s+%(middle)s+%(given)s,
 People,Roots,1,https://roots.in.ua/advanced-search?page=1&last_name_search_type=should&last_name=%(surname)s&first_name=%(given)s&middle_name=%(middle)s&base_type=[all],
-Places,Ridni (catalog),1,https://ridni.org/catalog/%(birth_place)s,
+Places,Ridni (catalog),1,https://ridni.org/catalog/%(place)s,
+People,Ridni (catalog),1,https://ridni.org/catalog/%(birth_place)s,
+Sources,"Inspector (архівні справи)",1,https://inspector.duckarchive.com/search?q=%(archive_code)s-%(collection_number)s-%(series_number)s-%(file_number)s,"Пошук архівної справи за кодом"
+People,"MemoryBook (Google)",1,"https://www.google.com/search?q=site:memorybook.org.ua %(surname)s+%(given)s+%(middle)s","Пошук загиблих на memorybook.org.ua через Google"
+Places,OldMapsOnline,1,https://www.oldmapsonline.org/en/Pyriatyn?position=13.2811/50.23844/32.49722&year=1870#position=13.2811/50.23844/32.49722&year=1850,Після переходу натисніть кнопку «Explore Maps»
+People,SearchArchives,1,https://searcharchives.net.ua/search/?ArchiveIDs[]=3&ArchiveIDs[]=9&ArchiveIDs[]=10&ArchiveIDs[]=11&ArchiveIDs[]=12&ArchiveIDs[]=13&ArchiveIDs[]=14&ArchiveIDs[]=15&ArchiveIDs[]=16&Digitized=1&Search=%(surname)s %(given)s %(middle)s,
+Places,Google Books,1,https://www.google.com.ua/search?q=%(place)s&udm=36&uact=5,Пошук книг, згаданих із цією місцевістю (використовується Google Books)
+Places,Google,1,https://www.google.com.ua/search?q=%(title)s,

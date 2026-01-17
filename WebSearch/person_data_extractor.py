@@ -53,7 +53,7 @@ class PersonDataExtractor:
             if ref is None:
                 return None
             return db.get_event_from_handle(ref.get_reference_handle()) or None
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
             return None
 
@@ -65,7 +65,7 @@ class PersonDataExtractor:
             if ref is None:
                 return None
             return db.get_event_from_handle(ref.get_reference_handle()) or None
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
             return None
 

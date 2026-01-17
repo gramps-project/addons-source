@@ -25,19 +25,19 @@ Provides a GTK window to display a QR code for a given URL in the WebSearch Gram
 """
 
 import sys
+
 import gi
 
-gi.require_version("Gtk", "3.0")
-gi.require_version("GdkPixbuf", "2.0")
-from gi.repository import Gtk, GdkPixbuf
+gi.require_version("Gtk", "3.0")  # pylint: disable=wrong-import-position
+gi.require_version("GdkPixbuf", "2.0")  # pylint: disable=wrong-import-position
+from gi.repository import GdkPixbuf, Gtk
 
 try:
     import qrcode
+
+    QR_AVAILABLE = True
 except ImportError:
-    print(
-        "⚠ QR codes are disabled. Install it using: `pip install qrcode[pil]`.",
-        file=sys.stderr,
-    )
+    QR_AVAILABLE = False
 
 from translation_helper import _
 
@@ -102,6 +102,13 @@ class QRCodeWindow(Gtk.Window):
             tuple: (GdkPixbuf.Pixbuf, None) if successful,
                    (None, str) with error message otherwise.
         """
+
+        if not QR_AVAILABLE:
+            return None, _('⚠ Missing dependency "qrcode"')
+
+        if not hasattr(qrcode, "make"):
+            return None, _('⚠ Missing dependency "qrcode"')
+
         try:
             qr = qrcode.make(url)
             qr.save("/tmp/qrcode.png")
@@ -109,7 +116,7 @@ class QRCodeWindow(Gtk.Window):
                 GdkPixbuf.Pixbuf.new_from_file_at_size("/tmp/qrcode.png", 250, 250),
                 None,
             )
-        except Exception as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             error_message = _(
                 "⚠ Error generating QR code:\nOriginal error: “{}”"
             ).format(e)

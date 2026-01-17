@@ -26,8 +26,7 @@ Defines a custom GObject signal emitter for asynchronous events in the WebSearch
 
 import gi
 
-gi.require_version("Gtk", "3.0")
-
+gi.require_version("Gtk", "3.0")  # pylint: disable=wrong-import-position
 from gi.repository import GObject
 
 
@@ -54,7 +53,10 @@ class WebSearchSignalEmitter(GObject.GObject):
       the results as an object.
     """
 
-    __gsignals__ = {"sites-fetched": (GObject.SignalFlags.RUN_FIRST, None, (object,))}
+    __gsignals__ = {
+        "sites-fetched": (GObject.SignalFlags.RUN_FIRST, None, (object,)),
+        "place-history-fetched": (GObject.SignalFlags.RUN_FIRST, None, (str,)),
+    }
 
     def __init__(self):
         """

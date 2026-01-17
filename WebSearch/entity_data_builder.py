@@ -31,20 +31,21 @@ import traceback
 
 from gramps.gen.lib.eventtype import EventType
 
+from attribute_mapping_loader import AttributeMappingLoader
+from constants import (
+    DEFAULT_MIDDLE_NAME_HANDLING,
+    FamilyDataKeys,
+    MiddleNameHandling,
+    PersonDataKeys,
+    PlaceDataKeys,
+    SourceDataKeys,
+    UIDAttributeContext,
+)
+from event_data_extractor import EventDataExtractor
 from helpers import get_system_locale
 from person_data_extractor import PersonDataExtractor
 from place_data_extractor import PlaceDataExtractor
-from event_data_extractor import EventDataExtractor
-from attribute_mapping_loader import AttributeMappingLoader
-
-from constants import (
-    DEFAULT_MIDDLE_NAME_HANDLING,
-    MiddleNameHandling,
-    PersonDataKeys,
-    FamilyDataKeys,
-    PlaceDataKeys,
-    SourceDataKeys,
-)
+from archive_reference_parser import ArchiveReferenceParser
 
 
 class EntityDataBuilder:
@@ -64,6 +65,10 @@ class EntityDataBuilder:
 
     def get_person_data(self, person):
         """Extracts structured personal and date-related data from a Person object."""
+        # pylint: disable=too-many-locals
+        if not person:
+            return {}, []
+
         try:
             name = person.get_primary_name().get_first_name().strip()
             middle_name_handling = self.config_ini_manager.get_enum(
@@ -87,10 +92,9 @@ class EntityDataBuilder:
                 given, middle = name, None
 
             surname = person.get_primary_name().get_primary().strip() or None
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
             given, middle, surname = None, None, None
-
         (
             birth_year,
             birth_year_from,
@@ -139,14 +143,30 @@ class EntityDataBuilder:
             PersonDataKeys.SYSTEM_LOCALE.value: self.system_locale or "",
         }
 
-        attribute_keys = self.attribute_loader.get_attributes_for_nav_type(
-            "Person", person
+        attribute_keys = []
+        attribute_keys += (
+            self.attribute_loader.get_attributes_for_nav_type_with_context(
+                "Person", person, UIDAttributeContext.ACTIVE_PERSON.value
+            )
         )
+
+        home_person = self.get_home_person()
+        if home_person:
+            attribute_keys += (
+                self.attribute_loader.get_attributes_for_nav_type_with_context(
+                    "Person", home_person, UIDAttributeContext.HOME_PERSON.value
+                )
+            )
 
         return person_data, attribute_keys
 
+    def get_home_person(self):
+        """Get home person."""
+        return self.db.get_default_person()
+
     def get_family_data(self, family):
         """Extracts structured data related to a family, including parents and events."""
+        # pylint: disable=too-many-locals
         father = (
             self.db.get_person_from_handle(family.get_father_handle())
             if family.get_father_handle()
@@ -158,11 +178,11 @@ class EntityDataBuilder:
             else None
         )
 
-        father_data, father_attribute_keys = (
-            self.get_person_data(father) if father else {}
+        father_data, unused_father_attribute_keys = (
+            self.get_person_data(father) if father else ({}, [])
         )
-        mother_data, mother_attribute_keys = (
-            self.get_person_data(mother) if mother else {}
+        mother_data, unused_mother_attribute_keys = (
+            self.get_person_data(mother) if mother else ({}, [])
         )
 
         marriage_year = marriage_year_from = marriage_year_to = marriage_year_before = (
@@ -330,37 +350,57 @@ class EntityDataBuilder:
         """Extracts structured place data such as name, coordinates, and type."""
         place_name = root_place_name = latitude = longitude = place_type = None
         try:
-            place_name = PlaceDataExtractor.get_place_name(place)
+            place_name = PlaceDataExtractor.get_place_name(place) or ""
             root_place_name = PlaceDataExtractor.get_root_place_name(self.db, place)
             place_title = PlaceDataExtractor.get_place_title(self.db, place)
             latitude = PlaceDataExtractor.get_place_latitude(place)
             longitude = PlaceDataExtractor.get_place_longitude(place)
             place_type = PlaceDataExtractor.get_place_type(place)
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
 
         place_data = {
-            PlaceDataKeys.PLACE.value: place_name or "",
+            PlaceDataKeys.PLACE.value: place_name,
             PlaceDataKeys.ROOT_PLACE.value: root_place_name or "",
             PlaceDataKeys.LATITUDE.value: latitude or "",
             PlaceDataKeys.LONGITUDE.value: longitude or "",
             PlaceDataKeys.TYPE.value: place_type or "",
             PlaceDataKeys.TITLE.value: place_title or "",
             PlaceDataKeys.SYSTEM_LOCALE.value: self.system_locale or "",
+            PlaceDataKeys.UNDERSCORED_PLACE.value: place_name.strip().replace(" ", "_"),
         }
 
         return place_data
 
     def get_source_data(self, source):
         """Extracts basic information from a source object, including title and locale."""
+
+        title = None
         try:
             title = source.get_title() or None
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
-            title = None
+
+        full_abbreviation = None
+        try:
+            full_abbreviation = source.get_abbreviation() or None
+        except Exception:  # pylint: disable=broad-exception-caught
+            print(traceback.format_exc(), file=sys.stderr)
+
+        parsed_ref = {}
+        if full_abbreviation:
+            result = ArchiveReferenceParser.parse_full_reference(full_abbreviation)
+            if result:
+                parsed_ref = result
 
         source_data = {
             SourceDataKeys.TITLE.value: title or "",
+            SourceDataKeys.FULL_ABBREVIATION.value: full_abbreviation or "",
+            SourceDataKeys.ARCHIVE_CODE.value: parsed_ref.get("archive_code") or "",
+            SourceDataKeys.COLLECTION_NUMBER.value: parsed_ref.get("collection_number")
+            or "",
+            SourceDataKeys.SERIES_NUMBER.value: parsed_ref.get("series_number") or "",
+            SourceDataKeys.FILE_NUMBER.value: parsed_ref.get("file_number") or "",
             SourceDataKeys.SYSTEM_LOCALE.value: self.system_locale or "",
         }
 

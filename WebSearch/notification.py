@@ -26,9 +26,8 @@ Notification popup for WebSearch Gramplet in Gramps.
 
 import gi
 
-gi.require_version("Gtk", "3.0")
-
-from gi.repository import Gtk, Gdk, GObject, Pango
+gi.require_version("Gtk", "3.0")  # pylint: disable=wrong-import-position
+from gi.repository import Gdk, GObject, Gtk, Pango
 
 
 class Notification(Gtk.Window):
@@ -106,7 +105,7 @@ class Notification(Gtk.Window):
         css_provider.load_from_data(
             b"""
             #TransparentWindow {
-                background-color: rgba(0, 0, 0, 0.7);
+                background-color: rgba(0, 0, 0, 0.9);
                 border-radius: 10px;
                 padding: 10px;
             }

@@ -45,7 +45,7 @@ class PlaceDataExtractor:
             if place is None:
                 return None
             latitude = place.get_latitude()
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
             return None
         return latitude
@@ -57,7 +57,7 @@ class PlaceDataExtractor:
             if place is None:
                 return None
             longitude = place.get_longitude()
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
             return None
         return longitude
@@ -77,7 +77,7 @@ class PlaceDataExtractor:
             else:
                 place_type_value = None
 
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
             return None
         return place_type_value
@@ -93,7 +93,7 @@ class PlaceDataExtractor:
                 return None
             value = name.get_value()
             return value or None
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
             return None
 
@@ -119,7 +119,7 @@ class PlaceDataExtractor:
                     )
                 else:
                     break
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
             return None
 
@@ -153,6 +153,6 @@ class PlaceDataExtractor:
                     break
 
             return ", ".join(place_names) if place_names else ""
-        except Exception:
+        except Exception:  # pylint: disable=broad-exception-caught
             print(traceback.format_exc(), file=sys.stderr)
             return ""

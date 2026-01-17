@@ -45,6 +45,7 @@ ensure consistency in website data processing.
 
 import os
 from enum import Enum
+
 from gramps.gen.const import USER_DATA
 
 from translation_helper import _
@@ -72,6 +73,11 @@ class SupportedNavTypes(Enum):
     EVENTS = "Events"
     CITATIONS = "Citations"
     MEDIA = "Media"
+    NOTES = "Notes"
+    REPOSITORIES = "Repositories"
+
+
+SUPPORTED_NAV_TYPE_VALUES = {nt.value for nt in SupportedNavTypes}
 
 
 class PersonDataKeys(Enum):
@@ -184,6 +190,7 @@ class PlaceDataKeys(Enum):
     LONGITUDE = "longitude"
     TYPE = "type"
     TITLE = "title"
+    UNDERSCORED_PLACE = "underscored_place"
     SYSTEM_LOCALE = "locale"
 
 
@@ -191,6 +198,11 @@ class SourceDataKeys(Enum):
     """Defines key keys for source-based navigation."""
 
     TITLE = "source_title"
+    FULL_ABBREVIATION = "full_abbreviation"
+    ARCHIVE_CODE = "archive_code"
+    COLLECTION_NUMBER = "collection_number"
+    SERIES_NUMBER = "series_number"
+    FILE_NUMBER = "file_number"
     SYSTEM_LOCALE = "locale"
 
 
@@ -209,16 +221,127 @@ class SourceTypes(Enum):
     UID = "UID"
     STATIC = "STATIC"
     CROSS = "CROSS"
-    ATTR = "ATTR"
+    ATTRIBUTE = "ATTRIBUTE"
+    INTERNET = "INTERNET"
+    NOTE = "NOTE"
+    COMMUNITY = "COMMUNITY"
+    ARCHIVE = "ARCHIVE"
+    FORUM = "FORUM"
+
+
+class DuplicateHandlingMode(Enum):
+    """Mode for handling duplicates during bulk operations."""
+
+    THROW_ERROR = "error"
+    IGNORE_DUPLICATES = "ignore"
+
+
+class DBFileTables(Enum):
+    """Enumeration of database table filenames."""
+
+    PLACE_HISTORY_REQUESTS = "place_history_requests.json"
+    MIGRATIONS = "migrations.json"
+    VISITS = "visits.json"
+    SAVES = "saves.json"
+    HIDDEN_LINKS = "hidden_links.json"
+    DOMAIN_SUGGESTIONS = "domain_suggestions.json"
+    ACTIVITIES = "activities.json"
+
+
+class DomainSuggestionStatus(Enum):
+    """Status of domain suggestion processing."""
+
+    PENDING = "pending"
+    SKIPPED = "skipped"
+
+
+class DomainSuggestionValidationStatus(Enum):
+    """Validation result of a suggested domain."""
+
+    NOT_CHECKED = "not_checked"
+    VALID = "valid"
+    INVALID = "invalid"
+
+
+class DomainType(Enum):
+    """Enum representing the type of domain suggested by the AI."""
+
+    RESOURCE = "resource"
+    COMMUNITY = "community"
+
+
+class HiddenLinksScope(Enum):
+    """Possible values of the 'scope' key in the 'hidden_links' table."""
+
+    ALL = "all"
+    OBJECT = "object"
+
+
+class ActivityType(Enum):
+    """Enumeration of supported activity types for WebSearch activity logging."""
+
+    LINK_VISIT = "link_visit"
+    LINK_SAVE_TO_NOTE = "link_save_to_note"
+    LINK_SAVE_TO_ATTRIBUTE = "link_save_to_attribute"
+    PLACE_HISTORY_LOAD = "place_history_load"
+    DOMAIN_SKIP = "domain_skip"
+    HIDE_LINK_FOR_OBJECT = "hide_link_for_object"
+    HIDE_LINK_FOR_ALL = "hide_link_for_all"
+    ATTRIBUTE_EDIT = "attribute_edit"
+    NOTE_EDIT = "note_edit"
+
+
+class SavedTo(Enum):
+    """Possible values of the 'saved_to' key in the 'saves' table."""
+
+    NOTE = "note"
+    ATTRIBUTE = "attribute"
+
+
+class UIDAttributeContext(Enum):
+    """
+    Enum to represent attribute key contexts for UID substitution.
+    """
+
+    ACTIVE_PERSON = "ActivePerson"
+    HOME_PERSON = "HomePerson"
+
+
+SUPPORTED_SOURCE_TYPE_VALUES = {st.value for st in SourceTypes}
 
 
 SOURCE_TYPE_SORT_ORDER = {
-    SourceTypes.COMMON.value: "0",
-    SourceTypes.UID.value: "1",
-    SourceTypes.STATIC.value: "2",
-    SourceTypes.ATTR.value: "3",
-    SourceTypes.CROSS.value: "4",
+    SourceTypes.COMMON.value: "A",
+    SourceTypes.UID.value: "B",
+    SourceTypes.STATIC.value: "C",
+    SourceTypes.CROSS.value: "D",
+    SourceTypes.ATTRIBUTE.value: "E",
+    SourceTypes.INTERNET.value: "F",
+    SourceTypes.NOTE.value: "G",
+    SourceTypes.COMMUNITY.value: "H",
+    SourceTypes.ARCHIVE.value: "I",
+    SourceTypes.FORUM.value: "J",
 }
+
+SOURCE_TYPES_HIDE_KEYS_COUNT = [
+    SourceTypes.STATIC.value,
+    SourceTypes.ATTRIBUTE.value,
+    SourceTypes.INTERNET.value,
+    SourceTypes.NOTE.value,
+    SourceTypes.COMMUNITY.value,
+    SourceTypes.ARCHIVE.value,
+    SourceTypes.FORUM.value,
+]
+
+SOURCE_TYPES_WITH_FIXED_LINKS = [
+    SourceTypes.STATIC.value,
+    SourceTypes.ATTRIBUTE.value,
+    SourceTypes.INTERNET.value,
+    SourceTypes.NOTE.value,
+    SourceTypes.COMMUNITY.value,
+    SourceTypes.ARCHIVE.value,
+    SourceTypes.FORUM.value,
+]
 
 VIEW_IDS_MAPPING = {
     "dashboardview": None,
@@ -254,11 +377,18 @@ COMMON_CSV_FILE_NAME = "common-links.csv"
 UID_CSV_FILE_NAME = "uid-links.csv"
 STATIC_CSV_FILE_NAME = "static-links.csv"
 CROSS_CSV_FILE_NAME = "cross-links.csv"
-ALL_COLUMNS = ["icons", "locale", "keys", "title", "url", "comment"]
-DEFAULT_DISPLAY_COLUMNS = ["icons", "locale", "keys", "title", "url", "comment"]
+ALL_COLUMNS = ["icons", "file_identifier", "keys", "title", "url", "comment"]
+DEFAULT_DISPLAY_COLUMNS = [
+    "icons",
+    "file_identifier",
+    "keys",
+    "title",
+    "url",
+    "comment",
+]
 ALL_COLUMNS_LOCALIZED = {
     "icons": _("Column - Icons"),
-    "locale": _("Column - Source Types (flags)"),
+    "file_identifier": _("Column - Source Types (flags)"),
     "keys": _("Column - Keys"),
     "title": _("Column - Title"),
     "url": _("Column - Website Url"),
@@ -271,9 +401,11 @@ ALL_ICONS = [
     "flag",
     "pin",
     "earth",
-    "chain",
     "cross",
     "user_data",
+    "attribute",
+    "internet",
+    "note",
 ]
 DEFAULT_DISPLAY_ICONS = [
     "visited",
@@ -282,9 +414,11 @@ DEFAULT_DISPLAY_ICONS = [
     "flag",
     "pin",
     "earth",
-    "chain",
     "cross",
     "user_data",
+    "attribute",
+    "internet",
+    "note",
 ]
 ALL_ICONS_LOCALIZED = {
     "visited": _("Icon - Visited URLs (checkmark)"),
@@ -293,13 +427,14 @@ ALL_ICONS_LOCALIZED = {
     "flag": _("Icon - URLs from regional CSV files (flag)"),
     "pin": _("Icon - URLs from static CSV files (red pin)"),
     "earth": _("Icon - URLs from common CSV files (earth)"),
-    "chain": _("Icon - Direct URLs from attributes (link chain)"),
     "cross": _("Icon - URLs from cross CSV files (shuffle arrows)"),
     "user_data": _("Icon - URLs from custom user directory (spreadsheet icon)"),
+    "attribute": _("Icon - URLs from the 'Attributes' tab ('A' icon)"),
+    "internet": _("Icon - URLs from the 'Internet' tab ('I' icon)"),
+    "note": _("Icon - URLs from the 'Notes' tab ('N' icon)"),
 }
 
 CONFIGS_DIR = os.path.join(os.path.dirname(__file__), "configs")
-DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 ASSETS_DIR = os.path.join(os.path.dirname(__file__), "assets")
 CSV_DIR = os.path.join(ASSETS_DIR, "csv")
 ICONS_DIR = os.path.join(ASSETS_DIR, "icons")
@@ -307,24 +442,27 @@ FLAGS_DIR = os.path.join(ICONS_DIR, "flags")
 USER_DATA_BASE_DIR = os.path.join(USER_DATA, "WebSearch")
 USER_DATA_CSV_DIR = os.path.join(USER_DATA_BASE_DIR, "csv")
 USER_DATA_JSON_DIR = os.path.join(USER_DATA_BASE_DIR, "json")
+USER_DATA_DATA_DIR = os.path.join(USER_DATA_BASE_DIR, "data")
+ADMINISTRATIVE_DIVISIONS_DIR = os.path.join(
+    USER_DATA_DATA_DIR, "administrative_divisions"
+)
+DB_FILE_TABLE_DIR = os.path.join(USER_DATA_BASE_DIR, "database")
+MIGRATIONS_DIR = os.path.join(os.path.dirname(__file__), "migrations")
 
 INTERFACE_FILE_PATH = os.path.join(os.path.dirname(__file__), "interface.xml")
 CONFIG_FILE_PATH = os.path.join(CONFIGS_DIR, "config.ini")
 ATTRIBUTE_MAPPING_FILE_PATH = os.path.join(CONFIGS_DIR, "attribute_mapping.json")
-VISITED_HASH_FILE_PATH = os.path.join(DATA_DIR, "visited_links.txt")
-SAVED_HASH_FILE_PATH = os.path.join(DATA_DIR, "saved_links.txt")
-HIDDEN_HASH_FILE_PATH = os.path.join(DATA_DIR, "hidden_links.txt")
-SKIPPED_DOMAIN_SUGGESTIONS_FILE_PATH = os.path.join(
-    DATA_DIR, "skipped_domain_suggestions.txt"
-)
+MIGRATIONS_FILE_PATH = os.path.join(DB_FILE_TABLE_DIR, "migrations.json")
 ICON_VISITED_PATH = os.path.join(ICONS_DIR, "emblem-default.png")
 ICON_SAVED_PATH = os.path.join(ICONS_DIR, "media-floppy.png")
 ICON_UID_PATH = os.path.join(ICONS_DIR, "uid.png")
 ICON_USER_DATA_PATH = os.path.join(ICONS_DIR, "user-file.png")
 ICON_PIN_PATH = os.path.join(ICONS_DIR, "pin.png")
 ICON_EARTH_PATH = os.path.join(ICONS_DIR, "earth.png")
-ICON_CHAIN_PATH = os.path.join(ICONS_DIR, "chain.png")
 ICON_CROSS_PATH = os.path.join(ICONS_DIR, "cross.png")
+ICON_ATTRIBUTE_PATH = os.path.join(ICONS_DIR, "attribute.png")
+ICON_INTERNET_PATH = os.path.join(ICONS_DIR, "internet.png")
+ICON_NOTE_PATH = os.path.join(ICONS_DIR, "note.png")
 
 STYLE_CSS_PATH = os.path.join(ASSETS_DIR, "style.css")
 DEFAULT_ATTRIBUTE_MAPPING_FILE_PATH = os.path.join(
@@ -342,10 +480,14 @@ DEFAULT_QUERY_PARAMETERS_REPLACEMENT = "..."
 DEFAULT_URL_COMPACTNESS_LEVEL = URLCompactnessLevel.COMPACT_NO_ATTRIBUTES.value
 DEFAULT_MIDDLE_NAME_HANDLING = MiddleNameHandling.SEPARATE.value
 DEFAULT_ENABLED_FILES = [COMMON_CSV_FILE_NAME, UID_CSV_FILE_NAME, STATIC_CSV_FILE_NAME]
-DEFAULT_SHOW_ATTRIBUTE_LINKS = False
+DEFAULT_SHOW_ATTRIBUTE_LINKS = True
+DEFAULT_SHOW_INTERNET_LINKS = True
+DEFAULT_SHOW_NOTE_LINKS = True
 DEFAULT_AI_PROVIDER = AIProviders.DISABLED.value
+DEFAULT_ENABLED_PLACE_HISTORY = False
+DEFAULT_CUSTOM_COUNTRY_CODE_FOR_AI_NOTES = ""
 
-DEFAULT_COLUMNS_ORDER = ["icons", "locale", "keys", "title", "url", "comment"]
+DEFAULT_COLUMNS_ORDER = ["icons", "file_identifier", "keys", "title", "url", "comment"]
 
 CATEGORY_ICON = {
     "Dashboard": "gramps-gramplet",
@@ -362,3 +504,6 @@ CATEGORY_ICON = {
     "Notes": "gramps-notes",
     "Citations": "gramps-citation",
 }
+
+URL_REGEX = r"https?://[^\s]+"
+URL_RSTRIP = ".,!?);]"
