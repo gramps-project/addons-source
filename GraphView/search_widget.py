@@ -19,6 +19,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+import pickle
+
 from gi.repository import Gtk, Gdk, GLib, GObject
 from threading import Event
 from queue import Queue, Empty
@@ -27,6 +29,7 @@ from gramps.gen import datehandler
 from gramps.gen.display.name import displayer
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                                  find_parents)
+from gramps.gui.ddtargets import DdTargets
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -504,7 +507,7 @@ class Popover(Gtk.Popover):
 
 class ListBoxRow(Gtk.ListBoxRow):
     """
-    Extended Gtk.ListBoxRow.
+    Extended Gtk.ListBoxRow with person DnD support.
     """
     def __init__(self, person_handle=None, label='', marked=False, db=None):
         Gtk.ListBoxRow.__init__(self)
@@ -516,6 +519,41 @@ class ListBoxRow(Gtk.ListBoxRow):
 
         self.set_has_tooltip(True)
         self.connect('query-tooltip', self.query_tooltip)
+        self.setup_dnd()
+
+    def add(self, widget):
+        """
+        Override "container.add" to catch drag events.
+        Pack content of ListBoxRow to Gtk.EventBox.
+        """
+        ebox = Gtk.EventBox()
+        ebox.add(widget)
+        super().add(ebox)
+
+    def setup_dnd(self):
+        """
+        Setup drag-n-drop.
+        """
+        self.drag_source_set(Gdk.ModifierType.BUTTON1_MASK,
+                             [],
+                             Gdk.DragAction.COPY)
+        tglist = Gtk.TargetList.new([])
+        tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
+                   DdTargets.PERSON_LINK.target_flags,
+                   DdTargets.PERSON_LINK.app_id)
+        self.drag_source_set_target_list(tglist)
+
+        self.connect("drag-data-get", self.drag_data_get)
+
+        self.drag_source_set_icon_name('gramps-person')
+
+    def drag_data_get(self, widget, context, sel_data, info, time):
+        """
+        Returned parameters after drag.
+        """
+        data = (DdTargets.PERSON_LINK.drag_type,
+                id(widget), self.person_handle, 0)
+        sel_data.set(sel_data.get_target(), 8, pickle.dumps(data))
 
     def query_tooltip(self, widget, x, y, keyboard_mode, tooltip):
         """
@@ -528,6 +566,7 @@ class ListBoxRow(Gtk.ListBoxRow):
                 self.set_tooltip_text(text)
             else:
                 self.set_has_tooltip(False)
+
 
 class ScrolledListBox(Gtk.ScrolledWindow):
     """
