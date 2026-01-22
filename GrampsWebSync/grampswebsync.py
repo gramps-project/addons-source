@@ -441,9 +441,13 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             obj = self.db1.get_media_from_handle(handle)
         except HandleError:
             self.handle_error(_("Error accessing media object."))
-            return
+            return False
         path = media_path_full(self.db1, obj.get_path())
-        return self.api.download_media_file(handle=handle, path=path)
+        try:
+            return self.api.download_media_file(handle=handle, path=path)
+        except Exception as e:
+            LOG.warning(f"Failed to download media file {obj.gramps_id}: {e}")
+            return False
 
     def upload_files(self):
         """Upload media files missing remotely."""
