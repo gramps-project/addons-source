@@ -334,6 +334,7 @@ class WebApiHandler:
     def download_media_file(self, handle: str, path) -> bool:
         """Download a media file."""
         url = f"{self.url}/media/{handle}/file"
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
         with open(path, "wb") as f:
             self._download_file(url=url, fobj=f, token_url=True)
         return True
