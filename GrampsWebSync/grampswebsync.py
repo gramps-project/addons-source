@@ -84,6 +84,7 @@ def get_password(service: str, username: str) -> str | None:
         return None
     return keyring.get_password(service, username)
 
+
 def set_password(service: str, username: str, password: str) -> None:
     """If keyring is installed, store the user's password."""
     try:
@@ -261,7 +262,9 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
             if "ViewPrivate" not in self.api.get_permissions():
                 self.loginpage.show_error(
-                    _("Your user does not have sufficient server permissions to use sync.")
+                    _(
+                        "Your user does not have sufficient server permissions to use sync."
+                    )
                 )
                 self.assistant.set_current_page(1)  # Go back to login page
                 return None
@@ -374,9 +377,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                     _("Too many requests, please try again in a few seconds.")
                 )
             elif exc.code == 503:
-                self.loginpage.show_error(
-                    _("GrampsWeb tree is disabled.")
-                )
+                self.loginpage.show_error(_("GrampsWeb tree is disabled."))
             else:
                 self.loginpage.show_error(
                     _("Server error %s. Please check your connection.") % exc.code
@@ -384,11 +385,15 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             return False
         except URLError:
             self.loginpage.show_error(
-                _("Connection failed. Please check the URL and your internet connection.")
+                _(
+                    "Connection failed. Please check the URL and your internet connection."
+                )
             )
             return False
         except ValueError:
-            self.loginpage.show_error(_("Invalid server response. Please check the URL."))
+            self.loginpage.show_error(
+                _("Invalid server response. Please check the URL.")
+            )
             return False
         except Exception as e:
             self.loginpage.show_error(_("Unexpected error: %s") % str(e))
@@ -494,6 +499,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         path = self.handle_server_errors(self.api.download_xml)
         if path is None:
             return
+        LOG.debug(f"The file name of the downloaded file is: {path}")
         LOG.debug("Importing Gramps XML file.")
         db2 = import_as_dict(str(path), self._user)
         if db2 is None:
@@ -505,6 +511,17 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.diff_progress_page.label.set_text(_("Comparing local and remote data..."))
         LOG.info("Comparing local and remote data...")
         timestamp = self.config.get("credentials.timestamp") or None
+        from datetime import datetime
+
+        LOG.debug(
+            "Loading last sync timestamp from config: %s (%s)",
+            timestamp,
+            (
+                datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d %H:%M:%S %Z")
+                if timestamp
+                else "None"
+            ),
+        )
         self._sync = WebApiSyncDiffHandler(
             self.db1, self.db2, user=self._user, last_synced=timestamp
         )
@@ -554,7 +571,9 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self.handle_error(_("URL error while connecting to server."))
             return None
         except ValueError as exc:
-            self.handle_error(f"{_('Unable to synchronize changes to server.')} ({exc})")
+            self.handle_error(
+                f"{_('Unable to synchronize changes to server.')} ({exc})"
+            )
             return None
 
     def save_credentials(self) -> None:
@@ -624,15 +643,17 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                 }
                 lang = self.api.get_lang()
                 payload = transaction_to_json(trans2, lang)
-        GLib.idle_add(
-            self.async_commit_actions_to_remote, payload, force
-        )
+        GLib.idle_add(self.async_commit_actions_to_remote, payload, force)
 
-    def async_commit_actions_to_remote(self, payload: dict[str, "Any"], force: bool) -> None:
+    def async_commit_actions_to_remote(
+        self, payload: dict[str, "Any"], force: bool
+    ) -> None:
         """Commit all changes to the remote database."""
         GLib.idle_add(self._async_commit_actions_to_remote, payload, force)
 
-    def _async_commit_actions_to_remote(self, payload: dict[str, "Any"], force: bool) -> None:
+    def _async_commit_actions_to_remote(
+        self, payload: dict[str, "Any"], force: bool
+    ) -> None:
         """Upload/download media files."""
         LOG.debug("Committing changes to remote database.")
         self.handle_server_errors(
@@ -648,7 +669,9 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         # self.config.set("credentials.timestamp", self._download_timestamp)
         timestamp = datetime.now().timestamp()
         LOG.debug(
-            "Saving current time stamp (%s) as last successful sync time.", timestamp
+            "Saving current time stamp (%s) as last successful sync time (%s).",
+            timestamp,
+            datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d %H:%M:%S %Z"),
         )
         self.config.set("credentials.timestamp", timestamp)
         self.config.save()
@@ -689,7 +712,8 @@ class Page(Gtk.Box):
         """Set the current page's complete status."""
         page_number = self.assistant.get_current_page()
         current_page = self.assistant.get_nth_page(page_number)
-        self.assistant.set_page_complete(current_page, self.complete)
+        if current_page is not None:
+            self.assistant.set_page_complete(current_page, self.complete)
 
 
 class IntroductionPage(Page):
@@ -766,7 +790,7 @@ class LoginPage(Page):
         self.error_label = Gtk.Label()
         self.error_label.set_line_wrap(True)
         self.error_label.set_max_width_chars(60)
-        self.error_label.get_style_context().add_class('error')
+        self.error_label.get_style_context().add_class("error")
         self.error_label.set_no_show_all(True)  # Don't show when show_all() is called
         self.error_label.hide()
         grid.attach(self.error_label, 0, 3, 2, 1)
@@ -778,7 +802,7 @@ class LoginPage(Page):
 
     def show_error(self, message: str):
         """Display an error message on the login page."""
-        self.error_label.set_markup(f'<b>Error:</b> {message}')
+        self.error_label.set_markup(f"<b>Error:</b> {message}")
         self.error_label.show()
         self.update_complete()
 
@@ -979,7 +1003,6 @@ class SyncProgressPage(Page):
         while Gtk.events_pending():
             Gtk.main_iteration()
 
-
     def prepare(self, actions: Actions):
         if len(actions) == 0:
             self.label.set_text(_("Both trees are the same."))
@@ -993,10 +1016,14 @@ class SyncProgressPage(Page):
             self.label.set_text(_("No changes to apply to local database."))
         if has_remote_actions(actions):
             self.label_progressbar_api.show()
-            self.label_progressbar_api.set_text(_("Applying changes to remote database ..."))
+            self.label_progressbar_api.set_text(
+                _("Applying changes to remote database ...")
+            )
             self.progressbar_api.show()
         else:
-            self.label_progressbar_api.set_text(_("No changes to apply to remote database."))
+            self.label_progressbar_api.set_text(
+                _("No changes to apply to remote database.")
+            )
             self.progressbar_api.hide()
 
     def handle_local_sync_complete(self, actions: Actions) -> None:
