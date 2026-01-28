@@ -38,5 +38,6 @@ register(
     version="1.0.0",
     gramps_target_version=major_version,
     navtypes=["Dashboard", "Person", "Family", "Event", "Place", "Source", "Citation", "Repository", "Media", "Note"],
-    help_url="Addon:Virtual_Keyboard",
+#    help_url="Addon:Virtual_Keyboard",
+    help_url="https://gramps.discourse.group/t/python-virtual-keyboard-with-diacritical-marks/3006/10",
 )
