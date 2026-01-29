@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2026 Perplexity AI Assistant
+# Copyright (C) 2026 Brian McCullough (prompting Perplexity AI Assistant)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
