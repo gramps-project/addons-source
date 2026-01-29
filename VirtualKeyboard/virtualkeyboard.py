@@ -3,7 +3,8 @@
 # Touch-friendly on-screen keyboard for clipboarded data entry
 # Default: Special (accented) layout
 #
-# Copyright (C) 2026 Perplexity AI Assistant
+# Copyright (C) 2026 Brian McCullough (prompting Perplexity AI Assistant)
+#
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -19,8 +20,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Generated: 17 Jan 2026 - Perplexity AI Assistant v1.0
-#            29 Jan 2026 - Black refactor by Gary Griffin
-
+#
 
 from gi.repository import Gtk, Gdk
 from gramps.gen.plug import Gramplet
