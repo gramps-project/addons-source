@@ -50,7 +50,7 @@ register(
     expand=False,
     gramplet="VirtualKeyboard",
     gramplet_title=_("Virtual Keyboard"),
-    version="1.0.1",
+    version = '1.0.2',
     gramps_target_version=major_version,
     navtypes=["Dashboard", "Person", "Family", "Event", "Place", "Source", "Citation", "Repository", "Media", "Note"],
 #    help_url="Addon:Virtual_Keyboard",
