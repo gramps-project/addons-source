@@ -18,40 +18,32 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-# Generated: January 17, 2026 - Perplexity AI Assistant v1.0
+# Generated: 17 Jan 2026 - Perplexity AI Assistant v1.0
+#            29 Jan 2026 - Black refactor by Gary Griffin
 
 
 from gi.repository import Gtk, Gdk
 from gramps.gen.plug import Gramplet
 
 # Complete keyboard layouts
-QWERTY_ROWS = [
-    "`1234567890-=",
-    "qwertyuiop[]\\",
-    "asdfghjkl;'",
-    "zxcvbnm,./ "
-]
+QWERTY_ROWS = ["`1234567890-=", "qwertyuiop[]\\", "asdfghjkl;'", "zxcvbnm,./ "]
 
-QWERTY_UPPER_ROWS = [
-    "~!@#$%^&*()_+",
-    "QWERTYUIOP{}|",
-    "ASDFGHJKL:\"",
-    "ZXCVBNM<>?   "
-]
+QWERTY_UPPER_ROWS = ["~!@#$%^&*()_+", "QWERTYUIOP{}|", 'ASDFGHJKL:"', "ZXCVBNM<>?   "]
 
 SPECIAL_ROWS = [
     "áàâäéèêëíìîïóòôöúùûü",
     "ÁÀÂÄÉÈÊËÍÌÎÏÓÒÔÖÚÙÛÜ",
     "ñÑçÇßðÐþÞæøåÿğış",
-    "ÑÇŞĞİığş.,!?;:"
+    "ÑÇŞĞİığş.,!?;:",
 ]
+
 
 class VirtualKeyboard(Gramplet):
     def init(self):
         self.buffer = ""
         self.current_layout = "accent"  # Default layout
-        self.gui.uistate.connect('filter-changed', self.update)
-        self.dbstate.connect('database-changed', self.update)
+        self.gui.uistate.connect("filter-changed", self.update)
+        self.dbstate.connect("database-changed", self.update)
         self.build_interface()
 
     def build_interface(self):
@@ -92,7 +84,7 @@ class VirtualKeyboard(Gramplet):
             ("Space", self.on_space),
             ("↵", self.on_newline),
             ("Insert", self.on_insert_into_field),
-            ("Copy", self.on_copy_clipboard)
+            ("Copy", self.on_copy_clipboard),
         ]
         for label, callback in btns:
             btn = Gtk.Button(label=label)
@@ -117,14 +109,31 @@ class VirtualKeyboard(Gramplet):
             self.keyboard_vbox.remove(child)
 
         # Select layout rows
-        ROWS = {"qwerty": QWERTY_ROWS, "upper": QWERTY_UPPER_ROWS, "accent": SPECIAL_ROWS}
+        ROWS = {
+            "qwerty": QWERTY_ROWS,
+            "upper": QWERTY_UPPER_ROWS,
+            "accent": SPECIAL_ROWS,
+        }
         rows = ROWS.get(layout, SPECIAL_ROWS)
 
         # Build keyboard rows
         for row_chars in rows:
             hbox = Gtk.Box(spacing=1)
             for ch in row_chars:
-                if ch in ['Caps', 'Shift', 'Tab', 'caps', 'shift', 'tab', '←', 'Clear', 'Space', '↵', 'Copy', 'Insert']:
+                if ch in [
+                    "Caps",
+                    "Shift",
+                    "Tab",
+                    "caps",
+                    "shift",
+                    "tab",
+                    "←",
+                    "Clear",
+                    "Space",
+                    "↵",
+                    "Copy",
+                    "Insert",
+                ]:
                     continue  # Skip function keys (handled by control row)
                 btn = Gtk.Button(label=ch)
                 btn.connect("clicked", self.on_char_clicked, ch)
