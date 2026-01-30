@@ -147,7 +147,7 @@ class ArchiveAssist(Gramplet):
         self.dbstate.db.add_repository(repo)
         return repo.get_handle()
 
-    def on_create_clicked(self):
+    def on_create_clicked(self, widget):
         text = self.entry.get_text().strip()
         if not text:
             self.status_label.set_text("Please enter a reference string.")
@@ -206,8 +206,8 @@ class ArchiveAssist(Gramplet):
                     AID.set_type("AID")
                     AID.set_value(parsed["full_AID"])
                     cit.add_attribute(AID)
-                    cit.set_reference_handle(src_handle)
-                
+                    
+                cit.set_reference_handle(src_handle)
                 cit_handle = self.dbstate.db.add_citation(cit, trans)
 
             
