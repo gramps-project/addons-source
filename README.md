@@ -5,7 +5,7 @@ Source code of contributed third-party addons for the [Gramps genealogy program]
 
 You can develop your own addon following the [Addons Development](https://gramps-project.org/wiki/index.php?title=Addons_development) wiki.
 
-Note: The default git branch is `master`.  The master branch should only be used to develop addons that require features or changes found in the Gramps master branch.  Most of the time addons should be developed to work with the current released version of Gramps (`maintenance/gramps52` for the Gramps 5.2.x versions for example).
+Note: The default git branch is `master`.  The master branch should only be used to develop addons that require features or changes found in the Gramps master branch.  Most of the time addons should be developed to work with the current released version of Gramps (`maintenance/gramps60` for the Gramps 6.0.x versions for example).
 
 So use care when creating your addon to base off of the correct branch, and also to select the correct branch when creating a PR on Github.
 
@@ -22,33 +22,33 @@ files will be in the addons repository, ready to be committed.
 Examples:
 * Creates the initial addon-source directories and .pot file for the addon.
 ```
-python3 make.py gramps52 init AddonDirectory
+python3 make.py gramps60 init AddonDirectory
 ```
 
 * Creates the initial empty `AddonDirectory/po/fr-local.po` file for the addon.
 ```
-python3 make.py gramps52 init AddonDirectory fr
+python3 make.py gramps60 init AddonDirectory fr
 ```
 
 * Updates `AddonDirectory/po/fr-local.po` with the latest translations.
 ```
-python3 make.py gramps52 update AddonDirectory fr
+python3 make.py gramps60 update AddonDirectory fr
 ```
 
 * Build `../download/AddonDirectory.addon.tgz`
 ```
-python3 make.py gramps52 build AddonDirectory
+python3 make.py gramps60 build AddonDirectory
 ```
 
 * Create or update the listing entry for your addon.
 ```
-python3 make.py gramps52 listing AddonDirectory
+python3 make.py gramps60 listing AddonDirectory
 ```
 
 * For the developer who is merging PRs or other commits and needs to rebuild.
     and list one or more addons
 ```
-python3 make.py gramps52 as-needed
+python3 make.py gramps60 as-needed
 ```
 
 Valid command summary
