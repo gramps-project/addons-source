@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-12-22 14:00+0000\n"
+"PO-Revision-Date: 2026-02-03 09:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 msgid "No Source"
 msgstr "אין מקור"
@@ -310,14 +310,61 @@ msgstr ""
 msgid "Extra style settings:"
 msgstr "הגדרות סגנון נוספות:"
 
+msgid "Whatever css style settings are needed."
+msgstr "כל הגדרות סגנון CSS הנדרשות."
+
+msgid "Mouse event handler"
+msgstr "מטפל באירועי עכבר"
+
+msgid "Mouse handler used to interact with visitor of webpage."
+msgstr "מטפל אירועי עכבר נוהג להדד עם מבקרים בעמודי מרשתת."
+
 msgid "Birth relationship linestyle"
 msgstr "סגנון קו קשרי קירבה מסוג לידה"
+
+msgid ""
+"List of lists where each sublist is a list with information about the dash "
+"pattern of lines connecting children to parents."
+msgstr ""
+"רשימת רשימות שבה כל רשימת־משנה היא רשימה עם מידע על דגם קווים מקווים שמחברים "
+"צאצאים להורים."
+
+msgid "Source confidence color"
+msgstr "צבע וודאות מקור"
+
+msgid ""
+"List of lists where each sublist is a list with information on the color to "
+"use for a certain confidence level."
+msgstr ""
+"רשימה של רשימות שבה כל רשימת־משנה היא רשימה עם מידע על הצבע לשימוש עבור רמה "
+"מסוימת של וודאות."
 
 msgid "Event format"
 msgstr "תסדיר אירועים"
 
+msgid "at"
+msgstr "ב"
+
+msgid ""
+"List os strings with placeholders for events. Known placeholders: <type>, "
+"<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
+"<attribute-value>."
+msgstr ""
+"רשימת  מחרוזות שומרי מקום לאירועים. שומרי מקום ידועים: <type>, <role>, "
+"<date>, <place>, <description>, <witnesses>, <source> וכל <attribute-value>."
+
 msgid "Source format"
 msgstr "תסדיר מקור"
+
+msgid ""
+"List of strings with placeholders for sources. Known placeholders: <title>, "
+"<volume>, <author>, <publication_info> and <abbreviation>."
+msgstr ""
+"רשימת  מחרוזות שומרי מקום למקורות. שומרי מקום ידועים: <type>, <role>, "
+"<date>, <place>, <description>, <witnesses>, <source> וכל <attribute-value>."
+
+msgid "restricted to:"
+msgstr "מוגבל:"
 
 msgid "to directory:"
 msgstr "למחיצה:"
@@ -333,6 +380,12 @@ msgstr "הכללה"
 
 msgid "Excluded"
 msgstr "מוחרג"
+
+msgid "Name HTML-wrapper file"
+msgstr "שם HTML – קובץ עוטפן"
+
+msgid "Save HTML-wrapper file as ..."
+msgstr "שם HTML – קובץ עוטפן בשם..."
 
 msgid "Give a filename ..."
 msgstr "מתן שם לקובץ..."

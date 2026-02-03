@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-27 12:34+0000\n"
+"PO-Revision-Date: 2026-01-24 18:03+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -12,7 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 msgid "Select filter to restrict people"
 msgstr "Select filter to restrict people"
+
+msgid "Source type"
+msgstr "Source type"
+
+msgid "New source"
+msgstr "New source"
+
+msgid "Existing source"
+msgstr "Existing source"
+
+msgid "Select the type of source to attach"
+msgstr "Select the type of source to attach"
+
+msgid "New Source Title"
+msgstr "New Source Title"
+
+msgid "Text of source to attach"
+msgstr "Text of source to attach"
+
+msgid "Existing Source ID"
+msgstr "Existing Source ID"
+
+msgid "ID of source to attach"
+msgstr "ID of source to attach"
+
+msgid "Attach Source"
+msgstr "Attach Source"
+
+msgid "Processing...\n"
+msgstr "Processing...\n"
+
+msgid "Attaching sources...\n"
+msgstr "Attaching sources...\n"
+
+msgid "Attaching sources..."
+msgstr "Attaching sources..."
+
+msgid "Done!\n"
+msgstr "Done!\n"
+
+msgid "Attaches a shared source to multiple objects."
+msgstr "Attaches a shared source to multiple objects."
