@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-12-22 14:00+0000\n"
+"PO-Revision-Date: 2026-02-03 09:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.16-dev\n"
+
+msgid "Descendant Book"
+msgstr "בפר אבות־קדמונים"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr "ייצור דוח צאצאים אחד או יותר בהתבסס על שאילתה שסופקה."
+
+msgid "Detailed Descendant Book"
+msgstr "ספר צאצאים מפורט"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr "ייצור דיווח צאצאים מפורט אחד או  יותר בהתבסס על שאילתה שסופקה."
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -31,6 +44,14 @@ msgstr "דוח צאצאים"
 msgid "Writing %s reports..."
 msgstr "כתיבת %s דוחות..."
 
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. צאצאים של {name}"
+
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr "{report_count:d}. {name}"
+
 msgid "Select filter to restrict people that appear in the report"
 msgstr "בחירת מסנן להגבלת האנשים שמופיעים בדוח"
 
@@ -40,11 +61,58 @@ msgstr "האם להציג בדוחות משפחות כפולות."
 msgid "The style used for the title of the page."
 msgstr "הסגנון שמשמש בכותרת העמוד."
 
+msgid "The style used for the table of contents header."
+msgstr "הסגנון שמשמש בטבלת כותרת תוכן."
+
+msgid "The style used for the table of contents detail."
+msgstr "הסגנון שמשמש בטבלת פרטי תוכן."
+
+msgid "Detailed Descendants Report"
+msgstr "דוח צאצאים מפורט"
+
+#, python-format
+msgid "Generating %s report references..."
+msgstr "חילול %s דוחות אזכורים..."
+
+#, python-format
+msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgstr "%(report_count)s דוח צאצאים עבור %(person_name)s"
+
 msgid "Index of Places"
 msgstr "מפתח מקומות"
 
+msgid "Index of Dates"
+msgstr "מפתח תאריכים"
+
 msgid "Index of Names"
 msgstr "מפתח שמות"
+
+msgid "Report, Generation, Person, Name"
+msgstr "דוח, דור, אדם, שם"
+
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "הצגת דוח: {report}, דור:{generation}, אדם: {person}"
+
+#, python-format
+msgid "Report appearances for %s"
+msgstr "מראית דוח עבור %s"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "זוגאי של: דוח: {report}, דור: {generation}, אדם: {person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "דוח: {report}, דור: {generation}, אדם, {person}"
+
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(event_name)s מתוך %(name)s "
+
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(event_name)s של %(name)s ו־%(mate)s "
 
 #, python-format
 msgid "%(date)s, %(place)s"
@@ -95,14 +163,89 @@ msgstr "הוספת אזכור צאצא ברשימת צאצאים"
 msgid "Include Index of Names"
 msgstr "לכלול מפתח שמות"
 
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "האם לכלול את מפתח השמות בסוף הדוח."
+
 msgid "Include index of Dates"
 msgstr "הכללת מפתח תאריכים"
+
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr "האם לכלול את מפתח התאריכים בסוף הדוח."
 
 msgid "Include index of Places"
 msgstr "הכללת מפתח מקומות"
 
+msgid "Whether to include the index of Places at the end of the report."
+msgstr "האם לכלול פתח מקומות בסוף הדוח."
+
+msgid "Include the 'Report appearances' section with each person"
+msgstr "לכלל מקטע \"מרית דוח\" לכל אדם"
+
+msgid ""
+"The 'Report appearances' section shows other places in the report where the "
+"person is mentioned."
+msgstr "מקטע \"מראית דוח\" מציג מקומות אחרים בדוח שבו האדם מוזכר."
+
 msgid "The style used for the children list."
 msgstr "הסגנון שמשמש לרשימת צאצאים."
 
+msgid "The basic style used for Note header."
+msgstr "הסגנון הבסיסי שמשמש לכותרת הערות."
+
+msgid "The style used for the first personal entry."
+msgstr "הסגנון שישמש את הרשומה האישית הראשונה."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "הסגנון שמשמש ל'עוד על כותרות' ולכותרות הערות."
+
+msgid "The style used for additional detail data."
+msgstr "הסגנון שמשמש לנתוני פירוט נוסף."
+
 msgid "The style used for note detail data."
 msgstr "הסגנון שמשמש לנתוני פירוט הערה."
+
+msgid "The style used for the date in the Index of Dates."
+msgstr "הסגנון שמשמש לתאריך במפתח תאריכים."
+
+msgid "The style used for the events in the Index of Dates."
+msgstr "הסגנון שמשמש לאירועים במפתח תאריכים."
+
+msgid "The style used for the header in the Index of Names."
+msgstr "הסגנון שמשמש לכותרת במפתח שמות."
+
+msgid "The style used for the references in the Index of Names."
+msgstr "הסגנון שמשמש לאזכורים במפתח שמות."
+
+msgid "The style used for the header in the Index of Places."
+msgstr "הסגנון שמשמש לכותרת במפתח מקומות."
+
+msgid "The style used for the references in the Index of Places."
+msgstr "הסגנון שמשמש לאזכורים במפתח מקומות."
+
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "גיזום עמוק של אבות קדמונים של %s אנשים..."
+
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "גיזום אבות קדמונים של %s אנשים..."
+
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "קבלת אבות־קדומים מ־%s אנשים..."
+
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "אימות צאצאים של %s אנשים..."
+
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "קבלת צאצאים חסרים מ־%s אנשים..."
+
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "אימות צאצאים של %s אנשים לאחר הריצה..."
+
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "קבלת צאצאים חסרים מ־%s אנשים ..."

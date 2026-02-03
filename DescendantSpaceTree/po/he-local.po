@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-13 18:19+0100\n"
-"PO-Revision-Date: 2025-08-11 18:01+0000\n"
+"PO-Revision-Date: 2026-02-03 09:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 msgid "Descendant Space Tree"
 msgstr "אילן מרווח צאצאים"
 
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"יצירת עמוד מרשתת עם תרשים הידודי שמציג צאצאים כעץ־מרחב (Space Tree) לצפייה "
+"יעילה, גם כאשר קיימים צאצאים רבים או דורות רבים."
+
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "שושלת אבות (אב קדמון)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "שושלת אמהות (אם קדמונית)"
+
+msgid "Dark theme"
+msgstr "ערכת נושא כהה"
+
 msgid "Light theme"
 msgstr "ערכת־ נושא בהירה"
+
+msgid "Continue Descendant Tree"
+msgstr "המשך אילן צאצאים"
 
 msgid "Alternate Descendant Tree"
 msgstr "חילוף אילן צאצאים"
@@ -27,8 +47,22 @@ msgstr "חילוף אילן צאצאים"
 msgid "Descendant SpaceTree"
 msgstr "אילן מרווח צאצאים"
 
+msgid "Total descendants"
+msgstr "סך־כול צאצאים"
+
+msgid "Marriages/Families:<ul>"
+msgstr "נישואים / משפחות: <ul>"
+
 msgid "Invalid Destination Directory"
 msgstr "מחיצת יעד לא תקינה"
+
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"מחיצת יעד %s לא קיימת\n"
+"האם לייצור אותה."
 
 #, python-format
 msgid "Failed to create %s: %s"
@@ -38,11 +72,32 @@ msgstr "כשל ביצירת %s: %s"
 msgid "Failed to read proto file %s: %s"
 msgstr "כשל בקריאת קובץ תחילי %s: %s"
 
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"קובץ היעד %s כבר קיים.\n"
+"האם לכתוב עליו?"
+
 msgid "Failed writing file: "
 msgstr "כשל בכתיבת קובץ: "
 
 msgid "Descendants of"
 msgstr "צאצאים של"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "כיצד להשתמש במציג DecendantSpaceTree"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"לחווית צפייה מיטבית, נא למרב את חלון הדפדפן כך שישתמש בכל גודל המרקע.  "
+"שידוד  מחדש ישצב את התרשים לאדם המרכזי."
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr "הקשת עכבר על צומת כדי להתמקד בצאצא ולהרחיב צאצא כלשהו."
 
 #. Translators: Please do not translate ___HELP_RESET_BUTTON___.
 msgid ""
@@ -50,14 +105,48 @@ msgid ""
 "starting descendant."
 msgstr "להקיש על לחצן השיצוב ___HELP_RESET_BUTTON___ כדי לשצב לצאצא ההתחלתי."
 
+msgid ""
+"The currently selected descendant and all of the ancestors of that person "
+"are highlighted in yellow."
+msgstr "הצאצא שנבחר כעת וכל אבותיו של אותו אדם מודגשים בצהוב."
+
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
+msgid ""
+"A person may occur in different branches.  This is usually because of inter-"
+"family marriages (such as that of cousins.)  In this case, a button will "
+"also appear for that person,  ___NAV_BUTTON_CONTINUE___ or "
+"___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
+"expand descendants of this person. "
+msgstr ""
+"אדם יכול להמצא בענפי משפחה שונים. מצב זה קורה בדרך כלל בעקבות נישואים בתוך "
+"משפחה (כמו זה של בני דודים). במקרה זה, לחצן יופיע גם עבור אותו אדם, "
+"−NAV_BUTton_CONTINUE - או −NAV_BUTton_ALT - לאפשר ניווט לענף האחר. אך רק ענף "
+"אחד ירחיב את מצג מקטע צאצאיו של אדם זה. "
+
+msgid ""
+"The following open source projects are used in building this viewer, see "
+"source code LICENSE*.txt files for complete licenses and required notices."
+msgstr ""
+"מיזמי קוד פתוח הבאים משמשים בבניית משקף זה, למידע נוסף קוד המקור "
+"LICENSE*.txt קבצים לרישיונות המלאים והודעות הנדרשות."
+
 msgid "Search. . ."
 msgstr "חיפוש. . ."
 
 msgid "Include Generations"
 msgstr "הכללת דורות"
 
+msgid "Branch to expand when duplicated"
+msgstr "הענף להתרחבה בעת שוכפל"
+
+msgid "Birth/death dates will not be displayed after this year"
+msgstr "תאריכי לידה / פטירה לא יוצגו לאחר שנה זו"
+
 msgid "Theme preference"
 msgstr "העדפת ערכת נושא"
+
+msgid "Theme color preference for Space Tree"
+msgstr "העדפות צבע ערכת נושא עץ מילוי רווחים"
 
 msgid "The destination path for generated files."
 msgstr "נתיב היעד לקבצים שחוללו."
