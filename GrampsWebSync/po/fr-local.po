@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2025-12-10 22:00+0000\n"
-"Last-Translator: Baptiste de Coulon <baptiste.decoulon@ik.me>\n"
+"PO-Revision-Date: 2026-01-03 18:01+0000\n"
+"Last-Translator: Maël Chiotti "
+"<maelchiotti@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 msgid "Gramps Web Sync"
 msgstr "Synchronisation Gramps Web"
@@ -74,10 +75,20 @@ msgstr "L'installation GrampsWeb n'a pu être trouvée. Merci de vérifier l'URL
 msgid "Too many requests, please try again in a few seconds."
 msgstr "Il y trop de requêtes, merci d'essayer à nouveau dans un instant."
 
+msgid "GrampsWeb tree is disabled."
+msgstr "L'arbre de GrampsWeb est désactivé."
+
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Erreur serveur %s. Veuillez vérifier votre connexion."
+
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
 "Problème de connexion. Merci de vérifier l'adresse URL et votre connexion à "
 "Internet."
+
+msgid "Invalid server response. Please check the URL."
+msgstr "Réponse du serveur incorrecte. Veuillez vérifier l'URL."
 
 #, python-format
 msgid "Unexpected error: %s"
