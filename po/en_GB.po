@@ -22,13 +22,13 @@
 # unrecognized -> unrecognised
 # indexes (use indexes rather than indices)
 #
-# Andi Chandler <andi@gowling.com>, 2025.
+# Andi Chandler <andi@gowling.com>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-12-03 20:00+0000\n"
+"PO-Revision-Date: 2026-01-24 18:03+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -37,7 +37,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -182,11 +182,11 @@ msgstr "Of"
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
-msgstr ""
+msgstr "Attach Source"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
-msgstr ""
+msgstr "Attaches a shared source to multiple objects."
 
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
@@ -198,63 +198,63 @@ msgstr "Select filter to restrict people"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
-msgstr ""
+msgstr "Source type"
 
 #: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
-msgstr ""
+msgstr "New source"
 
 #: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
-msgstr ""
+msgstr "Existing source"
 
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
-msgstr ""
+msgstr "Select the type of source to attach"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
-msgstr ""
+msgstr "New Source Title"
 
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
-msgstr ""
+msgstr "Text of source to attach"
 
 #: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
-msgstr ""
+msgstr "Existing Source ID"
 
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr ""
+msgstr "ID of source to attach"
 
 #: AttachSourceTool/AttachSourceTool.py:157
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 #: SetAttributeTool/SetAttributeTool.py:151
 #: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
-msgstr ""
+msgstr "Processing...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
-msgstr ""
+msgstr "Attaching sources...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
-msgstr ""
+msgstr "Attaching sources..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
 msgid "Done!\n"
-msgstr ""
+msgstr "Done!\n"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
-msgstr ""
+msgstr "Avatar Generator Tool"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
-msgstr ""
+msgstr "A tool to add avatar pictures to your family tree"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
