@@ -7,7 +7,7 @@
 # gioboto <giomaussi@hotmail.com>, 2025.
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2025.
 # Hugo Vidal <69076992+hugoovf@users.noreply.github.com>, 2025.
-# Alejandro Moctezuma <moctezumaalejandro25@gmail.com>, 2025.
+# Alejandro Moctezuma <moctezumaalejandro25@gmail.com>, 2025, 2026.
 #
 # $Id: es.po 14573 2010-03-02 11:07:18Z romjerome $
 #
@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-11-02 17:36+0000\n"
+"PO-Revision-Date: 2026-01-19 19:01+0000\n"
 "Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -66,8 +66,9 @@ msgid "Generation "
 msgstr "Generación "
 
 #: AncestorFill/AncestorFill.py:206
+#, fuzzy
 msgid "Number of Ancestors found "
-msgstr ""
+msgstr "Número de antepasados encontrados "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
@@ -139,8 +140,9 @@ msgid "The style used for the title of the page."
 msgstr ""
 
 #: AssociationsTool/associationstool.gpr.py:36
+#, fuzzy
 msgid "Check Associations data"
-msgstr ""
+msgstr "Verificar datos de Asociaciones"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
