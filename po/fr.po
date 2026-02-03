@@ -32,13 +32,15 @@
 # geoglorus <pierre+github@laminette.net>, 2025.
 # "S-G." <grimaitres@gmail.com>, 2025.
 # Baptiste de Coulon <baptiste.decoulon@ik.me>, 2025.
+# Maël Chiotti <maelchiotti@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-12-10 22:00+0000\n"
-"Last-Translator: Baptiste de Coulon <baptiste.decoulon@ik.me>\n"
+"PO-Revision-Date: 2026-01-03 18:01+0000\n"
+"Last-Translator: Maël Chiotti <maelchiotti@users.noreply.hosted.weblate.org>"
+"\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -46,7 +48,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -15229,12 +15231,12 @@ msgstr "Il y trop de requêtes, merci d'essayer à nouveau dans un instant."
 
 #: GrampsWebSync/grampswebsync.py:378
 msgid "GrampsWeb tree is disabled."
-msgstr ""
+msgstr "L'arbre de GrampsWeb est désactivé."
 
 #: GrampsWebSync/grampswebsync.py:382
 #, python-format
 msgid "Server error %s. Please check your connection."
-msgstr ""
+msgstr "Erreur serveur %s. Veuillez vérifier votre connexion."
 
 #: GrampsWebSync/grampswebsync.py:387
 msgid "Connection failed. Please check the URL and your internet connection."
@@ -15244,7 +15246,7 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:391
 msgid "Invalid server response. Please check the URL."
-msgstr ""
+msgstr "Réponse du serveur incorrecte. Veuillez vérifier l'URL."
 
 #: GrampsWebSync/grampswebsync.py:394
 #, python-format
@@ -16745,12 +16747,14 @@ msgid "Activate the birth label."
 msgstr "Activer l'étiquette de naissance."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
+#, fuzzy
 msgid "Birth label along path"
-msgstr ""
+msgstr "Étiquette de naissance le long du chemin"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:28
+#, fuzzy
 msgid "The birth label is aligned to the individual line."
-msgstr ""
+msgstr "L'étiquette de naissance est alignée avec la ligne individuelle."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:29
 #: LifeLineChartView/_dummy_translation_string_po.py:32
@@ -16804,11 +16808,13 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:39
 msgid "Wrap words in birth label"
-msgstr ""
+msgstr "Renvoi à la ligne dans l'étiquette de naissance"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:40
 msgid "The birth label content is wrapped where possible."
 msgstr ""
+"Le contenu de l'étiquette de naissance est renvoyé à la ligne quand c'est "
+"possible."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:42
 msgid "Birth label anchor"
@@ -16816,7 +16822,7 @@ msgstr "Ancrage de l'étiquette de naissance"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:43
 msgid "Text alignment of the birth label."
-msgstr ""
+msgstr "Alignement du texte de l'étiquette de naissance."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:45
 #: LifeLineChartView/_dummy_translation_string_po.py:65
@@ -16838,42 +16844,50 @@ msgstr "Angle de rotation de l'étiquette de décès"
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
 msgstr ""
+"L'étiquette de décès est écrite dans un cadre de texte pivoté par cette "
+"valeur."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
-msgstr ""
+msgstr "Décalage horizontal de l'étiquette de décès"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:54
 msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
+"L'étiquette de décès est décalée horizontalement de cette valeur, qui est "
+"donnée relativement à la taille de la police."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:56
 msgid "Vertical offset of death label"
-msgstr ""
+msgstr "Décalage vertical de l'étiquette de décès"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:57
 msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
+"L'étiquette de décès est décalée verticalement de cette valeur, qui est "
+"donnée relativement à la taille de la police."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:59
 msgid "Wrap words in death label"
-msgstr ""
+msgstr "Renvoi à la ligne dans l'étiquette de décès"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:60
 msgid "The death label content is wrapped where possible."
 msgstr ""
+"Le contenu de l'étiquette de décès est renvoyé à la ligne quand c'est "
+"possible."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:62
 msgid "Death label anchor"
-msgstr ""
+msgstr "Ancre de l'étiquette de décès"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:63
 msgid "Text alignment of the death label."
-msgstr ""
+msgstr "Alignement du texte de l'étiquette de décès."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:68
 msgid "Show marriage label"
@@ -16926,7 +16940,7 @@ msgstr "Plus doux"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:82
 msgid "Upper year minimum margin"
-msgstr ""
+msgstr "Marge minimale de l'année supérieure"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:83
 msgid ""
