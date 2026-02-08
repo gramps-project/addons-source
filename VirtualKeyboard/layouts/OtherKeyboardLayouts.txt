@@ -1,0 +1,19 @@
+"""
+# JCUKEN (Russian) Cyrillic layout based on letter frequency
+JCUKEN_ROWS = [
+    "ё1234567890-=", "йцукенгшщзхъ",
+    "фывапролджэ", "ячсмитьбю.",]
+JCUKEN_SHIFT_ROWS = [
+    "Ё!"№;%:?*()_+", "ЙЦУКЕНГШЩЗХЪ",
+    "ФЫВАПРОЛДЖЭ", "ЯЧСМИТЬБЮ,",]
+"""
+
+'''
+Other Common Layouts
+- **Nordic**: QWERTY variant with ÆØÅÖ.
+- **Spanish**: QWERTY + Ñ, ¡¿.
+- **Italian**: QWERTY with accent dead keys.
+- **Russian (JCUKEN)**: Cyrillic phonetic top row.
+- **Dvorak/Colemak**: Ergonomic English optimizations. [thekapco](https://www.thekapco.com/blogs/article/keyboard-layouts-by-country-everything-you-need-to-know-about-typing-in-different-languages-and-regions)
+'''
+
