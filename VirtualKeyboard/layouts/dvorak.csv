@@ -1,0 +1,72 @@
+# VirtualKeyboard External Layout Specification
+# spec_version: 1.2.0
+# file: dvorak.csv
+# English DVORAK keyboard (basic, no AltGr)
+
+@set
+@id,EN_DVORAK
+@language,en
+@language_iso3,eng
+@region,US
+@button,Dvorak
+@label_native,English (Dvorak)
+@label_en,DVORAK
+@tooltip_native,Dvorak ergonomic optimization
+@tooltip_en,Dvorak ergonomic optimization
+@default_layout,dvorak
+
+@layout
+@id,DVORAK
+@label,dvorak
+@label_en,dvorak
+@tooltip_native,ergonomic keyboard layout
+@tooltip_en,ergonomic keyboard layout
+@row,"`1234567890[]  "
+@row," ',.pyfgcrl/=\ "
+@row,"  [aoeuidhtns-]  "
+@row,"   ;qjkxbmwvz   "
+
+@layout
+@id,DVORAK_SHIFT
+@label,DVORAK
+@label_en,DVORAK
+@tooltip_native,Uppercase letters and digits
+@tooltip_en,Uppercase letters and digits
+@row,"~!@#$%^&*(){}  "
+@row," "";:PYFGCRL?+| "
+@row,"  {AOEUIDHTNS_}  "
+@row,"   :QJKXBMWVZ   "
+
+@layout
+@id,SPECIAL
+@label,Special
+@label_en,Special
+@tooltip_native,Special characters
+@tooltip_en,Special characters
+# id SPECIAL is hard-coded in the main module. No need for `@row, "" ` keymapping definitions unless you want to supersede that default
+
+
+@layout
+@id,COMPOSED
+@label,Compose
+@label_en,Compose
+@tooltip_native,Composed and diacritic characters
+@tooltip_en,Composed and diacritic characters
+# id COMPOSED is hard-coded in the main module. No need for `@row, "" ` keymapping definitions unless you want to supersede that default
+
+@layout
+@id,QWERTY
+@label,qwerty
+@label_en,Qwerty
+@tooltip_native,standard Qwerty keyboard layout
+@tooltip_en,standard Qwerty keyboard layout
+# id QWERTY is hard-coded in the main module. No need for `@row, "" ` keymapping definitions unless you want to supersede that default
+
+@layout
+@id,QWERTY_SHIFT
+@label,QWERTY
+@label_en,QWERTY
+@tooltip_native,Uppercase letters and digits
+@tooltip_en,Uppercase letters and digits
+# id QWERTY_SHIFT is hard-coded in the main module. No need for `@row, "" ` keymapping definitions unless you want to supersede that default
+
