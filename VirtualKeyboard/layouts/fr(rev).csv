@@ -1,0 +1,66 @@
+# VirtualKeyboard External Layout Specification
+# spec_version: 1.2.0
+# file: fr.csv
+# French AZERTY keyboard (basic, no AltGr)
+
+@set
+@id,FR_AZERTY²
+@language,fr
+@language_iso3,fra
+@region,FR
+@button,🇫🇷²
+@label_native,Français
+@label_en,French
+@tooltip_native,Clavier français AZERTY
+@tooltip_en,French AZERTY keyboard
+@default_layout,AZERTY
+
+@layout
+@id,AZERTY
+@label,azerty
+@label_en,azerty
+@tooltip_native,Disposition française standard
+@tooltip_en,Standard French layout
+@row,"²&é~""#'{([-|è`_\ç^à@)]=}  "
+@row," aze€rtyuiop^$¤ "
+@row,"  qsdfghjklmù*  "
+@row,"   <wxcvbn,;:!   "
+
+@layout
+@id,AZERTY_SHIFT
+@label,AZERTY
+@label_en,AZERTY
+@tooltip_native,Majuscules et chiffres
+@tooltip_en,Uppercase letters and digits
+@row,"³1234567890°+  "
+@row," AZERTYUIOP¨£ "
+@row,"  QSDFGHJKLM%µ  "
+@row,"   >WXCVBN?./§   "
+
+@layout
+@id,AltGr
+@label,AltGr
+@label_en,AltGr
+@tooltip_native,glyphes graphiques alternatifs
+@tooltip_en,alternate graphic letter glyphs
+@row,"^&@#€`™¶•_–\|/”„‚[]÷≠"
+@row,"Ż’‚źŹóÓ(){}"
+@row,"ŁęĘąĄ$~;'"
+@row,"«»śŚńŃćĆ-—"
+
+@layout
+@id,SPECIAL
+@label,Special
+@label_en,Special
+@tooltip_native,Caractères spéciaux
+@tooltip_en,Special characters
+# id SPECIAL is hard-coded in the main module. No need for `@row, "" ` keymapping definitions unless you want to supersede that default
+
+@layout
+@id,COMPOSED
+@label,Compose
+@label_en,Compose
+@tooltip_native,Caractères composés et diacritiques
+@tooltip_en,Composed and diacritic characters
+# id COMPOSED is hard-coded in the main module. No need for `@row, "" ` keymapping definitions unless you want to supersede that default
+

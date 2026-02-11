@@ -1,0 +1,59 @@
+# VirtualKeyboard External Layout Specification
+# spec_version: 1.2.0
+# file: pl.csv
+# Polish QWERTY keyboard (basic, no AltGr)
+
+@set
+@id,PL_QWERTY
+@language,pl
+@language_iso3,pol
+@region,PL
+@button,🇵🇱
+@label_native,Polski
+@label_en,Polish
+@tooltip_native,Polska klawiatura QWERTY
+@tooltip_en,Polish 214 (QWERTY-like) keyboard
+@default_layout,ALTGR
+
+
+@layout
+@id,QWERTY
+@label,qwerty
+@label_en,qwerty
+@tooltip_native,Standardowy układ QWERTY
+@tooltip_en,Standard QWERTY layout
+# id QWERTY is hard-coded in the main module. No need for `@row, "" ` keymapping definitions unless you want to supersede that default
+
+@layout
+@id,QWERTY_SHIFT
+@label,QWERTY
+@label_en,QWERTY
+@tooltip_native,Wielkie litery i cyfry
+@tooltip_en,Uppercase letters and digits
+# id QWERTY_SHIFT is hard-coded in the main module. No need for `@row, "" ` keymapping definitions unless you want to supersede that default
+
+@layout
+@id,ALTGR
+@label,AltGr
+@label_en,AltGr
+@tooltip_native,alternatywne graficzne glify literowe
+@tooltip_en,alternate graphic letter glyphs
+@row, "ą ć ę ł ń ó ś ź ż"
+@row, "Ą Ć Ę Ł Ń Ó Ś Ź Ż"
+
+@layout
+@id,SPECIAL
+@label,Specjalny
+@label_en,Special
+@tooltip_native,Znaki specjalne
+@tooltip_en,Special characters
+# id SPECIAL is hard-coded in the main module. No need for `@row, "" ` keymapping definitions unless you want to supersede that default
+
+@layout
+@id,COMPOSED
+@label,Komponować
+@label_en,Compose
+@tooltip_native,Znaki złożone i diakrytyczne
+@tooltip_en,Composed and diacritic characters
+# id COMPOSED is hard-coded in the main module. No need for `@row, "" ` keymapping definitions unless you want to supersede that default
+
