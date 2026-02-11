@@ -59,7 +59,7 @@ SPECIAL_ROWS = [
 ]
 
 MATH_ROWS = [ #https://math.typeit.org/
-    "⟨⟩⟦⟧⌊⌈⌋⌉ ↑⇐←↦ ℰℓℒℳ ’“”–—",
+    "⟨⟩⟦⟧⌊⌈⌋⌉ ↑⇐←↦ ℰℓℒℳ '""–—",
     "½¼∕∤⊥∥‰ø≪≫~⊢⊨□◇ ℂℕℙℚℝℤ",
     "ΓΔΛΞΠΣΦΨΩ Åℏ ∞∘∂∫∮∯∇ ′″‴",
     "αβγδεζηθκλμνξπρστυφχψω",
@@ -453,6 +453,11 @@ class VirtualKeyboard(Gramplet):
 
         self.current_layout = None
         self.layout_defs = {}
+        
+        # Dictionary to store button metadata (replaces set_data/get_data)
+        self.button_metadata = {}
+        self.double_click_timers = {}
+        
         self.gui.uistate.connect("filter-changed", self.update)
         self.dbstate.connect("database-changed", self.update)
         self.build_interface()
@@ -490,34 +495,40 @@ class VirtualKeyboard(Gramplet):
         )
         vbox.pack_start(self.keyboard_vbox, True, True, 0)
 
-        # ---- Bottom control bar ----
+        # ---- Bottom control bar with enhanced layout set buttons ----
         control_hbox = Gtk.Box(spacing=4)
+        
+        # Build layout set buttons with context menus
+        self.flag_buttons = []
+        self.layout_set_buttons = {}  # Map set_id to button widget
+        
+        # Initialize with built-in layout sets
+        default_sets = ["gb", "fr", "de"]
+        
+        for set_id in default_sets:
+            btn = self.create_layout_set_button(set_id)
+            if btn:
+                self.layout_set_buttons[set_id] = btn
+                self.flag_buttons.append((set_id, btn))
+                control_hbox.pack_start(btn, False, False, 0)
+        
+        # Add spacer
+        spacer = Gtk.Box()
+        control_hbox.pack_start(spacer, True, True, 0)
+        
+        # Original control buttons
         btns = [
-            ("🇬🇧", self.on_flag_clicked, "gb"),
-            ("🇫🇷", self.on_flag_clicked, "fr"),
-            ("🇩🇪", self.on_flag_clicked, "de"),
             ("⌫", self.on_backspace),
             (_("⌧ Clear"), self.on_clear),
             (_("␣ Space"), self.on_space),
             (_("⇥ Tab"), self.on_tab),
             ("↵", self.on_newline),
             (_("📋 Copy"), self.on_copy_clipboard),
-            # (_("⎋ Esc"), self.on_copy_clipboard),
         ]
 
-        self.flag_buttons = []
-
-        for item in btns:
-            if len(item) == 2:
-                label, callback = item
-                btn = Gtk.Button(label=label)
-                btn.connect("clicked", callback)
-            else:
-                label, callback, set_id = item
-                btn = Gtk.Button(label=label)
-                btn.connect("clicked", callback, set_id)
-                self.flag_buttons.append((set_id, btn))
-
+        for label, callback in btns:
+            btn = Gtk.Button(label=label)
+            btn.connect("clicked", callback)
             control_hbox.pack_start(btn, False, False, 0)
 
         vbox.pack_start(control_hbox, False, False, 0)
@@ -533,6 +544,251 @@ class VirtualKeyboard(Gramplet):
         vbox.show_all()
         self.update_flag_buttons()
 
+    def create_layout_set_button(self, set_id):
+        """
+        Create a button for a layout set with:
+        - Left-click: activate that layout set
+        - Right-click: show context menu with all available layout sets
+        - Double-click: insert button text into buffer
+        """
+        # Get the layout set definition
+        sets = get_effective_layout_sets()
+        set_def = sets.get(set_id)
+        
+        if not set_def:
+            return None
+        
+        # Get button label from metadata (default to set_id)
+        button_label = set_def.get("button", set_id)
+        
+        # Create button
+        btn = Gtk.Button(label=button_label)
+        
+        # Store button metadata in dictionary
+        self.button_metadata[id(btn)] = {
+            "set_id": set_id,
+            "button_label": button_label,
+            "click_count": 0,
+        }
+        
+        # Set tooltip from metadata
+        tooltip = set_def.get("tooltips", {}).get("tooltip_en", set_id)
+        btn.set_tooltip_text(tooltip)
+        
+        # Connect signals
+        btn.connect("clicked", self.on_layout_set_button_clicked, set_id)
+        btn.connect("button-press-event", self.on_layout_set_button_press, set_id)
+        btn.connect("button-release-event", self.on_layout_set_button_release, set_id, id(btn))
+        
+        return btn
+
+    def on_layout_set_button_clicked(self, btn, set_id):
+        """
+        Handle left-click on layout set button.
+        Activate the layout set (but not on double-click).
+        """
+        btn_id = id(btn)
+        
+        # Skip if this is part of a double-click
+        if btn_id in self.button_metadata and self.button_metadata[btn_id]["click_count"] == 2:
+            return
+            
+        if set_id == self.current_layout_set:
+            return
+        
+        self.current_layout_set = set_id
+        self.update_flag_buttons()
+        self.build_layout_buttons()
+        self.select_default_layout()
+        
+        if self.current_layout:
+            for layout_id, layout_btn in self.layout_buttons:
+                layout_btn.set_active(layout_id == self.current_layout)
+            self.build_keyboard(self.current_layout)
+        else:
+            for child in self.keyboard_vbox.get_children():
+                self.keyboard_vbox.remove(child)
+
+    def on_layout_set_button_press(self, btn, event, set_id):
+        """
+        Handle right-click to show context menu of available layout sets.
+        """
+        if event.button == 3:  # Right-click
+            self.show_layout_set_menu(btn, event, set_id)
+            return True
+        return False
+
+    def on_layout_set_button_release(self, btn, event, set_id, btn_id):
+        """
+        Handle double-click to insert button text into buffer.
+        """
+        if event.button == 1:  # Left-click
+            if btn_id not in self.button_metadata:
+                return False
+                
+            metadata = self.button_metadata[btn_id]
+            metadata["click_count"] += 1
+            
+            # Check for double-click (2 clicks within short time)
+            if metadata["click_count"] == 2:
+                # Insert button text at cursor position
+                button_label = metadata["button_label"]
+                cursor_pos = self.display.get_position()
+                current_text = self.display.get_text()
+                new_text = current_text[:cursor_pos] + button_label + current_text[cursor_pos:]
+                self.buffer = new_text
+                self.display.set_text(self.buffer)
+                # Move cursor to after the inserted text
+                self.display.set_position(cursor_pos + len(button_label))
+                metadata["click_count"] = 0
+                return True
+            else:
+                # Reset counter after timeout
+                if btn_id in self.double_click_timers:
+                    GObject.source_remove(self.double_click_timers[btn_id])
+                
+                timer_id = GObject.timeout_add(300, self._reset_click_count, btn_id)
+                self.double_click_timers[btn_id] = timer_id
+        return False
+
+    def _reset_click_count(self, btn_id):
+        """Reset click count for double-click detection."""
+        if btn_id in self.button_metadata:
+            self.button_metadata[btn_id]["click_count"] = 0
+        if btn_id in self.double_click_timers:
+            del self.double_click_timers[btn_id]
+        return False
+
+    def show_layout_set_menu(self, btn, event, current_set_id):
+        """
+        Show a context menu of all available layout sets.
+        Menu items show: button : tooltip_native
+        
+        Menu items must be unique. In case of duplicates, CSVs supersede built-ins.
+        """
+        menu = Gtk.Menu()
+        
+        sets = get_effective_layout_sets()
+        
+        # Exclude "oops" set (error fallback only)
+        available_sets = [s for s in sorted(sets.keys()) if s != "oops"]
+        
+        # Separate built-in and CSV layout sets
+        builtin_sets = []
+        csv_sets = []
+        
+        for set_id in available_sets:
+            # Check if this is a CSV layout (exists in available_layouts)
+            csv_layouts = get_available_layouts()
+            if set_id in csv_layouts:
+                csv_sets.append(set_id)
+            else:
+                builtin_sets.append(set_id)
+        
+        # Build menu labels: button : tooltip_native
+        # Track unique labels, with CSV superseding built-in
+        menu_items = {}  # label -> set_id
+        
+        # Add built-in sets first
+        for set_id in builtin_sets:
+            set_def = sets[set_id]
+            button_symbol = set_def.get("button", set_id)
+            tooltip_native = set_def.get("tooltips", {}).get("tooltip_native", set_id)
+            menu_label = f"{button_symbol} : {tooltip_native}"
+            
+            if menu_label not in menu_items:
+                menu_items[menu_label] = set_id
+        
+        # Add CSV sets (these override built-ins with same label)
+        for set_id in csv_sets:
+            set_def = sets[set_id]
+            button_symbol = set_def.get("button", set_id)
+            tooltip_native = set_def.get("tooltips", {}).get("tooltip_native", set_id)
+            menu_label = f"{button_symbol} : {tooltip_native}"
+            
+            # CSV supersedes built-in
+            menu_items[menu_label] = set_id
+        
+        # Add unique menu items to menu
+        for menu_label in sorted(menu_items.keys()):
+            set_id = menu_items[menu_label]
+            
+            menu_item = Gtk.MenuItem(label=menu_label)
+            # Capture btn with default parameter to avoid closure issues
+            menu_item.connect("activate", 
+                            lambda mi, sid=set_id, clicked_button=btn: 
+                            self.on_layout_set_menu_selected(sid, clicked_button))
+            menu.append(menu_item)
+        
+        menu.show_all()
+        menu.popup_at_pointer(event)
+        
+        return True 
+
+    def on_layout_set_menu_selected(self, set_id, clicked_btn):
+        """
+        Handle menu selection to change layout set.
+        The clicked button adopts the new set's button metadata.
+        """
+        sets = get_effective_layout_sets()
+        set_def = sets.get(set_id)
+        
+        if not set_def:
+            return
+        
+        # Get the old set_id that this button was mapped to
+        btn_id = id(clicked_btn)
+        old_set_id = None
+        
+        if btn_id in self.button_metadata:
+            old_set_id = self.button_metadata[btn_id]["set_id"]
+        
+        # Update button label with new set's button metadata
+        new_button_label = set_def.get("button", set_id)
+        clicked_btn.set_label(new_button_label)
+        
+        # Update button metadata
+        if btn_id in self.button_metadata:
+            self.button_metadata[btn_id]["button_label"] = new_button_label
+            self.button_metadata[btn_id]["set_id"] = set_id
+        
+        # Update tooltip
+        tooltip = set_def.get("tooltips", {}).get("tooltip_en", set_id)
+        clicked_btn.set_tooltip_text(tooltip)
+        
+        # Update the button mapping in layout_set_buttons
+        if old_set_id and old_set_id in self.layout_set_buttons:
+            del self.layout_set_buttons[old_set_id]
+        self.layout_set_buttons[set_id] = clicked_btn
+        
+        # Update flag_buttons list
+        self.flag_buttons = [(s, b) for s, b in self.flag_buttons if b != clicked_btn]
+        self.flag_buttons.append((set_id, clicked_btn))
+        
+        # DISCONNECT old signal handlers and RECONNECT with new set_id
+        clicked_btn.disconnect_by_func(self.on_layout_set_button_clicked)
+        clicked_btn.disconnect_by_func(self.on_layout_set_button_press)
+        clicked_btn.disconnect_by_func(self.on_layout_set_button_release)
+        
+        # Reconnect with the NEW set_id
+        clicked_btn.connect("clicked", self.on_layout_set_button_clicked, set_id)
+        clicked_btn.connect("button-press-event", self.on_layout_set_button_press, set_id)
+        clicked_btn.connect("button-release-event", self.on_layout_set_button_release, set_id, btn_id)
+        
+        # Activate the layout set
+        self.current_layout_set = set_id
+        self.update_flag_buttons()
+        self.build_layout_buttons()
+        self.select_default_layout()
+        
+        if self.current_layout:
+            for layout_id, layout_btn in self.layout_buttons:
+                layout_btn.set_active(layout_id == self.current_layout)
+            self.build_keyboard(self.current_layout)
+        else:
+            for child in self.keyboard_vbox.get_children():
+                self.keyboard_vbox.remove(child)
+                
     def select_default_layout(self):
         sets = get_effective_layout_sets()
         set_def = sets.get(self.current_layout_set, {})
@@ -673,49 +929,67 @@ class VirtualKeyboard(Gramplet):
         self.keyboard_vbox.show_all()
 
     def update_flag_buttons(self):
+        """
+        Update flag button sensitivity based on current layout set.
+        """
         for set_id, btn in self.flag_buttons:
-            btn.set_sensitive(set_id != self.current_layout_set)
-
-    def on_flag_clicked(self, btn, set_id):
-        if set_id == self.current_layout_set:
-            return
-
-        self.current_layout_set = set_id
-        self.update_flag_buttons()
-        self.build_layout_buttons()
-        self.select_default_layout()
-
-        if self.current_layout:
-            for layout_id, btn in self.layout_buttons:
-                btn.set_active(layout_id == self.current_layout)
-            self.build_keyboard(self.current_layout)
-        else:
-            for child in self.keyboard_vbox.get_children():
-                self.keyboard_vbox.remove(child)
+            # Make all buttons sensitive (they can be right-clicked to switch)
+            btn.set_sensitive(True)
 
     def on_char_clicked(self, btn, ch):
-        self.buffer += ch
+        """Insert character at cursor position in display field."""
+        # Get current cursor position
+        cursor_pos = self.display.get_position()
+        # Get current text
+        current_text = self.display.get_text()
+        # Insert character at cursor position
+        new_text = current_text[:cursor_pos] + ch + current_text[cursor_pos:]
+        # Update buffer and display
+        self.buffer = new_text
         self.display.set_text(self.buffer)
+        # Move cursor to after the inserted character
+        self.display.set_position(cursor_pos + 1)
 
     def on_backspace(self, btn):
-        self.buffer = self.buffer[:-1]
-        self.display.set_text(self.buffer)
-
+        """Delete character before cursor position."""
+        cursor_pos = self.display.get_position()
+        current_text = self.display.get_text()
+        if cursor_pos > 0:
+            new_text = current_text[:cursor_pos-1] + current_text[cursor_pos:]
+            self.buffer = new_text
+            self.display.set_text(self.buffer)
+            self.display.set_position(cursor_pos - 1)
+            
     def on_clear(self, btn):
         self.buffer = ""
         self.display.set_text(self.buffer)
 
     def on_space(self, btn):
-        self.buffer += " "
+        """Insert space at cursor position."""
+        cursor_pos = self.display.get_position()
+        current_text = self.display.get_text()
+        new_text = current_text[:cursor_pos] + " " + current_text[cursor_pos:]
+        self.buffer = new_text
         self.display.set_text(self.buffer)
+        self.display.set_position(cursor_pos + 1)
 
     def on_tab(self, btn):
-        self.buffer += "\t"
+        """Insert tab at cursor position."""
+        cursor_pos = self.display.get_position()
+        current_text = self.display.get_text()
+        new_text = current_text[:cursor_pos] + "\t" + current_text[cursor_pos:]
+        self.buffer = new_text
         self.display.set_text(self.buffer)
+        self.display.set_position(cursor_pos + 1)
 
     def on_newline(self, btn):
-        self.buffer += "\n"
+        """Insert newline at cursor position."""
+        cursor_pos = self.display.get_position()
+        current_text = self.display.get_text()
+        new_text = current_text[:cursor_pos] + "\n" + current_text[cursor_pos:]
+        self.buffer = new_text
         self.display.set_text(self.buffer)
+        self.display.set_position(cursor_pos + 1)
 
     def on_copy_clipboard(self, btn):
         clip = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)

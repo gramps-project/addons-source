@@ -37,9 +37,15 @@ Available for docking in all views except: Relationships, Charts, and Geography
 - Add configuration schema metadata and persistence for selected layout set and options​
 - Auto-select default layout set from Gramps UI language, with English fallback​
 
+1.3.0
+- Right-click any flag button to view to switch language choosing buttons.
+- CSV Layout Support: Automatically discovers and loads custom keyboard layouts from CSV files 
+- Double-Click Symbol Insertion: Double-click any flag button to insert its symbol (flag emoji or text) 
+- Settable Insert point, in addition to original appending
+- add Polish and Dvorak sample CSVs
+
 Not Yet Implemented
-- External CSV selector for layouts
 - Mixed input : hardware Keyboard and virtual keyboard
-- Settable Insert point
 - Toggle (using Shift/CapsLock) between Upper and Lower keymaps 
-- move French and German out of hard-core to external files
+
+

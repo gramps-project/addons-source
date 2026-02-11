@@ -1,7 +1,8 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2026 Brian McCullough (prompting Perplexity AI Assistant)
+# Copyright (C) 2026 Brian McCullough
+#      (prompting Perplexity AI Assistant, Cursor and Copilot)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -50,7 +51,7 @@ register(
     expand=False,
     gramplet="VirtualKeyboard",
     gramplet_title=_("Virtual Keyboard"),
-    version = '1.1.3',
+    version = '1.3.0',
     gramps_target_version=major_version,
     navtypes=["Dashboard", "Person", "Family", "Event", "Place", "Source", "Citation", "Repository", "Media", "Note"],
 #    help_url="Addon:Virtual_Keyboard",
