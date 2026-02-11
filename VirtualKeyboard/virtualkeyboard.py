@@ -186,7 +186,7 @@ LayoutSets = {
             ("AZERTY_ROWS", "azerty",
                 _("azerty"), _("Disposition française standard")),
             ("AZERTY_SHIFT_ROWS", "azerty_shift",
-                _("AZERTY1"), _("Majuscules et chiffres")),
+                _("AZERTY"), _("Majuscules et chiffres")),
             ("SPECIAL_ROWS", "special",
                 _("Special"), _("Caractères spéciaux")),
             ("COMPOSED_ROWS", "composed",
@@ -209,7 +209,7 @@ LayoutSets = {
         },
         "layouts": [
             ("QWERTZ_ROWS", "qwertz",
-                _("QWERTZ"),
+                _("qwertz"),
                 _("Standard German keyboard layout")),
             ("QWERTZ_SHIFT_ROWS", "qwertz_shift",
                 _("Shift QWERTZ"),
