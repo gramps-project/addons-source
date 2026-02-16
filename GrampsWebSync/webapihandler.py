@@ -99,6 +99,7 @@ class WebApiHandler:
         username: str,
         password: str,
         download_callback: Callable | None = None,
+        extra_headers: dict[str, str] | None = None,
     ) -> None:
         """Initialize given URL, user name, and password."""
         self.url = url.rstrip("/")
@@ -106,6 +107,7 @@ class WebApiHandler:
         self.password = password
         self._access_token: str | None = None
         self.download_callback = download_callback
+        self._extra_headers = extra_headers or {}
         # Determine the appropriate SSL context based on platform
         self._ctx = (
             create_macos_ssl_context() if platform.system() == "Darwin" else None
@@ -114,6 +116,10 @@ class WebApiHandler:
         # get and cache the access token
         self.fetch_token()
         self._metadata: dict | None = None
+
+    def _headers(self, headers: dict[str, str]) -> dict[str, str]:
+        """Merge extra headers (e.g. Cloudflare Access) into request headers."""
+        return {**self._extra_headers, **headers}
 
     @property
     def access_token(self) -> str:
@@ -150,7 +156,7 @@ class WebApiHandler:
         LOG.debug("Fetching metadata from the server")
         req = Request(
             f"{self.url}/metadata/",
-            headers={"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"},
+            headers=self._headers({"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"}),
         )
         with urlopen(req, context=self._ctx) as res:
             self._metadata = json.load(res)
@@ -162,7 +168,7 @@ class WebApiHandler:
         req = Request(
             f"{self.url}/token/",
             data=data.encode(),
-            headers={"Content-Type": "application/json", "User-Agent": "GrampsWebSync"},
+            headers=self._headers({"Content-Type": "application/json", "User-Agent": "GrampsWebSync"}),
         )
         try:
             with urlopen(req, context=self._ctx) as res:
@@ -222,11 +228,11 @@ class WebApiHandler:
             req = Request(
                 endpoint,
                 data=data,
-                headers={
+                headers=self._headers({
                     "Content-Type": "application/json",
                     "Authorization": f"Bearer {self.access_token}",
                     "User-Agent": "GrampsWebSync"
-                },
+                }),
             )
             json_response: dict | None = None
             with urlopen(req, context=self._ctx) as res:
@@ -261,7 +267,7 @@ class WebApiHandler:
         endpoint = f"{self.url}/tasks/{task_id}"
         req = Request(
             endpoint,
-            headers={"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"},
+            headers=self._headers({"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"}),
         )
         try:
             with urlopen(req, context=self._ctx) as res:
@@ -287,7 +293,7 @@ class WebApiHandler:
         """Get a list of remote media objects with missing files."""
         req = Request(
             f"{self.url}/media/?filemissing=1",
-            headers={"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"},
+            headers=self._headers({"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"}),
         )
         try:
             with urlopen(req, context=self._ctx) as res:
@@ -306,11 +312,11 @@ class WebApiHandler:
     ):
         """Download a file."""
         if token_url:
-            req = Request(f"{url}?jwt={self.access_token}", headers={"User-Agent": "GrampsWebSync"})
+            req = Request(f"{url}?jwt={self.access_token}", headers=self._headers({"User-Agent": "GrampsWebSync"}))
         else:
             req = Request(
                 url,
-                headers={"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"},
+                headers=self._headers({"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"}),
             )
         try:
             with urlopen(req, context=self._ctx) as res:
@@ -357,7 +363,7 @@ class WebApiHandler:
         req = Request(
             url,
             data=fobj,
-            headers={"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"},
+            headers=self._headers({"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"}),
             method="PUT",
         )
         try:

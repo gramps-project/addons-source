@@ -111,6 +111,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.config.register("credentials.url", "")
         self.config.register("credentials.username", "")
         self.config.register("credentials.timestamp", 0)
+        self.config.register("credentials.cf_client_id", "")
+        self.config.register("credentials.cf_client_secret", "")
         self.config.load()
 
         self.assistant = Gtk.Assistant()
@@ -128,11 +130,15 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.url = self.config.get("credentials.url")
         self.username = self.config.get("credentials.username")
         self.password = self.get_password()
+        self.cf_client_id = self.config.get("credentials.cf_client_id")
+        self.cf_client_secret = self.config.get("credentials.cf_client_secret")
         self.loginpage = LoginPage(
             self.assistant,
             url=self.url,
             username=self.username,
             password=self.password,
+            cf_client_id=self.cf_client_id,
+            cf_client_secret=self.cf_client_secret,
         )
         self.add_page(self.loginpage, Gtk.AssistantPageType.CONTENT, _("Login"))
 
@@ -349,11 +355,21 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
             self.conclusion.set_complete()
 
+    def _get_cf_headers(self) -> dict[str, str]:
+        """Build Cloudflare Access headers from login page fields."""
+        headers = {}
+        cf_id = self.loginpage.cf_client_id.get_text().strip()
+        cf_secret = self.loginpage.cf_client_secret.get_text().strip()
+        if cf_id and cf_secret:
+            headers["CF-Access-Client-Id"] = cf_id
+            headers["CF-Access-Client-Secret"] = cf_secret
+        return headers
+
     def test_connection(self, url: str, username: str, password: str) -> bool:
         """Test the connection and authentication. Return True if successful."""
         try:
             # Try to create API handler
-            self._api = WebApiHandler(url, username, password, None)
+            self._api = WebApiHandler(url, username, password, None, extra_headers=self._get_cf_headers())
 
             # Test the connection by making a simple API call
             self.api.get_permissions()
@@ -594,6 +610,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self.config.set("credentials.timestamp", 0)
         self.config.set("credentials.url", url)
         self.config.set("credentials.username", username)
+        self.config.set("credentials.cf_client_id", self.loginpage.cf_client_id.get_text().strip())
+        self.config.set("credentials.cf_client_secret", self.loginpage.cf_client_secret.get_text().strip())
         set_password(url, username, password)
         self.config.save()
 
@@ -754,7 +772,7 @@ class IntroductionPage(Page):
 class LoginPage(Page):
     """A page to provide server credentials."""
 
-    def __init__(self, assistant, url, username, password):
+    def __init__(self, assistant, url, username, password, cf_client_id="", cf_client_secret=""):
         super().__init__(assistant)
         self.set_spacing(12)
 
@@ -790,6 +808,29 @@ class LoginPage(Page):
         self.password.set_input_purpose(Gtk.InputPurpose.PASSWORD)
         grid.attach(self.password, 1, 2, 1, 1)
 
+        # Cloudflare Access fields (optional)
+        cf_label = Gtk.Label()
+        cf_label.set_markup("<i>" + _("Cloudflare Access (optional):") + "</i>")
+        cf_label.set_margin_top(12)
+        grid.attach(cf_label, 0, 3, 2, 1)
+
+        label = Gtk.Label(label=_("CF Client ID: "))
+        grid.attach(label, 0, 4, 1, 1)
+        self.cf_client_id = Gtk.Entry()
+        if cf_client_id:
+            self.cf_client_id.set_text(cf_client_id)
+        self.cf_client_id.set_hexpand(True)
+        grid.attach(self.cf_client_id, 1, 4, 1, 1)
+
+        label = Gtk.Label(label=_("CF Client Secret: "))
+        grid.attach(label, 0, 5, 1, 1)
+        self.cf_client_secret = Gtk.Entry()
+        if cf_client_secret:
+            self.cf_client_secret.set_text(cf_client_secret)
+        self.cf_client_secret.set_hexpand(True)
+        self.cf_client_secret.set_visibility(False)
+        grid.attach(self.cf_client_secret, 1, 5, 1, 1)
+
         # Error message label - initially hidden
         self.error_label = Gtk.Label()
         self.error_label.set_line_wrap(True)
@@ -797,7 +838,7 @@ class LoginPage(Page):
         self.error_label.get_style_context().add_class("error")
         self.error_label.set_no_show_all(True)  # Don't show when show_all() is called
         self.error_label.hide()
-        grid.attach(self.error_label, 0, 3, 2, 1)
+        grid.attach(self.error_label, 0, 6, 2, 1)
 
         # Connect entry change events
         self.url.connect("changed", self.on_entry_changed)
