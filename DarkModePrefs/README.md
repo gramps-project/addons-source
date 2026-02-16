@@ -17,6 +17,11 @@ Gramps already ships a `Theme preferences` addon (`ThemesPrefs`) for manual them
 - Separates dark/light theme selection for forced modes
 - Handles Flatpak-specific `GTK_THEME` override cases with explicit guidance
 
+## AI assistance disclosure
+
+This addon was developed with AI assistance and then reviewed/adjusted by the human contributor.
+Tool used: `OpenAI Codex (GPT-5)` from provider `OpenAI` (session date: `2026-02-16`).
+
 ## Install (local plugin folder)
 
 Quick install:
