@@ -8,6 +8,15 @@ Addon for Gramps desktop that adds a **Dark Mode** preferences panel with:
 - Optional GTK theme-name switching (Flatpak fallback uses `Adwaita` + dark flag)
 - Optional CSS compatibility fixes
 
+## Relation to existing Theme preferences addon
+
+Gramps already ships a `Theme preferences` addon (`ThemesPrefs`) for manual theme/font control.
+`DarkModePrefs` is intentionally focused on dark-mode behavior on modern Linux desktops:
+
+- Adds explicit `Auto` mode that follows GNOME `org.gnome.desktop.interface color-scheme`
+- Separates dark/light theme selection for forced modes
+- Handles Flatpak-specific `GTK_THEME` override cases with explicit guidance
+
 ## Install (local plugin folder)
 
 Quick install:

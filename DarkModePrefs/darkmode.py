@@ -1,6 +1,23 @@
 #
-# Gramps - dark mode preferences panel
+# Gramps - a GTK+/GNOME based genealogy program
 #
+# Copyright (C) 2026       stolpee
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+"""Dark mode preferences panel and runtime behavior."""
 
 import glob
 import os
@@ -18,7 +35,6 @@ from gramps.gui.configure import (
     WIKI_HELP_SEC,
 )
 from gramps.gui.display import display_help
-
 
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -278,11 +294,19 @@ class DarkModePrefs(GrampsPreferences):
     """
 
     def __init__(self, uistate, dbstate):
-        self.add_darkmode_panel = types.MethodType(DarkModePrefs.add_darkmode_panel, self)
+        self.add_darkmode_panel = types.MethodType(
+            DarkModePrefs.add_darkmode_panel, self
+        )
         self.mode_changed = types.MethodType(DarkModePrefs.mode_changed, self)
-        self.theme_dark_changed = types.MethodType(DarkModePrefs.theme_dark_changed, self)
-        self.theme_light_changed = types.MethodType(DarkModePrefs.theme_light_changed, self)
-        self.apply_theme_toggled = types.MethodType(DarkModePrefs.apply_theme_toggled, self)
+        self.theme_dark_changed = types.MethodType(
+            DarkModePrefs.theme_dark_changed, self
+        )
+        self.theme_light_changed = types.MethodType(
+            DarkModePrefs.theme_light_changed, self
+        )
+        self.apply_theme_toggled = types.MethodType(
+            DarkModePrefs.apply_theme_toggled, self
+        )
         self.css_fixes_toggled = types.MethodType(DarkModePrefs.css_fixes_toggled, self)
         self.apply_now_clicked = types.MethodType(DarkModePrefs.apply_now_clicked, self)
         self.restore_defaults_clicked = types.MethodType(
@@ -331,7 +355,9 @@ class DarkModePrefs(GrampsPreferences):
             on_close=update_constants,
         )
         help_btn = self.window.add_button(_("_Help"), Gtk.ResponseType.HELP)
-        help_btn.connect("clicked", lambda x: display_help(WIKI_HELP_PAGE, WIKI_HELP_SEC))
+        help_btn.connect(
+            "clicked", lambda x: display_help(WIKI_HELP_PAGE, WIKI_HELP_SEC)
+        )
         self.setup_configs("interface.grampspreferences", 760, 480)
 
     def add_darkmode_panel(self, configdialog):
@@ -399,9 +425,7 @@ class DarkModePrefs(GrampsPreferences):
         self.apply_theme_check.connect("toggled", self.apply_theme_toggled)
         grid.attach(self.apply_theme_check, 0, 4, 3, 1)
 
-        self.css_fixes_check = Gtk.CheckButton(
-            label=_("Apply compatibility CSS fixes")
-        )
+        self.css_fixes_check = Gtk.CheckButton(label=_("Apply compatibility CSS fixes"))
         self.css_fixes_check.set_active(_bool_from_config(KEY_APPLY_CSS_FIXES, True))
         self.css_fixes_check.connect("toggled", self.css_fixes_toggled)
         grid.attach(self.css_fixes_check, 0, 5, 3, 1)
@@ -409,18 +433,22 @@ class DarkModePrefs(GrampsPreferences):
         if _gtk_theme_override_active():
             value = _gtk_theme_override_value()
             if _is_flatpak_runtime():
-                warning_text = _(
-                    "GTK_THEME is set to '%s'. Theme-name changes from addon are disabled. "
-                    "If set by Flatpak override, run:\n"
-                    "flatpak override --user --unset-env=GTK_THEME org.gramps_project.Gramps"
-                ) % value
+                warning_text = (
+                    _(
+                        "GTK_THEME is set to '%s'. Theme-name changes from addon are disabled. "
+                        "If set by Flatpak override, run:\n"
+                        "flatpak override --user --unset-env=GTK_THEME org.gramps_project.Gramps"
+                    )
+                    % value
+                )
             else:
-                warning_text = _(
-                    "GTK_THEME is set to '%s'. Theme-name changes from addon are disabled."
-                ) % value
-            warning = Gtk.Label(
-                label=warning_text
-            )
+                warning_text = (
+                    _(
+                        "GTK_THEME is set to '%s'. Theme-name changes from addon are disabled."
+                    )
+                    % value
+                )
+            warning = Gtk.Label(label=warning_text)
             warning.set_halign(Gtk.Align.START)
             warning.set_line_wrap(True)
             grid.attach(warning, 0, 6, 3, 1)
