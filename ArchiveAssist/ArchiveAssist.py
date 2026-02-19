@@ -3,11 +3,11 @@ from gi.repository import Gtk
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import Source, Citation, Attribute, Span, Date, Repository, RepoRef
 from gramps.gen.db import DbTxn
+import logging
+import re
 
-import logging  # Add at top if missing
 LOG = logging.getLogger(".ArchiveAssist")  # Add as class attr or global
 
-import re
 # Example string Riksarkivet:
 # Åby kyrkoarkiv, Husförhörslängder, SE/VALA/00460/A I/8 (1833-1840), bildid: C0029371_00018, sida 8
 
@@ -147,7 +147,7 @@ class ArchiveAssist(Gramplet):
 
         return vbox
     
-    def get_or_create_repository(self, name, trans):  # Add 'trans' parameter
+    def get_or_create_repository(self, name, trans):
         for handle in self.dbstate.db.get_repository_handles():
             repo = self.dbstate.db.get_repository_from_handle(handle)
             if repo.get_name() == name:
@@ -155,10 +155,10 @@ class ArchiveAssist(Gramplet):
 
         repo = Repository()
         repo.set_name(name)
-        handle = self.dbstate.db.add_repository(repo, trans)  # Returns handle
+        handle = self.dbstate.db.add_repository(repo, trans)
         return handle
 
-    def on_create_clicked(self, widget):  # Added 'widget'
+    def on_create_clicked(self, widget):
         buffer = self.textview.get_buffer()
         start = buffer.get_start_iter()
         end = buffer.get_end_iter()
@@ -178,75 +178,85 @@ class ArchiveAssist(Gramplet):
         
         for handle in self.dbstate.db.get_source_handles():
             candidate = self.dbstate.db.get_source_from_handle(handle)
-            if candidate.get_title() == parsed["abr"]:
-                src = candidate
-                src_handle = handle
+            for attr in candidate.get_attribute_list():
+                if attr.get_type() == "NAD" and attr.get_value() == parsed["NAD"]:
+                    src = candidate
+                    src_handle = handle
+                    break
+
+            if src:
                 break
 
         try:
             with DbTxn("Create Source and Citation", self.dbstate.db) as trans:
+                
                 # Source
-                src = Source()
-                src.set_title(parsed["abr"])
-                src.set_publication_info(parsed["years"])
+                if src:
+                    self.status_label.set_text(
+                    f"Source with NAD '{parsed['NAD']}' already exists: {src.get_gramps_id()}"
+                    )
+                else:
+                    src = Source()
+                    src.set_title(parsed["abr"])
+                    src.set_publication_info(parsed["years"])
                 
-                # FIXED NAD attribute
-                nad_attr = Attribute()
-                nad_attr.set_type("NAD")
-                nad_attr.set_value(parsed["NAD"])
-                src.add_attribute(nad_attr)
+                    # FIXED NAD attribute
+                    nad_attr = Attribute()
+                    nad_attr.set_type("NAD")
+                    nad_attr.set_value(parsed["NAD"])
+                    src.add_attribute(nad_attr)
                 
-                # FIXED AID attribute (if present)  
-                if parsed["AID"]:
-                    aid_attr = Attribute()
-                    aid_attr.set_type("AID")
-                    aid_attr.set_value(parsed["AID"])
-                    src.add_attribute(aid_attr)
+                    # FIXED AID attribute (if present)  
+                    if parsed["AID"]:
+                        aid_attr = Attribute()
+                        aid_attr.set_type("AID")
+                        aid_attr.set_value(parsed["AID"])
+                        src.add_attribute(aid_attr)
 
-                # First add the Source WITHOUT repo refs
-                src_handle = self.dbstate.db.add_source(src, trans)
+                    # First add the Source WITHOUT repo refs
+                    src_handle = self.dbstate.db.add_source(src, trans)
+                    
+                    # Now add RepoRef AFTER the source exists
+                    repo_ref = RepoRef()
+                    repo_handle = self.get_or_create_repository(parsed["provider"], trans)
+                    repo_ref.set_reference_handle(repo_handle)
+                    
+                    src.add_repo_reference(repo_ref)
+                    
+                    # Persist the updated Source with its RepoRef
+                    self.dbstate.db.commit_source(src, trans)
                 
-                # Now add RepoRef AFTER the source exists
-                repo_ref = RepoRef()
-                repo_handle = self.get_or_create_repository(parsed["provider"], trans)
-                repo_ref.set_reference_handle(repo_handle)
-                
-                src.add_repo_reference(repo_ref)
-                
-                # Persist the updated Source with its RepoRef
-                self.dbstate.db.commit_source(src, trans)
-                
-                # Citation
-                cit = Citation()
-                cit.set_confidence_level(2)
-                cit.set_page(parsed["page"])
-                
-                years = parsed["years"]
-                cit_date = Date()
-                if years and "-" in years:
-                    start_year, end_year = [y.strip() for y in years.split("-")]
-                    cit_date.set(
-                        modifier=Date.MOD_RANGE, 
-                        value=(0, 0, int(start_year), False, 0, 0, int(end_year), False))
-                    cit.set_date_object(cit_date)
+                    # Citation
+                    cit = Citation()
+                    cit.set_confidence_level(2)
+                    cit.set_page(parsed["page"])
+                    
+                    years = parsed["years"]
+                    cit_date = Date()
+                    if years and "-" in years:
+                        start_year, end_year = [y.strip() for y in years.split("-")]
+                        cit_date.set(
+                            modifier=Date.MOD_RANGE, 
+                            value=(0, 0, int(start_year), False, 0, 0, int(end_year), False))
+                        cit.set_date_object(cit_date)
 
-                elif years:
-                    cit_date.set_year(int(years.strip()))
-                    cit.set_date_object(cit_date)
-               
-                cit.set_reference_handle(src_handle)               
+                    elif years:
+                        cit_date.set_year(int(years.strip()))
+                        cit.set_date_object(cit_date)
                 
-                if parsed["full_AID"]:
-                    AID = Attribute()
-                    AID.set_type("AID")
-                    AID.set_value(parsed["full_AID"])
-                    cit.add_attribute(AID)
+                    cit.set_reference_handle(src_handle)               
+                    
+                    if parsed["full_AID"]:
+                        AID = Attribute()
+                        AID.set_type("AID")
+                        AID.set_value(parsed["full_AID"])
+                        cit.add_attribute(AID)
+                    
+                    cit_handle = self.dbstate.db.add_citation(cit, trans)
                 
-                cit_handle = self.dbstate.db.add_citation(cit, trans)
-            
-            self.status_label.set_text(
-                f"Created Source ({src.get_gramps_id()}) and Citation ({cit.get_gramps_id()})."
-            )
+                    self.status_label.set_text(
+                        f"Created Source ({src.get_gramps_id()}) and Citation ({cit.get_gramps_id()})."
+                    )
 
         except Exception as e:        
             LOG.error("ArchiveAssist failed: %s", str(e), exc_info=True)
