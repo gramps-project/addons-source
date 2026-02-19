@@ -4,6 +4,9 @@ from gramps.gen.plug import Gramplet
 from gramps.gen.lib import Source, Citation, Attribute, Span, Date, Repository, RepoRef
 from gramps.gen.db import DbTxn
 
+import logging  # Add at top if missing
+LOG = logging.getLogger(".ArchiveAssist")  # Add as class attr or global
+
 import re
 # Example string Riksarkivet:
 # Åby kyrkoarkiv, Husförhörslängder, SE/VALA/00460/A I/8 (1833-1840), bildid: C0029371_00018, sida 8
@@ -33,11 +36,11 @@ def parse_ref(text: str) -> dict:
             return {}
 
         abr = match.group("abr").strip()
-        bild = match.group("bild")
+        bild = match.group("bild")  # photo
         page = match.group("page") or f"Bild {bild}"
         full_aid = match.group("full_aid")
-        aid = full_aid.split(".")[0]
-        nad_base = match.group("nad")
+        aid = full_aid.split(".")[0]  # ArkivDigital Identifier
+        nad_base = match.group("nad") # Nationell ArkivDatabas
 
         # Extract series + volume from abr (AI:6, BII:2, etc.)
         book_ref = re.search(r'([A-Z]+):(\d+)', abr)
@@ -121,9 +124,17 @@ class ArchiveAssist(Gramplet):
         vbox.set_border_width(10)
 
         # Entry for ArkivDigital string
-        self.entry = Gtk.Entry()
-        self.entry.set_placeholder_text("Enter ArkivDigital reference string")
-        vbox.pack_start(self.entry, False, False, 0)
+        scrolled = Gtk.ScrolledWindow()
+        scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        self.textview = Gtk.TextView()
+        self.textview.set_wrap_mode(Gtk.WrapMode.WORD)
+        self.textview.set_pixels_above_lines(2)
+        self.textview.set_pixels_below_lines(2)
+        self.textview.get_buffer().set_text(
+            "Enter ArkivDigital or Riksarkivet reference string here (multi-line OK)")
+        scrolled.add(self.textview)
+        scrolled.set_min_content_height(80)  # ~4 lines at default font
+        vbox.pack_start(scrolled, True, True, 0)  # Expands to fill vbox height
 
         # Button
         self.button = Gtk.Button(label="Create Source & Citation")
@@ -136,7 +147,7 @@ class ArchiveAssist(Gramplet):
 
         return vbox
     
-    def get_or_create_repository(self, name):
+    def get_or_create_repository(self, name, trans):  # Add 'trans' parameter
         for handle in self.dbstate.db.get_repository_handles():
             repo = self.dbstate.db.get_repository_from_handle(handle)
             if repo.get_name() == name:
@@ -144,11 +155,14 @@ class ArchiveAssist(Gramplet):
 
         repo = Repository()
         repo.set_name(name)
-        self.dbstate.db.add_repository(repo)
-        return repo.get_handle()
+        handle = self.dbstate.db.add_repository(repo, trans)  # Returns handle
+        return handle
 
-    def on_create_clicked(self, widget):
-        text = self.entry.get_text().strip()
+    def on_create_clicked(self, widget):  # Added 'widget'
+        buffer = self.textview.get_buffer()
+        start = buffer.get_start_iter()
+        end = buffer.get_end_iter()
+        text = buffer.get_text(start, end, False).strip()
         if not text:
             self.status_label.set_text("Please enter a reference string.")
             return
@@ -157,6 +171,17 @@ class ArchiveAssist(Gramplet):
         if not parsed:
             self.status_label.set_text("Could not parse the reference string.")
             return
+            
+        # Find existing Source (by title)
+        src = None
+        src_handle = None
+        
+        for handle in self.dbstate.db.get_source_handles():
+            candidate = self.dbstate.db.get_source_from_handle(handle)
+            if candidate.get_title() == parsed["abr"]:
+                src = candidate
+                src_handle = handle
+                break
 
         try:
             with DbTxn("Create Source and Citation", self.dbstate.db) as trans:
@@ -165,24 +190,32 @@ class ArchiveAssist(Gramplet):
                 src.set_title(parsed["abr"])
                 src.set_publication_info(parsed["years"])
                 
+                # FIXED NAD attribute
+                nad_attr = Attribute()
+                nad_attr.set_type("NAD")
+                nad_attr.set_value(parsed["NAD"])
+                src.add_attribute(nad_attr)
+                
+                # FIXED AID attribute (if present)  
                 if parsed["AID"]:
-                    AID = Attribute()
-                    AID.set_type("AID")
-                    AID.set_value(parsed["AID"])
-                    src.add_attribute(AID)
+                    aid_attr = Attribute()
+                    aid_attr.set_type("AID")
+                    aid_attr.set_value(parsed["AID"])
+                    src.add_attribute(aid_attr)
+
+                # First add the Source WITHOUT repo refs
+                src_handle = self.dbstate.db.add_source(src, trans)
                 
-                NAD = Attribute()
-                NAD.set_type("NAD")
-                NAD.set_value(parsed["NAD"])
-                src.add_attribute(NAD)
-                
+                # Now add RepoRef AFTER the source exists
                 repo_ref = RepoRef()
-                repo_handle = self.get_or_create_repository(parsed["provider"])
+                repo_handle = self.get_or_create_repository(parsed["provider"], trans)
                 repo_ref.set_reference_handle(repo_handle)
+                
                 src.add_repo_reference(repo_ref)
                 
-                src_handle = self.dbstate.db.add_source(src, trans)
-
+                # Persist the updated Source with its RepoRef
+                self.dbstate.db.commit_source(src, trans)
+                
                 # Citation
                 cit = Citation()
                 cit.set_confidence_level(2)
@@ -200,20 +233,22 @@ class ArchiveAssist(Gramplet):
                 elif years:
                     cit_date.set_year(int(years.strip()))
                     cit.set_date_object(cit_date)
+               
+                cit.set_reference_handle(src_handle)               
                 
                 if parsed["full_AID"]:
                     AID = Attribute()
                     AID.set_type("AID")
                     AID.set_value(parsed["full_AID"])
                     cit.add_attribute(AID)
-                    
-                cit.set_reference_handle(src_handle)
+                
                 cit_handle = self.dbstate.db.add_citation(cit, trans)
-
             
             self.status_label.set_text(
                 f"Created Source ({src.get_gramps_id()}) and Citation ({cit.get_gramps_id()})."
             )
 
-        except Exception as e:
-            self.status_label.set_text(f"Error: {str(e)}")
+        except Exception as e:        
+            LOG.error("ArchiveAssist failed: %s", str(e), exc_info=True)
+            self.status_label.set_text(
+                "Failed to create Source/Citation. Check logs.")  
