@@ -1,4 +1,4 @@
-# Copyright (C) 2026  Ludwig Tiston <ludwig.tiston@proton.me>
+# Copyright (C) 2026  Ludwig Tiston <help.ludwig@proton.me>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
