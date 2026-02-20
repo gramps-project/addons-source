@@ -25,5 +25,6 @@ register(
     gramplet="ArchiveAssist",
     gramplet_title=_("Archive Assist"),
     authors = ["Ludwig Tiston"],
-    authors_email = ["ludwig.tiston@proton.me"],
+    authors_email = ["help.ludwig@proton.me"],
+    help_url="https://gramps-project.org/wiki/index.php/Addon:ArchiveAssist"
 )
