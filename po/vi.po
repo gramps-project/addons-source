@@ -2,45 +2,46 @@
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # FIRST AUTHOR <trande@gmail.com>, 2012.
-#
+# Securitocat <dodongchien1232@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VIETNAMESE 4.2.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2018-07-13 14:34+0800\n"
-"Last-Translator: detran <trande@gmail.com>\n"
-"Language-Team: VIETNAMESE <trande@gmail.com>\n"
+"PO-Revision-Date: 2026-02-08 09:09+0000\n"
+"Last-Translator: Securitocat <dodongchien1232@gmail.com>\n"
+"Language-Team: Vietnamese <https://hosted.weblate.org/projects/gramps-"
+"project/addons/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.16-dev\n"
 "X-Poedit-KeywordsList: July 13, 2018: Gramps Version 4.2.8 based on "
 "Vietnamese Translation Feb 29, 2012. 14:02 VN time, VIETNAMESE TRANSLATION "
 "OF GRAMPS, V. 3\n"
-"X-Generator: Poedit 1.5.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Tất cả tên của mọi người"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Hiển thị tất cả tên của mọi người"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
-msgstr ""
+msgstr "Loại tên"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr ""
+msgstr "Tên"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "Tổng số tên %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
@@ -58,7 +59,7 @@ msgstr ""
 #: AncestorFill/AncestorFill.py:205
 #, fuzzy
 msgid "Generation "
-msgstr "Tổng quát "
+msgstr "Thế hệ "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
