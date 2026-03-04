@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2026-01-24 18:03+0000\n"
+"PO-Revision-Date: 2026-02-16 16:09+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -37,7 +37,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.16\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -258,41 +258,41 @@ msgstr "A tool to add avatar pictures to your family tree"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
-msgstr ""
+msgstr "single image mode"
 
 #: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
-msgstr ""
+msgstr "Choose how many images you'd like to use."
 
 #: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
-msgstr ""
+msgstr "Image for people with unknown gender."
 
 #: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
-msgstr ""
+msgstr "Image for males."
 
 #: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
-msgstr ""
+msgstr "Image for females"
 
 #: AvatarGenerator/AvatarGenerator.py:95
 msgid "Remove images from people"
-msgstr ""
+msgstr "Remove images from people"
 
 #: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
-msgstr ""
+msgstr "Remove selected image(s)."
 
 #: AvatarGenerator/AvatarGenerator.py:134
 #: AvatarGenerator/AvatarGenerator.py:183
 #: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
-msgstr ""
+msgstr "Avatar Generator"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
-msgstr ""
+msgstr "Remove avatar images..."
 
 #: AvatarGenerator/AvatarGenerator.py:211
 #: AvatarGenerator/AvatarGenerator.py:219
@@ -303,26 +303,28 @@ msgstr ""
 #: MediaReport/media_report.py:112 MediaReport/media_report.py:119
 #: MediaReport/media_report.py:125 RemoveTagTool/RemoveTagTool.py:271
 msgid "INFO"
-msgstr ""
+msgstr "INFO"
 
 #: AvatarGenerator/AvatarGenerator.py:211
 msgid "No media was removed."
-msgstr ""
+msgstr "No media was removed."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
-msgstr ""
+msgstr "{} media references were removed from {} persons."
 
 #: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
 msgstr ""
+"\n"
+"{} HandleError occured, but were ignored."
 
 #: AvatarGenerator/AvatarGenerator.py:263
 #: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
-msgstr ""
+msgstr "Add avatar images..."
 
 #: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
