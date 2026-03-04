@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
 "PO-Revision-Date: 2025-11-08 17:51+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
@@ -990,7 +990,8 @@ msgstr "Chatten met Tree Interactive-uitbreiding"
 #: ChatWithTree/ChatWithTree.gpr.py:10
 msgid ""
 "Chat With Tree with the help of AI Large Language Model, needs litellm module"
-msgstr "Chatten met Tree m.b.v. AI Large Language Model, vereist litellm-module"
+msgstr ""
+"Chatten met Tree m.b.v. AI Large Language Model, vereist litellm-module"
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
 msgid "Chat With Tree"
@@ -18331,6 +18332,16 @@ msgstr "Moeder / vader bijschriften weergeven"
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Toon de titel van moeder of vader naast het kader van elke voorouder."
+
+#: PedigreeChart/PedigreeChart.py:657
+#, fuzzy
+#| msgid "Show places"
+msgid "Show page numbers"
+msgstr "Locaties weergeven"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."

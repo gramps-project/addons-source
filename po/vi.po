@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VIETNAMESE 4.2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
 "PO-Revision-Date: 2018-07-13 14:34+0800\n"
 "Last-Translator: detran <trande@gmail.com>\n"
 "Language-Team: VIETNAMESE <trande@gmail.com>\n"
@@ -17631,6 +17631,14 @@ msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:657
+msgid "Show page numbers"
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662

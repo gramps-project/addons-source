@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
 "PO-Revision-Date: 2025-10-31 18:03+0000\n"
 "Last-Translator: Mikhail Burkasov <mburkasov@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/gramps-project/"
@@ -18328,6 +18328,16 @@ msgstr "Показывать пометки Мать/Отец"
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Показывать пометки (мать/отец) рядом с каждым узлом предка."
+
+#: PedigreeChart/PedigreeChart.py:657
+#, fuzzy
+#| msgid "Show places"
+msgid "Show page numbers"
+msgstr "Показывать места"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."

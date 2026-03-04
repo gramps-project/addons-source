@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
 "PO-Revision-Date: 2026-01-19 19:01+0000\n"
 "Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -17696,6 +17696,16 @@ msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:657
+#, fuzzy
+#| msgid "Show places"
+msgid "Show page numbers"
+msgstr "Mostrar lugares"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662

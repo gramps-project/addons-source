@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
 "PO-Revision-Date: 2026-02-03 18:18+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -5053,14 +5053,14 @@ msgstr "Neispravni datum/vrijeme"
 #: EditExifMetadata/editexifmetadata.py:1122
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
 msgstr ""
-"Neispravna geografska širina "
-"(sintaksa: 18°9′48.21″S, -18.2412 ili -18:9:48.21)"
+"Neispravna geografska širina (sintaksa: 18°9′48.21″S, -18.2412 ili "
+"-18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 msgstr ""
-"Neispravna zemljopisna dužina "
-"(sintaksa: 18°9′48.21″E, -18.2412 ili -18:9:48.21)"
+"Neispravna zemljopisna dužina (sintaksa: 18°9′48.21″E, -18.2412 ili "
+"-18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -17182,8 +17182,8 @@ msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
 msgstr ""
-"Nije postavljena staza za medije. Moraš je postaviti u postavkama pod „"
-"Osnovna relativna staza do medija”."
+"Nije postavljena staza za medije. Moraš je postaviti u postavkama pod "
+"„Osnovna relativna staza do medija”."
 
 #: MediaVerify/MediaVerify.py:307
 msgid "Finding files"
@@ -18016,6 +18016,16 @@ msgstr "Prikaži opise za majku/oca"
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Prikaži naslov za majku ili oca pored svakog okvira pretka."
+
+#: PedigreeChart/PedigreeChart.py:657
+#, fuzzy
+#| msgid "Show places"
+msgid "Show page numbers"
+msgstr "Prikaži mjesta"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
@@ -22931,7 +22941,8 @@ msgstr "UK Web Connect zbirka"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:12
 msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgstr "Zbirka web stranica za Ujedinjeno Kraljevstvo (zahtijeva libwebconnect)"
+msgstr ""
+"Zbirka web stranica za Ujedinjeno Kraljevstvo (zahtijeva libwebconnect)"
 
 #: UKWebConnectPack/UKWebPack.py:33
 msgid "UK Google"
