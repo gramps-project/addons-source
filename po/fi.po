@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
 "PO-Revision-Date: 2025-12-12 18:02+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -984,8 +984,8 @@ msgstr "Keskustele Interaktiivinen puu -lisäosan kanssa"
 msgid ""
 "Chat With Tree with the help of AI Large Language Model, needs litellm module"
 msgstr ""
-"Keskustele sukupuun kanssa suuren kielimallin tekoälyn avustamana "
-"(vaatii litellm-moduulin)"
+"Keskustele sukupuun kanssa suuren kielimallin tekoälyn avustamana (vaatii "
+"litellm-moduulin)"
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
 msgid "Chat With Tree"
@@ -18065,6 +18065,16 @@ msgstr "Näytä äidin/isän kuvatekstit"
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Näytä äidin tai isän nimi kunkin esi-isän laatikon vieressä."
+
+#: PedigreeChart/PedigreeChart.py:657
+#, fuzzy
+#| msgid "Show places"
+msgid "Show page numbers"
+msgstr "Näytä paikat"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
