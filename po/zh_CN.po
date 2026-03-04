@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VERSION 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
 "PO-Revision-Date: 2025-04-09 13:53+0000\n"
 "Last-Translator: Tian Shixiong <tiansworld@fedoraproject.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
@@ -17653,6 +17653,14 @@ msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:657
+msgid "Show page numbers"
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662

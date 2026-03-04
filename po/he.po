@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
 "PO-Revision-Date: 2026-02-03 09:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
@@ -2564,8 +2564,8 @@ msgid ""
 "<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
 "<attribute-value>."
 msgstr ""
-"רשימת  מחרוזות שומרי מקום לאירועים. שומרי מקום ידועים: <type>, <role>, <date>"
-", <place>, <description>, <witnesses>, <source> וכל <attribute-value>."
+"רשימת  מחרוזות שומרי מקום לאירועים. שומרי מקום ידועים: <type>, <role>, "
+"<date>, <place>, <description>, <witnesses>, <source> וכל <attribute-value>."
 
 #: DenominoViso/DenominoViso.py:2757
 msgid "Source format"
@@ -2576,8 +2576,8 @@ msgid ""
 "List of strings with placeholders for sources. Known placeholders: <title>, "
 "<volume>, <author>, <publication_info> and <abbreviation>."
 msgstr ""
-"רשימת  מחרוזות שומרי מקום למקורות. שומרי מקום ידועים: <type>, <role>, <date>"
-", <place>, <description>, <witnesses>, <source> וכל <attribute-value>."
+"רשימת  מחרוזות שומרי מקום למקורות. שומרי מקום ידועים: <type>, <role>, "
+"<date>, <place>, <description>, <witnesses>, <source> וכל <attribute-value>."
 
 #: DenominoViso/DenominoViso.py:2819
 msgid "restricted to:"
@@ -3047,8 +3047,8 @@ msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
-"לחווית צפייה מיטבית, נא למרב את חלון הדפדפן כך שישתמש בכל גודל המרקע.  שידוד"
-"  מחדש ישצב את התרשים לאדם המרכזי."
+"לחווית צפייה מיטבית, נא למרב את חלון הדפדפן כך שישתמש בכל גודל המרקע.  "
+"שידוד  מחדש ישצב את התרשים לאדם המרכזי."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
@@ -3108,8 +3108,8 @@ msgid ""
 "expand descendants of this person. "
 msgstr ""
 "אדם יכול להמצא בענפי משפחה שונים. מצב זה קורה בדרך כלל בעקבות נישואים בתוך "
-"משפחה (כמו זה של בני דודים). במקרה זה, לחצן יופיע גם עבור אותו אדם, −"
-"NAV_BUTton_CONTINUE - או −NAV_BUTton_ALT - לאפשר ניווט לענף האחר. אך רק ענף "
+"משפחה (כמו זה של בני דודים). במקרה זה, לחצן יופיע גם עבור אותו אדם, "
+"−NAV_BUTton_CONTINUE - או −NAV_BUTton_ALT - לאפשר ניווט לענף האחר. אך רק ענף "
 "אחד ירחיב את מצג מקטע צאצאיו של אדם זה. "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:989
@@ -17680,6 +17680,16 @@ msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:657
+#, fuzzy
+#| msgid "Show places"
+msgid "Show page numbers"
+msgstr "הצגת מקומות"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662
