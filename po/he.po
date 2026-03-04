@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2026-02-03 09:01+0000\n"
+"PO-Revision-Date: 2026-02-20 09:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -2096,7 +2096,7 @@ msgid ""
 "Press Continue to search for additional relations.\n"
 msgstr ""
 "מושהה.\n"
-"נא ללחוץ על 'להמשיך לחפש' לקשרי קרבה נוספים.\n"
+"נא ללחוץ על 'להמשיך לחפש' לקשרי־קרבה נוספים.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
@@ -3047,8 +3047,8 @@ msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
-"לחווית צפייה מיטבית, נא למרב את חלון הדפדפן כך שישתמש בכל גודל המרקע.  "
-"שידוד  מחדש ישצב את התרשים לאדם המרכזי."
+"לחווית צפייה מיטבית, נא למרב את חלון הדפדפן כך שישתמש בכל גודל המרקע.  שידוד"
+"  מחדש ישצב את התרשים לאדם המרכזי."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
@@ -3056,7 +3056,7 @@ msgstr "הקשת עכבר על צומת כדי להתמקד בצאצא ולהר�
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:904
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
-msgstr ""
+msgstr "להקיש ולגרור בכל אזור במשקף כדי למקם את אילן הצאצאים."
 
 #. Translators: Please do not translate ___HELP_RESET_BUTTON___.
 #: DescendantSpaceTree/DescendantSpaceTree.py:914
@@ -3073,24 +3073,29 @@ msgid ""
 "search, a plus sign (+) after the name indicates that person appears as a "
 "spouse."
 msgstr ""
+"חיפוש אדם על ידי הקלדה בתיבת החיפוש.  לחיפוש נדרשים לפחות שלושה תווים.  הקשה "
+"על אחת מההצעות כדי לנווט במהירות אל אותו אדם.  אדם עשוי להופיע יותר מפעם אחת "
+"בתוצאות החיפוש; סימן פלוס (+) שמופיע אחרי השם מציין שאותו אדם מופיע כבן־זוג."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:936
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
-msgstr ""
+msgstr "צאצא ובן־זוג יופיעו באותה צומת.  צאצאי משפחת הצאצא מקובצים יחד."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:946
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
-msgstr ""
+msgstr "אדם שנולד לאחר תאריך מסויים עשוי שלא להציג תאריכי לידה או פטירה."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:955
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
 msgstr ""
+"צמתי אנשים נצבעים כדי לציין את מספר צאצאיהם, ככל שגוון הצבע כהה יותר, כך "
+"מספר הצאצאים גדול יותר."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:965
 msgid ""
@@ -3132,7 +3137,7 @@ msgstr "הענף להתרחבה בעת שוכפל"
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
-msgstr ""
+msgstr "כאשר צאצא מופיע יותר מפעם אחת, יש להעדיף להרחיב את קו הצאצאים שנבחר"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1110
 msgid "Maximum display birth year"
@@ -3172,11 +3177,11 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
-msgstr ""
+msgstr "שימוש בסוג SVG למסמך משלים לא נתמך!"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
-msgstr ""
+msgstr "תסדיר פלט"
 
 #: DescendantsLines/DescendantsLines.py:1532
 msgid "PNG format"
@@ -3188,11 +3193,11 @@ msgstr "תסדיר SVG"
 
 #: DescendantsLines/DescendantsLines.py:1534
 msgid "PDF format"
-msgstr ""
+msgstr "פורמט PDF"
 
 #: DescendantsLines/DescendantsLines.py:1535
 msgid "PS format"
-msgstr ""
+msgstr "תסדיר PS"
 
 #: DescendantsLines/DescendantsLines.py:1536
 msgid "The output format to be used"
@@ -3719,7 +3724,7 @@ msgstr "הורדת קבצי מדיה מהמרשתת"
 
 #: DownloadMedia/DownloadMedia.gpr.py:37
 msgid "This tool downloads media files from the internet"
-msgstr "כלי זה נועד להורדת קבצי מדיה מהמרשתת"
+msgstr "כלי זה משמש להורדת קבצי מדיה מהמרשתת"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
@@ -3736,7 +3741,7 @@ msgstr "ירדו %d קבצים"
 
 #: DownloadMedia/DownloadMedia.py:100
 msgid "Download media tool"
-msgstr "כלי הורדת מדיה"
+msgstr "כלי להורדת מדיה"
 
 #: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
@@ -3748,7 +3753,7 @@ msgstr "מתבצעת הורדת קבצים"
 
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
-msgstr "זוהו שגיאות הורדת מדיה"
+msgstr "זוהו שגיאות בהורדת מדיה"
 
 #: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
@@ -14534,7 +14539,7 @@ msgstr ""
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
 #, python-format
 msgid "Number of Persons: %s"
-msgstr "מספר האנשים: %s"
+msgstr "מספר אנשים: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -16832,7 +16837,7 @@ msgstr "קבצים שהועברו או ששם השתנה"
 
 #: MediaVerify/MediaVerify.py:84
 msgid "Duplicate Files"
-msgstr "שכפול קבצים"
+msgstr "קבצים כפולים"
 
 #: MediaVerify/MediaVerify.py:84
 msgid "Extra Files"
@@ -17683,10 +17688,8 @@ msgid "Show the title of mother or father beside each ancestor's box."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:657
-#, fuzzy
-#| msgid "Show places"
 msgid "Show page numbers"
-msgstr "הצגת מקומות"
+msgstr "הצגת מספרי עמוד"
 
 #: PedigreeChart/PedigreeChart.py:658
 msgid "Add a footer on every page with the page number and date printed."
