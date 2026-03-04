@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2026-02-03 18:18+0000\n"
+"PO-Revision-Date: 2026-02-12 19:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -1041,7 +1041,7 @@ msgstr "Naslovi mjesta"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Poboljšano"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
@@ -4760,8 +4760,8 @@ msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
 msgstr ""
-"UPOZORENJE: Mijenjanjem ovog unosa, aktualizirat će se polja za naslov "
-"medijskog objekta u Grampsu, a ne Exiv2 metapodaci."
+"Upozorenje: Mijenjanjem ovog unosa, aktualizirat će polje za naslov "
+"medijskog objekta u Grampsu, a ne Exiv2 metapodacima."
 
 #: EditExifMetadata/editexifmetadata.py:161
 msgid "Provide a short description for this image."
@@ -13857,35 +13857,35 @@ msgstr ""
 
 #: Form/form_us.xml.h:2029
 msgid "Male Children 5 and Under"
-msgstr ""
+msgstr "Muška djeca do 5 godina"
 
 #: Form/form_us.xml.h:2030
 msgid "Female Children 5 and Under"
-msgstr ""
+msgstr "Ženska djeca do 5 godina"
 
 #: Form/form_us.xml.h:2031
 msgid "Males 5 to 20 Years of Age"
-msgstr ""
+msgstr "Muške osobe od 5 do 20 godina"
 
 #: Form/form_us.xml.h:2032
 msgid "Females 5 to 20 Years of Age"
-msgstr ""
+msgstr "Ženske osobe od 5 do 20 godina"
 
 #: Form/form_us.xml.h:2033
 msgid "Males 20 to 60 Years of Age"
-msgstr ""
+msgstr "Muške osobe od 20 do 60 godina"
 
 #: Form/form_us.xml.h:2034
 msgid "Females 20 to 60 Years of Age"
-msgstr ""
+msgstr "Ženske osobe od 20 do 60 godina"
 
 #: Form/form_us.xml.h:2035
 msgid "Males Over 60 Years of Age"
-msgstr ""
+msgstr "Muške osobe starije od 60 godina"
 
 #: Form/form_us.xml.h:2036
 msgid "Females Over 60 Years of Age"
-msgstr ""
+msgstr "Ženske osobe starije od 60 godina"
 
 #: Form/form_us.xml.h:2040 Form/form_us.xml.h:2079 Form/form_us.xml.h:2116
 #: Form/form_us.xml.h:2154 Form/form_us.xml.h:2192
@@ -18018,10 +18018,8 @@ msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Prikaži naslov za majku ili oca pored svakog okvira pretka."
 
 #: PedigreeChart/PedigreeChart.py:657
-#, fuzzy
-#| msgid "Show places"
 msgid "Show page numbers"
-msgstr "Prikaži mjesta"
+msgstr "Prikaži brojeve stranica"
 
 #: PedigreeChart/PedigreeChart.py:658
 msgid "Add a footer on every page with the page number and date printed."
@@ -20297,7 +20295,7 @@ msgstr "Koliko daleko želiš ići?"
 
 #: RelID/relation_tab.py:339
 msgid "Rel_id"
-msgstr "ID srodstva"
+msgstr "ID_srodstva"
 
 #: RelID/relation_tab.py:342
 msgid "up"
@@ -20587,7 +20585,7 @@ msgstr "Odabir filtrom"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
-msgstr "Uključi URL spremišta"
+msgstr "Uključi URL-ove spremišta"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
@@ -23249,7 +23247,7 @@ msgstr "Stupac – Naslov"
 
 #: constants.py:394
 msgid "Column - Website Url"
-msgstr "Stupac – URL web stranice"
+msgstr "Stupac – URL web-stranice"
 
 #: constants.py:395
 msgid "Column - Comment"
