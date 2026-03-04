@@ -4,13 +4,13 @@
 # Jiří Pejchal <jiri.pejchal@gmail.com>, 2005.
 # Zdeněk Hataš <zdenek.hatas@gmail.com>, 2006, 2007, 2008, 2009, 2012, 2016.
 # Petr Hejl <hejl.petr@gmail.com>, 2016.
-# Milan <mobrcian@hotmail.com>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2025-12-05 07:00+0000\n"
+"PO-Revision-Date: 2026-02-05 04:01+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -18154,18 +18154,16 @@ msgid "Show the title of mother or father beside each ancestor's box."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:657
-#, fuzzy
-#| msgid "Show duplicates"
 msgid "Show page numbers"
-msgstr "Zobrazit duplicity"
+msgstr "Zobrazit čísla stran"
 
 #: PedigreeChart/PedigreeChart.py:658
 msgid "Add a footer on every page with the page number and date printed."
-msgstr ""
+msgstr "Na každou stranu přidat zápatí s vytlačeným číslem strany a datem."
 
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
-msgstr ""
+msgstr "Základní styl použitý pro zobrazení názvu."
 
 #: PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
