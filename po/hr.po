@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2026-02-03 10:43+0000\n"
+"PO-Revision-Date: 2026-02-03 18:18+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -1048,6 +1048,8 @@ msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"Poboljšani alat za formatiranje citata koji standardnoj funkcionalnosti "
+"dodaje spremište i signaturu."
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
@@ -21081,11 +21083,11 @@ msgstr ""
 
 #: SourceIndex/birth.glade:870
 msgid "Call number:"
-msgstr "Pozivni broj:"
+msgstr "Signatura:"
 
 #: SourceIndex/birth.glade:887
 msgid "The call number into the repository"
-msgstr "Pozivni broj u spremište"
+msgstr "Signatura u spremištu"
 
 #: SourceIndex/birth.glade:925
 msgid "<b><i>Data person</i></b>"
