@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-22 21:36+0200\n"
+"PO-Revision-Date: 2026-03-04 17:10+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+msgid "Database change detected"
+msgstr "Rilevato un cambiamento del Database"
+
+msgid "Type a message..."
+msgstr "Scrivi un messaggio..."
+
+msgid "Send"
+msgstr "Invia"
+
+msgid "Tree: '{}'"
+msgstr "Albero: '{}'"
+
+msgid "Chat With Tree"
+msgstr "Parla con l'Albero"

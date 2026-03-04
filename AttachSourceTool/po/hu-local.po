@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
-"Last-Translator: Lajos Nemeséri <nemeseril@gmail.com>\n"
+"PO-Revision-Date: 2026-02-21 14:09+0000\n"
+"Last-Translator: Daniel Szollosi-Nagy <dsn-weblate@kdconsulting.net>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hu/>\n"
 "Language: hu\n"
@@ -12,10 +12,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 msgid "Select filter to restrict people"
 msgstr "Szűrő kiválasztása személyek kizárására"
 
+msgid "Source type"
+msgstr "Források típusa"
+
+msgid "New source"
+msgstr "Új forrás"
+
+msgid "Existing source"
+msgstr "Létező forrás"
+
+msgid "Select the type of source to attach"
+msgstr "Válassza ki a csatolandó forrás típusát"
+
+msgid "New Source Title"
+msgstr "Új forrás címe"
+
+msgid "Text of source to attach"
+msgstr "A csatolandó forrás szövege"
+
+msgid "Existing Source ID"
+msgstr "Létező forrás azonosító"
+
+msgid "ID of source to attach"
+msgstr "Csatolandó forrás azonosítója"
+
+msgid "Attach Source"
+msgstr "Forrás csatolása"
+
 msgid "Processing...\n"
 msgstr "Végrehajtás...\n"
+
+msgid "Attaching sources...\n"
+msgstr "Források csatolása...\n"
+
+msgid "Attaching sources..."
+msgstr "Források csatolása..."
+
+msgid "Done!\n"
+msgstr "Kész!\n"
+
+msgid "Attaches a shared source to multiple objects."
+msgstr "Megosztott forrást csatol több objektumhoz."
