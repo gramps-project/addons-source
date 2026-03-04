@@ -3047,8 +3047,8 @@ msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
-"לחווית צפייה מיטבית, נא למרב את חלון הדפדפן כך שישתמש בכל גודל המרקע.  "
-"שידוד  מחדש ישצב את התרשים לאדם המרכזי."
+"לחווית צפייה מיטבית, נא למרב את חלון הדפדפן כך שישתמש בכל גודל המרקע.  שידוד"
+"  מחדש ישצב את התרשים לאדם המרכזי."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
