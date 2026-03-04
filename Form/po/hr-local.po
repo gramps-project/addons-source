@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2026-02-03 10:43+0000\n"
+"PO-Revision-Date: 2026-02-12 19:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -619,6 +619,30 @@ msgstr "Ranije u mornarici"
 
 msgid "Birth Country"
 msgstr "Zemlja rođenja"
+
+msgid "Male Children 5 and Under"
+msgstr "Muška djeca do 5 godina"
+
+msgid "Female Children 5 and Under"
+msgstr "Ženska djeca do 5 godina"
+
+msgid "Males 5 to 20 Years of Age"
+msgstr "Muške osobe od 5 do 20 godina"
+
+msgid "Females 5 to 20 Years of Age"
+msgstr "Ženske osobe od 5 do 20 godina"
+
+msgid "Males 20 to 60 Years of Age"
+msgstr "Muške osobe od 20 do 60 godina"
+
+msgid "Females 20 to 60 Years of Age"
+msgstr "Ženske osobe od 20 do 60 godina"
+
+msgid "Males Over 60 Years of Age"
+msgstr "Muške osobe starije od 60 godina"
+
+msgid "Females Over 60 Years of Age"
+msgstr "Ženske osobe starije od 60 godina"
 
 msgid "P.O."
 msgstr "PP"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-10-13 04:07+0000\n"
+"PO-Revision-Date: 2026-02-08 09:09+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 msgid "Display relations and distances with the home person"
 msgstr "Visa relationer och avstånd till hempersonen"
@@ -25,6 +25,15 @@ msgstr "Relation och avstånd till början"
 
 msgid "Select filter to restrict people"
 msgstr "Välj ett filter, som begränsar personurvalet"
+
+msgid "Filter rule"
+msgstr "Filterregel"
+
+msgid "Select the filter rule"
+msgstr "Välj filterregeln"
+
+msgid "Deep generations"
+msgstr "Avlägsna generationer"
 
 msgid "Rel_id"
 msgstr "Rel_id"
@@ -47,14 +56,38 @@ msgstr "Rang"
 msgid "Period"
 msgstr "Period"
 
+msgid "Shared Subtree"
+msgstr "Delat underträd"
+
+msgid "Centrality"
+msgstr "Centralitet"
+
+msgid "Unique Ancestors"
+msgstr "Unika förfäder"
+
+msgid "Surname Diversity"
+msgstr "Efternamnsmångfald"
+
 msgid "Save"
 msgstr "Spara"
+
+msgid "No default person set."
+msgstr "Ingen standardperson inställd."
 
 msgid "Please wait, filtering..."
 msgstr "Vänligen vänta, filtrerar..."
 
+msgid "Network Metrics"
+msgstr "Nätverksstatistik"
+
+msgid "Enabled"
+msgstr "Aktiverad"
+
 msgid "Disabled"
 msgstr "Handikappad"
+
+msgid "Enable or disable family network metrics"
+msgstr "Aktivera eller inaktivera mätvärden för familjenätverk"
 
 msgid "Generating relation map..."
 msgstr "Skapar relationskarta..."
@@ -67,3 +100,18 @@ msgstr "_Välj"
 
 msgid "Please, select a folder"
 msgstr "Vänligen, välj en mapp"
+
+msgid "Foldername need"
+msgstr "Mappnamn behövs"
+
+msgid "Foldername will be used for saving the content."
+msgstr "Mappnamn kommer att användas för att spara innehållet."
+
+msgid "Failed to save data."
+msgstr "Det gick inte att spara data."
+
+msgid "Relationships Map and Tab"
+msgstr "Relationskarta och flik"
+
+msgid "Enable family network metrics"
+msgstr "Aktivera mätvärden för familjenätverk"

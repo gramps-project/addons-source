@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2026-02-10 21:09+0000\n"
+"Last-Translator: João Garcez <joangarcez2100@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_BR/>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.16-dev\n"
+
+msgid "AncestorFill"
+msgstr "Preenchimento de Ancestrais"
+
+msgid "Report on the filling of the tree"
+msgstr "Relatório sobre o preenchimento da árvore"
+
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "Preenchimento de Ancestrais para %s"
+
+msgid "Generation "
+msgstr "Geração "
+
+msgid "Number of Ancestors found "
+msgstr "Número de Ancestrais encontrados "
+
+msgid "Percent of Ancestors found "
+msgstr "Porcentagem de Ancestrais encontrados "
+
+msgid "Number of unique Ancestors found "
+msgstr "Número de Ancestrais únicos encontrados "
+
+msgid "Number of theoretical Ancestors "
+msgstr "Número de Ancestrais teóricos "
+
+msgid "Pedigree Collapse "
+msgstr "Implexo "
+
+msgid "Total Number of Ancestors found "
+msgstr "Número Total de Ancestrais encontrados "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "Número Total de Ancestrais únicos encontrados "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"Nota: Esse relatório conta apenas ancestrais com uma relação de parentesco "
+"de nascimento (pai-filho)."
+
+msgid "Filled digit"
+msgstr "Dígito preenchido"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"O número de dígitos após a vírgula a incluir no relatório da porcentagem de "
+"ancestrais encontrados em uma dada geração"
+
+msgid "Collapsed digit"
+msgstr "Dígito implexado"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr "O número de dígitos após a vírgula a incluir no relatório do Implexo"
+
+msgid "Display theoretical"
+msgstr "Mostrar teóricos"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Exibir ou não o número teórico de ancestrais por geração"
+
+msgid "The style used for the title of the page."
+msgstr "O estilo usado para o título da página."
