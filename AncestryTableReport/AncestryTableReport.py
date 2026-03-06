@@ -1,7 +1,4 @@
 #
-# TODO Traduire
-# TODO Date révolutionnaires
-#
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2026      Bruno Forestier
@@ -193,11 +190,10 @@ class AncestryTable(Report):
 
         if event:
             date_obj = event.get_date_object()
-            cal = date_obj.get_calendar()
             date_text = self._get_date(date_obj)
             if self.mask_cal:
                 # match_calendar removed the name of the calendar in the date
-                date_text, cal = self._locale.date_parser.match_calendar(date_text, cal)
+                date_text, cal = self._locale.date_parser.match_calendar(date_text, date_obj.get_calendar())
 
             place_handle = event.get_place_handle()
             if place_handle:
