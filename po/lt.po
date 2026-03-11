@@ -3,13 +3,14 @@
 # Copyright (C) YEAR ORGANIZATION, 2005.
 # Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>, 2013.
 # Tadas Masiulionis <tadzikaz@gmail.com>, 2025.
+# openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-10-31 18:03+0000\n"
-"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"PO-Revision-Date: 2026-01-04 20:01+0000\n"
+"Last-Translator: openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
 "project/addons/lt/>\n"
 "Language: lt\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-Country: LITHUANIA\n"
@@ -578,7 +579,7 @@ msgstr ""
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
-msgstr "Rūšiuoti vaikus gimimo tvarka"
+msgstr "Rikiuoti vaikus gimimo tvarka"
 
 #: BirthOrder/birthorder.gpr.py:12
 msgid ""
@@ -594,7 +595,7 @@ msgstr ""
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
-msgstr "Jokių šeimų nereikia rūšiuoti"
+msgstr "Šeimų nereikia rikiuoti"
 
 #: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
@@ -4053,7 +4054,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3112
 msgid "Sort by:"
-msgstr "Rūšiuoti pagal:"
+msgstr "Rikiuoti pagal:"
 
 #: DynamicWeb/dynamicweb.py:3114 SourceIndex/birth.py:126
 #: SourceIndex/census.py:82 SourceIndex/death.py:87 SourceIndex/index.py:92
@@ -7277,10 +7278,8 @@ msgstr ""
 
 #: Form/form_ca.xml.h:449 Form/form_ca.xml.h:528 Form/form_ca.xml.h:660
 #: Form/form_ca.xml.h:753 Form/form_ca.xml.h:793
-#, fuzzy
-#| msgid "TR-Title"
 msgid "SubTitle"
-msgstr "TR-Pavadinimas"
+msgstr "Paantraštė"
 
 #: Form/form_ca.xml.h:454 Form/form_ca.xml.h:533 Form/form_ca.xml.h:665
 msgid "PollSub"
@@ -15297,11 +15296,11 @@ msgstr ""
 
 #: GraphView/graphview.py:3875
 msgid "No Events for this person"
-msgstr ""
+msgstr "Nėra šio asmens įvykių"
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
-msgstr ""
+msgstr "Parinkti gaires asmeniui"
 
 #: GraphView/graphview.py:3907
 msgid "Add new family"
@@ -15333,11 +15332,11 @@ msgstr ""
 
 #: GraphView/graphview.py:4161
 msgid "No Events for this family"
-msgstr ""
+msgstr "Nėra šios šeimos įvykių"
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
-msgstr ""
+msgstr "Parinkti gaires šeimai"
 
 #: GraphView/graphview.py:4201
 msgid "Add father"
@@ -17704,6 +17703,16 @@ msgstr ""
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr ""
 
+#: PedigreeChart/PedigreeChart.py:657
+#, fuzzy
+#| msgid "Show places"
+msgid "Show page numbers"
+msgstr "Rodyti vietoves"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
+
 #: PedigreeChart/PedigreeChart.py:662
 #, fuzzy
 #| msgid "The basic style used for the table display."
@@ -17770,6 +17779,7 @@ msgstr ""
 #: PersonEverything/PersonEverything.py:434
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
 msgstr ""
+"gatvė, gyvenvietė, savivaldybė, pašto kodas, apskritis, telefono numeris"
 
 #: PersonEverything/PersonEverything.py:448
 msgid "Media Reference"
@@ -18053,17 +18063,15 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
-msgstr "Miestas, apskritis, valstija, šalis"
+msgstr "Gyvenvietė, rajonas, apskritis, šalis"
 
 #: PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
 msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:102
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The postal code for the place, if any."
-msgstr "Stilius, naudojamas puslapio antraštei."
+msgstr "Vietovės pašto kodas, jei yra."
 
 #: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
@@ -18071,7 +18079,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
-msgstr ""
+msgstr "Pažymėkite šį langelį, jei norite išlaikyti pradinį pašto kodą."
 
 #: PlaceCleanup/placecleanup.glade:148
 msgid "Check this box if you want to keep the original Place Type."
@@ -18220,7 +18228,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
-msgstr "Sekanti vietovė"
+msgstr "Tolesnė vietovė"
 
 #: PlaceCleanup/placecleanup.glade:962
 msgid "Find an incomplete place."
@@ -18536,11 +18544,11 @@ msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1145
 msgid "City,PostalCode,Country"
-msgstr ""
+msgstr "Gyvenvietė,PaštoKodas,Šalis"
 
 #: PlaceCompletion/PlaceCompletion.py:1147
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
-msgstr ""
+msgstr "Gyvenvietė[(Gatvė;Vietovė;Parapija)],PaštoKodas,Šalis"
 
 #: PlaceCompletion/PlaceCompletion.py:1149
 msgid "TitleStart [, City] [, State]"
@@ -18681,6 +18689,8 @@ msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
 msgstr ""
+"Galimi kintamieji: city, street, locality, parish, county, state, country, "
+"postal_code"
 
 #: PlaceCompletion/placecompletion.glade:820
 msgid ""
@@ -18783,7 +18793,7 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
-msgstr ""
+msgstr "Pašto kodas:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:116
 msgid "Show found place externally in Google Maps"
@@ -21382,11 +21392,11 @@ msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:113
 msgid "Sort by "
-msgstr "Rūšiuoti pagal "
+msgstr "Rikiuoti pagal "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:114
 msgid "Sort in ascending order?"
-msgstr "Rūšiuoti didėjimo tvarka?"
+msgstr "Rikiuoti didėjančiai?"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
 msgid "February"
@@ -22272,7 +22282,7 @@ msgstr "Pastabos rūšys"
 
 #: TypeCleanup/type_cleanup.py:108
 msgid "Place Types"
-msgstr "Vietovės rūšys"
+msgstr "Vietovių rūšys"
 
 #: TypeCleanup/type_cleanup.py:109
 msgid "Repository Types"

@@ -3,15 +3,15 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-# Milo Ivir <mail@milotype.de>, 2025.
+# Milo Ivir <mail@milotype.de>, 2025, 2026.
 # Nick Hall <nick-h@gramps-project.org>, 2025.
 # Juha Mäkeläinen <juha.makelainen@iki.fi>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-12-09 17:00+0000\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"PO-Revision-Date: 2026-02-12 19:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -1041,13 +1041,15 @@ msgstr "Naslovi mjesta"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Poboljšano"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"Poboljšani alat za formatiranje citata koji standardnoj funkcionalnosti "
+"dodaje spremište i signaturu."
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
@@ -4758,8 +4760,8 @@ msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
 msgstr ""
-"UPOZORENJE: Mijenjanjem ovog unosa, aktualizirat će se polja za naslov "
-"medijskog objekta u Grampsu, a ne Exiv2 metapodaci."
+"Upozorenje: Mijenjanjem ovog unosa, aktualizirat će polje za naslov "
+"medijskog objekta u Grampsu, a ne Exiv2 metapodacima."
 
 #: EditExifMetadata/editexifmetadata.py:161
 msgid "Provide a short description for this image."
@@ -5051,14 +5053,14 @@ msgstr "Neispravni datum/vrijeme"
 #: EditExifMetadata/editexifmetadata.py:1122
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
 msgstr ""
-"Neispravna geografska širina "
-"(sintaksa: 18°9′48.21″S, -18.2412 ili -18:9:48.21)"
+"Neispravna geografska širina (sintaksa: 18°9′48.21″S, -18.2412 ili "
+"-18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 msgstr ""
-"Neispravna zemljopisna dužina "
-"(sintaksa: 18°9′48.21″E, -18.2412 ili -18:9:48.21)"
+"Neispravna zemljopisna dužina (sintaksa: 18°9′48.21″E, -18.2412 ili "
+"-18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -7300,10 +7302,8 @@ msgid "18. Blind"
 msgstr ""
 
 #: Form/form_ca.xml.h:387
-#, fuzzy
-#| msgid "25. Unsound mind"
 msgid "19. Unsound mind"
-msgstr "25. Nezdrav um"
+msgstr "19. Nezdrav um"
 
 #: Form/form_ca.xml.h:389
 msgid "20. Date of Operations and Remarks"
@@ -8405,9 +8405,8 @@ msgid "24. Chief occupation or trade"
 msgstr "24. Glavno zanimanje ili obrt"
 
 #: Form/form_ca.xml.h:853
-#, fuzzy
 msgid "25. Employer, \"E\", Employee, \"W\""
-msgstr "25. Poslodavac, \"E\", Zaposlenik, \"W\""
+msgstr "25. Poslodavac, „E”, Zaposlenik, „W”"
 
 #: Form/form_ca.xml.h:854
 msgid "EmploymentPlace"
@@ -8827,10 +8826,8 @@ msgid "Deceased"
 msgstr "Pokojan/pokojna"
 
 #: Form/form_gb.xml.h:48
-#, fuzzy
-#| msgid "Maiden name of wife"
 msgid "Maiden surname of woman who was married"
-msgstr "Djevojačko ime žene"
+msgstr "Djevojačko ime žene koja je bila udata"
 
 #: Form/form_gb.xml.h:51 Form/form_us.xml.h:986 Form/form_us.xml.h:1008
 #: Form/form_us.xml.h:1141 Form/form_us.xml.h:1155 Form/form_us.xml.h:1452
@@ -8840,10 +8837,8 @@ msgid "Place of Birth"
 msgstr ""
 
 #: Form/form_gb.xml.h:53
-#, fuzzy
-#| msgid "P.O. Address"
 msgid "Usual Address"
-msgstr "Poštanski pretinac"
+msgstr "Uobičajena adresa"
 
 #: Form/form_gb.xml.h:59 Form/form_gb.xml.h:71
 msgid "City or Borough"
@@ -9030,7 +9025,7 @@ msgstr "PROFESIJA ili ZANIMANJE"
 #: Form/form_gb.xml.h:165 Form/form_gb.xml.h:294 Form/form_gb.xml.h:526
 #: Form/form_us.xml.h:819
 msgid "Employed"
-msgstr "Zaposlenik"
+msgstr "Zaposlen"
 
 #: Form/form_gb.xml.h:166 Form/form_gb.xml.h:295 Form/form_gb.xml.h:527
 msgid "Neither"
@@ -9083,7 +9078,7 @@ msgstr "PROFESIJA ILI ZANIMANJE"
 #: Form/form_gb.xml.h:189 Form/form_gb.xml.h:220 Form/form_gb.xml.h:320
 #: Form/form_gb.xml.h:353
 msgid "Work Type"
-msgstr "Vrsta rada"
+msgstr "Vrsta posla"
 
 #: Form/form_gb.xml.h:190 Form/form_gb.xml.h:321
 msgid "Employer, Worker or Own Account"
@@ -9177,17 +9172,15 @@ msgstr ""
 #: Form/form_gb.xml.h:218 Form/form_gb.xml.h:351 Form/form_us.xml.h:778
 #: Form/form_us.xml.h:817 Form/form_us.xml.h:864 Form/form_us.xml.h:1617
 msgid "Industry"
-msgstr ""
+msgstr "Industrija"
 
 #: Form/form_gb.xml.h:219 Form/form_gb.xml.h:352
 msgid "Industry or Service with which worker is connected."
-msgstr ""
+msgstr "Industrija ili usluga s kojom je radnik povezan."
 
 #: Form/form_gb.xml.h:221 Form/form_gb.xml.h:354
-#, fuzzy
-#| msgid "Employer, worker or working on own account"
 msgid "Whether Employer, Worker or Working on Own Account"
-msgstr "Zaposlenik, radnik ili radi na vlastiti račun"
+msgstr "Je li zaposlenik, radnik ili je li radi na vlastiti račun"
 
 #: Form/form_gb.xml.h:223 Form/form_gb.xml.h:356
 msgid "Whether Working at Home"
@@ -9255,10 +9248,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_gb.xml.h:254 Form/form_gb.xml.h:389
-#, fuzzy
-#| msgid "Number of editions back"
 msgid "Number of living children"
-msgstr "Broj promjena unatrag"
+msgstr "Broj žive djece"
 
 #: Form/form_gb.xml.h:255 Form/form_gb.xml.h:390
 msgid "Total number under sixteen years of age. If none write \"None.\""
@@ -11287,7 +11278,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:729
 msgid "Nature of industry"
-msgstr "Vrsta branše"
+msgstr "Vrsta industrije"
 
 #: Form/form_us.xml.h:730
 msgid "Employer, employee or working on own account"
@@ -11518,7 +11509,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:880
 msgid "Usual Industry"
-msgstr ""
+msgstr "Uobičajena industrija"
 
 #: Form/form_us.xml.h:881
 msgid "Usual Class of Work"
@@ -11537,10 +11528,8 @@ msgid "Incorporated place or township"
 msgstr ""
 
 #: Form/form_us.xml.h:890
-#, fuzzy
-#| msgid "Entry Number"
 msgid "E. D. Number"
-msgstr "Broj unosa"
+msgstr "Elliott–Deeley broj"
 
 #: Form/form_us.xml.h:892
 msgid "Hotel, large rooming house, institution, military installation, etc."
@@ -11563,10 +11552,8 @@ msgid "Agricultural Questionnaire Number"
 msgstr ""
 
 #: Form/form_us.xml.h:906
-#, fuzzy
-#| msgid "8. Age at last birthday"
 msgid "Age at last birthday"
-msgstr "8. Dob pri zadnjem rođendanu"
+msgstr "Dob pri zadnjem rođendanu"
 
 #: Form/form_us.xml.h:907
 msgid "How old was he on his last birthday?"
@@ -11618,11 +11605,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:919
 msgid "Has a job or business?"
-msgstr ""
+msgstr "Je li osoba zaposlena ili ima tvrtku?"
 
 #: Form/form_us.xml.h:920
 msgid "Even though he didn’t work last week, does he have a job or business?"
-msgstr ""
+msgstr "Iako nije radio prošli tjedan, ima li posao ili tvrtku?"
 
 #: Form/form_us.xml.h:921
 msgid "# hours worked last week"
@@ -11633,24 +11620,20 @@ msgid "How many hours did he work last week?"
 msgstr ""
 
 #: Form/form_us.xml.h:923
-#, fuzzy
-#| msgid "Type of link"
 msgid "Type of work"
-msgstr "Vrsta veze"
+msgstr "Vrsta posla"
 
 #: Form/form_us.xml.h:924
 msgid "What kind of work was he doing?"
 msgstr ""
 
 #: Form/form_us.xml.h:925
-#, fuzzy
-#| msgid "Nature of industry"
 msgid "Business or industry"
-msgstr "Vrsta branše"
+msgstr "Tvrtka ili industrija"
 
 #: Form/form_us.xml.h:926
 msgid "What kind of business or industry was he working in?"
-msgstr ""
+msgstr "U kojoj je vrsti tvrtke ili industrije radio?"
 
 #: Form/form_us.xml.h:928
 msgid "Same house in Apr 1949?"
@@ -11735,16 +11718,20 @@ msgid ""
 "Last year, how much money did he earn working as an employee for wages or "
 "salary?"
 msgstr ""
+"Koliko je novca zaradio prošle godine radeći kao zaposlenik za nadnicu ili "
+"plaću?"
 
 #: Form/form_us.xml.h:951
 msgid "Amount of money from own business in 1949"
-msgstr ""
+msgstr "Iznos novca zarađen vlastitom tvrtkom 1949. godine"
 
 #: Form/form_us.xml.h:952
 msgid ""
 "Last year, how much money did he earn working in his own business, "
 "professional practice, or farm?"
 msgstr ""
+"Koliko je novca prošle godine zaradio radeći u vlastitoj tvrtki, "
+"profesionalnoj praksi ili na farmi?"
 
 #: Form/form_us.xml.h:953
 msgid "Amount of other income in 1949"
@@ -11768,13 +11755,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:957
 msgid "Relatives in household earnings from own business in 1949"
-msgstr ""
+msgstr "Prihodi rođaka u kućanstvu iz vlastite tvrtke 1949. godine"
 
 #: Form/form_us.xml.h:958
 msgid ""
 "Last year, how much money did his relatives in this household earn in own "
 "business, professional practice, or farm?"
 msgstr ""
+"Koliko su novca njegovi rođaci u ovom kućanstvu zaradili prošle godine u "
+"vlastitoj tvrtki, profesionalnoj praksi ili na farmi?"
 
 #: Form/form_us.xml.h:959
 msgid "Relatives in household other income in 1949"
@@ -11812,7 +11801,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:967
 msgid "What kind of business or industry did he work in?"
-msgstr ""
+msgstr "U kojoj je vrsti tvrtke ili industrije radio?"
 
 #: Form/form_us.xml.h:968
 msgid "Class of worker [last job]"
@@ -12003,10 +11992,8 @@ msgid "When imprisoned"
 msgstr ""
 
 #: Form/form_us.xml.h:1031
-#, fuzzy
-#| msgid "Where Born"
 msgid "Where imprisoned"
-msgstr "Mjesto rođenja"
+msgstr ""
 
 #: Form/form_us.xml.h:1032
 msgid "How were you discharged"
@@ -13870,35 +13857,35 @@ msgstr ""
 
 #: Form/form_us.xml.h:2029
 msgid "Male Children 5 and Under"
-msgstr ""
+msgstr "Muška djeca do 5 godina"
 
 #: Form/form_us.xml.h:2030
 msgid "Female Children 5 and Under"
-msgstr ""
+msgstr "Ženska djeca do 5 godina"
 
 #: Form/form_us.xml.h:2031
 msgid "Males 5 to 20 Years of Age"
-msgstr ""
+msgstr "Muške osobe od 5 do 20 godina"
 
 #: Form/form_us.xml.h:2032
 msgid "Females 5 to 20 Years of Age"
-msgstr ""
+msgstr "Ženske osobe od 5 do 20 godina"
 
 #: Form/form_us.xml.h:2033
 msgid "Males 20 to 60 Years of Age"
-msgstr ""
+msgstr "Muške osobe od 20 do 60 godina"
 
 #: Form/form_us.xml.h:2034
 msgid "Females 20 to 60 Years of Age"
-msgstr ""
+msgstr "Ženske osobe od 20 do 60 godina"
 
 #: Form/form_us.xml.h:2035
 msgid "Males Over 60 Years of Age"
-msgstr ""
+msgstr "Muške osobe starije od 60 godina"
 
 #: Form/form_us.xml.h:2036
 msgid "Females Over 60 Years of Age"
-msgstr ""
+msgstr "Ženske osobe starije od 60 godina"
 
 #: Form/form_us.xml.h:2040 Form/form_us.xml.h:2079 Form/form_us.xml.h:2116
 #: Form/form_us.xml.h:2154 Form/form_us.xml.h:2192
@@ -14245,7 +14232,7 @@ msgstr "Datum rođenja preminule osobe"
 
 #: Form/form_us.xml.h:2443
 msgid "Industry or Business"
-msgstr "Industrija ili poduzeće"
+msgstr "Industrija ili trvrtka"
 
 #: Form/form_us.xml.h:2444
 msgid "Name of employer"
@@ -14439,7 +14426,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2560
 msgid "Place of employment or business"
-msgstr ""
+msgstr "Mjesto zaposlenja ili poslovanja"
 
 #: Form/form_us.xml.h:2564 Form/form_us.xml.h:2582
 msgid "Complexion"
@@ -14511,7 +14498,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2597
 msgid "Industry/Employer"
-msgstr "Branša/Poslodavac"
+msgstr "Industrija/Poslodavac"
 
 #: Form/form_us.xml.h:2600
 msgid "Residents Status"
@@ -16451,10 +16438,8 @@ msgid "Activate the birth label."
 msgstr "Aktiviraj etiketu rođenja."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
-#, fuzzy
-#| msgid "Birthplace of Father"
 msgid "Birth label along path"
-msgstr "Mjesto rođenja oca"
+msgstr "Etiketa rođenja uzduž staze"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:28
 msgid "The birth label is aligned to the individual line."
@@ -16514,10 +16499,8 @@ msgid "The birth label content is wrapped where possible."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:42
-#, fuzzy
-#| msgid "BirthPlaceFather"
 msgid "Birth label anchor"
-msgstr "Mjesto rođenja oca"
+msgstr "Sidro etikete rođenja"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:43
 msgid "Text alignment of the birth label."
@@ -17199,8 +17182,8 @@ msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
 msgstr ""
-"Nije postavljena staza za medije. Moraš je postaviti u postavkama pod „"
-"Osnovna relativna staza do medija”."
+"Nije postavljena staza za medije. Moraš je postaviti u postavkama pod "
+"„Osnovna relativna staza do medija”."
 
 #: MediaVerify/MediaVerify.py:307
 msgid "Finding files"
@@ -18033,6 +18016,14 @@ msgstr "Prikaži opise za majku/oca"
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Prikaži naslov za majku ili oca pored svakog okvira pretka."
+
+#: PedigreeChart/PedigreeChart.py:657
+msgid "Show page numbers"
+msgstr "Prikaži brojeve stranica"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
@@ -19091,10 +19082,8 @@ msgstr ""
 "karti. Pritisni „Primijeni” za automatsku primjenu svih promjena"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-#, fuzzy
-#| msgid "Place Coordinate Gramplet view"
 msgid "Place Coordinate Gramplet"
-msgstr "Koordinate mjesta"
+msgstr "Koordinate mjesta – Gramplet"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
@@ -19179,10 +19168,8 @@ msgid "Found place:"
 msgstr "Pronađeno mjesto:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:53
-#, fuzzy
-#| msgid "No central person selected"
 msgid "No DB entry is selected"
-msgstr "Nije odabrana središnja osoba"
+msgstr "Nije odabran nijedan unos u bazi podataka"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
@@ -20308,7 +20295,7 @@ msgstr "Koliko daleko želiš ići?"
 
 #: RelID/relation_tab.py:339
 msgid "Rel_id"
-msgstr "ID srodstva"
+msgstr "ID_srodstva"
 
 #: RelID/relation_tab.py:342
 msgid "up"
@@ -20598,7 +20585,7 @@ msgstr "Odabir filtrom"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
-msgstr "Uključi URL spremišta"
+msgstr "Uključi URL-ove spremišta"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
@@ -21104,11 +21091,11 @@ msgstr ""
 
 #: SourceIndex/birth.glade:870
 msgid "Call number:"
-msgstr "Pozivni broj:"
+msgstr "Signatura:"
 
 #: SourceIndex/birth.glade:887
 msgid "The call number into the repository"
-msgstr "Pozivni broj u spremište"
+msgstr "Signatura u spremištu"
 
 #: SourceIndex/birth.glade:925
 msgid "<b><i>Data person</i></b>"
@@ -21836,10 +21823,8 @@ msgid ""
 msgstr ""
 
 #: TMGimporter/libtmg.glade:88
-#, fuzzy
-#| msgid "Street Name"
 msgid "Data Set Name"
-msgstr "Ime ulice"
+msgstr "Ime skupa podataka"
 
 #: TMGimporter/libtmg.glade:148
 msgid "_Import TMG Data Set"
@@ -22507,23 +22492,19 @@ msgstr "Broj piksela po godini"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
-msgstr "Kolika visina piksela predstavlja jednu godinu?"
+msgstr "Koliko piksela ima jedna godina?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:910
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Offset X Coordinate"
-msgstr "Koordinate mjesta"
+msgstr "Odmak X koordinate"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:917
-#, fuzzy
-#| msgid "Place Coordinates"
 msgid "Offset Y Coordinate"
-msgstr "Koordinate mjesta"
+msgstr "Odmak Y koordinate"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
@@ -22669,9 +22650,9 @@ msgid "TR-Title"
 msgstr "TR-Titula"
 
 #: ToDoReport/TodoReport.py:111
-#, fuzzy, python-format
+#, python-format
 msgid "Report on Notes Tagged '%s'"
-msgstr "Izvještaj o zabilješkama s etiketom: „%s”"
+msgstr "Izvještaj o zabilješkama s oznakom „%s”"
 
 #: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
 msgid "TR-Heading"
@@ -22756,10 +22737,8 @@ msgid "place: "
 msgstr "mjesto: "
 
 #: ToDoReport/TodoReport.py:877
-#, fuzzy
-#| msgid "Note Types"
 msgid "Note Type"
-msgstr "Vrste zabilježaka"
+msgstr "Vrsta zabilješke"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
@@ -22960,7 +22939,8 @@ msgstr "UK Web Connect zbirka"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:12
 msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgstr "Zbirka web stranica za Ujedinjeno Kraljevstvo (zahtijeva libwebconnect)"
+msgstr ""
+"Zbirka web stranica za Ujedinjeno Kraljevstvo (zahtijeva libwebconnect)"
 
 #: UKWebConnectPack/UKWebPack.py:33
 msgid "UK Google"
@@ -23267,7 +23247,7 @@ msgstr "Stupac – Naslov"
 
 #: constants.py:394
 msgid "Column - Website Url"
-msgstr "Stupac – URL web stranice"
+msgstr "Stupac – URL web-stranice"
 
 #: constants.py:395
 msgid "Column - Comment"

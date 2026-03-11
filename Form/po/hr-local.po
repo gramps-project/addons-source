@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-11-15 19:51+0000\n"
+"PO-Revision-Date: 2026-02-12 19:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 msgid "Select Form"
 msgstr "Odaberi obrazac"
@@ -191,13 +191,16 @@ msgid "Naturalized or alien"
 msgstr "Naturaliziran ili stranac"
 
 msgid "Nature of industry"
-msgstr "Vrsta branše"
+msgstr "Vrsta industrije"
 
 msgid "Employer, employee or working on own account"
 msgstr "Poslodavac, zaposlenik ili radi na vlastiti račun"
 
 msgid "Year of naturalization"
 msgstr "Godina naturalizacije"
+
+msgid "Industry"
+msgstr "Industrija"
 
 msgid "Employer, worker or working on own account"
 msgstr "Zaposlenik, radnik ili radi na vlastiti račun"
@@ -206,7 +209,7 @@ msgid "Institution"
 msgstr "Institucija"
 
 msgid "Employed"
-msgstr "Zaposlenik"
+msgstr "Zaposlen"
 
 msgid "Age at Last Birthday"
 msgstr "Dob pri zadnjem rođendanu"
@@ -217,11 +220,35 @@ msgstr "Državljanstvo ako je osoba rođena u inozemstvu"
 msgid "State (Territory/Country)"
 msgstr "Država (teritorij/zemlja)"
 
+msgid "Usual Industry"
+msgstr "Uobičajena industrija"
+
+msgid "E. D. Number"
+msgstr "Elliott–Deeley broj"
+
+msgid "Age at last birthday"
+msgstr "Dob pri zadnjem rođendanu"
+
 msgid "Is he now married, widowed, divorced, separated, or never married?"
 msgstr "Je li sada oženjen, udovac, razveden, rastavljen ili nikada oženjen?"
 
 msgid "What State (or foreign country) was he born in?"
 msgstr "U kojoj je državi (ili stranoj zemlji) rođen?"
+
+msgid "Has a job or business?"
+msgstr "Je li osoba zaposlena ili ima tvrtku?"
+
+msgid "Even though he didn’t work last week, does he have a job or business?"
+msgstr "Iako nije radio prošli tjedan, ima li posao ili tvrtku?"
+
+msgid "Type of work"
+msgstr "Vrsta posla"
+
+msgid "Business or industry"
+msgstr "Tvrtka ili industrija"
+
+msgid "What kind of business or industry was he working in?"
+msgstr "U kojoj je vrsti tvrtke ili industrije radio?"
 
 msgid "State or foreign country"
 msgstr "Država ili strana zemlja"
@@ -234,6 +261,36 @@ msgstr "U kojoj je zemlji rođena njegova majka?"
 
 msgid "Attended school since Feb 1, 1950?"
 msgstr "Pohađao školu od 1. veljače 1950.?"
+
+msgid ""
+"Last year, how much money did he earn working as an employee for wages or "
+"salary?"
+msgstr ""
+"Koliko je novca zaradio prošle godine radeći kao zaposlenik za nadnicu ili "
+"plaću?"
+
+msgid "Amount of money from own business in 1949"
+msgstr "Iznos novca zarađen vlastitom tvrtkom 1949. godine"
+
+msgid ""
+"Last year, how much money did he earn working in his own business, "
+"professional practice, or farm?"
+msgstr ""
+"Koliko je novca prošle godine zaradio radeći u vlastitoj tvrtki, "
+"profesionalnoj praksi ili na farmi?"
+
+msgid "Relatives in household earnings from own business in 1949"
+msgstr "Prihodi rođaka u kućanstvu iz vlastite tvrtke 1949. godine"
+
+msgid ""
+"Last year, how much money did his relatives in this household earn in own "
+"business, professional practice, or farm?"
+msgstr ""
+"Koliko su novca njegovi rođaci u ovom kućanstvu zaradili prošle godine u "
+"vlastitoj tvrtki, profesionalnoj praksi ili na farmi?"
+
+msgid "What kind of business or industry did he work in?"
+msgstr "U kojoj je vrsti tvrtke ili industrije radio?"
 
 msgid ""
 "How many years since this person was married, widowed, divorced, or "
@@ -563,6 +620,30 @@ msgstr "Ranije u mornarici"
 msgid "Birth Country"
 msgstr "Zemlja rođenja"
 
+msgid "Male Children 5 and Under"
+msgstr "Muška djeca do 5 godina"
+
+msgid "Female Children 5 and Under"
+msgstr "Ženska djeca do 5 godina"
+
+msgid "Males 5 to 20 Years of Age"
+msgstr "Muške osobe od 5 do 20 godina"
+
+msgid "Females 5 to 20 Years of Age"
+msgstr "Ženske osobe od 5 do 20 godina"
+
+msgid "Males 20 to 60 Years of Age"
+msgstr "Muške osobe od 20 do 60 godina"
+
+msgid "Females 20 to 60 Years of Age"
+msgstr "Ženske osobe od 20 do 60 godina"
+
+msgid "Males Over 60 Years of Age"
+msgstr "Muške osobe starije od 60 godina"
+
+msgid "Females Over 60 Years of Age"
+msgstr "Ženske osobe starije od 60 godina"
+
 msgid "P.O."
 msgstr "PP"
 
@@ -741,7 +822,7 @@ msgid "Birth date of deceased"
 msgstr "Datum rođenja preminule osobe"
 
 msgid "Industry or Business"
-msgstr "Industrija ili poduzeće"
+msgstr "Industrija ili trvrtka"
 
 msgid "Name of employer"
 msgstr "Ime poslodavca"
@@ -785,6 +866,9 @@ msgstr "Mjesto registracije"
 msgid "Date of Registration"
 msgstr "Datum registracije"
 
+msgid "Place of employment or business"
+msgstr "Mjesto zaposlenja ili poslovanja"
+
 msgid "Eyes"
 msgstr "Oči"
 
@@ -807,7 +891,7 @@ msgid "Hair color"
 msgstr "Boja kose"
 
 msgid "Industry/Employer"
-msgstr "Branša/Poslodavac"
+msgstr "Industrija/Poslodavac"
 
 msgid "Residents Status"
 msgstr "Status stanovnika"
@@ -869,6 +953,12 @@ msgstr "Zapreke/Dozvola"
 msgid "Deceased"
 msgstr "Pokojan/pokojna"
 
+msgid "Maiden surname of woman who was married"
+msgstr "Djevojačko ime žene koja je bila udata"
+
+msgid "Usual Address"
+msgstr "Uobičajena adresa"
+
 msgid "City or Borough"
 msgstr "Grad ili borough"
 
@@ -912,7 +1002,7 @@ msgid "PROFESSION OR OCCUPATION"
 msgstr "PROFESIJA ILI ZANIMANJE"
 
 msgid "Work Type"
-msgstr "Vrsta rada"
+msgstr "Vrsta posla"
 
 msgid "Employer, Worker or Own Account"
 msgstr "Zaposlenik, radnik ili samostalan"
@@ -948,6 +1038,12 @@ msgstr "Ukupno djece"
 msgid "Children Died"
 msgstr "Umrla djeca"
 
+msgid "Industry or Service with which worker is connected."
+msgstr "Industrija ili usluga s kojom je radnik povezan."
+
+msgid "Whether Employer, Worker or Working on Own Account"
+msgstr "Je li zaposlenik, radnik ili je li radi na vlastiti račun"
+
 msgid "Nationality"
 msgstr "Nacionalnost"
 
@@ -959,6 +1055,9 @@ msgstr "IME i PREZIME"
 
 msgid "SEX"
 msgstr "SPOL"
+
+msgid "Number of living children"
+msgstr "Broj žive djece"
 
 msgid "Ages of living children"
 msgstr "Dob žive djece"
@@ -1258,6 +1357,9 @@ msgstr "Ne zna čitati"
 msgid "CantWrite"
 msgstr "Ne zna pisati"
 
+msgid "19. Unsound mind"
+msgstr "19. Nezdrav um"
+
 msgid "1. Vessels and Shanties"
 msgstr "1. Plovila i kolibe"
 
@@ -1512,6 +1614,9 @@ msgstr "23. Zna pisati"
 
 msgid "24. Chief occupation or trade"
 msgstr "24. Glavno zanimanje ili obrt"
+
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr "25. Poslodavac, „E”, Zaposlenik, „W”"
 
 msgid "26. State where person is employed"
 msgstr "26. Država u kojoj je osoba zaposlena"

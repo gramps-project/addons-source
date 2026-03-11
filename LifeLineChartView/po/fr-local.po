@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-11-28 18:00+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"PO-Revision-Date: 2026-01-03 18:01+0000\n"
+"Last-Translator: Maël Chiotti "
+"<maelchiotti@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 msgid ""
 "LifeLineChartView dependencies are missing. It is not possible to use this "
@@ -181,8 +182,19 @@ msgstr ""
 "L'étiquette de naissance est déplacée verticalement de cette valeur, qui est "
 "relative à la taille de la police."
 
+msgid "Wrap words in birth label"
+msgstr "Renvoi à la ligne dans l'étiquette de naissance"
+
+msgid "The birth label content is wrapped where possible."
+msgstr ""
+"Le contenu de l'étiquette de naissance est renvoyé à la ligne quand c'est "
+"possible."
+
 msgid "Birth label anchor"
 msgstr "Ancrage de l'étiquette de naissance"
+
+msgid "Text alignment of the birth label."
+msgstr "Alignement du texte de l'étiquette de naissance."
 
 msgid "Center"
 msgstr "Centre"
@@ -195,6 +207,45 @@ msgstr "Activer l'étiquette du décès."
 
 msgid "Death label rotation"
 msgstr "Angle de rotation de l'étiquette de décès"
+
+msgid "The death label is written in a text frame rotated by this value."
+msgstr ""
+"L'étiquette de décès est écrite dans un cadre de texte pivoté par cette "
+"valeur."
+
+msgid "Horizontal offset of death label"
+msgstr "Décalage horizontal de l'étiquette de décès"
+
+msgid ""
+"The death label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"L'étiquette de décès est décalée horizontalement de cette valeur, qui est "
+"donnée relativement à la taille de la police."
+
+msgid "Vertical offset of death label"
+msgstr "Décalage vertical de l'étiquette de décès"
+
+msgid ""
+"The death label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"L'étiquette de décès est décalée verticalement de cette valeur, qui est "
+"donnée relativement à la taille de la police."
+
+msgid "Wrap words in death label"
+msgstr "Renvoi à la ligne dans l'étiquette de décès"
+
+msgid "The death label content is wrapped where possible."
+msgstr ""
+"Le contenu de l'étiquette de décès est renvoyé à la ligne quand c'est "
+"possible."
+
+msgid "Death label anchor"
+msgstr "Ancre de l'étiquette de décès"
+
+msgid "Text alignment of the death label."
+msgstr "Alignement du texte de l'étiquette de décès."
 
 msgid "Show marriage label"
 msgstr "Afficher l'étiquette du mariage"
@@ -226,6 +277,9 @@ msgstr "Rectangulaire"
 
 msgid "Softer"
 msgstr "Plus doux"
+
+msgid "Upper year minimum margin"
+msgstr "Marge minimale de l'année supérieure"
 
 msgid "Lower year minimum margin"
 msgstr "Marge minimale de l ' année inférieure"

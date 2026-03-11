@@ -5,20 +5,22 @@
 # Kamen Naydenov <pau4o@pixel-bg.com>, 2006
 # Svetoslav Stefanov <lfu.project@gmail.com>, 2009
 # Boril Gourinov <boril.gourinov@gmail.com>, 2007, 2008, 2009, 2010.
+# Iskren Petkov <auto-weblate@quietlyemailme.us>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2010-03-03 01:10+0200\n"
-"Last-Translator: Boril Gourinov <boril.gourinov@gmail.com>\n"
-"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"PO-Revision-Date: 2026-01-30 20:53+0000\n"
+"Last-Translator: Iskren Petkov <auto-weblate@quietlyemailme.us>\n"
+"Language-Team: Bulgarian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.16-dev\n"
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -58,9 +60,8 @@ msgid "AncestorFill for %s"
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:205
-#, fuzzy
 msgid "Generation "
-msgstr "Основни"
+msgstr "Основни "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
@@ -17677,6 +17678,14 @@ msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:657
+msgid "Show page numbers"
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662

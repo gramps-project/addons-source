@@ -9,13 +9,14 @@
 # Kolesár András <translation@kolesar.hu>, 2009.
 # Nemeséri Lajos <nemeseril@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 # Lajos Nemeséri <nemeseril@gmail.com>, 2025.
+# Daniel Szollosi-Nagy <dsn-weblate@kdconsulting.net>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
-"Last-Translator: Lajos Nemeséri <nemeseril@gmail.com>\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"PO-Revision-Date: 2026-02-21 14:09+0000\n"
+"Last-Translator: Daniel Szollosi-Nagy <dsn-weblate@kdconsulting.net>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hu/>\n"
 "Language: hu\n"
@@ -23,43 +24,41 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Minden személy mindegyik neve"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Minden személy mindegyik nevét mutatja"
 
 #: AllNamesQuickview/AllNames.py:54
-#, fuzzy
-#| msgid "Media Type"
 msgid "Name Type"
-msgstr "Médiatípus"
+msgstr "Névtípus"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr ""
+msgstr "Elsődleges név"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "Összes név %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
-msgstr ""
+msgstr "Fa kitöltése"
 
 #: AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
-msgstr ""
+msgstr "Beszámoló a fa kitötéséről"
 
 #: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr ""
+msgstr "Fa kitöltése neki: %s"
 
 #: AncestorFill/AncestorFill.py:205
 msgid "Generation "
@@ -67,23 +66,23 @@ msgstr "Generációk "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr ""
+msgstr "Talált felmenők száma "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
-msgstr ""
+msgstr "Talált felmenők százaléka "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr ""
+msgstr "Talált egyedi ősök száma "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
-msgstr ""
+msgstr "Elméleti ősök száma "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
-msgstr ""
+msgstr "Becsuk "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
@@ -91,7 +90,7 @@ msgstr "A megtalált ősök összes száma "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
-msgstr ""
+msgstr "A megtalált egyedi ősök összes száma "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -100,34 +99,42 @@ msgid ""
 "Note: This report only counts ancestors with a parent-child relationship of "
 "birth."
 msgstr ""
+"\n"
+"\n"
+"Megjegyzés: Ez a jelentés csak a születéskor szülő-gyermek "
+"kapcsolattalrendelkező ősöket számolja meg."
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
-msgstr ""
+msgstr "Tizedes"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
+"A tizedesvessző utáni számjegyek száma, amely egy adott generációban talált "
+"ősöket megjeleníti a beszámolóban"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
-msgstr ""
+msgstr "Bezárt tizedes"
 
 #: AncestorFill/AncestorFill.py:313
 msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
 msgstr ""
+"A tizedesvessző utáni számjegyek száma, amelyet a származás becsukott "
+"beszámolójában mutasson"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
-msgstr ""
+msgstr "Elméleti szám mutatása"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "Megmutassa-e a generációnkénti ősök elméleti számát"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
@@ -135,10 +142,8 @@ msgstr ""
 #: LastChange/LastChangeReport.py:378
 #: LinesOfDescendency/lines-of-descendency.py:72
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
-#, fuzzy
-#| msgid "The API key used for the Google map"
 msgid "The style used for the title of the page."
-msgstr "A Google térképhez használt API kulcs"
+msgstr "Az oldal címénél használt stílus"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -154,7 +159,7 @@ msgstr ""
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
-msgstr ""
+msgstr "Kapcsolat jellege"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
@@ -164,11 +169,11 @@ msgstr ""
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
-msgstr ""
+msgstr "Forrás csatolása"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
-msgstr ""
+msgstr "Megosztott forrást csatol több objektumhoz."
 
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
@@ -179,44 +184,36 @@ msgid "Select filter to restrict people"
 msgstr "Szűrő kiválasztása személyek kizárására"
 
 #: AttachSourceTool/AttachSourceTool.py:81
-#, fuzzy
-#| msgid "Sources Index"
 msgid "Source type"
-msgstr "Források jegyzéke"
+msgstr "Források típusa"
 
 #: AttachSourceTool/AttachSourceTool.py:82
-#, fuzzy
-#| msgid "Used for source"
 msgid "New source"
-msgstr "Forrásnál használt"
+msgstr "Új forrás"
 
 #: AttachSourceTool/AttachSourceTool.py:83
-#, fuzzy
-#| msgid "Export sources"
 msgid "Existing source"
-msgstr "Források exportálása"
+msgstr "Létező forrás"
 
 #: AttachSourceTool/AttachSourceTool.py:84
-#, fuzzy
-#| msgid "Select the type of graph"
 msgid "Select the type of source to attach"
-msgstr "Válassza ki az ábratípust"
+msgstr "Válassza ki a csatolandó forrás típusát"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
-msgstr ""
+msgstr "Új forrás címe"
 
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
-msgstr ""
+msgstr "A csatolandó forrás szövege"
 
 #: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
-msgstr ""
+msgstr "Létező forrás azonosító"
 
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr ""
+msgstr "Csatolandó forrás azonosítója"
 
 #: AttachSourceTool/AttachSourceTool.py:157
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
@@ -227,66 +224,62 @@ msgstr "Végrehajtás...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
-msgstr ""
+msgstr "Források csatolása...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:175
-#, fuzzy
-#| msgid "No matching surname."
 msgid "Attaching sources..."
-msgstr "Nem található megfelelő vezetéknév."
+msgstr "Források csatolása..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
-#, fuzzy
-#| msgid "done!\n"
 msgid "Done!\n"
-msgstr "befejezve!\n"
+msgstr "Kész!\n"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
-msgstr ""
+msgstr "Avatárt létrehozó eszköz"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
-msgstr ""
+msgstr "Egy eszköz, amellyel avatár képeket lehet hozzáadni a családfához"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
-msgstr ""
+msgstr "egyetlen kép mód"
 
 #: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
-msgstr ""
+msgstr "Válassza ki, hogy mennyi képet szeretne használni."
 
 #: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
-msgstr ""
+msgstr "Kép ismeretlen nemű embereknek."
 
 #: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
-msgstr ""
+msgstr "Kép férfiaknak."
 
 #: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
-msgstr ""
+msgstr "Kép nőknek"
 
 #: AvatarGenerator/AvatarGenerator.py:95
 msgid "Remove images from people"
-msgstr ""
+msgstr "Képek eltávolítása emberekről"
 
 #: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
-msgstr ""
+msgstr "Kiválasztott képek elvávolítása."
 
 #: AvatarGenerator/AvatarGenerator.py:134
 #: AvatarGenerator/AvatarGenerator.py:183
 #: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
-msgstr ""
+msgstr "Avatár generátor"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
-msgstr ""
+msgstr "Avatár képek eltávolítása..."
 
 #: AvatarGenerator/AvatarGenerator.py:211
 #: AvatarGenerator/AvatarGenerator.py:219
@@ -297,50 +290,52 @@ msgstr ""
 #: MediaReport/media_report.py:112 MediaReport/media_report.py:119
 #: MediaReport/media_report.py:125 RemoveTagTool/RemoveTagTool.py:271
 msgid "INFO"
-msgstr ""
+msgstr "INFO"
 
 #: AvatarGenerator/AvatarGenerator.py:211
 msgid "No media was removed."
-msgstr ""
+msgstr "Egyetlen média sem került eltávolításra."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
-msgstr ""
+msgstr "{} médiahivatkozás lett eltávolítva {} személytől."
 
 #: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
 msgstr ""
+"\n"
+"{} Handle hiba következett be, de figyelmen kívül hagytuk."
 
 #: AvatarGenerator/AvatarGenerator.py:263
 #: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
-msgstr ""
+msgstr "Avatár képek hozzáadása..."
 
 #: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
-msgstr ""
+msgstr "{} avatár képet adtunk hozzá sikererrel."
 
 #: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
-msgstr ""
+msgstr "Nem volt hozzádaható avatár kép. "
 
 #: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
-msgstr ""
+msgstr "Az összes személynek már volt egy."
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
-msgstr ""
+msgstr "Mi következik (béta)"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:49
 msgid "Beta Gramplet suggesting items to research"
-msgstr ""
+msgstr "A béta verziójó Gramplet által javasolut kutatási elemek"
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:60
 msgid "Beta What's Next?"
-msgstr ""
+msgstr "Mi a következő (béta)?"
 
 #: Betawhatsnext/Betawhatsnext.py:46
 msgid ""
@@ -348,47 +343,58 @@ msgid ""
 " ⛔ A local Genealogical Tree database has not yet been loaded.\n"
 "\n"
 msgstr ""
+"\n"
+" ⛔ Egy helyi családfa még nem került betöltésre.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:49
 msgid " 👣 Next Steps:\n"
-msgstr ""
+msgstr " 👣 Következő lépések:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
 msgid "  •  From the \"Family Trees\" menu,"
-msgstr ""
+msgstr "  •  A \"Családfák\" menüből,"
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
-msgstr ""
+msgstr " használja a \"Családfák kezelése...\" opciót"
 
 #: Betawhatsnext/Betawhatsnext.py:52
 msgid " create a New (or to select an existing) Tree database.\n"
-msgstr ""
+msgstr " hozzon létre egy új (vagy válasszon ki egy létező) fa adatbázist.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr ""
+msgstr "  •  A kezdéshez kattintson a \"Családfa betöltése\" gombra"
 
 #: Betawhatsnext/Betawhatsnext.py:54
 msgid ""
 " working with the selected genealogical tree.\n"
 "\n"
 msgstr ""
+" a kiválasztott családfával való munkához.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:55
 msgid "Create and load an empty new tree to import a backup (or"
 msgstr ""
+"Hozzon létre és töltsön be egy új családfát egy biztonsági mentés "
+"importálásához (vagy"
 
 #: Betawhatsnext/Betawhatsnext.py:56
 msgid ""
 " GEDCOM file) from another genealogical tool.\n"
 "\n"
 msgstr ""
+" GEDCOM fájl) egy másik családfa szoftverből.\n"
+"\n"
 
 #: Betawhatsnext/Betawhatsnext.py:70
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
 msgstr ""
+"A \"Nézet\" menüből használja a \"Beállítás\" menüpontot a Gramplet "
+"opcióinak módosításához."
 
 #: Betawhatsnext/Betawhatsnext.py:86
 msgid "Search Quota "
@@ -396,29 +402,31 @@ msgstr "Kvóta keresés "
 
 #: Betawhatsnext/Betawhatsnext.py:92
 msgid "Depth per loop"
-msgstr ""
+msgstr "Hurok mélysége"
 
 #: Betawhatsnext/Betawhatsnext.py:98
 msgid "Pause search expansion"
-msgstr ""
+msgstr "Szünet időtartama két hurok között"
 
 #: Betawhatsnext/Betawhatsnext.py:105
 msgid "Completed Person"
-msgstr ""
+msgstr "Befejezett személy"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
-msgstr ""
+msgstr " Befejezett leszármazott család"
 
 #: Betawhatsnext/Betawhatsnext.py:118
 msgid "Ignore Person or Family"
-msgstr ""
+msgstr "Személy vagy család figyelmen kívül hagyása"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
 "\n"
 " ⛔ The current Tree database contains no people.\n"
 msgstr ""
+"\n"
+" ⛔ A jelenlegi fa adatbázis nem tartalmaz senkit.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:226
 msgid ""
@@ -433,12 +441,24 @@ msgid ""
 "  • An external file may be used to populate the tree via \"Import...\" in "
 "the \"Family Trees\" menu."
 msgstr ""
+"\n"
+" 👣 Következő lépések:\n"
+" Adjon hozzá egy családot és egy személyt ahhoz a családhoz:\n"
+"  • A családot a \"Hozzáad\" menüben lehet hozzáadni\n"
+"  • A személyt a \"+\" (plusz) gombra kattintva lehet a házastárs (\"Apa/"
+"partner1\" vagy \"Anya/partner2\") panelen, vagy a  \"Gyerekek\" fülben.\n"
+"\n"
+"Vagy egy külső fájlból importáljon személyeket:\n"
+"  • Egy külső fájl segítségével lehet feltölteni a családfát a \"Családfák\" "
+"menü \"Importálás...\" gombjával."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
 "\n"
 " ⛔ No Person has been chosen as the focal \"Home Person\".\n"
 msgstr ""
+"\n"
+" ⛔ Egy személy sincs fókuszpont \"Kezdő személyként\" kiválasztva.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:258
 msgid ""
@@ -451,126 +471,135 @@ msgid ""
 "\n"
 " This sets them as the focal \"Home Person\"."
 msgstr ""
+"\n"
+" 👣 Következő lépések:\n"
+"  •  A navigációs menüből válassza ki a Személyek ikonját.\n"
+"  •  Válasszon ki valakit \"aktív személynek\".\n"
+"  •  A Szerkesztés menüből vagy a jobb-klikkelés menüből válassza ki a "
+"\"Beállítás kiinduló személyként\" opciót.\n"
+"\n"
+"Innentől ez a személy lesz fókuszban mint \"Kiinduló személy\"."
 
 #: Betawhatsnext/Betawhatsnext.py:268
 msgid "Double-click color text to edit details"
-msgstr ""
+msgstr "Dupla-kattinson a színes szövegre a részletek szerkesztéséhez"
 
 #: Betawhatsnext/Betawhatsnext.py:504
 msgid "Birth event missing."
-msgstr ""
+msgstr "Születési esemény hiányzik."
 
 #: Betawhatsnext/Betawhatsnext.py:505
 msgid "Add via the Events tab of the Edit Person dialog."
-msgstr ""
+msgstr "A Személy szerkesztése párbeszéd Események fülén adja hozzá."
 
 #: Betawhatsnext/Betawhatsnext.py:582
-#, fuzzy
-#| msgid "Relationship to Mother"
 msgid "relationship type unknown"
-msgstr "Kapcsolat az anyával"
+msgstr "kapcsolat típusa ismeretlen"
 
 #: Betawhatsnext/Betawhatsnext.py:592
 msgid "Add via the Events tab of the Edit Family dialog."
-msgstr ""
+msgstr "A Család szerkesztése párbeszéd Események fülén adja hozzá."
 
 #: Betawhatsnext/Betawhatsnext.py:621
 msgid "591 family not complete"
-msgstr ""
+msgstr "591 nem teljes család"
 
 #: Betawhatsnext/Betawhatsnext.py:642
 msgid "place unknown for the Event"
-msgstr ""
+msgstr "ismeretlen hely az eseményhez"
 
 #: Betawhatsnext/Betawhatsnext.py:655
 msgid "A partner relationship exists but the spouse is missing"
-msgstr ""
+msgstr "Élettársi kapcsolat létezik, de az élettárs hiányzik"
 
 #: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
 #: Betawhatsnext/Betawhatsnext.py:665
 msgid "Add missing partner using the Edit Family dialog."
 msgstr ""
+"A hiányzó élettársat a Család szerkesztése párbeszéddel lehet hozzáadni."
 
 #: Betawhatsnext/Betawhatsnext.py:660
 msgid "Father missing from the parent family"
-msgstr ""
+msgstr "A szülői családból hiányzik az apa"
 
 #: Betawhatsnext/Betawhatsnext.py:664
 msgid "Mother missing from the parent family"
-msgstr ""
+msgstr "A szülői családból hiányzik az anya"
 
 #: Betawhatsnext/Betawhatsnext.py:668
 msgid "Parent family is unknown."
-msgstr ""
+msgstr "A szülői család ismeretlen."
 
 #: Betawhatsnext/Betawhatsnext.py:670
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
-msgstr ""
+msgstr "\"Új/létező szülők hozzáadása\" a Rokonság nézet Szerkesztés menüjéből."
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
-msgstr ""
+msgstr "Életrajz"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
-msgstr ""
+msgstr "Szöveges életrajz megjelenítése"
 
 #: BiographyQuickview/BiographyQuickview.py:48
 #, python-format
 msgid "Biography for %s"
-msgstr ""
+msgstr "%s életrajza"
 
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
-msgstr ""
+msgstr "Válassza ki a megvizsgálni kívánt családot."
 
 #: BirthOrder/birthorder.glade:155
-#, fuzzy
 msgid "Accept All"
-msgstr "Fájl kiválasztása"
+msgstr "Mindent elfogad"
 
 #: BirthOrder/birthorder.glade:159
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
 msgid "This button will sort all of the families listed."
-msgstr "Ez a gomb kitisztítja az itt mutatott összes adatmezőt."
+msgstr "Ez a gomb sorrendbe helyezi az összes kilistázott családot."
 
 #: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
-msgstr ""
+msgstr "Minden elfogadása *"
 
 #: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
 msgstr ""
+"Ez a gomb az összes '*' jelzésű családot szeti sorrendbe. Ezekben a "
+"családokban mindegyik gyereknek van érvényes dátuma, ezért a sorrend "
+"félreérthetetlen."
 
 #: BirthOrder/birthorder.glade:185
 msgid "Accept"
-msgstr ""
+msgstr "Elfogad"
 
 #: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
 msgstr ""
+"Ez a gomb csak a kifálasztott családot fogadja el, és a jobb-alsó sarokban "
+"láthatók szerint menti el."
 
 #: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
 msgid "Done"
-msgstr ""
+msgstr "Kész"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
-msgstr ""
+msgstr "Ez a gomb kilép, a maradék család változatlan marad."
 
 #: BirthOrder/birthorder.glade:256
 msgid "Current sort"
-msgstr ""
+msgstr "Jelenlegi sorrend"
 
 #: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
-msgstr ""
+msgstr "Javasolt sorrend"
 
 #: BirthOrder/birthorder.glade:333
 msgid ""
@@ -578,10 +607,14 @@ msgid ""
 "changes.  If you wish to adjust the order, select the child you wish to "
 "move, and use 'Up' or 'Down' buttons below to move them."
 msgstr ""
+"Ha megfelelő a sorrend, akkor a lenti 'Elfogad' gombbal lehet elfogadni a "
+"változásokat. Ha a sorrenden szeretne változtatni, akkor válassza ki azt a "
+"gyermeket, amelyet mozgatni szeretne, majd a 'Fel' és 'Le' gombokkal "
+"helyezze át."
 
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
-msgstr ""
+msgstr "Gyermekek sorrendje születési dátum szerint"
 
 #: BirthOrder/birthorder.gpr.py:12
 msgid ""
@@ -590,29 +623,32 @@ msgid ""
 "manually, accept all those families that have all children with proper birth "
 "dates, or accept all."
 msgstr ""
+"Átnézi a családokat, olyan gyermekeket keresve, akik nem születési "
+"sorrendben vannak. A felhasználó elfogadjatja az egyedi sorrend javaslatokat "
+"a korrigáláshoz, kézzel szerkesztheti a születési sorrenden, elfogadhatja a "
+"megfelelő születési dátummal rendelkező gyermekek családjait, vagy elfogad "
+"mindent."
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
-msgstr ""
+msgstr "Nincs sorrendbe állítandó család"
 
 #: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
-msgstr ""
+msgstr "Mindegyik gyermek születési dátum szerinti sorrendben van."
 
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
-msgstr ""
+msgstr "Család szerkesztése"
 
 #: BirthOrder/birthorder.py:275
-#, fuzzy
-#| msgid "Looking for place fields"
 msgid "Looking for children birth order"
-msgstr "Hely mezők keresése"
+msgstr "Gyermekek születési dátum szerinti sorrend keresése"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
-msgstr ""
+msgstr "Születésnapok"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
@@ -18142,6 +18178,16 @@ msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:657
+#, fuzzy
+#| msgid "Show duplicates"
+msgid "Show page numbers"
+msgstr "Kettőzöttek mutatása"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662

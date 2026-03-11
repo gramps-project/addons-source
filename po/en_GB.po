@@ -22,13 +22,13 @@
 # unrecognized -> unrecognised
 # indexes (use indexes rather than indices)
 #
-# Andi Chandler <andi@gowling.com>, 2025.
+# Andi Chandler <andi@gowling.com>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-12-03 20:00+0000\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"PO-Revision-Date: 2026-02-16 16:09+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -37,7 +37,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -182,11 +182,11 @@ msgstr "Of"
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
-msgstr ""
+msgstr "Attach Source"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
-msgstr ""
+msgstr "Attaches a shared source to multiple objects."
 
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
@@ -198,101 +198,101 @@ msgstr "Select filter to restrict people"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
-msgstr ""
+msgstr "Source type"
 
 #: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
-msgstr ""
+msgstr "New source"
 
 #: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
-msgstr ""
+msgstr "Existing source"
 
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
-msgstr ""
+msgstr "Select the type of source to attach"
 
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
-msgstr ""
+msgstr "New Source Title"
 
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
-msgstr ""
+msgstr "Text of source to attach"
 
 #: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
-msgstr ""
+msgstr "Existing Source ID"
 
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr ""
+msgstr "ID of source to attach"
 
 #: AttachSourceTool/AttachSourceTool.py:157
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 #: SetAttributeTool/SetAttributeTool.py:151
 #: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
-msgstr ""
+msgstr "Processing...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
-msgstr ""
+msgstr "Attaching sources...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
-msgstr ""
+msgstr "Attaching sources..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
 msgid "Done!\n"
-msgstr ""
+msgstr "Done!\n"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
-msgstr ""
+msgstr "Avatar Generator Tool"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
-msgstr ""
+msgstr "A tool to add avatar pictures to your family tree"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
-msgstr ""
+msgstr "single image mode"
 
 #: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
-msgstr ""
+msgstr "Choose how many images you'd like to use."
 
 #: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
-msgstr ""
+msgstr "Image for people with unknown gender."
 
 #: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
-msgstr ""
+msgstr "Image for males."
 
 #: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
-msgstr ""
+msgstr "Image for females"
 
 #: AvatarGenerator/AvatarGenerator.py:95
 msgid "Remove images from people"
-msgstr ""
+msgstr "Remove images from people"
 
 #: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
-msgstr ""
+msgstr "Remove selected image(s)."
 
 #: AvatarGenerator/AvatarGenerator.py:134
 #: AvatarGenerator/AvatarGenerator.py:183
 #: AvatarGenerator/AvatarGenerator.py:257
 msgid "Avatar Generator"
-msgstr ""
+msgstr "Avatar Generator"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
-msgstr ""
+msgstr "Remove avatar images..."
 
 #: AvatarGenerator/AvatarGenerator.py:211
 #: AvatarGenerator/AvatarGenerator.py:219
@@ -303,26 +303,28 @@ msgstr ""
 #: MediaReport/media_report.py:112 MediaReport/media_report.py:119
 #: MediaReport/media_report.py:125 RemoveTagTool/RemoveTagTool.py:271
 msgid "INFO"
-msgstr ""
+msgstr "INFO"
 
 #: AvatarGenerator/AvatarGenerator.py:211
 msgid "No media was removed."
-msgstr ""
+msgstr "No media was removed."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
-msgstr ""
+msgstr "{} media references were removed from {} persons."
 
 #: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
 msgstr ""
+"\n"
+"{} HandleError occured, but were ignored."
 
 #: AvatarGenerator/AvatarGenerator.py:263
 #: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
-msgstr ""
+msgstr "Add avatar images..."
 
 #: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
@@ -17683,6 +17685,14 @@ msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:657
+msgid "Show page numbers"
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662

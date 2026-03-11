@@ -9,20 +9,22 @@
 # André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2011, 2012, 2013, 2014.
 # Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>, 2016, 2017, 2018.
 # Paulo Terezani de Paiva <terezani_ppaiva@yahoo.com.br>, 2012.
+# João Garcez <joangarcez2100@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2012-08-26 20:57-0300\n"
-"Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
-"Language-Team: Brazilian Portuguese>\n"
-"Language: \n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"PO-Revision-Date: 2026-02-10 21:09+0000\n"
+"Last-Translator: João Garcez <joangarcez2100@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -47,52 +49,48 @@ msgstr "Total de nomes %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
-msgstr ""
+msgstr "Preenchimento de Ancestrais"
 
 #: AncestorFill/AncestorFill.gpr.py:10
-#, fuzzy
-#| msgid "The center family for the tree"
 msgid "Report on the filling of the tree"
-msgstr "A família principal para o relatório"
+msgstr "Relatório sobre o preenchimento da árvore"
 
 #: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr ""
+msgstr "Preenchimento de Ancestrais para %s"
 
 #: AncestorFill/AncestorFill.py:205
-#, fuzzy
-#| msgid "First generation"
 msgid "Generation "
-msgstr "Primeira geração"
+msgstr "Geração "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr ""
+msgstr "Número de Ancestrais encontrados "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
-msgstr ""
+msgstr "Porcentagem de Ancestrais encontrados "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr ""
+msgstr "Número de Ancestrais únicos encontrados "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
-msgstr ""
+msgstr "Número de Ancestrais teóricos "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
-msgstr ""
+msgstr "Implexo "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
-msgstr ""
+msgstr "Número Total de Ancestrais encontrados "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
-msgstr ""
+msgstr "Número Total de Ancestrais únicos encontrados "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -101,36 +99,40 @@ msgid ""
 "Note: This report only counts ancestors with a parent-child relationship of "
 "birth."
 msgstr ""
+"\n"
+"\n"
+"Nota: Esse relatório conta apenas ancestrais com uma relação de parentesco "
+"de nascimento (pai-filho)."
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
-msgstr ""
+msgstr "Dígito preenchido"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
+"O número de dígitos após a vírgula a incluir no relatório da porcentagem de "
+"ancestrais encontrados em uma dada geração"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
-msgstr ""
+msgstr "Dígito implexado"
 
 #: AncestorFill/AncestorFill.py:313
-#, fuzzy
-#| msgid "The number of descendant generations to include in the tree"
 msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
-msgstr "Número de gerações a serem incluídas na árvore"
+msgstr "O número de dígitos após a vírgula a incluir no relatório do Implexo"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
-msgstr ""
+msgstr "Mostrar teóricos"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "Exibir ou não o número teórico de ancestrais por geração"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
@@ -138,40 +140,38 @@ msgstr ""
 #: LastChange/LastChangeReport.py:378
 #: LinesOfDescendency/lines-of-descendency.py:72
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for the title of the page."
-msgstr "O estilo usado para nomes."
+msgstr "O estilo usado para o título da página."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr ""
+msgstr "Verificar dados de Associações"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
-msgstr ""
+msgstr "Verificará os dados sobre Associação para pessoas."
 
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
-msgstr ""
+msgstr "Ferramenta de estado de Associações"
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
-msgstr ""
+msgstr "Tipo de ligação"
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
-msgstr ""
+msgstr "De"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
-msgstr "Anexar fonte"
+msgstr "Anexar Fonte"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
-msgstr "Anexa uma fonte comum a vários objetos"
+msgstr "Anexa uma fonte comum a vários objetos."
 
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
@@ -235,39 +235,39 @@ msgstr "Concluído!\n"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
-msgstr ""
+msgstr "Ferramenta de Geração de Avatar"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
-msgstr ""
+msgstr "Uma ferramenta para adicionar fotos de perfil à sua árvore familiar"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
-msgstr ""
+msgstr "modo de imagem única"
 
 #: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
-msgstr ""
+msgstr "Escolha quantas imagens você gostaria de usar."
 
 #: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
-msgstr ""
+msgstr "Imagem para pessoas de gênero desconhecido."
 
 #: AvatarGenerator/AvatarGenerator.py:78
 msgid "Image for males."
-msgstr ""
+msgstr "Imagem para homens."
 
 #: AvatarGenerator/AvatarGenerator.py:82
 msgid "Image for females"
-msgstr ""
+msgstr "Imagem para mulheres"
 
 #: AvatarGenerator/AvatarGenerator.py:95
 msgid "Remove images from people"
-msgstr ""
+msgstr "Remover imagens das pessoas"
 
 #: AvatarGenerator/AvatarGenerator.py:96
 msgid "Remove selected image(s)."
-msgstr ""
+msgstr "Remover a(s) imagem(ns) selecionada(s)."
 
 #: AvatarGenerator/AvatarGenerator.py:134
 #: AvatarGenerator/AvatarGenerator.py:183
@@ -279,7 +279,7 @@ msgstr "Número máximo de gerações de ascendentes"
 
 #: AvatarGenerator/AvatarGenerator.py:186
 msgid "Remove avatar images..."
-msgstr ""
+msgstr "Remover imagens de avatar..."
 
 #: AvatarGenerator/AvatarGenerator.py:211
 #: AvatarGenerator/AvatarGenerator.py:219
@@ -290,26 +290,28 @@ msgstr ""
 #: MediaReport/media_report.py:112 MediaReport/media_report.py:119
 #: MediaReport/media_report.py:125 RemoveTagTool/RemoveTagTool.py:271
 msgid "INFO"
-msgstr ""
+msgstr "INFO"
 
 #: AvatarGenerator/AvatarGenerator.py:211
 msgid "No media was removed."
-msgstr ""
+msgstr "Nenhuma mídia foi removida."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
-msgstr ""
+msgstr "{} referências de mídia foram removidas de {} pessoas."
 
 #: AvatarGenerator/AvatarGenerator.py:216
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
 msgstr ""
+"\n"
+"{} Erro(s) de Identificação aconteceu/aconteceram, mas foi/foram ignorado(s)."
 
 #: AvatarGenerator/AvatarGenerator.py:263
 #: AvatarGenerator/AvatarGenerator.py:280
 msgid "Add avatar images..."
-msgstr ""
+msgstr "Adicionar imagens de avatar..."
 
 #: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
@@ -18233,6 +18235,16 @@ msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:657
+#, fuzzy
+#| msgid "in %(place)s"
+msgid "Show page numbers"
+msgstr "em %(place)s"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662

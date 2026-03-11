@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025, 2026.
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-12-22 14:00+0000\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"PO-Revision-Date: 2026-02-20 09:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -2015,15 +2015,15 @@ msgstr "נא להזין ביטוי ברשומות לעיל ולהקיש על 'ל
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
-msgstr "גרמפלט קשרי משפחה עמוקים"
+msgstr "גרמפלט חיבורים עמוקים"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
-msgstr "גרמפלט שמציג קשרי משפחה עמוקים בין אדם הבית לאדם הפעיל"
+msgstr "גרמפלט שמציג קשר־קרבה עמוקים בין אדם הבית לאדם הפעיל"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
-msgstr "קשרי משפחה עמוקים"
+msgstr "חיבורים עמוקים"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
@@ -2035,7 +2035,7 @@ msgstr "אזכור בהערה"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
 msgid "Note on Family"
-msgstr "הערת"
+msgstr "הערת משפחה"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
@@ -2048,7 +2048,7 @@ msgstr "הערה על משפחת הורה"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
 msgid "%s (association)"
-msgstr "%s (סימוך)"
+msgstr "%s (תסמיך)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 msgid "Note on Person"
@@ -2069,7 +2069,7 @@ msgstr "לא הוגדר 'אדם פעיל'."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
-msgstr "חיפוש קשרי בשפחה בין\n"
+msgstr "חיפוש קשרי קרבה בין\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
@@ -2096,7 +2096,7 @@ msgid ""
 "Press Continue to search for additional relations.\n"
 msgstr ""
 "מושהה.\n"
-"נא ללחוץ על 'המשך' לקשרי משפחה נוספים.\n"
+"נא ללחוץ על 'להמשיך לחפש' לקשרי־קרבה נוספים.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
@@ -2105,7 +2105,7 @@ msgid ""
 "Search completed. %d relations found."
 msgstr ""
 "\n"
-"החיפוש הושלם. נמצאו %d קשרי משפחה."
+"החיפוש הושלם. נמצאו %d קשרי קרבה."
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -2516,15 +2516,15 @@ msgstr "הגדרות סגנון נוספות:"
 
 #: DenominoViso/DenominoViso.py:2720
 msgid "Whatever css style settings are needed."
-msgstr ""
+msgstr "כל הגדרות סגנון CSS הנדרשות."
 
 #: DenominoViso/DenominoViso.py:2730
 msgid "Mouse event handler"
-msgstr ""
+msgstr "מטפל באירועי עכבר"
 
 #: DenominoViso/DenominoViso.py:2732
 msgid "Mouse handler used to interact with visitor of webpage."
-msgstr ""
+msgstr "מטפל אירועי עכבר נוהג להדד עם מבקרים בעמודי מרשתת."
 
 #: DenominoViso/DenominoViso.py:2736
 msgid "Birth relationship linestyle"
@@ -2535,16 +2535,20 @@ msgid ""
 "List of lists where each sublist is a list with information about the dash "
 "pattern of lines connecting children to parents."
 msgstr ""
+"רשימת רשימות שבה כל רשימת־משנה היא רשימה עם מידע על דגם קווים מקווים שמחברים "
+"צאצאים להורים."
 
 #: DenominoViso/DenominoViso.py:2744
 msgid "Source confidence color"
-msgstr ""
+msgstr "צבע וודאות מקור"
 
 #: DenominoViso/DenominoViso.py:2746
 msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
+"רשימה של רשימות שבה כל רשימת־משנה היא רשימה עם מידע על הצבע לשימוש עבור רמה "
+"מסוימת של וודאות."
 
 #: DenominoViso/DenominoViso.py:2749
 msgid "Event format"
@@ -2552,7 +2556,7 @@ msgstr "תסדיר אירועים"
 
 #: DenominoViso/DenominoViso.py:2750
 msgid "at"
-msgstr ""
+msgstr "ב"
 
 #: DenominoViso/DenominoViso.py:2754
 msgid ""
@@ -2560,6 +2564,8 @@ msgid ""
 "<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
 "<attribute-value>."
 msgstr ""
+"רשימת  מחרוזות שומרי מקום לאירועים. שומרי מקום ידועים: <type>, <role>, "
+"<date>, <place>, <description>, <witnesses>, <source> וכל <attribute-value>."
 
 #: DenominoViso/DenominoViso.py:2757
 msgid "Source format"
@@ -2570,10 +2576,12 @@ msgid ""
 "List of strings with placeholders for sources. Known placeholders: <title>, "
 "<volume>, <author>, <publication_info> and <abbreviation>."
 msgstr ""
+"רשימת  מחרוזות שומרי מקום למקורות. שומרי מקום ידועים: <type>, <role>, "
+"<date>, <place>, <description>, <witnesses>, <source> וכל <attribute-value>."
 
 #: DenominoViso/DenominoViso.py:2819
 msgid "restricted to:"
-msgstr ""
+msgstr "מוגבל:"
 
 #: DenominoViso/DenominoViso.py:2859
 msgid "to directory:"
@@ -2597,11 +2605,11 @@ msgstr "מוחרג"
 
 #: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
-msgstr ""
+msgstr "שם HTML – קובץ עוטפן"
 
 #: DenominoViso/DenominoViso.py:2955
 msgid "Save HTML-wrapper file as ..."
-msgstr ""
+msgstr "שם HTML – קובץ עוטפן בשם..."
 
 #: DenominoViso/DenominoViso.py:2980
 msgid "Give a filename ..."
@@ -2626,38 +2634,38 @@ msgstr "אורך בין מקפים"
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
 msgid "Deep pruning ascendants from %s people..."
-msgstr ""
+msgstr "גיזום עמוק של אבות קדמונים של %s אנשים..."
 
 #: DescendantBooks/CollectAscendants.py:182
 #, python-format
 msgid "Pruning ascendants from %s people..."
-msgstr ""
+msgstr "גיזום אבות קדמונים של %s אנשים..."
 
 #: DescendantBooks/CollectAscendants.py:320
 #: DescendantBooks/CollectAscendants.py:413
 #, python-format
 msgid "Getting ascendants from %s people..."
-msgstr ""
+msgstr "קבלת אבות־קדומים מ־%s אנשים..."
 
 #: DescendantBooks/CollectAscendants.py:331
 #, python-format
 msgid "Verifying descendants from %s people..."
-msgstr ""
+msgstr "אימות צאצאים של %s אנשים..."
 
 #: DescendantBooks/CollectAscendants.py:348
 #, python-format
 msgid "Getting missing descendants from %s people..."
-msgstr ""
+msgstr "קבלת צאצאים חסרים מ־%s אנשים..."
 
 #: DescendantBooks/CollectAscendants.py:367
 #, python-format
 msgid "Verifying descendants from %s people after pruning..."
-msgstr ""
+msgstr "אימות צאצאים של %s אנשים לאחר הריצה..."
 
 #: DescendantBooks/CollectAscendants.py:383
 #, python-format
 msgid "Getting missing descendants from %s people ..."
-msgstr ""
+msgstr "קבלת צאצאים חסרים מ־%s אנשים ..."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
@@ -2683,13 +2691,13 @@ msgstr "כתיבת %s דוחות..."
 #: DescendantBooks/DescendantBookReport.py:442
 #, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr ""
+msgstr "{report_count}. צאצאים של {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:617
 #, python-brace-format
 msgid "{report_count:d}. {name}"
-msgstr ""
+msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1341
@@ -2698,42 +2706,42 @@ msgstr "בחירת מסנן להגבלת האנשים שמופיעים בדוח"
 
 #: DescendantBooks/DescendantBookReport.py:585
 msgid "The style used for the table of contents header."
-msgstr ""
+msgstr "הסגנון שמשמש בטבלת כותרת תוכן."
 
 #: DescendantBooks/DescendantBookReport.py:595
 msgid "The style used for the table of contents detail."
-msgstr ""
+msgstr "הסגנון שמשמש בטבלת פרטי תוכן."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
 msgid "Descendant Book"
-msgstr ""
+msgstr "בפר אבות־קדמונים"
 
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
+msgstr "ייצור דוח צאצאים אחד או יותר בהתבסס על שאילתה שסופקה."
 
 #: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
-msgstr ""
+msgstr "ספר צאצאים מפורט"
 
 #: DescendantBooks/DescendantBooks.gpr.py:43
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
+msgstr "ייצור דיווח צאצאים מפורט אחד או  יותר בהתבסס על שאילתה שסופקה."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
-msgstr ""
+msgstr "דוח צאצאים מפורט"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:359
 #, python-format
 msgid "Generating %s report references..."
-msgstr ""
+msgstr "חילול %s דוחות אזכורים..."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:453
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
-msgstr ""
+msgstr "%(report_count)s דוח צאצאים עבור %(person_name)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:519
 msgid "Index of Places"
@@ -2741,7 +2749,7 @@ msgstr "מפתח מקומות"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:542
 msgid "Index of Dates"
-msgstr ""
+msgstr "מפתח תאריכים"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:565
 msgid "Index of Names"
@@ -2749,38 +2757,38 @@ msgstr "מפתח שמות"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:571
 msgid "Report, Generation, Person, Name"
-msgstr ""
+msgstr "דוח, דור, אדם, שם"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:697
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr ""
+msgstr "הצגת דוח: {report}, דור:{generation}, אדם: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
 #, python-format
 msgid "Report appearances for %s"
-msgstr ""
+msgstr "מראית דוח עבור %s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:770
 #, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr ""
+msgstr "זוגאי של: דוח: {report}, דור: {generation}, אדם: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:782
 #, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr ""
+msgstr "דוח: {report}, דור: {generation}, אדם, {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:806
 #, python-format
 msgid "%(event_name)s of %(name)s "
-msgstr ""
+msgstr "%(event_name)s מתוך %(name)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:810
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
-msgstr ""
+msgstr "%(event_name)s של %(name)s ו־%(mate)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:814
 #: DescendantBooks/DetailedDescendantBookReport.py:858
@@ -2855,7 +2863,7 @@ msgstr "לכלול מפתח שמות"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1483
 msgid "Whether to include the index of Names at the end of the report."
-msgstr ""
+msgstr "האם לכלול את מפתח השמות בסוף הדוח."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1487
 msgid "Include index of Dates"
@@ -2863,7 +2871,7 @@ msgstr "הכללת מפתח תאריכים"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1488
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr ""
+msgstr "האם לכלול את מפתח התאריכים בסוף הדוח."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1492
 msgid "Include index of Places"
@@ -2871,17 +2879,17 @@ msgstr "הכללת מפתח מקומות"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1493
 msgid "Whether to include the index of Places at the end of the report."
-msgstr ""
+msgstr "האם לכלול פתח מקומות בסוף הדוח."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Include the 'Report appearances' section with each person"
-msgstr ""
+msgstr "לכלל מקטע \"מרית דוח\" לכל אדם"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
-msgstr ""
+msgstr "מקטע \"מראית דוח\" מציג מקומות אחרים בדוח שבו האדם מוזכר."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1566
 #: DetDescendantReport-images/detdescendantreporti.py:1282
@@ -2890,22 +2898,22 @@ msgstr "הסגנון שמשמש לרשימת צאצאים."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1576
 msgid "The basic style used for Note header."
-msgstr ""
+msgstr "הסגנון הבסיסי שמשמש לכותרת הערות."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1593
 #: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
-msgstr ""
+msgstr "הסגנון שישמש את הרשומה האישית הראשונה."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1603
 #: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
-msgstr ""
+msgstr "הסגנון שמשמש ל'עוד על כותרות' ולכותרות הערות."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1614
 #: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
-msgstr ""
+msgstr "הסגנון שמשמש לנתוני פירוט נוסף."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1624
 #: DescendantBooks/DetailedDescendantBookReport.py:1634
@@ -2914,32 +2922,32 @@ msgstr "הסגנון שמשמש לנתוני פירוט הערה."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1644
 msgid "The style used for the date in the Index of Dates."
-msgstr ""
+msgstr "הסגנון שמשמש לתאריך במפתח תאריכים."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1654
 msgid "The style used for the events in the Index of Dates."
-msgstr ""
+msgstr "הסגנון שמשמש לאירועים במפתח תאריכים."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1664
 msgid "The style used for the header in the Index of Names."
-msgstr ""
+msgstr "הסגנון שמשמש לכותרת במפתח שמות."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1674
 msgid "The style used for the references in the Index of Names."
-msgstr ""
+msgstr "הסגנון שמשמש לאזכורים במפתח שמות."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1684
 msgid "The style used for the header in the Index of Places."
-msgstr ""
+msgstr "הסגנון שמשמש לכותרת במפתח מקומות."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1695
 msgid "The style used for the references in the Index of Places."
-msgstr ""
+msgstr "הסגנון שמשמש לאזכורים במפתח מקומות."
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
 msgid "Descendant Count"
-msgstr ""
+msgstr "מונה צאצאים"
 
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
@@ -2955,18 +2963,20 @@ msgid ""
 "a Space Tree for efficient viewing, even with many descendants or "
 "generations."
 msgstr ""
+"יצירת עמוד מרשתת עם תרשים הידודי שמציג צאצאים כעץ־מרחב (Space Tree) לצפייה "
+"יעילה, גם כאשר קיימים צאצאים רבים או דורות רבים."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:102
 msgid "Patriarchal Line (Male ancestor)"
-msgstr ""
+msgstr "שושלת אבות (אב קדמון)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:103
 msgid "Matriarchal Line (Female ancestor)"
-msgstr ""
+msgstr "שושלת אמהות (אם קדמונית)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
 msgid "Dark theme"
-msgstr ""
+msgstr "ערכת נושא כהה"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
 msgid "Light theme"
@@ -2974,7 +2984,7 @@ msgstr "ערכת־ נושא בהירה"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
 msgid "Continue Descendant Tree"
-msgstr ""
+msgstr "המשך אילן צאצאים"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:427
 msgid "Alternate Descendant Tree"
@@ -2986,11 +2996,11 @@ msgstr "אילן מרווח צאצאים"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:635
 msgid "Total descendants"
-msgstr ""
+msgstr "סך־כול צאצאים"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:659
 msgid "Marriages/Families:<ul>"
-msgstr ""
+msgstr "נישואים / משפחות: <ul>"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:773
 #, python-format
@@ -2998,6 +3008,8 @@ msgid ""
 "Destination Directory %s does not exist\n"
 "Do you want to attempt to create it."
 msgstr ""
+"מחיצת יעד %s לא קיימת\n"
+"האם לייצור אותה."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:787
 #, python-format
@@ -3015,6 +3027,8 @@ msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite?"
 msgstr ""
+"קובץ היעד %s כבר קיים.\n"
+"האם לכתוב עליו?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:854
 msgid "Failed writing file: "
@@ -3026,21 +3040,23 @@ msgstr "צאצאים של"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:879
 msgid "How to Use the DescendantSpaceTree Viewer"
-msgstr ""
+msgstr "כיצד להשתמש במציג DecendantSpaceTree"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:885
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
+"לחווית צפייה מיטבית, נא למרב את חלון הדפדפן כך שישתמש בכל גודל המרקע.  שידוד"
+"  מחדש ישצב את התרשים לאדם המרכזי."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
-msgstr ""
+msgstr "הקשת עכבר על צומת כדי להתמקד בצאצא ולהרחיב צאצא כלשהו."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:904
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
-msgstr ""
+msgstr "להקיש ולגרור בכל אזור במשקף כדי למקם את אילן הצאצאים."
 
 #. Translators: Please do not translate ___HELP_RESET_BUTTON___.
 #: DescendantSpaceTree/DescendantSpaceTree.py:914
@@ -3057,30 +3073,35 @@ msgid ""
 "search, a plus sign (+) after the name indicates that person appears as a "
 "spouse."
 msgstr ""
+"חיפוש אדם על ידי הקלדה בתיבת החיפוש.  לחיפוש נדרשים לפחות שלושה תווים.  הקשה "
+"על אחת מההצעות כדי לנווט במהירות אל אותו אדם.  אדם עשוי להופיע יותר מפעם אחת "
+"בתוצאות החיפוש; סימן פלוס (+) שמופיע אחרי השם מציין שאותו אדם מופיע כבן־זוג."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:936
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
-msgstr ""
+msgstr "צאצא ובן־זוג יופיעו באותה צומת.  צאצאי משפחת הצאצא מקובצים יחד."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:946
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
-msgstr ""
+msgstr "אדם שנולד לאחר תאריך מסויים עשוי שלא להציג תאריכי לידה או פטירה."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:955
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
 msgstr ""
+"צמתי אנשים נצבעים כדי לציין את מספר צאצאיהם, ככל שגוון הצבע כהה יותר, כך "
+"מספר הצאצאים גדול יותר."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:965
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
-msgstr ""
+msgstr "הצאצא שנבחר כעת וכל אבותיו של אותו אדם מודגשים בצהוב."
 
 #. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
 #: DescendantSpaceTree/DescendantSpaceTree.py:975
@@ -3091,12 +3112,18 @@ msgid ""
 "___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
 "expand descendants of this person. "
 msgstr ""
+"אדם יכול להמצא בענפי משפחה שונים. מצב זה קורה בדרך כלל בעקבות נישואים בתוך "
+"משפחה (כמו זה של בני דודים). במקרה זה, לחצן יופיע גם עבור אותו אדם, "
+"−NAV_BUTton_CONTINUE - או −NAV_BUTton_ALT - לאפשר ניווט לענף האחר. אך רק ענף "
+"אחד ירחיב את מצג מקטע צאצאיו של אדם זה. "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
 msgstr ""
+"מיזמי קוד פתוח הבאים משמשים בבניית משקף זה, למידע נוסף קוד המקור "
+"LICENSE*.txt קבצים לרישיונות המלאים והודעות הנדרשות."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1016
 msgid "Search. . ."
@@ -3104,13 +3131,13 @@ msgstr "חיפוש. . ."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1091
 msgid "Branch to expand when duplicated"
-msgstr ""
+msgstr "הענף להתרחבה בעת שוכפל"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1102
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
-msgstr ""
+msgstr "כאשר צאצא מופיע יותר מפעם אחת, יש להעדיף להרחיב את קו הצאצאים שנבחר"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1110
 msgid "Maximum display birth year"
@@ -3118,7 +3145,7 @@ msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1113
 msgid "Birth/death dates will not be displayed after this year"
-msgstr ""
+msgstr "תאריכי לידה / פטירה לא יוצגו לאחר שנה זו"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1118
 msgid "Theme preference"
@@ -3126,7 +3153,7 @@ msgstr "העדפת ערכת נושא"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1125
 msgid "Theme color preference for Space Tree"
-msgstr ""
+msgstr "העדפות צבע ערכת נושא עץ מילוי רווחים"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
 msgid "Destination File"
@@ -3150,27 +3177,27 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
-msgstr ""
+msgstr "שימוש בסוג SVG למסמך משלים לא נתמך!"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
-msgstr ""
+msgstr "תסדיר פלט"
 
 #: DescendantsLines/DescendantsLines.py:1532
 msgid "PNG format"
-msgstr ""
+msgstr "תסדיר PNG"
 
 #: DescendantsLines/DescendantsLines.py:1533
 msgid "SVG format"
-msgstr ""
+msgstr "תסדיר SVG"
 
 #: DescendantsLines/DescendantsLines.py:1534
 msgid "PDF format"
-msgstr ""
+msgstr "פורמט PDF"
 
 #: DescendantsLines/DescendantsLines.py:1535
 msgid "PS format"
-msgstr ""
+msgstr "תסדיר PS"
 
 #: DescendantsLines/DescendantsLines.py:1536
 msgid "The output format to be used"
@@ -3697,7 +3724,7 @@ msgstr "הורדת קבצי מדיה מהמרשתת"
 
 #: DownloadMedia/DownloadMedia.gpr.py:37
 msgid "This tool downloads media files from the internet"
-msgstr "כלי זה נועד להורדת קבצי מדיה מהמרשתת"
+msgstr "כלי זה משמש להורדת קבצי מדיה מהמרשתת"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
@@ -3714,7 +3741,7 @@ msgstr "ירדו %d קבצים"
 
 #: DownloadMedia/DownloadMedia.py:100
 msgid "Download media tool"
-msgstr "כלי הורדת מדיה"
+msgstr "כלי להורדת מדיה"
 
 #: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
@@ -3726,7 +3753,7 @@ msgstr "מתבצעת הורדת קבצים"
 
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
-msgstr "זוהו שגיאות הורדת מדיה"
+msgstr "זוהו שגיאות בהורדת מדיה"
 
 #: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
@@ -14512,7 +14539,7 @@ msgstr ""
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
 #, python-format
 msgid "Number of Persons: %s"
-msgstr "מספר האנשים: %s"
+msgstr "מספר אנשים: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -14763,11 +14790,11 @@ msgstr ""
 #: GrampsWebSync/grampswebsync.py:382
 #, python-format
 msgid "Server error %s. Please check your connection."
-msgstr ""
+msgstr "שגיאת שרת %s. נא לבדוק חיבור."
 
 #: GrampsWebSync/grampswebsync.py:387
 msgid "Connection failed. Please check the URL and your internet connection."
-msgstr ""
+msgstr "חיבור כשל. נא לבדוק את ה־URL והחיבור למרשתת."
 
 #: GrampsWebSync/grampswebsync.py:391
 msgid "Invalid server response. Please check the URL."
@@ -16350,13 +16377,13 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:86
 msgid "Visualize connections"
-msgstr "החזיית קשרים"
+msgstr "החזיית חיבורים"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:87
 msgid ""
 "Visualize the connections between families and individuals. This is for "
 "debugging purposes."
-msgstr ""
+msgstr "החזיית חיבורים בין משפחות ויחידים. נועד לצרכי ניפוי־תקלים."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:88
 msgid "Visualize ambiguous placement"
@@ -16458,7 +16485,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
-msgstr ""
+msgstr "היפוך משפחות לצימצום חיבורים מאוזנים"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:112
 msgid ""
@@ -16466,6 +16493,9 @@ msgid ""
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
 msgstr ""
+"החלפת מיקום האם והאב במשפחה, כדי לצמצם את מספר החיבורים הצולבים האופקיים "
+"הכולל בתרשימים גדולים. מצב זה מתרחש כאשר אדם מוצג ביותר ממשפחה אחת, או נגרם "
+"בשל קריסת יוחסין."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -16749,7 +16779,7 @@ msgstr "הכללת הערה מותאם אישית"
 
 #: MediaReport/media_report.py:438
 msgid "The custom note will be included"
-msgstr "הערה תותאמת אישית תכלל בדוח"
+msgstr "הערה מותאמת אישית תכלל בדוח"
 
 #: MediaReport/media_report.py:442
 msgid "Include referenced people"
@@ -16807,7 +16837,7 @@ msgstr "קבצים שהועברו או ששם השתנה"
 
 #: MediaVerify/MediaVerify.py:84
 msgid "Duplicate Files"
-msgstr "שכפול קבצים"
+msgstr "קבצים כפולים"
 
 #: MediaVerify/MediaVerify.py:84
 msgid "Extra Files"
@@ -16823,7 +16853,7 @@ msgstr "לא חולל md5"
 
 #: MediaVerify/MediaVerify.py:101
 msgid "Close the Media Verify Tool"
-msgstr "סגירת הכלי לאימות נתונים"
+msgstr "סגירת כלי 'אימות נתונים'"
 
 #: MediaVerify/MediaVerify.py:103
 msgid "Generate"
@@ -16944,7 +16974,7 @@ msgstr "תרשים רשת"
 
 #: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
-msgstr "מייצר תרשים קשרי משפחה."
+msgstr "מחולל תרשים רשת משפחית."
 
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
@@ -17375,20 +17405,24 @@ msgid ""
 "Max connections\n"
 "from center"
 msgstr ""
+"מספר חיבורים מרבי\n"
+"מהמרכז"
 
 #: NetworkChart/NetworkChart.py:1206
 msgid ""
 "Enter the maximum number of connections allowed from\n"
 "the center person.  Value may be 1 or greater."
 msgstr ""
+"הזנת מספר החיבורים המרביים האפשריים\n"
+"מהאדם המרכזי.  ערך אפשרי, 1 או מספר גדול יותר."
 
 #: NetworkChart/NetworkChart.py:1211
 msgid "Limit graph to max connections from center."
-msgstr ""
+msgstr "הגבלת תרשים למספר חיבורים מרבי מהמרכז."
 
 #: NetworkChart/NetworkChart.py:1213
 msgid "Display up to max connections from central person."
-msgstr ""
+msgstr "להציג עד מספר חיבורים מרבי מאדם מרכזי."
 
 #: NetworkChart/NetworkChart.py:1217
 msgid "Highlight central person in graph."
@@ -17653,6 +17687,14 @@ msgstr ""
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr ""
 
+#: PedigreeChart/PedigreeChart.py:657
+msgid "Show page numbers"
+msgstr "הצגת מספרי עמוד"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
+
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
 msgstr "הסגנון הבסיסי ששימש למצג כותרת."
@@ -17810,7 +17852,7 @@ msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Replace existing references to the person being assigned without asking"
-msgstr "החלפת הפניות קיימות לאדם ללא שאלה מקדימה"
+msgstr "החלפת אזכורים קיימות לאדם שהוקצה ללא שאלה מקדימה"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:141
 msgid "Face detection"
@@ -17846,7 +17888,7 @@ msgstr "הסרת פריטים שנבחרו"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:294
 msgid "Edit referenced Person"
-msgstr "עריכת האדם המופנה"
+msgstr "עריכת אדם מאוזכר"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:295
 msgid "Zoom In"
@@ -17870,7 +17912,7 @@ msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
-msgstr "הגדרה כאדם נפעיל"
+msgstr "הגדרה כאדם הפעיל"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:633
 msgid "_Select"
@@ -17879,11 +17921,11 @@ msgstr "_בחירה"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
 #, python-brace-format
 msgid "Replace to {0}"
-msgstr "החלפה ל {0}"
+msgstr "החלפה ל־ {0}"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
 msgid "Detecting faces..."
-msgstr "זיהוי פנים..."
+msgstr "מתבצע זיהוי פנים..."
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
 msgid "Detection finished"
@@ -17892,7 +17934,7 @@ msgstr "הזיהוי הסתיים"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:955
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
-msgstr "אזור אחר של תמונה זו משויכת ל {name}. האם להסיר אותו?"
+msgstr "אזור אחר של תמונה זו משויכת ל־{name}. האם להסיר אותו?"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:958
 #, python-brace-format

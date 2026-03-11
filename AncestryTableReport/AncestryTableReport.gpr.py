@@ -1,0 +1,16 @@
+register(REPORT,
+    id   = 'AncestryTable',
+    name = _('Ancestry Table'),
+    description = _("Produces a table of ancestry about a person"),
+    version = '1.0.1',
+    gramps_target_version = "6.0",
+    status = STABLE,
+    fname = 'AncestryTableReport.py',
+    authors = ["Bruno Forestier"],
+    authors_email = ["bforest76@gmail.com"],
+    category = CATEGORY_TEXT,
+    reportclass = 'AncestryTable',
+    optionclass = 'AncestryTableOptions',
+    report_modes = [REPORT_MODE_CLI, REPORT_MODE_GUI, REPORT_MODE_BKI],
+    require_active = True
+    )

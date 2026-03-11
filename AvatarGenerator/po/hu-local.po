@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
-"Last-Translator: Lajos Nemeséri <nemeseril@gmail.com>\n"
+"PO-Revision-Date: 2026-02-21 14:09+0000\n"
+"Last-Translator: Daniel Szollosi-Nagy <dsn-weblate@kdconsulting.net>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hu/>\n"
 "Language: hu\n"
@@ -12,7 +12,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
+
+msgid "Avatar Generator Tool"
+msgstr "Avatárt létrehozó eszköz"
+
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "Egy eszköz, amellyel avatár képeket lehet hozzáadni a családfához"
+
+msgid "single image mode"
+msgstr "egyetlen kép mód"
+
+msgid "Choose how many images you'd like to use."
+msgstr "Válassza ki, hogy mennyi képet szeretne használni."
+
+msgid "Image for people with unknown gender."
+msgstr "Kép ismeretlen nemű embereknek."
+
+msgid "Image for males."
+msgstr "Kép férfiaknak."
+
+msgid "Image for females"
+msgstr "Kép nőknek"
 
 msgid "Select filter to restrict people"
 msgstr "Szűrő kiválasztása személyek kizárására"
+
+msgid "Remove images from people"
+msgstr "Képek eltávolítása emberekről"
+
+msgid "Remove selected image(s)."
+msgstr "Kiválasztott képek elvávolítása."
+
+msgid "Avatar Generator"
+msgstr "Avatár generátor"
+
+msgid "Remove avatar images..."
+msgstr "Avatár képek eltávolítása..."
+
+msgid "INFO"
+msgstr "INFO"
+
+msgid "No media was removed."
+msgstr "Egyetlen média sem került eltávolításra."
+
+msgid "{} media references were removed from {} persons."
+msgstr "{} médiahivatkozás lett eltávolítva {} személytől."
+
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"{} Handle hiba következett be, de figyelmen kívül hagytuk."
+
+msgid "Add avatar images..."
+msgstr "Avatár képek hozzáadása..."
+
+msgid "{} avatar images were sucessfully added."
+msgstr "{} avatár képet adtunk hozzá sikererrel."
+
+msgid "There was no avatar image to add. "
+msgstr "Nem volt hozzádaható avatár kép. "
+
+msgid "All persons already had one."
+msgstr "Az összes személynek már volt egy."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2026-02-03 09:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,10 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 msgid "Replace existing references to the person being assigned without asking"
-msgstr "החלפת הפניות קיימות לאדם ללא שאלה מקדימה"
+msgstr "החלפת אזכורים קיימות לאדם שהוקצה ללא שאלה מקדימה"
 
 msgid "Face detection"
 msgstr "זיהוי פנים"
@@ -43,7 +43,7 @@ msgid "Remove Selection"
 msgstr "הסרת פריטים שנבחרו"
 
 msgid "Edit referenced Person"
-msgstr "עריכת האדם המופנה"
+msgstr "עריכת אדם מאוזכר"
 
 msgid "Zoom In"
 msgstr "התקרבות"
@@ -58,24 +58,24 @@ msgid "Detect faces (OpenCV module required)"
 msgstr "זיהוי פנים (נדרש רכיב של OpenCV)"
 
 msgid "Set as active person"
-msgstr "הגדרה כאדם נפעיל"
+msgstr "הגדרה כאדם הפעיל"
 
 msgid "_Select"
 msgstr "_בחירה"
 
 #, python-brace-format
 msgid "Replace to {0}"
-msgstr "החלפה ל {0}"
+msgstr "החלפה ל־ {0}"
 
 msgid "Detecting faces..."
-msgstr "זיהוי פנים..."
+msgstr "מתבצע זיהוי פנים..."
 
 msgid "Detection finished"
 msgstr "הזיהוי הסתיים"
 
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
-msgstr "אזור אחר של תמונה זו משויכת ל {name}. האם להסיר אותו?"
+msgstr "אזור אחר של תמונה זו משויכת ל־{name}. האם להסיר אותו?"
 
 #, python-brace-format
 msgid ""

@@ -7,13 +7,13 @@
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-# Stephan Paternotte <stephan@paternottes.net>, 2025.
+# Stephan Paternotte <stephan@paternottes.net>, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-11-08 17:51+0000\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"PO-Revision-Date: 2026-02-12 19:09+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -990,7 +990,8 @@ msgstr "Chatten met Tree Interactive-uitbreiding"
 #: ChatWithTree/ChatWithTree.gpr.py:10
 msgid ""
 "Chat With Tree with the help of AI Large Language Model, needs litellm module"
-msgstr "Chatten met Tree m.b.v. AI Large Language Model, vereist litellm-module"
+msgstr ""
+"Chatten met Tree m.b.v. AI Large Language Model, vereist litellm-module"
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
 msgid "Chat With Tree"
@@ -2583,7 +2584,7 @@ msgstr "Extra stijlinstellingen:"
 
 #: DenominoViso/DenominoViso.py:2720
 msgid "Whatever css style settings are needed."
-msgstr "CSS-stijlinstellingen die extra nodig zijn."
+msgstr "Welke css-stijlinstellingen dan ook nodig zijn."
 
 #: DenominoViso/DenominoViso.py:2730
 msgid "Mouse event handler"
@@ -4564,7 +4565,7 @@ msgstr "Of afbeeldingen en media in de webpagina's moeten worden opgenomen"
 
 #: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
-msgstr "Kopieer en hernoem bestanden met een interne Gramps-ID"
+msgstr "Bestanden kopiëren en hernoemen met een interne Gramps-identificatie"
 
 #: DynamicWeb/dynamicweb.py:4870
 msgid "Copy, keep file names unchanged"
@@ -6281,7 +6282,7 @@ msgstr "Schema"
 #: Form/form_ca.xml.h:2 Form/form_ca.xml.h:93 Form/form_ca.xml.h:211
 #: Form/form_ca.xml.h:798
 msgid "EnumDistrict"
-msgstr "OpsomDistrict (ED)"
+msgstr "Stemdistrict"
 
 #: Form/form_ca.xml.h:3 Form/form_ca.xml.h:94 Form/form_ca.xml.h:212
 #: Form/form_ca.xml.h:644 Form/form_ca.xml.h:812 Form/form_us.xml.h:1250
@@ -14460,7 +14461,7 @@ msgstr "Verblijfsduur"
 
 #: Form/form_us.xml.h:2435
 msgid "Served in U.S. Military"
-msgstr "Gediend in VS leger"
+msgstr "Gediend in het Amerikaanse leger"
 
 #: Form/form_us.xml.h:2440
 msgid "Birth date of deceased"
@@ -16164,7 +16165,7 @@ msgstr "Stop en herlaad de pagina."
 
 #: HtmlView/htmlview.py:555
 msgid "Start page for the Html View"
-msgstr "Startpagina voor de HTML-weergave"
+msgstr "Startpagina voor de Html-weergave"
 
 #: HtmlView/htmlview.py:556
 msgid ""
@@ -18331,6 +18332,15 @@ msgstr "Moeder / vader bijschriften weergeven"
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Toon de titel van moeder of vader naast het kader van elke voorouder."
+
+#: PedigreeChart/PedigreeChart.py:657
+msgid "Show page numbers"
+msgstr "Paginanummers weergeven"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
+"Op elke pagina een voettekst toevoegen met het paginanummer en de datum."
 
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
@@ -20909,7 +20919,7 @@ msgstr "Voeg de urls van de bibliotheek toe"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
-msgstr "Of URL's in de bibliotheek moeten worden opgenomen."
+msgstr "Of URL's in de opslagplaats moeten worden opgenomen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"

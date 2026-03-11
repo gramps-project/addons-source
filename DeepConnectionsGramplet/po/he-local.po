@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2026-02-20 09:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,16 +13,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 msgid "Deep Connections Gramplet"
-msgstr "גרמפלט קשרי משפחה עמוקים"
+msgstr "גרמפלט חיבורים עמוקים"
 
 msgid "Gramplet showing a deep relationship between active and home people"
-msgstr "גרמפלט שמציג קשרי משפחה עמוקים בין אדם הבית לאדם הפעיל"
+msgstr "גרמפלט שמציג קשר־קרבה עמוקים בין אדם הבית לאדם הפעיל"
 
 msgid "Deep Connections"
-msgstr "קשרי משפחה עמוקים"
+msgstr "חיבורים עמוקים"
 
 msgid "Pause"
 msgstr "השהיה"
@@ -34,7 +34,7 @@ msgid "mentioned in note"
 msgstr "אזכור בהערה"
 
 msgid "Note on Family"
-msgstr "הערת"
+msgstr "הערת משפחה"
 
 msgid "sibling"
 msgstr "אחאי"
@@ -44,7 +44,7 @@ msgstr "הערה על משפחת הורה"
 
 #, python-format
 msgid "%s (association)"
-msgstr "%s (סימוך)"
+msgstr "%s (תסמיך)"
 
 msgid "Note on Person"
 msgstr "הערת אדם"
@@ -61,7 +61,7 @@ msgid "No Active Person set."
 msgstr "לא הוגדר 'אדם פעיל'."
 
 msgid "Looking for relationship between\n"
-msgstr "חיפוש קשרי בשפחה בין\n"
+msgstr "חיפוש קשרי קרבה בין\n"
 
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
@@ -84,7 +84,7 @@ msgid ""
 "Press Continue to search for additional relations.\n"
 msgstr ""
 "מושהה.\n"
-"נא ללחוץ על 'המשך' לקשרי משפחה נוספים.\n"
+"נא ללחוץ על 'להמשיך לחפש' לקשרי־קרבה נוספים.\n"
 
 #, python-format
 msgid ""
@@ -92,4 +92,4 @@ msgid ""
 "Search completed. %d relations found."
 msgstr ""
 "\n"
-"החיפוש הושלם. נמצאו %d קשרי משפחה."
+"החיפוש הושלם. נמצאו %d קשרי קרבה."

@@ -3,13 +3,13 @@
 # Copyright (C) Icelandic translators of Gramps
 # This file is distributed under the same license as the GRAMPS package.
 #
-# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2016.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2016, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"PO-Revision-Date: 2026-02-10 21:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <https://hosted.weblate.org/projects/gramps-project/"
 "addons/is/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -5802,10 +5802,8 @@ msgstr ""
 #: Form/editform.py:225 SourceIndex/birth.glade:113
 #: SourceIndex/census.glade:873 SourceIndex/death.glade:182
 #: SourceIndex/marriage.glade:1263
-#, fuzzy
-#| msgid "Differences"
 msgid "Reference:"
-msgstr "Mismunur"
+msgstr "Tilvísun:"
 
 #: Form/editform.py:421
 msgid "Headings"
@@ -14781,10 +14779,8 @@ msgid "Merge"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:897
-#, fuzzy
-#| msgid "No changes need."
 msgid "Local changes"
-msgstr "Engin þörf á breytingum."
+msgstr "Breytingar á staðnum"
 
 #: GrampsWebSync/grampswebsync.py:900 GrampsWebSync/grampswebsync.py:905
 #: GrampsWebSync/grampswebsync.py:907
@@ -14792,10 +14788,8 @@ msgid "Modified"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:902
-#, fuzzy
-#| msgid "No changes need."
 msgid "Remote changes"
-msgstr "Engin þörf á breytingum."
+msgstr "Fjartengdar breytingar"
 
 #: GrampsWebSync/grampswebsync.py:907
 msgid "Simultaneous changes"
@@ -15928,10 +15922,8 @@ msgid "Report of the last records that have been changed"
 msgstr ""
 
 #: LastChange/LastChangeGramplet.py:82
-#, fuzzy
-#| msgid "No changes need."
 msgid "changed on"
-msgstr "Engin þörf á breytingum."
+msgstr "breytt"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
@@ -15978,10 +15970,8 @@ msgid "Sources Changed"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:304
-#, fuzzy
-#| msgid "No changes need."
 msgid "Notes Changed"
-msgstr "Engin þörf á breytingum."
+msgstr "Minnispunktum breytt"
 
 #: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
@@ -17560,6 +17550,14 @@ msgstr ""
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr ""
 
+#: PedigreeChart/PedigreeChart.py:657
+msgid "Show page numbers"
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
+
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
 msgstr ""
@@ -18378,10 +18376,8 @@ msgid "Correct -50° in 50°S"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1142
-#, fuzzy
-#| msgid "No changes need."
 msgid "No changes"
-msgstr "Engin þörf á breytingum."
+msgstr "Engar breytingar"
 
 #: PlaceCompletion/PlaceCompletion.py:1143
 msgid "City[, State]"
@@ -18472,10 +18468,8 @@ msgid "Parish:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:271
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place _filter:"
-msgstr "Staðaheiti"
+msgstr "S_taðasía:"
 
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
@@ -20546,10 +20540,8 @@ msgstr ""
 
 #: SourceIndex/census.glade:904 SourceIndex/death.glade:217
 #: SourceIndex/marriage.glade:1296
-#, fuzzy
-#| msgid "column"
 msgid "Volume:"
-msgstr "dálkur"
+msgstr "Bindi:"
 
 #: SourceIndex/census.glade:1046
 msgid "order, person, surname, given, age, status, occupation, etc ..."
@@ -22337,10 +22329,9 @@ msgid "Attribute has been successfully added"
 msgstr ""
 
 #: WebSearch.py:2142
-#, fuzzy, python-brace-format
-#| msgid "Place titles"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Staðaheiti"
+msgstr "Titill: {title}"
 
 #: WebSearch.py:2146
 #, python-brace-format
@@ -22463,10 +22454,8 @@ msgid "Attribute updated"
 msgstr ""
 
 #: activity_row_generator.py:160
-#, fuzzy
-#| msgid "No changes need."
 msgid "Note updated"
-msgstr "Engin þörf á breytingum."
+msgstr "Minnispunktur uppfærður"
 
 #: constants.py:390
 msgid "Column - Icons"
@@ -23091,10 +23080,8 @@ msgid "Foundation date:"
 msgstr ""
 
 #: markdown_place_history_formatter.py:60
-#, fuzzy
-#| msgid "Place titles"
 msgid "Coordinates:"
-msgstr "Staðaheiti"
+msgstr "Hnit:"
 
 #: markdown_place_history_formatter.py:61
 msgid "Administrative history"
@@ -23109,10 +23096,8 @@ msgid "Full hierarchy"
 msgstr ""
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place Type:"
-msgstr "Staðaheiti"
+msgstr "Gerð staðar:"
 
 #: markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"

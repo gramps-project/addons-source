@@ -60,15 +60,15 @@
 # Giansalvo Gusinu <giansalvo.gusinu@gmail.com>, 2019.
 # Sebastiano Pistore <SebastianoPistore.info@protonmail.ch>, 2025.
 # Vincenzo Alfano <vinc.alfano@gmail.com>, 2016.
-# Fabio Restante <frestante@gmail.com>, 2025.
+# Fabio Restante <frestante@gmail.com>, 2025, 2026.
 # Paolo Zamponi <feus73@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 08:48-0800\n"
-"PO-Revision-Date: 2025-09-12 17:22+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"PO-Revision-Date: 2026-03-04 17:10+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -76,7 +76,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -411,7 +411,7 @@ msgstr "  •  Dal menu \"Alberi genealogici\" ,"
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
-msgstr ""
+msgstr " usa l'opzione \"Organizza alberi genealogici...\" per"
 
 #: Betawhatsnext/Betawhatsnext.py:52
 msgid " create a New (or to select an existing) Tree database.\n"
@@ -445,6 +445,8 @@ msgstr ""
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
 msgstr ""
+"Usa \"Configura\" all'interno del menu \"Vista\" per cambiare le opzioni del "
+"Gramplet."
 
 #: Betawhatsnext/Betawhatsnext.py:86
 msgid "Search Quota "
@@ -576,6 +578,8 @@ msgstr "Famiglia dei genitori sconosciuta."
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
 msgstr ""
+"\"Aggiungi Genitori Nuovi/Esistenti\" dal menu Modifica nella vista "
+"Relazioni."
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
@@ -883,7 +887,7 @@ msgstr "Prova"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Relative"
-msgstr ""
+msgstr "Parente"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
@@ -1025,19 +1029,19 @@ msgstr ""
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
 msgid "Chat With Tree"
-msgstr ""
+msgstr "Parla con l'Albero"
 
 #: ChatWithTree/ChatWithTree.py:103
 msgid "Database change detected"
-msgstr ""
+msgstr "Rilevato un cambiamento del Database"
 
 #: ChatWithTree/ChatWithTree.py:148
 msgid "Type a message..."
-msgstr ""
+msgstr "Scrivi un messaggio..."
 
 #: ChatWithTree/ChatWithTree.py:152
 msgid "Send"
-msgstr ""
+msgstr "Invia"
 
 #: ChatWithTree/ChatWithTree.py:159
 msgid "Chat with Tree initialized. Type /help for help."
@@ -1051,7 +1055,7 @@ msgstr ""
 
 #: ChatWithTree/chatwithllm.py:78
 msgid "Tree: '{}'"
-msgstr ""
+msgstr "Albero: '{}'"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -1063,7 +1067,7 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "Aggiungi un tag ai luoghi selezionati."
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
@@ -1275,7 +1279,7 @@ msgstr "Colore di fondo degli uomini"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
-msgstr ""
+msgstr "Colore RGB per lo sfondo dei box maschili."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
 msgid "Male Expandable Background Color"
@@ -1291,7 +1295,7 @@ msgstr "Colore di fondo delle donne"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr ""
+msgstr "Colore RGB per lo sfondo dei box femminili."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
@@ -1329,7 +1333,7 @@ msgstr "Opzioni grafico a ventaglio ascendenza"
 
 #: D3Charts/AncestralFanChart.py:729
 msgid "Paternal Background Color"
-msgstr ""
+msgstr "Colore di sfondo paterno"
 
 #: D3Charts/AncestralFanChart.py:730
 msgid "RGB-color for paternal box background."
@@ -1337,7 +1341,7 @@ msgstr ""
 
 #: D3Charts/AncestralFanChart.py:733
 msgid "Maternal Background"
-msgstr ""
+msgstr "Colore di sfondo materno"
 
 #: D3Charts/AncestralFanChart.py:734
 msgid "RGB-color for maternal box background."
@@ -1367,7 +1371,7 @@ msgstr "Generazione resoconto..."
 #: D3Charts/DescendantIndentedTree.py:1364
 #: DescendantSpaceTree/DescendantSpaceTree.py:771
 msgid "Invalid Destination Directory"
-msgstr ""
+msgstr "Directory di destinazione non valida"
 
 #: D3Charts/DescendantIndentedTree.py:1365
 #, python-format
@@ -1375,11 +1379,13 @@ msgid ""
 "Destinaton diretory %s does not exist\n"
 "Do you want to attempt to create it?"
 msgstr ""
+"La directory di destinazione %s non esiste\n"
+"Vuoi crearla?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr ""
+msgstr "Non è stato possibile creare {target_path}: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1390
 #, python-format
@@ -1387,6 +1393,8 @@ msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
+"Il file di destinazione %s esiste già.\n"
+"Vuoi sovrascriverlo?"
 
 #: D3Charts/DescendantIndentedTree.py:1445
 msgid "Default View"
@@ -1394,7 +1402,7 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1448
 msgid "Expand All"
-msgstr ""
+msgstr "Espandi tutto"
 
 #: D3Charts/DescendantIndentedTree.py:1810
 msgid "Include contraction level"
@@ -17998,6 +18006,16 @@ msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:657
+#, fuzzy
+#| msgid "in %(place)s"
+msgid "Show page numbers"
+msgstr "in %(place)s"
+
+#: PedigreeChart/PedigreeChart.py:658
+msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:662
