@@ -52,7 +52,7 @@ class TopolaServer(Thread):
           extension = splitext(file_name)[1]
           remote_name = '/file/{}{}'.format(hash, extension)
           file_map[remote_name] = file_name
-          line = '1 FILE http://127.0.0.1:8156{}\n'.format(remote_name)
+          line = '1 FILE http://127.0.0.1:{}{}\n'.format(self.port, remote_name)
         gedcom_file.write(line)
 
       # Replace the file map in a thread-safe way.
@@ -74,11 +74,13 @@ class TopolaServer(Thread):
                   self.send_response(404)
                   return
 
+                content = open(file_map[self.path], 'rb').read()
+
                 # Respond with the file contents.
                 self.send_response(200)
                 self.send_header('Access-Control-Allow-Origin', 'https://pewu.github.io')
+                self.send_header('Content-Length', str(len(content)))
                 self.end_headers()
-                content = open(file_map[self.path], 'rb').read()
                 self.wfile.write(content)
 
         # Bind to the local address only.
