@@ -545,7 +545,11 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def _async_transfer_media(self):
         """Upload/download media files."""
         self.handle_server_errors(self.download_files)
+        if self.conclusion.error:
+            return
         self.handle_server_errors(self.upload_files)
+        if self.conclusion.error:
+            return
         self.file_progress_page.set_complete()
         self.assistant.next_page()
 
@@ -666,6 +670,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             force,
             self.sync_progress_page.update_api_progress,
         )
+        if self.conclusion.error:
+            return
         self.handle_done_syncing_dbs()
 
     def save_timestamp(self):

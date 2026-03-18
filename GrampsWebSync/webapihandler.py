@@ -282,8 +282,10 @@ class WebApiHandler:
                 return False
         except HTTPError as e:
             LOG.error(f"HTTPError while fetching task status: {e.code} - {e.reason}")
+            raise ValueError(f"HTTP Error: {e.code} - {e.reason}")
         except URLError as e:
             LOG.error(f"URLError while fetching task status: {e.reason}")
+            raise ValueError(f"URL Error: {e.reason}")
 
     def get_missing_files(self, retry: bool = True) -> list:
         """Get a list of remote media objects with missing files."""
