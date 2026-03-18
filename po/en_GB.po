@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2026-02-16 16:09+0000\n"
+"PO-Revision-Date: 2026-03-18 12:09+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -37,7 +37,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -5891,10 +5891,8 @@ msgstr ""
 #: Form/editform.py:225 SourceIndex/birth.glade:113
 #: SourceIndex/census.glade:873 SourceIndex/death.glade:182
 #: SourceIndex/marriage.glade:1263
-#, fuzzy
-#| msgid "Differences"
 msgid "Reference:"
-msgstr "Differences"
+msgstr "Reference:"
 
 #: Form/editform.py:421
 msgid "Headings"
@@ -13780,7 +13778,7 @@ msgstr ""
 #: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
 #: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
-msgstr ""
+msgstr "Ancestry"
 
 #: Form/form_us.xml.h:2086 Form/form_us.xml.h:2123 Form/form_us.xml.h:2161
 #: Form/form_us.xml.h:2199
@@ -14878,10 +14876,8 @@ msgid "Merge"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:897
-#, fuzzy
-#| msgid "No changes need."
 msgid "Local changes"
-msgstr "No changes need."
+msgstr "Local changes"
 
 #: GrampsWebSync/grampswebsync.py:900 GrampsWebSync/grampswebsync.py:905
 #: GrampsWebSync/grampswebsync.py:907
@@ -14889,10 +14885,8 @@ msgid "Modified"
 msgstr "Modified"
 
 #: GrampsWebSync/grampswebsync.py:902
-#, fuzzy
-#| msgid "No changes need."
 msgid "Remote changes"
-msgstr "No changes need."
+msgstr "Remote changes"
 
 #: GrampsWebSync/grampswebsync.py:907
 msgid "Simultaneous changes"
@@ -15461,10 +15455,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:129
-#, fuzzy
-#| msgid "Longitude :"
 msgid "Start longitude"
-msgstr "Longitude :"
+msgstr "Start longitude"
 
 #: Heatmap/heatmap.py:131
 msgid ""
@@ -16031,10 +16023,8 @@ msgid "Report of the last records that have been changed"
 msgstr ""
 
 #: LastChange/LastChangeGramplet.py:82
-#, fuzzy
-#| msgid "No changes need."
 msgid "changed on"
-msgstr "No changes need."
+msgstr "changed on"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
