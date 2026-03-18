@@ -56,7 +56,7 @@
 #
 # Marco Molteni <molter@gufi.org>, 2001-2002.
 # Lorenzo Cappelletti <lorenzo.cappelletti@email.it>, 2003.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2025.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2025, 2026.
 # Giansalvo Gusinu <giansalvo.gusinu@gmail.com>, 2019.
 # Sebastiano Pistore <SebastianoPistore.info@protonmail.ch>, 2025.
 # Vincenzo Alfano <vinc.alfano@gmail.com>, 2016.
@@ -67,8 +67,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2026-03-04 17:10+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2026-03-05 22:10+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -445,8 +445,8 @@ msgstr ""
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
 msgstr ""
-"Usa \"Configura\" all'interno del menu \"Vista\" per cambiare le opzioni del "
-"Gramplet."
+"Usa \"Configura\" all'interno del menu \"Visualizza\" per cambiare le "
+"opzioni del Gramplet."
 
 #: Betawhatsnext/Betawhatsnext.py:86
 msgid "Search Quota "
@@ -578,7 +578,7 @@ msgstr "Famiglia dei genitori sconosciuta."
 msgid ""
 "\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
 msgstr ""
-"\"Aggiungi Genitori Nuovi/Esistenti\" dal menu Modifica nella vista "
+"\"Aggiungi genitori nuovi/esistenti\" dal menu Modifica nella vista "
 "Relazioni."
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
@@ -1029,11 +1029,11 @@ msgstr ""
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
 msgid "Chat With Tree"
-msgstr "Parla con l'Albero"
+msgstr "Parla con l'albero"
 
 #: ChatWithTree/ChatWithTree.py:103
 msgid "Database change detected"
-msgstr "Rilevato un cambiamento del Database"
+msgstr "Rilevato un cambiamento del database"
 
 #: ChatWithTree/ChatWithTree.py:148
 msgid "Type a message..."
@@ -1279,7 +1279,7 @@ msgstr "Colore di fondo degli uomini"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
-msgstr "Colore RGB per lo sfondo dei box maschili."
+msgstr "Colore RGB per lo sfondo dei riquadri maschili."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
 msgid "Male Expandable Background Color"
@@ -1295,7 +1295,7 @@ msgstr "Colore di fondo delle donne"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr "Colore RGB per lo sfondo dei box femminili."
+msgstr "Colore RGB per lo sfondo dei riquadri femminili."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
@@ -1337,7 +1337,7 @@ msgstr "Colore di sfondo paterno"
 
 #: D3Charts/AncestralFanChart.py:730
 msgid "RGB-color for paternal box background."
-msgstr ""
+msgstr "Colore RGB per lo sfondo del riquadro paterno."
 
 #: D3Charts/AncestralFanChart.py:733
 msgid "Maternal Background"
@@ -1345,7 +1345,7 @@ msgstr "Colore di sfondo materno"
 
 #: D3Charts/AncestralFanChart.py:734
 msgid "RGB-color for maternal box background."
-msgstr ""
+msgstr "Colore RGB per lo sfondo del riquadro materno."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:909
@@ -3364,7 +3364,7 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
-msgstr "Rettangolo intorno al blocco della persona"
+msgstr "Riquadro intorno al blocco della persona"
 
 #: DescendantsLines/DescendantsLines.py:1613
 msgid "Draw a thin black box around each person' text block."
@@ -17451,18 +17451,19 @@ msgstr ""
 #: NetworkChart/NetworkChart.py:1014
 msgid "Alpha for Male box background (transparent=0, solid=255)."
 msgstr ""
+"Canale alfa per lo sfondo del riquadro maschile (trasparente=0, solido=255)."
 
 #: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
-msgstr ""
+msgstr "Bordo del riquadro maschile"
 
 #: NetworkChart/NetworkChart.py:1019
 msgid "RGB-color for Male box edge."
-msgstr ""
+msgstr "Colore RGB per il bordo del riquadro maschile."
 
 #: NetworkChart/NetworkChart.py:1023
 msgid "RGB-color for Female box background."
-msgstr ""
+msgstr "Colore RGB per lo sfondo del riquadro femminile."
 
 # added:
 #: NetworkChart/NetworkChart.py:1026
@@ -17472,16 +17473,15 @@ msgstr ""
 #: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
 msgstr ""
+"Canale alfa per lo sfondo del riquadro femminile (trasparente=0, solido=255)."
 
 #: NetworkChart/NetworkChart.py:1033
-#, fuzzy
-#| msgid "Female line"
 msgid "Female Box Edge"
-msgstr "Linea femminile"
+msgstr "Bordo del riquadro femminile"
 
 #: NetworkChart/NetworkChart.py:1034
 msgid "RGB-color for Female box edge."
-msgstr ""
+msgstr "Colore RGB per il bordo del riquadro femminile."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
@@ -17489,7 +17489,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1038
 msgid "RGB-color for other box background."
-msgstr ""
+msgstr "Colore RGB per lo sfondo di altri riquadri."
 
 #: NetworkChart/NetworkChart.py:1041
 msgid "Other Background Alpha"
