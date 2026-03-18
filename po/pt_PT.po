@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2026-02-05 04:01+0000\n"
+"PO-Revision-Date: 2026-03-17 06:11+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -19744,7 +19744,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr "<i>A instalação dos seguintes pacotes é <b>OPCIONAL</b></i>.\n"
+msgstr "<i>A instalação dos seguintes pacotes é <b>opcional</b></i>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
@@ -20072,7 +20072,7 @@ msgid ""
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
 "Para a extensão Networkchart, a letra <a href=\"https://www.fontsquirrel.com/"
-"fonts/white-rabbit\">White Rabbit </a> fornece um resultado extremamente "
+"fonts/white-rabbit\">White Rabbit</a> fornece um resultado extremamente "
 "legível.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
@@ -21601,40 +21601,40 @@ msgid ""
 "<b>Data father\n"
 "spouse1</b>"
 msgstr ""
-"<b>Cônjuge 1 do pai\n"
-"dos dados</b>"
+"<b>Dados do cônjuge 1\n"
+"do pai</b>"
 
 #: SourceIndex/marriage.glade:351
 msgid ""
 "<b>Data mother\n"
 "spouse1</b>"
 msgstr ""
-"<b>Cônjuge 1 da mãe\n"
-"dos dados</b>"
+"<b>Dados do cônjuge 1\n"
+"da mãe</b>"
 
 #: SourceIndex/marriage.glade:369
 msgid ""
 "<b>Data mother\n"
 "spouse2</b>"
 msgstr ""
-"<b>Cônjuge 2 da mãe\n"
-"dos dados</b>"
+"<b>Dados do cônjuge 2\n"
+"da mãe</b>"
 
 #: SourceIndex/marriage.glade:387
 msgid ""
 "<b>Data father\n"
 "spouse2</b>"
 msgstr ""
-"<b>Cônjuge 2 do pai\n"
-"dos dados</b>"
+"<b>Dados do cônjuge 2\n"
+"do pai</b>"
 
 #: SourceIndex/marriage.glade:1185
 msgid "<b>Data spouse1</b>"
-msgstr "<b>Cônjuge 1 dos dados</b>"
+msgstr "<b>Dados do cônjuge 1</b>"
 
 #: SourceIndex/marriage.glade:1202
 msgid "<b>Data spouse2</b>"
-msgstr "<b>Cônjuge 2 dos dados</b>"
+msgstr "<b>Dados do cônjuge 2</b>"
 
 #: SourceIndex/witness.glade:7
 msgid "witness"
