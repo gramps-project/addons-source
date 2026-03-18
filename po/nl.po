@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2026-02-12 19:09+0000\n"
+"PO-Revision-Date: 2026-03-17 06:11+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -985,7 +985,7 @@ msgstr "Selectie bewerken"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
 msgid "Chat With Tree Interactive Addon"
-msgstr "Chatten met Tree Interactive-uitbreiding"
+msgstr "Chatten met Tree Interactive-toevoeging"
 
 #: ChatWithTree/ChatWithTree.gpr.py:10
 msgid ""
@@ -1018,7 +1018,7 @@ msgid ""
 "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
 "select a database."
 msgstr ""
-"De uitbreiding ChatWithTree is nog niet geïnitialiseerd. Laad Gramps opnieuw "
+"De toevoeging ChatWithTree is nog niet geïnitialiseerd. Laad Gramps opnieuw "
 "of kies een database."
 
 #: ChatWithTree/chatwithllm.py:78
@@ -19617,7 +19617,7 @@ msgstr "Verbeterde uitbreidingenbeheerder"
 #: PluginManager\PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr ""
-"Een addon-/uitbreidingenbeheerder met verschillende extra mogelijkheden"
+"Een toevoeging-/uitbreidingenbeheerder met verschillende extra mogelijkheden"
 
 #: PluginManager\PluginManager.py:91
 msgid "Plugin Manager - Enhanced"
@@ -19630,9 +19630,10 @@ msgid ""
 "the addon filename to be included in the search.\n"
 "Word case and order is ignored."
 msgstr ""
-"Voer zoekwoorden in om de add-ons te filteren.\n"
+"Voer zoekwoorden in om de toevoegingen te filteren.\n"
 "Alle woorden moeten ergens in de rij of voorkomen of\n"
-"de addon-bestandsnaam die in de zoekopdracht moet worden opgenomen.\n"
+"de bestandsnaam van de toevoeging die in de zoekopdracht moet worden "
+"opgenomen.\n"
 "Hoofdlettergebruik en volgorde wordt genegeerd."
 
 #: PluginManager\PluginManager.py:229
@@ -19643,7 +19644,7 @@ msgstr "Herstarten..."
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
-"Start Gramps opnieuw zodat uw wijzigingen aan de add-ons veilig kunnen "
+"Start Gramps opnieuw zodat uw wijzigingen aan de toevoeging veilig kunnen "
 "worden voltooid."
 
 #: PluginManager\PluginManager.py:353
@@ -19674,7 +19675,7 @@ msgstr "Ingebouwde items weergeven"
 
 #: PluginManager\PluginManager.py:474
 msgid "* indicates 3rd party addon"
-msgstr "* geeft add-on van derden aan"
+msgstr "* geeft toevoeging van derden aan"
 
 #: PluginManager\PluginManager.py:479
 msgid "Plugins"
@@ -19865,8 +19866,8 @@ msgid ""
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
 "Diagnostisch gramplet om te helpen evalueren of <a href=\"https://gramps-"
-"project.org/\"> Gramps </a> alle <a href=\"https://github.com/gramps-project/"
-"gramps/blob/master/README.md\">vereisten </a> heeft geïnstalleerd.\n"
+"project.org/\">Gramps</a> alle <a href=\"https://github.com/gramps-project/"
+"gramps/blob/master/README.md\">vereisten</a> heeft geïnstalleerd.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
@@ -19945,8 +19946,8 @@ msgid ""
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
 "<i>Installatie van de volgende pakketten is <b>AANBEVOLEN</b> als je van "
-"plan bent om te vertalen of een ontwikkeling te doen (uitbreidingen etc.)</"
-"i>:\n"
+"plan bent om te vertalen of een ontwikkeling te doen (toevoegingen etc.)</i>"
+":\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
@@ -19954,7 +19955,7 @@ msgid ""
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Optionele pakketten vereist door add-ons van derden</b></u>\n"
+"<u><b>Optionele pakketten vereist door toevoegingen van derden</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
 msgid ""
@@ -19963,7 +19964,7 @@ msgid ""
 "to work</i>:\n"
 msgstr ""
 "<i>Noodzakelijke vereisten om de volgende <a href=\"https://gramps-"
-"project.org/wiki/index.php?title=Third-party_Addons\">Uitbreidingen van "
+"project.org/wiki/index.php?title=Third-party_Addons\">toevoegingen van "
 "derden</a> te laten functioneren</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
@@ -20247,9 +20248,9 @@ msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
-"Voor add-on Networkchart biedt lettertype <a href=\"https://"
-"www.fontsquirrel.com/fonts/white-rabbit\"> White Rabbit </a> een "
-"buitengewoon leesbaar resultaat.\n"
+"Voor toevoeging Networkchart biedt lettertype <a href=\"https://"
+"www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> een buitengewoon "
+"leesbaar resultaat.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
@@ -20298,7 +20299,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
-msgstr ") (Vereist de Gramps-add-on vermeld onder 'Plugin lib')"
+msgstr ") (Vereist de Gramps-toevoeging vermeld onder 'Plugin lib')"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
 msgid "DBF installed"
@@ -21005,7 +21006,7 @@ msgid ""
 "was previously closed.  It adds no new menus or Gramplets, but allows the "
 "last six objects visited to be found via the 'Go' menu."
 msgstr ""
-"Deze add-on zorgt ervoor dat Gramps herstart op dezelfde weergave en "
+"Deze toevoeging zorgt ervoor dat Gramps herstart op dezelfde weergave en "
 "hetzelfde object waar Gramps voorheen werd afgesloten. Het voegt geen nieuwe "
 "menu's of gramplets toe, maar laat toe om de laatste zes bezochte objecten "
 "te vinden via het menu 'Ga naar'."
@@ -22099,7 +22100,7 @@ msgid ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Rechtstreeks importeren vanuit TMG-bestanden wordt niet ondersteund\n"
-"door de TMG-importeur addon.\n"
+"door de TMG-importeur toevoeging.\n"
 "\n"
 "U moet een reservekopie van het TMG-project (*. Sqz) gebruiken\n"
 "\n"
@@ -22122,10 +22123,10 @@ msgid ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Direct importeren vanuit TMG-bestanden wordt niet ondersteund door de TMG-"
-"importeur addon. U moet een reservekopie van TMG-project (*. Sqz) gebruiken "
-"Zorg ervoor dat uw TMG-project is gemaakt door: TMG versie 5.x of hoger. Uw "
-"bestand: *. TMG - Versiecontrolebestand voor TMG 2.0 tot TMG 4.0d Raadpleeg: "
-"%(gramps_wiki_import_pjc_direct_url)s"
+"importeur toevoeging. U moet een reservekopie van TMG-project (*. Sqz) "
+"gebruiken Zorg ervoor dat uw TMG-project is gemaakt door: TMG versie 5.x of "
+"hoger. Uw bestand: *. TMG - Versiecontrolebestand voor TMG 2.0 tot TMG 4.0d "
+"Raadpleeg: %(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:131
 #, python-format
@@ -22137,10 +22138,10 @@ msgid ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Direct importeren vanuit TMG-bestanden wordt niet ondersteund door de TMG-"
-"importeur add-on. U moet een reservekopie van TMG-project (*. Sqz) gebruiken "
-"Zorg ervoor dat uw TMG-project is gemaakt door: TMG versie 5.x of hoger. Uw "
-"bestand: *. VER - Versiecontrolebestand voor TMG 1.2 en eerder Raadpleeg: "
-"%(gramps_wiki_import_pjc_direct_url)s"
+"importeur toevoeging. U moet een reservekopie van TMG-project (*. Sqz) "
+"gebruiken Zorg ervoor dat uw TMG-project is gemaakt door: TMG versie 5.x of "
+"hoger. Uw bestand: *. VER - Versiecontrolebestand voor TMG 1.2 en eerder "
+"Raadpleeg: %(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"
@@ -22148,7 +22149,7 @@ msgstr "TMG-importeur"
 
 #: TMGimporter/libtmg.glade:31
 msgid "Unreleased Addon - Work In Progress"
-msgstr "Onuitgegeven add-on - Werk in uitvoering"
+msgstr "Onuitgegeven toevoeging - Werk in uitvoering"
 
 #: TMGimporter/libtmg.glade:51
 msgid ""
