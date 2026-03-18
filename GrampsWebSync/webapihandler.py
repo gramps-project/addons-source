@@ -285,6 +285,9 @@ class WebApiHandler:
         except URLError as e:
             LOG.error(f"URLError while fetching task status: {e.reason}")
             raise ValueError(f"URL Error: {e.reason}")
+        except socket.timeout as e:
+            LOG.error(f"Timeout while fetching task status: {e}")
+            raise ValueError("Connection timed out while fetching task status.")
 
     def get_missing_files(self, retry: bool = True) -> list:
         """Get a list of remote media objects with missing files."""
