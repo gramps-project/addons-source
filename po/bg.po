@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2026-01-30 20:53+0000\n"
+"PO-Revision-Date: 2026-03-14 05:09+0000\n"
 "Last-Translator: Iskren Petkov <auto-weblate@quietlyemailme.us>\n"
 "Language-Team: Bulgarian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/bg/>\n"
@@ -20,31 +20,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Всички имена на всички хора"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Покажи всички имена на всички хора"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
-msgstr ""
+msgstr "Вид на името"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr ""
+msgstr "Главно име"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "Всички имена %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
@@ -61,19 +61,19 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:205
 msgid "Generation "
-msgstr "Основни "
+msgstr "Поколение "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr ""
+msgstr "Брой на Прадеди намерени "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
-msgstr ""
+msgstr "Процент на Прадеди намерени "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr ""
+msgstr "Брой на уникални Прадеди намерени "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
@@ -154,13 +154,13 @@ msgstr ""
 
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
-msgstr ""
+msgstr "На"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
-msgstr ""
+msgstr "Прикачи източник"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
