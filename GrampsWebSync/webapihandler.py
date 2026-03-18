@@ -214,13 +214,12 @@ class WebApiHandler:
             background = api_version and parse_version(api_version) >= (2, 7)
             data = json.dumps(payload).encode()
             endpoint = f"{self.url}/transactions/"
-            params = []
             if force:
-                params.append("force=1")
-            if background:
-                params.append("background=1")
-            if params:
-                endpoint = f"{endpoint}?{'&'.join(params)}"
+                endpoint = f"{endpoint}?force=1"
+                if background:
+                    endpoint = f"{endpoint}&background=1"
+            elif background:
+                endpoint = f"{endpoint}?background=1"
             req = Request(
                 endpoint,
                 data=data,
