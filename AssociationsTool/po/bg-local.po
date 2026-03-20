@@ -17,14 +17,5 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-msgid "Generation "
-msgstr "Поколение "
-
-msgid "Number of Ancestors found "
-msgstr "Брой на Прадеди намерени "
-
-msgid "Percent of Ancestors found "
-msgstr "Процент на Прадеди намерени "
-
-msgid "Number of unique Ancestors found "
-msgstr "Брой на уникални Прадеди намерени "
+msgid "Of"
+msgstr "На"
