@@ -27,7 +27,7 @@
 # PEP8 check by http://pep8online.com
 # ------------------------------------------------------------
 from gramps.gen.plug import Gramplet
-from gramps.gen.lib import Person
+from gramps.gen.lib import Person, EventRoleType
 from gramps.gen.lib import FamilyRelType
 
 #------------------------------------------------------------------------
@@ -311,14 +311,18 @@ class ThisDayInFamilyHistory(Gramplet):
         from gramps.gen.lib.date import Date
 
         eventType = eventType.lower()
-        ev = {'people': (self.dbstate.db.iter_people, _('Person')),
-              'family': (self.dbstate.db.iter_families, _('Family'))}
+        ev = {'people': (self.dbstate.db.iter_people, _('Person'), EventRoleType.PRIMARY),
+              'family': (self.dbstate.db.iter_families, _('Family'), EventRoleType.FAMILY)}
 
         eventList = []
 
         handleType = ev[eventType][1]
         for p in ev[eventType][0]():
             for ref in p.get_event_ref_list():
+                # Ignore events if the person/family is not the main actor (witness, etc)
+                if ref.role != EventRoleType(ev[eventType][2]):
+                    continue
+
                 event = self.dbstate.db.get_event_from_handle(ref.ref)
 
                 eDate = event.get_date_object()
