@@ -60,16 +60,11 @@ def importSqzData(database, filename, user):
     Function called by Gramps to import TMG project dataset(s).
     Uses TMG library to process .SQZ Backup file
     """
-    print("-----------------------------------------------------")
-    print("# TMG Importer : Started : Processing (*.SQZ) file  #")
-    print("-----------------------------------------------------")
+    LOG.info("TMG Importer: started processing %s", filename)
     #tmgabortimport = False   # Import Status
     importer = libtmg.importData
     info = importer(database, filename, user)
-    #print("tmgabortimport : ", tmgabortimport)
-    print("-----------------------------------------------------")
-    print("# TMG Importer : Finished : Processing (*.SQZ) file #")
-    print("-----------------------------------------------------")
+    LOG.info("TMG Importer: finished processing %s", filename)
     return info
 
 #-------------------------------------------------------------------------

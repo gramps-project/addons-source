@@ -9,7 +9,7 @@ This addon only supports importing from an TMG Backup (*.SQZ) and not directly f
 
 ### How do I make it work? ###
 
-* Requires you install the required prerequiste "dbf ( https://pypi.python.org/pypi/dbf )" python package by Ethan Furman (version 0.96.8 or greater). This reads TMG's Database(*.DBF) files
+* Requires you install the required prerequiste "dbf ( https://pypi.python.org/pypi/dbf )" python package by Ethan Furman (version 0.99.0 or greater). This reads TMG's Database(*.DBF) files
 
 * Install the "TMG Importer" using the Gramps addon manager.
 
