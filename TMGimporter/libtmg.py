@@ -42,6 +42,9 @@ import re
 import logging
 LOG = logging.getLogger(".TMGImport")
 
+# Minimum PJC version for TMG 9.02+ (PjcVersion >= 11.0)
+MIN_PJC_VERSION = 11
+
 #------------------------------------------------------------------------
 #
 # External Libraries
@@ -73,7 +76,14 @@ from gi.repository import Gtk
 #-------------------------------------------------------------------------
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+try:
+    import gettext as _gettext
+    import os as _os
+    _localedir = _os.path.join(
+        _os.path.dirname(_os.path.abspath(__file__)), "locale")
+    _ = _gettext.translation("addon", localedir=_localedir).gettext
+except FileNotFoundError:
+    _ = glocale.translation.gettext
 from gramps.gen.lib import (
     Address, ChildRef,
     ChildRefType, Citation, Date, Event, EventRef, EventRoleType,
@@ -875,21 +885,6 @@ def only_first_dataset():
 
     LOG.debug("first_datasetid = %s", first_datasetid)
 
-    #datasets_total = len(datasets())
-    #print("first_datasetid = {} of {} ".format(first_datasetid, datasets_total))
-
-    # test output of other dataset ids
-    '''
-    second_datasetid = (datasets()[1][0])
-    third_datasetid = (datasets()[2][0])
-    forth_datasetid = (datasets()[3][0])
-    print("second_datasetid = {} of {} ".format(
-        second_datasetid, datasets_total))
-    print("third_datasetid = {} of {} ".format(
-        third_datasetid, datasets_total))
-    print("forth_datasetid = {} of {} ".format(
-        forth_datasetid, datasets_total))
-    '''
     return first_datasetid
 
 #-------------------------------------------------------------------------
@@ -2361,7 +2356,7 @@ def importData(database, sqzfilename, user):
                       "TMG 9.02 or later (PjcVersion >= 11.0)."))
                 return
             LOG.info("PJC version: %s", pjcverresult)
-            if pjcverresult >= 11:
+            if pjcverresult >= MIN_PJC_VERSION:
                 LOG.info("TMG 9.02 or greater project backup")
             else:
                 LOG.warning("TMG backup is PJC version %s (TMG 9.01 or earlier) — "
@@ -2485,7 +2480,11 @@ def sqz_pjc_exist(sqzfiletocheck):
 
     Returns:  True or False
     '''
-    zip = zipfile.ZipFile(sqzfiletocheck)
+    try:
+        zip = zipfile.ZipFile(sqzfiletocheck)
+    except (zipfile.BadZipFile, OSError) as exc:
+        LOG.error("Cannot open SQZ file %s: %s", sqzfiletocheck, exc)
+        return False
     pjcfile = zip.namelist()
     validtmgfile = None
     for x in pjcfile:
