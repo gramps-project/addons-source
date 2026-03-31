@@ -102,14 +102,14 @@ def importtmg(database, filename, user):
                              "Addon:TMGimporter#"
                              "Unsupported_formats" }
     user.notify_error(_("%s could not be opened") % filename,
-                      _("Directly importing from TMG files is not supported"
-                        "by the TMG Importer Addon."
-                        "You need to use an backup copy of TMG project(*.sqz)"
-                        "Ensure that your TMG project was created by:"
-                        "TMG version 5.x or greater."
-                        "Your file:"
-                        "*.TMG - Version Control File for TMG 2.0 to TMG 4.0d"
-                        "Please refer to:"
+                      _("Directly importing from TMG files is not supported\n"
+                        "by the TMG Importer Addon.\n\n"
+                        "You need to use an backup copy of TMG project(*.sqz)\n\n"
+                        "Ensure that your TMG project was created by:\n"
+                        "TMG version 5.x or greater.\n\n"
+                        "Your file:\n"
+                        "*.TMG - Version Control File for TMG 2.0 to TMG 4.0d\n\n"
+                        "Please refer to:\n"
                         "%(gramps_wiki_import_pjc_direct_url)s" ) %
                                 import_dict )
     return
@@ -123,14 +123,14 @@ def importver(database, filename, user):
                              "Addon:TMGimporter#"
                              "Unsupported_formats" }
     user.notify_error(_("%s could not be opened") % filename,
-                      _("Directly importing from TMG files is not supported"
-                        "by the TMG Importer Addon."
-                        "You need to use an backup copy of TMG project(*.sqz)"
-                        "Ensure that your TMG project was created by:"
-                        "TMG version 5.x or greater."
-                        "Your file:"
-                        "*.VER - Version Control File for TMG 1.2 and earlier"
-                        "Please refer to:"
+                      _("Directly importing from TMG files is not supported\n"
+                        "by the TMG Importer Addon.\n\n"
+                        "You need to use an backup copy of TMG project(*.sqz)\n\n"
+                        "Ensure that your TMG project was created by:\n"
+                        "TMG version 5.x or greater.\n\n"
+                        "Your file:\n"
+                        "*.VER - Version Control File for TMG 1.2 and earlier\n\n"
+                        "Please refer to:\n"
                         "%(gramps_wiki_import_pjc_direct_url)s" ) %
                                 import_dict )
     return
