@@ -16,6 +16,7 @@ register(QUICKREPORT,
          authors_email = ["guy.linton@gmail.com"],
          category = CATEGORY_QR_PERSON,
          runfunc = 'run',
+         help_url = "Addon:Census_Check"
   )
 register(QUICKREPORT, 
          id    = 'censuscheckupquickview',
@@ -29,4 +30,5 @@ register(QUICKREPORT,
          authors_email = ["guy.linton@gmail.com"],
          category = CATEGORY_QR_PERSON,
          runfunc = 'run',
+         help_url = "Addon:Census_Check"
   )
