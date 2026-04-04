@@ -94,7 +94,7 @@ def process_person(database, sdb, stab, person, census_list):
 
     # Construct the results line
     columns = (
-        sdb.name(person),
+        person,
         sdb.birth_date_obj(person),
         sdb.death_date_obj(person),
     ) + census_result
