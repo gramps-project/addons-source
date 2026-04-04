@@ -127,7 +127,6 @@ def run(database, document, person):
         key for key in sorted(census_list)
     )
     stab.columns(*columns)
-    stab.set_link_col(4)
 
     process_person(database, sdb, stab, person, census_list)
 
