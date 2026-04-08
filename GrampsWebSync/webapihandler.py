@@ -270,8 +270,8 @@ class WebApiHandler:
                 if task_status["state"] == "SUCCESS":
                     return True
                 if task_status["state"] in {"FAILURE", "REVOKED"}:
-                    LOG.error(f"Server task failed: {task_status}")
-                    raise ValueError(task_status.get("info", "Server task failed"))
+                    LOG.warning(f"Server task failed: {task_status}")
+                    raise ValueError(str(task_status.get("info", "Server task failed")))
                 if progress_callback:
                     try:
                         progress = task_status["result_object"]["progress"]
@@ -280,13 +280,13 @@ class WebApiHandler:
                     progress_callback(progress)
                 return False
         except HTTPError as e:
-            LOG.error(f"HTTPError while fetching task status: {e.code} - {e.reason}")
+            LOG.warning(f"HTTPError while fetching task status: {e.code} - {e.reason}")
             raise ValueError(f"HTTP Error: {e.code} - {e.reason}")
         except URLError as e:
-            LOG.error(f"URLError while fetching task status: {e.reason}")
+            LOG.warning(f"URLError while fetching task status: {e.reason}")
             raise ValueError(f"URL Error: {e.reason}")
         except socket.timeout as e:
-            LOG.error(f"Timeout while fetching task status: {e}")
+            LOG.warning(f"Timeout while fetching task status: {e}")
             raise ValueError("Connection timed out while fetching task status.")
 
     def get_missing_files(self, retry: bool = True) -> list:
