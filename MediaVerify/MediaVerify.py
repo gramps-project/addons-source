@@ -27,7 +27,6 @@
 #
 #-------------------------------------------------------------------------
 import os
-import io
 
 #-------------------------------------------------------------------------
 #
@@ -210,7 +209,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 chooser.destroy()
                 return
         try:
-            with io.open(filename, 'w') as report_file:
+            with open(filename, 'w', encoding='utf-8') as report_file:
                 for title, model in zip(self.titles, self.models):
                     self.export_page(report_file, title, model)
         except IOError as err:
