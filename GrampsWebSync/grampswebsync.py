@@ -480,7 +480,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def handle_error(self, message):
         """Handle an error message during sync."""
-        LOG.error(message)
+        LOG.warning(message)
         self.conclusion.error = True
         self.assistant.next_page()
         self.conclusion.label.set_text(message)
@@ -644,11 +644,12 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                     LOG.debug("No changes to apply to local database.")
                 self.sync.commit_actions(actions, trans1, trans2)
                 self.sync_progress_page.handle_local_sync_complete(actions)
-                # force the sync if mode is reset
-                force = self.confirmation.sync_mode in {
-                    MODE_RESET_TO_LOCAL,
-                    MODE_RESET_TO_REMOTE,
-                }
+                # force the sync for all modes: the server-side "object has changed"
+                # check compares against the XML-round-tripped object, which often
+                # differs from the live server object due to serialization artifacts,
+                # causing false-positive 409 conflicts even when no real concurrent
+                # edit has occurred.
+                force = True
                 lang = self.api.get_lang()
                 payload = transaction_to_json(trans2, lang)
         GLib.idle_add(self.async_commit_actions_to_remote, payload, force)
