@@ -1,0 +1,218 @@
+name: CI
+
+on:
+  push:
+    branches: [maintenance/gramps60]
+  pull_request:
+    branches: [maintenance/gramps60]
+
+env:
+  HEADLESS_IMAGE: ghcr.io/${{ github.repository }}/gramps-headless:gramps60
+  GTK_IMAGE: ghcr.io/${{ github.repository }}/gramps-gtk:gramps60
+
+jobs:
+  # -----------------------------------------------------------------
+  # Lint (headless container)
+  # -----------------------------------------------------------------
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}/gramps-headless:gramps60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run ruff (syntax and import errors only)
+        run: ruff check --select=E9,F63,F7,F82 --no-fix --exclude='*.gpr.py' .
+
+      - name: Check trailing whitespace in Python files
+        run: |
+          if git --no-pager grep --color -n --full-name '[ \t]$' -- '*.py'; then
+            echo "::error::Trailing whitespace found in Python files"
+            exit 1
+          fi
+
+  # -----------------------------------------------------------------
+  # Addon structure (bare runner — just bash, no deps needed)
+  # -----------------------------------------------------------------
+  addon-structure:
+    name: Addon Structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check all addons have po/template.pot
+        run: |
+          failed=0
+          for gpr in */*.gpr.py; do
+            addon_dir="$(dirname "$gpr")"
+            if [ ! -d "$addon_dir/po" ]; then
+              echo "::error::$addon_dir is missing po/ directory"
+              failed=1
+            elif [ ! -f "$addon_dir/po/template.pot" ]; then
+              echo "::error::$addon_dir is missing po/template.pot"
+              failed=1
+            fi
+          done
+          if [ "$failed" -eq 0 ]; then
+            echo "All addons have po/template.pot"
+          fi
+          exit $failed
+
+  # -----------------------------------------------------------------
+  # Compile check (headless container)
+  # -----------------------------------------------------------------
+  compile-check:
+    name: Compile Check
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}/gramps-headless:gramps60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile all Python files (excluding .gpr.py)
+        run: |
+          failed=0
+          while IFS= read -r f; do
+            if ! python3 -m py_compile "$f" 2>&1; then
+              failed=1
+            fi
+          done < <(find . -name '*.py' ! -name '*.gpr.py' ! -path './.git/*' ! -path '*/__pycache__/*')
+          exit $failed
+
+  # -----------------------------------------------------------------
+  # Unit tests — Linux (headless container)
+  # -----------------------------------------------------------------
+  unit-test-linux:
+    name: Unit Tests (Linux)
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}/gramps-headless:gramps60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run per-addon unit tests
+        env:
+          PYTHONPATH: .
+        run: |
+          test_dirs=""
+          for d in */tests/; do
+            if ls "$d"/test_*.py 1>/dev/null 2>&1; then
+              test_dirs="$test_dirs $d"
+            fi
+          done
+          for f in */test_*.py; do
+            if [ -f "$f" ]; then
+              test_dirs="$test_dirs $(dirname "$f")"
+            fi
+          done
+          if [ -n "$test_dirs" ]; then
+            echo "Running unit tests in: $test_dirs"
+            python3 -m pytest $test_dirs -v --tb=short \
+              --ignore-glob='**/test_integration*.py' \
+              -m 'not gui'
+          else
+            echo "No per-addon unit test files found"
+          fi
+
+  # -----------------------------------------------------------------
+  # Unit tests — Windows (bare runner, pip install)
+  # -----------------------------------------------------------------
+  unit-test-windows:
+    name: Unit Tests (Windows)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install gramps orjson pytest dbf
+
+      - name: Run per-addon unit tests
+        env:
+          PYTHONPATH: .
+        shell: bash
+        run: |
+          test_dirs=""
+          for d in */tests/; do
+            if ls "$d"/test_*.py 1>/dev/null 2>&1; then
+              test_dirs="$test_dirs $d"
+            fi
+          done
+          for f in */test_*.py; do
+            if [ -f "$f" ]; then
+              test_dirs="$test_dirs $(dirname "$f")"
+            fi
+          done
+          if [ -n "$test_dirs" ]; then
+            echo "Running unit tests in: $test_dirs"
+            python -m pytest $test_dirs -v --tb=short \
+              --ignore-glob='**/test_integration*.py' \
+              -m 'not gui'
+          else
+            echo "No per-addon unit test files found"
+          fi
+
+  # -----------------------------------------------------------------
+  # Integration tests — Gramps (GTK container)
+  # -----------------------------------------------------------------
+  integration-test:
+    name: Integration Tests (Gramps)
+    runs-on: ubuntu-latest
+    needs: [unit-test-linux]
+    container:
+      image: ghcr.io/${{ github.repository }}/gramps-gtk:gramps60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Run plugin registration tests
+        env:
+          PYTHONPATH: .
+        run: xvfb-run python3 -m pytest tests/ -v --tb=short
+
+      - name: Run per-addon integration tests
+        env:
+          PYTHONPATH: .
+        run: |
+          integration_tests=""
+          for f in */tests/test_integration*.py */test_integration*.py; do
+            if [ -f "$f" ]; then
+              integration_tests="$integration_tests $f"
+            fi
+          done
+          if [ -n "$integration_tests" ]; then
+            echo "Running per-addon integration tests: $integration_tests"
+            xvfb-run python3 -m pytest $integration_tests -v --tb=short
+          else
+            echo "No per-addon integration test files found"
+          fi
+
+  # -----------------------------------------------------------------
+  # Build (headless container — has intltool/gettext)
+  # -----------------------------------------------------------------
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}/gramps-headless:gramps60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determine GRAMPSPATH
+        id: gramps-path
+        run: |
+          GPATH=$(python3 -c "import gramps, os; print(os.path.dirname(os.path.dirname(gramps.__file__)))")
+          echo "path=$GPATH" >> "$GITHUB_OUTPUT"
+
+      - name: Build all addons
+        env:
+          GRAMPSPATH: ${{ steps.gramps-path.outputs.path }}
+        run: |
+          mkdir -p ../download
+          python3 make.py gramps60 build all
