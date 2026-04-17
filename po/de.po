@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-05 08:43-0700\n"
-"PO-Revision-Date: 2026-03-24 01:09+0000\n"
+"PO-Revision-Date: 2026-04-07 13:46+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -22369,10 +22369,8 @@ msgstr "TMG-Datensatz _importieren"
 
 #: TMGimporter/libtmg.py:2324 TMGimporter/libtmg.py:2357
 #: TMGimporter/libtmg.py:2439 TMGimporter/libtmg.py:2466
-#, fuzzy
-#| msgid "Export failed"
 msgid "TMG import failed"
-msgstr "Export fehlgeschlagen"
+msgstr "TMG-Import ist fehlgeschlagen"
 
 #: TMGimporter/libtmg.py:2325
 msgid ""
@@ -22380,6 +22378,10 @@ msgid ""
 "\n"
 "Please create a new empty Family Tree before importing a TMG backup file."
 msgstr ""
+"Der aktuelle Stammbaum ist nicht leer.\n"
+"\n"
+"Bitte erstelle einen neuen leeren Stammbaum, bevor du eine TMG-"
+"Sicherungsdatei importierst."
 
 #: TMGimporter/libtmg.py:2358
 msgid ""
@@ -22389,12 +22391,15 @@ msgid ""
 "Please ensure you are using a backup created by TMG 9.02 or later "
 "(PjcVersion >= 11.0)."
 msgstr ""
+"Die TMG-Sicherungsdatei konnte nicht gelesen werden: Die PJC-"
+"Versionsinformationen fehlen oder sind unlesbar.\n"
+"\n"
+"Bitte stelle sicher, dass du eine Sicherung verwendest, die mit TMG 9.02 "
+"oder höher erstellt wurde (PjcVersion >= 11.0)."
 
 #: TMGimporter/libtmg.py:2370
-#, fuzzy
-#| msgid "TMG Unsupported"
 msgid "TMG version not supported"
-msgstr "TMG Nicht unterstützt"
+msgstr "TMG-Version wird nicht unterstützt"
 
 #: TMGimporter/libtmg.py:2371
 #, python-format
@@ -22408,6 +22413,14 @@ msgid ""
 "See: https://gramps-project.org/wiki/index.php/"
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 msgstr ""
+"Diese Sicherung wurde mit einer älteren Version von TMG erstellt (PjcVersion "
+"%(ver)s, entspricht TMG 9.01 oder früher).\n"
+"\n"
+"Bitte aktualisiere dein TMG-Projekt auf Version 9.05, erstelle eine neue "
+"Sicherung und importiere sie dann erneut.\n"
+"\n"
+"Siehe: https://gramps-project.org/wiki/index.php/"
+"Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 
 #: TMGimporter/libtmg.py:2440
 msgid ""
@@ -22415,6 +22428,9 @@ msgid ""
 "\n"
 "The backup may be corrupt or empty."
 msgstr ""
+"In dieser TMG-Sicherungsdatei wurden keine Datensätze gefunden.\n"
+"\n"
+"Die Sicherung ist möglicherweise beschädigt oder leer."
 
 #: TMGimporter/libtmg.py:2467
 #, python-format
@@ -22426,6 +22442,12 @@ msgid ""
 "\n"
 "Ensure the file was created by TMG version 5.x or later."
 msgstr ""
+"%(filename)s scheint keine gültige TMG-Sicherungsdatei zu sein.\n"
+"\n"
+"Die Datei muss ein TMG-Sicherungsarchiv (*.SQZ) sein, das eine "
+"Projektkonfigurationsdatei (.PJC) enthält.\n"
+"\n"
+"Stelle sicher, dass die Datei mit TMG Version 5.x oder höher erstellt wurde."
 
 #: Themes/themes.gpr.py:29
 msgid "Theme preferences"
