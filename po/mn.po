@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-05 08:43-0700\n"
-"PO-Revision-Date: 2026-03-24 01:09+0000\n"
+"PO-Revision-Date: 2026-04-07 13:46+0000\n"
 "Last-Translator: \"Batsaihan P.\" <batsaihan.p@gmail.com>\n"
 "Language-Team: Mongolian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/mn/>\n"
@@ -128,7 +128,7 @@ msgstr "Онолын утгыг харуулах"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "Үеээр онолын өвөг дээдсийн тоо харуулах эсэх"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
@@ -137,72 +137,72 @@ msgstr ""
 #: LinesOfDescendency/lines-of-descendency.py:72
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
-msgstr ""
+msgstr "Хуудасны гарчгийн стиль"
 
 #: AncestryTableReport.gpr.py:3
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Table"
-msgstr "Удам угсаа"
+msgstr "Өвөг дээдэс Хүснэгт"
 
 #: AncestryTableReport.gpr.py:4
 msgid "Produces a table of ancestry about a person"
-msgstr ""
+msgstr "Тухайн хүний өвөг дээдсийн хүснэгтийг үүсгэх"
 
 #: AncestryTableReport.py:133
 #, python-format
 msgid "Person %(name)s is not in the Database"
-msgstr ""
+msgstr "%(name)s нэртэй хүн өгөгдлийн санд байхгүй байна"
 
 #: AncestryTableReport.py:277
 #, python-format
 msgid "Ancestry Table Report for %(name)s"
-msgstr ""
+msgstr "%(name)s-ийн удмын хүснэгтэн тайлан"
 
 #: AncestryTableReport.py:311
 #, python-format
 msgid "Generation %(gen_number)d"
-msgstr ""
+msgstr "%(gen_number)d-р үе"
 
 #: AncestryTableReport.py:360
 #, python-format
 msgid "Number of Ancestors for %(name)s"
-msgstr ""
+msgstr "%(name)s-ийн өвөг дээдсийн тоо"
 
 #: AncestryTableReport.py:370
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
 msgid "Generation"
-msgstr ""
+msgstr "Үе"
 
 #: AncestryTableReport.py:472
 msgid "To start a new page after each generation."
-msgstr ""
+msgstr "Үе тус бүрийг шинэ хуудсаас эхлүүлэх."
 
 #: AncestryTableReport.py:475
 msgid "Number of ancestors per generation"
-msgstr ""
+msgstr "Үе бүрийн өвөг дээдсийн тоо"
 
 #: AncestryTableReport.py:476
 msgid "Add a page with tne number of ancestors per generation."
-msgstr ""
+msgstr "Үе бүрийн өвөг дээдсийн тоотой хуудас нэмэх."
 
 #: AncestryTableReport.py:495
 msgid "Mask the name of the calendar in the dates"
-msgstr ""
+msgstr "Огноон дахь хуанлийн нэрийг нуух"
 
 #: AncestryTableReport.py:496
 msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
 "calendar in the dates."
 msgstr ""
+"Анхдагч тохиргоогоор, Грегорийн огнооноос бусад үед Gramps огноонд хуанлийн "
+"нэрийг харуулна."
 
 #: AncestryTableReport.py:519 RepositoriesReport/RepositoriesReport.py:175
 #: RepositoriesReport/RepositoriesReportAlt.py:504
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
 msgid "The style used for the title of the report."
-msgstr ""
+msgstr "Тайлангийн гарчгийн стиль."
 
 #: AncestryTableReport.py:541
 msgid "The style used for the Sosa number of the paternal branch."
@@ -238,16 +238,16 @@ msgstr ""
 
 #: AncestryTableReport.py:643
 msgid "The style used for the number of ancestors per generation."
-msgstr ""
+msgstr "Үе тус бүрийн өвөг дээдсийн тооны стиль."
 
 #: AncestryTableReport.py:654
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr ""
+msgstr "Үе тус бүрийн өвөг дээдсийн тооны нийлбэр мөрийн стиль."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr ""
+msgstr "Холбоосын мэдээлэл шалгах"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
