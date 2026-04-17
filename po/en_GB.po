@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-05 08:43-0700\n"
-"PO-Revision-Date: 2026-03-30 22:09+0000\n"
+"PO-Revision-Date: 2026-04-10 19:09+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -45,7 +45,7 @@ msgstr "All Names of All People"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr "Display all names of all people"
+msgstr "Display all the names of all people"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
