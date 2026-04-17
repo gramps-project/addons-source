@@ -28,7 +28,10 @@ Form editor.
 # Python modules
 # -------------------------------------------------------------------------
 from gi.repository import Gdk
+import logging
 import pickle
+
+LOG = logging.getLogger(".FormGramplet")
 
 # ------------------------------------------------------------------------
 #
@@ -77,6 +80,7 @@ from form import (
     get_section_columns,
     get_form_citation,
 )
+from form_validator import split_family_title
 from entrygrid import EntryGrid
 
 # ------------------------------------------------------------------------
@@ -113,6 +117,12 @@ class EditForm(ManagedWindow):
         self.event = event
         self.citation = citation
         self.callback = callback
+
+        LOG.debug(
+            "Opening EditForm for event %s, citation %s",
+            event.get_handle() or "<new>",
+            citation.get_handle() or "<new>",
+        )
 
         ManagedWindow.__init__(self, uistate, track, citation)
 
@@ -391,10 +401,10 @@ class EditForm(ManagedWindow):
         """
         Close the editor window.
         """
-        (width, height) = self.window.get_size()
+        width, height = self.window.get_size()
         self._config.set("interface.form-width", width)
         self._config.set("interface.form-height", height)
-        (width, height) = self.window.get_position()
+        width, height = self.window.get_position()
         self._config.set("interface.form-horiz-position", width)
         self._config.set("interface.form-vert-position", height)
         self._config.save()
@@ -700,7 +710,7 @@ class MultiSection(Gtk.Box):
         self, widget, context, pos_x, pos_y, sel_data, info, time
     ):
         if sel_data and sel_data.get_data():
-            (drag_type, idval, handle, val) = pickle.loads(sel_data.get_data())
+            drag_type, idval, handle, val = pickle.loads(sel_data.get_data())
             person = self.db.get_person_from_handle(handle)
             if person:
                 self.__person_added(person)
@@ -972,7 +982,7 @@ class PersonSection(Gtk.Box):
         self, widget, context, pos_x, pos_y, sel_data, info, time
     ):
         if sel_data and sel_data.get_data():
-            (drag_type, idval, handle, val) = pickle.loads(sel_data.get_data())
+            drag_type, idval, handle, val = pickle.loads(sel_data.get_data())
             person = self.db.get_person_from_handle(handle)
             if person:
                 self.__added(person)
@@ -1102,7 +1112,15 @@ class FamilySection(Gtk.Box):
         hbox = Gtk.Box()
 
         title = get_section_title(form_id, section)
-        title1, title2 = title.split("/")
+        title1, title2 = split_family_title(title)
+        if not title2:
+            LOG.warning(
+                "FamilySection for form '%s' section '%s' has title '%s' "
+                "without the expected 'X/Y' separator; second label will be empty",
+                form_id,
+                section,
+                title,
+            )
 
         label = Gtk.Label(label="<b>%s</b>" % title1)
         label.set_use_markup(True)
@@ -1158,7 +1176,7 @@ class FamilySection(Gtk.Box):
         self, widget, context, pos_x, pos_y, sel_data, info, time
     ):
         if sel_data and sel_data.get_data():
-            (drag_type, idval, handle, val) = pickle.loads(sel_data.get_data())
+            drag_type, idval, handle, val = pickle.loads(sel_data.get_data())
             family = self.db.get_family_from_handle(handle)
             if family:
                 self.__added(family)

@@ -9045,3 +9045,15 @@ msgstr ""
 #: Form/form_fr.xml.h:144
 msgid "Arrived since"
 msgstr ""
+
+#: Form/form.py:154
+msgid "XML syntax error in Form definition file"
+msgstr ""
+
+#: Form/form.py:165
+msgid "Failed to read Form definition file"
+msgstr ""
+
+#: Form/form.py:176
+msgid "Invalid Form definition file"
+msgstr ""
