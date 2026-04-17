@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-22 16:02-0700\n"
-"PO-Revision-Date: 2026-03-17 06:11+0000\n"
+"PO-Revision-Date: 2026-03-25 11:09+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -47,7 +47,7 @@ msgstr "Totaal aantal namen %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
-msgstr "Vooroudertelling"
+msgstr "Afkomsttelling"
 
 #: AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
@@ -56,7 +56,7 @@ msgstr "Verslag van de bezetting van de stamboom"
 #: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr "Vooroudertelling voor %s"
+msgstr "Afkomsttelling voor %s"
 
 #: AncestorFill/AncestorFill.py:205
 msgid "Generation "
@@ -68,11 +68,11 @@ msgstr "Aantal gevonden voorouders "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
-msgstr "Percentage voorouders gevonden "
+msgstr "Percentage gevonden voorouders "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr "Aantal unieke voorouders gevonden "
+msgstr "Aantal gevonden unieke voorouders "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
@@ -88,7 +88,7 @@ msgstr "Totaal aantal gevonden voorouders "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
-msgstr "Totaal aantal unieke voorouders gevonden "
+msgstr "Totaal aantal gevonden unieke voorouders "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -111,8 +111,8 @@ msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
-"Het aantal cijfers na de komma dat in het rapport moet worden opgenomen voor "
-"het percentage voorouders dat bij een bepaalde generatie is gevonden"
+"Het aantal decimalen dat in het rapport moet worden opgenomen voor het "
+"percentage voorouders dat bij een bepaalde generatie is gevonden"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
@@ -145,40 +145,32 @@ msgid "The style used for the title of the page."
 msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
 
 #: AncestryTableReport.gpr.py:3
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Table"
-msgstr "Voorgeslacht"
+msgstr "Afkomsttabel"
 
 #: AncestryTableReport.gpr.py:4
-#, fuzzy
-#| msgid "Produces descendants lines of a person"
 msgid "Produces a table of ancestry about a person"
-msgstr "Produceert afstammelingslijnen van een persoon"
+msgstr "Produceert een tabel van afkomst over een persoon"
 
 #: AncestryTableReport.py:133
-#, fuzzy, python-format
-#| msgid "Years resident in the state"
+#, python-format
 msgid "Person %(name)s is not in the Database"
-msgstr "Jaren woonachtig in de staat"
+msgstr "Persoon %(name)s staat niet in de database"
 
 #: AncestryTableReport.py:277
-#, fuzzy, python-format
-#| msgid "The style used for names"
+#, python-format
 msgid "Ancestry Table Report for %(name)s"
-msgstr "De stijl die voor namen wordt gebruikt"
+msgstr "Afkomsttabel-rapport voor %(name)s"
 
 #: AncestryTableReport.py:311
-#, fuzzy, python-format
-#| msgid "Enumeration number"
+#, python-format
 msgid "Generation %(gen_number)d"
-msgstr "Opsommingsnummer"
+msgstr "Generatie %(gen_number)d"
 
 #: AncestryTableReport.py:360
-#, fuzzy, python-format
-#| msgid "Number of Ancestors found "
+#, python-format
 msgid "Number of Ancestors for %(name)s"
-msgstr "Aantal gevonden voorouders "
+msgstr "Aantal voorouders voor %(name)s"
 
 #: AncestryTableReport.py:370
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
@@ -189,33 +181,27 @@ msgstr "Generatie"
 
 #: AncestryTableReport.py:472
 msgid "To start a new page after each generation."
-msgstr ""
+msgstr "Na elke generatie een nieuwe pagina."
 
 #: AncestryTableReport.py:475
-#, fuzzy
-#| msgid "Number of ancestors"
 msgid "Number of ancestors per generation"
-msgstr "Aantal voorouders"
+msgstr "Aantal voorouders per generatie"
 
 #: AncestryTableReport.py:476
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Add a page with tne number of ancestors per generation."
-msgstr ""
-"Of het theoretische aantal voorouders per generatie moet worden weergegeven"
+msgstr "Een pagina toevoegen met het aantal voorouders per generatie."
 
 #: AncestryTableReport.py:495
-#, fuzzy
-#| msgid "Color the name to indicate a person's gender in the chart."
 msgid "Mask the name of the calendar in the dates"
-msgstr ""
-"Kleur de naam om het geslacht van een persoon in de grafiek aan te geven."
+msgstr "Masker de naam van de kalender in de data"
 
 #: AncestryTableReport.py:496
 msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
 "calendar in the dates."
 msgstr ""
+"Standaard toont Gramps, met uitzondering van de Gregoriaanse data, de naam "
+"van de kalender in de data."
 
 #: AncestryTableReport.py:519 RepositoriesReport/RepositoriesReport.py:175
 #: RepositoriesReport/RepositoriesReportAlt.py:504
@@ -224,61 +210,52 @@ msgid "The style used for the title of the report."
 msgstr "De stijl die wordt gebruikt voor de titel van het verslag."
 
 #: AncestryTableReport.py:541
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the paternal branch."
-msgstr "De stijl die wordt gebruikt voor de ondertitel van het rapport."
+msgstr "De stijl die wordt gebruikt voor het Sosa-nummer in de parentele tak."
 
 #: AncestryTableReport.py:552
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the maternal branch."
-msgstr "De stijl die wordt gebruikt voor de ondertitel van het rapport."
+msgstr "De stijl die wordt gebruikt voor het Sosa-nummer in de maternele tak."
 
 #: AncestryTableReport.py:562
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the males."
-msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
+msgstr "De stijl die wordt gebruikt voor de gegevens van mannen."
 
 #: AncestryTableReport.py:572
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the females."
-msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
+msgstr "De stijl die wordt gebruikt voor de gegevens van vrouwen."
 
 #: AncestryTableReport.py:583
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for the marriage."
-msgstr "De stijl die wordt gebruikt voor namen."
+msgstr "De stijl die wordt gebruikt voor het huwelijk."
 
 #: AncestryTableReport.py:593
 msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increse the size of the police."
 msgstr ""
+"De stijl die wordt gebruikt voor een lege rij.\n"
+"Vergroot de grootte van het lettertype om de hoogte van de lege rij te "
+"vergroten."
 
 #: AncestryTableReport.py:632
-#, fuzzy
-#| msgid "The style used for the header in the Index of Places."
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
-msgstr "De stijl die wordt gebruikt voor de koptekst in de plaatsindex."
+msgstr ""
+"De stijl die wordt gebruikt voor de koptabel met het aantal voorouders per "
+"generatie."
 
 #: AncestryTableReport.py:643
-#, fuzzy
-#| msgid "The style used for the table of contents header."
 msgid "The style used for the number of ancestors per generation."
-msgstr "De stijl die wordt gebruikt voor de koptekst van de inhoudsopgave."
+msgstr "De stijl die wordt gebruikt voor het aantal voorouders per generatie."
 
 #: AncestryTableReport.py:654
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr "De stijl die wordt gebruikt voor de titel van het verslag."
+msgstr ""
+"De stijl die wordt gebruikt voor de regel met het totaal van het aantal "
+"voorouders per generatie."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -1338,7 +1315,7 @@ msgstr ": "
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
-msgstr "Inklapbare voorouderboom"
+msgstr "Inklapbare afkomstboom"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
@@ -1377,7 +1354,7 @@ msgstr "Kan webbestand %s niet kopiëren"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
-msgstr "Inklapbare voorouderboom opties"
+msgstr "Inklapbare afkomstboom opties"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1803
@@ -1431,7 +1408,7 @@ msgstr "De bestemmingsbestandsnaam voor html-inhoud."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
-msgstr "Cirkeldiagram voorouders"
+msgstr "Cirkeldiagram van afkomst"
 
 #: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
@@ -1443,7 +1420,7 @@ msgstr ""
 
 #: D3Charts/AncestralFanChart.py:707
 msgid "Ancestral Fan Chart Options"
-msgstr "Opties cirkeldiagram voorouders"
+msgstr "Cirkeldiagram afkomst opties"
 
 #: D3Charts/AncestralFanChart.py:729
 msgid "Paternal Background Color"
@@ -2311,9 +2288,9 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Genereert een web (HTML) pagina met een grafische weergave van "
-"afstammelingen/voorouders (SVG) waar details over individuen zichtbaar "
-"worden door muisacties."
+"Genereert een webpagina (HTML) met een grafische weergave van afstammelingen/"
+"voorouders (SVG) waar details over individuen zichtbaar worden door "
+"muisacties."
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -4881,8 +4858,8 @@ msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
 msgstr ""
-"Het maximale aantal generaties dat in de voorouder- en afstammelingsbomen en "
-"grafieken moet worden opgenomen"
+"Het maximale aantal generaties dat in de voorouder- en afstammelingsbomen "
+"en -grafieken moet worden opgenomen"
 
 #: DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
@@ -6260,7 +6237,7 @@ msgstr "Matrilineaire stammoeder van <person>"
 msgid "Matches the earliest recorded matrilineal ancestor mother."
 msgstr ""
 "Komt overeen met de vroegst geregistreerde moeder van de matrilineaire "
-"voorouder."
+"afkomst."
 
 #: FilterRules2/mtinheritance.gpr.py:25 FilterRules2/mtinheritance.py:45
 msgid "Mitochondrial inheritance of <person>"
@@ -6297,17 +6274,17 @@ msgstr "Patrilineaire stamvader van <persoon>"
 #: FilterRules2/patrilinealprogenitor.py:47
 msgid "Matches the earliest recorded patrilineal ancestor father."
 msgstr ""
-"Komt overeen met de vroegst geregistreerde patrilineaire vooroudervader."
+"Komt overeen met de vroegst geregistreerde vader in de patrilineaire afkomst."
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:48
 msgid "X-chromosomal ancestors of <person>"
-msgstr "X-chromosomale voorouders van <persoon>"
+msgstr "X-chromosomale afkomst van <persoon>"
 
 #: FilterRules2/xchromancestors.gpr.py:27 FilterRules2/xchromancestors.py:50
 msgid ""
 "Matches ancestors of <person> following a X-chromosomal inheritance pattern."
 msgstr ""
-"Komt overeen met voorouders van <persoon> volgens een X-chromosomaal "
+"Komt overeen met afkomst van <persoon> volgens een X-chromosomaal "
 "overervingspatroon."
 
 #: FilterRules2/xchromdescendants.gpr.py:25
@@ -14344,7 +14321,7 @@ msgstr "Bent u eigenaar van uw huis of boerderij"
 #: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
 #: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
-msgstr "Voorgeslacht"
+msgstr "Afkomst"
 
 #: Form/form_us.xml.h:2086 Form/form_us.xml.h:2123 Form/form_us.xml.h:2161
 #: Form/form_us.xml.h:2199
@@ -15003,11 +14980,11 @@ msgstr "Voeg broers en zussen toe"
 
 #: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
-msgstr "Voeg broers en zussen van voorouders toe."
+msgstr "Broers en zussen van voorouders toevoegen."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
-msgstr "Voorouderboom opgebouwd met LaTeX genealogieboom"
+msgstr "Afkomstboom opgebouwd met LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
@@ -15039,24 +15016,24 @@ msgstr "Zandklokboom voor een gezin opgebouwd met LaTeX genealogieboom"
 
 #: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
 msgid "Ancestors map"
-msgstr "Voorouderskaart"
+msgstr "Afkomstkaart"
 
 #: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
-msgstr "Een weergave van de voorouders op de kaart."
+msgstr "Een weergave van de afkomst op de kaart."
 
 #: GeoAncestor/GeoAncestor.py:207
 msgid "Ancestors places on the map"
-msgstr "Voorouderslocaties op de kaart"
+msgstr "Afkomstlocaties op de kaart"
 
 #: GeoAncestor/GeoAncestor.py:235
 msgid "GeoAncestor"
-msgstr "GeoVoorouder"
+msgstr "GeoAfkomst"
 
 #: GeoAncestor/GeoAncestor.py:304
 #, python-format
 msgid "Ancestors places for %s"
-msgstr "Voorouderslocaties voor %s"
+msgstr "Afkomstlocaties voor %s"
 
 #: GeoAncestor/GeoAncestor.py:311
 msgid "Counting all places"
@@ -17134,7 +17111,7 @@ msgid ""
 "once."
 msgstr ""
 "Door kwartierherhaling kan een persoon meerdere keren voorkomen in een "
-"eenvoudige vooroudergrafiek. Als dit actief is, komt elk individu maar één "
+"eenvoudige afkomstgrafiek. Als dit actief is, komt elk individu maar één "
 "keer voor."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
@@ -17264,11 +17241,11 @@ msgstr "Verberg broers en zussen"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
-msgstr "Voorouders weergeven boven "
+msgstr "Voorouders boven weergeven "
 
 #: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"
-msgstr "Levenslijn-voorouderdiagram"
+msgstr "Levenslijn-afkomstdiagram"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:26
 #: LifeLineChartView/lifelinechartview.gpr.py:44
@@ -17331,8 +17308,8 @@ msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."
 msgstr ""
-"Print alle afstammingslijnen van een bepaalde voorouder naar een bepaalde "
-"afstammeling in tekst uit."
+"Drukt alle afstammingslijnen af in tekst van een gegeven voorouder tot een "
+"gegeven afstammeling."
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
@@ -17358,7 +17335,7 @@ msgstr "%(line)s. lijn:"
 #: LinesOfDescendency/lines-of-descendency.py:176
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
-msgstr "Afstammingslijnen van %(ancestor)s naar %(descendent)s"
+msgstr "Afkomstlijnen van %(ancestor)s tot %(descendent)s"
 
 #: ListeEclair/ListeEclair.gpr.py:4 ListeEclair/ListeEclair.py:97
 #: ListeEclair/ListeEclair.py:104
@@ -18051,7 +18028,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1134
 msgid "Trim ancestors"
-msgstr "Inkorten aantal voorouders"
+msgstr "Voorouders inkorten"
 
 #: NetworkChart/NetworkChart.py:1135
 msgid "All ancestors (parents) of selected individuals will not be shown."
@@ -18060,11 +18037,11 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1141
 msgid "Enable trimming of ancestors."
-msgstr "Schakel inkorten van aantal voorouders in."
+msgstr "Inkorten van aantal voorouders inschakelen."
 
 #: NetworkChart/NetworkChart.py:1143
 msgid "Enable trimming of ancestors from tree."
-msgstr "Schakel inkorten van aantal voorouders uit de stamboom in."
+msgstr "Inkorten van aantal voorouders uit de stamboom inschakelen."
 
 #: NetworkChart/NetworkChart.py:1147
 msgid "Enable trim groups."
@@ -18372,8 +18349,8 @@ msgid ""
 "collapse were ignored."
 msgstr ""
 "Er zijn {} van {} voorouders ({}) gevonden.\n"
-"Alleen individuele voorouders werden geteld. Duplicaten veroorzaakt door "
-"kwartierherhaling werden genegeerd."
+"Alleen individuele voorouders zijn geteld. Duplicaten veroorzaakt door "
+"kwartierherhaling zijn genegeerd."
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 msgid "Shows the number of descendants of the current person"
