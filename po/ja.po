@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-05 08:43-0700\n"
+"POT-Creation-Date: 2026-04-11 17:13-0700\n"
 "PO-Revision-Date: 2025-03-24 10:31+0000\n"
 "Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
@@ -241,7 +241,7 @@ msgstr "ページのタイトルに使用されるスタイル。"
 #: AncestryTableReport.py:593
 msgid ""
 "The style used for an empty row.\n"
-"To enlarge the height of the empty row, just increse the size of the police."
+"To enlarge the height of the empty row, just increase the size of the font."
 msgstr ""
 
 #: AncestryTableReport.py:632

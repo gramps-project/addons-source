@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-05 08:43-0700\n"
+"POT-Creation-Date: 2026-04-11 17:13-0700\n"
 "PO-Revision-Date: 2025-08-29 20:30+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
@@ -246,7 +246,7 @@ msgstr "La stilo uzata por la titolo de la paĝo."
 #: AncestryTableReport.py:593
 msgid ""
 "The style used for an empty row.\n"
-"To enlarge the height of the empty row, just increse the size of the police."
+"To enlarge the height of the empty row, just increase the size of the font."
 msgstr ""
 
 #: AncestryTableReport.py:632

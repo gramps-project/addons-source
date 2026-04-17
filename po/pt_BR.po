@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-05 08:43-0700\n"
+"POT-Creation-Date: 2026-04-11 17:13-0700\n"
 "PO-Revision-Date: 2026-02-10 21:09+0000\n"
 "Last-Translator: João Garcez <joangarcez2100@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -255,7 +255,7 @@ msgstr "O estilo usado para nomes."
 #: AncestryTableReport.py:593
 msgid ""
 "The style used for an empty row.\n"
-"To enlarge the height of the empty row, just increse the size of the police."
+"To enlarge the height of the empty row, just increase the size of the font."
 msgstr ""
 
 #: AncestryTableReport.py:632

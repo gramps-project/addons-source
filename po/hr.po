@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-05 08:43-0700\n"
+"POT-Creation-Date: 2026-04-11 17:13-0700\n"
 "PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -228,9 +228,14 @@ msgid "The style used for the marriage."
 msgstr "Stil za vjenčanja."
 
 #: AncestryTableReport.py:593
+#, fuzzy
+#| msgid ""
+#| "The style used for an empty row.\n"
+#| "To enlarge the height of the empty row, just increse the size of the "
+#| "police."
 msgid ""
 "The style used for an empty row.\n"
-"To enlarge the height of the empty row, just increse the size of the police."
+"To enlarge the height of the empty row, just increase the size of the font."
 msgstr ""
 "Stil za prazan redak.\n"
 "Za povećanje visine praznog retka, povećaj veličinu."
@@ -547,8 +552,8 @@ msgstr ""
 " 👣 Sljedeći koraci:\n"
 " Dodaj obitelj i osobu u toj obitelji:\n"
 "  • Obitelj se može dodati putem izbornika „Dodaj”\n"
-"  • Osoba se može dodati pritiskom na „+” (plus) u panelima supružnika („"
-"Otac/partner1” ili „Majka/partner2”) ili u kartici „Djeca”\n"
+"  • Osoba se može dodati pritiskom na „+” (plus) u panelima supružnika "
+"(„Otac/partner1” ili „Majka/partner2”) ili u kartici „Djeca”\n"
 "\n"
 " Ili uvezi osobe iz eksterne datoteke:\n"
 "  • Vanjska datoteka se može koristiti za popunjavanje rodoslova putem "
@@ -1254,9 +1259,9 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
-"Moraš postaviti jednu „zadanu osobu” do koje želiš ići. Odaberi prikaz „Osobe"
-"”, odaberi osobu koju želiš imati kao „početnu osobu”, zatim potvrdi tvoj "
-"izbor putem izbornika „Uredi > Postavi početnu osobu”."
+"Moraš postaviti jednu „zadanu osobu” do koje želiš ići. Odaberi prikaz "
+"„Osobe”, odaberi osobu koju želiš imati kao „početnu osobu”, zatim potvrdi "
+"tvoj izbor putem izbornika „Uredi > Postavi početnu osobu”."
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -3802,7 +3807,8 @@ msgstr "Alat za deterministički ID"
 #: DetId/DetId.py:80
 msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
-msgstr "ID i ručke sada započinju sa 0x00000000, i povećavaju se za 0x100000001"
+msgstr ""
+"ID i ručke sada započinju sa 0x00000000, i povećavaju se za 0x100000001"
 
 #: Differences/differences.gpr.py:4 Differences/differences.py:95
 msgid "Database Differences Report"
@@ -4961,8 +4967,8 @@ msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
-"Prikazuje Grampsovu Wiki pomoć sa stranicom „Uredi slikovne Exif metapodatke"
-"” u tvom web pregledniku."
+"Prikazuje Grampsovu Wiki pomoć sa stranicom „Uredi slikovne Exif "
+"metapodatke” u tvom web pregledniku."
 
 #: EditExifMetadata/editexifmetadata.py:194
 msgid ""
@@ -6159,7 +6165,8 @@ msgstr "X-kromosomski potomak od <osoba>"
 msgid ""
 "Matches descendants of <person> following a X-chromosomal inheritance "
 "pattern."
-msgstr "Pronalazi potomke od <osoba>, prateći mustru nasljeđivanja X-kromosoma."
+msgstr ""
+"Pronalazi potomke od <osoba>, prateći mustru nasljeđivanja X-kromosoma."
 
 #: FilterRules2/xchromdescendants.py:50
 msgid ""
@@ -18569,8 +18576,8 @@ msgid ""
 "place' status ."
 msgstr ""
 "Alternativna imena\n"
-"Odaberi jedan ili više redaka i pritisni „Zadrži” za promjenu stanja „"
-"uključi u mjesto”."
+"Odaberi jedan ili više redaka i pritisni „Zadrži” za promjenu stanja "
+"„uključi u mjesto”."
 
 #: PlaceCleanup/placecleanup.glade:406
 msgid "Inc"
@@ -19098,7 +19105,8 @@ msgstr "GeoNames datoteka zemalja, traženje grada"
 
 #: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city localized variants search"
-msgstr "GeoNames datoteka zemalja, traženje lokaliziranih varijanti imena grada"
+msgstr ""
+"GeoNames datoteka zemalja, traženje lokaliziranih varijanti imena grada"
 
 #: PlaceCompletion/PlaceCompletion.py:1190
 msgid "GeoNames country file, county/city search"
@@ -19270,7 +19278,8 @@ msgstr "Koordinate mjesta"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
-msgstr "Mjesto nije pronađeno. Možeš pojasniti ključne riječi za pretraživanje."
+msgstr ""
+"Mjesto nije pronađeno. Možeš pojasniti ključne riječi za pretraživanje."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
@@ -20297,8 +20306,8 @@ msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
 "%(total)d people in your database."
 msgstr ""
-"Imaš %(filter)d filtriranih osoba, %(count)d osoba prikazanih u stablu i %"
-"(total)d osoba u tvojoj bazi podataka."
+"Imaš %(filter)d filtriranih osoba, %(count)d osoba prikazanih u stablu i "
+"%(total)d osoba u tvojoj bazi podataka."
 
 #: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
@@ -22021,8 +22030,8 @@ msgid ""
 "See: https://gramps-project.org/wiki/index.php/"
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 msgstr ""
-"Ova je sigurnosna kopija stvorena sa starijom verzijom TMG-a (PjcVersion %"
-"(ver)s, ekvivalentno TMG 9.01 ili starijoj).\n"
+"Ova je sigurnosna kopija stvorena sa starijom verzijom TMG-a (PjcVersion "
+"%(ver)s, ekvivalentno TMG 9.01 ili starijoj).\n"
 "\n"
 "Aktualizirajsvoj TMG projekt na verziju 9.05 i stvori novu sigurnosnu "
 "kopiju, zatim ponovo uvezi.\n"
@@ -22272,8 +22281,8 @@ msgstr ""
 #, python-format
 msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je postala punoljetna (bat mizva) %(year)s u mjestu %(place)"
-"s."
+"%(female_name)s je postala punoljetna (bat mizva) %(year)s u mjestu "
+"%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:512
 #, python-format
@@ -22285,8 +22294,8 @@ msgstr ""
 #, python-format
 msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je postala punoljetna (bat mizva) %(year)s u mjestu %(place)"
-"s."
+"%(female_name)s je postala punoljetna (bat mizva) %(year)s u mjestu "
+"%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:517
 #, python-format
@@ -22322,15 +22331,15 @@ msgstr "%(female_name)s je pokopana %(year)s u mjestu %(place)s."
 #, python-format
 msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
 msgstr ""
-"%(male_name)s je sudjelovao u popisu stanovništva %(year)s u mjestu %(place)"
-"s."
+"%(male_name)s je sudjelovao u popisu stanovništva %(year)s u mjestu "
+"%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:535
 #, python-format
 msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je sudjelovala u popisu stanovništva %(year)s u mjestu %"
-"(place)s."
+"%(female_name)s je sudjelovala u popisu stanovništva %(year)s u mjestu "
+"%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:544
 #, python-format
@@ -22492,7 +22501,8 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:632
 #, python-format
 msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr "%(male_name)s je pristupio običajnom braku %(year)s u mjestu %(place)s."
+msgstr ""
+"%(male_name)s je pristupio običajnom braku %(year)s u mjestu %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:634
 #, python-format
@@ -22513,7 +22523,8 @@ msgstr "%(female_name)s je najavila bračni zavjet %(year)s u mjestu %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:645
 #, python-format
 msgid "%(male_name)s entered a marriage contract in %(year)s at %(place)s."
-msgstr "%(male_name)s je pristupio bračnom ugovoru %(year)s u mjestu %(place)s."
+msgstr ""
+"%(male_name)s je pristupio bračnom ugovoru %(year)s u mjestu %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:648
 #, python-format
@@ -22592,8 +22603,8 @@ msgstr ""
 #, python-format
 msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je imenovana izvršiteljicom oporuke %(year)s u mjestu %"
-"(place)s."
+"%(female_name)s je imenovana izvršiteljicom oporuke %(year)s u mjestu "
+"%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:693
 #, python-format
