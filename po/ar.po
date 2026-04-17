@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps-4.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-22 16:02-0700\n"
+"POT-Creation-Date: 2026-04-05 08:43-0700\n"
 "PO-Revision-Date: 2014-06-29 15:50+0300\n"
 "Last-Translator: Munzir Taha (منذر طه) <munzirtaha@gmail.com>\n"
 "Language-Team: Arabic <>\n"
@@ -21082,21 +21082,21 @@ msgstr ""
 msgid "No existing associations, so no reciprocal ones needed"
 msgstr ""
 
-#: TMGimporter/importtmg.gpr.py:49
+#: TMGimporter/importtmg.gpr.py:45
 msgid "TMG Project Backup"
 msgstr ""
 
-#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
-#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
+#: TMGimporter/importtmg.gpr.py:46 TMGimporter/importtmg.gpr.py:67
+#: TMGimporter/importtmg.gpr.py:82 TMGimporter/importtmg.gpr.py:97
 msgid "Import TMG project files"
 msgstr ""
 
-#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
-#: TMGimporter/importtmg.gpr.py:95
+#: TMGimporter/importtmg.gpr.py:66 TMGimporter/importtmg.gpr.py:81
+#: TMGimporter/importtmg.gpr.py:96
 msgid "TMG Unsupported"
 msgstr ""
 
-#: TMGimporter/importtmg.py:89
+#: TMGimporter/importtmg.py:84
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
@@ -21114,7 +21114,7 @@ msgid ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 
-#: TMGimporter/importtmg.py:110
+#: TMGimporter/importtmg.py:105
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supportedby the TMG Importer "
@@ -21124,7 +21124,7 @@ msgid ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 
-#: TMGimporter/importtmg.py:131
+#: TMGimporter/importtmg.py:126
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supportedby the TMG Importer "
@@ -21155,6 +21155,62 @@ msgstr ""
 
 #: TMGimporter/libtmg.glade:148
 msgid "_Import TMG Data Set"
+msgstr ""
+
+#: TMGimporter/libtmg.py:2324 TMGimporter/libtmg.py:2357
+#: TMGimporter/libtmg.py:2439 TMGimporter/libtmg.py:2466
+msgid "TMG import failed"
+msgstr ""
+
+#: TMGimporter/libtmg.py:2325
+msgid ""
+"The current Family Tree is not empty.\n"
+"\n"
+"Please create a new empty Family Tree before importing a TMG backup file."
+msgstr ""
+
+#: TMGimporter/libtmg.py:2358
+msgid ""
+"The TMG backup file could not be read: PJC version information is missing or "
+"unreadable.\n"
+"\n"
+"Please ensure you are using a backup created by TMG 9.02 or later "
+"(PjcVersion >= 11.0)."
+msgstr ""
+
+#: TMGimporter/libtmg.py:2370
+msgid "TMG version not supported"
+msgstr ""
+
+#: TMGimporter/libtmg.py:2371
+#, python-format
+msgid ""
+"This backup was created with an older version of TMG (PjcVersion %(ver)s, "
+"equivalent to TMG 9.01 or earlier).\n"
+"\n"
+"Please upgrade your TMG project to version 9.05 and create a new backup, "
+"then import again.\n"
+"\n"
+"See: https://gramps-project.org/wiki/index.php/"
+"Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
+msgstr ""
+
+#: TMGimporter/libtmg.py:2440
+msgid ""
+"No datasets were found in this TMG backup file.\n"
+"\n"
+"The backup may be corrupt or empty."
+msgstr ""
+
+#: TMGimporter/libtmg.py:2467
+#, python-format
+msgid ""
+"%(filename)s does not appear to be a valid TMG backup file.\n"
+"\n"
+"The file must be a TMG backup archive (*.SQZ) containing a project "
+"configuration file (.PJC).\n"
+"\n"
+"Ensure the file was created by TMG version 5.x or later."
 msgstr ""
 
 #: Themes/themes.gpr.py:29
