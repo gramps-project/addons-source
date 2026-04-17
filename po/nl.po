@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"POT-Creation-Date: 2026-03-22 16:02-0700\n"
 "PO-Revision-Date: 2026-03-17 06:11+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
@@ -143,6 +143,142 @@ msgstr ""
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
+
+#: AncestryTableReport.gpr.py:3
+#, fuzzy
+#| msgid "Ancestry"
+msgid "Ancestry Table"
+msgstr "Voorgeslacht"
+
+#: AncestryTableReport.gpr.py:4
+#, fuzzy
+#| msgid "Produces descendants lines of a person"
+msgid "Produces a table of ancestry about a person"
+msgstr "Produceert afstammelingslijnen van een persoon"
+
+#: AncestryTableReport.py:133
+#, fuzzy, python-format
+#| msgid "Years resident in the state"
+msgid "Person %(name)s is not in the Database"
+msgstr "Jaren woonachtig in de staat"
+
+#: AncestryTableReport.py:277
+#, fuzzy, python-format
+#| msgid "The style used for names"
+msgid "Ancestry Table Report for %(name)s"
+msgstr "De stijl die voor namen wordt gebruikt"
+
+#: AncestryTableReport.py:311
+#, fuzzy, python-format
+#| msgid "Enumeration number"
+msgid "Generation %(gen_number)d"
+msgstr "Opsommingsnummer"
+
+#: AncestryTableReport.py:360
+#, fuzzy, python-format
+#| msgid "Number of Ancestors found "
+msgid "Number of Ancestors for %(name)s"
+msgstr "Aantal gevonden voorouders "
+
+#: AncestryTableReport.py:370
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
+msgid "Generation"
+msgstr "Generatie"
+
+#: AncestryTableReport.py:472
+msgid "To start a new page after each generation."
+msgstr ""
+
+#: AncestryTableReport.py:475
+#, fuzzy
+#| msgid "Number of ancestors"
+msgid "Number of ancestors per generation"
+msgstr "Aantal voorouders"
+
+#: AncestryTableReport.py:476
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Add a page with tne number of ancestors per generation."
+msgstr ""
+"Of het theoretische aantal voorouders per generatie moet worden weergegeven"
+
+#: AncestryTableReport.py:495
+#, fuzzy
+#| msgid "Color the name to indicate a person's gender in the chart."
+msgid "Mask the name of the calendar in the dates"
+msgstr ""
+"Kleur de naam om het geslacht van een persoon in de grafiek aan te geven."
+
+#: AncestryTableReport.py:496
+msgid ""
+"By default, except for gregorian dates, Gramps shows the name of the "
+"calendar in the dates."
+msgstr ""
+
+#: AncestryTableReport.py:519 RepositoriesReport/RepositoriesReport.py:175
+#: RepositoriesReport/RepositoriesReportAlt.py:504
+#: SourcesCitationsReport/SourcesCitationsReport.py:480
+msgid "The style used for the title of the report."
+msgstr "De stijl die wordt gebruikt voor de titel van het verslag."
+
+#: AncestryTableReport.py:541
+#, fuzzy
+#| msgid "The style used for the subtitle of the report."
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr "De stijl die wordt gebruikt voor de ondertitel van het rapport."
+
+#: AncestryTableReport.py:552
+#, fuzzy
+#| msgid "The style used for the subtitle of the report."
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr "De stijl die wordt gebruikt voor de ondertitel van het rapport."
+
+#: AncestryTableReport.py:562
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid "The style used for the data of the males."
+msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
+
+#: AncestryTableReport.py:572
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid "The style used for the data of the females."
+msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
+
+#: AncestryTableReport.py:583
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The style used for the marriage."
+msgstr "De stijl die wordt gebruikt voor namen."
+
+#: AncestryTableReport.py:593
+msgid ""
+"The style used for an empty row.\n"
+"To enlarge the height of the empty row, just increse the size of the police."
+msgstr ""
+
+#: AncestryTableReport.py:632
+#, fuzzy
+#| msgid "The style used for the header in the Index of Places."
+msgid ""
+"The style used for the header table of the number of ancestors per "
+"generation."
+msgstr "De stijl die wordt gebruikt voor de koptekst in de plaatsindex."
+
+#: AncestryTableReport.py:643
+#, fuzzy
+#| msgid "The style used for the table of contents header."
+msgid "The style used for the number of ancestors per generation."
+msgstr "De stijl die wordt gebruikt voor de koptekst van de inhoudsopgave."
+
+#: AncestryTableReport.py:654
+#, fuzzy
+#| msgid "The style used for the title of the report."
+msgid ""
+"The style used for the total line of the number of ancestors per generation."
+msgstr "De stijl die wordt gebruikt voor de titel van het verslag."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -18217,12 +18353,6 @@ msgstr "Toont het aantal voorouders van de huidige persoon"
 msgid "Number of %s's ancestors"
 msgstr "Aantal voorouders van %s"
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-msgid "Generation"
-msgstr "Generatie"
-
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:55
 msgid "Found"
 msgstr "Gevonden"
@@ -19946,8 +20076,8 @@ msgid ""
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
 "<i>Installatie van de volgende pakketten is <b>AANBEVOLEN</b> als je van "
-"plan bent om te vertalen of een ontwikkeling te doen (toevoegingen etc.)</i>"
-":\n"
+"plan bent om te vertalen of een ontwikkeling te doen (toevoegingen etc.)</"
+"i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
@@ -20880,12 +21010,6 @@ msgstr "Produceert een tekstueel bibliotheekverslag"
 #: RepositoriesReport/RepositoriesReportAlt.py:139
 msgid "Repositories Report"
 msgstr "Bibliotheekverslag"
-
-#: RepositoriesReport/RepositoriesReport.py:175
-#: RepositoriesReport/RepositoriesReportAlt.py:504
-#: SourcesCitationsReport/SourcesCitationsReport.py:480
-msgid "The style used for the title of the report."
-msgstr "De stijl die wordt gebruikt voor de titel van het verslag."
 
 #: RepositoriesReport/RepositoriesReport.py:189
 #: RepositoriesReport/RepositoriesReportAlt.py:518

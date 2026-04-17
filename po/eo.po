@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nova\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"POT-Creation-Date: 2026-03-22 16:02-0700\n"
 "PO-Revision-Date: 2025-08-29 20:30+0000\n"
 "Last-Translator: jmichault <jmt.2000@free.fr>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/gramps-project/"
@@ -140,6 +140,134 @@ msgstr "Ĉu montri la teorian nombron de prapatroj laŭ generacio"
 #: LinesOfDescendency/lines-of-descendency.py:72
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
+msgstr "La stilo uzata por la titolo de la paĝo."
+
+#: AncestryTableReport.gpr.py:3
+#, fuzzy
+#| msgid "AncestorFill"
+msgid "Ancestry Table"
+msgstr "ArboPlenigo"
+
+#: AncestryTableReport.gpr.py:4
+msgid "Produces a table of ancestry about a person"
+msgstr ""
+
+#: AncestryTableReport.py:133
+#, python-format
+msgid "Person %(name)s is not in the Database"
+msgstr ""
+
+#: AncestryTableReport.py:277
+#, python-format
+msgid "Ancestry Table Report for %(name)s"
+msgstr ""
+
+#: AncestryTableReport.py:311
+#, fuzzy, python-format
+#| msgid "Generation "
+msgid "Generation %(gen_number)d"
+msgstr "Generacio "
+
+#: AncestryTableReport.py:360
+#, fuzzy, python-format
+#| msgid "Number of Ancestors found "
+msgid "Number of Ancestors for %(name)s"
+msgstr "Nombro da Prapatroj trovita "
+
+#: AncestryTableReport.py:370
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
+msgid "Generation"
+msgstr ""
+
+#: AncestryTableReport.py:472
+msgid "To start a new page after each generation."
+msgstr ""
+
+#: AncestryTableReport.py:475
+#, fuzzy
+#| msgid "Number of Ancestors found "
+msgid "Number of ancestors per generation"
+msgstr "Nombro da Prapatroj trovita "
+
+#: AncestryTableReport.py:476
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Add a page with tne number of ancestors per generation."
+msgstr "Ĉu montri la teorian nombron de prapatroj laŭ generacio"
+
+#: AncestryTableReport.py:495
+msgid "Mask the name of the calendar in the dates"
+msgstr ""
+
+#: AncestryTableReport.py:496
+msgid ""
+"By default, except for gregorian dates, Gramps shows the name of the "
+"calendar in the dates."
+msgstr ""
+
+#: AncestryTableReport.py:519 RepositoriesReport/RepositoriesReport.py:175
+#: RepositoriesReport/RepositoriesReportAlt.py:504
+#: SourcesCitationsReport/SourcesCitationsReport.py:480
+msgid "The style used for the title of the report."
+msgstr ""
+
+#: AncestryTableReport.py:541
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr "La stilo uzata por la titolo de la paĝo."
+
+#: AncestryTableReport.py:552
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr "La stilo uzata por la titolo de la paĝo."
+
+#: AncestryTableReport.py:562
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid "The style used for the data of the males."
+msgstr "La stilo uzata por la titolo de la paĝo."
+
+#: AncestryTableReport.py:572
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid "The style used for the data of the females."
+msgstr "La stilo uzata por la titolo de la paĝo."
+
+#: AncestryTableReport.py:583
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid "The style used for the marriage."
+msgstr "La stilo uzata por la titolo de la paĝo."
+
+#: AncestryTableReport.py:593
+msgid ""
+"The style used for an empty row.\n"
+"To enlarge the height of the empty row, just increse the size of the police."
+msgstr ""
+
+#: AncestryTableReport.py:632
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid ""
+"The style used for the header table of the number of ancestors per "
+"generation."
+msgstr "Ĉu montri la teorian nombron de prapatroj laŭ generacio"
+
+#: AncestryTableReport.py:643
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid "The style used for the number of ancestors per generation."
+msgstr "La stilo uzata por la titolo de la paĝo."
+
+#: AncestryTableReport.py:654
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid ""
+"The style used for the total line of the number of ancestors per generation."
 msgstr "La stilo uzata por la titolo de la paĝo."
 
 #: AssociationsTool/associationstool.gpr.py:36
@@ -17418,12 +17546,6 @@ msgstr ""
 msgid "Number of %s's ancestors"
 msgstr ""
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-msgid "Generation"
-msgstr ""
-
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:55
 msgid "Found"
 msgstr ""
@@ -19874,12 +19996,6 @@ msgstr ""
 #: RepositoriesReport/RepositoriesReport.py:80
 #: RepositoriesReport/RepositoriesReportAlt.py:139
 msgid "Repositories Report"
-msgstr ""
-
-#: RepositoriesReport/RepositoriesReport.py:175
-#: RepositoriesReport/RepositoriesReportAlt.py:504
-#: SourcesCitationsReport/SourcesCitationsReport.py:480
-msgid "The style used for the title of the report."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:189
