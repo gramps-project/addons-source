@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-04-06 16:36+0000\n"
+"PO-Revision-Date: 2026-04-12 04:54+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -230,18 +230,12 @@ msgid "The style used for the marriage."
 msgstr "De stijl die wordt gebruikt voor het huwelijk."
 
 #: AncestryTableReport.py:593
-#, fuzzy
-#| msgid ""
-#| "The style used for an empty row.\n"
-#| "To enlarge the height of the empty row, just increse the size of the "
-#| "police."
 msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increase the size of the font."
 msgstr ""
 "De stijl die wordt gebruikt voor een lege rij.\n"
-"Vergroot de grootte van het lettertype om de hoogte van de lege rij te "
-"vergroten."
+"Vergroot de grootte van het lettertype om de hoogte ervan te vergroten."
 
 #: AncestryTableReport.py:632
 msgid ""
