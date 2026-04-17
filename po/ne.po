@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"POT-Creation-Date: 2026-03-22 16:02-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -125,6 +125,110 @@ msgstr ""
 #: LinesOfDescendency/lines-of-descendency.py:72
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
+msgstr ""
+
+#: AncestryTableReport.gpr.py:3
+msgid "Ancestry Table"
+msgstr ""
+
+#: AncestryTableReport.gpr.py:4
+msgid "Produces a table of ancestry about a person"
+msgstr ""
+
+#: AncestryTableReport.py:133
+#, python-format
+msgid "Person %(name)s is not in the Database"
+msgstr ""
+
+#: AncestryTableReport.py:277
+#, python-format
+msgid "Ancestry Table Report for %(name)s"
+msgstr ""
+
+#: AncestryTableReport.py:311
+#, python-format
+msgid "Generation %(gen_number)d"
+msgstr ""
+
+#: AncestryTableReport.py:360
+#, python-format
+msgid "Number of Ancestors for %(name)s"
+msgstr ""
+
+#: AncestryTableReport.py:370
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
+msgid "Generation"
+msgstr ""
+
+#: AncestryTableReport.py:472
+msgid "To start a new page after each generation."
+msgstr ""
+
+#: AncestryTableReport.py:475
+msgid "Number of ancestors per generation"
+msgstr ""
+
+#: AncestryTableReport.py:476
+msgid "Add a page with tne number of ancestors per generation."
+msgstr ""
+
+#: AncestryTableReport.py:495
+msgid "Mask the name of the calendar in the dates"
+msgstr ""
+
+#: AncestryTableReport.py:496
+msgid ""
+"By default, except for gregorian dates, Gramps shows the name of the "
+"calendar in the dates."
+msgstr ""
+
+#: AncestryTableReport.py:519 RepositoriesReport/RepositoriesReport.py:175
+#: RepositoriesReport/RepositoriesReportAlt.py:504
+#: SourcesCitationsReport/SourcesCitationsReport.py:480
+msgid "The style used for the title of the report."
+msgstr ""
+
+#: AncestryTableReport.py:541
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr ""
+
+#: AncestryTableReport.py:552
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr ""
+
+#: AncestryTableReport.py:562
+msgid "The style used for the data of the males."
+msgstr ""
+
+#: AncestryTableReport.py:572
+msgid "The style used for the data of the females."
+msgstr ""
+
+#: AncestryTableReport.py:583
+msgid "The style used for the marriage."
+msgstr ""
+
+#: AncestryTableReport.py:593
+msgid ""
+"The style used for an empty row.\n"
+"To enlarge the height of the empty row, just increse the size of the police."
+msgstr ""
+
+#: AncestryTableReport.py:632
+msgid ""
+"The style used for the header table of the number of ancestors per "
+"generation."
+msgstr ""
+
+#: AncestryTableReport.py:643
+msgid "The style used for the number of ancestors per generation."
+msgstr ""
+
+#: AncestryTableReport.py:654
+msgid ""
+"The style used for the total line of the number of ancestors per generation."
 msgstr ""
 
 #: AssociationsTool/associationstool.gpr.py:36
@@ -17402,12 +17506,6 @@ msgstr ""
 msgid "Number of %s's ancestors"
 msgstr ""
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-msgid "Generation"
-msgstr ""
-
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:55
 msgid "Found"
 msgstr ""
@@ -19852,12 +19950,6 @@ msgstr ""
 #: RepositoriesReport/RepositoriesReport.py:80
 #: RepositoriesReport/RepositoriesReportAlt.py:139
 msgid "Repositories Report"
-msgstr ""
-
-#: RepositoriesReport/RepositoriesReport.py:175
-#: RepositoriesReport/RepositoriesReportAlt.py:504
-#: SourcesCitationsReport/SourcesCitationsReport.py:480
-msgid "The style used for the title of the report."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:189

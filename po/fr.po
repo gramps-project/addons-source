@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-03 08:54-0800\n"
+"POT-Creation-Date: 2026-03-22 16:02-0700\n"
 "PO-Revision-Date: 2026-01-03 18:01+0000\n"
 "Last-Translator: Maël Chiotti "
 "<maelchiotti@users.noreply.hosted.weblate.org>\n"
@@ -166,6 +166,141 @@ msgstr "Afficher ou non le nombre théorique d'ancêtres par génération"
 #: PersonEverything/PersonEverything.py:1028 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Le style utilisé pour les titres de page."
+
+# Ancêtres, Aïeux ?
+#: AncestryTableReport.gpr.py:3
+#, fuzzy
+#| msgid "Ancestry"
+msgid "Ancestry Table"
+msgstr "Lignée"
+
+#: AncestryTableReport.gpr.py:4
+#, fuzzy
+#| msgid "Produces descendants lines of a person"
+msgid "Produces a table of ancestry about a person"
+msgstr "Produit les lignes de descendants de l'individu"
+
+#: AncestryTableReport.py:133
+#, python-format
+msgid "Person %(name)s is not in the Database"
+msgstr ""
+
+#: AncestryTableReport.py:277
+#, fuzzy, python-format
+#| msgid "The style used for names"
+msgid "Ancestry Table Report for %(name)s"
+msgstr "Le style utilisé pour les noms"
+
+#: AncestryTableReport.py:311
+#, fuzzy, python-format
+#| msgid "Generations up"
+msgid "Generation %(gen_number)d"
+msgstr "Générations ascendantes"
+
+#: AncestryTableReport.py:360
+#, fuzzy, python-format
+#| msgid "Number of Ancestors found "
+msgid "Number of Ancestors for %(name)s"
+msgstr "Nombre d'ascendants trouvés "
+
+#: AncestryTableReport.py:370
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
+msgid "Generation"
+msgstr "Génération"
+
+#: AncestryTableReport.py:472
+msgid "To start a new page after each generation."
+msgstr ""
+
+#: AncestryTableReport.py:475
+#, fuzzy
+#| msgid "Number of ancestors"
+msgid "Number of ancestors per generation"
+msgstr "Nombre d'ancêtres"
+
+#: AncestryTableReport.py:476
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Add a page with tne number of ancestors per generation."
+msgstr "Afficher ou non le nombre théorique d'ancêtres par génération"
+
+#: AncestryTableReport.py:495
+#, fuzzy
+#| msgid "Color the name to indicate a person's gender in the chart."
+msgid "Mask the name of the calendar in the dates"
+msgstr ""
+"Utiliser une couleur sur le nom pour indiquer le genre dans le graphique."
+
+#: AncestryTableReport.py:496
+msgid ""
+"By default, except for gregorian dates, Gramps shows the name of the "
+"calendar in the dates."
+msgstr ""
+
+#: AncestryTableReport.py:519 RepositoriesReport/RepositoriesReport.py:175
+#: RepositoriesReport/RepositoriesReportAlt.py:504
+#: SourcesCitationsReport/SourcesCitationsReport.py:480
+msgid "The style used for the title of the report."
+msgstr "Le style utilisé pour le titre du rapport."
+
+#: AncestryTableReport.py:541
+#, fuzzy
+#| msgid "The style used for the subtitle of the report."
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr "Le style utilisé pour le sous-titre du rapport."
+
+#: AncestryTableReport.py:552
+#, fuzzy
+#| msgid "The style used for the subtitle of the report."
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr "Le style utilisé pour le sous-titre du rapport."
+
+#: AncestryTableReport.py:562
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid "The style used for the data of the males."
+msgstr "Le style utilisé pour les titres de page."
+
+#: AncestryTableReport.py:572
+#, fuzzy
+#| msgid "The style used for the title of the page."
+msgid "The style used for the data of the females."
+msgstr "Le style utilisé pour les titres de page."
+
+#: AncestryTableReport.py:583
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The style used for the marriage."
+msgstr "Le style utilisé pour les noms."
+
+#: AncestryTableReport.py:593
+msgid ""
+"The style used for an empty row.\n"
+"To enlarge the height of the empty row, just increse the size of the police."
+msgstr ""
+
+#: AncestryTableReport.py:632
+#, fuzzy
+#| msgid "The style used for the header in the Index of Places."
+msgid ""
+"The style used for the header table of the number of ancestors per "
+"generation."
+msgstr "Le style utilisé pour l'en-tête dans l'index des lieux."
+
+#: AncestryTableReport.py:643
+#, fuzzy
+#| msgid "The style used for the table of contents header."
+msgid "The style used for the number of ancestors per generation."
+msgstr "Le style utilisé pour l'en-tête de la table des matières."
+
+#: AncestryTableReport.py:654
+#, fuzzy
+#| msgid "The style used for the title of the report."
+msgid ""
+"The style used for the total line of the number of ancestors per generation."
+msgstr "Le style utilisé pour le titre du rapport."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -18249,12 +18384,6 @@ msgstr "Affiche le nombre d'ancêtres de l'individu actif"
 msgid "Number of %s's ancestors"
 msgstr "Nombre d'ancêtres de %s"
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-msgid "Generation"
-msgstr "Génération"
-
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:55
 msgid "Found"
 msgstr "Trouvé"
@@ -20916,12 +21045,6 @@ msgstr "Produit un rapport textuel des dépôts"
 #: RepositoriesReport/RepositoriesReportAlt.py:139
 msgid "Repositories Report"
 msgstr "Rapport des dépôts"
-
-#: RepositoriesReport/RepositoriesReport.py:175
-#: RepositoriesReport/RepositoriesReportAlt.py:504
-#: SourcesCitationsReport/SourcesCitationsReport.py:480
-msgid "The style used for the title of the report."
-msgstr "Le style utilisé pour le titre du rapport."
 
 #: RepositoriesReport/RepositoriesReport.py:189
 #: RepositoriesReport/RepositoriesReportAlt.py:518
