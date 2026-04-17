@@ -8,13 +8,14 @@
 # Anthony Fok (霍东灵) <foka@debian.org>, 2015.
 # Tian Shixiong <tiansworld@fedoraproject.org>, 2025.
 # reducedradius <feixiang512@outlook.com>, 2026.
+# Zizhuo JIa <jzz0313@outlook.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VERSION 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-22 16:02-0700\n"
-"PO-Revision-Date: 2026-03-29 11:09+0000\n"
-"Last-Translator: reducedradius <feixiang512@outlook.com>\n"
+"PO-Revision-Date: 2026-04-04 17:51+0000\n"
+"Last-Translator: Zizhuo JIa <jzz0313@outlook.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/gramps-project/addons/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -30,37 +31,38 @@ msgstr ""
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "全部人员的姓名"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "显示全部人员的姓名"
 
 #: AllNamesQuickview/AllNames.py:54
+#, fuzzy
 msgid "Name Type"
-msgstr ""
+msgstr "姓名类型"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr ""
+msgstr "原名"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
-msgstr ""
+msgstr "全名 %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
-msgstr ""
+msgstr "填充祖先信息"
 
 #: AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
-msgstr ""
+msgstr "关于家族树填充情况的报告"
 
 #: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr ""
+msgstr "为 %s 填充祖先信息"
 
 #: AncestorFill/AncestorFill.py:205
 msgid "Generation "
