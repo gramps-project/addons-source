@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-05 08:43-0700\n"
+"POT-Creation-Date: 2026-04-11 17:13-0700\n"
 "PO-Revision-Date: 2015-03-18 17:31-0600\n"
 "Last-Translator: Anthony Fok <foka@debian.org>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -220,7 +220,7 @@ msgstr ""
 #: AncestryTableReport.py:593
 msgid ""
 "The style used for an empty row.\n"
-"To enlarge the height of the empty row, just increse the size of the police."
+"To enlarge the height of the empty row, just increase the size of the font."
 msgstr ""
 
 #: AncestryTableReport.py:632
