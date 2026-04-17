@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-05 08:43-0700\n"
-"PO-Revision-Date: 2026-04-05 15:44+0000\n"
+"PO-Revision-Date: 2026-04-06 16:35+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -79,7 +79,7 @@ msgstr "Počet teoretických predkov "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
-msgstr "Zbaliť rodokmeň "
+msgstr "Kolaps rodokmeňa "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
@@ -115,16 +115,14 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
-msgstr "Zbalená číslica"
+msgstr "Zúžená číslica"
 
 #: AncestorFill/AncestorFill.py:313
-#, fuzzy
 msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
 msgstr ""
-"Počet číslic za čiarkou, ktoré sa majú zahrnúť do správy o rodokmeni\n"
-"Zbaliť"
+"Počet číslic za čiarkou, ktoré sa majú zahrnúť do správy pre Kolaps rodokmeňa"
 
 #: AncestorFill/AncestorFill.py:317
 msgid "Display theoretical"
@@ -144,10 +142,8 @@ msgid "The style used for the title of the page."
 msgstr "Štýl použitý pre titul strany."
 
 #: AncestryTableReport.gpr.py:3
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Table"
-msgstr "Predkovia"
+msgstr "Tabuľka predkov"
 
 #: AncestryTableReport.gpr.py:4
 msgid "Produces a table of ancestry about a person"
@@ -156,7 +152,7 @@ msgstr "Vytvára tabuľku predkov danej osoby"
 #: AncestryTableReport.py:133
 #, python-format
 msgid "Person %(name)s is not in the Database"
-msgstr ""
+msgstr "Osoba %(name)s nie je v databáze"
 
 #: AncestryTableReport.py:277
 #, python-format
@@ -182,7 +178,7 @@ msgstr "Generácia"
 
 #: AncestryTableReport.py:472
 msgid "To start a new page after each generation."
-msgstr ""
+msgstr "Po každej generácii začať novú stranu."
 
 #: AncestryTableReport.py:475
 msgid "Number of ancestors per generation"
@@ -201,6 +197,8 @@ msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
 "calendar in the dates."
 msgstr ""
+"V predvolenom nastavení, s výnimkou gregoriánskych dátumov, Gramps v "
+"dátumoch zobrazuje názov kalendára."
 
 #: AncestryTableReport.py:519 RepositoriesReport/RepositoriesReport.py:175
 #: RepositoriesReport/RepositoriesReportAlt.py:504
@@ -1095,11 +1093,11 @@ msgstr "Zistená zmena v databáze"
 
 #: ChatWithTree/ChatWithTree.py:148
 msgid "Type a message..."
-msgstr ""
+msgstr "Napíšte správu..."
 
 #: ChatWithTree/ChatWithTree.py:152
 msgid "Send"
-msgstr ""
+msgstr "Poslať"
 
 #: ChatWithTree/ChatWithTree.py:159
 msgid "Chat with Tree initialized. Type /help for help."
@@ -1110,10 +1108,12 @@ msgid ""
 "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
 "select a database."
 msgstr ""
+"Doplnok ChatWithTree ešte nie je inicializovaný. Prosím, reštartujte Gramps "
+"alebo vyberte databázu."
 
 #: ChatWithTree/chatwithllm.py:78
 msgid "Tree: '{}'"
-msgstr ""
+msgstr "Strom: '{}'"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -5588,7 +5588,7 @@ msgstr "Základný štýl použitý na zobrazenie textu"
 
 #: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
-msgstr "Štýl použitý pre kľúč stránky v hornej časti"
+msgstr "Štýl použitý pre kláves stránky v hornej časti"
 
 #: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
@@ -14646,7 +14646,7 @@ msgstr "Gramplet rozhranie pre formuláre"
 
 #: Form/formgramplet.gpr.py:43
 msgid "Forms"
-msgstr ""
+msgstr "Formuláre"
 
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"
@@ -14675,11 +14675,11 @@ msgstr "Zahrnúť svedkov"
 #: GedcomExtensions/GedcomExtensions.py:198
 #: RepositoriesReport/RepositoriesReportAlt.py:459
 msgid "Include media"
-msgstr ""
+msgstr "Zahrnúť médiá"
 
 #: GedcomExtensions/GedcomExtensions.py:201
 msgid "Patronymic names:"
-msgstr ""
+msgstr "Patronymické mená:"
 
 #: GedcomExtensions/GedcomExtensions.py:203
 #: GedcomExtensions/GedcomExtensions.py:210
@@ -14688,19 +14688,19 @@ msgstr "Nezmeniť"
 
 #: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
-msgstr ""
+msgstr "Pridať patronymické meno po danom (krstnom) mene"
 
 #: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
-msgstr ""
+msgstr "Ignorovať patronymické meno"
 
 #: GedcomExtensions/GedcomExtensions.py:208
 msgid "Type of surname:"
-msgstr ""
+msgstr "Typ priezviska:"
 
 #: GedcomExtensions/GedcomExtensions.py:261
 msgid "Export failed"
-msgstr "Exportovanie sa nepodarilo"
+msgstr "Export neúspešný"
 
 #: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
 #: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
@@ -14821,28 +14821,30 @@ msgstr "Zobrazovanie všetkých miest"
 #: GeoTimeLines/GeoTimeLines.gpr.py:25 GeoTimeLines/GeoTimeLines.py:233
 #: GeoTimeLines/GeoTimeLines.py:339
 msgid "TimeLines Map"
-msgstr ""
+msgstr "Mapa časových osí"
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
 "A view showing all the places visited by a person or persons on various date."
 msgstr ""
+"Pohľad zobrazujúci všetky miesta, ktoré osoba alebo osoby navštívili v "
+"rôznych časoch."
 
 #: GeoTimeLines/GeoTimeLines.gpr.py:39
 msgid "TimeLines map"
-msgstr ""
+msgstr "Mapa časových osí"
 
 #: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
-msgstr ""
+msgstr "Vybrať formát pohľadu"
 
 #: GeoTimeLines/GeoTimeLines.py:800
 msgid "Almost done"
-msgstr ""
+msgstr "Takmer hotovo"
 
 #: GeoTimeLines/GeoTimeLines.py:916
 msgid "Gathering data"
-msgstr ""
+msgstr "Zhromažďovanie údajov"
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
 #, python-format
@@ -14855,6 +14857,9 @@ msgid ""
 "to differentiate different\n"
 "markers at the same location"
 msgstr ""
+"Rozostup značiek na mape\n"
+"na rozlíšenie rôznych\n"
+"značiek na rovnakom mieste"
 
 #: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
@@ -14862,6 +14867,9 @@ msgid ""
 "as measured along the equator\n"
 "(includes latitude distortion)"
 msgstr ""
+"Rádius rozostupu (hektometre)\n"
+"meraný ako pozdĺž rovníka\n"
+"(zahŕňa skreslenie zemepisnej šírky)"
 
 #: GeoTimeLines/GeoTimeLines.py:1794
 msgid ""
@@ -16792,7 +16800,7 @@ msgstr "žiadne"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
-msgstr ""
+msgstr "Zobraziť kolaps rodokmeňa"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:100
 msgid ""
@@ -16800,6 +16808,9 @@ msgid ""
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
+"V dôsledku kolapsu rodokmeňa sa jedna osoba môže v jednoduchom diagrame "
+"predkov objaviť viackrát. Ak je táto voľba aktívna, každá osoba sa zobrazí "
+"iba raz."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
@@ -16857,6 +16868,10 @@ msgid ""
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
 msgstr ""
+"Zameniť pozíciu matky a otca v rodine, aby sa znížil celkový počet "
+"horizontálnych krížových spojení vo väčších grafoch. K tomu dochádza, keď sa "
+"jedna osoba zobrazuje vo viac ako jednej rodine, alebo je to spôsobené "
+"kolapsom rodokmeňa."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -17993,6 +18008,9 @@ msgid ""
 "Only individual ancestors were counted. Duplicates caused by pedigree "
 "collapse were ignored."
 msgstr ""
+"Bolo nájdených {} z {} predkov ({}).\n"
+"Počítali sa len jednotliví predkovia. Duplikáty spôsobené kolapsom rodokmeňa "
+"boli ignorované."
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 msgid "Shows the number of descendants of the current person"
@@ -20402,7 +20420,7 @@ msgstr "Zapnuté"
 
 #: RelID/relation_tab.py:449
 msgid "Enable or disable family network metrics"
-msgstr "Zapnúť alebo vypnúť  metriky rodinnej siete"
+msgstr "Zapnúť alebo vypnúť metriky rodinnej siete"
 
 #: RelID/relation_tab.py:483
 msgid "Generating relation map..."
@@ -21849,10 +21867,8 @@ msgstr "_Import dátového súboru TMG"
 
 #: TMGimporter/libtmg.py:2324 TMGimporter/libtmg.py:2357
 #: TMGimporter/libtmg.py:2439 TMGimporter/libtmg.py:2466
-#, fuzzy
-#| msgid "Export failed"
 msgid "TMG import failed"
-msgstr "Exportovanie sa nepodarilo"
+msgstr "Import TMG neúspešný"
 
 #: TMGimporter/libtmg.py:2325
 msgid ""
@@ -21871,10 +21887,8 @@ msgid ""
 msgstr ""
 
 #: TMGimporter/libtmg.py:2370
-#, fuzzy
-#| msgid "TMG Unsupported"
 msgid "TMG version not supported"
-msgstr "TMG nie je podporovaný"
+msgstr "Verzia TMG nie je podporovaná"
 
 #: TMGimporter/libtmg.py:2371
 #, python-format
