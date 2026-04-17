@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-05 08:43-0700\n"
-"PO-Revision-Date: 2026-02-05 04:01+0000\n"
+"PO-Revision-Date: 2026-04-06 16:36+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Všechna jména všech lidí"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
@@ -5627,10 +5627,8 @@ msgid "The basic style used for the text display"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:919
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "The style used for the page key on the top"
-msgstr "Záznam použitý pro obsah vlastní stránky.\n"
+msgstr "Styl použitý pro klávesu stránky nahoře"
 
 #: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
