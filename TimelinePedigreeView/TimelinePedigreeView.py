@@ -1501,7 +1501,6 @@ class TimelinePedigreeView(NavigationView):
         menu.append(item)
 
         # Help menu entry
-        menu.append(item)
         item = Gtk.MenuItem(label=_("About Timeline Pedigree View"))
         item.connect("activate", self.on_help_clicked)
         item.show()
