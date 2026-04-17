@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-04-06 16:35+0000\n"
+"PO-Revision-Date: 2026-04-17 07:09+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -231,6 +231,8 @@ msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increase the size of the font."
 msgstr ""
+"Štýl použitý pre prázdny riadok.\n"
+"Ak chcete zväčšiť výšku prázdneho riadku, stačí zväčšiť veľkosť písma."
 
 #: AncestryTableReport.py:632
 msgid ""
@@ -1230,7 +1232,7 @@ msgstr "%(abbrev)s %(date)s%(place)s"
 
 #: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
-msgstr "Kombinovaný"
+msgstr "Kombinované"
 
 #: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
@@ -1343,7 +1345,7 @@ msgstr "Pozadie pre mužov"
 
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
-msgstr "RGB-farba pre pozadie kolónky pre mužov."
+msgstr "RGB-farba pre pozadie rámika pre mužov."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
 msgid "Male Expandable Background Color"
@@ -1351,7 +1353,7 @@ msgstr "Farba rozbaľovacieho pozadia pre mužov"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
 msgid "RGB-color for male expandable box background."
-msgstr "RGB-farba pozadia rozbaliteľnej kolónky pre mužov."
+msgstr "RGB-farba pozadia rozšíriteľného rámika pre mužov."
 
 #: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
@@ -1359,7 +1361,7 @@ msgstr "Pozadie pre ženy"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr "RGB-farba pozadia kolónky pre ženy."
+msgstr "RGB-farba pozadia rámika pre ženy."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
@@ -1367,7 +1369,7 @@ msgstr "Farba rozbaľovacieho pozadia pre ženy"
 
 #: D3Charts/AncestralCollapsibleTree.py:861
 msgid "RGB-color for female expandable box background."
-msgstr "RGB-farba pozadia rozbaliteľnej kolónky pre ženy."
+msgstr "RGB-farba pozadia rozšíriteľného rámika pre ženy."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1825
@@ -1403,7 +1405,7 @@ msgstr "Farba pozadia otcovskej línie"
 
 #: D3Charts/AncestralFanChart.py:730
 msgid "RGB-color for paternal box background."
-msgstr "RGB-farba pre pozadie kolónky otcovskej línie."
+msgstr "RGB-farba pre pozadie rámika otcovskej línie."
 
 #: D3Charts/AncestralFanChart.py:733
 msgid "Maternal Background"
@@ -1411,7 +1413,7 @@ msgstr "Pozadie materskej línie"
 
 #: D3Charts/AncestralFanChart.py:734
 msgid "RGB-color for maternal box background."
-msgstr "RGB -farba pre pozadie kolónky materskej línie."
+msgstr "RGB -farba pre pozadie rámika materskej línie."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:909
@@ -1834,11 +1836,11 @@ msgstr ""
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
-msgstr "DNA zhody"
+msgstr "Zhody DNA"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
-msgstr "Gramplet na zobrazenie zoznamu DNA zhôd"
+msgstr "Gramplet na zobrazenie zoznamu zhôd DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
@@ -3479,11 +3481,11 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
-msgstr "Rámček okolo bloku osoby"
+msgstr "Rámik okolo bloku osoby"
 
 #: DescendantsLines/DescendantsLines.py:1613
 msgid "Draw a thin black box around each person' text block."
-msgstr "Nakreslí tenký čierny rámček okolo textového bloku každej osoby."
+msgstr "Nakreslí tenký čierny rámik okolo textového bloku každej osoby."
 
 #: DescendantsLines/DescendantsLines.py:1617
 msgid "All Person's blocks have the same height"
@@ -5567,12 +5569,13 @@ msgstr "Či zahrnúť potomkov a ktorých."
 
 #: FamilySheet/FamilySheet.py:880 FamilyTree/FamilyTree.py:1084
 msgid "Replace first name with call name"
-msgstr "Nahradiť krstné meno bežným menom"
+msgstr "Nahradiť krstné meno volacím menom"
 
 #: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
 msgstr ""
-"Podčiarknuť bežné meno v krstnom mene / pridať bežné meno ku krstnému menu"
+"Podčiarknuť volacie meno v krstnom mene / pridať volacie meno ku krstnému "
+"menu"
 
 #: FamilySheet/FamilySheet.py:882
 msgid "Whether to include call name, and how."
@@ -5625,35 +5628,35 @@ msgstr "Anonymný"
 
 #: FamilyTree/FamilyTree.py:911
 msgid "born"
-msgstr ""
+msgstr "narodenie"
 
 #: FamilyTree/FamilyTree.py:913
 msgid "baptised"
-msgstr ""
+msgstr "krst"
 
 #: FamilyTree/FamilyTree.py:915
 msgid "died"
-msgstr ""
+msgstr "úmrtie"
 
 #: FamilyTree/FamilyTree.py:917
 msgid "buried"
-msgstr ""
+msgstr "pochovanie"
 
 #: FamilyTree/FamilyTree.py:919
 msgid "cremated"
-msgstr ""
+msgstr "kremácia"
 
 #: FamilyTree/FamilyTree.py:921
 msgid "married"
-msgstr ""
+msgstr "manželstvo"
 
 #: FamilyTree/FamilyTree.py:923
 msgid "divorced"
-msgstr ""
+msgstr "rozvod"
 
 #: FamilyTree/FamilyTree.py:925
 msgid "resident"
-msgstr ""
+msgstr "bydlisko"
 
 #: FamilyTree/FamilyTree.py:971
 #, python-format
@@ -12079,11 +12082,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:1020
 msgid "By what other name was your Company called"
-msgstr ""
+msgstr "Ako inak sa vaša rota ešte volala"
 
 #: Form/form_us.xml.h:1021
 msgid "By what other name was your Regiment called"
-msgstr ""
+msgstr "Ako inak sa váš pluk ešte volal"
 
 #: Form/form_us.xml.h:1022
 msgid "Battles in which you took part"
@@ -14876,28 +14879,36 @@ msgid ""
 "Display markers for unknown ancestors\n"
 "based on earliest descendant location"
 msgstr ""
+"Zobraziť značky pre neznámych predkov\n"
+"na základe lokality najskoršieho známeho potomka"
 
 #: GeoTimeLines/GeoTimeLines.py:1803
 msgid ""
 "Days to keep lines on the map after\n"
 "an event"
 msgstr ""
+"Počet dní, počas ktorých sa majú na mape ponechať trasy po\n"
+"udalosti"
 
 #: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
-msgstr ""
+msgstr "Použiť na mape vlastné ikony"
 
 #: GeoTimeLines/GeoTimeLines.py:1829
 msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
 msgstr ""
+"Ak pre osobu neexistuje udalosť narodenia, predpokladá sa,\n"
+"že v čase jej prvej udalosti mala tento vek"
 
 #: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
 "If there is no death event for a person, they will\n"
 "be assumed dead at this age"
 msgstr ""
+"Ak pre osobu neexistuje udalosť úmrtia, predpokladá sa,\n"
+"že zomrela v tomto veku"
 
 #: GeoTimeLines/GeoTimeLines.py:1875
 msgid "Number of steps"
@@ -14905,33 +14916,35 @@ msgstr "Počet krokov"
 
 #: GeoTimeLines/GeoTimeLines.py:1883
 msgid "Type of steps"
-msgstr ""
+msgstr "Typ krokov"
 
 #: GeoTimeLines/GeoTimeLines.py:1892
 msgid "Steps per millisecond"
-msgstr ""
+msgstr "Počet krokov za milisekundu"
 
 #: GeoTimeLines/GeoTimeLines.py:1915
 msgid "Initial map view on Gramps startup"
-msgstr ""
+msgstr "Počiatočný pohľad na mapu pri spustení Gramps"
 
 #: GeoTimeLines/GeoTimeLines.py:1927
 msgid ""
 "Initial map view after startup and\n"
 "after changing the active person"
 msgstr ""
+"Počiatočný pohľad na mapu po spustení a\n"
+"po zmene aktívnej osoby"
 
 #: GeoTimeLines/GeoTimeLines.py:1936
 msgid "Show map travel lines on startup"
-msgstr ""
+msgstr "Pri spustení zobraziť cestovné trasy na mape"
 
 #: GeoTimeLines/GeoTimeLines.py:1942
 msgid "Show time ticks on navigation bar on startup"
-msgstr ""
+msgstr "Pri spustení zobraziť časové značky na navigačnom paneli"
 
 #: GeoTimeLines/GeoTimeLines.py:1974
 msgid "TimeLines Map options"
-msgstr ""
+msgstr "Možnosti mapy časových osí"
 
 #: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
@@ -15139,15 +15152,15 @@ msgstr "Porovnávanie miestnych a vzdialených údajov..."
 
 #: GrampsWebSync/grampswebsync.py:537
 msgid "Server authorization error."
-msgstr ""
+msgstr "Chyba autorizácie servera."
 
 #: GrampsWebSync/grampswebsync.py:540
 msgid "Server authorization error: insufficient permissions."
-msgstr ""
+msgstr "Chyba autorizácie servera: nedostatočné oprávnenia."
 
 #: GrampsWebSync/grampswebsync.py:543
 msgid "Error: URL not found."
-msgstr ""
+msgstr "Chyba: Adresa URL sa nenašla."
 
 #: GrampsWebSync/grampswebsync.py:547
 msgid "Unable to synchronize changes to server: objects have been modified."
@@ -15156,11 +15169,11 @@ msgstr "Zmeny sa nedajú synchronizovať so serverom: objekty boli upravené."
 #: GrampsWebSync/grampswebsync.py:551
 #, python-format
 msgid "Error %s while connecting to server."
-msgstr ""
+msgstr "Chyba %s pri pripájaní k serveru."
 
 #: GrampsWebSync/grampswebsync.py:554
 msgid "URL error while connecting to server."
-msgstr ""
+msgstr "Chyba URL pri pripájaní k serveru."
 
 #: GrampsWebSync/grampswebsync.py:557
 msgid "Unable to synchronize changes to server."
@@ -15168,21 +15181,24 @@ msgstr "Zmeny sa nedajú synchronizovať so serverom."
 
 #: GrampsWebSync/grampswebsync.py:585
 msgid "Continue without transport encryption?"
-msgstr ""
+msgstr "Pokračovať bez šifrovania prenosu?"
 
 #: GrampsWebSync/grampswebsync.py:587
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
+"Zadali ste URL so schémou http. Ak budete pokračovať, vaše heslo bude "
+"odoslané cez sieť v nezakódovanej podobe. Používajte len na lokálne "
+"testovanie!"
 
 #: GrampsWebSync/grampswebsync.py:592
 msgid "Continue with HTTP"
-msgstr ""
+msgstr "Pokračovať s HTTP"
 
 #: GrampsWebSync/grampswebsync.py:593
 msgid "Use HTTPS"
-msgstr ""
+msgstr "Použiť HTTPS"
 
 #: GrampsWebSync/grampswebsync.py:711
 msgid ""
@@ -15214,7 +15230,7 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:738
 msgid "Server URL: "
-msgstr ""
+msgstr "URL servera: "
 
 #: GrampsWebSync/grampswebsync.py:847
 msgid "Bidirectional Synchronization"
@@ -15222,15 +15238,15 @@ msgstr "Obojsmerná synchronizácia"
 
 #: GrampsWebSync/grampswebsync.py:856
 msgid "Reset remote to local"
-msgstr ""
+msgstr "Obnoviť vzdialené na lokálne"
 
 #: GrampsWebSync/grampswebsync.py:864
 msgid "Reset local to remote"
-msgstr ""
+msgstr "Obnoviť lokálne na vzdialené"
 
 #: GrampsWebSync/grampswebsync.py:872
 msgid "Merge"
-msgstr ""
+msgstr "Zlúčiť"
 
 #: GrampsWebSync/grampswebsync.py:897
 msgid "Local changes"
@@ -15251,59 +15267,59 @@ msgstr "Súbežné zmeny"
 
 #: GrampsWebSync/grampswebsync.py:964
 msgid "Fetching information about media files..."
-msgstr ""
+msgstr "Načítavanie informácií o mediálnych súboroch..."
 
 #: GrampsWebSync/grampswebsync.py:985
 msgid "Both trees are the same."
-msgstr ""
+msgstr "Obidva stromy sú rovnaké."
 
 #: GrampsWebSync/grampswebsync.py:991
 msgid "Applying changes to local database ..."
-msgstr ""
+msgstr "Aplikovanie zmien do lokálnej databázy ..."
 
 #: GrampsWebSync/grampswebsync.py:993
 msgid "No changes to apply to local database."
-msgstr ""
+msgstr "Žiadne zmeny na aplikovanie do lokálnej databázy."
 
 #: GrampsWebSync/grampswebsync.py:996
 msgid "Applying changes to remote database ..."
-msgstr ""
+msgstr "Aplikovanie zmien do vzdialenej databázy ..."
 
 #: GrampsWebSync/grampswebsync.py:999
 msgid "No changes to apply to remote database."
-msgstr ""
+msgstr "Žiadne zmeny na aplikovanie do vzdialenej databázy."
 
 #: GrampsWebSync/grampswebsync.py:1006
 msgid "Successfully applied changes to local database."
-msgstr ""
+msgstr "Zmeny boli úspešne aplikované v lokálnej databáze."
 
 #: GrampsWebSync/grampswebsync.py:1035
 msgid "Missing locally"
-msgstr ""
+msgstr "Chýbajúce lokálne"
 
 #: GrampsWebSync/grampswebsync.py:1038
 msgid "Missing remotely"
-msgstr ""
+msgstr "Chýbajúce vzdialene"
 
 #: GrampsWebSync/grampswebsync.py:1076
 #, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "Sťahovanie %s súboru"
-msgstr[1] "Sťahovanie %s súborov"
-msgstr[2] "Sťahovanie %s súborov"
+msgstr[0] "Sťahovanie %s mediálneho súboru"
+msgstr[1] "Sťahovanie %s mediálnych súborov"
+msgstr[2] "Sťahovanie %s mediálnych súborov"
 
 #: GrampsWebSync/grampswebsync.py:1084
 #, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "Nahrávanie %s súboru"
-msgstr[1] "Nahrávanie %s súborov"
-msgstr[2] "Nahrávanie %s súborov"
+msgstr[0] "Nahrávanie %s mediálneho súboru"
+msgstr[1] "Nahrávanie %s mediálnych súborov"
+msgstr[2] "Nahrávanie %s mediálnych súborov"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
-msgstr ""
+msgstr "Tmavá (predvolená)"
 
 #: GraphView/avatars.py:61
 msgid "Light"
@@ -15311,11 +15327,11 @@ msgstr "Svetlá"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
-msgstr ""
+msgstr "Kreslená"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
-msgstr ""
+msgstr "Moderná"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -15368,7 +15384,7 @@ msgstr "Časový smer"
 
 #: GraphView/graphview.py:791
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr ""
+msgstr "Obmedziť počet zobrazených osôb (pre neobmedzený počet zadajte 0)"
 
 #: GraphView/graphview.py:812
 msgid "Person theme"
@@ -15380,47 +15396,47 @@ msgstr "Farba cesty k domovskej osobe"
 
 #: GraphView/graphview.py:821
 msgid "Font:"
-msgstr ""
+msgstr "Písmo:"
 
 #: GraphView/graphview.py:835
 msgid "Avatars style"
-msgstr ""
+msgstr "Štýl avatarov"
 
 #: GraphView/graphview.py:841
 msgid "PNG files"
-msgstr ""
+msgstr "Súbory PNG"
 
 #: GraphView/graphview.py:846
 msgid "Male avatar:"
-msgstr ""
+msgstr "Avatar muža:"
 
 #: GraphView/graphview.py:847
 msgid "Choose male avatar"
-msgstr ""
+msgstr "Vybrať avatar muža"
 
 #: GraphView/graphview.py:859
 msgid "Female avatar:"
-msgstr ""
+msgstr "Avatar ženy:"
 
 #: GraphView/graphview.py:860
 msgid "Choose female avatar"
-msgstr ""
+msgstr "Vybrať avatar ženy"
 
 #: GraphView/graphview.py:872
 msgid "Unknown avatar:"
-msgstr ""
+msgstr "Avatar neznámej osoby:"
 
 #: GraphView/graphview.py:873
 msgid "Choose Unknown avatar"
-msgstr ""
+msgstr "Vybrať avatar neznámej osoby"
 
 #: GraphView/graphview.py:885
 msgid "Other avatar:"
-msgstr ""
+msgstr "Avatar inej osoby:"
 
 #: GraphView/graphview.py:886
 msgid "Choose Other avatar"
-msgstr ""
+msgstr "Vybrať avatar inej osoby"
 
 #: GraphView/graphview.py:900
 msgid "Active person border size"
@@ -15428,11 +15444,11 @@ msgstr "Veľkosť ohraničenia aktívnej osoby"
 
 #: GraphView/graphview.py:905
 msgid "Person border size"
-msgstr ""
+msgstr "Veľkosť ohraničenia osoby"
 
 #: GraphView/graphview.py:908
 msgid "Themes"
-msgstr ""
+msgstr "Témy"
 
 #: GraphView/graphview.py:921 GraphView/graphview.py:3770
 msgid "Show animation"
@@ -15444,7 +15460,7 @@ msgstr "Rýchlosť animácie (1..5 a 5 je najpomalšia)"
 
 #: GraphView/graphview.py:929
 msgid "Animation count (0..8 use 0 to turn off)"
-msgstr ""
+msgstr "Počet animácií (0..8, použite 0 na vypnutie)"
 
 #: GraphView/graphview.py:938
 msgid "Animation"
@@ -15452,39 +15468,40 @@ msgstr "Animácia"
 
 #: GraphView/graphview.py:952
 msgid "Search in all database"
-msgstr ""
+msgstr "Vyhľadávať v celej databáze"
 
 #: GraphView/graphview.py:954
 msgid "Also apply search by all database."
-msgstr ""
+msgstr "Použije tiež vyhľadávanie po celej databáze."
 
 #: GraphView/graphview.py:957
 msgid "Show person images"
-msgstr "Zobraziť osobné obrázky"
+msgstr "Zobraziť obrázky osôb"
 
 #: GraphView/graphview.py:960
 msgid "Show persons thumbnails in search result list."
-msgstr ""
+msgstr "Zobrazí miniatúry osôb v zozname výsledkov vyhľadávania."
 
 #: GraphView/graphview.py:963 SearchGramplet/SearchGramplet.py:102
 msgid "Show bookmarked first"
-msgstr ""
+msgstr "Zobraziť najskôr osoby v záložkách"
 
 #: GraphView/graphview.py:966
 msgid "Show bookmarked persons first in search result list."
-msgstr ""
+msgstr "Zobrazí osoby v záložkách ako prvé v zozname výsledkov vyhľadávania."
 
 #: GraphView/graphview.py:999
+#, fuzzy
 msgid "Select a dot file name"
-msgstr "Vyberte názov dot súboru"
+msgstr "Vyberte názov súboru dot"
 
 #: GraphView/graphview.py:1109 LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
-msgstr "Pôvodné priblíženie"
+msgstr "Zväčšiť na originálnu veľkosť"
 
 #: GraphView/graphview.py:1116 LifeLineChartView/lifelinechartview.py:534
 msgid "Zoom to best fit"
-msgstr "Prispôsobiť priblíženie obsahu"
+msgstr "Zväčšiť na optimálnu veľkosť"
 
 #: GraphView/graphview.py:1123
 msgid "Go to active person"
@@ -15496,11 +15513,11 @@ msgstr "Prejsť na záložku"
 
 #: GraphView/graphview.py:1130
 msgid "Center view on selected bookmark"
-msgstr ""
+msgstr "Vycentrovať zobrazenie na vybranú záložku"
 
 #: GraphView/graphview.py:1132
 msgid "Bookmarks for current graph"
-msgstr ""
+msgstr "Záložky pre aktuálny graf"
 
 #: GraphView/graphview.py:1133
 msgid "Other Bookmarks"
@@ -15524,17 +15541,19 @@ msgstr "Horizontálne rozostupy medzi generáciami"
 
 #: GraphView/graphview.py:1188
 msgid "Spacings"
-msgstr ""
+msgstr "Rozostupy"
 
 #: GraphView/graphview.py:1193
 msgid "All connected"
-msgstr ""
+msgstr "Všetky prepojené"
 
 #: GraphView/graphview.py:1195
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
 msgstr ""
+"Zobrazí všetky prepojené osoby s ohľadom na obmedzenia generácií.\n"
+"Funguje pomaly, preto nenastavujte veľké hodnoty generácií."
 
 #: GraphView/graphview.py:1337
 msgid "Add active person"
@@ -15542,17 +15561,19 @@ msgstr "Pridať aktívnu osobu"
 
 #: GraphView/graphview.py:1342
 msgid "Call the bookmark editor"
-msgstr ""
+msgstr "Vyvolať editor záložiek"
 
 #: GraphView/graphview.py:1399
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
 msgstr ""
+"Ešte nemáte žiadne záložky...\n"
+"Skúste pridať niektoré často používané osoby, aby ste urýchlili navigáciu."
 
 #: GraphView/graphview.py:1407
 msgid "No bookmarks for this graph..."
-msgstr ""
+msgstr "Žiadne záložky pre tento graf..."
 
 #: GraphView/graphview.py:1412
 msgid "No other bookmarks..."
@@ -15563,7 +15584,7 @@ msgstr "Žiadne iné záložky..."
 #: SearchGramplet/SearchGramplet.py:259 SearchGramplet/SearchGramplet.py:281
 #, python-format
 msgid "found: %s"
-msgstr ""
+msgstr "nájdené: %s"
 
 #: GraphView/graphview.py:1429
 #, python-format
@@ -15571,6 +15592,8 @@ msgid ""
 "Add active person to bookmarks\n"
 "%s"
 msgstr ""
+"Pridať aktívnu osobu do záložiek\n"
+"%s"
 
 #: GraphView/graphview.py:1516
 #, python-format
@@ -15578,6 +15601,8 @@ msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
 "Do you want to set it active and rebuild view?"
 msgstr ""
+"Osoba <b><i>%s</i></b> nie je v aktuálnom zobrazení.\n"
+"Chcete ju nastaviť ako aktívnu a prebudovať zobrazenie?"
 
 #: GraphView/graphview.py:1519
 msgid "Change active person?"
@@ -15591,18 +15616,21 @@ msgid ""
 "{people_missing} people won't be shown. You can change this limit in the "
 "view configuration."
 msgstr ""
+"Tento graf by obsahoval najmenej {people_count} osôb, čo presahuje limit "
+"{people_limit} osôb. Z dôvodu výkonu sa najmenej {people_missing} osôb "
+"nezobrazí. Tento limit môžete zmeniť v konfigurácii zobrazenia."
 
 #: GraphView/graphview.py:2678
 msgid "Incomplete graph"
-msgstr ""
+msgstr "Neúplný graf"
 
 #: GraphView/graphview.py:3047
 msgid "Image on right side"
-msgstr ""
+msgstr "Obrázok na pravej strane"
 
 #: GraphView/graphview.py:3068
 msgid "Image on left side"
-msgstr ""
+msgstr "Obrázok na ľavej strane"
 
 #: GraphView/graphview.py:3168 GraphView/graphview.py:3169
 #: GraphView/graphview.py:3181 GraphView/graphview.py:3182
@@ -15622,15 +15650,15 @@ msgstr "Typ čiar"
 #: GraphView/graphview.py:3783 NetworkChart/NetworkChart.py:1174
 #: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
-msgstr ""
+msgstr "Priame"
 
 #: GraphView/graphview.py:3791
 msgid "Curves"
-msgstr ""
+msgstr "Krivky"
 
 #: GraphView/graphview.py:3799
 msgid "Ortho"
-msgstr ""
+msgstr "Pravoúhlé"
 
 #: GraphView/graphview.py:3875
 msgid "No Events for this person"
@@ -15891,7 +15919,7 @@ msgstr "Uvádza relevantné historické udalosti počas života osoby"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
-msgstr "Riadky začínajúce týmto v textovom stĺpci budú skryté "
+msgstr "Riadky v stĺpci textu, ktoré začínajú týmto textom, budú skryté "
 
 #: HistContext/HistContext.py:126
 msgid "Use filter "
@@ -15907,19 +15935,19 @@ msgstr "Použiť úplné dátumy"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
-msgstr ""
+msgstr "Farba popredia prvkov v životnom cykle"
 
 #: HistContext/HistContext.py:138
 msgid "Background color items in lifespan"
-msgstr ""
+msgstr "Farba pozadia prvkov v životnom cykle"
 
 #: HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
-msgstr ""
+msgstr "Farba popredia prvkov mimo životného cyklu"
 
 #: HistContext/HistContext.py:144
 msgid "Background color items outside lifespan"
-msgstr ""
+msgstr "Farba pozadia prvkov mimo životného cyklu"
 
 #: HistContext/HistContext.py:149
 msgid "Select from files"
@@ -16760,7 +16788,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:89
 msgid "Visualize automatically detected errors in the placement algorithm."
-msgstr ""
+msgstr "Vizualizovať automaticky zistené chyby v algoritme umiestnenia."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:90
 msgid "Coloring of individuals"
@@ -17449,6 +17477,9 @@ msgid ""
 "for dynamically generated URLs.\n"
 "URL = Prefix + GrampsID + Suffix."
 msgstr ""
+"Zadajte predponu a príponu (oddeľte ich čiarkou)\n"
+"pre dynamicky generované URL adresy.\n"
+"URL = predpona + GrampsID + prípona."
 
 #: NetworkChart/NetworkChart.py:957
 msgid "Enter Font Name"
@@ -17524,15 +17555,15 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
-msgstr "Okraj kolónky muža"
+msgstr "Okraj rámika muža"
 
 #: NetworkChart/NetworkChart.py:1019
 msgid "RGB-color for Male box edge."
-msgstr "RGB-farba pre okraj kolónky muža."
+msgstr "RGB-farba pre okraj rámika muža."
 
 #: NetworkChart/NetworkChart.py:1023
 msgid "RGB-color for Female box background."
-msgstr "RGB-farba pre pozadie kolónky Žena."
+msgstr "RGB-farba pre pozadie rámika ženy."
 
 # added:
 #: NetworkChart/NetworkChart.py:1026
@@ -17545,11 +17576,11 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
-msgstr "Pozadie kolónky ženy"
+msgstr "Pozadie rámika ženy"
 
 #: NetworkChart/NetworkChart.py:1034
 msgid "RGB-color for Female box edge."
-msgstr "RGB-farba pre okraj kolónky ženy."
+msgstr "RGB-farba pre okraj rámika ženy."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
@@ -17557,7 +17588,7 @@ msgstr "Iné pozadie"
 
 #: NetworkChart/NetworkChart.py:1038
 msgid "RGB-color for other box background."
-msgstr "RGB-farba pre pozadie ostatných polí."
+msgstr "RGB-farba pre pozadie ostatných rámikov."
 
 #: NetworkChart/NetworkChart.py:1041
 msgid "Other Background Alpha"
@@ -17565,7 +17596,7 @@ msgstr "Iné pozadie alfa"
 
 #: NetworkChart/NetworkChart.py:1043
 msgid "Alpha for Other box background (transparent=0, solid=255)."
-msgstr "Alfa pre pozadie inej kolónky (priehľadné=0, plné=255)."
+msgstr "Alfa pre pozadie iného rámika (priehľadné=0, plné=255)."
 
 #: NetworkChart/NetworkChart.py:1047
 msgid "Family Connector Line"
@@ -17597,11 +17628,11 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1061
 msgid "Trim Box Edge"
-msgstr "Orezať okraj kolónky"
+msgstr "Orezať okraj rámika"
 
 #: NetworkChart/NetworkChart.py:1062
 msgid "RGB-color for box edge that has been trimmed."
-msgstr "RGB-farba pre okraj kolónky, ktorý bol orezaný."
+msgstr "RGB-farba pre okraj rámika, ktorý bol orezaný."
 
 #: NetworkChart/NetworkChart.py:1066
 msgid "Remove color background on all nodes."
@@ -17952,6 +17983,11 @@ msgid ""
 "If you wish to make changes, you can make them here and use the style "
 "controls in the toolbar above."
 msgstr ""
+"\n"
+"\n"
+"Poznámky vybrané v ľavom paneli sa Po vyčistení zobrazia v tomto poli.\n"
+"Ak chcete vykonať zmeny, môžete ich tu urobiť a použiť ovládacie prvky štýlu "
+"na paneli nástrojov vyššie."
 
 #: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
@@ -17992,15 +18028,15 @@ msgstr "Počet predkov osoby %s"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:55
 msgid "Found"
-msgstr ""
+msgstr "Nájdení"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:56
 msgid "Theoretical"
-msgstr ""
+msgstr "Teoretickí"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:57
 msgid "Percent"
-msgstr ""
+msgstr "Percent"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:65
 msgid ""
@@ -18019,30 +18055,30 @@ msgstr "Zobrazí počet potomkov aktuálnej osoby"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
 msgid "Number of %s's descendants"
-msgstr ""
+msgstr "Počet potomkov osoby %s"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
 msgid "Seen"
-msgstr ""
+msgstr "Videní"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
 msgid "Outlived"
-msgstr ""
+msgstr "Prežití"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
 msgid "Now alive"
-msgstr ""
+msgstr "Teraz žijú"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr ""
+msgstr "Videní = počet potomkov, ktorých narodenia sa osoba %s dožila"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
-msgstr ""
+msgstr "Prežití = počet potomkov, ktorí zomreli, kým bola osoba %s ešte nažive"
 
 #: Overview/Overview.gpr.py:29
 msgid "Person Overview"
@@ -18054,7 +18090,7 @@ msgstr "Gramplet zobrazujúci prehľad udalostí pre osobu"
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
 msgid "Overview"
-msgstr ""
+msgstr "Prehľad"
 
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -18066,24 +18102,24 @@ msgstr "Gramplet zobrazujúci prehľad udalostí pre rodinu"
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
-msgstr ""
+msgstr "Gramplet zobrazujúci účastníkov udalosti"
 
 #: Participants/Participants.py:75
 msgid "Double-click on a row to edit the selected participant."
-msgstr "Ak chcete upraviť vybraného účastníka, dvakrát kliknite na riadok."
+msgstr "Dvojitým kliknutím na riadok upravíte vybraného účastníka."
 
 #: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
-msgstr ""
+msgstr "Diagram rodokmeňa"
 
 #: PedigreeChart/PedigreeChart.gpr.py:26
 msgid "Alternate version of the traditional pedigree chart."
-msgstr ""
+msgstr "Alternatívna verzia tradičného diagramu rodokmeňa."
 
 #: PedigreeChart/PedigreeChart.py:379
 #, python-format
 msgid "Pedigree Chart for %s"
-msgstr ""
+msgstr "Diagram rodokmeňa pre %s"
 
 #: PedigreeChart/PedigreeChart.py:528
 #, python-format
@@ -18092,11 +18128,11 @@ msgstr "Stránka %d"
 
 #: PedigreeChart/PedigreeChart.py:640
 msgid "Show Mother/Father captions"
-msgstr ""
+msgstr "Zobraziť popisky matky/otca"
 
 #: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
-msgstr ""
+msgstr "Zobrazí označenie matky alebo otca vedľa každého rámika predka."
 
 #: PedigreeChart/PedigreeChart.py:657
 msgid "Show page numbers"
@@ -18104,15 +18140,15 @@ msgstr "Zobraziť čísla strán"
 
 #: PedigreeChart/PedigreeChart.py:658
 msgid "Add a footer on every page with the page number and date printed."
-msgstr ""
+msgstr "Pridá pätu na každej strane s číslom strany a dátumom tlače."
 
 #: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
-msgstr "Základný štýl používaný pre zobrazenie názvu."
+msgstr "Základný štýl používaný pre zobrazenie označenia."
 
 #: PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
-msgstr "Štýl použitý pre značky a nadpisy"
+msgstr "Štýl použitý pre značky a popisky"
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -18125,7 +18161,7 @@ msgstr "Vytvorí správu obsahujúcu všetko o aktívnej osobe"
 #: PersonEverything/PersonEverything.py:133
 #, python-format
 msgid "All information about %s"
-msgstr "Všetky informácie o %s"
+msgstr "Všetky informácie o osobe %s"
 
 #: PersonEverything/PersonEverything.py:173
 msgid "Primary name"
@@ -18284,7 +18320,7 @@ msgstr "Minimálna výška tváre (px)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:149
 msgid "Detect faces inside existing boxes"
-msgstr ""
+msgstr "Rozpoznávať tváre vo vnútri existujúcich rámikov"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
 msgid "Sensitivity (1 min .. 20 max)"
@@ -18550,7 +18586,7 @@ msgstr "Zachovať webové odkazy"
 
 #: PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
-msgstr "Umiestni webové odkazy (obvykle z Wikipedie) do vášho miesta."
+msgstr "Umiestni webové odkazy (zvyčajne z Wikipedie) do vášho miesta."
 
 #: PlaceCleanup/placecleanup.glade:693
 msgid "Add citation and source to Place"
@@ -18686,7 +18722,7 @@ msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
 msgstr ""
-"Začiarknutím políčka 'Admin' spôsobíte, že vyhľadávanie v GeoNames zahrnie "
+"Začiarknutie políčka 'Admin' spôsobí, že vyhľadávanie v GeoNames zahrnie "
 "administratívne podjednotky do vyhľadávania (krajiny, štáty, okresy atď.)."
 
 #: PlaceCleanup/placecleanup.glade:1148
@@ -18695,9 +18731,9 @@ msgid ""
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
 msgstr ""
-"Začiarknutím políčka 'Spot' spôsobíte, že vyhľadávanie v GeoNames zahrnie "
-"širokú škálu ďalších miest do vyhľadávania (kostoly, pohrebiská, budovy "
-"atď.)."
+"Začiarknute políčka 'Spot' spôsobí, že vyhľadávanie v GeoNames zahrnie "
+"širokú škálu ďalších miest do vyhľadávania (kostoly, pohrebiská, budovy atď.)"
+"."
 
 #: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
@@ -21140,11 +21176,11 @@ msgstr ""
 
 #: SourceIndex/birth.glade:870
 msgid "Call number:"
-msgstr ""
+msgstr "Signatúra:"
 
 #: SourceIndex/birth.glade:887
 msgid "The call number into the repository"
-msgstr ""
+msgstr "Signatúra v archíve"
 
 #: SourceIndex/birth.glade:925
 msgid "<b><i>Data person</i></b>"
@@ -22548,7 +22584,7 @@ msgstr "Zobraziť GrampsID"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
-msgstr "Zobraziť GrampsID v pravom hornom rohu rámčeka"
+msgstr "Zobraziť GrampsID v pravom hornom rohu rámika"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
@@ -22560,19 +22596,19 @@ msgstr "Použiť čo najmenej priestoru v horizontálnom smere"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
 msgid "Male Box Color"
-msgstr "Farba rámčeka muža"
+msgstr "Farba rámika muža"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:894
 msgid "Box background color for male person"
-msgstr "Farba pozadia rámčeka pre mužskú osobu"
+msgstr "Farba pozadia rámika pre mužskú osobu"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:897
 msgid "Female Box Color"
-msgstr "Farba rámčeka ženy"
+msgstr "Farba rámika ženy"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:898
 msgid "Box background color for female person"
-msgstr "Farba pozadia rámčeka pre ženskú osobu"
+msgstr "Farba pozadia rámika pre ženskú osobu"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:904
 msgid "Number of pixel per year"
@@ -22589,7 +22625,7 @@ msgstr "Posun X súradnice"
 #: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
-"Koľko pixelov zostáva nevyužitých vedľa rámčekov, ktoré sú najďalej vľavo a "
+"Koľko pixelov zostáva nevyužitých vedľa rámikov, ktoré sú najďalej vľavo a "
 "vpravo?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:917
@@ -22598,23 +22634,23 @@ msgstr "Posun Y súradnice"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
-msgstr "Koľko pixelov zostáva nevyužitých nad prvým rámčekom?"
+msgstr "Koľko pixelov zostáva nevyužitých nad prvým rámikom?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
 msgid "Width of a box in pixel"
-msgstr "Šírka rámčeka v pixeloch"
+msgstr "Šírka rámika v pixeloch"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:922
 msgid "Width of the box of a person in pixel"
-msgstr "Šírka rámčeka osoby v pixeloch"
+msgstr "Šírka rámika osoby v pixeloch"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:925
 msgid "Horizontal space between boxes in pixel"
-msgstr "Vodorovná medzera medzi rámčekmi v pixeloch"
+msgstr "Vodorovná medzera medzi rámikmi v pixeloch"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
-msgstr "Minimálna vodorovná medzera v pixeloch"
+msgstr "Minimálna vodorovná medzera medzi 2 rámikmi v pixeloch"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:934
 msgid "Length of vertical part of a line in pixel"
@@ -22625,8 +22661,8 @@ msgid ""
 "Parent and child boxes are connected with lines. This is the length of the "
 "vertical part of the lines in pixel"
 msgstr ""
-"Rámčeky rodičov a detí sú spojené čiarami. Toto je dĺžka zvislej časti čiar "
-"v pixeloch"
+"Rámiky rodičov a detí sú spojené čiarami. Toto je dĺžka zvislej časti čiar v "
+"pixeloch"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:943
 #: TimePedigreeHTML/TimePedigreeHtml.py:945
@@ -22655,7 +22691,7 @@ msgstr "Usporiadať podľa časovej osi"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
-msgstr "Zobraziť dĺžku života"
+msgstr "Zobraziť životný cyklus"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
