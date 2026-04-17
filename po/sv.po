@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-05 08:43-0700\n"
-"PO-Revision-Date: 2026-03-26 20:28+0000\n"
+"PO-Revision-Date: 2026-04-07 13:46+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -222,22 +222,16 @@ msgid "The style used for the Sosa number of the maternal branch."
 msgstr "Den stil som används för Sosa-numret för möderne-grenen."
 
 #: AncestryTableReport.py:562
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the males."
-msgstr "Mall för rapporttitel."
+msgstr "Stilen som används för data om män."
 
 #: AncestryTableReport.py:572
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the females."
-msgstr "Mall för rapporttitel."
+msgstr "Stilen som används för data om kvinnor."
 
 #: AncestryTableReport.py:583
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for the marriage."
-msgstr "Mall för namn."
+msgstr "Stilen som används för äktenskap."
 
 #: AncestryTableReport.py:593
 msgid ""
@@ -248,25 +242,21 @@ msgstr ""
 "För att öka höjden på den tomma raden, öka helt enkelt teckenstorleken."
 
 #: AncestryTableReport.py:632
-#, fuzzy
-#| msgid "The style used for the header in the Index of Places."
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
-msgstr "Mall som används för rubriken i platsindexet."
+msgstr ""
+"Stilen som används för rubriktabellen över antalet förfäder per generation."
 
 #: AncestryTableReport.py:643
-#, fuzzy
-#| msgid "The style used for the table of contents header."
 msgid "The style used for the number of ancestors per generation."
-msgstr "Mall som används för innehållsförteckningsrubriken."
+msgstr "Stilen som används för antalet förfäder per generation."
 
 #: AncestryTableReport.py:654
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr "Den mall, som används för rapportens titel."
+msgstr ""
+"Stilen som används för den totala linjen av antalet förfäder per generation."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -21934,10 +21924,8 @@ msgstr "_Importera TMG datauppsättning"
 
 #: TMGimporter/libtmg.py:2324 TMGimporter/libtmg.py:2357
 #: TMGimporter/libtmg.py:2439 TMGimporter/libtmg.py:2466
-#, fuzzy
-#| msgid "Export failed"
 msgid "TMG import failed"
-msgstr "Exportering misslyckades"
+msgstr "TMG-import misslyckades"
 
 #: TMGimporter/libtmg.py:2325
 msgid ""
@@ -21956,10 +21944,8 @@ msgid ""
 msgstr ""
 
 #: TMGimporter/libtmg.py:2370
-#, fuzzy
-#| msgid "TMG Unsupported"
 msgid "TMG version not supported"
-msgstr "TMG stöds inte"
+msgstr "TMG-version stöds inte"
 
 #: TMGimporter/libtmg.py:2371
 #, python-format
