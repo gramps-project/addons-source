@@ -2,27 +2,30 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Nick Hall <nick-h@gramps-project.org>, 2026.
+# "Batsaihan P." <batsaihan.p@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-03-22 23:06+0000\n"
+"Last-Translator: \"Batsaihan P.\" <batsaihan.p@gmail.com>\n"
+"Language-Team: Mongolian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/mn/>\n"
 "Language: mn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
-msgstr ""
+msgstr "Бүх хүмүүсийн бүх нэрүүд"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Бүх хүмүүсийн бүх нэрийг дэлгэцэнд"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -3758,7 +3761,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2965
 msgid "Configure"
-msgstr ""
+msgstr "Тохируулах"
 
 #: DynamicWeb/dynamicweb.py:2972
 msgid "DynamicWeb_report#Help"
@@ -13651,7 +13654,7 @@ msgstr ""
 #: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
 #: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
-msgstr ""
+msgstr "Удам угсаа"
 
 #: Form/form_us.xml.h:2086 Form/form_us.xml.h:2123 Form/form_us.xml.h:2161
 #: Form/form_us.xml.h:2199
