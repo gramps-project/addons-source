@@ -67,8 +67,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-03-05 22:10+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2026-04-14 18:01+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -92,7 +92,7 @@ msgstr "Tipo nome"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr ""
+msgstr "Nome primario"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -212,7 +212,7 @@ msgstr "Produce le linee dei discendenti di una persona"
 #: AncestryTableReport.py:133
 #, python-format
 msgid "Person %(name)s is not in the Database"
-msgstr ""
+msgstr "Il nome %(name)s della persona non è nel Database"
 
 #: AncestryTableReport.py:277
 #, fuzzy, python-format
@@ -243,7 +243,7 @@ msgstr "Prima generazione"
 
 #: AncestryTableReport.py:472
 msgid "To start a new page after each generation."
-msgstr ""
+msgstr "Iniziare una pagina nuova dopo ogni generazione."
 
 #: AncestryTableReport.py:475
 #, fuzzy
@@ -268,6 +268,8 @@ msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
 "calendar in the dates."
 msgstr ""
+"Di default Gramps mostra il nome del calendario nelle date ad eccezione "
+"delle date del calendario gregoriano."
 
 #: AncestryTableReport.py:519 RepositoriesReport/RepositoriesReport.py:175
 #: RepositoriesReport/RepositoriesReportAlt.py:504
@@ -310,27 +312,27 @@ msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increase the size of the font."
 msgstr ""
+"Lo stile usato per una riga vuota.\n"
+"Per aumentare l'altezza di una riga vuota basta aumentare la grandezza del "
+"carattere."
 
 #: AncestryTableReport.py:632
-#, fuzzy
-#| msgid "The style used for the header in the Index of Places."
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
-msgstr "Lo stile usato per le intestazioni nell'indice dei luoghi."
+msgstr ""
+"Lo stile usato per le intestazioni del numero di antenati per generazione."
 
 #: AncestryTableReport.py:643
-#, fuzzy
-#| msgid "The style used for the table of contents header."
 msgid "The style used for the number of ancestors per generation."
-msgstr "Lo stile usato per l'intestazione del sommario."
+msgstr "Lo stile usato per il numero di antenati per generazione."
 
 #: AncestryTableReport.py:654
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr "Lo stile usato per il titolo del resoconto."
+msgstr ""
+"Lo stile usato per la linea del totale del numero di antenati per "
+"generazione."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -1137,7 +1139,7 @@ msgstr "Ricerca dei nomi"
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
-msgstr ""
+msgstr "Nomi interessati"
 
 #: ChangeGivenNames/changenames.glade:32
 msgid ""
@@ -1187,6 +1189,8 @@ msgid ""
 "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
 "select a database."
 msgstr ""
+"Il componente aggiuntivo ChatWithTree non è stato ancora inizializzato. "
+"Ricarica Gramps o scegli un database."
 
 #: ChatWithTree/chatwithllm.py:78
 msgid "Tree: '{}'"
@@ -1270,7 +1274,7 @@ msgstr ""
 
 #: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
-msgstr ""
+msgstr "Unisci oggetti primari usando la linea dei comandi."
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:18
@@ -1533,7 +1537,7 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1445
 msgid "Default View"
-msgstr ""
+msgstr "Vista predefinita"
 
 #: D3Charts/DescendantIndentedTree.py:1448
 msgid "Expand All"
@@ -1561,7 +1565,7 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1851
 msgid "Expanded Row Background Color"
-msgstr ""
+msgstr "Colore di sfondo della riga espansa"
 
 #: D3Charts/DescendantIndentedTree.py:1852
 msgid "RGB-color for expanded row background."
@@ -1601,11 +1605,11 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1880
 msgid "How to handle living people."
-msgstr ""
+msgstr "Come trattare persone viventi."
 
 #: D3Charts/DescendantIndentedTree.py:1887
 msgid "Whether or not to include people who may have recently died."
-msgstr ""
+msgstr "Includere o meno persone che possono essere morte di recente."
 
 #: D3Charts/DescendantIndentedTree.py:1895
 msgid "Navigation"
@@ -1613,11 +1617,11 @@ msgstr "Navigazione"
 
 #: D3Charts/DescendantIndentedTree.py:1897
 msgid "Contraction/Expansion mechanism"
-msgstr ""
+msgstr "Meccanismo di Contrazione/Espansione"
 
 #: D3Charts/DescendantIndentedTree.py:1900
 msgid "Entire node."
-msgstr ""
+msgstr "Nodo intero."
 
 #: D3Charts/DescendantIndentedTree.py:1901
 msgid "Arrow images at start of node."
@@ -1630,7 +1634,7 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1903
 #: D3Charts/DescendantIndentedTree.py:1932
 msgid "Where to click to expand/contract nodes."
-msgstr ""
+msgstr "Dove cliccare per espandere/contrarre nodi."
 
 #: D3Charts/DescendantIndentedTree.py:1907
 msgid "Auto-generate HREF links for nodes"
@@ -1658,31 +1662,31 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1925
 msgid "No file extension."
-msgstr ""
+msgstr "Nessuna estensione del file."
 
 #: D3Charts/DescendantIndentedTree.py:1926
 msgid ".html"
-msgstr ""
+msgstr ".html"
 
 #: D3Charts/DescendantIndentedTree.py:1927
 msgid ".htm"
-msgstr ""
+msgstr ".htm"
 
 #: D3Charts/DescendantIndentedTree.py:1928
 msgid ".shtml"
-msgstr ""
+msgstr ".shtml"
 
 #: D3Charts/DescendantIndentedTree.py:1929
 msgid ".php"
-msgstr ""
+msgstr ".php"
 
 #: D3Charts/DescendantIndentedTree.py:1930
 msgid ".php3"
-msgstr ""
+msgstr ".php3"
 
 #: D3Charts/DescendantIndentedTree.py:1931
 msgid ".cgi"
-msgstr ""
+msgstr ".cgi"
 
 #: D3Charts/DescendantIndentedTree.py:1937
 msgid "URL file name delimeter"
@@ -1690,15 +1694,15 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1939
 msgid "Remove all whitespace."
-msgstr ""
+msgstr "Rimuovi tutti gli spazi vuoti."
 
 #: D3Charts/DescendantIndentedTree.py:1940
 msgid "Replace whitespace with dash(-)."
-msgstr ""
+msgstr "Sostituisci gli spazi vuoti con il trattino (-)."
 
 #: D3Charts/DescendantIndentedTree.py:1941
 msgid "Replace whitespace with underscore(_)"
-msgstr ""
+msgstr "Sostituisci gli spazi vuoti con l'underscore (_)"
 
 #: D3Charts/DescendantIndentedTree.py:1942
 msgid "What to use as file name delimiter replacing whitespace."
@@ -1739,7 +1743,7 @@ msgstr "Generare o non generare collegamenti per i coniugi."
 
 #: D3Charts/DescendantIndentedTree.py:1978
 msgid "Biography Content"
-msgstr ""
+msgstr "Contenuto della biografia"
 
 #: D3Charts/DescendantIndentedTree.py:1980
 msgid "Show biography tooltips"
@@ -1796,7 +1800,7 @@ msgstr ""
 #: UKWebConnectPack/UKWebPack.py:35 USWebConnectPack/USWebPack.py:34
 #: USWebConnectPack/USWebPack.py:46
 msgid "FamilySearch.org"
-msgstr ""
+msgstr "FamilySearch.org"
 
 #: DEWebConnectPack/DEWebPack.py:42
 msgid "Google Archives"
@@ -1809,19 +1813,19 @@ msgstr ""
 #: DEWebConnectPack/DEWebPack.py:44 UKWebConnectPack/UKWebPack.py:39
 #: USWebConnectPack/USWebPack.py:42
 msgid "Open Library"
-msgstr ""
+msgstr "Open Library"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
-msgstr ""
+msgstr "Mappa dei nomi (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
-msgstr ""
+msgstr "GenWiki"
 
 #: DEWebConnectPack/DEWebPack.py:47
 msgid "German digital library"
-msgstr ""
+msgstr "Biblioteca digitale tedesca"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
