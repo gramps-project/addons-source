@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-22 16:02-0700\n"
-"PO-Revision-Date: 2026-02-05 04:01+0000\n"
+"PO-Revision-Date: 2026-04-05 15:44+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -150,10 +150,8 @@ msgid "Ancestry Table"
 msgstr "Predkovia"
 
 #: AncestryTableReport.gpr.py:4
-#, fuzzy
-#| msgid "Produces descendants lines of a person"
 msgid "Produces a table of ancestry about a person"
-msgstr "Vytvára línie potomkov osoby"
+msgstr "Vytvára tabuľku predkov danej osoby"
 
 #: AncestryTableReport.py:133
 #, python-format
@@ -161,22 +159,19 @@ msgid "Person %(name)s is not in the Database"
 msgstr ""
 
 #: AncestryTableReport.py:277
-#, fuzzy, python-format
-#| msgid "The style used for names"
+#, python-format
 msgid "Ancestry Table Report for %(name)s"
-msgstr "Štýl použitý pre mená"
+msgstr "Tabuľkový prehľad predkov pre %(name)s"
 
 #: AncestryTableReport.py:311
-#, fuzzy, python-format
-#| msgid "Enumeration number"
+#, python-format
 msgid "Generation %(gen_number)d"
-msgstr "Sčítacie číslo"
+msgstr "Generácia %(gen_number)d"
 
 #: AncestryTableReport.py:360
-#, fuzzy, python-format
-#| msgid "Number of Ancestors found "
+#, python-format
 msgid "Number of Ancestors for %(name)s"
-msgstr "Počet nájdených predkov "
+msgstr "Počet predkov pre %(name)s"
 
 #: AncestryTableReport.py:370
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
@@ -190,22 +185,16 @@ msgid "To start a new page after each generation."
 msgstr ""
 
 #: AncestryTableReport.py:475
-#, fuzzy
-#| msgid "Number of ancestors"
 msgid "Number of ancestors per generation"
-msgstr "Počet predkov"
+msgstr "Počet predkov podľa generácie"
 
 #: AncestryTableReport.py:476
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Add a page with tne number of ancestors per generation."
-msgstr "Či zobraziť teoretický počet predkov podľa generácie"
+msgstr "Pridať stránku s počtom predkov podľa generácie."
 
 #: AncestryTableReport.py:495
-#, fuzzy
-#| msgid "Color the name to indicate a person's gender in the chart."
 msgid "Mask the name of the calendar in the dates"
-msgstr "Zafarbí meno, aby sa označilo pohlavie osoby v grafe."
+msgstr "Skryť názov kalendára v dátumoch"
 
 #: AncestryTableReport.py:496
 msgid ""
@@ -220,34 +209,24 @@ msgid "The style used for the title of the report."
 msgstr "Štýl použitý pre názov správy."
 
 #: AncestryTableReport.py:541
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the paternal branch."
-msgstr "Štýl použitý pre podnadpis správy."
+msgstr "Štýl použitý pre číslo Sosa otcovskej vetvy."
 
 #: AncestryTableReport.py:552
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the maternal branch."
-msgstr "Štýl použitý pre podnadpis správy."
+msgstr "Štýl použitý pre číslo Sosa materskej vetvy."
 
 #: AncestryTableReport.py:562
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the males."
-msgstr "Štýl použitý pre titul strany."
+msgstr "Štýl použitý pre údaje mužov."
 
 #: AncestryTableReport.py:572
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the females."
-msgstr "Štýl použitý pre titul strany."
+msgstr "Štýl použitý pre údaje žien."
 
 #: AncestryTableReport.py:583
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for the marriage."
-msgstr "Štýl použitý pre mená."
+msgstr "Štýl použitý pre manželstvo."
 
 #: AncestryTableReport.py:593
 msgid ""
@@ -256,25 +235,19 @@ msgid ""
 msgstr ""
 
 #: AncestryTableReport.py:632
-#, fuzzy
-#| msgid "The style used for the header in the Index of Places."
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
-msgstr "Štýl použitý pre záhlavie v indexe miest."
+msgstr "Štýl použitý pre záhlavie tabuľky počtu predkov podľa generácie."
 
 #: AncestryTableReport.py:643
-#, fuzzy
-#| msgid "The style used for the table of contents header."
 msgid "The style used for the number of ancestors per generation."
-msgstr "Štýl použitý pre záhlavie obsahu."
+msgstr "Štýl použitý pre počet predkov podľa generácie."
 
 #: AncestryTableReport.py:654
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr "Štýl použitý pre názov správy."
+msgstr "Štýl použitý pre súhrnný riadok počtu predkov podľa generácie."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -1117,10 +1090,8 @@ msgid "Chat With Tree"
 msgstr ""
 
 #: ChatWithTree/ChatWithTree.py:103
-#, fuzzy
-#| msgid "Database Backend"
 msgid "Database change detected"
-msgstr "Databázový backend"
+msgstr "Zistená zmena v databáze"
 
 #: ChatWithTree/ChatWithTree.py:148
 msgid "Type a message..."
@@ -3166,10 +3137,8 @@ msgid "Alternate Descendant Tree"
 msgstr "Striedať strom potomkov"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:455
-#, fuzzy
-#| msgid "Descendant Indented Tree"
 msgid "Descendant SpaceTree"
-msgstr "Descendant SpaceTree"
+msgstr "Priestorový strom potomkov"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:635
 msgid "Total descendants"
@@ -6941,7 +6910,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:179
 msgid "41. Cider Galls."
-msgstr "41. Jablčný mušt - galóny"
+msgstr "41. Mušt - galóny"
 
 #: Form/form_ca.xml.h:180
 msgid "ClothYards"
@@ -8275,10 +8244,8 @@ msgid "22. State where person employed"
 msgstr ""
 
 #: Form/form_ca.xml.h:715
-#, fuzzy
-#| msgid "description"
 msgid "WeeksOccupation"
-msgstr "popis"
+msgstr "Týždne zamestnania"
 
 #: Form/form_ca.xml.h:716
 msgid "23. Weeks employed in 1910 at chief occupation or trade"
@@ -9339,10 +9306,8 @@ msgid "Children who have Died."
 msgstr ""
 
 #: Form/form_gb.xml.h:217 Form/form_gb.xml.h:350
-#, fuzzy
-#| msgid "Person page"
 msgid "Personal Occupation"
-msgstr "Stránka osoby"
+msgstr "Osobné zamestnanie"
 
 #: Form/form_gb.xml.h:218 Form/form_gb.xml.h:351 Form/form_us.xml.h:778
 #: Form/form_us.xml.h:817 Form/form_us.xml.h:864 Form/form_us.xml.h:1617
@@ -9472,7 +9437,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:271
 msgid "PERSONAL OCCUPATION"
-msgstr ""
+msgstr "OSOBNÉ ZAMESTNANIE"
 
 #: Form/form_gb.xml.h:272
 msgid "Instructions"
@@ -11333,10 +11298,8 @@ msgid "Regiment/Vessel"
 msgstr "Pluk/Plavidlo"
 
 #: Form/form_us.xml.h:652 Form/form_us.xml.h:1011
-#, fuzzy
-#| msgid "Date/ Time"
 msgid "Date Enlisted"
-msgstr "Dátum/ Čas"
+msgstr "Dátum odvodu"
 
 #: Form/form_us.xml.h:653
 msgid "Date Discharged"
@@ -12071,10 +12034,8 @@ msgid "Other service, if any"
 msgstr "Ostatné služby, ak existujú"
 
 #: Form/form_us.xml.h:1004
-#, fuzzy
-#| msgid "Note on Person"
 msgid "No. on pension roll"
-msgstr "Poznámka pre osobu"
+msgstr "Č. na dôchodkovom zozname"
 
 #: Form/form_us.xml.h:1005
 msgid "County lived in when first placed on roll"
@@ -20215,9 +20176,8 @@ msgid "The view shows a quilt chart visualisation of a family tree"
 msgstr ""
 
 #: QuiltView/QuiltView.py:223
-#, fuzzy
 msgid "Quilt chart"
-msgstr "Quilt chart"
+msgstr "Quilt diagram"
 
 #: QuiltView/QuiltView.py:307
 msgid "Select the name for which you want to see."
@@ -20368,22 +20328,16 @@ msgid "Relation and distances with root"
 msgstr "Vzťah a vzdialenosti s koreňom"
 
 #: RelID/relation_tab.py:315
-#, fuzzy
-#| msgid "Filtering"
 msgid "Filter rule"
-msgstr "Filtrovanie"
+msgstr "Pravidlo filtra"
 
 #: RelID/relation_tab.py:319
-#, fuzzy
-#| msgid "Selection with a filter"
 msgid "Select the filter rule"
-msgstr "Výber pomocou filtra"
+msgstr "Výber pravidla filtra"
 
 #: RelID/relation_tab.py:321
-#, fuzzy
-#| msgid "Descendant generations"
 msgid "Deep generations"
-msgstr "Generácie potomkov"
+msgstr "Ďaleké generácie"
 
 #: RelID/relation_tab.py:322
 msgid "How deep should we go?"
@@ -20411,28 +20365,20 @@ msgid "Period"
 msgstr "Obdobie"
 
 #: RelID/relation_tab.py:350
-#, fuzzy
-#| msgid "Shared Segments"
 msgid "Shared Subtree"
-msgstr "Zdieľané segmenty"
+msgstr "Zdieľaný podstrom"
 
 #: RelID/relation_tab.py:351
-#, fuzzy
-#| msgid "Center"
 msgid "Centrality"
-msgstr "Na stred"
+msgstr "Centralita"
 
 #: RelID/relation_tab.py:352
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Unique Ancestors"
-msgstr "Predok"
+msgstr "Jedineční predkovia"
 
 #: RelID/relation_tab.py:353
-#, fuzzy
-#| msgid "Surname, Given"
 msgid "Surname Diversity"
-msgstr "Priezvisko, Meno"
+msgstr "Rozmanitosť priezvisk"
 
 #: RelID/relation_tab.py:367
 msgid "Quit"
@@ -20486,10 +20432,8 @@ msgid "Please, select a folder"
 msgstr "Prosím, vyberte priečinok"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "Alternate name"
 msgid "Foldername need"
-msgstr "Alternatívne meno"
+msgstr "Názov priečinka je potrebný"
 
 #: RelID/relation_tab.py:643
 msgid "Foldername will be used for saving the content."
@@ -20513,10 +20457,8 @@ msgid "Failed to save data."
 msgstr "Údaje sa nepodarilo uložiť."
 
 #: RelID/relation_tab.py:689
-#, fuzzy
-#| msgid "Relationship to head"
 msgid "Relationships Map and Tab"
-msgstr "Vzťah k hlave"
+msgstr "Mapa vzťahov a záložka"
 
 #: RelID/relation_tab.py:772
 msgid "Enable family network metrics"
@@ -21066,8 +21008,6 @@ msgid "CensusIndex"
 msgstr "Register sčítania ľudu"
 
 #: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
-#, fuzzy
-#| msgid "Sources Index"
 msgid "SourceIndex"
 msgstr "Register zdrojov"
 
@@ -22848,7 +22788,7 @@ msgstr "Otvára interaktívny strom v prehliadači"
 
 #: TypeCleanup/type_cleanup.gpr.py:30
 msgid "Type Cleanup"
-msgstr "Čistenie tyoov"
+msgstr "Čistenie typu"
 
 #: TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
@@ -22899,7 +22839,6 @@ msgid "URL Types"
 msgstr "URL typy"
 
 #: TypeCleanup/type_cleanup.py:124
-#, fuzzy
 msgid "Types Cleanup Tool"
 msgstr "Nástroj na čistenie typov"
 
@@ -22929,7 +22868,7 @@ msgstr "Premenovať vybraný typ vo všetkých odkazovaných objektoch."
 
 #: TypeCleanup/type_cleanup.py:189
 msgid "Close the Type Cleanup Tool"
-msgstr "Zatvoriť nástroj na čistenie typov"
+msgstr "Zatvoriť nástroj na čistenie typu"
 
 #: TypeCleanup/type_cleanup.py:195
 msgid "Types"
@@ -22937,7 +22876,7 @@ msgstr "Typy"
 
 #: TypeCleanup/type_cleanup.py:242
 msgid "Type Cleanup Tool"
-msgstr "Nástroj na čistenie typov"
+msgstr "Nástroj na čistenie typu"
 
 #: TypeCleanup/type_cleanup.py:387
 #, python-format
