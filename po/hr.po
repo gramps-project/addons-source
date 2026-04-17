@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-22 16:02-0700\n"
-"PO-Revision-Date: 2026-02-12 19:09+0000\n"
+"PO-Revision-Date: 2026-03-26 16:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -143,40 +143,32 @@ msgid "The style used for the title of the page."
 msgstr "Stil za naslov stranice."
 
 #: AncestryTableReport.gpr.py:3
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Table"
-msgstr "Preci"
+msgstr "Tablica podrijetla"
 
 #: AncestryTableReport.gpr.py:4
-#, fuzzy
-#| msgid "Produces descendants lines of a person"
 msgid "Produces a table of ancestry about a person"
-msgstr "Stvara linije potomaka za jednu osobu"
+msgstr "Stvara tablicu podrijetla jedne osobe"
 
 #: AncestryTableReport.py:133
-#, fuzzy, python-format
-#| msgid "Years resident in the state"
+#, python-format
 msgid "Person %(name)s is not in the Database"
-msgstr "Godine prebivališta u državi"
+msgstr "Osoba %(name)s se ne nalazi u bazi podataka"
 
 #: AncestryTableReport.py:277
-#, fuzzy, python-format
-#| msgid "The style used for names"
+#, python-format
 msgid "Ancestry Table Report for %(name)s"
-msgstr "Stil za imena"
+msgstr "Izvještaj o tablici podrijetla za %(name)s"
 
 #: AncestryTableReport.py:311
-#, fuzzy, python-format
-#| msgid "Generations up"
+#, python-format
 msgid "Generation %(gen_number)d"
-msgstr "Generacije gore"
+msgstr "%(gen_number)d. generacija"
 
 #: AncestryTableReport.py:360
-#, fuzzy, python-format
-#| msgid "Number of Ancestors found "
+#, python-format
 msgid "Number of Ancestors for %(name)s"
-msgstr "Broj pronađenih predaka "
+msgstr "Broj predaka za %(name)s"
 
 #: AncestryTableReport.py:370
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
@@ -187,94 +179,76 @@ msgstr "Generacija"
 
 #: AncestryTableReport.py:472
 msgid "To start a new page after each generation."
-msgstr ""
+msgstr "Za stvaranje nove stranice nakon svake generacije."
 
 #: AncestryTableReport.py:475
-#, fuzzy
-#| msgid "Number of ancestors"
 msgid "Number of ancestors per generation"
-msgstr "Broj predaka"
+msgstr "Broj predaka po generacijama"
 
 #: AncestryTableReport.py:476
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Add a page with tne number of ancestors per generation."
-msgstr "Da li prikazati teoretski broj predaka po generacijama"
+msgstr "Dodaj stranicu s brojem predaka po generacijama."
 
 #: AncestryTableReport.py:495
-#, fuzzy
-#| msgid "Color the name to indicate a person's gender in the chart."
 msgid "Mask the name of the calendar in the dates"
-msgstr "Oboji ime, za označavanje spola u dijagramu."
+msgstr "Sakrij imena kalendara u datumima"
 
 #: AncestryTableReport.py:496
 msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
 "calendar in the dates."
 msgstr ""
+"Osim za gregorijanske datume, Gramps standardno prikazuje ime kalendara u "
+"datumima."
 
 #: AncestryTableReport.py:519 RepositoriesReport/RepositoriesReport.py:175
 #: RepositoriesReport/RepositoriesReportAlt.py:504
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
 msgid "The style used for the title of the report."
-msgstr "Stil korišten za naslov izvještaja."
+msgstr "Stil za naslov izvještaja."
 
 #: AncestryTableReport.py:541
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the paternal branch."
-msgstr "Stil koji se koristi za podnaslov izvještaja."
+msgstr "Stil za Sosa broj očinske grane."
 
 #: AncestryTableReport.py:552
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the maternal branch."
-msgstr "Stil koji se koristi za podnaslov izvještaja."
+msgstr "Stil za Sosa broj majčinske grane."
 
 #: AncestryTableReport.py:562
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the males."
-msgstr "Stil za naslov stranice."
+msgstr "Stil za podatke muških osoba."
 
 #: AncestryTableReport.py:572
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the females."
-msgstr "Stil za naslov stranice."
+msgstr "Stil za podatke ženskih osoba."
 
 #: AncestryTableReport.py:583
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for the marriage."
-msgstr "Stil za imena."
+msgstr "Stil za vjenčanja."
 
 #: AncestryTableReport.py:593
 msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increse the size of the police."
 msgstr ""
+"Stil za prazan redak.\n"
+"Za povećanje visine praznog retka, povećaj veličinu."
 
 #: AncestryTableReport.py:632
-#, fuzzy
-#| msgid "The style used for the header in the Index of Places."
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
-msgstr "Stil za zaglavlje u indeksu mjesta."
+msgstr "Stil za zaglavnu tablicu s brojem predaka po generacijama."
 
 #: AncestryTableReport.py:643
-#, fuzzy
-#| msgid "The style used for the table of contents header."
 msgid "The style used for the number of ancestors per generation."
-msgstr "Stil za naslov tablice sadržaja."
+msgstr "Stil za broj predaka po generacijama."
 
 #: AncestryTableReport.py:654
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr "Stil korišten za naslov izvještaja."
+msgstr "Stil za ukupnu liniju broja predaka po generacijama."
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -1175,14 +1149,14 @@ msgstr "Naslovi mjesta"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr "Poboljšano"
+msgstr "Prošireno"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
-"Poboljšani alat za formatiranje citata koji standardnoj funkcionalnosti "
+"Prošireni alat za formatiranje citata koji standardnoj funkcionalnosti "
 "dodaje spremište i signaturu."
 
 #: CliMerge/CliMerge.gpr.py:9
@@ -2909,7 +2883,7 @@ msgstr "Izvještaj, generacija, osoba, ime"
 #: DescendantBooks/DetailedDescendantBookReport.py:697
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr "Vidi Izvještaj: {report}, Generacija: {generation}, Osoba: {person}"
+msgstr "Vidi izvještaj: {report}, Generacija: {generation}, Osoba: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:765
 #: DescendantBooks/DetailedDescendantBookReport.py:777
@@ -3375,7 +3349,7 @@ msgstr "Odredišna datoteka za sadržaj."
 
 #: DescendantsLines/DescendantsLines.py:1545
 msgid "The number of generations to include in the chart. (0 for unlimited)"
-msgstr "Broj generacija koje se uključuju u dijagram. (0 = neograničeno)"
+msgstr "Broj generacija koje se uključuju u dijagram. (0 za neograničeno)"
 
 #: DescendantsLines/DescendantsLines.py:1550
 msgid "Use d'Aboville descendant numbering system"
@@ -4770,7 +4744,7 @@ msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
 msgstr ""
-"Maksimalni broj uključenih generacija u stabla predaka i potomaka, kao i u "
+"Maksimalni broj uključenih generacija u stablima predaka i potomaka te "
 "dijagramima"
 
 #: DynamicWeb/dynamicweb.py:5111
@@ -14044,7 +14018,7 @@ msgstr "Br."
 
 #: Form/form_us.xml.h:2048
 msgid "St./Ave "
-msgstr ""
+msgstr "Ulica/Aleja "
 
 #: Form/form_us.xml.h:2049
 msgid "Hotel or Institution"
@@ -14052,7 +14026,7 @@ msgstr "Hotel ili institucija"
 
 #: Form/form_us.xml.h:2053
 msgid "Years in South Dakota"
-msgstr ""
+msgstr "Godine u južnoj Dakoti"
 
 #: Form/form_us.xml.h:2054
 msgid "Years in United States"
@@ -14107,7 +14081,7 @@ msgstr "Posjeduješ kuću ili gospodarstvo"
 #: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
 #: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
-msgstr "Preci"
+msgstr "Podrijetlo"
 
 #: Form/form_us.xml.h:2086 Form/form_us.xml.h:2123 Form/form_us.xml.h:2161
 #: Form/form_us.xml.h:2199
@@ -19415,7 +19389,7 @@ msgstr "Operacija s regularnim izrazom nije uspjela: {}"
 
 #: PluginManager\PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
-msgstr "Napredni upravljač za dodatake"
+msgstr "Upravljač za dodatake (prošireni)"
 
 #: PluginManager\PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
@@ -19423,7 +19397,7 @@ msgstr "Upravljač za dodatke s nekolicinom dodatnih funkcija"
 
 #: PluginManager\PluginManager.py:91
 msgid "Plugin Manager - Enhanced"
-msgstr "Upravljač za dodatke – Napredno"
+msgstr "Upravljač za dodatke – Prošireni"
 
 #: PluginManager\PluginManager.py:163
 msgid ""
@@ -19561,11 +19535,11 @@ msgstr "Nadogradnja završena!"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
 msgid "PostgreSQL Enhanced"
-msgstr "Prošireni PostgreSQL"
+msgstr "PostgreSQL prošireno"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
 msgid "PostgreSQL _Enhanced Database"
-msgstr "_Proširena PostgreSQL baza podataka"
+msgstr "PostgreSQL _Proširena baza podataka"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
 msgid ""
@@ -20846,7 +20820,7 @@ msgstr "Arkiv Digital ostavinski zapisi za Skåne"
 
 #: SVWebconnectPack/SVWebPack.py:43
 msgid "Ancestry Search"
-msgstr "Pretraga predaka"
+msgstr "Pretraga podrijetla"
 
 #: SVWebconnectPack/SVWebPack.py:44
 msgid "Find swedish portraits - Rötter.se"
@@ -22271,14 +22245,14 @@ msgstr "%(female_name)s je dodijeljena titula %(year)s u mjestu %(place)s."
 #, python-format
 msgid "%(male_name)s was granted a divorce in %(year)s at %(place)s."
 msgstr ""
-"%(male_name)s je dobio dozvolu za razvod braka %(year)s u mjestu %(place)s."
+"%(male_name)s je dobio dozvolu za razvod braka %(year)s. u mjestu %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:567
 #, python-format
 msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je dobila dozvolu za razvod braka %(year)s u mjestu "
-"%(place)s."
+"%(female_name)s je dobila dozvolu za razvod braka %(year)s. u mjestu %(place)"
+"s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:571
 #, python-format
