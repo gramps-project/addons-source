@@ -2,6 +2,9 @@
 *.py[cod]
 __pycache__
 
+# Gramps runtime logs
+debug.log
+
 # Editing
 *~
 tags

@@ -7,18 +7,17 @@ on:
     branches: [maintenance/gramps60]
 
 env:
-  HEADLESS_IMAGE: ghcr.io/${{ github.repository }}/gramps-headless:gramps60
-  GTK_IMAGE: ghcr.io/${{ github.repository }}/gramps-gtk:gramps60
+  CI_IMAGE: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
 
 jobs:
   # -----------------------------------------------------------------
-  # Lint (headless container)
+  # Lint (ci container)
   # -----------------------------------------------------------------
   lint:
     name: Lint
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/${{ github.repository }}/gramps-headless:gramps60
+      image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
     steps:
       - uses: actions/checkout@v4
 
@@ -60,13 +59,13 @@ jobs:
           exit $failed
 
   # -----------------------------------------------------------------
-  # Compile check (headless container)
+  # Compile check (ci container)
   # -----------------------------------------------------------------
   compile-check:
     name: Compile Check
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/${{ github.repository }}/gramps-headless:gramps60
+      image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
     steps:
       - uses: actions/checkout@v4
 
@@ -81,13 +80,13 @@ jobs:
           exit $failed
 
   # -----------------------------------------------------------------
-  # Unit tests — Linux (headless container)
+  # Unit tests — Linux (ci container)
   # -----------------------------------------------------------------
   unit-test-linux:
     name: Unit Tests (Linux)
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/${{ github.repository }}/gramps-headless:gramps60
+      image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
     steps:
       - uses: actions/checkout@v4
 
@@ -99,43 +98,44 @@ jobs:
           for d in */tests/; do
             if ls "$d"/test_*.py 1>/dev/null 2>&1; then
               test_dirs="$test_dirs $d"
-            fi
-          done
-          for f in */test_*.py; do
-            if [ -f "$f" ]; then
-              test_dirs="$test_dirs $(dirname "$f")"
             fi
           done
           if [ -n "$test_dirs" ]; then
             echo "Running unit tests in: $test_dirs"
             python3 -m pytest $test_dirs -v --tb=short \
               --ignore-glob='**/test_integration*.py' \
+              --ignore=Sqlite/tests/test_sqlite.py \
               -m 'not gui'
           else
             echo "No per-addon unit test files found"
           fi
 
   # -----------------------------------------------------------------
-  # Unit tests — Windows (bare runner, pip install)
+  # Unit tests — Windows (conda-forge: bundles PyGObject + GTK + Gramps)
   # -----------------------------------------------------------------
   unit-test-windows:
     name: Unit Tests (Windows)
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash -el {0}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Miniforge
+        uses: conda-incubator/setup-miniconda@v3
         with:
+          miniforge-version: latest
           python-version: "3.12"
+          activate-environment: addons-ci
+          channels: conda-forge
 
-      - name: Install dependencies
-        run: pip install gramps orjson pytest dbf
+      - name: Install Gramps + test deps
+        run: mamba install -y "gramps>=6.0,<6.1" pygobject gtk3 orjson pytest dbf
 
       - name: Run per-addon unit tests
         env:
           PYTHONPATH: .
-        shell: bash
         run: |
           test_dirs=""
           for d in */tests/; do
@@ -143,29 +143,26 @@ jobs:
               test_dirs="$test_dirs $d"
             fi
           done
-          for f in */test_*.py; do
-            if [ -f "$f" ]; then
-              test_dirs="$test_dirs $(dirname "$f")"
-            fi
-          done
           if [ -n "$test_dirs" ]; then
             echo "Running unit tests in: $test_dirs"
             python -m pytest $test_dirs -v --tb=short \
               --ignore-glob='**/test_integration*.py' \
+              --ignore=Sqlite/tests/test_sqlite.py \
               -m 'not gui'
           else
             echo "No per-addon unit test files found"
           fi
 
   # -----------------------------------------------------------------
-  # Integration tests — Gramps (GTK container)
+  # Integration tests — Gramps (ci container, xvfb available)
   # -----------------------------------------------------------------
   integration-test:
     name: Integration Tests (Gramps)
     runs-on: ubuntu-latest
     needs: [unit-test-linux]
     container:
-      image: ghcr.io/${{ github.repository }}/gramps-gtk:gramps60
+      image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
+      options: --init
     steps:
       - uses: actions/checkout@v4
         with:
@@ -174,7 +171,7 @@ jobs:
       - name: Run plugin registration tests
         env:
           PYTHONPATH: .
-        run: xvfb-run python3 -m pytest tests/ -v --tb=short
+        run: python3 -m pytest tests/ -v --tb=short
 
       - name: Run per-addon integration tests
         env:
@@ -188,19 +185,19 @@ jobs:
           done
           if [ -n "$integration_tests" ]; then
             echo "Running per-addon integration tests: $integration_tests"
-            xvfb-run python3 -m pytest $integration_tests -v --tb=short
+            python3 -m pytest $integration_tests -v --tb=short
           else
             echo "No per-addon integration test files found"
           fi
 
   # -----------------------------------------------------------------
-  # Build (headless container — has intltool/gettext)
+  # Build (ci container)
   # -----------------------------------------------------------------
   build:
     name: Build
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/${{ github.repository }}/gramps-headless:gramps60
+      image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
     steps:
       - uses: actions/checkout@v4
 

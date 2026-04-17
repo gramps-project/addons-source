@@ -273,29 +273,33 @@ pytest.importorskip("gi")  # skips entire module if gi unavailable
 
 ## CI/CD
 
-### Container Images
+### Container Image
 
-CI jobs run inside pre-built Docker images hosted on GitHub Container Registry:
+All Linux CI jobs share one image hosted on GitHub Container Registry:
 
-| Image | Contents | Used by |
-|-------|----------|---------|
-| `ghcr.io/<repo>/gramps-headless:gramps60` | Python 3.12 + Gramps 6.0 + ruff, pytest, dbf, intltool, gettext | lint, compile-check, unit-test-linux, build |
-| `ghcr.io/<repo>/gramps-gtk:gramps60` | headless + GTK/GI system packages | integration-test |
+`ghcr.io/<repo>/gramps-ci:gramps60` — Python 3.12, Gramps 6.0, PyGObject,
+GTK typelibs (so `from gi.repository import Gtk` works at module load),
+xvfb + xauth (wrap with `xvfb-run` for tests that render), plus ruff,
+pytest, dbf, intltool, gettext, git for tooling.
 
-Images are rebuilt by `.github/workflows/docker-build.yml` when
-`.github/docker/**` files change, or via manual `workflow_dispatch`.
+The image is headless by default — no X server runs unless a command
+invokes `xvfb-run`. Jobs that use `xvfb-run` need `options: --init` on
+the container, or local `docker run --init`, because xvfb-run hangs if
+it inherits PID 1.
 
-Dockerfiles live in `.github/docker/gramps-headless/` and `.github/docker/gramps-gtk/`.
+Rebuilt by `.github/workflows/docker-build.yml` when `.github/docker/**`
+changes, or via manual `workflow_dispatch`. Dockerfile lives at
+`.github/docker/gramps-ci/Dockerfile`.
 
 ### CI Pipeline (`.github/workflows/ci.yml`)
 
 ```
-lint (headless) ────────────┐
-addon-structure (bare) ─────┤
-compile-check (headless) ───┤── all parallel
-build (headless) ───────────┤
-unit-test-windows (bare) ───┘
-unit-test-linux (headless) ──── integration-test (gtk)
+lint (gramps-ci) ──────────────┐
+addon-structure (bare) ────────┤
+compile-check (gramps-ci) ─────┤── all parallel
+build (gramps-ci) ─────────────┤
+unit-test-windows (conda) ─────┘
+unit-test-linux (gramps-ci) ──── integration-test (gramps-ci, --init)
 ```
 
 Jobs:
@@ -303,30 +307,31 @@ Jobs:
 - **Addon structure**: verifies every addon has `po/template.pot`
 - **Compile check**: `python3 -m py_compile` on every `.py` file
 - **Unit tests (Linux)**: per-addon `test_*.py`, `-m 'not gui'`, excludes `test_integration*.py`
-- **Unit tests (Windows)**: same tests on `windows-latest` via `pip install gramps` (no GTK)
-- **Integration tests** (Gramps GTK, runs after Linux unit tests):
+- **Unit tests (Windows)**: same tests on `windows-latest` via `conda-forge` (pygobject + gtk3 + gramps)
+- **Integration tests** (runs after Linux unit tests):
   - `tests/` — repo-wide plugin registration, loading, and smoke tests
   - `*/tests/test_integration*.py` — per-addon integration tests
+  - Uses `options: --init` so `xvfb-run` works for tests that render
 - **Build**: `make.py gramps60 build all`
 
 ### Running CI Locally
 
 ```bash
-# Build the headless image
-docker build -t gramps-headless .github/docker/gramps-headless/
+# Build the image
+docker build -t gramps-ci .github/docker/gramps-ci/
 
-# Run unit tests in the container
-docker run --rm -v "$(pwd)":/workspace gramps-headless \
+# Run unit tests
+docker run --rm -v "$(pwd)":/workspace gramps-ci \
     python3 -m pytest TMGimporter/tests/ -v -m 'not gui'
 
-# Build the GTK image (after headless is built)
-docker build -t gramps-gtk \
-    --build-arg REGISTRY='' --build-arg REPO='' --build-arg TAG=gramps-headless \
-    .github/docker/gramps-gtk/
-
 # Run integration tests
-docker run --rm -v "$(pwd)":/workspace gramps-gtk \
+docker run --rm -v "$(pwd)":/workspace gramps-ci \
     python3 -m pytest tests/ -v
+
+# For tests that render widgets, prefix with xvfb-run and pass --init
+# (xvfb-run hangs otherwise — tini as PID 1 is required for signal delivery):
+docker run --rm --init -v "$(pwd)":/workspace gramps-ci \
+    xvfb-run python3 -m pytest some_gui_test.py -v
 ```
 
 ## Commit Messages
