@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-05 08:43-0700\n"
-"PO-Revision-Date: 2026-03-25 11:09+0000\n"
+"PO-Revision-Date: 2026-04-06 16:36+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22272,10 +22272,8 @@ msgstr "_Importeer TMG-gegevensset"
 
 #: TMGimporter/libtmg.py:2324 TMGimporter/libtmg.py:2357
 #: TMGimporter/libtmg.py:2439 TMGimporter/libtmg.py:2466
-#, fuzzy
-#| msgid "Export failed"
 msgid "TMG import failed"
-msgstr "Export is mislukt"
+msgstr "TMG-import is mislukt"
 
 #: TMGimporter/libtmg.py:2325
 msgid ""
@@ -22283,6 +22281,9 @@ msgid ""
 "\n"
 "Please create a new empty Family Tree before importing a TMG backup file."
 msgstr ""
+"De huidige stamboom is niet leeg.\n"
+"\n"
+"Maak een nieuwe lege stamboom aan voordat u een TMG-back-up importeert."
 
 #: TMGimporter/libtmg.py:2358
 msgid ""
@@ -22292,12 +22293,15 @@ msgid ""
 "Please ensure you are using a backup created by TMG 9.02 or later "
 "(PjcVersion >= 11.0)."
 msgstr ""
+"De TMG-back-up kon niet worden gelezen: PJC-versie-informatie ontbreekt of "
+"is onleesbaar.\n"
+"\n"
+"Zorg ervoor dat u een back-up gebruikt die is gemaakt door TMG 9.02 of hoger "
+"(PjcVersion >= 11.0)."
 
 #: TMGimporter/libtmg.py:2370
-#, fuzzy
-#| msgid "TMG Unsupported"
 msgid "TMG version not supported"
-msgstr "TMG wordt niet ondersteund"
+msgstr "TMG-versie niet ondersteund"
 
 #: TMGimporter/libtmg.py:2371
 #, python-format
@@ -22311,6 +22315,14 @@ msgid ""
 "See: https://gramps-project.org/wiki/index.php/"
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 msgstr ""
+"Deze back-up is gemaakt met een oudere versie van TMG (PjcVersion %(ver)s, "
+"equivalent aan TMG 9.01 of eerder).\n"
+"\n"
+"Upgrade uw TMG-project naar versie 9.05 en maak een nieuwe back-up en "
+"importeer deze vervolgens opnieuw.\n"
+"\n"
+"Zie: https://gramps-project.org/wiki/index.php/"
+"Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 
 #: TMGimporter/libtmg.py:2440
 msgid ""
@@ -22318,6 +22330,9 @@ msgid ""
 "\n"
 "The backup may be corrupt or empty."
 msgstr ""
+"Er zijn geen datasets aangetroffen in deze TMG-back-up.\n"
+"\n"
+"Het back-upbestand kan defect zijn of leeg."
 
 #: TMGimporter/libtmg.py:2467
 #, python-format
@@ -22329,6 +22344,12 @@ msgid ""
 "\n"
 "Ensure the file was created by TMG version 5.x or later."
 msgstr ""
+"%(filename)s lijkt geen geldige TMG-back-up.\n"
+"\n"
+"Het bestand moet een TMG-archief zijn (*.SQZ) met een "
+"projectconfiguratiebestand (.PJC).\n"
+"\n"
+"Zorg ervoor dat het bestand is gemaakt door TMG versie 5. x of hoger."
 
 #: Themes/themes.gpr.py:29
 msgid "Theme preferences"
