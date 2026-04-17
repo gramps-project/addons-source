@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-22 16:02-0700\n"
-"PO-Revision-Date: 2026-02-08 09:09+0000\n"
+"PO-Revision-Date: 2026-03-26 20:28+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -149,39 +149,32 @@ msgid "The style used for the title of the page."
 msgstr "Mall för rapporttitel."
 
 #: AncestryTableReport.gpr.py:3
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Table"
-msgstr "Anor"
+msgstr "Antabell"
 
 #: AncestryTableReport.gpr.py:4
-#, fuzzy
-#| msgid "Produces descendants lines of a person"
 msgid "Produces a table of ancestry about a person"
-msgstr "Producerar ättlingslinjer för en person"
+msgstr "Producerar en tabell med anor för en person"
 
 #: AncestryTableReport.py:133
 #, python-format
 msgid "Person %(name)s is not in the Database"
-msgstr ""
+msgstr "Personen %(name)s finns inte i databasen"
 
 #: AncestryTableReport.py:277
-#, fuzzy, python-format
-#| msgid "The style used for names"
+#, python-format
 msgid "Ancestry Table Report for %(name)s"
-msgstr "Mall använd för namn"
+msgstr "Antabells-rapport för %(name)s"
 
 #: AncestryTableReport.py:311
-#, fuzzy, python-format
-#| msgid "Enumeration number"
+#, python-format
 msgid "Generation %(gen_number)d"
-msgstr "Uppräkningsnummer"
+msgstr "Generation %(gen_number)d"
 
 #: AncestryTableReport.py:360
-#, fuzzy, python-format
-#| msgid "Number of Ancestors found "
+#, python-format
 msgid "Number of Ancestors for %(name)s"
-msgstr "Antal förfäder som hittats "
+msgstr "Antal förfäder för %(name)s"
 
 #: AncestryTableReport.py:370
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
@@ -192,31 +185,27 @@ msgstr "Generation"
 
 #: AncestryTableReport.py:472
 msgid "To start a new page after each generation."
-msgstr ""
+msgstr "Att börja en ny sida efter varje generation."
 
 #: AncestryTableReport.py:475
-#, fuzzy
-#| msgid "Number of ancestors"
 msgid "Number of ancestors per generation"
-msgstr "Antal förfäder"
+msgstr "Antal förfäder per generation"
 
 #: AncestryTableReport.py:476
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Add a page with tne number of ancestors per generation."
-msgstr "Huruvida det teoretiska antalet förfäder ska visas per generation"
+msgstr "Lägg till en sida med antalet förfäder per generation."
 
 #: AncestryTableReport.py:495
-#, fuzzy
-#| msgid "Color the name to indicate a person's gender in the chart."
 msgid "Mask the name of the calendar in the dates"
-msgstr "Färga namnet för att indikera en persons kön i diagrammet."
+msgstr "Maskera kalendernamnet i datumen"
 
 #: AncestryTableReport.py:496
 msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
 "calendar in the dates."
 msgstr ""
+"Som standard, förutom för gregorianska datum, visar Gramps namnet på "
+"kalendern i datumen."
 
 #: AncestryTableReport.py:519 RepositoriesReport/RepositoriesReport.py:175
 #: RepositoriesReport/RepositoriesReportAlt.py:504
@@ -225,16 +214,12 @@ msgid "The style used for the title of the report."
 msgstr "Den mall, som används för rapportens titel."
 
 #: AncestryTableReport.py:541
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the paternal branch."
-msgstr "Mallen som används för rapportens undertitel."
+msgstr "Den stil som används för sosa-numret för faderns gren."
 
 #: AncestryTableReport.py:552
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the maternal branch."
-msgstr "Mallen som används för rapportens undertitel."
+msgstr "Den stil som används för Sosa-numret för möderne-grenen."
 
 #: AncestryTableReport.py:562
 #, fuzzy
@@ -259,6 +244,8 @@ msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increse the size of the police."
 msgstr ""
+"Stilen som används för en tom rad.\n"
+"För att öka höjden på den tomma raden, öka helt enkelt teckenstorleken."
 
 #: AncestryTableReport.py:632
 #, fuzzy
@@ -15505,7 +15492,7 @@ msgstr "Visa bokmärkt först"
 
 #: GraphView/graphview.py:966
 msgid "Show bookmarked persons first in search result list."
-msgstr ""
+msgstr "Visa bokmärkta personer först i sökresultatlistan."
 
 #: GraphView/graphview.py:999
 msgid "Select a dot file name"
@@ -15529,15 +15516,15 @@ msgstr "Gå till bokmärke"
 
 #: GraphView/graphview.py:1130
 msgid "Center view on selected bookmark"
-msgstr ""
+msgstr "Centrera vyn på valt bokmärke"
 
 #: GraphView/graphview.py:1132
 msgid "Bookmarks for current graph"
-msgstr ""
+msgstr "Bokmärken för aktuell graf"
 
 #: GraphView/graphview.py:1133
 msgid "Other Bookmarks"
-msgstr ""
+msgstr "Andra bokmärken"
 
 #: GraphView/graphview.py:1164
 msgid "Ancestor generations"
@@ -15561,13 +15548,15 @@ msgstr "Mellanrum"
 
 #: GraphView/graphview.py:1193
 msgid "All connected"
-msgstr ""
+msgstr "Alla anslutna"
 
 #: GraphView/graphview.py:1195
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
 msgstr ""
+"Visa alla anslutna personer begränsade av generationsbegränsningar\n"
+"Fungerar långsamt, så ange inte stora genereringsvärden."
 
 #: GraphView/graphview.py:1337
 msgid "Add active person"
